@@ -1454,82 +1454,52 @@ var hvBridgeData = {
 // GHÉP TỪ — cụm trong bài khoá và phần 练习
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'为工作的事',right:'伤脑筋'},
-  {left:'时间',right:'成本'},
-  {left:'顾虑',right:'重重'},
-  {left:'过度',right:'悲观'},
-  {left:'终身',right:'悔恨'},
-  {left:'精确的',right:'判断力'},
-  {left:'坚定的',right:'意志力'},
-  {left:'勇于',right:'承担责任'},
-  {left:'不畏惧',right:'失败'},
-  {left:'经济',right:'全球化'},
-  {left:'风光',right:'无限'},
+  {left:'擅长',right:'写作'},
+  {left:'控制',right:'成本'},
   {left:'金融',right:'危机'},
-  {left:'连年',right:'盈利'},
-  {left:'不得不',right:'裁员'},
-  {left:'英明的',right:'决定'},
-  {left:'称心如意的',right:'工作'},
-  {left:'报考热门',right:'专业'},
-  {left:'人才',right:'饱和'},
-  {left:'抓住',right:'机遇'},
-  {left:'心灵',right:'免疫力'},
-  {left:'决策',right:'能力'},
-  {left:'走',right:'弯路'}
+  {left:'坚定的',right:'意志'},
+  {left:'敏锐的',right:'眼光'},
+  {left:'勇于',right:'创新'},
+  {left:'称心',right:'如意'},
+  {left:'争先',right:'恐后'},
+  {left:'热门',right:'专业'},
+  {left:'把握',right:'机遇'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ
+// ĐIỀN TỪ — câu mới (không chép bài khoá / SGK), mỗi câu một tình huống; ôn xoáy ốc từ + ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'选什么专业是你自己的事，你自己',blank:'做主',post:'吧。',hint:'(tự quyết định)',ans:'做主'},
-  {pre:'弟弟成天玩游戏，真让妈妈',blank:'伤脑筋',post:'。',hint:'(đau đầu)',ans:'伤脑筋'},
-  {pre:'这本书的内容太',blank:'枯燥',post:'了，我看了几页就睡着了。',hint:'(khô khan, nhàm chán)',ans:'枯燥'},
-  {pre:'我不太',blank:'擅长',post:'跟陌生人打交道，一说话就紧张。',hint:'(giỏi về)',ans:'擅长'},
-  {pre:'工厂想方设法降低',blank:'成本',post:'，产品价格才降了下来。',hint:'(giá thành)',ans:'成本'},
-  {pre:'学外语不能',blank:'急躁',post:'，得一步一步来。',hint:'(nôn nóng)',ans:'急躁'},
-  {pre:'你有什么',blank:'顾虑',post:'就说出来，别憋在心里。',hint:'(băn khoăn, lo ngại)',ans:'顾虑'},
-  {pre:'',blank:'过度',post:'使用手机，对眼睛伤害很大。',hint:'(quá mức)',ans:'过度',exp:'过度 + V = quá mức (gây hại): 过度使用手机.'},
-  {pre:'在知识更新这么快的时代，每个人都需要',blank:'终身',post:'学习。',hint:'(suốt đời)',ans:'终身'},
-  {pre:'想起当年对父母说的那些话，他',blank:'悔恨',post:'不已。',hint:'(ân hận)',ans:'悔恨'},
-  {pre:'以后再遇到',blank:'类似',post:'的问题，你就知道怎么办了。',hint:'(tương tự)',ans:'类似'},
-  {pre:'这次实验的数据必须',blank:'精确',post:'，一点儿也不能马虎。',hint:'(chính xác tỉ mỉ)',ans:'精确'},
-  {pre:'谁也不是',blank:'天生',post:'就会说话的，都是慢慢学会的。',hint:'(bẩm sinh)',ans:'天生'},
-  {pre:'经历过这次',blank:'挫折',post:'，他反而变得更成熟了。',hint:'(vấp ngã)',ans:'挫折'},
-  {pre:'军训虽然很苦，但能磨炼我们的',blank:'意志',post:'。',hint:'(ý chí)',ans:'意志'},
-  {pre:'这位记者很',blank:'敏锐',post:'，一下子就发现了问题所在。',hint:'(nhạy bén)',ans:'敏锐'},
-  {pre:'面对强大的对手，他毫不',blank:'畏惧',post:'。',hint:'(sợ hãi)',ans:'畏惧'},
-  {pre:'这把小提琴',blank:'伴随',post:'了爷爷一生。',hint:'(đi theo, song hành)',ans:'伴随',exp:'伴随 = đi theo, gắn bó cùng: 伴随了爷爷一生.'},
-  {pre:'',blank:'昔日',post:'的小渔村，如今已经变成了热闹的旅游城市。',hint:'(ngày xưa)',ans:'昔日',exp:'昔日 = ngày xưa (văn viết), đối lập với 如今 ở vế sau.'},
-  {pre:'他考上了名牌大学，全家人都觉得很',blank:'风光',post:'。',hint:'(vẻ vang)',ans:'风光'},
-  {pre:'这家商店连年',blank:'亏损',post:'，老板不得不把它卖了。',hint:'(thua lỗ)',ans:'亏损'},
-  {pre:'学校门口那家书店面临',blank:'倒闭',post:'，同学们都很舍不得。',hint:'(phá sản, đóng cửa)',ans:'倒闭'},
-  {pre:'上海是中国重要的',blank:'金融',post:'中心之一。',hint:'(tài chính)',ans:'金融'},
-  {pre:'全家人齐心协力，终于度过了这次',blank:'危机',post:'。',hint:'(khủng hoảng)',ans:'危机'},
-  {pre:'这家小店开业半年就开始',blank:'盈利',post:'了。',hint:'(có lãi)',ans:'盈利'},
-  {pre:'地铁的',blank:'运行',post:'时间是早上六点到晚上十一点。',hint:'(vận hành)',ans:'运行'},
-  {pre:'听说公司要',blank:'裁员',post:'，大家都人心惶惶。',hint:'(cắt giảm nhân sự)',ans:'裁员'},
-  {pre:'事实证明，当初换专业是一个',blank:'英明',post:'的决定。',hint:'(sáng suốt)',ans:'英明'},
-  {pre:'现在想找一个',blank:'称心如意',post:'的房子本来就很难。',hint:'(như ý)',ans:'称心如意'},
-  {pre:'图书馆',blank:'除',post:'周一外，每天都开放。',hint:'(trừ … ra)',ans:'除',exp:'除…外，… = trừ… ra: 除周一外，每天都开放.'}
+  {pre:'孩子不爱吃饭，这件事真让妈妈',blank:'伤脑筋',post:'。',hint:'(đau đầu)',ans:'伤脑筋',exp:'让 + người + 伤脑筋 = khiến ai đau đầu, khó xử (khẩu ngữ); cũng nói 为……伤脑筋.'},
+  {pre:'这本书内容太',blank:'枯燥',post:'了，我看了几页就想睡觉。',hint:'(khô khan, nhàm chán)',ans:'枯燥',exp:'枯燥 tả nội dung, công việc đơn điệu, không thú vị; trái với 有意思.'},
+  {pre:'遇到问题别',blank:'急躁',post:'，先冷静下来想一想。',hint:'(nôn nóng)',ans:'急躁',exp:'急躁 = nóng vội, mất bình tĩnh; đối lập với 冷静.'},
+  {pre:'你有什么',blank:'顾虑',post:'就直说，我们一起想办法。',hint:'(băn khoăn, e ngại)',ans:'顾虑',exp:'顾虑 (danh từ) = điều lo ngại khiến mình chần chừ; 有顾虑 / 顾虑重重.'},
+  {pre:'',blank:'过度',post:'使用手机对眼睛不好。',hint:'(quá mức)',ans:'过度',exp:'过度 + động từ hai âm tiết (使用, 紧张, 担心) = quá mức cho phép; mang nghĩa xấu.'},
+  {pre:'学习是',blank:'终身',post:'的事，什么时候开始都不晚。',hint:'(suốt đời)',ans:'终身',exp:'终身 = cả đời; làm định ngữ: 终身的事, 终身学习.'},
+  {pre:'想起当年对父母说过的那些话，他心里充满了',blank:'悔恨',post:'。',hint:'(hối hận)',ans:'悔恨',exp:'悔恨 = hối hận sâu sắc, đau lòng vì việc sai đã làm (nặng hơn 后悔); 充满悔恨.'},
+  {pre:'我以前也遇到过',blank:'类似',post:'的问题，后来是这样解决的。',hint:'(tương tự)',ans:'类似',exp:'类似的 + danh từ = … tương tự; 类似 cũng làm động từ: 类似小王这样的人.'},
+  {pre:'没有人',blank:'天生',post:'就会说话，都是一点儿一点儿学会的。',hint:'(bẩm sinh)',ans:'天生',exp:'天生 + 就…… = sinh ra đã…; trái với "học mới biết".'},
+  {pre:'再大的困难，他也从来没有',blank:'畏惧',post:'过，总是第一个站出来。',hint:'(sợ hãi)',ans:'畏惧',exp:'畏惧 = sợ hãi (văn viết hơn 害怕); 从来没有畏惧过; 再……也…… = dù… đến đâu cũng….'},
+  {pre:'这里的环境问题',blank:'日益',post:'严重，大家都很担心。',hint:'(ngày càng)',ans:'日益',exp:'日益 + tính từ / động từ hai âm tiết = ngày càng (văn viết, = 越来越).'},
+  {pre:'',blank:'昔日',post:'热闹的市场，现在已经没什么人了。',hint:'(ngày xưa)',ans:'昔日',exp:'昔日 = ngày trước (văn viết), đối lập với 现在.'},
+  {pre:'附近那家开了二十年的书店上个月',blank:'倒闭',post:'了。',hint:'(phá sản, đóng cửa)',ans:'倒闭',exp:'倒闭 = (cửa hàng, công ty) làm ăn thua lỗ phải đóng cửa.'},
+  {pre:'毕业',blank:'意味着',post:'你要开始独立生活了。',hint:'(có nghĩa là)',ans:'意味着',exp:'A 意味着 B = A có nghĩa là B (hệ quả tất yếu); 着 là một phần của từ.'},
+  {pre:'这个城市的出租车已经',blank:'饱和',post:'了，司机赚钱越来越难。',hint:'(bão hoà)',ans:'饱和',exp:'饱和 = đã quá nhiều, không thể thêm (thị trường, nhân lực…).'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (于 · 致使 · 并非) ít nhất 2 câu
+// SẮP XẾP CÂU — câu mới, chỉ một trật tự đúng
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['毕业','于','3年前的','他','，','一直','做会计','。'],ans:'毕业于3年前的他，一直做会计。',audio:'毕业于3年前的他，一直做会计。'},
-  {words:['著名的','西湖龙井茶','产于','浙江省的','西湖一带','。'],ans:'著名的西湖龙井茶产于浙江省的西湖一带。',audio:'著名的西湖龙井茶产于浙江省的西湖一带。'},
-  {words:['我','一直想','去旅行','，','只是','苦于','没有时间','。'],ans:'我一直想去旅行，只是苦于没有时间。',audio:'我一直想去旅行，只是苦于没有时间。'},
-  {words:['他的','粗心','致使','试验','失败','。'],ans:'他的粗心致使试验失败。',audio:'他的粗心致使试验失败。'},
-  {words:['因为','地址不清楚','，','致使','信件','无法送达','。'],ans:'因为地址不清楚，致使信件无法送达。',audio:'因为地址不清楚，致使信件无法送达。'},
-  {words:['类似小王','这样的','年轻人','并非','少数','。'],ans:'类似小王这样的年轻人并非少数。',audio:'类似小王这样的年轻人并非少数。'},
-  {words:['犯些','小错','并非','坏事','，','它会增加','我们的','心灵免疫力','。'],ans:'犯些小错并非坏事，它会增加我们的心灵免疫力。',audio:'犯些小错并非坏事，它会增加我们的心灵免疫力。'},
-  {words:['真相','其实','并非','跟你想象的','一样','。'],ans:'真相其实并非跟你想象的一样。',audio:'真相其实并非跟你想象的一样。'},
-  {words:['生活中的','不确定因素','日益','增多','。'],ans:'生活中的不确定因素日益增多。',audio:'生活中的不确定因素日益增多。'},
-  {words:['我们','应该','勇于','承认','自己的','错误','。'],ans:'我们应该勇于承认自己的错误。',audio:'我们应该勇于承认自己的错误。'},
-  {words:['满18岁','就','意味着','成人了','。'],ans:'满18岁就意味着成人了。',audio:'满18岁就意味着成人了。'},
-  {words:['谁','能够','及早','抓住机会','，','谁','就','赢得了','机遇','。'],ans:'谁能够及早抓住机会，谁就赢得了机遇。',audio:'谁能够及早抓住机会，谁就赢得了机遇。'}
+  {words:['他','毕业于','一所','有名的','大学','。'],ans:'他毕业于一所有名的大学。',audio:'他毕业于一所有名的大学。'},
+  {words:['这种','做法','有利于','孩子的','成长','。'],ans:'这种做法有利于孩子的成长。',audio:'这种做法有利于孩子的成长。'},
+  {words:['连续','几天的','大雨','致使','河水','上涨','。'],ans:'连续几天的大雨致使河水上涨。',audio:'连续几天的大雨致使河水上涨。'},
+  {words:['他的','话','并非','没有','道理','。'],ans:'他的话并非没有道理。',audio:'他的话并非没有道理。'},
+  {words:['公司','连续','三年','亏损','，','最后','倒闭了','。'],ans:'公司连续三年亏损，最后倒闭了。',audio:'公司连续三年亏损，最后倒闭了。'},
+  {words:['他','是','一个','意志','坚定的','人','。'],ans:'他是一个意志坚定的人。',audio:'他是一个意志坚定的人。'},
+  {words:['她','擅长','用','简单的','话','讲','道理','。'],ans:'她擅长用简单的话讲道理。',audio:'她擅长用简单的话讲道理。'},
+  {words:['毕业','并不','意味着','学习的','结束','。'],ans:'毕业并不意味着学习的结束。',audio:'毕业并不意味着学习的结束。'},
+  {words:['顾客们','争先恐后地','走进了','新开的','商店','。'],ans:'顾客们争先恐后地走进了新开的商店。',audio:'顾客们争先恐后地走进了新开的商店。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1537,72 +1507,44 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'他的粗心____这次试验失败了。',opts:['致使','以致','因此','于是'],ans:0,
-   exp:'Ngay sau chủ ngữ chỉ nguyên nhân (他的粗心) cần động từ gây khiến → 致使. 以致, 因此, 于是 là liên từ, phải đứng đầu vế sau, không làm vị ngữ.'},
-  {wrong:'犯些小错____坏事，它会增加我们的心灵免疫力。',opts:['并非','并且','并存','无非'],ans:0,
-   exp:'并非 = hoàn toàn không phải (bác bỏ). 并且 = và, hơn nữa; 并存 = cùng tồn tại; 无非 (bài 5) = chẳng qua là — nghĩa ngược lại.'},
-  {wrong:'我们应该____承认自己的错误。',opts:['勇于','勇敢','勇气','乐于'],ans:0,
-   exp:'勇于 + động từ = dám (dũng cảm) làm. 勇敢 là tính từ, muốn làm trạng ngữ phải là 勇敢地; 勇气 là danh từ (dũng khí); 乐于 = vui lòng làm (nghĩa khác).'},
-  {wrong:'伴随着经济全球化，生活中的不确定因素____增多。',opts:['日益','越来越','日常','日期'],ans:0,
-   exp:'增多 là động từ hai âm tiết, văn viết → 日益增多. 越来越 hầu như chỉ đi với động từ tâm lý (越来越喜欢); 日常 (thường ngày), 日期 (ngày tháng) không phải phó từ.'},
-  {wrong:'受他的影响，我____喜欢京剧了。',opts:['越来越','日益','日常','逐年'],ans:0,
-   exp:'喜欢 là động từ tâm lý → 越来越喜欢 (đúng như 做一做 ④). 日益 không đi với động từ tâm lý kiểu này; 逐年 = qua từng năm, không hợp.'},
-  {wrong:'满18岁就____成人了，要承担起成年人的责任。',opts:['意味着','意见','意思','意识到'],ans:0,
-   exp:'A 就意味着 B = A có nghĩa là B (đáp án 练习2 ②). 意见, 意思 là danh từ; 意识到 = nhận thức được (chủ thể là người).'},
-  {wrong:'老师一提问，同学们都____地举手回答。',opts:['争先恐后','称心如意','顾虑重重','风光无限'],ans:0,
-   exp:'Tranh nhau giơ tay trả lời → 争先恐后地 + V. Ba thành ngữ còn lại không làm trạng ngữ hành động được như vậy.'},
-  {wrong:'人工智能是现在最____的话题之一。',opts:['热门','热心','热情','热闹'],ans:0,
-   exp:'热门话题 = chủ đề nóng, được quan tâm. 热心 = nhiệt tình (người); 热情 = nồng nhiệt; 热闹 = náo nhiệt (nơi chốn).'},
-  {wrong:'她做事太草率，____常常出错。',opts:['以致','致使','以免','以便'],ans:0,
-   exp:'Vế sau là cụm động từ không có chủ ngữ mới, kết quả xấu → 以致. 致使 cần "người/vật + hành động" phía sau; 以免 = để tránh; 以便 = để tiện (mục đích).'},
-  {wrong:'城市里的手机市场已经基本____了。',opts:['饱和','饱满','满足','充满'],ans:0,
-   exp:'市场饱和 = thị trường bão hoà. 饱满 = đầy đặn (hạt, tinh thần); 满足 = thoả mãn; 充满 phải có tân ngữ.'},
-  {wrong:'这所学校毕业生的____率很高。',opts:['就业','就职','职业','事业'],ans:0,
-   exp:'就业率 = tỷ lệ có việc làm. 就职 (bài 6) = nhận chức ở đâu; 职业 = nghề nghiệp; 事业 = sự nghiệp — đều không ghép với 率 như vậy.'},
-  {wrong:'有病要____治疗，千万别拖。',opts:['及早','早晚','早已','早上'],ans:0,
-   exp:'及早 + V = sớm (trước khi muộn). 早晚 = sớm muộn gì; 早已 = từ lâu đã; 早上 = buổi sáng.'},
-  {wrong:'只有不畏惧失败，才能抓住____，获得成功。',opts:['机遇','遭遇','待遇','相遇'],ans:0,
-   exp:'抓住机遇 = nắm bắt thời cơ. 遭遇 = gặp phải (điều xấu); 待遇 = đãi ngộ; 相遇 = gặp gỡ nhau.'},
-  {wrong:'父母吵架会伤害孩子幼小的____。',opts:['心灵','心情','心得','灵魂'],ans:0,
-   exp:'幼小的心灵 = tâm hồn non nớt (cụm cố định). 心情 = tâm trạng (nhất thời); 心得 = điều tâm đắc; 灵魂 = linh hồn — ít dùng với 幼小.'},
-  {wrong:'经常锻炼身体可以提高____力。',opts:['免疫','防疫','疫苗','预防'],ans:0,
-   exp:'免疫力 = sức đề kháng. 防疫 = phòng dịch; 疫苗 = vắc-xin; 预防 = phòng ngừa — không ghép với 力.'},
-  {wrong:'由于____失误，公司损失了一大笔钱。',opts:['决策','决心','对策','政策'],ans:0,
-   exp:'决策失误 = quyết sách sai lầm. 决心 = quyết tâm; 对策 = đối sách (cách đối phó); 政策 = chính sách nhà nước.'},
-  {wrong:'我不确定自己真正____什么。',opts:['擅长','善于','特长','长处'],ans:0,
-   exp:'擅长 + tân ngữ danh từ / đại từ (什么). 善于 phải có động từ theo sau (善于交际); 特长, 长处 là danh từ, không làm động từ.'},
-  {wrong:'老师的一番话打消了我的____。',opts:['顾虑','考虑','忧虑','焦虑'],ans:0,
-   exp:'打消顾虑 = xua tan băn khoăn (cụm cố định). 考虑 = suy nghĩ cân nhắc; 忧虑, 焦虑 là trạng thái lo âu, không đi với 打消.'}
+  {wrong:'这所大学创立____1898年，已经有一百多年的历史了。',opts:['于','在于','对于','由于'],ans:0,exp:'V + 于 + thời gian = V vào lúc… (văn viết, = 在): 创立于 1898 年. 在于 là "nằm ở"; 对于 / 由于 đứng đầu câu, không đi sau động từ. Ôn 创立 (bài 6).'},
+  {wrong:'他很____沟通，跟谁都能聊到一起。',opts:['善于','由于','关于','至于'],ans:0,exp:'善于 + V = giỏi về (于 chỉ phương diện). 由于 là do; 关于 là về (giới từ); 至于 là còn về — đều không mang nghĩa "giỏi".'},
+  {wrong:'一场大雨____这场足球比赛不得不改期。',opts:['致使','以致','省得','尽管'],ans:0,exp:'Danh từ nguyên nhân + 致使 + kết quả xấu. 以致 là liên từ nối hai VẾ câu (……，以致……), không đi ngay sau một danh từ; 省得 là kẻo; 尽管 là mặc dù.'},
+  {wrong:'由于没有及早去医院，____他的病越来越重。',opts:['致使','尽管','只要','除非'],ans:0,exp:'由于……，致使 + kết quả không mong muốn. 尽管 là mặc dù; 只要 / 除非 nêu điều kiện — không hợp với vế kết quả.'},
+  {wrong:'在大家的帮助下，我____取得了好成绩。',opts:['终于','致使','以致','由于'],ans:0,exp:'Kết quả tốt → 终于. 致使 / 以致 chỉ dùng cho kết quả xấu (lỗi hay gặp: 由于大家的努力，致使我们取得了好成绩); 由于 nêu nguyên nhân, không đứng trước động từ như vậy.'},
+  {wrong:'网上的消息____都是真的，你别全信。',opts:['并非','并且','非常','而且'],ans:0,exp:'并非 = hoàn toàn không phải (bác bỏ, văn viết). 并且 / 而且 là liên từ "hơn nữa"; 非常 là rất — trái nghĩa với "别全信".'},
+  {wrong:'我不去____因为没时间，而是因为不想去。',opts:['并非','不但','不仅','虽然'],ans:0,exp:'Khung 并非……，而是…… = không phải…, mà là…. 不但 / 不仅 đi với 而且; 虽然 đi với 但是 — đều không ghép với 而是.'},
+  {wrong:'这块手表非常____，一年只差一秒。',opts:['精确','正确','明确','的确'],ans:0,exp:'Chính xác đến từng chi tiết (số đo, thời gian) → 精确. 正确 là đúng (câu trả lời, ý kiến); 明确 là rõ ràng (mục tiêu); 的确 là quả thật (phó từ).'},
+  {wrong:'每个人都会遇到一些____，关键是不要放弃。',opts:['挫折','机遇','风光','免疫'],ans:0,exp:'Vấp ngã, thất bại → 挫折 (đi với 不要放弃). 机遇 là cơ hội; 风光 là vẻ vang; 免疫 là miễn dịch.'},
+  {wrong:'这家公司去年____了五百万，今年终于开始赚钱了。',opts:['亏损','盈利','倒闭','裁员'],ans:0,exp:'Năm ngoái lỗ, năm nay mới có lãi → 亏损 + số tiền. 盈利 là có lãi (trái nghĩa với vế sau); 倒闭 không mang số tiền; 裁员 là cắt giảm nhân sự.'},
+  {wrong:'新的地铁线路下个月开始____。',opts:['运行','运动','运气','行动'],ans:0,exp:'Tàu xe, máy móc, hệ thống đi vào hoạt động → 运行. 运动 là vận động, thể thao; 运气 là vận may; 行动 là hành động của người.'},
+  {wrong:'现在看来，经理当初的决定非常____，公司今年的盈利翻了一番。',opts:['英明','明显','光明','明白'],ans:0,exp:'Khen quyết định của người lãnh đạo → 英明 (sáng suốt). 明显 là rõ rệt; 光明 là tươi sáng (tương lai); 明白 là hiểu. Ôn 当初 (bài 6).'},
+  {wrong:'____周一以外，图书馆每天都开放。',opts:['除','除非','只有','不管'],ans:0,exp:'除……以外 = ngoài… ra. 除非 là trừ phi (nêu điều kiện); 只有 đi với 才; 不管 đi với 都 — không ghép với 以外.'},
+  {wrong:'多运动能提高身体的____力，不容易生病。',opts:['免疫','免费','记忆','意志'],ans:0,exp:'免疫力 = sức miễn dịch của cơ thể. 免费 là miễn phí; 记忆力 là trí nhớ; 意志力 là ý chí — đều không phải sức chống bệnh.'},
+  {wrong:'他当上了经理，回村里的时候可____了，全村人都来看他。',opts:['风光','风景','风气','风度'],ans:0,exp:'Vẻ vang, nở mày nở mặt → 风光 (tính từ). 风景 là phong cảnh; 风气 (bài 6) là nếp chung; 风度 (bài 1) là phong thái.'}
 ];
 
 // ══════════════════════════════════════════
-// DỊCH — câu ghép, ôn từ HSK 6 bài 1–6 và HSK 4–5
+// DỊCH Việt → Trung — câu mới, dùng từ của bài + ôn ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Môn nào cậu ấy cũng giỏi, chỉ riêng viết văn là đối với cậu ấy hoàn toàn không phải chuyện dễ.',zh:'各科他都很擅长，唯独写作文对他来说并非易事。',py:'Gè kē tā dōu hěn shàncháng, wéidú xiě zuòwén duì tā lái shuō bìngfēi yìshì.',goiY:['……都……，唯独……','擅长','并非易事'],giai:'……都……，唯独…… (bài 6) tách riêng một ngoại lệ; "hoàn toàn không phải chuyện dễ" = 并非易事 — 并 nhấn mạnh phủ định, không cần thêm 是.'},
   {vi:'Do quá căng thẳng trước kỳ thi, cô ấy làm sai cả những câu mình biết làm.',zh:'由于考前过度紧张，致使她连会做的题也做错了。',py:'Yóuyú kǎo qián guòdù jǐnzhāng, zhìshǐ tā lián huì zuò de tí yě zuòcuò le.',goiY:['由于……，致使……','过度','连……也……'],giai:'致使 đứng đầu vế sau nêu kết quả KHÔNG mong muốn; sau 致使 là "người + hành động" (她……做错了). "Quá căng thẳng" = 过度紧张, không dịch 太过紧张的.'},
-  {vi:'Chuyện chọn ngành thật khiến tôi đau đầu, chỉ mong bố mẹ quyết thay mình, vậy mà họ lại bảo tôi tự quyết.',zh:'选专业的事真让我伤脑筋，恨不得爸妈替我做主，他们却让我自己决定。',py:'Xuǎn zhuānyè de shì zhēn ràng wǒ shāng nǎojīn, hènbude bà mā tì wǒ zuò zhǔ, tāmen què ràng wǒ zìjǐ juédìng.',goiY:['让……伤脑筋','恨不得','替……做主','却'],giai:'让 + người + 伤脑筋 = khiến ai đau đầu (có thể nói mạnh hơn: 伤透了脑筋); 恨不得 (bài 2) = chỉ mong; 替 + người + 做主 = quyết thay ai; 却 nối vế trái ngược mong đợi.'},
-  {vi:'Thay vì lo trước lo sau, chần chừ mãi không dám đăng ký, chi bằng mạnh dạn thử, cùng lắm thì thất bại một lần.',zh:'与其顾虑重重、迟迟不敢报名，不如勇于尝试，大不了失败一次。',py:'Yǔqí gùlǜ chóngchóng, chíchí bù gǎn bàomíng, bùrú yǒngyú chángshì, dàbuliǎo shībài yí cì.',goiY:['与其……不如……','顾虑重重','勇于','大不了'],giai:'与其 A 不如 B: người nói chọn B; 勇于 + động từ (尝试, bài 4); 大不了 (bài 6) nêu phương án xấu nhất vẫn chấp nhận được.'},
-  {vi:'Chỉ có không sợ vấp ngã mới tôi luyện được ý chí kiên định, nếu không thì hễ gặp khó khăn là sẽ muốn bỏ cuộc.',zh:'只有不畏惧挫折，才能磨炼出坚定的意志，否则一遇到困难就会想放弃。',py:'Zhǐyǒu bú wèijù cuòzhé, cái néng móliàn chū jiāndìng de yìzhì, fǒuzé yí yùdào kùnnan jiù huì xiǎng fàngqì.',goiY:['只有……才……','畏惧','挫折','否则'],giai:'只有……才…… (điều kiện duy nhất) + 否则 (nếu không thì) = ba vế; 畏惧 văn viết hơn 害怕, mang tân ngữ 挫折.'},
-  {vi:'Dù trận đấu lần này gặp thất bại thì cũng hoàn toàn không có nghĩa là em kém, mấu chốt nằm ở chỗ có rút ra được bài học từ đó hay không.',zh:'即使这次比赛遭遇了挫折，也并不意味着你不行，关键在于能不能从中吸取教训。',py:'Jíshǐ zhè cì bǐsài zāoyùle cuòzhé, yě bìng bú yìwèizhe nǐ bù xíng, guānjiàn zàiyú néng bu néng cóng zhōng xīqǔ jiàoxun.',goiY:['即使……也……','并不意味着','在于'],giai:'即使……也…… (giả thiết nhượng bộ); 并不意味着 = hoàn toàn không có nghĩa là; 在于 (于 = 在, về mặt): "nằm ở chỗ".'},
-  {vi:'Hiện nay nhiều bạn tranh nhau thi vào các ngành hot một cách mù quáng mà rất ít khi nghĩ xem mình thật sự giỏi gì, đến nỗi sau khi tốt nghiệp khó tìm việc.',zh:'现在许多同学争先恐后地盲目报考热门专业，却很少考虑自己真正擅长什么，以致毕业后就业困难。',py:'Xiànzài xǔduō tóngxué zhēngxiān-kǒnghòu de mángmù bàokǎo rèmén zhuānyè, què hěn shǎo kǎolǜ zìjǐ zhēnzhèng shàncháng shénme, yǐzhì bìyè hòu jiù yè kùnnan.',goiY:['争先恐后','盲目','以致','就业'],giai:'以致 đứng đầu vế cuối, nêu hệ quả xấu; hai trạng ngữ 争先恐后地 + 盲目 đứng trước 报考. 盲目 ôn bài 4.'},
+  {vi:'Thay vì lo trước lo sau, mãi không dám đăng ký, chi bằng mạnh dạn thử, cùng lắm thì thất bại một lần.',zh:'与其顾虑重重、一直不敢报名，不如勇于尝试，大不了失败一次。',py:'Yǔqí gùlǜ chóngchóng, yìzhí bù gǎn bàomíng, bùrú yǒngyú chángshì, dàbuliǎo shībài yí cì.',goiY:['与其……不如……','顾虑重重','勇于','大不了'],giai:'与其 A 不如 B: người nói chọn B; 勇于 + động từ (尝试, bài 4); 大不了 (bài 6) nêu phương án xấu nhất vẫn chấp nhận được.'},
+  {vi:'Một người nếu luôn sợ vấp ngã thì rất khó tôi luyện được ý chí kiên định, hễ gặp khó khăn là sẽ muốn bỏ cuộc.',zh:'一个人如果总是畏惧挫折，就很难锻炼出坚定的意志，一遇到困难就会想放弃。',py:'Yí ge rén rúguǒ zǒngshì wèijù cuòzhé, jiù hěn nán duànliàn chū jiāndìng de yìzhì, yí yùdào kùnnan jiù huì xiǎng fàngqì.',goiY:['如果……就……','畏惧','挫折','一……就……'],giai:'畏惧 (văn viết hơn 害怕) mang tân ngữ 挫折; "tôi luyện được" = 锻炼出 (bổ ngữ xu hướng 出 = tạo ra được); 一……就…… = hễ… là….'},
   {vi:'Đã là chuyện chuyển trường cậu tự quyết rồi thì hãy sớm nói với bố mẹ đi, kẻo họ nghe từ người khác rồi trong lòng không vui.',zh:'既然转学的事你已经自己做主了，就及早告诉父母吧，省得他们从别人那里知道后心里不舒服。',py:'Jìrán zhuǎnxué de shì nǐ yǐjīng zìjǐ zuò zhǔ le, jiù jízǎo gàosu fùmǔ ba, shěngde tāmen cóng biérén nàlǐ zhīdào hòu xīnli bù shūfu.',goiY:['既然……就……','做主','及早','省得'],giai:'既然 + sự thật, 就 + lời khuyên; 及早 (sớm, trước khi muộn) đứng trước động từ; 省得 = kẻo, đỡ phải — vế mục đích tránh điều không hay.'},
-  {vi:'Tốt nghiệp trường danh tiếng hoàn toàn không phải là sự bảo đảm cho thành công; nếu không không ngừng nâng cao năng lực của mình thì ưu thế ngày trước cũng sẽ dần biến mất.',zh:'毕业于名牌大学并非成功的保证，如果不能不断提升自己的能力，昔日的优势也会渐渐消失。',py:'Bìyè yú míngpái dàxué bìngfēi chénggōng de bǎozhèng, rúguǒ bù néng búduàn tíshēng zìjǐ de nénglì, xīrì de yōushì yě huì jiànjiàn xiāoshī.',goiY:['毕业于','并非','如果……也……','昔日'],giai:'毕业于 + nơi (于 = 在, văn viết); 并非 bác bỏ quan niệm "trường danh tiếng = thành công"; 如果……也…… nêu hệ quả dù có ưu thế.'},
-  {vi:'Một người sở dĩ luôn do dự không quyết, không phải vì bẩm sinh thiếu khả năng phán đoán, mà là vì sợ mắc lỗi, không dám gánh vác trách nhiệm.',zh:'一个人之所以总是犹豫不决，并非因为他天生缺乏判断力，而是因为他害怕犯错，不敢承担责任。',py:'Yí ge rén zhī suǒyǐ zǒngshì yóuyù bù jué, bìngfēi yīnwèi tā tiānshēng quēfá pànduànlì, ér shì yīnwèi tā hàipà fàn cuò, bù gǎn chéngdān zérèn.',goiY:['之所以……','并非……而是……','天生'],giai:'之所以 (kết quả) + 并非因为……而是因为…… (bác bỏ nguyên nhân sai, nêu nguyên nhân đúng) — câu khó nhất: giữ đúng thứ tự kết quả trước, nguyên nhân sau.'}
+  {vi:'Tốt nghiệp trường danh tiếng hoàn toàn không phải là sự bảo đảm cho thành công; nếu không không ngừng nâng cao năng lực của mình thì ưu thế ngày trước cũng sẽ dần biến mất.',zh:'毕业于名牌大学并非成功的保证，如果不能不断提升自己的能力，昔日的优势也会慢慢消失。',py:'Bìyè yú míngpái dàxué bìngfēi chénggōng de bǎozhèng, rúguǒ bù néng búduàn tíshēng zìjǐ de nénglì, xīrì de yōushì yě huì mànmàn xiāoshī.',goiY:['毕业于','并非','如果……也……','昔日'],giai:'毕业于 + nơi (于 = 在, văn viết); 并非 bác bỏ quan niệm "trường danh tiếng = thành công"; 如果……也…… nêu hệ quả dù có ưu thế.'},
+  {vi:'Một người sở dĩ mãi không quyết được, không phải vì bẩm sinh thiếu khả năng phán đoán, mà là vì sợ mắc lỗi, không dám gánh vác trách nhiệm.',zh:'一个人之所以总是做不了决定，并非因为他天生缺乏判断力，而是因为他害怕犯错，不敢承担责任。',py:'Yí ge rén zhī suǒyǐ zǒngshì zuò bu liǎo juédìng, bìngfēi yīnwèi tā tiānshēng quēfá pànduànlì, ér shì yīnwèi tā hàipà fàn cuò, bù gǎn chéngdān zérèn.',goiY:['之所以……','并非……而是……','天生'],giai:'之所以 (kết quả) + 并非因为……而是因为…… (bác bỏ nguyên nhân sai, nêu nguyên nhân đúng) — câu khó nhất: giữ đúng thứ tự kết quả trước, nguyên nhân sau.'}
 ];
 
-// Chiều Trung → Việt — bám ý bài khoá, nội dung khác chiều trên
+// ══════════════════════════════════════════
+// Dịch Trung → Việt — câu mới, không trùng chiều trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Tiểu Vương tốt nghiệp từ ba năm trước, suốt ngày giao du với những con số, thấy công việc nhàm chán lại áp lực, đang đau đầu vì chuyện đổi việc.',zh:'毕业于三年前的小王成天和数字打交道，觉得工作枯燥又有压力，正为换工作的事伤脑筋。',py:'Bìyè yú sān nián qián de Xiǎo Wáng chéngtiān hé shùzì dǎ jiāodao, juéde gōngzuò kūzào yòu yǒu yālì, zhèng wèi huàn gōngzuò de shì shāng nǎojīn.',goiY:['毕业于 = tốt nghiệp (vào lúc)','成天 = suốt ngày','枯燥 = nhàm chán','伤脑筋 = đau đầu'],giai:'毕业于三年前的小王: cụm định ngữ dài đặt trước tên — tiếng Việt nên tách thành vế "Tiểu Vương tốt nghiệp từ ba năm trước"; 和……打交道 = giao du, tiếp xúc với.'},
-  {vi:'Tiểu Vương không chắc mình giỏi gì, chỉ sợ lỡ chọn sai thì phải trả cái giá lớn về thời gian.',zh:'小王不确定自己擅长什么，生怕万一选错了，要付出很大的时间成本。',py:'Xiǎo Wáng bú quèdìng zìjǐ shàncháng shénme, shēngpà wànyī xuǎncuò le, yào fùchū hěn dà de shíjiān chéngběn.',goiY:['擅长 = giỏi về','生怕 = chỉ sợ','万一 = lỡ như','成本 = cái giá, chi phí'],giai:'时间成本 dịch "cái giá về thời gian / tốn thời gian", không dịch "giá thành thời gian"; 生怕 mạnh hơn 怕.'},
-  {vi:'Chuyên gia tâm lý cho rằng việc bi quan quá mức về tương lai đã khiến Tiểu Vương trở nên bồn chồn, căng thẳng, lo trước lo sau.',zh:'心理专家认为，对未来过度悲观致使小王变得急躁、紧张、顾虑重重。',py:'Xīnlǐ zhuānjiā rènwéi, duì wèilái guòdù bēiguān zhìshǐ Xiǎo Wáng biàn de jízào, jǐnzhāng, gùlǜ chóngchóng.',goiY:['过度 = quá mức','致使 = khiến cho','急躁 = bồn chồn','顾虑重重 = lo trước lo sau'],giai:'Chủ ngữ của 致使 là cả cụm 对未来过度悲观 — dịch thêm "việc" cho tự nhiên: "việc bi quan quá mức … đã khiến …".'},
-  {vi:'Anh ấy luôn lo một khi chọn sai sẽ hối hận cả đời, thật ra những người trẻ giống anh ấy không phải số ít.',zh:'他总担心一旦选错就会终身悔恨，其实类似他这样的年轻人并非少数。',py:'Tā zǒng dānxīn yídàn xuǎncuò jiù huì zhōngshēn huǐhèn, qíshí lèisì tā zhèyàng de niánqīngrén bìngfēi shǎoshù.',goiY:['一旦……就…… = một khi … thì …','终身悔恨 = hối hận cả đời','类似 = giống như','并非少数 = không phải số ít'],giai:'其实 chuyển ý "thật ra"; 类似他这样的年轻人 = những người trẻ giống như anh ấy; 并非少数 có thể dịch thoáng "không hề hiếm".'},
-  {vi:'Jobs cho rằng khả năng phán đoán chính xác không phải bẩm sinh mà đến từ sự tích luỹ kinh nghiệm, còn kinh nghiệm lại đến từ vô số lần phán đoán sai.',zh:'乔布斯认为，精确的判断力并不是天生的，而是来自经验的积累，而经验又来自无数错误的判断。',py:'Qiáobùsī rènwéi, jīngquè de pànduànlì bìng bú shì tiānshēng de, ér shì láizì jīngyàn de jīlěi, ér jīngyàn yòu láizì wúshù cuòwù de pànduàn.',goiY:['精确 = chính xác','天生 = bẩm sinh','不是……而是…… = không phải … mà là …','来自 = đến từ'],giai:'Hai chữ 而 khác nhau: 而是 (mà là) trong cặp 不是……而是……, còn 而经验又…… = "còn kinh nghiệm thì lại …" (nối tiếp chuỗi nguyên nhân).'},
-  {vi:'Con người chỉ có trong thực tiễn và vấp ngã mới có được ý chí kiên định, không sợ thất bại, dám gánh vác trách nhiệm.',zh:'人只有在实践和挫折中才能具有坚定的意志力，不畏惧失败，勇于承担责任。',py:'Rén zhǐyǒu zài shíjiàn hé cuòzhé zhōng cái néng jùyǒu jiāndìng de yìzhìlì, bú wèijù shībài, yǒngyú chéngdān zérèn.',goiY:['只有……才…… = chỉ có … mới …','挫折 = vấp ngã','畏惧 = sợ hãi','勇于 = dám'],giai:'只有 đặt trước cụm 在……中 (điều kiện), 才 trước động từ; 不畏惧……，勇于…… là hai vế song song — dịch "không sợ …, dám …".'},
-  {vi:'Cùng với toàn cầu hoá kinh tế, ngay cả những doanh nghiệp hàng đầu từng một thời vẻ vang vô hạn cũng có thể thua lỗ, thậm chí phá sản.',zh:'伴随着经济全球化，就连昔日风光无限的一流企业也可能亏损甚至倒闭。',py:'Bànsuízhe jīngjì quánqiúhuà, jiù lián xīrì fēngguāng wúxiàn de yīliú qǐyè yě kěnéng kuīsǔn shènzhì dǎobì.',goiY:['伴随着 = cùng với','连……也…… = ngay cả … cũng …','风光无限 = vẻ vang vô hạn','亏损 = thua lỗ'],giai:'连……也…… nhấn mạnh trường hợp khó ngờ nhất; 甚至 tăng tiến (thua lỗ → thậm chí phá sản). 昔日 dịch "từng một thời / ngày trước".'},
-  {vi:'Một cuộc khủng hoảng tài chính có thể khiến doanh nghiệp lãi nhiều năm liền buộc phải cắt giảm nhân sự; điều đó có nghĩa là quyết định dù sáng suốt đến mấy cũng có thể trở nên lỗi thời.',zh:'一场金融危机就可能使连年盈利的企业不得不裁员，这意味着再英明的决定也可能过时。',py:'Yì cháng jīnróng wēijī jiù kěnéng shǐ liánnián yínglì de qǐyè bùdébù cáiyuán, zhè yìwèizhe zài yīngmíng de juédìng yě kěnéng guòshí.',goiY:['使……不得不…… = khiến … buộc phải …','危机 = khủng hoảng','意味着 = có nghĩa là','再……也…… = dù … đến mấy cũng …'],giai:'危机 dịch "khủng hoảng" chứ không phải "nguy cơ"; 再 + adj + 的 + N + 也…… = dù … đến mấy cũng ….'},
-  {vi:'Do mọi người tranh nhau thi vào các ngành hot, những ngành này thừa nhân lực, sinh viên tốt nghiệp ngày càng khó tìm việc.',zh:'由于大家争先恐后地报考热门专业，致使这些专业人才饱和，毕业生就业越来越难。',py:'Yóuyú dàjiā zhēngxiān-kǒnghòu de bàokǎo rèmén zhuānyè, zhìshǐ zhèxiē zhuānyè réncái bǎohé, bìyèshēng jiù yè yuè lái yuè nán.',goiY:['由于……，致使…… = do … nên …','争先恐后 = tranh nhau','热门 = hot, được ưa chuộng','饱和 = bão hoà'],giai:'由于……，致使…… nêu nguyên nhân – kết quả xấu; 人才饱和 dịch thoáng "thừa nhân lực" tự nhiên hơn "nhân tài bão hoà".'},
-  {vi:'Phạm vài lỗi nhỏ hoàn toàn không phải chuyện xấu, ngược lại còn tăng sức đề kháng cho tâm hồn; chỉ có không ngừng nâng cao năng lực ra quyết định thì mới thật sự làm chủ được cuộc đời mình.',zh:'犯些小错并非坏事，反而能增强心灵免疫力；只有不断提升决策能力，才能真正为自己的人生做主。',py:'Fàn xiē xiǎo cuò bìngfēi huàishì, fǎn\'ér néng zēngqiáng xīnlíng miǎnyìlì; zhǐyǒu búduàn tíshēng juécè nénglì, cái néng zhēnzhèng wèi zìjǐ de rénshēng zuò zhǔ.',goiY:['并非 = hoàn toàn không phải','反而 = ngược lại','心灵免疫力 = sức đề kháng tâm hồn','只有……才…… = chỉ có … mới …'],giai:'Dấu ；chia câu thành hai ý lớn: (1) 并非……反而…… lật ngược cách nhìn về lỗi sai; (2) 只有……才…… nêu điều kiện. 心灵 dịch "tâm hồn", không dịch "tâm linh".'}
+  {vi:'Cùng với sự phát triển của thành phố, giao thông ở đây ngày càng thuận tiện.',zh:'伴随着城市的发展，这里的交通越来越方便了。',py:'Bànsuízhe chéngshì de fāzhǎn, zhèlǐ de jiāotōng yuè lái yuè fāngbiàn le.',goiY:['伴随着 = cùng với, đi kèm','越来越 = ngày càng'],giai:'伴随着 + quá trình (văn viết) dịch "cùng với…"; không dịch "đi kèm theo" cứng nhắc.'},
+  {vi:'Đây là một quyết định quan trọng, chúng ta không được nóng vội, phải nghe thêm ý kiến của mọi người.',zh:'这是一个重大的决策，我们不能急躁，要多听听大家的意见。',py:'Zhè shì yí ge zhòngdà de juécè, wǒmen bù néng jízào, yào duō tīngting dàjiā de yìjiàn.',goiY:['决策 = quyết sách, quyết định lớn','急躁 = nóng vội'],giai:'决策 là quyết định mang tính chiến lược (của lãnh đạo, tổ chức); 重大的决策 = quyết định hệ trọng.'},
+  {vi:'Du lịch không chỉ cho ta ngắm cảnh đẹp mà còn giúp tâm hồn được nghỉ ngơi.',zh:'旅行不仅能让人看到美丽的风景，也能让心灵得到休息。',py:'Lǚxíng bùjǐn néng ràng rén kàndào měilì de fēngjǐng, yě néng ràng xīnlíng dédào xiūxi.',goiY:['心灵 = tâm hồn','不仅……也…… = không chỉ… mà còn…'],giai:'心灵 dịch "tâm hồn"; 让心灵得到休息 = giúp tâm hồn được nghỉ ngơi.'},
+  {vi:'Mấy năm nay, sinh viên tốt nghiệp ngành này tìm việc ngày càng khó.',zh:'这几年，这个专业的毕业生就业越来越难。',py:'Zhè jǐ nián, zhège zhuānyè de bìyèshēng jiùyè yuè lái yuè nán.',goiY:['毕业生 = sinh viên tốt nghiệp','就业 = có việc làm'],giai:'就业难 dịch "khó tìm việc"; 就业 là động từ li hợp nhưng thường dùng như danh từ.'},
+  {vi:'Nhiều người trẻ khổ sở vì không tìm được công việc vừa ý.',zh:'很多年轻人苦于找不到称心如意的工作。',py:'Hěn duō niánqīngrén kǔyú zhǎo bu dào chènxīn-rúyì de gōngzuò.',goiY:['苦于 = khổ vì (于 chỉ nguyên nhân)','称心如意 = vừa lòng hợp ý'],giai:'苦于 + điều làm mình khổ (văn viết); 称心如意的工作 = công việc vừa ý.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1638,9 +1580,9 @@ var writingData = {
     'Có kể trải nghiệm THẬT, cụ thể của mình (có thời gian, sự việc, chi tiết) thay vì nói chung chung không?'
   ],
   model:{
-    zh:'（题目：判断力来自哪里）高一快结束时，我正为选文科还是理科的事伤脑筋。我擅长写作，对历史也很感兴趣，可身边的同学都争先恐后地选了理科，说理科将来就业机会多。我怕万一选错了，会终身悔恨。过度的担心致使我顾虑重重，整整一个星期都犹豫不决。后来，班主任对我说：“热门的选择并非最适合你的选择，你应该想一想自己真正擅长什么。”她的话打消了我的顾虑。我又认真比较了两科的成绩，发现我的文科成绩一直比理科好得多。这些因素促使我最终勇于为自己做主，选了文科。事实证明，这个决策是正确的。进了文科班以后，我学得越来越有兴趣，成绩也日益提高。当然，我也遇到过挫折，第一次月考就没考好，可我没有灰心，而是认真总结了原因。通过这件事，我明白了一个道理：别人的看法固然重要，但自己的人生要由自己做主。精确的判断力不是天生的，而是在一次次实践和挫折中得来的。每做一次决定，我的判断力就提高一点儿。以后再遇到问题，我会及早分析、果断选择，不再被过度的担心束缚。',
-    py:'(Tímù: Pànduànlì láizì nǎlǐ) Gāo-yī kuài jiéshù shí, wǒ zhèng wèi xuǎn wénkē háishi lǐkē de shì shāng nǎojīn. Wǒ shàncháng xiězuò, duì lìshǐ yě hěn gǎn xìngqù, kě shēnbiān de tóngxué dōu zhēngxiān-kǒnghòu de xuǎnle lǐkē, shuō lǐkē jiānglái jiù yè jīhuì duō. Wǒ pà wànyī xuǎncuò le, huì zhōngshēn huǐhèn. Guòdù de dānxīn zhìshǐ wǒ gùlǜ chóngchóng, zhěngzhěng yí ge xīngqī dōu yóuyù bù jué. Hòulái, bānzhǔrèn duì wǒ shuō: "Rèmén de xuǎnzé bìngfēi zuì shìhé nǐ de xuǎnzé, nǐ yīnggāi xiǎng yi xiǎng zìjǐ zhēnzhèng shàncháng shénme." Tā de huà dǎxiāole wǒ de gùlǜ. Wǒ yòu rènzhēn bǐjiàole liǎng kē de chéngjì, fāxiàn wǒ de wénkē chéngjì yìzhí bǐ lǐkē hǎo de duō. Zhèxiē yīnsù cùshǐ wǒ zuìzhōng yǒngyú wèi zìjǐ zuò zhǔ, xuǎnle wénkē. Shìshí zhèngmíng, zhège juécè shì zhèngquè de. Jìnle wénkē bān yǐhòu, wǒ xué de yuè lái yuè yǒu xìngqù, chéngjì yě rìyì tígāo. Dāngrán, wǒ yě yùdàoguo cuòzhé, dì-yī cì yuèkǎo jiù méi kǎohǎo, kě wǒ méiyǒu huīxīn, ér shì rènzhēn zǒngjiéle yuányīn. Tōngguò zhè jiàn shì, wǒ míngbaile yí ge dàolǐ: biérén de kànfǎ gùrán zhòngyào, dàn zìjǐ de rénshēng yào yóu zìjǐ zuò zhǔ. Jīngquè de pànduànlì bú shì tiānshēng de, ér shì zài yí cìcì shíjiàn hé cuòzhé zhōng délái de. Měi zuò yí cì juédìng, wǒ de pànduànlì jiù tígāo yìdiǎnr. Yǐhòu zài yùdào wèntí, wǒ huì jízǎo fēnxī, guǒduàn xuǎnzé, bú zài bèi guòdù de dānxīn shùfù.',
-    vn:'(Nhan đề: Khả năng phán đoán đến từ đâu) Lúc lớp 10 sắp kết thúc, tôi đang đau đầu vì chuyện chọn ban xã hội hay ban tự nhiên. Tôi giỏi viết văn, cũng rất thích lịch sử, nhưng bạn bè xung quanh đều tranh nhau chọn ban tự nhiên, bảo rằng sau này học tự nhiên dễ kiếm việc hơn. Tôi sợ lỡ chọn sai sẽ hối hận cả đời. Nỗi lo quá mức khiến tôi lo trước lo sau, suốt một tuần liền không quyết được. Sau đó, cô chủ nhiệm nói với tôi: "Lựa chọn đang hot hoàn toàn không phải là lựa chọn hợp với em nhất, em nên nghĩ xem mình thật sự giỏi gì." Lời cô đã xua tan băn khoăn của tôi. Tôi lại nghiêm túc so sánh điểm hai khối, phát hiện điểm các môn xã hội của tôi luôn tốt hơn hẳn môn tự nhiên. Những yếu tố ấy thúc đẩy tôi cuối cùng mạnh dạn tự quyết định, chọn ban xã hội. Thực tế chứng minh, quyết định này là đúng đắn. Vào lớp xã hội rồi, tôi học ngày càng hứng thú, thành tích cũng ngày một nâng cao. Đương nhiên, tôi cũng từng vấp ngã, ngay kỳ kiểm tra tháng đầu tiên đã làm bài không tốt, nhưng tôi không nản lòng mà nghiêm túc tổng kết nguyên nhân. Qua việc này, tôi hiểu ra một đạo lý: ý kiến của người khác tất nhiên quan trọng, nhưng cuộc đời mình phải do chính mình làm chủ. Khả năng phán đoán chính xác không phải bẩm sinh, mà có được qua hết lần thực tiễn và vấp ngã này đến lần khác. Mỗi lần ra một quyết định, khả năng phán đoán của tôi lại tiến bộ thêm một chút. Sau này gặp vấn đề, tôi sẽ sớm phân tích, quyết đoán lựa chọn, không để nỗi lo quá mức trói buộc mình nữa.'
+    zh:'（题目：判断力来自哪里）高三快结束时，我正为选什么专业的事伤脑筋。我擅长写作，对历史也很感兴趣，可身边的同学都争先恐后地报考了计算机专业，说这个专业将来就业机会多。我怕万一选错了，会终身悔恨。过度的担心致使我顾虑重重，整整一个星期都没能做出决定。后来，我的老师对我说：“热门的选择并非最适合你的选择，你应该想一想自己真正擅长什么。”她的话让我放下了顾虑。我又认真比较了各门课的成绩，发现我的历史和写作成绩一直比数学好得多。这些因素促使我最后勇于为自己做主，报考了历史专业。事实证明，这个决策是正确的。上了大学以后，我学得越来越有兴趣，成绩也日益提高。当然，我也遇到过挫折，第一次考试就没考好，可我没有灰心，而是认真总结了原因。通过这件事，我明白了一个道理：别人的看法固然重要，但自己的人生要由自己做主。精确的判断力不是天生的，而是在一次次实践和挫折中得来的。每做一次决定，我的判断力就提高一点儿。以后再遇到问题，我会及早分析、果断选择，不再被过度的担心影响。',
+    py:'(Tímù: Pànduànlì láizì nǎlǐ) Gāo-sān kuài jiéshù shí, wǒ zhèng wèi xuǎn shénme zhuānyè de shì shāng nǎojīn. Wǒ shàncháng xiězuò, duì lìshǐ yě hěn gǎn xìngqù, kě shēnbiān de tóngxué dōu zhēngxiān-kǒnghòu de bàokǎole jìsuànjī zhuānyè, shuō zhège zhuānyè jiānglái jiù yè jīhuì duō. Wǒ pà wànyī xuǎncuò le, huì zhōngshēn huǐhèn. Guòdù de dānxīn zhìshǐ wǒ gùlǜ chóngchóng, zhěngzhěng yí ge xīngqī dōu méi néng zuòchū juédìng. Hòulái, wǒ de lǎoshī duì wǒ shuō: "Rèmén de xuǎnzé bìngfēi zuì shìhé nǐ de xuǎnzé, nǐ yīnggāi xiǎng yi xiǎng zìjǐ zhēnzhèng shàncháng shénme." Tā de huà ràng wǒ fàngxiàle gùlǜ. Wǒ yòu rènzhēn bǐjiàole gè mén kè de chéngjì, fāxiàn wǒ de lìshǐ hé xiězuò chéngjì yìzhí bǐ shùxué hǎo de duō. Zhèxiē yīnsù cùshǐ wǒ zuìhòu yǒngyú wèi zìjǐ zuò zhǔ, bàokǎole lìshǐ zhuānyè. Shìshí zhèngmíng, zhège juécè shì zhèngquè de. Shàngle dàxué yǐhòu, wǒ xué de yuè lái yuè yǒu xìngqù, chéngjì yě rìyì tígāo. Dāngrán, wǒ yě yùdàoguo cuòzhé, dì-yī cì kǎoshì jiù méi kǎohǎo, kě wǒ méiyǒu huīxīn, ér shì rènzhēn zǒngjiéle yuányīn. Tōngguò zhè jiàn shì, wǒ míngbaile yí ge dàolǐ: biérén de kànfǎ gùrán zhòngyào, dàn zìjǐ de rénshēng yào yóu zìjǐ zuò zhǔ. Jīngquè de pànduànlì bú shì tiānshēng de, ér shì zài yí cìcì shíjiàn hé cuòzhé zhōng délái de. Měi zuò yí cì juédìng, wǒ de pànduànlì jiù tígāo yìdiǎnr. Yǐhòu zài yùdào wèntí, wǒ huì jízǎo fēnxī, guǒduàn xuǎnzé, bú zài bèi guòdù de dānxīn yǐngxiǎng.',
+    vn:'(Nhan đề: Khả năng phán đoán đến từ đâu) Lúc lớp 12 sắp kết thúc, tôi đang đau đầu vì chuyện chọn ngành gì. Tôi giỏi viết văn, cũng rất thích lịch sử, nhưng bạn bè xung quanh đều tranh nhau thi vào ngành máy tính, bảo rằng sau này ngành đó dễ kiếm việc hơn. Tôi sợ lỡ chọn sai sẽ hối hận cả đời. Nỗi lo quá mức khiến tôi lo trước lo sau, suốt một tuần liền không quyết được. Sau đó, cô giáo nói với tôi: "Lựa chọn đang hot hoàn toàn không phải là lựa chọn hợp với em nhất, em nên nghĩ xem mình thật sự giỏi gì." Lời cô giúp tôi gác lại băn khoăn. Tôi lại nghiêm túc so sánh điểm các môn, phát hiện điểm lịch sử và viết văn của tôi luôn tốt hơn hẳn môn toán. Những yếu tố ấy thúc đẩy tôi cuối cùng mạnh dạn tự quyết định, thi vào ngành lịch sử. Thực tế chứng minh, quyết định này là đúng đắn. Lên đại học rồi, tôi học ngày càng hứng thú, thành tích cũng ngày một nâng cao. Đương nhiên, tôi cũng từng vấp ngã, ngay kỳ thi đầu tiên đã làm bài không tốt, nhưng tôi không nản lòng mà nghiêm túc tổng kết nguyên nhân. Qua việc này, tôi hiểu ra một đạo lý: ý kiến của người khác tất nhiên quan trọng, nhưng cuộc đời mình phải do chính mình làm chủ. Khả năng phán đoán chính xác không phải bẩm sinh, mà có được qua hết lần thực tiễn và vấp ngã này đến lần khác. Mỗi lần ra một quyết định, khả năng phán đoán của tôi lại tiến bộ thêm một chút. Sau này gặp vấn đề, tôi sẽ sớm phân tích, quyết đoán lựa chọn, không để nỗi lo quá mức chi phối mình nữa.'
   }
 };
 
@@ -1648,198 +1590,131 @@ var writingData = {
 // LUYỆN NÓI — đúng bảng 练习5 của sách: 根据提示，简述课文主要内容
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Đây là bảng bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b>. Mỗi câu hỏi là một dòng của bảng, cột gợi ý giữ nguyên như sách. Bấm loa nghe câu hỏi, <b>tự ghi âm câu trả lời trước</b> rồi mới mở câu mẫu. Cố dùng đúng các từ trong gợi ý.',
-  questions:[
-    {q_zh:'为什么小王最近为工作的事伤脑筋？',
-     q_vn:'Vì sao dạo này Tiểu Vương đau đầu vì chuyện công việc?',
-     hint:'①目前的工作…… ②对……感兴趣，可……，怕……',
-     sample:'小王目前的工作是会计，成天和数字打交道，枯燥而且压力大。他对艺术、心理学都感兴趣，可不确定自己真正擅长什么，怕万一选错了，要付出很大的时间成本和经济成本。',
-     sample_vn:'Công việc hiện tại của Tiểu Vương là kế toán, suốt ngày làm với những con số, vừa nhàm chán vừa áp lực. Anh thích nghệ thuật và tâm lý học, nhưng không chắc mình thật sự giỏi gì, sợ lỡ chọn sai thì phải trả giá lớn về thời gian và tiền bạc.',
-     note:'Hai ý: (1) công việc hiện tại 枯燥而且压力大; (2) muốn đổi nhưng sợ — dùng đủ khung 对……感兴趣，可……，怕…….'},
-    {q_zh:'什么原因使小王出现急躁、紧张、顾虑重重的现象？',
-     q_vn:'Nguyên nhân gì khiến Tiểu Vương xuất hiện hiện tượng bồn chồn, căng thẳng, lo trước lo sau?',
-     hint:'①对……缺乏…… ②对……过度悲观：不敢想……；无法承受……；一旦选错，……',
-     sample:'心理专家认为，是对自己缺乏信心，对未来过度悲观致使小王出现了这些现象。他不敢想最坏的结果是什么，也无法承受这个结果，觉得一旦选错，就会终身悔恨。',
-     sample_vn:'Chuyên gia tâm lý cho rằng chính việc thiếu tự tin vào bản thân và bi quan quá mức về tương lai đã khiến Tiểu Vương như vậy. Anh không dám nghĩ kết quả tệ nhất là gì, cũng không chịu nổi kết quả ấy, cảm thấy một khi chọn sai sẽ hối hận cả đời.',
-     note:'Dùng điểm ngữ pháp 致使 để nối nguyên nhân – kết quả; ba biểu hiện bi quan nói liền bằng 不敢……，也无法……，觉得一旦……就…….'},
-    {q_zh:'乔布斯的智慧从哪里来？',
-     q_vn:'Trí tuệ của Steve Jobs từ đâu mà có?',
-     hint:'智慧←精确的判断力←经验的积累←无数错误的判断',
-     sample:'乔布斯的智慧来自精确的判断力，精确的判断力来自经验的积累，而经验又来自无数错误的判断。',
-     sample_vn:'Trí tuệ của Jobs đến từ khả năng phán đoán chính xác, khả năng phán đoán chính xác đến từ tích luỹ kinh nghiệm, còn kinh nghiệm lại đến từ vô số lần phán đoán sai.',
-     note:'Nói theo chuỗi mũi tên bằng 来自; mắt xích cuối nối bằng 而……又来自…….'},
-    {q_zh:'做决定的能力是怎么得来的？',
-     q_vn:'Năng lực ra quyết định có được bằng cách nào?',
-     hint:'通过……得来的，在这个过程中，人同时具有了……，不畏惧……，勇于……',
-     sample:'做决定的能力不是天生的，是通过实践和挫折得来的。在这个过程中，人同时具有了坚定的意志力和敏锐的判断力，不畏惧付出和失败，勇于承担责任，这就是成长。',
-     sample_vn:'Năng lực ra quyết định không phải bẩm sinh, mà có được qua thực tiễn và vấp ngã. Trong quá trình ấy, con người đồng thời có được ý chí kiên định và khả năng phán đoán nhạy bén, không sợ bỏ công sức và thất bại, dám gánh vác trách nhiệm — đó chính là trưởng thành.',
-     note:'不是天生的，是通过……得来的; 不畏惧 + danh từ, 勇于 + động từ — hai vế song song.'},
-    {q_zh:'为什么说生活中的不确定因素日益增多？',
-     q_vn:'Vì sao nói những yếu tố bất định trong cuộc sống ngày càng tăng?',
-     hint:'①世界一流企业也会…… ②金融危机使……不得不……',
-     sample:'伴随着经济全球化，昔日风光无限的世界一流企业也会亏损，也会倒闭；一次金融危机，就会使一些连年盈利、运行很好的企业不得不裁员。',
-     sample_vn:'Cùng với toàn cầu hoá kinh tế, những doanh nghiệp hàng đầu thế giới từng vẻ vang vô hạn cũng có thể thua lỗ, phá sản; chỉ một cuộc khủng hoảng tài chính cũng khiến những doanh nghiệp lãi liên tục, vận hành tốt buộc phải cắt giảm nhân sự.',
-     note:'Mở bằng 伴随着经济全球化; 也会……，也会…… liệt kê; câu 使……不得不…… (gây khiến + buộc phải).'},
-    {q_zh:'为什么说无论你怎么选择，都不太可能选一份称心如意的工作安安稳稳过一辈子？',
-     q_vn:'Vì sao nói dù bạn chọn thế nào cũng khó chọn được một công việc như ý rồi yên ổn cả đời?',
-     hint:'①经济环境……，企业寿命……，人们要经历…… ②……报考热门专业，以致…… ③新职业的出现，……',
-     sample:'由于经济环境的不确定，企业的寿命越来越短，人们要经历更多次的职业选择。除此以外，人们争先恐后报考热门专业，以致人才饱和，就业困难。而新职业的出现，需要新型人才的加入，谁能够及早抓住机会，谁就赢得了机遇。',
-     sample_vn:'Do môi trường kinh tế bất định, tuổi thọ doanh nghiệp ngày càng ngắn, con người phải trải qua nhiều lần chọn nghề hơn. Ngoài ra, mọi người tranh nhau thi vào ngành hot, đến nỗi nhân lực bão hoà, khó tìm việc. Còn nghề mới xuất hiện lại cần nhân lực kiểu mới, ai sớm nắm được cơ hội thì người đó giành được thời cơ.',
-     note:'Ba ý nối bằng 由于……，除此以外……，而……; kết bằng câu hô ứng 谁……，谁就…….'}
+  intro: 'Đây là bảng bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b>. Mỗi câu hỏi là một dòng của bảng, cột gợi ý giữ nguyên như sách. Bấm loa nghe câu hỏi, <b>tự ghi âm câu trả lời trước</b> rồi mới mở câu mẫu. Cố dùng đúng các từ trong gợi ý.',
+  questions: [
+    {q_zh:'为什么小王最近为工作的事伤脑筋？',q_vn:'Vì sao dạo này Tiểu Vương đau đầu vì chuyện công việc?',hint:'①目前的工作…… ②对……感兴趣，可……，怕……',sample:'小王目前的工作是会计，成天和数字打交道，枯燥而且压力大。他对艺术、心理学都感兴趣，可不确定自己真正擅长什么，怕万一选错了，要付出很大的时间成本和经济成本。',sample_vn:'Công việc hiện tại của Tiểu Vương là kế toán, suốt ngày làm với những con số, vừa nhàm chán vừa áp lực. Anh thích nghệ thuật và tâm lý học, nhưng không chắc mình thật sự giỏi gì, sợ lỡ chọn sai thì phải trả giá lớn về thời gian và tiền bạc.',note:'Hai ý: (1) công việc hiện tại 枯燥而且压力大; (2) muốn đổi nhưng sợ — dùng đủ khung 对……感兴趣，可……，怕…….'},
+    {q_zh:'什么原因使小王出现急躁、紧张、顾虑重重的现象？',q_vn:'Nguyên nhân gì khiến Tiểu Vương xuất hiện hiện tượng bồn chồn, căng thẳng, lo trước lo sau?',hint:'①对……缺乏…… ②对……过度悲观：不敢想……；无法承受……；一旦选错，……',sample:'心理专家认为，是对自己缺乏信心，对未来过度悲观致使小王出现了这些现象。他不敢想最坏的结果是什么，也无法承受这个结果，觉得一旦选错，就会终身悔恨。',sample_vn:'Chuyên gia tâm lý cho rằng chính việc thiếu tự tin vào bản thân và bi quan quá mức về tương lai đã khiến Tiểu Vương như vậy. Anh không dám nghĩ kết quả tệ nhất là gì, cũng không chịu nổi kết quả ấy, cảm thấy một khi chọn sai sẽ hối hận cả đời.',note:'Dùng điểm ngữ pháp 致使 để nối nguyên nhân – kết quả; ba biểu hiện bi quan nói liền bằng 不敢……，也无法……，觉得一旦……就…….'},
+    {q_zh:'乔布斯的智慧从哪里来？',q_vn:'Trí tuệ của Steve Jobs từ đâu mà có?',hint:'智慧←精确的判断力←经验的积累←无数错误的判断',sample:'乔布斯的智慧来自精确的判断力，精确的判断力来自经验的积累，而经验又来自无数错误的判断。',sample_vn:'Trí tuệ của Jobs đến từ khả năng phán đoán chính xác, khả năng phán đoán chính xác đến từ tích luỹ kinh nghiệm, còn kinh nghiệm lại đến từ vô số lần phán đoán sai.',note:'Nói theo chuỗi mũi tên bằng 来自; mắt xích cuối nối bằng 而……又来自…….'},
+    {q_zh:'做决定的能力是怎么得来的？',q_vn:'Năng lực ra quyết định có được bằng cách nào?',hint:'通过……得来的，在这个过程中，人同时具有了……，不畏惧……，勇于……',sample:'做决定的能力不是天生的，是通过实践和挫折得来的。在这个过程中，人同时具有了坚定的意志力和敏锐的判断力，不畏惧付出和失败，勇于承担责任，这就是成长。',sample_vn:'Năng lực ra quyết định không phải bẩm sinh, mà có được qua thực tiễn và vấp ngã. Trong quá trình ấy, con người đồng thời có được ý chí kiên định và khả năng phán đoán nhạy bén, không sợ bỏ công sức và thất bại, dám gánh vác trách nhiệm — đó chính là trưởng thành.',note:'不是天生的，是通过……得来的; 不畏惧 + danh từ, 勇于 + động từ — hai vế song song.'},
+    {q_zh:'为什么说生活中的不确定因素日益增多？',q_vn:'Vì sao nói những yếu tố bất định trong cuộc sống ngày càng tăng?',hint:'①世界一流企业也会…… ②金融危机使……不得不……',sample:'伴随着经济全球化，昔日风光无限的世界一流企业也会亏损，也会倒闭；一次金融危机，就会使一些连年盈利、运行很好的企业不得不裁员。',sample_vn:'Cùng với toàn cầu hoá kinh tế, những doanh nghiệp hàng đầu thế giới từng vẻ vang vô hạn cũng có thể thua lỗ, phá sản; chỉ một cuộc khủng hoảng tài chính cũng khiến những doanh nghiệp lãi liên tục, vận hành tốt buộc phải cắt giảm nhân sự.',note:'Mở bằng 伴随着经济全球化; 也会……，也会…… liệt kê; câu 使……不得不…… (gây khiến + buộc phải).'},
+    {q_zh:'为什么说无论你怎么选择，都不太可能选一份称心如意的工作安安稳稳过一辈子？',q_vn:'Vì sao nói dù bạn chọn thế nào cũng khó chọn được một công việc như ý rồi yên ổn cả đời?',hint:'①经济环境……，企业寿命……，人们要经历…… ②……报考热门专业，以致…… ③新职业的出现，……',sample:'由于经济环境的不确定，企业的寿命越来越短，人们要经历更多次的职业选择。此外，人们争先恐后报考热门专业，以致人才饱和，就业困难。而新职业的出现，需要新型人才的加入，谁能够及早抓住机会，谁就赢得了机遇。',sample_vn:'Do môi trường kinh tế bất định, tuổi thọ doanh nghiệp ngày càng ngắn, con người phải trải qua nhiều lần chọn nghề hơn. Ngoài ra, mọi người tranh nhau thi vào ngành hot, đến nỗi nhân lực bão hoà, khó tìm việc. Còn nghề mới xuất hiện lại cần nhân lực kiểu mới, ai sớm nắm được cơ hội thì người đó giành được thời cơ.',note:'Ba ý nối bằng 由于……，此外……，而……; kết bằng câu hô ứng 谁……，谁就…….'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — 听力 (sách HSK 6 không có sách bài tập nghe)
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — câu tự soạn (sách HSK 6 không có sách bài tập nghe), mỗi câu một tình huống mới
+// ══════════════════════════════════════════
 var listenExamData = {
-  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. ' +
-         'Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
-  source: 'Soạn theo dạng đề HSK 6 · chủ đề bài 7',
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 7',
   items: [
-    {n:1,
-     lines:[{sp:'女',zh:'你不是一直想换工作吗？怎么还没辞职？'},
-            {sp:'男',zh:'我也想啊，可我不确定自己擅长什么，万一选错了，时间成本太高了。'}],
-     q:'男的为什么还没换工作？',qvn:'Vì sao người đàn ông vẫn chưa đổi việc?',
-     opts:['公司不让他走','他怕选错了代价太大','他很喜欢现在的工作','家人不同意'],ans:1,
-     why:'万一选错了，时间成本太高了 → sợ chọn sai phải trả giá lớn. Không nhắc gì tới công ty hay gia đình.',
-     words:['擅长','成本']},
-
-    {n:2,
-     lines:[{sp:'男',zh:'这次比赛输了，你是不是很难过？'},
-            {sp:'女',zh:'有一点儿，不过失败并非坏事，至少我知道自己哪里还不够好。'}],
-     q:'女的对失败是什么态度？',qvn:'Người phụ nữ có thái độ thế nào với thất bại?',
-     opts:['非常难过','觉得是坏事','看得比较积极','打算放弃比赛'],ans:2,
-     why:'失败并非坏事 + 至少我知道…… → nhìn nhận tích cực. 有一点儿 (hơi buồn) chứ không phải 非常难过.',
-     words:['并非']},
-
-    {n:3,
-     lines:[{sp:'女',zh:'听说你们公司最近在裁员？'},
-            {sp:'男',zh:'是啊，受金融危机的影响，连年盈利的公司今年也出现了亏损。'}],
-     q:'男的公司为什么裁员？',qvn:'Vì sao công ty của người đàn ông cắt giảm nhân sự?',
-     opts:['员工工作不认真','公司一直在亏损','受金融危机影响出现亏损','公司要搬到别的城市'],ans:2,
-     why:'受金融危机的影响……今年也出现了亏损. "一直在亏损" sai vì công ty 连年盈利 (lãi nhiều năm liền), chỉ năm nay mới lỗ.',
-     words:['裁员','金融','危机','盈利','亏损']},
-
-    {n:4,
-     lines:[{sp:'男',zh:'你儿子报的什么专业？'},
-            {sp:'女',zh:'他自己做主报了考古。现在大家都争先恐后地报热门专业，我倒觉得冷门专业就业不一定难。'}],
-     q:'关于女的儿子，可以知道什么？',qvn:'Về con trai người phụ nữ, có thể biết điều gì?',
-     opts:['报了热门专业','专业是自己决定的','专业是妈妈选的','还没决定报什么'],ans:1,
-     why:'他自己做主报了考古 → con tự quyết. 考古 là ngành ít người chọn (冷门), nên phương án "ngành hot" sai.',
-     words:['做主','争先恐后','热门','就业']},
-
-    {n:5,
-     lines:[{sp:'女',zh:'这件事你得及早决定，再拖下去，机会就被别人抢走了。'},
-            {sp:'男',zh:'我知道，可我还有些顾虑，让我再想一个晚上吧。'}],
-     q:'男的现在是什么状态？',qvn:'Người đàn ông hiện đang ở trạng thái nào?',
-     opts:['已经做好了决定','还在犹豫','不想要这个机会','机会已经被抢走了'],ans:1,
-     why:'还有些顾虑 + 让我再想一个晚上 → vẫn đang do dự. Người phụ nữ mới chỉ khuyên 及早决定.',
-     words:['及早','顾虑']},
-
-    {n:6,
-     lines:[{sp:'男',zh:'他才工作三年，怎么就能做出这么英明的决策？'},
-            {sp:'女',zh:'判断力不是天生的。他这几年犯过不少错，每次都认真总结，经验就是这么积累起来的。'}],
-     q:'女的认为那个人的判断力是怎么来的？',qvn:'Người phụ nữ cho rằng khả năng phán đoán của người kia từ đâu mà có?',
-     opts:['天生就有','领导教的','从错误中积累的','读书学来的'],ans:2,
-     why:'判断力不是天生的 + 犯过不少错，每次都认真总结 → tích luỹ từ sai lầm (đúng ý bài khoá). Nghe 天生 đầu câu dễ chọn nhầm phương án 1.',
-     words:['英明','决策','天生']},
-
-    {n:7,
-     lines:[{sp:'女',zh:'很多年轻人在选择职业时顾虑重重，一旦选错就觉得终身悔恨。其实，随着经济环境的变化，人们一生中要经历多次职业选择，第一份工作并非最后一份工作。与其害怕犯错，不如在实践中不断提升自己的决策能力。'}],
-     q:'说话人的主要观点是什么？',qvn:'Quan điểm chính của người nói là gì?',
-     opts:['第一份工作最重要','选错职业会终身悔恨','不要怕选错，要在实践中提高决策能力','年轻人应该尽快换工作'],ans:2,
-     why:'与其害怕犯错，不如在实践中不断提升决策能力 — ý chính nằm ở vế 不如. "终身悔恨" chỉ là nỗi lo của người trẻ mà người nói đang bác bỏ.',
-     words:['顾虑','终身','悔恨','并非','决策']},
-
-    {n:8,
-     lines:[{sp:'男',zh:'最近几年，学计算机的人越来越多，这个行业的人才已经饱和了。由于大家都挤在同一条路上，致使不少毕业生找不到称心如意的工作。所以，选专业时，除了看是否热门以外，更要看自己真正擅长什么。'}],
-     q:'说话人认为选专业时更应该考虑什么？',qvn:'Người nói cho rằng khi chọn ngành nên cân nhắc điều gì hơn cả?',
-     opts:['专业是否热门','自己真正擅长什么','将来的工资','父母的意见'],ans:1,
-     why:'除了看是否热门以外，更要看自己真正擅长什么 — 更要 đánh dấu ý được nhấn mạnh. 热门 chỉ là yếu tố phụ.',
-     words:['饱和','致使','称心如意','热门','擅长']}
+    {
+      n: 1,
+      lines: [
+        {sp:'男',zh:'听说你女儿在北京工作？'},
+        {sp:'女',zh:'是啊，她毕业于北京大学，毕业后就留在了北京，在一家银行上班。'}
+      ],
+      q: '女儿在哪儿上班？',
+      qvn: 'Con gái làm việc ở đâu?',
+      opts: ['北京大学','一家银行','上海','一所中学'],
+      ans: 1,
+      why: '毕业于北京大学 là nơi tốt nghiệp; 在一家银行上班 mới là nơi làm việc.',
+      words: ['于']
+    },
+    {
+      n: 2,
+      lines: [
+        {sp:'女',zh:'今天怎么这么多人迟到？'},
+        {sp:'男',zh:'地铁出了问题，停了一个小时，致使很多人上班迟到了。'}
+      ],
+      q: '为什么很多人迟到了？',
+      qvn: 'Vì sao nhiều người đi muộn?',
+      opts: ['下大雨了','路上堵车','地铁出了问题','大家起晚了'],
+      ans: 2,
+      why: '地铁出了问题……致使很多人上班迟到 → tàu điện ngầm gặp sự cố.',
+      words: ['致使']
+    },
+    {
+      n: 3,
+      lines: [
+        {sp:'女',zh:'大家都说小李很骄傲，见了人也不打招呼。'},
+        {sp:'男',zh:'其实他并非骄傲，只是眼睛不好，看不清楚是谁而已。'}
+      ],
+      q: '小李为什么不跟人打招呼？',
+      qvn: 'Vì sao Tiểu Lý không chào hỏi mọi người?',
+      opts: ['很骄傲','看不起别人','眼睛不好','不认识大家'],
+      ans: 2,
+      why: '并非骄傲，只是眼睛不好……而已 → không phải kiêu ngạo, chỉ là mắt kém nên không nhìn rõ ai (ôn 而已, bài 5). 很骄傲 là điều người nói bác bỏ.',
+      words: ['并非']
+    },
+    {
+      n: 4,
+      lines: [
+        {sp:'男',zh:'听说你们公司在裁员？'},
+        {sp:'女',zh:'没有的事，我们公司今年盈利不错，还在招人呢。'}
+      ],
+      q: '关于女的的公司，可以知道什么？',
+      qvn: 'Về công ty của người phụ nữ, có thể biết điều gì?',
+      opts: ['正在裁员','今年赚钱了','快要倒闭了','今年亏损了'],
+      ans: 1,
+      why: '盈利不错 = làm ăn có lãi, còn đang tuyển người → không hề cắt giảm nhân sự.',
+      words: ['裁员','盈利']
+    },
+    {
+      n: 5,
+      lines: [
+        {sp:'女',zh:'你儿子想学什么专业？'},
+        {sp:'男',zh:'他想学计算机，可现在学计算机的人太多了，我怕他以后就业困难。'}
+      ],
+      q: '男的担心什么？',
+      qvn: 'Người đàn ông lo điều gì?',
+      opts: ['儿子以后找不到工作','儿子学习不好','儿子不想上大学','学费太贵'],
+      ans: 0,
+      why: '我怕他以后就业困难 → lo con sau này khó tìm việc.',
+      words: ['就业']
+    },
+    {
+      n: 6,
+      lines: [
+        {sp:'男',zh:'周末去哪儿玩儿，还是听你的吧。'},
+        {sp:'女',zh:'每次都让我做主，这次轮到你了，我实在想不出来了。'}
+      ],
+      q: '女的是什么意思？',
+      qvn: 'Ý người phụ nữ là gì?',
+      opts: ['希望男的这次来决定','她想去爬山','周末不想出去','她已经订好了地方'],
+      ans: 0,
+      why: '每次都让我做主，这次轮到你了 → lần nào cũng bắt cô quyết, lần này đến lượt anh quyết. Cô chưa chọn chỗ nào nên các phương án kia sai.',
+      words: ['做主']
+    }
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
+// ══════════════════════════════════════════
 var situationData = {
-  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
-         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn thân phân vân giữa ngành mình thích và ngành đang hot.',
-     a:{sp:'Bạn',zh:'大家都说计算机专业热门，可我更喜欢历史，真不知道该怎么选。',vn:'Ai cũng bảo ngành máy tính đang hot, nhưng tớ thích lịch sử hơn, thật không biết nên chọn thế nào.'},
-     need:['Dùng 并非','Khuyên bạn tự quyết (dùng 做主)'],
-     sample:'热门的专业并非最适合你的专业，这是你自己的人生，还是你自己做主吧。',
-     samplePy:'Rèmén de zhuānyè bìngfēi zuì shìhé nǐ de zhuānyè, zhè shì nǐ zìjǐ de rénshēng, háishi nǐ zìjǐ zuò zhǔ ba.',
-     sampleVn:'Ngành hot hoàn toàn không phải là ngành hợp với cậu nhất, đây là cuộc đời của cậu, cậu tự quyết đi.',
-     tip:'并非 bác bỏ quan niệm "hot = tốt"; 还是……吧 là lời khuyên nhẹ nhàng.'},
-
-    {scene:'Em trai trách mình vì em thi trượt vòng loại.',
-     a:{sp:'Em trai',zh:'都怪我没用，一到赛场就紧张，结果全乱了。',vn:'Tại em vô dụng, cứ vào thi là run, rốt cuộc rối hết cả.'},
-     need:['Dùng 致使 để chỉ ra nguyên nhân thật','Động viên (dùng 挫折 hoặc 并不意味着)'],
-     sample:'是过度紧张致使你没发挥好，这并不意味着你没用。遇到一点儿挫折很正常，下次放松点儿就行。',
-     samplePy:'Shì guòdù jǐnzhāng zhìshǐ nǐ méi fāhuī hǎo, zhè bìng bú yìwèizhe nǐ méi yòng. Yùdào yìdiǎnr cuòzhé hěn zhèngcháng, xià cì fàngsōng diǎnr jiù xíng.',
-     sampleVn:'Là do quá căng thẳng nên em không phát huy tốt, điều đó hoàn toàn không có nghĩa là em vô dụng. Gặp chút vấp ngã là bình thường, lần sau thả lỏng chút là được.',
-     tip:'Câu nhấn mạnh 是……致使…… chỉ ra nguyên nhân thực sự; 并不意味着 bác bỏ kết luận tiêu cực của em.'},
-
-    {scene:'Đồng nghiệp đang do dự có nên nhận lời mời làm việc ở công ty mới.',
-     a:{sp:'Đồng nghiệp',zh:'那家公司给的机会挺好的，可我还想再考虑考虑。',vn:'Công ty đó cho cơ hội khá tốt, nhưng mình vẫn muốn cân nhắc thêm.'},
-     need:['Dùng 及早','Dùng 机遇 hoặc 抓住'],
-     sample:'这么难得的机遇，你还是及早决定吧，省得被别人抢先抓住了。',
-     samplePy:'Zhème nándé de jīyù, nǐ háishi jízǎo juédìng ba, shěngde bèi biérén qiǎngxiān zhuāzhù le.',
-     sampleVn:'Cơ hội hiếm có như vậy, cậu nên sớm quyết định đi, kẻo bị người khác nhanh chân giành mất.',
-     tip:'及早 + động từ; 省得 = kẻo — y như lời người bạn trong 练习3 ①.'},
-
-    {scene:'Bạn cùng lớp sợ phát biểu vì sợ nói sai.',
-     a:{sp:'Bạn',zh:'我怕说错了被大家笑话，所以从来不敢举手发言。',vn:'Tớ sợ nói sai bị mọi người cười, nên chưa bao giờ dám giơ tay phát biểu.'},
-     need:['Dùng 勇于','Dùng 并非坏事 hoặc 心灵免疫力'],
-     sample:'说错几句并非坏事，反而能增加你的心灵免疫力。你要勇于表达自己的想法。',
-     samplePy:'Shuōcuò jǐ jù bìngfēi huàishì, fǎn\'ér néng zēngjiā nǐ de xīnlíng miǎnyìlì. Nǐ yào yǒngyú biǎodá zìjǐ de xiǎngfǎ.',
-     sampleVn:'Nói sai vài câu hoàn toàn không phải chuyện xấu, ngược lại còn tăng sức đề kháng tâm hồn cho cậu. Cậu phải dám bày tỏ suy nghĩ của mình.',
-     tip:'Bắt chước câu cuối bài khoá: ……并非坏事，它会增加……心灵免疫力; 勇于 + động từ.'},
-
-    {scene:'Chú của em kể công ty cũ nơi chú làm đã phá sản.',
-     a:{sp:'Chú',zh:'我以前工作的那家公司，当年多风光啊，没想到去年倒闭了。',vn:'Công ty chú làm trước đây, hồi đó vẻ vang biết bao, không ngờ năm ngoái phá sản rồi.'},
-     need:['Dùng 日益 hoặc 伴随着','Dùng 意味着'],
-     sample:'现在市场变化日益加快，这意味着再大的公司也不能停止创新。',
-     samplePy:'Xiànzài shìchǎng biànhuà rìyì jiākuài, zhè yìwèizhe zài dà de gōngsī yě bù néng tíngzhǐ chuàngxīn.',
-     sampleVn:'Bây giờ thị trường thay đổi ngày càng nhanh, điều đó có nghĩa là công ty lớn đến mấy cũng không thể ngừng đổi mới.',
-     tip:'日益 + động từ hai âm tiết (加快); 这意味着 + kết luận rút ra.'}
+    {scene:'Bạn thân phân vân giữa ngành mình thích và ngành đang hot.',a:{sp:'Bạn',zh:'大家都说计算机专业热门，可我更喜欢历史，真不知道该怎么选。',vn:'Ai cũng bảo ngành máy tính đang hot, nhưng tớ thích lịch sử hơn, thật không biết nên chọn thế nào.'},need:['Dùng 并非','Khuyên bạn tự quyết (dùng 做主)'],sample:'热门的专业并非最适合你的专业，这是你自己的人生，还是你自己做主吧。',samplePy:'Rèmén de zhuānyè bìngfēi zuì shìhé nǐ de zhuānyè, zhè shì nǐ zìjǐ de rénshēng, háishi nǐ zìjǐ zuò zhǔ ba.',sampleVn:'Ngành hot hoàn toàn không phải là ngành hợp với cậu nhất, đây là cuộc đời của cậu, cậu tự quyết đi.',tip:'并非 bác bỏ quan niệm "hot = tốt"; 还是……吧 là lời khuyên nhẹ nhàng.'},
+    {scene:'Em trai trách mình vì em thi trượt vòng loại.',a:{sp:'Em trai',zh:'都怪我没用，一到比赛的时候就紧张，结果全乱了。',vn:'Tại em vô dụng, cứ đến lúc thi đấu là run, rốt cuộc rối hết cả.'},need:['Dùng 致使 để chỉ ra nguyên nhân thật','Động viên (dùng 挫折 hoặc 并不意味着)'],sample:'是过度紧张致使你没发挥好，这并不意味着你没用。遇到一点儿挫折很正常，下次放松点儿就行。',samplePy:'Shì guòdù jǐnzhāng zhìshǐ nǐ méi fāhuī hǎo, zhè bìng bú yìwèizhe nǐ méi yòng. Yùdào yìdiǎnr cuòzhé hěn zhèngcháng, xià cì fàngsōng diǎnr jiù xíng.',sampleVn:'Là do quá căng thẳng nên em không phát huy tốt, điều đó hoàn toàn không có nghĩa là em vô dụng. Gặp chút vấp ngã là bình thường, lần sau thả lỏng chút là được.',tip:'Câu nhấn mạnh 是……致使…… chỉ ra nguyên nhân thực sự; 并不意味着 bác bỏ kết luận tiêu cực của em.'},
+    {scene:'Đồng nghiệp đang do dự có nên nhận lời mời làm việc ở công ty mới.',a:{sp:'Đồng nghiệp',zh:'那家公司给的机会挺好的，可我还想再考虑考虑。',vn:'Công ty đó cho cơ hội khá tốt, nhưng mình vẫn muốn cân nhắc thêm.'},need:['Dùng 及早','Dùng 机遇 hoặc 抓住'],sample:'这么难得的机遇可不多，我劝你及早拿主意，省得被别人抢先了。',samplePy:'Zhème nándé de jīyù kě bù duō, wǒ quàn nǐ jízǎo ná zhǔyi, shěngde bèi biérén qiǎngxiān le.',sampleVn:'Cơ hội hiếm có thế này đâu có nhiều, tớ khuyên cậu sớm quyết đi, kẻo bị người khác nhanh chân giành trước.',tip:'及早 + động từ (拿主意 = quyết định, khẩu ngữ); 省得 = kẻo.'},
+    {scene:'Bạn cùng lớp sợ phát biểu vì sợ nói sai.',a:{sp:'Bạn',zh:'我怕说错了被大家笑话，所以从来不敢举手发言。',vn:'Tớ sợ nói sai bị mọi người cười, nên chưa bao giờ dám giơ tay phát biểu.'},need:['Dùng 勇于','Dùng 大不了 / 没什么大不了的 (bài 6)'],sample:'说错几句没什么大不了的，谁都会犯错。你要勇于表达自己的想法，说多了就不怕了。',samplePy:'Shuōcuò jǐ jù méi shénme dàbuliǎo de, shéi dōu huì fàn cuò. Nǐ yào yǒngyú biǎodá zìjǐ de xiǎngfǎ, shuō duō le jiù bú pà le.',sampleVn:'Nói sai vài câu có gì to tát đâu, ai mà chẳng mắc lỗi. Cậu phải dám bày tỏ suy nghĩ của mình, nói nhiều rồi sẽ hết sợ.',tip:'勇于 + động từ (表达, 尝试, 承担) = dám làm; ôn 没什么大不了的 (bài 6).'},
+    {scene:'Chú của em kể công ty cũ nơi chú làm đã phá sản.',a:{sp:'Chú',zh:'我以前工作的那家公司，当年多风光啊，没想到去年倒闭了。',vn:'Công ty chú làm trước đây, hồi đó vẻ vang biết bao, không ngờ năm ngoái phá sản rồi.'},need:['Dùng 日益 hoặc 伴随着','Dùng 意味着'],sample:'现在市场变化日益加快，这意味着再大的公司也必须不断创新。',samplePy:'Xiànzài shìchǎng biànhuà rìyì jiākuài, zhè yìwèizhe zài dà de gōngsī yě bìxū búduàn chuàngxīn.',sampleVn:'Bây giờ thị trường thay đổi ngày càng nhanh, điều đó có nghĩa là công ty lớn đến mấy cũng phải không ngừng đổi mới.',tip:'日益 + động từ hai âm tiết (加快); 这意味着 + kết luận rút ra.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 // 🎯 NÓI SAO CHO HAY — 得体 / 语体
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 var registerData = {
-  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
-         'HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
   items: [
-    {scene:'Em viết báo cáo nghiên cứu về tình hình việc làm của sinh viên.',
-     a:'因为大家都抢着去学热门专业，所以现在工作特别难找。',b:'由于人们争先恐后报考热门专业，以致人才饱和，就业困难。',better:'b',
-     why:'Báo cáo cần văn viết: 由于……以致……, 争先恐后, 就业困难. Câu a (抢着, 特别难找) là khẩu ngữ.'},
-
-    {scene:'Em nhắn tin động viên bạn thân vừa trượt phỏng vấn.',
-     a:'没事儿，一次没过而已，下回肯定行！',b:'此次面试失利并非坏事，应当认真总结经验教训。',better:'a',
-     why:'Với bạn thân, lời gần gũi (没事儿, 而已, 下回) ấm áp hơn. Câu b đúng nhưng giống lời tổng kết của cấp trên.'},
-
-    {scene:'Phát biểu trong lễ khai giảng với tư cách đại diện học sinh.',
-     a:'我们要勇于承担责任，不畏惧挫折，做自己人生的主人。',b:'咱们得敢干，别怕摔跟头，自己的事自己拿主意。',better:'a',
-     why:'Diễn văn trang trọng dùng 勇于, 畏惧, 挫折. 敢干, 摔跟头, 拿主意 là khẩu ngữ, hợp khi nói chuyện riêng.'},
-
-    {scene:'Em tâm sự với mẹ về chuyện chọn ngành.',
-     a:'妈，选专业这事儿真让我伤脑筋。',b:'母亲，关于专业选择一事，我深感困扰。',better:'a',
-     why:'Nói với mẹ dùng khẩu ngữ tự nhiên: 这事儿, 伤脑筋. Câu b (母亲, 一事, 深感困扰) quá trang trọng, nghe xa cách.'},
-
-    {scene:'Bản tin kinh tế trên truyền hình.',
-     a:'受金融危机影响，部分企业出现亏损，不得不裁员。',b:'经济不好，好多公司都赔钱了，只好让人走。',better:'a',
-     why:'Bản tin dùng thuật ngữ: 金融危机, 亏损, 裁员. 赔钱, 让人走 là cách nói đời thường.'},
-
-    {scene:'Em khen quyết định của lớp trưởng trong cuộc họp lớp.',
-     a:'班长这个决定真英明，咱们就这么办！',b:'班长此项决策十分英明，本人表示完全赞同。',better:'a',
-     why:'Họp lớp giữa bạn bè: 真英明 + 咱们就这么办 vừa đủ nhiệt tình, thân mật. Câu b (此项决策, 本人表示) giống văn bản hành chính.'}
+    {scene:'Em viết báo cáo nghiên cứu về tình hình việc làm của sinh viên.',a:'因为大家都抢着去学热门专业，所以现在工作特别难找。',b:'由于报考热门专业的人太多，这些专业的毕业生就业日益困难。',better:'b',why:'Báo cáo cần văn viết: 由于……, 报考, 毕业生, 就业日益困难. Câu a (抢着, 特别难找) là khẩu ngữ.'},
+    {scene:'Em nhắn tin động viên bạn thân vừa trượt phỏng vấn.',a:'没事儿，一次没过而已，下回肯定行！',b:'此次面试没能通过，希望你认真分析原因，争取下次成功。',better:'a',why:'Với bạn thân, lời gần gũi (没事儿, 而已, 下回) ấm áp hơn. Câu b đúng nhưng giống lời tổng kết của cấp trên.'},
+    {scene:'Phát biểu trong lễ khai giảng với tư cách đại diện học sinh.',a:'咱们得敢干，别怕摔跟头，自己的事自己拿主意。',b:'同学们，希望我们都能勇于尝试，不怕失败，做自己人生的主人。',better:'b',why:'Diễn văn trang trọng dùng 同学们, 希望我们都能, 勇于尝试. 敢干, 摔跟头, 拿主意 là khẩu ngữ, hợp khi nói chuyện riêng.'},
+    {scene:'Em tâm sự với mẹ về chuyện chọn ngành.',a:'妈，选专业这事儿真让我伤脑筋。',b:'母亲，关于选择专业一事，我一直难以做出决定。',better:'a',why:'Nói với mẹ dùng khẩu ngữ tự nhiên: 这事儿, 伤脑筋. Câu b (母亲, 一事, 难以做出决定) quá trang trọng, nghe xa cách.'},
+    {scene:'Bản tin kinh tế trên truyền hình.',a:'受金融危机影响，部分企业出现亏损，只能裁员。',b:'经济不好，好多公司都不赚钱了，只好让人走。',better:'a',why:'Bản tin dùng thuật ngữ: 金融危机, 亏损, 裁员. 不赚钱, 让人走 là cách nói đời thường.'},
+    {scene:'Em khen quyết định của lớp trưởng trong cuộc họp lớp.',a:'班长此项决策十分英明，本人完全同意。',b:'班长这个决定真英明，咱们就这么办！',better:'b',why:'Họp lớp giữa bạn bè: 真英明 + 咱们就这么办 vừa đủ nhiệt tình, thân mật. Câu b (此项决策, 本人表示) giống văn bản hành chính.'}
   ]
 };
 

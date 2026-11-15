@@ -1279,93 +1279,47 @@ var hvBridgeData = {
 var matchData = [
   {left:'爽快地',right:'答应'},
   {left:'美味',right:'佳肴'},
-  {left:'绅士风度',right:'十足'},
+  {left:'绅士',right:'风度'},
   {left:'闹',right:'别扭'},
   {left:'和睦',right:'相处'},
-  {left:'滔滔不绝地',right:'聊了起来'},
-  {left:'背后',right:'议论人'},
   {left:'一脸的',right:'疑惑'},
-  {left:'对视',right:'一眼'},
-  {left:'第一任',right:'老师'},
-  {left:'实行',right:'两套标准'},
-  {left:'约束好',right:'自己的言行'},
-  {left:'对孩子',right:'严厉'},
-  {left:'督促',right:'孩子做作业'},
-  {left:'关系',right:'融洽'},
-  {left:'异常',right:'兴奋'},
-  {left:'十分',right:'留恋'},
-  {left:'性格',right:'开朗'},
-  {left:'说',right:'闲话'},
-  {left:'幽默',right:'风趣'},
-  {left:'个人',right:'恩怨'},
-  {left:'口齿',right:'伶俐'},
-  {left:'挑拨',right:'离间'},
-  {left:'容貌',right:'秀美'}
+  {left:'第三任',right:'总经理'},
+  {left:'实行',right:'新规定'},
+  {left:'约束',right:'自己的言行'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ — mỗi từ của bài một câu
+// ĐIỀN TỪ — câu mới (không chép bài khoá / SGK), mỗi câu một tình huống; ôn xoáy ốc từ + ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'这件小事给了我很大的',blank:'启示',post:'。',hint:'(bài học, sự gợi mở)',ans:'启示'},
-  {pre:'天天的父母想请我们帮忙，我和',blank:'老公',post:'爽快地答应下来。',hint:'(chồng — khẩu ngữ)',ans:'老公'},
-  {pre:'我请她帮忙，她想都没想就',blank:'爽快',post:'地答应了。',hint:'(thẳng thắn, dứt khoát)',ans:'爽快'},
-  {pre:'就快到春节了，在外地打工的他',blank:'巴不得',post:'马上回到老家。',hint:'(chỉ mong sao)',ans:'巴不得',exp:'巴不得 + V = chỉ mong sao (mong muốn rất mạnh, khẩu ngữ): 巴不得马上回到老家.'},
-  {pre:'弟弟一进门就',blank:'嚷',post:'着要吃冰激凌。',hint:'(la hét, đòi ầm lên)',ans:'嚷'},
-  {pre:'西红柿炒鸡蛋是爸爸的',blank:'拿手',post:'菜。',hint:'(sở trường)',ans:'拿手'},
-  {pre:'春节的时候，桌子上摆满了美味',blank:'佳肴',post:'。',hint:'(món ngon)',ans:'佳肴'},
-  {pre:'听到这个消息，大家',blank:'异常',post:'兴奋，忍不住欢呼起来。',hint:'(cực kỳ — văn viết)',ans:'异常',exp:'异常 + tính từ = cực kỳ, khác thường (văn viết): 异常兴奋.'},
-  {pre:'天天还没来，林林就变得异常',blank:'勤劳',post:'，将屋子收拾得干干净净。',hint:'(siêng năng)',ans:'勤劳'},
-  {pre:'他总是让女士先走，特别',blank:'绅士',post:'。',hint:'(lịch thiệp, ga-lăng)',ans:'绅士'},
-  {pre:'不管输赢，他都很有',blank:'风度',post:'。',hint:'(phong thái)',ans:'风度'},
-  {pre:'比赛前，队员们个个信心',blank:'十足',post:'。',hint:'(tràn đầy)',ans:'十足',exp:'Danh từ + 十足 = tràn đầy, mười phần (đứng sau danh từ): 信心十足, 干劲十足.'},
-  {pre:'两个孩子上学不用接送，做作业不用',blank:'督促',post:'。',hint:'(đốc thúc)',ans:'督促'},
-  {pre:'小时候我常跟哥哥',blank:'打架',post:'，现在我们却是最好的朋友。',hint:'(đánh nhau)',ans:'打架'},
-  {pre:'他们俩又闹',blank:'别扭',post:'了，谁也不理谁。',hint:'(giận dỗi, xích mích)',ans:'别扭'},
-  {pre:'同事们相处得很',blank:'融洽',post:'，工作起来也特别愉快。',hint:'(hoà hợp)',ans:'融洽'},
-  {pre:'看到女儿和天天这么',blank:'亲密',post:'，我和老公都有点儿嫉妒了。',hint:'(thân thiết)',ans:'亲密'},
-  {pre:'工作再忙，也不能',blank:'忽略',post:'家人的感受。',hint:'(lơ là, bỏ qua)',ans:'忽略'},
-  {pre:'一定是有人',blank:'嫉妒',post:'我们关系好，故意那么说的。',hint:'(ghen tị)',ans:'嫉妒'},
-  {pre:'一说起足球，他就',blank:'滔滔不绝',post:'，谁也拦不住。',hint:'(nói mãi không dứt)',ans:'滔滔不绝'},
-  {pre:'别人说错了，我们不应该',blank:'嘲笑',post:'，而应该帮助。',hint:'(chê cười)',ans:'嘲笑'},
-  {pre:'他总是说些好听的话',blank:'讨好',post:'老板。',hint:'(lấy lòng)',ans:'讨好'},
-  {pre:'校长',blank:'郑重',post:'地宣布：明天学校放假一天。',hint:'(trịnh trọng)',ans:'郑重'},
-  {pre:'有什么意见就',blank:'当面',post:'说，别在背后议论。',hint:'(trước mặt, trực tiếp)',ans:'当面',exp:'当面 + V = trực tiếp trước mặt; đối lập với 在背后 (sau lưng).'},
-  {pre:'看到别人有缺点，应该当面说，背后说',blank:'人家',post:'的坏话不好。',hint:'(người ta)',ans:'人家',exp:'人家 (đại từ) = người ta, người khác: 背后说人家的坏话.'},
-  {pre:'他没有自己的看法，总是',blank:'附和',post:'别人。',hint:'(hùa theo)',ans:'附和'},
-  {pre:'别着急，',blank:'大伙儿',post:'一起动手，一会儿就能把教室打扫干净。',hint:'(mọi người — khẩu ngữ)',ans:'大伙儿'},
-  {pre:'邻居之间应该',blank:'和睦',post:'相处，互相帮助。',hint:'(hoà thuận)',ans:'和睦'},
-  {pre:'我老公很',blank:'宽容',post:'，能原谅伤害过他的人。',hint:'(bao dung)',ans:'宽容'},
-  {pre:'女儿却是一脸的',blank:'疑惑',post:'。',hint:'(nghi hoặc, khó hiểu)',ans:'疑惑'},
-  {pre:'小丽笑了，',blank:'反问',post:'道：“你觉得我会说那样的话吗？”',hint:'(hỏi ngược lại)',ans:'反问'},
-  {pre:'看到妈妈的那一',blank:'瞬间',post:'，她的眼泪流了下来。',hint:'(khoảnh khắc)',ans:'瞬间'},
-  {pre:'老师一走进来，教室里一下子',blank:'鸦雀无声',post:'。',hint:'(im phăng phắc)',ans:'鸦雀无声'},
-  {pre:'我的汉语',blank:'启蒙',post:'老师是一位很有耐心的女老师。',hint:'(vỡ lòng)',ans:'启蒙'},
-  {pre:'他是我们学校的第三',blank:'任',post:'校长。',hint:'(lượng từ: đời, khoá)',ans:'任',exp:'任 là lượng từ chỉ nhiệm kỳ, đời (chức vụ): 第三任校长.'},
-  {pre:'他的理由很充分，大家都无法',blank:'反驳',post:'。',hint:'(phản bác)',ans:'反驳'},
-  {pre:'直到考试没通过，他才',blank:'意识',post:'到复习的重要性。',hint:'(nhận ra)',ans:'意识'},
-  {pre:'从下个月起，公司开始',blank:'实行',post:'新的上班制度。',hint:'(thi hành, áp dụng)',ans:'实行'},
-  {pre:'爸爸',blank:'严厉',post:'地批评了弟弟，弟弟哭了。',hint:'(nghiêm khắc)',ans:'严厉'},
-  {pre:'想当好父母，首先要',blank:'约束',post:'好自己的言行。',hint:'(kiềm chế, giữ gìn)',ans:'约束'}
+  {pre:'这次失败给了我一个很大的',blank:'启示',post:'：做事不能只靠运气。',hint:'(bài học rút ra)',ans:'启示',exp:'启示 là danh từ: 给 + người + 启示 = cho ai một bài học, một gợi mở.'},
+  {pre:'别的菜我都做不好，只有西红柿炒鸡蛋最',blank:'拿手',post:'。',hint:'(sở trường)',ans:'拿手',exp:'最拿手 = giỏi nhất, sở trường nhất; 拿手 là tính từ nên đứng sau 最 / 很.'},
+  {pre:'孩子在商店里大声',blank:'嚷',post:'着要买糖，妈妈只好把他抱了出去。',hint:'(la hét đòi)',ans:'嚷',exp:'嚷着要 + V = la hét đòi làm gì; 着 cho thấy hành động kéo dài.'},
+  {pre:'我爷爷奶奶是',blank:'勤劳',post:'的农民，每天天不亮就去地里工作。',hint:'(cần cù)',ans:'勤劳',exp:'勤劳 = cần cù chịu khó, thường dùng khen người lao động; làm định ngữ: 勤劳的农民.'},
+  {pre:'要不是老师每天',blank:'督促',post:'我背课文，我的汉语不会进步得这么快。',hint:'(đốc thúc)',ans:'督促',exp:'督促 + người + V = đốc thúc ai làm gì (ôn 要不是…… — nếu không nhờ…).'},
+  {pre:'两个男孩子为了一个足球',blank:'打架',post:'了，最后都被老师批评了一顿。',hint:'(đánh nhau)',ans:'打架',exp:'打架 là động từ li hợp, không mang tân ngữ: 为了…… + 打架; nói "đánh nhau với ai" là 跟……打架.'},
+  {pre:'自从一起参加了那次比赛，我们俩就成了',blank:'亲密',post:'的朋友。',hint:'(thân thiết)',ans:'亲密',exp:'亲密的朋友 = bạn thân thiết; 亲密 tả quan hệ gần gũi (ôn 自从……就……).'},
+  {pre:'他只关心考试成绩，却',blank:'忽略',post:'了身体健康，结果考试前病倒了。',hint:'(lơ là, bỏ qua)',ans:'忽略',exp:'忽略 + điều quan trọng = không để ý tới; 却 nhấn mạnh sự trái ngược với điều nên làm.'},
+  {pre:'看到邻居买了新车，他心里有点儿',blank:'嫉妒',post:'，好几天都不愿意跟人家说话。',hint:'(ghen tị)',ans:'嫉妒',exp:'嫉妒 = ghen tị vì người khác hơn mình; 人家 ở đây chỉ người hàng xóm đã nhắc.'},
+  {pre:'我刚学汉语时说得很差，可同学们从来不',blank:'嘲笑',post:'我，反而耐心地帮助我。',hint:'(chê cười)',ans:'嘲笑',exp:'嘲笑 + người = chê cười ai; 不……反而…… = không… trái lại còn…'},
+  {pre:'他没想到自己的话这么伤人，直到看见朋友哭了，才',blank:'意识',post:'到问题有多严重。',hint:'(nhận ra)',ans:'意识',exp:'意识到 + sự việc = nhận ra; luôn đi với 到 (ôn 直到……才……).'},
+  {pre:'我的启蒙老师对我们非常',blank:'严厉',post:'，作业写得不认真就得重写。',hint:'(nghiêm khắc)',ans:'严厉',exp:'对 + người + 严厉 = nghiêm khắc với ai (thái độ, lời nói gay gắt); 严格 thì nói về yêu cầu, quy định.'},
+  {pre:'电影一开始，刚才还很吵的电影院',blank:'瞬间',post:'安静了下来。',hint:'(trong chớp mắt)',ans:'瞬间',exp:'瞬间 đứng trước động từ như trạng ngữ = trong chớp mắt, ngay lập tức.'},
+  {pre:'别人犯了小错，我们应该',blank:'宽容',post:'一点儿，不要老批评人家。',hint:'(bao dung)',ans:'宽容',exp:'宽容 + 一点儿 = rộng lượng hơn một chút; trái nghĩa với thái độ 严厉.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (巴不得 · 别提多……了 · 同义词的语体差别) ít nhất 3 câu
+// SẮP XẾP CÂU — câu mới, chỉ một trật tự đúng
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['我','巴不得','马上','回家','见到妈妈','。'],ans:'我巴不得马上回家见到妈妈。',audio:'我巴不得马上回家见到妈妈。'},
-  {words:['有个孩子','和我们的独生女','朝夕相处','，','我们','巴不得呢','！'],ans:'有个孩子和我们的独生女朝夕相处，我们巴不得呢！',audio:'有个孩子和我们的独生女朝夕相处，我们巴不得呢！'},
-  {words:['他','巴不得','天天','都','放假','。'],ans:'他巴不得天天都放假。',audio:'他巴不得天天都放假。'},
-  {words:['看到女儿对伙伴热情无私','，','我和老公','别提多','高兴','了','。'],ans:'看到女儿对伙伴热情无私，我和老公别提多高兴了。',audio:'看到女儿对伙伴热情无私，我和老公别提多高兴了。'},
-  {words:['这件事情','别提多','复杂','了','。'],ans:'这件事情别提多复杂了。',audio:'这件事情别提多复杂了。'},
-  {words:['她们俩的','关系','别提多','融洽','了','。'],ans:'她们俩的关系别提多融洽了。',audio:'她们俩的关系别提多融洽了。'},
-  {words:['林林','将','屋子','收拾得','干干净净','。'],ans:'林林将屋子收拾得干干净净。',audio:'林林将屋子收拾得干干净净。'},
-  {words:['女儿','一脸疑惑地','反问道','：','“你们不是也这样说吗？”'],ans:'女儿一脸疑惑地反问道：“你们不是也这样说吗？”',audio:'女儿一脸疑惑地反问道：“你们不是也这样说吗？”'},
-  {words:['那','便是','对自己宽容','，','对孩子严厉','。'],ans:'那便是对自己宽容，对孩子严厉。',audio:'那便是对自己宽容，对孩子严厉。'},
-  {words:['两个孩子','开始','滔滔不绝地','聊了','起来','。'],ans:'两个孩子开始滔滔不绝地聊了起来。',audio:'两个孩子开始滔滔不绝地聊了起来。'},
-  {words:['看到别人有缺点','，','应该','当面','说','。'],ans:'看到别人有缺点，应该当面说。',audio:'看到别人有缺点，应该当面说。'},
-  {words:['想当好父母','，','首先要','约束好','自己的言行','。'],ans:'想当好父母，首先要约束好自己的言行。',audio:'想当好父母，首先要约束好自己的言行。'},
-  {words:['我和老公','被','问得','说不出话来','。'],ans:'我和老公被问得说不出话来。',audio:'我和老公被问得说不出话来。'}
+  {words:['我','巴不得','明天','就','放暑假','。'],ans:'我巴不得明天就放暑假。',audio:'我巴不得明天就放暑假。'},
+  {words:['这家饭店的','鱼','别提多','新鲜','了','。'],ans:'这家饭店的鱼别提多新鲜了。',audio:'这家饭店的鱼别提多新鲜了。'},
+  {words:['请','将','您的护照','交给','工作人员','。'],ans:'请将您的护照交给工作人员。',audio:'请将您的护照交给工作人员。'},
+  {words:['大伙儿','都','被他的笑话','逗得','哈哈大笑','。'],ans:'大伙儿都被他的笑话逗得哈哈大笑。',audio:'大伙儿都被他的笑话逗得哈哈大笑。'},
+  {words:['他','是','我们公司的','第三任','总经理','。'],ans:'他是我们公司的第三任总经理。',audio:'他是我们公司的第三任总经理。'},
+  {words:['他','滔滔不绝地','讲了','两个','小时','。'],ans:'他滔滔不绝地讲了两个小时。',audio:'他滔滔不绝地讲了两个小时。'},
+  {words:['弟弟','嚷着','要跟我','一起去','。'],ans:'弟弟嚷着要跟我一起去。',audio:'弟弟嚷着要跟我一起去。'},
+  {words:['他们一家人','相处得','非常','和睦','。'],ans:'他们一家人相处得非常和睦。',audio:'他们一家人相处得非常和睦。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1373,77 +1327,44 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'天天的父母想请我们帮忙，我和老公____地答应下来。',opts:['爽快','严厉','勤劳','别扭'],ans:0,
-   exp:'Nhận lời ngay, không đắn đo → 爽快地答应. 严厉 là nghiêm khắc; 勤劳 là siêng năng (không tả cách nhận lời); 别扭 là gượng gạo, khó chịu — trái ý câu.'},
-  {wrong:'有人请你玩儿你还不去？这样的好事我____呢！',opts:['巴不得','舍不得','怪不得','来不及'],ans:0,
-   exp:'Mong còn chẳng được → 巴不得呢. 舍不得 (HSK 5) là không nỡ; 怪不得 là thảo nào; 来不及 là không kịp.'},
-  {wrong:'看到他们两个相处得这么好，我别提多高兴____。',opts:['了','的','过','着'],ans:0,
-   exp:'Cấu trúc cố định 别提多……了 — cuối câu phải là 了.'},
-  {wrong:'这件事情别提____复杂了，我一个人根本处理不了。',opts:['多','很','太','非常'],ans:0,
-   exp:'别提多 + tính từ + 了 là cấu trúc cố định; không thay 多 bằng 很 / 太 / 非常.'},
-  {wrong:'她们不____，不闹别扭，关系别提多融洽了。',opts:['打架','打听','打针','打工'],ans:0,
-   exp:'Nói về quan hệ không tốt → 打架 (đánh nhau). 打听 là dò hỏi, 打针 là tiêm, 打工 là làm thuê — cùng chữ 打 (练习 1) nhưng nghĩa khác hẳn.'},
-  {wrong:'看到别人有缺点，应该____说，背后说人家的坏话不好。',opts:['当面','表面','对面','方面'],ans:0,
-   exp:'Đối lập với 背后 (sau lưng) là 当面 (trước mặt). 表面 là bề ngoài; 对面 là phía đối diện; 方面 là phương diện.'},
-  {wrong:'老公也在旁边____：“大伙儿要和睦相处，对人要宽容。”',opts:['附和','反驳','嘲笑','嫉妒'],ans:0,
-   exp:'Nói theo cho cùng ý với vợ → 附和. 反驳 là phản bác (ngược ý); 嘲笑 là chê cười; 嫉妒 là ghen tị.'},
-  {wrong:'女儿却是一脸的____，反问道：“你们不是也有时候说……吗？”',opts:['疑惑','启示','风度','瞬间'],ans:0,
-   exp:'Vẻ mặt khó hiểu trước khi hỏi vặn → 一脸的疑惑. 启示 là bài học; 风度 là phong thái; 瞬间 là khoảnh khắc.'},
-  {wrong:'父母就是孩子的第一____老师。',opts:['任','次','届','件'],ans:0,
-   exp:'Đếm đời / lượt người giữ một vai trò → 第一任老师. 次 đếm số lần; 届 đếm khoá, kỳ (第一届学生); 件 đếm việc, quần áo.'},
-  {wrong:'我们对自己宽容，对孩子____，实行的是两套标准。',opts:['严厉','亲密','融洽','爽快'],ans:0,
-   exp:'Đối lập với 宽容 (dễ dãi) là 严厉 (nghiêm khắc). Các từ còn lại đều mang nghĩa tích cực, không tạo thế đối lập.'},
-  {wrong:'想当好父母，首先要____好自己的言行。',opts:['约束','督促','忽略','实行'],ans:0,
-   exp:'Giữ gìn, kiềm chế lời nói việc làm → 约束好自己的言行. 督促 là đốc thúc người khác; 忽略 là bỏ qua; 实行 đi với chế độ, tiêu chuẩn.'},
-  {wrong:'看到女儿和天天这么亲密，大有____我们的趋势。',opts:['忽略','讨好','附和','反问'],ans:0,
-   exp:'Mải chơi với bạn, không để ý đến bố mẹ → 忽略我们. 讨好 là lấy lòng — ngược nghĩa; 附和 là hùa theo; 反问 là hỏi vặn.'},
-  {wrong:'我讨厌高春来，他最会____老师了。',opts:['讨好','督促','反驳','启蒙'],ans:0,
-   exp:'Bị ghét vì hay nịnh thầy cô → 讨好老师. 督促 là việc của thầy với trò; 反驳老师 là cãi lại; 启蒙 là dạy vỡ lòng.'},
-  {wrong:'她不仅爽快，还很健谈，跟谁都能____，聊起来没完。',opts:['滔滔不绝','鸦雀无声','朝夕相处','目瞪口呆'],ans:0,
-   exp:'Nói chuyện không dứt → 滔滔不绝 (练一练 注释 3). 鸦雀无声 là im phăng phắc; 朝夕相处 là sớm tối bên nhau; 目瞪口呆 là sững sờ.'},
-  {wrong:'校长一走上台，全场一下子____。',opts:['鸦雀无声','滔滔不绝','水泄不通','目瞪口呆'],ans:0,
-   exp:'Cả hội trường im bặt → 鸦雀无声. 滔滔不绝 là nói mãi; 水泄不通 là chật như nêm; 目瞪口呆 là sững sờ (tả người, không tả nơi chốn).'},
-  {wrong:'如果这次不是女儿反驳，我还____不到自己的问题。',opts:['意识','意见','知识','常识'],ans:0,
-   exp:'Nhận ra → 意识不到 (bổ ngữ khả năng). 意见, 知识, 常识 đều là danh từ, không đi với 不到.'},
-  {wrong:'你把我的生日都忘了，____能不生气吗？',opts:['人家','别人','大家','大伙儿'],ans:0,
-   exp:'Chỉ chính người nói với giọng hờn dỗi → 人家 (= 我). 别人, 大家, 大伙儿 đều không chỉ được người nói.'},
-  {wrong:'我刚说完，同桌就站起来____我的观点，说我的理由不充分。',opts:['反驳','反问','相反','反而'],ans:0,
-   exp:'Đưa lý lẽ để bác bỏ quan điểm → 反驳. 反问 là hỏi vặn (không mang 观点 làm tân ngữ); 相反 là tính từ "trái ngược"; 反而 là liên từ "trái lại".'},
-  {wrong:'在妈妈的____下，我每天坚持跑步半个小时。',opts:['督促','附和','嚷','启示'],ans:0,
-   exp:'在……的督促下 = nhờ ai đốc thúc. 附和 là hùa theo; 嚷 là la hét; 启示 là bài học — không hợp với khung 在……下.'},
-  {wrong:'天天还没来，林林就变得____勤劳。',opts:['异常','异样','正常','平常'],ans:0,
-   exp:'Phó từ chỉ mức độ trước tính từ → 异常勤劳 (chăm chỉ lạ thường). 异样 là khác lạ (tính từ); 正常 / 平常 là bình thường — trái ý câu.'}
+  {wrong:'她说话做事都很____，想到什么就说什么。',opts:['爽快','宽容','亲密','郑重'],ans:0,exp:'Nói thẳng, làm dứt khoát → 爽快. 宽容 là bao dung; 亲密 tả quan hệ thân; 郑重 là trịnh trọng — không tả tính thẳng thắn.'},
+  {wrong:'听说下个周末全家要去海边，弟弟____马上就到周末。',opts:['巴不得','舍不得','怪不得','来不及'],ans:0,exp:'Mong mỏi tha thiết → 巴不得 + mệnh đề. 舍不得 là không nỡ; 怪不得 là thảo nào; 来不及 là không kịp.'},
+  {wrong:'这次旅行我们玩儿得别提多开心____。',opts:['了','的','过','着'],ans:0,exp:'Khung cố định 别提多 + tính từ + 了; bỏ 了 hoặc thay bằng 的 / 过 / 着 đều sai.'},
+  {wrong:'我的书包别提____重了，里面装了七八本书。',opts:['多','很','太','真'],ans:0,exp:'Chỉ có 别提多……了; người Việt hay dịch "nặng khỏi nói" thành 别提很 / 别提太 — sai.'},
+  {wrong:'你要是对我有意见，就____告诉我，别让别人来告诉我。',opts:['当面','表面','对面','面对'],ans:0,exp:'Nói thẳng trước mặt → 当面 + V. 表面 là bề ngoài; 对面 là phía đối diện; 面对 là động từ "đối mặt", không đứng trước 告诉.'},
+  {wrong:'会上，经理刚说完，几个人马上点头____，其实他们心里并不同意。',opts:['附和','反驳','嘲笑','督促'],ans:0,exp:'Gật đầu nói theo dù không đồng ý → 附和. 反驳 là phản bác (ngược lại); 嘲笑 là chê cười; 督促 là đốc thúc.'},
+  {wrong:'他是这所学校的第五____校长。',opts:['任','次','件','场'],ans:0,exp:'Đếm đời người giữ một chức vụ → 第……任. 次 đếm số lần; 件 đếm sự việc, quần áo; 场 đếm trận, buổi.'},
+  {wrong:'这家公司对产品质量要求非常____，一点儿小问题也不放过。',opts:['严格','严厉','亲密','勤劳'],ans:0,exp:'Yêu cầu, quy định chặt chẽ → 严格. 严厉 tả thái độ, lời nói gay gắt với NGƯỜI (老师很严厉), không đi với 要求 ở đây.'},
+  {wrong:'爷爷一谈起年轻时候的事就____，讲起来没完没了。',opts:['滔滔不绝','沉默','和睦相处','十足'],ans:0,exp:'Nói mãi không dứt → 滔滔不绝. 沉默 là im lặng — trái nghĩa; 和睦相处 là sống hoà thuận; 十足 đứng sau danh từ (信心十足).'},
+  {wrong:'考试开始了，教室里____，只能听到写字的声音。',opts:['鸦雀无声','人山人海','笑声不断','吵吵嚷嚷'],ans:0,exp:'Im lặng tuyệt đối → 鸦雀无声. Ba phương án kia đều tả cảnh ồn ào, lộn xộn — trái với "chỉ nghe tiếng viết".'},
+  {wrong:'小李工作很努力，却总是被经理____，他觉得很委屈。',opts:['忽略','讨好','附和','约束'],ans:0,exp:'Bị cấp trên không để ý tới → 被……忽略. 讨好 là lấy lòng; 附和 là hùa theo; 约束 là kiềm chế — không hợp ý "tủi thân".'},
+  {wrong:'他为了多拿一点儿奖金，每天想办法____老板。',opts:['讨好','督促','反驳','启蒙'],ans:0,exp:'Tìm cách lấy lòng sếp → 讨好老板. 督促 là việc của sếp với nhân viên; 反驳 là cãi lại; 启蒙 là dạy vỡ lòng.'},
+  {wrong:'我一说完，他就站起来____我的看法，认为我的理由不够充分。',opts:['反驳','反问','相反','反而'],ans:0,exp:'Đưa lý lẽ bác bỏ ý kiến → 反驳 + 看法. 反问 là hỏi vặn; 相反 là tính từ "trái ngược"; 反而 là phó từ "trái lại".'},
+  {wrong:'他们俩结婚十年了，从来不吵架，家庭十分____。',opts:['和睦','勤劳','郑重','爽快'],ans:0,exp:'Gia đình êm ấm, không cãi nhau → 家庭和睦. 勤劳 là cần cù; 郑重 là trịnh trọng; 爽快 là thẳng thắn — đều tả người, không tả gia đình.'},
+  {wrong:'今年夏天____热，很多人白天都不敢出门。',opts:['异常','正常','平常','经常'],ans:0,exp:'Mức độ khác thường → 异常 + tính từ (văn viết). 正常 / 平常 là bình thường — trái ý; 经常 chỉ tần suất, không bổ nghĩa cho 热.'}
 ];
 
 // ══════════════════════════════════════════
-// DỊCH — câu ghép 2–3 vế, dùng từ của bài + ôn từ HSK 5 (疼爱, 简直, 自从, 体贴, 与其, 一旦, 自觉, 何况…)
-// Chiều Việt → Trung: đời sống học sinh
+// DỊCH Việt → Trung — câu mới, dùng từ của bài + ôn ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Tuy thầy chủ nhiệm rất nghiêm khắc với chúng tôi, nhưng ai cũng biết thật ra thầy rất thương học trò.',zh:'虽然班主任对我们很严厉，但是大伙儿都知道他其实很疼爱学生。',py:'Suīrán bānzhǔrèn duì wǒmen hěn yánlì, dànshì dàhuǒr dōu zhīdào tā qíshí hěn téng\'ài xuésheng.',goiY:['虽然……但是……','严厉','大伙儿','疼爱'],giai:'虽然……但是…… nối hai ý trái chiều; "nghiêm khắc với ai" = 对 + ai + 严厉 (giới từ 对 đứng trước tính từ); "ai cũng" trong khẩu ngữ nói 大伙儿都.'},
-  {vi:'Hễ nhắc đến món ruột của mình là mẹ tôi nói thao thao bất tuyệt, cứ như không dừng lại được.',zh:'一说起自己的拿手菜，我妈妈就滔滔不绝，简直停不下来。',py:'Yì shuōqǐ zìjǐ de náshǒu cài, wǒ māma jiù tāotāo bù jué, jiǎnzhí tíng bu xiàlái.',goiY:['一……就……','拿手菜','滔滔不绝','简直'],giai:'一 + V1，就 + V2 = hễ… là…; "món ruột" = 拿手菜, đừng dịch từng chữ; 简直 (HSK 5) = gần như, quả thật là.'},
-  {vi:'Nếu cậu có ý kiến gì với tớ thì cứ nói thẳng trước mặt, đừng chê cười tớ sau lưng.',zh:'如果你对我有什么意见，就当面说出来，别在背后嘲笑我。',py:'Rúguǒ nǐ duì wǒ yǒu shénme yìjiàn, jiù dāngmiàn shuō chūlái, bié zài bèihòu cháoxiào wǒ.',goiY:['如果……就……','当面','背后','嘲笑'],giai:'当面 (trước mặt) đối lập với 在背后 (sau lưng), cả hai đứng trước động từ; "có ý kiến với ai" = 对 + ai + 有意见.'},
-  {vi:'Nghe nói cuối tuần cả lớp sẽ đi dã ngoại, bọn trẻ phấn khởi lạ thường, chỉ mong sao ngày mai là thứ Bảy luôn.',zh:'听说周末全班要去郊游，孩子们异常兴奋，巴不得明天就是星期六。',py:'Tīngshuō zhōumò quán bān yào qù jiāoyóu, háizimen yìcháng xīngfèn, bābudé míngtiān jiù shì xīngqīliù.',goiY:['异常','巴不得'],giai:'巴不得 + mệnh đề = chỉ mong sao…; 异常 + tính từ = cực kỳ (văn viết), đừng dịch thành "phấn khởi bất thường".'},
-  {vi:'Từ khi chuyển sang lớp mới, tôi và các bạn sống với nhau hoà hợp khỏi phải nói, chưa từng giận dỗi nhau lần nào.',zh:'自从转到新班级以后，我和同学们相处得别提多融洽了，从来没闹过别扭。',py:'Zìcóng zhuǎndào xīn bānjí yǐhòu, wǒ hé tóngxuémen xiāngchǔ de biétí duō róngqià le, cónglái méi nàoguo bièniu.',goiY:['自从……以后','别提多……了','融洽','别扭'],giai:'"… khỏi phải nói" = 别提多 + tính từ + 了, có thể đứng sau 相处得; 闹别扭 là cụm li hợp nên 过 chen vào giữa: 闹过别扭.'},
-  {vi:'Sở dĩ gia đình họ luôn hoà thuận là vì ai cũng biết bao dung và quan tâm đến người khác.',zh:'他们一家之所以一直很和睦，是因为每个人都懂得宽容和体贴别人。',py:'Tāmen yì jiā zhīsuǒyǐ yìzhí hěn hémù, shì yīnwèi měi ge rén dōu dǒngde kuānróng hé tǐtiē biérén.',goiY:['之所以……是因为……','和睦','宽容','体贴'],giai:'之所以 + kết quả, 是因为 + nguyên nhân: nêu kết quả trước, giải thích sau; 之所以 đứng sau chủ ngữ 他们一家. 体贴 (HSK 5 bài 24) = chu đáo, quan tâm.'},
-  {vi:'Thay vì ngày nào cũng tìm cách lấy lòng thầy cô, chi bằng biết kiềm chế bản thân và dồn tâm sức vào việc học.',zh:'与其每天想办法讨好老师，不如约束好自己，把精力放在学习上。',py:'Yǔqí měi tiān xiǎng bànfǎ tǎo hǎo lǎoshī, bùrú yuēshù hǎo zìjǐ, bǎ jīnglì fàng zài xuéxí shang.',goiY:['与其……不如……','讨好','约束'],giai:'与其 A，不如 B = thay vì A thì chi bằng B (người nói chọn B); "dồn tâm sức vào…" = 把精力放在……上.'},
-  {vi:'Mãi đến khi bà ngoại phải nằm viện, tôi mới nhận ra mấy năm nay mình chỉ lo học, đã quá lơ là người nhà.',zh:'直到外婆住进了医院，我才意识到这些年自己只顾着学习，太忽略家人了。',py:'Zhídào wàipó zhùjìnle yīyuàn, wǒ cái yìshí dào zhèxiē nián zìjǐ zhǐ gùzhe xuéxí, tài hūlüè jiārén le.',goiY:['直到……才……','意识到','忽略'],giai:'直到……才……: mãi đến… mới…; 意识到 + mệnh đề = nhận ra rằng…; 忽略 + người = lơ là, không để ý đến ai.'},
-  {vi:'Một khi quy định mới được áp dụng thì dù không có thầy cô đốc thúc, học sinh cũng phải tự giác tuân thủ.',zh:'新规定一旦开始实行，即使没有老师督促，学生也要自觉遵守。',py:'Xīn guīdìng yídàn kāishǐ shíxíng, jíshǐ méiyǒu lǎoshī dūcù, xuésheng yě yào zìjué zūnshǒu.',goiY:['一旦','即使……也……','实行','督促'],giai:'一旦 (HSK 5) đứng sau chủ ngữ 新规定; 即使……也…… = dù… cũng…; "áp dụng quy định" = 实行, không dùng 实践.'},
-  {vi:'Mẹ nghiêm khắc bảo tôi bớt chơi điện thoại, tôi bèn ngơ ngác hỏi lại: "Chẳng phải mẹ cũng cầm điện thoại cả ngày sao? Huống hồ bài tập của con đã làm xong từ lâu rồi."',zh:'妈妈严厉地让我少玩儿手机，我便一脸疑惑地反问：“您不是也整天拿着手机吗？何况我的作业早就做完了。”',py:'Māma yánlì de ràng wǒ shǎo wánr shǒujī, wǒ biàn yì liǎn yíhuò de fǎnwèn: “Nín bú shì yě zhěngtiān názhe shǒujī ma? Hékuàng wǒ de zuòyè zǎo jiù zuòwán le.”',goiY:['便','反问','不是……吗','何况'],giai:'便 = 就 (văn viết, đứng sau chủ ngữ); 不是……吗？ là câu hỏi tu từ, ý khẳng định; 何况 = huống hồ, thêm một lý do mạnh hơn. 一脸疑惑地 làm trạng ngữ cho 反问.'}
+  {vi:'Tuy thầy chủ nhiệm rất nghiêm khắc với chúng tôi, nhưng mọi người đều biết thật ra thầy rất thương học trò.',zh:'虽然老师对我们很严厉，但是大伙儿都知道他其实很疼爱学生。',py:'Suīrán lǎoshī duì wǒmen hěn yánlì, dànshì dàhuǒr dōu zhīdào tā qíshí hěn téng\'ài xuésheng.',goiY:['虽然……但是……','严厉','大伙儿','疼爱'],giai:'"Nghiêm khắc với ai" = 对 + ai + 严厉 (giới từ 对 đứng trước tính từ); "mọi người" trong khẩu ngữ nói 大伙儿都.'},
+  {vi:'Hễ nhắc đến món ruột của mình là mẹ tôi nói thao thao bất tuyệt, gần như không dừng lại được.',zh:'一说起自己的拿手菜，我妈妈就滔滔不绝，简直停不下来。',py:'Yì shuōqǐ zìjǐ de náshǒu cài, wǒ māma jiù tāotāo bù jué, jiǎnzhí tíng bu xiàlái.',goiY:['一……就……','拿手菜','滔滔不绝','简直'],giai:'一 + V1，就 + V2 = hễ… là…; "món ruột" = 拿手菜; 简直 (HSK 5) = gần như, quả thật là.'},
+  {vi:'Nghe nói cuối tuần cả lớp sẽ đi chơi xa, bọn trẻ phấn khởi lạ thường, chỉ mong sao ngày mai là thứ Bảy luôn.',zh:'听说周末全班要去旅行，孩子们异常兴奋，巴不得明天就是星期六。',py:'Tīngshuō zhōumò quán bān yào qù lǚxíng, háizimen yìcháng xīngfèn, bābudé míngtiān jiù shì xīngqīliù.',goiY:['异常','巴不得'],giai:'巴不得 + mệnh đề = chỉ mong sao…; 异常 + tính từ = cực kỳ (văn viết), đừng dịch thành "phấn khởi bất thường".'},
+  {vi:'Từ khi chuyển sang lớp mới, tôi và các bạn sống với nhau hoà hợp khỏi phải nói, chưa từng giận dỗi nhau lần nào.',zh:'自从转到新班以后，我和同学们相处得别提多融洽了，从来没有闹别扭。',py:'Zìcóng zhuǎndào xīn bān yǐhòu, wǒ hé tóngxuémen xiāngchǔ de biétí duō róngqià le, cónglái méiyǒu nào bièniu.',goiY:['自从……以后','别提多……了','融洽','别扭'],giai:'"… khỏi phải nói" = 别提多 + tính từ + 了, có thể đứng sau 相处得; 闹别扭 = giận dỗi, xích mích; phủ định quá khứ dùng 没有.'},
+  {vi:'Sở dĩ gia đình họ luôn hoà thuận là vì ai cũng biết bao dung và quan tâm đến người khác.',zh:'他们一家之所以一直很和睦，是因为每个人都懂得宽容和体贴别人。',py:'Tāmen yì jiā zhīsuǒyǐ yìzhí hěn hémù, shì yīnwèi měi ge rén dōu dǒngde kuānróng hé tǐtiē biérén.',goiY:['之所以……是因为……','和睦','宽容','体贴'],giai:'之所以 + kết quả, 是因为 + nguyên nhân: nêu kết quả trước, giải thích sau; 体贴 (HSK 5) = chu đáo, quan tâm.'},
+  {vi:'Một khi quy định mới được áp dụng thì dù không có thầy cô đốc thúc, học sinh cũng phải tự giác tuân thủ.',zh:'新规定一旦开始实行，即使没有老师督促，学生也要自觉遵守。',py:'Xīn guīdìng yídàn kāishǐ shíxíng, jíshǐ méiyǒu lǎoshī dūcù, xuésheng yě yào zìjué zūnshǒu.',goiY:['一旦','即使……也……','实行','督促'],giai:'一旦 (HSK 5) đứng sau chủ ngữ 新规定; 即使……也…… = dù… cũng…; "áp dụng quy định" = 实行.'}
 ];
 
-// Chiều Trung → Việt — bám ý bài khoá, diễn đạt lại bằng câu ghép; không trùng câu chiều trên
+// ══════════════════════════════════════════
+// Dịch Trung → Việt — câu mới, không trùng chiều trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Bố mẹ Thiên Thiên phải đi công tác, muốn nhờ chúng tôi trông con gái giúp, vợ chồng tôi nhận lời ngay không chút đắn đo.',zh:'天天的父母要出差，想请我们帮忙照看女儿，我和老公爽快地答应了。',py:'Tiāntiān de fùmǔ yào chūchāi, xiǎng qǐng wǒmen bāngmáng zhàokàn nǚ\'ér, wǒ hé lǎogōng shuǎngkuai de dāying le.',goiY:['爽快 = thẳng thắn, dứt khoát (nhận lời ngay)','老公 = chồng (khẩu ngữ)'],giai:'爽快地答应 dịch "nhận lời ngay / vui vẻ nhận lời", không dịch "sảng khoái nhận lời"; 我和老公 dịch gọn "vợ chồng tôi".'},
-  {vi:'Có một đứa trẻ ở cùng sớm tối với con gái một, chúng tôi còn mong chẳng được, huống hồ Lâm Lâm lại cực kỳ quý người bạn này.',zh:'有个孩子和独生女朝夕相处，我们巴不得呢，何况林林对这个伙伴异常热情。',py:'Yǒu ge háizi hé dúshēngnǚ zhāoxī xiāngchǔ, wǒmen bābudé ne, hékuàng Línlín duì zhège huǒbàn yìcháng rèqíng.',goiY:['巴不得呢 = mong còn chẳng được','何况 = huống hồ','异常 = cực kỳ'],giai:'巴不得呢 đứng cuối vế = "còn mong chẳng được"; 何况 thêm lý do mạnh hơn → "huống hồ"; 对……异常热情 dịch tự nhiên là "rất quý, rất nhiệt tình với…".'},
-  {vi:'Thiên Thiên còn chưa đến, Lâm Lâm đã dọn nhà sạch bong, rất có phong thái quý ông.',zh:'天天还没来，林林就将屋子收拾得干干净净，绅士风度十足。',py:'Tiāntiān hái méi lái, Línlín jiù jiāng wūzi shōushi de gāngānjìngjìng, shēnshì fēngdù shízú.',goiY:['还没……就…… = chưa… đã…','将 = 把 (văn viết)','风度十足 = đầy phong thái'],giai:'还没 A，就 B = A chưa xảy ra mà B đã xảy ra; 将 là dạng văn viết của 把, dịch như câu 把 bình thường.'},
-  {vi:'Hai đứa không những chưa bao giờ đánh nhau mà quan hệ còn hoà hợp khỏi phải nói, đến vợ chồng tôi cũng hơi ghen tị.',zh:'两个孩子不但从不打架，而且关系别提多融洽了，我和老公都有点儿嫉妒。',py:'Liǎng ge háizi búdàn cóng bù dǎjià, érqiě guānxi biétí duō róngqià le, wǒ hé lǎogōng dōu yǒudiǎnr jídù.',goiY:['不但……而且…… = không những… mà còn…','别提多……了 = … khỏi phải nói','嫉妒 = ghen tị'],giai:'不但……而且…… tăng tiến; 别提多融洽了 dịch "hoà hợp khỏi phải nói / hoà hợp vô cùng", không dịch "đừng nhắc tới".'},
-  {vi:'Làm xong bài tập, bọn trẻ liền bàn tán không ngớt về bạn bè: đứa này bảo bạn kia hay chê cười người khác, đứa kia bảo bạn nọ hay nịnh thầy cô.',zh:'孩子们做完作业，就滔滔不绝地议论起同学来，一个说这个爱嘲笑人，另一个说那个爱讨好老师。',py:'Háizimen zuòwán zuòyè, jiù tāotāo bù jué de yìlùn qǐ tóngxué lái, yí ge shuō zhège ài cháoxiào rén, lìng yí ge shuō nàge ài tǎo hǎo lǎoshī.',goiY:['滔滔不绝 = nói không dứt','一个……另一个…… = đứa này… đứa kia…','讨好 = nịnh, lấy lòng'],giai:'V + 起 + tân ngữ + 来 = bắt đầu làm gì (议论起同学来); 一个说……另一个说…… dịch "đứa này bảo… đứa kia bảo…".'},
-  {vi:'Tôi nghiêm túc nói với hai đứa: thay vì nói xấu người ta sau lưng, chi bằng nói rõ vấn đề ngay trước mặt.',zh:'我郑重地告诉她们，与其在背后说人家的坏话，不如当面把问题说清楚。',py:'Wǒ zhèngzhòng de gàosu tāmen, yǔqí zài bèihòu shuō rénjia de huàihuà, bùrú dāngmiàn bǎ wèntí shuō qīngchu.',goiY:['郑重 = nghiêm túc, trịnh trọng','与其……不如…… = thay vì… chi bằng…','当面 = trước mặt'],giai:'与其 A，不如 B: người nói chọn B; 人家 ở đây = người khác (别人), dịch "người ta".'},
-  {vi:'Con gái không những không nghe lời chúng tôi, trái lại còn ngơ ngác hỏi vặn: "Chẳng phải bố mẹ cũng như thế sao?"',zh:'女儿不但没有接受我们的话，反而一脸疑惑地反问道：“你们不是也这样吗？”',py:'Nǚ\'ér búdàn méiyǒu jiēshòu wǒmen de huà, fǎn\'ér yì liǎn yíhuò de fǎnwèn dào: “Nǐmen bú shì yě zhèyàng ma?”',goiY:['不但没有……反而…… = không những không… trái lại còn…','反问道 = hỏi ngược lại (道 = 说, văn viết)'],giai:'不但没有……反而…… nêu kết quả NGƯỢC với mong đợi; 不是……吗？ là câu hỏi tu từ → dịch "chẳng phải… sao?".'},
-  {vi:'Trong phút chốc, vợ chồng tôi bị hỏi đến cứng họng, căn phòng im phăng phắc, chẳng ai biết nên trả lời thế nào.',zh:'瞬间我和老公被问得说不出话来，屋子里鸦雀无声，谁也不知道该怎么回答。',py:'Shùnjiān wǒ hé lǎogōng bèi wèn de shuō bu chū huà lái, wūzi li yāquè wúshēng, shéi yě bù zhīdào gāi zěnme huídá.',goiY:['瞬间 = trong phút chốc','鸦雀无声 = im phăng phắc','谁也不…… = chẳng ai…'],giai:'被问得说不出话来 = bị hỏi đến mức không nói được gì → "cứng họng"; thành ngữ 鸦雀无声 dịch bằng thành ngữ tiếng Việt "im phăng phắc / lặng ngắt như tờ".'},
-  {vi:'Nếu không nhờ con gái bắt bẻ, tôi vẫn chưa nhận ra rằng chúng tôi đang áp dụng hai tiêu chuẩn: dễ dãi với bản thân, nghiêm khắc với con cái.',zh:'要不是女儿反驳，我还意识不到我们实行的是两套标准：对自己宽容，对孩子严厉。',py:'Yàobúshì nǚ\'ér fǎnbó, wǒ hái yìshí bú dào wǒmen shíxíng de shì liǎng tào biāozhǔn: duì zìjǐ kuānróng, duì háizi yánlì.',goiY:['要不是…… = nếu không phải (nhờ)…','意识不到 = không nhận ra','实行 = áp dụng'],giai:'要不是 + điều kiện trái sự thật, vế sau nêu hậu quả; 对自己宽容 trong ngữ cảnh này dịch "dễ dãi với bản thân" hợp hơn "khoan dung".'},
-  {vi:'Cha mẹ đã là người thầy vỡ lòng của con cái thì trước hết phải giữ gìn lời nói việc làm của chính mình, nếu không thì rất khó khiến con tâm phục.',zh:'父母既然是孩子的启蒙老师，就应当首先约束好自己的言行，否则便很难让孩子信服。',py:'Fùmǔ jìrán shì háizi de qǐméng lǎoshī, jiù yīngdāng shǒuxiān yuēshù hǎo zìjǐ de yánxíng, fǒuzé biàn hěn nán ràng háizi xìnfú.',goiY:['既然……就…… = đã… thì…','否则 = nếu không thì','便 = 就 (văn viết)','约束 = kiềm chế, giữ gìn'],giai:'既然 + sự thật đã biết, 就 + kết luận; 否则 nêu hậu quả nếu không làm theo; 信服 = tin phục → "tâm phục".'}
+  {vi:'Em gái đỗ vào trường đại học mơ ước, bố mẹ tự hào khỏi phải nói.',zh:'妹妹考上了理想的大学，父母别提多骄傲了。',py:'Mèimei kǎoshàngle lǐxiǎng de dàxué, fùmǔ biétí duō jiāo\'ào le.',goiY:['考上 = thi đỗ','理想的大学 = trường đại học mơ ước','别提多……了 = … khỏi phải nói'],giai:'别提多骄傲了 dịch "tự hào khỏi phải nói / tự hào vô cùng", không dịch "đừng nhắc tới".'},
+  {vi:'Ngày tốt nghiệp đại học, tôi trịnh trọng cảm ơn cô giáo vỡ lòng của mình, cô đã dạy tôi suốt bao năm.',zh:'大学毕业的那天，我郑重地感谢了我的启蒙老师，她教了我很多年。',py:'Dàxué bìyè de nà tiān, wǒ zhèngzhòng de gǎnxièle wǒ de qǐméng lǎoshī, tā jiāole wǒ hěn duō nián.',goiY:['郑重地 = trịnh trọng','启蒙老师 = thầy cô dạy vỡ lòng'],giai:'郑重地 + V là trạng ngữ chỉ thái độ nghiêm túc; 启蒙老师 dịch "cô giáo vỡ lòng", không dịch "giáo viên khai sáng".'},
+  {vi:'Công việc bận đến đâu cũng không được lơ là người nhà, đợi đến khi bạn nhận ra điều này thì có thể đã quá muộn.',zh:'工作再忙也不能忽略家人，等你意识到这一点，可能已经太晚了。',py:'Gōngzuò zài máng yě bù néng hūlüè jiārén, děng nǐ yìshí dào zhè yì diǎn, kěnéng yǐjīng tài wǎn le.',goiY:['再……也…… = dù… đến đâu cũng…','忽略 = lơ là','意识到 = nhận ra'],giai:'再 + tính từ + 也 = dù… đến đâu cũng…; 等……, …… = đợi đến khi…, thì….'},
+  {vi:'Ông nội rất bao dung, dù chúng tôi cãi lại ngay trước mặt, ông cũng chưa bao giờ giận.',zh:'爷爷很宽容，即使我们当面反驳他，他也从来不生气。',py:'Yéye hěn kuānróng, jíshǐ wǒmen dāngmiàn fǎnbó tā, tā yě cónglái bù shēngqì.',goiY:['宽容 = bao dung','当面 = ngay trước mặt','反驳 = cãi lại, phản bác'],giai:'即使……也…… = dù… cũng…; 当面反驳 dịch tự nhiên là "cãi lại ngay trước mặt".'},
+  {vi:'Cơ hội tốt thế này tôi chỉ mong được đi ngay, huống hồ lại được đến thành phố tôi muốn đến nhất.',zh:'这么好的机会，我巴不得马上就去，何况还是去我最想去的城市。',py:'Zhème hǎo de jīhuì, wǒ bābudé mǎshàng jiù qù, hékuàng hái shì qù wǒ zuì xiǎng qù de chéngshì.',goiY:['巴不得 = chỉ mong sao','何况 = huống hồ'],giai:'巴不得 + V = chỉ mong sao được…; 何况 thêm một lý do mạnh hơn → "huống hồ".'}
 ];
 
 // ══════════════════════════════════════════
@@ -1481,8 +1402,8 @@ var writingData = {
     'Câu cuối có nêu được đạo lý: muốn làm cha mẹ tốt, trước hết phải giữ gìn lời nói việc làm của mình chưa?'
   ],
   model:{
-    zh:'天天的父母要出差，想请我们帮忙照看她几天。我和老公爽快地答应了，有个孩子和女儿林林做伴，我们巴不得呢！林林更是别提多高兴了，嚷着要用爸爸的拿手菜欢迎天天。天天还没来，林林就变得异常勤劳，把屋子收拾得干干净净，东西摆放得整整齐齐，什么好事都想着天天。天天来了以后，两个孩子早上不用叫就醒了，上学不用接送，做作业也不用督促。她们不打架，不闹别扭，关系十分融洽。一天晚上，两个孩子聊起了同学，一个说王朵朵爱嘲笑别人，另一个说高春来最会讨好老师。我严肃地说：“看到别人有缺点，应该当面说，不能在背后议论人家。”老公也附和：“对人要宽容。”没想到女儿一脸疑惑地反问：“你们不是也常说哪个朋友很自私吗？”我们一下子说不出话来。我这才意识到，我们对自己宽容，对孩子严厉，实行的是两套标准。孩子也可以是父母的老师，想当好父母，首先要约束好自己的言行。',
-    py:'Tiāntiān de fùmǔ yào chūchāi, xiǎng qǐng wǒmen bāngmáng zhàokàn tā jǐ tiān. Wǒ hé lǎogōng shuǎngkuai de dāying le, yǒu ge háizi hé nǚ\'ér Línlín zuòbàn, wǒmen bābudé ne! Línlín gèng shì biétí duō gāoxìng le, rǎngzhe yào yòng bàba de náshǒu cài huānyíng Tiāntiān. Tiāntiān hái méi lái, Línlín jiù biànde yìcháng qínláo, bǎ wūzi shōushi de gāngānjìngjìng, dōngxi bǎifàng de zhěngzhěngqíqí, shénme hǎoshì dōu xiǎngzhe Tiāntiān. Tiāntiān láile yǐhòu, liǎng ge háizi zǎoshang búyòng jiào jiù xǐng le, shàngxué búyòng jiēsòng, zuò zuòyè yě búyòng dūcù. Tāmen bù dǎjià, bú nào bièniu, guānxi shífēn róngqià. Yì tiān wǎnshang, liǎng ge háizi liáoqǐle tóngxué, yí ge shuō Wáng Duǒduǒ ài cháoxiào biérén, lìng yí ge shuō Gāo Chūnlái zuì huì tǎo hǎo lǎoshī. Wǒ yánsù de shuō: “Kàndào biérén yǒu quēdiǎn, yīnggāi dāngmiàn shuō, bù néng zài bèihòu yìlùn rénjia.” Lǎogōng yě fùhè: “Duì rén yào kuānróng.” Méi xiǎngdào nǚ\'ér yì liǎn yíhuò de fǎnwèn: “Nǐmen bú shì yě cháng shuō nǎge péngyou hěn zìsī ma?” Wǒmen yíxiàzi shuō bu chū huà lái. Wǒ zhè cái yìshí dào, wǒmen duì zìjǐ kuānróng, duì háizi yánlì, shíxíng de shì liǎng tào biāozhǔn. Háizi yě kěyǐ shì fùmǔ de lǎoshī, xiǎng dāng hǎo fùmǔ, shǒuxiān yào yuēshù hǎo zìjǐ de yánxíng.',
+    zh:'天天的父母要出差，想请我们帮忙照看她几天。我和老公爽快地答应了，有个孩子和女儿林林一起玩儿，我们巴不得呢！林林更是别提多高兴了，嚷着要用爸爸的拿手菜欢迎天天。天天还没来，林林就变得异常勤劳，把屋子收拾得干干净净，东西摆放得整整齐齐，什么好事都想着天天。天天来了以后，两个孩子早上不用叫就醒了，上学不用接送，做作业也不用督促。她们不打架，不闹别扭，关系十分融洽。一天晚上，两个孩子聊起了同学，一个说王朵朵爱嘲笑别人，另一个说高春来最会讨好老师。我严肃地说：“看到别人有缺点，应该当面说，不能在背后议论人家。”老公也附和：“对人要宽容。”没想到女儿一脸疑惑地反问：“你们不是也常说哪个朋友很自私吗？”我们一下子说不出话来。我这才意识到，我们对自己宽容，对孩子严厉，实行的是两套标准。孩子也可以是父母的老师，想当好父母，首先要约束好自己的言行。',
+    py:'Tiāntiān de fùmǔ yào chūchāi, xiǎng qǐng wǒmen bāngmáng zhàokàn tā jǐ tiān. Wǒ hé lǎogōng shuǎngkuai de dāying le, yǒu ge háizi hé nǚ\'ér Línlín yìqǐ wánr, wǒmen bābudé ne! Línlín gèng shì biétí duō gāoxìng le, rǎngzhe yào yòng bàba de náshǒu cài huānyíng Tiāntiān. Tiāntiān hái méi lái, Línlín jiù biànde yìcháng qínláo, bǎ wūzi shōushi de gāngānjìngjìng, dōngxi bǎifàng de zhěngzhěngqíqí, shénme hǎoshì dōu xiǎngzhe Tiāntiān. Tiāntiān láile yǐhòu, liǎng ge háizi zǎoshang búyòng jiào jiù xǐng le, shàngxué búyòng jiēsòng, zuò zuòyè yě búyòng dūcù. Tāmen bù dǎjià, bú nào bièniu, guānxi shífēn róngqià. Yì tiān wǎnshang, liǎng ge háizi liáoqǐle tóngxué, yí ge shuō Wáng Duǒduǒ ài cháoxiào biérén, lìng yí ge shuō Gāo Chūnlái zuì huì tǎo hǎo lǎoshī. Wǒ yánsù de shuō: “Kàndào biérén yǒu quēdiǎn, yīnggāi dāngmiàn shuō, bù néng zài bèihòu yìlùn rénjia.” Lǎogōng yě fùhè: “Duì rén yào kuānróng.” Méi xiǎngdào nǚ\'ér yì liǎn yíhuò de fǎnwèn: “Nǐmen bú shì yě cháng shuō nǎge péngyou hěn zìsī ma?” Wǒmen yíxiàzi shuō bu chū huà lái. Wǒ zhè cái yìshí dào, wǒmen duì zìjǐ kuānróng, duì háizi yánlì, shíxíng de shì liǎng tào biāozhǔn. Háizi yě kěyǐ shì fùmǔ de lǎoshī, xiǎng dāng hǎo fùmǔ, shǒuxiān yào yuēshù hǎo zìjǐ de yánxíng.',
     vn:'Bố mẹ Thiên Thiên phải đi công tác, muốn nhờ chúng tôi trông cô bé mấy ngày. Vợ chồng tôi nhận lời ngay: có một đứa trẻ làm bạn với con gái Lâm Lâm, chúng tôi còn mong chẳng được! Lâm Lâm thì càng vui khỏi phải nói, đòi ầm lên phải dùng món ruột của bố để đón Thiên Thiên. Thiên Thiên còn chưa đến, Lâm Lâm đã trở nên chăm chỉ lạ thường, dọn nhà sạch bong, đồ đạc bày biện ngăn nắp, việc gì tốt cũng nghĩ đến Thiên Thiên. Thiên Thiên đến rồi, sáng nào hai đứa cũng tự dậy không cần gọi, đi học không cần đưa đón, làm bài tập cũng không cần giục. Hai đứa không đánh nhau, không giận dỗi, quan hệ rất hoà hợp. Một tối, hai đứa nói chuyện về bạn bè, đứa này bảo Vương Đoá Đoá hay chê cười người khác, đứa kia bảo Cao Xuân Lai giỏi nịnh thầy cô nhất. Tôi nghiêm nghị nói: "Thấy người khác có khuyết điểm thì nên nói thẳng trước mặt, không được bàn tán người ta sau lưng." Chồng tôi cũng phụ hoạ: "Đối với người khác phải bao dung." Không ngờ con gái ngơ ngác hỏi ngược lại: "Chẳng phải bố mẹ cũng hay nói bạn này bạn kia ích kỷ sao?" Vợ chồng tôi lập tức cứng họng. Đến lúc ấy tôi mới nhận ra, chúng tôi dễ dãi với bản thân, nghiêm khắc với con cái — đang áp dụng hai tiêu chuẩn. Con trẻ cũng có thể là thầy của cha mẹ; muốn làm cha mẹ tốt, trước hết phải giữ gìn lời nói, việc làm của chính mình.'
   }
 };
@@ -1492,346 +1413,131 @@ var writingData = {
 // Mỗi dòng bảng một câu hỏi: cột trái = câu hỏi, cột phải = gợi ý
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Đây là bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b> — trả lời lần lượt 6 câu hỏi để tóm tắt bài khoá. Bấm loa nghe câu hỏi, nhìn gợi ý (cột phải của bảng trong sách), rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng được: 巴不得 · 别提多……了 · 异常 · 督促 · 当面 · 反问 · 严厉 · 约束.',
-  questions:[
-    {q_zh:'天天要来“我们”家，“我们”全家的态度怎么样？',
-     q_vn:'Thiên Thiên sắp đến nhà "chúng tôi", thái độ của cả nhà "chúng tôi" thế nào?',
-     hint:'①“我”和老公的态度：　②林林的态度：　③全家别提多……了',
-     sample:'天天的父母要出差，想请我们照看她几天，我和老公爽快地答应了，我们巴不得呢！林林嚷着要用爸爸的拿手菜欢迎天天。全家别提多高兴了。',
-     sample_vn:'Bố mẹ Thiên Thiên phải đi công tác, muốn nhờ chúng tôi trông cô bé mấy ngày, vợ chồng tôi nhận lời ngay, chúng tôi còn mong chẳng được! Lâm Lâm đòi phải dùng món ruột của bố để đón Thiên Thiên. Cả nhà vui khỏi phải nói.',
-     note:'Nói đủ 3 ý theo đúng thứ tự gợi ý ①②③; ý ③ phải dùng khung 别提多 + tính từ + 了.'},
-    {q_zh:'天天到来之前，林林有什么变化？',
-     q_vn:'Trước khi Thiên Thiên đến, Lâm Lâm có thay đổi gì?',
-     hint:'①变得异常……　②……收拾得……　③……摆放得……　④什么好事都……',
-     sample:'天天还没来，林林就变得异常勤劳。她把屋子收拾得干干净净，把东西摆放得整整齐齐，什么好事都想着天天。',
-     sample_vn:'Thiên Thiên còn chưa đến, Lâm Lâm đã trở nên chăm chỉ lạ thường. Con bé dọn nhà sạch bong, bày biện đồ đạc ngăn nắp, việc gì tốt cũng nghĩ đến Thiên Thiên.',
-     note:'Bổ ngữ trạng thái V + 得 + tính từ lặp (干干净净, 整整齐齐) làm câu nói sinh động. Khi nói có thể thay 将 (văn viết) bằng 把.'},
-    {q_zh:'天天来了之后，两个孩子表现如何？',
-     q_vn:'Sau khi Thiên Thiên đến, hai đứa trẻ thể hiện thế nào?',
-     hint:'早上……，上学……，做作业……，不……，不……，关系……',
-     sample:'两个孩子早上不用叫就醒了，上学不用接送，做作业不用督促。她们不打架，不闹别扭，关系别提多融洽了。',
-     sample_vn:'Hai đứa sáng nào cũng tự dậy không cần gọi, đi học không cần đưa đón, làm bài tập không cần giục. Chúng không đánh nhau, không giận dỗi, quan hệ hoà hợp khỏi phải nói.',
-     note:'Chuỗi vế ngắn song song (不用……，不用……) nói nhanh, đều nhịp — đây là điểm cộng khi nói.'},
-    {q_zh:'两个孩子做错了什么？父母怎样教育他们？',
-     q_vn:'Hai đứa trẻ đã làm sai điều gì? Bố mẹ dạy chúng thế nào?',
-     hint:'①一个说……，另一个说……　②“我”严肃地说：“……”　③老公附和：“……”',
-     sample:'一天晚上，她们在背后议论同学：一个说王朵朵老嘲笑别人，另一个说高春来最会讨好老师。我严肃地说：“看到别人有缺点，应该当面说。”老公附和：“大伙儿要和睦相处，对人要宽容。”',
-     sample_vn:'Một tối, hai đứa bàn tán về bạn bè sau lưng: đứa này bảo Vương Đoá Đoá hay chê cười người khác, đứa kia bảo Cao Xuân Lai giỏi nịnh thầy cô nhất. Tôi nghiêm nghị nói: "Thấy người khác có khuyết điểm thì nên nói thẳng trước mặt." Chồng tôi phụ hoạ: "Mọi người phải sống hoà thuận, đối với người khác phải bao dung."',
-     note:'Trả lời 2 câu hỏi: trước nói LỖI (背后议论同学), sau nói CÁCH DẠY. Dẫn lời bằng 严肃地说 / 附和.'},
-    {q_zh:'孩子的疑惑是什么？大人有什么做错了的地方？',
-     q_vn:'Điều thắc mắc của đứa trẻ là gì? Người lớn đã sai ở chỗ nào?',
-     hint:'①女儿反问：“你们不是也……吗？”　②两套标准：对自己……，对孩子……',
-     sample:'女儿反问：“你们不是也有时候说哪个朋友很自私吗？”我们这才意识到，我们实行的是两套标准：对自己宽容，对孩子严厉。',
-     sample_vn:'Con gái hỏi ngược lại: "Chẳng phải bố mẹ cũng có lúc nói bạn này bạn kia ích kỷ sao?" Đến lúc đó chúng tôi mới nhận ra mình đang áp dụng hai tiêu chuẩn: dễ dãi với bản thân, nghiêm khắc với con cái.',
-     note:'Câu hỏi tu từ 你们不是也……吗？ phải lên giọng ở cuối; hai vế 对自己宽容，对孩子严厉 đối nhau — nói chậm, rõ.'},
-    {q_zh:'这个故事告诉我们什么道理？',
-     q_vn:'Câu chuyện này cho chúng ta đạo lý gì?',
-     hint:'想当好父母，首先要……',
-     sample:'这个故事告诉我们，孩子也可以是父母的老师。想当好父母，首先要约束好自己的言行。',
-     sample_vn:'Câu chuyện cho chúng ta thấy con trẻ cũng có thể là thầy của cha mẹ. Muốn làm cha mẹ tốt, trước hết phải giữ gìn lời nói, việc làm của chính mình.',
-     note:'Có thể thêm một câu liên hệ bản thân (我觉得……) để câu trả lời không bị "rỗng".'}
+  intro: 'Đây là bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b> — trả lời lần lượt 6 câu hỏi để tóm tắt bài khoá. Bấm loa nghe câu hỏi, nhìn gợi ý (cột phải của bảng trong sách), rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Cố gắng dùng được: 巴不得 · 别提多……了 · 异常 · 督促 · 当面 · 反问 · 严厉 · 约束.',
+  questions: [
+    {q_zh:'天天要来“我们”家，“我们”全家的态度怎么样？',q_vn:'Thiên Thiên sắp đến nhà "chúng tôi", thái độ của cả nhà "chúng tôi" thế nào?',hint:'①“我”和老公的态度：　②林林的态度：　③全家别提多……了',sample:'天天的父母要出差，想请我们照看她几天，我和老公爽快地答应了，我们巴不得呢！林林嚷着要用爸爸的拿手菜欢迎天天。全家别提多开心了。',sample_vn:'Bố mẹ Thiên Thiên phải đi công tác, muốn nhờ chúng tôi trông cô bé mấy ngày, vợ chồng tôi nhận lời ngay, chúng tôi còn mong chẳng được! Lâm Lâm đòi phải dùng món ruột của bố để đón Thiên Thiên. Cả nhà vui khỏi phải nói.',note:'Nói đủ 3 ý theo đúng thứ tự gợi ý ①②③; ý ③ phải dùng khung 别提多 + tính từ + 了.'},
+    {q_zh:'天天到来之前，林林有什么变化？',q_vn:'Trước khi Thiên Thiên đến, Lâm Lâm có thay đổi gì?',hint:'①变得异常……　②……收拾得……　③……摆放得……　④什么好事都……',sample:'天天还没来，林林就变得异常勤劳。她把屋子收拾得干干净净，把东西摆放得整整齐齐，什么好事都想着天天。',sample_vn:'Thiên Thiên còn chưa đến, Lâm Lâm đã trở nên chăm chỉ lạ thường. Con bé dọn nhà sạch bong, bày biện đồ đạc ngăn nắp, việc gì tốt cũng nghĩ đến Thiên Thiên.',note:'Bổ ngữ trạng thái V + 得 + tính từ lặp (干干净净, 整整齐齐) làm câu nói sinh động. Khi nói có thể thay 将 (văn viết) bằng 把.'},
+    {q_zh:'天天来了之后，两个孩子表现如何？',q_vn:'Sau khi Thiên Thiên đến, hai đứa trẻ thể hiện thế nào?',hint:'早上……，上学……，做作业……，不……，不……，关系……',sample:'两个孩子早上不用叫就醒了，上学不用接送，做作业不用督促。她们不打架，不闹别扭，关系别提多融洽了。',sample_vn:'Hai đứa sáng nào cũng tự dậy không cần gọi, đi học không cần đưa đón, làm bài tập không cần giục. Chúng không đánh nhau, không giận dỗi, quan hệ hoà hợp khỏi phải nói.',note:'Chuỗi vế ngắn song song (不用……，不用……) nói nhanh, đều nhịp — đây là điểm cộng khi nói.'},
+    {q_zh:'两个孩子做错了什么？父母怎样教育他们？',q_vn:'Hai đứa trẻ đã làm sai điều gì? Bố mẹ dạy chúng thế nào?',hint:'①一个说……，另一个说……　②“我”严肃地说：“……”　③老公附和：“……”',sample:'一天晚上，她们在背后议论同学：一个说王朵朵老嘲笑别人，另一个说高春来最会讨好老师。我严肃地说：“看到别人有缺点，应该当面说。”老公附和：“大伙儿要和睦相处，对人要宽容。”',sample_vn:'Một tối, hai đứa bàn tán về bạn bè sau lưng: đứa này bảo Vương Đoá Đoá hay chê cười người khác, đứa kia bảo Cao Xuân Lai giỏi nịnh thầy cô nhất. Tôi nghiêm nghị nói: "Thấy người khác có khuyết điểm thì nên nói thẳng trước mặt." Chồng tôi phụ hoạ: "Mọi người phải sống hoà thuận, đối với người khác phải bao dung."',note:'Trả lời 2 câu hỏi: trước nói LỖI (背后议论同学), sau nói CÁCH DẠY. Dẫn lời bằng 严肃地说 / 附和.'},
+    {q_zh:'孩子的疑惑是什么？大人有什么做错了的地方？',q_vn:'Điều thắc mắc của đứa trẻ là gì? Người lớn đã sai ở chỗ nào?',hint:'①女儿反问：“你们不是也……吗？”　②两套标准：对自己……，对孩子……',sample:'女儿反问：“你们不是也有时候说哪个朋友很自私吗？”我们这才意识到，我们实行的是两套标准：对自己很宽容，对孩子却很严厉。',sample_vn:'Con gái hỏi ngược lại: "Chẳng phải bố mẹ cũng có lúc nói bạn này bạn kia ích kỷ sao?" Đến lúc đó chúng tôi mới nhận ra mình đang áp dụng hai tiêu chuẩn: dễ dãi với bản thân, nghiêm khắc với con cái.',note:'Câu hỏi tu từ 你们不是也……吗？ phải lên giọng ở cuối; hai vế 对自己宽容，对孩子严厉 đối nhau — nói chậm, rõ.'},
+    {q_zh:'这个故事告诉我们什么道理？',q_vn:'Câu chuyện này cho chúng ta đạo lý gì?',hint:'想当好父母，首先要……',sample:'这个故事让我们明白，孩子也可以是父母的老师。想当好父母，首先要约束好自己的言行。',sample_vn:'Câu chuyện giúp chúng ta hiểu rằng con trẻ cũng có thể là thầy của cha mẹ. Muốn làm cha mẹ tốt, trước hết phải giữ gìn lời nói, việc làm của chính mình.',note:'Có thể thêm một câu liên hệ bản thân (我觉得……) để câu trả lời không bị "rỗng".'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — 听力 (hội thoại ngắn + đoạn nói ngắn)
-// Sách HSK 6 không có sách bài tập nghe: tự soạn 8 câu theo chủ đề bài 1
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — câu tự soạn (sách HSK 6 không có sách bài tập nghe), mỗi câu một tình huống mới
+// ══════════════════════════════════════════
 var listenExamData = {
-  "intro": "Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.",
-  "source": "Soạn theo dạng đề HSK 6 · chủ đề bài 1",
-  "items": [
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 1',
+  items: [
     {
-      "n": 1,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "听说你们把邻居家的孩子接到家里住了？"
-        },
-        {
-          "sp": "男",
-          "zh": "是啊，她父母出差了，请我们帮忙照看几天。我女儿巴不得呢，天天有人陪她玩儿。"
-        }
+      n: 1,
+      lines: [
+        {sp:'女',zh:'你周末不是要加班吗？怎么去爬山了？'},
+        {sp:'男',zh:'老板说不用加班了，我巴不得早点儿出去走走呢。'}
       ],
-      "q": "男的的女儿对这件事是什么态度？",
-      "qvn": "Con gái của người đàn ông có thái độ thế nào với việc này?",
-      "opts": [
-        "很不愿意",
-        "无所谓",
-        "非常欢迎",
-        "有点儿担心"
-      ],
-      "ans": 2,
-      "why": "巴不得呢 = mong còn chẳng được → rất hoan nghênh. Ba phương án kia đều trái nghĩa hoặc không được nhắc tới.",
-      "words": [
-        "巴不得"
-      ]
+      q: '男的对不用加班是什么态度？',
+      qvn: 'Người đàn ông có thái độ thế nào khi không phải làm thêm?',
+      opts: ['很失望','很高兴','无所谓','有点儿担心'],
+      ans: 1,
+      why: '巴不得 + V = chỉ mong sao được làm gì → anh ấy rất vui vì được đi chơi.',
+      words: ['巴不得']
     },
     {
-      "n": 2,
-      "lines": [
-        {
-          "sp": "男",
-          "zh": "你最近怎么这么勤劳？又洗衣服又打扫房间的。"
-        },
-        {
-          "sp": "女",
-          "zh": "下个星期我同学要来我家住，我可不想让她觉得我家乱七八糟的。"
-        }
+      n: 2,
+      lines: [
+        {sp:'男',zh:'你跟新邻居相处得怎么样？'},
+        {sp:'女',zh:'我们俩相处得别提多愉快了，周末还常常一起做饭呢。'}
       ],
-      "q": "女的为什么变得勤劳了？",
-      "qvn": "Vì sao cô gái trở nên siêng năng?",
-      "opts": [
-        "同学要来她家住",
-        "妈妈督促她",
-        "她要搬家了",
-        "她想讨好父母"
-      ],
-      "ans": 0,
-      "why": "Lý do nằm ở câu trả lời: 下个星期我同学要来我家住 — giống Lâm Lâm trong bài khoá. Không ai nhắc đến mẹ đốc thúc hay chuyển nhà.",
-      "words": [
-        "勤劳"
-      ]
+      q: '女的和新邻居的关系怎么样？',
+      qvn: 'Quan hệ giữa người phụ nữ và hàng xóm mới thế nào?',
+      opts: ['经常吵架','不太熟悉','非常好','一般'],
+      ans: 2,
+      why: '相处得别提多愉快了 = sống với nhau vui khỏi phải nói, lại còn hay nấu cơm chung → rất tốt.',
+      words: ['别提多……了']
     },
     {
-      "n": 3,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "这两个孩子天天在一起，从来不打架，也不闹别扭。"
-        },
-        {
-          "sp": "男",
-          "zh": "是啊，她们的关系别提多融洽了，连我都有点儿嫉妒了。"
-        }
+      n: 3,
+      lines: [
+        {sp:'女',zh:'小王今天怎么不高兴？'},
+        {sp:'男',zh:'开会时他提了个意见，经理不但没同意，还当着大家的面批评了他。'}
       ],
-      "q": "关于两个孩子，可以知道什么？",
-      "qvn": "Về hai đứa trẻ, có thể biết được điều gì?",
-      "opts": [
-        "经常吵架",
-        "很少见面",
-        "互相嫉妒",
-        "关系很好"
-      ],
-      "ans": 3,
-      "why": "别提多融洽了 = hoà hợp khỏi phải nói. Người \"ghen tị\" là người đàn ông (连我都……嫉妒), không phải hai đứa trẻ ghen tị nhau — phương án C là bẫy.",
-      "words": [
-        "打架",
-        "别扭",
-        "融洽",
-        "嫉妒"
-      ]
+      q: '小王为什么不高兴？',
+      qvn: 'Vì sao Tiểu Vương không vui?',
+      opts: ['被经理批评了','意见被大家嘲笑了','没参加会议','经理忽略了他'],
+      ans: 0,
+      why: '当着大家的面批评了他 = phê bình anh ấy trước mặt mọi người. Không ai chê cười, và anh ấy có đi họp.',
+      words: []
     },
     {
-      "n": 4,
-      "lines": [
-        {
-          "sp": "男",
-          "zh": "你听说了吗？小王在背后说你的坏话。"
-        },
-        {
-          "sp": "女",
-          "zh": "我不信，我们俩那么亲密。明天我当面问问她就知道了。"
-        }
+      n: 4,
+      lines: [
+        {sp:'男',zh:'你儿子最近怎么这么勤劳？又洗碗又打扫房间的。'},
+        {sp:'女',zh:'他想让我给他买个新手机，这是在讨好我呢。'}
       ],
-      "q": "女的打算怎么做？",
-      "qvn": "Người phụ nữ định làm gì?",
-      "opts": [
-        "和小王吵架",
-        "直接去问小王",
-        "不再理小王",
-        "让男的去问"
-      ],
-      "ans": 1,
-      "why": "当面问问她 = hỏi thẳng cô ấy trước mặt → trực tiếp đi hỏi Tiểu Vương. Cô không tin tin đồn nên không cãi nhau hay cạch mặt bạn.",
-      "words": [
-        "亲密",
-        "当面"
-      ]
+      q: '儿子为什么变得勤劳了？',
+      qvn: 'Vì sao cậu con trai trở nên chăm chỉ?',
+      opts: ['老师督促他','妈妈批评了他','想当个好孩子','想让妈妈买手机'],
+      ans: 3,
+      why: '这是在讨好我 = đang lấy lòng mẹ, vì muốn mẹ mua điện thoại mới.',
+      words: ['勤劳','讨好']
     },
     {
-      "n": 5,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "昨天开会的时候，你怎么一句话也没说？"
-        },
-        {
-          "sp": "男",
-          "zh": "我本来想反驳经理的观点，可看到大家都在附和他，我就没开口。"
-        }
+      n: 5,
+      lines: [
+        {sp:'女',zh:'你怎么不跟他好好讲讲道理？'},
+        {sp:'男',zh:'讲了，可他根本听不进去，我刚说一句，他就反驳十句。'}
       ],
-      "q": "男的为什么没说话？",
-      "qvn": "Vì sao người đàn ông không nói gì?",
-      "opts": [
-        "他同意经理的观点",
-        "大家都支持经理",
-        "他身体不舒服",
-        "他不知道说什么"
-      ],
-      "ans": 1,
-      "why": "大家都在附和他 = mọi người đều hùa theo (ủng hộ) giám đốc. Anh ấy vốn muốn 反驳 (phản bác) nên A sai.",
-      "words": [
-        "反驳",
-        "附和"
-      ]
+      q: '关于“他”，可以知道什么？',
+      qvn: 'Có thể biết gì về "anh ta"?',
+      opts: ['很宽容','不愿意听别人的意见','说话很幽默','做事很爽快'],
+      ans: 1,
+      why: '听不进去, 我说一句他就反驳十句 → không chịu nghe ý kiến người khác.',
+      words: ['反驳']
     },
     {
-      "n": 6,
-      "lines": [
-        {
-          "sp": "男",
-          "zh": "王老师上课的时候，教室里总是鸦雀无声。"
-        },
-        {
-          "sp": "女",
-          "zh": "那当然，她可是出了名的严厉，谁敢说话啊？"
-        }
+      n: 6,
+      lines: [
+        {sp:'男',zh:'我们公司下个月开始实行新规定，每天早上八点以前必须到办公室。'},
+        {sp:'女',zh:'那你以后可不能再迟到了。'}
       ],
-      "q": "关于王老师，可以知道什么？",
-      "qvn": "Về cô giáo Vương, có thể biết được điều gì?",
-      "opts": [
-        "很宽容",
-        "很幽默",
-        "很年轻",
-        "很严厉"
-      ],
-      "ans": 3,
-      "why": "出了名的严厉 = nổi tiếng nghiêm khắc; 谁敢说话啊 là câu hỏi tu từ = không ai dám nói. 宽容 trái nghĩa.",
-      "words": [
-        "鸦雀无声",
-        "严厉"
-      ]
-    },
-    {
-      "n": 7,
-      "lines": [
-        {
-          "sp": "男",
-          "zh": "很多父母要求孩子不要玩儿手机，自己却整天拿着手机不放。其实，父母就是孩子的第一任老师，孩子会模仿父母的一言一行。所以，想让孩子做到的事，父母首先要自己做到，约束好自己的言行。"
-        }
-      ],
-      "q": "这段话主要想告诉我们什么？",
-      "qvn": "Đoạn nói này chủ yếu muốn cho chúng ta biết điều gì?",
-      "opts": [
-        "父母要约束好自己的言行",
-        "孩子不应该玩儿手机",
-        "父母应该对孩子严厉",
-        "孩子要多向老师学习"
-      ],
-      "ans": 0,
-      "why": "Dạng \"đoạn nói ngắn\" của HSK 6: ý chính thường nằm ở câu kết — 父母首先要自己做到，约束好自己的言行. B chỉ là ví dụ mở đầu.",
-      "words": [
-        "任",
-        "约束"
-      ]
-    },
-    {
-      "n": 8,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "儿子今天问我：“你不是说说谎不好吗？那你为什么让我跟打电话的人说你不在家？”"
-        },
-        {
-          "sp": "男",
-          "zh": "哈哈，被他问得说不出话来了吧？这孩子可给我们上了一课。"
-        }
-      ],
-      "q": "从对话中可以知道什么？",
-      "qvn": "Từ đoạn hội thoại có thể biết được điều gì?",
-      "opts": [
-        "儿子说了谎",
-        "男的在批评儿子",
-        "女的被儿子问住了",
-        "女的不在家"
-      ],
-      "ans": 2,
-      "why": "Câu hỏi vặn 你不是说……吗？ của con khiến mẹ cứng họng (被他问得说不出话来) — giống tình huống trong bài khoá. Người bảo con nói dối là mẹ, và mẹ đang ở nhà.",
-      "words": []
+      q: '新规定要求什么？',
+      qvn: 'Quy định mới yêu cầu điều gì?',
+      opts: ['八点以前到办公室','周末也要上班','可以晚点儿上班','每天加班'],
+      ans: 0,
+      why: '实行新规定：每天早上八点以前必须到办公室. Người phụ nữ nhắc anh từ nay không được đi muộn nữa.',
+      words: ['实行']
     }
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 // 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 var situationData = {
-  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
-         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn thân sắp đi du lịch, nhờ em trông giúp con mèo.',
-     a:{sp:'Bạn',zh:'我下周要去旅行，能帮我照看几天小猫吗？',vn:'Tuần sau tớ đi du lịch, cậu trông giúp con mèo mấy hôm được không?'},
-     need:['Dùng 巴不得','Nhận lời thật thẳng thắn'],
-     sample:'当然可以！我早就想养一只猫了，巴不得呢！',
-     samplePy:'Dāngrán kěyǐ! Wǒ zǎo jiù xiǎng yǎng yì zhī māo le, bābudé ne!',
-     sampleVn:'Được chứ! Tớ muốn nuôi mèo từ lâu rồi, mong còn chẳng được ấy!',
-     tip:'巴不得呢 đặt cuối câu để đáp lại một lời đề nghị mình rất thích — giống câu 我们巴不得呢！ trong bài.'},
-
-    {scene:'Bạn hỏi em buổi hoà nhạc tối qua thế nào.',
-     a:{sp:'Bạn',zh:'你昨天去看演唱会了？怎么样？',vn:'Hôm qua cậu đi xem hoà nhạc à? Thế nào?'},
-     need:['Dùng 别提多……了','Kể thêm một chi tiết'],
-     sample:'别提多激动了！我跟着唱了一晚上，嗓子都哑了。',
-     samplePy:'Biétí duō jīdòng le! Wǒ gēnzhe chàngle yì wǎnshang, sǎngzi dōu yǎ le.',
-     sampleVn:'Phấn khích khỏi phải nói! Tớ hát theo cả buổi tối, khản cả giọng.',
-     tip:'别提多 + tính từ + 了 — không thêm 很 vào giữa, không bỏ 了.'},
-
-    {scene:'Bạn cùng lớp nói xấu một bạn khác với em.',
-     a:{sp:'Bạn',zh:'你知道吗？小李最会讨好老师了，我真看不起他。',vn:'Cậu biết không? Tiểu Lý giỏi nịnh thầy cô nhất, tớ thật coi thường cậu ta.'},
-     need:['Dùng 当面 (hoặc 背后)','Khuyên bạn một cách nhẹ nhàng'],
-     sample:'有意见的话，还是当面跟他说吧，在背后议论人家不太好。',
-     samplePy:'Yǒu yìjiàn dehuà, háishi dāngmiàn gēn tā shuō ba, zài bèihòu yìlùn rénjia bú tài hǎo.',
-     sampleVn:'Nếu có ý kiến thì cứ nói thẳng với cậu ấy đi, bàn tán người ta sau lưng không hay lắm.',
-     tip:'Đây chính là lời khuyên của người mẹ trong bài khoá. 还是……吧 làm lời khuyên mềm hơn.'},
-
-    {scene:'Em trai than phiền với em về bố.',
-     a:{sp:'Em trai',zh:'爸爸不让我玩儿游戏，他自己却天天玩儿，这公平吗？',vn:'Bố không cho em chơi game, bố thì ngày nào cũng chơi, thế có công bằng không?'},
-     need:['Dùng 两套标准 hoặc 约束','Nêu ý kiến của em'],
-     sample:'这确实是两套标准。我觉得爸爸应该先约束好自己，再来要求你。',
-     samplePy:'Zhè quèshí shì liǎng tào biāozhǔn. Wǒ juéde bàba yīnggāi xiān yuēshù hǎo zìjǐ, zài lái yāoqiú nǐ.',
-     sampleVn:'Đúng là hai tiêu chuẩn thật. Anh thấy bố nên tự kiềm chế mình trước, rồi hẵng yêu cầu em.',
-     tip:'先……，再…… sắp xếp trình tự hai việc; 约束好自己 đúng như câu kết của bài.'},
-
-    {scene:'Trong giờ thảo luận, ý kiến của bạn bị cả nhóm phản bác nên bạn buồn.',
-     a:{sp:'Bạn',zh:'今天讨论的时候，大家都反驳我的观点，我好没面子。',vn:'Hôm nay lúc thảo luận, ai cũng phản bác quan điểm của tớ, tớ mất mặt quá.'},
-     need:['Dùng 反驳 hoặc 宽容','An ủi bạn'],
-     sample:'别往心里去，大家反驳你的观点，不是看不起你。你也宽容一点儿，听听别人的想法吧。',
-     samplePy:'Bié wǎng xīn li qù, dàjiā fǎnbó nǐ de guāndiǎn, bú shì kànbuqǐ nǐ. Nǐ yě kuānróng yìdiǎnr, tīngting biérén de xiǎngfǎ ba.',
-     sampleVn:'Đừng để bụng, mọi người phản bác quan điểm của cậu không phải là coi thường cậu. Cậu cũng rộng lượng một chút, nghe thử suy nghĩ của người khác đi.',
-     tip:'反驳 + 观点 / 意见; 看不起 (HSK 5 bài 31) = coi thường.'}
+    {scene:'Bạn thân sắp đi du lịch, nhờ em trông giúp con mèo.',a:{sp:'Bạn',zh:'我下周要去旅行，能帮我照顾几天小猫吗？',vn:'Tuần sau tớ đi du lịch, cậu chăm giúp con mèo mấy hôm được không?'},need:['Dùng 巴不得','Nhận lời thật thẳng thắn'],sample:'没问题！我早就想养一只猫了，巴不得呢！',samplePy:'Méi wèntí! Wǒ zǎo jiù xiǎng yǎng yì zhī māo le, bābudé ne!',sampleVn:'Không vấn đề gì! Tớ muốn nuôi mèo từ lâu rồi, mong còn chẳng được ấy!',tip:'巴不得呢 đặt cuối câu để đáp lại một lời đề nghị mình rất thích.'},
+    {scene:'Bạn hỏi em buổi biểu diễn tối qua thế nào.',a:{sp:'Bạn',zh:'你昨天去看演出了？怎么样？',vn:'Hôm qua cậu đi xem biểu diễn à? Thế nào?'},need:['Dùng 别提多……了','Kể thêm một chi tiết'],sample:'那场演出别提多精彩了！最后一个节目结束的时候，大家都站起来鼓掌。',samplePy:'Nà chǎng yǎnchū biétí duō jīngcǎi le! Zuìhòu yí ge jiémù jiéshù de shíhou, dàjiā dōu zhàn qǐlái gǔzhǎng.',sampleVn:'Hay khỏi phải nói! Lúc tiết mục cuối cùng kết thúc, mọi người đều đứng dậy vỗ tay.',tip:'别提多 + tính từ + 了 — không thêm 很 vào giữa, không bỏ 了.'},
+    {scene:'Bạn cùng lớp nói xấu một bạn khác với em.',a:{sp:'Bạn',zh:'你知道吗？小李最会讨好老师了，我真不喜欢他。',vn:'Cậu biết không? Tiểu Lý giỏi nịnh thầy cô nhất, tớ thật không ưa cậu ta.'},need:['Dùng 当面 (hoặc 背后)','Khuyên bạn một cách nhẹ nhàng'],sample:'你要是觉得他做得不对，还是当面跟他谈谈吧，在背后议论人家不太好。',samplePy:'Nǐ yàoshi juéde tā zuò de bú duì, háishi dāngmiàn gēn tā tántan ba, zài bèihòu yìlùn rénjia bú tài hǎo.',sampleVn:'Nếu cậu thấy cậu ấy làm không đúng thì cứ nói chuyện thẳng với cậu ấy đi, bàn tán người ta sau lưng không hay lắm.',tip:'还是……吧 làm lời khuyên mềm hơn; 当面 đối lập với 在背后.'},
+    {scene:'Em trai than phiền với em về bố.',a:{sp:'Em trai',zh:'爸爸不让我玩儿游戏，他自己却天天玩儿，这对吗？',vn:'Bố không cho em chơi game, bố thì ngày nào cũng chơi, thế có đúng không?'},need:['Dùng 两套标准 hoặc 约束','Nêu ý kiến của em'],sample:'这确实是两套标准。我觉得爸爸应该先约束好自己，再来要求你。',samplePy:'Zhè quèshí shì liǎng tào biāozhǔn. Wǒ juéde bàba yīnggāi xiān yuēshù hǎo zìjǐ, zài lái yāoqiú nǐ.',sampleVn:'Đúng là hai tiêu chuẩn thật. Anh thấy bố nên tự kiềm chế mình trước, rồi hẵng yêu cầu em.',tip:'先……，再…… sắp xếp trình tự hai việc; 约束好自己 = tự giữ gìn bản thân.'},
+    {scene:'Trong giờ thảo luận, ý kiến của bạn bị cả nhóm phản bác nên bạn buồn.',a:{sp:'Bạn',zh:'今天讨论的时候，大家都反驳我的看法，我心里很难过。',vn:'Hôm nay lúc thảo luận, ai cũng phản bác ý kiến của tớ, tớ buồn lắm.'},need:['Dùng 反驳 hoặc 宽容','An ủi bạn'],sample:'别往心里去，大家反驳你的看法，不是看不起你。你也宽容一点儿，听听别人的想法吧。',samplePy:'Bié wǎng xīn li qù, dàjiā fǎnbó nǐ de kànfǎ, bú shì kànbuqǐ nǐ. Nǐ yě kuānróng yìdiǎnr, tīngting biérén de xiǎngfǎ ba.',sampleVn:'Đừng để bụng, mọi người phản bác ý kiến của cậu không phải là coi thường cậu. Cậu cũng rộng lượng một chút, nghe thử suy nghĩ của người khác đi.',tip:'反驳 + 看法 / 意见; 看不起 (HSK 5) = coi thường.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 🎯 NÓI SAO CHO HAY — 得体 / 语体 (gắn với điểm ngữ pháp 3: 具有语体差别的同义词)
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 🎯 NÓI SAO CHO HAY — 得体 / 语体
+// ══════════════════════════════════════════
 var registerData = {
-  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
-         'Bài này học đúng điểm ngữ pháp 3: cùng một nghĩa nhưng có từ văn viết (将、便、道、与、是否) và từ khẩu ngữ (把、就、说、和、是不是).',
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. Bài này học đúng điểm ngữ pháp 3: cùng một nghĩa nhưng có từ văn viết (将、便、道、与、是否) và từ khẩu ngữ (把、就、说、和、是不是).',
   items: [
-    {scene:'Em viết bài văn kể chuyện nộp cho cô giáo.',
-     a:'天天还没来，林林就变得异常勤劳，将屋子收拾得干干净净。',b:'天天还没来，林林就变得特别勤快，把屋子弄得挺干净的。',better:'a',
-     why:'Bài văn cần phong cách văn viết thống nhất: 异常, 将, 收拾得干干净净. Câu b dùng 挺……的, 弄 — rất khẩu ngữ, hợp khi kể chuyện với bạn.'},
-
-    {scene:'Em nhắn tin cho bạn thân về kỳ nghỉ sắp tới.',
-     a:'我巴不得马上放假呢！',b:'我迫切盼望假期早日到来。',better:'a',
-     why:'巴不得 là khẩu ngữ, thân mật — hợp với tin nhắn cho bạn. Câu b đúng nhưng trang trọng như văn bản, nhắn cho bạn thân nghe rất gượng.'},
-
-    {scene:'Trong tiệc công ty, em (người vợ) giới thiệu chồng với giám đốc của mình.',
-     a:'这是我老公。',b:'这是我先生。',better:'b',
-     why:'老公 thân mật, dùng trong gia đình, với bạn bè. Giới thiệu với cấp trên, nơi trang trọng nên dùng 我先生 / 我爱人.'},
-
-    {scene:'Em làm MC phát biểu trước toàn trường trong lễ khai giảng.',
-     a:'大伙儿安静一下，我说个事儿。',b:'各位同学请安静，下面我宣布一件事。',better:'b',
-     why:'大伙儿, 说个事儿 là khẩu ngữ thân mật, hợp khi nói với nhóm bạn. Phát biểu trước toàn trường dùng 各位 + 宣布.'},
-
-    {scene:'Em viết báo cáo khảo sát nộp cho nhà trường.',
-     a:'本次调查的目的是了解学生是否喜欢网课。',b:'这次调查就是想看看学生是不是喜欢网课。',better:'a',
-     why:'Báo cáo là văn bản trang trọng: 本次, 目的是, 是否 cùng phong cách. Câu b (就是想看看, 是不是) là lời nói hằng ngày.'},
-
-    {scene:'Mẹ hỏi em có muốn uống trà không, em trả lời.',
-     a:'我不饮茶，谢谢妈妈。',b:'我不喝茶，谢谢妈妈。',better:'b',
-     why:'饮 là từ văn viết (饮茶, 饮料); nói chuyện với mẹ dùng 喝. Dùng 饮 trong khẩu ngữ nghe như đọc sách — đúng điều sách nhắc ở chú thích 3.'}
+    {scene:'Em viết thông báo chiếu trên màn hình rạp chiếu phim.',a:'电影开始前，请将手机关闭。',b:'电影快开始了，大家快关手机吧。',better:'a',why:'Thông báo là văn bản trang trọng: 请将……关闭 cùng phong cách văn viết. Câu b (快……吧) là lời nhắc miệng giữa bạn bè.'},
+    {scene:'Em nhắn tin cho bạn thân về kỳ nghỉ sắp tới.',a:'我巴不得马上放假呢！',b:'本人十分盼望假期早日到来。',better:'a',why:'巴不得 là khẩu ngữ, thân mật — hợp với tin nhắn cho bạn. Câu b đúng nhưng trang trọng như văn bản, nhắn cho bạn thân nghe rất gượng.'},
+    {scene:'Trong tiệc công ty, em (người vợ) giới thiệu chồng với giám đốc của mình.',a:'这是我老公。',b:'这是我先生。',better:'b',why:'老公 thân mật, dùng trong gia đình, với bạn bè. Giới thiệu với cấp trên, nơi trang trọng nên dùng 我先生 / 我爱人.'},
+    {scene:'Em làm người dẫn chương trình, phát biểu trước toàn trường trong lễ khai giảng.',a:'大伙儿安静一下，我说个事儿。',b:'各位同学请安静，下面我通知一件事。',better:'b',why:'大伙儿, 说个事儿 là khẩu ngữ thân mật, hợp khi nói với nhóm bạn. Phát biểu trước toàn trường dùng 各位 + 通知.'},
+    {scene:'Em viết báo cáo khảo sát nộp cho nhà trường.',a:'本次调查的目的是了解学生是否愿意参加周末的活动。',b:'这次调查就是想看看学生是不是愿意参加周末的活动。',better:'a',why:'Báo cáo là văn bản trang trọng: 本次, 目的是, 是否 cùng phong cách. Câu b (就是想看看, 是不是) là lời nói hằng ngày.'},
+    {scene:'Em kể với bạn chuyện vừa xảy ra trên lớp.',a:'老师一进门，教室里便鸦雀无声了。',b:'老师一进门，教室里就一点儿声音都没有了。',better:'b',why:'Kể chuyện với bạn nên dùng khẩu ngữ: 就, 一点儿声音都没有. 便 và thành ngữ 鸦雀无声 hợp với bài văn hơn.'}
   ]
 };
 

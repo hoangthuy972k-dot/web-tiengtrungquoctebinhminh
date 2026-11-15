@@ -1490,104 +1490,50 @@ var hvBridgeData = {
 // GHÉP TỪ — cụm từ trong bài khoá
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'假装',right:'正经'},
-  {left:'脸憋得',right:'通红'},
-  {left:'让手机给',right:'绑架了'},
-  {left:'大',right:'吼'},
-  {left:'智能',right:'手机'},
-  {left:'手机的',right:'奴隶'},
-  {left:'狼吞虎咽',right:'吃完'},
-  {left:'冲他',right:'眨眨眼'},
-  {left:'作息',right:'时间'},
-  {left:'着手',right:'安置'},
   {left:'意志',right:'薄弱'},
-  {left:'精致的',right:'盒子'},
-  {left:'庄重地',right:'放在盒子里'},
+  {left:'消耗',right:'能源'},
+  {left:'弥补',right:'损失'},
   {left:'分散',right:'注意力'},
-  {left:'僵硬的',right:'四肢'},
-  {left:'跳起了',right:'摇滚'},
-  {left:'一举',right:'两得'},
-  {left:'心里',right:'踏实'},
-  {left:'空虚得',right:'要命'},
+  {left:'恐怖',right:'袭击'},
+  {left:'取得',right:'突破'},
+  {left:'冷落',right:'客人'},
   {left:'熬',right:'粥'},
-  {left:'消耗',right:'时间'},
-  {left:'弥补',right:'空虚'},
-  {left:'沸腾的',right:'水'},
-  {left:'弥漫着',right:'香气'},
-  {left:'震惊',right:'世界'},
-  {left:'恐怖',right:'袭击'}
+  {left:'精致的',right:'点心'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ
+// ĐIỀN TỪ — câu mới (không chép bài khoá / SGK), mỗi câu một tình huống; ôn xoáy ốc từ + ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'别开玩笑了，咱们说点儿',blank:'正经',post:'事吧。',hint:'(nghiêm túc, đàng hoàng)',ans:'正经'},
-  {pre:'我知道你们都在玩儿手机，那',blank:'玩意儿',post:'就那么好玩儿？',hint:'(cái thứ — khẩu ngữ)',ans:'玩意儿'},
-  {pre:'有什么话就说出来，别总',blank:'憋',post:'在心里。',hint:'(nén)',ans:'憋'},
-  {pre:'发现家里被偷了，她马上打电话',blank:'报警',post:'。',hint:'(báo cảnh sát)',ans:'报警'},
-  {pre:'你们呀，都让手机给',blank:'绑架',post:'了。',hint:'(bắt cóc, trói buộc)',ans:'绑架'},
-  {pre:'这么热的天还穿西装开会，真是活',blank:'受罪',post:'。',hint:'(chịu khổ)',ans:'受罪'},
-  {pre:'老板大',blank:'吼',post:'：“有病就得治！”',hint:'(quát)',ans:'吼'},
-  {pre:'特别是有了',blank:'智能',post:'手机，我就成了手机的奴隶。',hint:'(thông minh — thiết bị)',ans:'智能'},
-  {pre:'我们应该做金钱的主人，而不是金钱的',blank:'奴隶',post:'。',hint:'(nô lệ)',ans:'奴隶'},
-  {pre:'在雪地里站了半天，我的手脚都冻得',blank:'麻木',post:'了。',hint:'(tê dại)',ans:'麻木'},
-  {pre:'他饿坏了，端起碗就',blank:'狼吞虎咽',post:'地吃了起来。',hint:'(ăn ngấu nghiến)',ans:'狼吞虎咽'},
-  {pre:'这位顾客要求特别多，真难',blank:'伺候',post:'。',hint:'(hầu hạ, chiều)',ans:'伺候'},
-  {pre:'一',blank:'眨',post:'眼，暑假就过去了。',hint:'(chớp)',ans:'眨'},
-  {pre:'雨越下越大，我们',blank:'索性',post:'在咖啡馆多坐一会儿。',hint:'(dứt khoát … luôn)',ans:'索性',exp:'索性 = dứt khoát… luôn (thay vì chần chừ): 索性在咖啡馆多坐一会儿.'},
-  {pre:'考试前也要按时',blank:'作息',post:'，千万别熬夜。',hint:'(sinh hoạt, làm – nghỉ)',ans:'作息'},
-  {pre:'离高考还有一年，他已经',blank:'着手',post:'准备了。',hint:'(bắt tay vào)',ans:'着手'},
-  {pre:'到了酒店，我们先把行李',blank:'安置',post:'好，再出去吃饭。',hint:'(thu xếp)',ans:'安置'},
-  {pre:'天气变化大，要多穿衣服，',blank:'防止',post:'感冒。',hint:'(phòng ngừa)',ans:'防止'},
-  {pre:'老师帮我们找出了复习中的',blank:'薄弱',post:'环节。',hint:'(yếu)',ans:'薄弱'},
-  {pre:'这家店的点心不但好吃，而且做得非常',blank:'精致',post:'。',hint:'(tinh xảo)',ans:'精致'},
-  {pre:'在这样',blank:'庄重',post:'的场合，你别开玩笑了。',hint:'(trang trọng)',ans:'庄重'},
-  {pre:'学习时把手机放远一点儿，免得',blank:'分散',post:'精力。',hint:'(phân tán)',ans:'分散'},
-  {pre:'第一次上台表演，他紧张得表情都',blank:'僵硬',post:'了。',hint:'(cứng đờ)',ans:'僵硬'},
-  {pre:'发烧的时候，我觉得',blank:'四肢',post:'无力，什么都不想做。',hint:'(tay chân)',ans:'四肢'},
-  {pre:'面试的时候，经理问我有什么',blank:'特长',post:'。',hint:'(sở trường)',ans:'特长'},
-  {pre:'孩子们',blank:'兴高采烈',post:'地出发去春游了。',hint:'(hớn hở)',ans:'兴高采烈'},
-  {pre:'他们几个同学组了一个',blank:'摇滚',post:'乐队。',hint:'(nhạc rock)',ans:'摇滚'},
-  {pre:'给外国朋友当导游，既能练口语，又能交朋友，真是',blank:'一举两得',post:'。',hint:'(một công đôi việc)',ans:'一举两得'},
-  {pre:'有了弟弟以后，姐姐觉得自己受到了',blank:'冷落',post:'。',hint:'(sự lạnh nhạt)',ans:'冷落'},
-  {pre:'考试的事没准备好，我晚上一直睡不',blank:'踏实',post:'。',hint:'(yên, yên tâm)',ans:'踏实'},
-  {pre:'退休以后，爷爷一下子闲下来，常常感到很',blank:'空虚',post:'。',hint:'(trống trải)',ans:'空虚'},
-  {pre:'考试时，我紧张得',blank:'要命',post:'，手心里都是汗。',hint:'(… kinh khủng)',ans:'要命'},
-  {pre:'我感冒了，妈妈给我熬了一碗热',blank:'粥',post:'。',hint:'(cháo)',ans:'粥'},
-  {pre:'玩儿手机游戏特别',blank:'消耗',post:'电量，一会儿就没电了。',hint:'(tiêu hao, tốn)',ans:'消耗'},
-  {pre:'这次的错误给公司造成了无法',blank:'弥补',post:'的损失。',hint:'(bù đắp)',ans:'弥补'},
-  {pre:'比赛最后一秒进了球，全场顿时',blank:'沸腾',post:'了。',hint:'(sôi sục)',ans:'沸腾'},
-  {pre:'考场里',blank:'弥漫',post:'着紧张的气氛。',hint:'(bao trùm, lan khắp)',ans:'弥漫'},
-  {pre:'今天他比',blank:'往常',post:'早起了一个小时。',hint:'(mọi khi)',ans:'往常',exp:'往常 = mọi khi, như thường ngày: 比往常早起了一个小时.'},
-  {pre:'我从小就爱看',blank:'侦探',post:'小说。',hint:'(trinh thám)',ans:'侦探'},
-  {pre:'经过半年的调查，警方终于侦破了这起',blank:'案件',post:'。',hint:'(vụ án)',ans:'案件'},
-  {pre:'这位运动员又一次',blank:'突破',post:'了世界纪录。',hint:'(phá, vượt qua)',ans:'突破'},
-  {pre:'科学家是否有了',blank:'震惊',post:'世界的发现？',hint:'(chấn động)',ans:'震惊'},
-  {pre:'他每个星期都买一张',blank:'彩票',post:'，可是从来没中过。',hint:'(vé số)',ans:'彩票'},
-  {pre:'我胆子小，从来不敢一个人看',blank:'恐怖',post:'电影。',hint:'(kinh dị)',ans:'恐怖'},
-  {pre:'在野外要小心，免得遭到野兽的',blank:'袭击',post:'。',hint:'(tấn công)',ans:'袭击'},
-  {pre:'在没人',blank:'干扰',post:'的情况下，我的写作进度会很快。',hint:'(quấy rầy)',ans:'干扰'},
-  {pre:'邻居家天天装修，吵得我们不得',blank:'安宁',post:'。',hint:'(yên ổn)',ans:'安宁'}
+  {pre:'好了，不开玩笑了，咱们说点儿',blank:'正经',post:'事吧：下周的考试你准备好了吗？',hint:'(nghiêm túc, đứng đắn)',ans:'正经',exp:'正经事 = chuyện nghiêm túc, chuyện chính; đối lập với 开玩笑. 正经 ở đây đọc zhèngjing.'},
+  {pre:'爷爷拿着我的新手机看了半天，说：“这小',blank:'玩意儿',post:'还挺好用的。”',hint:'(cái thứ, đồ vật — khẩu ngữ)',ans:'玩意儿',exp:'玩意儿 = "cái thứ này", gọi đồ vật một cách thân mật trong khẩu ngữ; không dùng trong văn viết trang trọng.'},
+  {pre:'电影太好笑了，可是电影院里很安静，我只好',blank:'憋',post:'着不笑出声来。',hint:'(nén, nhịn)',ans:'憋',exp:'憋着 + 不 V = cố nhịn không làm gì (cười, ho…); 着 cho thấy trạng thái kéo dài.'},
+  {pre:'别让手机',blank:'绑架',post:'了你的生活，每天至少留一个小时给家人。',hint:'(trói buộc, khống chế)',ans:'绑架',exp:'绑架 nghĩa đen là bắt cóc; nghĩa bóng = trói buộc, chi phối hoàn toàn (被手机绑架).'},
+  {pre:'这么热的天还要穿西装去开会，真是',blank:'受罪',post:'。',hint:'(chịu khổ)',ans:'受罪',exp:'真是受罪 = đúng là khổ sở; 受罪 là động từ li hợp, dùng khi phải chịu điều khó chịu.'},
+  {pre:'现在连家里的空调都是',blank:'智能',post:'的，在路上就能用手机把它打开。',hint:'(thông minh — thiết bị)',ans:'智能',exp:'智能 dùng cho máy móc, thiết bị (智能手机, 智能空调); người thông minh thì nói 聪明.'},
+  {pre:'坐了十几个小时的火车，我的两条腿都',blank:'麻木',post:'了，一点儿感觉也没有。',hint:'(tê dại)',ans:'麻木',exp:'腿麻木了 = chân tê dại (nghĩa đen); nghĩa bóng 对……麻木 = thờ ơ, chai sạn.'},
+  {pre:'他是家里最小的孩子，从小被父母',blank:'伺候',post:'着，连衣服都没自己洗过。',hint:'(hầu hạ, chăm bẵm)',ans:'伺候',exp:'伺候 + người = hầu hạ, phục vụ từng li từng tí; 被……伺候着 có ý chê được chiều quá.'},
+  {pre:'她冲我',blank:'眨',post:'了一下眼睛，意思是让我先别说话。',hint:'(nháy mắt)',ans:'眨',exp:'冲 + người + 眨眼睛 = nháy mắt ra hiệu với ai; 眨 chỉ dùng cho mắt.'},
+  {pre:'离比赛只有一个月了，我们得马上',blank:'着手',post:'准备了。',hint:'(bắt tay vào)',ans:'着手',exp:'着手 + V = bắt tay vào làm (着手准备 / 着手调查); 着 đọc zhuó.'},
+  {pre:'每次我生病，妈妈都会给我熬一碗热热的白',blank:'粥',post:'。',hint:'(cháo)',ans:'粥',exp:'熬粥 = nấu cháo (đun lâu, lửa nhỏ); lượng từ 一碗粥.'},
+  {pre:'我从小就爱看',blank:'侦探',post:'小说，最喜欢跟着书里的人一起找出真正的坏人。',hint:'(trinh thám)',ans:'侦探',exp:'侦探小说 = tiểu thuyết trinh thám; 侦探 cũng chỉ người làm nghề thám tử.'},
+  {pre:'她的',blank:'特长',post:'是画画儿，学校的墙上就挂着好几张她的画。',hint:'(sở trường, năng khiếu)',ans:'特长',exp:'特长 = sở trường, năng khiếu riêng (thường là kỹ năng: 画画儿, 唱歌…); khác 特点 (đặc điểm).'},
+  {pre:'刚退休那段时间，爷爷觉得心里很',blank:'空虚',post:'，每天不知道干什么好。',hint:'(trống trải)',ans:'空虚',exp:'心里空虚 = trong lòng trống trải, không có gì để bám vào; 空虚 tả tinh thần, không tả căn phòng trống.'},
+  {pre:'听说下午不上课了，同学们',blank:'兴高采烈',post:'地跑出了教室。',hint:'(hớn hở)',ans:'兴高采烈',exp:'兴高采烈 + 地 + V = hớn hở làm gì; thành ngữ làm trạng ngữ cần 地.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (通红·雪白 · 说A就A · ……得要命) ít nhất 2 câu
+// SẮP XẾP CÂU — câu mới, chỉ một trật tự đúng
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['我','脸','憋得','通红','。'],ans:'我脸憋得通红。',audio:'我脸憋得通红。'},
-  {words:['雪白的','米','在','沸腾的','水中','翻滚','。'],ans:'雪白的米在沸腾的水中翻滚。',audio:'雪白的米在沸腾的水中翻滚。'},
-  {words:['小猫的','肚子','吃得','滚圆滚圆的','。'],ans:'小猫的肚子吃得滚圆滚圆的。',audio:'小猫的肚子吃得滚圆滚圆的。'},
-  {words:['说干','就干','，','索性','这礼拜','就','开始','。'],ans:'说干就干，索性这礼拜就开始。',audio:'说干就干，索性这礼拜就开始。'},
-  {words:['六月下旬','，','天气','说热','就热','了','。'],ans:'六月下旬，天气说热就热了。',audio:'六月下旬，天气说热就热了。'},
-  {words:['她的','脾气','不好','，','说生气','就生气','。'],ans:'她的脾气不好，说生气就生气。',audio:'她的脾气不好，说生气就生气。'},
-  {words:['五个小时','没碰它','，','我','心','空虚得','要命','。'],ans:'五个小时没碰它，我心空虚得要命。',audio:'五个小时没碰它，我心空虚得要命。'},
-  {words:['考试时','，','我','紧张得','要命','。'],ans:'考试时，我紧张得要命。',audio:'考试时，我紧张得要命。'},
-  {words:['为了','分散','注意力','，','我','决定','去公园','锻炼','。'],ans:'为了分散注意力，我决定去公园锻炼。',audio:'为了分散注意力，我决定去公园锻炼。'},
-  {words:['我','兴高采烈地','跳起了','摇滚','。'],ans:'我兴高采烈地跳起了摇滚。',audio:'我兴高采烈地跳起了摇滚。'},
-  {words:['没有','手机的','干扰','，','生活','这么','安宁','。'],ans:'没有手机的干扰，生活这么安宁。',audio:'没有手机的干扰，生活这么安宁。'},
-  {words:['我','按','小学生的','作息时间','七点','起床','。'],ans:'我按小学生的作息时间七点起床。',audio:'我按小学生的作息时间七点起床。'},
-  {words:['手机','还在','，','我','心里','踏实了','许多','。'],ans:'手机还在，我心里踏实了许多。',audio:'手机还在，我心里踏实了许多。'}
+  {words:['操场上的','学生们','站得','笔直','。'],ans:'操场上的学生们站得笔直。',audio:'操场上的学生们站得笔直。'},
+  {words:['他','说','去','就','去了','，','连行李都','没带','。'],ans:'他说去就去了，连行李都没带。',audio:'他说去就去了，连行李都没带。'},
+  {words:['弟弟','被','那只大狗','吓得','要命','。'],ans:'弟弟被那只大狗吓得要命。',audio:'弟弟被那只大狗吓得要命。'},
+  {words:['学校','把','新来的','学生','安置','在','三号楼','。'],ans:'学校把新来的学生安置在三号楼。',audio:'学校把新来的学生安置在三号楼。'},
+  {words:['屋子里','弥漫着','咖啡的','香气','。'],ans:'屋子里弥漫着咖啡的香气。',audio:'屋子里弥漫着咖啡的香气。'},
+  {words:['你','别','老是','冲着','孩子','吼','。'],ans:'你别老是冲着孩子吼。',audio:'你别老是冲着孩子吼。'},
+  {words:['这种','智能手机的','电','消耗','得','特别','快','。'],ans:'这种智能手机的电消耗得特别快。',audio:'这种智能手机的电消耗得特别快。'},
+  {words:['整个','体育馆','都','沸腾','了','起来','。'],ans:'整个体育馆都沸腾了起来。',audio:'整个体育馆都沸腾了起来。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1595,76 +1541,44 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'为了____自己意志薄弱，我把手机交给了妈妈。',opts:['防止','弥补','安置','冷落'],ans:0,
-   exp:'Phòng trước một điều xấu (yếu lòng) → 为了防止……. 弥补 là bù đắp cái đã thiếu; 安置 là thu xếp đồ vật / người; 冷落 là lạnh nhạt với ai.'},
-  {wrong:'他的数学基础比较____，需要多做练习。',opts:['薄弱','精致','僵硬','空虚'],ans:0,
-   exp:'基础薄弱 = nền tảng yếu. 精致 là tinh xảo (đồ vật); 僵硬 là cứng đờ (cơ thể); 空虚 là trống rỗng (tâm hồn).'},
-  {wrong:'这个盒子做得非常____，我舍不得扔掉。',opts:['精致','庄重','踏实','安宁'],ans:0,
-   exp:'Đồ vật làm tỉ mỉ, đẹp → 精致. 庄重 là trang trọng (thái độ, trang phục); 踏实 là yên tâm / chắc chắn; 安宁 là yên bình (cuộc sống).'},
-  {wrong:'参加毕业典礼要穿得____一点儿。',opts:['庄重','麻木','空虚','薄弱'],ans:0,
-   exp:'Ăn mặc nghiêm trang trong dịp trọng thể → 穿得庄重. 麻木 là tê / thờ ơ; 空虚 là trống rỗng; 薄弱 là yếu kém — đều không dùng cho trang phục.'},
-  {wrong:'在电脑前坐了一整天，我的脖子都____了。',opts:['僵硬','薄弱','空虚','沸腾'],ans:0,
-   exp:'Cổ cứng đờ vì ngồi lâu → 僵硬. 薄弱 dùng cho ý chí, nền tảng; 空虚 cho tâm hồn; 沸腾 là sôi.'},
-  {wrong:'跳舞是她的____，她从五岁就开始学了。',opts:['特长','四肢','作息','玩意儿'],ans:0,
-   exp:'……是她的特长 = … là sở trường của cô ấy. 四肢 là tay chân; 作息 là giờ giấc; 玩意儿 là đồ chơi, cái thứ.'},
-  {wrong:'骑车上学既省钱又锻炼身体，真是____。',opts:['一举两得','狼吞虎咽','兴高采烈','麻木不仁'],ans:0,
-   exp:'既……又…… nêu hai cái lợi → kết bằng 一举两得. 狼吞虎咽 là ăn ngấu nghiến; 兴高采烈 là hớn hở; 麻木不仁 là thờ ơ vô cảm.'},
-  {wrong:'看到手机还在，我心里____了许多。',opts:['踏实','空虚','麻木','正经'],ans:0,
-   exp:'Thấy điện thoại vẫn còn → yên tâm: 心里踏实了许多. 空虚 ngược nghĩa (trống rỗng); 麻木 là thờ ơ; 正经 là nghiêm túc.'},
-  {wrong:'跑步能____大量的能量。',opts:['消耗','弥补','干扰','突破'],ans:0,
-   exp:'消耗能量 = tiêu hao năng lượng. 弥补 là bù đắp; 干扰 là quấy nhiễu; 突破 là vượt qua — không đi với 能量.'},
-  {wrong:'他想用努力学习来____以前浪费的时间。',opts:['弥补','消耗','防止','分散'],ans:0,
-   exp:'用 A 来弥补 B = dùng A để bù đắp B. 消耗 là tiêu tốn (ngược nghĩa); 防止 là phòng ngừa; 分散 là phân tán.'},
-  {wrong:'早上大雾____，很多航班都推迟了。',opts:['弥漫','沸腾','分散','袭击'],ans:0,
-   exp:'Sương mù dày đặc khắp nơi → 大雾弥漫. 沸腾 là sôi; 分散 là phân tán; 袭击 là tấn công (dùng cho bão, rét chứ không cho sương mù).'},
-  {wrong:'经过多年研究，科学家们终于取得了重大____。',opts:['突破','震惊','案件','袭击'],ans:0,
-   exp:'取得重大突破 = đạt được bước đột phá lớn. 震惊 là kinh ngạc; 案件 là vụ án; 袭击 là cuộc tấn công.'},
-  {wrong:'听到他退学的消息，全班同学都感到很____，谁也没想到。',opts:['震惊','安宁','沸腾','踏实'],ans:0,
-   exp:'Tin bất ngờ → 感到很震惊 (rất kinh ngạc), khớp với 谁也没想到. 安宁, 踏实 là yên ổn (ngược ý); 沸腾 không đi với 感到.'},
-  {wrong:'昨天晚上，台风____了沿海地区。',opts:['袭击','突破','干扰','冷落'],ans:0,
-   exp:'台风袭击 + nơi chốn = bão đổ bộ vào…. 突破 là vượt qua; 干扰 là quấy nhiễu; 冷落 là lạnh nhạt.'},
-  {wrong:'别人在学习的时候，请不要大声说话____他们。',opts:['干扰','冷落','伺候','绑架'],ans:0,
-   exp:'Nói to làm phiền người đang học → 干扰. 冷落 là bỏ mặc; 伺候 là hầu hạ; 绑架 là bắt cóc.'},
-  {wrong:'主人只顾着看手机，把客人____在一边。',opts:['冷落','安置','干扰','伺候'],ans:0,
-   exp:'Chỉ lo xem điện thoại, bỏ mặc khách → 把客人冷落在一边. 安置 là sắp xếp chỗ ổn thỏa (nghĩa tốt); 干扰, 伺候 không hợp nghĩa.'},
-  {wrong:'奶奶病了，妈妈每天在医院____她。',opts:['伺候','着手','安置','绑架'],ans:0,
-   exp:'Chăm sóc người bệnh → 伺候. 着手 là bắt tay vào (việc); 安置 là bố trí chỗ; 绑架 là bắt cóc.'},
-  {wrong:'真____，我把作业忘在家里了！',opts:['要命','受罪','正经','空虚'],ans:0,
-   exp:'Lời than "chết thật!" → 真要命. 受罪 là chịu khổ (không dùng làm lời than kiểu này); 正经, 空虚 là tính từ không hợp nghĩa.'},
-  {wrong:'有话好好说，别冲孩子____。',opts:['吼','眨','憋','报警'],ans:0,
-   exp:'冲 + người + 吼 = quát vào ai. 眨 là chớp mắt; 憋 là nén; 报警 là báo cảnh sát.'},
-  {wrong:'找了好几个地方都没找着，____不找了。',opts:['索性','往常','正经','庄重'],ans:0,
-   exp:'Tìm mãi không thấy nên dứt khoát thôi → 索性不找了 (câu 练习2 ③). 往常 là mọi khi; 正经, 庄重 là tính từ.'}
+  {wrong:'他才喝了两杯酒，脸就变得____。',opts:['通红通红的','很通红','通红极了','非常通红'],ans:0,exp:'通红 là tính từ trạng thái, đã mang sẵn mức độ nên KHÔNG thêm 很 / 非常 / 极了; muốn nhấn mạnh thì lặp ABAB + 的: 通红通红的.'},
+  {wrong:'这孩子的脾气真怪，____，谁也劝不住。',opts:['说哭就哭','说哭就笑','越哭越哭','哭了就哭'],ans:0,exp:'说 A 就 A: hai chữ A phải giống nhau, chỉ việc xảy ra ngay, không báo trước. 说哭就笑 sai khung; 越……越…… cần hai vế khác nhau; 哭了就哭 vô nghĩa.'},
+  {wrong:'这几天我的牙疼____，连粥都喝不下去。',opts:['得要命','得很要命','要命得','很要命'],ans:0,exp:'Adj + 得要命 = … chết đi được; 要命 đã chỉ mức độ cao nhất nên không thêm 很, và không đảo thành 要命得.'},
+  {wrong:'____，马上就要上飞机了，我的护照找不到了！',opts:['真要命','真受罪','真踏实','真正经'],ans:0,exp:'真要命 là lời than "chết thật!" khi gặp chuyện gấp. 真受罪 = khổ thật (chịu đựng lâu); 踏实, 正经 trái ngữ cảnh.'},
+  {wrong:'反正已经迟到了，我____吃完早饭再去。',opts:['索性','果然','居然','依然'],ans:0,exp:'索性 = (đã thế thì) dứt khoát … luôn. 果然 = quả nhiên; 居然 = vậy mà (bất ngờ); 依然 = vẫn — không có ý "đã vậy thì làm luôn".'},
+  {wrong:'我的数学基础比较____，得多花点儿时间。',opts:['薄弱','瘦弱','弱小','薄薄'],ans:0,exp:'基础 / 意志 + 薄弱 = nền tảng, ý chí yếu. 瘦弱 tả người gầy yếu; 弱小 tả nước nhỏ, con vật nhỏ yếu; 薄薄 tả đồ vật mỏng.'},
+  {wrong:'这个茶杯做得特别____，上面的花都是一笔一笔画上去的。',opts:['精致','精彩','精神','聪明'],ans:0,exp:'Đồ vật làm tinh xảo, tỉ mỉ → 精致. 精彩 dùng cho buổi diễn, bài nói; 精神 = tinh thần, có sức sống; 聪明 tả người thông minh.'},
+  {wrong:'在学校的百年大会上，校长穿着一身黑色西装，表情十分____。',opts:['庄重','严重','重要','重视'],ans:0,exp:'Dịp trọng đại, thái độ nghiêm trang → 庄重. 严重 tả vấn đề nghiêm trọng; 重要 = quan trọng; 重视 là động từ.'},
+  {wrong:'对正在准备高考的学生而言，玩儿手机最容易____注意力。',opts:['分散','分开','分别','分配'],ans:0,exp:'分散注意力 = làm phân tán sự chú ý. 分开 = tách ra; 分别 = chia tay / lần lượt; 分配 = phân phối. Ôn 对……而言 (bài 8).'},
+  {wrong:'他明明很爱家人，却一心忙工作，把他们都____了。',opts:['冷落','冷静','冷水','落后'],ans:0,exp:'把 + người + 冷落了 = bỏ mặc, lạnh nhạt với ai. 冷静 = bình tĩnh; 冷水 = nước lạnh; 落后 = tụt hậu. Ôn 明明 (bài 6).'},
+  {wrong:'他想用这个周末加班来____工作上的错误。',opts:['弥补','补充','修理','改变'],ans:0,exp:'弥补 + lỗi lầm / mất mát = bù đắp. 补充 = bổ sung thêm (补充营养); 修理 = sửa đồ vật; 改变 = thay đổi (không đi với 错误 theo nghĩa này).'},
+  {wrong:'大家正在开会，不料传来了他离开公司的消息，所有人都很____。',opts:['震惊','兴奋','羡慕','满意'],ans:0,exp:'Tin bất ngờ lớn, khó tin → 震惊. 兴奋, 羡慕, 满意 đều là cảm xúc tích cực, không hợp với tin ai đó đột ngột rời công ty. Ôn 不料 (bài 4).'},
+  {wrong:'飞机起飞时要关掉手机，因为手机信号可能会____飞机上的设备。',opts:['干扰','打扰','麻烦','打听'],ans:0,exp:'Tín hiệu làm nhiễu máy móc → 干扰. 打扰 dùng với NGƯỜI (打扰您了); 麻烦 = làm phiền nhờ vả; 打听 = hỏi thăm.'},
+  {wrong:'跟____一样，他七点就到了办公室。',opts:['往常','往往','往后','经常'],ans:0,exp:'往常 là danh từ thời gian "mọi khi", đứng được sau 跟……一样. 往往 / 经常 là phó từ chỉ tần suất; 往后 = sau này.'},
+  {wrong:'知道孩子已经平安到家了，妈妈心里才____了。',opts:['踏实','结实','老实','实在'],ans:0,exp:'心里踏实 = yên tâm, vững dạ. 结实 = chắc, khoẻ (đồ vật, cơ thể); 老实 = thật thà; 实在 = thật sự.'}
 ];
 
 // ══════════════════════════════════════════
-// DỊCH — câu ghép, dùng từ bài 9 + ôn từ HSK 6 bài 1–6 và HSK 4–5
+// DỊCH Việt → Trung — câu mới, dùng từ của bài + ôn ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Nhìn điện thoại lâu quá, mắt tôi mỏi chết đi được, cổ cũng cứng đờ.',zh:'看手机看得太久了，我的眼睛累得要命，脖子也僵硬了。',py:'Kàn shǒujī kàn de tài jiǔ le, wǒ de yǎnjing lèi de yào mìng, bózi yě jiāngyìng le.',goiY:['……得要命','僵硬','也'],giai:'Adj + 得要命 chỉ mức độ cực điểm, đã có 要命 thì không thêm 很; động từ có tân ngữ + bổ ngữ trạng thái phải lặp động từ: 看手机看得太久了.'},
-  {vi:'Em trai muốn học guitar, nói là làm, dứt khoát xóa hết game, ngày hôm sau đã bắt tay vào tìm thầy.',zh:'弟弟想学吉他，说干就干，索性把游戏都删了，第二天就着手找老师。',py:'Dìdi xiǎng xué jítā, shuō gàn jiù gàn, suǒxìng bǎ yóuxì dōu shān le, dì-èr tiān jiù zhuóshǒu zhǎo lǎoshī.',goiY:['说干就干','索性','着手'],giai:'说干就干 = nói là làm (nhanh, dứt khoát); 索性 đứng trước cụm 把 + động từ; "bắt tay vào" = 着手 + V, 着 đọc zhuó.'},
-  {vi:'Để phòng mình ý chí yếu, trước kỳ thi tôi đưa điện thoại cho mẹ giữ.',zh:'为了防止自己意志薄弱，考试前我把手机交给妈妈保管了。',py:'Wèile fángzhǐ zìjǐ yìzhì bóruò, kǎoshì qián wǒ bǎ shǒujī jiāo gěi māma bǎoguǎn le.',goiY:['为了防止','意志薄弱','把……交给'],giai:'为了防止 + việc xấu nêu mục đích ở vế trước; "đưa cho ai giữ" = 把……交给……保管 — câu 把 cần phần sau động từ, không nói 我把手机交.'},
+  {vi:'Thời tiết ở đây thay đổi nhanh lắm, nói mưa là mưa, cậu nhớ mang theo ô.',zh:'这里的天气变得很快，说下雨就下雨，你记得带伞。',py:'Zhèlǐ de tiānqì biàn de hěn kuài, shuō xià yǔ jiù xià yǔ, nǐ jìde dài sǎn.',goiY:['说A就A','记得'],giai:'"Nói mưa là mưa" = 说下雨就下雨: hai phần A giống hệt nhau, chỉ sự việc xảy ra ngay, bất ngờ.'},
+  {vi:'Đứng trong tuyết nửa tiếng, mũ và áo của cô ấy đều trắng xoá, mặt cũng cóng đến đỏ bừng.',zh:'在雪里站了半个小时，她的帽子和衣服都变得雪白，脸也冻得通红。',py:'Zài xuě li zhànle bàn ge xiǎoshí, tā de màozi hé yīfu dōu biàn de xuěbái, liǎn yě dòng de tōnghóng.',goiY:['变得雪白','冻得通红'],giai:'雪白, 通红 là tính từ trạng thái: đã chứa mức độ nên không thêm 很 / 非常; đứng sau 变得 / 冻得 làm bổ ngữ.'},
   {vi:'Tuy điện thoại thông minh có thể giúp chúng ta thư giãn, nhưng nếu ngày nào cũng chơi đến nửa đêm thì sẽ thành nô lệ của nó.',zh:'虽然智能手机能帮我们放松，但是如果天天玩儿到半夜，就会成为它的奴隶。',py:'Suīrán zhìnéng shǒujī néng bāng wǒmen fàngsōng, dànshì rúguǒ tiāntiān wánr dào bànyè, jiù huì chéngwéi tā de núlì.',goiY:['虽然……但是……','如果……就……','智能','奴隶'],giai:'Câu ba vế: 虽然……但是…… (nhượng bộ) lồng 如果……就…… (giả thiết); "thành nô lệ của" = 成为……的奴隶.'},
-  {vi:'Đi bộ đến trường vừa tiết kiệm được tiền, lại vừa rèn luyện được tay chân, đúng là một công đôi việc.',zh:'走路上学既能省钱，又能锻炼四肢，真是一举两得。',py:'Zǒulù shàngxué jì néng shěng qián, yòu néng duànliàn sìzhī, zhēn shì yìjǔ-liǎngdé.',goiY:['既……又……','四肢','一举两得'],giai:'既……又…… nối hai lợi ích song song rồi kết bằng 一举两得; đừng dịch "một công đôi việc" từng chữ thành 一个工作两个事.'},
-  {vi:'Khi học đừng để điện thoại bên cạnh, kẻo bị quấy nhiễu, phân tán sự chú ý.',zh:'学习时别把手机放在身边，免得受到干扰，分散注意力。',py:'Xuéxí shí bié bǎ shǒujī fàng zài shēnbiān, miǎnde shòudào gānrǎo, fēnsàn zhùyìlì.',goiY:['免得','干扰','分散注意力'],giai:'免得 = kẻo, để khỏi — đứng đầu vế sau, nêu hậu quả muốn tránh; "bị quấy nhiễu" = 受到干扰, không dịch 被干扰 khi không nêu tác nhân.'},
-  {vi:'Mọi khi cứ đến cuối tuần là tôi ở lì trong phòng, nhưng hôm nay tôi lại hớn hở cùng bố mẹ ra công viên nhảy.',zh:'往常一到周末我就待在房间里，今天却兴高采烈地跟爸妈去公园跳舞了。',py:'Wǎngcháng yí dào zhōumò wǒ jiù dāi zài fángjiān li, jīntiān què xìnggāo-cǎiliè de gēn bà mā qù gōngyuán tiàowǔ le.',goiY:['往常','一……就……','却','兴高采烈'],giai:'往常 đối lập với 今天 (mọi khi… hôm nay lại…); 却 đứng sau chủ ngữ / trạng ngữ thời gian, trước động từ, không đứng đầu câu như "nhưng".'},
   {vi:'Để thoát khỏi sự phụ thuộc vào điện thoại, tôi thử mỗi tuần tắt máy một ngày, không ngờ trong lòng lại yên tâm hơn mọi khi nhiều.',zh:'为了摆脱对手机的依赖，我尝试每周关机一天，没想到心里反而比往常踏实多了。',py:'Wèile bǎituō duì shǒujī de yīlài, wǒ chángshì měi zhōu guānjī yì tiān, méi xiǎngdào xīnli fǎn\'ér bǐ wǎngcháng tāshi duō le.',goiY:['摆脱','尝试','比往常……多了','踏实'],giai:'没想到……反而…… = không ngờ lại (kết quả trái dự đoán); so với mọi khi = 比往常 + Adj + 多了. 摆脱, 尝试 ôn bài 4.'},
   {vi:'Hôm đó tuy bị thầy phê bình đến đỏ bừng mặt, nhưng cậu ấy chẳng những không nản lòng mà ngược lại còn lập tức bắt tay vào bù đắp những thiếu sót trước kia.',zh:'那天他虽然被老师批评得满脸通红，但是不但没有灰心，反而马上着手弥补以前的不足。',py:'Nà tiān tā suīrán bèi lǎoshī pīpíng de mǎnliǎn tōnghóng, dànshì búdàn méiyǒu huīxīn, fǎn\'ér mǎshàng zhuóshǒu míbǔ yǐqián de bùzú.',goiY:['满脸通红','不但没有……反而……','着手','弥补'],giai:'不但没有 A，反而 B = chẳng những không A mà ngược lại B (trái kỳ vọng); 通红 là tính từ trạng thái, đứng sau 得 không thêm 很.'},
   {vi:'Nếu ngày nào cậu cũng ăn ngấu nghiến xong lại cắm mặt vào điện thoại, thì không những dạ dày sẽ có vấn đề, mà ngay cả với người nhà cậu cũng sẽ trở nên thờ ơ.',zh:'如果你天天狼吞虎咽地吃完饭又埋头看手机，那么不但胃会出问题，连对家人都会变得麻木。',py:'Rúguǒ nǐ tiāntiān lángtūn-hǔyàn de chīwán fàn yòu máitóu kàn shǒujī, nàme búdàn wèi huì chū wèntí, lián duì jiārén dōu huì biàn de mámù.',goiY:['如果……那么……','狼吞虎咽','不但……连……都……','麻木'],giai:'Câu ba tầng: 如果……那么 (giả thiết) + 不但……连……都 (tăng tiến đến mức cực đoan); "thờ ơ với ai" = 对……麻木, 对 đứng sau 连.'}
 ];
 
-// Chiều Trung → Việt — bám ý bài khoá, nội dung khác với chiều trên
+// ══════════════════════════════════════════
+// Dịch Trung → Việt — câu mới, không trùng chiều trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Sếp phát hiện mọi người đều đang nghịch điện thoại, tức điên lên, quát lớn một tiếng: "Từ nay họp hành ai cũng không được mang điện thoại!"',zh:'老板发现大家都在玩儿手机，气得要命，大吼一声：“以后开会谁都不许带手机！”',py:'Lǎobǎn fāxiàn dàjiā dōu zài wánr shǒujī, qì de yào mìng, dà hǒu yì shēng: “Yǐhòu kāihuì shéi dōu bù xǔ dài shǒujī!”',goiY:['气得要命 = tức điên lên','大吼一声 = quát lớn một tiếng','谁都不许 = không ai được'],giai:'气得要命 dịch "tức điên / tức chết đi được", không dịch "muốn chết"; 谁都 + phủ định = không ai….'},
-  {vi:'Bị sếp gọi tên, mặt tôi đỏ bừng, đành nói mình đang xem tin một đôi thanh niên không báo cảnh sát mà chụp ảnh trước.',zh:'被老板点了名，我的脸憋得通红，只好说自己在看一对年轻人没报警先拍照的新闻。',py:'Bèi lǎobǎn diǎnle míng, wǒ de liǎn biē de tōnghóng, zhǐhǎo shuō zìjǐ zài kàn yí duì niánqīngrén méi bào jǐng xiān pāizhào de xīnwén.',goiY:['点了名 = bị gọi tên','憋得通红 = đỏ bừng (vì nén)','报警 = báo cảnh sát'],giai:'被老板点了名 là câu bị động: "bị sếp gọi tên"; 通红 là tính từ trạng thái nên dịch "đỏ bừng", không cần thêm "rất". Định ngữ dài 一对年轻人……的新闻 dịch ra sau: "tin một đôi thanh niên…".'},
-  {vi:'Từ khi có điện thoại thông minh, tôi thờ ơ với mọi thứ, trong lòng chỉ có điện thoại, quả thực đã thành nô lệ của nó.',zh:'有了智能手机以后，我对什么都麻木了，心里只有手机，简直成了它的奴隶。',py:'Yǒule zhìnéng shǒujī yǐhòu, wǒ duì shénme dōu mámù le, xīnli zhǐ yǒu shǒujī, jiǎnzhí chéngle tā de núlì.',goiY:['麻木 = thờ ơ, chai sạn','简直 = quả thực, gần như','奴隶 = nô lệ'],giai:'对什么都麻木了: 什么 + 都 = mọi thứ; 麻木 nghĩa bóng dịch "thờ ơ", không dịch "tê".'},
-  {vi:'Tôi ăn cơm lúc nào cũng ngấu nghiến, ăn xong lại cắm cúi xem WeChat, trước khi ngủ còn phải hầu hạ điện thoại thật chu đáo.',zh:'我吃饭总是狼吞虎咽的，吃完又埋头看微信，睡觉前还要把手机伺候得好好的。',py:'Wǒ chīfàn zǒngshì lángtūn-hǔyàn de, chīwán yòu máitóu kàn Wēixìn, shuìjiào qián hái yào bǎ shǒujī cìhou de hǎohāo de.',goiY:['狼吞虎咽 = ăn ngấu nghiến','埋头 = cắm cúi','伺候 = hầu hạ'],giai:'Ba vế liệt kê theo thời gian (吃饭 → 吃完 → 睡觉前) nối bằng 又, 还; 伺候得好好的 dịch "hầu hạ chu đáo" để giữ giọng hài hước.'},
-  {vi:'Rời điện thoại chẳng lẽ sẽ chết sao? Tôi quyết định nói là làm, dứt khoát ngay tuần này bắt tay thử mỗi tuần tắt máy một ngày.',zh:'离开手机难道会死吗？我决定说干就干，索性这个星期就着手尝试一周关机一天。',py:'Líkāi shǒujī nándào huì sǐ ma? Wǒ juédìng shuō gàn jiù gàn, suǒxìng zhège xīngqī jiù zhuóshǒu chángshì yì zhōu guānjī yì tiān.',goiY:['难道……吗 = chẳng lẽ… sao','说干就干 = nói là làm','索性 = dứt khoát'],giai:'难道……吗 là câu hỏi tu từ (ý: không chết được đâu); 说干就干 dịch gọn "nói là làm".'},
-  {vi:'Để phòng bản thân ý chí yếu đuối, tôi gói điện thoại từng lớp, trịnh trọng đặt vào một chiếc hộp tinh xảo.',zh:'为了防止自己意志薄弱，我把手机层层包好，庄重地放进一个精致的盒子里。',py:'Wèile fángzhǐ zìjǐ yìzhì bóruò, wǒ bǎ shǒujī céngcéng bāohǎo, zhuāngzhòng de fàngjìn yí ge jīngzhì de hézi li.',goiY:['防止 = đề phòng','意志薄弱 = ý chí yếu đuối','庄重地 = trịnh trọng','精致 = tinh xảo'],giai:'为了防止…… là vế mục đích; 层层 = từng lớp (lượng từ lặp). 庄重地放进 giữ nét hài hước: cất điện thoại như làm lễ.'},
-  {vi:'Nhảy là sở trường của tôi, nhảy rock ở công viên vừa giải trí thân tâm, vừa vận động được tay chân cứng đờ, đúng là một công đôi việc.',zh:'跳舞是我的特长，在公园里跳摇滚既能娱乐身心，又能锻炼僵硬的四肢，真是一举两得。',py:'Tiàowǔ shì wǒ de tècháng, zài gōngyuán li tiào yáogǔn jì néng yúlè shēnxīn, yòu néng duànliàn jiāngyìng de sìzhī, zhēn shì yìjǔ-liǎngdé.',goiY:['特长 = sở trường','既……又…… = vừa… vừa…','一举两得 = một công đôi việc'],giai:'Chủ ngữ của 既……又…… là cả cụm 在公园里跳摇滚; 娱乐身心 dịch "giải trí thân tâm / thư giãn tinh thần".'},
-  {vi:'Điện thoại bị bỏ rơi nửa ngày, tôi vội vàng chạy về nhà, thấy nó vẫn còn trong tủ quần áo, lòng mới yên tâm hơn nhiều.',zh:'手机被冷落了半天，我急忙赶回家，看到它还在衣柜里，心里才踏实了许多。',py:'Shǒujī bèi lěngluòle bàntiān, wǒ jímáng gǎnhuí jiā, kàndào tā hái zài yīguì li, xīnli cái tāshile xǔduō.',goiY:['被冷落 = bị bỏ rơi','急忙 = vội vàng','踏实 = yên tâm'],giai:'才 ở vế cuối = "mới" (đến lúc đó mới yên tâm); 踏实了许多 = yên tâm hơn nhiều, không dịch "chắc chắn".'},
-  {vi:'Năm tiếng không đụng đến điện thoại, lòng tôi trống rỗng kinh khủng, thế là quyết định dùng việc nấu cháo — việc tốn thời gian nhất — để bù đắp.',zh:'五个小时没碰手机，我心里空虚得要命，于是决定用熬粥这件最消耗时间的事来弥补。',py:'Wǔ ge xiǎoshí méi pèng shǒujī, wǒ xīnli kōngxū de yào mìng, yúshì juédìng yòng áo zhōu zhè jiàn zuì xiāohào shíjiān de shì lái míbǔ.',goiY:['空虚得要命 = trống rỗng kinh khủng','于是 = thế là','用……来弥补 = dùng… để bù đắp'],giai:'于是 nối hành động là hệ quả của vế trước; cụm đồng vị 熬粥这件最消耗时间的事 dịch tách "việc nấu cháo — việc tốn thời gian nhất".'},
-  {vi:'Nếu là mọi khi, chắc chắn tôi sẽ canh cánh không biết vụ án của thám tử đã có đột phá chưa; nhưng hôm nay không có điện thoại quấy nhiễu, cuộc sống lại yên bình đến thế.',zh:'要在往常，我一定惦记着侦探的案件有没有突破；可是今天没有手机的干扰，生活竟然这么安宁。',py:'Yào zài wǎngcháng, wǒ yídìng diànjìzhe zhēntàn de ànjiàn yǒu méiyǒu tūpò; kěshì jīntiān méiyǒu shǒujī de gānrǎo, shēnghuó jìngrán zhème ānníng.',goiY:['要在往常 = nếu là mọi khi','惦记 = canh cánh, nhớ mong','竟然 = không ngờ lại','安宁 = yên bình'],giai:'要在往常 nêu giả định trái với hiện tại, đối lập với 可是今天; 安宁 dịch "yên bình", KHÔNG dịch "an ninh". 惦记 ôn bài 3.'}
+  {vi:'Ngày nào anh ta cũng mơ trúng xổ số, còn làm việc thì chẳng chăm chỉ, chắc chắn chút nào.',zh:'他天天梦想着中彩票，工作却一点儿也不踏实。',py:'Tā tiāntiān mèngxiǎngzhe zhòng cǎipiào, gōngzuò què yìdiǎnr yě bù tāshi.',goiY:['中彩票 = trúng xổ số','踏实 = chăm chỉ, chắc chắn (khi làm việc)','却 = lại (trái ngược)'],giai:'中 đọc zhòng (trúng); 踏实 tả cách làm việc thì dịch "chăm chỉ, chắc chắn", tả tâm trạng thì dịch "yên tâm".'},
+  {vi:'Vụ án này làm cả nước chấn động, cảnh sát mất ba tháng mới có bước đột phá.',zh:'这个案件震惊了全国，警察花了三个月才有了突破。',py:'Zhège ànjiàn zhènjīngle quánguó, jǐngchá huāle sān ge yuè cái yǒule tūpò.',goiY:['案件 = vụ án','震惊 = làm chấn động','突破 = bước đột phá'],giai:'震惊 + nơi chốn / người = làm … chấn động; 才 = mãi mới (mất nhiều thời gian).'},
+  {vi:'Cứ tối đến là nhạc dưới lầu ồn kinh khủng, cả nhà tôi chẳng được yên lúc nào.',zh:'一到晚上，楼下的音乐就吵得要命，我们一家人根本得不到安宁。',py:'Yí dào wǎnshang, lóuxià de yīnyuè jiù chǎo de yào mìng, wǒmen yì jiā rén gēnběn dé bu dào ānníng.',goiY:['一……就…… = cứ… là…','吵得要命 = ồn kinh khủng','安宁 = yên ổn'],giai:'Adj + 得要命 dịch "… kinh khủng / … chết đi được"; 得不到安宁 = không được yên, không dịch "an ninh".'},
+  {vi:'Bác sĩ nói anh ấy sinh hoạt không điều độ, lại không vận động, nên tay chân mới cứng đờ như vậy.',zh:'医生说，他作息不规律，又不运动，四肢才会变得这么僵硬。',py:'Yīshēng shuō, tā zuòxī bù guīlǜ, yòu bú yùndòng, sìzhī cái huì biàn de zhème jiāngyìng.',goiY:['作息 = giờ giấc sinh hoạt','四肢 = tay chân','僵硬 = cứng đờ'],giai:'作息不规律 dịch "sinh hoạt không điều độ"; 才 ở vế sau nêu kết quả do nguyên nhân phía trước.'},
+  {vi:'Cô ấy dứt khoát tắt điện thoại, một mình ra công viên nhảy rock cả buổi chiều, trong lòng sảng khoái khỏi nói.',zh:'她索性把手机关了，一个人去公园跳了一下午摇滚，心里别提多痛快了。',py:'Tā suǒxìng bǎ shǒujī guān le, yí ge rén qù gōngyuán tiàole yí xiàwǔ yáogǔn, xīnli biétí duō tòngkuai le.',goiY:['索性 = dứt khoát (làm luôn)','摇滚 = nhạc rock','别提多……了 = … khỏi nói'],giai:'索性 đứng trước câu 把; 别提多痛快了 ôn bài 1, dịch "sảng khoái khỏi nói".'}
 ];
 
 // ══════════════════════════════════════════
@@ -1699,9 +1613,9 @@ var writingData = {
     'Bài có ít nhất 300 chữ Hán (không đếm dấu câu), có mở bài – thân bài – kết bài rõ ràng chưa?'
   ],
   model:{
-    zh:'以前，我也是手机的奴隶。早上一睁眼就看新闻，上课时偷偷发微信，吃饭前先拍照，晚上躺在床上还要玩儿到半夜。时间长了，我对什么都麻木了，作息很不规律，四肢也变得僵硬，还常常冷落了家人。有一次妈妈跟我说话，我连头都没抬。只要离开手机半天，我心里就空虚得要命。后来我意识到，要想改变这种状况，必须自己着手。我的建议有三个：第一，说干就干，不要总等“明天”。为了防止意志薄弱，可以把手机交给父母保管，或者索性关机，放进抽屉里。第二，培养别的爱好，分散注意力。比如去公园跑步、跳舞，既能娱乐身心，又能锻炼身体，一举两得。第三，和家人朋友面对面地聊天，而不是在手机上聊。吃饭的时候大家都把手机放在一边，一家人边吃边聊，别提多开心了。现在，我每周关机一天。没有手机的干扰，生活安宁了，心里也踏实了许多。我发现，不是我们离不开手机，而是我们还没有尝试离开它。',
-    py:'Yǐqián, wǒ yě shì shǒujī de núlì. Zǎoshang yì zhēng yǎn jiù kàn xīnwén, shàngkè shí tōutōu fā Wēixìn, chīfàn qián xiān pāizhào, wǎnshang tǎng zài chuáng shang hái yào wánr dào bànyè. Shíjiān cháng le, wǒ duì shénme dōu mámù le, zuòxī hěn bù guīlǜ, sìzhī yě biàn de jiāngyìng, hái chángcháng lěngluòle jiārén. Yǒu yí cì māma gēn wǒ shuōhuà, wǒ lián tóu dōu méi tái. Zhǐyào líkāi shǒujī bàntiān, wǒ xīnli jiù kōngxū de yào mìng. Hòulái wǒ yìshí dào, yào xiǎng gǎibiàn zhè zhǒng zhuàngkuàng, bìxū zìjǐ zhuóshǒu. Wǒ de jiànyì yǒu sān ge: dì-yī, shuō gàn jiù gàn, bú yào zǒng děng “míngtiān”. Wèile fángzhǐ yìzhì bóruò, kěyǐ bǎ shǒujī jiāo gěi fùmǔ bǎoguǎn, huòzhě suǒxìng guānjī, fàngjìn chōuti li. Dì-èr, péiyǎng bié de àihào, fēnsàn zhùyìlì. Bǐrú qù gōngyuán pǎobù, tiàowǔ, jì néng yúlè shēnxīn, yòu néng duànliàn shēntǐ, yìjǔ-liǎngdé. Dì-sān, hé jiārén péngyou miànduìmiàn de liáotiān, ér bú shì zài shǒujī shang liáo. Chīfàn de shíhou dàjiā dōu bǎ shǒujī fàng zài yìbiān, yì jiā rén biān chī biān liáo, biétí duō kāixīn le. Xiànzài, wǒ měi zhōu guānjī yì tiān. Méiyǒu shǒujī de gānrǎo, shēnghuó ānníng le, xīnli yě tāshile xǔduō. Wǒ fāxiàn, bú shì wǒmen lí bu kāi shǒujī, ér shì wǒmen hái méiyǒu chángshì líkāi tā.',
-    vn:'Trước đây, tôi cũng là nô lệ của điện thoại. Sáng vừa mở mắt đã xem tin tức, trong giờ học lén gửi WeChat, trước khi ăn thì chụp ảnh, tối nằm trên giường còn chơi đến nửa đêm. Lâu dần, tôi thờ ơ với mọi thứ, giờ giấc thất thường, tay chân cũng trở nên cứng đờ, lại thường bỏ mặc người nhà. Có lần mẹ nói chuyện với tôi, tôi đến đầu cũng không ngẩng lên. Chỉ cần rời điện thoại nửa ngày là lòng tôi đã trống rỗng kinh khủng. Về sau tôi nhận ra, muốn thay đổi tình trạng này thì phải tự mình bắt tay vào làm. Tôi có ba kiến nghị: Thứ nhất, nói là làm, đừng cứ chờ "ngày mai". Để phòng ý chí yếu đuối, có thể đưa điện thoại cho bố mẹ giữ, hoặc dứt khoát tắt máy, cất vào ngăn kéo. Thứ hai, nuôi dưỡng sở thích khác để phân tán sự chú ý. Ví dụ ra công viên chạy bộ, nhảy, vừa giải trí thân tâm, vừa rèn luyện cơ thể, một công đôi việc. Thứ ba, trò chuyện trực tiếp với người nhà, bạn bè, chứ không phải nói chuyện trên điện thoại. Lúc ăn cơm mọi người đều để điện thoại sang một bên, cả nhà vừa ăn vừa trò chuyện, vui không kể xiết. Giờ đây, mỗi tuần tôi tắt máy một ngày. Không có điện thoại quấy nhiễu, cuộc sống yên bình hơn, lòng cũng yên tâm hơn nhiều. Tôi nhận ra rằng, không phải chúng ta không rời được điện thoại, mà là chúng ta chưa thử rời xa nó mà thôi.'
+    zh:'以前，我也是手机的奴隶。早上一睁眼就看新闻，上课时偷偷发微信，吃饭前先拍照，晚上睡觉前还要玩儿到半夜。时间长了，我对什么都麻木了，作息很不规律，四肢也变得僵硬，还常常冷落了家人。有一次妈妈跟我说话，我连头都没抬。只要离开手机半天，我心里就空虚得要命。后来我意识到，要想改变这种状况，必须自己着手。我的建议有三个：第一，说干就干，不要总等“明天”。为了防止意志薄弱，可以把手机交给父母，或者索性关机，放进衣柜里。第二，培养别的爱好，分散注意力。比如去公园跑步、跳舞，既能娱乐身心，又能锻炼身体，一举两得。第三，和家人朋友面对面地聊天，而不是在手机上聊。吃饭的时候大家都把手机放在一边，一家人边吃边聊，别提多开心了。现在，我每周关机一天。没有手机的干扰，生活安宁了，心里也踏实了许多。我发现，不是我们离不开手机，而是我们还没有尝试离开它。',
+    py:'Yǐqián, wǒ yě shì shǒujī de núlì. Zǎoshang yì zhēng yǎn jiù kàn xīnwén, shàngkè shí tōutōu fā Wēixìn, chīfàn qián xiān pāizhào, wǎnshang shuìjiào qián hái yào wánr dào bànyè. Shíjiān cháng le, wǒ duì shénme dōu mámù le, zuòxī hěn bù guīlǜ, sìzhī yě biàn de jiāngyìng, hái chángcháng lěngluòle jiārén. Yǒu yí cì māma gēn wǒ shuōhuà, wǒ lián tóu dōu méi tái. Zhǐyào líkāi shǒujī bàntiān, wǒ xīnli jiù kōngxū de yào mìng. Hòulái wǒ yìshí dào, yào xiǎng gǎibiàn zhè zhǒng zhuàngkuàng, bìxū zìjǐ zhuóshǒu. Wǒ de jiànyì yǒu sān ge: dì-yī, shuō gàn jiù gàn, bú yào zǒng děng “míngtiān”. Wèile fángzhǐ yìzhì bóruò, kěyǐ bǎ shǒujī jiāo gěi fùmǔ, huòzhě suǒxìng guānjī, fàngjìn yīguì li. Dì-èr, péiyǎng bié de àihào, fēnsàn zhùyìlì. Bǐrú qù gōngyuán pǎobù, tiàowǔ, jì néng yúlè shēnxīn, yòu néng duànliàn shēntǐ, yìjǔ-liǎngdé. Dì-sān, hé jiārén péngyou miànduìmiàn de liáotiān, ér bú shì zài shǒujī shang liáo. Chīfàn de shíhou dàjiā dōu bǎ shǒujī fàng zài yìbiān, yì jiā rén biān chī biān liáo, biétí duō kāixīn le. Xiànzài, wǒ měi zhōu guānjī yì tiān. Méiyǒu shǒujī de gānrǎo, shēnghuó ānníng le, xīnli yě tāshile xǔduō. Wǒ fāxiàn, bú shì wǒmen lí bu kāi shǒujī, ér shì wǒmen hái méiyǒu chángshì líkāi tā.',
+    vn:'Trước đây, tôi cũng là nô lệ của điện thoại. Sáng vừa mở mắt đã xem tin tức, trong giờ học lén gửi WeChat, trước khi ăn thì chụp ảnh, tối trước khi ngủ còn chơi đến nửa đêm. Lâu dần, tôi thờ ơ với mọi thứ, giờ giấc thất thường, tay chân cũng trở nên cứng đờ, lại thường bỏ mặc người nhà. Có lần mẹ nói chuyện với tôi, tôi đến đầu cũng không ngẩng lên. Chỉ cần rời điện thoại nửa ngày là lòng tôi đã trống rỗng kinh khủng. Về sau tôi nhận ra, muốn thay đổi tình trạng này thì phải tự mình bắt tay vào làm. Tôi có ba kiến nghị: Thứ nhất, nói là làm, đừng cứ chờ "ngày mai". Để phòng ý chí yếu đuối, có thể đưa điện thoại cho bố mẹ, hoặc dứt khoát tắt máy, cất vào tủ quần áo. Thứ hai, nuôi dưỡng sở thích khác để phân tán sự chú ý. Ví dụ ra công viên chạy bộ, nhảy, vừa giải trí thân tâm, vừa rèn luyện cơ thể, một công đôi việc. Thứ ba, trò chuyện trực tiếp với người nhà, bạn bè, chứ không phải nói chuyện trên điện thoại. Lúc ăn cơm mọi người đều để điện thoại sang một bên, cả nhà vừa ăn vừa trò chuyện, vui không kể xiết. Giờ đây, mỗi tuần tôi tắt máy một ngày. Không có điện thoại quấy nhiễu, cuộc sống yên bình hơn, lòng cũng yên tâm hơn nhiều. Tôi nhận ra rằng, không phải chúng ta không rời được điện thoại, mà là chúng ta chưa thử rời xa nó mà thôi.'
   }
 };
 
@@ -1750,308 +1664,133 @@ var speakingData = {
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — 听力 (hội thoại ngắn + đoạn nói)
-// Sách HSK 6 không có sách bài tập nghe: tự soạn theo chủ đề bài 9.
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — câu tự soạn (sách HSK 6 không có sách bài tập nghe), mỗi câu một tình huống mới
+// ══════════════════════════════════════════
 var listenExamData = {
-  "intro": "Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.",
-  "source": "Soạn theo dạng đề HSK 6 · chủ đề bài 9",
-  "items": [
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 9',
+  items: [
     {
-      "n": 1,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "我跟你说话呢，你干吗老看手机？"
-        },
-        {
-          "sp": "男",
-          "zh": "不好意思，我在看一个案件的新闻，听说今天有了突破。"
-        }
+      n: 1,
+      lines: [
+        {sp:'女',zh:'昨天晚上小区里有一家被偷了。'},
+        {sp:'男',zh:'我听说了，那家人回来一看门开着，马上就报警了。'}
       ],
-      "q": "男的在看什么？",
-      "qvn": "Người đàn ông đang xem gì?",
-      "opts": [
-        "一部电影",
-        "朋友发的微信",
-        "一个案件的新闻",
-        "天气预报"
-      ],
-      "ans": 2,
-      "why": "Anh ấy nói 我在看一个案件的新闻 — tin về một vụ án vừa có đột phá (有了突破).",
-      "words": [
-        "案件",
-        "突破"
-      ]
+      q: '那家人发现被偷以后做了什么？',
+      qvn: 'Gia đình đó phát hiện bị trộm xong đã làm gì?',
+      opts: ['马上报警了','去找邻居','自己去追小偷','什么也没做'],
+      ans: 0,
+      why: '马上就报警了 = báo cảnh sát ngay → A.',
+      words: ['报警']
     },
     {
-      "n": 2,
-      "lines": [
-        {
-          "sp": "男",
-          "zh": "今天路上怎么这么堵？"
-        },
-        {
-          "sp": "女",
-          "zh": "不知道，往常这个时候很少堵车，可能前面出事故了。"
-        }
+      n: 2,
+      lines: [
+        {sp:'男',zh:'小林不是说要准备考试吗？怎么又去旅行了？'},
+        {sp:'女',zh:'她这个人就是这样，想到什么，说做就做，从来不犹豫。'}
       ],
-      "q": "关于这条路，可以知道什么？",
-      "qvn": "Về con đường này, có thể biết điều gì?",
-      "opts": [
-        "往常这个时候车不多",
-        "往常经常堵车",
-        "前面正在修路",
-        "女的每天走这条路"
-      ],
-      "ans": 0,
-      "why": "往常这个时候很少堵车 = mọi khi giờ này ít tắc → thường ngày giờ này xe không nhiều. 可能出事故了 chỉ là phỏng đoán, không nói sửa đường.",
-      "words": [
-        "往常"
-      ]
+      q: '关于小林，可以知道什么？',
+      qvn: 'Về Tiểu Lâm, có thể biết điều gì?',
+      opts: ['做事很犹豫','不喜欢旅行','想做什么马上就做','已经考完试了'],
+      ans: 2,
+      why: '说做就做 = nói làm là làm ngay → C; 从来不犹豫 càng cho thấy cô ấy không chần chừ.',
+      words: ['说A就A']
     },
     {
-      "n": 3,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "听说你周末把手机关了一整天？感觉怎么样？"
-        },
-        {
-          "sp": "男",
-          "zh": "刚开始心里空虚得要命，后来去公园跑了跑步，反而觉得挺踏实的。"
-        }
+      n: 3,
+      lines: [
+        {sp:'女',zh:'你今天怎么走路来上班了？'},
+        {sp:'男',zh:'车坏了。走了四十分钟，腿酸得要命，就当锻炼身体吧。'}
       ],
-      "q": "男的关机以后感觉怎么样？",
-      "qvn": "Người đàn ông cảm thấy thế nào sau khi tắt máy?",
-      "opts": [
-        "一直很难受",
-        "非常生气",
-        "一点儿感觉都没有",
-        "开始很空虚，后来踏实了"
-      ],
-      "ans": 3,
-      "why": "刚开始……空虚得要命，后来……反而觉得挺踏实的 — cảm giác thay đổi theo hai giai đoạn. Nghe được 后来……反而 là chọn đúng.",
-      "words": [
-        "空虚",
-        "要命",
-        "踏实"
-      ]
+      q: '男的今天为什么走路上班？',
+      qvn: 'Hôm nay vì sao người đàn ông đi bộ đi làm?',
+      opts: ['想锻炼身体','车坏了','离家很近','路上车太多'],
+      ans: 1,
+      why: '车坏了 là lý do; 就当锻炼身体吧 chỉ là tự an ủi, không phải mục đích → B.',
+      words: ['要命']
     },
     {
-      "n": 4,
-      "lines": [
-        {
-          "sp": "男",
-          "zh": "你跳舞跳得真好，学了多久了？"
-        },
-        {
-          "sp": "女",
-          "zh": "跳舞是我的特长，从小就学。既能锻炼身体，又能交朋友，一举两得。"
-        }
+      n: 4,
+      lines: [
+        {sp:'男',zh:'你快出来看看，昨天夜里下大雪了！'},
+        {sp:'女',zh:'真漂亮！房子、树、路，一片雪白，我们出去拍照吧。'}
       ],
-      "q": "女的觉得跳舞有什么好处？",
-      "qvn": "Người phụ nữ thấy nhảy có lợi ích gì?",
-      "opts": [
-        "能挣钱",
-        "能锻炼身体，还能交朋友",
-        "能减肥",
-        "能参加比赛"
-      ],
-      "ans": 1,
-      "why": "既能锻炼身体，又能交朋友 = hai cái lợi → 一举两得. Các phương án khác không được nhắc tới.",
-      "words": [
-        "特长",
-        "一举两得"
-      ]
+      q: '外面怎么样？',
+      qvn: 'Bên ngoài thế nào?',
+      opts: ['下大雨了','天快黑了','风很大','到处都是白的'],
+      ans: 3,
+      why: '一片雪白 = trắng xoá một vùng → D.',
+      words: ['雪白']
     },
     {
-      "n": 5,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "你怎么吃得这么快？慢点儿！"
-        },
-        {
-          "sp": "男",
-          "zh": "上课要迟到了，我只能狼吞虎咽了。"
-        }
+      n: 5,
+      lines: [
+        {sp:'女',zh:'你最近怎么不跟女朋友一起吃饭了？'},
+        {sp:'男',zh:'她说我吃饭时老看手机，把她冷落在一边，正跟我生气呢。'}
       ],
-      "q": "男的为什么吃得很快？",
-      "qvn": "Vì sao người đàn ông ăn rất nhanh?",
-      "opts": [
-        "饭不好吃",
-        "上课快迟到了",
-        "他太饿了",
-        "他要去看比赛"
-      ],
-      "ans": 1,
-      "why": "上课要迟到了 → sắp muộn học nên đành ăn ngấu nghiến (狼吞虎咽). \"Đói quá\" là bẫy vì 狼吞虎咽 thường gắn với đói.",
-      "words": [
-        "狼吞虎咽"
-      ]
+      q: '女朋友为什么生气？',
+      qvn: 'Vì sao bạn gái giận?',
+      opts: ['男的看手机不跟她说话','男的吃饭太快','男的忘了她的生日','男的不想见她父母'],
+      ans: 0,
+      why: '老看手机，把她冷落在一边 = cứ xem điện thoại, bỏ mặc cô ấy → A.',
+      words: ['冷落']
     },
     {
-      "n": 6,
-      "lines": [
-        {
-          "sp": "男",
-          "zh": "我一直想学游泳，可是总找不到时间。"
-        },
-        {
-          "sp": "女",
-          "zh": "那还等什么？说干就干，明天就着手吧，我带你去游泳馆。"
-        }
+      n: 6,
+      lines: [
+        {sp:'男',zh:'那部侦探电影你看完了吗？'},
+        {sp:'女',zh:'看完了！最后案件有了突破的那一段太精彩了，我眼睛都不敢眨一下。'}
       ],
-      "q": "女的是什么意思？",
-      "qvn": "Ý người phụ nữ là gì?",
-      "opts": [
-        "游泳很危险",
-        "她不会游泳",
-        "等有时间再学",
-        "明天就开始学"
-      ],
-      "ans": 3,
-      "why": "说干就干 = nói là làm; 明天就着手吧 = ngày mai bắt tay vào luôn → khuyên bắt đầu ngay ngày mai.",
-      "words": [
-        "着手"
-      ]
+      q: '女的觉得那部电影怎么样？',
+      qvn: 'Người phụ nữ thấy bộ phim thế nào?',
+      opts: ['很无聊','太长了','很精彩','看不懂'],
+      ans: 2,
+      why: '太精彩了 + 眼睛都不敢眨一下 (không dám chớp mắt) → rất hay, hấp dẫn.',
+      words: ['侦探','案件','突破','眨']
     },
     {
-      "n": 7,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "楼上邻居天天装修，吵得我不得安宁。"
-        },
-        {
-          "sp": "男",
-          "zh": "要不你跟他们好好说说，让他们晚上别干了。"
-        }
+      n: 7,
+      lines: [
+        {sp:'女',zh:'你怎么搬到郊区去住了？上班多远啊！'},
+        {sp:'男',zh:'远是远了点儿，可是没有马路上的干扰，生活安宁多了。'}
       ],
-      "q": "女的遇到了什么问题？",
-      "qvn": "Người phụ nữ gặp phải vấn đề gì?",
-      "opts": [
-        "楼上装修太吵了",
-        "邻居总是吵架",
-        "房子太小了",
-        "她的工作太多"
-      ],
-      "ans": 0,
-      "why": "楼上邻居天天装修，吵得我不得安宁 → tiếng sửa nhà quá ồn. 吵 ở đây là \"ồn\", không phải \"cãi nhau\" (吵架) — bẫy của phương án B.",
-      "words": [
-        "安宁"
-      ]
-    },
-    {
-      "n": 8,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "现在很多人离不开智能手机，吃饭时拍照，走路时看微信，睡觉前还要看一会儿新闻。时间长了，有的人对身边的人和事都变得麻木了。专家建议，每周可以尝试关机一天，把手机安置在看不见的地方，去运动、看书或者和家人聊天。这样既能减少手机的干扰，又能让生活变得更加安宁。"
-        }
-      ],
-      "q": "专家建议人们怎么做？",
-      "qvn": "Chuyên gia khuyên mọi người làm gì?",
-      "opts": [
-        "换一部新手机",
-        "只在睡觉前看手机",
-        "每周关机一天",
-        "多在手机上看书"
-      ],
-      "ans": 2,
-      "why": "Câu then chốt: 专家建议，每周可以尝试关机一天. Các phương án khác chỉ là chi tiết nhiễu (看书 là làm sau khi tắt máy, không phải đọc trên điện thoại).",
-      "words": [
-        "智能",
-        "麻木",
-        "安置",
-        "干扰",
-        "安宁"
-      ]
+      q: '男的为什么搬到郊区？',
+      qvn: 'Vì sao người đàn ông chuyển ra ngoại ô?',
+      opts: ['房子便宜','离公司近','父母住在那儿','那里很安静'],
+      ans: 3,
+      why: '远是远了点儿 thừa nhận xa; 没有马路上的干扰，生活安宁多了 → vì yên tĩnh.',
+      words: ['干扰','安宁']
     }
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
+// ══════════════════════════════════════════
 var situationData = {
-  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
-         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn thân hỏi vì sao dạo này em hay tắt điện thoại.',
-     a:{sp:'Bạn',zh:'你最近怎么总是关机？找你都找不到。',vn:'Dạo này sao cậu cứ tắt máy thế? Tìm cậu mãi không được.'},
-     need:['Dùng 为了防止……','Giải thích lý do tắt máy'],
-     sample:'不好意思，为了防止自己意志薄弱，我学习的时候就把手机关了。',
-     samplePy:'Bù hǎoyìsi, wèile fángzhǐ zìjǐ yìzhì bóruò, wǒ xuéxí de shíhou jiù bǎ shǒujī guān le.',
-     sampleVn:'Xin lỗi nhé, để phòng mình yếu lòng, lúc học tớ tắt điện thoại luôn.',
-     tip:'Mở đầu bằng 不好意思 cho lịch sự, rồi nêu mục đích bằng 为了防止…….'},
-
-    {scene:'Mẹ thấy em ngồi xem điện thoại cả buổi sáng.',
-     a:{sp:'Mẹ',zh:'你都坐了一上午了，不累吗？',vn:'Con ngồi cả buổi sáng rồi, không mỏi à?'},
-     need:['Dùng ……得要命','Nói mình sẽ đi vận động'],
-     sample:'累得要命，脖子都僵硬了，我这就去公园活动活动四肢。',
-     samplePy:'Lèi de yào mìng, bózi dōu jiāngyìng le, wǒ zhè jiù qù gōngyuán huódòng huódòng sìzhī.',
-     sampleVn:'Mỏi chết đi được, cổ cứng đờ cả rồi, con đi công viên vận động tay chân một chút ngay đây.',
-     tip:'Adj + 得要命 là khẩu ngữ, rất hợp khi nói với người nhà; 这就…… = ngay bây giờ.'},
-
-    {scene:'Bạn rủ em đi leo núi ngay chiều nay.',
-     a:{sp:'Bạn',zh:'今天天气这么好，我们下午去爬山吧！',vn:'Hôm nay trời đẹp thế, chiều nay mình đi leo núi đi!'},
-     need:['Dùng 说A就A','Đồng ý ngay'],
-     sample:'好啊，说走就走，我现在就去准备！',
-     samplePy:'Hǎo a, shuō zǒu jiù zǒu, wǒ xiànzài jiù qù zhǔnbèi!',
-     sampleVn:'Được đấy, nói đi là đi, tớ đi chuẩn bị ngay đây!',
-     tip:'说走就走 / 说干就干: hai chữ A phải giống hệt nhau, biểu thị làm ngay lập tức.'},
-
-    {scene:'Bạn hỏi em cách để vừa giảm cân vừa học được kỹ năng mới.',
-     a:{sp:'Bạn',zh:'我想减肥，又想学点儿新东西，有什么好办法吗？',vn:'Tớ muốn giảm cân mà cũng muốn học cái gì mới, có cách nào hay không?'},
-     need:['Dùng 既……又……','Dùng 一举两得'],
-     sample:'你可以去学跳舞，既能减肥，又能学会一门新本事，一举两得。',
-     samplePy:'Nǐ kěyǐ qù xué tiàowǔ, jì néng jiǎnféi, yòu néng xuéhuì yì mén xīn běnshi, yìjǔ-liǎngdé.',
-     sampleVn:'Cậu có thể đi học nhảy, vừa giảm cân được, vừa học được một kỹ năng mới, một công đôi việc.',
-     tip:'Nêu hai lợi ích bằng 既……又…… rồi mới chốt 一举两得 — đúng như câu trong bài khoá.'},
-
-    {scene:'Thầy giáo hỏi cảm nhận của em sau một ngày không dùng điện thoại.',
-     a:{sp:'Thầy',zh:'不用手机的一天，你有什么感受？',vn:'Một ngày không dùng điện thoại, em có cảm nhận gì?'},
-     need:['Dùng 要在往常','Dùng 安宁 hoặc 踏实'],
-     sample:'要在往常，我一定早就待不住了。可是今天没有手机的干扰，我觉得生活特别安宁，心里也很踏实。',
-     samplePy:'Yào zài wǎngcháng, wǒ yídìng zǎojiù dāi bu zhù le. Kěshì jīntiān méiyǒu shǒujī de gānrǎo, wǒ juéde shēnghuó tèbié ānníng, xīnli yě hěn tāshi.',
-     sampleVn:'Nếu là mọi khi, chắc chắn em đã ngồi không yên từ lâu rồi. Nhưng hôm nay không có điện thoại quấy nhiễu, em thấy cuộc sống rất yên bình, trong lòng cũng rất thanh thản.',
-     tip:'要在往常 + 可是今天 tạo thế đối lập mọi khi – hôm nay, giống đoạn cuối bài khoá.'}
+    {scene:'Bạn thân hỏi vì sao dạo này em hay tắt điện thoại.',a:{sp:'Bạn',zh:'你最近怎么总是关机？找你都找不到。',vn:'Dạo này sao cậu cứ tắt máy thế? Tìm cậu mãi không được.'},need:['Dùng 索性','Giải thích lý do tắt máy'],sample:'不好意思，下周就要考试了，我担心自己忍不住看手机，索性关机了。',samplePy:'Bù hǎoyìsi, xià zhōu jiù yào kǎoshì le, wǒ dānxīn zìjǐ rěn bu zhù kàn shǒujī, suǒxìng guānjī le.',sampleVn:'Xin lỗi nhé, tuần sau thi rồi, tớ sợ mình không nhịn được lại xem điện thoại nên tắt máy luôn.',tip:'Mở đầu bằng 不好意思 cho lịch sự; 索性 + V = (đã vậy thì) dứt khoát làm luôn.'},
+    {scene:'Mẹ thấy em ngồi xem điện thoại cả buổi sáng.',a:{sp:'Mẹ',zh:'你都坐了一上午了，不累吗？',vn:'Con ngồi cả buổi sáng rồi, không mỏi à?'},need:['Dùng ……得要命','Nói mình sẽ đi vận động'],sample:'妈，我坐得脖子都僵硬了，浑身难受得要命，我这就去公园活动活动四肢。',samplePy:'Mā, wǒ zuò de bózi dōu jiāngyìng le, húnshēn nánshòu de yào mìng, wǒ zhè jiù qù gōngyuán huódòng huódòng sìzhī.',sampleVn:'Mẹ ơi, con ngồi đến cứng cả cổ, khó chịu khắp người chết đi được, con đi công viên vận động tay chân ngay đây.',tip:'Adj + 得要命 là khẩu ngữ, rất hợp khi nói với người nhà; 这就…… = ngay bây giờ.'},
+    {scene:'Bạn rủ em đi leo núi ngay chiều nay.',a:{sp:'Bạn',zh:'今天天气这么好，我们下午去爬山吧！',vn:'Hôm nay trời đẹp thế, chiều nay mình đi leo núi đi!'},need:['Dùng 说A就A','Đồng ý ngay'],sample:'好啊，说去就去，我现在就去准备！',samplePy:'Hǎo a, shuō qù jiù qù, wǒ xiànzài jiù qù zhǔnbèi!',sampleVn:'Được đấy, nói đi là đi, tớ đi chuẩn bị ngay đây!',tip:'说去就去 / 说做就做: hai chữ A phải giống hệt nhau, biểu thị làm ngay lập tức.'},
+    {scene:'Bạn hỏi em cách để vừa giảm cân vừa học được kỹ năng mới.',a:{sp:'Bạn',zh:'我想减肥，又想学点儿新东西，有什么好办法吗？',vn:'Tớ muốn giảm cân mà cũng muốn học cái gì mới, có cách nào hay không?'},need:['Dùng 既……又……','Dùng 一举两得'],sample:'你可以去学跳舞，既能减肥，又能学会一门新本事，这不是一举两得的好办法吗？',samplePy:'Nǐ kěyǐ qù xué tiàowǔ, jì néng jiǎnféi, yòu néng xuéhuì yì mén xīn běnshi, zhè bú shì yìjǔ-liǎngdé de hǎo bànfǎ ma?',sampleVn:'Cậu có thể đi học nhảy, vừa giảm cân được, vừa học được một kỹ năng mới, chẳng phải là cách một công đôi việc sao?',tip:'Nêu hai lợi ích bằng 既……又……, rồi chốt bằng câu hỏi tu từ 这不是……吗？'},
+    {scene:'Thầy giáo hỏi cảm nhận của em sau một ngày không dùng điện thoại.',a:{sp:'Thầy',zh:'不用手机的一天，你有什么感受？',vn:'Một ngày không dùng điện thoại, em có cảm nhận gì?'},need:['Dùng 往常','Dùng 踏实 hoặc 安宁'],sample:'比起往常，今天我心里踏实多了。没有手机，我看完了一本书，还给奶奶打了个电话。',samplePy:'Bǐqǐ wǎngcháng, jīntiān wǒ xīnli tāshi duō le. Méiyǒu shǒujī, wǒ kànwánle yì běn shū, hái gěi nǎinai dǎle ge diànhuà.',sampleVn:'So với mọi khi, hôm nay lòng em yên ổn hơn nhiều. Không có điện thoại, em đọc xong một cuốn sách, còn gọi điện cho bà nữa.',tip:'比起往常，…… + Adj + 多了 = so với mọi khi thì … hơn nhiều.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 // 🎯 NÓI SAO CHO HAY — 得体 / 语体
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 var registerData = {
-  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
-         'Lên HSK 6, chọn đúng văn phong (khẩu ngữ hay văn viết, thân mật hay trang trọng) quan trọng không kém ngữ pháp.',
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. Lên HSK 6, chọn đúng văn phong (khẩu ngữ hay văn viết, thân mật hay trang trọng) quan trọng không kém ngữ pháp.',
   items: [
-    {scene:'Em viết bài văn "如何离开手机" nộp cho cô giáo.',
-     a:'手机那玩意儿太好玩儿了，我老放不下。',b:'智能手机给我们带来了很多乐趣，因此很多人离不开它。',better:'b',
-     why:'那玩意儿, 老 là khẩu ngữ, 那玩意儿 còn mang ý coi nhẹ; bài văn cần văn viết: 智能手机, 因此.'},
-
-    {scene:'Em than với bạn thân sau buổi tập thể dục.',
-     a:'累死了，累得要命！',b:'我感到极度疲劳。',better:'a',
-     why:'累得要命 là khẩu ngữ tự nhiên khi than với bạn; 极度疲劳 là văn viết, nghe như báo cáo y tế.'},
-
-    {scene:'Phát thanh viên đưa tin trên truyền hình.',
-     a:'据报道，昨天该市发生了一起案件，警方已介入调查。',b:'听说昨天那儿出了个案子，警察正在查呢。',better:'a',
-     why:'Bản tin dùng văn viết trang trọng: 据报道, 该市, 一起案件, 警方; câu b là lời kể khẩu ngữ (听说, 案子, 呢).'},
-
-    {scene:'Em nhờ bố cất điện thoại giúp để ôn thi.',
-     a:'爸，您帮我把手机收起来吧，我怕自己管不住。',b:'请您代为保管本人手机，以防止本人意志薄弱。',better:'a',
-     why:'Nói với bố dùng khẩu ngữ thân mật (爸, 管不住); 代为保管, 本人 là văn bản hành chính, nói với người nhà nghe rất buồn cười.'},
-
-    {scene:'Em phát biểu trong buổi chào cờ về chủ đề sống lành mạnh.',
-     a:'同学们，合理安排作息时间，才能拥有健康的身体。',b:'大家别老熬夜玩儿手机了啊，身体要紧！',better:'a',
-     why:'Phát biểu trước toàn trường cần trang trọng: 合理安排作息时间, 拥有; câu b hợp khi nhắc bạn bè.'},
-
-    {scene:'Em nhắn tin cho bạn về quyết định bỏ game.',
-     a:'这游戏太浪费时间了，我索性删了。',b:'鉴于该游戏耗时过多，本人决定予以删除。',better:'a',
-     why:'Tin nhắn cho bạn dùng khẩu ngữ: 这游戏, 索性删了; 鉴于, 予以 là công văn.'}
+    {scene:'Em viết bài văn "如何离开手机" nộp cho cô giáo.',a:'手机那玩意儿太好玩儿了，我老放不下。',b:'智能手机给我们带来了很多乐趣，因此很多人离不开它。',better:'b',why:'那玩意儿, 老 là khẩu ngữ, 那玩意儿 còn mang ý coi nhẹ; bài văn cần văn viết: 智能手机, 因此.'},
+    {scene:'Em than với bạn thân sau buổi leo núi.',a:'我今天累得要命，腿都快走不动了。',b:'本人极度疲劳，双腿行走困难。',better:'a',why:'累得要命 là khẩu ngữ tự nhiên khi than với bạn; 本人, 极度疲劳, 行走困难 là văn viết, nghe như báo cáo y tế.'},
+    {scene:'Phát thanh viên đưa tin trên truyền hình.',a:'听说昨天那儿出了个事，警察正在查呢。',b:'昨天，该市发生了一起案件，警察已经开始调查。',better:'b',why:'Bản tin dùng văn viết: 该市, 发生了一起案件. Câu a là lời kể miệng (听说, 出了个事, 呢).'},
+    {scene:'Em nhờ bố cất điện thoại giúp để ôn thi.',a:'爸，您帮我把手机收起来吧，我怕自己管不住。',b:'请您将本人手机收好，以防止本人意志薄弱。',better:'a',why:'Nói với bố dùng khẩu ngữ thân mật (爸, 管不住); 将, 本人, 以防止 là giọng văn bản hành chính, nói với người nhà nghe rất buồn cười.'},
+    {scene:'Em phát biểu trong buổi chào cờ về chủ đề sống lành mạnh.',a:'大家别老熬夜玩儿手机了啊，身体最重要！',b:'同学们，合理安排作息时间，才能有健康的身体。',better:'b',why:'Phát biểu trước toàn trường cần trang trọng: 同学们, 合理安排作息时间. Câu a (别老……了啊) hợp khi nhắc bạn bè.'},
+    {scene:'Em nhắn tin cho bạn về quyết định bỏ game.',a:'这游戏太浪费时间了，我索性不玩儿了。',b:'由于该游戏过于消耗时间，本人决定不再使用。',better:'a',why:'Tin nhắn cho bạn dùng khẩu ngữ: 这游戏, 索性不玩儿了. 由于, 该, 本人 là giọng công văn.'}
   ]
 };
 

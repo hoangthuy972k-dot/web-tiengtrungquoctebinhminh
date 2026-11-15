@@ -1721,109 +1721,50 @@ var hvBridgeData = {
 // GHÉP TỪ — cụm từ trong bài khoá
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'网络购物的人',right:'急剧增加'},
-  {left:'川流不息的',right:'人群'},
-  {left:'登录',right:'网站'},
-  {left:'下几道',right:'指令'},
-  {left:'根深蒂固的',right:'购物习惯'},
-  {left:'进行根本性的',right:'革命'},
-  {left:'昔日的',right:'欣欣向荣'},
-  {left:'仓库货物',right:'储备管理'},
-  {left:'全新的',right:'商业模式'},
-  {left:'购物车',right:'把手'},
-  {left:'可随意装卸的',right:'无线电脑工具'},
-  {left:'发出',right:'提示音'},
-  {left:'把鱼',right:'清理好'},
-  {left:'不必排队',right:'等候'},
-  {left:'电子便利站',right:'为你把关'},
-  {left:'无须人工',right:'过秤'},
-  {left:'识别商品的',right:'重量和体积'},
-  {left:'消费钱数的',right:'总和'},
-  {left:'着重推荐的',right:'服务'},
-  {left:'样式新颖的',right:'羽绒服'},
   {left:'勘探',right:'矿产'},
-  {left:'得到',right:'反馈'},
-  {left:'把握消费者的',right:'需求'},
-  {left:'生意',right:'兴隆'}
+  {left:'满足顾客的',right:'需求'},
+  {left:'性能',right:'稳定'},
+  {left:'生意',right:'兴隆'},
+  {left:'款式',right:'新颖'},
+  {left:'改良',right:'品种'},
+  {left:'储备',right:'粮食'},
+  {left:'一枚',right:'纽扣儿'},
+  {left:'无微不至的',right:'关怀'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ — mỗi từ của bài ít nhất một câu
+// ĐIỀN TỪ — câu mới (không chép bài khoá / SGK), mỗi câu một tình huống; ôn xoáy ốc từ + ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'入冬以后，气温',blank:'急剧',post:'下降，医院里感冒的病人明显多了。',hint:'(nhanh và mạnh)',ans:'急剧'},
-  {pre:'节假日的步行街上，游客',blank:'川流不息',post:'，热闹极了。',hint:'(nườm nượp)',ans:'川流不息'},
-  {pre:'密码输错了三次，账号就',blank:'登录',post:'不了了。',hint:'(đăng nhập)',ans:'登录'},
-  {pre:'只要对智能音箱说出',blank:'指令',post:'，它就会自动播放音乐。',hint:'(lệnh)',ans:'指令'},
-  {pre:'“重男轻女”的观念在有些地方仍然',blank:'根深蒂固',post:'。',hint:'(ăn sâu bén rễ)',ans:'根深蒂固'},
-  {pre:'第一次在全校同学面前演讲，我',blank:'不免',post:'有些紧张。',hint:'(khó tránh khỏi)',ans:'不免',exp:'不免 + V = khó tránh khỏi (tự nhiên sẽ…): 不免有些紧张.'},
-  {pre:'二十年前就有专家',blank:'预言',post:'，手机会代替钱包。',hint:'(tiên đoán)',ans:'预言'},
-  {pre:'智能手机的出现，给人们的生活带来了一场',blank:'革命',post:'。',hint:'(cách mạng)',ans:'革命'},
-  {pre:'经过科学家多年的',blank:'改良',post:'，这种水稻的产量提高了一倍。',hint:'(cải tiến)',ans:'改良'},
-  {pre:'改革开放以后，这个小渔村变成了一座',blank:'欣欣向荣',post:'的城市。',hint:'(phồn vinh)',ans:'欣欣向荣'},
-  {pre:'双十一前，网店的',blank:'仓库',post:'里堆满了等着发出的包裹。',hint:'(kho)',ans:'仓库'},
-  {pre:'为了应对台风，很多家庭提前',blank:'储备',post:'了食物和饮用水。',hint:'(dự trữ)',ans:'储备'},
-  {pre:'在这家店打工，工资是按天',blank:'结算',post:'的。',hint:'(thanh toán)',ans:'结算'},
-  {pre:'上飞机以后，请把手机调成飞行',blank:'模式',post:'。',hint:'(chế độ)',ans:'模式'},
-  {pre:'公交车上人很多，请握紧',blank:'把手',post:'，注意安全。',hint:'(tay vịn, tay cầm)',ans:'把手'},
-  {pre:'码头上，工人们正在忙着',blank:'装卸',post:'货物。',hint:'(bốc dỡ)',ans:'装卸'},
-  {pre:'整天盯着电脑',blank:'屏幕',post:'，眼睛很容易疲劳。',hint:'(màn hình)',ans:'屏幕'},
-  {pre:'物价上涨了，工资也应该',blank:'相应',post:'地提高。',hint:'(tương ứng)',ans:'相应',exp:'相应地 + V = tương ứng (thay đổi theo): 工资也应该相应地提高.'},
-  {pre:'实验室的',blank:'仪器',post:'都很精密，没有老师的指导，不许随便操作。',hint:'(thiết bị)',ans:'仪器'},
-  {pre:'感冒时最好戴上口罩，',blank:'以免',post:'传染别人。',hint:'(để tránh)',ans:'以免',exp:'…，以免… = để tránh (vế sau là hậu quả xấu): 以免传染别人.'},
-  {pre:'她',blank:'嫌',post:'宿舍条件太差，决定搬出去住。',hint:'(chê)',ans:'嫌',exp:'嫌 + điều không vừa ý = chê, không ưng: 嫌宿舍条件太差.'},
-  {pre:'做鱼的时候放几片姜，可以去',blank:'腥',post:'。',hint:'(tanh)',ans:'腥'},
-  {pre:'手机内存不够了，得',blank:'清理',post:'一下没用的照片。',hint:'(dọn dẹp)',ans:'清理'},
-  {pre:'面试结束了，请大家回去',blank:'等候',post:'通知。',hint:'(chờ)',ans:'等候'},
-  {pre:'这款手机虽然便宜，但是',blank:'性能',post:'一点儿也不差。',hint:'(tính năng)',ans:'性能'},
-  {pre:'这个小区交通',blank:'便利',post:'，楼下就有超市和地铁站。',hint:'(thuận tiện)',ans:'便利'},
-  {pre:'食品安全关系到每个人的健康，必须严格',blank:'把关',post:'。',hint:'(kiểm soát, kiểm định)',ans:'把关'},
-  {pre:'电话里的机器人听不懂我的问题，我只好转',blank:'人工',post:'服务。',hint:'(nhân viên trực, sức người)',ans:'人工'},
-  {pre:'我怀疑那个卖水果的',blank:'秤',post:'不准，回家一称，果然少了半斤。',hint:'(cái cân)',ans:'秤'},
-  {pre:'这台电脑的',blank:'运算',post:'速度超级快，玩游戏一点儿也不卡。',hint:'(tính toán, xử lý)',ans:'运算'},
-  {pre:'三角形三个内角的',blank:'总和',post:'是一百八十度。',hint:'(tổng)',ans:'总和'},
-  {pre:'今天的会议上，总经理',blank:'着重',post:'强调了安全问题。',hint:'(đặc biệt, chú trọng)',ans:'着重'},
-  {pre:'有些孩子沉迷于',blank:'虚拟',post:'世界，在现实中反而不会跟人交流。',hint:'(ảo)',ans:'虚拟'},
-  {pre:'现在改为网络选举了，选民们只需登录网站，根据指令',blank:'投票',post:'即可。',hint:'(bỏ phiếu)',ans:'投票'},
-  {pre:'这是一家百年老店了，饭菜',blank:'保管',post:'让你满意。',hint:'(cam đoan)',ans:'保管'},
-  {pre:'这篇作文构思',blank:'新颖',post:'，老师把它当作范文读给全班听。',hint:'(mới lạ, độc đáo)',ans:'新颖'},
-  {pre:'北方的冬天特别冷，出门不穿',blank:'羽绒服',post:'可不行。',hint:'(áo lông vũ)',ans:'羽绒服'},
-  {pre:'毕业典礼那天，她穿了一件红色的',blank:'旗袍',post:'，显得特别有气质。',hint:'(sườn xám)',ans:'旗袍'},
-  {pre:'逛了一整天，也没看到一件',blank:'中意',post:'的衣服。',hint:'(ưng ý)',ans:'中意'},
-  {pre:'邻居把',blank:'音响',post:'开得太大了，吵得我没法儿复习。',hint:'(dàn loa)',ans:'音响'},
-  {pre:'爷爷每天早上都要打开',blank:'收音机',post:'，一边听新闻一边喝茶。',hint:'(radio)',ans:'收音机'},
-  {pre:'洗完手记得随手关紧',blank:'水龙头',post:'，节约用水。',hint:'(vòi nước)',ans:'水龙头'},
-  {pre:'在这届运动会上，他一个人就拿了三',blank:'枚',post:'金牌。',hint:'(lượng từ: tấm, chiếc)',ans:'枚',exp:'枚 là lượng từ cho vật nhỏ, dẹt như huy chương, tem, đồng xu: 三枚金牌.'},
-  {pre:'我的外套掉了一颗',blank:'纽扣儿',post:'，妈妈帮我缝上了。',hint:'(cúc áo)',ans:'纽扣儿'},
-  {pre:'宿舍里只有一个',blank:'插座',post:'，大家只好轮流给手机充电。',hint:'(ổ cắm)',ans:'插座'},
-  {pre:'',blank:'勘探',post:'队在沙漠里工作了三年，终于找到了石油。',hint:'(thăm dò)',ans:'勘探'},
-  {pre:'这个地区',blank:'矿产',post:'资源丰富，但是交通很不便利。',hint:'(khoáng sản)',ans:'矿产'},
-  {pre:'根据用户的',blank:'反馈',post:'，我们对这款软件进行了改良。',hint:'(phản hồi)',ans:'反馈'},
-  {pre:'这家店的鞋',blank:'款式',post:'很多，可惜没有我的号。',hint:'(kiểu dáng, mẫu)',ans:'款式'},
-  {pre:'社会应该多',blank:'关怀',post:'那些独自生活的老人。',hint:'(quan tâm, chăm lo)',ans:'关怀'},
-  {pre:'我生病住院的那些天，妈妈把我照顾得',blank:'无微不至',post:'。',hint:'(chu đáo từng li từng tí)',ans:'无微不至'},
-  {pre:'这台电脑性能很好，满足了我多方面的',blank:'需求',post:'。',hint:'(nhu cầu)',ans:'需求'},
-  {pre:'网络购物已经在年轻人的消费方式中占了',blank:'主导',post:'地位。',hint:'(chủ đạo)',ans:'主导'},
-  {pre:'新店开张那天，朋友们都来祝他生意',blank:'兴隆',post:'。',hint:'(phát đạt)',ans:'兴隆'}
+  {pre:'这几年城市里的汽车数量',blank:'急剧',post:'增加，堵车越来越严重了。',hint:'(nhanh và mạnh)',ans:'急剧',exp:'急剧 + 增加 / 减少 / 变化 = tăng, giảm, đổi rất nhanh và mạnh; đứng trước động từ chỉ sự biến đổi.'},
+  {pre:'春节前的火车站里，回家的人',blank:'川流不息',post:'，热闹极了。',hint:'(nườm nượp)',ans:'川流不息',exp:'川流不息 tả người, xe qua lại nối nhau không dứt; làm vị ngữ sau chủ ngữ chỉ người / xe.'},
+  {pre:'十年前就有人',blank:'预言',post:'，以后出门不用带钱包，现在真的实现了。',hint:'(tiên đoán)',ans:'预言',exp:'预言 = tiên đoán chuyện tương lai; đừng nhầm với 预报 (dự báo thời tiết) hay 预习 (chuẩn bị bài).'},
+  {pre:'这家超市每天晚上十点',blank:'结算',post:'当天的收入。',hint:'(kết toán)',ans:'结算',exp:'结算 = tính tổng rồi thanh toán, chốt sổ tiền; dùng trong kinh doanh, khác 计算 (chỉ là tính toán).'},
+  {pre:'这个行李箱的',blank:'把手',post:'坏了，拉起来很不方便。',hint:'(tay cầm)',ans:'把手',exp:'把手 (bǎshou) = tay cầm, quai kéo; là danh từ, đừng hiểu thành 把 + 手 "cầm tay".'},
+  {pre:'晚上躺在床上看手机',blank:'屏幕',post:'，对眼睛很不好。',hint:'(màn hình)',ans:'屏幕',exp:'手机屏幕 / 电脑屏幕 = màn hình; 屏幕 là danh từ, đứng sau tên thiết bị.'},
+  {pre:'这条鱼不太新鲜，闻起来特别',blank:'腥',post:'，没法儿吃。',hint:'(tanh)',ans:'腥',exp:'腥 = tanh (mùi cá, thịt sống); là tính từ nên đứng sau 特别 / 很.'},
+  {pre:'病人们坐在门外，安静地',blank:'等候',post:'医生叫自己的名字。',hint:'(chờ đợi)',ans:'等候',exp:'等候 = chờ đợi, trang trọng hơn 等, hay dùng ở nơi công cộng (bệnh viện, nhà ga).'},
+  {pre:'卖菜的阿姨把苹果放在',blank:'秤',post:'上，告诉我一共三斤。',hint:'(cái cân)',ans:'秤',exp:'秤 (chèng) là danh từ "cái cân"; động từ "cân" viết là 称 (chēng) — người Việt hay lẫn hai chữ này.'},
+  {pre:'你把这三个月的花费加在一起，看看',blank:'总和',post:'是多少。',hint:'(tổng số)',ans:'总和',exp:'总和 = tổng số khi cộng các phần lại; đừng dịch "tổng hoà".'},
+  {pre:'有的年轻人在',blank:'虚拟',post:'世界里朋友很多，在现实生活中却没什么朋友。',hint:'(ảo)',ans:'虚拟',exp:'虚拟世界 = thế giới ảo, đối lập với 现实 (thực tế); 却 nhấn mạnh sự trái ngược.'},
+  {pre:'这台机器人能听懂简单的',blank:'指令',post:'，比如“开灯”“关门”。',hint:'(lệnh)',ans:'指令',exp:'指令 = mệnh lệnh cho máy móc hoặc cấp dưới; 听懂指令 / 执行指令.'},
+  {pre:'医院新买了一批检查身体的',blank:'仪器',post:'，看病比以前方便多了。',hint:'(thiết bị)',ans:'仪器',exp:'仪器 = thiết bị đo, kiểm tra (y tế, thí nghiệm); 机器 là máy móc nói chung.'},
+  {pre:'奶奶',blank:'嫌',post:'外面的饭菜不干净，每天都自己做饭。',hint:'(chê)',ans:'嫌',exp:'嫌 + điều không vừa ý (外面的饭菜不干净) → vì vậy mới làm việc phía sau; không dùng 批评 cho đồ ăn.'},
+  {pre:'这条路晚上很黑，你走路的时候小心点儿，',blank:'以免',post:'摔倒。',hint:'(để tránh)',ans:'以免',exp:'以免 đứng đầu vế sau, theo sau là điều xấu muốn tránh (摔倒); vế trước là việc cần làm.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (以免 · 嫌 · 省略) ít nhất 2 câu
+// SẮP XẾP CÂU — câu mới, chỉ một trật tự đúng
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['仪器','会','发出','提示音','，','以免','消费者','错过商品','。'],ans:'仪器会发出提示音，以免消费者错过商品。',audio:'仪器会发出提示音，以免消费者错过商品。'},
-  {words:['他','前一天晚上','定好了','闹钟','，','以免','耽误','第二天的考试','。'],ans:'他前一天晚上定好了闹钟，以免耽误第二天的考试。',audio:'他前一天晚上定好了闹钟，以免耽误第二天的考试。'},
-  {words:['使用电脑时','要经常','保存文件','，','以免','丢失','。'],ans:'使用电脑时要经常保存文件，以免丢失。',audio:'使用电脑时要经常保存文件，以免丢失。'},
-  {words:['如果','你想吃鲜鱼','，','又','嫌','腥','，','可以','在触摸屏上','留言','。'],ans:'如果你想吃鲜鱼，又嫌腥，可以在触摸屏上留言。',audio:'如果你想吃鲜鱼，又嫌腥，可以在触摸屏上留言。'},
-  {words:['我','嫌','食堂的饭菜','太油腻','，','所以','自己动手做饭','。'],ans:'我嫌食堂的饭菜太油腻，所以自己动手做饭。',audio:'我嫌食堂的饭菜太油腻，所以自己动手做饭。'},
-  {words:['她','喜欢','为大家做事','，','从不','嫌','麻烦','。'],ans:'她喜欢为大家做事，从不嫌麻烦。',audio:'她喜欢为大家做事，从不嫌麻烦。'},
-  {words:['你','登录到','虚拟设计室','，','进入','设计过程','，','对颜色','进行投票','。'],ans:'你登录到虚拟设计室，进入设计过程，对颜色进行投票。',audio:'你登录到虚拟设计室，进入设计过程，对颜色进行投票。'},
-  {words:['他们','先从学校','去了车站','，','然后','坐了','6个小时的火车','到了林县','。'],ans:'他们先从学校去了车站，然后坐了6个小时的火车到了林县。',audio:'他们先从学校去了车站，然后坐了6个小时的火车到了林县。'},
-  {words:['我们','不免','要问','：','未来实体商店','还会','存在吗','？'],ans:'我们不免要问：未来实体商店还会存在吗？',audio:'我们不免要问：未来实体商店还会存在吗？'},
-  {words:['电子便利站','会','为你','把关','。'],ans:'电子便利站会为你把关。',audio:'电子便利站会为你把关。'},
-  {words:['这样','设计出来的','衣服','保管','你','满意','。'],ans:'这样设计出来的衣服保管你满意。',audio:'这样设计出来的衣服保管你满意。'},
-  {words:['未来商店','对消费者的','关怀','可谓','无微不至','。'],ans:'未来商店对消费者的关怀可谓无微不至。',audio:'未来商店对消费者的关怀可谓无微不至。'},
-  {words:['这样的商店','怎么能','不','生意兴隆','呢','！'],ans:'这样的商店怎么能不生意兴隆呢！',audio:'这样的商店怎么能不生意兴隆呢！'}
+  {words:['请','把','行李','放','在','座位下面','，','以免','影响别人通过','。'],ans:'请把行李放在座位下面，以免影响别人通过。',audio:'请把行李放在座位下面，以免影响别人通过。'},
+  {words:['妹妹','嫌','这件旗袍','颜色','太','深','，','不想','穿','。'],ans:'妹妹嫌这件旗袍颜色太深，不想穿。',audio:'妹妹嫌这件旗袍颜色太深，不想穿。'},
+  {words:['她','从来','不','嫌','我','做的菜','难吃','。'],ans:'她从来不嫌我做的菜难吃。',audio:'她从来不嫌我做的菜难吃。'},
+  {words:['店员','把','鱼','清理','得','干干净净','的','。'],ans:'店员把鱼清理得干干净净的。',audio:'店员把鱼清理得干干净净的。'},
+  {words:['我','把','收音机','的','声音','开','得','太大了','。'],ans:'我把收音机的声音开得太大了。',audio:'我把收音机的声音开得太大了。'},
+  {words:['这台电脑的','运算速度','快','得','惊人','。'],ans:'这台电脑的运算速度快得惊人。',audio:'这台电脑的运算速度快得惊人。'},
+  {words:['他','给','我','买了','一件','样式新颖的','羽绒服','。'],ans:'他给我买了一件样式新颖的羽绒服。',audio:'他给我买了一件样式新颖的羽绒服。'},
+  {words:['我们','应该','以','顾客的需求','为','主导','。'],ans:'我们应该以顾客的需求为主导。',audio:'我们应该以顾客的需求为主导。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1831,76 +1772,44 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'过马路时要看清红绿灯，____发生交通事故。',opts:['以免','以便','何况','从而'],ans:0,
-   exp:'Vế sau là điều XẤU cần tránh (交通事故) → 以免. 以便 = để tiện (mục đích tốt); 何况 = huống chi; 从而 = từ đó (kết quả).'},
-  {wrong:'他这样说，人家____会生气。',opts:['未免','不免','以便','以免'],ans:1,
-   exp:'Có nguyên nhân (他这样说) → kết quả tự nhiên khó tránh, phía sau khẳng định → 不免. 未免 thiên về đánh giá chê trách; 以免 là liên từ đứng đầu vế sau.'},
-  {wrong:'你现在才来，____太晚了吧？',opts:['不免','以免','未免','免得'],ans:2,
-   exp:'Lời chê trách, đánh giá không tán thành → 未免 + 太 + Adj. 不免 cần nguyên nhân và chỉ kết quả tự nhiên.'},
-  {wrong:'我想吃鱼，又____腥，所以一般只在饭馆吃。',opts:['爱','盼','嫌','求'],ans:2,
-   exp:'嫌腥 = ngại tanh (cụm trong bài khoá): 嫌 + đặc điểm mình không thích. 爱 = yêu, 盼 = mong, 求 = cầu — đều trái nghĩa với vế sau (只在饭馆吃).'},
-  {wrong:'如今喜欢网络购物的人____增加，实体店的生意越来越难做。',opts:['兴隆','新颖','便利','急剧'],ans:3,
-   exp:'急剧增加 = tăng vọt. 兴隆 dùng cho 生意; 新颖 cho kiểu dáng; 便利 cho giao thông, cuộc sống.'},
-  {wrong:'只要对着智能音箱说出____，它就会帮你关灯。',opts:['指令','反馈','需求','模式'],ans:0,
-   exp:'Nói ra LỆNH cho máy thực hiện → 指令. 反馈 = phản hồi; 需求 = nhu cầu; 模式 = chế độ, mô hình.'},
-  {wrong:'这种观念已经____，想改变可不容易。',opts:['欣欣向荣','根深蒂固','川流不息','无微不至'],ans:1,
-   exp:'Quan niệm đã ăn sâu, khó đổi → 根深蒂固. 欣欣向荣 = phồn vinh; 川流不息 = nườm nượp; 无微不至 = chu đáo.'},
-  {wrong:'实体店若想存在，必须进行根本性的____，而不是改良。',opts:['革命','预言','运算','投票'],ans:0,
-   exp:'Đối lập với 改良 (cải tiến một phần) là 革命 (thay đổi tận gốc).'},
-  {wrong:'等店员把鱼____好后，你再去领取。',opts:['清理','储备','结算','装卸'],ans:0,
-   exp:'清理好 = làm sạch xong (cá). 储备 = dự trữ; 结算 = thanh toán; 装卸 = bốc dỡ, lắp tháo.'},
-  {wrong:'买手机时不了解哪款____更适合自己，可以请专家把关。',opts:['款式','屏幕','总和','性能'],ans:3,
-   exp:'"Mẫu nào … hợp với mình hơn" về mặt kỹ thuật → 性能 (tính năng). 款式 là kiểu dáng; 屏幕 màn hình; 总和 tổng số.'},
-  {wrong:'结账系统迅速运算，之后给出消费钱数的____。',opts:['需求','主导','总和','模式'],ans:2,
-   exp:'消费钱数的总和 = tổng số tiền tiêu. Các từ khác không đi với 钱数.'},
-  {wrong:'消费者加入设计队伍，是未来商店____推荐的服务。',opts:['保管','相应','虚拟','着重'],ans:3,
-   exp:'着重推荐 = đặc biệt giới thiệu. 保管 = cam đoan / cất giữ; 相应 = tương ứng; 虚拟 = ảo.'},
-  {wrong:'对颜色、外观进行投票，这样设计出来的衣服____你满意。',opts:['保管','把关','关怀','等候'],ans:0,
-   exp:'保管你满意 = cam đoan bạn hài lòng. 把关 = kiểm định (không mang tân ngữ kiểu này); 关怀 = quan tâm; 等候 = chờ.'},
-  {wrong:'当消费者走到____货架时，仪器会发出提示音。',opts:['新颖','相应','急剧','虚拟'],ans:1,
-   exp:'相应货架 = kệ hàng tương ứng (đúng kệ của món hàng). Các từ khác không hợp nghĩa.'},
-  {wrong:'我的外套掉了一颗____，你能帮我缝上吗？',opts:['插座','水龙头','纽扣儿','收音机'],ans:2,
-   exp:'Áo khoác rơi một chiếc cúc, khâu lại → 纽扣儿. 插座 = ổ cắm; 水龙头 = vòi nước; 收音机 = radio.'},
-  {wrong:'在这届运动会上，她一个人就拿了三____金牌。',opts:['道','把','台','枚'],ans:3,
-   exp:'Huy chương dùng lượng từ 枚 (一枚金牌). 道 cho lệnh / đề; 把 cho vật có cán; 台 cho máy móc.'},
-  {wrong:'未来商店对消费者的____可谓无微不至。',opts:['需求','反馈','主导','关怀'],ans:3,
-   exp:'……的关怀可谓无微不至 = sự quan tâm chu đáo từng li. 需求, 反馈, 主导 không đi với 无微不至.'},
-  {wrong:'商店把握消费者的需求，将商店变为以消费者为____的店铺。',opts:['主导','主意','主张','主人'],ans:0,
-   exp:'以……为主导 = lấy … làm chủ đạo. 主意 = ý kiến; 主张 = chủ trương; 主人 = chủ nhân.'},
-  {wrong:'勘探队走遍了附近的每一座山，终于找到了丰富的____。',opts:['仓库','仪器','矿产','屏幕'],ans:2,
-   exp:'勘探 (thăm dò) → tìm thấy 矿产 (khoáng sản). Các từ khác không phải thứ được thăm dò.'},
-  {wrong:'服务这么周到，这家店怎么能不生意____呢！',opts:['欣欣向荣','兴隆','便利','新颖'],ans:1,
-   exp:'生意兴隆 = làm ăn phát đạt (cụm cố định). 欣欣向荣 không đi sau 生意; 便利, 新颖 không hợp.'}
+  {wrong:'出门前记得把窗户关好，____下雨的时候雨水打进来。',opts:['以免','以便','不免','况且'],ans:0,exp:'Vế sau là điều xấu cần tránh → 以免. 以便 dẫn mục đích tốt (để tiện); 不免 = khó tránh khỏi (không nối vế); 况且 (bài 20) = huống hồ, thêm lý do.'},
+  {wrong:'请大家把电话号码写在这张表上，____我们及时通知。',opts:['以便','以免','未免','即便'],ans:0,exp:'Vế sau là mục đích TỐT (để tiện thông báo) → 以便. Dùng 以免 sẽ thành "để tránh thông báo" — sai ý; 未免 là chê trách; 即便 (bài 10) = dù cho.'},
+  {wrong:'他____这家饭馆的菜太咸，以后再也没来过。',opts:['嫌','批评','嘲笑','讨厌'],ans:0,exp:'嫌 + mệnh đề (菜太咸) = chê, không vừa ý. 批评 dùng cho lỗi của người; 嘲笑 là chê cười người; 讨厌 thường + người / việc, không + "món ăn quá mặn".'},
+  {wrong:'这么容易的题都做错了，你也____太粗心了吧？',opts:['未免','不免','以免','以便'],ans:0,exp:'Lời chê, đánh giá "hơi quá" → 未免 + 太 + tính từ (ôn bài 4). 不免 chỉ kết quả tự nhiên khó tránh, không mang ý chê; 以免 / 以便 là liên từ nối vế.'},
+  {wrong:'孩子第一次离开家去外地上大学，父母心里____有些舍不得。',opts:['不免','未免','不必','何必'],ans:0,exp:'Có nguyên nhân (con lần đầu xa nhà) → kết quả tự nhiên khó tránh → 不免 + 有些…. 未免 mang ý chê "quá đáng"; 不必 / 何必 = không cần — trái ý.'},
+  {wrong:'“男孩子不能哭”这种想法在很多人心里已经____，很难改变。',opts:['根深蒂固','欣欣向荣','川流不息','无微不至'],ans:0,exp:'Quan niệm đã ăn sâu, khó đổi → 根深蒂固. 欣欣向荣 = phồn vinh; 川流不息 = người xe nườm nượp; 无微不至 = chu đáo từng li.'},
+  {wrong:'经理在会上____讲了安全问题，要求大家务必注意。',opts:['着重','重视','重要','严重'],ans:0,exp:'着重 là phó từ đứng trước động từ (着重讲 = nói nhấn mạnh). 重视 là động từ cần tân ngữ (重视安全); 重要 / 严重 là tính từ. Ôn 务必 (bài 12).'},
+  {wrong:'产品出门以前，都要由检查员严格____，有一点儿问题也不行。',opts:['把关','关怀','关心','把握'],ans:0,exp:'严格把关 = kiểm soát chặt chất lượng. 关怀 / 关心 là quan tâm người; 把握 = nắm bắt (cơ hội, nhu cầu).'},
+  {wrong:'很多书店改变了经营____，在店里开起了咖啡馆。',opts:['模式','款式','样式','样子'],ans:0,exp:'经营模式 = mô hình kinh doanh. 款式 / 样式 / 样子 là kiểu dáng bên ngoài của đồ vật — người Việt dễ nhầm vì đều là "kiểu".'},
+  {wrong:'这个广告设计得很____，一下子就吸引了大家的注意。',opts:['新颖','新鲜','新闻','重新'],ans:0,exp:'Thiết kế mới lạ, độc đáo → 新颖. 新鲜 dùng cho thức ăn, không khí, cảm giác; 新闻 là tin tức; 重新 là phó từ "làm lại".'},
+  {wrong:'这辆车开了十年了，____还是很好，很少出问题。',opts:['性能','性格','能力','本领'],ans:0,exp:'Máy móc, xe cộ "chạy tốt, bền" → 性能. 性格 là tính cách người; 能力 / 本领 là năng lực của con người.'},
+  {wrong:'冬天快到了，山里的小动物们都在忙着____食物。',opts:['储备','装卸','结算','清理'],ans:0,exp:'储备食物 = trữ sẵn thức ăn để dùng sau. 装卸 là bốc dỡ hàng; 结算 là thanh toán; 清理 là dọn dẹp, bỏ cái thừa.'},
+  {wrong:'这只是在原来的基础上做了一点儿____，并不是什么根本性的变化。',opts:['改良','革命','预言','把关'],ans:0,exp:'Sửa đổi một chút cho tốt hơn → 改良. 革命 là thay đổi tận gốc — trái với "không phải thay đổi căn bản"; 预言 = tiên đoán; 把关 = kiểm soát.'},
+  {wrong:'工作比以前多了一倍，工资也应该____地提高。',opts:['相应','相同','相似','互相'],ans:0,exp:'相应地 + V = thay đổi tương ứng theo. 相同 / 相似 = giống nhau; 互相 = lẫn nhau — đều không hợp ý "tăng theo".'},
+  {wrong:'我们会认真考虑顾客的____，进一步改良产品。',opts:['反馈','回答','回忆','反对'],ans:0,exp:'Ý kiến khách gửi lại sau khi dùng → 反馈. 回答 là câu trả lời cho câu hỏi; 回忆 là hồi tưởng; 反对 là phản đối.'}
 ];
 
 // ══════════════════════════════════════════
-// DỊCH — câu ghép, dùng từ bài 21 + ôn từ HSK 6 bài 1–17 và HSK 4–5
+// DỊCH Việt → Trung — câu mới, dùng từ của bài + ôn ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Trước khi ra khỏi nhà nhớ dọn lại cặp sách, để giấy báo dự thi ở chỗ dễ thấy nhất, kẻo đến phòng thi mới phát hiện ra quên mang.',zh:'出门前记得清理一下书包，把准考证放在最显眼的地方，以免到了考场才发现忘带。',py:'Chūmén qián jìde qīnglǐ yíxià shūbāo, bǎ zhǔnkǎozhèng fàng zài zuì xiǎnyǎn de dìfang, yǐmiǎn dàole kǎochǎng cái fāxiàn wàng dài.',goiY:['清理','以免','把……放在……'],giai:'以免 đứng ĐẦU vế cuối, sau nó là điều không mong muốn (quên mang giấy báo); ba vế cùng chủ ngữ "bạn" nên tỉnh lược chủ ngữ (篇章: 省略). 才 = "mới" (muộn).'},
-  {vi:'Tôi chê đồ ăn căng tin nhiều dầu mỡ quá, nên mua đồ ở cửa hàng tiện lợi dưới ký túc xá về tự nấu, vừa tiết kiệm vừa lành mạnh.',zh:'我嫌食堂的饭菜太油腻，就在宿舍楼下的便利店买菜自己做，既省钱又健康。',py:'Wǒ xián shítáng de fàncài tài yóunì, jiù zài sùshè lóu xià de biànlìdiàn mǎi cài zìjǐ zuò, jì shěng qián yòu jiànkāng.',goiY:['嫌','便利店','既……又……'],giai:'嫌 + mệnh đề (食堂的饭菜太油腻) nêu lý do không hài lòng; 就 nối kết quả; 既……又…… liệt kê hai lợi ích. "Chê" ở đây không dịch 批评.'},
-  {vi:'Mẫu điện thoại này tuy kiểu dáng mới lạ, nhưng tính năng không ổn định lắm, mình khuyên cậu nên cân nhắc thêm rồi hẵng mua.',zh:'这款手机虽然款式新颖，但性能不太稳定，我劝你还是权衡一下再买吧。',py:'Zhè kuǎn shǒujī suīrán kuǎnshì xīnyǐng, dàn xìngnéng bú tài wěndìng, wǒ quàn nǐ háishi quánhéng yíxià zài mǎi ba.',goiY:['虽然……但……','新颖','性能','权衡'],giai:'款式 (kiểu dáng) ≠ 性能 (tính năng kỹ thuật); 权衡 (ôn HSK 6 bài 5) = cân nhắc; 还是……吧 = tốt hơn là ….'},
-  {vi:'Chỉ cần đăng nhập trang web của trường, nhập số báo danh là tra được điểm, không cần đến văn phòng xếp hàng chờ nữa.',zh:'只要登录学校的网站，输入准考证号，就能查到成绩，不必再去办公室排队等候了。',py:'Zhǐyào dēnglù xuéxiào de wǎngzhàn, shūrù zhǔnkǎozhèng hào, jiù néng chádào chéngjì, búbì zài qù bàngōngshì páiduì děnghòu le.',goiY:['只要……就……','登录','等候'],giai:'只要……就…… điều kiện đủ; các vế sau tỉnh lược chủ ngữ (你) vì đã rõ; 不必再……了 = không cần … nữa.'},
-  {vi:'Thói quen thức khuya của cậu ấy đã ăn sâu bén rễ, nói bao nhiêu lần cũng vô ích, bố mẹ không khỏi có phần sốt ruột.',zh:'他熬夜的习惯已经根深蒂固，说了多少次都没用，父母不免有些着急。',py:'Tā áoyè de xíguàn yǐjīng gēnshēn-dìgù, shuōle duōshao cì dōu méi yòng, fùmǔ bùmiǎn yǒuxiē zháojí.',goiY:['根深蒂固','不免','……都……'],giai:'Hai vế đầu là NGUYÊN NHÂN → vế sau dùng 不免 (kết quả tự nhiên khó tránh), phía sau là khẳng định 有些着急. 熬夜 ôn HSK 6 bài 2.'},
-  {vi:'Dù cậu muốn mua sách tham khảo hay đồ dùng học tập mình ưng ý, chỉ cần gửi ảnh lên trang web này là lập tức nhận được phản hồi.',zh:'不管你想买参考书还是中意的文具，只要把照片发到这个网站，马上就能得到反馈。',py:'Bùguǎn nǐ xiǎng mǎi cānkǎoshū háishi zhòngyì de wénjù, zhǐyào bǎ zhàopiàn fā dào zhège wǎngzhàn, mǎshàng jiù néng dédào fǎnkuì.',goiY:['不管……还是……','中意','反馈'],giai:'不管 A 还是 B + 都 / 就 — kết quả không đổi; 中意的 + N = … ưng ý; 得到反馈 = nhận được phản hồi.'},
-  {vi:'Sự quan tâm của thầy chủ nhiệm dành cho chúng tôi có thể nói là chu đáo từng li từng tí, đến cả chuyện ai hôm nay chưa ăn sáng thầy cũng để tâm.',zh:'班主任对我们的关怀可谓无微不至，连谁今天没吃早饭他都惦记着。',py:'Bānzhǔrèn duì wǒmen de guānhuái kěwèi wúwēi-búzhì, lián shéi jīntiān méi chī zǎofàn tā dōu diànjizhe.',goiY:['关怀','无微不至','连……都……'],giai:'对……的关怀可谓无微不至 (khuôn bài khoá); 连……都…… nhấn mạnh chi tiết nhỏ nhất; 惦记 ôn HSK 6 bài 3.'},
-  {vi:'Theo đà số người mua hàng trên mạng tăng vọt, không ít cửa hàng truyền thống buộc phải thay đổi mô hình kinh doanh, nếu không thì rất khó tồn tại tiếp.',zh:'随着网购人数急剧增加，不少实体店不得不改变经营模式，否则很难生存下去。',py:'Suízhe wǎnggòu rénshù jíjù zēngjiā, bù shǎo shítǐdiàn bùdébù gǎibiàn jīngyíng móshì, fǒuzé hěn nán shēngcún xiàqù.',goiY:['随着','急剧','模式','否则'],giai:'随着…… nêu bối cảnh thay đổi; 不得不 = buộc phải; 否则 = nếu không thì (giả thiết ngược); 生存 ôn HSK 6 bài 13.'},
-  {vi:'Trước khi dùng thiết bị trong phòng thí nghiệm phải đọc kỹ hướng dẫn, làm từng bước theo lệnh của thầy cô, để tránh làm hỏng thiết bị hoặc xảy ra nguy hiểm.',zh:'使用实验室的仪器以前，要先仔细阅读说明，按照老师的指令一步一步操作，以免损坏仪器或者发生危险。',py:'Shǐyòng shíyànshì de yíqì yǐqián, yào xiān zǐxì yuèdú shuōmíng, ànzhào lǎoshī de zhǐlìng yí bù yí bù cāozuò, yǐmiǎn sǔnhuài yíqì huòzhě fāshēng wēixiǎn.',goiY:['仪器','指令','以免','按照'],giai:'Chuỗi hành động (先……，按照……) rồi 以免 nêu hai điều cần tránh nối bằng 或者; toàn câu tỉnh lược chủ ngữ (các em). 操作 ôn HSK 6 bài 11.'},
-  {vi:'Điều hội học sinh đặc biệt nhấn mạnh là để toàn thể học sinh bỏ phiếu quyết định, chứ không phải vài cán bộ lớp tự quyết; kết quả có được như vậy đảm bảo mọi người đều hài lòng.',zh:'学生会着重强调的是让全体同学投票决定，而不是由几个班干部做主，这样得出的结果保管大家满意。',py:'Xuéshēnghuì zhuózhòng qiángdiào de shì ràng quántǐ tóngxué tóupiào juédìng, ér bú shì yóu jǐ ge bān gànbù zuò zhǔ, zhèyàng déchū de jiéguǒ bǎoguǎn dàjiā mǎnyì.',goiY:['着重','投票','是……而不是……','保管'],giai:'……的是 A，而不是 B: khẳng định A, phủ định B; 保管 + người + 满意 = cam đoan ai hài lòng (khẩu ngữ, như bài khoá); 做主 ôn HSK 6 bài 7.'}
+  {vi:'Trước khi ra khỏi nhà nhớ kiểm tra xem đã khoá vòi nước chưa, kẻo nước chảy lênh láng khắp nhà.',zh:'出门以前记得检查一下水龙头关好了没有，以免家里到处都是水。',py:'Chūmén yǐqián jìde jiǎnchá yíxià shuǐlóngtóu guānhǎo le méiyǒu, yǐmiǎn jiā li dàochù dōu shì shuǐ.',goiY:['以免','水龙头','……了没有'],giai:'以免 đứng đầu vế cuối, sau nó là điều muốn tránh; "khoá vòi nước" = 关水龙头; hỏi "đã… chưa" = V好了没有.'},
+  {vi:'Tôi dạy ông nội dùng điện thoại, ông hỏi đi hỏi lại nhiều lần, nhưng tôi chưa bao giờ chê ông phiền.',zh:'我教爷爷用手机，他问了一遍又一遍，可我从来没嫌过他麻烦。',py:'Wǒ jiāo yéye yòng shǒujī, tā wènle yí biàn yòu yí biàn, kě wǒ cónglái méi xiánguo tā máfan.',goiY:['嫌','从来没……过','一遍又一遍'],giai:'嫌 + người + tính từ = chê ai thế nào; phủ định trải nghiệm: 从来没嫌过…; "hỏi đi hỏi lại" = 问了一遍又一遍.'},
+  {vi:'Thói quen trả tiền mặt đã ăn sâu bén rễ ở ông bà tôi, nhưng từ khi biết quẹt thẻ, ông bà thấy tiện hơn nhiều.',zh:'用现金买东西的习惯在我爷爷奶奶身上根深蒂固，可是自从学会了刷卡，他们觉得便利多了。',py:'Yòng xiànjīn mǎi dōngxi de xíguàn zài wǒ yéye nǎinai shēnshang gēnshēn-dìgù, kěshì zìcóng xuéhuìle shuā kǎ, tāmen juéde biànlì duō le.',goiY:['根深蒂固','自从……','便利'],giai:'在 + người + 身上根深蒂固 = ăn sâu ở ai; tính từ + 多了 = … hơn nhiều; chủ ngữ đổi (习惯 → 他们) nên phải nêu 他们.'},
+  {vi:'Tối nào anh ấy cũng đăng nhập trang web của trường, xem thông báo mới, rồi mới đi ngủ.',zh:'他每天晚上都登录学校的网站，看看新的通知，然后才睡觉。',py:'Tā měi tiān wǎnshang dōu dēnglù xuéxiào de wǎngzhàn, kànkan xīn de tōngzhī, ránhòu cái shuìjiào.',goiY:['登录','然后才……','tỉnh lược chủ ngữ'],giai:'Ba hành động cùng chủ ngữ 他 → chỉ nêu một lần ở đầu (không lặp 他看看…，他然后…); 然后才 = rồi mới.'},
+  {vi:'Lần cải cách này không phải là sửa đổi qua loa mà là một cuộc cách mạng thật sự: mô hình quản lý của cả công ty đều thay đổi.',zh:'这次改革并非简单的改良，而是一场真正的革命，全公司的管理模式都变了。',py:'Zhè cì gǎigé bìngfēi jiǎndān de gǎiliáng, ér shì yì chǎng zhēnzhèng de gémìng, quán gōngsī de guǎnlǐ móshì dōu biàn le.',goiY:['并非……而是……','改良','革命','模式'],giai:'并非 A，而是 B (ôn bài 7) = không phải A mà là B; 改良 = sửa một phần, 革命 = đổi tận gốc; lượng từ 一场革命.'},
+  {vi:'Mẹ quan tâm ông bà chu đáo từng li từng tí, ông bà muốn nghe đài lúc nào là mẹ đã mở sẵn radio cho ông bà.',zh:'妈妈对爷爷奶奶的关怀无微不至，他们什么时候想听收音机，她都提前帮他们打开。',py:'Māma duì yéye nǎinai de guānhuái wúwēi-búzhì, tāmen shénme shíhou xiǎng tīng shōuyīnjī, tā dōu tíqián bāng tāmen dǎkāi.',goiY:['对……的关怀','无微不至','什么时候……都……'],giai:'对 + người + 的关怀无微不至 = quan tâm ai chu đáo; 什么时候……都…… = bất cứ lúc nào … cũng…; chủ ngữ đổi (他们 → 她) nên phải nêu.'}
 ];
 
-// Chiều Trung → Việt — bám ý bài khoá
+// ══════════════════════════════════════════
+// Dịch Trung → Việt — câu mới, không trùng chiều trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Ngày nay số người thích mua sắm qua mạng tăng vọt, mua đồ không còn phải chen chúc giữa dòng người nườm nượp nữa.',zh:'如今喜欢网络购物的人急剧增加，买东西不用在川流不息的人群中奔走。',py:'Rújīn xǐhuan wǎngluò gòuwù de rén jíjù zēngjiā, mǎi dōngxi búyòng zài chuānliú-bùxī de rénqún zhōng bēnzǒu.',goiY:['急剧 = nhanh và mạnh (tăng vọt)','川流不息 = nườm nượp','奔走 = chạy ngược chạy xuôi'],giai:'急剧增加 dịch "tăng vọt" cho gọn; 在……中奔走 chuyển thành "chen chúc giữa …" cho tự nhiên.'},
-  {vi:'Mua sắm trên mạng đã tiện lợi đến thế, người ta không khỏi phải hỏi: tương lai cửa hàng truyền thống còn cần thiết tồn tại nữa không?',zh:'网上购物既然如此便利，人们不免要问：实体商店将来还有存在的必要吗？',py:'Wǎngshàng gòuwù jìrán rúcǐ biànlì, rénmen bùmiǎn yào wèn: shítǐ shāngdiàn jiānglái hái yǒu cúnzài de bìyào ma?',goiY:['既然 = đã … thì','不免 = không khỏi','便利 = tiện lợi'],giai:'不免要问 = "không khỏi phải hỏi"; 实体商店 = cửa hàng truyền thống / cửa hàng thực (đối lập với cửa hàng online).'},
-  {vi:'Cửa hàng truyền thống nếu muốn tồn tại thì phải tiến hành một cuộc cách mạng tận gốc, chứ không phải chỉ cải tiến qua loa.',zh:'实体店若想生存，必须进行根本性的革命，而不是简单的改良。',py:'Shítǐdiàn ruò xiǎng shēngcún, bìxū jìnxíng gēnběnxìng de gémìng, ér bú shì jiǎndān de gǎiliáng.',goiY:['若 = nếu (văn viết)','革命 = cách mạng, thay đổi tận gốc','改良 = cải tiến'],giai:'改良 KHÔNG dịch "cải lương"; 简单的改良 = "cải tiến qua loa, đơn giản". 若 văn viết = 如果.'},
-  {vi:'Khi người tiêu dùng đi tới kệ hàng tương ứng, thiết bị sẽ phát ra âm báo, để họ khỏi bỏ lỡ món hàng muốn mua.',zh:'当消费者走到相应货架时，仪器会发出提示音，以免他们错过想买的商品。',py:'Dāng xiāofèizhě zǒudào xiāngyìng huòjià shí, yíqì huì fāchū tíshìyīn, yǐmiǎn tāmen cuòguò xiǎng mǎi de shāngpǐn.',goiY:['相应 = tương ứng','仪器 = thiết bị','以免 = để khỏi, kẻo'],giai:'当……时 = "khi …"; 以免 dịch "để … khỏi / để tránh"; 仪器 ở đây là chiếc "trợ lý mua sắm", dịch "thiết bị".'},
-  {vi:'Nếu bạn muốn ăn cá tươi nhưng lại ngại tanh, có thể nhờ nhân viên làm sạch cá, đến lúc đó chỉ việc tới lấy là xong.',zh:'如果你想吃鲜鱼，又嫌腥，可以请店员把鱼清理好，到时候直接去领取就行了。',py:'Rúguǒ nǐ xiǎng chī xiānyú, yòu xián xīng, kěyǐ qǐng diànyuán bǎ yú qīnglǐ hǎo, dào shíhou zhíjiē qù lǐngqǔ jiù xíng le.',goiY:['嫌腥 = ngại tanh','清理 = làm sạch','到时候 = đến lúc đó'],giai:'又 ở đây mang ý "lại, nhưng lại" (mâu thuẫn); các vế sau tỉnh lược 你 — tiếng Việt cũng tỉnh lược được.'},
-  {vi:'Cửa hàng tương lai không cần người cân hàng, hệ thống thanh toán có thể tính toán nhanh chóng rồi đưa ra tổng số tiền đã tiêu.',zh:'未来商店无须人工过秤，结账系统能迅速运算，并给出消费钱数的总和。',py:'Wèilái shāngdiàn wúxū réngōng guò chèng, jiézhàng xìtǒng néng xùnsù yùnsuàn, bìng gěichū xiāofèi qiánshù de zǒnghé.',goiY:['无须 = không cần','人工过秤 = người cân hàng','总和 = tổng số'],giai:'总和 KHÔNG dịch "tổng hoà" mà là "tổng số"; 并 nối hai hành động (văn viết) → "rồi, và".'},
-  {vi:'Nếu bạn không ưng mẫu nào trên thị trường, chi bằng đăng nhập vào phòng thiết kế ảo, tự mình tham gia thiết kế.',zh:'要是你对市场上的款式都不满意，不妨登录虚拟设计室，亲自参与设计。',py:'Yàoshi nǐ duì shìchǎng shang de kuǎnshì dōu bù mǎnyì, bùfáng dēnglù xūnǐ shèjìshì, qīnzì cānyù shèjì.',goiY:['不妨 = cứ thử, chẳng ngại gì','虚拟 = ảo','登录 = đăng nhập'],giai:'不妨 (ôn HSK 6 bài 12) dịch "chi bằng / cứ thử"; 对……都不满意 = "không ưng … nào cả".'},
-  {vi:'Khách hàng chỉ cần gửi ảnh món hàng lên trang web chuyên dụng là nhận được phản hồi, biết cửa hàng nào có nhiều mẫu để chọn mua.',zh:'顾客只要把商品照片发送到专门的网站，就能得到反馈，知道哪家店有多种款式可供选购。',py:'Gùkè zhǐyào bǎ shāngpǐn zhàopiàn fāsòng dào zhuānmén de wǎngzhàn, jiù néng dédào fǎnkuì, zhīdào nǎ jiā diàn yǒu duō zhǒng kuǎnshì kě gōng xuǎngòu.',goiY:['只要……就…… = chỉ cần … là …','反馈 = phản hồi','可供选购 = để chọn mua'],giai:'Vế 3 tỉnh lược chủ ngữ 顾客 (篇章: 省略); 供 + V = "để (ai) …"; 专门的网站 = "trang web chuyên dụng".'},
-  {vi:'Họ căn cứ vào thói quen sinh hoạt của người tiêu dùng để nắm bắt nhu cầu, biến cửa hàng thành nơi lấy người tiêu dùng làm chủ đạo.',zh:'他们根据消费者的生活习惯把握其需求，将商店变为以消费者为主导的店铺。',py:'Tāmen gēnjù xiāofèizhě de shēnghuó xíguàn bǎwò qí xūqiú, jiāng shāngdiàn biànwéi yǐ xiāofèizhě wéi zhǔdǎo de diànpù.',goiY:['需求 = nhu cầu','将……变为…… = biến … thành …','以……为主导 = lấy … làm chủ đạo'],giai:'其 = 他们的 (văn viết); 将……变为…… = biến … thành …; 以……为…… ôn HSK 6 bài 11.'},
-  {vi:'Cửa hàng tương lai quan tâm khách hàng chu đáo từng li từng tí, mọi thiết kế đều lấy sự nhẹ nhàng, tiện lợi làm tôn chỉ — cửa hàng như vậy sao có thể không phát đạt được?',zh:'未来商店对顾客的关怀无微不至，一切设计都以轻松、便利为宗旨，这样的商店怎么能不生意兴隆呢？',py:'Wèilái shāngdiàn duì gùkè de guānhuái wúwēi-búzhì, yíqiè shèjì dōu yǐ qīngsōng, biànlì wéi zōngzhǐ, zhèyàng de shāngdiàn zěnme néng bù shēngyi xīnglóng ne?',goiY:['无微不至 = chu đáo từng li','以……为宗旨 = lấy … làm tôn chỉ','怎么能不……呢 = sao có thể không …'],giai:'Câu phản vấn 怎么能不……呢 = khẳng định mạnh "chắc chắn sẽ phát đạt"; 宗旨 ôn HSK 6 bài 13.'}
+  {vi:'Ông ấy chê thành phố ồn ào quá, nghỉ hưu xong liền chuyển về quê.',zh:'他嫌城市里太吵，退休以后就搬回了老家。',py:'Tā xián chéngshì li tài chǎo, tuìxiū yǐhòu jiù bānhuíle lǎojiā.',goiY:['嫌 = chê, không ưa','退休 = nghỉ hưu','老家 = quê nhà'],giai:'嫌 dịch "chê / không ưa" chứ không dịch "ghét"; 就 = liền, ngay.'},
+  {vi:'Ông chủ cửa hàng đặc biệt giới thiệu cho tôi một loại ổ cắm kiểu mới, nói dùng vừa an toàn vừa tiện.',zh:'店老板着重给我介绍了一种新颖的插座，说用起来既安全又便利。',py:'Diàn lǎobǎn zhuózhòng gěi wǒ jièshàole yì zhǒng xīnyǐng de chāzuò, shuō yòng qǐlái jì ānquán yòu biànlì.',goiY:['着重 = đặc biệt, nhấn mạnh','新颖 = mới lạ','插座 = ổ cắm'],giai:'着重介绍 = "đặc biệt giới thiệu"; 用起来 = "dùng thì (thấy)…"; 既……又…… = vừa… vừa….'},
+  {vi:'Mọi người hãy viết ý kiến ra trước, kẻo lúc họp lại không nhớ ra.',zh:'请大家提前把意见写下来，以免开会的时候想不起来。',py:'Qǐng dàjiā tíqián bǎ yìjiàn xiě xiàlái, yǐmiǎn kāihuì de shíhou xiǎng bu qǐlái.',goiY:['提前 = trước','以免 = kẻo, để khỏi','想不起来 = không nhớ ra'],giai:'以免 dịch tự nhiên là "kẻo / để khỏi"; 写下来 = viết ra (giữ lại).'},
+  {vi:'Phương án này do mọi người bỏ phiếu chọn ra, tôi đảm bảo bạn sẽ ưng ý.',zh:'这个方案是大家投票选出来的，我保管你会中意。',py:'Zhège fāng\'àn shì dàjiā tóupiào xuǎn chūlái de, wǒ bǎoguǎn nǐ huì zhòngyì.',goiY:['投票 = bỏ phiếu','保管 = đảm bảo, cam đoan','中意 = ưng ý'],giai:'是……的 nhấn mạnh cách thức (bỏ phiếu); 保管 ở đây không phải "cất giữ" mà là "cam đoan" (khẩu ngữ).'},
+  {vi:'Cùng với lượng khách du lịch tăng vọt, thành phố này ngày càng thịnh vượng.',zh:'随着来旅游的人急剧增加，这座城市变得欣欣向荣。',py:'Suízhe lái lǚyóu de rén jíjù zēngjiā, zhè zuò chéngshì biàn de xīnxīn-xiàngróng.',goiY:['随着 = cùng với','急剧 = nhanh và mạnh','欣欣向荣 = thịnh vượng'],giai:'随着 + thay đổi, … nêu bối cảnh; 急剧增加 dịch gọn "tăng vọt".'}
 ];
 
 // ══════════════════════════════════════════
@@ -1938,9 +1847,9 @@ var writingData = {
     'Bài dài khoảng 350 chữ Hán (300–400), viết bằng lời của mình, các vế cùng chủ ngữ đã tỉnh lược chủ ngữ cho gọn (篇章: 省略) chưa?'
   ],
   model:{
-    zh:'如今，喜欢网络购物的人急剧增加。传统的购物方式要在川流不息的人群中奔走，而网络购物只需登录网站、下几道指令，就能把东西买回家。有人预言，实体商店必须进行根本性的革命，否则就会被淘汰。未来商店的特点是全部实现电子化，几乎见不到工作人员，顾客可以自己动手完成购物。未来商店的购物车把手上装有购物助手，屏幕上会显示商品的位置，走到相应货架时，仪器还会发出提示音，以免顾客错过商品。想吃鲜鱼又嫌腥的顾客，可以在触摸屏上留言，等鱼清理好后再去领取。不知道买哪款手机，电子便利站会为你把关。结账时无须人工过秤，结账系统能识别商品，迅速算出总和，自动收款机可以接受现金和刷卡。消费者参与设计是未来商店着重推荐的服务：登录虚拟设计室，进入设计过程，对颜色、外观进行投票，设计出来的衣服保管你满意。此外，顾客只要把商品照片发送到专门的网站，就能得到反馈，知道哪家店有售。未来商店对顾客的关怀无微不至，它的设计宗旨是让购物轻松、快捷、便利。这样的商店，生意怎么能不兴隆呢？',
-    py:'Rújīn, xǐhuan wǎngluò gòuwù de rén jíjù zēngjiā. Chuántǒng de gòuwù fāngshì yào zài chuānliú-bùxī de rénqún zhōng bēnzǒu, ér wǎngluò gòuwù zhǐ xū dēnglù wǎngzhàn, xià jǐ dào zhǐlìng, jiù néng bǎ dōngxi mǎi huí jiā. Yǒu rén yùyán, shítǐ shāngdiàn bìxū jìnxíng gēnběnxìng de gémìng, fǒuzé jiù huì bèi táotài. Wèilái shāngdiàn de tèdiǎn shì quánbù shíxiàn diànzǐhuà, jīhū jiàn bu dào gōngzuò rényuán, gùkè kěyǐ zìjǐ dòng shǒu wánchéng gòuwù. Wèilái shāngdiàn de gòuwùchē bǎshou shang zhuāng yǒu gòuwù zhùshǒu, píngmù shang huì xiǎnshì shāngpǐn de wèizhi, zǒudào xiāngyìng huòjià shí, yíqì hái huì fāchū tíshìyīn, yǐmiǎn gùkè cuòguò shāngpǐn. Xiǎng chī xiānyú yòu xián xīng de gùkè, kěyǐ zài chùmōpíng shang liúyán, děng yú qīnglǐ hǎo hòu zài qù lǐngqǔ. Bù zhīdào mǎi nǎ kuǎn shǒujī, diànzǐ biànlìzhàn huì wèi nǐ bǎ guān. Jiézhàng shí wúxū réngōng guò chèng, jiézhàng xìtǒng néng shíbié shāngpǐn, xùnsù suànchū zǒnghé, zìdòng shōukuǎnjī kěyǐ jiēshòu xiànjīn hé shuākǎ. Xiāofèizhě cānyù shèjì shì wèilái shāngdiàn zhuózhòng tuījiàn de fúwù: dēnglù xūnǐ shèjìshì, jìnrù shèjì guòchéng, duì yánsè, wàiguān jìnxíng tóupiào, shèjì chūlái de yīfu bǎoguǎn nǐ mǎnyì. Cǐwài, gùkè zhǐyào bǎ shāngpǐn zhàopiàn fāsòng dào zhuānmén de wǎngzhàn, jiù néng dédào fǎnkuì, zhīdào nǎ jiā diàn yǒu shòu. Wèilái shāngdiàn duì gùkè de guānhuái wúwēi-búzhì, tā de shèjì zōngzhǐ shì ràng gòuwù qīngsōng, kuàijié, biànlì. Zhèyàng de shāngdiàn, shēngyi zěnme néng bù xīnglóng ne?',
-    vn:'Ngày nay, số người thích mua sắm qua mạng tăng lên nhanh chóng. Cách mua sắm truyền thống phải chạy ngược chạy xuôi giữa dòng người nườm nượp, còn mua sắm qua mạng chỉ cần đăng nhập trang web, ra vài lệnh là có thể mua đồ về nhà. Có người tiên đoán, cửa hàng truyền thống phải tiến hành một cuộc cách mạng tận gốc, nếu không sẽ bị đào thải. Đặc điểm của cửa hàng tương lai là điện tử hoá toàn bộ, hầu như không thấy nhân viên, khách hàng có thể tự mình hoàn thành việc mua sắm. Trên tay cầm xe đẩy của cửa hàng tương lai có gắn trợ lý mua sắm: màn hình sẽ hiện vị trí món hàng, khi đi tới kệ tương ứng, thiết bị còn phát ra âm báo để khách khỏi bỏ lỡ món hàng. Khách muốn ăn cá tươi mà ngại tanh có thể để lại lời nhắn trên màn hình cảm ứng, đợi cá được làm sạch xong rồi đến lấy. Không biết nên mua mẫu điện thoại nào thì trạm tiện ích điện tử sẽ kiểm định giúp bạn. Khi thanh toán không cần người cân hàng, hệ thống thanh toán có thể nhận diện hàng hoá, nhanh chóng tính ra tổng số tiền, máy thu tiền tự động nhận cả tiền mặt lẫn quẹt thẻ. Người tiêu dùng tham gia thiết kế là dịch vụ mà cửa hàng tương lai đặc biệt giới thiệu: đăng nhập phòng thiết kế ảo, bước vào quá trình thiết kế, bỏ phiếu cho màu sắc, kiểu dáng; quần áo thiết kế ra như thế đảm bảo bạn hài lòng. Ngoài ra, khách hàng chỉ cần gửi ảnh món hàng lên trang web chuyên dụng là sẽ nhận được phản hồi, biết cửa hàng nào có bán. Cửa hàng tương lai quan tâm khách hàng chu đáo từng li từng tí, tôn chỉ thiết kế của nó là làm cho việc mua sắm nhẹ nhàng, nhanh gọn, tiện lợi. Một cửa hàng như vậy, làm sao việc buôn bán có thể không phát đạt?'
+    zh:'如今，喜欢网络购物的人急剧增加。传统的购物方式要在川流不息的人群中奔走，而网络购物只需登录网站、下几道指令，就能把东西买回家。有人预言，实体商店必须进行根本性的革命，否则就会被淘汰。未来商店的特点是全部实现电子化，几乎见不到工作人员，顾客可以自己动手完成购物。未来商店的购物车把手上装有购物助手，屏幕上会显示商品的位置，走到相应货架时，仪器还会发出提示音，以免顾客错过商品。想吃鲜鱼又嫌腥的顾客，可以在触摸屏上留言，等鱼清理好后再去领取。不知道买哪种手机，电子便利站会为你把关。结账时无须人工过秤，结账系统能识别商品，迅速算出总和，自动收款机可以接受现金和刷卡。消费者参与设计是未来商店着重推荐的服务：登录虚拟设计室，进入设计过程，对颜色、外观进行投票，设计出来的衣服保管你满意。此外，顾客只要把商品照片发送到专门的网站，就能得到反馈，知道哪家店有售。未来商店对顾客的关怀无微不至，它的设计宗旨是让购物轻松、快捷、便利。这样的商店，生意怎么能不兴隆呢？',
+    py:'Rújīn, xǐhuan wǎngluò gòuwù de rén jíjù zēngjiā. Chuántǒng de gòuwù fāngshì yào zài chuānliú-bùxī de rénqún zhōng bēnzǒu, ér wǎngluò gòuwù zhǐ xū dēnglù wǎngzhàn, xià jǐ dào zhǐlìng, jiù néng bǎ dōngxi mǎi huí jiā. Yǒu rén yùyán, shítǐ shāngdiàn bìxū jìnxíng gēnběnxìng de gémìng, fǒuzé jiù huì bèi táotài. Wèilái shāngdiàn de tèdiǎn shì quánbù shíxiàn diànzǐhuà, jīhū jiàn bu dào gōngzuò rényuán, gùkè kěyǐ zìjǐ dòng shǒu wánchéng gòuwù. Wèilái shāngdiàn de gòuwùchē bǎshou shang zhuāng yǒu gòuwù zhùshǒu, píngmù shang huì xiǎnshì shāngpǐn de wèizhi, zǒudào xiāngyìng huòjià shí, yíqì hái huì fāchū tíshìyīn, yǐmiǎn gùkè cuòguò shāngpǐn. Xiǎng chī xiānyú yòu xián xīng de gùkè, kěyǐ zài chùmōpíng shang liúyán, děng yú qīnglǐ hǎo hòu zài qù lǐngqǔ. Bù zhīdào mǎi nǎ zhǒng shǒujī, diànzǐ biànlìzhàn huì wèi nǐ bǎ guān. Jiézhàng shí wúxū réngōng guò chèng, jiézhàng xìtǒng néng shíbié shāngpǐn, xùnsù suànchū zǒnghé, zìdòng shōukuǎnjī kěyǐ jiēshòu xiànjīn hé shuākǎ. Xiāofèizhě cānyù shèjì shì wèilái shāngdiàn zhuózhòng tuījiàn de fúwù: dēnglù xūnǐ shèjìshì, jìnrù shèjì guòchéng, duì yánsè, wàiguān jìnxíng tóupiào, shèjì chūlái de yīfu bǎoguǎn nǐ mǎnyì. Cǐwài, gùkè zhǐyào bǎ shāngpǐn zhàopiàn fāsòng dào zhuānmén de wǎngzhàn, jiù néng dédào fǎnkuì, zhīdào nǎ jiā diàn yǒu shòu. Wèilái shāngdiàn duì gùkè de guānhuái wúwēi-búzhì, tā de shèjì zōngzhǐ shì ràng gòuwù qīngsōng, kuàijié, biànlì. Zhèyàng de shāngdiàn, shēngyi zěnme néng bù xīnglóng ne?',
+    vn:'Ngày nay, số người thích mua sắm qua mạng tăng lên nhanh chóng. Cách mua sắm truyền thống phải chạy ngược chạy xuôi giữa dòng người nườm nượp, còn mua sắm qua mạng chỉ cần đăng nhập trang web, ra vài lệnh là có thể mua đồ về nhà. Có người tiên đoán, cửa hàng truyền thống phải tiến hành một cuộc cách mạng tận gốc, nếu không sẽ bị đào thải. Đặc điểm của cửa hàng tương lai là điện tử hoá toàn bộ, hầu như không thấy nhân viên, khách hàng có thể tự mình hoàn thành việc mua sắm. Trên tay cầm xe đẩy của cửa hàng tương lai có gắn trợ lý mua sắm: màn hình sẽ hiện vị trí món hàng, khi đi tới kệ tương ứng, thiết bị còn phát ra âm báo để khách khỏi bỏ lỡ món hàng. Khách muốn ăn cá tươi mà ngại tanh có thể để lại lời nhắn trên màn hình cảm ứng, đợi cá được làm sạch xong rồi đến lấy. Không biết nên mua loại điện thoại nào thì trạm tiện ích điện tử sẽ kiểm định giúp bạn. Khi thanh toán không cần người cân hàng, hệ thống thanh toán có thể nhận diện hàng hoá, nhanh chóng tính ra tổng số tiền, máy thu tiền tự động nhận cả tiền mặt lẫn quẹt thẻ. Người tiêu dùng tham gia thiết kế là dịch vụ mà cửa hàng tương lai đặc biệt giới thiệu: đăng nhập phòng thiết kế ảo, bước vào quá trình thiết kế, bỏ phiếu cho màu sắc, kiểu dáng; quần áo thiết kế ra như thế đảm bảo bạn hài lòng. Ngoài ra, khách hàng chỉ cần gửi ảnh món hàng lên trang web chuyên dụng là sẽ nhận được phản hồi, biết cửa hàng nào có bán. Cửa hàng tương lai quan tâm khách hàng chu đáo từng li từng tí, tôn chỉ thiết kế của nó là làm cho việc mua sắm nhẹ nhàng, nhanh gọn, tiện lợi. Một cửa hàng như vậy, làm sao việc buôn bán có thể không phát đạt?'
   }
 };
 
@@ -1948,206 +1857,145 @@ var writingData = {
 // LUYỆN NÓI — đúng bảng 练习5 của sách: 根据提示，简述课文主要内容
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Đây là bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b>. Mỗi câu hỏi là một dòng của bảng (dòng "未来商店的购物模式" trong sách có 4 ô nhỏ — ở đây tách thành 4 câu). Bấm loa nghe câu hỏi, nhìn gợi ý bên phải, <b>tự ghi âm câu trả lời của mình trước</b> rồi mới mở câu mẫu. Cố dùng từ mới: 急剧 · 川流不息 · 以免 · 嫌 · 把关 · 着重 · 保管 · 反馈 · 无微不至.',
-  questions:[
-    {q_zh:'传统购物方式与网络购物方式的区别',
-     q_vn:'Sự khác biệt giữa cách mua sắm truyền thống và mua sắm qua mạng',
-     hint:'①传统购物方式　②网络购物方式',
-     sample:'传统购物方式要在川流不息的人群中奔走，又累又浪费时间；而网络购物只需登录网站，动几下手指，下几道指令，就能把东西买回家。所以喜欢网络购物的人急剧增加。',
-     sample_vn:'Cách mua sắm truyền thống phải chạy ngược chạy xuôi giữa dòng người nườm nượp, vừa mệt vừa tốn thời gian; còn mua sắm qua mạng chỉ cần đăng nhập trang web, động vài ngón tay, ra vài lệnh là mua được đồ về nhà. Vì thế số người thích mua sắm qua mạng tăng vọt.',
-     note:'Đối chiếu bằng A……，而 B……; kết luận bằng 所以……急剧增加.'},
-    {q_zh:'未来商店的特点',
-     q_vn:'Đặc điểm của cửa hàng tương lai',
-     hint:'①电子化　②工作人员',
-     sample:'未来商店的仓库货物储备管理、销售结算、客户关系管理等全部实现了电子化。在那儿几乎见不到工作人员，顾客可以自己动手完成整个购物过程。',
-     sample_vn:'Ở cửa hàng tương lai, việc quản lý dự trữ hàng trong kho, thanh toán bán hàng, quản lý quan hệ khách hàng… đều được điện tử hoá toàn bộ. Ở đó hầu như không thấy nhân viên, khách hàng có thể tự tay hoàn thành cả quá trình mua sắm.',
-     note:'Liệt kê bằng dấu 、 rồi tổng kết bằng 等全部……; 几乎见不到 = hầu như không thấy.'},
-    {q_zh:'未来商店的购物模式——购物助手',
-     q_vn:'Mô hình mua sắm của cửa hàng tương lai — trợ lý mua sắm',
-     hint:'①显示商品位置　②触摸屏留言　③便利站把关',
-     sample:'购物车把手上装有购物助手。想买什么，屏幕上就会显示商品的位置，走到相应货架时，仪器还会发出提示音，以免你错过商品。想吃鲜鱼又嫌腥，可以在触摸屏上留言，等店员清理好再去拿。不知道买哪款手机，电子便利站会为你把关。',
-     sample_vn:'Trên tay cầm xe đẩy có gắn trợ lý mua sắm. Muốn mua gì, màn hình sẽ hiện vị trí món hàng; đi tới kệ tương ứng, thiết bị còn phát âm báo để bạn khỏi bỏ lỡ. Muốn ăn cá tươi mà ngại tanh thì để lại lời nhắn trên màn hình cảm ứng, đợi nhân viên làm sạch xong rồi đến lấy. Không biết mua điện thoại nào thì trạm tiện ích điện tử sẽ kiểm định giúp bạn.',
-     note:'Ba ý ①②③ — mỗi ý một câu; dùng 以免 (mục đích), 嫌 (ngại) và 为你把关.'},
-    {q_zh:'未来商店的购物模式——结账',
-     q_vn:'Mô hình mua sắm của cửa hàng tương lai — thanh toán',
-     hint:'①结账系统识别　②自动收款机',
-     sample:'结账的时候无须人工过秤，带有摄像头的结账系统能识别商品的重量和体积，迅速运算，给出消费钱数的总和。自动收款机既能收现金，也能刷卡。',
-     sample_vn:'Khi thanh toán không cần người cân hàng, hệ thống thanh toán có camera nhận diện được trọng lượng và thể tích hàng hoá, tính toán nhanh chóng rồi đưa ra tổng số tiền. Máy thu tiền tự động vừa nhận tiền mặt vừa quẹt thẻ được.',
-     note:'无须 + V (không cần); chuỗi động từ 识别……，迅速运算，给出…… (tỉnh lược chủ ngữ).'},
-    {q_zh:'未来商店的购物模式——参与设计',
-     q_vn:'Mô hình mua sắm của cửa hàng tương lai — tham gia thiết kế',
-     hint:'登录、进入设计过程、投票',
-     sample:'消费者加入设计队伍是未来商店着重推荐的服务。如果你对市场上的衣服不太满意，可以登录虚拟设计室，进入设计过程，对颜色、外观等进行投票，这样设计出来的衣服保管你满意。',
-     sample_vn:'Người tiêu dùng tham gia đội ngũ thiết kế là dịch vụ cửa hàng tương lai đặc biệt giới thiệu. Nếu bạn không ưng quần áo trên thị trường, có thể đăng nhập phòng thiết kế ảo, bước vào quá trình thiết kế, bỏ phiếu cho màu sắc, kiểu dáng…; quần áo thiết kế ra như vậy đảm bảo bạn hài lòng.',
-     note:'Ba động tác theo thứ tự 登录 → 进入 → 投票 (cùng chủ ngữ, tỉnh lược 你); kết bằng 保管你满意.'},
-    {q_zh:'未来商店的购物模式——互动',
-     q_vn:'Mô hình mua sắm của cửa hàng tương lai — tương tác',
-     hint:'发送照片、得到反馈',
-     sample:'在未来商店，商家和消费者的互动非常活跃。不管你想买什么，只要把照片发送到专门的网站，就能得到反馈，知道哪家店有售、有哪些款式。这样既方便了顾客，也给商家带来了生意。',
-     sample_vn:'Ở cửa hàng tương lai, sự tương tác giữa người bán và người mua rất sôi nổi. Dù bạn muốn mua gì, chỉ cần gửi ảnh lên trang web chuyên dụng là nhận được phản hồi, biết cửa hàng nào có bán, có những kiểu nào. Như vậy vừa tiện cho khách, vừa mang lại mối làm ăn cho người bán.',
-     note:'不管……，只要……就……; 既……也…… nêu lợi ích hai bên.'},
-    {q_zh:'未来商店的设计主旨',
-     q_vn:'Tôn chỉ thiết kế của cửa hàng tương lai',
-     hint:'轻松、快捷、便利',
-     sample:'未来商店对消费者的关怀可谓无微不至，它把握消费者的需求，以消费者为主导。每一项设计的宗旨都是让购物过程轻松、快捷、便利。这样的商店怎么能不生意兴隆呢？',
-     sample_vn:'Sự quan tâm của cửa hàng tương lai đối với người tiêu dùng có thể nói là chu đáo từng li từng tí; nó nắm bắt nhu cầu và lấy người tiêu dùng làm chủ đạo. Tôn chỉ của mọi thiết kế là làm cho việc mua sắm nhẹ nhàng, nhanh gọn, tiện lợi. Cửa hàng như vậy sao có thể không làm ăn phát đạt?',
-     note:'以……为主导; ……的宗旨是……; kết bằng câu phản vấn 怎么能不……呢.'}
+  intro: 'Đây là bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b>. Mỗi câu hỏi là một dòng của bảng (dòng "未来商店的购物模式" trong sách có 4 ô nhỏ — ở đây tách thành 4 câu). Bấm loa nghe câu hỏi, nhìn gợi ý bên phải, <b>tự ghi âm câu trả lời của mình trước</b> rồi mới mở câu mẫu. Cố dùng từ mới: 急剧 · 川流不息 · 以免 · 嫌 · 把关 · 着重 · 保管 · 反馈 · 无微不至.',
+  questions: [
+    {q_zh:'传统购物方式与网络购物方式的区别',q_vn:'Sự khác biệt giữa cách mua sắm truyền thống và mua sắm qua mạng',hint:'①传统购物方式　②网络购物方式',sample:'传统购物方式要在川流不息的人群中奔走，又累又浪费时间；而网络购物只需登录网站，动几下手指，下几道指令，就能把东西买回家。所以喜欢网络购物的人急剧增加。',sample_vn:'Cách mua sắm truyền thống phải chạy ngược chạy xuôi giữa dòng người nườm nượp, vừa mệt vừa tốn thời gian; còn mua sắm qua mạng chỉ cần đăng nhập trang web, động vài ngón tay, ra vài lệnh là mua được đồ về nhà. Vì thế số người thích mua sắm qua mạng tăng vọt.',note:'Đối chiếu bằng A……，而 B……; kết luận bằng 所以……急剧增加.'},
+    {q_zh:'未来商店的特点',q_vn:'Đặc điểm của cửa hàng tương lai',hint:'①电子化　②工作人员',sample:'未来商店的仓库货物储备管理、销售结算、客户关系管理等全部实现了电子化。在那儿几乎见不到工作人员，顾客可以自己动手完成整个购物过程。',sample_vn:'Ở cửa hàng tương lai, việc quản lý dự trữ hàng trong kho, thanh toán bán hàng, quản lý quan hệ khách hàng… đều được điện tử hoá toàn bộ. Ở đó hầu như không thấy nhân viên, khách hàng có thể tự tay hoàn thành cả quá trình mua sắm.',note:'Liệt kê bằng dấu 、 rồi tổng kết bằng 等全部……; 几乎见不到 = hầu như không thấy.'},
+    {q_zh:'未来商店的购物模式——购物助手',q_vn:'Mô hình mua sắm của cửa hàng tương lai — trợ lý mua sắm',hint:'①显示商品位置　②触摸屏留言　③便利站把关',sample:'购物车把手上装有购物助手。想买什么，屏幕上就会显示商品的位置，走到相应货架时，仪器还会发出提示音，以免你错过商品。想吃鲜鱼又嫌腥，可以在触摸屏上留言，等店员清理好再去拿。不知道买哪种手机，电子便利站会为你把关。',sample_vn:'Trên tay cầm xe đẩy có gắn trợ lý mua sắm. Muốn mua gì, màn hình sẽ hiện vị trí món hàng; đi tới kệ tương ứng, thiết bị còn phát âm báo để bạn khỏi bỏ lỡ. Muốn ăn cá tươi mà ngại tanh thì để lại lời nhắn trên màn hình cảm ứng, đợi nhân viên làm sạch xong rồi đến lấy. Không biết mua điện thoại nào thì trạm tiện ích điện tử sẽ kiểm định giúp bạn.',note:'Ba ý ①②③ — mỗi ý một câu; dùng 以免 (mục đích), 嫌 (ngại) và 为你把关.'},
+    {q_zh:'未来商店的购物模式——结账',q_vn:'Mô hình mua sắm của cửa hàng tương lai — thanh toán',hint:'①结账系统识别　②自动收款机',sample:'结账的时候无须人工过秤，带有摄像头的结账系统能识别商品的重量和体积，迅速运算，给出消费钱数的总和。自动收款机既能收现金，也能刷卡。',sample_vn:'Khi thanh toán không cần người cân hàng, hệ thống thanh toán có camera nhận diện được trọng lượng và thể tích hàng hoá, tính toán nhanh chóng rồi đưa ra tổng số tiền. Máy thu tiền tự động vừa nhận tiền mặt vừa quẹt thẻ được.',note:'无须 + V (không cần); chuỗi động từ 识别……，迅速运算，给出…… (tỉnh lược chủ ngữ).'},
+    {q_zh:'未来商店的购物模式——参与设计',q_vn:'Mô hình mua sắm của cửa hàng tương lai — tham gia thiết kế',hint:'登录、进入设计过程、投票',sample:'消费者加入设计队伍是未来商店着重推荐的服务。如果你对市场上的衣服不太满意，可以登录虚拟设计室，进入设计过程，对颜色、外观等进行投票，这样设计出来的衣服保管你满意。',sample_vn:'Người tiêu dùng tham gia đội ngũ thiết kế là dịch vụ cửa hàng tương lai đặc biệt giới thiệu. Nếu bạn không ưng quần áo trên thị trường, có thể đăng nhập phòng thiết kế ảo, bước vào quá trình thiết kế, bỏ phiếu cho màu sắc, kiểu dáng…; quần áo thiết kế ra như vậy đảm bảo bạn hài lòng.',note:'Ba động tác theo thứ tự 登录 → 进入 → 投票 (cùng chủ ngữ, tỉnh lược 你); kết bằng 保管你满意.'},
+    {q_zh:'未来商店的购物模式——互动',q_vn:'Mô hình mua sắm của cửa hàng tương lai — tương tác',hint:'发送照片、得到反馈',sample:'在未来商店，商家和消费者的互动非常活跃。不管你想买什么，只要把照片发送到专门的网站，就能得到反馈，知道哪家店有售、有哪些款式。这样既方便了顾客，也给商家带来了生意。',sample_vn:'Ở cửa hàng tương lai, sự tương tác giữa người bán và người mua rất sôi nổi. Dù bạn muốn mua gì, chỉ cần gửi ảnh lên trang web chuyên dụng là nhận được phản hồi, biết cửa hàng nào có bán, có những kiểu nào. Như vậy vừa tiện cho khách, vừa mang lại mối làm ăn cho người bán.',note:'不管……，只要……就……; 既……也…… nêu lợi ích hai bên.'},
+    {q_zh:'未来商店的设计主旨',q_vn:'Tôn chỉ thiết kế của cửa hàng tương lai',hint:'轻松、快捷、便利',sample:'未来商店对消费者的关怀可谓无微不至，它把握消费者的需求，以消费者为主导。每一项设计的宗旨都是让购物过程轻松、快捷、便利。这样的商店怎么能不生意兴隆呢？',sample_vn:'Sự quan tâm của cửa hàng tương lai đối với người tiêu dùng có thể nói là chu đáo từng li từng tí; nó nắm bắt nhu cầu và lấy người tiêu dùng làm chủ đạo. Tôn chỉ của mọi thiết kế là làm cho việc mua sắm nhẹ nhàng, nhanh gọn, tiện lợi. Cửa hàng như vậy sao có thể không làm ăn phát đạt?',note:'以……为主导; ……的宗旨是……; kết bằng câu phản vấn 怎么能不……呢.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — 听力 (hội thoại ngắn + đoạn nói)
-// Sách HSK 6 không có sách bài tập nghe: tự soạn theo chủ đề bài 21.
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — câu tự soạn (sách HSK 6 không có sách bài tập nghe), mỗi câu một tình huống mới
+// ══════════════════════════════════════════
 var listenExamData = {
-  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, ' +
-         'trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
-  source: 'Soạn theo dạng đề HSK 6 · chủ đề bài 21',
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 21',
   items: [
-    {n:1,
-     lines:[{sp:'女',zh:'这件羽绒服样式挺新颖的，你怎么不买？'},
-            {sp:'男',zh:'我嫌它颜色太浅了，冬天穿容易脏。'}],
-     q:'男的为什么不买这件羽绒服？',qvn:'Vì sao người đàn ông không mua chiếc áo lông vũ này?',
-     opts:['样式太旧','价格太贵','颜色太浅','太厚了'],ans:2,
-     why:'我嫌它颜色太浅了 → chê màu quá nhạt. 样式挺新颖的 là lời người phụ nữ khen, nên "kiểu cũ" sai.',
-     words:['羽绒服','新颖','嫌']},
-
-    {n:2,
-     lines:[{sp:'男',zh:'我把钥匙放在门口的盒子里，你到了自己拿吧。'},
-            {sp:'女',zh:'好的，你最好再发个短信提醒我一下，以免我忘了。'}],
-     q:'女的让男的做什么？',qvn:'Người phụ nữ bảo người đàn ông làm gì?',
-     opts:['发短信提醒她','把钥匙交给邻居','在门口等她','换一把新钥匙'],ans:0,
-     why:'你最好再发个短信提醒我一下，以免我忘了 → nhắn tin nhắc cô ấy, để khỏi quên.',
-     words:['以免']},
-
-    {n:3,
-     lines:[{sp:'女',zh:'网上说这款电脑性能很好，你觉得怎么样？'},
-            {sp:'男',zh:'运算速度是挺快的，就是屏幕有点儿小，看久了眼睛累。'}],
-     q:'男的觉得这款电脑有什么缺点？',qvn:'Người đàn ông thấy máy tính này có nhược điểm gì?',
-     opts:['运算速度慢','价格太高','太重了','屏幕小'],ans:3,
-     why:'就是屏幕有点儿小 — 就是 dẫn ra điểm chưa hài lòng. 运算速度是挺快的 là ưu điểm.',
-     words:['性能','运算','屏幕']},
-
-    {n:4,
-     lines:[{sp:'男',zh:'周末去超市买东西，排队结账排了半个小时。'},
-            {sp:'女',zh:'你试试那种自动收款机吧，扫一下就能结算，根本不用等候。'}],
-     q:'女的建议男的怎么做？',qvn:'Người phụ nữ gợi ý người đàn ông làm thế nào?',
-     opts:['换一家超市','用自动收款机结账','周末别去超市','在网上买东西'],ans:1,
-     why:'你试试那种自动收款机吧……根本不用等候 → dùng máy thu tiền tự động.',
-     words:['结算','等候']},
-
-    {n:5,
-     lines:[{sp:'女',zh:'这个水龙头又漏水了，要不要叫人来修？'},
-            {sp:'男',zh:'不用，我在网上查过了，换个零件就行，保管不会再漏。'}],
-     q:'男的是什么意思？',qvn:'Ý người đàn ông là gì?',
-     opts:['必须叫人来修','他自己能修好','要买新水龙头','水龙头没有坏'],ans:1,
-     why:'换个零件就行，保管不会再漏 → anh ấy tự thay linh kiện, cam đoan không rỉ nữa. 保管 = cam đoan.',
-     words:['水龙头','保管']},
-
-    {n:6,
-     lines:[{sp:'男',zh:'听说新开的那家店服务特别好？'},
-            {sp:'女',zh:'是啊，店员对老人的关怀可谓无微不至，难怪生意那么兴隆。'}],
-     q:'关于那家店，下列哪项正确？',qvn:'Về cửa hàng đó, điều nào dưới đây đúng?',
-     opts:['店员态度不好','老人不喜欢去','价格很便宜','生意很好'],ans:3,
-     why:'难怪生意那么兴隆 → làm ăn rất phát đạt. 无微不至 nói dịch vụ chu đáo, nên "thái độ không tốt" sai.',
-     words:['关怀','无微不至','兴隆']},
-
-    {n:7,
-     lines:[{sp:'女',zh:'这次班服的款式，大家意见不一样，怎么办？'},
-            {sp:'男',zh:'在班级群里投票吧，票数最多的就是最终款式。'}],
-     q:'他们打算怎样决定班服的款式？',qvn:'Họ định quyết định kiểu áo lớp bằng cách nào?',
-     opts:['投票决定','由老师决定','由班长决定','抽签决定'],ans:0,
-     why:'在班级群里投票吧，票数最多的就是最终款式 → bỏ phiếu trong nhóm lớp.',
-     words:['款式','投票']},
-
-    {n:8,
-     lines:[{sp:'男',zh:'近年来，网上购物的人数急剧增加，很多实体店的生意受到了影响。不过，也有一些实体店抓住了机会：它们根据顾客的反馈改良服务，比如提供试穿、现场维修、送货上门等网上买不到的体验。专家预言，未来实体店不会消失，但必须以顾客为主导，满足顾客网上满足不了的需求。'}],
-     q:'根据这段话，专家认为未来实体店应该怎么做？',qvn:'Theo đoạn này, chuyên gia cho rằng cửa hàng truyền thống tương lai nên làm gì?',
-     opts:['降低商品价格','全部改成网店','满足顾客网上满足不了的需求','减少工作人员'],ans:2,
-     why:'Câu then chốt: 必须以顾客为主导，满足顾客网上满足不了的需求. Không nhắc tới hạ giá hay giảm nhân viên; "không biến mất" → không phải chuyển hết sang online.',
-     words:['急剧','反馈','改良','预言','主导','需求']}
+    {
+      n: 1,
+      lines: [
+        {sp:'男',zh:'这件旗袍你穿着真漂亮，怎么不买？'},
+        {sp:'女',zh:'漂亮是漂亮，就是嫌它太贵了，我再看看别的。'}
+      ],
+      q: '女的为什么没买旗袍？',
+      qvn: 'Vì sao người phụ nữ không mua chiếc sườn xám?',
+      opts: ['不好看','不合适','太贵了','颜色太深'],
+      ans: 2,
+      why: 'A是A，就是…… nhận ưu điểm rồi nêu điều chưa vừa ý: 嫌它太贵了 → chê đắt. Cô ấy công nhận áo đẹp nên "không đẹp" sai.',
+      words: ['旗袍','嫌']
+    },
+    {
+      n: 2,
+      lines: [
+        {sp:'男',zh:'明天去机场的车几点来？'},
+        {sp:'女',zh:'六点一刻就到。你今天晚上就把行李收拾好，以免明天早上来不及。'}
+      ],
+      q: '女的让男的什么时候收拾行李？',
+      qvn: 'Người phụ nữ bảo người đàn ông thu dọn hành lý lúc nào?',
+      opts: ['今天晚上','明天早上','到机场以后','六点一刻'],
+      ans: 0,
+      why: '你今天晚上就把行李收拾好，以免明天早上来不及 → làm ngay tối nay, để sáng mai khỏi không kịp.',
+      words: ['以免']
+    },
+    {
+      n: 3,
+      lines: [
+        {sp:'男',zh:'你家这台音响声音真好，是新买的吗？'},
+        {sp:'女',zh:'哪儿啊，都十几年了，性能还是这么好，一点儿毛病都没有。'}
+      ],
+      q: '关于这台音响，可以知道什么？',
+      qvn: 'Về dàn loa này, có thể biết điều gì?',
+      opts: ['是刚买的','声音不太好','用了很多年','经常出问题'],
+      ans: 2,
+      why: '哪儿啊 phủ nhận "mới mua"; 都十几年了 → đã dùng nhiều năm; 一点儿毛病都没有 → không hay hỏng.',
+      words: ['音响','性能']
+    },
+    {
+      n: 4,
+      lines: [
+        {sp:'男',zh:'这个超市怎么一个店员都没有？'},
+        {sp:'女',zh:'现在都是顾客自己结算，机器会算好总和，有问题再找人工服务。'}
+      ],
+      q: '在这个超市怎么结账？',
+      qvn: 'Ở siêu thị này thanh toán thế nào?',
+      opts: ['找店员结账','顾客自己结算','去门口排队','在网上买'],
+      ans: 1,
+      why: '都是顾客自己结算 → khách tự thanh toán bằng máy; chỉ khi có vấn đề mới gọi nhân viên (人工服务).',
+      words: ['结算','总和','人工']
+    },
+    {
+      n: 5,
+      lines: [
+        {sp:'女',zh:'你不是最爱吃海鲜吗？今天怎么一口都不吃？'},
+        {sp:'男',zh:'这家的鱼不太新鲜，我嫌腥。'}
+      ],
+      q: '男的为什么不吃？',
+      qvn: 'Vì sao người đàn ông không ăn?',
+      opts: ['觉得鱼太腥','不爱吃海鲜','已经吃饱了','价格太贵'],
+      ans: 0,
+      why: '我嫌腥 = tôi chê tanh, vì cá không tươi. Người phụ nữ nói anh ấy rất thích hải sản, nên "không thích hải sản" sai.',
+      words: ['嫌','腥']
+    },
+    {
+      n: 6,
+      lines: [
+        {sp:'男',zh:'你们店最近生意怎么这么兴隆？'},
+        {sp:'女',zh:'我们根据顾客的反馈，把菜的味道改良了一下，来吃饭的人就越来越多了。'}
+      ],
+      q: '这家店生意变好的原因是什么？',
+      qvn: 'Nguyên nhân cửa hàng làm ăn khá lên là gì?',
+      opts: ['价格降低了','换了地方','店员变多了','根据反馈改良了菜'],
+      ans: 3,
+      why: '根据顾客的反馈，把菜的味道改良了一下 → sửa vị món ăn theo phản hồi của khách. Không nhắc tới giá, địa điểm hay nhân viên.',
+      words: ['兴隆','反馈','改良']
+    },
+    {
+      n: 7,
+      lines: [
+        {sp:'男',zh:'上周订的那批货物什么时候能送进仓库？'},
+        {sp:'女',zh:'车已经到门口了，工人们正在装卸，大概还要一个小时。'}
+      ],
+      q: '货物大概什么时候能进仓库？',
+      qvn: 'Hàng hoá khoảng bao giờ vào được kho?',
+      opts: ['已经进去了','明天上午','下个星期','一个小时以后'],
+      ans: 3,
+      why: '正在装卸，大概还要一个小时 → khoảng một tiếng nữa. Xe mới đến cửa nên hàng chưa vào kho.',
+      words: ['仓库','装卸']
+    }
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 💬 TÌNH HUỐNG GIAO TIẾP
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
+// ══════════════════════════════════════════
 var situationData = {
-  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
-         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Mẹ nhờ em ra chợ mua cá, nhưng em rất ngại mùi tanh.',
-     a:{sp:'Mẹ',zh:'你去市场买条鱼回来吧，今天晚上做红烧鱼。',vn:'Con ra chợ mua con cá về nhé, tối nay làm cá kho.'},
-     need:['Dùng 嫌','Đưa ra một cách giải quyết'],
-     sample:'妈，我嫌鱼太腥了，不想自己处理。我在网上下单，让店员把鱼清理好再送来，行吗？',
-     samplePy:'Mā, wǒ xián yú tài xīng le, bù xiǎng zìjǐ chǔlǐ. Wǒ zài wǎngshàng xià dān, ràng diànyuán bǎ yú qīnglǐ hǎo zài sònglái, xíng ma?',
-     sampleVn:'Mẹ ơi, con ngại cá tanh quá, không muốn tự làm. Con đặt trên mạng, nhờ người bán làm sạch cá rồi giao tới, được không ạ?',
-     tip:'嫌 + N + 太 + Adj; 让 + người + 把……V好 + 再…….'},
-
-    {scene:'Bạn cùng phòng định ra ngoài mà không mang ô, trong khi dự báo chiều nay có mưa.',
-     a:{sp:'Bạn cùng phòng',zh:'我出去一下，一会儿就回来。',vn:'Tớ ra ngoài một lát, lát nữa về ngay.'},
-     need:['Dùng 以免','Nhắc bạn một việc'],
-     sample:'天气预报说下午有雨，你还是带把伞吧，以免被淋湿了。',
-     samplePy:'Tiānqì yùbào shuō xiàwǔ yǒu yǔ, nǐ háishi dài bǎ sǎn ba, yǐmiǎn bèi línshī le.',
-     sampleVn:'Dự báo thời tiết nói chiều nay có mưa, cậu mang theo cái ô đi, kẻo bị ướt.',
-     tip:'还是……吧 = tốt hơn là; 以免 đứng đầu vế sau, sau nó là điều muốn tránh; 淋 ôn HSK 6 bài 11.'},
-
-    {scene:'Em họ đang phân vân không biết mua mẫu điện thoại nào.',
-     a:{sp:'Em họ',zh:'这两款手机我都挺喜欢的，不知道哪款更好。',vn:'Hai mẫu điện thoại này em đều khá thích, không biết mẫu nào tốt hơn.'},
-     need:['Dùng 性能 và 款式','Dùng 把关'],
-     sample:'别光看款式，性能更重要。我哥是做这行的，让他帮你把把关吧。',
-     samplePy:'Bié guāng kàn kuǎnshì, xìngnéng gèng zhòngyào. Wǒ gē shì zuò zhè háng de, ràng tā bāng nǐ bǎba guān ba.',
-     sampleVn:'Đừng chỉ nhìn kiểu dáng, tính năng quan trọng hơn. Anh tớ làm nghề này, để anh ấy xem giúp em nhé.',
-     tip:'别光 + V = đừng chỉ …; 把把关 (li hợp từ lặp lại = xem giúp một chút).'},
-
-    {scene:'Chủ quán ăn mới mở hỏi em thấy món ăn thế nào; em rất hài lòng.',
-     a:{sp:'Chủ quán',zh:'我们的店刚开张，你觉得菜的味道怎么样？',vn:'Quán chúng tôi mới khai trương, em thấy mùi vị món ăn thế nào?'},
-     need:['Dùng 无微不至 hoặc 保管','Chúc quán dùng 兴隆'],
-     sample:'菜做得很地道，服务也无微不至。我保管以后常来，祝你们生意兴隆！',
-     samplePy:'Cài zuò de hěn dìdao, fúwù yě wúwēi-búzhì. Wǒ bǎoguǎn yǐhòu cháng lái, zhù nǐmen shēngyi xīnglóng!',
-     sampleVn:'Món ăn nấu rất chuẩn vị, phục vụ cũng chu đáo từng li. Cháu đảm bảo sau này sẽ hay đến, chúc quán làm ăn phát đạt!',
-     tip:'祝 + người + 生意兴隆 — câu chúc khai trương; 保管 = cam đoan (khẩu ngữ).'},
-
-    {scene:'Cô giáo hỏi cả lớp nên chọn kiểu áo đồng phục lớp như thế nào.',
-     a:{sp:'Cô giáo',zh:'班服的款式，大家都有自己的想法，你看怎么定比较好？',vn:'Kiểu áo lớp mỗi em có ý riêng, em thấy nên quyết thế nào thì tốt?'},
-     need:['Dùng 投票','Dùng 以……为主导 hoặc 需求'],
-     sample:'我觉得应该让大家投票，以同学们的意见为主导，这样选出来的款式才能满足大家的需求。',
-     samplePy:'Wǒ juéde yīnggāi ràng dàjiā tóupiào, yǐ tóngxuémen de yìjiàn wéi zhǔdǎo, zhèyàng xuǎn chūlái de kuǎnshì cái néng mǎnzú dàjiā de xūqiú.',
-     sampleVn:'Em nghĩ nên để mọi người bỏ phiếu, lấy ý kiến của các bạn làm chủ đạo, như vậy kiểu áo chọn ra mới đáp ứng được nhu cầu của mọi người.',
-     tip:'让 + người + 投票; 以……为主导; ……才能满足……的需求.'}
+    {scene:'Mẹ nhờ em ra chợ mua cá, nhưng em rất ngại mùi tanh.',a:{sp:'Mẹ',zh:'你去市场买条鱼回来吧，今天晚上我想做鱼。',vn:'Con ra chợ mua con cá về nhé, tối nay mẹ muốn nấu cá.'},need:['Dùng 嫌','Đưa ra một cách giải quyết'],sample:'妈，我嫌鱼太腥了，不想自己处理。我在网上买，让店员把鱼清理好再送来，行吗？',samplePy:'Mā, wǒ xián yú tài xīng le, bù xiǎng zìjǐ chǔlǐ. Wǒ zài wǎngshàng mǎi, ràng diànyuán bǎ yú qīnglǐ hǎo zài sònglái, xíng ma?',sampleVn:'Mẹ ơi, con ngại cá tanh quá, không muốn tự làm. Con mua trên mạng, nhờ người bán làm sạch cá rồi giao tới, được không ạ?',tip:'嫌 + N + 太 + tính từ; 让 + người + 把……V好 + 再…….'},
+    {scene:'Ở quán cà phê đông người, bạn định để máy tính trên bàn rồi đi vệ sinh.',a:{sp:'Bạn',zh:'我去趟洗手间，电脑先放这儿吧。',vn:'Tớ đi vệ sinh một lát, máy tính cứ để đây nhé.'},need:['Dùng 以免','Nhắc bạn một việc'],sample:'这儿人多，你还是把电脑带上吧，以免被人偷走。',samplePy:'Zhèr rén duō, nǐ háishi bǎ diànnǎo dàishang ba, yǐmiǎn bèi rén tōuzǒu.',sampleVn:'Ở đây đông người, cậu cứ mang máy tính theo đi, kẻo bị người ta lấy mất.',tip:'还是……吧 = tốt hơn là; 以免 đứng đầu vế sau, sau nó là điều muốn tránh (以免被……).'},
+    {scene:'Em họ đang phân vân không biết mua chiếc điện thoại nào.',a:{sp:'Em họ',zh:'这两部手机我都挺喜欢的，不知道选哪个好。',vn:'Hai chiếc điện thoại này em đều khá thích, không biết chọn cái nào.'},need:['Dùng 性能 và 款式','Dùng 把关'],sample:'别光看款式，性能更重要。我哥是做这行的，让他帮你把把关吧。',samplePy:'Bié guāng kàn kuǎnshì, xìngnéng gèng zhòngyào. Wǒ gē shì zuò zhè háng de, ràng tā bāng nǐ bǎba guān ba.',sampleVn:'Đừng chỉ nhìn kiểu dáng, tính năng quan trọng hơn. Anh tớ làm nghề này, để anh ấy xem giúp em nhé.',tip:'别光 + V = đừng chỉ …; 把把关 (động từ li hợp lặp lại = kiểm tra giúp một chút).'},
+    {scene:'Chủ quán ăn mới mở hỏi em thấy món ăn thế nào; em rất hài lòng.',a:{sp:'Chủ quán',zh:'我们的店刚开张，你觉得菜的味道怎么样？',vn:'Quán chúng tôi mới khai trương, em thấy mùi vị món ăn thế nào?'},need:['Dùng 无微不至 hoặc 保管','Chúc quán dùng 兴隆'],sample:'菜做得很地道，服务也无微不至。我保管以后常来，祝你们生意兴隆！',samplePy:'Cài zuò de hěn dìdao, fúwù yě wúwēi-búzhì. Wǒ bǎoguǎn yǐhòu cháng lái, zhù nǐmen shēngyi xīnglóng!',sampleVn:'Món ăn nấu rất chuẩn vị, phục vụ cũng chu đáo từng li. Cháu đảm bảo sau này sẽ hay đến, chúc quán làm ăn phát đạt!',tip:'祝 + người + 生意兴隆 — câu chúc khai trương; 保管 = cam đoan (khẩu ngữ).'},
+    {scene:'Lớp em chưa thống nhất được nơi đi chơi mùa xuân, lớp trưởng hỏi ý em.',a:{sp:'Lớp trưởng',zh:'这次春游去哪儿，大家意见不一样，你看怎么办好？',vn:'Chuyến đi chơi xuân lần này đi đâu, mọi người mỗi người một ý, cậu thấy làm sao thì hay?'},need:['Dùng 投票','Dùng 中意'],sample:'让大家投票吧，哪个地方票数最多就去哪儿，这样选出来的地方，大部分人都会中意。',samplePy:'Ràng dàjiā tóupiào ba, nǎge dìfang piàoshù zuì duō jiù qù nǎr, zhèyàng xuǎn chūlái de dìfang, dà bùfen rén dōu huì zhòngyì.',sampleVn:'Để mọi người bỏ phiếu đi, chỗ nào nhiều phiếu nhất thì đi chỗ đó, chọn như vậy thì đa số sẽ ưng ý.',tip:'哪个……就……哪儿 (đại từ nghi vấn lặp lại = chỗ nào … thì chỗ đó); 中意 đọc zhòngyì.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 // 🎯 NÓI SAO CHO HAY — 得体 / 语体
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 var registerData = {
-  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
-         'HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
   items: [
-    {scene:'Thông báo trên màn hình của một siêu thị.',
-     a:'请顾客将商品放在结算台上，系统将自动识别并计算总价。',b:'你把东西放那儿就行，机器自己会算钱的。',better:'a',
-     why:'Thông báo nơi công cộng cần trang trọng, rõ ràng: 请顾客, 将 (= 把), 结算台, 自动识别. Câu b là lời nói miệng thân mật.'},
-
-    {scene:'Em nhắn tin cho bạn thân rủ đi mua sắm cuối tuần.',
-     a:'周末有空吗？陪我去逛逛街呗，我想买件羽绒服。',b:'本人拟于周末前往商场选购羽绒服一件，诚邀阁下同行。',better:'a',
-     why:'Nhắn tin với bạn thân dùng khẩu ngữ (逛逛街, 呗). Câu b (本人, 拟于, 诚邀阁下) giống thư mời trang trọng, nghe rất buồn cười.'},
-
-    {scene:'Bài báo kinh tế phân tích xu hướng tiêu dùng.',
-     a:'近年来，网络购物人数急剧增加，实体商店面临着前所未有的挑战。',b:'现在在网上买东西的人多得不得了，实体店都快撑不下去了。',better:'a',
-     why:'Văn phong báo chí cần từ ngữ văn viết: 近年来, 急剧增加, 面临, 前所未有的挑战. Câu b (多得不得了, 撑不下去) là khẩu ngữ.'},
-
-    {scene:'Nhân viên cửa hàng trả lời khách hàng hỏi còn hàng không.',
-     a:'没了没了，卖完了，你去别家看看吧。',b:'不好意思，这款暂时缺货，您可以留下联系方式，到货后我们第一时间通知您。',better:'b',
-     why:'Nhân viên phục vụ nên lịch sự, dùng 您, 暂时缺货, 第一时间通知. Câu a cộc lốc, dễ làm mất khách.'},
-
-    {scene:'Em viết bài giới thiệu một sản phẩm công nghệ cho tạp chí của trường.',
-     a:'这款电脑性能稳定，运算速度快，能满足学生多方面的学习需求。',b:'这电脑挺好使的，跑得贼快，干啥都行。',better:'a',
-     why:'Bài viết đăng tạp chí nên dùng thuật ngữ chuẩn: 性能稳定, 运算速度, 满足……需求. Câu b (好使, 贼快, 干啥) là khẩu ngữ phương ngữ phương Bắc.'},
-
-    {scene:'Ông nội hỏi em cách tra thông tin mua hàng trên điện thoại.',
-     a:'爷爷，您把东西拍张照片，发到这个网站上，一会儿就有人告诉您哪儿有卖的。',b:'请您将商品照片发送至指定网站，系统将及时反馈相关信息。',better:'a',
-     why:'Nói với người thân lớn tuổi nên dùng lời giản dị, dễ hiểu (拍张照片, 一会儿就有人告诉您) nhưng vẫn lễ phép (您). Câu b như hướng dẫn sử dụng.'}
+    {scene:'Em kể với bạn về một ngày của anh trai mình.',a:'我哥每天早上六点起床，先去跑步，然后吃早饭，七点出门。',b:'我哥每天早上六点起床，我哥先去跑步，然后我哥吃早饭，我哥七点出门。',better:'a',why:'Các hành động cùng một chủ ngữ (我哥) → chỉ nêu một lần ở đầu câu. Câu b không sai nhưng lặp chủ ngữ bốn lần, nghe rất nặng nề.'},
+    {scene:'Thông báo trên màn hình máy tính tiền tự động trong siêu thị.',a:'请顾客将商品放在结算台上，系统将自动识别并计算出总和。',b:'你把东西放那儿就行，机器自己会算钱的。',better:'a',why:'Thông báo nơi công cộng cần trang trọng, rõ ràng: 请顾客, 将 (= 把), 结算台, 自动识别. Câu b là lời nói miệng thân mật.'},
+    {scene:'Khách hỏi nhân viên cửa hàng còn loại áo lông vũ này không.',a:'没了没了，卖完了，你去别家看看吧。',b:'不好意思，这种羽绒服暂时卖完了，您可以留个电话，到了以后我们马上通知您。',better:'b',why:'Nhân viên phục vụ nên lịch sự: 不好意思, 您, 暂时, 马上通知您. Câu a cộc lốc, dễ làm mất khách.'},
+    {scene:'Em viết bài giới thiệu một chiếc máy tính cho tạp chí của trường.',a:'这台电脑性能稳定，屏幕清楚，能满足学生学习和生活的各种需求。',b:'这电脑挺好用的，看着也清楚，干什么都行。',better:'a',why:'Bài đăng tạp chí nên dùng từ ngữ văn viết, chính xác: 性能稳定, 满足……需求. Câu b là khẩu ngữ, hợp khi nói chuyện với bạn.'},
+    {scene:'Em viết nhật ký.',a:'今天我登录学校的网站，我查了考试成绩，我发现自己考得不错。',b:'今天我登录学校的网站，查了考试成绩，发现自己考得不错。',better:'b',why:'Ba hành động đều của 我 → tỉnh lược chủ ngữ ở vế 2, 3 cho gọn. Câu a lặp 我 ba lần, đúng ngữ pháp nhưng không tự nhiên.'},
+    {scene:'Em nhắn tin rủ bạn thân cuối tuần đi mua sắm.',a:'本人周末打算去商场选购一件羽绒服，希望你能一同前往。',b:'周末有空吗？陪我去商场买件羽绒服吧。',better:'b',why:'Nhắn tin với bạn thân dùng khẩu ngữ (有空吗, 陪我, 吧). Câu a (本人, 选购, 一同前往) giống văn bản trang trọng, nhắn cho bạn nghe rất gượng.'}
   ]
 };
 

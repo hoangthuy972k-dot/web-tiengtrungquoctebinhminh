@@ -5499,1102 +5499,82 @@ var hvBridgeData = {
 };
 
 var matchData = [
- {
-  "left": "有私人藏书，也有",
-  "right": "官方藏书"
- },
- {
-  "left": "之后各种书院",
-  "right": "层出不穷"
- },
- {
-  "left": "把自己的书屋也",
-  "right": "命名为书院"
- },
- {
-  "left": "订有",
-  "right": "规章制度"
- },
- {
-  "left": "截止到清朝末年，书院制度",
-  "right": "终止"
- },
- {
-  "left": "萌芽于唐，",
-  "right": "完备于宋"
- },
- {
-  "left": "历史上的书院",
-  "right": "立足于人才培养"
- },
- {
-  "left": "把灵魂塑造看得和",
-  "right": "学问同等重要"
- },
- {
-  "left": "翻开各时代书院",
-  "right": "颁布的《学规》"
- },
- {
-  "left": "书院重视学问，更重视",
-  "right": "品德修养"
- },
- {
-  "left": "擅以虚伪的言辞",
-  "right": "掩饰过失"
- },
- {
-  "left": "一经发现，本书院",
-  "right": "定不容纳"
- },
- {
-  "left": "短短一段文字",
-  "right": "透露出这样的信息"
- },
- {
-  "left": "树立正气，唾弃",
-  "right": "腐败行为"
- },
- {
-  "left": "古代知识分子立志终生",
-  "right": "攀登的道德高峰"
- },
- {
-  "left": "读书没有窍门，",
-  "right": "没有捷径"
- },
- {
-  "left": "唯有发扬",
-  "right": "勤奋好学的精神"
- },
- {
-  "left": "书院本着",
-  "right": "贫富平等的原则"
- },
- {
-  "left": "敞开大门，",
-  "right": "招收平民子弟入学"
- },
- {
-  "left": "杜绝外来因素的",
-  "right": "干涉"
- },
- {
-  "left": "激发学生的",
-  "right": "主动性和创造性"
- },
- {
-  "left": "重视观点的",
-  "right": "多元化"
- },
- {
-  "left": "不同学派之间的",
-  "right": "争辩与较量"
- },
- {
-  "left": "学子们相互激励，",
-  "right": "取长补短"
- },
- {
-  "left": "学生衷心",
-  "right": "爱戴名师"
- },
- {
-  "left": "给学生做出了最好的",
-  "right": "示范"
- }
+  {left:'开展',right:'各种活动'},
+  {left:'树立',right:'好榜样'},
+  {left:'激发',right:'学习兴趣'},
+  {left:'杜绝',right:'浪费现象'},
+  {left:'招收',right:'新生'},
+  {left:'衷心',right:'祝贺'},
+  {left:'发扬',right:'传统'},
+  {left:'透露',right:'内部消息'},
+  {left:'崇高的',right:'品德'},
+  {left:'官方',right:'网站'}
 ];
 
 var fillData = [
- {
-  "pre": "比赛的时间和地点，以主办方",
-  "blank": "官方",
-  "post": "网站公布的为准。",
-  "hint": "(chính thức)",
-  "ans": "官方"
- },
- {
-  "pre": "随着网络的普及，新的网络用语",
-  "blank": "层出不穷",
-  "post": "，年纪大的人常常看不懂。",
-  "hint": "(liên tiếp xuất hiện)",
-  "ans": "层出不穷"
- },
- {
-  "pre": "为了纪念这位老科学家，学校把实验楼",
-  "blank": "命名",
-  "post": "为“求是楼”。",
-  "hint": "(đặt tên)",
-  "ans": "命名"
- },
- {
-  "pre": "每个新生入学时都要认真学习学校的",
-  "blank": "规章",
-  "post": "制度。",
-  "hint": "(quy chế)",
-  "ans": "规章"
- },
- {
-  "pre": "奖学金申请的",
-  "blank": "截止",
-  "post": "日期是下周五，别忘了交材料。",
-  "hint": "(hết hạn)",
-  "exp": "截止日期 = hạn chót (截止 = hết hạn, dừng ở một mốc). Khác 截至 (tính đến…) đi với mốc thời gian.",
-  "ans": "截止"
- },
- {
-  "pre": "因为突然下起了大暴雨，运动会不得不",
-  "blank": "终止",
-  "post": "。",
-  "hint": "(kết thúc, dừng)",
-  "exp": "终止 = chấm dứt, dừng hẳn một hoạt động đang diễn ra. 截止 chỉ dùng cho hạn chót (截止日期).",
-  "ans": "终止"
- },
- {
-  "pre": "这所新建的图书馆设施",
-  "blank": "完备",
-  "post": "，一次能容纳上千名读者。",
-  "hint": "(đầy đủ)",
-  "ans": "完备"
- },
- {
-  "pre": "刚毕业的时候，他在大城市连个",
-  "blank": "立足",
-  "post": "之地都没有。",
-  "hint": "(chỗ đứng)",
-  "ans": "立足"
- },
- {
-  "pre": "老师被称为人类",
-  "blank": "灵魂",
-  "post": "的工程师。",
-  "hint": "(tâm hồn)",
-  "ans": "灵魂"
- },
- {
-  "pre": "国家新",
-  "blank": "颁布",
-  "post": "的法律将从明年一月一日起实施。",
-  "hint": "(ban hành)",
-  "ans": "颁布"
- },
- {
-  "pre": "选班长的时候，我们不光看成绩，更看重",
-  "blank": "品德",
-  "post": "。",
-  "hint": "(đạo đức)",
-  "ans": "品德"
- },
- {
-  "pre": "他主动承认了自己的",
-  "blank": "过失",
-  "post": "，并想办法弥补。",
-  "hint": "(lỗi lầm)",
-  "ans": "过失"
- },
- {
-  "pre": "抄袭别人的论文还说是自己写的，真是太",
-  "blank": "无耻",
-  "post": "了！",
-  "hint": "(trơ tráo)",
-  "ans": "无耻"
- },
- {
-  "pre": "这个礼堂不大，最多只能",
-  "blank": "容纳",
-  "post": "三百人。",
-  "hint": "(chứa)",
-  "ans": "容纳"
- },
- {
-  "pre": "他在采访中向记者",
-  "blank": "透露",
-  "post": "，自己正在写一部新小说。",
-  "hint": "(tiết lộ)",
-  "ans": "透露"
- },
- {
-  "pre": "经过几年的",
-  "blank": "治理",
-  "post": "，这条河的水又变清了。",
-  "hint": "(cải tạo, xử lý)",
-  "ans": "治理"
- },
- {
-  "pre": "妈妈常说，大人要为孩子",
-  "blank": "树立",
-  "post": "好的榜样。",
-  "hint": "(dựng nên, nêu gương)",
-  "ans": "树立"
- },
- {
-  "pre": "这位老法官一身",
-  "blank": "正气",
-  "post": "，从来不收别人的礼物。",
-  "hint": "(chính khí)",
-  "ans": "正气"
- },
- {
-  "pre": "出卖朋友的人，迟早会被大家",
-  "blank": "唾弃",
-  "post": "的。",
-  "hint": "(khinh bỉ)",
-  "ans": "唾弃"
- },
- {
-  "pre": "他用",
-  "blank": "卑鄙",
-  "post": "的手段骗走了老人的积蓄。",
-  "hint": "(đê tiện)",
-  "ans": "卑鄙"
- },
- {
-  "pre": "交了几个坏朋友以后，他一天天",
-  "blank": "堕落",
-  "post": "下去。",
-  "hint": "(sa ngã)",
-  "ans": "堕落"
- },
- {
-  "pre": "天气太热，食物很容易",
-  "blank": "腐败",
-  "post": "变质，要放进冰箱。",
-  "hint": "(thối rữa)",
-  "ans": "腐败"
- },
- {
-  "pre": "当医生、救死扶伤，是她从小就有的",
-  "blank": "崇高",
-  "post": "理想。",
-  "hint": "(cao cả)",
-  "ans": "崇高"
- },
- {
-  "pre": "多读好书，可以提高一个人的思想",
-  "blank": "境界",
-  "post": "。",
-  "hint": "(tầm, cảnh giới)",
-  "ans": "境界"
- },
- {
-  "pre": "登山队员们用了整整三天才",
-  "blank": "攀登",
-  "post": "到山顶。",
-  "hint": "(leo lên)",
-  "ans": "攀登"
- },
- {
-  "pre": "学外语有什么",
-  "blank": "窍门",
-  "post": "吗？——没有，只能多听多说多练。",
-  "hint": "(mẹo, bí quyết)",
-  "ans": "窍门"
- },
- {
-  "pre": "我们要继承和",
-  "blank": "发扬",
-  "post": "尊老爱幼的传统美德。",
-  "hint": "(phát huy)",
-  "ans": "发扬"
- },
- {
-  "pre": "妈妈希望我能",
-  "blank": "敞开",
-  "post": "心扉，有什么事都跟她说。",
-  "hint": "(mở rộng, mở lòng)",
-  "ans": "敞开"
- },
- {
-  "pre": "这所大学今年计划",
-  "blank": "招收",
-  "post": "三千名新生。",
-  "hint": "(tuyển nhận)",
-  "ans": "招收"
- },
- {
-  "pre": "我爸妈很",
-  "blank": "开明",
-  "post": "，让我自己选择喜欢的专业。",
-  "hint": "(cởi mở)",
-  "ans": "开明"
- },
- {
-  "pre": "学生会",
-  "blank": "倡议",
-  "post": "全校同学节约用水、用电。",
-  "hint": "(kêu gọi, đề xuất)",
-  "ans": "倡议"
- },
- {
-  "pre": "学校食堂采取了很多措施，坚决",
-  "blank": "杜绝",
-  "post": "浪费粮食的现象。",
-  "hint": "(ngăn chặn triệt để)",
-  "ans": "杜绝"
- },
- {
-  "pre": "这是我自己的私事，请你不要",
-  "blank": "干涉",
-  "post": "。",
-  "hint": "(can thiệp)",
-  "ans": "干涉"
- },
- {
-  "pre": "父母工作太忙，几乎不",
-  "blank": "过问",
-  "post": "他的学习。",
-  "hint": "(hỏi đến, để ý)",
-  "ans": "过问"
- },
- {
-  "pre": "这部纪录片",
-  "blank": "激发",
-  "post": "了我对中国历史的兴趣。",
-  "hint": "(khơi dậy)",
-  "ans": "激发"
- },
- {
-  "pre": "现在年轻人的职业选择越来越",
-  "blank": "多元化",
-  "post": "了。",
-  "hint": "(đa dạng)",
-  "ans": "多元化"
- },
- {
-  "pre": "学校每年都会",
-  "blank": "开展",
-  "post": "“读书节”活动，鼓励大家多读书。",
-  "hint": "(triển khai, tổ chức)",
-  "ans": "开展"
- },
- {
-  "pre": "讨论时，两组同学的观点完全",
-  "blank": "对立",
-  "post": "，谁也说服不了谁。",
-  "hint": "(đối lập)",
-  "ans": "对立"
- },
- {
-  "pre": "我们在做法上有些",
-  "blank": "分歧",
-  "post": "，但目标是一致的。",
-  "hint": "(bất đồng)",
-  "ans": "分歧"
- },
- {
-  "pre": "爷爷的思想有点儿",
-  "blank": "保守",
-  "post": "，不太相信网上购物。",
-  "hint": "(bảo thủ)",
-  "ans": "保守"
- },
- {
-  "pre": "决赛是两支最强的球队之间的",
-  "blank": "较量",
-  "post": "。",
-  "hint": "(cuộc đọ sức)",
-  "ans": "较量"
- },
- {
-  "pre": "他经常在学习",
-  "blank": "论坛",
-  "post": "上回答别人提出的问题。",
-  "hint": "(diễn đàn)",
-  "ans": "论坛"
- },
- {
-  "pre": "复习考试的那段时间，同学们一直相互",
-  "blank": "激励",
-  "post": "。",
-  "hint": "(khích lệ)",
-  "ans": "激励"
- },
- {
-  "pre": "到别人家做客，要懂得基本的",
-  "blank": "礼节",
-  "post": "。",
-  "hint": "(lễ tiết)",
-  "ans": "礼节"
- },
- {
-  "pre": "在教师节这天，我",
-  "blank": "衷心",
-  "post": "感谢老师们的辛勤教导。",
-  "hint": "(chân thành)",
-  "ans": "衷心"
- },
- {
-  "pre": "王老师教书三十年，深受学生的",
-  "blank": "爱戴",
-  "post": "。",
-  "hint": "(kính yêu)",
-  "ans": "爱戴"
- },
- {
-  "pre": "体育老师先",
-  "blank": "示范",
-  "post": "了一遍，然后让我们跟着做。",
-  "hint": "(làm mẫu)",
-  "ans": "示范"
- },
- {
-  "pre": "我们怀着",
-  "blank": "崇敬",
-  "post": "的心情参观了英雄纪念馆。",
-  "hint": "(tôn kính)",
-  "ans": "崇敬"
- },
- {
-  "pre": "我的",
-  "blank": "偶像",
-  "post": "不是明星，而是我的奶奶。",
-  "hint": "(thần tượng)",
-  "ans": "偶像"
- },
- {
-  "pre": "在",
-  "blank": "封建",
-  "post": "社会，很多女孩子没有读书的机会。",
-  "hint": "(phong kiến)",
-  "ans": "封建"
- }
+  {pre:'申请表周五下午五点',blank:'截止',post:'，务必按时交上来。',hint:'(hết hạn)',ans:'截止',exp:'截止 = đến hạn thì dừng, chỉ đi với mốc thời gian (五点截止, 截止日期). 终止 là chấm dứt hẳn một việc, không dùng cho hạn nộp. Ôn 务必 (bài 12).'},
+  {pre:'这个研究项目因为一直没有经费，最后只好',blank:'终止',post:'。',hint:'(chấm dứt hẳn)',ans:'终止',exp:'终止 = chấm dứt hẳn, không làm tiếp nữa (项目 / 合作 / 比赛 + 终止). 截止 chỉ dùng cho thời hạn, không nói ×项目截止.'},
+  {pre:'新图书馆盖好以后，被',blank:'命名',post:'为“博学馆”。',hint:'(đặt tên)',ans:'命名',exp:'(被 / 把……) 命名为 + tên = đặt tên chính thức cho công trình, phát hiện…; đặt tên cho con thì dùng 起名字, không dùng 命名.'},
+  {pre:'刚来的时候，他没有朋友也没有钱，几乎难以在这个城市',blank:'立足',post:'。',hint:'(đứng vững, có chỗ đứng)',ans:'立足',exp:'在 + nơi chốn + 立足 = đứng vững, trụ lại được ở đó; 难以立足 là cụm hay gặp. Ôn 难以 (bài 14).'},
+  {pre:'这次事故完全是由于工作人员的',blank:'过失',post:'造成的，并非机器有问题。',hint:'(lỗi do sơ suất)',ans:'过失',exp:'过失 = lỗi do sơ suất, không cố ý (由于……的过失造成的). Ôn 并非 (bài 7) = hoàn toàn không phải.'},
+  {pre:'经过十年的',blank:'治理',post:'，这片沙漠上终于长出了一片片树林。',hint:'(cải tạo, xử lý)',ans:'治理',exp:'治理 + sông / sa mạc / ô nhiễm = cải tạo, xử lý cho tốt lên. 管理 dùng cho con người, công việc; không nói ×管理沙漠.'},
+  {pre:'他本来是个好学生，不料交了坏朋友以后，一天天',blank:'堕落',post:'下去。',hint:'(sa ngã)',ans:'堕落',exp:'堕落 = sa ngã, ngày càng hư hỏng (về đạo đức); hay đi với 下去. Ôn 不料 (bài 4) = không ngờ.'},
+  {pre:'帮助别人却一点儿也不图回报，这是一种很高的人生',blank:'境界',post:'。',hint:'(cảnh giới, tầm)',ans:'境界',exp:'境界 = tầm mức tinh thần, tư tưởng (人生境界, 思想境界). Đừng nhầm với 环境 (môi trường) hay 范围 (phạm vi).'},
+  {pre:'城市图书馆向所有人',blank:'敞开',post:'大门，不管是谁都可以进去看书。',hint:'(mở rộng)',ans:'敞开',exp:'向……敞开大门 = mở rộng cửa đón … (nghĩa bóng: không hạn chế ai). 打开 chỉ là mở ra (một lần), không mang nghĩa đón nhận như 敞开.'},
+  {pre:'我奶奶虽然七十多岁了，思想却',blank:'开明',post:'着呢，什么新东西都愿意试试。',hint:'(cởi mở, tiến bộ)',ans:'开明',exp:'思想开明 = tư tưởng cởi mở, tiến bộ, trái nghĩa với 保守. Ôn tính từ + 着呢 (bài 3) = … lắm đấy.'},
+  {pre:'公司里的大事小事，老板都要亲自',blank:'过问',post:'，未免太累了。',hint:'(hỏi đến, để ý tới)',ans:'过问',exp:'亲自过问 = đích thân hỏi đến, quan tâm (nghĩa trung tính). 干涉 mang nghĩa xen vào việc không nên, không đi với 亲自 kiểu này. Ôn 未免 (bài 4).'},
+  {pre:'在',blank:'封建',post:'社会，婚姻大事往往由父母做主，年轻人只能听父母的。',hint:'(phong kiến)',ans:'封建',exp:'封建社会 = xã hội phong kiến; 封建 cũng dùng như tính từ chê tư tưởng cổ hủ (思想很封建).'},
+  {pre:'经过二十年的建设，这座城市的地铁网已经相当',blank:'完备',post:'。',hint:'(đầy đủ, hoàn chỉnh)',ans:'完备',exp:'完备 = đầy đủ, không thiếu phần nào (设施 / 制度 / 网 + 完备). 完美 = hoàn hảo, nói về chất lượng, không hợp với 地铁网 ở đây.'},
+  {pre:'这个消息',blank:'一经',post:'公布，网上顿时热闹起来。',hint:'(một khi đã)',ans:'一经',exp:'一经 + động từ hai âm tiết (公布 / 发现 / 批准) ở vế trước, vế sau là kết quả xảy ra ngay. Ôn 顿时 (bài 2).'},
+  {pre:'我们',blank:'本着',post:'自愿的原则组织这次活动，不想参加的同学不妨在家休息。',hint:'(dựa trên, theo tinh thần)',ans:'本着',exp:'本着 + ……的原则 / 精神 / 态度 = dựa trên, theo đúng (văn viết, trang trọng). Ôn 不妨 (bài 12).'}
 ];
 
 var sortData = [
- {
-  "words": [
-   "语言",
-   "一经",
-   "产生",
-   "，",
-   "就",
-   "对人类的心理发展",
-   "起了",
-   "巨大的推动作用",
-   "。"
-  ],
-  "ans": "语言一经产生，就对人类的心理发展起了巨大的推动作用。",
-  "audio": "语言一经产生，就对人类的心理发展起了巨大的推动作用。"
- },
- {
-  "words": [
-   "这件事",
-   "一经",
-   "决定",
-   "，",
-   "大家",
-   "就",
-   "必须",
-   "共同遵守",
-   "。"
-  ],
-  "ans": "这件事一经决定，大家就必须共同遵守。",
-  "audio": "这件事一经决定，大家就必须共同遵守。"
- },
- {
-  "words": [
-   "违反纪律的行为",
-   "一经",
-   "发现",
-   "，",
-   "学校",
-   "会",
-   "毫不留情地",
-   "处理",
-   "。"
-  ],
-  "ans": "违反纪律的行为一经发现，学校会毫不留情地处理。",
-  "audio": "违反纪律的行为一经发现，学校会毫不留情地处理。"
- },
- {
-  "words": [
-   "他的新专辑",
-   "一经",
-   "推出",
-   "，",
-   "就",
-   "受到了",
-   "年轻人的欢迎",
-   "。"
-  ],
-  "ans": "他的新专辑一经推出，就受到了年轻人的欢迎。",
-  "audio": "他的新专辑一经推出，就受到了年轻人的欢迎。"
- },
- {
-  "words": [
-   "书院",
-   "本着",
-   "贫富平等的原则",
-   "，",
-   "招收",
-   "平民子弟",
-   "入学",
-   "。"
-  ],
-  "ans": "书院本着贫富平等的原则，招收平民子弟入学。",
-  "audio": "书院本着贫富平等的原则，招收平民子弟入学。"
- },
- {
-  "words": [
-   "我们",
-   "本着",
-   "互惠互利的原则",
-   "进行",
-   "协商",
-   "。"
-  ],
-  "ans": "我们本着互惠互利的原则进行协商。",
-  "audio": "我们本着互惠互利的原则进行协商。"
- },
- {
-  "words": [
-   "两国",
-   "本着",
-   "平等协商的精神",
-   "，",
-   "解决了",
-   "拖延多年的",
-   "问题",
-   "。"
-  ],
-  "ans": "两国本着平等协商的精神，解决了拖延多年的问题。",
-  "audio": "两国本着平等协商的精神，解决了拖延多年的问题。"
- },
- {
-  "words": [
-   "该公司",
-   "本着",
-   "“一切为用户服务”的宗旨",
-   "，",
-   "积极征求",
-   "用户意见",
-   "。"
-  ],
-  "ans": "该公司本着“一切为用户服务”的宗旨，积极征求用户意见。",
-  "audio": "该公司本着“一切为用户服务”的宗旨，积极征求用户意见。"
- },
- {
-  "words": [
-   "古代书院",
-   "认为",
-   "读书",
-   "没有窍门",
-   "，",
-   "没有捷径",
-   "。"
-  ],
-  "ans": "古代书院认为读书没有窍门，没有捷径。",
-  "audio": "古代书院认为读书没有窍门，没有捷径。"
- },
- {
-  "words": [
-   "唯有",
-   "发扬",
-   "勤奋好学的精神",
-   "，",
-   "才能",
-   "做好学问",
-   "。"
-  ],
-  "ans": "唯有发扬勤奋好学的精神，才能做好学问。",
-  "audio": "唯有发扬勤奋好学的精神，才能做好学问。"
- },
- {
-  "words": [
-   "学子们",
-   "相互激励",
-   "，",
-   "取长补短",
-   "，",
-   "共同进步",
-   "。"
-  ],
-  "ans": "学子们相互激励，取长补短，共同进步。",
-  "audio": "学子们相互激励，取长补短，共同进步。"
- },
- {
-  "words": [
-   "观点对立",
-   "、",
-   "有分歧",
-   "不要紧",
-   "，",
-   "书院",
-   "主张",
-   "争辩与较量",
-   "。"
-  ],
-  "ans": "观点对立、有分歧不要紧，书院主张争辩与较量。",
-  "audio": "观点对立、有分歧不要紧，书院主张争辩与较量。"
- },
- {
-  "words": [
-   "学生",
-   "衷心",
-   "爱戴",
-   "学识广博",
-   "、",
-   "品德过人的",
-   "名师",
-   "。"
-  ],
-  "ans": "学生衷心爱戴学识广博、品德过人的名师。",
-  "audio": "学生衷心爱戴学识广博、品德过人的名师。"
- }
+  {words:['你的','申请','一经','批准','，','我们','就','通知','你','。'],ans:'你的申请一经批准，我们就通知你。',audio:'你的申请一经批准，我们就通知你。'},
+  {words:['比赛的','结果','一经','确定','，','就','不能','再','改','了','。'],ans:'比赛的结果一经确定，就不能再改了。',audio:'比赛的结果一经确定，就不能再改了。'},
+  {words:['我们','本着','节约的','原则','办','了','这次','晚会','。'],ans:'我们本着节约的原则办了这次晚会。',audio:'我们本着节约的原则办了这次晚会。'},
+  {words:['两个','部门','本着','友好合作的','精神','解决','了','分歧','。'],ans:'两个部门本着友好合作的精神解决了分歧。',audio:'两个部门本着友好合作的精神解决了分歧。'},
+  {words:['人们','把','这座','新桥','命名为','友谊桥','。'],ans:'人们把这座新桥命名为友谊桥。',audio:'人们把这座新桥命名为友谊桥。'},
+  {words:['这间','教室','能','容纳','五十','名','学生','。'],ans:'这间教室能容纳五十名学生。',audio:'这间教室能容纳五十名学生。'},
+  {words:['学生们','衷心','爱戴','这位','老教授','。'],ans:'学生们衷心爱戴这位老教授。',audio:'学生们衷心爱戴这位老教授。'},
+  {words:['这所','学校','只','招收','女','学生','。'],ans:'这所学校只招收女学生。',audio:'这所学校只招收女学生。'}
 ];
 
 var errorFixMode = "wordchoice";
 
 var errorFixData = [
- {
-  "wrong": "报名的____日期是10月15号，过了就不能报了。",
-  "opts": [
-   "截止",
-   "终止",
-   "停止",
-   "禁止"
-  ],
-  "ans": 0,
-  "exp": "截止日期 = hạn chót: 截止 chỉ đi với từ chỉ thời gian (词语辨析). 终止 nhấn kết thúc sự việc; 停止 / 禁止 không đi với 日期."
- },
- {
-  "wrong": "由于球员受了重伤，裁判马上____了比赛。",
-  "opts": [
-   "截止",
-   "终止",
-   "杜绝",
-   "颁布"
-  ],
-  "ans": 1,
-  "exp": "终止比赛 = dừng trận đấu; sách ghi rõ ×截止比赛. 杜绝 dùng cho điều xấu (杜绝浪费)."
- },
- {
-  "wrong": "我们要采取措施，坚决____浪费粮食的现象。",
-  "opts": [
-   "过问",
-   "干涉",
-   "杜绝",
-   "唾弃"
-  ],
-  "ans": 2,
-  "exp": "杜绝 + hiện tượng xấu = ngăn chặn triệt để (练习2 ⑤: 杜绝腐败行为的发生). 唾弃 là khinh bỉ (thái độ), không đi với 现象."
- },
- {
-  "wrong": "老师这句话一直____着我努力学习。",
-  "opts": [
-   "激发",
-   "开发",
-   "激动",
-   "激励"
-  ],
-  "ans": 3,
-  "exp": "激励 + người + V = khích lệ ai làm gì; 激发 cần tân ngữ là 兴趣 / 热情…, không mang người + V."
- },
- {
-  "wrong": "这部电影____了我学习中文的兴趣。",
-  "opts": [
-   "激发",
-   "激励",
-   "发扬",
-   "树立"
-  ],
-  "ans": 0,
-  "exp": "激发 + 兴趣 = khơi dậy hứng thú. 激励 thường có tân ngữ chỉ người; 发扬 dùng với 精神 / 传统."
- },
- {
-  "wrong": "____的各位老师、同学们：大家好！",
-  "opts": [
-   "崇敬",
-   "尊敬",
-   "爱戴",
-   "崇高"
-  ],
-  "ans": 1,
-  "exp": "Lời xưng hô mở đầu bài phát biểu → 尊敬的……; ×崇敬的各位老师 (崇敬 dùng cho anh hùng, vĩ nhân)."
- },
- {
-  "wrong": "我们要继承和____老一辈勤俭节约的优良传统。",
-  "opts": [
-   "发扬",
-   "发挥",
-   "开展",
-   "示范"
-  ],
-  "ans": 0,
-  "exp": "发扬 + 传统 / 精神 = phát huy truyền thống. 发挥 đi với 作用 / 水平 / 特长."
- },
- {
-  "wrong": "学校每年都会____各种读书活动。",
-  "opts": [
-   "展开",
-   "开明",
-   "开展",
-   "敞开"
-  ],
-  "ans": 2,
-  "exp": "开展 + 活动 = tổ chức, triển khai hoạt động (có tính phong trào). 展开 hay đi với 讨论 / 调查 / 翅膀."
- },
- {
-  "wrong": "父母过多____孩子的自由，会使亲子关系越来越紧张。",
-  "opts": [
-   "干涉",
-   "过问",
-   "容纳",
-   "倡议"
-  ],
-  "ans": 0,
-  "exp": "干涉 + 自由 = can thiệp vào tự do (练习3). 过问 chỉ là hỏi đến, mức nhẹ, không đi với 自由."
- },
- {
-  "wrong": "这所学校今年计划____一千名新生。",
-  "opts": [
-   "招待",
-   "招呼",
-   "收获",
-   "招收"
-  ],
-  "ans": 3,
-  "exp": "招收 + 学生 / 新生 = tuyển nhận. 招待 = tiếp đãi, 招呼 = chào hỏi."
- },
- {
-  "wrong": "大家都要____公司的规章制度。",
-  "opts": [
-   "保守",
-   "守信",
-   "维护",
-   "遵守"
-  ],
-  "ans": 3,
-  "exp": "遵守规章制度 = tuân thủ nội quy. 保守 đi với 秘密 / 思想; 守信 không mang tân ngữ."
- },
- {
-  "wrong": "这个体育馆能____两万名观众。",
-  "opts": [
-   "采纳",
-   "容纳",
-   "容忍",
-   "收容"
-  ],
-  "ans": 1,
-  "exp": "容纳 + số lượng = chứa được bao nhiêu. 采纳 = tiếp thu (ý kiến), 容忍 = dung thứ, 收容 = thu nhận người lang thang, nạn nhân."
- },
- {
-  "wrong": "随着科技的发展，各种新产品____。",
-  "opts": [
-   "自始至终",
-   "取长补短",
-   "层出不穷",
-   "一步一个脚印"
-  ],
-  "ans": 2,
-  "exp": "层出不穷 = liên tiếp xuất hiện, làm vị ngữ cho chủ ngữ số nhiều (新产品)."
- },
- {
-  "wrong": "多读好书可以提高一个人的思想____。",
-  "opts": [
-   "界限",
-   "环境",
-   "范围",
-   "境界"
-  ],
-  "ans": 3,
-  "exp": "思想境界 = tầm tư tưởng (练习3 ①). 界限 = ranh giới, giới hạn."
- },
- {
-  "wrong": "当父母与孩子的意见出现____时，应该坐下来好好谈谈。",
-  "opts": [
-   "对立",
-   "分别",
-   "分歧",
-   "区别"
-  ],
-  "ans": 2,
-  "exp": "出现分歧 = nảy sinh bất đồng (danh từ). 对立 là động từ, không đi sau 出现 kiểu này."
- },
- {
-  "wrong": "爷爷思想很____，不同意我去国外留学。",
-  "opts": [
-   "开明",
-   "崇高",
-   "保守",
-   "完备"
-  ],
-  "ans": 2,
-  "exp": "Không cho đi du học → tư tưởng bảo thủ (保守). 开明 là nghĩa ngược lại."
- },
- {
-  "wrong": "这件事校长已经亲自____了，很快就会解决。",
-  "opts": [
-   "干涉",
-   "过问",
-   "透露",
-   "较量"
-  ],
-  "ans": 1,
-  "exp": "亲自过问 = đích thân hỏi đến; 干涉 mang nghĩa xấu (xen vào không nên)."
- },
- {
-  "wrong": "他悄悄向我____，明天可能有小测验。",
-  "opts": [
-   "透露",
-   "暴露",
-   "露面",
-   "表露"
-  ],
-  "ans": 0,
-  "exp": "向 + người + 透露 + tin tức = tiết lộ với ai. 暴露 = phơi bày (điều bị che giấu, nghĩa xấu); 表露 = bộc lộ tình cảm."
- },
- {
-  "wrong": "体育老师先给我们____了一遍标准动作。",
-  "opts": [
-   "模范",
-   "示范",
-   "规范",
-   "典范"
-  ],
-  "ans": 1,
-  "exp": "示范 + 动作 = làm mẫu động tác (động từ). 模范 / 典范 là danh từ \"tấm gương\"; 规范 = quy phạm."
- },
- {
-  "wrong": "他是我们心中的____，我们都想成为像他那样的人。",
-  "opts": [
-   "偶然",
-   "偶尔",
-   "人物",
-   "偶像"
-  ],
-  "ans": 3,
-  "exp": "心中的偶像 = thần tượng trong lòng. 偶然 / 偶尔 = tình cờ / thỉnh thoảng (cùng chữ 偶 nhưng khác nghĩa)."
- }
+  {wrong:'这次比赛的报名到下周三____，想参加的同学抓紧时间。',opts:['截止','终止','停止','禁止'],ans:0,exp:'Nói về HẠN đăng ký (mốc thời gian) → 截止. 终止 = chấm dứt hẳn một việc (比赛 / 合作), không dùng cho hạn chót; 停止 / 禁止 không đi với 报名到…….'},
+  {wrong:'双方合作了三年，由于分歧越来越大，最后决定____合作。',opts:['终止','截止','到期','完备'],ans:0,exp:'Chấm dứt hẳn sự hợp tác → 终止合作. 截止 chỉ đi với thời gian; 到期 = hết hạn (không mang tân ngữ); 完备 = đầy đủ.'},
+  {wrong:'这本书____出版，就成了全国最受欢迎的小说。',opts:['一经','已经','曾经','经历'],ans:0,exp:'一经 + V hai âm tiết …, 就 + kết quả ngay sau đó. 已经 = đã, không tạo cặp với 就 như vậy (lỗi dịch "đã"); 曾经 = từng; 经历 = trải qua.'},
+  {wrong:'你们____到机场，就给我发个短信。',opts:['一','一经','已经','经过'],ans:0,exp:'Việc thường ngày, động từ một âm tiết (到) → 一……就……. 一经 là văn viết, chỉ đi với V hai âm tiết như 发现 / 批准 / 公布.'},
+  {wrong:'请____说明书上的方法使用这台机器。',opts:['按照','本着','对于','关于'],ans:0,exp:'Làm theo một chỉ dẫn cụ thể → 按照. 本着 chỉ đi với điều trừu tượng (……的原则 / 精神 / 态度), không nói ×本着说明书.'},
+  {wrong:'小李____认真负责的态度，把每个数据都检查了三遍。',opts:['本着','通过','对于','由于'],ans:0,exp:'本着 + ……的态度 = với thái độ … (dựa trên). 通过 = thông qua (cách thức); 对于 = đối với; 由于 = do (nguyên nhân) — không đi với 态度 theo nghĩa này.'},
+  {wrong:'谁也没有权利____别人的婚姻自由。',opts:['干涉','过问','干扰','打扰'],ans:0,exp:'干涉 + 自由 / 选择 = can thiệp vào. 过问 chỉ là hỏi đến (nhẹ, trung tính); 干扰 = làm nhiễu (工作 / 学习); 打扰 = quấy rầy ai.'},
+  {wrong:'老师那句鼓励的话一直____着我，让我坚持学了下去。',opts:['激励','激发','激动','刺激'],ans:0,exp:'激励 + người = khích lệ ai (tiếp tục cố gắng). 激发 đi với 兴趣 / 热情 / 主动性, không mang tân ngữ chỉ người như vậy; 激动 = xúc động; 刺激 = kích thích (giác quan).'},
+  {wrong:'关于新产品的价格，经理现在还不愿意____。',opts:['透露','暴露','表达','发表'],ans:0,exp:'Chủ động hé lộ thông tin → 透露. 暴露 = bị lộ ra (điều xấu, thường không chủ ý); 表达 = bày tỏ tình cảm, ý nghĩ; 发表 = đăng, công bố bài viết, ý kiến.'},
+  {wrong:'____的王校长，感谢您百忙之中来参加我们的毕业晚会。',opts:['尊敬','崇敬','爱戴','崇高'],ans:0,exp:'Lời xưng hô lịch sự mở đầu → 尊敬的 + chức danh. 崇敬 dùng cho anh hùng, vĩ nhân (心情崇敬); 爱戴 là động từ (受到爱戴); 崇高 tả lý tưởng, phẩm chất.'},
+  {wrong:'为了得到这个职位，他竟然在背后说同事的坏话，手段真____。',opts:['卑鄙','堕落','腐败','崇高'],ans:0,exp:'手段卑鄙 = thủ đoạn đê tiện. 堕落 tả người sa ngã; 腐败 dùng cho quan chức tham nhũng hoặc đồ ăn thối rữa; 崇高 nghĩa ngược lại.'},
+  {wrong:'为了钱出卖国家秘密的人，必然会被人们____。',opts:['唾弃','放弃','爱戴','崇敬'],ans:0,exp:'被人们唾弃 = bị mọi người khinh bỉ, ruồng bỏ. 放弃 = từ bỏ (việc, cơ hội), không dùng cho thái độ khinh bỉ; 爱戴 / 崇敬 nghĩa ngược lại.'},
+  {wrong:'这些鱼放在外面一整天，已经____了，不能吃了。',opts:['腐败','堕落','失败','破坏'],ans:0,exp:'腐败 ngoài nghĩa "thối nát" còn là thối rữa (đồ ăn). 堕落 chỉ người sa ngã; 失败 = thất bại; 破坏 = phá hoại.'},
+  {wrong:'近几年，各种骗人的新手段____，大家一定要小心。',opts:['层出不穷','自始至终','取长补短','无关紧要'],ans:0,exp:'层出不穷 = liên tiếp xuất hiện, làm vị ngữ cho chủ ngữ số nhiều (各种新手段). 自始至终 = từ đầu đến cuối; 取长补短 = học hỏi ưu điểm của nhau; 无关紧要 = không quan trọng.'},
+  {wrong:'他是我们球队的____人物，没有他，我们很难赢。',opts:['灵魂','灵活','精神','心灵'],ans:0,exp:'灵魂人物 = nhân vật linh hồn, cốt lõi của tập thể. 灵活 = linh hoạt; 精神 / 心灵 không ghép với 人物 theo nghĩa này.'}
 ];
 
 var translateData = [
- {
-  "vi": "Quy chế này một khi đã ban hành thì toàn thể thầy trò không ai được ngoại lệ.",
-  "zh": "这条规章一经颁布，全校师生谁也不能例外。",
-  "py": "Zhè tiáo guīzhāng yìjīng bānbù, quán xiào shīshēng shéi yě bù néng lìwài.",
-  "goiY": [
-   "一经",
-   "规章",
-   "颁布",
-   "例外"
-  ],
-  "giai": "一经 + V (đứng ở vế trước) = một khi đã …, thì vế sau có kết quả tương ứng (Chú thích 1). \"Ban hành\" quy chế, luật lệ dùng 颁布, không dùng 公布 (公布 = công bố thông tin, kết quả)."
- },
- {
-  "vi": "Tuy quan điểm của hai chúng tôi đối lập, có không ít bất đồng, nhưng điều đó chẳng ảnh hưởng chút nào đến tình bạn.",
-  "zh": "虽然我们俩的观点对立，有不少分歧，但是这丝毫不影响我们的友谊。",
-  "py": "Suīrán wǒmen liǎ de guāndiǎn duìlì, yǒu bù shǎo fēnqí, dànshì zhè sīháo bù yǐngxiǎng wǒmen de yǒuyì.",
-  "goiY": [
-   "虽然……但是……",
-   "对立",
-   "分歧"
-  ],
-  "giai": "虽然……但是…… nêu sự thật rồi chuyển ý. \"Bất đồng\" dịch 分歧 (danh từ: 有分歧), đừng dịch word-by-word là 不同意."
- },
- {
-  "vi": "Chỉ cần phát huy tinh thần chăm chỉ tìm tòi, em nhất định sẽ tìm ra được mẹo học tốt môn Toán.",
-  "zh": "只要发扬刻苦钻研的精神，你就一定能找到学好数学的窍门。",
-  "py": "Zhǐyào fāyáng kèkǔ zuānyán de jīngshén, nǐ jiù yídìng néng zhǎodào xuéhǎo shùxué de qiàomén.",
-  "goiY": [
-   "只要……就……",
-   "发扬",
-   "窍门"
-  ],
-  "giai": "只要 (điều kiện đủ) …… 就 ……; 发扬 + 精神 (phát huy tinh thần — không dùng 发挥 với 精神). 窍门 = mẹo, bí quyết."
- },
- {
-  "vi": "Nhóm chúng tôi dựa trên nguyên tắc giúp đỡ lẫn nhau, mỗi tuần tổ chức một buổi giao lưu học tập, để mọi người khích lệ lẫn nhau.",
-  "zh": "我们小组本着互相帮助的原则，每周开展一次学习交流，以便大家相互激励。",
-  "py": "Wǒmen xiǎozǔ běnzhe hùxiāng bāngzhù de yuánzé, měi zhōu kāizhǎn yí cì xuéxí jiāoliú, yǐbiàn dàjiā xiānghù jīlì.",
-  "goiY": [
-   "本着……的原则",
-   "开展",
-   "以便",
-   "激励"
-  ],
-  "giai": "本着 + 原则 / 精神 / 宗旨 (Chú thích 2) = dựa trên, tuân theo; 以便 nối vế chỉ mục đích (ôn bài 16). \"Tổ chức hoạt động\" là 开展, không phải 组织 + 交流 kiểu dịch từng chữ."
- },
- {
-  "vi": "Thay vì can thiệp quá nhiều vào lựa chọn của con, chi bằng cha mẹ có thái độ cởi mở, để con tự quyết định.",
-  "zh": "与其过多干涉孩子的选择，不如采取开明的态度，让他自己做决定。",
-  "py": "Yǔqí guòduō gānshè háizi de xuǎnzé, bùrú cǎiqǔ kāimíng de tàidu, ràng tā zìjǐ zuò juédìng.",
-  "goiY": [
-   "与其……不如……",
-   "干涉",
-   "开明"
-  ],
-  "giai": "与其 A 不如 B = thay vì A, chi bằng B (chọn B). \"Có thái độ\" = 采取……的态度 (练习3 ②), không nói ×有开明的态度."
- },
- {
-  "vi": "Việc thầy Vương làm mẫu không chỉ khơi dậy hứng thú học thư pháp của tôi mà còn giúp tôi có được niềm tin để học tốt nó.",
-  "zh": "王老师的示范不仅激发了我学书法的兴趣，还让我树立了学好它的信心。",
-  "py": "Wáng lǎoshī de shìfàn bùjǐn jīfāle wǒ xué shūfǎ de xìngqù, hái ràng wǒ shùlìle xuéhǎo tā de xìnxīn.",
-  "goiY": [
-   "不仅……还……",
-   "激发",
-   "树立"
-  ],
-  "giai": "不仅……还…… quan hệ tăng tiến. 激发 + 兴趣 (khơi dậy hứng thú), 树立 + 信心 (xây dựng niềm tin) — hai cụm cố định, đừng dùng 建立信心."
- },
- {
-  "vi": "Cho dù có bất đồng ý kiến với bố mẹ, cũng nên mở lòng nói chuyện tử tế, để tránh mâu thuẫn ngày càng sâu thêm.",
-  "zh": "即使和父母意见有分歧，也要敞开心扉好好沟通，以免矛盾日益加深。",
-  "py": "Jíshǐ hé fùmǔ yìjiàn yǒu fēnqí, yě yào chǎngkāi xīnfēi hǎohāo gōutōng, yǐmiǎn máodùn rìyì jiāshēn.",
-  "goiY": [
-   "即使……也……",
-   "敞开心扉",
-   "以免"
-  ],
-  "giai": "即使……也…… (giả thiết nhượng bộ) + 以免 (để tránh — ôn bài 21) đứng đầu vế cuối. \"Ngày càng\" văn viết = 日益 (ôn bài 7), khẩu ngữ = 越来越."
- },
- {
-  "vi": "Hành vi gian lận thi cử một khi bị phát hiện thì bài thi bị hủy toàn bộ; cách làm trơ tráo ấy nhất định phải chặn đứng.",
-  "zh": "考试作弊的行为一经发现，成绩一律作废，这种无耻的做法必须杜绝。",
-  "py": "Kǎoshì zuòbì de xíngwéi yìjīng fāxiàn, chéngjì yílǜ zuòfèi, zhè zhǒng wúchǐ de zuòfǎ bìxū dùjué.",
-  "goiY": [
-   "一经",
-   "无耻",
-   "杜绝"
-  ],
-  "giai": "一经发现 = một khi bị phát hiện (câu mẫu của sách: 一经发现，本书院定不容纳). 杜绝 = chặn đứng triệt để — mạnh hơn 避免 / 防止."
- },
- {
-  "vi": "Cô Vương sở dĩ được học sinh hết mực kính yêu là vì cô đức hạnh hơn người, lúc nào cũng cố ý dành thời gian kèm những bạn học yếu.",
-  "zh": "王老师之所以深受学生爱戴，是因为她品德过人，总是特意抽时间辅导成绩差的同学。",
-  "py": "Wáng lǎoshī zhīsuǒyǐ shēn shòu xuésheng àidài, shì yīnwèi tā pǐndé guòrén, zǒngshì tèyì chōu shíjiān fǔdǎo chéngjì chà de tóngxué.",
-  "goiY": [
-   "之所以……是因为……",
-   "爱戴",
-   "品德",
-   "特意"
-  ],
-  "giai": "之所以 (kết quả) …… 是因为 (nguyên nhân) …… — nêu kết quả trước. 深受……爱戴 = được … hết mực kính yêu; 特意 = cố ý, chuyên để (ôn bài 24)."
- },
- {
-  "vi": "Xét thấy quan điểm của các bạn ngày càng đa dạng, nhà trường dựa trên tinh thần thảo luận tự do đã mở một diễn đàn học sinh, để mọi người giao lưu, trao đổi.",
-  "zh": "鉴于同学们的观点越来越多元化，学校本着自由讨论的精神开设了学生论坛，以便大家交流探讨。",
-  "py": "Jiànyú tóngxuémen de guāndiǎn yuèláiyuè duōyuánhuà, xuéxiào běnzhe zìyóu tǎolùn de jīngshén kāishèle xuésheng lùntán, yǐbiàn dàjiā jiāoliú tàntǎo.",
-  "goiY": [
-   "鉴于",
-   "本着……的精神",
-   "多元化",
-   "以便"
-  ],
-  "giai": "Ba vế: 鉴于 (xét thấy — nêu căn cứ, ôn bài 12) → 本着……的精神 + hành động → 以便 (mục đích). \"Diễn đàn\" = 论坛; \"trao đổi\" học thuật = 探讨 (ôn bài 29)."
- }
+  {vi:'Quy chế này một khi đã ban hành thì toàn thể thầy trò không ai được ngoại lệ.',zh:'这条规章一经颁布，全校师生谁也不能例外。',py:'Zhè tiáo guīzhāng yìjīng bānbù, quán xiào shīshēng shéi yě bù néng lìwài.',goiY:['一经','规章','颁布','例外'],giai:'一经 + V (đứng ở vế trước) = một khi đã …, thì vế sau có kết quả tương ứng (Chú thích 1). "Ban hành" quy chế, luật lệ dùng 颁布, không dùng 公布 (公布 = công bố thông tin, kết quả).'},
+  {vi:'Tuy quan điểm của hai chúng tôi đối lập, có không ít bất đồng, nhưng điều đó chẳng ảnh hưởng chút nào đến tình bạn.',zh:'虽然我们俩的观点对立，有不少分歧，但是这丝毫不影响我们的友谊。',py:'Suīrán wǒmen liǎ de guāndiǎn duìlì, yǒu bù shǎo fēnqí, dànshì zhè sīháo bù yǐngxiǎng wǒmen de yǒuyì.',goiY:['虽然……但是……','对立','分歧'],giai:'虽然……但是…… nêu sự thật rồi chuyển ý. "Bất đồng" dịch 分歧 (danh từ: 有分歧), đừng dịch word-by-word là 不同意.'},
+  {vi:'Chỉ cần phát huy tinh thần chăm chỉ tìm tòi, em nhất định sẽ tìm ra được mẹo học tốt môn Toán.',zh:'只要发扬刻苦钻研的精神，你就一定能找到学好数学的窍门。',py:'Zhǐyào fāyáng kèkǔ zuānyán de jīngshén, nǐ jiù yídìng néng zhǎodào xuéhǎo shùxué de qiàomén.',goiY:['只要……就……','发扬','窍门'],giai:'只要 (điều kiện đủ) …… 就 ……; 发扬 + 精神 (phát huy tinh thần — không dùng 发挥 với 精神). 窍门 = mẹo, bí quyết.'},
+  {vi:'Việc thầy Vương làm mẫu không chỉ khơi dậy hứng thú học thư pháp của tôi mà còn giúp tôi có được niềm tin để học tốt nó.',zh:'王老师的示范不仅激发了我学书法的兴趣，还让我树立了学好它的信心。',py:'Wáng lǎoshī de shìfàn bùjǐn jīfāle wǒ xué shūfǎ de xìngqù, hái ràng wǒ shùlìle xuéhǎo tā de xìnxīn.',goiY:['不仅……还……','激发','树立'],giai:'不仅……还…… quan hệ tăng tiến. 激发 + 兴趣 (khơi dậy hứng thú), 树立 + 信心 (xây dựng niềm tin) — hai cụm cố định, đừng dùng 建立信心.'},
+  {vi:'Cô Vương sở dĩ được học sinh hết mực kính yêu là vì cô đức hạnh hơn người, lúc nào cũng cố ý dành thời gian giúp những bạn học yếu.',zh:'王老师之所以深受学生爱戴，是因为她品德过人，总是特意抽时间帮助成绩差的同学。',py:'Wáng lǎoshī zhīsuǒyǐ shēn shòu xuésheng àidài, shì yīnwèi tā pǐndé guòrén, zǒngshì tèyì chōu shíjiān bāngzhù chéngjì chà de tóngxué.',goiY:['之所以……是因为……','爱戴','品德','特意'],giai:'之所以 (kết quả) …… 是因为 (nguyên nhân) …… — nêu kết quả trước. 深受……爱戴 = được … hết mực kính yêu; 特意 = cố ý, chuyên để (ôn bài 24).'},
+  {vi:'Xét thấy quan điểm của các bạn ngày càng đa dạng, nhà trường dựa trên tinh thần thảo luận tự do đã mở một diễn đàn học sinh, để mọi người giao lưu, trao đổi.',zh:'鉴于同学们的观点越来越多元化，学校本着自由讨论的精神办了一个学生论坛，以便大家交流探讨。',py:'Jiànyú tóngxuémen de guāndiǎn yuèláiyuè duōyuánhuà, xuéxiào běnzhe zìyóu tǎolùn de jīngshén bànle yí ge xuésheng lùntán, yǐbiàn dàjiā jiāoliú tàntǎo.',goiY:['鉴于','本着……的精神','多元化','以便'],giai:'Ba vế: 鉴于 (xét thấy — nêu căn cứ, ôn bài 12) → 本着……的精神 + hành động → 以便 (mục đích). "Diễn đàn" = 论坛; "trao đổi" học thuật = 探讨 (ôn bài 29).'}
 ];
 
 var translateDataRev = [
- {
-  "vi": "Sau thời Đường, đủ loại thư viện liên tiếp ra đời, thậm chí có người còn đặt tên phòng sách của mình là thư viện.",
-  "zh": "唐代以后，各种书院层出不穷，甚至有人把自己的书屋也命名为书院。",
-  "py": "Tángdài yǐhòu, gè zhǒng shūyuàn céngchū-bùqióng, shènzhì yǒu rén bǎ zìjǐ de shūwū yě mìngmíng wéi shūyuàn.",
-  "goiY": [
-   "层出不穷 = liên tiếp xuất hiện",
-   "命名为 = đặt tên là",
-   "甚至 = thậm chí"
-  ],
-  "giai": "层出不穷 dịch thoát \"liên tiếp ra đời / mọc lên\", không dịch \"tầng xuất bất cùng\". 把 A 命名为 B = đặt tên A là B."
- },
- {
-  "vi": "Đông Giai thư viện — manh nha từ đời Đường, hoàn thiện ở đời Tống — mãi đến cuối đời Thanh mới chấm dứt.",
-  "zh": "萌芽于唐、完备于宋的东佳书院，截止到清朝末年才终止。",
-  "py": "Méngyá yú Táng, wánbèi yú Sòng de Dōngjiā Shūyuàn, jiézhǐ dào Qīngcháo mònián cái zhōngzhǐ.",
-  "goiY": [
-   "萌芽于…… = manh nha từ …",
-   "完备 = hoàn thiện",
-   "截止到……才终止 = đến … mới chấm dứt"
-  ],
-  "giai": "Khung văn viết V + 于 + thời đại = … vào thời …. 截止到 + thời điểm (chỉ thời gian) — 终止 (kết thúc), đúng điểm 词语辨析 của bài. 萌芽 ôn bài 23."
- },
- {
-  "vi": "Thư viện coi việc rèn đúc tâm hồn quan trọng ngang với học vấn, vì nó trước sau vẫn lấy đào tạo nhân tài làm gốc.",
-  "zh": "书院把灵魂塑造看得和学问同等重要，因为它始终立足于人才培养。",
-  "py": "Shūyuàn bǎ línghún sùzào kàn de hé xuéwen tóngděng zhòngyào, yīnwèi tā shǐzhōng lìzú yú réncái péiyǎng.",
-  "goiY": [
-   "把……看得和……同等重要 = coi … quan trọng ngang …",
-   "立足于 = lấy … làm gốc"
-  ],
-  "giai": "Câu 把 + 看得 + bổ ngữ so sánh. 立足于 dịch \"lấy … làm gốc / dựa trên nền tảng …\", không dịch \"đứng chân ở\"."
- },
- {
-  "vi": "Thư viện không những coi trọng học vấn mà càng coi trọng tu dưỡng đạo đức — điều này nhìn vào bản \"Học quy\" nó ban hành là thấy ngay.",
-  "zh": "书院不但重视学问，而且更重视品德修养，这一点从它颁布的《学规》中就能看出来。",
-  "py": "Shūyuàn búdàn zhòngshì xuéwen, érqiě gèng zhòngshì pǐndé xiūyǎng, zhè yì diǎn cóng tā bānbù de “Xuéguī” zhōng jiù néng kàn chūlai.",
-  "goiY": [
-   "不但……而且更…… = không những … mà càng …",
-   "品德修养 = tu dưỡng đạo đức",
-   "颁布 = ban hành"
-  ],
-  "giai": "不但……而且 + 更 nhấn mức tăng tiến. 从……中就能看出来 = nhìn vào … là thấy ngay. 修养 ôn bài 5."
- },
- {
-  "vi": "Phàm là kẻ vô liêm sỉ dùng lời lẽ dối trá để che đậy lỗi lầm, một khi bị phát hiện thì thư viện nhất định không dung nạp.",
-  "zh": "凡是用虚伪的言辞掩饰过失的无耻之徒，一经发现，书院定不容纳。",
-  "py": "Fánshì yòng xūwěi de yáncí yǎnshì guòshī de wúchǐ zhī tú, yìjīng fāxiàn, shūyuàn dìng bù róngnà.",
-  "goiY": [
-   "凡是 = phàm là",
-   "一经 = một khi",
-   "容纳 = dung nạp"
-  ],
-  "giai": "凡是 + định ngữ dài + 之徒: tách định ngữ ra dịch sau (\"kẻ vô liêm sỉ dùng … để …\"). 定 = 一定 (văn viết). 虚伪, 掩饰 ôn bài 29 và bài 2."
- },
- {
-  "vi": "Đọc sách không có mẹo; chỉ có phát huy tinh thần chăm chỉ ham học, từng bước vững chắc, mới làm tốt học vấn được.",
-  "zh": "读书没有窍门，唯有发扬勤奋好学的精神，一步一个脚印，才能做好学问。",
-  "py": "Dú shū méiyǒu qiàomén, wéiyǒu fāyáng qínfèn hàoxué de jīngshén, yí bù yí ge jiǎoyìn, cái néng zuòhǎo xuéwen.",
-  "goiY": [
-   "唯有……才…… = chỉ có … mới",
-   "窍门 = mẹo",
-   "一步一个脚印 = từng bước vững chắc"
-  ],
-  "giai": "唯有……才…… = 只有……才…… (văn viết). 一步一个脚印 dịch thoát \"chắc chắn từng bước\", không dịch \"một bước một dấu chân\"."
- },
- {
-  "vi": "Thư viện dựa trên nguyên tắc giàu nghèo bình đẳng mà mở rộng cửa — thời đó đây thực sự là một việc làm tiến bộ gây chấn động.",
-  "zh": "书院本着贫富平等的原则敞开大门，这在当时确实是令人震撼的开明之举。",
-  "py": "Shūyuàn běnzhe pínfù píngděng de yuánzé chǎngkāi dàmén, zhè zài dāngshí quèshí shì lìng rén zhènhàn de kāimíng zhī jǔ.",
-  "goiY": [
-   "本着……的原则 = dựa trên nguyên tắc …",
-   "敞开大门 = mở rộng cửa",
-   "开明之举 = việc làm tiến bộ"
-  ],
-  "giai": "本着 + 原则: \"dựa trên / theo đúng nguyên tắc\". 之举 = 的举动 (văn viết). 令人震撼 = gây chấn động (ôn bài 15)."
- },
- {
-  "vi": "Thư viện đề xướng học trò tự suy nghĩ, loại bỏ hoàn toàn sự can thiệp từ bên ngoài, để khơi dậy tính chủ động và sáng tạo của họ.",
-  "zh": "书院倡议学生自行思考，杜绝外来的干涉，以便激发他们的主动性和创造性。",
-  "py": "Shūyuàn chàngyì xuésheng zìxíng sīkǎo, dùjué wàilái de gānshè, yǐbiàn jīfā tāmen de zhǔdòngxìng hé chuàngzàoxìng.",
-  "goiY": [
-   "倡议 = đề xướng",
-   "杜绝 = loại bỏ hoàn toàn",
-   "以便 = để, nhằm"
-  ],
-  "giai": "以便 đứng đầu vế cuối chỉ mục đích (ôn bài 16). 激发 + 主动性 / 创造性 = khơi dậy tính chủ động / sáng tạo."
- },
- {
-  "vi": "Dù quan điểm đối lập hay có bất đồng, thư viện đều chủ trương các học phái tranh biện, đọ sức công khai với nhau.",
-  "zh": "观点对立也好，有分歧也罢，书院都主张不同学派之间公开争辩与较量。",
-  "py": "Guāndiǎn duìlì yě hǎo, yǒu fēnqí yě bà, shūyuàn dōu zhǔzhāng bù tóng xuépài zhījiān gōngkāi zhēngbiàn yǔ jiàoliàng.",
-  "goiY": [
-   "……也好，……也罢 = dù … hay …",
-   "分歧 = bất đồng",
-   "较量 = đọ sức"
-  ],
-  "giai": "……也好，……也罢，都…… liệt kê các trường hợp, kết quả không đổi (ôn bài 29). 较量 = đọ sức, so tài."
- },
- {
-  "vi": "Các danh sư sở dĩ được học trò hết lòng kính yêu, không chỉ vì học thức uyên bác mà càng vì đức hạnh hơn người, đã làm tấm gương tốt nhất cho học trò.",
-  "zh": "名师之所以受到学生的衷心爱戴，不仅因为他们学识广博，更因为他们品德过人，给学生做出了最好的示范。",
-  "py": "Míngshī zhīsuǒyǐ shòudào xuésheng de zhōngxīn àidài, bùjǐn yīnwèi tāmen xuéshí guǎngbó, gèng yīnwèi tāmen pǐndé guòrén, gěi xuésheng zuòchūle zuì hǎo de shìfàn.",
-  "goiY": [
-   "之所以……不仅因为……更因为……",
-   "衷心爱戴 = hết lòng kính yêu",
-   "示范 = tấm gương"
-  ],
-  "giai": "Ba vế: 之所以 (kết quả) — 不仅因为 (lý do 1) — 更因为 (lý do quan trọng hơn). 衷心 = chân thành, đừng nhầm với 中心; 做出示范 = làm gương."
- }
+  {vi:'Thành phố này theo nguyên tắc cải tạo môi trường trước, phát triển sau, đã đóng cửa mấy nhà máy gây ô nhiễm nghiêm trọng.',zh:'这座城市本着先治理、后发展的原则，关掉了好几家污染严重的工厂。',py:'Zhè zuò chéngshì běnzhe xiān zhìlǐ, hòu fāzhǎn de yuánzé, guāndiàole hǎo jǐ jiā wūrǎn yánzhòng de gōngchǎng.',goiY:['本着……的原则 = theo nguyên tắc …','治理 = cải tạo, xử lý','关掉 = đóng cửa'],giai:'本着 + 原则 dịch "theo / dựa trên nguyên tắc"; 先……后…… = … trước, … sau; 好几家 = mấy (nhà máy), nhấn nhiều.'},
+  {vi:'Từ nhỏ cậu ấy đã coi những người dám leo lên đỉnh cao khoa học là thần tượng của mình.',zh:'他从小就把那些勇于攀登科学高峰的人当作自己的偶像。',py:'Tā cóngxiǎo jiù bǎ nàxiē yǒngyú pāndēng kēxué gāofēng de rén dàngzuò zìjǐ de ǒuxiàng.',goiY:['勇于 = dám, can đảm','攀登 = leo lên','偶像 = thần tượng'],giai:'把 A 当作 B = coi A là B; 攀登科学高峰 dịch thoát "vươn tới đỉnh cao khoa học".'},
+  {vi:'Thầy hiệu trưởng già này rất chính trực, chưa bao giờ nhận đồ phụ huynh biếu, thầy trò ai cũng kính trọng ông.',zh:'这位老校长一身正气，从不收家长送的东西，师生们都很崇敬他。',py:'Zhè wèi lǎo xiàozhǎng yìshēn zhèngqì, cóng bù shōu jiāzhǎng sòng de dōngxi, shīshēngmen dōu hěn chóngjìng tā.',goiY:['一身正气 = rất chính trực','崇敬 = kính trọng, tôn kính'],giai:'一身正气 dịch "rất chính trực, ngay thẳng", không dịch từng chữ "một thân chính khí"; 从不 = chưa bao giờ.'},
+  {vi:'Sau khi quy chế mới được ban hành, hiện tượng đi làm muộn về cơ bản đã bị chấm dứt hẳn.',zh:'新规章颁布以后，上班迟到的现象基本上被杜绝了。',py:'Xīn guīzhāng bānbù yǐhòu, shàngbān chídào de xiànxiàng jīběnshang bèi dùjué le.',goiY:['规章 = quy chế','颁布 = ban hành','杜绝 = chấm dứt hẳn'],giai:'被杜绝了 là bị động; tiếng Việt có thể dịch chủ động "không còn nữa". 杜绝 mạnh hơn 减少 (giảm).'},
+  {vi:'Trên diễn đàn này, quan điểm bảo thủ cũng được, cởi mở cũng được, mọi người đều có thể tự do bày tỏ ý kiến.',zh:'在这个论坛上，观点保守也好，开明也罢，大家都可以自由发表看法。',py:'Zài zhège lùntán shang, guāndiǎn bǎoshǒu yě hǎo, kāimíng yě bà, dàjiā dōu kěyǐ zìyóu fābiǎo kànfǎ.',goiY:['……也好，……也罢 = … cũng được, … cũng được','保守 = bảo thủ','开明 = cởi mở'],giai:'……也好，……也罢，都…… (ôn bài 29): dù trường hợp nào kết quả cũng vậy. 保守 ↔ 开明 là cặp trái nghĩa.'}
 ];
 
 var writingData = {
@@ -6687,383 +5667,133 @@ var writingData = {
 };
 
 var speakingData = {
- "intro": "Đây là bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b>. Bảng có ba dòng (thư viện phát triển thành cơ sở giáo dục như thế nào · thư viện đào tạo nhân tài ra sao · phương pháp dạy học của thư viện). Mỗi câu dưới đây là một dòng — bấm loa nghe câu hỏi, nhìn gợi ý, <b>tự ghi âm câu trả lời của mình trước</b> rồi mới mở câu mẫu. Cố dùng từ mới: 官方 · 层出不穷 · 命名 · 规章 · 截止 · 终止 · 完备 · 立足 · 品德 · 一经 · 容纳 · 窍门 · 发扬 · 本着 · 敞开 · 招收 · 杜绝 · 多元化 · 论坛.",
- "questions": [
-  {
-   "q_zh": "为什么说书院渐渐发展成了藏书、教学和研究的教育机构？",
-   "q_vn": "Vì sao nói thư viện dần phát triển thành cơ sở giáo dục kết hợp tàng thư, giảng dạy và nghiên cứu?",
-   "hint": "①藏书历史 ②东佳书院：学田、规章制度、学生，唐、宋、清",
-   "sample": "中国藏书的历史有两千多年了，有官方藏书，也有私人藏书。唐代有人把藏书的地方称作书院，之后各种书院层出不穷。后来，书院渐渐发展成了教育机构，比如东佳书院，它是最早拥有学田、订有规章制度、收有学生的私办书院。它萌芽于唐，完备于宋，截止到清朝末年，书院制度终止，它就改成了学校。",
-   "sample_vn": "Lịch sử tàng thư của Trung Quốc đã hơn hai nghìn năm, có sách của nhà nước, cũng có sách của tư nhân. Thời Đường có người gọi nơi cất sách là thư viện, sau đó đủ loại thư viện liên tiếp ra đời. Về sau thư viện dần trở thành cơ sở giáo dục, chẳng hạn Đông Giai thư viện — thư viện tư thục sớm nhất có học điền, có quy chế, có nhận học trò. Nó manh nha từ đời Đường, hoàn thiện ở đời Tống; đến cuối đời Thanh chế độ thư viện chấm dứt thì nó đổi thành trường học.",
-   "note": "Ý ① nói ngắn (有……，也有……; 层出不穷); ý ② dùng lối 论点 + 比如 (例证) và ba mốc 唐 – 宋 – 清 với 萌芽于 / 完备于 / 截止到……终止."
-  },
-  {
-   "q_zh": "书院怎样立足于人才培养？",
-   "q_vn": "Thư viện lấy việc đào tạo nhân tài làm gốc như thế nào?",
-   "hint": "①提倡刻苦、严谨的治学精神 ②德业并重：重视学问，重视品德修养",
-   "sample": "书院立足于人才培养。第一，书院提倡刻苦、严谨的治学精神，认为读书没有窍门，没有捷径，唯有发扬勤奋好学的精神，一步一个脚印，才能做好学问。第二，书院德业并重，重视学问，更重视品德修养。比如丽泽书院的《学规》规定，言行不一、掩饰过失的无耻之徒，一经发现，书院定不容纳。",
-   "sample_vn": "Thư viện lấy đào tạo nhân tài làm gốc. Thứ nhất, thư viện đề cao tinh thần học tập chăm chỉ, nghiêm cẩn, cho rằng đọc sách không có mẹo, không có đường tắt, chỉ có phát huy tinh thần chăm chỉ ham học, từng bước vững chắc mới làm tốt học vấn. Thứ hai, thư viện coi trọng cả đức lẫn nghiệp: coi trọng học vấn, càng coi trọng tu dưỡng đạo đức. Ví dụ \"Học quy\" của Lệ Trạch thư viện quy định: kẻ vô liêm sỉ nói một đằng làm một nẻo, che đậy lỗi lầm, một khi bị phát hiện thì thư viện nhất định không dung nạp.",
-   "note": "Mở bằng câu chủ đề 书院立足于人才培养, rồi 第一 / 第二; dùng 唯有……才…… và điểm ngữ pháp 一经."
-  },
-  {
-   "q_zh": "书院的办学方法是什么？",
-   "q_vn": "Phương pháp tổ chức dạy học của thư viện là gì?",
-   "hint": "①首先，招收平民子弟入学 ②其二，重视自修和研究 ③其三，倡导互相切磋 ④其四，鼓励相互质疑 ⑤另外，重视观点的多元化",
-   "sample": "首先，书院本着贫富平等的原则，敞开大门，招收平民子弟入学。其二，书院重视自修和研究，倡议自行思考，杜绝外来的干涉。其三，书院倡导互相切磋、互相学习。其四，书院鼓励师生之间相互质疑。另外，书院重视观点的多元化，还设立了讲演辩论制度，类似今天的“论坛”。",
-   "sample_vn": "Thứ nhất, thư viện dựa trên nguyên tắc giàu nghèo bình đẳng, mở rộng cửa, nhận con em thường dân vào học. Thứ hai, thư viện coi trọng tự học và nghiên cứu, đề xướng tự suy nghĩ, loại bỏ can thiệp từ bên ngoài. Thứ ba, thư viện đề xướng trao đổi, học hỏi lẫn nhau. Thứ tư, thư viện khuyến khích thầy trò cùng chất vấn nhau. Ngoài ra, thư viện coi trọng sự đa dạng quan điểm, còn lập ra chế độ diễn thuyết tranh luận, giống như \"diễn đàn\" ngày nay.",
-   "note": "Nói đủ năm ý theo đúng từ nối của bảng: 首先 → 其二 → 其三 → 其四 → 另外; ý ① dùng 本着……的原则."
-  }
- ]
+  intro: 'Đây là bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b>. Bảng có ba dòng (thư viện phát triển thành cơ sở giáo dục như thế nào · thư viện đào tạo nhân tài ra sao · phương pháp dạy học của thư viện). Mỗi câu dưới đây là một dòng — bấm loa nghe câu hỏi, nhìn gợi ý, <b>tự ghi âm câu trả lời của mình trước</b> rồi mới mở câu mẫu. Cố dùng từ mới: 官方 · 层出不穷 · 命名 · 规章 · 截止 · 终止 · 完备 · 立足 · 品德 · 一经 · 容纳 · 窍门 · 发扬 · 本着 · 敞开 · 招收 · 杜绝 · 多元化 · 论坛.',
+  questions: [
+    {q_zh:'为什么说书院渐渐发展成了藏书、教学和研究的教育机构？',q_vn:'Vì sao nói thư viện dần phát triển thành cơ sở giáo dục kết hợp tàng thư, giảng dạy và nghiên cứu?',hint:'①藏书历史 ②东佳书院：学田、规章制度、学生，唐、宋、清',sample:'中国藏书的历史有两千多年了，有官方藏书，也有私人藏书。唐代有人把藏书的地方称作书院，之后各种书院层出不穷。后来，书院渐渐发展成了教育机构，比如东佳书院，它是最早拥有学田、订有规章制度、收有学生的私办书院。它萌芽于唐，完备于宋，截止到清朝末年，书院制度终止，它就改成了学校。',sample_vn:'Lịch sử tàng thư của Trung Quốc đã hơn hai nghìn năm, có sách của nhà nước, cũng có sách của tư nhân. Thời Đường có người gọi nơi cất sách là thư viện, sau đó đủ loại thư viện liên tiếp ra đời. Về sau thư viện dần trở thành cơ sở giáo dục, chẳng hạn Đông Giai thư viện — thư viện tư thục sớm nhất có học điền, có quy chế, có nhận học trò. Nó manh nha từ đời Đường, hoàn thiện ở đời Tống; đến cuối đời Thanh chế độ thư viện chấm dứt thì nó đổi thành trường học.',note:'Ý ① nói ngắn (有……，也有……; 层出不穷); ý ② nêu ý chính trước rồi dùng 比如 đưa ví dụ, kể ba mốc Đường – Tống – Thanh với 萌芽于 / 完备于 / 截止到……终止.'},
+    {q_zh:'书院怎样立足于人才培养？',q_vn:'Thư viện lấy việc đào tạo nhân tài làm gốc như thế nào?',hint:'①提倡刻苦、严谨的治学精神 ②德业并重：重视学问，重视品德修养',sample:'书院立足于人才培养。第一，书院提倡刻苦、严谨的治学精神，认为读书没有窍门，没有捷径，唯有发扬勤奋好学的精神，一步一个脚印，才能做好学问。第二，书院德业并重，不但重视学问，而且把品德修养看得更重。比如丽泽书院的《学规》规定，言行不一、掩饰过失的无耻之徒一经发现，就不能再留在书院。',sample_vn:'Thư viện lấy đào tạo nhân tài làm gốc. Thứ nhất, thư viện đề cao tinh thần học tập chăm chỉ, nghiêm cẩn, cho rằng đọc sách không có mẹo, không có đường tắt, chỉ có phát huy tinh thần chăm chỉ ham học, từng bước vững chắc mới làm tốt học vấn. Thứ hai, thư viện coi trọng cả đức lẫn nghiệp: không chỉ coi trọng học vấn mà còn đặt tu dưỡng đạo đức lên trên. Ví dụ "Học quy" của Lệ Trạch thư viện quy định: kẻ vô liêm sỉ nói một đằng làm một nẻo, che đậy lỗi lầm, một khi bị phát hiện thì không được ở lại thư viện nữa.',note:'Mở bằng câu chủ đề 书院立足于人才培养, rồi 第一 / 第二; dùng 唯有……才…… và điểm ngữ pháp 一经.'},
+    {q_zh:'书院的办学方法是什么？',q_vn:'Phương pháp tổ chức dạy học của thư viện là gì?',hint:'①首先，招收平民子弟入学 ②其二，重视自修和研究 ③其三，倡导互相切磋 ④其四，鼓励相互质疑 ⑤另外，重视观点的多元化',sample:'首先，书院本着贫富平等的原则，敞开大门，招收平民子弟入学。其二，书院重视自修和研究，倡议自行思考，杜绝外来的干涉。其三，书院倡导互相切磋、互相学习。其四，书院鼓励师生之间相互质疑。另外，书院重视观点的多元化，还设立了讲演辩论制度，类似今天的“论坛”。',sample_vn:'Thứ nhất, thư viện dựa trên nguyên tắc giàu nghèo bình đẳng, mở rộng cửa, nhận con em thường dân vào học. Thứ hai, thư viện coi trọng tự học và nghiên cứu, đề xướng tự suy nghĩ, loại bỏ can thiệp từ bên ngoài. Thứ ba, thư viện đề xướng trao đổi, học hỏi lẫn nhau. Thứ tư, thư viện khuyến khích thầy trò cùng chất vấn nhau. Ngoài ra, thư viện coi trọng sự đa dạng quan điểm, còn lập ra chế độ diễn thuyết tranh luận, giống như "diễn đàn" ngày nay.',note:'Nói đủ năm ý theo đúng từ nối của bảng: 首先 → 其二 → 其三 → 其四 → 另外; ý ① dùng 本着……的原则.'}
+  ]
 };
 
 var listenExamData = {
- "intro": "Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.",
- "source": "Soạn theo dạng đề HSK 6 · chủ đề bài 36",
- "items": [
-  {
-   "n": 1,
-   "lines": [
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 36',
+  items: [
     {
-     "sp": "女",
-     "zh": "小王，听说你们学校新颁布了一项规定？"
+      n: 1,
+      lines: [
+        {sp:'男',zh:'明天的考试可以带手机进考场吗？'},
+        {sp:'女',zh:'千万别带，手机一经发现，这门考试就算零分。'}
+      ],
+      q: '关于明天的考试，可以知道什么？',
+      qvn: 'Về kỳ thi ngày mai, có thể biết điều gì?',
+      opts: ['可以带手机','不能带手机进考场','考试推迟了','只考一门'],
+      ans: 1,
+      why: '千万别带 + 一经发现……就算零分 → không được mang điện thoại vào phòng thi. 一经 = một khi (bị phát hiện) thì có hậu quả ngay.',
+      words: ['一经']
     },
     {
-     "sp": "男",
-     "zh": "是啊，上课时间一律不许用手机，一经发现就没收，期末才还。"
-    }
-   ],
-   "q": "关于新规定，可以知道什么？",
-   "qvn": "Có thể biết gì về quy định mới?",
-   "opts": [
-    "上课时可以用手机",
-    "上课时不能用手机",
-    "手机要一直交给老师保管",
-    "只有考试时不能用手机"
-   ],
-   "ans": 1,
-   "why": "上课时间一律不许用手机 = trong giờ học tuyệt đối không được dùng điện thoại. 一经发现就没收 chỉ là hình phạt khi vi phạm, không phải lúc nào cũng nộp điện thoại (loại C).",
-   "words": [
-    "颁布"
-   ]
-  },
-  {
-   "n": 2,
-   "lines": [
-    {
-     "sp": "男",
-     "zh": "这次作文比赛什么时候截止？"
+      n: 2,
+      lines: [
+        {sp:'女',zh:'这家饭馆的菜怎么这么便宜？'},
+        {sp:'男',zh:'老板本着“让每个人都吃得起”的原则开店，钱赚得不多，可客人一直很多。'}
+      ],
+      q: '关于这家饭馆，可以知道什么？',
+      qvn: 'Về quán ăn này, có thể biết điều gì?',
+      opts: ['菜很贵','快要关门了','老板很保守','客人很多'],
+      ans: 3,
+      why: '钱赚得不多，可客人一直很多 → khách đông. 本着……的原则 = theo nguyên tắc (ai cũng ăn được), nên món ăn rẻ, loại A.',
+      words: ['本着']
     },
     {
-     "sp": "女",
-     "zh": "本来是这个星期五，不过主办方刚发了通知，把截止日期推迟到了下周一。"
-    }
-   ],
-   "q": "作文比赛现在什么时候截止？",
-   "qvn": "Cuộc thi viết văn bây giờ hết hạn khi nào?",
-   "opts": [
-    "下周一",
-    "这个星期五",
-    "下周五",
-    "已经截止了"
-   ],
-   "ans": 0,
-   "why": "本来是这个星期五 (lúc đầu), 不过……推迟到了下周一 → bây giờ là thứ Hai tuần sau. Chú ý từ 不过 báo hiệu thông tin mới.",
-   "words": [
-    "截止"
-   ]
-  },
-  {
-   "n": 3,
-   "lines": [
-    {
-     "sp": "女",
-     "zh": "你爸妈同意你学历史专业吗？"
+      n: 3,
+      lines: [
+        {sp:'男',zh:'王老师，比赛的报名截止了吗？我还想报。'},
+        {sp:'女',zh:'你来晚了一步，昨天下午五点就截止了，明年再来吧。'}
+      ],
+      q: '男的还能报名吗？',
+      qvn: 'Người đàn ông còn đăng ký được không?',
+      opts: ['不能了','还能报','明天截止','要先交钱'],
+      ans: 0,
+      why: '来晚了一步 + 昨天下午五点就截止了 → đã hết hạn, không đăng ký được nữa (明年再来吧).',
+      words: ['截止']
     },
     {
-     "sp": "男",
-     "zh": "他们很开明，从来不干涉我的选择，只是希望我自己想清楚。"
-    }
-   ],
-   "q": "男的的父母怎么样？",
-   "qvn": "Bố mẹ của người đàn ông thế nào?",
-   "opts": [
-    "很保守",
-    "不关心他",
-    "思想开明",
-    "让他学别的专业"
-   ],
-   "ans": 2,
-   "why": "他们很开明，从来不干涉我的选择 → tư tưởng cởi mở. 不干涉 không có nghĩa là không quan tâm (他们希望我想清楚).",
-   "words": [
-    "开明",
-    "干涉"
-   ]
-  },
-  {
-   "n": 4,
-   "lines": [
-    {
-     "sp": "男",
-     "zh": "你汉字写得这么好，有什么窍门吗？"
+      n: 4,
+      lines: [
+        {sp:'男',zh:'你乒乓球怎么进步得这么快？'},
+        {sp:'女',zh:'我们教练每个动作都先示范好几遍，我跟着练，慢慢就找到窍门了。'}
+      ],
+      q: '女的为什么进步得快？',
+      qvn: 'Vì sao người phụ nữ tiến bộ nhanh?',
+      opts: ['每天练十个小时','她以前就打得很好','教练示范得很认真','她的偶像教她'],
+      ans: 2,
+      why: '教练每个动作都先示范好几遍 → huấn luyện viên làm mẫu kỹ, cô ấy làm theo và tìm ra bí quyết (窍门).',
+      words: ['示范','窍门']
     },
     {
-     "sp": "女",
-     "zh": "哪有什么窍门啊，就是每天写一点儿，经常复习，温故知新嘛。"
-    }
-   ],
-   "q": "女的认为怎样才能学好汉字？",
-   "qvn": "Người phụ nữ cho rằng làm thế nào mới học tốt chữ Hán?",
-   "opts": [
-    "找到好窍门",
-    "多看电视剧",
-    "请名师辅导",
-    "坚持练习和复习"
-   ],
-   "ans": 3,
-   "why": "哪有什么窍门 = làm gì có mẹo nào (câu phản vấn, phủ định A). 每天写一点儿，经常复习 → kiên trì luyện và ôn.",
-   "words": [
-    "窍门"
-   ]
-  },
-  {
-   "n": 5,
-   "lines": [
-    {
-     "sp": "女",
-     "zh": "昨天的辩论赛怎么样？"
+      n: 5,
+      lines: [
+        {sp:'女',zh:'昨天的足球比赛怎么样？'},
+        {sp:'男',zh:'两个队水平差不多，较量了整整九十分钟，谁也没进球。'}
+      ],
+      q: '比赛结果怎么样？',
+      qvn: 'Kết quả trận đấu thế nào?',
+      opts: ['打成了平局','男的队赢了','男的队输了','比赛终止了'],
+      ans: 0,
+      why: '谁也没进球 → không đội nào ghi bàn, hoà. 较量了整整九十分钟 = đọ sức đủ 90 phút, trận đấu không bị dừng (loại D).',
+      words: ['较量']
     },
     {
-     "sp": "男",
-     "zh": "双方观点完全对立，较量得非常激烈，最后我们队以一分之差输了。"
-    }
-   ],
-   "q": "男的的队怎么样？",
-   "qvn": "Đội của người đàn ông thế nào?",
-   "opts": [
-    "赢了一分",
-    "输了",
-    "比赛没结束",
-    "没参加比赛"
-   ],
-   "ans": 1,
-   "why": "以一分之差输了 = thua với cách biệt một điểm. Đừng nghe thấy 一分 mà chọn A.",
-   "words": [
-    "对立",
-    "较量"
-   ]
-  },
-  {
-   "n": 6,
-   "lines": [
-    {
-     "sp": "男",
-     "zh": "我们读书会本着“开放、平等”的原则，向所有人敞开大门。每个月开展一次读书论坛，大家可以自由发表观点，即使有分歧也不要紧。"
-    }
-   ],
-   "q": "关于这个读书会，下列哪项正确？",
-   "qvn": "Về câu lạc bộ đọc sách này, điều nào dưới đây đúng?",
-   "opts": [
-    "每个月举办一次论坛",
-    "只招收大学生",
-    "不允许有不同意见",
-    "每周开展一次活动"
-   ],
-   "ans": 0,
-   "why": "每个月开展一次读书论坛 → A. 向所有人敞开大门 loại B; 即使有分歧也不要紧 loại C; 每个月 chứ không phải 每周 (loại D).",
-   "words": [
-    "本着",
-    "敞开",
-    "开展",
-    "论坛",
-    "分歧"
-   ]
-  },
-  {
-   "n": 7,
-   "lines": [
-    {
-     "sp": "女",
-     "zh": "你为什么这么崇敬张老师？"
+      n: 6,
+      lines: [
+        {sp:'女',zh:'你为什么那么崇敬李老师？'},
+        {sp:'男',zh:'他不光学问好，品德更是没得说，从来不在背后说别人的坏话。'}
+      ],
+      q: '男的崇敬李老师主要是因为什么？',
+      qvn: 'Người đàn ông tôn kính thầy Lý chủ yếu vì sao?',
+      opts: ['李老师常请大家吃饭','学问和品德都好','李老师很有钱','李老师很年轻'],
+      ans: 1,
+      why: '不光学问好，品德更是没得说 → cả học vấn lẫn đạo đức đều tốt. 没得说 = khỏi phải bàn (rất tốt).',
+      words: ['崇敬','品德']
     },
     {
-     "sp": "男",
-     "zh": "他不但学识广博，而且品德过人，对每个学生都很关心，是我心中的偶像。"
+      n: 7,
+      lines: [
+        {sp:'女',zh:'听说小张把别人的设计说成是自己的？'},
+        {sp:'男',zh:'是啊，被发现了还不承认，真是太无耻了。'}
+      ],
+      q: '男的觉得小张怎么样？',
+      qvn: 'Người đàn ông thấy Tiểu Trương thế nào?',
+      opts: ['很聪明','很可怜','很有能力','很不要脸'],
+      ans: 3,
+      why: '无耻 = không biết xấu hổ, trơ tráo → 很不要脸 (khẩu ngữ). Lấy thiết kế của người khác còn không nhận lỗi, không phải "thông minh".',
+      words: ['无耻']
     }
-   ],
-   "q": "男的为什么崇敬张老师？",
-   "qvn": "Vì sao người đàn ông tôn kính thầy Trương?",
-   "opts": [
-    "因为张老师很有钱",
-    "因为张老师很严格",
-    "因为张老师学识和品德都好",
-    "因为张老师是明星"
-   ],
-   "ans": 2,
-   "why": "不但学识广博，而且品德过人 → cả học thức lẫn đức hạnh đều tốt. 偶像 ở đây là thần tượng trong lòng, không phải ngôi sao (loại D).",
-   "words": [
-    "崇敬",
-    "品德",
-    "偶像"
-   ]
-  },
-  {
-   "n": 8,
-   "lines": [
-    {
-     "sp": "女",
-     "zh": "古代书院认为，一个人的知识是有限的，大家的知识是无限的，所以倡导学生互相切磋、互相学习。书院还鼓励师生相互质疑，学子们相互激励，取长补短，共同进步。"
-    }
-   ],
-   "q": "书院为什么倡导互相切磋？",
-   "qvn": "Vì sao thư viện đề xướng trao đổi học hỏi lẫn nhau?",
-   "opts": [
-    "因为老师太少",
-    "因为书太贵",
-    "因为考试太难",
-    "因为个人的知识有限"
-   ],
-   "ans": 3,
-   "why": "一个人的知识是有限的，大家的知识是无限的，所以…… → lý do là kiến thức cá nhân có hạn. Các phương án khác không được nhắc đến.",
-   "words": [
-    "激励"
-   ]
-  }
- ]
+  ]
 };
 
 var situationData = {
- "intro": "Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.",
- "items": [
-  {
-   "scene": "Bạn cùng lớp muốn mượn vở bài tập của em để chép, còn hỏi em có \"mẹo\" gì mà học giỏi.",
-   "a": {
-    "sp": "Bạn",
-    "zh": "你的作业借我抄一下吧！学习有什么窍门，快告诉我！",
-    "vn": "Cho tớ mượn bài tập chép tí! Học có mẹo gì thì bảo tớ mau!"
-   },
-   "need": [
-    "Dùng 窍门",
-    "Dùng 唯有……才……",
-    "Từ chối cho chép một cách khéo léo"
-   ],
-   "sample": "学习哪有什么窍门啊！唯有每天认真听课、按时复习，才能真正学好。作业我不能给你抄，不过哪道题不会，我可以给你讲讲。",
-   "samplePy": "Xuéxí nǎ yǒu shénme qiàomén a! Wéiyǒu měi tiān rènzhēn tīngkè, ànshí fùxí, cái néng zhēnzhèng xuéhǎo. Zuòyè wǒ bù néng gěi nǐ chāo, búguò nǎ dào tí bú huì, wǒ kěyǐ gěi nǐ jiǎngjiang.",
-   "sampleVn": "Học làm gì có mẹo nào! Chỉ có ngày nào cũng chăm chú nghe giảng, ôn bài đúng hạn mới thật sự học tốt được. Bài tập thì tớ không cho cậu chép được, nhưng câu nào không biết, tớ có thể giảng cho cậu.",
-   "tip": "哪有什么 + N = làm gì có … (phản vấn); 唯有……才…… lấy từ bài khoá; từ chối rồi đưa ra cách giúp khác (不过……) cho mềm."
-  },
-  {
-   "scene": "Bố muốn em đăng ký ngành y, trong khi em thích ngành lịch sử.",
-   "a": {
-    "sp": "Bố",
-    "zh": "学医有前途，你就报医学专业吧，别的不用考虑了。",
-    "vn": "Học y có tương lai, con cứ đăng ký ngành y đi, khỏi nghĩ ngành khác."
-   },
-   "need": [
-    "Dùng 开明 hoặc 干涉",
-    "Nói mong muốn của mình lễ phép, có lý do"
-   ],
-   "sample": "爸，我知道您是为我好。您一向很开明，这次能不能也别太干涉我的选择？我对历史更感兴趣，想先跟您好好谈谈我的想法。",
-   "samplePy": "Bà, wǒ zhīdào nín shì wèi wǒ hǎo. Nín yíxiàng hěn kāimíng, zhè cì néng bu néng yě bié tài gānshè wǒ de xuǎnzé? Wǒ duì lìshǐ gèng gǎn xìngqù, xiǎng xiān gēn nín hǎohāo tántan wǒ de xiǎngfǎ.",
-   "sampleVn": "Bố ơi, con biết bố muốn tốt cho con. Bố xưa nay rất cởi mở, lần này có thể đừng can thiệp quá vào lựa chọn của con được không ạ? Con thích lịch sử hơn, muốn nói chuyện kỹ với bố về suy nghĩ của con trước đã.",
-   "tip": "Mở bằng câu thấu hiểu (我知道您是为我好), khen trước (您一向很开明) rồi mới đề nghị (能不能别太干涉……) — cách nói lễ phép với người trên."
-  },
-  {
-   "scene": "Em là chủ nhiệm câu lạc bộ. Có thành viên hỏi về chuyện có người lén đem tài liệu của câu lạc bộ bán cho người ngoài.",
-   "a": {
-    "sp": "Thành viên",
-    "zh": "社长，听说有人把社团的资料偷偷卖给别人了？我们以后怎么办？",
-    "vn": "Chủ nhiệm ơi, nghe nói có người lén bán tài liệu của câu lạc bộ cho người khác? Sau này mình làm sao đây?"
-   },
-   "need": [
-    "Dùng 一经……就……",
-    "Dùng 规章"
-   ],
-   "sample": "是的，这种行为严重违反了社团的规章制度。我们已经决定：以后这种情况一经发现，就马上取消会员资格。",
-   "samplePy": "Shì de, zhè zhǒng xíngwéi yánzhòng wéifǎnle shètuán de guīzhāng zhìdù. Wǒmen yǐjīng juédìng: yǐhòu zhè zhǒng qíngkuàng yìjīng fāxiàn, jiù mǎshàng qǔxiāo huìyuán zīgé.",
-   "sampleVn": "Đúng vậy, hành vi này vi phạm nghiêm trọng quy chế của câu lạc bộ. Chúng ta đã quyết định: sau này trường hợp như vậy một khi bị phát hiện sẽ lập tức bị hủy tư cách thành viên.",
-   "tip": "一经 + V (发现 / 查实), 就 + kết quả — giọng thông báo quy định, dứt khoát. 违反 + 规章制度."
-  },
-  {
-   "scene": "Nhóm em làm bài thuyết trình, mỗi người một ý, có bạn khăng khăng chỉ phương án của mình mới đúng.",
-   "a": {
-    "sp": "Bạn trong nhóm",
-    "zh": "我觉得我的方案最好，你们的想法都不行！",
-    "vn": "Tớ thấy phương án của tớ là tốt nhất, ý các cậu đều không được!"
-   },
-   "need": [
-    "Dùng 分歧",
-    "Dùng 本着……的原则"
-   ],
-   "sample": "大家有分歧很正常。我们本着少数服从多数的原则，先把几个方案都说一说，然后投票决定，好吗？",
-   "samplePy": "Dàjiā yǒu fēnqí hěn zhèngcháng. Wǒmen běnzhe shǎoshù fúcóng duōshù de yuánzé, xiān bǎ jǐ ge fāng'àn dōu shuō yi shuō, ránhòu tóupiào juédìng, hǎo ma?",
-   "sampleVn": "Mọi người có bất đồng là chuyện bình thường. Mình theo nguyên tắc thiểu số phục tùng đa số, trước hết nói qua từng phương án, sau đó bỏ phiếu quyết định, được không?",
-   "tip": "Công nhận bất đồng (有分歧很正常) rồi đưa nguyên tắc chung (本着……的原则) để giải quyết — lời nói xây dựng, không đối đầu."
-  },
-  {
-   "scene": "Sắp đến Ngày Nhà giáo, lớp trưởng nhờ em viết một câu chúc gửi cô chủ nhiệm thay mặt cả lớp.",
-   "a": {
-    "sp": "Lớp trưởng",
-    "zh": "教师节快到了，你帮大家给班主任写一句祝福吧。",
-    "vn": "Sắp đến Ngày Nhà giáo rồi, cậu viết giúp cả lớp một câu chúc cô chủ nhiệm nhé."
-   },
-   "need": [
-    "Dùng 衷心",
-    "Dùng 示范"
-   ],
-   "sample": "亲爱的王老师，您不但教我们知识，还用自己的行动给我们做出了最好的示范。在教师节到来之际，我们衷心祝愿您身体健康、工作顺利！",
-   "samplePy": "Qīn'ài de Wáng lǎoshī, nín búdàn jiāo wǒmen zhīshi, hái yòng zìjǐ de xíngdòng gěi wǒmen zuòchūle zuì hǎo de shìfàn. Zài Jiàoshījié dàolái zhī jì, wǒmen zhōngxīn zhùyuàn nín shēntǐ jiànkāng, gōngzuò shùnlì!",
-   "sampleVn": "Cô Vương kính mến, cô không chỉ dạy chúng em kiến thức mà còn dùng hành động của mình làm tấm gương tốt nhất cho chúng em. Nhân dịp Ngày Nhà giáo, chúng em chân thành chúc cô mạnh khỏe, công tác thuận lợi!",
-   "tip": "衷心祝愿 + lời chúc (练习2 ⑥); 在……到来之际 = nhân dịp … — lời chúc viết trang trọng."
-  }
- ]
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  items: [
+    {scene:'Bạn em lần đầu đến nhà một gia đình Trung Quốc ăn cơm, hỏi em cần chú ý gì.',a:{sp:'Bạn',zh:'这个周末我要去中国朋友家吃饭，你说我该注意点儿什么？',vn:'Cuối tuần này tớ đến nhà bạn Trung Quốc ăn cơm, cậu bảo tớ nên chú ý gì?'},need:['Dùng 礼节','Nêu một hai việc cụ thể'],sample:'去别人家做客，基本的礼节一定要懂。进门前最好先敲门，带一点儿水果什么的；吃饭时等长辈先动筷子，你再开始吃。',samplePy:'Qù biérén jiā zuòkè, jīběn de lǐjié yídìng yào dǒng. Jìn mén qián zuìhǎo xiān qiāo mén, dài yìdiǎnr shuǐguǒ shénme de; chī fàn shí děng zhǎngbèi xiān dòng kuàizi, nǐ zài kāishǐ chī.',sampleVn:'Đến nhà người khác chơi thì phép lịch sự cơ bản nhất định phải biết. Trước khi vào nhà tốt nhất gõ cửa, mang chút hoa quả gì đó; lúc ăn đợi người lớn cầm đũa trước rồi cậu hãy bắt đầu ăn.',tip:'礼节 = phép tắc, lễ nghi (cụ thể); 礼貌 = sự lịch sự nói chung. 先……再…… sắp xếp thứ tự việc làm.'},
+    {scene:'Bố muốn em đăng ký ngành luật, trong khi em thích ngành lịch sử.',a:{sp:'Bố',zh:'学法律有前途，你就报法律专业吧，别的不用考虑了。',vn:'Học luật có tương lai, con cứ đăng ký ngành luật đi, khỏi nghĩ ngành khác.'},need:['Dùng 开明 hoặc 干涉','Nói mong muốn của mình lễ phép, có lý do'],sample:'爸，我知道您是为我好。您一向很开明，这次能不能也别太干涉我的选择？我对历史更感兴趣，想先跟您好好谈谈我的想法。',samplePy:'Bà, wǒ zhīdào nín shì wèi wǒ hǎo. Nín yíxiàng hěn kāimíng, zhè cì néng bu néng yě bié tài gānshè wǒ de xuǎnzé? Wǒ duì lìshǐ gèng gǎn xìngqù, xiǎng xiān gēn nín hǎohāo tántan wǒ de xiǎngfǎ.',sampleVn:'Bố ơi, con biết bố muốn tốt cho con. Bố xưa nay rất cởi mở, lần này có thể đừng can thiệp quá vào lựa chọn của con được không ạ? Con thích lịch sử hơn, muốn nói chuyện kỹ với bố về suy nghĩ của con trước đã.',tip:'Mở bằng câu thấu hiểu (我知道您是为我好), khen trước (您一向很开明) rồi mới đề nghị (能不能别太干涉……) — cách nói lễ phép với người trên.'},
+    {scene:'Em là hội trưởng hội học sinh. Có thành viên hỏi về chuyện có người lén đem tài liệu của hội bán cho người ngoài.',a:{sp:'Thành viên',zh:'会长，听说有人把学生会的资料偷偷卖给别人了？我们以后怎么办？',vn:'Hội trưởng ơi, nghe nói có người lén bán tài liệu của hội học sinh cho người khác? Sau này mình làm sao đây?'},need:['Dùng 一经……就……','Dùng 规章'],sample:'是的，这种行为严重违反了学生会的规章制度。我们已经决定：以后这种情况一经发现，就马上请他离开学生会。',samplePy:'Shì de, zhè zhǒng xíngwéi yánzhòng wéifǎnle xuéshenghuì de guīzhāng zhìdù. Wǒmen yǐjīng juédìng: yǐhòu zhè zhǒng qíngkuàng yìjīng fāxiàn, jiù mǎshàng qǐng tā líkāi xuéshenghuì.',sampleVn:'Đúng vậy, hành vi này vi phạm nghiêm trọng quy chế của hội học sinh. Chúng ta đã quyết định: sau này trường hợp như vậy một khi bị phát hiện sẽ lập tức mời người đó rời khỏi hội.',tip:'一经 + V hai âm tiết (发现 / 批准), 就 + kết quả — giọng thông báo quy định, dứt khoát. 违反 + 规章制度.'},
+    {scene:'Nhóm em làm bài thuyết trình, mỗi người một ý, có bạn khăng khăng chỉ phương án của mình mới đúng.',a:{sp:'Bạn trong nhóm',zh:'我觉得我的方案最好，你们的想法都不行！',vn:'Tớ thấy phương án của tớ là tốt nhất, ý các cậu đều không được!'},need:['Dùng 分歧','Dùng 本着……的原则'],sample:'大家有分歧很正常。我们本着少数服从多数的原则，先把几个方案都说一说，然后投票决定，好吗？',samplePy:'Dàjiā yǒu fēnqí hěn zhèngcháng. Wǒmen běnzhe shǎoshù fúcóng duōshù de yuánzé, xiān bǎ jǐ ge fāng\'àn dōu shuō yi shuō, ránhòu tóupiào juédìng, hǎo ma?',sampleVn:'Mọi người có bất đồng là chuyện bình thường. Mình theo nguyên tắc thiểu số phục tùng đa số, trước hết nói qua từng phương án, sau đó bỏ phiếu quyết định, được không?',tip:'Công nhận bất đồng (有分歧很正常) rồi đưa nguyên tắc chung (本着……的原则) để giải quyết — lời nói xây dựng, không đối đầu.'},
+    {scene:'Thầy Trương sắp nghỉ hưu, lớp trưởng nhờ em viết vài lời thay mặt cả lớp.',a:{sp:'Lớp trưởng',zh:'张老师下个月就退休了，你代表大家给他写几句话吧。',vn:'Tháng sau thầy Trương nghỉ hưu rồi, cậu thay mặt mọi người viết vài lời gửi thầy nhé.'},need:['Dùng 衷心','Dùng 爱戴'],sample:'张老师，您是我们最爱戴的老师。这些年您不但教我们知识，还教我们怎么做人。我们衷心希望您退休以后身体健康，生活得开开心心！',samplePy:'Zhāng lǎoshī, nín shì wǒmen zuì àidài de lǎoshī. Zhèxiē nián nín búdàn jiāo wǒmen zhīshi, hái jiāo wǒmen zěnme zuòrén. Wǒmen zhōngxīn xīwàng nín tuìxiū yǐhòu shēntǐ jiànkāng, shēnghuó de kāikāixīnxīn!',sampleVn:'Thầy Trương ơi, thầy là người thầy chúng em kính yêu nhất. Những năm qua thầy không chỉ dạy chúng em kiến thức mà còn dạy chúng em cách làm người. Chúng em chân thành mong thầy nghỉ hưu rồi luôn mạnh khoẻ, sống thật vui vẻ!',tip:'衷心 + 希望 / 感谢 / 祝贺 = chân thành (trang trọng, đúng giọng lời chúc viết); 爱戴 dùng cho người trên được kính yêu (thầy cô, lãnh đạo).'}
+  ]
 };
 
 var registerData = {
- "intro": "Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.",
- "items": [
-  {
-   "scene": "Hiệu trưởng phát biểu trong lễ khai giảng.",
-   "a": "本校将本着“德业并重”的宗旨，培养品德与学问兼优的人才。",
-   "b": "咱们学校嘛，学习要好，人也得好，就这么个意思。",
-   "better": "a",
-   "why": "Phát biểu trong buổi lễ cần lời trang trọng: 本着……的宗旨, 品德与学问兼优. Câu b (咱们……嘛, 就这么个意思) là khẩu ngữ tùy tiện."
-  },
-  {
-   "scene": "Em nhắn tin nhắc bạn thân sắp hết hạn nộp bài tập.",
-   "a": "兹通知：作业截止日期为本周五，逾期不予受理。",
-   "b": "喂，作业周五就截止了，别又拖到最后一天啊！",
-   "better": "b",
-   "why": "Nhắn tin bạn thân dùng khẩu ngữ tự nhiên (喂, 别又……啊). Câu a (兹通知, 逾期不予受理) là giọng văn bản hành chính."
-  },
-  {
-   "scene": "Điều khoản trong bản nội quy thi cử của nhà trường.",
-   "a": "谁要是作弊被抓到了，那可就完蛋了。",
-   "b": "考试作弊行为一经查实，成绩一律作废。",
-   "better": "b",
-   "why": "Văn bản nội quy cần ngắn gọn, trang trọng: 一经查实, 一律作废. Câu a (谁要是……, 完蛋了) là lời nói miệng."
-  },
-  {
-   "scene": "Em nói với mẹ, mong mẹ để em tự quyết một việc nhỏ.",
-   "a": "妈，这事儿您就别管了，让我自己拿主意吧。",
-   "b": "母亲大人，恳请您勿过多干涉本人之私事。",
-   "better": "a",
-   "why": "Nói chuyện với mẹ dùng khẩu ngữ thân mật, lễ phép (您, 让我自己拿主意吧). Câu b (母亲大人, 恳请, 勿, 本人之) kiểu văn công văn — nghe như đùa hoặc lạnh lùng."
-  },
-  {
-   "scene": "Câu kết trong bài văn nghị luận về giáo dục thời cổ.",
-   "a": "书院对中国封建社会教育、学术的发展，产生过重要影响。",
-   "b": "书院可厉害了，对古时候的教育啥的影响老大了。",
-   "better": "a",
-   "why": "Bài văn nghị luận dùng văn viết: 产生过重要影响, 学术的发展. Câu b (可厉害了, 啥的, 老大了) là khẩu ngữ phương bắc."
-  },
-  {
-   "scene": "Tấm thiệp cả lớp gửi thầy giáo cũ nhân Ngày Nhà giáo, sẽ được đọc trước toàn trường.",
-   "a": "老师，您辛苦啦，爱您哟！",
-   "b": "衷心感谢您的辛勤培育，祝您桃李满天下！",
-   "better": "b",
-   "why": "Đọc trước toàn trường cần lời chúc trang trọng: 衷心感谢, 辛勤培育, 桃李满天下. Câu a (啦, 爱您哟) hợp tin nhắn riêng hơn."
-  }
- ]
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
+  items: [
+    {scene:'Thông báo nội quy dán ở thư viện.',a:'书要是弄坏了，你可得负责啊！',b:'损坏图书的行为一经发现，必须根据规定赔偿。',better:'b',why:'Nội quy là văn bản: dùng 一经发现, 根据规定赔偿, ngắn gọn, trang trọng. Câu a (要是……你可得负责啊) là lời nói miệng.'},
+    {scene:'Em nhắn tin nhắc bạn thân sắp hết hạn nộp bài tập.',a:'作业周五就截止了，别忘了交啊！',b:'本次作业截止日期为本周五，请按时提交。',better:'a',why:'Nhắn tin bạn thân dùng khẩu ngữ tự nhiên (就……了, 别忘了……啊). Câu b (本次, 为本周五, 提交) là giọng thông báo của nhà trường.'},
+    {scene:'Em nói với mẹ, mong mẹ để em tự quyết một việc nhỏ.',a:'母亲，本人之事，请您勿过多干涉。',b:'妈，这事儿您就别管了，让我自己拿主意吧。',better:'b',why:'Nói với mẹ dùng khẩu ngữ thân mật mà lễ phép (您, 让我自己拿主意吧). Câu a (本人之事, 勿, 干涉) là giọng công văn — nghe lạnh lùng, như đang cãi nhau.'},
+    {scene:'Hiệu trưởng phát biểu trong buổi họp phụ huynh đầu năm.',a:'我们学校将本着“学生第一”的宗旨，认真听取各位家长的意见。',b:'咱们学校嘛，就是学生最重要，家长有啥想法尽管说。',better:'a',why:'Phát biểu chính thức cần lời trang trọng: 本着……的宗旨, 认真听取, 各位家长. Câu b (嘛, 有啥想法尽管说) quá tuỳ tiện.'},
+    {scene:'Lời kêu gọi của hội học sinh dán trên bảng tin của trường.',a:'大家省着点儿用水啊，别浪费！',b:'学生会倡议大家节约用水，养成随手关水的好习惯。',better:'b',why:'Lời kêu gọi chính thức dùng 倡议 (đề xướng, kêu gọi) + lời lẽ chỉnh tề (养成……的好习惯). Câu a là lời nhắc miệng giữa bạn bè.'},
+    {scene:'Em kể với bạn thân về bố mẹ mình.',a:'我爸妈可开明了，什么事都让我自己决定。',b:'我父母思想十分开明，各种事情皆由本人自行决定。',better:'a',why:'Nói chuyện với bạn thân dùng 我爸妈, 可……了. Câu b (皆由本人自行决定) là văn viết cứng nhắc, nghe như đọc văn bản.'}
+  ]
 };
 
 var retellData = {

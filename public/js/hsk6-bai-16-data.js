@@ -1461,81 +1461,50 @@ var hvBridgeData = {
 // GHÉP TỪ — cụm trong bài khoá và phần 练习
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'压抑住',right:'兴奋'},
-  {left:'瞪着眼睛',right:'注视'},
-  {left:'濒临',right:'消亡'},
-  {left:'致力于保护',right:'野生物种'},
-  {left:'生物',right:'多样性'},
-  {left:'风餐',right:'露宿'},
-  {left:'领袖',right:'人物'},
-  {left:'面带',right:'苦涩'},
-  {left:'影像',right:'空白'},
-  {left:'不分',right:'昼夜'},
-  {left:'支撑',right:'开支'},
-  {left:'建立',right:'影像库'},
-  {left:'立体',right:'还原'},
-  {left:'名副其实的',right:'博物学家'},
-  {left:'专业',right:'素质'},
   {left:'发出',right:'号召'},
   {left:'成效',right:'显著'},
-  {left:'浓厚的',right:'科考性质'},
-  {left:'物种',right:'鉴别'},
-  {left:'环境评估',right:'调查报告'},
-  {left:'权威',right:'专家'}
+  {left:'心甘',right:'情愿'},
+  {left:'不分',right:'昼夜'},
+  {left:'统计',right:'人数'},
+  {left:'严峻的',right:'挑战'},
+  {left:'野生',right:'动物'},
+  {left:'提高',right:'素质'},
+  {left:'立体的',right:'画面'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ
+// ĐIỀN TỪ — câu mới (không chép bài khoá / SGK), mỗi câu một tình huống; ôn xoáy ốc từ + ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'保护',blank:'野生',post:'动物，就是保护人类自己。',hint:'(hoang dã)',ans:'野生'},
-  {pre:'听到自己获奖的消息，她',blank:'压抑',post:'不住内心的激动，眼泪一下子流了下来。',hint:'(kìm nén)',ans:'压抑'},
-  {pre:'检查',blank:'完毕',post:'后，请把试卷放在桌子上，安静地离开考场。',hint:'(xong, hoàn tất)',ans:'完毕'},
-  {pre:'我刚想插嘴，妈妈就狠狠地',blank:'瞪',post:'了我一眼。',hint:'(lườm, trừng mắt)',ans:'瞪'},
-  {pre:'台下几百双眼睛都在',blank:'注视',post:'着他，他紧张得手心直冒汗。',hint:'(nhìn chăm chú)',ans:'注视'},
-  {pre:'这只小猫身上有黑色的花',blank:'斑',post:'，特别可爱。',hint:'(đốm, vằn)',ans:'斑'},
-  {pre:'由于过度捕杀，这种动物已经',blank:'濒临',post:'灭绝。',hint:'(đứng bên bờ, kề sát)',ans:'濒临'},
-  {pre:'毕业以后，她回到家乡，',blank:'致力',post:'于山区儿童的教育事业。',hint:'(dốc sức)',ans:'致力',exp:'致力于 + lĩnh vực = dốc sức vào: 致力于教育事业.'},
-  {pre:'他虽然只是个高中生，却很有',blank:'领袖',post:'风范，同学们都愿意听他的。',hint:'(lãnh tụ, thủ lĩnh)',ans:'领袖'},
-  {pre:'二十年没见，老同学变化大得我几乎',blank:'辨认',post:'不出来了。',hint:'(nhận ra)',ans:'辨认'},
-  {pre:'年轻人不应该满足于',blank:'现状',post:'，而应该勇于挑战自己。',hint:'(hiện trạng)',ans:'现状'},
-  {pre:'这件古董看起来很普通，其实大有',blank:'来历',post:'。',hint:'(lai lịch)',ans:'来历'},
-  {pre:'提起那段艰难的日子，爷爷脸上露出了',blank:'苦涩',post:'的笑容。',hint:'(cay đắng)',ans:'苦涩'},
-  {pre:'一看到考题，我的大脑就一片',blank:'空白',post:'。',hint:'(trống rỗng)',ans:'空白'},
-  {pre:'这道题我',blank:'琢磨',post:'了一个晚上，终于想出了解法。',hint:'(nghiền ngẫm)',ans:'琢磨'},
-  {pre:'沙漠地区',blank:'昼夜',post:'温差很大，白天热得要命，晚上却很冷。',hint:'(ngày đêm)',ans:'昼夜'},
-  {pre:'为了给孩子治病，父母四处',blank:'奔波',post:'，到处借钱。',hint:'(bôn ba)',ans:'奔波'},
-  {pre:'没有人强迫我，当志愿者是我',blank:'心甘情愿',post:'的。',hint:'(cam tâm tình nguyện)',ans:'心甘情愿'},
-  {pre:'父亲去世以后，是母亲一个人',blank:'支撑',post:'起了这个家。',hint:'(chống đỡ, gánh vác)',ans:'支撑'},
-  {pre:'这本小说特别',blank:'畅销',post:'，上市一个月就卖出了十万册。',hint:'(bán chạy)',ans:'畅销'},
-  {pre:'下了一夜大雪，整个校园美得像',blank:'童话',post:'世界一样。',hint:'(truyện cổ tích)',ans:'童话'},
-  {pre:'我们小组选了一个关于塑料污染的研究',blank:'课题',post:'。',hint:'(đề tài)',ans:'课题'},
-  {pre:'这幅画的',blank:'立体',post:'感很强，画里的人好像要走出来一样。',hint:'(lập thể, nổi khối)',ans:'立体'},
-  {pre:'警察通过监控录像',blank:'还原',post:'了事故发生的经过。',hint:'(tái hiện, khôi phục)',ans:'还原'},
-  {pre:'一个优秀的运动员，不仅要有好的身体素质，还要有过硬的心理',blank:'素质',post:'。',hint:'(tố chất)',ans:'素质'},
-  {pre:'学校',blank:'号召',post:'全体同学节约用水、用电。',hint:'(kêu gọi)',ans:'号召'},
-  {pre:'这款学习软件的',blank:'用户',post:'已经超过了一千万。',hint:'(người dùng)',ans:'用户'},
-  {pre:'据',blank:'统计',post:'，全班有一半以上的同学每天用手机超过三个小时。',hint:'(thống kê)',ans:'统计'},
-  {pre:'越来越多的年轻人加入了保护野生动物的',blank:'队伍',post:'。',hint:'(đội ngũ)',ans:'队伍'},
-  {pre:'自从换了学习方法，他的成绩有了',blank:'显著',post:'的提高。',hint:'(rõ rệt)',ans:'显著'}
+  {pre:'听到儿子考上大学的消息，妈妈',blank:'压抑',post:'不住内心的激动，一下子哭了出来。',hint:'(kìm nén)',ans:'压抑',exp:'压抑不住 + cảm xúc = không kìm nén nổi; 压抑 dùng cho tình cảm bị dồn nén. 压力 là danh từ "áp lực", không mang bổ ngữ 不住.'},
+  {pre:'检查',blank:'完毕',post:'后，请把试卷放在桌子上，安静地离开教室。',hint:'(xong, hoàn tất)',ans:'完毕',exp:'V + 完毕 = … xong (văn viết, lời thông báo chính thức); khẩu ngữ nói 检查完了.'},
+  {pre:'我刚想插嘴，妈妈就',blank:'瞪',post:'了我一眼，我只好不说了。',hint:'(lườm, trừng mắt)',ans:'瞪',exp:'瞪 + 一眼 = lườm, trừng mắt (tỏ ý không vui, ngăn lại). 看了我一眼 chỉ là nhìn bình thường, không có ý trách.'},
+  {pre:'台下几百双眼睛都在',blank:'注视',post:'着他，他紧张得手心直出汗。',hint:'(nhìn chăm chú)',ans:'注视',exp:'注视着 + người / vật = nhìn chăm chú, lâu vào một điểm. 看见 chỉ kết quả "thấy", không đi với 着 như vậy.'},
+  {pre:'这只小猫身上有黑色的花',blank:'斑',post:'，特别可爱。',hint:'(đốm, vằn)',ans:'斑',exp:'斑 = đốm, vằn (花斑 = đốm hoa). Cẩn thận chữ đồng âm 班 (lớp, ca) — khác nghĩa hoàn toàn.'},
+  {pre:'那家公司因为管理不好，一度',blank:'濒临',post:'倒闭。',hint:'(kề bên, đứng trước bờ)',ans:'濒临',exp:'濒临 + tình trạng xấu (倒闭, 消亡) = sát bờ vực …. 面临 = đối mặt (面临困难), không nhấn "sắp xảy ra ngay" như 濒临.'},
+  {pre:'大学一毕业，她就回到家乡，',blank:'致力',post:'于山区儿童的教育。',hint:'(dốc sức)',ans:'致力',exp:'致力于 + lĩnh vực = dốc sức cho …, luôn đi với 于. 努力 không mang 于 + lĩnh vực như vậy.'},
+  {pre:'他从小就是孩子们中的',blank:'领袖',post:'，大家都愿意听他的。',hint:'(thủ lĩnh, người dẫn đầu)',ans:'领袖',exp:'领袖 = thủ lĩnh, người được mọi người tự nguyện đi theo. 领导 thường chỉ cấp trên theo chức vụ, không dùng cho nhóm trẻ con chơi với nhau.'},
+  {pre:'二十年没见，老同学变化大得我几乎',blank:'辨认',post:'不出来了。',hint:'(nhận ra)',ans:'辨认',exp:'辨认 = nhìn kỹ để nhận ra (người, chữ viết, đường đi); 辨认不出来 = không nhận ra nổi. 认识 = quen biết, không nói ×认识不出来.'},
+  {pre:'年轻人不应该满足于',blank:'现状',post:'，而应该勇于挑战自己。',hint:'(hiện trạng)',ans:'现状',exp:'满足于现状 = an phận với tình hình hiện tại; 现状 là danh từ chỉ tình trạng. 现在 chỉ thời điểm "bây giờ", không đi với 满足于.'},
+  {pre:'说起当年的穷日子，爷爷',blank:'苦涩',post:'地笑了笑，什么也没说。',hint:'(cay đắng, chua chát)',ans:'苦涩',exp:'苦涩 nghĩa gốc là đắng chát, nghĩa bóng là cay đắng trong lòng; 苦涩地笑 = cười chua chát. 辛苦 = vất vả, không tả nụ cười.'},
+  {pre:'这道题我',blank:'琢磨',post:'了一个晚上，终于想明白了。',hint:'(nghiền ngẫm)',ans:'琢磨',exp:'琢磨 (đọc zuómo) = suy đi tính lại, nghiền ngẫm (khẩu ngữ), thường + thời lượng. 研究 trang trọng hơn, dùng cho đề tài, công trình.'},
+  {pre:'为了给孩子治病，父母四处',blank:'奔波',post:'，到处借钱。',hint:'(bôn ba)',ans:'奔波',exp:'四处奔波 = bôn ba khắp nơi, vất vả đi lại để lo một việc. 奔跑 = chạy (động tác cơ thể), không mang nghĩa lo toan.'},
+  {pre:'父亲去世以后，是母亲一个人',blank:'支撑',post:'起了这个家。',hint:'(gánh vác, chống đỡ)',ans:'支撑',exp:'支撑 + 家 / 开支 = gánh vác, chống đỡ (về kinh tế, tinh thần). 支持 = ủng hộ — không nói ×支持起了这个家.'},
+  {pre:'一走上台，我的大脑就一片',blank:'空白',post:'，准备好的话全忘了。',hint:'(trống rỗng)',ans:'空白',exp:'大脑一片空白 = đầu óc trống rỗng; 空白 còn chỉ "khoảng trống" chưa ai làm. 空闲 = rảnh rỗi, không dùng cho đầu óc như vậy.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (换句话说 · 为……所…… · 足以) ít nhất 2 câu
+// SẮP XẾP CÂU — câu mới, chỉ một trật tự đúng
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['雪豹','正濒临消亡','，','换句话说','，','我们','很可能','再也见不到','这种动物了','。'],ans:'雪豹正濒临消亡，换句话说，我们很可能再也见不到这种动物了。',audio:'雪豹正濒临消亡，换句话说，我们很可能再也见不到这种动物了。'},
-  {words:['他所有的辛劳','都是心甘情愿的','，','换句话说','，','没有人','强迫他','。'],ans:'他所有的辛劳都是心甘情愿的，换句话说，没有人强迫他。',audio:'他所有的辛劳都是心甘情愿的，换句话说，没有人强迫他。'},
-  {words:['他一个月的工资','是我的三倍','，','也就是说','，','相当于','我三个月的','。'],ans:'他一个月的工资是我的三倍，也就是说，相当于我三个月的。',audio:'他一个月的工资是我的三倍，也就是说，相当于我三个月的。'},
-  {words:['很多特有物种','还没来得及','为我们所了解','，','就','消失了','。'],ans:'很多特有物种还没来得及为我们所了解，就消失了。',audio:'很多特有物种还没来得及为我们所了解，就消失了。'},
-  {words:['京酱肉丝','这道菜','为','很多人','所','称道','。'],ans:'京酱肉丝这道菜为很多人所称道。',audio:'京酱肉丝这道菜为很多人所称道。'},
-  {words:['他','是个','有原则的人','，','绝不会','为金钱','所惑','。'],ans:'他是个有原则的人，绝不会为金钱所惑。',audio:'他是个有原则的人，绝不会为金钱所惑。'},
-  {words:['这些材料','足以','说明','问题了','。'],ans:'这些材料足以说明问题了。',audio:'这些材料足以说明问题了。'},
-  {words:['他们','渴望','拍出','足以','使人疯狂的','照片','。'],ans:'他们渴望拍出足以使人疯狂的照片。',audio:'他们渴望拍出足以使人疯狂的照片。'},
-  {words:['只靠','一次考试','，','不足以','评估','一个学生的能力','。'],ans:'只靠一次考试，不足以评估一个学生的能力。',audio:'只靠一次考试，不足以评估一个学生的能力。'},
-  {words:['请','写清地址','，','以便','邮递员','及时送信','。'],ans:'请写清地址，以便邮递员及时送信。',audio:'请写清地址，以便邮递员及时送信。'},
-  {words:['这种电脑','体积小','，','便于','大家','携带','。'],ans:'这种电脑体积小，便于大家携带。',audio:'这种电脑体积小，便于大家携带。'},
-  {words:['实践证实','，','这种','集合式工作','成效显著','。'],ans:'实践证实，这种集合式工作成效显著。',audio:'实践证实，这种集合式工作成效显著。'}
+  {words:['这点儿钱','不足以','交','一个月的','房租','。'],ans:'这点儿钱不足以交一个月的房租。',audio:'这点儿钱不足以交一个月的房租。'},
+  {words:['他的','想法','很难','为','别人','所','理解','。'],ans:'他的想法很难为别人所理解。',audio:'他的想法很难为别人所理解。'},
+  {words:['弟弟','被','妈妈','瞪了','一眼','。'],ans:'弟弟被妈妈瞪了一眼。',audio:'弟弟被妈妈瞪了一眼。'},
+  {words:['她','一直','致力于','保护','野生','动物','。'],ans:'她一直致力于保护野生动物。',audio:'她一直致力于保护野生动物。'},
+  {words:['这','是','一本','非常','畅销的','童话书','。'],ans:'这是一本非常畅销的童话书。',audio:'这是一本非常畅销的童话书。'},
+  {words:['老师','让','我们','自己','选','一个','研究','课题','。'],ans:'老师让我们自己选一个研究课题。',audio:'老师让我们自己选一个研究课题。'},
+  {words:['越来越多的','年轻人','加入了','我们的','队伍','。'],ans:'越来越多的年轻人加入了我们的队伍。',audio:'越来越多的年轻人加入了我们的队伍。'},
+  {words:['你','最好','请','专家','鉴别','一下','这幅画','。'],ans:'你最好请专家鉴别一下这幅画。',audio:'你最好请专家鉴别一下这幅画。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1543,72 +1512,44 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'现在很多手机都有人脸____功能，看一眼就能解锁。',opts:['识别','辨别','区别','告别'],ans:0,
-   exp:'人脸识别 = nhận dạng khuôn mặt (thuật ngữ cố định). 辨别 = phân biệt (đúng/sai, phương hướng); 区别 = sự khác nhau; 告别 = từ biệt.'},
-  {wrong:'你自己都不努力，怎么____别人帮你呢？',opts:['希望','失望','指望','盼望'],ans:2,
-   exp:'指望 + người + V = trông cậy ai làm gì (hàm ý không nên trông cậy). 希望 / 盼望 là mong mỏi chung chung, không có nghĩa "trông cậy vào người khác"; 失望 = thất vọng.'},
-  {wrong:'面对____的就业形势，大学生们要及早做好准备。',opts:['严格','严峻','严肃','严厉'],ans:1,
-   exp:'形势严峻 = tình hình gay gắt. 严格 = nghiêm ngặt (yêu cầu, quy định); 严肃 = nghiêm túc (thái độ); 严厉 (bài 1) = nghiêm khắc (người).'},
-  {wrong:'很多年轻人都____到外面去看看世界，开阔视野。',opts:['渴求','口渴','愿望','渴望'],ans:3,
-   exp:'渴望 + V = khao khát làm gì. 愿望 là danh từ (nguyện vọng), không mang động từ phía sau; 渴求 văn viết, thường + danh từ (渴求知识); 口渴 = khát nước.'},
-  {wrong:'这些事实____说明他是无辜的。',opts:['足够','充足','足以','满足'],ans:2,
-   exp:'足以 + V = đủ để … (điểm ngữ pháp 3; 练习2 ④). 足够 hay đứng sau 有 / làm vị ngữ (时间足够); 充足 = đầy đủ (ánh sáng, nguồn cung); 满足 = thoả mãn.'},
-  {wrong:'请在信封上写清地址，____邮递员及时把信送到。',opts:['以便','便于','为了','以免'],ans:0,
-   exp:'Đầu phân câu sau, có chủ ngữ mới (邮递员) → liên từ 以便. 便于 là động từ, không đứng đầu phân câu mang chủ ngữ mới; 为了 thường đứng vế trước; 以免 = để tránh (ngược nghĩa).'},
-  {wrong:'这种新型电脑体积小，____大家携带。',opts:['以便','方便','随便','便于'],ans:3,
-   exp:'Nhờ điều kiện của bản thân (体积小) mà dễ làm gì → 便于 + V (bảng 词语辨析). 以便 không có nghĩa này; 方便大家携带 cũng hiểu được nhưng không phải cấu trúc của bài; 随便 = tuỳ tiện.'},
-  {wrong:'这份工作虽然____不高，但是能学到很多东西。',opts:['报答','报酬','报告','报仇'],ans:1,
-   exp:'报酬 = thù lao. 报答 = báo đáp (ân tình); 报告 = báo cáo; 报仇 = báo thù — cẩn thận đồng âm Hán Việt!'},
-  {wrong:'他对中国非常了解，是个____的中国通。',opts:['名副其实','心甘情愿','莫名其妙','理所当然'],ans:0,
-   exp:'名副其实的 + N = … đúng nghĩa (练习2 ②). 心甘情愿 = cam lòng; 莫名其妙 (bài 12) = khó hiểu; 理所当然 (bài 12) = đương nhiên.'},
-  {wrong:'这位老中医医术____，治好了很多疑难病。',opts:['高级','高明','高超','高档'],ans:2,
-   exp:'医术 / 技术 + 高超 = điêu luyện. 高级 = cao cấp; 高档 = hàng sang; 高明 cũng khen người giỏi (高明的医生) nhưng cụm quen với 技术/医术 là 高超.'},
-  {wrong:'网上的这个说法还没有得到____，大家先别急着转发。',opts:['证件','证实','证书','保证'],ans:1,
-   exp:'得到证实 = được xác nhận. 证件 = giấy tờ tuỳ thân; 证书 = chứng chỉ; 保证 = cam đoan.'},
-  {wrong:'经过一年的治理，这条河的污染问题已经初见____。',opts:['成就','成果','成绩','成效'],ans:3,
-   exp:'初见成效 = bước đầu có hiệu quả (cụm cố định). 成就 = thành tựu lớn; 成果 = thành quả; 成绩 = thành tích, điểm số.'},
-  {wrong:'自从看了那部纪录片，弟弟就对野生动物产生了____的兴趣。',opts:['浓密','深厚','浓厚','厚重'],ans:2,
-   exp:'浓厚的兴趣 = hứng thú sâu đậm (练习3 ①). 深厚 đi với 感情 / 友谊; 浓密 = rậm (tóc, cây); 厚重 = dày nặng.'},
-  {wrong:'这份报告是由____机构发布的，数据比较可靠。',opts:['权威','威胁','威风','权利'],ans:0,
-   exp:'权威机构 = cơ quan có uy tín. 威胁 = đe doạ; 威风 = oai phong; 权利 = quyền lợi.'},
-  {wrong:'经过专家____，这幅画原来是假的。',opts:['区别','识别','告别','鉴别'],ans:3,
-   exp:'鉴别 = giám định thật/giả (cần chuyên môn). 识别 = nhận ra, nhận dạng; 区别 = phân biệt / sự khác nhau; 告别 = từ biệt.'},
-  {wrong:'不能只凭考试成绩来____一个学生是否优秀。',opts:['评论','评估','估计','批评'],ans:1,
-   exp:'评估 = đánh giá, thẩm định (dựa trên tiêu chí). 评论 = bình luận; 估计 = ước đoán; 批评 = phê bình.'},
-  {wrong:'雪豹正濒临消亡，____，将来我们很可能再也见不到它们了。',opts:['换句话说','总而言之','与此同时','不瞒你说'],ans:0,
-   exp:'换句话说 = nói cách khác — giải thích lại vế trước bằng lời khác (điểm ngữ pháp 1). 总而言之 = tóm lại; 与此同时 = đồng thời; 不瞒你说 (bài 8) = nói thật với anh.'},
-  {wrong:'很多特有物种还没来得及____我们所了解，就消失了。',opts:['被','让','为','给'],ans:2,
-   exp:'Cấu trúc bị động văn viết 为 + N + 所 + V (điểm ngữ pháp 2). 被 / 让 / 给 không đi với 所.'}
+  {wrong:'现在很多手机都有人脸____功能，看一眼就能打开。',opts:['识别','辨认','区别','告别'],ans:0,exp:'人脸识别 = nhận dạng khuôn mặt (máy móc nhận ra theo đặc điểm). 辨认 là người nhìn kỹ để nhận ra; 区别 = sự khác nhau; 告别 = từ biệt.'},
+  {wrong:'面对____的就业形势，大学生们要早一点做好准备。',opts:['严峻','严格','严肃','严厉'],ans:0,exp:'形势严峻 = tình hình gay gắt, khó khăn. 严格 = nghiêm ngặt (yêu cầu, quy định); 严肃 = nghiêm túc (thái độ); 严厉 = nghiêm khắc (người đối xử với người).'},
+  {wrong:'孩子们的眼睛里充满了对知识的____。',opts:['渴望','愿望','口渴','盼望'],ans:0,exp:'对……的渴望 = sự khao khát đối với …. 愿望 = nguyện vọng cụ thể (我的愿望是……), không đi với 对知识的; 口渴 = khát nước; 盼望 chủ yếu là động từ "mong ngóng".'},
+  {wrong:'别担心，路上吃的东西已经____了，不用再买。',opts:['足够','足以','满足','以便'],ans:0,exp:'足够 làm vị ngữ, đứng cuối câu được (东西足够了). 足以 bắt buộc có động từ theo sau (足以说明……) — ×足以了 là lỗi hay gặp; 满足 = thoả mãn; 以便 = để.'},
+  {wrong:'请把你的电话号码写在黑板上，____同学们有事随时联系你。',opts:['以便','便于','免得','只要'],ans:0,exp:'Đầu vế sau, nêu mục đích, có chủ ngữ mới (同学们) → 以便. 便于 (bài 13) là động từ "dễ cho", không mở một vế có chủ ngữ riêng; 免得 = để khỏi (ngược ý); 只要 = chỉ cần.'},
+  {wrong:'这份工作虽然____不高，但是能学到很多东西。',opts:['报酬','报道','报告','报名'],ans:0,exp:'报酬 = thù lao, tiền công. 报道 = đưa tin; 报告 = báo cáo; 报名 = đăng ký — đều có chữ 报 nhưng khác nghĩa.'},
+  {wrong:'他一年要飞二十多个国家，“空中飞人”这个名字对他来说真是____。',opts:['名副其实','心甘情愿','莫名其妙','理所当然'],ans:0,exp:'名副其实 = danh xứng với thực (làm vị ngữ hoặc định ngữ: 名副其实的……). 心甘情愿 = cam lòng; 莫名其妙 = khó hiểu; 理所当然 = lẽ đương nhiên — không bổ nghĩa cho danh xưng.'},
+  {wrong:'这位摄影师技术____，拍出的照片像画一样美。',opts:['高超','高级','高档','高大'],ans:0,exp:'技术 + 高超 = tay nghề điêu luyện. 高级 = cao cấp (hàng hoá, trình độ lớp học); 高档 = hàng sang; 高大 = cao lớn (vóc người, toà nhà).'},
+  {wrong:'网上的这个说法还没有得到____，大家先别着急转发。',opts:['证实','保证','确实','实现'],ans:0,exp:'得到证实 = được xác nhận là thật. 保证 = cam đoan; 确实 là phó từ "quả thật"; 实现 = thực hiện (ước mơ) — đều không hợp với "tin đồn".'},
+  {wrong:'我对历史一直有很____的兴趣，常常一看就是一下午。',opts:['浓厚','深厚','厚重','丰富'],ans:0,exp:'浓厚的兴趣 = hứng thú đậm. 深厚 đi với 感情 / 友谊 / 基础; 厚重 = dày nặng; 丰富 đi với 经验 / 内容, không với 兴趣.'},
+  {wrong:'这份报告是由____部门发布的，数据比较可靠。',opts:['权威','危险','重要','专门'],ans:0,exp:'权威部门 = cơ quan có thẩm quyền, có uy tín → nên số liệu đáng tin (vế sau 可靠). 重要 / 专门 không giải thích vì sao đáng tin; 危险 = nguy hiểm.'},
+  {wrong:'经过专家____，这幅画原来是假的。',opts:['鉴别','识别','区别','告别'],ans:0,exp:'鉴别 = giám định thật / giả, cần chuyên môn. 识别 = nhận ra, nhận dạng (không có nghĩa thẩm định); 区别 = phân biệt / sự khác nhau; 告别 = từ biệt.'},
+  {wrong:'公司每年都会对员工的工作表现进行____。',opts:['评估','评论','估计','批评'],ans:0,exp:'对……进行评估 = đánh giá, thẩm định theo tiêu chí. 评论 = bình luận; 估计 = ước đoán; 批评 = phê bình (chỉ nói cái sai).'},
+  {wrong:'他总说“再看看吧”，____他其实不想买。',opts:['换句话说','总的来说','与此同时','不瞒你说'],ans:0,exp:'换句话说 = nói cách khác — vế sau nói lại rõ hơn ý ngầm của vế trước. 总的来说 = nói chung (tổng kết nhiều ý); 与此同时 = đồng thời; 不瞒你说 (bài 8) = nói thật với bạn.'},
+  {wrong:'这位老人一生帮助过很多人，____当地人所尊敬。',opts:['为','被','让','给'],ans:0,exp:'Bị động văn viết: 为 + N + 所 + V (为 đọc wéi). Theo bài, 被 / 让 / 给 không kết hợp với 所 trong cấu trúc này.'}
 ];
 
 // ══════════════════════════════════════════
-// DỊCH — câu ghép, ôn từ HSK 6 bài 1–15 và HSK 4–5
+// DỊCH Việt → Trung — câu mới, dùng từ của bài + ôn ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Báo tuyết đang đứng bên bờ diệt vong, nói cách khác, nếu không kịp thời bảo vệ, con cháu chúng ta có lẽ chỉ có thể thấy chúng trong ảnh.',zh:'雪豹正濒临消亡，换句话说，如果不及时保护，我们的后代也许只能在照片上见到它们了。',py:'Xuěbào zhèng bīnlín xiāowáng, huàn jù huà shuō, rúguǒ bù jíshí bǎohù, wǒmen de hòudài yěxǔ zhǐ néng zài zhàopiàn shang jiàndào tāmen le.',goiY:['濒临','换句话说','如果……','后代'],giai:'换句话说 đứng giữa hai vế, vế sau giải thích lại vế trước bằng hệ quả cụ thể; 濒临 + 消亡 / 灭绝; 后代 ôn bài 12.'},
-  {vi:'Anh ấy là người có nguyên tắc, dù người khác đưa bao nhiêu tiền, anh ấy cũng tuyệt đối không bị đồng tiền mê hoặc.',zh:'他是个有原则的人，不管别人给多少钱，他都绝不会为金钱所惑。',py:'Tā shì ge yǒu yuánzé de rén, bùguǎn biérén gěi duōshao qián, tā dōu jué bú huì wéi jīnqián suǒ huò.',goiY:['不管……都……','为……所……','绝不'],giai:'为 + N + 所 + V: bị động văn viết, dạng phủ định đặt 不 trước 为 (不会为……所惑). 为 ở đây đọc wéi.'},
-  {vi:'Những bức ảnh này đủ để chứng minh sự đa dạng sinh học ở đây, bởi vậy chúng tôi mong có thể xây dựng một kho hình ảnh để mọi người tiện tra cứu.',zh:'这些照片足以证明这里的生物多样性，因此我们希望建立一个影像库，以便大家查阅。',py:'Zhèxiē zhàopiàn zúyǐ zhèngmíng zhèli de shēngwù duōyàngxìng, yīncǐ wǒmen xīwàng jiànlì yí ge yǐngxiàngkù, yǐbiàn dàjiā cháyuè.',goiY:['足以','因此','以便','影像库'],giai:'Ba vế: 足以 + V (đủ để) → 因此 (kết quả) → 以便 đứng đầu vế cuối nêu mục đích, chủ ngữ mới 大家.'},
-  {vi:'Họ bôn ba không kể ngày đêm chẳng qua là muốn chụp được những bức ảnh hay hơn, chứ không phải vì thù lao.',zh:'他们不分昼夜地奔波，无非是想拍出更好的照片，而并非为了报酬。',py:'Tāmen bù fēn zhòuyè de bēnbō, wúfēi shì xiǎng pāichū gèng hǎo de zhàopiàn, ér bìngfēi wèile bàochou.',goiY:['不分昼夜','奔波','无非','并非','报酬'],giai:'无非 (bài 5) = chẳng qua; 而并非 (bài 7) phủ định dứt khoát lý do bị hiểu nhầm; 不分昼夜地 làm trạng ngữ, nhớ 地.'},
-  {vi:'Đợt quyên góp này hiệu quả rõ rệt; thực tiễn chứng minh, chỉ cần nhà trường vừa phát lời kêu gọi là các bạn học sinh đều sẵn lòng góp sức.',zh:'这次捐款活动成效显著，实践证实，只要学校一发出号召，同学们就都愿意出一份力。',py:'Zhè cì juānkuǎn huódòng chéngxiào xiǎnzhù, shíjiàn zhèngshí, zhǐyào xuéxiào yì fāchū hàozhào, tóngxuémen jiù dōu yuànyì chū yí fèn lì.',goiY:['成效显著','证实','只要……就……','一……就……','号召'],giai:'成效显著 là cụm chủ–vị cố định; 只要 + 一 + V……就……: chỉ cần vừa … là …; 出一份力 = góp một phần sức.'},
-  {vi:'Tuy thù lao không cao, nhưng các nhiếp ảnh gia vẫn cam tâm tình nguyện dãi gió dầm sương nơi núi rừng, bởi họ khao khát lấp đầy khoảng trống hình ảnh của các khu bảo tồn.',zh:'虽然报酬不高，摄影师们却心甘情愿地在山野里风餐露宿，因为他们渴望填补保护区的影像空白。',py:'Suīrán bàochou bù gāo, shèyǐngshīmen què xīngān-qíngyuàn de zài shānyě li fēngcān-lùsù, yīnwèi tāmen kěwàng tiánbǔ bǎohùqū de yǐngxiàng kòngbái.',goiY:['虽然……却……','心甘情愿','渴望','空白'],giai:'虽然……却……: 却 đứng sau chủ ngữ vế sau; 心甘情愿地 + V; 填补空白 = lấp khoảng trống (cụm cố định).'},
-  {vi:'Kỹ thuật chụp ảnh của cô ấy tuy điêu luyện, nhưng chỉ dựa vào một tấm ảnh thì chưa đủ để đánh giá tố chất chuyên môn của một nhiếp ảnh gia.',zh:'她的摄影技术固然高超，但是只凭一张照片，还不足以评估一个摄影师的专业素质。',py:'Tā de shèyǐng jìshù gùrán gāochāo, dànshì zhǐ píng yì zhāng zhàopiàn, hái bù zúyǐ pínggū yí ge shèyǐngshī de zhuānyè sùzhì.',goiY:['固然……但是……','高超','不足以','评估','素质'],giai:'固然 (bài 5) thừa nhận vế đầu rồi chuyển ý; phủ định của 足以 là 不足以 + V; 只凭 = chỉ dựa vào.'},
-  {vi:'Đàn vẹt này bị trận tuyết lớn vây khốn; theo thống kê của các chuyên gia có uy tín, chỉ còn chưa đến một nửa số con sống sót.',zh:'这群鹦鹉为大雪所困，据权威专家统计，只有不到一半活了下来。',py:'Zhè qún yīngwǔ wéi dàxuě suǒ kùn, jù quánwēi zhuānjiā tǒngjì, zhǐyǒu bú dào yíbàn huóle xiàlái.',goiY:['为……所……','据……统计','权威'],giai:'为大雪所困 (练一练 ②) = bị tuyết vây khốn — văn viết; 据 + N + 统计 = theo thống kê của …; 活了下来 = sống sót.'},
-  {vi:'Xét thấy nhiều người không biết lai lịch của các loài động vật đặc hữu, nhóm chúng tôi quyết định lấy việc bảo vệ động vật hoang dã làm đề tài nghiên cứu.',zh:'鉴于很多人不了解特有动物的来历，我们小组决定以保护野生动物为研究课题。',py:'Jiànyú hěn duō rén bù liǎojiě tèyǒu dòngwù de láilì, wǒmen xiǎozǔ juédìng yǐ bǎohù yěshēng dòngwù wéi yánjiū kètí.',goiY:['鉴于……，决定……','来历','以……为……','课题'],giai:'鉴于 (bài 12) nêu căn cứ ở vế trước; 以 A 为 B (bài 11) = lấy A làm B; 课题 = đề tài nghiên cứu.'},
-  {vi:'Đừng trông mong người khác giúp em nhận ra các loài chim; em cứ thử tự mình nghiền ngẫm, nói cách khác, kiến thức phải tự mình tích luỹ.',zh:'别指望别人帮你辨认鸟类，你不妨自己琢磨琢磨，换句话说，知识要靠自己积累。',py:'Bié zhǐwàng biérén bāng nǐ biànrèn niǎolèi, nǐ bùfáng zìjǐ zuómo zuómo, huàn jù huà shuō, zhīshi yào kào zìjǐ jīlěi.',goiY:['指望','辨认','不妨','琢磨琢磨','换句话说'],giai:'别指望…… = đừng trông cậy; 不妨 (bài 12) + V lặp (琢磨琢磨); 换句话说 mở vế tổng kết lại ý bằng lời khác.'}
+  {vi:'Anh ấy chưa từng đến muộn lần nào, nói cách khác, anh ấy là một người rất đáng tin cậy.',zh:'他一次也没迟到过，换句话说他是个非常可靠的人。',py:'Tā yí cì yě méi chídàoguo, huàn jù huà shuō tā shì ge fēicháng kěkào de rén.',goiY:['一次也没……过','换句话说','可靠'],giai:'换句话说 đứng giữa hai vế, vế sau nói lại ý vế trước bằng một nhận xét khái quát; 一次也没 + V + 过 = chưa từng … lần nào.'},
+  {vi:'Đọc đến đây, mỗi độc giả đều sẽ cảm động trước mười năm bôn ba của anh ấy.',zh:'读到这里，每一位读者都会为他十年的奔波所感动。',py:'Dú dào zhèli, měi yí wèi dúzhě dōu huì wèi tā shí nián de bēnbō suǒ gǎndòng.',goiY:['为……所感动','奔波'],giai:'为 + N + 所 + V: bị động văn viết, "cảm động vì / trước …"; 为 đọc wéi; 一位 đọc yí wèi.'},
+  {vi:'Những bức ảnh này đủ để chứng minh sự đa dạng sinh học ở đây, vì vậy chúng tôi muốn xây dựng một kho hình ảnh để mọi người tiện tra cứu.',zh:'这些照片足以证明这里的生物多样性，因此我们希望建立一个影像库，以便大家查阅。',py:'Zhèxiē zhàopiàn zúyǐ zhèngmíng zhèli de shēngwù duōyàngxìng, yīncǐ wǒmen xīwàng jiànlì yí ge yǐngxiàngkù, yǐbiàn dàjiā cháyuè.',goiY:['足以','因此','以便','影像库'],giai:'Ba vế: 足以 + V (đủ để) → 因此 (kết quả) → 以便 đứng đầu vế cuối nêu mục đích, chủ ngữ mới 大家.'},
+  {vi:'Anh ấy ngày nào cũng làm việc không kể ngày đêm, chẳng qua là muốn cho gia đình sống tốt hơn, chứ không phải vì bản thân.',zh:'他每天不分昼夜地工作，无非是想让家人过上好日子，而并非为了自己。',py:'Tā měi tiān bù fēn zhòuyè de gōngzuò, wúfēi shì xiǎng ràng jiārén guòshang hǎo rìzi, ér bìngfēi wèile zìjǐ.',goiY:['不分昼夜','无非','并非'],giai:'无非 (bài 5) = chẳng qua; 而并非 (bài 7) phủ định dứt khoát lý do bị hiểu nhầm; 不分昼夜地 làm trạng ngữ, nhớ 地.'},
+  {vi:'Kỹ thuật chụp ảnh của cô ấy tuy điêu luyện, nhưng chỉ dựa vào một tấm ảnh thì vẫn chưa đủ để nói lên tố chất chuyên môn của cô ấy.',zh:'她的摄影技术固然高超，但是只凭一张照片，还不足以说明她的专业素质。',py:'Tā de shèyǐng jìshù gùrán gāochāo, dànshì zhǐ píng yì zhāng zhàopiàn, hái bù zúyǐ shuōmíng tā de zhuānyè sùzhì.',goiY:['固然……但是……','高超','不足以','素质'],giai:'固然 (bài 5) thừa nhận vế đầu rồi chuyển ý; phủ định của 足以 là 不足以 + V; 只凭 = chỉ dựa vào.'},
+  {vi:'Xét thấy nhiều người không biết lai lịch của các loài động vật đặc hữu, nhóm chúng tôi quyết định lấy việc bảo vệ động vật hoang dã làm đề tài nghiên cứu.',zh:'鉴于很多人不了解特有动物的来历，我们小组决定以保护野生动物为研究课题。',py:'Jiànyú hěn duō rén bù liǎojiě tèyǒu dòngwù de láilì, wǒmen xiǎozǔ juédìng yǐ bǎohù yěshēng dòngwù wéi yánjiū kètí.',goiY:['鉴于……，决定……','来历','以……为……','课题'],giai:'鉴于 (bài 12) nêu căn cứ ở vế trước; 以 A 为 B (bài 11) = lấy A làm B; 课题 = đề tài nghiên cứu.'}
 ];
 
-// Chiều Trung → Việt — bám ý bài khoá, nội dung khác chiều trên
+// ══════════════════════════════════════════
+// Dịch Trung → Việt — câu mới, không trùng chiều trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Các nhiếp ảnh gia kìm nén sự phấn khích, nín thở, dốc toàn lực chụp báo tuyết; chụp xong, vừa quay đầu lại, họ thấy hai con báo tuyết đang trố mắt nhìn mình.',zh:'摄影师们压抑住兴奋，憋住气，全力拍摄雪豹；拍摄完毕，一回头，发现两只雪豹正瞪着眼睛注视着自己。',py:'Shèyǐngshīmen yāyì zhù xīngfèn, biēzhù qì, quánlì pāishè xuěbào; pāishè wánbì, yì huítóu, fāxiàn liǎng zhī xuěbào zhèng dèngzhe yǎnjing zhùshìzhe zìjǐ.',goiY:['压抑住 = kìm nén','憋住气 = nín thở','完毕 = xong','瞪着眼睛 = trố mắt'],giai:'Chuỗi động tác liên tiếp — tiếng Việt giữ nhịp ngắn; 一回头 = vừa quay đầu lại; 注视着自己 dịch "nhìn chằm chằm vào mình".'},
-  {vi:'Báo tuyết đang đứng bên bờ diệt vong; nói cách khác, trong tương lai không xa, rất có thể chúng ta sẽ không bao giờ còn thấy loài vật này nữa.',zh:'雪豹正濒临消亡，换句话说，在不久的将来我们很可能再也见不到这种动物。',py:'Xuěbào zhèng bīnlín xiāowáng, huàn jù huà shuō, zài bùjiǔ de jiānglái wǒmen hěn kěnéng zài yě jiàn bu dào zhè zhǒng dòngwù.',goiY:['濒临消亡 = bên bờ diệt vong','换句话说 = nói cách khác','再也……不 = không bao giờ … nữa'],giai:'再也 + 不/没 = không bao giờ … nữa (nhấn mạnh); 换句话说 dịch "nói cách khác", giữ dấu phẩy hai bên.'},
-  {vi:'Sống lâu năm dãi gió dầm sương nơi núi rừng, họ không những không thấy khổ, mà ngược lại còn cảm thấy vô cùng vui sướng.',zh:'长期风餐露宿在山野，他们不但不觉得苦，反而感到无比的快乐。',py:'Chángqī fēngcān-lùsù zài shānyě, tāmen búdàn bù juéde kǔ, fǎn\'ér gǎndào wúbǐ de kuàilè.',goiY:['风餐露宿 = dãi gió dầm sương','不但不……反而…… = không những không … mà ngược lại','无比 = vô cùng'],giai:'不但不……反而……: vế sau trái với dự đoán thông thường; 风餐露宿 dịch bằng thành ngữ Việt "dãi gió dầm sương".'},
-  {vi:'Người ta nhận ra hươu cao cổ, khỉ đột, hà mã, biết cả nguồn gốc của chúng, nhưng lại không biết linh dương Tây Tạng của chính nước mình.',zh:'人们能识别长颈鹿、大猩猩、河马，知道它们的来历，却不认识我们自己国家的藏羚羊。',py:'Rénmen néng shíbié chángjǐnglù, dàxīngxing, hémǎ, zhīdào tāmen de láilì, què bú rènshi wǒmen zìjǐ guójiā de zànglíngyáng.',goiY:['识别 = nhận ra','来历 = nguồn gốc','却 = nhưng lại'],giai:'却 đặt trước động từ vế sau tạo đối lập bất ngờ — dịch "nhưng lại"; 自己国家的 dịch "của chính nước mình".'},
-  {vi:'Nhiều loài động thực vật đến một tấm ảnh rõ nét cũng không có, mọi người không biết chúng thì làm sao trông mong bảo vệ được?',zh:'许多动植物连一张清楚的照片都没有，大家不认识，怎么指望保护？',py:'Xǔduō dòng-zhíwù lián yì zhāng qīngchu de zhàopiàn dōu méiyǒu, dàjiā bú rènshi, zěnme zhǐwàng bǎohù?',goiY:['连……都…… = đến … cũng','指望 = trông mong','怎么……？= làm sao … được (phản vấn)'],giai:'Câu phản vấn 怎么指望保护 = không thể trông mong bảo vệ; dịch thêm "được" cuối câu cho tự nhiên.'},
-  {vi:'Nghiêm trọng hơn là rất nhiều loài đặc hữu còn chưa kịp được chúng ta biết đến thì đã biến mất rồi.',zh:'更严峻的是，很多特有物种还没来得及为我们所了解，就消失了。',py:'Gèng yánjùn de shì, hěn duō tèyǒu wùzhǒng hái méi láidejí wéi wǒmen suǒ liǎojiě, jiù xiāoshī le.',goiY:['严峻 = nghiêm trọng','来得及 = kịp','为……所…… = được / bị …'],giai:'为我们所了解 — bị động văn viết, dịch "được chúng ta biết đến"; 还没……就…… = chưa … thì đã ….'},
-  {vi:'Họ khao khát chụp được những bức ảnh đủ sức khiến người ta phát cuồng, để trang trải khoản chi phí khổng lồ khi đi sâu vào vùng hoang dã.',zh:'他们渴望拍出足以使人疯狂的照片，以便支撑他们深入野外的巨大开支。',py:'Tāmen kěwàng pāichū zúyǐ shǐ rén fēngkuáng de zhàopiàn, yǐbiàn zhīchēng tāmen shēnrù yěwài de jùdà kāizhī.',goiY:['渴望 = khao khát','足以 = đủ để','以便 = để','支撑 = trang trải'],giai:'足以使人疯狂的 — định ngữ dài, dịch "đủ sức khiến người ta phát cuồng"; 支撑开支 dịch "trang trải chi phí", không dịch "chống đỡ".'},
-  {vi:'Nhiếp ảnh gia của IBE ai cũng là nhà vạn vật học đúng nghĩa, không những có kỹ thuật điêu luyện mà còn có tố chất chuyên môn khác thường.',zh:'IBE的摄影师个个是名副其实的博物学家，不但有高超的摄影技术，还有非同一般的专业素质。',py:'IBE de shèyǐngshī gègè shì míngfùqíshí de bówùxuéjiā, búdàn yǒu gāochāo de shèyǐng jìshù, hái yǒu fēitóng-yìbān de zhuānyè sùzhì.',goiY:['个个 = ai cũng','名副其实 = đúng nghĩa','高超 = điêu luyện','非同一般 = khác thường'],giai:'名副其实的 + N dịch gọn "… đúng nghĩa"; 不但……还…… = không những … mà còn ….'},
-  {vi:'Họ phân tán khắp cả nước, Từ Kiện vừa phát lời kêu gọi là mọi người lập tức tập hợp lại; thực tiễn chứng minh cách làm này hiệu quả rõ rệt.',zh:'他们分散在全国各地，徐健一发出号召，大家立刻聚在一起；实践证实，这种做法成效显著。',py:'Tāmen fēnsàn zài quánguó gèdì, Xú Jiàn yì fāchū hàozhào, dàjiā lìkè jù zài yìqǐ; shíjiàn zhèngshí, zhè zhǒng zuòfǎ chéngxiào xiǎnzhù.',goiY:['一……就/立刻…… = vừa … là …','号召 = kêu gọi','证实 = chứng minh','成效显著 = hiệu quả rõ rệt'],giai:'一 + V……，(主语) + 立刻……: hai hành động nối tiếp ngay; 实践证实 dịch "thực tiễn chứng minh".'},
-  {vi:'Sau khi dự án kết thúc, họ còn nộp cho khu bảo tồn địa phương một bản báo cáo điều tra đánh giá môi trường, vì vậy tác phẩm của họ mang đậm tính chất khảo sát khoa học.',zh:'项目结束后，他们还会向当地保护区提交一份环境评估调查报告，所以他们的作品带有浓厚的科考性质。',py:'Xiàngmù jiéshù hòu, tāmen hái huì xiàng dāngdì bǎohùqū tíjiāo yí fèn huánjìng pínggū diàochá bàogào, suǒyǐ tāmen de zuòpǐn dàiyǒu nónghòu de kēkǎo xìngzhì.',goiY:['向……提交 = nộp cho','评估 = đánh giá','浓厚 = đậm','科考 = khảo sát khoa học'],giai:'向 + nơi nhận + 提交 + văn bản; 带有浓厚的……性质 dịch "mang đậm tính chất …".'}
+  {vi:'Người dùng của công ty này ngày càng nhiều, nói cách khác, sản phẩm của họ ngày càng được ưa chuộng.',zh:'这家公司的用户越来越多，换句话说它的产品越来越受欢迎。',py:'Zhè jiā gōngsī de yònghù yuè lái yuè duō, huàn jù huà shuō tā de chǎnpǐn yuè lái yuè shòu huānyíng.',goiY:['用户 = người dùng','换句话说 = nói cách khác'],giai:'Vế sau rút ra ý nghĩa của vế trước; 它 chỉ công ty, dịch tự nhiên là "của họ" hoặc "của công ty".'},
+  {vi:'Anh ấy cam tâm tình nguyện bỏ công việc thù lao cao, về quê làm thầy giáo.',zh:'他心甘情愿地放弃了报酬很高的工作，回到家乡当了一名老师。',py:'Tā xīngān-qíngyuàn de fàngqìle bàochou hěn gāo de gōngzuò, huídào jiāxiāng dāngle yì míng lǎoshī.',goiY:['心甘情愿 = cam tâm tình nguyện','报酬 = thù lao'],giai:'心甘情愿地 + V làm trạng ngữ; 报酬很高的工作 dịch "công việc thù lao cao", không dịch "báo thù".'},
+  {vi:'Một phen lời nói của anh ấy đủ khiến mọi người có mặt đều sững sờ.',zh:'他的一番话足以让在场的每一个人都感到吃惊。',py:'Tā de yì fān huà zúyǐ ràng zàichǎng de měi yí ge rén dōu gǎndào chījīng.',goiY:['一番话 = một phen lời','足以 = đủ để','在场 = có mặt'],giai:'足以 + 让 + người + V = đủ khiến ai …; 番 (bài 3) là lượng từ cho lời nói, việc làm tốn công sức.'},
+  {vi:'Cách làm này từ lâu đã được đa số mọi người chấp nhận.',zh:'这种做法早已为大多数人所接受。',py:'Zhè zhǒng zuòfǎ zǎo yǐ wéi dà duōshù rén suǒ jiēshòu.',goiY:['早已 = từ lâu đã','为……所…… = được …'],giai:'为……所接受 là bị động văn viết, dịch "được … chấp nhận"; tiếng Việt không cần giữ trật tự 为……所.'},
+  {vi:'Trước hiện trạng nghiêm trọng như vậy, chúng ta không thể chỉ trông chờ vào người khác, phải tự nghĩ cách.',zh:'面对严峻的现状，我们不能只指望别人，得自己想办法。',py:'Miànduì yánjùn de xiànzhuàng, wǒmen bù néng zhǐ zhǐwàng biérén, děi zìjǐ xiǎng bànfǎ.',goiY:['严峻 = nghiêm trọng','现状 = hiện trạng','指望 = trông chờ'],giai:'只指望别人 = chỉ trông chờ người khác; 得 ở đây đọc děi = phải.'}
 ];
 
 
@@ -1689,157 +1630,133 @@ var speakingData = {
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — 听力 (sách HSK 6 không có sách bài tập nghe)
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — câu tự soạn (sách HSK 6 không có sách bài tập nghe), mỗi câu một tình huống mới
+// ══════════════════════════════════════════
 var listenExamData = {
-  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. ' +
-         'Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
-  source: 'Soạn theo dạng đề HSK 6 · chủ đề bài 16',
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 16',
   items: [
-    {n:1,
-     lines:[{sp:'女',zh:'你这几张雪豹的照片拍得真好！在动物园拍的吧？'},
-            {sp:'男',zh:'哪儿啊，是在青海海拔四千多米的山上拍的。为了等它们出来，我们在山里风餐露宿了整整一个星期。'}],
-     q:'关于这些照片，可以知道什么？',qvn:'Về những bức ảnh này, có thể biết điều gì?',
-     opts:['是在动物园拍的','是在野外拍的','拍了一个月','是别人拍的'],ans:1,
-     why:'哪儿啊 phủ định "动物园"; 在青海……山上拍的 → chụp ngoài thiên nhiên. Họ chờ một tuần (一个星期), không phải một tháng.',
-     words:['雪豹','风餐露宿']},
-
-    {n:2,
-     lines:[{sp:'男',zh:'听说你们社团要去山区拍鸟，报酬多少？'},
-            {sp:'女',zh:'什么报酬啊，一分钱也没有，路费还得自己出。不过大家都是心甘情愿的，能拍到珍稀鸟类就够开心了。'}],
-     q:'女的是什么意思？',qvn:'Ý người phụ nữ là gì?',
-     opts:['报酬很高','大家不想去了','没有报酬，但大家愿意去','路费由社团出'],ans:2,
-     why:'一分钱也没有 → không có thù lao; 大家都是心甘情愿的 → mọi người tự nguyện. Tiền đi đường phải tự trả (自己出).',
-     words:['报酬','心甘情愿']},
-
-    {n:3,
-     lines:[{sp:'女',zh:'这张照片里的鸟，你能辨认出是什么鸟吗？'},
-            {sp:'男',zh:'太模糊了，我辨认不出来。你最好找个研究鸟类的权威专家鉴别一下。'}],
-     q:'男的建议女的怎么做？',qvn:'Người đàn ông khuyên người phụ nữ làm gì?',
-     opts:['找专家鉴别','重新拍一张','上网查一查','把照片删掉'],ans:0,
-     why:'找个……权威专家鉴别一下 → nhờ chuyên gia giám định. Anh ấy không nhắc chụp lại hay tra mạng.',
-     words:['辨认','权威','鉴别']},
-
-    {n:4,
-     lines:[{sp:'男',zh:'这次湿地保护的宣传活动效果怎么样？'},
-            {sp:'女',zh:'成效挺显著的。据统计，活动以后，来湿地乱扔垃圾的游客减少了一大半。'}],
-     q:'活动以后，发生了什么变化？',qvn:'Sau hoạt động, đã có thay đổi gì?',
-     opts:['游客增加了一大半','湿地变小了','没有什么变化','乱扔垃圾的游客少多了'],ans:3,
-     why:'乱扔垃圾的游客减少了一大半 → giảm hơn một nửa. 成效显著 = hiệu quả rõ rệt.',
-     words:['成效','显著','统计']},
-
-    {n:5,
-     lines:[{sp:'女',zh:'你怎么一张照片也不卖？靠这个不能生活吗？'},
-            {sp:'男',zh:'野生动物的照片又不是畅销书，想靠卖照片支撑开支，几近童话。我现在主要给保护区的研究课题提供服务。'}],
-     q:'男的现在主要靠什么工作？',qvn:'Người đàn ông hiện chủ yếu làm công việc gì?',
-     opts:['卖照片','写畅销书','给保护区的研究课题提供服务','讲童话故事'],ans:2,
-     why:'我现在主要给保护区的研究课题提供服务. Bán ảnh để trang trải chỉ là "chuyện cổ tích" (几近童话).',
-     words:['畅销','支撑','童话','课题']},
-
-    {n:6,
-     lines:[{sp:'男',zh:'这部纪录片拍得怎么样？'},
-            {sp:'女',zh:'非常棒！它用立体的画面，把几十年前这片森林的样子真实地还原了出来。换句话说，看完你就知道我们失去了什么。'}],
-     q:'女的认为这部纪录片怎么样？',qvn:'Người phụ nữ thấy bộ phim tài liệu này thế nào?',
-     opts:['真实地还原了过去的森林','画面不清楚','内容太简单','只讲了现在的森林'],ans:0,
-     why:'把几十年前这片森林的样子真实地还原了出来 → tái hiện chân thực khu rừng mấy chục năm trước.',
-     words:['立体','还原','换句话说']},
-
-    {n:7,
-     lines:[{sp:'女',zh:'藏羚羊曾经一度濒临灭绝。上世纪八九十年代，由于非法捕杀，它们的数量减少到不足七万只。后来，国家建立了自然保护区，许多志愿者也响应号召，加入了保护藏羚羊的队伍。如今，藏羚羊的数量已经恢复到了三十多万只。'}],
-     q:'藏羚羊的数量为什么能恢复？',qvn:'Vì sao số lượng linh dương Tây Tạng có thể phục hồi?',
-     opts:['它们搬到了别的地方','非法捕杀的人越来越多','它们不再生病了','人们建立保护区并积极保护'],ans:3,
-     why:'建立了自然保护区 + 志愿者……加入了保护藏羚羊的队伍 → nhờ con người bảo vệ. 非法捕杀 là nguyên nhân làm giảm số lượng.',
-     words:['濒临','号召','队伍']},
-
-    {n:8,
-     lines:[{sp:'男',zh:'很多人以为，野生动物摄影师只要有高超的摄影技术就够了，其实并非如此。一个名副其实的野生动物摄影师，还得了解动物的习性，能识别不同的物种，更要有长期在野外奔波的耐心和体力。换句话说，技术只是最基本的素质。'}],
-     q:'说话人的主要观点是什么？',qvn:'Quan điểm chính của người nói là gì?',
-     opts:['只要技术好就能当野生动物摄影师','野生动物摄影师需要多方面的素质','野生动物摄影师不需要体力','拍动物比拍人容易'],ans:1,
-     why:'其实并非如此 bác bỏ ý "chỉ cần kỹ thuật"; 技术只是最基本的素质 → cần nhiều tố chất khác (hiểu tập tính, nhận dạng loài, kiên nhẫn, thể lực). (并非 ôn bài 7)',
-     words:['高超','名副其实','识别','奔波','素质']}
+    {
+      n: 1,
+      lines: [
+        {sp:'女',zh:'这张照片里的雪豹好像正在注视着镜头，你是怎么拍到的？'},
+        {sp:'男',zh:'我在山上等了整整三天三夜，冷得要命，总算没白等。'}
+      ],
+      q: '男的是怎么拍到这张照片的？',
+      qvn: 'Người đàn ông chụp được bức ảnh này bằng cách nào?',
+      opts: ['在山上等了很久','请别人帮忙拍的','用了新的手机','运气特别好'],
+      ans: 0,
+      why: '等了整整三天三夜 → chờ rất lâu mới chụp được (冷得要命 ôn bài 9). Không nhắc đến người giúp hay máy ảnh mới.',
+      words: ['注视']
+    },
+    {
+      n: 2,
+      lines: [
+        {sp:'男',zh:'听说你们要去山区拍鸟，报酬多少？'},
+        {sp:'女',zh:'什么报酬啊，一分钱也没有，路费还得自己出。不过大家都是心甘情愿的。'}
+      ],
+      q: '女的是什么意思？',
+      qvn: 'Ý người phụ nữ là gì?',
+      opts: ['报酬很高','大家不想去了','没有报酬，但大家愿意去','路费由别人出'],
+      ans: 2,
+      why: '一分钱也没有 → không có thù lao; 大家都是心甘情愿的 → mọi người tự nguyện. Tiền đi đường phải tự trả (自己出).',
+      words: ['报酬','心甘情愿']
+    },
+    {
+      n: 3,
+      lines: [
+        {sp:'女',zh:'你家这张老桌子有什么来历吗？'},
+        {sp:'男',zh:'有啊，是我爷爷的爷爷留下来的，已经用了一百多年了。'}
+      ],
+      q: '关于这张桌子，可以知道什么？',
+      qvn: 'Về chiếc bàn này, có thể biết điều gì?',
+      opts: ['是刚买的','已经有一百多年了','是朋友送的','已经坏了'],
+      ans: 1,
+      why: '爷爷的爷爷留下来的 + 用了一百多年 → bàn đã hơn trăm năm, là đồ tổ tiên để lại (来历 = lai lịch).',
+      words: ['来历']
+    },
+    {
+      n: 4,
+      lines: [
+        {sp:'男',zh:'这次节约用水的宣传活动效果怎么样？'},
+        {sp:'女',zh:'成效挺显著的。统计结果显示，这个月全校用的水比上个月少了三分之一。'}
+      ],
+      q: '活动以后，发生了什么变化？',
+      qvn: 'Sau hoạt động, đã có thay đổi gì?',
+      opts: ['用的水更多了','参加的人很少','没有什么变化','用的水少多了'],
+      ans: 3,
+      why: '成效挺显著 + 用的水比上个月少了三分之一 → lượng nước dùng giảm rõ.',
+      words: ['成效','显著','统计']
+    },
+    {
+      n: 5,
+      lines: [
+        {sp:'女',zh:'你写的那本童话书卖得怎么样？'},
+        {sp:'男',zh:'比我想的畅销多了，第一个月就卖了五万本。'}
+      ],
+      q: '关于那本书，可以知道什么？',
+      qvn: 'Về cuốn sách đó, có thể biết điều gì?',
+      opts: ['卖得很好','还没有出版','是一本小说','只卖了五千本'],
+      ans: 0,
+      why: '比我想的畅销多了 → bán chạy hơn dự đoán nhiều; con số là 五万 (năm vạn), không phải 五千. Đây là sách truyện cổ tích (童话), không phải tiểu thuyết.',
+      words: ['童话','畅销']
+    },
+    {
+      n: 6,
+      lines: [
+        {sp:'女',zh:'那部讲森林的纪录片你看了吗？怎么样？'},
+        {sp:'男',zh:'画面很立体，把三十年前这片森林的样子还原了出来。换句话说看完你就知道我们失去了什么。'}
+      ],
+      q: '男的觉得这部纪录片怎么样？',
+      qvn: 'Người đàn ông thấy bộ phim tài liệu này thế nào?',
+      opts: ['画面不清楚','内容太简单','只讲了现在的森林','真实地还原了过去的森林'],
+      ans: 3,
+      why: '把三十年前这片森林的样子还原了出来 → tái hiện khu rừng ba mươi năm trước; 换句话说 dẫn ra ý "thấy được điều đã mất".',
+      words: ['立体','还原']
+    },
+    {
+      n: 7,
+      lines: [
+        {sp:'男',zh:'这个学习网站现在还有人用吗？'},
+        {sp:'女',zh:'当然有，用户已经超过一百万了，大部分都是中学生。'}
+      ],
+      q: '这个网站的用户主要是什么人？',
+      qvn: 'Người dùng của trang web này chủ yếu là ai?',
+      opts: ['老师','中学生','大学生','父母'],
+      ans: 1,
+      why: '大部分都是中学生 → phần lớn là học sinh trung học.',
+      words: ['用户']
+    }
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
+// ══════════════════════════════════════════
 var situationData = {
-  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
-         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn cùng lớp hỏi vì sao em muốn tham gia câu lạc bộ bảo vệ động vật hoang dã.',
-     a:{sp:'Bạn cùng lớp',zh:'你为什么想参加野生动物保护社团？又累又没有报酬。',vn:'Sao cậu lại muốn vào câu lạc bộ bảo vệ động vật hoang dã? Vừa mệt lại chẳng có thù lao.'},
-     need:['Dùng 心甘情愿','Dùng 濒临'],
-     sample:'很多野生动物正濒临灭绝，能为保护它们出一份力，再累我也心甘情愿。',
-     samplePy:'Hěn duō yěshēng dòngwù zhèng bīnlín mièjué, néng wèi bǎohù tāmen chū yí fèn lì, zài lèi wǒ yě xīngān-qíngyuàn.',
-     sampleVn:'Nhiều loài động vật hoang dã đang đứng bên bờ tuyệt chủng, được góp một phần sức bảo vệ chúng thì mệt mấy tớ cũng cam lòng.',
-     tip:'再 + tính từ + 也……: dù … mấy cũng …; 濒临 + 灭绝 / 消亡.'},
-
-    {scene:'Cô giáo hỏi em hiểu câu "他是个名副其实的中国通" nghĩa là gì.',
-     a:{sp:'Cô giáo',zh:'“他是个名副其实的中国通”，这句话是什么意思？',vn:'"Anh ấy là một người thông thạo Trung Quốc đúng nghĩa" — câu này nghĩa là gì?'},
-     need:['Dùng 换句话说'],
-     sample:'意思是他对中国非常了解，换句话说，他真的配得上“中国通”这个名字。',
-     samplePy:'Yìsi shì tā duì Zhōngguó fēicháng liǎojiě, huàn jù huà shuō, tā zhēn de pèi de shàng "Zhōngguótōng" zhège míngzi.',
-     sampleVn:'Nghĩa là anh ấy rất hiểu Trung Quốc, nói cách khác, anh ấy thật sự xứng với cái tên "người thông thạo Trung Quốc".',
-     tip:'换句话说 dùng để giải thích lại bằng lời khác — rất hợp khi giải nghĩa một câu.'},
-
-    {scene:'Em gái muốn bỏ học đàn vì thấy tập ba tháng mà chưa tiến bộ.',
-     a:{sp:'Em gái',zh:'我练了三个月钢琴，还是弹得不好，我不想学了。',vn:'Em tập piano ba tháng rồi mà vẫn chơi dở, em không muốn học nữa.'},
-     need:['Dùng 足以 hoặc 不足以','Dùng 成效'],
-     sample:'三个月的时间还不足以看出成效，你再坚持一段时间，肯定会有进步的。',
-     samplePy:'Sān ge yuè de shíjiān hái bù zúyǐ kànchū chéngxiào, nǐ zài jiānchí yí duàn shíjiān, kěndìng huì yǒu jìnbù de.',
-     sampleVn:'Ba tháng thì chưa đủ để thấy hiệu quả đâu, em cố thêm một thời gian nữa, chắc chắn sẽ tiến bộ.',
-     tip:'不足以 + V = chưa đủ để …; 看出成效 = thấy được hiệu quả.'},
-
-    {scene:'Lớp trưởng nhờ em nhắc mọi người đăng ký đi dã ngoại.',
-     a:{sp:'Lớp trưởng',zh:'周末去郊外观鸟，你帮我在群里通知一下吧。',vn:'Cuối tuần đi ngắm chim ở ngoại ô, cậu thông báo giúp tớ trong nhóm nhé.'},
-     need:['Dùng 以便','Dùng 统计'],
-     sample:'大家注意：想去观鸟的同学，请在周三以前报名，以便班长统计人数。',
-     samplePy:'Dàjiā zhùyì: xiǎng qù guān niǎo de tóngxué, qǐng zài zhōusān yǐqián bàomíng, yǐbiàn bānzhǎng tǒngjì rénshù.',
-     sampleVn:'Mọi người chú ý: bạn nào muốn đi ngắm chim thì đăng ký trước thứ Tư, để lớp trưởng thống kê số người.',
-     tip:'以便 đứng đầu phân câu sau, chủ ngữ có thể đổi (班长) — giống 做一做 ③.'},
-
-    {scene:'Bạn hỏi em nghĩ gì về bộ phim tài liệu về động vật hoang dã vừa xem.',
-     a:{sp:'Bạn',zh:'你觉得那部野生动物纪录片怎么样？',vn:'Cậu thấy bộ phim tài liệu về động vật hoang dã đó thế nào?'},
-     need:['Dùng 为……所……','Dùng 高超 hoặc 浓厚'],
-     sample:'摄影技术非常高超，片中的每一个画面都深深地为观众所喜爱，我看完以后对野生动物产生了浓厚的兴趣。',
-     samplePy:'Shèyǐng jìshù fēicháng gāochāo, piàn zhōng de měi yí ge huàmiàn dōu shēnshēn de wéi guānzhòng suǒ xǐ\'ài, wǒ kànwán yǐhòu duì yěshēng dòngwù chǎnshēngle nónghòu de xìngqù.',
-     sampleVn:'Kỹ thuật quay phim cực kỳ điêu luyện, từng khung hình trong phim đều được khán giả vô cùng yêu thích; xem xong tớ nảy sinh hứng thú sâu sắc với động vật hoang dã.',
-     tip:'为 + N + 所 + V (văn viết, 为 đọc wéi); 对……产生浓厚的兴趣.'}
+    {scene:'Bạn cùng lớp hỏi vì sao em muốn tham gia nhóm tình nguyện bảo vệ động vật hoang dã.',a:{sp:'Bạn cùng lớp',zh:'你为什么想参加保护野生动物的小组？又累又没有报酬。',vn:'Sao cậu lại muốn vào nhóm bảo vệ động vật hoang dã? Vừa mệt lại chẳng có thù lao.'},need:['Dùng 心甘情愿','Dùng 濒临'],sample:'很多野生动物正濒临消亡，能为保护它们出一份力，再累我也心甘情愿。',samplePy:'Hěn duō yěshēng dòngwù zhèng bīnlín xiāowáng, néng wèi bǎohù tāmen chū yí fèn lì, zài lèi wǒ yě xīngān-qíngyuàn.',sampleVn:'Nhiều loài động vật hoang dã đang đứng bên bờ diệt vong, được góp một phần sức bảo vệ chúng thì mệt mấy tớ cũng cam lòng.',tip:'再 + tính từ + 也……: dù … mấy cũng …; 为……出一份力 = góp một phần sức cho ….'},
+    {scene:'Bạn hỏi kết quả buổi phỏng vấn xin việc hôm qua; giám đốc chỉ nói với em "chúng tôi sẽ cân nhắc thêm".',a:{sp:'Bạn',zh:'昨天的面试怎么样？经理怎么说？',vn:'Phỏng vấn hôm qua thế nào? Giám đốc nói sao?'},need:['Dùng 换句话说'],sample:'经理只说他们还要再考虑考虑，换句话说这次我可能没什么希望了。',samplePy:'Jīnglǐ zhǐ shuō tāmen hái yào zài kǎolǜ kǎolǜ, huàn jù huà shuō zhè cì wǒ kěnéng méi shénme xīwàng le.',sampleVn:'Giám đốc chỉ nói họ còn phải cân nhắc thêm, nói cách khác, lần này chắc tớ không có hy vọng gì rồi.',tip:'换句话说 dùng để nói rõ ý ngầm của câu trước — rất hợp khi "giải mã" một lời từ chối khéo.'},
+    {scene:'Em gái muốn bỏ học bơi vì thấy học ba tháng mà vẫn bơi chưa giỏi.',a:{sp:'Em gái',zh:'我学了三个月游泳，还是游不好，我不想学了。',vn:'Em học bơi ba tháng rồi mà vẫn bơi không giỏi, em không muốn học nữa.'},need:['Dùng 不足以','Dùng 成效'],sample:'三个月的时间还不足以看出成效，你再坚持一段时间，肯定会有进步的。',samplePy:'Sān ge yuè de shíjiān hái bù zúyǐ kànchū chéngxiào, nǐ zài jiānchí yí duàn shíjiān, kěndìng huì yǒu jìnbù de.',sampleVn:'Ba tháng thì chưa đủ để thấy hiệu quả đâu, em cố thêm một thời gian nữa, chắc chắn sẽ tiến bộ.',tip:'不足以 + V = chưa đủ để …; 看出成效 = thấy được hiệu quả.'},
+    {scene:'Lớp trưởng nhờ em nhắc mọi người đăng ký đi công viên ngắm chim cuối tuần.',a:{sp:'Lớp trưởng',zh:'周末去公园看鸟，你帮我在群里通知一下吧。',vn:'Cuối tuần đi công viên ngắm chim, cậu thông báo giúp tớ trong nhóm nhé.'},need:['Dùng 以便','Dùng 统计'],sample:'大家注意：想去看鸟的同学，请在周三以前报名，以便班长统计人数。',samplePy:'Dàjiā zhùyì: xiǎng qù kàn niǎo de tóngxué, qǐng zài zhōusān yǐqián bàomíng, yǐbiàn bānzhǎng tǒngjì rénshù.',sampleVn:'Mọi người chú ý: bạn nào muốn đi ngắm chim thì đăng ký trước thứ Tư, để lớp trưởng thống kê số người.',tip:'以便 đứng đầu vế sau, chủ ngữ có thể đổi (班长).'},
+    {scene:'Bạn hỏi em nghĩ gì về bộ phim tài liệu về động vật hoang dã vừa xem.',a:{sp:'Bạn',zh:'你觉得那部野生动物纪录片怎么样？',vn:'Cậu thấy bộ phim tài liệu về động vật hoang dã đó thế nào?'},need:['Dùng 为……所……','Dùng 高超 hoặc 浓厚'],sample:'拍摄技术非常高超，难怪那么多观众都为它所吸引。看完以后，我对野生动物产生了浓厚的兴趣。',samplePy:'Pāishè jìshù fēicháng gāochāo, nánguài nàme duō guānzhòng dōu wèi tā suǒ xīyǐn. Kànwán yǐhòu, wǒ duì yěshēng dòngwù chǎnshēngle nónghòu de xìngqù.',sampleVn:'Kỹ thuật quay cực kỳ điêu luyện, hèn gì có nhiều khán giả bị nó cuốn hút đến thế. Xem xong, tớ nảy sinh hứng thú sâu sắc với động vật hoang dã.',tip:'为 + N + 所 + V (văn viết, 为 đọc wéi); 对……产生浓厚的兴趣.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 // 🎯 NÓI SAO CHO HAY — 得体 / 语体
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 var registerData = {
-  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
-         'HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
   items: [
-    {scene:'Báo cáo khoa học nộp cho khu bảo tồn.',
-     a:'我们数了半天，那群鹦鹉差不多有一千五百只吧。',b:'经精确统计，该鹦鹉越冬群数量为1500只，系近30年此地区最大规模。',better:'b',
-     why:'Báo cáo khoa học cần số liệu chính xác và văn viết: 经精确统计, 该, 系. Câu a (数了半天, 差不多……吧) là lời kể miệng, số liệu không chắc chắn.'},
-
-    {scene:'Nhắn tin kể cho bạn thân về chuyến chụp ảnh.',
-     a:'昨天在山上拍到雪豹了，太激动了，我憋着气都不敢动！',b:'昨日于山上成功拍摄雪豹，本人压抑住兴奋，全力完成拍摄。',better:'a',
-     why:'Với bạn thân, lời kể sinh động, cảm xúc (太激动了, 不敢动) tự nhiên hơn. Câu b (昨日, 于, 本人) giống thông cáo báo chí.'},
-
-    {scene:'Thông báo tuyển tình nguyện viên dán ở trường.',
-     a:'谁想去拍鸟就来找我啊，不给钱的哦！',b:'本社团现号召全体同学加入野生动物保护志愿者队伍，本活动不提供报酬。',better:'b',
-     why:'Thông báo chính thức: 号召, 全体同学, 不提供报酬. Câu a thân mật, hợp để nói miệng với bạn bè.'},
-
-    {scene:'Ông nội hỏi cháu công việc của chú nhiếp ảnh gia là gì.',
-     a:'爷爷，叔叔就是专门去山里给野生动物拍照片的，拍完还帮保护区做研究。',b:'该摄影师致力于野生物种的影像记录，并为保护区各类课题提供服务。',better:'a',
-     why:'Nói với ông nên dùng lời giản dị, dễ hiểu. Câu b (该, 致力于, 课题) đúng nhưng như văn bản giới thiệu.'},
-
-    {scene:'Bài phát biểu khai mạc triển lãm ảnh động vật hoang dã.',
-     a:'这些照片足以说明，我国生物多样性极为丰富，保护工作任重而道远。',b:'你们看，这些照片多好看啊，咱们国家的动物可多了！',better:'a',
-     why:'Phát biểu khai mạc cần trang trọng: 足以说明, 极为, 任重而道远. Câu b là lời cảm thán khi đi xem cùng bạn.'},
-
-    {scene:'Hỏi mượn máy ảnh của anh họ.',
-     a:'哥，你的相机周末借我用一下行吗？我想去公园拍鸟。',b:'鉴于本人周末拟赴公园拍摄鸟类，特申请借用阁下相机。',better:'a',
-     why:'Với người thân, hỏi mượn bằng lời thân mật (哥, 借我用一下行吗). Câu b (鉴于, 拟赴, 阁下) quá khách sáo, nghe như đùa.'}
+    {scene:'Báo cáo khoa học nộp cho khu bảo tồn.',a:'我们数了半天，那群鸟差不多有一千五百只吧。',b:'经过精确统计，这群鸟的数量为1500只，是近30年来此地区规模最大的一次。',better:'b',why:'Báo cáo khoa học cần số liệu chính xác và văn viết: 经过精确统计, 数量为. Câu a (数了半天, 差不多……吧) là lời kể miệng, số liệu không chắc chắn.'},
+    {scene:'Nhắn tin kể cho bạn thân về chuyến chụp ảnh.',a:'昨天在山上拍到雪豹了，太激动了，我憋着气都不敢动！',b:'昨天本人在山上成功拍摄雪豹，并压抑住兴奋，全力完成了拍摄任务。',better:'a',why:'Với bạn thân, lời kể sinh động, có cảm xúc (太激动了, 不敢动) tự nhiên hơn. Câu b (本人, 并, 完成了拍摄任务) giống báo cáo công việc.'},
+    {scene:'Thông báo tuyển tình nguyện viên dán ở bảng tin của trường.',a:'谁想去拍鸟就来找我啊，不给钱的！',b:'学校号召同学们报名参加保护野生动物的活动，此次活动不提供报酬。',better:'b',why:'Thông báo chính thức: 号召, 此次, 不提供报酬. Câu a thân mật, chỉ hợp để nói miệng với bạn bè.'},
+    {scene:'Ông nội hỏi cháu công việc của chú nhiếp ảnh gia là gì.',a:'爷爷，叔叔就是专门去山里给野生动物拍照片的，拍完还帮保护区做研究。',b:'该摄影师致力于野生物种的影像记录，并为保护区各类课题提供服务。',better:'a',why:'Nói với ông nên dùng lời giản dị, dễ hiểu. Câu b (该, 致力于, 各类课题) đúng nhưng như văn bản giới thiệu.'},
+    {scene:'Bài phát biểu khai mạc triển lãm ảnh động vật hoang dã.',a:'这些照片足以说明，我国的生物多样性极为丰富，保护工作任重而道远。',b:'你们看，这些照片多好看啊，咱们国家的动物可多了！',better:'a',why:'Phát biểu khai mạc cần trang trọng: 足以说明, 极为, 任重而道远. Câu b là lời cảm thán khi đi xem cùng bạn.'},
+    {scene:'Em kể với mẹ chuyện bạn Tiểu Lâm thi đấu rất tốt dù bị người khác bàn tán.',a:'这次比赛，小林没有为别人的议论所影响，发挥得很好。',b:'这次比赛，别人说什么小林都不管，发挥得特别好。',better:'b',why:'Kể chuyện với mẹ dùng khẩu ngữ: 别人说什么……都不管. 为……所影响 là bị động văn viết, hợp với bài báo hơn là câu nói trong nhà.'}
   ]
 };
 

@@ -1635,86 +1635,50 @@ var hvBridgeData = {
 // GHÉP TỪ — cụm trong bài khoá và phần 练习
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'椭圆形的',right:'大石头'},
-  {left:'中间',right:'凹陷'},
-  {left:'外表',right:'古怪'},
-  {left:'镶嵌着',right:'小石头'},
-  {left:'美观',right:'别致'},
-  {left:'把脚',right:'浸泡在水里'},
-  {left:'得知',right:'久远的传说'},
-  {left:'起早',right:'贪黑'},
   {left:'废寝',right:'忘食'},
-  {left:'勤劳加',right:'勤俭'},
-  {left:'农历年',right:'将近'},
-  {left:'乌黑乌黑的',right:'身子'},
-  {left:'跟随着',right:'母鸡'},
-  {left:'四处',right:'寻觅'},
-  {left:'颇感',right:'诧异'},
-  {left:'往干草丛里',right:'扎'},
-  {left:'当拐杖',right:'拄着'},
-  {left:'一瘸',right:'一拐'},
-  {left:'挖了个',right:'大坑'},
-  {left:'派不上',right:'用场'},
-  {left:'尝到了',right:'久病不愈的滋味'},
-  {left:'身强',right:'力壮'}
+  {left:'勤俭',right:'节约'},
+  {left:'挖掘',right:'潜力'},
+  {left:'收受',right:'贿赂'},
+  {left:'跟随',right:'导游'},
+  {left:'农历',right:'新年'},
+  {left:'得不',right:'偿失'},
+  {left:'外表',right:'美观'},
+  {left:'拄着',right:'拐杖'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ
+// ĐIỀN TỪ — câu mới (không chép bài khoá / SGK), mỗi câu một tình huống; ôn xoáy ốc từ + ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'屋檐下有个鸟',blank:'窝',post:'，每天早上都能听到小鸟叫。',hint:'(ổ, tổ)',ans:'窝'},
-  {pre:'周末我们常常在湖',blank:'畔',post:'散步，看夕阳慢慢落下。',hint:'(bờ, bên)',ans:'畔'},
-  {pre:'地球绕太阳运行的轨道是一个',blank:'椭圆',post:'。',hint:'(hình elip)',ans:'椭圆'},
-  {pre:'交朋友不能只看',blank:'外表',post:'，更重要的是看人品。',hint:'(bề ngoài)',ans:'外表'},
-  {pre:'这件首饰非常昂贵，上面',blank:'镶嵌',post:'着很多钻石。',hint:'(khảm, nạm)',ans:'镶嵌'},
-  {pre:'乌龟有',blank:'坚硬',post:'的外壳，遇到危险就把头缩进去。',hint:'(cứng, rắn)',ans:'坚硬'},
-  {pre:'这些竹子做的',blank:'工艺品',post:'是当地的特产，很受游客欢迎。',hint:'(đồ mỹ nghệ)',ans:'工艺品'},
-  {pre:'黄豆要先',blank:'浸泡',post:'一夜，第二天才能磨豆浆。',hint:'(ngâm)',ans:'浸泡'},
-  {pre:'我的',blank:'祖父',post:'年轻时是个木匠，做的家具又结实又好看。',hint:'(ông nội)',ans:'祖父'},
-  {pre:'为了准备高考，她每天',blank:'废寝忘食',post:'地学习，人都瘦了一圈。',hint:'(quên ăn quên ngủ)',ans:'废寝忘食'},
-  {pre:'妈妈',blank:'勤俭',post:'持家，从来不乱花一分钱。',hint:'(cần kiệm)',ans:'勤俭'},
-  {pre:'改革开放以后，这个小山村的农民渐渐',blank:'富裕',post:'了起来。',hint:'(giàu có, sung túc)',ans:'富裕'},
-  {pre:'中秋节是',blank:'农历',post:'八月十五，这一天人们要吃月饼、赏月。',hint:'(âm lịch)',ans:'农历'},
-  {pre:'这本书',blank:'将近',post:'十万字，不过我一天就看完了。',hint:'(gần, xấp xỉ)',ans:'将近',exp:'将近 + số lượng = gần, xấp xỉ (chưa đến): 将近十万字.'},
-  {pre:'上海那么大，',blank:'况且',post:'你又不知道地址，怎么能找到他呢？',hint:'(huống hồ, hơn nữa)',ans:'况且',exp:'况且 = huống hồ, hơn nữa (bổ sung thêm lý do).'},
-  {pre:'游客们',blank:'跟随',post:'导游参观了故宫。',hint:'(đi theo)',ans:'跟随'},
-  {pre:'人生难得遇到一个知音，很多人',blank:'寻觅',post:'一辈子也找不到。',hint:'(tìm kiếm)',ans:'寻觅'},
-  {pre:'他对中国京剧',blank:'颇',post:'感兴趣，所以参加了一个京剧培训班。',hint:'(khá, rất — văn viết)',ans:'颇',exp:'颇 + tính từ/động từ tâm lý = khá, rất (văn viết): 颇感兴趣.'},
-  {pre:'他',blank:'分明',post:'是喜欢你的，你怎么感觉不到呢？',hint:'(rõ ràng là)',ans:'分明',exp:'分明 = rõ ràng là (nhấn mạnh sự thật hiển nhiên mà người khác không nhận ra).'},
-  {pre:'这家小饭馆的位置十分',blank:'隐蔽',post:'，不熟悉的人很难找到。',hint:'(kín đáo, khuất)',ans:'隐蔽'},
-  {pre:'这座老房子是用青',blank:'砖',post:'盖的，已经有一百多年的历史了。',hint:'(gạch)',ans:'砖'},
-  {pre:'我从自行车上摔下来，',blank:'膝盖',post:'摔破了，鲜血直流。',hint:'(đầu gối)',ans:'膝盖'},
-  {pre:'爷爷腿脚不好，出门离不开',blank:'拐杖',post:'。',hint:'(gậy chống)',ans:'拐杖'},
-  {pre:'考古学家在这里',blank:'挖掘',post:'出了大量两千多年前的文物。',hint:'(khai quật)',ans:'挖掘'},
-  {pre:'种树要先挖个',blank:'坑',post:'，再把树苗放进去。',hint:'(hố)',ans:'坑'},
-  {pre:'伤口一定要保持干净，免得',blank:'发炎',post:'。',hint:'(bị viêm)',ans:'发炎'},
-  {pre:'考试前不复习，还抱着',blank:'侥幸',post:'心理，结果当然考砸了。',hint:'(cầu may)',ans:'侥幸'},
-  {pre:'第一次离开家，我才真正尝到了想家的',blank:'滋味',post:'。',hint:'(mùi vị, cảm giác)',ans:'滋味'},
-  {pre:'为了省一点儿钱而买质量差的东西，结果很快就坏了，真是',blank:'得不偿失',post:'。',hint:'(được chẳng bõ mất)',ans:'得不偿失'},
-  {pre:'他',blank:'宁肯',post:'自己吃点儿亏，也不愿让朋友吃亏。',hint:'(thà)',ans:'宁肯',exp:'宁肯A，也不B = thà A chứ không B (như 宁可/宁愿).'},
-  {pre:'爸爸再三',blank:'告诫',post:'我，开车的时候千万不要看手机。',hint:'(khuyên răn)',ans:'告诫'},
-  {pre:'这个广告做得很成功，大大激发了消费者的购买',blank:'欲望',post:'。',hint:'(ham muốn)',ans:'欲望'},
-  {pre:'两支球队将在今晚',blank:'争夺',post:'冠军。',hint:'(tranh giành)',ans:'争夺'},
-  {pre:'他因为拒绝了别人的',blank:'贿赂',post:'，被大家称为“清官”。',hint:'(của hối lộ)',ans:'贿赂'}
+  {pre:'树上有个鸟',blank:'窝',post:'，每天早上都能听到小鸟叫。',hint:'(ổ, tổ)',ans:'窝',exp:'窝 = ổ, tổ của chim thú (鸟窝, 鸡窝). 家 dùng cho người — không nói ×鸟家.'},
+  {pre:'周末我们常常在河',blank:'畔',post:'散步，看太阳慢慢落下。',hint:'(bờ, bên)',ans:'畔',exp:'河畔 = bên bờ sông (văn viết, giàu hình ảnh); khẩu ngữ nói 河边.'},
+  {pre:'这张桌子是',blank:'椭圆',post:'形的，坐八个人正好。',hint:'(bầu dục)',ans:'椭圆',exp:'椭圆形 = hình bầu dục (đọc tuǒyuán), khác hình tròn (圆).'},
+  {pre:'这个盒子上',blank:'镶嵌',post:'着很多颗小珍珠。',hint:'(khảm, nạm)',ans:'镶嵌',exp:'镶嵌 = khảm, nạm — gắn chặt vật nhỏ vào bề mặt; 镶嵌着 + vật nhỏ. 放着 chỉ là "đặt ở đó", không gắn vào.'},
+  {pre:'这种石头非常',blank:'坚硬',post:'，普通的刀根本切不动。',hint:'(cứng rắn)',ans:'坚硬',exp:'坚硬 = cứng rắn (vật chất: đá, vỏ, đất). 坚定 = kiên định, dùng cho ý chí người — không nói ×石头坚定.'},
+  {pre:'这条裤子太脏了，要先在水里',blank:'浸泡',post:'半个小时再洗。',hint:'(ngâm)',ans:'浸泡',exp:'浸泡 = ngâm lâu trong nước, thường + thời lượng (半个小时, 一夜). 洗 = giặt, rửa — chính là bước sau.'},
+  {pre:'我的',blank:'祖父',post:'年轻时是个老师，一辈子教过几千个学生。',hint:'(ông nội)',ans:'祖父',exp:'祖父 = ông nội (văn viết); khẩu ngữ gọi 爷爷. 祖父的祖父 = ông kỵ (bốn đời trước).'},
+  {pre:'这些年，这个小山村的农民渐渐',blank:'富裕',post:'了起来。',hint:'(giàu có, sung túc)',ans:'富裕',exp:'富裕 = giàu có, sung túc (đời sống, gia đình, vùng quê); 富裕起来 = trở nên khá giả. 丰富 đi với 经验 / 内容, không nói ×农民丰富起来.'},
+  {pre:'这本书',blank:'将近',post:'十万字，不过我一天就看完了。',hint:'(gần, xấp xỉ)',ans:'将近',exp:'将近 + số lượng / thời gian = gần tới (chưa đủ). 左右 đứng SAU con số (十万字左右), không đứng trước.'},
+  {pre:'这位老师讲课很有意思，在学生中',blank:'颇',post:'受欢迎。',hint:'(khá, rất)',ans:'颇',exp:'颇 = khá, rất (văn viết), đứng trước động từ / tính từ: 颇受欢迎, 颇感兴趣. 很多 không đứng trước động từ như vậy.'},
+  {pre:'这家小饭馆的位置十分',blank:'隐蔽',post:'，不熟悉的人很难找到。',hint:'(khuất, kín đáo)',ans:'隐蔽',exp:'隐蔽 = khuất, kín, khó nhìn thấy (vị trí). 秘密 = bí mật (thông tin, việc làm), không tả vị trí quán ăn.'},
+  {pre:'伤口一定要保持干净，免得',blank:'发炎',post:'。',hint:'(bị viêm)',ans:'发炎',exp:'发炎 = bị viêm, sưng tấy (vết thương, họng…); 免得 (bài 14) = để khỏi. 发火 = nổi nóng — đừng nhầm vì cùng chữ 发.'},
+  {pre:'那次地震，他',blank:'侥幸',post:'没有受伤。',hint:'(may mắn, may mà)',ans:'侥幸',exp:'侥幸 + V = may mà thoát (nhờ ngẫu nhiên, không phải nhờ mình). 幸福 = hạnh phúc, không đứng trước động từ như vậy.'},
+  {pre:'刚到外地上大学的时候，我才真正尝到了想家的',blank:'滋味',post:'。',hint:'(cảm giác, nỗi)',ans:'滋味',exp:'尝到……的滋味 = nếm trải cảm giác … (nghĩa bóng). 味道 thiên về mùi vị món ăn; nói nỗi niềm trong đời dùng 滋味.'},
+  {pre:'爸爸再三',blank:'告诫',post:'我，开车的时候千万不要看手机。',hint:'(răn dạy, căn dặn)',ans:'告诫',exp:'告诫 = răn dạy nghiêm túc (người trên với người dưới), hay đi với 再三 / 千万不要. 告诉 chỉ là "nói cho biết", không có ý răn.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (况且 · 大 · 倒不如) ít nhất 2 câu
+// SẮP XẾP CÂU — câu mới, chỉ một trật tự đúng
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['这套房子','交通方便','，','况且','房租','又不贵','，','真是','再合适不过了','。'],ans:'这套房子交通方便，况且房租又不贵，真是再合适不过了。',audio:'这套房子交通方便，况且房租又不贵，真是再合适不过了。'},
-  {words:['上海那么大','，','况且','你','又不知道地址','，','怎么能','找到他呢','？'],ans:'上海那么大，况且你又不知道地址，怎么能找到他呢？',audio:'上海那么大，况且你又不知道地址，怎么能找到他呢？'},
-  {words:['父亲年龄大了','，','况且','身体','也不好','，','我不放心','他一个人去旅行','。'],ans:'父亲年龄大了，况且身体也不好，我不放心他一个人去旅行。',audio:'父亲年龄大了，况且身体也不好，我不放心他一个人去旅行。'},
-  {words:['大冬天的','，','这里','离村子又远','，','分明','不该有','这么小的鸡仔','。'],ans:'大冬天的，这里离村子又远，分明不该有这么小的鸡仔。',audio:'大冬天的，这里离村子又远，分明不该有这么小的鸡仔。'},
-  {words:['大周末的','，','让人家','多睡','会儿吧','。'],ans:'大周末的，让人家多睡会儿吧。',audio:'大周末的，让人家多睡会儿吧。'},
-  {words:['他','一大清早','就','不知道','忙什么去了','。'],ans:'他一大清早就不知道忙什么去了。',audio:'他一大清早就不知道忙什么去了。'},
-  {words:['与其','一个人生气','，','倒不如','找个朋友','说出来','更好','。'],ans:'与其一个人生气，倒不如找个朋友说出来更好。',audio:'与其一个人生气，倒不如找个朋友说出来更好。'},
-  {words:['东西不是你的','就不要去争夺','，','倒不如','付出一分努力','，','得到一分收获','。'],ans:'东西不是你的就不要去争夺，倒不如付出一分努力，得到一分收获。',audio:'东西不是你的就不要去争夺，倒不如付出一分努力，得到一分收获。'},
-  {words:['与其说','这是一本像册','，','倒不如说','这是','他大半生的历史','。'],ans:'与其说这是一本像册，倒不如说这是他大半生的历史。',audio:'与其说这是一本像册，倒不如说这是他大半生的历史。'},
-  {words:['他','宁肯','自己吃点儿亏','，','也不愿','让朋友吃亏','。'],ans:'他宁肯自己吃点儿亏，也不愿让朋友吃亏。',audio:'他宁肯自己吃点儿亏，也不愿让朋友吃亏。'},
-  {words:['他们夫妻','将近40岁','才','有了','这个孩子','。'],ans:'他们夫妻将近40岁才有了这个孩子。',audio:'他们夫妻将近40岁才有了这个孩子。'},
-  {words:['早知道这样','，','宁肯','当初','不搭理','那窝小鸡','。'],ans:'早知道这样，宁肯当初不搭理那窝小鸡。',audio:'早知道这样，宁肯当初不搭理那窝小鸡。'}
+  {words:['他','逢人','就','夸','自己的','孙子','。'],ans:'他逢人就夸自己的孙子。',audio:'他逢人就夸自己的孙子。'},
+  {words:['这件','工艺品','的','样子','很','别致','。'],ans:'这件工艺品的样子很别致。',audio:'这件工艺品的样子很别致。'},
+  {words:['我们','不能','被','欲望','控制','。'],ans:'我们不能被欲望控制。',audio:'我们不能被欲望控制。'},
+  {words:['两支','球队','正在','争夺','冠军','。'],ans:'两支球队正在争夺冠军。',audio:'两支球队正在争夺冠军。'},
+  {words:['这个','工作','离家','太远','，','况且','工资','也','不高','。'],ans:'这个工作离家太远，况且工资也不高。',audio:'这个工作离家太远，况且工资也不高。'},
+  {words:['大中午的','，','开','什么','灯','啊','？'],ans:'大中午的，开什么灯啊？',audio:'大中午的，开什么灯啊？'},
+  {words:['与其','等','他','来','帮忙','，','倒不如','我们','自己','动手','。'],ans:'与其等他来帮忙，倒不如我们自己动手。',audio:'与其等他来帮忙，倒不如我们自己动手。'},
+  {words:['我','宁肯','少','睡','一会儿','，','也','要','把','作业','写完','。'],ans:'我宁肯少睡一会儿，也要把作业写完。',audio:'我宁肯少睡一会儿，也要把作业写完。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1722,76 +1686,44 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'这套家具设计简单，既____又实用。',opts:['美丽','美观','美好','美妙'],ans:1,
-   exp:'美观 = đẹp mắt (đồ vật, thiết kế), hay đi trong cụm 既美观又实用. 美丽 thường tả người, phong cảnh; 美好 = tốt đẹp (cuộc sống, tương lai); 美妙 = tuyệt diệu (âm thanh, cảm giác).'},
-  {wrong:'这家咖啡馆的装修很____，吸引了不少年轻人来拍照。',opts:['别致','别扭','特殊','特长'],ans:0,
-   exp:'别致 = độc đáo, mới lạ (lời khen). 别扭 (bài 1) = gượng gạo, khó chịu; 特殊 = đặc thù (trung tính, không phải lời khen); 特长 (bài 9) = sở trường.'},
-  {wrong:'出了问题，大家不要互相____，还是先想办法解决吧。',opts:['责任','奇怪','责怪','怪物'],ans:2,
-   exp:'互相责怪 = trách móc lẫn nhau. 责任 = trách nhiệm (danh từ); 奇怪 = kỳ lạ; 怪物 = quái vật.'},
-  {wrong:'____，小心点儿，地上有水！',opts:['嗯','哦','吧','嗨'],ans:3,
-   exp:'嗨 đứng đầu câu để gọi, nhắc người khác chú ý. 嗯 = ừ (đồng ý); 哦 = ồ (chợt hiểu ra); 吧 là trợ từ cuối câu, không đứng đầu câu.'},
-  {wrong:'小女孩有一双____的大眼睛，特别讨人喜欢。',opts:['黑暗','黑板','乌黑','天黑'],ans:2,
-   exp:'乌黑的眼睛 = đôi mắt đen láy. 黑暗 = tối tăm (nơi chốn, xã hội); 黑板 = bảng đen; 天黑 = trời tối.'},
-  {wrong:'小鸡想隐蔽自己，跑着往干草丛里____。',opts:['插','拔','扎','摘'],ans:2,
-   exp:'往……里扎 = lủi, chui vào (bài khoá). 插 = cắm (插花); 拔 = nhổ; 摘 = hái.'},
-  {wrong:'他看见地上有垃圾，就顺手____起来扔进了垃圾桶。',opts:['选','抬','拿手','拣'],ans:3,
-   exp:'拣起来 = nhặt lên (≈ 捡). 选 = chọn (không mang nghĩa nhặt lên); 抬 = khiêng (vật nặng, thường nhiều người); 拿手 (bài 1) = sở trường.'},
-  {wrong:'三祖爷顺手拣起一块砖____过去，一下砸中了一只小鸡。',opts:['撇','推','拉','搬'],ans:0,
-   exp:'撇过去 = vung tay ném qua. 推 = đẩy; 拉 = kéo; 搬 = khuân, chuyển — đều không làm viên gạch "bay" trúng con gà.'},
-  {wrong:'核桃的壳太坚硬了，得用锤子____开。',opts:['切','剪','砸','撕'],ans:2,
-   exp:'Dùng búa (锤子) đập → 砸开. 切 = cắt bằng dao; 剪 = cắt bằng kéo; 撕 = xé bằng tay.'},
-  {wrong:'春天到了，树____上长出了嫩绿的新芽。',opts:['叶','枝','根','皮'],ans:1,
-   exp:'树枝 = cành cây, nơi mầm non nhú ra. 树叶 = lá; 树根 = rễ; 树皮 = vỏ cây.'},
-  {wrong:'奶奶____着拐杖，慢慢地走到门口来迎接我们。',opts:['抬','拄','举','背'],ans:1,
-   exp:'拄拐杖 = chống gậy (cụm cố định). 抬 = khiêng, nâng; 举 = giơ lên; 背 = cõng, đeo trên lưng.'},
-  {wrong:'他踢球时扭伤了脚，走路一____一拐的。',opts:['瘸','跳','步','摇'],ans:0,
-   exp:'一瘸一拐 = khập khiễng, cà nhắc (cụm cố định). 一跳一跳 / 一步一步 / 一摇一摆 là những cụm khác, không ghép với 拐.'},
-  {wrong:'一个身强力壮的小伙子，____能光躺在床上呢？',opts:['啥','谁','咋','多'],ans:2,
-   exp:'咋 = 怎么 (khẩu ngữ): 咋能……呢？ = sao có thể … được (phản vấn). 啥 (bài 5) = 什么; 谁 = ai; 多 hỏi mức độ.'},
-  {wrong:'三祖爷尝到了久病不愈的滋味，后来____人就说，真是得不偿失。',opts:['对','向','给','逢'],ans:3,
-   exp:'逢人就说 = gặp ai cũng nói (逢 = gặp). 对 / 向 / 给 là giới từ, không tạo được nghĩa "hễ gặp ai là …".'},
-  {wrong:'做人不要欲望太多，不要____。',opts:['贪污','贪婪','贫穷','贪玩'],ans:1,
-   exp:'贪婪 = tham lam (tính cách) — đúng mạch "dục vọng quá nhiều". 贪污 = tham ô (hành vi dùng chức quyền chiếm của công); 贫穷 = nghèo khổ; 贪玩 = ham chơi.'},
-  {wrong:'那位官员因____公款被判了十年徒刑。',opts:['贪婪','贪心','贿赂','贪污'],ans:3,
-   exp:'贪污公款 = tham ô công quỹ. 贪婪 / 贪心 là tính từ, không mang tân ngữ 公款; 贿赂 + người (hối lộ ai), không đi với 公款.'},
-  {wrong:'有些商家为了赚钱____，甚至卖假货。',opts:['不择手段','得不偿失','废寝忘食','理所当然'],ans:0,
-   exp:'不择手段 = bất chấp thủ đoạn (vì mục đích mà làm cả việc xấu như bán hàng giả). 得不偿失 = được chẳng bõ mất; 废寝忘食 = quên ăn quên ngủ (nghĩa khen); 理所当然 (bài 12) = đương nhiên.'},
-  {wrong:'这套房子交通方便，____房租又不贵，我们就租下来吧。',opts:['因此','况且','然而','于是'],ans:1,
-   exp:'况且 bổ sung thêm một lý do (tiền thuê lại không đắt), hay đi với 又 (điểm ngữ pháp 1). 因此 / 于是 nêu kết quả; 然而 nêu ý chuyển ngoặt.'},
-  {wrong:'假期到处都是人山人海，与其出去玩儿，____在家看看书。',opts:['倒不如','不但','而且','何必'],ans:0,
-   exp:'与其 A，倒不如 B = A chẳng bằng B, thà B còn hơn (điểm ngữ pháp 3). 不但 / 而且 biểu thị tăng tiến; 何必 = hà tất, cần gì.'},
-  {wrong:'____周末的，让人家多睡会儿吧。',opts:['很','最','太','大'],ans:3,
-   exp:'大 + thời gian / ngày lễ + 的 để nhấn mạnh (điểm ngữ pháp 2): 大周末的 = cuối tuần cơ mà. 很 / 最 / 太 là phó từ chỉ mức độ, không đứng trước danh từ thời gian.'}
+  {wrong:'出了问题，大家不要互相____，还是先想办法解决吧。',opts:['责怪','责任','奇怪','怪物'],ans:0,exp:'互相责怪 = đổ lỗi, trách móc nhau. 责任 là danh từ "trách nhiệm"; 奇怪 = lạ; 怪物 = quái vật — đều chung một chữ nhưng không làm động từ "trách".'},
+  {wrong:'____，快过来看看，谁来了！',opts:['嗨','嗯','呢','吧'],ans:0,exp:'嗨 (hēi) đứng đầu câu để gọi, nhắc người khác chú ý. 嗯 = ừ (đồng ý); 呢 / 吧 là trợ từ cuối câu, không đứng đầu.'},
+  {wrong:'小女孩有一双____的大眼睛，大家都很喜欢她。',opts:['乌黑','黑暗','黑板','天黑'],ans:0,exp:'乌黑 = đen nhánh (tóc, mắt) — tính từ trạng thái. 黑暗 = tối tăm (nơi chốn, xã hội); 黑板 = bảng đen; 天黑 = trời tối.'},
+  {wrong:'小猫一听到声音，就往桌子底下____。',opts:['扎','插','扔','推'],ans:0,exp:'往……里 / 底下扎 = chui tọt, lủi vào. 插 = cắm (vật vào chỗ hẹp); 扔 / 推 cần tân ngữ (vật bị ném, bị đẩy).'},
+  {wrong:'他走在路上，顺手____起地上的一个瓶子。',opts:['拣','选','抬','搬'],ans:0,exp:'拣起 = nhặt lên (vật nhỏ dưới đất). 选 = chọn; 抬 = khiêng (hai người, vật nặng); 搬 = dời, chuyển (vật nặng).'},
+  {wrong:'他把手里的小石头往河里一____，石头在水面上跳了好几下。',opts:['撇','推','拉','搬'],ans:0,exp:'撇 = vung tay ném ngang (như ném thia lia). 推 = đẩy; 拉 = kéo; 搬 = dời — không phải động tác ném.'},
+  {wrong:'这次考试我考____了，只得了五十分。',opts:['砸','碎','倒','掉'],ans:0,exp:'考砸了 = thi hỏng (khẩu ngữ; 砸 nghĩa bóng = làm hỏng việc). 碎 = vỡ vụn; 倒 = đổ; 掉 = rơi — không làm bổ ngữ cho 考.'},
+  {wrong:'奶奶____着拐杖，慢慢地走到门口来接我们。',opts:['拄','抬','举','背'],ans:0,exp:'拄着拐杖 = chống gậy (cụm cố định). 抬 = khiêng; 举 = giơ lên; 背 = cõng, đeo trên lưng.'},
+  {wrong:'他踢球时伤了脚，走路一____一拐的。',opts:['瘸','跳','步','摇'],ans:0,exp:'一瘸一拐 = đi khập khiễng, cà nhắc (khung 一A一B). 跳 = nhảy; 步 = bước (danh từ); 摇 = lắc — không ghép thành cụm này.'},
+  {wrong:'你____还不睡觉？明天不是要考试吗？',opts:['咋','啥','谁','哪'],ans:0,exp:'咋 (zǎ) = 怎么 (sao, tại sao — khẩu ngữ miền Bắc TQ). 啥 = 什么 (cái gì); 谁 = ai; 哪 = nào — không hỏi lý do.'},
+  {wrong:'他看着桌上的钱，眼里露出了____的目光。',opts:['贪婪','贪污','勤俭','美观'],ans:0,exp:'贪婪的目光 = ánh mắt tham lam (tính từ). 贪污 = tham ô (hành vi lấy tiền công, động từ); 勤俭 = cần kiệm (trái nghĩa); 美观 = đẹp mắt (đồ vật).'},
+  {wrong:'有些人为了赚钱____，什么坏事都做得出来。',opts:['不择手段','得不偿失','废寝忘食','理所当然'],ans:0,exp:'为了…… + 不择手段 = bất chấp thủ đoạn vì …; vế sau 什么坏事都做得出来 cho thấy hành vi xấu. 得不偿失 = lợi bất cập hại; 废寝忘食 = quên ăn quên ngủ (tích cực); 理所当然 = lẽ đương nhiên.'},
+  {wrong:'那家饭馆排队的人太多，____菜也不怎么好吃，我们去别的饭馆看看吧。',opts:['况且','因此','然而','于是'],ans:0,exp:'况且 bổ sung thêm một lý do (thường đi với 也 / 又), rồi kết luận 去别的饭馆看看吧. 因此 / 于是 nêu kết quả; 然而 chuyển ý đối lập.'},
+  {wrong:'这台电脑已经修了三次了，与其再花钱修，____买台新的。',opts:['倒不如','不但','而且','何必'],ans:0,exp:'与其 A，倒不如 B = thay vì A thì chi bằng B (chọn B). 不但……而且…… là tăng tiến; 何必 = cần gì phải (hỏi ngược), không đi cặp với 与其.'},
+  {wrong:'____过年的，别说这些不高兴的话。',opts:['大','很','太','最'],ans:0,exp:'大 + ngày lễ / thời gian + 的 nhấn mạnh "đang là dịp …" rồi khuyên / trách (别……). 很 / 太 / 最 là phó từ chỉ mức độ, không đứng trước danh từ thời gian.'}
 ];
 
 // ══════════════════════════════════════════
-// DỊCH — câu ghép, ôn từ HSK 6 bài 1–19 và HSK 4–5
+// DỊCH Việt → Trung — câu mới, dùng từ của bài + ôn ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Căn phòng ký túc xá này tuy không rộng, nhưng được bài trí rất đẹp mắt và độc đáo.',zh:'这间宿舍虽然不大，但是布置得很美观别致。',py:'Zhè jiān sùshè suīrán bú dà, dànshì bùzhì de hěn měiguān biézhì.',goiY:['虽然……但是……','美观','别致'],giai:'虽然……但是…… nối hai vế đối lập; V得 + 很 + tính từ là bổ ngữ trạng thái; 美观别致 hay đi đôi (bài khoá).'},
-  {vi:'Chỉ còn một tháng nữa là thi đại học, ngày nào cậu ấy cũng học quên ăn quên ngủ đến gần nửa đêm.',zh:'离高考只有一个月了，他每天都废寝忘食地学习到将近半夜。',py:'Lí gāokǎo zhǐyǒu yí ge yuè le, tā měitiān dōu fèiqǐn-wàngshí de xuéxí dào jiāngjìn bànyè.',goiY:['离……只有……了','废寝忘食','将近'],giai:'离 + sự kiện + 只有 + thời gian + 了: chỉ còn … nữa là …; 废寝忘食地 làm trạng ngữ (nhớ 地); 将近 + danh từ thời gian 半夜, không dùng 将要.'},
-  {vi:'Cậu đừng tuỳ tiện trách người khác, huống hồ việc này vốn là do chính cậu làm hỏng.',zh:'你别随便责怪别人，况且这件事本来就是你自己办砸的。',py:'Nǐ bié suíbiàn zéguài biérén, kuàngqiě zhè jiàn shì běnlái jiù shì nǐ zìjǐ bànzá de.',goiY:['责怪','况且','砸'],giai:'况且 bổ sung một lý do mạnh hơn cho lời khuyên ở vế trước; 办砸 = làm hỏng việc (khẩu ngữ); 是……的 nhấn mạnh người làm.'},
-  {vi:'Cuối tuần cơ mà, cậu đã ngồi trong phòng chơi điện thoại gần ba tiếng rồi, chẳng thà đi dạo bên hồ với ông còn hơn.',zh:'大周末的，你已经在房间里玩了将近三个小时手机了，倒不如陪爷爷去湖畔散散步。',py:'Dà zhōumò de, nǐ yǐjīng zài fángjiān li wánle jiāngjìn sān ge xiǎoshí shǒujī le, dào bùrú péi yéye qù húpàn sànsan bù.',goiY:['大……的','将近','倒不如','畔'],giai:'大周末的 nhấn mạnh "cuối tuần cơ mà" (điểm ngữ pháp 2); V了 + thời lượng + O + 了: đã … được bao lâu; 倒不如 nêu phương án nên chọn (điểm ngữ pháp 3).'},
+  {vi:'Đường núi vốn đã khó đi, huống hồ trời sắp tối rồi, chi bằng chúng ta ở lại làng một đêm, mai hẵng đi.',zh:'山路本来就不好走，况且天快黑了，我们倒不如在村里住一晚，明天再走。',py:'Shānlù běnlái jiù bù hǎo zǒu, kuàngqiě tiān kuài hēi le, wǒmen dào bùrú zài cūn li zhù yì wǎn, míngtiān zài zǒu.',goiY:['本来就……','况且','倒不如'],giai:'况且 thêm lý do thứ hai (trời sắp tối) cho lý do thứ nhất; 倒不如 nêu lựa chọn tốt hơn ở vế kết luận.'},
+  {vi:'Ba mươi Tết rồi mà cậu còn tăng ca ở công ty à?',zh:'大年三十的，你怎么还在公司加班？',py:'Dà nián sānshí de, nǐ zěnme hái zài gōngsī jiābān?',goiY:['大……的','怎么还……'],giai:'大 + ngày lễ + 的 mở đầu câu, vế sau trách nhẹ / ngạc nhiên (怎么还……).'},
+  {vi:'Thay vì ngồi đây than thở, chi bằng nghĩ xem nên giải quyết vấn đề thế nào.',zh:'与其坐在这儿抱怨，倒不如想想怎么解决问题。',py:'Yǔqí zuò zài zhèr bàoyuàn, dào bùrú xiǎngxiang zěnme jiějué wèntí.',goiY:['与其……倒不如……','抱怨'],giai:'与其 A，倒不如 B: bỏ A, chọn B; V lặp (想想) làm giọng nhẹ nhàng, khuyên nhủ.'},
   {vi:'Ông nội tôi cả đời cần kiệm, mặc dù bây giờ cuộc sống đã sung túc, ông vẫn không nỡ vứt những bộ quần áo cũ.',zh:'我祖父一辈子勤俭，尽管现在日子富裕了，他仍然舍不得扔掉旧衣服。',py:'Wǒ zǔfù yíbèizi qínjiǎn, jǐnguǎn xiànzài rìzi fùyù le, tā réngrán shěbude rēngdiào jiù yīfu.',goiY:['祖父','勤俭','尽管……仍然……','富裕'],giai:'尽管……仍然……: mặc dù (sự thật đã xảy ra) … vẫn …; 舍不得 + V = không nỡ ….'},
-  {vi:'Đường núi vốn đã khó đi, huống hồ trời lại sắp tối, chúng ta chẳng thà nghỉ lại làng một đêm, mai hẵng đi tiếp.',zh:'山路本来就不好走，况且天将近黑了，我们倒不如在村里住一晚，明天再走。',py:'Shānlù běnlái jiù bù hǎo zǒu, kuàngqiě tiān jiāngjìn hēi le, wǒmen dào bùrú zài cūn li zhù yì wǎn, míngtiān zài zǒu.',goiY:['况且','将近','倒不如'],giai:'Hai lý do (本来……, 况且……) dẫn tới lựa chọn 倒不如……; 天将近黑了 = trời sắp tối (将近 + tính từ); 明天再走 = mai hẵng đi.'},
-  {vi:'Một khi đã ôm tâm lý cầu may thì cậu sẽ không chịu cố gắng nữa, kết quả chắc chắn là được chẳng bõ mất.',zh:'一旦抱着侥幸心理，你就不肯再努力了，结果肯定会得不偿失。',py:'Yídàn bàozhe jiǎoxìng xīnlǐ, nǐ jiù bù kěn zài nǔlì le, jiéguǒ kěndìng huì débùchángshī.',goiY:['一旦……就……','侥幸','得不偿失'],giai:'一旦……就……: một khi … thì …; 侥幸心理 = tâm lý cầu may (không dịch là 幸运心理).'},
-  {vi:'Mẹ luôn răn tôi rằng: vì điểm cao mà bất chấp thủ đoạn thì dù có thắng cũng chẳng vẻ vang gì.',zh:'妈妈总是告诫我，为了高分而不择手段，就算赢了也不光彩。',py:'Māma zǒngshì gàojiè wǒ, wèile gāofēn ér bùzé-shǒuduàn, jiùsuàn yíngle yě bù guāngcǎi.',goiY:['告诫','为了……而……','不择手段','就算……也……'],giai:'为了 A 而 B: vì A mà B (văn viết); 就算……也……: dù có … cũng … (giả thiết nhượng bộ).'},
-  {vi:'Tôi thà nhường suất học bổng duy nhất ấy cho bạn cùng bàn có hoàn cảnh khó khăn hơn, chứ không muốn tranh giành với bạn ấy, dù sao làm người cũng không nên quá tham lam.',zh:'我宁肯把那唯一的奖学金名额让给家境更困难的同桌，也不愿意跟他争夺，毕竟做人不能太贪婪。',py:'Wǒ nìngkěn bǎ nà wéiyī de jiǎngxuéjīn míng\'é ràng gěi jiājìng gèng kùnnan de tóngzhuō, yě bú yuànyì gēn tā zhēngduó, bìjìng zuò rén bù néng tài tānlán.',goiY:['宁肯……也不……','争夺','毕竟','贪婪'],giai:'宁肯 A，也不 B = thà A chứ không B; 毕竟 nêu lý do gốc rễ ở vế cuối; 把……让给…… = nhường … cho ….'},
-  {vi:'Không ít người vì dục vọng quá nhiều mà tham ô, nhận hối lộ, cuối cùng mất hết tất cả; có thể thấy, thứ không phải của mình thì dù có giành được cũng không giữ nổi.',zh:'不少人因为欲望太多而贪污受贿，最后失去了一切，可见，不是自己的东西，就是争来了也守不住。',py:'Bù shǎo rén yīnwèi yùwàng tài duō ér tānwū shòuhuì, zuìhòu shīqùle yíqiè, kějiàn, bú shì zìjǐ de dōngxi, jiùshì zhēnglái le yě shǒu bu zhù.',goiY:['欲望','因为……而……','贪污','可见'],giai:'因为……而……: vì … mà … (văn viết); 可见 rút ra kết luận; 就是……也…… = dù có … cũng … (giống câu trong bài khoá).'}
+  {vi:'Một khi đã ôm tâm lý cầu may, cậu sẽ không chịu cố gắng nữa, kết quả chắc chắn là lợi bất cập hại.',zh:'一旦抱着侥幸心理，你就不想再努力了，结果肯定会得不偿失。',py:'Yídàn bàozhe jiǎoxìng xīnlǐ, nǐ jiù bù xiǎng zài nǔlì le, jiéguǒ kěndìng huì débùchángshī.',goiY:['一旦……就……','侥幸心理','得不偿失'],giai:'侥幸心理 = tâm lý cầu may; 一旦……就…… = một khi … thì ….'},
+  {vi:'Ông ấy thà sống nghèo chứ nhất quyết không nhận hối lộ của người khác.',zh:'他宁肯过穷日子，也不收别人的贿赂。',py:'Tā nìngkěn guò qióng rìzi, yě bù shōu biérén de huìlù.',goiY:['宁肯……也不……','贿赂'],giai:'宁肯 A 也不 B = thà A chứ không B (cùng nghĩa 宁愿, bài 18).'}
 ];
 
-// Chiều Trung → Việt — bám ý bài khoá, nội dung khác chiều trên
+// ══════════════════════════════════════════
+// Dịch Trung → Việt — câu mới, không trùng chiều trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Bề ngoài Ổ gà vàng hơi kỳ lạ, trông như một món đồ mỹ nghệ, rất đẹp mắt và độc đáo.',zh:'金鸡窝外表有些古怪，像件工艺品，很是美观别致。',py:'Jīnjīwō wàibiǎo yǒuxiē gǔguài, xiàng jiàn gōngyìpǐn, hěn shì měiguān biézhì.',goiY:['外表 = bề ngoài','工艺品 = đồ mỹ nghệ','美观别致 = đẹp và độc đáo'],giai:'很是 = rất (văn viết); 像件工艺品 lược 一 trước lượng từ 件 — dịch "trông như một món …".'},
-  {vi:'Hồi nhỏ chúng tôi thích ngâm chân xuống nước, các cụ già thấy vậy liền trách chúng tôi.',zh:'我们小时候喜欢把脚浸泡在水里，老人们见了，就会责怪我们。',py:'Wǒmen xiǎoshíhou xǐhuan bǎ jiǎo jìnpào zài shuǐ li, lǎorénmen jiàn le, jiù huì zéguài wǒmen.',goiY:['浸泡 = ngâm','责怪 = trách','见了，就会…… = thấy là sẽ …'],giai:'把 + O + 浸泡在…… dịch gọn "ngâm … xuống nước"; 就会 chỉ phản ứng lặp lại theo thói quen — dịch "liền, thế nào cũng".'},
-  {vi:'Tết âm lịch sắp đến, ông cụ Ba nhà họ Tống ra đồng từ sớm, bỗng nhìn thấy một ổ gà con.',zh:'农历年将近，宋家三祖爷早早下了地，突然看到了一窝小鸡。',py:'Nónglì nián jiāngjìn, Sòng jiā Sān zǔyé zǎozǎo xiàle dì, tūrán kàndàole yì wō xiǎo jī.',goiY:['农历年将近 = Tết âm lịch sắp đến','下了地 = ra đồng','一窝 = một ổ'],giai:'将近 đứng sau danh từ thời gian làm vị ngữ: 农历年将近; 下地 = ra đồng làm việc, không dịch "xuống đất".'},
-  {vi:'Mấy con gà con ấy dường như mới rời ổ chưa được mấy ngày, hơn nữa thân mình lại đen nhánh, đáng yêu vô cùng.',zh:'那小鸡仿佛刚出窝没几天，况且是乌黑乌黑的身子，可爱极了。',py:'Nà xiǎo jī fǎngfú gāng chū wō méi jǐ tiān, kuàngqiě shì wūhēi wūhēi de shēnzi, kě\'ài jí le.',goiY:['仿佛 = dường như','况且 = hơn nữa','乌黑乌黑的 = đen nhánh'],giai:'况且 bổ sung thêm một lý do khiến gà con đáng yêu; 乌黑乌黑的 lặp ABAB để nhấn mạnh — dịch "đen nhánh", không thêm "rất".'},
-  {vi:'Ông cụ Ba lấy làm lạ lắm: giữa mùa đông giá rét, chỗ này lại xa làng, rõ ràng không thể có gà con nhỏ như vậy!',zh:'三祖爷颇感诧异，大冬天的，这里离村子又远，分明不该有这么小的鸡仔呀！',py:'Sān zǔyé pō gǎn chàyì, dà dōngtiān de, zhèli lí cūnzi yòu yuǎn, fēnmíng bù gāi yǒu zhème xiǎo de jīzǎi ya!',goiY:['颇感诧异 = lấy làm lạ lắm','大冬天的 = giữa mùa đông giá rét','分明 = rõ ràng là'],giai:'大冬天的 nhấn mạnh thời điểm (điểm ngữ pháp 2) — dịch "giữa mùa đông giá rét", không dịch "mùa đông to"; 不该有 = lẽ ra không thể có.'},
-  {vi:'Ông cụ Ba tiện tay nhặt một viên gạch ném qua, trúng ngay một con gà con, con gà con trong chớp mắt biến thành một cục vàng.',zh:'三祖爷顺手拣起一块砖撇过去，一下砸中了一只小鸡，小鸡瞬间变成了一块金子。',py:'Sān zǔyé shùnshǒu jiǎnqǐ yí kuài zhuān piě guòqù, yíxià zázhòngle yì zhī xiǎo jī, xiǎo jī shùnjiān biànchéngle yí kuài jīnzi.',goiY:['拣起 = nhặt lên','撇过去 = ném qua','砸中 = trúng','瞬间 = trong chớp mắt'],giai:'Chuỗi động tác liên tiếp — giữ nhịp ngắn; 一下 = ngay một phát; 瞬间 (bài 1) dịch "trong chớp mắt".'},
-  {vi:'Gà mẹ mổ ngay một phát vào dưới đầu gối ông cụ Ba, ông đau muốn chết, đành nhặt một cành cây làm gậy chống, khập khiễng đi về nhà.',zh:'老母鸡在三祖爷膝盖下边就是一口，三祖爷疼得要命，只好拣个树枝当拐杖拄着，一瘸一拐地回了家。',py:'Lǎo mǔjī zài Sān zǔyé xīgài xiàbian jiù shì yì kǒu, Sān zǔyé téng de yàomìng, zhǐhǎo jiǎn ge shùzhī dàng guǎizhàng zhǔzhe, yì qué yì guǎi de huíle jiā.',goiY:['膝盖 = đầu gối','要命 = … muốn chết','拄 = chống','一瘸一拐 = khập khiễng'],giai:'就是一口 = "mổ ngay một phát" (就是 nhấn động tác dứt khoát); 疼得要命 (bài 9) dịch "đau muốn chết"; 当拐杖拄着 = làm gậy chống.'},
-  {vi:'Cái chân bị thương của ông cụ Ba cứ viêm mãi; một chàng trai khoẻ mạnh cường tráng, sao có thể cứ nằm lì trên giường được?',zh:'三祖爷受伤的腿一直发炎，一个身强力壮的小伙子，咋能光躺在床上呢？',py:'Sān zǔyé shòushāng de tuǐ yìzhí fāyán, yí ge shēnqiáng-lìzhuàng de xiǎohuǒzi, zǎ néng guāng tǎng zài chuáng shang ne?',goiY:['发炎 = bị viêm','咋能……呢？= sao có thể … được?','光 = chỉ, cứ'],giai:'咋 = 怎么 (khẩu ngữ); câu phản vấn 咋能……呢？ ngụ ý "không thể cứ nằm mãi" — dịch "sao có thể … được?".'},
-  {vi:'Về sau ông cụ Ba gặp ai cũng nói: thật là được chẳng bõ mất, sớm biết thế này, thà lúc đầu đừng đoái hoài gì đến ổ gà con ấy.',zh:'三祖爷后来逢人就说，真是得不偿失，早知道这样，宁肯当初不搭理那窝小鸡。',py:'Sān zǔyé hòulái féng rén jiù shuō, zhēn shì débùchángshī, zǎo zhīdào zhèyàng, nìngkěn dāngchū bù dāli nà wō xiǎo jī.',goiY:['逢人就说 = gặp ai cũng nói','得不偿失 = được chẳng bõ mất','宁肯 = thà'],giai:'早知道……，宁肯当初…… = sớm biết …, thà lúc đầu … (hối hận); 搭理 = để ý, đoái hoài.'},
-  {vi:'Làm người đừng tham lam, thứ gì không phải của mình thì đừng đi tranh giành, dù có giành được cũng không giữ nổi; chẳng thà bỏ ra một phần công sức, gặt hái một phần thành quả.',zh:'做人不要贪婪，东西不是你的就不要去争夺，就是争来，也守不住，倒不如付出一分努力，得到一分收获。',py:'Zuò rén búyào tānlán, dōngxi bú shì nǐ de jiù búyào qù zhēngduó, jiùshì zhēnglái, yě shǒu bu zhù, dào bùrú fùchū yì fēn nǔlì, dédào yì fēn shōuhuò.',goiY:['贪婪 = tham lam','争夺 = tranh giành','就是……也…… = dù có … cũng …','倒不如 = chẳng thà'],giai:'就是……也……: giả thiết nhượng bộ; 倒不如 nêu lựa chọn tốt hơn sau khi so sánh (điểm ngữ pháp 3); 一分……一分…… dịch "một phần … một phần …".'}
+  {vi:'Rõ ràng cậu đã nhìn thấy anh ấy, sao lại bảo là không thấy?',zh:'你分明看见他了，为什么说没看见？',py:'Nǐ fēnmíng kànjiàn tā le, wèi shénme shuō méi kànjiàn?',goiY:['分明 = rõ ràng là'],giai:'分明 đứng trước động từ, nhấn mạnh sự thật hiển nhiên mà người kia phủ nhận.'},
+  {vi:'Một viên gạch từ trên lầu rơi xuống, đập trúng ngay đầu gối anh ấy.',zh:'一块砖从楼上掉下来，正好砸在他的膝盖上。',py:'Yí kuài zhuān cóng lóu shang diào xiàlai, zhènghǎo zá zài tā de xīgài shang.',goiY:['砖 = gạch','砸 = đập trúng','膝盖 = đầu gối'],giai:'砸在……上 = rơi đập trúng vào …; lượng từ của 砖 là 块.'},
+  {vi:'Công nhân đào một cái hố lớn giữa đường, buổi tối đi lại nhất định phải cẩn thận.',zh:'工人们在路中间挖了一个大坑，晚上走路一定要小心。',py:'Gōngrénmen zài lù zhōngjiān wāle yí ge dà kēng, wǎnshang zǒulù yídìng yào xiǎoxīn.',goiY:['坑 = hố'],giai:'坑 = hố; câu sau là lời nhắc, dịch "nhất định phải cẩn thận".'},
+  {vi:'Anh ấy tìm kiếm rất nhiều năm, cuối cùng đã tìm được người bạn thân thời nhỏ.',zh:'他寻觅了很多年，终于找到了小时候的好朋友。',py:'Tā xúnmìle hěn duō nián, zhōngyú zhǎodàole xiǎoshíhou de hǎo péngyou.',goiY:['寻觅 = tìm kiếm'],giai:'寻觅 (văn viết) = tìm kiếm lâu, kiên nhẫn; dịch "tìm kiếm", không cần giữ sắc thái văn chương.'},
+  {vi:'Người có quá nhiều ham muốn thì cuối cùng thường dễ sa vào con đường tham ô.',zh:'欲望太多的人，最后往往会走上贪污的路。',py:'Yùwàng tài duō de rén, zuìhòu wǎngwǎng huì zǒushàng tānwū de lù.',goiY:['欲望 = ham muốn','贪污 = tham ô'],giai:'走上……的路 = đi vào con đường …; dịch "sa vào" cho tự nhiên.'}
 ];
 
 
@@ -1826,9 +1758,9 @@ var writingData = {
     'Đoạn kết có nêu được bài học giống tinh thần bài khoá (不要贪婪, 争来的东西守不住, 倒不如……) không?'
   ],
   model:{
-    zh:'很久以前，在越南南部的一个小村子里，住着兄弟两个。父母去世后，贪婪的哥哥把房子、田地和牛都争夺了过去，只给弟弟留下一棵杨桃树。弟弟没有抱怨，他起早贪黑，勤劳又勤俭，日子虽然不富裕，却过得很踏实。有一年，杨桃树结满了果子。一天，一只大鸟飞来吃杨桃，弟弟心疼地说：“鸟儿啊，我们全家就靠这棵树生活呢！”没想到大鸟竟然开口说话了：“吃你一个果，还你一块金，缝个三尺袋，拿去装黄金。”第二天，弟弟跟随大鸟飞到了海上的一个小岛，岛上到处都是金子和宝石。弟弟只装满了那个小袋子就回家了，他觉得金子够用就好，况且袋子也装不下更多了。从此，他的日子渐渐富裕起来。哥哥知道后眼红极了，他宁肯把全部的房子和田地都给弟弟，也要换那棵杨桃树。大鸟又来了，哥哥偷偷缝了一个十二尺长的大袋子。到了岛上，他拼命往袋子里装金子，连衣服里都塞满了。谁知金子太重，大鸟飞到大海上空时没了力气，哥哥连人带金子一起掉进了大海。这个故事告诫我们：做人不要欲望太多，不要贪婪。哥哥争来的东西一样也没守住，真是得不偿失。与其贪心地争夺别人的东西，倒不如付出一分努力，得到一分收获，过平稳和顺的日子。',
-    py:'Hěn jiǔ yǐqián, zài Yuènán nánbù de yí ge xiǎo cūnzi li, zhùzhe xiōngdì liǎng ge. Fùmǔ qùshì hòu, tānlán de gēge bǎ fángzi, tiándì hé niú dōu zhēngduóle guòqù, zhǐ gěi dìdi liúxià yì kē yángtáo shù. Dìdi méiyǒu bàoyuàn, tā qǐzǎo-tānhēi, qínláo yòu qínjiǎn, rìzi suīrán bú fùyù, què guò de hěn tāshi. Yǒu yì nián, yángtáo shù jiēmǎnle guǒzi. Yì tiān, yì zhī dà niǎo fēilái chī yángtáo, dìdi xīnténg de shuō: "Niǎor a, wǒmen quánjiā jiù kào zhè kē shù shēnghuó ne!" Méi xiǎngdào dà niǎo jìngrán kāikǒu shuōhuà le: "Chī nǐ yí ge guǒ, huán nǐ yí kuài jīn, féng ge sān chǐ dài, ná qù zhuāng huángjīn." Dì-èr tiān, dìdi gēnsuí dà niǎo fēidàole hǎi shang de yí ge xiǎo dǎo, dǎo shang dàochù dōu shì jīnzi hé bǎoshí. Dìdi zhǐ zhuāngmǎnle nàge xiǎo dàizi jiù huí jiā le, tā juéde jīnzi gòu yòng jiù hǎo, kuàngqiě dàizi yě zhuāng bu xià gèng duō le. Cóngcǐ, tā de rìzi jiànjiàn fùyù qǐlái. Gēge zhīdào hòu yǎnhóng jí le, tā nìngkěn bǎ quánbù de fángzi hé tiándì dōu gěi dìdi, yě yào huàn nà kē yángtáo shù. Dà niǎo yòu lái le, gēge tōutōu féngle yí ge shí\'èr chǐ cháng de dà dàizi. Dàole dǎo shang, tā pīnmìng wǎng dàizi li zhuāng jīnzi, lián yīfu li dōu sāimǎn le. Shéi zhī jīnzi tài zhòng, dà niǎo fēidào dàhǎi shàngkōng shí méile lìqi, gēge lián rén dài jīnzi yìqǐ diàojìnle dàhǎi. Zhège gùshi gàojiè wǒmen: zuò rén búyào yùwàng tài duō, búyào tānlán. Gēge zhēnglái de dōngxi yí yàng yě méi shǒuzhù, zhēn shì débùchángshī. Yǔqí tānxīn de zhēngduó biérén de dōngxi, dào bùrú fùchū yì fēn nǔlì, dédào yì fēn shōuhuò, guò píngwěn héshùn de rìzi.',
-    vn:'Ngày xửa ngày xưa, ở một ngôi làng nhỏ miền Nam Việt Nam có hai anh em. Sau khi cha mẹ mất, người anh tham lam giành hết nhà cửa, ruộng vườn và trâu bò, chỉ để lại cho em một cây khế. Người em không oán trách, thức khuya dậy sớm, vừa chăm chỉ vừa tiết kiệm, cuộc sống tuy không sung túc nhưng rất yên ổn. Có một năm, cây khế sai trĩu quả. Một hôm, một con chim lớn bay đến ăn khế, người em xót xa nói: "Chim ơi, cả nhà tôi chỉ trông vào cây khế này thôi!" Không ngờ chim lớn cất tiếng: "Ăn một quả, trả cục vàng, may túi ba gang, mang đi mà đựng." Hôm sau, người em theo chim bay ra một hòn đảo giữa biển, trên đảo đâu đâu cũng là vàng bạc châu báu. Người em chỉ lấy đầy chiếc túi nhỏ rồi về, anh nghĩ vàng đủ dùng là được, hơn nữa túi cũng chẳng đựng thêm được nữa. Từ đó, cuộc sống của người em dần dần sung túc. Người anh biết chuyện thì thèm muốn vô cùng, thà đem toàn bộ nhà cửa ruộng vườn cho em cũng phải đổi lấy cây khế. Chim lại đến, người anh lén may một chiếc túi to dài mười hai gang. Đến đảo, hắn ra sức nhét vàng vào túi, đến cả trong áo cũng nhét đầy. Nào ngờ vàng quá nặng, chim bay đến giữa biển thì kiệt sức, người anh cùng cả túi vàng rơi tõm xuống biển. Câu chuyện răn dạy chúng ta: làm người đừng có quá nhiều dục vọng, đừng tham lam. Những thứ người anh giành được rốt cuộc chẳng giữ nổi thứ nào, thật là được chẳng bõ mất. Thay vì tham lam tranh giành của người khác, chẳng thà bỏ ra một phần công sức, gặt hái một phần thành quả, sống những ngày bình ổn, êm ấm.'
+    zh:'很久以前，在越南南部的一个小村子里，住着兄弟两个。父母去世后，贪婪的哥哥把房子和家里的钱都争夺了过去，只给弟弟留下一棵杨桃树。弟弟没有抱怨，他起早贪黑，勤劳又勤俭，日子虽然不富裕，却过得很踏实。有一年，杨桃树上长满了杨桃。一天，一只大鸟飞来吃杨桃，弟弟心疼地说：“鸟儿啊，我们全家就靠这棵树生活呢！”没想到大鸟竟然开口说话了：“吃你一个杨桃，还你一块金子，做个小口袋，带上跟我去拿。”第二天，弟弟跟随大鸟飞到了大海中间的一座小山上，山上到处都是金子。弟弟只装满了那个小口袋就回家了，他觉得金子够用就好，况且口袋也装不下更多了。从此，他的日子渐渐富裕起来。哥哥知道后眼红极了，他宁肯把房子和钱都给弟弟，也要换那棵杨桃树。大鸟又来了，哥哥偷偷做了一个特别大的口袋。到了山上，他拼命往口袋里装金子，连衣服里都装满了。可是金子太重了，大鸟飞到大海上空时没了力气，哥哥连人带金子一起掉进了大海。这个故事告诫我们：做人不要欲望太多，不要贪婪。哥哥争来的东西一样也没守住，真是得不偿失。与其去争夺别人的东西，倒不如付出一分努力，得到一分收获，过平稳和顺的日子。',
+    py:'Hěn jiǔ yǐqián, zài Yuènán nánbù de yí ge xiǎo cūnzi li, zhùzhe xiōngdì liǎng ge. Fùmǔ qùshì hòu, tānlán de gēge bǎ fángzi hé jiā li de qián dōu zhēngduóle guòqù, zhǐ gěi dìdi liúxià yì kē yángtáo shù. Dìdi méiyǒu bàoyuàn, tā qǐzǎo-tānhēi, qínláo yòu qínjiǎn, rìzi suīrán bú fùyù, què guò de hěn tāshi. Yǒu yì nián, yángtáo shù shang zhǎngmǎnle yángtáo. Yì tiān, yì zhī dà niǎo fēilái chī yángtáo, dìdi xīnténg de shuō: "Niǎor a, wǒmen quánjiā jiù kào zhè kē shù shēnghuó ne!" Méi xiǎngdào dà niǎo jìngrán kāikǒu shuōhuà le: "Chī nǐ yí ge yángtáo, huán nǐ yí kuài jīnzi, zuò ge xiǎo kǒudai, dàishang gēn wǒ qù ná." Dì-èr tiān, dìdi gēnsuí dà niǎo fēidàole dàhǎi zhōngjiān de yí zuò xiǎo shān shang, shān shang dàochù dōu shì jīnzi. Dìdi zhǐ zhuāngmǎnle nàge xiǎo kǒudai jiù huí jiā le, tā juéde jīnzi gòu yòng jiù hǎo, kuàngqiě kǒudai yě zhuāng bu xià gèng duō le. Cóngcǐ, tā de rìzi jiànjiàn fùyù qǐlái. Gēge zhīdào hòu yǎnhóng jí le, tā nìngkěn bǎ fángzi hé qián dōu gěi dìdi, yě yào huàn nà kē yángtáo shù. Dà niǎo yòu lái le, gēge tōutōu zuòle yí ge tèbié dà de kǒudai. Dàole shān shang, tā pīnmìng wǎng kǒudai li zhuāng jīnzi, lián yīfu li dōu zhuāngmǎn le. Kěshì jīnzi tài zhòng le, dà niǎo fēidào dàhǎi shàngkōng shí méile lìqi, gēge lián rén dài jīnzi yìqǐ diàojìnle dàhǎi. Zhège gùshi gàojiè wǒmen: zuò rén búyào yùwàng tài duō, búyào tānlán. Gēge zhēnglái de dōngxi yí yàng yě méi shǒuzhù, zhēn shì débùchángshī. Yǔqí qù zhēngduó biérén de dōngxi, dào bùrú fùchū yì fēn nǔlì, dédào yì fēn shōuhuò, guò píngwěn héshùn de rìzi.',
+    vn:'Ngày xửa ngày xưa, ở một ngôi làng nhỏ miền Nam Việt Nam có hai anh em. Sau khi cha mẹ mất, người anh tham lam giành hết nhà cửa và tiền bạc trong nhà, chỉ để lại cho em một cây khế. Người em không oán trách, thức khuya dậy sớm, vừa chăm chỉ vừa tiết kiệm, cuộc sống tuy không sung túc nhưng rất yên ổn. Có một năm, cây khế sai trĩu quả. Một hôm, một con chim lớn bay đến ăn khế, người em xót xa nói: "Chim ơi, cả nhà tôi chỉ trông vào cây khế này thôi!" Không ngờ chim lớn cất tiếng: "Ăn của ngươi một quả khế, trả ngươi một cục vàng, làm một chiếc túi nhỏ, mang theo đi cùng ta mà lấy." Hôm sau, người em theo chim bay đến một ngọn núi nhỏ giữa biển, trên núi đâu đâu cũng là vàng. Người em chỉ lấy đầy chiếc túi nhỏ rồi về, anh nghĩ vàng đủ dùng là được, hơn nữa túi cũng chẳng đựng thêm được nữa. Từ đó, cuộc sống của người em dần dần sung túc. Người anh biết chuyện thì thèm muốn vô cùng, thà đem nhà cửa và tiền bạc cho em cũng phải đổi lấy cây khế. Chim lại đến, người anh lén làm một chiếc túi thật to. Đến núi, hắn ra sức nhét vàng vào túi, đến cả trong áo cũng nhét đầy. Nào ngờ vàng quá nặng, chim bay đến giữa biển thì kiệt sức, người anh cùng cả túi vàng rơi tõm xuống biển. Câu chuyện răn dạy chúng ta: làm người đừng có quá nhiều dục vọng, đừng tham lam. Những thứ người anh giành được rốt cuộc chẳng giữ nổi thứ nào, thật là được chẳng bõ mất. Thay vì tranh giành của người khác, chẳng thà bỏ ra một phần công sức, gặt hái một phần thành quả, sống những ngày bình ổn, êm ấm.'
   }
 };
 
@@ -1836,197 +1768,144 @@ var writingData = {
 // LUYỆN NÓI — đúng bảng 练习5 của sách: 根据提示，简述课文主要内容
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Đây là bảng bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b> (dựa vào gợi ý, tóm tắt nội dung chính của bài khoá). Mỗi câu hỏi là một dòng của bảng (dòng "讲述一下那个久远的传说" được tách theo 4 ô nhỏ: 背景 · 时间 · 人物 · 事情经过), cột gợi ý giữ nguyên như sách. Bấm loa nghe câu hỏi, <b>tự ghi âm câu trả lời trước</b> rồi mới mở câu mẫu. Cố dùng đúng các từ trong gợi ý.',
-  questions:[
-    {q_zh:'姥姥村里的人把什么称为“金鸡窝”？描述一下金鸡窝的样子。',
-     q_vn:'Người trong làng bà ngoại gọi cái gì là "Ổ gà vàng"? Hãy miêu tả hình dáng của Ổ gà vàng.',
-     hint:'①大石头、凹陷、鸟窝 ②古怪、红色、镶嵌……小石头、像……、美观别致',
-     sample:'姥姥村里的人把村东池塘畔的一块椭圆形大石头称为“金鸡窝”，因为那石头中间凹陷，像个鸡窝。金鸡窝外表有些古怪，是红色的，上面镶嵌着些不同色彩、不同形状的小石头，像件工艺品，很是美观别致。',
-     sample_vn:'Người trong làng bà ngoại gọi hòn đá lớn hình bầu dục bên bờ ao phía đông làng là "Ổ gà vàng", vì hòn đá ấy lõm ở giữa, trông như một cái ổ gà. Bề ngoài Ổ gà vàng hơi kỳ lạ, màu đỏ, trên đó khảm những viên đá nhỏ khác màu sắc, khác hình dạng, trông như một món đồ mỹ nghệ, rất đẹp mắt và độc đáo.',
-     note:'把 A 称为 B = gọi A là B; miêu tả theo trình tự: hình dạng → màu sắc → chi tiết (镶嵌着……) → cảm nhận (美观别致).'},
-    {q_zh:'讲述一下那个久远的传说。（背景）',
-     q_vn:'Hãy kể lại truyền thuyết xa xưa ấy. (Bối cảnh)',
-     hint:'宋家几兄弟、起早贪黑、废寝忘食、勤劳勤俭、日子富裕',
-     sample:'很久以前，姥爷祖父的祖父那一辈，宋家有几兄弟。大家起早贪黑，废寝忘食，勤劳加勤俭，所以日子过得还算富裕。',
-     sample_vn:'Ngày xưa, vào đời ông nội của ông nội ông ngoại, nhà họ Tống có mấy anh em. Ai nấy thức khuya dậy sớm, quên ăn quên ngủ, đã cần cù lại tiết kiệm, nên cuộc sống cũng coi như sung túc.',
-     note:'起早贪黑, 废寝忘食 là hai thành ngữ bốn chữ nói về sự chăm chỉ; 所以 nối nguyên nhân (勤劳加勤俭) với kết quả (日子富裕).'},
-    {q_zh:'讲述一下那个久远的传说。（时间）',
-     q_vn:'Hãy kể lại truyền thuyết xa xưa ấy. (Thời gian)',
-     hint:'农历年将近',
-     sample:'故事发生在农历年将近的时候，也就是快过春节了，正是大冬天。',
-     sample_vn:'Câu chuyện xảy ra vào lúc Tết âm lịch sắp đến, tức là sắp ăn Tết, đang giữa mùa đông giá rét.',
-     note:'将近 đứng sau danh từ thời gian làm vị ngữ: 农历年将近; 也就是…… để giải thích thêm; 大冬天 ôn điểm ngữ pháp 2.'},
-    {q_zh:'讲述一下那个久远的传说。（人物）',
-     q_vn:'Hãy kể lại truyền thuyết xa xưa ấy. (Nhân vật)',
-     hint:'宋家三祖爷',
-     sample:'故事的主人公是宋家三祖爷。他是宋家几兄弟中的一个，当时还是个身强力壮的小伙子。',
-     sample_vn:'Nhân vật chính của câu chuyện là ông cụ Ba nhà họ Tống. Ông là một trong mấy anh em nhà họ Tống, lúc ấy còn là một chàng trai khoẻ mạnh cường tráng.',
-     note:'主人公 = nhân vật chính; 当时还是…… = lúc ấy vẫn còn là ….'},
-    {q_zh:'讲述一下那个久远的传说。（事情经过）',
-     q_vn:'Hãy kể lại truyền thuyết xa xưa ấy. (Diễn biến sự việc)',
-     hint:'①发现一窝小鸡 ②捉小鸡，小鸡变金子 ③三祖爷受伤 ④再次找小鸡，没找到，发现大石头 ⑤三祖爷治疗受伤的腿',
-     sample:'三祖爷在地里发现了一窝乌黑的小鸡，他颇感诧异。他去捉小鸡，拣起一块砖撇过去，砸中了一只，那只小鸡瞬间变成了一块金子。老母鸡急了，在他膝盖下边咬了一口，他只好拄着树枝一瘸一拐地回了家。家里人赶到地里再找小鸡，怎么也没找到，只挖出了一块像鸡窝一样的大石头。后来三祖爷的腿一直发炎，他只好用金子换钱看病，钱用完了，腿也好了。',
-     sample_vn:'Ông cụ Ba phát hiện một ổ gà con đen nhánh ngoài đồng, ông lấy làm lạ lắm. Ông đi bắt gà con, nhặt một viên gạch ném qua, trúng một con, con gà con ấy trong chớp mắt biến thành một cục vàng. Gà mẹ cuống lên, mổ một phát vào dưới đầu gối ông, ông đành chống cành cây khập khiễng về nhà. Người nhà chạy ra đồng tìm lại gà con, tìm thế nào cũng không thấy, chỉ đào được một hòn đá lớn trông như ổ gà. Về sau chân ông cụ Ba cứ viêm mãi, ông đành đem vàng đổi tiền chữa bệnh, tiền tiêu hết thì chân cũng khỏi.',
-     note:'Kể đủ 5 bước theo trình tự thời gian; nối bằng 后来 / 结果 / 只好; chú ý động từ chuỗi 拣起……撇过去……砸中…….'},
-    {q_zh:'这个故事给人们的启发',
-     q_vn:'Câu chuyện này gợi cho mọi người điều gì?',
-     hint:'不要欲望太多，不要贪婪',
-     sample:'这个故事告诉我们，做人不要欲望太多，不要贪婪。东西不是自己的就不要去争夺，就是争来，也守不住，倒不如付出一分努力，得到一分收获。',
-     sample_vn:'Câu chuyện này cho chúng ta biết: làm người đừng có quá nhiều dục vọng, đừng tham lam. Thứ gì không phải của mình thì đừng đi tranh giành, dù có giành được cũng không giữ nổi, chẳng thà bỏ ra một phần công sức, gặt hái một phần thành quả.',
-     note:'Dùng 倒不如 (điểm ngữ pháp 3) để chốt lời khuyên; 就是……也…… = dù có … cũng ….'}
+  intro: 'Đây là bảng bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b> (dựa vào gợi ý, tóm tắt nội dung chính của bài khoá). Mỗi câu hỏi là một dòng của bảng (dòng "讲述一下那个久远的传说" được tách theo 4 ô nhỏ: 背景 · 时间 · 人物 · 事情经过), cột gợi ý giữ nguyên như sách. Bấm loa nghe câu hỏi, <b>tự ghi âm câu trả lời trước</b> rồi mới mở câu mẫu. Cố dùng đúng các từ trong gợi ý.',
+  questions: [
+    {q_zh:'姥姥村里的人把什么称为“金鸡窝”？描述一下金鸡窝的样子。',q_vn:'Người trong làng bà ngoại gọi cái gì là "Ổ gà vàng"? Hãy miêu tả hình dáng của Ổ gà vàng.',hint:'①大石头、凹陷、鸟窝 ②古怪、红色、镶嵌……小石头、像……、美观别致',sample:'姥姥村里的人把村东池塘畔的一块椭圆形大石头称为“金鸡窝”，因为那石头中间凹陷，像个鸡窝。金鸡窝外表有些古怪，是红色的，上面镶嵌着些不同色彩、不同形状的小石头，像件工艺品，很是美观别致。',sample_vn:'Người trong làng bà ngoại gọi hòn đá lớn hình bầu dục bên bờ ao phía đông làng là "Ổ gà vàng", vì hòn đá ấy lõm ở giữa, trông như một cái ổ gà. Bề ngoài Ổ gà vàng hơi kỳ lạ, màu đỏ, trên đó khảm những viên đá nhỏ khác màu sắc, khác hình dạng, trông như một món đồ mỹ nghệ, rất đẹp mắt và độc đáo.',note:'把 A 称为 B = gọi A là B; miêu tả theo trình tự: hình dạng → màu sắc → chi tiết (镶嵌着……) → cảm nhận (美观别致).'},
+    {q_zh:'讲述一下那个久远的传说。（背景）',q_vn:'Hãy kể lại truyền thuyết xa xưa ấy. (Bối cảnh)',hint:'宋家几兄弟、起早贪黑、废寝忘食、勤劳勤俭、日子富裕',sample:'从前，姥爷祖父的祖父那一辈，宋家有几兄弟。大家起早贪黑，废寝忘食，勤劳加勤俭，所以日子过得还算富裕。',sample_vn:'Ngày xưa, vào đời ông nội của ông nội ông ngoại, nhà họ Tống có mấy anh em. Ai nấy thức khuya dậy sớm, quên ăn quên ngủ, đã cần cù lại tiết kiệm, nên cuộc sống cũng coi như sung túc.',note:'起早贪黑, 废寝忘食 là hai thành ngữ bốn chữ nói về sự chăm chỉ; 所以 nối nguyên nhân (勤劳加勤俭) với kết quả (日子富裕).'},
+    {q_zh:'讲述一下那个久远的传说。（时间）',q_vn:'Hãy kể lại truyền thuyết xa xưa ấy. (Thời gian)',hint:'农历年将近',sample:'故事发生在农历年将近的时候，也就是快过春节了，正是大冬天。',sample_vn:'Câu chuyện xảy ra vào lúc Tết âm lịch sắp đến, tức là sắp ăn Tết, đang giữa mùa đông giá rét.',note:'将近 đứng sau danh từ thời gian làm vị ngữ: 农历年将近; 也就是…… để giải thích thêm; 大冬天 ôn điểm ngữ pháp 2.'},
+    {q_zh:'讲述一下那个久远的传说。（人物）',q_vn:'Hãy kể lại truyền thuyết xa xưa ấy. (Nhân vật)',hint:'宋家三祖爷',sample:'故事里最重要的人物是宋家三祖爷。他是宋家几兄弟中的一个，当时还是个身强力壮的小伙子。',sample_vn:'Nhân vật chính của câu chuyện là ông cụ Ba nhà họ Tống. Ông là một trong mấy anh em nhà họ Tống, lúc ấy còn là một chàng trai khoẻ mạnh cường tráng.',note:'最重要的人物 = nhân vật chính; 当时还是…… = lúc ấy vẫn còn là ….'},
+    {q_zh:'讲述一下那个久远的传说。（事情经过）',q_vn:'Hãy kể lại truyền thuyết xa xưa ấy. (Diễn biến sự việc)',hint:'①发现一窝小鸡 ②捉小鸡，小鸡变金子 ③三祖爷受伤 ④再次找小鸡，没找到，发现大石头 ⑤三祖爷治疗受伤的腿',sample:'三祖爷在地里发现了一窝乌黑的小鸡，他颇感诧异。他去捉小鸡，拣起一块砖撇过去，砸中了一只，那只小鸡瞬间变成了一块金子。老母鸡急了，在他膝盖下边咬了一口，他只好拄着树枝一瘸一拐地回了家。家里人赶到地里再找小鸡，怎么也没找到，只挖出了一块像鸡窝一样的大石头。后来三祖爷的腿一直发炎，他只好用金子换钱看病，钱用完了，腿也好了。',sample_vn:'Ông cụ Ba phát hiện một ổ gà con đen nhánh ngoài đồng, ông lấy làm lạ lắm. Ông đi bắt gà con, nhặt một viên gạch ném qua, trúng một con, con gà con ấy trong chớp mắt biến thành một cục vàng. Gà mẹ cuống lên, mổ một phát vào dưới đầu gối ông, ông đành chống cành cây khập khiễng về nhà. Người nhà chạy ra đồng tìm lại gà con, tìm thế nào cũng không thấy, chỉ đào được một hòn đá lớn trông như ổ gà. Về sau chân ông cụ Ba cứ viêm mãi, ông đành đem vàng đổi tiền chữa bệnh, tiền tiêu hết thì chân cũng khỏi.',note:'Kể đủ 5 bước theo trình tự thời gian; nối bằng 后来 / 结果 / 只好; chú ý động từ chuỗi 拣起……撇过去……砸中…….'},
+    {q_zh:'这个故事给人们的启发',q_vn:'Câu chuyện này gợi cho mọi người điều gì?',hint:'不要欲望太多，不要贪婪',sample:'这个故事告诉我们，做人不要欲望太多，不要贪婪。东西不是自己的就不要去争夺，就是争来，也守不住，倒不如付出一分努力，得到一分收获。',sample_vn:'Câu chuyện này cho chúng ta biết: làm người đừng có quá nhiều dục vọng, đừng tham lam. Thứ gì không phải của mình thì đừng đi tranh giành, dù có giành được cũng không giữ nổi, chẳng thà bỏ ra một phần công sức, gặt hái một phần thành quả.',note:'Dùng 倒不如 (điểm ngữ pháp 3) để chốt lời khuyên; 就是……也…… = dù có … cũng ….'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — 听力 (sách HSK 6 không có sách bài tập nghe)
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — câu tự soạn (sách HSK 6 không có sách bài tập nghe), mỗi câu một tình huống mới
+// ══════════════════════════════════════════
 var listenExamData = {
-  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. ' +
-         'Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
-  source: 'Soạn theo dạng đề HSK 6 · chủ đề bài 20',
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 20',
   items: [
-    {n:1,
-     lines:[{sp:'女',zh:'你的膝盖怎么了？走路一瘸一拐的。'},
-            {sp:'男',zh:'昨天晚上骑车回家，不小心掉进了路边的一个坑里。还算侥幸，骨头没事，只是摔破了点儿皮。'}],
-     q:'关于男的，可以知道什么？',qvn:'Về người đàn ông, có thể biết điều gì?',
-     opts:['骨头摔断了','掉进坑里受了点儿伤','被自行车撞了','一点儿也不能走路了'],ans:1,
-     why:'掉进了路边的一个坑里 + 摔破了点儿皮 → bị thương nhẹ. 骨头没事 nên A sai; anh ấy vẫn đi được (一瘸一拐) nên D sai.',
-     words:['膝盖','瘸','坑','侥幸']},
-
-    {n:2,
-     lines:[{sp:'男',zh:'这块石头上镶嵌着这么多彩色的小石子，真别致！是在哪儿买的？'},
-            {sp:'女',zh:'哪儿是买的呀，是我爷爷在河边拣回来，自己一点儿一点儿做的。'}],
-     q:'这块石头是怎么来的？',qvn:'Hòn đá này từ đâu mà có?',
-     opts:['在商店买的','朋友送的','爷爷自己做的','从山上挖出来的'],ans:2,
-     why:'哪儿是买的呀 phủ định việc mua; 是我爷爷在河边拣回来，自己……做的 → ông tự làm.',
-     words:['镶嵌','别致','拣']},
-
-    {n:3,
-     lines:[{sp:'女',zh:'听说小王为了当上经理不择手段，连贿赂领导的事都做了。'},
-            {sp:'男',zh:'是啊，结果被公司发现，直接开除了。真是得不偿失。'}],
-     q:'小王现在怎么样？',qvn:'Tiểu Vương bây giờ thế nào?',
-     opts:['当上了经理','被公司开除了','得到了奖励','自己辞职了'],ans:1,
-     why:'结果被公司发现，直接开除了 → bị đuổi việc. 得不偿失 = được chẳng bõ mất.',
-     words:['不择手段','贿赂','得不偿失']},
-
-    {n:4,
-     lines:[{sp:'男',zh:'大过年的，你怎么还在加班？'},
-            {sp:'女',zh:'没办法，这个项目下周一就要交，况且老板也答应给我们双倍工资。'}],
-     q:'女的为什么还在加班？',qvn:'Vì sao người phụ nữ vẫn đang tăng ca?',
-     opts:['她喜欢工作','她不想回家','项目很急，况且有双倍工资','老板批评了她'],ans:2,
-     why:'下周一就要交 (gấp) + 况且……双倍工资 (lý do bổ sung) → C. 大过年的 = Tết nhất cơ mà.',
-     words:['况且']},
-
-    {n:5,
-     lines:[{sp:'女',zh:'这双鞋打折以后才一百块，要不要多买几双？'},
-            {sp:'男',zh:'与其买一堆穿不了几次的便宜货，倒不如买一双质量好的，能穿好几年呢。'}],
-     q:'男的是什么意思？',qvn:'Ý người đàn ông là gì?',
-     opts:['多买几双便宜的','一双也不买','只买打折的','买一双质量好的'],ans:3,
-     why:'与其 A，倒不如 B → chọn B: 买一双质量好的. Anh ấy không phản đối mua, chỉ phản đối mua nhiều đồ rẻ kém chất lượng.',
-     words:['倒不如']},
-
-    {n:6,
-     lines:[{sp:'男',zh:'我奶奶常常告诫我们，做人要勤俭，不要贪婪。她自己一辈子都舍不得乱花一分钱，衣服破了也是补一补接着穿。'}],
-     q:'关于奶奶，下列哪项正确？',qvn:'Về người bà, câu nào dưới đây đúng?',
-     opts:['生活很勤俭','非常富裕','喜欢买新衣服','对孙子很严厉'],ans:0,
-     why:'舍不得乱花一分钱，衣服破了也是补一补接着穿 → rất cần kiệm. Bài không nói bà giàu hay nghiêm khắc.',
-     words:['告诫','勤俭','贪婪']},
-
-    {n:7,
-     lines:[{sp:'女',zh:'很多国家都有类似“金鸡窝”这样的民间故事。故事里，勤劳善良的人往往得到好的回报，而贪婪的人总想争夺更多，最后却什么都守不住。这些故事一代又一代地传下来，告诫人们不要被欲望控制。'}],
-     q:'这段话主要想告诉我们什么？',qvn:'Đoạn văn chủ yếu muốn nói với chúng ta điều gì?',
-     opts:['不要被欲望控制','民间故事都很有趣','勤劳的人都很富裕','每个国家的故事都一样'],ans:0,
-     why:'Câu chốt: 告诫人们不要被欲望控制. B, D không được nói tới; C nói quá (往往得到好的回报 ≠ 都很富裕).',
-     words:['贪婪','争夺','告诫','欲望']},
-
-    {n:8,
-     lines:[{sp:'男',zh:'伤口发炎是很常见的问题。受伤以后，很多人抱着侥幸心理，觉得小伤口没关系，结果伤口一直发炎，疼得走不了路。其实，只要及时清洗伤口，保持干净，就能避免发炎。'}],
-     q:'说话人认为怎样才能避免伤口发炎？',qvn:'Người nói cho rằng làm thế nào mới tránh được vết thương bị viêm?',
-     opts:['多休息','吃好一点儿','拄着拐杖走路','及时清洗，保持干净'],ans:3,
-     why:'只要及时清洗伤口，保持干净，就能避免发炎 → D. 侥幸心理 (coi thường vết thương nhỏ) là nguyên nhân khiến viêm.',
-     words:['发炎','侥幸']}
+    {
+      n: 1,
+      lines: [
+        {sp:'女',zh:'你的腿怎么了？'},
+        {sp:'男',zh:'昨天晚上骑车回家，不小心掉进了路边的一个坑里，好在只是受了点儿轻伤。'}
+      ],
+      q: '关于男的，可以知道什么？',
+      qvn: 'Về người đàn ông, có thể biết điều gì?',
+      opts: ['骨头摔断了','掉进坑里受了轻伤','被汽车撞了','一点儿也不能走路了'],
+      ans: 1,
+      why: '掉进了路边的一个坑里 + 只是受了点儿轻伤 → ngã xuống hố, bị thương nhẹ; không gãy xương, không bị xe đâm.',
+      words: ['坑']
+    },
+    {
+      n: 2,
+      lines: [
+        {sp:'女',zh:'这块石头上镶嵌着这么多小石头，真别致！你从哪儿买的？'},
+        {sp:'男',zh:'哪儿是买的呀，是我爷爷在河边一块一块找来，一点儿一点儿做出来的。'}
+      ],
+      q: '这块石头是怎么来的？',
+      qvn: 'Hòn đá này từ đâu mà có?',
+      opts: ['在商店买的','朋友送的','爷爷自己做的','从山上挖出来的'],
+      ans: 2,
+      why: '哪儿是买的呀 phủ định việc mua; 是我爷爷……一点儿一点儿做出来的 → do ông tự tay làm.',
+      words: ['镶嵌','别致']
+    },
+    {
+      n: 3,
+      lines: [
+        {sp:'男',zh:'听说小王为了当上经理不择手段，连贿赂领导的事都做了。'},
+        {sp:'女',zh:'是啊，结果被公司发现，直接开除了，经理没当上，工作也丢了。'}
+      ],
+      q: '小王现在怎么样？',
+      qvn: 'Tiểu Vương bây giờ thế nào?',
+      opts: ['当上了经理','被公司开除了','得到了表扬','自己不干了'],
+      ans: 1,
+      why: '被公司发现，直接开除了 → bị công ty đuổi việc; 经理没当上 → không làm được giám đốc.',
+      words: ['不择手段','贿赂']
+    },
+    {
+      n: 4,
+      lines: [
+        {sp:'女',zh:'大晚上的，你怎么还不睡？'},
+        {sp:'男',zh:'明天要交报告，还差一点儿没写完，况且我下午睡过了，现在也不困。'}
+      ],
+      q: '男的为什么还不睡？',
+      qvn: 'Vì sao người đàn ông còn chưa ngủ?',
+      opts: ['他喜欢晚上看书','他在等人','老师批评了他','报告没写完，而且他不困'],
+      ans: 3,
+      why: 'Lý do 1: 报告还差一点儿没写完; 况且 thêm lý do 2: 下午睡过了，现在也不困.',
+      words: ['况且']
+    },
+    {
+      n: 5,
+      lines: [
+        {sp:'女',zh:'这双鞋打折以后才一百块，要不要多买几双？'},
+        {sp:'男',zh:'与其买一堆穿不了几次的便宜鞋，倒不如买一双质量好的，能穿好几年呢。'}
+      ],
+      q: '男的是什么意思？',
+      qvn: 'Ý người đàn ông là gì?',
+      opts: ['买一双质量好的','多买几双便宜的','一双也不买','只买打折的'],
+      ans: 0,
+      why: '与其 A，倒不如 B → chọn B: mua một đôi chất lượng tốt.',
+      words: ['倒不如']
+    },
+    {
+      n: 6,
+      lines: [
+        {sp:'男',zh:'你奶奶多大年纪了？'},
+        {sp:'女',zh:'八十多了。她这个人特别勤俭，一件衣服能穿十几年，从来不乱花钱。'}
+      ],
+      q: '关于奶奶，可以知道什么？',
+      qvn: 'Về bà, có thể biết điều gì?',
+      opts: ['非常富裕','喜欢买新衣服','生活很节约','身体不太好'],
+      ans: 2,
+      why: '特别勤俭 + 一件衣服能穿十几年 → sống rất tiết kiệm; sức khoẻ của bà không được nhắc đến.',
+      words: ['勤俭']
+    },
+    {
+      n: 7,
+      lines: [
+        {sp:'女',zh:'爷爷，您这根拐杖是新买的吗？'},
+        {sp:'男',zh:'不是，是我在山上拣的一根树枝，自己做的，拄着挺合适。'}
+      ],
+      q: '爷爷的拐杖是怎么来的？',
+      qvn: 'Cây gậy của ông từ đâu mà có?',
+      opts: ['用树枝自己做的','在商店买的','孙子送的','向别人借的'],
+      ans: 0,
+      why: '在山上拣的一根树枝，自己做的 → ông tự làm từ cành cây nhặt được.',
+      words: ['拐杖','拣','枝','拄']
+    }
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
+// ══════════════════════════════════════════
 var situationData = {
-  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
-         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn cùng lớp rủ em tối nay đi xem phim, trong khi mai là ngày thi.',
-     a:{sp:'Bạn cùng lớp',zh:'今晚我们去看电影吧？新上映的那部特别好看！',vn:'Tối nay mình đi xem phim nhé? Phim mới chiếu hay lắm!'},
-     need:['Dùng 况且'],
-     sample:'今晚我不去了，明天就考试了，况且我还有两课没复习呢。',
-     samplePy:'Jīnwǎn wǒ bú qù le, míngtiān jiù kǎoshì le, kuàngqiě wǒ hái yǒu liǎng kè méi fùxí ne.',
-     sampleVn:'Tối nay tớ không đi đâu, mai thi rồi, vả lại tớ còn hai bài chưa ôn nữa.',
-     tip:'Lý do 1 (明天就考试了) + 况且 + lý do 2 (还有……没复习), hay đi với 还 / 又 / 也.'},
-
-    {scene:'Em trai muốn giành món đồ chơi của bạn nhỏ hàng xóm.',
-     a:{sp:'Em trai',zh:'那个玩具是他的，可是我也想要，我要去抢过来！',vn:'Món đồ chơi đó là của bạn ấy, nhưng em cũng muốn, em sẽ đi giành lấy!'},
-     need:['Dùng 争夺','Dùng 倒不如'],
-     sample:'东西不是你的就不要去争夺，倒不如跟他商量一下，你们一起玩儿。',
-     samplePy:'Dōngxi bú shì nǐ de jiù búyào qù zhēngduó, dào bùrú gēn tā shāngliang yíxià, nǐmen yìqǐ wánr.',
-     sampleVn:'Đồ không phải của em thì đừng đi giành, chẳng thà em bàn với bạn ấy, hai đứa cùng chơi.',
-     tip:'Mượn câu của bài khoá: 东西不是你的就不要去争夺; 倒不如 đưa ra phương án tốt hơn.'},
-
-    {scene:'Bạn thấy em đi khập khiễng vào lớp.',
-     a:{sp:'Bạn',zh:'你怎么走路一瘸一拐的？出什么事了？',vn:'Sao cậu đi khập khiễng thế? Có chuyện gì à?'},
-     need:['Dùng 膝盖','Dùng 侥幸'],
-     sample:'昨天打篮球摔了一跤，膝盖摔破了。还算侥幸，骨头没事，过几天就好了。',
-     samplePy:'Zuótiān dǎ lánqiú shuāile yì jiāo, xīgài shuāipò le. Hái suàn jiǎoxìng, gǔtou méi shì, guò jǐ tiān jiù hǎo le.',
-     sampleVn:'Hôm qua chơi bóng rổ bị ngã, trầy đầu gối. Cũng may là xương không sao, mấy hôm nữa là khỏi.',
-     tip:'还算侥幸，…… = cũng may là … (giống 练习3 ②).'},
-
-    {scene:'Chủ nhật, mẹ gọi em dậy lúc tám giờ sáng.',
-     a:{sp:'Mẹ',zh:'快起床！都八点了，还睡？',vn:'Dậy mau! Tám giờ rồi mà còn ngủ à?'},
-     need:['Dùng 大……的','Dùng 将近'],
-     sample:'大星期天的，就让我多睡一会儿吧，我这一周每天都学习到将近半夜呢。',
-     samplePy:'Dà xīngqītiān de, jiù ràng wǒ duō shuì yíhuìr ba, wǒ zhè yì zhōu měitiān dōu xuéxí dào jiāngjìn bànyè ne.',
-     sampleVn:'Chủ nhật cơ mà, mẹ cho con ngủ thêm chút nữa đi, cả tuần nay ngày nào con cũng học đến gần nửa đêm đấy.',
-     tip:'大 + ngày nghỉ + 的 nhấn mạnh "ngày này cơ mà" (điểm ngữ pháp 2); 将近 + 半夜.'},
-
-    {scene:'Bạn cùng lớp rủ em bỏ tiền mua đáp án đề thi trên mạng.',
-     a:{sp:'Bạn cùng lớp',zh:'听说花钱就能买到考试答案，你要不要一起买？',vn:'Nghe nói bỏ tiền ra là mua được đáp án đề thi, cậu có muốn mua cùng không?'},
-     need:['Dùng 宁肯……也不……','Dùng 得不偿失'],
-     sample:'我宁肯考得差一点儿，也不做这种事。万一被发现了，那可真是得不偿失。',
-     samplePy:'Wǒ nìngkěn kǎo de chà yìdiǎnr, yě bú zuò zhè zhǒng shì. Wànyī bèi fāxiàn le, nà kě zhēn shì débùchángshī.',
-     sampleVn:'Tớ thà thi kém một chút chứ không làm chuyện này. Lỡ bị phát hiện thì đúng là được chẳng bõ mất.',
-     tip:'宁肯 A，也不 B = thà A chứ không B; 万一…… = lỡ mà ….'}
+    {scene:'Bạn cùng lớp rủ em tối nay đi xem phim, trong khi mai là ngày thi.',a:{sp:'Bạn cùng lớp',zh:'晚上我们去看电影吧？新上的那部特别好看！',vn:'Tối nay mình đi xem phim nhé? Phim mới chiếu đó hay lắm!'},need:['Dùng 况且'],sample:'晚上我不去了，明天就考试了，况且我还有两课没复习呢。',samplePy:'Wǎnshang wǒ bú qù le, míngtiān jiù kǎoshì le, kuàngqiě wǒ hái yǒu liǎng kè méi fùxí ne.',sampleVn:'Tối nay tớ không đi đâu, mai thi rồi, huống hồ tớ còn hai bài chưa ôn nữa.',tip:'Lý do 1，况且 + lý do 2 (thường có 还 / 也 / 又).'},
+    {scene:'Em trai muốn giành món đồ chơi của bạn nhỏ hàng xóm.',a:{sp:'Em trai',zh:'那个小汽车是小明的，可是我也想要，我要去抢过来！',vn:'Chiếc ô tô đồ chơi đó là của Tiểu Minh, nhưng em cũng muốn, em đi giành về đây!'},need:['Dùng 倒不如'],sample:'别人的东西不能抢。你要是真想玩儿，倒不如去跟小明商量商量，你们一起玩儿。',samplePy:'Biérén de dōngxi bù néng qiǎng. Nǐ yàoshi zhēn xiǎng wánr, dào bùrú qù gēn Xiǎo Míng shāngliang shāngliang, nǐmen yìqǐ wánr.',sampleVn:'Đồ của người khác thì không được giành. Nếu em thật sự muốn chơi, chi bằng đi bàn với Tiểu Minh, hai đứa cùng chơi.',tip:'倒不如 + cách làm tốt hơn; có thể dùng một mình, không cần 与其.'},
+    {scene:'Bạn thấy em đi khập khiễng vào lớp.',a:{sp:'Bạn',zh:'你怎么走路一瘸一拐的？出什么事了？',vn:'Sao cậu đi khập khiễng thế? Có chuyện gì vậy?'},need:['Dùng 膝盖','Dùng 侥幸'],sample:'昨天打篮球的时候摔倒了，膝盖受了点儿伤。真是侥幸，骨头一点儿事也没有，过几天就好了。',samplePy:'Zuótiān dǎ lánqiú de shíhou shuāidǎo le, xīgài shòule diǎnr shāng. Zhēn shì jiǎoxìng, gǔtou yìdiǎnr shì yě méiyǒu, guò jǐ tiān jiù hǎo le.',sampleVn:'Hôm qua lúc chơi bóng rổ tớ bị ngã, đầu gối hơi bị thương. May thật, xương không sao cả, vài hôm là khỏi.',tip:'真是侥幸 = may thật (thoát nạn nhờ ngẫu nhiên); 摔倒 = ngã.'},
+    {scene:'Sáu giờ sáng Chủ nhật, mẹ gọi em dậy.',a:{sp:'Mẹ',zh:'快起床！太阳都出来了，还睡？',vn:'Dậy mau! Mặt trời lên rồi, còn ngủ à?'},need:['Dùng 大……的','Dùng 将近'],sample:'大清早的，就让我再睡一会儿吧，我这一周每天都学习到将近半夜呢。',samplePy:'Dà qīngzǎo de, jiù ràng wǒ zài shuì yíhuìr ba, wǒ zhè yì zhōu měi tiān dōu xuéxí dào jiāngjìn bànyè ne.',sampleVn:'Sáng sớm tinh mơ thế này, cho con ngủ thêm chút nữa đi mà, cả tuần nay ngày nào con cũng học đến gần nửa đêm đấy.',tip:'大 + thời gian + 的 mở đầu lời phản đối nhẹ; 将近半夜 = gần nửa đêm.'},
+    {scene:'Bạn cùng lớp rủ em bỏ tiền mua đáp án đề thi trên mạng.',a:{sp:'Bạn cùng lớp',zh:'听说花钱就能买到考试答案，你要不要一起买？',vn:'Nghe nói bỏ tiền là mua được đáp án đề thi, cậu có muốn mua cùng không?'},need:['Dùng 宁肯','Dùng 得不偿失'],sample:'我宁肯考得差一点儿，也不做这种事。万一被发现了，连考试资格都没了，太得不偿失了。',samplePy:'Wǒ nìngkěn kǎo de chà yìdiǎnr, yě bú zuò zhè zhǒng shì. Wànyī bèi fāxiàn le, lián kǎoshì zīgé dōu méi le, tài débùchángshī le.',sampleVn:'Tớ thà thi kém một chút chứ không làm chuyện này. Lỡ bị phát hiện thì mất luôn tư cách dự thi, lợi bất cập hại quá.',tip:'宁肯 A 也不 B = thà A chứ không B; 得不偿失 = cái được không bù cái mất.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 // 🎯 NÓI SAO CHO HAY — 得体 / 语体
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 var registerData = {
-  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
-         'HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
   items: [
-    {scene:'Kể chuyện cổ tích cho em nhỏ 5 tuổi nghe trước khi ngủ.',
-     a:'从前有个老爷爷，看见一窝小鸡，他去捉，小鸡一下子就变成金子啦！',b:'据传，宋氏先祖于农历年末偶遇雏鸡一窝，遂追捕之。',better:'a',
-     why:'Kể cho trẻ nhỏ cần lời giản dị, sinh động (从前, 一下子, 啦). Câu b dùng văn ngôn (据传, 于, 遂, 之) — đúng nhưng trẻ không hiểu.'},
-
-    {scene:'Bài phát biểu của hiệu trưởng về sự liêm chính trong lễ khai giảng.',
-     a:'咱可千万别贪啊，拿了人家的钱，早晚得出事儿！',b:'我们应当牢记前人的告诫：欲望不可太多，更不可贪污、贿赂、不择手段。',better:'b',
-     why:'Phát biểu trang trọng: 应当, 牢记, 告诫, 不可. Câu a (咱, 早晚得出事儿) là lời khuyên suồng sã giữa người quen.'},
-
-    {scene:'Nhắn tin hỏi thăm bạn thân vừa bị ngã xe.',
-     a:'你咋样了？膝盖还疼吗？要不要我给你带点儿药过去？',b:'获悉阁下不慎摔伤膝盖，特致慰问，望早日康复。',better:'a',
-     why:'Với bạn thân, hỏi han gần gũi (咋样了, 要不要……) tự nhiên hơn. Câu b (获悉, 阁下, 特致慰问) như thư công vụ.'},
-
-    {scene:'Bảng giới thiệu hiện vật trong bảo tàng.',
-     a:'这块石头是红色的，上面有好多小石头，挺好看的。',b:'该石呈椭圆形，通体红色，表面镶嵌着多种色彩、形状各异的小石子，美观别致。',better:'b',
-     why:'Văn thuyết minh cần chính xác, văn viết: 该, 呈椭圆形, 通体, 镶嵌, 各异. Câu a là lời nói miệng, chung chung (好多, 挺好看的).'},
-
-    {scene:'Khuyên bạn thân đừng vay tiền để mua điện thoại đắt nhất.',
-     a:'与其借钱买最贵的手机，倒不如先用着旧的，等攒够了钱再说。',b:'鉴于你目前经济状况欠佳，本人建议暂缓购置高档通讯设备。',better:'a',
-     why:'Khuyên bạn thân nên dùng lời thân mật; 与其……倒不如…… vẫn tự nhiên trong khẩu ngữ. Câu b (鉴于, 本人, 暂缓购置) quá khách sáo, nghe như văn bản.'},
-
-    {scene:'Báo cáo khảo cổ gửi viện nghiên cứu.',
-     a:'我们挖啊挖，挖了个大坑，结果就挖出块大石头！',b:'经过为期两周的挖掘，考古人员在该区域发现了一块形状不规则的巨石。',better:'b',
-     why:'Báo cáo khoa học cần thông tin cụ thể, văn viết: 经过为期……的挖掘, 该区域, 形状不规则. Câu a là lời kể vui, cảm tính.'}
+    {scene:'Kể chuyện cổ tích cho em nhỏ 5 tuổi nghe trước khi ngủ.',a:'从前有个老爷爷，看见一窝小鸡，他去捉，小鸡一下子就变成金子啦！',b:'传说古时候，一位老人在地里发现了一窝小鸡，在捕捉过程中，其中一只瞬间变成了金子。',better:'a',why:'Kể cho trẻ nhỏ cần câu ngắn, giọng sinh động (一下子, 啦). Câu b (传说古时候, 在捕捉过程中, 其中一只) là văn kể trang trọng, trẻ khó nghe.'},
+    {scene:'Bài phát biểu của hiệu trưởng về sự liêm chính trong lễ khai giảng.',a:'大家可千万别拿不该拿的钱啊，早晚得出事儿！',b:'我们要记住前人的告诫：欲望不可太多，更不可贪污、贿赂、不择手段。',better:'b',why:'Phát biểu trước toàn trường cần trang trọng: 告诫, 不可, liệt kê 贪污、贿赂、不择手段. Câu a (可千万别……啊, 早晚得出事儿) là lời khuyên thân mật giữa người quen.'},
+    {scene:'Nhắn tin hỏi thăm bạn thân vừa bị ngã xe.',a:'你咋样了？膝盖还疼吗？要不要我给你带点儿药过去？',b:'听说您摔伤了膝盖，我们深感不安，望您早日恢复健康。',better:'a',why:'Với bạn thân dùng khẩu ngữ (咋样, 要不要我……). Câu b (您, 深感不安, 望……) là lời thăm hỏi của cơ quan, quá khách sáo với bạn.'},
+    {scene:'Bảng giới thiệu hiện vật trong bảo tàng.',a:'这块石头是红色的，上面有好多小石头，挺好看的。',b:'这块石头为椭圆形，红色，表面镶嵌着多种色彩、形状不同的小石头，美观别致。',better:'b',why:'Bảng giới thiệu cần mô tả chính xác, văn viết: 为椭圆形, 表面镶嵌着, 美观别致. Câu a là lời nói chuyện (好多, 挺好看的).'},
+    {scene:'Khuyên bạn thân đừng vay tiền để mua điện thoại đắt nhất.',a:'与其借钱买最贵的手机，倒不如先用着旧的，等存够了钱再说。',b:'鉴于你目前经济状况不佳，本人建议你暂时不要购买高档手机。',better:'a',why:'Khuyên bạn thân dùng khẩu ngữ: 与其……倒不如……, 等……再说. Câu b (鉴于, 本人建议, 购买高档手机) như công văn.'},
+    {scene:'Thông báo của ban quản lý toà nhà về việc giữ yên tĩnh buổi tối.',a:'大半夜的，别那么大声行不行？',b:'晚上十点以后，请大家保持安静，不要影响邻居休息。',better:'b',why:'大……的 là khẩu ngữ, mang giọng trách móc — hợp khi nói thẳng với hàng xóm, không hợp thông báo chính thức. Câu b nêu rõ giờ giấc, lịch sự.'}
   ]
 };
 

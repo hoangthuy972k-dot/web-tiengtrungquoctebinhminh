@@ -1665,84 +1665,51 @@ var hvBridgeData = {
 // GHÉP TỪ — cụm trong bài khoá
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'不背叛',right:'朋友'},
   {left:'心胸',right:'开阔'},
-  {left:'处境艰难而不',right:'退缩'},
-  {left:'面对打击而不',right:'脆弱'},
-  {left:'生活中的',right:'榜样'},
-  {left:'顶天立地，',right:'光彩照人'},
-  {left:'被一票',right:'否决'},
-  {left:'从娃娃时代就',right:'潜移默化'},
-  {left:'被古训',right:'鞭策着'},
-  {left:'在生活中扮演',right:'强者'},
-  {left:'有血有肉、有健全',right:'情感'},
-  {left:'再有力的肩膀也会被',right:'压塌'},
-  {left:'分泌痛苦',right:'激素'},
-  {left:'把情绪压力',right:'转移掉'},
-  {left:'一把鼻涕一把',right:'泪'},
-  {left:'伤心难过之际，不妨',right:'痛哭'},
-  {left:'宣泄情绪的',right:'许可证'},
-  {left:'男人流泪本在情理',right:'之中'},
-  {left:'狭隘的',right:'偏见'},
-  {left:'并不丧失',right:'尊严'},
-  {left:'不必理睬别人',right:'说三道四'},
-  {left:'沉淀出',right:'智慧'}
+  {left:'光彩',right:'照人'},
+  {left:'遭受',right:'打击'},
+  {left:'否决',right:'方案'},
+  {left:'扮演',right:'角色'},
+  {left:'束缚',right:'手脚'},
+  {left:'丧失',right:'尊严'},
+  {left:'修复',right:'关系'},
+  {left:'宣泄',right:'不满'},
+  {left:'喉咙',right:'发干'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ
+// ĐIỀN TỪ — câu mới (không chép bài khoá / SGK), mỗi câu một tình huống; ôn xoáy ốc từ + ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'他从小就立志当一名科学家，是个很有',blank:'抱负',post:'的年轻人。',hint:'(hoài bão)',ans:'抱负'},
-  {pre:'公司现在的',blank:'处境',post:'十分艰难，大家必须团结起来渡过难关。',hint:'(cảnh ngộ)',ans:'处境'},
-  {pre:'哥哥学习刻苦，为人正直，一直是我学习的',blank:'榜样',post:'。',hint:'(tấm gương)',ans:'榜样'},
-  {pre:'晚会上，她穿着一身红色的旗袍，显得',blank:'光彩',post:'照人。',hint:'(rạng rỡ)',ans:'光彩'},
-  {pre:'电影结束时，很多观众都在低声',blank:'哭泣',post:'。',hint:'(khóc thút thít)',ans:'哭泣'},
-  {pre:'由于大多数人反对，这个方案最终被',blank:'否决',post:'了。',hint:'(bác bỏ)',ans:'否决'},
-  {pre:'爷爷常说：“只要肯吃苦，将来一定会有',blank:'出息',post:'的。”',hint:'(nên người)',ans:'出息'},
-  {pre:'专家认为，良好的生活习惯要从',blank:'娃娃',post:'抓起。',hint:'(trẻ nhỏ)',ans:'娃娃'},
-  {pre:'父母的言行会',blank:'潜移默化',post:'地影响孩子的性格。',hint:'(âm thầm, ngấm dần)',ans:'潜移默化'},
-  {pre:'在这部话剧中，他',blank:'扮演',post:'一位严厉的父亲。',hint:'(đóng vai)',ans:'扮演'},
-  {pre:'他发音不准，却从不怕被别人',blank:'讥笑',post:'，每天大声朗读课文。',hint:'(chế giễu)',ans:'讥笑'},
-  {pre:'我晕船晕得厉害，一上船就',blank:'恶心',post:'想吐。',hint:'(buồn nôn)',ans:'恶心'},
-  {pre:'毕业后他在银行找了一份',blank:'体面',post:'的工作，父母很满意。',hint:'(đàng hoàng)',ans:'体面'},
-  {pre:'为了备战比赛，教练对队员们进行了三个月的',blank:'魔鬼',post:'训练。',hint:'("ma quỷ" — cực khắc nghiệt)',ans:'魔鬼'},
-  {pre:'我又不是',blank:'神仙',post:'，怎么知道他什么时候回来？',hint:'(thần tiên)',ans:'神仙'},
-  {pre:'地震中，这座老楼',blank:'塌',post:'了一半，幸好没有人受伤。',hint:'(sập)',ans:'塌'},
-  {pre:'多运动身体就会越来越好，',blank:'反之',post:'，身体就会越来越差。',hint:'(ngược lại)',ans:'反之',exp:'反之 = ngược lại (văn viết), nêu tình huống trái lại với vế trước.'},
-  {pre:'青春期孩子情绪波动大，这与体内',blank:'激素',post:'的变化有关。',hint:'(hormone)',ans:'激素'},
-  {pre:'他昨天感冒了，今天',blank:'喉咙',post:'疼得说不出话来。',hint:'(cổ họng)',ans:'喉咙'},
-  {pre:'天一冷，弟弟就开始流',blank:'鼻涕',post:'、打喷嚏。',hint:'(nước mũi)',ans:'鼻涕'},
-  {pre:'值此新年到来',blank:'之际',post:'，祝大家万事如意。',hint:'(nhân dịp)',ans:'之际',exp:'值此…之际 = nhân dịp… (văn viết trang trọng).'},
-  {pre:'他第一次离开父母，想家也在',blank:'情理',post:'之中。',hint:'(lẽ thường)',ans:'情理'},
-  {pre:'在很多地方，人们',blank:'忌讳',post:'在别人家里说不吉利的话。',hint:'(kiêng kỵ)',ans:'忌讳'},
-  {pre:'他把自己关在房间里，不愿意与',blank:'外界',post:'接触。',hint:'(bên ngoài)',ans:'外界'},
-  {pre:'心胸',blank:'狭隘',post:'的人很难真正和别人合作。',hint:'(hẹp hòi)',ans:'狭隘'},
-  {pre:'我们不应该因为一个人的外表就对他产生',blank:'偏见',post:'。',hint:'(thành kiến)',ans:'偏见'},
-  {pre:'即使再穷，他也不愿意放弃做人的',blank:'尊严',post:'。',hint:'(phẩm giá)',ans:'尊严'},
-  {pre:'她跟我生气了，一整天都不',blank:'理睬',post:'我。',hint:'(để ý)',ans:'理睬'},
-  {pre:'洪水',blank:'淹没',post:'了大片农田，村民们损失很大。',hint:'(nhấn chìm)',ans:'淹没'},
-  {pre:'参观博物馆以前，请先阅读游客',blank:'须知',post:'。',hint:'(những điều cần biết)',ans:'须知'},
-  {pre:'',blank:'岁月',post:'在奶奶的脸上留下了深深的痕迹。',hint:'(năm tháng)',ans:'岁月'},
-  {pre:'经过多年的',blank:'沉淀',post:'，他的文章越来越有深度了。',hint:'(lắng đọng)',ans:'沉淀'}
+  {pre:'他宁愿自己吃亏，也绝不会',blank:'背叛',post:'朋友。',hint:'(phản bội)',ans:'背叛',exp:'背叛 + người / tổ chức = phản bội; 宁愿……也不…… (bài 18) = thà … chứ không ….'},
+  {pre:'这个年轻人很',blank:'上进',post:'，下了班还去学外语。',hint:'(cầu tiến)',ans:'上进',exp:'上进 = cầu tiến, luôn muốn giỏi hơn (很上进 / 有上进心); 进步 là "tiến bộ" (kết quả), không tả tính cách.'},
+  {pre:'他刚丢了工作，又生了一场病，',blank:'处境',post:'非常困难。',hint:'(cảnh ngộ, hoàn cảnh)',ans:'处境',exp:'处境 = hoàn cảnh mình đang ở, thường là khó khăn (处境困难 / 处境艰难); 环境 là môi trường xung quanh nói chung.'},
+  {pre:'考试时偷看别人的答案，是一件很不',blank:'光彩',post:'的事。',hint:'(vẻ vang)',ans:'光彩',exp:'不光彩 = không vẻ vang, đáng xấu hổ (不光彩的事); nghĩa gốc của 光彩 là ánh sáng rực rỡ (光彩照人).'},
+  {pre:'爷爷常说：“只要你好好读书，将来一定有',blank:'出息',post:'。”',hint:'(nên người, có tương lai)',ans:'出息',exp:'有出息 = nên người, có tương lai; 没出息 = vô dụng, chẳng ra gì; 出息 đọc chūxi (thanh nhẹ).'},
+  {pre:'我晕车，一坐汽车就觉得',blank:'恶心',post:'，什么都不想吃。',hint:'(buồn nôn)',ans:'恶心',exp:'恶心 (ěxin) = buồn nôn; nghĩa bóng = ghê tởm (这种行为真恶心).'},
+  {pre:'孩子哭的时候，给他讲个故事，就能',blank:'转移',post:'他的注意力。',hint:'(chuyển, đánh lạc)',ans:'转移',exp:'转移注意力 = làm chú ý chuyển sang chỗ khác; 转移 + 话题 / 注意力 / 压力.'},
+  {pre:'这些照片没有作者的',blank:'许可',post:'，不能随便用在网上。',hint:'(cho phép)',ans:'许可',exp:'许可 = sự cho phép chính thức (của người có quyền); 没有……的许可 = chưa được … cho phép.'},
+  {pre:'在中国，送礼物很',blank:'忌讳',post:'送钟。',hint:'(kiêng kị)',ans:'忌讳',exp:'忌讳 + V = kiêng làm gì (vì phong tục, mê tín); 送钟 đọc giống cụm "lo tang cho người chết" nên người Trung Quốc kiêng.'},
+  {pre:'他的声音很快就被大家的笑声',blank:'淹没',post:'了。',hint:'(nhấn chìm, át đi)',ans:'淹没',exp:'淹没 nghĩa gốc là nước ngập chìm; nghĩa bóng: âm thanh bị át đi (被……淹没了).'},
+  {pre:'果汁放了一会儿，杯子底下就',blank:'沉淀',post:'了一层东西。',hint:'(lắng xuống)',ans:'沉淀',exp:'沉淀 = chất lắng xuống đáy (nghĩa gốc); nghĩa bóng: kinh nghiệm, cảm xúc lắng đọng theo thời gian.'},
+  {pre:'我问他钱花到哪儿去了，他回答得很',blank:'含糊',post:'，谁也没听明白。',hint:'(mập mờ)',ans:'含糊',exp:'含糊 = nói mập mờ, không rõ ràng (cố ý hoặc không); 一点儿也不含糊 = dứt khoát, không qua loa.'},
+  {pre:'',blank:'哪怕',post:'只是一张小小的画，奶奶也会好好地收起来。',hint:'(dù cho)',ans:'哪怕',exp:'哪怕 + giả thiết (只是一张小小的画)，……也…… = dù chỉ là … cũng …; vế sau bắt buộc có 也 / 都.'},
+  {pre:'多跟人交流，口语就会进步得快；',blank:'反之',post:'，就很难提高。',hint:'(ngược lại)',ans:'反之',exp:'反之 = trường hợp ngược lại (không giao tiếp nhiều) thì kết quả cũng ngược lại; đứng đầu vế sau, có dấu phẩy.'},
+  {pre:'他这个人眼光太',blank:'狭隘',post:'，只看得到眼前的一点儿好处。',hint:'(hạn hẹp)',ans:'狭隘',exp:'眼光狭隘 = tầm nhìn hạn hẹp; 狭隘 còn dùng cho 心胸 (hẹp hòi) / 看法, trái nghĩa 开阔.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (哪怕 · 反之) ít nhất 2 câu
+// SẮP XẾP CÂU — câu mới, chỉ một trật tự đúng
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['哪怕','遭受打击','，','也','一定要','坚强','。'],ans:'哪怕遭受打击，也一定要坚强。',audio:'哪怕遭受打击，也一定要坚强。'},
-  {words:['她真的老了','，','哪怕','两三天以前的事情','，','也会','记不清','。'],ans:'她真的老了，哪怕两三天以前的事情，也会记不清。',audio:'她真的老了，哪怕两三天以前的事情，也会记不清。'},
-  {words:['我们','一定会','尽全力','抢救病人','，','哪怕','只有','一线希望','。'],ans:'我们一定会尽全力抢救病人，哪怕只有一线希望。',audio:'我们一定会尽全力抢救病人，哪怕只有一线希望。'},
-  {words:['衣服','只要干净就行','，','哪怕','旧点儿','也','没关系','。'],ans:'衣服只要干净就行，哪怕旧点儿也没关系。',audio:'衣服只要干净就行，哪怕旧点儿也没关系。'},
-  {words:['雨水多','，','气候就比较湿润','，','反之','，','气候就比较干燥','。'],ans:'雨水多，气候就比较湿润，反之，气候就比较干燥。',audio:'雨水多，气候就比较湿润，反之，气候就比较干燥。'},
-  {words:['不断地积累','，','经验就会丰富起来','，','反之','，','永远不会有经验可谈','。'],ans:'不断地积累，经验就会丰富起来，反之，永远不会有经验可谈。',audio:'不断地积累，经验就会丰富起来，反之，永远不会有经验可谈。'},
-  {words:['一切从实际出发','，','事业就能顺利发展','，','反之','，','就会遇到挫折','。'],ans:'一切从实际出发，事业就能顺利发展，反之，就会遇到挫折。',audio:'一切从实际出发，事业就能顺利发展，反之，就会遇到挫折。'},
-  {words:['伤心难过','之际','，','不妨','痛哭','。'],ans:'伤心难过之际，不妨痛哭。',audio:'伤心难过之际，不妨痛哭。'},
-  {words:['宣泄','归','宣泄','，','哭泣时间','不要','超过15分钟','。'],ans:'宣泄归宣泄，哭泣时间不要超过15分钟。',audio:'宣泄归宣泄，哭泣时间不要超过15分钟。'},
-  {words:['男人流泪','不等于','软弱无用','，','也','并不','丧失尊严','。'],ans:'男人流泪不等于软弱无用，也并不丧失尊严。',audio:'男人流泪不等于软弱无用，也并不丧失尊严。'},
-  {words:['快乐','往往是','短暂的','，','而','悲伤','却可以','沉淀出智慧','。'],ans:'快乐往往是短暂的，而悲伤却可以沉淀出智慧。',audio:'快乐往往是短暂的，而悲伤却可以沉淀出智慧。'},
-  {words:['男人','不是魔鬼','，','也不是神仙','，','他们','也是','有血有肉的人','。'],ans:'男人不是魔鬼，也不是神仙，他们也是有血有肉的人。',audio:'男人不是魔鬼，也不是神仙，他们也是有血有肉的人。'}
+  {words:['好的','书','会','潜移默化地','改变','一个人','。'],ans:'好的书会潜移默化地改变一个人。',audio:'好的书会潜移默化地改变一个人。'},
+  {words:['大雨','把','那座','旧','房子','冲','塌','了','。'],ans:'大雨把那座旧房子冲塌了。',audio:'大雨把那座旧房子冲塌了。'},
+  {words:['他的','方案','被','经理','否决','了','。'],ans:'他的方案被经理否决了。',audio:'他的方案被经理否决了。'},
+  {words:['父母','应该','给','孩子','做','个','好','榜样','。'],ans:'父母应该给孩子做个好榜样。',audio:'父母应该给孩子做个好榜样。'},
+  {words:['弟弟','把','鼻涕','擦','在','了','妈妈的','衣服','上','。'],ans:'弟弟把鼻涕擦在了妈妈的衣服上。',audio:'弟弟把鼻涕擦在了妈妈的衣服上。'},
+  {words:['他','从来','不','理睬','别人的','看法','。'],ans:'他从来不理睬别人的看法。',audio:'他从来不理睬别人的看法。'},
+  {words:['他','很','在乎','外界','对','他的','看法','。'],ans:'他很在乎外界对他的看法。',audio:'他很在乎外界对他的看法。'},
+  {words:['他','穿','了','一套','很','体面的','衣服','。'],ans:'他穿了一套很体面的衣服。',audio:'他穿了一套很体面的衣服。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1750,78 +1717,46 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'他为了钱____了最信任他的朋友。',opts:['背叛','违背','反对','放弃'],ans:0,
-   exp:'背叛 + người = phản bội ai. 违背 (bài 29) + 原则 / 诺言 = làm trái; 反对 = phản đối (ý kiến); 放弃 = từ bỏ.'},
-  {wrong:'这孩子很____，每天都主动学习到很晚。',opts:['上升','上进','前进','进步'],ans:1,
-   exp:'很上进 = rất cầu tiến (tả chí hướng, tính cách). 上升 = tăng lên (nhiệt độ, giá cả); 前进 = tiến lên phía trước; 进步 = tiến bộ (chỉ kết quả, không tả chí hướng).'},
-  {wrong:'新校长很有____，一上任就进行了大胆的改革。',opts:['魅力','能力','魄力','压力'],ans:2,
-   exp:'有魄力 = quyết đoán, dám làm — hợp với 大胆的改革. 魅力 = sức hấp dẫn; 能力 = năng lực (không nhấn "dám quyết"); 压力 = áp lực.'},
-  {wrong:'站在山顶上，视野一下子____起来。',opts:['开放','开展','打开','开阔'],ans:3,
-   exp:'视野开阔 = tầm nhìn rộng mở. 开放 = mở cửa (chính sách, công viên); 开展 = triển khai (hoạt động); 打开 = mở (cửa, hộp).'},
-  {wrong:'比赛失利对他是一个沉重的____，他好几天都没说话。',opts:['打击','打扰','攻击','冲击'],ans:0,
-   exp:'沉重的打击 = cú sốc nặng nề. 打扰 = làm phiền; 攻击 = tấn công (quân sự, lời lẽ); 冲击 (bài 24) = tác động mạnh (冲击市场), không nói "một cú 冲击 khiến anh ấy im lặng".'},
-  {wrong:'她的心理比较____，一听到批评就哭。',opts:['柔软','脆弱','虚弱','薄弱'],ans:1,
-   exp:'心理脆弱 = tâm lý yếu, dễ tổn thương. 柔软 = mềm mại (vật chất); 虚弱 = (cơ thể) yếu ớt; 薄弱 = yếu, mỏng (环节 / 基础).'},
-  {wrong:'遇到突发事件，一定要保持____，千万别慌。',opts:['理想','理由','理智','道理'],ans:2,
-   exp:'保持理智 = giữ lý trí. 理想 = lý tưởng; 理由 = lý do; 道理 = đạo lý, lẽ.'},
-  {wrong:'老师的批评对我来说是一种____，让我更加努力。',opts:['打击','压迫','批准','鞭策'],ans:3,
-   exp:'是一种鞭策 = là sự thúc đẩy (khiến cố gắng hơn). 打击 = làm nản (trái với 更加努力); 压迫 (bài 27) = áp bức; 批准 = phê chuẩn.'},
-  {wrong:'时代____了我们这一代人新的使命。',opts:['赋予','给予','授予','赠送'],ans:0,
-   exp:'赋予 + người + 使命 / 权利 / 意义 = trao cho (điều lớn lao, trừu tượng). 给予 + 帮助 / 支持 (thường không mang hai tân ngữ); 授予 + 称号 / 学位 = trao danh hiệu; 赠送 = tặng quà.'},
-  {wrong:'他这种不劳而获的行为被大家____。',opts:['重视','鄙视','忽视','注视'],ans:1,
-   exp:'被……鄙视 = bị khinh bỉ (hành vi xấu 不劳而获 — 练习2). 重视 = coi trọng; 忽视 = xem nhẹ; 注视 = nhìn chăm chú.'},
-  {wrong:'安全问题关系到每个人的生命，一点儿也不能____。',opts:['模糊','含蓄','含糊','含义'],ans:2,
-   exp:'不能含糊 = không được qua loa (词语辨析 含糊—模糊). 模糊 = mờ, không rõ nét (字迹 / 记忆); 含蓄 = hàm súc, kín đáo; 含义 (bài 28) = hàm ý.'},
-  {wrong:'我们要摆脱旧观念的____，大胆地去尝试新事物。',opts:['限度','拘束','结束','束缚'],ans:3,
-   exp:'摆脱……的束缚 = thoát khỏi sự trói buộc (观念, 传统). 限度 = giới hạn; 拘束 = gò bó, rụt rè (别拘束); 结束 = kết thúc.'},
-  {wrong:'这家公司的管理制度还不____，所以常常出问题。',opts:['健全','健康','安全','完全'],ans:0,
-   exp:'制度健全 = chế độ hoàn chỉnh (không phải "kiện toàn" động từ). 健康 = khoẻ mạnh (người); 安全 = an toàn; 完全 = hoàn toàn (phó từ).'},
-  {wrong:'一问到成绩，他就赶紧____话题。',opts:['转变','转移','转告','转达'],ans:1,
-   exp:'转移话题 = lảng sang chuyện khác. 转变 = chuyển biến (观念, 态度); 转告 = nhắn lại cho ai; 转达 (bài 27) = chuyển lời.'},
-  {wrong:'专家们花了三年时间，终于把这幅古画____好了。',opts:['修改','恢复','修复','修理'],ans:2,
-   exp:'修复 + 文物 / 古画 = phục chế, tu bổ. 修改 = sửa (bài văn, kế hoạch); 恢复 = khôi phục (健康 / 秩序), không nói 把古画恢复好; 修理 = sửa (máy móc, xe).'},
-  {wrong:'哭泣是____情绪的一种健康方式。',opts:['宣传','宣布','泄露','宣泄'],ans:3,
-   exp:'宣泄情绪 = giải toả cảm xúc. 宣传 = tuyên truyền; 宣布 = tuyên bố; 泄露 (bài 27) = làm lộ (bí mật).'},
-  {wrong:'开饭馆必须先申请卫生____证。',opts:['许可','允许','同意','批准'],ans:0,
-   exp:'许可证 = giấy phép — 许可 bổ nghĩa được cho danh từ; không có 允许证 (词语辨析 许可—允许). 同意 = đồng ý; 批准 = phê chuẩn (không nói 批准证).'},
-  {wrong:'政府大力____绿色出行，鼓励大家少开车。',opts:['指导','倡导','引导','领导'],ans:1,
-   exp:'倡导 + 生活方式 / 风尚 = khởi xướng, kêu gọi. 指导 = chỉ đạo, hướng dẫn chuyên môn; 引导 (bài 22) = dẫn dắt (thường + người: 引导学生); 领导 = lãnh đạo.'},
-  {wrong:'他们要结婚时，双方家长百般____，但两人最终还是走到了一起。',opts:['阻碍','组织','阻挠','阻力'],ans:2,
-   exp:'百般阻挠 = ra sức ngăn cản (cố ý). 阻碍 (bài 22) = cản trở (thường do khách quan: 阻碍发展); 组织 = tổ chức; 阻力 = lực cản (danh từ).'},
-  {wrong:'他这次虽然失败了，但不能因此____他以前的成绩。',opts:['删除','取消','消灭','抹杀'],ans:3,
-   exp:'抹杀 + 成绩 / 功劳 = phủ nhận, gạt bỏ (không phải "mạt sát"). 删除 = xoá (văn bản, dữ liệu); 取消 = huỷ bỏ (hoạt động, tư cách); 消灭 (bài 23) = tiêu diệt.'}
+  {wrong:'他从小就有远大的____，想成为一名科学家。',opts:['抱负','负担','责任','胜负'],ans:0,exp:'远大的抱负 = hoài bão lớn. 负担 = gánh nặng; 责任 = trách nhiệm (không đi với 远大); 胜负 = thắng thua.'},
+  {wrong:'新经理很有____，一来就做了好几个重大决定。',opts:['魄力','魅力','压力','动力'],ans:0,exp:'有魄力 = dám nghĩ dám quyết. 魅力 = sức hấp dẫn; 压力 = áp lực; 动力 = động lực — đều không giải thích việc dám ra quyết định lớn.'},
+  {wrong:'他看起来很坚强，其实内心很____，一点儿小事都会让他难过半天。',opts:['脆弱','薄弱','弱小','弱点'],ans:0,exp:'内心脆弱 = tâm hồn mong manh, dễ tổn thương. 薄弱 dùng cho 基础 (nền tảng yếu); 弱小 = nhỏ yếu (nước, con vật); 弱点 là danh từ.'},
+  {wrong:'遇到这种事一定要保持____，千万别冲动。',opts:['理智','理解','理由','道理'],ans:0,exp:'保持理智 = giữ tỉnh táo (ngược với 冲动). 理解 = thấu hiểu; 理由 = lý do; 道理 = lẽ phải — không đi với 保持 ở đây.'},
+  {wrong:'这次失败对他是一种____，他从此更加努力了。',opts:['鞭策','安慰','原谅','打扰'],ans:0,exp:'鞭策 = thúc giục, cú hích khiến người ta cố gắng hơn (vế sau 更加努力). 安慰 = an ủi; 原谅 = tha thứ; 打扰 = làm phiền.'},
+  {wrong:'法律____每个人平等的权利。',opts:['赋予','分配','接受','包装'],ans:0,exp:'赋予 + người + 权利 / 责任 = trao cho (trang trọng, từ trên xuống). 分配 = phân chia (công việc, nhà ở); 接受 = nhận; 包装 = đóng gói.'},
+  {wrong:'他说错了一个词，就被几个同学____了半天，难过得想哭。',opts:['讥笑','表扬','佩服','关心'],ans:0,exp:'被……讥笑 = bị chế nhạo (vế sau 难过得想哭). 表扬 / 佩服 / 关心 là nghĩa tốt, mâu thuẫn với 难过.'},
+  {wrong:'那些只会讨好老板、从不认真工作的人，让人打心底里____。',opts:['鄙视','重视','珍惜','羡慕'],ans:0,exp:'鄙视 = khinh thường (người có hành vi xấu). 重视 = coi trọng; 珍惜 = trân trọng; 羡慕 = ngưỡng mộ — trái nghĩa với thái độ ở đây.'},
+  {wrong:'这些老规矩____着年轻人，他们什么新东西都不敢试。',opts:['束缚','包装','打扮','收拾'],ans:0,exp:'束缚 = trói buộc, kìm hãm (规矩 / 观念束缚人). 包装 = đóng gói; 打扮 = trang điểm; 收拾 = dọn dẹp.'},
+  {wrong:'政府____大家少开车，多坐公共汽车。',opts:['倡导','指导','领导','报道'],ans:0,exp:'倡导 = khởi xướng, kêu gọi mọi người làm theo. 指导 = hướng dẫn (cụ thể); 领导 = lãnh đạo; 报道 = đưa tin.'},
+  {wrong:'他生病了没来上课，这也在____之中，你别怪他。',opts:['情理','道理','理由','心理'],ans:0,exp:'在情理之中 = hợp tình hợp lý, dễ hiểu. Không có cụm 在道理之中 / 在理由之中 / 在心理之中.'},
+  {wrong:'不要因为他是外地人，就对他有____。',opts:['偏见','见解','见面','再见'],ans:0,exp:'对……有偏见 = có định kiến với ai. 见解 = kiến giải, quan điểm (对问题有见解); 见面 / 再见 không làm tân ngữ của 有 ở đây.'},
+  {wrong:'无论怎样，都不能____他这些年为公司做出的贡献。',opts:['抹杀','取消','消失','消灭'],ans:0,exp:'抹杀 + 贡献 / 成绩 / 功劳 = phủ nhận sạch, xoá bỏ. 取消 = huỷ (kế hoạch); 消失 = biến mất (không có tân ngữ); 消灭 = tiêu diệt (kẻ thù, côn trùng).'},
+  {wrong:'这件衬衫我很喜欢，____要花一个月的工资，我也要买。',opts:['哪怕','只要','既然','因为'],ans:0,exp:'哪怕……也…… = dù có … cũng (kết quả không đổi). 只要 + 就; 既然 / 因为 nêu sự thật, không đi với 也 kiểu nhượng bộ này.'},
+  {wrong:'钱花得有计划，到了月底就不会着急；____，就可能连饭钱都没有了。',opts:['反之','总之','况且','于是'],ans:0,exp:'反之 = ngược lại (tiêu tiền không có kế hoạch) → kết quả ngược lại. 总之 = tóm lại; 况且 (bài 20) = hơn nữa; 于是 = thế là.'}
 ];
 
 
 
 // ══════════════════════════════════════════
-// DỊCH — câu ghép, ôn từ HSK 6 bài 1–31 và HSK 4–5
+// DỊCH Việt → Trung — câu mới, dùng từ của bài + ôn ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Dù gặp cú sốc lớn đến đâu, anh ấy cũng chưa bao giờ để lộ mặt yếu đuối trước người nhà, vì anh ấy là chỗ dựa của cả gia đình.',zh:'哪怕遭受再大的打击，他也从不在家人面前表现出脆弱的一面，因为他是全家的靠山。',py:'Nǎpà zāoshòu zài dà de dǎjī, tā yě cóng bú zài jiārén miànqián biǎoxiàn chū cuìruò de yí miàn, yīnwèi tā shì quán jiā de kàoshān.',goiY:['哪怕……也……','遭受打击','脆弱的一面','靠山'],giai:'哪怕 + 再 + Adj + 的 N，也…… = dù … đến đâu cũng … (điểm ngữ pháp 1); "cú sốc" = 打击 (không phải "đả kích"); "chỗ dựa" = 靠山 (bài khoá).'},
-  {vi:'Thực tế cho thấy, dồn nén cảm xúc lâu dài chỉ có hại cho sức khoẻ; ngược lại, giải toả đúng mức sẽ khiến tâm trạng trở nên bình hoà hơn.',zh:'事实表明，长期压抑情绪对健康只有坏处；反之，适当地宣泄会让心情变得更平和。',py:'Shìshí biǎomíng, chángqī yāyì qíngxù duì jiànkāng zhǐyǒu huàichù; fǎnzhī, shìdàng de xuānxiè huì ràng xīnqíng biàn de gèng pínghé.',goiY:['事实表明','压抑','反之','宣泄'],giai:'反之 = ngược lại, nối hai vế đối lập, sau có dấu phẩy (điểm ngữ pháp 2); "giải toả" = 宣泄 (văn viết); 适当地 + V làm trạng ngữ.'},
-  {vi:'Sở dĩ nhiều người đàn ông không dám khóc là vì họ sợ bị người khác coi thường và chế giễu.',zh:'很多男人之所以不敢哭，是因为他们怕被别人鄙视和讥笑。',py:'Hěn duō nánrén zhī suǒyǐ bù gǎn kū, shì yīnwèi tāmen pà bèi biérén bǐshì hé jīxiào.',goiY:['之所以……是因为……','鄙视','讥笑'],giai:'之所以……是因为…… = sở dĩ … là vì … (HSK 5); bị động 被 + 别人 + V; 鄙视 / 讥笑 đều là văn viết, mạnh hơn 看不起 / 笑话.'},
-  {vi:'Thói quen của cha mẹ sẽ âm thầm ảnh hưởng đến con cái, vì vậy giáo dục phải bắt đầu từ khi trẻ còn nhỏ.',zh:'父母的习惯会潜移默化地影响孩子，所以教育要从娃娃抓起。',py:'Fùmǔ de xíguàn huì qiányí-mòhuà de yǐngxiǎng háizi, suǒyǐ jiàoyù yào cóng wáwa zhuā qǐ.',goiY:['潜移默化地','从娃娃抓起'],giai:'"âm thầm ảnh hưởng" = 潜移默化地影响 (thành ngữ + 地 làm trạng ngữ); 从娃娃抓起 = bắt đầu từ lúc còn bé (đáp án sách 练习2 (1)).'},
-  {vi:'Giải toả thì giải toả, nhưng khóc tốt nhất không nên quá mười lăm phút, nếu không ngược lại còn hại dạ dày.',zh:'宣泄归宣泄，哭泣最好不要超过十五分钟，否则反而会伤害肠胃。',py:'Xuānxiè guī xuānxiè, kūqì zuìhǎo bú yào chāoguò shíwǔ fēnzhōng, fǒuzé fǎn\'ér huì shānghài chángwèi.',goiY:['A归A','哭泣','否则','反而'],giai:'A归A (bài 18) = … thì …, nhưng …; 否则 = nếu không; 反而 = ngược lại (kết quả trái mong đợi).'},
-  {vi:'Muốn xoá bỏ định kiến hẹp hòi ấy thì trước tiên chúng ta phải vứt bỏ quan niệm truyền thống "nam nhi có lệ không dễ rơi".',zh:'要想消除这种狭隘的偏见，我们首先得扔掉“男儿有泪不轻弹”的传统观念。',py:'Yào xiǎng xiāochú zhè zhǒng xiá\'ài de piānjiàn, wǒmen shǒuxiān děi rēngdiào “nán\'ér yǒu lèi bù qīng tán” de chuántǒng guānniàn.',goiY:['要想……首先……','消除','狭隘','偏见'],giai:'"định kiến hẹp hòi" = 狭隘的偏见; "xoá bỏ" = 消除 (bài 23); 得 đọc děi = phải.'},
-  {vi:'Ai cũng có lúc yếu đuối, nếu lúc nào cũng dồn nén bản thân thì người kiên cường đến mấy cũng có ngày bị áp lực đè sụp.',zh:'谁都有脆弱的时候，如果总是压抑自己，再坚强的人也有被压力压塌的一天。',py:'Shéi dōu yǒu cuìruò de shíhou, rúguǒ zǒngshì yāyì zìjǐ, zài jiānqiáng de rén yě yǒu bèi yālì yātā de yì tiān.',goiY:['谁都……','脆弱','再……也……','压塌'],giai:'谁都 = ai cũng; 再 + Adj + 的人也…… = người … đến mấy cũng …; 被压力压塌 = bị áp lực đè sụp (bài khoá: 再有力的肩膀也有被压塌的时候).'},
-  {vi:'Nhân dịp tốt nghiệp, em muốn cảm ơn các thầy cô; chính sự động viên và thúc giục của thầy cô đã giúp em không bỏ dở nửa chừng.',zh:'值此毕业之际，我要感谢老师们，正是你们的鼓励和鞭策，才让我没有半途而废。',py:'Zhí cǐ bìyè zhījì, wǒ yào gǎnxiè lǎoshīmen, zhèng shì nǐmen de gǔlì hé biāncè, cái ràng wǒ méiyǒu bàntú\'érfèi.',goiY:['值此……之际','鞭策','正是……才……','半途而废'],giai:'值此……之际 = nhân dịp … (trang trọng); 鼓励和鞭策 là cụm quen dùng; 半途而废 (bài 31); 正是……才…… nhấn "chính … mới …".'},
-  {vi:'Không cần để ý người khác nói ra nói vào, chỉ cần không làm chuyện chẳng đàng hoàng thì sẽ không đánh mất phẩm giá.',zh:'不必理睬别人说三道四，只要不做不体面的事，就不会丧失尊严。',py:'Búbì lǐcǎi biérén shuō sān dào sì, zhǐyào bú zuò bù tǐmiàn de shì, jiù bú huì sàngshī zūnyán.',goiY:['不必理睬','说三道四','只要……就……','体面','尊严'],giai:'理睬 hầu như dùng phủ định (不必理睬); 只要……就…… = chỉ cần … thì …; "phẩm giá" = 尊严 (không phải "tôn nghiêm" = trang nghiêm).'},
-  {vi:'Đã là nỗi buồn không thể tránh khỏi thì hãy đối mặt với nó cho tốt, vì năm tháng sẽ khiến những nỗi đau ấy lắng đọng thành trí tuệ.',zh:'既然悲伤无法避免，就应该好好面对它，因为岁月会让这些痛苦沉淀成智慧。',py:'Jìrán bēishāng wúfǎ bìmiǎn, jiù yīnggāi hǎohǎo miànduì tā, yīnwèi suìyuè huì ràng zhèxiē tòngkǔ chéndiàn chéng zhìhuì.',goiY:['既然……就……','岁月','沉淀'],giai:'既然……就…… = đã … thì … (HSK 5); 沉淀成 / 沉淀出 + 智慧 = lắng đọng thành trí tuệ; 岁月 (văn chương) = năm tháng.'}
+  {vi:'Dù chỉ được nghỉ một ngày, anh ấy cũng về quê thăm bố mẹ.',zh:'哪怕只放一天假，他也要回老家看父母。',py:'Nǎpà zhǐ fàng yì tiān jià, tā yě yào huí lǎojiā kàn fùmǔ.',goiY:['哪怕……也……','放假'],giai:'哪怕 + giả thiết, S + 也 + kết quả không đổi; 放一天假 = nghỉ một ngày (放假 là li hợp).'},
+  {vi:'Lúc tâm trạng tốt nhìn gì cũng thấy đẹp; ngược lại, nhìn gì cũng thấy bực mình.',zh:'心情好的时候，看什么都觉得美；反之，看什么都觉得心烦。',py:'Xīnqíng hǎo de shíhou, kàn shénme dōu juéde měi; fǎnzhī, kàn shénme dōu juéde xīnfán.',goiY:['反之','看什么都……'],giai:'反之 = trường hợp ngược lại (心情不好); 看什么都…… = nhìn gì cũng ….'},
+  {vi:'Khi buồn, chi bằng tìm một người bạn trò chuyện, trút hết những bực bội trong lòng ra.',zh:'难过的时候，不妨找个朋友聊聊，把心里的不快宣泄出来。',py:'Nánguò de shíhou, bùfáng zhǎo ge péngyou liáoliao, bǎ xīn lǐ de búkuài xuānxiè chūlái.',goiY:['不妨','宣泄'],giai:'不妨 (bài 12) = cứ thử, chi bằng; 把……宣泄出来 = trút … ra ngoài.'},
+  {vi:'Mỗi cử chỉ của người lớn đều âm thầm ảnh hưởng đến đứa bé trong nhà.',zh:'大人的一举一动都会潜移默化地影响家里的娃娃。',py:'Dàren de yì jǔ yí dòng dōu huì qiányí-mòhuà de yǐngxiǎng jiā lǐ de wáwa.',goiY:['一举一动','潜移默化','娃娃'],giai:'潜移默化地 + V = ảnh hưởng âm thầm, dần dần; 娃娃 = em bé (khẩu ngữ).'},
+  {vi:'Cần biết rằng, những khó khăn gặp phải bây giờ sẽ lắng đọng dần theo năm tháng, trở thành kinh nghiệm quý báu.',zh:'须知，现在遇到的困难，会随着岁月慢慢沉淀，变成宝贵的经验。',py:'Xūzhī, xiànzài yùdào de kùnnan, huì suízhe suìyuè mànmàn chéndiàn, biànchéng bǎoguì de jīngyàn.',goiY:['须知','岁月','沉淀'],giai:'须知 đứng đầu câu = cần biết rằng (văn viết); 随着岁月 = theo năm tháng.'},
+  {vi:'Đừng vì người ta nghèo mà khinh thường, càng không được chế giễu người ta.',zh:'不要因为别人穷就鄙视他，更不能讥笑他。',py:'Bú yào yīnwèi biérén qióng jiù bǐshì tā, gèng bù néng jīxiào tā.',goiY:['因为……就……','鄙视','讥笑'],giai:'鄙视 = coi thường trong lòng; 讥笑 = chế giễu bằng lời / tiếng cười; 更 = càng.'}
 ];
 
-// Chiều Trung → Việt — bám ý bài khoá
+// ══════════════════════════════════════════
+// Dịch Trung → Việt — câu mới, không trùng chiều trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Cho đến hôm nay, tiêu chuẩn của xã hội chúng ta về một người đàn ông tốt chưa từng thay đổi.',zh:'到今天为止，我们的社会对好男人的标准从没有改变过。',py:'Dào jīntiān wéizhǐ, wǒmen de shèhuì duì hǎo nánrén de biāozhǔn cóng méiyǒu gǎibiànguo.',goiY:['到……为止 = cho đến …','从没有……过 = chưa từng'],giai:'对……的标准 = tiêu chuẩn đối với … → dịch "tiêu chuẩn về …" cho tự nhiên.'},
-  {vi:'Đàn ông phải có tu dưỡng, lòng dạ rộng mở, hoàn cảnh gian nan mà không lùi bước, đối mặt cú sốc mà không yếu đuối.',zh:'男人要有修养，心胸开阔，处境艰难而不退缩，面对打击而不脆弱。',py:'Nánrén yào yǒu xiūyǎng, xīnxiōng kāikuò, chǔjìng jiānnán ér bú tuìsuō, miànduì dǎjī ér bú cuìruò.',goiY:['心胸开阔 = lòng dạ rộng mở','处境 = cảnh ngộ','打击 = cú sốc','而不 = mà không'],giai:'A 而不 B = A mà không B (văn viết); 打击 ở đây là cú sốc tinh thần, không dịch "đả kích".'},
-  {vi:'Nam tử hán có lý trí thì dù buồn đến mấy cũng không dễ dàng khóc lóc; đàn ông hay khóc thì đi đâu cũng bị gạt bỏ ngay.',zh:'理智的男子汉再悲伤也不轻易哭泣，爱哭的男人走到哪儿都会被一票否决。',py:'Lǐzhì de nánzǐhàn zài bēishāng yě bù qīngyì kūqì, ài kū de nánrén zǒudào nǎr dōu huì bèi yí piào fǒujué.',goiY:['再……也…… = dù … đến mấy cũng','一票否决 = bị gạt bỏ ngay'],giai:'一票否决 nghĩa đen "một phiếu phủ quyết", nghĩa bóng: chỉ vì một điểm mà bị loại hẳn — dịch thoát "bị gạt bỏ ngay".'},
-  {vi:'Kiểu giáo dục này đã âm thầm phát huy tác dụng từ thời còn bé tí, ngày nào họ cũng bị những lời răn dạy cổ xưa như thế thúc giục.',zh:'这种教育是从娃娃时代就潜移默化地在起作用了，他们天天被这样的古训鞭策着。',py:'Zhè zhǒng jiàoyù shì cóng wáwa shídài jiù qiányí-mòhuà de zài qǐ zuòyòng le, tāmen tiāntiān bèi zhèyàng de gǔxùn biāncèzhe.',goiY:['娃娃时代 = thời bé tí','潜移默化 = âm thầm, ngấm dần','鞭策 = thúc giục'],giai:'被……鞭策着 = bị … thúc giục (trạng thái kéo dài); 古训 = lời răn dạy của người xưa.'},
-  {vi:'Văn hoá của chúng ta đã khoác cho đàn ông hình tượng to lớn, kiên cường; trong cuộc sống họ buộc phải đóng vai kẻ mạnh.',zh:'我们的文化赋予了男人高大、坚强的形象，他们在生活中必须扮演强者。',py:'Wǒmen de wénhuà fùyǔle nánrén gāodà, jiānqiáng de xíngxiàng, tāmen zài shēnghuó zhōng bìxū bànyǎn qiángzhě.',goiY:['赋予 = trao cho, khoác cho','扮演 = đóng vai','强者 = kẻ mạnh'],giai:'赋予……形象 dịch "khoác cho … hình tượng" cho tự nhiên; 必须 = buộc phải.'},
-  {vi:'Đàn ông không phải ác quỷ, cũng chẳng phải thần tiên, họ cũng là con người bằng xương bằng thịt, có tình cảm lành mạnh đầy đủ.',zh:'男人不是魔鬼，也不是神仙，他们也是有血有肉、有健全情感的人。',py:'Nánrén bú shì móguǐ, yě bú shì shénxiān, tāmen yě shì yǒu xuè yǒu ròu, yǒu jiànquán qínggǎn de rén.',goiY:['有血有肉 = bằng xương bằng thịt','健全 = lành mạnh, đầy đủ'],giai:'有血有肉 dịch bằng thành ngữ tương đương "bằng xương bằng thịt"; 健全 không dịch "kiện toàn".'},
-  {vi:'Khi cảm xúc u uất, con người tiết ra một chất gọi là "hormone đau khổ", mà nước mắt lại chính là thứ có thể thải nó ra khỏi cơ thể.',zh:'人在情绪抑郁时会分泌一种被称为痛苦激素的物质，眼泪恰恰可以将它排出体外。',py:'Rén zài qíngxù yìyù shí huì fēnmì yì zhǒng bèi chēngwéi tòngkǔ jīsù de wùzhì, yǎnlèi qiàqià kěyǐ jiāng tā páichū tǐ wài.',goiY:['分泌 = tiết ra','激素 = hormone','恰恰 = chính là'],giai:'被称为 = được gọi là; 将 = 把 (văn viết); 恰恰 nhấn "đúng là, chính là".'},
-  {vi:'Những lúc đau lòng buồn bã, cứ việc khóc thật to; khóc xong rồi, mọi thứ đều được phục hồi.',zh:'伤心难过之际，不妨痛哭，哭完了，一切都得到了修复。',py:'Shāngxīn nánguò zhījì, bùfáng tòngkū, kūwán le, yíqiè dōu dédàole xiūfù.',goiY:['之际 = lúc','不妨 = cứ việc','修复 = phục hồi'],giai:'不妨 (bài 12) = cứ … cũng chẳng sao; 得到了修复 dịch bị động "được phục hồi".'},
-  {vi:'Đừng ngăn cản đàn ông rơi lệ; đàn ông rơi lệ không có nghĩa là yếu đuối vô dụng, cũng chẳng hề đánh mất phẩm giá.',zh:'不要阻挠男人流泪，男人流泪不等于软弱无用，也并不丧失尊严。',py:'Bú yào zǔnáo nánrén liú lèi, nánrén liú lèi bù děngyú ruǎnruò wúyòng, yě bìng bú sàngshī zūnyán.',goiY:['阻挠 = ngăn cản','不等于 = không có nghĩa là','尊严 = phẩm giá'],giai:'并不 nhấn phủ định → "chẳng hề"; 尊严 dịch "phẩm giá" (không dịch "tôn nghiêm").'},
-  {vi:'Phải biết rằng, sự trưởng thành thật sự của mỗi người thường đến từ đau khổ, gian nan; đừng gạt bỏ công lao của nỗi đau trong quá trình trưởng thành của chúng ta.',zh:'须知，真正的个人成长往往来自于痛苦、磨难，不要抹杀掉痛苦在我们成长中的功劳。',py:'Xūzhī, zhēnzhèng de gèrén chéngzhǎng wǎngwǎng lái zì yú tòngkǔ, mónàn, bú yào mǒshā diào tòngkǔ zài wǒmen chéngzhǎng zhōng de gōngláo.',goiY:['须知 = phải biết rằng','抹杀 = gạt bỏ','功劳 = công lao'],giai:'抹杀 không dịch "mạt sát"; 来自于 = đến từ; 功劳 (bài 23).'}
+  {vi:'Khi căng thẳng, cơ thể người sẽ tiết ra nhiều hormone hơn.',zh:'紧张的时候，人的身体会分泌更多的激素。',py:'Jǐnzhāng de shíhou, rén de shēntǐ huì fēnmì gèng duō de jīsù.',goiY:['分泌 = tiết ra','激素 = hormone'],giai:'激素 dịch "hormone" (không dịch "kích tố" trong câu thường).'},
+  {vi:'Hôm qua anh ấy hát ba tiếng đồng hồ, hôm nay cổ họng không phát ra được chút tiếng nào.',zh:'他昨天唱了三个小时的歌，今天喉咙一点儿声音都发不出来了。',py:'Tā zuótiān chàngle sān ge xiǎoshí de gē, jīntiān hóulóng yìdiǎnr shēngyīn dōu fā bu chūlái le.',goiY:['喉咙 = cổ họng','发不出来 = không phát ra được'],giai:'一点儿……都不 / 没…… nhấn mạnh phủ định hoàn toàn.'},
+  {vi:'Bố mẹ không phải thần tiên, cũng sẽ mắc lỗi; con cái cũng không phải ác quỷ, chỉ là chưa hiểu chuyện.',zh:'父母不是神仙，也会犯错误；孩子也不是魔鬼，只是还不懂事。',py:'Fùmǔ bú shì shénxiān, yě huì fàn cuòwù; háizi yě bú shì móguǐ, zhǐshì hái bù dǒngshì.',goiY:['神仙 = thần tiên','魔鬼 = ác quỷ','懂事 = hiểu chuyện'],giai:'Hai vế song song, dấu chấm phẩy ngăn cách; 只是 = chỉ là.'},
+  {vi:'Anh ấy muốn nghỉ việc để tự mở công ty, nhưng người nhà tìm mọi cách ngăn cản.',zh:'他想辞职自己开公司，可是家里人百般阻挠。',py:'Tā xiǎng cízhí zìjǐ kāi gōngsī, kěshì jiā lǐ rén bǎibān zǔnáo.',goiY:['辞职 = nghỉ việc','百般 = đủ mọi cách','阻挠 = ngăn cản'],giai:'阻挠 mạnh hơn 阻止: cố tình gây khó dễ để việc không thành.'},
+  {vi:'Một xã hội lành mạnh nên cho mỗi người cơ hội được nói lên ý kiến của mình.',zh:'一个健全的社会，应该给每个人说话的机会。',py:'Yí ge jiànquán de shèhuì, yīnggāi gěi měi ge rén shuōhuà de jīhuì.',goiY:['健全 = lành mạnh, hoàn thiện'],giai:'健全的社会 = xã hội hoàn thiện, lành mạnh; 说话的机会 dịch thoáng "cơ hội nói lên ý kiến".'}
 ];
 
 
@@ -1869,204 +1804,145 @@ var writingData = {
 // LUYỆN NÓI — đúng bảng 练习5 của sách: 根据提示，简述课文主要内容
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Đây là bảng bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b> (dựa vào gợi ý, trình bày ngắn gọn nội dung chính của bài khoá). Mỗi câu hỏi là một dòng của bảng, cột gợi ý giữ nguyên như sách. Bấm loa nghe câu hỏi, <b>tự ghi âm câu trả lời trước</b> rồi mới mở câu mẫu. Cố dùng đúng các từ trong gợi ý.',
-  questions:[
-    {q_zh:'社会对好男人的标准是什么？',
-     q_vn:'Tiêu chuẩn của xã hội về một người đàn ông tốt là gì?',
-     hint:'男人要……；要……；要……；要……；是……。总之……',
-     sample:'社会对好男人的标准从没有改变过：男人要有责任心，不背叛朋友；要上进，有抱负，有魄力；要谦虚，诚实，大方；要心胸开阔，面对打击而不脆弱。男人是生活中的榜样，家庭的靠山。总之，男人要顶天立地，要有男人的气概。',
-     sample_vn:'Tiêu chuẩn của xã hội về người đàn ông tốt chưa từng thay đổi: đàn ông phải có trách nhiệm, không phản bội bạn bè; phải cầu tiến, có hoài bão, có quyết đoán; phải khiêm tốn, thành thật, hào phóng; phải có lòng dạ rộng mở, đối mặt cú sốc mà không yếu đuối. Đàn ông là tấm gương trong cuộc sống, chỗ dựa của gia đình. Tóm lại, đàn ông phải đội trời đạp đất, phải có khí khái đàn ông.',
-     note:'Bốn chữ 要 = bốn nhóm phẩm chất (trách nhiệm · cầu tiến · khiêm tốn · tu dưỡng); câu 是…… nói vai trò; 总之 để chốt. Chuỗi câu song song chính là phép 排比 (篇章修辞).'},
-    {q_zh:'为什么“男儿有泪不轻弹”？',
-     q_vn:'Vì sao lại có câu "nam nhi có lệ không dễ rơi"?',
-     hint:'理智的男子汉……，爱哭的男人……，男人流泪意味着……。这种教育……，……赋予男人……',
-     sample:'因为人们认为，理智的男子汉再悲伤也不轻易哭泣，爱哭的男人走到哪儿都会被一票否决，男人流泪就意味着软弱、没出息。这种教育从娃娃时代就潜移默化地起作用了，我们的文化赋予了男人高大、坚强的形象。',
-     sample_vn:'Vì người ta cho rằng nam tử hán có lý trí dù buồn đến mấy cũng không dễ khóc, đàn ông hay khóc đi đâu cũng bị gạt bỏ ngay, đàn ông rơi lệ đồng nghĩa với yếu đuối, chẳng ra gì. Kiểu giáo dục này đã âm thầm tác động từ thời bé tí, văn hoá của chúng ta đã khoác cho đàn ông hình tượng to lớn, kiên cường.',
-     note:'Dùng 再……也…… cho ý 1; 意味着 = đồng nghĩa với; kết bằng 文化赋予了男人……的形象.'},
-    {q_zh:'为了不被讥笑，男人经常怎么办？',
-     q_vn:'Để không bị chế giễu, đàn ông thường làm thế nào?',
-     hint:'为了不被……，不被……，为了远离……，……叮嘱自己……',
-     sample:'为了不被鄙视，不被讥笑，为了远离那些恶心、不体面的词汇，男人们千百次暗暗叮嘱自己：伤心是软弱的表现，哪怕遭受打击、受尽委屈，也一定要坚强。',
-     sample_vn:'Để không bị khinh thường, không bị chế giễu, để tránh xa những từ ngữ đáng ghê tởm, chẳng ra thể thống gì, đàn ông hàng trăm hàng nghìn lần thầm dặn mình: đau lòng là biểu hiện của yếu đuối, dù gặp cú sốc, chịu đủ uất ức cũng nhất định phải kiên cường.',
-     note:'Chuỗi 为了不被…… lặp lại (phép 排比); lời tự dặn dùng 哪怕……也…… (điểm ngữ pháp 1).'},
-    {q_zh:'“男儿有泪不轻弹”对不对？',
-     q_vn:'Câu "nam nhi có lệ không dễ rơi" đúng hay không?',
-     hint:'束缚，男人不是……，也有……，也需要……，否则……',
-     sample:'我觉得不对。“男儿有泪不轻弹”其实是社会文化赋予男人的一种束缚。男人不是魔鬼，也不是神仙，他们也有喜怒哀乐，也需要关怀和温柔的抚慰，否则，再有力的肩膀也有被压塌的时候。',
-     sample_vn:'Tôi thấy không đúng. "Nam nhi có lệ không dễ rơi" thật ra là một sự trói buộc mà văn hoá xã hội áp lên đàn ông. Đàn ông không phải ác quỷ, cũng chẳng phải thần tiên, họ cũng có hỉ nộ ái lạc, cũng cần được quan tâm và vỗ về dịu dàng; nếu không, bờ vai vững chắc đến mấy cũng có lúc bị đè sụp.',
-     note:'Nêu quan điểm trước (我觉得不对), rồi giải thích bằng 不是……也不是……，也有……，也需要……，否则…….'},
-    {q_zh:'为什么说眼泪是情绪释放的一种形式？',
-     q_vn:'Vì sao nói nước mắt là một hình thức giải toả cảm xúc?',
-     hint:'抑郁时分泌……，眼泪可以排出……，转移……',
-     sample:'因为人在情绪抑郁时会分泌一种痛苦激素，让人情绪低落、无精打采，而眼泪恰恰可以把它排出体外。人哭过以后，情绪强度会降低40%；如果不能用眼泪把压力转移掉，就会影响健康。',
-     sample_vn:'Vì khi cảm xúc u uất, con người tiết ra một loại "hormone đau khổ" khiến tâm trạng sa sút, uể oải, mà nước mắt lại chính là thứ có thể thải nó ra khỏi cơ thể. Sau khi khóc, cường độ cảm xúc giảm 40%; nếu không dùng nước mắt để chuyển đi áp lực thì sẽ ảnh hưởng sức khoẻ.',
-     note:'Nhắc đúng con số 40%; 恰恰 = chính là; dùng 如果……就…… cho ý 转移.'},
-    {q_zh:'哭有什么学问？',
-     q_vn:'Việc khóc có những "học vấn" gì?',
-     hint:'忧伤肺，修复……，宣泄……，倡导……，忌讳……，过度哭泣，胃肠……',
-     sample:'中医认为忧伤肺，伤心难过之际不妨痛哭，哭完了一切都能得到修复。所以应该允许男人宣泄情绪，我们倡导给男人释放情绪的空间。不过，宣泄归宣泄，忌讳哭泣时间过长，一般不要超过15分钟，因为过度哭泣会影响胃肠，甚至引起胃病。',
-     sample_vn:'Đông y cho rằng u sầu hại phổi, lúc đau lòng buồn bã cứ việc khóc thật to, khóc xong mọi thứ đều được phục hồi. Vì vậy nên cho phép đàn ông giải toả cảm xúc, chúng tôi chủ trương cho đàn ông không gian để giải toả. Tuy nhiên, giải toả thì giải toả, kiêng khóc quá lâu, thường không nên quá 15 phút, vì khóc quá mức sẽ ảnh hưởng dạ dày – ruột, thậm chí gây bệnh dạ dày.',
-     note:'不过，宣泄归宣泄 (A归A — bài 18) để chuyển sang giới hạn của việc khóc; nhớ con số 15 phút.'},
-    {q_zh:'除了哭泣以外，还应该如何释放情绪？',
-     q_vn:'Ngoài khóc ra, còn nên giải toả cảm xúc như thế nào?',
-     hint:'调整想法：扔掉……，不必理睬……，更了解……，不要抹杀……，好好面对……',
-     sample:'还应该在想法上做调整：扔掉外界对男人流泪的鄙视，不必理睬别人说三道四。负面情绪能让我们更了解自己，所以不要抹杀痛苦在成长中的功劳。既然悲伤无可避免，就应该好好面对，它可以沉淀出智慧。',
-     sample_vn:'Còn nên điều chỉnh suy nghĩ: vứt bỏ sự coi thường của bên ngoài đối với việc đàn ông rơi lệ, không cần để ý người khác nói ra nói vào. Cảm xúc tiêu cực giúp ta hiểu bản thân hơn, nên đừng gạt bỏ công lao của nỗi đau trong quá trình trưởng thành. Đã là nỗi buồn không thể tránh thì hãy đối mặt cho tốt, nó có thể lắng đọng thành trí tuệ.',
-     note:'Liệt kê theo đúng thứ tự gợi ý; kết bằng 既然……就…… (HSK 5).'}
+  intro: 'Đây là bảng bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b> (dựa vào gợi ý, trình bày ngắn gọn nội dung chính của bài khoá). Mỗi câu hỏi là một dòng của bảng, cột gợi ý giữ nguyên như sách. Bấm loa nghe câu hỏi, <b>tự ghi âm câu trả lời trước</b> rồi mới mở câu mẫu. Cố dùng đúng các từ trong gợi ý.',
+  questions: [
+    {q_zh:'社会对好男人的标准是什么？',q_vn:'Tiêu chuẩn của xã hội về một người đàn ông tốt là gì?',hint:'男人要……；要……；要……；要……；是……。总之……',sample:'社会对好男人的标准从没有改变过：男人要有责任心，绝不做对不起朋友的事；要上进，有抱负，有魄力；要谦虚，诚实，大方；要有开阔的心胸，面对打击而不脆弱。男人是生活中的榜样，家庭的靠山。总之，男人要顶天立地，要有男人的气概。',sample_vn:'Tiêu chuẩn của xã hội về người đàn ông tốt chưa từng thay đổi: đàn ông phải có trách nhiệm, tuyệt đối không làm điều có lỗi với bạn bè; phải cầu tiến, có hoài bão, có quyết đoán; phải khiêm tốn, thành thật, hào phóng; phải có lòng dạ rộng mở, đối mặt cú sốc mà không yếu đuối. Đàn ông là tấm gương trong cuộc sống, chỗ dựa của gia đình. Tóm lại, đàn ông phải đội trời đạp đất, phải có khí khái đàn ông.',note:'Bốn chữ 要 = bốn nhóm phẩm chất (trách nhiệm · cầu tiến · khiêm tốn · tu dưỡng); câu 是…… nói vai trò; 总之 để chốt. Chuỗi câu song song chính là phép 排比 (phép tu từ dùng câu song song).'},
+    {q_zh:'为什么“男儿有泪不轻弹”？',q_vn:'Vì sao lại có câu "nam nhi có lệ không dễ rơi"?',hint:'理智的男子汉……，爱哭的男人……，男人流泪意味着……。这种教育……，……赋予男人……',sample:'因为人们认为，理智的男子汉再悲伤也不轻易哭泣，爱哭的男人走到哪儿都会被一票否决，男人流泪就意味着软弱、没出息。这种教育从娃娃时代就潜移默化地起作用了，我们的文化赋予了男人高大、坚强的形象。',sample_vn:'Vì người ta cho rằng nam tử hán có lý trí dù buồn đến mấy cũng không dễ khóc, đàn ông hay khóc đi đâu cũng bị gạt bỏ ngay, đàn ông rơi lệ đồng nghĩa với yếu đuối, chẳng ra gì. Kiểu giáo dục này đã âm thầm tác động từ thời bé tí, văn hoá của chúng ta đã khoác cho đàn ông hình tượng to lớn, kiên cường.',note:'Dùng 再……也…… cho ý 1; 意味着 = đồng nghĩa với; kết bằng 文化赋予了男人……的形象.'},
+    {q_zh:'为了不被讥笑，男人经常怎么办？',q_vn:'Để không bị chế giễu, đàn ông thường làm thế nào?',hint:'为了不被……，不被……，为了远离……，……叮嘱自己……',sample:'为了不被鄙视，不被讥笑，为了远离那些恶心、不体面的词汇，男人们千百次暗暗叮嘱自己：伤心是软弱的表现，哪怕遭受打击、受尽委屈，也一定要坚强。',sample_vn:'Để không bị khinh thường, không bị chế giễu, để tránh xa những từ ngữ đáng ghê tởm, chẳng ra thể thống gì, đàn ông hàng trăm hàng nghìn lần thầm dặn mình: đau lòng là biểu hiện của yếu đuối, dù gặp cú sốc, chịu đủ uất ức cũng nhất định phải kiên cường.',note:'Chuỗi 为了不被…… lặp lại (phép 排比); lời tự dặn dùng 哪怕……也…… (điểm ngữ pháp 1).'},
+    {q_zh:'“男儿有泪不轻弹”对不对？',q_vn:'Câu "nam nhi có lệ không dễ rơi" đúng hay không?',hint:'束缚，男人不是……，也有……，也需要……，否则……',sample:'我觉得不对。“男儿有泪不轻弹”其实是社会文化赋予男人的一种束缚。男人不是魔鬼，也不是神仙，他们也有喜怒哀乐，也需要关怀和温柔的抚慰，否则，再有力的肩膀也有被压塌的时候。',sample_vn:'Tôi thấy không đúng. "Nam nhi có lệ không dễ rơi" thật ra là một sự trói buộc mà văn hoá xã hội áp lên đàn ông. Đàn ông không phải ác quỷ, cũng chẳng phải thần tiên, họ cũng có hỉ nộ ái lạc, cũng cần được quan tâm và vỗ về dịu dàng; nếu không, bờ vai vững chắc đến mấy cũng có lúc bị đè sụp.',note:'Nêu quan điểm trước (我觉得不对), rồi giải thích bằng 不是……也不是……，也有……，也需要……，否则…….'},
+    {q_zh:'为什么说眼泪是情绪释放的一种形式？',q_vn:'Vì sao nói nước mắt là một hình thức giải toả cảm xúc?',hint:'抑郁时分泌……，眼泪可以排出……，转移……',sample:'因为人在情绪抑郁时会分泌一种痛苦激素，让人情绪低落、无精打采，而眼泪恰恰可以把它排出体外。人哭过以后，情绪强度会降低40%；如果不能用眼泪把压力转移掉，就会影响健康。',sample_vn:'Vì khi cảm xúc u uất, con người tiết ra một loại "hormone đau khổ" khiến tâm trạng sa sút, uể oải, mà nước mắt lại chính là thứ có thể thải nó ra khỏi cơ thể. Sau khi khóc, cường độ cảm xúc giảm 40%; nếu không dùng nước mắt để chuyển đi áp lực thì sẽ ảnh hưởng sức khoẻ.',note:'Nhắc đúng con số 40%; 恰恰 = chính là; dùng 如果……就…… cho ý 转移.'},
+    {q_zh:'哭有什么学问？',q_vn:'Việc khóc có những "học vấn" gì?',hint:'忧伤肺，修复……，宣泄……，倡导……，忌讳……，过度哭泣，胃肠……',sample:'中医认为忧伤肺，伤心难过之际不妨痛哭，哭完了一切都能得到修复。所以应该允许男人宣泄情绪，我们倡导给男人释放情绪的空间。不过，宣泄归宣泄，忌讳哭泣时间过长，一般不要超过15分钟，因为过度哭泣会影响胃肠，甚至引起胃病。',sample_vn:'Đông y cho rằng u sầu hại phổi, lúc đau lòng buồn bã cứ việc khóc thật to, khóc xong mọi thứ đều được phục hồi. Vì vậy nên cho phép đàn ông giải toả cảm xúc, chúng tôi chủ trương cho đàn ông không gian để giải toả. Tuy nhiên, giải toả thì giải toả, kiêng khóc quá lâu, thường không nên quá 15 phút, vì khóc quá mức sẽ ảnh hưởng dạ dày – ruột, thậm chí gây bệnh dạ dày.',note:'不过，宣泄归宣泄 (cấu trúc "A thì A, nhưng…" — bài 18) để chuyển sang giới hạn của việc khóc; nhớ con số 15 phút.'},
+    {q_zh:'除了哭泣以外，还应该如何释放情绪？',q_vn:'Ngoài khóc ra, còn nên giải toả cảm xúc như thế nào?',hint:'调整想法：扔掉……，不必理睬……，更了解……，不要抹杀……，好好面对……',sample:'还应该在想法上做调整：扔掉外界对男人流泪的鄙视，不必理睬别人说三道四。负面情绪能让我们更了解自己，所以不要抹杀痛苦在成长中的功劳。既然悲伤无可避免，就应该好好面对，它可以沉淀出智慧。',sample_vn:'Còn nên điều chỉnh suy nghĩ: vứt bỏ sự coi thường của bên ngoài đối với việc đàn ông rơi lệ, không cần để ý người khác nói ra nói vào. Cảm xúc tiêu cực giúp ta hiểu bản thân hơn, nên đừng gạt bỏ công lao của nỗi đau trong quá trình trưởng thành. Đã là nỗi buồn không thể tránh thì hãy đối mặt cho tốt, nó có thể lắng đọng thành trí tuệ.',note:'Liệt kê theo đúng thứ tự gợi ý; kết bằng 既然……就…… (HSK 5).'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — 听力 (sách HSK 6 không có sách bài tập nghe)
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — câu tự soạn (sách HSK 6 không có sách bài tập nghe), mỗi câu một tình huống mới
+// ══════════════════════════════════════════
 var listenExamData = {
-  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. ' +
-         'Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
-  source: 'Soạn theo dạng đề HSK 6 · chủ đề bài 32',
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 32',
   items: [
-    {n:1,
-     lines:[{sp:'女',zh:'你眼睛怎么红红的？是不是哭过了？'},
-            {sp:'男',zh:'刚看了一部感人的电影，没忍住。以前我觉得男人哭很没出息，现在觉得偶尔哭一哭也没什么。'}],
-     q:'男的现在对男人哭是什么看法？',qvn:'Bây giờ người đàn ông nghĩ gì về việc đàn ông khóc?',
-     opts:['很没出息','会被人讥笑','偶尔哭一哭没什么','应该经常哭'],ans:2,
-     why:'现在觉得偶尔哭一哭也没什么 → C. "很没出息" là suy nghĩ TRƯỚC ĐÂY (以前), bẫy thời gian.',
-     words:['出息']},
-
-    {n:2,
-     lines:[{sp:'男',zh:'你怎么一个人在这儿哭啊？出什么事了？'},
-            {sp:'女',zh:'我准备了半年的方案，在会上被经理一句话就否决了。'}],
-     q:'女的为什么哭？',qvn:'Vì sao người phụ nữ khóc?',
-     opts:['她的方案被否决了','她和经理吵架了','她丢了工作','她和同事闹矛盾了'],ans:0,
-     why:'被经理一句话就否决了 → phương án bị bác bỏ; không nhắc đến cãi nhau hay mất việc.',
-     words:['否决']},
-
-    {n:3,
-     lines:[{sp:'女',zh:'医生，我最近喉咙痛，还老流鼻涕，要不要吃点儿药？'},
-            {sp:'男',zh:'就是普通感冒，不用吃药。多喝水，好好休息，让身体自我修复就行了。'}],
-     q:'医生建议女的怎么做？',qvn:'Bác sĩ khuyên người phụ nữ làm gì?',
-     opts:['马上吃药','去大医院检查','打一针','多喝水、好好休息'],ans:3,
-     why:'不用吃药。多喝水，好好休息 → D; A trái với 不用吃药.',
-     words:['喉咙','鼻涕','修复']},
-
-    {n:4,
-     lines:[{sp:'男',zh:'听说你们公司新来的经理很厉害？'},
-            {sp:'女',zh:'是啊，他很有魄力，一上任就进行了改革。刚开始有人百般阻挠，可他一点儿也不含糊，现在大家都很佩服他。'}],
-     q:'关于新经理，可以知道什么？',qvn:'Về giám đốc mới, có thể biết điều gì?',
-     opts:['大家都不喜欢他','做事很有魄力','改革失败了','他很容易放弃'],ans:1,
-     why:'他很有魄力……现在大家都很佩服他 → B; A, C, D đều trái với nội dung.',
-     words:['魄力','阻挠','含糊']},
-
-    {n:5,
-     lines:[{sp:'女',zh:'孩子摔倒了就哭，我老公总说“男孩子不许哭”，你觉得对吗？'},
-            {sp:'男',zh:'我觉得不对。哭是孩子释放情绪的方式，不应该阻挠。反之，总让孩子忍着，对他的心理健康反而不好。'}],
-     q:'男的是什么意思？',qvn:'Ý của người đàn ông là gì?',
-     opts:['不应该阻止孩子哭','男孩子不应该哭','孩子摔倒了要马上扶起来','应该让孩子学会忍耐'],ans:0,
-     why:'哭是孩子释放情绪的方式，不应该阻挠 → A; B là ý của người chồng mà anh ấy phản đối; D trái với 总让孩子忍着……反而不好.',
-     words:['阻挠','反之']},
-
-    {n:6,
-     lines:[{sp:'男',zh:'我这次比赛又输了，大家一定都在讥笑我。'},
-            {sp:'女',zh:'别太在意外界的看法。哪怕输了，你也学到了很多。失败的经历会慢慢沉淀下来，成为你以后的财富。'}],
-     q:'女的主要想告诉男的什么？',qvn:'Người phụ nữ chủ yếu muốn nói với người đàn ông điều gì?',
-     opts:['大家都在讥笑他','下次一定能赢','不必在意别人的看法，失败也有收获','应该放弃比赛'],ans:2,
-     why:'别太在意外界的看法。哪怕输了，你也学到了很多 → C; A chỉ là suy nghĩ của người đàn ông.',
-     words:['讥笑','外界','沉淀']},
-
-    {n:7,
-     lines:[{sp:'男',zh:'研究发现，人在伤心的时候会分泌一种“痛苦激素”，让人情绪低落、没有精神。而流眼泪恰恰可以把这种激素排出体外，所以很多人哭完以后会觉得轻松很多。不过，哭的时间不宜太长，一般不要超过十五分钟，否则反而会影响肠胃的健康。'}],
-     q:'根据这段话，下列哪项正确？',qvn:'Theo đoạn này, câu nào dưới đây đúng?',
-     opts:['哭的时间越长越好','痛苦激素让人更有精神','哭泣会增加痛苦激素','哭完以后人会觉得轻松'],ans:3,
-     why:'很多人哭完以后会觉得轻松很多 → D; A trái với 不宜太长; B trái với 让人……没有精神; C sai vì nước mắt THẢI hormone ra.',
-     words:['激素']},
-
-    {n:8,
-     lines:[{sp:'女',zh:'很多人以为，坚强就是从来不流泪。其实，每个人都有脆弱的时候，真正的坚强不是没有眼泪，而是哭过以后还能继续往前走。所以，当你难过的时候，不妨给自己一点儿时间，让情绪宣泄出来，然后再好好面对生活。'}],
-     q:'这段话主要想告诉我们什么？',qvn:'Đoạn này chủ yếu muốn nói với chúng ta điều gì?',
-     opts:['坚强的人从来不哭','真正的坚强是哭过后还能继续前进','难过的时候应该一个人待着','流泪是脆弱的表现'],ans:1,
-     why:'真正的坚强不是没有眼泪，而是哭过以后还能继续往前走 → B; A là quan niệm sai bị bác bỏ (很多人以为……其实).',
-     words:['脆弱','宣泄']}
+    {
+      n: 1,
+      lines: [
+        {sp:'女',zh:'这么大的雨，明天的比赛还举行吗？'},
+        {sp:'男',zh:'举行，教练说了，哪怕雨再大，比赛也不会推迟。'}
+      ],
+      q: '明天的比赛会怎么样？',
+      qvn: 'Trận đấu ngày mai sẽ thế nào?',
+      opts: ['推迟到下周','照常举行','已经取消了','改到晚上'],
+      ans: 1,
+      why: '哪怕雨再大，比赛也不会推迟 → dù mưa to mấy cũng không hoãn → vẫn diễn ra bình thường.',
+      words: []
+    },
+    {
+      n: 2,
+      lines: [
+        {sp:'男',zh:'你说孩子是多表扬好，还是多批评好？'},
+        {sp:'女',zh:'多夸夸他，他就越来越有信心；反之，天天批评，他就越来越不想学了。'}
+      ],
+      q: '女的认为应该怎么做？',
+      qvn: 'Người phụ nữ cho rằng nên làm thế nào?',
+      opts: ['经常批评孩子','不管孩子','让孩子自己学','多表扬孩子'],
+      ans: 3,
+      why: '多夸夸他，他就越来越有信心；反之…… → khen nhiều thì con tự tin; ngược lại phê bình suốt thì con chán học.',
+      words: ['反之']
+    },
+    {
+      n: 3,
+      lines: [
+        {sp:'男',zh:'你怎么不高兴啊？'},
+        {sp:'女',zh:'我写了一个月的计划，经理看都没仔细看就否决了。'}
+      ],
+      q: '女的为什么不高兴？',
+      qvn: 'Vì sao người phụ nữ không vui?',
+      opts: ['计划被否决了','和经理吵架了','工作太多了','被同事讥笑了'],
+      ans: 0,
+      why: '经理看都没仔细看就否决了 → kế hoạch viết cả tháng bị giám đốc bác bỏ.',
+      words: ['否决']
+    },
+    {
+      n: 4,
+      lines: [
+        {sp:'女',zh:'医生，我喉咙疼，要吃什么药？'},
+        {sp:'男',zh:'就是一般的感冒，不用吃药。多喝水多睡觉，身体会自己修复的。'}
+      ],
+      q: '医生建议女的怎么做？',
+      qvn: 'Bác sĩ khuyên người phụ nữ làm gì?',
+      opts: ['马上吃药','去大医院检查','多喝水多睡觉','少说话'],
+      ans: 2,
+      why: '不用吃药。多喝水多睡觉 → bác sĩ bảo uống nhiều nước, ngủ nhiều, cơ thể sẽ tự hồi phục.',
+      words: ['喉咙','修复']
+    },
+    {
+      n: 5,
+      lines: [
+        {sp:'女',zh:'听说你们公司新来的经理很厉害？'},
+        {sp:'男',zh:'是啊，他很有魄力。刚开始有人百般阻挠他改革，可他一点儿也不含糊，现在大家都很佩服他。'}
+      ],
+      q: '关于新经理，可以知道什么？',
+      qvn: 'Về giám đốc mới, có thể biết điều gì?',
+      opts: ['大家都不喜欢他','做事很有魄力','改革失败了','他很容易放弃'],
+      ans: 1,
+      why: '他很有魄力……一点儿也不含糊 → quyết đoán, dứt khoát; 大家都很佩服他 nên A sai.',
+      words: ['魄力','阻挠','含糊']
+    },
+    {
+      n: 6,
+      lines: [
+        {sp:'男',zh:'我这次比赛又输了，大家一定都在讥笑我。'},
+        {sp:'女',zh:'别理睬外界怎么说。哪怕输了，你也学到了很多东西。'}
+      ],
+      q: '女的主要想告诉男的什么？',
+      qvn: 'Người phụ nữ chủ yếu muốn nói với người đàn ông điều gì?',
+      opts: ['不必在意别人，失败也有收获','大家都在讥笑他','下次一定能赢','应该放弃比赛'],
+      ans: 0,
+      why: '别理睬外界怎么说 + 哪怕输了，你也学到了很多 → đừng để ý người ngoài, thua cũng có cái được.',
+      words: ['讥笑','理睬','外界']
+    },
+    {
+      n: 7,
+      lines: [
+        {sp:'男',zh:'我刚才看电影哭了，一个大男人哭，是不是太没出息了？'},
+        {sp:'女',zh:'哭泣能把让人难过的激素排出体外，哭完了心情会好很多。'}
+      ],
+      q: '女的是什么意思？',
+      qvn: 'Ý người phụ nữ là gì?',
+      opts: ['男人不应该哭','那个电影不好看','哭一哭对身体有好处','应该少看电影'],
+      ans: 2,
+      why: '哭泣能把让人难过的激素排出体外 → khóc giúp thải hormone gây buồn, nên khóc là có lợi.',
+      words: ['出息','哭泣','激素']
+    }
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
+// ══════════════════════════════════════════
 var situationData = {
-  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
-         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn thân khóc sau khi thi trượt, rồi ngượng ngùng nói con trai mà khóc thì mất mặt.',
-     a:{sp:'Bạn',zh:'我一个大男人还哭，是不是特别没出息？',vn:'Tớ là con trai to đầu rồi mà còn khóc, có phải chẳng ra gì lắm không?'},
-     need:['Dùng 哪怕……也……','Dùng 不妨'],
-     sample:'谁说的？哪怕是男子汉，难过的时候也可以哭。你不妨好好哭一场，哭完了我们再想办法。',
-     samplePy:'Shéi shuō de? Nǎpà shì nánzǐhàn, nánguò de shíhou yě kěyǐ kū. Nǐ bùfáng hǎohǎo kū yì cháng, kūwánle wǒmen zài xiǎng bànfǎ.',
-     sampleVn:'Ai bảo thế? Dù là nam tử hán thì lúc buồn cũng có thể khóc. Cậu cứ khóc một trận cho đã, khóc xong mình cùng nghĩ cách.',
-     tip:'哪怕 + danh từ / cụm từ + 也……; 不妨 + V = cứ … (bài 12).'},
-
-    {scene:'Em gái định thức trắng đêm ôn thi.',
-     a:{sp:'Em gái',zh:'明天就考试了，我想今晚不睡觉，把书全看一遍。',vn:'Mai thi rồi, em định tối nay không ngủ, đọc lại hết sách một lượt.'},
-     need:['Dùng 反之'],
-     sample:'睡好了，第二天头脑才清楚；反之，一夜不睡，考试的时候反而什么都想不起来。',
-     samplePy:'Shuìhǎole, dì-èr tiān tóunǎo cái qīngchu; fǎnzhī, yí yè bú shuì, kǎoshì de shíhou fǎn\'ér shénme dōu xiǎng bu qǐlái.',
-     sampleVn:'Ngủ ngon thì hôm sau đầu óc mới minh mẫn; ngược lại, thức trắng một đêm thì lúc thi lại chẳng nhớ ra gì cả.',
-     tip:'反之 nối hai vế đối lập, sau có dấu phẩy (điểm ngữ pháp 2); ôn chủ đề giấc ngủ (bài 30).'},
-
-    {scene:'Đồng nghiệp bực vì bị người khác nói xấu sau lưng.',
-     a:{sp:'Đồng nghiệp',zh:'他们在背后说我是靠关系才进公司的，气死我了！',vn:'Họ nói sau lưng rằng tôi nhờ quan hệ mới vào được công ty, tức chết đi được!'},
-     need:['Dùng 理睬','Dùng 偏见 hoặc 说三道四'],
-     sample:'别理睬那些说三道四的人，那只是他们的偏见。你用成绩证明自己就行了。',
-     samplePy:'Bié lǐcǎi nàxiē shuō sān dào sì de rén, nà zhǐ shì tāmen de piānjiàn. Nǐ yòng chéngjì zhèngmíng zìjǐ jiù xíng le.',
-     sampleVn:'Đừng để ý những kẻ nói ra nói vào, đó chỉ là định kiến của họ. Anh cứ dùng thành tích chứng minh bản thân là được.',
-     tip:'理睬 thường dùng dạng phủ định: 别 / 不必 + 理睬.'},
-
-    {scene:'Bạn vừa chia tay, muốn khóc cả đêm.',
-     a:{sp:'Bạn',zh:'我想大哭一场，哭一个晚上。',vn:'Tớ muốn khóc một trận thật to, khóc cả đêm.'},
-     need:['Dùng A归A (哭归哭 / 宣泄归宣泄)','Dùng 忌讳'],
-     sample:'哭归哭，可别哭太久。医生说哭泣最忌讳时间过长，哭完了咱们出去走走吧。',
-     samplePy:'Kū guī kū, kě bié kū tài jiǔ. Yīshēng shuō kūqì zuì jìhuì shíjiān guò cháng, kūwánle zánmen chūqù zǒuzou ba.',
-     sampleVn:'Khóc thì khóc, nhưng đừng khóc lâu quá. Bác sĩ bảo khóc kiêng nhất là kéo dài, khóc xong mình ra ngoài đi dạo nhé.',
-     tip:'A归A (bài 18) nhượng bộ rồi chuyển ý; 最忌讳 + V = kiêng nhất là ….'},
-
-    {scene:'Bố mắng em trai nhỏ vì khóc khi bị ngã.',
-     a:{sp:'Bố',zh:'男孩子哭什么哭！男儿有泪不轻弹，懂不懂？',vn:'Con trai khóc cái gì mà khóc! Nam nhi có lệ không dễ rơi, hiểu chưa?'},
-     need:['Dùng 束缚 hoặc 在情理之中','Giữ giọng lễ phép với bố (dùng 您)'],
-     sample:'爸，弟弟还小，难过的时候哭一哭也在情理之中。“男儿有泪不轻弹”其实是一种束缚，您就让他哭一会儿吧。',
-     samplePy:'Bà, dìdi hái xiǎo, nánguò de shíhou kū yi kū yě zài qínglǐ zhī zhōng. “Nán\'ér yǒu lèi bù qīng tán” qíshí shì yì zhǒng shùfù, nín jiù ràng tā kū yíhuìr ba.',
-     sampleVn:'Bố ơi, em còn nhỏ, lúc buồn khóc một chút cũng là lẽ thường. "Nam nhi có lệ không dễ rơi" thật ra là một sự trói buộc, bố cứ để em khóc một lát đi.',
-     tip:'Nói với người lớn dùng 您; 在情理之中 = hợp tình hợp lý.'}
+    {scene:'Bạn thân khóc sau khi thi trượt, rồi ngượng ngùng nói con trai mà khóc thì mất mặt.',a:{sp:'Bạn',zh:'我一个大男人还哭，是不是特别没出息？',vn:'Một thằng con trai như tớ mà còn khóc, có phải vô dụng lắm không?'},need:['Dùng 哪怕……也……','Dùng 不妨'],sample:'谁说的？哪怕是男子汉，难过的时候也可以哭。你不妨好好哭一场，哭完了我们再想办法。',samplePy:'Shéi shuō de? Nǎpà shì nánzǐhàn, nánguò de shíhou yě kěyǐ kū. Nǐ bùfáng hǎohǎo kū yì chǎng, kūwánle wǒmen zài xiǎng bànfǎ.',sampleVn:'Ai bảo thế? Dù là đàn ông, lúc buồn cũng có thể khóc. Cậu cứ khóc một trận cho đã, khóc xong mình cùng nghĩ cách.',tip:'哪怕是 + N，也…… = dù là … cũng …; 不妨 (bài 12) = cứ việc, chi bằng.'},
+    {scene:'Em gái định thức trắng đêm ôn thi.',a:{sp:'Em gái',zh:'后天就考试了，我想晚上不睡觉，把书全看一遍。',vn:'Ngày kia thi rồi, em định tối nay không ngủ, xem lại hết sách một lượt.'},need:['Dùng 反之'],sample:'睡好了，第二天头脑才清楚；反之，一夜不睡，考试的时候反而什么都想不起来。',samplePy:'Shuì hǎo le, dì-èr tiān tóunǎo cái qīngchu; fǎnzhī, yí yè bú shuì, kǎoshì de shíhou fǎn\'ér shénme dōu xiǎng bu qǐlái.',sampleVn:'Ngủ đủ thì hôm sau đầu óc mới tỉnh táo; ngược lại, thức trắng một đêm, lúc thi lại chẳng nhớ ra gì.',tip:'A，才 B；反之，C — hai vế đối lập; 反而 = trái lại (trái mong đợi).'},
+    {scene:'Đồng nghiệp bực vì bị người khác nói xấu sau lưng.',a:{sp:'Đồng nghiệp',zh:'他们在背后说我是靠关系才进公司的，真让人受不了！',vn:'Họ nói sau lưng rằng tôi nhờ quan hệ mới vào được công ty, thật bực mình!'},need:['Dùng 理睬','Dùng 偏见'],sample:'别理睬那些说三道四的人，那只是他们的偏见。你用成绩证明自己就行了。',samplePy:'Bié lǐcǎi nàxiē shuōsān-dàosì de rén, nà zhǐ shì tāmen de piānjiàn. Nǐ yòng chéngjì zhèngmíng zìjǐ jiù xíng le.',sampleVn:'Đừng để ý những kẻ nói ra nói vào, đó chỉ là định kiến của họ. Anh cứ dùng thành tích chứng minh bản thân là được.',tip:'别理睬 + người = mặc kệ, đừng đoái hoài; 说三道四 = nói ra nói vào.'},
+    {scene:'Bạn vừa chia tay, muốn khóc cả đêm.',a:{sp:'Bạn',zh:'我心里太难受了，想大哭一场。',vn:'Lòng tớ khó chịu quá, muốn khóc một trận thật to.'},need:['Dùng 宣泄','Khuyên bạn khóc xong thì ra ngoài'],sample:'想哭就哭出来吧，把心里的难过都宣泄出来。不过别哭太久，哭久了伤身体。哭完了咱们出去吃点儿东西。',samplePy:'Xiǎng kū jiù kū chūlái ba, bǎ xīn lǐ de nánguò dōu xuānxiè chūlái. Búguò bié kū tài jiǔ, kū jiǔ le shāng shēntǐ. Kūwánle zánmen chūqù chī diǎnr dōngxi.',sampleVn:'Muốn khóc thì cứ khóc đi, trút hết nỗi buồn trong lòng ra. Nhưng đừng khóc lâu quá, khóc lâu hại sức khoẻ. Khóc xong mình ra ngoài ăn chút gì nhé.',tip:'把……宣泄出来 = trút … ra; 不过 chuyển sang lời khuyên có giới hạn.'},
+    {scene:'Bố mắng em trai nhỏ vì khóc khi bị ngã.',a:{sp:'Bố',zh:'男孩子哭什么哭！男子汉不许哭，懂不懂？',vn:'Con trai khóc cái gì mà khóc! Đàn ông không được khóc, hiểu không?'},need:['Dùng 束缚','Nói đỡ cho em lễ phép'],sample:'爸，弟弟还小，摔疼了哭一哭很正常。不让男孩子哭，其实是一种束缚，您就让他哭一会儿吧。',samplePy:'Bà, dìdi hái xiǎo, shuāiténgle kū yi kū hěn zhèngcháng. Bú ràng nánháizi kū, qíshí shì yì zhǒng shùfù, nín jiù ràng tā kū yíhuìr ba.',sampleVn:'Bố ơi, em còn nhỏ, ngã đau khóc một chút là bình thường. không cho con trai khóc thật ra là một sự trói buộc, bố cứ để em khóc một lúc đi.',tip:'Nói với bố dùng 您 và 就……吧 cho mềm mỏng; 束缚 = trói buộc (quan niệm).'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 // 🎯 NÓI SAO CHO HAY — 得体 / 语体
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 var registerData = {
-  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
-         'HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
   items: [
-    {scene:'Bài báo khoa học về sức khoẻ cảm xúc.',
-     a:'研究表明，适当哭泣有助于释放压力，缓解负面情绪。',b:'哭一哭挺好的，哭完就爽了。',better:'a',
-     why:'Văn báo chí khoa học dùng 研究表明, 有助于, 缓解负面情绪. Câu b (挺好的, 爽了) là khẩu ngữ tán gẫu.'},
-
-    {scene:'Nhắn tin an ủi bạn thân vừa thất tình.',
-     a:'鉴于你目前情绪低落，建议你适当宣泄。',b:'想哭就哭吧，我陪着你。',better:'b',
-     why:'An ủi bạn thân cần ấm áp, gần gũi: 想哭就哭吧，我陪着你. Câu a (鉴于 — bài 12, 建议你适当宣泄) nghe như lời khuyên của bác sĩ, lạnh lùng.'},
-
-    {scene:'Mở đầu bài phát biểu của đại diện học sinh ở lễ tốt nghiệp.',
-     a:'值此毕业典礼之际，我谨代表全体毕业生向老师们表示衷心的感谢。',b:'毕业啦，谢谢老师们哈！',better:'a',
-     why:'Phát biểu trang trọng dùng 值此……之际, 谨代表, 表示衷心的感谢. Câu b (啦, 哈) chỉ hợp khi nhắn tin.'},
-
-    {scene:'Biển báo dán ở cửa phòng thí nghiệm.',
-     a:'未经许可，不得入内。',b:'你没问过我们就别进来啊。',better:'a',
-     why:'Biển báo, nội quy dùng văn viết ngắn gọn: 未经许可，不得入内. Câu b là lời nói miệng.'},
-
-    {scene:'Mẹ dỗ con nhỏ vừa ngã và oà khóc.',
-     a:'请你停止哭泣，保持情绪稳定。',b:'宝贝不哭，摔疼了吧？妈妈给你吹吹。',better:'b',
-     why:'Dỗ trẻ nhỏ cần lời âu yếm: 宝贝不哭, 妈妈给你吹吹. Câu a (停止哭泣, 保持情绪稳定) như mệnh lệnh hành chính.'},
-
-    {scene:'Bài văn nghị luận về quan niệm "nam nhi có lệ không dễ rơi".',
-     a:'“男儿有泪不轻弹”这一观念，实际上是社会文化赋予男人的一种束缚。',b:'男的不能哭？这不是瞎说嘛！',better:'a',
-     why:'Văn nghị luận dùng 这一观念, 实际上, 赋予……束缚. Câu b (男的, 瞎说嘛) quá suồng sã.'}
+    {scene:'Bài báo khoa học về sức khoẻ cảm xúc.',a:'哭一哭挺好的，哭完心里就舒服了。',b:'专家指出，适当哭泣有助于减轻压力，缓解负面情绪。',better:'b',why:'Văn báo chí khoa học dùng 专家指出, 有助于, 缓解负面情绪. Câu a là lời nói miệng thân mật.'},
+    {scene:'Nhắn tin an ủi bạn thân vừa thất tình.',a:'鉴于你目前情绪低落，建议你适当宣泄。',b:'你要是心里难受，我一直在这儿陪你。',better:'b',why:'An ủi bạn thân cần ấm áp, gần gũi. Câu a (鉴于, 建议你适当宣泄) như lời khuyên trong văn bản, lạnh lùng.'},
+    {scene:'Lời mở đầu thư chúc Tết công ty gửi khách hàng.',a:'值此新年到来之际，我们向各位顾客表示真诚的感谢。',b:'马上就是新年了，祝你们新年快乐哈！',better:'a',why:'Thư của công ty gửi khách hàng cần trang trọng: 值此……之际, 各位顾客, 表示真诚的感谢. Câu b (哈) chỉ hợp nhắn cho bạn bè.'},
+    {scene:'Biển báo dán ở cửa phòng thí nghiệm.',a:'没有许可，请不要进入。',b:'你没问过我们就别进来啊。',better:'a',why:'Biển báo dùng câu ngắn gọn, khách quan: 没有许可，请不要进入. Câu b là lời nói miệng với một người cụ thể.'},
+    {scene:'Mẹ dỗ con nhỏ vừa ngã và oà khóc.',a:'请你停止哭泣，保持情绪稳定。',b:'宝贝不哭，摔疼了吧？妈妈给你吹吹。',better:'b',why:'Dỗ trẻ nhỏ cần dịu dàng: 宝贝, 摔疼了吧, 吹吹. Câu a (停止哭泣, 保持情绪稳定) như mệnh lệnh của bác sĩ.'},
+    {scene:'Bài văn nghị luận về việc đàn ông có nên khóc.',a:'把哭泣看成软弱，其实是一种狭隘的看法。',b:'说男的哭就是没用，这不是瞎说嘛！',better:'a',why:'Văn nghị luận cần lời lẽ chừng mực: 把……看成……, 狭隘的看法. Câu b (瞎说嘛) là khẩu ngữ, quá cảm tính.'}
   ]
 };
 

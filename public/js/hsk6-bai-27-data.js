@@ -1603,86 +1603,51 @@ var hvBridgeData = {
 // GHÉP TỪ — cụm trong bài khoá và phần 练习
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'左右',right:'为难'},
-  {left:'答复',right:'秦王'},
-  {left:'得罪',right:'秦国'},
-  {left:'召集大臣',right:'商议对策'},
-  {left:'凭',right:'实力'},
-  {left:'即刻',right:'动身'},
-  {left:'前去',right:'磋商'},
-  {left:'转达',right:'问候'},
-  {left:'果然是个',right:'圈套'},
-  {left:'兑现的',right:'诚意'},
-  {left:'举行隆重的',right:'仪式'},
-  {left:'沐浴',right:'更衣'},
-  {left:'戒掉',right:'荤腥'},
-  {left:'以示',right:'庄严'},
-  {left:'偷偷越过',right:'边境'},
+  {left:'履行',right:'义务'},
   {left:'泄露',right:'秘密'},
-  {left:'率领',right:'众臣'},
-  {left:'国力',right:'雄厚'},
-  {left:'履行',right:'承诺'},
-  {left:'歪曲',right:'我的意思'},
-  {left:'装出一副',right:'高姿态'},
-  {left:'闹出',right:'隔阂'},
-  {left:'再起',right:'争端'},
-  {left:'一一',right:'列举'}
+  {left:'转达',right:'大家的意见'},
+  {left:'隆重的',right:'仪式'},
+  {left:'实力',right:'雄厚'},
+  {left:'歪曲',right:'真相'},
+  {left:'列举',right:'例子'},
+  {left:'理直',right:'气壮'},
+  {left:'消除',right:'隔阂'},
+  {left:'率领',right:'球队'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ
+// ĐIỀN TỪ — câu mới (không chép bài khoá / SGK), mỗi câu một tình huống; ôn xoáy ốc từ + ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'这只',blank:'玉',post:'镯子是外婆留给妈妈的，妈妈一直舍不得戴。',hint:'(ngọc)',ans:'玉'},
-  {pre:'这件事我需要好好考虑考虑，明天再',blank:'答复',post:'你，好吗？',hint:'(trả lời)',ans:'答复'},
-  {pre:'国王召集了所有的',blank:'大臣',post:'，商议怎么应对这场危机。',hint:'(đại thần)',ans:'大臣'},
-  {pre:'对手突然改变了打法，教练马上叫了暂停，和队员们一起研究',blank:'对策',post:'。',hint:'(đối sách)',ans:'对策'},
-  {pre:'班长',blank:'提议',post:'周末去郊外爬山，全班同学都举手赞成。',hint:'(đề nghị)',ans:'提议'},
-  {pre:'这道题我想了半天也没想明白，只好去',blank:'请教',post:'数学老师。',hint:'(xin chỉ bảo)',ans:'请教'},
-  {pre:'两支球队',blank:'实力',post:'相当，比赛进行到最后一分钟才分出胜负。',hint:'(thực lực)',ans:'实力'},
-  {pre:'你帮了我这么大的忙，我怎么会',blank:'亏待',post:'你呢？',hint:'(bạc đãi)',ans:'亏待'},
-  {pre:'我们明天一早就',blank:'动身',post:'，争取中午以前赶到山顶。',hint:'(lên đường)',ans:'动身'},
-  {pre:'能代表全校同学在毕业典礼上发言，我感到非常',blank:'荣幸',post:'。',hint:'(vinh dự)',ans:'荣幸'},
-  {pre:'王老师，我妈妈让我向您',blank:'转达',post:'她的谢意。',hint:'(chuyển lời)',ans:'转达'},
-  {pre:'“中奖”短信其实是骗子设下的',blank:'圈套',post:'，千万别点里面的链接。',hint:'(cái bẫy)',ans:'圈套'},
-  {pre:'从图书馆借的书，请在两周之内按时',blank:'归还',post:'。',hint:'(trả lại)',ans:'归还'},
-  {pre:'广场',blank:'中央',post:'有一座高大的雕塑，是这座城市的标志。',hint:'(chính giữa)',ans:'中央'},
-  {pre:'他答应考完试就带我去海边，结果到现在也没',blank:'兑现',post:'。',hint:'(thực hiện lời hứa)',ans:'兑现'},
-  {pre:'这次考砸以后，他',blank:'发誓',post:'再也不玩游戏到半夜了。',hint:'(thề)',ans:'发誓'},
-  {pre:'海滩上出现了许多死鱼的',blank:'尸体',post:'，专家怀疑是海水受到了污染。',hint:'(xác)',ans:'尸体'},
-  {pre:'他从来不',blank:'撒谎',post:'，所以大家都相信他说的话。',hint:'(nói dối)',ans:'撒谎'},
-  {pre:'每周一早上，全校师生都要在操场上参加升旗',blank:'仪式',post:'。',hint:'(nghi lễ)',ans:'仪式'},
-  {pre:'孩子们',blank:'沐浴',post:'着春天的阳光，在草地上开心地奔跑。',hint:'(tắm mình)',ans:'沐浴'},
-  {pre:'学校食堂每顿饭都有两',blank:'荤',post:'两素，营养搭配得很合理。',hint:'(món mặn)',ans:'荤'},
-  {pre:'国歌响起的那一刻，全场气氛十分',blank:'庄严',post:'，大家都站得笔直。',hint:'(trang nghiêm)',ans:'庄严'},
-  {pre:'中秋节',blank:'亦',post:'称团圆节，是全家人团聚的日子。',hint:'(cũng — văn viết)',ans:'亦',exp:'亦 = cũng (văn viết, như 也): 亦称团圆节.'},
-  {pre:'老街是越中',blank:'边境',post:'上的一个城市，那里的贸易非常发达。',hint:'(biên giới)',ans:'边境'},
-  {pre:'这家网站',blank:'泄露',post:'了大量用户的个人信息，引起了人们的愤怒。',hint:'(làm lộ)',ans:'泄露'},
-  {pre:'校长亲自',blank:'率领',post:'代表团去国外参加比赛。',hint:'(dẫn đầu)',ans:'率领'},
-  {pre:'这家公司技术力量',blank:'雄厚',post:'，几年之内就成了行业的领头人。',hint:'(hùng hậu)',ans:'雄厚'},
-  {pre:'一次质量问题就可能严重损害公司多年建立的',blank:'声誉',post:'。',hint:'(danh tiếng)',ans:'声誉'},
-  {pre:'写议论文时，要',blank:'列举',post:'具体的例子来支持自己的观点。',hint:'(nêu ra)',ans:'列举'},
-  {pre:'这次比赛不仅考书面写作，还考',blank:'口头',post:'表达能力。',hint:'(bằng lời nói)',ans:'口头'},
-  {pre:'爷爷戴上一',blank:'副',post:'老花镜，认认真真地看起报纸来。',hint:'(lượng từ: cặp)',ans:'副',exp:'副 là lượng từ cho vật thành cặp: 一副眼镜, 一副手套.'},
-  {pre:'父母和孩子之间要多沟通，才能消除',blank:'隔阂',post:'。',hint:'(khoảng cách)',ans:'隔阂'}
+  {pre:'我向公司提出了申请，可是一个月过去了，还没有收到',blank:'答复',post:'。',hint:'(trả lời chính thức)',ans:'答复',exp:'答复 = trả lời chính thức một đề nghị, đơn từ, thư (收到答复, 给予答复). 回答 dùng cho câu hỏi (回答问题).'},
+  {pre:'她怕',blank:'得罪',post:'领导，有意见也不敢说出来。',hint:'(làm mất lòng)',ans:'得罪',exp:'怕得罪 + người = sợ làm ai phật lòng (khẩu ngữ, dùng rộng). 冒犯 trang trọng, nặng hơn, nhấn hành vi vô lễ.'},
+  {pre:'遇到问题光着急没用，得冷静下来想想',blank:'对策',post:'。',hint:'(cách đối phó)',ans:'对策',exp:'想对策 / 商量对策 = nghĩ cách đối phó với tình huống cụ thể. Đừng nhầm với "chính sách" của nhà nước (chỉ khác một chữ Hán).'},
+  {pre:'这个问题我想不明白，只好去',blank:'请教',post:'王老师。',hint:'(xin chỉ bảo)',ans:'请教',exp:'请教 + người = khiêm tốn hỏi ý kiến người giỏi hơn. 请问 chỉ dùng để mở đầu câu hỏi, không mang tân ngữ chỉ người như vậy.'},
+  {pre:'他对朋友非常',blank:'慷慨',post:'，自己却舍不得买一件新衣服。',hint:'(hào phóng)',ans:'慷慨',exp:'对 + người + 慷慨 = hào phóng với ai; vế sau 却 tạo đối lập. Ở đây không hiểu theo Hán-Việt "khảng khái".'},
+  {pre:'你在公司干了十年，老板从来没有',blank:'亏待',post:'过你。',hint:'(bạc đãi)',ans:'亏待',exp:'亏待 + người = đối xử tệ, để ai chịu thiệt; hay dùng ở dạng phủ định (没有亏待过 / 不会亏待).'},
+  {pre:'明天早上六点就要',blank:'动身',post:'，晚上早点儿睡吧。',hint:'(khởi hành)',ans:'动身',exp:'动身 = lên đường (li hợp, không mang tân ngữ: không nói ×动身北京, mà nói 动身去北京).'},
+  {pre:'能和您一起工作，我感到非常',blank:'荣幸',post:'。',hint:'(vinh hạnh)',ans:'荣幸',exp:'感到荣幸 = thấy vinh hạnh (lời lịch sự với người trên). 幸福 là hạnh phúc trong cuộc sống, không dùng ở đây.'},
+  {pre:'他',blank:'发誓',post:'以后再也不喝酒了。',hint:'(thề)',ans:'发誓',exp:'发誓 + 小句 = thề sẽ…; là động từ li hợp nên không mang tân ngữ danh từ trực tiếp.'},
+  {pre:'这孩子一',blank:'撒谎',post:'就脸红。',hint:'(nói dối)',ans:'撒谎',exp:'撒谎 = nói dối (khẩu ngữ, động từ li hợp). Ôn 一……就……: hễ … là ….'},
+  {pre:'我最近在减肥，晚饭只吃素，不吃',blank:'荤',post:'。',hint:'(đồ mặn: thịt, cá)',ans:'荤',exp:'荤 = đồ mặn (thịt, cá), trái với 吃素 (ăn chay). Không dùng 咸 (vị mặn của muối) cho nghĩa này.'},
+  {pre:'在那个年代，穷人受到',blank:'压迫',post:'，日子过得很苦。',hint:'(áp bức)',ans:'压迫',exp:'受到压迫 = bị áp bức (bởi kẻ có quyền thế). 压力 là áp lực (danh từ, 有压力), không đi với 受到 theo nghĩa này.'},
+  {pre:'我在车站左',blank:'等',post:'右等，汽车就是不来。',hint:'(chờ)',ans:'等',exp:'左 + V + 右 + V (左等右等) = chờ mãi, chờ đi chờ lại mà vẫn không có kết quả; hai động từ giống nhau.'},
+  {pre:'我又不是小孩子，还会走丢',blank:'不成',post:'？',hint:'(… hay sao?)',ans:'不成',exp:'Câu phản vấn …… + 不成? = lẽ nào … sao? Ý thật là phủ định: tôi không thể đi lạc. Đặt ở cuối câu.'},
+  {pre:'他把桌子搬到了房间的',blank:'中央',post:'。',hint:'(chính giữa)',ans:'中央',exp:'……的中央 = chính giữa (không gian); 中间 dùng rộng hơn, còn 中央 nhấn đúng tâm điểm. 中心 thường chỉ trung tâm trừu tượng (市中心, 中心思想).'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (左……右…… · 不成) ít nhất 2 câu
+// SẮP XẾP CÂU — câu mới, chỉ một trật tự đúng
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['秦王','对着','和氏璧','左看','右看','，','爱不释手','。'],ans:'秦王对着和氏璧左看右看，爱不释手。',audio:'秦王对着和氏璧左看右看，爱不释手。'},
-  {words:['那个电影','，','他','左一遍','右一遍','地','看','，','看了七八遍','也看不够','。'],ans:'那个电影，他左一遍右一遍地看，看了七八遍也看不够。',audio:'那个电影，他左一遍右一遍地看，看了七八遍也看不够。'},
-  {words:['妈妈','左一个电话','右一个电话','地','催他','回家','。'],ans:'妈妈左一个电话右一个电话地催他回家。',audio:'妈妈左一个电话右一个电话地催他回家。'},
-  {words:['大家','左一句','右一句','，','总算','把她','说通了','。'],ans:'大家左一句右一句，总算把她说通了。',audio:'大家左一句右一句，总算把她说通了。'},
-  {words:['璧','都到了','我这儿','，','我','还怕','他跑了','不成','？'],ans:'璧都到了我这儿，我还怕他跑了不成？',audio:'璧都到了我这儿，我还怕他跑了不成？'},
-  {words:['我','堂堂秦王','，','还会','骗你','不成','？'],ans:'我堂堂秦王，还会骗你不成？',audio:'我堂堂秦王，还会骗你不成？'},
-  {words:['你们','都不说话','，','难道','事情','就这么','算了','不成','？'],ans:'你们都不说话，难道事情就这么算了不成？',audio:'你们都不说话，难道事情就这么算了不成？'},
-  {words:['咱们','多少年的','朋友了','，','我','会','害你','不成','？'],ans:'咱们多少年的朋友了，我会害你不成？',audio:'咱们多少年的朋友了，我会害你不成？'},
-  {words:['大王','派我去','，','是','我的','荣幸','。'],ans:'大王派我去，是我的荣幸。',audio:'大王派我去，是我的荣幸。'},
-  {words:['秦国','仗着','国力雄厚','，','一贯','霸道','，','不讲信用','。'],ans:'秦国仗着国力雄厚，一贯霸道，不讲信用。',audio:'秦国仗着国力雄厚，一贯霸道，不讲信用。'},
-  {words:['两国','总不能','为这点儿小事','闹出隔阂','，','再起争端','。'],ans:'两国总不能为这点儿小事闹出隔阂，再起争端。',audio:'两国总不能为这点儿小事闹出隔阂，再起争端。'},
-  {words:['他','发誓','以后','再也不','对父母','撒谎','了','。'],ans:'他发誓以后再也不对父母撒谎了。',audio:'他发誓以后再也不对父母撒谎了。'}
+  {words:['他','把','借来的书','归还','给了','图书馆','。'],ans:'他把借来的书归还给了图书馆。',audio:'他把借来的书归还给了图书馆。'},
+  {words:['他','装出','一副','很生气的','样子','。'],ans:'他装出一副很生气的样子。',audio:'他装出一副很生气的样子。'},
+  {words:['他','率领','球队','获得了','冠军','。'],ans:'他率领球队获得了冠军。',audio:'他率领球队获得了冠军。'},
+  {words:['他','左一口','右一口','地','吃完了','一大碗面','。'],ans:'他左一口右一口地吃完了一大碗面。',audio:'他左一口右一口地吃完了一大碗面。'},
+  {words:['你','还想','骗我','一辈子','不成','？'],ans:'你还想骗我一辈子不成？',audio:'你还想骗我一辈子不成？'},
+  {words:['他的话','冒犯了','在场的','每一个人','。'],ans:'他的话冒犯了在场的每一个人。',audio:'他的话冒犯了在场的每一个人。'},
+  {words:['他','从容地','回答了','记者的','问题','。'],ans:'他从容地回答了记者的问题。',audio:'他从容地回答了记者的问题。'},
+  {words:['两国','在','边境问题上','发生了','争端','。'],ans:'两国在边境问题上发生了争端。',audio:'两国在边境问题上发生了争端。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1690,74 +1655,45 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'他说话太直，不知不觉就____了不少人。',opts:['得罪','犯罪','怪罪','受罪'],ans:0,
-   exp:'得罪 + người = làm mất lòng. 犯罪 = phạm tội (không mang tân ngữ chỉ người); 怪罪 = trách tội; 受罪 = chịu khổ (bài 9).'},
-  {wrong:'他自己过得很节俭，对需要帮助的人却十分____。',opts:['吝啬','慷慨','感慨','勤俭'],ans:1,
-   exp:'却 tạo đối lập với 节俭 (tằn tiện với bản thân) → 慷慨 (hào phóng với người khác). 吝啬 = keo kiệt (trái nghĩa); 感慨 = cảm khái (bài 17); 勤俭 = cần kiệm (bài 20).'},
-  {wrong:'两国领导人就边境问题进行了友好____。',opts:['争端','隔阂','磋商','姿态'],ans:2,
-   exp:'进行 + động từ song âm tiết: 进行磋商 = tiến hành đàm phán. 争端, 隔阂, 姿态 là danh từ, không đứng sau 进行友好…… theo nghĩa này.'},
-  {wrong:'这本漫画书太有意思了，弟弟拿到以后____，连吃饭都舍不得放下。',opts:['无理取闹','理直气壮','左顾右盼','爱不释手'],ans:3,
-   exp:'Thích đến mức không nỡ đặt xuống → 爱不释手. 左顾右盼 = nhìn ngang ngó dọc (không tập trung); 无理取闹 = vô cớ gây sự; 理直气壮 = dõng dạc.'},
-  {wrong:'面对评委的提问，她一点儿也不紧张，____不迫地一一作了回答。',opts:['从容','镇静','冷静','安静'],ans:0,
-   exp:'Thành ngữ cố định 从容不迫 = ung dung không vội (词语辨析 从容—镇静). Các từ còn lại không ghép với 不迫.'},
-  {wrong:'平时不努力，却想考第一名，这简直是____。',opts:['理想','梦想','妄想','感想'],ans:2,
-   exp:'Ý chê: điều viển vông không thể đạt → 妄想. 理想 / 梦想 = lý tưởng, ước mơ (nghĩa tốt); 感想 = cảm tưởng.'},
-  {wrong:'学校为建校一百周年举行了____的庆祝活动。',opts:['严重','隆重','沉重','重要'],ans:1,
-   exp:'隆重的庆祝活动 = hoạt động kỷ niệm long trọng. 严重 = nghiêm trọng (việc xấu); 沉重 = nặng nề; 重要 = quan trọng — không tả quy mô nghi lễ.'},
-  {wrong:'你要是有道理就好好说，别在这儿____。',opts:['理直气壮','理所当然','无理取闹','无能为力'],ans:2,
-   exp:'别在这儿无理取闹 = đừng ở đây vô cớ gây sự. 理所当然 = lẽ đương nhiên (bài 12); 无能为力 = bất lực (bài 17).'},
-  {wrong:'到别的国家旅行，要先了解当地的习俗，以免____别人的禁忌。',opts:['冒险','冒充','侵犯','冒犯'],ans:3,
-   exp:'冒犯禁忌 = phạm điều kiêng kỵ. 冒险 = mạo hiểm; 冒充 = giả danh; 侵犯 (bài 13) đi với 权利 / 领土 / 隐私, không đi với 禁忌.'},
-  {wrong:'病人太激动了，医生给他打了一针____剂，他才慢慢睡着了。',opts:['镇静','从容','冷静','安静'],ans:0,
-   exp:'镇静剂 = thuốc an thần (từ cố định). 从容 / 冷静 / 安静 không ghép với 剂.'},
-  {wrong:'谦虚、朴素是他____的作风，当了经理以后也没有变。',opts:['一直','一贯','一再','一律'],ans:1,
-   exp:'Đứng trước 的 + danh từ (作风) → tính từ 一贯 (词语辨析). 一直 là phó từ, không bổ nghĩa cho danh từ; 一再 = hết lần này đến lần khác; 一律 = nhất loạt.'},
-  {wrong:'班里有个很____的学生，仗着家里有钱，常常欺负同学。',opts:['霸道','公道','地道','厚道'],ans:0,
-   exp:'Cậy nhà có tiền, bắt nạt bạn → 霸道 (ngang ngược). 公道 = công bằng (bài 6); 地道 = chính cống; 厚道 = tử tế, trung hậu.'},
-  {wrong:'每个公民都应该____纳税的义务。',opts:['旅行','进行','履行','实行'],ans:2,
-   exp:'履行义务 = thực hiện nghĩa vụ. 旅行 = du lịch (đồng âm lǚxíng!); 进行 + hoạt động; 实行 (bài 1) + 制度 / 政策.'},
-  {wrong:'有些网络文章故意____事实，读者一定要学会分辨。',opts:['弯曲','委屈','曲折','歪曲'],ans:3,
-   exp:'歪曲事实 = bóp méo sự thật. 弯曲 = cong (vật lý); 委屈 = oan ức, tủi thân; 曲折 = quanh co, gian truân.'},
-  {wrong:'我又没做错什么，当然可以____地说出自己的想法。',opts:['无理取闹','理直气壮','爱不释手','左思右想'],ans:1,
-   exp:'Không làm sai → có lý → 理直气壮地说 (dõng dạc nói). 左思右想 = nghĩ tới nghĩ lui (điểm ngữ pháp 左……右……) — không hợp với 说出.'},
-  {wrong:'天下只可能强国欺负弱国，不可能弱国____强国。',opts:['压力','压缩','压迫','迫切'],ans:2,
-   exp:'压迫 + đối tượng = áp bức. 压力 = áp lực (danh từ); 压缩 = nén, cắt giảm; 迫切 = cấp thiết (tính từ).'},
-  {wrong:'天鹅在湖面上游来游去，____十分优美。',opts:['状态','姿态','心态','态度'],ans:1,
-   exp:'姿态优美 = dáng vẻ uyển chuyển. 状态 = trạng thái; 心态 = tâm thái; 态度 = thái độ — không chỉ dáng vẻ bên ngoài.'},
-  {wrong:'国与国之间的____，应该通过和平谈判来解决。',opts:['争取','争夺','竞争','争端'],ans:3,
-   exp:'解决争端 = giải quyết tranh chấp. 争取 = tranh thủ, giành lấy (động từ); 争夺 = tranh giành (bài 20); 竞争 = cạnh tranh — không phải thứ cần "giải quyết bằng đàm phán".'}
+  {wrong:'雨____下到半夜才停。',opts:['一直','一贯','一向','从来'],ans:0,exp:'Động tác kéo dài liên tục (mưa đến nửa đêm) → 一直. 一贯 / 一向 chỉ tác phong, thói quen xưa nay; 从来 thường đi với phủ định.'},
+  {wrong:'随便迟到可不是他____的作风，今天一定是出了什么事。',opts:['一贯','一直','一时','一再'],ans:0,exp:'Đứng trước 的 + danh từ cần tính từ 一贯 (tác phong xưa nay). 一直 là phó từ, không đứng trước 的 + danh từ; 一时 = nhất thời; 一再 = hết lần này đến lần khác.'},
+  {wrong:'我只是说了几句实话，没想到就把老板____了。',opts:['得罪','冒犯','亏待','欺负'],ans:0,exp:'Vô tình làm sếp phật lòng (nhấn kết quả) → 得罪. 冒犯 là cố ý vô lễ, rất trang trọng; 亏待 là bạc đãi (người trên với người dưới); 欺负 là bắt nạt kẻ yếu.'},
+  {wrong:'我们七点就到机场了，时间还很____，可以先去吃点儿东西。',opts:['从容','镇静','冷静','安静'],ans:0,exp:'Thời gian dư dả → chỉ 从容 có nghĩa này. 镇静 / 冷静 tả tâm trạng; 安静 là yên tĩnh (không ồn).'},
+  {wrong:'天气这么好，我____大家下午一起去公园走走。',opts:['提议','答复','请教','转达'],ans:0,exp:'Nêu ý kiến cho mọi người cùng làm → 提议. 答复 là trả lời; 请教 là xin chỉ bảo; 转达 là chuyển lời.'},
+  {wrong:'这么便宜的房子，小心是个____。',opts:['圈套','对策','仪式','姿态'],ans:0,exp:'Cái bẫy để lừa người → 圈套 (上了圈套 = mắc bẫy). Các từ còn lại không hợp nghĩa "cẩn thận kẻo …".'},
+  {wrong:'他一天书都不看，还想考第一，简直是____。',opts:['妄想','理想','思想','感想'],ans:0,exp:'Điều viển vông, không thể thành → 妄想 (nghĩa xấu). 理想 là ước mơ chính đáng; 思想 = tư tưởng; 感想 = cảm nghĩ.'},
+  {wrong:'这本画册太漂亮了，女儿拿到以后____。',opts:['爱不释手','无理取闹','理直气壮','左右为难'],ans:0,exp:'Thích đến mức cầm mãi không buông → 爱不释手. 无理取闹 = gây sự vô cớ; 理直气壮 = lý lẽ hùng hồn; 左右为难 = tiến thoái lưỡng nan.'},
+  {wrong:'学校为新同学举行了____的欢迎仪式。',opts:['隆重','雄厚','慷慨','从容'],ans:0,exp:'隆重的仪式 = nghi lễ long trọng (quy mô lớn, trang trọng). 雄厚 tả thực lực, vốn; 慷慨 tả người hào phóng; 从容 tả dáng vẻ.'},
+  {wrong:'纪念馆里气氛很____，没有一个人大声说话。',opts:['庄严','热闹','霸道','荣幸'],ans:0,exp:'气氛庄严 = không khí trang nghiêm (nơi tưởng niệm, nghi lễ). 热闹 trái nghĩa; 霸道 tả người ngang ngược; 荣幸 là cảm giác vinh hạnh.'},
+  {wrong:'这么重要的事，光____答应可不行，得写下来。',opts:['口头','口语','口气','口音'],ans:0,exp:'口头答应 = hứa bằng miệng (đối lập với viết thành văn bản). 口语 = khẩu ngữ; 口气 = giọng điệu; 口音 = giọng địa phương.'},
+  {wrong:'你都三十岁了，____还要父母养你一辈子不成？',opts:['难道','怎么','为什么','是不是'],ans:0,exp:'Khung phản vấn 难道……不成? (lẽ nào … sao). 怎么 / 为什么 / 是不是 không hô ứng với 不成 ở cuối câu.'},
+  {wrong:'这件衣服她____看右看，还是拿不定主意。',opts:['左','东','前','上'],ans:0,exp:'左看右看 = ngắm tới ngắm lui (左 V 右 V). Đừng lẫn với 东张西望 (bài 17): 东 đi với 西, không đi với 右.'},
+  {wrong:'早上，整个城市都____在温暖的阳光里。',opts:['沐浴','洗澡','游泳','浸泡'],ans:0,exp:'沐浴在阳光里 = tắm mình trong nắng (nghĩa bóng, văn viết). 洗澡 chỉ tắm thật bằng nước; 游泳 = bơi.'}
 ];
 
 
 
 // ══════════════════════════════════════════
-// DỊCH — câu ghép, ôn từ HSK 6 bài 1–26 và HSK 4–5
+// DỊCH Việt → Trung — câu mới, dùng từ của bài + ôn ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Bạn thân nhờ tớ giúp, tớ không biết trả lời cậu ấy thế nào: đồng ý thì sợ bố mẹ trách, không đồng ý thì lại sợ làm mất lòng bạn.',zh:'好朋友请我帮忙，我不知如何答复他：答应吧，怕父母批评；不答应吧，又怕得罪朋友。',py:'Hǎo péngyou qǐng wǒ bāngmáng, wǒ bù zhī rúhé dáfù tā: dāying ba, pà fùmǔ pīpíng; bù dāying ba, yòu pà dézuì péngyou.',goiY:['答复','得罪','不答应吧，又怕'],giai:'Mẫu 答应吧，……；不答应吧，又…… diễn tả thế tiến thoái lưỡng nan (y như câu mở đầu bài khoá); 得罪 + người = làm mất lòng, không cần 对.'},
-  {vi:'Mẹ gọi hết cuộc này đến cuộc khác giục tớ về nhà, tớ đành trả sách cho thư viện trước rồi lập tức lên đường.',zh:'妈妈左一个电话右一个电话地催我回家，我只好先把书归还给图书馆，然后马上动身。',py:'Māma zuǒ yí ge diànhuà yòu yí ge diànhuà de cuī wǒ huí jiā, wǒ zhǐhǎo xiān bǎ shū guīhuán gěi túshūguǎn, ránhòu mǎshàng dòng shēn.',goiY:['左一个……右一个……','归还','先……然后……','动身'],giai:'左 + 一 + lượng từ + N + 右 + 一 + lượng từ + N + 地 + V nhấn hành động lặp lại nhiều lần — "hết cuộc này đến cuộc khác"; 动身 là động từ li hợp, không mang tân ngữ.'},
-  {vi:'Cậu đã hứa với bọn trẻ thì phải thực hiện lời hứa, chẳng lẽ lúc trước cậu nói dối sao?',zh:'你既然答应了孩子们，就要履行承诺，难道你当初是在撒谎不成？',py:'Nǐ jìrán dāyingle háizimen, jiù yào lǚxíng chéngnuò, nándào nǐ dāngchū shì zài sā huǎng bùchéng?',goiY:['既然……就……','履行承诺','难道……不成'],giai:'难道……不成? là câu phản vấn (điểm ngữ pháp 2): 不成 đứng cuối câu, hô ứng với 难道; 当初 (bài 6) = lúc đầu, hồi đó.'},
-  {vi:'Tuy thực lực của đội bạn hùng hậu hơn, nhưng chỉ cần chúng ta bình tĩnh ứng phó thì chưa chắc đã thua.',zh:'虽然对方球队实力更雄厚，但只要我们镇静应对，就不一定会输。',py:'Suīrán duìfāng qiúduì shílì gèng xiónghòu, dàn zhǐyào wǒmen zhènjìng yìngduì, jiù bù yídìng huì shū.',goiY:['实力','雄厚','镇静','只要……就……'],giai:'虽然……但…… lồng 只要……就…… thành câu ghép 3 vế; "chưa chắc" = 不一定 (bù yídìng), không dịch 还没一定.'},
-  {vi:'Cậu ta cậy nhà có tiền nên xưa nay vẫn ngang ngược, không những bắt nạt bạn học mà còn thường xuyên xúc phạm thầy cô.',zh:'他仗着家里有钱，一贯霸道，不但欺负同学，还常常冒犯老师。',py:'Tā zhàngzhe jiāli yǒu qián, yíguàn bàdào, búdàn qīfu tóngxué, hái chángcháng màofàn lǎoshī.',goiY:['仗着','一贯霸道','不但……还……','冒犯'],giai:'仗着 + chỗ dựa = cậy vào …; 一贯 + tính từ = xưa nay vẫn …; 欺负 (bài 6); 冒犯 dùng với người bề trên.'},
-  {vi:'Nghĩ tới nghĩ lui, cuối cùng cô ấy quyết định dõng dạc nói ra sự thật, chứ không tiếp tục để người khác xuyên tạc ý của mình.',zh:'左思右想之后，她终于决定理直气壮地说出真相，而不是继续让别人歪曲自己的意思。',py:'Zuǒ sī yòu xiǎng zhīhòu, tā zhōngyú juédìng lǐzhí-qìzhuàng de shuōchū zhēnxiàng, ér bú shì jìxù ràng biérén wāiqū zìjǐ de yìsi.',goiY:['左思右想','理直气壮','而不是','歪曲'],giai:'左思右想 = 左 + V1 + 右 + V2 (hai động từ gần nghĩa) — "nghĩ tới nghĩ lui"; ……，而不是…… = … chứ không phải …; 真相 (bài 19).'},
-  {vi:'Để chào đón đoàn đại biểu nước ngoài, nhà trường đã tổ chức một nghi lễ long trọng, không khí tại chỗ vô cùng trang nghiêm.',zh:'为了欢迎外国代表团，学校举行了隆重的仪式，现场气氛十分庄严。',py:'Wèile huānyíng wàiguó dàibiǎotuán, xuéxiào jǔxíngle lóngzhòng de yíshì, xiànchǎng qìfēn shífēn zhuāngyán.',goiY:['为了','隆重的仪式','庄严'],giai:'隆重 tả quy mô nghi lễ, 庄严 tả không khí — đừng đổi chỗ; "tổ chức nghi lễ" dùng động từ 举行.'},
-  {vi:'Một khi để lộ thông tin cá nhân lên mạng, danh tiếng của cậu có thể bị tổn hại, đến lúc đó hối hận cũng không kịp nữa.',zh:'一旦把个人信息泄露到网上，你的声誉就可能受到损害，到时候后悔也来不及了。',py:'Yídàn bǎ gèrén xìnxī xièlòu dào wǎng shang, nǐ de shēngyù jiù kěnéng shòudào sǔnhài, dào shíhou hòuhuǐ yě láibují le.',goiY:['一旦……就……','泄露','声誉','来不及'],giai:'一旦……就…… = một khi … thì …; "danh tiếng" là 声誉, không dịch 名誉 (danh dự).'},
-  {vi:'Giữa bạn bè với nhau nếu có khoảng cách thì nên kịp thời trò chuyện, chứ đừng vì một chút chuyện nhỏ mà lại gây tranh chấp.',zh:'朋友之间如果有了隔阂，就应该及时沟通，而不要为了一点儿小事再起争端。',py:'Péngyou zhījiān rúguǒ yǒule géhé, jiù yīnggāi jíshí gōutōng, ér bú yào wèile yìdiǎnr xiǎoshì zài qǐ zhēngduān.',goiY:['如果……就……','隔阂','而不要','争端'],giai:'隔阂 = khoảng cách tình cảm; 再起争端 lấy từ lời vua Tần; ……，而不要…… = … chứ đừng ….'},
-  {vi:'Chẳng lẽ họ tưởng chúng ta không nhìn ra đây là một cái bẫy sao? Chỉ cần chúng ta ung dung ứng phó, ý đồ muốn lừa chúng ta của họ chỉ có thể là mơ hão.',zh:'难道他们以为我们看不出这是个圈套不成？只要我们从容应对，他们想骗我们的企图就只能是妄想。',py:'Nándào tāmen yǐwéi wǒmen kàn bu chū zhè shì ge quāntào bùchéng? Zhǐyào wǒmen cóngróng yìngduì, tāmen xiǎng piàn wǒmen de qìtú jiù zhǐ néng shì wàngxiǎng.',goiY:['难道……不成','圈套','只要……就……','妄想'],giai:'Mở đầu bằng câu phản vấn 难道……不成? (điểm ngữ pháp 2); 企图 (bài 17) = ý đồ; 只能是妄想 = chỉ có thể là mơ hão.'}
+  {vi:'Cậu đã hứa với bọn trẻ thì phải thực hiện lời hứa, chẳng lẽ lúc trước cậu nói dối sao?',zh:'你既然答应了孩子们，就要履行承诺，难道你当初是在撒谎不成？',py:'Nǐ jìrán dāyingle háizimen, jiù yào lǚxíng chéngnuò, nándào nǐ dāngchū shì zài sā huǎng bùchéng?',goiY:['既然……就……','履行承诺','难道……不成'],giai:'难道……不成? là câu phản vấn: 不成 đứng cuối câu, hô ứng với 难道; 当初 (bài 6) = lúc đầu, hồi đó.'},
+  {vi:'Tuy thực lực của đội bạn hùng hậu hơn, nhưng chỉ cần chúng ta giữ được bình tĩnh thì chưa chắc đã thua.',zh:'虽然对方球队实力更雄厚，但只要我们保持镇静，就不一定会输。',py:'Suīrán duìfāng qiúduì shílì gèng xiónghòu, dàn zhǐyào wǒmen bǎochí zhènjìng, jiù bù yídìng huì shū.',goiY:['实力','雄厚','镇静','只要……就……'],giai:'虽然……但…… lồng 只要……就……; "chưa chắc" = 不一定 (bù yídìng).'},
+  {vi:'Nghĩ tới nghĩ lui, cuối cùng cô ấy quyết định dõng dạc nói ra sự thật, chứ không để người khác tiếp tục xuyên tạc ý mình.',zh:'左思右想之后，她终于决定理直气壮地说出真相，而不是继续让别人歪曲自己的意思。',py:'Zuǒ sī yòu xiǎng zhīhòu, tā zhōngyú juédìng lǐzhí-qìzhuàng de shuōchū zhēnxiàng, ér bú shì jìxù ràng biérén wāiqū zìjǐ de yìsi.',goiY:['左思右想','理直气壮','而不是','歪曲'],giai:'左思右想 = 左 + V1 + 右 + V2 (hai động từ gần nghĩa) — "nghĩ tới nghĩ lui"; ……，而不是…… = … chứ không phải ….'},
+  {vi:'Một khi để lộ thông tin cá nhân lên mạng, danh tiếng của cậu có thể bị tổn hại, đến lúc đó hối hận cũng không kịp.',zh:'一旦把个人信息泄露到网上，你的声誉就可能受到影响，到时候后悔也来不及了。',py:'Yídàn bǎ gèrén xìnxī xièlòu dào wǎng shang, nǐ de shēngyù jiù kěnéng shòudào yǐngxiǎng, dào shíhou hòuhuǐ yě láibují le.',goiY:['一旦……就……','泄露','声誉'],giai:'一旦……就…… = một khi … thì …; "danh tiếng" là 声誉 (tiếng tăm, uy tín trong mắt người khác).'},
+  {vi:'Người xưa nói rất đúng: "có mượn có trả, lần sau mượn không khó"; mượn đồ của người khác thì phải trả đúng hạn.',zh:'老话说得好：“有借有还，再借不难。”借了别人的东西要按时还。',py:'Lǎohuà shuō de hǎo: "Yǒu jiè yǒu huán, zài jiè bù nán." Jièle biérén de dōngxi yào ànshí huán.',goiY:['老话说得好','有借有还，再借不难'],giai:'Dẫn tục ngữ để lời khuyên có sức thuyết phục: 老话说得好 / 俗话说 + câu tục ngữ trong ngoặc kép, rồi mới nói ý của mình.'},
+  {vi:'Chẳng lẽ họ tưởng chúng ta không nhìn ra đây là một cái bẫy sao? Chỉ cần chúng ta ung dung một chút, ý đồ lừa chúng ta của họ chỉ là mơ hão.',zh:'难道他们以为我们看不出这是个圈套不成？只要我们从容一点儿，他们想骗我们的企图就只能是妄想。',py:'Nándào tāmen yǐwéi wǒmen kàn bu chū zhè shì ge quāntào bùchéng? Zhǐyào wǒmen cóngróng yìdiǎnr, tāmen xiǎng piàn wǒmen de qìtú jiù zhǐ néng shì wàngxiǎng.',goiY:['难道……不成','圈套','从容','妄想'],giai:'Mở đầu bằng câu phản vấn 难道……不成?; 企图 (bài 17) = ý đồ; 只能是妄想 = chỉ có thể là mơ hão.'}
 ];
 
-// Chiều Trung → Việt — bám ý bài khoá, nội dung khác chiều trên
+// ══════════════════════════════════════════
+// Dịch Trung → Việt — câu mới, không trùng chiều trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Nước Tần muốn dùng mười lăm toà thành đổi ngọc họ Hoà, Triệu vương tiến thoái lưỡng nan, vội vàng triệu tập đại thần bàn đối sách.',zh:'秦国想用十五座城换和氏璧，赵王左右为难，赶忙召集大臣商议对策。',py:'Qín guó xiǎng yòng shíwǔ zuò chéng huàn Héshì bì, Zhào wáng zuǒyòu wéinán, gǎnmáng zhàojí dàchén shāngyì duìcè.',goiY:['左右为难 = tiến thoái lưỡng nan','召集大臣 = triệu tập đại thần','商议对策 = bàn đối sách'],giai:'左右为难 là thành ngữ (ví dụ tu từ 引用 của bài), không dịch "trái phải đều khó"; 赶忙 = vội vàng.'},
-  {vi:'Có người đề nghị: Lạn Tương Như hiểu biết rộng, có dũng có mưu, thế là Triệu vương đích thân hỏi ý kiến ông.',zh:'有人提议，蔺相如见多识广，有勇有谋，于是赵王亲自向他请教。',py:'Yǒu rén tíyì, Lìn Xiàngrú jiànduō-shíguǎng, yǒu yǒng yǒu móu, yúshì Zhào wáng qīnzì xiàng tā qǐngjiào.',goiY:['提议 = đề nghị (nêu ý kiến)','见多识广 = hiểu biết rộng','请教 = xin ý kiến, thỉnh giáo'],giai:'提议 là nêu ý kiến để mọi người bàn, không phải "yêu cầu"; 见多识广 ôn bài 11; 于是 = thế là.'},
-  {vi:'Tần lấy mười lăm toà thành đổi một miếng ngọc, cũng coi như hào phóng, nếu không đồng ý thì lỗi lại ở nước Triệu.',zh:'秦以十五座城换一块玉，也算慷慨，若不答应，过错就在赵国了。',py:'Qín yǐ shíwǔ zuò chéng huàn yí kuài yù, yě suàn kāngkǎi, ruò bù dāying, guòcuò jiù zài Zhào guó le.',goiY:['以……换…… = lấy … đổi …','慷慨 = hào phóng','若 = nếu (văn viết)'],giai:'慷慨 dịch "hào phóng", không dịch "khảng khái"; 若 = 如果 (văn viết), hô ứng với 就.'},
-  {vi:'Vua Tần cầm ngọc họ Hoà ngắm tới ngắm lui, mê không rời tay; Lạn Tương Như nghĩ thầm, quả nhiên đây là một cái bẫy.',zh:'秦王对着和氏璧左看右看，爱不释手，蔺相如心想这果然是个圈套。',py:'Qín wáng duìzhe Héshì bì zuǒ kàn yòu kàn, àibúshìshǒu, Lìn Xiàngrú xīn xiǎng zhè guǒrán shì ge quāntào.',goiY:['左看右看 = ngắm tới ngắm lui','爱不释手 = không nỡ rời tay','圈套 = cái bẫy'],giai:'左看右看 (左 + V + 右 + V) nhấn hành động lặp lại — dịch "… tới … lui"; 果然 = quả nhiên (đúng như đã đoán).'},
-  {vi:'Lạn Tương Như ung dung đứng giữa đại điện, nói rằng vua Tần không có thành ý thực hiện lời hứa, muốn không giao thành mà lấy ngọc thì đó là mơ hão.',zh:'蔺相如从容地站在殿中央，说秦王没有兑现的诚意，想不交城拿走璧，那是妄想。',py:'Lìn Xiàngrú cóngróng de zhàn zài diàn zhōngyāng, shuō Qín wáng méiyǒu duìxiàn de chéngyì, xiǎng bù jiāo chéng ná zǒu bì, nà shì wàngxiǎng.',goiY:['从容 = ung dung','兑现的诚意 = thành ý thực hiện lời hứa','妄想 = mơ hão'],giai:'兑现 làm định ngữ cho 诚意 — tiếng Việt đảo: "thành ý thực hiện"; 想……，那是妄想 = muốn … thì đó là mơ hão.'},
-  {vi:'Trước khi gửi ngọc, Triệu vương tắm gội thay áo, kiêng đồ mặn, chỉ ăn chay, để tỏ lòng trang nghiêm.',zh:'赵王送璧之前沐浴更衣，戒掉荤腥，只吃素食，以示庄严。',py:'Zhào wáng sòng bì zhīqián mùyù gēngyī, jièdiào hūnxīng, zhǐ chī sùshí, yǐ shì zhuāngyán.',goiY:['沐浴更衣 = tắm gội thay áo','荤腥 = đồ mặn','以示 = để tỏ'],giai:'以示 + N/Adj đứng cuối câu nêu mục đích — "để tỏ …"; chuỗi cụm 4 chữ là văn phong trang trọng, dịch gọn tương ứng.'},
-  {vi:'Vua Tần nghĩ: ngọc đã đến tay ta rồi, lẽ nào ta còn sợ hắn chạy mất sao? Thế là nhận lời cử hành nghi lễ long trọng.',zh:'秦王想，璧都到了我这儿，我还怕他跑了不成？于是答应举行隆重的仪式。',py:'Qín wáng xiǎng, bì dōu dàole wǒ zhèr, wǒ hái pà tā pǎole bùchéng? Yúshì dāying jǔxíng lóngzhòng de yíshì.',goiY:['还……不成 = lẽ nào còn … sao','隆重的仪式 = nghi lễ long trọng'],giai:'……不成? là phản vấn: ý thật là "ta chẳng sợ hắn chạy" — dịch "lẽ nào … sao?"; 都 ở đây = 已经 (đã … rồi).'},
-  {vi:'Lạn Tương Như sai người lén vượt biên giới, đưa ngọc về nước Triệu, đồng thời dặn người bên cạnh không được tiết lộ bí mật.',zh:'蔺相如派人偷偷越过边境，把璧送回了赵国，并嘱咐身边的人不可泄露秘密。',py:'Lìn Xiàngrú pài rén tōutōu yuèguò biānjìng, bǎ bì sònghuíle Zhào guó, bìng zhǔfù shēnbiān de rén bù kě xièlòu mìmì.',goiY:['越过边境 = vượt biên giới','并 = đồng thời','泄露 = tiết lộ'],giai:'并 nối hai hành động cùng chủ ngữ; 不可 = không được (văn viết, = 不可以).'},
-  {vi:'Lạn Tương Như bình tĩnh nói rằng nước Tần xưa nay ngang ngược, ông sợ vua Tần không thực hiện lời hứa nên đã đưa ngọc về nước Triệu rồi.',zh:'蔺相如镇静地说，秦国一贯霸道，他怕秦王不履行承诺，已经把璧送回了赵国。',py:'Lìn Xiàngrú zhènjìng de shuō, Qín guó yíguàn bàdào, tā pà Qín wáng bù lǚxíng chéngnuò, yǐjīng bǎ bì sònghuíle Zhào guó.',goiY:['镇静 = bình tĩnh','一贯霸道 = xưa nay ngang ngược','履行承诺 = thực hiện lời hứa'],giai:'一贯 dịch "xưa nay vẫn", không dịch "nhất quán"; 怕…… nêu nguyên nhân của hành động phía sau.'},
-  {vi:'Vua Tần thấy Lạn Tương Như nói có lý, đành làm ra vẻ rộng lượng, nói rằng hai nước đâu thể vì một miếng ngọc mà sinh bất hoà, lại gây tranh chấp.',zh:'秦王听蔺相如说得在理，只得装出一副高姿态，说两国总不能为一块玉闹出隔阂，再起争端。',py:'Qín wáng tīng Lìn Xiàngrú shuō de zài lǐ, zhǐdé zhuāngchū yí fù gāo zītài, shuō liǎng guó zǒng bù néng wèi yí kuài yù nàochū géhé, zài qǐ zhēngduān.',goiY:['只得 = đành phải','一副高姿态 = vẻ rộng lượng','隔阂 = bất hoà','争端 = tranh chấp'],giai:'只得 = 只好 (văn viết); 总不能 = dù sao cũng không thể; 高姿态 ở đây là "làm ra vẻ rộng lượng" để giữ thể diện.'}
+  {vi:'Giám đốc mới rất độc đoán, việc gì cũng một mình ông ta quyết.',zh:'新来的经理很霸道，什么事都是他一个人说了算。',py:'Xīn lái de jīnglǐ hěn bàdào, shénme shì dōu shì tā yí ge rén shuōle suàn.',goiY:['霸道 = ngang ngược, độc đoán','说了算 = có quyền quyết định'],giai:'霸道 nói về người dùng quyền lực áp đặt; 说了算 dịch "quyết", "nói là xong".'},
+  {vi:'Luật sư nêu ra rất nhiều sự thật, chứng minh anh ấy không nói dối.',zh:'律师列举了大量事实，证明他没有撒谎。',py:'Lǜshī lièjǔle dàliàng shìshí, zhèngmíng tā méiyǒu sā huǎng.',goiY:['列举 = liệt kê, nêu ra','撒谎 = nói dối'],giai:'列举事实 dịch "nêu ra sự thật"; 证明 + 小句 = chứng minh rằng ….'},
+  {vi:'Thua trận xong, anh ấy trả lời phỏng vấn với thái độ rất khiêm tốn.',zh:'输了比赛以后，他用很谦虚的姿态接受了采访。',py:'Shūle bǐsài yǐhòu, tā yòng hěn qiānxū de zītài jiēshòule cǎifǎng.',goiY:['姿态 = thái độ, tư thế','接受采访 = nhận phỏng vấn'],giai:'姿态 ở đây là "thái độ" (nghĩa bóng), không dịch "tư thế"; 接受采访 dịch "trả lời phỏng vấn".'},
+  {vi:'Ông ấy vừa là thầy của tôi, cũng là bạn của tôi.',zh:'他既是我的老师，亦是我的朋友。',py:'Tā jì shì wǒ de lǎoshī, yì shì wǒ de péngyou.',goiY:['亦 = cũng (văn viết)','既……亦…… = vừa … cũng …'],giai:'亦 = 也 nhưng văn viết, trang trọng; 既……亦…… là dạng văn viết của 既……也…….'},
+  {vi:'Vị đại thần ấy mất rồi, người ta đưa thi thể ông về chôn ở quê nhà.',zh:'这位大臣死后，人们把他的尸体埋在了家乡。',py:'Zhè wèi dàchén sǐ hòu, rénmen bǎ tā de shītǐ mái zài le jiāxiāng.',goiY:['大臣 = đại thần','尸体 = thi thể'],giai:'死后 = sau khi mất (văn viết, gọn); câu 把 + V在 + nơi chốn.'}
 ];
 
 
@@ -1793,9 +1729,9 @@ var writingData = {
     'Các chi tiết lịch sử có ghi rõ là truyền thuyết (传说 / 民间流传) khi không chắc chắn, và kể bằng lời của em thay vì chép nguyên văn không?'
   ],
   model:{
-    zh:'（题目：善于外交的莫挺之）莫挺之是越南陈朝时期有名的状元，他个子矮小，却见多识广，有勇有谋。十四世纪初，他奉命出使元朝。当时元朝实力雄厚，一贯霸道，常常故意为难小国的使者，民间流传着很多关于他这次出使的故事。传说莫挺之一行到达边境时，天已经黑了，守关的官员不肯开门，还出了一个对子，说对得上才放他们进去。这分明是个圈套，可莫挺之一点儿也不慌，左思右想之后，从容地对出了下联，官员只得开门请他们进关。到了元朝的都城，一位大臣想让他出丑，请他看一幅绣着麻雀站在竹子上的画。莫挺之走上前去，一下子把画撕了。众人大吃一惊，以为他冒犯了主人。他却镇静地解释说：“古人常把竹子比作君子，麻雀却是小人。难道能让小人站在君子头上不成？我是替大人把小人除掉啊！”他说得理直气壮，那位大臣无话可说，只好向他道歉。后来，元朝皇帝也被他的才华打动，称赞他是“两国状元”。莫挺之既保全了国家的尊严，又让对方心服口服，大越的声誉也因此提高了。直到今天，越南人还常常讲起他的故事。这个故事告诉我们，一个出色的外交家不仅要有智谋，还要有勇气。国家虽小，只要有这样的人才，也不会任人欺负。',
-    py:'(Tímù: Shànyú wàijiāo de Mò Tǐngzhī) Mò Tǐngzhī shì Yuènán Chén cháo shíqī yǒumíng de zhuàngyuan, tā gèzi ǎixiǎo, què jiànduō-shíguǎng, yǒu yǒng yǒu móu. Shísì shìjì chū, tā fèngmìng chūshǐ Yuán cháo. Dāngshí Yuán cháo shílì xiónghòu, yíguàn bàdào, chángcháng gùyì wéinán xiǎoguó de shǐzhě, mínjiān liúchuánzhe hěn duō guānyú tā zhè cì chūshǐ de gùshi. Chuánshuō Mò Tǐngzhī yìxíng dàodá biānjìng shí, tiān yǐjīng hēi le, shǒu guān de guānyuán bù kěn kāi mén, hái chūle yí ge duìzi, shuō duì de shàng cái fàng tāmen jìnqù. Zhè fēnmíng shì ge quāntào, kě Mò Tǐngzhī yìdiǎnr yě bù huāng, zuǒ sī yòu xiǎng zhīhòu, cóngróng de duìchūle xiàlián, guānyuán zhǐdé kāi mén qǐng tāmen jìn guān. Dàole Yuán cháo de dūchéng, yí wèi dàchén xiǎng ràng tā chūchǒu, qǐng tā kàn yì fú xiùzhe máquè zhàn zài zhúzi shang de huà. Mò Tǐngzhī zǒu shàngqián qù, yíxiàzi bǎ huà sī le. Zhòngrén dà chī yì jīng, yǐwéi tā màofànle zhǔrén. Tā què zhènjìng de jiěshì shuō: "Gǔrén cháng bǎ zhúzi bǐzuò jūnzǐ, máquè què shì xiǎorén. Nándào néng ràng xiǎorén zhàn zài jūnzǐ tóu shang bùchéng? Wǒ shì tì dàren bǎ xiǎorén chúdiào a!" Tā shuō de lǐzhí-qìzhuàng, nà wèi dàchén wúhuà-kěshuō, zhǐhǎo xiàng tā dàoqiàn. Hòulái, Yuán cháo huángdì yě bèi tā de cáihuá dǎdòng, chēngzàn tā shì "liǎng guó zhuàngyuan". Mò Tǐngzhī jì bǎoquánle guójiā de zūnyán, yòu ràng duìfāng xīnfú-kǒufú, Dà Yuè de shēngyù yě yīncǐ tígāo le. Zhídào jīntiān, Yuènánrén hái chángcháng jiǎngqǐ tā de gùshi. Zhège gùshi gàosu wǒmen, yí ge chūsè de wàijiāojiā bùjǐn yào yǒu zhìmóu, hái yào yǒu yǒngqì. Guójiā suī xiǎo, zhǐyào yǒu zhèyàng de réncái, yě bú huì rèn rén qīfu.',
-    vn:'(Nhan đề: Mạc Đĩnh Chi — người giỏi ngoại giao) Mạc Đĩnh Chi là trạng nguyên nổi tiếng thời nhà Trần của Việt Nam. Ông người nhỏ bé nhưng hiểu biết rộng, có dũng có mưu. Đầu thế kỷ XIV, ông vâng mệnh đi sứ nhà Nguyên. Khi ấy nhà Nguyên thực lực hùng hậu, xưa nay vẫn ngang ngược, thường cố tình làm khó sứ giả các nước nhỏ; dân gian lưu truyền rất nhiều câu chuyện về chuyến đi sứ này của ông. Tương truyền khi đoàn của Mạc Đĩnh Chi đến biên giới thì trời đã tối, viên quan giữ ải không chịu mở cửa, lại ra một vế đối, nói đối được thì mới cho vào. Đây rõ ràng là một cái bẫy, nhưng Mạc Đĩnh Chi không hề hoảng hốt, nghĩ tới nghĩ lui rồi ung dung đối lại vế sau, viên quan đành mở cửa mời họ qua ải. Đến kinh đô nhà Nguyên, một vị đại thần muốn làm ông bẽ mặt, mời ông xem một bức tranh thêu chim sẻ đậu trên cành trúc. Mạc Đĩnh Chi bước lên, xé toạc bức tranh. Mọi người giật mình, cho rằng ông đã xúc phạm chủ nhà. Ông lại bình tĩnh giải thích: "Người xưa thường ví cây trúc với người quân tử, còn chim sẻ là kẻ tiểu nhân. Lẽ nào lại để kẻ tiểu nhân đứng trên đầu người quân tử sao? Tôi xé tranh là thay ngài trừ bỏ kẻ tiểu nhân đấy!" Ông nói đầy lý lẽ, vị đại thần kia không còn gì để nói, đành phải xin lỗi ông. Về sau, hoàng đế nhà Nguyên cũng cảm phục tài năng của ông, khen ông là "Lưỡng quốc Trạng nguyên". Mạc Đĩnh Chi vừa giữ được tôn nghiêm của đất nước, vừa khiến đối phương tâm phục khẩu phục, danh tiếng của Đại Việt nhờ đó cũng được nâng cao. Cho đến tận hôm nay, người Việt Nam vẫn thường kể lại câu chuyện về ông. Câu chuyện này cho chúng ta thấy, một nhà ngoại giao xuất sắc không chỉ cần có mưu trí mà còn phải có lòng dũng cảm. Đất nước tuy nhỏ, nhưng chỉ cần có những nhân tài như vậy thì cũng sẽ không để ai bắt nạt.'
+    zh:'（题目：善于外交的莫挺之）莫挺之是越南陈朝时期有名的才子，他个子矮小，却见多识广，有勇有谋。十四世纪，他被国家派到元朝去。当时元朝实力雄厚，一贯霸道，常常故意为难小国派去的人。关于他这次出使，流传着很多故事。传说莫挺之一行到达边境时，天已经黑了，守关的官员不愿意开门，还出了一个对子，说对得上才放他们进去。这分明是个圈套，可莫挺之一点儿也不紧张，左思右想之后，从容地对出了下一句，官员只得开门请他们进关。到了元朝的首都，一位大臣想让他丢脸，请他看一幅画着小鸟站在竹子上的画。莫挺之走上前去，一下子把画弄破了。大家都吓了一跳，以为他冒犯了主人。他却镇静地解释说：“古人常常用竹子比喻君子，小鸟却是小人。难道能让小人站在君子头上不成？我是替大人把小人除掉啊！”他说得理直气壮，那位大臣无话可说，只好向他道歉。后来，元朝的国王也被他的才能打动，称赞他是“两国第一才子”。莫挺之既没有让国家丢脸，又让对方真心佩服，大越的声誉也因此提高了。直到今天，越南人还常常讲起他的故事。这个故事告诉我们，一个出色的外交家不仅要有智慧，还要有勇气。国家即使很小，只要有这样的人才，也不会任人欺负。',
+    py:'(Tímù: Shànyú wàijiāo de Mò Tǐngzhī) Mò Tǐngzhī shì Yuènán Chén cháo shíqī yǒumíng de cáizǐ, tā gèzi ǎixiǎo, què jiànduō-shíguǎng, yǒu yǒng yǒu móu. Shísì shìjì, tā bèi guójiā pài dào Yuán cháo qù. Dāngshí Yuán cháo shílì xiónghòu, yíguàn bàdào, chángcháng gùyì wéinán xiǎoguó pàiqù de rén. Guānyú tā zhè cì chūshǐ, liúchuánzhe hěn duō gùshi. Chuánshuō Mò Tǐngzhī yìxíng dàodá biānjìng shí, tiān yǐjīng hēi le, shǒu guān de guānyuán bú yuànyì kāi mén, hái chūle yí ge duìzi, shuō duì de shàng cái fàng tāmen jìnqù. Zhè fēnmíng shì ge quāntào, kě Mò Tǐngzhī yìdiǎnr yě bù jǐnzhāng, zuǒ sī yòu xiǎng zhīhòu, cóngróng de duìchūle xià yí jù, guānyuán zhǐdé kāi mén qǐng tāmen jìn guān. Dàole Yuán cháo de shǒudū, yí wèi dàchén xiǎng ràng tā diūliǎn, qǐng tā kàn yì fú huàzhe xiǎoniǎo zhàn zài zhúzi shang de huà. Mò Tǐngzhī zǒu shàngqián qù, yíxiàzi bǎ huà nòngpò le. Dàjiā dōu xiàle yí tiào, yǐwéi tā màofànle zhǔrén. Tā què zhènjìng de jiěshì shuō: "Gǔrén chángcháng yòng zhúzi bǐyù jūnzǐ, xiǎoniǎo què shì xiǎorén. Nándào néng ràng xiǎorén zhàn zài jūnzǐ tóu shang bùchéng? Wǒ shì tì dàren bǎ xiǎorén chúdiào a!" Tā shuō de lǐzhí-qìzhuàng, nà wèi dàchén wúhuà-kěshuō, zhǐhǎo xiàng tā dàoqiàn. Hòulái, Yuán cháo de guówáng yě bèi tā de cáinéng dǎdòng, chēngzàn tā shì "liǎng guó dì yī cáizǐ". Mò Tǐngzhī jì méiyǒu ràng guójiā diūliǎn, yòu ràng duìfāng zhēnxīn pèifú, Dà Yuè de shēngyù yě yīncǐ tígāo le. Zhídào jīntiān, Yuènánrén hái chángcháng jiǎngqǐ tā de gùshi. Zhège gùshi gàosu wǒmen, yí ge chūsè de wàijiāojiā bùjǐn yào yǒu zhìhuì, hái yào yǒu yǒngqì. Guójiā jíshǐ hěn xiǎo, zhǐyào yǒu zhèyàng de réncái, yě bú huì rèn rén qīfu.',
+    vn:'(Nhan đề: Mạc Đĩnh Chi — người giỏi ngoại giao) Mạc Đĩnh Chi là bậc tài tử (vị trạng nguyên) nổi tiếng thời nhà Trần của Việt Nam. Ông người nhỏ bé nhưng hiểu biết rộng, có dũng có mưu. Thế kỷ XIV, ông được triều đình cử sang nhà Nguyên. Khi ấy nhà Nguyên thực lực hùng hậu, xưa nay vẫn ngang ngược, thường cố tình làm khó người các nước nhỏ cử sang. Về chuyến đi sứ này của ông, có rất nhiều câu chuyện được lưu truyền. Tương truyền khi đoàn của Mạc Đĩnh Chi đến biên giới thì trời đã tối, viên quan giữ ải không chịu mở cửa, lại ra một vế đối, nói đối được thì mới cho vào. Đây rõ ràng là một cái bẫy, nhưng Mạc Đĩnh Chi không hề căng thẳng, nghĩ tới nghĩ lui rồi ung dung đối lại câu sau, viên quan đành mở cửa mời họ qua ải. Đến kinh đô nhà Nguyên, một vị đại thần muốn làm ông mất mặt, mời ông xem một bức tranh vẽ con chim nhỏ đậu trên cành trúc. Mạc Đĩnh Chi bước lên, lập tức làm rách bức tranh. Mọi người giật mình, cho rằng ông đã xúc phạm chủ nhà. Ông lại bình tĩnh giải thích: "Người xưa thường ví cây trúc với người quân tử, còn chim nhỏ là kẻ tiểu nhân. Lẽ nào lại để kẻ tiểu nhân đứng trên đầu người quân tử sao? Tôi xé tranh là thay ngài trừ bỏ kẻ tiểu nhân đấy!" Ông nói đầy lý lẽ, vị đại thần kia không còn gì để nói, đành phải xin lỗi ông. Về sau, vua nhà Nguyên cũng cảm phục tài năng của ông, khen ông là "tài tử số một của hai nước" (Lưỡng quốc Trạng nguyên). Mạc Đĩnh Chi vừa không để đất nước mất mặt, vừa khiến đối phương thật lòng khâm phục, danh tiếng của Đại Việt nhờ đó cũng được nâng cao. Cho đến tận hôm nay, người Việt Nam vẫn thường kể lại câu chuyện về ông. Câu chuyện này cho chúng ta thấy, một nhà ngoại giao xuất sắc không chỉ cần có trí tuệ mà còn phải có lòng dũng cảm. Đất nước dù nhỏ, nhưng chỉ cần có những nhân tài như vậy thì cũng sẽ không để ai bắt nạt.'
   }
 };
 
@@ -1803,181 +1739,141 @@ var writingData = {
 // LUYỆN NÓI — đúng bảng 练习5 của sách: 根据提示，简述课文主要内容
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Đây là bảng bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b> (dựa vào gợi ý, trình bày ngắn gọn nội dung chính của bài khoá). Mỗi câu hỏi là một dòng của bảng, cột gợi ý giữ nguyên như sách. Bấm loa nghe câu hỏi, <b>tự ghi âm câu trả lời trước</b> rồi mới mở câu mẫu. Cố dùng đúng các từ trong gợi ý.',
-  questions:[
-    {q_zh:'赵王因为什么事情发愁？',
-     q_vn:'Triệu vương lo lắng vì chuyện gì?',
-     hint:'和氏璧：答应……／不答应……',
-     sample:'秦王想用十五座城换赵国的和氏璧，赵王左右为难，不知如何答复秦王：答应吧，怕上当受骗，给了和氏璧却拿不到城；不答应吧，又怕得罪秦国。于是他赶忙召集大臣商议对策。',
-     sample_vn:'Vua Tần muốn dùng mười lăm toà thành đổi ngọc họ Hoà của nước Triệu, Triệu vương tiến thoái lưỡng nan, không biết trả lời vua Tần thế nào: đồng ý thì sợ mắc lừa, đưa ngọc rồi mà không lấy được thành; không đồng ý thì lại sợ đắc tội với nước Tần. Thế là ông vội vàng triệu tập đại thần bàn đối sách.',
-     note:'Hai vế đối lập đúng gợi ý: 答应吧，怕……；不答应吧，又怕…… — giữ nguyên khung này là trả lời trọn ý.'},
-    {q_zh:'赵王派谁去秦国磋商？为什么？',
-     q_vn:'Triệu vương cử ai sang nước Tần bàn bạc? Vì sao?',
-     hint:'①见多识广，足智多谋 ②蔺相如的分析：秦国……赵国……',
-     sample:'赵王派蔺相如去秦国磋商。一是因为蔺相如见多识广，足智多谋；二是因为他的分析很有道理：秦强赵弱，凭实力，赵国不答应不行。秦国用十五座城换一块玉，也算慷慨，如果赵国不答应，过错在赵国；如果赵国送去了璧，秦国却不交城，那么错就在秦国了。',
-     sample_vn:'Triệu vương cử Lạn Tương Như sang Tần bàn bạc. Một là vì Lạn Tương Như hiểu biết rộng, lắm mưu nhiều kế; hai là vì phân tích của ông rất có lý: Tần mạnh Triệu yếu, xét thực lực thì Triệu không đồng ý không được. Tần dùng mười lăm toà thành đổi một miếng ngọc cũng coi như hào phóng, nếu Triệu không đồng ý thì lỗi ở Triệu; nếu Triệu gửi ngọc đi mà Tần không giao thành thì lỗi lại ở Tần.',
-     note:'Hai lý do → 一是……二是……; phần phân tích dùng cặp 如果……，过错在……；如果……，那么错就在…… cho rõ lập luận.'},
-    {q_zh:'蔺相如出使秦国的经过',
-     q_vn:'Diễn biến chuyến đi sứ nước Tần của Lạn Tương Như',
-     hint:'①献玉 ②拿回玉 ③发誓 ④请秦王举行仪式 ⑤把玉偷偷送回赵国 ⑥跟秦王辩论',
-     sample:'蔺相如到了秦国，先把玉献给秦王。秦王左看右看，爱不释手，却不提换城的事。蔺相如说璧有小毛病，把玉拿了回来，还发誓说，如果秦王逼他，就把头和璧一起撞碎在柱子上。接着，他请秦王像赵王一样举行隆重的仪式。回到住处以后，他派人把玉偷偷送回了赵国。最后，他跟秦王辩论，理直气壮地说：秦王真想要璧，就先把十五座城割让给赵国。秦王只得装出一副高姿态，再也没有提过以城换玉的事。',
-     sample_vn:'Lạn Tương Như đến nước Tần, trước tiên dâng ngọc cho vua Tần. Vua Tần ngắm tới ngắm lui, mê không rời tay nhưng không nhắc chuyện đổi thành. Lạn Tương Như nói ngọc có tì vết nhỏ, lấy lại được ngọc, còn thề rằng nếu vua Tần ép thì sẽ đập đầu mình cùng viên ngọc vỡ nát vào cột. Tiếp đó, ông xin vua Tần cử hành nghi lễ long trọng giống Triệu vương. Về đến chỗ ở, ông sai người lén đưa ngọc về nước Triệu. Cuối cùng, ông tranh luận với vua Tần, dõng dạc nói: vua Tần thật muốn ngọc thì hãy cắt mười lăm toà thành cho Triệu trước. Vua Tần đành làm ra vẻ rộng lượng, và không bao giờ nhắc lại chuyện lấy thành đổi ngọc nữa.',
-     note:'Sáu bước ①–⑥ → nối bằng 先 / 接着 / 回到住处以后 / 最后 cho mạch lạc; lồng 左看右看 (điểm ngữ pháp 1).'}
+  intro: 'Đây là bảng bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b> (dựa vào gợi ý, trình bày ngắn gọn nội dung chính của bài khoá). Mỗi câu hỏi là một dòng của bảng, cột gợi ý giữ nguyên như sách. Bấm loa nghe câu hỏi, <b>tự ghi âm câu trả lời trước</b> rồi mới mở câu mẫu. Cố dùng đúng các từ trong gợi ý.',
+  questions: [
+    {q_zh:'赵王因为什么事情发愁？',q_vn:'Triệu vương lo lắng vì chuyện gì?',hint:'和氏璧：答应……／不答应……',sample:'秦王想用十五座城换赵国的和氏璧，赵王左右为难，不知如何答复秦王：答应吧，怕上当受骗，给了和氏璧却拿不到城；不答应吧，又怕得罪秦国。于是他赶忙召集大臣商议对策。',sample_vn:'Vua Tần muốn dùng mười lăm toà thành đổi ngọc họ Hoà của nước Triệu, Triệu vương tiến thoái lưỡng nan, không biết trả lời vua Tần thế nào: đồng ý thì sợ mắc lừa, đưa ngọc rồi mà không lấy được thành; không đồng ý thì lại sợ đắc tội với nước Tần. Thế là ông vội vàng triệu tập đại thần bàn đối sách.',note:'Hai vế đối lập đúng gợi ý: 答应吧，怕……；不答应吧，又怕…… — giữ nguyên khung này là trả lời trọn ý.'},
+    {q_zh:'赵王派谁去秦国磋商？为什么？',q_vn:'Triệu vương cử ai sang nước Tần bàn bạc? Vì sao?',hint:'①见多识广，足智多谋 ②蔺相如的分析：秦国……赵国……',sample:'赵王派蔺相如去秦国磋商。一是因为蔺相如见多识广，有勇有谋；二是因为他的分析很有道理：秦强赵弱，凭实力，赵国不答应不行。秦国用十五座城换一块玉，也算慷慨，如果赵国不答应，过错在赵国；如果赵国送去了和氏璧，秦国却不交城，那么错就在秦国了。',sample_vn:'Triệu vương cử Lạn Tương Như sang Tần bàn bạc. Một là vì Lạn Tương Như hiểu biết rộng, có dũng có mưu; hai là vì phân tích của ông rất có lý: Tần mạnh Triệu yếu, xét thực lực thì Triệu không đồng ý không được. Tần dùng mười lăm toà thành đổi một miếng ngọc cũng coi như hào phóng, nếu Triệu không đồng ý thì lỗi ở Triệu; nếu Triệu gửi ngọc đi mà Tần không giao thành thì lỗi lại ở Tần.',note:'Hai lý do → 一是……二是……; phần phân tích dùng cặp 如果……，过错在……；如果……，那么错就在…… cho rõ lập luận.'},
+    {q_zh:'蔺相如出使秦国的经过',q_vn:'Diễn biến chuyến đi sứ nước Tần của Lạn Tương Như',hint:'①献玉 ②拿回玉 ③发誓 ④请秦王举行仪式 ⑤把玉偷偷送回赵国 ⑥跟秦王辩论',sample:'蔺相如到了秦国，先把玉献给秦王。秦王左看右看，爱不释手，却不提换城的事。蔺相如说璧有小毛病，把玉拿了回来，还发誓说，如果秦王逼他，就把头和璧一起撞碎在柱子上。接着，他请秦王像赵王一样举行隆重的仪式。回到住处以后，他派人把玉偷偷送回了赵国。最后，他跟秦王辩论，理直气壮地说：秦王真想要和氏璧，就先把十五座城割让给赵国。秦王只得装出一副高姿态，再也没有提过以城换玉的事。',sample_vn:'Lạn Tương Như đến nước Tần, trước tiên dâng ngọc cho vua Tần. Vua Tần ngắm tới ngắm lui, mê không rời tay nhưng không nhắc chuyện đổi thành. Lạn Tương Như nói ngọc có tì vết nhỏ, lấy lại được ngọc, còn thề rằng nếu vua Tần ép thì sẽ đập đầu mình cùng viên ngọc vỡ nát vào cột. Tiếp đó, ông xin vua Tần cử hành nghi lễ long trọng giống Triệu vương. Về đến chỗ ở, ông sai người lén đưa ngọc về nước Triệu. Cuối cùng, ông tranh luận với vua Tần, dõng dạc nói: vua Tần thật muốn ngọc thì hãy cắt mười lăm toà thành cho Triệu trước. Vua Tần đành làm ra vẻ rộng lượng, và không bao giờ nhắc lại chuyện lấy thành đổi ngọc nữa.',note:'Sáu bước ①–⑥ → nối bằng 先 / 接着 / 回到住处以后 / 最后 cho mạch lạc; lồng 左看右看 (điểm ngữ pháp 1).'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — 听力 (sách HSK 6 không có sách bài tập nghe)
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — câu tự soạn (sách HSK 6 không có sách bài tập nghe), mỗi câu một tình huống mới
+// ══════════════════════════════════════════
 var listenExamData = {
-  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. ' +
-         'Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
-  source: 'Soạn theo dạng đề HSK 6 · chủ đề bài 27',
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 27',
   items: [
-    {n:1,
-     lines:[{sp:'女',zh:'你怎么左一趟右一趟地往图书馆跑？'},
-            {sp:'男',zh:'借的书今天到期了，得按时归还。可我两次都忘了带借书证，只好再跑一趟。'}],
-     q:'男的为什么又要去图书馆？',qvn:'Vì sao người đàn ông lại phải đến thư viện?',
-     opts:['要按时还书','想借一本新书','去找同学','图书馆有活动'],ans:0,
-     why:'借的书今天到期了，得按时归还 → phải trả sách đúng hạn; quên thẻ nên phải chạy thêm một chuyến.',
-     words:['归还']},
-
-    {n:2,
-     lines:[{sp:'男',zh:'听说你们公司要跟那家外国企业合作了？'},
-            {sp:'女',zh:'还没定呢。双方磋商了三个月，对方提的条件太高，老板到现在还没答复他们。'}],
-     q:'关于合作，可以知道什么？',qvn:'Về việc hợp tác, có thể biết điều gì?',
-     opts:['已经签了合同','还没有最后确定','对方放弃了','老板很满意'],ans:1,
-     why:'还没定呢……老板到现在还没答复他们 → chưa quyết định cuối cùng.',
-     words:['磋商','答复']},
-
-    {n:3,
-     lines:[{sp:'女',zh:'小王怎么不跟小李说话了？'},
-            {sp:'男',zh:'上次小李把小王的秘密泄露给了别人，从那以后，两个人之间就有了隔阂。'}],
-     q:'小王为什么不理小李？',qvn:'Vì sao Tiểu Vương không để ý đến Tiểu Lý?',
-     opts:['小李撒谎了','小李冒犯了老师','小李泄露了他的秘密','小李没有兑现承诺'],ans:2,
-     why:'小李把小王的秘密泄露给了别人 → Tiểu Lý làm lộ bí mật của Tiểu Vương.',
-     words:['泄露','隔阂']},
-
-    {n:4,
-     lines:[{sp:'男',zh:'明天升旗仪式上的发言你准备好了吗？'},
-            {sp:'女',zh:'准备好了。能代表全班发言，我感到特别荣幸，就是有点儿紧张。'},
-            {sp:'男',zh:'别怕，到时候保持镇静就行。'}],
-     q:'女的现在心情怎么样？',qvn:'Tâm trạng người phụ nữ bây giờ thế nào?',
-     opts:['很生气','很失望','很轻松','又荣幸又紧张'],ans:3,
-     why:'我感到特别荣幸，就是有点儿紧张 → vừa vinh dự vừa hơi căng thẳng.',
-     words:['仪式','荣幸','镇静']},
-
-    {n:5,
-     lines:[{sp:'女',zh:'你觉得新来的经理怎么样？'},
-            {sp:'男',zh:'挺慷慨的，第一个月就给大家发了奖金。不过他说过要改善办公环境，到现在还没兑现。'}],
-     q:'男的对新经理有什么不满？',qvn:'Người đàn ông không hài lòng điều gì ở giám đốc mới?',
-     opts:['太霸道了','说过的事还没兑现','不给大家发奖金','常常撒谎'],ans:1,
-     why:'他说过要改善办公环境，到现在还没兑现 → lời hứa cải thiện môi trường làm việc chưa thực hiện; C sai vì ông ấy đã phát thưởng.',
-     words:['慷慨','兑现']},
-
-    {n:6,
-     lines:[{sp:'男',zh:'你妹妹怎么哭了？'},
-            {sp:'女',zh:'她非说是我弄坏了她的玩具，其实是她自己摔坏的。我好好跟她讲道理，她还在那儿无理取闹。'}],
-     q:'女的认为妹妹怎么样？',qvn:'Người phụ nữ cho rằng em gái thế nào?',
-     opts:['很懂事','很镇静','在无理取闹','说得很在理'],ans:2,
-     why:'她还在那儿无理取闹 → em gái vô cớ làm ầm lên (đồ chơi thực ra do em tự làm vỡ).',
-     words:['无理取闹']},
-
-    {n:7,
-     lines:[{sp:'女',zh:'蔺相如是战国时期赵国有名的大臣。秦王想用十五座城换赵国的和氏璧，蔺相如带着璧到了秦国，发现秦王根本没有交城的诚意。他左思右想，想出了一个好办法，既没有得罪秦国，又把和氏璧完好地带回了赵国。后来，人们就用“完璧归赵”来比喻把原物完好地归还给主人。'}],
-     q:'“完璧归赵”现在比喻什么？',qvn:'"Hoàn bích quy Triệu" ngày nay dùng để ví điều gì?',
-     opts:['把东西完好地还给主人','用城换玉','弱国战胜强国','做事左右为难'],ans:0,
-     why:'人们就用“完璧归赵”来比喻把原物完好地归还给主人 → trả lại đồ vật nguyên vẹn cho chủ.',
-     words:['大臣','得罪','归还']},
-
-    {n:8,
-     lines:[{sp:'男',zh:'在外交中，弱国面对实力雄厚的强国，常常处于被动。但是历史告诉我们，弱国并不是只能服从。只要外交家能从容应对，既不冒犯对方，又理直气壮地维护本国的利益，就有可能让对方无话可说，最终避免争端。'}],
-     q:'说话人认为弱国的外交家应该怎么做？',qvn:'Người nói cho rằng nhà ngoại giao của nước yếu nên làm thế nào?',
-     opts:['完全服从强国','跟强国对抗','请求别国帮助','从容应对，维护本国利益'],ans:3,
-     why:'只要外交家能从容应对，既不冒犯对方，又理直气壮地维护本国的利益 → ung dung ứng phó, bảo vệ lợi ích nước mình; A bị phủ định (并不是只能服从).',
-     words:['实力','雄厚','从容','冒犯','理直气壮','争端']}
+    {
+      n: 1,
+      lines: [
+        {sp:'男',zh:'我左问右问，他就是不愿意说出真相。'},
+        {sp:'女',zh:'他可能有自己的难处，过几天再问吧。'}
+      ],
+      q: '关于那个人，可以知道什么？',
+      qvn: 'Về người kia, có thể biết điều gì?',
+      opts: ['不愿意说实话','已经说了真相','生病了','忘了这件事'],
+      ans: 0,
+      why: '左问右问 = hỏi đi hỏi lại; 就是不愿意说出真相 → anh ta không chịu nói thật.',
+      words: []
+    },
+    {
+      n: 2,
+      lines: [
+        {sp:'男',zh:'听说你们公司要跟那家外国企业合作了？'},
+        {sp:'女',zh:'双方磋商了三个月，对方条件太高，老板到现在还没答复他们。'}
+      ],
+      q: '关于合作，可以知道什么？',
+      qvn: 'Về việc hợp tác, có thể biết điều gì?',
+      opts: ['已经开始合作了','对方放弃了','还没有最后确定','老板很满意'],
+      ans: 2,
+      why: '磋商了三个月 + 老板到现在还没答复 → chưa quyết định cuối cùng.',
+      words: ['磋商','答复']
+    },
+    {
+      n: 3,
+      lines: [
+        {sp:'女',zh:'小王怎么不跟小李说话了？'},
+        {sp:'男',zh:'小李把小王要出国的事泄露给了经理，两个人之间就有了隔阂。'}
+      ],
+      q: '两个人之间为什么有了隔阂？',
+      qvn: 'Vì sao giữa hai người có khoảng cách?',
+      opts: ['小李撒谎了','小李把他的事说出去了','小李要出国','小李得罪了经理'],
+      ans: 1,
+      why: '泄露给了经理 → Tiểu Lý làm lộ chuyện Tiểu Vương sắp ra nước ngoài; 隔阂 = khoảng cách, bất hoà.',
+      words: ['泄露','隔阂']
+    },
+    {
+      n: 4,
+      lines: [
+        {sp:'女',zh:'你觉得新来的经理怎么样？'},
+        {sp:'男',zh:'挺慷慨的，第一个月就给大家发了奖金。不过他说要改善办公环境，到现在还没兑现。'}
+      ],
+      q: '男的对新经理有什么不满？',
+      qvn: 'Người đàn ông không hài lòng điều gì ở giám đốc mới?',
+      opts: ['太霸道了','不给大家发奖金','常常撒谎','说过的事还没做到'],
+      ans: 3,
+      why: '到现在还没兑现 → lời hứa chưa thực hiện; ông ấy đã phát thưởng nên B sai.',
+      words: ['慷慨','兑现']
+    },
+    {
+      n: 5,
+      lines: [
+        {sp:'男',zh:'那位顾客怎么在店里大喊大叫？'},
+        {sp:'女',zh:'他的手机是自己摔坏的，非要我们免费换新的，这不是无理取闹吗？'}
+      ],
+      q: '女的认为那位顾客怎么样？',
+      qvn: 'Người phụ nữ cho rằng vị khách đó thế nào?',
+      opts: ['在无理取闹','说得很在理','手机质量有问题','态度很好'],
+      ans: 0,
+      why: '这不是无理取闹吗? (phản vấn) = đây chính là gây sự vô cớ — điện thoại do anh ta tự làm rơi hỏng.',
+      words: ['无理取闹']
+    },
+    {
+      n: 6,
+      lines: [
+        {sp:'男',zh:'小林，我们刚才还在说你呢，你就来了！'},
+        {sp:'女',zh:'真是说曹操，曹操到啊。你们说我什么呢？'}
+      ],
+      q: '女的说“说曹操，曹操到”是什么意思？',
+      qvn: 'Người phụ nữ nói "nhắc Tào Tháo, Tào Tháo đến" nghĩa là gì?',
+      opts: ['她认识曹操','她来晚了','大家刚说到她，她就来了','她想听大家讲故事'],
+      ans: 2,
+      why: 'Câu tục ngữ được dẫn ra khi vừa nhắc đến ai thì người đó xuất hiện.',
+      words: []
+    },
+    {
+      n: 7,
+      lines: [
+        {sp:'女',zh:'这块玉是奶奶留给我的，我一直舍不得戴。'},
+        {sp:'男',zh:'那你可要好好保管，丢了就再也找不回来了。'}
+      ],
+      q: '男的提醒女的什么？',
+      qvn: 'Người đàn ông nhắc người phụ nữ điều gì?',
+      opts: ['多戴戴这块玉','把玉送给别人','去问问奶奶','好好保管这块玉'],
+      ans: 3,
+      why: '那你可要好好保管 → giữ gìn cẩn thận (保管 ôn bài 21).',
+      words: ['玉']
+    }
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
+// ══════════════════════════════════════════
 var situationData = {
-  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
-         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn trách em đã hứa mời đi ăn mà mãi chưa thấy đâu.',
-     a:{sp:'Bạn',zh:'你不是说考完试就请我吃饭吗？怎么一直没动静？',vn:'Cậu chẳng bảo thi xong sẽ mời tớ đi ăn à? Sao mãi chẳng thấy động tĩnh gì?'},
-     need:['Dùng 兑现'],
-     sample:'别着急，我说话算话，这个周末就兑现承诺，请你吃火锅。',
-     samplePy:'Bié zháojí, wǒ shuōhuà suànhuà, zhège zhōumò jiù duìxiàn chéngnuò, qǐng nǐ chī huǒguō.',
-     sampleVn:'Đừng sốt ruột, tớ nói là làm, cuối tuần này sẽ thực hiện lời hứa, mời cậu ăn lẩu.',
-     tip:'兑现 + 承诺 / 诺言; 说话算话 = nói lời giữ lời.'},
-
-    {scene:'Mẹ hỏi sao hôm nay em về nhà muộn thế.',
-     a:{sp:'Mẹ',zh:'怎么这么晚才回来？',vn:'Sao muộn thế này mới về?'},
-     need:['Dùng 左……右……'],
-     sample:'妈，公交车我左等右等都不来，最后只好走回来了。',
-     samplePy:'Mā, gōngjiāochē wǒ zuǒ děng yòu děng dōu bù lái, zuìhòu zhǐhǎo zǒu huílái le.',
-     sampleVn:'Mẹ ơi, con đợi mãi đợi mãi mà xe buýt không đến, cuối cùng đành đi bộ về.',
-     tip:'左 + V + 右 + V (左等右等, 左找右找) nhấn hành động lặp lại nhiều lần mà không có kết quả.'},
-
-    {scene:'Bạn cùng lớp nghi em đã kể chuyện riêng của bạn ấy cho người khác.',
-     a:{sp:'Bạn',zh:'是不是你把我的事告诉别人了？',vn:'Có phải cậu đem chuyện của tớ kể cho người khác không?'},
-     need:['Dùng 不成','Dùng 泄露'],
-     sample:'咱们是这么多年的好朋友，我还会泄露你的秘密不成？肯定是别人说出去的。',
-     samplePy:'Zánmen shì zhème duō nián de hǎo péngyou, wǒ hái huì xièlòu nǐ de mìmì bùchéng? Kěndìng shì biérén shuō chūqù de.',
-     sampleVn:'Chúng mình là bạn thân bao nhiêu năm rồi, lẽ nào tớ lại đi tiết lộ bí mật của cậu? Chắc chắn là người khác nói ra.',
-     tip:'还会……不成? = lẽ nào lại … sao? (phản vấn, ý khẳng định: tớ không làm thế).'},
-
-    {scene:'Thầy chủ nhiệm mời em thay mặt lớp phát biểu trong lễ khai giảng.',
-     a:{sp:'Thầy giáo',zh:'学校想请你代表全班在开学仪式上发言，你愿意吗？',vn:'Nhà trường muốn mời em thay mặt cả lớp phát biểu trong lễ khai giảng, em có đồng ý không?'},
-     need:['Dùng 荣幸'],
-     sample:'能代表全班发言是我的荣幸，我一定好好准备，不辜负大家的期望。',
-     samplePy:'Néng dàibiǎo quán bān fāyán shì wǒ de róngxìng, wǒ yídìng hǎohāo zhǔnbèi, bù gūfù dàjiā de qīwàng.',
-     sampleVn:'Được thay mặt cả lớp phát biểu là vinh dự của em, em nhất định sẽ chuẩn bị thật tốt, không phụ sự kỳ vọng của mọi người.',
-     tip:'能……是我的荣幸 — lời nhận nhiệm vụ lịch sự; 辜负期望 (bài 3) = phụ kỳ vọng.'},
-
-    {scene:'Bạn tức giận vì trưởng nhóm độc đoán, định đi cãi nhau với cậu ấy.',
-     a:{sp:'Bạn',zh:'组长太霸道了，什么都他说了算，我要去找他吵一架！',vn:'Nhóm trưởng độc đoán quá, việc gì cũng cậu ta quyết, tớ phải đi cãi cho ra nhẽ!'},
-     need:['Dùng 镇静 hoặc 理直气壮'],
-     sample:'你先镇静下来。只要你有道理，就理直气壮地跟他说，没必要吵架。',
-     samplePy:'Nǐ xiān zhènjìng xiàlái. Zhǐyào nǐ yǒu dàolǐ, jiù lǐzhí-qìzhuàng de gēn tā shuō, méi bìyào chǎojià.',
-     sampleVn:'Cậu bình tĩnh lại đã. Chỉ cần cậu có lý thì cứ đường hoàng nói với cậu ấy, không cần phải cãi nhau.',
-     tip:'镇静下来 = bình tĩnh lại; 理直气壮地 + V = đường hoàng, dõng dạc làm gì — giống cách 蔺相如 đối đáp với vua Tần.'}
+    {scene:'Bạn trách em đã hứa mời đi ăn mà mãi chưa thấy đâu.',a:{sp:'Bạn',zh:'你不是说考完试就请我吃饭吗？怎么一直没动静？',vn:'Cậu chẳng bảo thi xong sẽ mời tớ đi ăn à? Sao mãi chẳng thấy động tĩnh gì?'},need:['Dùng 兑现'],sample:'别着急，我说话算话，这个周末就兑现承诺，请你吃火锅。',samplePy:'Bié zháojí, wǒ shuōhuà suànhuà, zhège zhōumò jiù duìxiàn chéngnuò, qǐng nǐ chī huǒguō.',sampleVn:'Đừng sốt ruột, tớ nói là làm, cuối tuần này sẽ thực hiện lời hứa, mời cậu ăn lẩu.',tip:'兑现 + 承诺 = thực hiện lời hứa; 说话算话 = nói lời giữ lời.'},
+    {scene:'Bạn cùng lớp nghi em đã kể chuyện riêng của bạn ấy cho người khác.',a:{sp:'Bạn',zh:'是不是你把我的事告诉别人了？',vn:'Có phải cậu đem chuyện của tớ kể cho người khác không?'},need:['Dùng 不成','Dùng 泄露'],sample:'我们认识这么多年了，我还会泄露你的秘密不成？肯定是别人说出去的。',samplePy:'Wǒmen rènshi zhème duō nián le, wǒ hái huì xièlòu nǐ de mìmì bùchéng? Kěndìng shì biérén shuō chūqu de.',sampleVn:'Chúng mình quen nhau bao nhiêu năm rồi, lẽ nào tớ lại đi tiết lộ bí mật của cậu? Chắc chắn là người khác nói ra.',tip:'还会……不成? = lẽ nào lại … sao? (phản vấn, ý thật: tớ không làm thế).'},
+    {scene:'Thầy chủ nhiệm mời em thay mặt lớp phát biểu trong lễ khai giảng.',a:{sp:'Thầy giáo',zh:'学校想请你代表全班在开学仪式上发言，你愿意吗？',vn:'Nhà trường muốn mời em thay mặt cả lớp phát biểu trong lễ khai giảng, em có đồng ý không?'},need:['Dùng 荣幸'],sample:'能代表全班发言是我的荣幸，我一定好好准备，不辜负大家的期望。',samplePy:'Néng dàibiǎo quán bān fāyán shì wǒ de róngxìng, wǒ yídìng hǎohāo zhǔnbèi, bù gūfù dàjiā de qīwàng.',sampleVn:'Được thay mặt cả lớp phát biểu là vinh dự của em, em nhất định sẽ chuẩn bị thật tốt, không phụ sự kỳ vọng của mọi người.',tip:'能……是我的荣幸 — lời nhận nhiệm vụ lịch sự; 辜负期望 (bài 3) = phụ kỳ vọng.'},
+    {scene:'Bạn tức giận vì nhóm trưởng độc đoán, định đi tìm cậu ấy cãi cho ra nhẽ.',a:{sp:'Bạn',zh:'组长太霸道了，什么都他说了算，我要去找他说清楚！',vn:'Nhóm trưởng độc đoán quá, việc gì cũng cậu ta quyết, tớ phải đi nói cho rõ!'},need:['Dùng 镇静','Dùng 理直气壮'],sample:'你先镇静下来。只要你有道理，就理直气壮地跟他说，没必要吵起来。',samplePy:'Nǐ xiān zhènjìng xiàlai. Zhǐyào nǐ yǒu dàolǐ, jiù lǐzhí-qìzhuàng de gēn tā shuō, méi bìyào chǎo qǐlai.',sampleVn:'Cậu bình tĩnh lại đã. Chỉ cần cậu có lý thì cứ đường hoàng nói với cậu ấy, không cần phải cãi nhau.',tip:'镇静下来 = bình tĩnh lại; 理直气壮地 + V = đường hoàng, dõng dạc làm gì.'},
+    {scene:'Bạn đã hẹn nghỉ hè cùng em đi một nơi rất đẹp, nhưng giờ lại nói xem ảnh trên mạng là đủ rồi.',a:{sp:'Bạn',zh:'听说那个地方特别美，不过网上看看照片就够了，不用专门去了吧。',vn:'Nghe nói chỗ đó đẹp lắm, nhưng lên mạng xem ảnh là đủ rồi, khỏi phải đi chuyên một chuyến nhỉ.'},need:['Dẫn một câu tục ngữ (老人们常说…… / 俗话说……)','Thuyết phục bạn vẫn đi'],sample:'老人们常说百闻不如一见，照片看得再多，也不如自己去一趟。我们还是一起去吧！',samplePy:'Lǎorénmen cháng shuō bǎi wén bùrú yí jiàn, zhàopiàn kàn de zài duō, yě bùrú zìjǐ qù yí tàng. Wǒmen háishi yìqǐ qù ba!',sampleVn:'Người già vẫn nói "trăm nghe không bằng một thấy", xem ảnh nhiều đến mấy cũng không bằng tự mình đi một chuyến. Mình cứ cùng nhau đi đi!',tip:'Dẫn tục ngữ trước rồi giải thích bằng lời của mình — lời khuyên nghe có sức nặng hơn; 再……也…… = dù … đến mấy cũng ….'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 // 🎯 NÓI SAO CHO HAY — 得体 / 语体
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 var registerData = {
-  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
-         'HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
   items: [
-    {scene:'Công ty viết thư trả lời một đối tác nước ngoài.',
-     a:'贵公司的来信已收到，我方将尽快给予答复。',b:'你们的信我们看到了，回头再说吧。',better:'a',
-     why:'Thư công vụ cần trang trọng: 贵公司, 我方, 给予答复. Câu b (回头再说吧) quá tuỳ tiện, thiếu tôn trọng đối tác.'},
-
-    {scene:'Nhắn tin trả lời bạn thân rủ đi chơi.',
-     a:'此事本人需慎重考虑，暂时无法答复。',b:'这事我得想想，明天告诉你哈。',better:'b',
-     why:'Với bạn thân dùng lời tự nhiên. Câu a (此事, 本人, 暂时无法答复) như công văn, nghe lạnh lùng xa cách.'},
-
-    {scene:'Phát thanh viên đọc bản tin thời sự.',
-     a:'两国外长就边境问题进行了友好磋商。',b:'两国外长坐在一起聊了聊边境那点儿事。',better:'a',
-     why:'Bản tin dùng văn phong báo chí: 就……进行磋商. Câu b (聊了聊, 那点儿事) là khẩu ngữ, hạ thấp tính nghiêm túc của sự kiện.'},
-
-    {scene:'Xin lỗi ông hàng xóm vì tối qua cả nhà làm ồn.',
-     a:'爷爷，昨晚我们太吵了，真对不起，以后一定注意。',b:'如有冒犯，敬请海涵，此类情况今后将杜绝发生。',better:'a',
-     why:'Nói trực tiếp với người già hàng xóm cần chân thành, gần gũi. Câu b (如有冒犯，敬请海涵, 杜绝发生) như văn bản chính thức, gượng gạo.'},
-
-    {scene:'Phát biểu mở đầu tại lễ tốt nghiệp.',
-     a:'今天能站在这里代表全体毕业生发言，我深感荣幸。',b:'今天让我上来说两句，我还挺美的。',better:'a',
-     why:'Phát biểu trong nghi lễ cần trang trọng: 代表……发言，深感荣幸. Câu b (说两句, 挺美的) quá tuỳ tiện.'},
-
-    {scene:'Đòi em trai trả lại đồ chơi đã mượn.',
-     a:'请你将此玩具归还于我。',b:'把我的玩具还给我，快点儿！',better:'b',
-     why:'Nói với em nhỏ trong nhà dùng khẩu ngữ đơn giản. Câu a (将……归还于我) là văn viết cổ như lời Lạn Tương Như nói với vua Tần — dùng ở đây nghe buồn cười.'}
+    {scene:'Em viết bài văn nghị luận "Học ngoại ngữ cần kiên trì".',a:'学语言不能着急，只要每天坚持就一定能进步。',b:'学语言不能着急，“不怕慢，就怕站”，只要每天坚持就一定能进步。',better:'b',why:'Bài văn nghị luận dẫn một câu tục ngữ đúng chỗ làm lập luận sinh động, thuyết phục hơn. Câu a đúng nhưng khô.'},
+    {scene:'Bạn lo lắng vì chuyện mình thi trượt đã bị cả lớp biết.',a:'真是好事不出门，坏事传千里，这下大家都知道了。',b:'别担心，大家很快就会忘的，下次考好就行了。',better:'b',why:'Dẫn tục ngữ không đúng lúc còn tệ hơn không dẫn: câu a như "đổ thêm dầu vào lửa". Bạn đang buồn cần lời an ủi như câu b.'},
+    {scene:'Công ty viết thư trả lời một đối tác nước ngoài.',a:'贵公司的来信已收到，我方将尽快给予答复。',b:'你们的信我们看到了，回头再说吧。',better:'a',why:'Thư công vụ cần trang trọng: 贵公司, 我方, 给予答复. Câu b (回头再说吧) quá tuỳ tiện, thiếu tôn trọng đối tác.'},
+    {scene:'Xin lỗi ông hàng xóm vì tối qua cả nhà làm ồn.',a:'如有冒犯，请您一定原谅，以后我方一定注意。',b:'爷爷，昨天晚上我们太吵了，真是对不起，以后一定注意。',better:'b',why:'Nói trực tiếp với ông hàng xóm cần chân thành, gần gũi. Câu a (如有冒犯, 我方) như văn bản chính thức, nghe gượng gạo.'},
+    {scene:'Phát thanh viên đọc bản tin thời sự.',a:'两国外长就边境问题进行了友好磋商。',b:'两国外长坐在一起聊了聊边境那点儿事。',better:'a',why:'Bản tin dùng văn phong báo chí: 就……进行磋商. Câu b (聊了聊, 那点儿事) là khẩu ngữ, hạ thấp tính nghiêm túc của sự kiện.'},
+    {scene:'Đòi em trai trả lại quyển truyện đã mượn.',a:'请你将此书归还于我。',b:'把我的书还给我，快点儿！',better:'b',why:'Nói với em nhỏ trong nhà dùng khẩu ngữ đơn giản. Câu a (将……归还于我) là văn viết cổ như lời Lạn Tương Như nói với vua Tần — dùng ở đây nghe buồn cười.'}
   ]
 };
 

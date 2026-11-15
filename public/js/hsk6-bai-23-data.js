@@ -1630,89 +1630,51 @@ var hvBridgeData = {
 // GHÉP TỪ — cụm trong bài khoá và phần 练习
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'通俗的',right:'例子'},
-  {left:'堆积',right:'如山'},
-  {left:'卓越的',right:'成就'},
-  {left:'减少对人的',right:'依赖'},
-  {left:'大数据的',right:'功劳'},
-  {left:'派遣',right:'数据专家'},
-  {left:'战略',right:'合作伙伴关系'},
-  {left:'预测',right:'模型'},
-  {left:'结果',right:'验证'},
-  {left:'万分',right:'振奋'},
-  {left:'扭转',right:'局面'},
-  {left:'积极',right:'防治'},
-  {left:'萌芽',right:'状态'},
-  {left:'交代',right:'清楚'},
-  {left:'追究',right:'原因'},
   {left:'消除',right:'隐患'},
-  {left:'零星',right:'先兆'},
   {left:'挽救',right:'生命'},
-  {left:'细致的',right:'监测'},
-  {left:'先进',right:'器材'},
-  {left:'人为',right:'管理'},
-  {left:'稀缺',right:'资源'},
-  {left:'远程医疗',right:'服务'},
-  {left:'展望',right:'未来'}
+  {left:'维护',right:'秩序'},
+  {left:'卓越的',right:'成就'},
+  {left:'陈旧的',right:'观念'},
+  {left:'追究',right:'责任'},
+  {left:'前景',right:'广阔'},
+  {left:'实事',right:'求是'},
+  {left:'防治',right:'心脏病'},
+  {left:'长远的',right:'发展战略'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ
+// ĐIỀN TỪ — câu mới (không chép bài khoá / SGK), mỗi câu một tình huống; ôn xoáy ốc từ + ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'这本科普书语言',blank:'通俗',post:'易懂，连小学生都能看明白。',hint:'(dễ hiểu, phổ thông)',ans:'通俗'},
-  {pre:'考试前一周，我的书桌上',blank:'堆积',post:'着厚厚的复习资料。',hint:'(chồng chất)',ans:'堆积'},
-  {pre:'谁也无法准确地',blank:'预测',post:'未来，我们能做的就是做好准备。',hint:'(dự đoán)',ans:'预测'},
-  {pre:'这次比赛能拿冠军，是全队的',blank:'功劳',post:'，不是我一个人的。',hint:'(công lao)',ans:'功劳'},
-  {pre:'地震发生后，医院立即',blank:'派遣',post:'医疗队赶往灾区。',hint:'(cử đi)',ans:'派遣'},
-  {pre:'两家公司建立了',blank:'战略',post:'合作伙伴关系，打算共同开发新产品。',hint:'(chiến lược)',ans:'战略'},
-  {pre:'弟弟花了一个星期，终于做好了一个飞机',blank:'模型',post:'。',hint:'(mô hình)',ans:'模型'},
-  {pre:'这次活动',blank:'共计',post:'有三百多名学生参加。',hint:'(tổng cộng)',ans:'共计',exp:'共计 + số lượng = tổng cộng (văn viết).'},
-  {pre:'这个假说还需要通过实验来',blank:'验证',post:'。',hint:'(kiểm chứng)',ans:'验证'},
-  {pre:'中国队夺冠的消息',blank:'振奋',post:'人心，球迷们都走上了街头。',hint:'(làm phấn chấn)',ans:'振奋'},
-  {pre:'他被',blank:'公认',post:'为我们班最有耐心的人。',hint:'(được mọi người thừa nhận)',ans:'公认'},
-  {pre:'他比',blank:'先前',post:'瘦多了，精神却好多了。',hint:'(trước kia)',ans:'先前',exp:'先前 = trước kia, trước đây (so với hiện tại): 比先前瘦多了.'},
-  {pre:'这本教材的内容有些',blank:'陈旧',post:'，已经跟不上时代了。',hint:'(lỗi thời)',ans:'陈旧'},
-  {pre:'学校采取了很多措施来',blank:'防治',post:'学生近视。',hint:'(phòng chống)',ans:'防治'},
-  {pre:'春天到了，路边的小草开始',blank:'萌芽',post:'了。',hint:'(nảy mầm)',ans:'萌芽'},
-  {pre:'他的说法太',blank:'荒谬',post:'了，谁也不会相信。',hint:'(hoang đường)',ans:'荒谬'},
-  {pre:'在不影响学习的',blank:'前提',post:'下，父母同意我周末去打工。',hint:'(điều kiện tiên quyết)',ans:'前提'},
-  {pre:'妈妈出门前',blank:'交代',post:'我一定要关好门窗。',hint:'(dặn dò)',ans:'交代'},
-  {pre:'科学家发现，身高在很大程度上是由',blank:'基因',post:'决定的。',hint:'(gien)',ans:'基因'},
-  {pre:'他的好嗓子是从妈妈那儿',blank:'遗传',post:'来的。',hint:'(di truyền)',ans:'遗传'},
-  {pre:'这栋楼的电线太旧了，存在很大的安全',blank:'隐患',post:'。',hint:'(hiểm hoạ tiềm ẩn)',ans:'隐患'},
-  {pre:'那天下午，没有任何',blank:'预兆',post:'，暴雨就来了。',hint:'(điềm báo trước)',ans:'预兆'},
-  {pre:'老师在课上分析了几个成功的',blank:'案例',post:'，让我们很受启发。',hint:'(trường hợp)',ans:'案例'},
-  {pre:'天气预报说明天有',blank:'零星',post:'小雨，出门记得带伞。',hint:'(rải rác, lẻ tẻ)',ans:'零星'},
-  {pre:'她做事非常',blank:'细致',post:'，从来没有出过差错。',hint:'(tỉ mỉ)',ans:'细致'},
-  {pre:'奶奶每天早上都要量一次',blank:'血压',post:'。',hint:'(huyết áp)',ans:'血压'},
-  {pre:'学校新买了一批体育',blank:'器材',post:'，同学们别提多高兴了。',hint:'(dụng cụ)',ans:'器材'},
-  {pre:'经过调查，这场森林火灾是',blank:'人为',post:'造成的，不是意外。',hint:'(do con người)',ans:'人为'},
-  {pre:'这位医生有三十年的',blank:'临床',post:'经验，病人都很信任他。',hint:'(lâm sàng)',ans:'临床'},
-  {pre:'我们不能只说空话，而要',blank:'切切实实',post:'地为同学们做几件好事。',hint:'(thực sự)',ans:'切切实实'},
-  {pre:'青春期的孩子在',blank:'生理',post:'和心理上都会发生很大的变化。',hint:'(sinh lý)',ans:'生理'},
-  {pre:'他',blank:'攒',post:'了半年的零花钱，给妈妈买了一件生日礼物。',hint:'(dành dụm)',ans:'攒'},
-  {pre:'这个方案切实',blank:'可行',post:'，大家都同意。',hint:'(khả thi)',ans:'可行'},
-  {pre:'回顾过去，',blank:'展望',post:'未来，我们充满了信心。',hint:'(nhìn về tương lai)',ans:'展望'}
+  {pre:'这本书用',blank:'通俗',post:'的语言介绍科学知识，连小学生都能看懂。',hint:'(dễ hiểu, bình dân)',ans:'通俗',exp:'通俗的语言 = lời lẽ dễ hiểu, gần gũi với số đông; trái với 专业、难懂.'},
+  {pre:'他的桌子上',blank:'堆积',post:'着好几个星期没看的报纸。',hint:'(chất đống)',ans:'堆积',exp:'堆积 + 着 = chất đống, dồn lại (đồ vật, công việc); nơi chốn + 堆积着 + vật.'},
+  {pre:'根据这几年的数据，专家',blank:'预测',post:'明年来这里旅游的人会更多。',hint:'(dự đoán)',ans:'预测',exp:'预测 = dự đoán dựa trên số liệu, quy luật; 预料 thiên về "lường trước" bằng cảm nhận.'},
+  {pre:'这次比赛能拿冠军，全队每个人都有',blank:'功劳',post:'。',hint:'(công lao)',ans:'功劳',exp:'功劳 = công sức góp vào thành công; 有功劳 / 是……的功劳. Đừng nhầm với 劳动 (lao động).'},
+  {pre:'公司',blank:'派遣',post:'了三名工程师去国外学习新技术。',hint:'(cử đi)',ans:'派遣',exp:'派遣 + người + 去 + làm gì = cử ai đi làm nhiệm vụ (văn viết, trang trọng hơn 派).'},
+  {pre:'这次活动',blank:'共计',post:'有三百多人参加，比去年多了一百多人。',hint:'(tổng cộng)',ans:'共计',exp:'共计 + số lượng = tổng cộng (văn viết), giống 一共 nhưng trang trọng hơn.'},
+  {pre:'听到我们学校拿了冠军的消息，全校同学都万分',blank:'振奋',post:'。',hint:'(phấn chấn)',ans:'振奋',exp:'振奋 = phấn chấn, tinh thần lên cao; 万分 + tính từ tâm lý = vô cùng (万分振奋 / 万分感谢).'},
+  {pre:'几年没回来，这里比',blank:'先前',post:'热闹多了。',hint:'(trước kia)',ans:'先前',exp:'先前 = trước kia, trước đây (danh từ thời gian), đứng sau 比 hoặc đầu câu.'},
+  {pre:'这家医院的设备太',blank:'陈旧',post:'了，很多检查都做不了。',hint:'(cũ kỹ, lỗi thời)',ans:'陈旧',exp:'陈旧 = cũ kỹ, lạc hậu (thiết bị, quan niệm); đồ ăn cũ, quần áo cũ thì dùng 旧 / 不新鲜.'},
+  {pre:'说吃一种水果就能治好所有的病，这种说法简直太',blank:'荒谬',post:'了。',hint:'(hoang đường)',ans:'荒谬',exp:'荒谬 = vô lý, hoang đường (lời nói, quan điểm); hay đi với 简直太……了.'},
+  {pre:'医生说，这种病跟',blank:'基因',post:'有关，有可能遗传给下一代。',hint:'(gen)',ans:'基因',exp:'基因 = gen; 跟……有关 = có liên quan đến…; 遗传给 + người = di truyền cho ai.'},
+  {pre:'我',blank:'攒',post:'了半年的零花钱，终于买了一台新电脑。',hint:'(dành dụm)',ans:'攒',exp:'攒 (zǎn) = gom góp, dành dụm dần (tiền, đồ); 攒了 + thời gian + 的 + 钱.'},
+  {pre:'现在很多人过于',blank:'依赖',post:'手机，一会儿不看就觉得不安。',hint:'(phụ thuộc)',ans:'依赖',exp:'依赖 + N = phụ thuộc, ỷ vào; ôn 过于 (bài 3) = quá mức.'},
+  {pre:'这些数据是否准确，还需要专家进一步',blank:'加以',post:'验证。',hint:'(tiến hành)',ans:'加以',exp:'加以 + động từ hai âm tiết (验证, 分析, 研究); đối tượng đã nêu ở trước, sau 加以 không có tân ngữ.'},
+  {pre:'我们的准备工作还',blank:'远远',post:'不够，大家还得更努力才行。',hint:'(còn xa mới)',ans:'远远',exp:'远远 + 不够 / 不如 / 超过 = khoảng cách rất xa; không dùng 大大 với 不够.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (加以 · 大大 / 远远) ít nhất 2 câu
+// SẮP XẾP CÂU — câu mới, chỉ một trật tự đúng
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['对于','你的','意见和建议','，','我们','会认真','加以','研究','。'],ans:'对于你的意见和建议，我们会认真加以研究。',audio:'对于你的意见和建议，我们会认真加以研究。'},
-  {words:['我们','不妨','以大数据与健康','为例','加以','说明','。'],ans:'我们不妨以大数据与健康为例加以说明。',audio:'我们不妨以大数据与健康为例加以说明。'},
-  {words:['下面','这些句子','都有问题','，','请','加以','改正','。'],ans:'下面这些句子都有问题，请加以改正。',audio:'下面这些句子都有问题，请加以改正。'},
-  {words:['学校提供的','自习室','，','我们','应该','好好','加以','利用','。'],ans:'学校提供的自习室，我们应该好好加以利用。',audio:'学校提供的自习室，我们应该好好加以利用。'},
-  {words:['大数据','能够','大大','提高','医生的','工作效率','。'],ans:'大数据能够大大提高医生的工作效率。',audio:'大数据能够大大提高医生的工作效率。'},
-  {words:['散步时','身体挺直','，','能使','肺的换气量','大大','增加','。'],ans:'散步时身体挺直，能使肺的换气量大大增加。',audio:'散步时身体挺直，能使肺的换气量大大增加。'},
-  {words:['大数据','为人类','做出的贡献','远远','超出了','我们的期盼','。'],ans:'大数据为人类做出的贡献远远超出了我们的期盼。',audio:'大数据为人类做出的贡献远远超出了我们的期盼。'},
-  {words:['你现在的','知识和能力','都','远远','不能','胜任','这份工作','。'],ans:'你现在的知识和能力都远远不能胜任这份工作。',audio:'你现在的知识和能力都远远不能胜任这份工作。'},
-  {words:['利用大数据','进行','细致的监测','，','意义','是','不言而喻','的','。'],ans:'利用大数据进行细致的监测，意义是不言而喻的。',audio:'利用大数据进行细致的监测，意义是不言而喻的。'},
-  {words:['实事求是地说','，','这次考试','我','确实','没有','准备好','。'],ans:'实事求是地说，这次考试我确实没有准备好。',audio:'实事求是地说，这次考试我确实没有准备好。'},
-  {words:['在','各方面人才的','协助','下','，','他们','制定了','切实可行的','方案','。'],ans:'在各方面人才的协助下，他们制定了切实可行的方案。',audio:'在各方面人才的协助下，他们制定了切实可行的方案。'},
-  {words:['这一','海量数据库','共计','涉及','近两万名','球员','。'],ans:'这一海量数据库共计涉及近两万名球员。',audio:'这一海量数据库共计涉及近两万名球员。'},
-  {words:['人们','公认','医疗和健康','分属','两个','不同的','领域','。'],ans:'人们公认医疗和健康分属两个不同的领域。',audio:'人们公认医疗和健康分属两个不同的领域。'}
+  {words:['请','对','下面的','数据','加以','分析','。'],ans:'请对下面的数据加以分析。',audio:'请对下面的数据加以分析。'},
+  {words:['新方法','大大','提高了','我们的','工作效率','。'],ans:'新方法大大提高了我们的工作效率。',audio:'新方法大大提高了我们的工作效率。'},
+  {words:['他的','汉语水平','远远','超过了','我','。'],ans:'他的汉语水平远远超过了我。',audio:'他的汉语水平远远超过了我。'},
+  {words:['我','把','攒下来的','零花钱','都','给了','妹妹','。'],ans:'我把攒下来的零花钱都给了妹妹。',audio:'我把攒下来的零花钱都给了妹妹。'},
+  {words:['医生','及时','挽救','了','病人的','生命','。'],ans:'医生及时挽救了病人的生命。',audio:'医生及时挽救了病人的生命。'},
+  {words:['这是','一个','非常','有','前景','的','行业','。'],ans:'这是一个非常有前景的行业。',audio:'这是一个非常有前景的行业。'},
+  {words:['你','得','把','事情的','经过','交代','清楚','。'],ans:'你得把事情的经过交代清楚。',audio:'你得把事情的经过交代清楚。'},
+  {words:['他','检查','得','非常','细致','。'],ans:'他检查得非常细致。',audio:'他检查得非常细致。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1720,75 +1682,45 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'这位科学家为人类做出了____的贡献。',opts:['卓越','优越','超越','越过'],ans:0,
-   exp:'卓越的贡献 = đóng góp xuất sắc, to lớn. 优越 dùng cho điều kiện, vị trí (条件优越); 超越 / 越过 là động từ "vượt qua" (练习1: nhóm từ có 越).'},
-  {wrong:'对大家的帮助，我____感激，不知道该怎么报答。',opts:['充分','万一','万分','十足'],ans:2,
-   exp:'万分 + động từ tâm lý (感激) = vô cùng biết ơn (词语辨析). 充分 = đầy đủ (充分准备); 万一 = lỡ như; 十足 = trọn vẹn, đứng sau danh từ (信心十足).'},
-  {wrong:'下半场我们连进两球，终于____了比赛的局面。',opts:['转动','扭转','旋转','转告'],ans:1,
-   exp:'扭转局面 = lật ngược / xoay chuyển cục diện (cụm cố định). 转动, 旋转 = xoay tròn (vật lý); 转告 = nhắn lại.'},
-  {wrong:'我们事先没做任何准备，结果在谈判中非常____。',opts:['主动','感动','被动','激动'],ans:2,
-   exp:'Không chuẩn bị → rơi vào thế 被动 (bị động). 主动 ngược nghĩa; 感动 = cảm động; 激动 = xúc động.'},
-  {wrong:'天花是人类第一种被彻底____的传染病。',opts:['消费','消灭','消化','消息'],ans:1,
-   exp:'彻底消灭 + bệnh truyền nhiễm = tiêu diệt hoàn toàn. 消费 = tiêu dùng; 消化 = tiêu hoá; 消息 = tin tức (cùng nhóm chữ 消 ở 练习1).'},
-  {wrong:'事情已经发生了，现在____谁的责任都没有用。',opts:['追求','研究','讲究','追究'],ans:3,
-   exp:'追究责任 = truy cứu trách nhiệm. 追求 = theo đuổi (追求梦想); 研究 = nghiên cứu; 讲究 = cầu kỳ, chú trọng.'},
-  {wrong:'比赛的结果完全出乎所有人的____。',opts:['预测','预料','预报','预订'],ans:1,
-   exp:'出乎……的预料 = nằm ngoài dự liệu (cụm cố định, 词语辨析 预测—预料). 预报 = dự báo (天气预报); 预订 = đặt trước.'},
-  {wrong:'两个人坐下来好好谈了一次，终于____了误会。',opts:['消灭','消失','消除','取消'],ans:2,
-   exp:'消除误会 = xoá bỏ hiểu lầm (đối tượng trừu tượng). 消灭 dùng cho thứ có hại "sống" (蚊子, 疾病); 消失 là nội động từ, không mang tân ngữ; 取消 = huỷ bỏ (取消活动).'},
-  {wrong:'如果能提前监测到零星先兆，甚至可以____患者的生命。',opts:['挽救','挽回','救济','救灾'],ans:0,
-   exp:'挽救生命 = cứu sống. 挽回 + 损失 / 影响 / 面子 (vãn hồi); 救济 = cứu trợ vật chất; 救灾 = cứu trợ thiên tai.'},
-  {wrong:'利用大数据对病种进行细致的监测，意义是____的。',opts:['有条不紊','实事求是','不言而喻','迫不及待'],ans:2,
-   exp:'……是不言而喻的 = … là điều không nói cũng hiểu. 有条不紊 = đâu ra đấy (bài 19); 实事求是 = tôn trọng sự thật; 迫不及待 = nóng lòng.'},
-  {wrong:'这家医院引进了一批世界____的医疗器材。',opts:['先前','前进','进步','先进'],ans:3,
-   exp:'世界先进的器材 = thiết bị tiên tiến hàng đầu thế giới. 先前 = trước kia (danh từ thời gian); 前进 = tiến lên (động từ); 进步 = tiến bộ (nói về người, xã hội).'},
-  {wrong:'人工智能是一个很有____的行业，吸引了很多年轻人。',opts:['前提','风景','背景','前景'],ans:3,
-   exp:'很有前景 = rất có triển vọng. 前提 = tiền đề; 风景 = phong cảnh; 背景 = bối cảnh, hậu thuẫn.'},
-  {wrong:'成年以后要独立生活，不能再____父母了。',opts:['依然','依照','依赖','信赖'],ans:2,
-   exp:'依赖父母 = dựa dẫm vào bố mẹ (练习2 ⑥). 依然 = vẫn; 依照 = theo (依照规定); 信赖 = tin cậy — không hợp với "độc lập sống".'},
-  {wrong:'这里地理位置____，交通十分方便。',opts:['优秀','优美','优惠','优越'],ans:3,
-   exp:'地理位置优越 = vị trí địa lý thuận lợi. 优秀 khen người / thành tích; 优美 = đẹp (风景优美); 优惠 = ưu đãi (价格优惠).'},
-  {wrong:'大家都要自觉____公共秩序，排队上车。',opts:['维修','保养','爱护','维护'],ans:3,
-   exp:'维护秩序 = giữ gìn trật tự. 维修 / 保养 = sửa chữa / bảo dưỡng máy móc; 爱护 + 公物 / 眼睛 (yêu quý, giữ gìn đồ vật) — không đi với 秩序.'},
-  {wrong:'在各方面人才的____下，他们制定了切实可行的方案。',opts:['协助','协调','协商','协议'],ans:0,
-   exp:'在……的协助下 = với sự hỗ trợ của … (练习3). 协调 = điều phối; 协商 = bàn bạc; 协议 = thoả thuận.'},
-  {wrong:'做科学研究一定要____，不能弄虚作假。',opts:['实事求是','不言而喻','堆积如山','单打独斗'],ans:0,
-   exp:'实事求是 = tôn trọng sự thật, đối lập trực tiếp với 弄虚作假 (gian dối). Các thành ngữ còn lại không hợp nghĩa.'},
-  {wrong:'对于你们提出的建议，我们会认真____研究。',opts:['以便','给以','加上','加以'],ans:3,
-   exp:'加以 + động từ song âm tiết (研究) = tiến hành … (điểm ngữ pháp 1). 给以 dùng khi dành cho ai điều có lợi (给以帮助); 加上 = cộng thêm; 以便 = để (đầu vế sau).'},
-  {wrong:'散步时身体挺直，能使肺的换气量____增加。',opts:['远远','大大','多多','高高'],ans:1,
-   exp:'大大 + động từ song âm tiết (增加) = tăng lên đáng kể (điểm ngữ pháp 2, 练一练 ①). 远远 hay đi với 超出, 不能, 落后; 多多 / 高高 không bổ nghĩa cho 增加 như vậy.'}
+  {wrong:'对运动会的安排，学校会仔细____研究，下个月给大家一个答案。',opts:['加以','加上','以便','加入'],ans:0,exp:'对……加以 + V hai âm tiết (加以研究). 加上 = cộng thêm; 以便 = để tiện (nối vế); 加入 = gia nhập (加入 + tổ chức).'},
+  {wrong:'换了新机器以后，工作效率____提高了。',opts:['大大','远远','多多','高高'],ans:0,exp:'大大 + 提高 / 增加 / 减少 = tăng giảm rất nhiều. 远远 chỉ đi với 超过 / 不如 / 不能 (khoảng cách xa); 多多 / 高高 không bổ nghĩa cho 提高.'},
+  {wrong:'说到做饭，我____不如妈妈。',opts:['远远','大大','多多','早早'],ans:0,exp:'Khoảng cách rất xa → 远远不如. Người Việt hay nói "kém nhiều" thành 大大不如 — sai, 大大 chỉ + động từ chỉ thay đổi (提高, 增加…).'},
+  {wrong:'这场比赛的结果谁也没有____到，最弱的队竟然拿了冠军。',opts:['预料','预兆','预习','预报'],ans:0,exp:'没有预料到 = không lường trước được. 预兆 là danh từ "điềm báo"; 预习 = chuẩn bị bài; 预报 = dự báo (thời tiết).'},
+  {wrong:'比赛能赢，教练的____最大。',opts:['功劳','劳动','成功','用功'],ans:0,exp:'Công sức góp vào thành công → 功劳最大. 劳动 = lao động; 成功 = thành công (kết quả, không phải phần đóng góp); 用功 = chăm học.'},
+  {wrong:'他是大家____的好老师，学生和家长都很尊敬他。',opts:['公认','承认','认识','确认'],ans:0,exp:'Mọi người đều thừa nhận (một đánh giá tốt) → 公认. 承认 = thừa nhận (lỗi, sự thật); 认识 = quen biết; 确认 = xác nhận thông tin.'},
+  {wrong:'下半场我们连进三个球，终于____了比赛的局面。',opts:['扭转','好转','转身','转学'],ans:0,exp:'扭转局面 = xoay chuyển cục diện (từ xấu sang tốt). 好转 = (bệnh, tình hình) chuyển biến tốt, không mang tân ngữ; 转身 = quay người; 转学 = chuyển trường.'},
+  {wrong:'我们要主动去解决问题，不能总是____地等别人来帮忙。',opts:['被动','主动','动人','激动'],ans:0,exp:'Chỉ ngồi chờ người khác → 被动 (thụ động), đối lập với 主动 ở vế trước. 动人 = cảm động; 激动 = xúc động.'},
+  {wrong:'有了误会，最好当面谈一谈，沟通可以____误会。',opts:['消除','消灭','消失','取消'],ans:0,exp:'消除误会 = xoá bỏ hiểu lầm. 消灭 dùng cho kẻ thù, sâu bệnh, dịch bệnh; 消失 không mang tân ngữ; 取消 = huỷ (kế hoạch, chuyến bay).'},
+  {wrong:'身体健康是做好一切工作的____。',opts:['前提','前景','前途','提前'],ans:0,exp:'Điều kiện phải có trước → 前提. 前景 / 前途 = triển vọng, tương lai; 提前 = làm sớm hơn.'},
+  {wrong:'出门前，妈妈把家里的事都____给了我。',opts:['交代','交流','交换','交通'],ans:0,exp:'Giao lại, dặn dò công việc → 交代给 + người. 交流 = giao lưu; 交换 = trao đổi; 交通 = giao thông.'},
+  {wrong:'事情发生以后，先别忙着____是谁的责任，得赶快想办法解决。',opts:['追究','研究','讲究','究竟'],ans:0,exp:'追究责任 = truy cứu trách nhiệm. 研究 = nghiên cứu; 讲究 = cầu kỳ, chú trọng; 究竟 = rốt cuộc (phó từ).'},
+  {wrong:'这里的自然条件十分____，很适合种水果。',opts:['优越','优秀','优美','优点'],ans:0,exp:'Điều kiện hơn hẳn nơi khác → 条件优越. 优秀 dùng cho người, thành tích; 优美 cho phong cảnh, âm nhạc; 优点 là danh từ "ưu điểm".'},
+  {wrong:'在考场里，大家都应该自觉____秩序。',opts:['维护','修理','保管','保存'],ans:0,exp:'维护秩序 = giữ gìn trật tự. 修理 = sửa chữa đồ vật; 保管 / 保存 = cất giữ đồ vật.'},
+  {wrong:'多读书的好处是____的，可真正每天坚持读书的人并不多。',opts:['不言而喻','实事求是','切切实实','一举两得'],ans:0,exp:'Ai cũng hiểu, không cần nói → 不言而喻. 实事求是 = tôn trọng sự thật; 切切实实 = thiết thực; 一举两得 = một công đôi việc — không hợp với "lợi ích của đọc sách là …".'}
 ];
 
 
 // ══════════════════════════════════════════
-// DỊCH — câu ghép, ôn từ HSK 6 bài 1–22 và HSK 4–5
+// DỊCH Việt → Trung — câu mới, dùng từ của bài + ôn ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Nếu cậu thấy phương án này chưa khả thi, chúng ta có thể nghiên cứu tỉ mỉ rồi sửa lại.',zh:'如果你觉得这个方案不可行，我们可以细致地研究后再加以修改。',py:'Rúguǒ nǐ juéde zhège fāng\'àn bù kěxíng, wǒmen kěyǐ xìzhì de yánjiū hòu zài jiāyǐ xiūgǎi.',goiY:['可行','细致','加以','如果……'],giai:'加以 + động từ song âm tiết (修改) — không nói 加以改; 细致地 + V làm trạng ngữ, nhớ dùng 地.'},
-  {vi:'Nhờ sự hỗ trợ của thầy cô, thành tích của tôi tiến bộ rõ rệt, cả nhà vô cùng phấn khởi.',zh:'在老师的协助下，我的成绩大大提高了，全家人都万分振奋。',py:'Zài lǎoshī de xiézhù xià, wǒ de chéngjì dàdà tígāo le, quán jiā rén dōu wànfēn zhènfèn.',goiY:['在……的协助下','大大','万分振奋'],giai:'大大 + động từ song âm tiết (提高) = tăng / nâng lên đáng kể; 万分 chỉ đi với trạng thái tâm lý (振奋) — không dùng 万分 cho 提高.'},
-  {vi:'Nói một cách khách quan, hiện giờ tớ vẫn còn quá dựa dẫm vào người khác, còn lâu mới đảm đương được công việc của lớp trưởng.',zh:'实事求是地说，我现在还太依赖别人，远远不能胜任班长的工作。',py:'Shíshì-qiúshì de shuō, wǒ xiànzài hái tài yīlài biérén, yuǎnyuǎn bù néng shèngrèn bānzhǎng de gōngzuò.',goiY:['实事求是地说','依赖','远远不能'],giai:'远远 + 不能 / 不如 / 超出 = còn xa mới …; "còn lâu mới" dịch 远远不能, không dịch 还久.'},
-  {vi:'Nếu có thể phát hiện điềm báo từ sớm, những hiểm hoạ an toàn trong trường có thể được dập tắt ngay từ khi mới manh nha.',zh:'如果能及早发现预兆，校园里的安全隐患就可以消灭在萌芽状态。',py:'Rúguǒ néng jízǎo fāxiàn yùzhào, xiàoyuán li de ānquán yǐnhuàn jiù kěyǐ xiāomiè zài méngyá zhuàngtài.',goiY:['预兆','隐患','如果……就……','消灭在萌芽状态'],giai:'如果……就…… nêu điều kiện – kết quả; 消灭在萌芽状态 là cụm cố định "dập tắt từ trong trứng nước".'},
-  {vi:'Chúng ta thử lấy bạn Tiểu Minh làm ví dụ để giải thích: cậu ấy tuy không phải thiên tài, nhưng nhờ kinh nghiệm dành dụm từng chút một mà đạt được thành tích xuất sắc.',zh:'我们不妨以小明为例加以说明：他虽然不是天才，却靠平时一点一点攒下的经验取得了卓越的成绩。',py:'Wǒmen bùfáng yǐ Xiǎo Míng wéi lì jiāyǐ shuōmíng: tā suīrán bú shì tiāncái, què kào píngshí yìdiǎn yìdiǎn zǎnxià de jīngyàn qǔdéle zhuóyuè de chéngjì.',goiY:['不妨','以……为例加以说明','虽然……却……','卓越'],giai:'不妨 (bài 12) = cứ thử; 以……为例加以说明 là khung trong bài khoá; 虽然……却…… — 却 đứng sau chủ ngữ ẩn, trước động từ.'},
-  {vi:'Tuy dữ liệu lớn có thể dự đoán kết quả trận đấu, nhưng thể thao sở dĩ hấp dẫn chính là vì kết quả khó mà lường trước.',zh:'虽然大数据能预测比赛结果，但体育之所以吸引人，正是因为结果难以预料。',py:'Suīrán dà shùjù néng yùcè bǐsài jiéguǒ, dàn tǐyù zhīsuǒyǐ xīyǐn rén, zhèng shì yīnwèi jiéguǒ nányǐ yùliào.',goiY:['预测','之所以……是因为……','难以预料'],giai:'预测 (dự đoán có số liệu) và 预料 (lường trước) đặt cạnh nhau cho thấy khác biệt; 之所以……正是因为…… nhấn mạnh nguyên nhân; 难以 ôn bài 14.'},
-  {vi:'Bà nội bị cao huyết áp, vì vậy cả nhà đã mua cho bà một thiết bị tiên tiến, để có thể theo dõi sức khoẻ của bà bất cứ lúc nào.',zh:'奶奶有高血压，所以全家给她买了一台先进的器材，以便随时监测她的健康。',py:'Nǎinai yǒu gāoxuèyā, suǒyǐ quán jiā gěi tā mǎile yì tái xiānjìn de qìcái, yǐbiàn suíshí jiāncè tā de jiànkāng.',goiY:['血压','先进','器材','以便'],giai:'以便 (bài 16) đứng đầu vế cuối nêu mục đích; "bị cao huyết áp" dịch 有高血压, không dịch 被.'},
-  {vi:'Muốn thay đổi triệt để thói quen học tập bị động trước kia, trước hết phải truy tìm nguyên nhân, sau đó mới đề ra phương án thiết thực khả thi.',zh:'要想彻底扭转先前被动的学习习惯，首先要追究原因，然后再制定切实可行的方案。',py:'Yào xiǎng chèdǐ niǔzhuǎn xiānqián bèidòng de xuéxí xíguàn, shǒuxiān yào zhuījiū yuányīn, ránhòu zài zhìdìng qièshí kěxíng de fāng\'àn.',goiY:['扭转','先前','首先……然后……','切实可行'],giai:'首先……然后再…… sắp xếp các bước; 扭转 + 习惯 / 局面 = thay đổi hẳn; "thiết thực khả thi" = 切实可行.'},
-  {vi:'Dù quan niệm của bố mẹ có lỗi thời đến đâu, chúng ta cũng nên kiên nhẫn nói rõ suy nghĩ của mình với họ, chứ không phải đối đầu với họ.',zh:'不管父母的观念多么陈旧，我们都应该耐心地把自己的想法跟他们交代清楚，而不是跟他们对着干。',py:'Bùguǎn fùmǔ de guānniàn duōme chénjiù, wǒmen dōu yīnggāi nàixīn de bǎ zìjǐ de xiǎngfǎ gēn tāmen jiāodài qīngchu, ér bú shì gēn tāmen duìzhe gàn.',goiY:['不管……都……','陈旧','交代清楚','而不是'],giai:'不管 + 多么 + Adj，都…… = dù … đến đâu cũng …; ……，而不是…… = chứ không phải …; 对着干 = làm ngược lại, đối đầu (khẩu ngữ).'},
-  {vi:'Cho dù chỉ giúp chúng ta tiết kiệm được một nửa thời gian, đóng góp của dữ liệu lớn cho việc học cũng đã vượt xa dự liệu của mọi người, ý nghĩa của nó không nói cũng hiểu.',zh:'即便只能帮我们节省一半的时间，大数据对学习的贡献也远远超出了大家的预料，其意义不言而喻。',py:'Jíbiàn zhǐ néng bāng wǒmen jiéshěng yíbàn de shíjiān, dà shùjù duì xuéxí de gòngxiàn yě yuǎnyuǎn chāochūle dàjiā de yùliào, qí yìyì bùyán\'éryù.',goiY:['即便……也……','远远超出','预料','不言而喻'],giai:'即便 (bài 10) = cho dù; 远远超出……的预料 = vượt xa dự liệu; 其 = của nó (văn viết), 不言而喻 làm vị ngữ ở cuối câu.'}
+  {vi:'Đối với những hiểm hoạ an toàn đã phát hiện, các bộ phận liên quan phải lập tức loại bỏ.',zh:'对于已经发现的安全隐患，有关部门必须马上加以消除。',py:'Duìyú yǐjīng fāxiàn de ānquán yǐnhuàn, yǒuguān bùmén bìxū mǎshàng jiāyǐ xiāochú.',goiY:['对于……加以……','隐患','有关'],giai:'对于 + đối tượng đặt đầu câu, cuối câu 加以 + 消除 (động từ hai âm tiết, không có tân ngữ sau); 有关部门 ôn 有关 (bài 8).'},
+  {vi:'Mạng internet đã rút ngắn rất nhiều khoảng cách giữa người với người.',zh:'网络大大缩短了人与人之间的距离。',py:'Wǎngluò dàdà suōduǎnle rén yǔ rén zhījiān de jùlí.',goiY:['大大','缩短','距离'],giai:'大大 + động từ chỉ thay đổi (缩短 / 提高 / 减少) = … rất nhiều; 人与人之间 = giữa người với người.'},
+  {vi:'Thành thật mà nói, kinh nghiệm của tôi còn kém xa anh ấy.',zh:'实事求是地说，我的经验远远不如他。',py:'Shíshì-qiúshì de shuō, wǒ de jīngyàn yuǎnyuǎn bùrú tā.',goiY:['实事求是地说','远远不如'],giai:'实事求是地说 = nói đúng sự thật; "kém xa" = 远远不如, không dùng 大大不如.'},
+  {vi:'Nhiều bệnh trước khi phát ra đều có điềm báo, nếu phát hiện sớm thì có thể cứu được tính mạng người bệnh.',zh:'很多病在发生以前都有预兆，如果能早点儿发现，就有可能挽救病人的生命。',py:'Hěn duō bìng zài fāshēng yǐqián dōu yǒu yùzhào, rúguǒ néng zǎo diǎnr fāxiàn, jiù yǒu kěnéng wǎnjiù bìngrén de shēngmìng.',goiY:['预兆','如果……就……','挽救'],giai:'有预兆 = có điềm báo; 挽救 + 生命 = cứu sống (khi đang nguy kịch); 有可能 = có khả năng.'},
+  {vi:'Với sự hỗ trợ của các chuyên gia, chúng tôi đã phân tích hơn một nghìn trường hợp và xây dựng được một mô hình dự báo khá chính xác.',zh:'在专家们的协助下，我们分析了上千个案例，建立了一个比较准确的预测模型。',py:'Zài zhuānjiāmen de xiézhù xià, wǒmen fēnxīle shàng qiān ge ànlì, jiànlìle yí ge bǐjiào zhǔnquè de yùcè móxíng.',goiY:['在……的协助下','案例','模型'],giai:'在 + người + 的协助下 = với sự giúp đỡ của ai; 上千个 = hơn một nghìn; 建立模型 = xây dựng mô hình.'},
+  {vi:'Bệnh nhân cao huyết áp ngày càng trẻ, công tác phòng chống phải bắt đầu từ khi còn trẻ.',zh:'高血压患者越来越年轻，防治工作要从年轻的时候做起。',py:'Gāoxuèyā huànzhě yuè lái yuè niánqīng, fángzhì gōngzuò yào cóng niánqīng de shíhou zuòqǐ.',goiY:['血压','防治','从……做起'],giai:'防治 = phòng và chữa; 从……做起 = bắt đầu làm từ…; 越来越 + tính từ.'}
 ];
 
-// Chiều Trung → Việt — bám ý bài khoá, nội dung khác chiều trên
+// ══════════════════════════════════════════
+// Dịch Trung → Việt — câu mới, không trùng chiều trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Baidu đã dự đoán chính xác Đức vô địch, kết quả này khiến các nhà nghiên cứu vô cùng phấn khởi.',zh:'百度准确预测了德国夺冠，这一结果令研究者万分振奋。',py:'Bǎidù zhǔnquè yùcèle Déguó duóguàn, zhè yì jiéguǒ lìng yánjiūzhě wànfēn zhènfèn.',goiY:['预测 = dự đoán','令……万分振奋 = khiến … vô cùng phấn khởi'],giai:'令 + người + tính từ tâm lý = khiến ai …; 这一结果 dịch "kết quả này" (一 không cần dịch).'},
-  {vi:'Baidu cử chuyên gia dữ liệu tìm kiếm dữ liệu các trận đấu, đồng thời thiết lập quan hệ hợp tác chiến lược với các cơ quan liên quan.',zh:'百度派遣数据专家搜索比赛数据，并与相关机构建立了战略合作关系。',py:'Bǎidù pàiqiǎn shùjù zhuānjiā sōusuǒ bǐsài shùjù, bìng yǔ xiāngguān jīgòu jiànlìle zhànlüè hézuò guānxi.',goiY:['派遣 = cử','并 = đồng thời','战略合作 = hợp tác chiến lược'],giai:'并 nối hai hành động cùng chủ ngữ — dịch "đồng thời / và"; 与……建立关系 = thiết lập quan hệ với ….'},
-  {vi:'Mọi người đều thừa nhận y tế và sức khoẻ thuộc hai lĩnh vực khác nhau, nhưng dữ liệu lớn lại có thể thay đổi triệt để cục diện này.',zh:'人们公认医疗和健康分属不同的领域，而大数据却可能彻底扭转这一局面。',py:'Rénmen gōngrèn yīliáo hé jiànkāng fēnshǔ bù tóng de lǐngyù, ér dà shùjù què kěnéng chèdǐ niǔzhuǎn zhè yì júmiàn.',goiY:['公认 = mọi người đều thừa nhận','而……却…… = nhưng … lại','扭转 = xoay chuyển'],giai:'公认 dịch "mọi người đều thừa nhận" chứ không dịch "công nhận"; 而……却…… tạo đối lập — dịch "nhưng … lại".'},
-  {vi:'Bác sĩ thực sự là nguồn lực khan hiếm, vì vậy khám chữa lâm sàng sẽ cố gắng giảm bớt sự phụ thuộc vào con người.',zh:'医生是切切实实的稀缺资源，因此临床会尽量减少对人的依赖。',py:'Yīshēng shì qièqiè shíshí de xīquē zīyuán, yīncǐ línchuáng huì jǐnliàng jiǎnshǎo duì rén de yīlài.',goiY:['切切实实 = thực sự','因此 = vì vậy','依赖 = sự phụ thuộc'],giai:'切切实实的 làm định ngữ nhấn mạnh — dịch thành trạng từ "thực sự" cho tự nhiên; 对人的依赖 = sự phụ thuộc vào con người.'},
-  {vi:'Có dữ liệu lớn, ý tưởng dập tắt bệnh tật ngay từ khi mới manh nha cũng không còn có vẻ hoang đường nữa.',zh:'有了大数据，把疾病消灭在萌芽状态中的想法也不再显得荒谬了。',py:'Yǒule dà shùjù, bǎ jíbìng xiāomiè zài méngyá zhuàngtài zhōng de xiǎngfǎ yě bú zài xiǎnde huāngmiù le.',goiY:['消灭在萌芽状态 = dập tắt từ trong trứng nước','显得荒谬 = có vẻ hoang đường'],giai:'Định ngữ dài 把……中的 đứng trước 想法 — tiếng Việt đưa ra sau: "ý tưởng dập tắt …"; 不再……了 = không còn … nữa.'},
-  {vi:'Truy nguyên nguyên nhân, bệnh tật phát sinh chẳng qua là liên quan đến gen, di truyền, môi trường và thói quen sinh hoạt; tuy không ngẫu nhiên nhưng lại không thể lường trước.',zh:'追究原因，疾病的发生无非与基因、遗传、环境和生活习惯有关，虽非偶然，却无法预料。',py:'Zhuījiū yuányīn, jíbìng de fāshēng wúfēi yǔ jīyīn, yíchuán, huánjìng hé shēnghuó xíguàn yǒuguān, suī fēi ǒurán, què wúfǎ yùliào.',goiY:['追究原因 = truy nguyên nguyên nhân','无非 = chẳng qua là','虽非……却…… = tuy không … nhưng lại …'],giai:'无非 (bài 5) = chẳng qua chỉ là; 虽非 = 虽然不是 (văn viết cổ) — dịch "tuy không phải".'},
-  {vi:'Nếu có thể tích luỹ dữ liệu nhịp tim trong thời gian dài thì có thể nắm bắt được những điềm báo lẻ tẻ, từ đó cứu sống bệnh nhân.',zh:'如果能对心跳数据进行长时间的积累，就可能捕捉到零星的预兆，从而挽救患者的生命。',py:'Rúguǒ néng duì xīntiào shùjù jìnxíng cháng shíjiān de jīlěi, jiù kěnéng bǔzhuō dào língxīng de yùzhào, cóng\'ér wǎnjiù huànzhě de shēngmìng.',goiY:['如果……就…… = nếu … thì …','零星 = lẻ tẻ','从而 = từ đó','挽救 = cứu'],giai:'对……进行积累 là cách nói văn viết của 积累……; 从而 nêu kết quả đạt được — dịch "từ đó"; 零星 không dịch "linh tinh".'},
-  {vi:'Ở Trung Quốc số người có vấn đề về huyết áp không phải là ít; nếu dùng thiết bị tiên tiến để chủ động quản lý sức khoẻ của họ thì sẽ là một thử nghiệm rất có triển vọng.',zh:'中国血压有问题的人不在少数，如果用先进器材对他们的健康进行人为管理，将是很有前景的尝试。',py:'Zhōngguó xuèyā yǒu wèntí de rén bú zài shǎoshù, rúguǒ yòng xiānjìn qìcái duì tāmen de jiànkāng jìnxíng rénwéi guǎnlǐ, jiāng shì hěn yǒu qiánjǐng de chángshì.',goiY:['不在少数 = không phải ít','人为管理 = chủ động quản lý','前景 = triển vọng'],giai:'不在少数 = nhiều (nói giảm); 人为管理 dịch "chủ động quản lý", không dịch "quản lý nhân tạo"; 有前景 = có triển vọng.'},
-  {vi:'Nhờ sự hỗ trợ của các thiết bị đặc biệt, dữ liệu lớn có thể nâng cao đáng kể hiệu suất làm việc của bác sĩ, đó chính là điểm ưu việt của nó.',zh:'在特殊设备的协助下，大数据能大大提高医生的工作效率，这正是它的优越之处。',py:'Zài tèshū shèbèi de xiézhù xià, dà shùjù néng dàdà tígāo yīshēng de gōngzuò xiàolǜ, zhè zhèng shì tā de yōuyuè zhī chù.',goiY:['在……的协助下 = nhờ sự hỗ trợ của','大大 = đáng kể','优越之处 = điểm ưu việt'],giai:'大大 + 提高 dịch "nâng cao đáng kể / rất nhiều"; 之处 = chỗ, điểm (văn viết).'},
-  {vi:'Nói một cách khách quan, cho dù chỉ làm được việc giữ gìn sức khoẻ thôi, đóng góp của dữ liệu lớn cho nhân loại cũng đã vượt xa sự mong đợi của chúng ta.',zh:'实事求是地讲，即便仅仅做到了健康维护这一点，大数据为人类做出的贡献也远远超出了我们的期盼。',py:'Shíshì-qiúshì de jiǎng, jíbiàn jǐnjǐn zuòdàole jiànkāng wéihù zhè yì diǎn, dà shùjù wèi rénlèi zuòchū de gòngxiàn yě yuǎnyuǎn chāochūle wǒmen de qīpàn.',goiY:['实事求是地讲 = nói một cách khách quan','即便……也…… = cho dù … cũng …','远远超出 = vượt xa'],giai:'即便……也…… = cho dù … cũng … (giả thiết nhượng bộ); 远远超出 dịch "vượt xa"; 仅仅 = chỉ … thôi.'}
+  {vi:'Vụ việc này là do con người gây ra, trách nhiệm của những người liên quan nhất định phải bị truy cứu.',zh:'这次事故是人为造成的，有关人员的责任一定要追究。',py:'Zhè cì shìgù shì rénwéi zàochéng de, yǒuguān rényuán de zérèn yídìng yào zhuījiū.',goiY:['人为 = do con người','有关人员 = người liên quan','追究 = truy cứu'],giai:'是……造成的 nhấn mạnh nguyên nhân; câu sau là bị động ý nghĩa (trách nhiệm phải bị truy cứu).'},
+  {vi:'Nhờ nỗ lực chung của mọi người, công ty cuối cùng đã xoay chuyển được thế bị động.',zh:'经过大家的共同努力，公司终于扭转了被动的局面。',py:'Jīngguò dàjiā de gòngtóng nǔlì, gōngsī zhōngyú niǔzhuǎnle bèidòng de júmiàn.',goiY:['扭转 = xoay chuyển','被动 = bị động','局面 = cục diện, thế'],giai:'经过…… = trải qua, nhờ…; 扭转局面 dịch "xoay chuyển tình thế".'},
+  {vi:'Những dữ liệu lẻ tẻ này trông như vô dụng, nhưng gom lại thì rất có giá trị.',zh:'这些零星的数据看起来没什么用，可是堆积起来就很有价值了。',py:'Zhèxiē língxīng de shùjù kàn qǐlái méi shénme yòng, kěshì duījī qǐlái jiù hěn yǒu jiàzhí le.',goiY:['零星 = lẻ tẻ','堆积起来 = gom lại','价值 = giá trị'],giai:'看起来 = trông có vẻ; V + 起来 ở vế sau mang nghĩa "khi đã … thì".'},
+  {vi:'Loại thuốc mới này vẫn đang ở giai đoạn thử nghiệm lâm sàng, hiệu quả thế nào thì còn khó nói.',zh:'这种新药还在临床试验阶段，效果如何还不好说。',py:'Zhè zhǒng xīn yào hái zài línchuáng shìyàn jiēduàn, xiàoguǒ rúhé hái bù hǎo shuō.',goiY:['临床 = lâm sàng','阶段 = giai đoạn','如何 = thế nào'],giai:'临床试验 = thử nghiệm lâm sàng; 不好说 = khó nói (chưa chắc).'},
+  {vi:'Nhìn sang năm tới, chúng tôi tràn đầy niềm tin vào triển vọng của ngành này.',zh:'展望明年，我们对这个行业的前景充满信心。',py:'Zhǎnwàng míngnián, wǒmen duì zhège hángyè de qiánjǐng chōngmǎn xìnxīn.',goiY:['展望 = nhìn về','前景 = triển vọng','充满信心 = tràn đầy niềm tin'],giai:'对 + N + 充满信心 = tràn đầy niềm tin vào…; 展望 + thời gian tới (明年 / 未来) hay đứng đầu câu kết bài.'}
 ];
 
 
@@ -1833,186 +1765,142 @@ var writingData = {
 // LUYỆN NÓI — đúng bảng 练习5 của sách: 根据提示，简述课文主要内容
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Đây là bảng bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b> (dựa vào gợi ý, trình bày ngắn gọn nội dung chính của bài khoá). Mỗi câu hỏi là một dòng của bảng, cột gợi ý giữ nguyên như sách. Bấm loa nghe câu hỏi, <b>tự ghi âm câu trả lời trước</b> rồi mới mở câu mẫu. Cố dùng đúng các từ trong gợi ý.',
-  questions:[
-    {q_zh:'什么是大数据？',
-     q_vn:'Dữ liệu lớn là gì?',
-     hint:'以通俗的例子……',
-     sample:'有学者以通俗的例子告诉我们：每个人乘飞机时都是自己选择航线，这些选择结果会留下大量的数据。根据这些堆积如山的原始记录梳理出的航程设计方案，将是最卓越的。这就是大数据的方法。',
-     sample_vn:'Có học giả dùng một ví dụ dễ hiểu để nói với chúng ta: mỗi người khi đi máy bay đều tự chọn đường bay, những kết quả lựa chọn đó để lại một lượng lớn dữ liệu. Phương án thiết kế hành trình được sắp xếp từ những ghi chép gốc chất cao như núi này sẽ là ưu việt nhất. Đó chính là phương pháp của dữ liệu lớn.',
-     note:'Mở bằng 以……的例子 (đúng gợi ý), kể ví dụ đường bay, kết bằng câu định nghĩa 这就是…….'},
-    {q_zh:'大数据有什么用？',
-     q_vn:'Dữ liệu lớn có tác dụng gì?',
-     hint:'百度预测世界杯冠军的做法',
-     sample:'举例来说，百度在2014年世界杯期间准确预测德国夺冠，就是大数据的功劳。百度派遣数据专家搜索了全世界几万场比赛的数据，并与相关机构建立了战略合作伙伴关系，把各类数据融入预测模型中。之后又用前两届世界杯进行验证，准确率接近75%。',
-     sample_vn:'Lấy ví dụ, trong World Cup 2014 Baidu dự đoán chính xác Đức vô địch, đó chính là công lao của dữ liệu lớn. Baidu cử chuyên gia dữ liệu tìm kiếm dữ liệu mấy vạn trận đấu trên toàn thế giới, đồng thời thiết lập quan hệ đối tác chiến lược với các cơ quan liên quan, đưa mọi loại dữ liệu vào mô hình dự báo. Sau đó lại dùng hai kỳ World Cup trước để kiểm chứng, tỉ lệ chính xác gần 75%.',
-     note:'Kể "cách làm" theo trình tự: 派遣专家 → 建立合作 → 融入模型 → 验证; dùng 举例来说 mở đầu.'},
-    {q_zh:'大数据如何连接未来？',
-     q_vn:'Dữ liệu lớn kết nối với tương lai như thế nào?',
-     hint:'①让“医疗”和“健康”相通相融 ②消除疾病隐患 ③对病种进行细致的监测 ④临床减少对人的依赖',
-     sample:'我们不妨以健康为例加以说明。首先，大数据让“医疗”和“健康”相通相融。其次，如果能找出病因，就可以消除疾病隐患，比如预测心脏病人发病的时机。再次，对病种进行细致的监测，意义不言而喻。最后，临床会减少对人的依赖，大数据能大大提高医生的工作效率。',
-     sample_vn:'Chúng ta thử lấy sức khoẻ làm ví dụ để giải thích. Thứ nhất, dữ liệu lớn khiến "y tế" và "sức khoẻ" thông nhau, hoà vào nhau. Thứ hai, nếu tìm ra nguyên nhân gây bệnh thì có thể loại bỏ hiểm hoạ bệnh tật, chẳng hạn dự đoán thời điểm lên cơn của bệnh nhân tim. Thứ ba, giám sát tỉ mỉ các loại bệnh, ý nghĩa không nói cũng hiểu. Cuối cùng, lâm sàng sẽ giảm phụ thuộc vào con người, dữ liệu lớn có thể nâng cao đáng kể hiệu suất làm việc của bác sĩ.',
-     note:'Bốn gợi ý ①②③④ → dùng 首先 / 其次 / 再次 / 最后 cho mạch lạc; lồng cả hai điểm ngữ pháp 加以 và 大大.'},
-    {q_zh:'大数据时代有何意义？',
-     q_vn:'Thời đại dữ liệu lớn có ý nghĩa gì?',
-     hint:'预测未来',
-     sample:'展望未来，大数据将会走进我们生活的各个领域。有人说：“拥有知识曾意味着掌握过去，现在它更意味着预测未来。”这就是大数据时代的意义。',
-     sample_vn:'Nhìn về tương lai, dữ liệu lớn sẽ đi vào mọi lĩnh vực trong cuộc sống của chúng ta. Có người nói: "Sở hữu tri thức từng có nghĩa là nắm được quá khứ, còn bây giờ nó càng có nghĩa là dự đoán tương lai." Đó chính là ý nghĩa của thời đại dữ liệu lớn.',
-     note:'Mở bằng 展望未来; đối lập 曾……，现在更…… (quá khứ — tương lai) để làm nổi ý "dự đoán tương lai".'}
+  intro: 'Đây là bảng bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b> (dựa vào gợi ý, trình bày ngắn gọn nội dung chính của bài khoá). Mỗi câu hỏi là một dòng của bảng, cột gợi ý giữ nguyên như sách. Bấm loa nghe câu hỏi, <b>tự ghi âm câu trả lời trước</b> rồi mới mở câu mẫu. Cố dùng đúng các từ trong gợi ý.',
+  questions: [
+    {q_zh:'什么是大数据？',q_vn:'Dữ liệu lớn là gì?',hint:'以通俗的例子……',sample:'有学者以通俗的例子告诉我们：每个人乘飞机时都是自己选择航线，这些选择结果会留下大量的数据。根据这些堆积如山的原始记录梳理出的航程设计方案，将是最卓越的。这就是大数据的方法。',sample_vn:'Có học giả dùng một ví dụ dễ hiểu để nói với chúng ta: mỗi người khi đi máy bay đều tự chọn đường bay, những kết quả lựa chọn đó để lại một lượng lớn dữ liệu. Phương án thiết kế hành trình được sắp xếp từ những ghi chép gốc chất cao như núi này sẽ là ưu việt nhất. Đó chính là phương pháp của dữ liệu lớn.',note:'Mở bằng 以……的例子 (đúng gợi ý), kể ví dụ đường bay, kết bằng câu định nghĩa 这就是…….'},
+    {q_zh:'大数据有什么用？',q_vn:'Dữ liệu lớn có tác dụng gì?',hint:'百度预测世界杯冠军的做法',sample:'举例来说，百度在2014年世界杯期间准确预测德国夺冠，就是大数据的功劳。百度派遣数据专家搜索了全世界几万场比赛的数据，并与相关机构建立了战略合作伙伴关系，把各类数据融入预测模型中。之后又用前两届世界杯进行验证，准确率接近75%。',sample_vn:'Lấy ví dụ, trong World Cup 2014 Baidu dự đoán chính xác Đức vô địch, đó chính là công lao của dữ liệu lớn. Baidu cử chuyên gia dữ liệu tìm kiếm dữ liệu mấy vạn trận đấu trên toàn thế giới, đồng thời thiết lập quan hệ đối tác chiến lược với các cơ quan liên quan, đưa mọi loại dữ liệu vào mô hình dự báo. Sau đó lại dùng hai kỳ World Cup trước để kiểm chứng, tỉ lệ chính xác gần 75%.',note:'Kể "cách làm" theo trình tự: 派遣专家 → 建立合作 → 融入模型 → 验证; dùng 举例来说 mở đầu.'},
+    {q_zh:'大数据如何连接未来？',q_vn:'Dữ liệu lớn kết nối với tương lai như thế nào?',hint:'①让“医疗”和“健康”相通相融 ②消除疾病隐患 ③对病种进行细致的监测 ④临床减少对人的依赖',sample:'我们不妨以健康为例加以说明。首先，大数据让“医疗”和“健康”相通相融。其次，如果能找出病因，就可以消除疾病隐患，比如预测心脏病人发病的时机。再次，对病种进行细致的监测，意义不言而喻。最后，临床会减少对人的依赖，大数据能大大提高医生的工作效率。',sample_vn:'Chúng ta thử lấy sức khoẻ làm ví dụ để giải thích. Thứ nhất, dữ liệu lớn khiến "y tế" và "sức khoẻ" thông nhau, hoà vào nhau. Thứ hai, nếu tìm ra nguyên nhân gây bệnh thì có thể loại bỏ hiểm hoạ bệnh tật, chẳng hạn dự đoán thời điểm lên cơn của bệnh nhân tim. Thứ ba, giám sát tỉ mỉ các loại bệnh, ý nghĩa không nói cũng hiểu. Cuối cùng, lâm sàng sẽ giảm phụ thuộc vào con người, dữ liệu lớn có thể nâng cao đáng kể hiệu suất làm việc của bác sĩ.',note:'Bốn gợi ý ①②③④ → dùng 首先 / 其次 / 再次 / 最后 cho mạch lạc; lồng cả hai điểm ngữ pháp 加以 và 大大.'},
+    {q_zh:'大数据时代有何意义？',q_vn:'Thời đại dữ liệu lớn có ý nghĩa gì?',hint:'预测未来',sample:'展望未来，大数据将会走进我们生活的各个领域。有人说：“拥有知识曾意味着掌握过去，现在它更意味着预测未来。”这就是大数据时代的意义。',sample_vn:'Nhìn về tương lai, dữ liệu lớn sẽ đi vào mọi lĩnh vực trong cuộc sống của chúng ta. Có người nói: "Sở hữu tri thức từng có nghĩa là nắm được quá khứ, còn bây giờ nó càng có nghĩa là dự đoán tương lai." Đó chính là ý nghĩa của thời đại dữ liệu lớn.',note:'Mở bằng 展望未来; đối lập "từng… — bây giờ càng…" (quá khứ — tương lai) để làm nổi ý "dự đoán tương lai".'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — 听力 (sách HSK 6 không có sách bài tập nghe)
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — câu tự soạn (sách HSK 6 không có sách bài tập nghe), mỗi câu một tình huống mới
+// ══════════════════════════════════════════
 var listenExamData = {
-  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. ' +
-         'Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
-  source: 'Soạn theo dạng đề HSK 6 · chủ đề bài 23',
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 23',
   items: [
-    {n:1,
-     lines:[{sp:'女',zh:'你怎么突然对大数据这么感兴趣了？'},
-            {sp:'男',zh:'我看了一篇文章，说百度用大数据准确预测了世界杯冠军，我觉得太神奇了，就想多了解一下。'}],
-     q:'男的为什么对大数据感兴趣？',qvn:'Vì sao người đàn ông quan tâm đến dữ liệu lớn?',
-     opts:['老师布置了作业','看了一篇关于大数据的文章','他特别喜欢踢足球','他想当数据专家'],ans:1,
-     why:'我看了一篇文章，说百度用大数据准确预测了世界杯冠军 → vì đọc một bài viết về dữ liệu lớn.',
-     words:['预测']},
-
-    {n:2,
-     lines:[{sp:'男',zh:'奶奶最近的血压怎么样？'},
-            {sp:'女',zh:'比先前稳定多了。我们给她买了一块能监测血压的手表，数据会自动发给医生，医生在医院就能看到。'}],
-     q:'关于奶奶，可以知道什么？',qvn:'Về bà nội, có thể biết điều gì?',
-     opts:['住进了医院','不愿意戴手表','每天都去医院量血压','血压比以前稳定了'],ans:3,
-     why:'比先前稳定多了 → huyết áp ổn định hơn trước nhiều; dữ liệu tự gửi cho bác sĩ nên bà không phải đến viện.',
-     words:['血压','先前']},
-
-    {n:3,
-     lines:[{sp:'女',zh:'这次运动会你们班怎么拿了第一？'},
-            {sp:'男',zh:'全靠班长。他把每个人的训练数据攒起来，细致地分析了一遍，再安排谁参加什么项目，大家的成绩一下子大大提高了。'}],
-     q:'男的认为他们班获胜是谁的功劳？',qvn:'Người đàn ông cho rằng lớp họ thắng là công của ai?',
-     opts:['班长','体育老师','全校同学','校长'],ans:0,
-     why:'全靠班长 → hoàn toàn nhờ lớp trưởng: gom dữ liệu tập luyện, phân tích tỉ mỉ rồi sắp xếp người thi đấu.',
-     words:['攒','细致']},
-
-    {n:4,
-     lines:[{sp:'男',zh:'你为什么选医学专业？'},
-            {sp:'女',zh:'一是我觉得医学很有前景，二是我从小就想当一名临床医生，亲手挽救病人的生命。'}],
-     q:'女的想做什么工作？',qvn:'Người phụ nữ muốn làm công việc gì?',
-     opts:['数据专家','护士','临床医生','大学老师'],ans:2,
-     why:'我从小就想当一名临床医生 → muốn làm bác sĩ lâm sàng.',
-     words:['前景','临床','挽救']},
-
-    {n:5,
-     lines:[{sp:'女',zh:'听说学校要把体育馆的器材全部换掉？'},
-            {sp:'男',zh:'对，那些器材太陈旧了，存在安全隐患。学校已经派人去买新的了，下个月就能用上。'}],
-     q:'学校为什么要换体育器材？',qvn:'Vì sao nhà trường muốn thay dụng cụ thể thao?',
-     opts:['学生不喜欢旧器材','器材的数量太少','旧器材有安全隐患','要举办运动会'],ans:2,
-     why:'太陈旧了，存在安全隐患 → dụng cụ quá cũ, có nguy cơ mất an toàn.',
-     words:['器材','陈旧','隐患']},
-
-    {n:6,
-     lines:[{sp:'男',zh:'这次作文比赛的结果真是出乎我的预料。'},
-            {sp:'女',zh:'是啊，谁也没想到平时不爱说话的小李会拿一等奖。不过实事求是地说，她的作文确实写得最好。'}],
-     q:'关于小李，下列哪项正确？',qvn:'Về Tiểu Lý, câu nào sau đây đúng?',
-     opts:['获得了一等奖','平时很爱说话','没有参加比赛','作文写得不太好'],ans:0,
-     why:'小李会拿一等奖 → giành giải nhất; 平时不爱说话 nên B sai; 她的作文确实写得最好 nên D sai.',
-     words:['预料','实事求是']},
-
-    {n:7,
-     lines:[{sp:'女',zh:'众所周知，医生是切切实实的稀缺资源。在未来的医疗模式中，人们平时就在特殊设备的协助下把自己的生理数据攒起来，经过分析处理后再发给医生。这样，医生的工作效率会大大提高，远程医疗也会变得可行。'}],
-     q:'这段话主要谈的是什么？',qvn:'Đoạn văn chủ yếu nói về điều gì?',
-     opts:['医生的数量太少','怎样当一名好医生','如何购买医疗设备','大数据在未来医疗中的作用'],ans:3,
-     why:'Cả đoạn nói về mô hình y tế tương lai: thu thập dữ liệu sinh lý → gửi bác sĩ → hiệu suất tăng, y tế từ xa khả thi, tức vai trò của dữ liệu lớn trong y tế tương lai.',
-     words:['切切实实','协助','生理','攒','可行']},
-
-    {n:8,
-     lines:[{sp:'男',zh:'很多人以为疾病的发生都是偶然的，其实不然。追究原因，无非是基因、遗传、环境和生活习惯等。疾病虽然难以预料，但如果能及早发现预兆，就可以变被动为主动，把疾病消灭在萌芽状态。'}],
-     q:'说话人认为怎样才能把疾病消灭在萌芽状态？',qvn:'Người nói cho rằng làm thế nào mới có thể dập tắt bệnh tật từ khi mới manh nha?',
-     opts:['多吃一些药','及早发现预兆','改变自己的基因','经常去医院检查'],ans:1,
-     why:'如果能及早发现预兆，就可以……把疾病消灭在萌芽状态 → phát hiện sớm điềm báo.',
-     words:['追究','基因','遗传','预料','预兆','被动','消灭','萌芽']}
+    {
+      n: 1,
+      lines: [
+        {sp:'女',zh:'大家提了那么多意见，学校会管吗？'},
+        {sp:'男',zh:'校长说了，下周开会，会对每一条意见加以讨论。'}
+      ],
+      q: '学校打算怎么对待大家的意见？',
+      qvn: 'Nhà trường định đối xử với ý kiến của mọi người thế nào?',
+      opts: ['不打算处理','开会讨论','让老师决定','交给学生会'],
+      ans: 1,
+      why: '会对每一条意见加以讨论 → sẽ họp và thảo luận từng ý kiến; 加以 + 讨论.',
+      words: ['加以']
+    },
+    {
+      n: 2,
+      lines: [
+        {sp:'男',zh:'用了这个新的学习方法以后，你的成绩怎么样？'},
+        {sp:'女',zh:'大大提高了，上次考试比以前多了二十分。'}
+      ],
+      q: '女的成绩有什么变化？',
+      qvn: 'Thành tích của người phụ nữ thay đổi thế nào?',
+      opts: ['没有变化','下降了','提高了一点儿','提高了很多'],
+      ans: 3,
+      why: '大大提高了，多了二十分 → tăng rất nhiều, không phải "một chút".',
+      words: ['大大']
+    },
+    {
+      n: 3,
+      lines: [
+        {sp:'女',zh:'明天的比赛，你觉得你们队能赢吗？'},
+        {sp:'男',zh:'说实话，我们的水平远远不如他们，能进一个球就不错了。'}
+      ],
+      q: '男的觉得他们队怎么样？',
+      qvn: 'Người đàn ông thấy đội mình thế nào?',
+      opts: ['比对方好得多','和对方差不多','比对方差很多','一定能赢'],
+      ans: 2,
+      why: '远远不如他们 = kém xa đối thủ; 能进一个球就不错了 → không mong thắng.',
+      words: ['远远']
+    },
+    {
+      n: 4,
+      lines: [
+        {sp:'男',zh:'爷爷最近血压怎么样？'},
+        {sp:'女',zh:'好多了。医生让他戴了一块手表，血压一高就会提醒他。'}
+      ],
+      q: '关于爷爷，可以知道什么？',
+      qvn: 'Về ông nội, có thể biết điều gì?',
+      opts: ['血压比以前好了','不愿意吃药','住进了医院','手表丢了'],
+      ans: 0,
+      why: '好多了 → huyết áp tốt hơn trước; bác sĩ cho đeo đồng hồ để nhắc khi huyết áp cao.',
+      words: ['血压']
+    },
+    {
+      n: 5,
+      lines: [
+        {sp:'男',zh:'这座桥最近好像有点儿晃，是不是有什么隐患？'},
+        {sp:'女',zh:'已经请专家来检查了。问题还在萌芽的时候就得解决，所以桥上暂时不让走车。'}
+      ],
+      q: '女的说现在怎么样？',
+      qvn: 'Người phụ nữ nói hiện giờ thế nào?',
+      opts: ['桥已经修好了','车暂时不能过桥','专家还没来','桥没有任何问题'],
+      ans: 1,
+      why: '桥上暂时不让走车 → tạm thời xe không được qua cầu. Đã mời chuyên gia; muốn xử lý vấn đề ngay khi mới manh nha (萌芽), nên cầu chưa thể coi là "không có vấn đề".',
+      words: ['隐患','萌芽']
+    },
+    {
+      n: 6,
+      lines: [
+        {sp:'女',zh:'你哪儿来的钱买这么贵的电脑？'},
+        {sp:'男',zh:'这是我攒了一年的零花钱，一分都没乱花。'}
+      ],
+      q: '男的买电脑的钱是从哪儿来的？',
+      qvn: 'Tiền mua máy tính của người đàn ông từ đâu ra?',
+      opts: ['自己攒的','父母给的','跟朋友借的','打工挣的'],
+      ans: 0,
+      why: '攒了一年的零花钱 → tự dành dụm tiền tiêu vặt cả năm.',
+      words: ['攒']
+    },
+    {
+      n: 7,
+      lines: [
+        {sp:'男',zh:'你当初为什么选这个专业？'},
+        {sp:'女',zh:'我觉得它前景很好，毕业以后好找工作。'}
+      ],
+      q: '女的为什么选这个专业？',
+      qvn: 'Vì sao người phụ nữ chọn ngành này?',
+      opts: ['父母让她选的','分数正好够','觉得自己很喜欢','前景好，好找工作'],
+      ans: 3,
+      why: '它前景很好，毕业以后好找工作 → vì triển vọng tốt, dễ tìm việc; không nhắc tới bố mẹ hay điểm số.',
+      words: ['前景']
+    }
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
+// ══════════════════════════════════════════
 var situationData = {
-  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
-         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn hỏi đề xuất tổ chức hoạt động của em gửi thầy chủ nhiệm có được chấp nhận không.',
-     a:{sp:'Bạn',zh:'你给班主任提的那个建议，他怎么说？',vn:'Cái đề xuất cậu gửi thầy chủ nhiệm, thầy nói sao?'},
-     need:['Dùng 加以'],
-     sample:'老师说我的建议很有意思，他会认真加以考虑，下个星期给我答复。',
-     samplePy:'Lǎoshī shuō wǒ de jiànyì hěn yǒu yìsi, tā huì rènzhēn jiāyǐ kǎolǜ, xià ge xīngqī gěi wǒ dáfù.',
-     sampleVn:'Thầy nói đề xuất của tớ rất thú vị, thầy sẽ xem xét nghiêm túc, tuần sau trả lời tớ.',
-     tip:'加以 + động từ song âm tiết (考虑 / 研究 / 说明); trước 加以 hay có 认真, 好好.'},
-
-    {scene:'Em trai hỏi vì sao dạo này em chạy bộ lúc nào cũng đeo đồng hồ thông minh.',
-     a:{sp:'Em trai',zh:'哥，你跑步为什么总戴着那块手表？',vn:'Anh ơi, sao anh chạy bộ lúc nào cũng đeo cái đồng hồ đó?'},
-     need:['Dùng 大大','Dùng 数据'],
-     sample:'这块手表能记录我的心跳数据，还能帮我安排训练计划，我跑步的效率大大提高了。',
-     samplePy:'Zhè kuài shǒubiǎo néng jìlù wǒ de xīntiào shùjù, hái néng bāng wǒ ānpái xùnliàn jìhuà, wǒ pǎobù de xiàolǜ dàdà tígāo le.',
-     sampleVn:'Chiếc đồng hồ này ghi lại được dữ liệu nhịp tim của anh, còn giúp anh sắp xếp kế hoạch tập luyện, hiệu quả chạy bộ của anh tăng lên rõ rệt.',
-     tip:'大大 + 提高 / 增加 / 减少 (động từ song âm tiết) — điểm ngữ pháp 2.'},
-
-    {scene:'Mẹ khuyên em đăng ký vào lớp chuyên Toán, nhưng em thấy mình chưa đủ sức.',
-     a:{sp:'Mẹ',zh:'你去报名参加数学提高班吧，妈妈觉得你没问题。',vn:'Con đi đăng ký lớp nâng cao Toán đi, mẹ thấy con không có vấn đề gì đâu.'},
-     need:['Dùng 远远','Dùng 实事求是'],
-     sample:'妈妈，实事求是地说，我现在的水平还远远达不到那个班的要求，我想先把基础打好。',
-     samplePy:'Māma, shíshì-qiúshì de shuō, wǒ xiànzài de shuǐpíng hái yuǎnyuǎn dá bu dào nàge bān de yāoqiú, wǒ xiǎng xiān bǎ jīchǔ dǎhǎo.',
-     sampleVn:'Mẹ ơi, nói thật lòng thì trình độ hiện giờ của con còn lâu mới đạt yêu cầu của lớp đó, con muốn củng cố nền tảng trước đã.',
-     tip:'远远 + 达不到 / 不能 / 不如 = còn xa mới …; 实事求是地说 mở đầu lời nhận xét khách quan.'},
-
-    {scene:'Bạn hỏi ý kiến em về một ứng dụng học tập dùng dữ liệu lớn để gợi ý bài tập.',
-     a:{sp:'Bạn',zh:'你觉得这个根据大数据推荐练习的学习软件怎么样？',vn:'Cậu thấy phần mềm học tập gợi ý bài tập dựa trên dữ liệu lớn này thế nào?'},
-     need:['Dùng 不言而喻 hoặc 前景'],
-     sample:'它能根据每个人的错题推荐练习，这对学习的帮助是不言而喻的，我觉得很有前景。',
-     samplePy:'Tā néng gēnjù měi ge rén de cuòtí tuījiàn liànxí, zhè duì xuéxí de bāngzhù shì bùyán\'éryù de, wǒ juéde hěn yǒu qiánjǐng.',
-     sampleVn:'Nó có thể gợi ý bài luyện theo những câu làm sai của từng người, tác dụng của nó với việc học thì khỏi phải nói, tớ thấy rất có triển vọng.',
-     tip:'……是不言而喻的 = … là điều hiển nhiên; 很有前景 = rất có triển vọng (đừng nói 很有展望).'},
-
-    {scene:'Thầy hỏi em nhận xét về kế hoạch hoạt động mà nhóm bạn vừa trình bày.',
-     a:{sp:'Thầy giáo',zh:'你觉得第二组的活动计划怎么样？',vn:'Em thấy kế hoạch hoạt động của nhóm hai thế nào?'},
-     need:['Dùng 细致','Dùng 可行'],
-     sample:'我觉得他们的计划考虑得很细致，也切实可行，只是时间安排有点儿紧。',
-     samplePy:'Wǒ juéde tāmen de jìhuà kǎolǜ de hěn xìzhì, yě qièshí kěxíng, zhǐshì shíjiān ānpái yǒudiǎnr jǐn.',
-     sampleVn:'Em thấy kế hoạch của họ được cân nhắc rất tỉ mỉ, lại thiết thực khả thi, chỉ có điều thời gian sắp xếp hơi gấp.',
-     tip:'Khen trước (细致, 切实可行) rồi góp ý nhẹ bằng 只是…… (chỉ có điều …).'}
+    {scene:'Bạn cùng phòng muốn mua máy chạy bộ nhưng chưa đủ tiền.',a:{sp:'Bạn cùng phòng',zh:'我想买那台跑步机，可是钱不够。',vn:'Tớ muốn mua cái máy chạy bộ đó nhưng không đủ tiền.'},need:['Dùng 攒','Dùng 可行'],sample:'你不如每个月攒一点儿，半年以后就够了。我觉得这个办法比较可行。',samplePy:'Nǐ bùrú měi ge yuè zǎn yìdiǎnr, bàn nián yǐhòu jiù gòu le. Wǒ juéde zhège bànfǎ bǐjiào kěxíng.',sampleVn:'Cậu thử mỗi tháng dành dụm một ít, nửa năm sau là đủ. Tớ thấy cách này khá khả thi.',tip:'不如 + V = chi bằng…; 可行 là tính từ: 办法可行 / 不太可行.'},
+    {scene:'Lớp trưởng hỏi em nên xử lý thế nào với nhiều đề xuất của các bạn về hội thao.',a:{sp:'Lớp trưởng',zh:'同学们提了好几条关于运动会的建议，你觉得该怎么处理？',vn:'Các bạn đưa ra mấy đề xuất về hội thao, cậu thấy nên làm sao?'},need:['Dùng 加以'],sample:'我觉得应该先把这些建议都记下来，开班会的时候再一条一条加以讨论。',samplePy:'Wǒ juéde yīnggāi xiān bǎ zhèxiē jiànyì dōu jì xiàlái, kāi bānhuì de shíhou zài yì tiáo yì tiáo jiāyǐ tǎolùn.',sampleVn:'Tớ nghĩ nên ghi lại hết các đề xuất này trước, đến buổi sinh hoạt lớp thì thảo luận từng cái một.',tip:'先……，再…… sắp xếp trình tự; 一条一条 = từng điều một; 加以 + 讨论 (hai âm tiết).'},
+    {scene:'Thầy giáo gợi ý em chuyển lên lớp có trình độ cao hơn, nhưng em thấy mình chưa đủ sức.',a:{sp:'Thầy giáo',zh:'你可以去那个水平更高的班试试，你想去吗？',vn:'Em có thể thử lên lớp trình độ cao hơn, em có muốn không?'},need:['Dùng 远远','Từ chối khiêm tốn, nêu lý do'],sample:'老师，谢谢您给我这个机会！可说实话，我现在的水平还远远不够，我想先在这个班打好基础。',samplePy:'Lǎoshī, xièxie nín gěi wǒ zhège jīhuì! Kě shuō shíhuà, wǒ xiànzài de shuǐpíng hái yuǎnyuǎn bú gòu, wǒ xiǎng xiān zài zhège bān dǎhǎo jīchǔ.',sampleVn:'Thầy ơi, em cảm ơn thầy đã cho em cơ hội này! Nhưng nói thật, trình độ của em bây giờ còn kém xa, em muốn học chắc ở lớp này trước.',tip:'说实话 làm lời từ chối mềm hơn; 远远不够 = còn thiếu nhiều (không nói 大大不够).'},
+    {scene:'Bạn hỏi em thấy trang web luyện tiếng Trung gợi ý bài tập theo dữ liệu lớn thế nào.',a:{sp:'Bạn',zh:'你觉得这个根据大数据推荐练习的学习网站怎么样？',vn:'Cậu thấy trang web học tập gợi ý bài luyện theo dữ liệu lớn này thế nào?'},need:['Dùng 大大','Nêu một ví dụ'],sample:'挺好的！它能根据我的错题推荐练习，不用再做那些已经会了的题，做题的时间大大减少了。',samplePy:'Tǐng hǎo de! Tā néng gēnjù wǒ de cuòtí tuījiàn liànxí, búyòng zài zuò nàxiē yǐjīng huìle de tí, zuò tí de shíjiān dàdà jiǎnshǎo le.',sampleVn:'Hay lắm! Nó gợi ý bài luyện dựa trên những câu tớ làm sai, không phải làm lại những câu đã biết, thời gian làm bài giảm đi rất nhiều.',tip:'大大 + 提高 / 减少 / 节省; 根据 + căn cứ + V.'},
+    {scene:'Bác sĩ khuyên ông nội đeo đồng hồ theo dõi huyết áp, nhưng ông chê phiền.',a:{sp:'Ông nội',zh:'戴这个手表有什么用？我又没病，好着呢。',vn:'Đeo cái đồng hồ này có ích gì? Ông có bệnh gì đâu, khoẻ lắm.'},need:['Dùng 血压','Dùng 隐患'],sample:'爷爷，这块手表能随时记下您的血压，有什么问题医生马上就能知道，可以消除很多隐患。',samplePy:'Yéye, zhè kuài shǒubiǎo néng suíshí jìxià nín de xuèyā, yǒu shénme wèntí yīshēng mǎshàng jiù néng zhīdào, kěyǐ xiāochú hěn duō yǐnhuàn.',sampleVn:'Ông ơi, chiếc đồng hồ này ghi lại huyết áp của ông bất cứ lúc nào, có vấn đề gì bác sĩ biết ngay, tránh được nhiều rủi ro.',tip:'消除隐患 = loại bỏ hiểm hoạ; câu của ông dùng 着呢 (bài 3) để nhấn mạnh.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 // 🎯 NÓI SAO CHO HAY — 得体 / 语体
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 var registerData = {
-  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
-         'HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
   items: [
-    {scene:'Viết phần kết luận cho báo cáo nghiên cứu khoa học.',
-     a:'研究表明，利用大数据对病种进行细致的监测，可大大提高疾病防治的效率。',b:'用大数据盯着病看，看病能快好多呢！',better:'a',
-     why:'Báo cáo khoa học cần văn viết chính xác: 研究表明, 对……进行监测, 防治. Câu b (盯着, 好多呢) là khẩu ngữ, không hợp.'},
-
-    {scene:'Nhắn tin cho bạn thân gửi tài liệu ôn thi.',
-     a:'本人已将复习资料加以整理，现发送给你，请查收。',b:'复习资料我整理好了，发你了，快看看！',better:'b',
-     why:'Với bạn thân dùng lời tự nhiên. Câu a (本人, 加以整理, 请查收) giống công văn, nghe xa cách.'},
-
-    {scene:'Phát biểu tại lễ tốt nghiệp.',
-     a:'回顾过去，展望未来，我们对明天充满信心。',b:'以前的事就不说了，以后会咋样谁知道呢。',better:'a',
-     why:'Phát biểu trang trọng dùng cặp 回顾过去，展望未来. Câu b (咋样, 谁知道呢) quá tuỳ tiện, lại thiếu tích cực.'},
-
-    {scene:'Giải thích cho bà nội cách dùng đồng hồ đo huyết áp.',
-     a:'奶奶，这块手表能随时帮您量血压，有什么问题医生马上就知道。',b:'该器材可对使用者的血压进行实时监测，并将数据传输至医疗机构。',better:'a',
-     why:'Nói với người già cần giản dị, gần gũi. Câu b (该器材, 实时监测, 传输至) là lời trong sách hướng dẫn, bà khó hiểu.'},
-
-    {scene:'Phát thanh viên đọc tin kinh tế.',
-     a:'据报道，该公司已与多家机构建立了战略合作伙伴关系。',b:'听说那家公司跟好多单位成了好朋友，一起干活儿。',better:'a',
-     why:'Bản tin dùng văn phong báo chí: 据报道, 该公司, 建立战略合作伙伴关系. Câu b dùng khẩu ngữ, diễn đạt không chính xác.'},
-
-    {scene:'Nói với thầy giáo khi nộp bài tập muộn.',
-     a:'老师，真对不起，我的作业交晚了，下次一定注意。',b:'万分抱歉，鉴于本人时间安排欠妥，作业未能按时提交，特此致歉。',better:'a',
-     why:'Nói trực tiếp với thầy chỉ cần lễ phép, chân thành. Câu b (鉴于, 本人, 特此致歉) như văn bản hành chính, quá trang trọng đến mức gượng.'}
+    {scene:'Thông báo của nhà trường dán ở bảng tin.',a:'关于图书馆开放时间的问题，学校将尽快加以调整。',b:'图书馆开门时间的事儿，学校马上就改。',better:'a',why:'Thông báo chính thức dùng 关于……, 将, 加以调整 (văn viết). Câu b (事儿, 马上就改) là lời nói miệng.'},
+    {scene:'Em nói với bạn cùng bàn đang làm sai một bài toán.',a:'这道题你得好好想想。',b:'对于这道题，你需要认真加以思考。',better:'a',why:'Nói với bạn nên dùng khẩu ngữ ngắn gọn. 加以 + 思考 là văn viết trang trọng, nói với bạn cùng bàn nghe như đọc công văn.'},
+    {scene:'Em viết báo cáo nghiên cứu về một phương pháp học.',a:'用了这个办法以后，大家的分数高多了。',b:'研究结果表明，使用该方法后，学生的成绩大大提高。',better:'b',why:'Báo cáo cần văn viết: 研究结果表明, 该方法, 大大提高. Câu a (高多了) là khẩu ngữ.'},
+    {scene:'Em khuyên bạn thân dạo này hay đau đầu đi khám.',a:'你最近老头疼，还是早点儿去医院查查吧。',b:'鉴于你近期经常头疼，建议你尽快前往医院进行检查。',better:'a',why:'Khuyên bạn thân dùng lời thân mật (老头疼, 查查吧). Câu b (鉴于, 前往, 进行检查) như giấy chỉ định của bệnh viện.'},
+    {scene:'Hướng dẫn sử dụng in trên hộp đồng hồ đo huyết áp.',a:'这块手表能随时帮您看看血压，挺方便的。',b:'该器材采用先进技术，可随时对使用者的血压等生理数据加以监测。',better:'b',why:'Hướng dẫn sử dụng là văn bản kỹ thuật: 该器材, 采用先进技术, 生理数据, 加以监测. Câu a hợp khi giới thiệu miệng cho người thân.'},
+    {scene:'Em nhắn tin cho mẹ.',a:'妈，这个月我攒了五百块，不用给我寄钱了。',b:'本月本人共计节省五百元，无须再向本人寄钱。',better:'a',why:'Nhắn cho mẹ dùng khẩu ngữ (攒了五百块). 本人, 共计, 无须 là văn viết hành chính, nhắn cho mẹ nghe rất buồn cười.'}
   ]
 };
 

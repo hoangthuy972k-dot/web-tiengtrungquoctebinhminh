@@ -1457,80 +1457,51 @@ var hvBridgeData = {
 // GHÉP TỪ — cụm trong bài khoá và phần 练习
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'完成',right:'指标'},
+  {left:'资深',right:'律师'},
+  {left:'沏',right:'一壶茶'},
   {left:'使了个',right:'眼色'},
-  {left:'讨',right:'公道'},
-  {left:'展示',right:'才干'},
-  {left:'施展',right:'才能'},
-  {left:'沏',right:'茶'},
-  {left:'传授',right:'技巧'},
+  {left:'施展',right:'才干'},
+  {left:'传授',right:'经验'},
+  {left:'全力',right:'以赴'},
+  {left:'想方',right:'设法'},
   {left:'年度',right:'考核'},
-  {left:'敬业',right:'精神'},
-  {left:'丰厚的',right:'回报'},
-  {left:'人格',right:'魅力'},
   {left:'抓住',right:'时机'},
-  {left:'充满',right:'激情'},
-  {left:'飞跃式的',right:'提高'},
-  {left:'资深',right:'员工'},
-  {left:'被',right:'边缘化'},
-  {left:'计较',right:'得失'},
-  {left:'学习',right:'风气'},
-  {left:'老',right:'搭档'},
-  {left:'敷衍',right:'了事'}
+  {left:'投诉',right:'快递公司'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ
+// ĐIỀN TỪ — câu mới (không chép bài khoá / SGK), mỗi câu một tình huống; ôn xoáy ốc từ + ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'新校长',blank:'上任',post:'的第一天，就到每个班去听课。',hint:'(nhậm chức)',ans:'上任'},
-  {pre:'他应聘的',blank:'职位',post:'是销售经理。',hint:'(chức vụ, vị trí)',ans:'职位'},
-  {pre:'客人来了，奶奶赶紧去',blank:'沏',post:'茶。',hint:'(pha)',ans:'沏'},
-  {pre:'我们班的学习',blank:'风气',post:'特别好，大家互相帮助。',hint:'(nếp, không khí chung)',ans:'风气'},
-  {pre:'他们俩合作了十年，配合得非常默契，是一对老',blank:'搭档',post:'。',hint:'(cộng sự)',ans:'搭档'},
-  {pre:'毕业以后，她',blank:'就职',post:'于一家外贸公司。',hint:'(nhận việc, làm việc tại)',ans:'就职'},
-  {pre:'刚转学的时候，我总觉得自己被',blank:'边缘',post:'化了。',hint:'(rìa, bên lề)',ans:'边缘'},
-  {pre:'妈妈向我使了个',blank:'眼色',post:'，让我别再说下去了。',hint:'(ánh mắt ra hiệu)',ans:'眼色'},
-  {pre:'这个月的销售',blank:'指标',post:'我们提前完成了。',hint:'(chỉ tiêu)',ans:'指标'},
-  {pre:'你',blank:'成天',post:'玩手机，眼睛还要不要了？',hint:'(suốt ngày)',ans:'成天',exp:'成天 = suốt ngày (khẩu ngữ, thường mang ý chê trách): 成天玩手机.'},
-  {pre:'从技术上讲，这两个队根本不是一个',blank:'等级',post:'。',hint:'(đẳng cấp)',ans:'等级'},
-  {pre:'他觉得不公平，要去找经理讨',blank:'公道',post:'。',hint:'(lẽ công bằng)',ans:'公道'},
-  {pre:'明明是你的错，还怪别人，真',blank:'不像话',post:'！',hint:'(quá đáng, vô lý)',ans:'不像话'},
-  {pre:'大孩子不应该',blank:'欺负',post:'小孩子。',hint:'(bắt nạt)',ans:'欺负'},
-  {pre:'这个项目让他充分展示了自己的',blank:'才干',post:'。',hint:'(năng lực, tài năng)',ans:'才干'},
-  {pre:'离高考只有一个月了，我们必须',blank:'全力以赴',post:'。',hint:'(dốc toàn lực)',ans:'全力以赴'},
-  {pre:'每当我遇到困难时，他总是',blank:'想方设法',post:'帮助我。',hint:'(tìm mọi cách)',ans:'想方设法'},
-  {pre:'',blank:'忙碌',post:'了一天，他回到家倒头就睡。',hint:'(bận rộn)',ans:'忙碌'},
-  {pre:'我永远不会忘记和你们在一起的美好',blank:'时光',post:'。',hint:'(quãng thời gian)',ans:'时光'},
-  {pre:'经过一年的努力，他的汉语水平有了',blank:'飞跃',post:'式的提高。',hint:'(vượt bậc)',ans:'飞跃'},
-  {pre:'快递三天还没到，我打电话向公司',blank:'投诉',post:'了。',hint:'(khiếu nại)',ans:'投诉'},
-  {pre:'同事小张对待工作总是充满',blank:'激情',post:'。',hint:'(nhiệt huyết)',ans:'激情'},
-  {pre:'每到年底，各部门都要写',blank:'年度',post:'总结。',hint:'(năm công tác)',ans:'年度'},
-  {pre:'新员工要通过三个月的',blank:'考核',post:'才能转正。',hint:'(đánh giá)',ans:'考核'},
-  {pre:'王老师生病了还坚持来上课，真是太',blank:'敬业',post:'了。',hint:'(tận tuỵ với nghề)',ans:'敬业'},
-  {pre:'爷爷在工厂里',blank:'兢兢业业',post:'地干了四十年。',hint:'(cần mẫn, cẩn trọng)',ans:'兢兢业业'},
-  {pre:'只要真心付出，早晚会得到',blank:'回报',post:'的。',hint:'(sự đền đáp)',ans:'回报'},
-  {pre:'和客户沟通也需要一定的',blank:'技巧',post:'。',hint:'(kỹ năng)',ans:'技巧'},
-  {pre:'老师傅把自己的经验毫无保留地',blank:'传授',post:'给了徒弟。',hint:'(truyền dạy)',ans:'传授'},
-  {pre:'批评孩子的时候，也要尊重他的',blank:'人格',post:'。',hint:'(nhân cách)',ans:'人格'}
+  {pre:'新经理',blank:'上任',post:'的第一天，就请所有员工吃了一顿饭。',hint:'(nhậm chức)',ans:'上任',exp:'上任 = bắt đầu nhận chức (thường là chức vụ lãnh đạo); ……上任的第一天.'},
+  {pre:'这所大学是一百多年前',blank:'创立',post:'的，培养了很多有名的人。',hint:'(sáng lập)',ans:'创立',exp:'创立 + trường học / công ty / tổ chức = sáng lập; 是……创立的 nhấn mạnh thời gian.'},
+  {pre:'我们班学习',blank:'风气',post:'很好，下课了大家还在讨论问题。',hint:'(nếp, không khí chung)',ans:'风气',exp:'学习风气 / 社会风气 = nếp, thói quen chung của một tập thể.'},
+  {pre:'我们俩已经一起工作五年了，是老',blank:'搭档',post:'了。',hint:'(cộng sự)',ans:'搭档',exp:'老搭档 = người cộng sự lâu năm, phối hợp ăn ý.'},
+  {pre:'这个月的销售',blank:'指标',post:'我们已经提前完成了，大家辛苦了。',hint:'(chỉ tiêu)',ans:'指标',exp:'完成指标 = đạt chỉ tiêu được giao; 指标 là con số yêu cầu cụ thể.'},
+  {pre:'别听他',blank:'吹牛',post:'，他根本不会开车。',hint:'(khoác lác)',ans:'吹牛',exp:'吹牛 = nói khoác, nói quá sự thật (khẩu ngữ); là động từ li hợp nên không mang tân ngữ phía sau.'},
+  {pre:'电影太没意思了，我看了一半就偷偷',blank:'溜',post:'出去了。',hint:'(lẻn, chuồn)',ans:'溜',exp:'溜出去 / 溜进来 = lẻn ra, lẻn vào cho người khác không biết; hay đi với 偷偷.'},
+  {pre:'朋友之间不要为了一点儿小事',blank:'计较',post:'来计较去。',hint:'(so đo)',ans:'计较',exp:'计较 = so đo, tính toán thiệt hơn; V来V去 = cứ… đi… lại (计较来计较去).'},
+  {pre:'家里来了客人，千万不能',blank:'怠慢',post:'，要热情招待。',hint:'(lạnh nhạt, thờ ơ)',ans:'怠慢',exp:'怠慢 + khách = tiếp đãi lạnh nhạt, không chu đáo; trái với 热情招待.'},
+  {pre:'午饭没时间做了，就吃碗面条',blank:'凑合',post:'一下吧。',hint:'(tạm bợ cho qua)',ans:'凑合',exp:'凑合一下 = tạm dùng cho qua bữa, qua chuyện, không đòi hỏi tốt (khẩu ngữ).'},
+  {pre:'他的汉语水平比我高多了，我们俩根本不是一个',blank:'等级',post:'的。',hint:'(đẳng cấp, cấp bậc)',ans:'等级',exp:'不是一个等级的 = không cùng đẳng cấp, chênh lệch rất xa (khẩu ngữ hay dùng khi so trình độ).'},
+  {pre:'这家饭馆的菜又贵又难吃，好多顾客都',blank:'投诉',post:'了。',hint:'(khiếu nại)',ans:'投诉',exp:'投诉 = khiếu nại chính thức với cơ quan / cấp trên; nặng hơn 抱怨 (than phiền).'},
+  {pre:'父母养我们这么多年，我们长大了应该好好',blank:'回报',post:'他们。',hint:'(báo đáp)',ans:'回报',exp:'回报 + người = đền đáp công ơn; cũng là danh từ: 得到回报.'},
+  {pre:'早知道这么累，',blank:'当初',post:'就不该选这个专业。',hint:'(lúc đầu, hồi đó)',ans:'当初',exp:'当初 = lúc đầu, hồi đó (đối lập với hiện tại); 早知道……，当初就不该…… = biết thế thì lúc đầu đã không….'},
+  {pre:'老张为人',blank:'公道',post:'，同事们有了矛盾都愿意找他帮忙解决。',hint:'(công bằng, đúng lẽ phải)',ans:'公道',exp:'为人公道 = đối xử công bằng, đúng lẽ phải (gōngdao); trong bài khoá 公道 là danh từ (lẽ công bằng).'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (唯独 · 明明 · 大不了) ít nhất 2 câu
+// SẮP XẾP CÂU — câu mới, chỉ một trật tự đúng
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['大家','都','去了','，','唯独','你','没有','去成','。'],ans:'大家都去了，唯独你没有去成。',audio:'大家都去了，唯独你没有去成。'},
-  {words:['别的菜','我都爱吃','，','唯独','不喜欢','苦瓜','。'],ans:'别的菜我都爱吃，唯独不喜欢苦瓜。',audio:'别的菜我都爱吃，唯独不喜欢苦瓜。'},
-  {words:['你','明明','知道','，','为什么','不告诉我','？'],ans:'你明明知道，为什么不告诉我？',audio:'你明明知道，为什么不告诉我？'},
-  {words:['哼','，','太不像话了','，','明明','是在','欺负人','。'],ans:'哼，太不像话了，明明是在欺负人。',audio:'哼，太不像话了，明明是在欺负人。'},
-  {words:['失败了','不要紧','，','大不了','从头','再来','。'],ans:'失败了不要紧，大不了从头再来。',audio:'失败了不要紧，大不了从头再来。'},
-  {words:['衣服丢了','就丢了','，','大不了','再买','一件','。'],ans:'衣服丢了就丢了，大不了再买一件。',audio:'衣服丢了就丢了，大不了再买一件。'},
-  {words:['我和小林','决定','不和','他们','计较','。'],ans:'我和小林决定不和他们计较。',audio:'我和小林决定不和他们计较。'},
-  {words:['我','把','工作经验','传授','给','新人','。'],ans:'我把工作经验传授给新人。',audio:'我把工作经验传授给新人。'},
-  {words:['点名','找我们的','客户','越来越多','。'],ans:'点名找我们的客户越来越多。',audio:'点名找我们的客户越来越多。'},
-  {words:['我们','每天','都','充满激情地','工作','。'],ans:'我们每天都充满激情地工作。',audio:'我们每天都充满激情地工作。'},
-  {words:['我','还是','向小林','使了','个','眼色','。'],ans:'我还是向小林使了个眼色。',audio:'我还是向小林使了个眼色。'},
-  {words:['赵姐','忙着','沏','茶','和','咖啡','。'],ans:'赵姐忙着沏茶和咖啡。',audio:'赵姐忙着沏茶和咖啡。'}
+  {words:['别的','课','都','及格了','，','唯独','数学','没及格','。'],ans:'别的课都及格了，唯独数学没及格。',audio:'别的课都及格了，唯独数学没及格。'},
+  {words:['他','明明','是','南方人','，','却','说自己','是北京人','。'],ans:'他明明是南方人，却说自己是北京人。',audio:'他明明是南方人，却说自己是北京人。'},
+  {words:['这次','输了','也','不要紧','，','大不了','下次','赢回来','。'],ans:'这次输了也不要紧，大不了下次赢回来。',audio:'这次输了也不要紧，大不了下次赢回来。'},
+  {words:['他','偷偷地','给','我','使了','个','眼色','。'],ans:'他偷偷地给我使了个眼色。',audio:'他偷偷地给我使了个眼色。'},
+  {words:['他','在','年度考核中','得了','第一名','。'],ans:'他在年度考核中得了第一名。',audio:'他在年度考核中得了第一名。'},
+  {words:['老板','让','我','给','客人','沏','一壶','茶','。'],ans:'老板让我给客人沏一壶茶。',audio:'老板让我给客人沏一壶茶。'},
+  {words:['他','是','一位','兢兢业业的','老','员工','。'],ans:'他是一位兢兢业业的老员工。',audio:'他是一位兢兢业业的老员工。'},
+  {words:['我','对','这个','职位','很','感兴趣','。'],ans:'我对这个职位很感兴趣。',audio:'我对这个职位很感兴趣。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1538,72 +1509,44 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'同学们都交了作业，____小王没交。',opts:['唯独','单独','独自','孤独'],ans:0,
-   exp:'Vế trước nêu tình hình chung (都交了), vế sau tách riêng ngoại lệ → phó từ 唯独. 单独 = riêng lẻ (单独谈话); 独自 = một mình (独自回家); 孤独 là tính từ "cô đơn".'},
-  {wrong:'你____看见我了，为什么说没看见？',opts:['明明','明显','明白','光明'],ans:0,
-   exp:'明明 + sự thật, vế sau là câu hỏi ngược (为什么……) → trách móc. 明显 là tính từ "rõ rệt" (很明显); 明白 = hiểu; 光明 = sáng sủa.'},
-  {wrong:'这次没考好也没关系，____下次再考。',opts:['大不了','了不起','不得了','受不了'],ans:0,
-   exp:'Nêu phương án xấu nhất vẫn chấp nhận được → 大不了 (cùng lắm thì). 了不起 = giỏi giang; 不得了 = ghê gớm, nghiêm trọng; 受不了 = chịu không nổi.'},
-  {wrong:'他还是个孩子，你别跟他____了。',opts:['计较','比较','计算','较量'],ans:0,
-   exp:'跟 + người + 计较 = chấp nhặt với ai. 比较 = so sánh (không dùng với 跟他 theo nghĩa chấp nhặt); 计算 = tính toán con số; 较量 = đọ sức.'},
-  {wrong:'客人来了，我们可不能____了他们。',opts:['怠慢','缓慢','傲慢','散漫'],ans:0,
-   exp:'怠慢 + người = đối xử lạnh nhạt với ai (động từ mang tân ngữ). 缓慢 = chậm chạp; 傲慢 = kiêu ngạo; 散漫 = lề mề, tản mạn — đều là tính từ, không mang tân ngữ 他们.'},
-  {wrong:'你别用“随便”来____我，到底想去哪儿？',opts:['敷衍','凑合','马虎','糊涂'],ans:0,
-   exp:'Đối phó qua loa với NGƯỜI → 敷衍 + 我. 凑合 không mang tân ngữ chỉ người; 马虎, 糊涂 là tính từ (cẩu thả, hồ đồ).'},
-  {wrong:'没有床，只有一张沙发，你就____一晚吧。',opts:['凑合','敷衍','计较','怠慢'],ans:0,
-   exp:'Chấp nhận ngủ tạm trong điều kiện chưa tốt → 凑合一晚 (câu 练习2 của sách). 敷衍, 怠慢 hướng tới người khác; 计较 = so đo.'},
-  {wrong:'爱因斯坦____了相对论。',opts:['创立','创办','开办','举办'],ans:0,
-   exp:'Lý thuyết, học thuyết → 创立. 创办, 开办 dùng cho trường học, công ty; 举办 = tổ chức (hoạt động, hội nghị).'},
-  {wrong:'学校门口____着同学们的书法作品。',opts:['展示','施展','发挥','表演'],ans:0,
-   exp:'Trưng bày đồ vật cho người xem → 展示. 施展, 发挥 đi với năng lực (才能, 作用); 表演 = biểu diễn, không mang tân ngữ 作品.'},
-  {wrong:'在这个小公司里，他的本领根本____不开。',opts:['施展','展示','表现','发展'],ans:0,
-   exp:'Cụm cố định 施展不开 = không có đất dụng võ. 展示, 表现, 发展 không kết hợp với 不开 như vậy.'},
-  {wrong:'现在____还不成熟，我们再等等吧。',opts:['时机','时刻','时代','机器'],ans:0,
-   exp:'时机成熟 = thời cơ chín muồi. 时刻 = khoảnh khắc; 时代 = thời đại; 机器 = máy móc — đều không đi với 成熟 ở nghĩa này.'},
-  {wrong:'他是一位有二十年经验的____记者。',opts:['资深','深刻','深厚','资格'],ans:0,
-   exp:'资深 + danh từ nghề = lâu năm, dày dạn. 深刻 = sâu sắc (印象深刻); 深厚 = sâu đậm (感情深厚); 资格 là danh từ "tư cách".'},
-  {wrong:'别____了，你连自行车都不会骑，还说要参加比赛？',opts:['吹牛','吹风','牛气','吵架'],ans:0,
-   exp:'Nói phóng đại khả năng của mình → 吹牛 (khoác lác). 吹风 = hóng gió; 牛气 = ngạo mạn; 吵架 = cãi nhau — không hợp với ý vạch trần lời khoác lác.'},
-  {wrong:'会还没开完，他就偷偷地____走了。',opts:['溜','逛','追','搬'],ans:0,
-   exp:'Lén bỏ đi → 偷偷地溜走. 逛 = dạo; 追 = đuổi theo; 搬 = chuyển — đều không hợp với "lén lút bỏ đi".'},
-  {wrong:'“____，你说得好听，我才不信呢！”',opts:['哼','嗯','哈','哎'],ans:0,
-   exp:'Thán từ tỏ ý không tin, khinh thường → 哼 (hng). 嗯 = ừ (đồng ý) — mâu thuẫn với 不信; 哈 = cười; 哎 = gọi hoặc ngạc nhiên.'},
-  {wrong:'早知今日，何必____？',opts:['当初','当时','当年','以前'],ans:0,
-   exp:'Câu cố định 早知今日，何必当初 = biết thế này thì hồi đó đã chẳng làm. Chỉ dùng 当初 (lúc ban đầu khởi sự).'},
-  {wrong:'明明是你把书弄丢了，还说不知道，真____！',opts:['不像话','不要紧','不客气','了不起'],ans:0,
-   exp:'Phê phán hành vi vô lý → 真不像话. 不要紧 = không sao; 不客气 = đừng khách sáo; 了不起 = giỏi — đều ngược ý chê trách.'},
-  {wrong:'他刚来的时候常被人____，现在大家都很尊重他。',opts:['欺负','辜负','负责','负担'],ans:0,
-   exp:'被人欺负 = bị bắt nạt. 辜负 (bài 3) = phụ lòng (辜负期望); 负责 = chịu trách nhiệm; 负担 = gánh nặng.'}
+  {wrong:'全班同学都参加了这次活动，____小李因为生病没来。',opts:['唯独','单独','独自','孤独'],ans:0,exp:'……都……，唯独 + người = tất cả đều…, chỉ riêng… (ngoại lệ). 单独 / 独自 là một mình làm gì; 孤独 là cô đơn — đều không nêu ngoại lệ.'},
+  {wrong:'这道题____很简单，你怎么又做错了？',opts:['明明','明白','明显','聪明'],ans:0,exp:'明明 + sự thật, 怎么 / 却 + điều trái ngược = rõ ràng là… sao lại…. 明白 là hiểu; 明显 là tính từ "rõ ràng" (không đi với 怎么 kiểu này); 聪明 là thông minh.'},
+  {wrong:'这次面试失败了也没关系，____明年再试一次。',opts:['大不了','了不起','不得了','受不了'],ans:0,exp:'……也没关系，大不了 + phương án xấu nhất = cùng lắm thì…. 了不起 là giỏi giang; 不得了 là ghê gớm; 受不了 là không chịu nổi.'},
+  {wrong:'他上课玩儿手机，老师说了几次还不听，简直____！',opts:['不像话','不在乎','不得了','不见得'],ans:0,exp:'Phê phán hành vi quá đáng → 简直不像话. 不在乎 là không bận tâm; 不得了 là ghê gớm; 不见得 là chưa chắc.'},
+  {wrong:'他这个人很大方，从来不跟别人____小事。',opts:['计较','比较','计划','考核'],ans:0,exp:'Không so đo chuyện vặt → 跟 + người + 计较. 比较 là so sánh (không mang ý chấp nhặt); 计划 là kế hoạch; 考核 là đánh giá.'},
+  {wrong:'客户的问题再小，我们也不能____了事。',opts:['敷衍','怠慢','敬业','忙碌'],ans:0,exp:'敷衍了事 = làm qua loa cho xong (cụm cố định). 怠慢 là tiếp đãi lạnh nhạt, không đi với 了事; 敬业 / 忙碌 trái ý câu.'},
+  {wrong:'客人坐了半天也没人倒茶，这样未免太____人家了。',opts:['怠慢','欺负','投诉','计较'],ans:0,exp:'Tiếp đãi khách thờ ơ → 怠慢 + khách. 欺负 là bắt nạt; 投诉 là khiếu nại; 计较 là so đo. Ôn 未免太……了 (bài 4).'},
+  {wrong:'这台旧电脑还能用，先____着用吧，等有钱了再买新的。',opts:['凑合','敷衍','怠慢','吹牛'],ans:0,exp:'Tạm dùng đồ chưa tốt → 凑合着用. 敷衍 dùng cho thái độ với người / việc; 怠慢 là lạnh nhạt với khách; 吹牛 là khoác lác.'},
+  {wrong:'王医生非常____，常常忙到半夜才回家。',opts:['敬业','职业','毕业','专业'],ans:0,exp:'Tận tuỵ với nghề → 敬业 (tính từ). 职业 là nghề nghiệp; 毕业 là tốt nghiệp; 专业 là chuyên ngành — đều là danh từ / động từ, chỉ giống chữ cuối.'},
+  {wrong:'几十年来，李老师一直____地工作，从来没请过一天假。',opts:['兢兢业业','津津有味','斩钉截铁','饱经沧桑'],ans:0,exp:'Cần mẫn, tận tuỵ trong công việc → 兢兢业业. 津津有味 là say sưa, ngon lành; 斩钉截铁 là dứt khoát (lời nói); 饱经沧桑 là từng trải.'},
+  {wrong:'离比赛只有一个星期了，队员们都在____地训练。',opts:['全力以赴','小心翼翼','迫不及待','鸦雀无声'],ans:0,exp:'Dốc toàn lực → 全力以赴. 小心翼翼 là dè dặt; 迫不及待 là nóng lòng (làm ngay một việc); 鸦雀无声 là im phăng phắc.'},
+  {wrong:'老师傅把自己几十年的经验都____给了年轻人。',opts:['传授','传说','教授','传统'],ans:0,exp:'Truyền lại kinh nghiệm, kỹ thuật → 传授……给 + người. 传说 là truyền thuyết; 教授 là giáo sư (danh từ ở đây); 传统 là truyền thống.'},
+  {wrong:'他是一位____记者，在这家报社已经干了三十年了。',opts:['资深','深刻','资格','深夜'],ans:0,exp:'Thâm niên, lâu năm trong nghề → 资深 + nghề (资深记者). 深刻 là sâu sắc; 资格 là tư cách; 深夜 là đêm khuya.'},
+  {wrong:'现在买房还不是最好的____，再等一等吧。',opts:['时机','时光','时代','当初'],ans:0,exp:'Thời điểm thích hợp để làm việc gì → 时机. 时光 là quãng thời gian (gợi nhớ); 时代 là thời đại; 当初 là hồi đầu.'},
+  {wrong:'大孩子不能____小孩子，要多照顾他们。',opts:['欺负','欺骗','怠慢','投诉'],ans:0,exp:'Ỷ mạnh hiếp yếu → 欺负. 欺骗 (bài 3) là lừa gạt; 怠慢 là lạnh nhạt với khách; 投诉 là khiếu nại.'}
 ];
 
 // ══════════════════════════════════════════
-// DỊCH — câu ghép, ôn từ HSK 6 bài 1–5 và HSK 4–5
+// DỊCH Việt → Trung — câu mới, dùng từ của bài + ôn ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Cả lớp đều hào hứng đăng ký, chỉ riêng cậu ấy suốt ngày ru rú trong ký túc xá không chịu ra ngoài.',zh:'全班同学都兴致勃勃地报了名，唯独他成天待在宿舍里不出来。',py:'Quán bān tóngxué dōu xìngzhì bóbó de bàole míng, wéidú tā chéngtiān dāi zài sùshè li bù chūlái.',goiY:['……都……，唯独……','成天','兴致勃勃'],giai:'Vế trước nêu tình hình chung (都), 唯独 tách riêng một ngoại lệ đối lập; 成天 (suốt ngày) đứng ngay trước động từ 待. 兴致勃勃 ôn bài 5.'},
-  {vi:'Cậu rõ ràng đã hứa với tớ là sẽ đến đúng giờ, vậy mà lại muộn nửa tiếng, thật quá đáng!',zh:'你明明答应过我要准时来，却又迟到了半个小时，真不像话！',py:'Nǐ míngmíng dāying guo wǒ yào zhǔnshí lái, què yòu chídàole bàn ge xiǎoshí, zhēn búxiànghuà!',goiY:['明明……却……','不像话'],giai:'明明 + sự thật, 却 + việc trái ngược → câu trách móc; "thật quá đáng" = 真不像话, không dịch word-by-word thành 太过分的.'},
+  {vi:'Cậu rõ ràng đã hứa với tớ là sẽ đến đúng giờ, vậy mà lại muộn nửa tiếng, tớ không bao giờ tin cậu nữa!',zh:'你明明答应过我要准时来，却又迟到了半个小时，我再也不相信你了！',py:'Nǐ míngmíng dāyingguo wǒ yào zhǔnshí lái, què yòu chídàole bàn ge xiǎoshí, wǒ zài yě bù xiāngxìn nǐ le!',goiY:['明明……却……','再也不……了 = không bao giờ… nữa'],giai:'明明 + sự thật, 却 + việc trái ngược → câu trách móc; "không bao giờ… nữa" = 再也不……了.'},
   {vi:'Lần thi này làm không tốt cũng chẳng sao, cùng lắm thì học kỳ sau dốc hết sức, làm lại từ đầu.',zh:'这次考试没考好也没什么，大不了下学期全力以赴，从头再来。',py:'Zhè cì kǎoshì méi kǎohǎo yě méi shénme, dàbuliǎo xià xuéqī quánlì-yǐfù, cóngtóu zài lái.',goiY:['大不了','全力以赴','从头再来'],giai:'大不了 (cùng lắm thì) đứng đầu vế sau, nêu phương án xấu nhất mà vẫn chấp nhận được; vế trước thường có 也没什么 / 不要紧 để trấn an.'},
   {vi:'Đã là mọi người bầu cậu làm lớp trưởng thì cậu đừng so đo với mấy bạn đó nữa, hãy tìm mọi cách làm cho nếp sinh hoạt của lớp tốt lên.',zh:'既然大家选你当班长，你就别和那几个同学计较了，还是想方设法把班里的风气搞好吧。',py:'Jìrán dàjiā xuǎn nǐ dāng bānzhǎng, nǐ jiù bié hé nà jǐ ge tóngxué jìjiào le, háishi xiǎngfāng-shèfǎ bǎ bān li de fēngqì gǎohǎo ba.',goiY:['既然……就……','计较','想方设法','风气'],giai:'既然 + sự thật đã có, 就 + lời khuyên; "so đo với ai" = 和 / 跟 + người + 计较 (giới từ đặt trước động từ).'},
   {vi:'Tuy mới chuyển trường cô ấy có cảm giác bị gạt ra rìa, nhưng cô ấy không hề oán trách, ngược lại còn chủ động thể hiện năng lực của mình với các bạn.',zh:'虽然刚转学时她有被边缘化的感觉，但她并没有埋怨，反而主动向同学们展示自己的才干。',py:'Suīrán gāng zhuǎnxué shí tā yǒu bèi biānyuánhuà de gǎnjué, dàn tā bìng méiyǒu mányuàn, fǎn\'ér zhǔdòng xiàng tóngxuémen zhǎnshì zìjǐ de cáigàn.',goiY:['虽然……但……','边缘化','反而','展示'],giai:'反而 = trái lại: kết quả ngược với điều người ta đoán (bị gạt ra rìa thì tưởng sẽ oán trách); 并没有 nhấn mạnh phủ định. 埋怨 ôn bài 2.'},
-  {vi:'Chỉ cần cậu chịu truyền hết mẹo học cho cậu ấy, không giấu chút nào, thì thành tích của cậu ấy nhất định sẽ tiến bộ vượt bậc.',zh:'只要你肯把学习技巧毫无保留地传授给他，他的成绩就一定会有飞跃式的提高。',py:'Zhǐyào nǐ kěn bǎ xuéxí jìqiǎo háowú bǎoliú de chuánshòu gěi tā, tā de chéngjì jiù yídìng huì yǒu fēiyuè shì de tígāo.',goiY:['只要……就……','传授','毫无保留','飞跃式'],giai:'只要 + điều kiện, 就 + kết quả; câu 把: 把 + 技巧 + 传授给 + người. "Tiến bộ vượt bậc" = 有飞跃式的提高. 毫无 ôn bài 4.'},
-  {vi:'Thay vì suốt ngày khoác lác với người ta trên mạng, chi bằng tĩnh tâm lại, cần mẫn làm cho tốt việc đang trong tay.',zh:'与其成天在网上跟别人吹牛，不如静下心来，兢兢业业地把手头的事做好。',py:'Yǔqí chéngtiān zài wǎng shang gēn biérén chuīniú, bùrú jìng xià xīn lái, jīngjīng-yèyè de bǎ shǒutóu de shì zuòhǎo.',goiY:['与其……不如……','吹牛','兢兢业业'],giai:'与其 A，不如 B: người nói chọn B; 兢兢业业 làm trạng ngữ phải có 地. 吹牛 là động từ li hợp, không mang tân ngữ phía sau.'},
   {vi:'Tuy hồi đầu bố mẹ không ủng hộ tôi chọn ngành này, nhưng tôi vẫn muốn dùng thành tích tốt để báo đáp họ, không phụ kỳ vọng của họ.',zh:'尽管父母当初并不支持我选这个专业，但我还是想用好成绩回报他们，不辜负他们的期望。',py:'Jǐnguǎn fùmǔ dāngchū bìng bù zhīchí wǒ xuǎn zhège zhuānyè, dàn wǒ háishi xiǎng yòng hǎo chéngjì huíbào tāmen, bù gūfù tāmen de qīwàng.',goiY:['尽管……但……还是……','当初','回报','辜负'],giai:'尽管 (sự thật đã xảy ra) + 但……还是……; không dùng 即使 vì việc bố mẹ không ủng hộ là có thật. 辜负、期望 ôn bài 3.'},
-  {vi:'Rõ ràng là cậu ta bắt nạt người khác trước, vậy mà thầy lại chỉ phê bình tôi; tôi bất giác muốn đi tìm cô chủ nhiệm đòi lẽ công bằng, nhưng nghĩ lại thấy không đáng.',zh:'明明是他先欺负人，老师却只批评了我，我不由得想去找班主任讨个公道，可转念一想，又觉得不值得。',py:'Míngmíng shì tā xiān qīfu rén, lǎoshī què zhǐ pīpíngle wǒ, wǒ bùyóude xiǎng qù zhǎo bānzhǔrèn tǎo ge gōngdao, kě zhuǎnniàn yì xiǎng, yòu juéde bù zhíde.',goiY:['明明……却……','欺负','讨个公道','不由得'],giai:'明明……却…… nêu sự bất công; 不由得 (bài 2) = bất giác, không kìm được; 可转念一想 = nhưng nghĩ lại — ba vế nối bằng 却, 可.'},
-  {vi:'Mọi người đều khuyên tôi bỏ cuộc tranh cử chủ tịch hội học sinh, chỉ riêng người cộng sự lâu năm luôn động viên tôi: "Chỉ cần cậu dốc hết sức, dù có thua cũng chẳng có gì to tát."',zh:'大家都劝我放弃竞选学生会主席，唯独我的老搭档一直鼓励我：“只要你全力以赴，就算输了也没什么大不了的。”',py:'Dàjiā dōu quàn wǒ fàngqì jìngxuǎn xuéshēnghuì zhǔxí, wéidú wǒ de lǎo dādàng yìzhí gǔlì wǒ: "Zhǐyào nǐ quánlì-yǐfù, jiùsuàn shūle yě méi shénme dàbuliǎo de."',goiY:['唯独','搭档','只要……就算……也……','没什么大不了的'],giai:'唯独 tách người cộng sự ra khỏi "mọi người"; trong lời thoại lồng 只要 (điều kiện) với 就算……也…… (giả thiết nhượng bộ); 没什么大不了的 = chẳng có gì to tát (大不了 dùng như tính từ).'}
+  {vi:'Lương của công việc này tất nhiên không cao, nhưng nó cho tôi cơ hội phát huy tài năng, tôi thấy rất đáng.',zh:'这份工作的薪水固然不高，可是它让我有机会施展自己的才干，我觉得很值得。',py:'Zhè fèn gōngzuò de xīnshui gùrán bù gāo, kěshì tā ràng wǒ yǒu jīhuì shīzhǎn zìjǐ de cáigàn, wǒ juéde hěn zhíde.',goiY:['固然……，可是…… (bài 5)','施展才干 = phát huy tài năng'],giai:'Ôn 固然 (bài 5): thừa nhận điểm chưa tốt rồi chuyển sang điểm chính; 施展 + 才干 / 才能.'}
 ];
 
-// Chiều Trung → Việt — bám ý bài khoá, nội dung khác chiều trên
+// ══════════════════════════════════════════
+// Dịch Trung → Việt — câu mới, không trùng chiều trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Ngày đầu nhận chức, "tôi" đã nghe nói không ít nhân viên thâm niên làm ở đây ngay từ buổi đầu công ty mới thành lập.',zh:'上任第一天，“我”就听说不少资深员工从公司创立之初就在这里工作了。',py:'Shàngrèn dì-yī tiān, "wǒ" jiù tīngshuō bùshǎo zīshēn yuángōng cóng gōngsī chuànglì zhī chū jiù zài zhèlǐ gōngzuò le.',goiY:['上任 = nhận chức','资深 = thâm niên, lâu năm','创立之初 = buổi đầu thành lập'],giai:'从……之初就…… = ngay từ buổi đầu … đã …; 资深员工 dịch "nhân viên thâm niên / lâu năm", không dịch âm "tư thâm".'},
-  {vi:'Chị Triệu pha trà cho cả anh Trương và chị Tôn, chỉ riêng tôi và Tiểu Lâm là không có.',zh:'赵姐给张哥和孙姐都沏了茶，唯独没有给“我”和小林。',py:'Zhào jiě gěi Zhāng gē hé Sūn jiě dōu qīle chá, wéidú méiyǒu gěi "wǒ" hé Xiǎo Lín.',goiY:['沏 = pha (trà)','唯独 = chỉ riêng'],giai:'都……，唯独没有…… : dịch tự nhiên "chỉ riêng … là không (có)", không cần giữ trật tự chữ; 姐, 哥 sau họ dịch là "chị …, anh …".'},
-  {vi:'Tiểu Lâm thấy mình bị gạt ra rìa, mặt lập tức biến sắc, "tôi" vội đưa mắt ra hiệu cho cậu ấy.',zh:'小林觉得自己被边缘化了，脸色顿时变了，“我”赶紧向他使了个眼色。',py:'Xiǎo Lín juéde zìjǐ bèi biānyuánhuà le, liǎnsè dùnshí biàn le, "wǒ" gǎnjǐn xiàng tā shǐle ge yǎnsè.',goiY:['边缘化 = bị gạt ra rìa','顿时 = lập tức','使了个眼色 = đưa mắt ra hiệu'],giai:'Ba vế nối tiếp theo thời gian, không cần từ nối; 脸色变了 dịch "biến sắc / sa sầm mặt", 顿时 (bài 2) = ngay lập tức.'},
-  {vi:'Người khác suốt ngày tán gẫu, khoác lác, còn công việc của tôi và Tiểu Lâm thì vụ nào cũng đau đầu, có lúc còn không hoàn thành chỉ tiêu.',zh:'别人成天聊天儿、吹牛，而“我”和小林的业务却件件让人头痛，有时还完不成指标。',py:'Biérén chéngtiān liáotiānr, chuīniú, ér "wǒ" hé Xiǎo Lín de yèwù què jiànjiàn ràng rén tóutòng, yǒushí hái wán bu chéng zhǐbiāo.',goiY:['成天 = suốt ngày','而……却…… = còn … thì lại …','完不成指标 = không hoàn thành chỉ tiêu'],giai:'而 nối hai vế đối lập, 却 nhấn mạnh sự trái ngược; 件件 (lượng từ lặp) = vụ nào cũng; 完不成 là bổ ngữ khả năng phủ định.'},
-  {vi:'Tiểu Lâm tức đến mức định đi đòi lẽ công bằng, nói lãnh đạo rõ ràng là đang bắt nạt người ta, cùng lắm thì nghỉ việc không làm nữa.',zh:'小林气得要去讨公道，说领导明明是在欺负人，大不了辞职不干了。',py:'Xiǎo Lín qì de yào qù tǎo gōngdao, shuō lǐngdǎo míngmíng shì zài qīfu rén, dàbuliǎo cízhí bú gàn le.',goiY:['讨公道 = đòi lẽ công bằng','明明 = rõ ràng','大不了 = cùng lắm thì'],giai:'气得 + V: tức đến mức …; 大不了 dịch "cùng lắm thì", mang giọng bất cần — không dịch "không to tát".'},
-  {vi:'Tuy "tôi" cũng thấy thật quá đáng, nhưng bình tĩnh nghĩ lại thì đây ngược lại là cơ hội tốt để thể hiện năng lực của mình.',zh:'“我”虽然也觉得不像话，但静下来一想，这反而是展示自己才干的好机会。',py:'"Wǒ" suīrán yě juéde búxiànghuà, dàn jìng xiàlái yì xiǎng, zhè fǎn\'ér shì zhǎnshì zìjǐ cáigàn de hǎo jīhuì.',goiY:['虽然……但…… = tuy … nhưng …','反而 = ngược lại','展示 = thể hiện','才干 = năng lực'],giai:'反而 lật ngược đánh giá ở vế trước (tưởng là xấu, hoá ra tốt); 静下来一想 = bình tĩnh nghĩ lại.'},
-  {vi:'Họ không những không so đo với người khác mà còn dốc toàn lực, không lạnh nhạt, không qua loa với bất kỳ khách hàng nào.',zh:'他们不但不和别人计较，而且全力以赴，不怠慢、不敷衍任何一位客户。',py:'Tāmen búdàn bù hé biérén jìjiào, érqiě quánlì-yǐfù, bú dàimàn, bù fūyǎn rènhé yí wèi kèhù.',goiY:['不但……而且…… = không những … mà còn …','计较 = so đo','怠慢 = lạnh nhạt','敷衍 = làm qua loa'],giai:'不但……而且…… tăng tiến; 不怠慢、不敷衍 hai động từ chung một tân ngữ 客户 — dịch gộp "không lạnh nhạt, không qua loa với …".'},
-  {vi:'Vì họ tìm mọi cách làm tốt từng đơn, bận mấy cũng không làm cho có, nên khách hàng chỉ đích danh tìm họ ngày càng nhiều.',zh:'由于他们想方设法做好每一单业务，多忙都不凑合，所以点名找他们的客户越来越多。',py:'Yóuyú tāmen xiǎngfāng-shèfǎ zuòhǎo měi yí dān yèwù, duō máng dōu bú còuhe, suǒyǐ diǎnmíng zhǎo tāmen de kèhù yuè lái yuè duō.',goiY:['由于……所以…… = vì … nên …','想方设法 = tìm mọi cách','凑合 = làm cho có'],giai:'多 + tính từ + 都…… = dù … mấy cũng …; 点名找 = chỉ đích danh tìm (không dịch "điểm danh").'},
-  {vi:'Trong đợt đánh giá cuối năm, thái độ làm việc cần mẫn của họ được khen ngợi, ngay cả những tiền bối lúc đầu không thân thiện cũng trở nên nhiệt tình.',zh:'年度考核时，他们兢兢业业的态度受到了表扬，连当初不友好的前辈们也变得热情起来。',py:'Niándù kǎohé shí, tāmen jīngjīng-yèyè de tàidu shòudàole biǎoyáng, lián dāngchū bù yǒuhǎo de qiánbèimen yě biàn de rèqíng qǐlái.',goiY:['年度考核 = đánh giá cuối năm','连……也…… = ngay cả … cũng …','当初 = lúc đầu'],giai:'连……也…… nhấn mạnh trường hợp khó xảy ra nhất; 热情起来 (bổ ngữ xu hướng 起来) = bắt đầu trở nên nhiệt tình.'},
-  {vi:'Là một "học sinh chuyển lớp" nơi công sở, thay vì than phiền bất công, chi bằng coi khó khăn là thời cơ để phát huy tài năng, vì đây chính là lúc thể hiện sức hút nhân cách của bạn.',zh:'作为职场插班生，与其抱怨不公平，不如把困难当成施展才能的时机，因为这正是展示你人格魅力的时候。',py:'Zuòwéi zhíchǎng chābānshēng, yǔqí bàoyuàn bù gōngpíng, bùrú bǎ kùnnan dàngchéng shīzhǎn cáinéng de shíjī, yīnwèi zhè zhèng shì zhǎnshì nǐ réngé mèilì de shíhou.',goiY:['作为 = với tư cách là','与其……不如…… = thay vì … chi bằng …','施展 = phát huy','人格魅力 = sức hút nhân cách'],giai:'与其 A 不如 B nêu lựa chọn tốt hơn; 把 A 当成 B = coi A là B; 插班生 là cách ví von "học sinh vào học giữa chừng" — giữ ngoặc kép khi dịch.'}
+  {vi:'Rõ ràng là anh ta đang khoác lác, vậy mà mọi người lại tin là thật.',zh:'他明明是在吹牛，大家却都信以为真。',py:'Tā míngmíng shì zài chuīniú, dàjiā què dōu xìnyǐwéizhēn.',goiY:['明明 = rõ ràng là','吹牛 = khoác lác','信以为真 = tin là thật'],giai:'明明……，却…… = rõ ràng là…, vậy mà…: nhấn mạnh sự trái ngược.'},
+  {vi:'Cô ấy mới nhận việc được một tháng đã được mấy đồng nghiệp lâu năm giúp đỡ rất nhiều.',zh:'她刚就职一个月，就得到了几位资深同事的很多帮助。',py:'Tā gāng jiùzhí yí ge yuè, jiù dédàole jǐ wèi zīshēn tóngshì de hěn duō bāngzhù.',goiY:['就职 = nhận việc, nhậm chức','资深同事 = đồng nghiệp lâu năm'],giai:'刚……，就…… = mới… đã…; 资深 dịch "lâu năm, thâm niên".'},
+  {vi:'Những ngày bận rộn lúc nào cũng trôi qua rất nhanh, chớp mắt một năm nữa lại hết.',zh:'忙碌的时光总是过得特别快，转眼一年又过去了。',py:'Mánglù de shíguāng zǒngshì guò de tèbié kuài, zhuǎnyǎn yì nián yòu guòqu le.',goiY:['忙碌 = bận rộn','时光 = quãng thời gian','转眼 = chớp mắt'],giai:'忙碌 là tính từ văn viết hơn 忙; 忙碌的时光 dịch "những ngày bận rộn"; 转眼 dịch "chớp mắt, thoáng cái".'},
+  {vi:'Tuy đã dạy học hai mươi năm, thầy vẫn tràn đầy nhiệt huyết với nghề.',zh:'虽然已经教了二十年书，他对教书仍旧充满激情。',py:'Suīrán yǐjīng jiāole èrshí nián shū, tā duì jiāoshū réngjiù chōngmǎn jīqíng.',goiY:['激情 = nhiệt huyết','仍旧 = vẫn (bài 3)'],giai:'教了二十年书: thời lượng chen giữa động từ li hợp 教书; ôn 仍旧 (bài 3).'},
+  {vi:'Nhân cách của một con người quan trọng hơn tài cán của người đó.',zh:'一个人的人格比他的才干更重要。',py:'Yí ge rén de réngé bǐ tā de cáigàn gèng zhòngyào.',goiY:['人格 = nhân cách','才干 = tài cán, năng lực'],giai:'A 比 B 更 + tính từ; 人格 dịch "nhân cách", 才干 dịch "tài cán / năng lực".'}
 ];
 
 // ══════════════════════════════════════════
@@ -1639,9 +1582,9 @@ var writingData = {
     'Câu kết có rút ra được bài học như bài khoá (không bỏ cuộc, kiên trì thì sẽ được công nhận) chưa?'
   ],
   model:{
-    zh:'（题目：初入篮球队）上学期，我转学到了一所新学校，并加入了学校篮球队。刚进球队的时候，我以为大家会很热情，没想到训练时，队员们都有自己的搭档，唯独我一个人在旁边练习投篮。比赛时，我明明练得很认真，教练却总让我坐在场边，我顿时有了被边缘化的感觉。我心想：太不像话了，大不了退出球队！可静下来一想，这反而是展示自己的好机会。于是我决定不和别人计较，全力以赴地训练。每天我都提前一个小时到球场，想方设法提高自己的技术，多累都不凑合。几个月后，我的球技得到了飞跃式的提高，教练终于让我上场了。在一场重要的比赛中，我投进了最后一个球。从此，当初不理我的队员们也变得热情起来，还主动向我请教投篮的技巧。这段经历让我明白，进入新集体遇到困难时，正是施展才能的时机。只要不放弃，坚持努力，就一定会得到大家的认可。',
-    py:'(Tímù: Chū rù lánqiúduì) Shàng xuéqī, wǒ zhuǎnxué dàole yì suǒ xīn xuéxiào, bìng jiārùle xuéxiào lánqiúduì. Gāng jìn qiúduì de shíhou, wǒ yǐwéi dàjiā huì hěn rèqíng, méi xiǎngdào xùnliàn shí, duìyuánmen dōu yǒu zìjǐ de dādàng, wéidú wǒ yí ge rén zài pángbiān liànxí tóulán. Bǐsài shí, wǒ míngmíng liàn de hěn rènzhēn, jiàoliàn què zǒng ràng wǒ zuò zài chǎng biān, wǒ dùnshí yǒule bèi biānyuánhuà de gǎnjué. Wǒ xīn xiǎng: tài búxiànghuà le, dàbuliǎo tuìchū qiúduì! Kě jìng xiàlái yì xiǎng, zhè fǎn\'ér shì zhǎnshì zìjǐ de hǎo jīhuì. Yúshì wǒ juédìng bù hé biérén jìjiào, quánlì-yǐfù de xùnliàn. Měi tiān wǒ dōu tíqián yí ge xiǎoshí dào qiúchǎng, xiǎngfāng-shèfǎ tígāo zìjǐ de jìshù, duō lèi dōu bú còuhe. Jǐ ge yuè hòu, wǒ de qiújì dédàole fēiyuè shì de tígāo, jiàoliàn zhōngyú ràng wǒ shàngchǎng le. Zài yì chǎng zhòngyào de bǐsài zhōng, wǒ tóujìnle zuìhòu yí ge qiú. Cóngcǐ, dāngchū bù lǐ wǒ de duìyuánmen yě biàn de rèqíng qǐlái, hái zhǔdòng xiàng wǒ qǐngjiào tóulán de jìqiǎo. Zhè duàn jīnglì ràng wǒ míngbai, jìnrù xīn jítǐ yùdào kùnnan shí, zhèng shì shīzhǎn cáinéng de shíjī. Zhǐyào bú fàngqì, jiānchí nǔlì, jiù yídìng huì dédào dàjiā de rènkě.',
-    vn:'(Nhan đề: Những ngày đầu ở đội bóng rổ) Học kỳ trước, tôi chuyển đến một trường mới và gia nhập đội bóng rổ của trường. Lúc mới vào đội, tôi cứ tưởng mọi người sẽ rất nhiệt tình, không ngờ khi tập luyện, ai cũng có bạn tập riêng, chỉ riêng tôi một mình tập ném rổ ở bên cạnh. Khi thi đấu, tôi rõ ràng tập rất chăm, vậy mà huấn luyện viên lúc nào cũng bắt tôi ngồi ngoài sân, tôi lập tức có cảm giác bị gạt ra rìa. Tôi nghĩ bụng: quá đáng thật, cùng lắm thì rời đội! Nhưng bình tĩnh nghĩ lại, đây ngược lại là cơ hội tốt để thể hiện bản thân. Thế là tôi quyết định không so đo với người khác, dốc toàn lực tập luyện. Ngày nào tôi cũng đến sân sớm một tiếng, tìm mọi cách nâng cao kỹ thuật, mệt mấy cũng không tập cho có. Vài tháng sau, kỹ thuật chơi bóng của tôi tiến bộ vượt bậc, cuối cùng huấn luyện viên cũng cho tôi ra sân. Trong một trận đấu quan trọng, tôi ghi được quả bóng cuối cùng. Từ đó, những đồng đội lúc đầu không để ý đến tôi cũng trở nên nhiệt tình, còn chủ động hỏi tôi mẹo ném rổ. Trải nghiệm này giúp tôi hiểu rằng khi bước vào tập thể mới mà gặp khó khăn, đó chính là thời cơ để phát huy tài năng. Chỉ cần không bỏ cuộc, kiên trì cố gắng thì nhất định sẽ được mọi người công nhận.'
+    zh:'（题目：刚进足球队）上学期，我转学到了一所新学校，并参加了学校的足球队。刚进球队的时候，我以为大家会很热情，没想到训练时，队员们都有自己的搭档，唯独我一个人在旁边练习踢球。比赛时，我明明练得很认真，教练却总让我坐在场边，我顿时有了被边缘化的感觉。我心想：太不像话了，大不了离开球队！可静下来一想，这反而是展示自己的好机会。于是我决定不和别人计较，全力以赴地训练。每天我都提前一个小时到球场，想方设法提高自己的技术，多累都不凑合。几个月后，我的技术得到了飞跃式的提高，教练终于让我上场了。在一场重要的比赛中，我踢进了最后一个球。从此，当初不理我的队员们也变得热情起来，还主动向我学习踢球的技巧。这段经历让我明白，进入新环境遇到困难时，正是施展才能的时机。只要不放弃，坚持努力，就一定会得到大家的肯定。',
+    py:'(Tímù: Gāng jìn zúqiúduì) Shàng xuéqī, wǒ zhuǎnxué dàole yì suǒ xīn xuéxiào, bìng cānjiāle xuéxiào de zúqiúduì. Gāng jìn qiúduì de shíhou, wǒ yǐwéi dàjiā huì hěn rèqíng, méi xiǎngdào xùnliàn shí, duìyuánmen dōu yǒu zìjǐ de dādàng, wéidú wǒ yí ge rén zài pángbiān liànxí tī qiú. Bǐsài shí, wǒ míngmíng liàn de hěn rènzhēn, jiàoliàn què zǒng ràng wǒ zuò zài chǎng biān, wǒ dùnshí yǒule bèi biānyuánhuà de gǎnjué. Wǒ xīn xiǎng: tài búxiànghuà le, dàbuliǎo líkāi qiúduì! Kě jìng xiàlái yì xiǎng, zhè fǎn\'ér shì zhǎnshì zìjǐ de hǎo jīhuì. Yúshì wǒ juédìng bù hé biérén jìjiào, quánlì-yǐfù de xùnliàn. Měi tiān wǒ dōu tíqián yí ge xiǎoshí dào qiúchǎng, xiǎngfāng-shèfǎ tígāo zìjǐ de jìshù, duō lèi dōu bú còuhe. Jǐ ge yuè hòu, wǒ de jìshù dédàole fēiyuè shì de tígāo, jiàoliàn zhōngyú ràng wǒ shàngchǎng le. Zài yì chǎng zhòngyào de bǐsài zhōng, wǒ tījìnle zuìhòu yí ge qiú. Cóngcǐ, dāngchū bù lǐ wǒ de duìyuánmen yě biàn de rèqíng qǐlái, hái zhǔdòng xiàng wǒ xuéxí tī qiú de jìqiǎo. Zhè duàn jīnglì ràng wǒ míngbai, jìnrù xīn huánjìng yùdào kùnnan shí, zhèng shì shīzhǎn cáinéng de shíjī. Zhǐyào bú fàngqì, jiānchí nǔlì, jiù yídìng huì dédào dàjiā de kěndìng.',
+    vn:'(Nhan đề: Những ngày đầu ở đội bóng đá) Học kỳ trước, tôi chuyển đến một trường mới và tham gia đội bóng đá của trường. Lúc mới vào đội, tôi cứ tưởng mọi người sẽ rất nhiệt tình, không ngờ khi tập luyện, ai cũng có bạn tập riêng, chỉ riêng tôi một mình tập đá bóng ở bên cạnh. Khi thi đấu, tôi rõ ràng tập rất chăm, vậy mà huấn luyện viên lúc nào cũng bắt tôi ngồi ngoài sân, tôi lập tức có cảm giác bị gạt ra rìa. Tôi nghĩ bụng: quá đáng thật, cùng lắm thì rời đội! Nhưng bình tĩnh nghĩ lại, đây ngược lại là cơ hội tốt để thể hiện bản thân. Thế là tôi quyết định không so đo với người khác, dốc toàn lực tập luyện. Ngày nào tôi cũng đến sân sớm một tiếng, tìm mọi cách nâng cao kỹ thuật, mệt mấy cũng không tập cho có. Vài tháng sau, kỹ thuật chơi bóng của tôi tiến bộ vượt bậc, cuối cùng huấn luyện viên cũng cho tôi ra sân. Trong một trận đấu quan trọng, tôi ghi được quả bóng cuối cùng. Từ đó, những đồng đội lúc đầu không để ý đến tôi cũng trở nên nhiệt tình, còn chủ động học tôi mẹo đá bóng. Trải nghiệm này giúp tôi hiểu rằng khi bước vào môi trường mới mà gặp khó khăn, đó chính là thời cơ để phát huy tài năng. Chỉ cần không bỏ cuộc, kiên trì cố gắng thì nhất định sẽ được mọi người công nhận.'
   }
 };
 
@@ -1690,307 +1633,133 @@ var speakingData = {
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — 听力 (sách HSK 6 không có sách bài tập nghe)
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — câu tự soạn (sách HSK 6 không có sách bài tập nghe), mỗi câu một tình huống mới
+// ══════════════════════════════════════════
 var listenExamData = {
-  "intro": "Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.",
-  "source": "Soạn theo dạng đề HSK 6 · chủ đề bài 6",
-  "items": [
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 6',
+  items: [
     {
-      "n": 1,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "新来的小李怎么样？"
-        },
-        {
-          "sp": "男",
-          "zh": "别看他刚上任，业务能力可一点儿也不比那些资深员工差。"
-        }
+      n: 1,
+      lines: [
+        {sp:'女',zh:'这次同学聚会大家都来了吗？'},
+        {sp:'男',zh:'都来了，唯独小王说孩子生病了，来不了。'}
       ],
-      "q": "男的认为小李怎么样？",
-      "qvn": "Người đàn ông thấy Tiểu Lý thế nào?",
-      "opts": [
-        "态度不好",
-        "经验丰富",
-        "能力很强",
-        "不太敬业"
-      ],
-      "ans": 2,
-      "why": "别看……，……不比资深员工差 = đừng thấy mới nhận chức mà coi thường, năng lực không kém nhân viên thâm niên → năng lực rất mạnh. \"Kinh nghiệm phong phú\" sai vì cậu ấy mới đến.",
-      "words": [
-        "上任",
-        "资深"
-      ]
+      q: '谁没来聚会？',
+      qvn: 'Ai không đến buổi họp lớp?',
+      opts: ['小王','小王的孩子','男的','大家都来了'],
+      ans: 0,
+      why: '都来了，唯独小王……来不了 → chỉ riêng Tiểu Vương không đến.',
+      words: ['唯独']
     },
     {
-      "n": 2,
-      "lines": [
-        {
-          "sp": "男",
-          "zh": "今天办公室怎么这么安静？"
-        },
-        {
-          "sp": "女",
-          "zh": "经理刚才发了一通火，大家都不敢出声，屋子里鸦雀无声。"
-        }
+      n: 2,
+      lines: [
+        {sp:'男',zh:'你怎么又把我的书拿走了？'},
+        {sp:'女',zh:'明明是你自己放在我桌子上的，怎么还怪我？'}
       ],
-      "q": "办公室为什么很安静？",
-      "qvn": "Vì sao văn phòng rất yên tĩnh?",
-      "opts": [
-        "经理发火了",
-        "大家都下班了",
-        "大家在开会",
-        "大家在休息"
-      ],
-      "ans": 0,
-      "why": "经理刚才发了一通火 (giám đốc vừa nổi giận) → mọi người không dám lên tiếng. 鸦雀无声 = im phăng phắc (thành ngữ trong bài khoá).",
-      "words": []
+      q: '女的是什么意思？',
+      qvn: 'Ý người phụ nữ là gì?',
+      opts: ['她马上把书还给男的','书是男的自己放的','书已经丢了','她想再借几天'],
+      ans: 1,
+      why: '明明是你自己放在我桌子上的 → chính anh tự để sách lên bàn cô, không phải cô lấy.',
+      words: ['明明']
     },
     {
-      "n": 3,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "这个月的指标你完成了吗？"
-        },
-        {
-          "sp": "男",
-          "zh": "别提了，客户接连投诉，我忙了一个月，还差一大截呢。"
-        }
+      n: 3,
+      lines: [
+        {sp:'女',zh:'你辞职了，以后怎么办？'},
+        {sp:'男',zh:'这有什么，实在找不到工作，大不了回老家帮我爸开店。'}
       ],
-      "q": "男的这个月情况怎么样？",
-      "qvn": "Tháng này tình hình của người đàn ông thế nào?",
-      "opts": [
-        "提前完成了指标",
-        "被公司辞退了",
-        "受到了表扬",
-        "没有完成指标"
-      ],
-      "ans": 3,
-      "why": "还差一大截 = còn thiếu một khoảng lớn → chưa hoàn thành chỉ tiêu. 别提了 mở đầu là dấu hiệu tin không vui. 接连 ôn bài 5.",
-      "words": [
-        "指标",
-        "投诉"
-      ]
+      q: '男的打算怎么办？',
+      qvn: 'Người đàn ông định thế nào?',
+      opts: ['马上回原来的公司','去国外读书','去南方打工','找不到工作就回老家开店'],
+      ans: 3,
+      why: '大不了回老家帮我爸开店 = cùng lắm thì về quê giúp bố mở cửa hàng — phương án xấu nhất nếu không tìm được việc.',
+      words: ['大不了']
     },
     {
-      "n": 4,
-      "lines": [
-        {
-          "sp": "男",
-          "zh": "王经理，您怎么又把最难的活儿交给新人了？"
-        },
-        {
-          "sp": "女",
-          "zh": "我这是在锻炼他们。能把这单业务做好，才能说明他们真有才干。"
-        }
+      n: 4,
+      lines: [
+        {sp:'男',zh:'小李说他一个月就能学会开车。'},
+        {sp:'女',zh:'哼，又在吹牛。他上次还说要考第一名呢，结果呢？'}
       ],
-      "q": "女的为什么把最难的工作交给新人？",
-      "qvn": "Vì sao người phụ nữ giao việc khó nhất cho người mới?",
-      "opts": [
-        "她在欺负新人",
-        "她想锻炼新人",
-        "她自己不想做",
-        "新人主动要求的"
-      ],
-      "ans": 1,
-      "why": "我这是在锻炼他们 — nói thẳng mục đích là rèn luyện. Phương án \"bắt nạt\" là cách Tiểu Lâm trong bài nghĩ, nhưng không phải ý của người nói.",
-      "words": [
-        "才干"
-      ]
+      q: '女的觉得小李怎么样？',
+      qvn: 'Người phụ nữ thấy Tiểu Lý thế nào?',
+      opts: ['爱吹牛','很聪明','学习很好','开车很好'],
+      ans: 0,
+      why: '哼 (giọng không tin) + 又在吹牛 + nhắc chuyện lần trước → cô cho rằng Tiểu Lý hay khoác lác.',
+      words: ['哼','吹牛']
     },
     {
-      "n": 5,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "他们这样欺负你，你就这么忍着？"
-        },
-        {
-          "sp": "男",
-          "zh": "不跟他们计较。大不了多干点儿活儿，我还能多学点儿东西呢。"
-        }
+      n: 5,
+      lines: [
+        {sp:'女',zh:'经理，有位客户打电话投诉，说我们的快递晚到了三天。'},
+        {sp:'男',zh:'你马上给他回个电话，先道歉，再想办法解决。'}
       ],
-      "q": "男的是什么态度？",
-      "qvn": "Người đàn ông có thái độ gì?",
-      "opts": [
-        "非常愤怒",
-        "不计较，看得开",
-        "打算辞职",
-        "要找领导讨公道"
-      ],
-      "ans": 1,
-      "why": "不跟他们计较 + 大不了多干点儿 + 还能多学点儿 → bình thản, nhìn mặt tích cực. 愤怒 (bài 4) và 讨公道 là cách phản ứng ngược lại.",
-      "words": [
-        "欺负",
-        "计较",
-        "大不了"
-      ]
+      q: '客户为什么投诉？',
+      qvn: 'Vì sao khách hàng khiếu nại?',
+      opts: ['东西坏了','快递晚了三天','东西太贵','员工态度不好'],
+      ans: 1,
+      why: '说我们的快递晚到了三天 → hàng giao chậm ba ngày.',
+      words: ['投诉','客户']
     },
     {
-      "n": 6,
-      "lines": [
-        {
-          "sp": "男",
-          "zh": "听说你们部门年度考核又拿了第一？"
-        },
-        {
-          "sp": "女",
-          "zh": "主要是大家都很敬业，不管多忙，谁都不凑合。"
-        }
+      n: 6,
+      lines: [
+        {sp:'男',zh:'这家宾馆的房间也太小了吧。'},
+        {sp:'女',zh:'就住一晚，凑合一下吧，明天我们就回家了。'}
       ],
-      "q": "女的认为部门成绩好的主要原因是什么？",
-      "qvn": "Người phụ nữ cho rằng nguyên nhân chính khiến phòng đạt thành tích tốt là gì?",
-      "opts": [
-        "领导很严格",
-        "工作很轻松",
-        "客户很少",
-        "大家很敬业"
-      ],
-      "ans": 3,
-      "why": "主要是大家都很敬业 — câu trả lời nằm ngay sau 主要是. 不管多忙，谁都不凑合 bổ sung cho ý \"tận tuỵ\".",
-      "words": [
-        "年度",
-        "考核",
-        "敬业",
-        "凑合"
-      ]
+      q: '女的是什么意思？',
+      qvn: 'Ý người phụ nữ là gì?',
+      opts: ['马上换一家宾馆','房间其实很大','就在这儿住一晚','明天再住一晚'],
+      ans: 2,
+      why: '凑合一下吧 = tạm ở cho qua; chỉ ở một đêm, mai về nhà.',
+      words: ['凑合']
     },
     {
-      "n": 7,
-      "lines": [
-        {
-          "sp": "男",
-          "zh": "刚进入一个新集体时，很多人会觉得自己被边缘化了，这其实很正常。与其抱怨，不如想方设法展示自己的能力。时间长了，大家自然会认可你。"
-        }
+      n: 7,
+      lines: [
+        {sp:'女',zh:'你的汉语怎么进步得这么快？'},
+        {sp:'男',zh:'我成天跟中国同事聊天，还向老师学了不少记词语的技巧，进步就有了飞跃。'}
       ],
-      "q": "说话人建议刚进入新集体的人怎么做？",
-      "qvn": "Người nói khuyên người mới vào tập thể nên làm gì?",
-      "opts": [
-        "想办法展示自己的能力",
-        "马上换一个集体",
-        "向领导抱怨",
-        "等别人来帮助自己"
-      ],
-      "ans": 0,
-      "why": "与其抱怨，不如想方设法展示自己的能力 — 与其 C 不如 B: người nói chọn B. Nghe thấy 抱怨 trước dễ chọn nhầm phương án 1.",
-      "words": [
-        "边缘",
-        "想方设法",
-        "展示"
-      ]
-    },
-    {
-      "n": 8,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "你明明知道客户今天要来，怎么还溜出去逛街了？"
-        },
-        {
-          "sp": "男",
-          "zh": "我以为他下午才到，没想到上午就来了。"
-        }
-      ],
-      "q": "男的为什么不在公司？",
-      "qvn": "Vì sao người đàn ông không có mặt ở công ty?",
-      "opts": [
-        "他去见客户了",
-        "他生病了",
-        "他以为客户下午才来",
-        "他忘了客户要来"
-      ],
-      "ans": 2,
-      "why": "我以为他下午才到 — 以为 = tưởng (sai). Cô gái nói 你明明知道客户今天要来 nên phương án \"quên\" sai.",
-      "words": [
-        "明明",
-        "溜"
-      ]
+      q: '男的汉语为什么进步得快？',
+      qvn: 'Vì sao tiếng Trung của người đàn ông tiến bộ nhanh?',
+      opts: ['上了很多课','去中国留学了','常跟中国同事聊天','每天看中国电影'],
+      ans: 2,
+      why: '成天跟中国同事聊天 + 学了记词语的技巧 → tiến bộ vượt bậc. Anh ấy không nói đi du học hay xem phim.',
+      words: ['成天','技巧','飞跃']
     }
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
+// ══════════════════════════════════════════
 var situationData = {
-  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
-         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn mới chuyển lớp than với em là bị các bạn lạnh nhạt.',
-     a:{sp:'Bạn',zh:'新班级的同学都不怎么理我，我真想转回原来的学校。',vn:'Các bạn ở lớp mới chẳng mấy ai để ý đến tớ, tớ thật muốn chuyển về trường cũ.'},
-     need:['Dùng 没什么大不了的 hoặc 大不了','Khuyên bạn nhìn mặt tích cực (dùng 反而)'],
-     sample:'这没什么大不了的，刚开始都这样。你反而可以趁这个机会好好展示一下自己。',
-     samplePy:'Zhè méi shénme dàbuliǎo de, gāng kāishǐ dōu zhèyàng. Nǐ fǎn\'ér kěyǐ chèn zhège jīhuì hǎohāo zhǎnshì yíxià zìjǐ.',
-     sampleVn:'Chuyện này chẳng có gì to tát, lúc đầu ai cũng thế. Cậu ngược lại có thể nhân cơ hội này thể hiện bản thân thật tốt.',
-     tip:'没什么大不了的 (tính từ) dùng để trấn an; 反而 lật ngược cách nhìn tiêu cực của bạn.'},
-
-    {scene:'Em trai chối không làm vỡ cốc, dù em đã tận mắt thấy.',
-     a:{sp:'Em trai',zh:'杯子不是我打碎的，我根本没进过厨房。',vn:'Cái cốc không phải em làm vỡ, em còn chẳng vào bếp.'},
-     need:['Dùng 明明','Nêu bằng chứng, kết bằng câu hỏi ngược'],
-     sample:'你明明进过厨房，我刚才亲眼看见的，怎么还不承认呢？',
-     samplePy:'Nǐ míngmíng jìnguo chúfáng, wǒ gāngcái qīnyǎn kànjiàn de, zěnme hái bù chéngrèn ne?',
-     sampleVn:'Em rõ ràng đã vào bếp, chị vừa tận mắt nhìn thấy, sao còn không chịu nhận?',
-     tip:'明明 + sự thật, rồi câu hỏi ngược 怎么还……呢 — đúng mẫu 练一练 của sách.'},
-
-    {scene:'Nhóm trưởng hỏi tiến độ bài tập nhóm.',
-     a:{sp:'Nhóm trưởng',zh:'这次小组作业，大家都把自己的部分交上来了吗？',vn:'Bài tập nhóm lần này, mọi người đã nộp phần của mình chưa?'},
-     need:['Dùng 唯独','Nói rõ ai chưa nộp và đề xuất cách xử lý'],
-     sample:'大家都交了，唯独小王还没交，我一会儿去提醒他一下。',
-     samplePy:'Dàjiā dōu jiāo le, wéidú Xiǎo Wáng hái méi jiāo, wǒ yíhuìr qù tíxǐng tā yíxià.',
-     sampleVn:'Mọi người đều nộp rồi, chỉ riêng Tiểu Vương chưa nộp, lát nữa tớ đi nhắc cậu ấy.',
-     tip:'Vế trước có 都 (tình hình chung), vế sau 唯独 + người + ngoại lệ.'},
-
-    {scene:'Đồng nghiệp muốn làm qua loa với một khách hàng khó tính.',
-     a:{sp:'Đồng nghiệp',zh:'这个客户太难伺候了，随便应付一下算了。',vn:'Khách này khó chiều quá, qua loa cho xong đi.'},
-     need:['Dùng 敷衍 hoặc 凑合','Thuyết phục làm cho tốt (dùng 想方设法)'],
-     sample:'可不能敷衍客户，咱们还是想方设法把这单业务做好吧。',
-     samplePy:'Kě bù néng fūyǎn kèhù, zánmen háishi xiǎngfāng-shèfǎ bǎ zhè dān yèwù zuòhǎo ba.',
-     sampleVn:'Không thể làm qua loa với khách được, chúng ta cứ tìm mọi cách làm tốt đơn này đi.',
-     tip:'敷衍 + người (khách hàng); 凑合 không mang tân ngữ người — nếu dùng 凑合 thì nói 这单业务可不能凑合.'},
-
-    {scene:'Bạn cùng đội bóng bức xúc vì toàn phải ngồi dự bị.',
-     a:{sp:'Bạn',zh:'教练总让我坐在场边，太不公平了！',vn:'Huấn luyện viên toàn bắt tớ ngồi ngoài sân, bất công quá!'},
-     need:['Dùng 计较 hoặc 全力以赴','Động viên bạn kiên trì'],
-     sample:'别跟他们计较，你全力以赴地练，教练总有一天会看到的。',
-     samplePy:'Bié gēn tāmen jìjiào, nǐ quánlì-yǐfù de liàn, jiàoliàn zǒng yǒu yì tiān huì kàndào de.',
-     sampleVn:'Đừng so đo với họ, cậu cứ dốc sức mà tập, sẽ có ngày huấn luyện viên nhìn thấy.',
-     tip:'跟 + người + 计较; 全力以赴 làm trạng ngữ + 地 + V.'}
+    {scene:'Bạn mới chuyển lớp than với em là bị các bạn lạnh nhạt.',a:{sp:'Bạn',zh:'新学校的同学都不怎么理我，我真想转回原来的学校。',vn:'Bạn ở trường mới chẳng mấy ai để ý tới tớ, tớ thật muốn chuyển về trường cũ.'},need:['Dùng 没什么大不了的 hoặc 大不了','Khuyên bạn nhìn mặt tích cực (dùng 反而)'],sample:'这没什么大不了的，刚开始大家都这样。你反而可以趁这个机会，好好展示一下自己的才干。',samplePy:'Zhè méi shénme dàbuliǎo de, gāng kāishǐ dàjiā dōu zhèyàng. Nǐ fǎn\'ér kěyǐ chèn zhège jīhuì, hǎohāo zhǎnshì yíxià zìjǐ de cáigàn.',sampleVn:'Chuyện này có gì to tát đâu, lúc đầu ai cũng thế. Cậu ngược lại có thể nhân cơ hội này thể hiện tài năng của mình.',tip:'没什么大不了的 (tính từ) dùng để trấn an; 反而 lật ngược cách nhìn tiêu cực của bạn.'},
+    {scene:'Em trai chối không làm vỡ cốc, dù em đã tận mắt thấy.',a:{sp:'Em trai',zh:'杯子不是我打碎的，我根本没进过厨房。',vn:'Cái cốc không phải em làm vỡ, em còn chẳng vào bếp.'},need:['Dùng 明明','Nêu bằng chứng, kết bằng câu hỏi ngược'],sample:'你明明进过厨房，我刚才都看见了，怎么还不承认呢？',samplePy:'Nǐ míngmíng jìnguo chúfáng, wǒ gāngcái dōu kànjiàn le, zěnme hái bù chéngrèn ne?',sampleVn:'Em rõ ràng đã vào bếp, chị vừa tận mắt nhìn thấy, sao còn không chịu nhận?',tip:'明明 + sự thật, rồi câu hỏi ngược 怎么还……呢 — đúng mẫu 练一练 của sách.'},
+    {scene:'Nhóm trưởng hỏi tiến độ bài tập nhóm.',a:{sp:'Nhóm trưởng',zh:'这次小组作业，大家都把自己的部分交上来了吗？',vn:'Bài tập nhóm lần này, mọi người đã nộp phần của mình chưa?'},need:['Dùng 唯独','Nói rõ ai chưa nộp và đề xuất cách xử lý'],sample:'大家都交了，唯独小王还没交，我一会儿去提醒他一下。',samplePy:'Dàjiā dōu jiāo le, wéidú Xiǎo Wáng hái méi jiāo, wǒ yíhuìr qù tíxǐng tā yíxià.',sampleVn:'Mọi người đều nộp rồi, chỉ riêng Tiểu Vương chưa nộp, lát nữa tớ đi nhắc cậu ấy.',tip:'Vế trước có 都 (tình hình chung), vế sau 唯独 + người + ngoại lệ.'},
+    {scene:'Đồng nghiệp muốn làm qua loa với một khách hàng khó tính.',a:{sp:'Đồng nghiệp',zh:'这个客户要求太多了，随便应付一下算了。',vn:'Khách này đòi hỏi nhiều quá, làm qua loa cho xong là được.'},need:['Dùng 敷衍 hoặc 凑合','Thuyết phục làm cho tốt (dùng 想方设法)'],sample:'可不能敷衍客户，咱们还是想方设法把这单业务做好吧。',samplePy:'Kě bù néng fūyǎn kèhù, zánmen háishi xiǎngfāng-shèfǎ bǎ zhè dān yèwù zuòhǎo ba.',sampleVn:'Không thể làm qua loa với khách được, chúng ta cứ tìm mọi cách làm tốt đơn này đi.',tip:'敷衍 + người (khách hàng); 凑合 không mang tân ngữ người — nếu dùng 凑合 thì nói 这单业务可不能凑合.'},
+    {scene:'Bạn cùng đội bóng bức xúc vì toàn phải ngồi dự bị.',a:{sp:'Bạn',zh:'教练总让我坐在场边，我心里真不服气！',vn:'Huấn luyện viên lúc nào cũng bắt tớ ngồi ngoài sân, tớ thật không phục!'},need:['Dùng 计较 hoặc 全力以赴','Động viên bạn kiên trì'],sample:'别跟他们计较，你全力以赴地练，教练总有一天会看到的。',samplePy:'Bié gēn tāmen jìjiào, nǐ quánlì-yǐfù de liàn, jiàoliàn zǒng yǒu yì tiān huì kàndào de.',sampleVn:'Đừng so đo với họ, cậu cứ dốc sức mà tập, sẽ có ngày huấn luyện viên nhìn thấy.',tip:'跟 + người + 计较; 全力以赴 làm trạng ngữ + 地 + V.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 // 🎯 NÓI SAO CHO HAY — 得体 / 语体
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 var registerData = {
-  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
-         'HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
   items: [
-    {scene:'Em viết thư xin nghỉ việc gửi phòng nhân sự.',
-     a:'我不想干了，大不了换个工作。',b:'经过慎重考虑，我决定辞去目前的职位。',better:'b',
-     why:'大不了 là khẩu ngữ mang giọng bất cần. Thư từ công việc cần trang trọng: 经过慎重考虑, 辞去……职位.'},
-
-    {scene:'Em an ủi bạn thân vừa thi trượt.',
-     a:'没考好就没考好，大不了下次再考！',b:'考试失利并不可怕，应当认真总结经验教训。',better:'a',
-     why:'Với bạn thân, 大不了 nghe gần gũi, đúng lúc cần trấn an. Câu b đúng nhưng giống lời phát biểu tổng kết, nghe xa cách.'},
-
-    {scene:'Em muốn góp ý với giám đốc về cách phân công công việc.',
-     a:'哼，太不像话了，明明是在欺负人！',b:'经理，我觉得这次分配业务的方式可能不太公平，您能不能再考虑一下？',better:'b',
-     why:'哼, 太不像话了, 欺负人 là lời bực bội, chỉ hợp khi nói với bạn bè (như Tiểu Lâm trong bài). Với cấp trên phải góp ý nhẹ nhàng, có 您.'},
-
-    {scene:'Em viết bản tổng kết cuối năm về một đồng nghiệp.',
-     a:'他工作兢兢业业，具有很强的敬业精神。',b:'他干活儿特别卖力，从来不偷懒。',better:'a',
-     why:'Văn bản tổng kết dùng thành ngữ, từ trang trọng: 兢兢业业, 敬业精神. 干活儿, 卖力, 偷懒 là khẩu ngữ.'},
-
-    {scene:'Tiễn khách hàng lớn tuổi sau bữa cơm ở nhà em.',
-     a:'今天招待不周，怠慢了，请多包涵。',b:'今天没怎么招待你，你别生气啊。',better:'a',
-     why:'怠慢了, 请多包涵 là lời khách sáo chuẩn mực của chủ nhà với khách. Câu b dùng 你 và 别生气 — hợp với bạn bè, không hợp với khách lớn tuổi.'},
-
-    {scene:'Bạn cùng phòng đến chơi muộn, nhà hết giường.',
-     a:'今晚你就在沙发上凑合一晚吧。',b:'今晚请您暂时在沙发上休息。',better:'a',
-     why:'凑合一晚 là khẩu ngữ thân mật, rất tự nhiên giữa bạn bè. Câu b dùng 您 và 暂时 — trang trọng quá mức với bạn cùng phòng.'}
+    {scene:'Em viết thư xin nghỉ việc gửi phòng nhân sự.',a:'我不想干了，大不了换个工作。',b:'经过认真考虑，我决定离开目前的职位。',better:'b',why:'Thư xin nghỉ việc là văn bản trang trọng: 经过认真考虑, 决定离开目前的职位. Câu a (不想干了, 大不了) là lời nói lúc bực bội.'},
+    {scene:'Em an ủi bạn thân vừa thi trượt.',a:'没考好就没考好，大不了下次再考！',b:'这次考试成绩不理想，应该认真总结经验。',better:'a',why:'An ủi bạn thân dùng khẩu ngữ, nhẹ nhàng: 没考好就没考好，大不了下次再考. Câu b như lời nhận xét của thầy cô trong báo cáo.'},
+    {scene:'Em muốn góp ý với giám đốc về cách phân công công việc.',a:'凭什么难做的业务全给我们新人？这也太过分了！',b:'经理，我觉得这次分配业务的方式可能不太合理，您能不能再考虑一下？',better:'b',why:'凭什么, 太过分了 là lời chất vấn lúc bực bội, chỉ nói với bạn bè cho hả giận. Với cấp trên phải góp ý nhẹ nhàng, có 您, 能不能…….'},
+    {scene:'Em viết bản tổng kết cuối năm về một đồng nghiệp.',a:'他工作兢兢业业，敬业精神值得大家学习。',b:'他干活儿特别卖力，一点儿也不偷懒。',better:'a',why:'Văn bản tổng kết dùng thành ngữ, từ trang trọng: 兢兢业业, 敬业精神. 干活儿, 卖力, 偷懒 là khẩu ngữ.'},
+    {scene:'Tiễn khách hàng lớn tuổi sau bữa cơm ở nhà em.',a:'今天招待不周，怠慢了，请您多多原谅。',b:'今天没怎么招待你，你别生气啊。',better:'a',why:'招待不周, 怠慢了, 请您多多原谅 là lời khách sáo chuẩn mực của chủ nhà với khách. Câu b dùng 你 và 别生气 — hợp với bạn bè, không hợp với khách lớn tuổi.'},
+    {scene:'Bạn cùng phòng đến chơi muộn, nhà hết giường.',a:'晚上请您暂时在沙发上休息。',b:'晚上你就在沙发上凑合一下吧。',better:'b',why:'Với bạn thân dùng khẩu ngữ 凑合一下吧. Câu a dùng 您, 暂时, 请……休息 — như nhân viên khách sạn nói với khách, nghe xa cách.'}
   ]
 };
 

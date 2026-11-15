@@ -896,131 +896,81 @@ var hvBridgeData = {
 };
 
 var matchData = [
-  {left:'为期',right:'一周的活动'},
-  {left:'征服',right:'所有观众'},
-  {left:'跨过',right:'桥梁'},
-  {left:'穿越',right:'平原'},
-  {left:'北风',right:'呼啸'},
+  {left:'呼啸',right:'而过'},
   {left:'设施',right:'齐全'},
-  {left:'标点',right:'符号'},
-  {left:'请勿',right:'喧哗'},
-  {left:'耍',right:'威风'},
-  {left:'切断',right:'电源'},
-  {left:'交通',right:'闭塞'},
-  {left:'主持',right:'正义'},
   {left:'承包',right:'土地'},
-  {left:'聊',right:'家常'},
-  {left:'回顾',right:'往事'},
-  {left:'贴',right:'对联'},
-  {left:'享受',right:'天伦之乐'},
-  {left:'响应',right:'号召'},
-  {left:'保护',right:'现场'},
-  {left:'一叶',right:'小舟'}
+  {left:'惊动',right:'邻居'},
+  {left:'见义',right:'勇为'},
+  {left:'天伦',right:'之乐'},
+  {left:'不屑',right:'一顾'},
+  {left:'写',right:'对联'},
+  {left:'一叶',right:'小舟'},
+  {left:'交通',right:'闭塞'}
 ];
 
 var fillData = [
-  {pre:'公司下个月将举办',blank:'为期',post:'一周的艺术节。',hint:'(kéo dài, có thời hạn)',ans:'为期',exp:'为期 + khoảng thời gian = kéo dài (trong)…: 为期一周的艺术节.'},
-  {pre:'语言是不同文化之间沟通的',blank:'桥梁',post:'。',hint:'(cây cầu, cầu nối)',ans:'桥梁'},
-  {pre:'高铁跨过了一座座桥，穿越了辽阔的',blank:'平原',post:'，一路向西。',hint:'(đồng bằng)',ans:'平原'},
-  {pre:'窗外北风',blank:'呼啸',post:'，屋里却暖和得像春天一样。',hint:'(gào thét)',ans:'呼啸'},
-  {pre:'现在的年轻人聊天时喜欢发各种表情',blank:'符号',post:'。',hint:'(ký hiệu, biểu tượng)',ans:'符号'},
-  {pre:'他对别人的建议总是',blank:'不屑一顾',post:'，结果吃了大亏。',hint:'(chẳng thèm để mắt đến)',ans:'不屑一顾'},
-  {pre:'回程的列车没有了高铁的',blank:'威风',post:'，不紧不慢地开出了车站。',hint:'(sự oai phong)',ans:'威风'},
-  {pre:'修理电器以前，一定要先切断',blank:'电源',post:'，以免触电。',hint:'(nguồn điện)',ans:'电源'},
-  {pre:'连着下了一个星期的雨，今天终于见到了',blank:'久违',post:'的阳光。',hint:'(lâu ngày không gặp)',ans:'久违'},
-  {pre:'看到有人被欺负，他总会站出来主持',blank:'正义',post:'。',hint:'(chính nghĩa, lẽ phải)',ans:'正义'},
-  {pre:'这位出租车司机',blank:'见义勇为',post:'，帮警察抓住了小偷。',hint:'(thấy việc nghĩa hăng hái làm)',ans:'见义勇为'},
-  {pre:'',blank:'洪水',post:'冲毁了村里的小桥，大家只好坐船出门。',hint:'(nước lũ)',ans:'洪水'},
-  {pre:'为了保卫家园，战士们',blank:'英勇',post:'作战，毫不退缩。',hint:'(anh dũng)',ans:'英勇'},
-  {pre:'这座城堡几百年前是一个英国',blank:'贵族',post:'的家。',hint:'(quý tộc)',ans:'贵族'},
-  {pre:'春天是',blank:'播种',post:'的季节，农民们都忙着下地干活儿。',hint:'(gieo hạt)',ans:'播种'},
-  {pre:'改革开放后，他第一批',blank:'承包',post:'了土地，就此发家致富。',hint:'(nhận khoán)',ans:'承包'},
-  {pre:'奶奶说普通话总夹杂着',blank:'方言',post:'，我们常常听不懂。',hint:'(tiếng địa phương)',ans:'方言'},
-  {pre:'妈妈在做饭，你别在厨房里',blank:'捣乱',post:'了！',hint:'(quấy phá)',ans:'捣乱'},
-  {pre:'这对',blank:'双胞胎',post:'兄弟长得一模一样，连老师都分不清。',hint:'(sinh đôi)',ans:'双胞胎'},
-  {pre:'晚饭后，邻居们坐在树下拉',blank:'家常',post:'，好不热闹。',hint:'(chuyện nhà)',ans:'家常'},
-  {pre:'一提起小时候的',blank:'往事',post:'，爷爷的话就多了起来。',hint:'(chuyện cũ)',ans:'往事'},
-  {pre:'老中医的医术很高，',blank:'方圆',post:'百里的人都来找他看病。',hint:'(trong vòng, xung quanh)',ans:'方圆',exp:'方圆 + khoảng cách = trong vòng bán kính…: 方圆百里.'},
-  {pre:'在这个信息',blank:'爆炸',post:'的时代，学会选择比学会接受更重要。',hint:'(bùng nổ)',ans:'爆炸'},
-  {pre:'春节时，家家户户都贴',blank:'对联',post:'，包饺子，放鞭炮。',hint:'(câu đối)',ans:'对联'},
-  {pre:'大年初一，孩子们要先给爷爷奶奶',blank:'拜年',post:'，才能拿红包。',hint:'(chúc Tết)',ans:'拜年'},
-  {pre:'退休以后，爷爷每天在家带孙子，享受',blank:'天伦之乐',post:'。',hint:'(niềm vui gia đình sum vầy)',ans:'天伦之乐'},
-  {pre:'正月十五是',blank:'元宵节',post:'，大家一边看花灯，一边猜灯谜。',hint:'(Tết Nguyên tiêu)',ans:'元宵节'},
-  {pre:'',blank:'正月',post:'初一，亲朋好友们互相拜年。',hint:'(tháng giêng)',ans:'正月'},
-  {pre:'山上有一座一千多年的',blank:'寺庙',post:'，每年都吸引大量游客。',hint:'(chùa miếu)',ans:'寺庙'},
-  {pre:'妈妈给我使了个',blank:'眼神',post:'，我马上明白了她的意思。',hint:'(ánh mắt)',ans:'眼神'},
-  {pre:'那',blank:'新郎',post:'一看就是个老实人，脸憋得通红。',hint:'(chú rể)',ans:'新郎'},
-  {pre:'穿上婚纱的',blank:'新娘',post:'美得像画中的人一样。',hint:'(cô dâu)',ans:'新娘'},
-  {pre:'周末我常去',blank:'社区',post:'做志愿者，帮老人打扫房间。',hint:'(khu dân cư)',ans:'社区'},
-  {pre:'家里的水管坏了，我给',blank:'物业',post:'打了个电话，他们很快就派人来修。',hint:'(ban quản lý toà nhà)',ans:'物业'},
-  {pre:'儿子都三十岁了，妈妈天天催他娶',blank:'媳妇',post:'。',hint:'(vợ)',ans:'媳妇'},
-  {pre:'他娶了一个又',blank:'贤惠',post:'又能干的妻子，家里的事都不用他操心。',hint:'(hiền thục)',ans:'贤惠'},
-  {pre:'新年前夕，学校举行了师生',blank:'联欢',post:'会。',hint:'(liên hoan văn nghệ)',ans:'联欢'},
-  {pre:'弟弟一有空就看',blank:'漫画',post:'，作业都忘了写。',hint:'(truyện tranh)',ans:'漫画'},
-  {pre:'放假回到乡下，孩子们',blank:'无拘无束',post:'地在田野里跑来跑去。',hint:'(thoải mái, không gò bó)',ans:'无拘无束'},
-  {pre:'教师节那天，同学们送给老师一',blank:'束',post:'鲜花。',hint:'(bó — lượng từ)',ans:'束',exp:'束 là lượng từ cho bó (hoa): 一束鲜花.'},
-  {pre:'月光下，一叶小',blank:'舟',post:'在湖面上慢慢地漂着。',hint:'(thuyền)',ans:'舟'}
+  {pre:'公司为新员工安排了',blank:'为期',post:'两周的培训。',hint:'(kéo dài, có kỳ hạn)',ans:'为期',exp:'为期 + khoảng thời gian (为期两周 / 为期三天) = kéo dài trong …; văn viết, hay làm định ngữ trước 的 + N.'},
+  {pre:'语言是人与人之间沟通的',blank:'桥梁',post:'。',hint:'(cầu nối)',ans:'桥梁',exp:'桥梁 nghĩa gốc là cây cầu; nghĩa bóng = cầu nối (沟通的桥梁 / 友谊的桥梁).'},
+  {pre:'他的普通话里',blank:'夹杂',post:'着不少方言，我常常听不懂。',hint:'(xen lẫn)',ans:'夹杂',exp:'A 里夹杂着 B = trong A lẫn vào B (thứ khác loại); 方言 = tiếng địa phương.'},
+  {pre:'在图书馆里不要大声',blank:'喧哗',post:'，以免影响别人看书。',hint:'(làm ồn ào)',ans:'喧哗',exp:'大声喧哗 = nói to, làm ồn ở nơi công cộng; 以免 (bài 21) = để khỏi ….'},
+  {pre:'出门前记得把电脑的',blank:'电源',post:'关掉。',hint:'(nguồn điện)',ans:'电源',exp:'电源 = nguồn điện (ổ điện, công tắc nguồn); 关掉电源 = ngắt nguồn.'},
+  {pre:'回到老家，我又吃到了那',blank:'久违',post:'的家乡菜。',hint:'(lâu ngày không gặp)',ans:'久违',exp:'久违的 + N = thứ đã lâu lắm mới gặp lại (久违的朋友 / 久违的家乡菜).'},
+  {pre:'我在写作业，弟弟一直在旁边',blank:'捣乱',post:'，我只好去图书馆了。',hint:'(phá đám)',ans:'捣乱',exp:'捣乱 = quấy phá, gây rối (trẻ con nghịch, người cố ý phá); 跟/给 + người + 捣乱.'},
+  {pre:'突然下起了大雨，我们都没带伞，被淋得十分',blank:'狼狈',post:'。',hint:'(thảm hại, nhếch nhác)',ans:'狼狈',exp:'狼狈 = bộ dạng thảm hại, lúng túng (ướt sũng, bị bắt quả tang…); 狼狈不堪 = vô cùng thảm hại.'},
+  {pre:'他都三十岁了，想问题还这么',blank:'幼稚',post:'。',hint:'(ấu trĩ, trẻ con)',ans:'幼稚',exp:'幼稚 = suy nghĩ non nớt như trẻ con (chê người lớn); 天真 = ngây thơ (nghĩa tốt hơn).'},
+  {pre:'这对',blank:'双胞胎',post:'长得几乎一样，连他们的妈妈有时都分不清。',hint:'(anh chị em sinh đôi)',ans:'双胞胎',exp:'双胞胎 = cặp sinh đôi; lượng từ 对 (一对双胞胎).'},
+  {pre:'过春节时，很多人喜欢去',blank:'寺庙',post:'里看看。',hint:'(chùa miếu)',ans:'寺庙',exp:'寺庙 = chùa chiền nói chung; đi với 去……里 / 在……里.'},
+  {pre:'这么重要的决定，不能',blank:'仓促',post:'做出，再好好想想吧。',hint:'(vội vàng)',ans:'仓促',exp:'仓促 = vội vàng, không kịp chuẩn bị; 仓促做出决定 = quyết định hấp tấp.'},
+  {pre:'第一次去女朋友家，他显得有点儿',blank:'拘束',post:'，连话都不敢多说。',hint:'(mất tự nhiên, gò bó)',ans:'拘束',exp:'拘束 = rụt rè, không thoải mái ↔ 无拘无束 (thoải mái, tự nhiên).'},
+  {pre:'放假了，同学们回家的',blank:'回家',post:'，旅游的旅游，校园里一下子安静了。',hint:'(về nhà)',ans:'回家',exp:'A 的 A，B 的 B = người thì A, người thì B; hai chữ trong mỗi vế phải giống hệt nhau (回家的回家).'},
+  {pre:'那天我',blank:'一时',post:'冲动，说了几句很难听的话，现在后悔极了。',hint:'(nhất thời)',ans:'一时',exp:'一时 + V / Adj = trong chốc lát, nhất thời (一时冲动 / 一时想不起来), không phải lâu dài.'}
 ];
 
 var sortData = [
-  {words:['运动场上','，','大家','跑的跑','，','跳的跳','。'],ans:'运动场上，大家跑的跑，跳的跳。',audio:'运动场上，大家跑的跑，跳的跳。'},
-  {words:['坐在车上的人们','，','看电影的看电影','，','打电话的打电话','。'],ans:'坐在车上的人们，看电影的看电影，打电话的打电话。',audio:'坐在车上的人们，看电影的看电影，打电话的打电话。'},
-  {words:['一家子','老的老','，','小的小','，','妈妈愁得不得了','。'],ans:'一家子老的老，小的小，妈妈愁得不得了。',audio:'一家子老的老，小的小，妈妈愁得不得了。'},
-  {words:['晚会上','，','大家','唱的唱','，','跳的跳','，','高兴得不得了','。'],ans:'晚会上，大家唱的唱，跳的跳，高兴得不得了。',audio:'晚会上，大家唱的唱，跳的跳，高兴得不得了。'},
-  {words:['我','一时','竟','忘了','他叫什么名字','。'],ans:'我一时竟忘了他叫什么名字。',audio:'我一时竟忘了他叫什么名字。'},
-  {words:['她','一时心急','，','连门','都没有锁','就冲出了家门','。'],ans:'她一时心急，连门都没有锁就冲出了家门。',audio:'她一时心急，连门都没有锁就冲出了家门。'},
-  {words:['高原上','天气变化大','，','一时','太阳当空','，','一时','阴雨绵绵','。'],ans:'高原上天气变化大，一时太阳当空，一时阴雨绵绵。',audio:'高原上天气变化大，一时太阳当空，一时阴雨绵绵。'},
-  {words:['买房子是大事','，','可','不能','凭一时冲动','。'],ans:'买房子是大事，可不能凭一时冲动。',audio:'买房子是大事，可不能凭一时冲动。'},
-  {words:['这个','小眼镜','就是','我的儿子','。'],ans:'这个小眼镜就是我的儿子。',audio:'这个小眼镜就是我的儿子。'},
-  {words:['汽车停下来','，','等待','放了学的小黄帽们','过马路','。'],ans:'汽车停下来，等待放了学的小黄帽们过马路。',audio:'汽车停下来，等待放了学的小黄帽们过马路。'},
-  {words:['几千双眼睛','都','盯着你呢','，','你肩上的责任','很重啊','。'],ans:'几千双眼睛都盯着你呢，你肩上的责任很重啊。',audio:'几千双眼睛都盯着你呢，你肩上的责任很重啊。'},
-  {words:['人和人之间','无拘无束的交流','也是','人生最宝贵的','财富','。'],ans:'人和人之间无拘无束的交流也是人生最宝贵的财富。',audio:'人和人之间无拘无束的交流也是人生最宝贵的财富。'}
+  {words:['他','画','的','漫画','特别','受','孩子们','欢迎','。'],ans:'他画的漫画特别受孩子们欢迎。',audio:'他画的漫画特别受孩子们欢迎。'},
+  {words:['这场','洪水','冲','走','了','很多','房子','。'],ans:'这场洪水冲走了很多房子。',audio:'这场洪水冲走了很多房子。'},
+  {words:['爷爷','教','我','怎么','播种','。'],ans:'爷爷教我怎么播种。',audio:'爷爷教我怎么播种。'},
+  {words:['这匹','马','看起来','非常','威风','。'],ans:'这匹马看起来非常威风。',audio:'这匹马看起来非常威风。'},
+  {words:['我','从','他的','眼神','里','看','出','了','失望','。'],ans:'我从他的眼神里看出了失望。',audio:'我从他的眼神里看出了失望。'},
+  {words:['社区','为','老人们','举办','了','一场','联欢会','。'],ans:'社区为老人们举办了一场联欢会。',audio:'社区为老人们举办了一场联欢会。'},
+  {words:['她','手里','拿着','一束','刚','买','的','花','。'],ans:'她手里拿着一束刚买的花。',audio:'她手里拿着一束刚买的花。'},
+  {words:['他','在','书','上','画','了','很多','奇怪的','符号','。'],ans:'他在书上画了很多奇怪的符号。',audio:'他在书上画了很多奇怪的符号。'}
 ];
 
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'新家的客厅又____又明亮，孩子们在里面跑来跑去。',opts:['宽敞','宽阔','广阔','辽阔'],ans:0,exp:'Không gian BÊN TRONG nhà, phòng → 宽敞. 宽阔 dùng cho đường, mặt sông, quảng trường; 广阔 / 辽阔 dùng cho vùng đất, bầu trời mênh mông.'},
-  {wrong:'这家超市商品品种____，从吃的到用的应有尽有。',opts:['完整','充分','齐全','完全'],ans:2,exp:'品种 / 设施 / 手续 + 齐全 = đủ chủng loại, không thiếu thứ gì. 完整 = nguyên vẹn; 充分 = đầy đủ (lý do, chuẩn bị); 完全 là phó từ.'},
-  {wrong:'年终总结会上，经理____了公司一年来的工作。',opts:['回忆','回顾','回想','回答'],ans:1,exp:'Điểm lại, tổng kết công việc một cách có hệ thống → 回顾. 回忆 / 回想 thiên về nhớ lại chuyện riêng, cảm xúc; 回答 = trả lời.'},
-  {wrong:'时间太____，这次的方案还有很多不完善的地方。',opts:['匆忙','急忙','连忙','仓促'],ans:3,exp:'Thời gian quá gấp nên chuẩn bị chưa chu đáo → 时间仓促. 匆忙 tả dáng vẻ vội vã của hành động; 急忙 / 连忙 là phó từ, đứng trước động từ.'},
-  {wrong:'昨天那里发生了交通事故，警察要求大家保护好____。',opts:['当场','场合','现场','场面'],ans:2,exp:'Nơi xảy ra tai nạn, làm tân ngữ của 保护 → danh từ 现场 (保护现场). 当场 là phó từ, chỉ đứng trước động từ; 场合 = dịp, hoàn cảnh; 场面 = cảnh tượng.'},
-  {wrong:'学校提出节约用水的倡议，同学们纷纷____。',opts:['响应','答应','反应','适应'],ans:0,exp:'Đáp lại lời kêu gọi chung → 响应 (响应倡议 / 号召). 答应 = nhận lời yêu cầu cụ thể của ai; 反应 = phản ứng; 适应 = thích nghi.'},
-  {wrong:'爷爷在睡觉，我们走路轻点儿，别____他。',opts:['感动','激动','运动','惊动'],ans:3,exp:'Làm người khác giật mình, thức giấc, bị quấy rầy → 惊动. 感动 = cảm động; 激动 = xúc động (không mang tân ngữ người trong nghĩa này); 运动 = vận động.'},
-  {wrong:'失败以后，他把自己____起来，谁也不想见。',opts:['关闭','封闭','闭塞','倒闭'],ans:1,exp:'Tự khép mình, cô lập bản thân → 把自己封闭起来. 关闭 dùng cho cửa, cửa hàng, nhà máy; 闭塞 là tính từ (nơi chốn cách trở); 倒闭 = phá sản.'},
-  {wrong:'那个山村以前交通____，连一条像样的路都没有。',opts:['发达','闭塞','热闹','便利'],ans:1,exp:'Vế sau "đến một con đường ra hồn cũng không có" → giao thông cách trở: 交通闭塞. 发达 / 便利 trái nghĩa với ngữ cảnh; 热闹 không đi với 交通.'},
-  {wrong:'突然下起了大雨，我们没带伞，被淋得____不堪。',opts:['狼藉','尴尬','难堪','狼狈'],ans:3,exp:'Cụm cố định 狼狈不堪 = thảm hại vô cùng. 狼藉 (lángjí) = bừa bãi, ngổn ngang (一片狼藉); 尴尬 / 难堪 = khó xử, không đi với 不堪.'},
-  {wrong:'都二十岁的人了，别这么____，动不动就发脾气。',opts:['幼稚','天真','单纯','年轻'],ans:0,exp:'Hành động như trẻ con (hơi tí là nổi nóng), mang ý chê → 幼稚. 天真 / 单纯 = ngây thơ, trong sáng (thường là khen); 年轻 = trẻ tuổi.'},
-  {wrong:'医院里请勿大声____，以免影响病人休息。',opts:['热闹','安静','喧哗','拥挤'],ans:2,exp:'Biển báo quen thuộc: 请勿（大声）喧哗 = xin đừng làm ồn. 热闹 là tính từ, không đi với 大声; 安静 trái nghĩa; 拥挤 = chen chúc.'},
-  {wrong:'她用自己的方式重新____了这首经典老歌，赢得了满堂喝彩。',opts:['演讲','演习','演变','演绎'],ans:3,exp:'Thể hiện lại một bài hát, vai diễn theo cách riêng → 演绎. 演讲 = diễn thuyết; 演习 = diễn tập; 演变 = diễn biến, biến đổi dần.'},
-  {wrong:'她一开口，美妙的歌声就____了在场的所有观众。',opts:['克服','征服','战胜','说服'],ans:1,exp:'Làm người khác say mê, bị chinh phục → 征服观众. 克服 + khó khăn; 战胜 + đối thủ; 说服 = thuyết phục bằng lý lẽ.'},
-  {wrong:'第一次去男朋友家，她显得有点儿____。',opts:['约束','束缚','拘束','结束'],ans:2,exp:'Tính từ: ngượng ngùng, mất tự nhiên → 拘束 (显得有点儿拘束). 约束 / 束缚 là động từ (ràng buộc), không làm vị ngữ tính từ; 结束 = kết thúc.'},
-  {wrong:'他说话时总____着几个英语单词，听起来有点儿别扭。',opts:['夹杂','复杂','杂乱','打杂'],ans:0,exp:'Xen lẫn vào trong → 夹杂着 + N. 复杂 = phức tạp; 杂乱 = lộn xộn (tính từ); 打杂 = làm việc vặt.'}
+  {wrong:'这位歌手一开口就____了所有的观众。',opts:['征服','克服','说服','佩服'],ans:0,exp:'征服 + 观众 = chinh phục, làm người ta hoàn toàn bị cuốn hút. 克服 + khó khăn; 说服 = thuyết phục bằng lý lẽ; 佩服 là cảm xúc của người xem, không phải việc ca sĩ làm.'},
+  {wrong:'新家的客厅很____，放得下一张大桌子。',opts:['宽敞','广大','广泛','繁忙'],ans:0,exp:'宽敞 tả nhà cửa, phòng ốc rộng rãi. 广大 tả vùng đất / quần chúng; 广泛 = rộng rãi (phạm vi: 兴趣广泛); 繁忙 = bận rộn.'},
+  {wrong:'这家超市东西很____，买什么都很方便。',opts:['齐全','完全','安全','全面'],ans:0,exp:'东西 / 设施齐全 = đầy đủ đủ loại. 完全 là phó từ; 安全 = an toàn; 全面 = toàn diện (tả cách nhìn, phát triển).'},
+  {wrong:'他跟女朋友分手以后把自己____起来，什么人都不想见。',opts:['封闭','关闭','闭塞','关心'],ans:0,exp:'把自己封闭起来 = tự khép mình. 关闭 dùng cho cửa, cửa hàng, trang web; 闭塞 = bế tắc, hẻo lánh (tính từ); 关心 = quan tâm.'},
+  {wrong:'那个山村交通____，很多年都没跟外面有什么联系。',opts:['闭塞','拥挤','繁忙','发达'],ans:0,exp:'交通闭塞 = đường sá cách trở, ít giao lưu. 拥挤 = chen chúc, kẹt xe; 繁忙 = bận rộn; 发达 = phát triển — đều không giải thích việc bị cô lập.'},
+  {wrong:'他是个很有____感的人，看到有人欺负别人一定会站出来。',opts:['正义','正式','正常','真正'],ans:0,exp:'正义感 = ý thức chính nghĩa. 正式 (chính thức), 正常 (bình thường), 真正 (thật sự) không ghép với chữ "cảm" để chỉ ý thức như vậy.'},
+  {wrong:'洪水中，那几个年轻人____地救出了十几个人。',opts:['英勇','英俊','勇气','威风'],ans:0,exp:'英勇地 + V = anh dũng làm gì. 英俊 = đẹp trai; 勇气 là danh từ (có dũng khí); 威风 = oai phong (tả dáng vẻ).'},
+  {wrong:'这首老歌被她重新____，听起来跟原来很不一样。',opts:['演绎','演讲','演员','讲究'],ans:0,exp:'演绎 = thể hiện lại theo cách riêng (bài hát, vai diễn). 演讲 = diễn thuyết; 演员 là danh từ; 讲究 = chú trọng.'},
+  {wrong:'大家都夸他媳妇____，家里家外都收拾得整整齐齐。',opts:['贤惠','实惠','智慧','便宜'],ans:0,exp:'贤惠 = hiền thục, đảm đang (khen phụ nữ). 实惠 = (hàng hoá) có lợi, đáng tiền; 智慧 = trí tuệ (danh từ); 便宜 = rẻ.'},
+  {wrong:'爷爷睡着了，我们说话小声点儿，别____他。',opts:['惊动','感动','激动','行动'],ans:0,exp:'惊动 + người = làm ai giật mình, kinh động. 感动 = làm cảm động; 激动 = xúc động (không có tân ngữ); 行动 = hành động.'},
+  {wrong:'学校提议大家多读书，同学们都积极____。',opts:['响应','反应','答应','适应'],ans:0,exp:'积极响应 + 提议 / 号召 = hưởng ứng. 反应 = phản ứng; 答应 = đồng ý lời nhờ của một người; 适应 = thích nghi.'},
+  {wrong:'这里是一大片____，一眼望去，四周都是平平的土地。',opts:['平原','平静','平等','平常'],ans:0,exp:'平原 = đồng bằng (danh từ địa lý). 平静 = yên tĩnh; 平等 = bình đẳng; 平常 = bình thường — đều là tính từ.'},
+  {wrong:'周末的公园里人很多，____，热闹得很。',opts:['跑步的跑步，跳舞的跳舞','跑步的跳舞，跳舞的跑步','跑步了跑步，跳舞了跳舞','跑得跑步，跳得跳舞'],ans:0,exp:'Khuôn A的A，B的B: hai chữ trong mỗi vế giống nhau, nối bằng 的 → 跑步的跑步 = người thì chạy bộ. Không dùng 了 / 得, không đảo chéo.'},
+  {wrong:'看到这么多人来接他，他____不知道说什么好。',opts:['一时','同时','及时','准时'],ans:0,exp:'一时 + 不知道 / 想不起来 = nhất thời, trong lúc ấy chưa…. 同时 = cùng lúc; 及时 = kịp thời; 准时 = đúng giờ.'},
+  {wrong:'这几天天气很怪，____，很多人都感冒了。',opts:['一时冷，一时热','一边冷，一边热','冷的冷，热的热','有冷有热'],ans:0,exp:'一时 A，一时 B = lúc thì A lúc thì B (= 时而……时而……, bài 15). 一边……一边 dùng cho hai hành động cùng lúc; 冷的冷，热的热 cần chủ ngữ số nhiều; 有冷有热 không tả sự thay đổi.'}
 ];
 
 var translateData = [
-  {vi:'Kỳ nghỉ kéo dài năm ngày, tôi không những không ra ngoài, trái lại còn tự nhốt mình trong phòng chơi điện thoại.',zh:'为期五天的假期，我不但没出门，反而把自己封闭在房间里玩手机。',py:'Wéiqī wǔ tiān de jiàqī, wǒ búdàn méi chūmén, fǎn\'ér bǎ zìjǐ fēngbì zài fángjiān li wán shǒujī.',goiY:['为期','封闭','不但……反而……'],giai:'不但没……反而…… = không những không … trái lại còn … (ý trái mong đợi). "Tự nhốt mình trong…" = 把自己封闭在……里, không dịch 关自己.'},
-  {vi:'Tuy căn hộ mới rất rộng rãi, tiện nghi cũng đầy đủ, nhưng ông bà vẫn nhớ ngôi nhà cũ ở quê.',zh:'新房子虽然很宽敞，设施也很齐全，可是爷爷奶奶还是怀念老家的旧房子。',py:'Xīn fángzi suīrán hěn kuānchang, shèshī yě hěn qíquán, kěshì yéye nǎinai háishi huáiniàn lǎojiā de jiù fángzi.',goiY:['宽敞','齐全','虽然……可是……'],giai:'虽然 đứng sau chủ ngữ khi hai vế cùng nói về 新房子. "Nhớ" ở đây là nhớ thương điều đã qua → 怀念 (như tên bài), không dùng 记得.'},
-  {vi:'Giờ ra chơi, các bạn người thì chơi điện thoại, người thì đọc truyện tranh, trong lớp chẳng ồn ào chút nào.',zh:'课间休息时，同学们玩手机的玩手机，看漫画的看漫画，教室里一点儿也不喧哗。',py:'Kèjiān xiūxi shí, tóngxuémen wán shǒujī de wán shǒujī, kàn mànhuà de kàn mànhuà, jiàoshì li yìdiǎnr yě bù xuānhuá.',goiY:['玩手机的玩手机','漫画','喧哗'],giai:'"Người thì A, người thì B" = A的A，B的B (điểm ngữ pháp 1). 一点儿也不 + Adj = chẳng … chút nào.'},
-  {vi:'Cậu ấy nhất thời nổi nóng, nói ra mấy câu trẻ con, sau đó lại trông rất ngượng ngùng, không dám nhìn thẳng vào ánh mắt tôi.',zh:'他一时生气，说了些幼稚的话，事后又显得很拘束，不敢正视我的眼神。',py:'Tā yìshí shēngqì, shuōle xiē yòuzhì de huà, shìhòu yòu xiǎnde hěn jūshù, bù gǎn zhèngshì wǒ de yǎnshén.',goiY:['一时','幼稚','拘束'],giai:'一时 + V = nhất thời, bộc phát (điểm ngữ pháp 2, nghĩa ①). "Ngượng ngùng" = 拘束; 显得 + Adj = trông có vẻ.'},
-  {vi:'Lúc lũ về, anh ấy thấy việc nghĩa liền ra tay dũng cảm cứu người, sau đó không những không nhận báo đáp, còn lặng lẽ rời khỏi hiện trường.',zh:'发洪水的时候，他见义勇为，英勇救人，事后不但不要回报，还悄悄离开了现场。',py:'Fā hóngshuǐ de shíhou, tā jiànyì-yǒngwéi, yīngyǒng jiù rén, shìhòu búdàn bú yào huíbào, hái qiāoqiāo líkāile xiànchǎng.',goiY:['洪水','见义勇为','现场','不但不……还……'],giai:'不但不……还…… tăng tiến theo hướng bất ngờ. "Hiện trường" nơi xảy ra sự việc = 现场 (không dùng 当场).'},
-  {vi:'Chỉ cần tắt điện thoại, cả nhà ngồi quây quần chuyện trò việc nhà, là có thể tìm lại niềm vui sum vầy đã lâu không có.',zh:'只要关掉手机，全家人坐在一起聊聊家常，就能找回久违的天伦之乐。',py:'Zhǐyào guāndiào shǒujī, quánjiārén zuò zài yìqǐ liáoliao jiācháng, jiù néng zhǎohuí jiǔwéi de tiānlún zhī lè.',goiY:['只要……就……','家常','久违','天伦之乐'],giai:'只要……就…… điều kiện đủ. "Đã lâu không có" làm định ngữ → 久违的 + N. Chuyện trò việc nhà = 聊家常.'},
-  {vi:'Tết năm nay em trai đi du học không về, cả nhà đến câu đối cũng chẳng buồn dán, mồng một tháng giêng bố mẹ đến chùa cũng không muốn đi.',zh:'今年春节弟弟出国留学没回来，家里连对联都懒得贴，正月初一爸妈连寺庙都不想去。',py:'Jīnnián Chūnjié dìdi chūguó liúxué méi huílai, jiāli lián duìlián dōu lǎnde tiē, zhēngyuè chūyī bà mā lián sìmiào dōu bù xiǎng qù.',goiY:['对联','正月','寺庙','连……都……'],giai:'连……都…… nhấn mạnh mức độ (đến việc bình thường nhất cũng không làm). 懒得 + V = chẳng buồn làm. 正月 đọc zhēngyuè.'},
-  {vi:'Thay vì vội vã chạy đến đích, chi bằng đi chậm lại, ngắm cảnh sắc dọc đường, trò chuyện thoải mái với người bên cạnh.',zh:'与其仓促地赶到目的地，不如放慢脚步，欣赏沿途的风景，和身边的人无拘无束地聊聊天。',py:'Yǔqí cāngcù de gǎndào mùdìdì, bùrú fàngmàn jiǎobù, xīnshǎng yántú de fēngjǐng, hé shēnbiān de rén wújū-wúshù de liáoliao tiān.',goiY:['与其……不如……','仓促','无拘无束'],giai:'与其 A 不如 B = thay vì A chi bằng B (chọn B). 仓促地 / 无拘无束地 làm trạng ngữ, cần 地.'},
-  {vi:'Cậu "Kính Cận" lớp chúng tôi đỗ Đại học Bắc Kinh, tin này nhanh chóng trở thành tin chấn động cả vùng, đến hàng xóm cũng kéo đến chúc mừng.',zh:'我们班的“小眼镜”考上了北京大学，这消息很快就成了方圆百里的爆炸性新闻，连邻居们都来祝贺了。',py:'Wǒmen bān de “xiǎo yǎnjìng” kǎoshangle Běijīng Dàxué, zhè xiāoxi hěn kuài jiù chéngle fāngyuán bǎi lǐ de bàozhàxìng xīnwén, lián línjūmen dōu lái zhùhè le.',goiY:['小眼镜','方圆','爆炸','连……都……'],giai:'"Kính Cận" = 小眼镜: phép 借代 (lấy đặc điểm cặp kính thay cho người đeo kính). "Tin chấn động" = 爆炸性新闻; "cả vùng" = 方圆百里.'},
-  {vi:'Trên chuyến tàu chậm, người thì kể chuyện xưa, người thì hát, lúc thì tiếng cười không dứt, lúc thì tiếng vỗ tay vang dội, toa tàu quả thực như một buổi liên hoan.',zh:'慢车上，讲往事的讲往事，唱歌的唱歌，一时笑声不断，一时掌声雷动，车厢简直像联欢会一样。',py:'Mànchē shang, jiǎng wǎngshì de jiǎng wǎngshì, chàng gē de chàng gē, yìshí xiàoshēng búduàn, yìshí zhǎngshēng léidòng, chēxiāng jiǎnzhí xiàng liánhuānhuì yíyàng.',goiY:['讲往事的讲往事','一时……一时……','联欢'],giai:'Hai điểm ngữ pháp của bài: A的A，B的B (người thì … người thì …) và 一时……一时…… (lúc thì … lúc thì …, = 时而……时而……). 简直像……一样 = quả thực như ….'}
+  {vi:'Đến bờ biển, bọn trẻ đứa thì bơi, đứa thì nghịch cát, chơi vui vô cùng.',zh:'到了海边，孩子们游泳的游泳，玩沙子的玩沙子，玩得开心极了。',py:'Dàole hǎibiān, háizimen yóuyǒng de yóuyǒng, wán shāzi de wán shāzi, wán de kāixīn jí le.',goiY:['A的A，B的B','开心极了'],giai:'Chủ ngữ số nhiều (孩子们) + 游泳的游泳，玩沙子的玩沙子 = người thì…, người thì….'},
+  {vi:'Tâm trạng của anh ấy lúc vui lúc buồn, chẳng ai biết anh ấy đang nghĩ gì.',zh:'他的心情一时好，一时坏，谁也不知道他在想什么。',py:'Tā de xīnqíng yìshí hǎo, yìshí huài, shéi yě bù zhīdào tā zài xiǎng shénme.',goiY:['一时……一时……'],giai:'一时 A，一时 B = lúc A lúc B (thay đổi liên tục); 一时 đọc yìshí.'},
+  {vi:'Bài toán này tôi làm cả buổi mà nhất thời vẫn chưa nghĩ ra cách giải.',zh:'这道数学题我做了半天，一时还是想不出解决的办法。',py:'Zhè dào shùxué tí wǒ zuòle bàntiān, yìshí háishi xiǎng bu chū jiějué de bànfǎ.',goiY:['一时','想不出'],giai:'一时 + 想不出 / 想不起来 = trong lúc này chưa nghĩ ra (không phải mãi mãi).'},
+  {vi:'Anh ấy thấy việc nghĩa thì hăng hái làm, cứu người xong lặng lẽ rời khỏi hiện trường, đến tên cũng không để lại.',zh:'他见义勇为，救了人以后悄悄离开了现场，连名字都没留下。',py:'Tā jiànyì-yǒngwéi, jiùle rén yǐhòu qiāoqiāo líkāile xiànchǎng, lián míngzi dōu méi liúxià.',goiY:['见义勇为','现场','连……都……'],giai:'见义勇为 là thành ngữ làm vị ngữ; 离开现场 = rời hiện trường; 连……都没…… nhấn mạnh.'},
+  {vi:'Tháng giêng, nhà nhà đều đến nhà họ hàng bạn bè chúc Tết.',zh:'正月里，家家户户都去亲戚朋友家拜年。',py:'Zhēngyuè lǐ, jiājiā-hùhù dōu qù qīnqi péngyou jiā bài nián.',goiY:['正月','家家户户','拜年'],giai:'正月 đọc zhēngyuè (không đọc zhèng); 拜年 là động từ li hợp (có thể chen thành phần vào giữa).'},
+  {vi:'Ở bên bạn thân, tôi có thể trò chuyện thoải mái không chút gò bó.',zh:'和好朋友在一起，我可以无拘无束地聊天。',py:'Hé hǎo péngyou zài yìqǐ, wǒ kěyǐ wújū-wúshù de liáotiān.',goiY:['无拘无束地 + V'],giai:'无拘无束 làm trạng ngữ cần 地; trái nghĩa với 拘束.'}
 ];
 
 var translateDataRev = [
-  {vi:'Đoàn tàu chẳng còn cái oai của tàu cao tốc, thong thả rời ga, như thể biết dọc đường sẽ diễn ra biết bao câu chuyện.',zh:'列车没有了高铁的威风，不紧不慢地开出了车站，仿佛知道一路上会演绎出许多故事。',py:'Lièchē méiyǒule gāotiě de wēifēng, bù jǐn bú màn de kāichūle chēzhàn, fǎngfú zhīdao yílù shang huì yǎnyì chū xǔduō gùshi.',goiY:['威风 = sự oai phong','演绎 = diễn ra, thể hiện','仿佛 = dường như, như thể'],giai:'Câu nhân hoá con tàu (没有了威风, 知道). 演绎出故事 dịch "diễn ra câu chuyện", không dịch "diễn dịch".'},
-  {vi:'Trong toa tàu bí bách, không có sóng, cũng chẳng có ổ điện, mọi người đành đặt điện thoại xuống và bắt đầu trò chuyện.',zh:'在闭塞的车厢里，没有信号，也没有电源，大家只好放下手机聊起天来。',py:'Zài bìsè de chēxiāng li, méiyǒu xìnhào, yě méiyǒu diànyuán, dàjiā zhǐhǎo fàngxià shǒujī liáo qǐ tiān lai.',goiY:['闭塞 = bí bách, không thông','电源 = nguồn điện, ổ điện','只好 = đành phải'],giai:'聊起天来: bổ ngữ xu hướng 起来 tách đôi quanh tân ngữ (V起O来) = bắt đầu trò chuyện. 闭塞 không dịch "bế tắc".'},
-  {vi:'Những người ngồi trên ghế rộng rãi, người thì xem phim, người thì gọi điện, chẳng thèm để ý đến sự ồn ào xung quanh.',zh:'坐在宽敞座椅中的人们，看电影的看电影，打电话的打电话，对周围的喧哗不屑一顾。',py:'Zuò zài kuānchang zuòyǐ zhōng de rénmen, kàn diànyǐng de kàn diànyǐng, dǎ diànhuà de dǎ diànhuà, duì zhōuwéi de xuānhuá búxiè-yígù.',goiY:['宽敞 = rộng rãi','看电影的看电影 = người thì xem phim','不屑一顾 = chẳng thèm để mắt'],giai:'A的A，B的B dịch "người thì A, người thì B". 对……不屑一顾 = chẳng thèm để ý đến ….'},
-  {vi:'Cậu bạn đầy vẻ quý tộc ấy tên gì, nhất thời tôi lại không nhớ ra, chỉ nhớ sau này cậu ấy nhận khoán ruộng đất và phát tài làm giàu.',zh:'那个贵族气十足的男生叫什么，我一时竟想不起来了，只记得他后来承包了土地，发家致富了。',py:'Nàge guìzúqì shízú de nánshēng jiào shénme, wǒ yìshí jìng xiǎng bu qǐlái le, zhǐ jìde tā hòulái chéngbāole tǔdì, fājiā zhìfù le.',goiY:['贵族气十足 = đầy vẻ quý tộc','一时 = nhất thời','承包 = nhận khoán'],giai:'一时 + 竟 + phủ định = nhất thời lại (bất ngờ) không … (điểm ngữ pháp 2). Vế đầu là câu hỏi lồng làm tân ngữ đảo lên trước.'},
-  {vi:'Mấy cậu con trai nghịch ngợm tìm đủ mọi cách quấy phá cô giáo, khiến cô khốn đốn vô cùng; bây giờ nghĩ lại, chúng tôi hồi đó thật trẻ con đến buồn cười.',zh:'调皮的男生千方百计跟老师捣乱，弄得她狼狈不堪，现在想想，那时的我们真是幼稚得可笑。',py:'Tiáopí de nánshēng qiānfāng-bǎijì gēn lǎoshī dǎo luàn, nòng de tā lángbèi bùkān, xiànzài xiǎngxiang, nà shí de wǒmen zhēn shì yòuzhì de kěxiào.',goiY:['捣乱 = quấy phá','狼狈不堪 = khốn đốn vô cùng','幼稚得可笑 = trẻ con đến buồn cười'],giai:'弄得 + người + trạng thái = khiến ai …. 千方百计 = trăm phương nghìn kế (tiếng Việt đảo thứ tự).'},
-  {vi:'Sau khi em trai đỗ đại học, Tết không về nhà, cả nhà buồn tẻ khỏi phải nói; tuy em viết thư về chúc Tết, cả nhà vẫn thấy thiếu đi niềm vui sum vầy.',zh:'弟弟考上大学以后，春节没回家，家里过得别提多冷清了，虽然他写信来拜年，全家还是觉得没了天伦之乐。',py:'Dìdi kǎoshang dàxué yǐhòu, Chūnjié méi huí jiā, jiāli guò de biétí duō lěngqing le, suīrán tā xiě xìn lái bài nián, quánjiā háishi juéde méile tiānlún zhī lè.',goiY:['别提多……了 = … khỏi phải nói','拜年 = chúc Tết','天伦之乐 = niềm vui sum vầy'],giai:'别提多 + Adj + 了 = … vô cùng, khỏi phải nói (ôn HSK 6 bài 1). 虽然……还是…… nhượng bộ.'},
-  {vi:'Chú rể nói mình chỉ biết làm việc không biết hát, nhưng vợ anh không chỉ hiền thục mà hát cũng hay, thế là để vợ thay mặt.',zh:'新郎说自己只会干活儿不会唱歌，不过他媳妇不光贤惠，歌也唱得好，于是就让媳妇代表了。',py:'Xīnláng shuō zìjǐ zhǐ huì gàn huór bú huì chàng gē, búguò tā xífu bùguāng xiánhuì, gē yě chàng de hǎo, yúshì jiù ràng xífu dàibiǎo le.',goiY:['媳妇 = vợ','不光……也…… = không chỉ … mà … cũng','贤惠 = hiền thục'],giai:'不光 = 不但 (khẩu ngữ). 媳妇 ở đây là "vợ", không phải "con dâu". 于是 nối kết quả.'},
-  {vi:'Cô dâu vừa cất tiếng đã làm cả toa tàu sững sờ, tiếng vỗ tay, tiếng khen ngợi vang lên rộn rã, khung cảnh quả thực chẳng khác gì một buổi liên hoan.',zh:'新娘一张嘴就惊动了整节车厢，掌声、赞美声响成一片，现场简直像联欢会一样。',py:'Xīnniáng yì zhāng zuǐ jiù jīngdòngle zhěng jié chēxiāng, zhǎngshēng, zànměishēng xiǎngchéng yí piàn, xiànchǎng jiǎnzhí xiàng liánhuānhuì yíyàng.',goiY:['惊动 = làm sững sờ, làm kinh động','响成一片 = vang lên rộn rã','现场 = khung cảnh tại chỗ'],giai:'一……就…… = vừa … đã …. 惊动 ở đây mang nghĩa tích cực (gây chú ý mạnh), dịch "làm sững sờ" chứ không dịch "làm kinh động" cứng nhắc.'},
-  {vi:'Người ta vội vã lao vào vòng tay của nơi đến, từ lâu đã quên rằng cảnh sắc dọc đường cũng là một phần của chuyến đi, càng quên sự trò chuyện thoải mái giữa người với người.',zh:'人们仓促间投入目的地的怀抱，早就忘了沿途的风景也是旅途的一部分，更忘了人和人之间无拘无束的交流。',py:'Rénmen cāngcù jiān tóurù mùdìdì de huáibào, zǎo jiù wàngle yántú de fēngjǐng yě shì lǚtú de yí bùfen, gèng wàngle rén hé rén zhījiān wújū-wúshù de jiāoliú.',goiY:['仓促间 = trong lúc vội vã','投入……的怀抱 = lao vào vòng tay của','无拘无束 = thoải mái, không gò bó'],giai:'Câu ẩn dụ: 目的地的怀抱 = vòng tay của nơi đến. 早就……，更…… = từ lâu đã …, càng ….'},
-  {vi:'Hôm ấy trên tàu lúc thì tiếng cười không dứt, lúc thì tiếng vỗ tay vang dội, ngay cả hoạ sĩ "Râu Rậm" ngồi ở góc cũng không nhịn được mà dùng bút vẽ ghi lại mọi thứ tại đó.',zh:'那天火车上一时笑声不断，一时掌声雷动，连角落里的“大胡子”漫画家也忍不住用画笔记录下了现场的一切。',py:'Nà tiān huǒchē shang yìshí xiàoshēng búduàn, yìshí zhǎngshēng léidòng, lián jiǎoluò li de “dà húzi” mànhuàjiā yě rěn bu zhù yòng huàbǐ jìlù xiàle xiànchǎng de yíqiè.',goiY:['一时……一时…… = lúc thì … lúc thì …','“大胡子” = (借代) người râu rậm','漫画家 = hoạ sĩ truyện tranh'],giai:'一时……一时…… (nghĩa ② của 一时, = 时而……时而……). “大胡子” là phép 借代: lấy bộ râu thay cho người có râu. 连……也…… nhấn mạnh.'}
+  {vi:'Nhà máy xảy ra vụ nổ, người dân trong vòng mấy dặm xung quanh đều nghe thấy tiếng nổ.',zh:'工厂发生了爆炸，方圆几里的人都听到了响声。',py:'Gōngchǎng fāshēngle bàozhà, fāngyuán jǐ lǐ de rén dōu tīngdàole xiǎngshēng.',goiY:['爆炸 = nổ','方圆 = trong phạm vi xung quanh','响声 = tiếng động'],giai:'方圆 + khoảng cách = trong vòng … xung quanh.'},
+  {vi:'Tối Tết Nguyên tiêu, cả nhà tôi cùng đi xem đèn, ăn bánh trôi.',zh:'元宵节晚上，我们全家一起去看灯，吃元宵。',py:'Yuánxiāo Jié wǎnshang, wǒmen quán jiā yìqǐ qù kàn dēng, chī yuánxiāo.',goiY:['元宵节 = Tết Nguyên tiêu','元宵 = bánh trôi nước'],giai:'元宵 dịch "bánh trôi" cho người Việt dễ hình dung.'},
+  {vi:'Tuy sinh ra trong gia đình quý tộc, nhưng anh ấy chưa bao giờ coi thường người nghèo.',zh:'他虽然出生在贵族家庭，却从来不看不起穷人。',py:'Tā suīrán chūshēng zài guìzú jiātíng, què cónglái bú kànbuqǐ qióngrén.',goiY:['贵族 = quý tộc','看不起 = coi thường'],giai:'虽然……，却…… = tuy … nhưng; 从来不 = chưa bao giờ.'},
+  {vi:'Bà rất hài lòng với cô con dâu mới về nhà, gặp ai cũng khen.',zh:'奶奶对家里新来的媳妇特别满意，见人就夸她。',py:'Nǎinai duì jiā lǐ xīn lái de xífu tèbié mǎnyì, jiàn rén jiù kuā tā.',goiY:['媳妇 = con dâu','见人就夸 = gặp ai cũng khen'],giai:'媳妇 ở đây = con dâu (của bà); trong lời chồng nói thì = vợ.'},
+  {vi:'Ông thường ngồi trước cửa, cùng chúng tôi nhớ lại những chuyện thời trẻ.',zh:'爷爷常常坐在门口，跟我们回顾年轻时候的往事。',py:'Yéye chángcháng zuò zài ménkǒu, gēn wǒmen huígù niánqīng shíhou de wǎngshì.',goiY:['回顾 = nhìn lại, nhớ lại','往事 = chuyện cũ'],giai:'回顾往事 dịch tự nhiên là "nhớ lại chuyện xưa".'}
 ];
 
 var writingData = {
@@ -1059,112 +1009,134 @@ var writingData = {
 };
 
 var speakingData = {
-  intro:'Đây là bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b>. Mỗi câu hỏi là một dòng của bảng, cột gợi ý giữ nguyên như sách. Bấm loa nghe câu hỏi, nhìn gợi ý bên phải, <b>tự ghi âm câu trả lời của mình trước</b> rồi mới mở câu mẫu. Cố dùng từ mới: 为期 · 宽敞 · 封闭 · 不屑一顾 · 闭塞 · 久违 · 见义勇为 · 贵族 · 回顾 · 贤惠 · 惊动 · 无拘无束.',
-  questions:[
-    {q_zh:'去时乘坐高铁的情形',q_vn:'Cảnh đi tàu cao tốc lúc đi',hint:'车程，时速，车窗外，车里的人们（A的A，B的B，更多的……，寄情于……），终点站……',
-     sample:'去时我们乘高铁，车程6个小时，时速300公里，车窗外的景象呼啸而过。车里的人们看电影的看电影，打电话的打电话，更多的是把自己封闭在手机屏幕中，寄情于虚拟世界。终点站一到，大家就迫不及待地下了车。',
-     sample_vn:'Lúc đi chúng tôi đi tàu cao tốc, hành trình 6 tiếng, tốc độ 300 km/giờ, cảnh vật ngoài cửa sổ rít vụt qua. Mọi người trên tàu người thì xem phim, người thì gọi điện, nhiều người hơn thì tự khép mình trong màn hình điện thoại, gửi hồn vào thế giới ảo. Vừa đến ga cuối, ai cũng nóng lòng xuống tàu.',
-     note:'Đi theo đúng thứ tự gợi ý: 车程 → 时速 → 车窗外 → 车里的人们 → 终点站. Bắt buộc dùng A的A，B的B và 更多的（则）是…….'},
-    {q_zh:'回程与去时有何不同？',q_vn:'Lượt về khác lượt đi ở chỗ nào?',hint:'车程，速度，网络信号，灯光，电源，环境',
-     sample:'回程我们坐特快硬座，车程将近13个小时，比去时长了一倍多。列车不紧不慢地匀速前行，车厢里信号很差，没法上网；灯光昏暗，没法看书；没有电源，手机没法充电；人多嘈杂，环境很闭塞，就像回到了50年前。',
-     sample_vn:'Lượt về chúng tôi đi ghế cứng tàu tốc hành thường, hành trình gần 13 tiếng, dài gấp hơn hai lần lượt đi. Tàu thong thả chạy đều, trong toa sóng rất kém, không lên mạng được; đèn tù mù, không đọc sách được; không có ổ điện, điện thoại không sạc được; người đông ồn ào, không gian bí bách, như trở về năm mươi năm trước.',
-     note:'Nói theo từng mặt so sánh (车程 / 速度 / 信号 / 灯光 / 电源 / 环境). Khuôn lặp lại: ……很差 / 昏暗，没法…… giúp câu có nhịp.'},
-    {q_zh:'我跟朋友在车上聊了些什么？',q_vn:'Tôi và bạn trò chuyện gì trên tàu?',hint:'①朋友：见义勇为的李芳芳　②我：贵族气十足的男生　③我们：小学地理老师，我们班的诸葛亮',
-     sample:'朋友讲起小学时见义勇为的李芳芳，她在洪水中英勇救人。我说起初中那个贵族气十足的男生，一时竟忘了他叫什么名字，他后来承包了土地，发家致富了。我们还一起想起了讲课带方言的地理老师，还有我们班料事如神的“诸葛亮”。',
-     sample_vn:'Bạn tôi kể về Lý Phương Phương hồi tiểu học dũng cảm làm việc nghĩa, cứu người giữa dòng lũ. Tôi nhắc đến cậu bạn đầy vẻ quý tộc hồi cấp hai, nhất thời quên mất tên, sau này cậu ấy nhận khoán ruộng và phát tài. Chúng tôi còn cùng nhớ đến cô giáo địa lý giảng bài lẫn giọng địa phương, và "Gia Cát Lượng" liệu việc như thần của lớp.',
-     note:'Ba ý ① bạn ② tôi ③ chúng tôi — mỗi ý mở đầu bằng 朋友讲起 / 我说起 / 我们还想起. Dùng 一时竟忘了 (điểm ngữ pháp 2).'},
-    {q_zh:'我周围的人在做什么？',q_vn:'Những người xung quanh tôi đang làm gì?',hint:'①双胞胎姐弟：弟弟考上大学，春节没有回家，家里……　②新婚小两口：分发喜糖，新郎……，新娘……，唱歌……',
-     sample:'对面的双胞胎姐弟在聊家常，姐姐回顾往事说，弟弟考上大学那年春节没有回家，家里别提多冷清了，全家都觉得没了天伦之乐。旁边的新婚小两口给大家分发喜糖，大家让他们唱歌，新郎是个老实人，不会唱歌，就让贤惠的新娘代表，新娘一张嘴就惊动了整节车厢。',
-     sample_vn:'Cặp chị em sinh đôi ngồi đối diện đang chuyện trò việc nhà, người chị kể lại rằng Tết năm cậu em đỗ đại học không về nhà, cả nhà buồn tẻ khỏi phải nói, ai cũng thấy mất đi niềm vui sum vầy. Đôi vợ chồng mới cưới bên cạnh chia kẹo cưới cho mọi người, mọi người bảo họ hát, chú rể thật thà không biết hát nên để cô dâu hiền thục hát thay, cô vừa cất tiếng đã làm cả toa tàu sững sờ.',
-     note:'Hai nhóm người ① ② — dùng vị trí 对面 / 旁边 để chuyển. 别提多……了, 一……就…… làm câu sinh động.'},
-    {q_zh:'我们的感受',q_vn:'Cảm nhận của chúng tôi',hint:'现代交通……，人们早已忘了……，……是人生最宝贵的财富',
-     sample:'我们不由得感叹，现代交通的确很高效，可是人们仓促间投入目的地的怀抱，早已忘了沿途的风景也是旅途的一部分。其实，人和人之间无拘无束的交流才是人生最宝贵的财富。',
-     sample_vn:'Chúng tôi bất giác cảm thán: giao thông hiện đại quả thật rất hiệu quả, nhưng người ta vội vã lao vào vòng tay của nơi đến, từ lâu đã quên rằng cảnh sắc dọc đường cũng là một phần của chuyến đi. Thật ra, sự giao lưu thoải mái giữa người với người mới là tài sản quý giá nhất của đời người.',
-     note:'Khuôn 的确……，可是……: thừa nhận mặt tốt rồi chuyển sang mặt bị bỏ quên. Có thể thêm ý của em: 我们需要慢下来.'}
+  intro: 'Đây là bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b>. Mỗi câu hỏi là một dòng của bảng, cột gợi ý giữ nguyên như sách. Bấm loa nghe câu hỏi, nhìn gợi ý bên phải, <b>tự ghi âm câu trả lời của mình trước</b> rồi mới mở câu mẫu. Cố dùng từ mới: 为期 · 宽敞 · 封闭 · 不屑一顾 · 闭塞 · 久违 · 见义勇为 · 贵族 · 回顾 · 贤惠 · 惊动 · 无拘无束.',
+  questions: [
+    {q_zh:'去时乘坐高铁的情形',q_vn:'Cảnh đi tàu cao tốc lúc đi',hint:'车程，时速，车窗外，车里的人们（A的A，B的B，更多的……，寄情于……），终点站……',sample:'去时我们乘高铁，车程6个小时，时速300公里，车窗外的景象呼啸而过。车里的人们看电影的看电影，打电话的打电话，更多的是把自己封闭在手机屏幕中，寄情于虚拟世界。终点站一到，大家就迫不及待地下了车。',sample_vn:'Lúc đi chúng tôi đi tàu cao tốc, hành trình 6 tiếng, tốc độ 300 km/giờ, cảnh vật ngoài cửa sổ rít vụt qua. Mọi người trên tàu người thì xem phim, người thì gọi điện, nhiều người hơn thì tự khép mình trong màn hình điện thoại, gửi hồn vào thế giới ảo. Vừa đến ga cuối, ai cũng nóng lòng xuống tàu.',note:'Đi theo đúng thứ tự gợi ý: 车程 → 时速 → 车窗外 → 车里的人们 → 终点站. Bắt buộc dùng A的A，B的B và 更多的（则）是…….'},
+    {q_zh:'回程与去时有何不同？',q_vn:'Lượt về khác lượt đi ở chỗ nào?',hint:'车程，速度，网络信号，灯光，电源，环境',sample:'回程我们坐特快硬座，要坐将近13个小时，比去时长了一倍多。列车不紧不慢地匀速前行，车厢里信号很差，没法上网；灯光昏暗，没法看书；没有电源，手机没法充电；人多嘈杂，环境很闭塞，就像回到了50年前。',sample_vn:'Lượt về chúng tôi đi ghế cứng tàu tốc hành thường, hành trình gần 13 tiếng, dài gấp hơn hai lần lượt đi. Tàu thong thả chạy đều, trong toa sóng rất kém, không lên mạng được; đèn tù mù, không đọc sách được; không có ổ điện, điện thoại không sạc được; người đông ồn ào, không gian bí bách, như trở về năm mươi năm trước.',note:'Nói theo từng mặt so sánh (车程 / 速度 / 信号 / 灯光 / 电源 / 环境). Khuôn lặp lại: ……很差 / 昏暗，没法…… giúp câu có nhịp.'},
+    {q_zh:'我跟朋友在车上聊了些什么？',q_vn:'Tôi và bạn trò chuyện gì trên tàu?',hint:'①朋友：见义勇为的李芳芳　②我：贵族气十足的男生　③我们：小学地理老师，我们班的诸葛亮',sample:'朋友讲起小学时见义勇为的李芳芳，她在洪水中英勇救人。我说起初中那个贵族气十足的男生，一时竟忘了他叫什么名字，他后来承包了土地，发家致富了。我们还一起想起了讲课带方言的地理老师，还有我们班料事如神的“诸葛亮”。',sample_vn:'Bạn tôi kể về Lý Phương Phương hồi tiểu học dũng cảm làm việc nghĩa, cứu người giữa dòng lũ. Tôi nhắc đến cậu bạn đầy vẻ quý tộc hồi cấp hai, nhất thời quên mất tên, sau này cậu ấy nhận khoán ruộng và phát tài. Chúng tôi còn cùng nhớ đến cô giáo địa lý giảng bài lẫn giọng địa phương, và "Gia Cát Lượng" liệu việc như thần của lớp.',note:'Ba ý ① bạn ② tôi ③ chúng tôi — mỗi ý mở đầu bằng 朋友讲起 / 我说起 / 我们还想起. Dùng 一时竟忘了 (điểm ngữ pháp 2).'},
+    {q_zh:'我周围的人在做什么？',q_vn:'Những người xung quanh tôi đang làm gì?',hint:'①双胞胎姐弟：弟弟考上大学，春节没有回家，家里……　②新婚小两口：分发喜糖，新郎……，新娘……，唱歌……',sample:'对面的双胞胎姐弟在聊家常，姐姐回顾往事说，弟弟考上大学那年春节没有回家，家里别提多冷清了，全家都觉得没了天伦之乐。旁边的新婚小两口给大家分发喜糖，大家让他们唱歌，新郎是个老实人，不会唱歌，就让贤惠的新娘代表，新娘一张嘴就惊动了整节车厢。',sample_vn:'Cặp chị em sinh đôi ngồi đối diện đang chuyện trò việc nhà, người chị kể lại rằng Tết năm cậu em đỗ đại học không về nhà, cả nhà buồn tẻ khỏi phải nói, ai cũng thấy mất đi niềm vui sum vầy. Đôi vợ chồng mới cưới bên cạnh chia kẹo cưới cho mọi người, mọi người bảo họ hát, chú rể thật thà không biết hát nên để cô dâu hiền thục hát thay, cô vừa cất tiếng đã làm cả toa tàu sững sờ.',note:'Hai nhóm người ① ② — dùng vị trí 对面 / 旁边 để chuyển. 别提多……了, 一……就…… làm câu sinh động.'},
+    {q_zh:'我们的感受',q_vn:'Cảm nhận của chúng tôi',hint:'现代交通……，人们早已忘了……，……是人生最宝贵的财富',sample:'我们不由得感叹，现代交通的确很高效，可是人们仓促间投入目的地的怀抱，早已忘了沿途的风景也是旅途的一部分。其实，人和人之间无拘无束的交流才是人生最宝贵的财富。',sample_vn:'Chúng tôi bất giác cảm thán: giao thông hiện đại quả thật rất hiệu quả, nhưng người ta vội vã lao vào vòng tay của nơi đến, từ lâu đã quên rằng cảnh sắc dọc đường cũng là một phần của chuyến đi. Thật ra, sự giao lưu thoải mái giữa người với người mới là tài sản quý giá nhất của đời người.',note:'Khuôn 的确……，可是……: thừa nhận mặt tốt rồi chuyển sang mặt bị bỏ quên. Có thể thêm ý của em: 我们需要慢下来.'}
   ]
 };
 
 var listenExamData = {
-  intro:'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
-  source:'Soạn theo dạng đề HSK 6 · chủ đề bài 33',
-  items:[
-    {n:1,lines:[{sp:'女',zh:'听说你这次去上海坐的是高铁？感觉怎么样？'},{sp:'男',zh:'快是快，座椅也很宽敞，可是一路上大家都低头看手机，谁也不跟谁说话，我倒觉得有点儿没意思。'}],
-     q:'男的觉得坐高铁怎么样？',qvn:'Người đàn ông thấy đi tàu cao tốc thế nào?',opts:['座位太挤了','速度太慢','车上人们不交流，有点儿无聊','车票太贵了'],ans:2,
-     why:'快是快，座椅也很宽敞，可是……谁也不跟谁说话，有点儿没意思 → khen nhanh, rộng rãi nhưng thấy mọi người không nói chuyện, hơi chán. Không chê chật hay chậm.',words:['宽敞']},
-    {n:2,lines:[{sp:'男',zh:'你们小区的物业怎么样？'},{sp:'女',zh:'挺好的。上次我家水管坏了，半夜给物业打电话，十分钟就来人修好了。'}],
-     q:'关于女的小区的物业，可以知道什么？',qvn:'Về ban quản lý khu nhà của người phụ nữ, có thể biết điều gì?',opts:['服务很及时','晚上不接电话','收费太高','不负责修水管'],ans:0,
-     why:'半夜给物业打电话，十分钟就来人修好了 → nửa đêm gọi mà 10 phút đã có người đến sửa: phục vụ rất kịp thời.',words:['物业']},
-    {n:3,lines:[{sp:'女',zh:'你看这张漫画，画的是一家人围着桌子吃饭，每个人却都在看手机。'},{sp:'男',zh:'画得真好！现在很多家庭就是这样，人在一起，心却离得很远。'}],
-     q:'这张漫画想说明什么？',qvn:'Bức tranh biếm hoạ này muốn nói lên điều gì?',opts:['手机越来越便宜','一家人吃饭很热闹','饭菜不好吃','家人之间缺少交流'],ans:3,
-     why:'每个人都在看手机 + 人在一起，心却离得很远 → người thân ở bên nhau mà không trò chuyện: thiếu giao tiếp.',words:['漫画']},
-    {n:4,lines:[{sp:'男',zh:'昨天晚会上新娘唱的那首歌，把大家都惊动了，好多人问她是不是专业歌手。'},{sp:'女',zh:'她可不是，她是社区医院的护士，只是从小就喜欢唱歌。'}],
-     q:'新娘是做什么工作的？',qvn:'Cô dâu làm nghề gì?',opts:['专业歌手','护士','音乐老师','社区物业'],ans:1,
-     why:'她可不是（专业歌手），她是社区医院的护士 → cô dâu là y tá. "专业歌手" là điều mọi người đoán, bị phủ định.',words:['新娘','惊动','社区']},
-    {n:5,lines:[{sp:'女',zh:'今年春节你回老家吗？'},{sp:'男',zh:'当然回！去年因为工作没回去，爸妈一个人过年，别提多冷清了，连对联都懒得贴。今年说什么也得回去陪他们。'}],
-     q:'男的今年春节为什么一定要回家？',qvn:'Vì sao Tết năm nay người đàn ông nhất định phải về nhà?',opts:['要回家贴对联','老家有朋友结婚','公司放假时间长','去年没回去，父母过得很冷清'],ans:3,
-     why:'去年……没回去，爸妈……别提多冷清了……今年说什么也得回去陪他们 → vì năm ngoái không về, bố mẹ đón Tết buồn tẻ. 对联 chỉ là chi tiết minh hoạ.',words:['对联']},
-    {n:6,lines:[{sp:'男',zh:'这次公司组织的活动为期几天？'},{sp:'女',zh:'一共五天。前三天在山区参观，后两天去海边，听说山区交通比较闭塞，手机也不一定有信号。'}],
-     q:'关于这次活动，下列哪项正确？',qvn:'Về hoạt động lần này, câu nào đúng?',opts:['一共三天','山区的手机信号可能不好','后三天去海边','山区交通很方便'],ans:1,
-     why:'山区交通比较闭塞，手机也不一定有信号 → có thể không có sóng. Hoạt động 5 ngày (3 ngày núi, 2 ngày biển); giao thông vùng núi cách trở.',words:['为期','闭塞']},
-    {n:7,lines:[{sp:'女',zh:'第一次来我家，别拘束，就像在自己家一样。'},{sp:'男',zh:'谢谢阿姨！您家可真宽敞，布置得也很温馨。'}],
-     q:'女的是什么意思？',qvn:'Ý của người phụ nữ là gì?',opts:['让男的放松，别不好意思','让男的快点儿离开','希望男的帮忙打扫房间','觉得男的太随便了'],ans:0,
-     why:'别拘束，就像在自己家一样 = đừng ngại, cứ tự nhiên như ở nhà → bảo cậu ấy thoải mái.',words:['拘束','宽敞']},
-    {n:8,lines:[{sp:'男',zh:'现代人生活节奏太快了，每天都匆匆忙忙的，连跟家人好好聊聊天的时间都没有。'},{sp:'女',zh:'是啊，有时候真应该慢下来，关掉手机，陪父母聊聊家常，享受一下天伦之乐。'}],
-     q:'女的建议怎么做？',qvn:'Người phụ nữ đề nghị làm gì?',opts:['换一份轻松的工作','买一部新手机','放慢节奏，多陪家人','每天早点儿起床'],ans:2,
-     why:'应该慢下来，关掉手机，陪父母聊聊家常 → chậm lại, dành thời gian cho gia đình (ý chính của bài khoá).',words:['家常','天伦之乐']}
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 33',
+  items: [
+    {
+      n: 1,
+      lines: [
+        {sp:'女',zh:'你坐高铁去上海，一路上还好吧？'},
+        {sp:'男',zh:'快是快，座椅也很宽敞，可是大家都低头看手机，对窗外的风景不屑一顾，谁也不跟谁说话，有点儿没意思。'}
+      ],
+      q: '男的觉得坐高铁怎么样？',
+      qvn: 'Người đàn ông thấy đi tàu cao tốc thế nào?',
+      opts: ['座位太挤了','速度太慢','车上人们不交流，有点儿没意思','车票太贵了'],
+      ans: 2,
+      why: '快是快，座椅也很宽敞，可是……谁也不跟谁说话 → nhanh, rộng nhưng không ai nói chuyện. A, B trái với 宽敞 / 快.',
+      words: ['宽敞','不屑一顾']
+    },
+    {
+      n: 2,
+      lines: [
+        {sp:'男',zh:'你们小区的物业怎么样？'},
+        {sp:'女',zh:'挺好的。上次我家水管坏了，半夜给物业打电话，十分钟就来人修好了。'}
+      ],
+      q: '关于女的小区的物业，可以知道什么？',
+      qvn: 'Về ban quản lý khu nhà của người phụ nữ, có thể biết điều gì?',
+      opts: ['服务很及时','晚上不接电话','收费太高','不负责修水管'],
+      ans: 0,
+      why: '半夜给物业打电话，十分钟就来人修好了 → nửa đêm gọi mà 10 phút đã có người đến sửa: phục vụ rất kịp thời.',
+      words: ['物业']
+    },
+    {
+      n: 3,
+      lines: [
+        {sp:'女',zh:'你看这张漫画，画的是一家人坐在一起吃饭，每个人却都在看手机。'},
+        {sp:'男',zh:'画得真好！现在很多家庭就是这样，人在一起，心却离得很远。'}
+      ],
+      q: '这张漫画想说明什么？',
+      qvn: 'Bức tranh biếm hoạ này muốn nói lên điều gì?',
+      opts: ['手机越来越便宜','一家人吃饭很热闹','饭菜不好吃','家人之间缺少交流'],
+      ans: 3,
+      why: '每个人都在看手机 + 人在一起，心却离得很远 → người thân ở bên nhau mà không trò chuyện: thiếu giao tiếp.',
+      words: ['漫画']
+    },
+    {
+      n: 4,
+      lines: [
+        {sp:'男',zh:'昨天晚会上新娘唱的那首歌，把大家都惊动了，好多人问她是不是专业歌手。'},
+        {sp:'女',zh:'她可不是，她是社区医院的护士，只是从小就喜欢唱歌。'}
+      ],
+      q: '新娘是做什么工作的？',
+      qvn: 'Cô dâu làm nghề gì?',
+      opts: ['专业歌手','护士','音乐老师','社区物业'],
+      ans: 1,
+      why: '她可不是（专业歌手），她是社区医院的护士 → cô dâu là y tá. "专业歌手" là điều mọi người đoán, bị phủ định.',
+      words: ['新娘','惊动','社区']
+    },
+    {
+      n: 5,
+      lines: [
+        {sp:'女',zh:'今年春节你回老家吗？'},
+        {sp:'男',zh:'当然回！去年我没回去，爸妈说过年家里特别冷清，连对联都没写。'}
+      ],
+      q: '男的今年春节为什么一定要回家？',
+      qvn: 'Vì sao năm nay người đàn ông nhất định về quê ăn Tết?',
+      opts: ['要回家写对联','老家有朋友结婚','公司放假时间长','去年没回去，父母过得很冷清'],
+      ans: 3,
+      why: '去年我没回去，爸妈说过年家里特别冷清 → năm ngoái bố mẹ ăn Tết buồn tẻ nên năm nay phải về.',
+      words: ['对联']
+    },
+    {
+      n: 6,
+      lines: [
+        {sp:'男',zh:'这次公司组织的活动为期几天？'},
+        {sp:'女',zh:'一共五天。前三天在山区参观，后两天去海边，听说山区交通比较闭塞，手机也不一定有信号。'}
+      ],
+      q: '关于这次活动，可以知道什么？',
+      qvn: 'Về hoạt động lần này, câu nào đúng?',
+      opts: ['一共三天','山区的手机信号可能不好','后三天去海边','山区交通很方便'],
+      ans: 1,
+      why: '山区交通比较闭塞，手机也不一定有信号 → có thể không có sóng. Hoạt động 5 ngày (3 ngày núi, 2 ngày biển); giao thông vùng núi cách trở.',
+      words: ['为期','闭塞']
+    },
+    {
+      n: 7,
+      lines: [
+        {sp:'男',zh:'昨天开会经理问你的时候，你怎么一句话也没说？'},
+        {sp:'女',zh:'他问得太突然了，我一时紧张，准备好的话一句也想不起来了。'}
+      ],
+      q: '女的为什么没说话？',
+      qvn: 'Vì sao người phụ nữ không nói gì?',
+      opts: ['一时紧张，忘了要说的','她没有准备','她不同意经理','她身体不舒服'],
+      ans: 0,
+      why: '我一时紧张，准备好的话一句也想不起来了 → nhất thời căng thẳng nên quên; B sai vì cô ấy 准备好了.',
+      words: ['一时']
+    }
   ]
 };
 
 var situationData = {
-  intro:'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
-  items:[
-    {scene:'Bạn cùng lớp rủ em nghỉ hè đi Đà Nẵng bằng máy bay cho nhanh, nhưng em muốn đi tàu hoả.',
-     a:{sp:'Bạn cùng lớp',zh:'坐飞机一个多小时就到了，坐火车要十几个小时，你为什么非要坐火车？',vn:'Đi máy bay hơn một tiếng là tới, đi tàu mất mười mấy tiếng, sao cậu cứ nhất định đi tàu?'},
-     need:['Dùng 与其……不如……','Dùng 沿途 hoặc 无拘无束'],
-     sample:'与其仓促地飞过去，不如坐火车慢慢走，一路上可以看看沿途的风景，还能和大家无拘无束地聊聊天，这也是旅行的一部分嘛！',
-     samplePy:'Yǔqí cāngcù de fēi guoqu, bùrú zuò huǒchē mànmàn zǒu, yílù shang kěyǐ kànkan yántú de fēngjǐng, hái néng hé dàjiā wújū-wúshù de liáoliao tiān, zhè yě shì lǚxíng de yí bùfen ma!',
-     sampleVn:'Thay vì bay vội đến đó, chi bằng đi tàu chầm chậm, dọc đường có thể ngắm cảnh, lại được trò chuyện thoải mái với mọi người, đó cũng là một phần của chuyến đi mà!',
-     tip:'与其 A 不如 B — nêu lựa chọn của mình (B) sau 不如; dẫn ý của bài khoá: 沿途的风景也是旅途的一部分.'},
-    {scene:'Mẹ phàn nàn cả nhà ăn cơm mà ai cũng cắm mặt vào điện thoại.',
-     a:{sp:'Mẹ',zh:'你看看，吃饭的时候你们一个个都低着头看手机，谁也不说话！',vn:'Con xem, lúc ăn cơm mấy bố con ai cũng cúi đầu xem điện thoại, chẳng ai nói câu nào!'},
-     need:['Dùng A的A，B的B để thừa nhận','Dùng 家常 hoặc 天伦之乐'],
-     sample:'妈，您说得对，我们刚才看新闻的看新闻，玩游戏的玩游戏，太不应该了。以后吃饭的时候，大家都把手机放下，好好聊聊家常！',
-     samplePy:'Mā, nín shuō de duì, wǒmen gāngcái kàn xīnwén de kàn xīnwén, wán yóuxì de wán yóuxì, tài bù yīnggāi le. Yǐhòu chī fàn de shíhou, dàjiā dōu bǎ shǒujī fàngxia, hǎohāo liáoliao jiācháng!',
-     sampleVn:'Mẹ nói đúng ạ, lúc nãy người thì đọc tin tức, người thì chơi game, thật không nên chút nào. Từ nay lúc ăn cơm, cả nhà đều đặt điện thoại xuống, trò chuyện với nhau cho vui!',
-     tip:'A的A，B的B để kể ra từng người làm gì; 好好 + V (好好聊聊) = nói chuyện cho đàng hoàng, tử tế.'},
-    {scene:'Em gặp lại một bạn cũ, bạn ấy hỏi tên một thầy giáo cũ mà em chợt không nhớ ra.',
-     a:{sp:'Bạn cũ',zh:'你还记得初中教我们地理的那位老师吗？他叫什么来着？',vn:'Cậu còn nhớ thầy dạy địa lý hồi cấp hai không? Thầy tên gì ấy nhỉ?'},
-     need:['Dùng 一时','Dùng 方言 hoặc 往事'],
-     sample:'当然记得！就是讲课总带着方言的那位……唉，我一时竟想不起来他叫什么了。不过一提起那些往事，我就觉得特别亲切。',
-     samplePy:'Dāngrán jìde! Jiù shì jiǎngkè zǒng dàizhe fāngyán de nà wèi…… Ài, wǒ yìshí jìng xiǎng bu qǐlái tā jiào shénme le. Búguò yì tíqǐ nàxiē wǎngshì, wǒ jiù juéde tèbié qīnqiè.',
-     sampleVn:'Nhớ chứ! Chính là thầy giảng bài lúc nào cũng lẫn giọng địa phương ấy… ôi, nhất thời tớ lại không nhớ ra tên thầy. Nhưng hễ nhắc lại chuyện xưa là tớ thấy thân thương lắm.',
-     tip:'一时 + 竟 + 想不起来 = nhất thời không nhớ ra (bất ngờ) — đúng như câu bài khoá 一时竟忘了他叫什么名字.'},
-    {scene:'Em đến nhà bạn chơi lần đầu, bố mẹ bạn mời em ngồi. Em muốn khen nhà bạn.',
-     a:{sp:'Mẹ của bạn',zh:'来，快坐！第一次来，别拘束啊。',vn:'Nào, ngồi đi cháu! Lần đầu đến chơi, đừng ngại nhé.'},
-     need:['Dùng 宽敞','Dùng 齐全 hoặc 贤惠'],
-     sample:'谢谢阿姨！您家又宽敞又明亮，东西也摆放得整整齐齐。小明常说您又贤惠又能干，今天一看果然是这样！',
-     samplePy:'Xièxie āyí! Nín jiā yòu kuānchang yòu míngliàng, dōngxi yě bǎifàng de zhěngzhěng-qíqí. Xiǎo Míng cháng shuō nín yòu xiánhuì yòu nénggàn, jīntiān yí kàn guǒrán shì zhèyàng!',
-     sampleVn:'Cháu cảm ơn cô ạ! Nhà cô vừa rộng vừa sáng, đồ đạc cũng bày biện ngăn nắp. Tiểu Minh hay nói cô vừa hiền thục vừa đảm đang, hôm nay nhìn thấy quả đúng như vậy!',
-     tip:'又……又…… để khen hai điểm; 果然 = quả nhiên (đúng như đã nghe).'},
-    {scene:'Trong lớp có người đề nghị cả lớp quyên góp giúp vùng bị lũ, lớp trưởng hỏi ý kiến em.',
-     a:{sp:'Lớp trưởng',zh:'有人提议我们班为洪水灾区捐款，你觉得怎么样？',vn:'Có bạn đề nghị lớp mình quyên góp cho vùng bị lũ, cậu thấy sao?'},
-     need:['Dùng 响应','Dùng 洪水 hoặc 见义勇为'],
-     sample:'我完全同意！我第一个响应。洪水来了，那么多人失去了家，我们虽然只是学生，但也应该尽自己的一份力。',
-     samplePy:'Wǒ wánquán tóngyì! Wǒ dì-yī ge xiǎngyìng. Hóngshuǐ lái le, nàme duō rén shīqùle jiā, wǒmen suīrán zhǐ shì xuésheng, dàn yě yīnggāi jìn zìjǐ de yí fèn lì.',
-     sampleVn:'Tớ hoàn toàn đồng ý! Tớ xin hưởng ứng đầu tiên. Lũ về, biết bao người mất nhà cửa, chúng ta tuy chỉ là học sinh, nhưng cũng nên góp một phần sức mình.',
-     tip:'响应 = hưởng ứng lời kêu gọi / đề nghị chung; 尽一份力 = góp một phần sức.'}
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  items: [
+    {scene:'Bạn cùng lớp rủ em nghỉ hè đi Đà Nẵng bằng máy bay cho nhanh, nhưng em muốn đi tàu hoả.',a:{sp:'Bạn cùng lớp',zh:'坐飞机一个多小时就到了，坐火车要十几个小时，你为什么非要坐火车？',vn:'Đi máy bay hơn một tiếng là tới, đi tàu mất mười mấy tiếng, sao cậu cứ nhất định đi tàu?'},need:['Dùng 与其……不如……','Dùng 沿途 hoặc 无拘无束'],sample:'与其仓促地飞过去，不如坐火车慢慢走，一路上可以看看沿途的风景，还能和大家无拘无束地聊聊天，这也是旅行的一部分嘛！',samplePy:'Yǔqí cāngcù de fēi guoqu, bùrú zuò huǒchē mànmàn zǒu, yílù shang kěyǐ kànkan yántú de fēngjǐng, hái néng hé dàjiā wújū-wúshù de liáoliao tiān, zhè yě shì lǚxíng de yí bùfen ma!',sampleVn:'Thay vì bay vội đến đó, chi bằng đi tàu chầm chậm, dọc đường có thể ngắm cảnh, lại được trò chuyện thoải mái với mọi người, đó cũng là một phần của chuyến đi mà!',tip:'与其 A 不如 B — nêu lựa chọn của mình (B) sau 不如; dẫn ý của bài khoá: 沿途的风景也是旅途的一部分.'},
+    {scene:'Mẹ phàn nàn cả nhà ăn cơm mà ai cũng cắm mặt vào điện thoại.',a:{sp:'Mẹ',zh:'你看看，吃饭的时候你们一个个都低着头看手机，谁也不说话！',vn:'Con xem, lúc ăn cơm mấy bố con ai cũng cúi đầu xem điện thoại, chẳng ai nói câu nào!'},need:['Dùng A的A，B的B để thừa nhận','Dùng 家常 hoặc 天伦之乐'],sample:'妈，您说得对，我们刚才看新闻的看新闻，玩游戏的玩游戏，太不应该了。以后吃饭的时候，大家都把手机放下，好好聊聊家常！',samplePy:'Mā, nín shuō de duì, wǒmen gāngcái kàn xīnwén de kàn xīnwén, wán yóuxì de wán yóuxì, tài bù yīnggāi le. Yǐhòu chī fàn de shíhou, dàjiā dōu bǎ shǒujī fàngxia, hǎohāo liáoliao jiācháng!',sampleVn:'Mẹ nói đúng ạ, lúc nãy người thì đọc tin tức, người thì chơi game, thật không nên chút nào. Từ nay lúc ăn cơm, cả nhà đều đặt điện thoại xuống, trò chuyện với nhau cho vui!',tip:'A的A，B的B để kể ra từng người làm gì; 好好 + V (好好聊聊) = nói chuyện cho đàng hoàng, tử tế.'},
+    {scene:'Em gặp lại một bạn cũ, bạn ấy hỏi tên một thầy giáo cũ mà em chợt không nhớ ra.',a:{sp:'Bạn cũ',zh:'你还记得初中教我们地理的那位老师吗？他叫什么来着？',vn:'Cậu còn nhớ thầy dạy địa hồi cấp hai không? Thầy tên là gì ấy nhỉ?'},need:['Dùng 一时','Dùng 方言 hoặc 往事'],sample:'记得记得！就是讲课总带着方言的那位。他姓什么来着？我一时还真说不上来。不过一提起那些往事，我就觉得特别亲切。',samplePy:'Jìde jìde! Jiù shì jiǎngkè zǒng dàizhe fāngyán de nà wèi. Tā xìng shénme láizhe? Wǒ yìshí hái zhēn shuō bu shànglái. Búguò yì tíqǐ nàxiē wǎngshì, wǒ jiù juéde tèbié qīnqiè.',sampleVn:'Nhớ chứ, nhớ chứ! Chính là thầy giảng bài lúc nào cũng pha giọng địa phương. Thầy họ gì ấy nhỉ? Nhất thời tớ thật chưa nói ra được. Nhưng hễ nhắc lại chuyện cũ là tớ thấy thân thương lắm.',tip:'一时 + 说不上来 / 想不起来 = nhất thời chưa nhớ ra; ……来着 = … ấy nhỉ (cố nhớ lại).'},
+    {scene:'Em đến nhà bạn chơi lần đầu, bố mẹ bạn mời em ngồi. Em muốn khen nhà bạn.',a:{sp:'Mẹ của bạn',zh:'来，快坐！第一次来，别拘束啊。',vn:'Nào, ngồi đi cháu! Lần đầu đến chơi, đừng ngại nhé.'},need:['Dùng 宽敞','Dùng 齐全 hoặc 贤惠'],sample:'阿姨，打扰您了！您家又宽敞又明亮，东西也摆放得整整齐齐。小明常说您又贤惠又能干，今天一看果然是这样！',samplePy:'Āyí, dǎrǎo nín le! Nín jiā yòu kuānchang yòu míngliàng, dōngxi yě bǎifàng de zhěngzhěng-qíqí. Xiǎo Míng cháng shuō nín yòu xiánhuì yòu nénggàn, jīntiān yí kàn guǒrán shì zhèyàng!',sampleVn:'Cháu chào cô, cháu làm phiền cô rồi! Nhà cô vừa rộng vừa sáng, đồ đạc bày biện ngăn nắp. Tiểu Minh hay nói cô vừa đảm đang vừa giỏi giang, hôm nay nhìn quả đúng như vậy!',tip:'又……又…… để khen hai điểm; 果然 = quả nhiên (đúng như đã nghe).'},
+    {scene:'Lớp trưởng đề nghị cả lớp gom sách vở, quần áo gửi cho các bạn nhỏ vùng bị lũ, hỏi ý kiến em.',a:{sp:'Lớp trưởng',zh:'我提议咱们班给受洪水影响的地方的孩子们送些书和衣服，你觉得怎么样？',vn:'Tớ đề nghị lớp mình gửi ít sách và quần áo cho các bạn nhỏ ở vùng bị lũ, cậu thấy sao?'},need:['Dùng 响应','Nói mình sẽ làm gì'],sample:'我完全同意，我第一个响应！洪水来了，那么多孩子没有书读，我们虽然只是学生，也应该出一份力。我回家就把看过的书整理出来。',samplePy:'Wǒ wánquán tóngyì, wǒ dì-yī ge xiǎngyìng! Hóngshuǐ lái le, nàme duō háizi méiyǒu shū dú, wǒmen suīrán zhǐ shì xuésheng, yě yīnggāi chū yí fèn lì. Wǒ huí jiā jiù bǎ kànguo de shū zhěnglǐ chūlái.',sampleVn:'Tớ hoàn toàn đồng ý, tớ hưởng ứng đầu tiên! Lũ đến, bao nhiêu bạn nhỏ không có sách đọc, tụi mình tuy chỉ là học sinh cũng nên góp một phần sức. Về nhà tớ sẽ sắp xếp lại những cuốn sách đã đọc.',tip:'第一个响应 = người hưởng ứng đầu tiên; 出一份力 = góp một phần sức.'}
   ]
 };
 
 var registerData = {
-  intro:'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. Bài này học phép <b>借代</b> (hoán dụ — lấy đặc điểm thay cho người, vật): cách nói này sinh động nhưng mang sắc thái thân mật, đùa vui, nên phải chú ý hoàn cảnh.',
-  items:[
-    {scene:'Em kể với bạn thân về cậu bạn đeo kính dày cộp lớp bên.',a:'那个戴着厚厚眼镜的男同学今天又考了第一名。',b:'隔壁班那个“大眼镜”今天又考了第一！',better:'b',why:'Nói chuyện với bạn thân, dùng 借代 “大眼镜” vừa ngắn vừa sinh động, thân mật. Câu a đúng nhưng dài dòng như văn viết.'},
-    {scene:'Em viết đơn xin nghỉ học gửi cô chủ nhiệm, nhắc đến bác sĩ đã khám cho em.',a:'医生建议我在家休息两天。',b:'那个“白大褂”让我在家休息两天。',better:'a',why:'Văn bản gửi thầy cô phải nghiêm túc, gọi đúng nghề 医生. Gọi bác sĩ là “白大褂” (借代) mang sắc thái đùa, không lịch sự trong đơn từ.'},
-    {scene:'Người dẫn chương trình trên sân khấu mời cô dâu chú rể phát biểu.',a:'下面，请我们的新郎新娘为大家讲几句！',b:'下面，请那个小两口过来随便说说！',better:'a',why:'Hoàn cảnh trang trọng trên sân khấu: 新郎新娘 + 请……讲几句. Câu b (那个小两口, 随便说说) quá xuề xoà, thiếu tôn trọng.'},
-    {scene:'Em nhắn tin cho bạn kể cảnh trên tàu hôm qua.',a:'昨天火车上的乘客们表现得十分热情友好。',b:'昨天火车上唱歌的唱歌，聊天的聊天，热闹得像联欢会一样！',better:'b',why:'Kể chuyện cho bạn nên dùng lối nói khẩu ngữ, sinh động: A的A，B的B + so sánh 像联欢会一样. Câu a như bản tin, cứng.'},
-    {scene:'Bản tin thời sự đưa tin một người lái xe cứu người trong lũ.',a:'出租车司机张先生在洪水中见义勇为，救起了三名群众。',b:'开出租的老张那天可厉害了，在大水里一下子捞上来仨人！',better:'a',why:'Văn tin tức dùng từ trang trọng: 见义勇为, 救起, 群众, 洪水. Câu b rất khẩu ngữ (开出租的, 大水, 捞, 仨), chỉ hợp khi kể chuyện với người quen.'},
-    {scene:'Em kể với mẹ chuyện một bạn nhỏ đội mũ vàng qua đường.',a:'我看见一个小学生戴着小黄帽过马路，特别可爱。',b:'我看见一个小黄帽一蹦一跳地过马路，特别可爱。',better:'b',why:'Hai câu đều được, nhưng câu b dùng 借代 “小黄帽” (thay cho em học sinh đội mũ vàng) nên hình ảnh sinh động, gọn hơn — đúng tinh thần bài học. Nói với mẹ nên dùng được lối nói này.'}
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. Bài này học phép <b>借代</b> (hoán dụ — lấy đặc điểm thay cho người, vật): cách nói này sinh động nhưng mang sắc thái thân mật, đùa vui, nên phải chú ý hoàn cảnh.',
+  items: [
+    {scene:'Em kể với bạn thân về cậu bạn đeo kính dày cộp lớp bên.',a:'那个戴着厚厚眼镜的男同学今天又考了第一名。',b:'三班那个“大眼镜”今天又考了第一！',better:'b',why:'Nói chuyện với bạn thân, dùng hoán dụ “大眼镜” (đặc điểm → người) vừa ngắn vừa sinh động, thân mật. Câu a đúng nhưng dài dòng như văn viết.'},
+    {scene:'Báo cáo tổng kết năm của công ty gửi ban lãnh đạo.',a:'今年公司新招了二十名员工，大多数是刚毕业的大学生。',b:'今年公司新招了二十个“新面孔”，大多数是刚毕业的大学生。',better:'a',why:'Báo cáo chính thức nói thẳng, chính xác: 二十名员工. Câu b dùng phép hoán dụ "新面孔" (khuôn mặt mới → người mới) — sinh động nhưng hợp với văn kể, không hợp báo cáo.'},
+    {scene:'Người dẫn chương trình trên sân khấu đám cưới mời cô dâu chú rể phát biểu.',a:'下面，请那个小两口过来随便说说！',b:'下面，请我们的新郎新娘为大家讲几句！',better:'b',why:'Trên sân khấu, MC cần lịch sự, trang trọng: 请我们的新郎新娘为大家讲几句. Câu a (那个小两口, 随便说说) suồng sã, thiếu tôn trọng.'},
+    {scene:'Em nhắn tin cho bạn kể cảnh trên chuyến tàu chậm hôm qua.',a:'昨天火车上唱歌的唱歌，聊天的聊天，可热闹了！',b:'昨天火车上的人们表现得十分热情友好。',better:'a',why:'Tin nhắn kể chuyện cho bạn: khuôn A的A，B的B vừa khẩu ngữ vừa sinh động. Câu b như lời bản tin, cứng nhắc.'},
+    {scene:'Bản tin thời sự đưa tin một người lái xe cứu người trong lũ.',a:'出租车司机张先生在洪水中见义勇为，救起了三名群众。',b:'开出租的老张那天可厉害了，在大水里一下子捞上来三个人！',better:'a',why:'Văn tin tức dùng từ trang trọng: 见义勇为, 救起, 群众, 洪水. Câu b rất khẩu ngữ (开出租的, 大水, 捞), chỉ hợp khi kể chuyện với người quen.'},
+    {scene:'Em viết câu mở đầu bài văn tả lần đầu lên sân khấu của một bạn, muốn câu văn sinh động.',a:'他站在台上，台下的观众都在看着他。',b:'他站在台上，台下几百双眼睛都在看着他。',better:'b',why:'Văn miêu tả: dùng hoán dụ "几百双眼睛" (đôi mắt → người xem) làm nổi cảm giác bị nhìn chằm chằm, căng thẳng. Câu a đúng nhưng nhạt.'}
   ]
 };
 

@@ -151,8 +151,9 @@ CAP.hsk5 = {
 // Rieng HSK6 (ngheDe): listenExamData la cau nghe TU SOAN (sach HSK6 khong co SBT nghe) -> kiem ca loi thoai, cau hoi, phuong an, giai thich.
 // Khong kiem: sgkData (bai tap sach), retellData, writingData.de/dan (de bai sach), speakingData giu nguyen bang 练习5 cua sach (van kiem cau mau).
 CAP.hsk6 = {
-  duoi: ['hsk1', 'hsk2', 'hsk3', 'hsk4', 'hsk5'], soTu: 1, soBai: 40, baiKhoa: true, hsk5x: true, ngheDe: true,
-  ten: [],
+  duoi: ['hsk1', 'hsk2', 'hsk3', 'hsk4', 'hsk5'], soTu: 1, soBai: 40, baiKhoa: true, hsk5x: true, ngheDe: true, bangSach: true,
+  // dia danh / nhan vat Viet Nam co that trong doan mau Luyen viet (de 写一写 yeu cau viet ve que huong / nhan vat Viet Nam)
+  ten: [['下龙湾', 15], ['莫挺之', 27], ['东湖', 35], ['北宁省', 35], ['阮登制', 35]],
   // dang tu do / hinh vi cua tu HSK1–5 (bang tu sach chi ghi tu ghep), them vao danh sach cua hsk5: 日(生日) 力(努力) 海(海洋) 队(排队)
   // 部(全部) 总(总是) 信(相信) 期(学期) 修(修理) 伤(受伤) 员(服务员) 将(将来) 偷(小偷) 馆(图书馆) 国(中国) 眼(眼睛) 此(因此)
   // 成(成为) 聊(聊天) 妈 爸 哥 姐(妈妈…) 道(知道) 村(农村) 正(正在) 歌(唱歌) 加(参加) 办(办法) 费(浪费) 机(手机) 报(报纸) 区(地区)
@@ -247,7 +248,8 @@ function chuoiCuaBai(D) {
   D.tr.forEach((t, i) => add('tr' + (i + 1), t.zh));
   D.trRev.forEach((t, i) => add('trRev' + (i + 1), t.zh));
   ((D.speak && D.speak.questions) || []).forEach((q, i) => {
-    ['q_zh', 'hint', 'sample', 'note'].forEach((k) => add('speak' + (i + 1) + '.' + k, q[k]));
+    // HSK6 (bangSach): q_zh / hint = nguyen van bang 练习5 cua sach (giu nguyen tung chu) -> chi kiem cau mau + ghi chu
+    (CAP[cap].bangSach ? ['sample', 'note'] : ['q_zh', 'hint', 'sample', 'note']).forEach((k) => add('speak' + (i + 1) + '.' + k, q[k]));
   });
   // Luyen noi 3 tang (YCT): t1.models / t2.drills / t3.tasks
   const sp = D.speak || {};
@@ -261,7 +263,8 @@ function chuoiCuaBai(D) {
   ((x.sit && x.sit.items) || []).forEach((t, i) => { add('tinhhuong' + (i + 1) + '.a', t.a && t.a.zh); add('tinhhuong' + (i + 1) + '.mau', t.sample); });
   ((x.reg && x.reg.items) || []).forEach((t, i) => { add('hay' + (i + 1) + '.a', t.a); add('hay' + (i + 1) + '.b', t.b); });
   ((x.wr && x.wr.sapXep) || []).forEach((t, i) => { add('viet' + (i + 1) + '.dap', t.dap); add('viet' + (i + 1) + '.manh', (t.manh || []).join('')); });
-  if (x.wr && x.wr.model) add('viet.mau', x.wr.model.zh);
+  // doan mau Luyen viet: HSK5 khong kiem (bai mau 80 chu viet tu do theo 5 tu de bai, AI cham; giu nguyen nhu ban dung bai)
+  if (x.wr && x.wr.model && cap !== 'hsk5') add('viet.mau', x.wr.model.zh);
   // HSK6: nghe theo dang de (tu soan) — loi thoai + cau hoi + phuong an + giai thich
   if (CAP[cap].ngheDe) ((x.lex && x.lex.items) || []).forEach((it, i) => {
     (it.lines || []).forEach((l) => add('nghe' + (i + 1) + '.loi', l.zh));

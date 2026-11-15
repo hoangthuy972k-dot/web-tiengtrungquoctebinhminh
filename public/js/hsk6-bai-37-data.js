@@ -866,135 +866,81 @@ var hvBridgeData = {
 };
 
 var matchData = [
-  {left:'入室',right:'抢劫'},
-  {left:'犯罪',right:'痕迹'},
-  {left:'陷入',right:'停顿'},
   {left:'排除',right:'嫌疑'},
-  {left:'提供',right:'线索'},
-  {left:'制服',right:'歹徒'},
-  {left:'克服',right:'恐惧'},
-  {left:'农药',right:'残留'},
   {left:'刑事',right:'案件'},
   {left:'关进',right:'监狱'},
-  {left:'慎重',right:'处理'},
   {left:'麻痹',right:'大意'},
-  {left:'经受',right:'考验'},
-  {left:'受到法律的',right:'制裁'},
   {left:'接到',right:'情报'},
-  {left:'远离',right:'毒品'},
+  {left:'贩卖',right:'毒品'},
   {left:'部署',right:'兵力'},
-  {left:'布置',right:'会场'},
-  {left:'放下心理',right:'包袱'},
-  {left:'坚守',right:'岗位'},
+  {left:'放下',right:'包袱'},
   {left:'光辉的',right:'一生'},
   {left:'无尽的',right:'思念'}
 ];
 
 var fillData = [
-  {pre:'她每天出门前都要花半个小时',blank:'化妆',post:'，连去超市买菜也不例外。',hint:'(trang điểm)',ans:'化妆'},
-  {pre:'孩子吃完面包，桌子上撒满了面包',blank:'屑',post:'。',hint:'(vụn, mảnh vụn)',ans:'屑'},
-  {pre:'这个团伙多次入室',blank:'抢劫',post:'，附近居民都很害怕。',hint:'(cướp của)',ans:'抢劫'},
-  {pre:'小偷作案时戴着手套，现场几乎没有留下任何',blank:'痕迹',post:'。',hint:'(dấu vết)',ans:'痕迹'},
-  {pre:'由于缺少证据，侦破工作一时陷入',blank:'停顿',post:'。',hint:'(ngưng trệ, tạm dừng)',ans:'停顿'},
-  {pre:'经过调查，警方排除了他的',blank:'嫌疑',post:'，他终于松了一口气。',hint:'(sự tình nghi)',ans:'嫌疑'},
-  {pre:'好在一个目击者提供了重要',blank:'线索',post:'，案子才得以侦破。',hint:'(manh mối)',ans:'线索'},
-  {pre:'几位路人见义勇为，帮助警察制服了持刀',blank:'歹徒',post:'。',hint:'(tên côn đồ)',ans:'歹徒'},
-  {pre:'第一次在黑暗中走山路，他心里充满了',blank:'恐惧',post:'。',hint:'(sợ hãi)',ans:'恐惧'},
-  {pre:'博物馆里陈列着一座',blank:'铜',post:'制的古代雕塑，已有两千多年的历史。',hint:'(đồng — kim loại)',ans:'铜'},
-  {pre:'写作文以前，最好先把文章的',blank:'框架',post:'搭好，再往里面填内容。',hint:'(khung, dàn ý)',ans:'框架'},
-  {pre:'水果买回来要多洗几遍，以免有农药',blank:'残留',post:'。',hint:'(tồn dư, còn sót lại)',ans:'残留'},
-  {pre:'酒后驾车造成严重事故的，要依法追究',blank:'刑事',post:'责任。',hint:'(hình sự)',ans:'刑事'},
-  {pre:'他因为贪污受贿被关进了',blank:'监狱',post:'，真是得不偿失。',hint:'(nhà tù)',ans:'监狱'},
-  {pre:'选专业关系到终身的发展，你要',blank:'慎重',post:'考虑，别草率决定。',hint:'(thận trọng)',ans:'慎重'},
-  {pre:'比赛还没结束，千万不能',blank:'麻痹',post:'大意。',hint:'(lơ là, mất cảnh giác)',ans:'麻痹'},
-  {pre:'海关工作人员在一个旅行箱里',blank:'查获',post:'了两公斤毒品。',hint:'(tra xét và thu giữ được)',ans:'查获'},
-  {pre:'无论是谁，只要触犯了法律，就要受到法律的',blank:'制裁',post:'。',hint:'(trừng trị)',ans:'制裁'},
-  {pre:'钱包被偷以后，他马上到',blank:'公安局',post:'报了案。',hint:'(sở công an)',ans:'公安局'},
-  {pre:'接到',blank:'情报',post:'后，警方连夜开会，部署这次行动。',hint:'(tin báo, tin tình báo)',ans:'情报'},
-  {pre:'',blank:'毒品',post:'不仅摧残人的身体，还会毁掉一个家庭。',hint:'(ma tuý)',ans:'毒品'},
-  {pre:'导游',blank:'带领',post:'游客一边游览名胜古迹，一边体验当地民俗。',hint:'(dẫn dắt)',ans:'带领'},
-  {pre:'面对考官的提问，她',blank:'沉着',post:'地回答，一点儿也不紧张。',hint:'(bình tĩnh, điềm tĩnh)',ans:'沉着'},
-  {pre:'这个问题我们',blank:'暂且',post:'放一放，等时机成熟了再讨论吧。',hint:'(tạm thời)',ans:'暂且',exp:'暂且 = tạm thời, tạm (để sau tính tiếp): 暂且放一放.'},
-  {pre:'民警们在毒贩的必经之路上',blank:'埋伏',post:'了整整两天。',hint:'(mai phục)',ans:'埋伏'},
-  {pre:'快住手，你这么做是',blank:'非法',post:'的。',hint:'(phạm pháp, trái luật)',ans:'非法'},
-  {pre:'',blank:'贩卖',post:'野生动物不仅违法，还会破坏生态平衡。',hint:'(buôn bán trái phép)',ans:'贩卖'},
-  {pre:'姐姐大学学的是',blank:'平面',post:'设计，现在在一家广告公司工作。',hint:'(mặt phẳng — thiết kế đồ hoạ)',ans:'平面'},
-  {pre:'考试前别背上太重的思想',blank:'包袱',post:'，放松一点儿反而发挥得更好。',hint:'(gánh nặng)',ans:'包袱'},
-  {pre:'妈妈',blank:'哄',post:'了半天，孩子才停止哭闹，慢慢睡着了。',hint:'(dỗ dành)',ans:'哄'},
-  {pre:'天气太热了，小狗趴在树下，吐着',blank:'舌头',post:'直喘气。',hint:'(cái lưỡi)',ans:'舌头'},
-  {pre:'小猫受伤后，一直躲在角落里',blank:'舔',post:'自己的伤口。',hint:'(liếm)',ans:'舔'},
-  {pre:'阳光从树叶的',blank:'空隙',post:'里照进来，在地上留下斑斑点点的影子。',hint:'(khe hở, kẽ)',ans:'空隙'},
-  {pre:'孩子们',blank:'扒',post:'着窗户往外看，盼着爸爸早点儿回来。',hint:'(bám, cào)',ans:'扒'},
-  {pre:'椅子太硬了，你放个坐',blank:'垫',post:'再坐吧。',hint:'(đệm, tấm lót)',ans:'垫'},
-  {pre:'一只猫',blank:'叼',post:'走了桌上的鱼，一溜烟跑没了影。',hint:'(ngậm, tha)',ans:'叼'},
-  {pre:'把这些中药磨成',blank:'粉末',post:'，每天用温水冲服两次。',hint:'(bột)',ans:'粉末'},
-  {pre:'每天早晚刷牙，才能保持良好的',blank:'口腔',post:'卫生。',hint:'(khoang miệng)',ans:'口腔'},
-  {pre:'春节期间，很多警察仍然坚守在自己的工作',blank:'岗位',post:'上。',hint:'(vị trí công tác)',ans:'岗位'},
-  {pre:'这场',blank:'战役',post:'持续了三个月，最终以胜利告终。',hint:'(chiến dịch)',ans:'战役'}
+  {pre:'演员们正在后台',blank:'化妆',post:'，还有十分钟演出就要开始了。',hint:'(trang điểm)',ans:'化妆',exp:'化妆 = trang điểm (động từ li hợp). Đừng nhầm với 化装 = cải trang thành người khác (bài khoá: 化装行动).'},
+  {pre:'吃完饼干记得把桌上的饼干',blank:'屑',post:'擦干净，不然会招来蚂蚁。',hint:'(vụn)',ans:'屑',exp:'屑 = mảnh vụn, đứng sau danh từ: 饼干屑, 纸屑, 面包屑; không đứng một mình.'},
+  {pre:'那个男人拿着刀',blank:'抢劫',post:'了一家商店，第二天就被抓住了。',hint:'(cướp)',ans:'抢劫',exp:'抢劫 = cướp bằng vũ lực, công khai (拿着刀). 偷 = trộm, lén lút lấy khi không ai thấy.'},
+  {pre:'杯子没洗干净，杯底还',blank:'残留',post:'着一点儿咖啡。',hint:'(còn sót lại)',ans:'残留',exp:'残留 = còn sót lại một phần sau khi phần lớn đã mất (残留着 / 残留的). 剩下 dùng cho đồ còn thừa nói chung, không mang sắc thái "dấu vết sót lại".'},
+  {pre:'警察在一辆车上',blank:'查获',post:'了大量假药。',hint:'(kiểm tra và thu giữ được)',ans:'查获',exp:'查获 = điều tra / kiểm tra rồi thu giữ được (tang vật, hàng cấm, tội phạm). Khác 收获 = thu hoạch, thành quả.'},
+  {pre:'酒后开车撞了人，他终究没能逃过法律的',blank:'制裁',post:'。',hint:'(trừng trị)',ans:'制裁',exp:'法律的制裁 = sự trừng trị của pháp luật (nặng, văn viết); 逃过 = thoát khỏi. Ôn 终究 (bài 35) = rốt cuộc.'},
+  {pre:'队长',blank:'带领',post:'大家在山里走了一整天，终于找到了那个村子。',hint:'(dẫn dắt)',ans:'带领',exp:'带领 + người + V = dẫn dắt ai làm gì (người dẫn đầu có trách nhiệm); trang trọng hơn 带.'},
+  {pre:'音乐突然',blank:'停顿',post:'了几秒，大家还以为音响坏了。',hint:'(ngừng lại một lúc)',ans:'停顿',exp:'停顿 = ngừng lại một lúc rồi lại tiếp tục (nói, nhạc, công việc). 停止 = dừng hẳn.'},
+  {pre:'奶奶留给我一个',blank:'铜',post:'做的小盒子，听说是一百多年前的东西。',hint:'(đồng — kim loại)',ans:'铜',exp:'铜 = đồng (kim loại); 铜做的 / 铜制的 = làm bằng đồng; lượng từ 一个 đi với 盒子, không đi với 铜.'},
+  {pre:'方案的大',blank:'框架',post:'已经定了，具体的细节大家再讨论。',hint:'(khung, sườn)',ans:'框架',exp:'框架 = khung (nghĩa đen: khung cửa, khung nhà; nghĩa bóng: bộ khung của kế hoạch, bài viết), đối lập với 细节 (chi tiết).'},
+  {pre:'地上很脏，坐下前先在下面',blank:'垫',post:'一张报纸吧。',hint:'(lót)',ans:'垫',exp:'垫 dùng làm động từ: lót cái gì xuống dưới (垫一张报纸); dùng làm danh từ: tấm đệm (坐垫).'},
+  {pre:'每天早晚刷牙，对',blank:'口腔',post:'健康很重要。',hint:'(khoang miệng)',ans:'口腔',exp:'口腔 = khoang miệng (từ y học, trang trọng hơn 嘴里).'},
+  {pre:'大年三十的晚上，很多医生和警察仍然在自己的',blank:'岗位',post:'上工作。',hint:'(vị trí công tác)',ans:'岗位',exp:'在……岗位上 = ở vị trí công tác (nhấn trách nhiệm). 位置 chỉ chỗ, vị trí không gian.'},
+  {pre:'别的',blank:'暂且',post:'不说，光是这个价格我就接受不了。',hint:'(tạm thời)',ans:'暂且',exp:'暂且不说 A，光是 B 就…… = tạm chưa nói A, chỉ riêng B đã…. 暂且 đứng trước động từ, không đứng trước chủ ngữ.'},
+  {pre:'为了大家的安全',blank:'起见',post:'，晚上请不要一个人走小路。',hint:'(để cho …)',ans:'起见',exp:'为(了) + 安全 / 方便 / 慎重 + 起见 = để cho …, đặt đầu câu (văn viết). Phần trước 起见 là mục đích chung (安全), không phải việc cụ thể như ×为了买电脑起见.'}
 ];
 
 var sortData = [
-  {words:['为了','慎重起见','，','她','又将指纹','反复比较了','一遍','。'],ans:'为了慎重起见，她又将指纹反复比较了一遍。',audio:'为了慎重起见，她又将指纹反复比较了一遍。'},
-  {words:['为安全起见','，','家庭购买餐具后','，','可将餐具','放在醋中','煮一煮','。'],ans:'为安全起见，家庭购买餐具后，可将餐具放在醋中煮一煮。',audio:'为安全起见，家庭购买餐具后，可将餐具放在醋中煮一煮。'},
-  {words:['为了','保险起见','，','你','还是把钱','存在银行里吧','。'],ans:'为了保险起见，你还是把钱存在银行里吧。',audio:'为了保险起见，你还是把钱存在银行里吧。'},
-  {words:['为了','叙述方便起见','，','我们','把世界造型艺术','分为三大块','。'],ans:'为了叙述方便起见，我们把世界造型艺术分为三大块。',audio:'为了叙述方便起见，我们把世界造型艺术分为三大块。'},
-  {words:['他','决定','暂且','拖一拖','这帮毒贩','。'],ans:'他决定暂且拖一拖这帮毒贩。',audio:'他决定暂且拖一拖这帮毒贩。'},
-  {words:['我们','暂且','把这个问题','放一放','，','等时机成熟了','再讨论吧','。'],ans:'我们暂且把这个问题放一放，等时机成熟了再讨论吧。',audio:'我们暂且把这个问题放一放，等时机成熟了再讨论吧。'},
-  {words:['这其中的原因','暂且不论','，','没有观众的决赛','总给人','一种怅然若失的感觉','。'],ans:'这其中的原因暂且不论，没有观众的决赛总给人一种怅然若失的感觉。',audio:'这其中的原因暂且不论，没有观众的决赛总给人一种怅然若失的感觉。'},
-  {words:['大家没办法','，','只得','暂且','由他去','。'],ans:'大家没办法，只得暂且由他去。',audio:'大家没办法，只得暂且由他去。'},
-  {words:['开头结尾','互相呼应','，','使文章结构','更为紧凑','。'],ans:'开头结尾互相呼应，使文章结构更为紧凑。',audio:'开头结尾互相呼应，使文章结构更为紧凑。'},
-  {words:['前文的人、事、物','，','在后文','再现','，','这就是','照应','。'],ans:'前文的人、事、物，在后文再现，这就是照应。',audio:'前文的人、事、物，在后文再现，这就是照应。'},
-  {words:['小罗','一次次','把辉杰','从死亡线上','拉回来','。'],ans:'小罗一次次把辉杰从死亡线上拉回来。',audio:'小罗一次次把辉杰从死亡线上拉回来。'},
-  {words:['毒贩','来不及','反抗','就','被逮捕了','。'],ans:'毒贩来不及反抗就被逮捕了。',audio:'毒贩来不及反抗就被逮捕了。'}
+  {words:['为了','病人的','健康','起见','，','医院里','不能','抽烟','。'],ans:'为了病人的健康起见，医院里不能抽烟。',audio:'为了病人的健康起见，医院里不能抽烟。'},
+  {words:['警察','在','现场','发现','了','一枚','指纹','。'],ans:'警察在现场发现了一枚指纹。',audio:'警察在现场发现了一枚指纹。'},
+  {words:['医生','让','他','暂且','别','吃','辣的','。'],ans:'医生让他暂且别吃辣的。',audio:'医生让他暂且别吃辣的。'},
+  {words:['大家','暂且','休息','一会儿','吧','。'],ans:'大家暂且休息一会儿吧。',audio:'大家暂且休息一会儿吧。'},
+  {words:['那个','歹徒','很快','就','被','逮捕','了','。'],ans:'那个歹徒很快就被逮捕了。',audio:'那个歹徒很快就被逮捕了。'},
+  {words:['小狗','用','舌头','舔了舔','我的','手','。'],ans:'小狗用舌头舔了舔我的手。',audio:'小狗用舌头舔了舔我的手。'},
+  {words:['一只','猫','叼','着','一条','鱼','跑','了','。'],ans:'一只猫叼着一条鱼跑了。',audio:'一只猫叼着一条鱼跑了。'},
+  {words:['桌子','上','有','一些','白色的','粉末','。'],ans:'桌子上有一些白色的粉末。',audio:'桌子上有一些白色的粉末。'}
 ];
 
 var errorFixMode = 'wordchoice';
 
 var errorFixData = [
-  {wrong:'看到那条大狗向自己冲过来，他心里一阵____。',opts:['恐惧','恐怖','可怕','吓人'],ans:0,exp:'Nói TÂM LÝ sợ hãi trong lòng người (他心里) → 恐惧. 恐怖 / 可怕 / 吓人 tả sự việc, cảnh tượng khiến người khác sợ, không nói *心里一阵恐怖.'},
-  {wrong:'这次抓捕行动之前，公安局做了周密的战略____。',opts:['布置','装置','部署','设置'],ans:2,exp:'Sắp xếp lực lượng tầm toàn cục, chiến lược → 战略部署. 布置 dùng cho bày trí đồ vật, giao việc thường ngày; 装置 = thiết bị; 设置 = thiết lập.'},
-  {wrong:'为了迎接新同学，大家把教室____得漂漂亮亮的。',opts:['部署','布置','设置','配置'],ans:1,exp:'Bày trí, trang trí đồ vật trong phòng → 布置. 部署 là bố trí lực lượng, nhiệm vụ lớn; 配置 = trang bị (máy móc).'},
-  {wrong:'为了____起见，她又把指纹反复比较了一遍。',opts:['隆重','庄重','严重','慎重'],ans:3,exp:'Cụm của bài: 为了慎重起见 = để cho thận trọng. 隆重 = long trọng (lễ); 庄重 = trang nghiêm (thái độ, trang phục); 严重 = nghiêm trọng (tình hình).'},
-  {wrong:'在沙漠里走了三天三夜，这对他的意志是一次严峻的____。',opts:['检验','考验','实验','试验'],ans:1,exp:'Thử thách ý chí CON NGƯỜI → 考验. 检验 = kiểm nghiệm chất lượng, sản phẩm; 实验 / 试验 = thí nghiệm.'},
-  {wrong:'这批食品必须经过严格____，合格后才能上市。',opts:['检验','考验','考察','检讨'],ans:0,exp:'Kiểm tra chất lượng theo tiêu chuẩn → 检验. 考验 dành cho con người; 考察 = khảo sát thực địa; 检讨 = kiểm điểm lỗi.'},
-  {wrong:'他做事一丝不苟，是一个值得____的合作伙伴。',opts:['依赖','依恋','依据','信赖'],ans:3,exp:'值得信赖 = đáng tin cậy (nghĩa tốt). 依赖 = dựa dẫm, phụ thuộc (bài 23); 依恋 = quyến luyến; 依据 = căn cứ.'},
-  {wrong:'战士们对祖国无比____，随时准备献出自己的一切。',opts:['诚恳','诚实','忠诚','真诚'],ans:2,exp:'对 + tổ quốc / tổ chức + 忠诚 = trung thành. 诚恳 = thành khẩn (thái độ); 诚实 = thật thà; 真诚 = chân thành (tình cảm).'},
-  {wrong:'这场球输了，主要是因为我们后半场传球____太多。',opts:['错误','误会','失误','失败'],ans:2,exp:'Trong thi đấu, sơ suất lỡ tay → 失误 (传球失误 = chuyền bóng hỏng). 错误 là sai lầm nói chung; 误会 = hiểu lầm; 失败 = thất bại.'},
-  {wrong:'这条新修的公路与铁路____，开车时还能看到旁边的火车。',opts:['平行','并列','交叉','平等'],ans:0,exp:'Hai con đường chạy song song, không cắt nhau → 与……平行. 并列 = ngang hạng; 交叉 = cắt nhau; 平等 = bình đẳng.'},
-  {wrong:'这次数学考试，我和小王____全班第一。',opts:['平行','并列','交叉','并排'],ans:1,exp:'Đồng hạng trong xếp hạng → 并列第一. 并排 = đứng cạnh nhau (vị trí), không dùng cho thứ hạng.'},
-  {wrong:'两条路在前面的十字路口____，那里经常堵车。',opts:['平行','并列','交流','交叉'],ans:3,exp:'Hai con đường cắt nhau ở ngã tư → 交叉. 平行 thì không bao giờ gặp nhau; 交流 = giao lưu.'},
-  {wrong:'这位英雄的事迹成了青少年学习的____榜样。',opts:['光辉','辉煌','光荣','光明'],ans:0,exp:'Cụm quen: 光辉(的)榜样 = tấm gương sáng. 辉煌 dùng cho thành tựu, sự nghiệp; 光荣 = vinh quang (光荣榜 = bảng vàng); 光明 = tươi sáng (tương lai).'},
-  {wrong:'每逢佳节，在外工作的人总会格外____家乡的亲人。',opts:['纪念','悼念','怀疑','思念'],ans:3,exp:'Nhớ nhung người thân ở xa → 思念. 纪念 = kỷ niệm (sự kiện); 悼念 = tưởng niệm người đã mất; 怀疑 = nghi ngờ.'},
-  {wrong:'第一次上台演讲，她有点儿____，声音都在颤抖。',opts:['胆大','大胆','胆怯','勇敢'],ans:2,exp:'Rụt rè, sợ sệt (giọng run) → 胆怯. Ba từ kia đều mang nghĩa dạn dĩ, dũng cảm — trái ngữ cảnh.'},
-  {wrong:'看到自己已经被包围，歹徒只好放弃了____。',opts:['抵达','反抗','反对','反应'],ans:1,exp:'Kẻ bị bắt từ bỏ chống cự bằng hành động → 放弃反抗. 反对 = phản đối (ý kiến); 反应 = phản ứng; 抵达 = đến nơi.'},
-  {wrong:'经过三个月的追踪，警方终于将犯罪嫌疑人____归案。',opts:['逮捕','捕捉','追求','抓紧'],ans:0,exp:'Cơ quan pháp luật bắt người theo luật → 逮捕归案. 捕捉 = bắt (con vật, cơ hội — bài 14); 追求 = theo đuổi; 抓紧 = tranh thủ.'},
-  {wrong:'窗台上一枚残缺的指纹成了破案唯一的____。',opts:['线条','头绪','线索','路线'],ans:2,exp:'Manh mối giúp phá án → 线索. 线条 = đường nét; 头绪 = đầu mối (thường trong 理不出头绪); 路线 = lộ trình.'}
+  {wrong:'看到那条大狗向自己冲过来，他心里一阵____。',opts:['恐惧','恐怖','可怕','吓人'],ans:0,exp:'Nói TÂM LÝ sợ hãi trong lòng người (他心里) → 恐惧. 恐怖 / 可怕 / 吓人 tả sự việc, cảnh tượng khiến người khác sợ, không nói ×心里一阵恐怖.'},
+  {wrong:'行动开始前，队长把三十名警察____在山下的各个路口。',opts:['部署','装修','安装','设置'],ans:0,exp:'Bố trí lực lượng (người, quân) theo kế hoạch → 部署. 安装 / 设置 dùng cho máy móc, đồ vật; 装修 = sửa sang nhà cửa.'},
+  {wrong:'为了迎接新同学，大家把教室____得漂漂亮亮的。',opts:['布置','部署','安排','设置'],ans:0,exp:'Bày trí, trang trí đồ vật trong phòng → 布置. 部署 là bố trí lực lượng, nhiệm vụ lớn; 安排 là sắp xếp thời gian, công việc, không đi với 得漂漂亮亮.'},
+  {wrong:'选专业关系到将来，你一定要____考虑。',opts:['慎重','隆重','庄重','严重'],ans:0,exp:'慎重考虑 = cân nhắc thận trọng (việc lớn). 隆重 = long trọng (lễ); 庄重 = trang nghiêm (thái độ, trang phục); 严重 = nghiêm trọng (tình hình).'},
+  {wrong:'在沙漠里走了三天三夜，这对他的意志是一次严峻的____。',opts:['考验','检验','实验','试验'],ans:0,exp:'Thử thách ý chí CON NGƯỜI → 考验. 检验 = kiểm nghiệm chất lượng sản phẩm; 实验 / 试验 = thí nghiệm, thử nghiệm.'},
+  {wrong:'这批食品必须经过严格____，合格后才能上市。',opts:['检验','考验','考察','实验'],ans:0,exp:'Kiểm tra chất lượng theo tiêu chuẩn → 检验. 考验 dành cho con người; 考察 = khảo sát thực địa; 实验 = thí nghiệm.'},
+  {wrong:'他做事一丝不苟，是一个值得____的合作伙伴。',opts:['信赖','依赖','信心','信用'],ans:0,exp:'值得信赖 = đáng tin cậy (nghĩa tốt). 依赖 = dựa dẫm, phụ thuộc (bài 23); 信心 = lòng tin vào bản thân; 信用 = uy tín (讲信用).'},
+  {wrong:'这场球输了，主要是因为我们后半场的____太多了。',opts:['失误','误会','错过','失败'],ans:0,exp:'Trong thi đấu, sơ suất lỡ tay → 失误. 误会 = hiểu lầm; 错过 = bỏ lỡ (động từ); 失败 = thất bại (kết quả), không đếm "nhiều" như vậy.'},
+  {wrong:'这两条路____，中间隔着一条小河。',opts:['平行','并列','交叉','平等'],ans:0,exp:'Hai con đường chạy song song, có sông ở giữa → 平行. 并列 = ngang hạng; 交叉 = cắt nhau; 平等 = bình đẳng (quan hệ người với người).'},
+  {wrong:'上次汉语考试，我和小王____全班第一。',opts:['并列','平行','排列','并排'],ans:0,exp:'Đồng hạng trong xếp hạng → 并列第一. 并排 = đứng / đi cạnh nhau (vị trí); 排列 = xếp theo thứ tự; 平行 = song song (đường thẳng).'},
+  {wrong:'两条路在前面的十字路口____，那里经常堵车。',opts:['交叉','平行','交流','交换'],ans:0,exp:'Hai con đường cắt nhau ở ngã tư → 交叉. 平行 thì không bao giờ gặp nhau; 交流 = giao lưu; 交换 = trao đổi (đồ vật).'},
+  {wrong:'一位邻居说那天晚上看到一辆红色的车，这成了警察破案的重要____。',opts:['线索','线条','头绪','路线'],ans:0,exp:'Manh mối giúp phá án → 线索. 线条 = đường nét; 头绪 = đầu mối (hay dùng trong 理不出头绪 = rối, không biết bắt đầu từ đâu); 路线 = lộ trình.'},
+  {wrong:'电脑坏了，你____用我的吧，等修好了再还我。',opts:['暂且','暂时的','从此','一时'],ans:0,exp:'暂且 + V = tạm cứ làm vậy đã (sẽ thay đổi sau). 暂时的 là định ngữ (暂时的困难), không đứng trước động từ với 的; 从此 = từ đó về sau; 一时 = nhất thời (一时想不起来).'},
+  {wrong:'这只狗对主人非常____，主人去世后，它每天都在门口等他。',opts:['忠诚','诚恳','诚实','真诚'],ans:0,exp:'对 + người / tổ chức + 忠诚 = trung thành. 诚恳 = thành khẩn (thái độ); 诚实 = thật thà; 真诚 = chân thành (tình cảm).'}
 ];
 
 var translateData = [
-  {vi:'Để cho thận trọng, trước khi nộp bài em nên kiểm tra lại một lượt, kẻo xảy ra sai sót.',zh:'为了慎重起见，交卷以前你最好再检查一遍，以免出现失误。',py:'Wèile shènzhòng qǐjiàn, jiāo juàn yǐqián nǐ zuìhǎo zài jiǎnchá yí biàn, yǐmiǎn chūxiàn shīwù.',goiY:['为了……起见','慎重','以免','失误'],giai:'为了 + tính từ + 起见 đặt đầu câu nêu mục đích ("để cho … "); 以免 (bài 21) = để tránh, luôn đứng ở vế sau. Không dịch "sai sót" thành 错误 — lỗi do sơ ý là 失误.'},
-  {vi:'Trước kỳ thi ai cũng nặng tâm lý, chuyện đi du lịch chúng ta tạm gác lại đã, đợi thi xong rồi hãy bàn.',zh:'考试前大家心里包袱都很重，旅游的事我们暂且放一放，等考完再商量吧。',py:'Kǎoshì qián dàjiā xīnli bāofu dōu hěn zhòng, lǚyóu de shì wǒmen zànqiě fàng yi fàng, děng kǎowán zài shāngliang ba.',goiY:['包袱','暂且','等……再……'],giai:'"Nặng tâm lý" = 心里包袱很重, không dịch word-by-word. 暂且 + V一V = tạm cứ … đã; 等……再…… = đợi … rồi hãy ….'},
+  {vi:'Để tránh hiểu lầm, tốt nhất chúng ta nên ghi những điều này lại.',zh:'为了避免误会起见，我们最好把这些话写下来。',py:'Wèile bìmiǎn wùhuì qǐjiàn, wǒmen zuìhǎo bǎ zhèxiē huà xiě xialai.',goiY:['为了……起见','避免误会'],giai:'为了 + mục đích + 起见 đặt đầu câu, trước chủ ngữ (văn viết). 避免误会 = tránh hiểu lầm; 把……写下来 = ghi lại.'},
   {vi:'Tuy mọi người đều nghi cậu ấy lấy điện thoại, nhưng vì không có manh mối nào, thầy giáo cũng đành tạm thời không nhắc tới.',zh:'虽然大家都怀疑他拿了手机，但由于没有任何线索，老师也只好暂且不提。',py:'Suīrán dàjiā dōu huáiyí tā nále shǒujī, dàn yóuyú méiyǒu rènhé xiànsuǒ, lǎoshī yě zhǐhǎo zànqiě bù tí.',goiY:['虽然……但……','线索','暂且'],giai:'虽然……但…… nhượng bộ, lồng thêm 由于 nêu lý do trong vế sau. "Tạm thời không nhắc tới" = 暂且不提 (暂且 đứng trước phủ định + V).'},
   {vi:'Dù hồi nhỏ từng bị chó đuổi, hễ nhắc đến chó là sợ, nhưng vì ước mơ làm cảnh sát, cậu ấy vẫn trút bỏ được gánh nặng trong lòng.',zh:'尽管小时候被狗追过，一提起狗就胆怯，可为了实现当警察的梦想，他还是放下了心里的包袱。',py:'Jǐnguǎn xiǎoshíhou bèi gǒu zhuī guo, yì tíqǐ gǒu jiù dǎnqiè, kě wèile shíxiàn dāng jǐngchá de mèngxiǎng, tā háishi fàngxiàle xīnli de bāofu.',goiY:['尽管……还是……','胆怯','一……就……','包袱'],giai:'尽管……（可）……还是…… = dù … nhưng vẫn …; 一提起……就胆怯 = hễ nhắc tới … là sợ. "Trút bỏ gánh nặng" = 放下包袱.'},
-  {vi:'Tình bạn chân thành không phải xây dựng trong một ngày, mà phải đứng vững trước thử thách của thời gian mới có thể tin cậy lẫn nhau.',zh:'真挚的友谊不是一天建立起来的，而是要经受住时间的考验，才能互相信赖。',py:'Zhēnzhì de yǒuyì bú shì yì tiān jiànlì qilai de, ér shì yào jīngshòu zhù shíjiān de kǎoyàn, cái néng hùxiāng xìnlài.',goiY:['不是……而是……','考验','信赖','真挚'],giai:'不是……而是…… phủ định vế đầu, khẳng định vế sau; 经受住……的考验 = đứng vững trước thử thách. 真挚 (bài 28) = chân thành, sâu sắc.'},
-  {vi:'Chỉ cần bình tĩnh ứng phó, thì dù đề thi có khó đến đâu, em cũng sẽ không mắc sai sót lớn.',zh:'只要沉着应对，即便试题再难，你也不会出现太大的失误。',py:'Zhǐyào chénzhuó yìngduì, jíbiàn shìtí zài nán, nǐ yě bú huì chūxiàn tài dà de shīwù.',goiY:['只要','沉着','即便……也……','失误'],giai:'Câu ba vế: 只要 (điều kiện) + 即便……也…… (giả thiết nhượng bộ, bài 10). "Khó đến đâu" với 即便 dùng 再 + Adj (即便试题再难).'},
-  {vi:'Hội trường vừa bày trí xong, khách mời đã lần lượt tới; may mà mọi người đã bố trí sẵn nhân viên an ninh, nên mọi việc diễn ra đâu vào đấy.',zh:'会场刚布置好，客人们就陆续到了，好在大家事先部署好了安保人员，一切都进行得有条不紊。',py:'Huìchǎng gāng bùzhì hǎo, kèrenmen jiù lùxù dào le, hǎozài dàjiā shìxiān bùshǔ hǎole ānbǎo rényuán, yíqiè dōu jìnxíng de yǒutiáo-bùwěn.',goiY:['布置','部署','刚……就……','有条不紊'],giai:'Bày trí đồ vật → 布置; bố trí lực lượng an ninh → 部署 (phân biệt từ của bài). 好在 = may mà; 有条不紊 (bài 19) = đâu vào đấy.'},
-  {vi:'Đừng coi thường những sai sót tưởng như nhỏ nhặt, bởi vì chỉ cần hơi lơ là một chút, mọi nỗ lực trước đó đều có thể đổ sông đổ biển.',zh:'别小看那些看似微不足道的失误，因为只要稍有麻痹，之前所有的努力都可能白费。',py:'Bié xiǎokàn nàxiē kànsì wēibùzúdào de shīwù, yīnwèi zhǐyào shāo yǒu mábì, zhīqián suǒyǒu de nǔlì dōu kěnéng báifèi.',goiY:['微不足道','失误','只要','麻痹'],giai:'因为 + 只要……都…… lồng nhau; "hơi lơ là" = 稍有麻痹 (không dịch 马虎一点). 微不足道 (bài 24) = nhỏ nhặt không đáng kể; 白费 = đổ sông đổ biển.'},
-  {vi:'Để cho an toàn, trước kỳ nghỉ nhà trường kêu gọi học sinh tránh xa ma tuý; một khi phát hiện có người buôn bán, phải lập tức báo cho sở công an.',zh:'为了安全起见，放假前学校呼吁学生远离毒品，一旦发现有人贩卖，要立刻报告公安局。',py:'Wèile ānquán qǐjiàn, fàngjià qián xuéxiào hūyù xuésheng yuǎnlí dúpǐn, yídàn fāxiàn yǒu rén fànmài, yào lìkè bàogào gōng\'ānjú.',goiY:['为了……起见','毒品','一旦','贩卖'],giai:'为了安全起见 đứng đầu câu; 一旦……（就）…… = một khi … thì …. 呼吁 (bài 30) = kêu gọi; "buôn bán (hàng cấm)" = 贩卖, không dùng 做生意.'},
-  {vi:'Tuy ông nội đã mất nhiều năm, nhưng mỗi khi nhìn thấy tấm huân chương ông để lại, cả nhà lại nhớ tới cuộc đời vẻ vang của ông, trong lòng tràn đầy nỗi nhớ.',zh:'虽然爷爷已经去世多年了，但每当看到他留下的奖章，全家人就会想起他光辉的一生，心中充满了思念。',py:'Suīrán yéye yǐjīng qùshì duō nián le, dàn měi dāng kàndào tā liúxià de jiǎngzhāng, quán jiā rén jiù huì xiǎngqǐ tā guānghuī de yìshēng, xīnzhōng chōngmǎnle sīniàn.',goiY:['虽然……但……','每当……就……','光辉','思念'],giai:'Câu bốn vế: 虽然……但 + 每当……就…… (mỗi khi … lại …). "Cuộc đời vẻ vang" = 光辉的一生; "nỗi nhớ" = 思念, không dùng 纪念 (kỷ niệm).'}
+  {vi:'Chỉ cần bình tĩnh, thì dù đề thi có khó đến đâu, em cũng sẽ không mắc sai sót lớn.',zh:'只要沉着冷静，即便试题再难，你也不会出现太大的失误。',py:'Zhǐyào chénzhuó lěngjìng, jíbiàn shìtí zài nán, nǐ yě bú huì chūxiàn tài dà de shīwù.',goiY:['只要','沉着冷静','即便……也……','失误'],giai:'Câu ba vế: 只要 (điều kiện) + 即便……也…… (giả thiết nhượng bộ, bài 10). "Khó đến đâu" với 即便 dùng 再 + Adj (即便试题再难).'},
+  {vi:'Trước kỳ nghỉ nhà trường kêu gọi học sinh tránh xa ma tuý; một khi phát hiện có người buôn bán, phải lập tức báo cho sở công an.',zh:'放假前学校呼吁学生远离毒品，一旦发现有人贩卖，要立刻报告公安局。',py:'Fàngjià qián xuéxiào hūyù xuésheng yuǎnlí dúpǐn, yídàn fāxiàn yǒu rén fànmài, yào lìkè bàogào gōng\'ānjú.',goiY:['远离毒品','一旦……就……','贩卖','公安局'],giai:'远离毒品 = tránh xa ma tuý; 一旦 = một khi (giả thiết), vế sau 要立刻……; 贩卖 = buôn bán trái phép (nghĩa xấu, khác 卖).'},
+  {vi:'Tuy ông nội đã mất nhiều năm, nhưng mỗi khi nhìn thấy những tấm ảnh ông để lại, cả nhà lại nhớ tới cuộc đời vẻ vang của ông, trong lòng tràn đầy nỗi nhớ.',zh:'虽然爷爷已经去世多年了，但每当看到他留下的照片，全家人就会想起他光辉的一生，心中充满了思念。',py:'Suīrán yéye yǐjīng qùshì duō nián le, dàn měi dāng kàndào tā liúxià de zhàopiàn, quán jiā rén jiù huì xiǎngqǐ tā guānghuī de yìshēng, xīnzhōng chōngmǎnle sīniàn.',goiY:['虽然……但……','每当……就……','光辉','思念'],giai:'Câu bốn vế: 虽然……但 + 每当……就…… (mỗi khi … lại …). "Cuộc đời vẻ vang" = 光辉的一生; "nỗi nhớ" = 思念, không dùng 纪念 (kỷ niệm).'}
 ];
 
 var translateDataRev = [
-  {zh:'现场既没有纸屑，也没有抢劫的痕迹，侦破工作一时陷入了停顿。',vi:'Hiện trường vừa không có vụn giấy, cũng không có dấu vết cướp của, công tác phá án nhất thời rơi vào bế tắc.',py:'Xiànchǎng jì méiyǒu zhǐxiè, yě méiyǒu qiǎngjié de hénjì, zhēnpò gōngzuò yìshí xiànrùle tíngdùn.',goiY:['既……也…… = vừa không … cũng không …','痕迹 = dấu vết','停顿 = bế tắc, đình trệ (陷入了停顿)'],giai:'既没有……也没有…… liệt kê song song. 一时 (bài 33) = nhất thời; 陷入停顿 dịch "rơi vào bế tắc / đình trệ", không dịch "rơi vào tạm dừng".'},
-  {zh:'为了慎重起见，李真又将其他现场残留的指纹与王某的指纹反复比较，最终认定了作案人。',vi:'Để cho thận trọng, Lý Chân lại đem vân tay còn sót lại ở các hiện trường khác so sánh nhiều lần với vân tay của Vương X, cuối cùng xác định được kẻ gây án.',py:'Wèile shènzhòng qǐjiàn, Lǐ Zhēn yòu jiāng qítā xiànchǎng cánliú de zhǐwén yǔ Wáng mǒu de zhǐwén fǎnfù bǐjiào, zuìzhōng rèndìngle zuò àn rén.',goiY:['为了慎重起见 = để cho thận trọng','残留 = còn sót lại','认定 = xác định'],giai:'为了……起见 dịch "để cho …"; 将 A 与 B 比较 = đem A so với B. 王某 = "Vương X / ông Vương nọ" (某 thay tên không nêu).'},
-  {zh:'志强心中虽然十分焦急，但他明白必须沉着冷静，于是决定暂且拖一拖毒贩。',vi:'Tuy trong lòng Chí Cường vô cùng sốt ruột, nhưng anh hiểu phải bình tĩnh điềm đạm, thế là quyết định tạm kéo dài thời gian với bọn buôn ma tuý.',py:'Zhìqiáng xīnzhōng suīrán shífēn jiāojí, dàn tā míngbai bìxū chénzhuó lěngjìng, yúshì juédìng zànqiě tuō yi tuō dúfàn.',goiY:['虽然……但…… = tuy … nhưng …','沉着冷静 = bình tĩnh điềm đạm','暂且 = tạm thời (cứ … đã)'],giai:'Chuỗi 虽然……但……于是…… (nhượng bộ → kết quả). 拖一拖毒贩 dịch "kéo dài thời gian với bọn buôn ma tuý", không dịch "kéo bọn buôn ma tuý". 焦急 (bài 17).'},
-  {zh:'刚刚布置妥当，毒贩就开着农用车来了，埋伏在附近的民警立刻扑了上去。',vi:'Vừa bố trí xong xuôi, bọn buôn ma tuý đã lái xe nông dụng tới, các cảnh sát mai phục gần đó lập tức lao lên.',py:'Gānggāng bùzhì tuǒdang, dúfàn jiù kāizhe nóngyòngchē lái le, máifú zài fùjìn de mínjǐng lìkè pūle shangqu.',goiY:['刚刚……就…… = vừa … đã …','布置妥当 = bố trí xong xuôi','埋伏 = mai phục'],giai:'刚刚……就…… nhấn mạnh hai việc nối tiếp rất sát. 民警 = cảnh sát nhân dân, dịch gọn "cảnh sát".'},
-  {zh:'毒品渗入了辉杰的口腔，小罗来不及多想，便给它做起了人工呼吸。',vi:'Ma tuý thấm vào khoang miệng Huy Kiệt, Tiểu La không kịp nghĩ nhiều liền hô hấp nhân tạo cho nó.',py:'Dúpǐn shènrùle Huījié de kǒuqiāng, Xiǎo Luó láibují duō xiǎng, biàn gěi tā zuòqǐle réngōng hūxī.',goiY:['渗入 = thấm vào','口腔 = khoang miệng','来不及多想 = không kịp nghĩ nhiều'],giai:'便 (văn viết) = 就; 做起了人工呼吸 — 起 chỉ bắt đầu hành động, dịch "liền hô hấp nhân tạo".'},
-  {zh:'辉杰生病时小罗悉心照顾它，自此它对小罗非常信赖，每次见面都会伸出舌头舔一舔。',vi:'Khi Huy Kiệt bị ốm, Tiểu La tận tình chăm sóc nó; từ đó nó rất tin cậy Tiểu La, lần nào gặp cũng thè lưỡi ra liếm liếm.',py:'Huījié shēngbìng shí Xiǎo Luó xīxīn zhàogù tā, zìcǐ tā duì Xiǎo Luó fēicháng xìnlài, měi cì jiànmiàn dōu huì shēnchū shétou tiǎn yi tiǎn.',goiY:['悉心 = tận tình','自此 = từ đó','信赖 = tin cậy'],giai:'自此 (văn viết) = 从此. 舔一舔 dạng lặp nhẹ, dịch "liếm liếm / liếm một cái" cho tự nhiên.'},
-  {zh:'不管毒品藏在多么隐蔽的空隙里，这只缉毒犬一出手，不出一分钟就能查出来。',vi:'Dù ma tuý được giấu trong khe hở kín đáo đến đâu, chú chó nghiệp vụ này vừa ra tay, chưa đầy một phút đã tìm ra.',py:'Bùguǎn dúpǐn cáng zài duōme yǐnbì de kòngxì li, zhè zhī jī dú quǎn yì chūshǒu, bù chū yì fēnzhōng jiù néng chá chulai.',goiY:['不管 = dù, bất kể','隐蔽 = kín đáo (bài 20)','一……就…… = vừa … là …'],giai:'不管 + 多么…… (dù … đến đâu); 不出一分钟 = chưa tới một phút, không dịch "không ra một phút".'},
-  {zh:'指纹认定工作既繁重又枯燥，不能有半点麻痹和失误，因此特别考验人的耐心。',vi:'Công việc xác định vân tay vừa nặng nề vừa khô khan, không được có chút lơ là hay sai sót nào, vì vậy đặc biệt thử thách lòng kiên nhẫn.',py:'Zhǐwén rèndìng gōngzuò jì fánzhòng yòu kūzào, bù néng yǒu bàndiǎn mábì hé shīwù, yīncǐ tèbié kǎoyàn rén de nàixīn.',goiY:['既……又…… = vừa … vừa …','麻痹 = lơ là','考验 = thử thách'],giai:'既……又…… + 因此 (kết quả). 麻痹 ở đây = lơ là, không dịch "tê liệt"; 枯燥 (bài 7) = khô khan.'},
-  {zh:'这原本是两条平行而非并列的线，却在缉毒战场上交叉，创造出了一个感人的故事。',vi:'Đây vốn là hai đường song song chứ không sóng đôi, vậy mà lại giao nhau trên chiến trường chống ma tuý, tạo nên một câu chuyện cảm động.',py:'Zhè yuánběn shì liǎng tiáo píngxíng ér fēi bìngliè de xiàn, què zài jī dú zhànchǎng shang jiāochā, chuàngzào chūle yí ge gǎnrén de gùshi.',goiY:['原本 = vốn dĩ','平行而非并列 = song song chứ không sóng đôi','却 = vậy mà, lại'],giai:'A而非B = là A chứ không phải B (văn viết); 却 chuyển ý trái mong đợi. Hình ảnh ẩn dụ: người lính và con chó vốn ở hai thế giới riêng.'},
-  {zh:'中毒事件让辉杰的身体每况愈下，几年后它离开了人世，走完了光辉的一生，却给小罗留下了无尽的思念。',vi:'Sự cố ngộ độc khiến sức khoẻ Huy Kiệt ngày càng sa sút, mấy năm sau nó rời xa cõi đời, đi hết cuộc đời vẻ vang, nhưng lại để lại cho Tiểu La nỗi nhớ khôn nguôi.',py:'Zhòngdú shìjiàn ràng Huījié de shēntǐ měi kuàng yù xià, jǐ nián hòu tā líkāile rénshì, zǒuwánle guānghuī de yìshēng, què gěi Xiǎo Luó liúxiàle wújìn de sīniàn.',goiY:['每况愈下 = ngày càng sa sút','光辉的一生 = cuộc đời vẻ vang','无尽的思念 = nỗi nhớ khôn nguôi'],giai:'Câu bốn vế nối thời gian + 却 chuyển ý. 离开了人世 là cách nói tránh "chết" (dịch "rời xa cõi đời"); 思念 = nỗi nhớ, không dịch "tưởng niệm".'}
+  {vi:'Anh ấy cải trang thành người giao hàng mới vào được khu nhà tên côn đồ ở.',zh:'他化装成送快递的人，才进了歹徒住的小区。',py:'Tā huàzhuāng chéng sòng kuàidì de rén, cái jìnle dǎitú zhù de xiǎoqū.',goiY:['化装成 = cải trang thành','歹徒 = tên côn đồ'],giai:'化装 (cải trang) khác 化妆 (trang điểm); 才 = mới (phải như vậy mới làm được).'},
+  {vi:'Con mèo con bới tấm đệm ra, ngậm ra một chiếc tất.',zh:'那只小猫扒开垫子，叼出了一只袜子。',py:'Nà zhī xiǎo māo bākāi diànzi, diāochūle yì zhī wàzi.',goiY:['扒开 = bới ra, gạt ra','垫子 = tấm đệm','叼 = ngậm, tha'],giai:'扒开 = dùng chân / tay gạt, bới ra; 叼出 = ngậm (bằng miệng) lôi ra — 叼 chỉ dùng cho miệng.'},
+  {vi:'Qua kiểm nghiệm, chỗ bột trắng còn sót lại ở hiện trường là một loại ma tuý.',zh:'经过检验，现场残留的白色粉末是一种毒品。',py:'Jīngguò jiǎnyàn, xiànchǎng cánliú de báisè fěnmò shì yì zhǒng dúpǐn.',goiY:['检验 = kiểm nghiệm','残留 = còn sót lại','粉末 = bột'],giai:'残留的 + N làm định ngữ dài; 经过检验 = qua kiểm nghiệm (không dịch "đi qua").'},
+  {vi:'Chiến dịch này kéo dài suốt ba tháng, cả hai bên đều tổn thất nặng nề.',zh:'这场战役打了整整三个月，双方都损失很大。',py:'Zhè chǎng zhànyì dǎle zhěngzhěng sān ge yuè, shuāngfāng dōu sǔnshī hěn dà.',goiY:['战役 = chiến dịch','损失 = tổn thất'],giai:'Lượng từ của 战役 là 场 / 次; 整整 nhấn "trọn, suốt".'},
+  {vi:'Chị tôi học thiết kế đồ hoạ, tốt nghiệp xong làm ở một công ty quảng cáo.',zh:'姐姐学的是平面设计，毕业后在一家广告公司工作。',py:'Jiějie xué de shì píngmiàn shèjì, bìyè hòu zài yì jiā guǎnggào gōngsī gōngzuò.',goiY:['平面设计 = thiết kế đồ hoạ'],giai:'平面 nghĩa gốc là mặt phẳng; 平面设计 dịch "thiết kế đồ hoạ", không dịch "thiết kế mặt phẳng".'}
 ];
 
 var writingData = {
@@ -1027,31 +973,19 @@ var writingData = {
     'Kết bài có chiếu ứng (照应) với mở bài không, và đã dùng ít nhất 6 từ mới của bài (线索, 沉着, 部署, 埋伏, 逮捕, 麻痹, 失误, 岗位…) chưa?'
   ],
   model:{
-    zh:'（题目：警察故事）本课讲了三个警察的故事，让我想起了我们小区的社区民警老陈。在我的印象中，他是最让我感动的警察。去年冬天，我们小区连续发生了几起入室盗窃案，居民们恐惧感大增，晚上谁也不敢一个人出门。小偷非常狡猾，现场几乎没有留下任何痕迹，侦破工作一时陷入了停顿。老陈心里十分焦急，但他清楚，必须沉着冷静。他带领几个年轻民警挨家挨户走访，又反复查看监控录像，终于发现了一条重要线索：每次案发前，都有一个戴帽子的男子在楼道里徘徊。为了慎重起见，老陈没有马上抓人，而是周密地部署了警力。那天夜里下着大雪，他和同事们埋伏在楼下，一等就是五个小时。凌晨两点，那个男子果然出现了。他刚撬开一户人家的门，埋伏在附近的民警就扑了上去，小偷来不及反抗就被逮捕了。案子破了，老陈却病倒了。原来那段时间他一直在发烧，为了不耽误工作，他暂且把自己的病放在一边，一个多星期都没有回家。老陈常说，警察的工作不能有半点麻痹和失误。正是像他这样在平凡的岗位上默默付出的警察，守护着我们的安宁。每当在街上看到穿警服的人，我都会想起老陈的故事，心中充满了敬意。',
-    py:'(Tímù: Jǐngchá gùshi) Běn kè jiǎngle sān ge jǐngchá de gùshi, ràng wǒ xiǎngqǐle wǒmen xiǎoqū de shèqū mínjǐng Lǎo Chén. Zài wǒ de yìnxiàng zhōng, tā shì zuì ràng wǒ gǎndòng de jǐngchá. Qùnián dōngtiān, wǒmen xiǎoqū liánxù fāshēngle jǐ qǐ rùshì dàoqiè àn, jūmínmen kǒngjùgǎn dà zēng, wǎnshang shéi yě bù gǎn yí ge rén chūmén. Xiǎotōu fēicháng jiǎohuá, xiànchǎng jīhū méiyǒu liúxià rènhé hénjì, zhēnpò gōngzuò yìshí xiànrùle tíngdùn. Lǎo Chén xīnli shífēn jiāojí, dàn tā qīngchu, bìxū chénzhuó lěngjìng. Tā dàilǐng jǐ ge niánqīng mínjǐng āijiā-āihù zǒufǎng, yòu fǎnfù chákàn jiānkòng lùxiàng, zhōngyú fāxiànle yì tiáo zhòngyào xiànsuǒ: měi cì àn fā qián, dōu yǒu yí ge dài màozi de nánzǐ zài lóudào li páihuái. Wèile shènzhòng qǐjiàn, Lǎo Chén méiyǒu mǎshàng zhuā rén, ér shì zhōumì de bùshǔle jǐnglì. Nà tiān yèli xiàzhe dà xuě, tā hé tóngshìmen máifú zài lóu xià, yì děng jiù shì wǔ ge xiǎoshí. Língchén liǎng diǎn, nàge nánzǐ guǒrán chūxiàn le. Tā gāng qiàokāi yí hù rénjiā de mén, máifú zài fùjìn de mínjǐng jiù pūle shangqu, xiǎotōu láibují fǎnkàng jiù bèi dàibǔ le. Ànzi pò le, Lǎo Chén què bìngdǎo le. Yuánlái nà duàn shíjiān tā yìzhí zài fāshāo, wèile bù dānwu gōngzuò, tā zànqiě bǎ zìjǐ de bìng fàng zài yìbiān, yí ge duō xīngqī dōu méiyǒu huí jiā. Lǎo Chén cháng shuō, jǐngchá de gōngzuò bù néng yǒu bàndiǎn mábì hé shīwù. Zhèng shì xiàng tā zhèyàng zài píngfán de gǎngwèi shang mòmò fùchū de jǐngchá, shǒuhùzhe wǒmen de ānníng. Měi dāng zài jiē shang kàndào chuān jǐngfú de rén, wǒ dōu huì xiǎngqǐ Lǎo Chén de gùshi, xīnzhōng chōngmǎnle jìngyì.',
-    vn:'(Nhan đề: Chuyện cảnh sát) Bài học kể ba câu chuyện về cảnh sát, khiến tôi nhớ tới chú Trần, cảnh sát khu vực của khu nhà tôi. Trong ấn tượng của tôi, chú là người cảnh sát khiến tôi cảm động nhất. Mùa đông năm ngoái, khu nhà tôi liên tiếp xảy ra mấy vụ đột nhập trộm cắp, nỗi sợ hãi của cư dân tăng vọt, buổi tối không ai dám ra ngoài một mình. Tên trộm rất xảo quyệt, hiện trường gần như không để lại dấu vết gì, công tác phá án nhất thời rơi vào bế tắc. Chú Trần trong lòng vô cùng sốt ruột, nhưng chú hiểu rõ phải bình tĩnh. Chú dẫn mấy cảnh sát trẻ đi hỏi từng nhà, lại xem đi xem lại băng camera giám sát, cuối cùng phát hiện một manh mối quan trọng: trước mỗi vụ án đều có một người đàn ông đội mũ lảng vảng ở hành lang. Để cho thận trọng, chú Trần không bắt người ngay, mà bố trí lực lượng thật chu đáo. Đêm hôm ấy tuyết rơi dày, chú cùng đồng nghiệp mai phục dưới chân toà nhà, chờ một mạch năm tiếng đồng hồ. Hai giờ sáng, người đàn ông ấy quả nhiên xuất hiện. Hắn vừa cạy cửa một nhà, các cảnh sát mai phục gần đó đã lao lên, tên trộm chưa kịp chống cự đã bị bắt. Vụ án được phá, chú Trần lại đổ bệnh. Hoá ra suốt thời gian đó chú luôn bị sốt, để không lỡ việc, chú tạm gác bệnh của mình sang một bên, hơn một tuần không về nhà. Chú Trần thường nói, công việc của cảnh sát không được có chút lơ là hay sai sót nào. Chính những người cảnh sát như chú, lặng lẽ cống hiến ở những cương vị bình thường, đang gìn giữ sự bình yên cho chúng ta. Mỗi khi thấy người mặc cảnh phục trên đường, tôi lại nhớ tới câu chuyện của chú Trần, lòng tràn đầy kính trọng.'
+    zh:'（题目：警察故事）本课讲了三个警察的故事，让我想起了我们小区的社区民警老陈。在我的印象中，他是最让我感动的警察。去年冬天，我们小区连续发生了几起小偷入室偷东西的案件，居民们恐惧感大增，晚上谁也不敢一个人出门。小偷非常狡猾，现场几乎没有留下任何痕迹，侦破工作一时陷入了停顿。老陈心里十分焦急，但他清楚，必须沉着冷静。他带领几个年轻民警一家一家地走访，又反复查看小区的监控，终于发现了一条重要线索：每次出事以前，都有一个戴帽子的男子在楼道里徘徊。为了慎重起见，老陈没有马上抓人，而是周密地部署了警力。那天夜里下着大雪，他和同事们埋伏在楼下，一等就是五个小时。凌晨两点，那个男子果然出现了。他刚要打开别人家的门，埋伏在附近的民警就扑了上去，小偷来不及反抗就被逮捕了。小偷抓到了，老陈却病倒了。原来那段时间他一直在发烧，为了不耽误工作，他暂且把自己的病放在一边，一个多星期都没有回家。老陈常说，警察的工作不能有半点麻痹和失误。正是像他这样在平凡的岗位上默默付出的警察，守护着我们的安宁。每当在路上看到警察，我都会想起老陈的故事，心中充满了崇敬。',
+    py:'(Tímù: Jǐngchá gùshi) Běn kè jiǎngle sān ge jǐngchá de gùshi, ràng wǒ xiǎngqǐle wǒmen xiǎoqū de shèqū mínjǐng Lǎo Chén. Zài wǒ de yìnxiàng zhōng, tā shì zuì ràng wǒ gǎndòng de jǐngchá. Qùnián dōngtiān, wǒmen xiǎoqū liánxù fāshēngle jǐ qǐ xiǎotōu rùshì tōu dōngxi de ànjiàn, jūmínmen kǒngjùgǎn dà zēng, wǎnshang shéi yě bù gǎn yí ge rén chūmén. Xiǎotōu fēicháng jiǎohuá, xiànchǎng jīhū méiyǒu liúxià rènhé hénjì, zhēnpò gōngzuò yìshí xiànrùle tíngdùn. Lǎo Chén xīnli shífēn jiāojí, dàn tā qīngchu, bìxū chénzhuó lěngjìng. Tā dàilǐng jǐ ge niánqīng mínjǐng yì jiā yì jiā de zǒufǎng, yòu fǎnfù chákàn xiǎoqū de jiānkòng, zhōngyú fāxiànle yì tiáo zhòngyào xiànsuǒ: měi cì chūshì yǐqián, dōu yǒu yí ge dài màozi de nánzǐ zài lóudào li páihuái. Wèile shènzhòng qǐjiàn, Lǎo Chén méiyǒu mǎshàng zhuā rén, ér shì zhōumì de bùshǔle jǐnglì. Nà tiān yèli xiàzhe dà xuě, tā hé tóngshìmen máifú zài lóu xià, yì děng jiù shì wǔ ge xiǎoshí. Língchén liǎng diǎn, nàge nánzǐ guǒrán chūxiàn le. Tā gāng yào dǎkāi biérén jiā de mén, máifú zài fùjìn de mínjǐng jiù pūle shangqu, xiǎotōu láibují fǎnkàng jiù bèi dàibǔ le. Xiǎotōu zhuādào le, Lǎo Chén què bìngdǎo le. Yuánlái nà duàn shíjiān tā yìzhí zài fāshāo, wèile bù dānwu gōngzuò, tā zànqiě bǎ zìjǐ de bìng fàng zài yìbiān, yí ge duō xīngqī dōu méiyǒu huí jiā. Lǎo Chén cháng shuō, jǐngchá de gōngzuò bù néng yǒu bàndiǎn mábì hé shīwù. Zhèng shì xiàng tā zhèyàng zài píngfán de gǎngwèi shang mòmò fùchū de jǐngchá, shǒuhùzhe wǒmen de ānníng. Měi dāng zài lù shang kàndào jǐngchá, wǒ dōu huì xiǎngqǐ Lǎo Chén de gùshi, xīnzhōng chōngmǎnle chóngjìng.',
+    vn:'(Nhan đề: Chuyện cảnh sát) Bài học kể ba câu chuyện về cảnh sát, khiến tôi nhớ tới chú Trần, cảnh sát khu vực của khu nhà tôi. Trong ấn tượng của tôi, chú là người cảnh sát khiến tôi cảm động nhất. Mùa đông năm ngoái, khu nhà tôi liên tiếp xảy ra mấy vụ đột nhập trộm cắp, nỗi sợ hãi của cư dân tăng vọt, buổi tối không ai dám ra ngoài một mình. Tên trộm rất xảo quyệt, hiện trường gần như không để lại dấu vết gì, công tác phá án nhất thời rơi vào bế tắc. Chú Trần trong lòng vô cùng sốt ruột, nhưng chú hiểu rõ phải bình tĩnh. Chú dẫn mấy cảnh sát trẻ đi hỏi từng nhà, lại xem đi xem lại camera giám sát của khu nhà, cuối cùng phát hiện một manh mối quan trọng: trước mỗi lần xảy ra chuyện đều có một người đàn ông đội mũ lảng vảng ở hành lang. Để cho thận trọng, chú Trần không bắt người ngay, mà bố trí lực lượng thật chu đáo. Đêm hôm ấy tuyết rơi dày, chú cùng đồng nghiệp mai phục dưới chân toà nhà, chờ một mạch năm tiếng đồng hồ. Hai giờ sáng, người đàn ông ấy quả nhiên xuất hiện. Hắn vừa định mở cửa nhà người ta, các cảnh sát mai phục gần đó đã lao lên, tên trộm chưa kịp chống cự đã bị bắt. Tên trộm bị bắt rồi, chú Trần lại đổ bệnh. Hoá ra suốt thời gian đó chú luôn bị sốt, để không lỡ việc, chú tạm gác bệnh của mình sang một bên, hơn một tuần không về nhà. Chú Trần thường nói, công việc của cảnh sát không được có chút lơ là hay sai sót nào. Chính những người cảnh sát như chú, lặng lẽ cống hiến ở những cương vị bình thường, đang gìn giữ sự bình yên cho chúng ta. Mỗi khi thấy cảnh sát trên đường, tôi lại nhớ tới câu chuyện của chú Trần, lòng tràn đầy kính trọng.'
   }
 };
 
 var speakingData = {
-  intro:'Đây là bảng bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b> (dựa vào gợi ý, trình bày ngắn gọn nội dung chính của bài khoá). Mỗi câu hỏi là một dòng của bảng, cột gợi ý giữ nguyên như sách (dòng "李真" trong sách có hai ô gợi ý nên tách thành hai câu). Bấm loa nghe câu hỏi, <b>tự ghi âm câu trả lời trước</b> rồi mới mở câu mẫu. Cố dùng đúng các từ trong gợi ý.',
-  questions:[
-    {q_zh:'优秀女警察李真的故事',q_vn:'Câu chuyện của nữ cảnh sát xuất sắc Lý Chân (vụ thứ nhất: người phụ nữ bị sát hại)',hint:'女士被杀案：现场，嫌疑人，苦于，唯一线索，经过比对，得出结论',
-     sample:'女警官李真是公认的“指纹破译专家”。一次，某酒店一位女士被杀害，现场没有留下任何犯罪痕迹。一个在楼道里徘徊的男子有嫌疑，警察却苦于找不到证据。最后，窗台上一枚残缺的指纹成了唯一的线索，李真经过几个昼夜反复比对，终于得出结论，抓住了歹徒。',
-     sample_vn:'Nữ cảnh sát Lý Chân là "chuyên gia giải mã vân tay" được mọi người công nhận. Một lần, một người phụ nữ bị sát hại ở một khách sạn, hiện trường không để lại dấu vết phạm tội nào. Một người đàn ông lảng vảng ở hành lang có tình nghi, nhưng cảnh sát khổ nỗi không tìm được chứng cứ. Cuối cùng, một dấu vân tay không nguyên vẹn trên bậu cửa sổ trở thành manh mối duy nhất; Lý Chân so sánh đối chiếu mấy ngày đêm, rốt cuộc đưa ra kết luận và bắt được hung thủ.',
-     note:'Đi theo thứ tự gợi ý: 现场 (không có dấu vết) → 嫌疑人 → 苦于找不到证据 → 唯一的线索 → 经过比对 → 得出结论. 苦于 + V = khổ nỗi không …'},
-    {q_zh:'优秀女警察李真的故事',q_vn:'Câu chuyện của nữ cảnh sát xuất sắc Lý Chân (vụ thứ hai: các vụ đột nhập cướp của)',hint:'入室抢劫案：提取到指纹，一枚……，另一枚……；把指纹结合起来；发现嫌疑人',
-     sample:'另一次，某地发生了多起入室抢劫案。警察提取到了两枚指纹，一枚在玻璃上，而且严重变形；另一枚在铜制的框架上，只残留有指尖部位。李真把两枚指纹结合起来分析，发现一年前刑满放出监狱的王某嫌疑很大。为了慎重起见，她又反复比较，最终认定这些抢劫案都是王某干的。',
-     sample_vn:'Một lần khác, ở một nơi xảy ra nhiều vụ đột nhập nhà cướp của. Cảnh sát lấy được hai dấu vân tay: một dấu trên kính, lại bị biến dạng nghiêm trọng; dấu kia trên khung bằng đồng, chỉ còn sót phần đầu ngón tay. Lý Chân kết hợp hai dấu vân tay lại để phân tích, phát hiện Vương X — kẻ mãn hạn tù một năm trước — rất đáng nghi. Để cho thận trọng, chị còn so sánh nhiều lần, cuối cùng xác định các vụ cướp đều do Vương X gây ra.',
-     note:'Khuôn 一枚……，另一枚…… để tả hai dấu vân tay; dùng 为了慎重起见 (điểm ngữ pháp 1) trước khi nói kết luận.'},
-    {q_zh:'缉毒警察志强的故事',q_vn:'Câu chuyện của cảnh sát chống ma tuý Chí Cường',hint:'接到情报 → 实地走访 → 确定破案思路 → 假扮毒贩接头 → 等待时机 → 部署兵力 → 抓获毒贩',
-     sample:'公安局接到情报后，志强带领手下实地走访，了解到毒贩把毒品藏在了大山里。他确定了“化装行动、引蛇出洞、主动出击”的破案思路，假扮成毒贩与对方接上了头。对方一直沉默，志强虽然很焦急，但还是沉着冷静，决定暂且拖一拖毒贩，终于等到了时机。交易那天，他部署好兵力，让同事们埋伏在附近，毒贩来不及反抗就被逮捕了。',
-     sample_vn:'Sở công an nhận được tin báo, Chí Cường dẫn cấp dưới đi thực địa, biết được bọn buôn ma tuý giấu hàng trong núi. Anh xác định hướng phá án "cải trang hành động, dụ rắn ra khỏi hang, chủ động tấn công", giả làm kẻ buôn ma tuý để bắt liên lạc. Đối phương cứ im lặng, Chí Cường tuy sốt ruột nhưng vẫn bình tĩnh, quyết định tạm kéo dài thời gian, cuối cùng chờ được thời cơ. Hôm giao dịch, anh bố trí xong lực lượng, cho đồng nghiệp mai phục gần đó, kẻ buôn ma tuý chưa kịp chống cự đã bị bắt.',
-     note:'Bảy mũi tên = bảy bước, nói nối tiếp bằng 后 / 于是 / 终于 / 那天. Dùng 暂且 (điểm ngữ pháp 2) ở bước 等待时机.'},
-    {q_zh:'特殊“缉毒警察”辉杰的故事',q_vn:'Câu chuyện về "cảnh sát chống ma tuý" đặc biệt Huy Kiệt',hint:'①建立感情：怕狗，哄狗，悉心照顾，建立信任和忠诚　②执行任务：累立战功，发现毒品，中毒，抢救　③分别：辉杰离世，留下思念',
-     sample:'小罗从小怕狗，刚接手缉毒犬辉杰时，任他怎么哄，辉杰都不理他。后来辉杰生病了，小罗悉心照顾它，从此辉杰对小罗非常信赖和忠诚。执行任务时，辉杰累立战功。有一次它发现了毒品，咬破了塑料袋，毒品渗入口腔，它中毒了。小罗一路给它做人工呼吸，经过抢救，辉杰脱离了危险。可是几年后，辉杰还是离世了，给小罗留下了无尽的思念。',
-     sample_vn:'Tiểu La từ nhỏ đã sợ chó, lúc mới nhận chó nghiệp vụ Huy Kiệt, dỗ thế nào nó cũng không để ý. Sau đó Huy Kiệt bị ốm, Tiểu La tận tình chăm sóc, từ đó Huy Kiệt vô cùng tin cậy và trung thành với Tiểu La. Khi làm nhiệm vụ, Huy Kiệt liên tiếp lập công. Có lần nó phát hiện ma tuý, cắn rách túi nhựa, ma tuý thấm vào miệng khiến nó bị ngộ độc. Tiểu La hô hấp nhân tạo cho nó suốt dọc đường, nhờ cấp cứu Huy Kiệt thoát nguy hiểm. Nhưng mấy năm sau, Huy Kiệt vẫn qua đời, để lại cho Tiểu La nỗi nhớ khôn nguôi.',
-     note:'Ba ý ①②③ = ba giai đoạn: 建立感情 → 执行任务 → 分别. Chuyển giai đoạn bằng 后来 / 执行任务时 / 可是几年后.'}
+  intro: 'Đây là bảng bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b> (dựa vào gợi ý, trình bày ngắn gọn nội dung chính của bài khoá). Mỗi câu hỏi là một dòng của bảng, cột gợi ý giữ nguyên như sách (dòng "李真" trong sách có hai ô gợi ý nên tách thành hai câu). Bấm loa nghe câu hỏi, <b>tự ghi âm câu trả lời trước</b> rồi mới mở câu mẫu. Cố dùng đúng các từ trong gợi ý.',
+  questions: [
+    {q_zh:'优秀女警察李真的故事',q_vn:'Câu chuyện của nữ cảnh sát xuất sắc Lý Chân (vụ thứ nhất: người phụ nữ bị sát hại)',hint:'女士被杀案：现场，嫌疑人，苦于，唯一线索，经过比对，得出结论',sample:'女警官李真是公认的“指纹破译专家”。一次，某酒店一位女士被杀害，现场没有留下任何犯罪痕迹。一个在楼道里徘徊的男子有嫌疑，警察却苦于找不到证据。最后，窗台上一枚残缺的指纹成了唯一的线索，李真经过几个昼夜反复比对，终于得出结论，抓住了歹徒。',sample_vn:'Nữ cảnh sát Lý Chân là "chuyên gia giải mã vân tay" được mọi người công nhận. Một lần, một người phụ nữ bị sát hại ở một khách sạn, hiện trường không để lại dấu vết phạm tội nào. Một người đàn ông lảng vảng ở hành lang có tình nghi, nhưng cảnh sát khổ nỗi không tìm được chứng cứ. Cuối cùng, một dấu vân tay không nguyên vẹn trên bậu cửa sổ trở thành manh mối duy nhất; Lý Chân so sánh đối chiếu mấy ngày đêm, rốt cuộc đưa ra kết luận và bắt được hung thủ.',note:'Đi theo thứ tự gợi ý: 现场 (không có dấu vết) → 嫌疑人 → 苦于找不到证据 → 唯一的线索 → 经过比对 → 得出结论. 苦于 + V = khổ nỗi không …'},
+    {q_zh:'优秀女警察李真的故事',q_vn:'Câu chuyện của nữ cảnh sát xuất sắc Lý Chân (vụ thứ hai: các vụ đột nhập cướp của)',hint:'入室抢劫案：提取到指纹，一枚……，另一枚……；把指纹结合起来；发现嫌疑人',sample:'另一次，某地发生了多起入室抢劫案。警察提取到了两枚指纹，一枚在玻璃上，而且严重变形；另一枚在铜制的框架上，只残留有指尖部位。李真把两枚指纹结合起来分析，发现一年前刑满放出监狱的王某嫌疑很大。但她没有马上下结论，为慎重起见又反复比较了好几次，最终认定这些抢劫案都是王某干的。',sample_vn:'Một lần khác, ở một nơi xảy ra nhiều vụ đột nhập nhà cướp của. Cảnh sát lấy được hai dấu vân tay: một dấu trên kính, lại bị biến dạng nghiêm trọng; dấu kia trên khung bằng đồng, chỉ còn sót phần đầu ngón tay. Lý Chân kết hợp hai dấu vân tay lại để phân tích, phát hiện Vương X — kẻ mãn hạn tù một năm trước — rất đáng nghi. Nhưng chị không vội kết luận, để cho thận trọng còn so sánh thêm nhiều lần, cuối cùng xác định các vụ cướp đều do Vương X gây ra.',note:'Khuôn 一枚……，另一枚…… để tả hai dấu vân tay; dùng 为……起见 (điểm ngữ pháp 1) trước khi nói kết luận.'},
+    {q_zh:'缉毒警察志强的故事',q_vn:'Câu chuyện của cảnh sát chống ma tuý Chí Cường',hint:'接到情报 → 实地走访 → 确定破案思路 → 假扮毒贩接头 → 等待时机 → 部署兵力 → 抓获毒贩',sample:'公安局得到情报，有人要在山里进行毒品交易。志强带领手下实地走访，了解到毒贩把毒品藏在了大山里。他确定了“化装行动、引蛇出洞、主动出击”的破案思路，假扮成毒贩与对方接上了头。对方一直沉默，志强虽然很焦急，但还是沉着冷静，决定暂且拖一拖毒贩，终于等到了时机。交易那天，他部署好兵力，让同事们埋伏在附近，毒贩来不及反抗就被逮捕了。',sample_vn:'Sở công an nhận được tin báo có kẻ định giao dịch ma tuý trong núi. Chí Cường dẫn cấp dưới đi thực địa, biết được bọn buôn ma tuý giấu hàng trong núi. Anh xác định hướng phá án "cải trang hành động, dụ rắn ra khỏi hang, chủ động tấn công", giả làm kẻ buôn ma tuý để bắt liên lạc. Đối phương cứ im lặng, Chí Cường tuy sốt ruột nhưng vẫn bình tĩnh, quyết định tạm kéo dài thời gian, cuối cùng chờ được thời cơ. Hôm giao dịch, anh bố trí xong lực lượng, cho đồng nghiệp mai phục gần đó, kẻ buôn ma tuý chưa kịp chống cự đã bị bắt.',note:'Bảy mũi tên = bảy bước, nói nối tiếp bằng 后 / 于是 / 终于 / 那天. Dùng 暂且 (điểm ngữ pháp 2) ở bước 等待时机.'},
+    {q_zh:'特殊“缉毒警察”辉杰的故事',q_vn:'Câu chuyện về "cảnh sát chống ma tuý" đặc biệt Huy Kiệt',hint:'①建立感情：怕狗，哄狗，悉心照顾，建立信任和忠诚　②执行任务：累立战功，发现毒品，中毒，抢救　③分别：辉杰离世，留下思念',sample:'小罗从小怕狗，刚接手缉毒犬辉杰时，任他怎么哄，辉杰都不理他。后来辉杰生病了，小罗悉心照顾它，从此辉杰对小罗非常信赖和忠诚。执行任务时，辉杰累立战功。有一次它发现了毒品，咬破了塑料袋，毒品渗入口腔，它中毒了。小罗一路给它做人工呼吸，经过医生的抢救，辉杰脱离了危险。可是几年后，辉杰还是离世了，给小罗留下了无尽的思念。',sample_vn:'Tiểu La từ nhỏ đã sợ chó, lúc mới nhận chó nghiệp vụ Huy Kiệt, dỗ thế nào nó cũng không để ý. Sau đó Huy Kiệt bị ốm, Tiểu La tận tình chăm sóc, từ đó Huy Kiệt vô cùng tin cậy và trung thành với Tiểu La. Khi làm nhiệm vụ, Huy Kiệt liên tiếp lập công. Có lần nó phát hiện ma tuý, cắn rách túi nhựa, ma tuý thấm vào miệng khiến nó bị ngộ độc. Tiểu La hô hấp nhân tạo cho nó suốt dọc đường, nhờ cấp cứu Huy Kiệt thoát nguy hiểm. Nhưng mấy năm sau, Huy Kiệt vẫn qua đời, để lại cho Tiểu La nỗi nhớ khôn nguôi.',note:'Ba ý ①②③ = ba giai đoạn: 建立感情 → 执行任务 → 分别. Chuyển giai đoạn bằng 后来 / 执行任务时 / 可是几年后.'}
   ]
 };
 
@@ -1073,61 +1007,123 @@ var retellData = {
 };
 
 var listenExamData = {
-  intro:'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
-  source:'Soạn theo dạng đề HSK 6 · chủ đề bài 37',
-  items:[
-    {n:1,lines:[{sp:'女',zh:'听说你们小区前几天被偷了？抓到小偷了吗？'},{sp:'男',zh:'还没有。警察来看过了，可小偷戴着手套，一点儿痕迹都没留下，到现在还没找到线索。'}],
-     q:'案子为什么还没破？',qvn:'Vì sao vụ án vẫn chưa phá được?',opts:['没有人报警','小偷没留下痕迹','警察还没来调查','丢的东西太少了'],ans:1,
-     why:'小偷戴着手套，一点儿痕迹都没留下 → không để lại dấu vết nên chưa có manh mối. Câu nói có 警察来看过了 nên C sai.',words:['痕迹','线索']},
-    {n:2,lines:[{sp:'男',zh:'这次数学竞赛你考得怎么样？'},{sp:'女',zh:'别提了，最后一道题我明明会做，结果一紧张，把数字抄错了，只拿了个铜牌。'}],
-     q:'女的为什么没考好？',qvn:'Vì sao người phụ nữ thi không tốt?',opts:['题目太难了','考前没有复习','考试时间不够','因为紧张出现了失误'],ans:3,
-     why:'我明明会做，结果一紧张，把数字抄错了 → biết làm nhưng vì căng thẳng mà sơ suất (失误), không phải đề khó.',words:['铜','失误']},
-    {n:3,lines:[{sp:'女',zh:'小王，你的狗真听话，你一叫它就跑过来了。'},{sp:'男',zh:'刚养的时候可不是这样，任我怎么哄，它都不理我。后来它生了一场病，我照顾了它好几天，从那以后它就特别信赖我了。'}],
-     q:'狗为什么开始信赖男的？',qvn:'Vì sao con chó bắt đầu tin cậy người đàn ông?',opts:['男的在它生病时照顾了它','男的每天都哄它','男的给它买了很多玩具','男的训练了它很长时间'],ans:0,
-     why:'后来它生了一场病，我照顾了它好几天，从那以后它就特别信赖我了 → giống chuyện Tiểu La và Huy Kiệt; 哄 thì nó vẫn không để ý (B sai).',words:['哄','信赖']},
-    {n:4,lines:[{sp:'男',zh:'你怎么还不决定报哪个专业？报名马上就要截止了。'},{sp:'女',zh:'这可是关系到我将来工作的大事，为了慎重起见，我想先听听几位老师的意见再说。'}],
-     q:'关于女的，可以知道什么？',qvn:'Về người phụ nữ, có thể biết điều gì?',opts:['已经选好了专业','不打算上大学','想先听听老师的意见','对哪个专业都不感兴趣'],ans:2,
-     why:'为了慎重起见，我想先听听几位老师的意见再说 → muốn hỏi ý kiến thầy cô trước khi quyết định.',words:['慎重']},
-    {n:5,lines:[{sp:'男',zh:'缉毒犬是警察的好帮手。它们的嗅觉比人灵敏得多，不管毒品藏在多小的空隙里，它们都能闻出来。不过，训练一只合格的缉毒犬至少需要一年时间，而且只有少数狗能通过最后的考验。'}],
-     q:'关于缉毒犬，下列哪项正确？',qvn:'Về chó nghiệp vụ chống ma tuý, điều nào dưới đây đúng?',opts:['所有的狗都能当缉毒犬','训练时间很短','嗅觉不如人灵敏','只有少数狗能通过考验'],ans:3,
-     why:'只有少数狗能通过最后的考验 → D. Đoạn nói 至少需要一年 (B sai), 嗅觉比人灵敏得多 (C sai).',words:['毒品','空隙','考验']},
-    {n:6,lines:[{sp:'女',zh:'听说昨天那个抢劫银行的歹徒抓到了？'},{sp:'男',zh:'对，警察提前得到了情报，一直埋伏在银行附近，他刚一出门就被逮捕了，连反抗的机会都没有。'}],
-     q:'歹徒是怎么被抓住的？',qvn:'Tên côn đồ bị bắt như thế nào?',opts:['自己去公安局自首了','警察事先埋伏在附近','被银行保安抓住了','路人报了警'],ans:1,
-     why:'警察提前得到了情报，一直埋伏在银行附近 → cảnh sát mai phục từ trước.',words:['抢劫','歹徒','情报','埋伏','逮捕','反抗']},
-    {n:7,lines:[{sp:'男',zh:'这场比赛我们已经领先十分了，应该没问题了吧？'},{sp:'女',zh:'千万不能麻痹大意。上次就是因为领先了就放松，最后被对手反超了。'}],
-     q:'女的是什么意思？',qvn:'Ý của người phụ nữ là gì?',opts:['不能因为领先就放松','比赛已经赢定了','应该让对手几分','领先十分太少了'],ans:0,
-     why:'千万不能麻痹大意 = tuyệt đối không được chủ quan; lần trước dẫn trước rồi lơ là nên bị lội ngược dòng.',words:['麻痹']},
-    {n:8,lines:[{sp:'女',zh:'我爷爷当了四十年警察，一直坚守在自己的岗位上。去年爷爷去世了，他留下的那枚奖章，我一直放在书桌上。每次看到它，我就会想起爷爷光辉的一生，心中充满了思念。'}],
-     q:'说话人看到奖章时有什么感受？',qvn:'Khi nhìn thấy tấm huân chương, người nói có cảm xúc gì?',opts:['很想当警察','觉得有点儿害怕','非常思念爷爷','想把奖章送人'],ans:2,
-     why:'我就会想起爷爷光辉的一生，心中充满了思念 → nhớ ông da diết.',words:['岗位','光辉','思念']}
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 37',
+  items: [
+    {
+      n: 1,
+      lines: [
+        {sp:'女',zh:'你家丢东西的事，警察查出来了吗？'},
+        {sp:'男',zh:'还没有，小偷没留下任何痕迹，警察说现在只能等新的线索了。'}
+      ],
+      q: '关于这件事，可以知道什么？',
+      qvn: 'Về việc này, có thể biết điều gì?',
+      opts: ['小偷已经被抓了','还没有找到线索','丢的东西找回来了','警察不管这件事'],
+      ans: 1,
+      why: '没留下任何痕迹 + 只能等新的线索 → chưa có manh mối. Cảnh sát vẫn đang chờ (loại D).',
+      words: ['痕迹','线索']
+    },
+    {
+      n: 2,
+      lines: [
+        {sp:'男',zh:'我们今天怎么不坐地铁了？'},
+        {sp:'女',zh:'为了节省时间起见，我们打车去，不然开会要迟到了。'}
+      ],
+      q: '他们为什么打车？',
+      qvn: 'Vì sao họ đi taxi?',
+      opts: ['地铁停了','女的累了','打车更便宜','怕开会迟到'],
+      ans: 3,
+      why: '为了节省时间起见 + 不然开会要迟到了 → sợ đến họp muộn. 为……起见 nêu mục đích.',
+      words: []
+    },
+    {
+      n: 3,
+      lines: [
+        {sp:'女',zh:'新房子什么时候能搬进去？'},
+        {sp:'男',zh:'还得等一个月，我们暂且住在我父母家。'}
+      ],
+      q: '男的现在住在哪儿？',
+      qvn: 'Bây giờ người đàn ông ở đâu?',
+      opts: ['父母家','新房子','朋友家','学校旁边'],
+      ans: 0,
+      why: '暂且住在我父母家 = tạm ở nhà bố mẹ (một tháng nữa mới dọn vào nhà mới).',
+      words: ['暂且']
+    },
+    {
+      n: 4,
+      lines: [
+        {sp:'男',zh:'这场比赛我们已经赢了三个球，应该没问题了吧？'},
+        {sp:'女',zh:'千万不能麻痹大意，上次就是因为最后十分钟放松了，结果被对方追了回来。'}
+      ],
+      q: '女的是什么意思？',
+      qvn: 'Ý người phụ nữ là gì?',
+      opts: ['已经赢定了','应该多进几个球','不能放松','对手太弱了'],
+      ans: 2,
+      why: '千万不能麻痹大意 = tuyệt đối không được lơ là; lần trước thả lỏng mười phút cuối bị gỡ lại.',
+      words: ['麻痹']
+    },
+    {
+      n: 5,
+      lines: [
+        {sp:'女',zh:'你家孩子怎么一见你就哭？'},
+        {sp:'男',zh:'我出差一个多月，他都不认识我了，我哄了半天也没用。'}
+      ],
+      q: '孩子为什么哭？',
+      qvn: 'Vì sao đứa bé khóc?',
+      opts: ['饿了','不太认识男的了','生病了','想出去玩'],
+      ans: 1,
+      why: '出差一个多月，他都不认识我了 → đứa bé không nhận ra bố. 哄了半天 = dỗ mãi.',
+      words: ['哄']
+    },
+    {
+      n: 6,
+      lines: [
+        {sp:'女',zh:'听说昨天那个抢劫银行的歹徒抓到了？'},
+        {sp:'男',zh:'对，警察提前得到了情报，一直埋伏在银行附近，他刚一出门就被逮捕了，连反抗的机会都没有。'}
+      ],
+      q: '歹徒是怎么被抓住的？',
+      qvn: 'Tên côn đồ bị bắt như thế nào?',
+      opts: ['警察事先埋伏在附近','他自己去了公安局','被银行的人抓住了','被路人抓住了'],
+      ans: 0,
+      why: '提前得到了情报，一直埋伏在银行附近 → cảnh sát mai phục từ trước; 连反抗的机会都没有 = không kịp chống cự.',
+      words: ['歹徒','情报','埋伏','逮捕','反抗']
+    },
+    {
+      n: 7,
+      lines: [
+        {sp:'女',zh:'这只缉毒犬为什么这么有名？'},
+        {sp:'男',zh:'它在岗位上工作了八年，不管毒品藏在多小的空隙里，它都能找出来。'}
+      ],
+      q: '关于这只狗，可以知道什么？',
+      qvn: 'Về con chó này, có thể biết điều gì?',
+      opts: ['刚开始工作','已经离世了','很会找毒品','很胆怯'],
+      ans: 2,
+      why: '不管毒品藏在多小的空隙里，它都能找出来 → rất giỏi tìm ma tuý; đã làm tám năm (loại A).',
+      words: ['岗位','毒品','空隙']
+    }
   ]
 };
 
 var situationData = {
-  intro:'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
-  items:[
-    {scene:'Bạn cùng lớp kể rằng có người quen trên mạng hỏi vay tiền.',a:{sp:'Bạn',zh:'我在网上认识了一个人，他说急着用钱，让我先借给他五千块。',vn:'Tớ quen một người trên mạng, anh ta nói đang cần tiền gấp, bảo tớ cho vay trước năm nghìn tệ.'},need:['Dùng 为了……起见','Dùng 慎重'],
-     sample:'为了安全起见，你还是慎重一点儿吧，最好先跟爸妈商量商量再说。',samplePy:'Wèile ānquán qǐjiàn, nǐ háishi shènzhòng yìdiǎnr ba, zuìhǎo xiān gēn bà mā shāngliang shāngliang zài shuō.',sampleVn:'Để cho an toàn, cậu nên thận trọng một chút, tốt nhất bàn với bố mẹ trước rồi hãy tính.',tip:'为了安全起见 đặt đầu câu; 还是……吧 là giọng khuyên nhẹ nhàng.'},
-    {scene:'Bạn thân lo lắng trước cuộc thi hùng biện ngày mai.',a:{sp:'Bạn thân',zh:'明天就要比赛了，我紧张得要命，怕一上台就说不出话来。',vn:'Mai thi rồi, tớ căng thẳng muốn chết, sợ vừa lên sân khấu là không nói được gì.'},need:['Dùng 包袱 hoặc 胆怯','Dùng 沉着'],
-     sample:'别背那么重的包袱，上台以后沉着一点儿，就当是在跟朋友聊天。',samplePy:'Bié bēi nàme zhòng de bāofu, shàngtái yǐhòu chénzhuó yìdiǎnr, jiù dāng shì zài gēn péngyou liáotiān.',sampleVn:'Đừng mang gánh nặng lớn thế, lên sân khấu rồi bình tĩnh một chút, cứ coi như đang nói chuyện với bạn bè.',tip:'别背……包袱 = đừng mang gánh nặng tâm lý; 就当是…… = cứ coi như ….'},
-    {scene:'Nhóm em tranh cãi một tiếng đồng hồ vẫn chưa chọn được đề tài; em đề nghị tạm gác lại.',a:{sp:'Bạn trong nhóm',zh:'这两个题目各有各的好处，我们都吵了一个小时了，还是定不下来。',vn:'Hai đề tài này mỗi cái có cái hay riêng, chúng ta cãi nhau một tiếng rồi mà vẫn chưa quyết được.'},need:['Dùng 暂且'],
-     sample:'这个问题我们暂且放一放，先把资料收集好，明天再做决定吧。',samplePy:'Zhège wèntí wǒmen zànqiě fàng yi fàng, xiān bǎ zīliào shōují hǎo, míngtiān zài zuò juédìng ba.',sampleVn:'Vấn đề này mình tạm gác lại đã, thu thập tài liệu xong rồi mai hãy quyết định.',tip:'暂且 + V一V = tạm cứ … đã; 先……，再…… nói rõ trình tự.'},
-    {scene:'Bạn em nhặt được một chiếc ví, định tự đi tìm người đánh rơi.',a:{sp:'Bạn',zh:'我捡到一个钱包，里面有不少钱，还有一张身份证。我想自己去找失主。',vn:'Tớ nhặt được một cái ví, bên trong có khá nhiều tiền, còn có một tấm chứng minh thư. Tớ định tự đi tìm người đánh rơi.'},need:['Dùng 线索','Dùng 公安局'],
-     sample:'身份证就是最好的线索，不过我们还是把钱包送到公安局去吧，警察能更快找到失主。',samplePy:'Shēnfènzhèng jiù shì zuì hǎo de xiànsuǒ, búguò wǒmen háishi bǎ qiánbāo sòngdào gōng\'ānjú qù ba, jǐngchá néng gèng kuài zhǎodào shīzhǔ.',sampleVn:'Chứng minh thư chính là manh mối tốt nhất, nhưng tụi mình nên mang ví đến sở công an thì hơn, cảnh sát sẽ tìm ra người mất nhanh hơn.',tip:'……就是最好的线索 khẳng định; 不过 + 还是……吧 đưa ra đề nghị khác.'},
-    {scene:'Em họ nhỏ muốn chạy lại vuốt ve một con chó lạ ngoài đường.',a:{sp:'Em họ',zh:'你看那只狗多可爱，我想过去摸摸它。',vn:'Chị xem con chó kia đáng yêu chưa kìa, em muốn lại vuốt nó.'},need:['Dùng 麻痹大意','Dùng 万一'],
-     sample:'不认识的狗千万不能麻痹大意，万一被它咬了，就麻烦了。',samplePy:'Bú rènshi de gǒu qiānwàn bù néng mábì dàyì, wànyī bèi tā yǎo le, jiù máfan le.',sampleVn:'Chó lạ thì tuyệt đối không được chủ quan, lỡ bị nó cắn là phiền lắm đấy.',tip:'千万不能麻痹大意 = tuyệt đối không được lơ là; 万一……就…… = lỡ mà … thì ….'}
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  items: [
+    {scene:'Bạn cùng lớp kể rằng có người quen trên mạng hỏi vay tiền.',a:{sp:'Bạn',zh:'我在网上认识了一个人，他说现在很需要钱，让我先借给他五千块。',vn:'Tớ quen một người trên mạng, anh ta nói bây giờ rất cần tiền, bảo tớ cho vay trước năm nghìn tệ.'},need:['Dùng 慎重','Khuyên bạn hỏi ý kiến người khác'],sample:'这种事千万要慎重。你们只在网上聊过天，连他是谁都不清楚，最好先跟爸妈商量商量再说。',samplePy:'Zhè zhǒng shì qiānwàn yào shènzhòng. Nǐmen zhǐ zài wǎngshang liáoguo tiān, lián tā shì shéi dōu bù qīngchu, zuìhǎo xiān gēn bà mā shāngliang shāngliang zài shuō.',sampleVn:'Chuyện này nhất định phải thận trọng. Hai người chỉ chat trên mạng, đến anh ta là ai còn chưa rõ, tốt nhất bàn với bố mẹ trước rồi hãy tính.',tip:'千万要慎重 = nhất định phải thận trọng; 连……都…… nhấn mạnh; 先……再说 = cứ … trước rồi tính.'},
+    {scene:'Bạn thân lo lắng trước cuộc thi hùng biện ngày mai.',a:{sp:'Bạn thân',zh:'明天就要比赛了，我紧张极了，怕一上台就说不出话来。',vn:'Mai thi rồi, tớ căng thẳng quá, sợ vừa lên sân khấu là không nói được gì.'},need:['Dùng 包袱 hoặc 胆怯','Dùng 沉着'],sample:'别背那么重的包袱，上台以后沉着一点儿，就当是在跟朋友聊天。',samplePy:'Bié bēi nàme zhòng de bāofu, shàngtái yǐhòu chénzhuó yìdiǎnr, jiù dāng shì zài gēn péngyou liáotiān.',sampleVn:'Đừng mang gánh nặng lớn thế, lên sân khấu rồi bình tĩnh một chút, cứ coi như đang nói chuyện với bạn bè.',tip:'别背……包袱 = đừng mang gánh nặng tâm lý; 就当是…… = cứ coi như ….'},
+    {scene:'Nhóm em tranh cãi một tiếng đồng hồ vẫn chưa chọn được đề tài; em đề nghị tạm gác lại.',a:{sp:'Bạn trong nhóm',zh:'这两个题目各有各的好处，我们都吵了一个小时了，还是定不下来。',vn:'Hai đề tài này mỗi cái có cái hay riêng, chúng ta cãi nhau một tiếng rồi mà vẫn chưa quyết được.'},need:['Dùng 暂且'],sample:'这个问题我们暂且放一放，先把资料收集好，明天再做决定吧。',samplePy:'Zhège wèntí wǒmen zànqiě fàng yi fàng, xiān bǎ zīliào shōují hǎo, míngtiān zài zuò juédìng ba.',sampleVn:'Vấn đề này mình tạm gác lại đã, thu thập tài liệu xong rồi mai hãy quyết định.',tip:'暂且 + V一V = tạm cứ … đã; 先……，再…… nói rõ trình tự.'},
+    {scene:'Bạn em nhặt được một chiếc ví, định tự đi tìm người đánh rơi.',a:{sp:'Bạn',zh:'我捡到一个钱包，里面有不少钱，还有一张名片。我想自己去找钱包的主人。',vn:'Tớ nhặt được một cái ví, bên trong có khá nhiều tiền, còn có một tấm danh thiếp. Tớ định tự đi tìm chủ cái ví.'},need:['Dùng 线索','Dùng 公安局'],sample:'名片就是最好的线索，不过我们还是把钱包送到公安局去吧，警察能更快找到钱包的主人。',samplePy:'Míngpiàn jiù shì zuì hǎo de xiànsuǒ, búguò wǒmen háishi bǎ qiánbāo sòngdào gōng\'ānjú qù ba, jǐngchá néng gèng kuài zhǎodào qiánbāo de zhǔrén.',sampleVn:'Danh thiếp chính là manh mối tốt nhất, nhưng tụi mình nên mang ví đến sở công an thì hơn, cảnh sát sẽ tìm ra chủ cái ví nhanh hơn.',tip:'……就是最好的线索 khẳng định; 不过 + 还是……吧 đưa ra đề nghị khác.'},
+    {scene:'Bố mẹ vừa mang về một chú chó con, em trai em sợ chó, không dám lại gần.',a:{sp:'Em trai',zh:'我从小就怕狗，不敢靠近它，它会不会咬我啊？',vn:'Em sợ chó từ nhỏ, không dám lại gần nó, nó có cắn em không?'},need:['Dùng 胆怯','Dùng 信赖'],sample:'别胆怯，它很乖。你每天喂喂它，陪它玩一会儿，过不了多久它就会信赖你了。',samplePy:'Bié dǎnqiè, tā hěn guāi. Nǐ měi tiān wèiwei tā, péi tā wán yíhuìr, guò bu liǎo duō jiǔ tā jiù huì xìnlài nǐ le.',sampleVn:'Đừng sợ, nó ngoan lắm. Mỗi ngày em cho nó ăn, chơi với nó một lúc, chẳng bao lâu nó sẽ tin cậy em thôi.',tip:'别胆怯 = đừng rụt rè sợ hãi; 过不了多久 = chẳng bao lâu; 信赖 + người = tin cậy (thường do gắn bó lâu).'}
   ]
 };
 
 var registerData = {
-  intro:'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
-  items:[
-    {scene:'Phát thanh viên đọc bản tin truyền hình về một vụ phá án.',a:'警方成功破获一起非法贩卖毒品案，当场查获毒品五公斤。',b:'警察抓了几个卖毒品的，找到了好几斤呢！',better:'a',why:'Bản tin dùng văn phong trang trọng, chính xác: 破获, 非法贩卖, 当场查获. Câu b là lời kể chuyện phiếm.'},
-    {scene:'Nói với bạn thân khi bạn bị bố mẹ phạt cấm dùng điện thoại.',a:'你父母此次对你实施的制裁是否过于严厉？',b:'你爸妈这回罚你罚得也太狠了吧？',better:'b',why:'Nói với bạn thân dùng khẩu ngữ: 爸妈, 这回, 罚得太狠了吧. 实施制裁 là từ ngữ pháp luật, quan hệ quốc tế — dùng ở đây nghe như đùa hoặc kỳ quặc.'},
-    {scene:'Thông báo của nhà trường dán ở cửa lớp.',a:'为安全起见，请各位同学不要将贵重物品留在教室内。',b:'东西别乱放啊，丢了可别来找我！',better:'a',why:'Thông báo chính thức dùng 为……起见, 请各位同学, 将……留在…… — lịch sự, trang trọng. Câu b là lời càu nhàu cá nhân.'},
-    {scene:'An ủi em nhỏ đang khóc vì làm mất đồ chơi.',a:'别哭了，姐姐帮你找，一会儿就找到了。',b:'请你停止哭泣，我们将尽快查获你遗失的玩具。',better:'a',why:'Nói với trẻ nhỏ phải thân mật, dễ hiểu. 查获 dùng cho tang vật, tội phạm; 停止哭泣, 遗失 là văn viết — câu b nghe như biên bản của cảnh sát.'},
-    {scene:'Báo cáo công tác bằng văn bản gửi lãnh đạo đơn vị sau chiến dịch.',a:'此次行动部署周密，未出现任何失误。',b:'这回我们安排得挺好的，一点儿错都没出。',better:'a',why:'Báo cáo văn bản dùng 此次, 部署周密, 未出现任何失误 — ngắn gọn, trang trọng. Câu b (挺好的, 一点儿错都没出) là khẩu ngữ.'},
-    {scene:'Kể với bạn cùng lớp về con chó nhà mình.',a:'我家那只狗特别黏我，我一回家它就扑过来舔我的手。',b:'本犬对主人之忠诚程度极高，每逢主人归来即扑上前舔舐。',better:'a',why:'Trò chuyện với bạn dùng khẩu ngữ: 特别黏我, 一……就……. Câu b (本犬, 之, 每逢……即……, 舔舐) là văn viết cổ, nghe rất gượng.'}
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
+  items: [
+    {scene:'Bài văn của em mở đầu bằng câu 「我小时候最怕狗」. Em chọn câu kết nào?',a:'总之，我觉得猫是最可爱的动物。',b:'现在，我不但不怕狗了，还成了狗的好朋友。',better:'b',why:'Kết bài quay lại đúng chuyện ở mở bài (sợ chó → hết sợ) — chiếu ứng đầu cuối, bài văn liền mạch. Câu a nói sang con mèo chưa hề nhắc tới, lạc đề.'},
+    {scene:'Truyện ngắn của em: cuối truyện, ông hàng xóm là cảnh sát về hưu giúp bắt được tên trộm. Câu nào nên có ở đầu truyện?',a:'我家对面住着一位退休的老警察，每天早上都在楼下散步。',b:'我家住在一个很普通的小区里，楼下有一个小花园。',better:'a',why:'Nhân vật giải quyết vấn đề ở cuối phải được "cài" từ trước (chiếu ứng trước – sau), người đọc mới thấy hợp lý. Câu b không chuẩn bị gì cho đoạn kết.'},
+    {scene:'Phát thanh viên đọc bản tin truyền hình về một vụ phá án.',a:'警察抓了几个卖毒品的，找到了好几斤呢！',b:'警察成功破获一起非法贩卖毒品的案件，当场查获毒品五公斤。',better:'b',why:'Bản tin dùng văn phong trang trọng, chính xác: 破获, 非法贩卖, 当场查获. Câu a (抓了几个卖毒品的, 呢) là lời kể chuyện phiếm.'},
+    {scene:'Nói với bạn thân khi bạn bị bố mẹ cấm dùng điện thoại.',a:'你父母此次对你实施的制裁是否过于严厉？',b:'你爸妈这回管你管得也太多了吧？',better:'b',why:'Nói với bạn thân dùng khẩu ngữ: 爸妈, 这回, 管得也太多了吧. 实施制裁 là từ của pháp luật, quan hệ quốc tế — dùng ở đây nghe kỳ quặc.'},
+    {scene:'An ủi em nhỏ đang khóc vì làm mất đồ chơi.',a:'别哭了，姐姐帮你找，一会儿就找到了。',b:'小朋友请停止哭泣，我们将尽快查获你丢的东西。',better:'a',why:'Nói với trẻ nhỏ phải thân mật, dễ hiểu. 查获 dùng cho tang vật, tội phạm; 停止哭泣, 将尽快 là văn viết — câu b nghe như biên bản của cảnh sát.'},
+    {scene:'Báo cáo công tác bằng văn bản gửi lãnh đạo sau chiến dịch.',a:'此次行动部署周密，没有出现任何失误。',b:'这回我们安排得挺好的，一点儿错都没出。',better:'a',why:'Báo cáo văn bản dùng 此次, 部署周密, 没有出现任何失误 — ngắn gọn, trang trọng. Câu b (挺好的, 一点儿错都没出) là khẩu ngữ.'}
   ]
 };
 

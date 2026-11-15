@@ -5661,1103 +5661,81 @@ var hvBridgeData = {
 };
 
 var matchData = [
- {
-  "left": "睡觉只是",
-  "right": "惯例"
- },
- {
-  "left": "患有顽固",
-  "right": "失眠症"
- },
- {
-  "left": "睡觉成了难得的",
-  "right": "奢侈"
- },
- {
-  "left": "中国发布的睡眠",
-  "right": "指数"
- },
- {
-  "left": "超过36.2%的",
-  "right": "居民"
- },
- {
-  "left": "扰乱着人们的",
-  "right": "情绪"
- },
- {
-  "left": "摧残着城市人群的",
-  "right": "健康"
- },
- {
-  "left": "手机和平板电脑的",
-  "right": "普及"
- },
- {
-  "left": "睡前上网的习惯日渐",
-  "right": "盛行"
- },
- {
-  "left": "影响了褪黑素的正常",
-  "right": "分泌"
- },
- {
-  "left": "增强人体",
-  "right": "免疫力"
- },
- {
-  "left": "人体细胞组织和",
-  "right": "器官"
- },
- {
-  "left": "包括恶性",
-  "right": "肿瘤"
- },
- {
-  "left": "专治睡眠障碍的医生总是",
-  "right": "供不应求"
- },
- {
-  "left": "翻来覆去瞎",
-  "right": "折腾"
- },
- {
-  "left": "一会儿蹬腿，一会儿挥",
-  "right": "拳头"
- },
- {
-  "left": "行为能力偏离正常",
-  "right": "轨道"
- },
- {
-  "left": "血液中酒精",
-  "right": "浓度"
- },
- {
-  "left": "在不适宜的场合引发",
-  "right": "事故"
- },
- {
-  "left": "老司机把车开上了",
-  "right": "逆行道"
- },
- {
-  "left": "情绪起伏",
-  "right": "不定"
- },
- {
-  "left": "健康状况逐步",
-  "right": "恶化"
- },
- {
-  "left": "进而诱发慢性",
-  "right": "疾病"
- },
- {
-  "left": "不要对失眠症状",
-  "right": "无动于衷"
- },
- {
-  "left": "根据不同情况竭尽全力进行",
-  "right": "治疗"
- }
+  {left:'纠正',right:'错误'},
+  {left:'普及',right:'知识'},
+  {left:'偏离',right:'轨道'},
+  {left:'慢性',right:'疾病'},
+  {left:'正式的',right:'场合'},
+  {left:'竭尽',right:'全力'},
+  {left:'表情',right:'茫然'},
+  {left:'心情',right:'起伏'},
+  {left:'举足',right:'轻重'}
 ];
 
 var fillData = [
- {
-  "pre": "按照",
-  "blank": "惯例",
-  "post": "，新生入学第一天都要参加开学典礼。",
-  "hint": "(lệ thường)",
-  "ans": "惯例"
- },
- {
-  "pre": "这种",
-  "blank": "顽固",
-  "post": "的咳嗽已经持续一个多月了。",
-  "hint": "(dai dẳng, khó chữa)",
-  "ans": "顽固"
- },
- {
-  "pre": "他挣得不多，却总买名牌，生活太",
-  "blank": "奢侈",
-  "post": "了。",
-  "hint": "(xa xỉ)",
-  "ans": "奢侈"
- },
- {
-  "pre": "今天的紫外线",
-  "blank": "指数",
-  "post": "很高，出门记得涂防晒霜。",
-  "hint": "(chỉ số)",
-  "ans": "指数"
- },
- {
-  "pre": "小区",
-  "blank": "居民",
-  "post": "纷纷要求物业解决停车难的问题。",
-  "hint": "(cư dân)",
-  "ans": "居民"
- },
- {
-  "pre": "",
-  "blank": "当前",
-  "post": "最要紧的是把身体养好，别的事以后再说。",
-  "hint": "(trước mắt, hiện nay)",
-  "ans": "当前"
- },
- {
-  "pre": "他在考场上大声喧哗，",
-  "blank": "扰乱",
-  "post": "了考试秩序。",
-  "hint": "(làm rối loạn)",
-  "ans": "扰乱"
- },
- {
-  "pre": "长期的战乱严重",
-  "blank": "摧残",
-  "post": "了这里人民的身心健康。",
-  "hint": "(tàn phá)",
-  "ans": "摧残"
- },
- {
-  "pre": "随着智能手机的",
-  "blank": "普及",
-  "post": "，网上购物越来越方便了。",
-  "hint": "(sự phổ cập)",
-  "ans": "普及"
- },
- {
-  "pre": "近几年，短视频在年轻人中十分",
-  "blank": "盛行",
-  "post": "。",
-  "hint": "(thịnh hành)",
-  "ans": "盛行"
- },
- {
-  "pre": "这家店的火锅又麻又辣，吃起来真",
-  "blank": "过瘾",
-  "post": "！",
-  "hint": "(đã, thoả thích)",
-  "ans": "过瘾"
- },
- {
-  "pre": "人在紧张的时候，身体会",
-  "blank": "分泌",
-  "post": "一种特殊的激素。",
-  "hint": "(tiết ra)",
-  "ans": "分泌"
- },
- {
-  "pre": "政府的",
-  "blank": "职能",
-  "post": "之一是为老百姓提供公共服务。",
-  "hint": "(chức năng)",
-  "ans": "职能"
- },
- {
-  "pre": "科学家一直在研究怎样延缓人体",
-  "blank": "衰老",
-  "post": "。",
-  "hint": "(già đi, lão hoá)",
-  "ans": "衰老"
- },
- {
-  "pre": "工作之余种种花、养养鱼，可以",
-  "blank": "调剂",
-  "post": "一下生活。",
-  "hint": "(điều hoà, đổi không khí)",
-  "ans": "调剂"
- },
- {
-  "pre": "我从小就没有音乐",
-  "blank": "细胞",
-  "post": "，唱歌总跑调。",
-  "hint": "(năng khiếu — nghĩa bóng)",
-  "ans": "细胞"
- },
- {
-  "pre": "体检时医生在他的肺部发现了一个小",
-  "blank": "肿瘤",
-  "post": "。",
-  "hint": "(khối u)",
-  "ans": "肿瘤"
- },
- {
-  "pre": "医学的进步让很多",
-  "blank": "癌症",
-  "post": "病人延长了生命。",
-  "hint": "(ung thư)",
-  "ans": "癌症"
- },
- {
-  "pre": "这款新手机质量好、价格低，一上市就",
-  "blank": "供不应求",
-  "post": "。",
-  "hint": "(cung không đủ cầu)",
-  "ans": "供不应求"
- },
- {
-  "pre": "睡觉时",
-  "blank": "枕头",
-  "post": "不宜太高，否则第二天脖子会疼。",
-  "hint": "(cái gối)",
-  "ans": "枕头"
- },
- {
-  "pre": "为了办签证，他来来回回",
-  "blank": "折腾",
-  "post": "了好几趟。",
-  "hint": "(chạy đi chạy lại, vật vã)",
-  "ans": "折腾"
- },
- {
-  "pre": "他一次又一次地撒谎，我再也无法",
-  "blank": "容忍",
-  "post": "了。",
-  "hint": "(dung thứ)",
-  "ans": "容忍"
- },
- {
-  "pre": "女儿睡觉不老实，总是把被子",
-  "blank": "蹬",
-  "post": "到地上。",
-  "hint": "(đạp)",
-  "ans": "蹬"
- },
- {
-  "pre": "他气得握紧了",
-  "blank": "拳头",
-  "post": "，脸都红了。",
-  "hint": "(nắm đấm)",
-  "ans": "拳头"
- },
- {
-  "pre": "走在海边，",
-  "blank": "不时",
-  "post": "能听到海鸥的叫声。",
-  "hint": "(chốc chốc, thỉnh thoảng)",
-  "exp": "不时 = chốc chốc, thỉnh thoảng lại: 不时能听到….",
-  "ans": "不时"
- },
- {
-  "pre": "你最近",
-  "blank": "气色",
-  "post": "不错，是不是有什么好事？",
-  "hint": "(khí sắc)",
-  "ans": "气色"
- },
- {
-  "pre": "经过一段时间的调整，他的学习重新走上了正常",
-  "blank": "轨道",
-  "post": "。",
-  "hint": "(quỹ đạo, nề nếp)",
-  "ans": "轨道"
- },
- {
-  "pre": "医生先用",
-  "blank": "酒精",
-  "post": "给伤口消毒，然后包扎好。",
-  "hint": "(cồn)",
-  "ans": "酒精"
- },
- {
-  "pre": "这两款手机的性能",
-  "blank": "不相上下",
-  "post": "，就看你喜欢哪个颜色了。",
-  "hint": "(ngang nhau)",
-  "ans": "不相上下"
- },
- {
-  "pre": "这种花喜欢阴凉，不",
-  "blank": "适宜",
-  "post": "放在阳光下直射。",
-  "hint": "(thích hợp)",
-  "ans": "适宜"
- },
- {
-  "pre": "在正式",
-  "blank": "场合",
-  "post": "穿拖鞋是很不礼貌的。",
-  "hint": "(dịp, hoàn cảnh)",
-  "ans": "场合"
- },
- {
-  "pre": "这条是单行道，骑车",
-  "blank": "逆行",
-  "post": "很容易出事故。",
-  "hint": "(đi ngược chiều)",
-  "ans": "逆行"
- },
- {
-  "pre": "听到这个问题，他",
-  "blank": "茫然",
-  "post": "地摇了摇头。",
-  "hint": "(ngơ ngác)",
-  "ans": "茫然"
- },
- {
-  "pre": "他做事总是",
-  "blank": "丢三落四",
-  "post": "的，昨天又把钥匙忘在办公室了。",
-  "hint": "(quên trước quên sau)",
-  "ans": "丢三落四"
- },
- {
-  "pre": "成绩公布前，她的心情一直",
-  "blank": "起伏",
-  "post": "不定。",
-  "hint": "(lên xuống)",
-  "ans": "起伏"
- },
- {
-  "pre": "他一个人坐在窗前",
-  "blank": "发呆",
-  "post": "，不知道在想什么。",
-  "hint": "(ngẩn người)",
-  "ans": "发呆"
- },
- {
-  "pre": "我的",
-  "blank": "记性",
-  "post": "越来越差了，刚放下的手机转眼就找不到了。",
-  "hint": "(trí nhớ)",
-  "ans": "记性"
- },
- {
-  "pre": "他们俩的关系已经到了无法挽回的",
-  "blank": "地步",
-  "post": "。",
-  "hint": "(mức, nông nỗi)",
-  "ans": "地步"
- },
- {
-  "pre": "突然停电，商场里一片",
-  "blank": "混乱",
-  "post": "。",
-  "hint": "(hỗn loạn)",
-  "ans": "混乱"
- },
- {
-  "pre": "由于没有及时治疗，他的病情进一步",
-  "blank": "恶化",
-  "post": "了。",
-  "hint": "(chuyển biến xấu)",
-  "ans": "恶化"
- },
- {
-  "pre": "高血压是一种常见的",
-  "blank": "慢性",
-  "post": "病。",
-  "hint": "(mãn tính)",
-  "ans": "慢性"
- },
- {
-  "pre": "",
-  "blank": "总而言之",
-  "post": "，只有养成良好的作息习惯，才能睡个好觉。",
-  "hint": "(tóm lại)",
-  "exp": "总而言之 = tóm lại, nói tóm lại (tổng kết, văn viết).",
-  "ans": "总而言之"
- },
- {
-  "pre": "他在公司里是一个",
-  "blank": "举足轻重",
-  "post": "的人物，老板很信任他。",
-  "hint": "(có ảnh hưởng lớn)",
-  "ans": "举足轻重"
- },
- {
-  "pre": "专家",
-  "blank": "呼吁",
-  "post": "中小学生每天至少睡够九个小时。",
-  "hint": "(kêu gọi)",
-  "ans": "呼吁"
- },
- {
-  "pre": "看到老人摔倒，周围的人却",
-  "blank": "无动于衷",
-  "post": "，真让人心寒。",
-  "hint": "(thờ ơ, dửng dưng)",
-  "ans": "无动于衷"
- },
- {
-  "pre": "为了挽救病人的生命，医生们",
-  "blank": "竭尽全力",
-  "post": "地进行抢救。",
-  "hint": "(dốc hết sức)",
-  "ans": "竭尽全力"
- },
- {
-  "pre": "要解决问题，首先要找到问题的",
-  "blank": "根源",
-  "post": "。",
-  "hint": "(căn nguyên)",
-  "ans": "根源"
- },
- {
-  "pre": "这个孩子特别调皮，老师也很难",
-  "blank": "对付",
-  "post": "他。",
-  "hint": "(đối phó)",
-  "ans": "对付"
- },
- {
-  "pre": "老师发现了我的语法错误，马上帮我",
-  "blank": "纠正",
-  "post": "了。",
-  "hint": "(sửa, uốn nắn)",
-  "ans": "纠正"
- },
- {
-  "pre": "吃不完就打包带走，别",
-  "blank": "糟蹋",
-  "post": "粮食。",
-  "hint": "(lãng phí)",
-  "ans": "糟蹋"
- },
- {
-  "pre": "电影讲述了一位科学家受到",
-  "blank": "迫害",
-  "post": "后仍坚持研究的故事。",
-  "hint": "(bức hại)",
-  "ans": "迫害"
- },
- {
-  "pre": "一场大地震几乎",
-  "blank": "毁灭",
-  "post": "了整个小镇。",
-  "hint": "(huỷ diệt)",
-  "ans": "毁灭"
- }
+  {pre:'按照公司的',blank:'惯例',post:'，新员工第一天上班要先做自我介绍。',hint:'(thông lệ)',ans:'惯例',exp:'惯例 = thông lệ, cách làm đã thành lệ từ lâu (按照惯例 / 公司的惯例). 习惯 là thói quen của một người, không nói ×公司的习惯.'},
+  {pre:'今天的空气质量',blank:'指数',post:'超过了两百，最好别去外面跑步。',hint:'(chỉ số)',ans:'指数',exp:'空气质量指数 = chỉ số chất lượng không khí; 指数 là con số đo mức độ (睡眠指数, 幸福指数).'},
+  {pre:'这个小区的',blank:'居民',post:'大多是退休的老人，白天很安静。',hint:'(cư dân)',ans:'居民',exp:'居民 = người dân sống ở một khu vực (小区的居民, 城市居民). 人民 là "nhân dân" (cả nước, mang nghĩa chính trị), không đi với 小区.'},
+  {pre:'人在压力很大的时候，体内会',blank:'分泌',post:'一些让人紧张的物质。',hint:'(tiết ra)',ans:'分泌',exp:'分泌 = (cơ thể) tiết ra chất gì; chủ ngữ là cơ thể / tuyến / tế bào. Không dùng 排出 vì đó là "thải ra ngoài".'},
+  {pre:'这个部门的主要',blank:'职能',post:'是为附近的居民提供服务。',hint:'(chức năng, nhiệm vụ)',ans:'职能',exp:'职能 = chức năng, nhiệm vụ của một cơ quan / bộ phận (văn viết). 功能 dùng cho máy móc, đồ vật (手机的功能).'},
+  {pre:'经常熬夜会让皮肤',blank:'衰老',post:'得更快。',hint:'(lão hoá, già đi)',ans:'衰老',exp:'衰老 = già yếu đi, lão hoá (cơ thể, da, tế bào); động từ nên có thể nói 衰老得更快. 老 đơn lẻ ít dùng với bổ ngữ 得更快 trong văn viết.'},
+  {pre:'工作累了一个星期，周末去公园走走，正好',blank:'调剂',post:'一下紧张的生活。',hint:'(điều hoà)',ans:'调剂',exp:'调剂 = điều hoà cho cân bằng (调剂生活 / 调剂心情). 调整 thiên về sửa lại kế hoạch, giờ giấc cho hợp lý.'},
+  {pre:'这种饮料里有',blank:'酒精',post:'，开车的人千万别喝。',hint:'(cồn)',ans:'酒精',exp:'酒精 = cồn (trong rượu bia, thuốc sát trùng). 酒 là rượu nói chung; muốn nói thành phần có trong đồ uống thì dùng 酒精.'},
+  {pre:'这里一年到头都不冷不热，气候',blank:'适宜',post:'，很多老人冬天都来这儿住。',hint:'(thích hợp, dễ chịu)',ans:'适宜',exp:'适宜 = thích hợp (văn viết), hay đi với 气候 / 温度. Không thay bằng 合适 ở đây: 合适 nói đồ vật vừa, người phù hợp (衣服很合适).'},
+  {pre:'两个人谁也不愿意先道歉，结果关系糟糕到了见面都不说话的',blank:'地步',post:'。',hint:'(mức, tình trạng (xấu))',ans:'地步',exp:'到了……的地步 = đến mức (thường là tình cảnh xấu). 程度 trung tính (达到……的程度); 地步 mang sắc thái tiêu cực.'},
+  {pre:'吵架只能解决表面的问题，要想真正和好，还得找到矛盾的',blank:'根源',post:'。',hint:'(căn nguyên)',ans:'根源',exp:'根源 = nguồn gốc sâu xa của vấn đề (矛盾的根源, 问题的根源). 来源 là nơi đến của thông tin, tiền bạc (收入来源).'},
+  {pre:'这部电影讲的是一位科学家受到',blank:'迫害',post:'以后，不得不离开家乡的故事。',hint:'(bức hại)',ans:'迫害',exp:'受到迫害 = bị bức hại (thường do thế lực, chính quyền gây ra; rất nặng). 伤害 = làm tổn thương nói chung, nhẹ hơn nhiều.'},
+  {pre:'老王在这家公司工作了三十年，说话很有分量，可以说是',blank:'举足轻重',post:'的人物。',hint:'(có sức ảnh hưởng lớn)',ans:'举足轻重',exp:'举足轻重 = giữ vị trí then chốt, một động tác cũng ảnh hưởng toàn cục; làm định ngữ: 举足轻重的人物 / 作用.'},
+  {pre:'他解释了半天，',blank:'总而言之',post:'就是不想跟我们一起去。',hint:'(tóm lại)',ans:'总而言之',exp:'总而言之 = tóm lại, đặt đầu vế tổng kết sau khi đã nói nhiều ý (解释了半天 → 总而言之就是…… = nói tóm lại là …). Không dùng 比如说 (nêu ví dụ) hay 换句话说 (bài 16, nói cách khác).'},
+  {pre:'考试的时候他很紧张，',blank:'不时',post:'抬头看看墙上的钟。',hint:'(chốc chốc, thỉnh thoảng)',ans:'不时',exp:'不时 + V = chốc chốc lại làm (lặp lại nhiều lần trong một khoảng thời gian). 及时 = kịp thời; 有时 không nhấn sự lặp đi lặp lại liên tục trong lúc thi.'}
 ];
 
 var sortData = [
- {
-  "words": [
-   "窗外",
-   "不时",
-   "传来",
-   "几声",
-   "鸟叫",
-   "。"
-  ],
-  "ans": "窗外不时传来几声鸟叫。",
-  "audio": "窗外不时传来几声鸟叫。"
- },
- {
-  "words": [
-   "他",
-   "一边",
-   "走",
-   "，",
-   "一边",
-   "不时",
-   "向身后",
-   "张望",
-   "。"
-  ],
-  "ans": "他一边走，一边不时向身后张望。",
-  "audio": "他一边走，一边不时向身后张望。"
- },
- {
-  "words": [
-   "会场上",
-   "不时",
-   "有人",
-   "提出",
-   "各种各样的",
-   "问题",
-   "。"
-  ],
-  "ans": "会场上不时有人提出各种各样的问题。",
-  "audio": "会场上不时有人提出各种各样的问题。"
- },
- {
-  "words": [
-   "走在街上",
-   "，",
-   "阵阵",
-   "桂花香",
-   "不时",
-   "扑面而来",
-   "。"
-  ],
-  "ans": "走在街上，阵阵桂花香不时扑面而来。",
-  "audio": "走在街上，阵阵桂花香不时扑面而来。"
- },
- {
-  "words": [
-   "虽然",
-   "没什么胃口",
-   "，",
-   "但我",
-   "多多少少",
-   "还是",
-   "吃了一点儿",
-   "。"
-  ],
-  "ans": "虽然没什么胃口，但我多多少少还是吃了一点儿。",
-  "audio": "虽然没什么胃口，但我多多少少还是吃了一点儿。"
- },
- {
-  "words": [
-   "这点儿钱",
-   "数量不多",
-   "，",
-   "多多少少",
-   "是个",
-   "意思",
-   "。"
-  ],
-  "ans": "这点儿钱数量不多，多多少少是个意思。",
-  "audio": "这点儿钱数量不多，多多少少是个意思。"
- },
- {
-  "words": [
-   "导致问题的根源",
-   "多多少少",
-   "与",
-   "不健康的生活方式",
-   "有关",
-   "。"
-  ],
-  "ans": "导致问题的根源多多少少与不健康的生活方式有关。",
-  "audio": "导致问题的根源多多少少与不健康的生活方式有关。"
- },
- {
-  "words": [
-   "离开父母",
-   "多多少少",
-   "还是",
-   "让自己",
-   "有些感伤",
-   "。"
-  ],
-  "ans": "离开父母多多少少还是让自己有些感伤。",
-  "audio": "离开父母多多少少还是让自己有些感伤。"
- },
- {
-  "words": [
-   "睡眠不足",
-   "会",
-   "使人",
-   "气色",
-   "不好",
-   "。"
-  ],
-  "ans": "睡眠不足会使人气色不好。",
-  "audio": "睡眠不足会使人气色不好。"
- },
- {
-  "words": [
-   "总而言之",
-   "，",
-   "睡眠好坏",
-   "对人体健康",
-   "举足轻重",
-   "。"
-  ],
-  "ans": "总而言之，睡眠好坏对人体健康举足轻重。",
-  "audio": "总而言之，睡眠好坏对人体健康举足轻重。"
- },
- {
-  "words": [
-   "不要",
-   "对失眠症状",
-   "无动于衷",
-   "，",
-   "要",
-   "弄清",
-   "病因",
-   "。"
-  ],
-  "ans": "不要对失眠症状无动于衷，要弄清病因。",
-  "audio": "不要对失眠症状无动于衷，要弄清病因。"
- },
- {
-  "words": [
-   "在中国",
-   "专治睡眠障碍的医生",
-   "总是",
-   "供不应求",
-   "。"
-  ],
-  "ans": "在中国专治睡眠障碍的医生总是供不应求。",
-  "audio": "在中国专治睡眠障碍的医生总是供不应求。"
- },
- {
-  "words": [
-   "我",
-   "跟他的",
-   "成绩",
-   "不相上下",
-   "。"
-  ],
-  "ans": "我跟他的成绩不相上下。",
-  "audio": "我跟他的成绩不相上下。"
- }
+  {words:['楼下','不时','传来','孩子们的','笑声','。'],ans:'楼下不时传来孩子们的笑声。',audio:'楼下不时传来孩子们的笑声。'},
+  {words:['他的失眠','多多少少','与工作压力','有关','。'],ans:'他的失眠多多少少与工作压力有关。',audio:'他的失眠多多少少与工作压力有关。'},
+  {words:['他','把','枕头','放在了','床的','另一头','。'],ans:'他把枕头放在了床的另一头。',audio:'他把枕头放在了床的另一头。'},
+  {words:['奶奶的','记性','比','以前','差多了','。'],ans:'奶奶的记性比以前差多了。',audio:'奶奶的记性比以前差多了。'},
+  {words:['他','说话的','声音','大得','让人','无法','容忍','。'],ans:'他说话的声音大得让人无法容忍。',audio:'他说话的声音大得让人无法容忍。'},
+  {words:['弟弟','总是','把','被子','蹬到','地上','。'],ans:'弟弟总是把被子蹬到地上。',audio:'弟弟总是把被子蹬到地上。'},
+  {words:['他','气得','举起了','拳头','，','可','又','放下了','。'],ans:'他气得举起了拳头，可又放下了。',audio:'他气得举起了拳头，可又放下了。'},
+  {words:['这种','新药','一直','供不应求','。'],ans:'这种新药一直供不应求。',audio:'这种新药一直供不应求。'}
 ];
 
 var errorFixMode = "wordchoice";
 
 var errorFixData = [
- {
-  "wrong": "他的傲慢态度让人实在不能____。",
-  "opts": [
-   "容忍",
-   "纠正",
-   "对付",
-   "普及"
-  ],
-  "ans": 0,
-  "exp": "不能容忍 + thái độ / hành vi của người khác (ví dụ chung của 词语辨析). 纠正 = sửa, 对付 = đối phó, 普及 = phổ cập — không hợp nghĩa."
- },
- {
-  "wrong": "这里炎热的天气让人无法____。",
-  "opts": [
-   "容忍",
-   "忍受",
-   "适宜",
-   "呼吁"
-  ],
-  "ans": 1,
-  "exp": "Thời tiết nóng bức là hoàn cảnh phải gắng chịu → 忍受 (phạm vi rộng). 容忍 chỉ dùng với hành vi của người khác: ×容忍炎热的天气."
- },
- {
-  "wrong": "老师耐心地帮我____发音。",
-  "opts": [
-   "改正",
-   "对付",
-   "纠正",
-   "毁灭"
-  ],
-  "ans": 2,
-  "exp": "Người khác uốn nắn phát âm cho mình → 纠正发音. 改正 thường là tự sửa lỗi (改正错误), không nói ×改正发音."
- },
- {
-  "wrong": "这件衣服的颜色很____你。",
-  "opts": [
-   "适宜",
-   "场合",
-   "恶化",
-   "适合"
-  ],
-  "ans": 3,
-  "exp": "Tân ngữ chỉ NGƯỜI (你) → động từ 适合. 适宜 là tính từ văn viết, ít mang tân ngữ chỉ người."
- },
- {
-  "wrong": "春天温度____，最适合全家出去旅游。",
-  "opts": [
-   "适宜",
-   "适合",
-   "起伏",
-   "盛行"
-  ],
-  "ans": 0,
-  "exp": "温度适宜: tính từ làm vị ngữ độc lập. 适合 là động từ, cần tân ngữ (×温度适合)."
- },
- {
-  "wrong": "由于没有及时治疗，他的病情____了。",
-  "opts": [
-   "普及",
-   "恶化",
-   "衰老",
-   "盛行"
-  ],
-  "ans": 1,
-  "exp": "病情恶化 = bệnh tình trở nặng. 衰老 nói về cơ thể già đi, không đi với 病情."
- },
- {
-  "wrong": "医生____大家不要对失眠症状无动于衷。",
-  "opts": [
-   "呼吁",
-   "呼叫",
-   "吸引",
-   "扰乱"
-  ],
-  "ans": 0,
-  "exp": "呼吁 + người + V = kêu gọi ai làm / đừng làm gì (câu bài khoá). 呼叫 = gọi (qua bộ đàm), 吸引 = thu hút."
- },
- {
-  "wrong": "手机的____改变了人们的生活方式。",
-  "opts": [
-   "盛行",
-   "指数",
-   "普及",
-   "职能"
-  ],
-  "ans": 2,
-  "exp": "N + 的普及 = sự phổ cập của … (练习2 ②). 盛行 thường dùng cho phong khí, thói quen, không làm danh từ sau 的 kiểu này."
- },
- {
-  "wrong": "他在公共____大声打电话，很不礼貌。",
-  "opts": [
-   "场合",
-   "场面",
-   "地步",
-   "轨道"
-  ],
-  "ans": 0,
-  "exp": "公共场合 = nơi công cộng. 场面 = cảnh tượng (热闹的场面), 地步 = mức, nông nỗi."
- },
- {
-  "wrong": "事情怎么会发展到这种____？",
-  "opts": [
-   "地方",
-   "场合",
-   "轨道",
-   "地步"
-  ],
-  "ans": 3,
-  "exp": "发展到这种地步 = đến nông nỗi này; 地步 chỉ mức độ / tình cảnh (thường xấu). 地方 chỉ nơi chốn cụ thể."
- },
- {
-  "wrong": "不法商贩的行为____了社会的正常秩序。",
-  "opts": [
-   "打扰",
-   "扰乱",
-   "摧残",
-   "糟蹋"
-  ],
-  "ans": 1,
-  "exp": "扰乱秩序 = làm rối loạn trật tự (练习2 ①). 打扰 là làm phiền một người cụ thể (打扰你了)."
- },
- {
-  "wrong": "吃多少盛多少，别____粮食。",
-  "opts": [
-   "迫害",
-   "毁灭",
-   "糟蹋",
-   "摧残"
-  ],
-  "ans": 2,
-  "exp": "糟蹋粮食 = phí phạm lương thực. 迫害 dùng với người, 毁灭 / 摧残 nghĩa quá nặng."
- },
- {
-  "wrong": "这种新产品一上市就____，很多人都买不到。",
-  "opts": [
-   "供不应求",
-   "不相上下",
-   "举足轻重",
-   "无动于衷"
-  ],
-  "ans": 0,
-  "exp": "Hàng không đủ bán, nhiều người không mua được → 供不应求 (cung không đủ cầu)."
- },
- {
-  "wrong": "两个队的实力____，比赛非常激烈。",
-  "opts": [
-   "供不应求",
-   "丢三落四",
-   "竭尽全力",
-   "不相上下"
-  ],
-  "ans": 3,
-  "exp": "Thực lực ngang nhau → 实力不相上下 (练习2 ⑤)."
- },
- {
-  "wrong": "他总是____的，不是忘带钥匙就是忘带手机。",
-  "opts": [
-   "茫然",
-   "丢三落四",
-   "混乱",
-   "起伏"
-  ],
-  "ans": 1,
-  "exp": "Hay quên đồ → 丢三落四. 不是……就是…… = không … thì … (ôn HSK 4)."
- },
- {
-  "wrong": "走在海边，____能听到海鸥的叫声。",
-  "opts": [
-   "当前",
-   "多多少少",
-   "不时",
-   "总而言之"
-  ],
-  "ans": 2,
-  "exp": "不时 + V = chốc chốc lại … (Chú thích 1): âm thanh lặp lại trong một quãng thời gian ngắn."
- },
- {
-  "wrong": "虽然没什么胃口，但我____还是吃了一点儿。",
-  "opts": [
-   "不时",
-   "当前",
-   "多多少少",
-   "不相上下"
-  ],
-  "ans": 2,
-  "exp": "多多少少 = ít nhiều (Chú thích 2, 练习2 ⑥): không muốn ăn nhưng vẫn ăn một ít."
- },
- {
-  "wrong": "____，睡眠好坏对人体健康举足轻重。",
-  "opts": [
-   "此外",
-   "继而",
-   "进而",
-   "总而言之"
-  ],
-  "ans": 3,
-  "exp": "总而言之 là thành phần liên kết chỉ quan hệ TỔNG KẾT (篇章修辞). 此外 = ngoài ra (mở rộng), 继而 / 进而 = tiếp đó (nối tiếp, tăng tiến)."
- },
- {
-  "wrong": "长期熬夜会使人记性越来越差，____诱发慢性疾病。",
-  "opts": [
-   "总而言之",
-   "进而",
-   "此外",
-   "可见"
-  ],
-  "ans": 1,
-  "exp": "进而 = rồi tiến thêm một bước (mức nặng hơn) — nối tiếp các giai đoạn của bệnh (篇章修辞 例1)."
- },
- {
-  "wrong": "你最近____不太好，是不是没睡好？",
-  "opts": [
-   "记性",
-   "职能",
-   "根源",
-   "气色"
-  ],
-  "ans": 3,
-  "exp": "气色不好 = sắc mặt kém, trông không khoẻ — hậu quả của thiếu ngủ (bài khoá)."
- }
+  {wrong:'这场球赛太精彩了，看得真____！',opts:['过瘾','满足','舒适','合适'],ans:0,exp:'过瘾 = đã, thoả thích (xem, ăn, chơi … cho đã). 满足 cần tân ngữ hoặc chủ thể "hài lòng"; 舒适 tả môi trường dễ chịu; 合适 = vừa, phù hợp.'},
+  {wrong:'学校请医生来做讲座，向学生____健康知识。',opts:['普及','盛行','流行','流传'],ans:0,exp:'普及 + tri thức = phổ cập, làm cho nhiều người biết (ngoại động từ). 盛行 / 流行 / 流传 là nội động từ, không mang tân ngữ 健康知识.'},
+  {wrong:'人类要是再这样破坏环境下去，最终会____自己。',opts:['毁灭','消失','损坏','衰老'],ans:0,exp:'毁灭 + đối tượng = huỷ diệt (人类会毁灭自己). 消失 là nội động từ (biến mất), không mang tân ngữ; 损坏 dùng cho đồ vật; 衰老 = già đi.'},
+  {wrong:'长期熬夜正在一点点地____他的身体。',opts:['摧残','迫害','纠正','调剂'],ans:0,exp:'摧残 = tàn phá, huỷ hoại dần (sức khoẻ, tinh thần). 迫害 là người / thế lực bức hại con người; 纠正 = sửa lỗi; 调剂 = điều hoà.'},
+  {wrong:'别把吃不完的饭倒掉，这样____粮食太可惜了。',opts:['糟蹋','毁灭','迫害','摧残'],ans:0,exp:'糟蹋粮食 = phí phạm lương thực (khẩu ngữ, sắc thái trách). 毁灭 quá nặng (huỷ diệt); 迫害 / 摧残 dùng cho con người, sức khoẻ.'},
+  {wrong:'肚子疼得让人难以____，他半夜就去了医院。',opts:['忍受','容忍','宽容','原谅'],ans:0,exp:'Chịu đựng nỗi đau thể xác → 忍受. 容忍 = dung thứ hành vi của người khác; 宽容 = rộng lượng với người; 原谅 = tha thứ. Ôn 难以 (bài 14).'},
+  {wrong:'这两个队实力____，谁输谁赢很难说。',opts:['不相上下','举足轻重','供不应求','丢三落四'],ans:0,exp:'不相上下 = ngang ngửa, không phân cao thấp (so sánh hai bên). 举足轻重 = có ảnh hưởng lớn; 供不应求 = cung không đủ cầu; 丢三落四 = hay quên.'},
+  {wrong:'____最重要的是把病治好，别的以后再说。',opts:['当前','当时','从前','当初'],ans:0,exp:'当前 = hiện nay, trước mắt (lúc đang nói). 当时 / 当初 chỉ lúc ấy trong quá khứ; 从前 = ngày xưa.'},
+  {wrong:'老师讲了半天，他还是一脸____，看来根本没听懂。',opts:['茫然','发呆','混乱','起伏'],ans:0,exp:'一脸茫然 = mặt ngơ ngác, không hiểu gì. 发呆 là động từ li hợp (在发呆), không đứng sau 一脸; 混乱 = hỗn loạn; 起伏 = lên xuống.'},
+  {wrong:'孩子写字的姿势不对，妈妈每次都会耐心地帮他____。',opts:['纠正','改善','修改','修理'],ans:0,exp:'纠正 = uốn nắn cái sai của người khác (姿势, 错误, 习惯). 改善 = cải thiện điều kiện; 修改 = sửa bài viết; 修理 = sửa máy móc.'},
+  {wrong:'这种病很顽固，一般的药根本____不了。',opts:['对付','对待','对于','对比'],ans:0,exp:'对付不了 = không đối phó nổi (bệnh, khó khăn, đối thủ). 对待 = đối xử (thái độ); 对于 là giới từ; 对比 = so sánh.'},
+  {wrong:'考试前那几天，她的情绪____很大，一会儿哭一会儿笑。',opts:['起伏','混乱','恶化','衰老'],ans:0,exp:'情绪起伏很大 = tâm trạng lên xuống thất thường (一会儿哭一会儿笑). 混乱 = hỗn loạn (秩序, 思维); 恶化 = xấu đi (病, 关系); 衰老 = già yếu.'},
+  {wrong:'参加婚礼这样的____，穿得太随便不太好。',opts:['场合','场所','场面','场地'],ans:0,exp:'场合 = dịp, hoàn cảnh (婚礼, 正式场合). 场所 = nơi chốn, địa điểm cụ thể; 场面 = cảnh tượng; 场地 = sân bãi.'},
+  {wrong:'这次比赛虽然没拿到名次，但我们____学到了一些东西。',opts:['多多少少','多么','不少','少不了'],ans:0,exp:'多多少少 + V + 一些 = ít nhiều cũng …(nhấn "dù không nhiều nhưng có"). 多么 dùng trong câu cảm thán; 不少 đứng trước danh từ (学到了不少东西); 少不了 = không thể thiếu.'},
+  {wrong:'考场上很安静，只有后面的人____咳嗽几声。',opts:['不时','及时','按时','准时'],ans:0,exp:'不时 + V = chốc chốc lại (lặp lại). 及时 = kịp thời; 按时 / 准时 = đúng giờ — không hợp với 咳嗽几声.'}
 ];
 
 var translateData = [
- {
-  "vi": "Từ khi điện thoại thông minh trở nên phổ biến, thói quen lướt mạng trước khi ngủ ngày càng thịnh hành, đến nỗi nhiều người trẻ quá nửa đêm vẫn chưa ngủ.",
-  "zh": "自从智能手机普及以后，睡前上网的习惯越来越盛行，以至于很多年轻人过了半夜还不睡。",
-  "py": "Zìcóng zhìnéng shǒujī pǔjí yǐhòu, shuì qián shàngwǎng de xíguàn yuèláiyuè shèngxíng, yǐzhìyú hěn duō niánqīngrén guòle bànyè hái bú shuì.",
-  "goiY": [
-   "普及",
-   "盛行",
-   "以至于"
-  ],
-  "giai": "自从……以后 nêu mốc bắt đầu; 以至于 = đến nỗi (kết quả do mức độ gây ra, ôn HSK 5). \"Thịnh hành\" dịch 盛行 (văn viết) — đừng dùng 流行 cho thói quen xấu nếu muốn giọng trang trọng."
- },
- {
-  "vi": "Cậu ấy cả đêm trằn trọc không ngủ được, chốc chốc lại dậy xem điện thoại, nên sáng hôm sau sắc mặt rất kém.",
-  "zh": "他一整夜翻来覆去睡不着，不时起来看看手机，所以第二天早上气色很差。",
-  "py": "Tā yì zhěng yè fān lái fù qù shuì bu zháo, bùshí qǐlái kànkan shǒujī, suǒyǐ dì-èr tiān zǎoshang qìsè hěn chà.",
-  "goiY": [
-   "翻来覆去",
-   "不时",
-   "气色"
-  ],
-  "giai": "Ba vế nối theo trình tự nhân – quả (……，……，所以……). \"Chốc chốc lại\" = 不时 + V (Chú thích 1); \"sắc mặt kém\" = 气色很差 / 不好, không dịch từng chữ là 脸色很坏."
- },
- {
-  "vi": "Tuy thành tích hai người ngang ngửa nhau, nhưng Tiểu Vương trí nhớ kém, lúc nào cũng quên trước quên sau, nên hay mất điểm vì sơ ý.",
-  "zh": "虽然两个人的成绩不相上下，但是小王记性差，总是丢三落四，所以常常因为疏忽丢分。",
-  "py": "Suīrán liǎng ge rén de chéngjì bùxiāng-shàngxià, dànshì Xiǎo Wáng jìxing chà, zǒngshì diūsān-làsì, suǒyǐ chángcháng yīnwèi shūhu diū fēn.",
-  "goiY": [
-   "不相上下",
-   "记性",
-   "丢三落四",
-   "疏忽"
-  ],
-  "giai": "虽然……但是……，所以……: nhượng bộ rồi nhân quả. 不相上下 làm vị ngữ, không mang tân ngữ; 疏忽 ôn HSK 6 bài 24."
- },
- {
-  "vi": "Chỉ khi tìm ra căn nguyên của chứng mất ngủ, bác sĩ mới có thể tuỳ từng trường hợp mà dốc hết sức điều trị.",
-  "zh": "只有找到失眠的根源，医生才能根据不同情况竭尽全力进行治疗。",
-  "py": "Zhǐyǒu zhǎodào shīmián de gēnyuán, yīshēng cái néng gēnjù bùtóng qíngkuàng jiéjìn quánlì jìnxíng zhìliáo.",
-  "goiY": [
-   "只有……才……",
-   "根源",
-   "竭尽全力"
-  ],
-  "giai": "只有 + điều kiện duy nhất, 才 + kết quả (không dùng 只要……就……). \"Tuỳ từng trường hợp\" = 根据不同情况; 竭尽全力 đứng trước động từ làm trạng ngữ."
- },
- {
-  "vi": "Đừng hơi một tí là thức khuya chơi game, để khỏi làm rối loạn đồng hồ sinh học, huỷ hoại thân thể của mình.",
-  "zh": "别动不动就熬夜玩游戏，以免扰乱生物钟，糟蹋自己的身体。",
-  "py": "Bié dòngbudòng jiù áoyè wán yóuxì, yǐmiǎn rǎoluàn shēngwùzhōng, zāotà zìjǐ de shēntǐ.",
-  "goiY": [
-   "动不动",
-   "以免",
-   "扰乱",
-   "糟蹋"
-  ],
-  "giai": "动不动就…… (ôn bài 22) = hơi một tí là; 以免 (ôn bài 21) đứng đầu vế sau = để tránh. \"Huỷ hoại thân thể\" dùng 糟蹋身体 (khẩu ngữ, sắc thái trách)."
- },
- {
-  "vi": "Tuy tôi không phải chuyên gia về giấc ngủ, nhưng ít nhiều cũng biết rằng thiếu ngủ lâu ngày sẽ khiến bệnh tình trở nặng.",
-  "zh": "虽然我不是睡眠专家，但是多多少少也知道，长期睡眠不足会使病情恶化。",
-  "py": "Suīrán wǒ bú shì shuìmián zhuānjiā, dànshì duōduōshǎoshǎo yě zhīdào, chángqī shuìmián bùzú huì shǐ bìngqíng èhuà.",
-  "goiY": [
-   "虽然……但是……",
-   "多多少少",
-   "恶化"
-  ],
-  "giai": "多多少少 = ít nhiều (Chú thích 2), đứng trước động từ. \"Khiến bệnh trở nặng\" = 使病情恶化 — 恶化 không mang tân ngữ nên phải dùng 使."
- },
- {
-  "vi": "Nếu anh ta cứ thờ ơ với lời khuyên của bác sĩ, thì bệnh mãn tính sớm muộn gì cũng tìm đến.",
-  "zh": "如果他对医生的劝告一直无动于衷，那么慢性疾病迟早会找上门来。",
-  "py": "Rúguǒ tā duì yīshēng de quàngào yìzhí wúdòngyúzhōng, nàme mànxìng jíbìng chízǎo huì zhǎoshàng mén lái.",
-  "goiY": [
-   "如果……那么……",
-   "无动于衷",
-   "慢性",
-   "迟早"
-  ],
-  "giai": "Cấu trúc 对 + N + 无动于衷 (thờ ơ với …) — không đặt tân ngữ sau 无动于衷. 迟早 = sớm muộn (ôn HSK 5)."
- },
- {
-  "vi": "Trước khi ngủ làm vài hoạt động thư giãn phù hợp, như đi dạo, nghe nhạc, có thể điều hoà tâm trạng, như thế vào giấc sẽ dễ hơn nhiều.",
-  "zh": "睡前做一些适宜的放松活动，比如散散步、听听音乐，可以调剂心情，这样入睡就容易多了。",
-  "py": "Shuì qián zuò yìxiē shìyí de fàngsōng huódòng, bǐrú sànsan bù, tīngting yīnyuè, kěyǐ tiáojì xīnqíng, zhèyàng rùshuì jiù róngyì duō le.",
-  "goiY": [
-   "适宜",
-   "比如",
-   "调剂"
-  ],
-  "giai": "\"Phù hợp\" làm định ngữ văn viết → 适宜的; \"điều hoà tâm trạng\" = 调剂心情. Động từ lặp 散散步、听听音乐 cho giọng nhẹ nhàng; Adj + 多了 = … hơn nhiều."
- },
- {
-  "vi": "Máy bay sắp cất cánh mà anh ta vẫn ngồi ngẩn người trong phòng chờ, mãi đến khi loa gọi tên, anh mới ngơ ngác đứng dậy.",
-  "zh": "飞机即将起飞，他却还坐在候机厅里发呆，直到广播叫到他的名字，他才茫然地站了起来。",
-  "py": "Fēijī jíjiāng qǐfēi, tā què hái zuò zài hòujītīng lǐ fādāi, zhídào guǎngbō jiàodào tā de míngzi, tā cái mángrán de zhànle qǐlái.",
-  "goiY": [
-   "即将",
-   "发呆",
-   "直到……才……",
-   "茫然"
-  ],
-  "giai": "即将 (ôn bài 25) = sắp; 却 nối vế trái ngược; 直到……才…… = mãi đến … mới …. 茫然 làm trạng ngữ cần 地."
- },
- {
-  "vi": "Thói quen xấu một khi đã hình thành thì rất khó bỏ, vì vậy cha mẹ không thể cứ mãi dung túng thói xấu của con, mà phải kịp thời uốn nắn.",
-  "zh": "坏习惯一旦养成就很难改掉，因此父母对孩子的坏习惯不能一味容忍，要及时加以纠正。",
-  "py": "Huài xíguàn yídàn yǎngchéng jiù hěn nán gǎidiào, yīncǐ fùmǔ duì háizi de huài xíguàn bù néng yíwèi róngrěn, yào jíshí jiāyǐ jiūzhèng.",
-  "goiY": [
-   "一旦……就……",
-   "容忍",
-   "加以",
-   "纠正"
-  ],
-  "giai": "一旦……就…… = một khi … thì …; 加以 + V hai âm tiết (ôn bài 23): 加以纠正. \"Dung túng thói xấu của người khác\" → 容忍 (không dùng 忍受)."
- }
+  {vi:'Từ khi điện thoại thông minh trở nên phổ biến, thói quen lướt mạng trước khi ngủ ngày càng thịnh hành, đến nỗi nhiều người trẻ quá nửa đêm vẫn chưa ngủ.',zh:'自从智能手机普及以后，睡前上网的习惯越来越盛行，以至于很多年轻人过了半夜还不睡。',py:'Zìcóng zhìnéng shǒujī pǔjí yǐhòu, shuì qián shàngwǎng de xíguàn yuèláiyuè shèngxíng, yǐzhìyú hěn duō niánqīngrén guòle bànyè hái bú shuì.',goiY:['普及','盛行','以至于'],giai:'自从……以后 nêu mốc bắt đầu; 以至于 = đến nỗi (kết quả do mức độ gây ra, ôn HSK 5). "Thịnh hành" dịch 盛行 (văn viết) — đừng dùng 流行 cho thói quen xấu nếu muốn giọng trang trọng.'},
+  {vi:'Cậu ấy cả đêm trằn trọc không ngủ được, chốc chốc lại dậy xem điện thoại, nên sáng hôm sau sắc mặt rất kém.',zh:'他一整夜翻来覆去睡不着，不时起来看看手机，所以第二天早上气色很差。',py:'Tā yì zhěng yè fān lái fù qù shuì bu zháo, bùshí qǐlái kànkan shǒujī, suǒyǐ dì-èr tiān zǎoshang qìsè hěn chà.',goiY:['翻来覆去','不时','气色'],giai:'Ba vế nối theo trình tự nhân – quả (……，……，所以……). "Chốc chốc lại" = 不时 + V (Chú thích 1); "sắc mặt kém" = 气色很差 / 不好, không dịch từng chữ là 脸色很坏.'},
+  {vi:'Đừng hơi một tí là thức khuya chơi game, để khỏi làm rối loạn đồng hồ sinh học, huỷ hoại thân thể của mình.',zh:'别动不动就熬夜玩游戏，以免扰乱生物钟，糟蹋自己的身体。',py:'Bié dòngbudòng jiù áoyè wán yóuxì, yǐmiǎn rǎoluàn shēngwùzhōng, zāotà zìjǐ de shēntǐ.',goiY:['动不动','以免','扰乱','糟蹋'],giai:'动不动就…… (ôn bài 22) = hơi một tí là; 以免 (ôn bài 21) đứng đầu vế sau = để tránh. "Huỷ hoại thân thể" dùng 糟蹋身体 (khẩu ngữ, sắc thái trách).'},
+  {vi:'Tuy tôi không phải chuyên gia về giấc ngủ, nhưng ít nhiều cũng biết rằng thiếu ngủ lâu ngày sẽ làm bệnh mãn tính nặng thêm.',zh:'虽然我不是睡眠专家，但是多多少少也知道，长期睡眠不足会使慢性病恶化。',py:'Suīrán wǒ bú shì shuìmián zhuānjiā, dànshì duōduōshǎoshǎo yě zhīdào, chángqī shuìmián bùzú huì shǐ mànxìngbìng èhuà.',goiY:['虽然……但是……','多多少少','恶化'],giai:'多多少少 = ít nhiều (Chú thích 2), đứng trước động từ. "Làm bệnh nặng thêm" = 使慢性病恶化 — 恶化 không mang tân ngữ nên phải dùng 使.'},
+  {vi:'Thói quen xấu một khi đã hình thành thì rất khó bỏ, vì vậy cha mẹ không thể lúc nào cũng dung túng thói xấu của con, mà phải kịp thời uốn nắn.',zh:'坏习惯一旦养成就很难改掉，因此父母对孩子的坏习惯不能总是容忍，要及时加以纠正。',py:'Huài xíguàn yídàn yǎngchéng jiù hěn nán gǎidiào, yīncǐ fùmǔ duì háizi de huài xíguàn bù néng zǒngshì róngrěn, yào jíshí jiāyǐ jiūzhèng.',goiY:['一旦……就……','容忍','加以','纠正'],giai:'一旦……就…… = một khi … thì …; 加以 + V hai âm tiết (ôn bài 23): 加以纠正. "Dung túng thói xấu của người khác" → 容忍 (không dùng 忍受).'},
+  {vi:'Mấy hôm nay thời tiết lúc lạnh lúc nóng, các cụ già ít nhiều đều thấy hơi khó chịu trong người.',zh:'这几天天气时而冷时而热，老人们多多少少都有些不舒服。',py:'Zhè jǐ tiān tiānqì shí\'ér lěng shí\'ér rè, lǎorénmen duōduōshǎoshǎo dōu yǒuxiē bù shūfu.',goiY:['时而……时而……','多多少少……有些……'],giai:'时而 A 时而 B = lúc A lúc B (ôn bài 15); 多多少少 đứng trước 都 / 有些 + tính từ, nghĩa "ít nhiều".'}
 ];
 
 var translateDataRev = [
- {
-  "vi": "Tóm lại, ngủ tốt hay xấu có ảnh hưởng hết sức lớn đến sức khoẻ; đừng nói đến thức trắng đêm, ngay cả mỗi ngày ngủ ít đi hai tiếng cũng không được.",
-  "zh": "总而言之，睡眠好坏对人体健康举足轻重，别说熬通宵了，就是每天少睡两个小时也不行。",
-  "py": "Zǒng'éryánzhī, shuìmián hǎohuài duì réntǐ jiànkāng jǔzú-qīngzhòng, biéshuō áo tōngxiāo le, jiùshì měi tiān shǎo shuì liǎng ge xiǎoshí yě bù xíng.",
-  "goiY": [
-   "总而言之 = tóm lại",
-   "举足轻重 = có ảnh hưởng rất lớn",
-   "别说……就是……也…… = đừng nói …, ngay cả … cũng …"
-  ],
-  "giai": "别说 A 了，就是 B 也…… ôn bài 26. 举足轻重 dịch thoát \"có ảnh hưởng hết sức lớn / giữ vai trò then chốt\", không dịch \"cử túc khinh trọng\"."
- },
- {
-  "vi": "Các chuyên gia kêu gọi phụ huynh đừng thờ ơ với chứng nghiện mạng của con, nếu không việc học của con rất dễ chệch khỏi quỹ đạo.",
-  "zh": "专家呼吁，家长不要对孩子的网瘾无动于衷，否则孩子的学习很容易偏离正常轨道。",
-  "py": "Zhuānjiā hūyù, jiāzhǎng bú yào duì háizi de wǎngyǐn wúdòngyúzhōng, fǒuzé háizi de xuéxí hěn róngyì piānlí zhèngcháng guǐdào.",
-  "goiY": [
-   "呼吁 = kêu gọi",
-   "无动于衷 = thờ ơ",
-   "否则 = nếu không thì",
-   "轨道 = quỹ đạo, nề nếp"
-  ],
-  "giai": "否则 mở vế hậu quả nếu không làm theo lời khuyên. 网瘾 = chứng nghiện mạng (瘾 trong 过瘾)."
- },
- {
-  "vi": "Bác sĩ chuyên chữa rối loạn giấc ngủ của bệnh viện này lúc nào cũng thiếu, nhiều bệnh nhân cất công từ nơi khác đến, vậy mà phải chạy đi chạy lại mấy ngày mới lấy được số khám.",
-  "zh": "这家医院专治睡眠障碍的医生一直供不应求，很多病人特意从外地赶来，却要来回折腾好几天才能挂上号。",
-  "py": "Zhè jiā yīyuàn zhuān zhì shuìmián zhàng'ài de yīshēng yìzhí gōngbúyìngqiú, hěn duō bìngrén tèyì cóng wàidì gǎnlái, què yào láihuí zhēteng hǎo jǐ tiān cái néng guàshàng hào.",
-  "goiY": [
-   "供不应求 = cung không đủ cầu",
-   "特意 = cất công",
-   "折腾 = chạy đi chạy lại, vật vã"
-  ],
-  "giai": "供不应求 dùng cho người (bác sĩ) → dịch \"lúc nào cũng thiếu / không đủ đáp ứng\". 特意 ôn bài 24; 却 = vậy mà."
- },
- {
-  "vi": "Thiếu ngủ lâu ngày không những khiến trí nhớ ngày càng kém, mà còn khiến tâm trạng lên xuống thất thường, hơi một tí là nổi cáu.",
-  "zh": "长期睡眠不足不仅会使人记性越来越差，而且会使人情绪起伏不定，动不动就发脾气。",
-  "py": "Chángqī shuìmián bùzú bùjǐn huì shǐ rén jìxing yuèláiyuè chà, érqiě huì shǐ rén qíngxù qǐfú búdìng, dòngbudòng jiù fā píqi.",
-  "goiY": [
-   "不仅……而且…… = không những … mà còn …",
-   "记性 = trí nhớ",
-   "起伏不定 = lên xuống thất thường",
-   "动不动 = hơi một tí là"
-  ],
-  "giai": "Câu tăng tiến 不仅……而且……; 使人 + … không cần dịch \"khiến người ta\" hai lần — tiếng Việt gộp chủ ngữ cho gọn."
- },
- {
-  "vi": "Ông nội tuổi đã cao, cơ thể ngày một già yếu, nhưng ông bướng lắm, khuyên thế nào cũng không chịu đi bệnh viện kiểm tra.",
-  "zh": "爷爷年纪大了，身体一天天衰老，可他顽固得很，怎么劝都不肯去医院检查。",
-  "py": "Yéye niánjì dà le, shēntǐ yìtiāntiān shuāilǎo, kě tā wángù de hěn, zěnme quàn dōu bù kěn qù yīyuàn jiǎnchá.",
-  "goiY": [
-   "衰老 = già yếu",
-   "顽固 = bướng, bảo thủ",
-   "怎么……都…… = … thế nào cũng …"
-  ],
-  "giai": "可 = nhưng (khẩu ngữ); 顽固 nói về NGƯỜI dịch \"bướng, bảo thủ\" — không dịch \"ngoan cố\" (nặng, mang nghĩa cố chấp làm sai)."
- },
- {
-  "vi": "Thay vì dựa vào thuốc ngủ để đối phó với mất ngủ, chi bằng bắt tay từ căn nguyên, sửa lại lối sống không lành mạnh.",
-  "zh": "与其靠安眠药对付失眠，不如从根源入手，纠正不健康的生活方式。",
-  "py": "Yǔqí kào ānmiányào duìfu shīmián, bùrú cóng gēnyuán rùshǒu, jiūzhèng bú jiànkāng de shēnghuó fāngshì.",
-  "goiY": [
-   "与其……不如…… = thay vì … chi bằng …",
-   "对付 = đối phó",
-   "根源 = căn nguyên",
-   "纠正 = sửa, uốn nắn"
-  ],
-  "giai": "与其 A 不如 B: chọn B, bỏ A (ôn HSK 5). 从根源入手 = bắt tay từ gốc rễ."
- },
- {
-  "vi": "Người tài xế lâu năm ấy sở dĩ lái xe sang làn ngược chiều không phải vì tay lái kém, mà vì đã lái liên tục hơn chục tiếng, đầu óc đã rối loạn.",
-  "zh": "那位老司机之所以把车开上了逆行道，不是因为技术不熟练，而是因为连续开了十几个小时车，思维已经混乱了。",
-  "py": "Nà wèi lǎo sījī zhīsuǒyǐ bǎ chē kāishàngle nìxíngdào, bú shì yīnwèi jìshù bù shúliàn, ér shì yīnwèi liánxù kāile shí jǐ ge xiǎoshí chē, sīwéi yǐjīng hùnluàn le.",
-  "goiY": [
-   "之所以……不是因为……而是因为…… = sở dĩ … không phải vì … mà là vì …",
-   "逆行 = đi ngược chiều",
-   "混乱 = rối loạn"
-  ],
-  "giai": "之所以 + kết quả, 不是因为 A 而是因为 B: phủ định nguyên nhân giả rồi nêu nguyên nhân thật. 逆行道 = làn ngược chiều."
- },
- {
-  "vi": "Loại bệnh này một khi phát hiện muộn thì khối u có thể chuyển thành ung thư, vì vậy khám sức khoẻ định kỳ là vô cùng cần thiết.",
-  "zh": "这种病一旦发现得晚，肿瘤就可能恶化成癌症，所以定期体检十分必要。",
-  "py": "Zhè zhǒng bìng yídàn fāxiàn de wǎn, zhǒngliú jiù kěnéng èhuà chéng áizhèng, suǒyǐ dìngqī tǐjiǎn shífēn bìyào.",
-  "goiY": [
-   "一旦……就…… = một khi … thì …",
-   "肿瘤 = khối u",
-   "恶化 = chuyển biến xấu",
-   "癌症 = ung thư"
-  ],
-  "giai": "一旦 nêu giả thiết điều không mong muốn; 恶化成 = xấu đi thành. 体检 = khám sức khoẻ (viết tắt của 身体检查)."
- },
- {
-  "vi": "Gọi điện to tiếng ở nơi công cộng không chỉ làm phiền sự nghỉ ngơi của người khác, mà còn bộc lộ ý thức của một người.",
-  "zh": "在公共场合大声打电话不仅扰乱了别人的休息，也暴露了一个人的素质。",
-  "py": "Zài gōnggòng chǎnghé dàshēng dǎ diànhuà bùjǐn rǎoluànle biérén de xiūxi, yě bàolùle yí ge rén de sùzhì.",
-  "goiY": [
-   "场合 = nơi, dịp",
-   "扰乱 = quấy nhiễu, làm rối loạn",
-   "不仅……也…… = không chỉ … mà còn …"
-  ],
-  "giai": "公共场合 dịch \"nơi công cộng\" (không dịch \"trường hợp công cộng\" — bẫy Hán Việt). 素质 = tố chất, ở đây là ý thức, văn hoá ứng xử."
- },
- {
-  "vi": "Với dân công sở ngày nào cũng bận đến khuya, được ngủ một giấc ngon đã thành thứ xa xỉ, thảo nào sắc mặt ai cũng không được tốt.",
-  "zh": "对于每天忙到深夜的上班族来说，睡个好觉成了一种奢侈，难怪他们的气色都不太好。",
-  "py": "Duìyú měi tiān mángdào shēnyè de shàngbānzú lái shuō, shuì ge hǎo jiào chéngle yì zhǒng shēchǐ, nánguài tāmen de qìsè dōu bú tài hǎo.",
-  "goiY": [
-   "对于……来说 = đối với …",
-   "奢侈 = xa xỉ",
-   "难怪 = thảo nào",
-   "气色 = sắc mặt"
-  ],
-  "giai": "Mô phỏng câu mở đầu bài khoá (对于……来说，睡觉却成了难得的奢侈). 难怪 = thảo nào (ôn HSK 4), nêu kết quả đã hiểu nguyên nhân."
- }
+  {vi:'Các chuyên gia kêu gọi phụ huynh đừng thờ ơ với chứng nghiện mạng của con, nếu không việc học của con rất dễ chệch khỏi quỹ đạo.',zh:'专家呼吁，家长不要对孩子的网瘾无动于衷，否则孩子的学习很容易偏离正常轨道。',py:'Zhuānjiā hūyù, jiāzhǎng bú yào duì háizi de wǎngyǐn wúdòngyúzhōng, fǒuzé háizi de xuéxí hěn róngyì piānlí zhèngcháng guǐdào.',goiY:['呼吁 = kêu gọi','无动于衷 = thờ ơ','否则 = nếu không thì','轨道 = quỹ đạo, nề nếp'],giai:'否则 mở vế hậu quả nếu không làm theo lời khuyên. 网瘾 = chứng nghiện mạng (cùng gốc với 过瘾).'},
+  {vi:'Các chuyên gia của bệnh viện này lúc nào cũng không đủ đáp ứng, nhiều phụ huynh cất công từ nơi khác đến, vậy mà phải chạy đi chạy lại mấy ngày mới lấy được số khám.',zh:'这家医院的专家一直供不应求，很多家长特意从外地赶来，却要来回折腾好几天才能挂上号。',py:'Zhè jiā yīyuàn de zhuānjiā yìzhí gōngbúyìngqiú, hěn duō jiāzhǎng tèyì cóng wàidì gǎnlái, què yào láihuí zhēteng hǎo jǐ tiān cái néng guàshàng hào.',goiY:['供不应求 = cung không đủ cầu','特意 = cất công','折腾 = chạy đi chạy lại, vật vã'],giai:'供不应求 dùng cho người (bác sĩ) → dịch "lúc nào cũng thiếu / không đủ đáp ứng". 特意 ôn bài 24; 却 = vậy mà.'},
+  {vi:'Người tài xế lâu năm ấy sở dĩ lái xe sang làn ngược chiều không phải vì tay lái kém, mà vì đã lái liên tục hơn chục tiếng, đầu óc đã rối loạn.',zh:'那位老司机之所以把车开上了逆行道，不是因为技术不熟练，而是因为连续开了十几个小时车，思维已经混乱了。',py:'Nà wèi lǎo sījī zhīsuǒyǐ bǎ chē kāishàngle nìxíngdào, bú shì yīnwèi jìshù bù shúliàn, ér shì yīnwèi liánxù kāile shí jǐ ge xiǎoshí chē, sīwéi yǐjīng hùnluàn le.',goiY:['之所以……不是因为……而是因为…… = sở dĩ … không phải vì … mà là vì …','逆行 = đi ngược chiều','混乱 = rối loạn'],giai:'之所以 + kết quả, 不是因为 A 而是因为 B: phủ định nguyên nhân giả rồi nêu nguyên nhân thật. 逆行道 = làn ngược chiều.'},
+  {vi:'Loại bệnh này nếu phát hiện quá muộn thì khối u có thể chuyển thành ung thư, vì vậy mỗi năm nên đi bệnh viện kiểm tra sức khoẻ.',zh:'这种病要是发现得太晚，肿瘤就可能恶化成癌症，所以每年都应该去医院检查一下身体。',py:'Zhè zhǒng bìng yàoshi fāxiàn de tài wǎn, zhǒngliú jiù kěnéng èhuà chéng áizhèng, suǒyǐ měi nián dōu yīnggāi qù yīyuàn jiǎnchá yíxià shēntǐ.',goiY:['要是……就…… = nếu … thì …','肿瘤 = khối u','恶化 = chuyển biến xấu','癌症 = ung thư'],giai:'要是……就…… nêu giả thiết; 恶化成 = xấu đi thành; 检查一下身体 = khám sức khoẻ.'},
+  {vi:'Với người trẻ ngày nào cũng bận đến khuya, được ngủ đủ tám tiếng đã thành thứ xa xỉ, thảo nào sắc mặt ai cũng không được tốt.',zh:'对于每天忙到深夜的年轻人来说，能睡够八个小时成了一种奢侈，难怪他们的气色都不太好。',py:'Duìyú měi tiān mángdào shēnyè de niánqīngrén lái shuō, néng shuìgòu bā ge xiǎoshí chéngle yì zhǒng shēchǐ, nánguài tāmen de qìsè dōu bú tài hǎo.',goiY:['对于……来说 = đối với …','奢侈 = xa xỉ','难怪 = thảo nào','气色 = sắc mặt'],giai:'对于……来说 = đối với …; 成了一种奢侈 = đã thành thứ xa xỉ (điều khó có được). 难怪 = thảo nào (ôn HSK 4), nêu kết quả khi đã hiểu nguyên nhân.'}
 ];
 
 var writingData = {
@@ -6862,407 +5840,136 @@ var writingData = {
 };
 
 var speakingData = {
- "intro": "Đây là bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b>. Bảng có sáu dòng (chỉ số giấc ngủ · yếu tố ảnh hưởng · melatonin · biểu hiện của rối loạn giấc ngủ · tác hại của thiếu ngủ · cách đối phó với mất ngủ). Mỗi câu dưới đây là một dòng — bấm loa nghe câu hỏi, nhìn gợi ý, <b>tự ghi âm câu trả lời của mình trước</b> rồi mới mở câu mẫu. Cố dùng từ mới: 指数 · 居民 · 扰乱 · 摧残 · 普及 · 盛行 · 分泌 · 职能 · 供不应求 · 折腾 · 不时 · 气色 · 不相上下 · 恶化 · 总而言之 · 呼吁 · 纠正.",
- "questions": [
-  {
-   "q_zh": "中国发布的睡眠指数情况",
-   "q_vn": "Tình hình chỉ số giấc ngủ do Trung Quốc công bố",
-   "hint": "①睡眠指数得分 ②一线城市，三线城市，农村和小城镇 ③可见……",
-   "sample": "中国发布的睡眠指数总得分是66.5分，超过36.2%的居民得分低于及格线。一线城市的平均得分是60.3分，三线城市是61.4分，而农村和小城镇都在70分以上。可见，当前失眠症正扰乱着人们的情绪，摧残着城市人群的健康。",
-   "sample_vn": "Chỉ số giấc ngủ Trung Quốc công bố có tổng điểm 66,5; hơn 36,2% người dân dưới mức đạt. Thành phố loại một trung bình 60,3 điểm, thành phố loại ba 61,4 điểm, còn nông thôn và thị trấn nhỏ đều trên 70 điểm. Có thể thấy hiện nay chứng mất ngủ đang làm rối loạn cảm xúc, tàn phá sức khoẻ người dân thành phố.",
-   "note": "Nói lần lượt ba gợi ý ①②③; ý ③ mở bằng 可见 rồi dùng hai cụm song song 扰乱着……，摧残着……."
-  },
-  {
-   "q_zh": "影响成人健康睡眠的因素",
-   "q_vn": "Các yếu tố ảnh hưởng đến giấc ngủ lành mạnh của người trưởng thành",
-   "hint": "①电子产品普及 ②光污染导致褪黑素……，生物钟……",
-   "sample": "该睡时不睡是影响成人健康睡眠的重要因素。手机和平板电脑的普及，使睡前上网的习惯日渐盛行。电子产品的光污染会影响褪黑素的正常分泌，还会使生物钟后移，结果就是晚上睡不着，早上睡不醒。",
-   "sample_vn": "Đến giờ ngủ mà không ngủ là yếu tố quan trọng ảnh hưởng đến giấc ngủ lành mạnh của người trưởng thành. Sự phổ cập của điện thoại và máy tính bảng khiến thói quen lên mạng trước khi ngủ ngày càng thịnh hành. Ô nhiễm ánh sáng từ thiết bị điện tử ảnh hưởng đến việc tiết melatonin bình thường, còn làm đồng hồ sinh học lùi lại, kết quả là tối không ngủ được, sáng không dậy nổi.",
-   "note": "Khung \"N 的普及，使……日渐盛行\" cho ý ①; ý ② dùng 不仅 / 会……，还会…… và kết bằng 结果就是……."
-  },
-  {
-   "q_zh": "褪黑素",
-   "q_vn": "Melatonin",
-   "hint": "①褪黑素的职能 ②当褪黑素分泌不正常时……",
-   "sample": "褪黑素是保证人体健康的重要物质之一，它的职能包括增强免疫力、抗衰老、调剂睡眠等。当褪黑素分泌不正常时，人体细胞组织和器官都会受到影响，各种疾病，包括癌症，就会随之而来。",
-   "sample_vn": "Melatonin là một trong những chất quan trọng bảo đảm sức khoẻ con người; chức năng của nó gồm tăng cường sức đề kháng, chống lão hoá, điều hoà giấc ngủ… Khi melatonin tiết ra không bình thường, mô tế bào và các cơ quan đều bị ảnh hưởng, đủ loại bệnh tật, kể cả ung thư, sẽ theo đó mà đến.",
-   "note": "Ý ① dùng 职能包括 A、B、C 等; ý ② dùng khung 当……时，……就会随之而来."
-  },
-  {
-   "q_zh": "睡眠障碍的表现",
-   "q_vn": "Biểu hiện của rối loạn giấc ngủ",
-   "hint": "①入睡困难 ②入睡后……",
-   "sample": "睡眠障碍首先表现为入睡困难：头在枕头上就是睡不着，翻来覆去瞎折腾，白天又老是犯困。此外，入睡后噩梦连连，一会儿蹬腿，一会儿挥拳头，不时大声叫喊。",
-   "sample_vn": "Rối loạn giấc ngủ trước hết biểu hiện ở chỗ khó vào giấc: đầu đặt trên gối mà không ngủ được, cứ trằn trọc lăn qua lăn lại, ban ngày lại luôn buồn ngủ. Ngoài ra, ngủ rồi thì ác mộng liên miên, lúc đạp chân, lúc vung nắm đấm, thỉnh thoảng lại hét to.",
-   "note": "表现为 = biểu hiện ở; dùng 此外 nối sang ý ②; 一会儿……，一会儿……，不时…… (Chú thích 1)."
-  },
-  {
-   "q_zh": "睡眠不足对人体的影响",
-   "q_vn": "Ảnh hưởng của thiếu ngủ đối với cơ thể",
-   "hint": "气色、行为能力、注意力、表情、情绪、记性、思维、健康状况、慢性疾病",
-   "sample": "睡眠不足会使人气色不好，行为能力偏离正常轨道。长期睡眠不足还会使人注意力下降、表情茫然、情绪起伏不定，继而记性越来越差，到了更严重的地步，会思维混乱，健康状况逐步恶化，进而诱发慢性疾病。",
-   "sample_vn": "Thiếu ngủ khiến sắc mặt kém, khả năng hành động lệch khỏi quỹ đạo bình thường. Thiếu ngủ lâu ngày còn khiến giảm tập trung, vẻ mặt đờ đẫn, tâm trạng thất thường; tiếp đó trí nhớ ngày càng kém; nặng hơn thì suy nghĩ rối loạn, sức khoẻ dần xấu đi, rồi gây ra bệnh mãn tính.",
-   "note": "Đi theo đúng thứ tự các từ gợi ý; dùng 使人……, 继而……, 到了更严重的地步……, 进而…… để thấy các giai đoạn (篇章修辞)."
-  },
-  {
-   "q_zh": "对付失眠症的方法",
-   "q_vn": "Cách đối phó với chứng mất ngủ",
-   "hint": "纠正不好的生活习惯",
-   "sample": "总而言之，睡眠好坏对人体健康举足轻重。导致失眠的根源多多少少与不健康的生活方式有关，因此，对付失眠症的方法就是纠正不好的生活习惯，不要糟蹋自己的身体，不要让坏习惯毁灭我们的健康。",
-   "sample_vn": "Tóm lại, ngủ tốt hay xấu có ảnh hưởng hết sức lớn đến sức khoẻ. Căn nguyên gây mất ngủ ít nhiều đều liên quan đến lối sống không lành mạnh, vì vậy cách đối phó với chứng mất ngủ chính là sửa những thói quen sinh hoạt không tốt, đừng huỷ hoại thân thể mình, đừng để thói quen xấu phá huỷ sức khoẻ của chúng ta.",
-   "note": "Mở bằng 总而言之 để tổng kết; dùng 多多少少 (Chú thích 2) và câu phủ định song song 不要……，不要……."
-  }
- ]
+  intro: 'Đây là bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b>. Bảng có sáu dòng (chỉ số giấc ngủ · yếu tố ảnh hưởng · melatonin · biểu hiện của rối loạn giấc ngủ · tác hại của thiếu ngủ · cách đối phó với mất ngủ). Mỗi câu dưới đây là một dòng — bấm loa nghe câu hỏi, nhìn gợi ý, <b>tự ghi âm câu trả lời của mình trước</b> rồi mới mở câu mẫu. Cố dùng từ mới: 指数 · 居民 · 扰乱 · 摧残 · 普及 · 盛行 · 分泌 · 职能 · 供不应求 · 折腾 · 不时 · 气色 · 不相上下 · 恶化 · 总而言之 · 呼吁 · 纠正.',
+  questions: [
+    {q_zh:'中国发布的睡眠指数情况',q_vn:'Tình hình chỉ số giấc ngủ do Trung Quốc công bố',hint:'①睡眠指数得分 ②一线城市，三线城市，农村和小城镇 ③可见……',sample:'中国发布的睡眠指数总得分是66.5分，超过36.2%的居民得分低于及格线。一线城市的平均得分是60.3分，三线城市是61.4分，而农村和小城镇都在70分以上。可见，当前失眠症正扰乱着人们的情绪，摧残着城市人群的健康。',sample_vn:'Chỉ số giấc ngủ Trung Quốc công bố có tổng điểm 66,5; hơn 36,2% người dân dưới mức đạt. Thành phố loại một trung bình 60,3 điểm, thành phố loại ba 61,4 điểm, còn nông thôn và thị trấn nhỏ đều trên 70 điểm. Có thể thấy hiện nay chứng mất ngủ đang làm rối loạn cảm xúc, tàn phá sức khoẻ người dân thành phố.',note:'Nói lần lượt ba gợi ý ①②③; ý ③ mở bằng 可见 rồi dùng hai cụm song song 扰乱着……，摧残着…….'},
+    {q_zh:'影响成人健康睡眠的因素',q_vn:'Các yếu tố ảnh hưởng đến giấc ngủ lành mạnh của người trưởng thành',hint:'①电子产品普及 ②光污染导致褪黑素……，生物钟……',sample:'该睡时不睡是影响成人健康睡眠的重要因素。手机和平板电脑的普及，使睡前上网的习惯日渐盛行。电子产品的光污染会影响褪黑素的正常分泌，还会使生物钟后移，结果就是晚上睡不着，早上睡不醒。',sample_vn:'Đến giờ ngủ mà không ngủ là yếu tố quan trọng ảnh hưởng đến giấc ngủ lành mạnh của người trưởng thành. Sự phổ cập của điện thoại và máy tính bảng khiến thói quen lên mạng trước khi ngủ ngày càng thịnh hành. Ô nhiễm ánh sáng từ thiết bị điện tử ảnh hưởng đến việc tiết melatonin bình thường, còn làm đồng hồ sinh học lùi lại, kết quả là tối không ngủ được, sáng không dậy nổi.',note:'Khung "N 的普及，使……日渐盛行" cho ý ①; ý ② dùng 不仅 / 会……，还会…… và kết bằng 结果就是…….'},
+    {q_zh:'褪黑素',q_vn:'Melatonin',hint:'①褪黑素的职能 ②当褪黑素分泌不正常时……',sample:'褪黑素是保证人体健康的重要物质之一，它的职能包括增强免疫力、抗衰老、调剂睡眠等。当褪黑素分泌不正常时，人体细胞组织和器官都会受到影响，各种疾病，包括癌症，就会随之而来。',sample_vn:'Melatonin là một trong những chất quan trọng bảo đảm sức khoẻ con người; chức năng của nó gồm tăng cường sức đề kháng, chống lão hoá, điều hoà giấc ngủ… Khi melatonin tiết ra không bình thường, mô tế bào và các cơ quan đều bị ảnh hưởng, đủ loại bệnh tật, kể cả ung thư, sẽ theo đó mà đến.',note:'Ý ① dùng 职能包括 A、B、C 等; ý ② dùng khung 当……时，……就会随之而来.'},
+    {q_zh:'睡眠障碍的表现',q_vn:'Biểu hiện của rối loạn giấc ngủ',hint:'①入睡困难 ②入睡后……',sample:'睡眠障碍首先表现为入睡困难：头在枕头上就是睡不着，翻来覆去瞎折腾，白天又老是犯困。此外，入睡后噩梦连连，一会儿蹬腿，一会儿挥拳头，不时大声叫喊。',sample_vn:'Rối loạn giấc ngủ trước hết biểu hiện ở chỗ khó vào giấc: đầu đặt trên gối mà không ngủ được, cứ trằn trọc lăn qua lăn lại, ban ngày lại luôn buồn ngủ. Ngoài ra, ngủ rồi thì ác mộng liên miên, lúc đạp chân, lúc vung nắm đấm, thỉnh thoảng lại hét to.',note:'表现为 = biểu hiện ở; dùng 此外 nối sang ý ②; 一会儿……，一会儿……，不时…… (Chú thích 1).'},
+    {q_zh:'睡眠不足对人体的影响',q_vn:'Ảnh hưởng của thiếu ngủ đối với cơ thể',hint:'气色、行为能力、注意力、表情、情绪、记性、思维、健康状况、慢性疾病',sample:'睡眠不足会使人气色不好，行为能力偏离正常轨道。长期睡眠不足还会使人注意力下降、表情茫然、情绪起伏不定，继而记性越来越差，到了更严重的地步，会思维混乱，健康状况逐步恶化，进而诱发慢性疾病。',sample_vn:'Thiếu ngủ khiến sắc mặt kém, khả năng hành động lệch khỏi quỹ đạo bình thường. Thiếu ngủ lâu ngày còn khiến giảm tập trung, vẻ mặt đờ đẫn, tâm trạng thất thường; tiếp đó trí nhớ ngày càng kém; nặng hơn thì suy nghĩ rối loạn, sức khoẻ dần xấu đi, rồi gây ra bệnh mãn tính.',note:'Đi theo đúng thứ tự các từ gợi ý; dùng 使人……, 继而……, 到了更严重的地步……, 进而…… để thấy các giai đoạn (cách nối các giai đoạn trong đoạn văn).'},
+    {q_zh:'对付失眠症的方法',q_vn:'Cách đối phó với chứng mất ngủ',hint:'纠正不好的生活习惯',sample:'总而言之，睡眠好坏对人体健康举足轻重。导致失眠的根源多多少少与不健康的生活方式有关，因此，对付失眠症的方法就是纠正不好的生活习惯，不要糟蹋自己的身体，不要让坏习惯毁灭我们的健康。',sample_vn:'Tóm lại, ngủ tốt hay xấu có ảnh hưởng hết sức lớn đến sức khoẻ. Căn nguyên gây mất ngủ ít nhiều đều liên quan đến lối sống không lành mạnh, vì vậy cách đối phó với chứng mất ngủ chính là sửa những thói quen sinh hoạt không tốt, đừng huỷ hoại thân thể mình, đừng để thói quen xấu phá huỷ sức khoẻ của chúng ta.',note:'Mở bằng 总而言之 để tổng kết; dùng 多多少少 (Chú thích 2) và câu phủ định song song 不要……，不要…….'}
+  ]
 };
 
 var listenExamData = {
- "intro": "Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.",
- "source": "Soạn theo dạng đề HSK 6 · chủ đề bài 30",
- "items": [
-  {
-   "n": 1,
-   "lines": [
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 30',
+  items: [
     {
-     "sp": "女",
-     "zh": "你最近气色不太好，是不是又熬夜了？"
+      n: 1,
+      lines: [
+        {sp:'男',zh:'你看见我的手机了吗？刚才还在桌子上。'},
+        {sp:'女',zh:'不就在你手里吗？你最近老是丢三落四的，是不是睡得太少了？'}
+      ],
+      q: '女的认为男的怎么了？',
+      qvn: 'Người phụ nữ cho rằng người đàn ông bị làm sao?',
+      opts: ['手机丢了','睡眠不足','工作太忙','眼睛不好'],
+      ans: 1,
+      why: '是不是睡得太少了 → cô ấy nghĩ anh ta ngủ ít nên hay quên (丢三落四). Điện thoại vẫn ở trong tay (loại A).',
+      words: ['丢三落四']
     },
     {
-     "sp": "男",
-     "zh": "是啊，最近总是翻来覆去睡不着，好不容易睡着了，早上又起不来。"
-    }
-   ],
-   "q": "男的最近怎么了？",
-   "qvn": "Dạo này người đàn ông bị làm sao?",
-   "opts": [
-    "工作太忙",
-    "生病住院了",
-    "睡眠不好",
-    "心情很好"
-   ],
-   "ans": 2,
-   "why": "翻来覆去睡不着 + 早上又起不来 → ngủ không ngon. 气色不太好 là hậu quả của thiếu ngủ; không có thông tin \"bận việc\" hay \"nằm viện\".",
-   "words": [
-    "气色"
-   ]
-  },
-  {
-   "n": 2,
-   "lines": [
-    {
-     "sp": "男",
-     "zh": "这款新手机怎么这么难买？"
+      n: 2,
+      lines: [
+        {sp:'女',zh:'昨天晚上你睡得怎么样？'},
+        {sp:'男',zh:'别提了，楼上在装修，不时传来敲墙的声音，我一晚上都没睡好。'}
+      ],
+      q: '男的为什么没睡好？',
+      qvn: 'Vì sao người đàn ông ngủ không ngon?',
+      opts: ['邻居在装修','楼下有人唱歌','他生病了','天气太热'],
+      ans: 0,
+      why: '楼上在装修，不时传来敲墙的声音 = tầng trên sửa nhà, chốc chốc lại có tiếng gõ tường. Ôn 别提了 (bài 1).',
+      words: ['不时']
     },
     {
-     "sp": "女",
-     "zh": "它功能多、价格又不贵，一上市就供不应求，你得提前在网上预订。"
-    }
-   ],
-   "q": "关于这款手机，可以知道什么？",
-   "qvn": "Có thể biết gì về chiếc điện thoại này?",
-   "opts": [
-    "很受欢迎，不好买",
-    "价格很贵",
-    "功能很少",
-    "已经不卖了"
-   ],
-   "ans": 0,
-   "why": "一上市就供不应求 = vừa ra đã cháy hàng → rất được ưa chuộng, khó mua. 价格又不贵 loại B; 功能多 loại C.",
-   "words": [
-    "供不应求"
-   ]
-  },
-  {
-   "n": 3,
-   "lines": [
-    {
-     "sp": "女",
-     "zh": "这次数学考试，小李和小张谁考得更好？"
+      n: 3,
+      lines: [
+        {sp:'女',zh:'你学了半年汉语，能看懂中文电影吗？'},
+        {sp:'男',zh:'多多少少能听懂一些，不过说得太快的地方还是跟不上。'}
+      ],
+      q: '男的看中文电影怎么样？',
+      qvn: 'Người đàn ông xem phim tiếng Trung thế nào?',
+      opts: ['完全听不懂','全都能听懂','能听懂一部分','从来不看'],
+      ans: 2,
+      why: '多多少少能听懂一些 = hiểu được một phần; chỗ nói nhanh thì không theo kịp → không phải hiểu hết (B), cũng không phải hoàn toàn không hiểu (A).',
+      words: ['多多少少']
     },
     {
-     "sp": "男",
-     "zh": "他们俩的成绩不相上下，小李九十八分，小张九十七分，只差一分。"
-    }
-   ],
-   "q": "小李和小张的成绩怎么样？",
-   "qvn": "Thành tích của Tiểu Lý và Tiểu Trương thế nào?",
-   "opts": [
-    "小张比小李高很多",
-    "小李没及格",
-    "两个人都不太好",
-    "差不多"
-   ],
-   "ans": 3,
-   "why": "不相上下 = ngang nhau; 98 và 97 chỉ chênh một điểm → 差不多.",
-   "words": [
-    "不相上下"
-   ]
-  },
-  {
-   "n": 4,
-   "lines": [
-    {
-     "sp": "男",
-     "zh": "你怎么又把钥匙忘在家里了？"
+      n: 4,
+      lines: [
+        {sp:'男',zh:'今天的报纸你看了吗？'},
+        {sp:'女',zh:'看了，有位医生呼吁大家晚上十一点以前睡觉，别躺在床上玩手机。'}
+      ],
+      q: '医生呼吁大家做什么？',
+      qvn: 'Bác sĩ kêu gọi mọi người làm gì?',
+      opts: ['多喝水','少看电视','每天运动','早点儿睡觉'],
+      ans: 3,
+      why: '呼吁大家晚上十一点以前睡觉 = kêu gọi ngủ trước 11 giờ đêm, đừng nằm chơi điện thoại.',
+      words: ['呼吁']
     },
     {
-     "sp": "女",
-     "zh": "唉，最近睡得太少，记性越来越差，老是丢三落四的。"
-    }
-   ],
-   "q": "女的为什么总是忘东西？",
-   "qvn": "Vì sao người phụ nữ hay quên đồ?",
-   "opts": [
-    "工作太多",
-    "睡眠不足",
-    "年纪大了",
-    "钥匙太小"
-   ],
-   "ans": 1,
-   "why": "睡得太少 → 记性越来越差 → 丢三落四: nguyên nhân là thiếu ngủ (đúng nội dung bài khoá).",
-   "words": [
-    "记性",
-    "丢三落四"
-   ]
-  },
-  {
-   "n": 5,
-   "lines": [
-    {
-     "sp": "女",
-     "zh": "医生，我儿子晚上睡觉一会儿蹬腿，一会儿挥拳头，还不时大声叫喊，这正常吗？"
+      n: 5,
+      lines: [
+        {sp:'女',zh:'前面那辆车怎么开得这么奇怪？'},
+        {sp:'男',zh:'离它远一点儿，司机可能喝了酒，你看，都开到逆行道上去了。'}
+      ],
+      q: '男的认为那辆车的司机怎么了？',
+      qvn: 'Người đàn ông cho rằng tài xế xe kia bị làm sao?',
+      opts: ['迷路了','可能喝酒了','车坏了','在打电话'],
+      ans: 1,
+      why: '司机可能喝了酒 + 开到逆行道上 = có thể đã uống rượu nên chạy sang làn ngược chiều.',
+      words: ['逆行']
     },
     {
-     "sp": "男",
-     "zh": "偶尔一两次没关系，要是天天这样，可能是睡眠障碍，最好带他来做个检查。"
-    }
-   ],
-   "q": "医生建议怎么做？",
-   "qvn": "Bác sĩ khuyên nên làm gì?",
-   "opts": [
-    "不用管他",
-    "带孩子来检查",
-    "让孩子早点儿睡",
-    "给孩子换个枕头"
-   ],
-   "ans": 1,
-   "why": "最好带他来做个检查 = tốt nhất đưa cháu đến kiểm tra. 偶尔一两次没关系 chỉ là điều kiện, không phải lời khuyên chính.",
-   "words": [
-    "蹬",
-    "拳头",
-    "不时"
-   ]
-  },
-  {
-   "n": 6,
-   "lines": [
-    {
-     "sp": "男",
-     "zh": "专家呼吁中学生每天至少睡够九个小时，你觉得做得到吗？"
+      n: 6,
+      lines: [
+        {sp:'男',zh:'你奶奶气色真好，一点儿都不像八十岁的人。'},
+        {sp:'女',zh:'她每天晚上九点就睡，早上六点起来散步，几十年都是这样。'}
+      ],
+      q: '奶奶为什么气色这么好？',
+      qvn: 'Vì sao bà nội có sắc mặt tốt như vậy?',
+      opts: ['经常吃药','住在农村','吃得特别好','每天早睡早起'],
+      ans: 3,
+      why: '九点就睡，六点起来散步，几十年都是这样 → ngủ sớm dậy sớm đều đặn. Không nói gì về thuốc, chỗ ở hay ăn uống.',
+      words: ['气色']
     },
     {
-     "sp": "女",
-     "zh": "很难。作业那么多，别说九个小时了，能睡七个小时就不错了。"
+      n: 7,
+      lines: [
+        {sp:'女',zh:'你的咳嗽好了吗？'},
+        {sp:'男',zh:'还没有，这次的咳嗽特别顽固，吃了半个月的药也不见好。'}
+      ],
+      q: '关于男的的咳嗽，可以知道什么？',
+      qvn: 'Về cơn ho của người đàn ông, có thể biết điều gì?',
+      opts: ['很长时间没好','已经好了','不用吃药','是今天开始的'],
+      ans: 0,
+      why: '特别顽固 + 吃了半个月的药也不见好 = dai dẳng, nửa tháng chưa khỏi.',
+      words: ['顽固']
     }
-   ],
-   "q": "女的是什么意思？",
-   "qvn": "Ý người phụ nữ là gì?",
-   "opts": [
-    "很容易做到",
-    "她每天睡九个小时",
-    "作业不多",
-    "学生很难睡够九个小时"
-   ],
-   "ans": 3,
-   "why": "别说九个小时了，能睡七个小时就不错了 (别说 ôn bài 26) → học sinh khó ngủ đủ chín tiếng. 作业那么多 loại C.",
-   "words": [
-    "呼吁"
-   ]
-  },
-  {
-   "n": 7,
-   "lines": [
-    {
-     "sp": "男",
-     "zh": "很多人以为失眠只是小问题，对它无动于衷。其实，长期睡眠不足会使人注意力下降、情绪起伏不定，继而记性越来越差，严重的还会诱发慢性疾病。所以，一旦发现自己有失眠症状，就要弄清病因，及时治疗。"
-    }
-   ],
-   "q": "这段话主要告诉我们什么？",
-   "qvn": "Đoạn nói chủ yếu cho chúng ta biết điều gì?",
-   "opts": [
-    "不要轻视失眠",
-    "失眠只是小问题",
-    "怎样提高记性",
-    "慢性疾病很难治"
-   ],
-   "ans": 0,
-   "why": "Mở đầu phê phán thái độ 无动于衷, rồi kể các tác hại, kết bằng 要弄清病因，及时治疗 → đừng coi nhẹ mất ngủ. B là quan niệm SAI mà người nói phản bác.",
-   "words": [
-    "无动于衷",
-    "起伏",
-    "记性",
-    "慢性"
-   ]
-  },
-  {
-   "n": 8,
-   "lines": [
-    {
-     "sp": "女",
-     "zh": "手机和平板电脑的普及，使睡前上网的习惯日渐盛行。可是屏幕的光会影响人体褪黑素的分泌，使生物钟后移。因此，专家建议睡前一个小时就放下手机，不要让它扰乱我们的睡眠。"
-    }
-   ],
-   "q": "专家建议怎么做？",
-   "qvn": "Chuyên gia khuyên làm gì?",
-   "opts": [
-    "睡前多上网",
-    "换一个新手机",
-    "睡前一小时放下手机",
-    "白天多睡觉"
-   ],
-   "ans": 2,
-   "why": "Câu then chốt ở cuối: 专家建议睡前一个小时就放下手机. Hai câu đầu là nguyên nhân (普及 → 盛行 → ảnh hưởng 分泌).",
-   "words": [
-    "普及",
-    "盛行",
-    "分泌",
-    "扰乱"
-   ]
-  }
- ]
+  ]
 };
 
 var situationData = {
- "intro": "Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.",
- "items": [
-  {
-   "scene": "Bạn cùng phòng ký túc xá đêm nào cũng chơi điện thoại đến hai giờ sáng, ánh sáng màn hình làm em không ngủ được.",
-   "a": {
-    "sp": "Bạn",
-    "zh": "我再玩一会儿，马上就睡。",
-    "vn": "Tớ chơi thêm tí nữa, ngủ ngay đây."
-   },
-   "need": [
-    "Dùng 扰乱",
-    "Đề nghị bạn thay đổi một cách lịch sự"
-   ],
-   "sample": "你每天都玩到两点，手机的光扰乱了我的睡眠。咱们商量一下，十二点以后就关灯，好吗？",
-   "samplePy": "Nǐ měi tiān dōu wándào liǎng diǎn, shǒujī de guāng rǎoluànle wǒ de shuìmián. Zánmen shāngliang yíxià, shí'èr diǎn yǐhòu jiù guān dēng, hǎo ma?",
-   "sampleVn": "Ngày nào cậu cũng chơi đến hai giờ, ánh sáng điện thoại làm rối loạn giấc ngủ của tớ. Mình bàn với nhau nhé, sau mười hai giờ thì tắt đèn, được không?",
-   "tip": "扰乱 + 睡眠 / 生物钟; nêu vấn đề trước rồi đề nghị bằng 咱们商量一下……，好吗？ cho mềm mỏng."
-  },
-  {
-   "scene": "Sau giờ Sinh học, bạn hỏi em có hiểu phần kiến thức về tế bào không. Em hiểu được một phần.",
-   "a": {
-    "sp": "Bạn",
-    "zh": "今天生物课讲的细胞知识，你听懂了吗？",
-    "vn": "Kiến thức về tế bào học hôm nay, cậu có hiểu không?"
-   },
-   "need": [
-    "Dùng 多多少少",
-    "Nói rõ phần nào chưa hiểu"
-   ],
-   "sample": "多多少少听懂了一些，不过细胞分裂那部分我还不太明白，下课以后你能给我讲讲吗？",
-   "samplePy": "Duōduōshǎoshǎo tīngdǒngle yìxiē, búguò xìbāo fēnliè nà bùfen wǒ hái bú tài míngbai, xiàkè yǐhòu nǐ néng gěi wǒ jiǎngjiang ma?",
-   "sampleVn": "Ít nhiều cũng hiểu được một chút, nhưng phần phân chia tế bào tớ vẫn chưa rõ lắm, tan học cậu giảng cho tớ được không?",
-   "tip": "多多少少 + V + 了一些 / 一点儿 (Chú thích 2) = ít nhiều cũng …; 不过 chuyển ý nhẹ nhàng."
-  },
-  {
-   "scene": "Mẹ thấy em ngồi ngẩn người trước bàn học cả buổi.",
-   "a": {
-    "sp": "Bạn",
-    "zh": "你怎么对着书发呆啊？是不是不舒服？",
-    "vn": "Sao con cứ ngồi ngẩn người trước quyển sách thế? Có phải con khó chịu ở đâu không?"
-   },
-   "need": [
-    "Dùng 发呆",
-    "Giải thích lý do và hứa thay đổi"
-   ],
-   "sample": "没有不舒服，就是昨晚没睡好，今天一直在发呆，看书也看不进去。我今晚一定早点儿睡。",
-   "samplePy": "Méiyǒu bù shūfu, jiù shì zuówǎn méi shuìhǎo, jīntiān yìzhí zài fādāi, kàn shū yě kàn bu jìnqù. Wǒ jīnwǎn yídìng zǎo diǎnr shuì.",
-   "sampleVn": "Con không khó chịu đâu, chỉ là tối qua ngủ không ngon, hôm nay cứ ngẩn người ra, đọc sách cũng không vào. Tối nay con nhất định sẽ ngủ sớm.",
-   "tip": "就是…… = chỉ là … (giải thích); V + 不进去 bổ ngữ khả năng: 看不进去 = đọc không vào."
-  },
-  {
-   "scene": "Bạn thân khoe vừa mua được đôi giày phiên bản giới hạn.",
-   "a": {
-    "sp": "Bạn",
-    "zh": "我终于买到这双限量版的鞋了！",
-    "vn": "Cuối cùng tớ cũng mua được đôi giày phiên bản giới hạn này rồi!"
-   },
-   "need": [
-    "Dùng 供不应求",
-    "Chúc mừng / khen bạn"
-   ],
-   "sample": "真厉害！听说这双鞋一上市就供不应求，很多人排了一晚上队都没买到呢。",
-   "samplePy": "Zhēn lìhai! Tīngshuō zhè shuāng xié yí shàngshì jiù gōngbúyìngqiú, hěn duō rén páile yì wǎnshang duì dōu méi mǎidào ne.",
-   "sampleVn": "Giỏi thật! Nghe nói đôi giày này vừa ra mắt đã cháy hàng, nhiều người xếp hàng cả đêm mà không mua được đấy.",
-   "tip": "一……就供不应求 = vừa … đã cháy hàng; 排队 là từ ly hợp: 排了一晚上队."
-  },
-  {
-   "scene": "Ông cụ hàng xóm ngồi một mình ở công viên, trông mệt mỏi. Em hỏi thăm, ông nói dạo này hay mất ngủ nhưng không sao.",
-   "a": {
-    "sp": "Bạn",
-    "zh": "没事儿，就是最近老睡不着，年纪大了，都这样。",
-    "vn": "Không sao đâu cháu, chỉ là dạo này hay mất ngủ, có tuổi rồi, ai cũng thế."
-   },
-   "need": [
-    "Dùng 无动于衷 hoặc 呼吁",
-    "Khuyên ông đi khám"
-   ],
-   "sample": "爷爷，失眠可不是小事，医生都呼吁不要对失眠症状无动于衷。您还是去医院检查一下吧，我陪您去。",
-   "samplePy": "Yéye, shīmián kě bú shì xiǎoshì, yīshēng dōu hūyù bú yào duì shīmián zhèngzhuàng wúdòngyúzhōng. Nín háishi qù yīyuàn jiǎnchá yíxià ba, wǒ péi nín qù.",
-   "sampleVn": "Ông ơi, mất ngủ đâu phải chuyện nhỏ, bác sĩ đều kêu gọi đừng thờ ơ với triệu chứng mất ngủ. Ông vẫn nên đi bệnh viện kiểm tra một chút, cháu đi cùng ông.",
-   "tip": "Với người lớn tuổi dùng 您; 可不是小事 nhấn mạnh; 还是……吧 = vẫn nên … (lời khuyên nhẹ nhàng)."
-  }
- ]
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  items: [
+    {scene:'Bạn cùng phòng ký túc xá đêm nào cũng chơi điện thoại đến hai giờ sáng, ánh sáng màn hình làm em không ngủ được.',a:{sp:'Bạn',zh:'我再玩一会儿，马上就睡。',vn:'Tớ chơi thêm tí nữa, ngủ ngay đây.'},need:['Dùng 扰乱','Đề nghị bạn thay đổi một cách lịch sự'],sample:'你每天都玩到两点，手机的光扰乱了我的睡眠。咱们商量一下，十二点以后就关灯，好吗？',samplePy:'Nǐ měi tiān dōu wándào liǎng diǎn, shǒujī de guāng rǎoluànle wǒ de shuìmián. Zánmen shāngliang yíxià, shí\'èr diǎn yǐhòu jiù guān dēng, hǎo ma?',sampleVn:'Ngày nào cậu cũng chơi đến hai giờ, ánh sáng điện thoại làm rối loạn giấc ngủ của tớ. Mình bàn với nhau nhé, sau mười hai giờ thì tắt đèn, được không?',tip:'扰乱 + 睡眠 / 生物钟; nêu vấn đề trước rồi đề nghị bằng 咱们商量一下……，好吗？ cho mềm mỏng.'},
+    {scene:'Sau giờ Sinh học, bạn hỏi em có hiểu phần kiến thức về tế bào không. Em hiểu được một phần.',a:{sp:'Bạn',zh:'今天生物课讲的细胞知识，你听懂了吗？',vn:'Kiến thức về tế bào học hôm nay, cậu có hiểu không?'},need:['Dùng 多多少少','Nói rõ phần nào chưa hiểu'],sample:'多多少少听懂了一些，不过细胞分裂那部分我还不太明白，下课以后你能给我讲讲吗？',samplePy:'Duōduōshǎoshǎo tīngdǒngle yìxiē, búguò xìbāo fēnliè nà bùfen wǒ hái bú tài míngbai, xiàkè yǐhòu nǐ néng gěi wǒ jiǎngjiang ma?',sampleVn:'Ít nhiều cũng hiểu được một chút, nhưng phần phân chia tế bào tớ vẫn chưa rõ lắm, tan học cậu giảng cho tớ được không?',tip:'多多少少 + V + 了一些 / 一点儿 (Chú thích 2) = ít nhiều cũng …; 不过 chuyển ý nhẹ nhàng.'},
+    {scene:'Mẹ thấy em ngồi ngẩn người trước bàn học cả buổi.',a:{sp:'Bạn',zh:'你怎么对着书发呆啊？是不是不舒服？',vn:'Sao con cứ ngồi ngẩn người trước quyển sách thế? Có phải con khó chịu ở đâu không?'},need:['Dùng 发呆','Giải thích lý do và hứa thay đổi'],sample:'没有不舒服，就是昨天晚上没睡好，今天一直在发呆，看书也看不进去。我今天晚上一定早点儿睡。',samplePy:'Méiyǒu bù shūfu, jiù shì zuótiān wǎnshang méi shuìhǎo, jīntiān yìzhí zài fādāi, kàn shū yě kàn bu jìnqù. Wǒ jīntiān wǎnshang yídìng zǎo diǎnr shuì.',sampleVn:'Con không khó chịu đâu, chỉ là tối qua ngủ không ngon, hôm nay cứ ngẩn người ra, đọc sách cũng không vào. Tối nay con nhất định sẽ ngủ sớm.',tip:'就是…… = chỉ là … (giải thích); V + 不进去 bổ ngữ khả năng: 看不进去 = đọc không vào.'},
+    {scene:'Ông cụ hàng xóm ngồi một mình ở công viên, trông mệt mỏi. Em hỏi thăm, ông nói dạo này hay mất ngủ nhưng không sao.',a:{sp:'Bạn',zh:'没事儿，就是最近老睡不着，年纪大了，都这样。',vn:'Không sao đâu cháu, chỉ là dạo này hay mất ngủ, có tuổi rồi, ai cũng thế.'},need:['Dùng 无动于衷','Khuyên ông đi khám'],sample:'爷爷，失眠可不是小事，长期睡不好身体会越来越差，您可不能无动于衷啊。您还是去医院检查一下吧，我陪您去。',samplePy:'Yéye, shīmián kě bú shì xiǎoshì, chángqī shuì bu hǎo shēntǐ huì yuèláiyuè chà, nín kě bù néng wúdòngyúzhōng a. Nín háishi qù yīyuàn jiǎnchá yíxià ba, wǒ péi nín qù.',sampleVn:'Ông ơi, mất ngủ đâu phải chuyện nhỏ, lâu ngày ngủ không ngon thì sức khoẻ sẽ ngày càng kém, ông không thể thờ ơ được đâu. Ông vẫn nên đi bệnh viện kiểm tra một chút, cháu đi cùng ông.',tip:'Với người lớn tuổi dùng 您; 可不是小事 nhấn mạnh; 还是……吧 = vẫn nên … (lời khuyên nhẹ nhàng).'},
+    {scene:'Sau bữa liên hoan, anh họ em uống hai cốc bia rồi định tự lái xe về nhà.',a:{sp:'Anh họ',zh:'我就喝了两杯啤酒，没关系，我自己开车回去。',vn:'Anh mới uống có hai cốc bia, không sao đâu, anh tự lái xe về.'},need:['Dùng 酒精','Dùng 以免 (bài 21)'],sample:'不行，你血液里还有酒精呢，反应会变慢的。今天就别开车了，以免出事，我们打车回去吧。',samplePy:'Bù xíng, nǐ xuèyè li hái yǒu jiǔjīng ne, fǎnyìng huì biàn màn de. Jīntiān jiù bié kāi chē le, yǐmiǎn chūshì, wǒmen dǎchē huíqu ba.',sampleVn:'Không được, trong máu anh vẫn còn cồn đấy, phản xạ sẽ chậm đi. Hôm nay đừng lái xe nữa, để tránh xảy ra chuyện, mình bắt taxi về đi.',tip:'不行 từ chối dứt khoát rồi nêu lý do (酒精 → 反应变慢); 以免 + hậu quả xấu đứng đầu vế sau.'}
+  ]
 };
 
 var registerData = {
- "intro": "Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.",
- "items": [
-  {
-   "scene": "Bác sĩ phát biểu trong chương trình sức khoẻ trên truyền hình.",
-   "a": "睡眠好坏对人体健康举足轻重，希望大家不要对失眠症状无动于衷。",
-   "b": "睡不好觉可麻烦了，大伙儿别不当回事儿啊。",
-   "better": "a",
-   "why": "Phát biểu trên truyền hình cần lời trang trọng, chính xác: 举足轻重, 失眠症状, 无动于衷. Câu b (可麻烦了, 大伙儿, 别不当回事儿) là khẩu ngữ suồng sã."
-  },
-  {
-   "scene": "Em nhắn tin cho bạn thân kể chuyện đêm qua.",
-   "a": "本人昨夜入睡困难，睡眠时间严重不足，现精神状态欠佳。",
-   "b": "昨晚又失眠了，翻来覆去折腾到三点，困死我了！",
-   "better": "b",
-   "why": "Nhắn tin bạn thân dùng khẩu ngữ tự nhiên: 翻来覆去折腾, 困死我了. Câu a (本人, 现, 欠佳) nghe như đơn xin nghỉ gửi cơ quan."
-  },
-  {
-   "scene": "Em viết báo cáo kết quả khảo sát về giấc ngủ cho giờ Sinh học.",
-   "a": "调查显示，超过三分之一的同学每天睡眠不足七小时。",
-   "b": "我们问了问，好多同学都睡得特别少。",
-   "better": "a",
-   "why": "Báo cáo cần số liệu cụ thể và văn viết: 调查显示, 超过三分之一, 睡眠不足. Câu b mơ hồ (好多, 特别少) — là lời kể miệng."
-  },
-  {
-   "scene": "Em gái lo lắng không ngủ được vào đêm trước kỳ thi, em an ủi.",
-   "a": "考前焦虑会导致褪黑素分泌异常，建议你调整情绪。",
-   "b": "别紧张，考试有什么大不了的，喝杯热牛奶，早点儿睡吧。",
-   "better": "b",
-   "why": "An ủi em nhỏ cần giọng thân mật, dịu dàng (有什么大不了的 — ôn bài 6). Câu a đúng kiến thức nhưng khô như lời bác sĩ viết trong bệnh án."
-  },
-  {
-   "scene": "Biển báo / thông báo của cảnh sát giao thông trên một con đường một chiều.",
-   "a": "为保障交通安全，本路段禁止车辆逆行。",
-   "b": "这条路别开反了啊，危险！",
-   "better": "a",
-   "why": "Thông báo chính thức dùng văn viết ngắn gọn: 为保障……, 本路段, 禁止车辆逆行. Câu b là lời nhắc miệng giữa người quen."
-  },
-  {
-   "scene": "Trong giờ học, em khẽ nhắc bạn ngồi bên cạnh đang ngủ gật.",
-   "a": "同学，请注意，你的行为扰乱了课堂秩序。",
-   "b": "喂，醒醒，老师看你呢！",
-   "better": "b",
-   "why": "Nhắc khẽ bạn cùng bàn dùng khẩu ngữ ngắn gọn (喂, 醒醒, ……呢). Câu a (你的行为扰乱了课堂秩序) là lời phê bình của thầy cô, nói với bạn thì quá nặng."
-  }
- ]
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
+  items: [
+    {scene:'Bác sĩ phát biểu trong chương trình sức khoẻ trên truyền hình.',a:'长期睡眠不足会引发多种慢性疾病，希望大家重视自己的睡眠。',b:'睡不好可麻烦了，大伙儿别不当回事儿啊。',better:'a',why:'Phát biểu trên truyền hình cần lời trang trọng, chính xác: 引发多种慢性疾病, 重视. Câu b (可麻烦了, 大伙儿, 别不当回事儿) là khẩu ngữ suồng sã.'},
+    {scene:'Em nhắn tin cho bạn thân kể chuyện đêm qua.',a:'本人近日入睡困难，睡眠严重不足，目前无法正常工作。',b:'昨天晚上又失眠了，翻来覆去折腾到三点，困死我了！',better:'b',why:'Nhắn tin bạn thân dùng khẩu ngữ tự nhiên: 翻来覆去折腾, 困死我了. Câu a (本人, 近日, 无法正常工作) nghe như đơn xin nghỉ gửi cơ quan.'},
+    {scene:'Em viết báo cáo kết quả khảo sát về giấc ngủ cho giờ Sinh học.',a:'调查显示，超过三分之一的同学每天睡眠不足七小时。',b:'我们问了问，好多同学都睡得特别少。',better:'a',why:'Báo cáo cần số liệu cụ thể và văn viết: 调查显示, 超过三分之一, 睡眠不足. Câu b mơ hồ (好多, 特别少) — là lời kể miệng.'},
+    {scene:'Em gái lo lắng không ngủ được vào đêm trước kỳ thi, em an ủi.',a:'考前焦虑会导致褪黑素分泌异常，建议你调整情绪。',b:'别紧张，考试有什么大不了的，喝杯热牛奶，早点儿睡吧。',better:'b',why:'An ủi em nhỏ cần giọng thân mật, dịu dàng (有什么大不了的 — ôn bài 6). Câu a đúng kiến thức nhưng khô như lời bác sĩ viết trong bệnh án.'},
+    {scene:'Đội trưởng phát biểu trong buổi lễ xuất quân trước trận chung kết của trường, trước thầy cô và toàn thể học sinh.',a:'我代表全队向大家保证：这场决赛，我们一定竭尽全力，不让大家失望。',b:'明天我们好好踢，放心吧，没问题！',better:'a',why:'Phát biểu trước đông người, có thầy cô → lời trang trọng: 我代表全队向大家保证, 竭尽全力, 不让大家失望. Câu b (好好踢, 放心吧, 没问题) hợp khi nói riêng với bạn bè.'},
+    {scene:'Trong giờ học, em khẽ nhắc bạn ngồi bên cạnh đang ngủ gật.',a:'同学，请注意，你的行为已经影响到大家上课了。',b:'喂，醒醒，老师看你呢！',better:'b',why:'Nhắc khẽ bạn cùng bàn dùng khẩu ngữ ngắn gọn (喂, 醒醒, ……呢). Câu a (请注意，你的行为已经影响到……) là lời phê bình của thầy cô, nói với bạn thì quá nặng.'}
+  ]
 };
 
 var retellData = {

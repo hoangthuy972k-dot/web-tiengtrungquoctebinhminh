@@ -1622,89 +1622,51 @@ var hvBridgeData = {
 // GHÉP TỪ — cụm trong bài khoá
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'世事',right:'变迁'},
-  {left:'有敌人',right:'侵犯'},
-  {left:'远离',right:'居住地'},
-  {left:'足迹',right:'遍布世界'},
   {left:'引起',right:'轰动'},
-  {left:'趣味性',right:'强'},
-  {left:'中外',right:'人士'},
-  {left:'中、外文版本',right:'同时发行'},
-  {left:'外交事业的',right:'延伸和补充'},
-  {left:'经济型',right:'产业'},
-  {left:'旅游业的',right:'振兴'},
-  {left:'游客中的',right:'主流'},
-  {left:'犹如',right:'家常便饭'},
-  {left:'调整',right:'服务宗旨'},
-  {left:'增加',right:'相关栏目'},
-  {left:'偏僻',right:'省份'},
-  {left:'考古',right:'新发现'},
-  {left:'经费',right:'预算'},
-  {left:'游客的',right:'好参谋'},
-  {left:'卫星',right:'导航'},
-  {left:'随身的',right:'向导'},
-  {left:'汽车',right:'租赁公司'},
-  {left:'带上顶',right:'帐篷'}
+  {left:'千方',right:'百计'},
+  {left:'风土',right:'人情'},
+  {left:'一顶',right:'帐篷'},
+  {left:'一个偏僻的',right:'小山村'},
+  {left:'遍布',right:'全国各地'},
+  {left:'以服务读者为',right:'宗旨'},
+  {left:'振兴',right:'当地经济'},
+  {left:'尊重当地的',right:'习俗'},
+  {left:'经费',right:'不足'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ
+// ĐIỀN TỪ — câu mới (không chép bài khoá / SGK), mỗi câu một tình huống; ôn xoáy ốc từ + ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'爷爷奶奶经历了几十年的社会',blank:'变迁',post:'，对生活有很深的感悟。',hint:'(đổi thay)',ans:'变迁'},
-  {pre:'这件事',blank:'起初',post:'谁也没当回事，后来才发现问题很严重。',hint:'(lúc đầu)',ans:'起初',exp:'起初 = lúc đầu (về sau thay đổi), thường hô ứng với 后来.'},
-  {pre:'每年冬天，这种候鸟都要',blank:'迁徙',post:'到温暖的南方。',hint:'(di cư)',ans:'迁徙'},
-  {pre:'随便翻看别人的日记，是',blank:'侵犯',post:'隐私的行为。',hint:'(xâm phạm)',ans:'侵犯'},
-  {pre:'外婆一直',blank:'居住',post:'在乡下，不愿意搬到城里来。',hint:'(cư trú, sống)',ans:'居住'},
-  {pre:'他这么做',blank:'纯粹',post:'是为了炫耀，并不是真的想帮忙。',hint:'(hoàn toàn, chỉ đơn thuần)',ans:'纯粹'},
-  {pre:'没有水，任何生物都无法',blank:'生存',post:'。',hint:'(sinh tồn)',ans:'生存'},
-  {pre:'在没有信号的森林里，',blank:'指南针',post:'比手机更可靠。',hint:'(la bàn)',ans:'指南针'},
-  {pre:'会议讨论了',blank:'若干',post:'个重要问题。',hint:'(một số)',ans:'若干',exp:'若干 = một số, vài (văn viết, số lượng không xác định).'},
-  {pre:'这家连锁店的分店',blank:'遍布',post:'全国各地。',hint:'(có mặt khắp)',ans:'遍布'},
-  {pre:'为了找到走丢的小狗，他',blank:'千方百计',post:'地找了整整三天。',hint:'(tìm đủ mọi cách)',ans:'千方百计'},
-  {pre:'图书馆里收藏着各类',blank:'书籍',post:'，是学习的好地方。',hint:'(sách vở)',ans:'书籍'},
-  {pre:'这部小说一',blank:'问世',post:'就受到了读者的欢迎。',hint:'(ra mắt)',ans:'问世'},
-  {pre:'乘坐飞机时，禁止',blank:'携带',post:'易燃易爆物品。',hint:'(mang theo)',ans:'携带'},
-  {pre:'作者在',blank:'序言',post:'中感谢了家人的支持。',hint:'(lời tựa)',ans:'序言'},
-  {pre:'这条街是全市最',blank:'繁华',post:'的商业街。',hint:'(sầm uất)',ans:'繁华'},
-  {pre:'这本词典又小又轻，',blank:'便于',post:'携带。',hint:'(tiện cho)',ans:'便于',exp:'便于 + V = tiện cho việc…: 便于携带.'},
-  {pre:'中秋节有吃月饼、赏月的',blank:'习俗',post:'。',hint:'(phong tục)',ans:'习俗'},
-  {pre:'我们在',blank:'码头',post:'等了半个小时，船才开过来。',hint:'(bến tàu)',ans:'码头'},
-  {pre:'由于压力太大，他',blank:'一度',post:'想放弃学业，幸好坚持了下来。',hint:'(có một dạo)',ans:'一度',exp:'一度 = đã có một dạo, có lúc (trong quá khứ): 一度想放弃.'},
-  {pre:'他获得冠军的消息',blank:'轰动',post:'了整个学校。',hint:'(làm xôn xao)',ans:'轰动'},
-  {pre:'晚会邀请了社会各界',blank:'人士',post:'参加。',hint:'(nhân sĩ)',ans:'人士'},
-  {pre:'请把软件更新到最新',blank:'版本',post:'。',hint:'(phiên bản)',ans:'版本'},
-  {pre:'这张唱片',blank:'发行',post:'第一周就卖出了十万张。',hint:'(phát hành)',ans:'发行'},
-  {pre:'这条公路一直',blank:'延伸',post:'到大山深处。',hint:'(kéo dài)',ans:'延伸'},
-  {pre:'发展特色旅游是',blank:'振兴',post:'乡村经济的好办法。',hint:'(chấn hưng)',ans:'振兴'},
-  {pre:'如今，网上购物已经成为消费的',blank:'主流',post:'。',hint:'(xu hướng chính)',ans:'主流'},
-  {pre:'清晨的湖面平静得',blank:'犹如',post:'一面镜子。',hint:'(như là)',ans:'犹如',exp:'犹如 = giống như (văn viết, như 好像): 犹如一面镜子.'},
-  {pre:'这家报纸新开设了一个旅游',blank:'栏目',post:'。',hint:'(chuyên mục)',ans:'栏目'},
-  {pre:'夏天，',blank:'沿海',post:'地区经常受到台风的影响。',hint:'(ven biển)',ans:'沿海'},
-  {pre:'旅行的意义在于了解各地不同的',blank:'风土人情',post:'。',hint:'(phong thổ nhân tình)',ans:'风土人情'},
-  {pre:'这次',blank:'考古',post:'发现证明，两千年前这里就有人居住。',hint:'(khảo cổ)',ans:'考古'},
-  {pre:'这次旅行的花费已经超出了',blank:'预算',post:'。',hint:'(ngân sách)',ans:'预算'},
-  {pre:'越南已经成功发射了好几颗',blank:'卫星',post:'。',hint:'(vệ tinh)',ans:'卫星'},
-  {pre:'我们在湖边搭了一顶',blank:'帐篷',post:'，在那里过了一夜。',hint:'(lều)',ans:'帐篷'},
-  {pre:'进山之前，我们请了一位当地的',blank:'向导',post:'。',hint:'(người dẫn đường)',ans:'向导'}
+  {pre:'看着这些老照片，爷爷不由得说起了家乡几十年来的',blank:'变迁',post:'。',hint:'(sự đổi thay)',ans:'变迁',exp:'变迁 = sự đổi thay qua một thời gian dài (của xã hội, quê hương), là danh từ: 几十年来的变迁. Ôn 不由得 (bài 2) = bất giác.'},
+  {pre:'每年秋天，成千上万只鸟从北方',blank:'迁徙',post:'到南方过冬。',hint:'(di cư)',ans:'迁徙',exp:'迁徙 = di cư theo mùa (chim, thú) hoặc cả cộng đồng dời đến nơi khác; 搬家 chỉ là một gia đình chuyển nhà.'},
+  {pre:'现在越来越多的老人选择',blank:'居住',post:'在环境安静的小镇上。',hint:'(cư trú, sinh sống)',ans:'居住',exp:'居住 + 在 + nơi chốn = cư trú, sinh sống — cách nói văn viết của 住.'},
+  {pre:'他那么说',blank:'纯粹',post:'是开玩笑，并没有看不起你的意思。',hint:'(hoàn toàn chỉ là)',ans:'纯粹',exp:'纯粹是 + … = hoàn toàn chỉ là…, không có ý gì khác; gần nghĩa 无非 (bài 5) nhưng giọng khẳng định mạnh hơn.'},
+  {pre:'在沙漠里，如果没有水，人连三天都很难',blank:'生存',post:'下去。',hint:'(sống sót, tồn tại)',ans:'生存',exp:'生存下去 = sống sót, tồn tại tiếp; 生活 là cuộc sống hằng ngày, không nhấn mạnh chuyện sống còn.'},
+  {pre:'经过讨论，大家对这个计划提出了',blank:'若干',post:'条修改意见。',hint:'(một số)',ans:'若干',exp:'若干 = một số (văn viết, số lượng không nói rõ), đứng ngay trước lượng từ: 若干条 / 若干年.'},
+  {pre:'世界上第一台电脑是哪一年',blank:'问世',post:'的？',hint:'(ra đời)',ans:'问世',exp:'问世 = (phát minh, sách, sản phẩm) ra đời lần đầu; chủ ngữ là vật. Người thì dùng 出生; đừng nhầm với 去世 (qua đời).'},
+  {pre:'船八点开，我们七点半以前一定要赶到',blank:'码头',post:'。',hint:'(bến tàu)',ans:'码头',exp:'码头 = bến tàu, bến thuyền (nơi lên xuống thuyền); 车站 dành cho xe, 机场 dành cho máy bay.'},
+  {pre:'这个问题比较复杂，我们最好听听专业',blank:'人士',post:'的意见。',hint:'(người trong nghề)',ans:'人士',exp:'人士 = người thuộc một giới / lĩnh vực (văn viết, lịch sự): 专业人士, 中外人士; không dùng để gọi một người cụ thể.'},
+  {pre:'这位歌手的新唱片下个月一号正式',blank:'发行',post:'。',hint:'(phát hành)',ans:'发行',exp:'发行 = phát hành (đĩa nhạc, sách, tiền); 发表 dùng cho bài viết, ý kiến (发表文章).'},
+  {pre:'这条地铁明年将',blank:'延伸',post:'到机场，到时候去机场就方便多了。',hint:'(kéo dài)',ans:'延伸',exp:'延伸 + 到 + nơi chốn = kéo dài tới…; dùng cho đường sá, phạm vi (không dùng cho thời gian như 延长).'},
+  {pre:'现在在网上买东西已经成了',blank:'主流',post:'，很多年轻人很少去商店了。',hint:'(xu hướng chính)',ans:'主流',exp:'主流 = xu hướng chính, cái chiếm đa số: 成了 / 成为 + 主流.'},
+  {pre:'',blank:'沿海',post:'城市经济比较发达，每年都吸引大量年轻人去工作。',hint:'(ven biển)',ans:'沿海',exp:'沿海 = ven biển, làm định ngữ trực tiếp không cần 的: 沿海城市 / 沿海地区.'},
+  {pre:'我把常用的电话号码都写在本子的第一页，',blank:'便于',post:'随时查找。',hint:'(tiện cho)',ans:'便于',exp:'……，便于 + động từ = để tiện cho việc…: vế trước là cách làm, vế sau là mục đích. 便于 phải có động từ theo sau (便于查找), không nói 便于我.'},
+  {pre:'雨后的空气',blank:'犹如',post:'刚被洗过一样，十分新鲜。',hint:'(giống như)',ans:'犹如',exp:'犹如 + B + 一样 / 一般 = giống hệt như B (văn viết, hay dùng khi miêu tả); bản thân 犹如 đã là động từ nên không thêm 是.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (便于 · 犹如 · 和……相比) ít nhất 2 câu
+// SẮP XẾP CÂU — câu mới, chỉ một trật tự đúng
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['为','便于','外地人','出行','，','他','搜集了','很多','信息','。'],ans:'为便于外地人出行，他搜集了很多信息。',audio:'为便于外地人出行，他搜集了很多信息。'},
-  {words:['这本词典','又小又轻','，','非常','便于','携带','。'],ans:'这本词典又小又轻，非常便于携带。',audio:'这本词典又小又轻，非常便于携带。'},
-  {words:['科普文章','应该','写得','简明易懂','、','便于','理解','。'],ans:'科普文章应该写得简明易懂、便于理解。',audio:'科普文章应该写得简明易懂、便于理解。'},
-  {words:['国内旅游','和','出国旅游','都','变得','犹如','家常便饭','。'],ans:'国内旅游和出国旅游都变得犹如家常便饭。',audio:'国内旅游和出国旅游都变得犹如家常便饭。'},
-  {words:['清晨的','湖面','平静得','犹如','一面','镜子','。'],ans:'清晨的湖面平静得犹如一面镜子。',audio:'清晨的湖面平静得犹如一面镜子。'},
-  {words:['她的','歌声','犹如','山间的','清泉','。'],ans:'她的歌声犹如山间的清泉。',audio:'她的歌声犹如山间的清泉。'},
-  {words:['和','过去','相比','，','游客','不再','仅','关注','著名旅游城市','。'],ans:'和过去相比，游客不再仅关注著名旅游城市。',audio:'和过去相比，游客不再仅关注著名旅游城市。'},
-  {words:['和','十年前','相比','，','这座城市','繁华','多了','。'],ans:'和十年前相比，这座城市繁华多了。',audio:'和十年前相比，这座城市繁华多了。'},
-  {words:['与','大城市','相比','，','小镇的','生活','更加','悠闲','。'],ans:'与大城市相比，小镇的生活更加悠闲。',audio:'与大城市相比，小镇的生活更加悠闲。'},
-  {words:['一年一度的','春节','又','到','了','。'],ans:'一年一度的春节又到了。',audio:'一年一度的春节又到了。'},
-  {words:['我们家','一向','好客','，','来了客人','总是','热情招待','。'],ans:'我们家一向好客，来了客人总是热情招待。',audio:'我们家一向好客，来了客人总是热情招待。'},
-  {words:['旅游指南','绝对是','游客的','好参谋','。'],ans:'旅游指南绝对是游客的好参谋。',audio:'旅游指南绝对是游客的好参谋。'}
+  {words:['乘坐飞机时','不能','随身','携带','太多的','行李','。'],ans:'乘坐飞机时不能随身携带太多的行李。',audio:'乘坐飞机时不能随身携带太多的行李。'},
+  {words:['这本书的','序言','写得','非常','动人','。'],ans:'这本书的序言写得非常动人。',audio:'这本书的序言写得非常动人。'},
+  {words:['他','把','那本','旅游指南','放进了','背包里','。'],ans:'他把那本旅游指南放进了背包里。',audio:'他把那本旅游指南放进了背包里。'},
+  {words:['这个','栏目的','宗旨','是','帮助','读者','解决问题','。'],ans:'这个栏目的宗旨是帮助读者解决问题。',audio:'这个栏目的宗旨是帮助读者解决问题。'},
+  {words:['那家','汽车','租赁公司的','服务','特别','好','。'],ans:'那家汽车租赁公司的服务特别好。',audio:'那家汽车租赁公司的服务特别好。'},
+  {words:['这座','城市','变得','越来越','繁华','了','。'],ans:'这座城市变得越来越繁华了。',audio:'这座城市变得越来越繁华了。'},
+  {words:['我们','跟着','向导','走进了','那片','森林','。'],ans:'我们跟着向导走进了那片森林。',audio:'我们跟着向导走进了那片森林。'},
+  {words:['他','把','这本指南','看得','犹如','宝贝','一般','。'],ans:'他把这本指南看得犹如宝贝一般。',audio:'他把这本指南看得犹如宝贝一般。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1712,72 +1674,44 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'他____很守时，今天迟到一定有特别的原因。',opts:['一度','一时','一向','一旦'],ans:2,
-   exp:'一向 = từ trước đến nay luôn (thói quen không đổi). 一度 = đã có một dạo (chuyện một thời trong quá khứ); 一时 = nhất thời; 一旦 = một khi (giả thiết).'},
-  {wrong:'时间有限，请大家____地介绍一下自己的观点。',opts:['简要','简直','简单化','重要'],ans:0,
-   exp:'简要(地) + 介绍 = giới thiệu ngắn gọn. 简直 = quả thực (phó từ nhấn mạnh); 简单化 = đơn giản hoá (động từ); 重要 = quan trọng.'},
-  {wrong:'这本书的____性很强，孩子们都爱看。',opts:['有趣','兴趣','乐趣','趣味'],ans:3,
-   exp:'趣味性 = tính thú vị (danh từ 趣味 + hậu tố 性). 有趣 là tính từ, không ghép với 性; 兴趣 = hứng thú của người (对……感兴趣); 乐趣 = niềm vui.'},
-  {wrong:'她把一生都献给了教育____。',opts:['职业','事业','作业','专业'],ans:1,
-   exp:'献给……事业 = cống hiến cho sự nghiệp …. 职业 = nghề nghiệp (công việc để kiếm sống); 专业 = chuyên ngành; 作业 = bài tập.'},
-  {wrong:'旅游业已经成为这个地区的支柱____。',opts:['产品','产业','财产','企业'],ans:1,
-   exp:'支柱产业 = ngành kinh tế mũi nhọn. 产品 = sản phẩm; 财产 = tài sản; 企业 = doanh nghiệp (một công ty cụ thể).'},
-  {wrong:'我们公司一向以“顾客第一”为____。',opts:['主意','目的地','想法','宗旨'],ans:3,
-   exp:'以……为宗旨 = lấy … làm tôn chỉ (cụm cố định, văn viết). 主意 = chủ ý; 目的地 = điểm đến; 想法 = suy nghĩ.'},
-  {wrong:'这家酒店的服务非常____化，住起来很舒服。',opts:['人性','人士','人情','性格'],ans:0,
-   exp:'人性化 = chu đáo, lấy con người làm gốc. 人士 = nhân sĩ; 人情 = tình người, ân tình; 性格 = tính cách — đều không ghép với 化 theo nghĩa này.'},
-  {wrong:'他在一个____的山村当了十年老师。',opts:['偏见','偏偏','偏僻','繁华'],ans:2,
-   exp:'偏僻的山村 = bản làng hẻo lánh. 偏见 = định kiến (danh từ); 偏偏 = lại cứ (phó từ); 繁华 dùng cho thành phố, phố xá sầm uất, không hợp với 山村.'},
-  {wrong:'到国外旅游，要尊重当地人的____信仰。',opts:['宗旨','教育','文学','宗教'],ans:3,
-   exp:'宗教信仰 = tín ngưỡng tôn giáo. 宗旨 = tôn chỉ; 教育 = giáo dục; 文学 = văn học — không đi với 信仰.'},
-  {wrong:'由于____不足，这个项目只好暂停。',opts:['经验','消费','经费','浪费'],ans:2,
-   exp:'经费不足 = thiếu kinh phí. 经验 = kinh nghiệm; 消费 = tiêu dùng; 浪费 = lãng phí.'},
-  {wrong:'我想买台电脑，你帮我____一下吧。',opts:['参观','参谋','参加','参考'],ans:1,
-   exp:'帮 + ai + 参谋一下 = góp ý, tư vấn giúp ai. 参观 = tham quan; 参加 = tham gia; 参考 = tham khảo (tự mình xem để tham khảo, không "giúp ai").'},
-  {wrong:'爷爷看的古书都是用____印的，我很多字都不认识。',opts:['繁体字','简体字','拼音','错别字'],ans:0,
-   exp:'Sách cổ + nhiều chữ không đọc được → 繁体字 (chữ phồn thể). 简体字 là chữ ta học hằng ngày; 拼音 = phiên âm; 错别字 = chữ viết sai.'},
-  {wrong:'中国大陆使用的是____，香港人习惯用繁体字。',opts:['繁体字','汉语拼音','简体字','甲骨文'],ans:2,
-   exp:'Trung Quốc đại lục dùng 简体字 (chữ giản thể), đối lập với 繁体字 ở vế sau. 甲骨文 = chữ giáp cốt (chữ cổ).'},
-  {wrong:'开车去陌生的地方，最好开着____。',opts:['导游','向导','领导','导航'],ans:3,
-   exp:'开导航 = bật định vị. 导游 = hướng dẫn viên du lịch; 向导 = người dẫn đường; 领导 = lãnh đạo — đều là người, không "bật" được.'},
-  {wrong:'签____合同之前，一定要看清楚每一条内容。',opts:['租赁','租金','出租车','房租'],ans:0,
-   exp:'租赁合同 = hợp đồng thuê. 租金, 房租 = tiền thuê; 出租车 = taxi.'},
-  {wrong:'和十年前____，这座城市发生了翻天覆地的变化。',opts:['相同','相比','相似','相反'],ans:1,
-   exp:'和……相比 = so với … (điểm ngữ pháp của bài). 和……相同 / 相似 = giống / tương tự với … — mâu thuẫn với "thay đổi long trời lở đất" (翻天覆地 ôn bài 8); 相反 = ngược lại.'},
-  {wrong:'为____外地人出行，他搜集了当地的交通信息。',opts:['方便地','以便','便宜','便于'],ans:3,
-   exp:'为便于 + V = để tiện cho việc … (câu bài khoá). 以便 là liên từ đứng đầu vế SAU (……，以便……), không đi sau 为; 方便地 là trạng ngữ, không làm tân ngữ của 为; 便宜 (piányi) = rẻ.'},
-  {wrong:'卫星导航使人们不管走到哪儿，都____有位随身的向导。',opts:['犹豫','如果','犹如','例如'],ans:2,
-   exp:'犹如 = giống như (văn viết). 犹豫 = do dự (gần chữ, gần âm); 如果 = nếu; 例如 = ví dụ như (dùng để liệt kê).'}
+  {wrong:'我弟弟____很节约，今天怎么一下子买了这么贵的东西？',opts:['一向','一度','一旦','一时'],ans:0,exp:'Thói quen từ trước đến nay không đổi → 一向. 一度 là "có một dạo" (chuyện đã qua, nay khác); 一旦 là "một khi" (giả thiết); 一时 là "nhất thời".'},
+  {wrong:'刚到国外时，因为听不懂当地人说话，她____想放弃留学，后来慢慢适应了。',opts:['一度','一向','一旦','从来'],ans:0,exp:'Chuyện xảy ra một thời gian trong quá khứ, nay đã khác (后来慢慢适应了) → 一度. 一向 là thói quen kéo dài đến nay; 一旦 là giả thiết; 从来 thường đi với phủ định (从来不 / 从来没).'},
+  {wrong:'离下课只有五分钟了，请每个小组____地说一下讨论的结果。',opts:['简要','简直','主要','必要'],ans:0,exp:'简要地 + 说 / 介绍 = nói ngắn gọn, nêu ý chính. 简直 là "quả thực" (nhấn mạnh cảm xúc); 主要, 必要 không đứng trước 地 + động từ như vậy.'},
+  {wrong:'李老师在农村教了三十年书，把一生都给了教育____。',opts:['事业','职业','作业','专业'],ans:0,exp:'教育事业 = sự nghiệp giáo dục (công việc lớn, có ý nghĩa với xã hội). 职业 là nghề để kiếm sống; 专业 là chuyên ngành học; 作业 là bài tập.'},
+  {wrong:'这几年，旅游业已经成为我们省最重要的____之一。',opts:['产业','产品','企业','财产'],ans:0,exp:'Một ngành kinh tế → 产业 (旅游业 là một 产业). 产品 là sản phẩm; 企业 là một doanh nghiệp cụ thể; 财产 là tài sản.'},
+  {wrong:'去别的国家旅行前，最好先了解一下当地的____文化，到了那儿才不会做出不礼貌的事。',opts:['宗教','宗旨','主流','人士'],ans:0,exp:'宗教文化 = văn hoá tôn giáo. 宗旨 (cùng âm Hán Việt "tông") là tôn chỉ, mục đích; 主流 là xu hướng chính; 人士 là nhân sĩ — không ghép với 文化 theo nghĩa này.'},
+  {wrong:'由于____不够，这次考古工作只好推迟到明年。',opts:['经费','经验','消费','工资'],ans:0,exp:'Tiền dành cho một công việc, dự án → 经费. 经验 là kinh nghiệm; 消费 là tiêu dùng; 工资 là lương của một người.'},
+  {wrong:'下周去面试，我不知道穿哪件衣服好，你给我____吧。',opts:['参谋参谋','参观参观','参加参加','参考参考'],ans:0,exp:'参谋 = góp ý, tư vấn cho ai: 给我参谋参谋. 参观 là tham quan; 参加 là tham gia; 参考 là tự mình tham khảo tài liệu, không "参考" giúp người khác.'},
+  {wrong:'这条路我也没走过，咱们打开手机____看看吧。',opts:['导航','向导','导游','领导'],ans:0,exp:'Bật định vị trên điện thoại → 打开导航. 向导 (người dẫn đường), 导游 (hướng dẫn viên), 领导 (lãnh đạo) đều là người, không "打开" được.'},
+  {wrong:'这本书很有____，我女儿一拿起来就放不下了。',opts:['趣味','兴趣','有趣','乐趣'],ans:0,exp:'很有趣味 = rất thú vị (nói về sách, trò chơi). 兴趣 là hứng thú của NGƯỜI (对……有兴趣) — lỗi hay gặp "这本书很有兴趣"; 有趣 đã là tính từ nên không nói 很有有趣; 乐趣 là niềm vui khi làm việc gì.'},
+  {wrong:'奶奶年轻时学的是____，现在看简体字的书还有点儿不习惯。',opts:['繁体字','简体字','错字','生词'],ans:0,exp:'Quen chữ phồn thể nên đọc chữ giản thể chưa quen → 繁体字. 简体字 mâu thuẫn với vế sau; 错字 là chữ viết sai; 生词 là từ mới.'},
+  {wrong:'从飞机上往下看，城市的灯光____满地的星星。',opts:['犹如','例如','如果','犹豫'],ans:0,exp:'犹如 = giống như (văn viết), làm vị ngữ: A 犹如 B. 例如 dùng để nêu ví dụ; 如果 là "nếu"; 犹豫 là do dự — giống mặt chữ và âm với 犹如 nên dễ nhầm.'},
+  {wrong:'这本词典的字特别大，____老人阅读。',opts:['便于','随便','顺便','便宜'],ans:0,exp:'便于 + động từ = tiện cho việc…: 便于老人阅读. 随便 là tuỳ tiện; 顺便 là tiện thể; 便宜 (piányi) là rẻ — cùng chữ 便 nhưng nghĩa khác hẳn.'},
+  {wrong:'和大城市____，小镇上的生活慢多了，也安静多了。',opts:['相比','相同','相似','相反'],ans:0,exp:'和 B 相比 = so với B, vế sau nêu kết quả so sánh (慢多了). 相同 / 相似 là giống nhau — mâu thuẫn với 慢多了; 相反 là ngược lại, không đi sau 和 + danh từ như vậy.'},
+  {wrong:'和我刚来的时候相比，现在来这儿的游客____。',opts:['多了一倍','很多','非常多','真多'],ans:0,exp:'Sau 和……相比, vế sau phải thể hiện sự so sánh: 多了一倍 / 多得多 / 更多. 很多, 非常多, 真多 chỉ nói mức độ, không có ý so sánh — lỗi người Việt hay mắc (dịch "so với hồi tôi mới đến, bây giờ khách rất đông").'}
 ];
 
 // ══════════════════════════════════════════
-// DỊCH — câu ghép, ôn từ HSK 6 bài 1–8 và HSK 4–5
+// DỊCH Việt → Trung — câu mới, dùng từ của bài + ôn ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var translateData = [
   {vi:'Để tiện liên lạc, ngày nào lớp trưởng cũng thông báo ngắn gọn những tin quan trọng.',zh:'为了便于联系，班长每天都会简要地通知一下重要消息。',py:'Wèile biànyú liánxì, bānzhǎng měi tiān dōu huì jiǎnyào de tōngzhī yíxià zhòngyào xiāoxi.',goiY:['为了便于……','简要','通知'],giai:'为了便于 + V: để tiện cho việc …; 简要地 + V làm trạng ngữ (ngắn gọn). Không dịch "tiện" thành 便宜 (rẻ).'},
   {vi:'So với cấp hai, việc học ở cấp ba khô khan đến mức có một dạo tôi đã chán học.',zh:'和初中相比，高中的学习枯燥得让我一度厌倦了读书。',py:'Hé chūzhōng xiāngbǐ, gāozhōng de xuéxí kūzào de ràng wǒ yídù yànjuànle dúshū.',goiY:['和……相比','一度','枯燥','厌倦'],giai:'和……相比 đặt đầu câu nêu mốc so sánh; 一度 = có một dạo (quá khứ, nay đã khác) — không dùng 一向. 枯燥 ôn bài 7, 厌倦 ôn bài 4.'},
   {vi:'Anh trai tôi xưa nay không thích đọc sách du lịch, vậy mà năm nay lại mua liền ba cuốn.',zh:'我哥哥一向不爱看旅游类书籍，今年居然一连买了三本。',py:'Wǒ gēge yíxiàng bú ài kàn lǚyóu lèi shūjí, jīnnián jūrán yìlián mǎile sān běn.',goiY:['一向','书籍','居然'],giai:'一向 + 不 + V: xưa nay vốn không …; 居然 = vậy mà (bất ngờ) tạo tương phản với 一向 ở vế trước.'},
-  {vi:'Tuy nhà bà ngoại tôi ở một thị trấn hẻo lánh, nhưng phong thổ nhân tình độc đáo ở đó năm nào cũng thu hút rất nhiều du khách.',zh:'虽然我外婆家在一个偏僻的乡镇，但是那里独特的风土人情每年都吸引着大批游客。',py:'Suīrán wǒ wàipó jiā zài yí ge piānpì de xiāngzhèn, dànshì nàlǐ dútè de fēngtǔ rénqíng měi nián dōu xīyǐnzhe dàpī yóukè.',goiY:['虽然……但是……','偏僻','风土人情','乡镇'],giai:'虽然……但是…… nối hai ý trái chiều (hẻo lánh ↔ thu hút du khách); 乡镇 ôn bài 3; "rất nhiều du khách" = 大批游客.'},
-  {vi:'Chỉ cần có định vị vệ tinh, đi đến đâu cũng như có một người dẫn đường theo bên mình, không bao giờ sợ lạc nữa.',zh:'只要有卫星导航，不管走到哪儿都犹如有位随身的向导，再也不怕迷路了。',py:'Zhǐyào yǒu wèixīng dǎoháng, bùguǎn zǒudào nǎr dōu yóurú yǒu wèi suíshēn de xiàngdǎo, zài yě bú pà mílù le.',goiY:['只要……','不管……都……','犹如','向导'],giai:'只要 (chỉ cần) + 不管……都…… (dù … đều) lồng vào nhau; 犹如 = như là (văn viết); 再也不……了 = không bao giờ … nữa.'},
-  {vi:'Thay vì tốn nhiều tiền ở khách sạn cao cấp, chi bằng mang theo một cái lều, vừa tiết kiệm kinh phí vừa được gần gũi thiên nhiên.',zh:'与其花很多钱住高级酒店，不如带上一顶帐篷，既节省经费，又能亲近大自然。',py:'Yǔqí huā hěn duō qián zhù gāojí jiǔdiàn, bùrú dàishàng yì dǐng zhàngpeng, jì jiéshěng jīngfèi, yòu néng qīnjìn dà zìrán.',goiY:['与其……不如……','帐篷','经费','既……又……'],giai:'与其 A 不如 B: chọn B; 既……又…… liệt kê hai cái lợi. Lượng từ của 帐篷 là 顶, không dùng 个.'},
-  {vi:'Từ khi phần mềm này cập nhật phiên bản, thiết kế ngày càng chu đáo, đến bà tôi vốn không thích dùng điện thoại cũng biết dùng rồi.',zh:'自从这款软件更新了版本，设计越来越人性化，连一向不爱用手机的奶奶都会用了。',py:'Zìcóng zhè kuǎn ruǎnjiàn gēngxīnle bǎnběn, shèjì yuè lái yuè rénxìnghuà, lián yíxiàng bú ài yòng shǒujī de nǎinai dōu huì yòng le.',goiY:['自从……','更新','人性化','连……都……'],giai:'自从 = kể từ khi; 人性化 dịch "chu đáo, thân thiện với người dùng", không dịch "nhân tính hoá"; 更新 ôn bài 8; 连……都…… nhấn mạnh trường hợp khó nhất.'},
-  {vi:'Lần đầu đi du lịch một mình, bố mẹ tìm đủ mọi cách khuyên tôi đi theo đoàn, nhưng tôi vẫn quyết định tự làm chủ — dù sao sách hướng dẫn du lịch chính là người cố vấn tốt nhất.',zh:'第一次独自旅行，父母千方百计地劝我跟团，可我还是决定自己做主，毕竟旅游指南就是最好的参谋。',py:'Dì-yī cì dúzì lǚxíng, fùmǔ qiānfāng-bǎijì de quàn wǒ gēn tuán, kě wǒ háishi juédìng zìjǐ zuò zhǔ, bìjìng lǚyóu zhǐnán jiù shì zuì hǎo de cānmóu.',goiY:['千方百计','做主','毕竟','参谋'],giai:'千方百计地 + V làm trạng ngữ; 可……还是…… nêu sự kiên định; 毕竟 = dù sao thì (nêu lý do cuối cùng). 做主 ôn bài 7.'},
-  {vi:'Sở dĩ tôi xem chuyên mục du lịch ấy say sưa như vậy là vì nó không chỉ giới thiệu danh lam thắng cảnh mà còn giới thiệu phong tục các vùng.',zh:'我之所以看那个旅游栏目看得津津有味，是因为它不仅介绍名胜古迹，还介绍各地的习俗。',py:'Wǒ zhīsuǒyǐ kàn nàge lǚyóu lánmù kàn de jīnjīn-yǒuwèi, shì yīnwèi tā bùjǐn jièshào míngshèng gǔjì, hái jièshào gè dì de xísú.',goiY:['之所以……是因为……','栏目','津津有味','习俗'],giai:'之所以 (kết quả) … 是因为 (nguyên nhân); tân ngữ 栏目 xen giữa nên phải lặp động từ: 看栏目看得……. 津津有味 ôn bài 5.'},
-  {vi:'So với trước đây, bây giờ đi du lịch nước ngoài đã như chuyện cơm bữa, nhưng dù tiện đến mấy, trước khi đi vẫn nên lập dự toán kinh phí chi tiết.',zh:'和过去相比，现在出国旅游已经犹如家常便饭，但再方便，出发前也应该做好详细的经费预算。',py:'Hé guòqù xiāngbǐ, xiànzài chūguó lǚyóu yǐjīng yóurú jiāchángbiànfàn, dàn zài fāngbiàn, chūfā qián yě yīnggāi zuòhǎo xiángxì de jīngfèi yùsuàn.',goiY:['和……相比','犹如','再……也……','预算'],giai:'Câu ba vế: 和……相比 (so sánh) → 但 (chuyển ý) → 再……也…… (dù … đến mấy cũng …). "Lập dự toán" = 做(好)预算.'}
+  {vi:'Tuy nhà bà nội tôi ở một thị trấn hẻo lánh, nhưng phong thổ nhân tình độc đáo ở đó năm nào cũng thu hút rất nhiều du khách.',zh:'虽然我奶奶家在一个偏僻的乡镇，但是那里独特的风土人情每年都吸引着大批游客。',py:'Suīrán wǒ nǎinai jiā zài yí ge piānpì de xiāngzhèn, dànshì nàlǐ dútè de fēngtǔ rénqíng měi nián dōu xīyǐnzhe dàpī yóukè.',goiY:['虽然……但是……','偏僻','风土人情','乡镇'],giai:'虽然……但是…… nối hai ý trái chiều (hẻo lánh ↔ thu hút du khách); 乡镇 ôn bài 3; "rất nhiều du khách" = 大批游客.'},
+  {vi:'Lúc đầu tôi cứ tưởng sách hướng dẫn du lịch chỉ giới thiệu phong cảnh, không ngờ trong đó có cả dự toán kinh phí.',zh:'起初我以为旅游指南只介绍风景，不料里面连经费预算都有。',py:'Qǐchū wǒ yǐwéi lǚyóu zhǐnán zhǐ jièshào fēngjǐng, búliào lǐmiàn lián jīngfèi yùsuàn dōu yǒu.',goiY:['起初','不料','连……都……','经费预算'],giai:'起初 = lúc đầu (về sau thay đổi / nhận ra điều khác); 不料 (bài 4) = không ngờ, dẫn ra điều bất ngờ; "dự toán kinh phí" = 经费预算.'},
+  {vi:'Rõ ràng là điện thoại của tôi, sao cậu không hỏi một tiếng đã tự ý xem? Làm vậy là xâm phạm quyền riêng tư của tôi.',zh:'明明是我的手机，你怎么不问一声就随便看呢？这样做是侵犯我的隐私。',py:'Míngmíng shì wǒ de shǒujī, nǐ zěnme bú wèn yì shēng jiù suíbiàn kàn ne? Zhèyàng zuò shì qīnfàn wǒ de yǐnsī.',goiY:['明明','不……就……','侵犯','隐私'],giai:'明明 (bài 6) = rõ ràng là (để phản bác); "không hỏi một tiếng đã…" = 不问一声就……; 侵犯 + 隐私 = xâm phạm quyền riêng tư.'}
 ];
 
-// Chiều Trung → Việt — bám ý bài khoá, nội dung khác chiều trên
+// ══════════════════════════════════════════
+// Dịch Trung → Việt — câu mới, không trùng chiều trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Loài người xưa nay vẫn luôn gắn bó với du lịch, những chuyến đi thuở ban đầu thuần tuý chỉ là để sinh tồn.',zh:'人类一向与旅游共存，起初的旅行纯粹是为了生存。',py:'Rénlèi yíxiàng yǔ lǚyóu gòngcún, qǐchū de lǚxíng chúncuì shì wèile shēngcún.',goiY:['一向 = xưa nay vẫn','起初 = ban đầu','纯粹 = thuần tuý, chỉ đơn thuần'],giai:'与……共存 dịch "gắn bó, cùng tồn tại với …"; 纯粹是为了 = chỉ đơn thuần là để ….'},
-  {vi:'Do thời tiết thay đổi hoặc có kẻ thù xâm phạm, con người buộc phải di cư đến những nơi có thể an cư.',zh:'由于天气变化或者有敌人侵犯，人们不得不迁徙到能够安居的地方。',py:'Yóuyú tiānqì biànhuà huòzhě yǒu dírén qīnfàn, rénmen bùdébù qiānxǐ dào nénggòu ānjū de dìfang.',goiY:['由于…… = do …','侵犯 = xâm phạm','不得不 = buộc phải','迁徙 = di cư'],giai:'由于 nêu nguyên nhân, 不得不 = buộc phải (không có lựa chọn khác); 安居 = an cư.'},
-  {vi:'Sau khi la bàn được phát minh, Trung Quốc có những người du hành ra nước ngoài; bao năm nay, du lịch luôn là một đề tài nóng.',zh:'指南针发明以后，中国有了海外旅行者；若干年来，旅游一直是热门话题。',py:'Zhǐnánzhēn fāmíng yǐhòu, Zhōngguó yǒule hǎiwài lǚxíngzhě; ruògān nián lái, lǚyóu yìzhí shì rèmén huàtí.',goiY:['指南针 = la bàn','若干年来 = bao năm nay','热门话题 = đề tài nóng'],giai:'Câu tiếng Trung là câu chủ động không có 被, nhưng tiếng Việt tự nhiên hơn khi dịch "la bàn ĐƯỢC phát minh"; 热门 ôn bài 7.'},
-  {vi:'Những nhà du hành có dấu chân khắp thế giới ấy tuy đã tìm đủ mọi cách để đến được Trung Quốc, nhưng đến một cuốn sách hướng dẫn du lịch cũng không tìm được.',zh:'那些足迹遍布世界的旅行者虽然千方百计来到了中国，却连一本旅游指南都找不到。',py:'Nàxiē zújì biànbù shìjiè de lǚxíngzhě suīrán qiānfāng-bǎijì láidàole Zhōngguó, què lián yì běn lǚyóu zhǐnán dōu zhǎo bu dào.',goiY:['遍布 = có mặt khắp','千方百计 = tìm đủ mọi cách','虽然……却…… = tuy … nhưng …','连……都…… = đến … cũng'],giai:'Định ngữ dài 足迹遍布世界的 nên dịch thành mệnh đề sau danh từ: "những nhà du hành có dấu chân khắp thế giới".'},
-  {vi:'Để người nơi khác đi lại thuận tiện, tác giả đã giới thiệu ngắn gọn phong tục và giao thông địa phương trong cuốn sách bỏ túi tiện mang theo này.',zh:'为便于外地人出行，作者在这本携带方便的口袋书里简要介绍了当地的习俗和交通。',py:'Wèi biànyú wàidìrén chūxíng, zuòzhě zài zhè běn xiédài fāngbiàn de kǒudàishū li jiǎnyào jièshàole dāngdì de xísú hé jiāotōng.',goiY:['为便于…… = để tiện cho …','携带方便 = tiện mang theo','简要 = ngắn gọn','习俗 = phong tục'],giai:'为便于 + V: để … được thuận tiện; 口袋书 = sách bỏ túi.'},
-  {vi:'"Sách hướng dẫn du lịch Bắc Bình" sở dĩ từng một thời gây chấn động là vì nó rất thú vị, giá trị thực dụng lại cao.',zh:'《北平旅行指南》之所以一度引起轰动，是因为它趣味性强，实用价值也高。',py:'"Běipíng Lǚxíng Zhǐnán" zhīsuǒyǐ yídù yǐnqǐ hōngdòng, shì yīnwèi tā qùwèixìng qiáng, shíyòng jiàzhí yě gāo.',goiY:['之所以……是因为…… = sở dĩ … là vì …','一度 = từng một thời','轰动 = gây chấn động','趣味性 = tính thú vị'],giai:'趣味性强 dịch "rất thú vị", không dịch "tính thú vị mạnh"; 一度 dịch "từng một thời".'},
-  {vi:'Sau cải cách mở cửa, du lịch không còn chỉ là sự nối dài của công cuộc ngoại giao, mà ngày càng được coi trọng như một ngành kinh tế.',zh:'改革开放以后，旅游不再只是外交事业的延伸，而是作为经济型产业日益受到重视。',py:'Gǎigé kāifàng yǐhòu, lǚyóu bú zài zhǐ shì wàijiāo shìyè de yánshēn, ér shì zuòwéi jīngjìxíng chǎnyè rìyì shòudào zhòngshì.',goiY:['不再只是……而是…… = không còn chỉ là … mà …','延伸 = sự nối dài','产业 = ngành (kinh tế)','日益 = ngày càng'],giai:'作为 + danh phận = với tư cách là …; 受到重视 dịch "được coi trọng". 日益 ôn bài 7.'},
-  {vi:'So với trước đây, người Trung Quốc đã trở thành bộ phận chủ yếu trong số du khách, du lịch nước ngoài cũng trở nên như chuyện cơm bữa.',zh:'和过去相比，中国人已成为游客中的主流，出国旅游也变得犹如家常便饭。',py:'Hé guòqù xiāngbǐ, Zhōngguórén yǐ chéngwéi yóukè zhōng de zhǔliú, chūguó lǚyóu yě biàn de yóurú jiāchángbiànfàn.',goiY:['和……相比 = so với …','主流 = bộ phận chủ yếu','犹如家常便饭 = như chuyện cơm bữa'],giai:'主流 ở đây dịch "bộ phận chủ yếu / đông đảo nhất", không dịch "dòng chính"; 家常便饭 là thành ngữ, dịch ý "chuyện cơm bữa".'},
-  {vi:'Cùng với sự chấn hưng của ngành du lịch, sách du lịch không những điều chỉnh tôn chỉ phục vụ mà còn thêm các chuyên mục liên quan, trở nên ngày càng lấy con người làm gốc.',zh:'随着旅游业的振兴，旅游书籍不但调整了服务宗旨，而且增加了相关栏目，变得越来越人性化。',py:'Suízhe lǚyóuyè de zhènxīng, lǚyóu shūjí búdàn tiáozhěngle fúwù zōngzhǐ, érqiě zēngjiāle xiāngguān lánmù, biàn de yuè lái yuè rénxìnghuà.',goiY:['随着…… = cùng với …','振兴 = chấn hưng','不但……而且…… = không những … mà còn …','人性化 = lấy con người làm gốc'],giai:'Câu ba vế: 随着 (bối cảnh) → 不但……而且…… (tăng tiến) → kết quả 变得越来越…….'},
-  {vi:'Ngày nay có định vị vệ tinh rồi, cho dù đi đến những nơi hẻo lánh, chỉ cần thuê một chiếc ô tô, mang theo một cái lều, bạn cũng chẳng phải lo.',zh:'如今有了卫星导航，就算去偏僻的地方，只要租辆汽车、带顶帐篷，你也不用发愁。',py:'Rújīn yǒule wèixīng dǎoháng, jiùsuàn qù piānpì de dìfang, zhǐyào zū liàng qìchē, dài dǐng zhàngpeng, nǐ yě bú yòng fāchóu.',goiY:['就算……也…… = cho dù … cũng …','只要…… = chỉ cần …','卫星导航 = định vị vệ tinh','帐篷 = lều'],giai:'租辆汽车、带顶帐篷 lược số từ 一 (一辆, 一顶) — khẩu ngữ; dịch vẫn là "một chiếc", "một cái".'}
+  {vi:'So với mười năm trước, ngôi làng nhỏ hẻo lánh này thay đổi quá nhiều: đường sá tốt hơn, khách du lịch cũng đông lên.',zh:'和十年前相比，这个偏僻的小山村变化太大了：路好走了，游客也多了。',py:'Hé shí nián qián xiāngbǐ, zhège piānpì de xiǎo shāncūn biànhuà tài dà le: lù hǎo zǒu le, yóukè yě duō le.',goiY:['和……相比 = so với…','偏僻 = hẻo lánh','山村 = làng trên núi'],giai:'和十年前相比 đặt đầu câu = "so với mười năm trước"; 路好走了 dịch tự nhiên là "đường sá tốt hơn / dễ đi hơn".'},
+  {vi:'Trong khu rừng không có sóng điện thoại, một chiếc la bàn nho nhỏ đáng tin hơn bất cứ thứ gì.',zh:'在没有手机信号的森林里，一个小小的指南针比什么都可靠。',py:'Zài méiyǒu shǒujī xìnhào de sēnlín li, yí ge xiǎoxiǎo de zhǐnánzhēn bǐ shénme dōu kěkào.',goiY:['信号 = sóng, tín hiệu','指南针 = la bàn','比什么都…… = … hơn bất cứ thứ gì'],giai:'比什么都可靠 = đáng tin hơn bất cứ thứ gì (đại từ nghi vấn 什么 dùng phiếm chỉ).'},
+  {vi:'Phát hiện khảo cổ mới này từng một thời làm chấn động cả nước, tiếc là về sau chẳng còn ai quan tâm nữa.',zh:'这个考古新发现一度轰动全国，可惜后来就没有人再关心了。',py:'Zhège kǎogǔ xīn fāxiàn yídù hōngdòng quán guó, kěxī hòulái jiù méiyǒu rén zài guānxīn le.',goiY:['考古 = khảo cổ','一度 = từng một thời','轰动 = làm chấn động'],giai:'一度 + V = từng có một thời (nay đã khác) — đối lập với 后来; 轰动全国 = làm cả nước xôn xao.'},
+  {vi:'Trang web này có cả bản chữ phồn thể lẫn bản chữ giản thể, được thiết kế rất thân thiện với người dùng.',zh:'这个网站既有繁体字的版本，又有简体字的版本，设计得非常人性化。',py:'Zhège wǎngzhàn jì yǒu fántǐzì de bǎnběn, yòu yǒu jiǎntǐzì de bǎnběn, shèjì de fēicháng rénxìnghuà.',goiY:['繁体字 = chữ phồn thể','简体字 = chữ giản thể','人性化 = thân thiện, chu đáo với người dùng'],giai:'人性化 dịch "thân thiện với người dùng / chu đáo", không dịch "nhân tính hoá"; 既……又…… = vừa… vừa… / có cả… lẫn….'},
+  {vi:'Xe của công ty cho thuê này đều được lắp định vị vệ tinh, cho dù là du khách lần đầu đến cũng không sợ lạc đường.',zh:'这家租赁公司的车都装了卫星导航，就算是第一次来的游客也不怕迷路。',py:'Zhè jiā zūlìn gōngsī de chē dōu zhuāngle wèixīng dǎoháng, jiùsuàn shì dì-yī cì lái de yóukè yě bú pà mílù.',goiY:['租赁公司 = công ty cho thuê','卫星导航 = định vị vệ tinh','就算……也…… = cho dù… cũng…'],giai:'装了卫星导航 câu chủ động trong tiếng Trung, tiếng Việt nói "được lắp"; 就算……也…… = cho dù… cũng….'}
 ];
 
 
@@ -1813,9 +1747,9 @@ var writingData = {
     'Bài có bố cục rõ: mở bài — nội dung sách — trải nghiệm — lý do — kết bài chưa?'
   ],
   model:{
-    zh:'我一向喜欢旅游，家里的书架上摆着好几本旅游类书籍，其中我最喜欢的是一本叫《背包游云南》的旅行指南。这本书是2015年问世的，我手上的是最新版本，是去年过生日时爸爸送给我的。起初，我只是把它当作一本普通的书，随便翻翻。后来我发现，这本指南的内容非常全面。它不仅介绍了云南的地理环境、名胜古迹和人文特色，还介绍了各地的风土人情、特色饮食和宗教文化，青年旅社、经济型酒店、交通路线等信息更是必不可少。书的最后还有一个栏目，专门帮助读者选择最佳旅游时间，做好经费预算。去年暑假，我和父母去云南自助游，这本指南成了我们的好参谋。有一次，我们想去一个比较偏僻的小镇，书上简要介绍了怎么坐车、在哪儿可以租车，连当地人赶集的日子都写得清清楚楚。拿着它，我们犹如有了一位随身的向导，一路上几乎没遇到什么麻烦。我喜欢这本指南，原因有三个：第一，它趣味性强，每一页都有照片和小故事，读起来一点儿也不枯燥；第二，它实用价值高，书里的信息都是作者亲自走过以后写的；第三，它又小又轻，便于携带，放在背包里一点儿也不占地方。和网上那些零零散散的信息相比，它更系统，也更可靠。我相信，不管以后走到哪儿，旅行指南都会是我最好的朋友。',
-    py:'Wǒ yíxiàng xǐhuan lǚyóu, jiā li de shūjià shang bǎizhe hǎo jǐ běn lǚyóu lèi shūjí, qízhōng wǒ zuì xǐhuan de shì yì běn jiào "Bēibāo Yóu Yúnnán" de lǚxíng zhǐnán. Zhè běn shū shì èr líng yī wǔ nián wènshì de, wǒ shǒu shang de shì zuì xīn bǎnběn, shì qùnián guò shēngrì shí bàba sòng gěi wǒ de. Qǐchū, wǒ zhǐshì bǎ tā dàngzuò yì běn pǔtōng de shū, suíbiàn fānfan. Hòulái wǒ fāxiàn, zhè běn zhǐnán de nèiróng fēicháng quánmiàn. Tā bùjǐn jièshàole Yúnnán de dìlǐ huánjìng, míngshèng gǔjì hé rénwén tèsè, hái jièshàole gè dì de fēngtǔ rénqíng, tèsè yǐnshí hé zōngjiào wénhuà, qīngnián lǚshè, jīngjìxíng jiǔdiàn, jiāotōng lùxiàn děng xìnxī gèng shì bì bù kě shǎo. Shū de zuìhòu hái yǒu yí ge lánmù, zhuānmén bāngzhù dúzhě xuǎnzé zuì jiā lǚyóu shíjiān, zuòhǎo jīngfèi yùsuàn. Qùnián shǔjià, wǒ hé fùmǔ qù Yúnnán zìzhùyóu, zhè běn zhǐnán chéngle wǒmen de hǎo cānmóu. Yǒu yí cì, wǒmen xiǎng qù yí ge bǐjiào piānpì de xiǎozhèn, shū shang jiǎnyào jièshàole zěnme zuò chē, zài nǎr kěyǐ zū chē, lián dāngdìrén gǎnjí de rìzi dōu xiě de qīngqīngchǔchǔ. Názhe tā, wǒmen yóurú yǒule yí wèi suíshēn de xiàngdǎo, yílù shang jīhū méi yùdào shénme máfan. Wǒ xǐhuan zhè běn zhǐnán, yuányīn yǒu sān ge: dì-yī, tā qùwèixìng qiáng, měi yí yè dōu yǒu zhàopiàn hé xiǎo gùshi, dú qǐlái yìdiǎnr yě bù kūzào; dì-èr, tā shíyòng jiàzhí gāo, shū li de xìnxī dōu shì zuòzhě qīnzì zǒuguo yǐhòu xiě de; dì-sān, tā yòu xiǎo yòu qīng, biànyú xiédài, fàng zài bēibāo li yìdiǎnr yě bú zhàn dìfang. Hé wǎng shang nàxiē línglíngsǎnsǎn de xìnxī xiāngbǐ, tā gèng xìtǒng, yě gèng kěkào. Wǒ xiāngxìn, bùguǎn yǐhòu zǒudào nǎr, lǚxíng zhǐnán dōu huì shì wǒ zuì hǎo de péngyou.',
-    vn:'Em xưa nay vẫn thích đi du lịch, trên giá sách ở nhà bày mấy cuốn sách du lịch, trong đó cuốn em thích nhất là cuốn sách hướng dẫn du lịch tên "Đeo ba lô đi Vân Nam". Cuốn sách ra đời năm 2015, cuốn em có là phiên bản mới nhất, bố tặng em nhân sinh nhật năm ngoái. Lúc đầu, em chỉ coi nó là một cuốn sách bình thường, thỉnh thoảng lật xem. Về sau em phát hiện nội dung cuốn sách này rất toàn diện. Nó không chỉ giới thiệu môi trường địa lý, danh lam thắng cảnh và đặc sắc văn hoá của Vân Nam, mà còn giới thiệu phong tục tập quán, món ăn đặc sắc và văn hoá tôn giáo của từng nơi; những thông tin như nhà nghỉ thanh niên, khách sạn bình dân, tuyến đường giao thông lại càng không thể thiếu. Cuối sách còn có một chuyên mục chuyên giúp người đọc chọn thời điểm du lịch lý tưởng nhất và lập dự toán kinh phí. Kỳ nghỉ hè năm ngoái, em cùng bố mẹ đi Vân Nam du lịch tự túc, cuốn sách trở thành "quân sư" đắc lực của cả nhà. Có lần, chúng em muốn đến một thị trấn nhỏ khá hẻo lánh, sách giới thiệu ngắn gọn cách đi xe, chỗ nào có thể thuê xe, đến cả ngày họp chợ phiên của người dân địa phương cũng ghi rõ ràng. Cầm nó trong tay, chúng em như có một người dẫn đường đi theo bên mình, suốt chặng đường gần như không gặp rắc rối gì. Em thích cuốn sách này vì ba lý do: thứ nhất, nó rất thú vị, trang nào cũng có ảnh và những câu chuyện nhỏ, đọc không hề khô khan; thứ hai, nó có giá trị thực tế cao, thông tin trong sách đều do tác giả tự mình đi qua rồi mới viết; thứ ba, nó vừa nhỏ vừa nhẹ, tiện mang theo, bỏ vào ba lô chẳng chiếm chỗ chút nào. So với những thông tin rời rạc trên mạng, nó có hệ thống hơn và cũng đáng tin cậy hơn. Em tin rằng sau này dù đi đến đâu, sách hướng dẫn du lịch cũng sẽ là người bạn tốt nhất của em.'
+    zh:'我一向喜欢旅游，家里摆着好几本旅游类书籍，其中我最喜欢的是一本叫《背包游云南》的旅行指南。这本书是2015年问世的，我手上的是最新版本，是去年过生日时爸爸送给我的。起初，我只是把它当成一本普通的书，随便翻翻。后来我发现，这本指南的内容非常全面。它不仅介绍了云南的地理环境、著名风景和人文特色，还介绍了各地的风土人情、特色饮食和宗教文化，青年旅社、经济型酒店、交通路线等信息更是必不可少。书的最后还有一个栏目，专门帮助读者选择最佳旅游时间，做好经费预算。去年夏天，我和父母去云南自助游，这本指南成了我们的好参谋。有一次，我们想去一个比较偏僻的小镇，书上简要介绍了怎么坐车、在哪儿可以租车，连当地人过节的日子都写得明明白白。拿着它，我们犹如有了一位随身的向导，一路上几乎没遇到什么麻烦。我喜欢这本指南，原因有三个：第一，它趣味性强，每一页都有照片和小故事，读起来一点儿也不枯燥；第二，它实用价值高，书里的信息都是作者亲自走过以后写的；第三，它又小又轻，便于携带，放在背包里一点儿也不占地方。和网上那些零零散散的信息相比，它更系统，也更可靠。我相信，不管以后走到哪儿，旅行指南都会是我最好的朋友。',
+    py:'Wǒ yíxiàng xǐhuan lǚyóu, jiā li bǎizhe hǎo jǐ běn lǚyóu lèi shūjí, qízhōng wǒ zuì xǐhuan de shì yì běn jiào "Bēibāo Yóu Yúnnán" de lǚxíng zhǐnán. Zhè běn shū shì èr líng yī wǔ nián wènshì de, wǒ shǒu shang de shì zuì xīn bǎnběn, shì qùnián guò shēngrì shí bàba sòng gěi wǒ de. Qǐchū, wǒ zhǐshì bǎ tā dàngchéng yì běn pǔtōng de shū, suíbiàn fānfan. Hòulái wǒ fāxiàn, zhè běn zhǐnán de nèiróng fēicháng quánmiàn. Tā bùjǐn jièshàole Yúnnán de dìlǐ huánjìng, zhùmíng fēngjǐng hé rénwén tèsè, hái jièshàole gè dì de fēngtǔ rénqíng, tèsè yǐnshí hé zōngjiào wénhuà, qīngnián lǚshè, jīngjìxíng jiǔdiàn, jiāotōng lùxiàn děng xìnxī gèng shì bì bù kě shǎo. Shū de zuìhòu hái yǒu yí ge lánmù, zhuānmén bāngzhù dúzhě xuǎnzé zuì jiā lǚyóu shíjiān, zuòhǎo jīngfèi yùsuàn. Qùnián xiàtiān, wǒ hé fùmǔ qù Yúnnán zìzhùyóu, zhè běn zhǐnán chéngle wǒmen de hǎo cānmóu. Yǒu yí cì, wǒmen xiǎng qù yí ge bǐjiào piānpì de xiǎozhèn, shū shang jiǎnyào jièshàole zěnme zuò chē, zài nǎr kěyǐ zū chē, lián dāngdìrén guòjié de rìzi dōu xiě de míngmíngbáibái. Názhe tā, wǒmen yóurú yǒule yí wèi suíshēn de xiàngdǎo, yílù shang jīhū méi yùdào shénme máfan. Wǒ xǐhuan zhè běn zhǐnán, yuányīn yǒu sān ge: dì-yī, tā qùwèixìng qiáng, měi yí yè dōu yǒu zhàopiàn hé xiǎo gùshi, dú qǐlái yìdiǎnr yě bù kūzào; dì-èr, tā shíyòng jiàzhí gāo, shū li de xìnxī dōu shì zuòzhě qīnzì zǒuguo yǐhòu xiě de; dì-sān, tā yòu xiǎo yòu qīng, biànyú xiédài, fàng zài bēibāo li yìdiǎnr yě bú zhàn dìfang. Hé wǎng shang nàxiē línglíngsǎnsǎn de xìnxī xiāngbǐ, tā gèng xìtǒng, yě gèng kěkào. Wǒ xiāngxìn, bùguǎn yǐhòu zǒudào nǎr, lǚxíng zhǐnán dōu huì shì wǒ zuì hǎo de péngyou.',
+    vn:'Em xưa nay vẫn thích đi du lịch, ở nhà có mấy cuốn sách du lịch, trong đó cuốn em thích nhất là cuốn sách hướng dẫn du lịch tên "Đeo ba lô đi Vân Nam". Cuốn sách ra đời năm 2015, cuốn em có là phiên bản mới nhất, bố tặng em nhân sinh nhật năm ngoái. Lúc đầu, em chỉ coi nó là một cuốn sách bình thường, thỉnh thoảng lật xem. Về sau em phát hiện nội dung cuốn sách này rất toàn diện. Nó không chỉ giới thiệu môi trường địa lý, phong cảnh nổi tiếng và đặc sắc văn hoá của Vân Nam, mà còn giới thiệu phong tục tập quán, món ăn đặc sắc và văn hoá tôn giáo của từng nơi; những thông tin như nhà nghỉ thanh niên, khách sạn bình dân, tuyến đường giao thông lại càng không thể thiếu. Cuối sách còn có một chuyên mục chuyên giúp người đọc chọn thời điểm du lịch lý tưởng nhất và lập dự toán kinh phí. Mùa hè năm ngoái, em cùng bố mẹ đi Vân Nam du lịch tự túc, cuốn sách trở thành "quân sư" đắc lực của cả nhà. Có lần, chúng em muốn đến một thị trấn nhỏ khá hẻo lánh, sách giới thiệu ngắn gọn cách đi xe, chỗ nào có thể thuê xe, đến cả ngày lễ hội của người dân địa phương cũng ghi rõ ràng. Cầm nó trong tay, chúng em như có một người dẫn đường đi theo bên mình, suốt chặng đường gần như không gặp rắc rối gì. Em thích cuốn sách này vì ba lý do: thứ nhất, nó rất thú vị, trang nào cũng có ảnh và những câu chuyện nhỏ, đọc không hề khô khan; thứ hai, nó có giá trị thực tế cao, thông tin trong sách đều do tác giả tự mình đi qua rồi mới viết; thứ ba, nó vừa nhỏ vừa nhẹ, tiện mang theo, bỏ vào ba lô chẳng chiếm chỗ chút nào. So với những thông tin rời rạc trên mạng, nó có hệ thống hơn và cũng đáng tin cậy hơn. Em tin rằng sau này dù đi đến đâu, sách hướng dẫn du lịch cũng sẽ là người bạn tốt nhất của em.'
   }
 };
 
@@ -1823,186 +1757,141 @@ var writingData = {
 // LUYỆN NÓI — đúng bảng 练习5 của sách: 根据提示，简述课文主要内容 (tr. 143–144)
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Đây là bảng bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b>. Mỗi câu hỏi là một dòng của bảng, cột gợi ý giữ nguyên như sách (các ô nhỏ được đánh số ①②③). Bấm loa nghe câu hỏi, <b>tự ghi âm câu trả lời trước</b> rồi mới mở câu mẫu. Cố dùng đúng các từ trong gợi ý.',
-  questions:[
-    {q_zh:'从古到今，人类旅行的目的有什么变化？',
-     q_vn:'Từ xưa đến nay, mục đích đi lại của loài người đã thay đổi thế nào?',
-     hint:'①起初，天气……，食物……，敌人……，人们不得不…… ②后来，……，游山玩水，有了……',
-     sample:'起初，人类旅行更准确地说应该叫迁徙。天气变化、食物短缺，或者有敌人侵犯，人们不得不远离居住地，寻找能够安居的地方，那时的旅行纯粹是为了生存和安全。后来，古人远离家乡，去游山玩水，才有了真正意义上的旅游。',
-     sample_vn:'Thuở ban đầu, việc đi lại của loài người nói chính xác hơn phải gọi là di cư. Thời tiết thay đổi, thức ăn khan hiếm hoặc có kẻ thù xâm phạm, con người buộc phải rời xa nơi ở, đi tìm nơi có thể an cư; việc đi lại thời đó thuần tuý là vì sinh tồn và an toàn. Về sau, người xưa rời quê hương đi ngao du sơn thuỷ, lúc ấy mới có du lịch theo đúng nghĩa.',
-     note:'Hai giai đoạn đối lập: 起初 (迁徙 — vì 生存) → 后来 (游山玩水 — du lịch thật sự). Dùng 纯粹是……的需要 và 不得不.'},
-    {q_zh:'说一说中国旅游指南的发展历程。',
-     q_vn:'Hãy kể về quá trình phát triển của sách hướng dẫn du lịch Trung Quốc.',
-     hint:'①开始，连……都没有 ②1898年，……问世：为便于……；……搜集……等信息 ③之后，《北平旅行指南》：趣味性……，实用价值……；中、外文版本',
-     sample:'开始，来中国的外国旅行者连一本旅游指南类的书籍都没有。直到1898年，中国最早的旅游指南才问世。为便于外地人出行，作者搜集了天津的文化习俗以及车船码头等信息，做了简要介绍。之后，《北平旅行指南》一度引起轰动，它趣味性强，实用价值高，中、外文版本同时发行，真正方便了读者。',
-     sample_vn:'Lúc đầu, những nhà du hành nước ngoài đến Trung Quốc đến một cuốn sách hướng dẫn du lịch cũng không có. Mãi đến năm 1898, cuốn sách hướng dẫn du lịch sớm nhất của Trung Quốc mới ra đời. Để người nơi khác đi lại thuận tiện, tác giả đã thu thập thông tin về văn hoá, phong tục cùng xe, thuyền, bến bãi của Thiên Tân và giới thiệu ngắn gọn. Sau đó, "Sách hướng dẫn du lịch Bắc Bình" từng một thời gây chấn động: rất thú vị, giá trị thực dụng cao, bản tiếng Trung và tiếng nước ngoài phát hành cùng lúc, thực sự thuận tiện cho người đọc.',
-     note:'Kể theo mốc thời gian 开始 → 直到1898年 → 之后. Dùng 连……都没有, 为便于……, 一度引起轰动 (một điểm ngữ pháp + một cặp từ 辨析 của bài).'},
-    {q_zh:'改革开放前后，旅游指南有什么变化？',
-     q_vn:'Trước và sau cải cách mở cửa, sách hướng dẫn du lịch có thay đổi gì?',
-     hint:'①改革开放前：是……的延伸和补充；游客主要是……，服务对象…… ②改革开放后：……受到重视，……变得越来越……；1999年后，……成了主流，……扩大了……，调整了……，增加了……',
-     sample:'改革开放前，旅游是中国外交事业的延伸和补充，游客主要是外国人，旅游书籍的服务对象也锁定为他们。改革开放以后，旅游作为经济型产业受到重视，旅游指南变得越来越丰富、全面。1999年以后，中国人成了游客中的主流，旅游书籍扩大了服务对象，调整了服务宗旨，增加了相关栏目，变得越来越人性化。',
-     sample_vn:'Trước cải cách mở cửa, du lịch là sự nối dài và bổ sung cho công cuộc ngoại giao của Trung Quốc; du khách chủ yếu là người nước ngoài nên đối tượng phục vụ của sách du lịch cũng nhắm vào họ. Sau cải cách mở cửa, du lịch được coi trọng như một ngành kinh tế, sách hướng dẫn ngày càng phong phú, toàn diện. Sau năm 1999, người Trung Quốc thành bộ phận chủ yếu trong du khách; sách du lịch mở rộng đối tượng phục vụ, điều chỉnh tôn chỉ, thêm chuyên mục liên quan, ngày càng lấy con người làm gốc.',
-     note:'Đối chiếu 前 / 后. Ba động từ song song 扩大了…… / 调整了…… / 增加了…… nói liền một hơi; chú ý kết hợp 扩大对象, 调整宗旨, 增加栏目.'},
-    {q_zh:'说一说目前旅游指南的内容和发展情况。',
-     q_vn:'Hãy nói về nội dung và tình hình phát triển của sách hướng dẫn du lịch hiện nay.',
-     hint:'①内容：不仅介绍……，还会介绍……，……更是必不可少 ②发展：旅游网站……，卫星导航系统……，使人们……',
-     sample:'现在的旅游指南不仅介绍地理环境、风土人情、人文特色和著名风景，还会介绍当地饮食、宗教和考古新发现，青年旅社、经济型酒店、当地交通等内容更是必不可少。如今，繁体字、简体字旅游网站的开通更大范围地方便了游客，卫星导航系统的广泛应用，使人们不管走到哪儿，都犹如有位随身的向导。',
-     sample_vn:'Sách hướng dẫn du lịch bây giờ không chỉ giới thiệu môi trường địa lý, phong thổ nhân tình, đặc sắc văn hoá và danh thắng nổi tiếng, mà còn giới thiệu ẩm thực địa phương, tôn giáo và những phát hiện khảo cổ mới; các nội dung như nhà nghỉ thanh niên, khách sạn bình dân, giao thông địa phương lại càng không thể thiếu. Ngày nay, các trang web du lịch chữ phồn thể, giản thể được mở ra đã tạo thuận lợi cho du khách trên phạm vi rộng hơn; hệ thống định vị vệ tinh được ứng dụng rộng rãi khiến người ta dù đi đâu cũng như có một người dẫn đường bên mình.',
-     note:'Khung 不仅……，还……，……更是必不可少 để liệt kê theo mức tăng dần; kết bằng 使人们不管……，都犹如…… (điểm ngữ pháp 犹如).'}
+  intro: 'Đây là bảng bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b>. Mỗi câu hỏi là một dòng của bảng, cột gợi ý giữ nguyên như sách (các ô nhỏ được đánh số ①②③). Bấm loa nghe câu hỏi, <b>tự ghi âm câu trả lời trước</b> rồi mới mở câu mẫu. Cố dùng đúng các từ trong gợi ý.',
+  questions: [
+    {q_zh:'从古到今，人类旅行的目的有什么变化？',q_vn:'Từ xưa đến nay, mục đích đi lại của loài người đã thay đổi thế nào?',hint:'①起初，天气……，食物……，敌人……，人们不得不…… ②后来，……，游山玩水，有了……',sample:'起初，人类旅行更准确地说应该叫迁徙。天气变化、食物短缺，或者有敌人侵犯，人们不得不远离居住地，寻找能够安居的地方，那时的旅行纯粹是为了生存和安全。后来，古人远离家乡，去游山玩水，才有了真正意义上的旅游。',sample_vn:'Thuở ban đầu, việc đi lại của loài người nói chính xác hơn phải gọi là di cư. Thời tiết thay đổi, thức ăn khan hiếm hoặc có kẻ thù xâm phạm, con người buộc phải rời xa nơi ở, đi tìm nơi có thể an cư; việc đi lại thời đó thuần tuý là vì sinh tồn và an toàn. Về sau, người xưa rời quê hương đi ngao du sơn thuỷ, lúc ấy mới có du lịch theo đúng nghĩa.',note:'Hai giai đoạn đối lập: 起初 (迁徙 — vì 生存) → 后来 (游山玩水 — du lịch thật sự). Dùng 纯粹是……的需要 và 不得不.'},
+    {q_zh:'说一说中国旅游指南的发展历程。',q_vn:'Hãy kể về quá trình phát triển của sách hướng dẫn du lịch Trung Quốc.',hint:'①开始，连……都没有 ②1898年，……问世：为便于……；……搜集……等信息 ③之后，《北平旅行指南》：趣味性……，实用价值……；中、外文版本',sample:'开始，来中国的外国旅行者连一本旅游指南类的书籍都没有。直到1898年，中国最早的旅游指南才问世。为便于外地人出行，作者搜集了天津的文化习俗以及车船码头等信息，做了简要介绍。之后，《北平旅行指南》一度引起轰动，它趣味性强，实用价值高，中文版本和外文版本一起发行，真正方便了读者。',sample_vn:'Lúc đầu, những nhà du hành nước ngoài đến Trung Quốc đến một cuốn sách hướng dẫn du lịch cũng không có. Mãi đến năm 1898, cuốn sách hướng dẫn du lịch sớm nhất của Trung Quốc mới ra đời. Để người nơi khác đi lại thuận tiện, tác giả đã thu thập thông tin về văn hoá, phong tục cùng xe, thuyền, bến bãi của Thiên Tân và giới thiệu ngắn gọn. Sau đó, "Sách hướng dẫn du lịch Bắc Bình" từng một thời gây chấn động: rất thú vị, giá trị thực dụng cao, bản tiếng Trung và tiếng nước ngoài phát hành cùng lúc, thực sự thuận tiện cho người đọc.',note:'Kể theo mốc thời gian 开始 → 直到1898年 → 之后. Dùng 连……都没有, 为便于……, 一度引起轰动 (một điểm ngữ pháp + một từ trong bảng phân biệt 一向 / 一度 của bài).'},
+    {q_zh:'改革开放前后，旅游指南有什么变化？',q_vn:'Trước và sau cải cách mở cửa, sách hướng dẫn du lịch có thay đổi gì?',hint:'①改革开放前：是……的延伸和补充；游客主要是……，服务对象…… ②改革开放后：……受到重视，……变得越来越……；1999年后，……成了主流，……扩大了……，调整了……，增加了……',sample:'改革开放前，旅游是中国外交事业的延伸和补充，游客主要是外国人，旅游书籍的服务对象也锁定为他们。改革开放以后，旅游作为经济型产业受到重视，旅游指南变得越来越丰富、全面。1999年以后，中国人成了游客中的主流，旅游书籍扩大了服务对象，调整了服务宗旨，增加了相关栏目，变得越来越人性化。',sample_vn:'Trước cải cách mở cửa, du lịch là sự nối dài và bổ sung cho công cuộc ngoại giao của Trung Quốc; du khách chủ yếu là người nước ngoài nên đối tượng phục vụ của sách du lịch cũng nhắm vào họ. Sau cải cách mở cửa, du lịch được coi trọng như một ngành kinh tế, sách hướng dẫn ngày càng phong phú, toàn diện. Sau năm 1999, người Trung Quốc thành bộ phận chủ yếu trong du khách; sách du lịch mở rộng đối tượng phục vụ, điều chỉnh tôn chỉ, thêm chuyên mục liên quan, ngày càng lấy con người làm gốc.',note:'Đối chiếu 前 / 后. Ba động từ song song 扩大了…… / 调整了…… / 增加了…… nói liền một hơi; chú ý kết hợp 扩大对象, 调整宗旨, 增加栏目.'},
+    {q_zh:'说一说目前旅游指南的内容和发展情况。',q_vn:'Hãy nói về nội dung và tình hình phát triển của sách hướng dẫn du lịch hiện nay.',hint:'①内容：不仅介绍……，还会介绍……，……更是必不可少 ②发展：旅游网站……，卫星导航系统……，使人们……',sample:'现在的旅游指南不仅介绍地理环境、风土人情、人文特色和著名风景，还会介绍当地饮食、宗教和考古新发现，青年旅社、经济型酒店、当地交通等内容更是必不可少。如今，繁体字、简体字旅游网站的开通更大范围地方便了游客，卫星导航系统的广泛应用，使人们不管走到哪儿，都犹如有位随身的向导。',sample_vn:'Sách hướng dẫn du lịch bây giờ không chỉ giới thiệu môi trường địa lý, phong thổ nhân tình, đặc sắc văn hoá và danh thắng nổi tiếng, mà còn giới thiệu ẩm thực địa phương, tôn giáo và những phát hiện khảo cổ mới; các nội dung như nhà nghỉ thanh niên, khách sạn bình dân, giao thông địa phương lại càng không thể thiếu. Ngày nay, các trang web du lịch chữ phồn thể, giản thể được mở ra đã tạo thuận lợi cho du khách trên phạm vi rộng hơn; hệ thống định vị vệ tinh được ứng dụng rộng rãi khiến người ta dù đi đâu cũng như có một người dẫn đường bên mình.',note:'Khung 不仅……，还……，……更是必不可少 để liệt kê theo mức tăng dần; kết bằng 使人们不管……，都犹如…… (điểm ngữ pháp 犹如).'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — 听力 (sách HSK 6 không có sách bài tập nghe)
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — câu tự soạn (sách HSK 6 không có sách bài tập nghe), mỗi câu một tình huống mới
+// ══════════════════════════════════════════
 var listenExamData = {
-  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. ' +
-         'Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
-  source: 'Soạn theo dạng đề HSK 6 · chủ đề bài 13',
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 13',
   items: [
-    {n:1,
-     lines:[{sp:'女',zh:'这次去云南，你带旅游指南了吗？'},
-            {sp:'男',zh:'带了，是一本口袋书，便于携带，里面连经费预算方面的信息都有。'}],
-     q:'关于那本旅游指南，可以知道什么？',qvn:'Về cuốn sách hướng dẫn du lịch đó, có thể biết điều gì?',
-     opts:['很重','便于携带','没什么用','只有外文版'],ans:1,
-     why:'口袋书，便于携带 — nghe được 便于携带 là chọn ngay. 连……都有 cho thấy nội dung rất đầy đủ, nên "没什么用" sai.',
-     words:['便于','携带','经费','预算']},
-
-    {n:2,
-     lines:[{sp:'男',zh:'你这次怎么不跟旅行团走了？'},
-            {sp:'女',zh:'跟团太不自由了。我现在更喜欢自助游，想去哪儿就去哪儿，想待多久就待多久。'}],
-     q:'女的为什么喜欢自助游？',qvn:'Vì sao người phụ nữ thích du lịch tự túc?',
-     opts:['比较便宜','比较安全','能交朋友','比较自由'],ans:3,
-     why:'跟团太不自由了 → lý do ngược lại: tự túc thì tự do. 想去哪儿就去哪儿 là cấu trúc "đại từ nghi vấn dùng phiếm chỉ" (ôn HSK 5).',
-     words:[]},
-
-    {n:3,
-     lines:[{sp:'女',zh:'那个村子那么偏僻，你们不怕迷路吗？'},
-            {sp:'男',zh:'有卫星导航呢，犹如有位随身的向导，走到哪儿都不怕。'}],
-     q:'男的为什么不怕迷路？',qvn:'Vì sao người đàn ông không sợ lạc đường?',
-     opts:['有卫星导航','请了导游','以前去过','问了当地人'],ans:0,
-     why:'有卫星导航呢 là lý do; 犹如有位随身的向导 chỉ là phép so sánh — không có hướng dẫn viên thật, nên "请了导游" là bẫy.',
-     words:['偏僻','卫星','导航','犹如','向导']},
-
-    {n:4,
-     lines:[{sp:'男',zh:'我们到了以后怎么去景点？'},
-            {sp:'女',zh:'我已经在网上跟一家汽车租赁公司订好车了，一下飞机就能取。'}],
-     q:'他们打算怎么去景点？',qvn:'Họ định đi đến điểm tham quan bằng cách nào?',
-     opts:['坐公共汽车','骑自行车','租车','打出租车'],ans:2,
-     why:'汽车租赁公司 + 订好车了 → thuê xe tự lái. 租赁 = 租 (văn viết).',
-     words:['租赁']},
-
-    {n:5,
-     lines:[{sp:'女',zh:'这家书店旅游类的书籍真多啊。'},
-            {sp:'男',zh:'是啊，和十年前相比，现在的旅游指南内容丰富多了，连当地的宗教、考古新发现都有介绍。'}],
-     q:'男的认为现在的旅游指南怎么样？',qvn:'Người đàn ông cho rằng sách hướng dẫn du lịch bây giờ thế nào?',
-     opts:['内容更丰富','价格更便宜','数量越来越少','只介绍景点'],ans:0,
-     why:'和十年前相比，……内容丰富多了 — mẫu 和……相比 của bài; 连宗教、考古新发现都有 bổ sung cho ý "phong phú".',
-     words:['书籍','宗教','考古']},
-
-    {n:6,
-     lines:[{sp:'男',zh:'1898年，中国最早的旅游指南问世了。这是一本介绍天津的口袋书。为便于外地人出行，作者搜集了当地的文化习俗以及车船码头等信息，做了简要介绍。'}],
-     q:'中国最早的旅游指南介绍的是哪个城市？',qvn:'Cuốn sách hướng dẫn du lịch sớm nhất của Trung Quốc giới thiệu thành phố nào?',
-     opts:['北京','上海','天津','广州'],ans:2,
-     why:'这是一本介绍天津的口袋书 — nói thẳng. 北京 (北平) là cuốn sách ra đời sau (《北平旅行指南》), dễ nhầm.',
-     words:['问世','便于','习俗','码头','简要']},
-
-    {n:7,
-     lines:[{sp:'女',zh:'你这次出去旅游，最大的收获是什么？'},
-            {sp:'男',zh:'不是看了多少名胜古迹，而是了解了当地的风土人情，还交了好几个当地的朋友。'}],
-     q:'男的最大的收获是什么？',qvn:'Thu hoạch lớn nhất của người đàn ông là gì?',
-     opts:['看了很多名胜古迹','买了很多纪念品','学会了当地话','了解了当地的风土人情'],ans:3,
-     why:'不是……而是…… — ý đúng nằm sau 而是. Phương án 1 là điều bị phủ định ở vế 不是.',
-     words:['风土人情']},
-
-    {n:8,
-     lines:[{sp:'女',zh:'很多年轻人喜欢背包旅行，住青年旅社，有时晚上还在野外搭帐篷。他们认为，旅行不在于花多少钱，而在于经历和感受。只要出发前做好预算，就算钱不多，也能走很远。'}],
-     q:'根据这段话，这些年轻人认为旅行最重要的是什么？',qvn:'Theo đoạn nói, những người trẻ này cho rằng điều quan trọng nhất khi du lịch là gì?',
-     opts:['花很多钱','经历和感受','住好酒店','去有名的地方'],ans:1,
-     why:'不在于……，而在于经历和感受 — trọng tâm sau 而在于. 就算……也…… = cho dù … cũng … (ôn HSK 5).',
-     words:['帐篷','预算']}
+    {
+      n: 1,
+      lines: [
+        {sp:'女',zh:'你出门怎么不带那本厚厚的旅游指南了？'},
+        {sp:'男',zh:'我把它下载到手机上了，便于查找，比带着书方便多了。'}
+      ],
+      q: '男的为什么不带那本书了？',
+      qvn: 'Vì sao người đàn ông không mang cuốn sách đó nữa?',
+      opts: ['书丢了','书太旧了','不需要旅游指南了','手机上的更方便'],
+      ans: 3,
+      why: '下载到手机上了，便于查找，比带着书方便多了 → dùng bản trên điện thoại tiện hơn. Anh vẫn dùng sách hướng dẫn, chỉ không mang bản giấy nên phương án 3 sai.',
+      words: ['便于']
+    },
+    {
+      n: 2,
+      lines: [
+        {sp:'男',zh:'你老家那个小镇现在怎么样了？'},
+        {sp:'女',zh:'跟以前完全不一样了，晚上到处都是灯光，热闹得犹如大城市一般。'}
+      ],
+      q: '女的的老家现在怎么样？',
+      qvn: 'Quê của người phụ nữ bây giờ thế nào?',
+      opts: ['变得很热闹','人越来越少','和以前一样','已经成了大城市'],
+      ans: 0,
+      why: '热闹得犹如大城市一般 = náo nhiệt như thành phố lớn — chỉ là so sánh, thị trấn chưa thật sự thành thành phố lớn (bẫy ở phương án 4).',
+      words: ['犹如']
+    },
+    {
+      n: 3,
+      lines: [
+        {sp:'女',zh:'你这次怎么选了自助游？'},
+        {sp:'男',zh:'和跟着导游走相比，自助游时间更自由，想在哪儿多玩儿一会儿都行。'}
+      ],
+      q: '男的为什么选自助游？',
+      qvn: 'Vì sao người đàn ông chọn du lịch tự túc?',
+      opts: ['更便宜','更安全','更自由','能认识导游'],
+      ans: 2,
+      why: '和跟着导游走相比，自助游时间更自由 — vế sau của 和……相比 nêu ưu điểm: tự do hơn.',
+      words: []
+    },
+    {
+      n: 4,
+      lines: [
+        {sp:'男',zh:'小林一向不爱运动，怎么现在天天去跑步了？'},
+        {sp:'女',zh:'他上个月一度胖到了九十公斤，现在正千方百计地减肥呢。'}
+      ],
+      q: '小林为什么开始跑步？',
+      qvn: 'Vì sao Tiểu Lâm bắt đầu chạy bộ?',
+      opts: ['他一向喜欢运动','想减肥','要参加比赛','朋友叫他去的'],
+      ans: 1,
+      why: '一度胖到了九十公斤 = có một dạo béo tới 90 cân; 千方百计地减肥 = tìm đủ mọi cách giảm cân. 一向不爱运动 = xưa nay không thích vận động → phương án 1 sai.',
+      words: ['一向','一度','千方百计']
+    },
+    {
+      n: 5,
+      lines: [
+        {sp:'女',zh:'去海边玩儿两天，住宾馆要花不少钱，我们的预算不够啊。'},
+        {sp:'男',zh:'那就租两顶帐篷吧，睡在海边，又省钱又好玩儿。'}
+      ],
+      q: '他们晚上可能住在哪儿？',
+      qvn: 'Buổi tối họ có thể ngủ ở đâu?',
+      opts: ['宾馆','朋友家','帐篷里','车上'],
+      ans: 2,
+      why: '预算不够 nên không ở khách sạn; 租两顶帐篷，睡在海边 → ngủ trong lều.',
+      words: ['预算','帐篷']
+    },
+    {
+      n: 6,
+      lines: [
+        {sp:'男',zh:'你每天晚上都看这个电视节目吗？'},
+        {sp:'女',zh:'是啊，我最喜欢里面的旅游栏目，每次简要介绍一个地方的风土人情，十分钟就看完了。'}
+      ],
+      q: '女的为什么喜欢那个栏目？',
+      qvn: 'Vì sao người phụ nữ thích chuyên mục đó?',
+      opts: ['内容短而有意思','主持人很有名','可以免费旅游','节目时间很长'],
+      ans: 0,
+      why: '简要介绍……风土人情，十分钟就看完了 → ngắn gọn mà hay. Phương án 4 ngược với "mười phút là xem xong".',
+      words: ['栏目','简要','风土人情']
+    },
+    {
+      n: 7,
+      lines: [
+        {sp:'女',zh:'到了那个国家，我应该注意些什么？'},
+        {sp:'男',zh:'那里的人大多信宗教，有些习俗跟我们很不一样，你务必先了解一下。'}
+      ],
+      q: '男的提醒女的什么？',
+      qvn: 'Người đàn ông nhắc người phụ nữ điều gì?',
+      opts: ['多带点儿钱','先了解当地习俗','别信宗教','早点儿回来'],
+      ans: 1,
+      why: '有些习俗跟我们很不一样，你务必先了解一下 — 务必 (bài 12) = nhất định phải. Anh không khuyên "đừng theo tôn giáo".',
+      words: ['宗教','习俗']
+    }
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
+// ══════════════════════════════════════════
 var situationData = {
-  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
-         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn thắc mắc vì sao em mua một cuốn sách hướng dẫn du lịch bé xíu.',
-     a:{sp:'Bạn',zh:'你怎么买了这么小的一本旅游指南？',vn:'Sao cậu lại mua cuốn sách hướng dẫn du lịch bé thế này?'},
-     need:['Dùng 便于','Nêu thêm một ưu điểm khác của cuốn sách'],
-     sample:'这是口袋书，便于携带。别看它小，信息可全了，连经费预算都有。',
-     samplePy:'Zhè shì kǒudàishū, biànyú xiédài. Bié kàn tā xiǎo, xìnxī kě quán le, lián jīngfèi yùsuàn dōu yǒu.',
-     sampleVn:'Đây là sách bỏ túi, tiện mang theo. Đừng thấy nó nhỏ, thông tin đầy đủ lắm, đến cả dự toán kinh phí cũng có.',
-     tip:'便于 + động từ (携带, 保存, 理解); 别看……，…… = đừng thấy … mà (ôn HSK 5); 连……都…… nhấn mạnh.'},
-
-    {scene:'Mẹ lo em đi phượt một mình đến vùng xa bị lạc đường.',
-     a:{sp:'Mẹ',zh:'你一个人去那么偏僻的地方，迷路了怎么办？',vn:'Con đi một mình đến chỗ hẻo lánh như thế, lạc đường thì làm sao?'},
-     need:['Dùng 犹如','Nhắc tới 卫星导航 hoặc 向导'],
-     sample:'妈，您放心吧，手机上有卫星导航，犹如有位随身的向导，不会迷路的。',
-     samplePy:'Mā, nín fàngxīn ba, shǒujī shang yǒu wèixīng dǎoháng, yóurú yǒu wèi suíshēn de xiàngdǎo, bú huì mílù de.',
-     sampleVn:'Mẹ yên tâm đi ạ, điện thoại có định vị vệ tinh, như có người dẫn đường bên mình, con không lạc đâu.',
-     tip:'犹如 là văn viết, nhưng dùng trong câu "trích" hình ảnh của bài khoá vẫn tự nhiên; nói với mẹ nhớ dùng 您.'},
-
-    {scene:'Người bạn Trung Quốc hỏi quê em mấy năm nay thay đổi thế nào.',
-     a:{sp:'Bạn Trung Quốc',zh:'你的家乡这几年变化大吗？',vn:'Quê cậu mấy năm nay thay đổi nhiều không?'},
-     need:['Dùng 和……相比','Dùng 繁华 hoặc 振兴'],
-     sample:'变化可大了！和十年前相比，现在繁华多了，旅游业也振兴起来了。',
-     samplePy:'Biànhuà kě dà le! Hé shí nián qián xiāngbǐ, xiànzài fánhuá duō le, lǚyóuyè yě zhènxīng qǐlái le.',
-     sampleVn:'Thay đổi nhiều lắm! So với mười năm trước, bây giờ sầm uất hơn nhiều, ngành du lịch cũng khởi sắc rồi.',
-     tip:'和 + mốc so sánh + 相比 đặt đầu câu, vế sau nói về A; Adj + 多了 = … hơn nhiều.'},
-
-    {scene:'Cô giáo nhờ em giới thiệu một cuốn sách hướng dẫn du lịch cho cả lớp.',
-     a:{sp:'Cô giáo',zh:'你一向喜欢旅游，给大家推荐一本好的旅游指南吧。',vn:'Em xưa nay vẫn thích du lịch, giới thiệu cho cả lớp một cuốn sách hướng dẫn hay đi.'},
-     need:['Dùng 不仅……还……','Dùng 风土人情'],
-     sample:'我推荐《背包游越南》，它不仅介绍名胜古迹，还介绍各地的风土人情和特色饮食，实用价值很高。',
-     samplePy:'Wǒ tuījiàn "Bēibāo Yóu Yuènán", tā bùjǐn jièshào míngshèng gǔjì, hái jièshào gè dì de fēngtǔ rénqíng hé tèsè yǐnshí, shíyòng jiàzhí hěn gāo.',
-     sampleVn:'Em giới thiệu cuốn "Đeo ba lô đi Việt Nam", nó không chỉ giới thiệu danh lam thắng cảnh mà còn giới thiệu phong tục tập quán và món ăn đặc sắc của từng nơi, giá trị thực tế rất cao ạ.',
-     tip:'Mượn nguyên khung câu bài khoá 不仅介绍……，还介绍……; kết bằng một nhận xét (实用价值高).'},
-
-    {scene:'Bạn rủ đi cắm trại ở biển nhưng lo không có chỗ ngủ.',
-     a:{sp:'Bạn',zh:'去海边露营倒是不错，可晚上住哪儿啊？',vn:'Đi cắm trại ở biển thì hay đấy, nhưng tối ngủ ở đâu?'},
-     need:['Dùng 帐篷','Dùng 租 hoặc 租赁'],
-     sample:'附近有家租赁公司，我们租两顶帐篷，就睡在海边，还能看满天的星星呢。',
-     samplePy:'Fùjìn yǒu jiā zūlìn gōngsī, wǒmen zū liǎng dǐng zhàngpeng, jiù shuì zài hǎibiān, hái néng kàn mǎn tiān de xīngxing ne.',
-     sampleVn:'Gần đó có một công ty cho thuê đồ, mình thuê hai cái lều, ngủ ngay bên bờ biển, còn ngắm được cả bầu trời sao nữa.',
-     tip:'Lượng từ của 帐篷 là 顶 (一顶帐篷); 租赁 là văn viết, khi nói chuyện dùng 租 cho động từ.'}
+    {scene:'Trước khi chuyển nhà, em ghi chữ lên từng túi đồ. Bạn thấy lạ nên hỏi.',a:{sp:'Bạn',zh:'搬个家而已，你干吗在每个包上都写字啊？',vn:'Chuyển nhà thôi mà, sao cậu lại viết chữ lên từng túi thế?'},need:['Dùng 便于','Nói rõ cách làm của mình'],sample:'我把每个包里装的是什么都写在外面了，便于到了新家以后查找，不用每个都打开看。',samplePy:'Wǒ bǎ měi ge bāo li zhuāng de shì shénme dōu xiě zài wàimiàn le, biànyú dàole xīn jiā yǐhòu cházhǎo, bú yòng měi ge dōu dǎkāi kàn.',sampleVn:'Tớ ghi ở ngoài mỗi túi xem bên trong đựng gì, để đến nhà mới tiện tìm, không phải mở từng cái ra xem.',tip:'……，便于 + V: vế sau nói mục đích. 而已 (bài 5) = … thôi mà.'},
+    {scene:'Em vừa đi biển về, bạn hỏi phong cảnh ở đó ra sao.',a:{sp:'Bạn',zh:'听说你去海边了，那里的风景怎么样？',vn:'Nghe nói cậu đi biển à, phong cảnh ở đó thế nào?'},need:['Dùng 犹如','Tả một cảnh cụ thể'],sample:'美极了！傍晚的海面被太阳照得通红，犹如一幅画一样，我拍了好多照片。',samplePy:'Měi jí le! Bàngwǎn de hǎimiàn bèi tàiyáng zhào de tōnghóng, yóurú yì fú huà yíyàng, wǒ pāile hǎoduō zhàopiàn.',sampleVn:'Đẹp tuyệt! Mặt biển lúc chiều tà bị mặt trời chiếu đỏ rực, như một bức tranh vậy, tớ chụp bao nhiêu là ảnh.',tip:'犹如 + B + 一样 / 一般; 通红 (bài 9) = đỏ rực — tính từ trạng thái làm bổ ngữ sau 得.'},
+    {scene:'Người bạn Trung Quốc hỏi quê em mấy năm nay thay đổi thế nào.',a:{sp:'Bạn Trung Quốc',zh:'你的家乡这几年变化大吗？',vn:'Quê cậu mấy năm nay thay đổi nhiều không?'},need:['Dùng 和……相比','Dùng 繁华 hoặc 振兴'],sample:'变化可大了！和我小时候相比，现在繁华多了，旅游业也振兴起来了。',samplePy:'Biànhuà kě dà le! Hé wǒ xiǎoshíhou xiāngbǐ, xiànzài fánhuá duō le, lǚyóuyè yě zhènxīng qǐlái le.',sampleVn:'Thay đổi nhiều lắm! So với hồi tớ còn nhỏ, bây giờ sầm uất hơn nhiều, ngành du lịch cũng khởi sắc rồi.',tip:'和 + mốc so sánh + 相比 đặt đầu câu, vế sau nói về A; Adj + 多了 = … hơn nhiều.'},
+    {scene:'Người bạn Trung Quốc sắp sang Việt Nam du lịch lần đầu, nhờ em khuyên nên chuẩn bị gì.',a:{sp:'Bạn Trung Quốc',zh:'下个月我要去越南旅游，你帮我出出主意，该带些什么？',vn:'Tháng sau mình đi du lịch Việt Nam, cậu góp ý giúp mình xem nên mang những gì?'},need:['Dùng 携带 hoặc 务必','Gợi ý tìm hiểu phong tục (风土人情 / 习俗)'],sample:'越南这个季节很热，衣服带几件薄的就行，护照务必随身携带。到了那儿，你不妨买本当地的旅游指南，里面介绍的风土人情挺有意思的。',samplePy:'Yuènán zhège jìjié hěn rè, yīfu dài jǐ jiàn báo de jiù xíng, hùzhào wùbì suíshēn xiédài. Dàole nàr, nǐ bùfáng mǎi běn dāngdì de lǚyóu zhǐnán, lǐmiàn jièshào de fēngtǔ rénqíng tǐng yǒu yìsi de.',sampleVn:'Mùa này Việt Nam nóng lắm, quần áo mang vài bộ mỏng là được, hộ chiếu nhất định phải mang theo người. Đến nơi rồi, cậu thử mua một cuốn sách hướng dẫn du lịch địa phương xem, phong tục tập quán giới thiệu trong đó khá thú vị.',tip:'务必 (bài 12) = nhất định phải; 不妨 (bài 12) = cứ thử…; 随身携带 = mang theo người.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 // 🎯 NÓI SAO CHO HAY — 得体 / 语体
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 var registerData = {
-  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
-         'HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
   items: [
-    {scene:'Em viết bài giới thiệu sách cho báo tường của trường.',
-     a:'这本书内容特别多，啥都有，可好用了。',b:'这本指南内容全面，实用价值高，堪称游客的好参谋。',better:'b',
-     why:'Bài viết cho báo trường cần văn viết: 内容全面, 实用价值高, 堪称; 啥, 可好用了 là khẩu ngữ.'},
-
-    {scene:'Em kể với bạn thân về chuyến đi vừa rồi.',
-     a:'那地方远得要命，不过风景真是没得说！',b:'该地区地处偏僻，然而自然风光极为秀美。',better:'a',
-     why:'Tán gẫu với bạn thân dùng khẩu ngữ (远得要命, 没得说); câu b giống lời thuyết minh du lịch (该, 地处, 然而, 极为).'},
-
-    {scene:'Em viết lời tựa (序言) cho cuốn cẩm nang du lịch do lớp biên soạn.',
-     a:'为便于读者出行，本书对当地交通、住宿等信息做了简要介绍。',b:'怕大家出门不方便，我们就把坐车、住哪儿这些事儿随便写了写。',better:'a',
-     why:'Lời tựa là văn viết trang trọng: 为便于, 本书, 简要介绍 (câu gần như lấy từ bài khoá). 随便写了写 còn làm người đọc mất tin tưởng.'},
-
-    {scene:'Em gặp lại thầy giáo cũ sau nhiều năm.',
-     a:'王老师，好久不见，您一向可好？',b:'老王，好久不见，最近咋样？',better:'a',
-     why:'Với thầy cô phải gọi 王老师, dùng 您; 一向可好 là lời hỏi thăm lịch sự (cách dùng thứ 2 của 一向). 老王, 咋样 chỉ dùng với người ngang hàng thân thiết.'},
-
-    {scene:'Em nhắn tin báo mẹ đã đến nơi an toàn.',
-     a:'妈，我到了，住的地方挺好的，别担心！',b:'母亲大人：本人已安全抵达目的地，住宿条件良好，请勿挂念。',better:'a',
-     why:'Tin nhắn cho mẹ cần thân mật, tự nhiên; câu b quá văn vẻ (本人, 抵达, 请勿挂念) nghe như công văn, thậm chí buồn cười.'},
-
-    {scene:'Em viết báo cáo môn Địa lý về sự phát triển du lịch Trung Quốc.',
-     a:'改革开放以后，旅游作为经济型产业受到重视，旅游业逐渐振兴。',b:'后来大家都爱出去玩儿了，旅游就火起来了。',better:'a',
-     why:'Báo cáo cần thuật ngữ, văn viết: 作为……产业, 受到重视, 振兴; 出去玩儿, 火起来了 là khẩu ngữ.'}
+    {scene:'Em kể với bạn thân về chuyến đi vừa rồi.',a:'那地方远得要命，不过风景真是没得说！',b:'该地区地处偏僻，然而自然风光极为秀美。',better:'a',why:'Tán gẫu với bạn thân dùng khẩu ngữ (远得要命, 没得说); câu b giống lời thuyết minh du lịch (该, 地处, 然而, 极为).'},
+    {scene:'Em viết lời giới thiệu sản phẩm in trên bao bì một chiếc lều cắm trại.',a:'这种帐篷重量轻，收起来很小，便于携带。',b:'这个帐篷轻着呢，一收就没多大了，带着多方便啊。',better:'a',why:'Lời giới thiệu sản phẩm là văn viết: 重量轻, 便于携带. Câu b (轻着呢 — ôn bài 3, 多方便啊) là khẩu ngữ khi kể với bạn.'},
+    {scene:'Em gặp lại thầy giáo cũ sau nhiều năm.',a:'老王，好久不见，最近怎么样啊？',b:'王老师，好久不见，您一向可好？',better:'b',why:'Với thầy cô phải gọi 王老师, dùng 您; 一向可好 là lời hỏi thăm lịch sự "từ lần gặp trước đến nay" (cách dùng thứ hai của 一向). 老王 chỉ dùng với người ngang hàng, thân thiết.'},
+    {scene:'Trong giờ ra chơi, em kể với bạn về chuyến leo núi cuối tuần.',a:'山顶上的云犹如大海一般，景色极为美丽。',b:'山顶上的云跟大海似的，太好看了！',better:'b',why:'Nói chuyện với bạn dùng khẩu ngữ: 跟……似的, 太好看了. 犹如……一般, 极为美丽 là văn viết, hợp với bài văn miêu tả hơn.'},
+    {scene:'Em viết bài văn miêu tả quê hương nộp cho cô giáo.',a:'每年三四月，山上的花开得到处都是，好看得要命。',b:'每年三四月，满山的花都开了，犹如一片花的海洋。',better:'b',why:'Bài văn miêu tả cần hình ảnh, văn viết: 犹如一片花的海洋. 好看得要命 (bài 9) là khẩu ngữ, hợp khi nói chuyện hơn.'},
+    {scene:'Em viết báo cáo tổng kết hoạt động của câu lạc bộ nộp cho nhà trường.',a:'与上学期相比，本学期参加活动的学生人数增加了一倍。',b:'这学期来参加活动的人比上学期多多了。',better:'a',why:'Báo cáo cần số liệu và văn viết: 与……相比, 本学期, 学生人数, 增加了一倍. Câu b là lời nói hằng ngày, không có số liệu cụ thể.'}
   ]
 };
 

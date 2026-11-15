@@ -1418,81 +1418,51 @@ var hvBridgeData = {
 // GHÉP TỪ — cụm từ trong bài khoá
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'打量了我',right:'一番'},
-  {left:'流露出',right:'朴实'},
-  {left:'一双过于',right:'操劳的大手'},
-  {left:'胡须起码一个星期',right:'没刮了'},
-  {left:'南方',right:'口音'},
-  {left:'拨打',right:'电话'},
-  {left:'守',right:'信誉'},
-  {left:'辜负',right:'期望'},
-  {left:'满怀',right:'喜悦'},
-  {left:'浑身',right:'汗水'},
-  {left:'小心翼翼地',right:'收起来'},
-  {left:'一流的',right:'公司'},
-  {left:'公司的',right:'骨干'},
-  {left:'饱经沧桑的',right:'脸'},
-  {left:'什么馅儿的',right:'月饼'},
-  {left:'笑得别提多',right:'灿烂了'},
-  {left:'要',right:'面子'},
-  {left:'迎面',right:'站着'},
-  {left:'搓着',right:'手'},
-  {left:'有件事想',right:'拜托你'}
+  {left:'辜负',right:'父母的期望'},
+  {left:'炫耀',right:'自己的成绩'},
+  {left:'流露出',right:'真实的感情'},
+  {left:'拨打',right:'电话号码'},
+  {left:'浑身',right:'是汗'},
+  {left:'饱经',right:'沧桑'},
+  {left:'小心',right:'翼翼'},
+  {left:'一流的',right:'大学'},
+  {left:'搓着',right:'双手'},
+  {left:'丢',right:'面子'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ
+// ĐIỀN TỪ — câu mới (không chép bài khoá / SGK), mỗi câu một tình huống; ôn xoáy ốc từ + ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'中秋节快到了，女儿要给他寄盒',blank:'月饼',post:'。',hint:'(bánh Trung thu)',ans:'月饼'},
-  {pre:'',blank:'清晨',post:'的空气特别新鲜，爷爷每天都去公园散步。',hint:'(sáng sớm)',ans:'清晨'},
-  {pre:'我一出校门，班主任就',blank:'迎面',post:'走了过来。',hint:'(ngay trước mặt, ngược chiều tới)',ans:'迎面'},
-  {pre:'门口站着一位学生',blank:'模样',post:'的年轻人。',hint:'(dáng vẻ)',ans:'模样'},
-  {pre:'新同学一进教室，大家都好奇地上下',blank:'打量',post:'着他。',hint:'(quan sát, nhìn kỹ)',ans:'打量'},
-  {pre:'天太冷了，他一边',blank:'搓',post:'手一边跺脚。',hint:'(xoa)',ans:'搓'},
-  {pre:'老人那张',blank:'饱经沧桑',post:'的脸上总是带着微笑。',hint:'(từng trải, dãi dầu)',ans:'饱经沧桑'},
-  {pre:'这里的农民为人',blank:'朴实',post:'，对客人非常热情。',hint:'(chất phác)',ans:'朴实'},
-  {pre:'父母为我们',blank:'操劳',post:'了半辈子，现在也该享享福了。',hint:'(làm lụng vất vả)',ans:'操劳'},
-  {pre:'爷爷留着长长的',blank:'胡须',post:'，看起来非常慈祥。',hint:'(râu)',ans:'胡须'},
-  {pre:'听',blank:'口音',post:'，他应该是南方人。',hint:'(giọng địa phương)',ans:'口音'},
-  {pre:'奶奶年轻时当过',blank:'裁缝',post:'，全家人的衣服都是她做的。',hint:'(thợ may)',ans:'裁缝'},
-  {pre:'上海是中国最大的',blank:'港口',post:'城市之一。',hint:'(bến cảng)',ans:'港口'},
-  {pre:'她',blank:'心眼儿',post:'好，谁有困难她都愿意帮忙。',hint:'(bụng dạ, tấm lòng)',ans:'心眼儿'},
-  {pre:'做生意一定要守',blank:'信誉',post:'，否则就留不住顾客了。',hint:'(chữ tín, uy tín)',ans:'信誉'},
-  {pre:'姐姐去年在北京大学拿到了博士',blank:'学位',post:'。',hint:'(học vị)',ans:'学位'},
-  {pre:'这家酒店的服务是',blank:'一流',post:'的，难怪客人那么多。',hint:'(hạng nhất)',ans:'一流'},
-  {pre:'他工作才三年就当上了销售',blank:'主管',post:'。',hint:'(người quản lý)',ans:'主管'},
-  {pre:'小王工作认真，是经理的得力',blank:'助手',post:'。',hint:'(trợ lý, trợ thủ)',ans:'助手'},
-  {pre:'经过几年的努力，他已经成为公司的',blank:'骨干',post:'了。',hint:'(trụ cột)',ans:'骨干'},
-  {pre:'他',blank:'小心翼翼',post:'地把名片收起来，满怀喜悦地走了。',hint:'(hết sức cẩn thận)',ans:'小心翼翼'},
-  {pre:'考上大学的那天，我怀着',blank:'喜悦',post:'的心情给爷爷打了电话。',hint:'(vui sướng)',ans:'喜悦'},
-  {pre:'踢完足球回来，弟弟',blank:'浑身',post:'都是泥。',hint:'(khắp người)',ans:'浑身'},
-  {pre:'你喜欢吃什么',blank:'馅儿',post:'的饺子？',hint:'(nhân bánh)',ans:'馅儿'},
-  {pre:'听说要去旅游，妹妹笑得别提多',blank:'灿烂',post:'了。',hint:'(rạng rỡ)',ans:'灿烂'},
-  {pre:'他太爱',blank:'面子',post:'了，明明不懂也不肯问别人。',hint:'(thể diện, sĩ diện)',ans:'面子'},
-  {pre:'我花了三天时间，把那篇文章从头到尾研究了一',blank:'番',post:'。',hint:'(lượng từ: lượt)',ans:'番',exp:'V + 了一番 = làm một lượt (công phu, tốn sức): 研究了一番.'},
-  {pre:'按时上课，这是对学生',blank:'起码',post:'的要求。',hint:'(tối thiểu — làm định ngữ)',ans:'起码',exp:'起码 = tối thiểu, ít nhất; 起码的要求 = yêu cầu tối thiểu.'},
-  {pre:'考试前别',blank:'过于',post:'紧张，只要正常发挥就行。',hint:'(quá — văn viết)',ans:'过于',exp:'过于 + tính từ = quá (văn viết): 过于紧张.'},
-  {pre:'父母对孩子的',blank:'期望',post:'太高，有时会给孩子带来很大压力。',hint:'(kỳ vọng)',ans:'期望'}
+  {pre:'每天',blank:'清晨',post:'，奶奶都会到河边走一走，呼吸新鲜空气。',hint:'(sáng sớm)',ans:'清晨',exp:'清晨 = sáng sớm tinh mơ (sắc thái văn viết hơn 早上); làm trạng ngữ thời gian ở đầu câu.'},
+  {pre:'我刚走出校门，',blank:'迎面',post:'就碰到了王老师，只好停下来跟她打招呼。',hint:'(ngay trước mặt, đi ngược chiều tới)',ans:'迎面',exp:'迎面 + 走来 / 碰到 = gặp ngay trước mặt, từ phía đối diện đi tới; đứng trước động từ.'},
+  {pre:'十年没见，她的',blank:'模样',post:'一点儿也没变，我一看就知道是她。',hint:'(dáng vẻ, diện mạo)',ans:'模样',exp:'模样 = dáng vẻ bên ngoài, khuôn mặt của một người; ……的模样没变 = trông vẫn như xưa.'},
+  {pre:'听到这个问题，他',blank:'迟疑',post:'了一下，才慢慢说出自己真实的想法。',hint:'(chần chừ, ngập ngừng)',ans:'迟疑',exp:'迟疑了一下 = ngập ngừng một chút vì chưa quyết; 才 cho thấy câu trả lời đến chậm sau đó.'},
+  {pre:'我明天要出差，家里的花就',blank:'拜托',post:'你帮我浇几次水了。',hint:'(nhờ cậy)',ans:'拜托',exp:'拜托 + người + V = nhờ ai làm giúp (lịch sự); cuối câu thêm 了 cho giọng nhờ vả nhẹ nhàng.'},
+  {pre:'妈妈为这个家',blank:'操劳',post:'了几十年，头发早就白了。',hint:'(lo toan vất vả)',ans:'操劳',exp:'为 + ai / việc gì + 操劳 = lo toan, làm lụng vất vả vì ai; thường nói về cha mẹ.'},
+  {pre:'他说话带着很重的南方',blank:'口音',post:'，我听了好久才明白。',hint:'(giọng địa phương)',ans:'口音',exp:'带着……口音 = nói giọng vùng nào; 口音 là cách phát âm theo địa phương, khác với 声音 (âm thanh, giọng nói nói chung).'},
+  {pre:'小区门口',blank:'原先',post:'是一家小书店，现在变成了咖啡馆。',hint:'(trước kia, ban đầu)',ans:'原先',exp:'原先……，现在…… đối chiếu tình trạng trước kia với bây giờ.'},
+  {pre:'别看他说话很直，其实',blank:'心眼儿',post:'特别好，朋友有事他总是第一个来帮忙。',hint:'(tấm lòng, bụng dạ)',ans:'心眼儿',exp:'心眼儿好 = tốt bụng (khẩu ngữ); 别看……，其实…… = đừng thấy… mà tưởng, thật ra….'},
+  {pre:'经过五年的锻炼，小王已经成了我们部门的',blank:'骨干',post:'，经理什么事都找他商量。',hint:'(trụ cột, nòng cốt)',ans:'骨干',exp:'骨干 = người nòng cốt, không thể thiếu trong một tập thể; 成了……的骨干.'},
+  {pre:'半夜里我',blank:'隐约',post:'听到有人在敲门，起来一看，门外却一个人也没有。',hint:'(lờ mờ, loáng thoáng)',ans:'隐约',exp:'隐约 + 听到 / 看到 / 觉得 = loáng thoáng, không rõ ràng; trái nghĩa với 清楚.'},
+  {pre:'出差这几天，他一直',blank:'惦记',post:'着家里那只生病的小狗。',hint:'(nhớ mong, lo lắng)',ans:'惦记',exp:'惦记 + người / vật = luôn nhớ và lo cho; hay đi với 着 (惦记着小狗).'},
+  {pre:'去见男朋友的父母以前，她好好打扮了一',blank:'番',post:'。',hint:'(lượt — lượng từ cho hành động tốn công)',ans:'番',exp:'V + 了 + 一番 = làm một lượt kỹ lưỡng, tốn công sức (打扮了一番). Không dùng 遍 (một lượt từ đầu đến cuối như 看一遍) hay 次 (đếm số lần).'},
+  {pre:'这个计划',blank:'过于',post:'复杂，真做起来恐怕会遇到很多麻烦。',hint:'(quá — văn viết, hàm ý chê)',ans:'过于',exp:'过于 + tính từ hai âm tiết = quá mức (ý chê, văn viết); nói chuyện thường ngày dùng 太……了.'},
+  {pre:'你慢慢来，离开车还早',blank:'着呢',post:'，先坐下来喝杯茶吧。',hint:'(… lắm — khẩu ngữ)',ans:'着呢',exp:'Tính từ + 着呢 = … lắm (khẩu ngữ, trấn an người nghe); đã có nghĩa mức độ cao nên không thêm 很.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (番 · 过于 · 着呢) ít nhất 2 câu
+// SẮP XẾP CÂU — câu mới, chỉ một trật tự đúng
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['他','打量了','我','一番','。'],ans:'他打量了我一番。',audio:'他打量了我一番。'},
-  {words:['我们','认真地','讨论了','一番','。'],ans:'我们认真地讨论了一番。',audio:'我们认真地讨论了一番。'},
-  {words:['这是','妈妈的','一番','心意','。'],ans:'这是妈妈的一番心意。',audio:'这是妈妈的一番心意。'},
-  {words:['他','出来得','过于','匆忙','，','忘了带手机','。'],ans:'他出来得过于匆忙，忘了带手机。',audio:'他出来得过于匆忙，忘了带手机。'},
-  {words:['你','不要','过于','担心','。'],ans:'你不要过于担心。',audio:'你不要过于担心。'},
-  {words:['我','身体','好','着呢','。'],ans:'我身体好着呢。',audio:'我身体好着呢。'},
-  {words:['公共汽车上','挤','着呢','。'],ans:'公共汽车上挤着呢。',audio:'公共汽车上挤着呢。'},
-  {words:['我女儿','要面子','着呢','。'],ans:'我女儿要面子着呢。',audio:'我女儿要面子着呢。'},
-  {words:['他','搓着手','，','迟疑地','说','。'],ans:'他搓着手，迟疑地说。',audio:'他搓着手，迟疑地说。'},
-  {words:['直到','下班','，','仍旧','没有','音信','。'],ans:'直到下班，仍旧没有音信。',audio:'直到下班，仍旧没有音信。'},
-  {words:['我','心里','隐约','有些','不安','。'],ans:'我心里隐约有些不安。',audio:'我心里隐约有些不安。'},
-  {words:['他','非要','请我','吃月饼','不可','。'],ans:'他非要请我吃月饼不可。',audio:'他非要请我吃月饼不可。'},
-  {words:['他','见了我','又是','道歉','又是','感谢','。'],ans:'他见了我又是道歉又是感谢。',audio:'他见了我又是道歉又是感谢。'}
+  {words:['我们公司的','收入','翻了','一番','。'],ans:'我们公司的收入翻了一番。',audio:'我们公司的收入翻了一番。'},
+  {words:['请','不要','辜负','老师的','一番','苦心','。'],ans:'请不要辜负老师的一番苦心。',audio:'请不要辜负老师的一番苦心。'},
+  {words:['他','把','这件事','想得','过于','简单','了','。'],ans:'他把这件事想得过于简单了。',audio:'他把这件事想得过于简单了。'},
+  {words:['那家店的','饺子','好吃','着呢','。'],ans:'那家店的饺子好吃着呢。',audio:'那家店的饺子好吃着呢。'},
+  {words:['他','是','一位','饱经沧桑的','老裁缝','。'],ans:'他是一位饱经沧桑的老裁缝。',audio:'他是一位饱经沧桑的老裁缝。'},
+  {words:['我姐姐','是','这家公司的','技术','骨干','。'],ans:'我姐姐是这家公司的技术骨干。',audio:'我姐姐是这家公司的技术骨干。'},
+  {words:['房东','上下','打量了','我','一番','。'],ans:'房东上下打量了我一番。',audio:'房东上下打量了我一番。'},
+  {words:['孩子们','脸上','露出了','灿烂的','笑','。'],ans:'孩子们脸上露出了灿烂的笑。',audio:'孩子们脸上露出了灿烂的笑。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1500,72 +1470,44 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'他搓着手，____地说：“有件事想拜托你。”',opts:['迟疑','喜悦','灿烂','朴实'],ans:0,
-   exp:'Xoa tay ngại ngùng khi nhờ vả → nói NGẬP NGỪNG: 迟疑地说. 喜悦 (vui sướng), 灿烂 (rạng rỡ) không hợp dáng vẻ ngại ngùng; 朴实 tả tính cách, không làm trạng ngữ cho 说.'},
-  {wrong:'父母的话常常在他耳边回响，他总提醒自己不要辜负了父母的一____期望。',opts:['番','遍','次','趟'],ans:0,
-   exp:'Lượng từ cho tâm tư, kỳ vọng, số từ 一 → 一番期望. 遍 là một lượt từ đầu đến cuối (看一遍), 次 đếm số lần, 趟 đếm chuyến đi — không đi với 期望.'},
-  {wrong:'有的登山爱好者遇险，是因为____自信。',opts:['过于','超过','经过','过去'],ans:0,
-   exp:'过于 + tính từ = quá mức (ý chê). 超过 (vượt qua) mang tân ngữ số lượng; 经过 (đi qua, trải qua); 过去 (quá khứ, đi qua) — không đứng trước tính từ 自信.'},
-  {wrong:'人家帮了这么多忙，你最____要说声谢谢吧？',opts:['起码','至少','多少','最少'],ans:0,
-   exp:'Phía trước đã có 最 → chỉ dùng 起码 (最起码). Sách: không nói 最至少. 多少 là "bao nhiêu"; 最少 đã có 最, thành 最最少 là sai.'},
-  {wrong:'他____是裁缝，现在在港口干活。',opts:['原先','首先','事先','预先'],ans:0,
-   exp:'原先……，现在…… đối chiếu trước kia – bây giờ. 首先 = trước hết (thứ tự các bước); 事先, 预先 = làm trước để chuẩn bị — không dùng so sánh với 现在.'},
-  {wrong:'我给他发短信，他也不回，直到下班，____没有音信。',opts:['仍旧','终于','果然','依靠'],ans:0,
-   exp:'Mãi đến … tình trạng vẫn không đổi → 仍旧 (vẫn). 终于 (cuối cùng đã) mâu thuẫn với 没有音信; 果然 = quả nhiên; 依靠 = dựa vào (động từ).'},
-  {wrong:'我心里____有些不安，抱着包裹就往工地跑。',opts:['隐约','显然','明显','清楚'],ans:0,
-   exp:'Cảm giác bất an mơ hồ, chưa rõ → 隐约. 显然, 明显, 清楚 đều là "rõ ràng" — trái nghĩa với cảm giác lờ mờ trong câu.'},
-  {wrong:'父母对我的____很高，我压力很大。',opts:['期望','希望','盼望','愿望'],ans:0,
-   exp:'Kỳ vọng người trên đặt vào người dưới, làm danh từ với 很高 → 期望很高. Danh từ 希望 thiên về "khả năng, hy vọng" (有希望); 盼望 là động từ "ngóng trông"; 愿望 là nguyện vọng của chính mình.'},
-  {wrong:'要面子着呢，从来没有____过我的期望。',opts:['辜负','失望','放弃','违反'],ans:0,
-   exp:'辜负 + 期望 là kết hợp cố định (phụ kỳ vọng). 失望 không mang tân ngữ 期望; 放弃 = từ bỏ; 违反 = vi phạm (quy định, luật lệ).'},
-  {wrong:'讲完电话，张师傅还没忘了向我____他的女儿。',opts:['炫耀','骄傲','流露','惦记'],ans:0,
-   exp:'向 + người + 炫耀 + điều gì = khoe với ai. 骄傲 là tính từ, không mang tân ngữ; 流露 dùng cho tình cảm (流露出喜悦); 惦记 = nhớ lo, không đi với 向我.'},
-  {wrong:'好好工作，别给爸爸____啊。',opts:['丢人','丢失','失去','面子'],ans:0,
-   exp:'给 + ai + 丢人 = làm ai mất mặt. 丢失, 失去 cần tân ngữ (丢失钱包, 失去机会); 面子 là danh từ, phải nói 别让爸爸丢面子.'},
-  {wrong:'说起女儿，他的眼里____出无比的骄傲。',opts:['流露','发表','露面','表示'],ans:0,
-   exp:'Tình cảm tự nhiên lộ ra qua ánh mắt → 流露出. 发表 dùng cho ý kiến, bài viết; 露面 (xuất hiện) không mang tân ngữ; 表示 là chủ động nói ra, không đi với 眼里……出.'},
-  {wrong:'他被网上的假广告____了，白白花了一千块钱。',opts:['欺骗','欺负','拜托','炫耀'],ans:0,
-   exp:'Quảng cáo giả làm người ta tin điều sai → bị lừa: 被……欺骗. 欺负 là bắt nạt (ỷ mạnh hiếp yếu); 拜托 là nhờ; 炫耀 là khoe.'},
-  {wrong:'我身体好着呢，别____，好好工作。',opts:['惦记','记得','记住','忘记'],ans:0,
-   exp:'Dặn người thân đừng lo cho mình → 别惦记. 别记得 sai ngữ pháp; 别记住 (đừng ghi nhớ) và 别忘记 (đừng quên) không hợp nghĩa "đừng lo".'},
-  {wrong:'遇到火灾，要立刻____打119。',opts:['拨','播','泼','发'],ans:0,
-   exp:'拨打 = bấm số gọi điện. 播 (bō, phát sóng: 广播), 泼 (pō, hắt nước) chỉ gần âm; 发 đi với 短信, 邮件 — không có 发打.'},
-  {wrong:'我下个月出差，家里的小猫就____你照看几天了。',opts:['拜托','拜访','打扰','感谢'],ans:0,
-   exp:'Nhờ ai làm giúp → 拜托 + người + V. 拜访 là đến thăm; 打扰 là làm phiền; 感谢 là cảm ơn — không mang cụm "你照看几天".'},
-  {wrong:'果然，他来自南方的一个____，原先是裁缝。',opts:['乡镇','口音','模样','胡须'],ans:0,
-   exp:'来自 + nơi chốn → 一个乡镇 (một thị trấn nhỏ). 口音 (giọng), 模样 (dáng vẻ), 胡须 (râu) không phải nơi chốn.'},
-  {wrong:'她说话很____，从来不大声嚷。',opts:['斯文','粗鲁','吵闹','一流'],ans:0,
-   exp:'Không bao giờ to tiếng → nói năng nhã nhặn: 斯文. 粗鲁 (thô lỗ), 吵闹 (ồn ào) trái nghĩa với vế sau; 一流 (hạng nhất) không dùng tả cách nói.'}
+  {wrong:'刚出国的时候，我天天想家，妈妈也天天____着我。',opts:['惦记','记得','纪念','记录'],ans:0,exp:'Nhớ mong, lo cho người thân → 惦记着 + người. 记得 là còn nhớ (không đi với 着 kiểu này); 纪念 là tưởng niệm; 记录 là ghi chép.'},
+  {wrong:'这么简单的题都做错了，我觉得太____了，真不想让别人知道。',opts:['丢人','得意','丢掉','骄傲'],ans:0,exp:'Thấy xấu hổ, mất mặt → 丢人 (khẩu ngữ). 得意 / 骄傲 là đắc ý, tự hào (trái nghĩa với 不想让别人知道); 丢掉 là vứt bỏ, phải có tân ngữ.'},
+  {wrong:'听了他的一____话，我心里顿时轻松了很多。',opts:['番','遍','趟','顿'],ans:0,exp:'一番话 = một hồi lời lẽ (tâm huyết). 遍 đếm lượt lặp lại; 趟 đếm chuyến đi; 顿 đếm bữa ăn, trận mắng. Ôn 顿时 (bài 2).'},
+  {wrong:'你对孩子的要求____严格了，他才八岁啊。',opts:['过于','超过','通过','不过'],ans:0,exp:'过于 + tính từ = quá mức (chê). 超过 là vượt quá + số lượng (超过八岁); 通过 là thông qua; 不过 là nhưng — đều không đứng trước 严格.'},
+  {wrong:'这件事复杂____，不是一两句话能说清楚的。',opts:['着呢','的呢','了呢','着了'],ans:0,exp:'Khung khẩu ngữ: tính từ + 着呢. Người học hay nhầm thành 的呢 / 了呢 / 着了 — đều sai.'},
+  {wrong:'外面____，你多穿点儿衣服再出去。',opts:['冷着呢','很冷着呢','不冷着呢','冷着'],ans:0,exp:'着呢 đã chỉ mức độ cao → không thêm 很; không dùng với dạng phủ định (不冷着呢 sai); thiếu 呢 cũng sai.'},
+  {wrong:'这台电脑看起来还很新，____要五千块吧？',opts:['起码','多少','原先','仍旧'],ans:0,exp:'Ước lượng mức thấp nhất → 起码 (ít nhất). 多少 là bao nhiêu (câu hỏi); 原先 là trước kia; 仍旧 là vẫn — không hợp nghĩa ước lượng.'},
+  {wrong:'小林____在银行工作，后来辞职开了一家小饭馆。',opts:['原先','首先','事先','先后'],ans:0,exp:'Trước kia (đối lập với 后来) → 原先. 首先 là trước hết (thứ tự các bước); 事先 là làm trước để chuẩn bị; 先后 là lần lượt.'},
+  {wrong:'医生劝了他好几次，可他____每天晚上喝酒。',opts:['仍旧','终于','果然','曾经'],ans:0,exp:'Dù được khuyên, tình trạng vẫn không đổi → 仍旧. 终于 là cuối cùng đã (thay đổi); 果然 là quả nhiên; 曾经 là đã từng — mâu thuẫn với 可.'},
+  {wrong:'夜深了，我____听到远处有几声狗叫，村子里寂静极了。',opts:['隐约','明显','灿烂','清楚'],ans:0,exp:'Âm thanh từ xa, nghe loáng thoáng → 隐约. 明显 / 清楚 là rõ ràng (trái với không khí yên ắng); 灿烂 tả ánh sáng, nụ cười. Ôn 寂静 (bài 2).'},
+  {wrong:'他用假照片____了很多人，最后被警察抓住了。',opts:['欺骗','拜托','打量','炫耀'],ans:0,exp:'Dùng ảnh giả làm người khác tin điều sai → 欺骗 (lừa gạt). 拜托 là nhờ; 打量 là quan sát; 炫耀 là khoe.'},
+  {wrong:'老师对你这么好，你可不能____她的一番苦心啊。',opts:['辜负','失望','欺骗','惦记'],ans:0,exp:'辜负 + 苦心 / 期望 = phụ lòng. 失望 là thất vọng, không mang tân ngữ như vậy; 欺骗 là lừa gạt; 惦记 là nhớ mong.'},
+  {wrong:'他刚买了一块名表，见人就____，好像怕别人不知道似的。',opts:['炫耀','骄傲','自豪','表扬'],ans:0,exp:'Khoe khoang cho người khác thấy → 炫耀. 骄傲 / 自豪 là tâm trạng tự hào, không phải hành động khoe; 表扬 là khen người khác.'},
+  {wrong:'他____地打开那本旧日记，好像怕把它弄坏了。',opts:['小心翼翼','大大方方','粗心','一路平安'],ans:0,exp:'Sợ làm hỏng → hết sức cẩn thận: 小心翼翼地 + V. 大大方方 là thoải mái tự nhiên, 粗心 là cẩu thả — trái với nỗi sợ làm hỏng; 一路平安 là lời chúc lên đường.'},
+  {wrong:'爷爷对孙子的____很高，一直希望他将来能当医生。',opts:['期望','愿望','盼望','失望'],ans:0,exp:'Kỳ vọng người trên đặt vào người dưới → 对……的期望很高. 愿望 là nguyện vọng của chính mình; 盼望 là động từ ngóng trông; 失望 là thất vọng.'}
 ];
 
 // ══════════════════════════════════════════
-// DỊCH — câu ghép, ôn từ bài 1–2 HSK 6 và HSK 4–5
+// DỊCH Việt → Trung — câu mới, dùng từ của bài + ôn ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Tuy trận này thua, nhưng huấn luyện viên vẫn đặt rất nhiều kỳ vọng vào chúng tôi.',zh:'虽然这次比赛输了，但是教练仍旧对我们充满期望。',py:'Suīrán zhè cì bǐsài shū le, dànshì jiàoliàn réngjiù duì wǒmen chōngmǎn qīwàng.',goiY:['虽然……但是……','仍旧','期望'],giai:'虽然……但是…… nối hai ý trái ngược; 仍旧 (vẫn) đứng sau chủ ngữ vế sau, trước động từ. "Đặt kỳ vọng vào ai" = 对 + ai + 充满期望, không dịch từng chữ "đặt".'},
-  {vi:'Chỉ cần làm bài bình thường thì ít nhất em cũng được tám mươi điểm, nên đừng căng thẳng quá.',zh:'只要正常发挥，你起码能考八十分，所以别过于紧张。',py:'Zhǐyào zhèngcháng fāhuī, nǐ qǐmǎ néng kǎo bāshí fēn, suǒyǐ bié guòyú jǐnzhāng.',goiY:['只要','起码','过于'],giai:'只要 + điều kiện; 起码 đặt trước động từ năng nguyện 能 (ít nhất cũng …); lời khuyên "đừng … quá" = 别过于 + tính từ hai âm tiết.'},
-  {vi:'Tôi gọi cho cậu ấy mấy lần mà mãi không ai nghe máy, trong lòng mơ hồ thấy bất an.',zh:'我拨了好几次他的电话，却一直无人接听，心里隐约有些不安。',py:'Wǒ bōle hǎo jǐ cì tā de diànhuà, què yìzhí wú rén jiētīng, xīn li yǐnyuē yǒuxiē bù\'ān.',goiY:['拨','却','隐约'],giai:'却 nêu kết quả trái mong đợi, đứng trước động từ; "mơ hồ thấy bất an" = 隐约有些不安, không dịch là 模糊 (mờ về hình ảnh).'},
-  {vi:'Mẹ ơi, con ở trường ổn lắm, mẹ đừng lo, cũng đừng gửi bánh Trung thu cho con nữa.',zh:'妈妈，我在学校好着呢，您别惦记，也别再给我寄月饼了。',py:'Māma, wǒ zài xuéxiào hǎozhe ne, nín bié diànjì, yě bié zài gěi wǒ jì yuèbing le.',goiY:['着呢','惦记','别再……了'],giai:'A + 着呢 = … lắm (khẩu ngữ, đã nhấn mức độ nên không thêm 很); "đừng lo cho con" = 别惦记; 别再……了 = đừng … nữa.'},
-  {vi:'Lớp trưởng nghiên cứu kỹ một lượt ý kiến của mọi người, sau đó mới dè dặt đề xuất với cô giáo.',zh:'班长认真地把大家的意见研究了一番，然后才小心翼翼地向老师提出了建议。',py:'Bānzhǎng rènzhēn de bǎ dàjiā de yìjiàn yánjiūle yì fān, ránhòu cái xiǎoxīn-yìyì de xiàng lǎoshī tíchūle jiànyì.',goiY:['番','然后才','小心翼翼'],giai:'把 + tân ngữ + V + 了一番 = làm kỹ một lượt (tốn công sức); 然后才 nhấn mạnh làm xong việc trước rồi MỚI làm việc sau.'},
-  {vi:'Đã được bạn nhờ nhận hộ bưu kiện thì cậu phải giữ chữ tín, không thể vì bận mà quên được.',zh:'既然朋友拜托你代收包裹，你就得守信誉，不能因为忙就忘了。',py:'Jìrán péngyou bàituō nǐ dàishōu bāoguǒ, nǐ jiù děi shǒu xìnyù, bù néng yīnwèi máng jiù wàng le.',goiY:['既然……就……','拜托','信誉'],giai:'既然 + sự thật đã có, 就 + yêu cầu/kết luận; "giữ chữ tín" = 守信誉 (động từ 守, không dùng 保持).'},
-  {vi:'Vừa nghỉ đông, anh trai vốn luôn nhớ nhà đã chỉ mong được về ngay đoàn tụ, còn bố mẹ thì cười rạng rỡ không tả xiết.',zh:'一放寒假，一直惦记着家人的哥哥就巴不得马上回家团圆，爸妈更是笑得别提多灿烂了。',py:'Yí fàng hánjià, yìzhí diànjìzhe jiārén de gēge jiù bābudé mǎshàng huí jiā tuányuán, bà mā gèng shì xiào de biétí duō cànlàn le.',goiY:['一……就……','巴不得','惦记','别提多……了'],giai:'一……就…… = vừa … là …; 巴不得 (bài 1) = chỉ mong; 别提多 + A + 了 (bài 1) diễn tả mức độ không tả xiết. 团圆 ôn từ bài 2.'},
-  {vi:'Sở dĩ ngày nào cậu ấy cũng học đến khuya là vì không muốn phụ tấm lòng kỳ vọng của bố mẹ, chứ không phải vì sĩ diện.',zh:'他之所以每天学到深夜，是因为不想辜负父母的一番期望，而不是为了面子。',py:'Tā zhīsuǒyǐ měi tiān xué dào shēnyè, shì yīnwèi bù xiǎng gūfù fùmǔ de yì fān qīwàng, ér bú shì wèile miànzi.',goiY:['之所以……是因为……','辜负','番','而不是'],giai:'之所以 + kết quả, 是因为 + nguyên nhân; 一番 + 期望 (番 dùng cho tâm tư, số từ chỉ 一/几); "chứ không phải" = 而不是.'},
-  {vi:'Cho dù em không hài lòng với điểm số của mình thì cũng đừng tự trách quá, ít ra em đã cố hết sức rồi.',zh:'即使你对自己的成绩不满意，也不要过于自责，起码你已经尽力了。',py:'Jíshǐ nǐ duì zìjǐ de chéngjì bù mǎnyì, yě búyào guòyú zìzé, qǐmǎ nǐ yǐjīng jìnlì le.',goiY:['即使……也……','过于','起码','尽力'],giai:'即使 + giả thiết/nhượng bộ, 也 + kết quả không đổi; 起码 đứng đầu vế cuối = "ít ra thì …" (an ủi). 尽力 ôn từ HSK 5.'},
-  {vi:'Bánh Trung thu bà làm không những nhân gì cũng có mà còn ngon lắm, vì thế lần nào hàng xóm sang chơi bà cũng không nhịn được mà khoe một phen.',zh:'奶奶做的月饼不但什么馅儿的都有，而且好吃着呢，所以每次邻居来，她都忍不住要炫耀一番。',py:'Nǎinai zuò de yuèbing búdàn shénme xiànr de dōu yǒu, érqiě hǎochī zhe ne, suǒyǐ měi cì línjū lái, tā dōu rěnbuzhù yào xuànyào yì fān.',goiY:['不但……而且……','馅儿','着呢','炫耀一番'],giai:'不但……而且…… tăng tiến, cùng chủ ngữ 月饼 nên 不但 đứng sau chủ ngữ; 好吃着呢 = ngon lắm (không nói 很好吃着呢); 炫耀一番 = khoe một phen.'}
+  {vi:'Tuy trận này thua, nhưng huấn luyện viên vẫn đặt rất nhiều kỳ vọng vào chúng tôi.',zh:'虽然这次比赛输了，但是教练仍旧对我们充满期望。',py:'Suīrán zhè cì bǐsài shū le, dànshì jiàoliàn réngjiù duì wǒmen chōngmǎn qīwàng.',goiY:['虽然……但是……','仍旧','期望'],giai:'仍旧 (vẫn) đứng sau chủ ngữ vế sau, trước động từ. "Đặt kỳ vọng vào ai" = 对 + ai + 充满期望, không dịch từng chữ "đặt".'},
+  {vi:'Ông chủ quán là người rất chất phác, chưa bao giờ lừa khách, vì vậy quán của ông có uy tín lắm.',zh:'饭馆的老板为人很朴实，从来不欺骗顾客，所以他的店信誉好着呢。',py:'Fànguǎn de lǎobǎn wéirén hěn pǔshí, cónglái bù qīpiàn gùkè, suǒyǐ tā de diàn xìnyù hǎozhe ne.',goiY:['为人朴实 = tính tình chất phác','欺骗 = lừa','着呢 = … lắm'],giai:'为人 + tính từ tả tính cách; 信誉好着呢 = uy tín lắm (khẩu ngữ, không thêm 很).'},
+  {vi:'Đừng quá để ý đến cách nhìn của người khác, sống thật với chính mình là được.',zh:'不要过于在乎别人的看法，做真实的自己就好。',py:'Búyào guòyú zàihu biérén de kànfǎ, zuò zhēnshí de zìjǐ jiù hǎo.',goiY:['不要过于 + V = đừng quá…','在乎 = để ý, bận tâm'],giai:'不要 / 别 + 过于 + động từ hai âm tiết là lời khuyên trang trọng; "sống thật với chính mình" = 做真实的自己.'},
+  {vi:'Bà khoe với hàng xóm một hồi về cậu cháu nội đang học thạc sĩ, ai nghe cũng không nhịn được cười.',zh:'奶奶向邻居们把读硕士的孙子炫耀了一番，大家听了都忍不住笑了。',py:'Nǎinai xiàng línjūmen bǎ dú shuòshì de sūnzi xuànyàole yì fān, dàjiā tīngle dōu rěnbuzhù xiào le.',goiY:['炫耀了一番 = khoe một hồi','忍不住 = không nhịn được'],giai:'向 + ai + 把 + người + 炫耀了一番: V + 了 + 一番 diễn tả hành động kéo dài, tốn lời; "không nhịn được" = 忍不住.'},
+  {vi:'Sở dĩ ngày nào cậu ấy cũng học đến khuya là vì không muốn phụ tấm lòng kỳ vọng của bố mẹ, chứ không phải vì sĩ diện.',zh:'他之所以每天学到深夜，是因为不想辜负父母的一番期望，而不是为了面子。',py:'Tā zhīsuǒyǐ měi tiān xué dào shēnyè, shì yīnwèi bù xiǎng gūfù fùmǔ de yì fān qīwàng, ér bú shì wèile miànzi.',goiY:['之所以……是因为……','辜负','一番期望','而不是'],giai:'之所以 + kết quả, 是因为 + nguyên nhân; 一番 + 期望 (番 dùng cho tâm tư, số từ chỉ 一/几); "chứ không phải" = 而不是.'},
+  {vi:'Vừa nghe tin con gái được nhận làm trợ lý ở một công ty hàng đầu, mẹ lập tức vui đến mức chỉ muốn báo cho cả nhà.',zh:'一听说女儿当上了一家一流公司的助手，妈妈顿时高兴得恨不得告诉全家人。',py:'Yì tīngshuō nǚ\'ér dāngshàngle yì jiā yīliú gōngsī de zhùshǒu, māma dùnshí gāoxìng de hènbude gàosu quánjiā rén.',goiY:['一……就 / 顿时 = vừa… là lập tức','一流公司 = công ty hàng đầu','恨不得 = chỉ muốn'],giai:'Ôn 顿时 và 恨不得 (bài 2): 顿时 + trạng thái mới; Adj + 得 + 恨不得 + V = … đến mức chỉ muốn….'}
 ];
 
-// Chiều Trung → Việt — bám ý bài khoá, diễn đạt bằng câu ghép
+// ══════════════════════════════════════════
+// Dịch Trung → Việt — câu mới, không trùng chiều trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Sáng sớm đi làm, một người đàn ông trông như công nhân từ quê lên đi ngược chiều tới, nhìn tôi một lượt.',zh:'清晨上班时，一位农民工模样的男人迎面走来，打量了我一番。',py:'Qīngchén shàngbān shí, yí wèi nóngmíngōng múyàng de nánrén yíngmiàn zǒu lái, dǎliangle wǒ yì fān.',goiY:['模样 = dáng vẻ, trông như','迎面 = ngược chiều tới, ngay trước mặt','打量……一番 = nhìn kỹ … một lượt'],giai:'N + 模样的 + người → "trông như N"; 番 dùng cho hành động tốn thời gian → "một lượt", không dịch "một phiên".'},
-  {vi:'Ông tuy nếm trải nhiều gian truân, nhưng trên gương mặt lại toát lên vẻ chất phác và hiền lành.',zh:'他虽然饱经沧桑，脸上却流露出朴实和善良。',py:'Tā suīrán bǎojīng-cāngsāng, liǎn shang què liúlù chū pǔshí hé shànliáng.',goiY:['虽然……却…… = tuy … nhưng (lại) …','饱经沧桑 = từng trải, dãi dầu','流露 = toát lên, bộc lộ'],giai:'虽然……却……: 却 đứng sau chủ ngữ vế sau (脸上); 流露出 + phẩm chất → "toát lên vẻ …", tự nhiên hơn "bộc lộ ra".'},
-  {vi:'Vì ban ngày ông làm ở công trường, không ghi được địa chỉ, nên đành nhờ tôi nhận hộ bánh Trung thu.',zh:'因为他白天在工地干活，地址没法写，所以只好拜托我帮他代收月饼。',py:'Yīnwèi tā báitiān zài gōngdì gàn huó, dìzhǐ méi fǎ xiě, suǒyǐ zhǐhǎo bàituō wǒ bāng tā dàishōu yuèbing.',goiY:['因为……所以…… = vì … nên …','拜托 = nhờ','代收 = nhận hộ'],giai:'只好 = đành phải (không còn cách nào khác) — đừng bỏ sót sắc thái này khi dịch; 没法写 = không có cách nào ghi.'},
-  {vi:'Sở dĩ ông tin tôi là vì tôi trông nho nhã lịch sự, tốt bụng, lại giữ chữ tín.',zh:'他之所以相信我，是因为我看起来斯斯文文的，心眼儿好，又守信誉。',py:'Tā zhīsuǒyǐ xiāngxìn wǒ, shì yīnwèi wǒ kàn qǐlái sīsīwénwén de, xīnyǎnr hǎo, yòu shǒu xìnyù.',goiY:['之所以……是因为…… = sở dĩ … là vì …','斯斯文文 = nho nhã','心眼儿好 = tốt bụng'],giai:'心眼儿好 dịch "tốt bụng", không dịch "mắt tim tốt"; 守信誉 = giữ chữ tín; 又 = lại còn (thêm một ưu điểm).'},
-  {vi:'Con gái ông không chỉ học thạc sĩ, có học vị mà còn làm quản lý ở một công ty hàng đầu, được coi là trụ cột của công ty.',zh:'他的女儿不仅念了硕士，有学位，而且在一流的公司当主管，算得上是公司的骨干。',py:'Tā de nǚ\'ér bùjǐn niànle shuòshì, yǒu xuéwèi, érqiě zài yīliú de gōngsī dāng zhǔguǎn, suàndeshàng shì gōngsī de gǔgàn.',goiY:['不仅……而且…… = không chỉ … mà còn …','一流 = hàng đầu','算得上 = được coi là','骨干 = trụ cột'],giai:'算得上是 = đủ để được xem là (đánh giá khá cao), không dịch "tính được"; 一流的公司 = công ty hàng đầu.'},
-  {vi:'Tôi lập tức gọi cho bác Trương nhưng không ai nghe máy, mãi đến lúc tan làm vẫn bặt tin.',zh:'我马上拨打张师傅的电话，却无人接听，直到下班仍旧没有音信。',py:'Wǒ mǎshàng bōdǎ Zhāng shīfu de diànhuà, què wú rén jiētīng, zhídào xiàbān réngjiù méiyǒu yīnxìn.',goiY:['却 = nhưng, lại (trái mong đợi)','直到 = mãi đến','仍旧 = vẫn'],giai:'直到……仍旧…… = mãi đến … vẫn …; 没有音信 = bặt vô âm tín, không có tin tức gì.'},
-  {vi:'Bác Trương mồ hôi nhễ nhại vừa gặp tôi đã rối rít xin lỗi rồi cảm ơn, nhất định đòi mời tôi ăn bánh Trung thu cho bằng được.',zh:'浑身汗水的张师傅一见到我，就又是道歉又是感谢，非要请我吃月饼不可。',py:'Húnshēn hànshuǐ de Zhāng shīfu yí jiàndào wǒ, jiù yòu shì dàoqiàn yòu shì gǎnxiè, fēi yào qǐng wǒ chī yuèbing bùkě.',goiY:['一……就…… = vừa … là …','又是……又是…… = vừa … vừa … (dồn dập)','非……不可 = nhất định phải'],giai:'又是 A 又是 B tả hai hành động dồn dập, liên tục → "rối rít"; 非要……不可 = nhất quyết, khăng khăng → "nhất định … cho bằng được".'},
-  {vi:'Điện thoại thông rồi, bác Trương cười rạng rỡ không tả xiết, vừa bảo mình khoẻ lắm, vừa dặn con gái đừng lo cho mình.',zh:'电话通了以后，张师傅笑得别提多灿烂了，一边说自己身体好着呢，一边叮嘱女儿别惦记他。',py:'Diànhuà tōngle yǐhòu, Zhāng shīfu xiào de biétí duō cànlàn le, yìbiān shuō zìjǐ shēntǐ hǎozhe ne, yìbiān dīngzhǔ nǚ\'ér bié diànjì tā.',goiY:['别提多……了 = … không tả xiết','一边……一边…… = vừa … vừa …','着呢 = … lắm','惦记 = lo, nhớ'],giai:'A + 着呢 nhấn mạnh mức độ (khẩu ngữ) → "khoẻ lắm"; 别提多 + A + 了 (bài 1) → "không tả xiết"; 叮嘱 = dặn dò.'},
-  {vi:'Mặc dù bác Trương lao lực quá nhiều, cuộc sống cũng chẳng khá giả gì, nhưng hễ nhắc đến con gái là mặt bác rạng ngời tự hào, còn không nhịn được mà khoe với tôi một hồi.',zh:'尽管张师傅过于操劳，生活也不富裕，但是一说起女儿，他就满脸骄傲，还忍不住向我炫耀一番。',py:'Jǐnguǎn Zhāng shīfu guòyú cāoláo, shēnghuó yě bú fùyù, dànshì yì shuōqǐ nǚ\'ér, tā jiù mǎn liǎn jiāo\'ào, hái rěnbuzhù xiàng wǒ xuànyào yì fān.',goiY:['尽管……但是…… = mặc dù … nhưng …','过于操劳 = lao lực quá độ','炫耀一番 = khoe một hồi'],giai:'尽管 nêu sự thật đã có (khác 即使 là giả thiết); trong vế sau, 一……就…… = hễ … là …; 满脸骄傲 = mặt rạng ngời tự hào.'},
-  {vi:'Bác Trương bảo con gái biết giữ thể diện lắm, chưa bao giờ phụ kỳ vọng của bác; có thể thấy, trong lòng người cha, con gái chính là toàn bộ hạnh phúc.',zh:'张师傅说女儿要面子着呢，从来没有辜负过他的期望；可见，在父亲心里，女儿就是他全部的幸福。',py:'Zhāng shīfu shuō nǚ\'ér yào miànzi zhe ne, cónglái méiyǒu gūfùguo tā de qīwàng; kějiàn, zài fùqin xīn li, nǚ\'ér jiù shì tā quánbù de xìngfú.',goiY:['着呢 = … lắm','辜负 = phụ (lòng)','可见 = có thể thấy'],giai:'要面子着呢 ở đây là lời khen "có chí, biết giữ thể diện", không dịch "sĩ diện" (nghĩa chê); 可见 rút ra kết luận từ vế trước.'}
+  {vi:'Đi làm thêm suốt kỳ nghỉ hè, tôi mới hiểu bố mẹ vất vả thế nào.',zh:'整个假期都在外面干活，我才明白父母有多操劳。',py:'Zhěnggè jiàqī dōu zài wàimian gàn huó, wǒ cái míngbai fùmǔ yǒu duō cāoláo.',goiY:['操劳 = lo toan vất vả','有多 + tính từ = … đến mức nào'],giai:'才 = mới (nhận ra muộn); 有多操劳 dịch "vất vả thế nào / biết bao".'},
+  {vi:'Thấy bạn cũ năm xưa giờ đã thành quản lý, tôi bất giác thấy vui thay cho cậu ấy.',zh:'看到当年的老同学现在已经成了主管，我不由得替他感到喜悦。',py:'Kàndào dāngnián de lǎo tóngxué xiànzài yǐjīng chéngle zhǔguǎn, wǒ bùyóude tì tā gǎndào xǐyuè.',goiY:['主管 = người quản lý','不由得 = bất giác','喜悦 = vui mừng'],giai:'Ôn 不由得 (bài 2). 替他感到喜悦 dịch "vui thay cho cậu ấy", không dịch "cảm thấy hỉ duyệt".'},
+  {vi:'Người thợ may già ở thị trấn ấy tay nghề hàng đầu, quần áo bà may ai mặc cũng vừa.',zh:'那个乡镇的老裁缝水平一流，她做的衣服谁穿都合适。',py:'Nàge xiāngzhèn de lǎo cáifeng shuǐpíng yīliú, tā zuò de yīfu shéi chuān dōu héshì.',goiY:['乡镇 = thị trấn nhỏ','裁缝 = thợ may','水平一流 = tay nghề hàng đầu'],giai:'谁 + V + 都…… = ai… cũng…; 一流 làm vị ngữ (水平一流) = trình độ hạng nhất.'},
+  {vi:'Gặp nhau ở cổng, ông cụ râu tóc bạc trắng nhìn tôi một lượt từ đầu đến chân rồi mới mỉm cười gật đầu.',zh:'在门口碰面时，那位胡须雪白的老人从头到脚打量了我一番，才微笑着点了点头。',py:'Zài ménkǒu pèngmiàn shí, nà wèi húxū xuěbái de lǎorén cóng tóu dào jiǎo dǎliangle wǒ yì fān, cái wēixiàozhe diǎnle diǎn tóu.',goiY:['胡须 = râu','打量了……一番 = nhìn ai một lượt','从头到脚 = từ đầu đến chân'],giai:'打量 + người + 一番: quan sát kỹ diện mạo; 才 + V = rồi mới….'},
+  {vi:'Bánh Trung thu nhà làm, nhân gì cũng có, mẹ còn đặc biệt gửi cho tôi mấy cái.',zh:'家里做的月饼什么馅儿的都有，妈妈还专门给我寄了好几个。',py:'Jiā li zuò de yuèbing shénme xiànr de dōu yǒu, māma hái zhuānmén gěi wǒ jìle hǎo jǐ ge.',goiY:['月饼 = bánh Trung thu','馅儿 = nhân bánh','专门 = riêng, chuyên'],giai:'什么 + 馅儿的 + 都有 = nhân gì cũng có; 专门 dịch "đặc biệt / riêng" tuỳ ngữ cảnh.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1623,7 +1565,7 @@ var speakingData = {
     {q_zh:'这个男人想拜托“我”做什么？',
      q_vn:'Người đàn ông này muốn nhờ "tôi" làm gì?',
      hint:'①女儿在……工作，……节快到了，女儿想给……寄……　②可……白天在……，地址……　③……请我代收……',
-     sample:'他女儿在上海工作，中秋节快到了，女儿想给他寄一盒月饼。可他白天在工地，地址没法写，所以想请我帮他代收一下。',
+     sample:'他女儿在上海工作，快到中秋节了，女儿想给他寄一盒月饼。可他白天在工地，地址没法写，所以想请我帮他代收一下。',
      sample_vn:'Con gái ông làm việc ở Thượng Hải, Trung thu sắp đến, cô muốn gửi cho bố một hộp bánh Trung thu. Nhưng ban ngày ông ở công trường, không ghi được địa chỉ, nên muốn nhờ tôi nhận hộ.',
      note:'Nói theo trình tự: hoàn cảnh → khó khăn (可……) → lời nhờ (想请我……). 代收 = nhận hộ.'},
     {q_zh:'他为什么找到“我”帮忙？',
@@ -1641,7 +1583,7 @@ var speakingData = {
     {q_zh:'“我”收到包裹后，做了什么？',
      q_vn:'Sau khi nhận được gói hàng, "tôi" đã làm gì?',
      hint:'拨打、发短信、不安、往工地跑、找到',
-     sample:'我马上拨打张师傅的电话，却无人接听，发短信他也不回，直到下班仍旧没有音信。我心里有些不安，就抱着包裹往工地跑，请一位工人帮忙，终于找到了他。',
+     sample:'我马上拨打张师傅的电话，却没有人接，发短信他也不回，直到下班仍旧没有音信。我心里有些不安，就抱着包裹往工地跑，请一位工人帮忙，终于找到了他。',
      sample_vn:'Tôi lập tức gọi cho bác Trương nhưng không ai nghe, nhắn tin bác cũng không trả lời, mãi đến lúc tan làm vẫn bặt tin. Lòng tôi hơi bất an, bèn ôm gói hàng chạy ra công trường, nhờ một công nhân giúp, cuối cùng cũng tìm được bác.',
      note:'Dùng chuỗi 却……，也……，直到……仍旧…… (bài tập 4) để kể liền mạch các hành động.'},
     {q_zh:'他跟“我”见面后，做了什么？',
@@ -1653,306 +1595,133 @@ var speakingData = {
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — hội thoại ngắn / đoạn nói ngắn
-// Sách HSK 6 không có sách bài tập nghe: tự soạn theo chủ đề bài 3
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — câu tự soạn (sách HSK 6 không có sách bài tập nghe), mỗi câu một tình huống mới
+// ══════════════════════════════════════════
 var listenExamData = {
-  "intro": "Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.",
-  "source": "Soạn theo dạng đề HSK 6 · chủ đề bài 3",
-  "items": [
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 3',
+  items: [
     {
-      "n": 1,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "你怎么浑身都是汗？外面下雨了？"
-        },
-        {
-          "sp": "男",
-          "zh": "别提了，电梯坏了，我是一口气走上十八楼的。"
-        }
+      n: 1,
+      lines: [
+        {sp:'女',zh:'你怎么浑身是汗？跑步去了？'},
+        {sp:'男',zh:'不是，我帮邻居搬了一下午家具，累死了。'}
       ],
-      "q": "男的为什么浑身是汗？",
-      "qvn": "Vì sao người đàn ông mồ hôi đầm đìa?",
-      "opts": [
-        "刚跑完步",
-        "被雨淋了",
-        "电梯坏了，走楼梯上来的",
-        "刚打完球"
-      ],
-      "ans": 2,
-      "why": "Anh ấy nói 电梯坏了，我是一口气走上十八楼的 (thang máy hỏng, leo một mạch lên tầng 18). Mưa chỉ là câu đoán của cô gái.",
-      "words": [
-        "浑身"
-      ]
+      q: '男的为什么浑身是汗？',
+      qvn: 'Vì sao người đàn ông mồ hôi đầm đìa?',
+      opts: ['刚跑完步','天气太热了','帮邻居搬东西了','刚打完球'],
+      ans: 2,
+      why: '不是，我帮邻居搬了一下午家具 → giúp hàng xóm khuân đồ cả buổi chiều. Chạy bộ chỉ là câu đoán của người phụ nữ.',
+      words: ['浑身']
     },
     {
-      "n": 2,
-      "lines": [
-        {
-          "sp": "男",
-          "zh": "这盒月饼是什么馅儿的？"
-        },
-        {
-          "sp": "女",
-          "zh": "豆沙的。我知道你不爱吃五仁的，特意挑了这种。"
-        }
+      n: 2,
+      lines: [
+        {sp:'男',zh:'小李最近怎么样？还在那家小公司吗？'},
+        {sp:'女',zh:'人家早就换工作了，现在是一家大公司的骨干，手下还有两个助手呢。'}
       ],
-      "q": "女的为什么买这盒月饼？",
-      "qvn": "Vì sao người phụ nữ mua hộp bánh này?",
-      "opts": [
-        "因为男的不喜欢五仁馅儿的",
-        "因为最便宜",
-        "因为是自己做的",
-        "因为包装漂亮"
-      ],
-      "ans": 0,
-      "why": "你不爱吃五仁的，特意挑了这种 — cô chọn nhân đậu đỏ vì biết anh không thích nhân thập cẩm.",
-      "words": [
-        "月饼",
-        "馅儿"
-      ]
+      q: '关于小李，可以知道什么？',
+      qvn: 'Về Tiểu Lý, có thể biết điều gì?',
+      opts: ['在新公司很重要','还在原先的公司','是女的的助手','刚找到工作'],
+      ans: 0,
+      why: '换工作了 (đã chuyển việc), 骨干 + 手下有两个助手 → ở công ty mới rất quan trọng.',
+      words: ['骨干','助手']
     },
     {
-      "n": 3,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "你还记得小李吗？他最近怎么样？"
-        },
-        {
-          "sp": "男",
-          "zh": "人家现在可是公司的骨干了，手下还有两个助手呢。"
-        }
+      n: 3,
+      lines: [
+        {sp:'女',zh:'我给他拨了一下午电话，一直没人接，会不会出什么事了？'},
+        {sp:'男',zh:'别过于担心，他说过今天下午要开会，手机可能关机了。'}
       ],
-      "q": "关于小李，可以知道什么？",
-      "qvn": "Về Tiểu Lý, có thể biết được điều gì?",
-      "opts": [
-        "刚进公司",
-        "是男的的助手",
-        "想换工作",
-        "在公司很重要"
-      ],
-      "ans": 3,
-      "why": "骨干 = trụ cột; 手下还有两个助手 = dưới quyền còn có hai trợ lý → Tiểu Lý rất quan trọng ở công ty.",
-      "words": [
-        "骨干",
-        "助手"
-      ]
+      q: '男的是什么意思？',
+      qvn: 'Ý người đàn ông là gì?',
+      opts: ['应该马上去找他','他可能出事了','他换手机号码了','不用太担心'],
+      ans: 3,
+      why: '别过于担心 + lý do anh ta đang họp, tắt máy → không cần lo quá.',
+      words: ['拨','过于']
     },
     {
-      "n": 4,
-      "lines": [
-        {
-          "sp": "男",
-          "zh": "我给他拨了一下午电话，一直没人接，不会出什么事吧？"
-        },
-        {
-          "sp": "女",
-          "zh": "别瞎担心了，他下午在开会，手机可能调成静音了。"
-        }
+      n: 4,
+      lines: [
+        {sp:'男',zh:'这家网店的东西又便宜又好，能放心买吗？'},
+        {sp:'女',zh:'放心吧，这家店信誉好着呢，我在那儿买了三年了，从来没被骗过。'}
       ],
-      "q": "女的是什么意思？",
-      "qvn": "Ý người phụ nữ là gì?",
-      "opts": [
-        "他可能出事了",
-        "男的不必过于担心",
-        "男的应该马上去找他",
-        "他换了手机号码"
-      ],
-      "ans": 1,
-      "why": "别瞎担心了 (đừng lo hão — ôn 瞎 HSK 5) + lý do anh ta đang họp → không cần lo quá.",
-      "words": [
-        "拨"
-      ]
+      q: '女的觉得这家网店怎么样？',
+      qvn: 'Người phụ nữ thấy cửa hàng online này thế nào?',
+      opts: ['东西太贵','可以相信','刚开不久','常常骗人'],
+      ans: 1,
+      why: '信誉好着呢 (uy tín lắm) + mua ba năm chưa bị lừa → tin được. Cửa hàng mở đã lâu chứ không phải mới mở.',
+      words: ['信誉','着呢']
     },
     {
-      "n": 5,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "这家网店的东西能买吗？我怕被骗。"
-        },
-        {
-          "sp": "男",
-          "zh": "放心吧，这家店信誉很好，我在那儿买过好几次了，从来没被欺骗过。"
-        }
+      n: 5,
+      lines: [
+        {sp:'女',zh:'听说你女儿拿到博士学位了？真了不起！'},
+        {sp:'男',zh:'哪里哪里。这孩子从小就特别懂事，从来不用我们担心。'}
       ],
-      "q": "男的觉得这家网店怎么样？",
-      "qvn": "Người đàn ông thấy cửa hàng online này thế nào?",
-      "opts": [
-        "东西太贵",
-        "可以相信",
-        "送货太慢",
-        "常常欺骗顾客"
-      ],
-      "ans": 1,
-      "why": "信誉很好 + 从来没被欺骗过 → cửa hàng uy tín, tin được.",
-      "words": [
-        "信誉",
-        "欺骗"
-      ]
+      q: '男的觉得女儿怎么样？',
+      qvn: 'Người đàn ông thấy con gái mình thế nào?',
+      opts: ['运气很好','常让父母担心','很懂事，不用父母操心','不想读博士'],
+      ans: 2,
+      why: '从小就特别懂事，从来不用我们担心 = từ bé đã hiểu chuyện, chưa bao giờ để bố mẹ phải lo. 哪里哪里 chỉ là lời khiêm tốn.',
+      words: ['学位']
     },
     {
-      "n": 6,
-      "lines": [
-        {
-          "sp": "男",
-          "zh": "听说你女儿考上一流大学了？真了不起！"
-        },
-        {
-          "sp": "女",
-          "zh": "哪里哪里，她就是运气好。不过这孩子要面子着呢，从来不让我们操心。"
-        }
+      n: 6,
+      lines: [
+        {sp:'男',zh:'快尝尝，这是我奶奶自己做的月饼。'},
+        {sp:'女',zh:'真香！什么馅儿的？吃起来甜甜的，还有点儿咸。'}
       ],
-      "q": "女的觉得女儿怎么样？",
-      "qvn": "Người phụ nữ thấy con gái mình thế nào?",
-      "opts": [
-        "运气很差",
-        "常让父母操心",
-        "不爱面子",
-        "很懂事，不让父母操心"
-      ],
-      "ans": 3,
-      "why": "要面子着呢 (rất có chí, biết giữ thể diện) + 从来不让我们操心 (chưa bao giờ để bố mẹ phải lo) → con rất hiểu chuyện. 哪里哪里 chỉ là lời khiêm tốn.",
-      "words": [
-        "一流",
-        "面子"
-      ]
+      q: '他们在说什么？',
+      qvn: 'Họ đang nói về chuyện gì?',
+      opts: ['怎么做饭','奶奶的身体','去哪儿买东西','奶奶做的月饼'],
+      ans: 3,
+      why: '这是我奶奶自己做的月饼 + hỏi nhân gì, vị ra sao → đang nói về bánh Trung thu bà làm.',
+      words: ['月饼','馅儿']
     },
     {
-      "n": 7,
-      "lines": [
-        {
-          "sp": "男",
-          "zh": "中秋节是中国的传统节日。这一天，在外地工作的人都盼着回家和家人团圆，一边吃月饼，一边赏月。即使不能回家，很多人也会给家里寄一盒月饼，表达自己的心意。"
-        }
+      n: 7,
+      lines: [
+        {sp:'女',zh:'你们新来的同事怎么样？'},
+        {sp:'男',zh:'人挺斯文的，说话轻轻的，听说原先在港口当工程师。'}
       ],
-      "q": "根据这段话，不能回家的人常常会怎么做？",
-      "qvn": "Theo đoạn này, người không về nhà được thường sẽ làm gì?",
-      "opts": [
-        "给家里寄月饼",
-        "在外地赏月",
-        "给朋友打电话",
-        "去旅游"
-      ],
-      "ans": 0,
-      "why": "即使不能回家，很多人也会给家里寄一盒月饼 — dù không về được cũng gửi bánh Trung thu về nhà.",
-      "words": [
-        "月饼"
-      ]
-    },
-    {
-      "n": 8,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "老张，女儿给你打电话了？看你笑得多灿烂！"
-        },
-        {
-          "sp": "男",
-          "zh": "是啊，她说下个月回来看我。这孩子，从来没辜负过我的期望。"
-        }
-      ],
-      "q": "老张为什么这么高兴？",
-      "qvn": "Vì sao ông Trương vui như vậy?",
-      "opts": [
-        "女儿升职了",
-        "女儿给他寄了月饼",
-        "女儿下个月回来看他",
-        "他找到了新工作"
-      ],
-      "ans": 2,
-      "why": "她说下个月回来看我 — con gái nói tháng sau về thăm. Các phương án khác không được nhắc tới.",
-      "words": [
-        "灿烂",
-        "辜负",
-        "期望"
-      ]
+      q: '关于新同事，可以知道什么？',
+      qvn: 'Về đồng nghiệp mới, có thể biết điều gì?',
+      opts: ['说话很大声','以前在港口工作','是男的的老同学','刚大学毕业'],
+      ans: 1,
+      why: '原先在港口当工程师 = trước kia làm kỹ sư ở cảng. 斯文, 说话轻轻的 → nói năng nhỏ nhẹ, không phải to tiếng.',
+      words: ['斯文','港口','原先']
     }
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
+// ══════════════════════════════════════════
 var situationData = {
-  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
-         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn cùng phòng nhờ em nhận hộ bưu kiện.',
-     a:{sp:'Bạn',zh:'我下午不在宿舍，有个快递，能帮我代收一下吗？',vn:'Chiều tớ không ở ký túc, có một bưu kiện, cậu nhận hộ tớ được không?'},
-     need:['Nhận lời vui vẻ (这个忙好帮)','Dùng 只要……就……'],
-     sample:'这个忙好帮，只要你告诉我快递几点到，我就在宿舍等着。',
-     samplePy:'Zhège máng hǎo bāng, zhǐyào nǐ gàosu wǒ kuàidì jǐ diǎn dào, wǒ jiù zài sùshè děngzhe.',
-     sampleVn:'Việc này dễ thôi, chỉ cần cậu bảo tớ mấy giờ hàng đến là tớ ở ký túc chờ.',
-     tip:'这个忙好帮 (câu trong bài) = việc này dễ giúp; 好 + V = dễ V.'},
-
-    {scene:'Mẹ gọi điện hỏi thăm khi em đi học xa nhà.',
-     a:{sp:'Mẹ',zh:'你一个人在外面，身体怎么样？吃得好吗？',vn:'Con ở ngoài một mình, sức khoẻ thế nào? Ăn uống có tốt không?'},
-     need:['Dùng A + 着呢','Dùng 别惦记'],
-     sample:'妈，我身体好着呢，每天都吃得饱饱的，您别惦记。',
-     samplePy:'Mā, wǒ shēntǐ hǎozhe ne, měi tiān dōu chī de bǎobǎo de, nín bié diànjì.',
-     sampleVn:'Mẹ ơi, con khoẻ lắm, ngày nào cũng ăn no căng, mẹ đừng lo.',
-     tip:'着呢 đã mang nghĩa mức độ cao — không thêm 很: nói 好着呢, không nói 很好着呢.'},
-
-    {scene:'Bạn thân lo lắng trước kỳ thi.',
-     a:{sp:'Bạn',zh:'明天就考试了，我紧张得睡不着。',vn:'Mai thi rồi, tớ căng thẳng đến mất ngủ.'},
-     need:['Dùng 过于','Đưa ra một lời khuyên cụ thể'],
-     sample:'别过于紧张，你复习得那么认真，早点儿睡吧，明天正常发挥就行了。',
-     samplePy:'Bié guòyú jǐnzhāng, nǐ fùxí de nàme rènzhēn, zǎo diǎnr shuì ba, míngtiān zhèngcháng fāhuī jiù xíng le.',
-     sampleVn:'Đừng căng thẳng quá, cậu ôn chăm thế cơ mà, ngủ sớm đi, mai làm bài bình thường là được.',
-     tip:'过于 thường đi với tính từ/động từ hai âm tiết: 过于紧张, 过于担心.'},
-
-    {scene:'Bạn hỏi em về cuốn sách tham khảo em vừa đọc.',
-     a:{sp:'Bạn',zh:'那本书你看完了吗？写得怎么样？',vn:'Cuốn sách đó cậu đọc xong chưa? Viết thế nào?'},
-     need:['Dùng V + 了 + 一番','Nêu nhận xét của mình'],
-     sample:'看完了，我还把重要的地方认真研究了一番，写得真不错。',
-     samplePy:'Kàn wán le, wǒ hái bǎ zhòngyào de dìfang rènzhēn yánjiūle yì fān, xiě de zhēn búcuò.',
-     sampleVn:'Đọc xong rồi, tớ còn nghiên cứu kỹ một lượt những chỗ quan trọng, viết hay thật.',
-     tip:'番 dùng cho hành động tốn thời gian, công sức; số từ thường là 一: 研究了一番, 打量了一番.'},
-
-    {scene:'Một bạn cùng lớp liên tục khoe điểm cao.',
-     a:{sp:'Bạn',zh:'你看，这次我又考了第一名！上次也是，上上次也是……',vn:'Cậu xem, lần này tớ lại đứng nhất! Lần trước cũng thế, lần trước nữa cũng thế…'},
-     need:['Dùng 炫耀','Góp ý khéo léo'],
-     sample:'恭喜你！不过别总是向大家炫耀，别人听了可能会不舒服。',
-     samplePy:'Gōngxǐ nǐ! Búguò bié zǒngshì xiàng dàjiā xuànyào, biérén tīngle kěnéng huì bù shūfu.',
-     sampleVn:'Chúc mừng cậu! Nhưng đừng lúc nào cũng khoe với mọi người, người khác nghe có thể thấy khó chịu.',
-     tip:'向 + người + 炫耀; mở lời bằng 恭喜 rồi mới góp ý (不过……) cho khéo.'}
+    {scene:'Bạn cùng lớp nhờ em nhận hộ một bưu kiện vì chiều nay bạn ấy vắng nhà.',a:{sp:'Bạn',zh:'我下午不在家，有个快递，你能帮我代收一下吗？',vn:'Chiều tớ không ở nhà, có một bưu kiện, cậu nhận hộ tớ được không?'},need:['Nhận lời vui vẻ','Dùng 只要……就……'],sample:'没问题，这个忙好帮。只要你告诉我快递几点到，我就在楼下等着。',samplePy:'Méi wèntí, zhège máng hǎo bāng. Zhǐyào nǐ gàosu wǒ kuàidì jǐ diǎn dào, wǒ jiù zài lóu xià děngzhe.',sampleVn:'Không vấn đề gì, việc này dễ thôi. Chỉ cần cậu bảo tớ mấy giờ hàng đến là tớ chờ dưới nhà.',tip:'好 + V = dễ V (这个忙好帮); 只要……就…… nêu điều kiện đủ.'},
+    {scene:'Bà gọi điện hỏi em đi học xa nhà có ổn không, có đủ tiền tiêu không.',a:{sp:'Bà',zh:'你一个人在外地，钱够不够花？身体还好吧？',vn:'Cháu ở xa một mình, tiền có đủ tiêu không? Sức khoẻ vẫn tốt chứ?'},need:['Dùng A + 着呢','Dặn bà đừng lo (惦记)'],sample:'奶奶，钱够着呢，我身体也很好，您不用惦记我，自己多注意休息。',samplePy:'Nǎinai, qián gòuzhe ne, wǒ shēntǐ yě hěn hǎo, nín búyòng diànjì wǒ, zìjǐ duō zhùyì xiūxi.',sampleVn:'Bà ơi, tiền đủ lắm ạ, sức khoẻ cháu cũng tốt, bà không cần lo cho cháu, bà nhớ nghỉ ngơi nhiều nhé.',tip:'着呢 đã có nghĩa mức độ cao — nói 够着呢, không nói 很够着呢.'},
+    {scene:'Em gái định mua cái váy rất đắt chỉ vì một ngôi sao mặc.',a:{sp:'Em gái',zh:'这条裙子三千块，可是明星都穿这个，我也想买！',vn:'Cái váy này ba nghìn tệ, nhưng ngôi sao nào cũng mặc, em cũng muốn mua!'},need:['Dùng 过于','Khuyên nhẹ nhàng'],sample:'别过于在乎别人穿什么，适合自己的衣服才最好看。这么贵，你再想想吧。',samplePy:'Bié guòyú zàihu biérén chuān shénme, shìhé zìjǐ de yīfu cái zuì hǎokàn. Zhème guì, nǐ zài xiǎngxiang ba.',sampleVn:'Đừng quá để ý người khác mặc gì, quần áo hợp với mình mới đẹp nhất. Đắt thế này, em nghĩ lại đi.',tip:'别 + 过于 + động từ hai âm tiết (在乎, 担心) = đừng quá…; 才 nhấn mạnh: chỉ có… mới….'},
+    {scene:'Bạn hỏi em đã chuẩn bị gì cho buổi phỏng vấn ngày mai.',a:{sp:'Bạn',zh:'明天就要见那家公司的经理了，你准备得怎么样？',vn:'Mai gặp giám đốc công ty đó rồi, cậu chuẩn bị đến đâu rồi?'},need:['Dùng V + 了 + 一番','Kể một việc cụ thể'],sample:'我上网把这家公司的情况了解了一番，还把可能会问的问题都练习了好几遍。',samplePy:'Wǒ shàngwǎng bǎ zhè jiā gōngsī de qíngkuàng liǎojiěle yì fān, hái bǎ kěnéng huì wèn de wèntí dōu liànxíle hǎo jǐ biàn.',sampleVn:'Tớ lên mạng tìm hiểu kỹ một lượt về công ty, còn luyện trước mấy lần những câu có thể bị hỏi.',tip:'番 cho hành động tốn công (了解了一番); 遍 đếm số lần lặp lại từ đầu đến cuối (练习了好几遍).'},
+    {scene:'Một bạn trong nhóm suốt ngày khoe điện thoại mới đắt tiền.',a:{sp:'Bạn',zh:'你们看我的新手机，一万多呢！全班就我一个人有！',vn:'Các cậu xem điện thoại mới của tớ này, hơn một vạn tệ đấy! Cả lớp mỗi tớ có!'},need:['Dùng 炫耀','Góp ý khéo léo'],sample:'真漂亮！不过别老在大家面前炫耀，有的同学听了心里可能会不舒服。',samplePy:'Zhēn piàoliang! Búguò bié lǎo zài dàjiā miànqián xuànyào, yǒu de tóngxué tīngle xīn li kěnéng huì bù shūfu.',sampleVn:'Đẹp thật! Nhưng đừng cứ khoe trước mặt mọi người, có bạn nghe xong trong lòng có thể không vui.',tip:'在 + người + 面前炫耀 = khoe trước mặt ai; khen trước (真漂亮) rồi mới góp ý (不过……) cho khéo.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 // 🎯 NÓI SAO CHO HAY — 得体 / 语体
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 var registerData = {
-  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
-         'Lên HSK 6, chọn đúng sắc thái khẩu ngữ / văn viết quan trọng không kém dùng đúng ngữ pháp.',
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. Lên HSK 6, chọn đúng sắc thái khẩu ngữ / văn viết quan trọng không kém dùng đúng ngữ pháp.',
   items: [
-    {scene:'Em viết thư cảm ơn trang trọng gửi thầy hiệu trưởng.',
-     a:'您的一番期望，我一定不会辜负。',b:'您放心，我肯定不给您丢人。',better:'a',
-     why:'辜负 + 一番期望 là cách nói trang trọng, lễ phép. 丢人 là khẩu ngữ thân mật, hợp khi người nhà nói với nhau (như bác Trương dặn con gái).'},
-
-    {scene:'Em nhắn tin cho mẹ khi đi học xa nhà.',
-     a:'妈，我好着呢，别惦记。',b:'母亲大人，本人一切安好，请勿挂念。',better:'a',
-     why:'Với mẹ dùng khẩu ngữ thân mật: 好着呢, 别惦记. Câu b trang trọng như thư từ ngày xưa, nhắn tin cho mẹ nghe xa cách và buồn cười.'},
-
-    {scene:'Em viết báo cáo tổng kết hoạt động cho câu lạc bộ.',
-     a:'由于准备时间过于匆忙，本次活动存在一些问题。',b:'准备时间太赶了，这次活动有点儿乱七八糟的。',better:'a',
-     why:'Văn bản tổng kết dùng 由于, 过于 (văn viết), 存在问题. 太赶了, 乱七八糟 là khẩu ngữ, không hợp báo cáo.'},
-
-    {scene:'Ở nhà ga, em muốn nhờ người bên cạnh (người lạ) trông hộ hành lý một lát.',
-     a:'不好意思，拜托您帮我看一下行李，我马上回来。',b:'帮我看着行李。',better:'a',
-     why:'Nhờ người lạ việc gì dùng 不好意思 + 拜托您 cho lịch sự. Câu b cụt lủn như ra lệnh.'},
-
-    {scene:'Em kể với bạn thân về ông nội mình.',
-     a:'我爷爷身体好着呢，每天都去公园跑步。',b:'我祖父身体状况良好，每日前往公园进行跑步锻炼。',better:'a',
-     why:'Nói chuyện với bạn dùng khẩu ngữ: 爷爷, 好着呢. Câu b giống văn bản báo cáo, nói chuyện thường ngày nghe rất gượng.'},
-
-    {scene:'Em viết bài văn miêu tả nhân vật nộp cô giáo.',
-     a:'他饱经沧桑的脸上流露出朴实。',b:'他的脸看起来很老，人很老实。',better:'a',
-     why:'Văn miêu tả cần từ ngữ gợi hình, văn viết: 饱经沧桑, 流露出朴实. Câu b đúng nhưng đơn giản, nhạt như văn nói.'}
+    {scene:'Em viết thư cảm ơn gửi thầy hiệu trưởng sau lễ tốt nghiệp.',a:'您放心，我肯定不给您丢人。',b:'您的一番期望，我一定不会辜负。',better:'b',why:'辜负 + 一番期望 trang trọng, lễ phép — hợp thư gửi hiệu trưởng. 丢人 là khẩu ngữ thân mật, hợp khi người nhà dặn nhau.'},
+    {scene:'Em nhắn tin cho mẹ lúc đi học xa nhà.',a:'妈，我这儿好着呢，别惦记。',b:'母亲，我在此一切都好，请勿挂念。',better:'a',why:'Với mẹ dùng khẩu ngữ thân mật: 好着呢, 别惦记. Câu b là lối thư từ trang trọng ngày xưa, nhắn cho mẹ nghe xa cách.'},
+    {scene:'Em viết báo cáo tổng kết hoạt động của câu lạc bộ nộp cho nhà trường.',a:'准备时间太赶了，这次活动有点儿乱。',b:'由于准备时间过于紧张，本次活动存在一些问题。',better:'b',why:'Báo cáo dùng 由于, 过于 (văn viết), 本次, 存在问题. 太赶了, 有点儿乱 là lời nói hằng ngày.'},
+    {scene:'Ở ga tàu, em muốn nhờ một người lạ trông hộ hành lý một lát.',a:'不好意思，拜托您帮我看一下行李，我马上回来。',b:'喂，帮我看着行李。',better:'a',why:'Nhờ người lạ dùng 不好意思 + 拜托您 cho lịch sự. Câu b cụt lủn như ra lệnh.'},
+    {scene:'Em kể với bạn thân về ông nội đã ngoài tám mươi.',a:'我爷爷年过八十，身体状况依然良好。',b:'我爷爷都八十多了，身体棒着呢！',better:'b',why:'Nói với bạn thân dùng khẩu ngữ: 都……了, 棒着呢. Câu a (年过, 状况良好) giống văn bản giới thiệu.'},
+    {scene:'Em viết bài văn miêu tả một người nông dân, nộp cho cô giáo.',a:'他饱经沧桑的脸上带着朴实的笑。',b:'他的脸看起来很老，人很老实。',better:'a',why:'Văn miêu tả cần từ gợi hình, văn viết: 饱经沧桑, 朴实的笑. Câu b đúng nhưng nhạt như văn nói (ôn văn viết / văn nói, bài 1).'}
   ]
 };
 

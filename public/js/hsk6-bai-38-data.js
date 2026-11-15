@@ -1732,92 +1732,51 @@ var hvBridgeData = {
 // GHÉP TỪ — cụm từ trong bài khoá
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'屡次惨遭',right:'失败'},
-  {left:'捕捉商业',right:'机会'},
-  {left:'受到了市场',right:'热捧'},
-  {left:'数额',right:'可观'},
-  {left:'一条永恒的',right:'真理'},
-  {left:'遵循这条',right:'规则'},
-  {left:'往往孕育着',right:'机会'},
-  {left:'新产品',right:'博览会'},
-  {left:'扣掉场地租金和',right:'税金'},
-  {left:'轻松收回了',right:'本钱'},
-  {left:'即使碰上',right:'通货膨胀'},
-  {left:'如果你思维',right:'平庸'},
-  {left:'营销的薄弱',right:'环节'},
-  {left:'大部分被劳特',right:'垄断'},
-  {left:'以寻找市场',right:'缝隙'},
-  {left:'劳特的产品口味',right:'单一'},
-  {left:'拟定了相应的市场营销',right:'策略'},
-  {left:'江崎的产品物美',right:'价廉'},
-  {left:'风味',right:'独特'},
-  {left:'消费者购买',right:'踊跃'},
-  {left:'市场需求呈井喷式',right:'爆发'},
-  {left:'对产品的不足做些局部',right:'改进'},
-  {left:'作为独一无二的旅游',right:'留念'},
-  {left:'兄弟俩齐心',right:'协力'},
-  {left:'发挥各自的',right:'专长'},
-  {left:'收益也呈递增',right:'趋势'},
-  {left:'具有超前',right:'意识'}
+  {left:'遵循',right:'规律'},
+  {left:'扩充',right:'队伍'},
+  {left:'拟定',right:'日程'},
+  {left:'垄断',right:'市场'},
+  {left:'踊跃',right:'发言'},
+  {left:'对照',right:'答案'},
+  {left:'发挥',right:'专长'},
+  {left:'品尝',right:'地方风味'},
+  {left:'齐心',right:'协力'},
+  {left:'数额',right:'可观'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ — mỗi từ của bài ít nhất một câu (fill + chọn từ)
+// ĐIỀN TỪ — câu mới (không chép bài khoá / SGK), mỗi câu một tình huống; ôn xoáy ốc từ + ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'这位运动员',blank:'屡次',post:'在国际比赛中获得冠军，是全国人民的骄傲。',hint:'(nhiều lần)',ans:'屡次',exp:'屡次 = nhiều lần (văn viết): 屡次获得冠军.'},
-  {pre:'夏天，冰箱里总放着几',blank:'罐',post:'啤酒和可乐。',hint:'(lon)',ans:'罐',exp:'罐 là lượng từ cho lon, hộp: 几罐啤酒.'},
-  {pre:'这笔奖学金的',blank:'数额',post:'虽然不大，但对我来说意义重大。',hint:'(khoản, mức tiền)',ans:'数额'},
-  {pre:'母爱是文学作品中',blank:'永恒',post:'的主题。',hint:'(vĩnh hằng, muôn thuở)',ans:'永恒'},
-  {pre:'他觉得这份工作太简单，',blank:'不屑',post:'去做，结果一直找不到工作。',hint:'(chẳng thèm)',ans:'不屑'},
-  {pre:'下个月，河内将举办一场国际旅游',blank:'博览会',post:'。',hint:'(hội chợ, triển lãm)',ans:'博览会'},
-  {pre:'哥哥在晚会上给大家变了一个',blank:'魔术',post:'，大家都看呆了。',hint:'(ảo thuật)',ans:'魔术'},
-  {pre:'这次作文我写错了三个字，被老师',blank:'扣',post:'了两分。',hint:'(trừ)',ans:'扣'},
-  {pre:'公司要求每个部门在',blank:'季度',post:'末交一份工作报告。',hint:'(quý)',ans:'季度'},
-  {pre:'做生意第一年他就赔光了',blank:'本钱',post:'，只好重新找工作。',hint:'(tiền vốn)',ans:'本钱'},
-  {pre:'受',blank:'通货膨胀',post:'的影响，今年的房租又涨了。',hint:'(lạm phát)',ans:'通货膨胀'},
-  {pre:'妈妈把面团',blank:'捏',post:'成了一个个可爱的小兔子。',hint:'(nặn)',ans:'捏'},
-  {pre:'质量检查是生产中最重要的一个',blank:'环节',post:'。',hint:'(khâu)',ans:'环节'},
-  {pre:'自从开通了高速公路，这个小镇的旅游业越来越',blank:'兴旺',post:'了。',hint:'(thịnh vượng)',ans:'兴旺'},
-  {pre:'他从口袋里',blank:'掏',post:'出一张纸条递给了我。',hint:'(móc ra, rút ra)',ans:'掏'},
-  {pre:'这套房子',blank:'布局',post:'合理，住起来很舒服。',hint:'(cách bố trí)',ans:'布局'},
-  {pre:'吃饭时要细细',blank:'咀嚼',post:'，不要狼吞虎咽。',hint:'(nhai)',ans:'咀嚼'},
-  {pre:'妈妈做的饭菜又香又',blank:'可口',post:'，我每次都要吃两碗。',hint:'(ngon miệng)',ans:'可口'},
-  {pre:'学校门口那家小吃店',blank:'物美价廉',post:'，很受学生欢迎。',hint:'(hàng tốt giá rẻ)',ans:'物美价廉'},
-  {pre:'来越南旅游，一定要尝尝各地的',blank:'风味',post:'小吃。',hint:'(hương vị đặc sản)',ans:'风味'},
-  {pre:'好产品靠的是质量，而不是广告',blank:'吹捧',post:'。',hint:'(thổi phồng)',ans:'吹捧'},
-  {pre:'以前村里只有一口',blank:'井',post:'，全村人都靠它吃水。',hint:'(giếng)',ans:'井'},
-  {pre:'报销的发票请交到',blank:'财务',post:'部。',hint:'(tài vụ)',ans:'财务'},
-  {pre:'每年都有大批外国游客来下龙湾',blank:'观光',post:'。',hint:'(tham quan)',ans:'观光'},
-  {pre:'这位画家专门给人画',blank:'肖像',post:'，一幅要画好几天。',hint:'(chân dung)',ans:'肖像'},
-  {pre:'越南的',blank:'纺织',post:'品出口到世界上很多国家。',hint:'(dệt may)',ans:'纺织'},
-  {pre:'毕业那天，全班同学在校门口合影',blank:'留念',post:'。',hint:'(làm kỷ niệm)',ans:'留念'},
-  {pre:'只要大家',blank:'齐心协力',post:'，就没有克服不了的困难。',hint:'(đồng tâm hiệp lực)',ans:'齐心协力'},
-  {pre:'他的',blank:'专长',post:'是电脑编程，在公司里很受重视。',hint:'(sở trường)',ans:'专长'},
-  {pre:'他以十万元做',blank:'资本',post:'，开了一家小书店。',hint:'(vốn)',ans:'资本'},
-  {pre:'旅游',blank:'淡季',post:'的时候，机票和酒店都便宜得多。',hint:'(mùa vắng khách)',ans:'淡季'},
-  {pre:'这所学校要求学生每周一穿',blank:'制服',post:'上学。',hint:'(đồng phục)',ans:'制服'},
-  {pre:'这种水稻的生长',blank:'周期',post:'比较短，一年可以种三季。',hint:'(chu kỳ)',ans:'周期'},
-  {pre:'他因为',blank:'赌博',post:'欠了很多钱，家里人都很失望。',hint:'(cờ bạc)',ans:'赌博'},
-  {pre:'与其整天',blank:'空想',post:'，不如马上行动起来。',hint:'(nghĩ viển vông)',ans:'空想'}
+  {pre:'我买了两',blank:'罐',post:'可乐，你要不要喝一点儿？',hint:'(lon — lượng từ)',ans:'罐',exp:'罐 = lon, hũ; làm lượng từ cho đồ đựng trong lon, hũ: 一罐可乐 / 两罐咖啡.'},
+  {pre:'在他看来，变化才是世界上唯一',blank:'永恒',post:'的东西。',hint:'(vĩnh hằng)',ans:'永恒',exp:'永恒 = vĩnh viễn không đổi (永恒的真理 / 主题 / 东西), văn viết. 永远 là phó từ (永远记得), không làm định ngữ với 的 như vậy.'},
+  {pre:'他总觉得自己了不起，连跟我们说话都',blank:'不屑',post:'。',hint:'(chẳng thèm)',ans:'不屑',exp:'不屑 (+ V) = cho là không đáng, chẳng thèm (làm); 连……都不屑 nhấn thái độ coi thường. 不愿意 chỉ là không muốn, không có ý khinh.'},
+  {pre:'这次汽车',blank:'博览会',post:'吸引了二十多个国家的汽车公司参加。',hint:'(hội chợ triển lãm)',ans:'博览会',exp:'博览会 = hội chợ, triển lãm quy mô lớn (nhiều nước, nhiều ngành). Một buổi triển lãm tranh nhỏ thì không gọi là 博览会.'},
+  {pre:'以前村里没有水管，大家都喝',blank:'井',post:'里的水。',hint:'(giếng)',ans:'井',exp:'井 = giếng; 井里的水 / 井水; lượng từ 一口井.'},
+  {pre:'商品有点儿问题，老板同意从价格里',blank:'扣',post:'掉五十块。',hint:'(trừ đi)',ans:'扣',exp:'扣 (掉) + số tiền = trừ đi, khấu trừ (扣工资, 扣钱). Cũng nói 扣工资 = trừ lương.'},
+  {pre:'他开饭馆的第一年就把',blank:'本钱',post:'全花光了，一分钱也没赚到。',hint:'(tiền vốn)',ans:'本钱',exp:'本钱 = tiền vốn bỏ ra làm ăn (khẩu ngữ); 资本 trang trọng hơn, nghĩa rộng hơn (vốn của doanh nghiệp).'},
+  {pre:'他不想过',blank:'平庸',post:'的生活，三十岁时辞职开始创业。',hint:'(tầm thường)',ans:'平庸',exp:'平庸 = tầm thường, xoàng (luôn mang ý chê). 平凡 = bình dị (trung tính, có khi khen: 平凡的岗位).'},
+  {pre:'妈妈把面',blank:'捏',post:'成了一个个小动物的样子。',hint:'(nặn)',ans:'捏',exp:'捏 = nặn (bằng ngón tay) hoặc nhón, véo: 捏成……的样子 / 捏饺子. 抓 = nắm, chộp (cả bàn tay).'},
+  {pre:'这家饭馆开了二十年，生意一直很',blank:'兴旺',post:'。',hint:'(phát đạt)',ans:'兴旺',exp:'生意兴旺 = làm ăn phát đạt. 兴奋 = hưng phấn (tâm trạng con người), không tả việc làm ăn.'},
+  {pre:'他从口袋里',blank:'掏',post:'出一张名片递给了我。',hint:'(móc ra, lấy ra)',ans:'掏',exp:'掏 = thò tay vào (túi, ngăn kéo) lấy ra: 掏出 / 掏钱. 拿 là cầm, lấy nói chung.'},
+  {pre:'这个公园的',blank:'布局',post:'很特别，走到哪儿都能看到水。',hint:'(cách bố trí)',ans:'布局',exp:'布局 = cách bố trí các phần (nhà cửa, bài văn, kinh doanh). 布置 là bày biện đồ đạc (bài 37).'},
+  {pre:'吃饭的时候要慢慢',blank:'咀嚼',post:'，这样对胃有好处。',hint:'(nhai)',ans:'咀嚼',exp:'咀嚼 = nhai kỹ (văn viết; nghĩa bóng: nghiền ngẫm).'},
+  {pre:'这台旧电脑',blank:'屡次',post:'出问题，我们终于决定换一台新的。',hint:'(nhiều lần)',ans:'屡次',exp:'屡次 + V = nhiều lần (việc ĐÃ lặp đi lặp lại, thường không mong muốn), văn viết. Không dùng cho việc sẽ làm (×明天要屡次去).'},
+  {pre:'老师',blank:'依据',post:'每个学生的特点，给他们安排了不同的练习。',hint:'(căn cứ vào)',ans:'依据',exp:'依据 + N + V = căn cứ vào … mà làm …; cũng là danh từ "căn cứ" (科学依据). 依靠 = dựa vào (chỗ dựa, sức người).'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (屡次 · 依据 · 反复) ít nhất 2 câu
+// SẮP XẾP CÂU — câu mới, chỉ một trật tự đúng
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['他','屡次','在比赛中','获得','冠军','。'],ans:'他屡次在比赛中获得冠军。',audio:'他屡次在比赛中获得冠军。'},
-  {words:['妈妈','屡次','提醒我','改掉','马虎的毛病','。'],ans:'妈妈屡次提醒我改掉马虎的毛病。',audio:'妈妈屡次提醒我改掉马虎的毛病。'},
-  {words:['虽然','屡次','尝试失败','，','他却','从来没想过','放弃','。'],ans:'虽然屡次尝试失败，他却从来没想过放弃。',audio:'虽然屡次尝试失败，他却从来没想过放弃。'},
-  {words:['我们','要','依据','不同的场合','变换','交际方式','。'],ans:'我们要依据不同的场合变换交际方式。',audio:'我们要依据不同的场合变换交际方式。'},
-  {words:['你们','这样做','有','法律依据','吗','？'],ans:'你们这样做有法律依据吗？',audio:'你们这样做有法律依据吗？'},
-  {words:['江崎公司','以','成年人的消费需求','为依据','设计产品','。'],ans:'江崎公司以成年人的消费需求为依据设计产品。',audio:'江崎公司以成年人的消费需求为依据设计产品。'},
-  {words:['细心研究市场','，','细心研究','消费者的需求','。'],ans:'细心研究市场，细心研究消费者的需求。',audio:'细心研究市场，细心研究消费者的需求。'},
-  {words:['沉默啊','！','沉默啊','！','不在沉默中爆发','，','就在沉默中灭亡','。'],ans:'沉默啊！沉默啊！不在沉默中爆发，就在沉默中灭亡。',audio:'沉默啊！沉默啊！不在沉默中爆发，就在沉默中灭亡。'},
-  {words:['风雪','一天比一天','大','，','人们的干劲','一天比一天','猛','。'],ans:'风雪一天比一天大，人们的干劲一天比一天猛。',audio:'风雪一天比一天大，人们的干劲一天比一天猛。'},
-  {words:['只要','遵循','这条规则','，','就','没有','不成功的道理','。'],ans:'只要遵循这条规则，就没有不成功的道理。',audio:'只要遵循这条规则，就没有不成功的道理。'},
-  {words:['你','愈是','为消费者','考虑得周全','，','消费者','愈是会','关照你','。'],ans:'你愈是为消费者考虑得周全，消费者愈是会关照你。',audio:'你愈是为消费者考虑得周全，消费者愈是会关照你。'},
-  {words:['创业','不是','赌博','，','创业','不能','靠空想','。'],ans:'创业不是赌博，创业不能靠空想。',audio:'创业不是赌博，创业不能靠空想。'}
+  {words:['他','屡次','想','辞职','，','都','被','经理','留','了','下来','。'],ans:'他屡次想辞职，都被经理留了下来。',audio:'他屡次想辞职，都被经理留了下来。'},
+  {words:['我们','依据','天气','情况','安排','比赛','时间','。'],ans:'我们依据天气情况安排比赛时间。',audio:'我们依据天气情况安排比赛时间。'},
+  {words:['这个','结论','没有','任何','科学','依据','。'],ans:'这个结论没有任何科学依据。',audio:'这个结论没有任何科学依据。'},
+  {words:['这种','材料','做','的','包','特别','耐用','。'],ans:'这种材料做的包特别耐用。',audio:'这种材料做的包特别耐用。'},
+  {words:['我们','必须','找到','问题','出在','哪个','环节','。'],ans:'我们必须找到问题出在哪个环节。',audio:'我们必须找到问题出在哪个环节。'},
+  {words:['公司','的','财务','情况','越来越','好','了','。'],ans:'公司的财务情况越来越好了。',audio:'公司的财务情况越来越好了。'},
+  {words:['我们','在','长城','上','拍','了','一张','照片','留念','。'],ans:'我们在长城上拍了一张照片留念。',audio:'我们在长城上拍了一张照片留念。'},
+  {words:['这件','制服','的','规格','不','对','，','得','换','一件','。'],ans:'这件制服的规格不对，得换一件。',audio:'这件制服的规格不对，得换一件。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1825,72 +1784,44 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'我们要____不同的场合，变换我们的交际方式。',opts:['依据','依靠','依赖','依然'],ans:0,
-   exp:'依据 + N + V = căn cứ vào … mà … (练一练 (1) của sách). 依靠 = dựa vào (sức người, chỗ dựa); 依赖 = ỷ lại (bài 23); 依然 = vẫn.'},
-  {wrong:'做任何事情都要____客观规律，不能想怎么做就怎么做。',opts:['遵守','服从','遵循','跟随'],ans:2,
-   exp:'遵循规律 = tuân theo quy luật (đối tượng trừu tượng). 遵守 đi với 纪律 / 法律 / 时间; 服从 = phục tùng (mệnh lệnh); 跟随 = đi theo (người).'},
-  {wrong:'危机之中往往____着新的机会。',opts:['培养','孕育','养育','生育'],ans:1,
-   exp:'孕育着机会 = ẩn chứa (mầm mống) cơ hội — nghĩa bóng. 培养 = bồi dưỡng (nhân tài, thói quen); 养育 = nuôi nấng (con cái); 生育 = sinh đẻ.'},
-  {wrong:'这种塑料盒子又轻又____，用了好几年都没坏。',opts:['耐心','热心','耐烦','耐用'],ans:3,
-   exp:'耐用 = bền (dùng mấy năm không hỏng). 耐心 = kiên nhẫn; 热心 = nhiệt tình; 耐烦 chủ yếu dùng trong 不耐烦.'},
-  {wrong:'为了____业务，公司今年又招聘了二十名员工。',opts:['扩散','补充','扩充','充满'],ans:2,
-   exp:'扩充业务 = mở rộng nghiệp vụ. 扩散 = lan rộng (bệnh, tin đồn); 补充 = bù vào chỗ thiếu (补充业务 không phải cách nói quen); 充满 = tràn đầy.'},
-  {wrong:'会议开始前，秘书已经____好了会议日程。',opts:['拟定','决定','肯定','固定'],ans:0,
-   exp:'拟定日程 / 方案 = soạn ra (bản dự thảo). 决定 = quyết định; 肯定 = khẳng định; 固定 = cố định.'},
-  {wrong:'销量下滑以后，他们及时调整了营销____。',opts:['谋略','战术','政策','策略'],ans:3,
-   exp:'营销策略 = chiến lược tiếp thị (câu 练习3 của sách). 政策 = chính sách (nhà nước); 战术 = chiến thuật (quân sự, thi đấu); 谋略 = mưu lược (tài của người).'},
-  {wrong:'欢迎大家____我们店新推出的越南咖啡。',opts:['品味','品尝','尝试','品质'],ans:1,
-   exp:'品尝 + đồ ăn uống = nếm thử, thưởng thức. 品味 thiên về thưởng thức nghệ thuật, cuộc sống / "gu"; 尝试 = thử làm việc gì; 品质 = phẩm chất.'},
-  {wrong:'老师话音刚落，同学们就____举手发言。',opts:['跳跃','踊跃','活跃','飞跃'],ans:1,
-   exp:'踊跃 + 发言 / 参加 = hăng hái (trạng ngữ trước động từ). 活跃 thường làm vị ngữ (气氛很活跃); 跳跃 = nhảy; 飞跃 = nhảy vọt (phát triển).'},
-  {wrong:'这次手术只需要____麻醉，病人不用太担心。',opts:['部分','全身','局面','局部'],ans:3,
-   exp:'局部麻醉 = gây tê cục bộ (只需要 → chỉ một phần cơ thể). 全身麻醉 = gây mê toàn thân (trái ý 只需要…不用担心); 局面 = cục diện; 部分 không đi với 麻醉.'},
-  {wrong:'我是新来的，以后请大家多多____。',opts:['关照','关心','关注','关怀'],ans:0,
-   exp:'请多多关照 = mong được chiếu cố nhiều (câu xã giao cố định khi mới gặp). 关注 = chú ý theo dõi; 关怀 = quan tâm (trang trọng, bề trên với bề dưới — bài 21).'},
-  {wrong:'天太晚了，咱们____找个饭馆吃点儿东西吧。',opts:['附近','最近','就近','接近'],ans:2,
-   exp:'就近 là phó từ đứng trước cụm động từ (就近找个饭馆). 附近 là danh từ / tính từ, không làm trạng ngữ trước động từ (词语辨析 của bài); 最近 = gần đây (thời gian); 接近 = tiếp cận.'},
-  {wrong:'做完练习以后，请____答案检查一遍。',opts:['对比','对待','照顾','对照'],ans:3,
-   exp:'对照答案 = đối chiếu đáp án. 对比 = so sánh tương phản hai sự vật; 对待 = đối xử; 照顾 = chăm sóc.'},
-  {wrong:'跟____不同的是，今年的运动会增加了很多新项目。',opts:['往往','以往','以后','来往'],ans:1,
-   exp:'跟以往不同的是…… = điểm khác với trước đây là … (练习2 của sách). 往往 = thường thường; 以后 = sau này (mâu thuẫn với 增加了); 来往 = qua lại.'},
-  {wrong:'这批零件的尺寸不符合____，必须全部退回。',opts:['规格','规矩','风格','格式'],ans:0,
-   exp:'不符合规格 = không đúng quy cách (kích thước, chất lượng sản phẩm). 规矩 = phép tắc (lễ nghĩa); 风格 = phong cách; 格式 = định dạng (văn bản).'},
-  {wrong:'近年来，报名参加HSK考试的人数逐年____。',opts:['递交','增添','递增','增进'],ans:2,
-   exp:'逐年递增 = tăng dần từng năm (số liệu). 递交 = trao, nộp; 增添 = thêm (niềm vui, không khí — bài 35); 增进 = tăng cường (tình cảm, hiểu biết).'},
-  {wrong:'这部小说情节____，读起来没有一点儿意思。',opts:['平凡','平安','平静','平庸'],ans:3,
-   exp:'平庸 = tầm thường, xoàng (luôn là CHÊ — hợp với 没有一点儿意思). 平凡 = bình dị (trung tính, có khi khen); 平安 = bình an; 平静 = yên tĩnh.'},
-  {wrong:'这家公司几乎____了全国的手机市场。',opts:['独立','垄断','判断','中断'],ans:1,
-   exp:'垄断市场 = độc quyền thị trường. 独立 = độc lập; 判断 = phán đoán; 中断 = gián đoạn (bài 24).'}
+  {wrong:'医生____病人的检查结果，决定马上给他做手术。',opts:['依据','依靠','依赖','依然'],ans:0,exp:'依据 + N + V = căn cứ vào (số liệu, kết quả, quy định) mà …. 依靠 = dựa vào chỗ dựa, sức người; 依赖 = ỷ lại (bài 23); 依然 = vẫn.'},
+  {wrong:'做任何事情都要____客观规律，不能想怎么做就怎么做。',opts:['遵循','遵守','服从','跟随'],ans:0,exp:'遵循规律 = tuân theo quy luật (đối tượng trừu tượng). 遵守 đi với 纪律 / 法律 / 时间; 服从 = phục tùng (mệnh lệnh); 跟随 = đi theo (người).'},
+  {wrong:'危机之中往往____着新的机会。',opts:['孕育','培养','教育','养成'],ans:0,exp:'孕育着机会 = ẩn chứa, ấp ủ (mầm mống) cơ hội — nghĩa bóng. 培养 = bồi dưỡng (nhân tài); 教育 = giáo dục; 养成 + thói quen.'},
+  {wrong:'这种塑料盒子又轻又____，用了好几年都没坏。',opts:['耐用','耐心','热心','有用'],ans:0,exp:'耐用 = bền (dùng mấy năm không hỏng). 耐心 = kiên nhẫn; 热心 = nhiệt tình (tả người); 有用 = có ích, không nói về độ bền.'},
+  {wrong:'为了____业务，公司今年又招聘了二十名员工。',opts:['扩充','补充','充满','充分'],ans:0,exp:'扩充业务 = mở rộng nghiệp vụ. 补充 = bù vào chỗ thiếu; 充满 = tràn đầy; 充分 = đầy đủ (充分的理由).'},
+  {wrong:'会议开始前，秘书已经____好了会议日程。',opts:['拟定','决定','肯定','固定'],ans:0,exp:'拟定日程 / 方案 / 计划 = soạn ra (bản dự thảo). 决定 = quyết định; 肯定 = khẳng định; 固定 = cố định.'},
+  {wrong:'欢迎大家____我们店新推出的越南咖啡。',opts:['品尝','尝试','品质','欣赏'],ans:0,exp:'品尝 + đồ ăn uống = nếm thử, thưởng thức. 尝试 = thử làm một việc mới; 品质 = phẩm chất (danh từ); 欣赏 dùng cho cảnh đẹp, nghệ thuật.'},
+  {wrong:'老师一提出问题，同学们就____举手发言。',opts:['踊跃','跳跃','活跃','飞跃'],ans:0,exp:'踊跃 + 发言 / 参加 = hăng hái (trạng ngữ trước động từ). 活跃 thường làm vị ngữ (气氛很活跃); 跳跃 = nhảy; 飞跃 = nhảy vọt (phát triển).'},
+  {wrong:'我是新来的，以后请大家多多____。',opts:['关照','关心','关注','关怀'],ans:0,exp:'请多多关照 = mong được chiếu cố nhiều (câu xã giao cố định khi mới gặp). 关注 = chú ý theo dõi; 关怀 = quan tâm (trang trọng, bề trên với bề dưới); 关心 không dùng trong câu xã giao này.'},
+  {wrong:'天太晚了，咱们____找个饭馆吃点儿东西吧。',opts:['就近','附近','最近','接近'],ans:0,exp:'就近 là phó từ đứng trước cụm động từ (就近找个饭馆). 附近 là danh từ, không làm trạng ngữ trước động từ (bảng phân biệt từ của bài); 最近 = gần đây (thời gian); 接近 = tiến gần.'},
+  {wrong:'请把你写的句子和课文____一下，看看哪儿写错了。',opts:['对照','对待','照顾','对象'],ans:0,exp:'把 A 和 B 对照 = đối chiếu A với B. 对待 = đối xử; 照顾 = chăm sóc; 对象 = đối tượng (danh từ).'},
+  {wrong:'和____相比，今年来这儿观光的游客多了一倍。',opts:['以往','往往','以后','来往'],ans:0,exp:'和以往相比 = so với trước đây (ôn 和……相比, bài 13). 往往 = thường thường; 以后 = sau này (mâu thuẫn với 多了一倍); 来往 = qua lại.'},
+  {wrong:'这些衣服的____不符合要求，必须全部重新做。',opts:['规格','规矩','规律','风气'],ans:0,exp:'规格 = quy cách (kích cỡ, tiêu chuẩn sản phẩm). 规矩 = phép tắc (lễ nghĩa); 规律 = quy luật; 风气 = thói, nếp (xã hội).'},
+  {wrong:'近年来，报名参加HSK考试的人数逐年____。',opts:['递增','递交','增添','提高'],ans:0,exp:'逐年递增 = tăng dần từng năm (số liệu). 递交 = trao, nộp; 增添 = thêm (niềm vui, không khí — bài 35); 提高 dùng cho trình độ, chất lượng, không nói ×人数提高.'},
+  {wrong:'这个方案以后还要____讨论，大家不用着急。',opts:['反复','屡次','一再','曾经'],ans:0,exp:'Việc SẼ làm nhiều lần → 反复. 屡次 / 一再 chỉ nói việc đã xảy ra nhiều lần (ôn 屡次 của bài); 曾经 = đã từng (quá khứ).'}
 ];
 
 // ══════════════════════════════════════════
-// DỊCH — câu ghép, dùng từ bài 38 + ôn từ HSK 6 bài 21–35 và HSK 4–5
+// DỊCH Việt → Trung — câu mới, dùng từ của bài + ôn ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Tuy anh ấy nhiều lần khởi nghiệp thất bại, nhưng chưa bao giờ nản lòng, vì anh ấy tin rằng trong thất bại luôn ẩn chứa cơ hội.',zh:'虽然他屡次创业失败，但从来没有灰心过，因为他相信失败中总是孕育着机会。',py:'Suīrán tā lǚcì chuàngyè shībài, dàn cónglái méiyǒu huīxīnguo, yīnwèi tā xiāngxìn shībài zhōng zǒngshì yùnyùzhe jīhuì.',goiY:['虽然……但……','屡次','从来没有……过','孕育着'],giai:'Ba vế: nhượng bộ (虽然……但……) → nguyên nhân (因为). 屡次 đứng trước động từ, chỉ việc đã lặp lại nhiều lần (điểm ngữ pháp 1); 孕育着机会 = ẩn chứa cơ hội (nghĩa bóng).'},
-  {vi:'Chỉ cần dựa vào nhu cầu thị trường để thiết kế sản phẩm, thì cho dù gặp phải lạm phát, doanh nghiệp cũng sẽ không bị ảnh hưởng quá lớn.',zh:'只要依据市场需求设计产品，即使碰上通货膨胀，企业也不会受到太大的影响。',py:'Zhǐyào yījù shìchǎng xūqiú shèjì chǎnpǐn, jíshǐ pèngshang tōnghuò péngzhàng, qǐyè yě bú huì shòudào tài dà de yǐngxiǎng.',goiY:['只要……','依据','即使……也……','通货膨胀'],giai:'依据 là giới từ: 依据 + N + V (điểm ngữ pháp 2). Câu lồng hai quan hệ: điều kiện (只要) + giả thiết nhượng bộ (即使……也……); 碰上 = gặp phải.'},
-  {vi:'Đối chiếu với nhu cầu của du khách, cách làm trước kia quá lỗi thời, thế là hai anh em đồng tâm hiệp lực, phát huy sở trường của mỗi người.',zh:'对照游客的需求，以往的做法太过陈旧，于是兄弟俩齐心协力，发挥各自的专长。',py:'Duìzhào yóukè de xūqiú, yǐwǎng de zuòfǎ tài guò chénjiù, yúshì xiōngdì liǎ qíxīn-xiélì, fāhuī gèzì de zhuāncháng.',goiY:['对照','以往','陈旧','齐心协力','专长'],giai:'对照 + N đầu câu = xét theo, đối chiếu với; 以往的 + N = … trước kia; 陈旧 ôn bài 23. 于是 nối kết quả. 专长 đọc zhuāncháng.'},
-  {vi:'Quán ăn nhỏ ấy hàng ngon giá rẻ, hương vị độc đáo; tuy chưa bao giờ dựa vào quảng cáo thổi phồng, nhưng làm ăn lại vô cùng phát đạt.',zh:'那家小饭馆物美价廉，风味独特，虽然从不靠广告吹捧，生意却十分兴旺。',py:'Nà jiā xiǎo fànguǎn wùměi-jiàlián, fēngwèi dútè, suīrán cóng bú kào guǎnggào chuīpěng, shēngyi què shífēn xīngwàng.',goiY:['物美价廉','风味独特','虽然……却……','吹捧','兴旺'],giai:'虽然 A，(chủ ngữ) 却 B — 却 đứng SAU chủ ngữ 生意. 物美价廉 làm vị ngữ, không thêm 很. 兴旺 = phát đạt (gần 兴隆 bài 21).'},
-  {vi:'Bạn càng suy nghĩ chu đáo cho khách hàng, khách hàng càng sẵn lòng ủng hộ bạn; đây là một chân lý vĩnh hằng.',zh:'你愈是为顾客考虑得周全，顾客愈是愿意关照你，这是一条永恒的真理。',py:'Nǐ yù shì wèi gùkè kǎolǜ de zhōuquán, gùkè yù shì yuànyì guānzhào nǐ, zhè shì yì tiáo yǒnghéng de zhēnlǐ.',goiY:['愈是……，愈是……','关照','永恒'],giai:'愈……愈…… (bài 35) với hai chủ ngữ khác nhau: mỗi vế một chủ ngữ, 愈是 đứng sau chủ ngữ. 关照 ở đây = ủng hộ (khách hàng mua hàng của mình). 一条 → yì tiáo.'},
-  {vi:'Mùa vắng khách du lịch, xe in ảnh còn có thể in hoa văn lên đồng phục học sinh, vì thế thu nhập có xu hướng tăng dần.',zh:'旅游淡季，彩印车还可以为学生的制服印图案，因此收益呈递增趋势。',py:'Lǚyóu dànjì, cǎiyìnchē hái kěyǐ wèi xuésheng de zhìfú yìn tú\'àn, yīncǐ shōuyì chéng dìzēng qūshì.',goiY:['淡季','为……V','制服','因此','递增'],giai:'Mốc thời gian (旅游淡季) đứng đầu câu; 为 + đối tượng + V = làm gì cho …; 收益 ôn bài 29; 呈……趋势 = có xu hướng … (văn viết).'},
-  {vi:'Khởi nghiệp không phải đánh bạc, cũng không thể dựa vào suy nghĩ viển vông; thay vì cả ngày mơ mộng, chi bằng nghiêm túc nghiên cứu thị trường.',zh:'创业不是赌博，也不能靠空想，与其整天做梦，不如认真研究市场。',py:'Chuàngyè bú shì dǔbó, yě bù néng kào kōngxiǎng, yǔqí zhěngtiān zuòmèng, bùrú rènzhēn yánjiū shìchǎng.',goiY:['赌博','靠空想','与其……不如……'],giai:'与其 A，不如 B = thay vì A chi bằng B (ôn HSK 5). Hai vế đầu là phủ định song song (不是……，也不能……). 不是 → bú shì.'},
-  {vi:'Công ty bỏ ra một khoản vốn đáng kể để mở rộng nghiệp vụ, chưa đến hai quý đã thu hồi được vốn.',zh:'公司投入了数额可观的资本来扩充业务，不到两个季度就收回了本钱。',py:'Gōngsī tóurùle shù\'é kěguān de zīběn lái kuòchōng yèwù, bú dào liǎng ge jìdù jiù shōuhuíle běnqián.',goiY:['数额可观','资本','扩充','不到……就……','季度','本钱'],giai:'V + 来 + V = làm … để … (mục đích); 不到 + thời gian + 就…… = chưa đến … đã … (nhanh hơn dự tính). 资本 (văn viết) và 本钱 (khẩu ngữ) đều là vốn.'},
-  {vi:'Nếu không tìm ra khâu yếu của đối thủ cạnh tranh, thì chiến lược có hay đến mấy cũng khó mà phá vỡ thế độc quyền của họ.',zh:'如果找不出竞争对手的薄弱环节，策略再好也很难打破他们的垄断。',py:'Rúguǒ zhǎo bu chū jìngzhēng duìshǒu de bóruò huánjié, cèlüè zài hǎo yě hěn nán dǎpò tāmen de lǒngduàn.',goiY:['如果……','找不出','环节','再……也……','垄断'],giai:'找不出 = bổ ngữ khả năng phủ định; 再 + Adj + 也 = dù … đến mấy cũng (ôn HSK 5); 打破垄断 = phá thế độc quyền. 策略 đọc cèlüè.'},
-  {vi:'Quần áo thể thao ở cửa hàng này đủ các cỡ, lại ở ngay gần trường, học sinh có thể mua ngay gần đó mà không phải đi xa.',zh:'这家店的运动服规格齐全，又在学校附近，学生们可以就近购买，不用跑远路。',py:'Zhè jiā diàn de yùndòngfú guīgé qíquán, yòu zài xuéxiào fùjìn, xuéshengmen kěyǐ jiùjìn gòumǎi, búyòng pǎo yuǎn lù.',goiY:['规格齐全','附近','就近','不用'],giai:'Phân biệt (词语辨析 của bài): 在学校附近 — 附近 là danh từ, làm tân ngữ của 在; 就近购买 — 就近 là phó từ, đứng trước động từ. 齐全 ôn bài 33; 不用 → búyòng.'}
+  {vi:'Tiểu Vương nhiều lần đoạt giải nhất trong các cuộc thi hùng biện, nhưng chưa bao giờ kiêu ngạo.',zh:'小王屡次在演讲比赛中拿第一，却从来没有骄傲过。',py:'Xiǎo Wáng lǚcì zài yǎnjiǎng bǐsài zhōng ná dì yī, què cónglái méiyǒu jiāo\'ào guo.',goiY:['屡次','却','从来没有……过'],giai:'屡次 + 在……中 + V (việc đã lặp lại nhiều lần); vế sau 却 chuyển ý. 骄傲 đọc jiāo\'ào.'},
+  {vi:'Chúng ta nên căn cứ vào sở thích và sở trường của bản thân để chọn ngành học.',zh:'我们应该依据自己的兴趣和专长来选择专业。',py:'Wǒmen yīnggāi yījù zìjǐ de xìngqù hé zhuāncháng lái xuǎnzé zhuānyè.',goiY:['依据……来……','专长'],giai:'依据 + N + 来 + V = căn cứ vào … để …; 专长 = sở trường (chuyên môn riêng), khác 特点 (đặc điểm).'},
+  {vi:'Món ăn ở quán này ngon mà rẻ, lại mang hương vị quê nhà, nên lúc nào cũng kín khách.',zh:'这家饭馆的菜物美价廉，又有家乡风味，所以总是坐满了客人。',py:'Zhè jiā fànguǎn de cài wùměi-jiàlián, yòu yǒu jiāxiāng fēngwèi, suǒyǐ zǒngshì zuòmǎnle kèrén.',goiY:['物美价廉','风味'],giai:'物美价廉 = hàng tốt giá rẻ (thành ngữ, làm vị ngữ); 家乡风味 = hương vị quê nhà; 坐满了客人 = kín khách.'},
+  {vi:'Do lạm phát, đồ đạc ngày càng đắt, số vốn anh ấy dành dụm mấy năm nay chẳng còn đáng bao nhiêu.',zh:'由于通货膨胀，东西越来越贵，他这几年攒的本钱已经不值多少了。',py:'Yóuyú tōnghuò péngzhàng, dōngxi yuèláiyuè guì, tā zhè jǐ nián zǎn de běnqián yǐjīng bù zhí duōshao le.',goiY:['由于','通货膨胀','本钱'],giai:'通货膨胀 = lạm phát (từ kinh tế); 攒 zǎn = dành dụm; 不值多少了 = chẳng còn đáng bao nhiêu.'},
+  {vi:'Chỉ cần cả đội đồng tâm hiệp lực, thì không có khó khăn nào là không vượt qua được.',zh:'只要全队齐心协力，就没有克服不了的困难。',py:'Zhǐyào quán duì qíxīn-xiélì, jiù méiyǒu kèfú bu liǎo de kùnnan.',goiY:['只要……就……','齐心协力'],giai:'没有 + V不了 + 的 + N = không có … nào không … được (phủ định kép nhấn mạnh).'},
+  {vi:'Anh ta mê cờ bạc, thua sạch tiền trong nhà.',zh:'他迷上了赌博，把家里的钱都输光了。',py:'Tā míshàngle dǔbó, bǎ jiā li de qián dōu shūguāng le.',goiY:['迷上','赌博','输光'],giai:'迷上 + N = mê, nghiện (cái gì); 把……输光了 = thua sạch (câu 把 + bổ ngữ kết quả 光).'}
 ];
 
-// Chiều Trung → Việt — bám ý bài khoá
+// ══════════════════════════════════════════
+// Dịch Trung → Việt — câu mới, không trùng chiều trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Những người nhiều lần khởi nghiệp nhưng lần nào cũng thất bại thảm hại luôn muốn biết: khởi nghiệp có bí quyết không?',zh:'屡次创业，却屡次惨遭失败的人总想知道，创业有窍门吗？',py:'Lǚcì chuàngyè, què lǚcì cǎn zāo shībài de rén zǒng xiǎng zhīdào, chuàngyè yǒu qiàomén ma?',goiY:['屡次 = nhiều lần','惨遭 = gặp phải (điều thảm hại)','窍门 = bí quyết, mẹo'],giai:'Cả cụm 屡次创业，却屡次惨遭失败的 là định ngữ dài cho 人 — dịch tiếng Việt đưa ra sau: "những người …". 却 nêu đối lập.'},
-  {vi:'Nhu cầu thị trường có ở khắp nơi nhưng thường dễ bị bỏ qua; những việc làm ăn mà người khác chẳng thèm làm thường lại ẩn chứa cơ hội.',zh:'市场需求无处不在，却往往易被忽视，别人不屑做的生意，往往孕育着机会。',py:'Shìchǎng xūqiú wú chù bú zài, què wǎngwǎng yì bèi hūshì, biérén búxiè zuò de shēngyi, wǎngwǎng yùnyùzhe jīhuì.',goiY:['无处不在 = có ở khắp nơi','易被忽视 = dễ bị bỏ qua','不屑 = chẳng thèm','孕育 = ẩn chứa'],giai:'易 = 容易 (văn viết); 不屑做的生意 = việc làm ăn (người ta) chẳng thèm làm — 不屑 hàm ý coi thường.'},
-  {vi:'Ông Vương thuê một quầy hàng trong trung tâm thương mại; trừ đi tiền thuê mặt bằng và tiền thuế, thu nhập mỗi tháng vẫn trên một vạn tệ.',zh:'王先生在商场租了柜台，扣掉场地租金和税金，月收入上万。',py:'Wáng xiānsheng zài shāngchǎng zūle guìtái, kòudiào chǎngdì zūjīn hé shuìjīn, yuè shōurù shàng wàn.',goiY:['柜台 = quầy hàng','扣掉 = trừ đi','上万 = trên một vạn'],giai:'扣掉…… là vế điều kiện ngầm ("sau khi trừ …"); 上 + số = vượt quá, trên (上万, 上百).'},
-  {vi:'Nếu tư duy của bạn tầm thường thì sẽ không phát hiện ra cơ hội kinh doanh; chỉ cần bạn chăm chỉ, thị trường sẽ nằm trong tay bạn.',zh:'如果你思维平庸，就发现不了商机；只要你勤劳，市场就捏在你的手里。',py:'Rúguǒ nǐ sīwéi píngyōng, jiù fāxiàn bu liǎo shāngjī; zhǐyào nǐ qínláo, shìchǎng jiù niē zài nǐ de shǒu li.',goiY:['平庸 = tầm thường','商机 = cơ hội kinh doanh','捏在手里 = nắm trong tay'],giai:'Hai vế giả thiết song song (如果……就……；只要……就……). 捏 nghĩa gốc là nhón, cầm bằng đầu ngón tay → nắm chắc.'},
-  {vi:'Nghiên cứu đối thủ cạnh tranh, từ đó tìm ra điểm yếu trong sản phẩm và khâu yếu trong tiếp thị của họ, là một trong những cách hiệu quả để nắm bắt cơ hội kinh doanh.',zh:'研究竞争对手，从中找出其产品的弱点及营销的薄弱环节，是捕捉商机的有效方法之一。',py:'Yánjiū jìngzhēng duìshǒu, cóngzhōng zhǎochū qí chǎnpǐn de ruòdiǎn jí yíngxiāo de bóruò huánjié, shì bǔzhuō shāngjī de yǒuxiào fāngfǎ zhī yī.',goiY:['从中 = từ đó','其 = của họ (văn viết)','薄弱环节 = khâu yếu','之一 = một trong những'],giai:'Chủ ngữ là cả cụm động từ dài (研究……环节), vị ngữ 是……之一. 及 = và (văn viết).'},
-  {vi:'Công ty Ezaki mạnh dạn đi nước cờ mới, lấy nhu cầu tiêu dùng của người lớn làm căn cứ để thiết kế sản phẩm, lại vạch ra chiến lược tiếp thị tương ứng.',zh:'江崎公司大胆布局，以成年人的消费需求为依据设计产品，又拟定了相应的营销策略。',py:'Jiāngqí gōngsī dàdǎn bùjú, yǐ chéngniánrén de xiāofèi xūqiú wéi yījù shèjì chǎnpǐn, yòu nǐdìngle xiāngyìng de yíngxiāo cèlüè.',goiY:['布局 = bố trí chiến lược','以……为依据 = lấy … làm căn cứ','拟定 = vạch ra','策略 = chiến lược'],giai:'以 A 为依据 + V = lấy A làm căn cứ để … (依据 danh từ — điểm ngữ pháp 2). 相应 ôn bài 21.'},
-  {vi:'Sản phẩm của Ezaki hàng tốt giá rẻ; nếm thử xong, người tiêu dùng đua nhau mua, thu nhập tài chính tăng vọt như giếng phun.',zh:'江崎的产品物美价廉，品尝后，消费者购买踊跃，财务收入呈井喷式增长。',py:'Jiāngqí de chǎnpǐn wùměi-jiàlián, pǐncháng hòu, xiāofèizhě gòumǎi yǒngyuè, cáiwù shōurù chéng jǐngpēnshì zēngzhǎng.',goiY:['物美价廉 = hàng tốt giá rẻ','品尝 = nếm thử','踊跃 = nô nức','井喷式 = vọt lên như giếng phun'],giai:'购买踊跃 = mua (một cách) nô nức — tính từ đứng sau làm vị ngữ; 呈……增长 = thể hiện sự tăng trưởng ….'},
-  {vi:'Du khách có thể in tráng ảnh ngay tại chỗ, in chân dung mình thích lên hàng dệt làm kỷ niệm du lịch.',zh:'游客可以在这儿就近冲印照片，把喜欢的肖像印在纺织品上，作为旅游留念。',py:'Yóukè kěyǐ zài zhèr jiùjìn chōngyìn zhàopiàn, bǎ xǐhuan de xiàoxiàng yìn zài fǎngzhīpǐn shang, zuòwéi lǚyóu liúniàn.',goiY:['就近 = ngay ở gần','冲印 = in tráng (ảnh)','肖像 = chân dung','留念 = làm kỷ niệm'],giai:'Câu 把 + V + 在 + nơi chốn; 作为…… = làm (vai trò) ….'},
-  {vi:'Ưu thế lớn nhất của xe in ảnh lưu động là tiện lợi, nhanh chóng, không như trước kia phải đợi đến mấy ngày.',zh:'流动彩印车最大的优势就是方便快捷，不像以往，要等上好几天。',py:'Liúdòng cǎiyìnchē zuì dà de yōushì jiù shì fāngbiàn kuàijié, bú xiàng yǐwǎng, yào děngshang hǎo jǐ tiān.',goiY:['优势 = ưu thế','快捷 = nhanh chóng','以往 = trước kia','等上好几天 = đợi đến mấy ngày'],giai:'不像以往 = không như trước kia; V + 上 + thời lượng nhấn mạnh "lâu đến mức …"; 好几 = khá nhiều.'},
-  {vi:'Có thể dự đoán chính xác nhu cầu tiềm ẩn của thị trường, có ý thức đi trước thời đại, là tố chất mà người kinh doanh bắt buộc phải có.',zh:'能够准确预测市场的潜在需求，具有超前意识，是经营者必备的素质。',py:'Nénggòu zhǔnquè yùcè shìchǎng de qiánzài xūqiú, jùyǒu chāoqián yìshi, shì jīngyíngzhě bìbèi de sùzhì.',goiY:['预测 = dự đoán','潜在 = tiềm ẩn','超前意识 = ý thức đi trước','必备 = bắt buộc phải có'],giai:'Chủ ngữ là hai cụm động từ song song (能够……，具有……); 预测 ôn bài 23; 必备的 + N = … không thể thiếu.'}
+  {vi:'Trước đây cứ đến mùa vắng khách là khách sạn này chẳng có mấy ai, năm nay thì ngày nào cũng kín phòng.',zh:'以往一到淡季，这家酒店就没什么客人，今年却天天都满。',py:'Yǐwǎng yí dào dànjì, zhè jiā jiǔdiàn jiù méi shénme kèrén, jīnnián què tiāntiān dōu mǎn.',goiY:['以往 = trước đây','淡季 = mùa vắng khách'],giai:'以往 đối lập với 今年; 一……就…… = cứ … là …; 却 chuyển ý.'},
+  {vi:'Quý này tình hình tài chính của công ty không được tốt lắm, giám đốc đang tìm cách.',zh:'这个季度公司的财务状况不太好，经理正在想办法。',py:'Zhège jìdù gōngsī de cáiwù zhuàngkuàng bú tài hǎo, jīnglǐ zhèngzài xiǎng bànfǎ.',goiY:['季度 = quý','财务 = tài chính'],giai:'季度 = quý (ba tháng); 财务状况 = tình hình tài chính.'},
+  {vi:'Bà nhờ hoạ sĩ vẽ cho bà một bức chân dung, treo trong phòng khách.',zh:'奶奶请画家给她画了一幅肖像，挂在客厅里。',py:'Nǎinai qǐng huàjiā gěi tā huàle yì fú xiàoxiàng, guà zài kètīng li.',goiY:['肖像 = chân dung','一幅 = một bức'],giai:'Lượng từ của tranh: 幅; 肖像 đọc xiàoxiàng.'},
+  {vi:'Hàng dệt may của vùng này rất nổi tiếng, được bán đi khắp nơi trên thế giới.',zh:'这个地方的纺织品很有名，卖到了世界各地。',py:'Zhège dìfang de fǎngzhīpǐn hěn yǒumíng, màidàole shìjiè gè dì.',goiY:['纺织品 = hàng dệt may','世界各地 = khắp nơi trên thế giới'],giai:'卖到了 + nơi chốn = bán tới …; 纺织品 dịch "hàng dệt may".'},
+  {vi:'Chu kỳ thay mới của loại máy tính này ngày càng ngắn, mới mua một năm đã lỗi thời.',zh:'这种电脑的更新周期越来越短，刚买一年就过时了。',py:'Zhè zhǒng diànnǎo de gēngxīn zhōuqī yuèláiyuè duǎn, gāng mǎi yì nián jiù guòshí le.',goiY:['周期 = chu kỳ','过时 = lỗi thời'],giai:'刚……就…… = vừa mới … đã …; 更新周期 = chu kỳ thay mới.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1923,8 +1854,8 @@ var writingData = {
     'Có giữ ít nhất một chỗ dùng phép 反复 và kết bài bằng 可见，…… chưa?'
   ],
   model:{
-    zh:'慧眼捕捉商机\n屡次创业却屡次失败的人总想知道创业的窍门。窍门就是创业不可盲目，要依据市场规则捕捉商机。可替换刮胡刀、方便面、罐装八宝粥，都因为符合市场需求而大获成功。\n市场需求无处不在，别人没发现或是不屑做的生意，往往孕育着机会。手机电池往往用一年就坏了，美国人发明了修复电池的机器，王先生花四万元买下它，在商场租了柜台，月收入上万，不到两个季度就轻松收回了本钱。如果你没有眼光，就看不到商机；如果你思维平庸，就发现不了商机。\n研究竞争对手的产品缺陷，也能捕捉商机。当年劳特垄断了日本泡泡糖市场，可是它的眼光仍停留在儿童身上，口味单一，外观老旧，售价也不方便购买者。江崎公司以成年人的需求为依据，推出四种功能型泡泡糖，定价方便购买者。产品物美价廉，消费者购买踊跃，财务收入呈井喷式增长。只要你细心研究市场，就会得到消费者的认可。\n从市场的潜在需求中也能寻找商机。周家兄弟发现游客不愿为冲洗照片等好几天，于是齐心协力，发挥各自的专长，发明了流动彩印车，游客可以就近冲印照片。彩印车方便快捷，旅游淡季还能为学生的制服印图案，收益呈递增趋势。\n可见，创业不能靠空想，能准确预测市场的潜在需求，才能抓住商机。',
-    py:'Huìyǎn Bǔzhuō Shāngjī\nLǚcì chuàngyè què lǚcì shībài de rén zǒng xiǎng zhīdào chuàngyè de qiàomén. Qiàomén jiù shì chuàngyè bù kě mángmù, yào yījù shìchǎng guīzé bǔzhuō shāngjī. Kě tìhuàn guāhúdāo, fāngbiànmiàn, guànzhuāng bābǎozhōu, dōu yīnwèi fúhé shìchǎng xūqiú ér dà huò chénggōng.\nShìchǎng xūqiú wú chù bú zài, biérén méi fāxiàn huò shì búxiè zuò de shēngyi, wǎngwǎng yùnyùzhe jīhuì. Shǒujī diànchí wǎngwǎng yòng yì nián jiù huài le, Měiguórén fāmíngle xiūfù diànchí de jīqì, Wáng xiānsheng huā sì wàn yuán mǎixià tā, zài shāngchǎng zūle guìtái, yuè shōurù shàng wàn, bú dào liǎng ge jìdù jiù qīngsōng shōuhuíle běnqián. Rúguǒ nǐ méiyǒu yǎnguāng, jiù kàn bu dào shāngjī; rúguǒ nǐ sīwéi píngyōng, jiù fāxiàn bu liǎo shāngjī.\nYánjiū jìngzhēng duìshǒu de chǎnpǐn quēxiàn, yě néng bǔzhuō shāngjī. Dāngnián Láotè lǒngduànle Rìběn pàopàotáng shìchǎng, kěshì tā de yǎnguāng réng tíngliú zài értóng shēnshang, kǒuwèi dānyī, wàiguān lǎojiù, shòujià yě bù fāngbiàn gòumǎizhě. Jiāngqí gōngsī yǐ chéngniánrén de xūqiú wéi yījù, tuīchū sì zhǒng gōngnéngxíng pàopàotáng, dìngjià fāngbiàn gòumǎizhě. Chǎnpǐn wùměi-jiàlián, xiāofèizhě gòumǎi yǒngyuè, cáiwù shōurù chéng jǐngpēnshì zēngzhǎng. Zhǐyào nǐ xìxīn yánjiū shìchǎng, jiù huì dédào xiāofèizhě de rènkě.\nCóng shìchǎng de qiánzài xūqiú zhōng yě néng xúnzhǎo shāngjī. Zhōu jiā xiōngdì fāxiàn yóukè bú yuàn wèi chōngxǐ zhàopiàn děng hǎo jǐ tiān, yúshì qíxīn-xiélì, fāhuī gèzì de zhuāncháng, fāmíngle liúdòng cǎiyìnchē, yóukè kěyǐ jiùjìn chōngyìn zhàopiàn. Cǎiyìnchē fāngbiàn kuàijié, lǚyóu dànjì hái néng wèi xuésheng de zhìfú yìn tú\'àn, shōuyì chéng dìzēng qūshì.\nKějiàn, chuàngyè bù néng kào kōngxiǎng, néng zhǔnquè yùcè shìchǎng de qiánzài xūqiú, cái néng zhuāzhù shāngjī.',
+    zh:'慧眼捕捉商机\n屡次创业却屡次失败的人总想知道创业的窍门。窍门就是创业不可盲目，要依据市场规则捕捉商机。可替换刮胡刀、方便面、罐装八宝粥，都因为符合市场需求而取得了很大的成功。\n市场需求无处不在，别人没发现或是不屑做的生意，往往孕育着机会。手机电池往往用一年就坏了，美国人发明了修复电池的机器，王先生花四万元买下它，在商场租了柜台，月收入上万，不到两个季度就轻松收回了本钱。如果你没有眼光，就看不到商机；如果你思维平庸，就发现不了商机。\n研究竞争对手的产品缺陷，也能捕捉商机。当年劳特垄断了日本泡泡糖市场，可是它的眼光仍停留在儿童身上，口味单一，外观老旧，售价也不方便购买者。江崎公司以成年人的需求为依据，推出四种功能型泡泡糖，定价方便购买者。产品物美价廉，消费者购买踊跃，财务收入呈井喷式增长。只要你细心研究市场，就会得到消费者的认可。\n从市场的潜在需求中也能寻找商机。周家兄弟发现游客不愿为冲洗照片等好几天，于是齐心协力，发挥各自的专长，发明了流动彩印车，游客可以就近冲印照片。彩印车方便快捷，旅游淡季还能为学生的制服印图案，收益呈递增趋势。\n可见，创业不能靠空想，能准确预测市场的潜在需求，才能抓住商机。',
+    py:'Huìyǎn Bǔzhuō Shāngjī\nLǚcì chuàngyè què lǚcì shībài de rén zǒng xiǎng zhīdào chuàngyè de qiàomén. Qiàomén jiù shì chuàngyè bù kě mángmù, yào yījù shìchǎng guīzé bǔzhuō shāngjī. Kě tìhuàn guāhúdāo, fāngbiànmiàn, guànzhuāng bābǎozhōu, dōu yīnwèi fúhé shìchǎng xūqiú ér qǔdéle hěn dà de chénggōng.\nShìchǎng xūqiú wú chù bú zài, biérén méi fāxiàn huò shì búxiè zuò de shēngyi, wǎngwǎng yùnyùzhe jīhuì. Shǒujī diànchí wǎngwǎng yòng yì nián jiù huài le, Měiguórén fāmíngle xiūfù diànchí de jīqì, Wáng xiānsheng huā sì wàn yuán mǎixià tā, zài shāngchǎng zūle guìtái, yuè shōurù shàng wàn, bú dào liǎng ge jìdù jiù qīngsōng shōuhuíle běnqián. Rúguǒ nǐ méiyǒu yǎnguāng, jiù kàn bu dào shāngjī; rúguǒ nǐ sīwéi píngyōng, jiù fāxiàn bu liǎo shāngjī.\nYánjiū jìngzhēng duìshǒu de chǎnpǐn quēxiàn, yě néng bǔzhuō shāngjī. Dāngnián Láotè lǒngduànle Rìběn pàopàotáng shìchǎng, kěshì tā de yǎnguāng réng tíngliú zài értóng shēnshang, kǒuwèi dānyī, wàiguān lǎojiù, shòujià yě bù fāngbiàn gòumǎizhě. Jiāngqí gōngsī yǐ chéngniánrén de xūqiú wéi yījù, tuīchū sì zhǒng gōngnéngxíng pàopàotáng, dìngjià fāngbiàn gòumǎizhě. Chǎnpǐn wùměi-jiàlián, xiāofèizhě gòumǎi yǒngyuè, cáiwù shōurù chéng jǐngpēnshì zēngzhǎng. Zhǐyào nǐ xìxīn yánjiū shìchǎng, jiù huì dédào xiāofèizhě de rènkě.\nCóng shìchǎng de qiánzài xūqiú zhōng yě néng xúnzhǎo shāngjī. Zhōu jiā xiōngdì fāxiàn yóukè bú yuàn wèi chōngxǐ zhàopiàn děng hǎo jǐ tiān, yúshì qíxīn-xiélì, fāhuī gèzì de zhuāncháng, fāmíngle liúdòng cǎiyìnchē, yóukè kěyǐ jiùjìn chōngyìn zhàopiàn. Cǎiyìnchē fāngbiàn kuàijié, lǚyóu dànjì hái néng wèi xuésheng de zhìfú yìn tú\'àn, shōuyì chéng dìzēng qūshì.\nKějiàn, chuàngyè bù néng kào kōngxiǎng, néng zhǔnquè yùcè shìchǎng de qiánzài xūqiú, cái néng zhuāzhù shāngjī.',
     vn:'"Tuệ nhãn" nắm bắt thời cơ\nNhững người khởi nghiệp nhiều lần mà lần nào cũng thất bại luôn muốn biết bí quyết khởi nghiệp. Bí quyết chính là khởi nghiệp không được mù quáng, phải dựa vào quy luật thị trường để nắm bắt cơ hội. Dao cạo râu thay được lưỡi, mì ăn liền, cháo bát bảo đóng lon đều thành công lớn vì phù hợp nhu cầu thị trường.\nNhu cầu thị trường có ở khắp nơi; những việc làm ăn người khác chưa phát hiện ra hoặc chẳng thèm làm thường ẩn chứa cơ hội. Pin điện thoại thường dùng một năm là hỏng; người Mỹ phát minh ra máy phục hồi pin, ông Vương bỏ bốn vạn tệ mua về, thuê quầy trong trung tâm thương mại, thu nhập mỗi tháng trên một vạn, chưa đến hai quý đã dễ dàng thu hồi vốn. Nếu bạn không có con mắt nhìn xa thì không thấy được cơ hội; nếu tư duy tầm thường thì không phát hiện ra cơ hội.\nNghiên cứu khiếm khuyết trong sản phẩm của đối thủ cũng có thể nắm bắt cơ hội. Hồi ấy Lotte độc quyền thị trường kẹo cao su Nhật Bản, nhưng họ vẫn chỉ nhìn vào trẻ em, mùi vị đơn điệu, bề ngoài cũ kỹ, giá bán cũng bất tiện cho người mua. Công ty Ezaki lấy nhu cầu của người lớn làm căn cứ, tung ra bốn loại kẹo cao su theo công dụng, định giá thuận tiện cho người mua. Sản phẩm tốt mà rẻ, người tiêu dùng đua nhau mua, thu nhập tăng vọt như giếng phun. Chỉ cần tỉ mỉ nghiên cứu thị trường là sẽ được người tiêu dùng công nhận.\nTừ nhu cầu tiềm ẩn của thị trường cũng có thể tìm ra cơ hội. Anh em nhà họ Chu phát hiện du khách không muốn đợi mấy ngày chỉ để rửa ảnh, thế là đồng tâm hiệp lực, phát huy sở trường của mỗi người, phát minh ra xe in ảnh lưu động, du khách có thể in ảnh ngay tại chỗ. Xe in tiện lợi nhanh chóng, mùa vắng khách còn in hoa văn lên đồng phục học sinh, thu nhập có xu hướng tăng dần.\nCó thể thấy, khởi nghiệp không thể dựa vào suy nghĩ viển vông; phải dự đoán chính xác nhu cầu tiềm ẩn của thị trường mới nắm được cơ hội.'
   }
 };
@@ -1933,188 +1864,142 @@ var writingData = {
 // LUYỆN NÓI — đúng bảng 练习5 của sách: 根据提示，简述课文主要内容 (4 dòng)
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Đây là bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b> (4 dòng: bí quyết khởi nghiệp · ông Vương · công ty Ezaki · anh em họ Chu). Mỗi câu hỏi là một dòng của bảng, cột gợi ý giữ nguyên như sách. Bấm loa nghe câu hỏi, nhìn gợi ý, <b>tự ghi âm câu trả lời của mình trước</b> rồi mới mở câu mẫu. Cố dùng từ mới: 屡次 · 依据 · 不屑 · 孕育 · 耐用 · 季度 · 本钱 · 平庸 · 垄断 · 物美价廉 · 踊跃 · 就近 · 齐心协力 · 专长 · 淡季 · 递增.',
-  questions:[
-    {q_zh:'创业有什么窍门？请举例说明。',
-     q_vn:'Khởi nghiệp có bí quyết gì? Hãy nêu ví dụ minh hoạ.',
-     hint:'①不可盲目，依据市场规则　②刮胡子刀，方便面，罐装八宝粥',
-     sample:'创业当然有窍门，窍门就是不可盲目，要依据市场规则捕捉商机。比如吉列先生发明的刮胡子刀、安藤百福发明的方便面、戚石川兄弟发明的罐装八宝粥，都受到了市场热捧，给创业者带来了数额可观的财富。',
-     sample_vn:'Khởi nghiệp đương nhiên có bí quyết, đó là không được mù quáng, phải dựa vào quy luật thị trường để nắm bắt cơ hội. Chẳng hạn dao cạo râu do ông Gillette phát minh, mì ăn liền do Momofuku Ando phát minh, cháo bát bảo đóng lon do anh em Thích Thạch Xuyên phát minh đều được thị trường săn đón, mang lại cho người khởi nghiệp khối của cải đáng kể.',
-     note:'Trả lời thẳng trước (窍门就是……), rồi 比如 + ba ví dụ; dùng 依据 (điểm ngữ pháp 2) và 数额可观.'},
-    {q_zh:'王先生是怎样独具慧眼，寻找商机的？',
-     q_vn:'Ông Vương đã dùng con mắt tinh tường tìm ra cơ hội kinh doanh như thế nào?',
-     hint:'①手机电池正常寿命……，往往用一年……，换新电池……，美国人发明了……　②王先生买下……，租柜台……，月收入……，轻松收回……　③如果你没有眼光，……，如果你思维平庸，……',
-     sample:'手机电池的正常寿命是5至6年，可是往往用一年就坏了，换新电池又很贵。美国人发明了一种能修复电池的机器。王先生在博览会上看到后，花4万元买下了它，在商场租了柜台，月收入上万，不到两个季度就轻松收回了本钱。如果你没有眼光，就看不到商机；如果你思维平庸，就发现不了商机。',
-     sample_vn:'Tuổi thọ bình thường của pin điện thoại là 5–6 năm, nhưng thường dùng một năm là hỏng, thay pin mới lại đắt. Người Mỹ phát minh ra một loại máy có thể phục hồi pin. Ông Vương thấy nó ở hội chợ, bỏ 40 nghìn tệ mua về, thuê quầy trong trung tâm thương mại, thu nhập mỗi tháng trên một vạn, chưa đến hai quý đã dễ dàng thu hồi vốn. Nếu bạn không có con mắt nhìn xa thì không thấy cơ hội; nếu tư duy tầm thường thì không phát hiện ra cơ hội.',
-     note:'Đi đúng ba ý: vấn đề (电池不耐用) → cách làm (买下、租柜台) → kết quả (收回本钱); kết bằng câu 反复 如果……，就……；如果……，就…….'},
-    {q_zh:'江崎公司怎样从竞争对手的产品缺陷中捕捉商机？',
-     q_vn:'Công ty Ezaki đã nắm bắt cơ hội từ khiếm khuyết trong sản phẩm của đối thủ như thế nào?',
-     hint:'①劳特产品的不足：眼光仍停留在儿童身上，口味单一，外观老旧，售价不方便购买者　②江崎公司：推出四种功能型泡泡糖，精心设计包装和造型，定价方便购买者，消费者购买……，财务收入……　③只要你细心研究……，就会得到……',
-     sample:'当年日本泡泡糖市场大部分被劳特垄断。江崎公司研究后发现，劳特产品有四个不足：眼光仍停留在儿童身上，口味单一，外观老旧，售价也不方便购买者。于是江崎公司推出了四种功能型泡泡糖，精心设计包装和造型，定价分50和100日元两种，方便购买者。结果消费者购买踊跃，财务收入呈井喷式增长。所以，只要你细心研究市场，就会得到消费者的认可。',
-     sample_vn:'Hồi ấy thị trường kẹo cao su Nhật phần lớn bị Lotte độc quyền. Công ty Ezaki nghiên cứu và phát hiện sản phẩm Lotte có bốn điểm chưa tốt: chỉ nhìn vào trẻ em, mùi vị đơn điệu, bề ngoài cũ kỹ, giá bán bất tiện cho người mua. Thế là Ezaki tung ra bốn loại kẹo cao su theo công dụng, dày công thiết kế bao bì và kiểu dáng, định giá hai mức 50 và 100 yên cho tiện người mua. Kết quả người tiêu dùng đua nhau mua, thu nhập tăng vọt như giếng phun. Vì vậy, chỉ cần tỉ mỉ nghiên cứu thị trường là sẽ được người tiêu dùng công nhận.',
-     note:'Liệt kê bốn điểm yếu bằng dấu phẩy, không cần 一、二、三; dùng 于是 → 结果 → 所以 để nối mạch.'},
-    {q_zh:'周家兄弟怎样从市场的潜在需求中寻找商机的？',
-     q_vn:'Anh em nhà họ Chu đã tìm ra cơ hội từ nhu cầu tiềm ẩn của thị trường như thế nào?',
-     hint:'①流动彩印车的功能：冲印照片，把……印在纺织品上　②流动彩印车的由来：发明者；哥哥是……，弟弟是……；他们发现……；发挥各自专长，发明……　③流动彩印车大受欢迎：方便快捷；旅游淡季，还可以……；有了知名度，收益……',
-     sample:'在台湾的观光区，流动彩印车可以让游客就近冲印照片，还能把喜欢的图案、肖像印在纺织品上。它的发明者是周家两兄弟，哥哥是汽车维修工，弟弟是摄影发烧友。他们发现传统冲印要等好几天，太过陈旧，于是齐心协力，发挥各自专长，发明了流动彩印车。彩印车方便快捷，大受欢迎；旅游淡季，还可以为学生的制服印图案。它很快就有了知名度，收益呈递增趋势。',
-     sample_vn:'Ở khu tham quan tại Đài Loan, xe in ảnh lưu động giúp du khách in ảnh ngay tại chỗ, còn in được hoa văn, chân dung yêu thích lên hàng dệt. Người phát minh là hai anh em nhà họ Chu: anh là thợ sửa ô tô, em mê nhiếp ảnh. Họ thấy cách in tráng truyền thống phải đợi mấy ngày, quá lỗi thời, thế là đồng lòng, phát huy sở trường của mỗi người, phát minh ra xe in ảnh lưu động. Xe in tiện lợi nhanh chóng, rất được ưa chuộng; mùa vắng khách còn in hoa văn lên đồng phục học sinh. Nó nhanh chóng nổi tiếng, thu nhập tăng dần.',
-     note:'Theo đúng thứ tự gợi ý: 功能 → 由来 → 大受欢迎; nhớ phân biệt 就近 (phó từ, trước động từ) với 附近.'}
+  intro: 'Đây là bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b> (4 dòng: bí quyết khởi nghiệp · ông Vương · công ty Ezaki · anh em họ Chu). Mỗi câu hỏi là một dòng của bảng, cột gợi ý giữ nguyên như sách. Bấm loa nghe câu hỏi, nhìn gợi ý, <b>tự ghi âm câu trả lời của mình trước</b> rồi mới mở câu mẫu. Cố dùng từ mới: 屡次 · 依据 · 不屑 · 孕育 · 耐用 · 季度 · 本钱 · 平庸 · 垄断 · 物美价廉 · 踊跃 · 就近 · 齐心协力 · 专长 · 淡季 · 递增.',
+  questions: [
+    {q_zh:'创业有什么窍门？请举例说明。',q_vn:'Khởi nghiệp có bí quyết gì? Hãy nêu ví dụ minh hoạ.',hint:'①不可盲目，依据市场规则　②刮胡子刀，方便面，罐装八宝粥',sample:'创业当然有窍门，窍门就是不可盲目，要依据市场规则捕捉商机。比如吉列先生发明的刮胡子刀、安藤百福发明的方便面、戚石川兄弟发明的罐装八宝粥，都受到了市场热捧，给创业者带来了数额可观的财富。',sample_vn:'Khởi nghiệp đương nhiên có bí quyết, đó là không được mù quáng, phải dựa vào quy luật thị trường để nắm bắt cơ hội. Chẳng hạn dao cạo râu do ông Gillette phát minh, mì ăn liền do Momofuku Ando phát minh, cháo bát bảo đóng lon do anh em Thích Thạch Xuyên phát minh đều được thị trường săn đón, mang lại cho người khởi nghiệp khối của cải đáng kể.',note:'Trả lời thẳng trước (窍门就是……), rồi 比如 + ba ví dụ; dùng 依据 (điểm ngữ pháp 2) và 数额可观.'},
+    {q_zh:'王先生是怎样独具慧眼，寻找商机的？',q_vn:'Ông Vương đã dùng con mắt tinh tường tìm ra cơ hội kinh doanh như thế nào?',hint:'①手机电池正常寿命……，往往用一年……，换新电池……，美国人发明了……　②王先生买下……，租柜台……，月收入……，轻松收回……　③如果你没有眼光，……，如果你思维平庸，……',sample:'手机电池的正常寿命是五六年，可是往往用一年就坏了，换新电池又很贵。美国人发明了一种能修复电池的机器。王先生在博览会上看到后，花4万元买下了它，在商场租了柜台，月收入上万，不到两个季度就轻松收回了本钱。如果你没有眼光，就看不到商机；如果你思维平庸，就发现不了商机。',sample_vn:'Tuổi thọ bình thường của pin điện thoại là 5–6 năm, nhưng thường dùng một năm là hỏng, thay pin mới lại đắt. Người Mỹ phát minh ra một loại máy có thể phục hồi pin. Ông Vương thấy nó ở hội chợ, bỏ 40 nghìn tệ mua về, thuê quầy trong trung tâm thương mại, thu nhập mỗi tháng trên một vạn, chưa đến hai quý đã dễ dàng thu hồi vốn. Nếu bạn không có con mắt nhìn xa thì không thấy cơ hội; nếu tư duy tầm thường thì không phát hiện ra cơ hội.',note:'Đi đúng ba ý: vấn đề (电池不耐用) → cách làm (买下、租柜台) → kết quả (收回本钱); kết bằng câu 反复 如果……，就……；如果……，就…….'},
+    {q_zh:'江崎公司怎样从竞争对手的产品缺陷中捕捉商机？',q_vn:'Công ty Ezaki đã nắm bắt cơ hội từ khiếm khuyết trong sản phẩm của đối thủ như thế nào?',hint:'①劳特产品的不足：眼光仍停留在儿童身上，口味单一，外观老旧，售价不方便购买者　②江崎公司：推出四种功能型泡泡糖，精心设计包装和造型，定价方便购买者，消费者购买……，财务收入……　③只要你细心研究……，就会得到……',sample:'当年日本泡泡糖市场大部分被劳特垄断。江崎公司研究后发现，劳特产品有四个不足：眼光仍停留在儿童身上，口味单一，外观老旧，售价也不方便购买者。于是江崎公司推出了四种功能型泡泡糖，精心设计包装和造型，定价分50和100日元两种，方便购买者。结果消费者购买踊跃，财务收入呈井喷式增长。所以，只要你细心研究市场，就会得到消费者的认可。',sample_vn:'Hồi ấy thị trường kẹo cao su Nhật phần lớn bị Lotte độc quyền. Công ty Ezaki nghiên cứu và phát hiện sản phẩm Lotte có bốn điểm chưa tốt: chỉ nhìn vào trẻ em, mùi vị đơn điệu, bề ngoài cũ kỹ, giá bán bất tiện cho người mua. Thế là Ezaki tung ra bốn loại kẹo cao su theo công dụng, dày công thiết kế bao bì và kiểu dáng, định giá hai mức 50 và 100 yên cho tiện người mua. Kết quả người tiêu dùng đua nhau mua, thu nhập tăng vọt như giếng phun. Vì vậy, chỉ cần tỉ mỉ nghiên cứu thị trường là sẽ được người tiêu dùng công nhận.',note:'Liệt kê bốn điểm yếu bằng dấu phẩy, không cần 一、二、三; dùng 于是 → 结果 → 所以 để nối mạch.'},
+    {q_zh:'周家兄弟怎样从市场的潜在需求中寻找商机的？',q_vn:'Anh em nhà họ Chu đã tìm ra cơ hội từ nhu cầu tiềm ẩn của thị trường như thế nào?',hint:'①流动彩印车的功能：冲印照片，把……印在纺织品上　②流动彩印车的由来：发明者；哥哥是……，弟弟是……；他们发现……；发挥各自专长，发明……　③流动彩印车大受欢迎：方便快捷；旅游淡季，还可以……；有了知名度，收益……',sample:'在台湾的观光区，流动彩印车可以让游客就近冲印照片，还能把喜欢的图案、肖像印在纺织品上。它的发明者是周家两兄弟，哥哥是汽车维修工，弟弟是摄影发烧友。他们发现传统冲印要等好几天，太过陈旧，于是齐心协力，发挥各自专长，发明了流动彩印车。彩印车方便快捷，大受欢迎；旅游淡季，还可以为学生的制服印图案。它很快就有了知名度，收益呈递增趋势。',sample_vn:'Ở khu tham quan tại Đài Loan, xe in ảnh lưu động giúp du khách in ảnh ngay tại chỗ, còn in được hoa văn, chân dung yêu thích lên hàng dệt. Người phát minh là hai anh em nhà họ Chu: anh là thợ sửa ô tô, em mê nhiếp ảnh. Họ thấy cách in tráng truyền thống phải đợi mấy ngày, quá lỗi thời, thế là đồng lòng, phát huy sở trường của mỗi người, phát minh ra xe in ảnh lưu động. Xe in tiện lợi nhanh chóng, rất được ưa chuộng; mùa vắng khách còn in hoa văn lên đồng phục học sinh. Nó nhanh chóng nổi tiếng, thu nhập tăng dần.',note:'Theo đúng thứ tự gợi ý: 功能 → 由来 → 大受欢迎; nhớ phân biệt 就近 (phó từ, trước động từ) với 附近.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — 听力 (hội thoại ngắn + đoạn nói)
-// Sách HSK 6 không có sách bài tập nghe: tự soạn theo chủ đề bài 38.
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — câu tự soạn (sách HSK 6 không có sách bài tập nghe), mỗi câu một tình huống mới
+// ══════════════════════════════════════════
 var listenExamData = {
-  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, ' +
-         'trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
-  source: 'Soạn theo dạng đề HSK 6 · chủ đề bài 38',
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 38',
   items: [
-    {n:1,
-     lines:[{sp:'女',zh:'你这个手机用了三年了吧？电池还行吗？'},
-            {sp:'男',zh:'早就不耐用了，充一次电用不了半天。我打算就近找家维修店换块电池。'}],
-     q:'男的打算怎么做？',qvn:'Người đàn ông định làm gì?',
-     opts:['买一部新手机','换一块电池','把手机送给别人','去很远的大商场'],ans:1,
-     why:'我打算就近找家维修店换块电池 → định thay pin ở tiệm sửa gần đó. Pin 不耐用 (không bền) chứ không phải mua máy mới.',
-     words:['耐用','就近']},
-
-    {n:2,
-     lines:[{sp:'男',zh:'这家小饭馆的菜真不错，价格也不贵。'},
-            {sp:'女',zh:'是啊，物美价廉，风味独特，所以每天中午都有很多人排队。'}],
-     q:'关于这家饭馆，可以知道什么？',qvn:'Về quán ăn này, có thể biết điều gì?',
-     opts:['菜很贵','环境很好','服务员很热情','生意很好，常有人排队'],ans:3,
-     why:'物美价廉……每天中午都有很多人排队 → làm ăn tốt, luôn có người xếp hàng. Món ăn KHÔNG đắt.',
-     words:['物美价廉','风味']},
-
-    {n:3,
-     lines:[{sp:'女',zh:'听说你们公司上个季度收入下滑了？'},
-            {sp:'男',zh:'是啊，一方面进入了淡季，一方面受通货膨胀的影响。好在我们及时调整了策略，这个月开始回升了。'}],
-     q:'这个月公司的情况怎么样？',qvn:'Tháng này tình hình công ty thế nào?',
-     opts:['收入开始回升','收入继续下滑','刚进入淡季','公司要关门了'],ans:0,
-     why:'这个月开始回升了 → tháng này thu nhập bắt đầu tăng lại. Sụt giảm là chuyện của quý trước.',
-     words:['季度','淡季','通货膨胀','策略']},
-
-    {n:4,
-     lines:[{sp:'男',zh:'小李这次又没通过面试，这已经是第五次了。'},
-            {sp:'女',zh:'他屡次失败，却一点儿也不灰心，我相信他早晚会成功的。'}],
-     q:'女的觉得小李怎么样？',qvn:'Người phụ nữ thấy Tiểu Lý thế nào?',
-     opts:['应该换个工作','运气太差','很有毅力，早晚会成功','面试准备得不够'],ans:2,
-     why:'屡次失败，却一点儿也不灰心……早晚会成功的 → cô ấy tin Tiểu Lý kiên trì và sớm muộn sẽ thành công.',
-     words:['屡次']},
-
-    {n:5,
-     lines:[{sp:'女',zh:'你怎么不参加这次的创业大赛？'},
-            {sp:'男',zh:'我还没想好做什么项目。创业可不是赌博，不能靠空想，我得先好好研究一下市场需求。'}],
-     q:'男的为什么不参加比赛？',qvn:'Vì sao người đàn ông không tham gia cuộc thi?',
-     opts:['他对创业没兴趣','他没有资本','他觉得比赛太难','他还没想好项目，要先研究市场'],ans:3,
-     why:'我还没想好做什么项目……得先好好研究一下市场需求 → chưa nghĩ ra dự án, muốn nghiên cứu thị trường trước.',
-     words:['赌博','空想']},
-
-    {n:6,
-     lines:[{sp:'男',zh:'经理，新来的小王和小张合作得怎么样？'},
-            {sp:'女',zh:'挺好的。一个擅长设计，一个擅长营销，两个人发挥各自的专长，齐心协力，这次的方案做得特别漂亮。'}],
-     q:'关于小王和小张，下列哪项正确？',qvn:'Về Tiểu Vương và Tiểu Trương, điều nào dưới đây đúng?',
-     opts:['合作得很好','都擅长设计','意见不合','方案还没做完'],ans:0,
-     why:'挺好的……齐心协力，这次的方案做得特别漂亮 → hai người hợp tác rất tốt; mỗi người giỏi một mảng.',
-     words:['专长','齐心协力']},
-
-    {n:7,
-     lines:[{sp:'女',zh:'你们这家店开了才半年，就已经收回本钱了？'},
-            {sp:'男',zh:'对。我们以往也开过店，但都失败了。这次我们先对照顾客的需求做了调查，所以收益一直呈递增趋势。'}],
-     q:'男的这次开店和以往有什么不同？',qvn:'Lần mở cửa hàng này của người đàn ông khác trước kia ở điểm nào?',
-     opts:['店开得更大','价格更便宜','先调查了顾客的需求','请了更多员工'],ans:2,
-     why:'这次我们先对照顾客的需求做了调查 → lần này điều tra nhu cầu khách hàng trước.',
-     words:['本钱','以往','对照','递增']},
-
-    {n:8,
-     lines:[{sp:'男',zh:'很多人以为创业靠的是运气，其实不然。成功的创业者往往都有一双慧眼：他们能发现别人没发现或是不屑做的生意，能从竞争对手的产品缺陷中找到机会，还能准确预测市场的潜在需求。所以说，创业不是赌博，只要依据市场需求，就能捕捉到商机。'}],
-     q:'这段话主要想告诉我们什么？',qvn:'Đoạn nói chủ yếu muốn cho chúng ta biết điều gì?',
-     opts:['创业主要靠运气','创业要依据市场需求，用慧眼捕捉商机','创业需要很多资本','竞争对手越少越好'],ans:1,
-     why:'Câu kết 创业不是赌博，只要依据市场需求，就能捕捉到商机 là ý chính; ý "靠运气" bị bác bỏ (其实不然).',
-     words:['不屑','赌博','依据']}
+    {
+      n: 1,
+      lines: [
+        {sp:'男',zh:'周末我们几个要去山里玩儿，不知道会不会下雨。'},
+        {sp:'女',zh:'天气预报说周末局部地区有雨，你们最好带上伞。'}
+      ],
+      q: '女的提醒男的什么？',
+      qvn: 'Người phụ nữ nhắc người đàn ông điều gì?',
+      opts: ['别去爬山','带上伞','早点儿出发','多穿衣服'],
+      ans: 1,
+      why: '局部地区有雨 = một số nơi có mưa → 最好带上伞. Cô ấy không bảo đừng đi (loại A).',
+      words: ['局部']
+    },
+    {
+      n: 2,
+      lines: [
+        {sp:'女',zh:'这种手机广告天天放，应该很好吧？'},
+        {sp:'男',zh:'广告都是吹捧，好不好你得自己用用才知道。'}
+      ],
+      q: '男的是什么意思？',
+      qvn: 'Ý người đàn ông là gì?',
+      opts: ['手机很好','广告太少了','他用过这种手机','广告不能全信'],
+      ans: 3,
+      why: '广告都是吹捧 = quảng cáo chỉ toàn tâng bốc → không thể tin hết, phải tự dùng thử.',
+      words: ['吹捧']
+    },
+    {
+      n: 3,
+      lines: [
+        {sp:'男',zh:'小李今天又迟到了？'},
+        {sp:'女',zh:'是啊，他这个月屡次迟到，经理已经找他谈过两次话了。'}
+      ],
+      q: '关于小李，可以知道什么？',
+      qvn: 'Về Tiểu Lý, có thể biết điều gì?',
+      opts: ['这个月迟到了很多次','从来不迟到','被经理表扬了','今天请假了'],
+      ans: 0,
+      why: '屡次迟到 = đi muộn nhiều lần; 又迟到了 khẳng định thêm. Bị giám đốc gọi nói chuyện chứ không phải được khen.',
+      words: ['屡次']
+    },
+    {
+      n: 4,
+      lines: [
+        {sp:'女',zh:'昨天的晚会怎么样？'},
+        {sp:'男',zh:'最精彩的是一个魔术，演员把一只小鸟变成了一束花，大家都看呆了。'}
+      ],
+      q: '男的觉得什么节目最精彩？',
+      qvn: 'Người đàn ông thấy tiết mục nào hay nhất?',
+      opts: ['唱歌','跳舞','魔术','讲故事'],
+      ans: 2,
+      why: '最精彩的是一个魔术 → ảo thuật (biến chim thành bó hoa).',
+      words: ['魔术']
+    },
+    {
+      n: 5,
+      lines: [
+        {sp:'男',zh:'学校东边新开的那家饭馆怎么样？'},
+        {sp:'女',zh:'菜挺可口的，价格也合适，就是每天中午人太多，得等很久。'}
+      ],
+      q: '女的觉得那家饭馆有什么问题？',
+      qvn: 'Người phụ nữ thấy quán ăn đó có vấn đề gì?',
+      opts: ['菜不好吃','太贵了','服务不好','中午要等很久'],
+      ans: 3,
+      why: '就是 + điều chưa tốt: 每天中午人太多，得等很久. Món ăn 可口 (ngon miệng), giá 合适 → loại A, B.',
+      words: ['可口']
+    },
+    {
+      n: 6,
+      lines: [
+        {sp:'男',zh:'你们公司刚成立，资本不多，怎么跟大公司竞争？'},
+        {sp:'女',zh:'我们的策略是先做大公司不愿意做的小生意，慢慢积累经验。'}
+      ],
+      q: '女的公司打算怎么做？',
+      qvn: 'Công ty của người phụ nữ định làm thế nào?',
+      opts: ['跟大公司合作','先做小生意','多做广告','降低价格'],
+      ans: 1,
+      why: '我们的策略是先做……小生意 → bắt đầu từ việc làm ăn nhỏ mà công ty lớn không muốn làm.',
+      words: ['资本','策略']
+    },
+    {
+      n: 7,
+      lines: [
+        {sp:'女',zh:'你凭什么说这家公司快不行了？'},
+        {sp:'男',zh:'我可不是乱说的，我是依据他们公布的财务数据判断的。'}
+      ],
+      q: '男的是根据什么判断的？',
+      qvn: 'Người đàn ông dựa vào đâu để phán đoán?',
+      opts: ['朋友的话','自己的感觉','公司的财务数据','报纸上的广告'],
+      ans: 2,
+      why: '依据他们公布的财务数据判断的 → căn cứ vào số liệu tài chính công ty công bố, không phải nói bừa.',
+      words: ['依据','财务']
+    }
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 💬 TÌNH HUỐNG GIAO TIẾP
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
+// ══════════════════════════════════════════
 var situationData = {
-  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
-         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn người Trung Quốc sang Hà Nội chơi, hỏi em có món gì vừa ngon vừa rẻ.',
-     a:{sp:'Bạn',zh:'河内有什么好吃又便宜的东西吗？',vn:'Hà Nội có món gì vừa ngon vừa rẻ không?'},
-     need:['Dùng 物美价廉','Dùng 风味'],
-     sample:'你一定要尝尝河内的烤肉米线，物美价廉，风味独特，一碗才三四万越南盾。',
-     samplePy:'Nǐ yídìng yào chángchang Hénèi de kǎoròu mǐxiàn, wùměi-jiàlián, fēngwèi dútè, yì wǎn cái sān-sì wàn Yuènándùn.',
-     sampleVn:'Cậu nhất định phải nếm thử bún chả Hà Nội, ngon bổ rẻ, hương vị độc đáo, một bát chỉ ba bốn chục nghìn đồng.',
-     tip:'Giới thiệu món ăn: tên món → đánh giá (物美价廉, 风味独特) → giá cụ thể (才 + số tiền = chỉ có …).'},
-
-    {scene:'Ngày đầu em đi thực tập ở một công ty, trưởng phòng giới thiệu em với mọi người.',
-     a:{sp:'Trưởng phòng',zh:'这是新来的实习生，大家欢迎！',vn:'Đây là thực tập sinh mới đến, mọi người chào đón nào!'},
-     need:['Dùng 专长','Dùng 关照'],
-     sample:'大家好，我叫阿明，我的专长是平面设计。我刚来，很多地方还不懂，请大家多多关照！',
-     samplePy:'Dàjiā hǎo, wǒ jiào Ā Míng, wǒ de zhuāncháng shì píngmiàn shèjì. Wǒ gāng lái, hěn duō dìfang hái bù dǒng, qǐng dàjiā duōduō guānzhào!',
-     sampleVn:'Chào mọi người, em là Minh, sở trường của em là thiết kế đồ hoạ. Em mới đến, nhiều chỗ còn chưa biết, mong mọi người chiếu cố nhiều ạ!',
-     tip:'Tự giới thiệu nơi làm việc: tên → sở trường (专长) → khiêm tốn (很多地方还不懂) → 请多多关照 (câu xã giao cố định).'},
-
-    {scene:'Bạn thân định dồn hết tiền tiết kiệm mở quán trà sữa vì "thấy ai cũng làm giàu".',
-     a:{sp:'Bạn',zh:'我要把所有的钱都拿出来开奶茶店，别人都赚了大钱！',vn:'Tớ sẽ bỏ hết tiền ra mở quán trà sữa, người khác đều kiếm bộn rồi!'},
-     need:['Dùng 依据','Dùng 空想 hoặc 赌博'],
-     sample:'创业可不是赌博啊！你得先依据市场需求做个调查，看看附近已经有几家奶茶店了，不能只靠空想。',
-     samplePy:'Chuàngyè kě bú shì dǔbó a! Nǐ děi xiān yījù shìchǎng xūqiú zuò ge diàochá, kànkan fùjìn yǐjīng yǒu jǐ jiā nǎichádiàn le, bù néng zhǐ kào kōngxiǎng.',
-     sampleVn:'Khởi nghiệp đâu phải đánh bạc! Cậu phải dựa vào nhu cầu thị trường làm một cuộc khảo sát trước, xem quanh đây đã có mấy quán trà sữa rồi, không thể chỉ dựa vào tưởng tượng.',
-     tip:'Khuyên can: phủ định mạnh (可不是……啊) → đề xuất cụ thể (得先……) → nhắc lại lý lẽ (不能只靠……).'},
-
-    {scene:'Em là lớp trưởng, cô chủ nhiệm nhờ em kêu gọi cả lớp tham gia quyên góp sách cho trẻ em vùng cao.',
-     a:{sp:'Cô chủ nhiệm',zh:'你跟同学们说说这次捐书活动吧。',vn:'Em nói với các bạn về hoạt động quyên góp sách lần này nhé.'},
-     need:['Dùng 踊跃','Dùng 齐心协力'],
-     sample:'同学们，这周五我们要给山区的孩子捐书，希望大家踊跃参加。只要我们齐心协力，孩子们就能读到更多的好书。',
-     samplePy:'Tóngxuémen, zhè zhōuwǔ wǒmen yào gěi shānqū de háizi juān shū, xīwàng dàjiā yǒngyuè cānjiā. Zhǐyào wǒmen qíxīn-xiélì, háizimen jiù néng dúdào gèng duō de hǎo shū.',
-     sampleVn:'Các bạn ơi, thứ Sáu này chúng ta sẽ quyên góp sách cho các em vùng cao, mong mọi người hăng hái tham gia. Chỉ cần chúng ta đồng lòng góp sức, các em sẽ được đọc nhiều sách hay hơn.',
-     tip:'Lời kêu gọi: thông tin (khi nào, làm gì) → 希望大家踊跃…… → 只要……就…… nêu ý nghĩa.'},
-
-    {scene:'Trời đang mưa, mẹ định đi siêu thị lớn ở xa chỉ để mua mấy quả trứng.',
-     a:{sp:'Mẹ',zh:'家里没鸡蛋了，我去大超市买点儿。',vn:'Nhà hết trứng rồi, mẹ ra siêu thị lớn mua một ít.'},
-     need:['Dùng 就近','Dùng 附近 đúng chức năng (danh từ)'],
-     sample:'妈，外面下着雨呢，大超市那么远，您就近在小区附近的小店买吧，我帮您去。',
-     samplePy:'Mā, wàimian xiàzhe yǔ ne, dà chāoshì nàme yuǎn, nín jiùjìn zài xiǎoqū fùjìn de xiǎodiàn mǎi ba, wǒ bāng nín qù.',
-     sampleVn:'Mẹ ơi, ngoài trời đang mưa mà siêu thị lớn xa thế, mẹ mua tạm ở tiệm nhỏ gần khu nhà mình thôi, để con đi giúp mẹ.',
-     tip:'就近 (phó từ) đứng trước cụm động từ 在……买; 小区附近的小店 — 附近 làm định ngữ cho 小店 (词语辨析 của bài).'}
+    {scene:'Bạn người Trung Quốc sang Hà Nội chơi, hỏi em có món gì vừa ngon vừa rẻ.',a:{sp:'Bạn',zh:'河内有什么好吃又便宜的东西吗？',vn:'Hà Nội có món gì vừa ngon vừa rẻ không?'},need:['Dùng 可口 hoặc 风味','Giới thiệu một món cụ thể'],sample:'你一定要尝尝河内的米线，味道可口，很有地方风味，一碗也就十几块钱。',samplePy:'Nǐ yídìng yào chángchang Hénèi de mǐxiàn, wèidào kěkǒu, hěn yǒu dìfang fēngwèi, yì wǎn hái bú dào liǎng kuài qián rénmínbì.',sampleVn:'Cậu nhất định phải ăn thử bún Hà Nội, vị ngon miệng, rất có hương vị địa phương, một bát cũng chỉ mười mấy tệ.',tip:'可口 = ngon miệng (tả món ăn); 很有地方风味 = rất có hương vị địa phương; 也就 + số tiền = cũng chỉ (nhấn rẻ).'},
+    {scene:'Bạn thân định dồn hết tiền tiết kiệm mở quán trà sữa vì "thấy ai cũng làm giàu".',a:{sp:'Bạn',zh:'我要把所有的钱都拿出来开咖啡店，别人都赚了大钱！',vn:'Tớ sẽ bỏ hết tiền ra mở quán cà phê, người khác ai cũng kiếm bộn tiền rồi!'},need:['Dùng 空想 hoặc 赌博','Khuyên bạn tìm hiểu thị trường trước'],sample:'你别光空想了，把钱全拿出来跟赌博差不多。你先去看看附近已经有几家咖啡店了，了解一下大家的需求再决定吧。',samplePy:'Nǐ bié guāng kōngxiǎng le, bǎ qián quán ná chūlai gēn dǔbó chàbuduō. Nǐ xiān qù kànkan fùjìn yǐjīng yǒu jǐ jiā kāfēidiàn le, liǎojiě yíxià dàjiā de xūqiú zài juédìng ba.',sampleVn:'Cậu đừng chỉ mơ mộng nữa, bỏ hết tiền ra thì chẳng khác gì đánh bạc. Cậu đi xem quanh đây đã có mấy quán cà phê rồi, tìm hiểu nhu cầu của mọi người rồi hãy quyết định.',tip:'别光……了 = đừng chỉ … nữa; 跟……差不多 = chẳng khác gì …; 先……再…… sắp xếp trình tự.'},
+    {scene:'Em là lớp trưởng, cô giáo nhờ em kêu gọi cả lớp tham gia buổi đổi sách cũ của trường.',a:{sp:'Cô giáo',zh:'下周学校要办一个旧书交换活动，你跟同学们说说吧。',vn:'Tuần sau trường tổ chức buổi đổi sách cũ, em nói với các bạn nhé.'},need:['Dùng 踊跃','Nói rõ thời gian, cách tham gia'],sample:'同学们，下周五学校要办旧书交换活动，大家可以把看过的书拿来，换一本自己喜欢的。希望大家踊跃参加！',samplePy:'Tóngxuémen, xià zhōuwǔ xuéxiào yào bàn jiùshū jiāohuàn huódòng, dàjiā kěyǐ bǎ kànguo de shū ná lái, huàn yì běn zìjǐ xǐhuan de. Xīwàng dàjiā yǒngyuè cānjiā!',sampleVn:'Các bạn ơi, thứ Sáu tuần sau trường tổ chức buổi đổi sách cũ, mọi người có thể mang sách đã đọc tới, đổi lấy một cuốn mình thích. Mong mọi người hăng hái tham gia!',tip:'希望大家踊跃参加 = câu kết quen thuộc của lời kêu gọi; 踊跃 đứng trước động từ.'},
+    {scene:'Trời đang mưa, mẹ định đi siêu thị lớn ở xa chỉ để mua mấy quả trứng.',a:{sp:'Mẹ',zh:'家里没鸡蛋了，我去大超市买点儿。',vn:'Nhà hết trứng rồi, mẹ ra siêu thị lớn mua một ít.'},need:['Dùng 就近','Dùng 附近 đúng chức năng (danh từ)'],sample:'妈，外面下着雨呢，大超市那么远，您就近在小区附近的小店买吧，我帮您去。',samplePy:'Mā, wàimian xiàzhe yǔ ne, dà chāoshì nàme yuǎn, nín jiùjìn zài xiǎoqū fùjìn de xiǎodiàn mǎi ba, wǒ bāng nín qù.',sampleVn:'Mẹ ơi, ngoài trời đang mưa mà siêu thị lớn xa thế, mẹ mua tạm ở tiệm nhỏ gần khu nhà mình thôi, để con đi giúp mẹ.',tip:'就近 (phó từ) đứng trước cụm động từ 在……买; 小区附近的小店 — 附近 làm định ngữ cho 小店 (phân biệt 就近 / 附近 của bài).'},
+    {scene:'Hai đứa thi chạy với nhau mỗi cuối tuần; bạn em đề nghị lần này ai thua phải nộp tiền cho "hấp dẫn".',a:{sp:'Bạn',zh:'这次比赛谁输了谁出一百块钱，怎么样？这样才有意思！',vn:'Lần này ai thua thì nộp một trăm tệ nhé, thế nào? Như vậy mới thú vị!'},need:['Dùng 赌博','Từ chối và đề nghị cách khác'],sample:'比赛是为了开心，一拿钱来比就成了赌博了。我们还是像以往一样，输了的人请大家喝饮料吧。',samplePy:'Bǐsài shì wèile kāixīn, yì ná qián lái bǐ jiù chéngle dǔbó le. Wǒmen háishi xiàng yǐwǎng yíyàng, shūle de rén qǐng dàjiā hē yǐnliào ba.',sampleVn:'Thi với nhau là để vui, hễ đem tiền ra thi là thành đánh bạc rồi. Mình cứ như trước đây, ai thua thì mời mọi người uống nước nhé.',tip:'一……就…… = hễ … là …; 像以往一样 = như trước đây; 还是……吧 = cứ … thì hơn.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 // 🎯 NÓI SAO CHO HAY — 得体 / 语体
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 var registerData = {
-  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
-         'HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
   items: [
-    {scene:'Em viết thư xin việc gửi phòng nhân sự của một công ty.',
-     a:'我特别会做设计，你们要不要我？',b:'本人擅长平面设计，希望能有机会发挥专长，为贵公司服务。',better:'b',
-     why:'Thư xin việc cần văn viết lịch sự: 本人, 擅长, 发挥专长, 贵公司. Câu a (你们要不要我？) quá suồng sã.'},
-
-    {scene:'Em nhắn tin rủ bạn thân đi ăn ở quán mới mở.',
-     a:'那家店物美价廉，风味独特，值得品尝。',b:'那家店又便宜又好吃，走，一起去尝尝！',better:'b',
-     why:'Nhắn tin bạn bè dùng khẩu ngữ tự nhiên (又便宜又好吃, 走, 尝尝). Câu a nghe như lời quảng cáo trên báo.'},
-
-    {scene:'Trưởng phòng báo cáo kết quả kinh doanh quý III trong cuộc họp toàn công ty.',
-     a:'第三季度，公司财务收入呈递增趋势，同比增长百分之十五。',b:'这三个月咱们赚的钱越来越多了，比去年多了不少。',better:'a',
-     why:'Báo cáo chính thức dùng thuật ngữ, số liệu (季度, 财务收入, 呈递增趋势, 同比增长). Câu b hợp khi nói chuyện phiếm.'},
-
-    {scene:'Nhân viên đứng quầy mời khách qua đường nếm thử bánh trong siêu thị.',
-     a:'欢迎免费品尝，不好吃不要钱！',b:'敬请各位顾客对本产品进行品尝。',better:'a',
-     why:'Lời mời trực tiếp ở quầy cần ngắn gọn, thân thiện, dễ nghe. Câu b (敬请……进行品尝) là văn bản, nói ra nghe rất cứng.'},
-
-    {scene:'Thầy hiệu trưởng phát biểu khai mạc ngày hội khởi nghiệp của học sinh.',
-     a:'希望同学们大胆创新，依据市场需求，用慧眼捕捉商机。',b:'大家好好干，看准了就上！',better:'a',
-     why:'Phát biểu trang trọng dùng văn viết, cụm bốn chữ (大胆创新, 捕捉商机) và 依据. Câu b hợp nói riêng với bạn bè.'},
-
-    {scene:'Bạn thân cứ mơ làm tỷ phú mà chẳng chịu làm gì, em muốn nhắc bạn.',
-     a:'你别光做梦了，先干点儿实事吧！',b:'创业不能靠空想，经营者必须具有超前意识和必备的素质。',better:'a',
-     why:'Khuyên bạn thân nên nói thẳng, khẩu ngữ (别光……了, 干点儿实事). Câu b như đang giảng bài, xa cách.'}
+    {scene:'Câu kết bài phát biểu cổ vũ đội bóng của lớp trước trận chung kết.',a:'大家好好踢，我们应该能赢。',b:'坚持！坚持！胜利就在前面！',better:'b',why:'Lặp liền 坚持！坚持！ (反复) dồn nén cảm xúc, khí thế hơn hẳn. Câu a đúng nhưng nhạt, 应该能赢 nghe thiếu tự tin.'},
+    {scene:'Câu kết bài văn tả quê hương.',a:'我爱家乡的山，我爱家乡的水，我更爱家乡勤劳的人们。',b:'家乡的山、水和人我都很喜欢。',better:'a',why:'Lặp cách quãng 我爱家乡的…… ba lần (反复) làm tình cảm tăng dần, hợp câu kết bài văn. Câu b gọn nhưng không có sức biểu cảm.'},
+    {scene:'Em dán mẩu giấy nhắc đồng nghiệp lịch họp.',a:'明天开会，明天开会，明天上午九点开会。',b:'明天上午九点开会，别忘了。',better:'b',why:'Ghi chú công việc cần ngắn, rõ. Lặp 明天开会 ba lần ở đây chỉ rườm rà — phép lặp dùng để biểu cảm, không phải để nhắc thông tin.'},
+    {scene:'Em viết thư xin việc gửi phòng nhân sự của một công ty.',a:'我特别会做设计，你们要不要我？',b:'本人擅长平面设计，希望能有机会发挥专长，为贵公司服务。',better:'b',why:'Thư xin việc cần văn viết lịch sự: 本人, 擅长, 发挥专长, 贵公司. Câu a (你们要不要我？) quá suồng sã.'},
+    {scene:'Trưởng phòng báo cáo kết quả kinh doanh quý III trong cuộc họp toàn công ty.',a:'第三季度，公司的财务收入不断递增，比去年同一季度增长了百分之十五。',b:'这三个月咱们赚的钱越来越多了，比去年多了不少。',better:'a',why:'Báo cáo chính thức dùng thuật ngữ, số liệu (季度, 财务收入, 递增, 百分之十五). Câu b hợp khi nói chuyện phiếm.'},
+    {scene:'Nhân viên đứng quầy mời khách qua đường nếm thử bánh trong siêu thị.',a:'欢迎免费品尝，不好吃不要钱！',b:'欢迎各位顾客对本产品进行品尝。',better:'a',why:'Lời mời trực tiếp ở quầy cần ngắn gọn, thân thiện. Câu b (对本产品进行品尝) là văn bản, nói ra nghe rất cứng.'}
   ]
 };
 

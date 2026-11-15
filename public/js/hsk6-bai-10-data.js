@@ -1619,86 +1619,50 @@ var hvBridgeData = {
 // GHÉP TỪ — cụm trong bài khoá và phần 练习
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'开阔',right:'视野'},
-  {left:'饮食',right:'文化'},
-  {left:'传达',right:'信息'},
-  {left:'特色',right:'鲜明'},
-  {left:'成绩',right:'优异'},
-  {left:'灯火',right:'辉煌'},
-  {left:'和谐',right:'相处'},
-  {left:'调和',right:'矛盾'},
-  {left:'辽阔的',right:'土地'},
-  {left:'精心',right:'构思'},
-  {left:'烹饪',right:'高手'},
-  {left:'人间',right:'美味'},
-  {left:'知识',right:'体系'},
-  {left:'优良',right:'品种'},
-  {left:'得到',right:'认可'},
-  {left:'人工',right:'栽培'},
+  {left:'扩大',right:'视野'},
+  {left:'传达',right:'会议精神'},
+  {left:'培育',right:'新品种'},
   {left:'分辨',right:'真假'},
-  {left:'使用',right:'频率'},
+  {left:'继承',right:'传统'},
+  {left:'调和',right:'矛盾'},
   {left:'充满',right:'活力'},
-  {left:'探索',right:'奥秘'},
-  {left:'打破',right:'局限'},
-  {left:'继承',right:'传统'}
+  {left:'加工',right:'食品'},
+  {left:'正宗的',right:'北京烤鸭'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ
+// ĐIỀN TỪ — câu mới (không chép bài khoá / SGK), mỗi câu một tình huống; ôn xoáy ốc từ + ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'出国留学可以开阔',blank:'视野',post:'，也能锻炼独立生活的能力。',hint:'(tầm nhìn)',ans:'视野'},
-  {pre:'医生说他的病跟平时的',blank:'饮食',post:'习惯有很大关系。',hint:'(ăn uống)',ans:'饮食'},
-  {pre:'这片海底',blank:'蕴藏',post:'着丰富的石油和天然气。',hint:'(chứa, tiềm ẩn)',ans:'蕴藏'},
-  {pre:'班长把老师的意思',blank:'传达',post:'给了全班同学。',hint:'(truyền đạt)',ans:'传达'},
-  {pre:'这里是禁烟',blank:'区域',post:'，请不要在这儿吸烟。',hint:'(khu vực)',ans:'区域'},
-  {pre:'晚上的西湖边灯火',blank:'辉煌',post:'，美极了。',hint:'(rực rỡ)',ans:'辉煌'},
-  {pre:'我们宿舍四个人相处得很',blank:'和谐',post:'，从来没红过脸。',hint:'(hài hoà)',ans:'和谐'},
-  {pre:'望着',blank:'辽阔',post:'的草原，我的心情一下子好了起来。',hint:'(bao la)',ans:'辽阔'},
-  {pre:'这片森林里生活着各种',blank:'飞禽走兽',post:'。',hint:'(chim muông thú vật)',ans:'飞禽走兽'},
-  {pre:'这个省',blank:'湖泊',post:'众多，被称为“千湖之省”。',hint:'(ao hồ)',ans:'湖泊'},
-  {pre:'村子前面有一条清清的小',blank:'溪',post:'，孩子们常在那儿玩水。',hint:'(suối)',ans:'溪'},
-  {pre:'这一带是',blank:'丘陵',post:'地区，很适合种茶。',hint:'(đồi)',ans:'丘陵'},
-  {pre:'爷爷在院子里',blank:'种植',post:'了不少蔬菜和花草。',hint:'(trồng)',ans:'种植'},
-  {pre:'这篇小说',blank:'构思',post:'巧妙，结局让人意想不到。',hint:'(cấu tứ)',ans:'构思'},
-  {pre:'妈妈是个',blank:'烹饪',post:'高手，什么菜都做得很好吃。',hint:'(nấu nướng)',ans:'烹饪'},
-  {pre:'奶奶每个月初一都吃',blank:'素食',post:'，不吃肉。',hint:'(đồ chay)',ans:'素食'},
-  {pre:'经过妈妈的手，普通的食材都能变成',blank:'人间',post:'美味。',hint:'(nhân gian)',ans:'人间'},
-  {pre:'学汉语要建立自己的知识',blank:'体系',post:'，不能只背单词。',hint:'(hệ thống)',ans:'体系'},
-  {pre:'她的设计方案得到了公司领导的',blank:'认可',post:'。',hint:'(sự công nhận)',ans:'认可'},
-  {pre:'水有液态、固态和气态三种',blank:'形态',post:'。',hint:'(trạng thái, hình thái)',ans:'形态'},
-  {pre:'这种蘑菇过去只能野生，现在已经可以人工',blank:'栽培',post:'了。',hint:'(trồng, vun trồng)',ans:'栽培'},
-  {pre:'“的”是汉语中出现',blank:'频率',post:'最高的字。',hint:'(tần suất)',ans:'频率'},
-  {pre:'这道菜的',blank:'调料',post:'放得太多了，吃不出鱼本来的味道。',hint:'(gia vị)',ans:'调料'},
-  {pre:'这家小店的北京烤鸭做得非常',blank:'正宗',post:'。',hint:'(chuẩn vị, chính gốc)',ans:'正宗'},
-  {pre:'这些水果经过',blank:'加工',post:'，变成了果汁和果酱。',hint:'(chế biến)',ans:'加工'},
-  {pre:'画家常常到大自然中去寻找',blank:'灵感',post:'。',hint:'(cảm hứng)',ans:'灵感'},
-  {pre:'学校食堂的',blank:'就餐',post:'时间是中午十一点半到一点。',hint:'(dùng bữa)',ans:'就餐'},
-  {pre:'妹妹用一张彩纸',blank:'折',post:'了一只小鸟。',hint:'(gấp)',ans:'折'},
-  {pre:'他',blank:'跪',post:'在地上，找掉在床底下的钥匙。',hint:'(quỳ)',ans:'跪'},
-  {pre:'世界上第一台电脑',blank:'诞生',post:'于1946年。',hint:'(ra đời)',ans:'诞生'},
-  {pre:'我们既要',blank:'继承',post:'传统，又要勇于创新。',hint:'(kế thừa)',ans:'继承'},
-  {pre:'这件衣服加入了很多中国',blank:'元素',post:'，外国朋友都很喜欢。',hint:'(yếu tố)',ans:'元素'},
-  {pre:'这座城市年轻人很多，充满了',blank:'活力',post:'。',hint:'(sức sống)',ans:'活力'},
-  {pre:'科学家们一直在探索宇宙的',blank:'奥秘',post:'。',hint:'(điều bí ẩn)',ans:'奥秘'}
+  {pre:'科学家说，这片大海里',blank:'蕴藏',post:'着丰富的资源。',hint:'(chứa đựng, tiềm ẩn)',ans:'蕴藏',exp:'蕴藏着 + tài nguyên / tình cảm = chứa đựng bên trong, chưa lộ ra; văn viết.'},
+  {pre:'他的画儿颜色',blank:'鲜明',post:'，一眼就能看出是他画的。',hint:'(rõ nét, tươi sáng)',ans:'鲜明',exp:'颜色鲜明 / 特点鲜明 = rõ nét, nổi bật; khác 新鲜 (tươi, mới).'},
+  {pre:'这支球队曾经有过',blank:'辉煌',post:'的历史，可是这几年成绩一直不好。',hint:'(huy hoàng)',ans:'辉煌',exp:'辉煌的历史 / 成就 = huy hoàng, rực rỡ; thường nói về thành tựu lớn trong quá khứ.'},
+  {pre:'山下有一条小',blank:'溪',post:'，水很干净，能看见里面的小鱼。',hint:'(con suối)',ans:'溪',exp:'小溪 = suối nhỏ; lượng từ 一条, giống 河.'},
+  {pre:'这篇小说他',blank:'构思',post:'了整整两年才开始动笔。',hint:'(lên ý tưởng, cấu tứ)',ans:'构思',exp:'构思 = nghĩ kỹ nội dung, bố cục trước khi viết / làm; 动笔 = bắt đầu viết.'},
+  {pre:'他从小跟着爷爷学',blank:'烹饪',post:'，做的菜比饭店里的还好吃。',hint:'(nấu nướng)',ans:'烹饪',exp:'烹饪 = nấu nướng (từ trang trọng hơn 做饭); 学烹饪 = học nấu ăn.'},
+  {pre:'这一带都是低低的',blank:'丘陵',post:'，很适合种茶树。',hint:'(đồi thấp)',ans:'丘陵',exp:'丘陵 = vùng đồi thấp, thoai thoải (thấp hơn 山); 这一带 = vùng này.'},
+  {pre:'这道菜只放了一点儿盐，没加别的',blank:'调料',post:'，却特别好吃。',hint:'(gia vị)',ans:'调料',exp:'调料 = gia vị nói chung (muối, đường, nước tương…); 加调料 / 放调料.'},
+  {pre:'没有老师这些年的精心',blank:'栽培',post:'，就没有我今天的成绩。',hint:'(vun trồng, bồi dưỡng)',ans:'栽培',exp:'栽培 nghĩa bóng = dày công bồi dưỡng người; hay đi với 精心 (精心栽培).'},
+  {pre:'新买的电视画面特别',blank:'清晰',post:'，连演员脸上的小疤都看得见。',hint:'(rõ ràng, rõ nét)',ans:'清晰',exp:'画面 / 声音 + 清晰 = rõ nét; ôn 疤 (bài 8).'},
+  {pre:'一次去海边的旅行给了他写这首歌的',blank:'灵感',post:'。',hint:'(cảm hứng)',ans:'灵感',exp:'给 + người + 灵感 / 有了灵感 = có cảm hứng sáng tác.'},
+  {pre:'这把椅子可以',blank:'折',post:'起来，不用的时候放在门后面就行。',hint:'(gấp, gập)',ans:'折',exp:'折起来 = gập lại (ghế, bàn, giấy); 起来 chỉ kết quả thu gọn lại.'},
+  {pre:'世界上第一台电脑',blank:'诞生',post:'于1946年。',hint:'(ra đời)',ans:'诞生',exp:'诞生于 + thời gian / nơi chốn = ra đời vào…; 于 văn viết, ôn bài 7.'},
+  {pre:'这件衣服加入了很多中国传统',blank:'元素',post:'，在国外很受欢迎。',hint:'(yếu tố)',ans:'元素',exp:'加入……元素 = thêm yếu tố (văn hoá, thiết kế) vào; 元素 còn là "nguyên tố" trong hoá học.'},
+  {pre:'这家超市的水果',blank:'品种',post:'很多，一年到头都能买到新鲜的。',hint:'(chủng loại, giống)',ans:'品种',exp:'品种多 = nhiều chủng loại; 品种 cũng là "giống" cây, con (新品种).'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (以至 · 即便 · 所在) ít nhất 2 câu, thêm 凡是 · 照样 · 得力于
+// SẮP XẾP CÂU — câu mới, chỉ một trật tự đúng
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['他看书','看得','太入迷','，','以至','连饭','都忘了吃','。'],ans:'他看书看得太入迷，以至连饭都忘了吃。',audio:'他看书看得太入迷，以至连饭都忘了吃。'},
-  {words:['那个电影','她看了十来遍','，','以至','许多台词','都能','背诵下来','。'],ans:'那个电影她看了十来遍，以至许多台词都能背诵下来。',audio:'那个电影她看了十来遍，以至许多台词都能背诵下来。'},
-  {words:['我们','已经走得太远','，','以至于','忘了','为什么出发','。'],ans:'我们已经走得太远，以至于忘了为什么出发。',audio:'我们已经走得太远，以至于忘了为什么出发。'},
-  {words:['即便','薪水低','，','我','还是','要去','。'],ans:'即便薪水低，我还是要去。',audio:'即便薪水低，我还是要去。'},
-  {words:['即便','有些不讲理','，','你','也要','原谅她','。'],ans:'即便有些不讲理，你也要原谅她。',audio:'即便有些不讲理，你也要原谅她。'},
-  {words:['即便','仅为','一餐素食','，','也可以','让你','尽享人间美味','。'],ans:'即便仅为一餐素食，也可以让你尽享人间美味。',audio:'即便仅为一餐素食，也可以让你尽享人间美味。'},
-  {words:['这','也是','其','充满活力的','奥秘','所在','。'],ans:'这也是其充满活力的奥秘所在。',audio:'这也是其充满活力的奥秘所在。'},
-  {words:['大家的支持','是','我们的','力量','所在','。'],ans:'大家的支持是我们的力量所在。',audio:'大家的支持是我们的力量所在。'},
-  {words:['青少年','是','一个国家的','希望','所在','。'],ans:'青少年是一个国家的希望所在。',audio:'青少年是一个国家的希望所在。'},
-  {words:['凡是','见过她的人','，','没有','不称赞','她漂亮的','。'],ans:'凡是见过她的人，没有不称赞她漂亮的。',audio:'凡是见过她的人，没有不称赞她漂亮的。'},
-  {words:['虽然','不是','上下班高峰期','，','这里','照样','堵车','。'],ans:'虽然不是上下班高峰期，这里照样堵车。',audio:'虽然不是上下班高峰期，这里照样堵车。'},
-  {words:['他的成功','得力于','平时的','勤学苦练','。'],ans:'他的成功得力于平时的勤学苦练。',audio:'他的成功得力于平时的勤学苦练。'}
+  {words:['她','高兴','极了','，','以至','一个晚上','都','没','睡着','。'],ans:'她高兴极了，以至一个晚上都没睡着。',audio:'她高兴极了，以至一个晚上都没睡着。'},
+  {words:['这','就是','他','成功的','秘密','所在','。'],ans:'这就是他成功的秘密所在。',audio:'这就是他成功的秘密所在。'},
+  {words:['他','把','一张','旧报纸','折','成了','一只','小船','。'],ans:'他把一张旧报纸折成了一只小船。',audio:'他把一张旧报纸折成了一只小船。'},
+  {words:['奶奶','跪在','地上','找','东西','。'],ans:'奶奶跪在地上找东西。',audio:'奶奶跪在地上找东西。'},
+  {words:['这个湖泊里','生活着','二十多','种','鱼','。'],ans:'这个湖泊里生活着二十多种鱼。',audio:'这个湖泊里生活着二十多种鱼。'},
+  {words:['他','使用','手机的','频率','越来越','高','了','。'],ans:'他使用手机的频率越来越高了。',audio:'他使用手机的频率越来越高了。'},
+  {words:['这是','一道','很','正宗的','上海菜','。'],ans:'这是一道很正宗的上海菜。',audio:'这是一道很正宗的上海菜。'},
+  {words:['年轻人','要','继承','老一辈','留下来的','好传统','。'],ans:'年轻人要继承老一辈留下来的好传统。',audio:'年轻人要继承老一辈留下来的好传统。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1706,74 +1670,44 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'这两个城市的风格形成了____的对比。',opts:['清晰','鲜明','明白','光明'],ans:1,
-   exp:'鲜明的对比 = sự tương phản rõ rệt (cụm cố định). 清晰 nói về hình ảnh / âm thanh rõ; 明白 = hiểu; 光明 = sáng sủa (tương lai).'},
-  {wrong:'她以____的成绩考上了北京大学。',opts:['优美','优惠','优异','优先'],ans:2,
-   exp:'以优异的成绩 + V = với thành tích xuất sắc. 优美 = đẹp (phong cảnh, văn chương); 优惠 = ưu đãi (giá cả); 优先 = ưu tiên.'},
-  {wrong:'他工作太忙了，____连孩子的生日都忘了。',opts:['以至','以便','以免','以为'],ans:0,
-   exp:'Vế trước nêu mức độ cao (太忙), 以至 dẫn kết quả (quên cả sinh nhật con). 以便 = để tiện; 以免 = để tránh; 以为 = tưởng (sai).'},
-  {wrong:'姐姐常常在我和妈妈之间____矛盾。',opts:['调整','调查','和谐','调和'],ans:3,
-   exp:'调和矛盾 = hoà giải mâu thuẫn. 调整 = điều chỉnh (kế hoạch, thời gian); 调查 = điều tra; 和谐 là tính từ, không mang tân ngữ.'},
-  {wrong:'为了这次晚会，同学们____准备了一个多月。',opts:['精心','精彩','精神','小心'],ans:0,
-   exp:'精心 + V = làm một cách tỉ mỉ, công phu. 精彩 = đặc sắc (tính từ cho tiết mục); 精神 = tinh thần; 小心 = cẩn thận (đề phòng nguy hiểm).'},
-  {wrong:'____明天下大雨，比赛也照常举行。',opts:['既然','即便','因为','只要'],ans:1,
-   exp:'Vế sau có 也 + kết quả không đổi → 即便 (cho dù) nêu giả thiết. 既然 đi với 就; 因为 đi với 所以; 只要 đi với 就.'},
-  {wrong:'这家超市的水果____齐全，价格也公道。',opts:['品质','作品','品种','物品'],ans:2,
-   exp:'品种齐全 = đủ chủng loại. 品质 = chất lượng (không đi với 齐全); 作品 = tác phẩm; 物品 = đồ vật.'},
-  {wrong:'经过十年的努力，科学家终于____出了新的水稻品种。',opts:['培养','培育','教育','种植'],ans:1,
-   exp:'培育出新品种 = lai tạo ra giống mới. 培养 thường dùng cho con người, năng lực, thói quen; 教育 = giáo dục; 种植 = trồng, không có nghĩa lai tạo.'},
-  {wrong:'小王酷爱美术，市里____有画展，再远他也要去参观。',opts:['所有','全部','一切','凡是'],ans:3,
-   exp:'凡是 là phó từ, đứng được ngay trước động từ 有 (hễ có …). 所有, 一切 là tính từ / đại từ, chỉ đứng trước danh từ; 全部 cũng không mở đầu mệnh đề kiểu này.'},
-  {wrong:'____问题都已经解决了，你放心吧。',opts:['凡是','所有','一律','总是'],ans:1,
-   exp:'问题 là danh từ chung chung → 所有问题 (tính từ + danh từ). 凡是 không đứng trước danh từ chung chung; 一律, 总是 là phó từ, không đứng trước danh từ.'},
-  {wrong:'天气好的时候，远处的山____可见。',opts:['鲜明','清晰','新鲜','清洁'],ans:1,
-   exp:'清晰可见 = nhìn thấy rõ (cụm cố định). 鲜明 nói về đặc điểm nổi bật, màu sắc; 新鲜 = tươi; 清洁 = sạch sẽ.'},
-  {wrong:'这对双胞胎长得太像了，我根本____不出谁是姐姐。',opts:['分配','分辨','分享','分手'],ans:1,
-   exp:'分辨不出 = không phân biệt được. 分配 = phân chia; 分享 = chia sẻ; 分手 = chia tay.'},
-  {wrong:'他发着高烧，____来上课了。',opts:['照顾','按照','照样','依照'],ans:2,
-   exp:'照样 (phó từ) = vẫn như thường dù điều kiện thay đổi. 照顾 = chăm sóc; 按照, 依照 là giới từ "theo", phải có tân ngữ theo sau.'},
-  {wrong:'他能取得这么好的成绩，____于平时的勤学苦练。',opts:['得到','得意','努力','得力'],ans:3,
-   exp:'得力于 = nhờ vào (练习2 câu ⑥). 得到 = nhận được (không đi với 于); 得意 = đắc ý; 努力 không đi với 于.'},
-  {wrong:'比起外表，____美更重要。',opts:['内在','内部','内容','内心'],ans:0,
-   exp:'内在美 = vẻ đẹp bên trong (cụm cố định). 内部 = nội bộ, bên trong (tổ chức, toà nhà); 内容 = nội dung; 内心 = trong lòng.'},
-  {wrong:'一个企业只有不断____，才能在竞争中生存下来。',opts:['创造','新鲜','更新','创新'],ans:3,
-   exp:'不断创新 = không ngừng đổi mới (động từ không cần tân ngữ). 创造 phải có tân ngữ (创造奇迹); 新鲜 là tính từ; 更新 = cập nhật (thiết bị, dữ liệu).'},
-  {wrong:'刚转学的时候，他总觉得自己受到了同学们的____。',opts:['排队','排斥','安排','排列'],ans:1,
-   exp:'受到……的排斥 = bị … xa lánh, bài xích. 排队 = xếp hàng; 安排 = sắp xếp; 排列 = sắp theo thứ tự.'},
-  {wrong:'学习不应该只____于课本，还要多读课外书。',opts:['限制','局面','局限','有限'],ans:2,
-   exp:'局限于 + phạm vi = bó hẹp trong …. 限制 mang tân ngữ trực tiếp, không đi với 于; 局面 = cục diện; 有限 = có hạn (tính từ).'},
-  {wrong:'大家的支持是我们的力量____。',opts:['所在','所有','存在','在于'],ans:0,
-   exp:'……是……的 + N + 所在 = chính là chỗ … (danh từ, văn viết). 所有 = tất cả; 存在 = tồn tại; 在于 phải có tân ngữ phía sau (在于大家的支持).'}
+  {wrong:'他写作业写得太投入了，____连晚饭都忘了吃。',opts:['以至','以为','可见','何况'],ans:0,exp:'Vế trước nêu mức độ cao, vế sau là kết quả → 以至 (đến nỗi). 以为 = tưởng rằng; 可见 = đủ thấy (rút ra kết luận); 何况 = huống hồ.'},
+  {wrong:'____你们都不支持我，我也要把这家小饭馆开下去。',opts:['即便','既然','只要','因为'],ans:0,exp:'Giả thiết bất lợi + 也 + kết quả không đổi → 即便……也…… (dù cho… cũng…). 既然 / 因为 nêu lý do có thật; 只要 đi với 就.'},
+  {wrong:'多读书、多思考，这才是提高写作水平的关键____。',opts:['所在','存在','在于','所有'],ans:0,exp:'……的 + 关键 / 原因 / 问题 + 所在 = chính là chỗ…. 存在 = tồn tại; 在于 phải đứng giữa câu (关键在于……); 所有 = tất cả.'},
+  {wrong:'这两个人的性格形成了____的对比，一个特别安静，一个特别活泼。',opts:['鲜明','新鲜','明白','光明'],ans:0,exp:'鲜明的对比 = sự đối lập rõ rệt. 新鲜 = tươi; 明白 = hiểu rõ; 光明 = sáng sủa (前途光明).'},
+  {wrong:'这本书的____价值，要读好几遍才能发现。',opts:['内在','内容','内部','以内'],ans:0,exp:'内在 + 价值 / 美 = giá trị bên trong, không lộ ra ngay. 内容 = nội dung (danh từ, không bổ nghĩa cho 价值); 内部 = phía trong (tổ chức, toà nhà); 以内 = trong vòng.'},
+  {wrong:'每次我跟哥哥吵架，都是妈妈出来____。',opts:['调和','调整','调查','和谐'],ans:0,exp:'Hoà giải mâu thuẫn giữa hai người → 调和. 调整 = điều chỉnh (kế hoạch); 调查 = điều tra; 和谐 là tính từ (hài hoà), không làm động từ.'},
+  {wrong:'为了妈妈的生日，我们____准备了一桌菜，妈妈别提多高兴了。',opts:['精心','精彩','精致','精神'],ans:0,exp:'精心 + V = làm tỉ mỉ, dày công. 精彩 (hay, đặc sắc), 精致 (tinh xảo — bài 9) là tính từ tả kết quả; 精神 = tinh thần. Ôn 别提多……了 (bài 1).'},
+  {wrong:'经过十年的努力，他们终于____出了一种不怕冷的西瓜。',opts:['培育','培养','教育','养成'],ans:0,exp:'Tạo ra giống cây, con mới → 培育. 培养 dùng cho người, năng lực (培养人才); 教育 = giáo dục; 养成 + thói quen.'},
+  {wrong:'____来过这家店的客人，没有不说好吃的。',opts:['凡是','只是','总是','于是'],ans:0,exp:'凡是 + nhóm người / vật = phàm là, hễ là (tất cả không trừ ai), hay đi với 没有不 / 都. 只是, 总是, 于是 không đứng đầu cụm danh từ như vậy.'},
+  {wrong:'电话里他的声音很____，好像就在我身边。',opts:['清晰','鲜明','新鲜','明亮'],ans:0,exp:'Âm thanh, hình ảnh rõ → 清晰. 鲜明 tả màu sắc, đặc điểm nổi bật; 新鲜 = tươi; 明亮 tả ánh sáng.'},
+  {wrong:'这对兄弟长得太像了，我根本____不出谁是哥哥。',opts:['分辨','分配','分享','分散'],ans:0,exp:'分辨不出 = không phân biệt được. 分配 = phân chia (công việc); 分享 = chia sẻ; 分散 = phân tán (bài 9).'},
+  {wrong:'即便感冒了，头疼得要命，他____坚持来上课。',opts:['照样','按照','照顾','照片'],ans:0,exp:'照样 = vẫn cứ như thường, hay đi sau 即便 / 就算. 按照 = theo (giới từ); 照顾 = chăm sóc; 照片 = ảnh. Ôn 得要命 (bài 9).'},
+  {wrong:'这家小饭馆生意这么好，____于老板几十年的烹饪经验。',opts:['得力','得到','得意','努力'],ans:0,exp:'得力于 + nguyên nhân = nhờ vào (văn viết). 得到 không đi với 于; 得意 = đắc ý; 努力于 sai nghĩa.'},
+  {wrong:'他刚来的时候，有些同学____他，不愿意跟他一起玩儿。',opts:['排斥','排队','安排','排列'],ans:0,exp:'排斥 + người = xa lánh, gạt ra. 排队 = xếp hàng; 安排 = sắp xếp (công việc); 排列 = xếp theo thứ tự.'},
+  {wrong:'他的知识只____于书本，一到实际工作中就不知道怎么办了。',opts:['局限','限制','局面','有限'],ans:0,exp:'局限于 + phạm vi = bó hẹp trong…. 限制 không đi với 于; 局面 = cục diện (danh từ); 有限 = có hạn (tính từ).'}
 ];
 
 // ══════════════════════════════════════════
-// DỊCH — câu ghép, ôn từ HSK 6 bài 1–6 và HSK 4–5
+// DỊCH Việt → Trung — câu mới, dùng từ của bài + ôn ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Cậu ấy suốt ngày chơi game, mải mê đến mức quên cả giờ ăn của nhà ăn trường.',zh:'他成天玩游戏，玩得太入迷，以至忘了学校食堂的就餐时间。',py:'Tā chéngtiān wán yóuxì, wán de tài rùmí, yǐzhì wàngle xuéxiào shítáng de jiùcān shíjiān.',goiY:['成天','……太……，以至……','就餐'],giai:'以至 đứng đầu vế sau, nêu kết quả do mức độ quá cao ở vế trước (太入迷); "giờ ăn" của nhà trường dùng 就餐时间 (trang trọng hơn 吃饭时间). 成天 ôn bài 6.'},
-  {vi:'Cho dù chỉ là một bữa cơm chay đơn giản, mẹ cũng nấu nướng công phu như ngày Tết.',zh:'即便只是一顿简单的素食，妈妈也会像过年一样精心烹饪。',py:'Jíbiàn zhǐ shì yí dùn jiǎndān de sùshí, māma yě huì xiàng guònián yíyàng jīngxīn pēngrèn.',goiY:['即便……也……','素食','精心','烹饪'],giai:'即便 + giả thiết, 也 + kết quả không đổi; "nấu công phu" = 精心烹饪 (精心 đứng thẳng trước động từ, không cần 地).'},
-  {vi:'Chiếc áo dài này thêm vào không ít yếu tố hiện đại, nhưng nét đặc sắc truyền thống vẫn rất rõ.',zh:'这件奥黛加入了不少现代元素，但传统特色仍然很鲜明。',py:'Zhè jiàn àodài jiārùle bùshǎo xiàndài yuánsù, dàn chuántǒng tèsè réngrán hěn xiānmíng.',goiY:['元素','……，但……仍然……','鲜明'],giai:'但……仍然…… nêu điều không đổi dù đã thay đổi; "yếu tố" = 元素 (không dịch 因素 vì 因素 là nhân tố gây ra kết quả); 特色鲜明 = đặc sắc rõ nét.'},
+  {vi:'Cậu ấy suốt ngày chơi game, mải mê đến mức quên cả giờ ăn của trường.',zh:'他成天玩儿游戏，玩儿得太投入，以至忘了学校的就餐时间。',py:'Tā chéngtiān wánr yóuxì, wánr de tài tóurù, yǐzhì wàngle xuéxiào de jiùcān shíjiān.',goiY:['成天','……太……，以至……','就餐'],giai:'以至 đứng đầu vế sau, nêu kết quả do mức độ quá cao ở vế trước (太投入); "giờ ăn" của nhà trường dùng 就餐时间 (trang trọng hơn 吃饭时间). 成天 ôn bài 6.'},
   {vi:'Phàm là món bà nấu, cho dù chỉ là rau cải trồng ở vườn sau, cả nhà ai cũng ăn ngon lành.',zh:'凡是奶奶做的菜，即便只是后院种植的青菜，全家人也都吃得津津有味。',py:'Fánshì nǎinai zuò de cài, jíbiàn zhǐ shì hòuyuàn zhòngzhí de qīngcài, quán jiā rén yě dōu chī de jīnjīn-yǒuwèi.',goiY:['凡是……都……','即便……也……','种植','津津有味'],giai:'凡是 bao quát "mọi món bà nấu", vế giữa chen giả thiết 即便; cả hai hô ứng với 也都 ở vế cuối. 津津有味 ôn bài 5.'},
-  {vi:'Tuy lúc đầu các bạn chê cười ý tưởng của cô ấy, nhưng cô ấy không bỏ cuộc, cuối cùng tác phẩm của cô đã được thầy giáo công nhận.',zh:'虽然当初同学们嘲笑她的构思，但她没有放弃，最终她的作品得到了老师的认可。',py:'Suīrán dāngchū tóngxuémen cháoxiào tā de gòusī, dàn tā méiyǒu fàngqì, zuìzhōng tā de zuòpǐn dédàole lǎoshī de rènkě.',goiY:['虽然……但……','构思','嘲笑','得到……的认可'],giai:'虽然 (sự thật) + 但 (bước ngoặt); "được … công nhận" = 得到……的认可, gọn hơn câu bị động 被……认可. 嘲笑 ôn bài 1, 当初 ôn bài 6.'},
-  {vi:'Hồi mới chuyển trường tôi từng bị các bạn xa lánh, nhưng chỉ cần đối xử khoan dung, chủ động giúp đỡ người khác thì sẽ nhanh chóng hoà hợp với mọi người.',zh:'刚转学时我曾受到同学们的排斥，不过只要宽容待人、主动帮助别人，就能很快和大家和谐相处。',py:'Gāng zhuǎnxué shí wǒ céng shòudào tóngxuémen de páichì, búguò zhǐyào kuānróng dài rén, zhǔdòng bāngzhù biérén, jiù néng hěn kuài hé dàjiā héxié xiāngchǔ.',goiY:['受到……的排斥','只要……就……','宽容','和谐相处'],giai:'"Bị xa lánh" = 受到……的排斥 (bị động bằng 受到); 只要……就…… nêu điều kiện đủ; 和 + người + 和谐相处. 宽容 ôn bài 1.'},
-  {vi:'Nhà hàng Việt này không những nguyên liệu chuẩn gốc, mà còn sáng tạo biến món Trung Quốc thành hương vị Việt, đến mức cả khách Trung Quốc cũng nóng lòng tới ăn thử.',zh:'这家越南餐厅不但食材正宗，而且创新式地把中国菜改成越南风味，以至中国客人也迫不及待地来尝鲜。',py:'Zhè jiā Yuènán cāntīng búdàn shícái zhèngzōng, érqiě chuàngxīn shì de bǎ Zhōngguó cài gǎichéng Yuènán fēngwèi, yǐzhì Zhōngguó kèrén yě pòbùjídài de lái chángxiān.',goiY:['不但……而且……','正宗','创新式地','以至'],giai:'Ba vế: 不但……而且…… tăng tiến, 以至 dẫn kết quả; trạng ngữ 创新式地 đứng trước 把. 迫不及待 ôn bài 5.'},
-  {vi:'Lần này thành tích cả lớp xuất sắc như vậy là nhờ mọi người ôn tập nghiêm túc, chứ không phải do đề quá dễ — đó mới chính là lý do cô chủ nhiệm thấy vui lòng.',zh:'这次全班成绩这么优异，得力于大家认真复习，而不是题目太简单，这才是班主任欣慰的原因所在。',py:'Zhè cì quán bān chéngjì zhème yōuyì, délì yú dàjiā rènzhēn fùxí, ér bú shì tímù tài jiǎndān, zhè cái shì bānzhǔrèn xīnwèi de yuányīn suǒzài.',goiY:['优异','得力于','而不是','……的原因所在'],giai:'得力于 nêu nguyên nhân thành công; 而不是 phủ định nguyên nhân khác; câu cuối ……才是……的原因所在 = "đó mới chính là lý do". 欣慰 ôn bài 2.'},
-  {vi:'Cho dù sau này đi du học, tôi cũng phải giữ gìn truyền thống ăn uống của gia đình, bởi trong những món ăn ấy chứa đựng nỗi nhớ thương của bố mẹ dành cho tôi.',zh:'即便将来出国留学，我也要继承家里的饮食传统，因为那些饭菜里蕴藏着父母对我的惦记。',py:'Jíbiàn jiānglái chūguó liúxué, wǒ yě yào jìchéng jiā li de yǐnshí chuántǒng, yīnwèi nàxiē fàncài li yùncángzhe fùmǔ duì wǒ de diànjì.',goiY:['即便……也……','继承','饮食','蕴藏着'],giai:'即便 + giả thiết tương lai, 也 + quyết tâm không đổi; "trong … chứa đựng …" = nơi chứa + 蕴藏着 + thứ được chứa. "Giữ gìn truyền thống" = 继承传统. 惦记 ôn bài 3.'},
-  {vi:'Phàm là những bạn học thật sự giỏi đều không chỉ bó hẹp trong sách giáo khoa, mà còn giỏi tìm cảm hứng từ cuộc sống; đây có lẽ chính là bí quyết thành công của họ.',zh:'凡是真正学得好的同学，都不只局限于课本，而且善于从生活中寻找灵感，这也许就是他们成功的奥秘所在。',py:'Fánshì zhēnzhèng xué de hǎo de tóngxué, dōu bù zhǐ júxiàn yú kèběn, érqiě shànyú cóng shēnghuó zhōng xúnzhǎo línggǎn, zhè yěxǔ jiù shì tāmen chénggōng de àomì suǒzài.',goiY:['凡是……都……','局限于','灵感','……的奥秘所在'],giai:'凡是 + nhóm người có tính chất cụ thể + 都; 不只……而且…… tăng tiến; câu kết 这……就是……的奥秘所在 tổng kết như câu cuối bài khoá. "Cảm hứng" = 灵感, không phải 预感 (linh cảm).'}
+  {vi:'Tuy lúc đầu các bạn chê cười ý tưởng của cô ấy, nhưng cô ấy không bỏ cuộc, cuối cùng tác phẩm của cô đã được thầy giáo công nhận.',zh:'虽然当初同学们嘲笑她的构思，但她没有放弃，最后她的作品得到了老师的认可。',py:'Suīrán dāngchū tóngxuémen cháoxiào tā de gòusī, dàn tā méiyǒu fàngqì, zuìhòu tā de zuòpǐn dédàole lǎoshī de rènkě.',goiY:['虽然……但……','构思','嘲笑','得到……的认可'],giai:'虽然 (sự thật) + 但 (bước ngoặt); "được … công nhận" = 得到……的认可, gọn hơn câu bị động 被……认可. 嘲笑 ôn bài 1, 当初 ôn bài 6.'},
+  {vi:'Nhà hàng Việt này không những nguyên liệu chuẩn gốc, mà còn sáng tạo biến món Trung Quốc thành khẩu vị Việt, đến mức cả khách Trung Quốc cũng nóng lòng tới ăn thử.',zh:'这家越南餐厅不但食材正宗，而且创新式地把中国菜做成越南口味，以至中国客人也迫不及待地来尝一尝。',py:'Zhè jiā Yuènán cāntīng búdàn shícái zhèngzōng, érqiě chuàngxīn shì de bǎ Zhōngguó cài zuòchéng Yuènán kǒuwèi, yǐzhì Zhōngguó kèrén yě pòbùjídài de lái cháng yi cháng.',goiY:['不但……而且……','正宗','创新式地','以至'],giai:'Ba vế: 不但……而且…… tăng tiến, 以至 dẫn kết quả; trạng ngữ 创新式地 đứng trước 把. 迫不及待 ôn bài 5.'},
+  {vi:'Ẩm thực của vùng này qua hơn một trăm năm phát triển đã dần hình thành hệ thống riêng của mình.',zh:'这个区域的饮食经过一百多年的发展，逐渐形成了自己的体系。',py:'Zhège qūyù de yǐnshí jīngguò yìbǎi duō nián de fāzhǎn, zhújiàn xíngchéngle zìjǐ de tǐxì.',goiY:['区域','饮食','经过……的发展','体系'],giai:'"Ẩm thực" = 饮食 (trang trọng); "hình thành hệ thống" = 形成……体系; 经过 + quá trình đặt trước động từ chính.'},
+  {vi:'Phàm là những bạn học thật sự giỏi đều không chỉ bó hẹp trong sách giáo khoa, mà còn giỏi tìm cảm hứng từ cuộc sống; đây có lẽ chính là bí quyết thành công của họ.',zh:'凡是真正学得好的同学，都不只局限于课本，而且善于从生活中寻找灵感，这也许就是他们成功的奥秘所在。',py:'Fánshì zhēnzhèng xué de hǎo de tóngxué, dōu bù zhǐ júxiàn yú kèběn, érqiě shànyú cóng shēnghuó zhōng xúnzhǎo línggǎn, zhè yěxǔ jiù shì tāmen chénggōng de àomì suǒzài.',goiY:['凡是……都……','局限于','灵感','……的奥秘所在'],giai:'凡是 + nhóm người có tính chất cụ thể + 都; 不只……而且…… tăng tiến; câu kết 这……就是……的奥秘所在 tổng kết như câu cuối bài khoá. "Cảm hứng" = 灵感.'}
 ];
 
-// Chiều Trung → Việt — bám ý bài khoá, nội dung khác chiều trên
+// ══════════════════════════════════════════
+// Dịch Trung → Việt — câu mới, không trùng chiều trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Ẩm thực của bất kỳ dân tộc nào cũng không chỉ đơn thuần là chuyện ăn uống, nó còn chứa đựng tinh thần của dân tộc ấy.',zh:'任何一个民族的饮食都不仅仅是饮食，它还蕴藏着这个民族的精神。',py:'Rènhé yí ge mínzú de yǐnshí dōu bù jǐnjǐn shì yǐnshí, tā hái yùncángzhe zhège mínzú de jīngshén.',goiY:['饮食 = ẩm thực, ăn uống','蕴藏着 = chứa đựng'],giai:'任何……都…… = bất kỳ … nào cũng; 不仅仅是 = không chỉ đơn thuần là. 饮食 lặp lại lần hai nên dịch "chuyện ăn uống" cho tự nhiên.'},
-  {vi:'Chữ "hoà" bao hàm ý "trung hoà" và "hài hoà"; "trung hoà" tức là dung hoà, điều hoà những sự vật có tính chất khác nhau.',zh:'“和”包含“中和”与“和谐”之意，“中和”就是折中、调和性质不同的事物。',py:'"Hé" bāohán "zhōnghé" yǔ "héxié" zhī yì, "zhōnghé" jiù shì zhézhōng, tiáohé xìngzhì bù tóng de shìwù.',goiY:['和谐 = hài hoà','调和 = điều hoà','之意 = ý (văn viết)'],giai:'之意 = 的意思 (văn viết); 折中、调和 là hai động từ chung một tân ngữ "những sự vật có tính chất khác nhau".'},
-  {vi:'Phàm là thực phẩm ngoại lai có lịch sử chưa lâu đời, người ta chỉ cần nhìn tên gọi là phân biệt rõ được "gốc ngoại" của nó.',zh:'凡是历史不够悠久的外来食品，人们从名称上就能清晰地分辨出它的洋身份。',py:'Fánshì lìshǐ bú gòu yōujiǔ de wàilái shípǐn, rénmen cóng míngchēng shang jiù néng qīngxī de fēnbiàn chū tā de yáng shēnfèn.',goiY:['凡是 = phàm là','清晰地 = rõ ràng','分辨 = phân biệt'],giai:'从……上 = dựa vào …; 洋身份 = thân phận "Tây", gốc ngoại (洋 = nước ngoài, như 洋葱 hành tây). Không dịch 分辨 là "biện luận".'},
-  {vi:'Văn hoá ẩm thực Trung Quốc luôn có sức hấp dẫn là vì nó giỏi tiếp thu những điểm ưu tú của các khu vực khác nhau, nhờ vậy mà huy hoàng đến tận hôm nay.',zh:'中国饮食文化始终具有魅力，是因为它善于吸收不同区域的优异之处，以至辉煌至今。',py:'Zhōngguó yǐnshí wénhuà shǐzhōng jùyǒu mèilì, shì yīnwèi tā shànyú xīshōu bù tóng qūyù de yōuyì zhī chù, yǐzhì huīhuáng zhì jīn.',goiY:['是因为 = là vì','优异之处 = điểm ưu tú','以至 = đến mức, nhờ vậy mà','辉煌 = huy hoàng'],giai:'A，是因为 B: kết quả trước, nguyên nhân sau; 以至 ở đây dẫn kết quả tích cực nên dịch "nhờ vậy mà …" thay vì "đến nỗi".'},
-  {vi:'Sau thời Hán, Đường, thực phẩm ngoại lai đi vào hệ thống ẩm thực Trung Hoa, làm phong phú thêm rất nhiều chủng loại thực phẩm Trung Quốc.',zh:'汉唐以后，外来食物进入了中华饮食体系，极大地丰富了中国食物的品种。',py:'Hàn Táng yǐhòu, wàilái shíwù jìnrùle Zhōnghuá yǐnshí tǐxì, jí dà de fēngfùle Zhōngguó shíwù de pǐnzhǒng.',goiY:['体系 = hệ thống','极大地 = rất nhiều','品种 = chủng loại'],giai:'丰富 ở đây là động từ (làm phong phú); 极大地 là trạng ngữ, dịch "rất nhiều / hết sức". 汉唐 = hai triều Hán, Đường.'},
-  {vi:'Hành, gừng, tỏi là những gia vị được dùng nhiều nhất trong món Trung; vì đã vào Trung Quốc từ rất lâu đời nên nhiều người coi chúng là nguyên liệu chính gốc Trung Quốc.',zh:'葱、姜、蒜是中餐中使用频率最高的调料，因为进入中国的年代久远，很多人把它们当成了正宗的中国食材。',py:'Cōng, jiāng, suàn shì zhōngcān zhōng shǐyòng pínlǜ zuì gāo de tiáoliào, yīnwèi jìnrù Zhōngguó de niándài jiǔyuǎn, hěn duō rén bǎ tāmen dàngchéngle zhèngzōng de Zhōngguó shícái.',goiY:['频率 = tần suất','调料 = gia vị','把……当成…… = coi … là …','正宗 = chính gốc'],giai:'使用频率最高 nên dịch thoát "được dùng nhiều nhất" thay vì "tần suất sử dụng cao nhất"; 把 A 当成 B = coi A là B.'},
-  {vi:'Cho dù là nguyên liệu ngoại lai, người Trung Quốc vẫn có thể chế biến theo cách Trung Quốc; tất cả những điều này đều nhờ vào tư duy cởi mở và cảm hứng sáng tạo.',zh:'即便是外来食材，中国人照样可以用中国方式加工烹饪，这一切都得力于开放的思维和灵感。',py:'Jíbiàn shì wàilái shícái, Zhōngguórén zhàoyàng kěyǐ yòng Zhōngguó fāngshì jiāgōng pēngrèn, zhè yíqiè dōu délì yú kāifàng de sīwéi hé línggǎn.',goiY:['即便 = cho dù','照样 = vẫn (như thường)','得力于 = nhờ vào','灵感 = cảm hứng'],giai:'照样 thay 也 ở vế sau câu 即便; 得力于 dịch "nhờ vào" — đừng dịch "đắc lực"; 灵感 là "cảm hứng", không phải "linh cảm". 思维 ôn bài 5.'},
-  {vi:'Thời Nam Bắc triều, ghế "hồ sàng" và bàn ăn lớn bắt đầu thịnh hành, phá vỡ giới hạn ngồi quỳ mà ăn, từ đó hình thành kiểu ngồi quây quần ăn chung.',zh:'南北朝时期，胡床和较大的餐桌开始流行，打破了跪坐而食的局限，于是形成了围坐合餐的形式。',py:'Nánběicháo shíqī, húchuáng hé jiào dà de cānzhuō kāishǐ liúxíng, dǎpòle guìzuò ér shí de júxiàn, yúshì xíngchéngle wéizuò hécān de xíngshì.',goiY:['跪坐而食 = ngồi quỳ mà ăn','局限 = giới hạn','于是 = thế là, từ đó'],giai:'Chuỗi nguyên nhân — kết quả nối bằng 于是; 跪坐而食: 而 nối cách thức (ngồi quỳ) với hành động (ăn); 围坐合餐 = ngồi quây quần ăn chung.'},
-  {vi:'Một con cá dưới hồ, một cây rau trồng trên đồi, qua ý tưởng tỉ mỉ và cách nấu khéo léo, cho dù chỉ là một bữa chay cũng có thể thành mỹ vị nhân gian.',zh:'一条湖里的鱼，一棵丘陵上种植的菜，经过精心构思和巧妙烹饪，即便仅为一餐素食，也能成为人间美味。',py:'Yì tiáo hú li de yú, yì kē qiūlíng shang zhòngzhí de cài, jīngguò jīngxīn gòusī hé qiǎomiào pēngrèn, jíbiàn jǐn wéi yì cān sùshí, yě néng chéngwéi rénjiān měiwèi.',goiY:['丘陵 = đồi','精心构思 = ý tưởng tỉ mỉ','即便……也…… = dù … cũng …','人间美味 = mỹ vị nhân gian'],giai:'Câu dài nhiều vế ngang hàng; 即便仅为 (văn viết) = 即使只是 (cho dù chỉ là). Giữ nhịp liệt kê "một con cá…, một cây rau…" khi dịch.'},
-  {vi:'Văn hoá ẩm thực Trung Hoa ngay từ ngày ra đời đã hướng ra thế giới, vừa kế thừa vừa cải cách, không ngừng đưa vào yếu tố mới — đó chính là bí quyết giúp nó tràn đầy sức sống.',zh:'中华饮食文化自诞生之日起就面向世界，边继承，边改革，不断引进新元素，这就是其充满活力的奥秘所在。',py:'Zhōnghuá yǐnshí wénhuà zì dànshēng zhī rì qǐ jiù miànxiàng shìjiè, biān jìchéng, biān gǎigé, búduàn yǐnjìn xīn yuánsù, zhè jiù shì qí chōngmǎn huólì de àomì suǒzài.',goiY:['自……之日起 = ngay từ ngày …','边……边…… = vừa … vừa …','元素 = yếu tố','奥秘所在 = bí quyết nằm ở đó'],giai:'其 = 它的 (văn viết); ……的奥秘所在 dịch "bí quyết (giúp) …", không dịch cứng "chỗ bí ẩn ở đó"; 元素 ở đây là "yếu tố", không phải "nguyên tố".'}
+  {vi:'Cùng là nước, nhưng ở những nhiệt độ khác nhau sẽ có những hình thái khác nhau.',zh:'同样是水，在不同的温度下会呈现出不同的形态。',py:'Tóngyàng shì shuǐ, zài bùtóng de wēndù xià huì chéngxiàn chū bùtóng de xíngtài.',goiY:['同样是 = cùng là','呈现出 = hiện ra, có','形态 = hình thái'],giai:'呈现出……形态 ôn 呈现 (bài 8); 在……下 = trong điều kiện…; 形态 dịch "hình thái, trạng thái".'},
+  {vi:'Cho dù là cải thảo bình thường nhất, đến tay anh ấy vẫn có thể biến thành món ngon tuyệt trần.',zh:'即便是最普通的白菜，到了他手里照样能做成人间美味。',py:'Jíbiàn shì zuì pǔtōng de báicài, dàole tā shǒu li zhàoyàng néng zuòchéng rénjiān měiwèi.',goiY:['即便 = cho dù','照样 = vẫn cứ','人间美味 = món ngon tuyệt trần'],giai:'即便……照样…… = dù… vẫn cứ…; 人间美味 không dịch "mỹ vị nhân gian" mà dịch "món ngon tuyệt trần / ngon nhất đời".'},
+  {vi:'Thành phố này phát triển nhanh quá, đến nỗi mười năm sau tôi quay lại gần như không tìm ra khu nhà mình từng sống.',zh:'这座城市发展得太快了，以至我十年后回来，几乎找不到原来住过的那个小区。',py:'Zhè zuò chéngshì fāzhǎn de tài kuài le, yǐzhì wǒ shí nián hòu huílai, jīhū zhǎo bu dào yuánlái zhùguo de nàge xiǎoqū.',goiY:['以至 = đến nỗi','几乎 = gần như','原来住过的 = từng sống trước đây'],giai:'以至 nối kết quả của mức độ cao ở vế trước → "đến nỗi / đến mức".'},
+  {vi:'Ở thành phố, rất khó tìm được một chốn yên tĩnh như thế này.',zh:'在城市里，很难找到这样一个安静的所在。',py:'Zài chéngshì li, hěn nán zhǎodào zhèyàng yí ge ānjìng de suǒzài.',goiY:['所在 = nơi, chốn (văn viết)'],giai:'……的所在 = nơi, chốn (văn viết); dịch "chốn / nơi", khác 所在 trong "原因所在" (chính là chỗ…).'},
+  {vi:'Đối với nhiều người trẻ, thêm vài yếu tố phương Tây vào món truyền thống không phải chuyện xấu, ngược lại còn thú vị hơn.',zh:'对很多年轻人而言，在传统菜里加入一些西方元素并非坏事，反而更有意思。',py:'Duì hěn duō niánqīngrén ér yán, zài chuántǒng cài li jiārù yìxiē xīfāng yuánsù bìngfēi huàishì, fǎn\'ér gèng yǒu yìsi.',goiY:['对……而言 = đối với…','元素 = yếu tố','并非 = không phải'],giai:'Ôn 对……而言 (bài 8) và 并非 (bài 7); 反而 = ngược lại còn.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1810,9 +1744,9 @@ var writingData = {
     'Câu kết có nêu được "bí quyết" (面向世界，边继承边改革，不断引进新元素) chưa?'
   ],
   model:{
-    zh:'中国的饮食文化始终具有魅力，是因为它不仅民族特性鲜明，而且善于吸收不同民族的优异之处，以至辉煌至今。中国文化的核心是“和”，即折中、调和性质不同的事物。原本，中华饮食的食物大多来自辽阔的土地，经过精心烹饪，即便是一餐素食，也能成为人间美味；汉唐以后，外来食物进入了中华饮食体系；近代，西方饮食思想也得到了认可。在食材方面，中华饮食以本国物产为基本原料，同时培育外来品种，凡是历史不够悠久的外来食品，人们从名称上就能分辨出来。至于葱、姜、蒜等调料，因其进入中国年代久远，很多人甚至把它们当成了正宗的中国食材。在加工过程中，中国人照样可以用中国方式烹饪外来食材，这得力于他们开放的思维。在就餐方式上，先秦至唐代采用分餐式；南北朝时期，胡床和较大的餐桌开始流行，打破了跪坐而食的局限，于是形成了围坐合餐的形式。可以说，中华饮食文化面向世界，边继承，边改革，不断引进新元素，这就是它充满活力的奥秘所在。',
-    py:'Zhōngguó de yǐnshí wénhuà shǐzhōng jùyǒu mèilì, shì yīnwèi tā bùjǐn mínzú tèxìng xiānmíng, érqiě shànyú xīshōu bù tóng mínzú de yōuyì zhī chù, yǐzhì huīhuáng zhì jīn. Zhōngguó wénhuà de héxīn shì "hé", jí zhézhōng, tiáohé xìngzhì bù tóng de shìwù. Yuánběn, Zhōnghuá yǐnshí de shíwù dàduō láizì liáokuò de tǔdì, jīngguò jīngxīn pēngrèn, jíbiàn shì yì cān sùshí, yě néng chéngwéi rénjiān měiwèi; Hàn Táng yǐhòu, wàilái shíwù jìnrùle Zhōnghuá yǐnshí tǐxì; jìndài, xīfāng yǐnshí sīxiǎng yě dédàole rènkě. Zài shícái fāngmiàn, Zhōnghuá yǐnshí yǐ běnguó wùchǎn wéi jīběn yuánliào, tóngshí péiyù wàilái pǐnzhǒng, fánshì lìshǐ bú gòu yōujiǔ de wàilái shípǐn, rénmen cóng míngchēng shang jiù néng fēnbiàn chūlái. Zhìyú cōng, jiāng, suàn děng tiáoliào, yīn qí jìnrù Zhōngguó niándài jiǔyuǎn, hěn duō rén shènzhì bǎ tāmen dàngchéngle zhèngzōng de Zhōngguó shícái. Zài jiāgōng guòchéng zhōng, Zhōngguórén zhàoyàng kěyǐ yòng Zhōngguó fāngshì pēngrèn wàilái shícái, zhè délì yú tāmen kāifàng de sīwéi. Zài jiùcān fāngshì shang, Xiān Qín zhì Táng dài cǎiyòng fēncān shì; Nánběicháo shíqī, húchuáng hé jiào dà de cānzhuō kāishǐ liúxíng, dǎpòle guìzuò ér shí de júxiàn, yúshì xíngchéngle wéizuò hécān de xíngshì. Kěyǐ shuō, Zhōnghuá yǐnshí wénhuà miànxiàng shìjiè, biān jìchéng, biān gǎigé, búduàn yǐnjìn xīn yuánsù, zhè jiù shì tā chōngmǎn huólì de àomì suǒzài.',
-    vn:'Văn hoá ẩm thực Trung Quốc luôn có sức hấp dẫn, là vì nó không những mang bản sắc dân tộc rõ nét, mà còn giỏi tiếp thu những điểm ưu tú của các dân tộc khác, nhờ vậy huy hoàng đến tận hôm nay. Cốt lõi của văn hoá Trung Quốc là chữ "hoà", tức là dung hoà, điều hoà những sự vật có tính chất khác nhau. Ban đầu, thực phẩm của ẩm thực Trung Hoa phần lớn đến từ vùng đất bao la, qua nấu nướng công phu, cho dù chỉ là một bữa chay cũng thành mỹ vị nhân gian; sau thời Hán, Đường, thực phẩm ngoại lai đi vào hệ thống ẩm thực Trung Hoa; thời cận đại, tư tưởng ăn uống phương Tây cũng được chấp nhận. Về nguyên liệu, ẩm thực Trung Hoa lấy sản vật trong nước làm nguyên liệu cơ bản, đồng thời gây giống các giống ngoại lai; phàm là thực phẩm ngoại lai có lịch sử chưa lâu đời, người ta nhìn tên là phân biệt được. Còn các gia vị như hành, gừng, tỏi, vì đã vào Trung Quốc từ rất lâu, nhiều người thậm chí coi chúng là nguyên liệu chính gốc Trung Quốc. Trong quá trình chế biến, người Trung Quốc vẫn có thể nấu nguyên liệu ngoại lai theo cách của mình, điều đó là nhờ tư duy cởi mở của họ. Về cách dùng bữa, từ Tiên Tần đến đời Đường người ta ăn theo kiểu chia suất riêng; thời Nam Bắc triều, ghế "hồ sàng" và bàn ăn lớn bắt đầu thịnh hành, phá vỡ giới hạn ngồi quỳ mà ăn, từ đó hình thành kiểu ngồi quây quần ăn chung. Có thể nói, văn hoá ẩm thực Trung Hoa hướng ra thế giới, vừa kế thừa vừa cải cách, không ngừng đưa vào yếu tố mới — đó chính là bí quyết giúp nó tràn đầy sức sống.'
+    zh:'中国的饮食文化始终具有魅力，是因为它不仅民族特性鲜明，而且善于吸收不同民族的优异之处，以至辉煌至今。中国文化的核心是“和”，即折中、调和性质不同的事物。原本，中华饮食的食物大多来自辽阔的土地，经过精心烹饪，即便是一餐素食，也能成为人间美味；汉唐以后，外来食物进入了中华饮食体系；近代，西方饮食思想也得到了认可。在食材方面，中华饮食以本国物产为基本原料，同时培育外来品种，凡是历史不够悠久的外来食品，人们从名称上就能分辨出来。至于中餐里常用的几种调料，因其进入中国年代久远，很多人甚至把它们当成了正宗的中国食材。在加工过程中，中国人照样可以用中国方式烹饪外来食材，这得力于他们开放的思维。在就餐方式上，先秦至唐代采用分餐式；南北朝时期，胡床和较大的餐桌开始流行，打破了跪坐而食的局限，于是形成了围坐合餐的形式。可以说，中华饮食文化面向世界，边继承，边改革，不断引进新元素，这就是它充满活力的奥秘所在。',
+    py:'Zhōngguó de yǐnshí wénhuà shǐzhōng jùyǒu mèilì, shì yīnwèi tā bùjǐn mínzú tèxìng xiānmíng, érqiě shànyú xīshōu bù tóng mínzú de yōuyì zhī chù, yǐzhì huīhuáng zhì jīn. Zhōngguó wénhuà de héxīn shì "hé", jí zhézhōng, tiáohé xìngzhì bù tóng de shìwù. Yuánběn, Zhōnghuá yǐnshí de shíwù dàduō láizì liáokuò de tǔdì, jīngguò jīngxīn pēngrèn, jíbiàn shì yì cān sùshí, yě néng chéngwéi rénjiān měiwèi; Hàn Táng yǐhòu, wàilái shíwù jìnrùle Zhōnghuá yǐnshí tǐxì; jìndài, xīfāng yǐnshí sīxiǎng yě dédàole rènkě. Zài shícái fāngmiàn, Zhōnghuá yǐnshí yǐ běnguó wùchǎn wéi jīběn yuánliào, tóngshí péiyù wàilái pǐnzhǒng, fánshì lìshǐ bú gòu yōujiǔ de wàilái shípǐn, rénmen cóng míngchēng shang jiù néng fēnbiàn chūlái. Zhìyú zhōngcān li chángyòng de jǐ zhǒng tiáoliào, yīn qí jìnrù Zhōngguó niándài jiǔyuǎn, hěn duō rén shènzhì bǎ tāmen dàngchéngle zhèngzōng de Zhōngguó shícái. Zài jiāgōng guòchéng zhōng, Zhōngguórén zhàoyàng kěyǐ yòng Zhōngguó fāngshì pēngrèn wàilái shícái, zhè délì yú tāmen kāifàng de sīwéi. Zài jiùcān fāngshì shang, Xiān Qín zhì Táng dài cǎiyòng fēncān shì; Nánběicháo shíqī, húchuáng hé jiào dà de cānzhuō kāishǐ liúxíng, dǎpòle guìzuò ér shí de júxiàn, yúshì xíngchéngle wéizuò hécān de xíngshì. Kěyǐ shuō, Zhōnghuá yǐnshí wénhuà miànxiàng shìjiè, biān jìchéng, biān gǎigé, búduàn yǐnjìn xīn yuánsù, zhè jiù shì tā chōngmǎn huólì de àomì suǒzài.',
+    vn:'Văn hoá ẩm thực Trung Quốc luôn có sức hấp dẫn, là vì nó không những mang bản sắc dân tộc rõ nét, mà còn giỏi tiếp thu những điểm ưu tú của các dân tộc khác, nhờ vậy huy hoàng đến tận hôm nay. Cốt lõi của văn hoá Trung Quốc là chữ "hoà", tức là dung hoà, điều hoà những sự vật có tính chất khác nhau. Ban đầu, thực phẩm của ẩm thực Trung Hoa phần lớn đến từ vùng đất bao la, qua nấu nướng công phu, cho dù chỉ là một bữa chay cũng thành mỹ vị nhân gian; sau thời Hán, Đường, thực phẩm ngoại lai đi vào hệ thống ẩm thực Trung Hoa; thời cận đại, tư tưởng ăn uống phương Tây cũng được chấp nhận. Về nguyên liệu, ẩm thực Trung Hoa lấy sản vật trong nước làm nguyên liệu cơ bản, đồng thời gây giống các giống ngoại lai; phàm là thực phẩm ngoại lai có lịch sử chưa lâu đời, người ta nhìn tên là phân biệt được. Còn mấy loại gia vị thường dùng trong món Trung như hành, gừng, tỏi, vì đã vào Trung Quốc từ rất lâu, nhiều người thậm chí coi chúng là nguyên liệu chính gốc Trung Quốc. Trong quá trình chế biến, người Trung Quốc vẫn có thể nấu nguyên liệu ngoại lai theo cách của mình, điều đó là nhờ tư duy cởi mở của họ. Về cách dùng bữa, từ Tiên Tần đến đời Đường người ta ăn theo kiểu chia suất riêng; thời Nam Bắc triều, ghế "hồ sàng" và bàn ăn lớn bắt đầu thịnh hành, phá vỡ giới hạn ngồi quỳ mà ăn, từ đó hình thành kiểu ngồi quây quần ăn chung. Có thể nói, văn hoá ẩm thực Trung Hoa hướng ra thế giới, vừa kế thừa vừa cải cách, không ngừng đưa vào yếu tố mới — đó chính là bí quyết giúp nó tràn đầy sức sống.'
   }
 };
 
@@ -1820,205 +1754,145 @@ var writingData = {
 // LUYỆN NÓI — đúng bảng 练习5 của sách: 根据提示，简述课文主要内容 (tr. 114–115)
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Đây là bảng bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b>. Mỗi câu hỏi là một dòng của bảng (dòng "中华饮食的发展历程" trong sách chia 4 ô nhỏ: 食物 · 食材 · 加工过程 · 就餐方式), cột gợi ý giữ nguyên như sách. Bấm loa nghe câu hỏi, <b>tự ghi âm câu trả lời trước</b> rồi mới mở câu mẫu. Cố dùng đúng các từ trong gợi ý.',
-  questions:[
-    {q_zh:'中国饮食文化为什么具有魅力？',
-     q_vn:'Vì sao văn hoá ẩm thực Trung Quốc có sức hấp dẫn?',
-     hint:'不仅……，而且……，以至……',
-     sample:'中国的饮食文化历经数千年，始终具有魅力，是因为它不仅民族特性鲜明，而且善于吸收不同国家、不同区域、不同民族的优异之处，以至辉煌至今。',
-     sample_vn:'Văn hoá ẩm thực Trung Quốc trải qua mấy nghìn năm vẫn luôn hấp dẫn, là vì nó không những mang bản sắc dân tộc rõ nét, mà còn giỏi tiếp thu điểm ưu tú của các quốc gia, khu vực, dân tộc khác, nhờ vậy huy hoàng đến nay.',
-     note:'Khung 是因为……不仅……而且……以至…… nói liền một hơi; 以至 ở cuối dẫn kết quả tốt (辉煌至今).'},
-    {q_zh:'中国文化的核心',
-     q_vn:'Cốt lõi của văn hoá Trung Quốc',
-     hint:'“和”',
-     sample:'中国文化的核心是一个“和”字。“和”包含“中和”与“和谐”的意思，“中和”就是折中、调和性质不同的事物。',
-     sample_vn:'Cốt lõi của văn hoá Trung Quốc là chữ "hoà". "Hoà" bao hàm ý "trung hoà" và "hài hoà"; "trung hoà" tức là dung hoà, điều hoà những sự vật có tính chất khác nhau.',
-     note:'Giải thích một khái niệm: A 的核心是…… → A 包含……的意思 → ……就是…….'},
-    {q_zh:'中华饮食的发展历程——食物',
-     q_vn:'Quá trình phát triển của ẩm thực Trung Hoa — về thực phẩm',
-     hint:'原本；汉唐以后；近代',
-     sample:'原本，中华饮食的食物来自辽阔的土地，比如山上的飞禽走兽、湖泊里的鱼、丘陵上种植的菜，经过精心烹饪，即便是素食也很美味。汉唐以后，中亚及东南亚的食物进入了中华饮食体系，丰富了食物的品种；近代，西方饮食思想得到认可，现代的中华饮食形态逐渐形成。',
-     sample_vn:'Ban đầu, thực phẩm của ẩm thực Trung Hoa đến từ vùng đất bao la — chim thú trên núi, cá dưới hồ, rau trồng trên đồi — qua nấu nướng công phu, dù là đồ chay cũng rất ngon. Sau thời Hán, Đường, thực phẩm Trung Á và Đông Nam Á đi vào hệ thống ẩm thực Trung Hoa, làm phong phú chủng loại; thời cận đại, tư tưởng ăn uống phương Tây được chấp nhận, hình thái ẩm thực Trung Hoa hiện đại dần hình thành.',
-     note:'Ba mốc thời gian = ba câu; dùng dấu chấm phẩy (；) hoặc ngắt câu sau mỗi mốc.'},
-    {q_zh:'中华饮食的发展历程——食材',
-     q_vn:'Quá trình phát triển của ẩm thực Trung Hoa — về nguyên liệu',
-     hint:'以……为基本原料；同时；凡是；至于……，因其……，甚至……',
-     sample:'在食材栽培方面，中华饮食以本国物产为基本原料，同时引进、培育外来品种。凡是历史不够悠久的外来食品，人们从名称上就能分辨出来。至于葱、姜、蒜等调料，因其进入中国年代久远，很多中国人甚至把它们当成了正宗的中国食材。',
-     sample_vn:'Về trồng trọt nguyên liệu, ẩm thực Trung Hoa lấy sản vật trong nước làm nguyên liệu cơ bản, đồng thời nhập về và gây giống các giống ngoại lai. Phàm là thực phẩm ngoại lai có lịch sử chưa lâu, người ta nhìn tên là nhận ra. Còn các gia vị như hành, gừng, tỏi, vì đã vào Trung Quốc từ lâu, nhiều người Trung Quốc thậm chí coi chúng là nguyên liệu chính gốc.',
-     note:'至于 dùng để chuyển sang một trường hợp khác trong cùng chủ đề; 因其 = 因为它 (văn viết).'},
-    {q_zh:'中华饮食的发展历程——加工过程',
-     q_vn:'Quá trình phát triển của ẩm thực Trung Hoa — về chế biến',
-     hint:'……照样……，得力于……',
-     sample:'在加工过程中，中国人照样可以用中国方式烹饪外来食材，使它美味诱人。这得力于中国人能充分认识异域食物的内在价值，用开放的思维和灵感，创新式地把外来食物变成中国饮食的一部分。',
-     sample_vn:'Trong quá trình chế biến, người Trung Quốc vẫn có thể nấu nguyên liệu ngoại lai theo cách Trung Quốc, khiến chúng thơm ngon hấp dẫn. Điều này là nhờ người Trung Quốc nhận thức đầy đủ giá trị nội tại của thực phẩm nước ngoài, bằng tư duy cởi mở và cảm hứng sáng tạo, biến thực phẩm ngoại lai thành một phần của ẩm thực Trung Quốc.',
-     note:'这得力于 + nguyên nhân: nói rõ "nhờ vào đâu". 照样 = vẫn (dù nguyên liệu là của nước ngoài).'},
-    {q_zh:'中华饮食的发展历程——就餐方式',
-     q_vn:'Quá trình phát triển của ẩm thực Trung Hoa — về cách thức dùng bữa',
-     hint:'先秦至唐代；南北朝时期',
-     sample:'先秦至唐代，中国人采用分餐式方式就餐。南北朝时期，一种可以折起来的坐具“胡床”和较大的餐桌开始在中原流行，打破了跪坐而食的局限，形成了围坐合餐的形式。',
-     sample_vn:'Từ Tiên Tần đến đời Đường, người Trung Quốc dùng bữa theo kiểu chia suất riêng. Thời Nam Bắc triều, đồ ngồi gập được gọi là "hồ sàng" và bàn ăn lớn bắt đầu thịnh hành ở Trung Nguyên, phá vỡ giới hạn ngồi quỳ mà ăn, hình thành kiểu ngồi quây quần ăn chung.',
-     note:'Hai mốc thời gian đối lập: trước (分餐) — sau (合餐); nhớ cụm 打破了……的局限.'},
-    {q_zh:'总结',
-     q_vn:'Tổng kết',
-     hint:'面向……，边……边……',
-     sample:'可以说，中华饮食文化自诞生之日起，就面向世界，边继承，边改革，不断引进新元素，这就是它充满活力的奥秘所在。',
-     sample_vn:'Có thể nói, văn hoá ẩm thực Trung Hoa ngay từ ngày ra đời đã hướng ra thế giới, vừa kế thừa vừa cải cách, không ngừng đưa vào yếu tố mới — đó chính là bí quyết giúp nó tràn đầy sức sống.',
-     note:'Mở đầu bằng 可以说 để tổng kết; kết bằng ……的奥秘所在.'}
+  intro: 'Đây là bảng bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b>. Mỗi câu hỏi là một dòng của bảng (dòng "中华饮食的发展历程" trong sách chia 4 ô nhỏ: 食物 · 食材 · 加工过程 · 就餐方式), cột gợi ý giữ nguyên như sách. Bấm loa nghe câu hỏi, <b>tự ghi âm câu trả lời trước</b> rồi mới mở câu mẫu. Cố dùng đúng các từ trong gợi ý.',
+  questions: [
+    {q_zh:'中国饮食文化为什么具有魅力？',q_vn:'Vì sao văn hoá ẩm thực Trung Quốc có sức hấp dẫn?',hint:'不仅……，而且……，以至……',sample:'中国的饮食文化历经数千年，始终具有魅力，是因为它不仅民族特性鲜明，而且善于吸收其他国家、其他地区、其他民族的优异之处，以至辉煌至今。',sample_vn:'Văn hoá ẩm thực Trung Quốc trải qua mấy nghìn năm vẫn luôn hấp dẫn, là vì nó không những mang bản sắc dân tộc rõ nét, mà còn giỏi tiếp thu điểm ưu tú của các quốc gia, khu vực, dân tộc khác, nhờ vậy huy hoàng đến nay.',note:'Khung 是因为……不仅……而且……以至…… nói liền một hơi; 以至 ở cuối dẫn kết quả tốt (辉煌至今).'},
+    {q_zh:'中国文化的核心',q_vn:'Cốt lõi của văn hoá Trung Quốc',hint:'“和”',sample:'中国文化的核心是一个“和”字。“和”包含“中和”与“和谐”的意思，“中和”就是折中、调和性质不同的事物。',sample_vn:'Cốt lõi của văn hoá Trung Quốc là chữ "hoà". "Hoà" bao hàm ý "trung hoà" và "hài hoà"; "trung hoà" tức là dung hoà, điều hoà những sự vật có tính chất khác nhau.',note:'Giải thích một khái niệm: A 的核心是…… → A 包含……的意思 → ……就是…….'},
+    {q_zh:'中华饮食的发展历程——食物',q_vn:'Quá trình phát triển của ẩm thực Trung Hoa — về thực phẩm',hint:'原本；汉唐以后；近代',sample:'原本，中华饮食的食物来自辽阔的土地，比如山上的飞禽走兽、湖泊里的鱼、丘陵上种植的菜，经过精心烹饪，即便是素食也很美味。汉唐以后，中亚及东南亚的食物进入了中华饮食体系，丰富了食物的品种；近代，西方饮食思想得到认可，现代的中华饮食形态逐渐形成。',sample_vn:'Ban đầu, thực phẩm của ẩm thực Trung Hoa đến từ vùng đất bao la — chim thú trên núi, cá dưới hồ, rau trồng trên đồi — qua nấu nướng công phu, dù là đồ chay cũng rất ngon. Sau thời Hán, Đường, thực phẩm Trung Á và Đông Nam Á đi vào hệ thống ẩm thực Trung Hoa, làm phong phú chủng loại; thời cận đại, tư tưởng ăn uống phương Tây được chấp nhận, hình thái ẩm thực Trung Hoa hiện đại dần hình thành.',note:'Ba mốc thời gian = ba câu; dùng dấu chấm phẩy (；) hoặc ngắt câu sau mỗi mốc.'},
+    {q_zh:'中华饮食的发展历程——食材',q_vn:'Quá trình phát triển của ẩm thực Trung Hoa — về nguyên liệu',hint:'以……为基本原料；同时；凡是；至于……，因其……，甚至……',sample:'在食材栽培方面，中华饮食以本国物产为基本原料，同时引进、培育外来品种。凡是历史不够悠久的外来食品，人们从名称上就能分辨出来。至于中餐里最常用的那几种调料，因其进入中国年代久远，很多中国人甚至把它们当成了正宗的中国食材。',sample_vn:'Về trồng trọt nguyên liệu, ẩm thực Trung Hoa lấy sản vật trong nước làm nguyên liệu cơ bản, đồng thời nhập về và gây giống các giống ngoại lai. Phàm là thực phẩm ngoại lai có lịch sử chưa lâu, người ta nhìn tên là nhận ra. Còn mấy loại gia vị thông dụng nhất trong món Trung (hành, gừng, tỏi), vì đã vào Trung Quốc từ lâu, nhiều người Trung Quốc thậm chí coi chúng là nguyên liệu chính gốc.',note:'至于 dùng để chuyển sang một trường hợp khác trong cùng chủ đề; 因其 = 因为它 (văn viết).'},
+    {q_zh:'中华饮食的发展历程——加工过程',q_vn:'Quá trình phát triển của ẩm thực Trung Hoa — về chế biến',hint:'……照样……，得力于……',sample:'在加工过程中，中国人照样可以用中国方式烹饪外来食材，使它美味诱人。这得力于中国人能充分认识异域食物的内在价值，用开放的思维和灵感，创新式地把外来食物变成中国饮食的一部分。',sample_vn:'Trong quá trình chế biến, người Trung Quốc vẫn có thể nấu nguyên liệu ngoại lai theo cách Trung Quốc, khiến chúng thơm ngon hấp dẫn. Điều này là nhờ người Trung Quốc nhận thức đầy đủ giá trị nội tại của thực phẩm nước ngoài, bằng tư duy cởi mở và cảm hứng sáng tạo, biến thực phẩm ngoại lai thành một phần của ẩm thực Trung Quốc.',note:'这得力于 + nguyên nhân: nói rõ "nhờ vào đâu". 照样 = vẫn (dù nguyên liệu là của nước ngoài).'},
+    {q_zh:'中华饮食的发展历程——就餐方式',q_vn:'Quá trình phát triển của ẩm thực Trung Hoa — về cách thức dùng bữa',hint:'先秦至唐代；南北朝时期',sample:'先秦至唐代，中国人采用分餐式方式就餐。南北朝时期，一种可以折起来的坐具“胡床”和较大的餐桌开始在中原流行，打破了跪坐而食的局限，形成了围坐合餐的形式。',sample_vn:'Từ Tiên Tần đến đời Đường, người Trung Quốc dùng bữa theo kiểu chia suất riêng. Thời Nam Bắc triều, đồ ngồi gập được gọi là "hồ sàng" và bàn ăn lớn bắt đầu thịnh hành ở Trung Nguyên, phá vỡ giới hạn ngồi quỳ mà ăn, hình thành kiểu ngồi quây quần ăn chung.',note:'Hai mốc thời gian đối lập: trước (分餐) — sau (合餐); nhớ cụm 打破了……的局限.'},
+    {q_zh:'总结',q_vn:'Tổng kết',hint:'面向……，边……边……',sample:'可以说，中华饮食文化自诞生之日起，就面向世界，边继承，边改革，不断引进新元素，这就是它充满活力的奥秘所在。',sample_vn:'Có thể nói, văn hoá ẩm thực Trung Hoa ngay từ ngày ra đời đã hướng ra thế giới, vừa kế thừa vừa cải cách, không ngừng đưa vào yếu tố mới — đó chính là bí quyết giúp nó tràn đầy sức sống.',note:'Mở đầu bằng 可以说 để tổng kết; kết bằng ……的奥秘所在.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — 听力 (sách HSK 6 không có sách bài tập nghe)
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — câu tự soạn (sách HSK 6 không có sách bài tập nghe), mỗi câu một tình huống mới
+// ══════════════════════════════════════════
 var listenExamData = {
-  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. ' +
-         'Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
-  source: 'Soạn theo dạng đề HSK 6 · chủ đề bài 10',
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 10',
   items: [
-    {n:1,
-     lines:[{sp:'女',zh:'你怎么对中国菜这么了解？'},
-            {sp:'男',zh:'我在中国留学的时候，特别爱去各地的小饭馆，吃得多了，自然就能分辨出哪家的菜正宗了。'}],
-     q:'男的是怎么了解中国菜的？',qvn:'Người đàn ông hiểu biết về món Trung Quốc bằng cách nào?',
-     opts:['在烹饪学校学过','他父母是中国人','在中国吃过很多地方的菜','看过很多美食节目'],ans:2,
-     why:'特别爱去各地的小饭馆，吃得多了 → hiểu nhờ ăn nhiều nơi ở Trung Quốc. Không có chi tiết nào về trường nấu ăn hay chương trình ẩm thực.',
-     words:['分辨','正宗']},
-
-    {n:2,
-     lines:[{sp:'男',zh:'这道菜真香！你放了什么特别的调料？'},
-            {sp:'女',zh:'哪有什么特别的，就是葱、姜、蒜，再加一点儿醋。'}],
-     q:'女的在菜里放了什么？',qvn:'Người phụ nữ đã cho gì vào món ăn?',
-     opts:['很多进口调料','葱、姜、蒜和醋','只放了盐','咖啡和柠檬'],ans:1,
-     why:'哪有什么特别的 = làm gì có gì đặc biệt (câu hỏi tu từ phủ định), sau đó liệt kê 葱、姜、蒜 + 醋.',
-     words:['调料']},
-
-    {n:3,
-     lines:[{sp:'女',zh:'听说你最近开始吃素食了？是为了减肥吗？'},
-            {sp:'男',zh:'不是，主要是医生说我得注意饮食，少吃肉。'}],
-     q:'男的为什么开始吃素食？',qvn:'Vì sao người đàn ông bắt đầu ăn chay?',
-     opts:['医生让他注意饮食','为了减肥','他不喜欢吃肉','受朋友影响'],ans:0,
-     why:'不是 phủ định lý do "giảm cân" mà người phụ nữ đoán; 主要是医生说我得注意饮食 mới là lý do chính.',
-     words:['素食','饮食']},
-
-    {n:4,
-     lines:[{sp:'男',zh:'那家新开的餐厅怎么样？'},
-            {sp:'女',zh:'菜的味道还可以，就是就餐环境太吵了。即便菜再好吃，我也不想去第二次了。'}],
-     q:'女的为什么不想再去那家餐厅？',qvn:'Vì sao người phụ nữ không muốn đến nhà hàng đó nữa?',
-     opts:['菜不好吃','价格太贵','服务员态度不好','环境太吵'],ans:3,
-     why:'就是就餐环境太吵了 — 就是 ở đây = chỉ có điều. 即便菜再好吃，我也不想…… khẳng định món ngon không phải vấn đề.',
-     words:['就餐','即便']},
-
-    {n:5,
-     lines:[{sp:'女',zh:'你这篇作文构思得真巧妙，灵感是从哪儿来的？'},
-            {sp:'男',zh:'上周末我跟爷爷去乡下种菜，看着丘陵上一片片的绿色，一下子就有了想法。'}],
-     q:'男的写作文的灵感来自哪里？',qvn:'Cảm hứng viết bài văn của người đàn ông đến từ đâu?',
-     opts:['一本小说','去乡下的经历','老师的建议','一部电影'],ans:1,
-     why:'跟爷爷去乡下种菜，看着丘陵……一下子就有了想法 → cảm hứng đến từ chuyến về quê.',
-     words:['构思','灵感','丘陵']},
-
-    {n:6,
-     lines:[{sp:'男',zh:'这家老字号开了一百多年，生意还这么好，奥秘在哪儿？'},
-            {sp:'女',zh:'他们既继承了传统的做法，又不断创新，每年都会推出几道新菜。'}],
-     q:'这家老店生意好的原因是什么？',qvn:'Nguyên nhân tiệm lâu đời này buôn bán đắt khách là gì?',
-     opts:['价格便宜','只做传统菜','既继承传统又不断创新','地理位置好'],ans:2,
-     why:'既继承了传统的做法，又不断创新 — cấu trúc 既……又…… nêu đủ hai ý. "Chỉ làm món truyền thống" sai vì còn 推出新菜.',
-     words:['奥秘','继承','创新']},
-
-    {n:7,
-     lines:[{sp:'男',zh:'饮食不仅是为了吃饱，它还传达着一个民族的文化。比如在中国，一家人围坐在一起吃饭，体现的就是“和”的文化。所以，想了解一个国家，不妨先从它的饮食开始。'}],
-     q:'说话人建议怎样了解一个国家？',qvn:'Người nói khuyên tìm hiểu một đất nước như thế nào?',
-     opts:['先学习它的历史','先从它的饮食开始','先去那里旅游','先学它的语言'],ans:1,
-     why:'不妨先从它的饮食开始 — 不妨 = chẳng ngại gì mà không, dùng để đưa lời khuyên. Câu kết luận bắt đầu bằng 所以.',
-     words:['饮食','传达']},
-
-    {n:8,
-     lines:[{sp:'女',zh:'你们学校的留学生能适应这里的饭菜吗？'},
-            {sp:'男',zh:'刚来的时候有点儿排斥，吃了一段时间以后，凡是辣的菜他们都爱吃，以至回国以后还常常想念。'}],
-     q:'关于留学生，下面哪项正确？',qvn:'Về các du học sinh, phương án nào đúng?',
-     opts:['一直不习惯这里的饭菜','回国后再也不吃辣了','只吃自己国家的菜','后来爱上了辣的菜'],ans:3,
-     why:'刚来的时候有点儿排斥 → 后来 凡是辣的菜他们都爱吃 → 以至回国以后还常常想念. Phương án "luôn không quen" chỉ đúng với lúc mới đến.',
-     words:['排斥','凡是','以至']}
+    {
+      n: 1,
+      lines: [
+        {sp:'女',zh:'你怎么这么晚才到？'},
+        {sp:'男',zh:'在地铁上看小说看得太投入了，以至坐过了三站。'}
+      ],
+      q: '男的为什么来晚了？',
+      qvn: 'Vì sao người đàn ông đến muộn?',
+      opts: ['地铁出了问题','坐过站了','起床起晚了','忘了约会时间'],
+      ans: 1,
+      why: '看得太投入了，以至坐过了三站 → mải đọc đến nỗi đi quá ba ga.',
+      words: ['以至']
+    },
+    {
+      n: 2,
+      lines: [
+        {sp:'男',zh:'外面下这么大的雨，比赛还举行吗？'},
+        {sp:'女',zh:'学校说了，即便雨下得再大，比赛也照样进行，只是改到体育馆里。'}
+      ],
+      q: '关于比赛，可以知道什么？',
+      qvn: 'Về trận đấu, có thể biết điều gì?',
+      opts: ['推迟了','取消了','换了地方','提前了'],
+      ans: 2,
+      why: '即便雨下得再大，比赛也照样进行 = vẫn đấu; 改到体育馆里 → đổi địa điểm.',
+      words: ['即便','照样']
+    },
+    {
+      n: 3,
+      lines: [
+        {sp:'女',zh:'你们的饭馆开了二十年，客人一直这么多，有什么秘密吗？'},
+        {sp:'男',zh:'我们用的菜都是自己种植的，特别新鲜，这就是我们的特色所在。'}
+      ],
+      q: '这家饭馆的特色是什么？',
+      qvn: 'Nét đặc sắc của quán ăn này là gì?',
+      opts: ['用自己种的菜','菜的品种多','老板很有名','环境很安静'],
+      ans: 0,
+      why: '菜都是自己种植的……这就是我们的特色所在 → A.',
+      words: ['种植','所在']
+    },
+    {
+      n: 4,
+      lines: [
+        {sp:'男',zh:'你最近怎么不吃肉了？'},
+        {sp:'女',zh:'医生说我得多注意饮食，所以我改吃素食了，感觉身体轻松多了。'}
+      ],
+      q: '女的为什么改吃素食？',
+      qvn: 'Vì sao người phụ nữ chuyển sang ăn chay?',
+      opts: ['为了变瘦','她不喜欢肉','家里人都不吃肉','医生让她注意饮食'],
+      ans: 3,
+      why: '医生说我得多注意饮食 → D; không nhắc đến giảm cân.',
+      words: ['饮食','素食']
+    },
+    {
+      n: 5,
+      lines: [
+        {sp:'男',zh:'这次去西北玩儿得怎么样？'},
+        {sp:'女',zh:'太棒了！那里的土地特别辽阔，我们还看到了很多平时只在书上见过的飞禽走兽。'}
+      ],
+      q: '女的在西北看到了什么？',
+      qvn: 'Người phụ nữ đã thấy gì ở vùng Tây Bắc?',
+      opts: ['很多高楼','很多动物','一片大海','很多外国人'],
+      ans: 1,
+      why: '飞禽走兽 = chim muông thú vật → nhiều loài động vật; 辽阔 tả đất đai bao la.',
+      words: ['辽阔','飞禽走兽']
+    },
+    {
+      n: 6,
+      lines: [
+        {sp:'男',zh:'在中国，大家都围坐在一起吃饭，你习惯吗？'},
+        {sp:'女',zh:'刚开始有点儿排斥，后来觉得这样吃饭挺热闹的，很有家的感觉。'}
+      ],
+      q: '女的现在觉得这种吃饭方式怎么样？',
+      qvn: 'Bây giờ người phụ nữ thấy cách ăn này thế nào?',
+      opts: ['很热闹','不干净','太麻烦','吃不饱'],
+      ans: 0,
+      why: '刚开始有点儿排斥 là lúc đầu; 后来觉得……挺热闹的 là cảm nhận hiện tại → A.',
+      words: ['排斥']
+    },
+    {
+      n: 7,
+      lines: [
+        {sp:'女',zh:'你怎么知道这家的北京烤鸭不正宗？'},
+        {sp:'男',zh:'我在北京住了五年，吃得多了，一尝就能分辨出来。'}
+      ],
+      q: '男的为什么能分辨出烤鸭正不正宗？',
+      qvn: 'Vì sao người đàn ông phân biệt được vịt quay có chuẩn vị không?',
+      opts: ['他自己会做','朋友告诉他的','他在北京住过很多年','看了网上的评价'],
+      ans: 2,
+      why: '我在北京住了五年，吃得多了 → C.',
+      words: ['正宗','分辨']
+    }
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
+// ══════════════════════════════════════════
 var situationData = {
-  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
-         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Một người bạn Trung Quốc sang Hà Nội, nhờ em giới thiệu chỗ ăn phở ngon.',
-     a:{sp:'Bạn Trung Quốc',zh:'我想尝尝越南的河粉，你推荐哪儿？',vn:'Mình muốn ăn thử phở Việt Nam, cậu giới thiệu chỗ nào?'},
-     need:['Dùng 正宗','Dùng 凡是……都……'],
-     sample:'你去老城区那家小店吧，那儿的河粉特别正宗，凡是去过的朋友都说好吃。',
-     samplePy:'Nǐ qù lǎo chéngqū nà jiā xiǎo diàn ba, nàr de héfěn tèbié zhèngzōng, fánshì qùguo de péngyou dōu shuō hǎochī.',
-     sampleVn:'Cậu đến quán nhỏ ở khu phố cổ ấy, phở ở đó rất chuẩn vị, bạn nào từng đến cũng khen ngon.',
-     tip:'正宗 làm vị ngữ (很正宗); 凡是 + người có tính chất cụ thể (去过的朋友) + 都.'},
-
-    {scene:'Trời mưa to, bạn cùng bàn không muốn đi học thêm buổi tối.',
-     a:{sp:'Bạn cùng bàn',zh:'今天雨这么大，我不想去补习班了。',vn:'Hôm nay mưa to thế, tớ không muốn đi học thêm nữa.'},
-     need:['Dùng 即便……也……','Nêu lý do phải đi'],
-     sample:'即便雨再大，你也应该去，下周就要期中考试了。',
-     samplePy:'Jíbiàn yǔ zài dà, nǐ yě yīnggāi qù, xià zhōu jiù yào qīzhōng kǎoshì le.',
-     sampleVn:'Dù mưa to đến mấy cậu cũng nên đi, tuần sau là thi giữa kỳ rồi.',
-     tip:'即便 + 再 + tính từ = dù … đến mấy; 就要……了 = sắp ….'},
-
-    {scene:'Mẹ thấy em thức khuya, hỏi vì sao chưa ngủ.',
-     a:{sp:'Mẹ',zh:'都十二点了，怎么还不睡？',vn:'Mười hai giờ rồi, sao còn chưa ngủ?'},
-     need:['Dùng 以至','Giải thích lý do'],
-     sample:'这道数学题太难了，我想了一个多小时，以至忘了时间。',
-     samplePy:'Zhè dào shùxué tí tài nán le, wǒ xiǎngle yí ge duō xiǎoshí, yǐzhì wàngle shíjiān.',
-     sampleVn:'Bài toán này khó quá, con nghĩ hơn một tiếng, đến mức quên cả giờ giấc.',
-     tip:'Vế trước nêu mức độ cao (太难了, 一个多小时), 以至 dẫn kết quả.'},
-
-    {scene:'Bạn cùng lớp hỏi bí quyết nói tiếng Trung lưu loát của em.',
-     a:{sp:'Bạn',zh:'你汉语说得这么流利，有什么秘诀吗？',vn:'Cậu nói tiếng Trung lưu loát thế, có bí quyết gì không?'},
-     need:['Dùng 得力于','Dùng ……的奥秘所在'],
-     sample:'这主要得力于我每天坚持看中文节目、跟着读，这可能就是我进步的奥秘所在。',
-     samplePy:'Zhè zhǔyào délì yú wǒ měi tiān jiānchí kàn Zhōngwén jiémù, gēnzhe dú, zhè kěnéng jiù shì wǒ jìnbù de àomì suǒzài.',
-     sampleVn:'Cái này chủ yếu nhờ ngày nào mình cũng kiên trì xem chương trình tiếng Trung và đọc theo, đó có lẽ chính là bí quyết giúp mình tiến bộ.',
-     tip:'得力于 + nguyên nhân thành công; ……的奥秘所在 để kết câu.'},
-
-    {scene:'Bạn chê một quán ăn kết hợp món Việt và món Nhật là "kỳ cục".',
-     a:{sp:'Bạn',zh:'这家店把越南菜和日本菜混在一起，太奇怪了，我可不想吃。',vn:'Quán này trộn món Việt với món Nhật, kỳ cục quá, tớ chẳng muốn ăn.'},
-     need:['Dùng 创新 hoặc 排斥','Thuyết phục bạn thử'],
-     sample:'我倒觉得这是一种创新。咱们别急着排斥新的吃法，先尝尝再说吧。',
-     samplePy:'Wǒ dào juéde zhè shì yì zhǒng chuàngxīn. Zánmen bié jízhe páichì xīn de chīfǎ, xiān chángchang zài shuō ba.',
-     sampleVn:'Tớ lại thấy đây là một kiểu sáng tạo. Mình đừng vội bài xích cách ăn mới, cứ nếm thử rồi hẵng nói.',
-     tip:'倒 = lại (ý kiến trái với người kia); 先……再说 = cứ … rồi tính.'}
+    {scene:'Một người bạn Trung Quốc sang Hà Nội, nhờ em giới thiệu chỗ ăn phở ngon.',a:{sp:'Bạn',zh:'我想尝尝越南的特色菜，你推荐哪儿？',vn:'Tớ muốn ăn thử món đặc sắc của Việt Nam, cậu giới thiệu chỗ nào?'},need:['Dùng 正宗','Dùng 凡是……都……'],sample:'你去学校后面那家小店吧，那儿的菜特别正宗，凡是去过的朋友都说好吃。',samplePy:'Nǐ qù xuéxiào hòumian nà jiā xiǎo diàn ba, nàr de cài tèbié zhèngzōng, fánshì qùguo de péngyou dōu shuō hǎochī.',sampleVn:'Cậu đến quán nhỏ sau trường ấy, đồ ăn ở đó chuẩn vị lắm, bạn nào đã đến cũng khen ngon.',tip:'正宗 làm vị ngữ (很正宗); 凡是 + người có tính chất cụ thể (去过的朋友) + 都.'},
+    {scene:'Trời mưa to, bạn cùng bàn không muốn đi học thêm buổi tối.',a:{sp:'Bạn',zh:'今天雨这么大，我不想去上课了。',vn:'Hôm nay mưa to thế, tớ không muốn đi học nữa.'},need:['Dùng 即便……也……','Nêu lý do phải đi'],sample:'即便雨再大，你也应该去，下周就要期中考试了。',samplePy:'Jíbiàn yǔ zài dà, nǐ yě yīnggāi qù, xià zhōu jiù yào qīzhōng kǎoshì le.',sampleVn:'Dù mưa to đến mấy cậu cũng nên đi, tuần sau là thi giữa kỳ rồi.',tip:'即便 + 再 + tính từ = dù … đến mấy; 就要……了 = sắp ….'},
+    {scene:'Mẹ thấy em thức khuya, hỏi vì sao chưa ngủ.',a:{sp:'Mẹ',zh:'已经半夜了，怎么还不睡？',vn:'Nửa đêm rồi, sao còn chưa ngủ?'},need:['Dùng 以至','Giải thích lý do'],sample:'这道数学题太难了，我想了一个多小时，以至忘了时间。',samplePy:'Zhè dào shùxué tí tài nán le, wǒ xiǎngle yí ge duō xiǎoshí, yǐzhì wàngle shíjiān.',sampleVn:'Bài toán này khó quá, con nghĩ hơn một tiếng, đến mức quên cả giờ giấc.',tip:'Vế trước nêu mức độ cao (太难了, 一个多小时), 以至 dẫn kết quả.'},
+    {scene:'Bạn cùng lớp hỏi bí quyết nói tiếng Trung lưu loát của em.',a:{sp:'Bạn',zh:'你汉语说得这么流利，是怎么学的？',vn:'Cậu nói tiếng Trung lưu loát thế, cậu học thế nào vậy?'},need:['Dùng 得力于','Dùng ……的奥秘所在'],sample:'这主要得力于我每天坚持看中文节目、跟着读，这可能就是我进步的奥秘所在。',samplePy:'Zhè zhǔyào délì yú wǒ měi tiān jiānchí kàn Zhōngwén jiémù, gēnzhe dú, zhè kěnéng jiù shì wǒ jìnbù de àomì suǒzài.',sampleVn:'Cái này chủ yếu nhờ ngày nào mình cũng kiên trì xem chương trình tiếng Trung và đọc theo, đó có lẽ chính là bí quyết giúp mình tiến bộ.',tip:'得力于 + nguyên nhân thành công; ……的奥秘所在 để kết câu.'},
+    {scene:'Bạn chê một quán ăn kết hợp món Việt và món Nhật là "kỳ cục".',a:{sp:'Bạn',zh:'这家店把越南菜和日本菜放在一起做，太奇怪了，我可不想吃。',vn:'Quán này nấu lẫn món Việt với món Nhật, kỳ quá, tớ chẳng muốn ăn đâu.'},need:['Dùng 创新 hoặc 排斥','Thuyết phục bạn thử'],sample:'我倒觉得这是一种创新。咱们别一开始就排斥新的吃法，先尝尝再说吧。',samplePy:'Wǒ dào juéde zhè shì yì zhǒng chuàngxīn. Zánmen bié yì kāishǐ jiù páichì xīn de chīfǎ, xiān chángchang zài shuō ba.',sampleVn:'Tớ lại thấy đây là một kiểu sáng tạo. Mình đừng vội bài xích cách ăn mới, cứ nếm thử rồi hẵng nói.',tip:'倒 = lại (ý kiến trái với người kia); 先……再说 = cứ … rồi tính.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 // 🎯 NÓI SAO CHO HAY — 得体 / 语体
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 var registerData = {
-  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
-         'HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
   items: [
-    {scene:'Em viết bài giới thiệu ẩm thực Việt Nam cho báo tường của trường.',
-     a:'越南菜特别好吃，大家快去吃吧！',b:'越南饮食特色鲜明，蕴藏着丰富的文化内涵。',better:'b',
-     why:'Bài viết cần văn phong trang trọng: 饮食, 特色鲜明, 蕴藏着……内涵. Câu a là lời rủ rê miệng, hợp khi nói chuyện với bạn.'},
-
-    {scene:'Em nhắn tin rủ bạn thân đi ăn trưa.',
-     a:'走，一起去就餐吧！',b:'走，吃饭去！',better:'b',
-     why:'就餐 là từ văn viết (thông báo, nhà hàng, nhà trường). Nói với bạn bè dùng 吃饭 tự nhiên hơn — dùng 就餐 nghe như đọc thông báo.'},
-
-    {scene:'Nhà trường dán thông báo giờ ăn ở nhà ăn.',
-     a:'学生就餐时间为11:30至13:00。',b:'同学们，十一点半到一点可以去吃饭哦！',better:'a',
-     why:'Thông báo chính thức dùng 就餐, 为……至…… (văn viết). Câu b thân mật, có 哦 — hợp lời nói miệng.'},
-
-    {scene:'Em khen bạn thân nấu ăn ngon.',
-     a:'你的烹饪技术十分优异。',b:'你做的菜太好吃了，比饭店的还正宗！',better:'b',
-     why:'优异 thường dùng cho thành tích, kết quả học tập; 烹饪技术 trang trọng. Khen bạn thân nên nói tự nhiên: 太好吃了, 比……还正宗.'},
-
-    {scene:'Em phát biểu cảm ơn thầy hiệu trưởng trong lễ tốt nghiệp.',
-     a:'感谢老师们三年来的精心栽培！',b:'谢谢老师们这三年帮了我们这么多啦！',better:'a',
-     why:'Lời phát biểu trang trọng: 精心栽培 là cách nói chuẩn khi cảm ơn thầy cô, cấp trên. 啦 ở câu b quá thân mật cho buổi lễ.'},
-
-    {scene:'Em nhắn tin trả lời bạn rủ đi đá bóng dù trời có thể mưa.',
-     a:'即便下雨，我也会准时到达。',b:'就算下雨我也去！',better:'b',
-     why:'即便, 到达 mang sắc thái văn viết; tin nhắn giữa bạn bè dùng 就算 / 哪怕 và câu ngắn gọn tự nhiên hơn.'}
+    {scene:'Em viết bài giới thiệu ẩm thực Việt Nam cho báo tường của trường.',a:'越南菜特别好吃，大家快去吃吧！',b:'越南饮食特色鲜明，蕴藏着丰富的文化。',better:'b',why:'Bài viết cần văn phong trang trọng: 饮食, 特色鲜明, 蕴藏着. Câu a là lời rủ rê miệng, hợp khi nói chuyện với bạn.'},
+    {scene:'Em nhắn tin rủ bạn thân đi ăn trưa.',a:'走，一起去就餐吧！',b:'走，吃饭去！',better:'b',why:'就餐 là từ văn viết (thông báo, nhà hàng, nhà trường). Nói với bạn bè dùng 吃饭 tự nhiên hơn — dùng 就餐 nghe như đọc thông báo.'},
+    {scene:'Nhà trường dán thông báo giờ ăn ở nhà ăn.',a:'学生就餐时间为十一点半到下午一点。',b:'同学们，十一点半到一点可以去吃饭啦！',better:'a',why:'Thông báo chính thức dùng 就餐, 为…… (văn viết). Câu b thân mật, có 啦 — hợp lời nói miệng.'},
+    {scene:'Em khen bạn thân nấu ăn ngon.',a:'你的烹饪技术十分优异。',b:'你做的菜太好吃了，比饭店的还正宗！',better:'b',why:'优异 thường dùng cho thành tích, kết quả học tập; 烹饪技术 trang trọng. Khen bạn thân nên nói tự nhiên: 太好吃了, 比……还正宗.'},
+    {scene:'Em phát biểu cảm ơn thầy hiệu trưởng trong lễ tốt nghiệp.',a:'感谢老师们三年来的精心栽培！',b:'谢谢老师们这三年帮了我们这么多啦！',better:'a',why:'Lời phát biểu trang trọng: 精心栽培 là cách nói chuẩn khi cảm ơn thầy cô, cấp trên. 啦 ở câu b quá thân mật cho buổi lễ.'},
+    {scene:'Em nhắn tin trả lời bạn rủ đi đá bóng dù trời có thể mưa.',a:'即便下雨，我也会准时到达。',b:'就算下雨我也去！',better:'b',why:'即便, 到达 mang sắc thái văn viết; tin nhắn giữa bạn bè dùng 就算 / 哪怕 và câu ngắn gọn tự nhiên hơn.'}
   ]
 };
 

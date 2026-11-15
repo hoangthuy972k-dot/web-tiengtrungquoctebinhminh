@@ -1733,110 +1733,51 @@ var hvBridgeData = {
 // GHÉP TỪ — cụm từ trong bài khoá
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'我们崇拜的',right:'体育明星'},
-  {left:'在赛场上冲击',right:'奖牌'},
-  {left:'奋力',right:'拼搏'},
-  {left:'聚精会神地',right:'防守'},
-  {left:'以火箭般的',right:'速度'},
-  {left:'向他发起',right:'进攻'},
-  {left:'离奇的',right:'巧合'},
-  {left:'遮挡住了球员的',right:'视线'},
-  {left:'决定中断',right:'比赛'},
-  {left:'一名球员已经刹不住',right:'车'},
-  {left:'毫无防御的',right:'猫头鹰'},
-  {left:'只想赢球的',right:'心态'},
-  {left:'引起了广泛的',right:'争议'},
-  {left:'动物保护组织要和球员',right:'打官司'},
-  {left:'球场的',right:'守护神'},
-  {left:'在心中大呼',right:'冤枉'},
-  {left:'出人',right:'意料'},
-  {left:'赛事',right:'频繁'},
-  {left:'粗心',right:'大意'},
-  {left:'一时',right:'疏忽'},
-  {left:'由于重心',right:'不稳'},
+  {left:'冲击',right:'世界纪录'},
+  {left:'熨',right:'衬衫'},
   {left:'磕破了',right:'嘴唇'},
-  {left:'真可谓',right:'雪上加霜'},
-  {left:'遭受了难以想象的',right:'痛苦'},
-  {left:'微不足道的',right:'小手术'}
+  {left:'中断',right:'联系'},
+  {left:'主办',right:'运动会'},
+  {left:'存在',right:'争议'},
+  {left:'守护',right:'球门'},
+  {left:'打了一场',right:'官司'},
+  {left:'发射',right:'火箭'},
+  {left:'乐极',right:'生悲'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ — mỗi từ của bài ít nhất một câu
+// ĐIỀN TỪ — câu mới (không chép bài khoá / SGK), mỗi câu một tình huống; ôn xoáy ốc từ + ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'这部侦探小说情节',blank:'离奇',post:'，我一口气就读完了。',hint:'(ly kỳ)',ans:'离奇'},
-  {pre:'他从小就',blank:'崇拜',post:'那位足球明星，房间里贴满了他的海报。',hint:'(hâm mộ, tôn sùng)',ans:'崇拜'},
-  {pre:'这次奥运会，她将第三次',blank:'冲击',post:'金牌。',hint:'(xông lên giành)',ans:'冲击'},
-  {pre:'年轻人就应该为自己的梦想',blank:'拼搏',post:'一回，不要轻易放弃。',hint:'(dốc sức phấn đấu)',ans:'拼搏'},
-  {pre:'他正',blank:'聚精会神',post:'地做题，连我进门都没发现。',hint:'(chăm chú)',ans:'聚精会神'},
-  {pre:'下半场我们要加强',blank:'防守',post:'，不能再让对方进球了。',hint:'(phòng thủ)',ans:'防守'},
-  {pre:'听到下课铃声，他以',blank:'火箭',post:'般的速度冲出了教室。',hint:'(tên lửa)',ans:'火箭'},
-  {pre:'这张桌子太长了，得',blank:'横',post:'着才能抬进门。',hint:'(ngang)',ans:'横'},
-  {pre:'比赛最后五分钟，我们队向对方球门发起了猛烈的',blank:'进攻',post:'。',hint:'(tấn công)',ans:'进攻'},
-  {pre:'警察终于揭穿了他们的',blank:'阴谋',post:'，把几个坏人都抓了起来。',hint:'(âm mưu)',ans:'阴谋'},
-  {pre:'小偷刚把手伸进别人的包里，就被警察',blank:'当场',post:'抓住了。',hint:'(ngay tại chỗ)',ans:'当场',exp:'当场 = ngay tại chỗ (lúc sự việc đang xảy ra): 当场抓住.'},
-  {pre:'这一',blank:'事件',post:'引起了社会的广泛关注，成了当天的头条新闻。',hint:'(vụ việc)',ans:'事件'},
-  {pre:'窗外的大树',blank:'遮挡',post:'了阳光，屋子里一整天都很凉快。',hint:'(che)',ans:'遮挡'},
-  {pre:'这次学校篮球赛，体育老师亲自当',blank:'裁判',post:'。',hint:'(trọng tài)',ans:'裁判'},
-  {pre:'毕业以后，我和几个老同学的联系就',blank:'中断',post:'了。',hint:'(gián đoạn)',ans:'中断'},
-  {pre:'一个孩子突然跑到路中间，司机赶紧',blank:'刹车',post:'，才没有撞上。',hint:'(phanh xe)',ans:'刹车'},
-  {pre:'刺猬遇到危险时会缩成一团，这是它的',blank:'防御',post:'本能。',hint:'(phòng vệ)',ans:'防御'},
-  {pre:'考试前一定要调整好',blank:'心态',post:'，太紧张反而发挥不好。',hint:'(tâm lý)',ans:'心态'},
-  {pre:'你想考上好大学，却天天熬夜玩儿游戏，这不是',blank:'南辕北辙',post:'吗？',hint:'(làm ngược với mục đích)',ans:'南辕北辙'},
-  {pre:'做实验要',blank:'注重',post:'细节，一点儿误差都可能导致失败。',hint:'(chú trọng)',ans:'注重'},
-  {pre:'两个队打了九十分钟，还是不分',blank:'胜负',post:'，只好踢点球。',hint:'(thắng thua)',ans:'胜负'},
-  {pre:'毕业以后，他才发现现实比想象的',blank:'残酷',post:'得多。',hint:'(khắc nghiệt)',ans:'残酷'},
-  {pre:'中学生能不能带手机进校园，一直是个有',blank:'争议',post:'的问题。',hint:'(tranh cãi)',ans:'争议'},
-  {pre:'爷爷年轻时上过战场，常说“',blank:'打仗',post:'”是世界上最残酷的事。',hint:'(đánh trận)',ans:'打仗'},
-  {pre:'邻居之间有了纠纷，最好先商量，别动不动就',blank:'打官司',post:'。',hint:'(kiện nhau)',ans:'打官司'},
-  {pre:'',blank:'守护',post:'地球，就是守护我们共同的家园。',hint:'(bảo vệ, canh giữ)',ans:'守护'},
-  {pre:'这种虐待动物的行为受到了社会的强烈',blank:'谴责',post:'。',hint:'(lên án)',ans:'谴责'},
-  {pre:'医生说，长期熬夜是很多疾病的“',blank:'凶手',post:'”。',hint:'(thủ phạm, hung thủ)',ans:'凶手'},
-  {pre:'钱不是我拿的，你可别',blank:'冤枉',post:'好人！',hint:'(đổ oan)',ans:'冤枉'},
-  {pre:'事实摆在眼前，你再',blank:'辩解',post:'也没有用。',hint:'(bào chữa)',ans:'辩解'},
-  {pre:'我正在复习，他却把音乐开得那么大，简直是',blank:'成心',post:'捣乱。',hint:'(cố tình)',ans:'成心',exp:'成心 = cố tình, cố ý (khẩu ngữ, ý xấu): 成心捣乱.'},
-  {pre:'他考上了名牌大学，这完全在老师的',blank:'意料',post:'之中。',hint:'(dự liệu)',ans:'意料'},
-  {pre:'他工作忙，',blank:'频繁',post:'出差，一个月在家住不了几天。',hint:'(liên tục, thường xuyên)',ans:'频繁'},
-  {pre:'为了保证',blank:'航空',post:'安全，乘客不能带打火机上飞机。',hint:'(hàng không)',ans:'航空'},
-  {pre:'只因为一时',blank:'大意',post:'，他把“己”写成了“已”，丢了两分。',hint:'(sơ ý)',ans:'大意'},
-  {pre:'一个人最大的',blank:'悲哀',post:'，是连自己想要什么都不知道。',hint:'(nỗi buồn, bi ai)',ans:'悲哀'},
-  {pre:'为了',blank:'主办',post:'奥运会，这座城市修建了很多新体育馆。',hint:'(đăng cai)',ans:'主办'},
-  {pre:'这是我',blank:'特意',post:'为你准备的房间，知道你换了地方睡不好觉。',hint:'(đặc biệt, cất công)',ans:'特意',exp:'特意 = cất công, đặc biệt (vì một mục đích riêng): 特意为你准备.'},
-  {pre:'气象台发出了台风',blank:'警告',post:'，提醒市民不要出门。',hint:'(cảnh báo)',ans:'警告'},
-  {pre:'他只顾着赶进度，',blank:'疏忽',post:'了安全问题。',hint:'(lơ là, bỏ sót)',ans:'疏忽'},
-  {pre:'高三了，你应该把学习的',blank:'重心',post:'放在复习上。',hint:'(trọng tâm)',ans:'重心'},
-  {pre:'明天要面试，我得把衬衫',blank:'熨',post:'一下。',hint:'(là, ủi)',ans:'熨'},
-  {pre:'弟弟摔了一跤，膝盖',blank:'磕',post:'破了，流了不少血。',hint:'(va, đập)',ans:'磕'},
-  {pre:'北方的冬天太干燥了，我的',blank:'嘴唇',post:'都裂了。',hint:'(môi)',ans:'嘴唇'},
-  {pre:'孩子',blank:'拽',post:'着妈妈的衣服，非要买那个玩具。',hint:'(níu, kéo)',ans:'拽'},
-  {pre:'他考了满分，高兴得在走廊里跑，结果',blank:'乐极生悲',post:'，把腿摔伤了。',hint:'(vui quá hoá buồn)',ans:'乐极生悲'},
-  {pre:'电脑突然死机，写了半天的作文全没了，我',blank:'恼火',post:'极了。',hint:'(bực tức)',ans:'恼火'},
-  {pre:'公司本来就亏损严重，又遇上了金融危机，更是',blank:'雪上加霜',post:'。',hint:'(hoạ vô đơn chí)',ans:'雪上加霜'},
-  {pre:'为了不上学，他竟然编了一个',blank:'荒唐',post:'的理由。',hint:'(vô lý, hoang đường)',ans:'荒唐'},
-  {pre:'医院规定，护士上班时不能留长',blank:'指甲',post:'。',hint:'(móng tay)',ans:'指甲'},
-  {pre:'伤口如果',blank:'处置',post:'不当，很容易感染。',hint:'(xử lý)',ans:'处置'},
-  {pre:'邻居家在装修，',blank:'电钻',post:'的声音一大早就把我吵醒了。',hint:'(máy khoan điện)',ans:'电钻'},
-  {pre:'这场大雨使农民',blank:'遭受',post:'了巨大的损失。',hint:'(chịu, bị)',ans:'遭受'},
-  {pre:'和大家的努力比起来，我的贡献',blank:'微不足道',post:'。',hint:'(nhỏ nhặt không đáng kể)',ans:'微不足道'}
+  {pre:'这件事听起来很',blank:'离奇',post:'，到现在也没找到凶手。',hint:'(ly kỳ)',ans:'离奇',exp:'离奇 = ly kỳ, khác thường đến khó tin (câu chuyện, vụ việc); 听起来很离奇 = nghe rất kỳ lạ.'},
+  {pre:'弟弟特别',blank:'崇拜',post:'那位网球明星，房间里挂满了他的照片。',hint:'(hâm mộ, tôn sùng)',ans:'崇拜',exp:'崇拜 + người = tôn sùng, coi là thần tượng; mạnh hơn 喜欢 / 佩服.'},
+  {pre:'我们队进攻不错，可是',blank:'防守',post:'太差，一下子丢了三个球。',hint:'(phòng thủ)',ans:'防守',exp:'防守 đối lập với 进攻 (tấn công); 防守太差 = phòng thủ quá kém.'},
+  {pre:'一辆自行车突然从旁边',blank:'横',post:'着冲了出来，吓了我一跳。',hint:'(ngang)',ans:'横',exp:'横着 + V = theo chiều ngang, xộc ngang ra; đối lập với 竖着 (theo chiều dọc).'},
+  {pre:'一听说自己考上了，她',blank:'当场',post:'就哭了。',hint:'(ngay tại chỗ)',ans:'当场',exp:'当场 = ngay tại chỗ, ngay lúc đó; hay đi với 就 (当场就哭了).'},
+  {pre:'窗外的大树',blank:'遮挡',post:'了阳光，房间里白天也很暗。',hint:'(che chắn)',ans:'遮挡',exp:'遮挡 + ánh sáng / tầm nhìn = che, chắn mất.'},
+  {pre:'我的自行车',blank:'刹车',post:'坏了，得赶紧去修一修。',hint:'(phanh)',ans:'刹车',exp:'刹车 vừa là danh từ "cái phanh" (刹车坏了) vừa là động từ li hợp "phanh lại" (赶紧刹车).'},
+  {pre:'考试前保持良好的',blank:'心态',post:'，比多做几道题更重要。',hint:'(tâm lý, tâm thế)',ans:'心态',exp:'保持良好的心态 = giữ tâm lý tốt; 心态 là trạng thái tâm lý, khác 心情 (tâm trạng nhất thời).'},
+  {pre:'钱不是我拿的，你们',blank:'冤枉',post:'我了！',hint:'(đổ oan)',ans:'冤枉',exp:'冤枉 + người = đổ oan cho ai; 被冤枉 = bị oan.'},
+  {pre:'最近他',blank:'频繁',post:'地请假，经理有点儿不满意了。',hint:'(liên tục)',ans:'频繁',exp:'频繁地 + V = làm gì liên tục, dồn dập (văn viết hơn 经常).'},
+  {pre:'这么简单的问题竟然难住了专家，这是大家都没有',blank:'意料',post:'到的。',hint:'(lường trước)',ans:'意料',exp:'意料到 / 没有意料到 = lường trước / không ngờ tới; gần nghĩa 预料 (bài 23).'},
+  {pre:'我排了一个小时的队，到我的时候却说卖完了，真让人',blank:'恼火',post:'。',hint:'(bực tức)',ans:'恼火',exp:'让人恼火 = khiến người ta bực mình; 恼火 mạnh hơn 不高兴.'},
+  {pre:'那场大雨使农民',blank:'遭受',post:'了不小的损失。',hint:'(chịu, bị)',ans:'遭受',exp:'遭受 + điều xấu (损失 / 痛苦 / 伤害) = phải chịu; không dùng cho điều tốt.'},
+  {pre:'听说我感冒了，同事',blank:'特意',post:'给我送来了一碗热汤。',hint:'(cất công)',ans:'特意',exp:'特意 = cất công, chuyên vì việc đó (việc tốt cho người khác); 故意 mang nghĩa xấu (cố tình gây hại).'},
+  {pre:'明天就是下大雨，我',blank:'也',post:'要去看比赛。',hint:'(cũng)',ans:'也',exp:'Câu co: (即使)明天下大雨，我也要去 → bỏ 即使 nhưng phải giữ 也; dùng 就 sẽ thành "thì đi" — sai ý.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (紧缩句 · 特意 · 比拟) ít nhất 2 câu
+// SẮP XẾP CÂU — câu mới, chỉ một trật tự đúng
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['想赢球','也','不能','置猫头鹰的生命','于不顾','。'],ans:'想赢球也不能置猫头鹰的生命于不顾。',audio:'想赢球也不能置猫头鹰的生命于不顾。'},
-  {words:['她','一','回来','我','就','告诉你','。'],ans:'她一回来我就告诉你。',audio:'她一回来我就告诉你。'},
-  {words:['你','不说','我','也','能知道','。'],ans:'你不说我也能知道。',audio:'你不说我也能知道。'},
-  {words:['主办方','特意','做了','警示牌','，','警告运动员','不要在球门里训练','。'],ans:'主办方特意做了警示牌，警告运动员不要在球门里训练。',audio:'主办方特意做了警示牌，警告运动员不要在球门里训练。'},
-  {words:['这是','我','特意','为你','准备的','房间','。'],ans:'这是我特意为你准备的房间。',audio:'这是我特意为你准备的房间。'},
-  {words:['为了','完成这次采访','，','我','特意','查阅了','被采访者的资料','。'],ans:'为了完成这次采访，我特意查阅了被采访者的资料。',audio:'为了完成这次采访，我特意查阅了被采访者的资料。'},
-  {words:['雨停了','，','天晴了','，','太阳','露出了','笑脸','。'],ans:'雨停了，天晴了，太阳露出了笑脸。',audio:'雨停了，天晴了，太阳露出了笑脸。'},
-  {words:['花儿','羞答答地','垂下','头来','。'],ans:'花儿羞答答地垂下头来。',audio:'花儿羞答答地垂下头来。'},
-  {words:['门将','当场','倒地','，','身受重伤','，','经久不愈','。'],ans:'门将当场倒地，身受重伤，经久不愈。',audio:'门将当场倒地，身受重伤，经久不愈。'},
-  {words:['这种','只想赢球的','心态','和比赛精神','南辕北辙','。'],ans:'这种只想赢球的心态和比赛精神南辕北辙。',audio:'这种只想赢球的心态和比赛精神南辕北辙。'},
-  {words:['更让他','恼火的是','，','主裁判','还给了他','一张黄牌','。'],ans:'更让他恼火的是，主裁判还给了他一张黄牌。',audio:'更让他恼火的是，主裁判还给了他一张黄牌。'},
-  {words:['被称为“凶手”的球员','还是','为自己的行为','诚恳','道歉','了','。'],ans:'被称为“凶手”的球员还是为自己的行为诚恳道歉了。',audio:'被称为“凶手”的球员还是为自己的行为诚恳道歉了。'},
-  {words:['其实','离奇伤害','也','紧紧跟随着','我们每一个人','。'],ans:'其实离奇伤害也紧紧跟随着我们每一个人。',audio:'其实离奇伤害也紧紧跟随着我们每一个人。'}
+  {words:['他','把','嘴唇','磕','破','了','。'],ans:'他把嘴唇磕破了。',audio:'他把嘴唇磕破了。'},
+  {words:['裁判','给了','他','一张','黄牌','。'],ans:'裁判给了他一张黄牌。',audio:'裁判给了他一张黄牌。'},
+  {words:['那只','狗','横着','冲','了','过来','。'],ans:'那只狗横着冲了过来。',audio:'那只狗横着冲了过来。'},
+  {words:['妈妈','把','我的','衬衫','熨','好','了','。'],ans:'妈妈把我的衬衫熨好了。',audio:'妈妈把我的衬衫熨好了。'},
+  {words:['弟弟','拽','着','妈妈的','手','不放','。'],ans:'弟弟拽着妈妈的手不放。',audio:'弟弟拽着妈妈的手不放。'},
+  {words:['他','聚精会神','地','看着','屏幕','。'],ans:'他聚精会神地看着屏幕。',audio:'他聚精会神地看着屏幕。'},
+  {words:['那','是','一件','微不足道','的','小事','。'],ans:'那是一件微不足道的小事。',audio:'那是一件微不足道的小事。'},
+  {words:['这个','问题','把','大家','难','住','了','。'],ans:'这个问题把大家难住了。',audio:'这个问题把大家难住了。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1844,76 +1785,44 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'明星们受伤，有时竟荒谬得不可思议，这些遭遇真是十分____。',opts:['频繁','残酷','微不足道','离奇'],ans:3,
-   exp:'Khác thường, khó tin → 离奇 (离奇的遭遇). 频繁 = thường xuyên; 残酷 = tàn khốc; 微不足道 = nhỏ nhặt không đáng kể — không hợp với "vô lý đến khó tin".'},
-  {wrong:'我们之所以____体育明星，是因为他们是奋力拼搏的象征。',opts:['警告','崇拜','谴责','辩解'],ans:1,
-   exp:'Ngưỡng mộ, coi là thần tượng → 崇拜. 警告 = cảnh báo; 谴责 = lên án; 辩解 = thanh minh.'},
-  {wrong:'顾客在商场购物意外身亡，____竟然是我们常见的自动扶梯！',opts:['裁判','阴谋','事件','凶手'],ans:3,
-   exp:'Thứ gây ra cái chết = thủ phạm → 凶手 (nghĩa bóng). 裁判 = trọng tài; 阴谋 = âm mưu; 事件 = vụ việc.'},
-  {wrong:'这一事件引起了广泛的关注，大家一致____电梯生产厂家粗制滥造。',opts:['守护','崇拜','谴责','注重'],ans:2,
-   exp:'Phê phán gay gắt việc làm ẩu → 谴责 (lên án). 守护 = bảo vệ; 崇拜 = tôn sùng; 注重 = chú trọng.'},
-  {wrong:'虽然不是____的，但因为工作人员的疏忽而造成了一人死亡的后果。',opts:['成心','特意','大意','当场'],ans:0,
-   exp:'不是成心的 = không cố ý (việc xấu). 特意 dùng cho việc tốt, bỏ tâm sức làm; 大意 = sơ ý (mâu thuẫn với 疏忽 phía sau); 当场 = tại chỗ.'},
-  {wrong:'因为工作人员的疏忽，商场肯定要面临一场____。',opts:['嘴仗','胜负','官司','进攻'],ans:2,
-   exp:'Gây chết người → bị kiện: 面临一场官司 (打官司). 嘴仗 = đấu khẩu; 胜负 = thắng thua; 进攻 = tấn công.'},
-  {wrong:'听说我马上要回国，妈妈____准备了我爱吃的家乡菜。',opts:['故意','成心','当场','特意'],ans:3,
-   exp:'Bỏ tâm sức làm việc tốt cho người khác → 特意. 故意, 成心 thường mang nghĩa xấu; 当场 = tại chỗ.'},
-  {wrong:'你看见红灯亮了还不停，是____的吧！',opts:['特意','故意','专门','大意'],ans:1,
-   exp:'Biết không nên mà vẫn làm → 故意 (đáp án 做一做 của sách). 特意, 专门 dùng cho việc tốt; 大意 = sơ ý (không phải "biết mà vẫn làm").'},
-  {wrong:'一只猫头鹰“迫降”球场，____住了球员的视线。',opts:['遮挡','防守','防御','处置'],ans:0,
-   exp:'遮挡住视线 = che khuất tầm nhìn. 防守, 防御 = phòng thủ, phòng ngự; 处置 = xử lý.'},
-  {wrong:'主裁判出于保护动物的目的，决定____比赛。',opts:['冲击','中断','注重','主办'],ans:1,
-   exp:'中断比赛 = tạm dừng trận đấu. 冲击 = xông lên giành; 注重 = chú trọng; 主办 = đứng ra tổ chức.'},
-  {wrong:'因赛事____，航空旅行成了运动员的家常便饭。',opts:['荒唐','残酷','悲哀','频繁'],ans:3,
-   exp:'Thi đấu nhiều, liên tục → 赛事频繁. Các từ còn lại không nói về số lần.'},
-  {wrong:'有位运动员一时____，正好踩在了警示牌上。',opts:['冤枉','疏忽','恼火','拼搏'],ans:1,
-   exp:'一时疏忽 = nhất thời lơ là. 冤枉 = oan; 恼火 = bực tức; 拼搏 = dốc sức.'},
-  {wrong:'他踩在警示牌上，由于____不稳，以致扭伤了脚。',opts:['心态','中心','重心','核心'],ans:2,
-   exp:'重心不稳 = mất thăng bằng (điểm cân bằng cơ thể). 心态 = tâm lý; 中心 = trung tâm; 核心 = hạt nhân.'},
-  {wrong:'当时他仅仅是想从汽车里____出高尔夫球具。',opts:['熨','磕','刹','拽'],ans:3,
-   exp:'拽出 = lôi ra, kéo ra. 熨 = là quần áo; 磕 = va đập; 刹 = phanh.'},
-  {wrong:'还有位运动员，在折叠____衣板时肩膀受伤。',opts:['熨','拽','磕','横'],ans:0,
-   exp:'熨衣板 = bàn kê để là quần áo (熨 = là, ủi).'},
-  {wrong:'刚中了大奖就丢了钱包，真是____。',opts:['雪上加霜','乐极生悲','南辕北辙','聚精会神'],ans:1,
-   exp:'Đang vui (trúng giải) thì gặp chuyện buồn → 乐极生悲. 雪上加霜 = đã khổ lại thêm khổ (việc trước cũng là việc xấu).'},
-  {wrong:'手指受了重伤，主裁判还给了他一张黄牌，真可谓____！',opts:['乐极生悲','微不足道','雪上加霜','出人意料'],ans:2,
-   exp:'Đã bị thương (xấu) lại còn bị thẻ vàng (xấu nữa) → 雪上加霜 (câu bài khoá).'},
-  {wrong:'虽然在真正的医生眼里这只是个____的小手术。',opts:['微不足道','荒唐','离奇','残酷'],ans:0,
-   exp:'微不足道的小手术 = tiểu phẫu không đáng kể. 荒唐, 离奇, 残酷 không hợp với "chỉ là … nhỏ".'},
-  {wrong:'他的脚指甲旁边长了个血泡，他决定自己____。',opts:['辩解','遭受','处置','警告'],ans:2,
-   exp:'Tự mình xử lý (vết thương) → 处置. 辩解 = thanh minh; 遭受 = chịu; 警告 = cảnh báo.'},
-  {wrong:'想赢球也不能置猫头鹰的生命于不顾，这种只想赢球的____和比赛精神南辕北辙。',opts:['心态','重心','事件','胜负'],ans:0,
-   exp:'只想赢球的心态 = tâm lý chỉ muốn thắng. 重心 = trọng tâm; 事件 = vụ việc; 胜负 = thắng thua.'}
+  {wrong:'他____把我的书藏了起来，看我着急的样子觉得很好玩儿。',opts:['故意','特意','特别','特点'],ans:0,exp:'Cố tình làm điều không hay → 故意. 特意 chỉ dùng cho việc tốt, bỏ công làm cho ai; 特别 = đặc biệt; 特点 là danh từ.'},
+  {wrong:'知道我今天回家，妈妈____做了一桌我爱吃的菜。',opts:['特意','故意','成心','随意'],ans:0,exp:'Cất công làm việc tốt cho người khác → 特意. 故意 / 成心 = cố tình (thường là việc xấu); 随意 = tuỳ ý.'},
+  {wrong:'他明知道我怕狗，还____把狗带到我家来。',opts:['成心','用心','小心','关心'],ans:0,exp:'成心 + V = cố tình làm (điều khiến người khác khó chịu). 成心 KHÔNG phải "thành tâm"; 用心 = chăm chú; 小心 = cẩn thận; 关心 = quan tâm.'},
+  {wrong:'天再冷他____坚持每天早上跑步。',opts:['也','就','才','又'],ans:0,exp:'Câu co 再……也……: (即使)天再冷，他也坚持…; bỏ liên từ nhưng giữ 也. 就 / 才 / 又 không tạo nghĩa nhượng bộ.'},
+  {wrong:'这孩子一见到陌生人____躲到妈妈身后。',opts:['就','也','才','再'],ans:0,exp:'Khuôn câu co 一……就…… = hễ… là…. 也 / 才 / 再 không đi với 一 theo nghĩa này.'},
+  {wrong:'孩子们____地听爷爷讲故事，连一点儿声音都没有。',opts:['聚精会神','南辕北辙','雪上加霜','乐极生悲'],ans:0,exp:'Chăm chú tập trung → 聚精会神地 + V. 南辕北辙 = đi ngược mục đích; 雪上加霜 = hoạ chồng hoạ; 乐极生悲 = vui quá hoá buồn.'},
+  {wrong:'关于这个新规定，大家还存在很大的____。',opts:['争议','建议','会议','意义'],ans:0,exp:'存在争议 = còn nhiều tranh cãi. 建议 = đề nghị; 会议 = cuộc họp; 意义 = ý nghĩa — đều không đi với 存在很大的 ở đây.'},
+  {wrong:'对这种伤害小动物的行为，全社会都应该____。',opts:['谴责','责任','负责','表扬'],ans:0,exp:'Lên án nghiêm khắc hành vi xấu → 谴责. 责任 là danh từ; 负责 = chịu trách nhiệm; 表扬 = khen — trái nghĩa.'},
+  {wrong:'考试的时候千万不能____，做完一定要再检查一遍。',opts:['大意','大方','主意','大约'],ans:0,exp:'大意 (dàyi) = sơ ý, chủ quan. 大方 = hào phóng; 主意 = ý kiến; 大约 = khoảng chừng.'},
+  {wrong:'医生____他，再不少喝点儿酒，就会有生命危险。',opts:['警告','报告','广告','告别'],ans:0,exp:'Nhắc nhở nghiêm, báo trước hậu quả xấu → 警告 + người. 报告 = báo cáo; 广告 = quảng cáo; 告别 = chia tay.'},
+  {wrong:'他走路时____不稳，一下子摔倒了。',opts:['重心','中心','重点','关心'],ans:0,exp:'Mất thăng bằng → 重心不稳. 中心 = trung tâm (địa điểm); 重点 = trọng điểm (nội dung); 关心 = quan tâm.'},
+  {wrong:'妹妹____着我的衣服，非要我陪她去公园。',opts:['拽','推','抱','踢'],ans:0,exp:'Níu, kéo mạnh không buông → 拽着. 推 = đẩy (ra xa); 抱 = ôm; 踢 = đá — không hợp ý "nhất định đòi đi cùng".'},
+  {wrong:'雨下得太大了，比赛不得不____了半个小时。',opts:['中断','中间','判断','打断'],ans:0,exp:'Việc đang diễn ra bị ngừng giữa chừng → 中断 (không cần tân ngữ). 打断 cần tân ngữ người (打断别人说话); 中间 là danh từ; 判断 = phán đoán.'},
+  {wrong:'比赛是____的，输了就得回家。',opts:['残酷','严厉','严肃','冷静'],ans:0,exp:'Khốc liệt, không khoan nhượng → 比赛很残酷. 严厉 dùng cho thái độ người với người; 严肃 = nghiêm túc; 冷静 = bình tĩnh.'},
+  {wrong:'这家____公司的服务很好，飞机很少晚点。',opts:['航空','航班','空中','天空'],ans:0,exp:'航空公司 = hãng hàng không. 航班 = chuyến bay; 空中 / 天空 = trên không, bầu trời.'}
 ];
 
 // ══════════════════════════════════════════
-// DỊCH — câu ghép, dùng từ bài 24 + ôn từ HSK 6 bài 1–23 và HSK 4–5
+// DỊCH Việt → Trung — câu mới, dùng từ của bài + ôn ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Nghe tin tôi đá bóng bị va trầy đầu gối, mẹ đã cất công xin nghỉ phép, từ quê lên chăm sóc tôi.',zh:'听说我踢球时膝盖磕破了，妈妈特意请了假，从老家赶来照顾我。',py:'Tīngshuō wǒ tī qiú shí xīgài kēpò le, māma tèyì qǐngle jià, cóng lǎojiā gǎnlái zhàogù wǒ.',goiY:['磕破','特意','从……赶来'],giai:'特意 = chuyên vì việc đó mà làm, bỏ tâm sức (việc tốt); 磕破 = va trầy (bổ ngữ kết quả); 膝盖 ôn HSK 6 bài 20. Ba vế nối theo trình tự, vế 2–3 tỉnh lược chủ ngữ 妈妈.'},
-  {vi:'Em không nói thầy cũng biết, lần này em thi không tốt không phải vì không biết làm, mà là vì nhất thời lơ là sơ ý.',zh:'你不说我也知道，这次没考好不是因为不会做，而是因为一时疏忽大意。',py:'Nǐ bù shuō wǒ yě zhīdào, zhè cì méi kǎohǎo bú shì yīnwèi bú huì zuò, ér shì yīnwèi yìshí shūhu dàyi.',goiY:['不说……也……','不是……而是……','疏忽','大意'],giai:'你不说我也知道 là CÂU CO (紧缩句) = 就算你不说，我也知道: bỏ 就算 và dấu phẩy, giữ 也. 不是……而是…… phủ định A, khẳng định B.'},
-  {vi:'Trận này chúng ta chỉ chú trọng thắng thua mà bỏ qua sự phối hợp, kết quả thua tan tác.',zh:'这场比赛我们只注重胜负，却忽略了配合，结果输得一塌糊涂。',py:'Zhè chǎng bǐsài wǒmen zhǐ zhùzhòng shèngfù, què hūlüèle pèihé, jiéguǒ shū de yìtāhútú.',goiY:['注重','胜负','却','忽略'],giai:'只……，却…… đối lập điều chú trọng và điều bị bỏ qua; 忽略 ôn HSK 6 bài 1; 输得一塌糊涂 = thua tan tác (bổ ngữ trạng thái).'},
-  {vi:'Nếu không phải tài xế phanh kịp thời, đứa trẻ băng ngang qua đường kia e là đã bị tông ngã ngay tại chỗ rồi.',zh:'要不是司机及时刹车，那个横穿马路的孩子恐怕当场就被撞倒了。',py:'Yàobúshì sījī jíshí shā chē, nàge héngchuān mǎlù de háizi kǒngpà dāngchǎng jiù bèi zhuàngdǎo le.',goiY:['要不是','刹车','横穿','当场'],giai:'要不是 + điều đã xảy ra, (就)…… + kết quả giả định trái sự thật. Không dịch "nếu không phải" thành 如果不是 ở văn cảnh này — 要不是 tự nhiên hơn.'},
-  {vi:'Để nhắm tới chức vô địch, cậu ấy đã cất công mời một huấn luyện viên, ngày nào cũng luyện phòng thủ đến đêm khuya.',zh:'为了冲击冠军，他特意请了一位教练，每天练习防守到深夜。',py:'Wèile chōngjī guànjūn, tā tèyì qǐngle yí wèi jiàoliàn, měi tiān liànxí fángshǒu dào shēnyè.',goiY:['为了','冲击','特意','防守'],giai:'为了 + mục đích đặt đầu câu; 冲击冠军 = xông lên giành chức vô địch (không dịch "xung kích"); 特意 nhấn việc bỏ công vì mục đích đó.'},
-  {vi:'Điều đáng buồn là, có những người vì muốn khoe khoang trên mạng mà lại tàn nhẫn ngược đãi động vật nhỏ.',zh:'令人悲哀的是，有些人为了在网上炫耀，竟然残酷地虐待小动物。',py:'Lìng rén bēi\'āi de shì, yǒuxiē rén wèile zài wǎngshàng xuànyào, jìngrán cánkù de nüèdài xiǎo dòngwù.',goiY:['令人……的是','悲哀','炫耀','残酷'],giai:'令人悲哀的是 = điều đáng buồn là (câu bài khoá); 竟然 = vậy mà (bất ngờ, trái lẽ); 炫耀 ôn HSK 6 bài 3.'},
-  {vi:'Em đi muộn thường xuyên như vậy, muốn tham gia thi đấu cũng phải sửa tật này trước đã, nếu không thầy sẽ cảnh cáo phụ huynh em.',zh:'你迟到得这么频繁，想参加比赛也得先改掉这个毛病，否则老师会警告你的家长。',py:'Nǐ chídào de zhème pínfán, xiǎng cānjiā bǐsài yě děi xiān gǎidiào zhège máobing, fǒuzé lǎoshī huì jǐnggào nǐ de jiāzhǎng.',goiY:['频繁','想……也……','否则','警告'],giai:'想参加比赛也得…… là câu co (紧缩句) = 即使想参加比赛，也得……, giống 想赢球也不能…… trong bài khoá; 否则 = nếu không thì.'},
-  {vi:'Rõ ràng cậu ấy không cố ý, vậy mà bị mọi người đổ oan cả buổi, cũng không có cơ hội thanh minh cho mình.',zh:'他明明不是成心的，却被大家冤枉了半天，也没有机会为自己辩解。',py:'Tā míngmíng bú shì chéngxīn de, què bèi dàjiā yuānwangle bàntiān, yě méiyǒu jīhuì wèi zìjǐ biànjiě.',goiY:['明明……却……','成心','冤枉','辩解'],giai:'明明……却…… (ôn HSK 6 bài 6) = rõ ràng … vậy mà …; 成心 = CỐ Ý (không phải "thành tâm"); 为自己辩解 = thanh minh cho mình.'},
-  {vi:'Suy nghĩ của hai chúng tôi quả là trái ngược hoàn toàn: cậu ấy cho rằng chỉ cần kết quả tốt là được, còn tôi lại thấy quá trình quan trọng hơn thắng thua.',zh:'我们俩的想法简直南辕北辙：他认为只要结果好就行，我却觉得过程比胜负更重要。',py:'Wǒmen liǎ de xiǎngfǎ jiǎnzhí nányuán-běizhé: tā rènwéi zhǐyào jiéguǒ hǎo jiù xíng, wǒ què juéde guòchéng bǐ shèngfù gèng zhòngyào.',goiY:['南辕北辙','只要……就……','胜负','却'],giai:'Dấu hai chấm giải thích cho 南辕北辙; hai vế sau đối lập bằng 却; 只要……就…… điều kiện đủ; A 比 B 更 + Adj.'},
-  {vi:'Cậu ấy vui quá hoá buồn trong buổi tiệc mừng công, ngã bị thương cánh tay, mà ngặt nỗi hôm sau lại chính là kỳ thi cuối kỳ, đúng là hoạ vô đơn chí.',zh:'他在庆功会上乐极生悲，摔伤了手臂，偏偏第二天就是期末考试，真可谓雪上加霜。',py:'Tā zài qìnggōnghuì shang lèjí-shēngbēi, shuāishāngle shǒubì, piānpiān dì-èr tiān jiù shì qīmò kǎoshì, zhēn kěwèi xuěshàng-jiāshuāng.',goiY:['乐极生悲','偏偏','雪上加霜'],giai:'Hai thành ngữ của bài: 乐极生悲 (đang vui thì gặp hoạ) và 雪上加霜 (hoạ chồng hoạ); 偏偏 = ngặt nỗi, trớ trêu thay (ôn HSK 6 bài 19); 真可谓 = đúng là (văn viết).'}
+  {vi:'Nghe tin tôi đá bóng bị va trầy đầu gối, mẹ đã cất công xin nghỉ phép, từ quê lên chăm sóc tôi.',zh:'听说我踢球时膝盖磕破了，妈妈特意请了假，从老家赶来照顾我。',py:'Tīngshuō wǒ tī qiú shí xīgài kēpò le, māma tèyì qǐngle jià, cóng lǎojiā gǎnlái zhàogù wǒ.',goiY:['磕破','特意','从……赶来'],giai:'特意 = chuyên vì việc đó mà làm, bỏ tâm sức (việc tốt); 磕破 = va trầy (bổ ngữ kết quả). Vế 2–3 tỉnh lược chủ ngữ 妈妈.'},
+  {vi:'Trời có mưa to đến mấy tôi cũng phải đi, vì đã hứa với bạn rồi.',zh:'下再大的雨我也得去，因为已经答应朋友了。',py:'Xià zài dà de yǔ wǒ yě děi qù, yīnwèi yǐjīng dāying péngyou le.',goiY:['câu co 再……也……','答应'],giai:'Câu co: (即使)下再大的雨，我也得去 → bỏ 即使 và dấu phẩy, giữ 再……也……; 得 (děi) = phải.'},
+  {vi:'Nếu không phải tài xế phanh kịp thời, đứa trẻ băng ngang qua đường kia e là đã bị tông ngã ngay tại chỗ rồi.',zh:'要不是司机及时刹车，那个横穿马路的孩子恐怕当场就被撞倒了。',py:'Yàobúshì sījī jíshí shā chē, nàge héngchuān mǎlù de háizi kǒngpà dāngchǎng jiù bèi zhuàngdǎo le.',goiY:['要不是','刹车','横穿','当场'],giai:'要不是 + điều đã xảy ra, (就)…… + kết quả giả định trái sự thật; 横穿马路 = băng ngang qua đường.'},
+  {vi:'Rõ ràng cậu ấy không cố ý làm hỏng, vậy mà bị mọi người đổ oan cả buổi, cũng không có cơ hội thanh minh cho mình.',zh:'他明明不是故意弄坏的，却被大家冤枉了半天，也没有机会为自己辩解。',py:'Tā míngmíng bú shì gùyì nònghuài de, què bèi dàjiā yuānwangle bàntiān, yě méiyǒu jīhuì wèi zìjǐ biànjiě.',goiY:['明明……却……','故意','冤枉','辩解'],giai:'明明……却…… (ôn bài 6) = rõ ràng … vậy mà …; 不是故意V的 = không cố ý làm; 为自己辩解 = thanh minh cho mình.'},
+  {vi:'Suy nghĩ của hai chúng tôi quả là trái ngược hoàn toàn: cậu ấy cho rằng chỉ cần kết quả tốt là được, còn tôi lại thấy quá trình quan trọng hơn thắng thua.',zh:'我们俩的想法简直南辕北辙：他认为只要结果好就行，我却觉得过程比胜负更重要。',py:'Wǒmen liǎ de xiǎngfǎ jiǎnzhí nányuán-běizhé: tā rènwéi zhǐyào jiéguǒ hǎo jiù xíng, wǒ què juéde guòchéng bǐ shèngfù gèng zhòngyào.',goiY:['南辕北辙','只要……就……','胜负','却'],giai:'Dấu hai chấm giải thích cho 南辕北辙; hai vế sau đối lập bằng 却; A 比 B 更 + tính từ.'},
+  {vi:'Gió khe khẽ hát, cỏ ven đường gật đầu chào chúng tôi.',zh:'风轻轻地唱着歌，路边的小草向我们点头问好。',py:'Fēng qīngqīng de chàngzhe gē, lù biān de xiǎocǎo xiàng wǒmen diǎntóu wènhǎo.',goiY:['nhân hoá: vật + động tác của người','轻轻地','点头问好'],giai:'Câu nhân hoá: gió "hát", cỏ "gật đầu chào" — giữ nguyên động từ của người, đừng đổi thành 像……一样 (đó là so sánh).'}
 ];
 
-// Chiều Trung → Việt — bám ý bài khoá
+// ══════════════════════════════════════════
+// Dịch Trung → Việt — câu mới, không trùng chiều trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Mỗi lần thấy ngôi sao mình hâm mộ xông lên giành huy chương, mọi người đều tin chắc rằng những vết sẹo trên người họ là dấu ấn của sự chiến đấu hết mình.',zh:'每次看到崇拜的明星冲击奖牌，大家都深信，他们身上的伤疤是奋力拼搏的标记。',py:'Měi cì kàndào chóngbài de míngxīng chōngjī jiǎngpái, dàjiā dōu shēnxìn, tāmen shēnshang de shāngbā shì fènlì pīnbó de biāojì.',goiY:['崇拜 = hâm mộ, tôn sùng','冲击奖牌 = xông lên giành huy chương','拼搏 = dốc sức chiến đấu'],giai:'冲击奖牌 không dịch "xung kích huy chương"; 标记 (ôn HSK 6 bài 17) dịch "dấu ấn" cho văn hoa hơn "ký hiệu".'},
-  {vi:'Thủ môn đang tập trung cao độ phòng thủ thì một con chó bỗng lao vào sân, xộc ngang vào đầu gối anh ta.',zh:'门将正聚精会神地防守，一只狗突然冲了进来，横着冲向他的膝盖。',py:'Ménjiàng zhèng jùjīng-huìshén de fángshǒu, yì zhī gǒu tūrán chōngle jìnlái, héngzhe chōngxiàng tā de xīgài.',goiY:['聚精会神 = tập trung cao độ','防守 = phòng thủ','横着 = (lao) ngang'],giai:'正……，突然…… = đang … thì bỗng …; 横着冲向 = xộc ngang vào (từ bên sườn).'},
-  {vi:'Thủ môn ngã gục ngay tại chỗ, bị thương nặng; đây là âm mưu hay là sự trùng hợp ly kỳ, không ai nói rõ được.',zh:'门将当场倒地，身受重伤，这是阴谋还是离奇的巧合，谁也说不清。',py:'Ménjiàng dāngchǎng dǎo dì, shēn shòu zhòngshāng, zhè shì yīnmóu háishi líqí de qiǎohé, shéi yě shuō bu qīng.',goiY:['当场 = ngay tại chỗ','是……还是…… = là … hay …','离奇 = ly kỳ'],giai:'Câu hỏi lựa chọn 是……还是…… làm chủ ngữ cho 谁也说不清 (không ai nói rõ được).'},
-  {vi:'Một con cú mèo "hạ cánh khẩn cấp" xuống sân đã che khuất tầm nhìn của cầu thủ, trọng tài chính quyết định tạm dừng trận đấu.',zh:'一只“迫降”球场的猫头鹰遮挡住了球员的视线，主裁判决定中断比赛。',py:'Yì zhī “pòjiàng” qiúchǎng de māotóuyīng zhēdǎng zhùle qiúyuán de shìxiàn, zhǔ cáipàn juédìng zhōngduàn bǐsài.',goiY:['迫降 = hạ cánh khẩn cấp (phép tu từ)','遮挡 = che khuất','中断 = tạm dừng'],giai:'"迫降" vốn dùng cho máy bay — dùng cho con cú là phép 比拟 (coi vật này như vật khác), nên giữ ngoặc kép khi dịch. 裁判 = trọng tài, không phải "tài phán".'},
-  {vi:'Có người cho rằng dù muốn thắng cũng không thể bất chấp sinh mạng của động vật, tâm lý như vậy hoàn toàn đi ngược tinh thần thi đấu.',zh:'有人认为想赢球也不能不顾动物的生命，这种心态和比赛精神南辕北辙。',py:'Yǒu rén rènwéi xiǎng yíng qiú yě bù néng búgù dòngwù de shēngmìng, zhè zhǒng xīntài hé bǐsài jīngshén nányuán-běizhé.',goiY:['想……也不能…… = dù muốn … cũng không thể …','心态 = tâm lý','南辕北辙 = hoàn toàn trái ngược'],giai:'想赢球也不能…… là câu co (紧缩句) = 即使想赢球，也不能……: khi dịch phải thêm "dù" cho rõ quan hệ nhượng bộ.'},
-  {vi:'Cầu thủ bị gọi là "hung thủ" tuy kêu oan ầm ĩ nhưng vẫn thành khẩn xin lỗi, đồng thời thanh minh rằng mình không cố ý.',zh:'被称为“凶手”的球员虽然大呼冤枉，但还是诚恳地道了歉，并为自己辩解说不是成心的。',py:'Bèi chēngwéi “xiōngshǒu” de qiúyuán suīrán dà hū yuānwang, dàn háishi chéngkěn de dàole qiàn, bìng wèi zìjǐ biànjiě shuō bú shì chéngxīn de.',goiY:['虽然……但还是……','冤枉 = oan','辩解 = thanh minh','成心 = cố ý'],giai:'成心 là "cố ý", tuyệt đối không dịch "thành tâm"; 并 nối hành động thứ hai (văn viết) → "đồng thời".'},
-  {vi:'Vì lịch thi đấu dày đặc, đi máy bay đã thành chuyện cơm bữa của vận động viên, đến cả thẻ lên máy bay cũng có thể làm người ta bị thương.',zh:'因为赛事频繁，航空旅行成了运动员的家常便饭，连登机牌都可能伤人。',py:'Yīnwèi sàishì pínfán, hángkōng lǚxíng chéngle yùndòngyuán de jiācháng biànfàn, lián dēngjīpái dōu kěnéng shāng rén.',goiY:['频繁 = dày đặc, thường xuyên','家常便饭 = chuyện cơm bữa','连……都…… = đến … cũng'],giai:'航空旅行 dịch gọn "đi máy bay"; 家常便饭 = chuyện cơm bữa (thành ngữ tương đương trong tiếng Việt).'},
-  {vi:'Ban tổ chức đã cất công làm biển cảnh báo, vậy mà có một vận động viên nhất thời lơ là, giẫm đúng lên đó, kết quả bị trẹo chân.',zh:'主办方特意做了警示牌，可是有位运动员一时疏忽，正好踩了上去，结果扭伤了脚。',py:'Zhǔbànfāng tèyì zuòle jǐngshìpái, kěshì yǒu wèi yùndòngyuán yìshí shūhu, zhènghǎo cǎile shàngqù, jiéguǒ niǔshāngle jiǎo.',goiY:['特意 = cất công','一时疏忽 = nhất thời lơ là','结果 = kết quả là'],giai:'Sự trớ trêu: biển cảnh báo làm ra để tránh tai nạn lại gây tai nạn → 可是 dịch "vậy mà". 主办方 = ban tổ chức.'},
-  {vi:'Anh ta ghi bàn xong thì vui quá hoá buồn, ngón tay bị thương nặng; điều khiến anh ta bực hơn nữa là trọng tài còn rút cho anh ta một thẻ vàng.',zh:'他进球后乐极生悲，手指受了重伤，更让他恼火的是，裁判还给了他一张黄牌。',py:'Tā jìn qiú hòu lèjí-shēngbēi, shǒuzhǐ shòule zhòngshāng, gèng ràng tā nǎohuǒ de shì, cáipàn hái gěile tā yì zhāng huángpái.',goiY:['乐极生悲 = vui quá hoá buồn','更让……恼火的是 = điều khiến … bực hơn là'],giai:'更让……的是…… là cấu trúc tăng tiến: sau cái xấu thứ nhất nêu cái xấu hơn; 给……一张黄牌 = rút thẻ vàng cho ai.'},
-  {vi:'Lố bịch nhất là có người dùng máy khoan điện xử lý bọng máu ở chân, kết quả phải chịu đau đớn khó tưởng tượng, xem ra bác sĩ không phải ai muốn làm là làm được.',zh:'最荒唐的是有人用电钻处置脚上的血泡，结果遭受了难以想象的痛苦，可见医生不是谁想当就能当的。',py:'Zuì huāngtáng de shì yǒu rén yòng diànzuàn chǔzhì jiǎo shang de xuèpào, jiéguǒ zāoshòule nányǐ xiǎngxiàng de tòngkǔ, kějiàn yīshēng bú shì shéi xiǎng dāng jiù néng dāng de.',goiY:['荒唐 = lố bịch','处置 = xử lý','遭受 = chịu','谁想……就能…… = ai muốn … là …'],giai:'谁想当就能当 cũng là câu co (紧缩句) = 无论谁想当，都能当; 可见 = có thể thấy, xem ra (rút ra kết luận).'}
+  {vi:'Khu này năm nay xảy ra mấy vụ việc kỳ lạ, mọi người đều nghi ngờ đằng sau có âm mưu gì đó.',zh:'这个地区今年发生了好几起离奇的事件，大家都怀疑背后有什么阴谋。',py:'Zhège dìqū jīnnián fāshēngle hǎo jǐ qǐ líqí de shìjiàn, dàjiā dōu huáiyí bèihòu yǒu shénme yīnmóu.',goiY:['起 = vụ (lượng từ)','离奇 = kỳ lạ','阴谋 = âm mưu'],giai:'一起事件 = một vụ việc; 有什么阴谋 = có âm mưu gì đó (什么 phiếm chỉ).'},
+  {vi:'Khi đối phương tấn công, hàng phòng ngự của đội chúng tôi lập tức rối loạn.',zh:'对方进攻的时候，我们队的防御一下子就乱了。',py:'Duìfāng jìngōng de shíhou, wǒmen duì de fángyù yíxiàzi jiù luàn le.',goiY:['进攻 = tấn công','防御 = phòng ngự','一下子 = lập tức'],giai:'防御 dịch "hàng phòng ngự / thế phòng ngự"; 一下子就乱了 = rối loạn ngay.'},
+  {vi:'Hai nhà kiện nhau vì một ít tiền, kiện một mạch ba năm trời, thật quá không đáng.',zh:'两家人为了一点儿钱打官司，一打就是三年，真是太不值得了。',py:'Liǎng jiā rén wèile yìdiǎnr qián dǎ guānsi, yì dǎ jiù shì sān nián, zhēn shì tài bù zhíde le.',goiY:['打官司 = kiện tụng','不值得 = không đáng'],giai:'打官司 là động từ li hợp; 一打就是三年 = hễ kiện là kéo dài ba năm (nhấn mạnh thời gian dài).'},
+  {vi:'Lố bịch nhất là anh ta chê cái bấm móng tay khó dùng, lại đi lấy máy khoan điện xử lý vết thương nhỏ ở chân, kết quả bị thương nặng hơn.',zh:'最荒唐的是，他嫌指甲刀不好用，竟然拿电钻来处置脚上的小伤口，结果伤得更重了。',py:'Zuì huāngtáng de shì, tā xián zhǐjiadāo bù hǎo yòng, jìngrán ná diànzuàn lái chǔzhì jiǎo shang de xiǎo shāngkǒu, jiéguǒ shāng de gèng zhòng le.',goiY:['荒唐 = lố bịch','指甲刀 = bấm móng tay','处置 = xử lý'],giai:'嫌 (ôn bài 21) = chê; 竟然 = vậy mà lại; 伤得更重了 = bị thương nặng hơn.'},
+  {vi:'Điều đáng buồn là rất nhiều người chỉ coi trọng thắng thua, mà quên mất ý nghĩa của việc vận động viên dốc sức thi đấu.',zh:'令人悲哀的是，很多人只看重胜负，却忘了运动员拼搏的意义。',py:'Lìng rén bēi\'āi de shì, hěn duō rén zhǐ kànzhòng shèngfù, què wàngle yùndòngyuán pīnbó de yìyì.',goiY:['令人悲哀的是 = điều đáng buồn là','胜负 = thắng thua','拼搏 = dốc sức'],giai:'令人 + tính từ + 的是 mở đầu một nhận xét; 却 nối hai vế trái ngược.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1948,9 +1857,9 @@ var writingData = {
     'Phần kết có rút ra bài học; toàn bài không ít hơn 400 chữ Hán, chia 3–5 đoạn rõ ràng chưa?'
   ],
   model:{
-    zh:'说起运动中的意外受伤，我就会想起去年秋天的那场篮球赛。那是学校一年一度的篮球比赛，为了冲击冠军，我们班每天放学后都特意留下来练习一个小时。比赛那天，双方打得非常激烈。下半场还剩五分钟的时候，我终于投进了一个三分球。我高兴得跳了起来，没想到乐极生悲，落地时一时疏忽，踩在了对方队员的脚上，由于重心不稳，当场就摔倒在地。当时我只觉得脚腕一阵剧痛，怎么也站不起来。老师和同学们赶紧把我送到了医院，医生说是扭伤，至少要休息一个月。更让我恼火的是，一个星期后就是期末体育考试，我只能坐在旁边看着同学们跑步，真可谓雪上加霜。这件事完全出乎我的意料。我本来以为，运动受伤都是因为动作太难或者对手太凶，没想到一个微不足道的小动作，也能让人遭受这么多痛苦。后来，我读到了一篇关于体育明星离奇遭遇的文章：有的运动员被登机牌击中了眼睛，有的在折叠熨衣板时肩膀受了伤。我这才明白，受伤的原因往往不在别人，而在于我们自己的粗心大意。看来，意外伤害就在我们身边。运动前要做好热身，运动中千万不能大意，只要注意安全，很多意外都是可以避免的。',
-    py:'Shuōqǐ yùndòng zhōng de yìwài shòushāng, wǒ jiù huì xiǎngqǐ qùnián qiūtiān de nà chǎng lánqiú sài. Nà shì xuéxiào yì nián yí dù de lánqiú bǐsài, wèile chōngjī guànjūn, wǒmen bān měi tiān fàngxué hòu dōu tèyì liú xiàlái liànxí yí ge xiǎoshí. Bǐsài nà tiān, shuāngfāng dǎ de fēicháng jīliè. Xià bàn chǎng hái shèng wǔ fēnzhōng de shíhou, wǒ zhōngyú tóujìnle yí ge sānfēnqiú. Wǒ gāoxìng de tiàole qǐlái, méi xiǎngdào lèjí-shēngbēi, luòdì shí yìshí shūhu, cǎi zàile duìfāng duìyuán de jiǎo shang, yóuyú zhòngxīn bù wěn, dāngchǎng jiù shuāidǎo zài dì. Dāngshí wǒ zhǐ juéde jiǎowàn yí zhèn jùtòng, zěnme yě zhàn bu qǐlái. Lǎoshī hé tóngxuémen gǎnjǐn bǎ wǒ sòngdàole yīyuàn, yīshēng shuō shì niǔshāng, zhìshǎo yào xiūxi yí ge yuè. Gèng ràng wǒ nǎohuǒ de shì, yí ge xīngqī hòu jiù shì qīmò tǐyù kǎoshì, wǒ zhǐ néng zuò zài pángbiān kànzhe tóngxuémen pǎobù, zhēn kěwèi xuěshàng-jiāshuāng. Zhè jiàn shì wánquán chūhū wǒ de yìliào. Wǒ běnlái yǐwéi, yùndòng shòushāng dōu shì yīnwèi dòngzuò tài nán huòzhě duìshǒu tài xiōng, méi xiǎngdào yí ge wēibùzúdào de xiǎo dòngzuò, yě néng ràng rén zāoshòu zhème duō tòngkǔ. Hòulái, wǒ dúdàole yì piān guānyú tǐyù míngxīng líqí zāoyù de wénzhāng: yǒude yùndòngyuán bèi dēngjīpái jīzhòngle yǎnjing, yǒude zài zhédié yùnyībǎn shí jiānbǎng shòule shāng. Wǒ zhè cái míngbai, shòushāng de yuányīn wǎngwǎng bú zài biérén, ér zàiyú wǒmen zìjǐ de cūxīn dàyi. Kànlái, yìwài shānghài jiù zài wǒmen shēnbiān. Yùndòng qián yào zuòhǎo rèshēn, yùndòng zhōng qiānwàn bù néng dàyi, zhǐyào zhùyì ānquán, hěn duō yìwài dōu shì kěyǐ bìmiǎn de.',
-    vn:'Nói đến chấn thương bất ngờ khi chơi thể thao, tôi lại nhớ tới trận bóng rổ mùa thu năm ngoái. Đó là giải bóng rổ thường niên của trường; để nhắm tới chức vô địch, lớp tôi ngày nào tan học cũng cất công ở lại tập thêm một tiếng. Hôm thi đấu, hai đội chơi rất quyết liệt. Khi hiệp hai chỉ còn năm phút, cuối cùng tôi cũng ném vào được một quả ba điểm. Tôi mừng đến nhảy cẫng lên, không ngờ vui quá hoá buồn: lúc tiếp đất, nhất thời lơ là, tôi giẫm lên chân cầu thủ đội bạn, do mất thăng bằng nên ngã lăn ra sân ngay tại chỗ. Lúc đó tôi chỉ thấy cổ chân đau nhói, làm thế nào cũng không đứng dậy nổi. Thầy cô và các bạn vội đưa tôi đến bệnh viện, bác sĩ nói là bị trẹo, ít nhất phải nghỉ một tháng. Điều khiến tôi bực hơn nữa là một tuần sau chính là kỳ thi thể dục cuối kỳ, tôi chỉ có thể ngồi bên cạnh nhìn các bạn chạy, đúng là hoạ vô đơn chí. Chuyện này hoàn toàn nằm ngoài dự liệu của tôi. Tôi vốn tưởng rằng chấn thương khi chơi thể thao đều do động tác quá khó hoặc đối thủ quá hung hăng, không ngờ một động tác nhỏ nhặt không đáng kể cũng có thể khiến người ta chịu nhiều đau đớn đến vậy. Về sau, tôi đọc được một bài viết về những cảnh ngộ ly kỳ của các ngôi sao thể thao: có vận động viên bị thẻ lên máy bay đập trúng mắt, có người bị thương ở vai khi gấp bàn kê là quần áo. Lúc đó tôi mới hiểu ra, nguyên nhân bị thương thường không nằm ở người khác, mà nằm ở sự sơ ý cẩu thả của chính chúng ta. Xem ra, tai nạn bất ngờ luôn ở ngay bên cạnh chúng ta. Trước khi vận động phải khởi động kỹ, khi vận động tuyệt đối không được chủ quan; chỉ cần chú ý an toàn thì rất nhiều tai nạn đều có thể tránh được.'
+    zh:'说起运动中的意外受伤，我就会想起去年秋天的那场足球赛。那是学校一年一度的足球比赛，为了冲击冠军，我们班每天放学后都特意留下来练习一个小时。比赛那天，双方打得非常激烈。下半场还剩五分钟的时候，我终于踢进了一个球。我高兴得跳了起来，没想到乐极生悲，往回跑时一时疏忽，踩在了对方队员的脚上，由于重心不稳，当场就摔倒在地。当时我只觉得脚疼得要命，怎么也站不起来。老师和同学们赶紧把我送到了医院，医生说是扭伤，至少要休息一个月。更让我恼火的是，一个星期后就是这个学期的体育考试，我只能坐在旁边看着同学们跑步，真可谓雪上加霜。这件事完全出人意料。我本来以为，运动受伤都是因为动作太难或者对手太厉害，没想到一个微不足道的小动作，也能让人遭受这么多痛苦。后来，我读到了一篇关于体育明星离奇遭遇的文章：有的运动员被登机牌击中了眼睛，有的在折叠熨衣板时肩膀受了伤。我这才明白，受伤的原因往往不在别人，而在于我们自己的粗心大意。看来，意外伤害就在我们身边。运动前要做好热身，运动中千万不能大意，只要注意安全，很多意外都是可以避免的。',
+    py:'Shuōqǐ yùndòng zhōng de yìwài shòushāng, wǒ jiù huì xiǎngqǐ qùnián qiūtiān de nà chǎng zúqiú sài. Nà shì xuéxiào yì nián yí dù de zúqiú bǐsài, wèile chōngjī guànjūn, wǒmen bān měi tiān fàngxué hòu dōu tèyì liú xiàlái liànxí yí ge xiǎoshí. Bǐsài nà tiān, shuāngfāng dǎ de fēicháng jīliè. Xià bàn chǎng hái shèng wǔ fēnzhōng de shíhou, wǒ zhōngyú tījìnle yí ge qiú. Wǒ gāoxìng de tiàole qǐlái, méi xiǎngdào lèjí-shēngbēi, wǎng huí pǎo shí yìshí shūhu, cǎi zàile duìfāng duìyuán de jiǎo shang, yóuyú zhòngxīn bù wěn, dāngchǎng jiù shuāidǎo zài dì. Dāngshí wǒ zhǐ juéde jiǎo téng de yàomìng, zěnme yě zhàn bu qǐlái. Lǎoshī hé tóngxuémen gǎnjǐn bǎ wǒ sòngdàole yīyuàn, yīshēng shuō shì niǔshāng, zhìshǎo yào xiūxi yí ge yuè. Gèng ràng wǒ nǎohuǒ de shì, yí ge xīngqī hòu jiù shì zhège xuéqī de tǐyù kǎoshì, wǒ zhǐ néng zuò zài pángbiān kànzhe tóngxuémen pǎobù, zhēn kěwèi xuěshàng-jiāshuāng. Zhè jiàn shì wánquán chū rén yìliào. Wǒ běnlái yǐwéi, yùndòng shòushāng dōu shì yīnwèi dòngzuò tài nán huòzhě duìshǒu tài lìhai, méi xiǎngdào yí ge wēibùzúdào de xiǎo dòngzuò, yě néng ràng rén zāoshòu zhème duō tòngkǔ. Hòulái, wǒ dúdàole yì piān guānyú tǐyù míngxīng líqí zāoyù de wénzhāng: yǒude yùndòngyuán bèi dēngjīpái jīzhòngle yǎnjing, yǒude zài zhédié yùnyībǎn shí jiānbǎng shòule shāng. Wǒ zhè cái míngbai, shòushāng de yuányīn wǎngwǎng bú zài biérén, ér zàiyú wǒmen zìjǐ de cūxīn dàyi. Kànlái, yìwài shānghài jiù zài wǒmen shēnbiān. Yùndòng qián yào zuòhǎo rèshēn, yùndòng zhōng qiānwàn bù néng dàyi, zhǐyào zhùyì ānquán, hěn duō yìwài dōu shì kěyǐ bìmiǎn de.',
+    vn:'Nói đến chấn thương bất ngờ khi chơi thể thao, tôi lại nhớ tới trận bóng đá mùa thu năm ngoái. Đó là giải bóng đá thường niên của trường; để nhắm tới chức vô địch, lớp tôi ngày nào tan học cũng cất công ở lại tập thêm một tiếng. Hôm thi đấu, hai đội chơi rất quyết liệt. Khi hiệp hai chỉ còn năm phút, cuối cùng tôi cũng sút vào được một quả. Tôi mừng đến nhảy cẫng lên, không ngờ vui quá hoá buồn: lúc chạy về, nhất thời lơ là, tôi giẫm lên chân cầu thủ đội bạn, do mất thăng bằng nên ngã lăn ra sân ngay tại chỗ. Lúc đó tôi chỉ thấy chân đau kinh khủng, làm thế nào cũng không đứng dậy nổi. Thầy cô và các bạn vội đưa tôi đến bệnh viện, bác sĩ nói là bị trẹo, ít nhất phải nghỉ một tháng. Điều khiến tôi bực hơn nữa là một tuần sau chính là kỳ thi thể dục của học kỳ này, tôi chỉ có thể ngồi bên cạnh nhìn các bạn chạy, đúng là hoạ vô đơn chí. Chuyện này hoàn toàn nằm ngoài dự liệu. Tôi vốn tưởng rằng chấn thương khi chơi thể thao đều do động tác quá khó hoặc đối thủ quá mạnh, không ngờ một động tác nhỏ nhặt không đáng kể cũng có thể khiến người ta chịu nhiều đau đớn đến vậy. Về sau, tôi đọc được một bài viết về những cảnh ngộ ly kỳ của các ngôi sao thể thao: có vận động viên bị thẻ lên máy bay đập trúng mắt, có người bị thương ở vai khi gấp bàn kê là quần áo. Lúc đó tôi mới hiểu ra, nguyên nhân bị thương thường không nằm ở người khác, mà nằm ở sự sơ ý cẩu thả của chính chúng ta. Xem ra, tai nạn bất ngờ luôn ở ngay bên cạnh chúng ta. Trước khi vận động phải khởi động kỹ, khi vận động tuyệt đối không được chủ quan; chỉ cần chú ý an toàn thì rất nhiều tai nạn đều có thể tránh được.'
   }
 };
 
@@ -1958,194 +1867,143 @@ var writingData = {
 // LUYỆN NÓI — đúng bảng 练习5 của sách: 根据提示，简述课文主要内容
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Đây là bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b>. Mỗi câu hỏi là một dòng của bảng. Bấm loa nghe câu hỏi, nhìn gợi ý bên phải, <b>tự ghi âm câu trả lời của mình trước</b> rồi mới mở câu mẫu. Cố dùng từ mới: 离奇 · 聚精会神 · 当场 · 遮挡 · 中断 · 频繁 · 疏忽 · 特意 · 乐极生悲 · 雪上加霜 · 荒唐 · 处置.',
-  questions:[
-    {q_zh:'动物造成的伤害',
-     q_vn:'Chấn thương do động vật gây ra',
-     hint:'①狗造成的伤害　②猫头鹰事件',
-     sample:'第一个例子是一名足球门将。他正聚精会神地防守，一只狗以火箭般的速度冲了进来，横着冲向他的膝盖，他当场倒地，最后竟然告别了心爱的职业。第二个是猫头鹰事件：一只猫头鹰遮挡住了球员的视线，裁判决定中断比赛，可是一名球员刹不住车，把它踢死了，这件事引起了广泛的争议。',
-     sample_vn:'Ví dụ thứ nhất là một thủ môn bóng đá. Anh ta đang tập trung phòng thủ thì một con chó lao vào với tốc độ tên lửa, xộc ngang vào đầu gối anh ta; anh ta ngã gục tại chỗ, cuối cùng phải từ giã sự nghiệp mình yêu. Ví dụ thứ hai là vụ con cú mèo: con cú che khuất tầm nhìn của cầu thủ, trọng tài quyết định tạm dừng trận, nhưng một cầu thủ không kịp dừng lại, đá chết nó; chuyện này gây tranh cãi rộng rãi.',
-     note:'Hai ý ①② — mỗi ý kể theo trình tự 起因 → 经过 → 结果; dùng 当场, 中断, 刹不住车.'},
-    {q_zh:'出人意料的伤害',
-     q_vn:'Chấn thương nằm ngoài dự liệu',
-     hint:'登机牌造成的伤害',
-     sample:'因为赛事频繁，坐飞机成了运动员的家常便饭。谁也没想到，小小的登机牌也会成为凶器：曾经有运动员在机场被登机牌击中了眼睛，并因此错过了部分比赛。',
-     sample_vn:'Vì lịch thi đấu dày đặc, đi máy bay thành chuyện cơm bữa của vận động viên. Không ai ngờ tấm thẻ lên máy bay nhỏ xíu lại trở thành hung khí: từng có vận động viên bị thẻ lên máy bay đập trúng mắt ở sân bay, và vì thế lỡ mất một phần các trận đấu.',
-     note:'Nêu nguyên nhân bằng 因为赛事频繁; nhấn sự bất ngờ bằng 谁也没想到 / 出人意料.'},
-    {q_zh:'粗心大意造成的伤害',
-     q_vn:'Chấn thương do sơ ý cẩu thả',
-     hint:'①警示牌　②熨衣板　③高尔夫球具',
-     sample:'主办方特意做了警示牌，可是有位运动员一时疏忽，踩在了警示牌上，由于重心不稳，扭伤了脚。还有一位运动员在折叠熨衣板时肩膀受了伤。某国国脚想从汽车里拽出高尔夫球具，结果不仅磕破了嘴唇，还磕掉了门牙。',
-     sample_vn:'Ban tổ chức cất công làm biển cảnh báo, nhưng có một vận động viên nhất thời lơ là, giẫm lên tấm biển, do mất thăng bằng nên trẹo chân. Còn một vận động viên bị thương ở vai khi gấp bàn kê là quần áo. Một tuyển thủ quốc gia muốn lôi bộ gậy golf ra khỏi ô tô, kết quả không chỉ va rách môi mà còn gãy cả răng cửa.',
-     note:'Ba ý ①②③ — mỗi ý một câu; dùng 特意, 一时疏忽, 由于……, 不仅……还…….'},
-    {q_zh:'乐极生悲造成的伤害',
-     q_vn:'Chấn thương do vui quá hoá buồn',
-     hint:'戒指挂在围栏上',
-     sample:'有一位球员打进一球后，冲到观众席和球迷一起庆祝，结果结婚戒指连同手指一起挂在了围栏上，手指受了重伤。更让他恼火的是，主裁判还给了他一张黄牌，真可谓雪上加霜。',
-     sample_vn:'Có một cầu thủ sau khi ghi bàn lao lên khán đài ăn mừng cùng cổ động viên, kết quả nhẫn cưới cùng ngón tay mắc vào hàng rào, ngón tay bị thương nặng. Điều khiến anh ta bực hơn là trọng tài chính còn rút cho anh ta một thẻ vàng, đúng là hoạ vô đơn chí.',
-     note:'结果 dẫn ra kết quả xấu; tăng tiến bằng 更让他恼火的是……，真可谓雪上加霜.'},
-    {q_zh:'最荒唐的意外伤害',
-     q_vn:'Chấn thương bất ngờ lố bịch nhất',
-     hint:'用电钻处置血泡',
-     sample:'最荒唐的是一位国脚。他的脚指甲旁边长了个血泡，他决定自己处置，最后竟然选了电钻。由于用力过猛，他把脚弄破了，以致感染，遭受了难以想象的痛苦。其实在医生眼里，这只是个微不足道的小手术。',
-     sample_vn:'Lố bịch nhất là một tuyển thủ quốc gia. Bên cạnh móng chân anh ta mọc một cái bọng máu, anh ta quyết định tự xử lý, cuối cùng lại chọn máy khoan điện. Do dùng lực quá mạnh, anh ta làm rách chân, đến nỗi nhiễm trùng, chịu đau đớn khó tưởng tượng. Thật ra trong mắt bác sĩ, đây chỉ là một tiểu phẫu không đáng kể.',
-     note:'竟然 nhấn sự bất ngờ; 由于……，以致…… nguyên nhân → hậu quả xấu; kết bằng 微不足道.'}
+  intro: 'Đây là bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b>. Mỗi câu hỏi là một dòng của bảng. Bấm loa nghe câu hỏi, nhìn gợi ý bên phải, <b>tự ghi âm câu trả lời của mình trước</b> rồi mới mở câu mẫu. Cố dùng từ mới: 离奇 · 聚精会神 · 当场 · 遮挡 · 中断 · 频繁 · 疏忽 · 特意 · 乐极生悲 · 雪上加霜 · 荒唐 · 处置.',
+  questions: [
+    {q_zh:'动物造成的伤害',q_vn:'Chấn thương do động vật gây ra',hint:'①狗造成的伤害　②猫头鹰事件',sample:'第一个例子是一名足球门将。他正聚精会神地防守，一只狗以火箭般的速度冲了进来，横着冲向他的膝盖，他当场倒地，最后竟然告别了心爱的职业。第二个是猫头鹰事件：一只猫头鹰遮挡住了球员的视线，裁判决定中断比赛，可是一名球员刹不住车，把它踢死了，这件事引起了广泛的争议。',sample_vn:'Ví dụ thứ nhất là một thủ môn bóng đá. Anh ta đang tập trung phòng thủ thì một con chó lao vào với tốc độ tên lửa, xộc ngang vào đầu gối anh ta; anh ta ngã gục tại chỗ, cuối cùng phải từ giã sự nghiệp mình yêu. Ví dụ thứ hai là vụ con cú mèo: con cú che khuất tầm nhìn của cầu thủ, trọng tài quyết định tạm dừng trận, nhưng một cầu thủ không kịp dừng lại, đá chết nó; chuyện này gây tranh cãi rộng rãi.',note:'Hai ý ①② — mỗi ý kể theo trình tự nguyên nhân → diễn biến → kết quả; dùng 当场, 中断, 刹不住车.'},
+    {q_zh:'出人意料的伤害',q_vn:'Chấn thương nằm ngoài dự liệu',hint:'登机牌造成的伤害',sample:'因为赛事频繁，坐飞机成了运动员的家常便饭。没有人想到，小小的登机牌也会成为凶器：曾经有运动员在机场被登机牌击中了眼睛，并因此错过了部分比赛。',sample_vn:'Vì lịch thi đấu dày đặc, đi máy bay thành chuyện cơm bữa của vận động viên. Không ai ngờ tấm thẻ lên máy bay nhỏ xíu lại trở thành hung khí: từng có vận động viên bị thẻ lên máy bay đập trúng mắt ở sân bay, và vì thế lỡ mất một phần các trận đấu.',note:'Nêu nguyên nhân bằng 因为赛事频繁; nhấn sự bất ngờ bằng 谁也没想到 / 出人意料.'},
+    {q_zh:'粗心大意造成的伤害',q_vn:'Chấn thương do sơ ý cẩu thả',hint:'①警示牌　②熨衣板　③高尔夫球具',sample:'主办方特意做了警示牌，可是有位运动员一时疏忽，踩在了警示牌上，由于重心不稳，扭伤了脚。还有一位运动员在折叠熨衣板时肩膀受了伤。某国国脚想从汽车里拽出高尔夫球具，结果不仅磕破了嘴唇，还磕掉了门牙。',sample_vn:'Ban tổ chức cất công làm biển cảnh báo, nhưng có một vận động viên nhất thời lơ là, giẫm lên tấm biển, do mất thăng bằng nên trẹo chân. Còn một vận động viên bị thương ở vai khi gấp bàn kê là quần áo. Một tuyển thủ quốc gia muốn lôi bộ gậy golf ra khỏi ô tô, kết quả không chỉ va rách môi mà còn gãy cả răng cửa.',note:'Ba ý ①②③ — mỗi ý một câu; dùng 特意, 一时疏忽, 由于……, 不仅……还…….'},
+    {q_zh:'乐极生悲造成的伤害',q_vn:'Chấn thương do vui quá hoá buồn',hint:'戒指挂在围栏上',sample:'有一位球员打进一球后，冲到观众席和球迷一起庆祝，结果结婚戒指连同手指一起挂在了围栏上，手指受了重伤。更让他恼火的是，主裁判还给了他一张黄牌，真可谓雪上加霜。',sample_vn:'Có một cầu thủ sau khi ghi bàn lao lên khán đài ăn mừng cùng cổ động viên, kết quả nhẫn cưới cùng ngón tay mắc vào hàng rào, ngón tay bị thương nặng. Điều khiến anh ta bực hơn là trọng tài chính còn rút cho anh ta một thẻ vàng, đúng là hoạ vô đơn chí.',note:'结果 dẫn ra kết quả xấu; tăng tiến bằng 更让他恼火的是……，真可谓雪上加霜.'},
+    {q_zh:'最荒唐的意外伤害',q_vn:'Chấn thương bất ngờ lố bịch nhất',hint:'用电钻处置血泡',sample:'最荒唐的是一位国脚。他的脚指甲旁边长了个血泡，他决定自己处置，最后竟然选了电钻。由于用力过猛，他把脚弄破了，以致感染，遭受了难以想象的痛苦。其实在医生眼里，这只是个微不足道的小手术。',sample_vn:'Lố bịch nhất là một tuyển thủ quốc gia. Bên cạnh móng chân anh ta mọc một cái bọng máu, anh ta quyết định tự xử lý, cuối cùng lại chọn máy khoan điện. Do dùng lực quá mạnh, anh ta làm rách chân, đến nỗi nhiễm trùng, chịu đau đớn khó tưởng tượng. Thật ra trong mắt bác sĩ, đây chỉ là một tiểu phẫu không đáng kể.',note:'竟然 nhấn sự bất ngờ; 由于……，以致…… nguyên nhân → hậu quả xấu; kết bằng 微不足道.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — 听力 (hội thoại ngắn + đoạn nói)
-// Sách HSK 6 không có sách bài tập nghe: tự soạn theo chủ đề bài 24.
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — câu tự soạn (sách HSK 6 không có sách bài tập nghe), mỗi câu một tình huống mới
+// ══════════════════════════════════════════
 var listenExamData = {
-  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, ' +
-         'trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
-  source: 'Soạn theo dạng đề HSK 6 · chủ đề bài 24',
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 24',
   items: [
-    {n:1,
-     lines:[{sp:'女',zh:'你的腿怎么了？走路一瘸一拐的。'},
-            {sp:'男',zh:'别提了，昨天打篮球时一时疏忽，被人撞倒了，当场就站不起来了。'}],
-     q:'男的腿为什么受伤了？',qvn:'Vì sao chân người đàn ông bị thương?',
-     opts:['跑步时摔倒了','骑车时刹不住车','打篮球时被人撞倒了','被狗咬了'],ans:2,
-     why:'打篮球时一时疏忽，被人撞倒了 → bị người khác va ngã khi chơi bóng rổ. 瘸 ôn HSK 6 bài 20.',
-     words:['疏忽','当场']},
-
-    {n:2,
-     lines:[{sp:'男',zh:'昨晚的决赛你看了吗？'},
-            {sp:'女',zh:'看了，两个队一直不分胜负，直到最后一分钟才进了一个球，真是出人意料。'}],
-     q:'关于这场决赛，可以知道什么？',qvn:'Về trận chung kết này, có thể biết điều gì?',
-     opts:['最后一分钟才分出胜负','比赛被中断了','女的没有看','两队比分差距很大'],ans:0,
-     why:'一直不分胜负，直到最后一分钟才进了一个球 → đến phút cuối mới phân thắng bại. Không có chi tiết trận đấu bị gián đoạn.',
-     words:['胜负','意料']},
-
-    {n:3,
-     lines:[{sp:'女',zh:'你怎么又把我的杯子打碎了？'},
-            {sp:'男',zh:'对不起，我真不是成心的，刚才拿书的时候没注意，碰了一下就掉了。'}],
-     q:'男的是什么意思？',qvn:'Ý người đàn ông là gì?',
-     opts:['杯子不是他打碎的','他是特意打碎的','他会买一个新杯子','他不是故意的'],ans:3,
-     why:'我真不是成心的 = tôi thật sự không cố ý (成心 = 故意). Anh ta thừa nhận làm vỡ nên "không phải anh ta" sai.',
-     words:['成心']},
-
-    {n:4,
-     lines:[{sp:'男',zh:'听说你为了看我比赛，特意从外地赶回来了？'},
-            {sp:'女',zh:'是啊，你第一次参加全国比赛，我怎么能不来给你加油呢？'}],
-     q:'女的为什么回来？',qvn:'Vì sao người phụ nữ quay về?',
-     opts:['回来出差','为了看男的比赛','她要参加全国比赛','家里有急事'],ans:1,
-     why:'为了看我比赛，特意从外地赶回来 — 特意 = cất công, chuyên vì việc đó. Người thi đấu là người đàn ông.',
-     words:['特意']},
-
-    {n:5,
-     lines:[{sp:'女',zh:'小王进球以后太激动了，一下子跳到了围栏上。'},
-            {sp:'男',zh:'结果乐极生悲，把脚扭伤了，裁判还给了他一张黄牌，真是雪上加霜。'}],
-     q:'小王怎么了？',qvn:'Tiểu Vương làm sao?',
-     opts:['被罚下场了','扭伤了脚，还得了一张黄牌','打进了两个球','和裁判吵了一架'],ans:1,
-     why:'把脚扭伤了，裁判还给了他一张黄牌 → trẹo chân và nhận thẻ vàng (乐极生悲 + 雪上加霜). Thẻ vàng chưa phải bị đuổi.',
-     words:['乐极生悲','裁判','雪上加霜']},
-
-    {n:6,
-     lines:[{sp:'男',zh:'这个手术很复杂吧？我有点儿担心。'},
-            {sp:'女',zh:'放心吧，在医生眼里这只是个微不足道的小手术，一个小时就能做完。'}],
-     q:'女的认为这个手术怎么样？',qvn:'Người phụ nữ cho rằng ca phẫu thuật này thế nào?',
-     opts:['非常复杂','要做好几个小时','必须去大医院做','很简单，不用担心'],ans:3,
-     why:'微不足道的小手术，一个小时就能做完 → rất đơn giản. 放心吧 cũng cho thấy không cần lo.',
-     words:['微不足道']},
-
-    {n:7,
-     lines:[{sp:'女',zh:'医生，这个伤口我自己回家处置一下行吗？'},
-            {sp:'男',zh:'最好别，处置不当很容易感染，还是让护士帮你处理吧。'}],
-     q:'男的建议怎么做？',qvn:'Người đàn ông khuyên làm thế nào?',
-     opts:['让护士处理伤口','自己回家处理','不用处理','马上去大医院'],ans:0,
-     why:'还是让护士帮你处理吧 → để y tá xử lý. 最好别 phủ định đề nghị tự xử lý ở nhà.',
-     words:['处置']},
-
-    {n:8,
-     lines:[{sp:'男',zh:'很多人以为运动受伤都是因为动作太难，其实不少意外来自粗心大意。比如，运动前不热身，很容易拉伤肌肉；运动时注意力不集中，就可能摔伤、扭伤。专家警告说，即使是微不足道的小伤，如果处置不当，也可能留下后遗症。因此，运动前一定要做好准备活动，运动中千万不能大意。'}],
-     q:'这段话主要想告诉我们什么？',qvn:'Đoạn này chủ yếu muốn nói với chúng ta điều gì?',
-     opts:['运动受伤都是因为动作太难','运动前可以不热身','运动时要注意安全，不能大意','小伤不需要处理'],ans:2,
-     why:'Câu kết: 运动前一定要做好准备活动，运动中千万不能大意. Đáp án A là quan niệm sai bị bác bỏ (很多人以为……其实……).',
-     words:['大意','警告','微不足道','处置']}
+    {
+      n: 1,
+      lines: [
+        {sp:'女',zh:'这么远，你还跑过来干什么？'},
+        {sp:'男',zh:'听说你病了，我特意坐火车来看看你。'}
+      ],
+      q: '男的为什么来？',
+      qvn: 'Vì sao người đàn ông đến?',
+      opts: ['正好路过这里','来这儿出差','来看生病的女的','来还东西'],
+      ans: 2,
+      why: '特意 = cất công vì việc này: nghe tin cô ấy ốm nên đi tàu đến thăm, không phải tiện đường hay đi công tác.',
+      words: ['特意']
+    },
+    {
+      n: 2,
+      lines: [
+        {sp:'男',zh:'明天要是下雨，咱们还去爬山吗？'},
+        {sp:'女',zh:'下雨也去，我东西都准备好了。'}
+      ],
+      q: '女的是什么意思？',
+      qvn: 'Ý người phụ nữ là gì?',
+      opts: ['下雨就不去了','不管下不下雨都去','改天再去','还没准备好'],
+      ans: 1,
+      why: '下雨也去 là câu co của 即使下雨，也去 → mưa cũng đi. Cô ấy đã chuẩn bị xong đồ.',
+      words: []
+    },
+    {
+      n: 3,
+      lines: [
+        {sp:'女',zh:'是你把我的杯子打碎的吧？'},
+        {sp:'男',zh:'这可跟我没关系，我刚进来，杯子早就在地上了。'}
+      ],
+      q: '男的是什么意思？',
+      qvn: 'Ý người đàn ông là gì?',
+      opts: ['杯子是他打碎的','他不是成心的','杯子不是他打碎的','他会买个新的'],
+      ans: 2,
+      why: '跟我没关系 + anh ấy vừa vào thì cốc đã vỡ sẵn → anh không làm vỡ cốc, cô ấy đổ oan cho anh (không phải "lỡ tay").',
+      words: []
+    },
+    {
+      n: 4,
+      lines: [
+        {sp:'男',zh:'你怎么又把钥匙忘在家里了？'},
+        {sp:'女',zh:'早上起晚了，一时疏忽就忘了。'}
+      ],
+      q: '女的为什么没带钥匙？',
+      qvn: 'Vì sao người phụ nữ không mang chìa khoá?',
+      opts: ['钥匙丢了','钥匙给了别人','门锁坏了','出门时疏忽忘了'],
+      ans: 3,
+      why: '起晚了，一时疏忽就忘了 → dậy muộn, sơ ý nên quên. Không nhắc tới mất hay đưa cho ai.',
+      words: ['疏忽']
+    },
+    {
+      n: 5,
+      lines: [
+        {sp:'女',zh:'听说小王结婚那天出了点儿事？'},
+        {sp:'男',zh:'是啊，他太高兴了，跳舞的时候把脚扭伤了，真是乐极生悲。'}
+      ],
+      q: '小王怎么了？',
+      qvn: 'Tiểu Vương bị làm sao?',
+      opts: ['把脚扭伤了','没去结婚','和人吵架了','喝多了'],
+      ans: 0,
+      why: '把脚扭伤了 → bị trẹo chân; 乐极生悲 = vui quá hoá buồn.',
+      words: ['乐极生悲']
+    },
+    {
+      n: 6,
+      lines: [
+        {sp:'男',zh:'你这个月怎么老坐飞机？'},
+        {sp:'女',zh:'公司在外地的项目多，出差太频繁了，每天忙得跟打仗似的。'}
+      ],
+      q: '女的为什么常坐飞机？',
+      qvn: 'Vì sao người phụ nữ hay đi máy bay?',
+      opts: ['去外地旅游','经常出差','家在外地','喜欢坐飞机'],
+      ans: 1,
+      why: '出差太频繁了 → đi công tác liên tục; 忙得跟打仗似的 = bận như đánh trận.',
+      words: ['频繁','打仗']
+    },
+    {
+      n: 7,
+      lines: [
+        {sp:'女',zh:'那天的比赛你怎么那么生气？'},
+        {sp:'男',zh:'裁判明明看错了，还给了我一张黄牌，你说恼火不恼火？'}
+      ],
+      q: '男的为什么生气？',
+      qvn: 'Vì sao người đàn ông tức giận?',
+      opts: ['裁判看错了','输了比赛','受了伤','教练批评了他'],
+      ans: 0,
+      why: '裁判明明看错了，还给了我一张黄牌 → trọng tài nhìn nhầm mà vẫn rút thẻ vàng; 明明 (bài 6) nhấn mạnh sự vô lý.',
+      words: ['裁判','恼火']
+    }
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 💬 TÌNH HUỐNG GIAO TIẾP
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
+// ══════════════════════════════════════════
 var situationData = {
-  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
-         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn cùng bàn lỡ tay làm đổ nước lên vở của em và rối rít xin lỗi. Em biết bạn không cố ý.',
-     a:{sp:'Bạn cùng bàn',zh:'对不起对不起，我把水洒在你的本子上了！',vn:'Xin lỗi xin lỗi, tớ làm đổ nước lên vở của cậu rồi!'},
-     need:['Dùng 成心','An ủi bạn'],
-     sample:'没关系，我知道你不是成心的。擦一擦就行了，你别放在心上。',
-     samplePy:'Méi guānxi, wǒ zhīdào nǐ bú shì chéngxīn de. Cā yi cā jiù xíng le, nǐ bié fàng zài xīn shang.',
-     sampleVn:'Không sao, tớ biết cậu không cố ý mà. Lau đi là được, cậu đừng để bụng.',
-     tip:'不是成心的 = không cố ý; 别放在心上 = đừng để bụng.'},
-
-    {scene:'Em là đội trưởng đội bóng lớp. Trước trận, một đồng đội tỏ ra rất chủ quan.',
-     a:{sp:'Đồng đội',zh:'对方去年是最后一名，这场我们肯定赢！',vn:'Đội bạn năm ngoái đứng bét, trận này chắc chắn mình thắng!'},
-     need:['Dùng 大意 hoặc 疏忽','Dùng một câu co (紧缩句), vd: 再……也……'],
-     sample:'对手再弱我们也不能大意，一时疏忽就可能输掉比赛。',
-     samplePy:'Duìshǒu zài ruò wǒmen yě bù néng dàyi, yìshí shūhu jiù kěnéng shūdiào bǐsài.',
-     sampleVn:'Đối thủ yếu đến mấy chúng ta cũng không được chủ quan, nhất thời lơ là là có thể thua trận.',
-     tip:'对手再弱我们也不能大意 là câu co = 即使对手再弱，我们也不能大意 (bỏ 即使 và dấu phẩy, giữ 也).'},
-
-    {scene:'Bà nội từ quê lên thăm, mang theo món bánh em thích mà bà tự tay làm.',
-     a:{sp:'Bà nội',zh:'这是奶奶自己做的点心，你尝尝。',vn:'Đây là bánh bà tự làm đấy, cháu nếm thử đi.'},
-     need:['Dùng 特意','Cảm ơn và quan tâm bà'],
-     sample:'奶奶，这是您特意为我做的吗？太谢谢您了！不过您腰不好，以后别这么辛苦了。',
-     samplePy:'Nǎinai, zhè shì nín tèyì wèi wǒ zuò de ma? Tài xièxie nín le! Búguò nín yāo bù hǎo, yǐhòu bié zhème xīnkǔ le.',
-     sampleVn:'Bà ơi, bà làm riêng cho cháu ạ? Cháu cảm ơn bà nhiều lắm! Nhưng bà đau lưng, sau này bà đừng vất vả thế nữa.',
-     tip:'特意为 + người + V (việc tốt, bỏ công) — KHÔNG dùng 故意 ở đây.'},
-
-    {scene:'Bạn thân kể: hôm qua được điểm tuyệt đối, mừng quá nhảy cẫng lên và bị trẹo chân, mà mai lại thi chạy.',
-     a:{sp:'Bạn thân',zh:'我昨天考了满分，高兴得跳了起来，结果把脚扭伤了，明天还有跑步考试……',vn:'Hôm qua tớ được điểm tuyệt đối, mừng quá nhảy cẫng lên, kết quả trẹo chân, mai lại còn thi chạy…'},
-     need:['Dùng 乐极生悲 hoặc 雪上加霜','Đưa ra lời khuyên'],
-     sample:'你这真是乐极生悲啊！明天还要考跑步，真是雪上加霜。你赶快去医院看看，再跟老师说明情况，申请补考吧。',
-     samplePy:'Nǐ zhè zhēn shì lèjí-shēngbēi a! Míngtiān hái yào kǎo pǎobù, zhēn shì xuěshàng-jiāshuāng. Nǐ gǎnkuài qù yīyuàn kànkan, zài gēn lǎoshī shuōmíng qíngkuàng, shēnqǐng bǔkǎo ba.',
-     sampleVn:'Cậu đúng là vui quá hoá buồn rồi! Mai còn thi chạy nữa, đúng là hoạ vô đơn chí. Cậu mau đi bệnh viện khám đi, rồi trình bày với thầy, xin thi bù nhé.',
-     tip:'乐极生悲 (đang vui gặp hoạ) — 雪上加霜 (hoạ chồng hoạ).'},
-
-    {scene:'Trong giờ thảo luận, một bạn nói "thi đấu chỉ cần thắng là được, cách nào cũng xong".',
-     a:{sp:'Bạn cùng lớp',zh:'比赛嘛，只要能赢，用什么办法都行。',vn:'Thi đấu mà, chỉ cần thắng, dùng cách gì cũng được.'},
-     need:['Dùng 注重 và 胜负','Dùng 南辕北辙 hoặc 心态'],
-     sample:'我不同意。比赛不能只注重胜负，这种只想赢的心态和体育精神南辕北辙。',
-     samplePy:'Wǒ bù tóngyì. Bǐsài bù néng zhǐ zhùzhòng shèngfù, zhè zhǒng zhǐ xiǎng yíng de xīntài hé tǐyù jīngshén nányuán-běizhé.',
-     sampleVn:'Tớ không đồng ý. Thi đấu không thể chỉ coi trọng thắng thua, tâm lý chỉ muốn thắng như vậy hoàn toàn đi ngược tinh thần thể thao.',
-     tip:'Bắt chước câu bài khoá: 这种只想赢球的心态和比赛精神南辕北辙.'}
+    {scene:'Bạn cùng bàn lỡ tay làm đổ nước lên vở của em và rối rít xin lỗi. Em biết bạn không cố ý.',a:{sp:'Bạn cùng bàn',zh:'对不起对不起，我把水洒在你的本子上了！',vn:'Xin lỗi xin lỗi, tớ làm đổ nước lên vở của cậu rồi!'},need:['Dùng 成心','An ủi bạn'],sample:'没关系，我知道你不是成心的。擦一擦就行了，你别往心里去。',samplePy:'Méi guānxi, wǒ zhīdào nǐ bú shì chéngxīn de. Cā yi cā jiù xíng le, nǐ bié wǎng xīn li qù.',sampleVn:'Không sao, tớ biết cậu không cố ý mà. Lau đi là được, cậu đừng để bụng.',tip:'不是成心的 = không cố ý; 别放在心上 = đừng để bụng.'},
+    {scene:'Em là đội trưởng đội bóng lớp. Trước trận, một đồng đội tỏ ra rất chủ quan.',a:{sp:'Đồng đội',zh:'对方去年是最后一名，这场我们肯定赢！',vn:'Đội bạn năm ngoái đứng bét, trận này chắc chắn mình thắng!'},need:['Dùng 大意 hoặc 疏忽','Dùng một câu co, vd: 再……也……'],sample:'对手再弱我们也不能大意，一时疏忽就可能输掉比赛。',samplePy:'Duìshǒu zài ruò wǒmen yě bù néng dàyi, yìshí shūhu jiù kěnéng shūdiào bǐsài.',sampleVn:'Đối thủ yếu đến mấy chúng ta cũng không được chủ quan, sơ ý một chút là có thể thua trận.',tip:'对手再弱我们也不能大意 là câu co = 即使对手再弱，我们也不能大意 (bỏ 即使 và dấu phẩy, giữ 也).'},
+    {scene:'Bà nội từ quê lên thăm, mang theo món bánh em thích mà bà tự tay làm.',a:{sp:'Bà nội',zh:'这是奶奶自己做的点心，你尝尝。',vn:'Đây là bánh bà tự làm đấy, cháu nếm thử đi.'},need:['Dùng 特意','Cảm ơn và quan tâm bà'],sample:'奶奶，这是您特意为我做的吗？太谢谢您了！不过您腰不好，以后别这么辛苦了。',samplePy:'Nǎinai, zhè shì nín tèyì wèi wǒ zuò de ma? Tài xièxie nín le! Búguò nín yāo bù hǎo, yǐhòu bié zhème xīnkǔ le.',sampleVn:'Bà ơi, bà làm riêng cho cháu ạ? Cháu cảm ơn bà nhiều lắm! Nhưng bà đau lưng, sau này bà đừng vất vả thế nữa.',tip:'特意为 + người + V (việc tốt, bỏ công) — KHÔNG dùng 故意 ở đây.'},
+    {scene:'Bạn thân kể: hôm qua được điểm tuyệt đối, mừng quá nhảy cẫng lên và bị trẹo chân, mà mai lại thi chạy.',a:{sp:'Bạn thân',zh:'我昨天考了满分，高兴得跳了起来，结果把脚扭伤了，明天还有跑步考试……',vn:'Hôm qua tớ được điểm tuyệt đối, mừng quá nhảy cẫng lên, kết quả trẹo chân, mai lại còn thi chạy…'},need:['Dùng 乐极生悲 hoặc 雪上加霜','Đưa ra lời khuyên'],sample:'你这真是乐极生悲啊！明天还要考跑步，这下可雪上加霜了。你赶快去医院看看，再跟老师说明情况吧。',samplePy:'Nǐ zhè zhēn shì lèjí-shēngbēi a! Míngtiān hái yào kǎo pǎobù, zhè xià kě xuěshàng-jiāshuāng le. Nǐ gǎnkuài qù yīyuàn kànkan, zài gēn lǎoshī shuōmíng qíngkuàng ba.',sampleVn:'Cậu đúng là vui quá hoá buồn rồi! Mai còn thi chạy nữa, đúng là hoạ chồng hoạ. Cậu mau đi bệnh viện khám đi, rồi nói rõ tình hình với thầy cô.',tip:'乐极生悲 (đang vui gặp hoạ) — 雪上加霜 (hoạ chồng hoạ).'},
+    {scene:'Trong giờ thảo luận, một bạn nói "thi đấu chỉ cần thắng là được, cách nào cũng xong".',a:{sp:'Bạn cùng lớp',zh:'比赛嘛，只要能赢，用什么办法都行。',vn:'Thi đấu mà, chỉ cần thắng, dùng cách gì cũng được.'},need:['Dùng 注重 và 胜负','Dùng 南辕北辙'],sample:'我不同意。比赛不能只注重胜负，靠骗人赢了比赛，跟我们参加比赛的目的南辕北辙。',samplePy:'Wǒ bù tóngyì. Bǐsài bù néng zhǐ zhùzhòng shèngfù, kào piàn rén yíngle bǐsài, gēn wǒmen cānjiā bǐsài de mùdì nányuán-běizhé.',sampleVn:'Tớ không đồng ý. Thi đấu không thể chỉ coi trọng thắng thua; thắng nhờ lừa người khác thì hoàn toàn đi ngược mục đích chúng ta tham gia thi đấu.',tip:'A 跟 B 南辕北辙 = A đi ngược hẳn với B (mục đích và hành động trái nhau).'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 // 🎯 NÓI SAO CHO HAY — 得体 / 语体
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 var registerData = {
-  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
-         'HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
   items: [
-    {scene:'Bản tin thể thao trên truyền hình đưa tin một cầu thủ bị thương.',
-     a:'本场比赛第30分钟，主力前锋在一次拼抢中意外受伤，被担架抬下了场。',b:'那个踢前锋的哥们儿摔了一跤，好像挺惨的，被人抬走了。',better:'a',
-     why:'Bản tin cần chính xác, trang trọng: thời điểm cụ thể, 主力前锋, 意外受伤, 担架. Câu b (哥们儿, 挺惨的) là lời kể chuyện phiếm.'},
-
-    {scene:'Em nhắn tin hỏi thăm bạn thân vừa bị trẹo chân.',
-     a:'听闻阁下足部受伤，本人深表关切，望早日康复。',b:'听说你脚扭了？疼不疼啊？明天要不要我帮你带早饭？',better:'b',
-     why:'Nhắn tin bạn thân nên thân mật, cụ thể, ấm áp. Câu a (阁下, 本人, 深表关切) như công văn, rất xa cách.'},
-
-    {scene:'Thông báo của ban tổ chức giải bóng đá gửi các vận động viên.',
-     a:'大家注意啊，别在球门里瞎练，小心伤着！',b:'主办方提醒：比赛期间请勿在球门区域内训练，以免发生意外。',better:'b',
-     why:'Thông báo chính thức dùng văn viết: 主办方提醒, 请勿, 区域, 以免发生意外. Câu a (瞎练, 伤着) là khẩu ngữ tuỳ tiện.'},
-
-    {scene:'Em xin lỗi thầy chủ nhiệm vì lỡ làm hỏng máy chiếu của lớp.',
-     a:'老师，对不起，我不小心把投影仪碰坏了。我不是故意的，但我愿意承担责任。',b:'哎呀，坏了就坏了，又不是我成心的，谁让它放在那儿呢。',better:'a',
-     why:'Xin lỗi người trên phải thành khẩn, nhận trách nhiệm. Câu b tuy có ý "không cố ý" nhưng đổ lỗi (谁让它放在那儿), thiếu lễ phép.'},
-
-    {scene:'Bài bình luận trên báo về vụ con cú mèo trên sân bóng.',
-     a:'这一事件引发了广泛争议：赛场上是否应当为了胜负而置动物的生命于不顾？',b:'这事儿大家吵翻了天，你说为了赢球就把猫头鹰踢死，像话吗？',better:'a',
-     why:'Văn bình luận dùng từ văn viết: 事件, 引发争议, 是否应当, 置……于不顾. Câu b (吵翻了天, 像话吗) là khẩu ngữ.'},
-
-    {scene:'Em kể cho ông nội nghe chuyện cầu thủ tự dùng máy khoan điện xử lý bọng máu.',
-     a:'爷爷，有个球员脚上长了个血泡，他居然自己拿电钻去弄，结果感染了，您说荒唐不荒唐？',b:'据报道，某国家队球员曾使用电动工具自行处置足部血泡，最终导致伤口感染。',better:'a',
-     why:'Kể chuyện với người thân nên dùng lời tự nhiên, sinh động (居然, 您说荒唐不荒唐) nhưng vẫn lễ phép (您). Câu b là giọng bản tin.'}
+    {scene:'Em viết bài văn tả cảnh mùa xuân dự thi viết văn của trường.',a:'春天一来，小草就从地下长了出来，天气也暖和了。',b:'春天一来，小草就从地下伸出头来，好奇地看着这个世界。',better:'b',why:'Bài văn miêu tả cần sinh động: câu b dùng nhân hoá (小草 "伸出头来", "好奇地看") — cỏ có động tác, tình cảm của người. Câu a đúng nhưng khô.'},
+    {scene:'Em viết báo cáo thí nghiệm môn khoa học.',a:'加热五分钟以后，水开始变热。',b:'加热五分钟以后，水开始高兴地唱起歌来。',better:'a',why:'Báo cáo khoa học phải khách quan, chính xác — không dùng nhân hoá. Câu b hợp với truyện thiếu nhi chứ không hợp với báo cáo.'},
+    {scene:'Bản tin thể thao trên truyền hình đưa tin một cầu thủ bị thương.',a:'本场比赛第30分钟，一名球员在防守时意外受伤，被送往医院。',b:'那个踢球的小伙子摔倒了，好像挺惨的，被人抬走了。',better:'a',why:'Bản tin cần chính xác, trang trọng: thời điểm cụ thể, 意外受伤, 送往医院. Câu b (小伙子, 挺惨的) là lời kể chuyện phiếm.'},
+    {scene:'Em nhắn tin hỏi thăm bạn thân vừa bị trẹo chân.',a:'听说您足部受伤，本人十分关心，希望您早日恢复健康。',b:'听说你脚受伤了？疼不疼啊？明天要不要我帮你带早饭？',better:'b',why:'Nhắn tin bạn thân nên thân mật, cụ thể, ấm áp. Câu a (您, 足部, 本人) như thư công vụ, rất xa cách.'},
+    {scene:'Thông báo của ban tổ chức giải bóng đá gửi các vận động viên.',a:'大家注意啊，别在球门那儿瞎练，小心伤着！',b:'主办方提醒：热身期间请勿进入球门区域，以免发生意外。',better:'b',why:'Thông báo chính thức dùng văn viết: 主办方提醒, 请勿, 区域, 以免 (bài 21). Câu a (瞎练, 伤着) là khẩu ngữ tuỳ tiện.'},
+    {scene:'Em xin lỗi thầy chủ nhiệm vì lỡ làm hỏng máy tính của lớp.',a:'老师，对不起，电脑是我不小心碰坏的，我愿意负责。',b:'哎呀，坏了就坏了，谁让它放在那儿呢。',better:'a',why:'Xin lỗi người trên phải thành khẩn, nhận trách nhiệm. Câu b đổ lỗi cho người khác (谁让它放在那儿), thiếu lễ phép.'}
   ]
 };
 

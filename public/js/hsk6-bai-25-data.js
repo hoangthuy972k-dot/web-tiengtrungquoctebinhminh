@@ -1707,94 +1707,51 @@ var hvBridgeData = {
 // GHÉP TỪ — cụm từ trong bài khoá
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'心里一直',right:'不服气'},
-  {left:'跟曹操的',right:'军队打仗'},
-  {left:'赶造',right:'十万支箭'},
-  {left:'造箭的事就由您',right:'承办'},
-  {left:'设宴',right:'款待'},
-  {left:'临走时',right:'叮嘱周瑜'},
-  {left:'说话',right:'不算数'},
-  {left:'供应',right:'充足'},
-  {left:'故意给他',right:'拖延时间'},
-  {left:'活该',right:'受罚'},
-  {left:'见面',right:'寒暄'},
-  {left:'用黑布遮挡',right:'严密'},
-  {left:'排在船的',right:'侧面'},
-  {left:'不要走漏',right:'消息'},
-  {left:'沉思',right:'良久'},
-  {left:'猜不出诸葛亮的',right:'意图'},
-  {left:'安排',right:'妥当'},
-  {left:'大雾封锁了',right:'江面'},
-  {left:'靠近了曹操的',right:'驻扎地'},
-  {left:'大雾',right:'茫茫'},
-  {left:'士兵们情绪',right:'高涨'},
-  {left:'启程',right:'返航'},
-  {left:'圆满',right:'完成了任务'},
-  {left:'叹着气',right:'说'}
+  {left:'走漏',right:'消息'},
+  {left:'圆满',right:'完成任务'},
+  {left:'拖延',right:'时间'},
+  {left:'调动',right:'大家的热情'},
+  {left:'情绪',right:'高涨'},
+  {left:'声音',right:'响亮'},
+  {left:'指定的',right:'地点'},
+  {left:'探望',right:'住院的奶奶'},
+  {left:'当务',right:'之急'},
+  {left:'大雾',right:'茫茫'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ — mỗi từ của bài ít nhất một câu (fill + chọn từ)
+// ĐIỀN TỪ — câu mới (không chép bài khoá / SGK), mỗi câu một tình huống; ôn xoáy ốc từ + ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'这次比赛输给了他们，大家心里都不',blank:'服气',post:'，决定明年再比一次。',hint:'(chịu phục)',ans:'服气'},
-  {pre:'洪水发生以后，政府立即派出',blank:'军队',post:'帮助群众转移。',hint:'(quân đội)',ans:'军队'},
-  {pre:'博物馆里陈列着许多古代的',blank:'武器',post:'，比如弓箭、矛和盾。',hint:'(vũ khí)',ans:'武器'},
-  {pre:'离高考只剩一个月了，眼下的',blank:'当务之急',post:'是把错题整理一遍。',hint:'(việc cấp bách trước mắt)',ans:'当务之急'},
-  {pre:'今年的全市中学生运动会由我们学校',blank:'承办',post:'。',hint:'(đảm nhận tổ chức)',ans:'承办'},
-  {pre:'我们厂的一个大客户',blank:'委托',post:'我们生产一批货，期限一周。',hint:'(uỷ thác)',ans:'委托'},
-  {pre:'离比赛只有一周了，时间',blank:'紧迫',post:'，大家每天都练到很晚。',hint:'(cấp bách)',ans:'紧迫'},
-  {pre:'他因',blank:'公务',post:'去了上海，下个星期才能回来。',hint:'(việc công)',ans:'公务'},
-  {pre:'见面寒暄以后，我做了一桌饭菜',blank:'款待',post:'他。',hint:'(thết đãi)',ans:'款待'},
-  {pre:'临行前，妈妈再三',blank:'叮嘱',post:'我：“出门一定要注意安全。”',hint:'(dặn đi dặn lại)',ans:'叮嘱'},
-  {pre:'爸爸说话一向',blank:'算数',post:'，答应带我去海边，就一定会带我去。',hint:'(giữ lời)',ans:'算数'},
-  {pre:'父母不应该',blank:'逼迫',post:'孩子学他们不感兴趣的东西。',hint:'(ép buộc)',ans:'逼迫'},
-  {pre:'经理，您还有什么',blank:'吩咐',post:'？我马上去办。',hint:'(sai bảo)',ans:'吩咐'},
-  {pre:'好的领导不但要求严格，而且懂得关心',blank:'下属',post:'。',hint:'(cấp dưới)',ans:'下属'},
-  {pre:'这批货期限一周，不能',blank:'拖延',post:'，到期交不了货，就要受罚。',hint:'(trì hoãn)',ans:'拖延'},
-  {pre:'图书馆的书借阅',blank:'期限',post:'是一个月，超过了要交罚款。',hint:'(thời hạn)',ans:'期限'},
-  {pre:'跟你说了多少遍要带伞，你偏偏不听，被雨淋了，',blank:'活该',post:'！',hint:'(đáng đời)',ans:'活该'},
-  {pre:'你去',blank:'探听',post:'探听，今年的考试究竟考些什么。',hint:'(dò la)',ans:'探听'},
-  {pre:'每周一上午，各部门经理都要向总经理',blank:'汇报',post:'工作。',hint:'(báo cáo)',ans:'汇报'},
-  {pre:'听说班主任住院了，我们买了一束花去医院',blank:'探望',post:'她。',hint:'(thăm)',ans:'探望'},
-  {pre:'这篇论文逻辑',blank:'严密',post:'，数据充足，得到了专家的好评。',hint:'(chặt chẽ)',ans:'严密'},
-  {pre:'我不好意思直接问她，就从',blank:'侧面',post:'了解了一下她的想法。',hint:'(gián tiếp, mặt bên)',ans:'侧面'},
-  {pre:'公司规定，员工不得把商业',blank:'机密',post:'告诉任何人。',hint:'(bí mật quan trọng)',ans:'机密'},
-  {pre:'不知道是谁',blank:'走漏',post:'了风声，生日派对的秘密被她提前知道了。',hint:'(để lộ)',ans:'走漏'},
-  {pre:'听完我的问题，老师',blank:'沉思',post:'了一会儿，才慢慢地回答。',hint:'(trầm ngâm)',ans:'沉思'},
-  {pre:'学校规定，住校生不得',blank:'私自',post:'离开学校。',hint:'(tự ý)',ans:'私自',exp:'私自 = tự ý (không được phép): 不得私自离开.'},
-  {pre:'这家公司的新产品价格低、质量好，很快就',blank:'占领',post:'了国内市场。',hint:'(chiếm lĩnh)',ans:'占领'},
-  {pre:'这支部队长期',blank:'驻扎',post:'在边境地区，保护着当地百姓的安全。',hint:'(đóng quân)',ans:'驻扎'},
-  {pre:'请大家在',blank:'指定',post:'的时间内交卷，迟交的试卷一律无效。',hint:'(quy định, chỉ định)',ans:'指定'},
-  {pre:'风浪太大，船长让乘客都回到船',blank:'舱',post:'里去。',hint:'(khoang)',ans:'舱'},
-  {pre:'在',blank:'茫茫',post:'人海中，我们能成为好朋友，真是一种缘分。',hint:'(mênh mông)',ans:'茫茫'},
-  {pre:'演出结束了，观众们',blank:'一齐',post:'站起来鼓掌。',hint:'(đồng loạt)',ans:'一齐',exp:'一齐 = đồng loạt, cùng lúc: 一齐站起来鼓掌.'},
-  {pre:'在森林里迷路时，可以根据太阳的位置来辨别',blank:'方位',post:'。',hint:'(phương hướng)',ans:'方位'},
-  {pre:'为了赶作业，他昨天一直忙到',blank:'凌晨',post:'才睡。',hint:'(rạng sáng)',ans:'凌晨'},
-  {pre:'早上起来一看，整座城市都被大雾',blank:'笼罩',post:'了。',hint:'(bao phủ)',ans:'笼罩'},
-  {pre:'代表团明天上午',blank:'启程',post:'前往北京参加会议。',hint:'(lên đường)',ans:'启程'},
-  {pre:'经过三天的讨论，这次国际会议',blank:'圆满',post:'结束了。',hint:'(tốt đẹp, trọn vẹn)',ans:'圆满'},
-  {pre:'看着乱七八糟的房间，妈妈忍不住直',blank:'叹气',post:'。',hint:'(thở dài)',ans:'叹气'},
-  {pre:'这个十岁的孩子就上了大学，大家都叫他“',blank:'天才',post:'少年”。',hint:'(thiên tài)',ans:'天才'}
+  {pre:'他输了比赛，心里很不',blank:'服气',post:'，说下次一定要赢回来。',hint:'(chịu phục)',ans:'服气',exp:'不服气 = không chịu thua, không phục; thường dùng ở dạng phủ định (心里不服气).'},
+  {pre:'这次国际比赛由我们学校',blank:'承办',post:'。',hint:'(đứng ra tổ chức)',ans:'承办',exp:'承办 = nhận đứng ra làm, tổ chức một việc được giao; 由 + đơn vị + 承办.'},
+  {pre:'我出国这段时间，',blank:'委托',post:'邻居帮我照顾小狗。',hint:'(nhờ, uỷ thác)',ans:'委托',exp:'委托 + người + V = nhờ ai làm thay mình (trang trọng hơn 请 / 让).'},
+  {pre:'我不好直接问他，只好从',blank:'侧面',post:'了解一下他的想法。',hint:'(phía bên, gián tiếp)',ans:'侧面',exp:'从侧面了解 = tìm hiểu gián tiếp, không hỏi thẳng; nghĩa gốc của 侧面 là mặt bên.'},
+  {pre:'医生再三',blank:'叮嘱',post:'他，出院后一个月内不能喝酒。',hint:'(dặn dò)',ans:'叮嘱',exp:'叮嘱 + người = dặn đi dặn lại (vì quan tâm); hay đi với 再三.'},
+  {pre:'你答应过我的事，可得',blank:'算数',post:'啊！',hint:'(giữ lời)',ans:'算数',exp:'说话算数 = nói là giữ lời; 可得算数 = nhất định phải giữ lời đấy.'},
+  {pre:'这件事不能再',blank:'拖延',post:'了，明天必须做出决定。',hint:'(trì hoãn)',ans:'拖延',exp:'拖延 = kéo dài, dây dưa không làm; 不能再拖延了 = không thể chần chừ nữa.'},
+  {pre:'报名参加比赛的',blank:'期限',post:'是这个月底，你抓紧时间准备。',hint:'(thời hạn)',ans:'期限',exp:'期限 = hạn chót; ……的期限是 + thời điểm.'},
+  {pre:'谁让他上课不听讲，考试不及格，真是',blank:'活该',post:'！',hint:'(đáng đời)',ans:'活该',exp:'活该 = đáng đời, tự chuốc lấy (không đáng thương); khẩu ngữ, mang ý trách.'},
+  {pre:'周末我们去医院',blank:'探望',post:'了生病的老师。',hint:'(thăm hỏi)',ans:'探望',exp:'探望 + người (ốm, ở xa) = đến thăm; đừng nhầm với 探听 (dò hỏi tin tức).'},
+  {pre:'两个人见面',blank:'寒暄',post:'了几句，就开始谈正事了。',hint:'(chào hỏi xã giao)',ans:'寒暄',exp:'寒暄 = hỏi han xã giao (thời tiết, sức khoẻ…) trước khi vào chuyện chính.'},
+  {pre:'没有经过父母同意，他',blank:'私自',post:'把家里的钱借给了朋友。',hint:'(tự ý)',ans:'私自',exp:'私自 + V = tự ý làm khi chưa được phép (nghĩa xấu).'},
+  {pre:'',blank:'即将',post:'毕业的同学们正在忙着找工作。',hint:'(sắp)',ans:'即将',exp:'即将 + V + 的 + N = … sắp …; 即将 không đứng một mình trước danh từ (không nói 即将的毕业).'},
+  {pre:'这次出差，东西',blank:'能',post:'少带就少带，行李太重了不方便。',hint:'(được thì)',ans:'能',exp:'能 A 就 A = A được (bao nhiêu) thì cứ A; hai chữ A phải giống nhau (能少带就少带).'},
+  {pre:'他在那次比赛中受了重伤，',blank:'从此',post:'告别了足球。',hint:'(từ đó)',ans:'从此',exp:'从此 = 从这时候起: 此 thay cho mốc thời gian vừa nói (lần bị thương), khỏi lặp lại cả vế trước.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (即将 · 能A就A · 替代) ít nhất 2 câu
+// SẮP XẾP CÂU — câu mới, chỉ một trật tự đúng
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['周瑜','说','：','“','即将','交战','，','十天','怎么样','？','”'],ans:'周瑜说：“即将交战，十天怎么样？”',audio:'周瑜说：“即将交战，十天怎么样？”'},
-  {words:['各位乘客','，','飞机','即将','起飞','，','请大家','系好安全带','。'],ans:'各位乘客，飞机即将起飞，请大家系好安全带。',audio:'各位乘客，飞机即将起飞，请大家系好安全带。'},
-  {words:['我们','即将','走上','工作岗位','，','开始','人生新的一页','。'],ans:'我们即将走上工作岗位，开始人生新的一页。',audio:'我们即将走上工作岗位，开始人生新的一页。'},
-  {words:['船上的士兵','奋力敲鼓','，','声音','能多响亮','就多响亮','。'],ans:'船上的士兵奋力敲鼓，声音能多响亮就多响亮。',audio:'船上的士兵奋力敲鼓，声音能多响亮就多响亮。'},
-  {words:['这个手机','没用多久','，','能修','就修','，','尽量别换新的','。'],ans:'这个手机没用多久，能修就修，尽量别换新的。',audio:'这个手机没用多久，能修就修，尽量别换新的。'},
-  {words:['做任何事情','我们','都不要浪费','，','能省一点','就省一点','。'],ans:'做任何事情我们都不要浪费，能省一点就省一点。',audio:'做任何事情我们都不要浪费，能省一点就省一点。'},
-  {words:['我','喜欢','《红楼梦》和《三国演义》','，','尤其是','前者','。'],ans:'我喜欢《红楼梦》和《三国演义》，尤其是前者。',audio:'我喜欢《红楼梦》和《三国演义》，尤其是前者。'},
-  {words:['你','得','替我保密','，','不要走漏消息','，','否则','我性命难保','。'],ans:'你得替我保密，不要走漏消息，否则我性命难保。',audio:'你得替我保密，不要走漏消息，否则我性命难保。'},
-  {words:['周瑜','沉思良久','，','猜不出','诸葛亮的','意图','。'],ans:'周瑜沉思良久，猜不出诸葛亮的意图。',audio:'周瑜沉思良久，猜不出诸葛亮的意图。'},
-  {words:['当务之急','是','赶造','十万支箭','。'],ans:'当务之急是赶造十万支箭。',audio:'当务之急是赶造十万支箭。'},
-  {words:['凌晨','，','雾','还','笼罩着','江面','。'],ans:'凌晨，雾还笼罩着江面。',audio:'凌晨，雾还笼罩着江面。'},
-  {words:['诸葛亮','圆满','完成了','任务','。'],ans:'诸葛亮圆满完成了任务。',audio:'诸葛亮圆满完成了任务。'},
-  {words:['他','真是','天才','，','确实','比我','高明','！'],ans:'他真是天才，确实比我高明！',audio:'他真是天才，确实比我高明！'}
+  {words:['老板','吩咐','下属','把','东西','送','过去','。'],ans:'老板吩咐下属把东西送过去。',audio:'老板吩咐下属把东西送过去。'},
+  {words:['他','把','这件事','安排','得','非常','妥当','。'],ans:'他把这件事安排得非常妥当。',audio:'他把这件事安排得非常妥当。'},
+  {words:['我们的','船','即将','到达','对岸','。'],ans:'我们的船即将到达对岸。',audio:'我们的船即将到达对岸。'},
+  {words:['他','听了','以后','不停地','叹气','。'],ans:'他听了以后不停地叹气。',audio:'他听了以后不停地叹气。'},
+  {words:['请','把','车','停','在','指定的','地方','。'],ans:'请把车停在指定的地方。',audio:'请把车停在指定的地方。'},
+  {words:['他','私自','把','公司的','车','开','走','了','。'],ans:'他私自把公司的车开走了。',audio:'他私自把公司的车开走了。'},
+  {words:['他','把','行李','放','进','了','船舱','。'],ans:'他把行李放进了船舱。',audio:'他把行李放进了船舱。'},
+  {words:['孩子们','一齐','大声','喊','了','起来','。'],ans:'孩子们一齐大声喊了起来。',audio:'孩子们一齐大声喊了起来。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1802,76 +1759,44 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'8点40分，列车____到达终点，请乘客带好自己的行李。',opts:['即将','曾经','已经','刚刚'],ans:0,
-   exp:'Thông báo việc SẮP xảy ra, văn viết → 即将. 曾经, 已经, 刚刚 đều chỉ việc đã xảy ra.'},
-  {wrong:'这间教室阳光____，同学们都喜欢在这儿自习。',opts:['充分','充足','充满','丰富'],ans:1,
-   exp:'阳光充足 = nhiều nắng (lượng dồi dào). 充分 cho điều trừu tượng (准备充分); 充满 là động từ cần tân ngữ; 丰富 không đi với 阳光.'},
-  {wrong:'两人见面____了几句，就开始谈合作的事了。',opts:['商量','讨论','寒暄','汇报'],ans:2,
-   exp:'Chào hỏi xã giao vài câu trước chuyện chính → 寒暄. 商量, 讨论 là bàn bạc nội dung; 汇报 là báo cáo lên cấp trên.'},
-  {wrong:'公司不需要那么多人，这件事让我很____，我实在帮不了你。',opts:['为难','困难','难过','难得'],ans:0,
-   exp:'让我很为难 = khiến tôi khó xử. 困难 chỉ hoàn cảnh khó khăn (không nói 让我很困难); 难过 = buồn; 难得 = hiếm có.'},
-  {wrong:'这件事我只告诉你一个人，你一定要替我____。',opts:['秘密','机密','保密','密切'],ans:2,
-   exp:'替 + người + 保密 = giữ bí mật giúp ai (động từ li hợp). 秘密, 机密 là danh từ; 密切 = mật thiết.'},
-  {wrong:'闲聊中，他说明了自己来访的____，是想请我帮他找个工作。',opts:['意见','意图','意思','意义'],ans:1,
-   exp:'来访的意图 = mục đích chuyến thăm (điều định làm). 意见 = ý kiến; 意思 = nghĩa / ý; 意义 = ý nghĩa.'},
-  {wrong:'出发前，导游已经把住宿和交通都安排____了。',opts:['妥当','适当','恰当','稳当'],ans:0,
-   exp:'安排妥当 = sắp xếp ổn thoả (cụm cố định, bài khoá). 适当 = vừa phải; 恰当 = thích đáng (lời nói, từ ngữ); 稳当 = vững vàng.'},
-  {wrong:'事故发生以后，警察马上____了现场。',opts:['封闭','关闭','封锁','锁定'],ans:2,
-   exp:'封锁现场 = phong toả hiện trường, không cho ra vào. 关闭 = đóng (cửa, nhà máy); 封闭 = khép kín (thường tính từ); 锁定 = khoá chặt mục tiêu.'},
-  {wrong:'老师点到他的名字，他____地回答了一声“到”。',opts:['明亮','响亮','漂亮','光亮'],ans:1,
-   exp:'响亮 dùng cho ÂM THANH (to, rõ). 明亮, 光亮 dùng cho ánh sáng; 漂亮 = đẹp.'},
-  {wrong:'出国前，奶奶____我要按时吃饭，别太累了。',opts:['嘱咐','告别','答应','拜托'],ans:0,
-   exp:'嘱咐 + người + V = dặn ai làm gì. 告别 = chia tay; 答应 = đồng ý; 拜托 = nhờ (người nói nhờ người khác, không phải dặn).'},
-  {wrong:'好老师善于____学生的积极性，让每个人都愿意开口。',opts:['调查','调整','调动','移动'],ans:2,
-   exp:'调动积极性 = khơi dậy tính tích cực (cụm cố định). 调查 = điều tra; 调整 = điều chỉnh; 移动 = di chuyển.'},
-  {wrong:'听说要去海边春游，同学们的热情一下子____起来。',opts:['增长','高涨','提高','上升'],ans:1,
-   exp:'热情高涨 = nhiệt tình dâng cao (cảm xúc). 增长, 上升 thường cho số liệu; 提高 cần tân ngữ hoặc dùng cho trình độ.'},
-  {wrong:'要完成这项艰巨的工作，____得三个月。',opts:['大体','大量','大致','大约是'],ans:2,
-   exp:'Ước lượng thời gian bằng phó từ đứng trước 得 → 大致 (đáp án sách). 大体 không dùng để ước lượng; 大量 = số lượng lớn; 大约是 thừa 是 trước 得.'},
-  {wrong:'看着考试成绩，他深深地____了一口气。',opts:['生','喘','吸','叹'],ans:3,
-   exp:'叹了一口气 = thở dài một hơi (buồn, thất vọng). 生气 = giận; 喘气 = thở hổn hển; 吸了一口气 = hít một hơi (không có nghĩa buồn).'},
-  {wrong:'这位老中医医术____，很多病人从外地专门来找他看病。',opts:['高大','高级','高兴','高明'],ans:3,
-   exp:'医术高明 = y thuật cao minh. 高大 = to cao; 高级 = cao cấp; 高兴 = vui.'},
-  {wrong:'老师一问“谁愿意试试”，好几个同学____举起了手。',opts:['一起','一共','一向','一齐'],ans:3,
-   exp:'Nhấn CÙNG MỘT LÚC giơ tay → 一齐. 一起 nhấn cùng nhau (thường 跟……一起); 一共 = tổng cộng; 一向 = xưa nay.'},
-  {wrong:'周瑜____下属：造箭用的材料，不要给他准备齐全。',opts:['吩咐','拜访','请求','探望'],ans:0,
-   exp:'Người trên sai bảo cấp dưới → 吩咐. 拜访, 探望 = thăm; 请求 = thỉnh cầu (người dưới với người trên).'},
-  {wrong:'我们的科研经费____，请大家不要为此担心。',opts:['充分','满足','足够的','充足'],ans:3,
-   exp:'经费充足 = kinh phí dồi dào (练习2 của sách). 充分 dùng cho điều trừu tượng; 满足 là động từ; 足够的 cần danh từ đi sau.'},
-  {wrong:'我们即将毕业，今天特地回学校____教过我们的老师。',opts:['探听','探望','探索','寻找'],ans:1,
-   exp:'探望 + người = đến thăm. 探听 = dò la tin tức; 探索 = khám phá; 寻找 = tìm kiếm.'},
-  {wrong:'十万支箭，三天怎么造得成？诸葛亮不会说话不____吧？',opts:['算了','算账','打算','算数'],ans:3,
-   exp:'说话不算数 = nói không giữ lời (bài khoá). 算了 = thôi bỏ qua; 算账 = tính sổ; 打算 = dự định.'}
+  {wrong:'新学期____到来，同学们都在准备新书。',opts:['即将','将来','以后','从前'],ans:0,exp:'Sắp xảy ra → 即将 + V (văn viết). 将来 / 以后 là danh từ thời gian chỉ tương lai xa, không đứng ngay trước động từ như vậy; 从前 = ngày trước.'},
+  {wrong:'面对____开始的大学生活，她既兴奋又紧张。',opts:['即将','将近','即使','立即'],ans:0,exp:'即将 + V + 的 + N = … sắp tới. 将近 + số lượng = gần; 即使 = dù cho; 立即 = lập tức (không làm định ngữ kiểu này).'},
+  {wrong:'大家____帮多少就帮多少，帮一点儿也是好的。',opts:['能','会','该','得'],ans:0,exp:'Khuôn 能 V 多少就 V 多少 = làm được bao nhiêu thì làm bấy nhiêu. 会 / 该 / 得 không tạo khuôn này.'},
+  {wrong:'经理____秘书：“这件事今天下班前必须办完。”',opts:['吩咐','服气','汇报','寒暄'],ans:0,exp:'Cấp trên giao việc cho cấp dưới → 吩咐. 汇报 thì ngược lại (cấp dưới báo cáo cấp trên); 服气 = chịu phục; 寒暄 = chào hỏi xã giao.'},
+  {wrong:'每周五下午，小王都要向经理____这一周的工作。',opts:['汇报','吩咐','叮嘱','探听'],ans:0,exp:'Cấp dưới báo cáo lên cấp trên → 向 + người + 汇报. 吩咐 / 叮嘱 là người trên dặn người dưới; 探听 = dò la.'},
+  {wrong:'他想从朋友那儿____一下考试的消息。',opts:['探听','探望','看望','听说'],ans:0,exp:'Dò hỏi tin tức → 探听消息. 探望 / 看望 + người = thăm; 听说 không đi với 一下.'},
+  {wrong:'没有人____你，是你自己答应的，现在可不能后悔。',opts:['逼迫','紧迫','迫切','压力'],ans:0,exp:'Ép buộc ai → 逼迫 + người. 紧迫 = gấp (thời gian); 迫切 = tha thiết, cấp thiết; 压力 là danh từ.'},
+  {wrong:'你放心，事情我已经安排____了。',opts:['妥当','当时','当然','相当'],ans:0,exp:'安排妥当 = sắp xếp ổn thoả. 当时 = lúc đó; 当然 = đương nhiên; 相当 = khá — không làm bổ ngữ cho 安排.'},
+  {wrong:'听说能去海边，大家的情绪一下子____起来。',opts:['高涨','高明','高大','提高'],ans:0,exp:'情绪高涨 = tinh thần lên cao. 高明 = cao tay; 高大 = to cao; 提高 cần tân ngữ (提高水平).'},
+  {wrong:'这个房间阳光____，冬天也很暖和。',opts:['充足','充满','满足','充电'],ans:0,exp:'阳光充足 = nhiều nắng, đủ nắng (tính từ). 充满 cần tân ngữ (充满阳光); 满足 = thoả mãn; 充电 = sạc pin.'},
+  {wrong:'他这次去上海是为了办____，不是去旅游的。',opts:['公务','服务','家务','任务'],ans:0,exp:'办公务 = làm việc công. 服务 / 家务 / 任务 không đi với 办 theo nghĩa này (做家务, 完成任务).'},
+  {wrong:'他天天熬夜到两三点，____下去，身体会受不了的。',opts:['如此','从此','此外','因此'],ans:0,exp:'如此下去 = cứ như thế này mãi: 如此 thay cho cả việc "ngày nào cũng thức đến hai ba giờ" (ôn 熬夜, bài 2). 从此 = từ đó; 此外 = ngoài ra; 因此 = vì thế.'},
+  {wrong:'出门记得带伞，____淋了雨又要感冒了。',opts:['否则','然而','于是','并且'],ans:0,exp:'否则 = nếu không (làm điều vừa nói) thì…, thay cho "如果不带伞". 然而 = nhưng; 于是 = thế là; 并且 = và.'},
+  {wrong:'三年前我第一次来北京，____我连一句汉语都不会说。',opts:['当时','当场','当面','同时'],ans:0,exp:'当时 thay cho mốc "ba năm trước, lần đầu đến Bắc Kinh". 当场 = ngay tại chỗ; 当面 = trước mặt; 同时 = đồng thời.'},
+  {wrong:'还是你的办法____，一下子就解决了问题。',opts:['高明','高兴','高大','明白'],ans:0,exp:'Cách làm cao tay, giỏi hơn người → 高明. 高兴 = vui; 高大 = to cao; 明白 = hiểu rõ.'}
 ];
 
 // ══════════════════════════════════════════
-// DỊCH — câu ghép, dùng từ bài 25 + ôn từ HSK 6 bài 1–21 và HSK 4–5
+// DỊCH Việt → Trung — câu mới, dùng từ của bài + ôn ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Kỳ thi cuối kỳ sắp bắt đầu rồi, việc cấp bách trước mắt là đem những câu làm sai ôn lại một lượt.',zh:'期末考试即将开始，当务之急是把做错的题再复习一遍。',py:'Qīmò kǎoshì jíjiāng kāishǐ, dāngwùzhījí shì bǎ zuòcuò de tí zài fùxí yí biàn.',goiY:['即将','当务之急','把……'],giai:'即将 + V (văn viết) = sắp; 当务之急是 + câu 把 nêu việc gấp nhất. "Ôn lại một lượt" = 再复习一遍, không nói 复习一次.'},
-  {vi:'Việc cô chủ nhiệm đã giao phó, thời gian có gấp đến mấy thì chúng tôi cũng phải làm cho thật tốt.',zh:'班主任委托的事，时间再紧迫，我们也要把它办好。',py:'Bānzhǔrèn wěituō de shì, shíjiān zài jǐnpò, wǒmen yě yào bǎ tā bànhǎo.',goiY:['委托','紧迫','再……也……'],giai:'再 + Adj，也…… = dù … đến mấy cũng … (nhượng bộ giả thiết); 委托的事 làm chủ đề đặt đầu câu, sau đó dùng 它 thay thế (篇章: 替代).'},
-  {vi:'Thầy dặn chúng tôi: lỗi chính tả trong bài văn sửa được chỗ nào thì sửa chỗ ấy, còn hạn nộp bài thì tuyệt đối đừng trì hoãn.',zh:'老师叮嘱我们，作文里的错别字能改就改，交作业的期限千万别拖延。',py:'Lǎoshī dīngzhǔ wǒmen, zuòwén li de cuòbiézì néng gǎi jiù gǎi, jiāo zuòyè de qīxiàn qiānwàn bié tuōyán.',goiY:['叮嘱','能改就改','期限','拖延'],giai:'能A就A = cố hết mức (được thì làm) — điểm ngữ pháp 2; 千万别 = tuyệt đối đừng. Không dịch "sửa được chỗ nào" thành 哪儿能改.'},
-  {vi:'Kế hoạch tổ chức sinh nhật cho cô giáo là bí mật, các cậu phải giữ kín giúp tớ, đừng để lộ tin, nếu không thì bất ngờ sẽ chẳng còn gì nữa.',zh:'给老师过生日的计划是个机密，你们得替我保密，千万别走漏消息，否则惊喜就没了。',py:'Gěi lǎoshī guò shēngrì de jìhuà shì ge jīmì, nǐmen děi tì wǒ bǎo mì, qiānwàn bié zǒulòu xiāoxi, fǒuzé jīngxǐ jiù méi le.',goiY:['机密','保密','走漏','否则'],giai:'替 + người + 保密 (保密 không mang tân ngữ); 否则 = nếu không thì — chính là cách "替代" một vế giả thiết (如果走漏了消息) như sách phân tích.'},
-  {vi:'Ngoài miệng tuy cậu ấy thừa nhận đối thủ giỏi hơn mình, nhưng trong lòng vẫn không phục, chỉ mong trận sau thắng lại ngay.',zh:'他嘴上虽然承认对手比自己高明，心里却一直不服气，巴不得下次比赛就赢回来。',py:'Tā zuǐ shang suīrán chéngrèn duìshǒu bǐ zìjǐ gāomíng, xīnli què yìzhí bù fúqì, bābude xià cì bǐsài jiù yíng huílai.',goiY:['虽然……却……','高明','服气','巴不得'],giai:'虽然……却…… đối lập miệng – lòng; 巴不得 (ôn HSK 6 bài 1) = chỉ mong; A 比 B 高明 = A giỏi hơn B.'},
-  {vi:'Lớp trưởng tự ý quyết định thời gian đi dã ngoại mà không bàn với mọi người, chuyện này khiến cả cô chủ nhiệm cũng rất khó xử.',zh:'班长私自决定了春游的时间，也没跟大家商量，这让班主任也很为难。',py:'Bānzhǎng sīzì juédìngle chūnyóu de shíjiān, yě méi gēn dàjiā shāngliang, zhè ràng bānzhǔrèn yě hěn wéinán.',goiY:['私自','为难','这让……'],giai:'这 thay cho cả sự việc ở hai vế trước (篇章: 替代) — tránh lặp lại; 让 + người + 很为难 = khiến ai khó xử.'},
-  {vi:'Ba giờ sáng trời còn chưa sáng, chúng tôi đã lên đường leo núi, vì hướng dẫn viên dặn mọi người nhất định phải lên tới đỉnh trước khi mặt trời mọc.',zh:'凌晨三点天还没亮，我们就启程爬山了，因为导游嘱咐大家一定要在日出前到达山顶。',py:'Língchén sān diǎn tiān hái méi liàng, wǒmen jiù qǐchéng pá shān le, yīnwèi dǎoyóu zhǔfù dàjiā yídìng yào zài rìchū qián dàodá shāndǐng.',goiY:['凌晨','启程','嘱咐','因为'],giai:'还没……就…… nhấn mạnh sớm; vế nguyên nhân 因为 đặt SAU để giải thích (tiếng Trung văn nói cho phép); 嘱咐 + người + V.'},
-  {vi:'Để hoàn thành trọn vẹn hoạt động lần này, lớp trưởng huy động cả lớp, việc gì làm trước được thì làm trước, tuyệt đối không để dồn đến phút cuối.',zh:'为了圆满完成这次活动，班长调动了全班同学，什么事能提前做就提前做，绝不留到最后一刻。',py:'Wèile yuánmǎn wánchéng zhè cì huódòng, bānzhǎng diàodòngle quán bān tóngxué, shénme shì néng tíqián zuò jiù tíqián zuò, jué bù liú dào zuìhòu yí kè.',goiY:['圆满','调动','能提前做就提前做'],giai:'为了…… mục đích; 能A就A với A là cụm động từ (提前做) — hai A phải giống hệt nhau; 调动 + người = huy động.'},
-  {vi:'Sương mù dày đặc bao phủ cả thành phố, chuyến bay buổi sáng cứ bị hoãn mãi; điều khiến người ta sốt ruột hơn là sân bay mãi vẫn chưa ấn định giờ cất cánh mới.',zh:'大雾笼罩着整座城市，上午的航班一再拖延；更让人着急的是，机场一直没有指定新的起飞时间。',py:'Dà wù lǒngzhàozhe zhěng zuò chéngshì, shàngwǔ de hángbān yízài tuōyán; gèng ràng rén zháojí de shì, jīchǎng yìzhí méiyǒu zhǐdìng xīn de qǐfēi shíjiān.',goiY:['笼罩','拖延','指定','更……的是'],giai:'更让人……的是 = điều khiến người ta … hơn là (tăng tiến); 一再 = hết lần này đến lần khác; 指定 + thời gian = ấn định.'},
-  {vi:'Cha mẹ không nên ép con cái; thay vì cứ sai con làm cái này cái kia, chi bằng trước hết tìm hiểu ý định thật sự của con, như vậy vấn đề mới giải quyết ổn thoả được.',zh:'父母不应该逼迫孩子，与其一味地吩咐他做这做那，不如先了解他的真实意图，这样问题才能妥当解决。',py:'Fùmǔ bù yīnggāi bīpò háizi, yǔqí yíwèi de fēnfù tā zuò zhè zuò nà, bùrú xiān liǎojiě tā de zhēnshí yìtú, zhèyàng wèntí cái néng tuǒdàng jiějué.',goiY:['逼迫','与其……不如……','意图','妥当'],giai:'与其 A 不如 B = thay vì A chi bằng B (chọn B); 这样 thay cho cả vế trước (替代); 这样……才…… = như vậy … mới ….'}
+  {vi:'Bọn trẻ sắp được nghỉ, nhiều gia đình đã lên kế hoạch đi đâu chơi rồi.',zh:'孩子们即将放假，很多家庭已经计划好去哪儿旅游了。',py:'Háizimen jíjiāng fàngjià, hěn duō jiātíng yǐjīng jìhuà hǎo qù nǎr lǚyóu le.',goiY:['即将','计划好'],giai:'即将 + V = sắp (văn viết), không thêm 了 ngay sau 即将 + V như 就要……了.'},
+  {vi:'Bài phát biểu ngắn được thì cứ ngắn thôi, mọi người đã ngồi ba tiếng đồng hồ rồi.',zh:'发言能短就短吧，大家已经坐了三个小时了。',py:'Fāyán néng duǎn jiù duǎn ba, dàjiā yǐjīng zuòle sān ge xiǎoshí le.',goiY:['能A就A'],giai:'能 + tính từ + 就 + tính từ (能短就短) = được thì cứ…; hai chữ phải giống nhau.'},
+  {vi:'Chuyện này phải giữ bí mật, nếu không kế hoạch của chúng ta sẽ đổ bể.',zh:'这件事必须保密，否则我们的计划就失败了。',py:'Zhè jiàn shì bìxū bǎo mì, fǒuzé wǒmen de jìhuà jiù shībài le.',goiY:['保密','否则'],giai:'否则 thay cho "如果不保密" (khỏi lặp lại cả vế); 保密 = giữ bí mật, là động từ li hợp.'},
+  {vi:'Việc cấp bách nhất trước mắt là tìm một người khác làm phần việc của anh ấy, không thể chậm trễ thêm ngày nào nữa.',zh:'当务之急是再找一个人来做他的工作，一天也不能耽误了。',py:'Dāngwùzhījí shì zài zhǎo yí ge rén lái zuò tā de gōngzuò, yì tiān yě bù néng dānwu le.',goiY:['当务之急','一……也不……'],giai:'当务之急是 + việc cần làm = việc gấp nhất bây giờ là…; 一天也不能耽误了 = không thể chậm trễ thêm ngày nào.'},
+  {vi:'Những số liệu này là cơ mật của công ty, phải được cất giữ thật cẩn mật.',zh:'这些数据是公司的机密，必须严密保管。',py:'Zhèxiē shùjù shì gōngsī de jīmì, bìxū yánmì bǎoguǎn.',goiY:['机密','严密','保管'],giai:'机密 = điều bí mật quan trọng; 严密 + V = làm kín kẽ, chặt chẽ; 保管 = cất giữ (bài 21).'},
+  {vi:'Năm đó anh ấy rời quê lên thành phố làm việc, từ đó rất ít khi về nhà.',zh:'那年他离开家乡到城市工作，从此很少回家。',py:'Nà nián tā líkāi jiāxiāng dào chéngshì gōngzuò, cóngcǐ hěn shǎo huí jiā.',goiY:['从此'],giai:'从此 = từ đó trở đi, 此 thay cho mốc "năm đó rời quê"; vế sau tỉnh lược chủ ngữ 他 (bài 21).'}
 ];
 
-// Chiều Trung → Việt — bám ý bài khoá
+// ══════════════════════════════════════════
+// Dịch Trung → Việt — câu mới, không trùng chiều trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Chu Du cho rằng mình là một thiên tài, vậy mà lúc nào cũng thua Gia Cát Lượng, vì thế trong lòng mãi không phục.',zh:'周瑜觉得自己是个天才，却总比不过诸葛亮，所以心里一直不服气。',py:'Zhōu Yú juéde zìjǐ shì ge tiāncái, què zǒng bǐ bu guò Zhūgě Liàng, suǒyǐ xīnli yìzhí bù fúqì.',goiY:['却 = vậy mà','比不过 = không bằng, thua','服气 = chịu phục'],giai:'却 chuyển ý bất ngờ; 比不过 là bổ ngữ khả năng (không so bì nổi) → dịch "thua"; 不服气 = "không phục".'},
-  {vi:'Đã sắp giao chiến thì việc gấp nhất là làm gấp mười vạn mũi tên, việc này chỉ có thể giao cho Gia Cát Lượng đảm nhận.',zh:'既然即将交战，当务之急就是赶造十万支箭，这件事只能委托诸葛亮承办。',py:'Jìrán jíjiāng jiāozhàn, dāngwùzhījí jiù shì gǎnzào shíwàn zhī jiàn, zhè jiàn shì zhǐ néng wěituō Zhūgě Liàng chéngbàn.',goiY:['既然……就…… = đã … thì …','即将 = sắp','当务之急 = việc gấp nhất','承办 = đảm nhận'],giai:'既然……就…… suy luận từ sự thật đã biết; 这件事 thay cho 赶造十万支箭 (替代). 委托……承办 = giao cho … đảm nhận.'},
-  {vi:'Chu Du sai cấp dưới không chuẩn bị đủ vật liệu cho Gia Cát Lượng, mục đích là cố tình kéo dài thời gian, để đến hạn ông ta không làm ra được tên.',zh:'周瑜吩咐下属不给诸葛亮准备齐全材料，目的是故意拖延时间，让他到期限造不出箭。',py:'Zhōu Yú fēnfù xiàshǔ bù gěi Zhūgě Liàng zhǔnbèi qíquán cáiliào, mùdì shì gùyì tuōyán shíjiān, ràng tā dào qīxiàn zào bu chū jiàn.',goiY:['吩咐 = sai bảo','拖延 = kéo dài','期限 = kỳ hạn'],giai:'……，目的是…… nêu mục đích; 造不出 là bổ ngữ khả năng → "không làm ra được". 吩咐下属 dịch "sai cấp dưới".'},
-  {vi:'Gia Cát Lượng nhờ Lỗ Túc giữ bí mật giúp, vì đây là việc cơ mật, một khi để lộ tin thì tính mạng ông khó giữ.',zh:'诸葛亮请鲁肃替他保密，因为这是机密，一旦走漏消息，他就性命难保。',py:'Zhūgě Liàng qǐng Lǔ Sù tì tā bǎo mì, yīnwèi zhè shì jīmì, yídàn zǒulòu xiāoxi, tā jiù xìngmìng nán bǎo.',goiY:['保密 = giữ bí mật','机密 = cơ mật','一旦……就…… = một khi … thì …','走漏 = để lộ'],giai:'一旦……就…… giả thiết điều xấu có thể xảy ra; 性命难保 = "tính mạng khó giữ" (văn viết, 4 chữ).'},
-  {vi:'Lỗ Túc về báo lại, quả nhiên không nhắc chuyện mượn thuyền; Chu Du trầm ngâm hồi lâu mà vẫn đoán không ra ý đồ của Gia Cát Lượng.',zh:'鲁肃回来报告时果然没提借船的事，周瑜沉思良久也猜不出诸葛亮的意图。',py:'Lǔ Sù huílai bàogào shí guǒrán méi tí jiè chuán de shì, Zhōu Yú chénsī liángjiǔ yě cāi bu chū Zhūgě Liàng de yìtú.',goiY:['果然 = quả nhiên','沉思良久 = trầm ngâm hồi lâu','意图 = ý đồ'],giai:'也 ở vế sau mang ý "mà vẫn" (nhượng bộ ngầm); 猜不出 = đoán không ra.'},
-  {vi:'Vì sương mù dày đặc phủ kín mặt sông, Tào Tháo không nắm rõ tình hình, đành điều động cung thủ bắn tên về phía có tiếng trống.',zh:'由于大雾封锁了江面，曹操弄不清情况，只好调动弓箭手朝传来鼓声的方位放箭。',py:'Yóuyú dà wù fēngsuǒle jiāngmiàn, Cáo Cāo nòng bu qīng qíngkuàng, zhǐhǎo diàodòng gōngjiànshǒu cháo chuánlái gǔshēng de fāngwèi fàng jiàn.',goiY:['由于 = do, vì','封锁 = phủ kín','调动 = điều động','方位 = hướng'],giai:'由于 (văn viết) nêu nguyên nhân; 封锁 ở đây là nghĩa văn học "phủ kín"; 朝……的方位 = về phía ….'},
-  {vi:'Binh sĩ dàn hàng ngang tại chỗ đã được chỉ định, vừa đánh trống vừa hò hét, tiếng càng vang dội càng tốt.',zh:'士兵们在指定的地点一字排开，一边敲鼓一边高喊，声音能多响亮就多响亮。',py:'Shìbīngmen zài zhǐdìng de dìdiǎn yízì páikāi, yìbiān qiāo gǔ yìbiān gāo hǎn, shēngyīn néng duō xiǎngliàng jiù duō xiǎngliàng.',goiY:['指定 = chỉ định','一边……一边…… = vừa … vừa …','能多响亮就多响亮 = càng vang càng tốt'],giai:'能多 A 就多 A = cố làm cho A đến mức cao nhất; tiếng Việt dịch "càng … càng tốt" hoặc "… được bao nhiêu thì … bấy nhiêu".'},
-  {vi:'Gia Cát Lượng ra lệnh quay thuyền lại để hứng tên, binh sĩ khí thế hừng hực; mãi đến rạng sáng, họ mới nhân lúc sương mù lên đường quay về.',zh:'诸葛亮下令把船掉过来受箭，士兵们情绪高涨；直到凌晨，他们才趁着大雾启程返航。',py:'Zhūgě Liàng xià lìng bǎ chuán diào guòlai shòu jiàn, shìbīngmen qíngxù gāozhǎng; zhídào língchén, tāmen cái chènzhe dà wù qǐchéng fǎnháng.',goiY:['高涨 = dâng cao','直到……才…… = mãi đến … mới …','启程 = lên đường'],giai:'直到……才…… nhấn thời điểm muộn; 趁着 = nhân lúc; 情绪高涨 dịch "khí thế hừng hực".'},
-  {vi:'Sau khi hai mươi chiếc thuyền cập bờ, tính sơ qua thì trên thuyền có hơn mười vạn mũi tên, đủ thấy Gia Cát Lượng đã hoàn thành nhiệm vụ trọn vẹn.',zh:'二十条船靠岸以后，大致算了算，船上的箭有十万多支，可见诸葛亮圆满完成了任务。',py:'Èrshí tiáo chuán kào àn yǐhòu, dàzhì suànle suàn, chuán shang de jiàn yǒu shíwàn duō zhī, kějiàn Zhūgě Liàng yuánmǎn wánchéngle rènwu.',goiY:['大致 = sơ qua','可见 = đủ thấy','圆满 = trọn vẹn'],giai:'可见 rút ra kết luận từ sự thật trước; 十万多支 = "hơn mười vạn" (多 đứng sau số tròn).'},
-  {vi:'Chu Du vốn định để Gia Cát Lượng đến hạn phải chịu phạt, không ngờ trái lại còn giúp đối phương lập công, đành thở dài thừa nhận: "Hắn đúng là thiên tài, quả thật cao minh hơn ta."',zh:'周瑜本想让诸葛亮到期受罚，没想到反而成全了对方，只好叹着气承认：“他真是天才，确实比我高明。”',py:'Zhōu Yú běn xiǎng ràng Zhūgě Liàng dàoqī shòu fá, méi xiǎngdào fǎn\'ér chéngquánle duìfāng, zhǐhǎo tànzhe qì chéngrèn: “Tā zhēn shì tiāncái, quèshí bǐ wǒ gāomíng.”',goiY:['没想到……反而…… = không ngờ … trái lại','叹着气 = thở dài','高明 = cao minh'],giai:'本想……，没想到反而…… = kết quả ngược với dự định; 成全 = giúp người khác đạt được (ở đây mỉa mai: giúp đối phương lập công).'}
+  {vi:'Sương mù dày bao phủ mặt sông, phía xa chẳng nhìn thấy gì.',zh:'大雾笼罩着河面，远处什么都看不见。',py:'Dàwù lǒngzhàozhe hémiàn, yuǎnchù shénme dōu kàn bu jiàn.',goiY:['笼罩 = bao phủ','远处 = phía xa'],giai:'笼罩着 = đang bao phủ (trạng thái kéo dài); 什么都看不见 = chẳng thấy gì.'},
+  {vi:'Giám đốc giao cho tôi đứng ra lo hội nghị lần này, tôi nhất định phải làm cho thật trọn vẹn.',zh:'经理委托我承办这次会议，我一定要把它办得圆满。',py:'Jīnglǐ wěituō wǒ chéngbàn zhè cì huìyì, wǒ yídìng yào bǎ tā bàn de yuánmǎn.',goiY:['委托 = giao, nhờ','承办 = đứng ra lo','圆满 = trọn vẹn'],giai:'它 thay cho 这次会议 (thay thế), tránh lặp; 办得圆满 = làm trọn vẹn.'},
+  {vi:'Để kịp chuyến bay sớm nhất, chúng tôi ra khỏi nhà từ bốn giờ sáng.',zh:'为了赶上第一班飞机，我们凌晨四点就出门了。',py:'Wèile gǎnshàng dì yī bān fēijī, wǒmen língchén sì diǎn jiù chūmén le.',goiY:['凌晨 = rạng sáng','赶上 = kịp'],giai:'凌晨四点 dịch "bốn giờ sáng"; 就 nhấn mạnh sớm.'},
+  {vi:'Nghe xong lời anh ấy, tôi trầm ngâm hồi lâu mà vẫn không hiểu ý đồ của anh ấy.',zh:'听完他的话，我沉思了很久，还是不明白他的意图。',py:'Tīngwán tā de huà, wǒ chénsīle hěn jiǔ, háishi bù míngbai tā de yìtú.',goiY:['沉思 = trầm ngâm','意图 = ý đồ'],giai:'还是 = vẫn; 意图 dịch "ý đồ / ý định thật".'},
+  {vi:'Quân đội mang vũ khí đóng quân dưới chân núi, phong toả con đường vào núi.',zh:'军队带着武器驻扎在山下，封锁了进山的路。',py:'Jūnduì dàizhe wǔqì zhùzhā zài shān xià, fēngsuǒle jìn shān de lù.',goiY:['武器 = vũ khí','驻扎 = đóng quân','封锁 = phong toả'],giai:'带着 = mang theo (trạng thái); vế sau tỉnh lược chủ ngữ 军队.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1908,9 +1833,9 @@ var writingData = {
     'Đã dùng ít nhất 6 từ mới của bài (不服气, 为难, 期限, 委托, 吩咐, 大致, 沉思, 叹气, 高明, 圆满…) và dùng đúng 即将 / 能A就A hoặc từ thay thế (这, 此, 前者…) chưa?'
   ],
   model:{
-    zh:'（题目：智慧的梁世荣）在越南，几乎人人都听过梁世荣的故事。梁世荣是十五世纪越南有名的状元，他从小就聪明过人，尤其擅长算术，大家都叫他“算术状元”。有一年，中国派来了一位使臣。这位使臣早就听说越南人才很多，心里有些不服气，想故意为难一下越南的官员。他指着一头大象说：“你们谁能说出这头大象有多重？期限是一天。”那时候根本没有那么大的秤，时间又紧迫，官员们你看看我，我看看你，谁也想不出办法。国王只好把梁世荣请来，委托他承办这件事。梁世荣一点儿也不着急，笑着说：“这件事不难，请大家跟我到江边去。”他先吩咐士兵把大象牵到一条大船上，等船停稳以后，在船的侧面水到达的地方画了一条线。然后，他让人把大象牵下来，往船上一筐一筐地装石头，直到船沉到刚才画线的地方。最后，他让人把这些石头分别称一称，再把重量加在一起，大致就是大象的重量了。使臣看到这个方法，沉思良久，不得不叹着气说：“越南真是人才辈出，梁状元确实高明！”从此，他再也不敢小看越南人了。这个故事告诉我们：遇到难题时，与其着急，不如冷静下来多动脑筋，再难的问题也能圆满解决。',
-    py:'(Tímù: Zhìhuì de Liáng Shìróng) Zài Yuènán, jīhū rénrén dōu tīngguo Liáng Shìróng de gùshi. Liáng Shìróng shì shíwǔ shìjì Yuènán yǒumíng de zhuàngyuan, tā cóng xiǎo jiù cōngming guò rén, yóuqí shàncháng suànshù, dàjiā dōu jiào tā “suànshù zhuàngyuan”. Yǒu yì nián, Zhōngguó pàiláile yí wèi shǐchén. Zhè wèi shǐchén zǎo jiù tīngshuō Yuènán réncái hěn duō, xīnli yǒuxiē bù fúqì, xiǎng gùyì wéinán yíxià Yuènán de guānyuán. Tā zhǐzhe yì tóu dàxiàng shuō: “Nǐmen shéi néng shuōchū zhè tóu dàxiàng yǒu duō zhòng? Qīxiàn shì yì tiān.” Nà shíhou gēnběn méiyǒu nàme dà de chèng, shíjiān yòu jǐnpò, guānyuánmen nǐ kànkan wǒ, wǒ kànkan nǐ, shéi yě xiǎng bu chū bànfǎ. Guówáng zhǐhǎo bǎ Liáng Shìróng qǐnglái, wěituō tā chéngbàn zhè jiàn shì. Liáng Shìróng yìdiǎnr yě bù zháojí, xiàozhe shuō: “Zhè jiàn shì bù nán, qǐng dàjiā gēn wǒ dào jiāngbiān qù.” Tā xiān fēnfù shìbīng bǎ dàxiàng qiāndào yì tiáo dà chuán shang, děng chuán tíngwěn yǐhòu, zài chuán de cèmiàn shuǐ dàodá de dìfang huàle yì tiáo xiàn. Ránhòu, tā ràng rén bǎ dàxiàng qiān xiàlai, wǎng chuán shang yì kuāng yì kuāng de zhuāng shítou, zhídào chuán chéndào gāngcái huà xiàn de dìfang. Zuìhòu, tā ràng rén bǎ zhèxiē shítou fēnbié chēng yi chēng, zài bǎ zhòngliàng jiā zài yìqǐ, dàzhì jiù shì dàxiàng de zhòngliàng le. Shǐchén kàndào zhège fāngfǎ, chénsī liángjiǔ, bùdébù tànzhe qì shuō: “Yuènán zhēn shì réncái bèi chū, Liáng zhuàngyuan quèshí gāomíng!” Cóngcǐ, tā zài yě bù gǎn xiǎokàn Yuènánrén le. Zhège gùshi gàosu wǒmen: yùdào nántí shí, yǔqí zháojí, bùrú lěngjìng xiàlai duō dòng nǎojīn, zài nán de wèntí yě néng yuánmǎn jiějué.',
-    vn:'(Nhan đề: Lương Thế Vinh thông minh) Ở Việt Nam, hầu như ai cũng từng nghe câu chuyện về Lương Thế Vinh. Lương Thế Vinh là vị trạng nguyên nổi tiếng của Việt Nam thế kỷ XV, từ nhỏ đã thông minh hơn người, đặc biệt giỏi toán, mọi người đều gọi ông là "Trạng Lường" (trạng nguyên toán học). Có một năm, Trung Quốc cử sang một vị sứ thần. Vị sứ thần này từ lâu đã nghe nói Việt Nam có nhiều nhân tài, trong lòng có phần không phục, muốn cố ý làm khó các quan lại Việt Nam. Ông ta chỉ vào một con voi và nói: "Các ông ai nói được con voi này nặng bao nhiêu? Thời hạn là một ngày." Thời đó hoàn toàn không có cái cân nào to như vậy, thời gian lại gấp, các quan anh nhìn tôi, tôi nhìn anh, không ai nghĩ ra cách. Nhà vua đành mời Lương Thế Vinh đến, giao cho ông đảm nhận việc này. Lương Thế Vinh chẳng hề sốt ruột, cười nói: "Việc này không khó, mời mọi người theo tôi ra bờ sông." Trước tiên, ông sai binh lính dắt voi lên một chiếc thuyền lớn, đợi thuyền đứng yên rồi vạch một đường ở mạn thuyền, chỗ mực nước dâng tới. Sau đó, ông cho người dắt voi xuống, chất đá lên thuyền từng sọt một, cho đến khi thuyền chìm xuống đúng vạch vừa vẽ. Cuối cùng, ông cho người cân riêng từng phần số đá ấy rồi cộng lại, đại khái đó chính là trọng lượng của con voi. Sứ thần thấy cách làm này, trầm ngâm hồi lâu, đành thở dài nói: "Việt Nam quả là nhân tài lớp lớp, Trạng Lương đúng là cao minh!" Từ đó, ông ta không dám coi thường người Việt nữa. Câu chuyện này cho chúng ta biết: gặp bài toán khó, thay vì cuống lên, chi bằng bình tĩnh động não nhiều hơn, vấn đề khó mấy cũng có thể giải quyết trọn vẹn.'
+    zh:'（题目：智慧的读书人）在越南，几乎人人都听过这位读书人的故事。他生活在五百多年前，从小就聪明过人，尤其擅长数学，大家都叫他“数学天才”。有一年，中国派来了一位官员。这位官员早就听说越南人才很多，心里有些不服气，想故意为难一下越南的官员。他指着一头大象说：“你们谁能说出这头大象有多重？期限是一天。”那时候根本没有那么大的秤，时间又紧迫，官员们你看看我，我看看你，谁也想不出办法。国王只好把这位读书人请来，委托他承办这件事。他一点儿也不着急，笑着说：“这件事不难，请大家跟我到江边去。”他先吩咐士兵把大象赶到一条大船上，等船不再晃动以后，在船的侧面水到达的地方画了一条线。然后，他让人把大象赶下来，往船上一筐一筐地装石头，直到船沉到刚才画线的地方。最后，他让人把这些石头分别称一称，再把重量加在一起，大致就是大象的重量了。那位官员看到这个方法，沉思良久，不得不叹着气说：“越南的人才真多，这位先生确实高明！”从此，他再也不敢小看越南人了。这个故事告诉我们：遇到难题时，与其着急，不如冷静下来多动脑筋，再难的问题也能圆满解决。',
+    py:'(Tímù: Zhìhuì de dúshūrén) Zài Yuènán, jīhū rénrén dōu tīngguo zhè wèi dúshūrén de gùshi. Tā shēnghuó zài wǔbǎi duō nián qián, cóng xiǎo jiù cōngming guò rén, yóuqí shàncháng shùxué, dàjiā dōu jiào tā “shùxué tiāncái”. Yǒu yì nián, Zhōngguó pàiláile yí wèi guānyuán. Zhè wèi guānyuán zǎo jiù tīngshuō Yuènán réncái hěn duō, xīnli yǒuxiē bù fúqì, xiǎng gùyì wéinán yíxià Yuènán de guānyuán. Tā zhǐzhe yì tóu dàxiàng shuō: “Nǐmen shéi néng shuōchū zhè tóu dàxiàng yǒu duō zhòng? Qīxiàn shì yì tiān.” Nà shíhou gēnběn méiyǒu nàme dà de chèng, shíjiān yòu jǐnpò, guānyuánmen nǐ kànkan wǒ, wǒ kànkan nǐ, shéi yě xiǎng bu chū bànfǎ. Guówáng zhǐhǎo bǎ zhè wèi dúshūrén qǐnglái, wěituō tā chéngbàn zhè jiàn shì. Tā yìdiǎnr yě bù zháojí, xiàozhe shuō: “Zhè jiàn shì bù nán, qǐng dàjiā gēn wǒ dào jiāngbiān qù.” Tā xiān fēnfù shìbīng bǎ dàxiàng gǎndào yì tiáo dà chuán shang, děng chuán bú zài huàngdòng yǐhòu, zài chuán de cèmiàn shuǐ dàodá de dìfang huàle yì tiáo xiàn. Ránhòu, tā ràng rén bǎ dàxiàng gǎn xiàlai, wǎng chuán shang yì kuāng yì kuāng de zhuāng shítou, zhídào chuán chéndào gāngcái huà xiàn de dìfang. Zuìhòu, tā ràng rén bǎ zhèxiē shítou fēnbié chēng yi chēng, zài bǎ zhòngliàng jiā zài yìqǐ, dàzhì jiù shì dàxiàng de zhòngliàng le. Nà wèi guānyuán kàndào zhège fāngfǎ, chénsī liángjiǔ, bùdébù tànzhe qì shuō: “Yuènán de réncái zhēn duō, zhè wèi xiānsheng quèshí gāomíng!” Cóngcǐ, tā zài yě bù gǎn xiǎokàn Yuènánrén le. Zhège gùshi gàosu wǒmen: yùdào nántí shí, yǔqí zháojí, bùrú lěngjìng xiàlai duō dòng nǎojīn, zài nán de wèntí yě néng yuánmǎn jiějué.',
+    vn:'(Nhan đề: Nhà nho thông minh — chuyện Trạng Lường Lương Thế Vinh) Ở Việt Nam, hầu như ai cũng từng nghe câu chuyện về nhà nho này. Ông sống cách đây hơn năm trăm năm, từ nhỏ đã thông minh hơn người, đặc biệt giỏi toán, mọi người đều gọi ông là "thiên tài toán học". Có một năm, Trung Quốc cử sang một vị quan. Vị quan này từ lâu đã nghe nói Việt Nam có nhiều nhân tài, trong lòng có phần không phục, muốn cố ý làm khó các quan lại Việt Nam. Ông ta chỉ vào một con voi và nói: "Các ông ai nói được con voi này nặng bao nhiêu? Thời hạn là một ngày." Thời đó hoàn toàn không có cái cân nào to như vậy, thời gian lại gấp, các quan anh nhìn tôi, tôi nhìn anh, không ai nghĩ ra cách. Nhà vua đành mời nhà nho ấy đến, giao cho ông đảm nhận việc này. Ông chẳng hề sốt ruột, cười nói: "Việc này không khó, mời mọi người theo tôi ra bờ sông." Trước tiên, ông sai binh lính lùa voi lên một chiếc thuyền lớn, đợi thuyền hết chòng chành rồi vạch một đường ở mạn thuyền, chỗ mực nước dâng tới. Sau đó, ông cho người lùa voi xuống, chất đá lên thuyền từng sọt một, cho đến khi thuyền chìm xuống đúng vạch vừa vẽ. Cuối cùng, ông cho người cân riêng từng phần số đá ấy rồi cộng lại, đại khái đó chính là trọng lượng của con voi. Vị quan kia thấy cách làm này, trầm ngâm hồi lâu, đành thở dài nói: "Việt Nam quả là nhiều nhân tài, vị tiên sinh này đúng là cao minh!" Từ đó, ông ta không dám coi thường người Việt nữa. Câu chuyện này cho chúng ta biết: gặp bài toán khó, thay vì cuống lên, chi bằng bình tĩnh động não nhiều hơn, vấn đề khó mấy cũng có thể giải quyết trọn vẹn.'
   }
 };
 
@@ -1947,165 +1872,139 @@ var speakingData = {
     {q_zh:'诸葛亮完成任务了吗？周瑜的反应是什么？',
      q_vn:'Gia Cát Lượng có hoàn thành nhiệm vụ không? Chu Du phản ứng thế nào?',
      hint:'①圆满完成　②叹着气说',
-     sample:'诸葛亮圆满完成了任务，大致算了算，船上的箭有十万多支。鲁肃把借箭的经过告诉了周瑜，周瑜叹着气说：“他真是天才，确实比我高明！”',
+     sample:'诸葛亮圆满完成了任务，大致算了算，船上的箭有十万多支。鲁肃把借箭的经过告诉了周瑜，周瑜叹了口气说：“他真是天才，确实比我高明！”',
      sample_vn:'Gia Cát Lượng đã hoàn thành nhiệm vụ trọn vẹn, tính sơ qua trên thuyền có hơn mười vạn mũi tên. Lỗ Túc kể lại chuyện mượn tên cho Chu Du, Chu Du thở dài nói: "Hắn đúng là thiên tài, quả thật cao minh hơn ta!"',
      note:'圆满完成了任务; 大致算了算; kết bằng câu nói trực tiếp của Chu Du (叹着气说).'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — 听力 (hội thoại ngắn + đoạn nói)
-// Sách HSK 6 không có sách bài tập nghe: tự soạn theo chủ đề bài 25.
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — câu tự soạn (sách HSK 6 không có sách bài tập nghe), mỗi câu một tình huống mới
+// ══════════════════════════════════════════
 var listenExamData = {
-  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, ' +
-         'trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
-  source: 'Soạn theo dạng đề HSK 6 · chủ đề bài 25',
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 25',
   items: [
-    {n:1,
-     lines:[{sp:'女',zh:'你怎么还不睡？都凌晨一点了。'},
-            {sp:'男',zh:'明天就是交论文的期限了，我还有最后一部分没写完。'}],
-     q:'男的为什么还不睡？',qvn:'Vì sao người đàn ông vẫn chưa ngủ?',
-     opts:['论文还没写完','在看球赛','心里很紧张','在等朋友的电话'],ans:0,
-     why:'明天就是交论文的期限了，我还有最后一部分没写完 → luận văn chưa viết xong. 凌晨一点 chỉ là thời điểm.',
-     words:['凌晨','期限']},
-
-    {n:2,
-     lines:[{sp:'男',zh:'下周的活动，就委托你来安排吧。'},
-            {sp:'女',zh:'你委托的事我当然会尽力，不过时间这么紧迫，我只能保证能做多好就做多好。'}],
-     q:'女的是什么意思？',qvn:'Ý người phụ nữ là gì?',
-     opts:['不愿意帮忙','会尽力，但时间很紧','已经安排好了','时间很充足'],ans:1,
-     why:'当然会尽力，不过时间这么紧迫 → sẽ cố hết sức nhưng thời gian gấp. 能做多好就做多好 = làm tốt được đến đâu thì làm (能A就A).',
-     words:['委托','紧迫']},
-
-    {n:3,
-     lines:[{sp:'女',zh:'小王怎么一脸不高兴？'},
-            {sp:'男',zh:'比赛输了呗。他嘴上说对手比他高明，其实心里一直不服气呢。'}],
-     q:'关于小王，可以知道什么？',qvn:'Về Tiểu Vương, có thể biết điều gì?',
-     opts:['赢了比赛','很佩服对手','心里不服气','不想再参加比赛了'],ans:2,
-     why:'其实心里一直不服气 → trong lòng không phục. 嘴上说对手比他高明 chỉ là ngoài miệng, nên "rất khâm phục đối thủ" sai.',
-     words:['高明','服气']},
-
-    {n:4,
-     lines:[{sp:'男',zh:'出门前妈妈再三叮嘱我，一定要把护照放好。'},
-            {sp:'女',zh:'那你还不赶紧检查一下包？别到了机场才发现没带。'}],
-     q:'女的让男的做什么？',qvn:'Người phụ nữ bảo người đàn ông làm gì?',
-     opts:['给妈妈打电话','马上去机场','重新办护照','检查包里的护照'],ans:3,
-     why:'那你还不赶紧检查一下包？ — câu hỏi phản vấn = mau kiểm tra túi (xem có hộ chiếu không).',
-     words:['叮嘱']},
-
-    {n:5,
-     lines:[{sp:'女',zh:'听说这次国际会议是你们公司承办的？'},
-            {sp:'男',zh:'是啊，会议圆满结束了，老板一高兴，给大家放了三天假。'}],
-     q:'关于男的公司，下列哪项正确？',qvn:'Về công ty của người đàn ông, điều nào đúng?',
-     opts:['会议被推迟了','员工放了三天假','老板很不满意','还要承办下一次会议'],ans:1,
-     why:'老板一高兴，给大家放了三天假 → nhân viên được nghỉ ba ngày. 圆满结束 → hội nghị không bị hoãn.',
-     words:['承办','圆满']},
-
-    {n:6,
-     lines:[{sp:'男',zh:'这件事千万别告诉小李，我们准备给他一个惊喜。'},
-            {sp:'女',zh:'放心吧，我一定替你保密，不会走漏消息的。'}],
-     q:'女的会怎么做？',qvn:'Người phụ nữ sẽ làm gì?',
-     opts:['替男的保密','马上告诉小李','帮男的准备礼物','给小李打电话'],ans:0,
-     why:'我一定替你保密，不会走漏消息的 → giữ bí mật giúp. Không nhắc đến việc chuẩn bị quà.',
-     words:['保密','走漏']},
-
-    {n:7,
-     lines:[{sp:'女',zh:'天气预报说明天早上有大雾，航班可能会拖延。'},
-            {sp:'男',zh:'那我们能早走就早走，今天晚上就启程，到机场附近住一晚吧。'}],
-     q:'男的打算怎么做？',qvn:'Người đàn ông định làm thế nào?',
-     opts:['推迟出发','改坐火车','明天凌晨再出发','今晚就去机场附近住'],ans:3,
-     why:'今天晚上就启程，到机场附近住一晚 → tối nay lên đường, ngủ gần sân bay. 能早走就早走 = đi sớm được bao nhiêu thì đi.',
-     words:['拖延','启程']},
-
-    {n:8,
-     lines:[{sp:'男',zh:'《三国演义》是中国古代四大名著之一。书中的诸葛亮被看作智慧的化身，“草船借箭”就是其中最有名的故事之一：他利用大雾天气和曹操多疑的性格，只用了三天就“借”到了十万多支箭。直到今天，人们还常用“诸葛亮”来称赞那些聪明、有计谋的人。'}],
-     q:'人们常用“诸葛亮”来称赞什么样的人？',qvn:'Người ta thường dùng "Gia Cát Lượng" để khen người như thế nào?',
-     opts:['身体强壮的人','说话算数的人','聪明、有计谋的人','会造武器的人'],ans:2,
-     why:'Câu cuối: 人们还常用“诸葛亮”来称赞那些聪明、有计谋的人.',
-     words:['武器','算数']}
+    {
+      n: 1,
+      lines: [
+        {sp:'女',zh:'请大家注意，演出即将开始，请关掉手机。'},
+        {sp:'男',zh:'快坐下吧，灯都关了。'}
+      ],
+      q: '他们最可能在哪儿？',
+      qvn: 'Họ nhiều khả năng đang ở đâu?',
+      opts: ['看演出的地方','飞机上','医院里','教室里'],
+      ans: 0,
+      why: '演出即将开始 + 灯都关了 → đang ở nơi xem biểu diễn. 即将 = sắp (văn viết, hay gặp trong thông báo).',
+      words: ['即将']
+    },
+    {
+      n: 2,
+      lines: [
+        {sp:'男',zh:'老板，这件衣服能便宜点儿吗？'},
+        {sp:'女',zh:'您常来，能便宜就给您便宜点儿。'}
+      ],
+      q: '女的是什么意思？',
+      qvn: 'Ý người phụ nữ là gì?',
+      opts: ['不能便宜','愿意便宜一点儿','衣服已经卖完了','让男的去别家'],
+      ans: 1,
+      why: '能便宜就给您便宜点儿 = được bớt thì bớt cho anh → đồng ý giảm giá một chút.',
+      words: []
+    },
+    {
+      n: 3,
+      lines: [
+        {sp:'男',zh:'离比赛只有两天了，时间这么紧迫，我们该怎么办？'},
+        {sp:'女',zh:'当务之急是把每个人的位置安排好，其他的以后再说。'}
+      ],
+      q: '女的认为现在最重要的是什么？',
+      qvn: 'Người phụ nữ cho rằng bây giờ việc quan trọng nhất là gì?',
+      opts: ['多练习跑步','买新的衣服','安排好每个人的位置','请一个教练'],
+      ans: 2,
+      why: '当务之急是 = việc gấp nhất là → sắp xếp vị trí cho từng người.',
+      words: ['紧迫','当务之急']
+    },
+    {
+      n: 4,
+      lines: [
+        {sp:'女',zh:'你去医院看张老师了吗？'},
+        {sp:'男',zh:'去了，他大致说了说自己的病，还叮嘱我们好好复习，别为他担心。'}
+      ],
+      q: '张老师叮嘱了什么？',
+      qvn: 'Thầy Trương dặn dò điều gì?',
+      opts: ['常来看他','别告诉别人','帮他买药','好好复习，别担心'],
+      ans: 3,
+      why: '叮嘱我们好好复习，别为他担心 → dặn ôn bài cho tốt, đừng lo cho thầy.',
+      words: ['大致','叮嘱']
+    },
+    {
+      n: 5,
+      lines: [
+        {sp:'男',zh:'我们是不是走错了？怎么一个人都看不到？'},
+        {sp:'女',zh:'别担心，我看一下手机地图，先弄清楚方位再说。'}
+      ],
+      q: '女的打算先做什么？',
+      qvn: 'Người phụ nữ định làm gì trước?',
+      opts: ['弄清楚方位','往回走','找人问路','给朋友打电话'],
+      ans: 0,
+      why: '先弄清楚方位再说 → trước hết xác định phương hướng bằng bản đồ trên điện thoại.',
+      words: ['方位']
+    },
+    {
+      n: 6,
+      lines: [
+        {sp:'女',zh:'你上次说考第一就请我吃饭，说话算数吗？'},
+        {sp:'男',zh:'当然算数，我说到做到。'}
+      ],
+      q: '男的是什么意思？',
+      qvn: 'Ý người đàn ông là gì?',
+      opts: ['他会请女的吃饭','他没考第一','他忘了这件事','他想改天再说'],
+      ans: 0,
+      why: '当然算数，我说到做到 → giữ lời, sẽ mời cô ấy ăn.',
+      words: ['算数']
+    },
+    {
+      n: 7,
+      lines: [
+        {sp:'男',zh:'你怎么老叹气？'},
+        {sp:'女',zh:'这道题我想了一晚上都没做出来，小王五分钟就做完了，大家都叫他天才，他的方法比我高明多了。'}
+      ],
+      q: '女的为什么叹气？',
+      qvn: 'Vì sao người phụ nữ thở dài?',
+      opts: ['小王不帮她','题太简单','自己做不出来题','睡得太晚了'],
+      ans: 2,
+      why: '想了一晚上都没做出来 → cô ấy nghĩ cả tối không giải được, trong khi Tiểu Vương làm năm phút xong.',
+      words: ['叹气','天才','高明']
+    }
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 💬 TÌNH HUỐNG GIAO TIẾP
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
+// ══════════════════════════════════════════
 var situationData = {
-  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
-         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn cùng nhóm nhắn tin: bài thuyết trình nhóm ngày mai phải nộp mà vẫn còn nhiều phần chưa làm.',
-     a:{sp:'Bạn cùng nhóm',zh:'明天就要交了，还有好多没做完，怎么办啊？',vn:'Mai phải nộp rồi mà còn nhiều phần chưa làm xong, làm sao đây?'},
-     need:['Dùng 期限 hoặc 紧迫','Dùng 能A就A'],
-     sample:'时间是紧迫了点儿，不过期限是明天下午，还来得及。今天晚上我们能多做就多做，明天早上再检查一遍。',
-     samplePy:'Shíjiān shì jǐnpòle diǎnr, búguò qīxiàn shì míngtiān xiàwǔ, hái láidejí. Jīntiān wǎnshang wǒmen néng duō zuò jiù duō zuò, míngtiān zǎoshang zài jiǎnchá yí biàn.',
-     sampleVn:'Thời gian hơi gấp thật, nhưng hạn là chiều mai, vẫn kịp. Tối nay làm được bao nhiêu thì làm bấy nhiêu, sáng mai kiểm tra lại một lượt.',
-     tip:'能多V就多V = cố làm càng nhiều càng tốt; 来得及 = còn kịp (ôn HSK 4).'},
-
-    {scene:'Em họ làm vỡ bình hoa của bà, xin em đừng nói với ai.',
-     a:{sp:'Em họ',zh:'姐，花瓶是我不小心打碎的，你千万别告诉奶奶！',vn:'Chị ơi, bình hoa là em lỡ tay làm vỡ, chị đừng nói với bà nhé!'},
-     need:['Dùng 保密 hoặc 走漏','Khuyên em tự nhận lỗi'],
-     sample:'我可以替你保密，不过纸包不住火，与其等奶奶发现，不如你自己去跟她说清楚。',
-     samplePy:'Wǒ kěyǐ tì nǐ bǎo mì, búguò zhǐ bāo bu zhù huǒ, yǔqí děng nǎinai fāxiàn, bùrú nǐ zìjǐ qù gēn tā shuō qīngchu.',
-     sampleVn:'Chị có thể giữ bí mật giúp em, nhưng giấy không gói được lửa; thay vì đợi bà phát hiện, chi bằng em tự đi nói rõ với bà.',
-     tip:'替 + người + 保密; 纸包不住火 = giấy không gói được lửa; 与其……不如…….'},
-
-    {scene:'Cô giáo hỏi lớp trưởng (em) việc chuẩn bị cho lễ hội văn nghệ của trường sắp diễn ra.',
-     a:{sp:'Cô giáo',zh:'学校的文艺晚会下周就要开始了，你们班准备得怎么样了？',vn:'Tuần sau đêm văn nghệ của trường bắt đầu rồi, lớp em chuẩn bị đến đâu rồi?'},
-     need:['Dùng 即将','Dùng 当务之急'],
-     sample:'晚会即将开始，节目我们已经排好了。现在的当务之急是准备演出服装，我已经委托小张去办了。',
-     samplePy:'Wǎnhuì jíjiāng kāishǐ, jiémù wǒmen yǐjīng páihǎo le. Xiànzài de dāngwùzhījí shì zhǔnbèi yǎnchū fúzhuāng, wǒ yǐjīng wěituō Xiǎo Zhāng qù bàn le.',
-     sampleVn:'Đêm văn nghệ sắp bắt đầu, tiết mục chúng em đã tập xong. Việc gấp nhất bây giờ là chuẩn bị trang phục biểu diễn, em đã nhờ Tiểu Trương lo rồi ạ.',
-     tip:'即将 + V (trang trọng, hợp nói với thầy cô); 当务之急是……; 委托 + người + V.'},
-
-    {scene:'Bạn em vừa thua một ván cờ, cứ nói "Chắc tại cậu ấy may thôi".',
-     a:{sp:'Bạn',zh:'他就是运气好，要是再下一盘，我肯定能赢！',vn:'Cậu ta chỉ là may thôi, đánh ván nữa chắc chắn tớ thắng!'},
-     need:['Dùng 服气 hoặc 高明','Khuyên bạn'],
-     sample:'你别不服气了，人家的棋确实比你高明。与其说运气，不如回去好好研究研究。',
-     samplePy:'Nǐ bié bù fúqì le, rénjia de qí quèshí bǐ nǐ gāomíng. Yǔqí shuō yùnqi, bùrú huíqu hǎohǎo yánjiū yánjiū.',
-     sampleVn:'Cậu đừng không phục nữa, cờ của người ta đúng là cao tay hơn cậu. Thay vì nói chuyện may rủi, chi bằng về nghiên cứu cho kỹ.',
-     tip:'别不服气了 = đừng cay cú nữa; A 比 B 高明; 人家 = người ta (ôn HSK 5).'},
-
-    {scene:'Cuối tuần ông bà từ quê lên chơi, mẹ gọi điện hỏi em đã chuẩn bị xong chưa.',
-     a:{sp:'Mẹ',zh:'爷爷奶奶十一点就到了，家里都准备好了吗？',vn:'Mười một giờ ông bà đến rồi, ở nhà chuẩn bị xong hết chưa con?'},
-     need:['Dùng 妥当','Dùng 款待'],
-     sample:'妈，您放心吧，房间收拾好了，饭菜也安排妥当了，我们一定好好款待爷爷奶奶。',
-     samplePy:'Mā, nín fàngxīn ba, fángjiān shōushi hǎo le, fàncài yě ānpái tuǒdàng le, wǒmen yídìng hǎohǎo kuǎndài yéye nǎinai.',
-     sampleVn:'Mẹ yên tâm ạ, phòng đã dọn xong, cơm nước cũng sắp xếp đâu vào đấy rồi, chúng con nhất định sẽ tiếp đãi ông bà thật chu đáo.',
-     tip:'安排妥当 = sắp xếp ổn thoả; 款待 trang trọng, dùng cho khách quý / người lớn đến chơi.'}
+    {scene:'Bạn thân tháng sau đi du học, hỏi em có gì muốn dặn trước khi lên đường.',a:{sp:'Bạn thân',zh:'我下个月就要出国了，你有什么要嘱咐我的吗？',vn:'Tháng sau tớ đi nước ngoài rồi, cậu có gì muốn dặn tớ không?'},need:['Dùng 即将 hoặc 启程','Dặn bạn một hai việc'],sample:'你即将开始新的生活，一定要照顾好自己。启程以前把要带的东西检查一遍，到了那边记得给大家报个平安。',samplePy:'Nǐ jíjiāng kāishǐ xīn de shēnghuó, yídìng yào zhàogù hǎo zìjǐ. Qǐchéng yǐqián bǎ yào dài de dōngxi jiǎnchá yí biàn, dàole nàbiān jìde gěi dàjiā bào ge píng\'ān.',sampleVn:'Cậu sắp bắt đầu cuộc sống mới, nhất định phải tự chăm sóc mình. Trước khi lên đường kiểm tra lại đồ cần mang một lượt, sang đến nơi nhớ báo cho mọi người là đã bình an nhé.',tip:'即将 (văn viết) = 就要……了 (khẩu ngữ); 报个平安 = báo tin bình an.'},
+    {scene:'Bạn nhờ em cuối tuần giúp chuyển nhà, nhưng sáng thứ Bảy em có tiết học.',a:{sp:'Bạn',zh:'这个周末我搬家，你能来帮忙吗？',vn:'Cuối tuần này tớ chuyển nhà, cậu đến giúp được không?'},need:['Dùng 能A就A','Nói rõ thời gian mình rảnh'],sample:'我周六上午有课，下午一下课就过去。东西你先别搬，能等我就等我。',samplePy:'Wǒ zhōuliù shàngwǔ yǒu kè, xiàwǔ yí xià kè jiù guòqù. Dōngxi nǐ xiān bié bān, néng děng wǒ jiù děng wǒ.',sampleVn:'Sáng thứ Bảy tớ có tiết, chiều tan học là tớ qua ngay. Đồ đạc cậu khoan hãy chuyển, đợi được tớ thì cứ đợi.',tip:'能 + V + 就 + V (能等我就等我) = được thì cứ…; 一……就…… = vừa… là….'},
+    {scene:'Bạn kể cả lớp định bí mật tổ chức tiệc bất ngờ cho cô giáo và dặn em đừng nói ra.',a:{sp:'Bạn',zh:'我们打算偷偷给王老师开个晚会，你可别说出去。',vn:'Bọn tớ định lén tổ chức một buổi tiệc cho cô Vương, cậu đừng nói ra đấy.'},need:['Dùng 保密','Dùng 走漏'],sample:'放心吧，我一定替你们保密，一点儿消息都不会走漏的。',samplePy:'Fàngxīn ba, wǒ yídìng tì nǐmen bǎo mì, yìdiǎnr xiāoxi dōu bú huì zǒulòu de.',sampleVn:'Yên tâm đi, tớ nhất định giữ bí mật giúp các cậu, không để lộ chút tin nào đâu.',tip:'替 + người + 保密; 一点儿……都不…… nhấn mạnh phủ định.'},
+    {scene:'Bạn nhờ em viết hộ bài văn vì bạn "không viết nổi".',a:{sp:'Bạn',zh:'你帮我写一下这篇作文吧，我实在写不出来。',vn:'Cậu viết hộ tớ bài văn này đi, tớ thật sự viết không nổi.'},need:['Dùng 为难','Từ chối nhưng vẫn giúp bạn cách khác'],sample:'这件事你别为难我了。作文得自己写，我可以帮你想想怎么开头。',samplePy:'Zhè jiàn shì nǐ bié wéinán wǒ le. Zuòwén děi zìjǐ xiě, wǒ kěyǐ bāng nǐ xiǎngxiang zěnme kāitóu.',sampleVn:'Việc này cậu đừng làm khó tớ. Bài văn phải tự viết, tớ có thể giúp cậu nghĩ xem mở bài thế nào.',tip:'别为难我了 = đừng làm khó tớ; 为难 đọc wéinán.'},
+    {scene:'Đội bóng lớp bạn thua, bạn rất ấm ức.',a:{sp:'Bạn',zh:'我们队输了，我真不服气！',vn:'Đội mình thua rồi, tớ thật không phục!'},need:['Dùng 高明','Động viên bạn'],sample:'人家确实踢得比我们高明，输了就输了。我们回去好好练，下次再赢回来！',samplePy:'Rénjia quèshí tī de bǐ wǒmen gāomíng, shūle jiù shūle. Wǒmen huíqù hǎohāo liàn, xià cì zài yíng huílái!',sampleVn:'Người ta đá đúng là giỏi hơn mình, thua thì thua thôi. Mình về tập cho tốt, lần sau thắng lại!',tip:'A了就A了 = … thì thôi (chấp nhận); 人家 = người ta (đội bạn).'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 // 🎯 NÓI SAO CHO HAY — 得体 / 语体
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 var registerData = {
-  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
-         'HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
   items: [
-    {scene:'Thông báo phát thanh trên tàu hoả.',
-     a:'各位旅客，列车即将到达终点站，请带好您的随身物品。',b:'大家快到了啊，东西别忘了拿！',better:'a',
-     why:'Thông báo nơi công cộng cần trang trọng: 各位旅客, 即将到达, 随身物品. Câu b là lời nói miệng thân mật.'},
-
-    {scene:'Em nhắn tin nhờ bạn thân giữ bí mật chuyện riêng.',
-     a:'这事儿你可别说出去啊，就咱俩知道。',b:'此事属于机密，望阁下严格保密。',better:'a',
-     why:'Nhắn tin với bạn thân dùng khẩu ngữ (这事儿, 咱俩). Câu b (此事, 属于机密, 阁下) như công văn, nghe rất buồn cười.'},
-
-    {scene:'Nhân viên báo cáo kết quả công việc với giám đốc.',
-     a:'经理，这事儿我搞定了，没啥问题。',b:'经理，我向您汇报一下，这项工作已经圆满完成了。',better:'b',
-     why:'Báo cáo với cấp trên nên dùng 向您汇报, 圆满完成 — lịch sự, rõ ràng. Câu a (搞定, 没啥) quá suồng sã.'},
-
-    {scene:'Em viết một bài kể lại chuyện "Thuyền cỏ mượn tên" cho tạp chí văn học của trường.',
-     a:'周瑜沉思良久，猜不出诸葛亮的意图，只好等着。',b:'周瑜想了老半天，也没弄明白诸葛亮到底想干吗。',better:'a',
-     why:'Văn tự sự trên tạp chí nên dùng từ ngữ văn viết: 沉思良久, 意图. Câu b (老半天, 干吗) là khẩu ngữ, hợp kể miệng với bạn bè.'},
-
-    {scene:'Một bác lớn tuổi nhờ em một việc em thật sự không làm được.',
-     a:'这事我办不了，您找别人吧。',b:'真不好意思，这件事我实在能力有限，您还是另请高明吧。',better:'b',
-     why:'Từ chối người lớn tuổi cần mềm mỏng, khiêm tốn: 真不好意思, 能力有限, 另请高明. Câu a cộc lốc, dễ gây mất lòng.'},
-
-    {scene:'Ăn cơm xong ở nhà thầy giáo, em chào ra về.',
-     a:'谢谢您和师母的热情款待，饭菜太好吃了！',b:'吃饱了，走了啊。',better:'a',
-     why:'Khách chào chủ nhà (lại là thầy cô) phải cảm ơn: 谢谢……的热情款待. Câu b thiếu lễ phép.'}
+    {scene:'Em viết bài văn kể chuyện.',a:'我十岁那年第一次见到大海。我十岁那年，连游泳都不会。',b:'我十岁那年第一次见到大海，当时我连游泳都不会。',better:'b',why:'Mốc thời gian vừa nói rồi thì dùng 当时 thay cho nó, khỏi lặp "我十岁那年". Câu a lặp nguyên cụm, đọc rất nặng.'},
+    {scene:'Em viết báo cáo giới thiệu một phương pháp mới.',a:'这个方法简单、便宜，因此很快占领了全国市场。',b:'这个方法简单、便宜，因为这个方法简单、便宜，所以很快占领了全国市场。',better:'a',why:'因此 = vì thế: 此 thay cho nguyên nhân vừa nêu (简单、便宜). Câu b đúng ngữ pháp nhưng lặp lại cả vế, rất dài dòng.'},
+    {scene:'Phát thanh viên thông báo trên tàu hoả.',a:'大家注意啦，车快到了，赶紧拿东西下车吧！',b:'各位朋友，火车即将到达北京站，请带好您的东西，准备下车。',better:'b',why:'Thông báo công cộng dùng 即将 (văn viết) và lời lịch sự 请带好您的东西. Câu a (注意啦, 赶紧) là lời nói miệng tuỳ tiện.'},
+    {scene:'Em nói với bạn cùng phòng khi phòng quá bừa.',a:'当务之急是把房间清理干净。',b:'我们先把房间收拾干净再说吧。',better:'b',why:'当务之急 là thành ngữ trang trọng (văn bản, phát biểu). Nói với bạn cùng phòng dùng 先……再说吧 tự nhiên hơn.'},
+    {scene:'Mẹ sắp đi công tác, em dặn mẹ trước khi mẹ ra khỏi nhà.',a:'妈，出门在外要注意身体，别太累了。',b:'妈，我吩咐你一件事：出门在外要注意身体。',better:'a',why:'吩咐 là người trên giao việc cho người dưới; con nói với mẹ mà dùng 吩咐 là không lễ phép. Chỉ cần dặn tự nhiên như câu a.'},
+    {scene:'Em viết thư cảm ơn thầy giáo đã mời cả lớp đến nhà ăn cơm.',a:'谢谢您那天的热情款待，您做的菜特别好吃，大家都很开心。',b:'那天的饭真好吃，谢啦！',better:'a',why:'Thư cảm ơn thầy giáo cần lễ phép, trang trọng: 您, 热情款待. Câu b (谢啦) chỉ hợp khi nhắn cho bạn bè.'}
   ]
 };
 

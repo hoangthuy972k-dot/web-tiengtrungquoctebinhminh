@@ -1660,108 +1660,51 @@ var hvBridgeData = {
 // GHÉP TỪ — cụm từ trong bài khoá
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'遇到交通',right:'堵塞'},
-  {left:'被堵车',right:'折磨得心烦意乱'},
-  {left:'汽车要是也有',right:'双翼'},
-  {left:'别的不敢',right:'担保'},
-  {left:'勾画出',right:'汽车的轮廓'},
-  {left:'北极冰川',right:'在融化'},
-  {left:'石油资源',right:'日益紧缺'},
-  {left:'死于',right:'交通事故'},
-  {left:'人类会不会',right:'忍痛割爱'},
-  {left:'根据',right:'优胜劣汰的原则'},
-  {left:'一切',right:'皆有可能'},
-  {left:'似乎不是',right:'明智之举'},
-  {left:'无人',right:'干预'},
-  {left:'在平坦的高速路上',right:'奔驰'},
-  {left:'像是一条线上的',right:'珍珠'},
-  {left:'车辆自动',right:'停泊入位'},
-  {left:'加入到汽车研发的',right:'行列'},
-  {left:'无法阻挡的',right:'潮流'},
-  {left:'创造虚拟个人',right:'助理'},
-  {left:'必然的服务，而非',right:'锦上添花'},
-  {left:'为安全使用',right:'提供保障'},
-  {left:'电动汽车的',right:'比重'},
-  {left:'废气的',right:'排放'},
-  {left:'付出了巨大的',right:'代价'},
-  {left:'扮演支柱产业的',right:'角色'}
+  {left:'付出',right:'代价'},
+  {left:'勾画',right:'轮廓'},
+  {left:'支柱',right:'产业'},
+  {left:'人生',right:'伴侣'},
+  {left:'谋求',right:'发展'},
+  {left:'一串',right:'葡萄'},
+  {left:'平坦的',right:'马路'},
+  {left:'交通',right:'事故'},
+  {left:'加入志愿者的',right:'行列'},
+  {left:'不排除',right:'这种可能'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ — mỗi từ của bài một câu
+// ĐIỀN TỪ — câu mới (không chép bài khoá / SGK), mỗi câu một tình huống; ôn xoáy ốc từ + ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'一场事故造成了高速路上的交通',blank:'堵塞',post:'，几千辆车排起了长队。',hint:'(tắc nghẽn)',ans:'堵塞'},
-  {pre:'因为大雾，几百名旅客',blank:'滞留',post:'在机场，无法按时起飞。',hint:'(bị kẹt lại)',ans:'滞留'},
-  {pre:'牙疼了一整夜，把我',blank:'折磨',post:'得一点儿也睡不着。',hint:'(hành hạ)',ans:'折磨'},
-  {pre:'有了这位得力助手，他的公司如虎添',blank:'翼',post:'，发展得更快了。',hint:'(cánh)',ans:'翼'},
-  {pre:'这件事交给我，我敢',blank:'担保',post:'不会出任何问题。',hint:'(cam đoan)',ans:'担保'},
-  {pre:'两个方案',blank:'大体',post:'相同，只在细节上有些区别。',hint:'(về cơ bản)',ans:'大体',exp:'大体 = về cơ bản, đại thể: 大体相同.'},
-  {pre:'老师只用几句话，就',blank:'勾画',post:'出了故事的主要内容。',hint:'(phác họa)',ans:'勾画'},
-  {pre:'天快黑了，远处的山只剩下一个模糊的',blank:'轮廓',post:'。',hint:'(đường nét)',ans:'轮廓'},
-  {pre:'出了问题不要互相',blank:'指责',post:'，应该一起想办法解决。',hint:'(chỉ trích, đổ lỗi)',ans:'指责'},
-  {pre:'太阳一出来，屋顶上的雪就开始',blank:'融化',post:'了。',hint:'(tan)',ans:'融化'},
-  {pre:'这个国家的经济主要依靠出口',blank:'石油',post:'。',hint:'(dầu mỏ)',ans:'石油'},
-  {pre:'司机酒后开车，结果发生了严重的交通',blank:'事故',post:'。',hint:'(tai nạn)',ans:'事故'},
-  {pre:'农民们正在田里',blank:'割',post:'麦子，个个满头大汗。',hint:'(gặt, cắt)',ans:'割'},
-  {pre:'市场竞争讲究',blank:'优胜劣汰',post:'，质量差的产品迟早会被淘汰。',hint:'(mạnh thắng yếu thua)',ans:'优胜劣汰'},
-  {pre:'只要功夫深，一切',blank:'皆',post:'有可能。',hint:'(đều)',ans:'皆',exp:'皆 = đều (văn viết, như 都): 一切皆有可能.'},
-  {pre:'在气头上作决定，往往不是',blank:'明智',post:'之举。',hint:'(sáng suốt)',ans:'明智'},
-  {pre:'对这个小山村来说，发展旅游业是唯一的',blank:'出路',post:'。',hint:'(lối thoát)',ans:'出路'},
-  {pre:'学开车的时候一定要',blank:'规范',post:'操作，不能养成坏习惯。',hint:'(đúng quy tắc)',ans:'规范'},
-  {pre:'两家公司都希望通过合作',blank:'谋求',post:'更大的发展。',hint:'(tìm kiếm)',ans:'谋求'},
-  {pre:'孩子的兴趣爱好，父母不应该过多',blank:'干预',post:'。',hint:'(can thiệp)',ans:'干预'},
-  {pre:'以前这里是一条土路，现在变成了宽阔',blank:'平坦',post:'的马路。',hint:'(bằng phẳng)',ans:'平坦'},
-  {pre:'一匹骏马在辽阔的草原上自由地',blank:'奔驰',post:'。',hint:'(phi nước đại)',ans:'奔驰'},
-  {pre:'我',blank:'试图',post:'说服他，可他根本听不进去。',hint:'(cố, định)',ans:'试图'},
-  {pre:'家长要正确',blank:'引导',post:'孩子合理使用手机。',hint:'(hướng dẫn)',ans:'引导'},
-  {pre:'妈妈从超市买回来一',blank:'串',post:'葡萄。',hint:'(chùm)',ans:'串',exp:'串 là lượng từ cho vật kết thành chùm: 一串葡萄.'},
-  {pre:'这条',blank:'珍珠',post:'项链是奶奶留给我的。',hint:'(ngọc trai)',ans:'珍珠'},
-  {pre:'这家工厂管理得好，经济',blank:'效益',post:'一年比一年高。',hint:'(hiệu quả)',ans:'效益'},
-  {pre:'航班将于晚上九点',blank:'抵达',post:'上海。',hint:'(đến)',ans:'抵达'},
-  {pre:'经过两个小时的比赛，他第一个跑到了',blank:'终点',post:'。',hint:'(đích)',ans:'终点'},
-  {pre:'新教室都',blank:'配备',post:'了电脑和投影仪。',hint:'(trang bị)',ans:'配备'},
-  {pre:'港口里',blank:'停泊',post:'着许多大船。',hint:'(neo đậu)',ans:'停泊'},
-  {pre:'这篇文章我改了三遍，',blank:'力求',post:'做到简洁明了。',hint:'(cố gắng hết sức)',ans:'力求'},
-  {pre:'甲、乙、',blank:'丙',post:'三个队中，乙队的成绩最好。',hint:'(thứ ba)',ans:'丙'},
-  {pre:'这首歌',blank:'融合',post:'了民族音乐和流行音乐的特点。',hint:'(kết hợp)',ans:'融合'},
-  {pre:'遇到问题，我习惯先用搜索',blank:'引擎',post:'查一查。',hint:'(công cụ tìm kiếm)',ans:'引擎'},
-  {pre:'越来越多的年轻人加入了志愿者的',blank:'行列',post:'。',hint:'(đội ngũ)',ans:'行列'},
-  {pre:'她穿衣服从来不赶',blank:'潮流',post:'，只追求舒服。',hint:'(mốt, trào lưu)',ans:'潮流'},
-  {pre:'王总的',blank:'助理',post:'已经帮他订好了机票。',hint:'(trợ lý)',ans:'助理'},
-  {pre:'这件礼服已经很漂亮了，再戴上这条项链，真是',blank:'锦上添花',post:'。',hint:'(đã đẹp càng đẹp)',ans:'锦上添花'},
-  {pre:'这项政策为老年人的生活提供了',blank:'保障',post:'。',hint:'(sự bảo đảm)',ans:'保障'},
-  {pre:'把鸡肉切成小',blank:'丁',post:'，再和花生一起炒。',hint:'(hạt lựu)',ans:'丁'},
-  {pre:'这辆大卡车烧的是',blank:'柴油',post:'，不是汽油。',hint:'(dầu diesel)',ans:'柴油'},
-  {pre:'政府采取措施，有效',blank:'遏制',post:'了房价过快上涨。',hint:'(kiềm chế)',ans:'遏制'},
-  {pre:'近年来，网上购物在消费中所占的',blank:'比重',post:'越来越大。',hint:'(tỷ trọng)',ans:'比重'},
-  {pre:'这里的房价十分',blank:'昂贵',post:'，普通人很难买得起。',hint:'(đắt đỏ)',ans:'昂贵'},
-  {pre:'害怕失败会',blank:'阻碍',post:'我们进步。',hint:'(cản trở)',ans:'阻碍'},
-  {pre:'工程师很快就',blank:'排除',post:'了电脑的故障。',hint:'(khắc phục, loại bỏ)',ans:'排除'},
-  {pre:'出门前请关好门窗，',blank:'确保',post:'家里的安全。',hint:'(bảo đảm)',ans:'确保'},
-  {pre:'这家工厂因为违法',blank:'排放',post:'污水而被罚款。',hint:'(xả, thải ra)',ans:'排放'},
-  {pre:'为了一时的快乐，他付出了沉重的',blank:'代价',post:'。',hint:'(cái giá)',ans:'代价'},
-  {pre:'她和丈夫是大学同学，也是一生的',blank:'伴侣',post:'。',hint:'(bạn đời)',ans:'伴侣'},
-  {pre:'父亲生病以后，大哥成了家里的',blank:'支柱',post:'。',hint:'(trụ cột)',ans:'支柱'}
+  {pre:'一场大雪把进山的路完全',blank:'堵塞',post:'了，车子根本开不进去。',hint:'(làm tắc nghẽn)',ans:'堵塞',exp:'堵塞 = làm tắc, chặn kín (đường, ống); 把 + đường + 堵塞了. Trong khẩu ngữ hay nói 堵车 khi nói xe kẹt.'},
+  {pre:'因为台风，几百名游客',blank:'滞留',post:'在山上，三天都下不来。',hint:'(bị kẹt lại)',ans:'滞留',exp:'滞留 + 在 + nơi = bị kẹt lại, không đi tiếp được (văn viết); khác 停留 (dừng lại theo ý mình).'},
+  {pre:'这道难题',blank:'折磨',post:'了我好几天，今天终于想出了办法。',hint:'(dày vò)',ans:'折磨',exp:'折磨 + người = hành hạ, dày vò (về thể xác hay tinh thần) trong một thời gian dài.'},
+  {pre:'我可以向你',blank:'担保',post:'，他绝对不是故意的。',hint:'(cam đoan)',ans:'担保',exp:'担保 = lấy uy tín của mình ra cam đoan; 向 + người + 担保 = cam đoan với ai.'},
+  {pre:'这篇文章的意思我',blank:'大体',post:'看懂了，就是有几个词不认识。',hint:'(đại khái)',ans:'大体',exp:'大体 = về cơ bản, đại khái; đứng trước động từ (大体看懂了); 就是 dẫn ra phần còn thiếu.'},
+  {pre:'有困难的时候，大家应该一起想办法，而不是互相',blank:'指责',post:'。',hint:'(chỉ trích)',ans:'指责',exp:'互相指责 = đổ lỗi, trách móc lẫn nhau; 指责 nặng hơn 批评, thường mang ý đổ lỗi.'},
+  {pre:'太阳一出来，路上的雪很快就',blank:'融化',post:'了。',hint:'(tan)',ans:'融化',exp:'融化 = (băng, tuyết) tan ra; đừng nhầm với 融合 (hoà hợp, kết hợp).'},
+  {pre:'爷爷每天下午都去院子里',blank:'割',post:'草，一干就是两个小时。',hint:'(cắt)',ans:'割',exp:'割草 = cắt cỏ; 割 là cắt bằng dao, liềm (割草); cắt giấy, cắt tóc thì không dùng 割.'},
+  {pre:'妈妈过生日的时候，爸爸送了她一串',blank:'珍珠',post:'。',hint:'(ngọc trai)',ans:'珍珠',exp:'一串珍珠 = một chuỗi ngọc trai; lượng từ 串 cho vật nối thành chuỗi (一串钥匙, 一串葡萄).'},
+  {pre:'经过二十个小时的长途旅行，我们终于',blank:'抵达',post:'了北京。',hint:'(đến nơi)',ans:'抵达',exp:'抵达 + nơi chốn = đến nơi (văn viết), không cần thêm 到; đi với 终于 khi đường đi vất vả.'},
+  {pre:'这路车的',blank:'终点',post:'在火车站，我们坐到最后一站就行。',hint:'(điểm cuối)',ans:'终点',exp:'终点 = điểm cuối của tuyến xe hay đường đua, đối lập với 起点.'},
+  {pre:'港口里',blank:'停泊',post:'着几十条大船，有的正准备出海。',hint:'(neo đậu)',ans:'停泊',exp:'停泊 dùng cho tàu thuyền neo đậu ở bến; xe cộ thì dùng 停.'},
+  {pre:'这里的房租十分',blank:'昂贵',post:'，很多年轻人只好住到郊区去。',hint:'(đắt đỏ)',ans:'昂贵',exp:'昂贵 = rất đắt (văn viết), đi với 十分 / 价格 / 造价; trong khẩu ngữ nói 很贵.'},
+  {pre:'我家的小狗特别怕人，',blank:'动不动',post:'就躲起来。',hint:'(hơi một tí là)',ans:'动不动',exp:'动不动就 + V = hơi một tí là… (chuyện không mong muốn xảy ra quá dễ); phía sau bắt buộc có 就.'},
+  {pre:'比赛分甲、乙、',blank:'丙',post:'三个组，我们被分在了最后一个组。',hint:'(thứ ba)',ans:'丙',exp:'甲、乙、丙、丁 dùng để đánh số thứ tự: thứ nhất, thứ hai, thứ ba, thứ tư; sau 乙 là 丙.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (动不动 · 甲乙丙丁……) ít nhất 2 câu
+// SẮP XẾP CÂU — câu mới, chỉ một trật tự đúng
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['他','最近','压力很大','，','动不动','就','发脾气','。'],ans:'他最近压力很大，动不动就发脾气。',audio:'他最近压力很大，动不动就发脾气。'},
-  {words:['这台','旧电脑','动不动','就','死机','，','该换了','。'],ans:'这台旧电脑动不动就死机，该换了。',audio:'这台旧电脑动不动就死机，该换了。'},
-  {words:['父母','不要','动不动','就','训斥','孩子','。'],ans:'父母不要动不动就训斥孩子。',audio:'父母不要动不动就训斥孩子。'},
-  {words:['她','身体','很弱','，','动不动','就','感冒','。'],ans:'她身体很弱，动不动就感冒。',audio:'她身体很弱，动不动就感冒。'},
-  {words:['这篇文章','分为','甲、乙、丙','三个部分','。'],ans:'这篇文章分为甲、乙、丙三个部分。',audio:'这篇文章分为甲、乙、丙三个部分。'},
-  {words:['甲午战争','发生','在','1894年','。'],ans:'甲午战争发生在1894年。',audio:'甲午战争发生在1894年。'},
-  {words:['2015年','是','农历','乙未年','。'],ans:'2015年是农历乙未年。',audio:'2015年是农历乙未年。'},
-  {words:['别的','不敢','担保','，','以下四点','大体','勾画出了','汽车的轮廓','。'],ans:'别的不敢担保，以下四点大体勾画出了汽车的轮廓。',audio:'别的不敢担保，以下四点大体勾画出了汽车的轮廓。'},
-  {words:['根据','优胜劣汰的','原则','，','汽车','会不会','被取代','？'],ans:'根据优胜劣汰的原则，汽车会不会被取代？',audio:'根据优胜劣汰的原则，汽车会不会被取代？'},
-  {words:['车企','与','电脑公司','合作','成了','无法阻挡的','潮流','。'],ans:'车企与电脑公司合作成了无法阻挡的潮流。',audio:'车企与电脑公司合作成了无法阻挡的潮流。'},
-  {words:['虚拟个人助理','将会是','必然的服务','，','而非','锦上添花','。'],ans:'虚拟个人助理将会是必然的服务，而非锦上添花。',audio:'虚拟个人助理将会是必然的服务，而非锦上添花。'},
-  {words:['汽车','抵达','终点后','能','自动','停泊入位','。'],ans:'汽车抵达终点后能自动停泊入位。',audio:'汽车抵达终点后能自动停泊入位。'},
-  {words:['为了','确保','减少污染','，','废气的排放','必须','减少','。'],ans:'为了确保减少污染，废气的排放必须减少。',audio:'为了确保减少污染，废气的排放必须减少。'}
+  {words:['你','别','动不动','就','哭','鼻子','。'],ans:'你别动不动就哭鼻子。',audio:'你别动不动就哭鼻子。'},
+  {words:['老师','把','这篇课文','分成了','甲、乙、丙、丁','四个部分','。'],ans:'老师把这篇课文分成了甲、乙、丙、丁四个部分。',audio:'老师把这篇课文分成了甲、乙、丙、丁四个部分。'},
+  {words:['他','被','这个问题','折磨','得','好几天','没睡好','。'],ans:'他被这个问题折磨得好几天没睡好。',audio:'他被这个问题折磨得好几天没睡好。'},
+  {words:['船','已经','平平安安地','停泊','在','港口里','了','。'],ans:'船已经平平安安地停泊在港口里了。',audio:'船已经平平安安地停泊在港口里了。'},
+  {words:['一辆辆','汽车','在','新修的','马路上','奔驰','着','。'],ans:'一辆辆汽车在新修的马路上奔驰着。',audio:'一辆辆汽车在新修的马路上奔驰着。'},
+  {words:['他','为','自己的','粗心','付出了','代价','。'],ans:'他为自己的粗心付出了代价。',audio:'他为自己的粗心付出了代价。'},
+  {words:['妈妈','给','我','买了','一串','又大又甜的','葡萄','。'],ans:'妈妈给我买了一串又大又甜的葡萄。',audio:'妈妈给我买了一串又大又甜的葡萄。'},
+  {words:['我们','必须','把','废气','的','排放','减少','到','最低','。'],ans:'我们必须把废气的排放减少到最低。',audio:'我们必须把废气的排放减少到最低。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1769,76 +1712,44 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'我们要____产品质量，不能让顾客失望。',opts:['担保','保证','指责','排除'],ans:1,
-   exp:'Sau là danh từ 产品质量 → 保证 (sách: ×担保产品质量). 担保 chỉ đi với động từ / mệnh đề.'},
-  {wrong:'出不了事，我敢____。',opts:['担保','排放','阻碍','谋求'],ans:0,
-   exp:'我敢担保 = tôi dám cam đoan (câu mẫu phần giống nhau của 担保—保证). Các từ khác không hợp nghĩa.'},
-  {wrong:'良好的休息是提高学习效率的____。',opts:['担保','干预','保证','引导'],ans:2,
-   exp:'Cần DANH TỪ "sự bảo đảm" → 保证; 担保 không có từ tính danh từ (做一做 ③).'},
-  {wrong:'他最近压力很大，____就发脾气。',opts:['动不动','大体','力求','皆'],ans:0,
-   exp:'动不动就 + V = hơi một chút là … (việc không mong muốn) — Chú thích 1.'},
-  {wrong:'这个方案____可行，只是有些细节还要修改。',opts:['皆','动不动','大体','力求'],ans:2,
-   exp:'大体 = về cơ bản; vế sau 只是……细节 cho thấy "đại thể được, chi tiết còn phải sửa".'},
-  {wrong:'大雪严重____了交通，很多车辆滞留在高速路上。',opts:['阻碍','障碍','保障','配备'],ans:0,
-   exp:'Có tân ngữ 交通 → động từ 阻碍. 障碍 chủ yếu là danh từ (chướng ngại).'},
-  {wrong:'他花了一年时间，终于克服了语言____。',opts:['阻碍','保障','效益','障碍'],ans:3,
-   exp:'克服 + 语言障碍 (rào cản ngôn ngữ) — cụm cố định; 阻碍 chủ yếu là động từ.'},
-  {wrong:'法律要____每个公民的合法权益。',opts:['确保','保障','担保','排除'],ans:1,
-   exp:'保障 + 权益 = bảo vệ quyền lợi (mang tính pháp luật, lâu dài). 担保 không đi với danh từ.'},
-  {wrong:'交卷以前再检查一遍，____没有错误。',opts:['保障','谋求','确保','干预'],ans:2,
-   exp:'确保 + mệnh đề 没有错误 = bảo đảm chắc chắn không sai. 谋求 cần tân ngữ trừu tượng (发展 / 合作).'},
-  {wrong:'为了减少污染，工厂必须减少废气的____。',opts:['排除','排放','比重','代价'],ans:1,
-   exp:'废气的排放 = lượng khí thải ra. 排除 là loại trừ (khó khăn, khả năng).'},
-  {wrong:'医生通过检查，____了他得重病的可能。',opts:['排放','阻碍','遏制','排除'],ans:3,
-   exp:'排除 + ……的可能 = loại trừ khả năng …. 排放 dùng cho khí thải, nước thải.'},
-  {wrong:'在我们的饮食中，蔬菜所占的____应该大一些。',opts:['比重','代价','效益','轮廓'],ans:0,
-   exp:'所占的比重 = tỷ trọng chiếm giữ. 代价 là cái giá; 效益 là hiệu quả; 轮廓 là đường nét.'},
-  {wrong:'经济发展不能以破坏环境为____。',opts:['效益','比重','代价','潮流'],ans:2,
-   exp:'以……为代价 = đánh đổi bằng … (以……为…… ôn bài 11).'},
-  {wrong:'电动汽车的造价太____，很多家庭买不起。',opts:['平坦','明智','规范','昂贵'],ans:3,
-   exp:'造价昂贵 = giá thành đắt; hợp với 买不起. 平坦 là bằng phẳng (không phải "bình thản").'},
-  {wrong:'很多年轻人离开家乡，到大城市____发展。',opts:['谋求','试图','力求','干预'],ans:0,
-   exp:'谋求 + 发展 (tân ngữ danh từ trừu tượng). 试图 / 力求 phải đi với động từ / tính từ phía sau.'},
-  {wrong:'他____说服父亲，可是父亲根本不听。',opts:['谋求','试图','遏制','配备'],ans:1,
-   exp:'试图 + V (说服) = cố thử làm; vế sau 可是……不听 cho thấy không thành công.'},
-  {wrong:'政府采取了有力措施，____了疾病的蔓延。',opts:['融化','抵达','遏制','引导'],ans:2,
-   exp:'遏制 + 蔓延 = ngăn chặn sự lây lan. 融化 là tan chảy; 抵达 là đến nơi; 引导 là dẫn dắt.'},
-  {wrong:'由于经营不善，这家公司的经济____越来越差。',opts:['终点','行列','助理','效益'],ans:3,
-   exp:'经济效益 = hiệu quả kinh tế (làm ăn). Các từ khác không đi với 经济 và 差.'},
-  {wrong:'他做事总是____完美，每个细节都不放过。',opts:['谋求','试图','排除','力求'],ans:3,
-   exp:'力求 + 完美 (tính từ chỉ mục tiêu) = cố gắng đạt tới hoàn hảo. 谋求 cần danh từ; 试图 cần động từ.'},
-  {wrong:'经过几十年的发展，这个国家已经进入了发达国家的____。',opts:['潮流','行列','伴侣','支柱'],ans:1,
-   exp:'进入 + ……的行列 = lọt vào hàng ngũ …. 潮流 là xu hướng; 支柱 là trụ cột.'}
+  {wrong:'老板____就让我们周末加班，大家都很有意见。',opts:['动不动','一动不动','随即','不禁'],ans:0,exp:'Việc không mong muốn xảy ra quá thường → 动不动就. 一动不动 = đứng im không nhúc nhích; 随即 (bài 18) = ngay sau đó; 不禁 (bài 15) = không kìm được.'},
+  {wrong:'他跑步跑得很快，学校运动会上____拿第一。',opts:['常常','动不动就','一动不动','顿时'],ans:0,exp:'Việc tốt xảy ra thường xuyên → 常常. 动不动就 chỉ dùng cho chuyện không mong muốn (发脾气, 生病…), không dùng để khen; 顿时 (bài 2) = lập tức.'},
+  {wrong:'跟他吵下去对你没有好处，现在离开是最____的做法。',opts:['明智','明显','明亮','明白'],ans:0,exp:'Cách làm sáng suốt, khôn ngoan → 明智的做法. 明显 = rõ rệt; 明亮 = sáng sủa (ánh sáng); 明白 = hiểu rõ.'},
+  {wrong:'这个村子太穷了，年轻人觉得出去打工是唯一的____。',opts:['出路','出口','路口','路线'],ans:0,exp:'Lối thoát cho hoàn cảnh khó khăn → 出路. 出口 là lối ra của toà nhà / xuất khẩu (người Việt dễ nhầm vì đều là "lối ra"); 路口 = ngã đường; 路线 = tuyến đường.'},
+  {wrong:'孩子选什么专业，父母可以给建议，但最好不要过多____。',opts:['干预','预防','预报','干燥'],ans:0,exp:'Can thiệp vào chuyện của người khác → 干预. 预防 = phòng ngừa; 预报 = dự báo; 干燥 = khô — chỉ giống mặt chữ.'},
+  {wrong:'他____说服我，可是我早就决定了。',opts:['试图','试验','试卷','考试'],ans:0,exp:'试图 + V = cố, định làm gì (thường không thành). 试验 = thí nghiệm; 试卷 = bài thi; 考试 = thi cử — đều không đứng trước động từ 说服.'},
+  {wrong:'老师要____学生自己去发现问题，而不是直接告诉他们答案。',opts:['引导','引起','导游','吸引'],ans:0,exp:'引导 + người + V = dẫn dắt ai làm gì. 引起 + sự chú ý / vấn đề; 导游 là hướng dẫn viên; 吸引 = thu hút — không mang cấu trúc "người + tự làm".'},
+  {wrong:'公司今年的经济____很好，每个员工都多拿了奖金。',opts:['效益','效果','功效','好处'],ans:0,exp:'经济效益 = hiệu quả kinh tế, lợi nhuận thu được. 效果 = hiệu quả của biện pháp; 功效 = công dụng (thuốc); 好处 = điều lợi — đều không đi với 经济.'},
+  {wrong:'这家医院____了一批新的检查仪器。',opts:['配备','准备','设备','具备'],ans:0,exp:'配备 + thiết bị / nhân lực = trang bị. 准备 = chuẩn bị; 设备 là danh từ "thiết bị"; 具备 + điều kiện / năng lực, không + máy móc.'},
+  {wrong:'这首歌把中国传统音乐和流行音乐____在了一起。',opts:['融合','融化','合格','适合'],ans:0,exp:'Kết hợp hài hoà thành một → 融合. 融化 là băng tuyết tan; 合格 = đạt chuẩn; 适合 = phù hợp — không mang nghĩa "trộn vào nhau".'},
+  {wrong:'穿什么衣服我有自己的想法，不一定要跟着____走。',opts:['潮流','河流','流利','交流'],ans:0,exp:'跟着潮流走 = chạy theo trào lưu. 河流 = sông ngòi; 流利 = trôi chảy (nói); 交流 = giao lưu.'},
+  {wrong:'必须想办法____环境污染继续严重下去。',opts:['遏制','阻碍','排除','确保'],ans:0,exp:'Kìm lại một xu hướng xấu đang phát triển → 遏制. 阻碍 = cản trở điều tốt (阻碍发展); 排除 = loại trừ; 确保 = bảo đảm điều tốt xảy ra.'},
+  {wrong:'在我们家的花费中，孩子的学费占的____最大。',opts:['比重','重量','体重','比赛'],ans:0,exp:'占……的比重 = chiếm tỷ trọng. 重量 / 体重 là cân nặng; 比赛 là cuộc thi.'},
+  {wrong:'警察还没有找到原因，但不____有人故意这样做的可能。',opts:['排除','排放','安排','排队'],ans:0,exp:'不排除……的可能 = không loại trừ khả năng…. 排放 = thải ra (khí, nước); 安排 = sắp xếp; 排队 = xếp hàng.'},
+  {wrong:'这家饭馆的菜本来就很好吃，新开的音乐表演对生意来说更是____。',opts:['锦上添花','优胜劣汰','川流不息','根深蒂固'],ans:0,exp:'Đã tốt lại càng tốt hơn → 锦上添花. 优胜劣汰 = mạnh được yếu thua; 川流不息 = nườm nượp (bài 21); 根深蒂固 = ăn sâu bén rễ (bài 21).'}
 ];
 
 // ══════════════════════════════════════════
-// DỊCH — câu ghép, dùng từ bài 22 + ôn từ HSK 6 bài 1–18 và HSK 4–5
+// DỊCH Việt → Trung — câu mới, dùng từ của bài + ôn ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Hơi một chút là cô ấy lại chỉ trích bạn cùng lớp trước mặt mọi người, làm vậy thì có phần quá thiếu sáng suốt.',zh:'她动不动就当众指责同学，这样做未免太不明智了。',py:'Tā dòngbudòng jiù dāngzhòng zhǐzé tóngxué, zhèyàng zuò wèimiǎn tài bù míngzhì le.',goiY:['动不动就','指责','未免','明智'],giai:'动不动就 + V (Chú thích 1): hơi một chút là … (việc không mong muốn), đứng sau chủ ngữ; 未免太……了 (ôn bài 4) = có phần quá … — lời phê bình nhẹ. Đừng dịch "hơi một chút" thành 一点儿.'},
-  {vi:'Chiếc điện thoại này đắt thì đắt thật, nhưng camera được trang bị trên nó quả thực thuộc loại hàng đầu.',zh:'这款手机固然昂贵，可它配备的摄像头确实一流。',py:'Zhè kuǎn shǒujī gùrán ángguì, kě tā pèibèi de shèxiàngtóu quèshí yīliú.',goiY:['固然……可……','昂贵','配备'],giai:'固然 (ôn bài 5) thừa nhận một sự thật, vế sau 可 / 但 chuyển ý; "camera được trang bị trên nó" → 它配备的摄像头 (định ngữ đặt TRƯỚC danh từ). 一流 ôn bài 3.'},
-  {vi:'Tài xế nhất thiết phải lái xe đúng quy tắc, nếu không thì rất dễ xảy ra tai nạn giao thông.',zh:'司机务必规范驾车，否则很容易发生交通事故。',py:'Sījī wùbì guīfàn jiàchē, fǒuzé hěn róngyì fāshēng jiāotōng shìgù.',goiY:['务必','否则','规范','事故'],giai:'务必 (ôn bài 12) = nhất thiết phải; 否则 đứng đầu vế sau nêu hậu quả. "Tai nạn giao thông" là 交通事故 — không dịch thành "sự cố" (故障).'},
-  {vi:'Để bảo đảm đến trường đúng giờ, ngày nào tôi cũng ra khỏi nhà trước 6 giờ, vì giờ cao điểm đường tắc kinh khủng.',zh:'为了确保按时抵达学校，我每天六点以前就出门，因为高峰时间路上堵得厉害。',py:'Wèile quèbǎo ànshí dǐdá xuéxiào, wǒ měi tiān liù diǎn yǐqián jiù chūmén, yīnwèi gāofēng shíjiān lù shang dǔ de lìhai.',goiY:['为了','确保','抵达','高峰'],giai:'为了 + mục đích đặt đầu câu, 因为 + lý do đặt cuối (bổ sung); 就 nhấn "sớm". 确保 + cụm động từ; 高峰 ôn bài 14.'},
-  {vi:'Trong ba phương án Giáp, Ất, Bính mà lớp đưa ra, cô giáo cho rằng phương án Bính tuy tốn thời gian nhất nhưng lại là lựa chọn sáng suốt nhất.',zh:'在班里提出的甲、乙、丙三个方案中，老师认为丙方案虽然最费时间，却是最明智的选择。',py:'Zài bān li tíchū de jiǎ, yǐ, bǐng sān ge fāng\'àn zhōng, lǎoshī rènwéi bǐng fāng\'àn suīrán zuì fèi shíjiān, què shì zuì míngzhì de xuǎnzé.',goiY:['甲、乙、丙','虽然……却……','明智'],giai:'甲、乙、丙 dùng để đánh số thứ tự (Chú thích 2) — giữ nguyên "Giáp, Ất, Bính" hoặc dịch "thứ nhất, thứ hai, thứ ba"; 却 đứng sau chủ ngữ, trước vị ngữ (không đặt đầu vế như 但是).'},
-  {vi:'Nếu cha mẹ hơi một chút là can thiệp vào lựa chọn của con, thì không những không giúp được con mà trái lại còn có thể cản trở con trưởng thành.',zh:'如果父母动不动就干预孩子的选择，不但帮不了孩子，反而可能阻碍他们的成长。',py:'Rúguǒ fùmǔ dòngbudòng jiù gānyù háizi de xuǎnzé, búdàn bāng bu liǎo háizi, fǎn\'ér kěnéng zǔ\'ài tāmen de chéngzhǎng.',goiY:['动不动就','干预','不但……反而……','阻碍'],giai:'不但 + (phủ định)……，反而…… = không những không … mà trái lại … (kết quả ngược mong đợi); 干预 = can thiệp — không dịch theo âm "can dự".'},
-  {vi:'Dù học phí lớp học thêm rất đắt, bố mẹ vốn tính toán chi li của tôi vẫn cố hết sức tạo cho tôi điều kiện học tập tốt nhất.',zh:'尽管补习班的学费十分昂贵，精打细算的爸妈还是力求为我提供最好的学习条件。',py:'Jǐnguǎn bǔxíbān de xuéfèi shífēn ángguì, jīngdǎ-xìsuàn de bà-mā háishi lìqiú wèi wǒ tígōng zuì hǎo de xuéxí tiáojiàn.',goiY:['尽管……还是……','昂贵','力求','精打细算'],giai:'尽管 + sự thật, (S) 还是 + V = dù … vẫn …; 力求 + V = dốc sức để …; 精打细算 (ôn bài 14) làm định ngữ cho 爸妈.'},
-  {vi:'Thay vì hơi một chút lại trách người khác, chẳng bằng trước hết hãy nghĩ về vấn đề của chính mình, đó mới là lối thoát căn bản để giải quyết mâu thuẫn.',zh:'与其动不动就指责别人，不如先想想自己的问题，这才是解决矛盾的根本出路。',py:'Yǔqí dòngbudòng jiù zhǐzé biérén, bùrú xiān xiǎngxiang zìjǐ de wèntí, zhè cái shì jiějué máodùn de gēnběn chūlù.',goiY:['与其……不如……','动不动就','出路'],giai:'与其 A 不如 B = thay vì A chẳng bằng B (chọn B); vế ba 这才是…… tổng kết — 才 nhấn "mới chính là". 根本出路 = lối thoát căn bản.'},
-  {vi:'Hợp đồng quy định, một khi bên B không thể đến nơi đúng hạn, bên A có quyền hủy hợp đồng, mọi tổn thất đều do bên B gánh chịu.',zh:'合同规定，一旦乙方不能按时抵达，甲方就有权取消合同，一切损失皆由乙方承担。',py:'Hétong guīdìng, yídàn yǐfāng bù néng ànshí dǐdá, jiǎfāng jiù yǒu quán qǔxiāo hétong, yíqiè sǔnshī jiē yóu yǐfāng chéngdān.',goiY:['一旦……就……','甲方','乙方','皆'],giai:'甲方 / 乙方 = bên A / bên B trong hợp đồng (甲乙丙丁 dùng để đánh số); 一旦……就…… = một khi … thì …; 皆 = 都 (văn viết, hợp với giọng hợp đồng).'},
-  {vi:'Ô tô điện tuy có thể giảm lượng khí thải, nhưng nếu giá cứ đắt như vậy mãi thì tỷ trọng của nó khó mà tăng nhanh được.',zh:'电动汽车虽然能减少废气排放，但如果价格一直这么昂贵，它的比重就很难迅速提高。',py:'Diàndòng qìchē suīrán néng jiǎnshǎo fèiqì páifàng, dàn rúguǒ jiàgé yìzhí zhème ángguì, tā de bǐzhòng jiù hěn nán xùnsù tígāo.',goiY:['虽然……但……','如果……就……','排放','比重'],giai:'Câu ghép lồng: 虽然……但 (chuyển ý) chứa bên trong một câu giả thiết 如果……就……; 就 đặt sau chủ ngữ 它的比重. 昂贵 trang trọng hơn 贵.'}
+  {vi:'Nếu cha mẹ hơi một chút là can thiệp vào lựa chọn của con, thì không những không giúp được con mà trái lại còn có thể cản trở con trưởng thành.',zh:'如果父母动不动就干预孩子的选择，不但帮不了孩子，反而可能阻碍他们的成长。',py:'Rúguǒ fùmǔ dòngbudòng jiù gānyù háizi de xuǎnzé, búdàn bāng bu liǎo háizi, fǎn\'ér kěnéng zǔ\'ài tāmen de chéngzhǎng.',goiY:['动不动就','干预','不但……反而……','阻碍'],giai:'动不动就 + V (việc không mong muốn); 不但不……反而…… = không những không… trái lại còn…; 阻碍 + 成长 / 发展.'},
+  {vi:'Trong ba phương án Giáp, Ất, Bính mà lớp đưa ra, cô giáo cho rằng phương án Bính tuy tốn thời gian nhất nhưng lại là lựa chọn sáng suốt nhất.',zh:'在班里提出的甲、乙、丙三个方案中，老师认为丙方案虽然最费时间，却是最明智的选择。',py:'Zài bān li tíchū de jiǎ, yǐ, bǐng sān ge fāng\'àn zhōng, lǎoshī rènwéi bǐng fāng\'àn suīrán zuì fèi shíjiān, què shì zuì míngzhì de xuǎnzé.',goiY:['甲、乙、丙','虽然……却……','明智'],giai:'甲、乙、丙 đánh số thứ tự cho các phương án; 丙方案 = phương án thứ ba; 虽然……却…… nhấn mạnh sự trái ngược.'},
+  {vi:'Lái xe đường dài nhất định phải chú ý nghỉ ngơi, để bảo đảm an toàn cho mình và cho người khác.',zh:'开长途车务必注意休息，确保自己和别人的安全。',py:'Kāi chángtú chē wùbì zhùyì xiūxi, quèbǎo zìjǐ hé biérén de ānquán.',goiY:['务必','确保'],giai:'务必 (ôn bài 12) = nhất thiết phải; 确保 + kết quả tốt = bảo đảm chắc chắn.'},
+  {vi:'Ô tô điện tuy có thể giảm lượng khí thải, nhưng nếu giá cứ đắt như vậy mãi thì tỷ trọng của nó khó mà tăng nhanh được.',zh:'电动汽车虽然能减少废气排放，但如果价格一直这么昂贵，它的比重就很难迅速提高。',py:'Diàndòng qìchē suīrán néng jiǎnshǎo fèiqì páifàng, dàn rúguǒ jiàgé yìzhí zhème ángguì, tā de bǐzhòng jiù hěn nán xùnsù tígāo.',goiY:['虽然……但……','排放','昂贵','比重'],giai:'废气排放 = lượng khí thải; 比重 + 提高 = tỷ trọng tăng; 如果……就…… lồng trong vế 但.'},
+  {vi:'Đừng hơi một chút là chỉ trích nhân viên, chi bằng giúp họ tìm ra nguyên nhân.',zh:'别动不动就指责员工，倒不如帮他们找出原因。',py:'Bié dòngbudòng jiù zhǐzé yuángōng, dào bùrú bāng tāmen zhǎochū yuányīn.',goiY:['别动不动就……','指责','倒不如'],giai:'别 / 不要 + 动不动就 + V = lời khuyên; 倒不如 (ôn bài 20) = chi bằng, thà rằng.'},
+  {vi:'Chúng tôi cố hết sức đến đích trước khi trời tối, nên dọc đường gần như không nghỉ.',zh:'我们力求在天黑以前抵达终点，所以路上几乎没有休息。',py:'Wǒmen lìqiú zài tiān hēi yǐqián dǐdá zhōngdiǎn, suǒyǐ lù shang jīhū méiyǒu xiūxi.',goiY:['力求','抵达','终点'],giai:'力求 + mục tiêu = cố gắng hết sức để đạt; 抵达终点 = đến đích (văn viết).'}
 ];
 
-// Chiều Trung → Việt — bám ý bài khoá, nội dung khác với chiều trên
+// ══════════════════════════════════════════
+// Dịch Trung → Việt — câu mới, không trùng chiều trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Mỗi lần gặp tắc đường, những người bị kẹt lại trên đường đều bực bội rối bời.',zh:'每次遇到交通堵塞，那些滞留在路上的人们都会心烦意乱。',py:'Měi cì yùdào jiāotōng dǔsè, nàxiē zhìliú zài lù shang de rénmen dōu huì xīnfán-yìluàn.',goiY:['堵塞 = tắc nghẽn','滞留 = bị kẹt lại','心烦意乱 = bực bội rối bời'],giai:'每次……都…… = mỗi lần … đều …; định ngữ dài 滞留在路上的 khi dịch đặt SAU danh từ: "những người bị kẹt lại trên đường".'},
-  {vi:'Tác giả tuy không dám cam đoan mọi điều, nhưng vẫn dùng bốn điểm để phác họa đại thể hình dáng của ô tô tương lai.',zh:'作者虽然不敢担保一切，但还是用四点大体勾画出了未来汽车的轮廓。',py:'Zuòzhě suīrán bù gǎn dānbǎo yíqiè, dàn háishi yòng sì diǎn dàtǐ gōuhuà chūle wèilái qìchē de lúnkuò.',goiY:['担保 = cam đoan','大体 = về cơ bản, đại thể','勾画 = phác họa','轮廓 = hình dáng'],giai:'虽然……但还是…… = tuy … nhưng vẫn …; 大体 là phó từ bổ nghĩa cho 勾画 — dịch "phác họa đại thể / sơ bộ phác họa".'},
-  {vi:'Công ty công cụ tìm kiếm nhận ra cơ hội kinh doanh trong đó, thế là nóng lòng gia nhập hàng ngũ nghiên cứu phát triển ô tô.',zh:'搜索引擎公司意识到其中的商机，于是迫不及待地加入了汽车研发的行列。',py:'Sōusuǒ yǐnqíng gōngsī yìshí dào qízhōng de shāngjī, yúshì pòbùjídài de jiārùle qìchē yánfā de hángliè.',goiY:['搜索引擎 = công cụ tìm kiếm','于是 = thế là','迫不及待 = nóng lòng','行列 = hàng ngũ'],giai:'于是 nối hành động tiếp theo do vế trước dẫn tới; 迫不及待 (ôn bài 5) dịch "nóng lòng, không chờ nổi"; 加入……的行列 = gia nhập đội ngũ ….'},
-  {vi:'Những chiếc xe không cần người can thiệp có thể tự động lao vun vút trên đường cao tốc bằng phẳng, người lái có thể làm việc, cũng có thể nghỉ ngơi.',zh:'无人干预的汽车能在平坦的高速路上自动奔驰，驾驶者可以工作，也可以休息。',py:'Wú rén gānyù de qìchē néng zài píngtǎn de gāosùlù shang zìdòng bēnchí, jiàshǐzhě kěyǐ gōngzuò, yě kěyǐ xiūxi.',goiY:['干预 = can thiệp','平坦 = bằng phẳng','奔驰 = lao vun vút'],giai:'可以……，也可以…… = có thể …, cũng có thể … (liệt kê lựa chọn); 平坦 là "bằng phẳng", đừng nhầm với "bình thản"; 无人干预 = không có người can thiệp.'},
-  {vi:'Châu Âu đang thử để một tài xế chuyên nghiệp dẫn đầu cả một đoàn dài ô tô tiến lên, nhờ đó nâng cao đáng kể hiệu quả công việc.',zh:'欧洲试图让一名职业司机引导一长串汽车前行，从而大大提高工作效益。',py:'Ōuzhōu shìtú ràng yì míng zhíyè sījī yǐndǎo yì cháng chuàn qìchē qiánxíng, cóng\'ér dàdà tígāo gōngzuò xiàoyì.',goiY:['试图 = thử, cố','引导 = dẫn đường','从而 = nhờ đó mà','效益 = hiệu quả'],giai:'从而 nối kết quả đạt được nhờ vế trước — dịch "nhờ đó, từ đó"; 一长串汽车 = một đoàn dài ô tô (串 là lượng từ).'},
-  {vi:'Mọi thứ đều có thể xảy ra, nhưng xét tới sự linh hoạt, tiện lợi của ô tô, hơi một chút đã loại bỏ nó thì e rằng chẳng sáng suốt chút nào.',zh:'一切皆有可能，但鉴于汽车的灵活方便，动不动就将其淘汰似乎并不明智。',py:'Yíqiè jiē yǒu kěnéng, dàn jiànyú qìchē de línghuó fāngbiàn, dòngbudòng jiù jiāng qí táotài sìhū bìng bù míngzhì.',goiY:['皆 = đều','鉴于 = xét thấy','动不动就 = hơi một chút là','明智 = sáng suốt'],giai:'鉴于 (ôn bài 12) nêu căn cứ để đánh giá; 将其淘汰 = 把它淘汰 (văn viết); 似乎并不…… là cách nói giảm — dịch "e rằng chẳng …".'},
-  {vi:'Trợ lý cá nhân ảo sẽ là một dịch vụ tất yếu chứ không phải thứ thêu hoa trên gấm, nó sẽ mang lại sự bảo đảm cho việc lái xe an toàn.',zh:'虚拟个人助理将是必然的服务，而非锦上添花，它将为安全驾驶提供保障。',py:'Xūnǐ gèrén zhùlǐ jiāng shì bìrán de fúwù, ér fēi jǐnshàng-tiānhuā, tā jiāng wèi ānquán jiàshǐ tígōng bǎozhàng.',goiY:['助理 = trợ lý','而非 = chứ không phải','锦上添花 = thêu hoa trên gấm','保障 = sự bảo đảm'],giai:'是 A，而非 B = là A chứ không phải B (而非 = 而不是, văn viết); 为……提供保障 dịch "mang lại sự bảo đảm cho …", không dịch từng chữ "cung cấp bảo đảm".'},
-  {vi:'Dù việc phát triển năng lượng sạch là để kiềm chế việc dùng xăng, nhưng hiện nay tỷ trọng ô tô điện vẫn chưa cao lắm.',zh:'尽管清洁能源的开发是为了遏制汽油的使用，但电动汽车目前的比重还不太高。',py:'Jǐnguǎn qīngjié néngyuán de kāifā shì wèile èzhì qìyóu de shǐyòng, dàn diàndòng qìchē mùqián de bǐzhòng hái bú tài gāo.',goiY:['尽管……但…… = dù … nhưng …','遏制 = kiềm chế','比重 = tỷ trọng'],giai:'尽管……但…… nêu sự thật rồi chuyển ý; 是为了 + mục đích = là để …; 开发 ở đây dịch "phát triển, khai thác".'},
-  {vi:'Do pin nặng nề, giá thành đắt đỏ, không loại trừ khả năng đi đường dài vẫn phải dựa vào xăng, vì vậy nhất định phải bảo đảm giảm lượng khí thải.',zh:'由于电池沉重、造价昂贵，不排除长途行车仍要靠汽油，因此必须确保减少废气排放。',py:'Yóuyú diànchí chénzhòng, zàojià ángguì, bù páichú chángtú xíngchē réng yào kào qìyóu, yīncǐ bìxū quèbǎo jiǎnshǎo fèiqì páifàng.',goiY:['由于……因此…… = do … nên …','不排除 = không loại trừ','确保 = bảo đảm','排放 = thải ra'],giai:'Chuỗi nhân quả qua ba vế: 由于 (nguyên nhân) → 不排除…… (khả năng) → 因此 (kết luận); 不排除 + mệnh đề — thêm "khả năng" khi dịch cho tự nhiên; 沉重 ôn bài 18.'},
-  {vi:'Ô tô luôn gắn bó với loài người, và loài người vì thế đã phải trả một cái giá rất lớn; nếu nó vẫn là người bạn đồng hành không thể thiếu, thì nhất định phải sạch hơn, an toàn hơn.',zh:'汽车与人类相伴相随，人类为此付出了巨大的代价；如果它仍是不可缺少的伴侣，就必须更加清洁、安全。',py:'Qìchē yǔ rénlèi xiāngbàn-xiāngsuí, rénlèi wèi cǐ fùchūle jùdà de dàijià; rúguǒ tā réng shì bù kě quēshǎo de bànlǚ, jiù bìxū gèngjiā qīngjié, ānquán.',goiY:['代价 = cái giá phải trả','伴侣 = bạn đồng hành','如果……就…… = nếu … thì …'],giai:'Dấu ； tách hai ý lớn: sự thật (đã trả giá) và điều kiện (如果……就……); 为此 = vì điều đó; 伴侣 ở đây là ẩn dụ — dịch "người bạn đồng hành", không dịch "bạn đời".'}
+  {vi:'Trận tuyết lớn khiến hơn một nghìn du khách bị kẹt lại trên núi, mãi đến ngày thứ ba mới về được nhà.',zh:'这场大雪使上千名游客滞留在山上，直到第三天才回到家。',py:'Zhè chǎng dàxuě shǐ shàng qiān míng yóukè zhìliú zài shān shang, zhídào dì sān tiān cái huídào jiā.',goiY:['使 = khiến','上千名 = hơn một nghìn','滞留 = bị kẹt lại'],giai:'上千 = "trên một nghìn, hàng nghìn"; 直到……才…… = mãi đến… mới….'},
+  {vi:'Hồi nhỏ tôi thường nghĩ, giá mà mình cũng mọc ra một đôi cánh thì có thể bay lên trời xem thử.',zh:'小时候我常想，要是自己也能长出一双翼，就可以飞到天上去看看了。',py:'Xiǎo shíhou wǒ cháng xiǎng, yàoshi zìjǐ yě néng zhǎngchū yì shuāng yì, jiù kěyǐ fēi dào tiān shang qù kànkan le.',goiY:['要是……就…… = giá mà… thì…','翼 = cánh','长出 = mọc ra'],giai:'要是……就……了 diễn tả điều ước khó thành → "giá mà"; 翼 dịch "đôi cánh".'},
+  {vi:'Theo nguyên tắc mạnh được yếu thua, sản phẩm kém chất lượng sớm muộn gì cũng bị thị trường đào thải.',zh:'根据优胜劣汰的原则，质量差的产品迟早会被市场淘汰。',py:'Gēnjù yōushèng-liètài de yuánzé, zhìliàng chà de chǎnpǐn chízǎo huì bèi shìchǎng táotài.',goiY:['优胜劣汰 = mạnh được yếu thua','迟早 = sớm muộn','淘汰 = đào thải'],giai:'被 + tác nhân + 淘汰 dịch "bị … đào thải"; 迟早会 = sớm muộn gì cũng.'},
+  {vi:'Cuộc sống của chúng ta không thể thiếu dầu mỏ, nhưng tài nguyên dầu mỏ đâu phải dùng mãi không hết.',zh:'我们的生活离不开石油，可石油资源并非用不完的。',py:'Wǒmen de shēnghuó lí bu kāi shíyóu, kě shíyóu zīyuán bìngfēi yòng bu wán de.',goiY:['离不开 = không thể thiếu','石油 = dầu mỏ','并非 = đâu phải'],giai:'并非 (ôn bài 7) phủ định mạnh → "đâu phải, hoàn toàn không phải"; 用不完 = dùng không hết.'},
+  {vi:'Kỳ thi lần này, các bạn lớp chúng tôi đều thuận lợi vượt qua.',zh:'这次考试，我们班的同学皆顺利通过。',py:'Zhè cì kǎoshì, wǒmen bān de tóngxué jiē shùnlì tōngguò.',goiY:['皆 = đều (văn viết)','顺利 = thuận lợi','通过 = vượt qua'],giai:'皆 = 都 nhưng mang sắc thái văn viết; dịch "đều".'}
 ];
 
 // ══════════════════════════════════════════
@@ -1888,7 +1799,7 @@ var speakingData = {
     {q_zh:'2050年的汽车是什么样子的？（清洁、安全）',
      q_vn:'Ô tô năm 2050 trông như thế nào? (Sạch, an toàn)',
      hint:'①当前汽车的劣迹 ②根本出路',
-     sample:'2050年的汽车会更加清洁、安全。现在人们常常指责汽车：北极冰川在融化，空气质量在下降，石油资源日益紧缺，每年还有一百多万人死于交通事故。不过，汽车是一种灵活的交通工具，动不动就将其淘汰并不明智，根本出路是让汽车更清洁、环保，让司机规范驾车。',
+     sample:'2050年的汽车会更加清洁、安全。现在人们常常指责汽车：北极冰川在融化，空气质量越来越差，石油也越来越少，每年还有一百多万人死于交通事故。不过，汽车是一种灵活的交通工具，动不动就将其淘汰并不明智，根本出路是让汽车更清洁、环保，让司机规范驾车。',
      sample_vn:'Ô tô năm 2050 sẽ sạch hơn, an toàn hơn. Hiện nay người ta thường chỉ trích ô tô: sông băng Bắc Cực đang tan, chất lượng không khí đang đi xuống, nguồn dầu mỏ ngày càng khan hiếm, mỗi năm còn hơn một triệu người chết vì tai nạn giao thông. Tuy vậy, ô tô là một phương tiện giao thông linh hoạt, hơi một chút đã loại bỏ nó thì không sáng suốt; lối thoát căn bản là làm cho ô tô sạch hơn, thân thiện với môi trường hơn và để tài xế lái xe đúng quy tắc.',
      note:'Gợi ý ① = "tội trạng": liệt kê 3–4 ý ngắn song song (……在……；……在……); gợi ý ② mở bằng 不过 / 但是 rồi dùng 动不动就…… + 根本出路是…….'},
     {q_zh:'2050年的汽车是什么样子的？（自动行驶）',
@@ -1912,159 +1823,133 @@ var speakingData = {
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — 听力 (hội thoại ngắn + đoạn nói)
-// Sách HSK 6 không có sách bài tập nghe: tự soạn theo chủ đề bài 22.
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — câu tự soạn (sách HSK 6 không có sách bài tập nghe), mỗi câu một tình huống mới
+// ══════════════════════════════════════════
 var listenExamData = {
-  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, ' +
-         'trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
-  source: 'Soạn theo dạng đề HSK 6 · chủ đề bài 22',
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 22',
   items: [
-    {n:1,
-     lines:[{sp:'女',zh:'你今天怎么又迟到了？'},
-            {sp:'男',zh:'别提了，路上发生了一起交通事故，整条路都堵塞了，我在车上滞留了一个多小时。'}],
-     q:'男的为什么迟到？',qvn:'Vì sao người đàn ông đến muộn?',
-     opts:['起床太晚了','车坏在半路上','路上发生事故，交通堵塞','走错了路'],ans:2,
-     why:'路上发生了一起交通事故，整条路都堵塞了 — lý do nằm ngay sau 别提了. 滞留了一个多小时 = bị kẹt hơn một tiếng.',
-     words:['事故','堵塞','滞留']},
-
-    {n:2,
-     lines:[{sp:'男',zh:'这款电动汽车看起来不错，就是太贵了。'},
-            {sp:'女',zh:'价格是昂贵了点儿，不过它配备了自动停车系统，停车的时候方便多了。'}],
-     q:'女的认为这款车有什么优点？',qvn:'Người phụ nữ cho rằng chiếc xe này có ưu điểm gì?',
-     opts:['配备了自动停车系统','价格很便宜','充电时间很短','跑得特别快'],ans:0,
-     why:'不过 chuyển sang ưu điểm: 它配备了自动停车系统. Giá thì "昂贵了点儿" (hơi đắt) — loại B.',
-     words:['昂贵','配备']},
-
-    {n:3,
-     lines:[{sp:'女',zh:'听说你们公司最近要实行优胜劣汰的考核制度？'},
-            {sp:'男',zh:'是啊，大家压力都很大，我现在每天都力求把工作做到最好。'}],
-     q:'关于男的，可以知道什么？',qvn:'Về người đàn ông, có thể biết điều gì?',
-     opts:['打算换工作','已经被公司淘汰了','对考核制度很满意','工作压力大，很努力'],ans:3,
-     why:'大家压力都很大 + 每天都力求把工作做到最好 → áp lực lớn và rất cố gắng. Không có thông tin về đổi việc hay hài lòng.',
-     words:['优胜劣汰','力求']},
-
-    {n:4,
-     lines:[{sp:'男',zh:'小李，你儿子怎么动不动就哭啊？'},
-            {sp:'女',zh:'他刚上幼儿园，还不习惯。我也试图跟他讲道理，可他根本听不进去。'}],
-     q:'女的的儿子怎么了？',qvn:'Con trai của người phụ nữ làm sao?',
-     opts:['身体不好','常常哭','不愿意吃饭','不喜欢老师'],ans:1,
-     why:'动不动就哭 = hơi một chút là khóc → hay khóc. Nguyên nhân: 刚上幼儿园，还不习惯.',
-     words:['动不动','试图']},
-
-    {n:5,
-     lines:[{sp:'女',zh:'这次去北京出差，你们几点抵达？'},
-            {sp:'男',zh:'本来下午三点就到，可是航班因为大雾推迟了，估计要晚上八点左右才能到。'}],
-     q:'男的现在估计几点能到北京？',qvn:'Người đàn ông hiện ước tính mấy giờ đến Bắc Kinh?',
-     opts:['下午三点','晚上八点左右','早上八点','明天上午'],ans:1,
-     why:'本来 (vốn dĩ) 三点 là kế hoạch cũ; 可是……推迟了，估计要晚上八点左右才能到 là thông tin mới.',
-     words:['抵达']},
-
-    {n:6,
-     lines:[{sp:'男',zh:'这份合同里的甲方、乙方分别是谁？'},
-            {sp:'女',zh:'甲方是我们公司，乙方是那家汽车公司。按照合同，所有的运输费用皆由乙方承担。'}],
-     q:'运输费用由谁承担？',qvn:'Chi phí vận chuyển do ai chịu?',
-     opts:['女的自己','甲方','双方各一半','那家汽车公司'],ans:3,
-     why:'皆由乙方承担 (皆 = 都) và 乙方是那家汽车公司 → do công ty ô tô chịu. 甲方 là công ty của người nói.',
-     words:['皆']},
-
-    {n:7,
-     lines:[{sp:'女',zh:'你觉得手机里的虚拟助理有用吗？'},
-            {sp:'男',zh:'太有用了！它每天提醒我日程安排，还能告诉我哪条路堵车。对我来说，它是必需品，而不是锦上添花。'}],
-     q:'男的对虚拟助理有什么看法？',qvn:'Người đàn ông có quan điểm gì về trợ lý ảo?',
-     opts:['非常有用，是必需品','只是锦上添花','经常出错','用起来太麻烦'],ans:0,
-     why:'太有用了 + 它是必需品，而不是锦上添花 — "而不是锦上添花" phủ định phương án B.',
-     words:['助理','锦上添花']},
-
-    {n:8,
-     lines:[{sp:'男',zh:'很多人认为，将来所有的汽车都会是电动汽车。电动汽车没有废气排放，确实更环保，它在汽车中所占的比重也一定会越来越大。不过，目前电动汽车的电池造价昂贵，充电时间也比较长，这些都阻碍了人们购买。所以专家认为，在相当长的一段时间里，还不能排除汽油车和柴油车继续存在的可能，关键是要提高燃料的使用效率。'}],
-     q:'专家认为今后一段时间会怎么样？',qvn:'Chuyên gia cho rằng trong một thời gian tới sẽ thế nào?',
-     opts:['所有汽车都变成电动汽车','电动汽车会被淘汰','汽油车、柴油车还会继续存在','人们不再买汽车了'],ans:2,
-     why:'还不能排除汽油车和柴油车继续存在的可能 → xe xăng, xe dầu vẫn còn tồn tại. "所有汽车都会是电动汽车" chỉ là ý kiến của "很多人", bị 不过 phủ định.',
-     words:['排放','比重','昂贵','阻碍','排除','柴油']}
+    {
+      n: 1,
+      lines: [
+        {sp:'女',zh:'你怎么又换手机了？'},
+        {sp:'男',zh:'旧的那个动不动就没电，出门在外特别不方便。'}
+      ],
+      q: '男的为什么换手机？',
+      qvn: 'Vì sao người đàn ông đổi điện thoại?',
+      opts: ['旧手机丢了','旧手机老是没电','想要新的款式','旧手机太贵'],
+      ans: 1,
+      why: '动不动就没电 = hơi một tí là hết pin → điện thoại cũ hay hết pin. Không nói bị mất hay muốn kiểu mới.',
+      words: ['动不动']
+    },
+    {
+      n: 2,
+      lines: [
+        {sp:'男',zh:'足球比赛的分组结果出来了吗？'},
+        {sp:'女',zh:'出来了，我们班在丙组，第一场跟丁组的一个班比。'}
+      ],
+      q: '女的的班在哪个组？',
+      qvn: 'Lớp của người phụ nữ ở bảng nào?',
+      opts: ['甲组','乙组','丙组','丁组'],
+      ans: 2,
+      why: '我们班在丙组 → bảng thứ ba (丙). 丁组 là bảng của đội đối thủ trận đầu.',
+      words: ['丙','丁']
+    },
+    {
+      n: 3,
+      lines: [
+        {sp:'女',zh:'你不是昨天就该到了吗？'},
+        {sp:'男',zh:'别提了，下大雪，航班取消了，我在机场滞留了一夜。'}
+      ],
+      q: '男的为什么昨天没到？',
+      qvn: 'Vì sao hôm qua người đàn ông chưa đến?',
+      opts: ['航班取消了','路上堵车','忘了时间','身体不舒服'],
+      ans: 0,
+      why: '下大雪，航班取消了 → chuyến bay bị huỷ nên phải kẹt lại ở sân bay (滞留) cả đêm.',
+      words: ['滞留']
+    },
+    {
+      n: 4,
+      lines: [
+        {sp:'男',zh:'这车怎么开着开着就不动了？'},
+        {sp:'女',zh:'可能是引擎出了问题，你先别开了，叫人来看看吧。'}
+      ],
+      q: '女的认为车怎么了？',
+      qvn: 'Người phụ nữ cho rằng chiếc xe bị làm sao?',
+      opts: ['没有汽油了','引擎有问题','路太不平了','司机太累了'],
+      ans: 1,
+      why: '可能是引擎出了问题 → động cơ có vấn đề. Không ai nhắc tới xăng hay đường xấu.',
+      words: ['引擎']
+    },
+    {
+      n: 5,
+      lines: [
+        {sp:'女',zh:'让你弟弟开车送我们，安全吗？'},
+        {sp:'男',zh:'没事儿，他开车特别规范，从来没出过事，我担保没问题。'}
+      ],
+      q: '男的觉得弟弟开车怎么样？',
+      qvn: 'Người đàn ông thấy em trai lái xe thế nào?',
+      opts: ['很规范','太快了','不太熟练','经常出事故'],
+      ans: 0,
+      why: '开车特别规范，从来没出过事 → lái đúng quy tắc, chưa từng gặp sự cố; 我担保没问题 = tôi cam đoan không có vấn đề gì.',
+      words: ['规范','担保']
+    },
+    {
+      n: 6,
+      lines: [
+        {sp:'男',zh:'你们公司新来的助理怎么样？'},
+        {sp:'女',zh:'做事很认真，就是动不动就问我该怎么办，什么都不敢自己决定。'}
+      ],
+      q: '女的觉得新助理有什么问题？',
+      qvn: 'Người phụ nữ thấy trợ lý mới có vấn đề gì?',
+      opts: ['做事不认真','不敢自己做决定','经常迟到','不爱说话'],
+      ans: 1,
+      why: '就是 dẫn ra nhược điểm: 动不动就问我……什么都不敢自己决定. 做事很认真 là ưu điểm nên phương án 1 sai.',
+      words: ['助理','动不动']
+    },
+    {
+      n: 7,
+      lines: [
+        {sp:'女',zh:'王老师和他妻子结婚四十年了吧？'},
+        {sp:'男',zh:'是啊，两个人一直互相照顾，真是一对好伴侣。'}
+      ],
+      q: '关于王老师和他妻子，可以知道什么？',
+      qvn: 'Về vợ chồng thầy Vương, có thể biết điều gì?',
+      opts: ['刚结婚不久','经常吵架','住得很远','关系很好'],
+      ans: 3,
+      why: '一直互相照顾，真是一对好伴侣 → quan hệ rất tốt. Đã cưới bốn mươi năm nên "mới cưới" sai.',
+      words: ['伴侣']
+    }
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 💬 TÌNH HUỐNG GIAO TIẾP
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
+// ══════════════════════════════════════════
 var situationData = {
-  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
-         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn thân than phiền em trai dạo này rất hay nổi cáu.',
-     a:{sp:'Bạn',zh:'我弟弟最近脾气特别大，我说一句他就生气。',vn:'Em trai tớ dạo này nóng tính lắm, tớ nói một câu là nó giận.'},
-     need:['Dùng 动不动','Đưa ra lời khuyên'],
-     sample:'他动不动就生气，可能是学习压力太大了。你不妨找个时间跟他好好聊聊。',
-     samplePy:'Tā dòngbudòng jiù shēngqì, kěnéng shì xuéxí yālì tài dà le. Nǐ bùfáng zhǎo ge shíjiān gēn tā hǎohāo liáoliao.',
-     sampleVn:'Em ấy hơi một chút là giận, có lẽ do áp lực học tập quá lớn. Cậu thử tìm lúc nào đó nói chuyện tử tế với em ấy xem.',
-     tip:'动不动就 + V (việc không mong muốn); 不妨 = thử … xem (ôn bài 12) — lời khuyên nhẹ nhàng.'},
-
-    {scene:'Bố hỏi ý kiến em: nhà mình đổi xe thì nên mua xe điện hay xe chạy xăng.',
-     a:{sp:'Bố',zh:'咱们家换车，买电动汽车还是汽油车好？',vn:'Nhà mình đổi xe, mua xe điện hay xe xăng thì hơn hả con?'},
-     need:['Dùng 虽然……但是……','Dùng ít nhất 2 từ: 昂贵 / 排放 / 比重 / 确保'],
-     sample:'电动汽车虽然价格昂贵一点儿，但是没有废气排放，更环保。咱们平时只在市里开，我觉得买电动汽车比较好。',
-     samplePy:'Diàndòng qìchē suīrán jiàgé ángguì yìdiǎnr, dànshì méiyǒu fèiqì páifàng, gèng huánbǎo. Zánmen píngshí zhǐ zài shì li kāi, wǒ juéde mǎi diàndòng qìchē bǐjiào hǎo.',
-     sampleVn:'Xe điện tuy giá đắt hơn một chút, nhưng không thải khí thải, thân thiện môi trường hơn. Nhà mình bình thường chỉ chạy trong thành phố, con nghĩ mua xe điện thì hơn.',
-     tip:'Nêu nhược điểm bằng 虽然, ưu điểm bằng 但是, rồi kết luận bằng 我觉得…….'},
-
-    {scene:'Lớp trưởng hỏi phần chuẩn bị tiết mục cho buổi sinh hoạt lớp em phụ trách đã ổn chưa.',
-     a:{sp:'Lớp trưởng',zh:'周六的班会活动，你那边准备得怎么样了？没问题吧？',vn:'Buổi sinh hoạt lớp thứ Bảy, bên cậu chuẩn bị thế nào rồi? Không có vấn đề gì chứ?'},
-     need:['Dùng 担保 (đúng cách: + mệnh đề)','Nói rõ đã làm những gì'],
-     sample:'放心吧，节目都排练好了，音响也检查过了，我敢担保不会出问题。',
-     samplePy:'Fàngxīn ba, jiémù dōu páiliàn hǎo le, yīnxiǎng yě jiǎnchá guo le, wǒ gǎn dānbǎo bú huì chū wèntí.',
-     sampleVn:'Yên tâm đi, tiết mục tập xong hết rồi, loa đài cũng kiểm tra rồi, tớ dám cam đoan không có vấn đề gì.',
-     tip:'我敢担保 + mệnh đề (担保 không đi với danh từ); muốn đi với danh từ thì dùng 保证: 保证质量.'},
-
-    {scene:'Thầy giáo hỏi bài thuyết trình về giao thông của nhóm em định chia làm mấy phần.',
-     a:{sp:'Thầy giáo',zh:'你们小组的报告打算分成几个部分？',vn:'Bài báo cáo của nhóm em định chia làm mấy phần?'},
-     need:['Dùng 甲、乙、丙 để đánh số','Nêu nội dung từng phần'],
-     sample:'我们打算分成三个部分：甲，介绍现在的交通问题；乙，分析原因；丙，谈谈未来的汽车。',
-     samplePy:'Wǒmen dǎsuan fēnchéng sān ge bùfen: jiǎ, jièshào xiànzài de jiāotōng wèntí; yǐ, fēnxī yuányīn; bǐng, tántan wèilái de qìchē.',
-     sampleVn:'Chúng em định chia làm ba phần: phần một giới thiệu vấn đề giao thông hiện nay; phần hai phân tích nguyên nhân; phần ba bàn về ô tô tương lai.',
-     tip:'甲、乙、丙 dùng như "thứ nhất, thứ hai, thứ ba" (Chú thích 2); giữa các phần dùng dấu ；.'},
-
-    {scene:'Trong giờ thảo luận, một bạn nói nên dứt khoát bỏ hẳn ô tô vì ô nhiễm quá nặng.',
-     a:{sp:'Bạn',zh:'汽车污染这么严重，干脆把汽车都淘汰掉算了！',vn:'Ô tô gây ô nhiễm nghiêm trọng thế, dứt khoát loại bỏ hết ô tô cho xong!'},
-     need:['Dùng 明智 hoặc 出路','Phản bác một cách lịch sự'],
-     sample:'汽车毕竟给生活带来了很多方便，一下子全部淘汰似乎不太明智。我觉得根本出路是开发清洁能源。',
-     samplePy:'Qìchē bìjìng gěi shēnghuó dàiláile hěn duō fāngbiàn, yíxiàzi quánbù táotài sìhū bú tài míngzhì. Wǒ juéde gēnběn chūlù shì kāifā qīngjié néngyuán.',
-     sampleVn:'Ô tô dù sao cũng mang lại rất nhiều tiện lợi cho cuộc sống, loại bỏ hết một lúc e rằng không sáng suốt lắm. Tớ nghĩ lối thoát căn bản là phát triển năng lượng sạch.',
-     tip:'毕竟 = dù sao thì (HSK 5); 似乎不太明智 là cách phản bác mềm mỏng; 根本出路是…… nêu giải pháp.'}
+    {scene:'Bạn thân than phiền em trai dạo này rất hay nổi cáu.',a:{sp:'Bạn',zh:'我弟弟最近脾气特别大，我说一句他就生气。',vn:'Em trai tớ dạo này nóng tính lắm, tớ nói một câu là nó giận.'},need:['Dùng 动不动','Đưa ra lời khuyên'],sample:'他动不动就生气，可能是学习压力太大了。你不妨找个时间跟他好好聊聊。',samplePy:'Tā dòngbudòng jiù shēngqì, kěnéng shì xuéxí yālì tài dà le. Nǐ bùfáng zhǎo ge shíjiān gēn tā hǎohāo liáoliao.',sampleVn:'Em ấy hơi một chút là giận, có lẽ áp lực học hành lớn quá. Cậu thử tìm lúc nào đó nói chuyện tử tế với em ấy xem.',tip:'动不动就 + V (việc không mong muốn); 不妨 (bài 12) làm lời khuyên nhẹ nhàng.'},
+    {scene:'Bố hỏi ý kiến em: nhà mình đổi xe thì nên mua xe điện hay xe chạy xăng.',a:{sp:'Bố',zh:'咱们家换车，买电动汽车还是汽油车好？',vn:'Nhà mình đổi xe, mua xe điện hay xe xăng thì hơn hả con?'},need:['Dùng 虽然……但是……','Dùng ít nhất 2 từ: 昂贵 / 排放 / 柴油'],sample:'电动汽车虽然昂贵一点儿，但是不用汽油和柴油，也没有废气排放，更环保。咱们平时只在市里开，我觉得买电动的比较好。',samplePy:'Diàndòng qìchē suīrán ángguì yìdiǎnr, dànshì búyòng qìyóu hé cháiyóu, yě méiyǒu fèiqì páifàng, gèng huánbǎo. Zánmen píngshí zhǐ zài shì li kāi, wǒ juéde mǎi diàndòng de bǐjiào hǎo.',sampleVn:'Xe điện tuy đắt hơn một chút nhưng không dùng xăng dầu, cũng không thải khí, bảo vệ môi trường hơn. Nhà mình bình thường chỉ chạy trong thành phố, con thấy mua xe điện thì hơn.',tip:'虽然……但是…… nêu nhược điểm trước, ưu điểm sau; kết luận bằng 我觉得…….'},
+    {scene:'Lớp trưởng hỏi phần chuẩn bị tiết mục cho buổi sinh hoạt lớp em phụ trách đã ổn chưa.',a:{sp:'Lớp trưởng',zh:'周六的班会活动，你那边准备得怎么样了？没问题吧？',vn:'Buổi sinh hoạt lớp thứ Bảy, bên cậu chuẩn bị thế nào rồi? Không có vấn đề gì chứ?'},need:['Dùng 担保 (+ mệnh đề)','Nói rõ đã làm những gì'],sample:'放心吧，节目都练好了，音响也检查过了，我敢担保到时候一切顺利。',samplePy:'Fàngxīn ba, jiémù dōu liànhǎo le, yīnxiǎng yě jiǎnchá guo le, wǒ gǎn dānbǎo dào shíhou yíqiè shùnlì.',sampleVn:'Yên tâm đi, tiết mục đã tập xong, loa cũng kiểm tra rồi, tớ dám cam đoan đến lúc đó mọi thứ suôn sẻ.',tip:'我敢担保 + mệnh đề = tôi dám cam đoan…; liệt kê việc đã làm bằng V好了 / V过了.'},
+    {scene:'Thầy giáo hỏi bài thuyết trình về giao thông của nhóm em định chia làm mấy phần.',a:{sp:'Thầy giáo',zh:'你们小组的报告打算分成几个部分？',vn:'Bài báo cáo của nhóm em định chia làm mấy phần?'},need:['Dùng 甲、乙、丙 để đánh số','Nêu nội dung từng phần'],sample:'我们打算分成三个部分：甲，介绍现在的交通问题；乙，分析原因；丙，谈谈以后的汽车。',samplePy:'Wǒmen dǎsuan fēnchéng sān ge bùfen: jiǎ, jièshào xiànzài de jiāotōng wèntí; yǐ, fēnxī yuányīn; bǐng, tántan yǐhòu de qìchē.',sampleVn:'Chúng em định chia làm ba phần: Giáp, giới thiệu vấn đề giao thông hiện nay; Ất, phân tích nguyên nhân; Bính, nói về ô tô sau này.',tip:'甲、乙、丙 đứng đầu mỗi phần như "thứ nhất, thứ hai, thứ ba" (trang trọng hơn 一、二、三 trong văn bản).'},
+    {scene:'Trong giờ thảo luận, một bạn nói nên dứt khoát bỏ hẳn ô tô vì ô nhiễm quá nặng.',a:{sp:'Bạn',zh:'汽车污染这么严重，干脆把汽车都淘汰掉算了！',vn:'Ô tô gây ô nhiễm nghiêm trọng thế, dứt khoát loại bỏ hết ô tô cho xong!'},need:['Dùng 明智 hoặc 出路','Phản bác một cách lịch sự'],sample:'汽车毕竟给生活带来了很多方便，一下子全部淘汰似乎不太明智。我觉得根本出路是开发清洁能源。',samplePy:'Qìchē bìjìng gěi shēnghuó dàiláile hěn duō fāngbiàn, yíxiàzi quánbù táotài sìhū bú tài míngzhì. Wǒ juéde gēnběn chūlù shì kāifā qīngjié néngyuán.',sampleVn:'Dù sao ô tô cũng mang lại nhiều tiện lợi cho cuộc sống, loại bỏ hết ngay một lúc có vẻ không sáng suốt lắm. Mình nghĩ lối thoát căn bản là phát triển năng lượng sạch.',tip:'毕竟 (dù sao) + 似乎不太…… làm lời phản bác mềm hơn.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 // 🎯 NÓI SAO CHO HAY — 得体 / 语体
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 var registerData = {
-  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
-         'HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
   items: [
-    {scene:'Em viết báo cáo khoa học về ô tô điện.',
-     a:'电动汽车造价昂贵、充电时间长，这在一定程度上阻碍了其推广。',b:'电动车太贵了，充个电还得等半天，所以好多人都不想买。',better:'a',
-     why:'Báo cáo cần văn viết: 造价昂贵, 在一定程度上, 阻碍了其推广. Câu b (太贵了, 等半天, 好多人) là khẩu ngữ.'},
-
-    {scene:'Em nhắn tin cho bạn thân báo mình bị kẹt xe, sẽ đến muộn buổi hẹn ăn tối.',
-     a:'由于交通堵塞，本人将滞留途中，预计晚到三十分钟，敬请谅解。',b:'堵死了！我还在路上呢，估计得晚半小时，你们先吃吧！',better:'b',
-     why:'Nhắn tin bạn thân dùng khẩu ngữ tự nhiên (堵死了, 你们先吃吧). Câu a (本人, 滞留途中, 敬请谅解) là giọng thông báo công văn, rất lạ.'},
-
-    {scene:'Phát thanh viên sân bay thông báo chuyến bay bị hoãn.',
-     a:'各位旅客请注意，由于天气原因，飞往上海的航班将推迟抵达，请您耐心等候。',b:'大家听着啊，去上海的飞机晚点了，等着吧。',better:'a',
-     why:'Thông báo công cộng cần trang trọng, lịch sự: 各位旅客请注意, 将推迟抵达, 请您耐心等候. Câu b cộc lốc, thiếu lịch sự.'},
-
-    {scene:'Bố mẹ lo lắng khi em bắt đầu tự đạp xe đi học đường xa, em trấn an bố mẹ.',
-     a:'爸，您就放心吧，我骑车特别规矩，保证出不了事。',b:'本人驾驶技术规范，可确保行车安全，请家长放心。',better:'a',
-     why:'Nói với bố mẹ cần thân mật (您就放心吧, 特别规矩, 保证出不了事). Câu b giống bản cam kết viết gửi nhà trường.'},
-
-    {scene:'Em viết bài văn nghị luận về giải pháp cho vấn đề giao thông đô thị.',
-     a:'面对日益严重的交通问题，根本出路在于发展公共交通，而非一味增加私家车。',b:'路上车太多了，我看啊，还是多坐公交车好，别老开自己的车。',better:'a',
-     why:'Văn nghị luận cần từ ngữ văn viết và lập luận rõ: 日益, 根本出路在于, 而非一味……. Câu b (我看啊, 别老……) là lời nói miệng.'},
-
-    {scene:'Em hỏi mượn cục sạc của bạn cùng bàn.',
-     a:'你那个充电器借我用一下呗，我手机快没电了。',b:'鉴于本人手机电量不足，恳请借用阁下的充电设备。',better:'a',
-     why:'Hỏi mượn đồ bạn cùng bàn dùng khẩu ngữ (借我用一下呗). Câu b (鉴于, 本人, 恳请, 阁下) quá trang trọng, nghe như đùa.'}
+    {scene:'Em viết báo cáo khoa học về ô tô điện.',a:'电动汽车造价昂贵，这在一定程度上阻碍了它的推广。',b:'电动车太贵了，所以好多人都不想买。',better:'a',why:'Báo cáo cần văn viết: 造价昂贵, 在一定程度上, 阻碍……推广. Câu b (太贵了, 好多人) là khẩu ngữ.'},
+    {scene:'Em nhắn tin cho bạn thân báo mình bị kẹt xe, sẽ đến muộn buổi hẹn ăn tối.',a:'由于交通堵塞，本人将滞留途中，晚到三十分钟，请大家原谅。',b:'堵车了！我还在路上呢，估计得晚半小时，你们先吃吧！',better:'b',why:'Nhắn tin bạn thân dùng khẩu ngữ tự nhiên (堵车了, 你们先吃吧). Câu a (本人, 滞留途中) là giọng thông báo công văn, rất lạ.'},
+    {scene:'Phát thanh viên sân bay thông báo chuyến bay bị hoãn.',a:'大家听着啊，去上海的飞机晚点了，等着吧。',b:'各位请注意，由于天气原因，飞往上海的航班将推迟起飞，请您耐心等候。',better:'b',why:'Thông báo công cộng cần trang trọng, lịch sự: 各位请注意, 由于天气原因, 请您耐心等候. Câu a cộc lốc, thiếu lịch sự.'},
+    {scene:'Bố mẹ lo lắng khi em bắt đầu tự đạp xe đi học đường xa, em trấn an bố mẹ.',a:'爸，别担心，我骑车特别小心，保证出不了事。',b:'本人骑车规范，可确保行车安全，请家长放心。',better:'a',why:'Nói với bố mẹ cần thân mật (别担心, 保证出不了事). Câu b giống bản cam kết viết gửi nhà trường.'},
+    {scene:'Em viết bài văn nghị luận về giải pháp cho vấn đề giao thông thành phố.',a:'车实在太多了，我看啊，还是多坐地铁好，别老自己开车。',b:'面对日益严重的交通堵塞，根本出路在于发展地铁，而不是不断地修路。',better:'b',why:'Văn nghị luận cần từ ngữ văn viết và lập luận rõ: 日益, 根本出路在于……而不是……. Câu a (我看啊, 别老……) là lời nói miệng.'},
+    {scene:'Một hãng xe viết thông cáo giới thiệu hệ thống an toàn mới.',a:'安装这一系统以后，司机和乘车人的安全将得到更好的保障。',b:'装了这个东西，开车就更安全啦，放心开吧！',better:'a',why:'Thông cáo của doanh nghiệp dùng văn viết: 这一系统, 将得到……保障. Câu b (这个东西, 啦, 放心开吧) giống lời quảng cáo nói miệng.'}
   ]
 };
 

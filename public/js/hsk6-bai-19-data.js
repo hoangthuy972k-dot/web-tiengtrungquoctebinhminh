@@ -1476,85 +1476,50 @@ var hvBridgeData = {
 // GHÉP TỪ — cụm trong bài khoá và phần 练习
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'维持',right:'生命'},
-  {left:'众所周知的',right:'真理'},
-  {left:'早已认定为',right:'准则'},
-  {left:'繁殖生命的',right:'场所'},
-  {left:'长相',right:'古怪'},
-  {left:'深感',right:'诧异'},
-  {left:'带回',right:'样品'},
-  {left:'刺鼻的',right:'气味'},
-  {left:'恍然',right:'大悟'},
-  {left:'提出',right:'假说'},
-  {left:'渗透到',right:'地下'},
-  {left:'过滤',right:'细菌'},
-  {left:'食物',right:'来源'},
-  {left:'化学',right:'合成'},
+  {left:'维持',right:'秩序'},
   {left:'解放',right:'思想'},
-  {left:'迈向',right:'地球以外'},
-  {left:'忍受',right:'高温'},
-  {left:'超越',right:'想象'},
-  {left:'探究',right:'真相'},
-  {left:'华丽的',right:'阵容'},
+  {left:'忍受',right:'痛苦'},
+  {left:'丧失',right:'信心'},
+  {left:'查明',right:'真相'},
+  {left:'视野',right:'广阔'},
   {left:'体积',right:'庞大'},
-  {left:'造型',right:'奇特'},
-  {left:'迷惑',right:'不解'},
-  {left:'科学研究',right:'基地'}
+  {left:'造型',right:'独特'},
+  {left:'刺鼻的',right:'气味'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ
+// ĐIỀN TỪ — câu mới (không chép bài khoá / SGK), mỗi câu một tình huống; ôn xoáy ốc từ + ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'正如',blank:'俗话',post:'所说：“一分耕耘，一分收获。”你付出了努力，就一定会有回报。',hint:'(tục ngữ)',ans:'俗话'},
-  {pre:'比赛开始前，几名志愿者在门口',blank:'维持',post:'秩序，让观众有条不紊地进场。',hint:'(duy trì, giữ)',ans:'维持'},
-  {pre:'实践是检验',blank:'真理',post:'的唯一标准。',hint:'(chân lý)',ans:'真理'},
-  {pre:'没有证据，你不能随便',blank:'认定',post:'他就是拿走手机的人。',hint:'(khẳng định, cho là)',ans:'认定'},
-  {pre:'每个人给“幸福”下的',blank:'定义',post:'都不一样。',hint:'(định nghĩa)',ans:'定义'},
-  {pre:'这个暑假我们去海南学',blank:'潜水',post:'，在海底看到了五颜六色的鱼。',hint:'(lặn)',ans:'潜水'},
-  {pre:'夏天气温高，细菌',blank:'繁殖',post:'得特别快，剩菜最好放进冰箱。',hint:'(sinh sôi)',ans:'繁殖'},
-  {pre:'图书馆、电影院等公共',blank:'场所',post:'禁止吸烟。',hint:'(nơi chốn)',ans:'场所'},
-  {pre:'退潮以后，孩子们在沙滩上捡了一大袋',blank:'贝壳',post:'，别提多开心了。',hint:'(vỏ sò)',ans:'贝壳'},
-  {pre:'工作人员采集了河水',blank:'样品',post:'，准备送到实验室检测。',hint:'(mẫu vật)',ans:'样品'},
-  {pre:'中午的阳光太',blank:'刺',post:'眼了，出门最好戴上太阳镜。',hint:'(chói, kích thích)',ans:'刺'},
-  {pre:'冰箱里散发出一股难闻的',blank:'气味',post:'，原来是鸡蛋坏了。',hint:'(mùi)',ans:'气味'},
-  {pre:'细胞不断',blank:'分裂',post:'，生物体才能慢慢长大。',hint:'(phân chia)',ans:'分裂'},
-  {pre:'雨下得太大，雨水从墙缝里',blank:'渗透',post:'进来了。',hint:'(thấm)',ans:'渗透'},
-  {pre:'饭前务必洗手，因为手上有很多看不见的',blank:'细菌',post:'。',hint:'(vi khuẩn)',ans:'细菌'},
-  {pre:'自来水最好经过',blank:'过滤',post:'再喝，这样更卫生。',hint:'(lọc)',ans:'过滤'},
-  {pre:'父亲失业以后，家里就失去了经济',blank:'来源',post:'。',hint:'(nguồn)',ans:'来源'},
-  {pre:'这张照片是用电脑',blank:'合成',post:'的，并非真实的画面。',hint:'(ghép, tổng hợp)',ans:'合成'},
-  {pre:'洗碗机把妈妈从繁重的家务中',blank:'解放',post:'了出来。',hint:'(giải phóng)',ans:'解放'},
-  {pre:'万事开头难，只要勇敢地',blank:'迈',post:'出第一步，后面就容易多了。',hint:'(bước)',ans:'迈'},
-  {pre:'',blank:'据悉',post:'，这座新图书馆将于明年五月正式对外开放。',hint:'(được biết, theo nguồn tin)',ans:'据悉',exp:'据悉 = được biết, theo tin cho biết (văn báo chí), đặt đầu câu.'},
-  {pre:'水在一百',blank:'摄氏度',post:'时就会沸腾。',hint:'(độ C)',ans:'摄氏度'},
-  {pre:'失败了一次就',blank:'丧失',post:'信心，这样怎么能成功呢？',hint:'(mất đi)',ans:'丧失'},
-  {pre:'警察经过调查，终于查明了事情的',blank:'真相',post:'。',hint:'(sự thật)',ans:'真相'},
-  {pre:'这部电影的演员',blank:'阵容',post:'非常强大，还没上映就很受关注。',hint:'(đội hình, dàn)',ans:'阵容'},
-  {pre:'这次比赛给了年轻人一个',blank:'展现',post:'才华的机会。',hint:'(thể hiện)',ans:'展现'},
-  {pre:'院子的角落里种着一',blank:'丛',post:'竹子，风一吹沙沙作响。',hint:'(khóm, bụi)',ans:'丛',exp:'丛 là lượng từ cho khóm, bụi cây mọc san sát: 一丛竹子.'},
-  {pre:'这种新型电脑',blank:'体积',post:'小，便于携带。',hint:'(thể tích, kích thước)',ans:'体积'},
-  {pre:'这座大楼的',blank:'造型',post:'像一只展翅的大鸟，吸引了很多游客。',hint:'(kiểu dáng)',ans:'造型'},
-  {pre:'这个县已经成为全国最大的茶叶生产',blank:'基地',post:'。',hint:'(căn cứ, cơ sở)',ans:'基地'}
+  {pre:'',blank:'俗话',post:'说得好：“一口吃不成胖子。”学外语得一天一天慢慢来。',hint:'(tục ngữ)',ans:'俗话',exp:'俗话说(得好) + câu tục ngữ = tục ngữ có câu…; 一口吃不成胖子 = một miếng không thành người béo (việc gì cũng phải từ từ).'},
+  {pre:'不要以为老师说的都是',blank:'真理',post:'，有疑问就应该提出来。',hint:'(chân lý)',ans:'真理',exp:'真理 = chân lý, điều đúng tuyệt đối; câu này nói không nên coi mọi lời thầy là chân lý.'},
+  {pre:'我们不能因为他以前犯过错，就',blank:'认定',post:'这次拿走钱的人是他。',hint:'(khẳng định, cho là)',ans:'认定',exp:'认定 + mệnh đề = khẳng định chắc chắn (thường là chủ quan, chưa có bằng chứng).'},
+  {pre:'他第一次',blank:'潜水',post:'就看到了一大群鱼从身边游过。',hint:'(lặn)',ans:'潜水',exp:'潜水 = lặn dưới nước (môn thể thao, hoặc công việc khảo sát).'},
+  {pre:'这家咖啡馆安静又舒服，是大学生看书、讨论的好',blank:'场所',post:'。',hint:'(nơi chốn)',ans:'场所',exp:'场所 = nơi diễn ra hoạt động (văn viết): 学习的场所, 活动的场所.'},
+  {pre:'孩子们在海边捡了不少漂亮的',blank:'贝壳',post:'，回家后用它们做了一幅画。',hint:'(vỏ sò)',ans:'贝壳',exp:'贝壳 = vỏ sò, vỏ ốc nhặt ở bãi biển.'},
+  {pre:'这是我们公司新产品的',blank:'样品',post:'，您先拿回去试用一下。',hint:'(hàng mẫu)',ans:'样品',exp:'样品 = hàng mẫu (để khách xem, dùng thử) hoặc mẫu vật (để xét nghiệm).'},
+  {pre:'因为意见不同，这个小组最后',blank:'分裂',post:'成了两派。',hint:'(chia rẽ, tách ra)',ans:'分裂',exp:'分裂成…… = tách / chia rẽ thành… (tổ chức, nhóm người; tế bào).'},
+  {pre:'网络已经',blank:'渗透',post:'到了我们生活的方方面面。',hint:'(thấm vào)',ans:'渗透',exp:'渗透到 + phạm vi = thấm sâu vào (nghĩa bóng: internet, tư tưởng lan vào mọi mặt đời sống).'},
+  {pre:'这个村子的农民，主要的收入',blank:'来源',post:'是种水果。',hint:'(nguồn)',ans:'来源',exp:'收入来源 = nguồn thu nhập; 来源 làm danh từ: 食物来源, 消息来源.'},
+  {pre:'这首歌里的声音不是真人唱的，而是用电脑',blank:'合成',post:'出来的。',hint:'(tổng hợp, ghép)',ans:'合成',exp:'合成 = tổng hợp nhiều thành phần thành một (用电脑合成声音 / 照片).'},
+  {pre:'奶奶八十多岁了，',blank:'迈',post:'上台阶都得扶着墙。',hint:'(bước)',ans:'迈',exp:'迈 = bước (chân), nhấc chân bước qua: 迈上台阶, 迈出第一步.'},
+  {pre:'今年春节晚会的演员',blank:'阵容',post:'特别强大，很多有名的歌手都来了。',hint:'(đội hình, dàn)',ans:'阵容',exp:'阵容 = đội hình, dàn (diễn viên, cầu thủ); 阵容强大 / 华丽的阵容.'},
+  {pre:'这部电影',blank:'展现',post:'了普通人生活中的美好。',hint:'(thể hiện, bày ra)',ans:'展现',exp:'展现 + điều trừu tượng (美好, 精神, 特点) = bày ra, cho thấy rõ.'},
+  {pre:'院子里长着一',blank:'丛',post:'小花，让小院显得更有生机了。',hint:'(khóm, bụi)',ans:'丛',exp:'丛 = lượng từ cho khóm, bụi mọc san sát (一丛花, 一丛丛竹子).'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (进而 · 得以 · 偏偏) ít nhất 2 câu
+// SẮP XẾP CÂU — câu mới, chỉ một trật tự đúng
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['科学家','恍然大悟','，','进而','提出了','这样的','假说','。'],ans:'科学家恍然大悟，进而提出了这样的假说。',audio:'科学家恍然大悟，进而提出了这样的假说。'},
-  {words:['新的教学方法','先在个别班级','进行实验','，','进而','在全校','推广','。'],ans:'新的教学方法先在个别班级进行实验，进而在全校推广。',audio:'新的教学方法先在个别班级进行实验，进而在全校推广。'},
-  {words:['通过调查研究','发现问题','，','进而','找到','解决问题的方法','。'],ans:'通过调查研究发现问题，进而找到解决问题的方法。',audio:'通过调查研究发现问题，进而找到解决问题的方法。'},
-  {words:['某些细菌','吸收','温泉的热量','得以','繁殖','。'],ans:'某些细菌吸收温泉的热量得以繁殖。',audio:'某些细菌吸收温泉的热量得以繁殖。'},
-  {words:['只有','不断努力','，','梦想','才能','得以','实现','。'],ans:'只有不断努力，梦想才能得以实现。',audio:'只有不断努力，梦想才能得以实现。'},
-  {words:['长寿的一生','使他','得以','见证','中国历史上的','伟大年代','。'],ans:'长寿的一生使他得以见证中国历史上的伟大年代。',audio:'长寿的一生使他得以见证中国历史上的伟大年代。'},
-  {words:['大家','都劝他','不要去','，','他','偏偏','要去','。'],ans:'大家都劝他不要去，他偏偏要去。',audio:'大家都劝他不要去，他偏偏要去。'},
-  {words:['为什么','偏偏','这种细菌','能够','存活下来','？'],ans:'为什么偏偏这种细菌能够存活下来？',audio:'为什么偏偏这种细菌能够存活下来？'},
-  {words:['经过讨论','，','大家的意见','都统一了','，','可','偏偏','他','不同意','。'],ans:'经过讨论，大家的意见都统一了，可偏偏他不同意。',audio:'经过讨论，大家的意见都统一了，可偏偏他不同意。'},
-  {words:['老校长','历来','重视','学生们的','素质教育','。'],ans:'老校长历来重视学生们的素质教育。',audio:'老校长历来重视学生们的素质教育。'},
-  {words:['爷爷','从来','没有','浪费过','一点儿','粮食','。'],ans:'爷爷从来没有浪费过一点儿粮食。',audio:'爷爷从来没有浪费过一点儿粮食。'},
-  {words:['据悉','，','今年','入境旅游观光的','人数','已超过','千万','。'],ans:'据悉，今年入境旅游观光的人数已超过千万。',audio:'据悉，今年入境旅游观光的人数已超过千万。'},
-  {words:['与其','花时间','抱怨','，','不如','动手','解决问题','。'],ans:'与其花时间抱怨，不如动手解决问题。',audio:'与其花时间抱怨，不如动手解决问题。'}
+  {words:['我们','先','找出','问题的原因','，','进而','提出','解决办法','。'],ans:'我们先找出问题的原因，进而提出解决办法。',audio:'我们先找出问题的原因，进而提出解决办法。'},
+  {words:['有了','这笔钱','，','她','得以','继续','上学','。'],ans:'有了这笔钱，她得以继续上学。',audio:'有了这笔钱，她得以继续上学。'},
+  {words:['妈妈','让他','多穿点儿','，','他','偏偏','只穿了','一件','衬衫','。'],ans:'妈妈让他多穿点儿，他偏偏只穿了一件衬衫。',audio:'妈妈让他多穿点儿，他偏偏只穿了一件衬衫。'},
+  {words:['大家','有条不紊地','做着','准备工作','。'],ans:'大家有条不紊地做着准备工作。',audio:'大家有条不紊地做着准备工作。'},
+  {words:['科学家们','正在','探索','深海里的','秘密','。'],ans:'科学家们正在探索深海里的秘密。',audio:'科学家们正在探索深海里的秘密。'},
+  {words:['这种','机器','可以','把','海水','过滤','成','能喝的水','。'],ans:'这种机器可以把海水过滤成能喝的水。',audio:'这种机器可以把海水过滤成能喝的水。'},
+  {words:['看到','照片上的','日期','，','她','一下子','恍然大悟','了','。'],ans:'看到照片上的日期，她一下子恍然大悟了。',audio:'看到照片上的日期，她一下子恍然大悟了。'},
+  {words:['这位','年轻的','画家','最终','超越了','自己的','老师','。'],ans:'这位年轻的画家最终超越了自己的老师。',audio:'这位年轻的画家最终超越了自己的老师。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1562,72 +1527,44 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'我们学校____重视学生的综合素质，而不是只看考试成绩。',opts:['从来','原来','后来','历来'],ans:3,
-   exp:'历来 + động từ hai âm tiết (重视) trong câu khẳng định, văn viết (词语辨析). 从来 chủ yếu dùng trong câu phủ định; 原来 = hoá ra / vốn dĩ; 后来 = về sau (cùng nhóm 来 ở 练习1).'},
-  {wrong:'____，吸烟有害健康，可他偏偏戒不了。',opts:['恍然大悟','众所周知','迫不及待','半途而废'],ans:1,
-   exp:'众所周知 đứng đầu câu = như ai cũng biết. 恍然大悟 = chợt vỡ lẽ; 迫不及待 = nóng lòng; 半途而废 = bỏ dở giữa chừng.'},
-  {wrong:'诚实守信是做人的基本____。',opts:['准时','准确','准则','准许'],ans:2,
-   exp:'基本准则 = nguyên tắc cơ bản. 准时 = đúng giờ; 准确 = chính xác; 准许 = cho phép — đều không phải danh từ chỉ chuẩn mực.'},
-  {wrong:'那位老教授脾气有点儿____，但对学生却非常关心。',opts:['奇妙','华丽','广阔','古怪'],ans:3,
-   exp:'脾气古怪 = tính khí quái gở (hơi tiêu cực, hợp với 但 chuyển ý). 奇妙 = kỳ diệu (khen, không tả tính khí); 华丽 = lộng lẫy; 广阔 = bao la.'},
-  {wrong:'平时最不爱学习的他竟然考了第一名，全班同学都很____。',opts:['诧异','满意','得意','同意'],ans:0,
-   exp:'竟然 báo hiệu điều ngoài dự đoán → mọi người 诧异 (sửng sốt). 满意 = hài lòng; 得意 = đắc ý (người đạt được mới đắc ý); 同意 = đồng ý.'},
-  {wrong:'听了老师的解释，我才____，原来这道题这么简单。',opts:['众所周知','半途而废','恍然大悟','有条不紊'],ans:2,
-   exp:'……才恍然大悟，原来…… = mới vỡ lẽ, hoá ra …. Các thành ngữ còn lại không mang nghĩa "hiểu ra".'},
-  {wrong:'通过调查研究发现问题，____找到解决问题的方法。',opts:['然而','进而','反而','何况'],ans:1,
-   exp:'进而 = từ đó tiến thêm một bước (điểm ngữ pháp 1, 练习4 ②). 然而 = thế nhưng (chuyển ý); 反而 = trái lại; 何况 = huống hồ.'},
-  {wrong:'人类从来没有停止过____宇宙的脚步。',opts:['探望','探听','打探','探索'],ans:3,
-   exp:'探索宇宙 = khám phá vũ trụ. 探望 = thăm (người ốm, người thân); 探听 / 打探 = dò hỏi tin tức.'},
-  {wrong:'邻居家的装修噪音让人难以____。',opts:['享受','忍受','感受','遭受'],ans:1,
-   exp:'难以忍受 = khó mà chịu nổi. 享受 = hưởng thụ (ngược nghĩa); 感受 = cảm nhận; 遭受 = gặp phải (cần tân ngữ: 遭受损失). 难以 ôn bài 14.'},
-  {wrong:'比赛的意义不在于战胜别人，而在于____自我。',opts:['超越','超过','越过','穿越'],ans:0,
-   exp:'超越自我 = vượt qua chính mình (cụm cố định, tân ngữ trừu tượng). 超过 dùng cho số lượng / vượt xe; 越过 = vượt qua (địa hình: 越过高山); 穿越 = xuyên qua.'},
-  {wrong:'大家都劝他别去，他____要去，谁也拦不住。',opts:['果然','反正','偏偏','难怪'],ans:2,
-   exp:'偏偏要 = cố ý làm ngược lời khuyên (điểm ngữ pháp 3, cách dùng ①). 果然 = quả nhiên; 反正 = dù sao; 难怪 = thảo nào.'},
-  {wrong:'演员们穿着____的服装走上了舞台。',opts:['华丽','奇妙','广阔','深刻'],ans:0,
-   exp:'华丽的服装 = trang phục lộng lẫy. 奇妙 = kỳ diệu (thế giới, cảm giác); 广阔 = bao la (không gian); 深刻 = sâu sắc (ấn tượng, bài học).'},
-  {wrong:'虽然工作很多，但她总能____地处理好每一件事。',opts:['迫不及待','有条不紊','恍然大悟','众所周知'],ans:1,
-   exp:'有条不紊地 + V = làm … đâu ra đấy (练习2 ⑥). 迫不及待地 = nóng lòng (không hợp nghĩa "xử lý tốt mọi việc"); hai thành ngữ còn lại không làm trạng ngữ kiểu này.'},
-  {wrong:'它们的生理结构、食物基础，都使人____不解。',opts:['迷人','迷路','着迷','迷惑'],ans:3,
-   exp:'迷惑不解 = bối rối khó hiểu (bài khoá). 迷人 = quyến rũ; 迷路 = lạc đường; 着迷 = say mê.'},
-  {wrong:'人工智能这个行业发展前景十分____。',opts:['宽敞','广泛','广阔','广大'],ans:2,
-   exp:'前景广阔 = triển vọng rộng mở. 宽敞 = rộng rãi (nhà cửa); 广泛 = rộng rãi, phổ biến (兴趣广泛); 广大 = đông đảo, rộng lớn (广大群众).'},
-  {wrong:'大自然真____，小小的种子能长成参天大树。',opts:['奇妙','古怪','诧异','迷惑'],ans:0,
-   exp:'大自然真奇妙 = thiên nhiên thật kỳ diệu (khen). 古怪 = quái lạ (tiêu cực); 诧异, 迷惑 tả cảm giác của người, không tả thiên nhiên.'},
-  {wrong:'幸亏列车上有位经验丰富的医生，病人才____清醒过来。',opts:['可以','得以','难以','以便'],ans:1,
-   exp:'得以 + V = nhờ (điều kiện đó) mà có thể … (điểm ngữ pháp 2, ví dụ (3) của sách). 难以 = khó mà (ngược nghĩa); 以便 = để (đầu vế sau nêu mục đích); 可以 không mang ý "nhờ đó mà được".'},
-  {wrong:'我____不隐瞒自己的观点，有什么就说什么。',opts:['历来','本来','原来','从来'],ans:3,
-   exp:'Câu phủ định 不隐瞒 → 从来不 (词语辨析). 历来 không dùng trong câu phủ định; 本来 / 原来 = vốn dĩ, không mang nghĩa "xưa nay luôn".'}
+  {wrong:'我们公司____重视员工的培训，每年都请专家来上课。',opts:['历来','从来','原来','本来'],ans:0,exp:'Câu khẳng định + động từ hai âm tiết (重视) → 历来 (xưa nay luôn, văn viết). 从来 chủ yếu đi với phủ định (从来不 / 没); 原来 / 本来 là vốn dĩ, hoá ra.'},
+  {wrong:'他____没有迟到过，今天这是怎么了？',opts:['从来','历来','原来','将来'],ans:0,exp:'Phủ định kinh nghiệm 没……过 → 从来没……过. 历来 ít dùng với phủ định kiểu này (bảng phân biệt từ của bài); 原来 là hoá ra; 将来 là tương lai.'},
+  {wrong:'长期熬夜对身体不好，这已经是____的事情了，可很多年轻人就是改不了。',opts:['众所周知','比方说','俗话说','莫名其妙'],ans:0,exp:'Điều ai cũng biết → 众所周知的 + N (làm định ngữ) hoặc đứng đầu câu. 比方说 dẫn ví dụ; 俗话说 phải đi kèm một câu tục ngữ; 莫名其妙的事情 là chuyện khó hiểu — trái ý câu.'},
+  {wrong:'我找了半天眼镜，一摸头顶才____，原来它一直在我头上。',opts:['恍然大悟','莫名其妙','手忙脚乱','不知不觉'],ans:0,exp:'……才恍然大悟，原来…… = mới vỡ lẽ, hoá ra…. 莫名其妙 là không hiểu ra sao; 手忙脚乱 là luống cuống; 不知不觉 là lúc nào không hay.'},
+  {wrong:'虽然突然停电了，但工作人员____地带着观众离开了电影院。',opts:['有条不紊','手忙脚乱','东张西望','迫不及待'],ans:0,exp:'虽然……但 → kết quả tốt: bình tĩnh, đâu ra đấy → 有条不紊地. 手忙脚乱 là luống cuống tay chân; 东张西望 (bài 17) là nhìn quanh; 迫不及待 là nôn nóng — đều không hợp ý "dẫn khán giả ra an toàn".'},
+  {wrong:'他先在国内读完了硕士，____又到国外读了博士。',opts:['进而','从而','反而','然而'],ans:0,exp:'Bước sau tiến thêm, cao hơn bước trước → 进而. 从而 nêu KẾT QUẢ (从而提高了效率); 反而 là trái lại; 然而 là thế nhưng.'},
+  {wrong:'到了学校，我先把书包放好，____去操场跑步。',opts:['然后','进而','从而','何况'],ans:0,exp:'Hai việc nối tiếp bình thường → 然后. 进而 chỉ dùng khi bước sau là sự phát triển, nâng cao từ bước trước — cất cặp rồi đi chạy không phải vậy.'},
+  {wrong:'多亏同学们帮忙，这次活动才____顺利举行。',opts:['得以','难以','以便','可见'],ans:0,exp:'Nhờ điều kiện nào đó mới có thể… → (才) 得以 + V (văn viết). 难以 là khó mà — trái nghĩa; 以便 là để (đứng đầu vế sau nêu mục đích); 可见 là đủ thấy.'},
+  {wrong:'医生不让他吃辣的，他____要吃，结果又住院了。',opts:['偏偏','果然','难怪','何必'],ans:0,exp:'Cố tình làm ngược lời khuyên → 偏偏要 + V (cách dùng ①). 果然 là quả nhiên; 难怪 là thảo nào; 何必 là cần gì phải.'},
+  {wrong:'我带伞的时候从来不下雨，____今天没带，下起了大雨。',opts:['偏偏','幸亏','果然','反正'],ans:0,exp:'Sự việc trái mong muốn, trớ trêu → 偏偏 (cách dùng ②). 幸亏 là may mà — ngược nghĩa; 果然 là quả nhiên (không có dự đoán trước); 反正 là dù sao.'},
+  {wrong:'平时总迟到的小王今天第一个到了办公室，大家都很____。',opts:['诧异','羡慕','委屈','骄傲'],ans:0,exp:'Ngạc nhiên vì điều trái thường lệ → 诧异 (văn viết hơn 惊讶). 羡慕 là ngưỡng mộ; 委屈 là tủi thân; 骄傲 là tự hào.'},
+  {wrong:'这里夏天热得让人难以____，很多人都去海边躲热。',opts:['忍受','享受','感受','接受'],ans:0,exp:'难以忍受 = khó mà chịu nổi (điều khổ sở). 享受 là hưởng thụ — trái nghĩa; 感受 là cảm nhận; 接受 là tiếp nhận (ý kiến, quà).'},
+  {wrong:'经过一年的刻苦训练，他终于____了自己，跑出了最好的成绩。',opts:['超越','越过','穿越','经过'],ans:0,exp:'超越自己 / 超越自我 = vượt qua chính mình (tân ngữ trừu tượng). 越过 là vượt qua chướng ngại cụ thể (越过高山); 穿越 là xuyên qua; 经过 là đi qua.'},
+  {wrong:'这家酒店装修得非常____，像宫殿一样。',opts:['华丽','广阔','古怪','迷惑'],ans:0,exp:'Trang trí lộng lẫy, xa hoa → 华丽. 广阔 tả không gian rộng (草地, 视野); 古怪 là quái lạ; 迷惑 là mơ hồ, khó hiểu.'},
+  {wrong:'他不想一辈子留在小地方，想到更____的天地里去闯一闯。',opts:['广阔','广泛','宽大','广大'],ans:0,exp:'广阔的天地 = khoảng trời rộng lớn (môi trường để phát triển). 广泛 là rộng rãi, phổ biến (兴趣广泛); 宽大 tả quần áo rộng thùng thình; 广大 đi với 人民 / 地区.'}
 ];
 
 // ══════════════════════════════════════════
-// DỊCH — câu ghép, ôn từ HSK 6 bài 1–18 và HSK 4–5
+// DỊCH Việt → Trung — câu mới, dùng từ của bài + ôn ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Cậu ấy xưa nay coi trọng việc học, vậy mà lần này lại để quên bài tập tiếng Anh ở nhà.',zh:'他历来重视学习，可这次偏偏把英语作业忘在了家里。',py:'Tā lìlái zhòngshì xuéxí, kě zhè cì piānpiān bǎ Yīngyǔ zuòyè wàng zàile jiāli.',goiY:['历来','可……偏偏……'],giai:'历来 + động từ hai âm tiết trong câu khẳng định; 偏偏 = trớ trêu lại (sự thật trái với lẽ thường) — nhấn "đúng lần này lại …".'},
-  {vi:'Chúng ta nhất thiết phải làm rõ sự thật của vấn đề trước, rồi từ đó mới đưa ra phương án giải quyết.',zh:'我们务必先查明问题的真相，进而提出解决的方案。',py:'Wǒmen wùbì xiān chámíng wèntí de zhēnxiàng, jìn\'ér tíchū jiějué de fāng\'àn.',goiY:['务必','先……进而……','真相'],giai:'先……，进而……: bước sau xây trên bước trước; 务必 (bài 12) = nhất thiết phải; 查明真相 = làm rõ sự thật.'},
-  {vi:'Nhờ sự giúp đỡ của thầy cô, ước mơ lặn xuống khám phá biển sâu của cô ấy cuối cùng cũng được thực hiện.',zh:'在老师们的帮助下，她潜水探索深海的梦想终于得以实现。',py:'Zài lǎoshīmen de bāngzhù xià, tā qiánshuǐ tànsuǒ shēnhǎi de mèngxiǎng zhōngyú déyǐ shíxiàn.',goiY:['在……下','潜水','探索','得以'],giai:'在……的帮助下 nêu điều kiện; 得以 + V (实现) = nhờ điều kiện đó mà được …; không dịch "được" bằng 被.'},
-  {vi:'Ai cũng biết thức khuya có hại cho sức khoẻ, vậy mà không ít học sinh cứ nhất định chơi điện thoại đến nửa đêm, thật là quá không biết quý trọng cơ thể.',zh:'众所周知，熬夜有害健康，可是不少学生偏偏要玩手机玩到半夜，未免太不爱惜身体了。',py:'Zhòngsuǒ-zhōuzhī, áoyè yǒuhài jiànkāng, kěshì bù shǎo xuésheng piānpiān yào wán shǒujī wán dào bànyè, wèimiǎn tài bú àixī shēntǐ le.',goiY:['众所周知','可是……偏偏要……','未免'],giai:'偏偏要 = cố ý làm ngược (cách dùng ①); 未免 (bài 4) = thật là hơi … (nhận xét phê bình nhẹ nhàng).'},
-  {vi:'Chỉ cần nhiệt độ vượt quá 40 độ C, vi khuẩn trong thức ăn sẽ sinh sôi rất nhanh, vì vậy đồ ăn thừa phải cho vào tủ lạnh, kẻo bị hỏng.',zh:'只要气温超过40摄氏度，食物里的细菌就会迅速繁殖，所以剩菜要放进冰箱，免得变质。',py:'Zhǐyào qìwēn chāoguò sìshí shèshìdù, shíwù li de xìjūn jiù huì xùnsù fánzhí, suǒyǐ shèngcài yào fàngjìn bīngxiāng, miǎnde biànzhì.',goiY:['只要……就……','摄氏度','繁殖','免得'],giai:'只要……就…… = điều kiện đủ; 免得 (bài 14) đứng đầu vế cuối nêu điều muốn tránh; 超过 + con số (không dùng 超越).'},
-  {vi:'Thay vì cả ngày ở lì trong nhà chơi game, chi bằng bước ra ngoài khám phá thế giới bao la này.',zh:'与其整天待在家里玩游戏，不如走出去探索这个广阔的世界。',py:'Yǔqí zhěngtiān dāi zài jiāli wán yóuxì, bùrú zǒu chūqù tànsuǒ zhège guǎngkuò de shìjiè.',goiY:['与其……不如……','探索','广阔'],giai:'与其 A，不如 B: bỏ A chọn B (cấu trúc trong bài khoá); "bao la" = 广阔, không dùng 宽敞 (chỉ nhà cửa rộng rãi).'},
-  {vi:'Dù thất bại bao nhiêu lần, cậu cũng đừng mất niềm tin, cùng lắm thì làm lại từ đầu, biết đâu lần sau sẽ vượt qua được chính mình.',zh:'不管失败多少次，你都不要丧失信心，大不了从头再来，说不定下次就能超越自我。',py:'Bùguǎn shībài duōshao cì, nǐ dōu bú yào sàngshī xìnxīn, dàbuliǎo cóngtóu zài lái, shuōbudìng xià cì jiù néng chāoyuè zìwǒ.',goiY:['不管……都……','丧失','大不了','超越'],giai:'不管……都…… = bất kể … đều; 大不了 (bài 6) = cùng lắm thì; 超越自我 = vượt qua chính mình (không nói 超过自我).'},
-  {vi:'Thấy cả lớp đều kinh ngạc nhìn mình, cậu ấy lập tức vỡ lẽ ra, hoá ra mình đã mặc ngược áo.',zh:'看到全班同学都诧异地看着自己，他顿时恍然大悟，原来自己把衣服穿反了。',py:'Kàndào quán bān tóngxué dōu chàyì de kànzhe zìjǐ, tā dùnshí huǎngrán-dàwù, yuánlái zìjǐ bǎ yīfu chuānfǎn le.',goiY:['诧异地','顿时','恍然大悟','原来……'],giai:'顿时 (bài 2) + 恍然大悟 = lập tức vỡ lẽ; 原来 dẫn ra điều vừa hiểu ra; 诧异地 + V làm trạng ngữ, nhớ 地.'},
-  {vi:'Được biết, nhờ các tình nguyện viên kiên trì làm sạch bãi biển suốt ba năm, loài rùa biển quý hiếm này mới có thể sinh sôi trở lại ở đây.',zh:'据悉，由于志愿者们坚持清理海滩三年，这种珍稀的海龟才得以在这里重新繁殖。',py:'Jùxī, yóuyú zhìyuànzhěmen jiānchí qīnglǐ hǎitān sān nián, zhè zhǒng zhēnxī de hǎiguī cái déyǐ zài zhèli chóngxīn fánzhí.',goiY:['据悉','由于……才……','得以','繁殖'],giai:'据悉 đứng đầu câu (văn phong tin tức); 由于……才得以…… = nhờ … mới có thể …; 得以 đứng ngay trước cụm động từ (在这里重新繁殖).'},
-  {vi:'Bố mẹ vốn cho rằng làm nghiên cứu khoa học chẳng có tiền đồ gì, nhưng sau khi tham quan căn cứ nghiên cứu biển sâu, họ không những không phản đối nữa, mà ngược lại còn ủng hộ tôi theo đuổi chân lý.',zh:'父母本来认定搞科研没什么前途，可是参观了深海研究基地以后，他们不但不再反对，反而支持我去追求真理。',py:'Fùmǔ běnlái rèndìng gǎo kēyán méi shénme qiántú, kěshì cānguānle shēnhǎi yánjiū jīdì yǐhòu, tāmen búdàn bú zài fǎnduì, fǎn\'ér zhīchí wǒ qù zhuīqiú zhēnlǐ.',goiY:['认定','不但不……反而……','基地','真理'],giai:'不但不……反而……: vế sau trái hẳn dự đoán; 认定 = khăng khăng cho rằng (chắc chắn hơn 认为); 追求真理 = theo đuổi chân lý.'}
+  {vi:'Chúng ta phải tìm hiểu nhu cầu của khách hàng trước, rồi từ đó mới thiết kế ra sản phẩm phù hợp.',zh:'我们要先了解顾客的需要，进而设计出合适的产品。',py:'Wǒmen yào xiān liǎojiě gùkè de xūyào, jìn\'ér shèjì chū héshì de chǎnpǐn.',goiY:['先……，进而……','了解','设计'],giai:'先 A，进而 B: B là bước phát triển dựa trên A; "rồi từ đó" không dịch là 然后 khi muốn nhấn bước tiến thêm.'},
+  {vi:'Nhờ mọi người góp tiền góp sức, ngôi trường cũ của làng mới được sửa sang lại.',zh:'多亏大家出钱出力，村里的老学校才得以翻修。',py:'Duōkuī dàjiā chū qián chū lì, cūn li de lǎo xuéxiào cái déyǐ fānxiū.',goiY:['多亏……才……','得以','出钱出力'],giai:'多亏 + điều kiện，才得以 + V: nhờ có… mới có thể…; 得以 đứng trước động từ hai âm tiết (翻修).'},
+  {vi:'Bố mẹ muốn cô ấy làm bác sĩ, nhưng cô ấy cứ nhất định đòi học thiết kế thời trang.',zh:'父母想让她当医生，她却偏偏要学服装设计。',py:'Fùmǔ xiǎng ràng tā dāng yīshēng, tā què piānpiān yào xué fúzhuāng shèjì.',goiY:['想让……','偏偏要……'],giai:'偏偏要 + V = cố tình làm trái ý người khác (cách dùng ①); 却 đứng sau chủ ngữ 她.'},
+  {vi:'Đã hẹn nhau cuối tuần đi biển, không ngờ đúng hôm đó trời lại đổ mưa to.',zh:'说好了周末去海边，不料那天偏偏下起了大雨。',py:'Shuōhǎole zhōumò qù hǎibiān, búliào nà tiān piānpiān xiàqǐle dàyǔ.',goiY:['说好了','不料','偏偏'],giai:'不料 (ôn bài 4) = không ngờ; 偏偏 (cách dùng ②) nhấn sự trớ trêu trái mong muốn.'},
+  {vi:'Học ngoại ngữ phải nói nhiều luyện nhiều, đó là đạo lý ai cũng biết, nhưng người thật sự làm được thì không nhiều.',zh:'学外语要多说多练，这个道理众所周知，可真正做到的人并不多。',py:'Xué wàiyǔ yào duō shuō duō liàn, zhège dàolǐ zhòngsuǒ-zhōuzhī, kě zhēnzhèng zuòdào de rén bìng bù duō.',goiY:['这个道理众所周知','并不多'],giai:'众所周知 có thể làm vị ngữ (这个道理众所周知); 并 + 不 nhấn mạnh phủ định một suy nghĩ thông thường.'},
+  {vi:'Đối với ông ấy, giữ chữ tín luôn là nguyên tắc quan trọng nhất trong làm ăn.',zh:'对他而言，讲信用一直是做生意最重要的准则。',py:'Duì tā ér yán, jiǎng xìnyòng yìzhí shì zuò shēngyi zuì zhòngyào de zhǔnzé.',goiY:['对……而言','讲信用','准则'],giai:'对……而言 (ôn bài 8) = đối với…; 准则 = nguyên tắc, chuẩn mực để làm theo.'}
 ];
 
-// Chiều Trung → Việt — bám ý bài khoá, nội dung khác chiều trên
+// ══════════════════════════════════════════
+// Dịch Trung → Việt — câu mới, không trùng chiều trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Tục ngữ nói vạn vật sinh trưởng nhờ mặt trời; sở dĩ nói vậy là vì thực vật không thể thiếu ánh mặt trời, còn động vật lại dựa vào thực vật để duy trì sự sống.',zh:'俗话说万物生长靠太阳，之所以这样说，是因为植物离不开阳光，而动物又靠植物维持生命。',py:'Súhuà shuō wànwù shēngzhǎng kào tàiyáng, zhīsuǒyǐ zhèyàng shuō, shì yīnwèi zhíwù lí bu kāi yángguāng, ér dòngwù yòu kào zhíwù wéichí shēngmìng.',goiY:['俗话 = tục ngữ','之所以……是因为…… = sở dĩ … là vì …','维持生命 = duy trì sự sống'],giai:'之所以……是因为…… nêu kết quả trước, nguyên nhân sau; 而 nối hai vế bổ sung — dịch "còn"; 离不开 dịch "không thể thiếu" thay vì "không rời được".'},
-  {vi:'Không có ánh mặt trời thì không có vạn vật — đây vốn là chân lý ai cũng biết, vậy mà cuộc khảo sát biển sâu lại đặt nghi vấn với nó.',zh:'没有阳光就没有万物，这本来是众所周知的真理，可深海考察却对它提出了质疑。',py:'Méiyǒu yángguāng jiù méiyǒu wànwù, zhè běnlái shì zhòngsuǒ-zhōuzhī de zhēnlǐ, kě shēnhǎi kǎochá què duì tā tíchūle zhìyí.',goiY:['众所周知 = ai cũng biết','真理 = chân lý','可……却…… = vậy mà … lại','提出了质疑 = đã đặt nghi vấn'],giai:'本来 = vốn (trước đây vẫn thế); 可……却…… tạo đối lập hai lần — dịch "vậy mà … lại" cho tự nhiên.'},
-  {vi:'Các nhà khoa học lặn xuống biển sâu không khỏi kinh ngạc: đáy biển không có ánh mặt trời và thức ăn, sao lại có nhiều sinh vật hình dạng kỳ dị đến vậy?',zh:'潜水到深海的科学家不由得感到诧异：没有阳光和食物的海底，怎么会有这么多长相古怪的生物？',py:'Qiánshuǐ dào shēnhǎi de kēxuéjiā bùyóude gǎndào chàyì: méiyǒu yángguāng hé shíwù de hǎidǐ, zěnme huì yǒu zhème duō zhǎngxiàng gǔguài de shēngwù?',goiY:['不由得 = không khỏi','诧异 = kinh ngạc','长相古怪 = hình dạng kỳ dị','怎么会……？ = sao lại …?'],giai:'不由得 (bài 2) = không kìm được mà …; dấu hai chấm dẫn nội dung của sự kinh ngạc; 怎么会……？ là câu hỏi tu từ bày tỏ ngạc nhiên.'},
-  {vi:'Từ mẫu vật xộc ra một mùi hắc, các nhà khoa học chợt vỡ lẽ, rồi từ đó đưa ra một giả thuyết táo bạo.',zh:'样品中冲出一股刺鼻的气味，科学家恍然大悟，进而提出了一个大胆的假说。',py:'Yàngpǐn zhōng chōngchū yì gǔ cìbí de qìwèi, kēxuéjiā huǎngrán-dàwù, jìn\'ér tíchūle yí ge dàdǎn de jiǎshuō.',goiY:['刺鼻 = hắc mũi','恍然大悟 = chợt vỡ lẽ','进而 = rồi từ đó'],giai:'进而 nối bước tiếp theo xây trên vế trước — dịch "rồi từ đó / tiến tới", không dịch đơn giản là "và".'},
-  {vi:'Nước biển thấm xuống lòng đất qua những khe nứt do vỏ Trái Đất tách ra; dưới tác dụng của nhiệt độ cao và áp suất cao, muối sunfat đã chuyển hoá thành hydro sunfua.',zh:'海水从地壳分裂而成的裂缝渗透到地下，在高温和高压的作用下，硫酸盐转化成了硫化氢。',py:'Hǎishuǐ cóng dìqiào fēnliè ér chéng de lièfèng shèntòu dào dìxià, zài gāowēn hé gāoyā de zuòyòng xià, liúsuānyán zhuǎnhuà chéngle liúhuàqīng.',goiY:['分裂而成 = tách ra mà thành','渗透 = thấm','在……的作用下 = dưới tác dụng của …'],giai:'Định ngữ dài 地壳分裂而成的 dịch ra sau danh từ: "khe nứt do vỏ Trái Đất tách ra"; 地壳 đọc dìqiào.'},
-  {vi:'Một số vi khuẩn nhờ hydro sunfua hấp thụ nhiệt lượng của suối nước nóng mà sinh sôi được, còn động vật nhỏ lại duy trì sự sống nhờ lọc những vi khuẩn này.',zh:'某些细菌借硫化氢吸收温泉的热量得以繁殖，而小动物又靠过滤这些细菌维持生命。',py:'Mǒuxiē xìjūn jiè liúhuàqīng xīshōu wēnquán de rèliàng déyǐ fánzhí, ér xiǎo dòngwù yòu kào guòlǜ zhèxiē xìjūn wéichí shēngmìng.',goiY:['借 = nhờ vào','得以繁殖 = nhờ đó mà sinh sôi được','过滤 = lọc','维持 = duy trì'],giai:'得以 không dịch thành "được phép"; dịch "(nhờ đó) mà … được"; 而……又…… = còn … lại … (nối hai mắt xích của chuỗi thức ăn).'},
-  {vi:'Phát hiện này gợi mở cho con người: thay vì khư khư giữ định nghĩa cũ, chi bằng giải phóng tư tưởng, vươn ra ngoài Trái Đất để khám phá sự sống.',zh:'这个发现启发人们，与其固守旧的定义，不如解放思想，迈向地球以外去探索生命。',py:'Zhège fāxiàn qǐfā rénmen, yǔqí gùshǒu jiù de dìngyì, bùrú jiěfàng sīxiǎng, màixiàng dìqiú yǐwài qù tànsuǒ shēngmìng.',goiY:['与其……不如…… = thay vì … chi bằng …','定义 = định nghĩa','解放思想 = giải phóng tư tưởng','迈向 = vươn tới'],giai:'与其 A，不如 B: người nói chọn B; 固守 = khư khư giữ; 迈向……去 + V = tiến tới … để ….'},
-  {vi:'Được biết, loại vi khuẩn này chịu được nhiệt độ cao tới 250 độ C; điều đó đủ cho thấy khả năng của nó vượt xa trí tưởng tượng của chúng ta.',zh:'据悉，这种细菌能忍受250摄氏度的高温，这足以说明其本领远远超越了我们的想象。',py:'Jùxī, zhè zhǒng xìjūn néng rěnshòu èrbǎi wǔshí shèshìdù de gāowēn, zhè zúyǐ shuōmíng qí běnlǐng yuǎnyuǎn chāoyuèle wǒmen de xiǎngxiàng.',goiY:['据悉 = được biết','忍受 = chịu đựng','足以 = đủ để','超越 = vượt'],giai:'足以说明 (bài 16) = đủ để cho thấy; 其 = của nó (văn viết); 远远超越 dịch "vượt xa".'},
-  {vi:'Trên 65℃ đa số vi khuẩn đều chết, vậy tại sao riêng loại vi khuẩn này lại sống sót được? Sự thật trong đó đến nay vẫn khó mà giải thích.',zh:'高于65℃时，多数细菌都会丧失生命，为什么偏偏这种细菌能存活下来？其中的真相至今仍难以解释。',py:'Gāoyú liùshíwǔ shèshìdù shí, duōshù xìjūn dōu huì sàngshī shēngmìng, wèi shénme piānpiān zhè zhǒng xìjūn néng cúnhuó xiàlái? Qízhōng de zhēnxiàng zhìjīn réng nányǐ jiěshì.',goiY:['丧失生命 = mất mạng, chết','偏偏 = riêng … lại','真相 = sự thật','难以 = khó mà'],giai:'为什么偏偏…… = sao riêng … lại … (trái lẽ thường); 丧失生命 dịch gọn "chết"; 难以 (bài 14) + V.'},
-  {vi:'Bất kể loài người nghĩ gì, những sinh vật biển sâu này vẫn giữ đội hình hùng hậu và lộng lẫy, sống ngày tháng một cách nề nếp, phô bày nét đặc sắc riêng.',zh:'不管人类怎么想，这些深海生物依然保持着强大而华丽的阵容，有条不紊地过着日子，展现着独特的精彩。',py:'Bùguǎn rénlèi zěnme xiǎng, zhèxiē shēnhǎi shēngwù yīrán bǎochízhe qiángdà ér huálì de zhènróng, yǒutiáo-bùwěn de guòzhe rìzi, zhǎnxiànzhe dútè de jīngcǎi.',goiY:['不管……依然…… = bất kể … vẫn …','华丽 = lộng lẫy','阵容 = đội hình','有条不紊 = nề nếp','展现 = phô bày'],giai:'Ba vế song song với 着 (保持着, 过着, 展现着) — tiếng Việt giữ nhịp liệt kê; 强大而华丽 dịch "hùng hậu và lộng lẫy".'}
+  {vi:'Loại vi khuẩn này có thể sống trong nước 80 độ C, điều đó khiến các nhà khoa học rất khó hiểu.',zh:'这种细菌能在八十摄氏度的水里生存，这让科学家们非常迷惑。',py:'Zhè zhǒng xìjūn néng zài bāshí shèshìdù de shuǐ li shēngcún, zhè ràng kēxuéjiāmen fēicháng míhuò.',goiY:['细菌 = vi khuẩn','摄氏度 = độ C','迷惑 = khó hiểu, bối rối'],giai:'迷惑 ở đây là tính từ (cảm thấy khó hiểu), không dịch "mê hoặc".'},
+  {vi:'Được biết, căn cứ nghiên cứu khoa học này năm sau sẽ mở cửa cho mọi người tham quan.',zh:'据悉，这个科学研究基地明年将对外开放。',py:'Jùxī, zhège kēxué yánjiū jīdì míngnián jiāng duìwài kāifàng.',goiY:['据悉 = được biết','基地 = căn cứ','对外开放 = mở cửa đón khách'],giai:'据悉 là từ báo chí; 将 (văn viết) = sẽ.'},
+  {vi:'Vị nhà khoa học già ấy tính tình hơi lập dị, nhưng hễ nói đến biển là như biến thành một người khác.',zh:'那位老科学家脾气有点儿古怪，可是一谈起海洋，就像变了一个人。',py:'Nà wèi lǎo kēxuéjiā píqi yǒudiǎnr gǔguài, kěshì yì tánqǐ hǎiyáng, jiù xiàng biànle yí ge rén.',goiY:['古怪 = lập dị, kỳ quặc','一……就…… = hễ… là…'],giai:'脾气古怪 dịch "tính tình lập dị / kỳ quặc"; 变了一个人 = như biến thành người khác.'},
+  {vi:'Rất nhiều định nghĩa cũ đã bị những phát hiện mới lật đổ, vì vậy làm nghiên cứu nhất định phải giải phóng tư tưởng.',zh:'很多旧的定义都被新的发现推翻了，所以做研究一定要解放思想。',py:'Hěn duō jiù de dìngyì dōu bèi xīn de fāxiàn tuīfān le, suǒyǐ zuò yánjiū yídìng yào jiěfàng sīxiǎng.',goiY:['定义 = định nghĩa','推翻 = lật đổ','解放思想 = giải phóng tư tưởng'],giai:'Câu bị động 被……推翻了; 解放思想 = dám nghĩ khác, không bị lối mòn trói buộc.'},
+  {vi:'Mùa hè thức ăn dễ hỏng là vì ở nhiệt độ cao vi khuẩn sinh sôi đặc biệt nhanh.',zh:'夏天食物容易坏，是因为细菌在高温下繁殖得特别快。',py:'Xiàtiān shíwù róngyì huài, shì yīnwèi xìjūn zài gāowēn xià fánzhí de tèbié kuài.',goiY:['繁殖 = sinh sôi','在高温下 = ở nhiệt độ cao'],giai:'Khung A，是因为 B = A là vì B; V得 + mức độ (繁殖得特别快).'}
 ];
 
 
@@ -1662,8 +1599,8 @@ var writingData = {
     'Có viết bằng lời của mình, bỏ bớt chi tiết phụ (tên từng loài, chú thích hoá học) thay vì chép nguyên bài khoá không? Các con số 40℃, 65℃, 250℃ có chính xác không?'
   ],
   model:{
-    zh:'俗话说万物生长靠太阳。人们之所以这样说，是因为历来植物生长离不开阳光，而动物又靠植物维持生命。没有阳光，就没有万物，这是众所周知的真理。然而，科学家们的深海考察却对它提出了质疑。潜水到几千米深海底的科学家发现了一个繁殖生命的场所，那里的生物长相古怪，种类繁多。科学家深感诧异：在没有阳光和食物、压力又很大的海底，怎么会有这么多生物呢？科学家从带回的样品中闻到了刺鼻的硫化氢气味，他们恍然大悟，进而提出了一个假说：当海水从地壳的裂缝渗透到地下时，在高温和高压的作用下，水里的硫酸盐转化成了硫化氢，某些细菌借硫化氢代谢变化，吸收温泉的热量得以繁殖。小动物靠过滤细菌维持生命，又成了大动物的食物，这样就构成了一个新的食物链。据悉，这种细菌能在250摄氏度的环境下生存。一般情况下，高于40℃，大部分植物和动物就无法成活；高于65℃，多数细菌会丧失生命。为什么偏偏这种细菌能够存活下来呢？深海里还有许多使人迷惑不解的问题：红冠蠕虫没有嘴，没有眼，仅靠身体过滤海水中的食物，它们是怎么繁殖后代的？巨蛤和白蚌的生理结构、门类归属又是怎样的？不管人类怎么想，这些深海生物依然有条不紊地生活着。这片神秘而广阔的深海世界，也许能成为奇妙的科学研究基地。',
-    py:'Súhuà shuō wànwù shēngzhǎng kào tàiyáng. Rénmen zhīsuǒyǐ zhèyàng shuō, shì yīnwèi lìlái zhíwù shēngzhǎng lí bu kāi yángguāng, ér dòngwù yòu kào zhíwù wéichí shēngmìng. Méiyǒu yángguāng, jiù méiyǒu wànwù, zhè shì zhòngsuǒ-zhōuzhī de zhēnlǐ. Rán\'ér, kēxuéjiāmen de shēnhǎi kǎochá què duì tā tíchūle zhìyí. Qiánshuǐ dào jǐ qiān mǐ shēn hǎidǐ de kēxuéjiā fāxiànle yí ge fánzhí shēngmìng de chǎngsuǒ, nàli de shēngwù zhǎngxiàng gǔguài, zhǒnglèi fánduō. Kēxuéjiā shēn gǎn chàyì: zài méiyǒu yángguāng hé shíwù, yālì yòu hěn dà de hǎidǐ, zěnme huì yǒu zhème duō shēngwù ne? Kēxuéjiā cóng dàihuí de yàngpǐn zhōng wéndàole cìbí de liúhuàqīng qìwèi, tāmen huǎngrán-dàwù, jìn\'ér tíchūle yí ge jiǎshuō: dāng hǎishuǐ cóng dìqiào de lièfèng shèntòu dào dìxià shí, zài gāowēn hé gāoyā de zuòyòng xià, shuǐ li de liúsuānyán zhuǎnhuà chéngle liúhuàqīng, mǒuxiē xìjūn jiè liúhuàqīng dàixiè biànhuà, xīshōu wēnquán de rèliàng déyǐ fánzhí. Xiǎo dòngwù kào guòlǜ xìjūn wéichí shēngmìng, yòu chéngle dà dòngwù de shíwù, zhèyàng jiù gòuchéngle yí ge xīn de shíwùliàn. Jùxī, zhè zhǒng xìjūn néng zài èrbǎi wǔshí shèshìdù de huánjìng xià shēngcún. Yìbān qíngkuàng xià, gāoyú sìshí shèshìdù, dà bùfen zhíwù hé dòngwù jiù wúfǎ chénghuó; gāoyú liùshíwǔ shèshìdù, duōshù xìjūn huì sàngshī shēngmìng. Wèi shénme piānpiān zhè zhǒng xìjūn nénggòu cúnhuó xiàlái ne? Shēnhǎi li hái yǒu xǔduō shǐ rén míhuò bù jiě de wèntí: hóngguān rúchóng méiyǒu zuǐ, méiyǒu yǎn, jǐn kào shēntǐ guòlǜ hǎishuǐ zhōng de shíwù, tāmen shì zěnme fánzhí hòudài de? Jùgé hé báibàng de shēnglǐ jiégòu, ménlèi guīshǔ yòu shì zěnyàng de? Bùguǎn rénlèi zěnme xiǎng, zhèxiē shēnhǎi shēngwù yīrán yǒutiáo-bùwěn de shēnghuózhe. Zhè piàn shénmì ér guǎngkuò de shēnhǎi shìjiè, yěxǔ néng chéngwéi qímiào de kēxué yánjiū jīdì.',
+    zh:'俗话说万物生长靠太阳。人们之所以这样说，是因为历来植物生长离不开阳光，而动物又靠植物维持生命。没有阳光，就没有万物，这是众所周知的真理。然而，科学家们的深海考察却对它提出了质疑。潜水到几千米深海底的科学家发现了一个繁殖生命的场所，那里的生物长相古怪，种类很多。科学家深感诧异：在没有阳光和食物、压力又很大的海底，怎么会有这么多生物呢？科学家从带回的样品中闻到了刺鼻的硫化氢气味，他们恍然大悟，进而提出了一个假说：当海水从地壳的裂缝渗透到地下时，在高温和高压的作用下，水里的硫酸盐转化成了硫化氢，某些细菌借硫化氢代谢变化，吸收温泉的热量得以繁殖。小动物靠过滤细菌维持生命，又成了大动物的食物，这样就构成了一个新的食物链。据悉，这种细菌能在250摄氏度的环境下生存。一般情况下，高于40℃，大部分植物和动物就无法成活；高于65℃，多数细菌会丧失生命。为什么偏偏这种细菌能够存活下来呢？深海里还有许多使人迷惑不解的问题：红冠蠕虫没有嘴，没有眼，仅靠身体过滤海水中的食物，它们是怎么繁殖后代的？巨蛤和白蚌的生理结构、门类归属又是怎样的？不管人类怎么想，这些深海生物依然有条不紊地生活着。这片神秘而广阔的深海世界，也许能成为奇妙的科学研究基地。',
+    py:'Súhuà shuō wànwù shēngzhǎng kào tàiyáng. Rénmen zhīsuǒyǐ zhèyàng shuō, shì yīnwèi lìlái zhíwù shēngzhǎng lí bu kāi yángguāng, ér dòngwù yòu kào zhíwù wéichí shēngmìng. Méiyǒu yángguāng, jiù méiyǒu wànwù, zhè shì zhòngsuǒ-zhōuzhī de zhēnlǐ. Rán\'ér, kēxuéjiāmen de shēnhǎi kǎochá què duì tā tíchūle zhìyí. Qiánshuǐ dào jǐ qiān mǐ shēn hǎidǐ de kēxuéjiā fāxiànle yí ge fánzhí shēngmìng de chǎngsuǒ, nàli de shēngwù zhǎngxiàng gǔguài, zhǒnglèi hěn duō. Kēxuéjiā shēn gǎn chàyì: zài méiyǒu yángguāng hé shíwù, yālì yòu hěn dà de hǎidǐ, zěnme huì yǒu zhème duō shēngwù ne? Kēxuéjiā cóng dàihuí de yàngpǐn zhōng wéndàole cìbí de liúhuàqīng qìwèi, tāmen huǎngrán-dàwù, jìn\'ér tíchūle yí ge jiǎshuō: dāng hǎishuǐ cóng dìqiào de lièfèng shèntòu dào dìxià shí, zài gāowēn hé gāoyā de zuòyòng xià, shuǐ li de liúsuānyán zhuǎnhuà chéngle liúhuàqīng, mǒuxiē xìjūn jiè liúhuàqīng dàixiè biànhuà, xīshōu wēnquán de rèliàng déyǐ fánzhí. Xiǎo dòngwù kào guòlǜ xìjūn wéichí shēngmìng, yòu chéngle dà dòngwù de shíwù, zhèyàng jiù gòuchéngle yí ge xīn de shíwùliàn. Jùxī, zhè zhǒng xìjūn néng zài èrbǎi wǔshí shèshìdù de huánjìng xià shēngcún. Yìbān qíngkuàng xià, gāoyú sìshí shèshìdù, dà bùfen zhíwù hé dòngwù jiù wúfǎ chénghuó; gāoyú liùshíwǔ shèshìdù, duōshù xìjūn huì sàngshī shēngmìng. Wèi shénme piānpiān zhè zhǒng xìjūn nénggòu cúnhuó xiàlái ne? Shēnhǎi li hái yǒu xǔduō shǐ rén míhuò bù jiě de wèntí: hóngguān rúchóng méiyǒu zuǐ, méiyǒu yǎn, jǐn kào shēntǐ guòlǜ hǎishuǐ zhōng de shíwù, tāmen shì zěnme fánzhí hòudài de? Jùgé hé báibàng de shēnglǐ jiégòu, ménlèi guīshǔ yòu shì zěnyàng de? Bùguǎn rénlèi zěnme xiǎng, zhèxiē shēnhǎi shēngwù yīrán yǒutiáo-bùwěn de shēnghuózhe. Zhè piàn shénmì ér guǎngkuò de shēnhǎi shìjiè, yěxǔ néng chéngwéi qímiào de kēxué yánjiū jīdì.',
     vn:'Tục ngữ có câu: vạn vật sinh trưởng nhờ mặt trời. Người ta sở dĩ nói vậy là vì xưa nay thực vật sinh trưởng không thể thiếu ánh mặt trời, còn động vật lại dựa vào thực vật để duy trì sự sống. Không có ánh mặt trời thì không có vạn vật — đây là chân lý ai cũng biết. Thế nhưng, cuộc khảo sát biển sâu của các nhà khoa học lại đặt nghi vấn với chân lý ấy. Các nhà khoa học lặn xuống đáy biển sâu mấy nghìn mét đã phát hiện một nơi sinh sôi sự sống; sinh vật ở đó hình dạng kỳ dị, chủng loại phong phú. Các nhà khoa học vô cùng kinh ngạc: ở đáy biển không có ánh mặt trời và thức ăn, áp suất lại rất lớn, sao lại có nhiều sinh vật như vậy? Các nhà khoa học ngửi thấy mùi hydro sunfua hắc mũi từ mẫu vật mang về; họ chợt vỡ lẽ, rồi từ đó đưa ra một giả thuyết: khi nước biển thấm xuống lòng đất qua các khe nứt của vỏ Trái Đất, dưới tác dụng của nhiệt độ cao và áp suất cao, muối sunfat trong nước chuyển hoá thành hydro sunfua; một số vi khuẩn nhờ hydro sunfua mà trao đổi chất, hấp thụ nhiệt lượng của suối nước nóng nên sinh sôi được. Động vật nhỏ duy trì sự sống nhờ lọc vi khuẩn, rồi lại trở thành thức ăn của động vật lớn, thế là hình thành một chuỗi thức ăn mới. Được biết, loại vi khuẩn này có thể sống trong môi trường 250 độ C. Thông thường, trên 40 độ C thì phần lớn thực vật và động vật không sống nổi; trên 65 độ C thì đa số vi khuẩn sẽ chết. Tại sao riêng loại vi khuẩn này lại sống sót được? Dưới biển sâu còn nhiều câu hỏi khiến người ta khó hiểu: giun ống mào đỏ không có miệng, không có mắt, chỉ dựa vào thân mình để lọc thức ăn trong nước biển, vậy chúng sinh sản bằng cách nào? Cấu tạo sinh lý và việc xếp loài của sò khổng lồ, trai trắng lại ra sao? Bất kể loài người nghĩ gì, những sinh vật biển sâu này vẫn sống một cách nề nếp. Thế giới biển sâu huyền bí và bao la này có lẽ sẽ trở thành một căn cứ nghiên cứu khoa học kỳ diệu.'
   }
 };
@@ -1672,192 +1609,143 @@ var writingData = {
 // LUYỆN NÓI — đúng bảng 练习5 của sách: 根据提示，简述课文主要内容
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Đây là bảng bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b> (dựa vào gợi ý, trình bày ngắn gọn nội dung chính của bài khoá). Mỗi câu hỏi là một dòng của bảng, cột gợi ý giữ nguyên như sách. Bấm loa nghe câu hỏi, <b>tự ghi âm câu trả lời trước</b> rồi mới mở câu mẫu. Cố dùng đúng các từ trong gợi ý.',
-  questions:[
-    {q_zh:'为什么说万物生长靠太阳？',
-     q_vn:'Vì sao nói vạn vật sinh trưởng nhờ mặt trời?',
-     hint:'①植物…… ②动物……',
-     sample:'因为历来植物生长离不开阳光，而动物又靠植物维持生命。所以没有阳光，就没有万物，这是众所周知的真理。',
-     sample_vn:'Vì xưa nay thực vật sinh trưởng không thể thiếu ánh mặt trời, còn động vật lại dựa vào thực vật để duy trì sự sống. Cho nên không có ánh mặt trời thì không có vạn vật — đây là chân lý ai cũng biết.',
-     note:'Hai ý ① ② nối bằng 而……又……; kết bằng 所以……，这是众所周知的真理.'},
-    {q_zh:'几千米深的海底有生物吗？',
-     q_vn:'Đáy biển sâu mấy nghìn mét có sinh vật không?',
-     hint:'①科学家发现……场所 ②那里的生物……',
-     sample:'有。潜水到几千米深海底的科学家发现了一个繁殖生命的场所。那里的生物长相古怪，蛤、蚌、蟹、贝壳、红冠蠕虫等等，什么都有。',
-     sample_vn:'Có. Các nhà khoa học lặn xuống đáy biển sâu mấy nghìn mét đã phát hiện một nơi sinh sôi sự sống. Sinh vật ở đó hình dạng kỳ dị: sò, trai, cua, các loài có vỏ, giun ống mào đỏ…, cái gì cũng có.',
-     note:'Trả lời thẳng 有 rồi mới dẫn chứng; liệt kê bằng dấu 、 và kết 等等，什么都有.'},
-    {q_zh:'深海的生物靠什么生存？',
-     q_vn:'Sinh vật biển sâu dựa vào đâu để sinh tồn?',
-     hint:'假说：当……时，在……作用下，……转化成了……，……借……变化，吸收……得以……',
-     sample:'科学家提出了这样的假说：当海水从地壳分裂而成的裂缝渗透到地下时，在高温和高压的作用下，水里的硫酸盐转化成了硫化氢，某些细菌借硫化氢代谢变化，吸收温泉的热量得以繁殖。小动物靠过滤细菌维持生命，大动物又吃小动物，这样就构成了一个新的食物链。',
-     sample_vn:'Các nhà khoa học đưa ra giả thuyết: khi nước biển thấm xuống lòng đất qua những khe nứt do vỏ Trái Đất tách ra, dưới tác dụng của nhiệt độ cao và áp suất cao, muối sunfat trong nước chuyển hoá thành hydro sunfua; một số vi khuẩn nhờ hydro sunfua mà trao đổi chất, hấp thụ nhiệt lượng của suối nước nóng nên sinh sôi được. Động vật nhỏ sống nhờ lọc vi khuẩn, động vật lớn lại ăn động vật nhỏ, thế là hình thành một chuỗi thức ăn mới.',
-     note:'Giữ đúng khung gợi ý; 得以 + V (điểm ngữ pháp 2); có thể thêm câu về 食物链 cho trọn ý.'},
-    {q_zh:'描述一下深海耐高温细菌忍受高温的本领。',
-     q_vn:'Hãy miêu tả khả năng chịu nhiệt của vi khuẩn chịu nhiệt ở biển sâu.',
-     hint:'①这种细菌…… ②大部分植物和动物…… ③多数细菌',
-     sample:'据悉，这种细菌忍受高温的本领远远超越了我们的想象，它们能在250摄氏度的环境下生存。一般情况下，高于40摄氏度，大部分植物和动物就无法成活；高于65摄氏度，多数细菌会丧失生命。',
-     sample_vn:'Được biết, khả năng chịu nhiệt cao của loại vi khuẩn này vượt xa trí tưởng tượng của chúng ta, chúng có thể sống trong môi trường 250 độ C. Thông thường, trên 40 độ C thì phần lớn thực vật và động vật không sống nổi; trên 65 độ C thì đa số vi khuẩn sẽ chết.',
-     note:'Nêu con số của vi khuẩn này trước, rồi so sánh với ② và ③ (dùng dấu ；); có thể kết bằng câu hỏi 为什么偏偏…….'},
-    {q_zh:'深海中的生物还有什么使人迷惑不解的问题？',
-     q_vn:'Sinh vật biển sâu còn những câu hỏi nào khiến người ta khó hiểu?',
-     hint:'①红冠蠕虫：…… ②巨蛤、白蚌：……',
-     sample:'红冠蠕虫没有嘴，没有眼，甚至没有消化系统，仅靠伸出套管顶端的身体过滤海水中的食物，它们是怎么繁殖后代的呢？还有体积庞大的巨蛤和造型奇特的白蚌，它们的生理结构、食物基础，甚至门类归属，都使人迷惑不解。',
-     sample_vn:'Giun ống mào đỏ không có miệng, không có mắt, thậm chí không có hệ tiêu hoá, chỉ dựa vào phần thân thò ra ở đầu ống để lọc thức ăn trong nước biển — vậy chúng sinh sản bằng cách nào? Còn sò khổng lồ kích thước đồ sộ và trai trắng hình dáng kỳ lạ, cấu tạo sinh lý, nguồn thức ăn, thậm chí việc chúng thuộc ngành loài nào đều khiến người ta khó hiểu.',
-     note:'Hai loài, mỗi loài một câu hỏi; dùng 甚至 để tăng tiến và kết bằng 都使人迷惑不解.'}
+  intro: 'Đây là bảng bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b> (dựa vào gợi ý, trình bày ngắn gọn nội dung chính của bài khoá). Mỗi câu hỏi là một dòng của bảng, cột gợi ý giữ nguyên như sách. Bấm loa nghe câu hỏi, <b>tự ghi âm câu trả lời trước</b> rồi mới mở câu mẫu. Cố dùng đúng các từ trong gợi ý.',
+  questions: [
+    {q_zh:'为什么说万物生长靠太阳？',q_vn:'Vì sao nói vạn vật sinh trưởng nhờ mặt trời?',hint:'①植物…… ②动物……',sample:'因为历来植物生长离不开阳光，而动物又靠植物维持生命。所以没有阳光，就没有万物，这是众所周知的真理。',sample_vn:'Vì xưa nay thực vật sinh trưởng không thể thiếu ánh mặt trời, còn động vật lại dựa vào thực vật để duy trì sự sống. Cho nên không có ánh mặt trời thì không có vạn vật — đây là chân lý ai cũng biết.',note:'Hai ý ① ② nối bằng 而……又……; kết bằng 所以……，这是众所周知的真理.'},
+    {q_zh:'几千米深的海底有生物吗？',q_vn:'Đáy biển sâu mấy nghìn mét có sinh vật không?',hint:'①科学家发现……场所 ②那里的生物……',sample:'有。潜水到几千米深海底的科学家发现了一个繁殖生命的场所。那里的生物长相古怪，贝壳、红冠蠕虫等等，什么都有。',sample_vn:'Có. Các nhà khoa học lặn xuống đáy biển sâu mấy nghìn mét đã phát hiện một nơi sinh sôi sự sống. Sinh vật ở đó hình dạng kỳ dị: các loài có vỏ, giun ống mào đỏ…, cái gì cũng có.',note:'Trả lời thẳng 有 rồi mới dẫn chứng; liệt kê bằng dấu 、 và kết 等等，什么都有.'},
+    {q_zh:'深海的生物靠什么生存？',q_vn:'Sinh vật biển sâu dựa vào đâu để sinh tồn?',hint:'假说：当……时，在……作用下，……转化成了……，……借……变化，吸收……得以……',sample:'科学家提出了这样的假说：当海水从地壳分裂而成的裂缝渗透到地下时，在高温和高压的作用下，水里的硫酸盐转化成了硫化氢，某些细菌借硫化氢代谢变化，吸收温泉的热量得以繁殖。小动物靠过滤细菌维持生命，大动物又吃小动物，这样就构成了一个新的食物链。',sample_vn:'Các nhà khoa học đưa ra giả thuyết: khi nước biển thấm xuống lòng đất qua những khe nứt do vỏ Trái Đất tách ra, dưới tác dụng của nhiệt độ cao và áp suất cao, muối sunfat trong nước chuyển hoá thành hydro sunfua; một số vi khuẩn nhờ hydro sunfua mà trao đổi chất, hấp thụ nhiệt lượng của suối nước nóng nên sinh sôi được. Động vật nhỏ sống nhờ lọc vi khuẩn, động vật lớn lại ăn động vật nhỏ, thế là hình thành một chuỗi thức ăn mới.',note:'Giữ đúng khung gợi ý; 得以 + V (điểm ngữ pháp 2); có thể thêm câu về 食物链 cho trọn ý.'},
+    {q_zh:'描述一下深海耐高温细菌忍受高温的本领。',q_vn:'Hãy miêu tả khả năng chịu nhiệt của vi khuẩn chịu nhiệt ở biển sâu.',hint:'①这种细菌…… ②大部分植物和动物…… ③多数细菌',sample:'据悉，这种细菌忍受高温的本领远远超越了我们的想象，它们能在250摄氏度的环境下生存。一般情况下，高于40摄氏度，大部分植物和动物就无法成活；高于65摄氏度，多数细菌会丧失生命。',sample_vn:'Được biết, khả năng chịu nhiệt cao của loại vi khuẩn này vượt xa trí tưởng tượng của chúng ta, chúng có thể sống trong môi trường 250 độ C. Thông thường, trên 40 độ C thì phần lớn thực vật và động vật không sống nổi; trên 65 độ C thì đa số vi khuẩn sẽ chết.',note:'Nêu con số của vi khuẩn này trước, rồi so sánh với ② và ③ (dùng dấu ；); có thể kết bằng câu hỏi 为什么偏偏…….'},
+    {q_zh:'深海中的生物还有什么使人迷惑不解的问题？',q_vn:'Sinh vật biển sâu còn những câu hỏi nào khiến người ta khó hiểu?',hint:'①红冠蠕虫：…… ②巨蛤、白蚌：……',sample:'红冠蠕虫没有嘴，没有眼，甚至没有消化系统，仅靠伸出套管顶端的身体过滤海水中的食物，它们是怎么繁殖后代的呢？还有体积庞大的巨蛤和造型奇特的白蚌，它们的生理结构、食物基础，甚至门类归属，都使人迷惑不解。',sample_vn:'Giun ống mào đỏ không có miệng, không có mắt, thậm chí không có hệ tiêu hoá, chỉ dựa vào phần thân thò ra ở đầu ống để lọc thức ăn trong nước biển — vậy chúng sinh sản bằng cách nào? Còn sò khổng lồ kích thước đồ sộ và trai trắng hình dáng kỳ lạ, cấu tạo sinh lý, nguồn thức ăn, thậm chí việc chúng thuộc ngành loài nào đều khiến người ta khó hiểu.',note:'Hai loài, mỗi loài một câu hỏi; dùng 甚至 để tăng tiến và kết bằng 都使人迷惑不解.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — 听力 (sách HSK 6 không có sách bài tập nghe)
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — câu tự soạn (sách HSK 6 không có sách bài tập nghe), mỗi câu một tình huống mới
+// ══════════════════════════════════════════
 var listenExamData = {
-  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. ' +
-         'Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
-  source: 'Soạn theo dạng đề HSK 6 · chủ đề bài 19',
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 19',
   items: [
-    {n:1,
-     lines:[{sp:'女',zh:'你暑假去海南玩得怎么样？'},
-            {sp:'男',zh:'别提多开心了！我第一次学潜水，在海底看到了好多五颜六色的鱼，还捡了一大袋贝壳。'}],
-     q:'男的暑假做了什么？',qvn:'Kỳ nghỉ hè người đàn ông đã làm gì?',
-     opts:['在海南学了潜水','在家里养鱼','去北方看雪','在海边卖贝壳'],ans:0,
-     why:'我第一次学潜水 → học lặn ở Hải Nam. Anh ấy nhặt vỏ sò (捡贝壳) chứ không bán.',
-     words:['潜水','贝壳']},
-
-    {n:2,
-     lines:[{sp:'男',zh:'冰箱里怎么有一股刺鼻的气味？'},
-            {sp:'女',zh:'可能是那盒鸡蛋坏了。夏天气温高，细菌繁殖得快，剩菜剩饭最好早点儿吃完。'}],
-     q:'冰箱里为什么有难闻的气味？',qvn:'Vì sao trong tủ lạnh có mùi khó ngửi?',
-     opts:['冰箱坏了','鸡蛋可能坏了','刚放了鲜花','有人放了香水'],ans:1,
-     why:'可能是那盒鸡蛋坏了 → trứng có thể đã hỏng; 细菌繁殖得快 là lý do đồ ăn dễ hỏng vào mùa hè.',
-     words:['刺','气味','细菌','繁殖']},
-
-    {n:3,
-     lines:[{sp:'女',zh:'你怎么突然对海洋生物这么感兴趣了？'},
-            {sp:'男',zh:'我看了一部纪录片，讲的是没有阳光的深海世界。那里的生物长相古怪，我看完深感诧异，就想好好探索一下。'}],
-     q:'男的为什么对海洋生物感兴趣？',qvn:'Vì sao người đàn ông quan tâm đến sinh vật biển?',
-     opts:['老师布置了作业','他从小住在海边','看了一部关于深海的纪录片','他的父母是科学家'],ans:2,
-     why:'我看了一部纪录片，讲的是……深海世界 → xem phim tài liệu về biển sâu nên thấy hứng thú.',
-     words:['古怪','诧异','探索']},
-
-    {n:4,
-     lines:[{sp:'男',zh:'这次物理考试你怎么考得这么好？'},
-            {sp:'女',zh:'以前我总是死记硬背，后来老师让我先把原理弄清楚，进而举一反三，成绩就慢慢提高了。'}],
-     q:'女的成绩为什么提高了？',qvn:'Vì sao thành tích của người phụ nữ tiến bộ?',
-     opts:['她每天都死记硬背','她请了家教','考试题目很简单','她改变了学习方法'],ans:3,
-     why:'以前……死记硬背，后来……先把原理弄清楚，进而举一反三 → đổi cách học: hiểu nguyên lý trước, từ đó suy ra những cái khác.',
-     words:['进而']},
-
-    {n:5,
-     lines:[{sp:'女',zh:'你不是说周末要去爬山吗？怎么没去？'},
-            {sp:'男',zh:'别提了，车票也买了，东西也准备好了，偏偏周六一大早下起了大雨。'}],
-     q:'男的为什么没去爬山？',qvn:'Vì sao người đàn ông không đi leo núi?',
-     opts:['车票没买到','下大雨了','他生病了','朋友不去了'],ans:1,
-     why:'车票也买了……偏偏……下起了大雨 → mọi thứ đã chuẩn bị xong, trớ trêu trời lại mưa to (偏偏 cách dùng ②).',
-     words:['偏偏']},
-
-    {n:6,
-     lines:[{sp:'男',zh:'据悉，今年报名参加学校科技节的人数超过了三百，比去年多了一倍。'},
-            {sp:'女',zh:'是啊，学校今年还专门建了一个科学实验基地，同学们可以在那里自由探索，积极性当然高了。'}],
-     q:'关于今年的科技节，可以知道什么？',qvn:'Về lễ hội khoa học kỹ thuật năm nay, có thể biết điều gì?',
-     opts:['报名的人比去年少','实验基地还没建好','同学们不太积极','报名的人数超过三百'],ans:3,
-     why:'人数超过了三百，比去年多了一倍 → hơn ba trăm người, gấp đôi năm ngoái; căn cứ thí nghiệm đã xây xong (建了).',
-     words:['据悉','基地','探索']},
-
-    {n:7,
-     lines:[{sp:'女',zh:'众所周知，大部分生物都离不开阳光。然而，科学家在几千米深的海底发现，某些细菌能靠地球内部的热能维持生命，而小动物又以这些细菌为食。这告诉我们，在没有阳光的条件下，也可能存在生命。'}],
-     q:'这段话主要告诉我们什么？',qvn:'Đoạn văn chủ yếu cho chúng ta biết điều gì?',
-     opts:['没有阳光也可能有生命','深海里没有任何生物','细菌都怕高温','所有动物都靠阳光生存'],ans:0,
-     why:'Câu kết 在没有阳光的条件下，也可能存在生命 là ý chính; 然而 phản bác quan niệm "mọi sinh vật đều cần ánh nắng".',
-     words:['众所周知','维持','细菌']},
-
-    {n:8,
-     lines:[{sp:'男',zh:'有人说，与其研究深海里的耐高温细菌，不如去探索金星上是否有生物存在。其实这两者并不矛盾：了解深海细菌忍受高温的本领，正好可以帮助我们判断，在高温高压的其他星球上，生命能否得以生存。'}],
-     q:'说话人认为研究深海细菌有什么意义？',qvn:'Người nói cho rằng nghiên cứu vi khuẩn biển sâu có ý nghĩa gì?',
-     opts:['可以找到新的食物','可以治疗疾病','可以帮助判断其他星球上能否有生命','没有什么意义'],ans:2,
-     why:'……正好可以帮助我们判断，在……其他星球上，生命能否得以生存 → giúp phán đoán sự sống trên hành tinh khác. 并不矛盾 bác bỏ ý "chẳng có ý nghĩa".',
-     words:['探索','忍受','得以']}
+    {
+      n: 1,
+      lines: [
+        {sp:'女',zh:'你怎么对中国历史这么感兴趣？'},
+        {sp:'男',zh:'我先是喜欢看中国电影，进而开始读历史书，越读越有意思。'}
+      ],
+      q: '男的是怎么对中国历史感兴趣的？',
+      qvn: 'Người đàn ông bắt đầu quan tâm đến lịch sử Trung Quốc thế nào?',
+      opts: ['老师让他读的','先喜欢上了中国电影','去中国旅游过','父母是历史老师'],
+      ans: 1,
+      why: '先是喜欢看中国电影，进而开始读历史书 → từ thích phim Trung Quốc rồi tiến thêm sang đọc sách lịch sử.',
+      words: ['进而']
+    },
+    {
+      n: 2,
+      lines: [
+        {sp:'男',zh:'听说那个古镇修好了？'},
+        {sp:'女',zh:'是啊，多亏政府花了不少钱，那些老房子才得以保留下来。'}
+      ],
+      q: '老房子为什么能保留下来？',
+      qvn: 'Vì sao những ngôi nhà cổ được giữ lại?',
+      opts: ['政府花了不少钱','大家不愿意搬走','房子特别结实','游客非常多'],
+      ans: 0,
+      why: '多亏政府花了不少钱，……才得以保留下来 → nhờ chính quyền bỏ nhiều tiền.',
+      words: ['得以']
+    },
+    {
+      n: 3,
+      lines: [
+        {sp:'女',zh:'你今天怎么迟到了？'},
+        {sp:'男',zh:'唉，平时地铁都很准时，偏偏今天出了问题，等了半个小时。'}
+      ],
+      q: '男的为什么来晚了？',
+      qvn: 'Vì sao người đàn ông đến muộn?',
+      opts: ['起床晚了','走错路了','忘了时间','地铁出了问题'],
+      ans: 3,
+      why: '偏偏今天出了问题 = trớ trêu đúng hôm nay tàu điện ngầm gặp sự cố.',
+      words: ['偏偏']
+    },
+    {
+      n: 4,
+      lines: [
+        {sp:'男',zh:'你儿子最近怎么样？'},
+        {sp:'女',zh:'别说了，让他好好复习，他偏偏天天玩游戏，我真拿他没办法。'}
+      ],
+      q: '女的为什么不满意？',
+      qvn: 'Vì sao người phụ nữ không hài lòng?',
+      opts: ['儿子不复习，总玩游戏','儿子身体不好','儿子考试没考好','儿子不爱说话'],
+      ans: 0,
+      why: '让他好好复习，他偏偏天天玩游戏 → con trai cố tình làm ngược lời mẹ.',
+      words: ['偏偏']
+    },
+    {
+      n: 5,
+      lines: [
+        {sp:'女',zh:'你的腿受伤以后还疼吗？'},
+        {sp:'男',zh:'刚开始疼得难以忍受，现在好多了，医生说不会丧失走路的能力。'}
+      ],
+      q: '关于男的的腿，可以知道什么？',
+      qvn: 'Về cái chân của người đàn ông, có thể biết gì?',
+      opts: ['还是非常疼','以后不能走路了','现在好多了','还没去看医生'],
+      ans: 2,
+      why: '现在好多了；不会丧失走路的能力 = sẽ không mất khả năng đi lại. "Khó chịu nổi" chỉ là lúc mới bị thương.',
+      words: ['忍受','丧失']
+    },
+    {
+      n: 6,
+      lines: [
+        {sp:'男',zh:'你第一次潜水感觉怎么样？'},
+        {sp:'女',zh:'太奇妙了！海底有各种各样的鱼，还有很多漂亮的贝壳。'}
+      ],
+      q: '女的觉得潜水怎么样？',
+      qvn: 'Người phụ nữ thấy lặn biển thế nào?',
+      opts: ['很可怕','太累了','非常奇妙','很无聊'],
+      ans: 2,
+      why: '太奇妙了 = kỳ diệu quá; cô ấy kể về cá và vỏ sò dưới đáy biển với giọng hào hứng.',
+      words: ['潜水','奇妙','贝壳']
+    },
+    {
+      n: 7,
+      lines: [
+        {sp:'女',zh:'据悉，市里要在海边修建一个海洋研究基地。'},
+        {sp:'男',zh:'太好了，以后我们就可以带学生去那儿参观了。'}
+      ],
+      q: '市里要修建什么？',
+      qvn: 'Thành phố định xây gì?',
+      opts: ['一座公园','一个海洋研究基地','一所大学','一个港口'],
+      ans: 1,
+      why: '据悉 = được biết (theo tin tức); 修建一个海洋研究基地 = xây một căn cứ nghiên cứu biển.',
+      words: ['据悉','修建','基地']
+    }
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
+// ══════════════════════════════════════════
 var situationData = {
-  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
-         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn hỏi vì sao cuối tuần em không đi biển như đã hẹn.',
-     a:{sp:'Bạn',zh:'你不是说这个周末去海边吗？怎么还在家？',vn:'Cậu bảo cuối tuần này đi biển cơ mà? Sao vẫn ở nhà thế?'},
-     need:['Dùng 偏偏'],
-     sample:'票也买了，酒店也订了，偏偏这时候我发烧了，只好在家休息。',
-     samplePy:'Piào yě mǎi le, jiǔdiàn yě dìng le, piānpiān zhè shíhou wǒ fāshāo le, zhǐhǎo zài jiā xiūxi.',
-     sampleVn:'Vé cũng mua rồi, khách sạn cũng đặt rồi, trớ trêu đúng lúc này tớ lại sốt, đành ở nhà nghỉ.',
-     tip:'A也……了，B也……了，偏偏……: liệt kê việc đã chuẩn bị rồi nêu điều trái mong muốn (偏偏 cách dùng ②).'},
-
-    {scene:'Em gái hỏi vì sao môn Toán của em tiến bộ nhanh.',
-     a:{sp:'Em gái',zh:'姐姐，你的数学怎么进步得这么快？',vn:'Chị ơi, sao môn Toán của chị tiến bộ nhanh thế?'},
-     need:['Dùng 先……，进而……'],
-     sample:'我先把基本的公式弄明白，进而多做练习，慢慢就找到了解题的规律。',
-     samplePy:'Wǒ xiān bǎ jīběn de gōngshì nòng míngbai, jìn\'ér duō zuò liànxí, mànmàn jiù zhǎodàole jiě tí de guīlǜ.',
-     sampleVn:'Chị hiểu rõ các công thức cơ bản trước, rồi từ đó làm nhiều bài tập, dần dần tìm ra quy luật giải bài.',
-     tip:'先……，进而……: bước sau xây trên bước trước (điểm ngữ pháp 1).'},
-
-    {scene:'Thầy hỏi thí nghiệm khoa học của nhóm em có cần giúp gì không.',
-     a:{sp:'Thầy giáo',zh:'你们小组的科学实验进行得怎么样？需要帮忙吗？',vn:'Thí nghiệm khoa học của nhóm em tiến hành thế nào rồi? Có cần giúp gì không?'},
-     need:['Dùng 得以','Dùng 基地 hoặc 样品'],
-     sample:'多亏学校让我们使用实验基地，我们的实验才得以顺利进行，下个星期就能出结果了。',
-     samplePy:'Duōkuī xuéxiào ràng wǒmen shǐyòng shíyàn jīdì, wǒmen de shíyàn cái déyǐ shùnlì jìnxíng, xià ge xīngqī jiù néng chū jiéguǒ le.',
-     sampleVn:'Nhờ nhà trường cho chúng em dùng khu thí nghiệm, thí nghiệm của chúng em mới tiến hành suôn sẻ được, tuần sau là có kết quả ạ.',
-     tip:'多亏……，……才得以……: nhờ … mới có thể … (得以 = điểm ngữ pháp 2).'},
-
-    {scene:'Bạn khẳng định "không có ánh nắng thì sinh vật nào cũng chết". Em phản bác.',
-     a:{sp:'Bạn',zh:'没有阳光，任何生物都活不了，对吧？',vn:'Không có ánh nắng thì sinh vật nào cũng không sống nổi, đúng không?'},
-     need:['Dùng 众所周知','Dùng 然而 hoặc 却'],
-     sample:'众所周知，大部分生物离不开阳光，然而科学家却在深海里发现了不靠阳光生存的细菌。',
-     samplePy:'Zhòngsuǒ-zhōuzhī, dà bùfen shēngwù lí bu kāi yángguāng, rán\'ér kēxuéjiā què zài shēnhǎi li fāxiànle bú kào yángguāng shēngcún de xìjūn.',
-     sampleVn:'Ai cũng biết phần lớn sinh vật không thể thiếu ánh nắng, thế nhưng các nhà khoa học lại phát hiện dưới biển sâu có vi khuẩn sống không cần ánh nắng.',
-     tip:'众所周知 + 然而……却……: nêu điều ai cũng biết rồi phản bác bằng phát hiện mới.'},
-
-    {scene:'Bạn rủ em cuối tuần đi xem phim tài liệu về biển sâu.',
-     a:{sp:'Bạn',zh:'周末有部关于深海的纪录片，你想去看吗？',vn:'Cuối tuần có bộ phim tài liệu về biển sâu, cậu muốn đi xem không?'},
-     need:['Dùng 与其……不如……','Dùng 奇妙 hoặc 探索'],
-     sample:'当然想！与其在家玩手机，不如去看看那个奇妙的深海世界。',
-     samplePy:'Dāngrán xiǎng! Yǔqí zài jiā wán shǒujī, bùrú qù kànkan nàge qímiào de shēnhǎi shìjiè.',
-     sampleVn:'Muốn chứ! Thay vì ở nhà chơi điện thoại, chi bằng đi xem thế giới biển sâu kỳ diệu ấy.',
-     tip:'与其 A，不如 B: thay vì A, chi bằng B (cấu trúc trong bài khoá).'}
+    {scene:'Bạn hỏi vì sao hôm qua em đã mua vé mà lại không đi xem trận bóng.',a:{sp:'Bạn',zh:'你不是买了昨天的球票吗？怎么没去看？',vn:'Cậu mua vé trận hôm qua rồi cơ mà? Sao không đi xem?'},need:['Dùng 偏偏'],sample:'别提了，我都准备出门了，偏偏这时候接到老板的电话，让我马上回公司。',samplePy:'Bié tí le, wǒ dōu zhǔnbèi chūmén le, piānpiān zhè shíhou jiēdào lǎobǎn de diànhuà, ràng wǒ mǎshàng huí gōngsī.',sampleVn:'Đừng nhắc nữa, tớ sắp ra khỏi nhà rồi thì trớ trêu đúng lúc ấy sếp gọi điện, bảo tớ về công ty ngay.',tip:'都……了，偏偏这时候…… = mọi thứ đã sẵn sàng thì đúng lúc ấy lại xảy ra chuyện trái ý (偏偏 cách dùng ②).'},
+    {scene:'Em gái hỏi vì sao môn Toán của em tiến bộ nhanh.',a:{sp:'Em gái',zh:'姐姐，你的数学怎么进步得这么快？',vn:'Chị ơi, sao môn Toán của chị tiến bộ nhanh thế?'},need:['Dùng 先……，进而……'],sample:'我先把基本的概念弄明白，进而多做练习，慢慢就找到了解题的规律。',samplePy:'Wǒ xiān bǎ jīběn de gàiniàn nòng míngbai, jìn\'ér duō zuò liànxí, mànmàn jiù zhǎodàole jiě tí de guīlǜ.',sampleVn:'Chị hiểu rõ các khái niệm cơ bản trước, rồi từ đó làm nhiều bài tập, dần dần tìm ra quy luật giải bài.',tip:'先……，进而……: bước sau xây trên bước trước (điểm ngữ pháp 1).'},
+    {scene:'Thầy hỏi thí nghiệm khoa học của nhóm em có cần giúp gì không.',a:{sp:'Thầy giáo',zh:'你们小组的科学实验进行得怎么样？需要帮忙吗？',vn:'Thí nghiệm khoa học của nhóm em tiến hành thế nào rồi? Có cần giúp gì không?'},need:['Dùng 得以','Dùng 基地 hoặc 样品'],sample:'多亏学校让我们使用实验基地，我们的实验才得以顺利进行，下个星期就能出结果了。',samplePy:'Duōkuī xuéxiào ràng wǒmen shǐyòng shíyàn jīdì, wǒmen de shíyàn cái déyǐ shùnlì jìnxíng, xià ge xīngqī jiù néng chū jiéguǒ le.',sampleVn:'Nhờ nhà trường cho chúng em dùng khu thí nghiệm, thí nghiệm của chúng em mới tiến hành suôn sẻ được, tuần sau là có kết quả ạ.',tip:'多亏……，……才得以……: nhờ … mới có thể … (得以 = điểm ngữ pháp 2).'},
+    {scene:'Bạn khẳng định "không có ánh nắng thì sinh vật nào cũng chết". Em phản bác.',a:{sp:'Bạn',zh:'没有阳光，任何生物都不能生存，对吧？',vn:'Không có ánh nắng thì sinh vật nào cũng không sống nổi, đúng không?'},need:['Dùng 众所周知','Phản bác nhẹ nhàng bằng một ví dụ'],sample:'大部分生物确实离不开阳光，可众所周知的事情也不一定都对。科学家就在深海里发现了不靠阳光生存的细菌。',samplePy:'Dà bùfen shēngwù quèshí lí bu kāi yángguāng, kě zhòngsuǒ-zhōuzhī de shìqing yě bù yídìng dōu duì. Kēxuéjiā jiù zài shēnhǎi li fāxiànle bú kào yángguāng shēngcún de xìjūn.',sampleVn:'Đúng là phần lớn sinh vật không thể thiếu ánh nắng, nhưng điều ai cũng biết chưa chắc đã đúng hết. Các nhà khoa học đã tìm thấy dưới biển sâu những vi khuẩn sống không cần ánh nắng.',tip:'众所周知的 + N làm định ngữ; 也不一定 = cũng chưa chắc — phản bác mềm mỏng.'},
+    {scene:'Bạn rủ em cuối tuần đi xem phim tài liệu về biển sâu.',a:{sp:'Bạn',zh:'周末有部关于深海的纪录片，你想去看吗？',vn:'Cuối tuần có bộ phim tài liệu về biển sâu, cậu muốn đi xem không?'},need:['Dùng 与其……不如……','Dùng 奇妙 hoặc 探索'],sample:'当然想！与其在家玩手机，不如去看看那个奇妙的深海世界。',samplePy:'Dāngrán xiǎng! Yǔqí zài jiā wán shǒujī, bùrú qù kànkan nàge qímiào de shēnhǎi shìjiè.',sampleVn:'Muốn chứ! Thay vì ở nhà chơi điện thoại, chi bằng đi xem thế giới biển sâu kỳ diệu ấy.',tip:'与其 A，不如 B: thay vì A, chi bằng B (cấu trúc trong bài khoá).'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 // 🎯 NÓI SAO CHO HAY — 得体 / 语体
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 var registerData = {
-  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
-         'HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
   items: [
-    {scene:'Phát thanh viên đọc bản tin thời sự.',
-     a:'据悉，今年入境旅游观光的人数已超过千万。',b:'听说啊，今年来中国旅游的外国人可多了，一千多万呢！',better:'a',
-     why:'Bản tin dùng văn phong báo chí: 据悉, 入境旅游观光, 已超过. Câu b (听说啊, 可多了, 呢) là lời kể chuyện với bạn bè.'},
-
-    {scene:'Nhắn tin kể với bạn thân về chuyến học lặn.',
-     a:'昨天我学潜水了，海底太美了，我都舍不得上来！',b:'本人昨日参加潜水活动，海底景色十分奇妙。',better:'a',
-     why:'Với bạn thân, lời kể tự nhiên, có cảm xúc (太美了, 舍不得上来). Câu b (本人, 昨日) giống báo cáo hoạt động.'},
-
-    {scene:'Viết báo cáo khoa học về giun ống mào đỏ.',
-     a:'那些虫子长得怪怪的，没嘴没眼，也不知道怎么生孩子。',b:'红冠蠕虫无口无眼，亦无消化系统，其繁殖方式尚待进一步研究。',better:'b',
-     why:'Báo cáo khoa học cần thuật ngữ và văn viết: 无……亦无……, 其繁殖方式, 尚待研究. Câu a (怪怪的, 生孩子) là khẩu ngữ, dùng từ không chính xác.'},
-
-    {scene:'Giải thích cho em trai lớp 3 vì sao cần mặt trời.',
-     a:'植物要晒太阳才能长大，动物又吃植物，所以没有太阳就什么都没有啦。',b:'历来植物生长离不开阳光，而动物又靠植物维持生命，此乃众所周知之真理。',better:'a',
-     why:'Nói với trẻ nhỏ cần giản dị, dễ hiểu. Câu b (历来, 维持生命, 此乃……之……) quá trang trọng, em nhỏ khó hiểu.'},
-
-    {scene:'Phát biểu khai mạc hội thảo khoa học về biển sâu.',
-     a:'这次深海考察向人类早已认定的准则提出了质疑，启发我们解放思想，进一步探索生命存在的新路。',b:'这次去深海可好玩了，我们发现了好多怪东西！',better:'a',
-     why:'Phát biểu hội thảo cần trang trọng, chính xác: 考察, 认定, 准则, 提出质疑, 探索. Câu b chỉ hợp khi kể chuyện với bạn.'},
-
-    {scene:'Nói với bố mẹ vì sao về nhà muộn.',
-     a:'鉴于今日交通状况不佳，本人未能按时返家，特此说明。',b:'爸，妈，路上堵车堵得太厉害了，所以回来晚了，你们别担心。',better:'b',
-     why:'Nói với bố mẹ dùng lời thân mật. Câu a (鉴于, 本人, 特此说明) như công văn, nghe rất xa cách — thậm chí buồn cười.'}
+    {scene:'Phát thanh viên đọc bản tin thời sự.',a:'据悉，今年来本市旅游的人数已经超过了一千万。',b:'听说啊，今年来我们这儿旅游的人可多了，一千多万呢！',better:'a',why:'Bản tin dùng văn phong báo chí: 据悉, 本市, 人数已经超过. Câu b (听说啊, 可多了, 呢) là lời kể chuyện với bạn bè.'},
+    {scene:'Nhắn tin kể với bạn thân về buổi học lặn.',a:'本人前日参加了潜水活动，海底景色十分奇妙。',b:'前天我去学潜水了，海底太美了，我都舍不得上来！',better:'b',why:'Với bạn thân, lời kể tự nhiên, có cảm xúc (太美了, 舍不得上来). Câu a (本人, 前日, 十分) giống báo cáo hoạt động.'},
+    {scene:'Viết báo cáo khoa học về giun ống mào đỏ.',a:'那些小东西长得怪怪的，没嘴没眼，也不知道怎么生孩子。',b:'这种深海生物既没有嘴，也没有眼睛，连消化系统也没有，它们如何繁殖后代还需要进一步研究。',better:'b',why:'Báo cáo khoa học cần thuật ngữ chính xác: 消化系统, 如何繁殖后代, 进一步研究. Câu a (怪怪的, 生孩子) là khẩu ngữ, dùng từ không chính xác.'},
+    {scene:'Giải thích cho em trai lớp 3 vì sao cần mặt trời.',a:'植物要晒太阳才能长大，动物又吃植物，所以没有太阳就什么都没有啦。',b:'植物的生长依靠阳光，动物又依靠植物维持生命，因此阳光是万物生存的基础。',better:'a',why:'Nói với trẻ nhỏ cần giản dị, dễ hiểu (晒太阳, 吃植物, 啦). Câu b (依靠, 维持生命, 生存的基础) đúng nhưng quá sách vở với em lớp 3.'},
+    {scene:'Phát biểu khai mạc hội thảo khoa học về biển sâu.',a:'这次考察的发现，使我们对生命的定义有了新的认识。',b:'这次去深海可好玩了，我们发现了好多怪东西！',better:'a',why:'Phát biểu hội thảo cần trang trọng, chính xác: 考察, 定义, 有了新的认识. Câu b chỉ hợp khi kể chuyện với bạn.'},
+    {scene:'Nói với bố mẹ vì sao về nhà muộn.',a:'由于今天路上车辆过多，本人没能按时到家。',b:'爸，妈，今天路上车特别多，所以回来晚了，你们别担心。',better:'b',why:'Nói với bố mẹ dùng lời thân mật. Câu a (由于, 车辆过多, 本人) như công văn, nghe xa cách — thậm chí buồn cười.'}
   ]
 };
 

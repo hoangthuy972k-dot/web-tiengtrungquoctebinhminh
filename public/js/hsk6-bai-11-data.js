@@ -1478,86 +1478,50 @@ var hvBridgeData = {
 // GHÉP TỪ — cụm trong bài khoá và phần 练习
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'流浪',right:'猫'},
-  {left:'淋着',right:'大雨'},
-  {left:'拜访',right:'客户'},
-  {left:'很有',right:'教养'},
-  {left:'嗅觉',right:'灵敏'},
-  {left:'动作',right:'敏捷'},
-  {left:'快活而',right:'好动'},
-  {left:'不失',right:'君子风度'},
-  {left:'模范',right:'饲养员'},
-  {left:'清洁',right:'猫舍'},
-  {left:'工作',right:'繁忙'},
-  {left:'急切地',right:'盼望'},
-  {left:'毫无',right:'例外'},
-  {left:'深沉的',right:'热情'},
-  {left:'监视',right:'一举一动'},
-  {left:'设计',right:'缺陷'},
+  {left:'拜访',right:'老师'},
+  {left:'饲养',right:'宠物'},
+  {left:'钻研',right:'业务'},
+  {left:'储存',right:'数据'},
+  {left:'跟踪',right:'报道'},
   {left:'尖端',right:'技术'},
-  {left:'刻苦',right:'钻研'},
-  {left:'储存',right:'图像'},
-  {left:'即时',right:'监控'},
-  {left:'时间',right:'误差'},
-  {left:'稍有',right:'动静'},
-  {left:'操作',right:'系统'}
+  {left:'操作',right:'电脑'},
+  {left:'遥控',right:'飞机'},
+  {left:'灵敏的',right:'嗅觉'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ
+// ĐIỀN TỪ — câu mới (không chép bài khoá / SGK), mỗi câu một tình huống; ôn xoáy ốc từ + ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'这只小猫原来是只',blank:'流浪',post:'猫，后来被我们收养了。',hint:'(lang thang, hoang)',ans:'流浪'},
-  {pre:'我没带伞，回家路上全身都被雨',blank:'淋',post:'湿了。',hint:'(dầm, xối)',ans:'淋'},
-  {pre:'春节期间，我们专程去',blank:'拜访',post:'了几位退休的老教师。',hint:'(thăm hỏi)',ans:'拜访'},
-  {pre:'爷爷年轻时走南闯北，',blank:'见多识广',post:'，什么问题都难不倒他。',hint:'(thấy nhiều biết rộng)',ans:'见多识广'},
-  {pre:'这孩子说话有礼貌，一看就很有',blank:'教养',post:'。',hint:'(giáo dục, lễ độ)',ans:'教养'},
-  {pre:'他不是笨，而是太',blank:'懒惰',post:'了，从来不肯多花时间复习。',hint:'(lười biếng)',ans:'懒惰'},
-  {pre:'看到桌上的蛋糕，妹妹',blank:'馋',post:'得直流口水。',hint:'(thèm ăn)',ans:'馋'},
-  {pre:'小猫',blank:'趴',post:'在窗台上晒太阳，一动也不动。',hint:'(nằm sấp, nằm dài)',ans:'趴'},
-  {pre:'奶奶常说，',blank:'知足常乐',post:'，别总跟别人比。',hint:'(biết đủ thì luôn vui)',ans:'知足常乐'},
-  {pre:'这个孩子对长辈一直很',blank:'恭敬',post:'，大家都夸他懂事。',hint:'(kính cẩn)',ans:'恭敬'},
-  {pre:'输了比赛还主动跟对手握手，他真有',blank:'君子',post:'风度。',hint:'(quân tử)',ans:'君子'},
-  {pre:'狗的',blank:'嗅觉',post:'比人灵敏得多，常被用来寻找失踪的人。',hint:'(khứu giác)',ans:'嗅觉'},
-  {pre:'这台仪器非常',blank:'灵敏',post:'，一点儿微小的变化都能测出来。',hint:'(nhạy)',ans:'灵敏'},
-  {pre:'猫动作',blank:'敏捷',post:'，一下子就跳上了柜子。',hint:'(nhanh nhẹn)',ans:'敏捷'},
-  {pre:'退休以后，爷爷每天养花钓鱼，日子过得很',blank:'快活',post:'。',hint:'(vui vẻ)',ans:'快活'},
-  {pre:'我一开门，小狗就',blank:'扑',post:'了过来。',hint:'(nhào tới)',ans:'扑'},
-  {pre:'一见面，她就',blank:'亲热',post:'地拉着我的手问长问短。',hint:'(thân mật)',ans:'亲热'},
-  {pre:'搬家之前，她把旧衣服',blank:'统统',post:'送给了别人。',hint:'(toàn bộ, tất cả)',ans:'统统',exp:'统统 = toàn bộ, tất cả (không trừ cái nào): 统统送给了别人.'},
-  {pre:'下龙湾的风景十分',blank:'迷人',post:'，每年吸引着大量游客。',hint:'(quyến rũ)',ans:'迷人'},
-  {pre:'作为班长，他在各方面都起着',blank:'模范',post:'作用。',hint:'(gương mẫu)',ans:'模范'},
-  {pre:'我们一旦决定',blank:'饲养',post:'一种动物，就要对它负责到底。',hint:'(nuôi)',ans:'饲养'},
-  {pre:'请大家保持教室',blank:'清洁',post:'，不要乱扔垃圾。',hint:'(sạch sẽ)',ans:'清洁'},
-  {pre:'我出差的时候，麻烦你帮我',blank:'喂',post:'一下猫吧。',hint:'(cho ăn)',ans:'喂'},
-  {pre:'上下班时间，这条路交通十分',blank:'繁忙',post:'。',hint:'(bận rộn, tấp nập)',ans:'繁忙'},
-  {pre:'成绩快公布了，大家都',blank:'急切',post:'地等待着。',hint:'(nóng lòng)',ans:'急切'},
-  {pre:'每个人都应该遵守学校纪律，谁也不能',blank:'例外',post:'。',hint:'(ngoại lệ)',ans:'例外',exp:'谁也不能例外 = không ai được ngoại lệ; 例外 làm động từ.'},
-  {pre:'她站在窗前，久久地',blank:'凝视',post:'着远方。',hint:'(nhìn chăm chú)',ans:'凝视'},
-  {pre:'父爱往往是',blank:'深沉',post:'的，不常挂在嘴边。',hint:'(sâu lắng)',ans:'深沉'},
-  {pre:'他发现这个摄像头有',blank:'缺陷',post:'，拍下的很多镜头都是空的。',hint:'(nhược điểm, thiếu sót)',ans:'缺陷'},
-  {pre:'这块手表很准，一个月的',blank:'误差',post:'不超过一秒。',hint:'(sai số)',ans:'误差'},
-  {pre:'屋子里静悄悄的，一点儿',blank:'动静',post:'也没有。',hint:'(động tĩnh)',ans:'动静'},
-  {pre:'这款手机',blank:'操作',post:'简单，老年人也能很快学会。',hint:'(thao tác)',ans:'操作'}
+  {pre:'下雪了，小区里那几只',blank:'流浪',post:'猫不知道躲到哪儿去了。',hint:'(lang thang, hoang)',ans:'流浪',exp:'流浪猫 / 流浪狗 = mèo, chó hoang không chủ; 流浪 = sống lang thang không nơi ở cố định.'},
+  {pre:'我出门忘了带伞，结果被大雨',blank:'淋',post:'得全身都是水。',hint:'(dầm mưa, bị ướt)',ans:'淋',exp:'被雨淋 = bị mưa dội ướt; 淋 + 得 + kết quả (全身都是水).'},
+  {pre:'他太',blank:'懒惰',post:'了，房间从来不打扫，衣服也总是让妈妈洗。',hint:'(lười biếng)',ans:'懒惰',exp:'懒惰 = lười biếng (văn viết hơn 懒); trái nghĩa 勤劳 (bài 1).'},
+  {pre:'我这个人特别',blank:'馋',post:'，一看见好吃的就走不动了。',hint:'(thèm ăn)',ans:'馋',exp:'馋 = hay thèm ăn, tham ăn; 嘴馋 cũng dùng. Không nhầm với 懒 (lười).'},
+  {pre:'小狗',blank:'趴',post:'在门口，等主人下班回来。',hint:'(nằm phục)',ans:'趴',exp:'趴在 + nơi chốn = nằm sấp, nằm phục (bụng áp xuống); khác 躺 (nằm ngửa).'},
+  {pre:'学生们',blank:'恭恭敬敬',post:'地向老师问好。',hint:'(kính cẩn)',ans:'恭恭敬敬',exp:'恭敬 lặp AABB 恭恭敬敬 + 地 + V = làm một cách kính cẩn; dùng với người trên.'},
+  {pre:'他说话做事光明正大，是个真正的',blank:'君子',post:'。',hint:'(người quân tử)',ans:'君子',exp:'君子 = người quân tử, đàng hoàng, đáng kính; 光明正大 = quang minh chính đại.'},
+  {pre:'孩子们在海边跑着、笑着，玩儿得特别',blank:'快活',post:'。',hint:'(vui sướng)',ans:'快活',exp:'玩儿得快活 = chơi vui sướng; 快活 hơi khẩu ngữ, nghĩa như 快乐 nhưng nhấn niềm vui thoải mái.'},
+  {pre:'夜晚的海边特别',blank:'迷人',post:'，很多游人都舍不得离开。',hint:'(quyến rũ, đẹp mê hồn)',ans:'迷人',exp:'迷人 = đẹp đến mê người (phong cảnh, nụ cười); 舍不得离开 cho thấy sức hút đó.'},
+  {pre:'每天下班回家，他第一件事就是',blank:'喂',post:'他的小狗。',hint:'(cho ăn)',ans:'喂',exp:'喂 + con vật / em bé = cho ăn; 喂饭 / 喂水.'},
+  {pre:'这家医院',blank:'清洁',post:'工作做得很好，走廊里总是干干净净的。',hint:'(vệ sinh, quét dọn)',ans:'清洁',exp:'清洁工作 = công việc vệ sinh, quét dọn; 清洁 vừa là động từ vừa là tính từ (sạch sẽ).'},
+  {pre:'她久久地',blank:'凝视',post:'着墙上那张老照片，一句话也没说。',hint:'(nhìn chăm chú)',ans:'凝视',exp:'凝视 = nhìn chăm chú, lâu, thường kèm cảm xúc sâu; 久久地 + 凝视着.'},
+  {pre:'这种设计有一个很大的',blank:'缺陷',post:'：用久了容易坏。',hint:'(khiếm khuyết)',ans:'缺陷',exp:'缺陷 = khiếm khuyết (của thiết kế, sản phẩm, cơ thể); 缺点 dùng rộng hơn cho người.'},
+  {pre:'这部电影的最后一个',blank:'镜头',post:'让很多观众都哭了。',hint:'(cảnh quay)',ans:'镜头',exp:'镜头 = ống kính, và cũng là một cảnh quay trong phim.'},
+  {pre:'这块手表一个月的',blank:'误差',post:'不超过一秒。',hint:'(sai số)',ans:'误差',exp:'误差 = độ sai lệch so với chuẩn; 误差不超过 / 误差不到 + con số.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (统统 · 以……为…… · 该干吗干吗) ít nhất 2 câu
+// SẮP XẾP CÂU — câu mới, chỉ một trật tự đúng
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['搬家之前','，','她','把旧衣服','统统','送给了','别人','。'],ans:'搬家之前，她把旧衣服统统送给了别人。',audio:'搬家之前，她把旧衣服统统送给了别人。'},
-  {words:['它','还要','把','主人带回来的东西','统统','闻一遍','。'],ans:'它还要把主人带回来的东西统统闻一遍。',audio:'它还要把主人带回来的东西统统闻一遍。'},
-  {words:['什么','电影院、酒吧','，','统统','与他','无缘','。'],ans:'什么电影院、酒吧，统统与他无缘。',audio:'什么电影院、酒吧，统统与他无缘。'},
-  {words:['以','其中一只猫','为','例','，','它每天下午两点左右','吃饭喝水','。'],ans:'以其中一只猫为例，它每天下午两点左右吃饭喝水。',audio:'以其中一只猫为例，它每天下午两点左右吃饭喝水。'},
-  {words:['今天的晚会','以','学生','为主','，','老师','为辅','。'],ans:'今天的晚会以学生为主，老师为辅。',audio:'今天的晚会以学生为主，老师为辅。'},
-  {words:['考试','不要','以','难倒学生','为','目的','。'],ans:'考试不要以难倒学生为目的。',audio:'考试不要以难倒学生为目的。'},
-  {words:['到点了','，','该走','就','走','，','别等她了','。'],ans:'到点了，该走就走，别等她了。',audio:'到点了，该走就走，别等她了。'},
-  {words:['大黄和白白','在屋里','该干吗','干吗','。'],ans:'大黄和白白在屋里该干吗干吗。',audio:'大黄和白白在屋里该干吗干吗。'},
-  {words:['哭、着急','都不管用','，','该什么结果','还是','什么结果','。'],ans:'哭、着急都不管用，该什么结果还是什么结果。',audio:'哭、着急都不管用，该什么结果还是什么结果。'},
-  {words:['钱小奇','每天','最急切','盼望的','就是','回家开门的那一刻','。'],ans:'钱小奇每天最急切盼望的就是回家开门的那一刻。',audio:'钱小奇每天最急切盼望的就是回家开门的那一刻。'},
-  {words:['他','决定','自力更生','安装','一套','尖端玩意儿','。'],ans:'他决定自力更生安装一套尖端玩意儿。',audio:'他决定自力更生安装一套尖端玩意儿。'},
-  {words:['只要','家里','稍有动静','，','系统','就能','将图像记录下来','。'],ans:'只要家里稍有动静，系统就能将图像记录下来。',audio:'只要家里稍有动静，系统就能将图像记录下来。'},
-  {words:['时间误差','平均','不到','5分钟','。'],ans:'时间误差平均不到5分钟。',audio:'时间误差平均不到5分钟。'}
+  {words:['他','把','冰箱里的','东西','统统','吃','光了','。'],ans:'他把冰箱里的东西统统吃光了。',audio:'他把冰箱里的东西统统吃光了。'},
+  {words:['这次','比赛','以','小组','为','单位','进行','。'],ans:'这次比赛以小组为单位进行。',audio:'这次比赛以小组为单位进行。'},
+  {words:['小狗','一看见','主人','就','扑','了','过去','。'],ans:'小狗一看见主人就扑了过去。',audio:'小狗一看见主人就扑了过去。'},
+  {words:['我','把','手机里的','照片','都','储存','在','电脑里了','。'],ans:'我把手机里的照片都储存在电脑里了。',audio:'我把手机里的照片都储存在电脑里了。'},
+  {words:['你','可以','用','手机','遥控','家里的','空调','。'],ans:'你可以用手机遥控家里的空调。',audio:'你可以用手机遥控家里的空调。'},
+  {words:['我的','手机','掉在','沙发的','角落里','了','。'],ans:'我的手机掉在沙发的角落里了。',audio:'我的手机掉在沙发的角落里了。'},
+  {words:['这台','机器','的','操作','方法','非常','简单','。'],ans:'这台机器的操作方法非常简单。',audio:'这台机器的操作方法非常简单。'},
+  {words:['她','亲热地','拉着','我的','手','问','这问','那','。'],ans:'她亲热地拉着我的手问这问那。',audio:'她亲热地拉着我的手问这问那。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1565,74 +1529,44 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'为了弄清楚猫在做什么，他安了个摄像头，____猫的一举一动。',opts:['监视','凝视','重视','注视'],ans:0,
-   exp:'Theo dõi để nắm hành động → 监视 (+ 一举一动). 凝视, 注视 = nhìn chăm chú (không có ý giám sát, kiểm soát); 重视 = coi trọng.'},
-  {wrong:'最近孩子有些反常的____，父母得多留神。',opts:['举动','举办','运动','行驶'],ans:0,
-   exp:'反常的 + danh từ chỉ hành vi → 举动. 举办 = tổ chức (động từ); 运动 = thể thao, vận động; 行驶 = (xe) chạy.'},
-  {wrong:'这部电影里最感人的____，是父亲在车站送别女儿。',opts:['镜头','镜子','片头','念头'],ans:0,
-   exp:'Một cảnh trong phim → 镜头. 镜子 = cái gương; 片头 = đoạn mở đầu phim (không phải "cảnh cảm động nhất"); 念头 = ý nghĩ.'},
-  {wrong:'任何事情都要____，不要总依靠别人。',opts:['自力更生','知足常乐','见多识广','自言自语'],ans:0,
-   exp:'Đối lập với 依靠别人 → 自力更生 (tự lực). 知足常乐 = biết đủ là vui; 见多识广 = từng trải; 自言自语 = nói một mình.'},
-  {wrong:'这家公司掌握了很多____技术，在国际上很有竞争力。',opts:['尖端','尖锐','顶端','极端'],ans:0,
-   exp:'尖端技术 = công nghệ tiên tiến nhất. 尖锐 = sắc bén, gay gắt (矛盾尖锐); 顶端 = đỉnh, chóp (vị trí); 极端 = cực đoan.'},
-  {wrong:'王师傅刻苦____技术，成了厂里的技术骨干。',opts:['钻研','研制','钻进','调研'],ans:0,
-   exp:'刻苦钻研 + 技术 = miệt mài nghiên cứu kỹ thuật. 研制 = nghiên cứu chế tạo (sản phẩm mới); 钻进 = chui vào; 调研 = khảo sát điều tra.'},
-  {wrong:'投资者要随时关注市场的最新____。',opts:['动态','动静','动作','动力'],ans:0,
-   exp:'最新动态 = tình hình mới nhất. 动静 = tiếng động; 动作 = động tác; 动力 = động lực — không đi với 最新 và 市场 theo nghĩa này.'},
-  {wrong:'手机的____空间不够了，得删掉一些照片。',opts:['储存','储蓄','保存','存款'],ans:0,
-   exp:'储存空间 = dung lượng lưu trữ (cụm cố định). 储蓄 = tiết kiệm tiền; 保存 = bảo quản (không nói 保存空间); 存款 = tiền gửi.'},
-  {wrong:'他在外面时也能通过互联网____家里的摄像头。',opts:['遥控','遥远','调控','失控'],ans:0,
-   exp:'Điều khiển thiết bị từ xa → 遥控. 遥远 là tính từ "xa xôi"; 调控 = điều tiết (调控经济); 失控 = mất kiểm soát.'},
-  {wrong:'一有新消息，系统就会____发送到你的手机上。',opts:['即时','暂时','临时','平时'],ans:0,
-   exp:'即时 = ngay tức thì. 暂时 = tạm thời; 临时 = lâm thời, đột xuất; 平时 = ngày thường — đều không diễn tả "gửi ngay".'},
-  {wrong:'飞行员熟练地____着飞机，平稳地降落了。',opts:['操纵','操作','操心','操练'],ans:0,
-   exp:'Điều khiển để máy bay chuyển động theo ý → 操纵 (xem Phân biệt 操纵 — 操作). 操作 thiên về làm theo quy trình; 操心 = lo lắng; 操练 = luyện tập (quân sự).'},
-  {wrong:'她觉得有人在____她，赶紧走进了一家商店。',opts:['跟踪','跟随','追求','陪伴'],ans:0,
-   exp:'Lén bám theo để theo dõi → 跟踪. 跟随 = đi theo (công khai); 追求 = theo đuổi; 陪伴 = đi cùng, bầu bạn — đều không có ý đáng sợ.'},
-  {wrong:'妈妈把家里的每一个____都找遍了，还是没找到钥匙。',opts:['角落','角度','落后','部位'],ans:0,
-   exp:'每一个角落 = mọi ngóc ngách. 角度 = góc độ; 落后 = lạc hậu; 部位 (bài 4) = bộ phận (cơ thể).'},
-  {wrong:'通过摄像头，他终于了解了猫在家里的____。',opts:['踪迹','奇迹','古迹','事迹'],ans:0,
-   exp:'Hành tung, dấu vết đi lại → 踪迹. 奇迹 = kỳ tích; 古迹 = di tích cổ; 事迹 = việc làm đáng nêu gương của người.'},
-  {wrong:'妈妈____地盼望孩子早点儿放假回家。',opts:['急切','急忙','匆忙','赶紧'],ans:0,
-   exp:'盼望 là động từ tâm lý → cần tính từ chỉ tâm trạng 急切地 (做一做 ② của sách). 急忙, 匆忙, 赶紧 chỉ hành động vội.'},
-  {wrong:'一接到命令我们就____出发了，没来得及跟大家告别。',opts:['急忙','急切','迫切','热切'],ans:0,
-   exp:'Hành động vội vã → phó từ 急忙 (做一做 ④). 急切, 迫切, 热切 chỉ tâm trạng, không hợp với 出发.'},
-  {wrong:'警犬的嗅觉非常____，很快就找到了线索。',opts:['灵敏','敏捷','灵活','机灵'],ans:0,
-   exp:'Giác quan nhạy → 嗅觉灵敏. 敏捷 dùng cho động tác, tư duy; 灵活 = linh hoạt; 机灵 = lanh lợi (người, con vật), không đi với 嗅觉.'},
-  {wrong:'他把从超市带回来的东西____放进了冰箱。',opts:['统统','通常','一共','总共'],ans:0,
-   exp:'统统 = tất cả, không sót, đứng trước động từ. 通常 = thường thường; 一共, 总共 đi với con số (一共三十块).'},
-  {wrong:'这款软件____简单，一学就会。',opts:['操作','操纵','动作','工作'],ans:0,
-   exp:'操作简单 = thao tác đơn giản (操作 làm danh từ). 操纵 không làm danh từ theo cách này; 动作 = động tác cơ thể; 工作 = công việc.'}
+  {wrong:'搬家的时候，他把不要的书____卖给了旧书店。',opts:['统统','通常','一共','总共'],ans:0,exp:'把 + đối tượng + 统统 + V = … tất cả, hết sạch. 通常 = thường thường; 一共 / 总共 dùng khi tính tổng số lượng (一共三本).'},
+  {wrong:'这些旧衣服你别留着了，____吧。',opts:['把它们统统送人','统统把它们送人','把统统它们送人','把它们送统统人'],ans:0,exp:'统统 đứng SAU cụm 把 + tân ngữ, ngay trước động từ: 把它们统统送人. Đặt 统统 trước 把 hoặc chen giữa 把 và tân ngữ đều sai.'},
+  {wrong:'这个活动____帮助流浪动物为目的，欢迎大家参加。',opts:['以','把','让','用'],ans:0,exp:'Khung 以 A 为 B (以……为目的 = lấy … làm mục đích). 把 / 让 / 用 không đi với 为 tạo khung này.'},
+  {wrong:'我们学校的考试以一百分____满分。',opts:['为','是','做','成'],ans:0,exp:'以……为…… là khung văn viết cố định, phải dùng 为 (wéi); không thay bằng 是 / 做 / 成.'},
+  {wrong:'周末你们不用管我，你们____，我一个人在家没问题。',opts:['该干吗干吗','干吗该干吗','该干吗干什么','干什么都该'],ans:0,exp:'该干吗干吗 = việc ai nấy làm, cứ làm như bình thường; hai chữ 干吗 phải giống nhau và 该 đứng đầu. 干吗该干吗 sai trật tự; 该干吗干什么 lệch cặp.'},
+  {wrong:'警察在对面的楼里____了他三天，终于找到了证据。',opts:['监视','凝视','重视','看望'],ans:0,exp:'Theo dõi bí mật để nắm hành động → 监视. 凝视 là nhìn chăm chú vì cảm xúc; 重视 = coi trọng; 看望 = thăm hỏi.'},
+  {wrong:'最近孩子有些奇怪的____，父母得多留心。',opts:['举动','举办','运动','举手'],ans:0,exp:'举动 = cử chỉ, hành động (của người). 举办 = tổ chức (sự kiện); 运动 = thể thao, vận động; 举手 = giơ tay.'},
+  {wrong:'我每天都上网看看足球比赛的最新____。',opts:['动态','动人','动作','动力'],ans:0,exp:'最新动态 = tình hình mới nhất. 动人 = cảm động (tính từ); 动作 = động tác; 动力 = động lực.'},
+  {wrong:'半夜里，厨房里突然有了____，原来是猫在找吃的。',opts:['动静','动态','动作','动人'],ans:0,exp:'Tiếng động khe khẽ, động tĩnh → 动静 (有动静 / 没有动静). 动态 là tình hình (tin tức); 有了动作 không tự nhiên; 动人 là tính từ.'},
+  {wrong:'比赛的结果会____出现在网站上。',opts:['即时','暂时','临时','平时'],ans:0,exp:'即时 = ngay lập tức (khi sự việc xảy ra). 暂时 = tạm thời; 临时 = lâm thời, đột xuất; 平时 = ngày thường.'},
+  {wrong:'有人在背后____这场比赛的结果。',opts:['操纵','操作','操心','工作'],ans:0,exp:'操纵 + kết quả / thị trường = thao túng (nghĩa xấu). 操作 = vận hành máy móc; 操心 = lo lắng; 工作 không mang tân ngữ này.'},
+  {wrong:'下班路上，她发现有辆车一直在____她，就马上给家人打了电话。',opts:['跟踪','追求','陪','照顾'],ans:0,exp:'Bám theo lén lút (làm người ta sợ) → 跟踪. 追求 = theo đuổi (mục tiêu, tình yêu); 陪 = đi cùng (có thiện ý); 照顾 = chăm sóc — không gây sợ hãi.'},
+  {wrong:'狗的嗅觉比人____得多，很远就能闻到味道。',opts:['灵敏','敏捷','聪明','快活'],ans:0,exp:'Giác quan nhạy → 嗅觉灵敏. 敏捷 tả động tác nhanh nhẹn; 聪明 tả trí óc; 快活 = vui sướng.'},
+  {wrong:'公司规定所有人都得八点前到，即便是经理也不____。',opts:['例外','另外','意外','以外'],ans:0,exp:'也不例外 = cũng không ngoại lệ. 另外 = ngoài ra; 意外 = bất ngờ; 以外 = ngoài … ra (cần danh từ phía trước). Ôn 即便 (bài 10).'},
+  {wrong:'他工资不高，房子也不大，可他总说“够用就行”，真是____。',opts:['知足常乐','见多识广','自力更生','兴高采烈'],ans:0,exp:'Biết đủ nên luôn vui → 知足常乐. 见多识广 = từng trải; 自力更生 = tự lực cánh sinh; 兴高采烈 = hớn hở (bài 9).'}
 ];
 
 // ══════════════════════════════════════════
-// DỊCH — câu ghép, ôn từ HSK 6 bài 1–6 và HSK 4–5
+// DỊCH Việt → Trung — câu mới, dùng từ của bài + ôn ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Cậu ấy đem hết đống truyện tranh cũ không dùng nữa tặng em trai, rồi bắt đầu chuyên tâm nghiền ngẫm môn toán.',zh:'他把没用的旧漫画书统统送给了弟弟，然后开始专心钻研数学。',py:'Tā bǎ méi yòng de jiù mànhuàshū tǒngtǒng sònggěile dìdi, ránhòu kāishǐ zhuānxīn zuānyán shùxué.',goiY:['把……统统……','钻研','然后'],giai:'统统 đứng sau cụm 把 + tân ngữ, ngay trước động từ (统统送给了); "chuyên tâm nghiền ngẫm" = 专心钻研, không dịch là 研究 vì 钻研 nhấn mạnh sự miệt mài.'},
-  {vi:'Tuy việc học lớp 12 rất bận rộn, nhưng tối nào cậu ấy cũng dành nửa tiếng cho con chó hoang mình nhận nuôi ăn.',zh:'虽然高三的学习很繁忙，但他每天晚上还是会花半个小时喂他收养的流浪狗。',py:'Suīrán gāosān de xuéxí hěn fánmáng, dàn tā měi tiān wǎnshang háishi huì huā bàn ge xiǎoshí wèi tā shōuyǎng de liúlàng gǒu.',goiY:['虽然……但……还是……','繁忙','喂','流浪'],giai:'虽然……但……还是…… nhấn mạnh "dù vậy vẫn"; 繁忙 dùng cho việc (学习很繁忙), không nói 他很繁忙. "Chó hoang" = 流浪狗, không dịch 野狗 (chó rừng, chó dại).'},
-  {vi:'Thi xong rồi thì cất hết tài liệu ôn tập đi, việc gì cần làm thì cứ làm, trong lòng có nóng ruột mấy cũng chẳng ích gì.',zh:'考试已经结束了，把复习资料统统收起来，该干吗干吗吧，心情再急切也没用。',py:'Kǎoshì yǐjīng jiéshù le, bǎ fùxí zīliào tǒngtǒng shōu qǐlái, gāi gànmá gànmá ba, xīnqíng zài jíqiè yě méi yòng.',goiY:['统统','该干吗干吗','再……也……','急切'],giai:'该干吗干吗 = cứ sinh hoạt như thường (khẩu ngữ, điểm ngữ pháp 3); 再 + Adj + 也…… = có … mấy cũng …; 急切 chỉ tâm trạng nóng lòng.'},
-  {vi:'Anh ấy tuy đã đi qua rất nhiều nước, hiểu biết rộng, nhưng chưa bao giờ khoe khoang trước mặt bạn bè, rất có giáo dục.',zh:'他虽然游历过很多国家，见多识广，却从来不在朋友面前炫耀，非常有教养。',py:'Tā suīrán yóulìguo hěn duō guójiā, jiànduō-shíguǎng, què cónglái bú zài péngyou miànqián xuànyào, fēicháng yǒu jiàoyǎng.',goiY:['虽然……却……','见多识广','炫耀','教养'],giai:'虽然……却……: 却 đứng sau chủ ngữ (ở đây chủ ngữ đã lược), trước trạng ngữ 从来不; 炫耀 ôn bài 3; "rất có giáo dục" = 很有教养, không dịch 很有教育.'},
-  {vi:'Dạ hội mừng năm mới năm nay lấy học sinh làm chính, giáo viên làm phụ; lớp nào cũng phải có tiết mục, không lớp nào được ngoại lệ, ai nấy đều nóng lòng mong đến ngày đó.',zh:'今年的元旦晚会以学生为主，老师为辅，每个班都要出节目，谁也不能例外，大家都急切地盼望着那一天。',py:'Jīnnián de Yuándàn wǎnhuì yǐ xuésheng wéi zhǔ, lǎoshī wéi fǔ, měi ge bān dōu yào chū jiémù, shéi yě bù néng lìwài, dàjiā dōu jíqiè de pànwàngzhe nà yì tiān.',goiY:['以……为主，……为辅','例外','急切'],giai:'Hai cụm 以……为…… dùng liền nhau thì lược 以 thứ hai (老师为辅); 谁也不能例外 = không ai được ngoại lệ; 急切地盼望 = nóng lòng mong đợi.'},
-  {vi:'Từ khi lắp camera điều khiển từ xa, chỉ cần trong nhà có chút động tĩnh là mẹ nhận được ảnh ngay, nên với bà ở nhà một mình mẹ cũng yên tâm hơn nhiều.',zh:'自从装了遥控摄像头，只要家里稍有动静，妈妈就能即时收到照片，对独自在家的奶奶也放心多了。',py:'Zìcóng zhuāngle yáokòng shèxiàngtóu, zhǐyào jiā li shāo yǒu dòngjing, māma jiù néng jíshí shōudào zhàopiàn, duì dúzì zài jiā de nǎinai yě fàngxīn duō le.',goiY:['自从……','只要……就……','动静','即时'],giai:'Ba vế: 自从 (mốc thời gian) → 只要……就…… (điều kiện – kết quả) → kết luận; 稍有动静 = có chút động tĩnh; 即时 = ngay tức thì (khác 及时 = kịp thời).'},
-  {vi:'Lấy môn Ngữ văn làm ví dụ, chỉ cần mỗi ngày em nghiền ngẫm một bài văn mẫu, chép lại hết những câu hay, chưa đến một học kỳ trình độ viết sẽ tiến bộ rõ rệt.',zh:'以语文为例，只要你每天钻研一篇范文，把好句子统统记下来，不到一个学期，写作水平就会明显提高。',py:'Yǐ yǔwén wéi lì, zhǐyào nǐ měi tiān zuānyán yì piān fànwén, bǎ hǎo jùzi tǒngtǒng jì xiàlái, bú dào yí ge xuéqī, xiězuò shuǐpíng jiù huì míngxiǎn tígāo.',goiY:['以……为例','只要……就……','钻研','统统'],giai:'以……为例 (văn viết) = lấy … làm ví dụ, đặt đầu câu; 只要 ở vế điều kiện, 就 ở vế kết quả cuối câu; 统统记下来 = chép lại hết.'},
-  {vi:'Mèo nhà tôi không những khứu giác nhạy, động tác nhanh nhẹn, mà hễ thấy tôi về là nhào tới, thân thiết cọ vào chân tôi.',zh:'我家的猫不但嗅觉灵敏、动作敏捷，而且一看见我回来就扑过来，亲热地蹭我的腿。',py:'Wǒ jiā de māo búdàn xiùjué língmǐn, dòngzuò mǐnjié, érqiě yí kànjiàn wǒ huílái jiù pū guòlái, qīnrè de cèng wǒ de tuǐ.',goiY:['不但……而且……','灵敏','敏捷','一……就……'],giai:'嗅觉 đi với 灵敏, 动作 đi với 敏捷 — không đảo; 一……就…… lồng trong vế 而且; 亲热地 + V làm trạng ngữ.'},
-  {vi:'Thay vì theo dõi, bám sát mọi cử chỉ của con, cha mẹ chi bằng tôn trọng quyền riêng tư của con, nếu không con chỉ càng ngày càng phản cảm.',zh:'父母与其监视、跟踪孩子的一举一动，不如尊重他们的隐私，否则孩子只会越来越反感。',py:'Fùmǔ yǔqí jiānshì, gēnzōng háizi de yì jǔ yí dòng, bùrú zūnzhòng tāmen de yǐnsī, fǒuzé háizi zhǐ huì yuè lái yuè fǎngǎn.',goiY:['与其……不如……','监视','跟踪','隐私'],giai:'与其 A 不如 B: người nói chọn B; 否则 = nếu không thì (vế hậu quả). 隐私, 反感 ôn bài 5; "theo dõi" ở đây là 监视 (kiểm soát), không phải 关注.'},
-  {vi:'Nhà tôi ngày thường ai làm việc nấy, nhưng một khi có người gặp khó khăn, mọi người đều gác hết việc trong tay lại để giúp đỡ, không ai ngoại lệ.',zh:'我们家平时该干吗干吗，可一旦有人遇到困难，大家都会把手头的事统统放下来帮忙，谁也不例外。',py:'Wǒmen jiā píngshí gāi gànmá gànmá, kě yídàn yǒu rén yùdào kùnnan, dàjiā dōu huì bǎ shǒutóu de shì tǒngtǒng fàng xiàlái bāngmáng, shéi yě bú lìwài.',goiY:['该干吗干吗','一旦……都……','统统','例外'],giai:'该干吗干吗 (ngày thường) đối lập với 一旦…… (tình huống đặc biệt) qua 可; 把……统统放下来 = gác hết lại; câu cuối 谁也不例外 nhấn mạnh "không ai".'}
+  {vi:'Tuy việc học lớp 12 rất bận rộn, nhưng tối nào cậu ấy cũng dành nửa tiếng cho con chó hoang mình nhận nuôi ăn.',zh:'虽然高三的学习很繁忙，但他每天晚上还是会花半个小时喂他收养的流浪狗。',py:'Suīrán gāosān de xuéxí hěn fánmáng, dàn tā měi tiān wǎnshang háishi huì huā bàn ge xiǎoshí wèi tā shōuyǎng de liúlàng gǒu.',goiY:['虽然……但……还是……','繁忙','喂','流浪'],giai:'虽然……但……还是…… nhấn mạnh "dù vậy vẫn"; 繁忙 dùng cho việc (学习很繁忙), không nói 他很繁忙. "Chó hoang" = 流浪狗, đừng dịch thành "chó rừng".'},
+  {vi:'Thi xong rồi thì cất hết tài liệu ôn tập đi, cần nghỉ thì cứ nghỉ, trong lòng có nóng ruột mấy cũng chẳng ích gì.',zh:'考试已经结束了，把复习资料统统收起来，该休息就休息吧，心情再急切也没用。',py:'Kǎoshì yǐjīng jiéshù le, bǎ fùxí zīliào tǒngtǒng shōu qǐlái, gāi xiūxi jiù xiūxi ba, xīnqíng zài jíqiè yě méi yòng.',goiY:['把……统统……','该 V 就 V','急切'],giai:'统统 đứng sau 把 + tân ngữ; 该休息就休息 = cùng kiểu với 该干吗干吗: cần làm gì thì làm nấy; 再……也没用 = có… mấy cũng vô ích.'},
+  {vi:'Anh ấy là người từng trải, hiểu biết rộng, nhưng chưa bao giờ khoe với bạn bè mình đã đi bao nhiêu nước, rất có giáo dục.',zh:'他是个见多识广的人，却从来不在朋友面前炫耀自己去过多少国家，非常有教养。',py:'Tā shì ge jiànduō-shíguǎng de rén, què cónglái bú zài péngyou miànqián xuànyào zìjǐ qùguo duōshao guójiā, fēicháng yǒu jiàoyǎng.',goiY:['见多识广的人','却','炫耀','教养'],giai:'见多识广 làm định ngữ: 见多识广的人; 却 đứng sau chủ ngữ (đã lược), trước 从来不; 炫耀 ôn bài 3; "rất có giáo dục" = 很有教养, không dịch 很有教育.'},
+  {vi:'Lấy lớp tôi làm ví dụ, trong ba mươi bạn có hai mươi bạn từng nuôi thú cưng.',zh:'以我们班为例，三十个同学里有二十个都养过宠物。',py:'Yǐ wǒmen bān wéi lì, sānshí ge tóngxué li yǒu èrshí ge dōu yǎngguo chǒngwù.',goiY:['以……为例','宠物'],giai:'以 A 为例 = lấy A làm ví dụ, đặt đầu câu; 为 đọc wéi.'},
+  {vi:'Từ khi lắp camera điều khiển từ xa, trong nhà hễ có chút động tĩnh là mẹ nhận được ảnh ngay, nên với bà ở nhà một mình mẹ cũng yên tâm hơn nhiều.',zh:'自从装了遥控摄像头，家里一有动静，妈妈就能即时收到照片，对独自在家的奶奶也放心多了。',py:'Zìcóng zhuāngle yáokòng shèxiàngtóu, jiā li yì yǒu dòngjing, māma jiù néng jíshí shōudào zhàopiàn, duì dúzì zài jiā de nǎinai yě fàngxīn duō le.',goiY:['自从……','只要……就……','动静','即时'],giai:'Ba vế: 自从 (mốc thời gian) → 只要……就…… (điều kiện – kết quả) → kết luận; 稍有动静 = có chút động tĩnh; 即时 = ngay tức thì (khác 及时 = kịp thời).'},
+  {vi:'Thay vì theo dõi, bám sát mọi cử chỉ của con, cha mẹ chi bằng tôn trọng quyền riêng tư của con, nếu không con chỉ càng ngày càng phản cảm.',zh:'父母与其监视、跟踪孩子的一举一动，不如尊重他们的隐私，否则孩子只会越来越反感。',py:'Fùmǔ yǔqí jiānshì, gēnzōng háizi de yì jǔ yí dòng, bùrú zūnzhòng tāmen de yǐnsī, fǒuzé háizi zhǐ huì yuè lái yuè fǎngǎn.',goiY:['与其……不如……','监视','跟踪','隐私'],giai:'与其 A 不如 B: người nói chọn B; 否则 = nếu không thì (vế hậu quả). 隐私, 反感 ôn bài 5; "theo dõi" ở đây là 监视 (kiểm soát hành động), không phải "quan tâm theo dõi".'}
 ];
 
-// Chiều Trung → Việt — bám ý bài khoá, nội dung khác chiều trên
+// ══════════════════════════════════════════
+// Dịch Trung → Việt — câu mới, không trùng chiều trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Đại Hoàng vốn là mèo hoang, hôm ấy dầm mưa to đến "thăm", mưa tạnh rồi thì ở lì không chịu đi nữa.',zh:'大黄原本是只流浪猫，那天淋着大雨来拜访，下完雨就再也不走了。',py:'Dàhuáng yuánběn shì zhī liúlàng māo, nà tiān línzhe dàyǔ lái bàifǎng, xiàwán yǔ jiù zài yě bù zǒu le.',goiY:['流浪 = lang thang, hoang','淋着大雨 = dầm mưa to','拜访 = thăm (cách nói trang trọng)'],giai:'拜访 dùng cho con mèo là cách nói hài hước — nên dịch để trong ngoặc kép "thăm"; 再也不……了 = không … nữa (dứt khoát).'},
-  {vi:'Đại Hoàng tuy có quá khứ lang thang nhưng lại rất có giáo dục, không lười biếng cũng chẳng tham ăn.',zh:'大黄虽然有流浪史，却很有教养，既不懒惰，也不嘴馋。',py:'Dàhuáng suīrán yǒu liúlàng shǐ, què hěn yǒu jiàoyǎng, jì bù lǎnduò, yě bù zuǐchán.',goiY:['虽然……却…… = tuy … nhưng lại …','既不……也不…… = không … cũng không …','嘴馋 = tham ăn'],giai:'流浪史 dịch "quá khứ lang thang", không dịch "lịch sử lưu lạc"; 教养 = sự có giáo dục (không phải "giáo dưỡng").'},
-  {vi:'Tiền Tiểu Kỳ vừa về nhà, Bạch Bạch đã nhào tới, còn đòi ngửi hết một lượt những thứ anh mang về.',zh:'钱小奇一回家，白白就扑上来，还要把他带回来的东西统统闻一遍。',py:'Qián Xiǎoqí yì huí jiā, Báibái jiù pū shànglái, hái yào bǎ tā dài huílái de dōngxi tǒngtǒng wén yí biàn.',goiY:['一……就…… = vừa … là …','扑上来 = nhào tới','统统 = tất cả, hết thảy'],giai:'Tên riêng dịch theo âm Hán Việt (钱小奇 = Tiền Tiểu Kỳ, 白白 = Bạch Bạch); 统统闻一遍 = ngửi hết một lượt, không sót thứ gì.'},
-  {vi:'Tuy công việc bận rộn, nhưng điều anh nóng lòng mong đợi nhất mỗi ngày chính là khoảnh khắc về nhà mở cửa.',zh:'他虽然工作繁忙，但每天最急切盼望的，就是回家开门的那一刻。',py:'Tā suīrán gōngzuò fánmáng, dàn měi tiān zuì jíqiè pànwàng de, jiù shì huí jiā kāimén de nà yí kè.',goiY:['繁忙 = bận rộn','急切 = nóng lòng, háo hức','……的，就是…… = điều … chính là …'],giai:'Cấu trúc nhấn mạnh "(điều) … nhất chính là …"; 急切 dịch "nóng lòng / háo hức", không dịch "cấp thiết".'},
-  {vi:'Còn Hỷ Nhi thì lần nào cũng đứng ở đằng xa, dùng ánh mắt chăm chú bày tỏ tình cảm nồng nhiệt mà kín đáo của mình.',zh:'喜儿则毫无例外地站在远处，用凝视表达着它深沉的热情。',py:'Xǐ\'ér zé háowú lìwài de zhàn zài yuǎnchù, yòng níngshì biǎodázhe tā shēnchén de rèqíng.',goiY:['则 = còn … thì (đối chiếu)','毫无例外 = không có ngoại lệ','凝视 = nhìn chăm chú','深沉 = sâu lắng, kín đáo'],giai:'毫无例外地 dịch tự nhiên là "lần nào cũng"; 用凝视表达 → "dùng ánh nhìn chăm chú để bày tỏ"; 深沉的热情 = tình cảm nồng nhiệt mà sâu kín.'},
-  {vi:'Để biết lũ mèo làm gì, anh lắp một cái camera, nhưng chẳng bao lâu phát hiện nó có nhược điểm, nhiều cảnh quay được đều trống trơn.',zh:'为了弄清楚猫在做什么，他安了个摄像头，可很快发现它有缺陷，拍下的很多镜头都是空的。',py:'Wèile nòng qīngchu māo zài zuò shénme, tā ānle ge shèxiàngtóu, kě hěn kuài fāxiàn tā yǒu quēxiàn, pāixià de hěn duō jìngtóu dōu shì kōng de.',goiY:['为了…… = để …','缺陷 = nhược điểm, thiếu sót','镜头 = cảnh quay'],giai:'Ba vế: mục đích (为了) → hành động → chuyển ý (可); 镜头 ở đây là "cảnh quay" chứ không phải "ống kính"; 空的 = trống trơn (không có mèo).'},
-  {vi:'Thế là anh quyết định tự lực cánh sinh, vừa mày mò nghiên cứu vừa lắp, sau hơn ba tháng nỗ lực, cuối cùng đã lắp xong một bộ thiết bị tối tân.',zh:'于是他决定自力更生，边钻研边安装，经过三个多月的努力，终于装好了一套尖端设备。',py:'Yúshì tā juédìng zìlì-gēngshēng, biān zuānyán biān ānzhuāng, jīngguò sān ge duō yuè de nǔlì, zhōngyú zhuānghǎole yí tào jiānduān shèbèi.',goiY:['自力更生 = tự lực cánh sinh','边……边…… = vừa … vừa …','尖端 = tối tân, tiên tiến nhất'],giai:'边 A 边 B = vừa A vừa B; 经过…… nêu quá trình, 终于 nêu kết quả; 尖端设备 = thiết bị tối tân (không dịch "đầu nhọn").'},
-  {vi:'Bộ thiết bị này không chỉ chụp bắt và lưu lại hình ảnh cử động của mèo, mà còn có thể điều khiển camera từ xa qua Internet để giám sát mèo tức thời.',zh:'这套设备不仅能抓拍并储存猫的动态图像，还能通过互联网遥控摄像头，对猫进行即时监控。',py:'Zhè tào shèbèi bùjǐn néng zhuāpāi bìng chǔcún māo de dòngtài túxiàng, hái néng tōngguò hùliánwǎng yáokòng shèxiàngtóu, duì māo jìnxíng jíshí jiānkòng.',goiY:['不仅……还…… = không chỉ … mà còn …','储存 = lưu trữ','遥控 = điều khiển từ xa','即时 = tức thời'],giai:'对 + N + 进行 + V (văn viết) dịch gọn là "V + N" (giám sát mèo); 动态图像 = hình ảnh cử động, không dịch "ảnh động thái".'},
-  {vi:'Lấy một con mèo làm ví dụ, ngày nào nó cũng ăn uống vào khoảng hai giờ, sai lệch thời gian trung bình chưa tới năm phút, đủ thấy hành động của mèo rất có quy luật.',zh:'以其中一只猫为例，它每天两点左右吃饭喝水，时间误差平均不到五分钟，可见猫的举动很有规律。',py:'Yǐ qízhōng yì zhī māo wéi lì, tā měi tiān liǎng diǎn zuǒyòu chīfàn hē shuǐ, shíjiān wùchā píngjūn bú dào wǔ fēnzhōng, kějiàn māo de jǔdòng hěn yǒu guīlǜ.',goiY:['以……为例 = lấy … làm ví dụ','误差 = sai số, sai lệch','可见 = đủ thấy','举动 = hành động'],giai:'以……为例 đặt đầu câu dẫn ví dụ; 可见 rút ra kết luận từ ví dụ; 误差 dịch "sai lệch / sai số".'},
-  {vi:'Đại Hoàng và Bạch Bạch không phải lúc nào cũng canh ở cửa, mà ở trong nhà ai làm việc nấy, nghe thấy động tĩnh rồi mới cung kính ra đón chủ.',zh:'大黄和白白并不是一直守在门口，而是在屋里该干吗干吗，听到动静后才恭恭敬敬地去迎接主人。',py:'Dàhuáng hé Báibái bìng bú shì yìzhí shǒu zài ménkǒu, ér shì zài wū li gāi gànmá gànmá, tīngdào dòngjing hòu cái gōnggōngjìngjìng de qù yíngjiē zhǔrén.',goiY:['不是……而是…… = không phải … mà là …','该干吗干吗 = việc ai nấy làm','动静 = động tĩnh','恭恭敬敬 = cung kính'],giai:'该干吗干吗 dịch "việc ai nấy làm / cứ làm việc của mình"; ……后才…… = sau khi … mới …; 并 nhấn mạnh phủ định điều người ta tưởng.'}
+  {vi:'Anh ấy tự lực cánh sinh từ nhỏ, cho dù cuộc sống khó khăn đến đâu cũng chưa bao giờ vay tiền người khác.',zh:'他从小就自力更生，即便生活再困难，也从来不向别人借钱。',py:'Tā cóngxiǎo jiù zìlì-gēngshēng, jíbiàn shēnghuó zài kùnnan, yě cónglái bú xiàng biérén jiè qián.',goiY:['自力更生 = tự lực cánh sinh','即便……也…… = cho dù… cũng…'],giai:'即便 + 再 + Adj = dù… đến đâu (ôn bài 10); 向别人借钱 = vay tiền người khác.'},
+  {vi:'Cái máy này có một khiếm khuyết nhỏ: vận hành lâu là sẽ xuất hiện sai số.',zh:'这台机器有个小缺陷，操作时间一长，就会出现误差。',py:'Zhè tái jīqì yǒu ge xiǎo quēxiàn, cāozuò shíjiān yì cháng, jiù huì chūxiàn wùchā.',goiY:['缺陷 = khiếm khuyết','操作 = vận hành','误差 = sai số'],giai:'……一 + Adj，就…… = hễ… là…; 操作时间一长 = vận hành lâu.'},
+  {vi:'Ông nội không hay nói, nhưng tình yêu ông dành cho gia đình rất sâu lắng.',zh:'爷爷不爱说话，但他对家人的爱很深沉。',py:'Yéye bú ài shuōhuà, dàn tā duì jiārén de ài hěn shēnchén.',goiY:['深沉 = sâu lắng, kín đáo'],giai:'深沉 tả tình cảm sâu nhưng không bộc lộ ra ngoài → dịch "sâu lắng".'},
+  {vi:'Con chó hoang đó nằm phục trong góc cả ngày, chẳng có chút động tĩnh gì.',zh:'那只流浪狗在角落里趴了一天，一点儿动静也没有。',py:'Nà zhī liúlàng gǒu zài jiǎoluò li pāle yì tiān, yìdiǎnr dòngjing yě méiyǒu.',goiY:['角落 = góc','趴 = nằm phục','动静 = động tĩnh'],giai:'一点儿 + N + 也没有 = không có chút … nào; 动静 dịch "động tĩnh, tiếng động".'},
+  {vi:'Nhờ hình ảnh trong cảnh quay, cảnh sát nhanh chóng tìm ra tung tích của tên trộm.',zh:'警察通过镜头里的画面，很快找到了小偷的踪迹。',py:'Jǐngchá tōngguò jìngtóu li de huàmiàn, hěn kuài zhǎodàole xiǎotōu de zōngjì.',goiY:['镜头 = ống kính, cảnh quay','踪迹 = tung tích'],giai:'通过 + phương tiện = nhờ / thông qua; 踪迹 dịch "tung tích, dấu vết".'}
 ];
 
 // ══════════════════════════════════════════
@@ -1677,193 +1611,143 @@ var writingData = {
 // LUYỆN NÓI — đúng bảng 练习5 của sách: 根据提示，简述课文主要内容
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Đây là bảng bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b>. Mỗi câu hỏi là một dòng của bảng, cột gợi ý giữ nguyên như sách. Bấm loa nghe câu hỏi, <b>tự ghi âm câu trả lời trước</b> rồi mới mở câu mẫu. Cố dùng đúng các từ trong gợi ý.',
-  questions:[
-    {q_zh:'描述一下钱小奇家的三只猫。',
-     q_vn:'Hãy miêu tả ba chú mèo nhà Tiền Tiểu Kỳ.',
-     hint:'①大黄 ②白白 ③喜儿',
-     sample:'大黄原本是只流浪猫，见多识广，很有教养，天天趴在窗台上晒太阳。白白是个男孩儿，嗅觉灵敏，动作敏捷，快活而好动。喜儿是个人见人爱的女孩儿，每天都把自己梳理得漂亮而迷人。',
-     sample_vn:'Đại Hoàng vốn là mèo hoang, từng trải, rất có giáo dục, ngày ngày nằm trên bậu cửa sổ phơi nắng. Bạch Bạch là "cậu con trai", khứu giác nhạy, động tác nhanh nhẹn, vui vẻ và hiếu động. Hỷ Nhi là "cô con gái" ai gặp cũng quý, ngày nào cũng chải chuốt cho mình thật xinh đẹp, quyến rũ.',
-     note:'Mỗi con mèo một câu: 是 + xuất thân / giới tính + 2–3 tính từ của bài. Dùng 而 nối hai tính từ (快活而好动, 漂亮而迷人).'},
-    {q_zh:'钱小奇跟三只猫的感情怎么样？',
-     q_vn:'Tình cảm giữa Tiền Tiểu Kỳ và ba chú mèo thế nào?',
-     hint:'①钱小奇对待猫 ②猫对待钱小奇',
-     sample:'钱小奇是个模范饲养员，每天早起第一件事就是伺候猫，工作再忙，他最急切盼望的也是回家开门的那一刻。猫们也很爱他：大黄恭恭敬敬地在门口迎接，白白亲热地扑上来，喜儿则站在远处，用凝视表达深沉的热情。',
-     sample_vn:'Tiền Tiểu Kỳ là người nuôi mèo mẫu mực, sáng nào dậy việc đầu tiên cũng là chăm mèo; công việc bận mấy, điều anh nóng lòng mong đợi nhất vẫn là khoảnh khắc về nhà mở cửa. Lũ mèo cũng rất yêu anh: Đại Hoàng cung kính ra cửa đón, Bạch Bạch thân thiết nhào tới, còn Hỷ Nhi thì đứng đằng xa, dùng ánh nhìn chăm chú bày tỏ tình cảm sâu lắng.',
-     note:'Hai chiều tình cảm: chủ → mèo (模范饲养员, 急切盼望), mèo → chủ (恭恭敬敬, 亲热, 凝视). Dùng 则 để đối chiếu Hỷ Nhi với hai con kia.'},
-    {q_zh:'为了弄清楚主人不在时，猫在做什么，钱小奇采取了什么措施？',
-     q_vn:'Để làm rõ khi chủ vắng nhà thì mèo làm gì, Tiền Tiểu Kỳ đã dùng biện pháp gì?',
-     hint:'①安摄像头 ②增加设备',
-     sample:'他先在家里安了个摄像头，监视猫的一举一动。后来发现这个摄像头不能移动，有缺陷，于是他增加了设备，自力更生安装了一套尖端玩意儿，不但能抓拍、储存图像，还能通过互联网遥控摄像头，对猫进行即时监控。',
-     sample_vn:'Trước tiên anh lắp một cái camera trong nhà, theo dõi mọi cử động của mèo. Sau đó phát hiện camera này không di chuyển được, có nhược điểm, thế là anh bổ sung thiết bị, tự lực lắp một bộ "đồ chơi" tối tân, không những chụp bắt, lưu được hình ảnh mà còn điều khiển camera từ xa qua Internet, giám sát mèo tức thời.',
-     note:'Kể theo trình tự 先……后来……于是……; từ khoá: 监视, 缺陷, 自力更生, 遥控, 即时.'},
-    {q_zh:'主人不在时，猫到底在干吗？',
-     q_vn:'Khi chủ vắng nhà, rốt cuộc mèo làm gì?',
-     hint:'①睡觉 ②有规律',
-     sample:'通过分析数据和图片，钱小奇发现猫大多数时间都在睡觉。除了睡觉，它们的行动很有规律，以其中一只猫为例，它每天下午两点左右吃饭喝水，时间误差平均不到5分钟。大黄和白白也不是一直在门口等主人，而是在屋里该干吗干吗。',
-     sample_vn:'Qua phân tích dữ liệu và hình ảnh, Tiền Tiểu Kỳ phát hiện mèo phần lớn thời gian đều ngủ. Ngoài ngủ ra, hoạt động của chúng rất có quy luật: lấy một con làm ví dụ, ngày nào nó cũng ăn uống vào khoảng hai giờ chiều, sai lệch trung bình chưa đến 5 phút. Đại Hoàng và Bạch Bạch cũng không phải lúc nào cũng đợi chủ ở cửa, mà ở trong nhà ai làm việc nấy.',
-     note:'Hai ý: 睡觉 + 有规律; nêu ví dụ bằng 以……为例 và chi tiết 该干吗干吗 — hai điểm ngữ pháp của bài.'},
-    {q_zh:'这套系统还帮过钱小奇什么忙？',
-     q_vn:'Hệ thống này còn giúp Tiền Tiểu Kỳ việc gì?',
-     hint:'找到了……',
-     sample:'有一次，钱小奇在办公室上网遥控摄像头，找到了掉在家里桌子下的钱包。如今，只要家里稍有动静，系统就能把图像记录下来，并即时发到他的邮箱里“报警”。',
-     sample_vn:'Có lần, Tiền Tiểu Kỳ ở văn phòng lên mạng điều khiển camera, tìm thấy chiếc ví rơi dưới gầm bàn ở nhà. Giờ đây chỉ cần trong nhà có chút động tĩnh, hệ thống sẽ ghi lại hình ảnh và gửi ngay vào hộp thư của anh để "báo động".',
-     note:'Dùng đúng gợi ý 找到了……; thêm ý 稍有动静 → 即时“报警” để câu trả lời trọn vẹn.'}
+  intro: 'Đây là bảng bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b>. Mỗi câu hỏi là một dòng của bảng, cột gợi ý giữ nguyên như sách. Bấm loa nghe câu hỏi, <b>tự ghi âm câu trả lời trước</b> rồi mới mở câu mẫu. Cố dùng đúng các từ trong gợi ý.',
+  questions: [
+    {q_zh:'描述一下钱小奇家的三只猫。',q_vn:'Hãy miêu tả ba chú mèo nhà Tiền Tiểu Kỳ.',hint:'①大黄 ②白白 ③喜儿',sample:'大黄原本是只见多识广的流浪猫，很有教养，天天趴在窗台上晒太阳。白白是个男孩儿，嗅觉灵敏，动作十分敏捷，快活而好动。喜儿是个人见人爱的女孩儿，每天都把自己梳理得漂亮而迷人。',sample_vn:'Đại Hoàng vốn là mèo hoang, từng trải, rất có giáo dục, ngày ngày nằm trên bậu cửa sổ phơi nắng. Bạch Bạch là "cậu con trai", khứu giác nhạy, động tác nhanh nhẹn, vui vẻ và hiếu động. Hỷ Nhi là "cô con gái" ai gặp cũng quý, ngày nào cũng chải chuốt cho mình thật xinh đẹp, quyến rũ.',note:'Mỗi con mèo một câu: 是 + xuất thân / giới tính + 2–3 tính từ của bài. Dùng 而 nối hai tính từ (快活而好动, 漂亮而迷人).'},
+    {q_zh:'钱小奇跟三只猫的感情怎么样？',q_vn:'Tình cảm giữa Tiền Tiểu Kỳ và ba chú mèo thế nào?',hint:'①钱小奇对待猫 ②猫对待钱小奇',sample:'钱小奇是个模范饲养员，每天早起第一件事就是伺候猫，即使白天工作很忙，他最急切盼望的也是回家开门的那一刻。猫们也很爱他：大黄恭恭敬敬地在门口迎接，白白亲热地扑上来，喜儿则站在远处，用凝视表达深沉的热情。',sample_vn:'Tiền Tiểu Kỳ là người nuôi mèo mẫu mực, sáng nào dậy việc đầu tiên cũng là chăm mèo; công việc bận mấy, điều anh nóng lòng mong đợi nhất vẫn là khoảnh khắc về nhà mở cửa. Lũ mèo cũng rất yêu anh: Đại Hoàng cung kính ra cửa đón, Bạch Bạch thân thiết nhào tới, còn Hỷ Nhi thì đứng đằng xa, dùng ánh nhìn chăm chú bày tỏ tình cảm sâu lắng.',note:'Hai chiều tình cảm: chủ → mèo (模范饲养员, 急切盼望), mèo → chủ (恭恭敬敬, 亲热, 凝视). Dùng 则 để đối chiếu Hỷ Nhi với hai con kia.'},
+    {q_zh:'为了弄清楚主人不在时，猫在做什么，钱小奇采取了什么措施？',q_vn:'Để làm rõ khi chủ vắng nhà thì mèo làm gì, Tiền Tiểu Kỳ đã dùng biện pháp gì?',hint:'①安摄像头 ②增加设备',sample:'他先在家里安了个摄像头，监视猫的一举一动。后来发现这个摄像头不能移动，有缺陷，于是他增加了设备，自力更生安装了一套尖端玩意儿，不但能抓拍、储存图像，还能通过互联网遥控摄像头，对猫进行即时监控。',sample_vn:'Trước tiên anh lắp một cái camera trong nhà, theo dõi mọi cử động của mèo. Sau đó phát hiện camera này không di chuyển được, có nhược điểm, thế là anh bổ sung thiết bị, tự lực lắp một bộ "đồ chơi" tối tân, không những chụp bắt, lưu được hình ảnh mà còn điều khiển camera từ xa qua Internet, giám sát mèo tức thời.',note:'Kể theo trình tự 先……后来……于是……; từ khoá: 监视, 缺陷, 自力更生, 遥控, 即时.'},
+    {q_zh:'主人不在时，猫到底在干吗？',q_vn:'Khi chủ vắng nhà, rốt cuộc mèo làm gì?',hint:'①睡觉 ②有规律',sample:'通过分析数据和图片，钱小奇发现猫大多数时间都在睡觉。除了睡觉，它们的行动很有规律，以其中一只猫为例，它每天下午两点左右吃饭喝水，时间误差平均不到5分钟。大黄和白白也不是一直在门口等主人，而是在屋里该干吗干吗。',sample_vn:'Qua phân tích dữ liệu và hình ảnh, Tiền Tiểu Kỳ phát hiện mèo phần lớn thời gian đều ngủ. Ngoài ngủ ra, hoạt động của chúng rất có quy luật: lấy một con làm ví dụ, ngày nào nó cũng ăn uống vào khoảng hai giờ chiều, sai lệch trung bình chưa đến 5 phút. Đại Hoàng và Bạch Bạch cũng không phải lúc nào cũng đợi chủ ở cửa, mà ở trong nhà ai làm việc nấy.',note:'Hai ý: 睡觉 + 有规律; nêu ví dụ bằng 以……为例 và chi tiết 该干吗干吗 — hai điểm ngữ pháp của bài.'},
+    {q_zh:'这套系统还帮过钱小奇什么忙？',q_vn:'Hệ thống này còn giúp Tiền Tiểu Kỳ việc gì?',hint:'找到了……',sample:'有一次，钱小奇在办公室上网遥控摄像头，找到了掉在家里桌子下的钱包。如今，只要家里稍有动静，系统就能把图像记录下来，并即时发到他的邮箱里“报警”。',sample_vn:'Có lần, Tiền Tiểu Kỳ ở văn phòng lên mạng điều khiển camera, tìm thấy chiếc ví rơi dưới gầm bàn ở nhà. Giờ đây chỉ cần trong nhà có chút động tĩnh, hệ thống sẽ ghi lại hình ảnh và gửi ngay vào hộp thư của anh để "báo động".',note:'Dùng đúng gợi ý 找到了……; thêm ý 稍有动静 → 即时“报警” để câu trả lời trọn vẹn.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — 听力 (sách HSK 6 không có sách bài tập nghe)
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — câu tự soạn (sách HSK 6 không có sách bài tập nghe), mỗi câu một tình huống mới
+// ══════════════════════════════════════════
 var listenExamData = {
-  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. ' +
-         'Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
-  source: 'Soạn theo dạng đề HSK 6 · chủ đề bài 11',
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 11',
   items: [
-    {n:1,
-     lines:[{sp:'女',zh:'你家这只猫怎么这么瘦？'},
-            {sp:'男',zh:'它以前是只流浪猫，上个月淋着大雨跑到我家门口，我就把它留下来了。'}],
-     q:'男的家的猫原来是什么样的？',qvn:'Con mèo nhà người đàn ông trước kia là mèo thế nào?',
-     opts:['流浪猫','朋友送的猫','宠物店买的猫','邻居家的猫'],ans:0,
-     why:'它以前是只流浪猫 — nói thẳng xuất thân. 淋着大雨跑到我家门口 giống chi tiết Đại Hoàng trong bài khoá.',
-     words:['流浪','淋']},
-
-    {n:2,
-     lines:[{sp:'男',zh:'你家那只小猫真可爱，一看见你就扑过来。'},
-            {sp:'女',zh:'是啊，它嗅觉特别灵敏，我还没开门，它就知道我回来了。'}],
-     q:'关于那只小猫，可以知道什么？',qvn:'Về con mèo nhỏ đó, có thể biết điều gì?',
-     opts:['很懒惰','嗅觉很灵敏','不喜欢主人','总是在睡觉'],ans:1,
-     why:'它嗅觉特别灵敏 — nghe được từ khoá là chọn ngay. 一看见你就扑过来 cho thấy nó rất quấn chủ, nên "不喜欢主人" sai.',
-     words:['扑','嗅觉','灵敏']},
-
-    {n:3,
-     lines:[{sp:'女',zh:'听说你在家里装了个摄像头？'},
-            {sp:'男',zh:'对，想看看我不在家时猫在干什么。可这个摄像头不能移动，拍下的镜头一大半都是空的。'}],
-     q:'男的对摄像头有什么不满？',qvn:'Người đàn ông không hài lòng gì về camera?',
-     opts:['价格太贵','不能移动','声音太大','操作太复杂'],ans:1,
-     why:'可 + 这个摄像头不能移动 — ý chính nằm sau từ chuyển ý 可. Hệ quả: 镜头一大半都是空的.',
-     words:['镜头']},
-
-    {n:4,
-     lines:[{sp:'男',zh:'你这套设备是在哪儿买的？挺尖端的嘛。'},
-            {sp:'女',zh:'哪儿买得到啊，是我自己边钻研边安装的，花了我整整三个月。'}],
-     q:'这套设备是怎么来的？',qvn:'Bộ thiết bị này có được bằng cách nào?',
-     opts:['在网上买的','朋友送的','女的自己安装的','请专家装的'],ans:2,
-     why:'哪儿买得到啊 là câu hỏi tu từ = không mua được; 是我自己边钻研边安装的 → tự lắp (tự lực cánh sinh).',
-     words:['尖端','钻研']},
-
-    {n:5,
-     lines:[{sp:'女',zh:'你在办公室也能知道家里的情况？'},
-            {sp:'男',zh:'当然，我可以用手机遥控摄像头，家里稍有动静，照片就会即时发到我的邮箱。'}],
-     q:'男的是怎样了解家里情况的？',qvn:'Người đàn ông nắm tình hình ở nhà bằng cách nào?',
-     opts:['请邻居帮忙看','打电话问家人','用手机遥控摄像头','每天中午回家看'],ans:2,
-     why:'我可以用手机遥控摄像头 — cách làm được nói rõ; 稍有动静……即时发到邮箱 bổ sung chi tiết.',
-     words:['遥控','动静','即时']},
-
-    {n:6,
-     lines:[{sp:'男',zh:'分析完这几个月的录像，你有什么发现？'},
-            {sp:'女',zh:'猫的行动特别有规律。以大黄为例，它每天两点左右吃饭，误差不到五分钟。'}],
-     q:'女的发现了什么？',qvn:'Người phụ nữ phát hiện ra điều gì?',
-     opts:['猫一整天都在玩儿','猫的行动很有规律','大黄不爱吃饭','猫常常跑出去'],ans:1,
-     why:'猫的行动特别有规律 là kết luận; 以大黄为例 là ví dụ minh hoạ — mẫu 以……为例 của bài.',
-     words:['误差']},
-
-    {n:7,
-     lines:[{sp:'男',zh:'很多人以为，主人不在家时，猫会一直守在门口等主人回来。其实不然，它们大多数时间都在睡觉，醒着的时候就该干吗干吗，只有听到主人的脚步声，才会跑到门口迎接。'}],
-     q:'根据这段话，主人不在家时猫大多在做什么？',qvn:'Theo đoạn nói, khi chủ vắng nhà mèo phần lớn làm gì?',
-     opts:['一直守在门口','大多数时间在睡觉','到处找主人','急切地等主人回来'],ans:1,
-     why:'很多人以为…… 其实不然 — ý đúng nằm sau 其实不然: 大多数时间都在睡觉. Phương án 1 là điều "nhiều người tưởng" nên sai.',
-     words:[]},
-
-    {n:8,
-     lines:[{sp:'女',zh:'你工作那么忙，还养三只猫，不累吗？'},
-            {sp:'男',zh:'累是累，可每天最急切盼望的就是回家开门的那一刻，一看到它们，什么烦恼都统统忘了。'}],
-     q:'男的养猫有什么感受？',qvn:'Người đàn ông nuôi mèo có cảm nhận gì?',
-     opts:['觉得很麻烦','后悔养了三只','虽然累但很快乐','想送走两只'],ans:2,
-     why:'累是累，可…… = mệt thì mệt thật, nhưng … → nhượng bộ rồi khẳng định niềm vui; 烦恼都统统忘了 = quên hết phiền muộn.',
-     words:['急切','统统']}
+    {
+      n: 1,
+      lines: [
+        {sp:'女',zh:'你爷爷什么都知道，真厉害！'},
+        {sp:'男',zh:'他年轻时当过海员，去过几十个国家，自然见多识广了。'}
+      ],
+      q: '爷爷为什么知道得很多？',
+      qvn: 'Vì sao ông nội biết nhiều thế?',
+      opts: ['去过很多国家','读了很多书','当过老师','喜欢上网'],
+      ans: 0,
+      why: '当过海员，去过几十个国家，见多识广 → vì đã đi nhiều nước.',
+      words: ['见多识广']
+    },
+    {
+      n: 2,
+      lines: [
+        {sp:'男',zh:'明天就要面试了，你怎么还有心情看电视？'},
+        {sp:'女',zh:'该准备的都准备好了，今天晚上就该吃吃，该睡睡，养好精神最重要。'}
+      ],
+      q: '女的现在是什么态度？',
+      qvn: 'Người phụ nữ bây giờ có thái độ thế nào?',
+      opts: ['很紧张','很放松','很生气','很后悔'],
+      ans: 1,
+      why: '该吃吃，该睡睡 (cùng kiểu 该干吗干吗) = sinh hoạt bình thường, không lo → rất thoải mái.',
+      words: ['该干吗干吗']
+    },
+    {
+      n: 3,
+      lines: [
+        {sp:'女',zh:'你们换了新房子，那些旧家具怎么处理的？'},
+        {sp:'男',zh:'统统送给楼下的邻居了，新家里我想全部换新的。'}
+      ],
+      q: '旧家具怎么样了？',
+      qvn: 'Đồ đạc cũ thế nào rồi?',
+      opts: ['卖掉了','扔掉了','送人了','搬到新家了'],
+      ans: 2,
+      why: '统统送给楼下的邻居了 → tặng hết cho hàng xóm.',
+      words: ['统统']
+    },
+    {
+      n: 4,
+      lines: [
+        {sp:'男',zh:'这次作文比赛有什么要求？'},
+        {sp:'女',zh:'以“我的家”为题目，字数不能超过八百。'}
+      ],
+      q: '作文比赛的题目是什么？',
+      qvn: 'Đề bài cuộc thi viết văn là gì?',
+      opts: ['我的学校','我的朋友','我的梦想','我的家'],
+      ans: 3,
+      why: '以“我的家”为题目 = lấy "Ngôi nhà của em" làm đề bài → D.',
+      words: ['以……为……']
+    },
+    {
+      n: 5,
+      lines: [
+        {sp:'女',zh:'你儿子在院子里干什么呢？'},
+        {sp:'男',zh:'在玩儿遥控车呢。他操纵得可好了，能让车在院子里转好几圈。'}
+      ],
+      q: '关于儿子，可以知道什么？',
+      qvn: 'Về cậu con trai, có thể biết điều gì?',
+      opts: ['正在修车','遥控车玩儿得很好','在院子里跑步','在看电视'],
+      ans: 1,
+      why: '操纵得可好了 = điều khiển rất giỏi → chơi xe điều khiển từ xa rất cừ. Cậu bé không sửa xe, không chạy bộ.',
+      words: ['遥控','操纵']
+    },
+    {
+      n: 6,
+      lines: [
+        {sp:'男',zh:'你家的猫怎么这么胖？'},
+        {sp:'女',zh:'它又懒又馋，一天到晚不是吃就是睡，胖得要命。'}
+      ],
+      q: '猫为什么这么胖？',
+      qvn: 'Vì sao con mèo béo thế?',
+      opts: ['生病了','年纪大了','吃得多动得少','品种的原因'],
+      ans: 2,
+      why: '又懒又馋，不是吃就是睡 → ăn nhiều, vận động ít. Ôn 得要命 (bài 9).',
+      words: ['馋']
+    },
+    {
+      n: 7,
+      lines: [
+        {sp:'女',zh:'公司规定上班不能迟到，经理也不例外吗？'},
+        {sp:'男',zh:'当然。我们经理每天第一个到，是大家的模范。'}
+      ],
+      q: '关于经理，可以知道什么？',
+      qvn: 'Về giám đốc, có thể biết điều gì?',
+      opts: ['每天来得最早','经常迟到','对员工很严厉','不用遵守规定'],
+      ans: 0,
+      why: '每天第一个到 → đến sớm nhất; 是大家的模范 = là tấm gương cho mọi người.',
+      words: ['例外','模范']
+    }
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
+// ══════════════════════════════════════════
 var situationData = {
-  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
-         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn cùng lớp hỏi em đã dọn đồ trong ngăn bàn trước khi đổi phòng học chưa.',
-     a:{sp:'Bạn',zh:'明天要换教室了，你抽屉里的东西都拿走了吗？',vn:'Mai đổi phòng học rồi, đồ trong ngăn bàn cậu mang đi hết chưa?'},
-     need:['Dùng 统统','Nói rõ đã mang đồ đi đâu'],
-     sample:'早就统统拿回宿舍了，一本书都没留下。',
-     samplePy:'Zǎo jiù tǒngtǒng ná huí sùshè le, yì běn shū dōu méi liúxià.',
-     sampleVn:'Mang hết về ký túc xá từ lâu rồi, không để lại quyển sách nào.',
-     tip:'统统 đứng ngay trước động từ; thêm 一……都没…… để nhấn mạnh không sót thứ gì.'},
-
-    {scene:'Cô giáo hỏi lớp em định sắp xếp tiết mục văn nghệ thế nào.',
-     a:{sp:'Cô giáo',zh:'这次文艺演出，你们班准备怎么安排节目？',vn:'Buổi văn nghệ lần này, lớp em định sắp xếp tiết mục thế nào?'},
-     need:['Dùng 以……为主','Nêu thêm phần phụ'],
-     sample:'老师，我们班的节目以合唱为主，另外再准备一个小品。',
-     samplePy:'Lǎoshī, wǒmen bān de jiémù yǐ héchàng wéi zhǔ, lìngwài zài zhǔnbèi yí ge xiǎopǐn.',
-     sampleVn:'Thưa cô, tiết mục của lớp em lấy hợp xướng làm chính, ngoài ra chuẩn bị thêm một tiểu phẩm ạ.',
-     tip:'以 A 为主 = lấy A làm chính (sắc thái trang trọng, hợp khi nói với thầy cô).'},
-
-    {scene:'Bạn thân cứ lo lắng mãi về kết quả kỳ thi vừa xong.',
-     a:{sp:'Bạn',zh:'考完试我一直睡不着，老想着自己考得怎么样。',vn:'Thi xong tớ cứ mất ngủ, lúc nào cũng nghĩ mình làm bài thế nào.'},
-     need:['Dùng 该干吗干吗 hoặc 该 + V + 就 + V','Khuyên bạn thả lỏng'],
-     sample:'考都考完了，着急也没用，该吃就吃，该睡就睡，该干吗干吗吧！',
-     samplePy:'Kǎo dōu kǎowán le, zháojí yě méi yòng, gāi chī jiù chī, gāi shuì jiù shuì, gāi gànmá gànmá ba!',
-     sampleVn:'Thi thì cũng thi xong rồi, sốt ruột cũng chẳng ích gì, ăn thì cứ ăn, ngủ thì cứ ngủ, việc gì cứ làm việc nấy đi!',
-     tip:'Lặp 该 + V + 就 + V để khuyên "cứ sinh hoạt như bình thường"; V + 都 + V + 完了 = đã … xong rồi.'},
-
-    {scene:'Cô hàng xóm thắc mắc vì sao nhà em lắp camera.',
-     a:{sp:'Cô hàng xóm',zh:'你们家怎么在屋里装了摄像头啊？',vn:'Sao nhà cháu lại lắp camera trong nhà thế?'},
-     need:['Dùng 遥控 hoặc 即时','Nêu mục đích bằng 为了'],
-     sample:'为了照顾家里的猫，我们装了能遥控的摄像头，我在学校也能即时看到它们。',
-     samplePy:'Wèile zhàogù jiā li de māo, wǒmen zhuāngle néng yáokòng de shèxiàngtóu, wǒ zài xuéxiào yě néng jíshí kàndào tāmen.',
-     sampleVn:'Để trông nom mấy con mèo ở nhà, nhà cháu lắp camera điều khiển từ xa được, cháu ở trường cũng xem ngay được chúng ạ.',
-     tip:'为了 + mục đích đặt đầu câu; 能遥控的摄像头 = camera điều khiển từ xa được (cụm định ngữ).'},
-
-    {scene:'Bạn nhờ em trông mèo giúp mấy ngày nghỉ lễ.',
-     a:{sp:'Bạn',zh:'国庆节我要回老家，你能帮我照顾几天猫吗？',vn:'Nghỉ lễ Quốc khánh tớ về quê, cậu trông mèo giúp tớ mấy ngày được không?'},
-     need:['Dùng 喂 và 清洁','Nhận lời, hỏi thêm một chi tiết'],
-     sample:'没问题，我每天去喂它，顺便把猫舍清洁一下。它一天吃几顿？',
-     samplePy:'Méi wèntí, wǒ měi tiān qù wèi tā, shùnbiàn bǎ māoshè qīngjié yíxià. Tā yì tiān chī jǐ dùn?',
-     sampleVn:'Không vấn đề, ngày nào tớ cũng qua cho nó ăn, tiện thể dọn chuồng luôn. Nó một ngày ăn mấy bữa?',
-     tip:'喂 + động vật; 把 + nơi + 清洁一下; 顺便 = tiện thể.'}
+    {scene:'Bạn cùng lớp hỏi em đã dọn đồ trong ngăn bàn trước khi đổi phòng học chưa.',a:{sp:'Bạn',zh:'明天要换教室了，你桌子里的东西都拿走了吗？',vn:'Mai đổi phòng học rồi, đồ trong bàn cậu mang đi hết chưa?'},need:['Dùng 统统','Nói rõ đã mang đồ đi đâu'],sample:'早就统统拿回宿舍了，一本书都没留下。',samplePy:'Zǎo jiù tǒngtǒng ná huí sùshè le, yì běn shū dōu méi liúxià.',sampleVn:'Mang hết về ký túc xá từ lâu rồi, không để lại quyển sách nào.',tip:'统统 đứng ngay trước động từ; thêm 一……都没…… để nhấn mạnh không sót thứ gì.'},
+    {scene:'Cô giáo hỏi câu lạc bộ đọc sách em vừa lập ra để làm gì.',a:{sp:'Cô',zh:'你们成立这个读书会，是想做什么？',vn:'Các em lập câu lạc bộ đọc sách này là muốn làm gì?'},need:['Dùng 以……为目的','Nói thêm cách hoạt động'],sample:'我们以多读好书为目的，每个月一起读一本书，读完再一起讨论。',samplePy:'Wǒmen yǐ duō dú hǎo shū wéi mùdì, měi ge yuè yìqǐ dú yì běn shū, dúwán zài yìqǐ tǎolùn.',sampleVn:'Chúng em lấy việc đọc nhiều sách hay làm mục đích, mỗi tháng cùng đọc một cuốn, đọc xong lại cùng thảo luận.',tip:'以 A 为目的 = lấy A làm mục đích (văn viết, trang trọng); 为 đọc wéi.'},
+    {scene:'Bạn thân cứ lo lắng mãi về kết quả kỳ thi vừa xong.',a:{sp:'Bạn',zh:'考完试我一直睡不着，老想着自己考得怎么样。',vn:'Thi xong tớ cứ mất ngủ, lúc nào cũng nghĩ mình làm bài thế nào.'},need:['Dùng kiểu 该 + V + V (该干吗干吗)','Khuyên bạn thả lỏng'],sample:'考都考完了，着急也没用。该上课上课，该玩儿玩儿，等成绩出来再说吧！',samplePy:'Kǎo dōu kǎowán le, zháojí yě méi yòng. Gāi shàngkè shàngkè, gāi wánr wánr, děng chéngjì chūlái zài shuō ba!',sampleVn:'Thi cũng thi xong rồi, sốt ruột cũng vô ích. Cần đi học thì đi học, cần chơi thì chơi, đợi có điểm rồi tính!',tip:'该 + V(O) + V(O): làm việc nên làm như bình thường; hai phần động từ phải giống nhau.'},
+    {scene:'Cô hàng xóm thắc mắc vì sao nhà em lắp camera.',a:{sp:'Cô hàng xóm',zh:'你们家怎么在屋里装了摄像头啊？',vn:'Sao nhà cháu lại lắp camera trong nhà thế?'},need:['Dùng 遥控 hoặc 即时','Nêu mục đích bằng 为了'],sample:'为了照顾家里的猫，我们装了能遥控的摄像头，我在学校也能即时看到它们。',samplePy:'Wèile zhàogù jiā li de māo, wǒmen zhuāngle néng yáokòng de shèxiàngtóu, wǒ zài xuéxiào yě néng jíshí kàndào tāmen.',sampleVn:'Để trông nom mấy con mèo ở nhà, nhà cháu lắp camera điều khiển từ xa được, cháu ở trường cũng xem ngay được chúng ạ.',tip:'为了 + mục đích đặt đầu câu; 能遥控的摄像头 = camera điều khiển từ xa được (cụm định ngữ).'},
+    {scene:'Bạn nhờ em trông mèo giúp mấy ngày nghỉ lễ.',a:{sp:'Bạn',zh:'放假我要回老家，你能帮我照顾几天猫吗？',vn:'Kỳ nghỉ tớ về quê, cậu trông giúp con mèo mấy hôm được không?'},need:['Dùng 喂 và 清洁','Nhận lời, hỏi thêm một chi tiết'],sample:'没问题，我每天去喂它，顺便把猫舍清洁一下。它一天吃几顿？',samplePy:'Méi wèntí, wǒ měi tiān qù wèi tā, shùnbiàn bǎ māoshè qīngjié yíxià. Tā yì tiān chī jǐ dùn?',sampleVn:'Không vấn đề, ngày nào tớ cũng qua cho nó ăn, tiện thể dọn chuồng luôn. Nó một ngày ăn mấy bữa?',tip:'喂 + động vật; 把 + nơi + 清洁一下; 顺便 = tiện thể.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 // 🎯 NÓI SAO CHO HAY — 得体 / 语体
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 var registerData = {
-  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
-         'HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
   items: [
-    {scene:'Em viết báo cáo khoa học về thói quen sinh hoạt của mèo.',
-     a:'我拿一只猫举个例子吧，它天天两点吃饭。',b:'以其中一只猫为例，它每天下午两点左右进食。',better:'b',
-     why:'以……为例, 进食 là văn viết, hợp báo cáo; 拿……举个例子, 天天 là khẩu ngữ.'},
-
-    {scene:'Em khuyên bạn thân đừng lo lắng sau kỳ thi.',
-     a:'考完了就别想了，该干吗干吗去！',b:'考试已经结束，建议你恢复正常的学习和生活。',better:'a',
-     why:'Với bạn thân, 该干吗干吗 thân mật, tự nhiên; câu b giống lời khuyên trong thông báo chính thức, nghe xa cách.'},
-
-    {scene:'Em giới thiệu sản phẩm camera trong bài thuyết trình môn Tin học.',
-     a:'这款摄像头支持远程遥控和即时监控，操作非常简单。',b:'这玩意儿挺尖端的，用手机就能看家里，可好玩儿了。',better:'a',
-     why:'玩意儿, 可好玩儿了 là khẩu ngữ; thuyết trình cần thuật ngữ: 远程遥控, 即时监控, 操作简单.'},
-
-    {scene:'Em nhắn tin nhờ bạn cùng phòng cho mèo ăn.',
-     a:'麻烦你帮我喂一下猫，猫粮在柜子里。',b:'烦请代为饲养本人之宠物，饲料存放于柜内。',better:'a',
-     why:'Câu b quá văn vẻ (烦请, 代为, 本人之, 于); giữa bạn cùng phòng nói 麻烦你帮我喂一下猫 là đủ. 饲养 cũng trang trọng hơn 喂.'},
-
-    {scene:'Em viết thư cảm ơn thầy giáo cũ nhân Ngày Nhà giáo.',
-     a:'您一直是我们心中的模范，您深沉的爱让我们终生难忘。',b:'老师您太棒了，我们都超喜欢您！',better:'a',
-     why:'Thư cảm ơn thầy cô cần trang trọng: 模范, 深沉的爱, 终生难忘. Câu b dùng 超 (khẩu ngữ tuổi teen), hợp nói miệng hơn.'},
-
-    {scene:'Em kể với bạn chuyện con mèo nhà mình.',
-     a:'我家的猫馋得很，一闻到鱼味儿就扑过来。',b:'我家的猫食欲旺盛，嗅到鱼类气味即迅速扑来。',better:'a',
-     why:'Kể chuyện với bạn dùng khẩu ngữ (馋得很, 鱼味儿, 一……就……); câu b giống văn bản khoa học (食欲旺盛, 即, 迅速).'}
+    {scene:'Em viết báo cáo khoa học về thói quen sinh hoạt của mèo.',a:'就说那只白猫吧，它天天两点吃饭。',b:'以白色的那只猫为例，它进食的时间非常固定，几乎每天都一样。',better:'b',why:'Báo cáo khoa học dùng văn viết: 以……为例, 左右, 几乎不变. Câu a (就说……吧, 天天) là lời kể miệng.'},
+    {scene:'Chuyến du lịch của phòng ký túc bị huỷ, em an ủi bạn cùng phòng.',a:'去不成就算了，咱们在宿舍也能玩儿得很开心，下次再去吧。',b:'旅行取消一事已无法改变，建议你照常安排学习和生活。',better:'a',why:'Với bạn cùng phòng, khẩu ngữ (就算了, 咱们, 玩儿得很开心) nghe tự nhiên, ấm áp. Câu b (一事, 已无法, 建议你照常……) đúng nhưng giống thông báo của nhà trường — quá xa cách.'},
+    {scene:'Em giới thiệu sản phẩm camera trong bài thuyết trình môn Tin học.',a:'这玩意儿挺尖端的，用手机就能看家里，可好玩儿了。',b:'这个摄像头可以远程遥控、即时监控，操作非常简单。',better:'b',why:'Thuyết trình cần trang trọng, chính xác: 远程遥控, 即时监控, 操作. 这玩意儿, 可好玩儿了 là khẩu ngữ.'},
+    {scene:'Em nhắn tin nhờ bạn cùng phòng cho mèo ăn.',a:'麻烦你帮我喂一下猫，猫吃的东西在桌子下面。',b:'请您帮助照顾本人的猫，每日喂两次。',better:'a',why:'Nhắn bạn cùng phòng dùng khẩu ngữ thân mật (麻烦你). 您, 本人, 每日 là giọng thông báo, nhắn bạn nghe rất xa cách.'},
+    {scene:'Em viết thư cảm ơn thầy giáo cũ nhân Ngày Nhà giáo.',a:'老师您太棒了，我们都特别特别喜欢您！',b:'您一直是我们心中的模范，您深沉的爱我们永远不会忘记。',better:'b',why:'Thư cảm ơn thầy cô cần trang trọng, chân thành: 模范, 深沉的爱. Câu a hợp khi nói miệng với thầy cô trẻ, thân.'},
+    {scene:'Em kể với bạn chuyện con mèo nhà mình.',a:'我家的猫馋得很，一闻到鱼就扑过来。',b:'我家的猫嗅觉灵敏，一发现鱼即迅速扑上前去。',better:'a',why:'Kể chuyện với bạn dùng khẩu ngữ: 馋得很, 扑过来. 即迅速扑上前去 là văn viết, nghe như bài khoa học.'}
   ]
 };
 

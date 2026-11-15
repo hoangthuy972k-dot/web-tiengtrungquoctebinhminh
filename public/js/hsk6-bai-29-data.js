@@ -1717,93 +1717,50 @@ var hvBridgeData = {
 // GHÉP TỪ — cụm từ trong bài khoá
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'真是',right:'岂有此理'},
-  {left:'不上',right:'档次'},
-  {left:'违背',right:'心意'},
-  {left:'把话题',right:'岔开'},
-  {left:'不要画蛇',right:'添足'},
-  {left:'掩饰得多么',right:'周密'},
-  {left:'通过什么途径',right:'识别'},
-  {left:'分析假笑的',right:'缘故'},
-  {left:'一丝不苟的',right:'研究者'},
-  {left:'倾听网站',right:'视频中的笑声'},
-  {left:'测试结果',right:'一目了然'},
-  {left:'仅凭',right:'直觉'},
-  {left:'探测他人喜悦之情',right:'真伪'},
-  {left:'提炼出',right:'信息'},
-  {left:'当作生活的',right:'座右铭'},
+  {left:'一丝',right:'不苟'},
+  {left:'画蛇',right:'添足'},
+  {left:'岂有',right:'此理'},
+  {left:'肆无',right:'忌惮'},
   {left:'调节',right:'情绪'},
-  {left:'促进血液',right:'循环'},
-  {left:'用桨',right:'划船'},
-  {left:'消耗',right:'脂肪'},
-  {left:'缓解动脉',right:'硬化'},
-  {left:'实质性的',right:'证据'},
-  {left:'肆无忌惮地',right:'笑'},
-  {left:'损坏',right:'人体健康'},
-  {left:'分寸要掌握得',right:'恰到好处'},
-  {left:'笑的是非无须',right:'探讨'},
-  {left:'其收益是',right:'显而易见的'}
+  {left:'掌握',right:'分寸'},
+  {left:'虚假',right:'广告'},
+  {left:'探测',right:'海底'},
+  {left:'提炼',right:'石油'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ — mỗi từ của bài ít nhất một câu (fill + chọn từ)
+// ĐIỀN TỪ — câu mới (không chép bài khoá / SGK), mỗi câu một tình huống; ôn xoáy ốc từ + ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'我怕忘了交作业的期限，就把它记在了手机',blank:'备忘录',post:'里。',hint:'(ghi chú, sổ ghi nhớ)',ans:'备忘录'},
-  {pre:'他抄了我的作业，分数居然比我还高，真是',blank:'岂有此理',post:'！',hint:'(vô lý hết sức)',ans:'岂有此理'},
-  {pre:'这部电影内容',blank:'庸俗',post:'，只靠几个明星吸引观众。',hint:'(tầm thường, dung tục)',ans:'庸俗'},
-  {pre:'这家饭店的',blank:'档次',post:'很高，一顿饭至少要花五百块。',hint:'(đẳng cấp)',ans:'档次'},
-  {pre:'',blank:'诸位',post:'来宾，欢迎大家参加我校一百周年校庆。',hint:'(quý vị)',ans:'诸位',exp:'诸位 = quý vị, các vị (cách xưng hô trang trọng).'},
-  {pre:'他当着全班同学的面批评我，让我感到十分',blank:'难堪',post:'。',hint:'(bẽ mặt, khó xử)',ans:'难堪'},
-  {pre:'妈妈一问起成绩，他就赶紧把话',blank:'岔',post:'开，说起了别的事。',hint:'(lái sang hướng khác)',ans:'岔'},
-  {pre:'大家都知道是谁弄坏的，他却一直',blank:'装聋装哑',post:'。',hint:'(giả câm giả điếc)',ans:'装聋装哑'},
-  {pre:'她大学毕业后到一所',blank:'聋哑',post:'学校当了老师，教孩子们手语。',hint:'(câm điếc)',ans:'聋哑'},
-  {pre:'作文结尾本来很好，你再加一段议论，反而',blank:'画蛇添足',post:'了。',hint:'(vẽ rắn thêm chân)',ans:'画蛇添足'},
-  {pre:'这孩子特别',blank:'机灵',post:'，老师的话一听就懂。',hint:'(lanh lợi)',ans:'机灵'},
-  {pre:'网上有很多',blank:'虚假',post:'信息，转发之前一定要先核实一下。',hint:'(sai sự thật)',ans:'虚假'},
-  {pre:'他今天没来上课，可能是感冒的',blank:'缘故',post:'。',hint:'(nguyên do)',ans:'缘故'},
-  {pre:'王老师批改作业',blank:'一丝不苟',post:'，连一个标点也不放过。',hint:'(tỉ mỉ, không qua loa)',ans:'一丝不苟'},
-  {pre:'周末我常常跟在国外留学的姐姐',blank:'视频',post:'聊天。',hint:'(video)',ans:'视频'},
-  {pre:'这张图表把全班的成绩变化画得',blank:'一目了然',post:'。',hint:'(nhìn qua là rõ)',ans:'一目了然'},
-  {pre:'那里一年四季都是旅游旺季，一定要',blank:'预先',post:'订好旅馆。',hint:'(trước, sẵn)',ans:'预先',exp:'预先 = trước, sẵn (trước khi sự việc xảy ra): 预先订好旅馆.'},
-  {pre:'做选择题时，如果实在不会，就相信自己的',blank:'直觉',post:'吧。',hint:'(trực giác)',ans:'直觉'},
-  {pre:'科学家用先进的仪器',blank:'探测',post:'海底的情况。',hint:'(thăm dò)',ans:'探测'},
-  {pre:'',blank:'智商',post:'高的人不一定成功，情商也同样重要。',hint:'(chỉ số IQ)',ans:'智商'},
-  {pre:'写缩写的时候，要先从课文中',blank:'提炼',post:'出主要内容。',hint:'(rút ra, đúc kết)',ans:'提炼'},
-  {pre:'春节联欢晚会上，这段',blank:'相声',post:'把观众逗得哈哈大笑。',hint:'(tấu hài)',ans:'相声'},
-  {pre:'我爷爷一直把“勤俭节约”当作生活的',blank:'座右铭',post:'。',hint:'(châm ngôn sống)',ans:'座右铭'},
-  {pre:'英语是很多国际会议的',blank:'通用',post:'语言。',hint:'(dùng chung, thông dụng)',ans:'通用'},
-  {pre:'长时间坐着不运动，会影响血液',blank:'循环',post:'。',hint:'(tuần hoàn)',ans:'循环'},
-  {pre:'天冷的时候血管会',blank:'收缩',post:'，所以老人要特别注意保暖。',hint:'(co lại)',ans:'收缩'},
-  {pre:'高山上空气稀薄，',blank:'氧气',post:'不足，很多人会感到头疼。',hint:'(oxy)',ans:'氧气'},
-  {pre:'我们俩一人拿一支',blank:'桨',post:'，慢慢地把小船划到了湖中间。',hint:'(mái chèo)',ans:'桨'},
-  {pre:'每天跑步三十分钟，可以帮助燃烧',blank:'脂肪',post:'。',hint:'(mỡ)',ans:'脂肪'},
-  {pre:'长期吃太多油腻的东西，可能会导致',blank:'动脉',post:'硬化。',hint:'(động mạch)',ans:'动脉'},
-  {pre:'这件事表面上是帮你，',blank:'实质',post:'上是在利用你。',hint:'(thực chất)',ans:'实质'},
-  {pre:'有些游客在景区',blank:'肆无忌惮',post:'地乱扔垃圾，真让人气愤。',hint:'(không kiêng nể gì)',ans:'肆无忌惮'},
-  {pre:'这道菜的咸淡',blank:'恰到好处',post:'，大家都说好吃。',hint:'(vừa đúng mức)',ans:'恰到好处'},
-  {pre:'孩子要从小学会分清',blank:'是非',post:'，知道什么该做，什么不该做。',hint:'(phải trái)',ans:'是非'},
-  {pre:'他刚说要请客，同学们就开始',blank:'起哄',post:'，让他请大家吃火锅。',hint:'(hùa nhau reo hò)',ans:'起哄'},
-  {pre:'明天的会议很重要，发言稿你好好',blank:'斟酌',post:'斟酌。',hint:'(cân nhắc)',ans:'斟酌'}
+  {pre:'我怕忘了交作业的时间，就把它记在了手机',blank:'备忘录',post:'里。',hint:'(ghi chú, sổ ghi nhớ)',ans:'备忘录',exp:'备忘录 = sổ / mục ghi nhớ (trong điện thoại cũng gọi như vậy). 日记 là nhật ký ghi chuyện hằng ngày, không phải để nhắc việc.'},
+  {pre:'他当着全班同学的面批评我，让我感到十分',blank:'难堪',post:'。',hint:'(bẽ mặt, khó xử)',ans:'难堪',exp:'难堪 = bẽ mặt, ngượng ngùng khó xử (thường vì bị nói trước đông người). 难过 = buồn; 难看 = xấu (ngoại hình) — không hợp với 当着全班同学的面.'},
+  {pre:'大家都知道是谁弄坏的，他却一直',blank:'装聋装哑',post:'。',hint:'(giả câm giả điếc)',ans:'装聋装哑',exp:'装聋装哑 = giả vờ không nghe không biết để né trách nhiệm (khác 聋哑 = câm điếc thật).'},
+  {pre:'这孩子特别',blank:'机灵',post:'，老师的话一听就懂。',hint:'(lanh lợi, nhanh trí)',ans:'机灵',exp:'机灵 = lanh lợi, nhanh nhạy (khẩu ngữ, hay dùng khen trẻ con). 机会 = cơ hội; 灵活 thường đi với 方法 / 手脚, ít dùng khen trí óc trẻ nhỏ.'},
+  {pre:'小王这几天没来上课，可能是感冒的',blank:'缘故',post:'。',hint:'(nguyên do)',ans:'缘故',exp:'……的缘故 = do …, vì … mà ra (đứng cuối câu). 原来 = hoá ra; 故事 = câu chuyện — không làm danh từ "nguyên nhân".'},
+  {pre:'做选择题时，如果实在不会，就相信自己的',blank:'直觉',post:'吧。',hint:'(trực giác)',ans:'直觉',exp:'相信自己的直觉 = tin vào trực giác (cảm nhận tức thì, không suy luận). 感觉 là cảm giác nói chung; 直觉 nhấn "không cần suy nghĩ".'},
+  {pre:'',blank:'智商',post:'高的人不一定成功，努力也同样重要。',hint:'(chỉ số thông minh)',ans:'智商',exp:'智商 = chỉ số IQ, đi với 高 / 低. 智慧 = trí tuệ (khôn ngoan từng trải), ít nói 智慧高 như con số.'},
+  {pre:'他特别喜欢听',blank:'相声',post:'，每次都笑得停不下来。',hint:'(tấu hài)',ans:'相声',exp:'相声 = tấu hài (nghệ thuật nói hài truyền thống TQ, đọc xiàngsheng). 声音 = âm thanh — không phải tiết mục để nghe cho vui.'},
+  {pre:'“今天的事今天做”是我的',blank:'座右铭',post:'。',hint:'(châm ngôn sống)',ans:'座右铭',exp:'座右铭 = câu châm ngôn mình tự răn (tọa hữu minh). Câu nói hay của người nổi tiếng chỉ là để đọc; 座右铭 là câu mình chọn để tự nhắc bản thân.'},
+  {pre:'高山上空气很少，',blank:'氧气',post:'不足，很多人会感到头疼。',hint:'(khí oxy)',ans:'氧气',exp:'氧气 = khí oxy; 氧气不足 = thiếu oxy. 空气 là không khí nói chung (vế trước đã dùng).'},
+  {pre:'我们俩一人拿一支',blank:'桨',post:'，一起划船过了河。',hint:'(mái chèo)',ans:'桨',exp:'桨 = mái chèo, lượng từ 支 / 把; 划船 = chèo thuyền. Đừng nhầm với 奖 (giải thưởng) cùng âm jiǎng.'},
+  {pre:'他的玩笑开得',blank:'恰到好处',post:'，大家都笑了，也没有人不高兴。',hint:'(vừa đúng mức)',ans:'恰到好处',exp:'V得 + 恰到好处 = làm vừa đúng mức, không thừa không thiếu. 恰当 (thoả đáng) thường làm định ngữ / vị ngữ trực tiếp, ít đi sau 得 thành cụm này.'},
+  {pre:'孩子要从小学会分辨',blank:'是非',post:'，知道什么该做，什么不该做。',hint:'(phải trái, đúng sai)',ans:'是非',exp:'分辨是非 = phân biệt đúng sai (cụm cố định). 是否 = có … hay không (phó từ, không làm tân ngữ của 分辨).'},
+  {pre:'这首歌我已经',blank:'循环',post:'听了一下午，还是听不够。',hint:'(lặp vòng)',ans:'循环',exp:'循环 = lặp đi lặp lại theo vòng (循环听 = nghe đi nghe lại một bài). 重复 = lặp lại nói chung, không có nghĩa "vòng tròn" tự động.'},
+  {pre:'生意不好，这家公司今年把业务',blank:'收缩',post:'了一半。',hint:'(thu hẹp, co lại)',ans:'收缩',exp:'收缩 = co lại, thu hẹp (quy mô, cơ bắp). 收拾 = dọn dẹp; 收到 = nhận được — không chỉ việc thu nhỏ quy mô.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (预先 · ……也好，……也罢 · 设问) ít nhất 2 câu
+// SẮP XẾP CÂU — câu mới, chỉ một trật tự đúng
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['这事','她','预先','通知过我','，','我','忘了','告诉你了','。'],ans:'这事她预先通知过我，我忘了告诉你了。',audio:'这事她预先通知过我，我忘了告诉你了。'},
-  {words:['大家','预先','都没有想到','，','这次展览','竟然','这么受欢迎','。'],ans:'大家预先都没有想到，这次展览竟然这么受欢迎。',audio:'大家预先都没有想到，这次展览竟然这么受欢迎。'},
-  {words:['我','已经','预先','做好了计划','，','所以','实施起来很顺利','。'],ans:'我已经预先做好了计划，所以实施起来很顺利。',audio:'我已经预先做好了计划，所以实施起来很顺利。'},
-  {words:['上学也好','，','工作也罢','，','只要','你自己愿意','就行','。'],ans:'上学也好，工作也罢，只要你自己愿意就行。',audio:'上学也好，工作也罢，只要你自己愿意就行。'},
-  {words:['富贵也好','贫穷也罢','，','我对他的爱','不会改变','。'],ans:'富贵也好贫穷也罢，我对他的爱不会改变。',audio:'富贵也好贫穷也罢，我对他的爱不会改变。'},
-  {words:['开汽车也罢','，','骑自行车也罢','，','行进中打电话','都会影响','注意力','。'],ans:'开汽车也罢，骑自行车也罢，行进中打电话都会影响注意力。',audio:'开汽车也罢，骑自行车也罢，行进中打电话都会影响注意力。'},
-  {words:['有钱','一定幸福吗','？','不一定','，','有朋友','、','有健康','才会幸福','。'],ans:'有钱一定幸福吗？不一定，有朋友、有健康才会幸福。',audio:'有钱一定幸福吗？不一定，有朋友、有健康才会幸福。'},
-  {words:['笑','，','真的是','最佳良药吗','？','答案','似乎','不是那么肯定','。'],ans:'笑，真的是最佳良药吗？答案似乎不是那么肯定。',audio:'笑，真的是最佳良药吗？答案似乎不是那么肯定。'},
-  {words:['奋斗的人生','是最美好的吗','？','是的','，','因为','奋斗之中','快乐无穷','。'],ans:'奋斗的人生是最美好的吗？是的，因为奋斗之中快乐无穷。',audio:'奋斗的人生是最美好的吗？是的，因为奋斗之中快乐无穷。'},
-  {words:['测试结果','一目了然','，','志愿者','仅凭直觉','就能','分辨出假笑声','。'],ans:'测试结果一目了然，志愿者仅凭直觉就能分辨出假笑声。',audio:'测试结果一目了然，志愿者仅凭直觉就能分辨出假笑声。'},
-  {words:['笑','可以','调节情绪','，','促进','血液循环','。'],ans:'笑可以调节情绪，促进血液循环。',audio:'笑可以调节情绪，促进血液循环。'},
-  {words:['笑','不是坏事','，','但','分寸','要掌握得','恰到好处','。'],ans:'笑不是坏事，但分寸要掌握得恰到好处。',audio:'笑不是坏事，但分寸要掌握得恰到好处。'},
-  {words:['发言稿','你','好好','斟酌斟酌','，','别','说错话','。'],ans:'发言稿你好好斟酌斟酌，别说错话。',audio:'发言稿你好好斟酌斟酌，别说错话。'}
+  {words:['我们','预先','订好了','三个','房间','。'],ans:'我们预先订好了三个房间。',audio:'我们预先订好了三个房间。'},
+  {words:['他','为什么','这么','开心','呢','？','因为','他从来','不','跟','别人','比','。'],ans:'他为什么这么开心呢？因为他从来不跟别人比。',audio:'他为什么这么开心呢？因为他从来不跟别人比。'},
+  {words:['王老师','是','一个','一丝不苟','的','人','。'],ans:'王老师是一个一丝不苟的人。',audio:'王老师是一个一丝不苟的人。'},
+  {words:['这张','表','把','全班的','成绩','变化','画得','一目了然','。'],ans:'这张表把全班的成绩变化画得一目了然。',audio:'这张表把全班的成绩变化画得一目了然。'},
+  {words:['她','在','一所','聋哑','学校','当','老师','。'],ans:'她在一所聋哑学校当老师。',audio:'她在一所聋哑学校当老师。'},
+  {words:['大家','都','在','起哄','，','让','他','唱','一首','歌','。'],ans:'大家都在起哄，让他唱一首歌。',audio:'大家都在起哄，让他唱一首歌。'},
+  {words:['你','好好','斟酌','一下','用词','吧','。'],ans:'你好好斟酌一下用词吧。',audio:'你好好斟酌一下用词吧。'},
+  {words:['开玩笑','也','要','掌握','好','分寸','。'],ans:'开玩笑也要掌握好分寸。',audio:'开玩笑也要掌握好分寸。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1811,72 +1768,44 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'他当面说好话，背后说坏话，真是个____的人。',opts:['虚伪','虚心','虚假','谦虚'],ans:0,
-   exp:'Chê tính cách hai mặt → 虚伪 (giả dối). 虚假 dùng cho thông tin, số liệu; 虚心, 谦虚 = khiêm tốn (khen).'},
-  {wrong:'他答应过要来，却____了自己的诺言。',opts:['违反','违背','违法','背叛'],ans:1,
-   exp:'违背诺言 = làm trái lời hứa (cụm cố định). 违反 đi với 规定 / 纪律; 违法 không mang tân ngữ; 背叛 = phản bội (người, tổ chức).'},
-  {wrong:'面对记者的提问，他一直在____关键问题。',opts:['躲藏','逃跑','回避','避免'],ans:2,
-   exp:'回避问题 = né tránh vấn đề. 躲藏 = trốn (người, vật); 逃跑 = chạy trốn; 避免 + việc xấu có thể xảy ra (避免犯错).'},
-  {wrong:'这次旅行他考虑得非常____，连下雨天的活动都安排好了。',opts:['密切','亲密','秘密','周密'],ans:3,
-   exp:'考虑周密 = suy tính chu đáo. 密切 = mật thiết (quan hệ); 亲密 = thân mật; 秘密 = bí mật.'},
-  {wrong:'遇到纠纷，我们应该通过合法____解决，而不是动手打架。',opts:['途径','道路','路线','路途'],ans:0,
-   exp:'通过……途径 = qua con đường / cách (nghĩa bóng). 道路, 路线, 路途 thường là con đường cụ thể (路途 = quãng đường đi).'},
-  {wrong:'这种药只适用于____的人群，一般人不要随便吃。',opts:['特别','特定','特殊','特意'],ans:1,
-   exp:'特定的人群 = nhóm người nhất định (được chỉ định). 特别, 特殊 = đặc biệt (khác thường); 特意 = cố ý (phó từ, HSK 6 bài 24).'},
-  {wrong:'两家公司都表达了合作的____，下个月将签订协议。',opts:['意义','意见','意向','意思'],ans:2,
-   exp:'合作意向 = ý định hợp tác. 意义 = ý nghĩa; 意见 = ý kiến; 意思 = nghĩa / ý.'},
-  {wrong:'在毕业之际，我们向各位老师表示____的谢意。',opts:['真实','诚实','老实','诚挚'],ans:3,
-   exp:'诚挚的谢意 = lòng biết ơn chân thành (văn viết, trang trọng). 真实 = có thật; 诚实, 老实 = thật thà (tính cách).'},
-  {wrong:'朋友难过的时候，你不用多说什么，耐心地____就够了。',opts:['倾听','听说','打听','听见'],ans:0,
-   exp:'耐心地倾听 = kiên nhẫn lắng nghe. 听说 = nghe nói; 打听 = dò hỏi; 听见 = nghe thấy (kết quả, không đi với 耐心地).'},
-  {wrong:'考试前压力太大时，要学会自我____。',opts:['调查','调节','调动','调换'],ans:1,
-   exp:'自我调节 = tự điều chỉnh (tâm lý). 调查 = điều tra; 调动 = điều động (HSK 6 bài 25); 调换 = đổi.'},
-  {wrong:'新的教学方法先在两个班____一下，效果好再推广。',opts:['考验','经验','检验','试验'],ans:3,
-   exp:'Làm thử cái mới trước khi áp dụng rộng → 试验. 考验 = thử thách (con người); 经验 = kinh nghiệm; 检验 = kiểm nghiệm chất lượng.'},
-  {wrong:'谁____了公物，谁就要负责赔偿。',opts:['损坏','损失','伤害','毁灭'],ans:0,
-   exp:'损坏公物 = làm hỏng của công. 损失 = tổn thất (danh từ / động từ, đi với 钱 / 时间); 伤害 = làm tổn thương (người, tình cảm); 毁灭 = huỷ diệt.'},
-  {wrong:'这两个方案我更____于第二个，因为它更实惠。',opts:['方向','倾向','导向','面向'],ans:1,
-   exp:'倾向于 + lựa chọn = nghiêng về (có 于 đi kèm). 方向 = phương hướng (danh từ); 导向 = định hướng (danh từ); 面向 = hướng tới (面向学生).'},
-  {wrong:'跟长辈开玩笑要注意____，别太过分了。',opts:['分量','分寸','分数','分别'],ans:1,
-   exp:'注意分寸 = chú ý chừng mực. 分量 = trọng lượng, sức nặng; 分数 = điểm số; 分别 = chia tay / lần lượt.'},
-  {wrong:'这个问题很值得____，我们下次课再深入研究。',opts:['探望','探险','探讨','探听'],ans:2,
-   exp:'值得探讨 = đáng bàn luận. 探望 = thăm (người); 探险 = thám hiểm; 探听 = dò la (HSK 6 bài 25).'},
-  {wrong:'只要找准恰当的时机投放市场，就能获得可观的____。',opts:['收藏','收益','收据','收集'],ans:1,
-   exp:'获得可观的收益 = thu được lợi nhuận đáng kể (练习3 của sách). 收藏 = sưu tầm; 收据 = biên lai; 收集 = thu thập.'},
-  {wrong:'我觉得这个词用在这里不太____，你换一个吧。',opts:['恰当','当然','适合','应当'],ans:0,
-   exp:'用词恰当 = dùng từ thoả đáng; 不太恰当 = không thoả đáng lắm. 适合 là động từ cần tân ngữ (适合这里); 当然 = đương nhiên; 应当 = nên.'},
-  {wrong:'只有把计划做得很____，活动才能顺利进行。',opts:['周末','周围','周密','周期'],ans:2,
-   exp:'计划周密 = kế hoạch chu đáo, kín kẽ. 周末 = cuối tuần, 周围 = xung quanh, 周期 = chu kỳ — đều là danh từ, không làm bổ ngữ sau 得.'}
+  {wrong:'他当面说好话，背后说坏话，真是个____的人。',opts:['虚伪','虚心','虚假','谦虚'],ans:0,exp:'虚伪 = giả dối, đạo đức giả (tính cách người). 虚假 tả thông tin, quảng cáo không thật (虚假广告); 虚心 / 谦虚 = khiêm tốn (nghĩa tốt).'},
+  {wrong:'为了赚钱而____良心，这种事我不做。',opts:['违背','违反','反对','背后'],ans:0,exp:'违背 + 良心 / 心意 = làm trái điều trong lòng. 违反 đi với 规定 / 纪律 (quy định bên ngoài); 反对 = phản đối; 背后 = sau lưng.'},
+  {wrong:'面对记者的提问，他一直在____关键问题。',opts:['回避','逃跑','躲藏','避免'],ans:0,exp:'回避 + 问题 = né tránh vấn đề (không trả lời). 避免 = tránh để việc xấu không xảy ra (避免错误); 逃跑 / 躲藏 = chạy trốn, ẩn nấp (hành động thân thể).'},
+  {wrong:'遇到矛盾，我们应该通过正常的____解决，而不是动手打架。',opts:['途径','道路','路线','马路'],ans:0,exp:'通过……途径 = qua con đường / cách thức (nghĩa trừu tượng). 道路 / 路线 / 马路 là đường đi cụ thể, không đi với 通过……解决.'},
+  {wrong:'这个活动只针对____的人群，比如老人和学生。',opts:['特定','特别','特点','特色'],ans:0,exp:'特定的人群 = nhóm người nhất định (đã được chỉ rõ, 比如……). 特别 = đặc biệt (khác thường); 特点 / 特色 là danh từ "đặc điểm", không làm định ngữ cho 人群.'},
+  {wrong:'两家公司都表达了合作的____，下个月将正式签字。',opts:['意向','意义','意见','意思'],ans:0,exp:'合作的意向 = ý định hợp tác (văn bản thương mại). 意义 = ý nghĩa; 意见 = ý kiến; 意思 = nghĩa / ý (khẩu ngữ).'},
+  {wrong:'在信里，他向所有帮助过他的人表示了____的感谢。',opts:['诚挚','诚实','老实','真实'],ans:0,exp:'诚挚的感谢 = lời cảm ơn chân thành tha thiết (trang trọng). 诚实 / 老实 tả tính cách không nói dối; 真实 = có thật (sự việc).'},
+  {wrong:'考试前压力太大时，要学会自我____。',opts:['调节','调查','调动','调换'],ans:0,exp:'自我调节 = tự điều chỉnh (tâm trạng, cảm xúc). 调查 = điều tra; 调动 = điều động; 调换 = đổi chỗ.'},
+  {wrong:'新的教学方法先在两个班____一下，如果成功再在全校使用。',opts:['试验','经验','经历','体验'],ans:0,exp:'试验 = làm thử để xem hiệu quả. 经验 = kinh nghiệm (danh từ); 经历 = trải qua; 体验 = trải nghiệm bản thân — không mang nghĩa "thử nghiệm phương pháp".'},
+  {wrong:'谁____了图书馆的书，谁就要负责。',opts:['损坏','损失','伤害','伤心'],ans:0,exp:'损坏 + đồ vật = làm hỏng. 损失 = tổn thất (thường là danh từ, tiền bạc); 伤害 dùng cho người, tình cảm; 伤心 = buồn.'},
+  {wrong:'这个问题很值得____，我们下次课再深入研究。',opts:['探讨','探望','探测','讨厌'],ans:0,exp:'探讨 + 问题 = bàn luận, nghiên cứu sâu. 探望 = thăm (người ốm); 探测 = thăm dò bằng máy móc (海底, 地下); 讨厌 = ghét.'},
+  {wrong:'这个项目投资不大，____却很高。',opts:['收益','收藏','收集','收拾'],ans:0,exp:'收益 = lợi ích, lợi nhuận thu được (đối lập 投资). 收藏 = sưu tầm; 收集 = thu thập; 收拾 = dọn dẹp.'},
+  {wrong:'这篇作文本来写得很好，你最后再加一段，反而____了。',opts:['画蛇添足','恰到好处','一目了然','心甘情愿'],ans:0,exp:'画蛇添足 = vẽ rắn thêm chân: làm thừa nên hỏng việc (vế trước 本来写得很好, 反而). 恰到好处 = vừa đúng mức (nghĩa tốt); 一目了然 = nhìn là hiểu; 心甘情愿 = cam lòng.'},
+  {wrong:'有些游客在公园里____地大声说笑，乱扔东西，真让人生气。',opts:['肆无忌惮','一丝不苟','废寝忘食','名副其实'],ans:0,exp:'肆无忌惮地 + V = làm bừa không kiêng nể ai (nghĩa xấu, vế sau 真让人生气). 一丝不苟 = tỉ mỉ; 废寝忘食 = quên ăn quên ngủ (chăm chỉ); 名副其实 = danh xứng với thực.'},
+  {wrong:'坐飞机也好，坐火车也罢，我们____得在周五之前到。',opts:['都','才','再','又'],ans:0,exp:'A也好，B也罢，(S) + 都 / 也 + V = dù A hay B thì vẫn …. 才 / 再 / 又 không làm vế kết luận cho khung này.'}
 ];
 
 // ══════════════════════════════════════════
-// DỊCH — câu ghép, dùng từ bài 29 + ôn từ HSK 6 bài 1–28 và HSK 4–5
+// DỊCH Việt → Trung — câu mới, dùng từ của bài + ôn ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var translateData = [
   {vi:'Lớp trưởng đã đặt sẵn xe từ trước, nên chuyến dã ngoại lần này được sắp xếp rất chu đáo.',zh:'班长预先订好了车，所以这次春游安排得十分周密。',py:'Bānzhǎng yùxiān dìnghǎole chē, suǒyǐ zhè cì chūnyóu ānpái de shífēn zhōumì.',goiY:['预先','所以','周密'],giai:'预先 + V + 好 = làm sẵn từ trước (điểm ngữ pháp 1); V + 得 + 十分周密 là bổ ngữ trạng thái. Không dịch "đặt sẵn" thành 已经订 mà thiếu ý "trước khi việc xảy ra".'},
-  {vi:'Thi tốt cũng được, không tốt cũng xong, đừng nở nụ cười giả tạo trước mặt bạn bè, làm vậy chỉ khiến cậu càng khó xử hơn.',zh:'考得好也好，不好也罢，别在朋友面前露出虚伪的笑容，那样只会让你更难堪。',py:'Kǎo de hǎo yě hǎo, bù hǎo yě bà, bié zài péngyou miànqián lùchū xūwěi de xiàoróng, nàyàng zhǐ huì ràng nǐ gèng nánkān.',goiY:['……也好，……也罢','虚伪','难堪'],giai:'A也好，B也罢 = dù A hay B (điểm ngữ pháp 2); 那样 thay cho cả việc cười giả (替代 — HSK 6 bài 25). 露 ở đây đọc lù.'},
-  {vi:'Thầy chấm bài rất tỉ mỉ, cho nên mỗi người sai ở đâu đều được đánh dấu rõ ràng, nhìn là thấy ngay.',zh:'老师批改作业一丝不苟，所以每个人错在哪里都标得一目了然。',py:'Lǎoshī pīgǎi zuòyè yìsī-bùgǒu, suǒyǐ měi ge rén cuò zài nǎlǐ dōu biāo de yímù-liǎorán.',goiY:['一丝不苟','所以','一目了然'],giai:'Hai thành ngữ bốn chữ: 一丝不苟 làm vị ngữ, 一目了然 làm bổ ngữ sau 得. "Nhìn là thấy ngay" không cần dịch thêm 一看就, vì 一目了然 đã bao hàm.'},
-  {vi:'Muốn viết tóm tắt tốt, trước hết phải rút ra nội dung chính của bài khoá, sau đó cân nhắc kỹ từng câu chữ.',zh:'要想写好缩写，首先要提炼出课文的主要内容，然后再仔细斟酌字句。',py:'Yào xiǎng xiěhǎo suōxiě, shǒuxiān yào tíliàn chū kèwén de zhǔyào nèiróng, ránhòu zài zǐxì zhēnzhuó zìjù.',goiY:['要想……首先……','提炼','斟酌'],giai:'要想……，首先……，然后再…… nêu trình tự; 斟酌 = cân nhắc kỹ — đừng nhầm với "châm chước" tiếng Việt (nương tay).'},
+  {vi:'Ở nhà cũng được, ở trường cũng thôi, ngày nào anh ấy cũng kiên trì chạy bộ nửa tiếng.',zh:'在家也好，在学校也罢，他每天都坚持跑步半小时。',py:'Zài jiā yě hǎo, zài xuéxiào yě bà, tā měi tiān dōu jiānchí pǎobù bàn xiǎoshí.',goiY:['A也好，B也罢','都','坚持'],giai:'A也好，B也罢 + 都 = dù A hay B thì vẫn …; 也罢 đọc yě bà, vế sau phải có 都 / 也.'},
+  {vi:'Học giỏi có thật chỉ dựa vào chỉ số thông minh không? Không phải vậy: tìm được cách học thích hợp và kiên trì tỉ mỉ mới là thực chất của việc học tốt.',zh:'学习好真的只靠智商吗？并不是，找到恰当的方法并且一丝不苟地坚持，才是学好的实质。',py:'Xuéxí hǎo zhēn de zhǐ kào zhìshāng ma? Bìng bú shì, zhǎodào qiàdàng de fāngfǎ bìngqiě yìsī-bùgǒu de jiānchí, cái shì xuéhǎo de shízhì.',goiY:['……吗？并不是，……','恰当','一丝不苟','实质'],giai:'Câu tự hỏi tự đáp: nêu câu hỏi để gây chú ý rồi tự trả lời ngay (……吗？并不是，……). 才是 nhấn mạnh "mới chính là".'},
   {vi:'Cậu ấy tuy rất lanh lợi, nhưng ăn nói không có chừng mực, thường khiến bạn bè bẽ mặt trước mọi người.',zh:'他虽然很机灵，但说话没有分寸，常常让朋友在大家面前很难堪。',py:'Tā suīrán hěn jīling, dàn shuōhuà méiyǒu fēncun, chángcháng ràng péngyou zài dàjiā miànqián hěn nánkān.',goiY:['虽然……但……','机灵','分寸','难堪'],giai:'虽然……但…… nhượng bộ; 说话没有分寸 = ăn nói không có chừng mực; 让 + người + 很难堪 = khiến ai bẽ mặt.'},
-  {vi:'Khi xích mích với bạn, né tránh chẳng giải quyết được vấn đề; thay vì giả câm giả điếc, chi bằng lắng nghe kỹ suy nghĩ của đối phương.',zh:'跟朋友闹矛盾时，回避是解决不了问题的，与其装聋装哑，不如好好倾听对方的想法。',py:'Gēn péngyou nào máodùn shí, huíbì shì jiějué bu liǎo wèntí de, yǔqí zhuānglóng-zhuāngyǎ, bùrú hǎohǎo qīngtīng duìfāng de xiǎngfǎ.',goiY:['回避','与其……不如……','装聋装哑','倾听'],giai:'是……的 nhấn mạnh đánh giá (回避是解决不了问题的); 与其 A 不如 B = thay vì A chi bằng B (chọn B).'},
-  {vi:'Câu đố này đúng là vô lý hết sức! Nếu không được báo trước quy tắc, thì dù IQ cao đến đâu cũng không đoán ra được.',zh:'这道谜语真是岂有此理！如果预先不告诉规则，不管智商多高，也猜不出来。',py:'Zhè dào míyǔ zhēn shì qǐyǒucǐlǐ! Rúguǒ yùxiān bú gàosu guīzé, bùguǎn zhìshāng duō gāo, yě cāi bu chūlai.',goiY:['岂有此理','预先','不管……也……','智商'],giai:'预先 + phủ định (预先不告诉); 不管 + 多 + Adj，也…… = dù … đến đâu cũng …; 猜不出来 là bổ ngữ khả năng.'},
-  {vi:'Kết quả khảo sát cho thấy phần lớn học sinh nghiêng về việc học trực tuyến qua video, vì cách này vừa thông dụng vừa tiện lợi.',zh:'调查结果显示，大部分学生倾向于通过视频在线学习，因为这种方式既通用又方便。',py:'Diàochá jiéguǒ xiǎnshì, dà bùfen xuésheng qīngxiàng yú tōngguò shìpín zàixiàn xuéxí, yīnwèi zhè zhǒng fāngshì jì tōngyòng yòu fāngbiàn.',goiY:['倾向于','视频','既……又……','通用'],giai:'倾向于 + cụm động từ = nghiêng về (lựa chọn); 既……又…… nối hai tính từ song song; vế 因为 đặt sau để giải thích.'},
-  {vi:'Cười ha hả cũng được, cười thầm cũng được, tiếng cười chân thành đều có thể điều hoà cảm xúc; thế nhưng cười thả cửa quá đà thì lại có thể gây hại cho sức khoẻ.',zh:'哈哈大笑也好，偷偷地笑也罢，诚挚的笑声都能调节情绪；然而肆无忌惮地大笑，却可能损坏健康。',py:'Hāhā dà xiào yě hǎo, tōutōu de xiào yě bà, chéngzhì de xiàoshēng dōu néng tiáojié qíngxù; rán\'ér sìwú-jìdàn de dà xiào, què kěnéng sǔnhuài jiànkāng.',goiY:['……也好，……也罢','调节','肆无忌惮','损坏'],giai:'……也好，……也罢 + 都 (vế sau thường có 都); 然而……却…… chuyển ý mạnh. 肆无忌惮 + 地 + V làm trạng ngữ.'},
-  {vi:'Học giỏi có thật chỉ dựa vào chỉ số thông minh không? Không phải vậy: tìm được cách học thích hợp và kiên trì tỉ mỉ mới là thực chất của việc học tốt.',zh:'学习好真的只靠智商吗？并不是，找到恰当的方法并且一丝不苟地坚持，才是学好的实质。',py:'Xuéxí hǎo zhēn de zhǐ kào zhìshāng ma? Bìng bú shì, zhǎodào qiàdàng de fāngfǎ bìngqiě yìsī-bùgǒu de jiānchí, cái shì xuéhǎo de shízhì.',goiY:['……吗？并不是，……','恰当','一丝不苟','实质'],giai:'Câu 设问 (tự hỏi tự đáp — 篇章修辞 của bài): nêu câu hỏi để gây chú ý rồi tự trả lời ngay. 才是 nhấn mạnh "mới chính là".'}
+  {vi:'Khi xích mích với bạn, né tránh chẳng giải quyết được vấn đề; thay vì im lặng không nói câu nào, chi bằng lắng nghe kỹ suy nghĩ của đối phương.',zh:'跟朋友有矛盾时，回避是解决不了问题的，与其一句话也不说，不如好好倾听对方的想法。',py:'Gēn péngyou yǒu máodùn shí, huíbì shì jiějué bu liǎo wèntí de, yǔqí yí jù huà yě bù shuō, bùrú hǎohǎo qīngtīng duìfāng de xiǎngfǎ.',goiY:['回避','与其……不如……','倾听'],giai:'是……的 nhấn mạnh đánh giá (回避是解决不了问题的); 与其 A 不如 B = thay vì A chi bằng B (chọn B).'},
+  {vi:'Kết quả khảo sát cho thấy phần lớn học sinh nghiêng về việc học trực tuyến qua video, vì cách này vừa thông dụng vừa tiện lợi.',zh:'调查结果显示，大部分学生倾向于通过视频在线学习，因为这种方式既通用又方便。',py:'Diàochá jiéguǒ xiǎnshì, dà bùfen xuésheng qīngxiàng yú tōngguò shìpín zàixiàn xuéxí, yīnwèi zhè zhǒng fāngshì jì tōngyòng yòu fāngbiàn.',goiY:['倾向于','视频','既……又……','通用'],giai:'倾向于 + cụm động từ = nghiêng về (lựa chọn); 既……又…… nối hai tính từ song song; vế 因为 đặt sau để giải thích.'}
 ];
 
-// Chiều Trung → Việt — bám ý bài khoá
+// ══════════════════════════════════════════
+// Dịch Trung → Việt — câu mới, không trùng chiều trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Thưa quý vị, nếu không muốn khó xử thì có thể né tránh hoặc lái sang chuyện khác, nhưng đừng cười trái với lòng mình.',zh:'诸位如果不想难堪，可以回避或者把话题岔开，但不要违心地笑。',py:'Zhūwèi rúguǒ bù xiǎng nánkān, kěyǐ huíbì huòzhě bǎ huàtí chàkāi, dàn búyào wéixīn de xiào.',goiY:['诸位 = quý vị','难堪 = khó xử','岔开 = lái sang (chuyện khác)'],giai:'如果……，可以……，但不要…… nêu giả thiết rồi đưa lựa chọn; 违心地 = trái với lòng mình. 诸位 dịch "thưa quý vị" khi đứng đầu câu.'},
-  {vi:'Dù bạn lanh lợi đến đâu, che giấu kín kẽ thế nào, người khác đều nhìn ra nụ cười của bạn là thật hay giả.',zh:'不管你多机灵，掩饰得多么周密，别人都能看出你的笑是真是假。',py:'Bùguǎn nǐ duō jīling, yǎnshì de duōme zhōumì, biérén dōu néng kànchū nǐ de xiào shì zhēn shì jiǎ.',goiY:['不管……都…… = dù … đều …','机灵 = lanh lợi','周密 = kín kẽ'],giai:'不管 + 多 + Adj ở hai vế liền nhau, vế sau có 都; 是真是假 = là thật hay giả (dạng A là A hay B rút gọn).'},
-  {vi:'Tiếng cười giả sẽ kích hoạt vùng riêng biệt của não, não còn phân tích nguyên do của việc cười giả và ý đồ của người cười giả.',zh:'假笑声会激活大脑的特定区域，大脑还会分析假笑的缘故和假笑者的意向。',py:'Jiǎ xiàoshēng huì jīhuó dànǎo de tèdìng qūyù, dànǎo hái huì fēnxī jiǎ xiào de yuángù hé jiǎxiàozhě de yìxiàng.',goiY:['特定 = riêng biệt','缘故 = nguyên do','意向 = ý đồ, ý định'],giai:'还会 = còn (bổ sung hành động thứ hai); 假笑者 = người cười giả (者 = người …).'},
-  {vi:'Tuy không được báo trước mục đích thử nghiệm, nhưng chỉ dựa vào trực giác, các tình nguyện viên đã có thể phân biệt chính xác tiếng cười giả.',zh:'志愿者虽然预先未被告知测试目的，但仅凭直觉就能准确地分辨出假笑声。',py:'Zhìyuànzhě suīrán yùxiān wèi bèi gàozhī cèshì mùdì, dàn jǐn píng zhíjué jiù néng zhǔnquè de fēnbiàn chū jiǎ xiàoshēng.',goiY:['虽然……但…… = tuy … nhưng …','预先未被告知 = không được báo trước','凭直觉 = dựa vào trực giác'],giai:'预先 + 未被 + V: câu bị động phủ định văn viết (未 = 没). 仅凭……就…… = chỉ dựa vào … là đã ….'},
-  {vi:'Các nhà nghiên cứu cho tình nguyện viên nghe tiếng cười trong video, rồi so sánh phản ứng của não khi nghe cười thật và cười giả; kết quả nhìn qua là rõ.',zh:'研究者让志愿者倾听视频中的笑声，并把真笑和假笑时大脑的反应做对比，结果一目了然。',py:'Yánjiūzhě ràng zhìyuànzhě qīngtīng shìpín zhōng de xiàoshēng, bìng bǎ zhēn xiào hé jiǎ xiào shí dànǎo de fǎnyìng zuò duìbǐ, jiéguǒ yímù-liǎorán.',goiY:['倾听 = lắng nghe','并 = và, rồi','一目了然 = nhìn qua là rõ'],giai:'并 nối hai hành động của cùng chủ ngữ (văn viết); 把……做对比 = đem … so sánh.'},
-  {vi:'Não rất nhạy cảm với thông tin trong tiếng cười, điều này không hoàn toàn do chỉ số thông minh; tình nguyện viên còn có thể từ đó rút ra thông tin ẩn phía sau.',zh:'大脑对笑声中的信息非常敏感，这不完全是智商问题，志愿者还能从中提炼出背后的信息。',py:'Dànǎo duì xiàoshēng zhōng de xìnxī fēicháng mǐngǎn, zhè bù wánquán shì zhìshāng wèntí, zhìyuànzhě hái néng cóng zhōng tíliàn chū bèihòu de xìnxī.',goiY:['这 = điều này (thay cho cả vế trước)','智商 = chỉ số IQ','提炼 = rút ra'],giai:'对……敏感 = nhạy cảm với …; 不完全是 = phủ định một phần ("không hoàn toàn là"); 从中 = từ trong đó.'},
-  {vi:'Dù cười sảng khoái hay cười ha hả ngây ngô, người Trung Quốc đều coi tiếng cười là phương thuốc chữa bệnh thông dụng nhất, thậm chí coi là châm ngôn sống.',zh:'开怀大笑也好，哈哈傻笑也罢，中国人都把笑当作最通用的治病良方，甚至当作座右铭。',py:'Kāihuái dà xiào yě hǎo, hāhā shǎxiào yě bà, Zhōngguórén dōu bǎ xiào dàngzuò zuì tōngyòng de zhì bìng liángfāng, shènzhì dàngzuò zuòyòumíng.',goiY:['……也好，……也罢 = dù … hay …','通用 = thông dụng','座右铭 = châm ngôn'],giai:'A也好，B也罢，都…… = trường hợp nào cũng vậy; 把 A 当作 B = coi A là B; 甚至 tăng tiến.'},
-  {vi:'Cười không chỉ điều hoà cảm xúc, thúc đẩy tuần hoàn máu, mà còn giúp tiêu hao mỡ, giảm xơ cứng động mạch.',zh:'笑不仅可以调节情绪、促进血液循环，还能帮助消耗脂肪，缓解动脉硬化。',py:'Xiào bùjǐn kěyǐ tiáojié qíngxù, cùjìn xuèyè xúnhuán, hái néng bāngzhù xiāohào zhīfáng, huǎnjiě dòngmài yìnghuà.',goiY:['不仅……还…… = không chỉ … mà còn …','调节 = điều hoà','循环 = tuần hoàn','脂肪 = mỡ'],giai:'不仅……还…… tăng tiến; các cụm động – tân song song (调节情绪、促进血液循环) nối bằng dấu 、.'},
-  {vi:'Cười có thật là liều thuốc tốt nhất không? Chưa chắc: có người sau khi cười thả cửa đã hôn mê vì tim đập nhanh, thậm chí tổn hại sức khoẻ.',zh:'笑真的是最佳良药吗？未必，有人肆无忌惮地笑过后因心跳加速而昏迷，甚至损坏了健康。',py:'Xiào zhēn de shì zuì jiā liángyào ma? Wèibì, yǒu rén sìwú-jìdàn de xiàoguo hòu yīn xīntiào jiāsù ér hūnmí, shènzhì sǔnhuàile jiànkāng.',goiY:['……吗？未必 = … không? Chưa chắc (设问)','肆无忌惮 = thả cửa','因……而…… = vì … mà …','损坏 = làm tổn hại'],giai:'Câu 设问: tự hỏi rồi tự đáp (未必 = chưa chắc). 因……而…… văn viết, nêu nguyên nhân – kết quả trong một vế.'},
-  {vi:'Nghiên cứu mới nghiêng về ý cho rằng cười không phải chuyện xấu, nhưng chừng mực phải giữ cho vừa phải; huống hồ khi bạn thân tụ tập làm ầm ĩ, ai còn tâm trí mà đắn đo nữa?',zh:'新研究倾向于认为笑不是坏事，但分寸要掌握得恰到好处；况且好朋友在一起起哄时，谁还顾得上斟酌呢？',py:'Xīn yánjiū qīngxiàng yú rènwéi xiào bú shì huàishì, dàn fēncun yào zhǎngwò de qiàdào-hǎochù; kuàngqiě hǎo péngyou zài yìqǐ qǐhòng shí, shéi hái gù de shàng zhēnzhuó ne?',goiY:['倾向于 = nghiêng về','恰到好处 = vừa đúng mức','况且 = huống hồ','斟酌 = cân nhắc'],giai:'况且 (HSK 6 bài 20) bổ sung lý do; 谁还顾得上……呢？ là câu hỏi tu từ = không ai còn tâm trí …; 顾得上 = còn lo được tới.'}
+  {vi:'Chuyện này trước đó tôi hoàn toàn không biết, sáng nay mới nghe nói.',zh:'这件事我预先一点儿也不知道，是今天早上才听说的。',py:'Zhè jiàn shì wǒ yùxiān yìdiǎnr yě bù zhīdào, shì jīntiān zǎoshang cái tīngshuō de.',goiY:['预先 = trước đó, từ trước'],giai:'预先 + phủ định = trước đó không …; 是……才……的 nhấn thời điểm muộn.'},
+  {vi:'Con thi đứng nhất cũng được, đứng bét cũng chẳng sao, bố mẹ vẫn thương con như nhau.',zh:'你考第一也好，考最后一名也罢，爸爸妈妈都一样爱你。',py:'Nǐ kǎo dì-yī yě hǎo, kǎo zuìhòu yì míng yě bà, bàba māma dōu yíyàng ài nǐ.',goiY:['A也好，B也罢 = dù A hay B','一样 = như nhau'],giai:'Dịch "dù … hay … thì …" cũng tự nhiên; 都 ở vế sau không cần dịch riêng.'},
+  {vi:'Thành công dựa vào cái gì? Nói ra thì rất đơn giản: kiên trì.',zh:'成功靠什么？说起来很简单：坚持。',py:'Chénggōng kào shénme? Shuō qǐlai hěn jiǎndān: jiānchí.',goiY:['câu tự hỏi rồi tự trả lời'],giai:'Câu hỏi không chờ người nghe trả lời mà để gây chú ý, người nói tự đáp ngay — tiếng Việt giữ nguyên dấu hỏi.'},
+  {vi:'Nó xem trộm đáp án của tôi, vậy mà điểm còn cao hơn tôi, thật là vô lý hết sức!',zh:'他偷看了我的答案，分数居然比我还高，真是岂有此理！',py:'Tā tōukànle wǒ de dá\'àn, fēnshù jūrán bǐ wǒ hái gāo, zhēn shì qǐyǒucǐlǐ!',goiY:['岂有此理 = vô lý hết sức','居然 = vậy mà'],giai:'岂有此理 là lời bất bình mạnh, dịch "thật vô lý hết sức / làm gì có lý nào như thế".'},
+  {vi:'Quảng cáo sai sự thật trên mạng ngày càng nhiều, trước khi mua mọi người nhất định phải cân nhắc.',zh:'网上的虚假广告越来越多，大家购买前一定要斟酌一下。',py:'Wǎngshang de xūjiǎ guǎnggào yuè lái yuè duō, dàjiā gòumǎi qián yídìng yào zhēnzhuó yíxià.',goiY:['虚假 = giả, sai sự thật','斟酌 = cân nhắc'],giai:'虚假广告 dịch "quảng cáo sai sự thật / quảng cáo lừa"; 斟酌 đọc zhēnzhuó.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1913,8 +1842,8 @@ var writingData = {
     'Đã dùng ít nhất 6 từ mới của bài (预先, 直觉, 特定, 缘故, 调节, 循环, 恰到好处…) và dùng đúng ……也好，……也罢 hoặc một câu 设问 chưa?'
   ],
   model:{
-    zh:'（一）大脑能“听”出笑声的真假\n真是岂有此理，听到庸俗的笑话，假笑两声敷衍一下也不行吗？好像确实不行。如果不想难堪，你可以回避，可以把话题岔开，也可以装聋装哑，但不要画蛇添足，违心地笑。因为不管你多机灵，别人都能看出你的笑是真是假。人们通过什么途径识别假笑呢？研究者发现，假笑声会激活大脑中的特定区域，大脑还会自动分析假笑的缘故和假笑者的意向；诚挚的笑声则会激活与快乐相关的区域。测试结果一目了然：志愿者预先不知道测试目的，仅凭直觉就能分辨出假笑声。可见，人类大脑对笑声中的情感信息非常敏感，它能获知他人的情感，更精准地提炼出笑声背后的信息。\n（二）笑未必是最佳良药\n“笑有益于健康”几乎得到了全世界的认可。开怀大笑也好，哈哈傻笑也罢，都被中国人看作最通用的治病良方。研究证实，笑可以调节情绪，促进血液循环和腹肌收缩，增加吸氧量；开怀大笑一整天能燃烧掉2000卡路里，帮助消耗脂肪，减轻体重，还有助于缓解动脉硬化，消除紧张感。然而，笑真的是最佳良药吗？答案并不那么肯定。有人肆无忌惮地笑过后，因心跳加速而昏迷；大笑还可能导致岔气，让心脏不舒服，甚至损坏健康。由此可见，笑不是坏事，但分寸要掌握得恰到好处。',
-    py:'(Yī) Dànǎo néng “tīng” chū xiàoshēng de zhēn jiǎ\nZhēn shì qǐyǒucǐlǐ, tīngdào yōngsú de xiàohua, jiǎ xiào liǎng shēng fūyǎn yíxià yě bù xíng ma? Hǎoxiàng quèshí bù xíng. Rúguǒ bù xiǎng nánkān, nǐ kěyǐ huíbì, kěyǐ bǎ huàtí chàkāi, yě kěyǐ zhuānglóng-zhuāngyǎ, dàn búyào huàshé-tiānzú, wéixīn de xiào. Yīnwèi bùguǎn nǐ duō jīling, biérén dōu néng kànchū nǐ de xiào shì zhēn shì jiǎ. Rénmen tōngguò shénme tújìng shíbié jiǎ xiào ne? Yánjiūzhě fāxiàn, jiǎ xiàoshēng huì jīhuó dànǎo zhōng de tèdìng qūyù, dànǎo hái huì zìdòng fēnxī jiǎ xiào de yuángù hé jiǎxiàozhě de yìxiàng; chéngzhì de xiàoshēng zé huì jīhuó yǔ kuàilè xiāngguān de qūyù. Cèshì jiéguǒ yímù-liǎorán: zhìyuànzhě yùxiān bù zhīdào cèshì mùdì, jǐn píng zhíjué jiù néng fēnbiàn chū jiǎ xiàoshēng. Kějiàn, rénlèi dànǎo duì xiàoshēng zhōng de qínggǎn xìnxī fēicháng mǐngǎn, tā néng huòzhī tārén de qínggǎn, gèng jīngzhǔn de tíliàn chū xiàoshēng bèihòu de xìnxī.\n(Èr) Xiào wèibì shì zuì jiā liángyào\n“Xiào yǒuyì yú jiànkāng” jīhū dédàole quán shìjiè de rènkě. Kāihuái dà xiào yě hǎo, hāhā shǎxiào yě bà, dōu bèi Zhōngguórén kànzuò zuì tōngyòng de zhì bìng liángfāng. Yánjiū zhèngshí, xiào kěyǐ tiáojié qíngxù, cùjìn xuèyè xúnhuán hé fùjī shōusuō, zēngjiā xīyǎngliàng; kāihuái dà xiào yì zhěng tiān néng ránshāo diào liǎngqiān kǎlùlǐ, bāngzhù xiāohào zhīfáng, jiǎnqīng tǐzhòng, hái yǒuzhù yú huǎnjiě dòngmài yìnghuà, xiāochú jǐnzhānggǎn. Rán\'ér, xiào zhēn de shì zuì jiā liángyào ma? Dá\'àn bìng bú nàme kěndìng. Yǒu rén sìwú-jìdàn de xiàoguo hòu, yīn xīntiào jiāsù ér hūnmí; dà xiào hái kěnéng dǎozhì chàqì, ràng xīnzàng bù shūfu, shènzhì sǔnhuài jiànkāng. Yóucǐ-kějiàn, xiào bú shì huàishì, dàn fēncun yào zhǎngwò de qiàdào-hǎochù.',
+    zh:'（一）大脑能“听”出笑声的真假\n真是岂有此理，听到庸俗的笑话，假笑两声敷衍一下也不行吗？好像确实不行。如果不想难堪，你可以回避，可以把话题岔开，也可以装聋装哑，但不要画蛇添足，违心地笑。因为不管你多机灵，别人都能看出你的笑是真是假。人们通过什么途径识别假笑呢？研究者发现，假笑声会激活大脑中的特定区域，大脑还会自动分析假笑的缘故和假笑者的意向；诚挚的笑声则会激活与快乐相关的区域。测试结果一目了然：志愿者预先不知道测试目的，仅凭直觉就能分辨出假笑声。可见，人类大脑对笑声中的情感信息非常敏感，它能获知他人的情感，更精准地提炼出笑声背后的信息。\n（二）笑未必是最佳良药\n“笑有益于健康”几乎得到了全世界的认可。开怀大笑也好，哈哈傻笑也罢，都被中国人当作最通用的治病良方。研究证实，笑可以调节情绪，促进血液循环和腹肌收缩，增加吸氧量；开怀大笑一整天能燃烧掉2000卡路里，帮助消耗脂肪，减轻体重，还有助于缓解动脉硬化，消除紧张感。然而，笑真的是最佳良药吗？答案并不那么肯定。有人肆无忌惮地笑过后，因心跳加速而昏迷；大笑还可能导致岔气，让心脏不舒服，甚至损坏健康。由此可见，笑不是坏事，但分寸要掌握得恰到好处。',
+    py:'(Yī) Dànǎo néng “tīng” chū xiàoshēng de zhēn jiǎ\nZhēn shì qǐyǒucǐlǐ, tīngdào yōngsú de xiàohua, jiǎ xiào liǎng shēng fūyǎn yíxià yě bù xíng ma? Hǎoxiàng quèshí bù xíng. Rúguǒ bù xiǎng nánkān, nǐ kěyǐ huíbì, kěyǐ bǎ huàtí chàkāi, yě kěyǐ zhuānglóng-zhuāngyǎ, dàn búyào huàshé-tiānzú, wéixīn de xiào. Yīnwèi bùguǎn nǐ duō jīling, biérén dōu néng kànchū nǐ de xiào shì zhēn shì jiǎ. Rénmen tōngguò shénme tújìng shíbié jiǎ xiào ne? Yánjiūzhě fāxiàn, jiǎ xiàoshēng huì jīhuó dànǎo zhōng de tèdìng qūyù, dànǎo hái huì zìdòng fēnxī jiǎ xiào de yuángù hé jiǎxiàozhě de yìxiàng; chéngzhì de xiàoshēng zé huì jīhuó yǔ kuàilè xiāngguān de qūyù. Cèshì jiéguǒ yímù-liǎorán: zhìyuànzhě yùxiān bù zhīdào cèshì mùdì, jǐn píng zhíjué jiù néng fēnbiàn chū jiǎ xiàoshēng. Kějiàn, rénlèi dànǎo duì xiàoshēng zhōng de qínggǎn xìnxī fēicháng mǐngǎn, tā néng huòzhī tārén de qínggǎn, gèng jīngzhǔn de tíliàn chū xiàoshēng bèihòu de xìnxī.\n(Èr) Xiào wèibì shì zuì jiā liángyào\n“Xiào yǒuyì yú jiànkāng” jīhū dédàole quán shìjiè de rènkě. Kāihuái dà xiào yě hǎo, hāhā shǎxiào yě bà, dōu bèi Zhōngguórén dàngzuò zuì tōngyòng de zhì bìng liángfāng. Yánjiū zhèngshí, xiào kěyǐ tiáojié qíngxù, cùjìn xuèyè xúnhuán hé fùjī shōusuō, zēngjiā xīyǎngliàng; kāihuái dà xiào yì zhěng tiān néng ránshāo diào liǎngqiān kǎlùlǐ, bāngzhù xiāohào zhīfáng, jiǎnqīng tǐzhòng, hái yǒuzhù yú huǎnjiě dòngmài yìnghuà, xiāochú jǐnzhānggǎn. Rán\'ér, xiào zhēn de shì zuì jiā liángyào ma? Dá\'àn bìng bú nàme kěndìng. Yǒu rén sìwú-jìdàn de xiàoguo hòu, yīn xīntiào jiāsù ér hūnmí; dà xiào hái kěnéng dǎozhì chàqì, ràng xīnzàng bù shūfu, shènzhì sǔnhuài jiànkāng. Yóucǐ-kějiàn, xiào bú shì huàishì, dàn fēncun yào zhǎngwò de qiàdào-hǎochù.',
     vn:'(1) Não bộ có thể "nghe" ra tiếng cười thật hay giả\nThật là vô lý hết sức, nghe chuyện cười tầm thường mà cười giả vài tiếng cho qua cũng không được sao? Hình như quả thật là không được. Nếu không muốn khó xử, bạn có thể né tránh, có thể lái sang chuyện khác, cũng có thể giả câm giả điếc, nhưng đừng vẽ rắn thêm chân mà cười trái lòng. Bởi dù bạn lanh lợi đến đâu, người khác đều nhìn ra nụ cười của bạn là thật hay giả. Con người nhận biết tiếng cười giả bằng cách nào? Các nhà nghiên cứu phát hiện, tiếng cười giả sẽ kích hoạt một vùng riêng biệt trong não, não còn tự động phân tích nguyên do của việc cười giả và ý đồ của người cười giả; còn tiếng cười chân thành thì kích hoạt vùng liên quan đến niềm vui. Kết quả thử nghiệm nhìn qua là rõ: tình nguyện viên không được biết trước mục đích thử nghiệm, chỉ dựa vào trực giác đã phân biệt được tiếng cười giả. Có thể thấy, não người rất nhạy cảm với thông tin cảm xúc trong tiếng cười, nó biết được cảm xúc của người khác và rút ra chính xác hơn thông tin đằng sau tiếng cười.\n(2) Cười chưa chắc đã là liều thuốc tốt nhất\n"Cười có lợi cho sức khoẻ" gần như đã được cả thế giới thừa nhận. Dù là cười sảng khoái hay cười ha hả ngây ngô, người Trung Quốc đều coi đó là phương thuốc chữa bệnh thông dụng nhất. Nghiên cứu đã chứng thực, cười có thể điều hoà cảm xúc, thúc đẩy tuần hoàn máu và co bóp cơ bụng, tăng lượng oxy hít vào; cười sảng khoái suốt một ngày có thể đốt cháy 2000 calo, giúp tiêu hao mỡ, giảm cân, còn giúp làm giảm xơ cứng động mạch, xua tan cảm giác căng thẳng. Thế nhưng, cười có thật là liều thuốc tốt nhất không? Câu trả lời không chắc chắn đến vậy. Có người sau khi cười thả cửa đã hôn mê vì tim đập nhanh; cười lớn còn có thể gây xóc hông, làm tim khó chịu, thậm chí tổn hại sức khoẻ. Có thể thấy, cười không phải chuyện xấu, nhưng phải giữ chừng mực cho thật vừa phải.'
   }
 };
@@ -1923,200 +1852,144 @@ var writingData = {
 // LUYỆN NÓI — đúng bảng 练习5 của sách: 根据提示，简述课文主要内容
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Đây là bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b> (课文（一）3 dòng + 课文（二）3 dòng). Mỗi câu hỏi là một dòng của bảng, cột gợi ý giữ nguyên như sách. Bấm loa nghe câu hỏi, nhìn gợi ý, <b>tự ghi âm câu trả lời của mình trước</b> rồi mới mở câu mẫu. Cố dùng từ mới: 回避 · 画蛇添足 · 特定 · 缘故 · 预先 · 直觉 · 提炼 · 调节 · 循环 · 分寸 · 恰到好处.',
-  questions:[
-    {q_zh:'为什么说不要用假笑敷衍别人？',
-     q_vn:'(Bài khoá 1) Vì sao nói đừng dùng tiếng cười giả để đối phó với người khác?',
-     hint:'①如果不想……，可以……，可以……，可以……，可以……，但不要……　②因为只要……，不管……，不管……，别人都能……',
-     sample:'如果不想难堪，你可以回避，可以不表态，可以把话题岔开，可以装聋装哑，但不要画蛇添足，违心地笑。因为只要你笑，不管你多机灵，不管你掩饰得多么周密，别人都能看出你的笑是真心的还是虚伪的。',
-     sample_vn:'Nếu không muốn khó xử, bạn có thể né tránh, có thể không bày tỏ thái độ, có thể lái sang chuyện khác, có thể giả câm giả điếc, nhưng đừng vẽ rắn thêm chân mà cười trái lòng. Bởi chỉ cần bạn cười, dù bạn lanh lợi đến đâu, che giấu kín kẽ thế nào, người khác đều nhìn ra nụ cười của bạn là thật lòng hay giả dối.',
-     note:'Giữ đúng khung gợi ý: bốn lần 可以…… rồi 但不要……; sau đó 因为只要……，不管……，不管……，都…….'},
-    {q_zh:'人们通过什么途径识别假笑的？',
-     q_vn:'(Bài khoá 1) Con người nhận biết tiếng cười giả bằng con đường nào?',
-     hint:'①……激活……特定区域　②……自动分析……缘故　③诚挚的笑声会……　④志愿者的反映',
-     sample:'假笑声会激活大脑中用于破译情感信息的特定区域，同时大脑会自动分析假笑的缘故和假笑者的意向；诚挚的笑声会激活与快乐和积极情绪相关的区域。在测试中，志愿者预先不知道测试目的，却仅凭直觉就能准确地分辨出假笑声。',
-     sample_vn:'Tiếng cười giả kích hoạt vùng riêng biệt trong não dùng để giải mã thông tin cảm xúc, đồng thời não tự động phân tích nguyên do của việc cười giả và ý đồ của người cười giả; tiếng cười chân thành thì kích hoạt vùng liên quan đến niềm vui và cảm xúc tích cực. Trong thử nghiệm, tình nguyện viên không được biết trước mục đích, vậy mà chỉ dựa vào trực giác đã phân biệt chính xác tiếng cười giả.',
-     note:'Nói đủ 4 ý; ý ④ (phản ứng của tình nguyện viên) dùng 预先……，却仅凭直觉就…….'},
-    {q_zh:'研究结果是什么？',
-     q_vn:'(Bài khoá 1) Kết quả nghiên cứu là gì?',
-     hint:'①……对……非常敏感　②开启……区域，获知……，动用……部分，提炼出……信息',
-     sample:'研究结果是：人类大脑对笑声中所隐含的社会和情感信息非常敏感，这不完全是智商问题。人们听到笑声时，会开启大脑中与心智相关的区域，获知他人的情感，有的人还会动用控制运动和感知的部分，更精准地提炼出笑声背后的信息。',
-     sample_vn:'Kết quả nghiên cứu là: não người rất nhạy cảm với thông tin xã hội và cảm xúc ẩn trong tiếng cười, điều này không hoàn toàn do chỉ số thông minh. Khi nghe tiếng cười, con người khởi động vùng não liên quan đến tâm trí, biết được cảm xúc của người khác; có người còn huy động phần não điều khiển vận động và cảm nhận, rút ra chính xác hơn thông tin đằng sau tiếng cười.',
-     note:'对……非常敏感; chuỗi 4 động từ 开启 → 获知 → 动用 → 提炼出.'},
-    {q_zh:'为什么说笑是治病良方？',
-     q_vn:'(Bài khoá 2) Vì sao nói cười là phương thuốc chữa bệnh tốt?',
-     hint:'调节情绪，促进……循环和……收缩，吸氧量，燃烧卡路里，消耗脂肪，减轻体重，缓解动脉硬化，消除紧张感',
-     sample:'因为研究证实，笑可以调节情绪，促进血液循环和腹肌收缩。一百次捧腹大笑的吸氧量相当于用桨划船十分钟。开怀大笑一整天能燃烧掉两千卡路里，帮助消耗脂肪，减轻体重，还能缓解动脉硬化，消除紧张感。',
-     sample_vn:'Vì nghiên cứu đã chứng thực, cười có thể điều hoà cảm xúc, thúc đẩy tuần hoàn máu và co bóp cơ bụng. Lượng oxy hít vào của 100 lần cười ôm bụng tương đương chèo thuyền 10 phút. Cười sảng khoái cả ngày có thể đốt 2000 calo, giúp tiêu hao mỡ, giảm cân, còn giảm xơ cứng động mạch, xua tan căng thẳng.',
-     note:'Nhiều ý → chia thành 3 câu ngắn; dùng 相当于 và 还能 để nối.'},
-    {q_zh:'笑有什么坏处？',
-     q_vn:'(Bài khoá 2) Cười có tác hại gì?',
-     hint:'因心跳加速而昏迷，岔气，心脏不舒服',
-     sample:'笑也不是有百益而无一害的。有人肆无忌惮地笑过后，因心跳加速而昏迷；大笑到“几乎笑破肚皮”还可能导致岔气，心脏不舒服，甚至损坏健康。',
-     sample_vn:'Cười cũng không phải trăm lợi mà không một hại. Có người sau khi cười thả cửa đã hôn mê vì tim đập nhanh; cười lớn đến "suýt vỡ bụng" còn có thể gây xóc hông, tim khó chịu, thậm chí tổn hại sức khoẻ.',
-     note:'因……而…… (văn viết); 导致 + hậu quả xấu.'},
-    {q_zh:'怎么笑才健康？',
-     q_vn:'(Bài khoá 2) Cười thế nào mới khoẻ?',
-     hint:'把握分寸',
-     sample:'笑不是坏事，但一定要把握分寸，掌握得恰到好处，不要肆无忌惮地大笑。当然，跟好朋友在一起开开心心地笑一笑，也不必想得太多。',
-     sample_vn:'Cười không phải chuyện xấu, nhưng nhất định phải giữ chừng mực, vừa đúng mức, đừng cười thả cửa. Tất nhiên, vui vẻ cười cùng bạn thân thì cũng chẳng cần nghĩ ngợi quá nhiều.',
-     note:'把握 / 掌握 + 分寸; 恰到好处 làm bổ ngữ sau 得.'}
+  intro: 'Đây là bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b> (课文（一）3 dòng + 课文（二）3 dòng). Mỗi câu hỏi là một dòng của bảng, cột gợi ý giữ nguyên như sách. Bấm loa nghe câu hỏi, nhìn gợi ý, <b>tự ghi âm câu trả lời của mình trước</b> rồi mới mở câu mẫu. Cố dùng từ mới: 回避 · 画蛇添足 · 特定 · 缘故 · 预先 · 直觉 · 提炼 · 调节 · 循环 · 分寸 · 恰到好处.',
+  questions: [
+    {q_zh:'为什么说不要用假笑敷衍别人？',q_vn:'(Bài khoá 1) Vì sao nói đừng dùng tiếng cười giả để đối phó với người khác?',hint:'①如果不想……，可以……，可以……，可以……，可以……，但不要……　②因为只要……，不管……，不管……，别人都能……',sample:'如果不想难堪，你可以回避，可以不表态，可以把话题岔开，可以装聋装哑，但不要画蛇添足，违心地笑。因为只要你笑，不管你多机灵，不管你掩饰得多么周密，别人都能看出你的笑是真心的还是虚伪的。',sample_vn:'Nếu không muốn khó xử, bạn có thể né tránh, có thể không bày tỏ thái độ, có thể lái sang chuyện khác, có thể giả câm giả điếc, nhưng đừng vẽ rắn thêm chân mà cười trái lòng. Bởi chỉ cần bạn cười, dù bạn lanh lợi đến đâu, che giấu kín kẽ thế nào, người khác đều nhìn ra nụ cười của bạn là thật lòng hay giả dối.',note:'Giữ đúng khung gợi ý: bốn lần 可以…… rồi 但不要……; sau đó 因为只要……，不管……，不管……，都…….'},
+    {q_zh:'人们通过什么途径识别假笑的？',q_vn:'(Bài khoá 1) Con người nhận biết tiếng cười giả bằng con đường nào?',hint:'①……激活……特定区域　②……自动分析……缘故　③诚挚的笑声会……　④志愿者的反映',sample:'假笑声会激活大脑中用于破译情感信息的特定区域，同时大脑会自动分析假笑的缘故和假笑者的意向；诚挚的笑声会激活与快乐和积极情绪相关的区域。在测试中，志愿者预先不知道测试目的，却仅凭直觉就能准确地分辨出假笑声。',sample_vn:'Tiếng cười giả kích hoạt vùng riêng biệt trong não dùng để giải mã thông tin cảm xúc, đồng thời não tự động phân tích nguyên do của việc cười giả và ý đồ của người cười giả; tiếng cười chân thành thì kích hoạt vùng liên quan đến niềm vui và cảm xúc tích cực. Trong thử nghiệm, tình nguyện viên không được biết trước mục đích, vậy mà chỉ dựa vào trực giác đã phân biệt chính xác tiếng cười giả.',note:'Nói đủ 4 ý; ý ④ (phản ứng của tình nguyện viên) dùng 预先……，却仅凭直觉就…….'},
+    {q_zh:'研究结果是什么？',q_vn:'(Bài khoá 1) Kết quả nghiên cứu là gì?',hint:'①……对……非常敏感　②开启……区域，获知……，动用……部分，提炼出……信息',sample:'研究结果是：人类大脑对笑声中所隐含的社会和情感信息非常敏感，这不完全是智商问题。人们听到笑声时，会开启大脑中与心智相关的区域，获知他人的情感，有的人还会动用控制运动和感知的部分，更精准地提炼出笑声背后的信息。',sample_vn:'Kết quả nghiên cứu là: não người rất nhạy cảm với thông tin xã hội và cảm xúc ẩn trong tiếng cười, điều này không hoàn toàn do chỉ số thông minh. Khi nghe tiếng cười, con người khởi động vùng não liên quan đến tâm trí, biết được cảm xúc của người khác; có người còn huy động phần não điều khiển vận động và cảm nhận, rút ra chính xác hơn thông tin đằng sau tiếng cười.',note:'对……非常敏感; chuỗi 4 động từ 开启 → 获知 → 动用 → 提炼出.'},
+    {q_zh:'为什么说笑是治病良方？',q_vn:'(Bài khoá 2) Vì sao nói cười là phương thuốc chữa bệnh tốt?',hint:'调节情绪，促进……循环和……收缩，吸氧量，燃烧卡路里，消耗脂肪，减轻体重，缓解动脉硬化，消除紧张感',sample:'因为研究证实，笑可以调节情绪，促进血液循环和腹肌收缩。一百次捧腹大笑的吸氧量相当于用桨划船十分钟。开怀大笑一整天能燃烧掉两千卡路里，帮助消耗脂肪，减轻体重，还能缓解动脉硬化，消除紧张感。',sample_vn:'Vì nghiên cứu đã chứng thực, cười có thể điều hoà cảm xúc, thúc đẩy tuần hoàn máu và co bóp cơ bụng. Lượng oxy hít vào của 100 lần cười ôm bụng tương đương chèo thuyền 10 phút. Cười sảng khoái cả ngày có thể đốt 2000 calo, giúp tiêu hao mỡ, giảm cân, còn giảm xơ cứng động mạch, xua tan căng thẳng.',note:'Nhiều ý → chia thành 3 câu ngắn; dùng 相当于 và 还能 để nối.'},
+    {q_zh:'笑有什么坏处？',q_vn:'(Bài khoá 2) Cười có tác hại gì?',hint:'因心跳加速而昏迷，岔气，心脏不舒服',sample:'笑也不是有百益而无一害的。有人肆无忌惮地笑过后，因心跳加速而昏迷；大笑到“几乎笑破肚皮”还可能导致岔气，心脏不舒服，甚至损坏健康。',sample_vn:'Cười cũng không phải trăm lợi mà không một hại. Có người sau khi cười thả cửa đã hôn mê vì tim đập nhanh; cười lớn đến "suýt vỡ bụng" còn có thể gây xóc hông, tim khó chịu, thậm chí tổn hại sức khoẻ.',note:'因心跳加速而昏迷: vì … mà … (văn viết); 导致 + hậu quả xấu.'},
+    {q_zh:'怎么笑才健康？',q_vn:'(Bài khoá 2) Cười thế nào mới khoẻ?',hint:'把握分寸',sample:'笑不是坏事，但一定要把握分寸，掌握得恰到好处，不要肆无忌惮地大笑。当然，跟好朋友在一起开开心心地笑一笑，也不必想得太多。',sample_vn:'Cười không phải chuyện xấu, nhưng nhất định phải giữ chừng mực, vừa đúng mức, đừng cười thả cửa. Tất nhiên, vui vẻ cười cùng bạn thân thì cũng chẳng cần nghĩ ngợi quá nhiều.',note:'把握 / 掌握 + 分寸; 恰到好处 làm bổ ngữ sau 得.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — 听力 (hội thoại ngắn + đoạn nói)
-// Sách HSK 6 không có sách bài tập nghe: tự soạn theo chủ đề bài 29.
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — câu tự soạn (sách HSK 6 không có sách bài tập nghe), mỗi câu một tình huống mới
+// ══════════════════════════════════════════
 var listenExamData = {
-  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, ' +
-         'trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
-  source: 'Soạn theo dạng đề HSK 6 · chủ đề bài 29',
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 29',
   items: [
-    {n:1,
-     lines:[{sp:'女',zh:'你怎么一直盯着手机笑？'},
-            {sp:'男',zh:'我在看一个相声视频，太逗了，我都快笑岔气了。'}],
-     q:'男的在做什么？',qvn:'Người đàn ông đang làm gì?',
-     opts:['看相声视频','给朋友打电话','写作业','听音乐'],ans:0,
-     why:'我在看一个相声视频 → đang xem video tấu hài. 笑岔气 = cười đến xóc hông.',
-     words:['相声','视频','岔']},
-
-    {n:2,
-     lines:[{sp:'男',zh:'昨天的面试怎么样？'},
-            {sp:'女',zh:'别提了，我预先准备的问题一个都没问到，只好凭直觉回答。'}],
-     q:'关于女的面试，可以知道什么？',qvn:'Về buổi phỏng vấn của người phụ nữ, có thể biết điều gì?',
-     opts:['准备得很充分','问的问题她都准备过','她凭直觉回答了问题','面试推迟了'],ans:2,
-     why:'预先准备的问题一个都没问到，只好凭直觉回答 → trả lời theo trực giác. Câu hỏi đã chuẩn bị không được hỏi nên phương án 2 sai.',
-     words:['预先','直觉']},
-
-    {n:3,
-     lines:[{sp:'女',zh:'你觉得这件衣服怎么样？'},
-            {sp:'男',zh:'说实话，颜色有点儿俗，不太上档次，那件蓝色的更适合你。'}],
-     q:'男的认为这件衣服怎么样？',qvn:'Người đàn ông thấy bộ quần áo này thế nào?',
-     opts:['很上档次','价格太贵','颜色不太好看','太小了'],ans:2,
-     why:'颜色有点儿俗，不太上档次 → màu hơi quê, không đẹp. Không nhắc giá hay kích cỡ.',
-     words:['档次']},
-
-    {n:4,
-     lines:[{sp:'男',zh:'小王今天在会上怎么一句话也不说？'},
-            {sp:'女',zh:'经理问他的问题他回答不了，只好装聋装哑，把话题岔开了。'}],
-     q:'小王为什么不说话？',qvn:'Vì sao Tiểu Vương không nói gì?',
-     opts:['他生病了','他不想参加会议','他没听清楚','经理的问题他回答不了'],ans:3,
-     why:'经理问他的问题他回答不了 → không trả lời được câu hỏi của giám đốc nên giả câm giả điếc.',
-     words:['装聋装哑','岔']},
-
-    {n:5,
-     lines:[{sp:'女',zh:'这次市场调查的结果出来了吗？'},
-            {sp:'男',zh:'出来了，一目了然：大部分消费者都倾向于买价格适中的产品。'}],
-     q:'调查结果说明了什么？',qvn:'Kết quả khảo sát cho thấy điều gì?',
-     opts:['消费者喜欢贵的产品','多数消费者倾向于买价格适中的产品','调查还没有结果','产品质量有问题'],ans:1,
-     why:'大部分消费者都倾向于买价格适中的产品 → đa số nghiêng về sản phẩm giá vừa phải.',
-     words:['一目了然','倾向']},
-
-    {n:6,
-     lines:[{sp:'男',zh:'你笑得这么开心，有什么好事吗？'},
-            {sp:'女',zh:'刚才同学们起哄，让班长给大家唱歌，他唱得太好笑了。'}],
-     q:'女的为什么笑？',qvn:'Vì sao người phụ nữ cười?',
-     opts:['班长唱歌唱得很好笑','她考试考得很好','同学们送了她礼物','她看了一段相声'],ans:0,
-     why:'他（班长）唱得太好笑了 → lớp trưởng hát rất buồn cười. 起哄 = cả lớp hùa nhau bắt lớp trưởng hát.',
-     words:['起哄']},
-
-    {n:7,
-     lines:[{sp:'女',zh:'听说你最近在减肥？'},
-            {sp:'男',zh:'是啊，医生说我脂肪太多，再不注意可能会动脉硬化，所以我每天都去划船锻炼。'}],
-     q:'男的为什么要减肥？',qvn:'Vì sao người đàn ông giảm cân?',
-     opts:['想参加划船比赛','女朋友让他减肥','衣服穿不下了','医生说他脂肪太多'],ans:3,
-     why:'医生说我脂肪太多，再不注意可能会动脉硬化 → lời bác sĩ. Chèo thuyền chỉ là cách tập, không phải để thi.',
-     words:['脂肪','动脉']},
-
-    {n:8,
-     lines:[{sp:'男',zh:'很多人认为，笑有百益而无一害。其实，笑也要掌握分寸。研究发现，如果笑得太肆无忌惮，可能会导致心跳加速，甚至昏迷。对于有心脏病的老人来说，更要注意这一点。所以，笑虽然有益于健康，但恰到好处才是最好的。'}],
-     q:'这段话主要想告诉我们什么？',qvn:'Đoạn nói chủ yếu muốn cho chúng ta biết điều gì?',
-     opts:['笑有百益而无一害','老人不能笑','笑要掌握分寸，恰到好处','笑会导致心脏病'],ans:2,
-     why:'Câu chủ đề: 笑也要掌握分寸 … 恰到好处才是最好的. "有百益而无一害" là quan điểm bị phản bác; không nói người già không được cười.',
-     words:['分寸','肆无忌惮','恰到好处']}
+    {
+      n: 1,
+      lines: [
+        {sp:'女',zh:'你怎么一直看着手机笑？'},
+        {sp:'男',zh:'我在看一个相声视频，太逗了，我都快笑岔气了。'}
+      ],
+      q: '男的在做什么？',
+      qvn: 'Người đàn ông đang làm gì?',
+      opts: ['看相声视频','给朋友打电话','写作业','听音乐'],
+      ans: 0,
+      why: '我在看一个相声视频 → xem video tấu hài; 笑岔气 = cười đến sái hơi.',
+      words: ['相声','视频','岔']
+    },
+    {
+      n: 2,
+      lines: [
+        {sp:'男',zh:'你上午的面试怎么样？'},
+        {sp:'女',zh:'别提了，我预先准备的问题一个都没问到，只好凭直觉回答。'}
+      ],
+      q: '关于女的面试，可以知道什么？',
+      qvn: 'Về buổi phỏng vấn của người phụ nữ, có thể biết điều gì?',
+      opts: ['准备得很充分','问的问题她都准备过','她凭直觉回答了问题','面试推迟了'],
+      ans: 2,
+      why: '预先准备的问题一个都没问到 → câu hỏi không trùng phần đã chuẩn bị; 只好凭直觉回答 → đành trả lời theo trực giác.',
+      words: ['预先','直觉']
+    },
+    {
+      n: 3,
+      lines: [
+        {sp:'女',zh:'你觉得这件衣服怎么样？'},
+        {sp:'男',zh:'颜色有点儿老气，不太上档次，那件蓝色的更合适你。'}
+      ],
+      q: '男的认为这件衣服怎么样？',
+      qvn: 'Người đàn ông thấy chiếc áo này thế nào?',
+      opts: ['很上档次','颜色不太好看','价格太贵','太小了'],
+      ans: 1,
+      why: '颜色有点儿老气，不太上档次 → màu hơi già, không sang; anh ấy không nói gì về giá hay cỡ.',
+      words: ['档次']
+    },
+    {
+      n: 4,
+      lines: [
+        {sp:'男',zh:'小王今天在会上怎么一句话也不说？'},
+        {sp:'女',zh:'经理问他的问题他回答不了，只好假装没听见，把话题岔开了。'}
+      ],
+      q: '小王为什么不说话？',
+      qvn: 'Vì sao Tiểu Vương không nói gì?',
+      opts: ['他生病了','他不想参加会议','他没听清楚','经理的问题他回答不了'],
+      ans: 3,
+      why: '经理问他的问题他回答不了 → không trả lời được nên giả vờ không nghe thấy, lái sang chuyện khác.',
+      words: ['岔']
+    },
+    {
+      n: 5,
+      lines: [
+        {sp:'女',zh:'周末去爬山还是去看电影？'},
+        {sp:'男',zh:'爬山也好，看电影也罢，我都可以，听你的吧。'}
+      ],
+      q: '男的是什么意思？',
+      qvn: 'Ý người đàn ông là gì?',
+      opts: ['都可以，让女的决定','想去爬山','想去看电影','哪儿也不想去'],
+      ans: 0,
+      why: 'A也好，B也罢，我都可以 → cái nào cũng được; 听你的吧 → để cô ấy quyết định.',
+      words: []
+    },
+    {
+      n: 6,
+      lines: [
+        {sp:'男',zh:'你笑得这么开心，有什么好事吗？'},
+        {sp:'女',zh:'刚才同学们起哄，让班长给大家唱歌，他唱得太好笑了。'}
+      ],
+      q: '女的为什么笑？',
+      qvn: 'Vì sao người phụ nữ cười?',
+      opts: ['她考试考得很好','同学们送了她礼物','班长唱歌唱得很好笑','她看了一段相声'],
+      ans: 2,
+      why: '同学们起哄，让班长唱歌，他唱得太好笑了 → lớp trưởng bị cả lớp trêu bắt hát, hát rất buồn cười.',
+      words: ['起哄']
+    },
+    {
+      n: 7,
+      lines: [
+        {sp:'女',zh:'听说你最近在减肥？'},
+        {sp:'男',zh:'是啊，医生说我脂肪太多，再不注意可能会动脉硬化，所以我每天都去划船锻炼。'}
+      ],
+      q: '男的为什么要减肥？',
+      qvn: 'Vì sao người đàn ông giảm cân?',
+      opts: ['想参加划船比赛','女朋友让他减肥','衣服穿不下了','医生说他脂肪太多'],
+      ans: 3,
+      why: '医生说我脂肪太多，再不注意可能会动脉硬化 → bác sĩ cảnh báo; chèo thuyền chỉ là cách tập.',
+      words: ['脂肪','动脉']
+    }
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 💬 TÌNH HUỐNG GIAO TIẾP
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
+// ══════════════════════════════════════════
 var situationData = {
-  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
-         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn em kể một chuyện cười rất nhạt, cả nhóm im lặng, bạn quay sang hỏi em có buồn cười không.',
-     a:{sp:'Bạn',zh:'哈哈，好笑吧？你怎么不笑啊？',vn:'Haha, buồn cười nhỉ? Sao cậu không cười?'},
-     need:['Dùng 违心 hoặc 虚伪','Nói thật một cách khéo léo'],
-     sample:'说实话，这个笑话我没怎么听懂。要我违心地笑，那也太虚伪了吧？你再讲一个，我保证真心笑！',
-     samplePy:'Shuō shíhuà, zhège xiàohua wǒ méi zěnme tīngdǒng. Yào wǒ wéixīn de xiào, nà yě tài xūwěi le ba? Nǐ zài jiǎng yí ge, wǒ bǎozhèng zhēnxīn xiào!',
-     sampleVn:'Nói thật là chuyện này tớ không hiểu lắm. Bắt tớ cười trái lòng thì giả tạo quá nhỉ? Cậu kể chuyện khác đi, tớ đảm bảo cười thật lòng!',
-     tip:'Bài khoá khuyên đừng 违心地笑 — nói thật nhưng kèm lời đùa cho nhẹ nhàng.'},
-
-    {scene:'Mẹ hỏi em rốt cuộc muốn học ngành y hay ngành luật.',
-     a:{sp:'Mẹ',zh:'你到底想学医还是学法律？',vn:'Rốt cuộc con muốn học y hay học luật?'},
-     need:['Dùng ……也好，……也罢','Dùng 倾向于'],
-     sample:'学医也好，学法律也罢，都是很好的专业。不过我更倾向于学医，因为我对人体特别感兴趣。',
-     samplePy:'Xué yī yě hǎo, xué fǎlǜ yě bà, dōu shì hěn hǎo de zhuānyè. Búguò wǒ gèng qīngxiàng yú xué yī, yīnwèi wǒ duì réntǐ tèbié gǎn xìngqù.',
-     sampleVn:'Học y hay học luật đều là ngành rất tốt ạ. Nhưng con nghiêng về học y hơn, vì con đặc biệt hứng thú với cơ thể người.',
-     tip:'A也好，B也罢，都…… (điểm ngữ pháp 2); 更倾向于 + lựa chọn.'},
-
-    {scene:'Bạn rủ em tháng sau đi Bắc Kinh du lịch và hỏi cần chuẩn bị gì.',
-     a:{sp:'Bạn',zh:'下个月我们去北京玩儿，要准备些什么？',vn:'Tháng sau bọn mình đi Bắc Kinh chơi, cần chuẩn bị gì nhỉ?'},
-     need:['Dùng 预先','Dùng 周密'],
-     sample:'北京游客多，我们得预先订好酒店和门票，路线也要计划得周密一点，免得到时候手忙脚乱。',
-     samplePy:'Běijīng yóukè duō, wǒmen děi yùxiān dìnghǎo jiǔdiàn hé ménpiào, lùxiàn yě yào jìhuà de zhōumì yìdiǎn, miǎnde dào shíhou shǒumáng-jiǎoluàn.',
-     sampleVn:'Bắc Kinh đông khách du lịch, mình phải đặt sẵn khách sạn và vé vào cửa, lộ trình cũng phải lên kế hoạch chu đáo một chút, kẻo đến lúc đó lại luống cuống.',
-     tip:'预先 + V + 好; 免得 = kẻo, để khỏi (HSK 6 bài 14).'},
-
-    {scene:'Trong giờ tự học, bạn ngồi cạnh xem video cười rất to, cả lớp quay lại nhìn.',
-     a:{sp:'Bạn',zh:'哈哈哈，太好笑了，我停不下来！',vn:'Hahaha, buồn cười quá, tớ không dừng được!'},
-     need:['Dùng 分寸 hoặc 肆无忌惮','Nhắc khéo'],
-     sample:'小声点儿，现在是自习课。笑也要有分寸，别这么肆无忌惮的，大家都在看你呢。',
-     samplePy:'Xiǎo shēng diǎnr, xiànzài shì zìxíkè. Xiào yě yào yǒu fēncun, bié zhème sìwú-jìdàn de, dàjiā dōu zài kàn nǐ ne.',
-     sampleVn:'Nhỏ tiếng chút đi, giờ tự học đấy. Cười cũng phải có chừng mực, đừng thả cửa thế, mọi người đang nhìn cậu kìa.',
-     tip:'笑也要有分寸 — chính là kết luận của bài khoá (二).'},
-
-    {scene:'Thầy chủ nhiệm đưa em xem bản phát biểu cho lễ tốt nghiệp ngày mai và nhờ góp ý.',
-     a:{sp:'Thầy',zh:'这是我明天毕业典礼的发言稿，你帮我看看有没有问题？',vn:'Đây là bài phát biểu lễ tốt nghiệp mai của thầy, em xem giúp có vấn đề gì không?'},
-     need:['Dùng 斟酌','Dùng 恰当'],
-     sample:'老师，您的发言稿写得很感人。只是第二段有个词用得不太恰当，您再斟酌斟酌，看要不要换一个。',
-     samplePy:'Lǎoshī, nín de fāyángǎo xiě de hěn gǎnrén. Zhǐshì dì-èr duàn yǒu ge cí yòng de bú tài qiàdàng, nín zài zhēnzhuó zhēnzhuó, kàn yào bu yào huàn yí ge.',
-     sampleVn:'Thưa thầy, bài phát biểu của thầy viết rất cảm động. Chỉ có một từ ở đoạn hai dùng chưa thật thoả đáng, thầy cân nhắc thêm xem có nên đổi không ạ.',
-     tip:'Góp ý với thầy cô: khen trước, 只是 + điểm cần sửa; 您再斟酌斟酌 lịch sự, mềm mỏng.'}
+    {scene:'Bạn em kể một chuyện cười rất nhạt, cả nhóm im lặng, bạn quay sang hỏi em có buồn cười không.',a:{sp:'Bạn',zh:'哈哈，好笑吧？你怎么不笑啊？',vn:'Haha, buồn cười nhỉ? Sao cậu không cười?'},need:['Dùng 违心 hoặc 虚伪','Nói thật một cách khéo léo'],sample:'说实话，这个笑话我没怎么听懂。要我违心地笑，那也太虚伪了吧？你再讲一个，我保证真心笑！',samplePy:'Shuō shíhuà, zhège xiàohua wǒ méi zěnme tīngdǒng. Yào wǒ wéixīn de xiào, nà yě tài xūwěi le ba? Nǐ zài jiǎng yí ge, wǒ bǎozhèng zhēnxīn xiào!',sampleVn:'Nói thật là chuyện này tớ không hiểu lắm. Bắt tớ cười trái lòng thì giả tạo quá nhỉ? Cậu kể chuyện khác đi, tớ đảm bảo cười thật lòng!',tip:'Bài khoá khuyên đừng 违心地笑 — nói thật nhưng kèm lời đùa cho nhẹ nhàng.'},
+    {scene:'Mẹ hỏi em rốt cuộc muốn học ngành kinh tế hay ngành luật.',a:{sp:'Mẹ',zh:'你到底想学经济还是学法律？',vn:'Rốt cuộc con muốn học kinh tế hay luật?'},need:['Dùng ……也好，……也罢','Dùng 倾向'],sample:'学经济也好，学法律也罢，都是很好的专业。不过我更倾向于学经济，因为我对做生意特别感兴趣。',samplePy:'Xué jīngjì yě hǎo, xué fǎlǜ yě bà, dōu shì hěn hǎo de zhuānyè. Búguò wǒ gèng qīngxiàng yú xué jīngjì, yīnwèi wǒ duì zuò shēngyi tèbié gǎn xìngqù.',sampleVn:'Học kinh tế hay học luật thì đều là ngành tốt cả. Nhưng con nghiêng về học kinh tế hơn, vì con rất thích kinh doanh.',tip:'A也好，B也罢 + 都 = cái nào cũng …; 倾向于 + lựa chọn.'},
+    {scene:'Bạn rủ em tháng sau đi Bắc Kinh du lịch và hỏi cần chuẩn bị gì.',a:{sp:'Bạn',zh:'下个月我们去北京玩儿，要准备些什么？',vn:'Tháng sau mình đi Bắc Kinh chơi, cần chuẩn bị những gì?'},need:['Dùng 预先','Dùng 周密'],sample:'北京人多，我们得预先订好酒店和门票，路线也要计划得周密一点，免得到时候手忙脚乱。',samplePy:'Běijīng rén duō, wǒmen děi yùxiān dìnghǎo jiǔdiàn hé ménpiào, lùxiàn yě yào jìhuà de zhōumì yìdiǎn, miǎnde dào shíhou shǒumáng-jiǎoluàn.',sampleVn:'Bắc Kinh đông người, mình phải đặt trước khách sạn và vé vào cửa, lộ trình cũng phải lên kế hoạch chu đáo một chút, kẻo đến lúc đó lại cuống cuồng.',tip:'预先 + V + 好 = làm sẵn từ trước; 免得 (bài 14) = kẻo, để khỏi.'},
+    {scene:'Em phát biểu ngắn trước lớp với chủ đề "Vì sao tôi học tiếng Trung", muốn mở đầu thật thu hút.',a:{sp:'Cô giáo',zh:'下面请你给大家讲一讲，你为什么学中文？',vn:'Bây giờ mời em nói cho cả lớp nghe, vì sao em học tiếng Trung?'},need:['Tự hỏi rồi tự trả lời','Dùng 也好……也罢'],sample:'学中文难不难？当然难。那我为什么还要学呢？因为我喜欢中国的文化，将来工作也好，旅游也罢，都用得上。',samplePy:'Xué Zhōngwén nán bu nán? Dāngrán nán. Nà wǒ wèi shénme hái yào xué ne? Yīnwèi wǒ xǐhuan Zhōngguó de wénhuà, jiānglái gōngzuò yě hǎo, lǚyóu yě bà, dōu yòng de shàng.',sampleVn:'Học tiếng Trung có khó không? Tất nhiên là khó. Vậy tại sao tôi vẫn học? Vì tôi thích văn hoá Trung Quốc, sau này đi làm hay đi du lịch thì đều dùng được.',tip:'Tự hỏi tự đáp: tự đặt câu hỏi (……吗？/ 为什么……呢？) rồi trả lời ngay — giúp người nghe chú ý.'},
+    {scene:'Thầy chủ nhiệm đưa em xem bài nói cho buổi họp phụ huynh ngày mai và nhờ góp ý.',a:{sp:'Thầy chủ nhiệm',zh:'这是我明天在家长会上要说的话，你帮我看看有没有问题？',vn:'Đây là bài nói của thầy ở buổi họp phụ huynh ngày mai, em xem giúp thầy có vấn đề gì không?'},need:['Dùng 恰当','Dùng 斟酌'],sample:'老师，您写得很好。只是第二段有个词用得不太恰当，您再斟酌一下，看要不要换一个。',samplePy:'Lǎoshī, nín xiě de hěn hǎo. Zhǐshì dì-èr duàn yǒu ge cí yòng de bú tài qiàdàng, nín zài zhēnzhuó yíxià, kàn yào bu yào huàn yí ge.',sampleVn:'Thưa thầy, thầy viết rất hay. Chỉ là đoạn hai có một từ dùng chưa thật thoả đáng, thầy cân nhắc thêm xem có nên đổi không ạ.',tip:'Góp ý với người trên: khen trước (写得很好), góp ý nhẹ sau (只是……不太恰当); 斟酌一下 = cân nhắc thêm.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 // 🎯 NÓI SAO CHO HAY — 得体 / 语体
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 var registerData = {
-  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
-         'HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
   items: [
-    {scene:'Người dẫn chương trình mở đầu một hội thảo khoa học.',
-     a:'诸位来宾，欢迎大家光临本次研讨会。',b:'大伙儿好，都来了啊，那咱们开始吧！',better:'a',
-     why:'Hội thảo trang trọng cần 诸位来宾, 光临, 本次. Câu b (大伙儿, 咱们) là lời nói thân mật giữa bạn bè.'},
-
-    {scene:'Em nhắn tin cho bạn thân nhận xét một bộ phim vừa xem.',
-     a:'这部片子太俗了，一点儿都不好看。',b:'该影片内容庸俗，缺乏艺术价值。',better:'a',
-     why:'Nhắn tin bạn bè dùng khẩu ngữ (片子, 太俗了). Câu b (该影片, 缺乏艺术价值) là giọng bài phê bình trên báo.'},
-
-    {scene:'Em viết báo cáo kết quả thí nghiệm cho môn Sinh học.',
-     a:'结果一看就明白，大家随便一猜就知道是假笑。',b:'测试结果一目了然，志愿者仅凭直觉即可分辨假笑声。',better:'b',
-     why:'Báo cáo khoa học dùng văn viết: 一目了然, 仅凭, 即可. Câu a (随便一猜) quá khẩu ngữ, thiếu chính xác.'},
-
-    {scene:'Em nhờ cô giáo xem giúp bài văn trước khi nộp dự thi.',
-     a:'老师，您有空的时候帮我斟酌斟酌，看看用词恰当不恰当，行吗？',b:'老师，你看看我这篇写得行不行。',better:'a',
-     why:'Nói với thầy cô dùng 您, 有空的时候, 行吗 cho lịch sự; nêu rõ nhờ xem gì (用词恰当不恰当). Câu b dùng 你, cộc lốc.'},
-
-    {scene:'Công ty em viết thư cảm ơn một đối tác.',
-     a:'谢谢啦，下次请你们吃饭！',b:'对贵公司的大力支持，我们谨表示诚挚的谢意。',better:'b',
-     why:'Thư công vụ dùng 贵公司, 谨, 诚挚的谢意. Câu a là lời cảm ơn giữa bạn bè.'},
-
-    {scene:'Nhóm bạn đang cười đùa ầm ĩ trong quán cà phê, em muốn nhắc mọi người nhỏ tiếng.',
-     a:'请诸位注意分寸，切勿肆无忌惮地喧哗。',b:'哎，小点儿声，别人都在看咱们呢。',better:'b',
-     why:'Nhắc bạn bè nên nhẹ nhàng, khẩu ngữ. Câu a (诸位, 切勿, 喧哗) như biển báo nơi công cộng, nói với bạn nghe rất khách sáo, buồn cười.'}
+    {scene:'Người dẫn chương trình mở đầu một buổi thảo luận khoa học trong trường.',a:'诸位老师、同学们，欢迎大家参加今天的讨论会。',b:'大家好，人都来了吧？那就开始吧！',better:'a',why:'Mở đầu buổi thảo luận chính thức dùng 诸位 (trang trọng, lịch sự). Câu b thân mật, hợp khi họp nhóm bạn bè.'},
+    {scene:'Em nhắn tin cho bạn thân nhận xét một bộ phim vừa xem.',a:'这部电影太没意思了，一点儿都不好看。',b:'这部电影内容庸俗，缺乏艺术价值。',better:'a',why:'Nhắn tin bạn thân dùng khẩu ngữ (太没意思了). Câu b (庸俗, 缺乏艺术价值) là giọng bài phê bình điện ảnh.'},
+    {scene:'Em viết báo cáo kết quả thí nghiệm cho môn Sinh học.',a:'结果一看就明白，大家随便一猜就知道是假笑。',b:'测试结果一目了然，志愿者仅凭直觉即可分辨假笑声。',better:'b',why:'Báo cáo khoa học dùng văn viết: 一目了然, 仅凭, 即可. Câu a (随便一猜) là lời kể miệng, thiếu chính xác.'},
+    {scene:'Mở đầu bài diễn thuyết trước toàn trường về lợi ích của việc đọc sách.',a:'读书能让我们看到更大的世界。',b:'读书有什么用？它能让我们看到更大的世界。',better:'b',why:'Cả hai đều đúng, nhưng mở đầu diễn thuyết bằng câu tự hỏi rồi tự trả lời sẽ gây chú ý, kéo người nghe suy nghĩ cùng mình.'},
+    {scene:'Công ty em viết thư cảm ơn một đối tác.',a:'谢谢啦，下次请你们吃饭！',b:'对贵公司的大力支持，我们表示诚挚的感谢。',better:'b',why:'Thư công ty dùng văn viết trang trọng: 贵公司, 大力支持, 诚挚的感谢. Câu a chỉ hợp nhắn tin với bạn.'},
+    {scene:'Nhóm bạn đang cười đùa ầm ĩ trong quán cà phê, em muốn nhắc mọi người nhỏ tiếng.',a:'请诸位注意分寸，切勿在此大声说笑。',b:'哎，小点儿声，别人都在看我们呢。',better:'b',why:'Nhắc bạn bè dùng khẩu ngữ thân mật. Câu a (诸位, 切勿, 在此) như biển thông báo, nói với bạn nghe rất xa cách.'}
   ]
 };
 

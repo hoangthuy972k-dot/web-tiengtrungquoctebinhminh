@@ -1701,92 +1701,51 @@ var hvBridgeData = {
 // GHÉP TỪ — cụm từ trong bài khoá
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'有文献',right:'记载'},
-  {left:'发现凶恶的鬼就',right:'捆绑起来'},
-  {left:'无须揭露',right:'恶行'},
-  {left:'文化的',right:'昌盛'},
-  {left:'反映世俗生活',right:'题材'},
-  {left:'驱逐',right:'祸凶'},
-  {left:'祝福新年',right:'吉祥喜庆'},
-  {left:'一个重要的',right:'里程碑'},
-  {left:'书信上需要',right:'盖章'},
-  {left:'在版上涂抹上',right:'墨'},
-  {left:'满足人们的',right:'审美需求'},
-  {left:'寄托着百姓',right:'美好愿望'},
-  {left:'为春节增添了',right:'浓浓的年味'},
-  {left:'期盼',right:'丰收'},
-  {left:'恭喜',right:'发财'},
-  {left:'连年',right:'有余'},
-  {left:'老百姓',right:'喜闻乐见'},
-  {left:'那虎翘着',right:'尾巴'},
-  {left:'全身散发着',right:'喜气'},
-  {left:'他耸耸',right:'肩'},
-  {left:'说话',right:'吞吞吐吐'},
-  {left:'基本功',right:'扎实'},
-  {left:'交流艺术',right:'心得'},
-  {left:'他总是干劲',right:'十足'},
-  {left:'虽然任重',right:'道远'},
-  {left:'也不会一帆',right:'风顺'}
+  {left:'揭露',right:'真相'},
+  {left:'寄托',right:'愿望'},
+  {left:'增添',right:'乐趣'},
+  {left:'散发',right:'香气'},
+  {left:'塑造',right:'形象'},
+  {left:'确立',right:'目标'},
+  {left:'借鉴',right:'经验'},
+  {left:'涂抹',right:'颜料'},
+  {left:'盛开的',right:'花朵'},
+  {left:'扎实的',right:'基本功'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ — mỗi từ của bài ít nhất một câu (fill + chọn từ)
+// ĐIỀN TỪ — câu mới (không chép bài khoá / SGK), mỗi câu một tình huống; ôn xoáy ốc từ + ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'关于春节的',blank:'起源',post:'，民间流传着好几种不同的说法。',hint:'(nguồn gốc)',ans:'起源'},
-  {pre:'为了写毕业论文，他在图书馆查阅了大量',blank:'文献',post:'。',hint:'(tài liệu, tư liệu)',ans:'文献'},
-  {pre:'门神画上的武将面目',blank:'凶恶',post:'，据说是为了吓走鬼怪。',hint:'(hung ác, dữ tợn)',ans:'凶恶'},
-  {pre:'过年的时候，大家见面都要说几句',blank:'吉祥',post:'话。',hint:'(may mắn)',ans:'吉祥'},
-  {pre:'考上大学是我人生中的一个',blank:'里程碑',post:'。',hint:'(cột mốc)',ans:'里程碑'},
-  {pre:'钢笔没',blank:'墨水儿',post:'了，你能借我一支笔吗？',hint:'(mực)',ans:'墨水儿'},
-  {pre:'这份证明必须由学校',blank:'盖章',post:'才有效。',hint:'(đóng dấu)',ans:'盖章'},
-  {pre:'一看到红灯笼，人们就会',blank:'联想',post:'到春节。',hint:'(liên tưởng)',ans:'联想'},
-  {pre:'别让孩子在墙上乱',blank:'涂抹',post:'，否则很难擦干净。',hint:'(bôi vẽ)',ans:'涂抹'},
-  {pre:'借住在朋友这儿',blank:'终究',post:'不是长久之计，还是应该尽快租个房子。',hint:'(chung quy, xét cho cùng)',ans:'终究',exp:'终究 = chung quy, rốt cuộc (kết luận không thay đổi): 终究不是长久之计.'},
-  {pre:'为了安全和环保，很多城市都禁止燃放',blank:'烟花爆竹',post:'。',hint:'(pháo)',ans:'烟花爆竹'},
-  {pre:'今年雨水充足，村里的水稻又是大',blank:'丰收',post:'。',hint:'(được mùa)',ans:'丰收'},
-  {pre:'想靠买彩票',blank:'发财',post:'，恐怕不太现实。',hint:'(phát tài)',ans:'发财'},
-  {pre:'由于经营不善，这家工厂',blank:'连年',post:'亏损，最后只好关门了。',hint:'(nhiều năm liền)',ans:'连年',exp:'连年 = nhiều năm liền: 连年亏损.'},
-  {pre:'“画蛇添足”这个成语就来自一则古代',blank:'寓言',post:'。',hint:'(truyện ngụ ngôn)',ans:'寓言'},
-  {pre:'我们应该尊重每个人的宗教',blank:'信仰',post:'。',hint:'(tín ngưỡng)',ans:'信仰'},
-  {pre:'相声是中国观众',blank:'喜闻乐见',post:'的节目。',hint:'(được yêu thích)',ans:'喜闻乐见'},
-  {pre:'弟弟穿上新校服，显得特别',blank:'神气',post:'。',hint:'(oai vệ)',ans:'神气'},
-  {pre:'小猫高兴地',blank:'翘',post:'着尾巴，在屋子里走来走去。',hint:'(vểnh)',ans:'翘'},
-  {pre:'每年三月，公园里桃花',blank:'盛开',post:'，游人特别多。',hint:'(nở rộ)',ans:'盛开'},
-  {pre:'问他作业写完没有，他什么也没说，只是',blank:'耸',post:'了耸肩。',hint:'(nhún vai)',ans:'耸'},
-  {pre:'魏',blank:'州',post:'在今天的河北省邯郸市魏县。',hint:'(châu — đơn vị hành chính xưa)',ans:'州'},
-  {pre:'我对书法完全是',blank:'外行',post:'，看不出这幅字好在哪儿。',hint:'(người ngoài nghề)',ans:'外行'},
-  {pre:'有什么话就直说，别',blank:'吞吞吐吐',post:'的。',hint:'(ấp úng)',ans:'吞吞吐吐'},
-  {pre:'引进新设备以后，',blank:'残次品',post:'率降低了一半。',hint:'(hàng lỗi, hỏng)',ans:'残次品'},
-  {pre:'这台洗衣机刚买回来就坏了，肯定是',blank:'次品',post:'。',hint:'(hàng kém chất lượng)',ans:'次品'},
-  {pre:'冰箱里有',blank:'现成',post:'的饭菜，你热一热就能吃。',hint:'(có sẵn)',ans:'现成'},
-  {pre:'在中国留学四年，北京已经成了我的第二',blank:'故乡',post:'。',hint:'(quê hương)',ans:'故乡'},
-  {pre:'这首诗运用了比喻和夸张的修辞',blank:'手法',post:'。',hint:'(thủ pháp, biện pháp)',ans:'手法'},
-  {pre:'中国年画虽不分',blank:'派别',post:'，但不同地区的年画各有所长。',hint:'(trường phái)',ans:'派别'},
-  {pre:'这次考得不错，希望你',blank:'再接再厉',post:'，争取下次考得更好。',hint:'(cố gắng hơn nữa)',ans:'再接再厉'},
-  {pre:'小王因病',blank:'缺席',post:'了今天的会议。',hint:'(vắng mặt)',ans:'缺席'},
-  {pre:'离考试只剩一个月了，大家要鼓足',blank:'干劲',post:'。',hint:'(nhiệt huyết, sự hăng say)',ans:'干劲'},
-  {pre:'保护传统文化',blank:'任重道远',post:'，需要一代又一代人的努力。',hint:'(gánh nặng đường xa)',ans:'任重道远'},
-  {pre:'人生不可能',blank:'一帆风顺',post:'，遇到挫折是很正常的。',hint:'(thuận buồm xuôi gió)',ans:'一帆风顺'}
+  {pre:'关于这个节日的',blank:'起源',post:'，民间有好几种不同的说法。',hint:'(nguồn gốc)',ans:'起源',exp:'起源 = nguồn gốc (danh từ) / bắt nguồn (động từ: 起源于……). 来源 nói nơi cung cấp (收入来源, 消息来源), không dùng cho lịch sử hình thành một lễ hội.'},
+  {pre:'研究这段历史，得先看大量的',blank:'文献',post:'，看看当时的人是怎么说的。',hint:'(tài liệu, văn hiến)',ans:'文献',exp:'文献 = tài liệu có giá trị lịch sử / nghiên cứu (văn viết). Không dùng 文章 (một bài văn) hay 资料 trong lối nói trang trọng về sử liệu.'},
+  {pre:'那条狗看起来很',blank:'凶恶',post:'，其实性格特别温和，从来不咬人。',hint:'(hung dữ)',ans:'凶恶',exp:'凶恶 = hung dữ, dữ tợn (vẻ ngoài, tính cách), đối lập với 温和 (bài 34). Ôn 其实: bề ngoài một đằng, thực tế một nẻo.'},
+  {pre:'在这个重要的日子里，祝我们的国家繁荣',blank:'昌盛',post:'！',hint:'(hưng thịnh)',ans:'昌盛',exp:'繁荣昌盛 = phồn vinh hưng thịnh — cụm cố định, dùng cho quốc gia, dân tộc (lời chúc trang trọng). Không nói về một người.'},
+  {pre:'这部电影是以一个真实的故事为',blank:'题材',post:'拍成的。',hint:'(đề tài)',ans:'题材',exp:'以……为题材 = lấy … làm đề tài (ôn 以……为…… bài 11). 题目 là tên bài / đề bài, không phải chất liệu sáng tác.'},
+  {pre:'在中国，红色代表',blank:'吉祥',post:'和喜庆，所以过年的时候到处都是红色。',hint:'(may mắn, tốt lành)',ans:'吉祥',exp:'吉祥 = tốt lành, cát tường (đi với 喜庆, 如意). 幸运 dùng cho người gặp may (他很幸运), không làm biểu tượng cho màu sắc.'},
+  {pre:'第一台电脑的出现，是人类科技发展史上的一个',blank:'里程碑',post:'。',hint:'(cột mốc)',ans:'里程碑',exp:'里程碑 = cột mốc (nghĩa bóng: sự kiện đánh dấu bước ngoặt); lượng từ 一个 / 一座. Đừng dịch theo Hán Việt "lý trình bi".'},
+  {pre:'我的笔没',blank:'墨水儿',post:'了，你的能借我用一下吗？',hint:'(mực)',ans:'墨水儿',exp:'墨水儿 = mực (bút máy); 没墨水儿了 = hết mực. 颜料 là màu vẽ, không bơm vào bút.'},
+  {pre:'这份证明必须',blank:'盖章',post:'以后才有用，你先拿到办公室去吧。',hint:'(đóng dấu)',ans:'盖章',exp:'盖章 = đóng dấu (động từ li hợp, có thể chen 了 / 个 vào giữa). 签字 = ký tên — việc khác.'},
+  {pre:'一听到这首老歌，我就会',blank:'联想',post:'到上大学时的生活。',hint:'(liên tưởng)',ans:'联想',exp:'联想到 + N = (từ cái này) nghĩ đến cái kia. 想念 = nhớ nhung, không mang 到 với nghĩa "chợt nghĩ tới" như vậy.'},
+  {pre:'为了减少空气污染，很多城市过年时已经不让放',blank:'烟花爆竹',post:'了。',hint:'(pháo hoa, pháo nổ)',ans:'烟花爆竹',exp:'放烟花爆竹 = đốt pháo (động từ 放). Không nói ×打烟花 hay ×玩爆竹 trong văn thông báo.'},
+  {pre:'小时候，奶奶常给我讲动物',blank:'寓言',post:'，每个故事后面都有一个道理。',hint:'(truyện ngụ ngôn)',ans:'寓言',exp:'寓言 = truyện ngụ ngôn (mượn chuyện con vật để nói đạo lý). 神话 = thần thoại; 笑话 = truyện cười.'},
+  {pre:'这位演员把老人说话、走路的',blank:'神态',post:'演得特别像。',hint:'(thần thái, dáng vẻ)',ans:'神态',exp:'神态 = vẻ mặt và dáng điệu (thấy được khi quan sát). 心态 = trạng thái tâm lý bên trong, không "diễn" ra như vậy.'},
+  {pre:'每个民族都有自己的',blank:'信仰',post:'和风俗习惯，不能拿自己的习惯去要求别人。',hint:'(tín ngưỡng)',ans:'信仰',exp:'信仰 = tín ngưỡng, niềm tin tôn giáo / lý tưởng (cấp độ cả cộng đồng). 信念 (cũng trong bài) = niềm tin vào mục tiêu của bản thân.'},
+  {pre:'美国一共有五十个',blank:'州',post:'，每个州都有自己的一些法律。',hint:'(bang, châu)',ans:'州',exp:'州 = bang (Mỹ, Úc…) hoặc "châu" — đơn vị hành chính thời xưa của Trung Quốc (như 魏州 trong bài khoá).'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (终究 · 愈……愈…… · 重复关键词) ít nhất 2 câu
+// SẮP XẾP CÂU — câu mới, chỉ một trật tự đúng
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['单色印品','终究','不能满足','人们的','审美需求','。'],ans:'单色印品终究不能满足人们的审美需求。',audio:'单色印品终究不能满足人们的审美需求。'},
-  {words:['猫','终究','是动物','，','动物急了','咬人','也是正常的','。'],ans:'猫终究是动物，动物急了咬人也是正常的。',audio:'猫终究是动物，动物急了咬人也是正常的。'},
-  {words:['正义的事业','终究','会','取得胜利','。'],ans:'正义的事业终究会取得胜利。',audio:'正义的事业终究会取得胜利。'},
-  {words:['一个人的力量','终究','是有限的','，','还是','团结力量大','。'],ans:'一个人的力量终究是有限的，还是团结力量大。',audio:'一个人的力量终究是有限的，还是团结力量大。'},
-  {words:['愈是','经营年画','久了','，','他对年画','就愈是','热爱','。'],ans:'愈是经营年画久了，他对年画就愈是热爱。',audio:'愈是经营年画久了，他对年画就愈是热爱。'},
-  {words:['情况','愈','紧急','，','愈','需要','沉着冷静','。'],ans:'情况愈紧急，愈需要沉着冷静。',audio:'情况愈紧急，愈需要沉着冷静。'},
-  {words:['市场竞争','愈','激烈','愈是','如此','。'],ans:'市场竞争愈激烈愈是如此。',audio:'市场竞争愈激烈愈是如此。'},
-  {words:['一个家庭','，','愈重视教育','，','教育的投入','愈多','。'],ans:'一个家庭，愈重视教育，教育的投入愈多。',audio:'一个家庭，愈重视教育，教育的投入愈多。'},
-  {words:['路近的送','，','路远的','也送','；','晴天送','，','雨天','也送','。'],ans:'路近的送，路远的也送；晴天送，雨天也送。',audio:'路近的送，路远的也送；晴天送，雨天也送。'},
-  {words:['这泪水','，','是激动的泪水','，','兴奋的泪水','，','收获的泪水','。'],ans:'这泪水，是激动的泪水，兴奋的泪水，收获的泪水。',audio:'这泪水，是激动的泪水，兴奋的泪水，收获的泪水。'},
-  {words:['年画','寄托着','百姓','美好的','愿望','。'],ans:'年画寄托着百姓美好的愿望。',audio:'年画寄托着百姓美好的愿望。'},
-  {words:['不同地区的年画','各有所长','，','都值得','学习借鉴','。'],ans:'不同地区的年画各有所长，都值得学习借鉴。',audio:'不同地区的年画各有所长，都值得学习借鉴。'},
-  {words:['虽然','任重道远','，','但','他','一定会','坚持下去','。'],ans:'虽然任重道远，但他一定会坚持下去。',audio:'虽然任重道远，但他一定会坚持下去。'}
+  {words:['雨','愈下','愈大','。'],ans:'雨愈下愈大。',audio:'雨愈下愈大。'},
+  {words:['你','愈着急','，','就','愈容易','出错','。'],ans:'你愈着急，就愈容易出错。',audio:'你愈着急，就愈容易出错。'},
+  {words:['他','把','颜料','涂抹','在','墙上','。'],ans:'他把颜料涂抹在墙上。',audio:'他把颜料涂抹在墙上。'},
+  {words:['小狗','翘着','尾巴','跑了','过来','。'],ans:'小狗翘着尾巴跑了过来。',audio:'小狗翘着尾巴跑了过来。'},
+  {words:['弟弟','耸耸肩','，','表示','不知道','。'],ans:'弟弟耸耸肩，表示不知道。',audio:'弟弟耸耸肩，表示不知道。'},
+  {words:['这','是','我','第一次','离开','故乡','。'],ans:'这是我第一次离开故乡。',audio:'这是我第一次离开故乡。'},
+  {words:['公园里的','花','都','盛开','了','。'],ans:'公园里的花都盛开了。',audio:'公园里的花都盛开了。'},
+  {words:['冰箱里','有','现成的','饺子','。'],ans:'冰箱里有现成的饺子。',audio:'冰箱里有现成的饺子。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1794,72 +1753,44 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'这篇报道____了一些商家卖假货的真相。',opts:['揭露','透露','暴露','流露'],ans:0,
-   exp:'揭露真相 = chủ động vạch trần sự thật (điều xấu bị che giấu). 透露 = hé lộ tin tức; 暴露 = bị lộ ra (không chủ ý); 流露 = bộc lộ (tình cảm).'},
-  {wrong:'新年到了，祝愿我们的祖国繁荣____！',opts:['茂盛','昌盛','旺盛','丰盛'],ans:1,
-   exp:'繁荣昌盛 là cụm cố định (đất nước phồn vinh hưng thịnh). 茂盛 = (cây cỏ) tươi tốt; 旺盛 = (sức sống) dồi dào; 丰盛 = (bữa ăn) thịnh soạn.'},
-  {wrong:'最近历史____的电视剧特别受欢迎。',opts:['话题','主题','题材','题目'],ans:2,
-   exp:'历史题材 = đề tài lịch sử (chất liệu sáng tác). 话题 = chủ đề câu chuyện; 主题 = tư tưởng chủ đạo; 题目 = đầu bài, nhan đề.'},
-  {wrong:'那名外国人因为违法被____出境了。',opts:['驱赶','赶走','驱散','驱逐'],ans:3,
-   exp:'驱逐出境 = trục xuất khỏi nước (cụm cố định, trang trọng). 驱赶 = xua (gia súc, ruồi); 驱散 = giải tán (đám đông, sương mù); 赶走 khẩu ngữ, không đi với 出境.'},
-  {wrong:'父母把全部希望都____在孩子身上。',opts:['寄托','寄存','委托','托付'],ans:0,
-   exp:'把希望寄托在…… = đặt hy vọng vào (gửi gắm tình cảm, hy vọng). 寄存 = gửi giữ đồ; 委托 = uỷ thác công việc; 托付 = phó thác (người, việc) cho ai.'},
-  {wrong:'这只小猫给我们家____了很多乐趣。',opts:['增加','增添','增长','添加'],ans:1,
-   exp:'增添乐趣 = thêm niềm vui (thứ trừu tượng, tích cực). 增加 thiên về số lượng; 增长 = tăng trưởng (số liệu); 添加 = cho thêm (vật cụ thể: 添加剂).'},
-  {wrong:'屏幕上会____出现几个数字，你要迅速记住它们。',opts:['连年','连忙','连续','连同'],ans:2,
-   exp:'连续出现 = xuất hiện nối tiếp (không phải đơn vị năm → không dùng 连年 — đáp án 做一做 của sách). 连忙 = vội vàng; 连同 = cùng với.'},
-  {wrong:'这幅画把老人的____画得非常逼真。',opts:['形态','状态','心态','神态'],ans:3,
-   exp:'神态逼真 = thần thái như thật (nét mặt, dáng điệu biểu lộ tinh thần). 形态 = hình thái; 状态 = trạng thái; 心态 = tâm thái, thái độ tâm lý.'},
-  {wrong:'刚出锅的包子____着诱人的香味。',opts:['散发','发散','发表','发挥'],ans:0,
-   exp:'散发着香味 = toả hương thơm. 发散 = phát tán (tư duy phân kỳ, ánh sáng); 发表 = đăng, phát biểu; 发挥 = phát huy.'},
-  {wrong:'那个____员在门口站了半天，一件产品也没卖出去。',opts:['推广','推销','推荐','推动'],ans:1,
-   exp:'推销员 = nhân viên chào hàng (cụm cố định). 推广 = phổ biến rộng; 推荐 = giới thiệu, tiến cử; 推动 = thúc đẩy.'},
-  {wrong:'由于此地涉及国家机密，所以____参观。',opts:['拒绝','谢谢','谢绝','杜绝'],ans:2,
-   exp:'谢绝参观 = miễn tham quan (lời thông báo lịch sự, 练习2 của sách). 拒绝 quá cứng khi viết biển báo; 杜绝 = chấm dứt hẳn (hiện tượng xấu).'},
-  {wrong:'学外语一定要打下____的基础。',opts:['结实','坚固','牢固','扎实'],ans:3,
-   exp:'打下扎实的基础 = tạo nền tảng vững chắc (kiến thức). 结实 = bền, khoẻ (đồ vật, thân thể); 坚固 = kiên cố (công trình); 牢固 thường đi 牢固地掌握, 基础牢固 cũng có nhưng 打下扎实的基础 là cụm của bài.'},
-  {wrong:'这部小说成功地____了一位勇敢的女英雄形象。',opts:['塑造','制造','创造','建造'],ans:0,
-   exp:'塑造形象 = xây dựng hình tượng (nghệ thuật). 制造 = chế tạo (sản phẩm); 创造 = sáng tạo (kỷ lục, của cải); 建造 = xây (nhà cửa).'},
-  {wrong:'多____别人成功的经验，可以少走弯路。',opts:['参加','借鉴','借用','鉴定'],ans:1,
-   exp:'借鉴经验 = học hỏi kinh nghiệm. 借用 = mượn dùng (đồ vật, từ ngữ); 鉴定 = giám định; 参加 = tham gia.'},
-  {wrong:'网络游戏____了他大部分的业余时间。',opts:['占领','据说','占据','根据'],ans:2,
-   exp:'占据时间 = chiếm (thời gian, vị trí). 占领 thường dùng cho lãnh thổ bằng vũ lực (占领城市); 据说, 根据 không cùng nghĩa.'},
-  {wrong:'想要成就一番事业，首先要____自己的目标。',opts:['建立','设立','成立','确立'],ans:3,
-   exp:'确立目标 = xác lập mục tiêu (练习3 của sách). 建立 = xây dựng (quan hệ, cơ sở); 设立 = đặt ra (cơ quan, giải thưởng); 成立 = thành lập (tổ chức).'},
-  {wrong:'抱着必胜的____坚持下去，最后的胜利一定属于你。',opts:['信念','信心','信任','信用'],ans:0,
-   exp:'必胜的信念 = niềm tin tất thắng (练习3 của sách). 信心 = sự tự tin (对……有信心); 信任 = tín nhiệm; 信用 = uy tín, tín dụng.'},
-  {wrong:'老师让我们读完这本书以后写一篇读书____。',opts:['心情','心得','心意','心理'],ans:1,
-   exp:'读书心得 = bài cảm nhận, thu hoạch sau khi đọc. 心情 = tâm trạng; 心意 = tấm lòng; 心理 = tâm lý.'}
+  {wrong:'假话说得再好听，____会被人发现的。',opts:['终究','终于','究竟','曾经'],ans:0,exp:'终究会 + V = rốt cuộc tất yếu sẽ … (kết quả chắc chắn xảy ra, chưa xảy ra). 终于 dùng cho việc ĐÃ xảy ra sau thời gian chờ đợi; 究竟 dùng trong câu hỏi; 曾经 = đã từng.'},
+  {wrong:'找了整整一个星期，丢的小狗____找回来了。',opts:['终于','终究','何必','从此'],ans:0,exp:'Việc mong đợi cuối cùng đã xảy ra → 终于 (×我终究考上了大学 là lỗi hay gặp). 终究 nói bản chất / kết quả tất yếu; 何必 = cần gì phải; 从此 = từ đó trở đi.'},
+  {wrong:'离考试的日子____近了，大家都开始紧张起来。',opts:['愈来愈','愈是','一下子','再三'],ans:0,exp:'愈来愈 + tính từ = càng ngày càng (= 越来越, văn viết hơn); không thêm 很 sau nó. 愈是 cần vế sau 就愈……; 一下子 = bỗng chốc; 再三 = nhiều lần.'},
+  {wrong:'记者写了一篇文章，____了这家工厂偷偷往河里排脏水的事。',opts:['揭露','暴露','流露','显示'],ans:0,exp:'揭露 = vạch trần việc xấu (chủ ngữ là người chủ động vạch ra). 暴露 = (tự) lộ ra; 流露 = để lộ cảm xúc; 显示 = cho thấy (số liệu, kết quả).'},
+  {wrong:'传说古时候人们过年放爆竹，是为了____一种叫“年”的怪物。',opts:['驱逐','追求','逐步','追赶'],ans:0,exp:'驱逐 = xua đuổi đi. 追求 = theo đuổi (mục tiêu, người yêu); 追赶 = đuổi theo để bắt kịp; 逐步 = từng bước (phó từ).'},
+  {wrong:'这些旧信____着父母对孩子的希望。',opts:['寄托','委托','拜托','依靠'],ans:0,exp:'寄托 + tình cảm / hy vọng = gửi gắm. 委托 = uỷ thác, nhờ làm việc; 拜托 = nhờ vả (lời nhờ lịch sự); 依靠 = dựa vào.'},
+  {wrong:'门口挂上两个红灯笼，给节日____了喜庆的气氛。',opts:['增添','提高','补充','发展'],ans:0,exp:'给 / 为 + N + 增添 + 气氛 / 光彩 / 乐趣 = thêm vào cái đẹp, cái vui. 提高 = nâng cao (水平); 补充 = bổ sung cái thiếu; 发展 = phát triển.'},
+  {wrong:'才拿了一次第一名，他就____起来了，谁都不放在眼里。',opts:['神气','神态','精神','神秘'],ans:0,exp:'神气起来 = ra vẻ ta đây, vênh váo (nghĩa xấu ở đây). 神态 là danh từ; 精神起来 = tỉnh táo lại; 神秘 = bí ẩn.'},
+  {wrong:'刚做好的面包____着诱人的香气。',opts:['散发','分散','发表','发挥'],ans:0,exp:'散发 + 香气 / 光 / 热 = toả ra. 分散 = phân tán (注意力); 发表 = công bố (文章); 发挥 = phát huy (作用).'},
+  {wrong:'他____了朋友的好意，坚持自己出钱。',opts:['谢绝','接受','答应','欢迎'],ans:0,exp:'谢绝 = từ chối khéo, lịch sự (好意, 参观, 还价). 接受 / 答应 = nhận lời — mâu thuẫn với 坚持自己出钱; 欢迎 không đi với 好意 theo nghĩa này.'},
+  {wrong:'他的汉语基础很____，所以到了中国很快就适应了。',opts:['扎实','结实','实在','老实'],ans:0,exp:'基础 / 基本功 + 扎实 = vững chắc (kiến thức, kỹ năng). 结实 = chắc khoẻ (thân thể, đồ vật); 实在 = thật thà, thực tế; 老实 = hiền, thật thà.'},
+  {wrong:'我们应该多____别人的长处，改进自己的学习方法。',opts:['借鉴','借口','鉴定','借用'],ans:0,exp:'借鉴 = học hỏi, lấy làm gương (经验, 长处, 方法). 借口 = cái cớ; 鉴定 = giám định (bài 34); 借用 = mượn dùng đồ vật cụ thể.'},
+  {wrong:'这次会议很重要，请大家准时参加，不要____。',opts:['缺席','缺少','缺乏','缺点'],ans:0,exp:'缺席 = vắng mặt (họp, lớp học), nội động từ. 缺少 / 缺乏 cần tân ngữ (缺少时间, 缺乏经验); 缺点 là danh từ.'},
+  {wrong:'工作几乎____了他所有的时间，他连陪孩子的时间都没有。',opts:['占据','占领','占线','根据'],ans:0,exp:'占据 = chiếm (thời gian, vị trí, tâm trí). 占领 = chiếm đóng (quân sự); 占线 = (điện thoại) máy bận; 根据 = căn cứ.'},
+  {wrong:'人生不可能总是____的，遇到困难是很正常的事。',opts:['一帆风顺','任重道远','再接再厉','吞吞吐吐'],ans:0,exp:'一帆风顺 = thuận buồm xuôi gió (mọi việc suôn sẻ). 任重道远 = gánh nặng đường xa; 再接再厉 = cố gắng hơn nữa; 吞吞吐吐 = ấp úng.'}
 ];
 
 // ══════════════════════════════════════════
-// DỊCH — câu ghép, dùng từ bài 35 + ôn từ HSK 6 bài 1–29 và HSK 4–5
+// DỊCH Việt → Trung — câu mới, dùng từ của bài + ôn ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Tuy đã đỗ đại học, nhưng cậu ấy không hề kiêu ngạo mà quyết tâm cố gắng hơn nữa, vì cậu biết con đường phía trước vẫn là gánh nặng đường xa.',zh:'虽然已经考上了大学，但他没有骄傲，而是决心再接再厉，因为他知道前面的路任重道远。',py:'Suīrán yǐjīng kǎoshangle dàxué, dàn tā méiyǒu jiāo\'ào, ér shì juéxīn zàijiē-zàilì, yīnwèi tā zhīdào qiánmian de lù rènzhòng-dàoyuǎn.',goiY:['虽然……但……','没有……，而是……','再接再厉','任重道远'],giai:'Ba vế: nhượng bộ (虽然……但……) → đối lập 没有 A 而是 B (không A mà là B) → nguyên nhân 因为. 再接再厉 viết 厉 (không phải 励).'},
+  {vi:'Tuy đã đỗ đại học, nhưng cậu ấy không hề kiêu ngạo mà quyết tâm cố gắng hơn nữa, vì cậu biết con đường phía trước vẫn là gánh nặng đường xa.',zh:'虽然已经考上了大学，但他没有骄傲，而是决心再接再厉，因为他知道前面的路任重道远。',py:'Suīrán yǐjīng kǎoshangle dàxué, dàn tā méiyǒu jiāo\'ào, ér shì juéxīn zàijiē-zàilì, yīnwèi tā zhīdào qiánmian de lù rènzhòng-dàoyuǎn.',goiY:['虽然……但……','没有……，而是……','再接再厉','任重道远'],giai:'Ba vế: nhượng bộ (虽然……但……) → đối lập 没有 A 而是 B (không A mà là B) → nguyên nhân 因为. 再接再厉 = cố gắng hơn nữa (thường dùng sau một thành công).'},
   {vi:'Càng tìm hiểu nguồn gốc của tranh Tết, tôi càng cảm thấy nó gửi gắm biết bao ước nguyện tốt đẹp của người dân.',zh:'愈是了解年画的起源，我就愈觉得它寄托着老百姓许多美好的愿望。',py:'Yù shì liǎojiě niánhuà de qǐyuán, wǒ jiù yù juéde tā jìtuōzhe lǎobǎixìng xǔduō měihǎo de yuànwàng.',goiY:['愈是……就愈……','起源','寄托'],giai:'愈……愈…… = 越……越…… nhưng văn viết (điểm ngữ pháp 2); vế sau có chủ ngữ riêng (我) thì 就 đứng sau chủ ngữ, trước 愈. 寄托着 + 愿望 = gửi gắm ước nguyện.'},
   {vi:'Dù bây giờ cậu có trốn tránh thế nào, sự thật rốt cuộc cũng sẽ bị vạch trần; thay vì như vậy, chi bằng sớm nói ra.',zh:'不管你现在怎么回避，真相终究会被揭露的，与其这样，不如早点儿说出来。',py:'Bùguǎn nǐ xiànzài zěnme huíbì, zhēnxiàng zhōngjiū huì bèi jiēlù de, yǔqí zhèyàng, bùrú zǎo diǎnr shuō chulai.',goiY:['不管……','终究','揭露','与其……不如……'],giai:'终究会…… = kết quả tất yếu sẽ xảy ra (nghĩa ② của 终究); 会……的 khẳng định. 回避 — HSK 6 bài 29; 与其 A 不如 B = thay vì A chi bằng B.'},
   {vi:'Những bức tranh Tết này đều là tư liệu lịch sử quý giá; để bảo vệ chúng, bảo tàng không cho du khách chụp ảnh, kẻo làm hỏng tranh.',zh:'这些年画都是珍贵的历史文献，为了保护它们，博物馆谢绝游客拍照，以免损坏。',py:'Zhèxiē niánhuà dōu shì zhēnguì de lìshǐ wénxiàn, wèile bǎohù tāmen, bówùguǎn xièjué yóukè pāizhào, yǐmiǎn sǔnhuài.',goiY:['文献','为了……','谢绝','以免'],giai:'谢绝 + V = lịch sự không cho phép (văn thông báo); 以免 = để tránh (HSK 6 bài 21) đặt ở vế cuối; 损坏 — HSK 6 bài 29.'},
-  {vi:'Tranh Tết không chỉ làm cho ngày Tết thêm đậm đà không khí, mà còn là loại hình nghệ thuật được bà con yêu thích.',zh:'年画不仅为春节增添了浓浓的年味，而且是老百姓喜闻乐见的艺术形式。',py:'Niánhuà bùjǐn wèi Chūnjié zēngtiānle nóngnóng de niánwèir, érqiě shì lǎobǎixìng xǐwén-lèjiàn de yìshù xíngshì.',goiY:['不仅……而且……','为……增添','喜闻乐见'],giai:'为 + đối tượng + 增添 + điều tốt; 喜闻乐见 làm định ngữ, chủ thể là 老百姓 / 群众.'},
-  {vi:'Chỉ khi nền tảng vững chắc, lại học hỏi thêm kinh nghiệm của người khác, thì em mới vẽ được những tác phẩm có thần thái như thật.',zh:'只有基本功扎实，再多借鉴别人的经验，你才能画出神态逼真的作品。',py:'Zhǐyǒu jīběngōng zhāshi, zài duō jièjiàn biérén de jīngyàn, nǐ cái néng huàchū shéntài bīzhēn de zuòpǐn.',goiY:['只有……才……','扎实','借鉴','神态'],giai:'只有……才…… (điều kiện duy nhất); 借鉴经验 = học hỏi kinh nghiệm (khác 参考 tài liệu); 神态逼真 làm định ngữ cho 作品.'},
-  {vi:'Hễ mặc cả với anh ấy là anh ấy lại ấp úng, một lý do có sẵn cũng không nói ra được, đúng là chẳng giống dân buôn chút nào.',zh:'一跟他讨价还价，他就吞吞吐吐的，一条现成的理由也说不出来，真不像个商人。',py:'Yì gēn tā tǎojià-huánjià, tā jiù tūntūntǔtǔ de, yì tiáo xiànchéng de lǐyóu yě shuō bu chūlai, zhēn bú xiàng ge shāngrén.',goiY:['一……就……','吞吞吐吐','现成','一……也不……'],giai:'一 + lượng từ + N + 也 + 不 / 没 = phủ định tuyệt đối ("một … cũng không"); 说不出来 bổ ngữ khả năng. 不像个商人 — 个 thêm sắc thái khẩu ngữ.'},
-  {vi:'Đồ làm thủ công khó tránh khỏi có hàng lỗi, nhưng xét cho cùng mỗi món đều là độc nhất vô nhị, vì vậy anh ấy chưa bao giờ hạ giá.',zh:'手工做的东西难免有残次品，但每一件终究都是独一无二的，所以他从来不降价。',py:'Shǒugōng zuò de dōngxi nánmiǎn yǒu cáncìpǐn, dàn měi yí jiàn zhōngjiū dōu shì dúyī-wú\'èr de, suǒyǐ tā cónglái bú jiàngjià.',goiY:['难免','残次品','终究','所以'],giai:'终究是…… = bản chất không thay đổi (nghĩa ① của 终究, ≈ 毕竟); 难免 = khó tránh (HSK 5). Ba vế: nhượng bộ → đánh giá → kết quả.'},
   {vi:'Từ nhỏ anh ấy đã xác lập mục tiêu của mình; cho dù con đường không thuận buồm xuôi gió, anh ấy cũng chưa từng đánh mất niềm tin.',zh:'他从小就确立了自己的目标，即使道路并不一帆风顺，他也从来没有失去过信念。',py:'Tā cóngxiǎo jiù quèlìle zìjǐ de mùbiāo, jíshǐ dàolù bìng bú yìfān-fēngshùn, tā yě cónglái méiyǒu shīqùguo xìnniàn.',goiY:['确立','即使……也……','一帆风顺','信念'],giai:'即使……也…… (giả thiết nhượng bộ); 并不 nhấn mạnh phủ định; 从来没有 + V过 = chưa từng. Chú ý biến điệu 一帆 → yì fān.'},
   {vi:'Ông ấy quanh năm bận rộn, nhưng hễ nói đến tranh Tết là lại hăng say hẳn lên, các buổi giao lưu kinh nghiệm thì chưa bao giờ vắng mặt.',zh:'他一年到头都很忙，可是一说起年画就干劲十足，交流心得的活动他从不缺席。',py:'Tā yì nián dào tóu dōu hěn máng, kěshì yì shuōqǐ niánhuà jiù gànjìn shízú, jiāoliú xīndé de huódòng tā cóng bù quēxí.',goiY:['一年到头','一……就……','干劲','心得','缺席'],giai:'Câu có tân ngữ đưa lên đầu (交流心得的活动他从不缺席) để nhấn mạnh — giống câu bài khoá. 心得 = điều rút ra (đừng hiểu theo "tâm đắc" tiếng Việt).'}
 ];
 
-// Chiều Trung → Việt — bám ý bài khoá
+// ══════════════════════════════════════════
+// Dịch Trung → Việt — câu mới, không trùng chiều trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Tranh Tết bắt nguồn từ tranh môn thần thời cổ; tương truyền có hai anh em chuyên giám sát trăm loài quỷ, người ta vẽ hình họ lên cửa để trừ ma quỷ.',zh:'年画始于古代的门神画，传说有一对兄弟专门监督百鬼，人们把他们的像画在门上用以防鬼。',py:'Niánhuà shǐ yú gǔdài de ménshén huà, chuánshuō yǒu yí duì xiōngdì zhuānmén jiāndū bǎi guǐ, rénmen bǎ tāmen de xiàng huà zài mén shang yòngyǐ fáng guǐ.',goiY:['始于 = bắt đầu từ','监督 = giám sát','用以 = dùng để'],giai:'始于 = 从……开始 (văn viết); 用以 + V = dùng để …; 把……画在门上 là câu 把 chỉ vị trí.'},
-  {vi:'Cùng với sự phát triển kinh tế và sự hưng thịnh văn hoá, nội dung tranh môn thần được mở rộng, các tác phẩm phản ánh đề tài đời sống thế tục cũng bước vào lĩnh vực này.',zh:'随着经济的发展和文化的昌盛，门神画的内容得以拓展，反映世俗生活题材的作品也进入了这一领域。',py:'Suízhe jīngjì de fāzhǎn hé wénhuà de chāngshèng, ménshén huà de nèiróng déyǐ tuòzhǎn, fǎnyìng shìsú shēnghuó tícái de zuòpǐn yě jìnrùle zhè yī lǐngyù.',goiY:['昌盛 = hưng thịnh','得以 = được, có thể','题材 = đề tài'],giai:'得以 + V = nhờ điều kiện trên mà (được) … (văn viết); định ngữ dài 反映世俗生活题材的 bổ nghĩa cho 作品.'},
-  {vi:'Có giấy rồi thì viết chữ cần mực, thế là có người phát minh ra mực; tranh chữ, thư từ cần đóng dấu, thế là con dấu bắt đầu thịnh hành.',zh:'有了纸，书写就需要墨水儿，于是有人发明了墨；字画、书信上需要盖章，于是印章开始流行。',py:'Yǒule zhǐ, shūxiě jiù xūyào mòshuǐr, yúshì yǒu rén fāmíngle mò; zìhuà, shūxìn shang xūyào gài zhāng, yúshì yìnzhāng kāishǐ liúxíng.',goiY:['墨水儿 = mực','于是 = thế là','盖章 = đóng dấu'],giai:'Chuỗi "nhu cầu → 于是 → phát minh" lặp lại — chính là thủ pháp 重复关键词 (篇章修辞 của bài).'},
-  {vi:'Tuy khắc bản cần rất nhiều nhân công và vật liệu, nhưng một khi bắt đầu in thì liền cho thấy hiệu suất cao chưa từng có.',zh:'虽然雕版需要大量的人工和材料，但一经开印，就显示出空前的高效率。',py:'Suīrán diāobǎn xūyào dàliàng de réngōng hé cáiliào, dàn yì jīng kāiyìn, jiù xiǎnshì chū kōngqián de gāo xiàolǜ.',goiY:['一经……就…… = một khi … thì liền','空前 = chưa từng có'],giai:'一经……就…… (văn viết) = chỉ cần trải qua một lần … là lập tức …; 空前 = trước đây chưa từng có.'},
-  {vi:'Bản in một màu xét cho cùng không thể đáp ứng nhu cầu thẩm mỹ của con người, thế là kỹ thuật in chồng màu được áp dụng vào việc làm tranh Tết.',zh:'单色印品终究不能满足人们的审美需求，于是彩色套印技术运用到了年画制作上。',py:'Dānsè yìnpǐn zhōngjiū bù néng mǎnzú rénmen de shěnměi xūqiú, yúshì cǎisè tàoyìn jìshù yùnyòng dàole niánhuà zhìzuò shang.',goiY:['终究 = xét cho cùng','审美 = thẩm mỹ','套印 = in chồng màu'],giai:'终究 ở đây là nghĩa ① (bản chất không đổi, ≈ 毕竟); dịch "xét cho cùng / dù sao cũng".'},
-  {vi:'Nội dung tranh Tết từ các vị môn thần oai vũ mở rộng sang tranh chúc mừng mong được mùa, cung hỷ phát tài, rồi đến chuyện lịch sử và ngụ ngôn, không gì không có.',zh:'年画的内容从威武的门神扩展到期盼丰收、恭喜发财的吉庆画，再到历史故事和寓言，无所不包。',py:'Niánhuà de nèiróng cóng wēiwǔ de ménshén kuòzhǎn dào qīpàn fēngshōu, gōngxǐ fā cái de jíqìng huà, zài dào lìshǐ gùshi hé yùyán, wú suǒ bù bāo.',goiY:['丰收 = được mùa','发财 = phát tài','寓言 = ngụ ngôn','无所不包 = không gì không có'],giai:'从 A 扩展到 B，再到 C = từ A mở rộng sang B, rồi đến C (liệt kê theo trình tự).'},
-  {vi:'Con hổ ấy vểnh đuôi, thần thái như thật, toàn thân toát lên vẻ vui tươi; tôi hỏi bao nhiêu tiền, anh ấy chỉ nhún vai.',zh:'那虎翘着尾巴，神态逼真，全身散发着喜气，我问多少钱，他只是耸耸肩。',py:'Nà hǔ qiàozhe wěiba, shéntài bīzhēn, quánshēn sànfāzhe xǐqì, wǒ wèn duōshao qián, tā zhǐshì sǒngsong jiān.',goiY:['翘 = vểnh','神态 = thần thái','散发 = toả ra','耸肩 = nhún vai'],giai:'Chuỗi vị ngữ miêu tả (翘着……，神态……，散发着……) — V着 chỉ trạng thái duy trì.'},
-  {vi:'Khi bạn mặc cả với anh ấy, anh ấy lập tức trở nên ngượng ngùng, nói năng ấp a ấp úng.',zh:'当你和他讨价还价的时候，他立刻变得不好意思起来，说话吞吞吐吐。',py:'Dāng nǐ hé tā tǎojià-huánjià de shíhou, tā lìkè biàn de bù hǎoyìsi qǐlai, shuōhuà tūntūntǔtǔ.',goiY:['讨价还价 = mặc cả','起来 = bắt đầu (trạng thái)','吞吞吐吐 = ấp úng'],giai:'变得 + Adj + 起来 = trở nên … (trạng thái bắt đầu xuất hiện); 当……的时候 = khi ….'},
-  {vi:'Tranh Tết Trung Quốc tuy không chia trường phái, nhưng mỗi vùng có thế mạnh riêng; thế là anh ấy không ngừng cố gắng, đi khắp các vùng sản xuất tranh Tết lớn trong cả nước.',zh:'中国年画虽不分派别，但不同地区的年画各有所长，于是他再接再厉，走遍了全国各大年画产地。',py:'Zhōngguó niánhuà suī bù fēn pàibié, dàn bù tóng dìqū de niánhuà gè yǒu suǒ cháng, yúshì tā zàijiē-zàilì, zǒubiànle quánguó gè dà niánhuà chǎndì.',goiY:['派别 = trường phái','各有所长 = mỗi bên có sở trường','再接再厉 = không ngừng cố gắng'],giai:'虽……但…… (虽 văn viết = 虽然); V + 遍 = làm khắp (走遍全国).'},
-  {vi:'Càng kinh doanh tranh Tết lâu, anh ấy càng yêu tranh Tết; tuy gánh nặng đường xa, nhưng anh ấy nhất định sẽ kiên trì đến cùng.',zh:'愈是经营年画久了，他对年画就愈是热爱；虽然任重道远，但他一定会坚持下去。',py:'Yù shì jīngyíng niánhuà jiǔ le, tā duì niánhuà jiù yù shì rè\'ài; suīrán rènzhòng-dàoyuǎn, dàn tā yídìng huì jiānchí xiàqu.',goiY:['愈是……就愈是…… = càng … càng …','任重道远 = gánh nặng đường xa'],giai:'愈……愈…… = 越……越…… (văn viết); câu gốc của bài khoá. V + 下去 = tiếp tục làm.'}
+  {vi:'Ngôi làng này nhiều năm liền được mùa, cuộc sống của nông dân năm sau tốt hơn năm trước.',zh:'这个村子连年丰收，农民的日子一年比一年好。',py:'Zhège cūnzi liánnián fēngshōu, nóngmín de rìzi yì nián bǐ yì nián hǎo.',goiY:['连年 = nhiều năm liền','丰收 = được mùa'],giai:'连年 + V = liên tiếp nhiều năm (đứng trước động từ); 一年比一年 + Adj = năm sau … hơn năm trước.'},
+  {vi:'Cuốn tiểu thuyết này xây dựng hình tượng một thầy giáo bình thường ở nông thôn; thủ pháp viết của tác giả rất giản dị nhưng đặc biệt cảm động.',zh:'这部小说塑造了一位普通的农村老师，作者的写作手法很简单，却特别让人感动。',py:'Zhè bù xiǎoshuō sùzàole yí wèi pǔtōng de nóngcūn lǎoshī, zuòzhě de xiězuò shǒufǎ hěn jiǎndān, què tèbié ràng rén gǎndòng.',goiY:['塑造 = xây dựng (hình tượng)','手法 = thủ pháp'],giai:'塑造 + nhân vật / hình tượng = khắc hoạ, xây dựng (trong văn học, nghệ thuật); 却 = vậy mà, nhưng.'},
+  {vi:'Mỗi dịp Tết, người ta gặp nhau thường nói "Chúc phát tài", chúc đối phương năm mới làm ăn thuận lợi.',zh:'每到春节，人们见面常说“恭喜发财”，祝对方新的一年生意顺利。',py:'Měi dào Chūnjié, rénmen jiànmiàn cháng shuō "gōngxǐ fācái", zhù duìfāng xīn de yì nián shēngyi shùnlì.',goiY:['恭喜发财 = chúc phát tài','生意 = việc làm ăn'],giai:'发财 = kiếm được nhiều tiền (động từ li hợp); 恭喜发财 là lời chúc Tết quen thuộc.'},
+  {vi:'Đồ ở cửa hàng này rẻ là vì toàn là hàng lỗi, lúc mua phải xem cho kỹ.',zh:'这家商店的东西便宜，是因为卖的都是残次品，买的时候要仔细看看。',py:'Zhè jiā shāngdiàn de dōngxi piányi, shì yīnwèi mài de dōu shì cáncìpǐn, mǎi de shíhou yào zǐxì kànkan.',goiY:['残次品 = hàng lỗi, hàng khuyết tật','是因为 = là vì'],giai:'Câu "kết quả, 是因为 + nguyên nhân" giải thích lý do; 残次品 = hàng hỏng + hàng loại hai (次品).'},
+  {vi:'Về vấn đề này, ý kiến của hai trường phái hoàn toàn khác nhau, không bên nào thuyết phục được bên nào.',zh:'在这个问题上，两个派别的意见完全不同，谁也说服不了谁。',py:'Zài zhège wèntí shang, liǎng ge pàibié de yìjiàn wánquán bùtóng, shéi yě shuōfú bu liǎo shéi.',goiY:['派别 = phe phái, trường phái','说服不了 = không thuyết phục được'],giai:'谁也……谁 = không ai … được ai; 在……问题上 = về vấn đề …'}
 ];
 
 // ══════════════════════════════════════════
@@ -1894,9 +1825,9 @@ var writingData = {
     'Có lặp lại từ khoá (tên loại tranh) một cách có chủ ý để đẩy chủ đề đi tới (篇章修辞 · 重复关键词) mà không lặp thừa không?'
   ],
   model:{
-    zh:'我们的东湖画艺术\n东湖画是越南民间绘画的一种，起源于北宁省的东湖村，已经有四百多年的历史了。传说古时候，村里的人春节前把画贴在门上，用来驱逐祸凶，祝福新年吉祥如意。随着民间绘画水平的提高，东湖画的内容得以拓展。自此，过年贴东湖画就成了越南老百姓的一种风尚。\n东湖画是木版画。画家先把画刻在木版上，然后在版上涂抹上颜料，再把纸铺到上面，一种颜色印一次，最后将纸揭起，一幅画就完成了。它的纸和颜色都很特别：纸上涂着贝壳磨成的粉，颜色都来自树叶、花朵和竹叶烧成的炭。东湖画的题材十分广泛，有期盼丰收的，有恭喜发财的，也有民间故事和寓言，比如《老鼠娶亲》，内容无所不包。一幅幅画神态逼真，散发着喜气，是老百姓喜闻乐见的艺术形式。\n说到东湖画，就不能不说老艺人阮登制。他在东湖画的故乡出生、长大，从小就跟着父亲画画儿，基本功扎实。后来，买画的人愈来愈少，很多人都不画了，他却再接再厉，走遍各地，收集了几百块老木版，还把自己的心得教给年轻人。愈是研究东湖画，他就愈是热爱。他的信念就是让更多的人了解这门艺术。\n虽然保护传统艺术任重道远，也不会一帆风顺，但我相信，东湖画终究会被更多的人所喜爱。',
-    py:'Wǒmen de Dōnghú Huà Yìshù\nDōnghú huà shì Yuènán mínjiān huìhuà de yì zhǒng, qǐyuán yú Běiníng Shěng de Dōnghú Cūn, yǐjīng yǒu sìbǎi duō nián de lìshǐ le. Chuánshuō gǔ shíhou, cūn li de rén Chūnjié qián bǎ huà tiē zài mén shang, yònglái qūzhú huòxiōng, zhùfú xīnnián jíxiáng rúyì. Suízhe mínjiān huìhuà shuǐpíng de tígāo, Dōnghú huà de nèiróng déyǐ tuòzhǎn. Zìcǐ, guònián tiē Dōnghú huà jiù chéngle Yuènán lǎobǎixìng de yì zhǒng fēngshàng.\nDōnghú huà shì mùbǎn huà. Huàjiā xiān bǎ huà kè zài mùbǎn shang, ránhòu zài bǎn shang túmǒ shang yánliào, zài bǎ zhǐ pū dào shàngmian, yì zhǒng yánsè yìn yí cì, zuìhòu jiāng zhǐ jiēqǐ, yì fú huà jiù wánchéng le. Tā de zhǐ hé yánsè dōu hěn tèbié: zhǐ shang túzhe bèiké mó chéng de fěn, yánsè dōu láizì shùyè, huāduǒ hé zhúyè shāo chéng de tàn. Dōnghú huà de tícái shífēn guǎngfàn, yǒu qīpàn fēngshōu de, yǒu gōngxǐ fā cái de, yě yǒu mínjiān gùshi hé yùyán, bǐrú 《Lǎoshǔ Qǔqīn》, nèiróng wú suǒ bù bāo. Yì fúfú huà shéntài bīzhēn, sànfāzhe xǐqì, shì lǎobǎixìng xǐwén-lèjiàn de yìshù xíngshì.\nShuōdào Dōnghú huà, jiù bù néng bù shuō lǎo yìrén Ruǎn Dēngzhì. Tā zài Dōnghú huà de gùxiāng chūshēng, zhǎngdà, cóngxiǎo jiù gēnzhe fùqin huà huàr, jīběngōng zhāshi. Hòulái, mǎi huà de rén yù lái yù shǎo, hěn duō rén dōu bú huà le, tā què zàijiē-zàilì, zǒubiàn gè dì, shōujíle jǐ bǎi kuài lǎo mùbǎn, hái bǎ zìjǐ de xīndé jiāo gěi niánqīngrén. Yù shì yánjiū Dōnghú huà, tā jiù yù shì rè\'ài. Tā de xìnniàn jiù shì ràng gèng duō de rén liǎojiě zhè mén yìshù.\nSuīrán bǎohù chuántǒng yìshù rènzhòng-dàoyuǎn, yě bú huì yìfān-fēngshùn, dàn wǒ xiāngxìn, Dōnghú huà zhōngjiū huì bèi gèng duō de rén suǒ xǐ\'ài.',
-    vn:'Nghệ thuật tranh Đông Hồ của chúng tôi\nTranh Đông Hồ là một loại tranh dân gian Việt Nam, bắt nguồn từ làng Đông Hồ, tỉnh Bắc Ninh, đã có hơn bốn trăm năm lịch sử. Tương truyền ngày xưa, người trong làng dán tranh lên cửa trước Tết để xua đuổi điều dữ, chúc năm mới cát tường như ý. Cùng với trình độ hội hoạ dân gian được nâng cao, nội dung tranh Đông Hồ được mở rộng. Từ đó, dán tranh Đông Hồ ngày Tết đã trở thành một nét phong tục của người dân Việt Nam.\nTranh Đông Hồ là tranh khắc gỗ. Người thợ trước hết khắc hình lên bản gỗ, rồi quét màu lên bản, sau đó trải giấy lên trên, mỗi màu in một lần, cuối cùng bóc tờ giấy lên là xong một bức tranh. Giấy và màu của nó đều rất đặc biệt: trên giấy quét bột vỏ sò (điệp) nghiền nhỏ, màu sắc đều lấy từ lá cây, hoa và than lá tre. Đề tài tranh Đông Hồ vô cùng phong phú: có tranh mong được mùa, có tranh chúc phát tài, lại có chuyện dân gian và ngụ ngôn như "Đám cưới chuột" — nội dung không gì không có. Mỗi bức tranh đều có thần thái sống động, toát lên vẻ vui tươi, là loại hình nghệ thuật được bà con yêu thích.\nNói đến tranh Đông Hồ thì không thể không nhắc đến nghệ nhân Nguyễn Đăng Chế. Ông sinh ra và lớn lên ở quê hương của tranh Đông Hồ, từ nhỏ đã theo cha vẽ tranh, nền tảng rất vững. Về sau, người mua tranh ngày càng ít, nhiều người bỏ nghề, nhưng ông vẫn không ngừng cố gắng, đi khắp nơi sưu tầm được mấy trăm bản khắc gỗ cũ, còn truyền lại kinh nghiệm của mình cho lớp trẻ. Càng nghiên cứu tranh Đông Hồ, ông càng yêu nó. Niềm tin của ông là để nhiều người hơn nữa hiểu về môn nghệ thuật này.\nTuy việc bảo tồn nghệ thuật truyền thống là gánh nặng đường xa, cũng sẽ chẳng thuận buồm xuôi gió, nhưng tôi tin rằng tranh Đông Hồ rồi sẽ được nhiều người yêu thích hơn nữa.'
+    zh:'我们的东湖画艺术\n东湖画是越南民间绘画的一种，起源于北宁省的东湖村，已经有四百多年的历史了。传说古时候，村里的人春节前在门上贴年画，用来驱逐祸凶，祝福新年吉祥如意。随着民间绘画水平的提高，东湖画的内容得以拓展。自此，过年贴东湖画就成了越南老百姓的一种风尚。\n东湖画是木版画。画家先把画刻在木版上，然后在版上涂抹上颜料，再把纸铺到上面，一种颜色刷印一次，最后将纸揭起，一幅画就完成了。它用的东西也很特别：画的底色是用贝壳做成的，各种颜色都来自树叶、花朵等天然材料。东湖画的题材十分广泛，有期盼丰收的，有恭喜发财的，也有民间故事和寓言，比如《老鼠结婚》，内容无所不包。一幅幅画神态逼真，散发着喜气，是老百姓喜闻乐见的艺术形式。\n说到东湖画，就不能不说老艺人阮登制。他在东湖画的故乡出生、长大，从小就跟着父亲画画儿，基本功扎实。后来，买画的人愈来愈少，很多人都不画了，他却再接再厉，走遍各地，收集了几百块老木版，还把自己的心得教给年轻人。愈是研究东湖画，他就愈是热爱。他的信念就是让更多的人了解这门艺术。\n虽然保护传统艺术任重道远，也不会一帆风顺，但我相信，东湖画终究会被更多的人所喜爱。',
+    py:'Wǒmen de Dōnghú Huà Yìshù\nDōnghú huà shì Yuènán mínjiān huìhuà de yì zhǒng, qǐyuán yú Běiníng Shěng de Dōnghú Cūn, yǐjīng yǒu sìbǎi duō nián de lìshǐ le. Chuánshuō gǔ shíhou, cūn li de rén Chūnjié qián zài mén shang tiē niánhuà, yònglái qūzhú huòxiōng, zhùfú xīnnián jíxiáng rúyì. Suízhe mínjiān huìhuà shuǐpíng de tígāo, Dōnghú huà de nèiróng déyǐ tuòzhǎn. Zìcǐ, guònián tiē Dōnghú huà jiù chéngle Yuènán lǎobǎixìng de yì zhǒng fēngshàng.\nDōnghú huà shì mùbǎn huà. Huàjiā xiān bǎ huà kè zài mùbǎn shang, ránhòu zài bǎn shang túmǒ shang yánliào, zài bǎ zhǐ pū dào shàngmian, yì zhǒng yánsè shuāyìn yí cì, zuìhòu jiāng zhǐ jiēqǐ, yì fú huà jiù wánchéng le. Tā yòng de dōngxi yě hěn tèbié: huà de dǐsè shì yòng bèiké zuòchéng de, gè zhǒng yánsè dōu láizì shùyè, huāduǒ děng tiānrán cáiliào. Dōnghú huà de tícái shífēn guǎngfàn, yǒu qīpàn fēngshōu de, yǒu gōngxǐ fā cái de, yě yǒu mínjiān gùshi hé yùyán, bǐrú 《Lǎoshǔ Jiéhūn》, nèiróng wú suǒ bù bāo. Yì fúfú huà shéntài bīzhēn, sànfāzhe xǐqì, shì lǎobǎixìng xǐwén-lèjiàn de yìshù xíngshì.\nShuōdào Dōnghú huà, jiù bù néng bù shuō lǎo yìrén Ruǎn Dēngzhì. Tā zài Dōnghú huà de gùxiāng chūshēng, zhǎngdà, cóngxiǎo jiù gēnzhe fùqin huà huàr, jīběngōng zhāshi. Hòulái, mǎi huà de rén yù lái yù shǎo, hěn duō rén dōu bú huà le, tā què zàijiē-zàilì, zǒubiàn gè dì, shōujíle jǐ bǎi kuài lǎo mùbǎn, hái bǎ zìjǐ de xīndé jiāo gěi niánqīngrén. Yù shì yánjiū Dōnghú huà, tā jiù yù shì rè\'ài. Tā de xìnniàn jiù shì ràng gèng duō de rén liǎojiě zhè mén yìshù.\nSuīrán bǎohù chuántǒng yìshù rènzhòng-dàoyuǎn, yě bú huì yìfān-fēngshùn, dàn wǒ xiāngxìn, Dōnghú huà zhōngjiū huì bèi gèng duō de rén suǒ xǐ\'ài.',
+    vn:'Nghệ thuật tranh Đông Hồ của chúng tôi\nTranh Đông Hồ là một loại tranh dân gian Việt Nam, bắt nguồn từ làng Đông Hồ, tỉnh Bắc Ninh, đã có hơn bốn trăm năm lịch sử. Tương truyền ngày xưa, người trong làng dán tranh lên cửa trước Tết để xua đuổi điều dữ, chúc năm mới cát tường như ý. Cùng với trình độ hội hoạ dân gian được nâng cao, nội dung tranh Đông Hồ được mở rộng. Từ đó, dán tranh Đông Hồ ngày Tết đã trở thành một nét phong tục của người dân Việt Nam.\nTranh Đông Hồ là tranh khắc gỗ. Người thợ trước hết khắc hình lên bản gỗ, rồi quét màu lên bản, sau đó trải giấy lên trên, mỗi màu in một lần, cuối cùng bóc tờ giấy lên là xong một bức tranh. Những thứ nó dùng cũng rất đặc biệt: nền tranh làm từ vỏ sò (điệp), các màu đều lấy từ lá cây, hoa và những vật liệu tự nhiên khác. Đề tài tranh Đông Hồ vô cùng phong phú: có tranh mong được mùa, có tranh chúc phát tài, lại có chuyện dân gian và ngụ ngôn như "Đám cưới chuột" — nội dung không gì không có. Mỗi bức tranh đều có thần thái sống động, toát lên vẻ vui tươi, là loại hình nghệ thuật được bà con yêu thích.\nNói đến tranh Đông Hồ thì không thể không nhắc đến nghệ nhân Nguyễn Đăng Chế. Ông sinh ra và lớn lên ở quê hương của tranh Đông Hồ, từ nhỏ đã theo cha vẽ tranh, nền tảng rất vững. Về sau, người mua tranh ngày càng ít, nhiều người bỏ nghề, nhưng ông vẫn không ngừng cố gắng, đi khắp nơi sưu tầm được mấy trăm bản khắc gỗ cũ, còn truyền lại kinh nghiệm của mình cho lớp trẻ. Càng nghiên cứu tranh Đông Hồ, ông càng yêu nó. Niềm tin của ông là để nhiều người hơn nữa hiểu về môn nghệ thuật này.\nTuy việc bảo tồn nghệ thuật truyền thống là gánh nặng đường xa, cũng sẽ chẳng thuận buồm xuôi gió, nhưng tôi tin rằng tranh Đông Hồ rồi sẽ được nhiều người yêu thích hơn nữa.'
   }
 };
 
@@ -1904,212 +1835,146 @@ var writingData = {
 // LUYỆN NÓI — đúng bảng 练习5 của sách: 根据提示，简述课文主要内容
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Đây là bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b> (年画的起源 1 dòng · 木版年画 3 dòng · 年画传人张光宁 4 dòng). Mỗi câu hỏi là một dòng của bảng, cột gợi ý giữ nguyên như sách (dòng "彩色套印" sách để trống). Bấm loa nghe câu hỏi, nhìn gợi ý, <b>tự ghi âm câu trả lời của mình trước</b> rồi mới mở câu mẫu. Cố dùng từ mới: 起源 · 驱逐 · 吉祥 · 盖章 · 联想 · 涂抹 · 终究 · 寄托 · 增添 · 喜闻乐见 · 推销 · 吞吞吐吐 · 扎实 · 再接再厉 · 确立 · 信念.',
-  questions:[
-    {q_zh:'年画的起源',
-     q_vn:'Nguồn gốc của tranh Tết',
-     hint:'门神画；兄弟二人；唐宋，门神画内容拓展；清朝，使用“年画”一词',
-     sample:'年画始于古代的门神画。传说有兄弟二人专门监督百鬼，人们就把他们的像画在门上，用来防鬼。唐宋时期，随着经济和文化的发展，门神画的内容得以拓展。到了清朝，有学者正式使用了“年画”一词，从此，以驱逐祸凶、祝福新年吉祥为内容的画儿就叫年画了。',
-     sample_vn:'Tranh Tết bắt đầu từ tranh môn thần thời cổ. Tương truyền có hai anh em chuyên giám sát trăm loài quỷ, người ta liền vẽ hình họ lên cửa để trừ ma. Thời Đường, Tống, cùng với sự phát triển kinh tế và văn hoá, nội dung tranh môn thần được mở rộng. Đến đời Thanh, có học giả chính thức dùng từ "年画"; từ đó, tranh lấy nội dung xua đuổi tai hoạ, chúc năm mới may mắn được gọi là tranh Tết.',
-     note:'Đi theo trình tự thời gian: 古代 → 唐宋 → 清朝; dùng 始于 / 得以拓展 / 从此.'},
-    {q_zh:'木版年画 · 雕版的发明',
-     q_vn:'Tranh Tết mộc bản · Sự ra đời của in khắc bản',
-     hint:'墨→印章→碑刻、拓印→扩大印章→在版上刷印',
-     sample:'有了纸，书写需要墨水儿，于是有人发明了墨；书信上需要盖章，于是印章开始流行；后来碑刻、拓印技术被广泛运用，有人就联想到把这些技术结合起来印书。人们把印章扩大成一张纸那么大，把内容刻在版上，涂抹上墨，铺上纸，均匀地刷印，这就是最早的雕版印刷。',
-     sample_vn:'Có giấy rồi, viết chữ cần mực, thế là có người phát minh ra mực; thư từ cần đóng dấu, thế là con dấu thịnh hành; sau đó kỹ thuật khắc bia, in dập được dùng rộng rãi, có người liền nghĩ đến việc kết hợp các kỹ thuật ấy để in sách. Người ta phóng con dấu to bằng một tờ giấy, khắc nội dung lên bản, quét mực, trải giấy, chải in thật đều — đó là in khắc bản sớm nhất.',
-     note:'Chuỗi mũi tên của gợi ý = chuỗi 于是……；于是……；于是…… (lặp từ khoá — 篇章修辞 của bài).'},
-    {q_zh:'木版年画 · 彩色套印',
-     q_vn:'Tranh Tết mộc bản · In chồng màu',
-     hint:'（表中此栏无提示，可参考课文：单色印品终究……，之后就有了……，木版彩色套印年画就此……）',
-     sample:'单色印品终究不能满足人们的审美需求，之后就有了彩色套印技术。人们把这种技术运用到年画制作上，木版彩色套印年画就此诞生了。',
-     sample_vn:'Bản in một màu xét cho cùng không đáp ứng được nhu cầu thẩm mỹ của con người, sau đó liền có kỹ thuật in chồng màu. Người ta áp dụng kỹ thuật này vào làm tranh Tết, tranh Tết mộc bản in chồng màu từ đó ra đời.',
-     note:'Ô gợi ý của dòng này trong sách để TRỐNG — tự tóm từ đoạn 6 của bài khoá; nhớ dùng 终究 (điểm ngữ pháp 1).'},
-    {q_zh:'木版年画 · 年画走进百姓生活',
-     q_vn:'Tranh Tết mộc bản · Tranh Tết đi vào đời sống người dân',
-     hint:'过年贴年画，年画印制场所，年画内容，年画成了……的载体与工具',
-     sample:'宋明两代，木版年画走向成熟，走进了百姓生活，过年贴年画成了一种风尚，年画也为春节增添了浓浓的年味。当时，家族式的年画印制场所遍及全国。年画的内容从门神扩展到期盼丰收、恭喜发财的吉庆画，再到历史故事、寓言和神话，无所不包。年画成了文化交流、道德教育、信仰传承的载体与工具。',
-     sample_vn:'Qua hai đời Tống, Minh, tranh Tết mộc bản đi đến chín muồi và đi vào đời sống người dân; dán tranh Tết thành phong tục, tranh cũng làm cho Tết thêm đậm không khí. Khi đó, xưởng in tranh kiểu gia tộc có mặt khắp cả nước. Nội dung tranh từ môn thần mở rộng sang tranh chúc được mùa, phát tài, rồi chuyện lịch sử, ngụ ngôn, thần thoại — không gì không có. Tranh Tết trở thành phương tiện, công cụ để giao lưu văn hoá, giáo dục đạo đức, truyền thừa tín ngưỡng.',
-     note:'Nói đủ 4 ý của gợi ý theo thứ tự; dùng 从……扩展到……，再到……，无所不包.'},
-    {q_zh:'年画传人张光宁 · 初次认识',
-     q_vn:'Người truyền nhân Trương Quang Ninh · Lần đầu gặp gỡ',
-     hint:'春节庙会，布老虎，推销',
-     sample:'“我”第一次见到张光宁的木版年画是在春节庙会上。他做的布老虎神气极了，翘着尾巴，神态逼真。我问多少钱，他耸耸肩说：“这是魏州虎。”我心想：魏州是哪儿？这算什么推销术？',
-     sample_vn:'"Tôi" lần đầu thấy tranh Tết mộc bản của Trương Quang Ninh là ở hội chùa ngày Tết. Con hổ vải anh làm trông oai vệ vô cùng, vểnh đuôi, thần thái như thật. Tôi hỏi giá, anh nhún vai nói: "Đây là hổ Nguỵ Châu." Tôi thầm nghĩ: Nguỵ Châu ở đâu? Thế này mà gọi là chào hàng sao?',
-     note:'Kể ngắn, có lời thoại trực tiếp; 这算什么……？ = câu phản vấn chê.'},
-    {q_zh:'年画传人张光宁 · 第二印象',
-     q_vn:'Người truyền nhân Trương Quang Ninh · Ấn tượng thứ hai',
-     hint:'不像商人，讨论……',
-     sample:'第二印象是他不像个商人。你和他讨价还价，他就不好意思，说话吞吞吐吐，连“残次品不可避免”这样现成的理由都说不出来，却总想和你讨论木版年画中深厚的文化底蕴。',
-     sample_vn:'Ấn tượng thứ hai là anh chẳng giống dân buôn. Bạn mặc cả với anh là anh ngượng ngùng, nói ấp úng, ngay cả lý do có sẵn như "hàng lỗi khó tránh" cũng không nói ra được, lại cứ muốn bàn với bạn về chiều sâu văn hoá trong tranh Tết mộc bản.',
-     note:'连……都…… nhấn mạnh; 却 chuyển ý đối lập (不会推销 ↔ 爱讨论文化).'},
-    {q_zh:'年画传人张光宁 · 相识久了',
-     q_vn:'Người truyền nhân Trương Quang Ninh · Quen lâu rồi',
-     hint:'出生，长大，从小……，后来……，再接再厉……，不仅如此，……',
-     sample:'相识久了才知道，他在年画的故乡出生、长大，从小就画年画，基本功扎实，后来又研究了构图、人物塑造、雕版手法等。作品被市场认可后，他再接再厉，走遍了全国各大年画产地，与同行交流。不仅如此，民俗文化巡展、大学里的研讨，他都从不缺席。',
-     sample_vn:'Quen lâu rồi mới biết, anh sinh ra, lớn lên ở quê hương tranh Tết, từ nhỏ đã vẽ tranh, nền tảng vững vàng, sau đó lại nghiên cứu bố cục, xây dựng nhân vật, thủ pháp khắc bản… Khi tác phẩm được thị trường công nhận, anh không ngừng cố gắng, đi khắp các vùng tranh Tết lớn trong nước giao lưu với đồng nghiệp. Không chỉ vậy, triển lãm lưu động văn hoá dân gian hay hội thảo ở đại học, anh đều chưa từng vắng mặt.',
-     note:'Bám đúng khung gợi ý: 出生、长大 → 从小…… → 后来…… → 再接再厉…… → 不仅如此…….'},
-    {q_zh:'年画传人张光宁 · 目标和信念',
-     q_vn:'Người truyền nhân Trương Quang Ninh · Mục tiêu và niềm tin',
-     hint:'传播……，拓展……',
-     sample:'张光宁总是干劲十足，愈是经营年画久了，他就愈是热爱年画。他确立了自己的目标：传播年画这一民俗文化。他的信念是拓展年画的内容，使其雅俗共赏。虽然任重道远，但他一定会坚持下去。',
-     sample_vn:'Trương Quang Ninh lúc nào cũng hăng say; càng làm tranh Tết lâu, anh càng yêu nó. Anh đã xác lập mục tiêu: truyền bá nét văn hoá dân gian là tranh Tết. Niềm tin của anh là mở rộng nội dung tranh Tết để ai cũng thưởng thức được. Tuy gánh nặng đường xa, nhưng anh nhất định sẽ kiên trì.',
-     note:'Dùng 愈……愈…… (điểm ngữ pháp 2) và cặp 目标 — 信念 như bài khoá.'}
+  intro: 'Đây là bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b> (年画的起源 1 dòng · 木版年画 3 dòng · 年画传人张光宁 4 dòng). Mỗi câu hỏi là một dòng của bảng, cột gợi ý giữ nguyên như sách (dòng "彩色套印" sách để trống). Bấm loa nghe câu hỏi, nhìn gợi ý, <b>tự ghi âm câu trả lời của mình trước</b> rồi mới mở câu mẫu. Cố dùng từ mới: 起源 · 驱逐 · 吉祥 · 盖章 · 联想 · 涂抹 · 终究 · 寄托 · 增添 · 喜闻乐见 · 推销 · 吞吞吐吐 · 扎实 · 再接再厉 · 确立 · 信念.',
+  questions: [
+    {q_zh:'年画的起源',q_vn:'Nguồn gốc của tranh Tết',hint:'门神画；兄弟二人；唐宋，门神画内容拓展；清朝，使用“年画”一词',sample:'年画始于古代的门神画。传说有兄弟二人专门监督百鬼，人们就把他们的像画在门上，用来防鬼。唐宋时期，随着经济和文化的发展，门神画的内容得以拓展。到了清朝，有学者正式使用了“年画”一词，从此，以驱逐祸凶、祝福新年吉祥为内容的画儿就叫年画了。',sample_vn:'Tranh Tết bắt đầu từ tranh môn thần thời cổ. Tương truyền có hai anh em chuyên giám sát trăm loài quỷ, người ta liền vẽ hình họ lên cửa để trừ ma. Thời Đường, Tống, cùng với sự phát triển kinh tế và văn hoá, nội dung tranh môn thần được mở rộng. Đến đời Thanh, có học giả chính thức dùng từ "年画"; từ đó, tranh lấy nội dung xua đuổi tai hoạ, chúc năm mới may mắn được gọi là tranh Tết.',note:'Đi theo trình tự thời gian: 古代 → 唐宋 → 清朝; dùng 始于 / 得以拓展 / 从此.'},
+    {q_zh:'木版年画 · 雕版的发明',q_vn:'Tranh Tết mộc bản · Sự ra đời của in khắc bản',hint:'墨→印章→碑刻、拓印→扩大印章→在版上刷印',sample:'有了纸，书写需要墨水儿，于是有人发明了墨；书信上需要盖章，于是印章开始流行；后来碑刻、拓印技术被广泛运用，有人就联想到把这些技术结合起来印出书来。人们把印章扩大成一张纸那么大，把内容刻在版上，涂抹上墨，把纸铺到上面，均匀地刷印，这就是最早的雕版印刷。',sample_vn:'Có giấy rồi, viết chữ cần mực, thế là có người phát minh ra mực; thư từ cần đóng dấu, thế là con dấu thịnh hành; sau đó kỹ thuật khắc bia, in dập được dùng rộng rãi, có người liền nghĩ đến việc kết hợp các kỹ thuật ấy để in sách. Người ta phóng con dấu to bằng một tờ giấy, khắc nội dung lên bản, quét mực, trải giấy, chải in thật đều — đó là in khắc bản sớm nhất.',note:'Chuỗi mũi tên của gợi ý = chuỗi 于是……；于是……；于是…… (lặp từ khoá — điểm ngữ pháp 3 của bài).'},
+    {q_zh:'木版年画 · 彩色套印',q_vn:'Tranh Tết mộc bản · In chồng màu',hint:'（表中此栏无提示，可参考课文：单色印品终究……，之后就有了……，木版彩色套印年画就此……）',sample:'单色印品终究不能满足人们的审美需求，之后就有了彩色套印技术。人们把这种技术运用到年画制作上，木版彩色套印年画就此诞生了。',sample_vn:'Bản in một màu xét cho cùng không đáp ứng được nhu cầu thẩm mỹ của con người, sau đó liền có kỹ thuật in chồng màu. Người ta áp dụng kỹ thuật này vào làm tranh Tết, tranh Tết mộc bản in chồng màu từ đó ra đời.',note:'Ô gợi ý của dòng này trong sách để TRỐNG — tự tóm từ đoạn 6 của bài khoá; nhớ dùng 终究 (điểm ngữ pháp 1).'},
+    {q_zh:'木版年画 · 年画走进百姓生活',q_vn:'Tranh Tết mộc bản · Tranh Tết đi vào đời sống người dân',hint:'过年贴年画，年画印制场所，年画内容，年画成了……的载体与工具',sample:'宋明两代，木版年画走向成熟，走进了百姓生活，过年贴年画成了一种风尚，年画也为春节增添了浓浓的年味。当时，家族式的年画印制场所遍及全国。年画的内容从门神扩展到期盼丰收、恭喜发财的吉庆画，再到历史故事、寓言和神话，无所不包。年画成了文化交流、道德教育、信仰传承的载体与工具。',sample_vn:'Qua hai đời Tống, Minh, tranh Tết mộc bản đi đến chín muồi và đi vào đời sống người dân; dán tranh Tết thành phong tục, tranh cũng làm cho Tết thêm đậm không khí. Khi đó, xưởng in tranh kiểu gia tộc có mặt khắp cả nước. Nội dung tranh từ môn thần mở rộng sang tranh chúc được mùa, phát tài, rồi chuyện lịch sử, ngụ ngôn, thần thoại — không gì không có. Tranh Tết trở thành phương tiện, công cụ để giao lưu văn hoá, giáo dục đạo đức, truyền thừa tín ngưỡng.',note:'Nói đủ 4 ý của gợi ý theo thứ tự; dùng 从……扩展到……，再到……，无所不包.'},
+    {q_zh:'年画传人张光宁 · 初次认识',q_vn:'Người truyền nhân Trương Quang Ninh · Lần đầu gặp gỡ',hint:'春节庙会，布老虎，推销',sample:'“我”第一次见到张光宁的木版年画是在春节庙会上。他做的布老虎神气极了，翘着尾巴，神态逼真。我问多少钱，他耸耸肩说：“这是魏州虎。”我心想：魏州是哪儿？这算什么推销术？',sample_vn:'"Tôi" lần đầu thấy tranh Tết mộc bản của Trương Quang Ninh là ở hội chùa ngày Tết. Con hổ vải anh làm trông oai vệ vô cùng, vểnh đuôi, thần thái như thật. Tôi hỏi giá, anh nhún vai nói: "Đây là hổ Nguỵ Châu." Tôi thầm nghĩ: Nguỵ Châu ở đâu? Thế này mà gọi là chào hàng sao?',note:'Kể ngắn, có lời thoại trực tiếp; 这算什么……？ = câu phản vấn chê.'},
+    {q_zh:'年画传人张光宁 · 第二印象',q_vn:'Người truyền nhân Trương Quang Ninh · Ấn tượng thứ hai',hint:'不像商人，讨论……',sample:'第二印象是他不像个商人。你和他讨价还价，他就不好意思，说话吞吞吐吐，连“残次品不可避免”这样现成的理由都说不出来，却总想和你讨论木版年画中深厚的文化底蕴。',sample_vn:'Ấn tượng thứ hai là anh chẳng giống dân buôn. Bạn mặc cả với anh là anh ngượng ngùng, nói ấp úng, ngay cả lý do có sẵn như "hàng lỗi khó tránh" cũng không nói ra được, lại cứ muốn bàn với bạn về chiều sâu văn hoá trong tranh Tết mộc bản.',note:'连……都…… nhấn mạnh; 却 chuyển ý đối lập (不会推销 ↔ 爱讨论文化).'},
+    {q_zh:'年画传人张光宁 · 相识久了',q_vn:'Người truyền nhân Trương Quang Ninh · Quen lâu rồi',hint:'出生，长大，从小……，后来……，再接再厉……，不仅如此，……',sample:'相识久了才知道，他在年画的故乡出生、长大，从小就画年画，基本功扎实，后来又研究了构图、人物塑造、雕版手法等。作品被市场认可后，他再接再厉，走遍了全国各大年画产地，与同行交流。不仅如此，民俗文化巡展、大学里的研讨，他都从不缺席。',sample_vn:'Quen lâu rồi mới biết, anh sinh ra, lớn lên ở quê hương tranh Tết, từ nhỏ đã vẽ tranh, nền tảng vững vàng, sau đó lại nghiên cứu bố cục, xây dựng nhân vật, thủ pháp khắc bản… Khi tác phẩm được thị trường công nhận, anh không ngừng cố gắng, đi khắp các vùng tranh Tết lớn trong nước giao lưu với đồng nghiệp. Không chỉ vậy, triển lãm lưu động văn hoá dân gian hay hội thảo ở đại học, anh đều chưa từng vắng mặt.',note:'Bám đúng khung gợi ý: 出生、长大 → 从小…… → 后来…… → 再接再厉…… → 不仅如此…….'},
+    {q_zh:'年画传人张光宁 · 目标和信念',q_vn:'Người truyền nhân Trương Quang Ninh · Mục tiêu và niềm tin',hint:'传播……，拓展……',sample:'张光宁总是干劲十足，愈是经营年画久了，他就愈是热爱年画。他确立了自己的目标：传播年画这一民俗文化。他的信念是拓展年画的内容，使其雅俗共赏。虽然任重道远，但他一定会坚持下去。',sample_vn:'Trương Quang Ninh lúc nào cũng hăng say; càng làm tranh Tết lâu, anh càng yêu nó. Anh đã xác lập mục tiêu: truyền bá nét văn hoá dân gian là tranh Tết. Niềm tin của anh là mở rộng nội dung tranh Tết để ai cũng thưởng thức được. Tuy gánh nặng đường xa, nhưng anh nhất định sẽ kiên trì.',note:'Dùng 愈……愈…… (điểm ngữ pháp 2) và cặp 目标 — 信念 như bài khoá.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — 听力 (hội thoại ngắn + đoạn nói)
-// Sách HSK 6 không có sách bài tập nghe: tự soạn theo chủ đề bài 35.
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — câu tự soạn (sách HSK 6 không có sách bài tập nghe), mỗi câu một tình huống mới
+// ══════════════════════════════════════════
 var listenExamData = {
-  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, ' +
-         'trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
-  source: 'Soạn theo dạng đề HSK 6 · chủ đề bài 35',
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 35',
   items: [
-    {n:1,
-     lines:[{sp:'女',zh:'你家门上贴的这两幅画是什么？看起来挺凶的。'},
-            {sp:'男',zh:'这是门神画，是我爷爷贴的。老人们说，门神能驱逐祸凶，保佑全家平安。'}],
-     q:'关于门神画，可以知道什么？',qvn:'Về tranh môn thần, có thể biết điều gì?',
-     opts:['是用来驱逐祸凶的','是男的自己画的','只在庙会上卖','是现代才有的'],ans:0,
-     why:'门神能驱逐祸凶，保佑全家平安 → dùng để xua đuổi điều dữ. Tranh do ông nội dán, không phải anh ấy vẽ.',
-     words:['驱逐','凶恶']},
-
-    {n:2,
-     lines:[{sp:'男',zh:'这块手表才戴了一个星期就不走了。'},
-            {sp:'女',zh:'肯定是次品。你带着发票去商店，要求他们给你换一块吧。'}],
-     q:'女的建议男的怎么做？',qvn:'Người phụ nữ khuyên người đàn ông làm gì?',
-     opts:['自己修一修','再买一块新的','拿着发票去换','给厂家打电话'],ans:2,
-     why:'你带着发票去商店，要求他们给你换一块 → mang hoá đơn đi đổi.',
-     words:['次品']},
-
-    {n:3,
-     lines:[{sp:'女',zh:'你们在这儿拍照可不行，门口写着“谢绝拍照”呢。'},
-            {sp:'男',zh:'哎呀，真不好意思，我们没注意，这就把照片删了。'}],
-     q:'男的接下来会做什么？',qvn:'Người đàn ông sẽ làm gì tiếp theo?',
-     opts:['继续拍照','删掉照片','去门口看看','买一张门票'],ans:1,
-     why:'这就把照片删了 → sẽ xoá ảnh ngay. 谢绝拍照 = không cho chụp ảnh.',
-     words:['谢绝']},
-
-    {n:4,
-     lines:[{sp:'男',zh:'听说你的画在比赛中得了二等奖，祝贺你！'},
-            {sp:'女',zh:'谢谢！不过我的基本功还不够扎实，人物的神态总是画不好，还得再接再厉。'}],
-     q:'女的认为自己哪方面还不够好？',qvn:'Người phụ nữ cho rằng mình còn kém ở mặt nào?',
-     opts:['颜色用得不好','画得太慢','没有参加比赛','人物的神态画不好'],ans:3,
-     why:'人物的神态总是画不好 → vẽ thần thái nhân vật chưa tốt. Cô ấy đã đạt giải nhì.',
-     words:['扎实','神态','再接再厉']},
-
-    {n:5,
-     lines:[{sp:'女',zh:'你怎么什么都没买就回来了？'},
-            {sp:'男',zh:'那个卖东西的说话吞吞吐吐的，问他产品有什么问题，他也说不清楚，我不太放心。'}],
-     q:'男的为什么没买东西？',qvn:'Vì sao người đàn ông không mua gì?',
-     opts:['东西太贵了','商店关门了','卖东西的人说话不清楚，他不放心','他忘了带钱'],ans:2,
-     why:'说话吞吞吐吐的……说不清楚，我不太放心 → người bán ấp úng, anh không yên tâm.',
-     words:['吞吞吐吐']},
-
-    {n:6,
-     lines:[{sp:'男',zh:'王教授这学期每次讲座都来得特别早。'},
-            {sp:'女',zh:'是啊，他七十多岁了还干劲十足，学校的研讨会他从来不缺席。'}],
-     q:'关于王教授，下列哪项正确？',qvn:'Về giáo sư Vương, điều nào dưới đây đúng?',
-     opts:['工作很有干劲','常常缺席研讨会','刚刚退休','讲座经常迟到'],ans:0,
-     why:'七十多岁了还干劲十足……从来不缺席 → rất hăng say, không bao giờ vắng mặt.',
-     words:['干劲','缺席']},
-
-    {n:7,
-     lines:[{sp:'女',zh:'小李，你为什么要去学雕版呢？这可不是容易的事。'},
-            {sp:'男',zh:'我知道任重道远，也不会一帆风顺。可我觉得这门手艺终究不能在我们这一代失传。'}],
-     q:'男的为什么要学雕版？',qvn:'Vì sao người đàn ông muốn học khắc bản?',
-     opts:['因为很容易学','因为能发大财','因为父母要求他','因为不想让这门手艺失传'],ans:3,
-     why:'这门手艺终究不能在我们这一代失传 → không muốn nghề này thất truyền. Anh biết là khó (任重道远).',
-     words:['任重道远','一帆风顺','终究']},
-
-    {n:8,
-     lines:[{sp:'男',zh:'年画是中国传统的民间艺术，它起源于古代的门神画。到了宋明两代，木版年画走向成熟，过年贴年画成了一种风尚。年画的内容非常丰富，有期盼丰收的，有恭喜发财的，还有历史故事和寓言。可以说，年画寄托着老百姓对美好生活的愿望，是老百姓喜闻乐见的艺术形式。'}],
-     q:'这段话主要谈的是什么？',qvn:'Đoạn nói chủ yếu bàn về điều gì?',
-     opts:['门神的传说','年画的起源、发展和意义','怎样制作年画','春节的风俗'],ans:1,
-     why:'Nói nguồn gốc (起源于门神画) → phát triển (宋明走向成熟) → nội dung và ý nghĩa (寄托愿望, 喜闻乐见). Môn thần chỉ là một chi tiết.',
-     words:['起源','丰收','发财','寓言','寄托','喜闻乐见']}
+    {
+      n: 1,
+      lines: [
+        {sp:'女',zh:'你借的那本书怎么样？'},
+        {sp:'男',zh:'开头有点儿没意思，可是愈往后看愈精彩，我一个晚上就看完了。'}
+      ],
+      q: '男的觉得这本书怎么样？',
+      qvn: 'Người đàn ông thấy cuốn sách thế nào?',
+      opts: ['一直很没意思','后面很精彩','太长了','看不懂'],
+      ans: 1,
+      why: '愈往后看愈精彩 = càng đọc về sau càng hay; chỉ phần đầu hơi chán (loại A), đọc một tối là xong (loại C).',
+      words: []
+    },
+    {
+      n: 2,
+      lines: [
+        {sp:'女',zh:'小李说他再也不想见他哥哥了。'},
+        {sp:'男',zh:'那是气话而已，兄弟终究是兄弟，过几天就和好了。'}
+      ],
+      q: '男的认为小李和哥哥会怎么样？',
+      qvn: 'Người đàn ông cho rằng Tiểu Lý và anh trai sẽ thế nào?',
+      opts: ['不再见面','一直吵下去','很快会和好','搬到一起住'],
+      ans: 2,
+      why: '兄弟终究是兄弟 = anh em rốt cuộc vẫn là anh em (bản chất không đổi) → 过几天就和好了. Ôn 而已 (bài 5): chỉ là lời nói lúc giận.',
+      words: ['终究']
+    },
+    {
+      n: 3,
+      lines: [
+        {sp:'男',zh:'刚才那个人跟你说了半天，说什么呢？'},
+        {sp:'女',zh:'推销一种新的保险，我说我已经买了，可他还是说个不停。'}
+      ],
+      q: '那个人刚才在做什么？',
+      qvn: 'Người kia vừa làm gì?',
+      opts: ['问路','推销保险','找朋友','借手机'],
+      ans: 1,
+      why: '推销一种新的保险 = chào bán một loại bảo hiểm mới; 说个不停 = nói mãi không thôi.',
+      words: ['推销']
+    },
+    {
+      n: 4,
+      lines: [
+        {sp:'男',zh:'我想采访一下张师傅，可以吗？'},
+        {sp:'女',zh:'不好意思，张师傅最近身体不太好，谢绝一切采访。'}
+      ],
+      q: '关于张师傅，可以知道什么？',
+      qvn: 'Về bác thợ Trương, có thể biết điều gì?',
+      opts: ['正在接受采访','是一位记者','很乐意见客人','最近不接受采访'],
+      ans: 3,
+      why: '谢绝一切采访 = lịch sự từ chối mọi cuộc phỏng vấn (vì sức khoẻ). Người muốn phỏng vấn là người đàn ông (loại B).',
+      words: ['谢绝']
+    },
+    {
+      n: 5,
+      lines: [
+        {sp:'男',zh:'你问小王昨天为什么没来了吗？'},
+        {sp:'女',zh:'问了，他吞吞吐吐的，半天也没说清楚，我看他是不想说。'}
+      ],
+      q: '关于小王，可以知道什么？',
+      qvn: 'Về Tiểu Vương, có thể biết điều gì?',
+      opts: ['不想说没来的原因','昨天生病了','说得很清楚','昨天来了'],
+      ans: 0,
+      why: '吞吞吐吐 = ấp úng; 半天也没说清楚 + 我看他是不想说 → không muốn nói lý do vắng mặt.',
+      words: ['吞吞吐吐']
+    },
+    {
+      n: 6,
+      lines: [
+        {sp:'女',zh:'你看这幅画画得怎么样？'},
+        {sp:'男',zh:'我对画画儿完全是外行，只觉得颜色挺好看的，别的就说不出来了。'}
+      ],
+      q: '男的是什么意思？',
+      qvn: 'Ý người đàn ông là gì?',
+      opts: ['他也会画画儿','这幅画不好看','他不太懂画','颜色太深了'],
+      ans: 2,
+      why: '完全是外行 = hoàn toàn không phải dân trong nghề → không hiểu tranh; anh ta khen màu đẹp nên B, D sai.',
+      words: ['外行']
+    },
+    {
+      n: 7,
+      lines: [
+        {sp:'男',zh:'这个电视节目为什么这么受欢迎？'},
+        {sp:'女',zh:'演的都是老百姓身边的事，说的又是当地话，大家当然喜闻乐见。'}
+      ],
+      q: '这个节目为什么受欢迎？',
+      qvn: 'Vì sao chương trình này được yêu thích?',
+      opts: ['演的是身边的事','票很便宜','演员很有名','时间很短'],
+      ans: 0,
+      why: '演的都是老百姓身边的事 + 说的是当地话 → gần gũi nên ai cũng thích (喜闻乐见). Không nhắc giá vé, diễn viên hay thời lượng.',
+      words: ['喜闻乐见']
+    }
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 💬 TÌNH HUỐNG GIAO TIẾP
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
+// ══════════════════════════════════════════
 var situationData = {
-  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
-         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn người Trung Quốc sang Việt Nam dịp Tết, thấy tranh Đông Hồ treo trong nhà em và hỏi đó là gì.',
-     a:{sp:'Bạn',zh:'你家墙上这幅画真有意思，是什么画？',vn:'Bức tranh trên tường nhà cậu thú vị quá, là tranh gì vậy?'},
-     need:['Dùng 起源于','Dùng 寄托'],
-     sample:'这是东湖画，是越南的一种民间木版画，起源于北宁省的东湖村。画上的小猪、公鸡都寄托着人们对新年的美好愿望。',
-     samplePy:'Zhè shì Dōnghú huà, shì Yuènán de yì zhǒng mínjiān mùbǎn huà, qǐyuán yú Běiníng Shěng de Dōnghú Cūn. Huà shang de xiǎo zhū, gōngjī dōu jìtuōzhe rénmen duì xīnnián de měihǎo yuànwàng.',
-     sampleVn:'Đây là tranh Đông Hồ, một loại tranh khắc gỗ dân gian Việt Nam, bắt nguồn từ làng Đông Hồ tỉnh Bắc Ninh. Những chú lợn, con gà trên tranh đều gửi gắm ước nguyện tốt đẹp của mọi người cho năm mới.',
-     tip:'Giới thiệu văn hoá: tên → loại hình → nguồn gốc (起源于) → ý nghĩa (寄托着……愿望).'},
-
-    {scene:'Em đi chợ Tết, người bán hàng nói giá bức tranh là 500 nghìn, em muốn mặc cả nhưng anh ta nhất quyết không bớt.',
-     a:{sp:'Người bán',zh:'这是纯手工的，一分钱也不能少。',vn:'Đây là hàng thủ công hoàn toàn, không bớt một xu.'},
-     need:['Dùng 终究','Mặc cả lịch sự'],
-     sample:'我知道是纯手工的，不过这幅画角上有点儿脏，终究不是完美的，您能不能便宜一点儿？',
-     samplePy:'Wǒ zhīdào shì chún shǒugōng de, búguò zhè fú huà jiǎo shang yǒudiǎnr zāng, zhōngjiū bú shì wánměi de, nín néng bu néng piányi yìdiǎnr?',
-     sampleVn:'Tôi biết là hàng thủ công, nhưng góc bức tranh hơi bẩn, xét cho cùng thì không hoàn hảo, anh bớt cho tôi một chút được không?',
-     tip:'终究 nghĩa ① (bản chất không đổi) — nhấn mạnh một sự thật để thuyết phục.'},
-
-    {scene:'Bạn thân vừa được giải nhất cuộc thi vẽ của trường, đến khoe với em.',
-     a:{sp:'Bạn',zh:'我得了学校绘画比赛一等奖！',vn:'Tớ được giải nhất cuộc thi vẽ của trường rồi!'},
-     need:['Dùng 再接再厉','Dùng 愈……愈……'],
-     sample:'太棒了，祝贺你！你愈画愈好了，希望你再接再厉，明年去参加全市的比赛！',
-     samplePy:'Tài bàng le, zhùhè nǐ! Nǐ yù huà yù hǎo le, xīwàng nǐ zàijiē-zàilì, míngnián qù cānjiā quán shì de bǐsài!',
-     sampleVn:'Tuyệt quá, chúc mừng cậu! Cậu vẽ càng ngày càng đẹp, mong cậu cố gắng hơn nữa, sang năm đi thi cấp thành phố!',
-     tip:'Lời chúc mừng + động viên: 祝贺你 → 希望你再接再厉.'},
-
-    {scene:'Em trai hỏi em có nên bỏ lớp học vẽ vì thấy khó quá không.',
-     a:{sp:'Em trai',zh:'画画儿太难了，我想放弃，你觉得呢？',vn:'Vẽ khó quá, em muốn bỏ, chị thấy sao?'},
-     need:['Dùng 一帆风顺','Dùng 扎实'],
-     sample:'学什么都不会一帆风顺的。你现在觉得难，是因为基本功还不够扎实，再坚持一段时间就好了。',
-     samplePy:'Xué shénme dōu bú huì yìfān-fēngshùn de. Nǐ xiànzài juéde nán, shì yīnwèi jīběngōng hái bú gòu zhāshi, zài jiānchí yí duàn shíjiān jiù hǎo le.',
-     sampleVn:'Học gì cũng không thuận buồm xuôi gió đâu. Bây giờ em thấy khó là vì nền tảng còn chưa vững, cố thêm một thời gian là ổn.',
-     tip:'Khuyên nhủ: nêu chân lý chung (不会一帆风顺) → giải thích nguyên nhân (是因为……) → lời khuyên.'},
-
-    {scene:'Thầy chủ nhiệm hỏi vì sao hôm qua em không đến buổi sinh hoạt câu lạc bộ mỹ thuật.',
-     a:{sp:'Thầy',zh:'昨天美术社的活动你怎么没来？',vn:'Hôm qua sao em không đến buổi sinh hoạt câu lạc bộ mỹ thuật?'},
-     need:['Dùng 缺席','Dùng 心得'],
-     sample:'老师，对不起，我昨天发烧了，只好缺席。听说大家交流了画画儿的心得，您能把记录发给我看看吗？',
-     samplePy:'Lǎoshī, duìbuqǐ, wǒ zuótiān fāshāo le, zhǐhǎo quēxí. Tīngshuō dàjiā jiāoliúle huà huàr de xīndé, nín néng bǎ jìlù fā gěi wǒ kànkan ma?',
-     sampleVn:'Thưa thầy, em xin lỗi, hôm qua em bị sốt nên đành vắng mặt. Nghe nói mọi người đã trao đổi kinh nghiệm vẽ, thầy có thể gửi em xem biên bản được không ạ?',
-     tip:'Xin lỗi → lý do (只好缺席) → hỏi bù phần đã lỡ; 心得 = kinh nghiệm rút ra (không phải "tâm đắc").'}
+    {scene:'Bạn người Trung Quốc sang Việt Nam dịp Tết, thấy tranh Đông Hồ treo trong nhà em và hỏi đó là gì.',a:{sp:'Bạn',zh:'你家墙上这幅画真有意思，是什么画？',vn:'Bức tranh trên tường nhà cậu thú vị quá, là tranh gì vậy?'},need:['Dùng 起源于','Dùng 寄托'],sample:'这是越南的一种民间木版年画，起源于北方的一个小村子。画上的小猪、小鸡都寄托着人们对新年的美好愿望。',samplePy:'Zhè shì Yuènán de yì zhǒng mínjiān mùbǎn niánhuà, qǐyuán yú běifāng de yí ge xiǎo cūnzi. Huà shang de xiǎo zhū, xiǎo jī dōu jìtuōzhe rénmen duì xīnnián de měihǎo yuànwàng.',sampleVn:'Đây là một loại tranh Tết khắc gỗ dân gian của Việt Nam, bắt nguồn từ một ngôi làng nhỏ ở miền Bắc. Những chú lợn, chú gà trên tranh đều gửi gắm ước nguyện tốt đẹp của mọi người cho năm mới.',tip:'Giới thiệu văn hoá: tên → loại hình → nguồn gốc (起源于) → ý nghĩa (寄托着……愿望).'},
+    {scene:'Em đi chợ Tết, người bán hàng nói giá bức tranh là 500 nghìn, em muốn mặc cả nhưng anh ta nhất quyết không bớt.',a:{sp:'Người bán',zh:'这是纯手工的，一分钱也不能少。',vn:'Đây là hàng thủ công hoàn toàn, không bớt một xu.'},need:['Dùng 终究','Mặc cả lịch sự'],sample:'我知道是纯手工的，不过这幅画边上有点儿脏，终究不是完美的，您能不能便宜一点儿？',samplePy:'Wǒ zhīdào shì chún shǒugōng de, búguò zhè fú huà biān shang yǒudiǎnr zāng, zhōngjiū bú shì wánměi de, nín néng bu néng piányi yìdiǎnr?',sampleVn:'Tôi biết là hàng thủ công, nhưng mép bức tranh hơi bẩn, xét cho cùng thì không hoàn hảo, anh bớt cho tôi một chút được không?',tip:'终究 nghĩa ① (bản chất không đổi) — nhấn mạnh một sự thật để thuyết phục.'},
+    {scene:'Bạn thân vừa được giải nhất cuộc thi vẽ của trường, đến khoe với em.',a:{sp:'Bạn',zh:'我得了学校绘画比赛一等奖！',vn:'Tớ được giải nhất cuộc thi vẽ của trường rồi!'},need:['Dùng 再接再厉','Dùng 愈……愈……'],sample:'太棒了，祝贺你！你愈画愈好了，希望你再接再厉，明年去参加全市的比赛！',samplePy:'Tài bàng le, zhùhè nǐ! Nǐ yù huà yù hǎo le, xīwàng nǐ zàijiē-zàilì, míngnián qù cānjiā quán shì de bǐsài!',sampleVn:'Tuyệt quá, chúc mừng cậu! Cậu vẽ càng ngày càng đẹp, mong cậu cố gắng hơn nữa, sang năm đi thi cấp thành phố!',tip:'Lời chúc mừng + động viên: 祝贺你 → 希望你再接再厉.'},
+    {scene:'Em trai hỏi em có nên bỏ lớp học vẽ vì thấy khó quá không.',a:{sp:'Em trai',zh:'画画儿太难了，我想放弃，你觉得呢？',vn:'Vẽ khó quá, em muốn bỏ, chị thấy sao?'},need:['Dùng 一帆风顺','Dùng 扎实'],sample:'学什么都不会一帆风顺的。你现在觉得难，是因为基本功还不够扎实，再坚持一段时间就好了。',samplePy:'Xué shénme dōu bú huì yìfān-fēngshùn de. Nǐ xiànzài juéde nán, shì yīnwèi jīběngōng hái bú gòu zhāshi, zài jiānchí yí duàn shíjiān jiù hǎo le.',sampleVn:'Học gì cũng không thuận buồm xuôi gió đâu. Bây giờ em thấy khó là vì nền tảng còn chưa vững, cố thêm một thời gian là ổn.',tip:'Khuyên nhủ: nêu chân lý chung (不会一帆风顺) → giải thích nguyên nhân (是因为……) → lời khuyên.'},
+    {scene:'Thầy chủ nhiệm hỏi vì sao hôm qua em không đến buổi sinh hoạt câu lạc bộ mỹ thuật.',a:{sp:'Thầy',zh:'昨天美术小组的活动你怎么没来？',vn:'Hôm qua sao em không đến buổi sinh hoạt nhóm mỹ thuật?'},need:['Dùng 缺席','Dùng 心得'],sample:'老师，对不起，我昨天发烧了，只好缺席。听说大家交流了画画儿的心得，您能把记录发给我看看吗？',samplePy:'Lǎoshī, duìbuqǐ, wǒ zuótiān fāshāo le, zhǐhǎo quēxí. Tīngshuō dàjiā jiāoliúle huà huàr de xīndé, nín néng bǎ jìlù fā gěi wǒ kànkan ma?',sampleVn:'Thưa thầy, em xin lỗi, hôm qua em bị sốt nên đành vắng mặt. Nghe nói mọi người đã trao đổi kinh nghiệm vẽ, thầy có thể gửi em xem biên bản được không ạ?',tip:'Xin lỗi → lý do (只好缺席) → hỏi bù phần đã lỡ; 心得 = kinh nghiệm rút ra (không phải "tâm đắc").'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 // 🎯 NÓI SAO CHO HAY — 得体 / 语体
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 var registerData = {
-  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
-         'HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
   items: [
-    {scene:'Tấm biển đặt ở cửa phòng trưng bày tranh cổ của bảo tàng.',
-     a:'这儿的画很旧了，大家别拍照啊！',b:'展厅内文物珍贵，谢绝拍照。',better:'b',
-     why:'Biển báo nơi công cộng dùng văn viết ngắn gọn, lịch sự: 谢绝拍照. Câu a (大家别……啊) là lời nói miệng.'},
-
-    {scene:'Em nhắn tin kể cho bạn thân về con hổ vải mua ở hội chợ.',
-     a:'我买了个布老虎，翘着尾巴，可神气了！',b:'本人购得布老虎一只，其神态逼真，装饰精美。',better:'a',
-     why:'Nhắn tin bạn bè dùng khẩu ngữ (买了个, 可神气了). Câu b (本人购得, 其) như văn bản thông báo, rất gượng.'},
-
-    {scene:'Em viết bài giới thiệu tranh Tết trên báo tường của trường.',
-     a:'年画挺好玩儿的，老百姓都特喜欢。',b:'年画是老百姓喜闻乐见的艺术形式，寄托着人们的美好愿望。',better:'b',
-     why:'Bài viết giới thiệu văn hoá cần văn viết: 喜闻乐见, 寄托着. Câu a (挺好玩儿的, 特喜欢) là khẩu ngữ.'},
-
-    {scene:'Thầy hiệu trưởng phát biểu khen thưởng học sinh đoạt giải.',
-     a:'希望同学们戒骄戒躁，再接再厉，取得更好的成绩。',b:'你们别骄傲啊，接着好好干！',better:'a',
-     why:'Lời phát biểu trang trọng dùng thành ngữ 戒骄戒躁, 再接再厉. Câu b hợp nói riêng với học trò thân.'},
-
-    {scene:'Em trò chuyện với ông bà về lý do ông chưa bao giờ bỏ nghề làm tranh.',
-     a:'爷爷，您为什么一直不放弃画年画呀？',b:'请问您坚持年画创作的信念是什么？',better:'a',
-     why:'Nói chuyện với ông trong nhà dùng lời thân mật (爷爷, 呀). Câu b giống phóng viên phỏng vấn, quá khách sáo.'},
-
-    {scene:'Em viết đơn xin phép vắng mặt buổi họp lớp gửi cô chủ nhiệm.',
-     a:'老师，明天我不来了哈。',b:'老师您好，因家中有事，我明天无法参加班会，特此请假，望您批准。',better:'b',
-     why:'Đơn xin phép cần lịch sự, nêu lý do (因……), dùng 特此请假, 望您批准. Câu a quá cộc lốc, không nêu lý do.'}
+    {scene:'Tấm biển treo trong một cửa hàng tranh Tết thủ công.',a:'本店商品都是手工制作，谢绝还价。',b:'我们这儿的东西都是手做的，别还价了啊！',better:'a',why:'Biển báo dùng văn viết ngắn gọn, lịch sự: 本店, 商品, 谢绝还价. Câu b (别还价了啊) là lời nói miệng, treo lên nghe cộc lốc.'},
+    {scene:'Em nhắn tin kể cho bạn thân về con hổ vải mua ở hội chợ.',a:'本人在庙会上买到布老虎一只，造型可爱，十分精致。',b:'我买了个布老虎，尾巴翘得高高的，可神气了！',better:'b',why:'Nhắn tin bạn bè dùng khẩu ngữ (买了个, 可神气了). Câu a (本人, 布老虎一只, 十分精致) như văn bản thông báo, rất gượng.'},
+    {scene:'Em viết bài giới thiệu tranh Tết trên báo tường của trường.',a:'年画是老百姓喜闻乐见的艺术形式，寄托着人们的美好愿望。',b:'年画挺好玩儿的，老百姓都可喜欢了。',better:'a',why:'Bài viết giới thiệu văn hoá cần văn viết: 喜闻乐见, 寄托着. Câu b (挺好玩儿的, 可喜欢了) là khẩu ngữ.'},
+    {scene:'Em viết đơn xin phép vắng mặt buổi họp lớp gửi cô chủ nhiệm.',a:'老师，明天我不来了哈。',b:'老师，我家里有点儿事，明天无法参加班会，想请假一天，希望您批准。',better:'b',why:'Đơn xin phép cần lịch sự, nêu lý do (家里有点儿事), dùng 想请假一天，希望您批准. Câu a quá cộc lốc, không nêu lý do.'},
+    {scene:'Em viết đoạn kết bài văn "Tranh Tết nhà bà nội", muốn nhấn mạnh tranh Tết có ở khắp nơi trong nhà.',a:'奶奶家的门上有年画，墙上有年画，连窗户上也有年画。',b:'奶奶家的门上、墙上和窗户上都有年画。',better:'a',why:'Lặp lại từ khoá 有年画 trong các vế song song (điểm ngữ pháp 3) làm hình ảnh dồn dập, đẩy chủ đề lên. Câu b đúng và gọn nhưng chỉ là câu kể thông tin, không tạo được ấn tượng ở đoạn kết.'},
+    {scene:'Em điền bảng thông tin ngắn về câu lạc bộ trên trang web của trường, chỉ cần ghi giờ sinh hoạt.',a:'我们周二活动，我们周四活动，我们周六也活动。',b:'活动时间：每周二、周四、周六。',better:'b',why:'Bảng thông tin cần ngắn gọn, rõ ràng. Lặp từ khoá chỉ dùng khi muốn nhấn mạnh cảm xúc / chủ đề trong bài văn; ở đây lặp 我们……活动 ba lần là thừa.'}
   ]
 };
 

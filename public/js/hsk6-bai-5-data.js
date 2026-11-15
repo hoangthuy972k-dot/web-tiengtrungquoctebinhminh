@@ -1423,87 +1423,51 @@ var hvBridgeData = {
 // GHÉP TỪ — cụm từ trong bài khoá
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'依靠',right:'翻译'},
   {left:'借助',right:'字典'},
-  {left:'勉强',right:'查阅'},
-  {left:'一栋',right:'办公楼'},
-  {left:'专程',right:'前去咨询'},
-  {left:'接连',right:'不断'},
-  {left:'涉及',right:'隐私'},
-  {left:'火药味',right:'十足'},
-  {left:'极力',right:'忍耐'},
-  {left:'为学员',right:'着想'},
-  {left:'策划',right:'学习方案'},
-  {left:'达成',right:'协议'},
-  {left:'口气',right:'缓和下来'},
-  {left:'随意',right:'学学'},
-  {left:'缺乏',right:'动力'},
-  {left:'真诚',right:'恳切'},
-  {left:'碰上',right:'知音'},
-  {left:'难以',right:'持久'},
-  {left:'斩钉截铁地',right:'表明'},
-  {left:'严格',right:'执行'},
+  {left:'兴致',right:'勃勃'},
+  {left:'涉及',right:'个人隐私'},
+  {left:'策划',right:'一场活动'},
+  {left:'达成',right:'一致'},
+  {left:'设置',right:'密码'},
+  {left:'斩钉',right:'截铁'},
   {left:'权衡',right:'利弊'},
-  {left:'前后',right:'颠倒'}
+  {left:'执行',right:'命令'},
+  {left:'津津',right:'有味'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ
+// ĐIỀN TỪ — câu mới (không chép bài khoá / SGK), mỗi câu một tình huống; ôn xoáy ốc từ + ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'成绩一出来，他就',blank:'迫不及待',post:'地打开手机查分数。',hint:'(nóng lòng)',ans:'迫不及待'},
-  {pre:'学习一门外语，光',blank:'依靠',post:'热情是远远不够的。',hint:'(dựa vào)',ans:'依靠'},
-  {pre:'我想独自阅读原文，哪怕是',blank:'借助',post:'字典勉强查阅呢。',hint:'(nhờ vào)',ans:'借助',exp:'借助 + công cụ/phương tiện = nhờ vào: 借助字典.'},
-  {pre:'我很快找到了一家语言学习',blank:'机构',post:'。',hint:'(trung tâm, tổ chức)',ans:'机构'},
-  {pre:'它在离我家不远的一',blank:'栋',post:'办公楼上。',hint:'(lượng từ: tòa)',ans:'栋',exp:'栋 là lượng từ cho tòa nhà: 一栋办公楼.'},
-  {pre:'听说奶奶病了，姑姑',blank:'专程',post:'从上海赶了回来。',hint:'(cất công đi một chuyến)',ans:'专程',exp:'专程 = cất công đi riêng một chuyến vì việc đó: 专程从上海赶了回来.'},
-  {pre:'进了门，一位很有',blank:'修养',post:'的女士迎上来。',hint:'(giáo dưỡng, lịch thiệp)',ans:'修养'},
-  {pre:'不料首先面对的是她',blank:'接连',post:'不断的发问。',hint:'(liên tiếp)',ans:'接连',exp:'接连 = liên tiếp, liên tục (sự việc nối nhau): 接连不断的发问.'},
-  {pre:'她的问题',blank:'涉及',post:'了我的隐私，我很反感。',hint:'(đụng chạm đến)',ans:'涉及'},
-  {pre:'在网上不要随便透露自己的个人',blank:'隐私',post:'。',hint:'(đời tư)',ans:'隐私'},
-  {pre:'我很反感，话也变得',blank:'火药',post:'味十足。',hint:'(thuốc súng)',ans:'火药'},
-  {pre:'她极力',blank:'忍耐',post:'着，“是这样，我必须了解学员。”',hint:'(kiềm chế)',ans:'忍耐'},
-  {pre:'我必须了解学员，为学员',blank:'着想',post:'，帮他策划学习方案。',hint:'(nghĩ cho)',ans:'着想',exp:'为…着想 = nghĩ cho (lợi ích của) ai: 为学员着想.'},
-  {pre:'我努力使自己的',blank:'口气',post:'缓和下来。',hint:'(giọng điệu)',ans:'口气'},
-  {pre:'就是找一个班插班听课，',blank:'随意',post:'学学而已。',hint:'(tùy thích)',ans:'随意'},
-  {pre:'他的工作是警察，写小说仅仅是他的业余爱好',blank:'而已',post:'。',hint:'(mà thôi)',ans:'而已',exp:'(仅仅/只是)…而已 = …mà thôi; 而已 đứng cuối câu, hô ứng với 仅仅/只.'},
-  {pre:'我们的班都是根据学员的具体情况',blank:'设置',post:'的。',hint:'(thiết lập, mở lớp)',ans:'设置'},
-  {pre:'没有目标就缺乏',blank:'动力',post:'，这道理我固然懂。',hint:'(động lực)',ans:'动力'},
-  {pre:'考上大学',blank:'固然',post:'好，没考上大学也不是就没有出路了。',hint:'(tất nhiên)',ans:'固然',exp:'A固然…，B也… = A tất nhiên…, nhưng B cũng…; 固然 thừa nhận một ý rồi chuyển sang ý khác.'},
-  {pre:'学习语言',blank:'无非',post:'是为了看原文电影、读文学作品。',hint:'(chẳng qua)',ans:'无非',exp:'无非 = chẳng qua chỉ là, không ngoài: 无非是为了….'},
-  {pre:'“对！”我欢天喜地，终于碰上了',blank:'知音',post:'。',hint:'(tri âm)',ans:'知音'},
-  {pre:'爸爸明天要去上海拜访一位重要的',blank:'客户',post:'。',hint:'(khách hàng)',ans:'客户'},
-  {pre:'光凭兴趣，恐怕难以',blank:'持久',post:'。',hint:'(bền lâu)',ans:'持久'},
-  {pre:'我顿时',blank:'崩溃',post:'了，怎么说着说着又绕回来了。',hint:'(suy sụp)',ans:'崩溃'},
-  {pre:'我',blank:'果断',post:'地站起来，斩钉截铁地表明要走。',hint:'(dứt khoát)',ans:'果断'},
-  {pre:'面对对方的邀请，他',blank:'斩钉截铁',post:'地拒绝了。',hint:'(như đinh đóng cột)',ans:'斩钉截铁'},
-  {pre:'学外语能帮助我们了解不同的',blank:'思维',post:'方式。',hint:'(tư duy)',ans:'思维'},
-  {pre:'最后，严格',blank:'执行',post:'学习计划也是非常重要的。',hint:'(thực hiện)',ans:'执行'},
-  {pre:'这份工作',blank:'薪水',post:'不高，可是我很喜欢。',hint:'(tiền lương)',ans:'薪水'},
-  {pre:'网上购物虽然方便，但是也存在一些',blank:'弊端',post:'。',hint:'(mặt hạn chế)',ans:'弊端'},
-  {pre:'为了考上理想的大学，他每天都在',blank:'拼命',post:'学习。',hint:'(dốc sức)',ans:'拼命'},
-  {pre:'放假以后，他天天熬夜，日夜',blank:'颠倒',post:'。',hint:'(đảo lộn)',ans:'颠倒'},
-  {pre:'但是，利弊',blank:'权衡',post:'，利还是大于弊。',hint:'(cân nhắc)',ans:'权衡'},
-  {pre:'爷爷讲的故事，孩子们听得',blank:'津津有味',post:'。',hint:'(say sưa)',ans:'津津有味'}
+  {pre:'一放学，孩子们就',blank:'迫不及待',post:'地冲出了教室。',hint:'(nóng lòng, không chờ nổi)',ans:'迫不及待',exp:'迫不及待 + 地 + V = nóng lòng làm ngay, không đợi được nữa; làm trạng ngữ cần 地.'},
+  {pre:'他从小就很独立，什么事都不',blank:'依靠',post:'父母。',hint:'(dựa vào)',ans:'依靠',exp:'依靠 + người = dựa dẫm, trông cậy vào ai (về lâu dài); 什么事都不…… = việc gì cũng không….'},
+  {pre:'',blank:'借助',post:'手机里的地图，我们很快就找到了那家饭馆。',hint:'(nhờ vào)',ans:'借助',exp:'借助 + công cụ / sự giúp đỡ = nhờ vào cái gì để làm việc khác; thường đứng đầu câu.'},
+  {pre:'他病得很厉害，',blank:'勉强',post:'吃了几口饭就又躺下了。',hint:'(gắng gượng)',ans:'勉强',exp:'勉强 + V = cố gượng làm dù không đủ sức / không muốn.'},
+  {pre:'听说奶奶住院了，她',blank:'专程',post:'从国外赶回来看望。',hint:'(cất công đi riêng một chuyến)',ans:'专程',exp:'专程 + 来 / 去 / 赶回来 = đi riêng vì việc đó, không phải tiện đường.'},
+  {pre:'这个月我',blank:'接连',post:'感冒了两次，看来得多锻炼身体了。',hint:'(liên tiếp)',ans:'接连',exp:'接连 + V + số lần = liên tiếp mấy lần; đứng trước động từ.'},
+  {pre:'他总爱在别人面前炫耀自己的薪水，大家都对他很',blank:'反感',post:'。',hint:'(khó chịu, ác cảm)',ans:'反感',exp:'对 + người / việc + 很反感 = thấy khó chịu, có ác cảm (ôn 炫耀 bài 3).'},
+  {pre:'你做决定的时候，也要为家里人',blank:'着想',post:'一下。',hint:'(nghĩ cho)',ans:'着想',exp:'为 + người + 着想 = nghĩ cho lợi ích của ai; 着想 không mang tân ngữ trực tiếp.'},
+  {pre:'听了他的道歉，她的口气慢慢',blank:'缓和',post:'了下来。',hint:'(dịu xuống)',ans:'缓和',exp:'口气 / 关系 / 气氛 + 缓和下来 = dịu đi; 慢慢 + V + 了下来 tả quá trình.'},
+  {pre:'他',blank:'恳切',post:'地请求老师再给他一次机会。',hint:'(tha thiết, thành khẩn)',ans:'恳切',exp:'恳切地 + 请求 / 希望 = tha thiết, chân thành; tả thái độ khi xin, nhờ.'},
+  {pre:'连着加了一个月的班，他终于',blank:'崩溃',post:'了，在办公室里大哭起来。',hint:'(suy sụp)',ans:'崩溃',exp:'崩溃 = suy sụp tinh thần (khẩu ngữ hay nói 我快崩溃了); 终于 cho thấy chịu đựng đã lâu.'},
+  {pre:'你把钥匙',blank:'搁',post:'在哪儿了？我到处都找不到。',hint:'(để, đặt)',ans:'搁',exp:'搁 = 放 (khẩu ngữ): 把 + đồ vật + 搁在 + nơi chốn.'},
+  {pre:'你把这两个句子的顺序写',blank:'颠倒',post:'了，第二句应该放在前面。',hint:'(đảo ngược)',ans:'颠倒',exp:'写颠倒了 = viết đảo ngược thứ tự; 颠倒 làm bổ ngữ kết quả sau động từ.'},
+  {pre:'别担心，这不过是一次小考试',blank:'而已',post:'，考不好也没关系。',hint:'(mà thôi)',ans:'而已',exp:'不过 / 只是 + …… + 而已 = chỉ là… mà thôi; 而已 luôn đứng cuối câu, làm nhẹ sự việc.'},
+  {pre:'他天天陪老板吃饭，',blank:'无非',post:'是想早点儿当上经理。',hint:'(chẳng qua là)',ans:'无非',exp:'无非（是）+ V / N = chẳng qua chỉ là (mục đích không có gì đặc biệt); thường mang ý xem nhẹ.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (而已 · 固然 · 无非) ít nhất 2 câu
+// SẮP XẾP CÂU — câu mới, chỉ một trật tự đúng
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['我','只是','随意','学学','而已','。'],ans:'我只是随意学学而已。',audio:'我只是随意学学而已。'},
-  {words:['他','不过是','开个玩笑','而已','，','你','别','生气','。'],ans:'他不过是开个玩笑而已，你别生气。',audio:'他不过是开个玩笑而已，你别生气。'},
-  {words:['这个方法','好','固然','是','好','，','可是','太难了','。'],ans:'这个方法好固然是好，可是太难了。',audio:'这个方法好固然是好，可是太难了。'},
-  {words:['考上大学','固然','好','，','没考上','也','有','出路','。'],ans:'考上大学固然好，没考上也有出路。',audio:'考上大学固然好，没考上也有出路。'},
-  {words:['学习语言','无非','是为了','看','原文电影','。'],ans:'学习语言无非是为了看原文电影。',audio:'学习语言无非是为了看原文电影。'},
-  {words:['父母','唠叨','无非是','担心','你','而已','。'],ans:'父母唠叨无非是担心你而已。',audio:'父母唠叨无非是担心你而已。'},
-  {words:['我','努力','使','自己的口气','缓和','下来','。'],ans:'我努力使自己的口气缓和下来。',audio:'我努力使自己的口气缓和下来。'},
-  {words:['我','必须','为','学员','着想','。'],ans:'我必须为学员着想。',audio:'我必须为学员着想。'},
-  {words:['光凭','兴趣','，','恐怕','难以','持久','。'],ans:'光凭兴趣，恐怕难以持久。',audio:'光凭兴趣，恐怕难以持久。'},
-  {words:['我','果断地','站起来','，','斩钉截铁地','表明','要走','。'],ans:'我果断地站起来，斩钉截铁地表明要走。',audio:'我果断地站起来，斩钉截铁地表明要走。'},
-  {words:['利弊','权衡','，','利','还是','大于','弊','。'],ans:'利弊权衡，利还是大于弊。',audio:'利弊权衡，利还是大于弊。'},
-  {words:['我','总能','津津有味地','享受','学习','。'],ans:'我总能津津有味地享受学习。',audio:'我总能津津有味地享受学习。'},
-  {words:['她的问题','涉及了','我的','隐私','。'],ans:'她的问题涉及了我的隐私。',audio:'她的问题涉及了我的隐私。'}
+  {words:['这','不过','是','一个','小问题','而已','。'],ans:'这不过是一个小问题而已。',audio:'这不过是一个小问题而已。'},
+  {words:['妈妈','说','这些话','无非','是','为你','着想','。'],ans:'妈妈说这些话无非是为你着想。',audio:'妈妈说这些话无非是为你着想。'},
+  {words:['住在市中心','固然','方便','，','但是','房租','太贵了','。'],ans:'住在市中心固然方便，但是房租太贵了。',audio:'住在市中心固然方便，但是房租太贵了。'},
+  {words:['图书馆','旁边','新盖了','一栋','大楼','。'],ans:'图书馆旁边新盖了一栋大楼。',audio:'图书馆旁边新盖了一栋大楼。'},
+  {words:['他','看','小说','看得','津津有味','。'],ans:'他看小说看得津津有味。',audio:'他看小说看得津津有味。'},
+  {words:['这家机构的','学费','比','别的地方','贵','一倍','。'],ans:'这家机构的学费比别的地方贵一倍。',audio:'这家机构的学费比别的地方贵一倍。'},
+  {words:['公司','新设置了','一个','管理客户的','部门','。'],ans:'公司新设置了一个管理客户的部门。',audio:'公司新设置了一个管理客户的部门。'},
+  {words:['他','把','自己的','计划','策划得','非常','完美','。'],ans:'他把自己的计划策划得非常完美。',audio:'他把自己的计划策划得非常完美。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1511,74 +1475,44 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'这次考试我只是____及格，还得继续努力。',opts:['勉强','随意','果断','拼命'],ans:0,
-   exp:'Năng lực chưa đủ mà vẫn đạt được một cách chật vật → 勉强及格 (vừa đủ đỗ). 随意 là tùy thích; 果断 là dứt khoát; 拼命 là dốc sức — không hợp với "chỉ vừa đủ đỗ".'},
-  {wrong:'同学们____地讨论着周末去哪儿玩儿。',opts:['兴致勃勃','斩钉截铁','火药味十足','难以持久'],ans:0,
-   exp:'Bàn chuyện đi chơi một cách hào hứng → 兴致勃勃地讨论. 斩钉截铁 là dứt khoát (dùng khi tuyên bố, từ chối); 火药味十足 là gay gắt như sắp cãi nhau; 难以持久 là khó bền lâu, không làm trạng ngữ.'},
-  {wrong:'他说话总是很不客气，同学们都对他有点儿____。',opts:['反感','反映','感动','好感'],ans:0,
-   exp:'Nói năng khó nghe → mọi người có ác cảm: 对……反感. 反映 là phản ánh; 感动 là cảm động; 好感 là thiện cảm — trái nghĩa với vế trước.'},
-  {wrong:'这次毕业晚会是我们班同学自己____的。',opts:['策划','达成','涉及','执行'],ans:0,
-   exp:'Tự lên kế hoạch, tổ chức buổi tiệc → 策划晚会. 达成 đi với 目标 / 协议; 涉及 là liên quan đến; 执行 là thực hiện kế hoạch / mệnh lệnh đã có, không nói "晚会是……执行的".'},
-  {wrong:'经过几轮谈判，双方终于____了协议。',opts:['达成','到达','策划','设置'],ans:0,
-   exp:'达成协议 = đạt được thỏa thuận. 到达 là đến nơi (到达北京); 策划 là lên kế hoạch; 设置 là thiết lập — không đi với 协议.'},
-  {wrong:'他讲了个笑话，紧张的气氛一下子____了。',opts:['缓和','缓慢','果断','颠倒'],ans:0,
-   exp:'Không khí căng thẳng dịu đi → 气氛缓和了. 缓慢 là chậm chạp (tốc độ); 果断 là dứt khoát; 颠倒 là đảo lộn.'},
-  {wrong:'他态度和蔼，真诚____，我被打动了。',opts:['恳切','迫切','随意','反感'],ans:0,
-   exp:'Chân thành, thành khẩn → 真诚恳切. 迫切 là cấp bách, gấp gáp (bẫy "khẩn thiết"); 随意 là tùy tiện; 反感 là ác cảm — không thể khiến người ta cảm động.'},
-  {wrong:'这件白衬衫和你的牛仔裤很____。',opts:['搭','搁','拼','靠'],ans:0,
-   exp:'Hai thứ hợp nhau → A 和 B 很搭 (khẩu ngữ). 搁 là đặt, để; 拼 là ghép / liều; 靠 là dựa — không dùng với 很 theo nghĩa "hợp".'},
-  {wrong:'我很想知道里边是____东西。',opts:['啥','咋','谁','哪'],ans:0,
-   exp:'啥东西 = 什么东西 (cái gì, khẩu ngữ). 咋 = 怎么 (thế nào); 谁 hỏi người; 哪 cần lượng từ (哪个东西).'},
-  {wrong:'他把作业____在一边，先玩起了游戏。',opts:['搁','搭','执行','放弃'],ans:0,
-   exp:'Gác sang một bên → 把……搁在一边. 搭 là hợp / dựng; 执行 là thực hiện; 放弃 là từ bỏ, không đi với 在一边.'},
-  {wrong:'他____来机场送你，你还不快去谢谢他！',opts:['专程','专心','随意','勉强'],ans:0,
-   exp:'Cất công đi một chuyến đến sân bay → 专程来……. 专心 là chuyên tâm (专心学习); 随意 là tùy ý; 勉强 là miễn cưỡng — không hợp với lời cảm ơn.'},
-  {wrong:'今天是我的生日，妈妈____做了我喜欢吃的饭菜。',opts:['专门','专程','接连','随意'],ans:0,
-   exp:'做饭 không phải hành động đi lại → dùng 专门 (câu 做一做 ③ của sách). 专程 chỉ dùng cho việc phải đi một quãng đường; 接连 là liên tiếp; 随意 là tùy tiện.'},
-  {wrong:'我只是开个玩笑____，你别生气。',opts:['而已','无非','固然','以及'],ans:0,
-   exp:'只是……而已: 而已 đứng CUỐI vế câu. 无非 là phó từ, đứng trước động từ; 固然 là liên từ ở vế trước; 以及 là "và" nối danh từ.'},
-  {wrong:'他这么努力地工作，____想多挣些钱，让孩子生活得更舒适。',opts:['无非','而已','固然','以及'],ans:0,
-   exp:'Phó từ 无非 đứng trước động từ 想: chẳng qua là muốn…. 而已 phải đứng cuối câu; 固然 cần vế sau chuyển ý; 以及 không đứng trước động từ.'},
-  {wrong:'这个方法好____是好，可是实施起来太难了。',opts:['固然','虽然','而已','无非'],ans:0,
-   exp:'Dạng lặp "好固然是好，可是……" chỉ dùng với 固然. 虽然 không có dạng lặp này; 而已, 无非 không nối hai vế đối lập.'},
-  {wrong:'现在很多年轻人对手机产生了很强的____。',opts:['依赖','依靠','借助','执行'],ans:0,
-   exp:'Nghĩa tiêu cực "phụ thuộc" + 产生……依赖 → 依赖. 依靠 thiên về tích cực (chỗ dựa); 借助 là nhờ vào (động từ); 执行 là thực hiện.'},
-  {wrong:'收到礼物以后，弟弟____地拆开了包装。',opts:['迫不及待','斩钉截铁','持久','颠倒'],ans:0,
-   exp:'Nóng lòng mở quà ngay → 迫不及待地拆开. 斩钉截铁 dùng cho lời nói, thái độ kiên quyết; 持久, 颠倒 không làm trạng ngữ trước 地 + động từ.'},
-  {wrong:'只要不____隐私，你问什么都可以。',opts:['涉及','设置','达成','策划'],ans:0,
-   exp:'涉及隐私 = đụng chạm đến đời tư. 设置 là thiết lập; 达成 là đạt được; 策划 là lên kế hoạch — đều không đi với 隐私.'},
-  {wrong:'计划制订得再好，不____也没有用。',opts:['执行','设置','策划','借助'],ans:0,
-   exp:'Kế hoạch đã lập thì phải THỰC HIỆN → 执行计划. 设置, 策划 là khâu lập ra (đã có 制订); 借助 cần tân ngữ công cụ.'}
+  {wrong:'这家饭馆的菜____好吃，可是价格未免太贵了。',opts:['固然','果然','居然','突然'],ans:0,exp:'A 固然……，可是 B = A thì đúng là…, nhưng B (thừa nhận rồi chuyển ý). 果然 là quả nhiên; 居然 là vậy mà; 突然 là đột nhiên. Ôn 未免 (bài 4).'},
+  {wrong:'能考第一名____好，考不了第一也没关系，学到东西最重要。',opts:['固然','果然','仍旧','恰巧'],ans:0,exp:'Khung ② A 固然好，B 也…… = A tốt thật, B cũng không sao. 果然 / 仍旧 / 恰巧 không dùng để thừa nhận một ý trước khi nói ý khác.'},
+  {wrong:'他天天给你发信息，____是想请你帮个忙。',opts:['无非','无论','无数','毫无'],ans:0,exp:'无非是 + V = chẳng qua là. 无论 cần 都 / 也 ở sau; 无数 là vô số; 毫无 + danh từ là hoàn toàn không có.'},
+  {wrong:'这件衣服我不过是试试____，并没打算买。',opts:['而已','而且','然而','已经'],ans:0,exp:'不过……而已 = chỉ… mà thôi, 而已 đứng cuối câu. 而且 / 然而 là liên từ nối hai vế; 已经 là phó từ đứng trước động từ — chỉ giống chữ.'},
+  {wrong:'今天去见客户，穿衣服不能太____，最好穿西装。',opts:['随意','随时','满意','故意'],ans:0,exp:'Tuỳ tiện, không chỉn chu → 随意. 随时 là bất cứ lúc nào; 满意 là hài lòng; 故意 là cố ý.'},
+  {wrong:'家人的支持是我坚持下去的最大____。',opts:['动力','能力','力气','实力'],ans:0,exp:'Cái thúc đẩy mình cố gắng → 动力. 能力 là khả năng; 力气 là sức lực cơ thể; 实力 là thực lực.'},
+  {wrong:'光靠打折吸引顾客，效果恐怕不会____。',opts:['持久','永远','坚持','好久'],ans:0,exp:'Hiệu quả kéo dài, bền lâu → 持久 (tính từ, làm vị ngữ). 永远 là phó từ đứng trước động từ; 坚持 là động từ "kiên trì"; 好久 là đã lâu.'},
+  {wrong:'经理遇到问题从不犹豫，做事非常____。',opts:['果断','不断','判断','果然'],ans:0,exp:'Quyết đoán, dứt khoát → 果断. 不断 là không ngừng; 判断 là động từ phán đoán; 果然 là quả nhiên — đều không tả tính cách.'},
+  {wrong:'网上购物固然方便，但也有不少____，比如买到的东西和图片上不一样。',opts:['弊端','缺口','口气','设置'],ans:0,exp:'Mặt hạn chế, cái hại → 弊端. 缺口 là chỗ hổng / khoản thiếu; 口气 là giọng điệu; 设置 là thiết lập.'},
+  {wrong:'请不要随便看别人的手机，这是个人____。',opts:['隐私','秘书','自私','私人'],ans:0,exp:'Chuyện riêng tư → 个人隐私. 秘书 là thư ký; 自私 là ích kỷ; 私人 là tính từ "riêng" (私人电话), không đi sau 个人.'},
+  {wrong:'学校新盖了一____教学楼，有十二层高。',opts:['栋','层','间','条'],ans:0,exp:'Lượng từ cho toà nhà → 栋. 层 đếm tầng; 间 đếm phòng; 条 đếm vật dài (con đường, con sông).'},
+  {wrong:'这次比赛一共____了三个奖，一等奖是一台电脑。',opts:['设置','设计','安排','达成'],ans:0,exp:'Đặt ra, lập ra (giải thưởng, môn học, lớp) → 设置. 设计 là thiết kế; 安排 là sắp xếp (thời gian, công việc); 达成 đi với 一致 / 目标.'},
+  {wrong:'经过几次讨论，双方终于____了一致。',opts:['达成','完成','成为','赞成'],ans:0,exp:'达成一致 = đạt được sự nhất trí (kết hợp cố định). 完成 + nhiệm vụ; 成为 + danh từ chỉ thân phận; 赞成 là tán thành.'},
+  {wrong:'没想到你也喜欢这首老歌，我真是遇到____了！',opts:['知音','知识','声音','知道'],ans:0,exp:'Người hiểu mình, cùng sở thích → 知音 (tri âm). 知识 là kiến thức; 声音 là âm thanh; 知道 là động từ.'},
+  {wrong:'他____地说：“这件事我绝对不会同意，你们别再劝了。”',opts:['斩钉截铁','津津有味','兴致勃勃','接连不断'],ans:0,exp:'Nói dứt khoát như đinh đóng cột → 斩钉截铁. 津津有味 là say sưa, ngon lành; 兴致勃勃 là hào hứng; 接连不断 là liên tiếp không dứt.'}
 ];
 
 // ══════════════════════════════════════════
-// DỊCH — câu ghép, dùng từ bài 5 + ôn từ HSK 6 bài 1–4 và HSK 4–5
+// DỊCH Việt → Trung — câu mới, dùng từ của bài + ôn ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Tôi học tiếng Trung chẳng qua là học cho vui, chứ cũng không đặt ra mục tiêu cụ thể nào cả.',zh:'我学汉语无非是随意学学，并没有设置什么具体的目标。',py:'Wǒ xué Hànyǔ wúfēi shì suíyì xuéxue, bìng méiyǒu shèzhì shénme jùtǐ de mùbiāo.',goiY:['无非是','随意学学','设置','并没有'],giai:'无非是 = chẳng qua là (làm nhẹ sự việc); 并没有 nhấn mạnh phủ định "đâu có…". "Học cho vui" dịch 随意学学 (động từ lặp), không dịch từng chữ 为了高兴学.'},
   {vi:'Bạn ấy không phải có ác cảm với cậu, mà chỉ là không thích người khác hỏi chuyện riêng tư của mình thôi.',zh:'她不是对你反感，而是不喜欢别人问她的隐私而已。',py:'Tā bú shì duì nǐ fǎngǎn, ér shì bù xǐhuan biérén wèn tā de yǐnsī éryǐ.',goiY:['不是……而是……','反感','隐私','而已'],giai:'不是 A 而是 B phủ định A, khẳng định B; 而已 đặt cuối câu làm nhẹ ý "chỉ là… thôi". "Có ác cảm với ai" = 对……反感, giới từ 对 đứng trước.'},
-  {vi:'Học tiếng Trung qua truyện tranh tất nhiên là thú vị, nhưng chỉ dựa vào hứng thú thì e là khó bền lâu.',zh:'看漫画学汉语固然有意思，可是光凭兴趣恐怕难以持久。',py:'Kàn mànhuà xué Hànyǔ gùrán yǒu yìsi, kěshì guāng píng xìngqù kǒngpà nányǐ chíjiǔ.',goiY:['固然……可是……','光凭','难以持久'],giai:'固然 thừa nhận mặt tốt ở vế trước, 可是 chuyển sang mặt hạn chế; "khó bền lâu" = 难以持久, không nói 不能长久地.'},
   {vi:'Tuy bố mẹ rất nghiêm khắc với tôi, thường xuyên đôn đốc tôi thực hiện kế hoạch học tập, nhưng tôi biết họ là nghĩ cho tôi.',zh:'虽然父母对我很严厉，常常督促我执行学习计划，但是我知道他们是为我着想。',py:'Suīrán fùmǔ duì wǒ hěn yánlì, chángcháng dūcù wǒ zhíxíng xuéxí jìhuà, dànshì wǒ zhīdào tāmen shì wèi wǒ zhuóxiǎng.',goiY:['虽然……但是……','严厉','督促','为……着想'],giai:'虽然……但是…… nhượng bộ – chuyển ý; "nghĩ cho ai" = 为 + người + 着想 (着 đọc zhuó), không nói 着想我. 严厉, 督促 ôn bài 1 HSK 6.'},
   {vi:'Chỉ cần đặt ra mục tiêu ngắn hạn phù hợp, em sẽ có động lực học tập, không đến nỗi gác sách sang một bên.',zh:'只要设置合适的短期目标，你就会有学习的动力，不至于把书搁在一边。',py:'Zhǐyào shèzhì héshì de duǎnqī mùbiāo, nǐ jiù huì yǒu xuéxí de dònglì, bú zhìyú bǎ shū gē zài yìbiān.',goiY:['只要……就……','设置','动力','不至于'],giai:'只要 + điều kiện đủ, 就 + kết quả; 不至于 = không đến mức (kết quả xấu). "Gác sang một bên" = 把……搁在一边.'},
   {vi:'Người khác đều đang ôn bài cật lực, cậu ấy lại say sưa đọc tiểu thuyết, thảo nào mẹ trách cậu ấy.',zh:'别人都在拼命复习，他却津津有味地看小说，难怪妈妈埋怨他。',py:'Biérén dōu zài pīnmìng fùxí, tā què jīnjīn yǒu wèi de kàn xiǎoshuō, nánguài māma mányuàn tā.',goiY:['却','津津有味地','难怪','埋怨'],giai:'却 đứng sau chủ ngữ, nối hai vế trái ngược; 难怪 = thảo nào (đã hiểu ra nguyên nhân). 埋怨 (bài 2 HSK 6) đọc mányuàn.'},
-  {vi:'Một khi đã quyết định học ngoại ngữ thì phải thực hiện kế hoạch nghiêm túc, không thể lúc vui thì học cật lực, lúc không vui thì gác sang một bên.',zh:'一旦决定学外语，就要严格执行计划，不能高兴了就拼命学，不高兴了就搁在一边。',py:'Yídàn juédìng xué wàiyǔ, jiù yào yángé zhíxíng jìhuà, bù néng gāoxìng le jiù pīnmìng xué, bù gāoxìng le jiù gē zài yìbiān.',goiY:['一旦……就……','执行','拼命','搁在一边'],giai:'一旦 + điều kiện, 就 + yêu cầu; "lúc vui thì…, lúc không vui thì…" dịch bằng hai vế song song ……了就……，不……了就…… như bài khoá.'},
-  {vi:'Cậu ấy mỗi ngày làm hai việc bán thời gian, chẳng qua là muốn giảm gánh nặng cho bố mẹ, huống hồ tiền lương cũng không đến nỗi thấp.',zh:'他每天打两份工，无非是想减轻父母的负担，何况薪水也不算低。',py:'Tā měi tiān dǎ liǎng fèn gōng, wúfēi shì xiǎng jiǎnqīng fùmǔ de fùdān, hékuàng xīnshui yě bú suàn dī.',goiY:['无非是','何况','薪水'],giai:'无非是 + mục đích = chẳng qua là muốn…; 何况 thêm một lý do nữa ở vế cuối ("huống hồ"). "Làm hai việc bán thời gian" = 打两份工.'},
-  {vi:'Cân nhắc lợi hại xong, tôi thà lên mạng học theo ý mình, chứ không muốn bị người ta ép thực hiện kế hoạch của người khác.',zh:'权衡利弊以后，我宁可在网上随意地学，也不愿意被人硬逼着执行别人的计划。',py:'Quánhéng lìbì yǐhòu, wǒ nìngkě zài wǎng shang suíyì de xué, yě bú yuànyì bèi rén yìng bīzhe zhíxíng biérén de jìhuà.',goiY:['权衡利弊','宁可……也不……','随意','执行'],giai:'宁可 A 也不 B = thà A chứ không B (chọn A dù có thiệt); 被人硬逼着 + V = bị người ta ép phải….'},
-  {vi:'Nếu cậu cứ hỏi tuổi và lương của người khác, thì dù thái độ có thành khẩn đến đâu cũng sẽ khiến người ta khó chịu, vì những câu hỏi đó đụng chạm đến đời tư.',zh:'如果你总问别人的年龄和薪水，那么即使态度再恳切，也会引起对方的反感，因为这些问题涉及隐私。',py:'Rúguǒ nǐ zǒng wèn biérén de niánlíng hé xīnshui, nàme jíshǐ tàidu zài kěnqiè, yě huì yǐnqǐ duìfāng de fǎngǎn, yīnwèi zhèxiē wèntí shèjí yǐnsī.',goiY:['即使……也……','恳切','反感','涉及'],giai:'Câu ba tầng: 如果……那么 (giả thiết) + 即使……也 (nhượng bộ: dù… mấy cũng…) + 因为 (giải thích). "Khiến ai khó chịu" = 引起……的反感.'}
+  {vi:'Chuyến đi lần này tất nhiên có hơi mệt, nhưng mọi người chơi vui khỏi phải nói.',zh:'这次旅行固然有点儿累，可是大家玩儿得别提多开心了。',py:'Zhè cì lǚxíng gùrán yǒudiǎnr lèi, kěshì dàjiā wánr de biétí duō kāixīn le.',goiY:['固然……，可是…… = tất nhiên…, nhưng…','别提多……了 = … khỏi phải nói (bài 1)'],giai:'固然 thừa nhận một mặt (累), 可是 chuyển sang ý chính (开心); ôn 别提多……了.'},
+  {vi:'Anh ấy kể một hồi về trải nghiệm của mình, chẳng qua là muốn nói với chúng tôi: làm việc không được khinh suất.',zh:'他把自己的经历讲了一番，无非是想告诉我们：做事不能太草率。',py:'Tā bǎ zìjǐ de jīnglì jiǎngle yì fān, wúfēi shì xiǎng gàosu wǒmen: zuò shì bù néng tài cǎoshuài.',goiY:['讲了一番 = kể một hồi (bài 3)','无非是 = chẳng qua là','草率 = khinh suất (bài 4)'],giai:'无非是 + V nêu mục đích đơn giản đằng sau một việc làm; ôn 番 (bài 3) và 草率 (bài 4).'}
 ];
 
-// Chiều Trung → Việt — bám ý bài khoá, nội dung khác với chiều trên
+// ══════════════════════════════════════════
+// Dịch Trung → Việt — câu mới, không trùng chiều trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Tôi muốn học ngoại ngữ chẳng qua là để không phải dựa vào bản dịch nữa, trực tiếp đọc nguyên văn mà thôi.',zh:'我想学外语无非是为了不再依靠翻译，直接阅读原文而已。',py:'Wǒ xiǎng xué wàiyǔ wúfēi shì wèile bú zài yīkào fānyì, zhíjiē yuèdú yuánwén éryǐ.',goiY:['无非是……而已 = chẳng qua chỉ là… mà thôi','依靠 = dựa vào'],giai:'无非 (đầu) và 而已 (cuối) hô ứng, cùng làm nhẹ sự việc → dịch "chẳng qua… mà thôi", không cần dịch hai lần "chỉ".'},
-  {vi:'Trung tâm đó cách nhà tôi không xa, nên tôi hào hứng cất công đến tận nơi hỏi thông tin.',zh:'那家机构离我家不远，所以我兴致勃勃地专程前去咨询。',py:'Nà jiā jīgòu lí wǒ jiā bù yuǎn, suǒyǐ wǒ xìngzhì bóbó de zhuānchéng qiánqù zīxún.',goiY:['兴致勃勃 = hào hứng','专程 = cất công (đi một chuyến)','机构 = trung tâm, tổ chức'],giai:'机构 ở đây là "trung tâm ngoại ngữ", không dịch "cơ cấu"; 专程前去 = cất công đến tận nơi.'},
-  {vi:'Tôi cứ tưởng nộp học phí xong là được vào học, không ngờ cô ấy liên tiếp hỏi rất nhiều câu đụng chạm đến đời tư.',zh:'我本以为交了学费就能上课，不料她接连问了很多涉及隐私的问题。',py:'Wǒ běn yǐwéi jiāole xuéfèi jiù néng shàngkè, búliào tā jiēlián wènle hěn duō shèjí yǐnsī de wèntí.',goiY:['本以为……不料…… = cứ tưởng… không ngờ…','接连 = liên tiếp','涉及 = đụng chạm đến'],giai:'以为 = tưởng (mà sai), 不料 = không ngờ → hai vế đối lập giữa suy nghĩ và thực tế; 涉及隐私的问题 là định ngữ dài, dịch "câu hỏi đụng chạm đến đời tư".'},
-  {vi:'Tuy câu hỏi của cô ấy làm tôi rất khó chịu, nhưng cô ấy vẫn cố hết sức kiềm chế, kiên nhẫn giải thích vì sao phải hiểu học viên.',zh:'虽然她的问题让我很反感，但她还是极力忍耐着，耐心地解释为什么要了解学员。',py:'Suīrán tā de wèntí ràng wǒ hěn fǎngǎn, dàn tā háishi jílì rěnnàizhe, nàixīn de jiěshì wèi shénme yào liǎojiě xuéyuán.',goiY:['虽然……但…… = tuy… nhưng…','反感 = khó chịu, ác cảm','极力忍耐 = cố hết sức kiềm chế'],giai:'Chủ ngữ hai vế khác nhau (问题 / 她) — tiếng Việt vẫn giữ "tuy… nhưng…"; 让我很反感 dịch "làm tôi rất khó chịu", không dịch "phản cảm".'},
-  {vi:'Không có mục tiêu thì thiếu động lực, đạo lý này tất nhiên tôi hiểu, nhưng quả thật tôi không nói ra được mục tiêu cụ thể nào.',zh:'没有目标就缺乏动力，这个道理我固然懂，可是我确实说不出什么具体目标。',py:'Méiyǒu mùbiāo jiù quēfá dònglì, zhège dàolǐ wǒ gùrán dǒng, kěshì wǒ quèshí shuō bu chū shénme jùtǐ mùbiāo.',goiY:['固然……可是…… = tất nhiên… nhưng…','缺乏动力 = thiếu động lực'],giai:'固然 thừa nhận ("tất nhiên tôi hiểu"), 可是 chuyển ý; 说不出 là bổ ngữ khả năng phủ định → "không nói ra được".'},
-  {vi:'Người đàn ông ấy thái độ chân thành tha thiết, tôi còn tưởng cuối cùng đã gặp được tri âm, bất giác trò chuyện với anh ta.',zh:'那位男士态度真诚恳切，我还以为终于碰上了知音，不由得跟他聊了起来。',py:'Nà wèi nánshì tàidu zhēnchéng kěnqiè, wǒ hái yǐwéi zhōngyú pèngshàngle zhīyīn, bùyóude gēn tā liáole qǐlái.',goiY:['恳切 = thành khẩn, tha thiết','知音 = tri âm','不由得 = bất giác, không kìm được'],giai:'不由得 (bài 2 HSK 6) = bất giác, không kìm được; V + 起来 = bắt đầu (nói chuyện). 还以为 hàm ý "hóa ra không phải".'},
-  {vi:'Anh ta nói chỉ dựa vào hứng thú thì e là khó bền lâu, tôi lập tức suy sụp, thế là dứt khoát đứng dậy nói rõ muốn về.',zh:'他说光凭兴趣恐怕难以持久，我顿时崩溃了，于是果断地站起来表明要走。',py:'Tā shuō guāng píng xìngqù kǒngpà nányǐ chíjiǔ, wǒ dùnshí bēngkuì le, yúshì guǒduàn de zhàn qǐlái biǎomíng yào zǒu.',goiY:['顿时 = ngay lập tức','于是 = thế là','果断 = dứt khoát'],giai:'顿时 (bài 2 HSK 6) chỉ sự thay đổi xảy ra ngay; 于是 nối hành động là hệ quả của vế trước. 崩溃 ở đây là khẩu ngữ "suy sụp, phát điên", không dịch "sụp đổ".'},
-  {vi:'Trang web này tất nhiên không có ai đôn đốc tôi, nhưng câu nào cũng được giảng giải rất chi tiết, rất hợp với cách tư duy của tôi.',zh:'这家网站固然没有人督促我，但是每个句子都讲解得很详细，和我的思维很搭。',py:'Zhè jiā wǎngzhàn gùrán méiyǒu rén dūcù wǒ, dànshì měi ge jùzi dōu jiǎngjiě de hěn xiángxì, hé wǒ de sīwéi hěn dā.',goiY:['固然……但是…… = tất nhiên… nhưng…','督促 = đôn đốc','很搭 = rất hợp'],giai:'固然 thừa nhận một mặt hạn chế, 但是 chuyển sang mặt tốt; 搭 (khẩu ngữ) = hợp, ăn khớp — không dịch "dựng" hay "đáp".'},
-  {vi:'Nhược điểm của việc học trực tuyến nằm ở chỗ không ai giám sát: vui thì học cật lực, không vui thì gác sang một bên, có khi thậm chí học đảo lộn trước sau.',zh:'在线学习的弊端在于没人监督，高兴了就拼命学，不高兴了就搁在一边，有时甚至前后颠倒。',py:'Zàixiàn xuéxí de bìduān zàiyú méi rén jiāndū, gāoxìng le jiù pīnmìng xué, bù gāoxìng le jiù gē zài yìbiān, yǒushí shènzhì qiánhòu diāndǎo.',goiY:['弊端在于 = nhược điểm nằm ở chỗ','甚至 = thậm chí','颠倒 = đảo lộn'],giai:'弊端在于 + nội dung → "nhược điểm nằm ở chỗ…"; 甚至 đưa ra mức độ cao hơn ở vế cuối.'},
-  {vi:'Thay vì bị người khác ép thực hiện kế hoạch, chi bằng cứ học theo hứng thú của mình, bởi vì sau khi cân nhắc lợi hại, tôi thấy lợi vẫn lớn hơn hại.',zh:'与其被人硬逼着执行计划，不如按自己的兴趣随意学习，因为权衡利弊以后，我发现利还是大于弊。',py:'Yǔqí bèi rén yìng bīzhe zhíxíng jìhuà, bùrú àn zìjǐ de xìngqù suíyì xuéxí, yīnwèi quánhéng lìbì yǐhòu, wǒ fāxiàn lì háishi dàyú bì.',goiY:['与其……不如…… = thay vì… chi bằng…','权衡利弊 = cân nhắc lợi hại','大于 = lớn hơn'],giai:'与其 A 不如 B: người nói chọn B; 大于 (văn viết) = lớn hơn, dịch "lợi vẫn lớn hơn hại".'}
+  {vi:'Lần này cháu cất công đến thăm bà, tiện mang cho bà ít bánh quê nhà.',zh:'这次我是专程来看您的，顺便给您带了些家乡的点心。',py:'Zhè cì wǒ shì zhuānchéng lái kàn nín de, shùnbiàn gěi nín dàile xiē jiāxiāng de diǎnxin.',goiY:['专程 = cất công đi riêng','顺便 = tiện thể'],giai:'是……的 nhấn mạnh mục đích (专程来看您); 专程 trái nghĩa với 顺便.'},
+  {vi:'Cuộc họp này liên quan đến rất nhiều vấn đề, một hai ngày e là bàn không xong.',zh:'这次会议涉及的问题很多，一两天恐怕讨论不完。',py:'Zhè cì huìyì shèjí de wèntí hěn duō, yì liǎng tiān kǒngpà tǎolùn bu wán.',goiY:['涉及 = liên quan đến','恐怕 = e là','V不完 = V không xong'],giai:'涉及的问题 = những vấn đề liên quan đến; 讨论不完 dịch "bàn không xong".'},
+  {vi:'Đôi giày này rất hợp với chiếc váy hôm nay của cậu, trông rất có sức sống.',zh:'这双鞋跟你今天的裙子很搭，看起来特别精神。',py:'Zhè shuāng xié gēn nǐ jīntiān de qúnzi hěn dā, kàn qǐlái tèbié jīngshen.',goiY:['搭 = hợp, ăn ý','精神 (jīngshen) = có sức sống, tươi tắn'],giai:'A 跟 B 很搭 = A rất hợp với B (khẩu ngữ); 精神 ở đây đọc jīngshen, là tính từ.'},
+  {vi:'Trong cuộc họp hai vị giám đốc càng nói càng kích động, mùi thuốc súng ngày càng nồng.',zh:'会上两位经理越说越激动，火药味越来越浓。',py:'Huì shang liǎng wèi jīnglǐ yuè shuō yuè jīdòng, huǒyàowèi yuè lái yuè nóng.',goiY:['火药味 = mùi thuốc súng (không khí căng thẳng)','越……越…… = càng… càng…'],giai:'火药味浓 là cách nói ẩn dụ: không khí cãi vã căng thẳng.'},
+  {vi:'Học ngoại ngữ không chỉ là học từ ngữ và ngữ pháp, mà còn là học một cách tư duy mới.',zh:'学外语不仅是学词语和语法，也是学一种新的思维方式。',py:'Xué wàiyǔ bùjǐn shì xué cíyǔ hé yǔfǎ, yě shì xué yì zhǒng xīn de sīwéi fāngshì.',goiY:['不仅……也…… = không chỉ… mà còn…','思维方式 = cách tư duy'],giai:'思维方式 dịch "cách tư duy", không dịch "phương thức tư duy" cho tự nhiên.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1613,9 +1547,9 @@ var writingData = {
     'Bài có ít nhất 300 chữ (không đếm dấu câu) chưa?'
   ],
   model:{
-    zh:'为了了解人们学习外语的原因和方式，我调查了三个不同国家、不同年龄、不同职业的人。第一位是来自韩国的金先生，今年三十五岁，是一家贸易公司的职员。他学汉语无非是为了工作，因为公司的很多客户都是中国人。他每周在培训机构上两次课，好处是有老师督促，弊端在于下班以后还要上课，实在太累了。第二位是越南的高中生阿兰，今年十七岁。她对中国文化特别感兴趣，迫不及待地想看懂原文电影。她主要借助手机在线学习，这种方式固然方便、随意，可是她常常高兴了拼命学，不高兴了就搁在一边。第三位是法国的退休老师马丁，今年六十八岁。他说自己学中文只是为了旅行而已。他每天跟中国朋友聊天，学得津津有味，可惜进步比较慢。通过这次调查，我发现大家学外语的理由各不相同，学习方式也各有利弊。权衡利弊以后，我认为最重要的是要有持久的动力，并找到一种和自己的思维很搭的方法。',
-    py:'Wèile liǎojiě rénmen xuéxí wàiyǔ de yuányīn hé fāngshì, wǒ diàochále sān ge bù tóng guójiā, bù tóng niánlíng, bù tóng zhíyè de rén. Dì yī wèi shì láizì Hánguó de Jīn xiānsheng, jīnnián sānshíwǔ suì, shì yì jiā màoyì gōngsī de zhíyuán. Tā xué Hànyǔ wúfēi shì wèile gōngzuò, yīnwèi gōngsī de hěn duō kèhù dōu shì Zhōngguórén. Tā měi zhōu zài péixùn jīgòu shàng liǎng cì kè, hǎochù shì yǒu lǎoshī dūcù, bìduān zàiyú xiàbān yǐhòu hái yào shàngkè, shízài tài lèi le. Dì èr wèi shì Yuènán de gāozhōngshēng Ālán, jīnnián shíqī suì. Tā duì Zhōngguó wénhuà tèbié gǎn xìngqù, pòbùjídài de xiǎng kàndǒng yuánwén diànyǐng. Tā zhǔyào jièzhù shǒujī zàixiàn xuéxí, zhè zhǒng fāngshì gùrán fāngbiàn, suíyì, kěshì tā chángcháng gāoxìng le pīnmìng xué, bù gāoxìng le jiù gē zài yìbiān. Dì sān wèi shì Fǎguó de tuìxiū lǎoshī Mǎdīng, jīnnián liùshíbā suì. Tā shuō zìjǐ xué Zhōngwén zhǐshì wèile lǚxíng éryǐ. Tā měi tiān gēn Zhōngguó péngyou liáotiān, xué de jīnjīn yǒu wèi, kěxī jìnbù bǐjiào màn. Tōngguò zhè cì diàochá, wǒ fāxiàn dàjiā xué wàiyǔ de lǐyóu gè bù xiāngtóng, xuéxí fāngshì yě gè yǒu lìbì. Quánhéng lìbì yǐhòu, wǒ rènwéi zuì zhòngyào de shì yào yǒu chíjiǔ de dònglì, bìng zhǎodào yì zhǒng hé zìjǐ de sīwéi hěn dā de fāngfǎ.',
-    vn:'Để tìm hiểu lý do và cách học ngoại ngữ của mọi người, tôi đã điều tra ba người thuộc ba quốc gia, độ tuổi và nghề nghiệp khác nhau. Người thứ nhất là anh Kim đến từ Hàn Quốc, năm nay ba mươi lăm tuổi, là nhân viên một công ty thương mại. Anh học tiếng Trung chẳng qua là vì công việc, bởi nhiều khách hàng của công ty là người Trung Quốc. Mỗi tuần anh học hai buổi ở trung tâm đào tạo; cái lợi là có giáo viên đôn đốc, còn nhược điểm là tan làm rồi vẫn phải đi học, thật sự quá mệt. Người thứ hai là Lan, học sinh cấp ba người Việt Nam, năm nay mười bảy tuổi. Bạn ấy đặc biệt yêu thích văn hóa Trung Quốc, nóng lòng muốn xem hiểu phim nguyên bản. Bạn chủ yếu học trực tuyến nhờ điện thoại; cách này tất nhiên tiện lợi, thoải mái, nhưng bạn thường lúc vui thì học cật lực, lúc không vui thì gác sang một bên. Người thứ ba là thầy Martin, giáo viên đã nghỉ hưu người Pháp, năm nay sáu mươi tám tuổi. Thầy nói mình học tiếng Trung chỉ để đi du lịch mà thôi. Ngày nào thầy cũng trò chuyện với bạn bè người Trung Quốc, học rất say sưa, tiếc là tiến bộ hơi chậm. Qua cuộc điều tra này, tôi nhận thấy lý do học ngoại ngữ của mỗi người đều khác nhau, cách học cũng mỗi cách có lợi có hại. Sau khi cân nhắc lợi hại, tôi cho rằng quan trọng nhất là phải có động lực bền bỉ, đồng thời tìm được một phương pháp hợp với cách tư duy của mình.'
+    zh:'为了了解人们学习外语的原因和方式，我调查了三个不同国家、不同年龄、不同职业的人。第一位是一位日本先生，今年三十五岁，在一家大公司工作。他学汉语无非是为了工作，因为公司的很多客户都是中国人。他每周在培训机构上两次课，好处是有老师督促，弊端在于下班以后还要上课，实在太累了。第二位是一个越南高中女生，今年十七岁。她对中国文化特别感兴趣，迫不及待地想看懂原文电影。她主要借助手机在线学习，这种方式固然方便、随意，可是她常常高兴了拼命学，不高兴了就搁在一边。第三位是一位法国的退休老师，今年六十八岁。他说自己学中文只是为了旅行而已。他每天跟中国朋友聊天，学得津津有味，可惜进步比较慢。通过这次调查，我发现大家学外语的理由各不相同，学习方式也各有利弊。权衡利弊以后，我认为最重要的是要有持久的动力，并找到一种和自己的思维很搭的方法。',
+    py:'Wèile liǎojiě rénmen xuéxí wàiyǔ de yuányīn hé fāngshì, wǒ diàochále sān ge bù tóng guójiā, bù tóng niánlíng, bù tóng zhíyè de rén. Dì yī wèi shì yí wèi Rìběn xiānsheng, jīnnián sānshíwǔ suì, zài yì jiā dà gōngsī gōngzuò. Tā xué Hànyǔ wúfēi shì wèile gōngzuò, yīnwèi gōngsī de hěn duō kèhù dōu shì Zhōngguórén. Tā měi zhōu zài péixùn jīgòu shàng liǎng cì kè, hǎochù shì yǒu lǎoshī dūcù, bìduān zàiyú xiàbān yǐhòu hái yào shàngkè, shízài tài lèi le. Dì èr wèi shì yí ge Yuènán gāozhōng nǚshēng, jīnnián shíqī suì. Tā duì Zhōngguó wénhuà tèbié gǎn xìngqù, pòbùjídài de xiǎng kàndǒng yuánwén diànyǐng. Tā zhǔyào jièzhù shǒujī zàixiàn xuéxí, zhè zhǒng fāngshì gùrán fāngbiàn, suíyì, kěshì tā chángcháng gāoxìng le pīnmìng xué, bù gāoxìng le jiù gē zài yìbiān. Dì sān wèi shì yí wèi Fǎguó de tuìxiū lǎoshī, jīnnián liùshíbā suì. Tā shuō zìjǐ xué Zhōngwén zhǐshì wèile lǚxíng éryǐ. Tā měi tiān gēn Zhōngguó péngyou liáotiān, xué de jīnjīn yǒu wèi, kěxī jìnbù bǐjiào màn. Tōngguò zhè cì diàochá, wǒ fāxiàn dàjiā xué wàiyǔ de lǐyóu gè bù xiāngtóng, xuéxí fāngshì yě gè yǒu lìbì. Quánhéng lìbì yǐhòu, wǒ rènwéi zuì zhòngyào de shì yào yǒu chíjiǔ de dònglì, bìng zhǎodào yì zhǒng hé zìjǐ de sīwéi hěn dā de fāngfǎ.',
+    vn:'Để tìm hiểu lý do và cách học ngoại ngữ của mọi người, tôi đã điều tra ba người thuộc ba quốc gia, độ tuổi và nghề nghiệp khác nhau. Người thứ nhất là một anh người Nhật, năm nay ba mươi lăm tuổi, làm việc ở một công ty lớn. Anh học tiếng Trung chẳng qua là vì công việc, bởi nhiều khách hàng của công ty là người Trung Quốc. Mỗi tuần anh học hai buổi ở trung tâm đào tạo; cái lợi là có giáo viên đôn đốc, còn nhược điểm là tan làm rồi vẫn phải đi học, thật sự quá mệt. Người thứ hai là một nữ sinh cấp ba người Việt Nam, năm nay mười bảy tuổi. Bạn ấy đặc biệt yêu thích văn hóa Trung Quốc, nóng lòng muốn xem hiểu phim nguyên bản. Bạn chủ yếu học trực tuyến nhờ điện thoại; cách này tất nhiên tiện lợi, thoải mái, nhưng bạn thường lúc vui thì học cật lực, lúc không vui thì gác sang một bên. Người thứ ba là một thầy giáo đã nghỉ hưu người Pháp, năm nay sáu mươi tám tuổi. Thầy nói mình học tiếng Trung chỉ để đi du lịch mà thôi. Ngày nào thầy cũng trò chuyện với bạn bè người Trung Quốc, học rất say sưa, tiếc là tiến bộ hơi chậm. Qua cuộc điều tra này, tôi nhận thấy lý do học ngoại ngữ của mỗi người đều khác nhau, cách học cũng mỗi cách có lợi có hại. Sau khi cân nhắc lợi hại, tôi cho rằng quan trọng nhất là phải có động lực bền bỉ, đồng thời tìm được một phương pháp hợp với cách tư duy của mình.'
   }
 };
 
@@ -1623,346 +1557,142 @@ var writingData = {
 // LUYỆN NÓI — đúng bảng 练习5 của sách: 根据提示，简述课文主要内容
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Đây là bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b>. Mỗi câu hỏi là một dòng của bảng — bấm loa nghe câu hỏi, nhìn gợi ý bên phải, <b>tự ghi âm câu trả lời của mình trước</b> rồi mới mở câu mẫu. Cố dùng từ mới: 迫不及待 · 依靠 · 设置 · 动力 · 执行 · 弊端 · 权衡.',
-  questions:[
-    {q_zh:'“我”学习外语的原因是：',
-     q_vn:'Lý do "tôi" học ngoại ngữ là gì?',
-     hint:'①喜欢…… ②不依靠……，看……，阅读……',
-     sample:'“我”学习外语的原因有两个：第一，“我”喜欢这个国家的文化；第二，“我”迫不及待地想不再依靠翻译，看原文电影，独自阅读原文。',
-     sample_vn:'"Tôi" học ngoại ngữ vì hai lý do: thứ nhất, "tôi" thích văn hóa của đất nước đó; thứ hai, "tôi" nóng lòng muốn không phải dựa vào bản dịch nữa, xem phim nguyên bản, tự mình đọc nguyên văn.',
-     note:'Dùng 第一……第二…… để liệt kê hai lý do cho mạch lạc; nhớ dùng 迫不及待 và 依靠.'},
-    {q_zh:'那家机构认为学习外语必须有什么？',
-     q_vn:'Trung tâm đó cho rằng học ngoại ngữ nhất định phải có gì?',
-     hint:'具体目标，比如：出国、职业……',
-     sample:'那家机构认为学习外语必须有具体目标，比如有没有出国计划、职业是什么。他们的班都是根据学员的具体情况设置的，没有目标就缺乏动力。',
-     sample_vn:'Trung tâm đó cho rằng học ngoại ngữ nhất định phải có mục tiêu cụ thể, ví dụ có kế hoạch ra nước ngoài không, nghề nghiệp là gì. Các lớp của họ đều được mở dựa trên tình hình cụ thể của học viên, không có mục tiêu thì thiếu động lực.',
-     note:'Dùng 比如…… để nêu ví dụ; 根据……设置 và 缺乏动力 là hai cụm "ăn điểm" của bài.'},
-    {q_zh:'最后“我”选择了什么方式学习，为什么？',
-     q_vn:'Cuối cùng "tôi" chọn cách học nào, vì sao?',
-     hint:'①在线…… ②教学方法：…… ③没有人硬逼着我…… ④没有人问我……',
-     sample:'最后“我”选择了在线学习。那家网站从基础教起，每个句子的语法都详细讲解，和“我”的思维很搭；而且没有人硬逼着“我”执行学习计划，也没有人问“我”为啥要学，以及“我”的单位、身份和薪水。',
-     sample_vn:'Cuối cùng "tôi" chọn học trực tuyến. Trang web đó dạy từ cơ bản, ngữ pháp của từng câu đều được giảng chi tiết, rất hợp với cách tư duy của "tôi"; hơn nữa không ai ép "tôi" thực hiện kế hoạch học tập, cũng không ai hỏi "tôi" vì sao lại học, rồi cơ quan, thân phận và tiền lương của "tôi".',
-     note:'Trả lời đủ HAI ý: chọn gì (在线学习) và vì sao (phương pháp dạy + không ai ép, không ai hỏi). Dùng 而且 nối các lý do.'},
-    {q_zh:'“我”的学习方式的利弊是：',
-     q_vn:'Cách học của "tôi" có lợi và hại gì?',
-     hint:'①利：…… ②弊：……',
-     sample:'利是心里舒服，能津津有味地享受学习；弊端在于高兴了拼命学一阵子，不高兴了就搁在一边，有时还前后颠倒。不过利弊权衡，利还是大于弊。',
-     sample_vn:'Lợi là trong lòng thoải mái, có thể say sưa tận hưởng việc học; nhược điểm là lúc vui thì ra sức học một thời gian, lúc không vui thì gác sang một bên, có khi còn học đảo lộn trước sau. Nhưng cân nhắc lợi hại thì lợi vẫn lớn hơn hại.',
-     note:'Khung 利是……；弊端在于…… + câu kết 利弊权衡，利还是大于弊 — nói đủ cả hai mặt rồi mới kết luận.'}
+  intro: 'Đây là bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b>. Mỗi câu hỏi là một dòng của bảng — bấm loa nghe câu hỏi, nhìn gợi ý bên phải, <b>tự ghi âm câu trả lời của mình trước</b> rồi mới mở câu mẫu. Cố dùng từ mới: 迫不及待 · 依靠 · 设置 · 动力 · 执行 · 弊端 · 权衡.',
+  questions: [
+    {q_zh:'“我”学习外语的原因是：',q_vn:'Lý do "tôi" học ngoại ngữ là gì?',hint:'①喜欢…… ②不依靠……，看……，阅读……',sample:'“我”学习外语的原因有两个：第一，“我”喜欢这个国家的文化；第二，“我”迫不及待地想不再依靠翻译，看原文电影，独自阅读原文。',sample_vn:'"Tôi" học ngoại ngữ vì hai lý do: thứ nhất, "tôi" thích văn hóa của đất nước đó; thứ hai, "tôi" nóng lòng muốn không phải dựa vào bản dịch nữa, xem phim nguyên bản, tự mình đọc nguyên văn.',note:'Dùng 第一……第二…… để liệt kê hai lý do cho mạch lạc; nhớ dùng 迫不及待 và 依靠.'},
+    {q_zh:'那家机构认为学习外语必须有什么？',q_vn:'Trung tâm đó cho rằng học ngoại ngữ nhất định phải có gì?',hint:'具体目标，比如：出国、职业……',sample:'那家机构认为学习外语必须有具体目标，比如有没有出国计划、职业是什么。他们的班都是根据学员的具体情况设置的，没有目标就缺乏动力。',sample_vn:'Trung tâm đó cho rằng học ngoại ngữ nhất định phải có mục tiêu cụ thể, ví dụ có kế hoạch ra nước ngoài không, nghề nghiệp là gì. Các lớp của họ đều được mở dựa trên tình hình cụ thể của học viên, không có mục tiêu thì thiếu động lực.',note:'Dùng 比如…… để nêu ví dụ; 根据……设置 và 缺乏动力 là hai cụm "ăn điểm" của bài.'},
+    {q_zh:'最后“我”选择了什么方式学习，为什么？',q_vn:'Cuối cùng "tôi" chọn cách học nào, vì sao?',hint:'①在线…… ②教学方法：…… ③没有人硬逼着我…… ④没有人问我……',sample:'最后“我”选择了在线学习。那家网站从基础教起，每个句子的语法都详细讲解，和“我”的思维很搭；而且没有人硬逼着“我”执行学习计划，也没有人问“我”为啥要学，以及“我”的单位、身份和薪水。',sample_vn:'Cuối cùng "tôi" chọn học trực tuyến. Trang web đó dạy từ cơ bản, ngữ pháp của từng câu đều được giảng chi tiết, rất hợp với cách tư duy của "tôi"; hơn nữa không ai ép "tôi" thực hiện kế hoạch học tập, cũng không ai hỏi "tôi" vì sao lại học, rồi cơ quan, thân phận và tiền lương của "tôi".',note:'Trả lời đủ HAI ý: chọn gì (在线学习) và vì sao (phương pháp dạy + không ai ép, không ai hỏi). Dùng 而且 nối các lý do.'},
+    {q_zh:'“我”的学习方式的利弊是：',q_vn:'Cách học của "tôi" có lợi và hại gì?',hint:'①利：…… ②弊：……',sample:'好处是心里舒服，能津津有味地享受学习；弊端在于高兴了拼命学一阵子，不高兴了就搁在一边，有时还前后颠倒。不过利弊权衡，利还是大于弊。',sample_vn:'Cái lợi là trong lòng thoải mái, có thể say sưa tận hưởng việc học; nhược điểm là lúc vui thì ra sức học một thời gian, lúc không vui thì gác sang một bên, có khi còn học đảo lộn trước sau. Nhưng cân nhắc lợi hại thì lợi vẫn lớn hơn hại.',note:'Khung 好处是……；弊端在于…… + câu kết 利弊权衡 — nói đủ cả hai mặt rồi mới kết luận.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — 听力 (hội thoại ngắn + đoạn nói)
-// Sách HSK 6 không có sách bài tập nghe: tự soạn theo chủ đề bài 5.
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — câu tự soạn (sách HSK 6 không có sách bài tập nghe), mỗi câu một tình huống mới
+// ══════════════════════════════════════════
 var listenExamData = {
-  "intro": "Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.",
-  "source": "Soạn theo dạng đề HSK 6 · chủ đề bài 5",
-  "items": [
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 5',
+  items: [
     {
-      "n": 1,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "你学日语多久了？怎么进步这么快？"
-        },
-        {
-          "sp": "男",
-          "zh": "也没什么秘诀，我无非是每天坚持看一集日本电视剧而已。"
-        }
+      n: 1,
+      lines: [
+        {sp:'女',zh:'你又买了这么多书？'},
+        {sp:'男',zh:'不是买的，这些都是从图书馆借的，我不过是拿回来看看而已。'}
       ],
-      "q": "男的是怎么学日语的？",
-      "qvn": "Người đàn ông học tiếng Nhật bằng cách nào?",
-      "opts": [
-        "上培训班",
-        "请了家教",
-        "每天看日本电视剧",
-        "去日本留学"
-      ],
-      "ans": 2,
-      "why": "无非是……而已 = chẳng qua chỉ là…: anh ấy chỉ kiên trì mỗi ngày xem một tập phim Nhật. Các phương án khác không được nhắc tới.",
-      "words": [
-        "无非",
-        "而已"
-      ]
+      q: '这些书是怎么来的？',
+      qvn: 'Những cuốn sách này từ đâu ra?',
+      opts: ['买的','借的','朋友送的','自己写的'],
+      ans: 1,
+      why: '这些都是从图书馆借的 → mượn ở thư viện; 不过……而已 = chỉ mang về đọc thôi.',
+      words: ['而已']
     },
     {
-      "n": 2,
-      "lines": [
-        {
-          "sp": "男",
-          "zh": "你说的那家语言机构离你家远吗？"
-        },
-        {
-          "sp": "女",
-          "zh": "不远，就在我家对面那栋办公楼的十二层。"
-        }
+      n: 2,
+      lines: [
+        {sp:'男',zh:'听说那家公司薪水很高，你为什么不考虑一下？'},
+        {sp:'女',zh:'薪水高固然好，可是离家太远了，每天路上就要三个小时。'}
       ],
-      "q": "那家语言机构在哪儿？",
-      "qvn": "Trung tâm ngoại ngữ đó ở đâu?",
-      "opts": [
-        "女的家对面的办公楼里",
-        "学校旁边",
-        "女的家里",
-        "十二路车站旁边"
-      ],
-      "ans": 0,
-      "why": "对面那栋办公楼的十二层 = tầng 12 của tòa văn phòng đối diện nhà cô ấy. Nghe thấy 十二 dễ chọn nhầm \"bến xe số 12\".",
-      "words": [
-        "机构",
-        "栋"
-      ]
+      q: '女的为什么不去那家公司？',
+      qvn: 'Vì sao người phụ nữ không đến công ty đó?',
+      opts: ['薪水太低','工作太累','离家太远','不喜欢老板'],
+      ans: 2,
+      why: '固然 thừa nhận lương cao là tốt, 可是 nêu lý do thật: 离家太远.',
+      words: ['薪水','固然']
     },
     {
-      "n": 3,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "刚才那个工作人员一直问你的收入和家庭情况，你怎么不高兴了？"
-        },
-        {
-          "sp": "男",
-          "zh": "这些都是我的隐私，跟学外语有什么关系？"
-        }
+      n: 3,
+      lines: [
+        {sp:'女',zh:'你儿子天天给你打电话，真孝顺！'},
+        {sp:'男',zh:'哪儿啊，他打电话无非是没钱花了。'}
       ],
-      "q": "男的为什么不高兴？",
-      "qvn": "Vì sao người đàn ông không vui?",
-      "opts": [
-        "学费太贵了",
-        "他不想学外语",
-        "工作人员迟到了",
-        "对方问了他的隐私"
-      ],
-      "ans": 3,
-      "why": "Anh ấy nói 这些都是我的隐私 — nhân viên hỏi thu nhập, gia đình là đụng đến đời tư, giống \"tôi\" trong bài khoá.",
-      "words": [
-        "隐私"
-      ]
+      q: '男的是什么意思？',
+      qvn: 'Ý người đàn ông là gì?',
+      opts: ['儿子很孝顺','儿子想回家','儿子工作很忙','儿子打电话是为了要钱'],
+      ans: 3,
+      why: '无非是没钱花了 = chẳng qua là hết tiền tiêu → gọi điện để xin tiền, không phải vì hiếu thảo.',
+      words: ['无非']
     },
     {
-      "n": 4,
-      "lines": [
-        {
-          "sp": "男",
-          "zh": "我觉得在线学习固然方便，可是没有人督促，我坚持不了多久。"
-        },
-        {
-          "sp": "女",
-          "zh": "那你还是报个班吧。"
-        }
+      n: 4,
+      lines: [
+        {sp:'男',zh:'今天怎么穿得这么正式？'},
+        {sp:'女',zh:'下午要去见一个重要的客户，谈明年的合作。'}
       ],
-      "q": "男的觉得在线学习怎么样？",
-      "qvn": "Người đàn ông thấy học trực tuyến thế nào?",
-      "opts": [
-        "又贵又不方便",
-        "方便但难以坚持",
-        "比上课效果好",
-        "一点儿也不方便"
-      ],
-      "ans": 1,
-      "why": "固然方便，可是……坚持不了多久 → tiện nhưng khó kiên trì. Nghe được cấu trúc 固然……可是…… là chọn đúng.",
-      "words": [
-        "固然"
-      ]
+      q: '女的下午要做什么？',
+      qvn: 'Chiều nay người phụ nữ phải làm gì?',
+      opts: ['去见客户','参加婚礼','去面试','去上课'],
+      ans: 0,
+      why: '去见一个重要的客户，谈明年的合作 → gặp khách hàng bàn chuyện hợp tác.',
+      words: ['客户']
     },
     {
-      "n": 5,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "你怎么又把汉语书搁在一边了？"
-        },
-        {
-          "sp": "男",
-          "zh": "最近工作太忙了，等忙完这阵子，我一定拼命学。"
-        }
+      n: 5,
+      lines: [
+        {sp:'女',zh:'你脸色怎么这么难看？'},
+        {sp:'男',zh:'电脑突然死机，我写了一个星期的报告全没了，真要崩溃了。'}
       ],
-      "q": "关于男的，可以知道什么？",
-      "qvn": "Về người đàn ông, có thể biết điều gì?",
-      "opts": [
-        "已经不学汉语了",
-        "最近很忙",
-        "汉语书丢了",
-        "工作不太忙"
-      ],
-      "ans": 1,
-      "why": "最近工作太忙了 → gần đây rất bận. Anh ấy chỉ tạm gác sách (搁在一边), sau này vẫn sẽ học cật lực, nên \"đã bỏ học\" là sai.",
-      "words": [
-        "搁",
-        "拼命"
-      ]
+      q: '男的为什么心情不好？',
+      qvn: 'Vì sao tâm trạng người đàn ông không tốt?',
+      opts: ['被经理批评了','报告没了','身体不舒服','电脑被偷了'],
+      ans: 1,
+      why: '写了一个星期的报告全没了 → bản báo cáo mất sạch; máy tính bị treo chứ không bị trộm.',
+      words: ['崩溃']
     },
     {
-      "n": 6,
-      "lines": [
-        {
-          "sp": "男",
-          "zh": "听说你们俩第一次见面就聊了三个小时？"
-        },
-        {
-          "sp": "女",
-          "zh": "是啊，我们都喜欢古典音乐，她真是我的知音。"
-        }
+      n: 6,
+      lines: [
+        {sp:'男',zh:'新搬来的邻居怎么样？'},
+        {sp:'女',zh:'很有修养，见了谁都笑着打招呼，说话也很和气。'}
       ],
-      "q": "她们为什么聊得那么久？",
-      "qvn": "Vì sao hai cô ấy nói chuyện lâu như vậy?",
-      "opts": [
-        "她们是老同学",
-        "她们很久没见了",
-        "她们在讨论工作",
-        "她们有共同的爱好"
-      ],
-      "ans": 3,
-      "why": "我们都喜欢古典音乐 + 知音 (tri âm) → có chung sở thích. 第一次见面 cho thấy không phải bạn cũ, cũng không phải lâu ngày gặp lại.",
-      "words": [
-        "知音"
-      ]
+      q: '女的觉得新邻居怎么样？',
+      qvn: 'Người phụ nữ thấy hàng xóm mới thế nào?',
+      opts: ['很热情，但是话太多','有点儿骄傲','很有礼貌','不太和气'],
+      ans: 2,
+      why: '很有修养, 笑着打招呼, 说话和气 → rất lịch sự, có giáo dưỡng.',
+      words: ['修养']
     },
     {
-      "n": 7,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "这份工作薪水那么高，你为什么不去？"
-        },
-        {
-          "sp": "男",
-          "zh": "我权衡了一下利弊。"
-        },
-        {
-          "sp": "女",
-          "zh": "有什么弊端？"
-        },
-        {
-          "sp": "男",
-          "zh": "每天要加班到很晚，而且离家太远，我觉得不值得。"
-        }
+      n: 7,
+      lines: [
+        {sp:'女',zh:'楼上天天晚上装修，吵得你都睡不好，你怎么不去说说？'},
+        {sp:'男',zh:'我已经忍耐一个星期了，今天晚上要是再吵，我就上去找他们。'}
       ],
-      "q": "男的为什么不接受那份工作？",
-      "qvn": "Vì sao người đàn ông không nhận công việc đó?",
-      "opts": [
-        "要经常加班，离家也远",
-        "薪水太低",
-        "他不会做那份工作",
-        "公司不要他"
-      ],
-      "ans": 0,
-      "why": "Anh ấy nêu 弊端: 每天要加班到很晚，而且离家太远. Lương lại rất CAO (薪水那么高) nên phương án \"lương thấp\" là bẫy.",
-      "words": [
-        "薪水",
-        "权衡",
-        "弊端"
-      ]
-    },
-    {
-      "n": 8,
-      "lines": [
-        {
-          "sp": "男",
-          "zh": "学外语需要理由吗？我觉得需要，但理由不一定要很远大。有的人学外语是为了找工作，有的人无非是想看懂原文电影。不管是什么理由，光凭一时的热情恐怕难以持久。只有给自己设置清楚的目标，并且严格执行学习计划，才能一直保持学习的动力。"
-        }
-      ],
-      "q": "说话人认为怎样才能一直保持学习的动力？",
-      "qvn": "Người nói cho rằng làm thế nào mới luôn giữ được động lực học tập?",
-      "opts": [
-        "只要有热情就行",
-        "要找到远大的理由",
-        "设置清楚的目标并严格执行计划",
-        "去语言机构学习"
-      ],
-      "ans": 2,
-      "why": "Câu then chốt: 只有……设置清楚的目标，并且严格执行学习计划，才能…… Người nói còn nói rõ 光凭热情难以持久 và lý do 不一定要很远大, nên A, B sai.",
-      "words": [
-        "无非",
-        "持久",
-        "设置",
-        "执行",
-        "动力"
-      ]
+      q: '男的打算怎么做？',
+      qvn: 'Người đàn ông định làm gì?',
+      opts: ['搬家','打电话找警察','继续忍耐下去','再吵就去找他们'],
+      ans: 3,
+      why: '已经忍耐一个星期了 + 要是再吵，我就上去找他们 → không nhịn nữa, nếu còn ồn sẽ lên gặp họ.',
+      words: ['忍耐']
     }
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
+// ══════════════════════════════════════════
 var situationData = {
-  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
-         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn hỏi vì sao em học tiếng Trung.',
-     a:{sp:'Bạn',zh:'你为什么学汉语啊？是为了以后找工作吗？',vn:'Sao cậu học tiếng Trung thế? Để sau này tìm việc à?'},
-     need:['Dùng 无非 hoặc 而已','Nêu lý do thật của mình'],
-     sample:'也不全是，我学汉语无非是喜欢看中国电视剧而已。',
-     samplePy:'Yě bù quán shì, wǒ xué Hànyǔ wúfēi shì xǐhuan kàn Zhōngguó diànshìjù éryǐ.',
-     sampleVn:'Cũng không hẳn, tớ học tiếng Trung chẳng qua là vì thích xem phim truyền hình Trung Quốc thôi.',
-     tip:'无非 đứng trước động từ, 而已 đứng cuối câu; dùng cùng nhau càng làm nhẹ ý "chỉ vậy thôi".'},
-
-    {scene:'Bạn khen cách học của em.',
-     a:{sp:'Bạn',zh:'你每天用手机学汉语，这个方法真好！',vn:'Ngày nào cậu cũng học tiếng Trung bằng điện thoại, cách này hay thật!'},
-     need:['Dùng 固然……可是……','Nói ra một nhược điểm của cách học này'],
-     sample:'这个方法固然方便，可是我常常一边学一边玩儿，效果不太好。',
-     samplePy:'Zhège fāngfǎ gùrán fāngbiàn, kěshì wǒ chángcháng yìbiān xué yìbiān wánr, xiàoguǒ bú tài hǎo.',
-     sampleVn:'Cách này tất nhiên tiện, nhưng tớ hay vừa học vừa chơi, hiệu quả không tốt lắm.',
-     tip:'固然 thừa nhận lời khen trước, rồi 可是 nói điều ngược lại — cách đáp khiêm tốn, tự nhiên.'},
-
-    {scene:'Một người mới quen hỏi lương của anh trai em.',
-     a:{sp:'Người mới quen',zh:'你哥哥在哪儿工作？一个月薪水多少？',vn:'Anh trai em làm ở đâu? Một tháng lương bao nhiêu?'},
-     need:['Dùng 涉及 + 隐私','Từ chối khéo, lịch sự'],
-     sample:'不好意思，这涉及他的隐私，我也不太清楚。',
-     samplePy:'Bù hǎoyìsi, zhè shèjí tā de yǐnsī, wǒ yě bú tài qīngchu.',
-     sampleVn:'Xin lỗi, chuyện này liên quan đến đời tư của anh ấy, em cũng không rõ lắm.',
-     tip:'Từ chối bằng 不好意思 + lý do, đừng trả lời cộc lốc 不告诉你 — sẽ khiến lời nói "火药味十足".'},
-
-    {scene:'Bạn muốn bỏ học đàn vì chán.',
-     a:{sp:'Bạn',zh:'我学钢琴学烦了，想先搁在一边，以后再说。',vn:'Tớ học piano chán rồi, muốn tạm gác lại, sau này tính.'},
-     need:['Dùng 持久 hoặc 动力','Khuyên bạn đặt một mục tiêu nhỏ'],
-     sample:'光凭兴趣恐怕难以持久，你给自己设置一个小目标，就会有动力了。',
-     samplePy:'Guāng píng xìngqù kǒngpà nányǐ chíjiǔ, nǐ gěi zìjǐ shèzhì yí ge xiǎo mùbiāo, jiù huì yǒu dònglì le.',
-     sampleVn:'Chỉ dựa vào hứng thú thì e là khó bền lâu, cậu đặt cho mình một mục tiêu nhỏ là sẽ có động lực thôi.',
-     tip:'Đây chính là lời khuyên của trung tâm ngoại ngữ trong bài: 没有目标就缺乏动力.'},
-
-    {scene:'Cô giáo hỏi em thấy học ngoại ngữ ở trung tâm thế nào.',
-     a:{sp:'Cô',zh:'你觉得在培训机构学外语怎么样？',vn:'Em thấy học ngoại ngữ ở trung tâm đào tạo thế nào?'},
-     need:['Dùng 弊端在于','Nêu cả lợi và hại'],
-     sample:'好处是有老师督促，弊端在于学费太贵，时间也不太自由。',
-     samplePy:'Hǎochù shì yǒu lǎoshī dūcù, bìduān zàiyú xuéfèi tài guì, shíjiān yě bú tài zìyóu.',
-     sampleVn:'Cái lợi là có giáo viên đôn đốc, nhược điểm là học phí đắt quá, thời gian cũng không được tự do lắm.',
-     tip:'Khung 好处是……，弊端在于…… giúp câu trả lời cân đối — dùng lại được trong bài báo cáo điều tra.'}
+    {scene:'Bạn hỏi vì sao em học tiếng Trung, có phải để sau này kiếm việc lương cao không.',a:{sp:'Bạn',zh:'你学汉语是为了以后找个薪水高的工作吗？',vn:'Cậu học tiếng Trung để sau này tìm việc lương cao à?'},need:['Dùng 无非……而已','Nói lý do thật của em'],sample:'也不全是。我无非是喜欢中国菜，想自己学着做几个菜而已。',samplePy:'Yě bù quán shì. Wǒ wúfēi shì xǐhuan Zhōngguó cài, xiǎng zìjǐ xuézhe zuò jǐ ge cài éryǐ.',sampleVn:'Cũng không hẳn. Tớ chẳng qua là thích món Trung Quốc, muốn tự học nấu vài món mà thôi.',tip:'无非（是）…… + 而已 làm nhẹ lý do, nghe khiêm tốn, tự nhiên.'},
+    {scene:'Bạn khen cách học của em.',a:{sp:'Bạn',zh:'你每天用手机学汉语，这样学挺不错啊！',vn:'Ngày nào cậu cũng học tiếng Trung bằng điện thoại, học thế này hay đấy!'},need:['Dùng 固然……可是……','Nói ra một nhược điểm của cách học này'],sample:'用手机学固然方便，可是我常常一边学一边玩儿，效果不太好。',samplePy:'Yòng shǒujī xué gùrán fāngbiàn, kěshì wǒ chángcháng yìbiān xué yìbiān wánr, xiàoguǒ bú tài hǎo.',sampleVn:'Học bằng điện thoại tất nhiên tiện, nhưng tớ hay vừa học vừa chơi, hiệu quả không tốt lắm.',tip:'固然 thừa nhận lời khen trước, rồi 可是 nói điều ngược lại — cách đáp khiêm tốn, tự nhiên.'},
+    {scene:'Một người mới quen hỏi lương của anh trai em.',a:{sp:'Người mới quen',zh:'你哥哥在哪儿工作？一个月薪水多少？',vn:'Anh trai em làm ở đâu? Một tháng lương bao nhiêu?'},need:['Dùng 涉及 + 隐私','Từ chối khéo, lịch sự'],sample:'不好意思，这涉及他的隐私，我也不太清楚。',samplePy:'Bù hǎoyìsi, zhè shèjí tā de yǐnsī, wǒ yě bú tài qīngchu.',sampleVn:'Xin lỗi, chuyện này liên quan đến đời tư của anh ấy, em cũng không rõ lắm.',tip:'Từ chối bằng 不好意思 + lý do, đừng trả lời cộc lốc 不告诉你 — sẽ khiến lời nói "火药味十足".'},
+    {scene:'Bạn muốn bỏ lớp vẽ vì thấy mệt.',a:{sp:'Bạn',zh:'我学画画儿学累了，想先搁在一边，以后再说。',vn:'Tớ học vẽ mệt quá rồi, muốn gác lại đã, sau này tính.'},need:['Dùng 设置 hoặc 动力','Khuyên bạn đừng bỏ'],sample:'别这么快就放弃。你可以给自己设置一个小目标，比如每个星期画一张，完成了就给自己买个小礼物，慢慢就有动力了。',samplePy:'Bié zhème kuài jiù fàngqì. Nǐ kěyǐ gěi zìjǐ shèzhì yí ge xiǎo mùbiāo, bǐrú měi ge xīngqī huà yì zhāng, wánchéngle jiù gěi zìjǐ mǎi ge xiǎo lǐwù, mànmàn jiù yǒu dònglì le.',sampleVn:'Đừng bỏ sớm thế. Cậu có thể đặt cho mình một mục tiêu nhỏ, ví dụ mỗi tuần vẽ một bức, xong thì tự mua cho mình một món quà nhỏ, dần dần sẽ có động lực.',tip:'设置目标 = đặt mục tiêu; 慢慢就…… = dần dần sẽ….'},
+    {scene:'Cô giáo hỏi em thấy học ngoại ngữ ở trung tâm thế nào.',a:{sp:'Cô',zh:'你觉得在培训机构学外语怎么样？',vn:'Em thấy học ngoại ngữ ở trung tâm đào tạo thế nào?'},need:['Dùng 弊端在于','Nêu cả lợi và hại'],sample:'好处是有老师督促，弊端在于学费太贵，时间也不太自由。',samplePy:'Hǎochù shì yǒu lǎoshī dūcù, bìduān zàiyú xuéfèi tài guì, shíjiān yě bú tài zìyóu.',sampleVn:'Cái lợi là có giáo viên đôn đốc, nhược điểm là học phí đắt quá, thời gian cũng không được tự do lắm.',tip:'Khung 好处是……，弊端在于…… giúp câu trả lời cân đối — dùng lại được trong bài báo cáo điều tra.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 // 🎯 NÓI SAO CHO HAY — 得体 / 语体
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 var registerData = {
-  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
-         'Lên HSK 6, chọn đúng văn phong (khẩu ngữ hay văn viết, thân mật hay trang trọng) quan trọng không kém ngữ pháp.',
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. Lên HSK 6, chọn đúng văn phong (khẩu ngữ hay văn viết, thân mật hay trang trọng) quan trọng không kém ngữ pháp.',
   items: [
-    {scene:'Em viết báo cáo điều tra nộp cho cô giáo.',
-     a:'调查对象学汉语的原因无非是工作和旅行。',b:'他们学汉语就是为了工作和旅行呗。',better:'a',
-     why:'呗 và 就是 là khẩu ngữ; báo cáo viết cần văn phong trang trọng: 调查对象, 无非是.'},
-
-    {scene:'Em hỏi bạn thân vì sao không đến buổi sinh nhật.',
-     a:'你为啥没来啊？',b:'请问您因何缺席？',better:'a',
-     why:'啥 là khẩu ngữ thân mật, hợp với bạn bè; 因何缺席 là văn viết rất trang trọng, nói với bạn thân nghe như văn bản hành chính.'},
-
-    {scene:'Nhân viên trung tâm ngoại ngữ hỏi thông tin học viên mới.',
-     a:'您好，为了帮您策划学习方案，能简单介绍一下您的学习目标吗？',b:'你为什么要学外语？职业是什么？',better:'a',
-     why:'Nói rõ mục đích (为了帮您策划……) và hỏi mềm mỏng thì khách không thấy bị đụng chạm đời tư — khác hẳn tràng câu hỏi dồn dập trong bài khoá.'},
-
-    {scene:'Thầy giáo mời em tham gia câu lạc bộ, em không đi được.',
-     a:'老师，真不好意思，那天我有事，恐怕去不了。',b:'不去！',better:'a',
-     why:'Từ chối kiểu 斩钉截铁 chỉ hợp khi cần tỏ rõ lập trường; với thầy cô nên từ chối khéo: 不好意思 + lý do + 恐怕…….'},
-
-    {scene:'Em viết đoạn kết cho bài văn nghị luận.',
-     a:'利弊权衡，这种学习方式利还是大于弊。',b:'好处坏处比一比，好处多一点儿。',better:'a',
-     why:'Văn viết dùng 利弊权衡, 大于 cô đọng, trang trọng; câu b đúng nhưng là khẩu ngữ.'},
-
-    {scene:'Máy tính bị treo khi em đang làm bài, em nhắn tin than với bạn.',
-     a:'我真的要崩溃了！',b:'我的精神即将崩溃。',better:'a',
-     why:'Than thở với bạn dùng khẩu ngữ 我真的要崩溃了 (phát điên mất). 即将 là văn viết, nghe như báo cáo bệnh án.'}
+    {scene:'Em viết báo cáo điều tra nộp cho cô giáo.',a:'他们学汉语就是为了工作和旅行。',b:'调查对象学习汉语的原因无非是工作和旅行。',better:'b',why:'Báo cáo dùng lối văn viết: 调查对象, 学习, 原因无非是. Câu a là lời kể miệng.'},
+    {scene:'Em hỏi bạn thân vì sao hôm qua không đến buổi sinh nhật.',a:'你昨天为啥没来啊？',b:'请问您昨天没有出席的原因是什么？',better:'a',why:'啥 là khẩu ngữ thân mật, hợp khi hỏi bạn thân. Câu b dùng 您, 出席, 原因是什么 — như phỏng vấn chính thức, hỏi bạn nghe xa cách.'},
+    {scene:'Em là nhân viên trung tâm ngoại ngữ, hỏi thông tin một học viên mới đến đăng ký.',a:'您好，为了给您安排合适的班，能简单说说您学外语的目的吗？',b:'你学外语干什么？做什么工作的？',better:'a',why:'Nói rõ mục đích (为了给您安排合适的班) và hỏi mềm mỏng (能……吗) thì khách không thấy bị hỏi han đời tư. Câu b dồn dập, cộc lốc.'},
+    {scene:'Thầy giáo mời em tham gia câu lạc bộ cuối tuần, em không đi được.',a:'不去！我没空儿。',b:'老师，对不起，那天我有事，恐怕去不了。',better:'b',why:'Từ chối thầy cô cần lịch sự, có lời xin lỗi và lý do (对不起, 恐怕). Câu a cụt lủn, thiếu lễ phép.'},
+    {scene:'Em viết đoạn kết cho bài văn nghị luận về học trực tuyến.',a:'好处坏处比一比，我觉得可以试试。',b:'权衡利弊之后，我认为这种方式还是值得一试。',better:'b',why:'Văn nghị luận dùng 权衡利弊, 认为, 值得一试 (văn viết). Câu a là lời nói hằng ngày.'},
+    {scene:'Máy tính bị treo khi em đang làm bài, em nhắn tin than với bạn.',a:'我真的要崩溃了！电脑又死机了！',b:'由于电脑无法使用，我的作业无法按时完成。',better:'a',why:'Than thở với bạn dùng khẩu ngữ, cảm xúc: 要崩溃了, 死机了. Câu b giống thư giải trình gửi thầy cô.'}
   ]
 };
 

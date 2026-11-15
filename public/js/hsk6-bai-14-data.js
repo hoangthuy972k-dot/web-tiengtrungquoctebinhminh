@@ -1590,105 +1590,51 @@ var hvBridgeData = {
 // GHÉP TỪ — cụm từ trong bài khoá
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'新闻',right:'评论员'},
-  {left:'报业改革的',right:'典型'},
-  {left:'前来',right:'考察访问'},
-  {left:'事业达到',right:'高峰'},
-  {left:'毅然',right:'决定'},
-  {left:'身心',right:'疲惫'},
-  {left:'开拓',right:'新的生活'},
-  {left:'从捆绑状态中',right:'被释放出来'},
-  {left:'记者',right:'出身'},
-  {left:'勇闯',right:'北极'},
-  {left:'遭遇',right:'围堵'},
-  {left:'难以度过的',right:'灾难'},
-  {left:'惊奇地',right:'发现'},
-  {left:'文字',right:'记载'},
-  {left:'连锁',right:'超市'},
-  {left:'包装',right:'食品'},
-  {left:'时髦的',right:'衣裳'},
-  {left:'职业',right:'本能'},
-  {left:'捕捉',right:'动物'},
-  {left:'赤道',right:'血统'},
-  {left:'采访',right:'专题'},
+  {left:'抢救',right:'病人'},
+  {left:'捕捉',right:'精彩的瞬间'},
+  {left:'开拓',right:'市场'},
+  {left:'释放',right:'压力'},
   {left:'节省',right:'开支'},
-  {left:'穿越',right:'无人区'},
-  {left:'支配',right:'自己的生命'}
+  {left:'遭遇',right:'风暴'},
+  {left:'收藏',right:'古董'},
+  {left:'农民',right:'出身'},
+  {left:'连锁',right:'超市'},
+  {left:'满脸',right:'疲惫'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ
+// ĐIỀN TỪ — câu mới (không chép bài khoá / SGK), mỗi câu một tình huống; ôn xoáy ốc từ + ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'全球变暖以后，',blank:'北极',post:'熊找食物越来越难了。',hint:'(Bắc Cực)',ans:'北极'},
-  {pre:'不了解情况，就不要随意',blank:'评论',post:'别人。',hint:'(bình phẩm)',ans:'评论'},
-  {pre:'又闷又热，还天天下雨，这是',blank:'典型',post:'的南方夏天。',hint:'(điển hình)',ans:'典型'},
-  {pre:'为了写好论文，他专程去农村实地',blank:'考察',post:'了一个月。',hint:'(khảo sát)',ans:'考察'},
-  {pre:'记者',blank:'访问',post:'了几位老人，了解到很多过去的故事。',hint:'(phỏng vấn, hỏi chuyện)',ans:'访问'},
-  {pre:'上下班',blank:'高峰',post:'的时候，地铁里挤得要命。',hint:'(cao điểm)',ans:'高峰'},
-  {pre:'看到祖国需要自己，他',blank:'毅然',post:'回国了。',hint:'(kiên quyết)',ans:'毅然',exp:'毅然 + V = kiên quyết, không do dự (văn viết): 毅然回国.'},
-  {pre:'连续加了一个星期的班，爸爸看起来',blank:'疲惫',post:'不堪。',hint:'(mệt rã rời)',ans:'疲惫'},
-  {pre:'孩子应该在家里做一些',blank:'力所能及',post:'的家务。',hint:'(vừa sức)',ans:'力所能及'},
-  {pre:'多读书、多旅行，能够',blank:'开拓',post:'我们的视野。',hint:'(mở rộng)',ans:'开拓'},
-  {pre:'因为身体原因，他主动辞去了所有',blank:'职务',post:'。',hint:'(chức vụ)',ans:'职务'},
-  {pre:'现代人被事业、家庭',blank:'捆绑',post:'着，身心疲惫。',hint:'(trói buộc)',ans:'捆绑'},
-  {pre:'考完试以后，大家去唱歌，好好',blank:'释放',post:'一下压力。',hint:'(giải tỏa)',ans:'释放'},
-  {pre:'他',blank:'出身',post:'于一个普通的农民家庭。',hint:'(xuất thân)',ans:'出身'},
-  {pre:'他',blank:'鼓动',post:'我买股票，结果赔得干干净净。',hint:'(xúi giục)',ans:'鼓动'},
-  {pre:'隔壁住着一对老',blank:'夫妇',post:'，他们每天一起去散步。',hint:'(vợ chồng)',ans:'夫妇'},
-  {pre:'遇到大事的时候，一定要保持',blank:'头脑',post:'清醒。',hint:'(đầu óc)',ans:'头脑'},
-  {pre:'创业的路上，他',blank:'遭遇',post:'过很多挫折，但从未放弃。',hint:'(gặp phải)',ans:'遭遇'},
-  {pre:'这场地震给当地人民带来了巨大的',blank:'灾难',post:'。',hint:'(thảm họa)',ans:'灾难'},
-  {pre:'世界上还有很多孩子在忍受',blank:'饥饿',post:'。',hint:'(cái đói)',ans:'饥饿'},
-  {pre:'渔船在海上遇到了一场',blank:'风暴',post:'，幸好大家都平安回来了。',hint:'(bão)',ans:'风暴'},
-  {pre:'为了抵御',blank:'严寒',post:'，他们住在用雪建成的房子里。',hint:'(giá rét)',ans:'严寒'},
-  {pre:'他三岁就能背一百首诗，真令人',blank:'惊奇',post:'。',hint:'(kinh ngạc)',ans:'惊奇'},
-  {pre:'据史书',blank:'记载',post:'，这座桥已经有一千多年的历史了。',hint:'(ghi chép)',ans:'记载'},
-  {pre:'这两款手机看起来差不多，其实价格',blank:'差别',post:'很大。',hint:'(sự khác biệt)',ans:'差别'},
-  {pre:'这家咖啡店在全国已经有三百多家',blank:'连锁',post:'店了。',hint:'(chuỗi)',ans:'连锁'},
-  {pre:'过度',blank:'包装',post:'既浪费资源，又污染环境。',hint:'(đóng gói)',ans:'包装'},
-  {pre:'过年的时候，孩子们都盼着穿新',blank:'衣裳',post:'。',hint:'(quần áo)',ans:'衣裳'},
-  {pre:'他穿上西装，显得特别',blank:'潇洒',post:'。',hint:'(phong độ, phóng khoáng)',ans:'潇洒'},
-  {pre:'看到球飞过来，他',blank:'本能',post:'地躲开了。',hint:'(theo bản năng)',ans:'本能'},
-  {pre:'遇到事情先冷静一下，千万别太',blank:'冲动',post:'。',hint:'(bốc đồng)',ans:'冲动'},
-  {pre:'我和哥哥',blank:'相差',post:'五岁，可是我们像朋友一样。',hint:'(chênh nhau)',ans:'相差'},
-  {pre:'这台电脑用了十几年，简直是个',blank:'古董',post:'了。',hint:'(đồ cổ)',ans:'古董'},
-  {pre:'走自己的路，别',blank:'在意',post:'其他人怎么说。',hint:'(bận tâm)',ans:'在意'},
-  {pre:'摄影师等了三个小时，终于',blank:'捕捉',post:'到了那个美丽的瞬间。',hint:'(bắt được)',ans:'捕捉'},
-  {pre:'',blank:'赤道',post:'附近的国家一年四季都很热。',hint:'(xích đạo)',ans:'赤道'},
-  {pre:'下周学校要举办一个关于心理健康的',blank:'专题',post:'讲座。',hint:'(chuyên đề)',ans:'专题'},
-  {pre:'经过医生三个小时的',blank:'抢救',post:'，病人终于脱离了危险。',hint:'(cấp cứu)',ans:'抢救'},
-  {pre:'河水已经严重污染，治理工作已经',blank:'刻不容缓',post:'了。',hint:'(vô cùng cấp bách)',ans:'刻不容缓'},
-  {pre:'妈妈每个月都把家里的收入和',blank:'支出',post:'记下来。',hint:'(khoản chi)',ans:'支出'},
-  {pre:'刚工作的年轻人收入不高，得',blank:'精打细算',post:'地过日子。',hint:'(tính toán chi li)',ans:'精打细算'},
-  {pre:'公司今年效益不好，只好减少各项',blank:'开支',post:'。',hint:'(các khoản chi)',ans:'开支'},
-  {pre:'到了以后来个电话，',blank:'免得',post:'家里人担心。',hint:'(kẻo)',ans:'免得',exp:'…，免得… = để khỏi, kẻo (tránh hậu quả không mong muốn): 免得家里人担心.'},
-  {pre:'为了给女儿买钢琴，他们花掉了全部的',blank:'储蓄',post:'。',hint:'(tiền tiết kiệm)',ans:'储蓄'},
-  {pre:'他们花了一个月的时间，徒步',blank:'穿越',post:'了这片沙漠。',hint:'(xuyên qua)',ans:'穿越'},
-  {pre:'吃了不干净的东西，很容易引起',blank:'腹泻',post:'。',hint:'(tiêu chảy)',ans:'腹泻'},
-  {pre:'离开家乡很多年了，我还',blank:'时常',post:'想起小时候的事。',hint:'(thường, hay)',ans:'时常',exp:'时常 = thường, hay (như 常常): 时常想起小时候的事.'},
-  {pre:'这件衣服有点儿大，你先',blank:'将就',post:'一下，明天再去换。',hint:'(dùng tạm)',ans:'将就'},
-  {pre:'上了大学以后，我有了更多可以自由',blank:'支配',post:'的时间。',hint:'(sắp xếp)',ans:'支配'},
-  {pre:'她对音乐非常',blank:'执着',post:'，二十年来从没放弃过。',hint:'(bền bỉ)',ans:'执着'}
+  {pre:'这篇文章下面有几千条',blank:'评论',post:'，大家的看法很不一样。',hint:'(bình luận)',ans:'评论',exp:'评论 = lời bình luận, nhận xét (danh từ), lượng từ 条; cũng dùng làm động từ: 评论一件事.'},
+  {pre:'他是一个',blank:'典型',post:'的南方人，一到冬天就怕冷得要命。',hint:'(điển hình)',ans:'典型',exp:'典型的 + N = … điển hình, mang đầy đủ đặc điểm của một nhóm người / sự vật. Ôn 形容词 + 得 + 要命 (bài 9).'},
+  {pre:'为了写这份报告，专家们到农村',blank:'考察',post:'了半个月。',hint:'(khảo sát thực địa)',ans:'考察',exp:'考察 = đến tận nơi xem xét, tìm hiểu kỹ (có mục đích nghiên cứu); 参观 chỉ là tham quan.'},
+  {pre:'早上七点到九点是上班',blank:'高峰',post:'，地铁里挤得连站的地方都没有。',hint:'(cao điểm)',ans:'高峰',exp:'上班高峰 = giờ cao điểm đi làm; 高峰 còn là "đỉnh cao" (事业的高峰).'},
+  {pre:'虽然大公司的工资很高，她还是',blank:'毅然',post:'回到村里当了一名老师。',hint:'(kiên quyết, dứt khoát)',ans:'毅然',exp:'毅然 + quyết định lớn = dứt khoát, không do dự dù phải hy sinh điều gì (văn viết); thường đi với 决定, 放弃, 回到.'},
+  {pre:'他因为身体不好，不再担任经理',blank:'职务',post:'了。',hint:'(chức vụ)',ans:'职务',exp:'担任 + chức danh + 职务 = giữ chức vụ…; 职业 là nghề nghiệp, không đi với 担任经理.'},
+  {pre:'做生意光有热情不够，还得有经济',blank:'头脑',post:'。',hint:'(đầu óc)',ans:'头脑',exp:'有……头脑 = có đầu óc (về một lĩnh vực): 有经济头脑, 有头脑; 大脑 là bộ não (sinh học), không nói 经济大脑.'},
+  {pre:'孩子们',blank:'惊奇',post:'地看着那只会说话的小鸟，一个个都不敢相信自己的耳朵。',hint:'(kinh ngạc vì lạ)',ans:'惊奇',exp:'惊奇地 + V = kinh ngạc vì thấy điều lạ lùng; 好奇 là tò mò (对……很好奇), dùng trước khi biết.'},
+  {pre:'我和哥哥',blank:'相差',post:'五岁，小时候总玩儿不到一起。',hint:'(chênh nhau)',ans:'相差',exp:'A 和 B + 相差 + số lượng = chênh nhau bao nhiêu; 相差 là động từ, còn 差别 là danh từ (差别很大).'},
+  {pre:'他穿着白衬衫站在台上，看起来又帅又',blank:'潇洒',post:'。',hint:'(phong độ, phóng khoáng)',ans:'潇洒',exp:'潇洒 = phong độ, tự nhiên, không gò bó (dáng vẻ, cách sống); thường đi với 帅.'},
+  {pre:'听到孩子在外面哭，妈妈',blank:'本能',post:'地跑了出去。',hint:'(theo bản năng)',ans:'本能',exp:'本能地 + V = làm theo bản năng, không kịp suy nghĩ.'},
+  {pre:'吃了路边不干净的东西以后，他',blank:'腹泻',post:'了好几天。',hint:'(tiêu chảy)',ans:'腹泻',exp:'腹泻 = tiêu chảy (cách nói y học, văn viết); khẩu ngữ là 拉肚子.'},
+  {pre:'这场比赛输得太可惜了，队员们心里都',blank:'难以',post:'接受。',hint:'(khó mà)',ans:'难以',exp:'难以 + động từ HAI âm tiết = khó mà…: 难以接受 / 难以相信. Không nói 难以接 / 难以吃 (một âm tiết).'},
+  {pre:'出门前再看一下天气预报吧，',blank:'免得',post:'路上被雨淋了。',hint:'(kẻo, để khỏi)',ans:'免得',exp:'……，免得 + điều không mong muốn = để khỏi / kẻo…; 免得 đứng đầu vế SAU, vế trước là việc nên làm.'},
+  {pre:'看着孩子',blank:'一天天',post:'长大，父母心里又高兴又有点儿舍不得。',hint:'(từng ngày một)',ans:'一天天',exp:'一 + lượng từ lặp (一天天, 一年年) làm trạng ngữ = từng… một, nhấn mạnh quá trình dần dần; chỉ dùng số 一.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (一拨拨 · 难以 · 免得) ít nhất 2 câu
+// SẮP XẾP CÂU — câu mới, chỉ một trật tự đúng
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['每天','都会有','一拨拨','同行','前来','考察访问','。'],ans:'每天都会有一拨拨同行前来考察访问。',audio:'每天都会有一拨拨同行前来考察访问。'},
-  {words:['饭','要','一口口','吃','，','事','要','一件件','做','。'],ans:'饭要一口口吃，事要一件件做。',audio:'饭要一口口吃，事要一件件做。'},
-  {words:['他','翻看着','一张张','老照片','，','心情','难以','平静','。'],ans:'他翻看着一张张老照片，心情难以平静。',audio:'他翻看着一张张老照片，心情难以平静。'},
-  {words:['他们','遇到过','想象中','难以','度过的','灾难','。'],ans:'他们遇到过想象中难以度过的灾难。',audio:'他们遇到过想象中难以度过的灾难。'},
-  {words:['在老家','度过的','每一天','，','至今','令人','难以','忘怀','。'],ans:'在老家度过的每一天，至今令人难以忘怀。',audio:'在老家度过的每一天，至今令人难以忘怀。'},
-  {words:['自己','能做的事','就','自己做吧','，','免得','麻烦','别人','。'],ans:'自己能做的事就自己做吧，免得麻烦别人。',audio:'自己能做的事就自己做吧，免得麻烦别人。'},
-  {words:['他们','千方百计','节省开支','，','免得','储蓄','减少得','太快','。'],ans:'他们千方百计节省开支，免得储蓄减少得太快。',audio:'他们千方百计节省开支，免得储蓄减少得太快。'},
-  {words:['小声','点儿','，','大伙儿','都睡了','，','免得','吵醒','他们','。'],ans:'小声点儿，大伙儿都睡了，免得吵醒他们。',audio:'小声点儿，大伙儿都睡了，免得吵醒他们。'},
-  {words:['他','毅然','决定','离开','报社','。'],ans:'他毅然决定离开报社。',audio:'他毅然决定离开报社。'},
-  {words:['记者出身的','妻子','鼓动','他','去北极','。'],ans:'记者出身的妻子鼓动他去北极。',audio:'记者出身的妻子鼓动他去北极。'},
-  {words:['王建男','不再','在意','自然风光','，','只','专注于','人文','。'],ans:'王建男不再在意自然风光，只专注于人文。',audio:'王建男不再在意自然风光，只专注于人文。'},
-  {words:['抢救','正在消失的','东西','刻不容缓','。'],ans:'抢救正在消失的东西刻不容缓。',audio:'抢救正在消失的东西刻不容缓。'},
-  {words:['他','愿意','自己','支配','自己的','生命','。'],ans:'他愿意自己支配自己的生命。',audio:'他愿意自己支配自己的生命。'}
+  {words:['妈妈','把','我的','旧衣裳','都','送给了','邻居','。'],ans:'妈妈把我的旧衣裳都送给了邻居。',audio:'妈妈把我的旧衣裳都送给了邻居。'},
+  {words:['爷爷','把','这件','古董','看得','比什么都','重要','。'],ans:'爷爷把这件古董看得比什么都重要。',audio:'爷爷把这件古董看得比什么都重要。'},
+  {words:['他们','一家','开车','穿越了','整个','沙漠','。'],ans:'他们一家开车穿越了整个沙漠。',audio:'他们一家开车穿越了整个沙漠。'},
+  {words:['这件事','让','大家','难以','相信','。'],ans:'这件事让大家难以相信。',audio:'这件事让大家难以相信。'},
+  {words:['那位','记者','的','评论','写得','很','精彩','。'],ans:'那位记者的评论写得很精彩。',audio:'那位记者的评论写得很精彩。'},
+  {words:['医生们','正在','全力','抢救','受伤的','人','。'],ans:'医生们正在全力抢救受伤的人。',audio:'医生们正在全力抢救受伤的人。'},
+  {words:['他们','把','节省下来的','钱','都','存进了','银行','。'],ans:'他们把节省下来的钱都存进了银行。',audio:'他们把节省下来的钱都存进了银行。'},
+  {words:['他','每个月','的','支出','比','收入','还','多','。'],ans:'他每个月的支出比收入还多。',audio:'他每个月的支出比收入还多。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1696,76 +1642,44 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'父母____他坚持下去，最后一定能取得成功。',opts:['鼓动','捆绑','鼓励','支配'],ans:2,
-   exp:'Việc tích cực (kiên trì) → 鼓励. 鼓动 hay dùng khi xúi làm việc xấu; 捆绑 là trói buộc; 支配 là chi phối.'},
-  {wrong:'在他的____下，那些人参加了非法组织。',opts:['鼓动','鼓励','抢救','访问'],ans:0,
-   exp:'Hành vi tiêu cực (tổ chức phi pháp) → chỉ 鼓动 (xúi giục). 鼓励 phía sau luôn là việc tích cực.'},
-  {wrong:'就在事业达到____的时候，他毅然离开了报社。',opts:['典型','专题','本能','高峰'],ans:3,
-   exp:'事业达到高峰 = sự nghiệp lên đỉnh cao. 典型 là điển hình; 专题 là chuyên đề; 本能 là bản năng.'},
-  {wrong:'他领导的报社成为中国报业改革的____。',opts:['高峰','典型','古董','职务'],ans:1,
-   exp:'成为……的典型 = trở thành điển hình của…. 高峰 không đi với 成为……改革的; 古董, 职务 không hợp nghĩa.'},
-  {wrong:'加了一个星期的班，他感到身心____。',opts:['潇洒','疲惫','执着','惊奇'],ans:1,
-   exp:'Tăng ca cả tuần → mệt mỏi: 身心疲惫. 潇洒 là phóng khoáng; 执着 là bền bỉ; 惊奇 là kinh ngạc.'},
-  {wrong:'到了北极，他们____地发现，现实和书中写的完全不一样。',opts:['疲惫','冲动','严寒','惊奇'],ans:3,
-   exp:'惊奇地发现 = kinh ngạc phát hiện (điều lạ). 疲惫地 không hợp với 发现 điều bất ngờ; 冲动, 严寒 không làm trạng ngữ ở đây.'},
-  {wrong:'城市和农村的收入____正在逐渐缩小。',opts:['差别','相差','连锁','包装'],ans:0,
-   exp:'Danh từ làm chủ ngữ của 缩小 → 差别. 相差 là động từ (A 和 B 相差……), không đứng sau 收入 làm chủ ngữ của 缩小.'},
-  {wrong:'理想和现实往往____很远。',opts:['差别','在意','相差','穿越'],ans:2,
-   exp:'A 和 B + 相差 + 很远 (động từ). 差别 là danh từ, phải nói 差别很大.'},
-  {wrong:'他一时____，说了很多伤人的话。',opts:['本能','执着','惊奇','冲动'],ans:3,
-   exp:'一时冲动 = bốc đồng nhất thời. 本能 là bản năng; 执着 là bền bỉ; 惊奇 là kinh ngạc.'},
-  {wrong:'这个问题已经很严重了，解决它____。',opts:['力所能及','刻不容缓','精打细算','千奇百怪'],ans:1,
-   exp:'Việc cần làm ngay + 刻不容缓 (làm vị ngữ cuối câu). 力所能及 là vừa sức; 精打细算 là tính toán chi li; 千奇百怪 là muôn hình vạn trạng.'},
-  {wrong:'做点儿你____的事吧，太难的就别做了。',opts:['力所能及','刻不容缓','精打细算','潇洒'],ans:0,
-   exp:'力所能及的事 = việc vừa sức (练习2 ⑥). Các phương án khác không hợp nghĩa "vừa sức".'},
-  {wrong:'我家收入不高，妈妈事事都得____。',opts:['刻不容缓','力所能及','精打细算','将就'],ans:2,
-   exp:'Thu nhập thấp → tính toán chi li: 事事精打细算. 将就 là dùng tạm, không đi sau 事事都得 với nghĩa này.'},
-  {wrong:'条件有限，你们____着住两天吧。',opts:['支配','捆绑','将就','释放'],ans:2,
-   exp:'将就着 + V = làm tạm (练习2 ⑤). 支配, 捆绑, 释放 không đi với 着住.'},
-  {wrong:'快把药带上，____路上生病了没药吃。',opts:['免得','即使','何况','于是'],ans:0,
-   exp:'免得 + điều không mong muốn (đứng đầu vế sau). 即使 là cho dù; 何况 là huống hồ; 于是 là thế là.'},
-  {wrong:'他从没离开过家乡，所以对外面的世界很____。',opts:['惊奇','疲惫','潇洒','好奇'],ans:3,
-   exp:'对……很好奇 = tò mò về…. 惊奇 là cảm giác kinh ngạc khi đã THẤY điều lạ, không đi với 对……很.'},
-  {wrong:'爷爷把家族的历史都____了下来。',opts:['捕捉','记载','包装','抢救'],ans:1,
-   exp:'记载下来 = ghi chép lại (bằng văn bản). 捕捉 là bắt; 包装 là đóng gói; 抢救 là cứu.'},
-  {wrong:'由于人类无节制地____，很多动物面临灭绝。',opts:['抢救','支配','开拓','捕捉'],ans:3,
-   exp:'Săn bắt không kiểm soát → 捕捉. 抢救 là cứu (ngược nghĩa); 支配, 开拓 không hợp.'},
-  {wrong:'医生们正在全力____受伤的乘客。',opts:['捕捉','鼓动','抢救','考察'],ans:2,
-   exp:'抢救 + người bị thương = cấp cứu. 捕捉 là bắt; 鼓动 là xúi; 考察 là khảo sát.'},
-  {wrong:'知道我一个人在国外，他____打电话问候我。',opts:['时常','毅然','本能','将就'],ans:0,
-   exp:'Việc lặp lại nhiều lần → 时常 (thường). 毅然 là kiên quyết (một quyết định lớn); 本能 (地) là theo bản năng.'},
-  {wrong:'上了大学，我有了更多可以自由____的时间。',opts:['释放','支配','开拓','穿越'],ans:1,
-   exp:'自由支配时间 = tự do sắp xếp thời gian. 释放 là giải phóng; 开拓 là mở rộng; 穿越 là băng qua.'}
+  {wrong:'他总是____同学逃课去网吧，老师已经批评过他好几次了。',opts:['鼓动','鼓励','鼓舞','激动'],ans:0,exp:'Xúi người khác làm việc xấu (trốn học) → 鼓动 (xúi giục). 鼓励 / 鼓舞 luôn hướng tới việc tốt; 激动 là xúc động, không mang tân ngữ người.'},
+  {wrong:'每次考得不好，老师都会____我别放弃，下次再努力。',opts:['鼓励','鼓动','支配','捆绑'],ans:0,exp:'Khích lệ ai làm điều tích cực → 鼓励. 鼓动 hay mang nghĩa xúi giục; 支配 là chi phối; 捆绑 là trói buộc.'},
+  {wrong:'这些年，城市和农村的生活条件____越来越小了。',opts:['差别','相差','差不多','区分'],ans:0,exp:'Danh từ làm chủ ngữ của 越来越小 → 差别 (sự chênh lệch). 相差 là động từ (A 和 B 相差……); 差不多 là "gần như"; 区分 là phân biệt (động từ).'},
+  {wrong:'他一时____，把刚买的手机摔坏了，后来特别后悔。',opts:['冲动','本能','惊奇','潇洒'],ans:0,exp:'一时冲动 = bốc đồng nhất thời. 本能 là bản năng (本能地 + V); 惊奇 là kinh ngạc; 潇洒 là phong độ.'},
+  {wrong:'病人的情况越来越严重，手术已经____了。',opts:['刻不容缓','迫不及待','十全十美','一举两得'],ans:0,exp:'Việc cần làm ngay, không thể chậm trễ → 刻不容缓 (chủ ngữ là việc: 手术). 迫不及待 tả NGƯỜI nóng lòng muốn làm gì; 十全十美 là hoàn hảo; 一举两得 là một công đôi việc.'},
+  {wrong:'孩子上了小学，可以让他做些____的家务，比如洗碗、擦桌子。',opts:['力所能及','斤斤计较','前后矛盾','想方设法'],ans:0,exp:'Việc vừa sức mình → 力所能及的 + N. 斤斤计较 là chi li tính toán (chê người); 前后矛盾 là trước sau mâu thuẫn; 想方设法 là tìm mọi cách (làm trạng ngữ cho động từ, không làm định ngữ cho 家务).'},
+  {wrong:'我们刚工作，工资不高，过日子要____一点儿，不能想买什么就买什么。',opts:['精打细算','大手大脚','斤斤计较','千奇百怪'],ans:0,exp:'Tính toán chi tiêu kỹ (nghĩa tốt) → 精打细算. 大手大脚 là tiêu hoang — trái nghĩa; 斤斤计较 là so đo từng chút với người khác (nghĩa xấu); 千奇百怪 là muôn hình vạn trạng.'},
+  {wrong:'这双鞋虽然旧了，但还能____穿一阵子，先别买新的了。',opts:['将就着','讲究着','坚持着','照顾着'],ans:0,exp:'Dùng tạm cái chưa thật vừa ý → 将就着 + V. 讲究 (jiǎngjiu) là cầu kỳ, chú trọng — gần âm với 将就 (jiāngjiu) nhưng nghĩa ngược lại; 坚持着穿 / 照顾着穿 không hợp nghĩa.'},
+  {wrong:'自从搬到海边，他____一个人去码头看船。',opts:['时常','毅然','临时','准时'],ans:0,exp:'Việc lặp lại nhiều lần → 时常 (= 经常). 毅然 dùng cho một quyết định lớn; 临时 là tạm thời, đột xuất; 准时 là đúng giờ. Ôn 码头 (bài 13).'},
+  {wrong:'上了大学，每个月的生活费都要自己____，花完了可没人给你。',opts:['支配','捆绑','释放','穿越'],ans:0,exp:'Tự sắp xếp, sử dụng tiền / thời gian → 支配. 捆绑 là trói buộc; 释放 là giải phóng, thả ra; 穿越 là băng qua.'},
+  {wrong:'这次旅行的____比我们的预算多了一千多块。',opts:['支出','支配','收入','储蓄'],ans:0,exp:'Khoản đã chi ra, so với 预算 (bài 13) → 支出. 支配 là động từ (sắp xếp); 收入 là thu nhập; 储蓄 là tiền tiết kiệm — đều không so với dự toán chi tiêu.'},
+  {wrong:'出门前把窗户关好，____下大雨的时候雨水进到屋里来。',opts:['免得','即使','于是','可见'],ans:0,exp:'Vế sau là điều muốn tránh → 免得. 即使 là "cho dù" (cần 也 đi kèm); 于是 là "thế là" (kết quả đã xảy ra); 可见 là "đủ thấy".'},
+  {wrong:'把他的电话号码写在本子上吧，免得____。',opts:['以后找不到','以后找得到','以后能找到','以后好找'],ans:0,exp:'Sau 免得 là điều KHÔNG mong muốn (找不到). Ba phương án kia là điều mong muốn — lỗi hay gặp khi dịch "để sau này tìm được" thành 免得…….'},
+  {wrong:'作业这么多，一个晚上实在____。',opts:['难以完成','难以做','难以写','不难以完成'],ans:0,exp:'难以 + động từ hai âm tiết: 难以完成. 难以做 / 难以写 sai vì động từ một âm tiết; muốn phủ định thì nói 不难完成, không thêm 不 trước 难以.'},
+  {wrong:'火车站门口排着长队，____游客从早上一直等到中午。',opts:['一拨拨','两拨拨','一张张','拨拨'],ans:0,exp:'Số lượng từ lặp chỉ dùng số 一: 一拨拨 = hết tốp này đến tốp khác (nhiều, nối tiếp). 两拨拨 sai; 张 là lượng từ của vật phẳng (giấy, 桌子), không đếm người; 拨拨 thiếu 一.'}
 ];
 
 // ══════════════════════════════════════════
-// DỊCH — câu ghép, dùng từ bài 14 + ôn từ HSK 6 bài 1–11 và HSK 4–5
+// DỊCH Việt → Trung — câu mới, dùng từ của bài + ôn ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Sau khi về đến ký túc xá, tôi thường gọi điện cho bố mẹ, kẻo họ lo.',zh:'到了宿舍以后，我时常给爸妈打个电话，免得他们担心。',py:'Dàole sùshè yǐhòu, wǒ shícháng gěi bà mā dǎ ge diànhuà, miǎnde tāmen dānxīn.',goiY:['时常','免得'],giai:'免得 = kẻo, để khỏi — đứng đầu vế SAU, nêu điều không mong muốn; không dịch "kẻo" bằng 所以. 时常 đứng trước động từ.'},
-  {vi:'Cho dù thi được hạng nhất, cậu ấy cũng chẳng hề bận tâm, vẫn bền bỉ theo đuổi thành tích tốt hơn.',zh:'即使考了第一名，他也毫不在意，仍旧执着地追求更好的成绩。',py:'Jíshǐ kǎole dì-yī míng, tā yě háo bú zàiyì, réngjiù zhízhuó de zhuīqiú gèng hǎo de chéngjì.',goiY:['即使……也……','在意','执着','仍旧'],giai:'即使 + giả thiết / sự thật được nêu ra, 也 + kết quả không đổi; 执着地 làm trạng ngữ (có 地). 仍旧 ôn bài 3.'},
+  {vi:'Cho dù thi được hạng nhất, cậu ấy cũng chẳng hề bận tâm, vẫn bền bỉ theo đuổi thành tích tốt hơn.',zh:'即使考了第一名，他也并不在意，仍旧执着地追求更好的成绩。',py:'Jíshǐ kǎole dì-yī míng, tā yě bìng bú zàiyì, réngjiù zhízhuó de zhuīqiú gèng hǎo de chéngjì.',goiY:['即使……也……','并不','在意','执着','仍旧'],giai:'即使 + giả thiết / sự thật được nêu ra, 也 + kết quả không đổi; "chẳng hề" = 并不 (nhấn mạnh phủ định); 执着地 làm trạng ngữ (có 地). 仍旧 ôn bài 3.'},
   {vi:'Tiền tiêu vặt của tôi không nhiều, vì vậy phải tính toán chi li, cố gắng tiết kiệm chi tiêu.',zh:'我的零花钱不多，因此得精打细算，尽量节省开支。',py:'Wǒ de línghuāqián bù duō, yīncǐ děi jīngdǎ-xìsuàn, jǐnliàng jiéshěng kāizhī.',goiY:['因此','精打细算','开支'],giai:'因此 nối kết quả (văn viết hơn 所以); "tiết kiệm chi tiêu" = 节省开支, không nói 节省支出 cho tự nhiên.'},
-  {vi:'Ngày nào cũng có hết tốp này đến tốp khác phụ huynh đến trường tham quan, chẳng trách thầy cô ai nấy đều mệt rã rời.',zh:'每天都有一拨拨家长来学校参观访问，难怪老师们一个个都疲惫不堪。',py:'Měi tiān dōu yǒu yì bōbō jiāzhǎng lái xuéxiào cānguān fǎngwèn, nánguài lǎoshīmen yígègè dōu píbèi bùkān.',goiY:['一拨拨','访问','难怪','疲惫'],giai:'"Hết tốp này đến tốp khác" = 一拨拨 (số lượng từ lặp, số từ chỉ dùng 一); "ai nấy" = 一个个. 难怪 = chẳng trách, đứng đầu vế sau.'},
-  {vi:'Hai chị em tuy chỉ hơn kém nhau ba tuổi, nhưng suy nghĩ khác biệt lớn đến mức khó mà tưởng tượng.',zh:'姐妹俩虽然只相差三岁，但是想法的差别大得令人难以想象。',py:'Jiěmèi liǎ suīrán zhǐ xiāngchà sān suì, dànshì xiǎngfǎ de chābié dà de lìng rén nányǐ xiǎngxiàng.',goiY:['虽然……但是……','相差','差别','难以'],giai:'相差 là động từ (相差三岁), 差别 là danh từ (差别大); 难以 + động từ hai âm tiết (想象), không nói 难以想.'},
-  {vi:'Đừng vì bốc đồng nhất thời mà tiêu sạch toàn bộ tiền tiết kiệm, nếu không sau này có việc gấp sẽ không có tiền mà dùng.',zh:'别因为一时冲动就花光所有的储蓄，否则以后有急事就没钱用了。',py:'Bié yīnwèi yìshí chōngdòng jiù huāguāng suǒyǒu de chǔxù, fǒuzé yǐhòu yǒu jíshì jiù méi qián yòng le.',goiY:['冲动','储蓄','否则'],giai:'否则 = nếu không thì, nêu hậu quả khi không làm theo lời khuyên; "tiêu sạch" = 花光 (bổ ngữ kết quả).'},
-  {vi:'Đúng vào lúc thành tích học tập lên đến đỉnh cao, cậu ấy lại kiên quyết chuyển sang học vẽ — môn mình thích từ nhỏ.',zh:'就在成绩达到高峰的时候，他却毅然决定改学自己从小就喜欢的画画儿。',py:'Jiù zài chéngjì dádào gāofēng de shíhou, tā què yìrán juédìng gǎi xué zìjǐ cóngxiǎo jiù xǐhuan de huà huàr.',goiY:['就在……的时候','高峰','毅然','却'],giai:'就在……的时候 nhấn đúng thời điểm (như câu bài khoá); 却 đứng sau chủ ngữ, trước 毅然 — không đặt 却 đầu câu.'},
+  {vi:'Ngày nào cũng có hết tốp này đến tốp khác phụ huynh đến trường tham quan, chẳng trách thầy cô ai nấy trông đều mệt mỏi.',zh:'每天都有一拨拨家长来学校参观访问，难怪老师们一个个都显得很疲惫。',py:'Měi tiān dōu yǒu yì bōbō jiāzhǎng lái xuéxiào cānguān fǎngwèn, nánguài lǎoshīmen yígègè dōu xiǎnde hěn píbèi.',goiY:['一拨拨','访问','难怪','疲惫'],giai:'"Hết tốp này đến tốp khác" = 一拨拨 (số lượng từ lặp, số từ chỉ dùng 一); "ai nấy" = 一个个. 难怪 = chẳng trách, đứng đầu vế sau.'},
+  {vi:'Hai anh em tuy chỉ hơn kém nhau ba tuổi, nhưng suy nghĩ khác biệt lớn đến mức khó mà tưởng tượng.',zh:'兄弟俩虽然只相差三岁，但是想法的差别大得令人难以想象。',py:'Xiōngdì liǎ suīrán zhǐ xiāngchà sān suì, dànshì xiǎngfǎ de chābié dà de lìng rén nányǐ xiǎngxiàng.',goiY:['虽然……但是……','相差','差别','难以'],giai:'相差 là động từ (相差三岁), 差别 là danh từ (差别大); 难以 + động từ hai âm tiết (想象), không nói 难以想.'},
   {vi:'Làm tình nguyện viên không phải là phải làm việc gì to tát, chỉ cần làm những việc vừa sức là cũng có thể mở rộng tầm nhìn của mình.',zh:'做志愿者并非要做什么大事，只要做些力所能及的事，就能开拓自己的视野。',py:'Zuò zhìyuànzhě bìngfēi yào zuò shénme dàshì, zhǐyào zuò xiē lìsuǒnéngjí de shì, jiù néng kāituò zìjǐ de shìyě.',goiY:['并非','只要……就……','力所能及','开拓'],giai:'并非 (= 并不是, ôn bài 7) phủ định một cách hiểu sai; 只要……就…… nêu điều kiện đủ. 力所能及 làm định ngữ, cần 的.'},
-  {vi:'Nếu không phải hồi đầu bạn thân xúi tôi thức khuya chơi game, thì bây giờ tôi cũng không đến nỗi hễ nghĩ đến kỳ thi ấy là lòng lại khó mà bình tĩnh.',zh:'如果不是当初好朋友鼓动我熬夜打游戏，我也不至于现在一想起那次考试，心情就难以平静。',py:'Rúguǒ bú shì dāngchū hǎo péngyou gǔdòng wǒ áoyè dǎ yóuxì, wǒ yě bú zhìyú xiànzài yì xiǎngqǐ nà cì kǎoshì, xīnqíng jiù nányǐ píngjìng.',goiY:['如果不是……也……','当初','鼓动','难以'],giai:'Việc xấu (thức khuya chơi game) → dùng 鼓动, không dùng 鼓励; 如果不是……也不至于…… giả thiết trái sự thật, lồng 一……就…… ở vế sau.'},
-  {vi:'Cô ấy quyết định tự sắp xếp thời gian của mình, mỗi tuần dành ra một ngày tìm hiểu những nghề thủ công truyền thống đang mai một ở quê, để khỏi cả đời bị áp lực học hành trói buộc.',zh:'她决定自己支配自己的时间，每周抽出一天去了解家乡正在消失的传统手艺，免得一辈子被学习压力捆绑着。',py:'Tā juédìng zìjǐ zhīpèi zìjǐ de shíjiān, měi zhōu chōuchū yì tiān qù liǎojiě jiāxiāng zhèngzài xiāoshī de chuántǒng shǒuyì, miǎnde yíbèizi bèi xuéxí yālì kǔnbǎngzhe.',goiY:['支配','免得','捆绑'],giai:'Ba vế: quyết định → hành động cụ thể → 免得 + điều muốn tránh; "bị trói buộc" = 被……捆绑着 (着 chỉ trạng thái kéo dài).'}
+  {vi:'Nếu không phải hồi đầu bạn thân xúi tôi thức khuya chơi game, thì bây giờ tôi cũng không đến nỗi hễ nghĩ đến kỳ thi ấy là lòng lại khó mà bình tĩnh.',zh:'如果不是当初好朋友鼓动我熬夜打游戏，我也不至于现在一想起那次考试，心情就难以平静。',py:'Rúguǒ bú shì dāngchū hǎo péngyou gǔdòng wǒ áoyè dǎ yóuxì, wǒ yě bú zhìyú xiànzài yì xiǎngqǐ nà cì kǎoshì, xīnqíng jiù nányǐ píngjìng.',goiY:['如果不是……也……','当初','鼓动','难以'],giai:'Việc xấu (thức khuya chơi game) → dùng 鼓动, không dùng 鼓励; 如果不是……也不至于…… giả thiết trái sự thật, lồng 一……就…… ở vế sau.'}
 ];
 
-// Chiều Trung → Việt — bám ý bài khoá, nội dung khác với chiều trên
+// ══════════════════════════════════════════
+// Dịch Trung → Việt — câu mới, không trùng chiều trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Vương Kiến Nam theo đuổi sự hoàn hảo, tòa báo ông lãnh đạo trở thành điển hình của cải cách, ngày nào cũng có hết tốp này đến tốp khác đồng nghiệp đến khảo sát.',zh:'王建男追求完美，他领导的报社成了改革的典型，每天都有一拨拨同行前来考察。',py:'Wáng Jiànnán zhuīqiú wánměi, tā lǐngdǎo de bàoshè chéngle gǎigé de diǎnxíng, měi tiān dōu yǒu yì bōbō tóngháng qiánlái kǎochá.',goiY:['典型 = điển hình','一拨拨 = hết tốp này đến tốp khác','考察 = khảo sát'],giai:'一拨拨 miêu tả số lượng nhiều, lần lượt từng nhóm — dịch "hết tốp này đến tốp khác" hay hơn "rất nhiều"; 同行 (tóngháng) = người cùng ngành.'},
-  {vi:'Ông mệt rồi, thân tâm rã rời, thế là kiên quyết từ bỏ chức vụ xã trưởng.',zh:'他累了，身心疲惫，于是毅然辞去了社长的职务。',py:'Tā lèi le, shēnxīn píbèi, yúshì yìrán cíqùle shèzhǎng de zhíwù.',goiY:['身心疲惫 = thân tâm rã rời','毅然 = kiên quyết','职务 = chức vụ'],giai:'于是 nối hành động là hệ quả; 毅然 dịch "kiên quyết / dứt khoát", nhấn quyết định lớn không do dự.'},
-  {vi:'Sau khi nghỉ việc, ông như được thả ra khỏi sự trói buộc, đầu tiên mở doanh nghiệp, về sau lại phải lòng Bắc Cực.',zh:'辞职以后，他像是从捆绑状态中被释放出来，先办企业，后来又恋上了北极。',py:'Cízhí yǐhòu, tā xiàng shì cóng kǔnbǎng zhuàngtài zhōng bèi shìfàng chūlái, xiān bàn qǐyè, hòulái yòu liànshangle Běijí.',goiY:['捆绑 = trói buộc','被释放出来 = được thả ra','恋上 = phải lòng'],giai:'像是…… là so sánh ví von ("như là"); 被释放 dịch "được thả ra" (bị động mang nghĩa tốt nên dùng "được", không dùng "bị").'},
-  {vi:'Trước đây ông cho rằng đi Bắc Cực không phải chuyện của người thường, nhưng người vợ xuất thân phóng viên lại khích ông tự lái xe lên đường.',zh:'以前他认为去北极不是普通人的事，可是记者出身的妻子却鼓动他自驾出发。',py:'Yǐqián tā rènwéi qù Běijí bú shì pǔtōng rén de shì, kěshì jìzhě chūshēn de qīzi què gǔdòng tā zìjià chūfā.',goiY:['出身 = xuất thân','鼓动 = khích, động viên','却 = lại'],giai:'记者出身的妻子: "nghề + 出身" làm định ngữ → "người vợ vốn là phóng viên"; 可是……却 nhấn sự trái ngược.'},
-  {vi:'Theo sách ghi chép, tổ tiên người Inuit từng gặp phải những tai ương khó mà vượt qua, vậy mà vẫn sống sót một cách kỳ diệu giữa giá rét.',zh:'书中记载，因纽特人的祖先遭遇过难以度过的灾难，却在严寒中奇迹般地生存了下来。',py:'Shū zhōng jìzǎi, Yīnniǔtèrén de zǔxiān zāoyùguo nányǐ dùguò de zāinàn, què zài yánhán zhōng qíjì bān de shēngcún le xiàlái.',goiY:['记载 = ghi chép','遭遇 = gặp phải','难以 = khó mà','灾难 = tai ương'],giai:'灾难 dịch "tai ương / thảm họa", KHÔNG dịch "tai nạn"; 难以度过的 là định ngữ: "khó mà vượt qua".'},
-  {vi:'Đến Bắc Cực, họ kinh ngạc phát hiện thực tế và sách vở khác nhau lớn đến vậy, thanh niên ai cũng mặc quần áo thời thượng.',zh:'到了北极，他们惊奇地发现，现实和书中的差别竟如此之大，年轻人都穿着时髦的衣裳。',py:'Dàole Běijí, tāmen jīngqí de fāxiàn, xiànshí hé shū zhōng de chābié jìng rúcǐ zhī dà, niánqīngrén dōu chuānzhe shímáo de yīshang.',goiY:['惊奇地发现 = kinh ngạc phát hiện','差别 = khác biệt','竟 = vậy mà','衣裳 = quần áo'],giai:'竟如此之大 = "vậy mà lớn đến thế" (bất ngờ); 如此之 + Adj là văn viết, dịch "đến vậy / đến thế".'},
-  {vi:'Bản năng nghề nghiệp của phóng viên khiến ông nảy sinh một sự thôi thúc: dùng ảnh cho người đời thấy quá khứ và hiện tại của Bắc Cực cách xa nhau đến nhường nào.',zh:'记者的职业本能让他产生了一种冲动，要用照片告诉世人北极的过去和现在相差多么遥远。',py:'Jìzhě de zhíyè běnnéng ràng tā chǎnshēngle yì zhǒng chōngdòng, yào yòng zhàopiàn gàosu shìrén Běijí de guòqù hé xiànzài xiāngchà duōme yáoyuǎn.',goiY:['本能 = bản năng','冲动 = sự thôi thúc','相差 = cách nhau'],giai:'冲动 ở đây là danh từ tích cực "sự thôi thúc", không dịch "bốc đồng"; 多么 + Adj trong câu cảm thán → "đến nhường nào".'},
-  {vi:'Ông không còn bận tâm đến muôn loài động thực vật kỳ lạ, vì ông biết cứu vãn những giá trị nhân văn đang biến mất là việc không thể chậm trễ.',zh:'他不再在意千奇百怪的动植物，因为他知道抢救正在消失的人文刻不容缓。',py:'Tā bú zài zàiyì qiānqí-bǎiguài de dòng-zhíwù, yīnwèi tā zhīdào qiǎngjiù zhèngzài xiāoshī de rénwén kèbùrónghuǎn.',goiY:['在意 = bận tâm','抢救 = cứu vãn','刻不容缓 = không thể chậm trễ'],giai:'Chủ ngữ của 刻不容缓 là cả cụm 抢救……人文; tiếng Việt thêm "là việc…" cho tự nhiên. 抢救 ở đây dịch "cứu vãn", không dịch "cấp cứu".'},
-  {vi:'Đi về Bắc Cực mười bảy lần tốn kém rất nhiều, họ chỗ nào cũng tính toán chi li, để khoản dành dụm nhiều năm khỏi bị tiêu sạch trong chốc lát.',zh:'往返北极十七次支出很大，他们处处精打细算，免得多年的储蓄一下子就花光了。',py:'Wǎngfǎn Běijí shíqī cì zhīchū hěn dà, tāmen chùchù jīngdǎ-xìsuàn, miǎnde duō nián de chǔxù yíxiàzi jiù huāguāng le.',goiY:['支出 = chi phí','精打细算 = tính toán chi li','免得 = để khỏi','储蓄 = tiền dành dụm'],giai:'免得 đứng đầu vế cuối, dịch "để khỏi / kẻo"; 一下子就 = "chốc lát đã…".'},
-  {vi:'Cho dù băng qua vùng không người, họ cũng chỉ thuê xe rẻ nhất; ốm thì dùng thuốc mang theo, bữa ăn thường tạm bợ cho qua; cuộc sống gian khổ nhưng rất hạnh phúc.',zh:'即使穿越无人区，他们也只租最便宜的车；生病了自带药品，吃饭时常将就将就，日子艰苦却很幸福。',py:'Jíshǐ chuānyuè wúrénqū, tāmen yě zhǐ zū zuì piányi de chē; shēngbìngle zì dài yàopǐn, chīfàn shícháng jiāngjiu jiāngjiu, rìzi jiānkǔ què hěn xìngfú.',goiY:['即使……也…… = cho dù… cũng…','穿越 = băng qua','时常 = thường','将就将就 = tạm bợ cho qua'],giai:'Câu dài chia bằng dấu ；— dịch từng ý rồi nối lại; 将就将就 (lặp ABAB) mang sắc thái "qua loa cho xong", dịch "tạm bợ cho qua".'}
+  {vi:'Lần đầu nhìn thấy núi tuyết gần xích đạo, tôi xúc động đến mức khó mà diễn tả được.',zh:'第一次看到赤道附近的雪山时，我激动得难以形容。',py:'Dì-yī cì kàndào chìdào fùjìn de xuěshān shí, wǒ jīdòng de nányǐ xíngróng.',goiY:['赤道 = xích đạo','激动得…… = xúc động đến mức…','难以形容 = khó mà diễn tả'],giai:'Adj + 得 + 难以 + V: "… đến mức khó mà …"; 难以形容 dịch "không sao tả xiết / khó mà diễn tả".'},
+  {vi:'Thị trấn nhỏ này mấy năm trước gặp phải một trận động đất lớn, nhưng người dân không bị thảm hoạ quật ngã, đã dựng lại nhà cửa từng căn một.',zh:'这个小镇几年前遭遇了一场大地震，可是人们没有被灾难打倒，把房子一座座重新盖了起来。',py:'Zhège xiǎozhèn jǐ nián qián zāoyùle yì chǎng dà dìzhèn, kěshì rénmen méiyǒu bèi zāinàn dǎdǎo, bǎ fángzi yí zuòzuò chóngxīn gàile qǐlái.',goiY:['遭遇 = gặp phải (điều bất lợi)','灾难 = thảm hoạ','一座座 = từng căn một'],giai:'遭遇 + tai hoạ dịch "gặp phải"; 灾难 là "thảm hoạ", không phải "tai nạn"; N + 一座座 + V = "từng … một" (số lượng từ lặp làm trạng ngữ).'},
+  {vi:'Trong sách cổ có ghi chép rằng nơi này từng có hai năm liền mất mùa, rất nhiều người vì đói mà phải rời bỏ quê hương.',zh:'古书中记载，这个地方曾经连续两年没有收成，很多人因为饥饿离开了家乡。',py:'Gǔshū zhōng jìzǎi, zhège dìfang céngjīng liánxù liǎng nián méiyǒu shōucheng, hěn duō rén yīnwèi jī\'è líkāile jiāxiāng.',goiY:['记载 = ghi chép','收成 = mùa màng, thu hoạch','饥饿 = đói (văn viết)'],giai:'古书中记载 dịch "sách cổ có ghi chép rằng…"; 没有收成 = mất mùa.'},
+  {vi:'Cuối tuần ra biển dạo một chút có thể giải toả hết áp lực của cả tuần.',zh:'周末去海边走走，能把一个星期的压力都释放出来。',py:'Zhōumò qù hǎibiān zǒuzou, néng bǎ yí ge xīngqī de yālì dōu shìfàng chūlái.',goiY:['走走 = đi dạo một chút','释放压力 = giải toả áp lực'],giai:'释放 + 压力 dịch "giải toả", không dịch "phóng thích"; động từ lặp 走走 = làm nhẹ nhàng, một chút.'},
+  {vi:'Họ làm chuyên đề về Bắc Cực suốt ba năm, những bức ảnh từng tấm một đều khiến người xem kinh ngạc.',zh:'他们做了三年的北极专题，那一张张照片都让看的人感到很惊奇。',py:'Tāmen zuòle sān nián de Běijí zhuāntí, nà yì zhāngzhāng zhàopiàn dōu ràng kàn de rén gǎndào hěn jīngqí.',goiY:['专题 = chuyên đề','一张张 = từng tấm một','惊奇 = kinh ngạc'],giai:'那一张张照片 nhấn mạnh từng tấm, tấm nào cũng…; 做专题 = làm chuyên đề.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1853,159 +1767,133 @@ var speakingData = {
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — 听力 (hội thoại ngắn + đoạn nói)
-// Sách HSK 6 không có sách bài tập nghe: tự soạn theo chủ đề bài 14.
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — câu tự soạn (sách HSK 6 không có sách bài tập nghe), mỗi câu một tình huống mới
+// ══════════════════════════════════════════
 var listenExamData = {
-  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, ' +
-         'trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
-  source: 'Soạn theo dạng đề HSK 6 · chủ đề bài 14',
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 14',
   items: [
-    {n:1,
-     lines:[{sp:'女',zh:'听说你辞职了？那么好的工作，多可惜啊！'},
-            {sp:'男',zh:'这几年我身心疲惫，想趁年轻出去走走，开拓一下新的生活。'}],
-     q:'男的为什么辞职？',qvn:'Vì sao người đàn ông nghỉ việc?',
-     opts:['工资太低','和同事关系不好','身心疲惫，想换一种生活','公司倒闭了'],ans:2,
-     why:'Anh ấy nói 身心疲惫，想……开拓一下新的生活 — mệt mỏi, muốn mở ra cuộc sống mới. Không nhắc gì đến lương hay đồng nghiệp.',
-     words:['疲惫','开拓']},
-
-    {n:2,
-     lines:[{sp:'男',zh:'这次去北极，你们住在哪儿？是雪屋吗？'},
-            {sp:'女',zh:'哪儿啊！当地人家家屋内温暖如春，家电齐全，还能上网呢。'}],
-     q:'关于北极人的生活，可以知道什么？',qvn:'Về cuộc sống của người Bắc Cực, có thể biết điều gì?',
-     opts:['生活条件很现代','还住在雪屋里','不能上网','没有电'],ans:0,
-     why:'哪儿啊 phủ định việc ở nhà tuyết; 温暖如春，家电齐全，还能上网 → điều kiện sống rất hiện đại.',
-     words:[]},
-
-    {n:3,
-     lines:[{sp:'女',zh:'你怎么突然想去学摄影了？'},
-            {sp:'男',zh:'都是我姐鼓动的，她说我头脑灵活，适合做摄影记者。'}],
-     q:'男的为什么去学摄影？',qvn:'Vì sao người đàn ông đi học nhiếp ảnh?',
-     opts:['他从小就喜欢摄影','公司要求他学','他想当画家','姐姐鼓动他去学'],ans:3,
-     why:'都是我姐鼓动的 = đều do chị tôi khích. Các phương án khác không được nhắc tới.',
-     words:['鼓动','头脑']},
-
-    {n:4,
-     lines:[{sp:'男',zh:'这个月的支出又超了，怎么办？'},
-            {sp:'女',zh:'以后咱们得精打细算了，能在家做饭就别去饭馆，免得储蓄越来越少。'}],
-     q:'女的建议怎么做？',qvn:'Người phụ nữ đề nghị làm gì?',
-     opts:['多去饭馆吃饭','节省开支，多在家做饭','把储蓄都花掉','找一份新工作'],ans:1,
-     why:'得精打细算了，能在家做饭就别去饭馆 → tiết kiệm, nấu ăn ở nhà; 免得储蓄越来越少 là mục đích.',
-     words:['支出','精打细算','免得','储蓄']},
-
-    {n:5,
-     lines:[{sp:'女',zh:'这家旅馆条件不太好，房间又小又旧。'},
-            {sp:'男',zh:'附近就这一家了，咱们将就着住一晚吧，明天再换。'}],
-     q:'男的是什么意思？',qvn:'Ý người đàn ông là gì?',
-     opts:['这家旅馆很好','马上换一家','回家住','今晚先在这儿住'],ans:3,
-     why:'将就着住一晚 = ở tạm một đêm; 明天再换 → hôm nay cứ ở đây đã.',
-     words:['将就']},
-
-    {n:6,
-     lines:[{sp:'男',zh:'王老师，这些老歌现在还有人会唱吗？'},
-            {sp:'女',zh:'会唱的老人越来越少了，所以把它们记载下来刻不容缓。'}],
-     q:'女的认为应该怎么做？',qvn:'Người phụ nữ cho rằng nên làm gì?',
-     opts:['尽快把老歌记载下来','让老人多唱歌','不用管这些老歌','去学新歌'],ans:0,
-     why:'把它们记载下来刻不容缓 → phải ghi chép lại ngay, không thể chậm trễ.',
-     words:['记载','刻不容缓']},
-
-    {n:7,
-     lines:[{sp:'女',zh:'你看了那张照片吗？北极熊瘦得皮包骨头。'},
-            {sp:'男',zh:'看了，真令人难以相信。冰越来越少，它们很难捕捉到食物了。'}],
-     q:'北极熊为什么很瘦？',qvn:'Vì sao gấu Bắc Cực rất gầy?',
-     opts:['生病了','天气太热','很难捕捉到食物','被人捕捉了'],ans:2,
-     why:'冰越来越少，它们很难捕捉到食物了 — băng ít đi nên khó bắt được thức ăn. "被人捕捉了" là bẫy dùng lại từ 捕捉.',
-     words:['北极','捕捉']},
-
-    {n:8,
-     lines:[{sp:'男',zh:'有一对夫妇，退休以后没有在家享受生活，而是背着电饭锅，开车穿越了大半个中国。他们处处精打细算，住最便宜的旅馆，自己做饭，时常将就将就就是一餐。有人说他们太辛苦了，他们却说：“日子艰苦是艰苦，可是能自己支配自己的时间，我们觉得很幸福。”'}],
-     q:'这对夫妇觉得自己的生活怎么样？',qvn:'Đôi vợ chồng này thấy cuộc sống của mình thế nào?',
-     opts:['太辛苦，想回家','虽然艰苦但很幸福','很无聊','钱不够用，很后悔'],ans:1,
-     why:'Câu then chốt ở cuối: 日子艰苦是艰苦，可是……我们觉得很幸福 (A 是 A, 可是… = nhượng bộ rồi chuyển ý). "太辛苦" là ý kiến của người khác.',
-     words:['夫妇','穿越','精打细算','时常','将就','支配']}
+    {
+      n: 1,
+      lines: [
+        {sp:'女',zh:'这盒月饼怎么这么贵？'},
+        {sp:'男',zh:'月饼不贵，贵的是包装，你看这一层层的盒子，比月饼还重。'}
+      ],
+      q: '男的认为月饼为什么贵？',
+      qvn: 'Người đàn ông cho rằng vì sao bánh trung thu đắt?',
+      opts: ['月饼很大','包装太好了','是名牌','用的材料好'],
+      ans: 1,
+      why: '贵的是包装，一层层的盒子比月饼还重 → đắt vì bao bì; 一层层 = hết lớp này đến lớp khác.',
+      words: ['包装']
+    },
+    {
+      n: 2,
+      lines: [
+        {sp:'男',zh:'你看完那部电影了吗？'},
+        {sp:'女',zh:'看完了。最后的结果谁也想不到，我到现在都难以相信。'}
+      ],
+      q: '女的觉得电影最后怎么样？',
+      qvn: 'Người phụ nữ thấy đoạn cuối phim thế nào?',
+      opts: ['很普通','很好笑','太长了','让人很意外'],
+      ans: 3,
+      why: '谁也想不到，难以相信 → kết thúc bất ngờ, khó tin.',
+      words: ['难以']
+    },
+    {
+      n: 3,
+      lines: [
+        {sp:'女',zh:'你怎么把钱包放在衣服里面的口袋里？'},
+        {sp:'男',zh:'车上人多，放在里面安全，免得被人偷了。'}
+      ],
+      q: '男的为什么这么做？',
+      qvn: 'Vì sao người đàn ông làm vậy?',
+      opts: ['怕钱包丢了','衣服口袋大','习惯了','要坐很久的车'],
+      ans: 0,
+      why: '免得被人偷了 = để khỏi bị móc túi → sợ mất ví.',
+      words: ['免得']
+    },
+    {
+      n: 4,
+      lines: [
+        {sp:'男',zh:'你们夫妇俩工资都不高，怎么这么快就买房了？'},
+        {sp:'女',zh:'我们结婚以后一直精打细算，五年的储蓄加上父母的帮助才够。'}
+      ],
+      q: '他们是怎么买的房？',
+      qvn: 'Họ mua nhà bằng cách nào?',
+      opts: ['借了很多钱','中了大奖','靠储蓄和父母帮助','公司送的'],
+      ans: 2,
+      why: '五年的储蓄加上父母的帮助才够 → nhờ tiền tiết kiệm và bố mẹ giúp.',
+      words: ['夫妇','精打细算','储蓄']
+    },
+    {
+      n: 5,
+      lines: [
+        {sp:'女',zh:'我们去的那个地方没有饭馆，吃饭怎么办？'},
+        {sp:'男',zh:'带点儿方便面吧，将就几天就回来了。'}
+      ],
+      q: '男的是什么意思？',
+      qvn: 'Ý người đàn ông là gì?',
+      opts: ['不去了','先吃方便面应付几天','饭馆很贵','要自己做饭'],
+      ans: 1,
+      why: '将就几天 = tạm bợ vài ngày → mang mì ăn liền ăn tạm.',
+      words: ['将就']
+    },
+    {
+      n: 6,
+      lines: [
+        {sp:'男',zh:'你脸色怎么这么差？'},
+        {sp:'女',zh:'昨天吃了路边的海鲜，腹泻了一晚上，现在一点儿力气也没有。'}
+      ],
+      q: '女的怎么了？',
+      qvn: 'Người phụ nữ bị làm sao?',
+      opts: ['没睡好','感冒了','太饿了','拉肚子了'],
+      ans: 3,
+      why: '腹泻 = 拉肚子 (tiêu chảy). Cô ấy không có sức vì đau bụng, không phải vì đói.',
+      words: ['腹泻']
+    },
+    {
+      n: 7,
+      lines: [
+        {sp:'女',zh:'你哥哥真的辞职去学画画儿了？'},
+        {sp:'男',zh:'是啊，大家都劝他别冲动，可他说这是他从小的梦想，毅然辞职了。'}
+      ],
+      q: '关于男的的哥哥，可以知道什么？',
+      qvn: 'Có thể biết gì về anh trai của người đàn ông?',
+      opts: ['被公司开除了','做事很冲动','为了梦想辞职','不喜欢画画儿'],
+      ans: 2,
+      why: '这是他从小的梦想，毅然辞职了 → nghỉ việc vì ước mơ. 别冲动 là lời người khác khuyên, không phải nhận xét anh ấy bốc đồng.',
+      words: ['冲动','毅然']
+    }
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 💬 TÌNH HUỐNG GIAO TIẾP
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
+// ══════════════════════════════════════════
 var situationData = {
-  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
-         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Mẹ dặn em trước chuyến đi dã ngoại cùng lớp ba ngày.',
-     a:{sp:'Mẹ',zh:'出门在外，药和充电宝都带上了吗？',vn:'Đi xa nhà, thuốc với sạc dự phòng mang theo chưa con?'},
-     need:['Dùng 免得','Hứa sẽ liên lạc với mẹ'],
-     sample:'都带上了。我到了以后马上给您打电话，免得您担心。',
-     samplePy:'Dōu dàishang le. Wǒ dàole yǐhòu mǎshàng gěi nín dǎ diànhuà, miǎnde nín dānxīn.',
-     sampleVn:'Con mang đủ rồi ạ. Đến nơi con sẽ gọi ngay cho mẹ, kẻo mẹ lo.',
-     tip:'免得 đứng đầu vế SAU, nêu điều muốn tránh (您担心); vế trước là việc mình sẽ làm.'},
-
-    {scene:'Nhóm em đi phượt, nhà nghỉ còn đúng một phòng nhỏ, bạn cằn nhằn.',
-     a:{sp:'Bạn',zh:'这个房间又小又旧，连窗户都没有，怎么住啊？',vn:'Phòng này vừa nhỏ vừa cũ, đến cửa sổ cũng không có, ở kiểu gì đây?'},
-     need:['Dùng 将就','Đưa ra lý do thuyết phục bạn'],
-     sample:'天已经黑了，附近又没有别的旅馆，咱们将就一晚吧，明天再换。',
-     samplePy:'Tiān yǐjīng hēi le, fùjìn yòu méiyǒu biéde lǚguǎn, zánmen jiāngjiu yì wǎn ba, míngtiān zài huàn.',
-     sampleVn:'Trời tối rồi, gần đây lại chẳng có nhà nghỉ nào khác, mình ở tạm một đêm đi, mai đổi chỗ khác.',
-     tip:'将就 + thời gian (一晚 / 两天) hoặc 将就着 + V (将就着住); 又…… nêu thêm lý do.'},
-
-    {scene:'Bạn thân rủ em cuối tuần đi mua sắm, nhưng em đang để dành tiền mua xe đạp.',
-     a:{sp:'Bạn',zh:'商场打折，周末一起去逛逛吧！',vn:'Trung tâm thương mại đang giảm giá, cuối tuần đi dạo cùng nhau đi!'},
-     need:['Dùng 精打细算 hoặc 开支','Từ chối khéo'],
-     sample:'我最近在存钱买自行车，得精打细算，能省的开支都要省。这次就不去了，下次吧。',
-     samplePy:'Wǒ zuìjìn zài cún qián mǎi zìxíngchē, děi jīngdǎ-xìsuàn, néng shěng de kāizhī dōu yào shěng. Zhè cì jiù bú qù le, xià cì ba.',
-     sampleVn:'Dạo này tớ đang để dành tiền mua xe đạp, phải tính toán chi li, khoản chi nào bớt được thì bớt. Lần này tớ không đi đâu, để lần sau nhé.',
-     tip:'得 (děi) + 精打细算 = phải tính toán chi li; 能……的……都要…… = cái gì … được đều phải …; từ chối nhẹ bằng 这次就不……了，下次吧.'},
-
-    {scene:'Thầy chủ nhiệm hỏi vì sao em đang học tốt môn Toán lại muốn chuyển sang lớp chuyên Sinh.',
-     a:{sp:'Thầy chủ nhiệm',zh:'你数学成绩这么好，为什么突然要转到生物班？',vn:'Toán của em tốt thế, sao tự nhiên lại muốn chuyển sang lớp Sinh?'},
-     need:['Dùng 毅然 hoặc 在意','Nói rõ mong muốn của bản thân'],
-     sample:'老师，我从小就对动植物特别感兴趣。别人怎么说我不在意，我想做自己真正喜欢的事，所以毅然决定转班。',
-     samplePy:'Lǎoshī, wǒ cóngxiǎo jiù duì dòng-zhíwù tèbié gǎn xìngqù. Biérén zěnme shuō wǒ bú zàiyì, wǒ xiǎng zuò zìjǐ zhēnzhèng xǐhuan de shì, suǒyǐ yìrán juédìng zhuǎn bān.',
-     sampleVn:'Thưa thầy, từ nhỏ em đã đặc biệt thích động thực vật. Người khác nói gì em không bận tâm, em muốn làm việc mình thật sự yêu thích, nên em kiên quyết chuyển lớp ạ.',
-     tip:'毅然 + 决定 / 离开 / 放弃: quyết định lớn, dứt khoát; 在意 hay dùng ở dạng phủ định 不在意.'},
-
-    {scene:'Em họ hỏi em về kỳ nghỉ hè đi Hà Giang cùng bố mẹ.',
-     a:{sp:'Em họ',zh:'听说你们去了河江，那儿好玩儿吗？',vn:'Nghe nói nhà anh đi Hà Giang, ở đó vui không?'},
-     need:['Dùng 惊奇 hoặc 差别','So sánh tưởng tượng với thực tế'],
-     sample:'好玩儿极了！我原来以为那儿很落后，到了才惊奇地发现，和我想象的差别特别大，很多村子都能上网了。',
-     samplePy:'Hǎowánr jí le! Wǒ yuánlái yǐwéi nàr hěn luòhòu, dàole cái jīngqí de fāxiàn, hé wǒ xiǎngxiàng de chābié tèbié dà, hěn duō cūnzi dōu néng shàngwǎng le.',
-     sampleVn:'Vui cực! Trước anh tưởng ở đó lạc hậu lắm, đến nơi mới ngạc nhiên phát hiện khác xa với tưởng tượng, nhiều bản đã có mạng internet rồi.',
-     tip:'原来以为……，到了才发现…… = tưởng là … hóa ra …; 惊奇地 + 发现 (có 地); A 和 B 的差别很大.'}
+    {scene:'Nhóm em vừa làm xong bài tập nhóm, một bạn muốn gửi ngay cho cô giáo mà không kiểm tra lại.',a:{sp:'Bạn',zh:'写完了！我现在就发给老师吧。',vn:'Xong rồi! Tớ gửi cho cô luôn nhé.'},need:['Dùng 免得','Khuyên bạn làm gì trước khi gửi'],sample:'先别发，现在就发未免太着急了。咱们再一起检查一遍，免得有错字被老师批评。',samplePy:'Xiān bié fā, xiànzài jiù fā wèimiǎn tài zháojí le. Zánmen zài yìqǐ jiǎnchá yí biàn, miǎnde yǒu cuòzì bèi lǎoshī pīpíng.',sampleVn:'Khoan gửi đã, gửi ngay bây giờ thì vội quá. Mình cùng kiểm tra lại một lượt, kẻo có chữ sai lại bị cô phê bình.',tip:'免得 + điều muốn tránh, đứng ở vế sau; 未免 (bài 4) = thì có phần… quá.'},
+    {scene:'Bạn hỏi em cảm giác lần đầu tiên được nhìn thấy tuyết.',a:{sp:'Bạn',zh:'听说你第一次看到雪了，感觉怎么样？',vn:'Nghe nói cậu lần đầu được thấy tuyết, cảm giác thế nào?'},need:['Dùng 难以','Dùng một số lượng từ lặp (一片片 / 一个个…)'],sample:'那种感觉真是难以形容！一片片雪花从天上飘下来，我高兴得在雪地里跑了好久。',samplePy:'Nà zhǒng gǎnjué zhēn shì nányǐ xíngróng! Yí piànpiàn xuěhuā cóng tiān shang piāo xiàlái, wǒ gāoxìng de zài xuědì li pǎole hǎojiǔ.',sampleVn:'Cảm giác ấy thật khó tả! Từng bông tuyết bay xuống từ trên trời, tớ vui đến mức chạy mãi trên tuyết.',tip:'难以形容 = khó tả; 一片片 + N tả số nhiều, nối tiếp nhau.'},
+    {scene:'Bạn thân rủ em cuối tuần đi mua sắm, nhưng em đang để dành tiền mua xe đạp.',a:{sp:'Bạn',zh:'商场打折，周末一起去逛逛吧！',vn:'Trung tâm thương mại đang giảm giá, cuối tuần đi dạo cùng nhau đi!'},need:['Dùng 精打细算 hoặc 开支','Từ chối khéo'],sample:'不了，我在存钱买自行车呢，这个月的开支早就算好了，能省就省吧。下次我请你喝咖啡！',samplePy:'Bù le, wǒ zài cún qián mǎi zìxíngchē ne, zhège yuè de kāizhī zǎojiù suànhǎo le, néng shěng jiù shěng ba. Xià cì wǒ qǐng nǐ hē kāfēi!',sampleVn:'Thôi, tớ đang để dành tiền mua xe đạp, chi tiêu tháng này tớ tính sẵn cả rồi, bớt được chừng nào hay chừng nấy. Lần sau tớ mời cậu uống cà phê nhé!',tip:'开支 = khoản chi; 能省就省 = bớt được thì bớt; từ chối nhẹ bằng 不了 + hẹn lần sau.'},
+    {scene:'Thầy chủ nhiệm hỏi vì sao em đang học tốt môn Toán lại muốn chuyển sang lớp chuyên Sinh.',a:{sp:'Thầy chủ nhiệm',zh:'你数学成绩这么好，为什么突然要转到生物班？',vn:'Toán của em tốt thế, sao tự nhiên lại muốn chuyển sang lớp Sinh?'},need:['Dùng 毅然 hoặc 在意','Nói rõ mong muốn của bản thân'],sample:'老师，我从小就对动植物特别感兴趣。别人怎么说我不在意，我想做自己真正喜欢的事，所以毅然决定转班。',samplePy:'Lǎoshī, wǒ cóngxiǎo jiù duì dòng-zhíwù tèbié gǎn xìngqù. Biérén zěnme shuō wǒ bú zàiyì, wǒ xiǎng zuò zìjǐ zhēnzhèng xǐhuan de shì, suǒyǐ yìrán juédìng zhuǎn bān.',sampleVn:'Thưa thầy, từ nhỏ em đã đặc biệt thích động thực vật. Người khác nói gì em không bận tâm, em muốn làm việc mình thật sự yêu thích, nên em kiên quyết chuyển lớp ạ.',tip:'毅然 + 决定 / 离开 / 放弃: quyết định lớn, dứt khoát; 在意 hay dùng ở dạng phủ định 不在意.'},
+    {scene:'Em họ hỏi em về kỳ nghỉ đi vùng núi phía Bắc Việt Nam cùng bố mẹ.',a:{sp:'Em họ',zh:'听说你们去了越南北方的山区，那儿好玩儿吗？',vn:'Nghe nói nhà anh đi vùng núi phía Bắc, ở đó vui không?'},need:['Dùng 惊奇 hoặc 差别','So sánh tưởng tượng với thực tế'],sample:'好玩儿极了！我原来以为那儿很落后，到了才惊奇地发现，和我想象的差别特别大，很多村子都能上网了。',samplePy:'Hǎowánr jí le! Wǒ yuánlái yǐwéi nàr hěn luòhòu, dàole cái jīngqí de fāxiàn, hé wǒ xiǎngxiàng de chābié tèbié dà, hěn duō cūnzi dōu néng shàngwǎng le.',sampleVn:'Vui cực! Trước anh tưởng ở đó lạc hậu lắm, đến nơi mới ngạc nhiên phát hiện khác xa với tưởng tượng, nhiều bản đã có mạng internet rồi.',tip:'原来以为……，到了才发现…… = tưởng là … hóa ra …; 惊奇地 + 发现 (có 地); A 和 B 的差别很大.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 // 🎯 NÓI SAO CHO HAY — 得体 / 语体
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 var registerData = {
-  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
-         'HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
   items: [
-    {scene:'Em viết bài thuyết trình môn Địa lý về người Inuit.',
-     a:'因纽特人以前住雪屋、用长矛打猎，在严寒中顽强地生存了下来。',b:'那些人以前住在雪做的房子里，拿个长棍子打猎，冷得要命也没死。',better:'a',
-     why:'Bài thuyết trình cần từ ngữ chính xác, văn viết: 雪屋, 长矛, 严寒, 生存. 拿个长棍子, 冷得要命, 也没死 là khẩu ngữ, nghe thiếu nghiêm túc.'},
-
-    {scene:'Em nhắn tin cho bạn thân sau chuyến đi dài.',
-     a:'本人旅途劳顿，身心疲惫，拟于明日恢复联络。',b:'累死我了，今天先睡了，明天再跟你聊！',better:'b',
-     why:'Nhắn tin với bạn thân dùng khẩu ngữ tự nhiên (累死我了); câu a dùng 本人, 拟于, 劳顿 — giọng công văn, quá trang trọng.'},
-
-    {scene:'Nhà trường ra thông báo tiết kiệm điện nước.',
-     a:'咱们学校电费水费太多了，大家省着点儿用吧。',b:'为节约学校开支，请全体师生注意节约用水用电。',better:'b',
-     why:'Thông báo chính thức: 为 + mục đích, 开支, 全体师生, 请……注意…… là văn viết trang trọng; câu a giống lời nói miệng.'},
-
-    {scene:'Em viết bài giới thiệu nhân vật cho báo tường: một thầy giáo về hưu đi chụp ảnh khắp đất nước.',
-     a:'退休以后，他毅然背起相机，走遍了大半个中国，执着地用镜头记录正在消失的老房子。',b:'退休以后，他背个相机到处跑，老是拍那些快没了的旧房子。',better:'a',
-     why:'Bài viết cho báo tường nên dùng văn viết có sức gợi: 毅然, 执着地, 用镜头记录. Câu b (背个, 到处跑, 老是, 快没了) là lời kể miệng.'},
-
-    {scene:'Bạn cùng phòng hỏi có nên mua đôi giày đắt tiền không.',
-     a:'鉴于你目前的经济状况，建议你合理支配资金，暂缓购买。',b:'这个月生活费还剩多少？不急的话先别买，将就着穿旧的吧。',better:'b',
-     why:'Góp ý với bạn cùng phòng dùng khẩu ngữ gần gũi (先别买, 将就着穿); câu a (鉴于, 建议, 暂缓购买) nghe như văn bản tư vấn tài chính.'},
-
-    {scene:'Em viết lời kết cho bài luận "Chúng ta sống vì điều gì?".',
-     a:'所以嘛，人活着就是要干自己想干的事儿，别想那么多！',b:'人生的意义，或许就在于能够自己支配自己的生命，为世界留下些许印迹。',better:'b',
-     why:'Kết bài luận cần câu văn viết, có chiều sâu: 在于, 支配自己的生命, 留下印迹. 所以嘛, 事儿, 别想那么多 là khẩu ngữ.'}
+    {scene:'Em viết bài thuyết trình môn Địa lý về Bắc Cực.',a:'北极的冬天有半年那么长，严寒和风暴是当地人每年都要面对的困难。',b:'北极冬天冷得要命，老是下大雪，那儿的人可受罪了。',better:'a',why:'Bài thuyết trình cần văn viết, chính xác: 严寒, 风暴, 面对……困难. Câu b (冷得要命, 老是下大雪, 可受罪了) là khẩu ngữ khi kể chuyện.'},
+    {scene:'Em nhắn tin cho bạn thân sau chuyến đi dài.',a:'本人旅行刚结束，十分疲惫，明日再与你联系。',b:'累死我了，今天先睡了，明天再跟你聊！',better:'b',why:'Nhắn tin với bạn thân dùng khẩu ngữ tự nhiên (累死我了, 跟你聊); câu a dùng 本人, 明日, 与你联系 — giọng công văn, quá trang trọng.'},
+    {scene:'Nhà trường ra thông báo tiết kiệm điện nước.',a:'咱们学校电费水费太多了，大家省着点儿用吧。',b:'为节约学校开支，请全校同学注意节约用水用电。',better:'b',why:'Thông báo chính thức: 为 + mục đích, 开支, 请……注意…… là văn viết trang trọng; câu a giống lời nói miệng.'},
+    {scene:'Em viết bài giới thiệu nhân vật cho báo tường: một thầy giáo đã nghỉ hưu đi chụp ảnh khắp đất nước.',a:'六十岁那年，他毅然开始学习摄影，走遍了大半个中国，执着地用镜头记录正在消失的老房子。',b:'六十岁那年，他学起了拍照，到处跑，老是拍那些快没了的旧房子。',better:'a',why:'Bài viết cho báo tường nên dùng văn viết có sức gợi: 毅然, 执着地, 用镜头记录. Câu b (到处跑, 老是, 快没了) là lời kể miệng.'},
+    {scene:'Bạn cùng phòng hỏi có nên mua đôi giày đắt tiền không.',a:'这个月生活费还剩多少？不是非买不可的话先别买，将就着穿旧的吧。',b:'鉴于你目前的经济状况，建议你合理支配生活费，晚些时候再买。',better:'a',why:'Góp ý với bạn cùng phòng dùng khẩu ngữ gần gũi (先别买, 将就着穿); câu b (鉴于 — bài 12, 建议, 合理支配) nghe như văn bản tư vấn tài chính.'},
+    {scene:'Em viết lời kết cho bài luận "Chúng ta sống vì điều gì?".',a:'所以嘛，人这一辈子就是要干自己想干的事儿，别想那么多！',b:'人生的意义，或许就在于能够自己支配自己的生命，为世界留下一些印迹。',better:'b',why:'Kết bài luận cần câu văn viết, có chiều sâu: 在于, 支配自己的生命, 留下印迹. 所以嘛, 事儿, 别想那么多 là khẩu ngữ.'}
   ]
 };
 

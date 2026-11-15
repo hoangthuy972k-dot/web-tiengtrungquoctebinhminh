@@ -1533,83 +1533,51 @@ var hvBridgeData = {
 // GHÉP TỪ — cụm trong bài khoá + 练习
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'厌倦了',right:'宠物的生活'},
-  {left:'证明',right:'自己的实力'},
-  {left:'答应',right:'山神的条件'},
-  {left:'实施',right:'计划'},
-  {left:'乘',right:'大象不注意'},
-  {left:'猛烈地',right:'打喷嚏'},
-  {left:'用蔑视的眼光',right:'盯着它'},
-  {left:'愚蠢的',right:'家伙'},
-  {left:'耍',right:'流氓'},
-  {left:'落入',right:'巨网'},
+  {left:'遵守',right:'承诺'},
+  {left:'摆脱',right:'烦恼'},
+  {left:'盲目',right:'跟风'},
+  {left:'实施',right:'新计划'},
+  {left:'锋利的',right:'刀'},
+  {left:'蔑视的',right:'眼光'},
+  {left:'举世',right:'瞩目'},
   {left:'不顾',right:'一切'},
-  {left:'摆脱',right:'困境'},
-  {left:'毫无',right:'抵抗能力'},
-  {left:'重要',right:'部位'},
-  {left:'悲惨的',right:'样子'},
-  {left:'锋利的',right:'牙齿'},
-  {left:'耗费',right:'力气'},
-  {left:'创造',right:'举世瞩目的成就'},
-  {left:'化敌',right:'为友'},
-  {left:'遵守',right:'承诺'}
+  {left:'耗费',right:'不少时间'},
+  {left:'夕阳',right:'西下'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ
+// ĐIỀN TỪ — câu mới (không chép bài khoá / SGK), mỗi câu một tình huống; ôn xoáy ốc từ + ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'老鼠',blank:'厌倦',post:'了宠物的生活，于是向山神请假。',hint:'(chán ngán)',ans:'厌倦'},
-  {pre:'他总是在背后说别人坏话，同学们都很',blank:'厌恶',post:'他。',hint:'(chán ghét)',ans:'厌恶'},
-  {pre:'',blank:'倘若',post:'你还想回来，必须战胜大象，否则，你就永远留在动物世界吧。',hint:'(nếu như — văn viết)',ans:'倘若',exp:'倘若…，… = nếu như (văn viết, như 如果).'},
-  {pre:'走出教室以后，我才',blank:'发觉',post:'手机忘在桌子上了。',hint:'(nhận ra)',ans:'发觉'},
-  {pre:'他一向说话算数，从来没有违背过自己的',blank:'承诺',post:'。',hint:'(lời hứa)',ans:'承诺'},
-  {pre:'选专业是大事，千万不能',blank:'草率',post:'决定。',hint:'(vội vàng, qua loa)',ans:'草率'},
-  {pre:'它是那么弱小，丝毫没有',blank:'对抗',post:'大象的力量。',hint:'(chống lại, đối đầu)',ans:'对抗'},
-  {pre:'这道拿手菜我是第一次',blank:'尝试',post:'，没想到大家都说好吃。',hint:'(thử)',ans:'尝试'},
-  {pre:'网上的消息不一定都是真的，千万别',blank:'盲目',post:'相信。',hint:'(mù quáng)',ans:'盲目'},
-  {pre:'我可以',blank:'乘',post:'大象不注意，进到大象鼻子里去。',hint:'(nhân lúc)',ans:'乘',exp:'乘 + cơ hội/lúc = nhân lúc (như 趁): 乘大象不注意.'},
-  {pre:'他一口气跑上了十楼，站在门口直',blank:'喘气',post:'。',hint:'(thở dốc)',ans:'喘气'},
-  {pre:'孩子已经认识到错误了，你就',blank:'饶恕',post:'他这一次吧。',hint:'(tha thứ)',ans:'饶恕'},
-  {pre:'倘若你对一件事毫无兴趣，那么有人',blank:'强迫',post:'你做时，你会觉得痛苦。',hint:'(ép buộc)',ans:'强迫'},
-  {pre:'新的交通规定从下个月起正式',blank:'实施',post:'。',hint:'(thực thi)',ans:'实施'},
-  {pre:'我只想和她开个玩笑，',blank:'不料',post:'她却生气了。',hint:'(không ngờ)',ans:'不料',exp:'不料 = không ngờ (kết quả trái với dự tính), thường mở đầu vế sau: 不料她却生气了.'},
-  {pre:'下半场我们发起了',blank:'猛烈',post:'的进攻，终于攻入了一球。',hint:'(dữ dội)',ans:'猛烈'},
-  {pre:'老鼠像',blank:'子弹',post:'一样被射了出来。',hint:'(viên đạn)',ans:'子弹'},
-  {pre:'不要',blank:'蔑视',post:'任何一个对手，哪怕他看起来很弱小。',hint:'(coi thường)',ans:'蔑视'},
-  {pre:'你买的这件衣服真漂亮，你真有',blank:'眼光',post:'！',hint:'(con mắt, tầm nhìn)',ans:'眼光'},
-  {pre:'他一整天都',blank:'盯',post:'着电脑屏幕，眼睛都红了。',hint:'(nhìn chằm chằm)',ans:'盯'},
-  {pre:'听说有人虐待小动物，网友们都感到十分',blank:'愤怒',post:'。',hint:'(phẫn nộ)',ans:'愤怒'},
-  {pre:'我竟然把钥匙锁在了车里，真是太',blank:'愚蠢',post:'了。',hint:'(ngu ngốc)',ans:'愚蠢'},
-  {pre:'这个小',blank:'家伙',post:'才三岁，就会背二十首唐诗了。',hint:'(nhóc, thằng — khẩu ngữ)',ans:'家伙'},
-  {pre:'他骗了老人那么多钱，真是太',blank:'可恶',post:'了。',hint:'(đáng ghét)',ans:'可恶'},
-  {pre:'他一不高兴就',blank:'耍',post:'脾气，大家都不愿意跟他合作。',hint:'(giở — tính khí, trò)',ans:'耍'},
-  {pre:'几个小',blank:'流氓',post:'在路口欺负学生，被警察带走了。',hint:'(lưu manh)',ans:'流氓'},
-  {pre:'书包里的面包被压',blank:'扁',post:'了。',hint:'(bẹp)',ans:'扁'},
-  {pre:'我们坐在海边，静静地看着',blank:'夕阳',post:'慢慢落下。',hint:'(mặt trời chiều)',ans:'夕阳'},
-  {pre:'一不',blank:'留神',post:'，猫还会上老鼠的当。',hint:'(chú ý, coi chừng)',ans:'留神'},
-  {pre:'为了保护野生动物，这里已经禁止',blank:'打猎',post:'了。',hint:'(đi săn)',ans:'打猎'},
-  {pre:'他',blank:'不顾',post:'危险，跳进河里救起了落水的孩子。',hint:'(bất chấp)',ans:'不顾',exp:'不顾 + danh từ = bất chấp, không đoái hoài đến: 不顾危险.'},
-  {pre:'小鸟在网里拼命',blank:'挣扎',post:'，可怎么也飞不出去。',hint:'(vùng vẫy)',ans:'挣扎'}
+  {pre:'每天做一样的工作，他早就',blank:'厌倦',post:'了，很想换个环境。',hint:'(chán ngán)',ans:'厌倦',exp:'厌倦 = chán vì lặp đi lặp lại quá lâu (早就厌倦了). 厌恶 nặng hơn: ghê tởm, ghét cay ghét đắng.'},
+  {pre:'',blank:'倘若',post:'明天下大雨，运动会就改到下个星期举行。',hint:'(nếu như — văn viết)',ans:'倘若',exp:'倘若 = 如果 / 要是 nhưng trang trọng hơn; vế sau thường có 就 / 那么.'},
+  {pre:'走到半路，我才',blank:'发觉',post:'钥匙忘在家里了，只好又回去拿。',hint:'(phát hiện, nhận ra)',ans:'发觉',exp:'发觉 + sự việc = tự mình nhận ra điều trước đó không để ý; 才 nhấn mạnh nhận ra muộn.'},
+  {pre:'经理',blank:'承诺',post:'，只要大家按时完成任务，年底每人多发一个月工资。',hint:'(hứa, cam kết)',ans:'承诺',exp:'承诺 = hứa chính thức, có trách nhiệm (thường người có trách nhiệm hứa với tập thể); trang trọng hơn 答应.'},
+  {pre:'换工作是件大事，不能',blank:'草率',post:'决定，最好多听听家人的意见。',hint:'(qua loa, khinh suất)',ans:'草率',exp:'草率 + 决定 / 行动 = quyết vội vàng, thiếu suy nghĩ; trái với suy nghĩ cẩn thận.'},
+  {pre:'买东西不要',blank:'盲目',post:'相信广告，要想想自己真正需要什么。',hint:'(mù quáng)',ans:'盲目',exp:'盲目 + V = làm mà không suy xét, không có chủ kiến (盲目相信, 盲目跟风).'},
+  {pre:'他跑上六楼，累得直',blank:'喘气',post:'，半天说不出一句话。',hint:'(thở dốc)',ans:'喘气',exp:'累得直喘气 = mệt đến thở hổn hển; 直 + V = cứ … mãi.'},
+  {pre:'父母不应该',blank:'强迫',post:'孩子去学他们不喜欢的东西。',hint:'(ép buộc)',ans:'强迫',exp:'强迫 + người + V = ép ai làm gì trái ý muốn; 应该 / 不应该 + 强迫 nêu quan điểm.'},
+  {pre:'台风到来的那天，',blank:'猛烈',post:'的大风把路边的好几棵树都吹倒了。',hint:'(dữ dội)',ans:'猛烈',exp:'猛烈 tả sức mạnh dữ dội của gió, lửa, tấn công…; 猛烈的大风.'},
+  {pre:'那只猫',blank:'盯',post:'着桌上的鱼看了半天，就是不敢跳上去。',hint:'(nhìn chằm chằm)',ans:'盯',exp:'盯着 + vật / người = nhìn chằm chằm không rời mắt; luôn đi với 着.'},
+  {pre:'路上很滑，大家走路',blank:'留神',post:'点儿，别摔倒了。',hint:'(chú ý, coi chừng)',ans:'留神',exp:'留神 = để ý, coi chừng (khẩu ngữ); 留神点儿 là lời nhắc nhở.'},
+  {pre:'我正想给他打电话，',blank:'恰巧',post:'他先给我打过来了。',hint:'(vừa khéo, đúng lúc)',ans:'恰巧',exp:'恰巧 = vừa đúng lúc, tình cờ trùng hợp; đứng trước chủ ngữ hoặc động từ của vế sau.'},
+  {pre:'他花了好几年时间，终于',blank:'摆脱',post:'了这种坏习惯。',hint:'(thoát khỏi)',ans:'摆脱',exp:'摆脱 + điều xấu (坏习惯, 烦恼, 困难) = thoát khỏi; 终于 nhấn mạnh sau thời gian dài.'},
+  {pre:'才学了两个月汉语就想当翻译，你',blank:'未免',post:'太着急了吧？',hint:'(có phần, hơi quá)',ans:'未免',exp:'未免 + 太 + tính từ (tiêu cực) = có phần … quá, phê bình nhẹ nhàng; cuối câu hay thêm 吧.'},
+  {pre:'一下雨，路边卖伞的人就',blank:'乘机',post:'把伞卖得比平时贵了一倍。',hint:'(nhân cơ hội)',ans:'乘机',exp:'乘机 + V = nhân cơ hội đó mà làm gì; đứng ngay trước động từ, không mang tân ngữ 机会.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (乘机 · 不料 · 未免) ≥ 2 câu
+// SẮP XẾP CÂU — câu mới, chỉ một trật tự đúng
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['老鼠','乘机','跑进了','大象的','鼻子中','。'],ans:'老鼠乘机跑进了大象的鼻子中。',audio:'老鼠乘机跑进了大象的鼻子中。'},
-  {words:['对方守门员','救球脱手','，','我们','乘机','攻入一球','。'],ans:'对方守门员救球脱手，我们乘机攻入一球。',audio:'对方守门员救球脱手，我们乘机攻入一球。'},
-  {words:['妈妈不在家','，','孩子','乘机','玩起了','电脑游戏','。'],ans:'妈妈不在家，孩子乘机玩起了电脑游戏。',audio:'妈妈不在家，孩子乘机玩起了电脑游戏。'},
-  {words:['我只想','和她开个玩笑','，','不料','她却','生气了','。'],ans:'我只想和她开个玩笑，不料她却生气了。',audio:'我只想和她开个玩笑，不料她却生气了。'},
-  {words:['早上天气','还是好好的','，','不料','中午','下起了大雨','。'],ans:'早上天气还是好好的，不料中午下起了大雨。',audio:'早上天气还是好好的，不料中午下起了大雨。'},
-  {words:['它觉得','那样','未免','太过残忍','。'],ans:'它觉得那样未免太过残忍。',audio:'它觉得那样未免太过残忍。'},
-  {words:['这么小的屋子','一个月房租4500','，','价格','未免','太贵了','。'],ans:'这么小的屋子一个月房租4500，价格未免太贵了。',audio:'这么小的屋子一个月房租4500，价格未免太贵了。'},
-  {words:['大象','用蔑视的眼光','盯着','它','。'],ans:'大象用蔑视的眼光盯着它。',audio:'大象用蔑视的眼光盯着它。'},
-  {words:['它','不顾一切地','用力','挣扎','。'],ans:'它不顾一切地用力挣扎。',audio:'它不顾一切地用力挣扎。'},
-  {words:['大象现在','毫无','抵抗能力','。'],ans:'大象现在毫无抵抗能力。',audio:'大象现在毫无抵抗能力。'},
-  {words:['老鼠','几乎','耗费了','全部力气','。'],ans:'老鼠几乎耗费了全部力气。',audio:'老鼠几乎耗费了全部力气。'},
-  {words:['你化敌为友','，','创造了','举世瞩目的','成就','。'],ans:'你化敌为友，创造了举世瞩目的成就。',audio:'你化敌为友，创造了举世瞩目的成就。'},
-  {words:['恰巧','，','老鼠','看到了','这一切','。'],ans:'恰巧，老鼠看到了这一切。',audio:'恰巧，老鼠看到了这一切。'}
+  {words:['他','乘','大家','不注意','跑了','出去','。'],ans:'他乘大家不注意跑了出去。',audio:'他乘大家不注意跑了出去。'},
+  {words:['这件','衬衫','未免','太','贵','了','。'],ans:'这件衬衫未免太贵了。',audio:'这件衬衫未免太贵了。'},
+  {words:['这次比赛','耗费了','我','全部的','力气','。'],ans:'这次比赛耗费了我全部的力气。',audio:'这次比赛耗费了我全部的力气。'},
+  {words:['那是','一部','举世瞩目的','作品','。'],ans:'那是一部举世瞩目的作品。',audio:'那是一部举世瞩目的作品。'},
+  {words:['妹妹','被','一只','可恶的','蚊子','咬了','好几口','。'],ans:'妹妹被一只可恶的蚊子咬了好几口。',audio:'妹妹被一只可恶的蚊子咬了好几口。'},
+  {words:['这种','做法','毫无','意义','。'],ans:'这种做法毫无意义。',audio:'这种做法毫无意义。'},
+  {words:['他的','腿上','缠绕着','一条','长长的','绳子','。'],ans:'他的腿上缠绕着一条长长的绳子。',audio:'他的腿上缠绕着一条长长的绳子。'},
+  {words:['医生','检查了','他','受伤的','部位','。'],ans:'医生检查了他受伤的部位。',audio:'医生检查了他受伤的部位。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1617,73 +1585,41 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'一只老鼠突然从厨房里____了出来。',opts:['窜','盯','耍','乘'],ans:0,
-   exp:'Lao vụt ra (động vật chạy nhanh, lén lút) → 窜出来. 盯 là nhìn chằm chằm, 耍 là giở trò, 乘 là nhân lúc — không đi với 出来 theo nghĩa này.'},
-  {wrong:'每次小老鼠都能____猫的追赶。',opts:['摆脱','对抗','抵抗','饶恕'],ans:0,
-   exp:'Thoát khỏi sự truy đuổi → 摆脱追赶 (练习3 của sách). 对抗/抵抗 là chống lại (không nói 抵抗追赶), 饶恕 là tha thứ.'},
-  {wrong:'大象又悲伤又害怕，它觉得____越来越近了。',opts:['死亡','缺口','部位','良心'],ans:0,
-   exp:'Cái chết mỗi lúc một gần → 死亡越来越近. Các từ còn lại (lỗ hổng, bộ phận, lương tâm) không hợp nghĩa.'},
-  {wrong:'我正愁没人帮忙，____老王来了。',opts:['恰巧','未免','毫无','盲目'],ans:0,
-   exp:'Vừa khéo, tình cờ đúng lúc → 恰巧 (ví dụ trong phần 词语辨析). 未免 là chê nhẹ, 毫无 là hoàn toàn không có, 盲目 là mù quáng.'},
-  {wrong:'大象现在____抵抗能力，只要我咬几个洞，它就没命了。',opts:['毫无','未免','不顾','恰巧'],ans:0,
-   exp:'毫无 + danh từ trừu tượng = không có chút… nào: 毫无抵抗能力. 不顾 là bất chấp (không hợp nghĩa), 未免/恰巧 là phó từ.'},
-  {wrong:'当人____力下降的时候，病毒就会乘机进入人的身体。',opts:['抵抗','对抗','挣扎','实施'],ans:0,
-   exp:'抵抗力 = sức đề kháng (cụm cố định). Không có từ *对抗力, *挣扎力, *实施力.'},
-  {wrong:'医生问我哪个____疼，我说是右腿。',opts:['部位','缺口','眼光','角色'],ans:0,
-   exp:'Chỗ nào trên cơ thể → 部位. 缺口 là chỗ thủng của đồ vật, 眼光 là ánh mắt, 角色 là vai trò.'},
-  {wrong:'听了她____的遭遇，大家都流下了眼泪。',opts:['悲惨','锋利','猛烈','草率'],ans:0,
-   exp:'Cảnh ngộ bi thảm → 悲惨的遭遇. 锋利 (sắc), 猛烈 (dữ dội), 草率 (qua loa) không đi với 遭遇.'},
-  {wrong:'这么小的屋子一个月房租4500，价格____太贵了。',opts:['未免','恰巧','毫无','不料'],ans:0,
-   exp:'Chê nhẹ nhàng "có hơi quá đắt" → 未免太贵了 (练一练 của sách). 恰巧 chỉ sự trùng hợp, 不料 là liên từ đứng đầu vế sau.'},
-  {wrong:'把小狗扔在路边不管，这种行为太____了。',opts:['残忍','锋利','盲目','扁'],ans:0,
-   exp:'Hành vi nhẫn tâm → 残忍. 锋利 nói về dao/răng, 盲目 là mù quáng, 扁 là bẹp.'},
-  {wrong:'____告诉它，应该救大象。',opts:['良心','眼光','部位','子弹'],ans:0,
-   exp:'Lương tâm mách bảo → 良心告诉…… (nguyên văn bài khoá).'},
-  {wrong:'这把刀非常____，用的时候要小心。',opts:['锋利','猛烈','悲惨','愤怒'],ans:0,
-   exp:'Dao sắc → 锋利. 猛烈 dùng cho gió, lửa, tấn công; 悲惨, 愤怒 là trạng thái con người.'},
-  {wrong:'老房子的墙上____着很多绿色的植物。',opts:['缠绕','挣扎','盯','窜'],ans:0,
-   exp:'Cây leo quấn trên tường → 缠绕着. Các động từ khác (vùng vẫy, nhìn chằm chằm, lao vụt) không hợp.'},
-  {wrong:'如果是你感兴趣的事情，无论____多少时间和精力，心里也都是快乐的。',opts:['耗费','摆脱','实施','饶恕'],ans:0,
-   exp:'Tốn thời gian, công sức → 耗费时间和精力 (练习3 của sách).'},
-  {wrong:'巨网出现了一个大____，大象猛地一用力，脱离了巨网。',opts:['缺口','部位','子弹','夕阳'],ans:0,
-   exp:'Lưới thủng một lỗ → 出现了一个大缺口 (nguyên văn bài khoá).'},
-  {wrong:'经过几十年的改革开放，中国经济取得了____的成就。',opts:['举世瞩目','不顾一切','化敌为友','滔滔不绝'],ans:0,
-   exp:'Thành tựu cả thế giới chú ý → 举世瞩目的成就. 不顾一切 là bất chấp tất cả, 化敌为友 là biến thù thành bạn, 滔滔不绝 (bài 1) là nói thao thao.'},
-  {wrong:'我们做好了一切准备，下个星期就去旅行，____他竟病倒了。',opts:['不料','恰巧','倘若','乘机'],ans:0,
-   exp:'Vế sau xảy ra điều ngoài dự tính, có 竟 hô ứng → 不料……竟…… (ví dụ sách). 倘若 là giả thiết, 乘机 là nhân cơ hội.'},
-  {wrong:'这么重要的事，我们千万不能____决定。',opts:['草率','猛烈','锋利','悲惨'],ans:0,
-   exp:'Quyết định vội vàng, thiếu cân nhắc → 草率决定.'},
-  {wrong:'科学家在这片森林里____了一种新的植物。',opts:['发现','发觉','发明','发展'],ans:0,
-   exp:'Phát hiện khoa học (tìm thấy vật mới) chỉ dùng 发现; 发觉 thiên về cảm nhận ra trong lòng. 发明 là phát minh (tạo ra cái chưa có), 发展 là phát triển.'}
+  {wrong:'他当着大家的面骗人，还一点儿也不脸红，真让人感到____。',opts:['厌恶','厌倦','可恶','残忍'],ans:0,exp:'Ghê tởm hành vi xấu → 感到厌恶. 厌倦 là chán vì lặp lại lâu; 可恶 là tính từ "đáng ghét", không đứng sau 感到; 残忍 là tàn nhẫn (tả người làm hại kẻ khác).'},
+  {wrong:'他做了那么多坏事，受到伤害的那家人说永远不会____他。',opts:['饶恕','盯','蔑视','耗费'],ans:0,exp:'Tha thứ cho lỗi lầm rất nặng → 饶恕 (nặng hơn 原谅). 盯 là nhìn chằm chằm; 蔑视 là coi thường; 耗费 là tiêu tốn.'},
+  {wrong:'我好心提醒他早点儿出发，____他却怪我说话太多。',opts:['不料','果然','难怪','于是'],ans:0,exp:'Kết quả trái với dự tính → 不料……却…… . 果然 là quả nhiên (đúng như dự đoán); 难怪 là thảo nào; 于是 là thế là — không đi với 却.'},
+  {wrong:'我只是随便说说，不料他____当真了。',opts:['竟然','果然','必然','当然'],ans:0,exp:'不料 hay đi với 竟然 / 却 để nhấn mạnh điều bất ngờ. 果然 / 必然 / 当然 đều là "đúng như dự đoán, tất nhiên" — mâu thuẫn với 不料.'},
+  {wrong:'才见了三次面就决定结婚，你们____太草率了吧？',opts:['未免','难免','避免','必然'],ans:0,exp:'Phê bình nhẹ "có phần quá…" → 未免 + 太 + tính từ. 难免 là khó tránh (điều tất yếu xảy ra); 避免 là động từ "tránh"; 必然 là tất nhiên — không dùng để chê.'},
+  {wrong:'他____这次出差的机会，去看望了大学时的老师。',opts:['乘','乘机','按照','根据'],ans:0,exp:'Có tân ngữ "……的机会" → dùng 乘 (乘……的机会). 乘机 đã chứa 机, không mang tân ngữ: nói 乘机这次……的机会 là lỗi hay gặp. 按照 / 根据 là căn cứ theo.'},
+  {wrong:'这个人说的话____道理，你别听他的。',opts:['毫无','丝毫','无比','无数'],ans:0,exp:'毫无 + danh từ = hoàn toàn không có (毫无道理). 丝毫 phải đi với 没有 / 不 (丝毫没有道理); 无比 là vô cùng; 无数 là vô số.'},
+  {wrong:'经常运动可以提高身体的____力，冬天就不容易感冒了。',opts:['抵抗','对抗','强迫','实施'],ans:0,exp:'抵抗力 = sức đề kháng (cố định). 对抗 là đối đầu hai bên; 强迫 là ép buộc; 实施 là thực thi — không ghép với 力.'},
+  {wrong:'他用____的眼光看着那个穷人，好像人家比他低一等。',opts:['蔑视','重视','珍惜','羡慕'],ans:0,exp:'Coi người khác thấp kém hơn mình → 蔑视的眼光. 重视 / 珍惜 là coi trọng, quý; 羡慕 là ngưỡng mộ — đều trái với "人家比他低一等".'},
+  {wrong:'把所有的钱都借给一个刚认识的人，这种做法实在太____了。',opts:['愚蠢','聪明','悲惨','猛烈'],ans:0,exp:'Việc làm thiếu suy nghĩ → 愚蠢 (ngu ngốc). 聪明 trái nghĩa; 悲惨 tả cảnh ngộ bi thảm; 猛烈 tả sức mạnh dữ dội.'},
+  {wrong:'这个家伙偷了我的自行车，还把锁弄坏了，真____！',opts:['可恶','可怜','可靠','可爱'],ans:0,exp:'Tức giận với kẻ làm điều xấu → 可恶 (đáng ghét). 可怜 là đáng thương; 可靠 là đáng tin; 可爱 là dễ thương — đều có chữ 可 nhưng nghĩa khác hẳn.'},
+  {wrong:'为了好玩儿就去伤害小动物，这样做未免太____了。',opts:['残忍','悲惨','愤怒','锋利'],ans:0,exp:'Hành động độc ác với kẻ yếu → 残忍. 悲惨 tả số phận người bị hại; 愤怒 là phẫn nộ (tâm trạng); 锋利 tả dao sắc. Ôn 未免太……了.'},
+  {wrong:'那次大地震造成了几千人____，很多孩子失去了父母。',opts:['死亡','去世','完美','挣扎'],ans:0,exp:'Tin tức, thống kê số người chết → 死亡 (trung tính, văn viết). 去世 là cách nói kính trọng khi nói về một người cụ thể; 完美, 挣扎 không hợp nghĩa.'},
+  {wrong:'这个项目还有五万块钱的____，大家再想想办法吧。',opts:['缺口','缺点','出口','借口'],ans:0,exp:'Khoản còn thiếu → 缺口 (资金缺口). 缺点 là khuyết điểm; 出口 là lối ra / xuất khẩu; 借口 là cái cớ.'},
+  {wrong:'他____家人的反对，辞职开了一家咖啡馆。',opts:['不顾','照顾','顾客','只好'],ans:0,exp:'Bất chấp ý kiến người khác → 不顾 + 反对 / 一切. 照顾 là chăm sóc; 顾客 là khách hàng (chỉ giống chữ); 只好 là đành phải — không mang tân ngữ 反对.'}
 ];
 
 // ══════════════════════════════════════════
-// LUYỆN DỊCH — câu ghép, dùng từ bài 4 + ôn bài 1–3 và HSK 4–5
+// DỊCH Việt → Trung — câu mới, dùng từ của bài + ôn ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var translateData = [
   {vi:'Tôi vốn định nhân lúc bố mẹ không có nhà chơi game một lúc, không ngờ vừa mở máy tính thì mẹ đã về.',zh:'我本来想乘父母不在家玩一会儿游戏，不料刚打开电脑，妈妈就回来了。',py:'Wǒ běnlái xiǎng chéng fùmǔ bú zài jiā wán yíhuìr yóuxì, búliào gāng dǎkāi diànnǎo, māma jiù huílái le.',goiY:['乘','不料','刚……就……'],giai:'乘 + mệnh đề ngắn = nhân lúc…; 不料 dẫn ra điều ngoài dự tính, 刚……就…… nối hai việc xảy ra sát nhau. Không dịch "không ngờ" thành 不想.'},
-  {vi:'Chỉ vì một lần thi không tốt mà đã muốn bỏ học tiếng Trung thì cậu có phần quá khinh suất rồi.',zh:'只因为一次考试没考好就想放弃学汉语，你未免太草率了。',py:'Zhǐ yīnwèi yí cì kǎoshì méi kǎohǎo jiù xiǎng fàngqì xué Hànyǔ, nǐ wèimiǎn tài cǎoshuài le.',goiY:['因为……就……','未免','草率'],giai:'(只)因为……就…… nhấn mạnh nguyên nhân quá nhỏ; 未免太 + tính từ tiêu cực + 了 = chê nhẹ nhàng "có phần quá…".'},
   {vi:'Nếu cậu đã hứa với bạn bè rồi thì nhất định phải giữ lời, nếu không là phụ lòng tin của bạn đấy.',zh:'倘若你已经对朋友做出了承诺，就必须遵守，否则就辜负了朋友的信任。',py:'Tǎngruò nǐ yǐjīng duì péngyou zuòchūle chéngnuò, jiù bìxū zūnshǒu, fǒuzé jiù gūfùle péngyou de xìnrèn.',goiY:['倘若……就……','承诺','否则','辜负'],giai:'倘若……就……，否则…… = nếu… thì…, nếu không thì… (giống lời thần núi trong bài); 辜负 (bài 3) = phụ lòng.'},
-  {vi:'Tuy cô giáo nhìn chằm chằm vào cậu ấy bằng ánh mắt nghiêm khắc, cậu ấy vẫn thao thao bất tuyệt trình bày kế hoạch của mình.',zh:'虽然老师用严厉的眼光盯着他，但他仍旧滔滔不绝地讲着自己的计划。',py:'Suīrán lǎoshī yòng yánlì de yǎnguāng dīngzhe tā, dàn tā réngjiù tāotāo bù jué de jiǎngzhe zìjǐ de jìhuà.',goiY:['虽然……但……','眼光','盯着','滔滔不绝'],giai:'用 + ……的眼光 + 盯着 + ai = nhìn chằm chằm ai bằng ánh mắt…; 仍旧 (bài 3) = vẫn; 滔滔不绝 (bài 1) làm trạng ngữ cần 地.'},
-  {vi:'Dù có tốn bao nhiêu thời gian và công sức, chỉ cần là việc mình thích thì mình đều thấy vô cùng vui, chưa bao giờ thấy chán.',zh:'无论耗费多少时间和精力，只要是自己喜欢的事，我都会觉得无比快乐，从来不会厌倦。',py:'Wúlùn hàofèi duōshao shíjiān hé jīnglì, zhǐyào shì zìjǐ xǐhuan de shì, wǒ dōu huì juéde wúbǐ kuàilè, cónglái bú huì yànjuàn.',goiY:['无论……都……','耗费','无比','厌倦'],giai:'无论 + từ nghi vấn (多少) …… 都 = bất kể… đều…; 无比 (bài 2) đứng trước tính từ = vô cùng.'},
-  {vi:'Tôi muốn nhân dịp nghỉ lễ về quê thử nấu cho ông bà vài món sở trường, vì ông bà lúc nào cũng nhớ tôi.',zh:'我想乘放假回老家的机会，尝试给爷爷奶奶做几道拿手菜，因为他们一直惦记着我。',py:'Wǒ xiǎng chéng fàngjià huí lǎojiā de jīhuì, chángshì gěi yéye nǎinai zuò jǐ dào náshǒu cài, yīnwèi tāmen yìzhí diànjìzhe wǒ.',goiY:['乘……的机会','尝试','拿手菜','惦记'],giai:'乘 + ……的机会 = nhân dịp…; 拿手 (bài 1) = sở trường, 惦记 (bài 3) = nhớ, lo cho. Vế 因为 đặt sau để giải thích lý do.'},
   {vi:'Thay vì phí tiền vào việc chạy theo trào lưu một cách mù quáng, chi bằng để dành tiền đi du lịch cùng gia đình.',zh:'与其把钱耗费在盲目跟风上，不如存起来和家人一起去旅行。',py:'Yǔqí bǎ qián hàofèi zài mángmù gēnfēng shang, bùrú cún qǐlai hé jiārén yìqǐ qù lǚxíng.',goiY:['与其……不如……','耗费','盲目'],giai:'与其 A，不如 B = thay vì A thì chi bằng B (chọn B); 把钱耗费在…上 = phí tiền vào…'},
-  {vi:'Tuy lần trước hai cậu cãi nhau to, nhưng cậu ấy đã thành thật xin lỗi rồi, cậu tha thứ cho cậu ấy đi, dù sao cứ đối đầu nhau mãi cũng chẳng có ý nghĩa gì.',zh:'虽然上次你们吵得很厉害，但他已经真诚地道歉了，你就原谅他吧，毕竟一直对抗下去毫无意义。',py:'Suīrán shàng cì nǐmen chǎo de hěn lìhai, dàn tā yǐjīng zhēnchéng de dàoqiàn le, nǐ jiù yuánliàng tā ba, bìjìng yìzhí duìkàng xiàqu háo wú yìyì.',goiY:['虽然……但……','毕竟','对抗','毫无'],giai:'毕竟 = dù sao thì (nêu lý do cốt lõi); 对抗下去 = cứ đối đầu tiếp; 毫无意义 = chẳng có ý nghĩa gì. Chuyện bạn bè dùng 原谅 (bài 2), không dùng 饶恕 (quá nặng).'},
-  {vi:'Tôi cứ tưởng bài thuyết trình của mình sẽ bị các bạn coi thường, không ngờ mọi người không những không cười mà ngược lại còn vỗ tay nhiệt liệt.',zh:'我本以为自己的演讲会受到同学们的蔑视，不料大家不但没有笑，反而热烈地鼓起掌来。',py:'Wǒ běn yǐwéi zìjǐ de yǎnjiǎng huì shòudào tóngxuémen de mièshì, búliào dàjiā búdàn méiyǒu xiào, fǎn\'ér rèliè de gǔqǐ zhǎng lái.',goiY:['蔑视','不料','不但没有……反而……'],giai:'本以为……，不料…… = cứ tưởng…, không ngờ…; 不但没有……反而…… = không những không… mà ngược lại còn…; 鼓起掌来: 起来 tách đôi với li hợp từ 鼓掌.'},
-  {vi:'Với những bạn từng bắt nạt mình, cứ ôm hận mãi trong lòng thì có phần mệt mỏi quá; nếu có thể biến thù thành bạn, chẳng phải đó mới là chiến thắng hoàn hảo nhất sao?',zh:'对于曾经欺负过自己的同学，一直怀恨在心未免太累了；倘若能化敌为友，那不就是最完美的胜利吗？',py:'Duìyú céngjīng qīfuguo zìjǐ de tóngxué, yìzhí huái hèn zài xīn wèimiǎn tài lèi le; tǎngruò néng huà dí wéi yǒu, nà bú jiù shì zuì wánměi de shènglì ma?',goiY:['未免','倘若','不就……吗'],giai:'对于 + đối tượng đặt đầu câu; 未免太…了 chê nhẹ; câu hỏi tu từ 不就是……吗 = chẳng phải là… sao (khẳng định mạnh) — dịch đúng giọng phản vấn, không dịch thành câu hỏi thật.'}
+  {vi:'Nhân dịp về quê ăn Tết, tôi dọn dẹp kỹ một lượt căn phòng cũ của mình.',zh:'我乘回老家过春节的机会，把自己原来的房间好好打扫了一番。',py:'Wǒ chéng huí lǎojiā guò Chūnjié de jīhuì, bǎ zìjǐ yuánlái de fángjiān hǎohāo dǎsǎole yì fān.',goiY:['乘……的机会 = nhân dịp','V了一番 = làm kỹ một lượt (bài 3)'],giai:'乘 + ……的机会 (không dùng 乘机 khi có tân ngữ 机会); ôn 番 (bài 3): 打扫了一番.'},
+  {vi:'Cậu ấy chỉ đến muộn có năm phút mà cậu đã giận đến thế, có phần hơi nghiêm khắc quá rồi đấy.',zh:'他只不过迟到了五分钟，你就这么生气，未免过于严厉了。',py:'Tā zhǐbuguò chídàole wǔ fēnzhōng, nǐ jiù zhème shēngqì, wèimiǎn guòyú yánlì le.',goiY:['只不过 = chỉ … mà thôi','未免过于 + adj = có phần quá…'],giai:'未免 đi với 过于 / 太 + tính từ tiêu cực để phê bình nhẹ; ôn 过于 (bài 3).'},
+  {vi:'Chân con chó nhỏ bị dây thừng quấn quanh, giãy giụa mãi mà vẫn không thoát ra được.',zh:'小狗的腿被绳子缠绕着，挣扎了半天也没能摆脱。',py:'Xiǎogǒu de tuǐ bèi shéngzi chánràozhe, zhēngzhále bàntiān yě méi néng bǎituō.',goiY:['缠绕 = quấn quanh','挣扎 = giãy giụa','摆脱 = thoát khỏi'],giai:'被 + tác nhân + V + 着 (trạng thái kéo dài); V了半天也没能…… = … mãi mà vẫn không….'}
 ];
 
 var translateDataRev = [
-  {vi:'Chuột vừa chán ngán cuộc sống làm thú cưng, vừa ghét cái vai thú cưng, thế là xin phép thần núi đến thế giới động vật.',zh:'老鼠既厌倦了宠物的生活，又厌恶宠物这个角色，于是向山神请假去动物世界。',py:'Lǎoshǔ jì yànjuànle chǒngwù de shēnghuó, yòu yànwù chǒngwù zhège juésè, yúshì xiàng shānshén qǐngjià qù dòngwù shìjiè.',goiY:['既……又…… = vừa… vừa…','厌倦 = chán ngán','厌恶 = chán ghét','于是 = thế là, bèn'],giai:'既……又…… nối hai lý do song song; 于是 dẫn hành động xảy ra tiếp theo — dịch "thế là / bèn".'},
-  {vi:'Chuột chỉ mong sao được đến thế giới động vật sớm một chút, nên đã khinh suất nhận lời thần núi: nếu muốn quay về thì trước hết phải thắng được voi.',zh:'老鼠巴不得早点儿去动物世界，于是草率地答应了山神：倘若想回来，就必须先战胜大象。',py:'Lǎoshǔ bābudé zǎo diǎnr qù dòngwù shìjiè, yúshì cǎoshuài de dāyingle shānshén: tǎngruò xiǎng huílái, jiù bìxū xiān zhànshèng dàxiàng.',goiY:['巴不得 = mong sao cho','草率 = khinh suất','倘若……就…… = nếu… thì…'],giai:'巴不得 (bài 1) = mong sao cho (mong mỏi mãnh liệt); 草率地 + V = làm vội vàng, thiếu suy nghĩ.'},
-  {vi:'Chuột nhận ra mình không hề có chút sức lực nào để chống lại voi, nhưng nó vẫn quyết định thử một phen.',zh:'老鼠发觉自己丝毫没有对抗大象的力量，但它还是决定尝试一下。',py:'Lǎoshǔ fājué zìjǐ sīháo méiyǒu duìkàng dàxiàng de lìliang, dàn tā háishi juédìng chángshì yíxià.',goiY:['发觉 = nhận ra','丝毫没有 = không hề có chút nào','但……还是…… = nhưng vẫn'],giai:'对抗大象的力量: cụm động–tân làm định ngữ cho 力量 — dịch "sức lực để chống lại voi"; 还是 ở đây = vẫn (không phải "hay là").'},
-  {vi:'Voi đang ăn lá cây thì chuột nhân cơ hội chạy vào vòi nó, chẳng ngờ voi hắt hơi một cái thật mạnh.',zh:'大象正在吃树叶，老鼠乘机跑进它的鼻子，不料大象猛烈地打了个喷嚏。',py:'Dàxiàng zhèngzài chī shùyè, lǎoshǔ chéngjī pǎojìn tā de bízi, búliào dàxiàng měngliè de dǎle ge pēntì.',goiY:['乘机 = nhân cơ hội','不料 = chẳng ngờ','猛烈 = dữ dội'],giai:'正在……，乘机…… = đang… thì nhân cơ hội…; 鼻子 của voi dịch là "vòi", không dịch "mũi".'},
-  {vi:'Voi nhìn chằm chằm vào chuột bằng ánh mắt khinh miệt, giận dữ cảnh cáo nó lần sau còn giở trò lưu manh thì sẽ giẫm bẹp nó.',zh:'大象用蔑视的眼光盯着老鼠，愤怒地警告它下次再耍流氓就踩扁它。',py:'Dàxiàng yòng mièshì de yǎnguāng dīngzhe lǎoshǔ, fènnù de jǐnggào tā xià cì zài shuǎ liúmáng jiù cǎibiǎn tā.',goiY:['蔑视的眼光 = ánh mắt khinh miệt','盯着 = nhìn chằm chằm','耍流氓 = giở trò lưu manh','再……就…… = còn… thì…'],giai:'再……就…… diễn tả điều kiện – hậu quả (lời đe doạ); 踩扁 = giẫm + bẹp (bổ ngữ kết quả).'},
-  {vi:'Voi sơ ý sa vào tấm lưới lớn; tuy nó bất chấp tất cả mà vùng vẫy, nhưng thế nào cũng không thoát ra được.',zh:'大象不留神落入了巨网，虽然它不顾一切地挣扎，却怎么也摆脱不了。',py:'Dàxiàng bù liú shén luòrùle jù wǎng, suīrán tā búgù yíqiè de zhēngzhá, què zěnme yě bǎituō bu liǎo.',goiY:['不留神 = sơ ý','不顾一切 = bất chấp tất cả','虽然……却…… = tuy… nhưng…','摆脱不了 = không thoát ra được'],giai:'虽然……却……: 却 đứng sau chủ ngữ (ở đây chủ ngữ ẩn); 怎么也 + bổ ngữ khả năng phủ định = thế nào cũng không…'},
-  {vi:'Chuột vốn có thể nhân cơ hội cắn chết voi, thế nhưng nhìn dáng vẻ thảm thương của voi, nó bỗng mềm lòng, cảm thấy làm vậy thì có phần quá tàn nhẫn.',zh:'老鼠本来可以乘机咬死大象，然而看到大象悲惨的样子，它不由得心软了，觉得那样做未免太残忍了。',py:'Lǎoshǔ běnlái kěyǐ chéngjī yǎosǐ dàxiàng, rán\'ér kàndào dàxiàng bēicǎn de yàngzi, tā bùyóude xīnruǎn le, juéde nàyàng zuò wèimiǎn tài cánrěn le.',goiY:['本来 = vốn dĩ','乘机 = nhân cơ hội','不由得 = không kìm được','未免太…… = có phần quá…'],giai:'本来……，然而…… = vốn… thế nhưng…; 不由得 (bài 2) = bất giác, không kìm được; 未免 dịch "có phần / hơi quá".'},
-  {vi:'Chú chuột vừa khéo đi ngang qua đã nghe theo tiếng gọi của lương tâm, không những không làm hại voi mà ngược lại còn dùng hàm răng sắc bén cắn đứt lưới.',zh:'恰巧路过的老鼠听从了良心的声音，不但没有伤害大象，反而用锋利的牙齿咬断了网绳。',py:'Qiàqiǎo lùguò de lǎoshǔ tīngcóngle liángxīn de shēngyīn, búdàn méiyǒu shānghài dàxiàng, fǎn\'ér yòng fēnglì de yáchǐ yǎoduànle wǎngshéng.',goiY:['恰巧 = vừa khéo','良心 = lương tâm','不但没有……反而…… = không những không… mà ngược lại còn…'],giai:'恰巧路过的 là định ngữ cho 老鼠 — dịch "chú chuột vừa khéo đi ngang qua"; 反而 chỉ kết quả trái ngược hẳn với dự đoán.'},
-  {vi:'Dù chuột đã gần như dùng hết sức lực, nó vẫn không bỏ cuộc; mãi đến khi tấm lưới thủng một lỗ lớn, voi mới thoát khỏi nguy hiểm.',zh:'尽管老鼠几乎耗费了全部力气，它仍旧没有放弃，直到巨网出现了一个大缺口，大象才脱离了危险。',py:'Jǐnguǎn lǎoshǔ jīhū hàofèile quánbù lìqi, tā réngjiù méiyǒu fàngqì, zhídào jù wǎng chūxiànle yí ge dà quēkǒu, dàxiàng cái tuōlíle wēixiǎn.',goiY:['尽管……仍旧…… = dù… vẫn…','耗费 = tiêu tốn','直到……才…… = mãi đến… mới…','缺口 = lỗ hổng'],giai:'Câu ba vế: 尽管……仍旧…… (nhượng bộ) + 直到……才…… (thời điểm muộn); 脱离危险 (bài 2) = thoát khỏi nguy hiểm.'},
-  {vi:'Thần núi cho rằng chuột sở dĩ giành được chiến thắng hoàn hảo không phải vì nó đã thắng một con voi hoàn toàn không còn sức chống cự, mà là vì nó đã biến kẻ thù thành bạn.',zh:'山神认为，老鼠之所以取得了完美的胜利，不是因为它战胜了毫无抵抗能力的大象，而是因为它化敌为友。',py:'Shānshén rènwéi, lǎoshǔ zhī suǒyǐ qǔdéle wánměi de shènglì, bú shì yīnwèi tā zhànshèngle háo wú dǐkàng nénglì de dàxiàng, ér shì yīnwèi tā huà dí wéi yǒu.',goiY:['之所以…… = sở dĩ…','不是……而是…… = không phải… mà là…','毫无抵抗能力 = hoàn toàn không có sức chống cự'],giai:'之所以 A，是因为 B được mở rộng thành 之所以 A，不是因为 B，而是因为 C — dịch "sở dĩ… không phải vì… mà là vì…"; định ngữ dài 毫无抵抗能力的 đặt sau danh từ khi dịch.'}
+  {vi:'Thấy người đi săn tiến lại gần, con khỉ lập tức vọt lên cây.',zh:'看见打猎的人走过来，那只猴子一下子就窜到了树上。',py:'Kànjiàn dǎliè de rén zǒu guòlai, nà zhī hóuzi yíxiàzi jiù cuàndàole shù shang.',goiY:['打猎 = đi săn','窜 = vọt, chạy vụt','一下子 = lập tức'],giai:'窜 tả động tác nhảy / chạy vụt rất nhanh của con vật; 窜到 + nơi chốn = vọt tới đâu.'},
+  {vi:'Tôi định nhân lúc nghỉ trưa chợp mắt một lát, không ngờ giám đốc lại gọi tôi đi họp.',zh:'我本想乘中午休息的时候睡一会儿，不料经理却叫我去开会。',py:'Wǒ běn xiǎng chéng zhōngwǔ xiūxi de shíhou shuì yíhuìr, búliào jīnglǐ què jiào wǒ qù kāihuì.',goiY:['乘……的时候 = nhân lúc','不料 = không ngờ','却 = lại'],giai:'本想……，不料……却…… = vốn định…, không ngờ… lại…: khung kể chuyện ngoài dự tính.'},
+  {vi:'Cuộc đua vừa bắt đầu, cậu ấy đã lao đi như một viên đạn, chẳng mấy chốc đã dẫn đầu.',zh:'比赛一开始，他就像子弹一样冲了出去，很快就跑到了最前面。',py:'Bǐsài yì kāishǐ, tā jiù xiàng zǐdàn yíyàng chōngle chūqu, hěn kuài jiù pǎodàole zuì qiánmian.',goiY:['像子弹一样 = như viên đạn','冲了出去 = lao ra'],giai:'像……一样 + V là phép so sánh; 很快就 dịch "chẳng mấy chốc".'},
+  {vi:'Gã đó lúc nào cũng giở trò lừa người, sớm muộn gì lương tâm cũng sẽ cắn rứt thôi.',zh:'那个家伙总是耍花样骗人，早晚会受到良心的责备。',py:'Nàge jiāhuo zǒngshì shuǎ huāyàng piàn rén, zǎowǎn huì shòudào liángxīn de zébèi.',goiY:['家伙 = gã, thằng cha','耍花样 = giở trò','良心 = lương tâm'],giai:'耍 + 花样 = giở trò; 受到良心的责备 dịch tự nhiên là "lương tâm cắn rứt".'},
+  {vi:'Thấy cảnh ngộ bi thảm của những đứa trẻ ấy, ai cũng bất giác bật khóc.',zh:'看到那些孩子悲惨的生活，大家都不由得哭了。',py:'Kàndào nàxiē háizi bēicǎn de shēnghuó, dàjiā dōu bùyóude kū le.',goiY:['悲惨 = bi thảm','不由得 = bất giác, không kìm được (bài 2)'],giai:'悲惨的生活 dịch "cảnh ngộ bi thảm"; 不由得 + V = bất giác….'}
 ];
 
 // ══════════════════════════════════════════
@@ -1719,8 +1655,8 @@ var writingData = {
     'Câu cuối có nêu rõ đạo lý "化敌为友，就是最大的胜利" chưa? Mở đoạn lùi 2 ô, dấu câu chiếm một ô?'
   ],
   model:{
-    zh:'老鼠是山神的宠物，它厌倦了这种生活，想去动物世界证明自己的实力。山神提出了一个条件：倘若它还想回来，就必须战胜最强大的大象，否则就只能永远留在动物世界。老鼠一到动物世界，就发觉自己太弱小了，但它还是决定试一试。一天，它乘大象吃树叶的时候跑进了大象的鼻子。不料，大象猛烈地打了个喷嚏，老鼠像子弹一样被射了出来。大象用蔑视的眼光盯着它，愤怒地骂它是愚蠢、可恶的家伙，还说下次要踩扁它。后来，大象不留神落入了打猎者的巨网，它拼命挣扎，却怎么也摆脱不了。老鼠看到了这一切，心想大象现在毫无抵抗力，只要咬它几口，自己就胜利了。可是看到大象悲惨的样子，老鼠觉得那样未免太残忍了。于是，它用锋利的牙齿咬断了绳子，救出了大象。从此，它们成了好朋友。山神知道后说，老鼠化敌为友，创造了举世瞩目的成就，这就是最完美的胜利。这个故事告诉我们：化敌为友，就是最大的胜利。',
-    py:'Lǎoshǔ shì shānshén de chǒngwù, tā yànjuànle zhè zhǒng shēnghuó, xiǎng qù dòngwù shìjiè zhèngmíng zìjǐ de shílì. Shānshén tíchūle yí ge tiáojiàn: tǎngruò tā hái xiǎng huílái, jiù bìxū zhànshèng zuì qiángdà de dàxiàng, fǒuzé jiù zhǐ néng yǒngyuǎn liú zài dòngwù shìjiè.Lǎoshǔ yí dào dòngwù shìjiè, jiù fājué zìjǐ tài ruòxiǎo le, dàn tā háishi juédìng shì yi shì. Yì tiān, tā chéng dàxiàng chī shùyè de shíhou pǎojìnle dàxiàng de bízi. Búliào, dàxiàng měngliè de dǎle ge pēntì, lǎoshǔ xiàng zǐdàn yíyàng bèi shèle chūlái. Dàxiàng yòng mièshì de yǎnguāng dīngzhe tā, fènnù de mà tā shì yúchǔn, kěwù de jiāhuo, hái shuō xià cì yào cǎibiǎn tā.Hòulái, dàxiàng bù liú shén luòrùle dǎlièzhě de jù wǎng, tā pīnmìng zhēngzhá, què zěnme yě bǎituō bu liǎo. Lǎoshǔ kàndàole zhè yíqiè, xīn xiǎng dàxiàng xiànzài háo wú dǐkànglì, zhǐyào yǎo tā jǐ kǒu, zìjǐ jiù shènglì le. Kěshì kàndào dàxiàng bēicǎn de yàngzi, lǎoshǔ juéde nàyàng wèimiǎn tài cánrěn le. Yúshì, tā yòng fēnglì de yáchǐ yǎoduànle shéngzi, jiùchūle dàxiàng. Cóngcǐ, tāmen chéngle hǎo péngyou.Shānshén zhīdào hòu shuō, lǎoshǔ huà dí wéi yǒu, chuàngzàole jǔshì zhǔmù de chéngjiù, zhè jiù shì zuì wánměi de shènglì. Zhège gùshi gàosu wǒmen: huà dí wéi yǒu, jiù shì zuì dà de shènglì.',
+    zh:'老鼠是山神的宠物，它厌倦了这种生活，想去动物世界证明自己的实力。山神提出了一个条件：倘若它还想回来，就必须战胜最强大的大象，否则就只能永远留在动物世界。老鼠一到动物世界，就发觉自己太弱小了，但它还是决定试一试。一天，它乘大象吃树叶的时候跑进了大象的鼻子。不料，大象猛烈地打了个喷嚏，老鼠像子弹一样被射了出来。大象用蔑视的眼光盯着它，愤怒地骂它是愚蠢、可恶的家伙，还说下次要踩扁它。后来，大象不留神落入了打猎者的巨网，它用力挣扎，却怎么也摆脱不了。老鼠看到了这一切，心想大象现在毫无抵抗力，只要咬它几口，自己就胜利了。可是看到大象悲惨的样子，老鼠觉得那样未免太残忍了。于是，它用锋利的牙齿咬断了绳子，救出了大象。从此，它们成了好朋友。山神知道后说，老鼠化敌为友，创造了举世瞩目的成就，这就是最完美的胜利。这个故事告诉我们：化敌为友，就是最大的胜利。',
+    py:'Lǎoshǔ shì shānshén de chǒngwù, tā yànjuànle zhè zhǒng shēnghuó, xiǎng qù dòngwù shìjiè zhèngmíng zìjǐ de shílì. Shānshén tíchūle yí ge tiáojiàn: tǎngruò tā hái xiǎng huílái, jiù bìxū zhànshèng zuì qiángdà de dàxiàng, fǒuzé jiù zhǐ néng yǒngyuǎn liú zài dòngwù shìjiè.Lǎoshǔ yí dào dòngwù shìjiè, jiù fājué zìjǐ tài ruòxiǎo le, dàn tā háishi juédìng shì yi shì. Yì tiān, tā chéng dàxiàng chī shùyè de shíhou pǎojìnle dàxiàng de bízi. Búliào, dàxiàng měngliè de dǎle ge pēntì, lǎoshǔ xiàng zǐdàn yíyàng bèi shèle chūlái. Dàxiàng yòng mièshì de yǎnguāng dīngzhe tā, fènnù de mà tā shì yúchǔn, kěwù de jiāhuo, hái shuō xià cì yào cǎibiǎn tā.Hòulái, dàxiàng bù liú shén luòrùle dǎlièzhě de jù wǎng, tā yònglì zhēngzhá, què zěnme yě bǎituō bu liǎo. Lǎoshǔ kàndàole zhè yíqiè, xīn xiǎng dàxiàng xiànzài háo wú dǐkànglì, zhǐyào yǎo tā jǐ kǒu, zìjǐ jiù shènglì le. Kěshì kàndào dàxiàng bēicǎn de yàngzi, lǎoshǔ juéde nàyàng wèimiǎn tài cánrěn le. Yúshì, tā yòng fēnglì de yáchǐ yǎoduànle shéngzi, jiùchūle dàxiàng. Cóngcǐ, tāmen chéngle hǎo péngyou.Shānshén zhīdào hòu shuō, lǎoshǔ huà dí wéi yǒu, chuàngzàole jǔshì zhǔmù de chéngjiù, zhè jiù shì zuì wánměi de shènglì. Zhège gùshi gàosu wǒmen: huà dí wéi yǒu, jiù shì zuì dà de shènglì.',
     vn:'Chuột là thú cưng của thần núi. Nó chán cuộc sống ấy, muốn đến thế giới động vật để chứng minh thực lực của mình. Thần núi đưa ra một điều kiện: nếu nó còn muốn quay về thì phải thắng được con voi mạnh nhất, nếu không thì chỉ có thể ở lại thế giới động vật mãi mãi.Vừa đến thế giới động vật, chuột đã nhận ra mình quá nhỏ yếu, nhưng nó vẫn quyết định thử. Một hôm, nó nhân lúc voi đang ăn lá cây chạy vào vòi voi. Chẳng ngờ voi hắt hơi một cái thật mạnh, chuột bị bắn văng ra như viên đạn. Voi nhìn chằm chằm vào nó bằng ánh mắt khinh miệt, giận dữ mắng nó là đồ ngu ngốc, đáng ghét, còn nói lần sau sẽ giẫm bẹp nó.Về sau, voi sơ ý sa vào tấm lưới lớn của thợ săn. Nó ra sức vùng vẫy nhưng thế nào cũng không thoát ra được. Chuột thấy hết mọi chuyện, nghĩ bụng bây giờ voi hoàn toàn không có sức chống cự, chỉ cần cắn nó mấy cái là mình thắng. Nhưng nhìn dáng vẻ thảm thương của voi, chuột thấy làm như vậy thì quá tàn nhẫn. Thế là nó dùng hàm răng sắc bén cắn đứt dây, cứu voi ra. Từ đó, hai con trở thành bạn tốt.Thần núi biết chuyện liền nói: chuột đã biến kẻ thù thành bạn, làm nên thành tựu khiến cả thế gian chú ý, đó chính là chiến thắng hoàn hảo nhất. Câu chuyện cho chúng ta biết: biến kẻ thù thành bạn chính là chiến thắng lớn nhất.'
   }
 };
@@ -1729,187 +1665,143 @@ var writingData = {
 // LUYỆN NÓI — đúng bảng 练习5 「根据提示，简述课文主要内容」 (tr. 51)
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Năm câu hỏi lấy đúng bảng <b>练习5 · 根据提示，简述课文主要内容</b> của sách. Bấm loa nghe câu hỏi, nhìn cột gợi ý rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Nói xong cả 5 câu là em đã kể lại được toàn bộ bài khoá.',
-  questions:[
-    {q_zh:'老鼠想当普通的动物，山神对老鼠提出了什么条件？',
-     q_vn:'Chuột muốn làm một con vật bình thường, thần núi đã đưa ra điều kiện gì với chuột?',
-     hint:'①倘若……战胜大象 ②否则……',
-     sample:'山神对老鼠说，倘若它还想回来，就必须战胜大象。否则，它就只能永远留在动物世界了。',
-     sample_vn:'Thần núi nói với chuột rằng nếu nó còn muốn quay về thì phải thắng được voi. Nếu không thì nó chỉ có thể ở lại thế giới động vật mãi mãi.',
-     note:'Nói trọn cấu trúc ba vế 倘若……，就必须……，否则…… — đây chính là cấu trúc 练习4 ① của sách.'},
-    {q_zh:'老鼠的第一次尝试成功了吗？它是怎么做的？',
-     q_vn:'Lần thử đầu tiên của chuột có thành công không? Nó đã làm thế nào?',
-     hint:'进入大象鼻子、打喷嚏、像子弹一样被射出来',
-     sample:'没有成功。老鼠乘大象吃树叶的时候进入了大象的鼻子，想让它喘不过气来。不料大象打了个喷嚏，老鼠像子弹一样被射了出来。',
-     sample_vn:'Không thành công. Chuột nhân lúc voi đang ăn lá cây chui vào vòi voi, định làm voi không thở được. Chẳng ngờ voi hắt hơi một cái, chuột bị bắn văng ra như viên đạn.',
-     note:'Trả lời CÓ/KHÔNG trước, rồi mới kể cách làm. Dùng 乘……的时候 và 不料 cho mạch lạc.'},
-    {q_zh:'大象的反应是什么？',
-     q_vn:'Phản ứng của voi thế nào?',
-     hint:'蔑视、愤怒、愚蠢、可恶、踩扁',
-     sample:'大象用蔑视的眼光盯着老鼠，愤怒地说它是个愚蠢的家伙，太可恶了，下次再这样就踩扁它。',
-     sample_vn:'Voi nhìn chằm chằm vào chuột bằng ánh mắt khinh miệt, giận dữ nói nó là đồ ngu ngốc, thật đáng ghét, lần sau còn như thế thì sẽ giẫm bẹp nó.',
-     note:'Chuyển lời trực tiếp thành lời kể: 你这个愚蠢的家伙 → 说它是个愚蠢的家伙.'},
-    {q_zh:'当大象落入打猎者的巨网时，老鼠是怎么做的？',
-     q_vn:'Khi voi sa vào tấm lưới lớn của thợ săn, chuột đã làm gì?',
-     hint:'①大象（挣扎、窜、摆脱、悲伤、害怕）②老鼠想（毫无抵抗力、咬几个洞、战胜、不忍下手、太过残忍）③老鼠（锋利、咬断）',
-     sample:'大象拼命挣扎，往外乱窜，却摆脱不了巨网，又悲伤又害怕。老鼠想，大象现在毫无抵抗力，只要咬几个洞就能战胜它。可是它不忍下手，觉得那样太过残忍，于是用锋利的牙齿咬断了绳子。',
-     sample_vn:'Voi ra sức vùng vẫy, lao loạn ra ngoài nhưng không thoát khỏi tấm lưới, vừa đau buồn vừa sợ hãi. Chuột nghĩ, bây giờ voi hoàn toàn không có sức chống cự, chỉ cần cắn vài lỗ là thắng được nó. Nhưng nó không nỡ ra tay, thấy làm vậy quá tàn nhẫn, thế là dùng hàm răng sắc bén cắn đứt dây thừng.',
-     note:'Gợi ý có 3 phần ①②③ — nói lần lượt: voi thế nào → chuột nghĩ gì → chuột làm gì. Nối bằng 可是, 于是.'},
-    {q_zh:'山神为什么说老鼠胜利了？',
-     q_vn:'Vì sao thần núi nói chuột đã chiến thắng?',
-     hint:'化敌为友、举世瞩目',
-     sample:'因为老鼠化敌为友，创造了举世瞩目的成就。山神认为，世界上没有比这更完美的胜利了。',
-     sample_vn:'Vì chuột đã biến kẻ thù thành bạn, làm nên thành tựu khiến cả thế gian chú ý. Thần núi cho rằng trên đời không có chiến thắng nào hoàn hảo hơn thế.',
-     note:'Câu hỏi 为什么 → mở đầu bằng 因为. Có thể thêm một câu nêu đạo lý của riêng em.'}
-  ]
-};
-
-// ══════════════════════════════════════════════════════════════
-// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — 听力 (hội thoại ngắn + đoạn nói ngắn)
-// Sách HSK 6 không có sách bài tập nghe: 8 câu tự soạn theo dạng đề, dùng từ + chủ đề bài 4.
-// ══════════════════════════════════════════════════════════════
-var listenExamData = {
-  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. ' +
-         'Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
-  source: 'Soạn theo dạng đề HSK 6 · chủ đề bài 4',
-  items: [
-    {n:1,
-     lines:[{sp:'女',zh:'你怎么又在看手机？作业写完了吗？'},
-            {sp:'男',zh:'妈，您别老盯着我，我就休息五分钟，马上就写。'}],
-     q:'男的是什么意思？',qvn:'Ý của người nam là gì?',
-     opts:['他想休息一会儿再写作业','作业已经写完了','他不想写作业了','他在用手机查资料'],ans:0,
-     why:'我就休息五分钟，马上就写 = chỉ nghỉ năm phút rồi viết ngay → nghỉ một lát rồi mới làm bài. 别老盯着我 = đừng cứ nhìn chằm chằm (giám sát) con.',
-     words:['盯']},
-    {n:2,
-     lines:[{sp:'男',zh:'听说你把工作辞了？是不是太草率了？'},
-            {sp:'女',zh:'我考虑了很久，实在厌倦了每天加班的生活，想尝试一下自己创业。'}],
-     q:'女的为什么辞职？',qvn:'Vì sao người nữ nghỉ việc?',
-     opts:['公司让她走','她厌倦了每天加班','她要出国留学','工资太低'],ans:1,
-     why:'实在厌倦了每天加班的生活 = thật sự chán cảnh ngày nào cũng tăng ca. 草率 là lời người nam lo lắng, người nữ khẳng định đã suy nghĩ lâu.',
-     words:['草率','厌倦','尝试']},
-    {n:3,
-     lines:[{sp:'女',zh:'小王今天怎么没来参加比赛？'},
-            {sp:'男',zh:'别提了，他本来准备得挺充分的，不料昨天打篮球时扭伤了脚。'}],
-     q:'小王为什么没来参加比赛？',qvn:'Vì sao Tiểu Vương không đến thi đấu?',
-     opts:['他忘了时间','他准备得不充分','他的脚受伤了','他去打篮球了'],ans:2,
-     why:'不料 dẫn ra điều bất ngờ: 扭伤了脚 = bị trẹo chân → chân bị thương. Chú ý 本来准备得挺充分 (vốn chuẩn bị rất kỹ) loại đáp án B.',
-     words:['不料']},
-    {n:4,
-     lines:[{sp:'男',zh:'这家餐厅一碗面要八十块，未免太贵了吧？'},
-            {sp:'女',zh:'贵是贵了点儿，不过味道确实是一流的。'}],
-     q:'关于这家餐厅，可以知道什么？',qvn:'Về nhà hàng này, có thể biết điều gì?',
-     opts:['面很便宜','面的味道很好','女的不喜欢这家餐厅','他们还没吃饭'],ans:1,
-     why:'贵是贵了点儿，不过…… = đắt thì có đắt, nhưng…; 味道一流 (một từ của bài 3) = vị hạng nhất → món mì ngon.',
-     words:['未免']},
-    {n:5,
-     lines:[{sp:'女',zh:'路上有冰，你开车千万要留神。'},
-            {sp:'男',zh:'放心吧，我会慢慢开的，到了就给你打电话。'}],
-     q:'女的提醒男的什么？',qvn:'Người nữ nhắc người nam điều gì?',
-     opts:['别忘了打电话','开车要小心','早点儿出发','路上别停车'],ans:1,
-     why:'留神 = coi chừng, cẩn thận. "Gọi điện" là lời hứa của người nam, không phải lời nhắc của người nữ.',
-     words:['留神']},
-    {n:6,
-     lines:[{sp:'男',zh:'很多人以为，要战胜对手，就必须比对手更强大。其实不然。一个人倘若能放下仇恨，把对手变成朋友，他得到的将远远多于一次比赛的胜利。化敌为友，才是最完美的胜利。'}],
-     q:'说话人认为什么是最完美的胜利？',qvn:'Người nói cho rằng thế nào là chiến thắng hoàn hảo nhất?',
-     opts:['比对手更强大','赢得一次比赛','化敌为友','永远不犯错'],ans:2,
-     why:'Câu kết của đoạn: 化敌为友，才是最完美的胜利. 其实不然 (thực ra không phải vậy) phủ định quan điểm "phải mạnh hơn đối thủ".',
-     words:['倘若']},
-    {n:7,
-     lines:[{sp:'男',zh:'昨天你们班跟三班的足球赛怎么样？'},
-            {sp:'女',zh:'上半场我们一直输一个球，下半场对方守门员救球脱手，我们乘机攻入一球，最后打成了平局。'}],
-     q:'比赛结果怎么样？',qvn:'Kết quả trận đấu thế nào?',
-     opts:['女的班赢了','三班赢了','两个班打平了','比赛没有结束'],ans:2,
-     why:'打成了平局 = hòa. Đang thua một bàn, nhân cơ hội (乘机) ghi một bàn → hòa.',
-     words:['乘']},
-    {n:8,
-     lines:[{sp:'女',zh:'那个小偷被抓住以后，一直请求大家饶恕他。'},
-            {sp:'男',zh:'他偷的是一位老人的救命钱，这种行为太可恶了，不能轻易原谅。'}],
-     q:'男的对小偷是什么态度？',qvn:'Người nam có thái độ thế nào với tên trộm?',
-     opts:['同情他','觉得应该饶恕他','很愤怒，不想原谅他','不关心这件事'],ans:2,
-     why:'太可恶了，不能轻易原谅 = quá đáng ghét, không thể dễ dàng tha thứ → phẫn nộ, không muốn tha. 请求饶恕 là việc của tên trộm.',
-     words:['饶恕','可恶','愤怒']}
+  intro: 'Năm câu hỏi lấy đúng bảng <b>练习5 · 根据提示，简述课文主要内容</b> của sách. Bấm loa nghe câu hỏi, nhìn cột gợi ý rồi <b>tự ghi âm câu trả lời của mình trước</b> — đừng đọc theo câu mẫu. Nói xong cả 5 câu là em đã kể lại được toàn bộ bài khoá.',
+  questions: [
+    {q_zh:'老鼠想当普通的动物，山神对老鼠提出了什么条件？',q_vn:'Chuột muốn làm một con vật bình thường, thần núi đã đưa ra điều kiện gì với chuột?',hint:'①倘若……战胜大象 ②否则……',sample:'山神对老鼠说，倘若它还想回来，就必须战胜大象。否则，它就只能永远留在动物世界了。',sample_vn:'Thần núi nói với chuột rằng nếu nó còn muốn quay về thì phải thắng được voi. Nếu không thì nó chỉ có thể ở lại thế giới động vật mãi mãi.',note:'Nói trọn cấu trúc ba vế 倘若……，就必须……，否则…… — đây chính là cấu trúc 练习4 ① của sách.'},
+    {q_zh:'老鼠的第一次尝试成功了吗？它是怎么做的？',q_vn:'Lần thử đầu tiên của chuột có thành công không? Nó đã làm thế nào?',hint:'进入大象鼻子、打喷嚏、像子弹一样被射出来',sample:'没有成功。老鼠乘大象吃树叶的时候进入了大象的鼻子，想让它不能喘气。不料大象打了个喷嚏，老鼠像子弹一样被射了出来。',sample_vn:'Không thành công. Chuột nhân lúc voi đang ăn lá cây chui vào vòi voi, định làm voi không thở được. Chẳng ngờ voi hắt hơi một cái, chuột bị bắn văng ra như viên đạn.',note:'Trả lời CÓ/KHÔNG trước, rồi mới kể cách làm. Dùng 乘……的时候 và 不料 cho mạch lạc.'},
+    {q_zh:'大象的反应是什么？',q_vn:'Phản ứng của voi thế nào?',hint:'蔑视、愤怒、愚蠢、可恶、踩扁',sample:'大象用蔑视的眼光盯着老鼠，愤怒地说它是个愚蠢的家伙，太可恶了，下次再这样就踩扁它。',sample_vn:'Voi nhìn chằm chằm vào chuột bằng ánh mắt khinh miệt, giận dữ nói nó là đồ ngu ngốc, thật đáng ghét, lần sau còn như thế thì sẽ giẫm bẹp nó.',note:'Chuyển lời trực tiếp thành lời kể: 你这个愚蠢的家伙 → 说它是个愚蠢的家伙.'},
+    {q_zh:'当大象落入打猎者的巨网时，老鼠是怎么做的？',q_vn:'Khi voi sa vào tấm lưới lớn của thợ săn, chuột đã làm gì?',hint:'①大象（挣扎、窜、摆脱、悲伤、害怕）②老鼠想（毫无抵抗力、咬几个洞、战胜、不忍下手、太过残忍）③老鼠（锋利、咬断）',sample:'大象不顾一切地挣扎，往外乱窜，却摆脱不了巨网，又悲伤又害怕。老鼠想，大象现在毫无抵抗力，只要咬几个洞就能战胜它。可是它不忍下手，觉得那样太过残忍，于是用锋利的牙齿咬断了绳子。',sample_vn:'Voi bất chấp tất cả vùng vẫy, lao loạn ra ngoài nhưng không thoát khỏi tấm lưới, vừa đau buồn vừa sợ hãi. Chuột nghĩ, bây giờ voi hoàn toàn không có sức chống cự, chỉ cần cắn vài lỗ là thắng được nó. Nhưng nó không nỡ ra tay, thấy làm vậy quá tàn nhẫn, thế là dùng hàm răng sắc bén cắn đứt dây thừng.',note:'Gợi ý có 3 phần ①②③ — nói lần lượt: voi thế nào → chuột nghĩ gì → chuột làm gì. Nối bằng 可是, 于是.'},
+    {q_zh:'山神为什么说老鼠胜利了？',q_vn:'Vì sao thần núi nói chuột đã chiến thắng?',hint:'化敌为友、举世瞩目',sample:'因为老鼠化敌为友，创造了举世瞩目的成就。山神认为，世界上没有比这更完美的胜利了。',sample_vn:'Vì chuột đã biến kẻ thù thành bạn, làm nên thành tựu khiến cả thế gian chú ý. Thần núi cho rằng trên đời không có chiến thắng nào hoàn hảo hơn thế.',note:'Câu hỏi 为什么 → mở đầu bằng 因为. Có thể thêm một câu nêu đạo lý của riêng em.'}
   ]
 };
 
 // ══════════════════════════════════════════
-// TÌNH HUỐNG — đáp lời bắt buộc dùng từ / cấu trúc của bài
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — câu tự soạn (sách HSK 6 không có sách bài tập nghe), mỗi câu một tình huống mới
+// ══════════════════════════════════════════
+var listenExamData = {
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 4',
+  items: [
+    {
+      n: 1,
+      lines: [
+        {sp:'女',zh:'你不是说今天去爬山吗？怎么在家？'},
+        {sp:'男',zh:'本来都准备好了，不料朋友的车在半路坏了，只好回来了。'}
+      ],
+      q: '男的为什么没去爬山？',
+      qvn: 'Vì sao người đàn ông không đi leo núi?',
+      opts: ['下大雨了','朋友的车坏了','他生病了','朋友不想去'],
+      ans: 1,
+      why: '不料朋友的车在半路坏了 → xe của bạn hỏng giữa đường. 不料 báo hiệu chuyện ngoài dự tính.',
+      words: ['不料']
+    },
+    {
+      n: 2,
+      lines: [
+        {sp:'男',zh:'这条裙子打折以后还要两千块？'},
+        {sp:'女',zh:'是啊，一条普通的裙子卖这么贵，未免有点儿不合理。'}
+      ],
+      q: '女的觉得这条裙子怎么样？',
+      qvn: 'Người phụ nữ thấy chiếc váy thế nào?',
+      opts: ['很漂亮','质量很好','太贵了','很适合她'],
+      ans: 2,
+      why: '卖这么贵，未免有点儿不合理 = bán đắt thế này có phần vô lý → cô ấy thấy quá đắt.',
+      words: ['未免']
+    },
+    {
+      n: 3,
+      lines: [
+        {sp:'女',zh:'你们公司最近怎么这么忙？'},
+        {sp:'男',zh:'老板出国了，我们乘机把办公室重新装修一下，得在他回来之前完成。'}
+      ],
+      q: '男的公司在做什么？',
+      qvn: 'Công ty người đàn ông đang làm gì?',
+      opts: ['准备出国','招聘新员工','给老板开会','装修办公室'],
+      ans: 3,
+      why: '乘机把办公室重新装修一下 = nhân dịp sếp đi vắng sửa sang lại văn phòng.',
+      words: ['乘机']
+    },
+    {
+      n: 4,
+      lines: [
+        {sp:'女',zh:'我放在椅子上的帽子呢？'},
+        {sp:'男',zh:'真对不起，我刚才没留神，坐在上面了，现在都扁了。'}
+      ],
+      q: '帽子怎么了？',
+      qvn: 'Cái mũ bị làm sao?',
+      opts: ['被男的坐扁了','被风吹走了','被弄脏了','丢了'],
+      ans: 0,
+      why: '没留神，坐在上面了，现在都扁了 → anh ấy không để ý ngồi lên làm mũ bẹp dí.',
+      words: ['留神','扁']
+    },
+    {
+      n: 5,
+      lines: [
+        {sp:'女',zh:'听说小王辞职了，要去南方开饭馆？'},
+        {sp:'男',zh:'是啊，他父母都不同意，可他不顾一切，非去不可。'}
+      ],
+      q: '关于小王，可以知道什么？',
+      qvn: 'Về Tiểu Vương, có thể biết điều gì?',
+      opts: ['父母支持他','还在原来的公司','坚持要去开饭馆','已经开了三家饭馆'],
+      ans: 2,
+      why: '不顾一切，非去不可 → bất chấp bố mẹ phản đối, nhất định đi mở quán.',
+      words: ['不顾']
+    },
+    {
+      n: 6,
+      lines: [
+        {sp:'男',zh:'你都尝试过好几种方法了，还是睡不好吗？'},
+        {sp:'女',zh:'是啊，看来得去医院看看了，再这样下去我的身体会受不了的。'}
+      ],
+      q: '女的打算怎么做？',
+      qvn: 'Người phụ nữ định làm gì?',
+      opts: ['再试一种方法','去医院看看','多运动','不管它'],
+      ans: 1,
+      why: '看来得去医院看看了 → định đi khám. Các cách khác cô đã thử rồi mà không hiệu quả.',
+      words: ['尝试']
+    },
+    {
+      n: 7,
+      lines: [
+        {sp:'男',zh:'刚才公共汽车上怎么那么乱？'},
+        {sp:'女',zh:'有个男的耍流氓，被车上的人抓住，送到派出所去了。'}
+      ],
+      q: '车上发生了什么事？',
+      qvn: 'Trên xe buýt đã xảy ra chuyện gì?',
+      opts: ['有人生病了','车坏了','有人丢了钱包','有人耍流氓被抓了'],
+      ans: 3,
+      why: '有个男的耍流氓，被车上的人抓住 → một gã giở trò sàm sỡ, bị hành khách bắt đưa lên đồn.',
+      words: ['耍','流氓']
+    }
+  ]
+};
+
+// ══════════════════════════════════════════
+// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
 // ══════════════════════════════════════════
 var situationData = {
-  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
-         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn cùng lớp định bỏ học thêm môn Toán chỉ vì một lần thi kém.',
-     a:{sp:'Bạn',zh:'我这次数学又没考好，干脆不学了。',vn:'Lần này tớ lại thi Toán không tốt, thôi bỏ luôn không học nữa.'},
-     need:['Dùng 未免','Khuyên bạn thêm một câu'],
-     sample:'就因为一次没考好就放弃，未免太草率了吧？再坚持一下试试。',
-     samplePy:'Jiù yīnwèi yí cì méi kǎohǎo jiù fàngqì, wèimiǎn tài cǎoshuài le ba? Zài jiānchí yíxià shìshi.',
-     sampleVn:'Chỉ vì một lần thi không tốt mà bỏ thì có hơi vội vàng quá không? Cố thêm chút nữa xem sao.',
-     tip:'未免 chê nhẹ nhàng, lịch sự — hợp khi góp ý bạn bè. Sau 未免 thường là 太 / 有些 + tính từ tiêu cực.'},
-
-    {scene:'Bạn hỏi vì sao hôm qua em không đi dã ngoại cùng lớp.',
-     a:{sp:'Bạn',zh:'昨天的郊游你怎么没来？大家都在找你。',vn:'Chuyến dã ngoại hôm qua sao cậu không đến? Mọi người đều tìm cậu.'},
-     need:['Dùng 不料','Kể điều bất ngờ đã xảy ra'],
-     sample:'我本来都准备好了，不料早上突然发烧了，只好在家休息。',
-     samplePy:'Wǒ běnlái dōu zhǔnbèi hǎo le, búliào zǎoshang tūrán fāshāo le, zhǐhǎo zài jiā xiūxi.',
-     sampleVn:'Tớ vốn đã chuẩn bị xong hết rồi, chẳng ngờ sáng ra bỗng bị sốt, đành ở nhà nghỉ.',
-     tip:'Vế trước nói điều dự tính (本来……), vế sau mới dùng 不料. 不料 không đứng ở vế đầu câu chuyện.'},
-
-    {scene:'Bố mẹ vừa ra ngoài, em trai rủ em xem ti vi thay vì làm bài.',
-     a:{sp:'Em trai',zh:'爸妈都出去了，我们看会儿电视吧！',vn:'Bố mẹ đi ra ngoài hết rồi, mình xem ti vi một lát đi!'},
-     need:['Dùng 乘 hoặc 乘机','Từ chối khéo, đưa ra đề nghị khác'],
-     sample:'别乘爸妈不在家就偷懒，先把作业写完再看吧。',
-     samplePy:'Bié chéng bà mā bú zài jiā jiù tōulǎn, xiān bǎ zuòyè xiěwán zài kàn ba.',
-     sampleVn:'Đừng nhân lúc bố mẹ vắng nhà mà lười, làm xong bài rồi hẵng xem.',
-     tip:'乘 + mệnh đề (爸妈不在家) = nhân lúc…; 乘机 thì đứng ngay trước động từ: 乘机偷懒.'},
-
-    {scene:'Bạn thân tức giận vì một bạn khác nói xấu sau lưng, muốn trả đũa.',
-     a:{sp:'Bạn',zh:'他在背后说我坏话，我一定要让他好看！',vn:'Nó nói xấu tớ sau lưng, tớ nhất định phải cho nó biết tay!'},
-     need:['Dùng 毫无 + 倘若','Khuyên bạn bình tĩnh, nhắc tới bài học của câu chuyện'],
-     sample:'你别冲动，报复他也毫无意义。倘若能化敌为友，那才是真正的胜利。',
-     samplePy:'Nǐ bié chōngdòng, bàofù tā yě háo wú yìyì. Tǎngruò néng huà dí wéi yǒu, nà cái shì zhēnzhèng de shènglì.',
-     sampleVn:'Cậu đừng nóng, trả đũa nó cũng chẳng có ý nghĩa gì. Nếu biến được kẻ thù thành bạn thì đó mới là chiến thắng thật sự.',
-     tip:'毫无 + danh từ trừu tượng hai âm tiết (意义, 办法, 兴趣); 倘若 là văn viết, nói chuyện dùng cũng được khi muốn trang trọng, nhấn mạnh.'},
-
-    {scene:'Bạn đang ôm một chồng sách nặng, than không có ai giúp.',
-     a:{sp:'Bạn',zh:'我正愁没人帮我搬书呢！',vn:'Tớ đang lo không có ai giúp tớ bê sách đây!'},
-     need:['Dùng 恰巧 hoặc 正好','Nhận lời giúp'],
-     sample:'我恰巧没事，来，我帮你搬吧。',
-     samplePy:'Wǒ qiàqiǎo méi shì, lái, wǒ bāng nǐ bān ba.',
-     sampleVn:'Tớ vừa khéo đang rảnh, nào, tớ bê giúp cậu.',
-     tip:'恰巧 là phó từ, đứng trước vị ngữ. Muốn nói "đến đúng lúc" thì dùng 我来得正好, KHÔNG nói *来得恰巧.'}
+    {scene:'Bạn cùng lớp định bỏ học thêm môn Toán chỉ vì một lần thi kém.',a:{sp:'Bạn',zh:'我这次数学又没考好，干脆不学了。',vn:'Lần này tớ lại thi Toán không tốt, bỏ luôn cho rồi.'},need:['Dùng 未免','Khuyên bạn kiên trì'],sample:'就因为一次没考好就放弃，未免太可惜了吧？再坚持一个学期试试。',samplePy:'Jiù yīnwèi yí cì méi kǎo hǎo jiù fàngqì, wèimiǎn tài kěxī le ba? Zài jiānchí yí ge xuéqī shìshi.',sampleVn:'Chỉ vì một lần thi không tốt mà bỏ thì có phần tiếc quá đấy? Cố thêm một học kỳ thử xem.',tip:'未免太……了吧？ là cách phê bình nhẹ nhàng, dùng câu hỏi để bạn dễ chấp nhận.'},
+    {scene:'Bạn hỏi vì sao hôm qua em không đến dự sinh nhật bạn ấy.',a:{sp:'Bạn',zh:'昨天我的生日聚会你怎么没来？大家都在等你。',vn:'Hôm qua tiệc sinh nhật tớ sao cậu không đến? Mọi người đều chờ cậu.'},need:['Dùng 不料','Xin lỗi bạn'],sample:'哎呀，太抱歉了！我礼物都买好了，不料出门前突然发烧了，只好在家休息。',samplePy:'Āiyā, tài bàoqiàn le! Wǒ lǐwù dōu mǎi hǎo le, búliào chūmén qián tūrán fāshāo le, zhǐhǎo zài jiā xiūxi.',sampleVn:'Ôi, thật có lỗi quá! Tớ mua quà xong cả rồi, không ngờ trước lúc ra khỏi nhà lại bị sốt, đành ở nhà nghỉ.',tip:'Vế trước kể dự định (礼物都买好了), vế sau 不料 + chuyện bất ngờ.'},
+    {scene:'Bố mẹ vừa ra ngoài, em trai rủ em chơi game thay vì làm bài.',a:{sp:'Em trai',zh:'爸妈都出去了，我们玩会儿游戏吧！',vn:'Bố mẹ ra ngoài cả rồi, mình chơi game một lát đi!'},need:['Dùng 乘','Khuyên em làm bài trước'],sample:'别乘爸妈不在就偷懒，先把作业写完，我再陪你玩儿。',samplePy:'Bié chéng bà mā bú zài jiù tōulǎn, xiān bǎ zuòyè xiě wán, wǒ zài péi nǐ wánr.',sampleVn:'Đừng nhân lúc bố mẹ vắng nhà mà lười, làm bài xong trước đi, rồi anh chơi cùng em.',tip:'乘 + ai + 不在 / 不注意 + V = nhân lúc ai vắng / không để ý mà làm gì.'},
+    {scene:'Bạn thân tức giận vì một bạn khác nói xấu sau lưng, muốn trả đũa.',a:{sp:'Bạn',zh:'他在背后说我坏话，我也要让他尝尝被人说坏话的感觉！',vn:'Cậu ta nói xấu tớ sau lưng, tớ cũng phải cho cậu ta nếm mùi này!'},need:['Dùng 毫无 hoặc 倘若','Khuyên bạn bình tĩnh'],sample:'跟他对着干毫无意义。倘若你能大度一点儿，跟他化敌为友，那才是真正的胜利。',samplePy:'Gēn tā duìzhe gàn háowú yìyì. Tǎngruò nǐ néng dàdù yìdiǎnr, gēn tā huà dí wéi yǒu, nà cái shì zhēnzhèng de shènglì.',sampleVn:'Đối đầu với cậu ta chẳng có ý nghĩa gì. Nếu cậu rộng lượng một chút, biến thù thành bạn với cậu ta, đó mới là chiến thắng thật sự.',tip:'毫无意义 = chẳng có ý nghĩa gì; 倘若 (văn viết hơn 如果) dùng khi khuyên trịnh trọng.'},
+    {scene:'Bạn kể mình bị một người lạ trên mạng lừa mất tiền vì tin lời hứa "lãi cao".',a:{sp:'Bạn',zh:'他承诺一个月就能赚一倍，我就把钱给他了，结果人找不到了。',vn:'Hắn hứa một tháng là lãi gấp đôi, tớ đưa tiền cho hắn, kết quả giờ không tìm thấy người đâu.'},need:['Dùng 盲目 hoặc 草率','An ủi và góp ý'],sample:'别太难过了，就当买个教训吧。以后可别再盲目相信网上的人了，做决定前多问问家人。',samplePy:'Bié tài nánguò le, jiù dàng mǎi ge jiàoxun ba. Yǐhòu kě bié zài mángmù xiāngxìn wǎng shang de rén le, zuò juédìng qián duō wènwen jiārén.',sampleVn:'Đừng buồn quá, coi như mua một bài học. Sau này đừng mù quáng tin người trên mạng nữa, trước khi quyết định nhớ hỏi người nhà.',tip:'盲目 + 相信 / 跟风; 可别再……了 = đừng có… nữa nhé (nhắc nhở thân mật).'}
   ]
 };
 
 // ══════════════════════════════════════════
-// CHỌN CÁCH NÓI HỢP HOÀN CẢNH — cả hai câu đều đúng ngữ pháp
+// 🎯 NÓI SAO CHO HAY — 得体 / 语体
 // ══════════════════════════════════════════
 var registerData = {
-  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
-         'Lên HSK 6, cái khó không còn là đúng/sai, mà là chọn được lời văn hợp với người nghe, hợp với văn nói hay văn viết.',
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. Lên HSK 6, cái khó không còn là đúng/sai, mà là chọn được lời văn hợp với người nghe, hợp với văn nói hay văn viết.',
   items: [
-    {scene:'Em viết bài tóm tắt (缩写) câu chuyện để nộp cho cô giáo.',
-     a:'倘若你还想回来，必须战胜大象。',b:'要是你还想回来，得打赢大象。',better:'a',
-     why:'倘若, 必须, 战胜 là từ văn viết, hợp với bài văn nộp cô. Câu b dùng 要是, 得, 打赢 là khẩu ngữ, nói chuyện thì hợp hơn.'},
-
-    {scene:'Em than với bạn thân về con muỗi cắn cả đêm.',
-     a:'这只蚊子真可恶，咬了我好几口！',b:'这只蚊子的行为令人厌恶，严重影响了我的休息。',better:'a',
-     why:'可恶 dùng được với giọng đùa, rất tự nhiên khi nói với bạn. Câu b trịnh trọng như văn bản, nói với bạn nghe buồn cười.'},
-
-    {scene:'Em đọc bản tin về một vụ tai nạn trên đài phát thanh của trường.',
-     a:'这次事故没有造成人员死亡。',b:'这次事故没有人死。',better:'a',
-     why:'Bản tin dùng 造成人员死亡 — trang trọng, khách quan. 没有人死 là khẩu ngữ, đọc trên đài nghe thiếu nghiêm túc.'},
-
-    {scene:'Trong giờ thảo luận, em góp ý bài viết của một bạn.',
-     a:'你的文章写得太长了，不好。',b:'你的文章写得不错，只是未免长了一些。',better:'b',
-     why:'未免 + 长了一些 là lời chê uyển chuyển, khen trước chê sau — lịch sự, bạn dễ tiếp nhận. Câu a quá thẳng.'},
-
-    {scene:'Em kể với bạn cùng lớp chuyện hôm qua đi tìm bạn ấy.',
-     a:'我本来想去找你，不料你恰巧出门了。',b:'我本来想去找你，没想到你正好出门了。',better:'b',
-     why:'Nói chuyện hằng ngày người ta hay dùng 没想到, 正好. 不料, 恰巧 sắc thái văn viết — đúng nhưng hơi "sách vở" khi nói.'},
-
-    {scene:'Em viết thư xin lỗi thầy hiệu trưởng vì đã vi phạm nội quy.',
-     a:'请您饶恕我这一次吧。',b:'恳请您原谅我这一次的过错。',better:'b',
-     why:'饶恕 nặng nề như xin tha tội lớn. Thư xin lỗi thầy dùng 恳请……原谅 vừa trang trọng vừa đúng mức.'}
+    {scene:'Em than với bạn thân về con muỗi cắn cả đêm.',a:'这只蚊子的行为令人厌恶，严重影响了我的休息。',b:'这只蚊子真可恶，咬了我好几口！',better:'b',why:'Than thở với bạn dùng khẩu ngữ: 真可恶, 咬了我好几口. Câu a (令人厌恶, 严重影响) giống bản báo cáo, nghe buồn cười.'},
+    {scene:'Trong giờ thảo luận, em góp ý bài viết của một bạn.',a:'你的文章写得太长了，不好。',b:'你的文章写得不错，只是未免长了一些。',better:'b',why:'未免 + tính từ + 了一些 phê bình nhẹ nhàng, khen trước chê sau. Câu a chê thẳng, dễ làm bạn mất vui.'},
+    {scene:'Em kể với bạn cùng lớp chuyện hôm qua đi tìm bạn ấy.',a:'我本来想去找你，不料你恰巧出门了。',b:'我本来想去找你，没想到你正好出门了。',better:'b',why:'不料, 恰巧 thiên về văn viết, dùng khi kể chuyện trong bài văn. Nói chuyện với bạn tự nhiên hơn với 没想到, 正好.'},
+    {scene:'Em viết đơn gửi ban quản lý toà nhà đề nghị sửa đèn hành lang.',a:'倘若能尽快修好楼道的灯，大家将十分感谢。',b:'楼道的灯快点儿修吧，不然大家都不高兴。',better:'a',why:'Đơn đề nghị là văn bản trang trọng: 倘若, 尽快, 将十分感谢. Câu b là lời nói miệng, nghe như ra lệnh.'},
+    {scene:'Em đọc bản tin trên đài phát thanh của trường về trận động đất ở nước láng giềng.',a:'这次地震没有死人。',b:'这次地震没有造成人员死亡。',better:'b',why:'Bản tin dùng từ trung tính, văn viết: 造成人员死亡. 死人 là khẩu ngữ, nghe thô, không hợp tin tức.'},
+    {scene:'Em nhắn tin nhắc bạn cùng phòng mang ô vì trời sắp mưa.',a:'要下雨了，出门留神带把伞！',b:'倘若外出，请记得带好雨伞。',better:'a',why:'Nhắn tin cho bạn dùng khẩu ngữ: 留神, 带把伞. Câu b (倘若外出, 请……) là kiểu thông báo trang trọng.'}
   ]
 };
 

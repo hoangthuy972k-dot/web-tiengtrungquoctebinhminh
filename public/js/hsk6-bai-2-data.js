@@ -1402,96 +1402,49 @@ var hvBridgeData = {
 // ══════════════════════════════════════════
 var matchData = [
   {left:'态度',right:'和蔼'},
-  {left:'说话',right:'和气'},
-  {left:'目光中充满着',right:'慈祥'},
-  {left:'跨进',right:'大学校门'},
-  {left:'独立',right:'自主'},
-  {left:'脱离',right:'父母'},
-  {left:'巨大的',right:'诱惑'},
-  {left:'无比',right:'向往'},
-  {left:'片刻',right:'不停'},
-  {left:'回家的',right:'步伐'},
-  {left:'被亲情',right:'包围'},
-  {left:'飞到父母',right:'跟前'},
-  {left:'与他们',right:'团圆'},
+  {left:'慈祥的',right:'目光'},
+  {left:'加快',right:'步伐'},
+  {left:'隐瞒',right:'真相'},
+  {left:'熬',right:'夜'},
+  {left:'难得的',right:'机会'},
   {left:'酝酿',right:'已久'},
-  {left:'暗暗',right:'埋怨'},
-  {left:'熬过',right:'漫长的假期'},
-  {left:'给杂志社',right:'写稿件'},
-  {left:'难得的',right:'寂静'},
-  {left:'脸上满是',right:'心疼'},
   {left:'眼角的',right:'皱纹'},
-  {left:'感动得',right:'热泪盈眶'},
-  {left:'长',right:'本事'}
+  {left:'跨过',right:'小河'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ — mỗi từ của bài ít nhất một câu
+// ĐIỀN TỪ — câu mới (không chép bài khoá / SGK), mỗi câu một tình huống; ôn xoáy ốc từ + ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'王老师对学生总是那么',blank:'和蔼',post:'可亲，大家都喜欢跟他聊天。',hint:'(hòa nhã)',ans:'和蔼'},
-  {pre:'有话好好说，别为了这点儿小事伤了',blank:'和气',post:'。',hint:'(hòa khí)',ans:'和气'},
-  {pre:'她那件漂亮的红裙子吸引了大家的',blank:'目光',post:'。',hint:'(ánh mắt)',ans:'目光'},
-  {pre:'外婆',blank:'慈祥',post:'地看着我，脸上满是笑容。',hint:'(hiền từ)',ans:'慈祥'},
-  {pre:'在',blank:'跨',post:'进大学校门之前，我从没有离开过家。',hint:'(bước)',ans:'跨'},
-  {pre:'老师希望我们学会',blank:'自主',post:'学习，不要什么都等着别人督促。',hint:'(tự chủ)',ans:'自主'},
-  {pre:'这点儿小事你就',blank:'甭',post:'管了，我自己能处理。',hint:'(khỏi, không cần — khẩu ngữ)',ans:'甭',exp:'甭 = 不用 (khỏi, không cần), khẩu ngữ phương Bắc: 你就甭管了.'},
-  {pre:'经过医生一夜的抢救，病人终于',blank:'脱离',post:'了危险。',hint:'(thoát khỏi)',ans:'脱离'},
-  {pre:'他经不起金钱的',blank:'诱惑',post:'，最后犯了错误。',hint:'(cám dỗ)',ans:'诱惑'},
-  {pre:'中秋节全家团圆在一起，妈妈',blank:'无比',post:'高兴。',hint:'(vô cùng)',ans:'无比',exp:'无比 + tính từ = vô cùng (văn viết): 无比高兴.'},
-  {pre:'我喜欢旅行，一直很',blank:'向往',post:'去西藏看看。',hint:'(khao khát)',ans:'向往'},
-  {pre:'第一次离开家，心里的',blank:'孤独',post:'感一下子跑了出来。',hint:'(cô đơn)',ans:'孤独'},
-  {pre:'都上高中了，还动不动就',blank:'哭鼻子',post:'，羞不羞？',hint:'(khóc nhè)',ans:'哭鼻子'},
-  {pre:'请大家稍等',blank:'片刻',post:'，会议马上开始。',hint:'(giây lát)',ans:'片刻',exp:'稍等片刻 = đợi một lát (片刻 là khoảng thời gian rất ngắn, văn viết).'},
-  {pre:'天快黑了，我们不由得加快了',blank:'步伐',post:'。',hint:'(bước chân)',ans:'步伐'},
-  {pre:'明星一出来，就被记者们',blank:'包围',post:'了。',hint:'(vây quanh)',ans:'包围'},
-  {pre:'她的热情',blank:'感染',post:'了全班同学，大家都想试一试。',hint:'(lan sang, lây sang)',ans:'感染'},
-  {pre:'他累坏了，',blank:'恨不得',post:'一下子倒在床上，睡上三天三夜。',hint:'(nóng lòng muốn, chỉ muốn)',ans:'恨不得',exp:'恨不得 + V = chỉ muốn ngay… (mong muốn mạnh, thường không thực hiện được): 恨不得一下子倒在床上.'},
-  {pre:'孩子一看见妈妈就跑到她',blank:'跟前',post:'。',hint:'(trước mặt, bên cạnh)',ans:'跟前'},
-  {pre:'除夕晚上，一家人围在一起吃',blank:'团圆',post:'饭。',hint:'(đoàn viên)',ans:'团圆'},
-  {pre:'老师，您',blank:'近来',post:'身体好吗？',hint:'(dạo này)',ans:'近来',exp:'近来 = dạo này, gần đây (từ một thời điểm trước đến nay): 您近来身体好吗？'},
-  {pre:'唱歌之前，她先闭上眼睛',blank:'酝酿',post:'了一下感情。',hint:'(ấp ủ, lấy cảm xúc)',ans:'酝酿'},
-  {pre:'灯一关，',blank:'刹那',post:'间，整个房间都黑了。',hint:'(khoảnh khắc)',ans:'刹那',exp:'刹那间 = trong khoảnh khắc, ngay tức thì (văn viết).'},
-  {pre:'今年冬天天气很',blank:'反常',post:'，一点儿也不冷。',hint:'(khác thường)',ans:'反常'},
-  {pre:'事情已经发生了，互相',blank:'埋怨',post:'也没有用。',hint:'(trách móc)',ans:'埋怨'},
-  {pre:'父母那么辛苦，我们应该多',blank:'体谅',post:'他们。',hint:'(thông cảm)',ans:'体谅'},
-  {pre:'他考试没考好，',blank:'无精打采',post:'地走出了教室。',hint:'(uể oải, ủ rũ)',ans:'无精打采'},
-  {pre:'上大学以后，要早点儿',blank:'规划',post:'自己的未来。',hint:'(lập kế hoạch)',ans:'规划'},
-  {pre:'最难的日子已经',blank:'熬',post:'过去了，以后会越来越好的。',hint:'(chịu đựng, gắng qua)',ans:'熬'},
-  {pre:'经过',blank:'漫长',post:'的等待，他终于收到了录取通知书。',hint:'(dài đằng đẵng)',ans:'漫长'},
-  {pre:'一阵电话铃声打破了夜晚的',blank:'寂静',post:'。',hint:'(sự tĩnh lặng)',ans:'寂静'},
-  {pre:'编辑说我的',blank:'稿件',post:'写得不错，只需要改几个地方。',hint:'(bài viết)',ans:'稿件'},
-  {pre:'这是一个',blank:'难得',post:'的机会，你一定要好好把握。',hint:'(hiếm có)',ans:'难得',exp:'难得 + 的 + danh từ = hiếm có, khó có được: 难得的机会.'},
-  {pre:'看到孩子累成这样，妈妈',blank:'心疼',post:'得说不出话来。',hint:'(xót xa)',ans:'心疼'},
-  {pre:'他想用笑容',blank:'掩饰',post:'心里的紧张。',hint:'(che giấu)',ans:'掩饰'},
-  {pre:'他丢了工作，但怕妈妈担心，所以一直',blank:'隐瞒',post:'着这件事。',hint:'(giấu giếm)',ans:'隐瞒'},
-  {pre:'我妈妈特别爱',blank:'唠叨',post:'，一件小事能说上半天。',hint:'(lải nhải)',ans:'唠叨'},
-  {pre:'年轻人不应该怕',blank:'吃苦',post:'，因为吃苦也是一种学习。',hint:'(chịu khổ)',ans:'吃苦'},
-  {pre:'看到学生们一天天进步，老师感到十分',blank:'欣慰',post:'。',hint:'(vui mừng, an lòng)',ans:'欣慰'},
-  {pre:'他很有',blank:'本事',post:'，什么东西坏了都能修好。',hint:'(bản lĩnh, tài)',ans:'本事'},
-  {pre:'奶奶脸上的',blank:'皱纹',post:'越来越多了，可她的笑容还是那么慈祥。',hint:'(nếp nhăn)',ans:'皱纹'},
-  {pre:'老师一走进来，教室里',blank:'顿时',post:'鸦雀无声。',hint:'(ngay tức khắc)',ans:'顿时',exp:'顿时 = ngay tức khắc (dùng cho việc đã xảy ra, văn kể chuyện): 顿时鸦雀无声.'},
-  {pre:'看到这么精彩的表演，大家',blank:'不由得',post:'鼓起掌来。',hint:'(bất giác)',ans:'不由得',exp:'不由得 + V = bất giác, không kìm được mà…: 不由得鼓起掌来.'},
-  {pre:'听到自己的名字时，她激动得',blank:'热泪盈眶',post:'。',hint:'(rưng rưng nước mắt)',ans:'热泪盈眶'}
+  {pre:'新来的校长态度',blank:'和蔼',post:'，见了学生总是笑着打招呼。',hint:'(hoà nhã)',ans:'和蔼',exp:'和蔼 tả thái độ hiền hoà, dễ gần của người lớn tuổi / người trên với người dưới.'},
+  {pre:'我从小就',blank:'向往',post:'大海，长大后终于搬到了海边的城市。',hint:'(khao khát, mong mỏi)',ans:'向往',exp:'向往 + nơi chốn / cuộc sống = khao khát được đến, được sống như thế.'},
+  {pre:'刚出国留学时，我常常感到很',blank:'孤独',post:'，周末一个人在房间里不知道干什么。',hint:'(cô đơn)',ans:'孤独',exp:'孤独 = cô đơn, một mình không ai bên cạnh; đi với 感到 / 觉得.'},
+  {pre:'他刚到家，',blank:'片刻',post:'也没休息，又去医院看望爷爷了。',hint:'(một chốc lát)',ans:'片刻',exp:'片刻也没 / 也不 + V = không nghỉ dù chỉ một chút (nhấn mạnh thời gian cực ngắn).'},
+  {pre:'她的笑声',blank:'感染',post:'了在场的每一个人，大家都跟着笑了起来。',hint:'(lan sang, truyền sang)',ans:'感染',exp:'感染 + người = làm cảm xúc lan sang người khác (ngoài nghĩa "nhiễm bệnh").'},
+  {pre:'',blank:'近来',post:'天气变化很大，出门记得多带一件衣服。',hint:'(dạo gần đây)',ans:'近来',exp:'近来 = dạo này, khoảng thời gian gần đây kéo dài đến hiện tại; đứng đầu câu hoặc sau chủ ngữ.'},
+  {pre:'事情都已经这样了，你再',blank:'埋怨',post:'别人也没有用，不如想想怎么解决。',hint:'(trách móc)',ans:'埋怨',exp:'埋怨 + người = trách móc, đổ lỗi cho ai; 再……也没有用 = có… nữa cũng vô ích.'},
+  {pre:'爸爸工作很辛苦，我们应该多',blank:'体谅',post:'他，别总让他陪我们出去玩儿。',hint:'(thông cảm, thấu hiểu)',ans:'体谅',exp:'体谅 + người = đặt mình vào chỗ người khác mà thông cảm; trái với 埋怨.'},
+  {pre:'进了大学，你最好提前',blank:'规划',post:'一下自己的学习和生活。',hint:'(lên kế hoạch)',ans:'规划',exp:'规划 = lập kế hoạch dài hạn, có hệ thống (规划学习 / 规划未来).'},
+  {pre:'现在的年轻人更喜欢',blank:'自主',post:'选择自己的工作。',hint:'(tự mình quyết định)',ans:'自主',exp:'自主 + V = tự mình quyết định làm gì, không để người khác sắp đặt.'},
+  {pre:'奶奶把我叫到',blank:'跟前',post:'，给了我一个红包。',hint:'(bên cạnh, trước mặt)',ans:'跟前',exp:'叫到 / 走到 + người + 跟前 = đến sát bên cạnh ai.'},
+  {pre:'中秋节是家人',blank:'团圆',post:'的日子。',hint:'(sum họp)',ans:'团圆',exp:'团圆 = cả nhà sum họp (thường vào dịp lễ Tết); 团圆的日子.'},
+  {pre:'编辑说我的',blank:'稿件',post:'写得不错，下个月就能发表。',hint:'(bản thảo)',ans:'稿件',exp:'稿件 = bài viết gửi cho báo, tạp chí, nhà xuất bản.'},
+  {pre:'看到孩子发烧到三十九度，妈妈',blank:'心疼',post:'得一夜没睡。',hint:'(xót xa, thương)',ans:'心疼',exp:'心疼 = xót, thương (người thân bị khổ); 心疼得 + kết quả.'},
+  {pre:'奶奶年纪大了，一件事总要',blank:'唠叨',post:'好几遍。',hint:'(nói đi nói lại)',ans:'唠叨',exp:'唠叨 = nói đi nói lại, lải nhải (thường là người lớn tuổi, cha mẹ).'},
+  {pre:'看到学生们一个个都考上了大学，老师感到非常',blank:'欣慰',post:'。',hint:'(vui mừng yên lòng)',ans:'欣慰',exp:'欣慰 = vui mừng và yên lòng khi thấy người mình lo lắng đã thành công.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (恨不得 · 顿时 · 不由得) ít nhất 2 câu
+// SẮP XẾP CÂU — câu mới, chỉ một trật tự đúng
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['我','也','恨不得','马上','飞到','父母跟前','。'],ans:'我也恨不得马上飞到父母跟前。',audio:'我也恨不得马上飞到父母跟前。'},
-  {words:['他','饿极了','，','恨不得','一口','吃完','一大碗饭','。'],ans:'他饿极了，恨不得一口吃完一大碗饭。',audio:'他饿极了，恨不得一口吃完一大碗饭。'},
-  {words:['那些','不满的','情绪','顿时','消失了','。'],ans:'那些不满的情绪顿时消失了。',audio:'那些不满的情绪顿时消失了。'},
-  {words:['老师','一','走进来','，','教室里','顿时','鸦雀无声','。'],ans:'老师一走进来，教室里顿时鸦雀无声。',audio:'老师一走进来，教室里顿时鸦雀无声。'},
-  {words:['大家','不由得','鼓起掌','来','。'],ans:'大家不由得鼓起掌来。',audio:'大家不由得鼓起掌来。'},
-  {words:['我','心里','不由得','有些','担心','。'],ans:'我心里不由得有些担心。',audio:'我心里不由得有些担心。'},
-  {words:['他们','对我','态度','和蔼','，','说话','和气','。'],ans:'他们对我态度和蔼，说话和气。',audio:'他们对我态度和蔼，说话和气。'},
-  {words:['同学','一','给家里','打电话','就','哭鼻子','。'],ans:'同学一给家里打电话就哭鼻子。',audio:'同学一给家里打电话就哭鼻子。'},
-  {words:['独立生活','对我','具有','巨大的','诱惑','。'],ans:'独立生活对我具有巨大的诱惑。',audio:'独立生活对我具有巨大的诱惑。'},
-  {words:['我','心中','暗暗','埋怨','父母','不体谅我','。'],ans:'我心中暗暗埋怨父母不体谅我。',audio:'我心中暗暗埋怨父母不体谅我。'},
-  {words:['母亲的话','使我','酝酿已久的','恋家情绪','刹那间','就','没有了','。'],ans:'母亲的话使我酝酿已久的恋家情绪刹那间就没有了。',audio:'母亲的话使我酝酿已久的恋家情绪刹那间就没有了。'},
-  {words:['不吃苦','，','怎么','长','本事','？'],ans:'不吃苦，怎么长本事？',audio:'不吃苦，怎么长本事？'},
-  {words:['假期的','校园','寂静','得很','。'],ans:'假期的校园寂静得很。',audio:'假期的校园寂静得很。'}
+  {words:['他','困得','恨不得','马上','躺下','睡觉','。'],ans:'他困得恨不得马上躺下睡觉。',audio:'他困得恨不得马上躺下睡觉。'},
+  {words:['我们','都','被她的热情','感染了','。'],ans:'我们都被她的热情感染了。',audio:'我们都被她的热情感染了。'},
+  {words:['爸爸妈妈的','脸上','多了','不少','皱纹','。'],ans:'爸爸妈妈的脸上多了不少皱纹。',audio:'爸爸妈妈的脸上多了不少皱纹。'},
+  {words:['她','把自己的不安','掩饰得','很好','。'],ans:'她把自己的不安掩饰得很好。',audio:'她把自己的不安掩饰得很好。'},
+  {words:['他','无精打采地','坐在','教室里','。'],ans:'他无精打采地坐在教室里。',audio:'他无精打采地坐在教室里。'},
+  {words:['我们','终于','熬过了','最困难的','那几年','。'],ans:'我们终于熬过了最困难的那几年。',audio:'我们终于熬过了最困难的那几年。'},
+  {words:['他','是','一个','很有本事的','年轻人','。'],ans:'他是一个很有本事的年轻人。',audio:'他是一个很有本事的年轻人。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1499,76 +1452,42 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'虽然这次我____了他，但他并没有就此改正自己的错误。',opts:['原谅','体谅','埋怨','隐瞒'],ans:0,
-   exp:'Bỏ qua lỗi lầm (错误) của người khác → 原谅 (做一做 ④ của sách). 体谅 là thông cảm cho hoàn cảnh; 埋怨 là trách; 隐瞒 là giấu — đều không hợp với vế sau "anh ta không sửa lỗi".'},
-  {wrong:'小丽是个善良的女孩，很能____别人。',opts:['体谅','原谅','掩饰','感染'],ans:0,
-   exp:'Người tốt bụng thì biết nghĩ cho người khác → 体谅; lại có 很能 phía trước — 原谅 thường không đi với phó từ mức độ. 掩饰 là che giấu; 感染 là lây, lan — không hợp nghĩa.'},
-  {wrong:'妈妈，____我吧，我不是故意的，下次一定不这样了。',opts:['原谅','体谅','心疼','唠叨'],ans:0,
-   exp:'Xin bỏ qua lỗi (不是故意的, 下次不这样了) → 原谅. 体谅 là thông cảm cho hoàn cảnh; 心疼 là xót; 唠叨 là lải nhải — không dùng khi xin lỗi.'},
-  {wrong:'他太不____我了，我又要工作又要做家务，他还批评我干得慢。',opts:['体谅','原谅','欣慰','向往'],ans:0,
-   exp:'Người nói trách chồng không hiểu cho HOÀN CẢNH vất vả → 体谅. Không có lỗi nào để 原谅; 欣慰, 向往 không mang tân ngữ người theo nghĩa này.'},
-  {wrong:'看到灯光下父母不舍的目光，我____什么都明白了。',opts:['顿时','近来','片刻','难得'],ans:0,
-   exp:'Hiểu ra NGAY khi nhìn thấy → phó từ 顿时. 近来 = dạo này (khoảng thời gian dài); 片刻 là danh từ "một lát", không đứng trước 什么都明白了; 难得 = hiếm khi — sai nghĩa.'},
-  {wrong:'假期不能回家，我____开始规划怎样熬过漫长的假期。',opts:['不得不','不由得','恨不得','巴不得'],ans:0,
-   exp:'Không còn lựa chọn nên ĐÀNH PHẢI lên kế hoạch → 不得不. 不由得 là bất giác (cảm xúc tự trào ra); 恨不得 / 巴不得 (bài 1) là mong muốn tha thiết — ngược với tâm trạng ủ rũ.'},
-  {wrong:'看到这么感人的场面，我____流下了眼泪。',opts:['不由得','不得不','甭','难得'],ans:0,
-   exp:'Xúc động nên BẤT GIÁC rơi nước mắt → 不由得. 不得不 là bị buộc phải; 甭 = không cần; 难得 = hiếm khi.'},
-  {wrong:'工作忙的时候，她____一个人干两个人的活儿。',opts:['恨不得','不由得','难得','不得不'],ans:0,
-   exp:'Mong mỏi tha thiết một điều không thể làm được (một người làm việc của hai người) → 恨不得 (câu trong phần chú thích). 不由得 là bất giác; 难得 = hiếm khi; 不得不 là buộc phải — nhưng thực tế không ai làm được việc của hai người.'},
-  {wrong:'她想用笑容____心里的紧张，可是大家还是看出来了。',opts:['掩饰','隐瞒','包围','埋怨'],ans:0,
-   exp:'Che đi CẢM XÚC bên trong bằng vẻ ngoài → 掩饰. 隐瞒 thường mang tân ngữ là sự việc, sự thật (隐瞒真相); 包围 là vây quanh; 埋怨 là trách.'},
-  {wrong:'他丢了工作，却一直对家人____这件事。',opts:['隐瞒','掩饰','酝酿','规划'],ans:0,
-   exp:'Giấu kín một SỰ VIỆC không cho người nhà biết → 对……隐瞒. 掩饰 dùng cho cảm xúc, khuyết điểm; 酝酿 là ấp ủ; 规划 là lên kế hoạch.'},
-  {wrong:'事情没办好，他不从自己身上找原因，反而____别人。',opts:['埋怨','体谅','心疼','欣慰'],ans:0,
-   exp:'Đổ lỗi cho người khác → 埋怨. 体谅, 心疼, 欣慰 đều mang nghĩa tích cực, mâu thuẫn với 反而 và vế trước.'},
-  {wrong:'经过医生一夜的抢救，病人终于____了危险。',opts:['脱离','离开','分离','离别'],ans:0,
-   exp:'Cụm cố định 脱离危险 = qua cơn nguy hiểm. 离开 là rời một nơi/người; 分离, 离别 (练习1) là chia lìa, xa nhau — không đi với 危险.'},
-  {wrong:'看到孩子们相处得这么融洽，父母感到十分____。',opts:['欣慰','孤独','反常','漫长'],ans:0,
-   exp:'Thấy con cái hòa thuận (融洽 — bài 1) thì bố mẹ vui lòng → 欣慰. 孤独 là cô đơn; 反常 là khác thường; 漫长 là dài đằng đẵng — không tả tâm trạng này.'},
-  {wrong:'假期的校园____得很，一个人也看不到。',opts:['寂静','和气','慈祥','难得'],ans:0,
-   exp:'Tả KHÔNG GIAN vắng lặng → 寂静. 和气, 慈祥 tả người; 难得 là hiếm có, không dùng với 得很 để tả sân trường.'},
-  {wrong:'不吃苦，怎么长____？',opts:['本事','皱纹','稿件','步伐'],ans:0,
-   exp:'长本事 = có thêm bản lĩnh (lời người bố trong bài). 长皱纹 là có nếp nhăn — trái logic "chịu khổ mới có…"; 稿件, 步伐 không đi với 长.'},
-  {wrong:'爷爷年纪大了，脸上的____越来越深。',opts:['皱纹','目光','步伐','稿件'],ans:0,
-   exp:'Trên mặt, "ngày càng sâu" → 皱纹 (nếp nhăn). 目光 là ánh mắt; 步伐 là bước chân; 稿件 là bài viết.'},
-  {wrong:'这是一个____的机会，千万别错过。',opts:['难得','漫长','反常','孤独'],ans:0,
-   exp:'Cơ hội hiếm có → 难得的机会. 漫长 dùng cho thời gian, con đường; 反常 là bất thường; 孤独 là cô đơn.'},
-  {wrong:'____公司的事情比较多，我酝酿已久的旅行也只能放弃了。',opts:['近来','片刻','刹那','顿时'],ans:0,
-   exp:'Nói về một khoảng thời gian gần đây kéo dài → 近来 (练习3 của sách). 片刻, 刹那 là khoảnh khắc rất ngắn; 顿时 là "ngay tức khắc", không làm trạng ngữ cho cả tình hình công ty.'},
-  {wrong:'我从小就____大城市的生活，梦想有一天能去那儿工作。',opts:['向往','诱惑','包围','感染'],ans:0,
-   exp:'Người khao khát một cuộc sống → 向往 + N. 诱惑 là (vật) cám dỗ người; 包围, 感染 không mang nghĩa mong ước.'},
-  {wrong:'她说话总是那么____，从来不对别人发脾气。',opts:['和气','孤独','反常','漫长'],ans:0,
-   exp:'Ăn nói ôn tồn, không nổi nóng → 说话和气. 孤独 là cô đơn; 反常 là khác thường; 漫长 là dài đằng đẵng.'}
+  {wrong:'工作太多了，她忙得____长出三只手来。',opts:['恨不得','舍不得','怪不得','来不及'],ans:0,exp:'Ước điều không thể xảy ra (mọc thêm tay) → 恨不得. 舍不得 là không nỡ; 怪不得 là thảo nào; 来不及 là không kịp.'},
+  {wrong:'听完医生的话，他心里____轻松了很多。',opts:['顿时','及时','按时','同时'],ans:0,exp:'Thay đổi xảy ra ngay sau một sự việc → 顿时. 及时 là kịp thời; 按时 là đúng giờ; 同时 là cùng lúc — đều có chữ 时 nhưng nghĩa khác.'},
+  {wrong:'看到孩子们这么认真，老师____笑了起来。',opts:['不由得','不得不','不见得','不在乎'],ans:0,exp:'Phản ứng tự nhiên, không kìm được → 不由得 + V. 不得不 là buộc phải; 不见得 là chưa chắc; 不在乎 là không để tâm.'},
+  {wrong:'这点小事你就____管了，我来处理。',opts:['甭','没','无','非'],ans:0,exp:'甭 = 不用 (khẩu ngữ): khỏi phải. 没 không đi với 了 trong lời khuyên; 无 / 非 không đứng trước động từ như vậy.'},
+  {wrong:'车门打开的那一____，孩子们都冲了出去。',opts:['刹那','片刻','近来','时候'],ans:0,exp:'那一刹那 = đúng khoảnh khắc ấy. 片刻 chỉ một lúc ngắn (片刻也不停), không đi sau 那一; 近来 là dạo này; 时候 không dùng với 那一.'},
+  {wrong:'这次比赛输了是大家的责任，不要只____队长一个人。',opts:['埋怨','体谅','心疼','欣慰'],ans:0,exp:'Đổ lỗi, trách móc → 埋怨 + người. 体谅 là thông cảm; 心疼 là xót thương; 欣慰 là yên lòng — đều trái ý "không nên…".'},
+  {wrong:'他努力____着心里的紧张，可声音还是有点儿发抖。',opts:['掩饰','隐瞒','包围','脱离'],ans:0,exp:'Che giấu cảm xúc của mình → 掩饰. 隐瞒 là giấu sự thật không cho người khác biết; 包围 là bao vây; 脱离 là thoát khỏi.'},
+  {wrong:'他把考试成绩____了一个学期，最后还是被父母发现了。',opts:['隐瞒','掩饰','酝酿','规划'],ans:0,exp:'Giấu một sự thật (điểm thi) không cho người khác biết → 隐瞒. 掩饰 thường che cảm xúc, khuyết điểm; 酝酿 là ấp ủ; 规划 là lên kế hoạch.'},
+  {wrong:'这个计划他已经____了半年，现在终于可以开始实行了。',opts:['酝酿','包围','感染','埋怨'],ans:0,exp:'Ấp ủ, chuẩn bị từ lâu → 酝酿 (ôn 实行 bài 1). Các từ còn lại không đi với 计划.'},
+  {wrong:'平时最爱说话的小林今天一句话也不说，真有点儿____。',opts:['反常','正常','寂静','和气'],ans:0,exp:'Khác hẳn mọi khi → 反常. 正常 trái nghĩa; 寂静 tả nơi chốn yên ắng; 和气 là ôn tồn.'},
+  {wrong:'夜深了，山村里一片____，只能听到几声狗叫。',opts:['寂静','孤独','漫长','和蔼'],ans:0,exp:'一片寂静 tả không gian vắng lặng. 孤独 tả cảm giác của người; 漫长 tả thời gian; 和蔼 tả thái độ.'},
+  {wrong:'看到自己的作品得了奖，他感到____自豪。',opts:['无比','难得','片刻','近来'],ans:0,exp:'无比 + tính từ = vô cùng (văn viết). 难得 là hiếm có; 片刻 / 近来 là từ chỉ thời gian, không bổ nghĩa cho 自豪.'},
+  {wrong:'年轻时多____不是坏事，能让人更快地成长。',opts:['吃苦','心疼','哭鼻子','欣慰'],ans:0,exp:'Chịu khổ, chịu cực → 吃苦. 心疼 là xót; 哭鼻子 là khóc nhè; 欣慰 là yên lòng.'},
+  {wrong:'毕业晚会上，孩子在台上感谢父母，台下很多家长都____。',opts:['热泪盈眶','哭鼻子','无精打采','滔滔不绝'],ans:0,exp:'Xúc động rưng rưng nước mắt (trang trọng) → 热泪盈眶. 哭鼻子 là cách nói đùa về trẻ con khóc nhè; 无精打采 là uể oải; 滔滔不绝 (bài 1) là nói không dứt.'},
+  {wrong:'面对网络游戏的____，很多孩子管不住自己。',opts:['诱惑','寂静','步伐','目光'],ans:0,exp:'Sức hấp dẫn khó cưỡng (theo nghĩa xấu) → 诱惑. 寂静 là yên ắng; 步伐 là bước đi; 目光 là ánh mắt — không đi với 面对……的 ở đây.'}
 ];
 
 // ══════════════════════════════════════════
-// DỊCH — câu ghép, dùng từ của bài + ôn từ bài 1 (和睦, 督促, 严厉, 约束, 亲密, 瞬间, 巴不得, 异常)
+// DỊCH Việt → Trung — câu mới, dùng từ của bài + ôn ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Vì Quốc khánh được nghỉ bảy ngày nên đám bạn cùng phòng ký túc ai cũng nóng lòng muốn bay ngay về bên bố mẹ.',zh:'因为国庆节要放七天假，所以宿舍里的同学们都恨不得马上飞到父母跟前。',py:'Yīnwèi Guóqìng Jié yào fàng qī tiān jià, suǒyǐ sùshè li de tóngxuémen dōu hènbude mǎshàng fēidào fùmǔ gēnqián.',goiY:['因为……所以……','恨不得','跟前'],giai:'因为……所以…… nối nguyên nhân – kết quả; 恨不得 + 马上 + V diễn tả nỗi nóng ruột muốn làm ngay (thực tế chưa làm được) — không dịch là "hận".'},
   {vi:'Mẹ tuy hay lải nhải, nhưng mỗi câu nhắc nhở, thúc giục của mẹ đều là vì thương tôi.',zh:'妈妈虽然总爱唠叨，但她的每一句督促都是因为心疼我。',py:'Māma suīrán zǒng ài láodao, dàn tā de měi yí jù dūcù dōu shì yīnwèi xīnténg wǒ.',goiY:['虽然……但……','唠叨','督促','心疼'],giai:'虽然 có thể đứng sau chủ ngữ 妈妈; "thương tôi" theo nghĩa xót, lo cho con → 心疼我. 督促 (bài 1) = thúc giục, nhắc nhở.'},
-  {vi:'Chỉ khi bớt trách móc, thông cảm cho nhau nhiều hơn thì bạn bè mới có thể hòa thuận lâu dài.',zh:'只有少埋怨、多体谅，朋友之间才能长久地和睦相处。',py:'Zhǐyǒu shǎo mányuàn, duō tǐliàng, péngyou zhījiān cái néng chángjiǔ de hémù xiāngchǔ.',goiY:['只有……才……','埋怨','体谅','和睦'],giai:'只有 + điều kiện duy nhất, 才 + kết quả; 才 đứng sau chủ ngữ 朋友之间. 少/多 + V = bớt/thêm làm gì; 和睦相处 (bài 1) = sống hòa thuận.'},
-  {vi:'Kỳ nghỉ hè tuy dài, nhưng chỉ cần lên kế hoạch từ trước và biết tự giữ kỷ luật thì sẽ không thấy khó trôi qua.',zh:'暑假虽然漫长，但只要提前规划好、约束好自己，就不会觉得难熬。',py:'Shǔjià suīrán màncháng, dàn zhǐyào tíqián guīhuà hǎo, yuēshù hǎo zìjǐ, jiù bú huì juéde nán áo.',goiY:['只要……就……','漫长','规划','约束'],giai:'只要……就…… lồng trong vế 但; 难熬 = khó mà gắng cho qua (熬 = chịu đựng vượt qua). 约束 (bài 1) = kiềm chế, tự giữ kỷ luật.'},
-  {vi:'Dạo này cô bạn thân hơi khác thường, ngày nào cũng ủ rũ, nên tôi không khỏi lo lắng cho cậu ấy.',zh:'好朋友近来有些反常，每天都无精打采的，所以我不由得替她担心起来。',py:'Hǎo péngyou jìnlái yǒuxiē fǎncháng, měi tiān dōu wújīng-dǎcǎi de, suǒyǐ wǒ bùyóude tì tā dānxīn qǐlai.',goiY:['近来','反常','无精打采','不由得'],giai:'不由得 + V = bất giác, không kìm được (cảm xúc tự đến) — khác 不得不 (buộc phải). 近来 chỉ khoảng thời gian gần đây kéo dài đến nay; V + 起来 = bắt đầu (lo lắng).'},
+  {vi:'Kỳ nghỉ tuy dài, nhưng chỉ cần lên kế hoạch từ trước và biết tự giữ kỷ luật thì sẽ không thấy khó trôi qua.',zh:'假期虽然漫长，但只要提前规划好、约束好自己，就不会觉得难熬。',py:'Jiàqī suīrán màncháng, dàn zhǐyào tíqián guīhuà hǎo, yuēshù hǎo zìjǐ, jiù bú huì juéde nán áo.',goiY:['只要……就……','漫长','规划','约束'],giai:'只要……就…… lồng trong vế 但; 难熬 = khó mà gắng cho qua (熬 = chịu đựng vượt qua). 约束 (bài 1) = kiềm chế, tự giữ kỷ luật.'},
   {vi:'Huấn luyện viên tuy rất nghiêm khắc với chúng tôi, nhưng thầy thường nói: không chịu khổ thì chẳng thể có bản lĩnh.',zh:'教练对我们虽然很严厉，但是他常说，不吃苦就长不了本事。',py:'Jiàoliàn duì wǒmen suīrán hěn yánlì, dànshì tā cháng shuō, bù chī kǔ jiù zhǎng bu liǎo běnshi.',goiY:['虽然……但是……','严厉','吃苦','本事'],giai:'长不了本事 = V + 不了 (bổ ngữ khả năng): không thể tăng bản lĩnh; "có bản lĩnh" dùng động từ 长, không dùng 有 ở đây. 严厉 (bài 1) = nghiêm khắc.'},
-  {vi:'Cậu ấy vừa rời xa bố mẹ là đến quần áo cũng không biết giặt, khả năng tự lập tự chủ thì càng khỏi phải nói.',zh:'他一脱离父母，连衣服都不会洗，独立自主的能力就更甭提了。',py:'Tā yì tuōlí fùmǔ, lián yīfu dōu bú huì xǐ, dúlì zìzhǔ de nénglì jiù gèng béng tí le.',goiY:['连……都……','更甭提','脱离','自主'],giai:'连……都…… nêu việc đơn giản nhất cũng không làm được; 更甭提…… (khẩu ngữ = 更不用说) đẩy lên việc khó hơn — "càng khỏi phải nói".'},
   {vi:'Trước khi lên bục tôi còn hồi hộp vô cùng, nhưng khi nghe cô giáo khen bài văn của mình, nỗi hồi hộp ấy lập tức biến thành niềm tự hào khôn tả.',zh:'上台前我还紧张得不得了，可是听到老师表扬我的作文时，那份紧张顿时变成了无比的骄傲。',py:'Shàng tái qián wǒ hái jǐnzhāng de bùdéliǎo, kěshì tīngdào lǎoshī biǎoyáng wǒ de zuòwén shí, nà fèn jǐnzhāng dùnshí biànchéngle wúbǐ de jiāo\'ào.',goiY:['可是','顿时','无比'],giai:'可是 chuyển ý; 顿时 tả sự thay đổi xảy ra ngay lập tức trong chuyện kể (đã xảy ra) — không dùng cho mệnh lệnh; 无比的 + N = … vô cùng, khôn tả.'},
-  {vi:'Sáng cuối tuần hiếm khi yên tĩnh thế này, thay vì nằm trên giường lướt điện thoại, chi bằng viết cho xong bài văn đã ấp ủ bấy lâu.',zh:'周末早上难得这么寂静，与其躺在床上玩手机，不如把酝酿已久的作文写完。',py:'Zhōumò zǎoshang nándé zhème jìjìng, yǔqí tǎng zài chuáng shang wán shǒujī, bùrú bǎ yùnniàng yǐ jiǔ de zuòwén xiěwán.',goiY:['与其……不如……','难得','寂静','酝酿已久'],giai:'与其 A，不如 B = thay vì A thì chi bằng B (người nói chọn B); 难得 ở đây là "hiếm khi" (难得这么寂静), đừng dịch "khó được".'},
   {vi:'Hồi mới ở nội trú, cứ nhớ nhà là tôi lại khóc nhè, nhưng từ khi có mấy người bạn thân, cảm giác cô đơn ấy dần dần biến mất.',zh:'刚住校时我一想家就哭鼻子，不过自从交了几个亲密的朋友，那种孤独感就慢慢消失了。',py:'Gāng zhùxiào shí wǒ yì xiǎng jiā jiù kū bízi, búguò zìcóng jiāole jǐ ge qīnmì de péngyou, nà zhǒng gūdúgǎn jiù mànmàn xiāoshī le.',goiY:['一……就……','自从……就……','哭鼻子','孤独'],giai:'自从 + mốc thời điểm, 就 + thay đổi từ đó về sau; "cảm giác cô đơn" = 孤独感. "Bạn thân" dùng 亲密的朋友 (亲密 — bài 1).'}
 ];
 
-// Chiều Trung → Việt — bám ý bài khoá, nội dung khác chiều trên
+// ══════════════════════════════════════════
+// Dịch Trung → Việt — câu mới, không trùng chiều trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Vì chưa từng xa nhà nên việc rời bố mẹ, sống tự lập khiến tôi vô cùng khao khát.',zh:'因为从没离开过家，所以脱离父母、独立生活让我无比向往。',py:'Yīnwèi cóng méi líkāiguo jiā, suǒyǐ tuōlí fùmǔ, dúlì shēnghuó ràng wǒ wúbǐ xiàngwǎng.',goiY:['因为……所以…… = vì… nên…','脱离 = rời xa','无比向往 = vô cùng khao khát'],giai:'Chủ ngữ của 让 là cả cụm 脱离父母、独立生活; 脱离父母 dịch "rời xa bố mẹ", đừng dịch "thoát ly" nghe nặng nề.'},
-  {vi:'Hồi mới nhập học, các bạn hễ nhớ nhà là khóc nhè, thậm chí chỉ mong được bay ngay về bên bố mẹ.',zh:'刚开学时同学们一想家就哭鼻子，甚至恨不得马上飞回父母跟前。',py:'Gāng kāixué shí tóngxuémen yì xiǎng jiā jiù kū bízi, shènzhì hènbude mǎshàng fēi huí fùmǔ gēnqián.',goiY:['一……就…… = hễ… là…','甚至 = thậm chí','哭鼻子 = khóc nhè','恨不得 = nóng lòng muốn'],giai:'恨不得 + V: mong mãnh liệt được làm ngay (thường là điều chưa làm được) → "chỉ mong, nóng lòng muốn"; 哭鼻子 mang ý trêu nhẹ → "khóc nhè".'},
-  {vi:'Vốn dĩ tôi rất nhớ nhà, nhưng lời mẹ khiến nỗi nhớ nhà ấp ủ bấy lâu tan biến trong khoảnh khắc.',zh:'本来我很想家，可是母亲的话使我酝酿已久的恋家情绪刹那间就没有了。',py:'Běnlái wǒ hěn xiǎng jiā, kěshì mǔqīn de huà shǐ wǒ yùnniàng yǐ jiǔ de liànjiā qíngxù chànà jiān jiù méiyǒu le.',goiY:['本来……可是…… = vốn dĩ… nhưng…','酝酿已久 = ấp ủ bấy lâu','刹那间 = trong khoảnh khắc'],giai:'恋家情绪 = nỗi nhớ nhà, lòng mong về nhà; 刹那间就没有了 dịch thoát "tan biến trong khoảnh khắc" thay vì "không còn nữa".'},
-  {vi:'Cho dù về nhà phải ngồi tàu cả đêm, mọi người vẫn không ngừng một phút mà hối hả về, vì ai cũng chỉ mong sớm được đoàn tụ với gia đình.',zh:'即使回家要坐一夜的火车，大家也片刻不停地往家赶，因为谁都巴不得早点儿跟家人团圆。',py:'Jíshǐ huí jiā yào zuò yí yè de huǒchē, dàjiā yě piànkè bù tíng de wǎng jiā gǎn, yīnwèi shéi dōu bābudé zǎo diǎnr gēn jiārén tuányuán.',goiY:['即使……也…… = cho dù… vẫn…','片刻不停 = không ngừng một phút','巴不得 = chỉ mong','团圆 = đoàn tụ'],giai:'即使 + giả thiết khó khăn, 也 + kết quả không đổi; 巴不得 (bài 1) = mong điều có thể xảy ra, khác 恨不得 (nóng lòng, thường khó làm được).'},
-  {vi:'Vì không sao hiểu nổi sự khác thường của bố mẹ, tôi thầm trách họ không thông cảm cho mình, suốt mấy ngày liền cứ ủ rũ.',zh:'由于无法理解父母的反常，我心中暗暗埋怨他们不体谅我，一连好几天都无精打采的。',py:'Yóuyú wúfǎ lǐjiě fùmǔ de fǎncháng, wǒ xīn zhōng àn\'àn mányuàn tāmen bù tǐliàng wǒ, yìlián hǎo jǐ tiān dōu wújīng-dǎcǎi de.',goiY:['由于 = do, vì','埋怨 = trách','体谅 = thông cảm','无精打采 = ủ rũ'],giai:'父母的反常: tính từ 反常 được danh từ hoá → "sự khác thường của bố mẹ"; 暗暗 = thầm, lặng lẽ trong lòng.'},
-  {vi:'Sân trường kỳ nghỉ vắng lặng lạ thường, tôi chẳng những không thấy cô đơn, trái lại còn nhận ra làm việc trong sự yên tĩnh hiếm có thật tuyệt vời biết bao.',zh:'假期的校园异常寂静，我不但没觉得孤独，反而发现在难得的安静中工作是那么美好。',py:'Jiàqī de xiàoyuán yìcháng jìjìng, wǒ búdàn méi juéde gūdú, fǎn\'ér fāxiàn zài nándé de ānjìng zhōng gōngzuò shì nàme měihǎo.',goiY:['不但没……反而…… = chẳng những không… trái lại…','异常 = lạ thường, cực kỳ','难得 = hiếm có'],giai:'不但不/没 A，反而 B: kết quả trái với dự đoán (khác 不但……而且……); 异常 (bài 1) làm phó từ = "cực kỳ, lạ thường".'},
-  {vi:'Mẹ vừa nhìn thấy tôi, gương mặt đầy vẻ xót xa, nhưng chỉ trong chớp mắt mẹ đã giấu cảm xúc ấy đi.',zh:'母亲一看到我，脸上满是心疼，可是那情绪瞬间就被她掩饰起来了。',py:'Mǔqīn yí kàndào wǒ, liǎn shang mǎn shì xīnténg, kěshì nà qíngxù shùnjiān jiù bèi tā yǎnshì qǐlai le.',goiY:['心疼 = xót xa','掩饰 = che giấu','瞬间 = trong chớp mắt'],giai:'被她掩饰起来 là câu bị động — dịch sang chủ động "mẹ đã giấu … đi" cho tự nhiên; 瞬间 (bài 1) = trong chớp mắt.'},
-  {vi:'Bố cho rằng con cái chỉ có trải qua gian khổ mới có bản lĩnh, vì vậy bố mẹ thà tự mình xót ruột cũng phải để tôi ra ngoài rèn luyện.',zh:'父亲认为孩子只有吃过苦才能长本事，所以他们宁可自己心疼，也要让我在外面锻炼。',py:'Fùqīn rènwéi háizi zhǐyǒu chīguo kǔ cái néng zhǎng běnshi, suǒyǐ tāmen nìngkě zìjǐ xīnténg, yě yào ràng wǒ zài wàimiàn duànliàn.',goiY:['只有……才…… = chỉ có… mới…','宁可……也…… = thà… cũng…','吃过苦 = từng chịu khổ','本事 = bản lĩnh'],giai:'宁可 A，也要 B: chấp nhận thiệt A để đạt B → "thà… cũng phải…"; 吃苦 là động từ ly hợp nên chen 过 vào giữa: 吃过苦.'},
-  {vi:'Nhìn thấy dưới ánh đèn mái tóc bạc mới thêm và những nếp nhăn ngày một sâu của bố mẹ, tôi bỗng chốc hiểu ra tất cả, không kìm được nước mắt lưng tròng.',zh:'看到灯光下父母新增的白发和越来越深的皱纹，我顿时明白了一切，不由得热泪盈眶。',py:'Kàndào dēngguāng xià fùmǔ xīn zēng de báifà hé yuèláiyuè shēn de zhòuwén, wǒ dùnshí míngbaile yíqiè, bùyóude rèlèi yíng kuàng.',goiY:['顿时 = bỗng chốc, ngay lập tức','不由得 = không kìm được','热泪盈眶 = nước mắt lưng tròng'],giai:'Định ngữ dài (灯光下父母新增的白发) nên dịch tách ra cho xuôi; 顿时 → 不由得: hiểu ra NGAY rồi cảm xúc TỰ TRÀO — thứ tự không đảo được.'},
-  {vi:'Sở dĩ bố mẹ không cho tôi về nhà trong kỳ nghỉ không phải vì không nhớ tôi, mà là mong tôi học được cách sống tự lập, tự chủ trong kỳ nghỉ dài ấy.',zh:'父母之所以假期不让我回家，并不是不想念我，而是希望我在漫长的假期里学会独立自主地生活。',py:'Fùmǔ zhīsuǒyǐ jiàqī bú ràng wǒ huí jiā, bìng bú shì bù xiǎngniàn wǒ, ér shì xīwàng wǒ zài màncháng de jiàqī li xuéhuì dúlì zìzhǔ de shēnghuó.',goiY:['之所以 = sở dĩ','不是……而是…… = không phải… mà là…','漫长 = dài đằng đẵng','自主 = tự chủ'],giai:'之所以 + kết quả, (并)不是 A，而是 B: bác bỏ lý do sai rồi nêu lý do thật; 并 nhấn mạnh phủ định → "hoàn toàn không phải".'}
+  {vi:'Vừa nghe kết quả cuộc thi, anh ấy vui đến mức chỉ muốn báo tin này cho tất cả mọi người.',zh:'刚听到比赛结果时，他高兴得恨不得把这个消息告诉所有人。',py:'Gāng tīngdào bǐsài jiéguǒ shí, tā gāoxìng de hènbude bǎ zhège xiāoxi gàosu suǒyǒu rén.',goiY:['恨不得 = chỉ muốn, nóng lòng muốn','高兴得 = vui đến mức'],giai:'Adj + 得 + 恨不得…… = … đến mức chỉ muốn…'},
+  {vi:'Vừa nghĩ đến chuyện ngày mai được gặp người bạn cũ nhiều năm không gặp, cô ấy lập tức thấy chẳng mệt chút nào nữa.',zh:'一想到明天就能见到多年不见的老朋友，她顿时觉得一点儿也不累了。',py:'Yì xiǎngdào míngtiān jiù néng jiàndào duō nián bú jiàn de lǎo péngyou, tā dùnshí juéde yìdiǎnr yě bú lèi le.',goiY:['一……就…… = vừa… là…','顿时 = lập tức, ngay tức khắc'],giai:'顿时 + thay đổi trạng thái (觉得不累了) xảy ra ngay sau sự việc trước; dịch "lập tức / bỗng chốc".'},
+  {vi:'Nhìn tóc bạc trên đầu bố ngày càng nhiều, lòng tôi bất giác thấy xót xa.',zh:'看到父亲头上的白发越来越多，我心里不由得一阵心疼。',py:'Kàndào fùqin tóu shang de báifà yuè lái yuè duō, wǒ xīnli bùyóude yí zhèn xīnténg.',goiY:['不由得 = bất giác, không kìm được','一阵 = một cơn, một hồi','心疼 = xót xa'],giai:'不由得 + cảm xúc tự nhiên trỗi dậy; 一阵心疼 dịch "thấy xót xa", không dịch "một trận đau lòng".'},
+  {vi:'Thay vì trách bố mẹ không hiểu mình, chi bằng tìm lúc nói chuyện nghiêm túc với họ.',zh:'与其埋怨父母不理解你，不如找个时间和他们认真地谈一谈。',py:'Yǔqí mányuàn fùmǔ bù lǐjiě nǐ, bùrú zhǎo ge shíjiān hé tāmen rènzhēn de tán yi tán.',goiY:['与其……不如…… = thay vì… chi bằng…','埋怨 = trách móc'],giai:'与其 A，不如 B: người nói chọn B; 找个时间 = tìm lúc (không dịch "tìm một thời gian").'}
 ];
 
 // ══════════════════════════════════════════
@@ -1604,9 +1523,9 @@ var writingData = {
     'Có câu chuyển ý như 本以为……没想到……, 不是……而是…… chưa; đầu mỗi đoạn lùi 2 ô chưa?'
   ],
   model:{
-    zh:'我的父母对我一直很和蔼，从小到大，几乎什么事都替我做好。以前我觉得，父母的爱就是宠爱。初三那年暑假，我想参加学校的夏令营，本以为妈妈会爽快地答应，没想到她却要我自己去超市打一个月的工，挣够夏令营的费用。父母这么反常，我怎么也想不通，心里暗暗埋怨他们一点儿也不体谅我。打工的日子很辛苦，每天要站八个小时。第一天回到家，我累得直哭，恨不得马上辞职。可是爸爸只说了一句：“不吃苦，怎么长本事？”我只好咬着牙坚持了下来。慢慢地，我学会了和顾客打交道，也知道了挣钱有多不容易。一个月后，我用自己挣的钱交了夏令营的费用。那天晚上，我听见妈妈对爸爸说：“孩子每天那么累，我真心疼，可看到她长大了，又觉得很欣慰。”我顿时明白了：原来父母不是不爱我，而是在用另一种方式爱我。我不由得热泪盈眶。从此我懂得了，父母的爱不只是宠爱，还有放手让孩子去吃苦、去成长的勇气。',
-    py:'Wǒ de fùmǔ duì wǒ yìzhí hěn hé\'ǎi, cóng xiǎo dào dà, jīhū shénme shì dōu tì wǒ zuòhǎo. Yǐqián wǒ juéde, fùmǔ de ài jiù shì chǒng\'ài. Chūsān nà nián shǔjià, wǒ xiǎng cānjiā xuéxiào de xiàlìngyíng, běn yǐwéi māma huì shuǎngkuai de dāying, méi xiǎngdào tā què yào wǒ zìjǐ qù chāoshì dǎ yí ge yuè de gōng, zhènggòu xiàlìngyíng de fèiyong. Fùmǔ zhème fǎncháng, wǒ zěnme yě xiǎng bu tōng, xīn li àn\'àn mányuàn tāmen yìdiǎnr yě bù tǐliàng wǒ. Dǎgōng de rìzi hěn xīnkǔ, měi tiān yào zhàn bā ge xiǎoshí. Dì-yī tiān huídào jiā, wǒ lèi de zhí kū, hènbude mǎshàng cízhí. Kěshì bàba zhǐ shuōle yí jù: "Bù chī kǔ, zěnme zhǎng běnshi?" Wǒ zhǐhǎo yǎozhe yá jiānchíle xiàlai. Mànmàn de, wǒ xuéhuìle hé gùkè dǎ jiāodao, yě zhīdàole zhèng qián yǒu duō bù róngyì. Yí ge yuè hòu, wǒ yòng zìjǐ zhèng de qián jiāole xiàlìngyíng de fèiyong. Nà tiān wǎnshang, wǒ tīngjiàn māma duì bàba shuō: "Háizi měi tiān nàme lèi, wǒ zhēn xīnténg, kě kàndào tā zhǎngdà le, yòu juéde hěn xīnwèi." Wǒ dùnshí míngbai le: yuánlái fùmǔ bú shì bú ài wǒ, ér shì zài yòng lìng yì zhǒng fāngshì ài wǒ. Wǒ bùyóude rèlèi yíng kuàng. Cóngcǐ wǒ dǒngde le, fùmǔ de ài bù zhǐ shì chǒng\'ài, hái yǒu fàngshǒu ràng háizi qù chī kǔ, qù chéngzhǎng de yǒngqì.',
-    vn:'Bố mẹ tôi luôn hiền hòa với tôi, từ nhỏ đến lớn hầu như việc gì cũng làm sẵn cho tôi. Trước đây tôi nghĩ tình yêu của bố mẹ chính là sự cưng chiều. Kỳ nghỉ hè năm lớp 9, tôi muốn tham gia trại hè của trường, cứ tưởng mẹ sẽ đồng ý ngay, không ngờ mẹ lại bắt tôi tự đi làm thêm ở siêu thị một tháng để kiếm đủ tiền đóng trại hè. Bố mẹ khác thường như vậy, tôi nghĩ mãi không thông, trong lòng thầm trách họ chẳng thông cảm cho tôi chút nào. Những ngày làm thêm rất vất vả, mỗi ngày phải đứng tám tiếng. Ngày đầu tiên về đến nhà, tôi mệt đến bật khóc, chỉ muốn nghỉ việc ngay. Nhưng bố chỉ nói một câu: "Không chịu khổ thì làm sao có bản lĩnh?" Tôi đành cắn răng cố gắng tiếp. Dần dần, tôi học được cách giao tiếp với khách hàng, cũng hiểu kiếm tiền khó khăn biết bao. Một tháng sau, tôi dùng chính tiền mình kiếm được để đóng tiền trại hè. Tối hôm đó, tôi nghe mẹ nói với bố: "Con ngày nào cũng mệt như thế, em xót lắm, nhưng thấy con trưởng thành rồi, em lại thấy an lòng." Tôi bỗng chốc hiểu ra: hóa ra bố mẹ không phải không thương tôi, mà là đang thương tôi theo một cách khác. Tôi không kìm được nước mắt lưng tròng. Từ đó tôi hiểu rằng, tình yêu của bố mẹ không chỉ là cưng chiều, mà còn là dũng khí dám buông tay để con đi chịu khổ, đi trưởng thành.'
+    zh:'我的父母对我一直很和蔼，从小到大，几乎什么事都替我做好。以前我觉得，父母的爱就是宠爱。十五岁那年放假时，我想参加学校组织的旅行，本以为妈妈会爽快地答应，没想到她却要我自己去超市工作一个月，挣够旅行的费用。父母这么反常，我怎么也想不明白，心里暗暗埋怨他们一点儿也不体谅我。打工的日子很辛苦，每天要站八个小时。第一天回到家，我累得直哭，恨不得马上辞职。可是爸爸只说了一句：“不吃苦，怎么长本事？”我只好坚持了下来。慢慢地，我学会了和顾客打交道，也知道了挣钱有多不容易。一个月后，我用自己挣的钱交了旅行的费用。那天晚上，我听见妈妈对爸爸说：“孩子每天那么累，我真心疼，可看到她长大了，又觉得很欣慰。”我顿时明白了：原来父母不是不爱我，而是在用另一种方式爱我。我不由得热泪盈眶。从此我懂得了，父母的爱不只是宠爱，还有放手让孩子去吃苦、去成长的勇气。',
+    py:'Wǒ de fùmǔ duì wǒ yìzhí hěn hé\'ǎi, cóng xiǎo dào dà, jīhū shénme shì dōu tì wǒ zuòhǎo. Yǐqián wǒ juéde, fùmǔ de ài jiù shì chǒng\'ài. Shíwǔ suì nà nián fàngjià shí, wǒ xiǎng cānjiā xuéxiào zǔzhī de lǚxíng, běn yǐwéi māma huì shuǎngkuai de dāying, méi xiǎngdào tā què yào wǒ zìjǐ qù chāoshì gōngzuò yí ge yuè, zhènggòu lǚxíng de fèiyong. Fùmǔ zhème fǎncháng, wǒ zěnme yě xiǎng bu míngbai, xīn li àn\'àn mányuàn tāmen yìdiǎnr yě bù tǐliàng wǒ. Dǎgōng de rìzi hěn xīnkǔ, měi tiān yào zhàn bā ge xiǎoshí. Dì-yī tiān huídào jiā, wǒ lèi de zhí kū, hènbude mǎshàng cízhí. Kěshì bàba zhǐ shuōle yí jù: "Bù chī kǔ, zěnme zhǎng běnshi?" Wǒ zhǐhǎo jiānchíle xiàlai. Mànmàn de, wǒ xuéhuìle hé gùkè dǎ jiāodao, yě zhīdàole zhèng qián yǒu duō bù róngyì. Yí ge yuè hòu, wǒ yòng zìjǐ zhèng de qián jiāole lǚxíng de fèiyong. Nà tiān wǎnshang, wǒ tīngjiàn māma duì bàba shuō: "Háizi měi tiān nàme lèi, wǒ zhēn xīnténg, kě kàndào tā zhǎngdà le, yòu juéde hěn xīnwèi." Wǒ dùnshí míngbai le: yuánlái fùmǔ bú shì bú ài wǒ, ér shì zài yòng lìng yì zhǒng fāngshì ài wǒ. Wǒ bùyóude rèlèi yíng kuàng. Cóngcǐ wǒ dǒngde le, fùmǔ de ài bù zhǐ shì chǒng\'ài, hái yǒu fàngshǒu ràng háizi qù chī kǔ, qù chéngzhǎng de yǒngqì.',
+    vn:'Bố mẹ tôi luôn hiền hòa với tôi, từ nhỏ đến lớn hầu như việc gì cũng làm sẵn cho tôi. Trước đây tôi nghĩ tình yêu của bố mẹ chính là sự cưng chiều. Năm mười lăm tuổi, vào kỳ nghỉ, tôi muốn tham gia chuyến du lịch do trường tổ chức, cứ tưởng mẹ sẽ đồng ý ngay, không ngờ mẹ lại bắt tôi tự đi làm thêm ở siêu thị một tháng để kiếm đủ chi phí chuyến đi. Bố mẹ khác thường như vậy, tôi nghĩ mãi không hiểu, trong lòng thầm trách họ chẳng thông cảm cho tôi chút nào. Những ngày làm thêm rất vất vả, mỗi ngày phải đứng tám tiếng. Ngày đầu tiên về đến nhà, tôi mệt đến bật khóc, chỉ muốn nghỉ việc ngay. Nhưng bố chỉ nói một câu: "Không chịu khổ thì làm sao có bản lĩnh?" Tôi đành cố gắng tiếp. Dần dần, tôi học được cách giao tiếp với khách hàng, cũng hiểu kiếm tiền khó khăn biết bao. Một tháng sau, tôi dùng chính tiền mình kiếm được để đóng chi phí chuyến đi. Tối hôm đó, tôi nghe mẹ nói với bố: "Con ngày nào cũng mệt như thế, em xót lắm, nhưng thấy con trưởng thành rồi, em lại thấy an lòng." Tôi bỗng chốc hiểu ra: hóa ra bố mẹ không phải không thương tôi, mà là đang thương tôi theo một cách khác. Tôi không kìm được nước mắt lưng tròng. Từ đó tôi hiểu rằng, tình yêu của bố mẹ không chỉ là cưng chiều, mà còn là dũng khí dám buông tay để con đi chịu khổ, đi trưởng thành.'
   }
 };
 
@@ -1649,304 +1568,119 @@ var speakingData = {
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — 听力 (hội thoại ngắn / đoạn nói ngắn)
-// Sách HSK 6 không có sách bài tập nghe → tự soạn theo dạng đề, dùng từ và chủ đề của bài 2.
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — câu tự soạn (sách HSK 6 không có sách bài tập nghe), mỗi câu một tình huống mới
+// ══════════════════════════════════════════
 var listenExamData = {
-  "intro": "Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Ở đây cũng vậy: bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.",
-  "source": "Soạn theo dạng đề HSK 6 · chủ đề bài 2",
-  "items": [
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Ở đây cũng vậy: bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 2',
+  items: [
     {
-      "n": 1,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "儿子上大学以后，每次打电话都说想家，我听了真心疼。"
-        },
-        {
-          "sp": "男",
-          "zh": "刚离开家都这样，过一段时间适应了就好了，你别太担心。"
-        }
+      n: 1,
+      lines: [
+        {sp:'男',zh:'你怎么一下课就往外跑？'},
+        {sp:'女',zh:'我妈今天从老家来看我，我恨不得马上见到她。'}
       ],
-      "q": "男的是什么意思？",
-      "qvn": "Ý người đàn ông là gì?",
-      "opts": [
-        "儿子应该回家",
-        "女的应该去看儿子",
-        "儿子很快会适应",
-        "儿子身体不好"
-      ],
-      "ans": 2,
-      "why": "过一段时间适应了就好了 (qua một thời gian quen là ổn) → con trai sẽ sớm thích nghi. Anh ấy khuyên vợ đừng lo, không bảo con về nhà.",
-      "words": [
-        "心疼"
-      ]
+      q: '女的为什么着急？',
+      qvn: 'Vì sao người phụ nữ vội?',
+      opts: ['要去上课','想快点儿见妈妈','要回老家','妈妈生病了'],
+      ans: 1,
+      why: '恨不得马上见到她 = nóng lòng muốn gặp mẹ ngay. Mẹ đến thăm, không phải cô ấy về quê.',
+      words: ['恨不得']
     },
     {
-      "n": 2,
-      "lines": [
-        {
-          "sp": "男",
-          "zh": "都放假了，你怎么还不回家？"
-        },
-        {
-          "sp": "女",
-          "zh": "我妈说近来家里比较忙，让我甭回去了，在学校找份兼职做做。"
-        }
+      n: 2,
+      lines: [
+        {sp:'女',zh:'刚才大家还有说有笑的，怎么突然不说话了？'},
+        {sp:'男',zh:'经理一进门，办公室里顿时就安静下来了。'}
       ],
-      "q": "女的为什么不回家？",
-      "qvn": "Vì sao cô gái không về nhà?",
-      "opts": [
-        "妈妈让她在学校做兼职",
-        "她不想回家",
-        "她要准备考试",
-        "她没买到车票"
-      ],
-      "ans": 0,
-      "why": "让我甭回去了 (bảo tôi khỏi về) + 找份兼职做做 → là ý của MẸ, không phải cô ấy không muốn về.",
-      "words": [
-        "近来",
-        "甭"
-      ]
+      q: '办公室里为什么安静了？',
+      qvn: 'Vì sao văn phòng im lặng?',
+      opts: ['大家都下班了','经理批评了大家','经理进来了','大家在开会'],
+      ans: 2,
+      why: '经理一进门……顿时就安静下来了 → giám đốc vừa bước vào.',
+      words: ['顿时']
     },
     {
-      "n": 3,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "你看你，一次考试没考好就无精打采的，这可不像你啊。"
-        },
-        {
-          "sp": "男",
-          "zh": "唉，我本来以为这次能进前十名的。"
-        }
+      n: 3,
+      lines: [
+        {sp:'男',zh:'你看这张老照片，还记得吗？'},
+        {sp:'女',zh:'这是我们大学毕业那年拍的！看着它，我不由得想起了很多以前的事。'}
       ],
-      "q": "男的现在心情怎么样？",
-      "qvn": "Tâm trạng của chàng trai bây giờ thế nào?",
-      "opts": [
-        "很兴奋",
-        "很平静",
-        "很生气",
-        "很失望"
-      ],
-      "ans": 3,
-      "why": "无精打采 (ủ rũ) + tiếng thở dài 唉 + 本来以为…… (vốn tưởng …) → kết quả không như mong đợi → thất vọng.",
-      "words": [
-        "无精打采"
-      ]
+      q: '女的看照片时怎么样？',
+      qvn: 'Người phụ nữ xem ảnh thấy thế nào?',
+      opts: ['想起了以前的事','觉得很好笑','不记得了','很生气'],
+      ans: 0,
+      why: '不由得想起了很多以前的事 = bất giác nhớ lại nhiều chuyện cũ.',
+      words: ['不由得']
     },
     {
-      "n": 4,
-      "lines": [
-        {
-          "sp": "男",
-          "zh": "王老师看起来挺严肃的，没想到说话这么和气。"
-        },
-        {
-          "sp": "女",
-          "zh": "是啊，他对学生一直很和蔼，大家都喜欢找他聊天。"
-        }
+      n: 4,
+      lines: [
+        {sp:'女',zh:'你儿子在国外读书，你不担心吗？'},
+        {sp:'男',zh:'担心啊。他每次打电话都说一切都好，就是有困难也从来不告诉我们。'}
       ],
-      "q": "关于王老师，可以知道什么？",
-      "qvn": "Về thầy Vương, có thể biết điều gì?",
-      "opts": [
-        "说话很不客气",
-        "对学生很和蔼",
-        "不喜欢跟学生聊天",
-        "刚来这个学校"
-      ],
-      "ans": 1,
-      "why": "Hai người đều nói thầy 说话和气, 对学生很和蔼. \"Trông nghiêm\" chỉ là vẻ ngoài (看起来) — bẫy.",
-      "words": [
-        "和气",
-        "和蔼"
-      ]
+      q: '关于儿子，可以知道什么？',
+      qvn: 'Có thể biết gì về cậu con trai?',
+      opts: ['经常埋怨父母','很少给家里打电话','想马上回国','不想让父母担心'],
+      ans: 3,
+      why: 'Có khó khăn cũng không nói, lúc nào cũng bảo mọi thứ ổn → không muốn bố mẹ lo.',
+      words: []
     },
     {
-      "n": 5,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "小李最近有些反常，每天一句话也不说。"
-        },
-        {
-          "sp": "男",
-          "zh": "他是不是遇到什么困难了？我下课去问问他，让他千万别瞒着我们。"
-        }
+      n: 5,
+      lines: [
+        {sp:'男',zh:'这个周末你回家吗？'},
+        {sp:'女',zh:'甭提了，老板非要我周末加班，看来又回不去了。'}
       ],
-      "q": "男的打算做什么？",
-      "qvn": "Chàng trai định làm gì?",
-      "opts": [
-        "给小李的父母打电话",
-        "去找小李谈谈",
-        "批评小李",
-        "帮小李复习"
-      ],
-      "ans": 1,
-      "why": "我下课去问问他 → sẽ đi hỏi chuyện Tiểu Lý. 瞒着 = 隐瞒 (giấu).",
-      "words": [
-        "反常"
-      ]
+      q: '女的周末要做什么？',
+      qvn: 'Cuối tuần người phụ nữ phải làm gì?',
+      opts: ['回家','加班','去旅行','休息'],
+      ans: 1,
+      why: '甭提了 = đừng nhắc nữa (than phiền); công ty bắt làm thêm nên không về được.',
+      words: ['甭']
     },
     {
-      "n": 6,
-      "lines": [
-        {
-          "sp": "男",
-          "zh": "听说你给杂志社写的稿件发表了？"
-        },
-        {
-          "sp": "女",
-          "zh": "对！编辑说我写得很真实，我到现在想起来还不由得想笑呢。"
-        }
+      n: 6,
+      lines: [
+        {sp:'女',zh:'你爸爸怎么瘦了这么多？'},
+        {sp:'男',zh:'这几年为了让我上大学，他吃了不少苦，可他从来不说。'}
       ],
-      "q": "女的心情怎么样？",
-      "qvn": "Tâm trạng của cô gái thế nào?",
-      "opts": [
-        "很紧张",
-        "很难过",
-        "很担心",
-        "很高兴"
-      ],
-      "ans": 3,
-      "why": "Bài được đăng + được khen + 不由得想笑 (bất giác muốn cười) → rất vui.",
-      "words": [
-        "稿件",
-        "不由得"
-      ]
-    },
-    {
-      "n": 7,
-      "lines": [
-        {
-          "sp": "男",
-          "zh": "很多父母心疼孩子，什么事都替孩子做好。其实，孩子只有吃过苦，才能长本事。父母真正的爱，不是把孩子一直留在自己身边，而是让他们学会独立。"
-        }
-      ],
-      "q": "说话人认为父母真正的爱是什么？",
-      "qvn": "Người nói cho rằng tình yêu thật sự của cha mẹ là gì?",
-      "opts": [
-        "让孩子学会独立",
-        "替孩子做好所有的事",
-        "给孩子很多零花钱",
-        "每天陪在孩子身边"
-      ],
-      "ans": 0,
-      "why": "Cấu trúc 不是 B，而是 A: đáp án nằm ở vế 而是 → 让他们学会独立. Phương án B, D là điều người nói phủ định.",
-      "words": [
-        "心疼",
-        "吃苦",
-        "本事"
-      ]
-    },
-    {
-      "n": 8,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "毕业以后我去了外地工作，一年难得回一次家。今年春节回家，看到妈妈眼角的皱纹越来越深，我顿时明白了她这些年有多不容易，恨不得把所有的时间都留下来陪她。"
-        }
-      ],
-      "q": "说话人回家后明白了什么？",
-      "qvn": "Người nói về nhà rồi đã hiểu ra điều gì?",
-      "opts": [
-        "外地的工作太辛苦",
-        "家乡变化很大",
-        "妈妈这些年很不容易",
-        "春节应该早点儿回家"
-      ],
-      "ans": 2,
-      "why": "Câu then chốt: 我顿时明白了她这些年有多不容易 — sau 顿时明白了 chính là điều người nói hiểu ra.",
-      "words": [
-        "难得",
-        "皱纹",
-        "顿时",
-        "恨不得"
-      ]
+      q: '关于男的的爸爸，可以知道什么？',
+      qvn: 'Có thể biết gì về bố của người đàn ông?',
+      opts: ['身体不好','不爱说话','为孩子吃了很多苦','埋怨孩子'],
+      ans: 2,
+      why: '为了让我上大学，他吃了不少苦 → vì con mà chịu nhiều vất vả.',
+      words: ['吃苦']
     }
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
+// ══════════════════════════════════════════
 var situationData = {
-  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
-         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn cùng phòng ký túc lần đầu xa nhà, tối nào cũng buồn.',
-     a:{sp:'Bạn',zh:'我好想家啊，一给妈妈打电话就想哭。',vn:'Tớ nhớ nhà quá, cứ gọi điện cho mẹ là muốn khóc.'},
-     need:['Dùng 孤独 hoặc 哭鼻子','Đưa ra một lời an ủi hoặc rủ bạn làm gì đó'],
-     sample:'刚离开家谁都会觉得孤独，别哭鼻子了，周末我们一起出去走走吧。',
-     samplePy:'Gāng líkāi jiā shéi dōu huì juéde gūdú, bié kū bízi le, zhōumò wǒmen yìqǐ chūqu zǒuzou ba.',
-     sampleVn:'Mới xa nhà ai cũng thấy cô đơn, đừng khóc nhè nữa, cuối tuần mình cùng ra ngoài đi dạo nhé.',
-     tip:'哭鼻子 mang ý trêu nhẹ, rất hợp khi an ủi bạn thân; nói với người lớn thì tránh.'},
-
-    {scene:'Mẹ gọi điện bảo kỳ nghỉ này đừng về nhà.',
-     a:{sp:'Mẹ',zh:'这个假期家里比较忙，你要是没什么事，就甭回来了。',vn:'Kỳ nghỉ này nhà bận, nếu con không có việc gì thì khỏi về.'},
-     need:['Dùng 恨不得','Nói rõ mong muốn của mình một cách lễ phép'],
-     sample:'妈，我好久没见你们了，真恨不得马上飞回家。要不我回去帮你们干点儿活儿吧？',
-     samplePy:'Mā, wǒ hǎojiǔ méi jiàn nǐmen le, zhēn hènbude mǎshàng fēi huí jiā. Yàobù wǒ huíqu bāng nǐmen gàn diǎnr huór ba?',
-     sampleVn:'Mẹ ơi, lâu lắm con chưa gặp bố mẹ, con chỉ muốn bay ngay về nhà. Hay con về phụ bố mẹ một tay nhé?',
-     tip:'恨不得 + 马上 + V diễn tả nỗi nóng lòng; thêm 要不……吧 để đề nghị nhẹ nhàng, không cãi lại mẹ.'},
-
-    {scene:'Bạn thân than phiền bố mẹ không cho đi du lịch một mình.',
-     a:{sp:'Bạn',zh:'我爸妈不让我暑假一个人去旅行，真是太不讲理了！',vn:'Bố mẹ tớ không cho tớ hè đi du lịch một mình, thật vô lý quá!'},
-     need:['Dùng 体谅 (có thể lặp: 体谅体谅)','Giúp bạn nhìn từ phía bố mẹ'],
-     sample:'你也体谅体谅他们吧，他们是担心你的安全，并不是不信任你。',
-     samplePy:'Nǐ yě tǐliàng tǐliàng tāmen ba, tāmen shì dānxīn nǐ de ānquán, bìng bú shì bú xìnrèn nǐ.',
-     sampleVn:'Cậu cũng thông cảm cho bố mẹ chút đi, họ lo cho sự an toàn của cậu, chứ đâu phải không tin cậu.',
-     tip:'体谅 lặp được (体谅体谅), 原谅 thì không. 并不是…… phủ định mạnh một cách hiểu sai.'},
-
-    {scene:'Em lỡ làm hỏng điện thoại của bố, đến xin lỗi.',
-     a:{sp:'Bố',zh:'我的手机怎么打不开了？',vn:'Sao điện thoại của bố không mở được nữa thế này?'},
-     need:['Dùng 原谅','Nhận lỗi và hứa lần sau cẩn thận'],
-     sample:'爸，对不起，是我不小心把水洒在上面了。请您原谅我，我以后一定小心。',
-     samplePy:'Bà, duìbuqǐ, shì wǒ bù xiǎoxīn bǎ shuǐ sǎ zài shàngmian le. Qǐng nín yuánliàng wǒ, wǒ yǐhòu yídìng xiǎoxīn.',
-     sampleVn:'Bố ơi, con xin lỗi, con không cẩn thận làm đổ nước lên máy. Bố tha lỗi cho con, sau này con nhất định sẽ cẩn thận.',
-     tip:'Có lỗi cần được bỏ qua → 原谅, không dùng 体谅. Với bố mẹ dùng 您 cho lễ phép.'},
-
-    {scene:'Cô giáo báo tin bài văn của em được đăng trên tạp chí.',
-     a:{sp:'Cô',zh:'你的作文在杂志上发表了，恭喜你！',vn:'Bài văn của em được đăng trên tạp chí rồi, chúc mừng em!'},
-     need:['Dùng 顿时 hoặc 不由得','Tả cảm xúc của mình lúc nghe tin'],
-     sample:'谢谢老师！听到这个消息，我不由得跳了起来，这几天的紧张顿时都没有了。',
-     samplePy:'Xièxie lǎoshī! Tīngdào zhège xiāoxi, wǒ bùyóude tiàole qǐlai, zhè jǐ tiān de jǐnzhāng dùnshí dōu méiyǒu le.',
-     sampleVn:'Em cảm ơn cô! Nghe tin này em bất giác nhảy cẫng lên, bao căng thẳng mấy hôm nay lập tức tan biến.',
-     tip:'不由得 + V (phản ứng tự nhiên), 顿时 + thay đổi trạng thái — cả hai đều kể việc vừa xảy ra.'}
+    {scene:'Bạn cùng phòng ký túc lần đầu xa nhà, tối nào cũng buồn.',a:{sp:'Bạn',zh:'我好想家啊，一给妈妈打电话就想哭。',vn:'Tớ nhớ nhà quá, cứ gọi điện cho mẹ là muốn khóc.'},need:['Dùng 孤独 hoặc 哭鼻子','Đưa ra một lời an ủi hoặc rủ bạn làm gì đó'],sample:'刚离开家谁都会觉得孤独，别哭鼻子了，周末我们一起出去走走吧。',samplePy:'Gāng líkāi jiā shéi dōu huì juéde gūdú, bié kū bízi le, zhōumò wǒmen yìqǐ chūqu zǒuzou ba.',sampleVn:'Mới xa nhà ai cũng thấy cô đơn, đừng khóc nhè nữa, cuối tuần mình cùng ra ngoài đi dạo nhé.',tip:'哭鼻子 mang ý trêu nhẹ, rất hợp khi an ủi bạn thân; nói với người lớn thì tránh.'},
+    {scene:'Mẹ gọi điện bảo kỳ nghỉ này đừng về nhà.',a:{sp:'Mẹ',zh:'这个假期我们都忙，你就留在学校看看书吧，甭往家跑了。',vn:'Kỳ nghỉ này bố mẹ đều bận, con cứ ở lại trường đọc sách đi, khỏi chạy về nhà.'},need:['Dùng 恨不得','Nói rõ mong muốn của mình một cách lễ phép'],sample:'妈，我好久没见你们了，真恨不得马上飞回家。要不我回去帮你们做点儿事吧？',samplePy:'Mā, wǒ hǎojiǔ méi jiàn nǐmen le, zhēn hènbude mǎshàng fēi huí jiā. Yàobù wǒ huíqu bāng nǐmen zuò diǎnr shì ba?',sampleVn:'Mẹ ơi, lâu lắm con chưa gặp bố mẹ, con chỉ muốn bay ngay về nhà. Hay con về phụ bố mẹ một tay nhé?',tip:'恨不得 + 马上 + V diễn tả nỗi nóng lòng; thêm 要不……吧 để đề nghị nhẹ nhàng, không cãi lại mẹ.'},
+    {scene:'Bạn thân than phiền bố mẹ không cho đi du lịch một mình.',a:{sp:'Bạn',zh:'我爸妈不让我放假时一个人去旅行，真是太过分了！',vn:'Bố mẹ tớ không cho tớ đi du lịch một mình lúc nghỉ, thật quá đáng!'},need:['Dùng 体谅 (có thể lặp: 体谅体谅)','Giúp bạn nhìn từ phía bố mẹ'],sample:'你也体谅体谅他们吧，他们是担心你的安全，并不是不信任你。',samplePy:'Nǐ yě tǐliàng tǐliàng tāmen ba, tāmen shì dānxīn nǐ de ānquán, bìng bú shì bú xìnrèn nǐ.',sampleVn:'Cậu cũng thông cảm cho bố mẹ chút đi, họ lo cho sự an toàn của cậu, chứ đâu phải không tin cậu.',tip:'体谅 lặp được (体谅体谅), 原谅 thì không. 并不是…… phủ định mạnh một cách hiểu sai.'},
+    {scene:'Cô giáo báo tin bài văn của em được đăng trên tạp chí.',a:{sp:'Cô',zh:'你的作文在杂志上发表了，祝贺你！',vn:'Bài văn của em được đăng trên tạp chí rồi, chúc mừng em!'},need:['Dùng 顿时 hoặc 不由得','Tả cảm xúc của mình lúc nghe tin'],sample:'太好了！一听到这个好消息，我不由得跳了起来，这几天的紧张顿时都没有了。',samplePy:'Tài hǎo le! Yì tīngdào zhège hǎo xiāoxi, wǒ bùyóude tiàole qǐlai, zhè jǐ tiān de jǐnzhāng dùnshí dōu méiyǒu le.',sampleVn:'Tuyệt quá! Vừa nghe tin vui này em bất giác nhảy cẫng lên, bao căng thẳng mấy hôm nay lập tức tan biến.',tip:'不由得 + V (phản ứng tự nhiên), 顿时 + thay đổi trạng thái — cả hai đều kể việc vừa xảy ra.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 // 🎯 NÓI SAO CHO HAY — 得体 / 语体
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 var registerData = {
-  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
-         'Lên HSK 6, chọn đúng sắc thái (văn viết / khẩu ngữ, trang trọng / thân mật) quan trọng không kém chọn đúng nghĩa.',
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. Lên HSK 6, chọn đúng sắc thái (văn viết / khẩu ngữ, trang trọng / thân mật) quan trọng không kém chọn đúng nghĩa.',
   items: [
-    {scene:'Em viết bài văn "父母给我的爱" nộp cô giáo, kể lúc hiểu ra tình thương của bố mẹ.',
-     a:'看到父母的白发，我顿时明白了一切。',b:'看到父母的白发，我马上就懂了。',better:'a',
-     why:'顿时 mang sắc thái VĂN VIẾT, rất hợp để tả cảm xúc bừng tỉnh trong bài văn; 马上就懂了 là khẩu ngữ, nghe nhạt.'},
-
-    {scene:'Em trai lo lắng vì sắp thi, em trấn an nó.',
-     a:'甭担心，有我呢！',b:'您不必担心，一切都会顺利的。',better:'a',
-     why:'甭 là khẩu ngữ thân mật, hợp khi nói với em trai. Câu b dùng 您 và giọng trang trọng — nói với em ruột nghe xa cách, gượng gạo.'},
-
-    {scene:'Em viết thiệp cảm ơn cô giáo chủ nhiệm cũ.',
-     a:'老师，谢谢您三年来的关心，您和蔼的笑容我永远不会忘记。',b:'老师，你人挺好的，谢啦！',better:'a',
-     why:'Thiệp gửi thầy cô cần trang trọng, chân thành: dùng 您, 和蔼的笑容. Câu b quá suồng sã (你, 谢啦).'},
-
-    {scene:'Em đã cáu gắt với mẹ, giờ muốn làm lành.',
-     a:'妈，对不起，我不该跟您发脾气，您原谅我吧。',b:'行了行了，别唠叨了。',better:'a',
-     why:'Muốn làm lành thì nhận lỗi và xin mẹ 原谅. 别唠叨了 là câu gạt đi, càng làm mẹ buồn.'},
-
-    {scene:'Bạn thân than bố mẹ không hiểu mình, em góp ý.',
-     a:'你别总埋怨父母，他们也有自己的难处。',b:'你父母就是不讲道理，别理他们。',better:'a',
-     why:'Câu a giúp bạn nhìn từ phía bố mẹ (埋怨 → 体谅); câu b đổ thêm dầu vào lửa, không phải lời khuyên phù hợp.'},
-
-    {scene:'Em phát biểu trong buổi lễ tri ân cha mẹ ở trường.',
-     a:'父母的爱，常常让我们热泪盈眶。',b:'父母的爱，常常让我们哭鼻子。',better:'a',
-     why:'热泪盈眶 trang trọng, cảm động — hợp với lễ tri ân. 哭鼻子 là cách nói đùa, trêu trẻ con, không hợp hoàn cảnh trang nghiêm.'}
+    {scene:'Em viết bài văn "父母给我的爱" nộp cô giáo, kể lúc hiểu ra tình thương của bố mẹ.',a:'看着妈妈头上的白发，我马上就懂了。',b:'看着妈妈头上的白发，我顿时明白了一切。',better:'b',why:'顿时 mang sắc thái VĂN VIẾT, rất hợp để tả cảm xúc bừng tỉnh trong bài văn; 马上就懂了 là khẩu ngữ, nghe nhạt.'},
+    {scene:'Em trai lo lắng vì sắp thi, em trấn an nó.',a:'甭担心，有我呢！',b:'您不用担心，一切都会顺利的。',better:'a',why:'甭 là khẩu ngữ thân mật, hợp khi nói với em trai. Câu b dùng 您 và giọng trang trọng — nói với em ruột nghe xa cách, gượng gạo.'},
+    {scene:'Em viết thiệp cảm ơn cô giáo chủ nhiệm cũ.',a:'老师，你人挺好的，谢啦！',b:'老师，谢谢您三年来的关心，您的鼓励我永远不会忘记。',better:'b',why:'Thiệp gửi thầy cô cần trang trọng, chân thành: dùng 您, 关心, 鼓励. Câu kia quá suồng sã (你, 谢啦).'},
+    {scene:'Em đã cáu gắt với mẹ, giờ muốn làm lành.',a:'妈，对不起，我不该跟您发脾气，您原谅我吧。',b:'行了行了，别唠叨了。',better:'a',why:'Muốn làm lành thì nhận lỗi và xin mẹ 原谅. 别唠叨了 là câu gạt đi, càng làm mẹ buồn.'},
+    {scene:'Bạn thân than bố mẹ không hiểu mình, em góp ý.',a:'你父母就是不讲道理，别听他们的。',b:'你别总埋怨父母，他们也有自己的难处。',better:'b',why:'Câu a giúp bạn nhìn từ phía bố mẹ (埋怨 → 体谅); câu b đổ thêm dầu vào lửa, không phải lời khuyên phù hợp.'},
+    {scene:'Em phát biểu trong buổi lễ tri ân cha mẹ ở trường.',a:'父母的爱，常常让我们热泪盈眶。',b:'父母的爱，常常让我们哭鼻子。',better:'a',why:'热泪盈眶 trang trọng, cảm động — hợp với lễ tri ân. 哭鼻子 là cách nói đùa, trêu trẻ con, không hợp hoàn cảnh trang nghiêm.'}
   ]
 };
 

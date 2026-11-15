@@ -1530,102 +1530,50 @@ var hvBridgeData = {
 // GHÉP TỪ — cụm từ trong bài khoá
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'开出',right:'一个小小的花园'},
-  {left:'几粒',right:'丝瓜种子'},
-  {left:'水的',right:'滋润'},
-  {left:'阳光的',right:'照耀'},
-  {left:'惊讶地',right:'发现'},
-  {left:'编出',right:'拔苗助长的故事'},
-  {left:'每天工作',right:'疲倦了'},
-  {left:'陡峭的',right:'楼墙'},
-  {left:'输送',right:'水分和养料'},
-  {left:'瓜茎',right:'挺拔'},
-  {left:'叶子',right:'茂盛'},
-  {left:'水泥',right:'墙面'},
-  {left:'充满了',right:'生机与活力'},
-  {left:'颜色',right:'协调'},
-  {left:'悬挂',right:'在空中'},
-  {left:'负担不起',right:'瓜的重量'},
-  {left:'心也变得',right:'沉重起来'},
-  {left:'我的担心',right:'与日俱增'},
-  {left:'垂直地',right:'吊在那里'},
-  {left:'在风中',right:'晃来晃去'},
-  {left:'凹凸不平的',right:'台子'},
-  {left:'加固墙体时',right:'修建的'},
-  {left:'含笑',right:'面对秋阳'}
+  {left:'土壤',right:'肥沃'},
+  {left:'山路',right:'陡峭'},
+  {left:'身材',right:'挺拔'},
+  {left:'灯光',right:'柔和'},
+  {left:'心情',right:'沉重'},
+  {left:'减轻',right:'负担'},
+  {left:'充满',right:'生机'},
+  {left:'协调',right:'各部门的工作'},
+  {left:'阳光照耀着',right:'大地'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ — mỗi từ của bài một câu
+// ĐIỀN TỪ — câu mới (không chép bài khoá / SGK), mỗi câu một tình huống; ôn xoáy ốc từ + ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'一粒小小的种子能长成参天大树，大自然真是太',blank:'神奇',post:'了！',hint:'(kỳ diệu)',ans:'神奇'},
-  {pre:'夏天喝一碗',blank:'丝瓜',post:'汤，又清淡又解暑。',hint:'(mướp)',ans:'丝瓜'},
-  {pre:'他答应了一声，',blank:'随即',post:'把手里的东西递给我。',hint:'(ngay sau đó)',ans:'随即',exp:'随即 = ngay sau đó, liền (văn viết): 随即把东西递给我.'},
-  {pre:'石头缝里长出了一',blank:'株',post:'小草，显得生机勃勃。',hint:'(lượng từ: khóm, cây)',ans:'株',exp:'株 là lượng từ cho cây, cỏ (văn viết): 一株小草.'},
-  {pre:'医生让我每天饭后吃两',blank:'粒',post:'药。',hint:'(viên)',ans:'粒',exp:'粒 là lượng từ cho vật nhỏ dạng hạt, viên: 两粒药.'},
-  {pre:'化肥用得太多，会致使',blank:'土壤',post:'越来越差。',hint:'(đất)',ans:'土壤'},
-  {pre:'湄公河三角洲土地',blank:'肥沃',post:'，是越南重要的粮食产区。',hint:'(màu mỡ)',ans:'肥沃'},
-  {pre:'春雨',blank:'滋润',post:'着大地，田野里一片生机。',hint:'(tưới tắm)',ans:'滋润'},
-  {pre:'清晨，第一缕阳光',blank:'照耀',post:'着宁静的小村庄。',hint:'(chiếu rọi)',ans:'照耀'},
-  {pre:'听说他放弃了留学的机会，大家都感到很',blank:'惊讶',post:'。',hint:'(bất ngờ, ngạc nhiên)',ans:'惊讶'},
-  {pre:'大家都劝他别熬夜，他',blank:'愣',post:'是不听。',hint:'(cứ, khăng khăng)',ans:'愣'},
-  {pre:'让三岁的孩子每天学五个小时，简直是',blank:'拔苗助长',post:'。',hint:'(nóng vội hỏng việc)',ans:'拔苗助长'},
-  {pre:'他就是这样，',blank:'宁愿',post:'吃苦受累，也决不求人。',hint:'(thà)',ans:'宁愿',exp:'宁愿A，也(决)不B = thà A chứ nhất định không B.'},
-  {pre:'放学后，我看到了满脸',blank:'疲倦',post:'的妈妈。',hint:'(mệt mỏi)',ans:'疲倦'},
-  {pre:'那一根细细的',blank:'茎',post:'怎么承担得住两个大瓜呢？',hint:'(cọng, thân dây)',ans:'茎'},
-  {pre:'那',blank:'幢',post:'红色的小楼就是我们的图书馆。',hint:'(lượng từ: tòa)',ans:'幢',exp:'幢 là lượng từ cho tòa nhà (như 栋): 那幢小楼.'},
-  {pre:'这条山路又窄又',blank:'陡峭',post:'，大家一定要留神。',hint:'(dốc đứng)',ans:'陡峭'},
-  {pre:'路两旁是一排排高大',blank:'挺拔',post:'的白杨树。',hint:'(thẳng tắp)',ans:'挺拔'},
-  {pre:'下了几场雨，山上的草木更加',blank:'茂盛',post:'了。',hint:'(xanh tốt)',ans:'茂盛'},
-  {pre:'现在无线网络已经',blank:'覆盖',post:'了整个校园。',hint:'(phủ sóng)',ans:'覆盖'},
-  {pre:'以前村里都是土路，现在全修成了',blank:'水泥',post:'路。',hint:'(xi-măng)',ans:'水泥'},
-  {pre:'开学第一天，校园里到处都是',blank:'朝气蓬勃',post:'的年轻人。',hint:'(tràn đầy sức sống)',ans:'朝气蓬勃'},
-  {pre:'一场春雨过后，干枯的草地又恢复了',blank:'生机',post:'。',hint:'(sức sống)',ans:'生机'},
-  {pre:'一阵风吹过，粉红色的',blank:'花瓣',post:'纷纷飘落。',hint:'(cánh hoa)',ans:'花瓣'},
-  {pre:'蓝天上',blank:'点缀',post:'着几朵白云，像一幅画一样。',hint:'(điểm xuyết)',ans:'点缀'},
-  {pre:'这件上衣和裤子的颜色不太',blank:'协调',post:'，换一条吧。',hint:'(hài hòa)',ans:'协调'},
-  {pre:'房间里的灯光很',blank:'柔和',post:'，让人感到很放松。',hint:'(dịu nhẹ)',ans:'柔和'},
-  {pre:'这家饭馆的菜不但好吃，而且',blank:'分量',post:'很足。',hint:'(suất, lượng)',ans:'分量'},
-  {pre:'节日期间，街道两旁',blank:'悬挂',post:'着一排排红灯笼。',hint:'(treo)',ans:'悬挂'},
-  {pre:'为了减轻父母的',blank:'负担',post:'，他暑假去做了兼职。',hint:'(gánh nặng)',ans:'负担'},
-  {pre:'树上的苹果太多了，把树枝都',blank:'坠',post:'弯了。',hint:'(làm trĩu xuống)',ans:'坠'},
-  {pre:'考试失败对他来说是一个',blank:'沉重',post:'的打击。',hint:'(nặng nề)',ans:'沉重'},
-  {pre:'玩游戏要有',blank:'节制',post:'，不能影响学习和休息。',hint:'(chừng mực)',ans:'节制'},
-  {pre:'每天早上，妈妈都给妹妹梳两条小',blank:'辫子',post:'。',hint:'(bím tóc)',ans:'辫子'},
-  {pre:'你有什么困难尽管说，我一定助你一',blank:'臂',post:'之力。',hint:'(cánh tay)',ans:'臂'},
-  {pre:'',blank:'呵',post:'，才一个星期不见，你又长高了！',hint:'(thán từ: ô, úi chà)',ans:'呵'},
-  {pre:'离开家乡越久，对父母的思念',blank:'与日俱增',post:'。',hint:'(tăng lên từng ngày)',ans:'与日俱增'},
-  {pre:'一只小鸟站在树',blank:'梢',post:'上，唱个不停。',hint:'(ngọn)',ans:'梢'},
-  {pre:'这种直升机可以',blank:'垂直',post:'起飞和降落。',hint:'(thẳng đứng)',ans:'垂直'},
-  {pre:'天花板上',blank:'吊',post:'着一盏漂亮的灯。',hint:'(treo)',ans:'吊'},
-  {pre:'船',blank:'晃',post:'得很厉害，好几个人都晕船了。',hint:'(chao đảo)',ans:'晃'},
-  {pre:'只凭一张照片，还很难',blank:'断定',post:'他就是那个人。',hint:'(khẳng định)',ans:'断定'},
-  {pre:'货物',blank:'连同',post:'清单一并送过去。',hint:'(cùng với, kể cả)',ans:'连同',exp:'A连同B = A cùng với B (gộp chung): 货物连同清单一并送过去.'},
-  {pre:'这条山路',blank:'凹凸',post:'不平，骑车的时候要特别小心。',hint:'(lồi lõm)',ans:'凹凸'},
-  {pre:'为了方便村民出行，政府在河上',blank:'修建',post:'了一座大桥。',hint:'(xây dựng)',ans:'修建'},
-  {pre:'一个十岁的孩子能解出这道题，简直',blank:'不可思议',post:'。',hint:'(khó tin nổi)',ans:'不可思议'},
-  {pre:'最近几天，气温一直',blank:'徘徊',post:'在三十度左右。',hint:'(dao động quanh)',ans:'徘徊'},
-  {pre:'不管遇到什么困难，我们都会',blank:'一如既往',post:'地努力下去。',hint:'(trước sau như một)',ans:'一如既往',exp:'一如既往 = trước sau như một, vẫn như xưa: 一如既往地努力.'}
+  {pre:'听说这种花一天能变三次颜色，真是太',blank:'神奇',post:'了。',hint:'(thần kỳ)',ans:'神奇',exp:'神奇 = kỳ diệu, khó giải thích (sắc thái khen, thích thú); 太神奇了 hay dùng khi gặp điều lạ.'},
+  {pre:'院子里种着两',blank:'株',post:'桃树，春天开满了花。',hint:'(cây — lượng từ)',ans:'株',exp:'株 = lượng từ cho cây (văn viết, gần nghĩa 棵): 两株桃树, 几株花.'},
+  {pre:'这种药每次吃两',blank:'粒',post:'，早晚各一次，饭后吃。',hint:'(viên, hạt)',ans:'粒',exp:'粒 = lượng từ cho vật nhỏ tròn: viên thuốc, hạt gạo, hạt giống (几粒种子).'},
+  {pre:'一场春雨',blank:'滋润',post:'了干了很久的土地。',hint:'(làm ẩm, tưới tắm)',ans:'滋润',exp:'滋润 = làm cho ẩm, cho tươi tốt (mưa → đất, nước → da); sắc thái văn viết, hình ảnh.'},
+  {pre:'他才学了半年汉语就能看懂报纸，大家都很',blank:'惊讶',post:'。',hint:'(ngạc nhiên)',ans:'惊讶',exp:'惊讶 = ngạc nhiên vì điều ngoài dự đoán; 很惊讶 / 惊讶地发现.'},
+  {pre:'这几年，村子里盖起了一幢',blank:'幢',post:'漂亮的新楼。',hint:'(tòa — lượng từ)',ans:'幢',exp:'幢 = lượng từ cho nhà, toà nhà; 一幢幢 = từng toà từng toà (ôn lặp cụm số lượng, bài 14).'},
+  {pre:'从远处看，一片绿色的森林',blank:'覆盖',post:'了这座大山。',hint:'(bao phủ)',ans:'覆盖',exp:'覆盖 = phủ kín cả một bề mặt rộng (森林覆盖山, 雪覆盖大地); 点缀 chỉ là điểm xuyết vài chỗ.'},
+  {pre:'以前这里是一片草地，现在却成了',blank:'水泥',post:'停车场。',hint:'(xi-măng)',ans:'水泥',exp:'水泥 = xi-măng; 水泥 + 地 / 路 / 墙 / 停车场.'},
+  {pre:'风一吹，白色的',blank:'花瓣',post:'落了一地。',hint:'(cánh hoa)',ans:'花瓣',exp:'花瓣 = cánh hoa; một bông hoa (一朵花) có nhiều 花瓣.'},
+  {pre:'几只白色的小船',blank:'点缀',post:'在蓝色的大海上，美极了。',hint:'(điểm xuyết)',ans:'点缀',exp:'点缀在…… = vài thứ nhỏ làm đẹp thêm cho cái nền lớn (小船 trên 大海).'},
+  {pre:'别看这个包小，',blank:'分量',post:'可不轻，里面全是书。',hint:'(trọng lượng)',ans:'分量',exp:'分量 (fènliang) = sức nặng, trọng lượng; nghĩa bóng: 说话有分量 = lời nói có trọng lượng.'},
+  {pre:'这条山间小路',blank:'凹凸',post:'不平，下雨天特别难走。',hint:'(lồi lõm)',ans:'凹凸',exp:'凹凸不平 = gồ ghề, lồi lõm (mặt đường, mặt bàn).'},
+  {pre:'这三年来，公司的利润一直在百分之五左右',blank:'徘徊',post:'，没有明显的增加。',hint:'(lên xuống quanh một mức)',ans:'徘徊',exp:'徘徊 ngoài nghĩa "đi đi lại lại" còn dùng cho số liệu dao động quanh một mức (在……左右徘徊).'},
+  {pre:'飞机几乎是',blank:'垂直',post:'地往上飞，很快就消失在云里了。',hint:'(thẳng đứng)',ans:'垂直',exp:'垂直 = thẳng đứng / vuông góc; 垂直地 + V làm trạng ngữ.'},
+  {pre:'',blank:'呵',post:'，你一个人做了这么一桌菜啊！太厉害了！',hint:'(ô chà — thán từ)',ans:'呵',exp:'呵 đứng đầu câu tỏ ý ngạc nhiên, thán phục (khẩu ngữ).'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (随即 · 宁愿 · A归A) ít nhất 2 câu
+// SẮP XẾP CÂU — câu mới, chỉ một trật tự đúng
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['他','答应了','一声','，','随即','把东西','递给了','我','。'],ans:'他答应了一声，随即把东西递给了我。',audio:'他答应了一声，随即把东西递给了我。'},
-  {words:['孩子们','开出','一个小花园','，','随即','种上了','几粒','丝瓜种子','。'],ans:'孩子们开出一个小花园，随即种上了几粒丝瓜种子。',audio:'孩子们开出一个小花园，随即种上了几粒丝瓜种子。'},
-  {words:['大家','一致看好','这个产品','，','总经理','随即','开始','制定方案','。'],ans:'大家一致看好这个产品，总经理随即开始制定方案。',audio:'大家一致看好这个产品，总经理随即开始制定方案。'},
-  {words:['咱们','宁愿','多花点儿钱','，','也要','买个','质量好的','。'],ans:'咱们宁愿多花点儿钱，也要买个质量好的。',audio:'咱们宁愿多花点儿钱，也要买个质量好的。'},
-  {words:['他','宁愿','吃苦受累','，','也','决不','求人','。'],ans:'他宁愿吃苦受累，也决不求人。',audio:'他宁愿吃苦受累，也决不求人。'},
-  {words:['我','宁愿','走路','去学校','，','也不','挤','公共汽车','。'],ans:'我宁愿走路去学校，也不挤公共汽车。',audio:'我宁愿走路去学校，也不挤公共汽车。'},
-  {words:['不解','归','不解','，','我','每天','都要去','看看','那几棵丝瓜','。'],ans:'不解归不解，我每天都要去看看那几棵丝瓜。',audio:'不解归不解，我每天都要去看看那几棵丝瓜。'},
-  {words:['开玩笑','归','开玩笑','，','但','千万','别','过了头','。'],ans:'开玩笑归开玩笑，但千万别过了头。',audio:'开玩笑归开玩笑，但千万别过了头。'},
-  {words:['生气','归','生气','，','我','还是','会','帮你的','。'],ans:'生气归生气，我还是会帮你的。',audio:'生气归生气，我还是会帮你的。'},
-  {words:['瓜茎','只有','细绳','一般','粗','。'],ans:'瓜茎只有细绳一般粗。',audio:'瓜茎只有细绳一般粗。'},
-  {words:['我','对丝瓜的','担心','与日俱增','。'],ans:'我对丝瓜的担心与日俱增。',audio:'我对丝瓜的担心与日俱增。'},
-  {words:['那个台子','是','加固墙体时','修建的','。'],ans:'那个台子是加固墙体时修建的。',audio:'那个台子是加固墙体时修建的。'},
-  {words:['丝瓜','却','一如既往地','含笑','面对','秋阳','。'],ans:'丝瓜却一如既往地含笑面对秋阳。',audio:'丝瓜却一如既往地含笑面对秋阳。'}
+  {words:['他','接过','钥匙','，','随即','把门','打开了','。'],ans:'他接过钥匙，随即把门打开了。',audio:'他接过钥匙，随即把门打开了。'},
+  {words:['我','宁愿','走路','回家','，','也不','坐他的车','。'],ans:'我宁愿走路回家，也不坐他的车。',audio:'我宁愿走路回家，也不坐他的车。'},
+  {words:['他','不服气','归不服气','，','最后','还是','接受了','比赛结果','。'],ans:'他不服气归不服气，最后还是接受了比赛结果。',audio:'他不服气归不服气，最后还是接受了比赛结果。'},
+  {words:['一只','小鸟','落在了','树梢上','。'],ans:'一只小鸟落在了树梢上。',audio:'一只小鸟落在了树梢上。'},
+  {words:['小船','在','水上','晃得','很厉害','。'],ans:'小船在水上晃得很厉害。',audio:'小船在水上晃得很厉害。'},
+  {words:['医生','断定','他的病','是','累出来的','。'],ans:'医生断定他的病是累出来的。',audio:'医生断定他的病是累出来的。'},
+  {words:['请','把照片','连同','申请表','一起','交上来','。'],ans:'请把照片连同申请表一起交上来。',audio:'请把照片连同申请表一起交上来。'},
+  {words:['墙上','悬挂着','一幅','中国画','。'],ans:'墙上悬挂着一幅中国画。',audio:'墙上悬挂着一幅中国画。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1633,76 +1581,44 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'他把上衣____裤子都弄脏了。',opts:['连同','一起','随即','宁愿'],ans:0,
-   exp:'Giữa hai danh từ 上衣 — 裤子 → liên từ 连同 (做一做 ①). 一起 là phó từ, phải đứng trước động từ.'},
-  {wrong:'我跟朋友____住在一所离学校很近的公寓里。',opts:['连同','随即','一起','一如既往'],ans:2,
-   exp:'Trước động từ 住, có 跟朋友 → phó từ 一起 (做一做 ③). 连同 chỉ nối hai danh từ.'},
-  {wrong:'缺乏父母之爱的孩子，不安全感也会____产生。',opts:['宁愿','一如既往','连同','随即'],ans:3,
-   exp:'Việc thứ hai xảy ra ngay sau → 随即 + V (ví dụ của sách). 宁愿 dùng trong câu lựa chọn; 连同 nối danh từ.'},
-  {wrong:'我____一辈子不结婚，也不嫁给他。',opts:['随即','宁愿','愣','连同'],ans:1,
-   exp:'Khung lựa chọn ……，也不…… → 宁愿 (thà… chứ không…) (练习2 ③).'},
-  {wrong:'这种产品一再降价，可____是卖不动，让人觉得不可思议。',opts:['随即','宁愿','愣','断定'],ans:2,
-   exp:'愣是 + V: cứ nhất định… (trái với lẽ thường) (练习2 ②). Chữ 是 phía sau là dấu hiệu.'},
-  {wrong:'看到我满分的试卷，妈妈露出了____的表情。',opts:['惊讶','沉重','疲倦','挺拔'],ans:0,
-   exp:'Điểm tuyệt đối là điều bất ngờ → vẻ mặt ngạc nhiên: 惊讶的表情. 沉重 là nặng nề; 疲倦 là mệt; 挺拔 là thẳng tắp.'},
-  {wrong:'这么细的茎，怎么____得起两个大瓜的重量呢？',opts:['覆盖','点缀','修建','负担'],ans:3,
-   exp:'负担得起 / 负担不起 = gánh nổi / không gánh nổi. 覆盖 là che phủ; 点缀 là tô điểm; 修建 là xây dựng.'},
-  {wrong:'高考越来越近了，我的担心____。',opts:['一如既往','与日俱增','朝气蓬勃','不可思议'],ans:1,
-   exp:'Nỗi lo tăng lên từng ngày → 与日俱增 (làm vị ngữ cuối câu). 一如既往 là trước sau như một (không đổi).'},
-  {wrong:'希望大家____地支持我们的工作。',opts:['一如既往','与日俱增','拔苗助长','不可思议'],ans:0,
-   exp:'一如既往地 + V = vẫn … như trước (练习2 ⑥). Các thành ngữ khác không làm trạng ngữ cho 支持 được.'},
-  {wrong:'那覆盖在墙面上的一片浓绿显得____，充满了活力。',opts:['与日俱增','一如既往','朝气蓬勃','拔苗助长'],ans:2,
-   exp:'显得 + 朝气蓬勃 = trông tràn trề sức sống, hợp với 充满了活力.'},
-  {wrong:'学习要循序渐进，____只会适得其反。',opts:['一如既往','拔苗助长','与日俱增','朝气蓬勃'],ans:1,
-   exp:'Trái với "tuần tự từng bước" là nóng vội đốt cháy giai đoạn → 拔苗助长.'},
-  {wrong:'黄色的花瓣____在绿叶之间，颜色协调，柔和精致。',opts:['覆盖','悬挂','徘徊','点缀'],ans:3,
-   exp:'Vật nhỏ, đẹp làm đẹp thêm vật chính → 点缀在……之间. 覆盖 là phủ kín cả; 悬挂 là treo; 徘徊 là đi đi lại lại.'},
-  {wrong:'一夜大雪，厚厚的白雪____了整个山谷。',opts:['点缀','吊','覆盖','滋润'],ans:2,
-   exp:'Tuyết dày phủ kín toàn bộ → 覆盖. 点缀 chỉ một ít điểm xuyết; 吊 là treo; 滋润 là làm ẩm.'},
-  {wrong:'他在老师办公室门口____了半天，始终没敢进去。',opts:['徘徊','晃','坠','照耀'],ans:0,
-   exp:'Đi qua đi lại vì do dự → 徘徊. 晃 là lắc lư (vật); 坠 là rơi; 照耀 là chiếu sáng.'},
-  {wrong:'听到这个不幸的消息，大家的心情都十分____。',opts:['肥沃','柔和','挺拔','沉重'],ans:3,
-   exp:'心情沉重 = lòng nặng trĩu. 肥沃 chỉ đất; 柔和 là dịu dàng; 挺拔 là thẳng tắp.'},
-  {wrong:'这里的土地____，种什么长什么。',opts:['茂盛','肥沃','挺拔','陡峭'],ans:1,
-   exp:'Đất đai → 肥沃 (màu mỡ). 茂盛 dùng cho cây cỏ, không dùng cho đất.'},
-  {wrong:'院子里的树长得十分____，夏天可以在树下乘凉。',opts:['肥沃','陡峭','茂盛','凹凸'],ans:2,
-   exp:'Cây cối xanh tốt, sum suê → 茂盛. 肥沃 chỉ dùng cho đất; 陡峭 là dốc; 凹凸 là lồi lõm.'},
-  {wrong:'根据现场留下的脚印，警察____小偷是从窗户进来的。',opts:['断定','决定','协调','节制'],ans:0,
-   exp:'Suy xét chứng cứ rồi kết luận chắc chắn → 断定 + mệnh đề. 决定 là quyết định (làm gì), không dùng để kết luận sự thật.'},
-  {wrong:'吃东西要有____，不能想吃多少就吃多少。',opts:['协调','节制','生机','分量'],ans:1,
-   exp:'有节制 = có chừng mực. 协调 là hài hòa; 生机 là sức sống; 分量 là trọng lượng.'},
-  {wrong:'运动会由体育老师负责____各班的工作。',opts:['节制','断定','负担','协调'],ans:3,
-   exp:'协调 + 工作 = điều phối công việc giữa các bên. 节制 là hạn chế; 负担 là gánh chịu.'}
+  {wrong:'他看了一眼手表，____站起来离开了会议室。',opts:['随即','随时','随便','随着'],ans:0,exp:'Việc 2 xảy ra ngay sau việc 1 → 随即 + V. 随时 là bất cứ lúc nào; 随便 là tuỳ ý; 随着 là giới từ "theo đà" (随着……的发展) — cùng chữ đầu nhưng khác nghĩa.'},
+  {wrong:'我打算明年____去中国留学，现在正在准备。',opts:['就','随即','随时','随着'],ans:0,exp:'Nói dự định tương lai → 就. 随即 chỉ dùng khi việc sau nối ngay việc trước đã/đang xảy ra, không dùng với 明年 / 打算.'},
+  {wrong:'我____饿着肚子，也不吃这么难吃的东西。',opts:['宁愿','愿意','只要','可以'],ans:0,exp:'Khung chọn lựa 宁愿 A，也不 B = thà A chứ không B. 愿意 không tạo khung với 也不; 只要 đi với 就; 可以 là có thể.'},
+  {wrong:'我宁愿自己多花点儿钱，____不想麻烦朋友。',opts:['也','都','还','就'],ans:0,exp:'Vế sau của 宁愿 luôn dùng 也 (也不 / 也要). Người Việt hay nghĩ "chứ không" → dùng 都 / 还 / 就 — sai.'},
+  {wrong:'____归不放心，孩子大了，总得让他自己出去看看。',opts:['不放心','放心','担心','不担心'],ans:0,exp:'Khung A guī A phải lặp lại ĐÚNG từ A ở hai bên (不放心 … 不放心) để nhượng bộ rồi chuyển ý. Đổi thành từ khác (放心 / 担心 / 不担心) là phá khung.'},
+  {wrong:'我劝了他半天，他____是不听，非要一个人去。',opts:['愣','正','光','于'],ans:0,exp:'愣是 + V = cứ nhất định, khăng khăng (trái ý người khác) — khẩu ngữ. 正是 là chính là; 光是 là chỉ riêng; 于 là giới từ văn viết.'},
+  {wrong:'孩子才三岁，你就让他每天写两个小时字，这不是____吗？',opts:['拔苗助长','脚踏实地','千方百计','一举两得'],ans:0,exp:'Nóng vội ép trẻ học quá sớm, quá nhiều → 拔苗助长. 脚踏实地 là làm việc chắc chắn (nghĩa tốt); 千方百计 là tìm mọi cách; 一举两得 là một công đôi việc.'},
+  {wrong:'离开家乡越久，他对家人的想念____。',opts:['与日俱增','津津有味','名副其实','鸦雀无声'],ans:0,exp:'Tình cảm tăng lên từng ngày → 与日俱增 (làm vị ngữ, đi với 越……越 tự nhiên). 津津有味 là ăn / nghe say sưa; 名副其实 là đúng như tên gọi; 鸦雀无声 (bài 1) là im phăng phắc.'},
+  {wrong:'我们毕业都十年了，老师还是____地关心着我们每一个人。',opts:['一如既往','迫不及待','兴高采烈','滔滔不绝'],ans:0,exp:'Vẫn như trước, không thay đổi → 一如既往地 + V. 迫不及待 là nôn nóng không chờ được; 兴高采烈 là hớn hở; 滔滔不绝 (bài 1) là nói không dứt.'},
+  {wrong:'新来的几个年轻人个个____，办公室里热闹多了。',opts:['朝气蓬勃','无精打采','一动不动','不知不觉'],ans:0,exp:'Tràn đầy sức sống, làm văn phòng sôi động → 朝气蓬勃. 无精打采 (bài 2) là uể oải — trái nghĩa; 一动不动 là bất động; 不知不觉 là bất giác.'},
+  {wrong:'这里雨水多，山上的树长得非常____。',opts:['茂盛','肥沃','陡峭','凹凸'],ans:0,exp:'Cây cối xanh tốt, rậm rạp → 茂盛. 肥沃 chỉ dùng cho đất (土地肥沃); 陡峭 tả núi dốc; 凹凸 tả bề mặt lồi lõm.'},
+  {wrong:'听口音，我____他是南方人，一问，果然没错。',opts:['断定','决定','规定','一定'],ans:0,exp:'Dựa vào dấu hiệu để kết luận chắc chắn → 断定 + mệnh đề. 决定 là quyết định làm gì; 规定 là quy định; 一定 là phó từ, không mang mệnh đề làm tân ngữ.'},
+  {wrong:'这么贵的学费，一般家庭根本____不起。',opts:['负担','担任','担心','负责'],ans:0,exp:'负担得起 / 负担不起 = gánh nổi / không gánh nổi (chi phí). 担任 là đảm nhiệm chức vụ; 担心 là lo; 负责 là chịu trách nhiệm — không dùng với 不起.'},
+  {wrong:'为了方便大家出行，政府在河上____了一座新桥。',opts:['修建','修理','修改','建议'],ans:0,exp:'Xây dựng công trình (cầu, đường, nhà) → 修建. 修理 là sửa chữa đồ hỏng; 修改 là sửa bài, sửa kế hoạch; 建议 là đề nghị.'},
+  {wrong:'连续工作了十几个小时，他显得非常____。',opts:['疲倦','困难','痛快','柔和'],ans:0,exp:'Mệt mỏi sau thời gian làm việc dài → 疲倦 (văn viết hơn 累). 困难 là khó khăn; 痛快 là sảng khoái; 柔和 là dịu nhẹ.'}
 ];
 
 // ══════════════════════════════════════════
-// DỊCH — câu ghép, dùng từ bài 18 + ôn từ HSK 6 bài 1–17 và HSK 4–5
+// DỊCH Việt → Trung — câu mới, dùng từ của bài + ôn ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Cô giáo bước vào lớp, rồi ngay sau đó công bố một tin khiến mọi người kinh ngạc.',zh:'老师走进教室，随即宣布了一个令人惊讶的消息。',py:'Lǎoshī zǒujìn jiàoshì, suíjí xuānbùle yí ge lìng rén jīngyà de xiāoxi.',goiY:['随即','惊讶'],giai:'随即 = ngay sau đó, đứng trước động từ của vế SAU (không đặt đầu câu độc lập); "khiến mọi người kinh ngạc" = 令人惊讶 làm định ngữ, cần 的.'},
-  {vi:'Cuối tuần tôi thà ở nhà cùng bà trồng mướp, chứ không muốn đi dạo trung tâm thương mại.',zh:'周末我宁愿在家陪奶奶种丝瓜，也不想去商场逛街。',py:'Zhōumò wǒ nìngyuàn zài jiā péi nǎinai zhòng sīguā, yě bù xiǎng qù shāngchǎng guàngjiē.',goiY:['宁愿……也不……','丝瓜'],giai:'"Thà A chứ không B" = 宁愿 A，也不 B — 也 bắt buộc có ở vế sau; không dịch "thà" bằng 宁静 hay 愿意.'},
-  {vi:'Vất vả thì vất vả thật, nhưng nhìn mấy khóm hoa mình trồng xanh tốt như vậy, trong lòng cậu ấy vẫn rất mãn nguyện.',zh:'辛苦归辛苦，看到自己种的几株花长得那么茂盛，他心里还是很欣慰。',py:'Xīnkǔ guī xīnkǔ, kàndào zìjǐ zhòng de jǐ zhū huā zhǎng de nàme màoshèng, tā xīnli háishi hěn xīnwèi.',goiY:['辛苦归辛苦','株','茂盛'],giai:'"A thì A thật, nhưng…" = A归A，…还是…… (nhượng bộ rồi chuyển ý); 欣慰 ôn HSK 6 bài 2.'},
-  {vi:'Dù lần vấp ngã này là một đòn nặng nề với cô ấy, nhưng cô ấy vẫn chăm chỉ luyện tập như trước sau như một.',zh:'尽管这次挫折对她是一个沉重的打击，她却一如既往地刻苦训练。',py:'Jǐnguǎn zhè cì cuòzhé duì tā shì yí ge chénzhòng de dǎjī, tā què yìrú-jìwǎng de kèkǔ xùnliàn.',goiY:['尽管……却……','沉重','一如既往'],giai:'"Đòn nặng nề" = 沉重的打击, KHÔNG dịch "trầm trọng" thành 沉重 theo nghĩa tiếng Việt; 一如既往地 làm trạng ngữ, có 地. 挫折 ôn bài 7.'},
-  {vi:'Kỳ thi đại học càng đến gần, áp lực của các bạn tăng lên từng ngày, chẳng trách dạo này ai trông cũng mệt mỏi.',zh:'高考越来越近，同学们的压力与日俱增，难怪最近大家都显得很疲倦。',py:'Gāokǎo yuè lái yuè jìn, tóngxuémen de yālì yǔrì-jùzēng, nánguài zuìjìn dàjiā dōu xiǎnde hěn píjuàn.',goiY:['与日俱增','难怪','疲倦'],giai:'与日俱增 đã có nghĩa "ngày càng tăng" → không thêm 越来越 trước nó; 难怪 đứng đầu vế sau, nêu điều nay đã hiểu nguyên nhân.'},
-  {vi:'Nếu chơi điện thoại không có chừng mực, không những ảnh hưởng đến việc học mà còn tạo thêm gánh nặng tâm lý cho bố mẹ.',zh:'倘若玩手机没有节制，不但会影响学习，而且会给父母增加心理负担。',py:'Tǎngruò wán shǒujī méiyǒu jiézhì, búdàn huì yǐngxiǎng xuéxí, érqiě huì gěi fùmǔ zēngjiā xīnlǐ fùdān.',goiY:['倘若','节制','不但……而且……','负担'],giai:'倘若 (ôn bài 4) = nếu như, văn viết hơn 如果; 负担 ở đây là DANH TỪ "gánh nặng" (không thay bằng 承担).'},
-  {vi:'Tôi vốn quả quyết cậu ấy sẽ không đến dự thi, không ngờ cậu ấy không những đến mà còn giành giải nhất, thật không thể tưởng tượng nổi.',zh:'我原本断定他不会来参加比赛，不料他不仅来了，还得了第一名，真是不可思议。',py:'Wǒ yuánběn duàndìng tā bú huì lái cānjiā bǐsài, búliào tā bùjǐn lái le, hái déle dì-yī míng, zhēn shì bùkě-sīyì.',goiY:['断定','不料','不仅……还……','不可思议'],giai:'不料 (ôn bài 4) = không ngờ, đứng đầu vế nêu kết quả trái dự đoán; 断定 + mệnh đề (không cần 说).'},
-  {vi:'Thay vì suốt ngày ở trong phòng chơi điện thoại, chi bằng ra ban công gieo vài hạt mướp, ngắm chúng từng ngày lớn lên xanh tốt.',zh:'与其整天待在屋里玩手机，不如去阳台上种几粒丝瓜种子，看着它们一天天长得茂盛起来。',py:'Yǔqí zhěngtiān dāi zài wū li wán shǒujī, bùrú qù yángtái shang zhòng jǐ lì sīguā zhǒngzi, kànzhe tāmen yìtiāntiān zhǎng de màoshèng qǐlái.',goiY:['与其……不如……','粒','茂盛'],giai:'与其 A 不如 B = thay vì A, chi bằng B (chọn B); "vài hạt" = 几粒, lượng từ 粒 cho hạt giống.'},
-  {vi:'Cậu ấy lượn đi lượn lại trước cửa phòng thi rất lâu, thà bỏ lỡ cơ hội này, chứ không muốn tham gia kỳ thi một cách qua loa khi chưa chuẩn bị xong.',zh:'他在考场门口徘徊了很久，宁愿放弃这次机会，也不愿意在没准备好的情况下草率地参加考试。',py:'Tā zài kǎochǎng ménkǒu páihuáile hěn jiǔ, nìngyuàn fàngqì zhè cì jīhuì, yě bú yuànyì zài méi zhǔnbèi hǎo de qíngkuàng xià cǎoshuài de cānjiā kǎoshì.',goiY:['徘徊','宁愿……也不……','草率'],giai:'徘徊 = đi đi lại lại (vì do dự), KHÔNG phải "bồi hồi"; 在……的情况下 = trong tình huống…; 草率 ôn bài 4.'},
-  {vi:'Không vui thì không vui, nhưng đã mọi người bầu cậu ấy làm lớp trưởng, chúng ta nên vẫn như trước phối hợp tốt công việc các nhóm, kẻo ảnh hưởng tiến độ cả lớp.',zh:'不满归不满，既然大家选了他当班长，我们就应该一如既往地协调好各组的工作，免得影响全班的进度。',py:'Bùmǎn guī bùmǎn, jìrán dàjiā xuǎnle tā dāng bānzhǎng, wǒmen jiù yīnggāi yìrú-jìwǎng de xiétiáo hǎo gè zǔ de gōngzuò, miǎnde yǐngxiǎng quán bān de jìndù.',goiY:['不满归不满','既然……就……','协调','免得'],giai:'Ba vế: nhượng bộ (A归A) → lý do (既然……就) → mục đích tránh (免得, ôn bài 14). 协调 là động từ "điều phối", đọc xiétiáo.'}
+  {vi:'Nghe tin con đỗ đại học, mẹ sững người một lúc, ngay sau đó vui đến bật khóc.',zh:'听到孩子考上大学的消息，妈妈先是愣了一下，随即高兴得哭了起来。',py:'Tīngdào háizi kǎoshàng dàxué de xiāoxi, māma xiān shì lèngle yíxià, suíjí gāoxìng de kūle qǐlái.',goiY:['先是……随即……','愣了一下','高兴得……'],giai:'随即 đứng trước động từ của việc thứ hai, nối ngay việc thứ nhất; 愣 ở đây = sững người (nghĩa khác 愣是 "cứ khăng khăng").'},
+  {vi:'Tôi thà mỗi tháng mua ít quần áo đi, cũng phải để dành tiền đi du lịch.',zh:'我宁愿每个月少买几件衣服，也要把钱省下来去旅行。',py:'Wǒ nìngyuàn měi ge yuè shǎo mǎi jǐ jiàn yīfu, yě yào bǎ qián shěng xiàlái qù lǚxíng.',goiY:['宁愿……也要……','省下来'],giai:'宁愿 + điều chấp nhận chịu thiệt，也要 + mục đích; "để dành tiền" = 把钱省下来.'},
+  {vi:'Không đồng ý thì không đồng ý, nhưng đã mọi người quyết định rồi thì tôi vẫn sẽ làm cho nghiêm túc.',zh:'不同意归不同意，既然大家已经决定了，我还是会认真去做。',py:'Bù tóngyì guī bù tóngyì, jìrán dàjiā yǐjīng juédìng le, wǒ háishi huì rènzhēn qù zuò.',goiY:['不同意归不同意','既然……','还是'],giai:'Khung A guī A (不同意归不同意) thừa nhận thái độ của mình, vế sau dùng 还是 nêu việc vẫn làm; 既然 = đã… thì….'},
+  {vi:'Một đứa trẻ năm tuổi mà lại nhớ được tên của hơn một trăm loài hoa, đến cô giáo cũng thấy không thể tưởng tượng nổi.',zh:'一个五岁的孩子竟然能记住一百多种花的名字，连老师都觉得不可思议。',py:'Yí ge wǔ suì de háizi jìngrán néng jìzhù yìbǎi duō zhǒng huā de míngzi, lián lǎoshī dōu juéde bùkě-sīyì.',goiY:['竟然','连……都……','不可思议'],giai:'竟然 nêu điều bất ngờ; 连 + người + 都觉得不可思议 = đến… cũng thấy khó tin; 不可思议 không mang tân ngữ.'},
+  {vi:'Theo đà công ty ngày càng lớn, áp lực công việc của anh ấy cũng tăng lên từng ngày.',zh:'随着公司越来越大，他的工作压力也与日俱增。',py:'Suízhe gōngsī yuè lái yuè dà, tā de gōngzuò yālì yě yǔrì-jùzēng.',goiY:['随着……','与日俱增'],giai:'随着 + quá trình, vế sau có 也; 与日俱增 đứng cuối câu, không thêm 了 hay tân ngữ.'},
+  {vi:'Ăn đồ ngọt phải có chừng mực, kẻo vừa hại sức khoẻ lại dễ béo.',zh:'吃甜的东西要有节制，免得既对身体不好又容易发胖。',py:'Chī tián de dōngxi yào yǒu jiézhì, miǎnde jì duì shēntǐ bù hǎo yòu róngyì fāpàng.',goiY:['有节制','免得','既……又……'],giai:'有节制 = có chừng mực; 免得 (ôn bài 14) nêu hậu quả muốn tránh; 既……又…… nối hai hậu quả.'}
 ];
 
-// Chiều Trung → Việt — bám ý bài khoá, nội dung khác với chiều trên
+// ══════════════════════════════════════════
+// Dịch Trung → Việt — câu mới, không trùng chiều trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Bọn trẻ vỡ ra một khu vườn nhỏ, ngay sau đó trồng mấy khóm hoa và gieo mấy hạt mướp.',zh:'孩子们开出一个小花园，随即种上了几株花和几粒丝瓜种子。',py:'Háizimen kāichū yí ge xiǎo huāyuán, suíjí zhòngshangle jǐ zhū huā hé jǐ lì sīguā zhǒngzi.',goiY:['随即 = ngay sau đó','株 = khóm, cây','粒 = hạt'],giai:'随即 nối hai hành động liền nhau — dịch "ngay sau đó / rồi liền"; 株 và 粒 là lượng từ, dịch theo vật: "khóm hoa", "hạt giống".'},
-  {vi:'Đất tuy không màu mỡ lắm, nhưng có nước tưới tắm và nắng chiếu rọi, cây mướp chẳng mấy chốc đã nhú lên.',zh:'土壤虽然不太肥沃，但是有水的滋润和阳光的照耀，丝瓜很快就冒了出来。',py:'Tǔrǎng suīrán bú tài féiwò, dànshì yǒu shuǐ de zīrùn hé yángguāng de zhàoyào, sīguā hěn kuài jiù màole chūlái.',goiY:['肥沃 = màu mỡ','滋润 = tưới tắm','照耀 = chiếu rọi'],giai:'水的滋润, 阳光的照耀 là động từ danh hóa — dịch thành cụm động từ tiếng Việt ("có nước tưới tắm") cho tự nhiên, đừng dịch "sự tưới tắm của nước".'},
-  {vi:'Người xưa cứ nhất định bịa ra chuyện "kéo mạ cho mau lớn", thật có phần quá lời; nếu là tôi, tôi thà dùng một phép so sánh khác.',zh:'古人愣是编出了拔苗助长的故事，未免太夸张了；要是我，宁愿用别的比喻。',py:'Gǔrén lèng shì biānchūle bámiáo-zhùzhǎng de gùshi, wèimiǎn tài kuāzhāng le; yàoshi wǒ, nìngyuàn yòng biéde bǐyù.',goiY:['愣是 = cứ nhất định','未免 = có phần hơi','宁愿 = thà'],giai:'愣是 mang ý "làm trái lẽ thường" — dịch "cứ nhất định / lại cứ"; 未免 (ôn bài 4) dịch "có phần / hơi… quá".'},
-  {vi:'Khó hiểu thì khó hiểu, nhưng ngày nào làm việc mệt rồi, tác giả cũng đều ra ngắm mấy cây mướp ấy.',zh:'不解归不解，作者每天工作疲倦了，都要去看看那几棵丝瓜。',py:'Bùjiě guī bùjiě, zuòzhě měi tiān gōngzuò píjuàn le, dōu yào qù kànkan nà jǐ kē sīguā.',goiY:['不解归不解 = khó hiểu thì khó hiểu','疲倦 = mệt mỏi'],giai:'A归A dịch "A thì A (thật), nhưng…" — phải thêm "nhưng" ở vế sau dù câu Trung không có 但是.'},
-  {vi:'Thân dây mướp chỉ to bằng sợi dây mảnh, vậy mà chuyển được đủ chất dinh dưỡng, khiến dây vươn thẳng, lá xanh tốt.',zh:'瓜茎只有细绳一般粗，却能输送足够的养料，使得瓜茎挺拔，叶子茂盛。',py:'Guājīng zhǐyǒu xì shéng yìbān cū, què néng shūsòng zúgòu de yǎngliào, shǐde guājīng tǐngbá, yèzi màoshèng.',goiY:['茎 = thân dây','挺拔 = vươn thẳng','茂盛 = xanh tốt'],giai:'只有……一般粗 = chỉ to bằng…; 却 dịch "vậy mà" để thấy sự trái ngược; 使得 = khiến cho.'},
-  {vi:'Mảng xanh đậm phủ trên mặt tường xi-măng ấy trông tràn trề nhựa sống, đầy sinh khí.',zh:'那覆盖在水泥墙面上的一片浓绿，显得朝气蓬勃，充满了生机。',py:'Nà fùgài zài shuǐní qiángmiàn shang de yí piàn nónglǜ, xiǎnde zhāoqì-péngbó, chōngmǎnle shēngjī.',goiY:['覆盖 = phủ','朝气蓬勃 = tràn trề nhựa sống','生机 = sinh khí'],giai:'Định ngữ dài 覆盖在水泥墙面上的 đặt SAU danh từ khi dịch ("mảng xanh phủ trên tường…"); 朝气蓬勃 không dịch "bồng bột".'},
-  {vi:'Quả càng lớn càng nặng, thân dây mảnh mai dường như không gánh nổi sức nặng của nó, lòng tác giả cũng bất giác nặng trĩu theo.',zh:'瓜越长越大，细细的瓜茎好像负担不起它的分量，作者的心也不由得沉重起来。',py:'Guā yuè zhǎng yuè dà, xìxì de guājīng hǎoxiàng fùdān bu qǐ tā de fènliàng, zuòzhě de xīn yě bùyóude chénzhòng qǐlái.',goiY:['负担不起 = không gánh nổi','分量 = sức nặng','沉重 = nặng trĩu'],giai:'沉重 = nặng nề (KHÔNG phải "trầm trọng"); 不由得 (ôn bài 2) = bất giác, không kìm được.'},
-  {vi:'Quả đầu tiên rất biết chừng mực, còn hai quả ngoài cửa sổ tầng ba lại càng lớn càng to, nỗi lo của tác giả mỗi ngày một tăng.',zh:'最初的瓜很有节制，而三楼窗外的两个瓜却越长越粗，作者的担心与日俱增。',py:'Zuìchū de guā hěn yǒu jiézhì, ér sān lóu chuāng wài de liǎng ge guā què yuè zhǎng yuè cū, zuòzhě de dānxīn yǔrì-jùzēng.',goiY:['节制 = chừng mực','而……却…… = còn… thì lại…','与日俱增 = tăng từng ngày'],giai:'而 nối hai vế đối lập; 很有节制 là nhân hóa quả mướp → "rất biết chừng mực".'},
-  {vi:'Tác giả quả quyết quả mướp treo thẳng đứng giữa không trung sớm muộn cũng sẽ rơi, không ngờ nó lại nằm trên một cái bệ gồ ghề.',zh:'作者断定那个垂直地吊在空中的瓜迟早会坠落，不料它却躺在了一个凹凸不平的台子上。',py:'Zuòzhě duàndìng nàge chuízhí de diào zài kōngzhōng de guā chízǎo huì zhuìluò, búliào tā què tǎng zài le yí ge āotū bù píng de táizi shang.',goiY:['断定 = quả quyết','垂直 = thẳng đứng','坠落 = rơi xuống','不料 = không ngờ'],giai:'Chủ ngữ của 断定 là cả mệnh đề dài 那个……的瓜迟早会坠落 — dịch trọn cụm rồi mới nối vế 不料 (ôn bài 4).'},
-  {vi:'Tác giả đi đi lại lại dưới giàn mướp, càng nghĩ càng thấy khó tin, còn cây mướp thì vẫn như ngày nào mỉm cười đón nắng thu, như thể chưa từng có chuyện gì xảy ra.',zh:'作者徘徊在丝瓜下面，越想越觉得不可思议，丝瓜却一如既往地含笑面对秋阳，仿佛什么也没发生过。',py:'Zuòzhě páihuái zài sīguā xiàmiàn, yuè xiǎng yuè juéde bùkě-sīyì, sīguā què yìrú-jìwǎng de hánxiào miànduì qiūyáng, fǎngfú shénme yě méi fāshēngguo.',goiY:['徘徊 = đi đi lại lại','不可思议 = khó tin','一如既往 = vẫn như ngày nào','仿佛 = như thể'],giai:'徘徊 là động tác đi lại, không dịch "bồi hồi"; 一如既往 dịch linh hoạt "vẫn như ngày nào" cho hợp văn miêu tả.'}
+  {vi:'Được nắng chiếu rọi và mưa xuân tưới tắm, cỏ trên núi mỗi ngày một xanh hơn.',zh:'在阳光的照耀和春雨的滋润下，山上的草一天比一天绿了。',py:'Zài yángguāng de zhàoyào hé chūnyǔ de zīrùn xià, shān shang de cǎo yì tiān bǐ yì tiān lǜ le.',goiY:['照耀 = chiếu rọi','滋润 = tưới tắm','在……下 = dưới tác động của…','一天比一天 = mỗi ngày một'],giai:'在……的照耀下 không dịch "ở dưới sự chiếu rọi" mà chuyển thành "được nắng chiếu rọi".'},
+  {vi:'Tường của tòa nhà cũ kia mọc đầy cây xanh, gần như phủ kín cả bức tường.',zh:'那幢老楼的墙上长满了绿色的植物，几乎把墙都覆盖住了。',py:'Nà zhuàng lǎo lóu de qiáng shang zhǎngmǎnle lǜsè de zhíwù, jīhū bǎ qiáng dōu fùgài zhù le.',goiY:['幢 = toà (lượng từ)','覆盖 = phủ kín'],giai:'幢 là lượng từ, khi dịch có thể bỏ hoặc dịch "toà"; 把……覆盖住了 → "phủ kín…".'},
+  {vi:'Công nhân đang dùng máy để cẩu xi-măng lên nóc toà nhà.',zh:'工人们正用机器把水泥吊到楼顶上去。',py:'Gōngrénmen zhèng yòng jīqì bǎ shuǐní diàodào lóudǐng shang qù.',goiY:['水泥 = xi-măng','吊 = cẩu, treo kéo lên'],giai:'吊 + 到 + nơi chốn = cẩu / kéo bằng dây lên đâu; "dùng máy" = 用机器.'},
+  {vi:'Gió to quá, quần áo phơi ngoài cửa sổ bị thổi lắc lư qua lại, tôi thật lo chúng sẽ rơi xuống.',zh:'外面的风特别大，挂在窗户外面的衣服被吹得晃来晃去，我真担心它们会掉下去。',py:'Wàimian de fēng tèbié dà, guà zài chuānghu wàimian de yīfu bèi chuī de huàng lái huàng qù, wǒ zhēn dānxīn tāmen huì diào xiàqù.',goiY:['晃来晃去 = lắc lư qua lại','被吹得…… = bị thổi đến mức…'],giai:'V来V去 tả động tác lặp đi lặp lại; câu bị động 被 + V得 + kết quả.'},
+  {vi:'Cô bé hất hai bím tóc ra sau lưng, dang rộng hai tay chạy về phía mẹ.',zh:'小女孩把两条辫子甩到背后，张开双臂向妈妈跑去。',py:'Xiǎo nǚhái bǎ liǎng tiáo biànzi shuǎidào bèihòu, zhāngkāi shuāng bì xiàng māma pǎo qù.',goiY:['辫子 = bím tóc','双臂 = hai cánh tay','张开 = dang ra'],giai:'臂 (văn viết) = cánh tay; 张开双臂 dịch "dang rộng hai tay"; 向……跑去 = chạy về phía….'}
 ];
 
 // ══════════════════════════════════════════
@@ -1737,9 +1653,9 @@ var writingData = {
     'Có kể trải nghiệm THẬT, cụ thể (thời gian, chi tiết, cảm xúc) và có từ nối thời gian (没几天, 转眼间, 又过了几天, 不久) cho mạch lạc chưa?'
   ],
   model:{
-    zh:'（题目：我养过的番茄）去年春天，爷爷送给我一小包番茄种子。我在阳台上摆了三个花盆，随即种下了几粒种子。阳台上的土壤不是很肥沃，但有水的滋润，阳光的照耀，没几天，嫩绿的小芽就从土里冒了出来。我惊讶地发现，它们好像每时每刻都在长大。转眼间，番茄苗已经长到了半米高，茎越来越挺拔，叶子也十分茂盛。又过了几天，番茄开花了，一朵朵黄色的小花点缀在绿叶之间，颜色协调，好看极了。不久，小花变成了一个个青色的小果子。果子越长越大，分量也越来越重，把细细的茎坠得弯弯的。我担心茎负担不起果子的重量，心里的担心与日俱增。妈妈笑着对我说：“植物有植物的办法，你别着急。”担心归担心，我还是每天放学后都去看看它们，给它们浇水。有一天晚上刮起了大风，我断定那几根细茎一定会被吹断。没想到第二天一早，番茄苗依然好好地站在那里，青色的果子也开始变红了，真是不可思议！一个月以后，我们全家吃上了我亲手种的番茄，那酸酸甜甜的味道，我至今难以忘怀。通过养番茄，我明白了一个道理：植物的成长需要时间，人的成长也是一样。我宁愿耐心地慢慢等，也不愿意拔苗助长。以后，我还会一如既往地种下去。',
-    py:'(Tímù: Wǒ yǎngguo de fānqié) Qùnián chūntiān, yéye sòng gěi wǒ yì xiǎo bāo fānqié zhǒngzi. Wǒ zài yángtái shang bǎile sān ge huāpén, suíjí zhòngxiàle jǐ lì zhǒngzi. Yángtái shang de tǔrǎng bú shì hěn féiwò, dàn yǒu shuǐ de zīrùn, yángguāng de zhàoyào, méi jǐ tiān, nènlǜ de xiǎo yá jiù cóng tǔ li màole chūlái. Wǒ jīngyà de fāxiàn, tāmen hǎoxiàng měi shí měi kè dōu zài zhǎngdà. Zhuǎnyǎn jiān, fānqié miáo yǐjīng zhǎngdàole bàn mǐ gāo, jīng yuè lái yuè tǐngbá, yèzi yě shífēn màoshèng. Yòu guòle jǐ tiān, fānqié kāihuā le, yì duǒduǒ huángsè de xiǎo huā diǎnzhuì zài lǜyè zhījiān, yánsè xiétiáo, hǎokàn jí le. Bùjiǔ, xiǎo huā biànchéngle yí gègè qīngsè de xiǎo guǒzi. Guǒzi yuè zhǎng yuè dà, fènliàng yě yuè lái yuè zhòng, bǎ xìxì de jīng zhuì de wānwān de. Wǒ dānxīn jīng fùdān bu qǐ guǒzi de zhòngliàng, xīnli de dānxīn yǔrì-jùzēng. Māma xiàozhe duì wǒ shuō: "Zhíwù yǒu zhíwù de bànfǎ, nǐ bié zháojí." Dānxīn guī dānxīn, wǒ háishi měi tiān fàngxué hòu dōu qù kànkan tāmen, gěi tāmen jiāo shuǐ. Yǒu yì tiān wǎnshang guāqǐle dà fēng, wǒ duàndìng nà jǐ gēn xì jīng yídìng huì bèi chuīduàn. Méi xiǎngdào dì-èr tiān yìzǎo, fānqié miáo yīrán hǎohǎo de zhàn zài nàlǐ, qīngsè de guǒzi yě kāishǐ biàn hóng le, zhēn shì bùkě-sīyì! Yí ge yuè yǐhòu, wǒmen quán jiā chīshangle wǒ qīnshǒu zhòng de fānqié, nà suānsuān-tiántián de wèidao, wǒ zhìjīn nányǐ wànghuái. Tōngguò yǎng fānqié, wǒ míngbaile yí ge dàoli: zhíwù de chéngzhǎng xūyào shíjiān, rén de chéngzhǎng yě shì yíyàng. Wǒ nìngyuàn nàixīn de mànmàn děng, yě bú yuànyì bámiáo-zhùzhǎng. Yǐhòu, wǒ hái huì yìrú-jìwǎng de zhòng xiàqù.',
-    vn:'(Nhan đề: Cây cà chua tôi từng trồng) Mùa xuân năm ngoái, ông tặng tôi một gói nhỏ hạt giống cà chua. Tôi bày ba chậu hoa trên ban công, rồi liền gieo mấy hạt xuống. Đất trên ban công không màu mỡ lắm, nhưng có nước tưới tắm, có nắng chiếu rọi, chưa được mấy ngày, những mầm non xanh mơn mởn đã nhú lên khỏi đất. Tôi kinh ngạc phát hiện ra, chúng dường như lúc nào cũng đang lớn. Chớp mắt một cái, cây cà chua đã cao nửa mét, thân ngày càng thẳng, lá cũng rất xanh tốt. Lại qua mấy hôm, cà chua ra hoa, từng bông hoa nhỏ màu vàng điểm xuyết giữa lá xanh, màu sắc hài hòa, đẹp vô cùng. Không lâu sau, hoa nhỏ đã thành từng quả con màu xanh. Quả càng lớn càng to, càng ngày càng nặng, kéo thân cây mảnh mai trĩu cong xuống. Tôi lo thân cây không gánh nổi sức nặng của quả, nỗi lo trong lòng mỗi ngày một tăng. Mẹ cười bảo tôi: "Cây cối có cách của cây cối, con đừng sốt ruột." Lo thì lo, nhưng ngày nào tan học tôi cũng ra ngắm chúng, tưới nước cho chúng. Có một tối nổi gió to, tôi quả quyết mấy thân cây mảnh ấy nhất định sẽ bị thổi gãy. Không ngờ sáng sớm hôm sau, cây cà chua vẫn đứng vững vàng ở đó, những quả xanh cũng bắt đầu chuyển đỏ, thật không thể tưởng tượng nổi! Một tháng sau, cả nhà tôi được ăn cà chua do chính tay tôi trồng, cái vị chua chua ngọt ngọt ấy đến giờ tôi vẫn khó mà quên được. Qua việc trồng cà chua, tôi hiểu ra một đạo lý: cây cối lớn lên cần có thời gian, con người trưởng thành cũng vậy. Tôi thà kiên nhẫn chờ đợi từ từ, chứ không muốn "kéo mạ cho mau lớn". Sau này, tôi vẫn sẽ tiếp tục trồng như trước sau như một.'
+    zh:'（题目：我养过的西红柿）去年春天，爷爷送给我一小包西红柿种子。我在家门口的空地上开出一小块地，随即种下了几粒种子。那里的土壤不是很肥沃，但有水的滋润，阳光的照耀，没几天，西红柿就从土里冒了出来。我惊讶地发现，它们好像每时每刻都在长大。转眼间，它们已经长到了半米高，茎越来越挺拔，叶子也十分茂盛。又过了几天，西红柿开花了，一朵朵黄色的小花点缀在绿叶之间，颜色协调，好看极了。不久，小花变成了一个个青色的小西红柿。它们越长越大，分量也越来越重，把细细的茎坠弯了。我担心茎负担不起它们的重量，心里的担心与日俱增。妈妈笑着对我说：“植物有植物的办法，你别着急。”不放心归不放心，我也没有别的办法，只好每天放学后都去看看它们，给它们浇水。有一天晚上起了大风，我断定那几根细茎一定会被吹断。没想到第二天一早，西红柿依然好好地站在那里，上面的小西红柿也开始变红了，真是不可思议！一个月以后，我们全家吃上了我自己种的西红柿，那酸酸甜甜的味道，我至今难以忘记。通过种西红柿，我明白了一个道理：植物的成长需要时间，人的成长也是一样。我宁愿耐心地慢慢等，也不愿意拔苗助长。以后，我还会一如既往地种下去。',
+    py:'(Tímù: Wǒ yǎngguo de xīhóngshì) Qùnián chūntiān, yéye sòng gěi wǒ yì xiǎo bāo xīhóngshì zhǒngzi. Wǒ zài jiā ménkǒu de kòngdì shang kāichū yì xiǎo kuài dì, suíjí zhòngxiàle jǐ lì zhǒngzi. Nàlǐ de tǔrǎng bú shì hěn féiwò, dàn yǒu shuǐ de zīrùn, yángguāng de zhàoyào, méi jǐ tiān, xīhóngshì jiù cóng tǔ li màole chūlái. Wǒ jīngyà de fāxiàn, tāmen hǎoxiàng měi shí měi kè dōu zài zhǎngdà. Zhuǎnyǎn jiān, tāmen yǐjīng zhǎngdàole bàn mǐ gāo, jīng yuè lái yuè tǐngbá, yèzi yě shífēn màoshèng. Yòu guòle jǐ tiān, xīhóngshì kāihuā le, yì duǒduǒ huángsè de xiǎo huā diǎnzhuì zài lǜyè zhījiān, yánsè xiétiáo, hǎokàn jí le. Bùjiǔ, xiǎo huā biànchéngle yí gègè qīngsè de xiǎo xīhóngshì. Tāmen yuè zhǎng yuè dà, fènliàng yě yuè lái yuè zhòng, bǎ xìxì de jīng zhuì wān le. Wǒ dānxīn jīng fùdān bu qǐ tāmen de zhòngliàng, xīnli de dānxīn yǔrì-jùzēng. Māma xiàozhe duì wǒ shuō: "Zhíwù yǒu zhíwù de bànfǎ, nǐ bié zháojí." Bú fàngxīn guī bú fàngxīn, wǒ yě méiyǒu biéde bànfǎ, zhǐhǎo měi tiān fàngxué hòu dōu qù kànkan tāmen, gěi tāmen jiāo shuǐ. Yǒu yì tiān wǎnshang qǐle dà fēng, wǒ duàndìng nà jǐ gēn xì jīng yídìng huì bèi chuīduàn. Méi xiǎngdào dì-èr tiān yìzǎo, xīhóngshì yīrán hǎohǎo de zhàn zài nàlǐ, shàngmian de xiǎo xīhóngshì yě kāishǐ biàn hóng le, zhēn shì bùkě-sīyì! Yí ge yuè yǐhòu, wǒmen quán jiā chīshangle wǒ zìjǐ zhòng de xīhóngshì, nà suānsuān-tiántián de wèidao, wǒ zhìjīn nányǐ wàngjì. Tōngguò zhòng xīhóngshì, wǒ míngbaile yí ge dàoli: zhíwù de chéngzhǎng xūyào shíjiān, rén de chéngzhǎng yě shì yíyàng. Wǒ nìngyuàn nàixīn de mànmàn děng, yě bú yuànyì bámiáo-zhùzhǎng. Yǐhòu, wǒ hái huì yìrú-jìwǎng de zhòng xiàqù.',
+    vn:'(Nhan đề: Cây cà chua tôi từng trồng) Mùa xuân năm ngoái, ông tặng tôi một gói nhỏ hạt giống cà chua. Tôi vỡ một mảnh đất nhỏ trên khoảnh đất trống trước cửa nhà, rồi liền gieo mấy hạt xuống. Đất ở đó không màu mỡ lắm, nhưng có nước tưới tắm, có nắng chiếu rọi, chưa được mấy ngày cây cà chua đã nhú lên khỏi đất. Tôi kinh ngạc phát hiện ra, chúng dường như lúc nào cũng đang lớn. Chớp mắt một cái, chúng đã cao nửa mét, thân ngày càng thẳng, lá cũng rất xanh tốt. Lại qua mấy hôm, cà chua ra hoa, từng bông hoa nhỏ màu vàng điểm xuyết giữa lá xanh, màu sắc hài hòa, đẹp vô cùng. Không lâu sau, hoa nhỏ đã thành từng quả cà chua con màu xanh. Chúng càng lớn càng to, càng ngày càng nặng, kéo thân cây mảnh mai trĩu cong xuống. Tôi lo thân cây không gánh nổi sức nặng của chúng, nỗi lo trong lòng mỗi ngày một tăng. Mẹ cười bảo tôi: "Cây cối có cách của cây cối, con đừng sốt ruột." Không yên tâm thì không yên tâm, nhưng tôi cũng chẳng có cách nào khác, đành ngày nào tan học cũng ra ngắm chúng, tưới nước cho chúng. Có một tối nổi gió to, tôi quả quyết mấy thân cây mảnh ấy nhất định sẽ bị thổi gãy. Không ngờ sáng sớm hôm sau, mấy cây cà chua vẫn đứng vững vàng ở đó, những quả cà chua con trên cây cũng bắt đầu chuyển đỏ, thật không thể tưởng tượng nổi! Một tháng sau, cả nhà tôi được ăn cà chua do chính tôi trồng, cái vị chua chua ngọt ngọt ấy đến giờ tôi vẫn khó mà quên được. Qua việc trồng cà chua, tôi hiểu ra một đạo lý: cây cối lớn lên cần có thời gian, con người trưởng thành cũng vậy. Tôi thà kiên nhẫn chờ đợi từ từ, chứ không muốn "kéo mạ cho mau lớn". Sau này, tôi vẫn sẽ tiếp tục trồng như trước sau như một.'
   }
 };
 
@@ -1747,189 +1663,142 @@ var writingData = {
 // LUYỆN NÓI — đúng bảng 练习5 của sách: 根据提示，简述课文主要内容
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Đây là bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b>. Mỗi câu hỏi là một dòng của bảng — bấm loa nghe câu hỏi, nhìn gợi ý bên phải, <b>tự ghi âm câu trả lời của mình trước</b> rồi mới mở câu mẫu. Cố dùng từ mới: 土壤 · 滋润 · 照耀 · 茂盛 · 悬挂 · 负担 · 与日俱增 · 断定 · 不可思议 · 一如既往.',
-  questions:[
-    {q_zh:'描述一下丝瓜生长的环境。',
-     q_vn:'Hãy miêu tả môi trường sinh trưởng của cây mướp.',
-     hint:'土壤、水、阳光',
-     sample:'春天，孩子们在楼旁空地上开出一个小花园，随即种下了几粒丝瓜种子。那里的土壤不是很肥沃，但有水的滋润，阳光的照耀，所以没几天，丝瓜就从土里冒了出来。',
-     sample_vn:'Mùa xuân, bọn trẻ vỡ một khu vườn nhỏ trên khoảnh đất trống cạnh tòa nhà, rồi liền gieo mấy hạt mướp. Đất ở đó không màu mỡ lắm, nhưng có nước tưới tắm, có nắng chiếu rọi, nên chưa được mấy ngày cây mướp đã nhú lên khỏi đất.',
-     note:'Đi đủ ba gợi ý 土壤 → 水 → 阳光; khung 虽然 / 不是很……，但有……的滋润，……的照耀 rất gọn.'},
-    {q_zh:'说一说丝瓜生长的过程。',
-     q_vn:'Hãy kể quá trình sinh trưởng của cây mướp.',
-     hint:'①种子→从土里冒出来 ②瓜茎爬楼 ③开花→丝瓜→最初的瓜→后来的两个瓜→最下面的瓜',
-     sample:'种子种下没几天，丝瓜就从土里冒了出来。它长得很快，转眼间，瓜茎就从一楼爬上了二楼，又从二楼爬上了三楼。又过了几天，丝瓜开了黄花，黄花变成了小丝瓜。先是长出了最初的一个瓜，后来三楼窗外又长出了两个瓜，最后，两个大瓜下面的瓜茎末梢上又长出来一个瓜。',
-     sample_vn:'Hạt gieo xuống chưa được mấy ngày, cây mướp đã nhú lên. Nó lớn rất nhanh, chớp mắt một cái, thân dây đã bò từ tầng một lên tầng hai, rồi từ tầng hai lên tầng ba. Qua mấy hôm, cây ra hoa vàng, hoa vàng thành quả mướp nhỏ. Đầu tiên mọc ra quả thứ nhất, sau đó ngoài cửa sổ tầng ba lại mọc thêm hai quả, cuối cùng, trên đầu mút thân dây phía dưới hai quả to lại mọc thêm một quả nữa.',
-     note:'Kể theo đúng chuỗi mũi tên của gợi ý; dùng từ nối thời gian 没几天 → 转眼间 → 又过了几天 → 先是……后来……最后…….'},
-    {q_zh:'描述一下“我”对丝瓜担心的过程。',
-     q_vn:'Hãy miêu tả quá trình lo lắng của "tôi" đối với cây mướp.',
-     hint:'①最初长出来的瓜： ②三楼那家窗外的两个瓜： ③两个大瓜瓜茎末梢上长出来的瓜：',
-     sample:'最初长出来的瓜悬挂在空中，我担心细细的瓜茎负担不起它的重量，可是它很有节制，长到一定程度就不长了。三楼窗外的两个瓜越长越粗，我的担心与日俱增，没想到它们弯了起来，躺在了窗台上。最下面的瓜垂直地吊在空中，我断定它会坠落下来，可它却躺在了一个凹凸不平的台子上。',
-     sample_vn:'Quả đầu tiên treo lơ lửng giữa không trung, tôi lo thân dây mảnh không gánh nổi sức nặng của nó, nhưng nó rất biết chừng mực, lớn đến một mức thì thôi không lớn nữa. Hai quả ngoài cửa sổ tầng ba càng lớn càng to, nỗi lo của tôi mỗi ngày một tăng, không ngờ chúng cong lên, nằm trên bệ cửa sổ. Quả dưới cùng treo thẳng đứng giữa không trung, tôi quả quyết nó sẽ rơi xuống, vậy mà nó lại nằm trên một cái bệ gồ ghề.',
-     note:'Mỗi quả một câu theo khung "lo lắng → nhưng kết quả bất ngờ": 我担心……，可是…… / 没想到…… / 我断定……，可它却…….'},
-    {q_zh:'丝瓜给“我”什么感觉？',
-     q_vn:'Cây mướp mang lại cho "tôi" cảm giác gì?',
-     hint:'①有思想、有行动 ②靠什么……',
-     sample:'真是不可思议！我觉得丝瓜好像有思想，能考虑问题，还有行动：它能让大瓜停止生长，还能给瓜找到承担重量的地方。可是丝瓜靠什么来思考，靠什么来指导自己的行动呢？我越想越糊涂，而丝瓜却一如既往地含笑面对秋阳。',
-     sample_vn:'Thật không thể tưởng tượng nổi! Tôi cảm thấy cây mướp dường như có tư duy, biết suy xét vấn đề, lại còn biết hành động: nó có thể khiến quả to ngừng lớn, còn tìm được chỗ đỡ sức nặng cho quả. Nhưng cây mướp dựa vào đâu để suy nghĩ, dựa vào đâu để chỉ dẫn hành động của mình? Tôi càng nghĩ càng mù mờ, còn cây mướp thì vẫn như ngày nào mỉm cười đón nắng thu.',
-     note:'Mở bằng câu cảm thán 真是不可思议!; nêu hai "hành động" của mướp; kết bằng câu hỏi 靠什么…… và hình ảnh 一如既往地含笑面对秋阳.'}
+  intro: 'Đây là bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b>. Mỗi câu hỏi là một dòng của bảng — bấm loa nghe câu hỏi, nhìn gợi ý bên phải, <b>tự ghi âm câu trả lời của mình trước</b> rồi mới mở câu mẫu. Cố dùng từ mới: 土壤 · 滋润 · 照耀 · 茂盛 · 悬挂 · 负担 · 与日俱增 · 断定 · 不可思议 · 一如既往.',
+  questions: [
+    {q_zh:'描述一下丝瓜生长的环境。',q_vn:'Hãy miêu tả môi trường sinh trưởng của cây mướp.',hint:'土壤、水、阳光',sample:'春天，孩子们在楼旁空地上开出一个小花园，随即种下了几粒丝瓜种子。那里的土壤不是很肥沃，但是水分充足，阳光也很好，所以没过几天，丝瓜就长出来了。',sample_vn:'Mùa xuân, bọn trẻ vỡ một khu vườn nhỏ trên khoảnh đất trống cạnh tòa nhà, rồi liền gieo mấy hạt mướp. Đất ở đó không màu mỡ lắm, nhưng nước đầy đủ, nắng cũng tốt, nên chưa được mấy ngày cây mướp đã mọc lên.',note:'Đi đủ ba gợi ý 土壤 → 水 → 阳光; khung 虽然 / 不是很……，但有……的滋润，……的照耀 rất gọn.'},
+    {q_zh:'说一说丝瓜生长的过程。',q_vn:'Hãy kể quá trình sinh trưởng của cây mướp.',hint:'①种子→从土里冒出来 ②瓜茎爬楼 ③开花→丝瓜→最初的瓜→后来的两个瓜→最下面的瓜',sample:'种子种下没几天，丝瓜就从土里冒了出来。它长得很快，转眼间，瓜茎就从一楼爬上了二楼，又从二楼爬上了三楼。又过了几天，丝瓜开了黄花，黄花变成了小丝瓜。先是长出了最初的一个瓜，后来三楼窗外又长出了两个瓜，最后，两个大瓜下面的瓜茎末梢上又长出来一个瓜。',sample_vn:'Hạt gieo xuống chưa được mấy ngày, cây mướp đã nhú lên. Nó lớn rất nhanh, chớp mắt một cái, thân dây đã bò từ tầng một lên tầng hai, rồi từ tầng hai lên tầng ba. Qua mấy hôm, cây ra hoa vàng, hoa vàng thành quả mướp nhỏ. Đầu tiên mọc ra quả thứ nhất, sau đó ngoài cửa sổ tầng ba lại mọc thêm hai quả, cuối cùng, trên đầu mút thân dây phía dưới hai quả to lại mọc thêm một quả nữa.',note:'Kể theo đúng chuỗi mũi tên của gợi ý; dùng từ nối thời gian 没几天 → 转眼间 → 又过了几天 → 先是……后来……最后…….'},
+    {q_zh:'描述一下“我”对丝瓜担心的过程。',q_vn:'Hãy miêu tả quá trình lo lắng của "tôi" đối với cây mướp.',hint:'①最初长出来的瓜： ②三楼那家窗外的两个瓜： ③两个大瓜瓜茎末梢上长出来的瓜：',sample:'最初长出来的瓜悬挂在空中，我担心细细的瓜茎负担不起它的重量，可是它很有节制，长到一定程度就不长了。三楼窗外的两个瓜越长越大，我也越来越担心，没想到它们弯了起来，躺在了窗台上。最下面的瓜垂直地吊在空中，我断定它会坠落下来，可它却躺在了一个凹凸不平的台子上。',sample_vn:'Quả đầu tiên treo lơ lửng giữa không trung, tôi lo thân dây mảnh không gánh nổi sức nặng của nó, nhưng nó rất biết chừng mực, lớn đến một mức thì thôi không lớn nữa. Hai quả ngoài cửa sổ tầng ba càng lớn càng to, tôi cũng ngày càng lo hơn, không ngờ chúng cong lên, nằm trên bệ cửa sổ. Quả dưới cùng treo thẳng đứng giữa không trung, tôi quả quyết nó sẽ rơi xuống, vậy mà nó lại nằm trên một cái bệ gồ ghề.',note:'Mỗi quả một câu theo khung "lo lắng → nhưng kết quả bất ngờ": 我担心……，可是…… / 没想到…… / 我断定……，可它却…….'},
+    {q_zh:'丝瓜给“我”什么感觉？',q_vn:'Cây mướp mang lại cho "tôi" cảm giác gì?',hint:'①有思想、有行动 ②靠什么……',sample:'真是不可思议！我觉得丝瓜好像有思想，能考虑问题，还有行动：它能让大瓜停止生长，还能给瓜找到承担重量的地方。可是丝瓜靠什么来思考，靠什么来指导自己的行动呢？我越想越糊涂，而丝瓜却一如既往地含笑面对秋阳。',sample_vn:'Thật không thể tưởng tượng nổi! Tôi cảm thấy cây mướp dường như có tư duy, biết suy xét vấn đề, lại còn biết hành động: nó có thể khiến quả to ngừng lớn, còn tìm được chỗ đỡ sức nặng cho quả. Nhưng cây mướp dựa vào đâu để suy nghĩ, dựa vào đâu để chỉ dẫn hành động của mình? Tôi càng nghĩ càng mù mờ, còn cây mướp thì vẫn như ngày nào mỉm cười đón nắng thu.',note:'Mở bằng câu cảm thán 真是不可思议!; nêu hai "hành động" của mướp; kết bằng câu hỏi 靠什么…… và hình ảnh 一如既往地含笑面对秋阳.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — 听力 (hội thoại ngắn + đoạn nói)
-// Sách HSK 6 không có sách bài tập nghe: tự soạn theo chủ đề bài 18.
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — câu tự soạn (sách HSK 6 không có sách bài tập nghe), mỗi câu một tình huống mới
+// ══════════════════════════════════════════
 var listenExamData = {
-  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, ' +
-         'trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
-  source: 'Soạn theo dạng đề HSK 6 · chủ đề bài 18',
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 18',
   items: [
-    {n:1,
-     lines:[{sp:'女',zh:'你阳台上种的是什么？长得这么茂盛！'},
-            {sp:'男',zh:'是丝瓜。土壤其实不怎么肥沃，可阳台上阳光充足，我又天天浇水，所以长得特别快。'}],
-     q:'丝瓜为什么长得这么快？',qvn:'Vì sao cây mướp lớn nhanh như vậy?',
-     opts:['土壤非常肥沃','用了很多化肥','阳光充足，天天浇水','有专人照顾'],ans:2,
-     why:'Người đàn ông nói 土壤其实不怎么肥沃 (đất không màu mỡ lắm) — loại A; lý do là 阳光充足，我又天天浇水.',
-     words:['茂盛','丝瓜','土壤','肥沃']},
-
-    {n:2,
-     lines:[{sp:'男',zh:'小王，听说你宁愿每天骑一个小时自行车，也不坐地铁？'},
-            {sp:'女',zh:'是啊，早上地铁太挤了，骑车还能顺便锻炼身体。'}],
-     q:'女的为什么不坐地铁？',qvn:'Vì sao người phụ nữ không đi tàu điện ngầm?',
-     opts:['地铁太挤','地铁太贵','地铁站太远','她不会坐地铁'],ans:0,
-     why:'早上地铁太挤了 là lý do chính; 顺便锻炼身体 chỉ là lợi ích thêm.',
-     words:['宁愿']},
-
-    {n:3,
-     lines:[{sp:'女',zh:'你怎么满脸疲倦？昨晚又熬夜了？'},
-            {sp:'男',zh:'累归累，作业总算都写完了，今晚可以好好睡一觉了。'}],
-     q:'关于男的，可以知道什么？',qvn:'Về người đàn ông, có thể biết điều gì?',
-     opts:['作业还没写完','身体不舒服','明天要考试','很累，但作业写完了'],ans:3,
-     why:'累归累 = mệt thì mệt, 作业总算都写完了 = cuối cùng cũng làm xong bài tập. A归A nhượng bộ rồi chuyển ý.',
-     words:['疲倦']},
-
-    {n:4,
-     lines:[{sp:'男',zh:'楼下窗户外面那个台子是什么时候修建的？'},
-            {sp:'女',zh:'前几年加固墙体的时候修的，现在正好可以放几盆花。'}],
-     q:'那个台子现在有什么用？',qvn:'Cái bệ đó bây giờ dùng để làm gì?',
-     opts:['加固墙体','放花盆','晒衣服','给孩子们玩儿'],ans:1,
-     why:'加固墙体 là lý do xây (trước kia); 现在正好可以放几盆花 là công dụng hiện nay — câu hỏi hỏi 现在.',
-     words:['修建']},
-
-    {n:5,
-     lines:[{sp:'女',zh:'王老师一走进教室，就宣布下周要期中考试。'},
-            {sp:'男',zh:'是吗？大家一定很惊讶吧？'},
-            {sp:'女',zh:'可不是，教室里随即就议论开了。'}],
-     q:'听到消息后，同学们怎么样？',qvn:'Nghe tin xong, các bạn học sinh thế nào?',
-     opts:['都很高兴','马上议论起来','一句话也不说','去找王老师'],ans:1,
-     why:'随即就议论开了 = ngay lập tức bàn tán xôn xao (V + 开了 = bắt đầu và lan ra).',
-     words:['惊讶','随即']},
-
-    {n:6,
-     lines:[{sp:'男',zh:'这盆花的花瓣怎么掉了这么多？'},
-            {sp:'女',zh:'前几天刮大风，花盆在窗台上一直晃来晃去，我断定就是那时候掉的。'}],
-     q:'女的认为花瓣为什么掉了？',qvn:'Người phụ nữ cho rằng vì sao cánh hoa rụng?',
-     opts:['浇水太多','阳光太强','被猫碰掉了','被大风吹得晃来晃去'],ans:3,
-     why:'刮大风，花盆一直晃来晃去，我断定就是那时候掉的 → do gió to làm chậu lắc lư.',
-     words:['花瓣','晃','断定']},
-
-    {n:7,
-     lines:[{sp:'女',zh:'你借我的那本小说，记得连同那本词典一起还给我啊。'},
-            {sp:'男',zh:'放心吧，我明天一并带过来。'}],
-     q:'女的让男的做什么？',qvn:'Người phụ nữ bảo người đàn ông làm gì?',
-     opts:['把小说和词典一起还回来','帮她买一本词典','帮她借一本小说','明天陪她去图书馆'],ans:0,
-     why:'连同那本词典一起还给我 = trả cả cuốn từ điển cùng lúc; 一并 = gộp luôn một thể.',
-     words:['连同']},
-
-    {n:8,
-     lines:[{sp:'男',zh:'我奶奶七十多岁了，每天还要在小院里种菜。有人劝她：“您年纪大了，别那么辛苦了。”她却说：“我宁愿累一点儿，也不愿意整天闲着。”奶奶种的丝瓜长得特别茂盛。有一次，一个大瓜悬挂在墙外，我断定它迟早会掉下来，没想到奶奶早就在下面放了一个旧木箱，大瓜正好躺在上面。原来，奶奶比丝瓜还“有思想”呢。'}],
-     q:'那个大瓜为什么没有掉下来？',qvn:'Vì sao quả mướp to ấy không rơi xuống?',
-     opts:['瓜长得不大','瓜茎非常粗','下面有奶奶放的木箱','“我”把它摘了下来'],ans:2,
-     why:'奶奶早就在下面放了一个旧木箱，大瓜正好躺在上面 — câu then chốt ở gần cuối; "我断定它会掉下来" chỉ là dự đoán sai.',
-     words:['宁愿','丝瓜','茂盛','悬挂','断定']}
+    {
+      n: 1,
+      lines: [
+        {sp:'女',zh:'你给小李打电话了吗？'},
+        {sp:'男',zh:'打了，他说了一句“马上到”，随即就把电话挂了。'}
+      ],
+      q: '小李接电话后怎么样？',
+      qvn: 'Tiểu Lý nghe máy xong thế nào?',
+      opts: ['说完马上挂了电话','没有接电话','跟男的说了很久','说他不来了'],
+      ans: 0,
+      why: '说了一句“马上到”，随即就把电话挂了 = nói một câu "đến ngay" rồi lập tức cúp máy.',
+      words: ['随即']
+    },
+    {
+      n: 2,
+      lines: [
+        {sp:'男',zh:'新工作工资那么高，你怎么不去？'},
+        {sp:'女',zh:'那儿离家太远了，我宁愿少挣点儿钱，也想多陪陪孩子。'}
+      ],
+      q: '女的为什么不去新公司？',
+      qvn: 'Vì sao người phụ nữ không đến công ty mới?',
+      opts: ['工资太低','想多陪孩子','不喜欢那个工作','身体不好'],
+      ans: 1,
+      why: '宁愿少挣点儿钱，也想多陪陪孩子 = thà kiếm ít tiền hơn để ở bên con nhiều hơn. Lương ở đó cao chứ không thấp.',
+      words: ['宁愿']
+    },
+    {
+      n: 3,
+      lines: [
+        {sp:'男',zh:'刚来北方，你习惯这儿的天气吗？'},
+        {sp:'女',zh:'不习惯归不习惯，可这儿的人都很热情，我挺喜欢这儿的。'}
+      ],
+      q: '女的觉得这里怎么样？',
+      qvn: 'Người phụ nữ thấy nơi này thế nào?',
+      opts: ['天气很好','很不喜欢这儿','人很热情，她很喜欢','想马上回家'],
+      ans: 2,
+      why: '不习惯归不习惯 = chưa quen thì chưa quen (thời tiết), nhưng người ở đây nhiệt tình nên cô ấy thích.',
+      words: []
+    },
+    {
+      n: 4,
+      lines: [
+        {sp:'男',zh:'你怎么知道杯子是小猫打翻的？'},
+        {sp:'女',zh:'我一进门就看见它蹲在桌子上，杯子倒在旁边，我马上就断定是它干的。'}
+      ],
+      q: '女的为什么断定是小猫干的？',
+      qvn: 'Vì sao người phụ nữ khẳng định là con mèo làm?',
+      opts: ['听到了声音','邻居告诉她的','看到小猫在桌子上','杯子上有小猫的毛'],
+      ans: 2,
+      why: '看见它蹲在桌子上，杯子倒在旁边 → thấy mèo ngồi trên bàn ngay cạnh chiếc cốc đổ nên kết luận (断定).',
+      words: ['断定']
+    },
+    {
+      n: 5,
+      lines: [
+        {sp:'女',zh:'我的钱包丢了！钱倒不多，可是护照连同机票都在里面。'},
+        {sp:'男',zh:'那你快去报警吧。'}
+      ],
+      q: '女的为什么着急？',
+      qvn: 'Vì sao người phụ nữ sốt ruột?',
+      opts: ['丢了很多钱','护照和机票也丢了','找不到机场','忘了密码'],
+      ans: 1,
+      why: '钱倒不多 = tiền thì không nhiều; 护照连同机票都在里面 = cả hộ chiếu lẫn vé máy bay đều ở trong ví.',
+      words: ['连同']
+    },
+    {
+      n: 6,
+      lines: [
+        {sp:'男',zh:'王老师退休以后还常来学校吗？'},
+        {sp:'女',zh:'常来。她一如既往地每天到图书馆帮忙，学生们都特别感动。'}
+      ],
+      q: '关于王老师，可以知道什么？',
+      qvn: 'Có thể biết gì về cô giáo Vương?',
+      opts: ['退休后还常来帮忙','已经不来学校了','还在给学生上课','在图书馆工作挣钱'],
+      ans: 0,
+      why: '一如既往地每天到图书馆帮忙 = vẫn như trước ngày nào cũng đến thư viện giúp đỡ (sau khi nghỉ hưu).',
+      words: ['一如既往']
+    },
+    {
+      n: 7,
+      lines: [
+        {sp:'女',zh:'你种的丝瓜怎么都掉在地上了？'},
+        {sp:'男',zh:'瓜长得太大了，细细的茎负担不起它的分量，昨天全坠下来了。'}
+      ],
+      q: '丝瓜为什么掉了？',
+      qvn: 'Vì sao quả mướp rơi?',
+      opts: ['被人拿走了','被风吹掉了','生病了','丝瓜太重了'],
+      ans: 3,
+      why: '茎负担不起它的分量 = thân dây không gánh nổi sức nặng của quả → quả quá nặng nên rơi (坠).',
+      words: ['丝瓜','茎','负担','分量','坠']
+    }
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 💬 TÌNH HUỐNG GIAO TIẾP
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
+// ══════════════════════════════════════════
 var situationData = {
-  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
-         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn cùng lớp rủ em đi xe buýt tới trường cho đỡ mệt, nhưng xe buýt giờ cao điểm hay tắc đường.',
-     a:{sp:'Bạn',zh:'明天咱们坐公共汽车去学校吧，骑车太累了。',vn:'Mai mình đi xe buýt đến trường đi, đạp xe mệt lắm.'},
-     need:['Dùng 宁愿……也不……','Nêu lý do lựa chọn'],
-     sample:'早上公共汽车老堵车，我宁愿骑车累一点儿，也不想迟到。',
-     samplePy:'Zǎoshang gōnggòng qìchē lǎo dǔchē, wǒ nìngyuàn qí chē lèi yìdiǎnr, yě bù xiǎng chídào.',
-     sampleVn:'Buổi sáng xe buýt hay tắc lắm, tớ thà đạp xe mệt một chút chứ không muốn đi muộn.',
-     tip:'宁愿 + phương án chấp nhận thiệt (累一点儿)，也不 + điều muốn tránh (迟到); vế đầu nêu lý do.'},
-
-    {scene:'Mẹ phàn nàn em trồng quá nhiều chậu cây ngoài ban công, chật hết chỗ phơi đồ.',
-     a:{sp:'Mẹ',zh:'阳台上摆了这么多花盆，衣服都没地方晒了！',vn:'Ban công bày nhiều chậu cây thế này, quần áo chẳng còn chỗ phơi nữa!'},
-     need:['Dùng A归A','Đưa ra cách giải quyết'],
-     sample:'多归多，这些花可都是我精心种的。我把花盆挪到墙角去，给您腾出晒衣服的地方。',
-     samplePy:'Duō guī duō, zhèxiē huā kě dōu shì wǒ jīngxīn zhòng de. Wǒ bǎ huāpén nuódào qiángjiǎo qù, gěi nín téngchū shài yīfu de dìfang.',
-     sampleVn:'Nhiều thì nhiều thật, nhưng mấy chậu hoa này đều do con dày công trồng mà. Con dời chậu vào góc tường, dọn chỗ phơi đồ cho mẹ nhé.',
-     tip:'A归A lặp lại đúng từ người kia vừa nói (多); vế sau nêu ý chuyển hướng. 精心 ôn bài 10.'},
-
-    {scene:'Em trai hỏi vì sao cây mướp em trồng có quả nằm gọn trên bệ cửa sổ mà không rơi.',
-     a:{sp:'Em trai',zh:'哥，那个大丝瓜怎么没掉下来？',vn:'Anh ơi, quả mướp to kia sao không rơi xuống ạ?'},
-     need:['Dùng 断定 hoặc 不可思议','Kể lại chuyện bất ngờ'],
-     sample:'我本来断定它会坠落下来，没想到它自己弯了起来，躺在了窗台上，真是不可思议！',
-     samplePy:'Wǒ běnlái duàndìng tā huì zhuìluò xiàlái, méi xiǎngdào tā zìjǐ wānle qǐlái, tǎng zài le chuāngtái shang, zhēn shì bùkě-sīyì!',
-     sampleVn:'Lúc đầu anh quả quyết nó sẽ rơi xuống, không ngờ nó tự cong lên nằm trên bệ cửa sổ, thật không thể tưởng tượng nổi!',
-     tip:'本来断定……，没想到…… tạo sự đối lập giữa dự đoán và thực tế; 不可思议 đặt cuối câu cảm thán.'},
-
-    {scene:'Cô giáo chủ nhiệm cảm ơn cả lớp sau đợt trồng cây, mong mọi người tiếp tục chăm sóc vườn trường.',
-     a:{sp:'Cô chủ nhiệm',zh:'这学期大家把学校的小花园照顾得很好，老师特别感谢你们。',vn:'Học kỳ này các em chăm sóc vườn hoa nhỏ của trường rất tốt, cô đặc biệt cảm ơn các em.'},
-     need:['Dùng 一如既往','Hứa hẹn với cô'],
-     sample:'谢谢老师！下学期我们也会一如既往地给花浇水，让小花园更茂盛。',
-     samplePy:'Xièxie lǎoshī! Xià xuéqī wǒmen yě huì yìrú-jìwǎng de gěi huā jiāo shuǐ, ràng xiǎo huāyuán gèng màoshèng.',
-     sampleVn:'Cảm ơn cô ạ! Học kỳ sau chúng em vẫn sẽ tưới hoa như trước, để khu vườn nhỏ càng xanh tốt hơn.',
-     tip:'一如既往地 + V (có 地), hợp với lời hứa trang trọng; 让 + N + Adj = làm cho … thêm ….'},
-
-    {scene:'Bạn hỏi em có sợ không khi tối qua gió bão làm giàn mướp nhà em lắc lư dữ dội.',
-     a:{sp:'Bạn',zh:'昨晚风那么大，你家的丝瓜架没事吧？',vn:'Tối qua gió to thế, giàn mướp nhà cậu không sao chứ?'},
-     need:['Dùng 晃 hoặc 与日俱增','Tả tâm trạng lo lắng rồi kết quả'],
-     sample:'别提了，整个架子晃来晃去，我担心得一夜没睡好。还好今天一早去看，丝瓜一个也没掉。',
-     samplePy:'Bié tí le, zhěnggè jiàzi huàng lái huàng qù, wǒ dānxīn de yí yè méi shuìhǎo. Háihǎo jīntiān yìzǎo qù kàn, sīguā yí ge yě méi diào.',
-     sampleVn:'Đừng nhắc nữa, cả giàn lắc lư dữ dội, tớ lo đến mức cả đêm ngủ không ngon. May mà sáng nay ra xem, chẳng quả nào rơi cả.',
-     tip:'V来V去 (晃来晃去) tả chuyển động liên tục; 一 + LT + 也没…… = không … nào cả.'}
+    {scene:'Bạn cùng lớp rủ em đi xe buýt tới trường cho đỡ mệt, nhưng xe buýt giờ cao điểm hay tắc đường.',a:{sp:'Bạn',zh:'明天咱们坐公共汽车去学校吧，骑车太累了。',vn:'Mai mình đi xe buýt đến trường đi, đạp xe mệt lắm.'},need:['Dùng 宁愿……也不……','Nêu lý do lựa chọn'],sample:'早上公共汽车老堵车，我宁愿骑车累一点儿，也不想迟到。',samplePy:'Zǎoshang gōnggòng qìchē lǎo dǔchē, wǒ nìngyuàn qí chē lèi yìdiǎnr, yě bù xiǎng chídào.',sampleVn:'Buổi sáng xe buýt hay tắc lắm, tớ thà đạp xe mệt một chút chứ không muốn đi muộn.',tip:'宁愿 + phương án chấp nhận thiệt (累一点儿)，也不 + điều muốn tránh (迟到); vế đầu nêu lý do.'},
+    {scene:'Bạn hỏi em có còn giận Tiểu Vương vì làm mất cuốn sách em cho mượn không.',a:{sp:'Bạn',zh:'小王把你的书弄丢了，你还在生他的气吗？',vn:'Tiểu Vương làm mất sách của cậu, cậu còn giận cậu ấy không?'},need:['Dùng khung A guī A','Nói thái độ thật của em'],sample:'我不高兴归不高兴，可他也不是故意的，再说他已经跟我说了对不起，我不会一直放在心上。',samplePy:'Wǒ bù gāoxìng guī bù gāoxìng, kě tā yě bú shì gùyì de, zàishuō tā yǐjīng gēn wǒ shuōle duìbuqǐ, wǒ bú huì yìzhí fàng zài xīn shang.',sampleVn:'Không vui thì không vui thật, nhưng cậu ấy cũng đâu cố ý, hơn nữa cậu ấy đã xin lỗi tớ rồi, tớ sẽ không để bụng mãi đâu.',tip:'我不高兴归不高兴，可…… = không vui thì không vui thật, nhưng… (chủ ngữ có thể đứng trước khung); 放在心上 = để bụng.'},
+    {scene:'Em trai hỏi vì sao cây mướp em trồng có quả nằm gọn trên bệ cửa sổ mà không rơi.',a:{sp:'Em trai',zh:'哥，那个大丝瓜怎么没掉下来？',vn:'Anh ơi, quả mướp to kia sao không rơi xuống ạ?'},need:['Dùng 不可思议','Kể lại chuyện bất ngờ'],sample:'我也觉得奇怪。我本来以为它肯定会掉下来，谁知道它自己弯了起来，正好靠在窗台上，太不可思议了！',samplePy:'Wǒ yě juéde qíguài. Wǒ běnlái yǐwéi tā kěndìng huì diào xiàlái, shéi zhīdào tā zìjǐ wānle qǐlái, zhènghǎo kào zài chuāngtái shang, tài bùkě-sīyì le!',sampleVn:'Anh cũng thấy lạ. Lúc đầu anh tưởng nó chắc chắn sẽ rơi, ai ngờ nó tự cong lên, tựa đúng vào bệ cửa sổ, thật không thể tưởng tượng nổi!',tip:'本来以为……，谁知道…… tạo sự đối lập giữa dự đoán và thực tế; 不可思议 đặt cuối câu cảm thán.'},
+    {scene:'Cô giáo chủ nhiệm cảm ơn cả lớp sau đợt trồng cây, mong mọi người tiếp tục chăm sóc vườn trường.',a:{sp:'Cô chủ nhiệm',zh:'这学期大家把学校的小花园照顾得很好，老师特别感谢你们。',vn:'Học kỳ này các em chăm sóc vườn hoa nhỏ của trường rất tốt, cô đặc biệt cảm ơn các em.'},need:['Dùng 一如既往','Hứa hẹn với cô'],sample:'老师，这是我们应该做的！下学期我们也会一如既往地给花浇水，让小花园更茂盛。',samplePy:'Lǎoshī, zhè shì wǒmen yīnggāi zuò de! Xià xuéqī wǒmen yě huì yìrú-jìwǎng de gěi huā jiāo shuǐ, ràng xiǎo huāyuán gèng màoshèng.',sampleVn:'Thưa cô, đây là việc chúng em nên làm ạ! Học kỳ sau chúng em vẫn sẽ tưới hoa như trước, để khu vườn nhỏ càng xanh tốt hơn.',tip:'一如既往地 + V (có 地), hợp với lời hứa trang trọng; 让 + N + Adj = làm cho … thêm ….'},
+    {scene:'Bạn hỏi em có sợ không khi tối qua gió bão làm giàn mướp nhà em lắc lư dữ dội.',a:{sp:'Bạn',zh:'前天晚上风那么大，你种的丝瓜没事吧？',vn:'Tối hôm kia gió to thế, giàn mướp cậu trồng không sao chứ?'},need:['Dùng 晃','Tả tâm trạng lo lắng rồi kết quả'],sample:'别提了，丝瓜被风吹得晃来晃去，我担心得一夜没睡好。还好第二天一早去看，一个也没掉。',samplePy:'Bié tí le, sīguā bèi fēng chuī de huàng lái huàng qù, wǒ dānxīn de yí yè méi shuìhǎo. Háihǎo dì-èr tiān yìzǎo qù kàn, yí ge yě méi diào.',sampleVn:'Đừng nhắc nữa, mấy quả mướp bị gió thổi lắc lư dữ dội, tớ lo đến mức cả đêm ngủ không ngon. May mà sáng hôm sau ra xem, chẳng quả nào rơi cả.',tip:'V来V去 (晃来晃去) tả chuyển động liên tục; 一 + LT + 也没…… = không … nào cả.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 // 🎯 NÓI SAO CHO HAY — 得体 / 语体
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 var registerData = {
-  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
-         'HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
   items: [
-    {scene:'Em viết bài văn miêu tả vườn hoa trường vào mùa xuân.',
-     a:'春天到了，花坛里的花儿开了，红红的花瓣点缀在绿叶之间，整个校园显得朝气蓬勃。',b:'春天了，花坛里的花都开了，红的绿的，看着挺好看的。',better:'a',
-     why:'Văn miêu tả cần hình ảnh và từ ngữ văn viết: 点缀在……之间, 朝气蓬勃. Câu b (挺好看的, 红的绿的) là lời nói miệng, nhạt.'},
-
-    {scene:'Em nhắn tin cho bạn thân rủ đi xem vườn mướp nhà bà.',
-     a:'诚邀您于本周六莅临寒舍，参观家中丝瓜种植园。',b:'周六来我奶奶家看丝瓜吧，长得可好了，还能摘几个回去！',better:'b',
-     why:'Nhắn tin bạn thân dùng khẩu ngữ tự nhiên (可好了, 摘几个回去). Câu a (诚邀, 莅临寒舍) là giọng thiệp mời trang trọng, rất lạ khi nói với bạn.'},
-
-    {scene:'Em viết báo cáo môn Sinh học về cây mướp.',
-     a:'丝瓜的茎很细，却能把水分和养料输送到叶片，使得植株生长茂盛。',b:'丝瓜那根藤细得跟绳子似的，可水啊什么的照样能送上去，所以长得老好了。',better:'a',
-     why:'Báo cáo khoa học cần thuật ngữ chính xác: 茎, 输送, 养料, 植株. Câu b (跟绳子似的, 什么的, 老好了) là khẩu ngữ.'},
-
-    {scene:'Bạn cùng phòng sốt ruột vì hạt giống mới gieo hai hôm chưa nảy mầm, muốn tưới thật nhiều.',
-     a:'别急，种子发芽得有个过程，你浇那么多水，就成拔苗助长了。',b:'根据植物生长规律，建议你遵循自然，切勿采取拔苗助长式的做法。',better:'a',
-     why:'Khuyên bạn cùng phòng nên dùng lời thân mật, dễ nghe (别急, 得有个过程). Câu b (根据……规律, 建议, 切勿) như văn bản hướng dẫn, quá cứng.'},
-
-    {scene:'Lớp trưởng phát biểu trong lễ tổng kết, cảm ơn thầy cô.',
-     a:'老师们，谢谢啊，以后还得靠你们多帮帮我们哈！',b:'衷心感谢各位老师一年来的辛勤付出，希望老师们一如既往地关心和支持我们。',better:'b',
-     why:'Phát biểu trong lễ tổng kết cần trang trọng: 衷心感谢, 辛勤付出, 一如既往地关心和支持. Câu a (谢谢啊, 哈) quá suồng sã.'},
-
-    {scene:'Em kể với bố mẹ trong bữa cơm chuyện quả mướp không rơi.',
-     a:'爸，您猜怎么着？那个我以为肯定要掉的瓜，愣是自己躺到台子上去了！',b:'经观察可以断定，该丝瓜借助墙体加固时修建的平台，成功避免了坠落。',better:'a',
-     why:'Kể chuyện trong bữa cơm dùng khẩu ngữ sinh động (您猜怎么着, 愣是). Câu b (经观察, 该丝瓜, 借助) là giọng báo cáo, không hợp không khí gia đình.'}
+    {scene:'Em viết bài văn miêu tả vườn hoa trường vào mùa xuân.',a:'一到春天，一朵朵小花点缀在草地上，整个校园显得朝气蓬勃。',b:'春天了，学校里的花都开了，红的绿的，看着挺好看的。',better:'a',why:'Văn miêu tả cần hình ảnh và từ ngữ văn viết: 一朵朵, 点缀在……上, 朝气蓬勃. Câu b (挺好看的, 红的绿的) là lời nói miệng, nhạt.'},
+    {scene:'Em nhắn tin cho bạn thân rủ đi xem vườn mướp nhà bà.',a:'诚恳地邀请您本周六光临我奶奶家，参观丝瓜。',b:'周六来我奶奶家看丝瓜吧，长得可好了！',better:'b',why:'Nhắn tin bạn thân dùng khẩu ngữ tự nhiên (可好了). Câu a (诚恳地邀请您, 光临, 参观) là giọng thiệp mời trang trọng, rất lạ khi nói với bạn.'},
+    {scene:'Em viết báo cáo môn Sinh học về cây mướp.',a:'丝瓜那根茎看着不怎么样，可水啊什么的照样能送上去，所以长得老好了。',b:'丝瓜的茎虽然看上去很弱，却能把水分和养料输送到各个部分，使植物生长茂盛。',better:'b',why:'Báo cáo khoa học cần thuật ngữ chính xác: 茎, 输送, 养料, 生长茂盛. Câu a (不怎么样, 什么的, 老好了) là khẩu ngữ.'},
+    {scene:'Bạn cùng phòng sốt ruột vì hạt giống mới gieo hai hôm chưa lên, muốn tưới thật nhiều nước.',a:'别着急，种子长出来得有个过程，你浇那么多水，就成拔苗助长了。',b:'根据植物生长的规律，建议你不要采取拔苗助长的做法。',better:'a',why:'Khuyên bạn cùng phòng nên dùng lời thân mật, dễ nghe (别着急, 得有个过程). Câu b (根据……规律, 建议, 采取……做法) như văn bản hướng dẫn, quá cứng.'},
+    {scene:'Lớp trưởng phát biểu trong lễ tổng kết, cảm ơn thầy cô.',a:'老师们，谢谢啊，以后还得靠你们多帮帮我们哈！',b:'感谢各位老师一年来的辛勤付出，希望老师们一如既往地关心和支持我们。',better:'b',why:'Phát biểu trong lễ tổng kết cần trang trọng: 感谢各位, 辛勤付出, 一如既往地关心和支持. Câu a (谢谢啊, 哈) quá suồng sã.'},
+    {scene:'Em kể với bố mẹ trong bữa cơm chuyện quả mướp không rơi.',a:'爸，您猜怎么着？那个我以为肯定要掉的瓜，愣是自己躺到台子上去了！',b:'通过观察可以断定，那个丝瓜借助墙上的平台，成功避免了坠落。',better:'a',why:'Kể chuyện trong bữa cơm dùng khẩu ngữ sinh động (您猜怎么着, 愣是). Câu b (通过观察, 借助, 避免了坠落) là giọng báo cáo, không hợp không khí gia đình.'}
   ]
 };
 

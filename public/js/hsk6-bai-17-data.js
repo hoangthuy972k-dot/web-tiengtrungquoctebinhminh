@@ -1435,99 +1435,51 @@ var hvBridgeData = {
 // GHÉP TỪ — cụm từ trong bài khoá
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'见过这样的',right:'场面'},
-  {left:'端来一个',right:'盘子'},
-  {left:'盛着',right:'菜'},
-  {left:'东张西望的',right:'苍蝇'},
-  {left:'企图落在',right:'盘子上'},
-  {left:'快速',right:'跳跃'},
-  {left:'视线扫过',right:'周边'},
-  {left:'微微',right:'颤抖'},
+  {left:'瞄准',right:'目标'},
+  {left:'挡住了',right:'视线'},
   {left:'反应',right:'迟钝'},
-  {left:'动作',right:'迟缓'},
-  {left:'庞大、笨拙的',right:'大象'},
-  {left:'一明一暗的',right:'闪烁'},
-  {left:'换一个文雅的',right:'称呼'},
-  {left:'一系列静止图像的',right:'迅速变换'},
-  {left:'新陈代谢',right:'速率'},
-  {left:'充足的',right:'能量支持'},
-  {left:'论证',right:'这一推论'},
-  {left:'筛选出',right:'34种动物'},
-  {left:'显著的',right:'相关性'},
-  {left:'名次',right:'最靠前'},
-  {left:'发出这样的',right:'感慨'},
-  {left:'躲过人类的',right:'攻击'},
-  {left:'博大精深的',right:'思想'},
-  {left:'成年',right:'个体'}
+  {left:'博大精深的',right:'中国文化'},
+  {left:'价格',right:'实惠'},
+  {left:'焦急地',right:'等待'},
+  {left:'补充',right:'能量'},
+  {left:'采取一系列',right:'措施'},
+  {left:'用红笔',right:'标记'},
+  {left:'发出',right:'感慨'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ — mỗi từ của bài ít nhất một câu
+// ĐIỀN TỪ — câu mới (không chép bài khoá / SGK), mỗi câu một tình huống; ôn xoáy ốc từ + ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'一家人终于团圆了，那感人的',blank:'场面',post:'让在场的人都热泪盈眶。',hint:'(cảnh tượng)',ans:'场面'},
-  {pre:'服务员把刚做好的鱼',blank:'端',post:'上了桌。',hint:'(bưng)',ans:'端'},
-  {pre:'奶奶总是先给我们',blank:'盛',post:'好饭，然后自己才吃。',hint:'(xới)',ans:'盛'},
-  {pre:'上课的时候别',blank:'东张西望',post:'，要专心听老师讲。',hint:'(nhìn ngang nhìn dọc)',ans:'东张西望'},
-  {pre:'小偷',blank:'企图',post:'从窗户逃跑，结果被警察抓住了。',hint:'(toan, mưu toan)',ans:'企图'},
-  {pre:'周末我们自己',blank:'动手',post:'包饺子，比在饭馆吃有意思多了。',hint:'(tự tay làm)',ans:'动手'},
-  {pre:'他平时成绩那么好，这次怎么没考好？真让人',blank:'纳闷儿',post:'。',hint:'(khó hiểu)',ans:'纳闷儿'},
-  {pre:'松鼠在树枝之间',blank:'跳跃',post:'，动作敏捷极了。',hint:'(nhảy)',ans:'跳跃'},
-  {pre:'他',blank:'瞄准',post:'球门，用力一脚，球进了！',hint:'(nhắm chuẩn)',ans:'瞄准'},
-  {pre:'广场上有一群',blank:'鸽子',post:'，孩子们正在喂它们。',hint:'(chim bồ câu)',ans:'鸽子'},
-  {pre:'前面的人太高了，挡住了我的',blank:'视线',post:'。',hint:'(tầm nhìn)',ans:'视线'},
-  {pre:'为了孩子们的安全，学校',blank:'周边',post:'不许开网吧。',hint:'(xung quanh)',ans:'周边'},
-  {pre:'听到这个消息，她激动得声音都',blank:'颤抖',post:'了。',hint:'(run run)',ans:'颤抖'},
-  {pre:'到现在还没有',blank:'确切',post:'的消息，大家先别着急。',hint:'(chính xác)',ans:'确切'},
-  {pre:'熬了一夜，我的头脑变得很',blank:'迟钝',post:'，什么都想不起来。',hint:'(chậm chạp, kém nhạy)',ans:'迟钝'},
-  {pre:'爷爷年纪大了，行动越来越',blank:'迟缓',post:'。',hint:'(chậm chạp)',ans:'迟缓'},
-  {pre:'这家公司机构',blank:'庞大',post:'，办一件小事也要好几个部门签字。',hint:'(cồng kềnh, đồ sộ)',ans:'庞大'},
-  {pre:'他第一次包饺子，动作显得有些',blank:'笨拙',post:'。',hint:'(lóng ngóng)',ans:'笨拙'},
-  {pre:'我非常喜欢运动，',blank:'比方',post:'说游泳、打篮球、爬山等等。',hint:'(chẳng hạn)',ans:'比方',exp:'比方说 = chẳng hạn như (khẩu ngữ, như 比如说).'},
-  {pre:'这种药每天吃两次，中间要',blank:'间隔',post:'六个小时以上。',hint:'(cách nhau)',ans:'间隔'},
-  {pre:'夜空中星星',blank:'闪烁',post:'，像无数双眼睛在眨呀眨。',hint:'(lấp lánh)',ans:'闪烁'},
-  {pre:'整天看手机，',blank:'视力',post:'下降得很厉害。',hint:'(thị lực)',ans:'视力'},
-  {pre:'还没找到合适的房子，我',blank:'姑且',post:'在朋友家住几天吧。',hint:'(tạm thời)',ans:'姑且',exp:'姑且 = tạm thời cứ… (giải pháp tạm): 姑且在朋友家住几天.'},
-  {pre:'她举止',blank:'文雅',post:'，说话温和，大家都很喜欢她。',hint:'(nho nhã)',ans:'文雅'},
-  {pre:'警',blank:'犬',post:'的嗅觉非常灵敏，能帮助警察找到很多线索。',hint:'(chó)',ans:'犬'},
-  {pre:'为了保护环境，政府采取了一',blank:'系列',post:'措施。',hint:'(loạt)',ans:'系列'},
-  {pre:'地上全湿了，由此可以',blank:'推论',post:'，昨天夜里下过雨。',hint:'(suy ra)',ans:'推论'},
-  {pre:'比赛结果',blank:'本身',post:'并不重要，重要的是我们从中学到了什么。',hint:'(bản thân)',ans:'本身',exp:'本身 = bản thân (sự vật đó), đứng sau danh từ: 比赛结果本身.'},
-  {pre:'多喝水、多运动可以促进',blank:'新陈代谢',post:'。',hint:'(trao đổi chất)',ans:'新陈代谢'},
-  {pre:'跑完步以后要及时补充',blank:'能量',post:'，吃点儿香蕉就不错。',hint:'(năng lượng)',ans:'能量'},
-  {pre:'写议论文时，要用事实来',blank:'论证',post:'自己的观点。',hint:'(chứng minh)',ans:'论证'},
-  {pre:'经过层层',blank:'筛选',post:'，他终于进入了国家队。',hint:'(tuyển chọn)',ans:'筛选'},
-  {pre:'我把不认识的生词都用红笔',blank:'标记',post:'了出来。',hint:'(đánh dấu)',ans:'标记'},
-  {pre:'参加比赛最重要的是学到东西，',blank:'名次',post:'并不重要。',hint:'(thứ hạng)',ans:'名次'},
-  {pre:'翻着小时候的照片，妈妈不禁',blank:'感慨',post:'：时间过得真快啊！',hint:'(cảm thán)',ans:'感慨'},
-  {pre:'站在大海边，我忽然觉得自己很',blank:'渺小',post:'。',hint:'(nhỏ bé)',ans:'渺小'},
-  {pre:'一般来说，野生动物不会主动',blank:'攻击',post:'人，除非它们感到危险。',hint:'(tấn công)',ans:'攻击'},
-  {pre:'人口过度增长',blank:'势必',post:'影响经济水平的提高。',hint:'(ắt sẽ)',ans:'势必',exp:'势必 = ắt sẽ, nhất định sẽ (theo xu thế, văn viết).'},
-  {pre:'中国文化',blank:'博大精深',post:'，学一辈子也学不完。',hint:'(uyên thâm)',ans:'博大精深'},
-  {pre:'这本书的内容太',blank:'深奥',post:'了，我看了好几遍都没看懂。',hint:'(sâu xa, khó hiểu)',ans:'深奥'},
-  {pre:'这件事我真的',blank:'无能为力',post:'，你还是去找别人帮忙吧。',hint:'(bất lực)',ans:'无能为力'},
-  {pre:'学校门口那家小饭馆又好吃又',blank:'实惠',post:'，学生们都爱去。',hint:'(đáng tiền)',ans:'实惠'},
-  {pre:'每个人都是独立的',blank:'个体',post:'，没有必要和别人比来比去。',hint:'(cá thể)',ans:'个体'},
-  {pre:'手术还没结束，家人都在门外',blank:'焦急',post:'地等待着。',hint:'(sốt ruột)',ans:'焦急'}
+  {pre:'比赛结束的那一刻，球迷们冲进球场又哭又笑，那个',blank:'场面',post:'我到现在都忘不了。',hint:'(cảnh tượng)',ans:'场面',exp:'场面 = cảnh tượng diễn ra trong một hoàn cảnh cụ thể (那个场面 / 热闹的场面), không phải "phong cảnh" (风景).'},
+  {pre:'妈妈给每个人都',blank:'盛',post:'了一大碗汤，叫我们趁热喝。',hint:'(múc)',ans:'盛',exp:'盛 đọc chéng khi là động từ: múc / xới thức ăn vào bát (盛饭, 盛汤); đọc shèng là "thịnh" (nhiều, đầy đủ) — nghĩa khác hẳn.'},
+  {pre:'平时他每天都第一个到办公室，今天十点了还没来，大家心里都很',blank:'纳闷儿',post:'。',hint:'(thấy lạ, khó hiểu)',ans:'纳闷儿',exp:'纳闷儿 = thấy lạ, không hiểu vì sao (khẩu ngữ, có 儿); hay đi với 心里 / 很 / 感到.'},
+  {pre:'广场上的',blank:'鸽子',post:'一点儿也不怕人，常常飞到游客手上吃东西。',hint:'(chim bồ câu)',ans:'鸽子',exp:'鸽子 = chim bồ câu, lượng từ 只 / 群 (一群鸽子).'},
+  {pre:'地铁站修好以后，车站',blank:'周边',post:'的房子一下子贵了不少。',hint:'(vùng xung quanh)',ans:'周边',exp:'Danh từ chỉ nơi + 周边 = khu vực quanh đó (车站周边, 学校周边); làm định ngữ: 周边的房子.'},
+  {pre:'第一次上台讲话，他紧张得双手不停地',blank:'颤抖',post:'。',hint:'(run rẩy)',ans:'颤抖',exp:'颤抖 = run (tay, giọng, người) vì sợ, lạnh hay xúc động; 紧张得 + kết quả 颤抖.'},
+  {pre:'地铁的发车',blank:'间隔',post:'是五分钟，错过一趟也不用等太久。',hint:'(khoảng cách thời gian)',ans:'间隔',exp:'间隔 làm danh từ = khoảng cách giữa hai lần (发车间隔 = khoảng cách giữa hai chuyến xe).'},
+  {pre:'你的',blank:'推论',post:'听起来有道理，可是缺少证据，大家很难相信。',hint:'(lời suy luận)',ans:'推论',exp:'推论 làm danh từ = điều suy ra từ dữ kiện; cần 证据 để chứng minh.'},
+  {pre:'这份工作',blank:'本身',post:'并不难，难的是每天都得早上五点起床。',hint:'(tự bản thân)',ans:'本身',exp:'Danh từ + 本身 = bản thân sự việc đó, đối lập với điều đi kèm (难的是……).'},
+  {pre:'这次比赛他虽然没拿到好',blank:'名次',post:'，但坚持跑到了终点，已经很了不起了。',hint:'(thứ hạng)',ans:'名次',exp:'名次 = thứ hạng trong thi đấu, xếp hạng (拿到好名次, 名次靠前).'},
+  {pre:'站在高高的山顶上，看着脚下的云，我第一次觉得自己那么',blank:'渺小',post:'。',hint:'(nhỏ bé)',ans:'渺小',exp:'渺小 = nhỏ bé (khi so với cái lớn lao như thiên nhiên), mang cảm xúc; không dùng cho đồ vật nhỏ (东西很小).'},
+  {pre:'每个孩子都是不同的',blank:'个体',post:'，父母不应该总拿自己的孩子跟别人比。',hint:'(cá thể)',ans:'个体',exp:'个体 = từng cá thể riêng biệt; ý câu: mỗi đứa trẻ là một người riêng, không so sánh được.'},
+  {pre:'他平时说话很',blank:'文雅',post:'，可一着急，什么难听的话都说出来了。',hint:'(nho nhã, lịch sự)',ans:'文雅',exp:'文雅 = nho nhã, lịch sự (lời nói, cử chỉ), đối lập với 难听的话 ở vế sau.'},
+  {pre:'爷爷讲道理时喜欢打',blank:'比方',post:'，再难懂的事让他一说，我们都明白了。',hint:'(ví von, so sánh)',ans:'比方',exp:'打比方 = đưa ra hình ảnh so sánh cho dễ hiểu; 比方 còn dùng trong 比方说 = chẳng hạn như.'},
+  {pre:'几只松鼠在树上不停地',blank:'跳跃',post:'，一会儿就不见了。',hint:'(nhảy nhót)',ans:'跳跃',exp:'跳跃 = nhảy, nhảy vọt (hai âm tiết, thiên về văn viết); có 不停地 phía trước nên dùng động từ hai âm tiết.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (东A西B · 中 · 姑且) ít nhất 2 câu
+// SẮP XẾP CÂU — câu mới, chỉ một trật tự đúng
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['立刻','飞来','一只','东张西望的','苍蝇','。'],ans:'立刻飞来一只东张西望的苍蝇。',audio:'立刻飞来一只东张西望的苍蝇。'},
-  {words:['大家','吃完饭','没事干','，','只好','东拉西扯地','闲聊天儿','。'],ans:'大家吃完饭没事干，只好东拉西扯地闲聊天儿。',audio:'大家吃完饭没事干，只好东拉西扯地闲聊天儿。'},
-  {words:['黑猫','被','大黄猫','追得','东躲西藏','。'],ans:'黑猫被大黄猫追得东躲西藏。',audio:'黑猫被大黄猫追得东躲西藏。'},
-  {words:['人','动手','去打','，','却','总是','打不中','。'],ans:'人动手去打，却总是打不中。',audio:'人动手去打，却总是打不中。'},
-  {words:['这种蘑菇','不能吃','，','吃了','会','中毒的','。'],ans:'这种蘑菇不能吃，吃了会中毒的。',audio:'这种蘑菇不能吃，吃了会中毒的。'},
-  {words:['今天的','谜语','，','猜中了','有奖','。'],ans:'今天的谜语，猜中了有奖。',audio:'今天的谜语，猜中了有奖。'},
-  {words:['我们','姑且','换一个','文雅的','称呼','吧','。'],ans:'我们姑且换一个文雅的称呼吧。',audio:'我们姑且换一个文雅的称呼吧。'},
-  {words:['这件事','，','你','姑且','先答应下来','，','然后','再慢慢想办法','。'],ans:'这件事，你姑且先答应下来，然后再慢慢想办法。',audio:'这件事，你姑且先答应下来，然后再慢慢想办法。'},
-  {words:['他的看法','是否正确','姑且不论','，','但','有一点','可以肯定','。'],ans:'他的看法是否正确姑且不论，但有一点可以肯定。',audio:'他的看法是否正确姑且不论，但有一点可以肯定。'},
-  {words:['人类','反应迟钝','、','动作迟缓','。'],ans:'人类反应迟钝、动作迟缓。',audio:'人类反应迟钝、动作迟缓。'},
-  {words:['科学家','筛选出','34种动物','，','把数据','标记在','同一张图表中','。'],ans:'科学家筛选出34种动物，把数据标记在同一张图表中。',audio:'科学家筛选出34种动物，把数据标记在同一张图表中。'},
-  {words:['看似渺小的','苍蝇','势必','有其','过人之处','。'],ans:'看似渺小的苍蝇势必有其过人之处。',audio:'看似渺小的苍蝇势必有其过人之处。'},
-  {words:['它们','对','强大的对手','无能为力','。'],ans:'它们对强大的对手无能为力。',audio:'它们对强大的对手无能为力。'}
+  {words:['他','第一次','就','猜中了','正确答案','。'],ans:'他第一次就猜中了正确答案。',audio:'他第一次就猜中了正确答案。'},
+  {words:['猫','悄悄地','瞄准了','那只','老鼠','。'],ans:'猫悄悄地瞄准了那只老鼠。',audio:'猫悄悄地瞄准了那只老鼠。'},
+  {words:['我们','姑且','把这个问题','放一放','吧','。'],ans:'我们姑且把这个问题放一放吧。',audio:'我们姑且把这个问题放一放吧。'},
+  {words:['服务员','把汤','端到了','我们的','桌子上','。'],ans:'服务员把汤端到了我们的桌子上。',audio:'服务员把汤端到了我们的桌子上。'},
+  {words:['前面的','大树','挡住了','我的','视线','。'],ans:'前面的大树挡住了我的视线。',audio:'前面的大树挡住了我的视线。'},
+  {words:['请','把','重要的地方','标记','出来','。'],ans:'请把重要的地方标记出来。',audio:'请把重要的地方标记出来。'},
+  {words:['他们俩','东一句西一句地','聊了','一个晚上','。'],ans:'他们俩东一句西一句地聊了一个晚上。',audio:'他们俩东一句西一句地聊了一个晚上。'},
+  {words:['那个','场面','让','在场的人','都','感动','了','。'],ans:'那个场面让在场的人都感动了。',audio:'那个场面让在场的人都感动了。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1535,76 +1487,46 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'这件事就交给你了，你____要把它办好。',opts:['一定','势必','姑且','确切'],ans:0,
-   exp:'Thể hiện thái độ kiên quyết, đứng trước 要 → chỉ 一定. 势必 chỉ suy đoán kết quả (thường bất lợi); 姑且 là tạm thời; 确切 là tính từ "chính xác".'},
-  {wrong:'人口过度增长____影响经济水平的提高。',opts:['姑且','势必','确切','实惠'],ans:1,
-   exp:'Suy đoán theo xu thế, kết quả bất lợi → 势必 (câu ví dụ của sách). 姑且 = tạm; 确切, 实惠 là tính từ, không làm trạng ngữ ở đây.'},
-  {wrong:'他没日没夜地工作，吃饭睡觉都没有____的时间。',opts:['势必','确切','一定','迟缓'],ans:2,
-   exp:'Làm định ngữ "thời gian cố định" → 一定 (tính từ). 势必 không làm định ngữ; 确切的时间 là "thời gian chính xác", không hợp ý "ăn ngủ thất thường".'},
-  {wrong:'随着年龄的增长，人的反应会越来越____。',opts:['庞大','笨拙','渺小','迟钝'],ans:3,
-   exp:'反应 + 迟钝 (phản ứng chậm). 庞大 là khổng lồ; 笨拙 là vụng về (động tác); 渺小 là nhỏ bé.'},
-  {wrong:'由于资金不足，这个项目进展____。',opts:['迟缓','迟钝','深奥','焦急'],ans:0,
-   exp:'进展 (tiến triển) nói về tốc độ → 迟缓. 迟钝 dùng cho phản ứng, cảm giác; 深奥, 焦急 không hợp.'},
-  {wrong:'骗子____用假身份骗取老人的钱，幸亏被警察识破了。',opts:['试图','姑且','企图','动手'],ans:2,
-   exp:'Âm mưu làm việc xấu → 企图. 试图 trung tính, hợp việc chính đáng; 姑且 là tạm thời; 动手 không mang động từ phía sau theo cách này.'},
-  {wrong:'听说有人找我，我很____：谁会知道我住在这儿呢？',opts:['焦急','纳闷儿','感慨','颤抖'],ans:1,
-   exp:'Thấy khó hiểu và nêu câu hỏi phía sau → 纳闷儿. 焦急 là sốt ruột; 感慨 là cảm thán; 颤抖 là run.'},
-  {wrong:'那孩子像是找不到家了，站在路口____，显得有些着急。',opts:['东拉西扯','东躲西藏','博大精深','东张西望'],ans:3,
-   exp:'Đứng ở ngã tư nhìn quanh tìm đường → 东张西望 (练一练 (1)). 东拉西扯 = nói chuyện lan man; 东躲西藏 = trốn chỗ này chỗ kia.'},
-  {wrong:'坐在火车上，大家都没事，便天南海北、____地闲聊起来。',opts:['东拉西扯','东张西望','东躲西藏','无能为力'],ans:0,
-   exp:'闲聊 (tán gẫu) + nói đủ thứ chuyện → 东拉西扯 (练一练 (3)).'},
-  {wrong:'黑猫被打败了，被大黄猫追得____，跳上跳下。',opts:['东张西望','东躲西藏','东拉西扯','笨拙'],ans:1,
-   exp:'Bị đuổi nên trốn chỗ này chỗ kia → 东躲西藏 (练一练 (2)).'},
-  {wrong:'这件事，你____先答应下来，然后再慢慢想办法。',opts:['势必','确切','姑且','一定'],ans:2,
-   exp:'Tạm thời làm thế đã, sau hẵng tính → 姑且 (ví dụ chú thích 3). 势必, 一定 là "chắc chắn" — không hợp với 先……然后再…….'},
-  {wrong:'“去洗手间”比“去厕所”说得更____一些。',opts:['文雅','实惠','庞大','确切'],ans:0,
-   exp:'Cách nói lịch sự hơn → 文雅. 实惠 là thiết thực; 庞大 là to lớn; 确切 là chính xác.'},
-  {wrong:'这家小饭馆价格____，味道也不错，学生们都爱去。',opts:['深奥','渺小','文雅','实惠'],ans:3,
-   exp:'价格实惠 = giá phải chăng. Các phương án khác không đi với 价格.'},
-  {wrong:'在论证这一推论时，科学家从上百种动物中____出了34种。',opts:['标记','攻击','筛选','瞄准'],ans:2,
-   exp:'从……中筛选出 = chọn lọc ra từ …. 标记 là đánh dấu; 攻击 là tấn công; 瞄准 là nhắm.'},
-  {wrong:'不管处理什么问题，都要先看清问题____，再想办法。',opts:['本身','个体','系列','场面'],ans:0,
-   exp:'问题本身 = bản thân vấn đề. 个体 là cá thể; 系列 là loạt; 场面 là cảnh tượng.'},
-  {wrong:'这本书内容太____了，我看了好几遍都没看懂。',opts:['渺小','深奥','实惠','笨拙'],ans:1,
-   exp:'Nội dung khó hiểu → 深奥. 渺小 là nhỏ bé; 实惠 là thiết thực; 笨拙 là vụng về.'},
-  {wrong:'看到家乡的巨大变化，爷爷____万分。',opts:['纳闷儿','焦急','感慨','颤抖'],ans:2,
-   exp:'感慨万分 = vô cùng cảm khái (trước sự thay đổi lớn). 焦急万分 là lo cuống cuồng — không hợp với "thấy quê đổi mới".'},
-  {wrong:'手术还没结束，家人都在门外____地等待着。',opts:['文雅','迟缓','确切','焦急'],ans:3,
-   exp:'焦急地等待 = sốt ruột chờ đợi. Các phương án khác không diễn tả tâm trạng lo lắng.'},
-  {wrong:'讨论问题可以，但不要进行人身____。',opts:['动手','攻击','论证','推论'],ans:1,
-   exp:'人身攻击 = công kích cá nhân. 动手 là ra tay đánh, không đi với 人身; 论证, 推论 không hợp nghĩa.'},
-  {wrong:'这个视频充满正____，看完让人很受鼓舞。',opts:['视力','系列','名次','能量'],ans:3,
-   exp:'正能量 = năng lượng tích cực. 视力 là thị lực; 系列 là loạt; 名次 là thứ hạng.'}
+  {wrong:'在考场上，他一直____，被老师提醒了好几次。',opts:['东张西望','一动不动','无精打采','滔滔不绝'],ans:0,exp:'Nhìn ngang ngó dọc trong phòng thi nên bị nhắc → 东张西望. 一动不动 là ngồi im; 无精打采 (bài 2) là uể oải; 滔滔不绝 (bài 1) là nói không dứt — không phải lý do bị nhắc trong giờ thi.'},
+  {wrong:'偷了东西以后，他____了好几个月，最后还是被警察抓到了。',opts:['东躲西藏','走来走去','一五一十','鸦雀无声'],ans:0,exp:'Trốn chỗ này chỗ kia để khỏi bị bắt → 东躲西藏 (东A西B, A và B gần nghĩa). 走来走去 chỉ đi qua đi lại; 一五一十 là kể đầu đuôi; 鸦雀无声 (bài 1) tả không gian im phăng phắc.'},
+  {wrong:'虽然贵了点儿，可她一眼就____了这双鞋，非买不可。',opts:['看中','看重','看好','看见'],ans:0,exp:'看中 (zhòng) = ưng, vừa ý chọn lấy. 看重 là coi trọng (看重友谊); 看好 là tin sẽ thành công (看好这支球队); 看见 chỉ là nhìn thấy, không giải thích được 非买不可.'},
+  {wrong:'我让大家猜我的年龄，大家猜了好几次都没猜____。',opts:['中','好','完','开'],ans:0,exp:'猜中 = đoán trúng (V + 中 chỉ kết quả trúng đích). 猜好 / 猜完 / 猜开 không phải bổ ngữ kết quả hợp nghĩa với "đoán".'},
+  {wrong:'雨一时半会儿停不了，我们____在这家小店里坐坐，等雨小了再走。',opts:['姑且','势必','何必','务必'],ans:0,exp:'Giải pháp tạm thời "cứ… đã, rồi tính sau" → 姑且 + V. 势必 là ắt sẽ; 何必 là cần gì phải; 务必 (bài 12) là nhất thiết phải — không hợp với 等雨小了再走.'},
+  {wrong:'这个办法到底好不好____不论，至少我们应该先试一试。',opts:['姑且','暂时','何况','未免'],ans:0,exp:'Cụm cố định A + 姑且不论 = tạm chưa bàn đến A. 暂时 cũng nghĩa "tạm thời" nhưng không đi với 不论 — lỗi dịch từng chữ hay gặp; 何况 là huống hồ; 未免 (bài 4) là có phần hơi.'},
+  {wrong:'小偷____从窗户进去，没想到窗户是从里面锁上的。',opts:['企图','动手','瞄准','纳闷儿'],ans:0,exp:'Toan tính làm việc xấu → 企图 + V (sắc thái chê). 动手 không mang cụm động từ phía sau như vậy; 瞄准 cần tân ngữ là mục tiêu; 纳闷儿 là thấy khó hiểu.'},
+  {wrong:'爷爷八十多岁了，走路虽然有点儿____，耳朵却很好。',opts:['迟缓','迟钝','深奥','渺小'],ans:0,exp:'Tốc độ đi lại, động tác chậm → 迟缓. 迟钝 nói độ nhạy của phản ứng, đầu óc, cảm giác (反应迟钝); 深奥 là sâu xa khó hiểu; 渺小 là nhỏ bé.'},
+  {wrong:'他对别人的情绪很____，女朋友生气了好几天，他都没看出来。',opts:['迟钝','迟缓','文雅','确切'],ans:0,exp:'Không nhạy với cảm xúc người khác → 迟钝. 迟缓 chỉ tốc độ động tác, tiến độ; 文雅 là nho nhã; 确切 là chính xác.'},
+  {wrong:'大家都这样乱扔东西，周边的环境____会越来越差。',opts:['势必','务必','未必','何必'],ans:0,exp:'Suy ra kết quả xấu tất yếu theo xu thế → 势必 (会). 务必 dùng để yêu cầu (务必注意); 未必 là chưa chắc — trái logic câu; 何必 là cần gì phải.'},
+  {wrong:'这位教授讲课从来不讲____的大道理，总是用生活中的小事来说明。',opts:['深奥','庞大','实惠','笨拙'],ans:0,exp:'Đạo lý khó hiểu, cao siêu → 深奥, đối lập với việc dùng chuyện đời thường để giải thích. 庞大 là đồ sộ (thể tích, quy mô); 实惠 là thiết thực; 笨拙 là vụng về.'},
+  {wrong:'这家超市的东西包装虽然一般，但又便宜又好用，非常____。',opts:['实惠','实际','实现','实行'],ans:0,exp:'Rẻ mà dùng bền, đáng tiền → 实惠. 实际 là thực tế; 实现 là thực hiện (目标); 实行 (bài 1) là thi hành (规定) — chung chữ đầu nhưng khác nghĩa.'},
+  {wrong:'孩子放学两个小时了还没到家，妈妈____地在门口走来走去。',opts:['焦急','急忙','紧急','赶紧'],ans:0,exp:'Tâm trạng sốt ruột, lo lắng → 焦急地 + V. 急忙 là vội vàng làm ngay một việc (急忙跑出去), không tả việc đi qua đi lại chờ đợi; 紧急 tả tình huống khẩn cấp (紧急情况); 赶紧 là phó từ "mau chóng", không đi với 地 để tả tâm trạng.'},
+  {wrong:'这种鸟平时很安静，可如果有人走近它的孩子，它就会主动____人。',opts:['攻击','进攻','打架','动手'],ans:0,exp:'攻击 + người / con vật = tấn công. 进攻 dùng cho quân đội, đội bóng (进攻对方); 打架 và 动手 (đánh nhau, ra tay) không mang tân ngữ 人 trực tiếp.'},
+  {wrong:'网上的信息太多了，我们要学会____，不能什么都相信。',opts:['筛选','选中','标记','论证'],ans:0,exp:'Sàng lọc, chọn ra cái đáng tin trong nhiều thứ → 筛选. 选中 là đã chọn trúng một cái (cần tân ngữ); 标记 là đánh dấu; 论证 là lập luận chứng minh.'},
+  {wrong:'我们班有三十个人，____地说，是二十九个，小王上个月转学了。',opts:['确切','确实','肯定','正确'],ans:0,exp:'确切地说 = nói cho chính xác thì, dùng để sửa lại con số vừa nêu. 确实 là quả thật; 肯定地说 là nói chắc chắn; 正确 là đúng — đều không có chức năng "chỉnh lại cho chính xác".'},
+  {wrong:'医生说病人送来得太晚了，他们也____。',opts:['无能为力','一举两得','名副其实','不知不觉'],ans:0,exp:'Bất lực, không làm gì được nữa → 无能为力 (đứng cuối câu, không mang tân ngữ). Ba thành ngữ kia không nói về khả năng cứu chữa.'}
 ];
 
 // ══════════════════════════════════════════
-// DỊCH — câu ghép, dùng từ bài 17 + ôn từ HSK 6 bài 1–14 và HSK 4–5
+// DỊCH Việt → Trung — câu mới, dùng từ của bài + ôn ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Nếu cứ tiếp tục thức khuya chơi điện thoại, thị lực của em ắt sẽ giảm sút, đến lúc đó có hối hận cũng không kịp nữa.',zh:'如果继续熬夜玩手机，你的视力势必会下降，到时候后悔就来不及了。',py:'Rúguǒ jìxù áoyè wán shǒujī, nǐ de shìlì shìbì huì xiàjiàng, dào shíhou hòuhuǐ jiù láibují le.',goiY:['势必','视力','到时候……就……'],giai:'Suy đoán kết quả BẤT LỢI theo xu thế → 势必 (会) + V; không dùng 势必 để khuyên nhủ. "Không kịp" = 来不及; 熬夜 ôn bài 2 (熬).'},
-  {vi:'Tôi rất lấy làm lạ: rõ ràng cậu ấy ôn tập rất kỹ, sao lúc thi phản ứng lại chậm như vậy?',zh:'我很纳闷儿：他明明复习得很认真，怎么考试的时候反应那么迟钝呢？',py:'Wǒ hěn nà mènr: tā míngmíng fùxí de hěn rènzhēn, zěnme kǎoshì de shíhou fǎnyìng nàme chídùn ne?',goiY:['纳闷儿','明明','迟钝'],giai:'纳闷儿 + câu hỏi nêu điều khó hiểu; 明明 (ôn bài 6) = rõ ràng … mà lại; "phản ứng chậm" = 反应迟钝 (không dùng 迟缓 cho 反应).'},
-  {vi:'Chưa có tin chính xác, chúng ta cứ tạm chờ thêm hai ngày đã, kẻo làm to chuyện khiến mọi người hoảng sợ.',zh:'还没有确切的消息，我们姑且再等两天吧，免得把事情闹大，让大家恐慌。',py:'Hái méiyǒu quèqiè de xiāoxi, wǒmen gūqiě zài děng liǎng tiān ba, miǎnde bǎ shìqing nàodà, ràng dàjiā kǒnghuāng.',goiY:['确切','姑且','免得'],giai:'姑且 + V + 吧 = cứ tạm … đã (miễn cưỡng, tạm thời); 免得 (ôn bài 14) đứng đầu vế cuối nêu điều muốn tránh; "làm to chuyện" = 把事情闹大.'},
-  {vi:'Tên trộm đứng ở cổng nhìn ngang nhìn dọc, toan nhân lúc không ai để ý thì ra tay, nhưng đã bị camera ghi lại toàn bộ.',zh:'小偷在门口东张西望，企图趁没人注意的时候动手，却被监控全部拍了下来。',py:'Xiǎotōu zài ménkǒu dōngzhāng-xīwàng, qǐtú chèn méi rén zhùyì de shíhou dòng shǒu, què bèi jiānkòng quánbù pāile xiàlái.',goiY:['东张西望','企图','动手','趁'],giai:'Việc xấu (trộm) → 企图 chứ không dùng 试图; 趁 + thời cơ = nhân lúc; 却被…… nêu kết quả trái mong muốn (bị động).'},
-  {vi:'Học tiếng Trung đâu chỉ là học thuộc từ mới, nền văn hóa đằng sau nó uyên thâm đến mức khó mà tưởng tượng.',zh:'学汉语并非只是背生词，它背后的文化博大精深，令人难以想象。',py:'Xué Hànyǔ bìngfēi zhǐ shì bèi shēngcí, tā bèihòu de wénhuà bódà-jīngshēn, lìng rén nányǐ xiǎngxiàng.',goiY:['并非','博大精深','难以'],giai:'并非 (ôn bài 7) phủ định cách hiểu đơn giản; 博大精深 làm vị ngữ; 令人难以 + V hai âm tiết (ôn bài 14).'},
-  {vi:'Ông cụ tuy động tác chậm chạp, nhưng đầu óc chẳng hề kém nhạy bén; đánh cờ với ông, tôi chưa thắng lần nào.',zh:'老人虽然动作迟缓，头脑却一点儿也不迟钝，跟他下棋，我一次也没赢过。',py:'Lǎorén suīrán dòngzuò chíhuǎn, tóunǎo què yìdiǎnr yě bù chídùn, gēn tā xià qí, wǒ yí cì yě méi yíngguo.',goiY:['迟缓','迟钝','一点儿也不……','一次也没……'],giai:'迟缓 cho TỐC ĐỘ động tác, 迟钝 cho độ NHẠY của đầu óc; 却 đứng sau chủ ngữ 头脑; 一……也不 / 没…… phủ định tuyệt đối.'},
-  {vi:'Trước thiên nhiên hùng vĩ, con người trông vô cùng nhỏ bé; khi đối mặt với thiên tai, nhiều lúc chúng ta thậm chí đành bất lực.',zh:'在壮观的大自然面前，人类显得非常渺小；面对自然灾害，我们有时甚至无能为力。',py:'Zài zhuàngguān de dàzìrán miànqián, rénlèi xiǎnde fēicháng miǎoxiǎo; miànduì zìrán zāihài, wǒmen yǒushí shènzhì wúnéngwéilì.',goiY:['在……面前','渺小','无能为力','甚至'],giai:'在……面前 + 显得 + Adj; 无能为力 đứng cuối câu, không mang tân ngữ; hai vế song song ngăn bằng dấu ；.'},
-  {vi:'Từ rất nhiều ứng viên, công ty đã chọn ra năm người có năng lực nổi bật, rồi dùng bút đỏ đánh dấu tên của họ.',zh:'公司从众多应聘者中筛选出五个能力突出的人，并用红笔把他们的名字标记了出来。',py:'Gōngsī cóng zhòngduō yìngpìnzhě zhōng shāixuǎn chū wǔ ge nénglì tūchū de rén, bìng yòng hóngbǐ bǎ tāmen de míngzi biāojìle chūlái.',goiY:['从……中','筛选','标记','并'],giai:'从……中 + 筛选出 = chọn ra từ …; 并 nối hai hành động liên tiếp (văn viết); câu 把 + 标记出来.'},
-  {vi:'Thấy thứ hạng của mình tụt xuống, cậu ấy không những không nản mà ngược lại còn chăm chỉ hơn, khiến thầy cô không khỏi cảm thán.',zh:'看到自己的名次下降了，他不但没有灰心，反而更努力了，让老师们不由得感慨万分。',py:'Kàndào zìjǐ de míngcì xiàjiàng le, tā búdàn méiyǒu huīxīn, fǎn\'ér gèng nǔlì le, ràng lǎoshīmen bùyóude gǎnkǎi wànfēn.',goiY:['名次','不但没有……反而……','不由得','感慨'],giai:'不但不 / 没……反而…… = không những không … mà ngược lại …; 不由得 (ôn bài 2) = không khỏi; 感慨万分 = vô cùng cảm khái.'},
-  {vi:'Nói cho chính xác thì, không phải con mèo nhảy nhanh đến mức nào, mà là trong mắt nó, động tác của con người thật sự quá chậm.',zh:'确切地说，并不是猫跳跃得有多快，而是在它眼里，人类的动作实在太慢了。',py:'Quèqiè de shuō, bìng bú shì māo tiàoyuè de yǒu duō kuài, ér shì zài tā yǎn li, rénlèi de dòngzuò shízài tài màn le.',goiY:['确切地说','不是……而是……','跳跃'],giai:'确切地说 đứng đầu câu để chỉnh lại ý; 并不是……而是…… phủ định A khẳng định B; 在……眼里 = trong mắt ….'}
+  {vi:'Máy tính của em vẫn chưa sửa xong, cứ tạm dùng máy của chị mà làm bài tập đã, kẻo nộp bài muộn.',zh:'你的电脑还没修好，姑且拿我的写作业吧，免得作业交晚了。',py:'Nǐ de diànnǎo hái méi xiūhǎo, gūqiě ná wǒ de xiě zuòyè ba, miǎnde zuòyè jiāo wǎn le.',goiY:['姑且……吧','免得'],giai:'姑且 + V + 吧 = cứ tạm… đã (giải pháp tạm thời); 免得 (ôn bài 14) đứng đầu vế sau nêu điều muốn tránh.'},
+  {vi:'Lần đầu đến Bắc Kinh, vừa ra khỏi ga tàu cậu ấy đã nhìn ngang ngó dọc, nhìn gì cũng thấy mới lạ.',zh:'第一次来北京，他一出火车站就东张西望，看什么都觉得新鲜。',py:'Dì-yī cì lái Běijīng, tā yì chū huǒchēzhàn jiù dōngzhāng-xīwàng, kàn shénme dōu juéde xīnxiān.',goiY:['一……就……','东张西望','V + 什么都……'],giai:'"Nhìn ngang ngó dọc" = 东张西望 (东A西B, hai động từ gần nghĩa); 看什么都 = nhìn gì cũng.'},
+  {vi:'Rõ ràng tôi chưa nói gì cả, vậy mà mẹ chỉ nhìn một cái đã đoán trúng tâm sự của tôi.',zh:'我明明什么都没说，妈妈却一眼就猜中了我的心事。',py:'Wǒ míngmíng shénme dōu méi shuō, māma què yì yǎn jiù cāizhòngle wǒ de xīnshì.',goiY:['明明……却……','一眼就','猜中'],giai:'明明 (ôn bài 6) + 却 nêu sự trái ngược; 猜中 (zhòng) = đoán trúng; 一眼就 = chỉ nhìn một cái đã.'},
+  {vi:'Nếu trẻ con dựa dẫm quá nhiều vào điện thoại, thị lực ắt sẽ bị ảnh hưởng.',zh:'如果孩子过于依赖手机，视力势必会受到影响。',py:'Rúguǒ háizi guòyú yīlài shǒujī, shìlì shìbì huì shòudào yǐngxiǎng.',goiY:['过于','势必','视力'],giai:'过于 (ôn bài 3) + V/Adj = quá mức; 势必 (会) nêu kết quả xấu tất yếu; "bị ảnh hưởng" = 受到影响.'},
+  {vi:'Phản ứng chậm không có nghĩa là không thông minh, có lẽ cậu ấy chỉ là nghĩ kỹ hơn người khác mà thôi.',zh:'反应迟钝并不等于不聪明，也许他只是比别人想得更仔细而已。',py:'Fǎnyìng chídùn bìng bù děngyú bù cōngming, yěxǔ tā zhǐ shì bǐ biérén xiǎng de gèng zǐxì éryǐ.',goiY:['迟钝','并不等于','只是……而已'],giai:'Phản ứng chậm = 反应迟钝 (không dùng 迟缓 cho 反应); 只是……而已 (ôn bài 5) = chỉ là… mà thôi.'},
+  {vi:'Để chứng minh quan điểm này, các nhà khoa học đã làm một loạt thí nghiệm, kết quả đều cho thấy họ đúng.',zh:'为了论证这个观点，科学家们做了一系列实验，结果都证明他们是对的。',py:'Wèile lùnzhèng zhège guāndiǎn, kēxuéjiāmen zuòle yí xìliè shíyàn, jiéguǒ dōu zhèngmíng tāmen shì duì de.',goiY:['论证','一系列','证明'],giai:'论证 + 观点 = lập luận chứng minh một quan điểm; 一系列 + danh từ = một loạt (一 đọc yí trước 系 thanh 4).'}
 ];
 
-// Chiều Trung → Việt — bám ý bài khoá
+// ══════════════════════════════════════════
+// Dịch Trung → Việt — câu mới, không trùng chiều trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Có người bưng ra một đĩa đựng thức ăn, lập tức một con ruồi bay tới, toan đậu xuống đĩa.',zh:'有人端来一个盛着菜的盘子，一只苍蝇立刻飞了过来，企图落在盘子上。',py:'Yǒu rén duānlái yí ge chéngzhe cài de pánzi, yì zhī cāngying lìkè fēile guòlái, qǐtú luò zài pánzi shang.',goiY:['端 = bưng','盛 (chéng) = đựng','企图 = toan'],giai:'盛着菜的盘子: định ngữ dài "đĩa đang đựng thức ăn" → dịch gọn "đĩa đựng thức ăn"; 企图 dùng vui cho con ruồi, dịch "toan / định".'},
-  {vi:'Mèo nhảy vọt lên thật nhanh, nhắm cũng chẳng cần nhắm, một phát đã vỗ trúng con ruồi — điều này khiến nhiều người thấy khó hiểu.',zh:'猫快速跳跃起来，瞄准都不用，一下就能拍到苍蝇，这让很多人纳闷儿。',py:'Māo kuàisù tiàoyuè qǐlái, miáozhǔn dōu bú yòng, yíxià jiù néng pāidào cāngying, zhè ràng hěn duō rén nà mènr.',goiY:['跳跃 = nhảy vọt','瞄准都不用 = nhắm cũng chẳng cần','纳闷儿 = thấy khó hiểu'],giai:'V + 都不用 nhấn mạnh sự dễ dàng → "… cũng chẳng cần …"; 一下就 = "một phát đã".'},
-  {vi:'Trong mắt con ruồi, cú đập mà con người tự cho là nhanh như chớp, chẳng qua chỉ là một động tác chậm mà thôi.',zh:'在苍蝇眼里，人类自认为闪电般快速的一拍，只是个慢动作而已。',py:'Zài cāngying yǎn li, rénlèi zì rènwéi shǎndiàn bān kuàisù de yì pāi, zhǐ shì ge màn dòngzuò éryǐ.',goiY:['在……眼里 = trong mắt …','闪电般 = nhanh như chớp','只是……而已 = chẳng qua chỉ là … mà thôi'],giai:'只是……而已 (ôn bài 5 而已) dịch "chẳng qua chỉ … mà thôi"; 一拍 là danh từ hoá: "một cú đập".'},
-  {vi:'Khi ánh mắt chim bồ câu lướt qua xung quanh, nó hơi run run, như thể trong người có một chiếc đồng hồ chạy nhanh hơn.',zh:'鸽子的视线扫过周边时，它在微微颤抖，好像体内有一个走得更快的钟表。',py:'Gēzi de shìxiàn sǎoguo zhōubiān shí, tā zài wēiwēi chàndǒu, hǎoxiàng tǐ nèi yǒu yí ge zǒu de gèng kuài de zhōngbiǎo.',goiY:['视线 = ánh mắt','周边 = xung quanh','颤抖 = run'],giai:'……时 = "khi …"; 微微 = "hơi, khẽ"; 钟表 "走" = đồng hồ "chạy" (không dịch "đi").'},
-  {vi:'Trong mắt động vật nhỏ, con người phản ứng chậm chạp, động tác rề rà, chẳng khác gì những con voi khổng lồ, vụng về.',zh:'在小动物看来，人类反应迟钝、动作迟缓，就像庞大、笨拙的大象一样。',py:'Zài xiǎo dòngwù kànlái, rénlèi fǎnyìng chídùn, dòngzuò chíhuǎn, jiù xiàng pángdà, bènzhuō de dàxiàng yíyàng.',goiY:['在……看来 = theo …, trong mắt …','迟钝 / 迟缓 = chậm','笨拙 = vụng về'],giai:'迟缓 KHÔNG dịch "trì hoãn"; hai từ "chậm" nên dịch khác nhau cho đỡ lặp (chậm chạp / rề rà).'},
-  {vi:'Khi khoảng ngắt của kích thích ánh sáng ngắn lại, cái ta thấy không còn là sự nhấp nháy lúc sáng lúc tối nữa, mà là một luồng sáng liên tục.',zh:'当光刺激的间隔缩短时，我们看到的就不再是一明一暗的闪烁，而是连续的光。',py:'Dāng guāng cìjī de jiàngé suōduǎn shí, wǒmen kàndào de jiù bú zài shì yì míng yí àn de shǎnshuò, ér shì liánxù de guāng.',goiY:['间隔 = khoảng ngắt','闪烁 = nhấp nháy','不再是……而是…… = không còn là … mà là …'],giai:'一明一暗 = "lúc sáng lúc tối" (cấu trúc 一A一B chỉ hai trạng thái luân phiên).'},
-  {vi:'Trong mắt loài chó, hình ảnh ti vi không liên tục, mà là một loạt hình ảnh tĩnh thay đổi nhanh chóng.',zh:'在犬的眼里，电视画面并不是连续的，而是一系列静止图像的迅速变换。',py:'Zài quǎn de yǎn li, diànshì huàmiàn bìng bú shì liánxù de, ér shì yí xìliè jìngzhǐ túxiàng de xùnsù biànhuàn.',goiY:['犬 = chó','一系列 = một loạt','变换 = thay đổi'],giai:'犬 là từ văn viết nhưng tiếng Việt nói "chó" là tự nhiên; ……的迅速变换 (danh từ) chuyển thành cụm động từ "thay đổi nhanh chóng".'},
-  {vi:'Có nhà khoa học suy luận rằng CFF của một loài có liên quan đến cân nặng và tốc độ trao đổi chất của chính loài đó.',zh:'有科学家推论，物种的CFF与其本身的体重和新陈代谢速率有关。',py:'Yǒu kēxuéjiā tuīlùn, wùzhǒng de CFF yǔ qí běnshēn de tǐzhòng hé xīnchén-dàixiè sùlǜ yǒuguān.',goiY:['推论 = suy luận','其本身 = của chính nó','新陈代谢 = trao đổi chất'],giai:'A 与 B 有关 = A có liên quan đến B; 其 (văn viết) = 它的 → "của chính loài đó".'},
-  {vi:'Con ruồi tuy không có tư tưởng uyên thâm, nhưng lại phán đoán rất nhanh về môi trường bên ngoài — ưu thế này vô cùng thiết thực.',zh:'苍蝇虽然没有博大精深的思想，却能迅速对外部环境做出判断，这一优势实惠极了。',py:'Cāngying suīrán méiyǒu bódà-jīngshēn de sīxiǎng, què néng xùnsù duì wàibù huánjìng zuòchū pànduàn, zhè yī yōushì shíhuì jí le.',goiY:['博大精深 = uyên thâm','做出判断 = phán đoán','实惠 = thiết thực'],giai:'实惠 ở đây không dịch "rẻ" mà là "thiết thực, có lợi thật sự"; 对……做出判断 chuyển thành "phán đoán về …".'},
-  {vi:'Mèo con, chó con luôn tỏ ra nôn nóng hơn các cá thể trưởng thành, thật ra đối với chúng, đó chỉ là một tốc độ thong thả.',zh:'小猫小狗总显得比成年个体更焦急，其实对它们来说，这只是个悠闲的速度。',py:'Xiǎo māo xiǎo gǒu zǒng xiǎnde bǐ chéngnián gètǐ gèng jiāojí, qíshí duì tāmen lái shuō, zhè zhǐ shì ge yōuxián de sùdù.',goiY:['个体 = cá thể','焦急 = nôn nóng','对……来说 = đối với …'],giai:'显得 = "tỏ ra, trông có vẻ"; 其实 báo hiệu sự thật trái với vẻ bề ngoài → "thật ra".'}
+  {vi:'Vị giáo sư già này có thể giảng những đạo lý sâu xa một cách rất đơn giản, nên sinh viên ai cũng thích nghe ông giảng.',zh:'这位老教授能把深奥的道理讲得很简单，学生们都爱听他的课。',py:'Zhè wèi lǎo jiàoshòu néng bǎ shēn\'ào de dàolǐ jiǎng de hěn jiǎndān, xuéshengmen dōu ài tīng tā de kè.',goiY:['深奥 = sâu xa, khó hiểu','把……讲得很简单 = giảng… cho thật dễ hiểu'],giai:'Câu 把 + V得 + kết quả: dịch thành "giảng… một cách rất đơn giản / cho dễ hiểu".'},
+  {vi:'Đứng bên bờ biển, người ta không khỏi cảm thán: so với thiên nhiên, bản thân mình nhỏ bé biết bao.',zh:'站在大海边，人们不禁感慨：和大自然相比，自己是多么渺小。',py:'Zhàn zài dàhǎi biān, rénmen bùjīn gǎnkǎi: hé dàzìrán xiāngbǐ, zìjǐ shì duōme miǎoxiǎo.',goiY:['不禁 = không khỏi','感慨 = cảm thán','和……相比 = so với…','渺小 = nhỏ bé'],giai:'Ôn 不禁 (bài 15) và 和……相比 (bài 13); 是多么 + Adj = … biết bao.'},
+  {vi:'Món ăn ở quán này không những đáng đồng tiền mà thái độ phục vụ cũng tốt, thảo nào cuối tuần nào cũng phải xếp hàng dài.',zh:'这家饭馆的菜不但实惠，而且服务员态度也好，难怪每到周末都要排长队。',py:'Zhè jiā fànguǎn de cài búdàn shíhuì, érqiě fúwùyuán tàidu yě hǎo, nánguài měi dào zhōumò dōu yào pái cháng duì.',goiY:['实惠 = đáng tiền, thiết thực','难怪 = thảo nào','排长队 = xếp hàng dài'],giai:'实惠 khi nói về đồ ăn, hàng hoá dịch "đáng đồng tiền / rẻ mà ngon", không dịch "thực huệ".'},
+  {vi:'Người trao đổi chất nhanh thì ăn nhiều đến mấy cũng khó béo, vì cơ thể tiêu hao nhiều năng lượng.',zh:'新陈代谢快的人吃得再多也不容易胖，因为身体消耗的能量多。',py:'Xīnchén-dàixiè kuài de rén chī de zài duō yě bù róngyì pàng, yīnwèi shēntǐ xiāohào de néngliàng duō.',goiY:['新陈代谢 = trao đổi chất','再……也…… = … đến mấy cũng…','消耗能量 = tiêu hao năng lượng'],giai:'V得再 + Adj + 也…… = dù… đến mấy cũng…; định ngữ dài 新陈代谢快的人 → "người trao đổi chất nhanh".'},
+  {vi:'Voi tuy thân hình khổng lồ nhưng động tác lại chẳng hề vụng về, lúc qua sông chúng còn biết giúp đỡ lẫn nhau.',zh:'大象虽然体型庞大，动作却并不笨拙，过河的时候还会互相帮助。',py:'Dàxiàng suīrán tǐxíng pángdà, dòngzuò què bìng bú bènzhuō, guò hé de shíhou hái huì hùxiāng bāngzhù.',goiY:['体型庞大 = thân hình khổng lồ','并不笨拙 = chẳng hề vụng về'],giai:'虽然……却并不…… = tuy… nhưng chẳng hề…; 并 nhấn mạnh phủ định một suy nghĩ thông thường.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1642,8 +1564,8 @@ var writingData = {
     'Bài dài khoảng 400 chữ Hán (350–450), viết bằng lời của mình, không chép nguyên bài khoá chưa?'
   ],
   model:{
-    zh:'你见过这样的场面吗？有人端来一盘菜，一只东张西望的苍蝇立刻飞过来，企图落在盘子上。人动手去打，却总是打不中；猫却能快速跳起来，一下子就拍到苍蝇。很多人对此感到纳闷儿。科学家解释说，在苍蝇眼里，人类快速的一拍只是个慢动作而已。研究表明，昆虫等小动物一秒钟之内接收的信息量比人类多得多。比如鸽子，当它的视线扫过周边时，身体在微微颤抖，好像体内有一个走得更快的钟表。在小动物看来，人类反应迟钝、动作迟缓，就像庞大、笨拙的大象。为了量化这种视觉感知，科研人员采用了“临界闪光频率”，简称CFF。光刺激的间隔频率较低时，我们看到的是一明一暗的闪烁；间隔缩短以后，我们感到的就是连续的光。CFF值反映的是眼睛处理光线的速度，速度越快，CFF值越高。人眼的CFF大约是60HZ，犬为80HZ，而苍蝇高达250HZ，是人眼的4倍。科学家推论，CFF与动物本身的体重和新陈代谢速率有关：体型越小，新陈代谢越快，CFF值就越高。他们筛选出34种动物进行论证，结果显示二者有显著的相关性。苍蝇看似渺小，却势必有其过人之处。它们对强大的对手无能为力，但能迅速对外部环境做出判断，因此有了更多的生存机会。同样，信息处理速度上的差别，也让小动物看上去更敏捷。我们姑且可以说，在它们眼中，这是一个慢世界。',
-    py:'Nǐ jiànguo zhèyàng de chǎngmiàn ma? Yǒu rén duānlái yì pán cài, yì zhī dōngzhāng-xīwàng de cāngying lìkè fēi guòlái, qǐtú luò zài pánzi shang. Rén dòng shǒu qù dǎ, què zǒngshì dǎ bu zhòng; māo què néng kuàisù tiào qǐlái, yíxiàzi jiù pāidào cāngying. Hěn duō rén duì cǐ gǎndào nà mènr. Kēxuéjiā jiěshì shuō, zài cāngying yǎn li, rénlèi kuàisù de yì pāi zhǐ shì ge màn dòngzuò éryǐ. Yánjiū biǎomíng, kūnchóng děng xiǎo dòngwù yì miǎozhōng zhī nèi jiēshōu de xìnxīliàng bǐ rénlèi duō de duō. Bǐrú gēzi, dāng tā de shìxiàn sǎoguo zhōubiān shí, shēntǐ zài wēiwēi chàndǒu, hǎoxiàng tǐ nèi yǒu yí ge zǒu de gèng kuài de zhōngbiǎo. Zài xiǎo dòngwù kànlái, rénlèi fǎnyìng chídùn, dòngzuò chíhuǎn, jiù xiàng pángdà, bènzhuō de dàxiàng. Wèile liànghuà zhè zhǒng shìjué gǎnzhī, kēyán rényuán cǎiyòngle “línjiè shǎnguāng pínlǜ”, jiǎnchēng CFF. Guāng cìjī de jiàngé pínlǜ jiào dī shí, wǒmen kàndào de shì yì míng yí àn de shǎnshuò; jiàngé suōduǎn yǐhòu, wǒmen gǎndào de jiù shì liánxù de guāng. CFF zhí fǎnyìng de shì yǎnjing chǔlǐ guāngxiàn de sùdù, sùdù yuè kuài, CFF zhí yuè gāo. Rényǎn de CFF dàyuē shì liùshí HZ, quǎn wéi bāshí HZ, ér cāngying gāodá èrbǎi wǔshí HZ, shì rényǎn de sì bèi. Kēxuéjiā tuīlùn, CFF yǔ dòngwù běnshēn de tǐzhòng hé xīnchén-dàixiè sùlǜ yǒuguān: tǐxíng yuè xiǎo, xīnchén-dàixiè yuè kuài, CFF zhí jiù yuè gāo. Tāmen shāixuǎn chū sānshísì zhǒng dòngwù jìnxíng lùnzhèng, jiéguǒ xiǎnshì èr zhě yǒu xiǎnzhù de xiāngguānxìng. Cāngying kànsì miǎoxiǎo, què shìbì yǒu qí guòrén zhī chù. Tāmen duì qiángdà de duìshǒu wúnéngwéilì, dàn néng xùnsù duì wàibù huánjìng zuòchū pànduàn, yīncǐ yǒule gèng duō de shēngcún jīhuì. Tóngyàng, xìnxī chǔlǐ sùdù shang de chābié, yě ràng xiǎo dòngwù kàn shàngqù gèng mǐnjié. Wǒmen gūqiě kěyǐ shuō, zài tāmen yǎn zhōng, zhè shì yí ge màn shìjiè.',
+    zh:'你见过这样的场面吗？有人端来一个装着菜的盘子，一只东张西望的苍蝇立刻飞过来，企图落在上面。人动手去打，却总是打不中；猫却能快速跳起来，一下子就拍到苍蝇。很多人对此感到纳闷儿。科学家解释说，在苍蝇眼里，人类快速的一拍只是个慢动作而已。研究表明，昆虫等小动物一秒钟之内接收的信息量比人类多得多。比如鸽子，当它的视线扫过周边时，身体在微微颤抖，好像体内有一个走得更快的钟表。在小动物看来，人类反应迟钝、动作迟缓，就像庞大、笨拙的大象。为了量化这种视觉感知，科研人员采用了“临界闪光频率”，简称CFF。光刺激的间隔频率较低时，我们看到的是一明一暗的闪烁；间隔缩短以后，我们感到的就是连续的光。CFF值反映的是眼睛处理光线的速度，速度越快，CFF值越高。人眼的CFF大约是60HZ，犬为80HZ，而苍蝇高达250HZ，是人眼的4倍。科学家推论，CFF与动物本身的体重和新陈代谢速率有关：体型越小，新陈代谢越快，CFF值就越高。他们筛选出34种动物进行论证，结果显示二者有显著的相关性。苍蝇看似渺小，却势必有其过人之处。它们对强大的对手无能为力，但能迅速对外部环境做出判断，因此有了更多的生存机会。同样，信息处理速度上的差别，也让小动物看上去更敏捷。我们姑且可以说，在它们眼中，这是一个慢世界。',
+    py:'Nǐ jiànguo zhèyàng de chǎngmiàn ma? Yǒu rén duānlái yí ge zhuāngzhe cài de pánzi, yì zhī dōngzhāng-xīwàng de cāngying lìkè fēi guòlái, qǐtú luò zài shàngmian. Rén dòng shǒu qù dǎ, què zǒngshì dǎ bu zhòng; māo què néng kuàisù tiào qǐlái, yíxiàzi jiù pāidào cāngying. Hěn duō rén duì cǐ gǎndào nà mènr. Kēxuéjiā jiěshì shuō, zài cāngying yǎn li, rénlèi kuàisù de yì pāi zhǐ shì ge màn dòngzuò éryǐ. Yánjiū biǎomíng, kūnchóng děng xiǎo dòngwù yì miǎozhōng zhī nèi jiēshōu de xìnxīliàng bǐ rénlèi duō de duō. Bǐrú gēzi, dāng tā de shìxiàn sǎoguo zhōubiān shí, shēntǐ zài wēiwēi chàndǒu, hǎoxiàng tǐ nèi yǒu yí ge zǒu de gèng kuài de zhōngbiǎo. Zài xiǎo dòngwù kànlái, rénlèi fǎnyìng chídùn, dòngzuò chíhuǎn, jiù xiàng pángdà, bènzhuō de dàxiàng. Wèile liànghuà zhè zhǒng shìjué gǎnzhī, kēyán rényuán cǎiyòngle “línjiè shǎnguāng pínlǜ”, jiǎnchēng CFF. Guāng cìjī de jiàngé pínlǜ jiào dī shí, wǒmen kàndào de shì yì míng yí àn de shǎnshuò; jiàngé suōduǎn yǐhòu, wǒmen gǎndào de jiù shì liánxù de guāng. CFF zhí fǎnyìng de shì yǎnjing chǔlǐ guāngxiàn de sùdù, sùdù yuè kuài, CFF zhí yuè gāo. Rényǎn de CFF dàyuē shì liùshí HZ, quǎn wéi bāshí HZ, ér cāngying gāodá èrbǎi wǔshí HZ, shì rényǎn de sì bèi. Kēxuéjiā tuīlùn, CFF yǔ dòngwù běnshēn de tǐzhòng hé xīnchén-dàixiè sùlǜ yǒuguān: tǐxíng yuè xiǎo, xīnchén-dàixiè yuè kuài, CFF zhí jiù yuè gāo. Tāmen shāixuǎn chū sānshísì zhǒng dòngwù jìnxíng lùnzhèng, jiéguǒ xiǎnshì èr zhě yǒu xiǎnzhù de xiāngguānxìng. Cāngying kànsì miǎoxiǎo, què shìbì yǒu qí guòrén zhī chù. Tāmen duì qiángdà de duìshǒu wúnéngwéilì, dàn néng xùnsù duì wàibù huánjìng zuòchū pànduàn, yīncǐ yǒule gèng duō de shēngcún jīhuì. Tóngyàng, xìnxī chǔlǐ sùdù shang de chābié, yě ràng xiǎo dòngwù kàn shàngqù gèng mǐnjié. Wǒmen gūqiě kěyǐ shuō, zài tāmen yǎn zhōng, zhè shì yí ge màn shìjiè.',
     vn:'Bạn đã từng thấy cảnh này chưa? Có người bưng ra một đĩa thức ăn, lập tức một con ruồi nhìn ngang nhìn dọc bay tới, toan đậu xuống đĩa. Người ta giơ tay đập nhưng lần nào cũng không trúng; con mèo thì lại nhảy vọt lên thật nhanh, một phát đã vỗ trúng con ruồi. Nhiều người lấy làm lạ về chuyện này. Các nhà khoa học giải thích rằng, trong mắt con ruồi, cú đập nhanh của con người chẳng qua chỉ là một động tác chậm mà thôi. Nghiên cứu cho thấy lượng thông tin mà côn trùng và các động vật nhỏ tiếp nhận trong một giây nhiều hơn con người rất nhiều. Chẳng hạn chim bồ câu: khi ánh mắt nó lướt qua xung quanh, thân mình hơi run run, như thể trong người có một chiếc đồng hồ chạy nhanh hơn. Trong mắt động vật nhỏ, con người phản ứng chậm chạp, động tác rề rà, giống như những con voi khổng lồ vụng về. Để lượng hoá loại cảm nhận thị giác này, các nhà nghiên cứu đã dùng "tần số nhấp nháy tới hạn", gọi tắt là CFF. Khi ánh sáng kích thích có tần số ngắt quãng thấp, ta thấy ánh sáng nhấp nháy lúc sáng lúc tối; khi khoảng ngắt ngắn lại, ta sẽ cảm nhận thành một luồng sáng liên tục. Trị số CFF phản ánh tốc độ mắt xử lý ánh sáng — tốc độ càng nhanh, CFF càng cao. CFF của mắt người khoảng 60 Hz, của chó là 80 Hz, còn của ruồi cao tới 250 Hz, gấp 4 lần mắt người. Các nhà khoa học suy luận rằng CFF liên quan đến cân nặng và tốc độ trao đổi chất của bản thân loài vật: thân hình càng nhỏ, trao đổi chất càng nhanh thì CFF càng cao. Họ đã chọn lọc 34 loài động vật để chứng minh, kết quả cho thấy hai yếu tố này tương quan rõ rệt. Con ruồi trông nhỏ bé nhưng ắt hẳn phải có chỗ hơn người. Chúng bất lực trước đối thủ mạnh, nhưng có thể phán đoán nhanh về môi trường bên ngoài, nhờ vậy có thêm nhiều cơ hội sống sót. Cũng vậy, sự khác biệt về tốc độ xử lý thông tin khiến động vật nhỏ trông nhanh nhẹn hơn. Tạm có thể nói rằng, trong mắt chúng, đây là một thế giới chậm.'
   }
 };
@@ -1699,159 +1621,133 @@ var speakingData = {
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — 听力 (hội thoại ngắn + đoạn nói)
-// Sách HSK 6 không có sách bài tập nghe: tự soạn theo chủ đề bài 17.
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — câu tự soạn (sách HSK 6 không có sách bài tập nghe), mỗi câu một tình huống mới
+// ══════════════════════════════════════════
 var listenExamData = {
-  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, ' +
-         'trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
-  source: 'Soạn theo dạng đề HSK 6 · chủ đề bài 17',
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 17',
   items: [
-    {n:1,
-     lines:[{sp:'女',zh:'厨房里有只苍蝇，我拍了半天也没拍到，真气人！'},
-            {sp:'男',zh:'别白费力气了，在苍蝇眼里，你的动作太迟缓了。'}],
-     q:'男的是什么意思？',qvn:'Ý người đàn ông là gì?',
-     opts:['苍蝇飞得太慢','女的应该用工具','女的动作对苍蝇来说太慢','厨房太脏了'],ans:2,
-     why:'在苍蝇眼里，你的动作太迟缓了 → với con ruồi, động tác của cô ấy quá chậm. 别白费力气了 = đừng phí sức.',
-     words:['迟缓']},
-
-    {n:2,
-     lines:[{sp:'男',zh:'你看那只鸽子，一直在广场上东张西望的。'},
-            {sp:'女',zh:'它大概是在找吃的吧，刚才有人在那儿喂过它们。'}],
-     q:'女的认为鸽子在做什么？',qvn:'Người phụ nữ cho rằng con bồ câu đang làm gì?',
-     opts:['在找吃的','在找同伴','在躲避攻击','在晒太阳'],ans:0,
-     why:'它大概是在找吃的吧 — nó có lẽ đang tìm đồ ăn. 东张西望 chỉ là hành động nhìn quanh của con bồ câu.',
-     words:['鸽子','东张西望']},
-
-    {n:3,
-     lines:[{sp:'女',zh:'医生，我最近看东西总是模糊，是不是视力下降了？'},
-            {sp:'男',zh:'先检查一下吧。你每天看手机的时间太长，势必会影响眼睛。'}],
-     q:'男的认为女的眼睛问题可能是什么造成的？',qvn:'Người đàn ông cho rằng vấn đề mắt của cô ấy có thể do đâu?',
-     opts:['年纪太大','睡得太多','光线太强','看手机时间太长'],ans:3,
-     why:'你每天看手机的时间太长，势必会影响眼睛 → nguyên nhân là xem điện thoại quá lâu. 势必 = ắt sẽ (kết quả bất lợi).',
-     words:['视力','势必']},
-
-    {n:4,
-     lines:[{sp:'男',zh:'这家店的菜又便宜又好吃，分量还足。'},
-            {sp:'女',zh:'是啊，比学校门口那家实惠多了，以后我们就来这儿吃吧。'}],
-     q:'女的觉得这家店怎么样？',qvn:'Người phụ nữ thấy quán này thế nào?',
-     opts:['太贵了','比学校门口那家实惠','分量太少','菜不好吃'],ans:1,
-     why:'比学校门口那家实惠多了 = đáng tiền hơn quán trước cổng trường nhiều.',
-     words:['实惠']},
-
-    {n:5,
-     lines:[{sp:'女',zh:'我纳闷儿，小王平时说话那么文雅，今天怎么跟人吵起来了？'},
-            {sp:'男',zh:'听说有人在网上对他进行人身攻击，他实在忍不住了。'}],
-     q:'小王为什么跟人吵起来了？',qvn:'Vì sao Tiểu Vương cãi nhau với người ta?',
-     opts:['他说话不文雅','有人在网上攻击他','他心情不好','别人误会了他'],ans:1,
-     why:'有人在网上对他进行人身攻击 → có người công kích cá nhân anh ấy trên mạng. 文雅 là tính cách bình thường của anh ấy.',
-     words:['纳闷儿','文雅','攻击']},
-
-    {n:6,
-     lines:[{sp:'男',zh:'这次比赛的名次什么时候公布？'},
-            {sp:'女',zh:'还没有确切的时间，我们姑且等等吧，一有消息我就通知你。'}],
-     q:'关于比赛的名次，可以知道什么？',qvn:'Về thứ hạng cuộc thi, có thể biết điều gì?',
-     opts:['已经公布了','女的得了第一名','比赛取消了','公布时间还不确定'],ans:3,
-     why:'还没有确切的时间 = chưa có thời gian chính xác → chưa biết lúc nào công bố; 姑且等等 = cứ tạm chờ.',
-     words:['名次','确切','姑且']},
-
-    {n:7,
-     lines:[{sp:'女',zh:'我爷爷七十多岁了，走路越来越慢，可是下棋从来没输过。'},
-            {sp:'男',zh:'看来他只是动作迟缓，头脑一点儿也不迟钝啊。'}],
-     q:'关于女的的爷爷，下列哪项正确？',qvn:'Về ông của người phụ nữ, điều nào dưới đây đúng?',
-     opts:['头脑很灵活','走路很快','常常下棋输','反应很迟钝'],ans:0,
-     why:'下棋从来没输过 và 头脑一点儿也不迟钝 → đầu óc vẫn rất nhanh nhạy; chỉ có đi lại chậm (动作迟缓).',
-     words:['迟缓','迟钝']},
-
-    {n:8,
-     lines:[{sp:'男',zh:'很多人纳闷儿：为什么小孩子总是跑来跑去，一刻也停不下来？其实，小孩子处理信息的速度比成年人快，在他们看来，大人的动作很慢，所以他们总显得很焦急。科学家认为，这和新陈代谢也有关系：年纪越小，新陈代谢越快。随着年龄的增长，人的反应会逐渐变慢。'}],
-     q:'根据这段话，小孩子为什么总显得很焦急？',qvn:'Theo đoạn này, vì sao trẻ con luôn tỏ ra nôn nóng?',
-     opts:['因为他们不听话','因为他们身体不好','因为他们处理信息的速度快','因为大人总催他们'],ans:2,
-     why:'Câu then chốt: 小孩子处理信息的速度比成年人快……所以他们总显得很焦急. Các phương án khác không được nhắc tới.',
-     words:['纳闷儿','焦急','新陈代谢']}
+    {
+      n: 1,
+      lines: [
+        {sp:'女',zh:'你看远处，有个灯一直在闪烁。'},
+        {sp:'男',zh:'那是机场的灯，是给飞机指方向的。'}
+      ],
+      q: '远处闪烁的是什么？',
+      qvn: 'Thứ nhấp nháy ở đằng xa là gì?',
+      opts: ['天上的星星','汽车的灯','机场的灯','对面楼里的灯'],
+      ans: 2,
+      why: 'Người đàn ông nói 那是机场的灯 = đó là đèn sân bay, dùng để chỉ hướng cho máy bay.',
+      words: ['闪烁']
+    },
+    {
+      n: 2,
+      lines: [
+        {sp:'男',zh:'你最近怎么老戴着眼镜？'},
+        {sp:'女',zh:'别提了，天天对着电脑，视力差了很多。'}
+      ],
+      q: '女的为什么戴眼镜？',
+      qvn: 'Vì sao người phụ nữ đeo kính?',
+      opts: ['视力变差了','觉得戴眼镜好看','眼睛受伤了','外面太阳太大'],
+      ans: 0,
+      why: '天天对着电脑，视力差了很多 → ngày nào cũng nhìn máy tính nên thị lực kém đi.',
+      words: ['视力']
+    },
+    {
+      n: 3,
+      lines: [
+        {sp:'女',zh:'经理刚才说的你听懂了吗？'},
+        {sp:'男',zh:'没有，他东一句西一句的，讲了半个小时也没说到重点。'}
+      ],
+      q: '男的觉得经理讲得怎么样？',
+      qvn: 'Người đàn ông thấy giám đốc nói thế nào?',
+      opts: ['很有道理','时间太短','很幽默','没有重点'],
+      ans: 3,
+      why: '东一句西一句 = nói câu này câu kia, không mạch lạc; 也没说到重点 → không có trọng tâm.',
+      words: ['东一句西一句']
+    },
+    {
+      n: 4,
+      lines: [
+        {sp:'男',zh:'这台旧电脑太慢了，要不要换台新的？'},
+        {sp:'女',zh:'下个月才发工资，姑且再用一个月吧。'}
+      ],
+      q: '女的是什么意思？',
+      qvn: 'Ý người phụ nữ là gì?',
+      opts: ['马上换一台新的','旧电脑其实很快','先用着旧电脑','把旧电脑卖掉'],
+      ans: 2,
+      why: '姑且再用一个月 = cứ tạm dùng thêm một tháng đã (đợi có lương mới mua).',
+      words: ['姑且']
+    },
+    {
+      n: 5,
+      lines: [
+        {sp:'男',zh:'听说你的设计被公司选中了？'},
+        {sp:'女',zh:'是啊，下个月就要开始生产了，我到现在都不敢相信。'}
+      ],
+      q: '关于女的，可以知道什么？',
+      qvn: 'Có thể biết gì về người phụ nữ?',
+      opts: ['她的设计被选中了','她要换工作了','她的设计没通过','她下个月去旅行'],
+      ans: 0,
+      why: '被公司选中了 = được công ty chọn (选中 zhòng), tháng sau đưa vào sản xuất.',
+      words: ['选中']
+    },
+    {
+      n: 6,
+      lines: [
+        {sp:'女',zh:'这一桌菜都是你自己做的？'},
+        {sp:'男',zh:'是啊，以前都是我妈动手，这次我自己做了才知道她每天有多辛苦。'}
+      ],
+      q: '男的现在明白了什么？',
+      qvn: 'Bây giờ người đàn ông hiểu ra điều gì?',
+      opts: ['做菜其实很容易','饭馆的菜更好吃','自己很会做菜','妈妈做饭很辛苦'],
+      ans: 3,
+      why: '自己做了才知道她每天有多辛苦 → tự làm mới biết mẹ vất vả thế nào. 动手 ở đây = tự tay làm.',
+      words: ['动手']
+    },
+    {
+      n: 7,
+      lines: [
+        {sp:'男',zh:'你学了五年汉语，现在应该没什么难的了吧？'},
+        {sp:'女',zh:'哪儿啊，汉语博大精深，我越学越觉得自己知道得少。'}
+      ],
+      q: '女的是什么意思？',
+      qvn: 'Ý người phụ nữ là gì?',
+      opts: ['汉语已经学好了','还有很多要学','不想再学了','中国文化很简单'],
+      ans: 1,
+      why: '哪儿啊 = đâu có; 博大精深, 越学越觉得自己知道得少 → còn rất nhiều thứ phải học.',
+      words: ['博大精深']
+    }
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 💬 TÌNH HUỐNG GIAO TIẾP
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
+// ══════════════════════════════════════════
 var situationData = {
-  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
-         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Em trai than phiền vì đập mãi không trúng con ruồi trong bếp.',
-     a:{sp:'Em trai',zh:'这只苍蝇太气人了，我打了十几次都没打中！',vn:'Con ruồi này tức thật, em đập mười mấy lần mà chẳng trúng!'},
-     need:['Dùng 在……眼里 và 迟缓','Giải thích lý do một cách khoa học'],
-     sample:'别白费力气了。在苍蝇眼里，你的动作太迟缓了，就像慢动作一样，它当然躲得过去。',
-     samplePy:'Bié báifèi lìqi le. Zài cāngying yǎn li, nǐ de dòngzuò tài chíhuǎn le, jiù xiàng màn dòngzuò yíyàng, tā dāngrán duǒ de guòqù.',
-     sampleVn:'Đừng phí sức nữa. Trong mắt con ruồi, động tác của em chậm quá, cứ như quay chậm vậy, nó né được là phải rồi.',
-     tip:'在……眼里 = trong mắt …; 迟缓 dùng cho động tác; bổ ngữ khả năng 躲得过去 = né được.'},
-
-    {scene:'Bạn cùng lớp hỏi vì sao em đọc mãi một cuốn sách khoa học mà vẫn chưa xong.',
-     a:{sp:'Bạn',zh:'那本书你看了一个月了，怎么还没看完？',vn:'Cuốn sách đó cậu đọc một tháng rồi, sao vẫn chưa xong?'},
-     need:['Dùng 深奥','Dùng 姑且 để nói kế hoạch tạm thời'],
-     sample:'内容太深奥了，很多地方我都看不懂。我姑且先看懂前几章，别的以后再说吧。',
-     samplePy:'Nèiróng tài shēn\'ào le, hěn duō dìfang wǒ dōu kàn bu dǒng. Wǒ gūqiě xiān kàndǒng qián jǐ zhāng, biéde yǐhòu zài shuō ba.',
-     sampleVn:'Nội dung sâu quá, nhiều chỗ tớ đọc không hiểu. Tớ cứ tạm đọc hiểu mấy chương đầu đã, phần còn lại tính sau.',
-     tip:'姑且 + 先 + V，……以后再说 = tạm … đã, sau hẵng tính; 太……了 + 看不懂 nêu lý do.'},
-
-    {scene:'Mẹ lo lắng vì em nhận lời làm lớp trưởng khi sắp thi.',
-     a:{sp:'Mẹ',zh:'快考试了，你还当班长，事情那么多，不会影响学习吗？',vn:'Sắp thi rồi mà con còn làm lớp trưởng, việc nhiều thế, không ảnh hưởng học hành à?'},
-     need:['Dùng 势必 hoặc 一定 (đúng cách dùng)','Trấn an mẹ'],
-     sample:'妈，您放心吧。我知道时间安排不好势必会影响学习，所以我一定会把时间安排好的。',
-     samplePy:'Mā, nín fàngxīn ba. Wǒ zhīdào shíjiān ānpái bù hǎo shìbì huì yǐngxiǎng xuéxí, suǒyǐ wǒ yídìng huì bǎ shíjiān ānpái hǎo de.',
-     sampleVn:'Mẹ yên tâm đi ạ. Con biết sắp xếp thời gian không tốt thì chắc chắn sẽ ảnh hưởng việc học, nên con nhất định sẽ sắp xếp thời gian cho tốt.',
-     tip:'势必 cho kết quả BẤT LỢI tất yếu; 一定 để bày tỏ quyết tâm (一定会 / 一定要) — 势必 không dùng như vậy.'},
-
-    {scene:'Một bạn nhờ em giúp sửa máy tính, nhưng em hoàn toàn không biết sửa.',
-     a:{sp:'Bạn',zh:'我的电脑突然开不了机了，你能帮我看看吗？',vn:'Máy tính của tớ tự nhiên không bật được, cậu xem giúp tớ được không?'},
-     need:['Dùng 无能为力','Gợi ý một cách khác'],
-     sample:'真不好意思，修电脑这种事我实在无能为力。你不如去问问小李，他对电脑很在行。',
-     samplePy:'Zhēn bù hǎoyìsi, xiū diànnǎo zhè zhǒng shì wǒ shízài wúnéngwéilì. Nǐ bùrú qù wènwen Xiǎo Lǐ, tā duì diànnǎo hěn zàiháng.',
-     sampleVn:'Thật ngại quá, chuyện sửa máy tính thì tớ thật sự bó tay. Cậu hay là đi hỏi Tiểu Lý xem, cậu ấy rất rành máy tính.',
-     tip:'……这种事我实在无能为力 (无能为力 đứng cuối, không mang tân ngữ); 不如 + gợi ý khác.'},
-
-    {scene:'Ông nội xem lại ảnh cũ của làng, hỏi em có nhận ra không.',
-     a:{sp:'Ông nội',zh:'你看，这是三十年前咱们村的照片，还认得出来吗？',vn:'Cháu xem, đây là ảnh làng mình ba mươi năm trước, còn nhận ra không?'},
-     need:['Dùng 感慨 hoặc 确切地说','Nói về sự thay đổi'],
-     sample:'几乎认不出来了！确切地说，只有那棵大树还是老样子。看到这么大的变化，我也很感慨。',
-     samplePy:'Jīhū rèn bu chūlái le! Quèqiè de shuō, zhǐyǒu nà kē dà shù háishi lǎo yàngzi. Kàndào zhème dà de biànhuà, wǒ yě hěn gǎnkǎi.',
-     sampleVn:'Gần như không nhận ra nữa ạ! Nói chính xác thì chỉ có cây đa to kia là vẫn như cũ. Thấy thay đổi lớn thế này, cháu cũng thấy bồi hồi lắm.',
-     tip:'确切地说 dùng để nói rõ / chỉnh lại ý vừa nêu; 看到……，很感慨.'}
+    {scene:'Em trai than phiền vì đập mãi không trúng con ruồi trong bếp.',a:{sp:'Em trai',zh:'这只苍蝇太气人了，我打了十几次都没打中！',vn:'Con ruồi này tức thật, em đập mười mấy lần mà chẳng trúng!'},need:['Dùng 在……眼里 và 迟缓','Giải thích lý do một cách khoa học'],sample:'别白费力气了。在苍蝇眼里，你的动作太迟缓了，就像慢动作一样，它当然躲得过去。',samplePy:'Bié báifèi lìqi le. Zài cāngying yǎn li, nǐ de dòngzuò tài chíhuǎn le, jiù xiàng màn dòngzuò yíyàng, tā dāngrán duǒ de guòqù.',sampleVn:'Đừng phí sức nữa. Trong mắt con ruồi, động tác của em chậm quá, cứ như quay chậm vậy, nó né được là phải rồi.',tip:'在……眼里 = trong mắt …; 迟缓 dùng cho động tác; bổ ngữ khả năng 躲得过去 = né được.'},
+    {scene:'Bạn cùng lớp hỏi vì sao em đọc mãi một cuốn sách khoa học mà vẫn chưa xong.',a:{sp:'Bạn',zh:'那本书你看了一个月了，怎么还没看完？',vn:'Cuốn sách đó cậu đọc một tháng rồi, sao vẫn chưa xong?'},need:['Dùng 深奥','Dùng 姑且 để nói kế hoạch tạm thời'],sample:'内容太深奥了，很多地方我都看不懂。我姑且先把前面的部分看懂，别的以后再说吧。',samplePy:'Nèiróng tài shēn\'ào le, hěn duō dìfang wǒ dōu kàn bu dǒng. Wǒ gūqiě xiān bǎ qiánmiàn de bùfen kàndǒng, biéde yǐhòu zài shuō ba.',sampleVn:'Nội dung sâu quá, nhiều chỗ tớ đọc không hiểu. Tớ cứ tạm đọc hiểu phần đầu đã, phần còn lại tính sau.',tip:'姑且 + 先 + V，……以后再说 = tạm … đã, sau hẵng tính; 太……了 + 看不懂 nêu lý do.'},
+    {scene:'Mẹ lo lắng vì em nhận lời làm lớp trưởng khi sắp thi.',a:{sp:'Mẹ',zh:'马上要考试了，你还当班长，事情那么多，不会影响学习吗？',vn:'Sắp thi rồi mà con còn làm lớp trưởng, việc nhiều thế, không ảnh hưởng học hành à?'},need:['Dùng 势必 hoặc 一定 (đúng cách dùng)','Trấn an mẹ'],sample:'妈，您别担心。我知道时间安排不好势必会影响学习，所以我一定会把时间安排好的。',samplePy:'Mā, nín bié dānxīn. Wǒ zhīdào shíjiān ānpái bù hǎo shìbì huì yǐngxiǎng xuéxí, suǒyǐ wǒ yídìng huì bǎ shíjiān ānpái hǎo de.',sampleVn:'Mẹ đừng lo ạ. Con biết sắp xếp thời gian không tốt thì chắc chắn sẽ ảnh hưởng việc học, nên con nhất định sẽ sắp xếp thời gian cho tốt.',tip:'势必 cho kết quả BẤT LỢI tất yếu; 一定 để bày tỏ quyết tâm (一定会 / 一定要) — 势必 không dùng như vậy.'},
+    {scene:'Một bạn nhờ em giúp sửa máy tính, nhưng em hoàn toàn không biết sửa.',a:{sp:'Bạn',zh:'我的电脑突然开不了机了，你帮我看一下好吗？',vn:'Máy tính của tớ tự nhiên không bật được, cậu xem giúp tớ một chút được không?'},need:['Dùng 无能为力','Gợi ý một cách khác'],sample:'实在不好意思，修电脑这种事我无能为力。你不如去问问小李，他对电脑很在行。',samplePy:'Shízài bù hǎoyìsi, xiū diànnǎo zhè zhǒng shì wǒ wúnéngwéilì. Nǐ bùrú qù wènwen Xiǎo Lǐ, tā duì diànnǎo hěn zàiháng.',sampleVn:'Thật ngại quá, chuyện sửa máy tính thì tớ bó tay. Cậu hay là đi hỏi Tiểu Lý xem, cậu ấy rất rành máy tính.',tip:'……这种事我实在无能为力 (无能为力 đứng cuối, không mang tân ngữ); 不如 + gợi ý khác.'},
+    {scene:'Ông nội xem lại ảnh cũ của làng, hỏi em có nhận ra không.',a:{sp:'Ông nội',zh:'你看，这是三十年前我们村的照片，你还能认出来吗？',vn:'Cháu xem, đây là ảnh làng mình ba mươi năm trước, cháu còn nhận ra không?'},need:['Dùng 感慨','Nói về sự thay đổi'],sample:'几乎认不出来了！只有村口那棵大树还是老样子。看到这么大的变化，我心里也很感慨。',samplePy:'Jīhū rèn bu chūlái le! Zhǐyǒu cūnkǒu nà kē dà shù háishi lǎo yàngzi. Kàndào zhème dà de biànhuà, wǒ xīnli yě hěn gǎnkǎi.',sampleVn:'Gần như không nhận ra nữa ạ! Chỉ có cây to ở đầu làng là vẫn như cũ. Thấy thay đổi lớn thế này, cháu cũng thấy bồi hồi lắm.',tip:'看到 + sự thay đổi，(心里) 很感慨 = bồi hồi, xúc động; 认不出来 = không nhận ra nổi.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 // 🎯 NÓI SAO CHO HAY — 得体 / 语体
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 var registerData = {
-  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
-         'HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
   items: [
-    {scene:'Em viết báo cáo môn Sinh học về thị giác của côn trùng.',
-     a:'苍蝇的CFF高达250HZ，对视觉刺激的反应速度约为人眼的4倍。',b:'苍蝇眼睛可厉害了，看东西比咱们快好几倍呢！',better:'a',
-     why:'Báo cáo khoa học cần số liệu và thuật ngữ chính xác (CFF, 高达, 视觉刺激, 约为). Câu b (可厉害了, 咱们, 呢) là khẩu ngữ.'},
-
-    {scene:'Em kể với bạn thân chuyện đập ruồi hôm qua.',
-     a:'昨日本人多次尝试拍打苍蝇，均未成功。',b:'昨天我拍了半天苍蝇，一次也没拍着，气死我了！',better:'b',
-     why:'Kể chuyện với bạn dùng khẩu ngữ tự nhiên (拍了半天, 没拍着, 气死我了); câu a (昨日, 本人, 均未) giống biên bản.'},
-
-    {scene:'Thầy giáo nhận xét bài luận của em trước lớp.',
-     a:'你这篇文章写得太乱了，东一句西一句的，看不懂。',b:'文章论证不够充分，论点之间缺少联系，建议调整结构。',better:'b',
-     why:'Nhận xét học thuật nên dùng từ chuẩn: 论证, 论点, 结构 và giọng khách quan; câu a đúng ý nhưng nghe như chê bai, thiếu tính xây dựng.'},
-
-    {scene:'Em gọi con chó của nhà hàng xóm khi nói chuyện với em bé 5 tuổi.',
-     a:'你看，那只小狗多可爱呀！',b:'你看，那只幼犬的外形十分可爱。',better:'a',
-     why:'Nói với trẻ nhỏ dùng từ đơn giản, thân mật (小狗, 多……呀). 幼犬, 外形, 十分 là văn viết, không hợp với em bé.'},
-
-    {scene:'Người dẫn chương trình giới thiệu một bộ phim tài liệu về văn hoá Trung Hoa.',
-     a:'中国文化博大精深，这部纪录片将带您走进五千年的历史长河。',b:'中国文化东西特别多，这个片子带你看看以前的事儿。',better:'a',
-     why:'Lời dẫn trên truyền hình cần trang trọng, giàu hình ảnh: 博大精深, 将带您走进, 历史长河. Câu b (东西特别多, 片子, 事儿) quá khẩu ngữ.'},
-
-    {scene:'Bạn nhờ em giúp một việc em không làm được, em từ chối qua tin nhắn.',
-     a:'鉴于本人能力有限，对此事无能为力，望谅解。',b:'不好意思啊，这事儿我真帮不上忙，你再问问别人吧！',better:'b',
-     why:'Nhắn tin với bạn nên dùng khẩu ngữ gần gũi (帮不上忙, 这事儿); câu a (鉴于, 本人, 望谅解) giống văn bản hành chính, nghe xa cách.'}
+    {scene:'Em viết báo cáo thí nghiệm môn Sinh học.',a:'实验结果显示，体型越小的动物，反应速度越快。',b:'我们发现小动物反应可快了，比大动物快多了！',better:'a',why:'Báo cáo khoa học cần giọng khách quan, từ văn viết: 结果显示, 体型, 越……越…… thành mệnh đề khái quát. Câu b (可快了, 快多了) là khẩu ngữ khi kể chuyện.'},
+    {scene:'Em kể với bạn thân chuyện đập ruồi hôm qua.',a:'昨天本人多次拍打苍蝇，都没有成功。',b:'昨天我拍了半天苍蝇，一次也没拍着，气死我了！',better:'b',why:'Kể chuyện với bạn dùng khẩu ngữ tự nhiên (拍了半天, 没拍着, 气死我了); câu a (本人, 多次拍打) giống biên bản, nghe buồn cười.'},
+    {scene:'Thầy giáo viết nhận xét vào bài luận của em.',a:'你这篇文章写得太乱了，想到哪儿写到哪儿，看不懂。',b:'文章论证不够充分，前后缺少联系，建议调整一下结构。',better:'b',why:'Lời phê bài nên dùng từ chuẩn (论证, 结构, 建议) và giọng xây dựng; câu a đúng ý nhưng nghe như chê bai.'},
+    {scene:'Biển báo dựng ở cổng công viên.',a:'本公园禁止携带犬只进入。',b:'别把狗带进公园来啊！',better:'a',why:'Biển báo dùng văn viết: 本公园, 禁止, 携带, 犬只 — 犬 là cách gọi văn vẻ của 狗. Câu b là lời nhắc miệng.'},
+    {scene:'Người dẫn chương trình giới thiệu một bộ phim tài liệu về văn hoá Trung Hoa.',a:'中国文化东西特别多，这个片子带你看看以前的事儿。',b:'中国文化博大精深，这部纪录片将带您走进五千年的历史长河。',better:'b',why:'Lời dẫn trên truyền hình cần trang trọng, giàu hình ảnh: 博大精深, 将带您走进, 历史长河. Câu a (东西特别多, 片子, 事儿) quá khẩu ngữ.'},
+    {scene:'Bạn nhờ em giúp một việc em không làm được, em từ chối qua tin nhắn.',a:'不好意思啊，这事儿我真帮不上忙，你再问问别人吧！',b:'鉴于本人能力有限，对此事无能为力，请您原谅。',better:'a',why:'Nhắn tin với bạn nên dùng khẩu ngữ gần gũi (帮不上忙, 这事儿); câu b (鉴于, 本人, 对此事) giống văn bản hành chính, nghe xa cách.'}
   ]
 };
 

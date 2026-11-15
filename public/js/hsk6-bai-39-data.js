@@ -1579,91 +1579,51 @@ var hvBridgeData = {
 // GHÉP TỪ — cụm từ trong bài khoá
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'生活正发生着日新月异的',right:'变化'},
-  {left:'生活不再单调',right:'沉闷'},
-  {left:'每一天都变得浪漫、丰富和',right:'充实'},
-  {left:'将异地购物、',right:'交易变为了可能'},
-  {left:'足不出户就能任意',right:'挑选'},
-  {left:'自由而不失',right:'乐趣'},
-  {left:'设立个人',right:'网站'},
-  {left:'让你小小的',right:'虚荣心得到满足'},
-  {left:'赠送给他们的珍贵',right:'礼物'},
-  {left:'合伙筹备',right:'资金'},
-  {left:'互联网金融下的新',right:'成员'},
-  {left:'初步打算召集',right:'200人'},
-  {left:'递交申请表、通过',right:'审查'},
-  {left:'缴纳100元',right:'订金'},
-  {left:'众筹买房还处于',right:'摸索阶段'},
-  {left:'基本属于同一',right:'阶层'},
-  {left:'大家每天在微信群你来我往，忙碌而',right:'欢乐'},
-  {left:'成为持有美微股份的',right:'股东'},
-  {left:'钞票源源不断',right:'流进来'},
-  {left:'众筹项目有处境',right:'尴尬的'},
-  {left:'国内用户甚至有些',right:'急功近利'},
-  {left:'就会发牢骚，',right:'有怨气'},
-  {left:'看起来很美、做起来',right:'吃力'},
-  {left:'给我们增添了无穷无尽的',right:'烦恼'},
-  {left:'大肆进行',right:'诈骗'},
-  {left:'被警方依法刑事',right:'拘留'},
-  {left:'败坏互联网',right:'名誉'},
-  {left:'使我们有触目惊心',right:'之感'}
+  {left:'缴纳',right:'学费'},
+  {left:'设立',right:'分公司'},
+  {left:'败坏',right:'名誉'},
+  {left:'筹备',right:'婚礼'},
+  {left:'审查',right:'申请材料'},
+  {left:'抛弃',right:'旧观念'},
+  {left:'发',right:'牢骚'},
+  {left:'珍贵的',right:'文物'},
+  {left:'无穷无尽的',right:'烦恼'},
+  {left:'冒充',right:'警察'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ — mỗi từ của bài ít nhất một câu (fill + chọn từ)
+// ĐIỀN TỪ — câu mới (không chép bài khoá / SGK), mỗi câu một tình huống; ôn xoáy ốc từ + ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'这几年，我们城市的面貌',blank:'日新月异',post:'，到处都是新盖的高楼。',hint:'(thay đổi từng ngày)',ans:'日新月异'},
-  {pre:'退休以后，奶奶参加了合唱团，生活过得很',blank:'充实',post:'。',hint:'(đủ đầy)',ans:'充实'},
-  {pre:'双方谈了一个下午，终于完成了这笔',blank:'交易',post:'。',hint:'(giao dịch)',ans:'交易'},
-  {pre:'这个软件可以把照片',blank:'任意',post:'放大或缩小。',hint:'(tuỳ ý)',ans:'任意',exp:'任意 + V = tùy ý (không bị hạn chế): 任意放大或缩小.'},
-  {pre:'我不喜欢钓鱼，感觉不到其中的',blank:'乐趣',post:'。',hint:'(niềm vui, cái thú)',ans:'乐趣'},
-  {pre:'为了满足自己的',blank:'虚荣',post:'心，他借钱买了一辆豪车。',hint:'(hư vinh)',ans:'虚荣'},
-  {pre:'大学毕业后，他和两个同学',blank:'合伙',post:'开了一家网店。',hint:'(hùn vốn)',ans:'合伙'},
-  {pre:'这只小狗已经成了我们家的新',blank:'成员',post:'。',hint:'(thành viên)',ans:'成员'},
-  {pre:'我们',blank:'初步',post:'打算暑假去云南旅行，具体时间还没定。',hint:'(bước đầu, dự tính ban đầu)',ans:'初步'},
-  {pre:'提前一个月订机票能便宜一半，很',blank:'合算',post:'。',hint:'(hời, có lợi)',ans:'合算'},
-  {pre:'这篇文章',blank:'层次',post:'分明，读起来很清楚。',hint:'(lớp lang, trình độ)',ans:'层次'},
-  {pre:'政府出台了一系列优惠',blank:'政策',post:'，鼓励年轻人创业。',hint:'(chính sách)',ans:'政策'},
-  {pre:'春节联欢晚会上，到处都是',blank:'欢乐',post:'的笑声。',hint:'(vui vẻ)',ans:'欢乐'},
-  {pre:'短视频很容易让人',blank:'上瘾',post:'，一看就是一两个小时。',hint:'(nghiện)',ans:'上瘾'},
-  {pre:'这位歌手把演唱会的收入全部捐给了',blank:'慈善',post:'机构。',hint:'(từ thiện)',ans:'慈善'},
-  {pre:'他在这家公司占百分之二十的',blank:'股份',post:'。',hint:'(cổ phần)',ans:'股份'},
-  {pre:'公司每年召开一次',blank:'股东',post:'大会，讨论下一年的发展计划。',hint:'(cổ đông)',ans:'股东'},
-  {pre:'现在大家都用手机付款，很少有人带',blank:'钞票',post:'出门了。',hint:'(tiền giấy)',ans:'钞票'},
-  {pre:'父母辛苦了大半辈子，现在终于',blank:'苦尽甘来',post:'了。',hint:'(hết khổ đến sướng)',ans:'苦尽甘来'},
-  {pre:'我叫错了他的名字，场面十分',blank:'尴尬',post:'。',hint:'(khó xử, ngượng)',ans:'尴尬'},
-  {pre:'',blank:'坦白',post:'地说，我对这个结果并不满意。',hint:'(thẳng thắn)',ans:'坦白'},
-  {pre:'学语言不能',blank:'急功近利',post:'，要一步一步地打好基础。',hint:'(nóng vội cầu lợi)',ans:'急功近利'},
-  {pre:'光发',blank:'牢骚',post:'解决不了问题，还是想想办法吧。',hint:'(lời phàn nàn)',ans:'牢骚'},
-  {pre:'',blank:'迄今为止',post:'，这种病还没有有效的治疗方法。',hint:'(cho đến nay)',ans:'迄今为止',exp:'迄今为止 = cho đến nay (văn viết), đặt đầu câu.'},
-  {pre:'爷爷年纪大了，爬楼梯有些',blank:'吃力',post:'。',hint:'(vất vả, chật vật)',ans:'吃力'},
-  {pre:'孙悟空的故事在中国',blank:'家喻户晓',post:'，连小孩子都知道。',hint:'(ai ai cũng biết)',ans:'家喻户晓'},
-  {pre:'读书可以带给我们',blank:'无穷无尽',post:'的快乐。',hint:'(vô tận)',ans:'无穷无尽'},
-  {pre:'警方用了三天时间，终于抓获了那名',blank:'罪犯',post:'。',hint:'(tội phạm)',ans:'罪犯'},
-  {pre:'这伙人',blank:'大肆',post:'捕杀野生动物，引起了公愤。',hint:'(trắng trợn)',ans:'大肆',exp:'大肆 + V = trắng trợn, không kiêng nể (nghĩa xấu): 大肆捕杀.'},
-  {pre:'老年人最容易成为电信',blank:'诈骗',post:'的对象。',hint:'(lừa đảo)',ans:'诈骗'},
-  {pre:'他因为酒后开车，被警察',blank:'拘留',post:'了十五天。',hint:'(tạm giữ)',ans:'拘留'},
-  {pre:'为了维护自己的',blank:'名誉',post:'，他把造谣的人告上了法庭。',hint:'(danh dự)',ans:'名誉'},
-  {pre:'这家餐厅使用过期食品的事被记者',blank:'曝光',post:'了。',hint:'(phanh phui)',ans:'曝光'}
+  {pre:'手机技术',blank:'日新月异',post:'，去年买的手机今年就已经落后了。',hint:'(thay đổi từng ngày)',ans:'日新月异',exp:'日新月异 = đổi mới từng ngày, làm vị ngữ cho chủ ngữ là "sự phát triển, kỹ thuật". Không dùng cho người (×他日新月异).'},
+  {pre:'这件衣服网上比商场便宜一百多块，在网上买更',blank:'合算',post:'。',hint:'(có lợi, hời)',ans:'合算',exp:'合算 = bỏ ra ít mà được nhiều, có lợi. 合适 = vừa vặn, phù hợp (cỡ áo) — không nói về giá hời.'},
+  {pre:'他喝咖啡已经',blank:'上瘾',post:'了，一天不喝就没精神。',hint:'(nghiện)',ans:'上瘾',exp:'上瘾 = nghiện (động từ ly hợp, không mang tân ngữ: ×上瘾咖啡); muốn nói nghiện cái gì thì đặt việc làm phía trước: 喝咖啡上瘾.'},
+  {pre:'我想跟朋友',blank:'合伙',post:'做生意，可是爸爸担心我们会因为钱伤了感情。',hint:'(hùn vốn)',ans:'合伙',exp:'跟 + ai + 合伙 + V = hùn vốn cùng ai làm gì. 合作 = hợp tác (giữa hai bên độc lập), không nhấn việc chung vốn.'},
+  {pre:'这张老照片是爷爷留下的，对我们全家来说非常',blank:'珍贵',post:'。',hint:'(quý giá)',ans:'珍贵',exp:'珍贵 = quý giá vì hiếm, có ý nghĩa (đồ vật, kỷ niệm). 昂贵 chỉ là đắt tiền; 宝贵 hay đi với thứ trừu tượng (宝贵的时间 / 经验).'},
+  {pre:'这位歌手每年都拿出一部分收入做',blank:'慈善',post:'，帮助山区的孩子上学。',hint:'(từ thiện)',ans:'慈善',exp:'做慈善 = làm từ thiện; 慈善活动 / 慈善机构. Đừng dịch từng chữ "từ thiện" thành 好心.'},
+  {pre:'他留下的最后一部小说',blank:'尚未',post:'出版，很多读者都在等。',hint:'(vẫn chưa)',ans:'尚未',exp:'尚未 + V = 还没有 + V (văn viết). Sau 尚未 không thêm 了 (×尚未出版了). 未必 = chưa chắc, nghĩa khác.'},
+  {pre:'这家自助餐厅的菜你可以',blank:'任意',post:'选，吃多少都行。',hint:'(tùy ý)',ans:'任意',exp:'可以 + 任意 + V = muốn chọn thế nào cũng được, không bị hạn chế. 任意 đứng trước động từ, không làm vị ngữ một mình (×大家很任意).'},
+  {pre:'他终于向父母',blank:'坦白',post:'了自己考试没及格的事。',hint:'(thú nhận)',ans:'坦白',exp:'向 + ai + 坦白 + việc = thú nhận thật với ai. 表白 là bày tỏ tình cảm; 说明 là giải thích, không có ý "nhận lỗi".'},
+  {pre:'他一遇到不顺心的事就发',blank:'牢骚',post:'，大家都不愿意跟他一起工作。',hint:'(lời càu nhàu)',ans:'牢骚',exp:'发牢骚 = càu nhàu, kêu ca (cụm cố định với 发). 脾气 đi với 发 nghĩa là nổi nóng, khác "kêu ca".'},
+  {pre:'这篇文章生词太多，我读起来很',blank:'吃力',post:'。',hint:'(vất vả, khó nhọc)',ans:'吃力',exp:'V起来很吃力 = làm thấy vất vả, tốn sức. 吃惊 = giật mình; 努力 tả thái độ cố gắng, không tả cảm giác khó nhọc.'},
+  {pre:'那家工厂往河里倒脏水的事被记者',blank:'曝光',post:'以后，马上就被关了。',hint:'(phơi bày, vạch trần)',ans:'曝光',exp:'被 + ai + 曝光 = bị phanh phui trước công chúng (việc xấu). 发表 = đăng (bài viết), không mang ý vạch trần.'},
+  {pre:'她买那么贵的包不是因为需要，只是为了满足自己的',blank:'虚荣',post:'心。',hint:'(hư vinh, sĩ diện)',ans:'虚荣',exp:'虚荣心 = lòng hư vinh, thích được khen, thích phô trương (luôn mang ý chê). Đừng nhầm với "lòng tự trọng" (nghĩa tốt).'},
+  {pre:'我们小组的五个',blank:'成员',post:'来自三个不同的国家。',hint:'(thành viên)',ans:'成员',exp:'成员 = thành viên của một nhóm, tổ chức, gia đình (家庭成员). 人员 = nhân viên (theo nghề: 工作人员), không dùng cho nhóm bạn học.'},
+  {pre:'来听这次讲座的人文化',blank:'层次',post:'都比较高，问的问题也很专业。',hint:'(trình độ, cấp độ)',ans:'层次',exp:'文化层次 = trình độ học vấn. 阶层 = tầng lớp xã hội (社会阶层), không dùng để nói trình độ của từng người.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (任意 · 尚未 · 夸张) ít nhất 2 câu
+// SẮP XẾP CÂU — câu mới, chỉ một trật tự đúng
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['我们','足不出户','就能','任意','挑选','欧洲、美洲的','商品','。'],ans:'我们足不出户就能任意挑选欧洲、美洲的商品。',audio:'我们足不出户就能任意挑选欧洲、美洲的商品。'},
-  {words:['合同','一旦生效','，','任何一方','都不能','任意','反悔了','。'],ans:'合同一旦生效，任何一方都不能任意反悔了。',audio:'合同一旦生效，任何一方都不能任意反悔了。'},
-  {words:['你','任意','抽','一张纸牌','，','他','都能','猜出来','。'],ans:'你任意抽一张纸牌，他都能猜出来。',audio:'你任意抽一张纸牌，他都能猜出来。'},
-  {words:['尚未','查明','身份的','罪犯','盗窃了','大量','电子邮件账户','。'],ans:'尚未查明身份的罪犯盗窃了大量电子邮件账户。',audio:'尚未查明身份的罪犯盗窃了大量电子邮件账户。'},
-  {words:['在一些','偏远山区','，','网络','尚未','普及','。'],ans:'在一些偏远山区，网络尚未普及。',audio:'在一些偏远山区，网络尚未普及。'},
-  {words:['由于','电视','尚未','出现','，','电影','便成了','最热门的娱乐','。'],ans:'由于电视尚未出现，电影便成了最热门的娱乐。',audio:'由于电视尚未出现，电影便成了最热门的娱乐。'},
-  {words:['我住的','房间','，','只有','巴掌','这么大','。'],ans:'我住的房间，只有巴掌这么大。',audio:'我住的房间，只有巴掌这么大。'},
-  {words:['整个礼堂','静得','连掉根针','都能','听见','。'],ans:'整个礼堂静得连掉根针都能听见。',audio:'整个礼堂静得连掉根针都能听见。'},
-  {words:['天热得','像下火一样','，','柏油路','都','烤化了','。'],ans:'天热得像下火一样，柏油路都烤化了。',audio:'天热得像下火一样，柏油路都烤化了。'},
-  {words:['众筹买房','还','处于','摸索阶段','，','因此','必须','慎重','。'],ans:'众筹买房还处于摸索阶段，因此必须慎重。',audio:'众筹买房还处于摸索阶段，因此必须慎重。'},
-  {words:['坦白地说','，','我们','已经','离不开','手机','了','。'],ans:'坦白地说，我们已经离不开手机了。',audio:'坦白地说，我们已经离不开手机了。'},
-  {words:['这类事件','一经','曝光','，','就会','使我们','有触目惊心之感','。'],ans:'这类事件一经曝光，就会使我们有触目惊心之感。',audio:'这类事件一经曝光，就会使我们有触目惊心之感。'}
+  {words:['顾客','可以','任意','挑选','三种','口味','。'],ans:'顾客可以任意挑选三种口味。',audio:'顾客可以任意挑选三种口味。'},
+  {words:['新的','交通','政策','尚未','开始','实行','。'],ans:'新的交通政策尚未开始实行。',audio:'新的交通政策尚未开始实行。'},
+  {words:['那个','冒充','警察','的','罪犯','被','拘留','了','。'],ans:'那个冒充警察的罪犯被拘留了。',audio:'那个冒充警察的罪犯被拘留了。'},
+  {words:['她','持有','这家','公司','百分之十','的','股份','。'],ans:'她持有这家公司百分之十的股份。',audio:'她持有这家公司百分之十的股份。'},
+  {words:['他','把','赚来的','钞票','都','存进了','银行','。'],ans:'他把赚来的钞票都存进了银行。',audio:'他把赚来的钞票都存进了银行。'},
+  {words:['他的','房间','小得','连','转身','都','难','。'],ans:'他的房间小得连转身都难。',audio:'他的房间小得连转身都难。'},
+  {words:['这个','项目','的','进展','比','计划','慢','多了','。'],ans:'这个项目的进展比计划慢多了。',audio:'这个项目的进展比计划慢多了。'},
+  {words:['晚会','上','充满了','欢乐','的','气氛','。'],ans:'晚会上充满了欢乐的气氛。',audio:'晚会上充满了欢乐的气氛。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1671,72 +1631,44 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'屋子里谁也不说话，气氛十分____。',opts:['沉闷','沉默','沉重','沉着'],ans:0,
-   exp:'气氛沉闷 = bầu không khí nặng nề, ngột ngạt. 沉默 = im lặng (nói người: 他沉默了); 沉重 = nặng nề (gánh nặng, tâm trạng: 心情沉重); 沉着 = điềm tĩnh.'},
-  {wrong:'退休以后，爷爷每天看书、种花，日子过得很____。',opts:['充足','充分','充满','充实'],ans:3,
-   exp:'日子过得很充实 = sống rất đủ đầy, có ý nghĩa. 充足 = dồi dào (nước, ánh sáng, thời gian: 阳光充足); 充分 = đầy đủ, triệt để (理由充分); 充满 là động từ, phải có tân ngữ (充满希望).'},
-  {wrong:'现在用手机就能随时进行股票____。',opts:['贸易','交换','交易','交流'],ans:2,
-   exp:'股票交易 = giao dịch cổ phiếu (cụm cố định). 贸易 = thương mại (国际贸易); 交换 = trao đổi (đồ vật, ý kiến); 交流 = giao lưu.'},
-  {wrong:'这家公司在胡志明市____了一个办事处。',opts:['成立','设立','建立','树立'],ans:1,
-   exp:'设立 + 办事处 = lập văn phòng đại diện (đặt ra một cơ sở, bắt buộc có tân ngữ). 成立 nhấn tổ chức ra đời, hay không có tân ngữ (公司成立了); 建立 = xây dựng (quan hệ, chế độ); 树立 = xây dựng (hình tượng, tấm gương — bài 36).'},
-  {wrong:'博物馆里收藏着许多____的文物。',opts:['昂贵','珍贵','高贵','贵族'],ans:1,
-   exp:'珍贵的文物 = cổ vật quý giá (giá trị hiếm có). 昂贵 = đắt đỏ (chỉ giá tiền — bài 22); 高贵 = cao quý (phẩm chất, địa vị); 贵族 là danh từ (quý tộc — bài 33).'},
-  {wrong:'为了____这次国际会议，大家忙了整整三个月。',opts:['筹备','预备','储备','具备'],ans:0,
-   exp:'筹备会议 = trù bị, chuẩn bị tổ chức hội nghị (việc lớn). 预备 = dự bị, chuẩn bị sẵn (预备铃); 储备 = dự trữ (bài 21); 具备 = có đủ (điều kiện).'},
-  {wrong:'申请材料要经过有关部门____，合格以后才能办理。',opts:['调查','检查','审查','观察'],ans:2,
-   exp:'审查材料 = xét duyệt hồ sơ (do cơ quan có thẩm quyền). 检查 = kiểm tra nói chung (检查身体); 调查 = điều tra (sự việc); 观察 = quan sát.'},
-  {wrong:'每个公民都应该依法____税款。',opts:['交换','缴纳','采纳','容纳'],ans:1,
-   exp:'缴纳税款 = nộp thuế. 采纳 = tiếp thu (ý kiến); 容纳 = chứa được (bài 36); 交换 = trao đổi.'},
-  {wrong:'我们应该通过正规____了解信息，不要轻信谣言。',opts:['渠道','轨道','跑道','频道'],ans:0,
-   exp:'正规渠道 = kênh chính thống (con đường tiếp nhận thông tin). 轨道 = đường ray, quỹ đạo (bài 30); 跑道 = đường chạy; 频道 = kênh truyền hình — tiếng Việt đều gọi "kênh" nên rất dễ nhầm.'},
-  {wrong:'经过几年的____，他终于找到了一套适合自己的学习方法。',opts:['探望','搜索','寻求','摸索'],ans:3,
-   exp:'经过……的摸索 = sau … tìm tòi, dò dẫm (từng bước tìm ra cách). 探望 = thăm hỏi (bài 25); 搜索 = tìm kiếm (trên mạng); 寻求 = tìm kiếm (sự giúp đỡ, giải pháp), không đi với 经过……的.'},
-  {wrong:'这项政策得到了社会各____的支持。',opts:['层次','阶层','阶段','台阶'],ans:1,
-   exp:'社会各阶层 = các tầng lớp xã hội. 层次 = trình độ, cấp độ, lớp lang; 阶段 = giai đoạn; 台阶 = bậc thềm.'},
-  {wrong:'这只小狗被主人____了，每天在街上流浪。',opts:['放弃','丢失','抛弃','废弃'],ans:2,
-   exp:'被主人抛弃 = bị chủ ruồng bỏ (người, vật nuôi). 放弃 = từ bỏ (cơ hội, quyền lợi); 丢失 = đánh mất (vô ý); 废弃 = bỏ không dùng (đồ vật, công trình: 废弃的工厂).'},
-  {wrong:'经过一个月的调查，这个案件终于有了新的____。',opts:['进步','进口','进攻','进展'],ans:3,
-   exp:'有了新的进展 = có tiến triển mới (công việc, sự việc). 进步 = tiến bộ (người, học tập); 进口 = nhập khẩu; 进攻 = tấn công (bài 24).'},
-  {wrong:'黑客____了公司的商业机密，造成了巨大的损失。',opts:['盗窃','窃听','偷看','抢劫'],ans:0,
-   exp:'盗窃机密 = đánh cắp bí mật. 窃听 = nghe lén (điện thoại); 偷看 = nhìn trộm; 抢劫 = cướp (dùng vũ lực công khai).'},
-  {wrong:'有人____快递员给我打电话，想骗我的银行卡密码。',opts:['充当','扮演','充满','冒充'],ans:3,
-   exp:'冒充 + thân phận = giả danh để lừa. 充当 = đảm nhận vai trò (thật: 充当翻译); 扮演 = đóng vai (kịch, phim); 充满 = tràn đầy.'},
-  {wrong:'这个人道德____，大家都看不起他。',opts:['败坏','损坏','破坏','坏处'],ans:0,
-   exp:'道德败坏 = đạo đức suy đồi (cụm cố định). 损坏 = làm hỏng đồ vật (bài 29); 破坏 = phá hoại (động từ, cần tân ngữ); 坏处 = cái hại (danh từ).'},
-  {wrong:'只有乐观的人才能随时享受生活中的____。',opts:['兴趣','爱好','乐趣','好奇'],ans:2,
-   exp:'享受……的乐趣 = tận hưởng niềm vui (做一做 của sách). 兴趣 đi với 感 / 引起 / 培养; 爱好 = sở thích (không đi với 享受); 好奇 là tính từ.'},
-  {wrong:'他竟然在考场上____作弊，被老师当场抓住了。',opts:['公开','公然','公平','公正'],ans:1,
-   exp:'公然 + hành vi xấu = ngang nhiên (mang ý chê). 公开 = công khai (trung tính: 公开道歉); 公平 / 公正 = công bằng.'}
+  {wrong:'他的课总是照着书念，听起来十分____，学生们都快睡着了。',opts:['沉闷','沉默','沉重','沉着'],ans:0,exp:'沉闷 = buồn tẻ, nặng nề (không khí, bài giảng). 沉默 = im lặng (người); 沉重 = nặng nề (gánh nặng, tâm trạng); 沉着 = bình tĩnh.'},
+  {wrong:'这个假期我学会了游泳，又读了十本书，过得很____。',opts:['充实','充足','充分','充满'],ans:0,exp:'过得很充实 = sống phong phú, có ý nghĩa. 充足 = đủ (阳光充足); 充分 = đầy đủ (理由充分); 充满 phải có tân ngữ (充满希望).'},
+  {wrong:'这笔____数额很大，银行要仔细审查。',opts:['交易','交换','交流','交往'],ans:0,exp:'一笔交易 = một vụ giao dịch mua bán (lượng từ 笔, ôn 数额 bài 38). 交换 = trao đổi đồ vật; 交流 = giao lưu; 交往 = qua lại (giữa người với người).'},
+  {wrong:'为了____这次国际会议，大家已经忙了整整三个月。',opts:['筹备','具备','配备','储备'],ans:0,exp:'筹备 + sự kiện lớn (会议 / 婚礼 / 晚会) = trù bị, lo liệu trước. 具备 + 条件 = có đủ; 配备 = trang bị; 储备 = dự trữ (粮食).'},
+  {wrong:'银行会依据你的收入情况对申请进行____，通过了才能借钱。',opts:['审查','调查','观察','考察'],ans:0,exp:'对申请 / 材料进行审查 = xét duyệt có đạt hay không (ôn 依据, bài 38). 调查 = điều tra sự việc; 观察 = quan sát; 考察 = khảo sát thực địa.'},
+  {wrong:'这家公司的产品主要通过网络____销售。',opts:['渠道','轨道','跑道','道路'],ans:0,exp:'销售渠道 = kênh bán hàng (nghĩa bóng). 轨道 = đường ray; 跑道 = đường chạy; 道路 = con đường (nghĩa đen).'},
+  {wrong:'经过几年的____，他终于找到了一套适合自己的学习方法。',opts:['摸索','探望','搜索','打听'],ans:0,exp:'经过……的摸索 = sau một thời gian mò mẫm, tự tìm ra cách. 探望 = thăm (người ốm); 搜索 = tìm kiếm (trên mạng); 打听 = hỏi thăm tin tức.'},
+  {wrong:'这项政策得到了社会各____的支持。',opts:['阶层','层次','阶段','台阶'],ans:0,exp:'社会各阶层 = mọi tầng lớp xã hội. 层次 = trình độ, cấp độ (文化层次); 阶段 = giai đoạn; 台阶 = bậc thềm.'},
+  {wrong:'这只小狗被主人____了，每天在路上流浪。',opts:['抛弃','放弃','失去','离开'],ans:0,exp:'被主人抛弃 = bị chủ vứt bỏ (người / con vật / đồ vật). 放弃 + 机会 / 计划 = từ bỏ; 失去 và 离开 không dùng trong câu 被 như vậy.'},
+  {wrong:'黑客____了公司的大量资料，造成了巨大的损失。',opts:['盗窃','抢劫','欺骗','逮捕'],ans:0,exp:'盗窃 = trộm (lén lút lấy, kể cả dữ liệu). 抢劫 = cướp (công khai, dùng vũ lực); 欺骗 + người = lừa dối; 逮捕 = bắt giữ (cảnh sát làm).'},
+  {wrong:'有人____我的朋友在网上向我借钱，幸亏我先打电话问了他。',opts:['冒充','充当','扮演','充满'],ans:0,exp:'冒充 + ai = giả mạo là người đó (để lừa). 充当 = đảm nhận vai trò thật (充当翻译); 扮演 = đóng vai (diễn kịch); 充满 = tràn đầy.'},
+  {wrong:'只有乐观的人才能随时发现生活中的____。',opts:['乐趣','兴趣','爱好','好奇'],ans:0,exp:'生活中的乐趣 = niềm vui, điều thú vị trong cuộc sống. 兴趣 / 爱好 là sở thích của người (对……有兴趣); 好奇 là tính từ.'},
+  {wrong:'那个司机____在学校门口停车，警察来了也不走。',opts:['公然','公共','当然','果然'],ans:0,exp:'公然 + V (việc sai) = ngang nhiên, trắng trợn trước mặt mọi người. 公共 = công cộng (公共场所), không làm trạng ngữ; 当然 = đương nhiên; 果然 = quả nhiên.'},
+  {wrong:'有些商家在网上____吹捧自己的产品，根本不管是不是真的。',opts:['大肆','大约','大方','大致'],ans:0,exp:'大肆 + V (việc xấu) = trắng trợn, không kiêng nể (ôn 吹捧, bài 38). 大约 = khoảng; 大方 = hào phóng; 大致 = đại khái.'},
+  {wrong:'学语言不能____，今天学了明天就想说得跟中国人一样，那是不可能的。',opts:['急功近利','苦尽甘来','家喻户晓','日新月异'],ans:0,exp:'急功近利 = nóng vội cầu lợi trước mắt. 苦尽甘来 = hết khổ đến sướng; 家喻户晓 = ai cũng biết; 日新月异 = đổi mới từng ngày — đều không hợp ý "nóng vội".'}
 ];
 
 // ══════════════════════════════════════════
-// DỊCH — câu ghép, dùng từ bài 39 + ôn từ HSK 6 bài 1–38 và HSK 4–5
+// DỊCH Việt → Trung — câu mới, dùng từ của bài + ôn ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Internet khiến cuộc sống của chúng ta thay đổi từng ngày; cho dù không bước chân ra khỏi nhà, ta vẫn có thể tha hồ chọn hàng hoá khắp thế giới.',zh:'互联网让我们的生活发生了日新月异的变化，就算足不出户，也能任意挑选世界各地的商品。',py:'Hùliánwǎng ràng wǒmen de shēnghuó fāshēngle rìxīn-yuèyì de biànhuà, jiùsuàn zú bù chū hù, yě néng rènyì tiāoxuǎn shìjiè gè dì de shāngpǐn.',goiY:['日新月异','就算……也……','任意'],giai:'就算……也…… = 即使……也…… (khẩu ngữ hơn) — giả thiết nhượng bộ. 任意 + V (điểm ngữ pháp 1) đứng sau động từ năng nguyện 能.'},
-  {vi:'Từ khi tham gia câu lạc bộ từ thiện của trường, thời gian ngoài giờ học của tôi không còn buồn tẻ nữa, trái lại trở nên rất đủ đầy.',zh:'自从加入了学校的慈善社团，我的课余生活不再沉闷，反而变得很充实。',py:'Zìcóng jiārùle xuéxiào de císhàn shètuán, wǒ de kèyú shēnghuó bú zài chénmèn, fǎn\'ér biàn de hěn chōngshí.',goiY:['自从……','慈善','不再……反而……','充实'],giai:'自从 + mốc thời gian = từ khi …; 反而 = trái lại (kết quả ngược với điều người ta nghĩ) — đừng dịch "trái lại" thành 而且.'},
-  {vi:'Thành thật mà nói, tớ đã nghiện game điện thoại rồi; thay vì cứ tiếp tục như thế, chi bằng nhờ cậu giúp tớ quản lý một chút.',zh:'坦白地说，我玩手机游戏已经上瘾了，与其这样下去，不如请你帮我管一管。',py:'Tǎnbái de shuō, wǒ wán shǒujī yóuxì yǐjīng shàngyǐn le, yǔqí zhèyàng xiàqu, bùrú qǐng nǐ bāng wǒ guǎn yi guǎn.',goiY:['坦白地说','上瘾','与其……不如……'],giai:'与其 A 不如 B = thay vì A chi bằng B (chọn B); 上瘾 là động từ li hợp nên 了 đặt cuối (上瘾了 / 上了瘾).'},
-  {vi:'Công tác chuẩn bị cho hoạt động này còn chưa xong mà phương án sơ bộ đã bị người ta đăng lên mạng; lỡ có chuyện gì thì ai chịu trách nhiệm?',zh:'这个活动的筹备工作尚未完成，初步方案就被人发到了网上，万一出了问题，谁来负责？',py:'Zhège huódòng de chóubèi gōngzuò shàngwèi wánchéng, chūbù fāng\'àn jiù bèi rén fādàole wǎngshàng, wànyī chūle wèntí, shéi lái fùzé?',goiY:['筹备','尚未','初步','万一'],giai:'尚未 = 还没有 (văn viết, điểm ngữ pháp 2), không thêm 了 sau động từ; ……就…… nhấn sự việc xảy ra quá sớm; 万一 = lỡ như (giả thiết điều không mong muốn).'},
-  {vi:'Giao dịch trên mạng tuy tiện lợi, nhưng nhất định phải thanh toán qua kênh chính thống để tránh bị lừa đảo.',zh:'网上交易虽然方便，但是一定要通过正规渠道付款，以免被人诈骗。',py:'Wǎngshàng jiāoyì suīrán fāngbiàn, dànshì yídìng yào tōngguò zhèngguī qúdào fùkuǎn, yǐmiǎn bèi rén zhàpiàn.',goiY:['交易','虽然……但是……','渠道','以免'],giai:'以免 (bài 21) đứng đầu vế cuối = để tránh; 诈骗 là từ pháp luật, ở đây dùng bị động 被人诈骗. Ba vế: nhượng bộ → yêu cầu → mục đích tránh.'},
-  {vi:'Chỉ khi vứt bỏ tâm lý nóng vội cầu lợi, từng bước tìm tòi, em mới tìm được phương pháp học phù hợp với mình.',zh:'只有抛弃急功近利的心态，一步一步地摸索，你才能找到适合自己的学习方法。',py:'Zhǐyǒu pāoqì jígōng-jìnlì de xīntài, yí bù yí bù de mōsuǒ, nǐ cái néng zhǎodào shìhé zìjǐ de xuéxí fāngfǎ.',goiY:['只有……才……','抛弃','急功近利','摸索'],giai:'只有……才…… (điều kiện duy nhất); 心态 — bài 24; 一步一步地 làm trạng ngữ (biến điệu: yí bù yí bù).'},
-  {vi:'Cô nói đề bài văn có thể tuỳ ý chọn, nhưng tôi nghĩ cả buổi tối vẫn chưa quyết định được, hôm sau không nộp nổi bài, rơi vào tình thế hết sức khó xử.',zh:'老师说作文题目可以任意选择，可我想了一晚上尚未决定，第二天交不出来，处境十分尴尬。',py:'Lǎoshī shuō zuòwén tímù kěyǐ rènyì xuǎnzé, kě wǒ xiǎngle yì wǎnshang shàngwèi juédìng, dì-èr tiān jiāo bu chūlai, chǔjìng shífēn gāngà.',goiY:['任意','尚未','尴尬'],giai:'任意 + V (tuỳ ý chọn); 尚未 + V (vẫn chưa…, văn viết) — trong lời nói có thể thay bằng 还没; 交不出来 = bổ ngữ khả năng phủ định.'},
-  {vi:'Hắn giả danh giáo viên đăng thông báo trong nhóm lớp, bắt các bạn nộp tiền tài liệu; may mà lớp trưởng phát hiện kịp thời.',zh:'他冒充老师的身份在班级群里发通知，让同学们缴纳资料费，幸亏班长及时发现了。',py:'Tā màochōng lǎoshī de shēnfen zài bānjí qún li fā tōngzhī, ràng tóngxuémen jiǎonà zīliàofèi, xìngkuī bānzhǎng jíshí fāxiàn le.',goiY:['冒充','缴纳','幸亏'],giai:'Chuỗi hành động nối tiếp (冒充……发通知，让……缴纳……) + 幸亏 = may mà (kết quả tốt nhờ một điều kiện bất ngờ, ôn HSK 5).'},
-  {vi:'Cho đến nay, lớp mình đã có ba bạn từng bị lừa trên mạng; đủ thấy ý thức phòng ngừa của mọi người vẫn chưa được nâng cao.',zh:'迄今为止，我们班已经有三个同学在网上被诈骗过，可见大家的防范意识尚未提高。',py:'Qìjīn wéizhǐ, wǒmen bān yǐjīng yǒu sān ge tóngxué zài wǎngshàng bèi zhàpiànguo, kějiàn dàjiā de fángfàn yìshi shàngwèi tígāo.',goiY:['迄今为止','诈骗','可见','尚未'],giai:'可见 = đủ thấy (rút ra kết luận từ sự thật vừa nêu); 被 + V + 过 = đã từng bị …; 尚未 phủ định sẵn, không thêm 了.'},
-  {vi:'Có kẻ cố tình tung tin đồn tràn lan trên mạng, làm hoen ố danh dự của trường ta; một khi làm rõ được, nhà trường nhất định sẽ truy cứu trách nhiệm của hắn theo pháp luật.',zh:'有人故意在网上大肆散布谣言，败坏了我们学校的名誉，一经查明，学校就一定会依法追究他的责任。',py:'Yǒu rén gùyì zài wǎngshàng dàsì sànbù yáoyán, bàihuàile wǒmen xuéxiào de míngyù, yì jīng chámíng, xuéxiào jiù yídìng huì yīfǎ zhuījiū tā de zérèn.',goiY:['大肆','败坏','名誉','一经……就……'],giai:'一经……就…… (văn viết, như câu bài khoá: 一经曝光，就……) = hễ đã … là lập tức …; 追究责任 — bài 23.'}
+  {vi:'Buổi hoạt động lần này chỗ ngồi không phân trước sau, mọi người có thể tùy ý ngồi.',zh:'这次活动的座位不分前后，大家可以任意坐。',py:'Zhè cì huódòng de zuòwèi bù fēn qiánhòu, dàjiā kěyǐ rènyì zuò.',goiY:['可以任意 + V','不分前后'],giai:'任意 đứng trước động từ 坐; 不分 + A + B = không phân biệt A, B.'},
+  {vi:'Vụ trộm này đến nay vẫn chưa được làm rõ, cảnh sát đang tìm thêm manh mối.',zh:'这起盗窃案件尚未调查清楚，警察正在寻找更多的线索。',py:'Zhè qǐ dàoqiè ànjiàn shàngwèi diàochá qīngchu, jǐngchá zhèngzài xúnzhǎo gèng duō de xiànsuǒ.',goiY:['尚未 + V','起 (lượng từ của vụ việc)','线索'],giai:'尚未调查清楚 = vẫn chưa điều tra rõ (văn viết); 一起案件 dùng lượng từ 起; 线索 ôn bài 37.'},
+  {vi:'Anh ấy hát to đến mức cách mấy cây số cũng nghe thấy.',zh:'他唱歌的声音大得连几公里外都能听见。',py:'Tā chàng gē de shēngyīn dà de lián jǐ gōnglǐ wài dōu néng tīngjiàn.',goiY:['Adj + 得 + 连……都……','夸张'],giai:'Khung phóng đại Adj得连……都……: phóng to sự việc để nhấn mạnh, không phải nói thật.'},
+  {vi:'Nói thật với cậu, mấy năm khởi nghiệp vất vả lắm, may mà giờ đã khổ tận cam lai.',zh:'跟你说实话，创业这几年很吃力，好在现在终于苦尽甘来了。',py:'Gēn nǐ shuō shíhuà, chuàngyè zhè jǐ nián hěn chīlì, hǎozài xiànzài zhōngyú kǔjìn-gānlái le.',goiY:['跟你说实话','吃力','苦尽甘来'],giai:'跟你说实话 mở đầu lời nói thật lòng; 好在 = may mà; 苦尽甘来 làm vị ngữ, thêm 了 chỉ sự thay đổi.'},
+  {vi:'Chuyện công ty này lừa khách hàng một khi bị phanh phui, danh tiếng của công ty sẽ bị huỷ hoại hoàn toàn.',zh:'这家公司欺骗顾客的事一经曝光，公司的名誉就会被彻底败坏。',py:'Zhè jiā gōngsī qīpiàn gùkè de shì yì jīng bàoguāng, gōngsī de míngyù jiù huì bèi chèdǐ bàihuài.',goiY:['一经……就……','曝光','败坏名誉'],giai:'Ôn 一经……就…… (bài 36): một khi đã … thì …; 曝光 đọc bàoguāng.'},
+  {vi:'Ba người họ hùn vốn mở công ty, đều là cổ đông, mỗi người nắm một phần ba cổ phần.',zh:'他们三个人合伙开公司，都是公司的股东，每人持有三分之一的股份。',py:'Tāmen sān ge rén héhuǒ kāi gōngsī, dōu shì gōngsī de gǔdōng, měi rén chíyǒu sān fēn zhī yī de gǔfèn.',goiY:['合伙','股东','持有……股份'],giai:'股东 = người (cổ đông), 股份 = phần vốn (cổ phần); 三分之一 = một phần ba.'}
 ];
 
-// Chiều Trung → Việt — bám ý bài khoá
+// ══════════════════════════════════════════
+// Dịch Trung → Việt — câu mới, không trùng chiều trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Nó khiến cuộc sống của chúng ta không còn đơn điệu buồn tẻ, ngày nào cũng trở nên lãng mạn, phong phú và đủ đầy.',zh:'它使我们的生活不再单调沉闷，每一天都变得浪漫、丰富和充实。',py:'Tā shǐ wǒmen de shēnghuó bú zài dāndiào chénmèn, měi yì tiān dōu biàn de làngmàn, fēngfù hé chōngshí.',goiY:['使 = khiến','沉闷 = buồn tẻ','充实 = đủ đầy'],giai:'Câu kiêm ngữ 使 + O + V; 不再 = không còn nữa. 充实 dịch "đủ đầy / có ý nghĩa", đừng dịch "sung túc".'},
-  {vi:'Chúng ta có thể lập trang web cá nhân, vừa mở rộng vòng bạn bè, vừa thoả mãn chút hư vinh nho nhỏ của mình.',zh:'我们能设立个人网站，既能扩大朋友圈，又能让小小的虚荣心得到满足。',py:'Wǒmen néng shèlì gèrén wǎngzhàn, jì néng kuòdà péngyouquān, yòu néng ràng xiǎoxiǎo de xūróngxīn dédào mǎnzú.',goiY:['设立 = lập','既……又…… = vừa … vừa …','虚荣心 = lòng hư vinh'],giai:'既……又…… nối hai lợi ích song song; 让……得到满足 = làm cho … được thoả mãn.'},
-  {vi:'Cái lợi của việc gọi vốn cộng đồng mua nhà nằm ở ưu thế rõ rệt về giá; dù để đầu tư hay để ở đều rất có lợi.',zh:'众筹购房的好处在于价格上拥有明显优势，无论是投资还是自住，都很合算。',py:'Zhòngchóu gòufáng de hǎochù zàiyú jiàgé shang yōngyǒu míngxiǎn yōushì, wúlùn shì tóuzī háishi zìzhù, dōu hěn hésuàn.',goiY:['在于 = nằm ở','无论……还是……都…… = dù … hay … đều','合算 = có lợi'],giai:'……的好处在于…… = cái lợi của … là ở chỗ …; 无论 A 还是 B 都 C (điều kiện nào kết quả cũng không đổi).'},
-  {vi:'Người đăng ký sau khi được xét duyệt, nộp 100 tệ tiền đặt cọc là có thể vào nhóm WeChat mua nhà.',zh:'申请人通过审查后，缴纳100元订金，就可以进入购房微信群。',py:'Shēnqǐngrén tōngguò shěnchá hòu, jiǎonà yìbǎi yuán dìngjīn, jiù kěyǐ jìnrù gòufáng Wēixìn qún.',goiY:['审查 = xét duyệt','缴纳 = nộp','订金 = tiền đặt cọc'],giai:'Chuỗi điều kiện theo thứ tự: 通过……后 → 缴纳…… → 就可以…… (hễ đủ điều kiện thì …).'},
-  {vi:'Những người tham gia gọi vốn cộng đồng có trình độ khá cao, rất tò mò với cái mới, về cơ bản thuộc cùng một tầng lớp.',zh:'众筹的参与者层次较高，对新生事物有强烈的好奇心，基本属于同一阶层。',py:'Zhòngchóu de cānyùzhě céngcì jiào gāo, duì xīnshēng shìwù yǒu qiángliè de hàoqíxīn, jīběn shǔyú tóngyī jiēcéng.',goiY:['层次 = trình độ','好奇心 = tính tò mò','阶层 = tầng lớp'],giai:'Ba vị ngữ nối tiếp cùng một chủ ngữ. Phân biệt 层次 (trình độ) và 阶层 (tầng lớp xã hội).'},
-  {vi:'Ngày ngày mọi người trao đổi qua lại trong nhóm WeChat, bận rộn mà vui vẻ; cảm giác cùng nhau bàn chuyện lớn này rất khiến người ta "nghiện".',zh:'大家每天在微信群里你来我往，忙碌而欢乐，这种共商大事的感觉很让人上瘾。',py:'Dàjiā měi tiān zài Wēixìn qún li nǐ lái wǒ wǎng, mánglù ér huānlè, zhè zhǒng gòng shāng dàshì de gǎnjué hěn ràng rén shàngyǐn.',goiY:['你来我往 = qua lại','忙碌而欢乐 = bận rộn mà vui vẻ','上瘾 = nghiện'],giai:'A 而 B nối hai tính từ (bận mà vui); 上瘾 ở đây mang nghĩa đùa vui tích cực ("mê", "nghiện").'},
-  {vi:'Chu Giang nhớ lại cảm giác tiền cứ chảy vào không ngớt lúc ấy, thật sự có vị khổ tận cam lai.',zh:'朱江回忆起当时钞票源源不断流进来的感觉，真的有种苦尽甘来的味道。',py:'Zhū Jiāng huíyì qǐ dāngshí chāopiào yuányuán-búduàn liú jìnlai de gǎnjué, zhēn de yǒu zhǒng kǔjìn-gānlái de wèidao.',goiY:['钞票 = tiền giấy','源源不断 = không ngớt','苦尽甘来 = khổ tận cam lai'],giai:'Định ngữ dài 当时钞票源源不断流进来的 bổ nghĩa cho 感觉; 有种 = 有一种.'},
-  {vi:'Người dùng trong nước mong nhanh chóng nhận được lợi nhuận, thậm chí có phần nóng vội cầu lợi; nếu dự án tiến triển chậm hơn kế hoạch thì họ sẽ phàn nàn.',zh:'国内用户希望尽快得到回报，甚至有些急功近利，如果项目进展比计划的慢，就会发牢骚。',py:'Guónèi yònghù xīwàng jǐnkuài dédào huíbào, shènzhì yǒuxiē jígōng-jìnlì, rúguǒ xiàngmù jìnzhǎn bǐ jìhuà de màn, jiù huì fā láosāo.',goiY:['甚至 = thậm chí','急功近利 = nóng vội cầu lợi','进展 = tiến triển','发牢骚 = phàn nàn'],giai:'甚至 đẩy mức độ lên cao hơn; 如果……就…… (giả thiết – kết quả); A 比 B 的慢 = A chậm hơn B.'},
-  {vi:'Theo tin chính thức, những tên tội phạm chưa xác minh được danh tính đã đánh cắp một lượng lớn tài khoản email cùng mật khẩu.',zh:'据官方报道，尚未查明身份的罪犯盗窃了大量电子邮件账户及其密码。',py:'Jù guānfāng bàodào, shàngwèi chámíng shēnfen de zuìfàn dàoqièle dàliàng diànzǐ yóujiàn zhànghù jí qí mìmǎ.',goiY:['据……报道 = theo … đưa tin','尚未 = vẫn chưa','盗窃 = đánh cắp','及其 = cùng với … của nó'],giai:'尚未查明身份的 là định ngữ của 罪犯 (尚未 = 还没有, điểm ngữ pháp 2); 及其 = 和它的.'},
-  {vi:'Một công ty "ma" đã ngang nhiên giả mạo cơ quan nhà nước lập trang web giả, trắng trợn lừa đảo, nay đã bị cảnh sát tạm giữ hình sự theo pháp luật.',zh:'一家皮包公司公然冒充国家部门开设假网站，大肆进行诈骗，如今已被警方依法刑事拘留。',py:'Yì jiā píbāo gōngsī gōngrán màochōng guójiā bùmén kāishè jiǎ wǎngzhàn, dàsì jìnxíng zhàpiàn, rújīn yǐ bèi jǐngfāng yīfǎ xíngshì jūliú.',goiY:['公然 = ngang nhiên','冒充 = giả mạo','大肆 = trắng trợn','拘留 = tạm giữ'],giai:'Ba vế theo trình tự: hành vi (冒充……开设) → mức độ (大肆进行诈骗) → kết quả (已被……拘留). 皮包公司 = công ty "ma", không có tài sản, trụ sở thật.'}
+  {vi:'Cho đến nay, tổ chức từ thiện này đã giúp đỡ hơn ba nghìn trẻ em nghèo.',zh:'这家慈善机构迄今为止已经帮助了三千多个贫困的孩子。',py:'Zhè jiā císhàn jīgòu qìjīn wéizhǐ yǐjīng bāngzhùle sānqiān duō ge pínkùn de háizi.',goiY:['迄今为止 = cho đến nay','慈善机构 = tổ chức từ thiện'],giai:'迄今为止 đứng sau chủ ngữ hoặc đầu câu; động từ thường có 已经……了 / 过.'},
+  {vi:'Hắn giả làm phóng viên để vào hội trường, kết quả bị nhân viên phát hiện ngay tại chỗ.',zh:'他冒充记者进了会场，结果被工作人员当场发现了。',py:'Tā màochōng jìzhě jìnle huìchǎng, jiéguǒ bèi gōngzuò rényuán dāngchǎng fāxiàn le.',goiY:['冒充 = giả danh','当场 = ngay tại chỗ'],giai:'冒充 + nghề / người = giả danh; 结果 nối kết cục ngoài ý muốn.'},
+  {vi:'Chuyện này ở làng tôi ai cũng biết, đến đứa trẻ bảy tám tuổi cũng biết.',zh:'这件事在我们村家喻户晓，连七八岁的孩子都知道。',py:'Zhè jiàn shì zài wǒmen cūn jiāyù-hùxiǎo, lián qī-bā suì de háizi dōu zhīdào.',goiY:['家喻户晓 = nhà nhà đều biết','连……都…… = đến … cũng …'],giai:'家喻户晓 làm vị ngữ; vế sau 连……都…… nhấn mạnh mức độ phổ biến.'},
+  {vi:'Tên tội phạm này nhiều lần giả làm nhân viên ngân hàng để lừa người già trên mạng, hiện đã bị tạm giam.',zh:'这个罪犯屡次在网上冒充银行工作人员诈骗老人，现在已经被拘留了。',py:'Zhège zuìfàn lǚcì zài wǎngshàng màochōng yínháng gōngzuò rényuán zhàpiàn lǎorén, xiànzài yǐjīng bèi jūliú le.',goiY:['屡次 = nhiều lần (bài 38)','诈骗 = lừa đảo','拘留 = tạm giam'],giai:'屡次 + 在…… + V: việc xấu lặp lại nhiều lần; 被拘留 = bị tạm giam.'},
+  {vi:'Nhu cầu của con người là vô tận, còn tài nguyên của Trái Đất lại có hạn.',zh:'人们的需求是无穷无尽的，而地球的资源却是有限的。',py:'Rénmen de xūqiú shì wúqióng wújìn de, ér dìqiú de zīyuán què shì yǒuxiàn de.',goiY:['无穷无尽 = vô tận','而……却…… = còn … thì lại …'],giai:'Câu đối lập: 是……的 nhấn mạnh tính chất; 而 + 却 tăng ý tương phản.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1771,9 +1703,9 @@ var writingData = {
     'Đã dùng ít nhất 5 từ của bài (日新月异, 任意, 充实, 上瘾, 诈骗, 迄今为止…) và điểm ngữ pháp 任意 / 尚未 chưa?'
   ],
   model:{
-    zh:'互联网与我们\n为了了解互联网对人们生活的影响，我调查了五个不同年龄、不同性别、不同职业的人。\n第一位是我的奶奶，今年六十一岁，是一名退休教师。她每天上网一个小时左右，主要用来看新闻、收发邮件。在她看来，互联网很方便，但千万不要上瘾。第二位是我爸爸，四十五岁，是一家公司的经理。他每天上网八个多小时，开会、交易、缴纳各种费用都离不开网络。他说，科技日新月异，不学习就会落后。第三位是开出租车的李叔叔，三十八岁。他每天用手机接单、导航，上网时间差不多有十个小时。他坦白地说，自己曾经在网上遇到过诈骗，差点儿损失了一个月的工资。第四位是在银行工作的王阿姨，二十六岁。她下班以后喜欢上网看电影、听音乐，还能任意挑选喜欢的衣服，生活一点儿也不沉闷。第五位是我的同学小林，十七岁。与奶奶不同的是，他每天上网五个小时，大部分时间用来在网上学习，他觉得这样既自由又充满乐趣，可是有时候也会玩游戏玩到半夜。\n通过这次调查，我发现互联网已经成了每个人生活中不可缺少的一部分，它让我们的生活变得更加充实。可是迄今为止，网络安全问题尚未完全解决，也有人因为上网影响了学习和健康。所以，我们在享受互联网带来的方便的同时，也应该学会保护自己，合理安排上网时间。',
-    py:'Hùliánwǎng yǔ Wǒmen\nWèile liǎojiě hùliánwǎng duì rénmen shēnghuó de yǐngxiǎng, wǒ diàochále wǔ ge bù tóng niánlíng, bù tóng xìngbié, bù tóng zhíyè de rén.\nDì-yī wèi shì wǒ de nǎinai, jīnnián liùshíyī suì, shì yì míng tuìxiū jiàoshī. Tā měi tiān shàngwǎng yí ge xiǎoshí zuǒyòu, zhǔyào yònglái kàn xīnwén, shōufā yóujiàn. Zài tā kànlái, hùliánwǎng hěn fāngbiàn, dàn qiānwàn búyào shàngyǐn. Dì-èr wèi shì wǒ bàba, sìshíwǔ suì, shì yì jiā gōngsī de jīnglǐ. Tā měi tiān shàngwǎng bā ge duō xiǎoshí, kāihuì, jiāoyì, jiǎonà gè zhǒng fèiyòng dōu lí bu kāi wǎngluò. Tā shuō, kējì rìxīn-yuèyì, bù xuéxí jiù huì luòhòu. Dì-sān wèi shì kāi chūzūchē de Lǐ shūshu, sānshíbā suì. Tā měi tiān yòng shǒujī jiē dān, dǎoháng, shàngwǎng shíjiān chàbuduō yǒu shí ge xiǎoshí. Tā tǎnbái de shuō, zìjǐ céngjīng zài wǎngshàng yùdàoguo zhàpiàn, chàdiǎnr sǔnshīle yí ge yuè de gōngzī. Dì-sì wèi shì zài yínháng gōngzuò de Wáng āyí, èrshíliù suì. Tā xiàbān yǐhòu xǐhuan shàngwǎng kàn diànyǐng, tīng yīnyuè, hái néng rènyì tiāoxuǎn xǐhuan de yīfu, shēnghuó yìdiǎnr yě bù chénmèn. Dì-wǔ wèi shì wǒ de tóngxué Xiǎo Lín, shíqī suì. Yǔ nǎinai bù tóng de shì, tā měi tiān shàngwǎng wǔ ge xiǎoshí, dà bùfen shíjiān yònglái zài wǎngshàng xuéxí, tā juéde zhèyàng jì zìyóu yòu chōngmǎn lèqù, kěshì yǒu shíhou yě huì wán yóuxì wán dào bànyè.\nTōngguò zhè cì diàochá, wǒ fāxiàn hùliánwǎng yǐjīng chéngle měi ge rén shēnghuó zhōng bù kě quēshǎo de yí bùfen, tā ràng wǒmen de shēnghuó biàn de gèngjiā chōngshí. Kěshì qìjīn wéizhǐ, wǎngluò ānquán wèntí shàngwèi wánquán jiějué, yě yǒu rén yīnwèi shàngwǎng yǐngxiǎngle xuéxí hé jiànkāng. Suǒyǐ, wǒmen zài xiǎngshòu hùliánwǎng dàilái de fāngbiàn de tóngshí, yě yīnggāi xuéhuì bǎohù zìjǐ, hélǐ ānpái shàngwǎng shíjiān.',
-    vn:'Internet và chúng ta\nĐể tìm hiểu ảnh hưởng của Internet đến cuộc sống của mọi người, tôi đã điều tra năm người khác nhau về độ tuổi, giới tính và nghề nghiệp.\nNgười thứ nhất là bà nội tôi, năm nay sáu mươi mốt tuổi, là giáo viên đã nghỉ hưu. Mỗi ngày bà lên mạng khoảng một tiếng, chủ yếu để xem tin tức, gửi và nhận email. Theo bà, Internet rất tiện lợi, nhưng tuyệt đối đừng để bị nghiện. Người thứ hai là bố tôi, bốn mươi lăm tuổi, là giám đốc một công ty. Mỗi ngày bố lên mạng hơn tám tiếng, họp hành, giao dịch, nộp các loại phí đều không thể thiếu mạng. Bố nói khoa học công nghệ thay đổi từng ngày, không học thì sẽ tụt hậu. Người thứ ba là chú Lý lái taxi, ba mươi tám tuổi. Mỗi ngày chú dùng điện thoại nhận cuốc xe, dẫn đường, thời gian lên mạng gần mười tiếng. Chú thành thật kể rằng mình từng gặp lừa đảo trên mạng, suýt nữa mất trắng một tháng lương. Người thứ tư là cô Vương làm ở ngân hàng, hai mươi sáu tuổi. Tan làm cô thích lên mạng xem phim, nghe nhạc, còn có thể tha hồ chọn quần áo mình thích, cuộc sống chẳng buồn tẻ chút nào. Người thứ năm là bạn cùng lớp tôi, Tiểu Lâm, mười bảy tuổi. Khác với bà nội, mỗi ngày cậu ấy lên mạng năm tiếng, phần lớn thời gian dùng để học trực tuyến; cậu thấy như vậy vừa tự do vừa đầy niềm vui, nhưng thỉnh thoảng cũng chơi game đến nửa đêm.\nQua cuộc điều tra này, tôi nhận thấy Internet đã trở thành một phần không thể thiếu trong cuộc sống của mỗi người, nó khiến cuộc sống của chúng ta đủ đầy hơn. Nhưng cho đến nay, vấn đề an ninh mạng vẫn chưa được giải quyết triệt để, cũng có người vì lên mạng mà ảnh hưởng đến việc học và sức khoẻ. Vì vậy, trong khi tận hưởng sự tiện lợi mà Internet mang lại, chúng ta cũng nên học cách tự bảo vệ mình, sắp xếp thời gian lên mạng một cách hợp lý.'
+    zh:'互联网与我们\n为了了解互联网对人们生活的影响，我调查了五个不同年龄、不同性别、不同职业的人。\n第一位是我的奶奶，今年六十一岁，是一名退休老师。她每天上网一个小时左右，主要用来看新闻、收发邮件。在她看来，互联网很方便，但千万不要上瘾。第二位是我爸爸，四十五岁，是一家公司的经理。他每天上网八个多小时，开会、交易、缴纳各种费用都离不开网络。他说，科技日新月异，不学习就会落后。第三位是开出租车的李叔叔，三十八岁。他每天用手机找客人、看地图，上网时间差不多有十个小时。他坦白地说，自己曾经在网上遇到过诈骗，差点儿损失了一个月的工资。第四位是在银行工作的王阿姨，二十六岁。她下班以后喜欢上网看电影、听音乐，还能任意挑选喜欢的衣服，生活一点儿也不沉闷。第五位是我的同学小林，十七岁。与奶奶不同的是，他每天上网五个小时，大部分时间用来在网上学习，他觉得这样既自由又充满乐趣，可是有时候也会玩游戏玩到半夜。\n通过这次调查，我发现互联网已经成了每个人生活中不可缺少的一部分，它让我们的生活变得更加充实。可是迄今为止，网络安全问题尚未完全解决，也有人因为上网影响了学习和健康。所以，我们在享受互联网带来的方便的同时，也应该学会保护自己，合理安排上网时间。',
+    py:'Hùliánwǎng yǔ Wǒmen\nWèile liǎojiě hùliánwǎng duì rénmen shēnghuó de yǐngxiǎng, wǒ diàochále wǔ ge bù tóng niánlíng, bù tóng xìngbié, bù tóng zhíyè de rén.\nDì-yī wèi shì wǒ de nǎinai, jīnnián liùshíyī suì, shì yì míng tuìxiū lǎoshī. Tā měi tiān shàngwǎng yí ge xiǎoshí zuǒyòu, zhǔyào yònglái kàn xīnwén, shōufā yóujiàn. Zài tā kànlái, hùliánwǎng hěn fāngbiàn, dàn qiānwàn búyào shàngyǐn. Dì-èr wèi shì wǒ bàba, sìshíwǔ suì, shì yì jiā gōngsī de jīnglǐ. Tā měi tiān shàngwǎng bā ge duō xiǎoshí, kāihuì, jiāoyì, jiǎonà gè zhǒng fèiyòng dōu lí bu kāi wǎngluò. Tā shuō, kējì rìxīn-yuèyì, bù xuéxí jiù huì luòhòu. Dì-sān wèi shì kāi chūzūchē de Lǐ shūshu, sānshíbā suì. Tā měi tiān yòng shǒujī zhǎo kèrén, kàn dìtú, shàngwǎng shíjiān chàbuduō yǒu shí ge xiǎoshí. Tā tǎnbái de shuō, zìjǐ céngjīng zài wǎngshàng yùdàoguo zhàpiàn, chàdiǎnr sǔnshīle yí ge yuè de gōngzī. Dì-sì wèi shì zài yínháng gōngzuò de Wáng āyí, èrshíliù suì. Tā xiàbān yǐhòu xǐhuan shàngwǎng kàn diànyǐng, tīng yīnyuè, hái néng rènyì tiāoxuǎn xǐhuan de yīfu, shēnghuó yìdiǎnr yě bù chénmèn. Dì-wǔ wèi shì wǒ de tóngxué Xiǎo Lín, shíqī suì. Yǔ nǎinai bù tóng de shì, tā měi tiān shàngwǎng wǔ ge xiǎoshí, dà bùfen shíjiān yònglái zài wǎngshàng xuéxí, tā juéde zhèyàng jì zìyóu yòu chōngmǎn lèqù, kěshì yǒu shíhou yě huì wán yóuxì wán dào bànyè.\nTōngguò zhè cì diàochá, wǒ fāxiàn hùliánwǎng yǐjīng chéngle měi ge rén shēnghuó zhōng bù kě quēshǎo de yí bùfen, tā ràng wǒmen de shēnghuó biàn de gèngjiā chōngshí. Kěshì qìjīn wéizhǐ, wǎngluò ānquán wèntí shàngwèi wánquán jiějué, yě yǒu rén yīnwèi shàngwǎng yǐngxiǎngle xuéxí hé jiànkāng. Suǒyǐ, wǒmen zài xiǎngshòu hùliánwǎng dàilái de fāngbiàn de tóngshí, yě yīnggāi xuéhuì bǎohù zìjǐ, hélǐ ānpái shàngwǎng shíjiān.',
+    vn:'Internet và chúng ta\nĐể tìm hiểu ảnh hưởng của Internet đến cuộc sống của mọi người, tôi đã điều tra năm người khác nhau về độ tuổi, giới tính và nghề nghiệp.\nNgười thứ nhất là bà nội tôi, năm nay sáu mươi mốt tuổi, là giáo viên đã nghỉ hưu. Mỗi ngày bà lên mạng khoảng một tiếng, chủ yếu để xem tin tức, gửi và nhận email. Theo bà, Internet rất tiện lợi, nhưng tuyệt đối đừng để bị nghiện. Người thứ hai là bố tôi, bốn mươi lăm tuổi, là giám đốc một công ty. Mỗi ngày bố lên mạng hơn tám tiếng, họp hành, giao dịch, nộp các loại phí đều không thể thiếu mạng. Bố nói khoa học công nghệ thay đổi từng ngày, không học thì sẽ tụt hậu. Người thứ ba là chú Lý lái taxi, ba mươi tám tuổi. Mỗi ngày chú dùng điện thoại tìm khách, xem bản đồ, thời gian lên mạng gần mười tiếng. Chú thành thật kể rằng mình từng gặp lừa đảo trên mạng, suýt nữa mất trắng một tháng lương. Người thứ tư là cô Vương làm ở ngân hàng, hai mươi sáu tuổi. Tan làm cô thích lên mạng xem phim, nghe nhạc, còn có thể tha hồ chọn quần áo mình thích, cuộc sống chẳng buồn tẻ chút nào. Người thứ năm là bạn cùng lớp tôi, Tiểu Lâm, mười bảy tuổi. Khác với bà nội, mỗi ngày cậu ấy lên mạng năm tiếng, phần lớn thời gian dùng để học trực tuyến; cậu thấy như vậy vừa tự do vừa đầy niềm vui, nhưng thỉnh thoảng cũng chơi game đến nửa đêm.\nQua cuộc điều tra này, tôi nhận thấy Internet đã trở thành một phần không thể thiếu trong cuộc sống của mỗi người, nó khiến cuộc sống của chúng ta đủ đầy hơn. Nhưng cho đến nay, vấn đề an ninh mạng vẫn chưa được giải quyết triệt để, cũng có người vì lên mạng mà ảnh hưởng đến việc học và sức khoẻ. Vì vậy, trong khi tận hưởng sự tiện lợi mà Internet mang lại, chúng ta cũng nên học cách tự bảo vệ mình, sắp xếp thời gian lên mạng một cách hợp lý.'
   }
 };
 
@@ -1781,189 +1713,141 @@ var writingData = {
 // LUYỆN NÓI — đúng bảng 练习5 của sách: 根据提示，简述课文主要内容
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Đây là bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b> (bảng 4 dòng). Mỗi câu hỏi là một dòng của bảng, cột gợi ý giữ nguyên như sách. Bấm loa nghe câu hỏi, nhìn gợi ý, <b>tự ghi âm câu trả lời của mình trước</b> rồi mới mở câu mẫu. Cố dùng từ mới: 日新月异 · 沉闷 · 充实 · 任意 · 设立 · 合伙 · 筹备 · 合算 · 渠道 · 审查 · 缴纳 · 阶层 · 上瘾 · 急功近利 · 迄今为止 · 冒充 · 诈骗 · 盗窃.',
-  questions:[
-    {q_zh:'互联网走进我们的生活以后，生活发生了哪些变化？',
-     q_vn:'Sau khi Internet bước vào cuộc sống của chúng ta, cuộc sống đã có những thay đổi gì?',
-     hint:'①自如地…… ②生活不再单调…… ③将……变成了可能 ④网上学习、找工作、设立个人网站 ⑤合伙集资买房',
-     sample:'互联网走进我们的生活以后，生活发生了日新月异的变化：我们能自如地通话、视频、传递消息；生活不再单调沉闷，变得丰富而充实；互联网将异地购物、交易变成了可能，我们足不出户就能任意挑选商品；我们还可以在网上学习、找工作、设立个人网站；最近甚至有人通过网络和朋友合伙集资买房。',
-     sample_vn:'Sau khi Internet bước vào cuộc sống, cuộc sống đã thay đổi từng ngày: chúng ta có thể thoải mái gọi điện, gọi video, gửi tin nhắn; cuộc sống không còn đơn điệu buồn tẻ mà trở nên phong phú, đủ đầy; Internet biến việc mua sắm, giao dịch ở nơi xa thành điều có thể, không cần ra khỏi nhà vẫn tha hồ chọn hàng; chúng ta còn có thể học, tìm việc, lập trang web cá nhân trên mạng; gần đây thậm chí có người qua mạng cùng bạn bè hùn vốn góp tiền mua nhà.',
-     note:'Đi đúng 5 ý của gợi ý, nối bằng dấu chấm phẩy như bài khoá; mở đầu bằng 发生了日新月异的变化 để tóm ý chung.'},
-    {q_zh:'简述人们如何利用网络平台筹备买房？',
-     q_vn:'Hãy kể tóm tắt người ta đã tận dụng nền tảng mạng để gom vốn mua nhà như thế nào?',
-     hint:'①众筹购房的好处…… ②微信是众筹的主要渠道…… ③众筹的参与者…… ④大家在交流平台上谈……',
-     sample:'众筹购房的好处在于价格有明显优势，比市场价至少便宜30%，无论投资还是自住都很合算。微信是众筹的主要渠道，申请人通过审查、缴纳100元订金后就能进群。众筹的参与者都是发起人的朋友或朋友的朋友，层次较高，基本属于同一阶层。大家每天在微信群里谈房子怎么设计、对政策怎么理解、失败了怎么办，忙碌而欢乐。',
-     sample_vn:'Cái lợi của gọi vốn cộng đồng mua nhà là giá có ưu thế rõ rệt, rẻ hơn giá thị trường ít nhất 30%, dù đầu tư hay để ở đều có lợi. WeChat là kênh chủ yếu, người đăng ký sau khi được xét duyệt và nộp 100 tệ đặt cọc thì được vào nhóm. Người tham gia đều là bạn của người khởi xướng hoặc bạn của bạn, trình độ khá cao, về cơ bản cùng một tầng lớp. Hằng ngày mọi người bàn trong nhóm WeChat chuyện nhà thiết kế thế nào, hiểu chính sách ra sao, thất bại thì làm sao — bận rộn mà vui vẻ.',
-     note:'Khung ……的好处在于……; 无论……还是……都……; nhớ các con số (30%, 100元) và từ 渠道 · 审查 · 缴纳 · 阶层.'},
-    {q_zh:'众筹和众筹网站',
-     q_vn:'Gọi vốn cộng đồng và các trang web gọi vốn cộng đồng',
-     hint:'①什么是众筹？ ②众筹在中国的发展怎么样？',
-     sample:'众筹说白了就是大家筹钱干一件事，广义的众筹指创业者通过网络向众多素不相识的人争取资金支持。2011年，中国第一家众筹网站“点名时间”把Kickstarter的模式搬进了中国，朱江也成了“中国众筹第一人”。不过，国内用户有些急功近利，项目进展一慢就发牢骚，所以迄今为止，众筹在国内还是一件看起来很美、做起来吃力的事情。',
-     sample_vn:'Gọi vốn cộng đồng nói trắng ra là mọi người góp tiền làm một việc; theo nghĩa rộng là người khởi nghiệp qua mạng tìm sự hỗ trợ vốn từ rất nhiều người không quen biết. Năm 2011, trang gọi vốn cộng đồng đầu tiên của Trung Quốc là "Điểm danh thời gian" đưa mô hình Kickstarter vào Trung Quốc, Chu Giang cũng trở thành "người gọi vốn cộng đồng đầu tiên của Trung Quốc". Tuy nhiên, người dùng trong nước có phần nóng vội cầu lợi, dự án chậm một chút là phàn nàn, nên cho đến nay gọi vốn cộng đồng ở trong nước vẫn là việc nhìn thì đẹp, làm thì vất vả.',
-     note:'Trả lời đủ HAI câu hỏi: định nghĩa (说白了，就是……) và tình hình phát triển (có mặt tốt — mặt khó); kết bằng 迄今为止……看起来很美、做起来吃力.'},
-    {q_zh:'人们为什么对互联网也会心存担忧？',
-     q_vn:'Vì sao con người cũng lo lắng về Internet?',
-     hint:'①假网站 ②网络黑客',
-     sample:'因为互联网在带给我们方便和乐趣的同时，也增添了无穷无尽的烦恼。比如，有的皮包公司公然冒充国家部门开设假网站，大肆进行诈骗；还有时时活跃着的网络黑客，尚未查明身份的罪犯盗窃了大量电子邮件账户和密码。这些败坏互联网名誉的事件一经曝光，就让人触目惊心。',
-     sample_vn:'Vì Internet mang lại cho chúng ta tiện lợi và niềm vui, đồng thời cũng thêm vô vàn phiền muộn. Ví dụ, có công ty "ma" ngang nhiên giả mạo cơ quan nhà nước lập trang web giả, trắng trợn lừa đảo; lại có tin tặc lúc nào cũng hoạt động, những tên tội phạm chưa rõ danh tính đã đánh cắp lượng lớn tài khoản email và mật khẩu. Những sự việc làm hoen ố danh tiếng Internet này một khi bị phơi bày đều khiến người ta giật mình kinh hãi.',
-     note:'Mở bằng ……在……的同时，也……; đưa đủ hai ví dụ (假网站, 黑客) và dùng 尚未 (điểm ngữ pháp 2).'}
+  intro: 'Đây là bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b> (bảng 4 dòng). Mỗi câu hỏi là một dòng của bảng, cột gợi ý giữ nguyên như sách. Bấm loa nghe câu hỏi, nhìn gợi ý, <b>tự ghi âm câu trả lời của mình trước</b> rồi mới mở câu mẫu. Cố dùng từ mới: 日新月异 · 沉闷 · 充实 · 任意 · 设立 · 合伙 · 筹备 · 合算 · 渠道 · 审查 · 缴纳 · 阶层 · 上瘾 · 急功近利 · 迄今为止 · 冒充 · 诈骗 · 盗窃.',
+  questions: [
+    {q_zh:'互联网走进我们的生活以后，生活发生了哪些变化？',q_vn:'Sau khi Internet bước vào cuộc sống của chúng ta, cuộc sống đã có những thay đổi gì?',hint:'①自如地…… ②生活不再单调…… ③将……变成了可能 ④网上学习、找工作、设立个人网站 ⑤合伙集资买房',sample:'互联网走进我们的生活以后，生活发生了日新月异的变化：我们能自如地通话、视频、传递消息；生活不再单调沉闷，变得丰富而充实；互联网将异地购物、交易变成了可能，我们足不出户就能任意挑选商品；我们还可以在网上学习、找工作、设立个人网站；最近甚至有人通过网络和朋友合伙集资买房。',sample_vn:'Sau khi Internet bước vào cuộc sống, cuộc sống đã thay đổi từng ngày: chúng ta có thể thoải mái gọi điện, gọi video, gửi tin nhắn; cuộc sống không còn đơn điệu buồn tẻ mà trở nên phong phú, đủ đầy; Internet biến việc mua sắm, giao dịch ở nơi xa thành điều có thể, không cần ra khỏi nhà vẫn tha hồ chọn hàng; chúng ta còn có thể học, tìm việc, lập trang web cá nhân trên mạng; gần đây thậm chí có người qua mạng cùng bạn bè hùn vốn góp tiền mua nhà.',note:'Đi đúng 5 ý của gợi ý, nối bằng dấu chấm phẩy như bài khoá; mở đầu bằng 发生了日新月异的变化 để tóm ý chung.'},
+    {q_zh:'简述人们如何利用网络平台筹备买房？',q_vn:'Hãy kể tóm tắt người ta đã tận dụng nền tảng mạng để gom vốn mua nhà như thế nào?',hint:'①众筹购房的好处…… ②微信是众筹的主要渠道…… ③众筹的参与者…… ④大家在交流平台上谈……',sample:'众筹购房的好处在于价格有明显优势，比市场价至少便宜30%，无论投资还是自住都很合算。微信是众筹的主要渠道，申请人通过审查、缴纳100元订金后就能进群。众筹的参与者都是发起人的朋友或者朋友的朋友，层次较高，基本属于同一阶层。大家每天在微信群里谈房子怎么设计、对政策怎么理解、失败了怎么办，忙碌而欢乐。',sample_vn:'Cái lợi của gọi vốn cộng đồng mua nhà là giá có ưu thế rõ rệt, rẻ hơn giá thị trường ít nhất 30%, dù đầu tư hay để ở đều có lợi. WeChat là kênh chủ yếu, người đăng ký sau khi được xét duyệt và nộp 100 tệ đặt cọc thì được vào nhóm. Người tham gia đều là bạn của người khởi xướng hoặc bạn của bạn, trình độ khá cao, về cơ bản cùng một tầng lớp. Hằng ngày mọi người bàn trong nhóm WeChat chuyện nhà thiết kế thế nào, hiểu chính sách ra sao, thất bại thì làm sao — bận rộn mà vui vẻ.',note:'Khung ……的好处在于……; 无论……还是……都……; nhớ các con số (30%, 100元) và từ 渠道 · 审查 · 缴纳 · 阶层.'},
+    {q_zh:'众筹和众筹网站',q_vn:'Gọi vốn cộng đồng và các trang web gọi vốn cộng đồng',hint:'①什么是众筹？ ②众筹在中国的发展怎么样？',sample:'众筹说白了就是大家筹钱干一件事，广义的众筹指创业者通过网络向众多素不相识的人争取资金支持。2011年，中国第一家众筹网站“点名时间”把Kickstarter的模式搬进了中国，朱江也成了“中国众筹第一人”。不过，国内用户有些急功近利，项目进展一慢就发牢骚，所以迄今为止，众筹在国内还是一件看起来很美、做起来吃力的事情。',sample_vn:'Gọi vốn cộng đồng nói trắng ra là mọi người góp tiền làm một việc; theo nghĩa rộng là người khởi nghiệp qua mạng tìm sự hỗ trợ vốn từ rất nhiều người không quen biết. Năm 2011, trang gọi vốn cộng đồng đầu tiên của Trung Quốc là "Điểm danh thời gian" đưa mô hình Kickstarter vào Trung Quốc, Chu Giang cũng trở thành "người gọi vốn cộng đồng đầu tiên của Trung Quốc". Tuy nhiên, người dùng trong nước có phần nóng vội cầu lợi, dự án chậm một chút là phàn nàn, nên cho đến nay gọi vốn cộng đồng ở trong nước vẫn là việc nhìn thì đẹp, làm thì vất vả.',note:'Trả lời đủ HAI câu hỏi: định nghĩa (说白了，就是……) và tình hình phát triển (có mặt tốt — mặt khó); kết bằng 迄今为止……看起来很美、做起来吃力.'},
+    {q_zh:'人们为什么对互联网也会心存担忧？',q_vn:'Vì sao con người cũng lo lắng về Internet?',hint:'①假网站 ②网络黑客',sample:'因为互联网在带给我们方便和乐趣的同时，也增添了无穷无尽的烦恼。比如，有的皮包公司公然冒充国家部门开设假网站，大肆进行诈骗；还有时时活跃着的网络黑客，尚未查明身份的罪犯盗窃了大量电子邮件账户和密码。这些败坏互联网名誉的事件一经曝光，就让人触目惊心。',sample_vn:'Vì Internet mang lại cho chúng ta tiện lợi và niềm vui, đồng thời cũng thêm vô vàn phiền muộn. Ví dụ, có công ty "ma" ngang nhiên giả mạo cơ quan nhà nước lập trang web giả, trắng trợn lừa đảo; lại có tin tặc lúc nào cũng hoạt động, những tên tội phạm chưa rõ danh tính đã đánh cắp lượng lớn tài khoản email và mật khẩu. Những sự việc làm hoen ố danh tiếng Internet này một khi bị phơi bày đều khiến người ta giật mình kinh hãi.',note:'Mở bằng ……在……的同时，也……; đưa đủ hai ví dụ (假网站, 黑客) và dùng 尚未 (điểm ngữ pháp 2).'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — 听力 (hội thoại ngắn + đoạn nói)
-// Sách HSK 6 không có sách bài tập nghe: tự soạn theo chủ đề bài 39.
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — câu tự soạn (sách HSK 6 không có sách bài tập nghe), mỗi câu một tình huống mới
+// ══════════════════════════════════════════
 var listenExamData = {
-  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, ' +
-         'trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
-  source: 'Soạn theo dạng đề HSK 6 · chủ đề bài 39',
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 39',
   items: [
-    {n:1,
-     lines:[{sp:'男',zh:'你每个月的水电费都是去银行交的吗？'},
-            {sp:'女',zh:'早就不去了。现在在手机上就能缴纳，一分钟就搞定，还不用排队。'}],
-     q:'女的是怎么交水电费的？',qvn:'Người phụ nữ nộp tiền điện nước bằng cách nào?',
-     opts:['去银行交','让家人帮忙交','在手机上缴纳','去物业公司交'],ans:2,
-     why:'现在在手机上就能缴纳 → nộp trên điện thoại. Cô ấy nói 早就不去了 (đã lâu không đến ngân hàng).',
-     words:['缴纳']},
-
-    {n:2,
-     lines:[{sp:'女',zh:'听说你和几个同学合伙开了一家网店？'},
-            {sp:'男',zh:'是啊。刚开始什么都不懂，只能一边做一边摸索，现在总算有点儿起色了。'}],
-     q:'关于男的的网店，可以知道什么？',qvn:'Về cửa hàng online của người đàn ông, có thể biết điều gì?',
-     opts:['是他一个人开的','一开始是边做边摸索','已经关门了','赚了很多钱'],ans:1,
-     why:'一边做一边摸索 → vừa làm vừa mò mẫm. Cửa hàng do anh ấy cùng mấy bạn hùn vốn (合伙), mới "有点儿起色" (khá lên chút ít), chưa phải kiếm nhiều tiền.',
-     words:['合伙','摸索']},
-
-    {n:3,
-     lines:[{sp:'男',zh:'小王，你怎么一脸尴尬？'},
-            {sp:'女',zh:'别提了，我在群里发牢骚说老板太小气，结果发错群了，老板也在那个群里。'}],
-     q:'女的为什么尴尬？',qvn:'Vì sao người phụ nữ ngượng?',
-     opts:['把牢骚发到了有老板的群里','忘了老板的生日','工作中出了大错','被老板当面批评了'],ans:0,
-     why:'发牢骚……结果发错群了，老板也在那个群里 → gửi lời phàn nàn nhầm vào nhóm có ông chủ.',
-     words:['尴尬','牢骚']},
-
-    {n:4,
-     lines:[{sp:'女',zh:'这件衣服网上才卖一百块，商场里要三百多呢。'},
-            {sp:'男',zh:'网上买是挺合算的，不过你得看清楚是不是正规渠道，别买到假货。'}],
-     q:'男的提醒女的注意什么？',qvn:'Người đàn ông nhắc người phụ nữ chú ý điều gì?',
-     opts:['别买太贵的衣服','衣服的颜色和大小','商场的打折活动','是不是正规渠道'],ans:3,
-     why:'你得看清楚是不是正规渠道，别买到假货 → xem có phải kênh chính thống không.',
-     words:['合算','渠道']},
-
-    {n:5,
-     lines:[{sp:'男',zh:'你昨天是不是接到一个自称银行客服的电话？'},
-            {sp:'女',zh:'对，他说我的账户有问题，让我把验证码告诉他。我觉得不对劲，就挂了。'},
-            {sp:'男',zh:'挂得好！那是冒充客服的诈骗电话。'}],
-     q:'那个电话是什么电话？',qvn:'Cuộc điện thoại đó là cuộc gọi gì?',
-     opts:['银行客服的电话','诈骗电话','朋友的电话','快递员的电话'],ans:1,
-     why:'冒充客服的诈骗电话 → giả danh nhân viên ngân hàng để lừa đảo, không phải nhân viên thật.',
-     words:['冒充','诈骗']},
-
-    {n:6,
-     lines:[{sp:'女',zh:'你儿子最近学习怎么样？'},
-            {sp:'男',zh:'唉，他玩手机游戏上瘾了，每天玩到半夜，第二天上课没精神，成绩也下降了。'}],
-     q:'男的的儿子怎么了？',qvn:'Con trai người đàn ông bị làm sao?',
-     opts:['身体不太好','不想上学了','玩游戏上瘾了','换了一所学校'],ans:2,
-     why:'玩手机游戏上瘾了 → nghiện game điện thoại, dẫn đến học sút.',
-     words:['上瘾']},
-
-    {n:7,
-     lines:[{sp:'男',zh:'听说那个在网上大肆造谣的人被抓了？'},
-            {sp:'女',zh:'是啊，他败坏了好几家公司的名誉，事情一曝光，就被警方依法拘留了。'}],
-     q:'关于那个造谣的人，下列哪项正确？',qvn:'Về kẻ tung tin đồn, điều nào dưới đây đúng?',
-     opts:['已经被拘留了','是一家公司的老板','是被冤枉的','还没有被发现'],ans:0,
-     why:'事情一曝光，就被警方依法拘留了 → đã bị tạm giữ.',
-     words:['大肆','败坏','名誉','曝光','拘留']},
-
-    {n:8,
-     lines:[{sp:'男',zh:'众筹，说白了就是大家一起筹钱干一件事。世界上第一个让初创公司梦想成真的众筹网站是美国的Kickstarter。2011年，众筹模式进入中国，之后众筹平台越来越多，从慈善到图书出版，几乎跨越了所有领域。不过，由于国内用户希望尽快得到回报，项目进展一慢就发牢骚，迄今为止，众筹在国内还是一件做起来很吃力的事情。'}],
-     q:'这段话主要谈的是什么？',qvn:'Đoạn nói chủ yếu bàn về điều gì?',
-     opts:['怎样开一家众筹网站','Kickstarter的历史','怎样做慈善','众筹的概念、发展和在国内遇到的困难'],ans:3,
-     why:'Nói định nghĩa (说白了就是……) → phát triển (Kickstarter, 2011 vào Trung Quốc, mọi lĩnh vực) → khó khăn trong nước (迄今为止……很吃力). Kickstarter và từ thiện chỉ là chi tiết.',
-     words:['慈善','进展','牢骚','迄今为止','吃力']}
+    {
+      n: 1,
+      lines: [
+        {sp:'男',zh:'这家店说买两件打八折，买三件打七折。'},
+        {sp:'女',zh:'那我们俩一起买三件吧，这样最合算。'}
+      ],
+      q: '女的为什么想买三件？',
+      qvn: 'Vì sao người phụ nữ muốn mua ba cái?',
+      opts: ['衣服特别好看','店里只剩三件了','男的要送她','三件最合算'],
+      ans: 3,
+      why: '买三件打七折 → giảm nhiều nhất, 这样最合算 = như vậy hời nhất. Không nói áo đẹp hay chỉ còn ba cái.',
+      words: ['合算']
+    },
+    {
+      n: 2,
+      lines: [
+        {sp:'女',zh:'昨天聚会你怎么一直不说话？'},
+        {sp:'男',zh:'别提了，我把老板的名字叫错了，尴尬得要命，后来就不敢开口了。'}
+      ],
+      q: '男的为什么不说话？',
+      qvn: 'Vì sao người đàn ông không nói gì?',
+      opts: ['身体不舒服','他不认识大家','叫错了老板的名字','他在生老板的气'],
+      ans: 2,
+      why: '把老板的名字叫错了，尴尬得要命 (ôn 得要命, bài 9) → ngượng quá nên không dám mở miệng.',
+      words: ['尴尬']
+    },
+    {
+      n: 3,
+      lines: [
+        {sp:'男',zh:'新的游泳馆什么时候开放？'},
+        {sp:'女',zh:'还在修呢，尚未完成，听说要到明年三月了。'}
+      ],
+      q: '关于游泳馆，可以知道什么？',
+      qvn: 'Về bể bơi, có thể biết điều gì?',
+      opts: ['已经开放了','还没修好','明年要关门','三月不开放'],
+      ans: 1,
+      why: '尚未完成 = 还没有完成 → bể bơi còn đang sửa, chưa xong, phải đến tháng Ba năm sau mới mở.',
+      words: ['尚未']
+    },
+    {
+      n: 4,
+      lines: [
+        {sp:'女',zh:'这份午饭配的饮料可以换吗？'},
+        {sp:'男',zh:'可以，店里的饮料您任意挑一种，价格都一样。'}
+      ],
+      q: '男的是什么意思？',
+      qvn: 'Ý người đàn ông là gì?',
+      opts: ['饮料不能换','换饮料要加钱','可以随便选一种饮料','店里没有饮料了'],
+      ans: 2,
+      why: '任意挑一种 = tùy ý chọn một loại; 价格都一样 → không phải trả thêm tiền.',
+      words: ['任意']
+    },
+    {
+      n: 5,
+      lines: [
+        {sp:'男',zh:'刚才有人打电话说我中了大奖，让我先交两千块手续费。'},
+        {sp:'女',zh:'这明显是诈骗，千万别给他钱，快挂了吧。'}
+      ],
+      q: '女的建议男的怎么做？',
+      qvn: 'Người phụ nữ khuyên người đàn ông làm gì?',
+      opts: ['别给对方钱','马上去领奖','先交一半','再问问朋友'],
+      ans: 0,
+      why: '这明显是诈骗，千万别给他钱 → đừng đưa tiền. 中 (zhòng) 大奖 = trúng giải lớn (ôn 中, bài 17).',
+      words: ['诈骗']
+    },
+    {
+      n: 6,
+      lines: [
+        {sp:'女',zh:'你儿子最近学习忙不忙？'},
+        {sp:'男',zh:'唉，整天抱着手机，玩游戏玩上瘾了，说他两句他还发牢骚。'}
+      ],
+      q: '关于男的的儿子，可以知道什么？',
+      qvn: 'Về con trai người đàn ông, có thể biết điều gì?',
+      opts: ['学习很认真','不爱玩手机','身体不好','玩游戏上瘾了'],
+      ans: 3,
+      why: '整天抱着手机，玩游戏玩上瘾了 → nghiện game; bị nói còn càu nhàu (发牢骚).',
+      words: ['上瘾','牢骚']
+    },
+    {
+      n: 7,
+      lines: [
+        {sp:'男',zh:'你们家新买的房子大吗？'},
+        {sp:'女',zh:'大什么呀，客厅小得只能放下一张桌子。'}
+      ],
+      q: '女的觉得房子怎么样？',
+      qvn: 'Người phụ nữ thấy căn nhà thế nào?',
+      opts: ['特别大','很小','很贵','离公司很远'],
+      ans: 1,
+      why: '大什么呀 = lớn gì mà lớn (phủ định); 小得只能放下一张桌子 là phóng đại (夸张) để nói nhà rất nhỏ.',
+      words: []
+    }
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 💬 TÌNH HUỐNG GIAO TIẾP
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
+// ══════════════════════════════════════════
 var situationData = {
-  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
-         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bà nội muốn học cách nộp tiền điện bằng điện thoại, nhưng lo không an toàn.',
-     a:{sp:'Bà',zh:'用手机交电费安全吗？我怕被人骗。',vn:'Nộp tiền điện bằng điện thoại có an toàn không? Bà sợ bị lừa.'},
-     need:['Dùng 缴纳','Dùng 渠道'],
-     sample:'奶奶，只要通过正规的渠道缴纳，就很安全。您用银行的官方软件，别点陌生的链接就行。',
-     samplePy:'Nǎinai, zhǐyào tōngguò zhèngguī de qúdào jiǎonà, jiù hěn ānquán. Nín yòng yínháng de guānfāng ruǎnjiàn, bié diǎn mòshēng de liànjiē jiù xíng.',
-     sampleVn:'Bà ơi, chỉ cần nộp qua kênh chính thống là rất an toàn. Bà dùng phần mềm chính thức của ngân hàng, đừng bấm vào đường link lạ là được.',
-     tip:'Trấn an người lớn: điều kiện (只要……就……) → hướng dẫn cụ thể (用……，别……就行).'},
-
-    {scene:'Bạn thân rủ em cùng mở một cửa hàng online bán đồ handmade.',
-     a:{sp:'Bạn',zh:'我们一起在网上开个小店吧，你觉得怎么样？',vn:'Mình cùng mở một cửa hàng nhỏ trên mạng đi, cậu thấy sao?'},
-     need:['Dùng 合伙','Dùng 初步'],
-     sample:'好主意！我们可以合伙开，初步打算先卖自己做的手链，看看效果再说。',
-     samplePy:'Hǎo zhǔyi! Wǒmen kěyǐ héhuǒ kāi, chūbù dǎsuan xiān mài zìjǐ zuò de shǒuliàn, kànkan xiàoguǒ zài shuō.',
-     sampleVn:'Ý hay đấy! Bọn mình có thể hùn vốn mở chung, dự tính ban đầu bán vòng tay tự làm trước, xem hiệu quả thế nào rồi tính tiếp.',
-     tip:'Đồng ý + đề xuất: 合伙 + V; 初步打算 + 先……，……再说 (tính sau).'},
-
-    {scene:'Em trai cả ngày ôm điện thoại chơi game, mẹ nhờ em khuyên.',
-     a:{sp:'Em trai',zh:'我就再玩一会儿，玩完这局就睡。',vn:'Em chơi thêm tí nữa thôi, xong ván này là em đi ngủ.'},
-     need:['Dùng 上瘾','Dùng 与其……不如……'],
-     sample:'你每天都这么说，已经上瘾了。与其整天玩游戏，不如周末跟我去打打球，生活也会更充实。',
-     samplePy:'Nǐ měi tiān dōu zhème shuō, yǐjīng shàngyǐn le. Yǔqí zhěngtiān wán yóuxì, bùrú zhōumò gēn wǒ qù dǎda qiú, shēnghuó yě huì gèng chōngshí.',
-     sampleVn:'Ngày nào em cũng nói thế, nghiện rồi đấy. Thay vì chơi game cả ngày, chi bằng cuối tuần đi đánh bóng với chị, cuộc sống cũng sẽ đủ đầy hơn.',
-     tip:'Khuyên nhủ: chỉ ra vấn đề (已经上瘾了) → đưa phương án thay thế (与其……不如……).'},
-
-    {scene:'Trong nhóm lớp, một người lạ tự xưng là giáo viên chủ nhiệm, yêu cầu mọi người chuyển tiền quỹ lớp. Một bạn hỏi em có nên chuyển không.',
-     a:{sp:'Bạn',zh:'有个“老师”让我们交班费，要不要转账？',vn:'Có một "cô giáo" bảo bọn mình nộp quỹ lớp, có nên chuyển khoản không?'},
-     need:['Dùng 冒充','Dùng 尚未'],
-     sample:'先别转！这个号码尚未确认是不是老师的，很可能是有人冒充老师诈骗。我们先打电话问问老师吧。',
-     samplePy:'Xiān bié zhuǎn! Zhège hàomǎ shàngwèi quèrèn shì bu shì lǎoshī de, hěn kěnéng shì yǒu rén màochōng lǎoshī zhàpiàn. Wǒmen xiān dǎ diànhuà wènwen lǎoshī ba.',
-     sampleVn:'Đừng chuyển vội! Số này vẫn chưa xác nhận có phải của cô không, rất có thể là có người giả danh cô để lừa đảo. Mình gọi điện hỏi cô trước đã.',
-     tip:'Cảnh báo: can ngăn ngay (先别……!) → lý do (尚未确认, 冒充) → cách xử lý an toàn.'},
-
-    {scene:'Thầy chủ nhiệm hỏi em cảm nhận thế nào về việc học trực tuyến.',
-     a:{sp:'Thầy',zh:'你觉得在网上学习怎么样？',vn:'Em thấy học trực tuyến thế nào?'},
-     need:['Dùng 坦白地说','Dùng 乐趣'],
-     sample:'坦白地说，在网上学习很自由，也不失乐趣，不过需要很强的自制力，不然很容易分心。',
-     samplePy:'Tǎnbái de shuō, zài wǎngshàng xuéxí hěn zìyóu, yě bù shī lèqù, búguò xūyào hěn qiáng de zìzhìlì, bùrán hěn róngyì fēnxīn.',
-     sampleVn:'Thành thật mà nói, học trực tuyến rất tự do, cũng không mất đi niềm vui, nhưng cần sức tự chủ rất cao, nếu không rất dễ mất tập trung.',
-     tip:'Nêu ý kiến hai mặt: 坦白地说 → mặt tốt (不失乐趣) → 不过 mặt khó → 不然 hậu quả.'}
+    {scene:'Bà nội muốn học cách nộp tiền điện bằng điện thoại, nhưng lo không an toàn.',a:{sp:'Bà',zh:'用手机交电费安全吗？我怕被人骗。',vn:'Nộp tiền điện bằng điện thoại có an toàn không? Bà sợ bị lừa.'},need:['Dùng 缴纳','Nhắc bà cẩn thận kẻ giả mạo (冒充)'],sample:'奶奶，用手机缴纳电费很方便，也很安全。不过陌生人发来的东西千万别点，有人会冒充银行骗钱。',samplePy:'Nǎinai, yòng shǒujī jiǎonà diànfèi hěn fāngbiàn, yě hěn ānquán. Búguò mòshēngrén fā lái de dōngxi qiānwàn bié diǎn, yǒu rén huì màochōng yínháng piàn qián.',sampleVn:'Bà ơi, nộp tiền điện bằng điện thoại vừa tiện vừa an toàn. Nhưng thứ người lạ gửi đến thì bà tuyệt đối đừng bấm vào, có kẻ giả làm ngân hàng để lừa tiền đấy.',tip:'Trấn an trước (很方便，也很安全) → 不过 + lời dặn (千万别……) → lý do (有人会冒充……).'},
+    {scene:'Bạn thân rủ em cùng mở một cửa hàng online bán đồ handmade.',a:{sp:'Bạn',zh:'我们一起在网上开个小店吧，怎么样？',vn:'Tụi mình cùng mở một cửa hàng nhỏ trên mạng đi, thế nào?'},need:['Dùng 合伙','Dùng 初步'],sample:'好主意！我们可以合伙开，初步打算先卖自己做的小礼物，如果卖得好，再慢慢扩充。',samplePy:'Hǎo zhǔyi! Wǒmen kěyǐ héhuǒ kāi, chūbù dǎsuàn xiān mài zìjǐ zuò de xiǎo lǐwù, rúguǒ mài de hǎo, zài mànmān kuòchōng.',sampleVn:'Ý hay đấy! Tụi mình có thể hùn vốn mở chung, dự định ban đầu là bán quà nhỏ tự làm trước, nếu bán chạy thì từ từ mở rộng.',tip:'初步打算 = dự định bước đầu; 先……再…… sắp xếp bước đi; 扩充 ôn bài 38.'},
+    {scene:'Em trai cả ngày ôm điện thoại chơi game, mẹ nhờ em khuyên.',a:{sp:'Em trai',zh:'我就再玩一会儿，玩完这局就睡。',vn:'Em chơi thêm tí nữa thôi, xong ván này là em đi ngủ.'},need:['Dùng 上瘾','Dùng 与其……不如……'],sample:'你每天都这么说，已经上瘾了。与其整天盯着手机，不如周末跟我去打打球，生活也会更充实。',samplePy:'Nǐ měi tiān dōu zhème shuō, yǐjīng shàngyǐn le. Yǔqí zhěngtiān dīngzhe shǒujī, bùrú zhōumò gēn wǒ qù dǎda qiú, shēnghuó yě huì gèng chōngshí.',sampleVn:'Ngày nào em cũng nói thế, nghiện rồi đấy. Thay vì cả ngày dán mắt vào điện thoại, chi bằng cuối tuần đi đánh bóng với chị, cuộc sống cũng sẽ phong phú hơn.',tip:'与其……不如…… đưa ra lựa chọn tốt hơn; 充实 tả cuộc sống phong phú, có ích.'},
+    {scene:'Trong nhóm lớp, một người lạ tự xưng là giáo viên chủ nhiệm, yêu cầu mọi người chuyển tiền quỹ lớp. Một bạn hỏi em có nên chuyển không.',a:{sp:'Bạn',zh:'有个“老师”让我们在群里交班费，要不要交？',vn:'Có "thầy giáo" bảo tụi mình nộp quỹ lớp trong nhóm, có nên nộp không?'},need:['Dùng 尚未','Dùng 冒充 hoặc 诈骗'],sample:'先别交！我们尚未确认他是不是真的老师，很可能是有人冒充老师诈骗。我们先打电话问问老师吧。',samplePy:'Xiān bié jiāo! Wǒmen shàngwèi quèrèn tā shì bu shì zhēn de lǎoshī, hěn kěnéng shì yǒu rén màochōng lǎoshī zhàpiàn. Wǒmen xiān dǎ diànhuà wènwen lǎoshī ba.',sampleVn:'Khoan nộp đã! Tụi mình còn chưa xác nhận người đó có phải thầy thật không, rất có thể là kẻ giả danh thầy để lừa đảo. Mình gọi điện hỏi thầy trước đã.',tip:'先别 + V! = khoan đã!; 尚未确认 = còn chưa xác nhận (trang trọng hơn 还没确认); 很可能 nêu phỏng đoán.'},
+    {scene:'Bạn em vừa bỏ năm nghìn tệ vào một quán cà phê của người quen và mong tháng sau đã lãi gấp đôi.',a:{sp:'Bạn',zh:'我出了五千块钱，下个月就想赚回一万！',vn:'Tớ bỏ năm nghìn tệ, tháng sau là muốn kiếm về một vạn!'},need:['Dùng 急功近利','Khuyên bạn kiên nhẫn'],sample:'你这样太急功近利了。做生意要慢慢来，第一年能收回本钱就不错了。',samplePy:'Nǐ zhèyàng tài jígōng-jìnlì le. Zuò shēngyi yào mànmān lái, dì-yī nián néng shōuhuí běnqián jiù búcuò le.',sampleVn:'Cậu như thế là quá nóng vội cầu lợi rồi. Làm ăn phải từ từ, năm đầu thu hồi được vốn là tốt lắm rồi.',tip:'太 + 急功近利 + 了 = phê bình nhẹ; ……就不错了 = được … là tốt rồi; 本钱 ôn bài 38.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 // 🎯 NÓI SAO CHO HAY — 得体 / 语体
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 var registerData = {
-  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
-         'HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
   items: [
-    {scene:'Tấm biển cảnh báo của công an dán ở sảnh ngân hàng.',
-     a:'小心啊，有人会假装银行的人骗你钱！',b:'警惕冒充银行工作人员的电信诈骗。',better:'b',
-     why:'Biển cảnh báo nơi công cộng dùng văn viết ngắn gọn, trang trọng: 警惕, 冒充, 电信诈骗. Câu a (小心啊, 假装, 骗你钱) là lời nói miệng.'},
-
-    {scene:'Em nhắn tin khoe với bạn thân đôi giày mua được giá rẻ.',
-     a:'我在网上买的鞋才一百块，太合算了！',b:'本人于网上购得鞋一双，价格甚为合算。',better:'a',
-     why:'Nhắn tin bạn bè dùng khẩu ngữ (才一百块, 太……了). Câu b (本人, 于, 购得, 甚为) như văn bản hành chính, rất gượng.'},
-
-    {scene:'Bản tin thời sự trên truyền hình đưa tin về một vụ lừa đảo.',
-     a:'有几个人弄了个假网站骗钱，现在被抓起来了。',b:'一家皮包公司冒充国家部门开设假网站，大肆进行诈骗，现已被警方依法刑事拘留。',better:'b',
-     why:'Bản tin dùng văn viết chính xác, trang trọng như câu bài khoá: 冒充, 大肆进行诈骗, 依法刑事拘留. Câu a (弄了个, 被抓起来了) là kể chuyện miệng.'},
-
-    {scene:'Bạn thân vừa bị lừa mất tiền khi mua hàng trên mạng, em an ủi bạn.',
-     a:'别难过了，就当买个教训，以后我们一起小心点儿。',b:'请节哀顺变，望今后提高防范意识，谨防上当受骗。',better:'a',
-     why:'An ủi bạn thân cần lời gần gũi (别难过了, 就当买个教训). Câu b quá khách sáo, lại dùng sai 节哀顺变 (chỉ dùng khi chia buồn có người mất).'},
-
-    {scene:'Em viết báo cáo điều tra (bài 写一写) nộp cho cô giáo.',
-     a:'我问了好多人，他们差不多都天天上网上好久。',b:'通过这次调查，我发现大部分人每天上网时间超过三个小时。',better:'b',
-     why:'Báo cáo điều tra là văn viết, cần số liệu rõ ràng (超过三个小时) và câu kết luận (通过这次调查，我发现……). Câu a (好多人, 上好久) mơ hồ, khẩu ngữ.'},
-
-    {scene:'Em nói chuyện với ông nội, người muốn học dùng WeChat.',
-     a:'爷爷，我教您用微信吧，特别简单，以后您就能跟我视频了！',b:'爷爷，请您务必掌握微信的使用方法，以便日后进行视频通话。',better:'a',
-     why:'Nói với ông trong nhà dùng lời thân mật, động viên (特别简单, 就能跟我视频了). Câu b (务必, 以便日后) nghe như ra lệnh, rất xa cách.'}
+    {scene:'Em tán gẫu với bạn thân về cái nóng hôm qua.',a:'昨天热得我都快化了！',b:'昨天最热的时候有三十九度。',better:'a',why:'Nói chuyện phiếm, phóng đại (夸张: 热得都快化了) làm câu chuyện sinh động, gần gũi. Câu b đúng nhưng giống bản tin thời tiết.'},
+    {scene:'Em viết tin nhắn xin cô giáo cho nghỉ học một ngày vì bị sốt.',a:'老师，我病得快要死了，明天来不了了。',b:'老师，我发烧了，明天想请一天假，希望您同意。',better:'b',why:'Xin phép cần nói đúng sự thật, lịch sự. Phóng đại (病得快要死了) ở đây khiến cô lo lắng hoặc thấy em thiếu nghiêm túc.'},
+    {scene:'Tấm biển quảng cáo đặt trước cửa tiệm bánh mì để thu hút khách qua đường.',a:'本店面包香得让人走不动路！',b:'本店的面包味道还可以。',better:'a',why:'Quảng cáo cần gây ấn tượng: phóng đại 香得让人走不动路 khiến người đọc tò mò. Câu b nhạt, còn làm khách ngại.'},
+    {scene:'Bản tin thời sự trên truyền hình đưa tin về một vụ lừa đảo trên mạng.',a:'有几个人弄了个假网站骗钱，现在被抓起来了。',b:'几名罪犯冒充银行开设假网站，骗走了上百位老人的钱，目前已被警方依法拘留。',better:'b',why:'Bản tin dùng văn viết, thông tin đầy đủ (罪犯, 冒充, 依法拘留). Câu a là cách kể chuyện với bạn bè.'},
+    {scene:'Em nói chuyện với ông nội, người muốn học dùng WeChat.',a:'爷爷，我教您用微信吧，特别简单，以后您就能跟我视频了！',b:'爷爷，请您务必掌握微信的使用方法，以便日后进行视频通话。',better:'a',why:'Nói với ông trong nhà dùng lời thân mật, động viên (特别简单, 就能跟我视频了). Câu b (务必, 以便日后) nghe như ra lệnh, rất xa cách.'}
   ]
 };
 

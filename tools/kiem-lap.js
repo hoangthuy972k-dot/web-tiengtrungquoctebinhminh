@@ -183,7 +183,11 @@ function mucHsk5(n, cap) {
 }
 if (CAP === 'hsk5') for (let n = 1; n <= SB(CAP); n++) MUC[n] = MUC[n].filter((m) => m.loai !== 'mc').concat(mucHsk5(n));
 // HSK6: doan mau Luyen viet (缩写 theo bang 练习5) va cau mau Luyen noi (cung bang 练习5) tom tat cung mot bai khoa -> khong so doan mau (vietmau) voi cac muc khac
-if (CAP === 'hsk6') for (let n = 1; n <= SB(CAP); n++) MUC[n] = MUC[n].filter((m) => m.loai !== 'mc').concat(mucHsk5(n, 'hsk6').filter((m) => m.loai !== 'vietmau'));
+// HSK6: muc Luyen noi chi tinh CAU MAU (cau hoi / tieu de la nguyen van bang 练习5 cua sach, lap lai giua cac cau hoi la cua sach);
+// cau bai tap SGK (sgk…) la noi dung sach co dinh: khong bao khi chi trung nhau giua cac muc SGK (coDinh).
+if (CAP === 'hsk6') for (let n = 1; n <= SB(CAP); n++) MUC[n] = MUC[n].filter((m) => m.loai !== 'mc' && m.loai !== 'noi')
+  .concat(((BAI[n].speak && BAI[n].speak.questions) || []).map((q, i) => ({ id: 'noi' + (i + 1), loai: 'noi', cau: [...new Set(cauTu(q.sample))], goc: String(q.sample || '') })))
+  .concat(mucHsk5(n, 'hsk6').filter((m) => m.loai !== 'vietmau'));
 // Bai tap cua cap duoi: [nhan, muc]
 const CU_DUOI = [];
 DUOI[CAP].forEach((d) => { for (let m = 1; m <= SB(d); m++) CU_DUOI.push([d + ' bai ' + m, mucCuaBai(napBai(m, d))]); });
@@ -199,21 +203,24 @@ for (let n = A; n <= (B || A); n++) {
   // [TRUNG]
   const noi = {};
   ds.forEach((m) => m.cau.forEach((h) => { (noi[h] = noi[h] || []).push(m.id); }));
+  // HSK5: noi dung SACH co dinh (nghe SBT, bai tap SGK, doan mau) — khong bao khi chi trung/giong nhau giua cac muc co dinh
+  const coDinh = (id) => (CAP === 'hsk5' && /^(nghe|sgk|vietmau)/.test(id)) || (CAP === 'hsk6' && /^sgk/.test(id));
   Object.keys(noi).forEach((h) => {
-    if (noi[h].length < 2 || choPhep(h, h)) return;
+    if (noi[h].length < 2 || choPhep(h, h) || noi[h].every(coDinh)) return;
     loi.trung.push(h + ' ← ' + noi[h].join(', '));
     noi[h].forEach((id) => dinh.add(id));
   });
   // [GAN] — moi cap muc 1 lan
   for (let i = 0; i < ds.length; i++) for (let j = i + 1; j < ds.length; j++) {
     let hit = null;
+    if (coDinh(ds[i].id) && coDinh(ds[j].id)) continue;
     ds[i].cau.forEach((a) => ds[j].cau.forEach((b) => { if (!hit && ganNhau(a, b) && !choPhep(a, b)) hit = [a, b]; }));
     if (hit) { loi.gan.push(ds[i].id + ' 「' + hit[0] + '」 ~ ' + ds[j].id + ' 「' + hit[1] + '」'); dinh.add(ds[i].id); dinh.add(ds[j].id); }
   }
   // [BAI KHOA]
   const khoa = new Set();
   (D.dialog || []).forEach((d) => (d.lines || []).forEach((l) => cauTu(l.zh).forEach((h) => khoa.add(h))));
-  khoa.forEach((h) => { if (noi[h] && noi[h].length >= 2) loi.khoa.push(h + ' ← ' + noi[h].join(', ')); });
+  khoa.forEach((h) => { if (noi[h] && noi[h].length >= 2 && !noi[h].every(coDinh)) loi.khoa.push(h + ' ← ' + noi[h].join(', ')); });
   // [NHIEU]
   const boPA = {};
   D.mc.forEach((q, i) => { const k = q.opts.slice().sort().join('|'); (boPA[k] = boPA[k] || []).push('mc' + (i + 1)); });
@@ -228,7 +235,7 @@ for (let n = A; n <= (B || A); n++) {
     const truoc = {};
     CU_DUOI.forEach(([ten, ds2]) => ds2.forEach((x) => x.cau.forEach((h) => { if (h.length >= 4 && !truoc[h]) truoc[h] = ten + ' ' + x.id; })));
     for (let m = 1; m < n; m++) MUC[m].forEach((x) => x.cau.forEach((h) => { if (h.length >= 4 && !truoc[h]) truoc[h] = 'bai ' + m + ' ' + x.id; }));
-    ds.forEach((x) => x.cau.forEach((h) => { if (truoc[h]) loi.cu.push(x.id + ' 「' + h + '」 = ' + truoc[h]); }));
+    ds.forEach((x) => x.cau.forEach((h) => { if (truoc[h] && !coDinh(x.id)) loi.cu.push(x.id + ' 「' + h + '」 = ' + truoc[h]); }));
   }
   // [GHEP]
   const dh = daHoc(n);

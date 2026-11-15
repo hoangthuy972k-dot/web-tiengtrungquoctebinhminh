@@ -1314,82 +1314,50 @@ var hvBridgeData = {
 // GHÉP TỪ — cụm trong bài khoá và phần 练习
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'婴儿',right:'时期'},
-  {left:'翻天覆地的',right:'变化'},
-  {left:'更新',right:'观念'},
-  {left:'从高处',right:'往下蹦'},
-  {left:'留下',right:'疤痕'},
-  {left:'掩盖',right:'真相'},
-  {left:'把自我',right:'比喻为一条河'},
-  {left:'呈现出',right:'不同的状态'},
-  {left:'阐述',right:'观点'},
-  {left:'陈述',right:'理由'},
-  {left:'独到的',right:'见解'},
-  {left:'演变',right:'过程'},
-  {left:'被',right:'通缉'},
   {left:'触犯',right:'法律'},
-  {left:'受到',right:'惩罚'},
   {left:'器官',right:'移植'},
-  {left:'精神',right:'面貌'},
-  {left:'从昏迷中',right:'清醒过来'},
-  {left:'陷入',right:'思索'},
+  {left:'陈述',right:'事实'},
+  {left:'翻天覆地的',right:'变化'},
   {left:'拿性命',right:'开玩笑'},
-  {left:'崭新的',right:'开始'},
-  {left:'后果',right:'不堪设想'}
+  {left:'精神',right:'面貌'},
+  {left:'发表',right:'言论'},
+  {left:'无忧无虑的',right:'日子'},
+  {left:'陷入',right:'昏迷'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ
+// ĐIỀN TỪ — câu mới (không chép bài khoá / SGK), mỗi câu một tình huống; ôn xoáy ốc từ + ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'妈妈把我',blank:'婴儿',post:'时期的衣服都保留了下来。',hint:'(trẻ sơ sinh)',ans:'婴儿'},
-  {pre:'改革开放以来，这座城市发生了',blank:'翻天覆地',post:'的变化。',hint:'(long trời lở đất)',ans:'翻天覆地'},
-  {pre:'这款手机软件又',blank:'更新',post:'了，增加了不少新功能。',hint:'(cập nhật)',ans:'更新'},
-  {pre:'她笑起来脸上有两个可爱的小',blank:'酒窝',post:'。',hint:'(lúm đồng tiền)',ans:'酒窝'},
-  {pre:'听说考了第一名，弟弟高兴得直',blank:'蹦',post:'。',hint:'(nhảy cẫng)',ans:'蹦'},
-  {pre:'下雨天路滑，爷爷不小心',blank:'跌',post:'了一跤。',hint:'(ngã)',ans:'跌'},
-  {pre:'伤口要及时处理，不然会留',blank:'疤',post:'的。',hint:'(sẹo)',ans:'疤'},
-  {pre:'一上考场，我的',blank:'大脑',post:'就一片空白。',hint:'(bộ não)',ans:'大脑'},
-  {pre:'人们常把老师',blank:'比喻',post:'成辛勤的园丁。',hint:'(ví như)',ans:'比喻'},
-  {pre:'要想创新，首先要打破',blank:'固有',post:'的思维方式。',hint:'(vốn có, cố hữu)',ans:'固有'},
-  {pre:'她年纪虽小，对很多问题却很有',blank:'见解',post:'。',hint:'(kiến giải)',ans:'见解'},
-  {pre:'汉字是由图画逐渐',blank:'演变',post:'而来的。',hint:'(biến đổi dần)',ans:'演变'},
-  {pre:'讨论会上，同学们',blank:'各抒己见',post:'，气氛非常热烈。',hint:'(mỗi người một ý)',ans:'各抒己见'},
-  {pre:'这名被',blank:'通缉',post:'了多年的逃犯终于落网了。',hint:'(truy nã)',ans:'通缉'},
-  {pre:'做了错事，就要承担责任，接受',blank:'惩罚',post:'。',hint:'(trừng phạt)',ans:'惩罚'},
-  {pre:'自从搬家以后，她总是显得很',blank:'忧郁',post:'。',hint:'(u buồn)',ans:'忧郁'},
-  {pre:'吸烟对',blank:'肺',post:'的伤害非常大。',hint:'(phổi)',ans:'肺'},
-  {pre:'他生前就决定去世后捐献自己的',blank:'器官',post:'。',hint:'(cơ quan, nội tạng)',ans:'器官'},
-  {pre:'医生成功地为病人',blank:'移植',post:'了一颗新的心脏。',hint:'(cấy ghép)',ans:'移植'},
-  {pre:'新校长来了以后，学生们的精神',blank:'面貌',post:'有了很大变化。',hint:'(diện mạo)',ans:'面貌'},
-  {pre:'这场演出的规模可以说是',blank:'空前绝后',post:'。',hint:'(có một không hai)',ans:'空前绝后'},
-  {pre:'他出车祸后',blank:'昏迷',post:'了整整三天。',hint:'(hôn mê)',ans:'昏迷'},
-  {pre:'在网上发表',blank:'言论',post:'也要对自己负责。',hint:'(lời bàn, phát ngôn)',ans:'言论'},
-  {pre:'达尔文提出的进化',blank:'学说',post:'影响了整个世界。',hint:'(học thuyết)',ans:'学说'},
-  {pre:'梦想其实并不',blank:'遥远',post:'，只要一步一步地去做。',hint:'(xa vời)',ans:'遥远'},
-  {pre:'经过一番',blank:'思索',post:'，他终于想出了一个好办法。',hint:'(suy nghĩ)',ans:'思索'},
-  {pre:'开车时玩手机，就是拿自己的',blank:'性命',post:'开玩笑。',hint:'(tính mạng)',ans:'性命'},
-  {pre:'我常常怀念小时候',blank:'无忧无虑',post:'的日子。',hint:'(vô tư lự)',ans:'无忧无虑'},
-  {pre:'生日那天，爸爸送了我一辆',blank:'崭新',post:'的自行车。',hint:'(mới tinh)',ans:'崭新'},
-  {pre:'公司',blank:'陷入',post:'了困境，大家都很着急。',hint:'(rơi vào)',ans:'陷入'}
+  {pre:'飞机上有个才几个月大的',blank:'婴儿',post:'，一路上哭个不停。',hint:'(trẻ sơ sinh)',ans:'婴儿',exp:'婴儿 = em bé mới sinh, còn ẵm ngửa; 才几个月大的 + 婴儿 làm rõ tuổi.'},
+  {pre:'这个网站的新闻很及时，几乎每个小时都会',blank:'更新',post:'一次。',hint:'(cập nhật)',ans:'更新',exp:'更新 = cập nhật, thay cái mới (更新新闻 / 更新知识); 更 ở đây đọc gēng, không phải gèng.'},
+  {pre:'听说明天要去海边玩，孩子们高兴得又',blank:'蹦',post:'又跳。',hint:'(nhảy cẫng)',ans:'蹦',exp:'又蹦又跳 = nhảy cẫng lên vì vui; khung 又 + V + 又 + V; 蹦 là bật nhảy hai chân.'},
+  {pre:'孩子学走路的时候，',blank:'跌',post:'倒了也不哭，自己站起来接着走。',hint:'(ngã)',ans:'跌',exp:'跌倒 = té ngã; 跌 còn dùng cho giá cả "sụt giảm" (价格跌了).'},
+  {pre:'他手上那道',blank:'疤',post:'是小时候帮妈妈切菜时留下的。',hint:'(vết sẹo)',ans:'疤',exp:'Lượng từ của 疤 là 道 (一道疤); động từ đi kèm là 留下 (để lại sẹo).'},
+  {pre:'工厂想用各种办法',blank:'掩盖',post:'污染的问题，可最后还是被记者发现了。',hint:'(che giấu, che đậy)',ans:'掩盖',exp:'掩盖 + 问题 / 事实 = che đậy cho người khác không thấy; khác 掩饰 (bài 2) là che giấu cảm xúc, khuyết điểm của mình.'},
+  {pre:'人老了以后，',blank:'大脑',post:'的反应会慢慢变慢，所以要多读书、多思考。',hint:'(bộ não)',ans:'大脑',exp:'大脑的反应 = phản ứng của não; 大脑 chỉ bộ óc — cơ quan suy nghĩ trong đầu.'},
+  {pre:'很多诗人都喜欢把母亲的爱',blank:'比喻',post:'成冬天里的阳光。',hint:'(ví như)',ans:'比喻',exp:'把 A 比喻成 / 比喻为 B = ví A như B; 比喻 khác 譬如 (nêu ví dụ).'},
+  {pre:'每种语言都有自己',blank:'固有',post:'的特点，学外语时不能总用自己国家语言的习惯去理解。',hint:'(vốn có)',ans:'固有',exp:'固有 = vốn có từ trước (固有的特点 / 固有的看法); chỉ làm định ngữ, không nói 很固有.'},
+  {pre:'很多节日的风俗经过上千年的',blank:'演变',post:'，早已和原来很不一样了。',hint:'(biến đổi dần)',ans:'演变',exp:'经过……的演变 = trải qua quá trình biến đổi lâu dài; 演变 dùng cho thay đổi chậm qua thời gian dài, khác 改变 (đổi một lần).'},
+  {pre:'老师让两个打架的学生分别',blank:'陈述',post:'一下事情的经过。',hint:'(trình bày, kể rõ)',ans:'陈述',exp:'陈述 + sự việc / lý do = kể rõ ràng theo đúng sự thật; 阐述 thì giải thích sâu một quan điểm, lý luận (ôn 打架 bài 1).'},
+  {pre:'她年纪不大，对历史问题却很有',blank:'见解',post:'，连教授都很佩服她。',hint:'(kiến giải, cách nhìn)',ans:'见解',exp:'有见解 = có cách nhìn sâu sắc, riêng; 见解 trang trọng hơn 看法.'},
+  {pre:'这个被',blank:'通缉',post:'了八年的人，昨天终于在火车站被抓住了。',hint:'(truy nã)',ans:'通缉',exp:'被通缉 = bị truy nã; dùng với tội phạm đang bỏ trốn, thường ở dạng bị động.'},
+  {pre:'孩子犯了错，父母并没有',blank:'惩罚',post:'他，而是耐心地跟他讲道理。',hint:'(trừng phạt)',ans:'惩罚',exp:'惩罚 + người = phạt ai; 并没有……，而是…… phủ định rồi nêu cách làm thật (ôn 并非 bài 7).'},
+  {pre:'这位老人去世前决定，把自己的',blank:'器官',post:'送给需要的病人。',hint:'(nội tạng, cơ quan trong cơ thể)',ans:'器官',exp:'器官 = các cơ quan trong cơ thể (tim, phổi, gan…); tặng cho người bệnh để 移植 (cấy ghép).'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (对……而言 · 有关 · 不瞒你说) ít nhất 2 câu
+// SẮP XẾP CÂU — câu mới, chỉ một trật tự đúng
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['对','年轻的我们','而言','，','面对困难','是件','快乐的事情','。'],ans:'对年轻的我们而言，面对困难是件快乐的事情。',audio:'对年轻的我们而言，面对困难是件快乐的事情。'},
-  {words:['对','高中生','而言','，','睡眠','比什么','都','重要','。'],ans:'对高中生而言，睡眠比什么都重要。',audio:'对高中生而言，睡眠比什么都重要。'},
-  {words:['对你','而言','，','就像','看','一个','陌生人','。'],ans:'对你而言，就像看一个陌生人。',audio:'对你而言，就像看一个陌生人。'},
-  {words:['有关','本体的问题','，','困扰了','哲学家','2500多年','。'],ans:'有关本体的问题，困扰了哲学家2500多年。',audio:'有关本体的问题，困扰了哲学家2500多年。'},
-  {words:['他','查阅了','大量','有关','服饰问题的','资料','。'],ans:'他查阅了大量有关服饰问题的资料。',audio:'他查阅了大量有关服饰问题的资料。'},
-  {words:['这次','失败','跟','他的','态度','有关','。'],ans:'这次失败跟他的态度有关。',audio:'这次失败跟他的态度有关。'},
-  {words:['不瞒你说','，','对这个问题','，','我','是这样','想的','。'],ans:'不瞒你说，对这个问题，我是这样想的。',audio:'不瞒你说，对这个问题，我是这样想的。'},
-  {words:['不瞒你说','，','这道题','我','也','不会','做','。'],ans:'不瞒你说，这道题我也不会做。',audio:'不瞒你说，这道题我也不会做。'},
-  {words:['赫拉克利特','把','自我','比喻为','一条河','。'],ans:'赫拉克利特把自我比喻为一条河。',audio:'赫拉克利特把自我比喻为一条河。'},
-  {words:['哲学家们','对','本体的问题','各抒己见','。'],ans:'哲学家们对本体的问题各抒己见。',audio:'哲学家们对本体的问题各抒己见。'},
-  {words:['我们','只想','无忧无虑地','过日子','。'],ans:'我们只想无忧无虑地过日子。',audio:'我们只想无忧无虑地过日子。'},
-  {words:['两个人','术后','从昏迷中','清醒','过来','。'],ans:'两个人术后从昏迷中清醒过来。',audio:'两个人术后从昏迷中清醒过来。'}
+  {words:['他','正在','读','有关','中国历史的','书','。'],ans:'他正在读有关中国历史的书。',audio:'他正在读有关中国历史的书。'},
+  {words:['他','把人生','比喻成','一场','长跑','。'],ans:'他把人生比喻成一场长跑。',audio:'他把人生比喻成一场长跑。'},
+  {words:['医生','为她','移植了','一个','新的','肺','。'],ans:'医生为她移植了一个新的肺。',audio:'医生为她移植了一个新的肺。'},
+  {words:['大雪','把','那条小路','都','掩盖','住了','。'],ans:'大雪把那条小路都掩盖住了。',audio:'大雪把那条小路都掩盖住了。'},
+  {words:['老师的话','让','大家','陷入了','长久的','思索','。'],ans:'老师的话让大家陷入了长久的思索。',audio:'老师的话让大家陷入了长久的思索。'},
+  {words:['她','一笑','就','露出','两个','甜甜的','酒窝','。'],ans:'她一笑就露出两个甜甜的酒窝。',audio:'她一笑就露出两个甜甜的酒窝。'},
+  {words:['这座城市的','面貌','发生了','翻天覆地的','变化','。'],ans:'这座城市的面貌发生了翻天覆地的变化。',audio:'这座城市的面貌发生了翻天覆地的变化。'},
+  {words:['我们','要','为','自己的','言论','负责','。'],ans:'我们要为自己的言论负责。',audio:'我们要为自己的言论负责。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1397,72 +1365,44 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'对今天的年轻人____，网络已经成了生活的一部分。',opts:['而言','来看','说来说去','而已'],ans:0,
-   exp:'Khung cố định 对……而言 (văn viết) = đối với … mà nói. 对……来看 không có (phải là 从……来看); 说来说去 = nói đi nói lại; 而已 = mà thôi (ôn bài 5).'},
-  {wrong:'手术前，他仔细研究了中外____病例的文字记载。',opts:['有关','关心','关于是','相关于'],ans:0,
-   exp:'有关 + N làm định ngữ = liên quan đến (有关病例). 关心 = quan tâm (động từ tâm lý); 关于是, 相关于 đều không đúng ngữ pháp.'},
-  {wrong:'不____你说，书法方面，本人虽称不上“家”，但水平还是有一些的。',opts:['瞒','满','慢','骗'],ans:0,
-   exp:'Xen ngữ cố định 不瞒你说 (瞒 = giấu) = nói thật với bạn. 满 (đầy), 慢 (chậm) đồng âm gần; 骗 = lừa — không có 不骗你说 theo nghĩa xen ngữ này.'},
-  {wrong:'脸上留下的疤痕____了她的酒窝。',opts:['掩盖','揭开','掩饰','隐瞒'],ans:0,
-   exp:'Vật che phủ lên vật → 掩盖. 掩饰 (bài 2) = che đậy cảm xúc, lỗi lầm bằng thái độ; 隐瞒 (bài 2) = giấu giếm sự thật không nói ra; 揭开 = mở ra, vạch trần (nghĩa ngược lại).'},
-  {wrong:'经过一段时间的观察，我____他是个值得信任的人。',opts:['确信','信任','相信地','信心'],ans:0,
-   exp:'确信 + mệnh đề = tin chắc rằng …. 信任 + người (tin tưởng ai), không mang mệnh đề; 信心 là danh từ; 相信地 sai hình thức.'},
-  {wrong:'春天到了，公园里____出一片生机勃勃的景象。',opts:['呈现','表现','出现在','实现'],ans:0,
-   exp:'呈现出……景象 = hiện ra cảnh tượng. 表现 = thể hiện (năng lực, thái độ của người); 实现 = thực hiện (ước mơ); 出现在 phải có nơi chốn phía sau.'},
-  {wrong:'请你详细____一下你对这个理论的看法。',opts:['阐述','陈列','讲究','说服'],ans:0,
-   exp:'Giải thích sâu quan điểm về một lý luận → 阐述. 陈列 = bày biện (hàng hoá); 说服 = thuyết phục; 讲究 = chú trọng, cầu kỳ.'},
-  {wrong:'法官让双方分别____理由。',opts:['陈述','陈旧','陈列','描写'],ans:0,
-   exp:'Nêu ra lý do có thứ tự trước toà → 陈述理由. 陈列 = trưng bày; 描写 = miêu tả (văn học); 陈旧 = cũ kỹ (tính từ).'},
-  {wrong:'根据现场的脚印____，小偷是从窗户进来的。',opts:['推测','设想','推荐','猜谜'],ans:0,
-   exp:'根据 + căn cứ + 推测 = suy đoán có căn cứ. 设想 = tưởng tượng (không cần căn cứ); 推荐 = tiến cử; 猜谜 = đoán câu đố.'},
-  {wrong:'我喜欢很多运动，____游泳、爬山、打篮球等。',opts:['譬如','比喻','好像','例外'],ans:0,
-   exp:'Nêu ví dụ, liệt kê → 譬如 (= 比如). 比喻 = ví von (把A比喻为B); 好像 = hình như; 例外 = ngoại lệ.'},
-  {wrong:'只要____了法律，无论是谁都要受到惩罚。',opts:['触犯','侮辱','冒险','接触'],ans:0,
-   exp:'触犯法律 = vi phạm pháp luật. 侮辱 = xúc phạm, làm nhục (người); 冒险 = mạo hiểm; 接触 = tiếp xúc.'},
-  {wrong:'听到这个好消息，我们都____兴奋。',opts:['极度','极端','极限','极点'],ans:0,
-   exp:'兴奋 là từ tích cực → 极度 (做一做 của sách). 极端 làm phó từ thường đi với từ ngữ xấu; 极限, 极点 là danh từ (giới hạn, tột điểm) — không đứng trước tính từ; có thể nói 兴奋到了极点.'},
-  {wrong:'看问题要全面，不要走____。',opts:['极端','极度','端正','过度'],ans:0,
-   exp:'Cụm cố định 走极端 (极端 làm danh từ). 极度, 过度 không làm danh từ theo cách này; 端正 = ngay ngắn.'},
-  {wrong:'越是关键时刻，越要保持头脑____。',opts:['清醒','清楚地','醒来','清新'],ans:0,
-   exp:'头脑清醒 = đầu óc tỉnh táo. 清楚 tả sự rõ ràng của sự vật (说清楚); 醒来 là động từ; 清新 = trong lành (空气清新).'},
-  {wrong:'如果酒后开车，后果不堪____。',opts:['设想','推测','想象到','思想'],ans:0,
-   exp:'Thành ngữ cố định 不堪设想. 推测 = suy đoán có căn cứ; 思想 = tư tưởng (danh từ); 想象到 không đi sau 不堪.'},
-  {wrong:'有的人因为过于____而吃药。',opts:['忧郁','犹豫','优秀','幽默'],ans:0,
-   exp:'Vì quá u uất mà phải uống thuốc → 忧郁. 犹豫 (yóuyù) = do dự — gần âm, dễ nhầm; 优秀 = xuất sắc; 幽默 = hài hước.'},
-  {wrong:'这些都会逐渐改变你的____、情绪和行为。',opts:['面貌','面子','面对','表面'],ans:0,
-   exp:'面貌 = diện mạo, bộ mặt. 面子 (bài 3) = thể diện; 面对 = đối mặt (động từ); 表面 = bề mặt, bề ngoài.'},
-  {wrong:'听了老师的话，全班同学都陷入了____。',opts:['思索','思念','索取','想念'],ans:0,
-   exp:'陷入思索 = chìm vào suy nghĩ. 思念, 想念 = nhớ nhung (người, quê); 索取 = đòi lấy.'}
+  {wrong:'____住在农村的老人而言，用手机买东西并不是一件容易的事。',opts:['对','从','把','给'],ans:0,exp:'Khung cố định 对……而言 = đối với… mà nói. 从 đi với 来看 (从……来看); 把 / 给 không tạo khung với 而言.'},
+  {wrong:'这次考试没考好，固然是因为题目难，但也跟他最近总是熬夜____。',opts:['有关','关于','关心','联系'],ans:0,exp:'跟 / 和 + B + 有关 = có liên quan tới B (有关 làm động từ, đứng cuối). 关于 là giới từ đứng đầu cụm; 关心 = quan tâm; 联系 = liên lạc. Ôn 固然 (bài 5).'},
+  {wrong:'这件事已经交给____部门去处理了，你不用再担心了。',opts:['有关','关于','对于','关系'],ans:0,exp:'有关 + danh từ đứng liền (有关部门 = cơ quan hữu quan). 关于 / 对于 phải có 的 và không đứng trước 部门 như thế; 关系 là danh từ.'},
+  {wrong:'这本书从五个方面____了他的教育理论。',opts:['阐述','陈述','譬如','掩盖'],ans:0,exp:'Giải thích sâu một lý luận, quan điểm → 阐述. 陈述 là kể rõ sự việc, lý do; 譬如 = ví dụ như; 掩盖 = che giấu.'},
+  {wrong:'根据天上的云，爷爷____明天会下雨，让我们出门带上伞。',opts:['推测','设想','思索','比喻'],ans:0,exp:'根据 + căn cứ + 推测 = suy đoán có căn cứ. 设想 là hình dung không cần căn cứ; 思索 = ngẫm nghĩ; 比喻 = ví von.'},
+  {wrong:'这个____很好，可是要真正做起来，恐怕没那么容易。',opts:['设想','推测','见解','思索'],ans:0,exp:'设想 làm danh từ = ý tưởng, dự tính về việc sẽ làm → mới nói được 做起来. 推测 (phỏng đoán), 见解 (quan điểm), 思索 (suy ngẫm) đều không "làm" được.'},
+  {wrong:'比赛赢了，全队的人都____激动，抱在一起哭了起来。',opts:['极度','极端','极了','最好'],ans:0,exp:'激动 ở đây là cảm xúc tích cực → 极度 + tính từ. 极端 làm phó từ thường đi với từ ngữ xấu (极端自私); 极了 phải đứng SAU tính từ (激动极了); 最好 = tốt nhất là.'},
+  {wrong:'他看问题容易走____，一件事在他眼里不是全好，就是全坏。',opts:['极端','极度','弯路','后门'],ans:0,exp:'走极端 = cực đoan (极端 làm danh từ). Không nói 走极度; 走弯路 = đi đường vòng, 走后门 = đi cửa sau — sai nghĩa.'},
+  {wrong:'听完他的问题，大家都____了沉默，谁也不知道该怎么回答。',opts:['陷入','进入','加入','投入'],ans:0,exp:'陷入 + trạng thái khó thoát (沉默 / 思索 / 昏迷). 进入 = đi vào nơi chốn, giai đoạn; 加入 = gia nhập; 投入 = dồn sức vào.'},
+  {wrong:'昨天晚上喝了那么多酒，他到现在还没完全____，你下午再跟他谈吧。',opts:['清醒','清楚','明白','安静'],ans:0,exp:'Tỉnh táo trở lại sau rượu, hôn mê → 清醒. 清楚 tả sự việc rõ ràng; 明白 = hiểu; 安静 = yên tĩnh.'},
+  {wrong:'搬进____的教学楼，同学们别提多兴奋了。',opts:['崭新','新鲜','重新','更新'],ans:0,exp:'崭新的 + đồ vật = mới tinh. 新鲜 dùng cho thực phẩm, không khí; 重新 là phó từ (làm lại); 更新 là động từ. Ôn 别提多……了 (bài 1).'},
+  {wrong:'一到秋天，山上就____出红色、绿色等各种颜色。',opts:['呈现','出现','表现','实现'],ans:0,exp:'呈现出 + màu sắc / trạng thái = hiện ra. 出现 không mang bổ ngữ 出; 表现 dùng cho người (thái độ, năng lực); 实现 = thực hiện (ước mơ).'},
+  {wrong:'春节有很多传统活动，____包饺子、放鞭炮、全家一起吃年夜饭。',opts:['譬如','比喻','假如','而且'],ans:0,exp:'Nêu ví dụ để liệt kê → 譬如 (= 比如). 比喻 là ví von (把 A 比喻成 B); 假如 = giả sử; 而且 = hơn nữa.'},
+  {wrong:'关于周末去哪儿玩，全家人____，最后谁也说服不了谁。',opts:['各抒己见','空前绝后','无忧无虑','翻天覆地'],ans:0,exp:'Mỗi người nói ý của mình → 各抒己见 (làm vị ngữ). 空前绝后 = có một không hai; 无忧无虑 = vô tư lự; 翻天覆地 = thay đổi long trời lở đất.'},
+  {wrong:'我____他明天一定会来，他答应过的事从来没有做不到的。',opts:['确信','信任','信心','自信'],ans:0,exp:'确信 + cả một mệnh đề = tin chắc rằng…. 信任 + người (tin tưởng ai), không mang mệnh đề; 信心 là danh từ; 自信 là tính từ.'}
 ];
 
 // ══════════════════════════════════════════
-// DỊCH — câu ghép, ôn từ HSK 6 bài 1–6 và HSK 4–5
+// DỊCH Việt → Trung — câu mới, dùng từ của bài + ôn ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Đối với học sinh cấp ba chúng tôi, giữ đầu óc tỉnh táo quan trọng hơn thức khuya ôn bài, vì thiếu ngủ sẽ khiến não phản ứng chậm đi.',zh:'对我们高中生而言，保持头脑清醒比熬夜复习更重要，因为缺少睡眠会使大脑反应变慢。',py:'Duì wǒmen gāozhōngshēng ér yán, bǎochí tóunǎo qīngxǐng bǐ áoyè fùxí gèng zhòngyào, yīnwèi quēshǎo shuìmián huì shǐ dànǎo fǎnyìng biàn màn.',goiY:['对……而言','清醒','大脑','熬夜'],giai:'对……而言 (văn viết của 对……来说) đặt đầu câu nêu góc nhìn; A 比 B 更…… so sánh; 熬夜 ôn bài 2. "Khiến … chậm đi" = 使……变慢.'},
-  {vi:'Nói thật với cậu, từ hồi sơ sinh đến giờ tớ đã thay đổi long trời lở đất, đến mẹ tớ nhìn ảnh cũng không nhận ra tớ.',zh:'不瞒你说，从婴儿时期到现在，我发生了翻天覆地的变化，连妈妈看照片都认不出我来。',py:'Bù mán nǐ shuō, cóng yīng\'ér shíqī dào xiànzài, wǒ fāshēngle fāntiān-fùdì de biànhuà, lián māma kàn zhàopiàn dōu rèn bu chū wǒ lái.',goiY:['不瞒你说','婴儿','翻天覆地','连……都……'],giai:'不瞒你说 là xen ngữ mở đầu, sau có dấu phẩy; 连……都…… nhấn mạnh trường hợp khó xảy ra nhất; tân ngữ 我 chen giữa 认不出……来.'},
-  {vi:'Tuy mọi người mỗi người một ý, nhưng quan điểm của lớp trưởng đặc biệt độc đáo, khiến người ta không khỏi khâm phục.',zh:'虽然大家各抒己见，但是班长的见解格外独到，令人不由得佩服。',py:'Suīrán dàjiā gèshū-jǐjiàn, dànshì bānzhǎng de jiànjiě géwài dúdào, lìng rén bùyóude pèifú.',goiY:['虽然……但是……','各抒己见','见解','不由得'],giai:'各抒己见 là vị ngữ, không mang tân ngữ; "quan điểm" dùng 见解 (trang trọng hơn 看法). 不由得 ôn bài 2 = không kìm được.'},
+  {vi:'Đối với người mới đến một thành phố xa lạ, điều khó nhất không phải là công việc, mà là sự cô đơn.',zh:'对刚到一个陌生城市的人而言，最难的并非工作，而是孤独。',py:'Duì gāng dào yí ge mòshēng chéngshì de rén ér yán, zuì nán de bìngfēi gōngzuò, ér shì gūdú.',goiY:['对……而言','并非……而是……','陌生','孤独'],giai:'对 + người + 而言 đặt đầu câu nêu góc nhìn (văn viết của 对……来说); 并非 A，而是 B ôn bài 7; 孤独 ôn bài 2.'},
+  {vi:'Lần này kết quả không tốt chưa chắc đã liên quan đến năng lực của cậu, có thể là vì cậu quá căng thẳng.',zh:'这次结果不好，未必跟你的能力有关，可能是因为你过于紧张了。',py:'Zhè cì jiéguǒ bù hǎo, wèibì gēn nǐ de nénglì yǒuguān, kěnéng shì yīnwèi nǐ guòyú jǐnzhāng le.',goiY:['跟……有关','未必','过于'],giai:'"Liên quan đến…" = 跟 / 和 + N + 有关, 有关 đứng cuối, không nói 有关你的能力 ở vị trí này; 过于 ôn bài 3.'},
+  {vi:'Tài liệu liên quan đến cuộc họp ngày mai, phiền cậu trước giờ tan làm in ra giúp tớ.',zh:'有关明天会议的材料，麻烦你下班前帮我打印出来。',py:'Yǒuguān míngtiān huìyì de cáiliào, máfan nǐ xiàbān qián bāng wǒ dǎyìn chūlái.',goiY:['有关……的 + N','麻烦你','打印'],giai:'有关 + N + 的 + N làm định ngữ; cụm tân ngữ được đưa lên đầu câu làm chủ đề, sau đó mới là lời nhờ.'},
   {vi:'Chỉ cần cậu tin chắc mình đúng thì chẳng cần phải trình bày lý do với những kẻ chế giễu cậu.',zh:'只要你确信自己是对的，就没必要向那些嘲笑你的人陈述理由。',py:'Zhǐyào nǐ quèxìn zìjǐ shì duì de, jiù méi bìyào xiàng nàxiē cháoxiào nǐ de rén chénshù lǐyóu.',goiY:['只要……就……','确信','陈述','嘲笑'],giai:'只要……就……: điều kiện đủ; 确信 mang cả mệnh đề làm tân ngữ; 向 + người + 陈述理由. 嘲笑 ôn bài 1.'},
   {vi:'Một khi rơi vào tâm trạng u uất thì đừng giấu người nhà, mà hãy chủ động nói ra nỗi lòng của mình.',zh:'一旦陷入忧郁的情绪，不要向家人隐瞒，而要主动说出自己的心事。',py:'Yídàn xiànrù yōuyù de qíngxù, bú yào xiàng jiārén yǐnmán, ér yào zhǔdòng shuōchū zìjǐ de xīnshì.',goiY:['一旦……','陷入','忧郁','隐瞒'],giai:'一旦 = một khi (giả thiết điều không mong muốn); 不要……而要…… đối lập hai cách làm. 隐瞒 ôn bài 2; "rơi vào tâm trạng" = 陷入……的情绪.'},
-  {vi:'Những tài liệu liên quan đến bài diễn thuyết lần này em đều đã tra cứu rồi, nhưng vẫn chưa biết nên trình bày quan điểm của mình thế nào.',zh:'有关这次演讲的资料我都查阅了，可是还不知道该怎样阐述自己的见解。',py:'Yǒuguān zhè cì yǎnjiǎng de zīliào wǒ dōu cháyuè le, kěshì hái bù zhīdào gāi zěnyàng chǎnshù zìjǐ de jiànjiě.',goiY:['有关','阐述','见解','可是'],giai:'有关 + N làm định ngữ (有关……的资料), tân ngữ được đảo lên đầu câu; "trình bày quan điểm" (giải thích sâu) dùng 阐述, không dùng 陈述.'},
-  {vi:'Thay vì suốt ngày sa vào những suy tư không có lời đáp, chi bằng tỉnh táo lại, làm tốt từng việc nhỏ trước mắt.',zh:'与其成天陷入没有答案的思索，不如清醒过来，把眼前的每件小事做好。',py:'Yǔqí chéngtiān xiànrù méiyǒu dá\'àn de sīsuǒ, bùrú qīngxǐng guòlai, bǎ yǎnqián de měi jiàn xiǎoshì zuòhǎo.',goiY:['与其……不如……','成天','陷入','思索'],giai:'与其 A 不如 B: người nói chọn B; 成天 ôn bài 6; 思索 ở đây dùng như danh từ sau 陷入.'},
-  {vi:'Nói thật với cậu, tớ không phải không muốn sống vô tư lự, mà là kỳ thi đại học đã không còn xa, bố mẹ lại suốt ngày cằn nhằn, tớ chẳng thể nào thảnh thơi nổi.',zh:'不瞒你说，我不是不想无忧无虑地过日子，而是高考已经不再遥远，父母又成天唠叨，我根本轻松不起来。',py:'Bù mán nǐ shuō, wǒ bú shì bù xiǎng wúyōu-wúlǜ de guò rìzi, ér shì gāokǎo yǐjīng bú zài yáoyuǎn, fùmǔ yòu chéngtiān láodao, wǒ gēnběn qīngsōng bu qǐlái.',goiY:['不瞒你说','不是……而是……','无忧无虑','遥远'],giai:'不是 A 而是 B phủ định lý do sai, nêu lý do thật; 轻松不起来 là bổ ngữ khả năng phủ định. 唠叨 ôn bài 2, 成天 ôn bài 6.'},
-  {vi:'Nếu cậu cứ khoe khoang trên mạng để che giấu sự tự ti thì sớm muộn người khác cũng nhìn ra, chẳng thà để mọi người thấy con người thật của mình.',zh:'如果你总在网上炫耀来掩盖自卑，别人早晚会看出来，还不如以真实的面貌面对大家。',py:'Rúguǒ nǐ zǒng zài wǎng shang xuànyào lái yǎngài zìbēi, biérén zǎowǎn huì kàn chūlái, hái bùrú yǐ zhēnshí de miànmào miànduì dàjiā.',goiY:['如果……','炫耀','掩盖','还不如'],giai:'V1 + 来 + V2: làm V1 để V2 (炫耀来掩盖); 还不如 = chẳng thà (lựa chọn tốt hơn). 炫耀 ôn bài 3; "con người thật" = 真实的面貌.'},
-  {vi:'Đối với tôi, học tiếng Trung chẳng phải chuyện gì có một không hai, nhưng chính trong quá trình không ngừng cập nhật kiến thức, tôi đã gặp được một con người hoàn toàn mới của mình.',zh:'对我而言，学汉语并不是什么空前绝后的事，但正是在不断更新知识的过程中，我遇见了一个崭新的自己。',py:'Duì wǒ ér yán, xué Hànyǔ bìng bú shì shénme kōngqián-juéhòu de shì, dàn zhèng shì zài búduàn gēngxīn zhīshi de guòchéng zhōng, wǒ yùjiànle yí ge zhǎnxīn de zìjǐ.',goiY:['对……而言','并不是……但正是……','更新','崭新'],giai:'并不是 phủ định nhẹ, 但正是 nhấn mạnh điều thật sự quan trọng; 在……的过程中 = trong quá trình …; 崭新的 + N (không nói 很崭新).'}
+  {vi:'Nói thật, tôi chỉ mong ngay bây giờ được quay về những ngày vô tư lự hồi còn nhỏ.',zh:'老实说，我巴不得现在就能回到小时候那些无忧无虑的日子。',py:'Lǎoshi shuō, wǒ bābudé xiànzài jiù néng huídào xiǎoshíhou nàxiē wúyōu-wúlǜ de rìzi.',goiY:['老实说','巴不得','无忧无虑'],giai:'老实说 (cùng loại với 不瞒你说, 说实在的) mở đầu lời thật lòng, sau có dấu phẩy; 巴不得 ôn bài 1.'}
 ];
 
-// Chiều Trung → Việt — bám ý bài khoá, nội dung khác chiều trên
+// ══════════════════════════════════════════
+// Dịch Trung → Việt — câu mới, không trùng chiều trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Nhìn ảnh hồi sơ sinh, có lẽ bạn sẽ nhận ra mình ngay, nhưng thực tế bạn đã thay đổi long trời lở đất rồi.',zh:'看到婴儿时期的照片，也许你会一下子认出自己，但实际上你已经发生了翻天覆地的变化。',py:'Kàndào yīng\'ér shíqī de zhàopiàn, yěxǔ nǐ huì yíxiàzi rènchū zìjǐ, dàn shíjì shang nǐ yǐjīng fāshēngle fāntiān-fùdì de biànhuà.',goiY:['婴儿时期 = thời kỳ sơ sinh','一下子 = ngay lập tức','翻天覆地 = long trời lở đất'],giai:'也许……但实际上……: có lẽ … nhưng thực tế …; 翻天覆地的变化 dịch "thay đổi long trời lở đất / thay đổi hoàn toàn".'},
-  {vi:'Lúm đồng tiền của bạn sở dĩ không còn là vì năm 5 tuổi bạn bị ngã, vết sẹo để lại trên mặt đã che mất nó.',zh:'你的酒窝之所以不见了，是因为5岁那年你跌倒后，脸上留下的疤痕掩盖了它。',py:'Nǐ de jiǔwō zhīsuǒyǐ bú jiàn le, shì yīnwèi wǔ suì nà nián nǐ diēdǎo hòu, liǎn shang liúxià de bāhén yǎngàile tā.',goiY:['之所以……是因为…… = sở dĩ … là vì …','跌倒 = ngã','掩盖 = che mất'],giai:'之所以 (kết quả) đứng trước, 是因为 (nguyên nhân) đứng sau; 它 chỉ 酒窝 — tiếng Việt nói "che mất nó".'},
-  {vi:'Nếu bạn tin chắc bạn chính là bạn, thì đối với bạn, cái "bạn 50 tuổi" hiện ra trên bức ảnh máy tính vì sao lại giống một người lạ?',zh:'如果你确信你就是你，那么对你而言，电脑图片上呈现的50岁的你，为什么像个陌生人呢？',py:'Rúguǒ nǐ quèxìn nǐ jiù shì nǐ, nàme duì nǐ ér yán, diànnǎo túpiàn shang chéngxiàn de wǔshí suì de nǐ, wèi shénme xiàng ge mòshēngrén ne?',goiY:['确信 = tin chắc','对……而言 = đối với … mà nói','呈现 = hiện ra'],giai:'如果……那么……: nếu … thì …; 对你而言 dịch gọn "đối với bạn"; 呈现 dịch "hiện ra", không dịch âm "trình hiện".'},
-  {vi:'Vấn đề liên quan đến bản thể đã làm các nhà triết học trăn trở hơn hai nghìn năm trăm năm; họ mỗi người một ý về điều này, nhưng quan điểm thì trước sau vẫn không thống nhất được.',zh:'有关本体的问题困扰了哲学家两千五百多年，他们对此各抒己见，见解却始终不能统一。',py:'Yǒuguān běntǐ de wèntí kùnrǎole zhéxuéjiā liǎngqiān wǔbǎi duō nián, tāmen duì cǐ gèshū-jǐjiàn, jiànjiě què shǐzhōng bù néng tǒngyī.',goiY:['有关 = liên quan đến','各抒己见 = mỗi người một ý','见解 = quan điểm'],giai:'有关 + N = (vấn đề) liên quan đến …; 对此 = về điều này; 却 nối ý trái ngược; 困扰 dịch "làm … trăn trở / băn khoăn".'},
-  {vi:'Heraclitus ví cái tôi như một dòng sông: tuy dòng sông sẽ hiện ra những trạng thái khác nhau, nhưng nó trước sau vẫn là dòng sông vốn có ấy.',zh:'赫拉克利特把自我比喻为一条河，虽然河流会呈现出不同的状态，但它始终是固有的那条河。',py:'Hèlākèlìtè bǎ zìwǒ bǐyù wéi yì tiáo hé, suīrán héliú huì chéngxiàn chū bùtóng de zhuàngtài, dàn tā shǐzhōng shì gùyǒu de nà tiáo hé.',goiY:['比喻为 = ví như','虽然……但…… = tuy … nhưng …','固有 = vốn có'],giai:'把 A 比喻为 B = ví A như B (không dịch "tỉ dụ"); 固有的那条河 = dòng sông vốn có ấy.'},
-  {vi:'Hume không những không đồng ý với quan điểm "cái tôi liên tục", mà còn trình bày tư tưởng như một quá trình không ngừng biến đổi.',zh:'休谟不但不同意“连续的自我”的观点，而且把思想陈述为一个不断演变的过程。',py:'Xiūmó búdàn bù tóngyì "liánxù de zìwǒ" de guāndiǎn, érqiě bǎ sīxiǎng chénshù wéi yí ge búduàn yǎnbiàn de guòchéng.',goiY:['不但……而且…… = không những … mà còn …','陈述为 = trình bày là','演变 = biến đổi'],giai:'不但……而且…… tăng tiến; 把 A 陈述为 B = trình bày A là / như B; 演变 dịch "biến đổi (dần)".'},
-  {vi:'Giả sử Hume đúng, vậy một tội phạm bị truy nã mười lăm năm, hôm nay có còn phải chịu trừng phạt vì đã phạm pháp năm xưa không?',zh:'假如休谟是对的，那么一个被通缉了十五年的罪犯，今天是否还应该为当初触犯法律受到惩罚呢？',py:'Jiǎrú Xiūmó shì duì de, nàme yí ge bèi tōngjīle shíwǔ nián de zuìfàn, jīntiān shìfǒu hái yīnggāi wèi dāngchū chùfàn fǎlǜ shòudào chéngfá ne?',goiY:['假如……那么…… = giả sử … thì …','通缉 = truy nã','触犯法律 = vi phạm pháp luật','惩罚 = trừng phạt'],giai:'触犯法律 là "vi phạm / phạm pháp", KHÔNG dịch "xúc phạm pháp luật"; 是否 = có … hay không; 当初 (bài 6) = lúc ban đầu, năm xưa.'},
-  {vi:'Dù là đi phẫu thuật thẩm mỹ, uống thuốc vì u uất, hay làm phẫu thuật ghép tạng, đều sẽ dần dần thay đổi diện mạo và cảm xúc của một người.',zh:'无论是去整形、因为忧郁而吃药，还是做器官移植手术，都会逐渐改变一个人的面貌和情绪。',py:'Wúlùn shì qù zhěngxíng, yīnwèi yōuyù ér chī yào, háishi zuò qìguān yízhí shǒushù, dōu huì zhújiàn gǎibiàn yí ge rén de miànmào hé qíngxù.',goiY:['无论……还是……都…… = dù … hay … đều …','忧郁 = u uất','器官移植 = ghép tạng','面貌 = diện mạo'],giai:'无论……还是……都…… liệt kê các khả năng, kết quả không đổi; 器官移植手术 dịch gọn "phẫu thuật ghép tạng".'},
-  {vi:'Parfit hình dung việc chia đôi bộ não, cấy vào hai cơ thể, từ đó đi đến kết luận: bản thể của cá nhân không phải điều thực sự quan trọng.',zh:'帕菲特设想将大脑一分为二，移植进两个身体，由此得出结论：个人的本体并不是真正重要的事情。',py:'Pàfēitè shèxiǎng jiāng dànǎo yì fēn wéi èr, yízhí jìn liǎng ge shēntǐ, yóucǐ déchū jiélùn: gèrén de běntǐ bìng bú shì zhēnzhèng zhòngyào de shìqing.',goiY:['设想 = hình dung, giả định','一分为二 = chia làm đôi','由此 = từ đó'],giai:'设想 dịch "hình dung / giả định", không dịch "thiết tưởng"; 将 = 把 (văn viết); 由此得出结论 = từ đó rút ra kết luận.'},
-  {vi:'Nói thật với bạn, học thuyết của các nhà triết học cách chúng ta rất xa; thay vì sa vào những suy tư về bản thể, chúng ta chẳng thà sống vô tư lự mỗi ngày.',zh:'不瞒你说，哲学家们的学说离我们十分遥远，我们与其陷入本体的思索，不如无忧无虑地过好每一天。',py:'Bù mán nǐ shuō, zhéxuéjiāmen de xuéshuō lí wǒmen shífēn yáoyuǎn, wǒmen yǔqí xiànrù běntǐ de sīsuǒ, bùrú wúyōu-wúlǜ de guòhǎo měi yì tiān.',goiY:['不瞒你说 = nói thật với bạn','与其……不如…… = thay vì … chẳng thà …','陷入 = sa vào','思索 = suy tư'],giai:'不瞒你说 dịch "nói thật với bạn", không dịch "không giấu bạn nói"; 与其 A 不如 B chọn B.'}
+  {vi:'Hai trăm năm trước, nhiều người thấy học thuyết của ông ấy quá xa vời với thực tế, giờ mọi người lại phát hiện ra ông ấy đúng.',zh:'两百年前，很多人觉得他的学说离现实太遥远，现在大家却发现他是对的。',py:'Liǎngbǎi nián qián, hěn duō rén juéde tā de xuéshuō lí xiànshí tài yáoyuǎn, xiànzài dàjiā què fāxiàn tā shì duì de.',goiY:['学说 = học thuyết','离……遥远 = xa vời với…','却 = lại (trái ngược)'],giai:'A 离 B 很遥远 dịch "A xa vời với B"; 却 cho thấy kết quả trái với suy nghĩ ban đầu.'},
+  {vi:'Buổi hoà nhạc này mời được hơn chục ca sĩ nổi tiếng thế giới, ở thành phố nhỏ của chúng tôi có thể nói là có một không hai.',zh:'这场音乐会请来了十几位世界有名的歌手，在我们这个小城市可以说是空前绝后。',py:'Zhè chǎng yīnyuèhuì qǐngláile shí jǐ wèi shìjiè yǒumíng de gēshǒu, zài wǒmen zhège xiǎo chéngshì kěyǐ shuō shì kōngqián-juéhòu.',goiY:['空前绝后 = có một không hai','十几位 = hơn chục (người)'],giai:'空前绝后 = trước chưa từng có, sau cũng khó có → "có một không hai"; 十几 = mười mấy, dịch "hơn chục".'},
+  {vi:'Anh ấy vốn tưởng chỉ là chuyện nhỏ, không ngờ vấn đề ngày càng nghiêm trọng, cuối cùng cả công ty cũng rơi vào khủng hoảng.',zh:'他本来以为只是件小事，不料问题越来越严重，最后连整个公司都陷入了危机。',py:'Tā běnlái yǐwéi zhǐ shì jiàn xiǎoshì, búliào wèntí yuè lái yuè yánzhòng, zuìhòu lián zhěnggè gōngsī dōu xiànrùle wēijī.',goiY:['本来以为 = vốn tưởng','不料 = không ngờ','陷入危机 = rơi vào khủng hoảng'],giai:'本来以为……，不料…… = vốn tưởng… không ngờ… (ôn 不料 bài 4); 陷入 dịch "rơi vào, sa vào".'},
+  {vi:'Vừa lái xe vừa xem điện thoại, quả thật là đem tính mạng của mình và người khác ra làm trò đùa.',zh:'开车时看手机，简直是拿自己和别人的性命开玩笑。',py:'Kāichē shí kàn shǒujī, jiǎnzhí shì ná zìjǐ hé biérén de xìngmìng kāi wánxiào.',goiY:['简直 = quả thật là','拿……开玩笑 = đem … ra làm trò đùa','性命 = tính mạng'],giai:'拿 + N + 开玩笑 = coi N như trò đùa; 性命 nhấn mạnh mạng sống, dịch "tính mạng".'},
+  {vi:'Bác sĩ nói bệnh của bà có liên quan đến việc hồi trẻ bà làm việc lâu năm trong nhà máy.',zh:'医生说，奶奶的病跟她年轻时长期在工厂工作有关。',py:'Yīshēng shuō, nǎinai de bìng gēn tā niánqīng shí chángqī zài gōngchǎng gōngzuò yǒuguān.',goiY:['跟……有关 = có liên quan đến…','长期 = lâu dài, lâu năm'],giai:'A 跟 B 有关: phần B dài (她年轻时长期在工厂工作) nằm giữa 跟 và 有关 — khi dịch đưa "có liên quan đến" lên trước.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1549,299 +1489,133 @@ var speakingData = {
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — 听力 (sách HSK 6 không có sách bài tập nghe)
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — câu tự soạn (sách HSK 6 không có sách bài tập nghe), mỗi câu một tình huống mới
+// ══════════════════════════════════════════
 var listenExamData = {
-  "intro": "Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.",
-  "source": "Soạn theo dạng đề HSK 6 · chủ đề bài 8",
-  "items": [
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 8',
+  items: [
     {
-      "n": 1,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "你看这张照片，能认出是谁吗？"
-        },
-        {
-          "sp": "男",
-          "zh": "这个婴儿是你吧？眼睛跟现在一模一样，就是酒窝不见了。"
-        }
+      n: 1,
+      lines: [
+        {sp:'女',zh:'你怎么突然开始每天早上跑步了？'},
+        {sp:'男',zh:'上次检查身体，医生说我的肺不太好，再不运动就晚了。'}
       ],
-      "q": "男的是根据什么认出照片上的人的？",
-      "qvn": "Người đàn ông dựa vào đâu để nhận ra người trong ảnh?",
-      "opts": [
-        "酒窝",
-        "衣服",
-        "眼睛",
-        "照片背景"
-      ],
-      "ans": 2,
-      "why": "眼睛跟现在一模一样 → nhận ra nhờ đôi mắt. 酒窝不见了 là chi tiết gây nhiễu: lúm đồng tiền đã không còn nên không thể dựa vào đó.",
-      "words": [
-        "婴儿",
-        "酒窝"
-      ]
+      q: '男的为什么开始跑步？',
+      qvn: 'Vì sao người đàn ông bắt đầu chạy bộ?',
+      opts: ['想参加比赛','肺有问题','想变瘦一点儿','朋友让他跑'],
+      ans: 1,
+      why: '医生说我的肺不太好 → vì phổi có vấn đề. Không nhắc tới thi đấu hay giảm cân.',
+      words: ['肺']
     },
     {
-      "n": 2,
-      "lines": [
-        {
-          "sp": "男",
-          "zh": "你脸上这道疤是怎么来的？"
-        },
-        {
-          "sp": "女",
-          "zh": "小时候从楼梯上往下蹦，跌倒了，缝了好几针呢。"
-        }
+      n: 2,
+      lines: [
+        {sp:'男',zh:'听说你们班昨天讨论“网上的言论该不该管”，大家讨论得怎么样？'},
+        {sp:'女',zh:'大家各抒己见，一直讨论到下课，谁也没说服谁。'}
       ],
-      "q": "女的脸上的疤是怎么留下的？",
-      "qvn": "Vết sẹo trên mặt người phụ nữ để lại như thế nào?",
-      "opts": [
-        "小时候跌倒留下的",
-        "做手术留下的",
-        "被猫抓伤的",
-        "跟别人打架留下的"
-      ],
-      "ans": 0,
-      "why": "从楼梯上往下蹦，跌倒了 → do hồi nhỏ bị ngã. 缝了好几针 (khâu mấy mũi) có thể khiến nghĩ tới \"phẫu thuật\", nhưng nguyên nhân là ngã.",
-      "words": [
-        "疤",
-        "蹦",
-        "跌"
-      ]
+      q: '关于这次讨论，可以知道什么？',
+      qvn: 'Về buổi thảo luận này, có thể biết điều gì?',
+      opts: ['大家意见一样','很快就结束了','没人愿意发言','最后没有结论'],
+      ans: 3,
+      why: '各抒己见 + 谁也没说服谁 → mỗi người một ý, cuối cùng không có kết luận; 一直讨论到下课 loại "kết thúc nhanh".',
+      words: ['言论','各抒己见']
     },
     {
-      "n": 3,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "昨天的讨论会开得怎么样？"
-        },
-        {
-          "sp": "男",
-          "zh": "大家各抒己见，争论了一下午，最后也没得出统一的结论。"
-        }
+      n: 3,
+      lines: [
+        {sp:'男',zh:'都十二点了，你还要接着写吗？'},
+        {sp:'女',zh:'喝了两杯咖啡，我现在特别清醒，一点儿也不困，再写一会儿吧。'}
       ],
-      "q": "关于讨论会，可以知道什么？",
-      "qvn": "Về buổi thảo luận, có thể biết điều gì?",
-      "opts": [
-        "没有人发言",
-        "大家意见一致",
-        "会议很快就结束了",
-        "没有得出统一的结论"
-      ],
-      "ans": 3,
-      "why": "各抒己见 = ai cũng nêu ý kiến; 争论了一下午 → không nhanh; 没得出统一的结论 → đáp án D.",
-      "words": [
-        "各抒己见"
-      ]
+      q: '女的现在怎么样？',
+      qvn: 'Người phụ nữ bây giờ thế nào?',
+      opts: ['很困','不想写了','很清醒','头很疼'],
+      ans: 2,
+      why: '特别清醒，一点儿也不困 = rất tỉnh táo, không buồn ngủ chút nào → C.',
+      words: ['清醒']
     },
     {
-      "n": 4,
-      "lines": [
-        {
-          "sp": "男",
-          "zh": "医生，我爸爸什么时候能醒过来？"
-        },
-        {
-          "sp": "女",
-          "zh": "手术很成功，不过他现在还在昏迷中，估计明天就能清醒过来。"
-        }
+      n: 4,
+      lines: [
+        {sp:'男',zh:'你觉得我写的这篇文章怎么样？'},
+        {sp:'女',zh:'说心里话，观点挺新的，可是你阐述得不够清楚，别人未必看得懂。'}
       ],
-      "q": "男的爸爸现在情况怎么样？",
-      "qvn": "Bố của người đàn ông hiện giờ thế nào?",
-      "opts": [
-        "已经出院了",
-        "还在昏迷",
-        "手术失败了",
-        "已经清醒了"
-      ],
-      "ans": 1,
-      "why": "他现在还在昏迷中 → vẫn đang hôn mê. 明天就能清醒过来 là dự đoán, chưa xảy ra; 手术很成功 loại phương án C.",
-      "words": [
-        "昏迷",
-        "清醒"
-      ]
+      q: '女的觉得这篇文章有什么问题？',
+      qvn: 'Người phụ nữ thấy bài viết có vấn đề gì?',
+      opts: ['观点太旧','没有观点','阐述得不清楚','写得太长'],
+      ans: 2,
+      why: '说心里话 (= nói thật lòng, cùng loại 不瞒你说) mở đầu nhận xét: 观点挺新 (khen), 可是阐述得不够清楚 (chê) → C.',
+      words: ['阐述']
     },
     {
-      "n": 5,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "不瞒你说，我最近心情特别忧郁，晚上总是睡不着。"
-        },
-        {
-          "sp": "男",
-          "zh": "别一个人扛着，去看看心理医生吧。心理问题跟身体器官上的疾病一样，都需要重视。"
-        }
+      n: 5,
+      lines: [
+        {sp:'男',zh:'小李这几天怎么老是一个人坐着不说话？'},
+        {sp:'女',zh:'他最近心情很忧郁，好像跟他父亲生病住院有关。'}
       ],
-      "q": "男的建议女的做什么？",
-      "qvn": "Người đàn ông khuyên người phụ nữ làm gì?",
-      "opts": [
-        "多运动",
-        "去看心理医生",
-        "吃安眠药",
-        "换个工作"
-      ],
-      "ans": 1,
-      "why": "去看看心理医生吧 — câu đề nghị với 吧. 不瞒你说 mở đầu lời tâm sự thật lòng của người phụ nữ.",
-      "words": [
-        "忧郁",
-        "器官"
-      ]
+      q: '小李心情不好可能和什么有关？',
+      qvn: 'Tiểu Lý buồn có thể liên quan đến điều gì?',
+      opts: ['父亲生病了','工作太忙','考试没考好','跟朋友吵架了'],
+      ans: 0,
+      why: '跟他父亲生病住院有关 → liên quan đến việc bố anh ấy ốm phải nằm viện.',
+      words: ['忧郁']
     },
     {
-      "n": 6,
-      "lines": [
-        {
-          "sp": "男",
-          "zh": "有人说，对年轻人而言，最宝贵的不是金钱，而是时间。时间一去不复返，与其抱怨时间不够用，不如从现在开始好好规划每一天。"
-        }
+      n: 6,
+      lines: [
+        {sp:'男',zh:'你为什么不买那套离公司近的房子？'},
+        {sp:'女',zh:'对一个要照顾两个孩子的妈妈而言，离学校近比离公司近重要多了。'}
       ],
-      "q": "说话人认为，对年轻人来说最宝贵的是什么？",
-      "qvn": "Người nói cho rằng điều quý giá nhất đối với người trẻ là gì?",
-      "opts": [
-        "金钱",
-        "朋友",
-        "健康",
-        "时间"
-      ],
-      "ans": 3,
-      "why": "不是金钱，而是时间 — 不是A而是D: đáp án là D. 对……而言 = 对……来说. 规划 ôn bài 2.",
-      "words": []
+      q: '女的买房子时最看重什么？',
+      qvn: 'Khi mua nhà, người phụ nữ coi trọng nhất điều gì?',
+      opts: ['离公司近','房子大','环境好','离学校近'],
+      ans: 3,
+      why: '对……而言 nêu góc nhìn của một bà mẹ có hai con: 离学校近比离公司近重要多了 → D.',
+      words: []
     },
     {
-      "n": 7,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "你觉得小王提的这个方案怎么样？"
-        },
-        {
-          "sp": "男",
-          "zh": "想法很大胆，但有点儿太极端了。万一失败，后果不堪设想。"
-        }
+      n: 7,
+      lines: [
+        {sp:'女',zh:'天气预报说什么了？'},
+        {sp:'男',zh:'说今年冬天可能会出现极端天气，北方有的地方会冷到零下三十度。'}
       ],
-      "q": "男的认为这个方案怎么样？",
-      "qvn": "Người đàn ông thấy phương án này thế nào?",
-      "opts": [
-        "太极端，有风险",
-        "非常完美",
-        "太保守了",
-        "跟原来的一样"
-      ],
-      "ans": 0,
-      "why": "太极端了 + 万一失败，后果不堪设想 → quá cực đoan, có rủi ro. 想法很大胆 là lời khen mở đầu, không phải kết luận.",
-      "words": [
-        "极端",
-        "设想"
-      ]
-    },
-    {
-      "n": 8,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "汉字不是一下子就变成今天这个样子的，它是由图画逐渐演变而来的，经历了几千年的变化。有关汉字演变的资料很多，感兴趣的同学可以去图书馆查阅。"
-        }
-      ],
-      "q": "根据这段话，下列哪项正确？",
-      "qvn": "Theo đoạn nói, phương án nào đúng?",
-      "opts": [
-        "汉字一下子就形成了",
-        "有关汉字的资料很少",
-        "汉字是由图画演变来的",
-        "汉字几百年来没有变化"
-      ],
-      "ans": 2,
-      "why": "由图画逐渐演变而来 → C. A trái với 不是一下子; B trái với 资料很多; D trái với 几千年的变化.",
-      "words": [
-        "演变"
-      ]
+      q: '今年冬天可能会怎么样？',
+      qvn: 'Mùa đông năm nay có thể thế nào?',
+      opts: ['特别暖和','特别冷','经常下雨','跟往年差不多'],
+      ans: 1,
+      why: '极端天气 = thời tiết cực đoan; 冷到零下三十度 → rất lạnh.',
+      words: ['极端']
     }
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
+// ══════════════════════════════════════════
 var situationData = {
-  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
-         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn thân hỏi em có sợ kỳ thi đại học sắp tới không.',
-     a:{sp:'Bạn',zh:'快高考了，你紧张吗？我看你每天都挺轻松的。',vn:'Sắp thi đại học rồi, cậu có căng thẳng không? Tớ thấy ngày nào cậu cũng thoải mái lắm.'},
-     need:['Dùng 不瞒你说','Nói thật cảm giác của mình (trái với vẻ ngoài)'],
-     sample:'不瞒你说，我其实紧张得晚上都睡不着，只是不想让别人看出来。',
-     samplePy:'Bù mán nǐ shuō, wǒ qíshí jǐnzhāng de wǎnshang dōu shuì bu zháo, zhǐshì bù xiǎng ràng biérén kàn chūlái.',
-     sampleVn:'Nói thật với cậu, thật ra tớ căng thẳng đến mức tối không ngủ được, chỉ là không muốn để người khác nhìn ra thôi.',
-     tip:'不瞒你说 đứng đầu câu, sau đó là lời thú nhận thật lòng; hay đi với 其实.'},
-
-    {scene:'Bạn cùng lớp chê môn triết học chẳng có ích gì.',
-     a:{sp:'Bạn',zh:'哲学有什么用？那些学说离我们太遥远了。',vn:'Triết học thì có ích gì? Mấy học thuyết đó xa vời với chúng ta quá.'},
-     need:['Dùng 对……而言','Nêu một cái lợi cụ thể của việc suy nghĩ triết học'],
-     sample:'对我而言，哲学能让我学会思索，遇到问题时不容易走极端。',
-     samplePy:'Duì wǒ ér yán, zhéxué néng ràng wǒ xuéhuì sīsuǒ, yùdào wèntí shí bù róngyì zǒu jíduān.',
-     sampleVn:'Đối với tớ, triết học giúp tớ biết suy nghĩ sâu, gặp chuyện không dễ đi đến cực đoan.',
-     tip:'对 + người + 而言 đặt đầu câu nêu góc nhìn riêng; khẩu ngữ có thể thay bằng 对我来说.'},
-
-    {scene:'Thầy giáo hỏi em đã chuẩn bị tài liệu cho bài thuyết trình về lịch sử chữ Hán chưa.',
-     a:{sp:'Thầy',zh:'下周的演讲，你的资料准备得怎么样了？',vn:'Bài thuyết trình tuần sau, em chuẩn bị tài liệu đến đâu rồi?'},
-     need:['Dùng 有关','Nói rõ đã làm gì và còn thiếu gì'],
-     sample:'有关汉字演变的资料我已经查了不少，可是还不知道怎么阐述自己的见解。',
-     samplePy:'Yǒuguān Hànzì yǎnbiàn de zīliào wǒ yǐjīng chále bù shǎo, kěshì hái bù zhīdào zěnme chǎnshù zìjǐ de jiànjiě.',
-     sampleVn:'Tài liệu liên quan đến sự biến đổi của chữ Hán em đã tra được khá nhiều, nhưng vẫn chưa biết trình bày quan điểm của mình thế nào.',
-     tip:'有关 + N làm định ngữ (有关……的资料), đưa lên đầu câu làm chủ đề.'},
-
-    {scene:'Bạn tuyên bố ai không đồng ý với mình đều là sai.',
-     a:{sp:'Bạn',zh:'谁不同意我的看法，谁就是错的！',vn:'Ai không đồng ý với quan điểm của tớ thì người đó sai!'},
-     need:['Dùng 极端 hoặc 走极端','Khuyên bạn nghe ý kiến người khác (dùng 各抒己见 hoặc 见解)'],
-     sample:'你这么想太极端了吧？讨论就是让大家各抒己见，别人的见解也值得听听。',
-     samplePy:'Nǐ zhème xiǎng tài jíduān le ba? Tǎolùn jiù shì ràng dàjiā gèshū-jǐjiàn, biérén de jiànjiě yě zhíde tīngting.',
-     sampleVn:'Cậu nghĩ thế có phải cực đoan quá không? Thảo luận là để mọi người nêu ý kiến của mình, quan điểm của người khác cũng đáng nghe chứ.',
-     tip:'太极端了 (tính từ); 各抒己见 làm vị ngữ sau 让大家.'},
-
-    {scene:'Gặp lại bạn cũ sau ba năm, bạn ngạc nhiên vì em thay đổi quá nhiều.',
-     a:{sp:'Bạn cũ',zh:'哇，三年不见，你变化也太大了吧！我差点儿没认出来。',vn:'Oa, ba năm không gặp, cậu thay đổi nhiều quá! Tớ suýt nữa không nhận ra.'},
-     need:['Dùng 翻天覆地 hoặc 崭新','Nói nguyên nhân thay đổi'],
-     sample:'是啊，这三年我的生活发生了翻天覆地的变化，现在的我简直是一个崭新的我。',
-     samplePy:'Shì a, zhè sān nián wǒ de shēnghuó fāshēngle fāntiān-fùdì de biànhuà, xiànzài de wǒ jiǎnzhí shì yí ge zhǎnxīn de wǒ.',
-     sampleVn:'Đúng vậy, ba năm nay cuộc sống của tớ đã thay đổi long trời lở đất, tớ bây giờ quả thực là một con người hoàn toàn mới.',
-     tip:'发生了翻天覆地的变化 là cụm cố định; 崭新的 + N làm định ngữ.'}
+    {scene:'Bạn thân hỏi em có sợ kỳ thi đại học sắp tới không.',a:{sp:'Bạn',zh:'快高考了，你真的一点儿也不紧张吗？跟我说实话。',vn:'Sắp thi đại học rồi, cậu thật sự không căng thẳng chút nào à? Nói thật với tớ đi.'},need:['Dùng 那我就不瞒你了 / 说实在的','Nói thật cảm giác của mình (trái với vẻ ngoài)'],sample:'那我就不瞒你了，其实我紧张得晚上都睡不着，只是不想让爸妈看出来，怕他们担心。',samplePy:'Nà wǒ jiù bù mán nǐ le, qíshí wǒ jǐnzhāng de wǎnshang dōu shuì bu zháo, zhǐshì bù xiǎng ràng bà mā kàn chūlái, pà tāmen dānxīn.',sampleVn:'Vậy tớ không giấu cậu nữa, thật ra tớ căng thẳng đến mức tối không ngủ được, chỉ là không muốn bố mẹ nhìn ra, sợ bố mẹ lo.',tip:'Khi bạn đã hỏi "nói thật đi", đáp 那我就不瞒你了 (cùng nghĩa với 不瞒你说) rồi dùng 其实 để nói điều thật.'},
+    {scene:'Bạn cùng lớp chê môn triết học chẳng có ích gì.',a:{sp:'Bạn',zh:'哲学有什么用？那些学说离我们太遥远了。',vn:'Triết học thì có ích gì? Mấy học thuyết đó xa vời với chúng ta quá.'},need:['Dùng 对……而言','Nêu một cái lợi cụ thể của việc suy nghĩ triết học'],sample:'说真的，哲学能让人学会思索。对我这种遇到问题容易走极端的人而言，它特别有用。',samplePy:'Shuō zhēn de, zhéxué néng ràng rén xuéhuì sīsuǒ. Duì wǒ zhè zhǒng yùdào wèntí róngyì zǒu jíduān de rén ér yán, tā tèbié yǒuyòng.',sampleVn:'Nói thật, triết học giúp người ta biết suy ngẫm. Đối với người gặp chuyện dễ cực đoan như tớ, nó đặc biệt có ích.',tip:'对 + (người dài) + 而言 đặt đầu câu nêu góc nhìn riêng; khẩu ngữ có thể thay bằng 对……来说.'},
+    {scene:'Thầy giáo hỏi em đã chuẩn bị tài liệu cho bài thuyết trình về lịch sử chữ Hán chưa.',a:{sp:'Thầy',zh:'下周的演讲，你的资料准备得怎么样了？',vn:'Bài thuyết trình tuần sau, em chuẩn bị tài liệu đến đâu rồi?'},need:['Dùng 有关','Nói rõ đã làm gì và còn thiếu gì'],sample:'有关汉字演变的资料我已经查了不少，可是还不知道怎么阐述自己的见解。',samplePy:'Yǒuguān Hànzì yǎnbiàn de zīliào wǒ yǐjīng chále bù shǎo, kěshì hái bù zhīdào zěnme chǎnshù zìjǐ de jiànjiě.',sampleVn:'Tài liệu liên quan đến sự biến đổi của chữ Hán em đã tra được khá nhiều, nhưng vẫn chưa biết trình bày quan điểm của mình thế nào.',tip:'有关 + N làm định ngữ (有关……的资料), đưa lên đầu câu làm chủ đề.'},
+    {scene:'Bạn tuyên bố ai không đồng ý với mình đều là sai.',a:{sp:'Bạn',zh:'谁不同意我的看法，谁就是错的！',vn:'Ai không đồng ý với quan điểm của tớ thì người đó sai!'},need:['Dùng 极端 hoặc 走极端','Khuyên bạn nghe ý kiến người khác (dùng 各抒己见 hoặc 见解)'],sample:'你这么想太极端了吧？讨论就是让大家各抒己见，别人的见解也值得听听。',samplePy:'Nǐ zhème xiǎng tài jíduān le ba? Tǎolùn jiù shì ràng dàjiā gèshū-jǐjiàn, biérén de jiànjiě yě zhíde tīngting.',sampleVn:'Cậu nghĩ thế có phải cực đoan quá không? Thảo luận là để mọi người nêu ý kiến của mình, quan điểm của người khác cũng đáng nghe chứ.',tip:'太极端了 (tính từ); 各抒己见 làm vị ngữ sau 让大家.'},
+    {scene:'Gặp lại bạn cũ sau ba năm, bạn ngạc nhiên vì em thay đổi quá nhiều.',a:{sp:'Bạn cũ',zh:'三年不见，你变化也太大了吧！我差点儿没认出来。',vn:'Ba năm không gặp, cậu thay đổi nhiều quá! Tớ suýt nữa không nhận ra.'},need:['Dùng 翻天覆地 hoặc 崭新','Nói nguyên nhân thay đổi'],sample:'是啊，这三年我的生活发生了翻天覆地的变化，现在的我简直是一个崭新的我。',samplePy:'Shì a, zhè sān nián wǒ de shēnghuó fāshēngle fāntiān-fùdì de biànhuà, xiànzài de wǒ jiǎnzhí shì yí ge zhǎnxīn de wǒ.',sampleVn:'Đúng vậy, ba năm nay cuộc sống của tớ đã thay đổi long trời lở đất, tớ bây giờ quả thực là một con người hoàn toàn mới.',tip:'发生了翻天覆地的变化 là cụm cố định; 崭新的 + N làm định ngữ.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 // 🎯 NÓI SAO CHO HAY — 得体 / 语体
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 var registerData = {
-  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
-         'HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
   items: [
-    {scene:'Em viết bài nghị luận nộp cho thầy giáo.',
-     a:'对青少年而言，良好阅读习惯的培养至关重要。',b:'对青少年来说吧，养成看书的习惯挺重要的。',better:'a',
-     why:'对……而言 là cách nói văn viết, hợp với bài nghị luận. Câu b có 吧, 挺 — khẩu ngữ.'},
-
-    {scene:'Em thú nhận với bạn thân là tối qua lại thức khuya chơi game.',
-     a:'不瞒你说，我昨天又熬夜打游戏了。',b:'现陈述如下：本人昨日熬夜进行游戏活动。',better:'a',
-     why:'不瞒你说 là xen ngữ khẩu ngữ, rất tự nhiên khi tâm sự. Câu b dùng 陈述如下, 本人, 昨日 — giọng văn bản hành chính, buồn cười khi nói với bạn.'},
-
-    {scene:'Em đại diện nhóm phát biểu trong buổi hội thảo của trường.',
-     a:'下面我简要阐述一下我们小组的观点。',b:'我跟大家随便聊聊我们组是咋想的。',better:'a',
-     why:'Hội thảo cần trang trọng: 简要阐述, 观点. 随便聊聊, 咋 là khẩu ngữ thân mật.'},
-
-    {scene:'Em đến bệnh viện thăm một người bạn vừa tỉnh lại sau hôn mê.',
-     a:'你终于醒了！医生说你很快就能好起来，别担心。',b:'据推测，你昏迷的时间不会对大脑造成影响。',better:'a',
-     why:'Thăm bệnh cần lời an ủi ấm áp, giản dị. 据推测, 造成影响 là giọng báo cáo y khoa, lạnh lùng.'},
-
-    {scene:'Em giải thích lý do đi muộn với cô giáo chủ nhiệm.',
-     a:'老师，对不起，我迟到是因为路上堵车了。',b:'老师，不瞒你说，这事儿真不赖我。',better:'a',
-     why:'Với cô giáo cần lễ phép, nhận lỗi rồi mới nêu lý do. 不瞒你说 + 这事儿 + 不赖我 là khẩu ngữ suồng sã, có ý đổ lỗi.'},
-
-    {scene:'Bản tin trên website của trường thông báo về một sự việc.',
-     a:'有关部门已对此事展开调查。',b:'跟这事儿有关系的那些部门都去查了。',better:'a',
-     why:'Văn bản thông báo dùng 有关部门 (các cơ quan hữu quan), 对此事, 展开调查. Câu b dùng 这事儿, 都去查了 — lời kể miệng.'}
+    {scene:'Em viết bài nghị luận về chi phí giáo dục nộp cho thầy giáo.',a:'对大多数家庭而言，孩子的教育费用已经成为一笔不小的花费。',b:'对大部分家庭来说吧，孩子上学花的钱可真不少。',better:'a',why:'对……而言 là cách nói văn viết, hợp với bài nghị luận. Câu b có 吧, 可真 — giọng nói chuyện hằng ngày.'},
+    {scene:'Em nhắn tin cho bạn cùng phòng về bộ phim vừa xem.',a:'依我之见，此片故事过于普通。',b:'依我看，这部电影有点儿无聊，没什么意思。',better:'b',why:'依我之见, 此片 là văn viết trang trọng (như bài bình phim). Nhắn tin cho bạn dùng 依我看 + lời nói thường thì tự nhiên hơn.'},
+    {scene:'Bản tin trên website của trường thông báo về một sự việc.',a:'跟这事儿有关系的那些部门都去查了。',b:'有关部门已对此事展开调查。',better:'b',why:'Văn bản thông báo dùng 有关部门 (các cơ quan hữu quan), 对此事, 展开调查. Câu a dùng 这事儿, 都去查了 — lời kể miệng.'},
+    {scene:'Trong buổi phỏng vấn xin việc, người phỏng vấn hỏi em có khuyết điểm gì.',a:'说实在的，我以前做事有点儿着急，现在正在慢慢改。',b:'我这人就是着急，没办法，改不了。',better:'a',why:'说实在的 mở đầu lời thật lòng, rồi nói rõ mình đang sửa — vừa thành thật vừa tích cực. Câu b suồng sã, nghe như không muốn thay đổi.'},
+    {scene:'Em đại diện nhóm phát biểu trong buổi hội thảo của trường.',a:'我来跟大家随便说说我们组是怎么想的。',b:'下面，我代表我们小组阐述一下我们的观点。',better:'b',why:'Hội thảo cần trang trọng: 代表……阐述, 观点. 随便说说 là khẩu ngữ thân mật, hợp khi nói chuyện trong nhóm bạn.'},
+    {scene:'Em đến bệnh viện thăm một người bạn vừa tỉnh lại sau hôn mê.',a:'你终于醒了！医生说你很快就能好起来，别担心。',b:'根据推测，你昏迷的这段时间不会对大脑造成影响。',better:'a',why:'Thăm bệnh cần lời an ủi ấm áp, giản dị. 根据推测, 造成影响 là giọng báo cáo y khoa, lạnh lùng.'}
   ]
 };
 

@@ -1633,107 +1633,50 @@ var hvBridgeData = {
 // GHÉP TỪ — cụm từ trong bài khoá
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'每当他捧起',right:'书本'},
-  {left:'走进了知识的',right:'海洋'},
-  {left:'天文地理、儒家',right:'经典'},
-  {left:'历史文化的长期',right:'熏陶'},
-  {left:'思维敏捷，',right:'胸怀宽广'},
-  {left:'使人不堪忍受的',right:'严寒'},
-  {left:'炎热夏天蚊子的',right:'骚扰'},
-  {left:'家境贫乏，日子过得',right:'艰难'},
-  {left:'麻木的部位恢复了',right:'知觉'},
-  {left:'只要有书读，挨饿',right:'受冻'},
-  {left:'油灯无声地',right:'熄灭了'},
-  {left:'黑暗中他眯起',right:'双眼'},
-  {left:'绝望地凝视着',right:'茫茫黑暗'},
-  {left:'闷热的空气像是',right:'凝固了'},
-  {left:'烦躁在他身体中',right:'蔓延开来'},
-  {left:'努力克制着自己的',right:'情绪'},
-  {left:'默默地背诵着',right:'古诗'},
-  {left:'在头脑中编织着',right:'动人画面'},
-  {left:'漫步在',right:'田野中'},
-  {left:'黑暗中唯一耀眼的',right:'光芒'},
-  {left:'他伸手一捞，摊开',right:'手掌'},
-  {left:'头脑中迸发出',right:'一个想法'},
-  {left:'薄布做的',right:'布兜'},
-  {left:'没有过人的',right:'天赋'},
-  {left:'奋斗拼搏的动力和',right:'源泉'}
+  {left:'克制',right:'冲动'},
+  {left:'背诵',right:'课文'},
+  {left:'摆脱',right:'贫困'},
+  {left:'知识',right:'贫乏'},
+  {left:'美满的',right:'婚姻'},
+  {left:'耀眼的',right:'阳光'},
+  {left:'迸发出',right:'灵感'},
+  {left:'默默地',right:'支持'},
+  {left:'大火',right:'蔓延'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ — mỗi từ của bài một câu
+// ĐIỀN TỪ — câu mới (không chép bài khoá / SGK), mỗi câu một tình huống; ôn xoáy ốc từ + ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'小女孩双手',blank:'捧',post:'着一束鲜花走上了舞台。',hint:'(bưng, nâng bằng hai tay)',ans:'捧'},
-  {pre:'他从小就对',blank:'天文',post:'特别着迷，每天晚上都用望远镜看星星。',hint:'(thiên văn)',ans:'天文'},
-  {pre:'孔子是',blank:'儒家',post:'学派的创始人。',hint:'(Nho gia)',ans:'儒家'},
-  {pre:'这本',blank:'传记',post:'记录了这位科学家不平凡的一生。',hint:'(tiểu sử)',ans:'传记'},
-  {pre:'朱自清的',blank:'散文',post:'《背影》感动了一代又一代的读者。',hint:'(tản văn)',ans:'散文'},
-  {pre:'这座博物馆收藏了',blank:'历代',post:'名人的书法作品。',hint:'(các đời)',ans:'历代'},
-  {pre:'他对古典音乐十分',blank:'着迷',post:'，每天都要听上几个小时。',hint:'(say mê)',ans:'着迷'},
-  {pre:'在艺术的',blank:'熏陶',post:'下，她从小就喜欢画画儿。',hint:'(hun đúc)',ans:'熏陶'},
-  {pre:'一个',blank:'胸怀',post:'宽广的人，不会为小事斤斤计较。',hint:'(tấm lòng)',ans:'胸怀'},
-  {pre:'他',blank:'不堪',post:'忍受邻居的噪音，只好搬了家。',hint:'(không chịu nổi)',ans:'不堪',exp:'不堪 + V = không chịu nổi (văn viết): 不堪忍受.'},
-  {pre:'在',blank:'炎热',post:'的夏天，吃一块冰西瓜真是舒服极了。',hint:'(nóng nực)',ans:'炎热'},
-  {pre:'为了不受',blank:'骚扰',post:'电话的打扰，我在手机上设置了拦截功能。',hint:'(làm phiền, quấy rối)',ans:'骚扰'},
-  {pre:'只看电视不读书，知识就会越来越',blank:'贫乏',post:'。',hint:'(nghèo nàn)',ans:'贫乏'},
-  {pre:'他们在最',blank:'艰难',post:'的时候也没有放弃希望。',hint:'(gian nan)',ans:'艰难'},
-  {pre:'停电了，奶奶点起了一根',blank:'蜡烛',post:'。',hint:'(nến)',ans:'蜡烛'},
-  {pre:'一群',blank:'蚂蚁',post:'正在搬运地上的饼干渣。',hint:'(kiến)',ans:'蚂蚁'},
-  {pre:'长时间低头看手机，对',blank:'颈椎',post:'的伤害很大。',hint:'(đốt sống cổ)',ans:'颈椎'},
-  {pre:'他困得直',blank:'揉',post:'眼睛。',hint:'(dụi)',ans:'揉'},
-  {pre:'请把这个箱子往左边',blank:'挪',post:'一下。',hint:'(xê dịch)',ans:'挪'},
-  {pre:'坐了一整天的车，我的',blank:'屁股',post:'都坐疼了。',hint:'(mông)',ans:'屁股'},
-  {pre:'天太冷了，他的手指冻得失去了',blank:'知觉',post:'。',hint:'(cảm giác)',ans:'知觉'},
-  {pre:'他小时候很调皮，经常',blank:'挨',post:'爸爸的骂。',hint:'(bị)',ans:'挨',exp:'挨 + V = bị (khẩu ngữ, chịu điều không hay): 挨骂, 挨打.'},
-  {pre:'祝你们婚姻',blank:'美满',post:'，白头到老！',hint:'(viên mãn)',ans:'美满'},
-  {pre:'对小孩子来说，游乐园简直就是',blank:'天堂',post:'。',hint:'(thiên đường)',ans:'天堂'},
-  {pre:'一阵风吹来，桌上的蜡烛',blank:'熄灭',post:'了。',hint:'(tắt)',ans:'熄灭'},
-  {pre:'一次没考好不要',blank:'泄气',post:'，下次再努力。',hint:'(nản chí)',ans:'泄气'},
-  {pre:'阳光太强了，他不由得',blank:'眯',post:'起了眼睛。',hint:'(nheo)',ans:'眯'},
-  {pre:'即使在最困难的时候，他也从来没有',blank:'绝望',post:'过。',hint:'(tuyệt vọng)',ans:'绝望'},
-  {pre:'水泥还没完全',blank:'凝固',post:'，大家先别在上面走。',hint:'(đông cứng)',ans:'凝固'},
-  {pre:'大火迅速',blank:'蔓延',post:'开来，消防员花了好几个小时才把它扑灭。',hint:'(lan ra)',ans:'蔓延'},
-  {pre:'她努力',blank:'克制',post:'着自己，没让眼泪流下来。',hint:'(kiềm chế)',ans:'克制'},
-  {pre:'妈妈总是',blank:'默默',post:'地为家人付出，从不抱怨。',hint:'(âm thầm)',ans:'默默',exp:'默默 + V = âm thầm, lặng lẽ: 默默地付出.'},
-  {pre:'老师要求我们明天',blank:'背诵',post:'这首古诗。',hint:'(đọc thuộc lòng)',ans:'背诵'},
-  {pre:'奶奶用毛线给我',blank:'编织',post:'了一条围巾。',hint:'(đan)',ans:'编织'},
-  {pre:'学校',blank:'强制',post:'规定学生上课时不能使用手机。',hint:'(bắt buộc)',ans:'强制'},
-  {pre:'春天来了，',blank:'田野',post:'里开满了黄色的油菜花。',hint:'(cánh đồng)',ans:'田野'},
-  {pre:'我到现在还记得第一次见到他时的',blank:'情形',post:'。',hint:'(cảnh tượng, tình huống)',ans:'情形'},
-  {pre:'舞台上的灯光十分',blank:'耀眼',post:'，照得人睁不开眼睛。',hint:'(chói mắt)',ans:'耀眼'},
-  {pre:'早上，太阳发出金色的',blank:'光芒',post:'。',hint:'(ánh sáng, hào quang)',ans:'光芒'},
-  {pre:'他从河里',blank:'捞',post:'上来一条大鱼。',hint:'(vớt)',ans:'捞'},
-  {pre:'他把手掌',blank:'摊',post:'开，里面是一颗漂亮的小石头。',hint:'(mở ra)',ans:'摊'},
-  {pre:'看到妈妈做的生日蛋糕，他大叫：“',blank:'哇',post:'，真漂亮！”',hint:'(chà, ôi chao)',ans:'哇'},
-  {pre:'这张纸只有零点一',blank:'毫米',post:'厚。',hint:'(mi-li-mét)',ans:'毫米'},
-  {pre:'听了专家的讲座，同学们的头脑中',blank:'迸发',post:'出了许多新想法。',hint:'(nảy ra, bùng ra)',ans:'迸发'},
-  {pre:'他把钥匙放在裤',blank:'兜',post:'里了。',hint:'(túi)',ans:'兜'},
-  {pre:'过年的时候，家家户户都挂起了红',blank:'灯笼',post:'。',hint:'(đèn lồng)',ans:'灯笼'},
-  {pre:'好消息！我们班得了第一名',blank:'啦',post:'！',hint:'(trợ từ: rồi đấy)',ans:'啦',exp:'啦 = 了 + 啊, cuối câu báo tin vui với giọng phấn khởi.'},
-  {pre:'这个孩子很有音乐',blank:'天赋',post:'，五岁就会弹钢琴了。',hint:'(năng khiếu)',ans:'天赋'},
-  {pre:'政府帮助',blank:'贫困',post:'地区的农民发展旅游业。',hint:'(nghèo khó)',ans:'贫困'},
-  {pre:'健康是人生最宝贵的',blank:'财富',post:'。',hint:'(của cải, tài sản)',ans:'财富'},
-  {pre:'劳动是创造一切的',blank:'源泉',post:'。',hint:'(nguồn)',ans:'源泉'}
+  {pre:'他小心地',blank:'捧',post:'着奶奶送的那碗热汤，一步一步走进屋里。',hint:'(bưng bằng hai tay)',ans:'捧',exp:'捧 = nâng, bưng bằng hai bàn tay (đồ quý, đồ dễ đổ). 拿 chỉ là cầm nói chung, không gợi được vẻ nâng niu.'},
+  {pre:'我弟弟对天文特别',blank:'着迷',post:'，一有空就跑到楼顶上看星星。',hint:'(say mê)',ans:'着迷',exp:'对 + việc + 着迷 = say mê điều gì; 着 đọc zháo (không đọc zhe). Ôn 一……就…….'},
+  {pre:'她生在音乐家庭，从小受到音乐的',blank:'熏陶',post:'，五岁就会弹钢琴。',hint:'(hun đúc, ảnh hưởng dần)',ans:'熏陶',exp:'受到……的熏陶 = được môi trường ảnh hưởng dần dần, thấm từ từ (không phải dạy trực tiếp).'},
+  {pre:'下班时间地铁里拥挤',blank:'不堪',post:'，连站的地方都没有。',hint:'(… không chịu nổi)',ans:'不堪',exp:'Tính từ + 不堪 = … đến mức không chịu nổi (拥挤不堪, 疲惫不堪); 不堪 đứng SAU tính từ.'},
+  {pre:'最近总有人打电话问我要不要买房子，这种',blank:'骚扰',post:'电话真让人头疼。',hint:'(quấy rầy)',ans:'骚扰',exp:'骚扰电话 = cuộc gọi quấy rầy (rao bán, làm phiền). 打扰 dùng khi xin lỗi lịch sự (打扰一下), không đứng trước 电话.'},
+  {pre:'刚来中国的那一年，我听不懂也说不出，生活过得十分',blank:'艰难',post:'。',hint:'(gian nan)',ans:'艰难',exp:'过得艰难 = sống vất vả, gian nan; 艰难 tả hoàn cảnh, mức độ nặng hơn 困难.'},
+  {pre:'地上掉了一块糖，不一会儿就来了一大群',blank:'蚂蚁',post:'。',hint:'(con kiến)',ans:'蚂蚁',exp:'一大群蚂蚁 = cả đàn kiến; lượng từ 群 cho đàn (côn trùng, chim, người).'},
+  {pre:'太阳太亮了，他',blank:'眯',post:'着眼睛看了半天也没看清楚。',hint:'(nheo mắt)',ans:'眯',exp:'眯着眼睛 = nheo mắt (vì chói hoặc để nhìn kỹ). Nhắm hẳn mắt thì không "nhìn nửa ngày" được, nên ở đây là nheo.'},
+  {pre:'小时候爷爷每天让我',blank:'背诵',post:'一首古诗。',hint:'(đọc thuộc lòng)',ans:'背诵',exp:'背诵 = học thuộc rồi đọc lại không nhìn sách (văn viết của 背). 朗读 là đọc to nhìn sách.'},
+  {pre:'在雪地里站了两个小时，他的脚冻得失去了',blank:'知觉',post:'。',hint:'(cảm giác)',ans:'知觉',exp:'失去知觉 = mất cảm giác (tê cứng) hoặc bất tỉnh. 感觉 thiên về cảm nhận chủ quan (我感觉……).'},
+  {pre:'今天下了五十多',blank:'毫米',post:'的雨，路上到处是水。',hint:'(mi-li-mét)',ans:'毫米',exp:'Lượng mưa tính bằng 毫米 (mm), không tính bằng cm hay m.'},
+  {pre:'这孩子很有音乐',blank:'天赋',post:'，听一遍就能唱出来。',hint:'(năng khiếu bẩm sinh)',ans:'天赋',exp:'有……天赋 = có năng khiếu bẩm sinh về…; 天才 chỉ người (他是天才), không nói ×很有音乐天才 trong câu này.'},
+  {pre:'这道题实在太难了，',blank:'别说',post:'我们这些学生，就是老师也想了好半天。',hint:'(nói gì đến)',ans:'别说',exp:'别说 A 了，就是 B 也…… = nói gì đến A, ngay cả B cũng…: B (thầy giáo) là trường hợp "khó xảy ra nhất" mà vẫn xảy ra.'},
+  {pre:'他连自己的手机号都记不住，别说别人的',blank:'了',post:'。',hint:'(trợ từ cuối câu)',ans:'了',exp:'Khuôn đảo: 连 B 都……，别说 A 了 — 别说 đứng ở vế sau thì cuối câu phải có 了.'},
+  {pre:'每次考试前，他都把要用的东西准备得',blank:'整整齐齐',post:'的。',hint:'(gọn gàng ngăn nắp)',ans:'整整齐齐',exp:'Lặp AABB (整齐 → 整整齐齐) làm bổ ngữ sau 得, cuối câu thêm 的; không lặp kiểu ABAB (×整齐整齐).'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (别说 · 来来回回 AABB) ít nhất 2 câu
+// SẮP XẾP CÂU — câu mới, chỉ một trật tự đúng
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['那个动画片','连大人','都','爱看','，','别说','小孩子','了','。'],ans:'那个动画片连大人都爱看，别说小孩子了。',audio:'那个动画片连大人都爱看，别说小孩子了。'},
-  {words:['晚上看书','别说','蜡烛','了','，','就是','灯油','也要','节省着用','。'],ans:'晚上看书别说蜡烛了，就是灯油也要节省着用。',audio:'晚上看书别说蜡烛了，就是灯油也要节省着用。'},
-  {words:['他','连','蛇','都','不怕','，','别说','这种小虫子','了','。'],ans:'他连蛇都不怕，别说这种小虫子了。',audio:'他连蛇都不怕，别说这种小虫子了。'},
-  {words:['萤火虫','在低空','盘旋飞舞','，','来来回回','地','飞','。'],ans:'萤火虫在低空盘旋飞舞，来来回回地飞。',audio:'萤火虫在低空盘旋飞舞，来来回回地飞。'},
-  {words:['他','办事','总是','拖拖拉拉','的','，','让人','着急','。'],ans:'他办事总是拖拖拉拉的，让人着急。',audio:'他办事总是拖拖拉拉的，让人着急。'},
-  {words:['那时','大伙','天天','说说笑笑','、','打打闹闹','地','，','快活极了','。'],ans:'那时大伙天天说说笑笑、打打闹闹地，快活极了。',audio:'那时大伙天天说说笑笑、打打闹闹地，快活极了。'},
-  {words:['每当','他','捧起','书本','，','就像是','走进了','知识的海洋','。'],ans:'每当他捧起书本，就像是走进了知识的海洋。',audio:'每当他捧起书本，就像是走进了知识的海洋。'},
-  {words:['历史文化的','长期','熏陶','，','使他','思维敏捷','，','胸怀宽广','。'],ans:'历史文化的长期熏陶，使他思维敏捷，胸怀宽广。',audio:'历史文化的长期熏陶，使他思维敏捷，胸怀宽广。'},
-  {words:['只要','有书读','，','挨饿受冻','他','都','不怕','。'],ans:'只要有书读，挨饿受冻他都不怕。',audio:'只要有书读，挨饿受冻他都不怕。'},
-  {words:['他','努力','克制着','自己的情绪','，','默默地','背诵','古诗','。'],ans:'他努力克制着自己的情绪，默默地背诵古诗。',audio:'他努力克制着自己的情绪，默默地背诵古诗。'},
-  {words:['瞬间','，','他','头脑中','迸发出','一个','想法','。'],ans:'瞬间，他头脑中迸发出一个想法。',audio:'瞬间，他头脑中迸发出一个想法。'},
-  {words:['生活贫困','并不可怕','，','可怕的是','精神贫困','。'],ans:'生活贫困并不可怕，可怕的是精神贫困。',audio:'生活贫困并不可怕，可怕的是精神贫困。'},
-  {words:['日复一日的','努力','，','使他的','学识','与日俱增','。'],ans:'日复一日的努力，使他的学识与日俱增。',audio:'日复一日的努力，使他的学识与日俱增。'}
+  {words:['他','把','钥匙','放进了','兜里','。'],ans:'他把钥匙放进了兜里。',audio:'他把钥匙放进了兜里。'},
+  {words:['他','把','地图','摊','在','桌子上','。'],ans:'他把地图摊在桌子上。',audio:'他把地图摊在桌子上。'},
+  {words:['他','把','掉进水里的','手机','捞了','上来','。'],ans:'他把掉进水里的手机捞了上来。',audio:'他把掉进水里的手机捞了上来。'},
+  {words:['请你','把','椅子','往左边','挪一挪','。'],ans:'请你把椅子往左边挪一挪。',audio:'请你把椅子往左边挪一挪。'},
+  {words:['屋里的','灯','一下子','全','熄灭了','。'],ans:'屋里的灯一下子全熄灭了。',audio:'屋里的灯一下子全熄灭了。'},
+  {words:['她','把','房间','打扫得','干干净净的','。'],ans:'她把房间打扫得干干净净的。',audio:'她把房间打扫得干干净净的。'},
+  {words:['他','用力','揉了揉','发酸的','眼睛','。'],ans:'他用力揉了揉发酸的眼睛。',audio:'他用力揉了揉发酸的眼睛。'},
+  {words:['门口','挂着','两个','大红','灯笼','。'],ans:'门口挂着两个大红灯笼。',audio:'门口挂着两个大红灯笼。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1741,76 +1684,44 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'这次地震中，人民的生命财产____到很大损失。',opts:['挨','受','捧','挪'],ans:1,
-   exp:'受 + 损失: sau là danh từ chỉ tổn thất, tai họa → 受到损失 (做一做 ①). 挨 không đi với 损失.'},
-  {wrong:'因为撒谎，他____了父亲一顿打。',opts:['挨','受','揉','摊'],ans:0,
-   exp:'挨了 + người + 一顿打: bị đánh — hành động cụ thể làm tổn hại thân thể → 挨 (做一做 ③).'},
-  {wrong:'您____累，帮我照顾一下孩子好吗？',opts:['捞','挨','挪','受'],ans:3,
-   exp:'受累 thuộc nhóm 受 + tính từ (受苦、受累、受冻、受惊) — lời nhờ vả lịch sự (做一做 ④).'},
-  {wrong:'他刚参加工作，经验还比较____。',opts:['贫困','艰难','贫乏','美满'],ans:2,
-   exp:'经验贫乏 = thiếu kinh nghiệm (贫乏 = thiếu, không phong phú, trái nghĩa 丰富). 贫困 nói về nghèo kinh tế.'},
-  {wrong:'这个奖学金是专门为____家庭的学生设立的。',opts:['贫困','贫乏','炎热','耀眼'],ans:0,
-   exp:'贫困家庭 = gia đình nghèo (kinh tế); không nói ×贫乏家庭.'},
-  {wrong:'为了不影响工作，他努力____自己的情绪。',opts:['强制','熏陶','编织','克制'],ans:3,
-   exp:'克制 + 情绪 = kiềm chế cảm xúc (练习2 ⑤). 强制 là ép buộc (bằng quyền lực, quy định).'},
-  {wrong:'这台机器由电脑____，不需要人操作。',opts:['克制','控制','熏陶','强制'],ans:1,
-   exp:'Điều khiển máy móc → 控制. 克制 chỉ dùng cho cảm xúc, hành vi của chính con người.'},
-  {wrong:'我认识的那点儿字，____写小说了，看小说都看不下来。',opts:['别说','就是','即使','虽然'],ans:0,
-   exp:'别说 A 了，B 都…… = nói gì đến A, ngay cả B cũng … (Chú thích 1). Viết tiểu thuyết khó hơn đọc → đứng sau 别说.'},
-  {wrong:'工厂管理很严，别说外人，____本厂的人也不能在车间乱跑。',opts:['虽然','因为','即使','只要'],ans:2,
-   exp:'别说 A，即使 / 就是 B 也…… (Chú thích 1). 虽然 cần 但是; 只要 cần 就.'},
-  {wrong:'他这个人办事就是____的，让人着急。',opts:['说说笑笑','拖拖拉拉','打打闹闹','来来回回'],ans:1,
-   exp:'拖拖拉拉 = lề mề, dây dưa → khiến người ta sốt ruột (Chú thích 2 · 练一练 (1)).'},
-  {wrong:'只见一大群萤火虫在低空盘旋飞舞，____地飞。',opts:['吵吵嚷嚷','拖拖拉拉','说说笑笑','来来回回'],ans:3,
-   exp:'来来回回 + 地 + 飞 = bay qua bay lại (câu bài khoá, Chú thích 2).'},
-  {wrong:'失败了没关系，不要____。',opts:['泄气','着迷','熄灭','骚扰'],ans:0,
-   exp:'不要泄气 = đừng nản chí (练习2 ④).'},
-  {wrong:'他放下灯，____地凝视着眼前的茫茫黑暗。',opts:['艰难','耀眼','绝望','美满'],ans:2,
-   exp:'绝望地凝视 = tuyệt vọng nhìn chằm chằm (dầu đèn đã hết). Các tính từ khác không hợp nghĩa.'},
-  {wrong:'萤火虫的亮光成为黑暗中唯一____的光芒。',opts:['耀眼','贫乏','炎热','艰难'],ans:0,
-   exp:'耀眼的光芒 = ánh sáng chói lọi, rực rỡ.'},
-  {wrong:'远处村子的灯光都____了，只剩下星星那微弱的光芒。',opts:['凝固','蔓延','熄灭','迸发'],ans:2,
-   exp:'灯光熄灭 = đèn tắt (练习3 đoạn 2); vế sau "chỉ còn ánh sao" cho biết đèn đã tắt.'},
-  {wrong:'凉风吹来，丝丝凉意在身体中____开来。',opts:['凝固','熄灭','编织','蔓延'],ans:3,
-   exp:'蔓延开来 = lan tỏa ra (练习3 đoạn 2). 凝固 là đông cứng — ngược nghĩa.'},
-  {wrong:'瞬间，他头脑中____出一个想法。',opts:['蔓延','凝固','迸发','熄灭'],ans:2,
-   exp:'迸发出 + 想法 / 灵感 = bất chợt nảy ra ý tưởng; 瞬间 ôn HSK 6 bài 1.'},
-  {wrong:'他虽然没有过人的____，但是日复一日的努力使他成为知名学者。',opts:['财富','天赋','源泉','知觉'],ans:1,
-   exp:'过人的天赋 = năng khiếu hơn người; 虽然……但是…… đối lập "không có năng khiếu" với "nỗ lực".'},
-  {wrong:'贫困的经历可以成为奋斗拼搏的动力和____。',opts:['天堂','情形','光芒','源泉'],ans:3,
-   exp:'动力和源泉 = động lực và nguồn sức mạnh (câu bài khoá).'},
-  {wrong:'屋子里闷热的空气像是____了。',opts:['熄灭','凝固','蔓延','迸发'],ans:1,
-   exp:'空气像是凝固了 = không khí như đông cứng lại (ví von sự ngột ngạt).'}
+  {wrong:'这本书出版后很____欢迎，一个月就卖完了。',opts:['受','挨','被','让'],ans:0,exp:'很受欢迎 = được yêu thích (受 + động từ nghĩa tốt). 挨 chỉ đi với việc xấu (挨打, 挨骂); 被 / 让 không đứng sau 很.'},
+  {wrong:'他为了少花钱，中午常常不吃饭，宁愿____饿也不向家里要钱。',opts:['挨','受','忍受','怕'],ans:0,exp:'挨饿 = chịu đói (tổ hợp cố định, không nói ×受饿; 忍受 cần tân ngữ danh từ, ×忍受饿; 宁愿怕饿 sai nghĩa). Ôn 宁愿……也不…… (bài 18).'},
+  {wrong:'他读书太少，写起文章来语言很____。',opts:['贫乏','贫困','艰难','困难'],ans:0,exp:'语言 / 知识 / 内容 + 贫乏 = nghèo nàn, thiếu phong phú. 贫困 là nghèo tiền bạc; 艰难 / 困难 tả hoàn cảnh khó khăn.'},
+  {wrong:'毕业后她回到家乡，帮助那里的人摆脱____。',opts:['贫困','贫乏','财富','天堂'],ans:0,exp:'摆脱贫困 = thoát nghèo (nghèo kinh tế). 贫乏 dùng cho thứ trừu tượng (知识贫乏), không đi với 摆脱; 财富 / 天堂 trái nghĩa.'},
+  {wrong:'医生让他少吃甜的，把体重____在一百四十斤以内。',opts:['控制','克制','强制','编织'],ans:0,exp:'把 + con số + 控制在……以内 = kiểm soát trong mức…. 克制 chỉ dùng cho cảm xúc của chính mình; 强制 = cưỡng ép.'},
+  {wrong:'学校不能____学生周末来上课，要让他们自己选择。',opts:['强制','克制','控制','熏陶'],ans:0,exp:'强制 + người + V = cưỡng ép ai làm gì. 克制 là tự kiềm chế; 控制 là kiểm soát (không theo sau bằng "người + V" như vậy); 熏陶 là ảnh hưởng dần.'},
+  {wrong:'风一吹，桌上的蜡烛就____了。',opts:['熄灭','消灭','凝固','关上'],ans:0,exp:'Lửa, đèn, nến tắt → 熄灭. 消灭 = tiêu diệt (kẻ địch, sâu bệnh); 关上 dùng cho cửa, máy; 凝固 = đông lại.'},
+  {wrong:'大火很快____到了旁边的几座房子。',opts:['蔓延','迸发','延长','发挥'],ans:0,exp:'Lửa, bệnh, cảm xúc lan rộng ra → 蔓延. 延长 là kéo dài (thời gian, đường); 迸发 là bùng ra một lúc; 发挥 là phát huy.'},
+  {wrong:'听了大家的讨论，他的头脑中忽然____出一个好主意。',opts:['迸发','蔓延','发明','出现'],ans:0,exp:'迸发出 + ý tưởng / cảm hứng = bất chợt bật ra. 出现 không đi với 出 (×出现出); 发明 là phát minh ra vật mới; 蔓延 là lan dần.'},
+  {wrong:'被困在山上三天，就在他快要____的时候，有人找到了他。',opts:['绝望','盼望','渴望','希望'],ans:0,exp:'快要绝望 = sắp tuyệt vọng (hết hy vọng). 盼望 / 渴望 / 希望 đều là mong muốn và cần tân ngữ phía sau.'},
+  {wrong:'第一次做蛋糕没成功，她有点儿____，可第二天又重新试了一次。',opts:['泄气','小气','放弃','着迷'],ans:0,exp:'有点儿泄气 = hơi nản. 放弃 là động từ hành động, không đứng sau 有点儿 và trái với "hôm sau làm lại"; 小气 = keo kiệt; 着迷 = say mê.'},
+  {wrong:'____去国外旅行了，他连飞机都还没坐过。',opts:['别说','不但','虽然','即使'],ans:0,exp:'别说 A 了，连 B 都…… = nói gì đến A (du lịch nước ngoài), ngay cả B (đi máy bay) cũng chưa. 不但 cần 而且; 虽然 cần 但是; 即使 cần 也.'},
+  {wrong:'这个问题太简单了，别说大学生，____小学生也会回答。',opts:['就是','但是','而且','还是'],ans:0,exp:'Vế sau của 别说 dùng 就是 / 即使 / 连 + B + 也 / 都. 但是 / 而且 / 还是 không đi với 也 theo nghĩa "ngay cả".'},
+  {wrong:'小王和女朋友在公园里____地散着步，看起来很幸福。',opts:['说说笑笑','说笑说笑','说笑着笑','笑笑说说'],ans:0,exp:'Động từ hai âm tiết AB lặp thành AABB (说笑 → 说说笑笑) + 地 làm trạng ngữ. ×说笑说笑 là lặp ABAB — lỗi hay gặp; ×笑笑说说 đảo sai thứ tự.'},
+  {wrong:'远处的山____一幅美丽的画。',opts:['犹如','如果','比如','假如'],ans:0,exp:'Phép ví von (比喻): 犹如 = giống như (ôn bài 13). 如果 / 假如 = nếu; 比如 = ví dụ — trông giống nhau nhưng không dùng để so sánh.'}
 ];
 
 // ══════════════════════════════════════════
-// DỊCH — câu ghép, dùng từ bài 26 + ôn từ HSK 6 bài 1–22 và HSK 4–5
+// DỊCH Việt → Trung — câu mới, dùng từ của bài + ôn ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Kỳ nghỉ hè năm nay nóng nực đến mức không chịu nổi, nói gì đến ra ngoài chơi, ngay cả đi siêu thị tôi cũng lười.',zh:'今年暑假炎热得让人不堪忍受，别说出去玩了，就是去超市我都懒得去。',py:'Jīnnián shǔjià yánrè de ràng rén bùkān rěnshòu, biéshuō chūqu wán le, jiùshì qù chāoshì wǒ dōu lǎnde qù.',goiY:['炎热','不堪','别说……就是……'],giai:'别说 A 了，就是 B 都 / 也…… = nói gì đến A, ngay cả B cũng … (Chú thích 1); "nóng đến mức không chịu nổi" → 炎热得让人不堪忍受 (Adj + 得 + bổ ngữ mức độ; 忍受 ôn bài 19).'},
-  {vi:'Đừng vì một lần thi không tốt mà nản chí, trải nghiệm thất bại cũng có thể trở thành một tài sản quý giá.',zh:'别因为一次没考好就泄气，失败的经历也可以成为一笔宝贵的财富。',py:'Bié yīnwèi yí cì méi kǎohǎo jiù xièqì, shībài de jīnglì yě kěyǐ chéngwéi yì bǐ bǎoguì de cáifù.',goiY:['别因为……就……','泄气','财富'],giai:'别因为 A 就 B = đừng vì A mà B; "một tài sản quý giá" → 一笔宝贵的财富 (lượng từ 笔). Đừng dịch "nản chí" thành 失望 — 泄气 mới là "xuống tinh thần".'},
-  {vi:'Hồi nhỏ gia cảnh anh ấy nghèo túng, thường xuyên phải chịu đói chịu rét, nhưng chưa bao giờ than phiền.',zh:'他小时候家境贫乏，常常挨饿受冻，可是从来没有抱怨过。',py:'Tā xiǎo shíhou jiājìng pínfá, chángcháng ái è shòu dòng, kěshì cónglái méiyǒu bàoyuànguo.',goiY:['贫乏','挨饿受冻','从来没有'],giai:'可是 nối vế chuyển ý; 从来没有 + V + 过 = chưa từng …; "chịu đói chịu rét" là cụm cố định 挨饿受冻 (挨 và 受 đều là "chịu").'},
-  {vi:'Cho dù không có năng khiếu hơn người, chỉ cần chịu bỏ công sức, vốn kiến thức nghèo nàn cũng sẽ ngày một phong phú lên.',zh:'即使没有过人的天赋，只要肯下功夫，贫乏的知识也会一天天丰富起来。',py:'Jíshǐ méiyǒu guòrén de tiānfù, zhǐyào kěn xià gōngfu, pínfá de zhīshi yě huì yìtiāntiān fēngfù qǐlái.',goiY:['即使……也……','只要','天赋','贫乏'],giai:'即使 (giả thiết nhượng bộ) lồng 只要 (điều kiện), 也 đặt ở vế cuối trước động từ; 贫乏 ↔ 丰富 (trái nghĩa), Adj + 起来 = bắt đầu trở nên ….'},
-  {vi:'Mỗi khi tôi gặp chuyện buồn, mẹ luôn âm thầm ủng hộ tôi, mẹ chính là nguồn sức mạnh giúp tôi tiến lên.',zh:'每当我遇到伤心的事，妈妈总是默默地支持我，她是我前进的力量源泉。',py:'Měi dāng wǒ yùdào shāngxīn de shì, māma zǒngshì mòmò de zhīchí wǒ, tā shì wǒ qiánjìn de lìliàng yuánquán.',goiY:['每当……','默默','源泉'],giai:'每当……（的时候）= mỗi khi …; "âm thầm ủng hộ" → 默默地支持; "nguồn sức mạnh" → 力量源泉 (không dịch 来源 — 来源 dùng cho thông tin, thu nhập).'},
-  {vi:'Ở vùng núi nghèo ấy, nói gì đến máy tính, nhiều nhà ngay cả đèn điện cũng không có, buổi tối chỉ có thể thắp nến.',zh:'在那个贫困的山区，别说电脑了，很多人家连电灯都没有，晚上只能点蜡烛。',py:'Zài nàge pínkùn de shānqū, biéshuō diànnǎo le, hěn duō rénjiā lián diàndēng dōu méiyǒu, wǎnshang zhǐ néng diǎn làzhú.',goiY:['别说……了','连……都……','贫困','蜡烛'],giai:'别说 A 了，连 B 都…… (Chú thích 1): máy tính (đắt, hiếm) đặt sau 别说, đèn điện (tối thiểu) đặt sau 连; 贫困 (nghèo kinh tế) mới đi với 山区, không dùng 贫乏.'},
-  {vi:'Tan học, chúng tôi cười cười nói nói dạo bước trên cánh đồng; tuy mệt rã rời nhưng ai nấy đều rất vui.',zh:'放学后，我们说说笑笑地漫步在田野中，虽然疲惫不堪，但大家都很快活。',py:'Fàngxué hòu, wǒmen shuōshuōxiàoxiào de mànbù zài tiányě zhōng, suīrán píbèi bùkān, dàn dàjiā dōu hěn kuàihuo.',goiY:['说说笑笑地','田野','虽然……但……','不堪'],giai:'AABB + 地 làm trạng ngữ (Chú thích 2): 说说笑笑地漫步; 疲惫不堪 = mệt rã rời (Adj + 不堪; 疲惫 ôn bài 14, 快活 ôn bài 11).'},
-  {vi:'Nó làm bài tập lúc nào cũng lề mề, cứ ngồi một lát là lại xê xê cái ghế, dụi dụi mắt, thảo nào đến nửa đêm vẫn chưa làm xong.',zh:'他写作业总是拖拖拉拉的，坐一会儿就挪挪椅子、揉揉眼睛，难怪到半夜还没写完。',py:'Tā xiě zuòyè zǒngshì tuōtuōlālā de, zuò yíhuìr jiù nuónuo yǐzi, róurou yǎnjing, nánguài dào bànyè hái méi xiěwán.',goiY:['拖拖拉拉的','挪','揉','难怪'],giai:'AABB + 的 làm vị ngữ (拖拖拉拉的); 挪挪、揉揉 là lặp động từ đơn âm (làm một chút); 难怪 đứng đầu vế cuối nêu kết luận "thảo nào …".'},
-  {vi:'Tôi vốn định lặng lẽ chịu đựng, nhưng thấy cậu ta lại đang chế giễu người khác, rốt cuộc không kìm được, cãi lại cậu ta mấy câu.',zh:'我本来想默默忍受，可是看到他又在嘲笑别人，终于克制不住，反驳了他几句。',py:'Wǒ běnlái xiǎng mòmò rěnshòu, kěshì kàndào tā yòu zài cháoxiào biérén, zhōngyú kèzhì bu zhù, fǎnbóle tā jǐ jù.',goiY:['本来……可是……','默默','克制不住','反驳'],giai:'本来……可是…… = vốn định … nhưng …; 克制不住 = không kìm được (bổ ngữ khả năng); 嘲笑, 反驳 ôn HSK 6 bài 1.'},
-  {vi:'Những năm tháng gian nan ấy chẳng những không khiến anh tuyệt vọng, trái lại còn trở thành động lực và nguồn sức mạnh để anh phấn đấu; có lẽ đó chính là tài sản mà cái nghèo đã tặng cho anh.',zh:'那段艰难的岁月不但没有让他绝望，反而成了他奋斗的动力和源泉，这大概就是贫困给他的财富吧。',py:'Nà duàn jiānnán de suìyuè búdàn méiyǒu ràng tā juéwàng, fǎn\'ér chéngle tā fèndòu de dònglì hé yuánquán, zhè dàgài jiù shì pínkùn gěi tā de cáifù ba.',goiY:['不但没有……反而……','绝望','源泉','财富'],giai:'不但没有 A，反而 B = chẳng những không A mà trái lại B (kết quả ngược mong đợi); vế ba 这大概就是……吧 là lời bình suy đoán. 艰难的岁月 = năm tháng gian nan.'}
+  {vi:'Căn phòng ấy nhỏ quá, nói gì đến kê sofa, ngay cả một cái bàn cũng không đặt vừa.',zh:'那个房间太小了，别说放沙发，就是一张桌子也放不下。',py:'Nàge fángjiān tài xiǎo le, biéshuō fàng shāfā, jiùshì yì zhāng zhuōzi yě fàng bu xià.',goiY:['别说……，就是……也……','放不下'],giai:'别说 A，就是 B 也……: A (sofa, to) hiển nhiên không vừa, B (một cái bàn, nhỏ) cũng không vừa; 放不下 = không đặt vừa (bổ ngữ khả năng).'},
+  {vi:'Đường xa, chúc cậu suốt chuyến đi bình bình an an, vui vui vẻ vẻ!',zh:'路这么远，祝你一路上平平安安、开开心心的！',py:'Lù zhème yuǎn, zhù nǐ yí lù shang píngpíng\'ān\'ān, kāikāixīnxīn de!',goiY:['平平安安','开开心心'],giai:'Lặp AABB (平安 → 平平安安, 开心 → 开开心心) làm lời chúc nghe thân mật, nhấn mạnh; hai cụm ngăn bằng dấu 、, cuối câu thêm 的.'},
+  {vi:'Đối với anh ấy, sách giống như người bạn tốt nhất, đã cùng anh vượt qua những ngày tháng gian nan nhất.',zh:'对他来说，书就像最好的朋友，陪他度过了最艰难的日子。',py:'Duì tā lái shuō, shū jiù xiàng zuì hǎo de péngyou, péi tā dùguòle zuì jiānnán de rìzi.',goiY:['就像……','艰难','度过'],giai:'Ví von (比喻): 书 (vật được ví) + 就像 + 朋友 (vật dùng để ví); 度过 + khoảng thời gian = trải qua.'},
+  {vi:'Khi tức giận phải cố gắng kiềm chế bản thân, đừng nói những lời làm tổn thương người khác.',zh:'生气的时候要尽量克制自己，别说伤害别人的话。',py:'Shēngqì de shíhou yào jǐnliàng kèzhì zìjǐ, bié shuō shānghài biérén de huà.',goiY:['尽量','克制自己'],giai:'克制 + 自己 / 情绪 = tự kìm nén cảm xúc của chính mình (控制 thiên về kiểm soát sự vật, con số); 伤害别人的话 = lời làm tổn thương người khác.'},
+  {vi:'Thiên nhiên là nguồn cảm hứng sáng tác của rất nhiều nhà thơ.',zh:'大自然是很多诗人写诗的灵感源泉。',py:'Dàzìrán shì hěn duō shīrén xiě shī de línggǎn yuánquán.',goiY:['源泉','灵感'],giai:'……的源泉 = nguồn (gốc sinh ra cái gì, nghĩa bóng); không dịch "nguồn" bằng 来源 ở đây vì 来源 dùng cho thông tin, thu nhập.'},
+  {vi:'Bố ít nói, nhưng vẫn luôn lặng lẽ ủng hộ tôi từ phía sau.',zh:'爸爸话不多，却一直在背后默默地支持我。',py:'Bàba huà bù duō, què yìzhí zài bèihòu mòmò de zhīchí wǒ.',goiY:['默默地','却'],giai:'默默地 + V = lặng lẽ làm, không nói ra; 却 đứng sau chủ ngữ (ở đây chủ ngữ tỉnh lược) để chuyển ý.'}
 ];
 
-// Chiều Trung → Việt — bám ý bài khoá, nội dung khác với chiều trên
+// ══════════════════════════════════════════
+// Dịch Trung → Việt — câu mới, không trùng chiều trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Mỗi khi cầm quyển sách lên, anh ta như bước vào biển cả tri thức, thơ từ các đời đều khiến anh say mê.',zh:'每当他捧起书本，就像走进了知识的海洋，历代诗词都会使他着迷。',py:'Měi dāng tā pěngqǐ shūběn, jiù xiàng zǒujìnle zhīshi de hǎiyáng, lìdài shīcí dōu huì shǐ tā zháomí.',goiY:['每当……就…… = mỗi khi … thì …','捧 = cầm (bằng hai tay)','历代 = các đời','着迷 = say mê'],giai:'每当……就…… chỉ việc lặp lại mỗi lần; 就像走进了知识的海洋 là phép ví von (比喻 — 篇章修辞 của bài): so sách với biển cả tri thức.'},
-  {vi:'Sự hun đúc lâu dài của lịch sử văn hóa khiến anh không những tư duy nhanh nhạy mà còn có tấm lòng rộng mở.',zh:'历史文化的长期熏陶，使他不但思维敏捷，而且胸怀宽广。',py:'Lìshǐ wénhuà de chángqī xūntáo, shǐ tā búdàn sīwéi mǐnjié, érqiě xiōnghuái kuānguǎng.',goiY:['熏陶 = hun đúc','不但……而且…… = không những … mà còn …','胸怀 = tấm lòng'],giai:'Chủ ngữ là cụm danh từ dài (……的长期熏陶), vị ngữ 使 + người + ……: khi dịch nên nói "sự hun đúc … khiến anh …"; 思维 ôn bài 5, 敏捷 ôn bài 11.'},
-  {vi:'Giá rét và sự quấy nhiễu của muỗi đều không ảnh hưởng được đến việc đọc sách của anh, điều duy nhất khiến anh rầu rĩ là gia cảnh nghèo túng.',zh:'严寒和蚊子的骚扰都影响不了他读书，唯独让他发愁的是家境贫乏。',py:'Yánhán hé wénzi de sāorǎo dōu yǐngxiǎng bu liǎo tā dú shū, wéidú ràng tā fāchóu de shì jiājìng pínfá.',goiY:['骚扰 = quấy nhiễu','唯独 = duy chỉ, riêng','贫乏 = nghèo túng'],giai:'影响不了 = không ảnh hưởng nổi (bổ ngữ khả năng); 唯独……的是…… = điều duy nhất … là … (唯独 ôn bài 6, 严寒 ôn bài 14).'},
-  {vi:'Cuộc sống của anh ta gian nan, nói gì đến nến, ngay cả dầu đèn cũng không nỡ dùng nhiều.',zh:'他日子过得艰难，别说蜡烛了，就是灯油也舍不得多用。',py:'Tā rìzi guò de jiānnán, biéshuō làzhú le, jiùshì dēngyóu yě shěbude duō yòng.',goiY:['艰难 = gian nan','别说……了，就是……也…… = nói gì đến …, ngay cả … cũng …','舍不得 = không nỡ'],giai:'别说 A 了，就是 B 也…… (Chú thích 1): A (nến) là thứ đắt hơn, hiển nhiên không dùng nổi; B (dầu đèn) rẻ hơn mà vẫn phải tiết kiệm. Dịch "nói gì đến …, ngay cả … cũng …".'},
-  {vi:'Vì ngồi quá lâu, cổ anh ta hơi tê, thế là anh xoa xoa cái cổ, nhích nhích mông.',zh:'由于坐得太久，他的颈椎有些麻木，于是揉了揉脖子，挪了挪屁股。',py:'Yóuyú zuò de tài jiǔ, tā de jǐngzhuī yǒuxiē mámù, yúshì róule róu bózi, nuóle nuó pìgu.',goiY:['由于……于是……','颈椎 = đốt sống cổ','揉了揉 = xoa xoa','挪了挪 = nhích nhích'],giai:'由于 (nguyên nhân) → 于是 (hành động tiếp theo); V了V = làm một chút (đã xảy ra); 颈椎 dịch tự nhiên là "cổ" thay vì "đốt sống cổ"; 麻木 ôn bài 9.'},
-  {vi:'Chỉ cần có sách đọc, chịu đói chịu rét anh cũng không sợ; chỉ cần có sách bầu bạn, anh liền cảm thấy như đang sống ở thiên đường.',zh:'只要有书读，挨饿受冻他都不怕；只要有书陪伴，他就觉得像生活在天堂。',py:'Zhǐyào yǒu shū dú, ái è shòu dòng tā dōu bú pà; zhǐyào yǒu shū péibàn, tā jiù juéde xiàng shēnghuó zài tiāntáng.',goiY:['只要……就…… = chỉ cần … thì …','挨饿受冻 = chịu đói chịu rét','天堂 = thiên đường'],giai:'Hai câu 只要 song song, ngăn bằng dấu ；; tân ngữ 挨饿受冻 được đảo lên trước 他都不怕 để nhấn mạnh — tiếng Việt giữ trật tự "chịu đói chịu rét anh cũng không sợ".'},
-  {vi:'Đèn dầu tắt rồi, anh hơi nản lòng, chỉ còn biết tuyệt vọng nhìn chằm chằm vào màn đêm mịt mùng trước mặt.',zh:'油灯熄灭以后，他有些泄气，只能绝望地凝视着眼前的茫茫黑暗。',py:'Yóudēng xīmiè yǐhòu, tā yǒuxiē xièqì, zhǐ néng juéwàng de níngshìzhe yǎnqián de mángmáng hēi\'àn.',goiY:['熄灭 = tắt','泄气 = nản lòng','绝望 = tuyệt vọng'],giai:'Chuỗi ba vế theo diễn biến: sự việc (灯灭) → tâm trạng (泄气) → hành động (凝视); 只能 dịch "chỉ còn biết"; 凝视 ôn bài 11.'},
-  {vi:'Anh cố kìm nén cảm xúc bực bội, lặng lẽ đọc thầm thơ cổ, nhưng cách ép buộc này chẳng có chút hiệu quả nào.',zh:'他努力克制着烦躁的情绪，默默地背诵古诗，可这种强制的办法并没有效果。',py:'Tā nǔlì kèzhìzhe fánzào de qíngxù, mòmò de bèisòng gǔshī, kě zhè zhǒng qiángzhì de bànfǎ bìng méiyǒu xiàoguǒ.',goiY:['克制 = kìm nén','默默 = lặng lẽ','背诵 = đọc thuộc','强制 = ép buộc'],giai:'可 (= 可是) chuyển ý ở vế cuối; 并没有 nhấn mạnh phủ định (trái với mong đợi) — dịch "chẳng … chút nào".'},
-  {vi:'Anh dạo bước trên cánh đồng, bỗng bị cảnh tượng trước mắt thu hút: một đàn đom đóm lớn đang bay qua bay lại, đuôi nhấp nháy thứ ánh sáng chói lọi.',zh:'他漫步在田野中，忽然被眼前的情形吸引住了：一大群萤火虫正来来回回地飞，尾巴闪烁着耀眼的光芒。',py:'Tā mànbù zài tiányě zhōng, hūrán bèi yǎnqián de qíngxing xīyǐn zhù le: yí dà qún yínghuǒchóng zhèng láiláihuíhuí de fēi, wěiba shǎnshuòzhe yàoyǎn de guāngmáng.',goiY:['情形 = cảnh tượng','来来回回地 = qua qua lại lại','耀眼 = chói lọi','光芒 = ánh sáng'],giai:'Dấu ： dẫn ra cảnh tượng giải thích cho 情形; AABB + 地 làm trạng ngữ (Chú thích 2) — dịch "bay qua bay lại"; 闪烁 ôn bài 17.'},
-  {vi:'Anh tuy không có năng khiếu hơn người, nhưng sự nỗ lực ngày này qua ngày khác khiến học thức của anh ngày một tăng; có thể thấy, nghèo khó về vật chất không đáng sợ, đáng sợ là nghèo nàn về tinh thần.',zh:'他虽然没有过人的天赋，但日复一日的努力使他学识与日俱增；可见，生活贫困并不可怕，可怕的是精神贫困。',py:'Tā suīrán méiyǒu guòrén de tiānfù, dàn rì fù yí rì de nǔlì shǐ tā xuéshí yǔrì-jùzēng; kějiàn, shēnghuó pínkùn bìng bù kěpà, kěpà de shì jīngshén pínkùn.',goiY:['虽然……但…… = tuy … nhưng …','天赋 = năng khiếu','可见 = có thể thấy','贫困 = nghèo khó'],giai:'Hai ý lớn ngăn bằng ；: câu chuyện (虽然……但……) và bài học rút ra (可见……); ……并不可怕，可怕的是…… = … không đáng sợ, đáng sợ là …; 与日俱增 ôn bài 18.'}
+  {vi:'Anh ấy thích đọc tiểu sử và tản văn của danh nhân các đời, cũng rất hứng thú với tư tưởng Nho gia.',zh:'他喜欢读历代名人的传记和散文，对儒家思想也很感兴趣。',py:'Tā xǐhuan dú lìdài míngrén de zhuànjì hé sǎnwén, duì Rújiā sīxiǎng yě hěn gǎn xìngqù.',goiY:['历代 = các đời','传记 = tiểu sử','散文 = tản văn','儒家 = Nho gia'],giai:'历代名人 = danh nhân các đời; 对……感兴趣 = hứng thú với…; 传记 đọc zhuànjì (không đọc chuán).'},
+  {vi:'Người làm lãnh đạo phải có tấm lòng rộng lượng, nghe lọt tai những ý kiến khác mình.',zh:'当领导的人要有宽广的胸怀，能听得进不同的意见。',py:'Dāng lǐngdǎo de rén yào yǒu kuānguǎng de xiōnghuái, néng tīng de jìn bù tóng de yìjiàn.',goiY:['胸怀 = tấm lòng','听得进 = nghe lọt tai'],giai:'宽广的胸怀 dịch "tấm lòng rộng lượng"; 听得进 là bổ ngữ khả năng = chịu nghe, tiếp thu được.'},
+  {vi:'Với người mê ăn uống, thành phố này đúng là thiên đường.',zh:'对爱吃的人来说，这座城市简直就是天堂。',py:'Duì ài chī de rén lái shuō, zhè zuò chéngshì jiǎnzhí jiù shì tiāntáng.',goiY:['天堂 = thiên đường','简直 = quả thật, đúng là'],giai:'Ẩn dụ (比喻 dùng 是): thành phố "là" thiên đường — không hiểu theo nghĩa đen; 简直就是 nhấn mạnh sự so sánh.'},
+  {vi:'Tháng Bảy ở miền Nam rất nóng bức, buổi trưa hầu như chẳng có ai đi lại bên ngoài.',zh:'七月的南方十分炎热，中午几乎没有人在外面走。',py:'Qī yuè de nánfāng shífēn yánrè, zhōngwǔ jīhū méiyǒu rén zài wàimian zǒu.',goiY:['炎热 = nóng bức','几乎 = hầu như'],giai:'炎热 là văn viết của 热, thường tả khí hậu, mùa; 几乎没有人 = hầu như không có ai.'},
+  {vi:'Tôi còn chẳng biết tên anh ta, nói gì đến chuyện anh ta sống ở đâu.',zh:'我连他叫什么都不知道，别说他住在哪儿了。',py:'Wǒ lián tā jiào shénme dōu bù zhīdào, biéshuō tā zhù zài nǎr le.',goiY:['连……都…… = ngay cả … cũng','别说……了 = nói gì đến'],giai:'Khuôn đảo 连 B 都……，别说 A 了: điều dễ biết hơn (tên) đặt trước, điều khó hơn (chỗ ở) đặt sau 别说.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1856,194 +1767,143 @@ var writingData = {
 // LUYỆN NÓI — đúng bảng 练习5 của sách: 根据提示，简述课文主要内容
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Đây là bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b>. Bảng có năm dòng (điều khiến người đọc sách hạnh phúc · điều khiến anh rầu rĩ · cách anh vượt qua khó khăn · thành tựu cuối cùng · bài học của câu chuyện). Mỗi câu dưới đây là một dòng — bấm loa nghe câu hỏi, nhìn gợi ý, <b>tự ghi âm câu trả lời của mình trước</b> rồi mới mở câu mẫu. Cố dùng từ mới: 着迷 · 熏陶 · 贫乏 · 艰难 · 熄灭 · 泄气 · 克制 · 背诵 · 编织 · 田野 · 迸发 · 天赋 · 财富 · 源泉.',
-  questions:[
-    {q_zh:'让读书人幸福的事情',
-     q_vn:'Những điều khiến người đọc sách hạnh phúc',
-     hint:'①……使他着迷 ②只要有……陪伴，就……',
-     sample:'让读书人最幸福的事情就是读书。天文地理、儒家经典、传记散文、历代诗词，都会使他着迷。只要有书陪伴，他就感觉幸福、美满，像是生活在天堂，就算挨饿受冻他也不怕。',
-     sample_vn:'Điều khiến người đọc sách hạnh phúc nhất chính là đọc sách. Thiên văn địa lý, kinh điển Nho gia, truyện ký tản văn, thơ từ các đời, thứ gì cũng khiến anh say mê. Chỉ cần có sách bầu bạn, anh liền thấy hạnh phúc, viên mãn, như đang sống ở thiên đường, dù có chịu đói chịu rét anh cũng không sợ.',
-     note:'Gợi ý ① liệt kê các loại sách bằng dấu 、 rồi kết bằng 都会使他着迷; gợi ý ② dùng khung 只要……，就…….'},
-    {q_zh:'让读书人发愁的事情',
-     q_vn:'Điều khiến người đọc sách rầu rĩ',
-     hint:'家境贫困，灯油',
-     sample:'唯独让他发愁的是家境贫困，日子过得很艰难。晚上看书别说蜡烛了，就是灯油也要节省着用。有一天晚上，灯油用完了，油灯熄灭了，他有些泄气。',
-     sample_vn:'Điều duy nhất khiến anh rầu rĩ là gia cảnh nghèo khó, cuộc sống rất gian nan. Buổi tối đọc sách, nói gì đến nến, ngay cả dầu đèn cũng phải dùng dè sẻn. Có một tối dầu đèn cạn, đèn tắt, anh hơi nản lòng.',
-     note:'Mở bằng 唯独让他发愁的是……; dùng 别说……了，就是……也…… (Chú thích 1) cho ý "dầu đèn".'},
-    {q_zh:'读书人为了克服困难采取的办法',
-     q_vn:'Cách người đọc sách làm để vượt qua khó khăn',
-     hint:'①克制、背诵、编织 ②漫步田野，发现萤火虫 ③制成萤火虫“灯笼”',
-     sample:'油灯熄灭以后，他先努力克制自己的情绪，默默地背诵古诗，在头脑中编织诗中的画面，可是没有效果。于是他走到田野中散步，发现一大群萤火虫在来来回回地飞，尾巴闪着耀眼的光芒。他头脑中迸发出一个想法，就用薄布做了个布兜，把萤火虫装在里面，做成了一个“灯笼”。',
-     sample_vn:'Sau khi đèn dầu tắt, trước tiên anh cố kìm nén cảm xúc, lặng lẽ đọc thầm thơ cổ, tưởng tượng ra những cảnh trong bài thơ, nhưng không có hiệu quả. Thế là anh ra cánh đồng đi dạo, phát hiện một đàn đom đóm lớn đang bay qua bay lại, đuôi lấp lánh ánh sáng chói lọi. Trong đầu anh nảy ra một ý, liền lấy vải mỏng làm một cái túi, bỏ đom đóm vào trong, làm thành một chiếc "đèn lồng".',
-     note:'Kể đủ ba bước theo thứ tự bằng 先……，可是……。于是……，……就……; nhớ dùng 来来回回地飞 (Chú thích 2) và 迸发出一个想法.'},
-    {q_zh:'读书人最后的成就',
-     q_vn:'Thành tựu cuối cùng của người đọc sách',
-     hint:'知名学者',
-     sample:'他虽然不是天才，没有过人的天赋，但是日复一日的努力使他的学识与日俱增，最后终于成为知名学者。',
-     sample_vn:'Anh tuy không phải thiên tài, không có năng khiếu hơn người, nhưng sự nỗ lực ngày này qua ngày khác khiến học thức của anh ngày một tăng, cuối cùng trở thành một học giả nổi tiếng.',
-     note:'Dùng 虽然……，但是……，最后终于…… để nhấn mạnh: thành công nhờ nỗ lực, không nhờ năng khiếu.'},
-    {q_zh:'这个故事给我们的启示',
-     q_vn:'Bài học câu chuyện mang lại cho chúng ta',
-     hint:'……并不可怕，可怕的是……',
-     sample:'这个故事告诉我们，生活贫困并不可怕，可怕的是思想贫困、精神贫困、智慧贫困。贫困的经历可以成为我们的财富，成为奋斗拼搏的动力和源泉。',
-     sample_vn:'Câu chuyện cho chúng ta biết, cuộc sống nghèo khó không đáng sợ, đáng sợ là nghèo nàn về tư tưởng, về tinh thần, về trí tuệ. Trải nghiệm nghèo khó có thể trở thành tài sản của chúng ta, thành động lực và nguồn sức mạnh để phấn đấu.',
-     note:'Khung đối lập ……并不可怕，可怕的是……; có thể nói thêm một câu liên hệ bản thân (对我来说，……).'}
+  intro: 'Đây là bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b>. Bảng có năm dòng (điều khiến người đọc sách hạnh phúc · điều khiến anh rầu rĩ · cách anh vượt qua khó khăn · thành tựu cuối cùng · bài học của câu chuyện). Mỗi câu dưới đây là một dòng — bấm loa nghe câu hỏi, nhìn gợi ý, <b>tự ghi âm câu trả lời của mình trước</b> rồi mới mở câu mẫu. Cố dùng từ mới: 着迷 · 熏陶 · 贫乏 · 艰难 · 熄灭 · 泄气 · 克制 · 背诵 · 编织 · 田野 · 迸发 · 天赋 · 财富 · 源泉.',
+  questions: [
+    {q_zh:'让读书人幸福的事情',q_vn:'Những điều khiến người đọc sách hạnh phúc',hint:'①……使他着迷 ②只要有……陪伴，就……',sample:'让读书人最幸福的事情就是读书。天文地理、儒家经典、传记散文、历代诗词，都会使他着迷。只要有书陪伴，他就感觉幸福、美满，像是生活在天堂，就算挨饿受冻他也不怕。',sample_vn:'Điều khiến người đọc sách hạnh phúc nhất chính là đọc sách. Thiên văn địa lý, kinh điển Nho gia, truyện ký tản văn, thơ từ các đời, thứ gì cũng khiến anh say mê. Chỉ cần có sách bầu bạn, anh liền thấy hạnh phúc, viên mãn, như đang sống ở thiên đường, dù có chịu đói chịu rét anh cũng không sợ.',note:'Gợi ý ① liệt kê các loại sách bằng dấu 、 rồi kết bằng 都会使他着迷; gợi ý ② dùng khung 只要……，就…….'},
+    {q_zh:'让读书人发愁的事情',q_vn:'Điều khiến người đọc sách rầu rĩ',hint:'家境贫困，灯油',sample:'唯独让他发愁的是家境贫困，日子过得很艰难。晚上看书别说蜡烛了，就是灯油也要节省着用。有一天晚上，灯油用完了，油灯熄灭了，他有些泄气。',sample_vn:'Điều duy nhất khiến anh rầu rĩ là gia cảnh nghèo khó, cuộc sống rất gian nan. Buổi tối đọc sách, nói gì đến nến, ngay cả dầu đèn cũng phải dùng dè sẻn. Có một tối dầu đèn cạn, đèn tắt, anh hơi nản lòng.',note:'Mở bằng 唯独让他发愁的是……; dùng 别说……了，就是……也…… (Chú thích 1) cho ý "dầu đèn".'},
+    {q_zh:'读书人为了克服困难采取的办法',q_vn:'Cách người đọc sách làm để vượt qua khó khăn',hint:'①克制、背诵、编织 ②漫步田野，发现萤火虫 ③制成萤火虫“灯笼”',sample:'油灯熄灭以后，他先努力克制着烦躁的心情，默默地背诵古诗，在头脑中编织诗中的画面，可是没有效果。于是他走到田野中散步，发现一大群萤火虫在来来回回地飞，尾巴闪着耀眼的光芒。他头脑中迸发出一个想法，就用薄布做了个布兜，把萤火虫装在里面，做成了一个“灯笼”。',sample_vn:'Sau khi đèn dầu tắt, trước tiên anh cố kìm nén cảm xúc, lặng lẽ đọc thầm thơ cổ, tưởng tượng ra những cảnh trong bài thơ, nhưng không có hiệu quả. Thế là anh ra cánh đồng đi dạo, phát hiện một đàn đom đóm lớn đang bay qua bay lại, đuôi lấp lánh ánh sáng chói lọi. Trong đầu anh nảy ra một ý, liền lấy vải mỏng làm một cái túi, bỏ đom đóm vào trong, làm thành một chiếc "đèn lồng".',note:'Kể đủ ba bước theo thứ tự bằng 先……，可是……。于是……，……就……; nhớ dùng 来来回回地飞 (Chú thích 2) và 迸发出一个想法.'},
+    {q_zh:'读书人最后的成就',q_vn:'Thành tựu cuối cùng của người đọc sách',hint:'知名学者',sample:'他虽然不是天才，没有过人的天赋，但是日复一日的努力使他的学识与日俱增，最后终于成为知名学者。',sample_vn:'Anh tuy không phải thiên tài, không có năng khiếu hơn người, nhưng sự nỗ lực ngày này qua ngày khác khiến học thức của anh ngày một tăng, cuối cùng trở thành một học giả nổi tiếng.',note:'Dùng 虽然……，但是……，最后终于…… để nhấn mạnh: thành công nhờ nỗ lực, không nhờ năng khiếu.'},
+    {q_zh:'这个故事给我们的启示',q_vn:'Bài học câu chuyện mang lại cho chúng ta',hint:'……并不可怕，可怕的是……',sample:'从这个故事可以看出，生活贫困并不可怕，可怕的是思想贫困、精神贫困、智慧贫困。贫困的经历可以成为我们的财富，成为奋斗拼搏的动力和源泉。',sample_vn:'Từ câu chuyện có thể thấy, cuộc sống nghèo khó không đáng sợ, đáng sợ là nghèo nàn về tư tưởng, về tinh thần, về trí tuệ. Trải nghiệm nghèo khó có thể trở thành tài sản của chúng ta, thành động lực và nguồn sức mạnh để phấn đấu.',note:'Khung đối lập ……并不可怕，可怕的是……; có thể nói thêm một câu liên hệ bản thân (对我来说，……).'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — 听力 (hội thoại ngắn + đoạn nói)
-// Sách HSK 6 không có sách bài tập nghe: tự soạn theo chủ đề bài 26.
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — câu tự soạn (sách HSK 6 không có sách bài tập nghe), mỗi câu một tình huống mới
+// ══════════════════════════════════════════
 var listenExamData = {
-  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, ' +
-         'trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
-  source: 'Soạn theo dạng đề HSK 6 · chủ đề bài 26',
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 26',
   items: [
-    {n:1,
-     lines:[{sp:'女',zh:'你怎么又在看这本传记？'},
-            {sp:'男',zh:'这位科学家的经历太让人着迷了，我已经看了三遍，每次都有新的收获。'}],
-     q:'男的觉得这本书怎么样？',qvn:'Người đàn ông thấy cuốn sách này thế nào?',
-     opts:['很有意思，让人着迷','内容太长了','有很多地方看不懂','不如小说好看'],ans:0,
-     why:'太让人着迷了 + 看了三遍，每次都有新的收获 → rất hay, cuốn hút. Không có thông tin "dài" hay "khó hiểu".',
-     words:['传记','着迷']},
-
-    {n:2,
-     lines:[{sp:'男',zh:'听说你们那儿昨天晚上停电了？'},
-            {sp:'女',zh:'是啊，别说看电视了，连手机都没电了，我只好点了根蜡烛，早早就睡了。'}],
-     q:'停电的时候女的做了什么？',qvn:'Lúc mất điện người phụ nữ đã làm gì?',
-     opts:['看电视','给手机充电','出去散步','点蜡烛，早早睡了'],ans:3,
-     why:'别说看电视了，连手机都没电了 → không xem TV, không dùng được điện thoại; 只好点了根蜡烛，早早就睡了.',
-     words:['蜡烛']},
-
-    {n:3,
-     lines:[{sp:'女',zh:'这次比赛又输了，队员们都很泄气。'},
-            {sp:'男',zh:'输了不要紧，关键是要找出原因。你去跟他们说，别动不动就灰心，下次还有机会。'}],
-     q:'男的是什么态度？',qvn:'Người đàn ông có thái độ thế nào?',
-     opts:['非常生气','鼓励队员不要泄气','打算换一批队员','觉得比赛不公平'],ans:1,
-     why:'输了不要紧 + 别动不动就灰心，下次还有机会 → động viên, khích lệ. 动不动 ôn bài 22.',
-     words:['泄气']},
-
-    {n:4,
-     lines:[{sp:'男',zh:'我儿子写作业总是拖拖拉拉的，一会儿挪挪椅子，一会儿揉揉眼睛。'},
-            {sp:'女',zh:'可能是他对作业没兴趣。你别强制他，试试跟他一起定个学习计划吧。'}],
-     q:'女的建议男的怎么做？',qvn:'Người phụ nữ khuyên người đàn ông làm gì?',
-     opts:['好好批评儿子','给儿子买把新椅子','和儿子一起定计划','让儿子早点儿睡觉'],ans:2,
-     why:'你别强制他 (đừng ép) + 试试跟他一起定个学习计划 → cùng con lập kế hoạch.',
-     words:['挪','揉','强制']},
-
-    {n:5,
-     lines:[{sp:'女',zh:'你的脖子怎么了？我看你一直在揉。'},
-            {sp:'男',zh:'最近天天低头看手机，颈椎有点儿疼，医生让我每天多活动活动。'}],
-     q:'男的为什么脖子疼？',qvn:'Vì sao người đàn ông đau cổ?',
-     opts:['睡觉的姿势不对','常常低头看手机','打球时受伤了','天气太冷了'],ans:1,
-     why:'天天低头看手机，颈椎有点儿疼 — nguyên nhân nói thẳng. 颈椎 = đốt sống cổ.',
-     words:['揉','颈椎']},
-
-    {n:6,
-     lines:[{sp:'男',zh:'这位老画家年轻的时候家里特别贫困，连纸都买不起。'},
-            {sp:'女',zh:'可他一点儿也没泄气，就在地上用树枝画，一画就是十几年，最后成了著名画家。'}],
-     q:'关于这位老画家，可以知道什么？',qvn:'Về vị họa sĩ già, có thể biết điều gì?',
-     opts:['年轻时很有钱','天赋很高，没怎么努力','年轻时在国外学画','家里穷，但坚持练习'],ans:3,
-     why:'家里特别贫困 + 一点儿也没泄气，用树枝画，一画就是十几年 → nhà nghèo nhưng kiên trì luyện tập.',
-     words:['贫困','泄气']},
-
-    {n:7,
-     lines:[{sp:'女',zh:'上次去乡下，晚上田野里有好多萤火虫，一闪一闪的，漂亮极了！'},
-            {sp:'男',zh:'真羡慕你！城里的灯光太亮了，现在很难看到萤火虫了。'}],
-     q:'男的认为城里为什么很难看到萤火虫？',qvn:'Người đàn ông cho rằng vì sao trong thành phố khó thấy đom đóm?',
-     opts:['城里的灯光太亮','城里没有田野','萤火虫只在冬天出现','城里人不喜欢萤火虫'],ans:0,
-     why:'城里的灯光太亮了，现在很难看到萤火虫了 — nguyên nhân do người đàn ông nêu.',
-     words:['田野']},
-
-    {n:8,
-     lines:[{sp:'男',zh:'我们常说“贫困”，其实贫困有很多种。生活贫困当然让人发愁，但它并不可怕，很多人正是在艰难的日子里学会了坚强，贫困的经历反而成了他们的财富。真正可怕的是精神贫困：一个人如果不读书、不思考，知识越来越贫乏，那么即使生活富裕，他的内心也是空虚的。'}],
-     q:'说话人认为什么最可怕？',qvn:'Người nói cho rằng điều gì đáng sợ nhất?',
-     opts:['生活贫困','日子艰难','精神贫困','没有财富'],ans:2,
-     why:'真正可怕的是精神贫困 — câu then chốt. Sinh hoạt nghèo 并不可怕, trải nghiệm gian khó còn trở thành 财富. 富裕 ôn bài 20, 空虚 ôn bài 9.',
-     words:['贫困','艰难','财富','贫乏']}
+    {
+      n: 1,
+      lines: [
+        {sp:'女',zh:'你怎么老揉脖子？'},
+        {sp:'男',zh:'每天坐在电脑前，颈椎又疼了，看来得去医院检查一下了。'}
+      ],
+      q: '男的怎么了？',
+      qvn: 'Người đàn ông bị làm sao?',
+      opts: ['眼睛不舒服','颈椎疼','感冒了','晚上睡不好'],
+      ans: 1,
+      why: '颈椎又疼了 (đau đốt sống cổ) vì ngồi máy tính cả ngày → nên mới cứ xoa cổ (揉脖子).',
+      words: ['揉','颈椎']
+    },
+    {
+      n: 2,
+      lines: [
+        {sp:'男',zh:'坐了十个小时的火车，屁股都坐疼了。'},
+        {sp:'女',zh:'下次还是坐飞机吧，又快又舒服。'}
+      ],
+      q: '女的建议男的怎么做？',
+      qvn: 'Người phụ nữ khuyên người đàn ông làm gì?',
+      opts: ['坐飞机','多休息','还坐火车','自己开车'],
+      ans: 0,
+      why: '下次还是坐飞机吧 → lần sau đi máy bay. 屁股都坐疼了 = ngồi đến đau cả mông (than mệt vì ngồi lâu).',
+      words: ['屁股']
+    },
+    {
+      n: 3,
+      lines: [
+        {sp:'女',zh:'这么炎热的天，你还要出去踢球？'},
+        {sp:'男',zh:'踢什么球啊，我连门都不想出。我是去图书馆还书，马上就回来。'}
+      ],
+      q: '男的出去做什么？',
+      qvn: 'Người đàn ông ra ngoài làm gì?',
+      opts: ['踢球','买东西','还书','见朋友'],
+      ans: 2,
+      why: '踢什么球啊 (= đá bóng gì chứ) + 连门都不想出 → không đi đá bóng; ra ngoài chỉ để trả sách ở thư viện.',
+      words: ['炎热']
+    },
+    {
+      n: 4,
+      lines: [
+        {sp:'女',zh:'你第一次上台演讲是什么情形？'},
+        {sp:'男',zh:'别提了，紧张得要命，背得好好的内容一句都想不起来了。'}
+      ],
+      q: '男的第一次演讲时怎么样？',
+      qvn: 'Lần đầu diễn thuyết người đàn ông thế nào?',
+      opts: ['讲得很好','非常紧张，忘了内容','没有准备','听的人很少'],
+      ans: 1,
+      why: '紧张得要命 (ôn bài 9) + 一句都想不起来了 → quá căng thẳng, quên sạch nội dung đã thuộc.',
+      words: ['情形']
+    },
+    {
+      n: 5,
+      lines: [
+        {sp:'男',zh:'小林画得这么好，一定很有天赋吧？'},
+        {sp:'女',zh:'天赋只是一方面，她每天默默地练五六个小时，从来没停过。'}
+      ],
+      q: '女的认为小林画得好主要是因为什么？',
+      qvn: 'Người phụ nữ cho rằng Tiểu Lâm vẽ đẹp chủ yếu nhờ đâu?',
+      opts: ['天赋高','老师好','家里有钱','每天努力练习'],
+      ans: 3,
+      why: '天赋只是一方面 → năng khiếu chỉ là một phần; điều chính là ngày nào cũng lặng lẽ luyện năm sáu tiếng.',
+      words: ['天赋','默默']
+    },
+    {
+      n: 6,
+      lines: [
+        {sp:'女',zh:'快过年啦，咱们去买几个红灯笼挂在门口吧。'},
+        {sp:'男',zh:'好啊，顺便再买点儿吃的。'}
+      ],
+      q: '他们打算去买什么？',
+      qvn: 'Họ định đi mua gì?',
+      opts: ['衣服','新手机','灯笼和吃的','花'],
+      ans: 2,
+      why: '买几个红灯笼 + 顺便再买点儿吃的 → mua đèn lồng và đồ ăn. 啦 = 了 + 啊, giọng vui.',
+      words: ['啦','灯笼']
+    },
+    {
+      n: 7,
+      lines: [
+        {sp:'男',zh:'哇，那边田野里怎么有这么多亮光？'},
+        {sp:'女',zh:'那是萤火虫，每到夏夜，农村经常能看到。'}
+      ],
+      q: '男的看到的亮光是什么？',
+      qvn: 'Ánh sáng người đàn ông nhìn thấy là gì?',
+      opts: ['萤火虫','灯笼','汽车','蜡烛'],
+      ans: 0,
+      why: '那是萤火虫 → đom đóm. 哇 là thán từ ngạc nhiên.',
+      words: ['哇','田野']
+    }
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 💬 TÌNH HUỐNG GIAO TIẾP
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
+// ══════════════════════════════════════════
 var situationData = {
-  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
-         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn thân buồn bã vì lại thi trượt môn Toán.',
-     a:{sp:'Bạn',zh:'我数学又没考及格，看来我根本学不好这门课。',vn:'Tớ lại trượt môn Toán rồi, xem ra tớ chẳng thể nào học nổi môn này.'},
-     need:['Dùng 泄气','Động viên bạn và đề nghị giúp đỡ'],
-     sample:'一次没考好不要泄气，失败的经历也是一种财富。咱们一起找找原因，下次一定能考好！',
-     samplePy:'Yí cì méi kǎohǎo bú yào xièqì, shībài de jīnglì yě shì yì zhǒng cáifù. Zánmen yìqǐ zhǎozhao yuányīn, xià cì yídìng néng kǎohǎo!',
-     sampleVn:'Một lần thi không tốt thì đừng nản, trải nghiệm thất bại cũng là một loại tài sản. Chúng mình cùng tìm nguyên nhân, lần sau nhất định sẽ thi tốt!',
-     tip:'不要 / 别 + 泄气 (đừng nản); có thể dùng lại ý bài khoá: 失败 / 贫困的经历也是财富.'},
-
-    {scene:'Trong buổi liên hoan lớp, một bạn nhờ em đàn một bài guitar — nhưng em hoàn toàn không biết nhạc.',
-     a:{sp:'Bạn',zh:'听说你会弹吉他？给我们弹一首吧！',vn:'Nghe nói cậu biết chơi guitar? Đàn cho bọn mình một bài đi!'},
-     need:['Dùng 别说……了，连……都……','Từ chối khéo léo'],
-     sample:'我哪儿会呀！别说弹吉他了，我连五线谱都看不懂。你们还是找别人吧，我给大家唱首歌好了。',
-     samplePy:'Wǒ nǎr huì ya! Biéshuō tán jítā le, wǒ lián wǔxiànpǔ dōu kàn bu dǒng. Nǐmen háishi zhǎo biérén ba, wǒ gěi dàjiā chàng shǒu gē hǎo le.',
-     sampleVn:'Tớ đâu có biết! Nói gì đến đàn guitar, đến khuông nhạc tớ còn chẳng đọc được. Các cậu tìm người khác đi, tớ hát tặng mọi người một bài vậy.',
-     tip:'别说 A 了 (việc khó hơn), 连 B 都…… (việc dễ hơn mà cũng không làm được) — Chú thích 1. 哪儿会呀 = đâu có biết (từ chối nhẹ nhàng).'},
-
-    {scene:'Đã mười giờ tối, bố hỏi vì sao em làm bài tập mãi chưa xong.',
-     a:{sp:'Bố',zh:'都十点了，作业怎么还没写完？',vn:'Mười giờ rồi, sao bài tập vẫn chưa làm xong?'},
-     need:['Dùng một dạng AABB (拖拖拉拉 / 断断续续…)','Nhận lỗi và hứa sửa'],
-     sample:'对不起，爸爸，我今天写作业有点儿拖拖拉拉的，老是看手机。以后我一定先写完作业再玩。',
-     samplePy:'Duìbuqǐ, bàba, wǒ jīntiān xiě zuòyè yǒudiǎnr tuōtuōlālā de, lǎoshì kàn shǒujī. Yǐhòu wǒ yídìng xiān xiěwán zuòyè zài wán.',
-     sampleVn:'Con xin lỗi bố, hôm nay con làm bài hơi lề mề, cứ xem điện thoại mãi. Sau này con nhất định làm xong bài tập rồi mới chơi.',
-     tip:'AABB + 的 làm vị ngữ (拖拖拉拉的) — Chú thích 2; 先……再…… = … trước rồi mới ….'},
-
-    {scene:'Thầy chủ nhiệm hỏi em đọc truyện 《奇异的灯光》 xong rút ra được điều gì.',
-     a:{sp:'Thầy chủ nhiệm',zh:'读了《奇异的灯光》，你有什么收获？',vn:'Đọc xong "Ánh sáng kỳ lạ", em thu hoạch được gì?'},
-     need:['Dùng ……并不可怕，可怕的是……','Dùng 贫困 hoặc 天赋'],
-     sample:'我觉得生活贫困并不可怕，可怕的是精神贫困。那个读书人没有过人的天赋，却靠努力成了知名学者，我也要像他一样坚持下去。',
-     samplePy:'Wǒ juéde shēnghuó pínkùn bìng bù kěpà, kěpà de shì jīngshén pínkùn. Nàge dúshūrén méiyǒu guòrén de tiānfù, què kào nǔlì chéngle zhīmíng xuézhě, wǒ yě yào xiàng tā yíyàng jiānchí xiàqu.',
-     sampleVn:'Em thấy cuộc sống nghèo khó không đáng sợ, đáng sợ là nghèo nàn về tinh thần. Người đọc sách ấy không có năng khiếu hơn người, nhưng nhờ nỗ lực mà trở thành học giả nổi tiếng, em cũng muốn kiên trì giống như anh ấy.',
-     tip:'……并不可怕，可怕的是…… (khung đối lập); 却 đứng sau chủ ngữ để chuyển ý; 像……一样 = giống như ….'},
-
-    {scene:'Bạn cùng phòng đang rất tức vì bị người khác nói xấu sau lưng, định đi tìm người đó cãi nhau ngay.',
-     a:{sp:'Bạn cùng phòng',zh:'他凭什么在背后说我坏话？我现在就去找他算账！',vn:'Hắn dựa vào đâu mà nói xấu tớ sau lưng? Tớ đi tìm hắn tính sổ ngay bây giờ!'},
-     need:['Dùng 克制','Khuyên bạn bình tĩnh'],
-     sample:'你先克制一下自己的情绪，冲动解决不了问题。等冷静下来，再好好跟他谈谈吧。',
-     samplePy:'Nǐ xiān kèzhì yíxià zìjǐ de qíngxù, chōngdòng jiějué bu liǎo wèntí. Děng lěngjìng xiàlái, zài hǎohāo gēn tā tántan ba.',
-     sampleVn:'Cậu kìm lại cảm xúc một chút đã, bốc đồng không giải quyết được vấn đề đâu. Đợi bình tĩnh lại rồi hãy nói chuyện tử tế với cậu ta.',
-     tip:'克制 + 自己的情绪; 冲动 ôn HSK 6 bài 14; 等……再…… = đợi … rồi hãy ….'}
+    {scene:'Trong buổi liên hoan lớp, một bạn nhờ em đàn một bài piano — nhưng em hoàn toàn không biết chơi đàn.',a:{sp:'Bạn',zh:'听说你会弹钢琴？给我们弹一首吧！',vn:'Nghe nói cậu biết chơi piano? Đàn cho bọn mình một bài đi!'},need:['Dùng 别说……了，连……都……','Từ chối khéo và đề nghị việc khác'],sample:'我哪儿会呀！别说弹钢琴了，我连琴都没摸过。我给大家唱首歌好了。',samplePy:'Wǒ nǎr huì ya! Biéshuō tán gāngqín le, wǒ lián qín dōu méi mōguo. Wǒ gěi dàjiā chàng shǒu gē hǎo le.',sampleVn:'Tớ đâu có biết! Nói gì đến chơi piano, đến cây đàn tớ còn chưa sờ vào bao giờ. Để tớ hát tặng mọi người một bài vậy.',tip:'别说 A 了 (việc khó hơn), 连 B 都…… (việc dễ hơn mà cũng chưa làm). 哪儿会呀 = đâu có biết (từ chối nhẹ nhàng).'},
+    {scene:'Đã mười giờ tối, bố hỏi vì sao em làm bài tập mãi chưa xong.',a:{sp:'Bố',zh:'都十点了，作业怎么还没写完？',vn:'Mười giờ rồi, sao bài tập vẫn chưa làm xong?'},need:['Dùng một dạng AABB (断断续续 / 停停走走…)','Nhận lỗi và hứa sửa'],sample:'对不起，爸爸，我今天写作业断断续续的，老是停下来看手机。以后我一定先写完作业再玩。',samplePy:'Duìbuqǐ, bàba, wǒ jīntiān xiě zuòyè duànduànxùxù de, lǎoshì tíng xiàlai kàn shǒujī. Yǐhòu wǒ yídìng xiān xiěwán zuòyè zài wán.',sampleVn:'Con xin lỗi bố, hôm nay con làm bài cứ làm làm dừng dừng, toàn dừng lại xem điện thoại. Sau này con nhất định làm xong bài tập rồi mới chơi.',tip:'AABB + 的 làm vị ngữ (断断续续的 = đứt quãng, làm làm dừng dừng); 先……再…… = … trước rồi mới ….'},
+    {scene:'Bạn cùng phòng đang rất tức vì bị người khác nói xấu sau lưng, định đi tìm người đó ngay.',a:{sp:'Bạn cùng phòng',zh:'他凭什么在背后说我坏话？我现在就去找他！',vn:'Hắn dựa vào đâu mà nói xấu tớ sau lưng? Tớ đi tìm hắn ngay bây giờ!'},need:['Dùng 克制','Khuyên bạn bình tĩnh'],sample:'你先克制一下自己的冲动，吵起来解决不了问题。等冷静下来，再好好跟他谈谈吧。',samplePy:'Nǐ xiān kèzhì yíxià zìjǐ de chōngdòng, chǎo qǐlai jiějué bu liǎo wèntí. Děng lěngjìng xiàlai, zài hǎohāo gēn tā tántan ba.',sampleVn:'Cậu kìm cơn bốc đồng lại một chút đã, cãi nhau không giải quyết được vấn đề đâu. Đợi bình tĩnh lại rồi hãy nói chuyện tử tế với cậu ta.',tip:'克制 + 冲动 / 情绪; 等……再…… = đợi … rồi hãy ….'},
+    {scene:'Em gái nhỏ nhặt được một con đom đóm, hỏi em: "Đom đóm giống cái gì nhỉ?"',a:{sp:'Em gái',zh:'你看，它的尾巴会发光！萤火虫像什么呀？',vn:'Anh/chị xem, đuôi nó phát sáng được! Đom đóm giống cái gì nhỉ?'},need:['Dùng phép ví von 像…… / 好像……一样','Dùng 光芒 hoặc 灯笼'],sample:'它就像一个会飞的小灯笼，在黑夜里闪着小小的光芒。',samplePy:'Tā jiù xiàng yí ge huì fēi de xiǎo dēnglong, zài hēiyè li shǎnzhe xiǎoxiǎo de guāngmáng.',sampleVn:'Nó giống như một chiếc đèn lồng nhỏ biết bay, lấp lánh chút ánh sáng nhỏ xíu trong đêm tối.',tip:'Ví von: vật được ví (它) + 像 + vật dùng để ví (小灯笼); chọn hình ảnh có nét giống thật (cùng phát sáng).'},
+    {scene:'Bạn thân kể nhà nghèo nên định bỏ học đi làm, em muốn khuyên bạn.',a:{sp:'Bạn',zh:'我家条件不好，我想别读书了，早点儿出去挣钱。',vn:'Nhà tớ điều kiện không tốt, tớ định thôi học, đi làm kiếm tiền sớm.'},need:['Dùng 贫困','Dùng 财富'],sample:'家里贫困只是暂时的，知识才是你最大的财富。再坚持两年，毕业以后你能帮家里更多。',samplePy:'Jiāli pínkùn zhǐ shì zànshí de, zhīshi cái shì nǐ zuì dà de cáifù. Zài jiānchí liǎng nián, bìyè yǐhòu nǐ néng bāng jiāli gèng duō.',sampleVn:'Nhà nghèo chỉ là tạm thời, kiến thức mới là tài sản lớn nhất của cậu. Cố thêm hai năm nữa, ra trường cậu sẽ giúp được gia đình nhiều hơn.',tip:'……才是…… nhấn mạnh điều quan trọng thật sự; 贫困 nói nghèo về kinh tế (không dùng 贫乏).'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 // 🎯 NÓI SAO CHO HAY — 得体 / 语体
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 var registerData = {
-  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
-         'HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
   items: [
-    {scene:'Em viết bài cảm nhận (读后感) về truyện 《奇异的灯光》 nộp cho thầy giáo.',
-     a:'读书人家境贫困，却以萤火虫为灯，勤学不辍，最终成为知名学者，令人深受启发。',b:'那个人家里穷得要命，就抓了点儿萤火虫当灯用，后来还真成了大学者，挺牛的。',better:'a',
-     why:'Bài viết nộp thầy cần văn viết: 以……为……, 勤学不辍, 最终, 令人深受启发. Câu b (穷得要命, 挺牛的) là khẩu ngữ suồng sã.'},
-
-    {scene:'Em nhắn tin cho bạn thân: nhà em đang mất điện.',
-     a:'因电力故障，本户照明中断，现以蜡烛代替。',b:'我家停电了！黑乎乎的，只能点蜡烛，无聊死了。',better:'b',
-     why:'Nhắn tin bạn thân dùng khẩu ngữ tự nhiên (黑乎乎的, 无聊死了). Câu a (因电力故障, 本户, 现以……代替) nghe như thông báo của công ty điện lực.'},
-
-    {scene:'Hiệu trưởng phát biểu trong lễ trao học bổng cho học sinh có hoàn cảnh khó khăn.',
-     a:'贫困并不可怕，希望同学们把艰难的经历化为奋斗的动力，努力成才。',b:'家里穷没啥，你们好好学就行了，别想那么多。',better:'a',
-     why:'Phát biểu trang trọng cần câu văn chỉnh chu, giàu ý nghĩa: 化为奋斗的动力, 努力成才. Câu b (没啥, 别想那么多) quá tùy tiện, lại dễ khiến học sinh tự ái.'},
-
-    {scene:'Em trai đang khóc vì bị điểm kém, em (chị / anh) an ủi.',
-     a:'好啦好啦，别哭了，一次没考好有什么大不了的，下次我帮你复习。',b:'一次考试失利不足以说明问题，望你克制情绪，总结经验。',better:'a',
-     why:'An ủi em nhỏ cần giọng thân mật, dịu dàng (好啦好啦, 有什么大不了的 — 大不了 ôn bài 6). Câu b (失利, 不足以, 望你) giống lời nhận xét trên giấy.'},
-
-    {scene:'Phát thanh viên đọc bản tin thời sự về một vụ cháy rừng.',
-     a:'火太大了，一下子就烧开了，好多树都没了。',b:'山火迅速蔓延，过火面积已超过一百公顷，消防部门正全力扑救。',better:'b',
-     why:'Bản tin cần ngôn ngữ báo chí chính xác: 迅速蔓延, 过火面积, 全力扑救. Câu a là lời kể miệng, thiếu thông tin cụ thể.'},
-
-    {scene:'Em khen món ăn mẹ vừa nấu trong bữa cơm tối.',
-     a:'哇，妈，今天的菜太香了！',b:'此菜色香味俱全，令人赞叹不已。',better:'a',
-     why:'Nói với mẹ trong bữa cơm cần tự nhiên, thân mật (哇……太香了). Câu b (此菜, 令人赞叹不已) như lời bình của nhà phê bình ẩm thực, nghe rất xa cách.'}
+    {scene:'Em viết bài văn tả cảnh đêm hè ở quê nộp cho cô giáo.',a:'夜空中有很多星星，它们一闪一闪的，很亮。',b:'夜空中的星星一闪一闪的，就像无数双眼睛在看着我们。',better:'b',why:'Bài văn tả cảnh cần hình ảnh: phép ví von (比喻) 就像无数双眼睛 làm câu sinh động. Câu a đúng nhưng chỉ kể lại, rất khô.'},
+    {scene:'Em viết báo cáo thí nghiệm môn Sinh về đom đóm.',a:'实验发现，萤火虫尾部的亮光在温度降低时会变弱。',b:'萤火虫的尾巴就像一个个小灯笼，天冷了，灯笼也没精神了。',better:'a',why:'Báo cáo khoa học cần nói chính xác, khách quan; không dùng ví von (比喻) và cách nói hình tượng như câu b.'},
+    {scene:'Em nhắn tin cho bạn thân: nhà em đang mất điện.',a:'我家停电了，只能点蜡烛，太没意思了！',b:'由于电力原因，本小区今天晚上停电，请大家做好准备。',better:'a',why:'Nhắn tin bạn thân dùng khẩu ngữ tự nhiên (太没意思了). Câu b (由于电力原因, 本小区, 请大家做好准备) là giọng thông báo của ban quản lý.'},
+    {scene:'Hiệu trưởng phát biểu trong lễ trao học bổng cho học sinh có hoàn cảnh khó khăn.',a:'家里穷没啥，你们好好学就行了。',b:'希望同学们把艰难的经历变成奋斗的动力，努力成才。',better:'b',why:'Phát biểu trang trọng cần câu văn chỉnh chu: 变成奋斗的动力, 努力成才. Câu a (没啥) quá tuỳ tiện, lại dễ khiến học sinh tự ái.'},
+    {scene:'Em trai đang khóc vì bị điểm kém, em an ủi.',a:'好啦好啦，别哭了，一次没考好有什么大不了的，下次我帮你复习。',b:'一次考试失败不足以说明问题，望你克制情绪，总结经验。',better:'a',why:'An ủi em nhỏ cần giọng thân mật (好啦好啦, 有什么大不了的 — ôn 大不了 bài 6). Câu b (不足以, 望你, 总结经验) giống lời phê trên giấy.'},
+    {scene:'Phát thanh viên đọc bản tin về một vụ cháy rừng.',a:'火太大了，一下子到处都是，好多树都没了。',b:'山火迅速蔓延，有关部门正在全力扑救。',better:'b',why:'Bản tin dùng ngôn ngữ báo chí chính xác: 迅速蔓延, 全力扑救. Câu a là lời kể miệng, thiếu thông tin.'}
   ]
 };
 

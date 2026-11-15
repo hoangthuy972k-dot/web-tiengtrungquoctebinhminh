@@ -1427,80 +1427,50 @@ var hvBridgeData = {
 // GHÉP TỪ — cụm trong bài khoá và phần 练习
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'屋子里一片',right:'嘈杂'},
-  {left:'波浪拍打',right:'岩石'},
-  {left:'微风抚摸',right:'树叶'},
   {left:'提高',right:'警惕'},
-  {left:'警报',right:'解除'},
-  {left:'延续',right:'后代'},
-  {left:'拼命',right:'呼唤'},
-  {left:'竖起',right:'耳朵'},
-  {left:'原始',right:'社会'},
-  {left:'紧张的',right:'神经'},
-  {left:'找到',right:'配偶'},
-  {left:'世代',right:'相传'},
-  {left:'神经系统',right:'疾病'},
-  {left:'辅助性',right:'治疗'},
+  {left:'解除',right:'警报'},
+  {left:'暴露',right:'身份'},
+  {left:'辅助',right:'治疗'},
   {left:'减轻',right:'症状'},
-  {left:'环境噪音',right:'污染'},
-  {left:'恢复',right:'工作效率'},
-  {left:'放松',right:'身心'},
-  {left:'自然',right:'选择'},
-  {left:'预警',right:'意识'}
+  {left:'神经',right:'系统'},
+  {left:'抚摸',right:'小猫'},
+  {left:'描绘',right:'美好的未来'},
+  {left:'淘汰',right:'旧设备'},
+  {left:'世代',right:'相传'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ
+// ĐIỀN TỪ — câu mới (không chép bài khoá / SGK), mỗi câu một tình huống; ôn xoáy ốc từ + ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'睡不着的时候，我喜欢打开手机听一会儿下雨的',blank:'白噪音',post:'。',hint:'(tiếng ồn trắng)',ans:'白噪音'},
-  {pre:'车站里人来人往，十分',blank:'嘈杂',post:'，我连广播都听不清。',hint:'(ồn ào)',ans:'嘈杂'},
-  {pre:'他',blank:'莫名其妙',post:'地冲我发了一通火，我到现在都不知道为什么。',hint:'(khó hiểu, vô cớ)',ans:'莫名其妙'},
-  {pre:'企业如果不创新，迟早会被市场',blank:'淘汰',post:'。',hint:'(đào thải)',ans:'淘汰'},
-  {pre:'班会上，每个同学都',blank:'描绘',post:'了自己十年后的样子。',hint:'(miêu tả)',ans:'描绘'},
-  {pre:'晚上躺在海边，听着一阵阵',blank:'波浪',post:'声，我很快就睡着了。',hint:'(sóng)',ans:'波浪'},
-  {pre:'一只小鸟站在',blank:'岩石',post:'上，好奇地打量着我们。',hint:'(tảng đá)',ans:'岩石'},
-  {pre:'奶奶轻轻地',blank:'抚摸',post:'着我的头，慈祥地笑了。',hint:'(vuốt ve, xoa)',ans:'抚摸'},
-  {pre:'老师耐心的解释',blank:'解除',post:'了我的顾虑。',hint:'(xoá bỏ)',ans:'解除'},
-  {pre:'这次考试',blank:'暴露',post:'了我在语法方面的很多问题。',hint:'(bộc lộ)',ans:'暴露'},
-  {pre:'弟弟又在学校',blank:'惹祸',post:'了，妈妈被老师叫到了学校。',hint:'(gây chuyện, gây hoạ)',ans:'惹祸'},
-  {pre:'这种鸟',blank:'雌雄',post:'很难分辨，连专家也常常认错。',hint:'(đực cái)',ans:'雌雄'},
-  {pre:'据说狗的',blank:'祖先',post:'是狼。',hint:'(tổ tiên)',ans:'祖先'},
-  {pre:'这是上一任经理',blank:'遗留',post:'下来的问题，处理起来很麻烦。',hint:'(để lại)',ans:'遗留'},
-  {pre:'你别生气',blank:'嘛',post:'，我不是故意的。',hint:'(trợ từ: … mà)',ans:'嘛',exp:'嘛 = trợ từ cuối câu, mang ý khuyên nhủ, nũng nịu hoặc "điều hiển nhiên": 你别生气嘛.'},
-  {pre:'这个传统已经',blank:'延续',post:'了几百年。',hint:'(kéo dài, tiếp nối)',ans:'延续'},
-  {pre:'保护环境，就是为子孙',blank:'后代',post:'着想。',hint:'(đời sau)',ans:'后代'},
-  {pre:'妈妈站在门口，大声',blank:'呼唤',post:'着孩子的名字。',hint:'(gọi to)',ans:'呼唤'},
-  {pre:'一听到“考试”两个字，全班同学都',blank:'竖',post:'起了耳朵。',hint:'(dựng lên)',ans:'竖'},
-  {pre:'这片',blank:'原始',post:'森林里生活着很多珍稀动物。',hint:'(nguyên sinh, nguyên thuỷ)',ans:'原始'},
-  {pre:'经过几百万年的',blank:'进化',post:'，人类的大脑变得越来越发达。',hint:'(tiến hoá)',ans:'进化'},
-  {pre:'照相的时候，大家往中间',blank:'靠拢',post:'一点儿！',hint:'(xích lại gần)',ans:'靠拢'},
-  {pre:'长期熬夜会损害人的',blank:'神经',post:'系统。',hint:'(thần kinh)',ans:'神经'},
-  {pre:'海洋里生活着很多我们还不了解的',blank:'生物',post:'。',hint:'(sinh vật)',ans:'生物'},
-  {pre:'每到春天，很多鸟都会用歌声寻找',blank:'配偶',post:'。',hint:'(bạn đời)',ans:'配偶'},
-  {pre:'他们一家',blank:'世代',post:'居住在这个小村子里。',hint:'(nhiều đời)',ans:'世代'},
-  {pre:'经常锻炼身体，可以预防很多',blank:'疾病',post:'。',hint:'(bệnh tật)',ans:'疾病'},
-  {pre:'医生应该耐心地倾听',blank:'患者',post:'的描述。',hint:'(bệnh nhân)',ans:'患者'},
-  {pre:'他的病彻底治',blank:'愈',post:'了，全家都非常高兴。',hint:'(khỏi bệnh)',ans:'愈'},
-  {pre:'',blank:'嘿',post:'，快看，天上有彩虹！',hint:'(thán từ: này!)',ans:'嘿'}
+  {pre:'他今天',blank:'莫名其妙',post:'地对我发脾气，我也不知道自己做错了什么。',hint:'(vô cớ, khó hiểu)',ans:'莫名其妙',exp:'莫名其妙 + 地 + V = làm gì một cách vô cớ, không ai hiểu vì sao; vế sau 不知道自己做错了什么 giải thích chữ "vô cớ".'},
+  {pre:'第一轮比赛他就被',blank:'淘汰',post:'了，心里很难过。',hint:'(bị loại)',ans:'淘汰',exp:'被淘汰 = bị loại (khỏi cuộc thi, thị trường); thường dùng ở thể bị động 被……淘汰.'},
+  {pre:'这幅画',blank:'描绘',post:'了春天的农村，颜色非常美。',hint:'(miêu tả, vẽ ra)',ans:'描绘',exp:'描绘 = dùng tranh hoặc lời văn vẽ ra cảnh vật một cách sinh động; tân ngữ là cảnh / cuộc sống.'},
+  {pre:'这只小鸟非常',blank:'警惕',post:'，人一走近它就飞走了。',hint:'(cảnh giác)',ans:'警惕',exp:'警惕 ở đây là tính từ (非常警惕 = rất cảnh giác); cũng dùng trong cụm 提高警惕. 一……就…… cho thấy phản ứng rất nhanh.'},
+  {pre:'他一开口说话，就',blank:'暴露',post:'了自己是南方人。',hint:'(để lộ)',ans:'暴露',exp:'暴露 = để lộ ra điều vốn không muốn hoặc không định cho người khác biết; ở đây giọng nói làm lộ quê quán.'},
+  {pre:'我在梦里听见妈妈在',blank:'呼唤',post:'我的名字。',hint:'(gọi to, gọi tha thiết)',ans:'呼唤',exp:'呼唤 + tên / người = gọi to, gọi tha thiết (văn viết, giàu cảm xúc hơn 叫).'},
+  {pre:'拍照的时候，大家再往中间',blank:'靠拢',post:'一点儿。',hint:'(xích lại gần)',ans:'靠拢',exp:'往 + hướng + 靠拢 = xích lại gần về phía đó; 一点儿 sau động từ = thêm một chút.'},
+  {pre:'我们单位规定，员工的',blank:'配偶',post:'也可以免费参加旅游。',hint:'(vợ / chồng)',ans:'配偶',exp:'配偶 = vợ hoặc chồng, cách nói trang trọng dùng trong quy định, giấy tờ; nói chuyện thường ngày thì nói 爱人 / 老公 / 老婆.'},
+  {pre:'这道题太难了，老师给了我们一个',blank:'提示',post:'。',hint:'(gợi ý)',ans:'提示',exp:'提示 ở đây là danh từ: 给……一个提示 = cho một gợi ý. 提醒 chỉ là động từ, không đứng sau 一个.'},
+  {pre:'这种茶有减肥的',blank:'功效',post:'，很受女孩子欢迎。',hint:'(công hiệu, tác dụng)',ans:'功效',exp:'功效 = tác dụng (của thuốc, trà, phương pháp chữa trị), văn viết hơn 作用; 有……的功效.'},
+  {pre:'今天海上风很大，',blank:'波浪',post:'一个比一个高，船不能出海。',hint:'(sóng)',ans:'波浪',exp:'波浪 = sóng (trên biển, hồ); 一个比一个高 = con sau cao hơn con trước.'},
+  {pre:'这种鸟',blank:'雌雄',post:'两性的样子几乎一样，很难分出来。',hint:'(con đực con cái)',ans:'雌雄',exp:'雌雄 = giống cái và giống đực (động vật); 雌雄两性 = hai giới đực, cái.'},
+  {pre:'父母都希望自己的',blank:'后代',post:'比自己过得好。',hint:'(con cháu, đời sau)',ans:'后代',exp:'后代 = con cháu, thế hệ sau (nói chung, trang trọng); đối lập với 祖先.'},
+  {pre:'这孩子有阅读',blank:'障碍',post:'，看书比别的孩子慢得多。',hint:'(chứng rối loạn)',ans:'障碍',exp:'Trong y học, 障碍 = chứng rối loạn (阅读障碍 = chứng khó đọc), không dịch là "chướng ngại vật".'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (不妨 · 务必 · 鉴于) ít nhất 2 câu
+// SẮP XẾP CÂU — câu mới, chỉ một trật tự đúng
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['我们','不妨','形象地','描绘','一下','。'],ans:'我们不妨形象地描绘一下。',audio:'我们不妨形象地描绘一下。'},
-  {words:['有什么意见','，','你','不妨','直说','。'],ans:'有什么意见，你不妨直说。',audio:'有什么意见，你不妨直说。'},
-  {words:['改变传统观念','可能不容易','，','但我们','不妨','试一试','。'],ans:'改变传统观念可能不容易，但我们不妨试一试。',audio:'改变传统观念可能不容易，但我们不妨试一试。'},
-  {words:['明天的会','非常重要','，','大家','务必要','参加','。'],ans:'明天的会非常重要，大家务必要参加。',audio:'明天的会非常重要，大家务必要参加。'},
-  {words:['危险来临的时候','，','大家','务必','保持','镇静','。'],ans:'危险来临的时候，大家务必保持镇静。',audio:'危险来临的时候，大家务必保持镇静。'},
-  {words:['考试时','请','务必','带好','准考证','。'],ans:'考试时请务必带好准考证。',audio:'考试时请务必带好准考证。'},
-  {words:['鉴于','白噪音','有这样的功效','，','它','成了','医生的好帮手','。'],ans:'鉴于白噪音有这样的功效，它成了医生的好帮手。',audio:'鉴于白噪音有这样的功效，它成了医生的好帮手。'},
-  {words:['鉴于','天气恶劣','，','比赛','推迟到','下周举行','。'],ans:'鉴于天气恶劣，比赛推迟到下周举行。',audio:'鉴于天气恶劣，比赛推迟到下周举行。'},
-  {words:['鉴于','他出色的表现','，','公司决定','让他','担任部门经理','。'],ans:'鉴于他出色的表现，公司决定让他担任部门经理。',audio:'鉴于他出色的表现，公司决定让他担任部门经理。'},
-  {words:['这','也是','不得已','的办法','，','你试试吧','。'],ans:'这也是不得已的办法，你试试吧。',audio:'这也是不得已的办法，你试试吧。'},
-  {words:['大量的','白噪音','暗示着','安全','。'],ans:'大量的白噪音暗示着安全。',audio:'大量的白噪音暗示着安全。'},
-  {words:['孩子','孝顺父母','是','理所当然','的事情','。'],ans:'孩子孝顺父母是理所当然的事情。',audio:'孩子孝顺父母是理所当然的事情。'}
+  {words:['你','不妨','把','你的想法','告诉','大家','。'],ans:'你不妨把你的想法告诉大家。',audio:'你不妨把你的想法告诉大家。'},
+  {words:['你','务必','把','这些药','统统','吃完','。'],ans:'你务必把这些药统统吃完。',audio:'你务必把这些药统统吃完。'},
+  {words:['父母','给予','孩子的','爱','是','无私的','。'],ans:'父母给予孩子的爱是无私的。',audio:'父母给予孩子的爱是无私的。'},
+  {words:['小狗','竖起','耳朵','听着','门外的','动静','。'],ans:'小狗竖起耳朵听着门外的动静。',audio:'小狗竖起耳朵听着门外的动静。'},
+  {words:['这种','旧手机','早就','被','市场','淘汰','了','。'],ans:'这种旧手机早就被市场淘汰了。',audio:'这种旧手机早就被市场淘汰了。'},
+  {words:['这位','患者的','症状','明显','减轻了','。'],ans:'这位患者的症状明显减轻了。',audio:'这位患者的症状明显减轻了。'},
+  {words:['他','莫名其妙地','被','老师','批评了','一顿','。'],ans:'他莫名其妙地被老师批评了一顿。',audio:'他莫名其妙地被老师批评了一顿。'},
+  {words:['妈妈','轻轻地','抚摸着','女儿的','头发','。'],ans:'妈妈轻轻地抚摸着女儿的头发。',audio:'妈妈轻轻地抚摸着女儿的头发。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1508,72 +1478,43 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'有什么意见，你____当面提出来，不要在背后议论。',opts:['不妨','不必','不免','何必'],ans:0,
-   exp:'不妨 + V = cứ … (gợi ý nên làm) — đáp án 练习2 ①. 不必 = không cần; 不免 = khó tránh khỏi; 何必 = hà tất (phản vấn) — đều ngược ý khuyến khích.'},
-  {wrong:'明天的会非常重要，大家____要参加。',opts:['务必','未必','势必','何必'],ans:0,
-   exp:'务必(要) + V = nhất thiết phải. 未必 = chưa chắc; 势必 = ắt sẽ (dự đoán); 何必 = hà tất.'},
-  {wrong:'鸟叫停止，意味着有了险情，所有动物都会提高____。',opts:['警惕','警察','警告','提醒'],ans:0,
-   exp:'提高警惕 = nâng cao cảnh giác (cụm cố định). 警察 = cảnh sát; 警告 = cảnh cáo (không đi với 提高); 提醒 là động từ "nhắc".'},
-  {wrong:'这是____的措施，请大家谅解。',opts:['不得已','不得不','不由得','不见得'],ans:0,
-   exp:'Làm định ngữ trước 的措施 → tính từ 不得已 (做一做 ③). 不得不 là phó từ; 不由得 (bài 2) = không kìm được; 不见得 = chưa chắc.'},
-  {wrong:'____他出色的表现，公司决定让他担任部门经理。',opts:['鉴于','关于','对于','至于'],ans:0,
-   exp:'鉴于 + lý do，vế sau là quyết định (练习2 ④). 关于 = về (chủ đề); 对于 = đối với; 至于 = còn về — không nêu nguyên nhân.'},
-  {wrong:'绿茶有提神的____，所以我晚上不敢多喝。',opts:['功效','功劳','功夫','成功'],ans:0,
-   exp:'有……的功效 = có tác dụng …. 功劳 = công lao; 功夫 = công phu, thời gian; 成功 = thành công (练习1: các từ có chữ 功).'},
-  {wrong:'孩子孝顺父母是____的事情。',opts:['理所当然','莫名其妙','无忧无虑','兴致勃勃'],ans:0,
-   exp:'理所当然 = đương nhiên (练习2 ⑥). 莫名其妙 = khó hiểu; 无忧无虑 (bài 8) = vô tư lự; 兴致勃勃 (bài 5) = hứng khởi.'},
-  {wrong:'音乐在治疗中只能起____作用，最重要的还是吃药。',opts:['辅助','补助','协商','赞助'],ans:0,
-   exp:'起辅助作用 = đóng vai trò hỗ trợ (cụm cố định). 补助 = trợ cấp (tiền); 协商 = bàn bạc; 赞助 = tài trợ.'},
-  {wrong:'如果出现发烧、咳嗽等____，请马上去医院。',opts:['症状','状态','形状','现状'],ans:0,
-   exp:'出现……等症状 = xuất hiện các triệu chứng như …. 状态 = trạng thái; 形状 = hình dạng; 现状 = hiện trạng.'},
-  {wrong:'只要下定决心，就没有克服不了的____。',opts:['障碍','妨碍','阻止','保障'],ans:0,
-   exp:'克服障碍 = vượt qua trở ngại (danh từ làm tân ngữ). 妨碍 là động từ (cản trở); 阻止 = ngăn cản (động từ); 保障 = bảo đảm.'},
-  {wrong:'楼上装修的____太大了，我根本没法儿复习。',opts:['噪音','口音','声调','音乐'],ans:0,
-   exp:'噪音 = tiếng ồn khó chịu. 口音 (bài 3) = giọng địa phương; 声调 = thanh điệu; 音乐 = âm nhạc.'},
-  {wrong:'感谢老师一直以来____我的关心和帮助。',opts:['给予','赠送','交给','寄给'],ans:0,
-   exp:'给予 + người + N trừu tượng (关心, 帮助) — văn viết. 赠送 = tặng (đồ vật); 交给 = giao cho; 寄给 = gửi (qua bưu điện).'},
-  {wrong:'他看了看手表，____我们该走了。',opts:['暗示','提示','表演','显示'],ans:0,
-   exp:'Không nói ra, chỉ ra hiệu ngầm → 暗示. 提示 = nhắc rõ ràng; 表演 = biểu diễn; 显示 = hiển thị (màn hình, số liệu).'},
-  {wrong:'手机____我电量不足，得赶紧充电了。',opts:['提示','暗示','提问','提高'],ans:0,
-   exp:'提示 = thông báo, nhắc rõ ràng (máy móc nhắc người dùng). 暗示 = ra hiệu ngầm; 提问 = đặt câu hỏi; 提高 = nâng cao.'},
-  {wrong:'我们班在第一轮比赛中就被____了，大家都很失望。',opts:['淘汰','淘气','失败','放弃'],ans:0,
-   exp:'被淘汰 = bị loại. 淘气 = nghịch ngợm; 失败 không dùng với 被; 被放弃 = bị bỏ rơi (nghĩa khác).'},
-  {wrong:'周围一片寂静，说明危险正在____。',opts:['靠拢','依靠','集中','团结'],ans:0,
-   exp:'靠拢 = đến gần, áp sát (nguy hiểm đang tới gần). 依靠 (bài 5) = dựa vào; 集中 = tập trung; 团结 = đoàn kết.'},
-  {wrong:'皮肤长时间____在阳光下，很容易被晒伤。',opts:['暴露','露面','透露','表露'],ans:0,
-   exp:'暴露在 + hoàn cảnh = phơi ra, tiếp xúc trực tiếp. 露面 = xuất hiện; 透露 = tiết lộ (tin tức); 表露 = bộc lộ (tình cảm).'},
-  {wrong:'这篇文章生动地____了江南农村的风景。',opts:['描绘','画画','绘画','临摹'],ans:0,
-   exp:'描绘 + N (phong cảnh) = miêu tả sinh động bằng lời. 画画 là động từ li hợp (vẽ tranh), không mang tân ngữ 风景; 绘画 chủ yếu là danh từ (hội hoạ); 临摹 = chép lại tranh mẫu.'}
+  {wrong:'这家饭馆的菜很有特色，你们来北京的话，____去尝尝。',opts:['不妨','不必','何必','只好'],ans:0,exp:'Gợi ý nhẹ nhàng "cứ thử…" → 不妨 + V. 不必 = không cần (trái ý); 何必 là câu hỏi tu từ "cần gì phải", phải có 呢; 只好 = đành phải — không phải lời gợi ý.'},
+  {wrong:'这些材料非常重要，请您____在周五以前交给我。',opts:['务必','必然','不必','未必'],ans:0,exp:'Lời dặn bắt buộc → 请 + 务必 + V. 必然 = tất yếu (nói về quy luật, không dùng để yêu cầu); 不必 = không cần; 未必 = chưa chắc.'},
+  {wrong:'面试那天，____，千万别迟到。',opts:['你务必早点儿出门','务必你早点儿出门','你早点儿务必出门','你早点儿出门务必'],ans:0,exp:'务必 là phó từ: đứng SAU chủ ngữ, TRƯỚC cả cụm động từ (你务必 + 早点儿出门). Đặt trước chủ ngữ hoặc chen vào giữa / cuối cụm động từ đều sai.'},
+  {wrong:'____天气原因，今天的航班全部取消。',opts:['鉴于','对于','关于','至于'],ans:0,exp:'鉴于 + lý do, vế sau là quyết định / biện pháp (取消航班) — văn thông báo. 对于 nêu đối tượng; 关于 nêu chủ đề; 至于 chuyển sang việc khác — đều không nêu lý do.'},
+  {wrong:'他____昨天睡得太晚，今天上课一点儿精神也没有。',opts:['因为','鉴于','以至','只要'],ans:0,exp:'Vế sau chỉ là kết quả tự nhiên (mệt, thiếu tinh thần), không phải quyết định → dùng 因为. 鉴于 chỉ dùng khi vế sau là quyết định / biện pháp; 以至 (bài 10) đứng ở vế sau; 只要 nêu điều kiện.'},
+  {wrong:'要不是钱包丢了，我也不会向你借钱，实在是____。',opts:['不得已','不得了','不由得','巴不得'],ans:0,exp:'Buộc phải làm, không muốn cũng không được → 是不得已. 不得了 = ghê gớm, vô cùng; 不由得 (bài 2) = bất giác; 巴不得 (bài 1) = mong mỏi — trái ý.'},
+  {wrong:'他觉得别人帮助他是____的，从来不说一声谢谢。',opts:['理所当然','莫名其妙','自力更生','知足常乐'],ans:0,exp:'Coi việc người khác giúp là đương nhiên → 理所当然. 莫名其妙 = khó hiểu; 自力更生 (bài 11) = tự lực; 知足常乐 (bài 11) = biết đủ thì vui — không hợp với "không cảm ơn".'},
+  {wrong:'网上的免费消息多半是假的，你可得提高____，别上当。',opts:['警惕','警察','提示','暗示'],ans:0,exp:'Cụm cố định 提高警惕 = nâng cao cảnh giác. 警察 là cảnh sát; 提示 = gợi ý; 暗示 = ngụ ý — không đi với 提高 theo nghĩa này.'},
+  {wrong:'经过抢救，病人的生命危险终于____了。',opts:['解除','解决','解释','了解'],ans:0,exp:'Làm cho nguy hiểm, báo động, hợp đồng… không còn nữa → 解除. 解决 đi với 问题 / 困难; 解释 = giải thích; 了解 = tìm hiểu.'},
+  {wrong:'学校对这位勇敢的学生____了表扬。',opts:['给予','接受','受到','获得'],ans:0,exp:'对 + người + 给予 + 表扬 / 帮助 = dành cho ai (văn viết, chủ thể là người cho). 接受, 受到, 获得 là phía NHẬN — chủ ngữ phải là 学生 (学生受到了表扬).'},
+  {wrong:'感冒的____有发烧、咳嗽、头疼等。',opts:['症状','情况','形状','状态'],ans:0,exp:'Biểu hiện của bệnh → 症状. 情况 = tình hình (chung chung); 形状 = hình dạng; 状态 = trạng thái — không liệt kê biểu hiện bệnh.'},
+  {wrong:'这里还保留着大片的____森林。',opts:['原始','原来','原因','原谅'],ans:0,exp:'Rừng nguyên sinh, chưa bị con người tác động → 原始森林. 原来 = vốn dĩ, lúc đầu; 原因 = nguyên nhân; 原谅 = tha thứ.'},
+  {wrong:'多运动可以预防很多____。',opts:['疾病','病人','患者','病房'],ans:0,exp:'Phòng ngừa bệnh tật → 预防疾病. 病人 / 患者 là người bệnh, không thể "phòng ngừa"; 病房 = phòng bệnh.'},
+  {wrong:'这个村子的人____以种茶为生。',opts:['世代','时代','年代','后代'],ans:0,exp:'世代 làm trạng ngữ = đời này qua đời khác. 时代 / 年代 là danh từ thời kỳ; 后代 = con cháu — không đứng trước động từ. Ôn 以……为…… (bài 11).'}
 ];
 
 // ══════════════════════════════════════════
-// DỊCH — câu ghép, ôn từ HSK 6 bài 1–8 và HSK 4–5
+// DỊCH Việt → Trung — câu mới, dùng từ của bài + ôn ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Nếu thấy học thuộc từ vựng nhàm chán, bạn cứ thử vừa nghe tiếng ồn trắng vừa học xem.',zh:'如果觉得背单词枯燥，你不妨一边听白噪音一边学。',py:'Rúguǒ juéde bèi dāncí kūzào, nǐ bùfáng yìbiān tīng bái zàoyīn yìbiān xué.',goiY:['如果……','不妨','一边……一边……','白噪音'],giai:'不妨 + V: lời gợi ý nhẹ nhàng "cứ thử"; 枯燥 ôn bài 7. Đừng dịch "cứ thử" thành 试试看 mà bỏ mất 不妨.'},
-  {vi:'Đường núi nhiều đá, lái xe nhất thiết phải nâng cao cảnh giác, kẻo gây ra tai hoạ.',zh:'山路上岩石多，开车务必提高警惕，免得惹祸。',py:'Shānlù shang yánshí duō, kāi chē wùbì tígāo jǐngtì, miǎnde rě huò.',goiY:['务必','提高警惕','免得','惹祸'],giai:'务必 + V (nhất thiết phải) mạnh hơn 一定; 免得 = kẻo, để khỏi — đứng đầu vế sau nêu điều muốn tránh. 惹祸 là từ li hợp, không mang tân ngữ.'},
-  {vi:'Xét thấy dạo này không ít bạn bị rối loạn giấc ngủ, cô chủ nhiệm quyết định tổ chức một buổi toạ đàm về sức khoẻ.',zh:'鉴于最近不少同学有睡眠障碍，班主任决定举办一次健康讲座。',py:'Jiànyú zuìjìn bùshǎo tóngxué yǒu shuìmián zhàng\'ài, bānzhǔrèn juédìng jǔbàn yí cì jiànkāng jiǎngzuò.',goiY:['鉴于……，决定……','睡眠障碍'],giai:'鉴于 đứng đầu vế TRƯỚC nêu căn cứ, vế sau là quyết định; "rối loạn giấc ngủ" = 睡眠障碍 (障碍 trong y học = rối loạn).'},
+  {vi:'Nếu thấy học thuộc từ mới nhàm chán, bạn cứ thử vừa nghe tiếng ồn trắng vừa học xem.',zh:'如果觉得背生词枯燥，你不妨一边听白噪音一边学。',py:'Rúguǒ juéde bèi shēngcí kūzào, nǐ bùfáng yìbiān tīng bái zàoyīn yìbiān xué.',goiY:['如果……','不妨','一边……一边……','白噪音'],giai:'不妨 + V: lời gợi ý nhẹ nhàng "cứ thử"; 枯燥 ôn bài 7. Đừng dịch "cứ thử" thành 试试看 mà bỏ mất 不妨.'},
+  {vi:'Đường núi nhiều đá, lái xe nhất thiết phải nâng cao cảnh giác, nếu không sơ ý một chút là gây hoạ.',zh:'山路上岩石多，开车务必提高警惕，否则一不小心就会惹祸。',py:'Shānlù shang yánshí duō, kāi chē wùbì tígāo jǐngtì, fǒuzé yí bù xiǎoxīn jiù huì rě huò.',goiY:['务必','提高警惕','否则','惹祸'],giai:'务必 + V (nhất thiết phải) mạnh hơn 一定; 否则 = nếu không thì; 一不小心就…… = hơi sơ ý là…. 惹祸 là từ li hợp, không mang tân ngữ.'},
   {vi:'Chuyện bố mẹ chuyển nhà thật ra cũng là bất đắc dĩ, em đừng trách họ nữa, chuyển trường rồi cũng có thể kết bạn mới mà.',zh:'父母搬家其实也是不得已，你就别埋怨他们了，转学以后也能交到新朋友嘛。',py:'Fùmǔ bān jiā qíshí yě shì bùdéyǐ, nǐ jiù bié mányuàn tāmen le, zhuǎnxué yǐhòu yě néng jiāodào xīn péngyou ma.',goiY:['是不得已','别……了','埋怨','嘛'],giai:'Chủ ngữ + 是 + 不得已 — không thay bằng 不得不 vì phía sau không có động từ; 埋怨 ôn bài 2; 嘛 cuối câu nhấn lý lẽ hiển nhiên.'},
-  {vi:'Dù xung quanh ồn ào thế nào, chỉ cần đeo tai nghe vào nghe tiếng mưa, thần kinh căng thẳng của tôi sẽ dịu xuống ngay.',zh:'不管周围多么嘈杂，只要戴上耳机听听雨声，我紧张的神经就会马上放松下来。',py:'Bùguǎn zhōuwéi duōme cáozá, zhǐyào dàishang ěrjī tīngting yǔ shēng, wǒ jǐnzhāng de shénjīng jiù huì mǎshàng fàngsōng xiàlái.',goiY:['不管……','只要……就……','嘈杂','神经'],giai:'Ba vế: 不管 (điều kiện nào cũng vậy) + 只要……就…… (điều kiện đủ); 放松下来 — bổ ngữ xu hướng 下来 chỉ trạng thái dịu dần.'},
-  {vi:'Đừng coi sự quan tâm bố mẹ dành cho chúng ta là điều hiển nhiên, mà nên học cách biết ơn và đền đáp.',zh:'不要把父母给予我们的关心当成理所当然的，而应该学会感恩和回报。',py:'Bú yào bǎ fùmǔ jǐyǔ wǒmen de guānxīn dàngchéng lǐsuǒdāngrán de, ér yīnggāi xuéhuì gǎn\'ēn hé huíbào.',goiY:['把……当成……','给予','理所当然','而应该'],giai:'把 A 当成 B = coi A là B; 给予 đọc jǐyǔ, văn viết; 而应该…… nối vế đối lập "mà nên"; 回报 ôn bài 6.'},
-  {vi:'Trước kỳ thi em lúc nào cũng uể oải, rối loạn giấc ngủ chữa mãi không khỏi; bác sĩ nói đó chẳng qua là triệu chứng do căng thẳng quá mức gây ra.',zh:'考前我总是无精打采，睡眠障碍久治不愈，医生说那只不过是过度紧张引起的症状。',py:'Kǎo qián wǒ zǒngshì wújīng-dǎcǎi, shuìmián zhàng\'ài jiǔ zhì bú yù, yīshēng shuō nà zhǐ búguò shì guòdù jǐnzhāng yǐnqǐ de zhèngzhuàng.',goiY:['无精打采','久治不愈','只不过是','症状'],giai:'久治不愈 (chữa lâu không khỏi) — 愈 văn viết; 只不过是 = chẳng qua chỉ là; 过度 ôn bài 7, 无精打采 ôn bài 2.'},
-  {vi:'Tiếng ồn trắng tuy không thể thay thế thuốc men, nhưng với tư cách một phương pháp điều trị hỗ trợ thì công hiệu vẫn khá rõ rệt.',zh:'白噪音虽然不能代替药物，但是作为一种辅助性治疗方法，功效还是相当明显的。',py:'Bái zàoyīn suīrán bù néng dàitì yàowù, dànshì zuòwéi yì zhǒng fǔzhùxìng zhìliáo fāngfǎ, gōngxiào háishi xiāngdāng míngxiǎn de.',goiY:['虽然……但是……','作为','辅助性','功效'],giai:'作为 + vai trò (với tư cách là); 功效 văn viết, dùng cho tác dụng của liệu pháp, thuốc; 还是……的 = vẫn … (khẳng định nhẹ).'},
+  {vi:'Dù xung quanh ồn ào thế nào, chỉ cần nghe tiếng mưa một lúc, thần kinh căng thẳng của tôi sẽ dịu xuống ngay.',zh:'不管周围多么嘈杂，只要听一会儿雨声，我紧张的神经就会马上放松下来。',py:'Bùguǎn zhōuwéi duōme cáozá, zhǐyào tīng yíhuìr yǔ shēng, wǒ jǐnzhāng de shénjīng jiù huì mǎshàng fàngsōng xiàlái.',goiY:['不管……','只要……就……','嘈杂','神经'],giai:'Ba vế: 不管 (điều kiện nào cũng vậy) + 只要……就…… (điều kiện đủ); 放松下来 — bổ ngữ xu hướng 下来 chỉ trạng thái dịu dần.'},
   {vi:'Em cứ thử nói thẳng khó khăn của mình với cô, cô nhất định sẽ giúp đỡ; ngược lại, nếu cứ giấu mãi thì sớm muộn vấn đề cũng sẽ lộ ra.',zh:'你不妨把困难直接告诉老师，老师一定会给予帮助；相反，如果一直隐瞒，问题迟早会暴露出来。',py:'Nǐ bùfáng bǎ kùnnan zhíjiē gàosu lǎoshī, lǎoshī yídìng huì jǐyǔ bāngzhù; xiāngfǎn, rúguǒ yìzhí yǐnmán, wèntí chízǎo huì bàolù chūlái.',goiY:['不妨','给予','相反，如果……','隐瞒','暴露'],giai:'不妨 + câu 把 (gợi ý); dấu ；ngăn hai hướng đối lập: 相反 mở vế giả thiết ngược; 隐瞒 ôn bài 2; 暴露出来 = lộ ra.'},
   {vi:'Xét thấy tiếng ồn tầng trên ảnh hưởng nghiêm trọng đến việc học của con, bố mẹ bất đắc dĩ phải sang nói chuyện với hàng xóm, mong họ có thể nghĩ cho người khác nhiều hơn.',zh:'鉴于楼上的噪音严重影响了孩子的学习，父母不得已去和邻居商量，希望他们能多为别人着想。',py:'Jiànyú lóu shang de zàoyīn yánzhòng yǐngxiǎngle háizi de xuéxí, fùmǔ bùdéyǐ qù hé línjū shāngliang, xīwàng tāmen néng duō wèi biérén zhuóxiǎng.',goiY:['鉴于……','噪音','不得已','为……着想'],giai:'Ba vế: 鉴于 (căn cứ) → 不得已 + V (hành động miễn cưỡng) → 希望 (mong muốn); 为……着想 ôn bài 5.'}
 ];
 
-// Chiều Trung → Việt — bám ý bài khoá, nội dung khác chiều trên
+// ══════════════════════════════════════════
+// Dịch Trung → Việt — câu mới, không trùng chiều trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Cuộc họp còn chưa bắt đầu, trong phòng ồn ào cả lên, vậy mà bỗng nhiên mọi người lại im bặt một cách khó hiểu.',zh:'会议还没开始，屋子里一片嘈杂，突然大家却莫名其妙地安静了下来。',py:'Huìyì hái méi kāishǐ, wūzi li yí piàn cáozá, tūrán dàjiā què mòmíng-qímiào de ānjìng le xiàlái.',goiY:['一片嘈杂 = ồn ào cả lên','却 = vậy mà, lại','莫名其妙 = khó hiểu, vô cớ'],giai:'一片 + tính từ tả cả không gian — dịch "cả phòng ồn ào"; 莫名其妙地 dịch thành trạng ngữ "một cách khó hiểu" hoặc "tự dưng".'},
-  {vi:'Tiếng ồn trắng nghe giống như tiếng mưa rơi, hoặc giống tiếng sóng vỗ vào đá.',zh:'白噪音听上去像下雨的声音，或者像波浪拍打岩石的声音。',py:'Bái zàoyīn tīng shàngqu xiàng xià yǔ de shēngyīn, huòzhě xiàng bōlàng pāidǎ yánshí de shēngyīn.',goiY:['听上去 = nghe có vẻ','或者 = hoặc','波浪 = sóng','岩石 = đá'],giai:'听上去像…… = nghe giống …; 或者 nối hai phương án so sánh — tiếng Việt lặp "giống" ở cả hai vế cho rõ.'},
-  {vi:'Chim ngừng hót có nghĩa là đã có nguy hiểm, lúc này nhất thiết phải nâng cao cảnh giác.',zh:'鸟叫停止意味着有了险情，这时务必要提高警惕。',py:'Niǎo jiào tíngzhǐ yìwèizhe yǒule xiǎnqíng, zhè shí wùbì yào tígāo jǐngtì.',goiY:['意味着 = có nghĩa là','务必 = nhất thiết phải','警惕 = cảnh giác'],giai:'意味着 (bài 7) nối hiện tượng – ý nghĩa; 务必要 dịch "nhất thiết phải", mạnh hơn "nên".'},
-  {vi:'Chỉ khi tiếng chim hót bắt đầu lại, báo động mới được giải trừ, những con vật đang dỏng tai nghe ngóng mới dám thả lỏng.',zh:'只有当鸟叫重新开始时，警报才会解除，竖起耳朵的动物们也才敢放松下来。',py:'Zhǐyǒu dāng niǎo jiào chóngxīn kāishǐ shí, jǐngbào cái huì jiěchú, shùqǐ ěrduo de dòngwùmen yě cái gǎn fàngsōng xiàlái.',goiY:['只有……才…… = chỉ khi … mới …','解除 = giải trừ','竖起耳朵 = dỏng tai'],giai:'只有 + điều kiện duy nhất, 才 đứng trước động từ ở cả hai vế sau; 竖起耳朵的动物们 — định ngữ dài, dịch thành "những con vật đang dỏng tai".'},
-  {vi:'Chim kêu, côn trùng kêu đều là hành động bất đắc dĩ khi tìm bạn khác giới, vì tiếng kêu sẽ làm lộ bản thân, rất dễ rước hoạ.',zh:'鸟叫虫叫都是寻求异性时不得已而采取的举动，因为叫声会暴露自己，很容易惹祸。',py:'Niǎo jiào chóng jiào dōu shì xúnqiú yìxìng shí bùdéyǐ ér cǎiqǔ de jǔdòng, yīnwèi jiàoshēng huì bàolù zìjǐ, hěn róngyì rě huò.',goiY:['不得已而 + V = bất đắc dĩ mà …','暴露 = làm lộ','惹祸 = rước hoạ'],giai:'不得已而采取的举动 — cụm định ngữ dài, dịch gọn "hành động bất đắc dĩ"; 因为 đứng sau nêu nguyên nhân.'},
-  {vi:'Nếu không kêu, con đực con cái chẳng con nào tìm ra đối phương, thì DNA tổ tiên để lại làm sao duy trì tiếp được?',zh:'倘若不叫，雌雄两性谁也发现不了对方，祖先遗留下的DNA又怎么延续下去呢？',py:'Tǎngruò bú jiào, cíxióng liǎng xìng shéi yě fāxiàn bu liǎo duìfāng, zǔxiān yíliú xià de DNA yòu zěnme yánxù xiàqu ne?',goiY:['倘若 = nếu như','雌雄 = đực cái','遗留 = để lại','延续 = duy trì, tiếp nối'],giai:'倘若 (bài 4) = 如果 văn viết; câu hỏi phản vấn 又怎么……呢 = làm sao … được (ý: không thể).'},
-  {vi:'Vừa phải duy trì nòi giống, lại vừa phải tự bảo vệ, chim đành ra sức gọi bạn, đồng thời dỏng tai lên để cảnh giác.',zh:'既要延续后代，又要保护自己，鸟儿就只好拼命呼唤，同时竖起耳朵提高警惕。',py:'Jì yào yánxù hòudài, yòu yào bǎohù zìjǐ, niǎor jiù zhǐhǎo pīnmìng hūhuàn, tóngshí shùqǐ ěrduo tígāo jǐngtì.',goiY:['既要……又要…… = vừa phải … lại phải …','后代 = đời sau','拼命呼唤 = ra sức gọi'],giai:'既……又…… nêu hai yêu cầu cùng lúc; 延续后代 dịch "duy trì nòi giống" tự nhiên hơn "kéo dài đời sau"; 拼命 ôn bài 5.'},
-  {vi:'Trải qua hàng chục triệu năm tiến hoá, sinh vật nào càng nhạy với sự suy giảm của tiếng ồn trắng thì khả năng sống sót và tìm được bạn đời càng lớn.',zh:'经过数千万年的进化，对白噪音减弱越敏感的生物，存活和找到配偶的可能性就越大。',py:'Jīngguò shù qiān wàn nián de jìnhuà, duì bái zàoyīn jiǎnruò yuè mǐngǎn de shēngwù, cúnhuó hé zhǎodào pèi\'ǒu de kěnéngxìng jiù yuè dà.',goiY:['越……越…… = càng … càng …','进化 = tiến hoá','生物 = sinh vật','配偶 = bạn đời'],giai:'越……(就)越…… tách ở hai vế, vế đầu nằm trong định ngữ 越敏感的生物 — dịch "sinh vật nào càng … thì … càng …"; 数千万年 = hàng chục triệu năm.'},
-  {vi:'Xét thấy tiếng ồn trắng có công dụng như vậy, nó đương nhiên trở thành trợ thủ đắc lực của bác sĩ, có thể giúp bệnh nhân giảm nhẹ triệu chứng.',zh:'鉴于白噪音有这样的功效，它理所当然地成了医生的好帮手，能帮助患者减轻症状。',py:'Jiànyú bái zàoyīn yǒu zhèyàng de gōngxiào, tā lǐsuǒdāngrán de chéngle yīshēng de hǎo bāngshǒu, néng bāngzhù huànzhě jiǎnqīng zhèngzhuàng.',goiY:['鉴于 = xét thấy, do','功效 = công dụng','理所当然 = đương nhiên','患者 = bệnh nhân'],giai:'鉴于 nêu căn cứ; 理所当然地 làm trạng ngữ — dịch "đương nhiên"; 好帮手 = trợ thủ đắc lực (không dịch "người giúp tốt").'},
-  {vi:'Tiếng ồn trắng không chỉ có thể hỗ trợ điều trị bệnh hệ thần kinh, mà còn chữa khỏi chứng rối loạn tập trung ở một số bệnh nhi; có thể thấy nó là món quà thiên nhiên ban tặng cho chúng ta.',zh:'白噪音不仅能辅助治疗神经系统疾病，还能治愈一些患儿的注意力障碍，可见它是大自然给予我们的礼物。',py:'Bái zàoyīn bùjǐn néng fǔzhù zhìliáo shénjīng xìtǒng jíbìng, hái néng zhìyù yìxiē huàn\'ér de zhùyìlì zhàng\'ài, kějiàn tā shì dà zìrán jǐyǔ wǒmen de lǐwù.',goiY:['不仅……还…… = không chỉ … mà còn …','辅助 = hỗ trợ','治愈 = chữa khỏi','可见 = có thể thấy','给予 = ban cho'],giai:'Ba vế: 不仅……还…… (tăng tiến) + 可见 (rút ra kết luận); 障碍 trong y học dịch "rối loạn", không dịch "chướng ngại vật".'}
+  {vi:'Này, đừng xem điện thoại nữa, nhất định phải ngủ trước 12 giờ, mai còn phải dậy sớm đấy!',zh:'嘿，别看手机了，务必在十二点以前睡觉，明天还要早起呢！',py:'Hēi, bié kàn shǒujī le, wùbì zài shí\'èr diǎn yǐqián shuì jiào, míngtiān hái yào zǎo qǐ ne!',goiY:['嘿 = này (gọi, nhắc)','务必 = nhất thiết phải'],giai:'嘿 đầu câu để gọi, gây chú ý → "Này"; 务必 dịch "nhất định phải" cho tự nhiên trong lời nhắc thân mật.'},
+  {vi:'Vị bác sĩ này miệt mài nghiên cứu hai mươi năm, đã chữa khỏi cho hơn một nghìn bệnh nhân.',zh:'这位医生钻研了二十年，治愈了上千位患者。',py:'Zhè wèi yīshēng zuānyánle èrshí nián, zhìyùle shàng qiān wèi huànzhě.',goiY:['钻研 = miệt mài nghiên cứu','治愈 = chữa khỏi','患者 = bệnh nhân','上千 = hơn một nghìn'],giai:'钻研 (bài 11) = nghiên cứu sâu; 治愈 (愈 = khỏi bệnh) dịch "chữa khỏi"; 上千位 = cả nghìn người.'},
+  {vi:'Trong quá trình tiến hoá, sinh vật nào không thích nghi với môi trường thì sẽ bị đào thải, đó là quy luật của tự nhiên.',zh:'生物在进化过程中，不适应环境的就会被淘汰，这是自然界的规律。',py:'Shēngwù zài jìnhuà guòchéng zhōng, bú shìyìng huánjìng de jiù huì bèi táotài, zhè shì zìránjiè de guīlǜ.',goiY:['生物 = sinh vật','进化 = tiến hoá','淘汰 = đào thải'],giai:'不适应环境的 là cụm 的 thay danh từ (= những sinh vật không thích nghi) → dịch thêm "sinh vật nào"; 被淘汰 = bị đào thải.'},
+  {vi:'Truyền thống tổ tiên để lại, chúng ta có trách nhiệm làm cho nó được tiếp nối đời này qua đời khác.',zh:'祖先遗留下来的传统，我们有责任让它世代延续下去。',py:'Zǔxiān yíliú xiàlái de chuántǒng, wǒmen yǒu zérèn ràng tā shìdài yánxù xiàqu.',goiY:['祖先 = tổ tiên','遗留 = để lại','世代 = đời đời','延续 = tiếp nối'],giai:'Tân ngữ 传统 đưa lên đầu câu làm chủ đề; 延续下去 (下去 = tiếp tục về sau) dịch "tiếp nối mãi".'},
+  {vi:'Anh ta nói chuyện cứ hay ngầm ý bảo người khác làm việc giúp mình, nhưng chưa bao giờ nói thẳng ra.',zh:'他说话总是暗示别人帮他做事，可从来不直接提出来。',py:'Tā shuōhuà zǒngshì ànshì biérén bāng tā zuò shì, kě cónglái bù zhíjiē tí chūlái.',goiY:['暗示 = ngụ ý, ra hiệu ngầm','直接 = thẳng','提出来 = nói ra, nêu ra'],giai:'暗示 đối lập với 直接提出来 → dịch "ngầm ý … nhưng chưa bao giờ nói thẳng".'}
 ];
 
 // ══════════════════════════════════════════
@@ -1617,333 +1558,129 @@ var writingData = {
 // LUYỆN NÓI — đúng bảng 练习5 của sách: 根据提示，简述课文主要内容
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Đây là bảng bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b>. Mỗi câu hỏi là một dòng của bảng, cột gợi ý giữ nguyên như sách. Bấm loa nghe câu hỏi, <b>tự ghi âm câu trả lời trước</b> rồi mới mở câu mẫu. Cố dùng đúng các từ trong gợi ý.',
-  questions:[
-    {q_zh:'文中提到了哪几种白噪音？',
-     q_vn:'Bài khoá nhắc tới những loại tiếng ồn trắng nào?',
-     hint:'①下雨的声音 ②波浪拍打岩石的声音 ③微风抚摸树叶的声音 ④鸟的叫声 ⑤会议室的嘈杂声',
-     sample:'文中提到了五种白噪音：下雨的声音、波浪拍打岩石的声音、微风抚摸树叶的声音、森林里鸟的叫声，还有会议室里的嘈杂声。',
-     sample_vn:'Bài khoá nhắc tới năm loại tiếng ồn trắng: tiếng mưa rơi, tiếng sóng vỗ vào đá, tiếng gió nhẹ vuốt ve lá cây, tiếng chim hót trong rừng, và tiếng ồn ào trong phòng họp.',
-     note:'Liệt kê bằng dấu 、 và 还有 ở mục cuối; nhớ các cụm chủ–vị: 波浪拍打岩石, 微风抚摸树叶.'},
-    {q_zh:'白噪音给我们什么暗示？',
-     q_vn:'Tiếng ồn trắng ngầm báo cho chúng ta điều gì?',
-     hint:'①安全 ②危险',
-     sample:'白噪音给我们的暗示有两种。大量的白噪音暗示着安全，比如鸟在叫，说明没有危险；白噪音突然减弱，就意味着有了险情，务必要提高警惕。',
-     sample_vn:'Tiếng ồn trắng cho chúng ta hai loại ám hiệu. Nhiều tiếng ồn trắng ngầm báo an toàn, ví dụ chim còn hót nghĩa là không có nguy hiểm; tiếng ồn trắng đột nhiên yếu đi thì có nghĩa là đã có biến, nhất thiết phải nâng cao cảnh giác.',
-     note:'Đối lập hai vế bằng dấu ；: 暗示着安全 / 意味着有了险情; dùng 务必 (điểm ngữ pháp của bài).'},
-    {q_zh:'鸟儿为什么要叫？',
-     q_vn:'Vì sao chim phải kêu?',
-     hint:'①寻找异性 ②延续后代',
-     sample:'鸟叫是为了寻找异性、延续后代。虽然叫声会暴露自己，很容易惹祸，但是倘若不叫，雌雄两性谁也发现不了对方，所以这是不得已而采取的危险举动。',
-     sample_vn:'Chim kêu là để tìm bạn khác giới, duy trì nòi giống. Tuy tiếng kêu sẽ làm lộ bản thân, rất dễ rước hoạ, nhưng nếu không kêu thì con đực con cái chẳng con nào tìm ra đối phương, cho nên đây là hành động nguy hiểm bất đắc dĩ.',
-     note:'为了 + mục đích; 虽然……但是……; 倘若 (bài 4) = nếu; 不得已而 + V.'},
-    {q_zh:'白噪音有什么功效？',
-     q_vn:'Tiếng ồn trắng có những công dụng gì?',
-     hint:'①放松身心 ②治疗疾病（神经系统疾病、多动症患儿） ③恢复工作效率',
-     sample:'白噪音能让我们有安全感，从而放松身心。鉴于白噪音有这样的功效，它理所当然地成了医生的好帮手：可以辅助治疗神经系统疾病，还治愈了一些多动症患儿的精神集中能力障碍。另外，它还能帮助受到噪音污染的人恢复工作效率。',
-     sample_vn:'Tiếng ồn trắng khiến chúng ta có cảm giác an toàn, nhờ đó thư giãn cả thân lẫn tâm. Xét thấy nó có công hiệu như vậy, nó đương nhiên trở thành trợ thủ đắc lực của bác sĩ: có thể hỗ trợ điều trị bệnh hệ thần kinh, còn chữa khỏi chứng rối loạn khả năng tập trung cho một số bệnh nhi tăng động. Ngoài ra, nó còn giúp những người bị ô nhiễm tiếng ồn khôi phục hiệu suất làm việc.',
-     note:'Ba công dụng nối bằng 从而 / 鉴于……理所当然地…… / 另外; ý 2 có hai nhánh (bệnh thần kinh — trẻ tăng động).'}
+  intro: 'Đây là bảng bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b>. Mỗi câu hỏi là một dòng của bảng, cột gợi ý giữ nguyên như sách. Bấm loa nghe câu hỏi, <b>tự ghi âm câu trả lời trước</b> rồi mới mở câu mẫu. Cố dùng đúng các từ trong gợi ý.',
+  questions: [
+    {q_zh:'文中提到了哪几种白噪音？',q_vn:'Bài khoá nhắc tới những loại tiếng ồn trắng nào?',hint:'①下雨的声音 ②波浪拍打岩石的声音 ③微风抚摸树叶的声音 ④鸟的叫声 ⑤会议室的嘈杂声',sample:'课文中提到了五种白噪音：下雨的声音、波浪拍打岩石的声音、微风抚摸树叶的声音、森林里鸟的叫声，还有会议室里的嘈杂声。',sample_vn:'Bài khoá nhắc tới năm loại tiếng ồn trắng: tiếng mưa rơi, tiếng sóng vỗ vào đá, tiếng gió nhẹ vuốt ve lá cây, tiếng chim hót trong rừng, và tiếng ồn ào trong phòng họp.',note:'Liệt kê bằng dấu 、 và 还有 ở mục cuối; nhớ các cụm chủ–vị: 波浪拍打岩石, 微风抚摸树叶.'},
+    {q_zh:'白噪音给我们什么暗示？',q_vn:'Tiếng ồn trắng ngầm báo cho chúng ta điều gì?',hint:'①安全 ②危险',sample:'白噪音给我们的暗示有两种。大量的白噪音暗示着安全，比如鸟在叫，说明没有危险；白噪音突然减弱，就意味着有了险情，务必要提高警惕。',sample_vn:'Tiếng ồn trắng cho chúng ta hai loại ám hiệu. Nhiều tiếng ồn trắng ngầm báo an toàn, ví dụ chim còn hót nghĩa là không có nguy hiểm; tiếng ồn trắng đột nhiên yếu đi thì có nghĩa là đã có biến, nhất thiết phải nâng cao cảnh giác.',note:'Đối lập hai vế bằng dấu ；: 暗示着安全 / 意味着有了险情; dùng 务必 (điểm ngữ pháp của bài).'},
+    {q_zh:'鸟儿为什么要叫？',q_vn:'Vì sao chim phải kêu?',hint:'①寻找异性 ②延续后代',sample:'鸟叫是为了寻找异性、延续后代。虽然叫声会暴露自己，很容易惹祸，但是倘若不叫，雌雄两性谁也发现不了对方，所以这是不得已而采取的危险举动。',sample_vn:'Chim kêu là để tìm bạn khác giới, duy trì nòi giống. Tuy tiếng kêu sẽ làm lộ bản thân, rất dễ rước hoạ, nhưng nếu không kêu thì con đực con cái chẳng con nào tìm ra đối phương, cho nên đây là hành động nguy hiểm bất đắc dĩ.',note:'为了 + mục đích; 虽然……但是……; 倘若 (bài 4) = nếu; 不得已而 + V.'},
+    {q_zh:'白噪音有什么功效？',q_vn:'Tiếng ồn trắng có những công dụng gì?',hint:'①放松身心 ②治疗疾病（神经系统疾病、多动症患儿） ③恢复工作效率',sample:'白噪音能让我们有安全感，从而放松身心。鉴于白噪音有这样的功效，它理所当然地成了医生的好帮手：可以辅助治疗神经系统疾病，还治愈了一些多动症患儿的精神集中能力障碍。另外，它还能帮助受到噪音污染的人恢复工作效率。',sample_vn:'Tiếng ồn trắng khiến chúng ta có cảm giác an toàn, nhờ đó thư giãn cả thân lẫn tâm. Xét thấy nó có công hiệu như vậy, nó đương nhiên trở thành trợ thủ đắc lực của bác sĩ: có thể hỗ trợ điều trị bệnh hệ thần kinh, còn chữa khỏi chứng rối loạn khả năng tập trung cho một số bệnh nhi tăng động. Ngoài ra, nó còn giúp những người bị ô nhiễm tiếng ồn khôi phục hiệu suất làm việc.',note:'Ba công dụng nối bằng 从而 / 鉴于……理所当然地…… / 另外; ý 2 có hai nhánh (bệnh thần kinh — trẻ tăng động).'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — 听力 (sách HSK 6 không có sách bài tập nghe)
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — câu tự soạn (sách HSK 6 không có sách bài tập nghe), mỗi câu một tình huống mới
+// ══════════════════════════════════════════
 var listenExamData = {
-  "intro": "Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.",
-  "source": "Soạn theo dạng đề HSK 6 · chủ đề bài 12",
-  "items": [
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 12',
+  items: [
     {
-      "n": 1,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "你怎么戴着耳机写作业？不吵吗？"
-        },
-        {
-          "sp": "男",
-          "zh": "我在听白噪音，是下雨的声音。周围太嘈杂的时候，听它反而更容易集中注意力。"
-        }
+      n: 1,
+      lines: [
+        {sp:'女',zh:'这件衣服我穿着有点儿大，可又特别喜欢。'},
+        {sp:'男',zh:'你不妨去问问店员，看有没有小一号的。'}
       ],
-      "q": "男的为什么听白噪音？",
-      "qvn": "Vì sao người đàn ông nghe tiếng ồn trắng?",
-      "opts": [
-        "为了睡觉",
-        "为了学习音乐",
-        "为了集中注意力",
-        "因为外面下雨了"
-      ],
-      "ans": 2,
-      "why": "听它反而更容易集中注意力 → để tập trung. \"下雨的声音\" chỉ là loại tiếng ồn trắng anh ấy nghe, không phải trời đang mưa.",
-      "words": [
-        "白噪音",
-        "嘈杂"
-      ]
+      q: '男的建议女的做什么？',
+      qvn: 'Người đàn ông khuyên người phụ nữ làm gì?',
+      opts: ['换一件别的','问问有没有小一号的','别买了','自己改一改'],
+      ans: 1,
+      why: '不妨 + V = cứ thử…: anh khuyên cô hỏi nhân viên xem có cỡ nhỏ hơn không.',
+      words: ['不妨']
     },
     {
-      "n": 2,
-      "lines": [
-        {
-          "sp": "男",
-          "zh": "刚才会议室里还吵吵闹闹的，怎么突然这么安静？"
-        },
-        {
-          "sp": "女",
-          "zh": "我也觉得莫名其妙。哦，原来是校长进来了。"
-        }
+      n: 2,
+      lines: [
+        {sp:'女',zh:'明天的面试几点开始？'},
+        {sp:'男',zh:'九点，不过公司说务必提前二十分钟到，要先写一些个人信息。'}
       ],
-      "q": "会议室为什么突然安静了？",
-      "qvn": "Vì sao phòng họp đột nhiên yên tĩnh?",
-      "opts": [
-        "校长进来了",
-        "大家都累了",
-        "会议结束了",
-        "有人说了句“好安静啊”"
-      ],
-      "ans": 0,
-      "why": "原来是校长进来了 → hiệu trưởng bước vào. 莫名其妙 chỉ là cảm giác \"khó hiểu\" lúc đầu của người phụ nữ.",
-      "words": [
-        "莫名其妙"
-      ]
+      q: '男的最晚应该几点到？',
+      qvn: 'Người đàn ông chậm nhất phải đến lúc mấy giờ?',
+      opts: ['九点','九点二十','八点四十','八点二十'],
+      ans: 2,
+      why: 'Phỏng vấn lúc 9 giờ, 务必提前二十分钟到 = nhất thiết phải đến sớm 20 phút → 8 giờ 40.',
+      words: ['务必']
     },
     {
-      "n": 3,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "这种药真的能治好我的失眠吗？"
-        },
-        {
-          "sp": "男",
-          "zh": "它只能起辅助作用，减轻一些症状。要想彻底治愈，你还得改掉熬夜的习惯。"
-        }
+      n: 3,
+      lines: [
+        {sp:'女',zh:'这次的旅行怎么取消了？'},
+        {sp:'男',zh:'鉴于报名的人太少，学校决定改到下个月再去。'}
       ],
-      "q": "关于这种药，可以知道什么？",
-      "qvn": "Về loại thuốc này, có thể biết điều gì?",
-      "opts": [
-        "能彻底治好失眠",
-        "要每天晚上吃两次",
-        "副作用很大",
-        "只能减轻症状"
-      ],
-      "ans": 3,
-      "why": "只能起辅助作用，减轻一些症状 → chỉ giảm triệu chứng; muốn khỏi hẳn (治愈) phải bỏ thói quen thức khuya.",
-      "words": [
-        "辅助",
-        "症状",
-        "愈"
-      ]
+      q: '旅行为什么取消了？',
+      qvn: 'Vì sao chuyến đi bị huỷ?',
+      opts: ['天气不好','学校没有钱','老师没有时间','报名的人太少'],
+      ans: 3,
+      why: '鉴于 + lý do: 报名的人太少 → nhà trường quyết định dời sang tháng sau.',
+      words: ['鉴于']
     },
     {
-      "n": 4,
-      "lines": [
-        {
-          "sp": "男",
-          "zh": "明天去爬山，有什么要注意的吗？"
-        },
-        {
-          "sp": "女",
-          "zh": "山上岩石多，路很滑，大家务必穿运动鞋，千万别一个人走小路。"
-        }
+      n: 4,
+      lines: [
+        {sp:'男',zh:'你不是最讨厌加班吗？怎么周末还来公司？'},
+        {sp:'女',zh:'我也不想来啊，下周一就要交报告了，现在还差一半呢，没办法。'}
       ],
-      "q": "女的提醒大家什么？",
-      "qvn": "Người phụ nữ nhắc mọi người điều gì?",
-      "opts": [
-        "带足够的水",
-        "务必穿运动鞋",
-        "早点儿出发",
-        "一个人走小路更安全"
-      ],
-      "ans": 1,
-      "why": "大家务必穿运动鞋 — nhắc trực tiếp. \"一个人走小路\" là điều bị cấm (千万别).",
-      "words": [
-        "岩石",
-        "务必"
-      ]
+      q: '女的为什么周末来公司？',
+      qvn: 'Vì sao người phụ nữ đến công ty vào cuối tuần?',
+      opts: ['报告还没写完','喜欢加班','经理让她来的','来拿东西'],
+      ans: 0,
+      why: '下周一就要交报告了，现在还差一半 → báo cáo chưa viết xong; 不想来, 没办法 cho thấy cô đến vì bất đắc dĩ, không phải thích làm thêm.',
+      words: []
     },
     {
-      "n": 5,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "你为什么不当面跟他把话说清楚呢？"
-        },
-        {
-          "sp": "男",
-          "zh": "我也是不得已。他正在气头上，我说什么他都听不进去。"
-        }
+      n: 5,
+      lines: [
+        {sp:'女',zh:'你最近怎么总是没精神？'},
+        {sp:'男',zh:'对面在盖新楼，噪音大得要命，我晚上根本睡不着。'}
       ],
-      "q": "男的为什么没有当面跟他说？",
-      "qvn": "Vì sao người đàn ông không nói thẳng với anh kia?",
-      "opts": [
-        "他不认识那个人",
-        "那个人正在生气",
-        "他怕惹祸",
-        "他忘记了"
-      ],
-      "ans": 1,
-      "why": "他正在气头上 = anh kia đang giận → nói gì cũng không nghe. 我也是不得已 = tôi cũng bất đắc dĩ thôi.",
-      "words": [
-        "不得已"
-      ]
+      q: '男的为什么没精神？',
+      qvn: 'Vì sao người đàn ông không có tinh thần?',
+      opts: ['工作太忙','生病了','对面太吵','心情不好'],
+      ans: 2,
+      why: '噪音大得要命 (ôn 得要命, bài 9) → tiếng ồn từ công trình đối diện làm anh mất ngủ.',
+      words: ['噪音']
     },
     {
-      "n": 6,
-      "lines": [
-        {
-          "sp": "男",
-          "zh": "我们的新产品卖得不太好，你看怎么办？"
-        },
-        {
-          "sp": "女",
-          "zh": "鉴于目前的市场情况，我建议我们不妨先把价格降一降，看看效果再说。"
-        }
+      n: 6,
+      lines: [
+        {sp:'男',zh:'孩子这次考了第一，你给他买什么礼物了？'},
+        {sp:'女',zh:'我什么都没买。学习是他自己的事，考得好是理所当然的。'}
       ],
-      "q": "女的建议怎么做？",
-      "qvn": "Người phụ nữ đề nghị làm gì?",
-      "opts": [
-        "马上停止生产",
-        "换一个市场",
-        "增加广告",
-        "先降价试试"
-      ],
-      "ans": 3,
-      "why": "不妨先把价格降一降，看看效果再说 → thử giảm giá trước. 不妨 = cứ thử.",
-      "words": [
-        "鉴于",
-        "不妨"
-      ]
-    },
-    {
-      "n": 7,
-      "lines": [
-        {
-          "sp": "女",
-          "zh": "在森林里，鸟的叫声就是天然的警报器。鸟在叫，说明没有危险；鸟叫一旦停止，所有动物都会提高警惕，静下来观察。只有当鸟叫重新开始时，警报才会解除。"
-        }
-      ],
-      "q": "鸟叫停止时，动物们会怎么样？",
-      "qvn": "Khi chim ngừng hót, các con vật sẽ thế nào?",
-      "opts": [
-        "静下来，提高警惕",
-        "大声呼唤",
-        "马上逃走",
-        "继续睡觉"
-      ],
-      "ans": 0,
-      "why": "所有动物都会提高警惕，静下来观察. Không nhắc gì tới bỏ chạy; 呼唤 là việc chim làm khi tìm bạn.",
-      "words": [
-        "警惕",
-        "解除"
-      ]
-    },
-    {
-      "n": 8,
-      "lines": [
-        {
-          "sp": "男",
-          "zh": "很多人以为，环境越安静越容易睡着，其实并非如此。完全的寂静反而会让人的神经紧张起来，而像雨声、波浪声这样的白噪音，却能暗示大脑“周围很安全”，帮助人们放松身心。"
-        }
-      ],
-      "q": "说话人的观点是什么？",
-      "qvn": "Quan điểm của người nói là gì?",
-      "opts": [
-        "环境越安静越好睡",
-        "下雨天不适合睡觉",
-        "适当的白噪音有助于放松",
-        "白噪音是一种噪音污染"
-      ],
-      "ans": 2,
-      "why": "其实并非如此 bác bỏ quan niệm \"càng yên càng dễ ngủ\"; ý chính ở vế 白噪音……帮助人们放松身心. (并非 ôn bài 7)",
-      "words": [
-        "神经",
-        "波浪",
-        "白噪音",
-        "暗示"
-      ]
+      q: '女的是什么态度？',
+      qvn: 'Người phụ nữ có thái độ thế nào?',
+      opts: ['不应该给礼物','应该给很多钱','孩子考得不好','要带孩子出去玩儿'],
+      ans: 0,
+      why: '考得好是理所当然的 = học giỏi là chuyện đương nhiên → cô thấy không cần thưởng quà.',
+      words: ['理所当然']
     }
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
+// ══════════════════════════════════════════
 var situationData = {
-  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
-         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn cùng phòng than mất ngủ vì ngoài đường ồn.',
-     a:{sp:'Bạn cùng phòng',zh:'外面太吵了，我已经两个晚上没睡好了。',vn:'Ngoài kia ồn quá, tớ đã hai đêm liền không ngủ ngon rồi.'},
-     need:['Dùng 不妨','Nhắc tới 白噪音'],
-     sample:'你不妨试试听白噪音，比如下雨的声音，说不定能帮你睡着。',
-     samplePy:'Nǐ bùfáng shìshi tīng bái zàoyīn, bǐrú xià yǔ de shēngyīn, shuōbudìng néng bāng nǐ shuìzháo.',
-     sampleVn:'Cậu cứ thử nghe tiếng ồn trắng xem, ví dụ tiếng mưa rơi, biết đâu giúp cậu ngủ được.',
-     tip:'不妨 + 试试 + V: gợi ý nhẹ nhàng; 说不定 = biết đâu.'},
-
-    {scene:'Cô giáo nhờ em (lớp trưởng) nhắc cả lớp trước buổi leo núi.',
-     a:{sp:'Cô giáo',zh:'明天去爬山，你帮我提醒一下大家要注意什么。',vn:'Mai đi leo núi, em nhắc giúp cô mọi người cần chú ý gì nhé.'},
-     need:['Dùng 务必','Dùng 警惕 hoặc 岩石'],
-     sample:'大家听好：明天务必准时集合，山上岩石很滑，一定要提高警惕。',
-     samplePy:'Dàjiā tīnghǎo: míngtiān wùbì zhǔnshí jíhé, shān shang yánshí hěn huá, yídìng yào tígāo jǐngtì.',
-     sampleVn:'Mọi người nghe này: ngày mai nhất thiết phải tập trung đúng giờ, trên núi đá rất trơn, nhất định phải cảnh giác.',
-     tip:'务必 + V dùng cho lời dặn quan trọng; 提高警惕 là cụm cố định.'},
-
-    {scene:'Bạn thân trách em không đến dự sinh nhật.',
-     a:{sp:'Bạn',zh:'昨天我生日，你怎么没来？我等了你半天。',vn:'Hôm qua sinh nhật tớ, sao cậu không đến? Tớ đợi cậu mãi.'},
-     need:['Dùng 不得已','Dùng 嘛 hoặc 理所当然'],
-     sample:'真对不起，我也是不得已，奶奶突然住院了，我得陪着她嘛。',
-     samplePy:'Zhēn duìbuqǐ, wǒ yě shì bùdéyǐ, nǎinai tūrán zhù yuàn le, wǒ děi péizhe tā ma.',
-     sampleVn:'Thật xin lỗi, tớ cũng bất đắc dĩ thôi, bà tớ đột nhiên nhập viện, tớ phải ở bên bà mà.',
-     tip:'主语 + 是 + 不得已 (không dùng 不得不 ở đây); 嘛 cuối câu nhấn lý do hiển nhiên.'},
-
-    {scene:'Đồng nghiệp hỏi vì sao công ty cho làm việc ở nhà.',
-     a:{sp:'Đồng nghiệp',zh:'听说公司下个月开始可以在家办公了，为什么？',vn:'Nghe nói từ tháng sau công ty cho làm ở nhà, vì sao vậy?'},
-     need:['Dùng 鉴于','Dùng 噪音'],
-     sample:'鉴于办公楼旁边正在施工，噪音太大，公司决定让大家暂时在家办公。',
-     samplePy:'Jiànyú bàngōnglóu pángbiān zhèngzài shīgōng, zàoyīn tài dà, gōngsī juédìng ràng dàjiā zànshí zài jiā bàngōng.',
-     sampleVn:'Xét thấy bên cạnh toà văn phòng đang thi công, tiếng ồn quá lớn, công ty quyết định cho mọi người tạm thời làm việc ở nhà.',
-     tip:'鉴于 + lý do (vế trước), vế sau là quyết định 决定…….'},
-
-    {scene:'Em gái hỏi vì sao nghe tiếng mưa lại buồn ngủ.',
-     a:{sp:'Em gái',zh:'为什么我一听下雨的声音就想睡觉？',vn:'Sao em cứ nghe tiếng mưa là buồn ngủ?'},
-     need:['Dùng 暗示','Dùng 神经'],
-     sample:'因为雨声是一种白噪音，它暗示大脑周围很安全，紧张的神经就放松下来了。',
-     samplePy:'Yīnwèi yǔ shēng shì yì zhǒng bái zàoyīn, tā ànshì dànǎo zhōuwéi hěn ānquán, jǐnzhāng de shénjīng jiù fàngsōng xiàlái le.',
-     sampleVn:'Vì tiếng mưa là một loại tiếng ồn trắng, nó ngầm báo cho não biết xung quanh rất an toàn, thần kinh căng thẳng liền dịu xuống.',
-     tip:'Dùng lại ý bài khoá: 暗示 + ai + mệnh đề; 放松下来 (bổ ngữ 下来).'}
+    {scene:'Bạn cùng phòng than mất ngủ vì ngoài đường ồn.',a:{sp:'Bạn cùng phòng',zh:'外面太吵了，我已经两个晚上没睡好了。',vn:'Ngoài kia ồn quá, tớ đã hai đêm liền không ngủ ngon rồi.'},need:['Dùng 不妨','Nhắc tới 白噪音'],sample:'你不妨试试听白噪音，比如雨声、风声，说不定能帮你睡着。',samplePy:'Nǐ bùfáng shìshi tīng bái zàoyīn, bǐrú yǔ shēng, fēng shēng, shuōbudìng néng bāng nǐ shuìzháo.',sampleVn:'Cậu cứ thử nghe tiếng ồn trắng xem, ví dụ tiếng mưa, tiếng gió, biết đâu giúp cậu ngủ được.',tip:'不妨 + 试试 + V: gợi ý nhẹ nhàng; 说不定 = biết đâu.'},
+    {scene:'Cô giáo nhờ em (lớp trưởng) nhắc cả lớp trước buổi leo núi.',a:{sp:'Cô giáo',zh:'明天去爬山，你帮我提醒一下大家要注意什么。',vn:'Mai đi leo núi, em nhắc giúp cô mọi người cần chú ý gì nhé.'},need:['Dùng 务必','Dùng 岩石 hoặc 小心'],sample:'大家听好：明天务必七点以前到学校门口，山上岩石很滑，一定要小心。',samplePy:'Dàjiā tīnghǎo: míngtiān wùbì qī diǎn yǐqián dào xuéxiào ménkǒu, shān shang yánshí hěn huá, yídìng yào xiǎoxīn.',sampleVn:'Mọi người nghe này: ngày mai nhất thiết phải có mặt ở cổng trường trước 7 giờ, trên núi đá rất trơn, nhất định phải cẩn thận.',tip:'务必 + V dùng cho lời dặn quan trọng nhất (giờ tập trung); 一定要 cho lời nhắc tiếp theo, tránh lặp 务必.'},
+    {scene:'Bạn thân trách em không đến dự sinh nhật.',a:{sp:'Bạn',zh:'昨天我生日，等了你一晚上，你怎么一直没出现？',vn:'Hôm qua sinh nhật tớ, tớ đợi cậu cả buổi tối, sao cậu mãi không thấy đâu?'},need:['Dùng 不得已 + động từ','Dùng 嘛 ở cuối câu'],sample:'实在抱歉，奶奶突然住院了，我不得已在医院陪了她一晚上，你别生气嘛。',samplePy:'Shízài bàoqiàn, nǎinai tūrán zhù yuàn le, wǒ bùdéyǐ zài yīyuàn péile tā yì wǎnshang, nǐ bié shēngqì ma.',sampleVn:'Thật xin lỗi, bà tớ đột nhiên nhập viện, tớ bất đắc dĩ phải ở bệnh viện với bà cả tối, cậu đừng giận mà.',tip:'不得已 + V = buộc phải làm (không phải ý mình); 嘛 cuối câu làm lời xin lỗi mềm hơn.'},
+    {scene:'Đồng nghiệp hỏi vì sao công ty cho làm việc ở nhà.',a:{sp:'Đồng nghiệp',zh:'听说公司下个月开始可以在家办公了，为什么？',vn:'Nghe nói từ tháng sau công ty cho làm ở nhà, vì sao vậy?'},need:['Dùng 鉴于','Dùng 噪音'],sample:'鉴于办公楼正在装修，噪音太大，公司决定让大家暂时在家办公。',samplePy:'Jiànyú bàngōnglóu zhèngzài zhuāngxiū, zàoyīn tài dà, gōngsī juédìng ràng dàjiā zànshí zài jiā bàngōng.',sampleVn:'Xét thấy toà văn phòng đang sửa chữa, tiếng ồn quá lớn, công ty quyết định cho mọi người tạm thời làm việc ở nhà.',tip:'鉴于 + lý do (vế trước), vế sau là quyết định 决定…….'},
+    {scene:'Em gái hỏi vì sao nghe tiếng mưa lại buồn ngủ.',a:{sp:'Em gái',zh:'为什么我一听下雨的声音就想睡觉？',vn:'Sao em cứ nghe tiếng mưa là buồn ngủ?'},need:['Dùng 暗示','Dùng 神经'],sample:'因为雨声是一种白噪音，它暗示大脑周围很安全，紧张的神经就放松下来了。',samplePy:'Yīnwèi yǔ shēng shì yì zhǒng bái zàoyīn, tā ànshì dànǎo zhōuwéi hěn ānquán, jǐnzhāng de shénjīng jiù fàngsōng xiàlái le.',sampleVn:'Vì tiếng mưa là một loại tiếng ồn trắng, nó ngầm báo cho não biết xung quanh rất an toàn, thần kinh căng thẳng liền dịu xuống.',tip:'Dùng lại ý bài khoá: 暗示 + ai + mệnh đề; 放松下来 (bổ ngữ 下来).'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 // 🎯 NÓI SAO CHO HAY — 得体 / 语体
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 var registerData = {
-  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
-         'HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
   items: [
-    {scene:'Thông báo chính thức của nhà trường dán trên bảng tin.',
-     a:'明天的活动大家一定要来啊，别忘了！',b:'明日活动十分重要，请全体同学务必准时参加。',better:'b',
-     why:'Thông báo chính thức dùng văn viết: 明日, 全体同学, 务必准时参加. Câu a (啊, 别忘了) là lời nhắc miệng giữa bạn bè.'},
-
-    {scene:'Nhắn tin rủ bạn thân cuối tuần sang nhà chơi.',
-     a:'周末没事儿的话，来我家玩儿嘛！',b:'鉴于周末无事，特邀请您光临寒舍。',better:'a',
-     why:'Với bạn thân, lời gần gũi (没事儿, 玩儿, 嘛) tự nhiên. Câu b (鉴于, 光临寒舍) quá trang trọng, nghe như đùa.'},
-
-    {scene:'Bác sĩ ghi vào bệnh án.',
-     a:'患者症状明显减轻，建议继续进行辅助治疗。',b:'病人好多了，再听听音乐啥的就行。',better:'a',
-     why:'Bệnh án cần thuật ngữ: 患者, 症状, 辅助治疗. Câu b (好多了, 啥的) là cách nói đời thường.'},
-
-    {scene:'Mẹ dỗ đứa con nhỏ đang sợ tiếng mưa.',
-     a:'宝贝，别怕，外面是下雨的声音，快睡吧。',b:'此声音系白噪音，暗示环境安全，请放心入睡。',better:'a',
-     why:'Nói với trẻ nhỏ phải dịu dàng, đơn giản. Câu b (此, 系, 请放心入睡) giống văn bản khoa học.'},
-
-    {scene:'Viết báo cáo khoa học về chọn lọc tự nhiên.',
-     a:'对白噪音减弱越敏感的生物，存活的可能性越大，这种意识得以世代相传。',b:'哪种动物耳朵灵，哪种就活得长，一代传一代。',better:'a',
-     why:'Báo cáo khoa học dùng văn viết chặt chẽ: 生物, 存活, 世代相传. Câu b (耳朵灵, 活得长) là cách nói dân dã.'},
-
-    {scene:'Nhắn tin xin lỗi bạn vì đến muộn buổi hẹn đi xem phim.',
-     a:'由于交通状况不佳，本人不得已迟到，特此致歉。',b:'路上堵死了，我也没办法，真不好意思啊！',better:'b',
-     why:'Giữa bạn bè, lời xin lỗi thân mật (堵死了, 真不好意思啊) chân thành hơn. Câu a (本人, 特此致歉) là giọng công văn.'}
+    {scene:'Thông báo chính thức của nhà trường dán trên bảng tin.',a:'明天的活动大家一定要来啊，别忘了！',b:'明日活动十分重要，请各位同学务必准时参加。',better:'b',why:'Thông báo chính thức dùng văn viết: 明日, 各位同学, 务必准时参加. Câu a (啊, 别忘了) là lời nhắc miệng giữa bạn bè.'},
+    {scene:'Nhắn tin rủ bạn thân cuối tuần sang nhà chơi.',a:'周末没事儿的话，来我家玩儿嘛！',b:'鉴于本周末您有空闲时间，本人邀请您光临我家。',better:'a',why:'Với bạn thân, lời gần gũi (没事儿, 玩儿, 嘛) tự nhiên. Câu b (鉴于, 本人, 光临) quá trang trọng, nghe như đùa.'},
+    {scene:'Bác sĩ ghi vào bệnh án.',a:'患者症状明显减轻，建议继续进行辅助治疗。',b:'病人好多了，再听听音乐啥的就行。',better:'a',why:'Bệnh án cần thuật ngữ: 患者, 症状, 辅助治疗. Câu b (好多了, 啥的) là cách nói đời thường.'},
+    {scene:'Mẹ dỗ đứa con nhỏ đang sợ tiếng mưa.',a:'宝贝，别怕，那是外面在下雨，快睡吧。',b:'此声音系白噪音，暗示环境安全，请放心睡觉。',better:'a',why:'Nói với trẻ nhỏ phải dịu dàng, đơn giản (宝贝, 别怕, 快睡吧). Câu b (此, 系, 暗示环境安全) giống văn bản khoa học.'},
+    {scene:'Trong cuộc họp, em góp ý với giám đốc về cách bán sản phẩm mới.',a:'经理，先随便找个地方试试吧。',b:'经理，我觉得咱们不妨先在一个城市试试，效果好再推广。',better:'b',why:'Góp ý với cấp trên: 我觉得 + 不妨 vừa lịch sự vừa nêu rõ kế hoạch (một thành phố, có hiệu quả mới mở rộng). Câu a (随便找个地方) nghe tuỳ tiện, thiếu nghiêm túc.'},
+    {scene:'Em nhắn tin xin lỗi bạn thân vì đến muộn buổi hẹn xem phim.',a:'由于交通原因，本人迟到了二十分钟，请各位原谅。',b:'今天打不到车，我也没办法，真不好意思啊！',better:'b',why:'Giữa bạn bè, lời xin lỗi thân mật (我也没办法, 真不好意思啊) chân thành hơn. Câu a (由于交通原因, 本人, 请各位原谅) là giọng thông báo trước đám đông.'}
   ]
 };
 

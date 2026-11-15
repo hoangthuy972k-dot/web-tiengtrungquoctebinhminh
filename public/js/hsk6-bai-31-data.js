@@ -1773,89 +1773,51 @@ var hvBridgeData = {
 // GHÉP TỪ — cụm trong bài khoá và phần 练习
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'忠实',right:'观众'},
-  {left:'练气功还是练',right:'太极剑'},
-  {left:'气功',right:'协会'},
-  {left:'力量一',right:'爆发'},
-  {left:'把砖',right:'劈开'},
-  {left:'增强',right:'体质'},
-  {left:'辅助治疗',right:'某些疾病'},
-  {left:'健身意识在逐年',right:'提升'},
-  {left:'健康五',right:'要素'},
-  {left:'达到',right:'预期效果'},
-  {left:'勤于运用',right:'大脑'},
-  {left:'放射出新的',right:'火花'},
-  {left:'形成的条件',right:'反射'},
-  {left:'人天生的',right:'弱点'},
-  {left:'克服',right:'惰性'},
-  {left:'下狠心',right:'咬牙坚持'},
-  {left:'有计划，有',right:'落实'},
-  {left:'间接体现着',right:'品行'},
-  {left:'促进对钙的',right:'吸收'},
-  {left:'使人心情',right:'舒畅'},
-  {left:'补充',right:'蛋白质'},
-  {left:'定期',right:'体检'},
-  {left:'多多',right:'保重'}
+  {left:'忠实的',right:'观众'},
+  {left:'发挥',right:'潜力'},
+  {left:'记忆力',right:'衰退'},
+  {left:'心情',right:'舒畅'},
+  {left:'消除',right:'误解'},
+  {left:'意志',right:'坚定'},
+  {left:'落实',right:'计划'},
+  {left:'虐待',right:'动物'},
+  {left:'品行',right:'端正'},
+  {left:'保持',right:'联络'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ
+// ĐIỀN TỪ — câu mới (không chép bài khoá / SGK), mỗi câu một tình huống; ôn xoáy ốc từ + ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'王老师夸我汉语说得好，我连忙说：“',blank:'不敢当',post:'，我还差得远呢。”',hint:'(không dám nhận)',ans:'不敢当'},
-  {pre:'下课铃一响，',blank:'走廊',post:'里立刻挤满了说说笑笑的学生。',hint:'(hành lang)',ans:'走廊'},
-  {pre:'老师傅把自己的手艺毫无保留地传授给了',blank:'徒弟',post:'。',hint:'(đồ đệ)',ans:'徒弟'},
-  {pre:'每天清晨，公园里都有不少老人在练',blank:'气功',post:'、打太极拳。',hint:'(khí công)',ans:'气功'},
-  {pre:'爷爷退休以后迷上了太极',blank:'剑',post:'，每天早上都要练一个小时。',hint:'(kiếm)',ans:'剑'},
-  {pre:'',blank:'哦',post:'，原来你们早就认识啊，那我就不用介绍了。',hint:'(à — chợt hiểu ra)',ans:'哦'},
-  {pre:'我是武术',blank:'协会',post:'的成员，每个周末都和大家一起练习。',hint:'(hội)',ans:'协会'},
-  {pre:'表演者一掌下去，三块砖就被',blank:'劈',post:'成了两半。',hint:'(bổ, chặt)',ans:'劈'},
-  {pre:'政府在制定政策之前，应该广泛听取',blank:'群众',post:'的意见。',hint:'(quần chúng)',ans:'群众'},
-  {pre:'由于环境污染，这种鸟的数量',blank:'逐年',post:'减少，已经濒临灭绝。',hint:'(từng năm)',ans:'逐年',exp:'逐年 + V = từng năm, năm sau hơn/kém năm trước: 逐年减少.'},
-  {pre:'经常玩儿一些益智游戏，对开发孩子的',blank:'智力',post:'很有帮助。',hint:'(trí tuệ)',ans:'智力'},
-  {pre:'面对市场竞争，',blank:'首要',post:'任务是保证产品质量。',hint:'(hàng đầu)',ans:'首要'},
-  {pre:'那辆自行车在院子里放了一个冬天，车链子都',blank:'生锈',post:'了。',hint:'(bị gỉ)',ans:'生锈'},
-  {pre:'总统在',blank:'夫人',post:'的陪同下参观了这所学校。',hint:'(phu nhân)',ans:'夫人'},
-  {pre:'小学生们',blank:'端端正正',post:'地坐在教室里，认真听老师讲课。',hint:'(ngay ngắn)',ans:'端端正正',exp:'Lặp tính từ AABB: 端端正正地坐 = ngồi rất ngay ngắn; làm trạng ngữ, có 地.'},
-  {pre:'教练认为这个小运动员很有',blank:'潜力',post:'，将来一定能拿冠军。',hint:'(tiềm năng)',ans:'潜力'},
-  {pre:'这位教授一生出版了十几部学术',blank:'著作',post:'。',hint:'(tác phẩm, công trình)',ans:'著作'},
-  {pre:'雪地会',blank:'反射',post:'大量的阳光，所以滑雪时一定要戴墨镜。',hint:'(phản xạ)',ans:'反射'},
-  {pre:'骗子常常利用老年人怕孤独的',blank:'弱点',post:'来骗钱。',hint:'(điểm yếu)',ans:'弱点'},
-  {pre:'为了减肥，她下了',blank:'狠心',post:'，晚上再也不吃零食了。',hint:'(quyết tâm)',ans:'狠心'},
-  {pre:'论文已经写了一大半了，现在放弃就等于',blank:'半途而废',post:'。',hint:'(bỏ dở nửa chừng)',ans:'半途而废'},
-  {pre:'',blank:'虐待',post:'动物是一种不道德的行为，在很多国家还是违法的。',hint:'(ngược đãi)',ans:'虐待'},
-  {pre:'计划制订得再好，不',blank:'落实',post:'也是一句空话。',hint:'(thực hiện)',ans:'落实'},
-  {pre:'父母可以给建议，但选什么专业，',blank:'归根到底',post:'还得你自己决定。',hint:'(suy cho cùng)',ans:'归根到底',exp:'归根到底 = suy cho cùng, xét đến cùng.'},
-  {pre:'公司招人不但看能力，还要考察一个人的',blank:'品行',post:'。',hint:'(phẩm hạnh)',ans:'品行'},
-  {pre:'中午',blank:'紫外线',post:'最强，出门最好戴帽子、涂防晒霜。',hint:'(tia cực tím)',ans:'紫外线'},
-  {pre:'饭店的碗筷每次用完都要高温',blank:'消毒',post:'。',hint:'(khử trùng)',ans:'消毒'},
-  {pre:'最近的一次体检结果显示，我有点儿缺',blank:'钙',post:'。',hint:'(canxi)',ans:'钙'},
-  {pre:'树木能吸收',blank:'二氧化碳',post:'，放出氧气。',hint:'(khí CO₂)',ans:'二氧化碳'},
-  {pre:'运动能令全身排汗，毛',blank:'孔',post:'内的垃圾会被排走。',hint:'(lỗ)',ans:'孔'},
-  {pre:'学外语要',blank:'循序渐进',post:'，先打好基础，再慢慢提高。',hint:'(từng bước một)',ans:'循序渐进'},
-  {pre:'他太',blank:'急于求成',post:'了，刚学了三个月就想参加比赛。',hint:'(nóng vội)',ans:'急于求成'},
-  {pre:'鸡蛋、牛奶和鱼肉都富含优质',blank:'蛋白质',post:'。',hint:'(protein)',ans:'蛋白质'},
-  {pre:'橙子和猕猴桃富含',blank:'维生素',post:'C，可以增强免疫力。',hint:'(vitamin)',ans:'维生素'},
-  {pre:'公司每年都安排员工',blank:'定期',post:'体检。',hint:'(định kỳ)',ans:'定期'},
-  {pre:'爸爸，天冷了，您一个人在家要多',blank:'保重',post:'身体。',hint:'(giữ gìn)',ans:'保重'}
+  {pre:'医院的',blank:'走廊',post:'里坐满了等着看病的人。',hint:'(hành lang)',ans:'走廊',exp:'走廊 = hành lang, lối đi có mái nối các phòng; đi với 里 / 上 (走廊里坐满了人).'},
+  {pre:'张师傅年纪大了，想收几个',blank:'徒弟',post:'，把自己的本事都教给他们。',hint:'(học trò, đồ đệ)',ans:'徒弟',exp:'收徒弟 = nhận đồ đệ (học nghề, học võ với thầy); khác 学生 ở trường học.'},
+  {pre:'他拿起刀，一下子就把西瓜',blank:'劈',post:'成了两半。',hint:'(bổ, chẻ)',ans:'劈',exp:'劈 = bổ mạnh từ trên xuống (劈成两半, 劈开); 切 chỉ là cắt thông thường, không có lực mạnh như vậy.'},
+  {pre:'这个游戏不但好玩儿，还能开发孩子的',blank:'智力',post:'。',hint:'(trí tuệ)',ans:'智力',exp:'开发智力 = phát triển trí tuệ; 智力 là danh từ (trí thông minh), không dùng 聪明 sau 开发.'},
+  {pre:'外出旅行，安全是',blank:'首要',post:'的问题，其他的都可以慢慢考虑。',hint:'(hàng đầu)',ans:'首要',exp:'首要 = quan trọng nhất, đứng hàng đầu; chỉ làm định ngữ (首要的问题 / 首要任务), không nói 很首要.'},
+  {pre:'李教授和他的',blank:'夫人',post:'一起出席了晚会。',hint:'(phu nhân)',ans:'夫人',exp:'夫人 = phu nhân, cách gọi tôn trọng vợ của người khác (nhất là người có địa vị); nói vợ mình thường dùng 爱人 / 妻子.'},
+  {pre:'这位老先生一辈子写了二十多部',blank:'著作',post:'，都是关于中国历史的。',hint:'(tác phẩm chuyên môn)',ans:'著作',exp:'著作 = sách, công trình học thuật (lượng từ 部); 作品 thiên về tác phẩm văn học nghệ thuật.'},
+  {pre:'雪地会',blank:'反射',post:'阳光，亮得让人睁不开眼。',hint:'(phản chiếu, dội lại)',ans:'反射',exp:'反射 = ánh sáng chiếu vào bề mặt rồi dội lại; đừng nhầm 放射 (toả ra từ một nguồn, như mặt trời).'},
+  {pre:'为了考上好大学，他终于下了',blank:'狠心',post:'，把电视送到了爷爷家。',hint:'(quyết tâm dứt khoát)',ans:'狠心',exp:'下狠心 = hạ quyết tâm, dứt khoát làm điều khó; 狠心 còn có nghĩa xấu "nhẫn tâm" (狠心的人).'},
+  {pre:'药可不能',blank:'胡乱',post:'吃，一定要先问问医生。',hint:'(bừa bãi, tuỳ tiện)',ans:'胡乱',exp:'胡乱 + V = làm bừa, không có căn cứ; là phó từ, đứng ngay trước động từ (胡乱吃 / 胡乱写).'},
+  {pre:'他没有直接拒绝我，而是',blank:'间接',post:'地告诉我他最近很忙。',hint:'(gián tiếp)',ans:'间接',exp:'间接 ↔ 直接; 不是直接……，而是间接地…… = không nói thẳng mà nói vòng (ôn cách nói vòng — bài 28).'},
+  {pre:'老人的骨头容易受伤，平时要多喝牛奶，因为牛奶里有丰富的',blank:'钙',post:'。',hint:'(canxi)',ans:'钙',exp:'钙 (gài) = canxi, giúp xương chắc; 丰富的钙 = nhiều canxi, 补充钙 = bổ sung canxi.'},
+  {pre:'牙齿最好',blank:'定期',post:'去医院检查，别等疼了再去。',hint:'(định kỳ)',ans:'定期',exp:'定期 + V = làm theo kỳ hạn cố định (định kỳ khám); 经常 chỉ là "thường xuyên", không có kỳ hạn rõ.'},
+  {pre:'现在网上买东西越来越方便，去商店的人',blank:'逐年',post:'减少。',hint:'(từng năm, năm một)',ans:'逐年',exp:'逐年 + V = năm sau tăng / giảm so với năm trước (逐年减少); chữ đầu của 逐年 nghĩa là lần lượt theo từng đơn vị (年).'},
+  {pre:'你总说没时间锻炼，',blank:'归根到底',post:'还是不够重视自己的身体。',hint:'(suy cho cùng)',ans:'归根到底',exp:'归根到底 = xét đến tận gốc, nêu nguyên nhân thật sự sau các lý do bề ngoài (没时间); hay đi với 还是 / 就是.'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp (逐 · 归根到底) ít nhất 2 câu
+// SẮP XẾP CÂU — câu mới, chỉ một trật tự đúng
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['广大群众','的','健身意识','在','逐年','提升','。'],ans:'广大群众的健身意识在逐年提升。',audio:'广大群众的健身意识在逐年提升。'},
-  {words:['雨季快到了','，','对大大小小的水库','，','要','逐个','检查','。'],ans:'雨季快到了，对大大小小的水库，要逐个检查。',audio:'雨季快到了，对大大小小的水库，要逐个检查。'},
-  {words:['他','逐字逐句地','反复推敲','，','终于','完成了','翻译工作','。'],ans:'他逐字逐句地反复推敲，终于完成了翻译工作。',audio:'他逐字逐句地反复推敲，终于完成了翻译工作。'},
-  {words:['由于','经营有道','，','小店的','营业额','逐日','增加','。'],ans:'由于经营有道，小店的营业额逐日增加。',audio:'由于经营有道，小店的营业额逐日增加。'},
-  {words:['运动健身','归根到底','是','自己的事','。'],ans:'运动健身归根到底是自己的事。',audio:'运动健身归根到底是自己的事。'},
-  {words:['世界','是你们的','，','也是我们的','，','但','归根结底','是你们的','。'],ans:'世界是你们的，也是我们的，但归根结底是你们的。',audio:'世界是你们的，也是我们的，但归根结底是你们的。'},
-  {words:['所谓史学','，','说到底','就是','研究人类社会历史','的','一门学科','。'],ans:'所谓史学，说到底就是研究人类社会历史的一门学科。',audio:'所谓史学，说到底就是研究人类社会历史的一门学科。'},
-  {words:['他','却告诉我','没钱','，','说穿了','就是','不想借','。'],ans:'他却告诉我没钱，说穿了就是不想借。',audio:'他却告诉我没钱，说穿了就是不想借。'},
-  {words:['懒惰','是','人','天生的','弱点','，','所以','不要','迁就自己','。'],ans:'懒惰是人天生的弱点，所以不要迁就自己。',audio:'懒惰是人天生的弱点，所以不要迁就自己。'},
-  {words:['运动健身','要','循序渐进','，','不要','急于求成','。'],ans:'运动健身要循序渐进，不要急于求成。',audio:'运动健身要循序渐进，不要急于求成。'},
-  {words:['运动后的','两小时','，','是','补充营养','的','最佳时机','。'],ans:'运动后的两小时，是补充营养的最佳时机。',audio:'运动后的两小时，是补充营养的最佳时机。'},
-  {words:['您','真','不愧是','这方面的','专家','。'],ans:'您真不愧是这方面的专家。',audio:'您真不愧是这方面的专家。'}
+  {words:['孩子们','端端正正地','坐','在','椅子','上','。'],ans:'孩子们端端正正地坐在椅子上。',audio:'孩子们端端正正地坐在椅子上。'},
+  {words:['他','把','生锈的','自行车','擦','得','干干净净','。'],ans:'他把生锈的自行车擦得干干净净。',audio:'他把生锈的自行车擦得干干净净。'},
+  {words:['工人','把','教室','里的','桌子','都','消毒','了','一遍','。'],ans:'工人把教室里的桌子都消毒了一遍。',audio:'工人把教室里的桌子都消毒了一遍。'},
+  {words:['他','是','一位','很有','潜力的','年轻','运动员','。'],ans:'他是一位很有潜力的年轻运动员。',audio:'他是一位很有潜力的年轻运动员。'},
+  {words:['骗子','利用','了','老人','怕','孤独','的','弱点','。'],ans:'骗子利用了老人怕孤独的弱点。',audio:'骗子利用了老人怕孤独的弱点。'},
+  {words:['医生','给','他','开','了','一些','维生素','。'],ans:'医生给他开了一些维生素。',audio:'医生给他开了一些维生素。'},
+  {words:['公司','打算','逐步','提高','员工的','工资','。'],ans:'公司打算逐步提高员工的工资。',audio:'公司打算逐步提高员工的工资。'},
+  {words:['他','送','给','我','一把','很','漂亮的','剑','。'],ans:'他送给我一把很漂亮的剑。',audio:'他送给我一把很漂亮的剑。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1863,74 +1825,46 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'我是这个节目的____观众，十年来几乎一期也没错过。',opts:['忠实','诚实','老实','真实'],ans:0,
-   exp:'忠实观众 = khán giả trung thành. 诚实 / 老实 = thật thà (tả tính cách, không đi với 观众 theo nghĩa này); 真实 = chân thực (tả sự việc).'},
-  {wrong:'他的话音刚落，台下就____出一阵热烈的掌声。',opts:['发生','爆发','发布','爆炸'],ans:1,
-   exp:'爆发出 + 掌声 / 笑声 = vang lên (bùng lên). 发生 = xảy ra (không đi với 出 + 掌声); 发布 = công bố; 爆炸 = nổ (bom).'},
-  {wrong:'你____了我的意思，我不是批评你，而是想提醒你。',opts:['理解','了解','误解','解释'],ans:2,
-   exp:'Vế sau đính chính (我不是……而是……) → trước đó người kia đã HIỂU SAI → 误解. 理解 = thấu hiểu; 了解 = tìm hiểu; 解释 = giải thích.'},
-  {wrong:'时间、地点、人物是记叙文的三个基本____。',opts:['因素','要点','要求','要素'],ans:3,
-   exp:'Thành phần CẤU THÀNH không thể thiếu → 要素 (记叙文的要素). 因素 = nhân tố ảnh hưởng, nguyên nhân; 要点 = ý chính; 要求 = yêu cầu.'},
-  {wrong:'这次活动的效果远远超出了我们的____，参加的人比去年多了一倍。',opts:['预报','预期','预防','预约'],ans:1,
-   exp:'超出预期 = vượt dự tính, vượt mong đợi. 预报 = dự báo (thời tiết); 预防 = phòng ngừa; 预约 = đặt hẹn.'},
-  {wrong:'左右脑交替使用，思维常可以____出新的火花。',opts:['发射','反射','放松','放射'],ans:3,
-   exp:'放射出火花 = toả ra, loé lên tia sáng (từ một tâm). 发射 = phóng (tên lửa, vệ tinh); 反射 = phản xạ, dội lại; 放松 = thả lỏng.'},
-  {wrong:'人上了年纪，记忆力会逐渐____，所以要经常动脑。',opts:['衰退','后退','撤退','退休'],ans:0,
-   exp:'记忆力衰退 = trí nhớ suy giảm. 后退 = lùi về sau (vị trí); 撤退 = rút lui (quân đội — bài 27 扩展); 退休 = nghỉ hưu.'},
-  {wrong:'对孩子的坏习惯不能一味____，否则会害了他。',opts:['照顾','将就','迁就','讲究'],ans:2,
-   exp:'迁就 + khuyết điểm / người = nuông chiều, nhân nhượng. 照顾 = chăm sóc (nghĩa tốt); 将就 (bài 14) = tạm bợ, ưng tạm; 讲究 = chú trọng.'},
-  {wrong:'不管别人怎么劝，她的态度都非常____，谁也改变不了她的决定。',opts:['坚硬','坚韧','稳定','坚定'],ans:3,
-   exp:'态度坚定 = thái độ kiên định, không dao động (词语辨析 坚定—坚韧). 坚硬 (bài 20) = cứng (vật); 坚韧 = bền bỉ, dẻo dai (không đi với 态度); 稳定 = ổn định (tình hình, giá cả).'},
-  {wrong:'竹子质地____，可以用来编织各种生活用品。',opts:['坚定','坚韧','坚决','坚持'],ans:1,
-   exp:'Tả vật liệu vừa chắc vừa dẻo → 坚韧. 坚定 / 坚决 tả thái độ, ý chí; 坚持 là động từ.'},
-  {wrong:'他在纸上____画了几笔，就说画完了。',opts:['混乱','乱七八糟','胡乱','糊涂'],ans:2,
-   exp:'Phó từ 胡乱 + V = làm bừa, qua quýt. 混乱 = hỗn loạn (tính từ); 乱七八糟 = lộn xộn (tả trạng thái, không đứng ngay trước 画); 糊涂 = hồ đồ.'},
-  {wrong:'父母的一言一行都会直接或____地影响孩子。',opts:['间接','连接','接连','迎接'],ans:0,
-   exp:'直接或间接 = trực tiếp hoặc gián tiếp. 连接 = nối liền; 接连 (bài 5) = liên tiếp; 迎接 = đón tiếp.'},
-  {wrong:'许多保健食品都____能够促进健康，其实运动才是维护健康最好的方法。',opts:['表扬','发扬','宣布','宣扬'],ans:3,
-   exp:'宣扬 = rêu rao, quảng bá rộng rãi. 表扬 = khen ngợi; 发扬 = phát huy (truyền thống); 宣布 = tuyên bố (quyết định, tin tức).'},
-  {wrong:'饭后马上做____运动，容易引起肚子疼。',opts:['激烈','热烈','剧烈','强烈'],ans:2,
-   exp:'剧烈运动 = vận động mạnh. 激烈 dùng cho 竞争 / 争论 / 比赛; 热烈 = nhiệt liệt (掌声, 欢迎); 强烈 = mãnh liệt (愿望, 反对, 阳光).'},
-  {wrong:'经过一个学期的努力，他的成绩大____提高了。',opts:['程度','幅度','角度','温度'],ans:1,
-   exp:'大幅度 + 提高 = tăng mạnh. 程度 = mức độ (không nói 大程度提高); 角度 = góc độ; 温度 = nhiệt độ.'},
-  {wrong:'他在这个专业成就非凡，____是行业楷模。',opts:['不愧','不免','不妨','不禁'],ans:0,
-   exp:'不愧是 + N = xứng đáng là N (khen). 不免 (bài 21) = khó tránh khỏi; 不妨 (bài 12) = cứ việc; 不禁 (bài 15) = không kìm được.'},
-  {wrong:'毕业十年了，我和几个老同学一直保持着____。',opts:['联合','联想','联络','络绎'],ans:2,
-   exp:'保持联络 = giữ liên lạc. 联合 = liên hợp, hợp lại; 联想 = liên tưởng; 络绎 chỉ dùng trong 络绎不绝.'},
-  {wrong:'出了一身汗以后，我觉得浑身____，烦恼也都忘了。',opts:['顺利','畅销','通畅','舒畅'],ans:3,
-   exp:'浑身舒畅 = toàn thân khoan khoái. 顺利 = thuận lợi (công việc); 畅销 (bài 16) = bán chạy; 通畅 = thông suốt (đường sá, ống dẫn).'}
+  {wrong:'我爸爸是这个足球队的____球迷，二十年来每场比赛都看。',opts:['忠实','诚实','老实','真实'],ans:0,exp:'忠实球迷 / 忠实观众 = người hâm mộ trung thành. 诚实 / 老实 = thật thà (tả tính cách); 真实 = chân thực (tả sự việc) — đều không đi với 球迷.'},
+  {wrong:'听到我们队赢了的消息，教室里一下子____出一阵笑声。',opts:['爆发','发生','发表','发明'],ans:0,exp:'爆发出 + 笑声 = tiếng cười vang bùng lên. 发生 = xảy ra (không đi với 出 + âm thanh); 发表 = đăng, phát biểu; 发明 = phát minh.'},
+  {wrong:'你别____，我没还你的书不是不想还，是忘了带。',opts:['误解','理解','了解','解释'],ans:0,exp:'Vế sau đính chính (不是……是……) → người kia đang hiểu sai → 误解. 理解 = thấu hiểu; 了解 = tìm hiểu; 解释 là việc của người nói, "你别解释" không hợp.'},
+  {wrong:'一条新闻必须写清楚时间、地点、人物等几个____，少一个都不行。',opts:['要素','因素','原因','理由'],ans:0,exp:'要素 = yếu tố cấu thành, phải có mặt trong một tổng thể. 因素 = nhân tố tác động đến kết quả (影响成绩的因素); 原因 / 理由 = nguyên nhân / lý do.'},
+  {wrong:'这次比赛的结果比____的好，我们队拿了第二名。',opts:['预期','预报','预防','预习'],ans:0,exp:'比预期的好 / 超出预期 = tốt hơn dự tính, mong đợi. 预报 = dự báo (thời tiết); 预防 = phòng ngừa; 预习 = chuẩn bị bài trước.'},
+  {wrong:'太阳不停地向四周____出光和热。',opts:['放射','反射','放松','发挥'],ans:0,exp:'放射 = toả ra từ một nguồn ra bốn phía (mặt trời). 反射 = dội lại từ một bề mặt (雪地反射阳光); 放松 = thả lỏng; 发挥 = phát huy.'},
+  {wrong:'人老了，听力会慢慢____，跟老人说话要大声一点儿。',opts:['衰退','减少','降落','落后'],ans:0,exp:'听力 / 记忆力衰退 = chức năng cơ thể suy giảm. 减少 dùng cho số lượng; 降落 = (máy bay) hạ cánh; 落后 = tụt hậu so với người khác.'},
+  {wrong:'孩子要什么就给什么，这样____他，对他的成长没有好处。',opts:['迁就','将就','讲究','原谅'],ans:0,exp:'迁就 + người = chiều theo, nhân nhượng (cả khi không nên). 将就 = tạm chấp nhận cái chưa tốt; 讲究 = chú trọng, cầu kỳ; 原谅 = tha thứ lỗi đã xảy ra.'},
+  {wrong:'不管遇到多大的困难，她当医生的决心一直很____。',opts:['坚定','坚韧','坚硬','稳定'],ans:0,exp:'决心 / 意志坚定 = vững vàng, không dao động. 坚韧 = dẻo dai, chịu được lâu (性格, vật liệu); 坚硬 = cứng (vật); 稳定 = ổn định (tình hình, giá cả).'},
+  {wrong:'这种绳子非常____，用了好几年都没断。',opts:['坚韧','坚定','坚决','坚持'],ans:0,exp:'Vật vừa chắc vừa dai, khó đứt → 坚韧. 坚定 / 坚决 tả thái độ, ý chí của con người; 坚持 là động từ "kiên trì".'},
+  {wrong:'有些商家为了多卖东西，到处____自己的产品能治百病。',opts:['宣扬','表扬','表达','表现'],ans:0,exp:'宣扬 = rêu rao, quảng bá rộng rãi (ở đây có ý chê). 表扬 = khen ngợi người khác; 表达 = bày tỏ (tình cảm, ý kiến); 表现 = thể hiện.'},
+  {wrong:'感冒还没好，这几天别做____运动，散散步就行了。',opts:['剧烈','激烈','热烈','强烈'],ans:0,exp:'剧烈运动 = vận động mạnh (cường độ cao). 激烈 đi với 比赛 / 竞争 / 争论; 热烈 = nhiệt liệt (热烈欢迎); 强烈 = mãnh liệt (愿望, 阳光).'},
+  {wrong:'今年公司的收入大____增加，每个人都拿到了奖金。',opts:['幅度','程度','角度','速度'],ans:0,exp:'大幅度 + 增加 / 提高 = tăng mạnh. Không nói 大程度 / 大角度 / 大速度 + động từ.'},
+  {wrong:'他第一次参加比赛就拿了冠军，真____是全国最好的教练教出来的。',opts:['不愧','不免','不妨','不禁'],ans:0,exp:'不愧是 + N = xứng đáng là, không hổ danh (lời khen). 不免 = khó tránh khỏi; 不妨 (bài 12) = cứ thử; 不禁 (bài 15) = không kìm được — đều không đi với 是 như vậy.'},
+  {wrong:'爷爷退休以后身体____变差，现在走远路都需要人扶着。',opts:['逐年','往年','常年','当年'],ans:0,exp:'逐年 + V = năm sau kém (hơn) năm trước. 往年 = những năm trước; 常年 = quanh năm; 当年 = năm ấy — đều là danh từ thời gian, không chỉ sự thay đổi dần.'}
 ];
 
 
 
 // ══════════════════════════════════════════
-// DỊCH — câu ghép, ôn từ HSK 6 bài 1–27 và HSK 4–5
+// DỊCH Việt → Trung — câu mới, dùng từ của bài + ôn ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Lười biếng là nhược điểm bẩm sinh của con người, vì vậy muốn kiên trì tập luyện thì đừng chiều theo bản thân.',zh:'懒惰是人天生的弱点，所以要想坚持锻炼，就不要迁就自己。',py:'Lǎnduò shì rén tiānshēng de ruòdiǎn, suǒyǐ yào xiǎng jiānchí duànliàn, jiù bú yào qiānjiù zìjǐ.',goiY:['天生','弱点','要想……就……','迁就'],giai:'天生 (bài 7) = bẩm sinh; 迁就 + 自己 = chiều theo bản thân; 要想……，就…… = muốn … thì …; "đừng" trong lời khuyên dùng 不要.'},
-  {vi:'Kế hoạch lập ra dù hay đến đâu, nếu không thực hiện đến nơi đến chốn thì cũng chỉ là lời nói suông.',zh:'计划制订得再好，如果不落实，也只是一句空话。',py:'Jìhuà zhìdìng de zài hǎo, rúguǒ bú luòshí, yě zhǐ shì yí jù kōnghuà.',goiY:['再……也……','落实','空话'],giai:'V得再 + Adj，也…… = dù … đến đâu cũng …; "thực hiện đến nơi đến chốn" = 落实 (không dịch 实行 — bài 1, dùng cho chế độ, chính sách).'},
-  {vi:'Dù làm việc gì cũng không được bỏ dở nửa chừng, suy cho cùng, thành công phải dựa vào sự kiên trì.',zh:'无论做什么事情都不能半途而废，归根到底，成功要靠坚持。',py:'Wúlùn zuò shénme shìqing dōu bù néng bàntú\'érfèi, guīgēn-dàodǐ, chénggōng yào kào jiānchí.',goiY:['无论……都……','半途而废','归根到底','靠'],giai:'Đáp án sách 练习2 (5): 无论做什么事情都不能半途而废; 归根到底 là xen ngữ (điểm ngữ pháp 2), tách bằng dấu phẩy khi đứng đầu vế.'},
-  {vi:'Học ngoại ngữ phải tiến dần từng bước, nếu quá nóng vội thì ngược lại sẽ mất nhiều hơn được.',zh:'学外语要循序渐进，如果太急于求成，反而会得不偿失。',py:'Xué wàiyǔ yào xúnxù-jiànjìn, rúguǒ tài jíyú qiú chéng, fǎn\'ér huì dé bù cháng shī.',goiY:['循序渐进','急于求成','反而','得不偿失'],giai:'循序渐进 ↔ 急于求成 là cặp trái nghĩa của bài; 反而 = ngược lại; 得不偿失 (bài 20) = được không bù mất.'},
-  {vi:'Tuy thực phẩm chức năng đều quảng cáo là có thể tăng cường sức khoẻ, nhưng vận động mới là cách tốt nhất để giữ gìn sức khoẻ.',zh:'虽然保健食品都宣扬能够促进健康，但运动才是维护健康最好的方法。',py:'Suīrán bǎojiàn shípǐn dōu xuānyáng nénggòu cùjìn jiànkāng, dàn yùndòng cái shì wéihù jiànkāng zuì hǎo de fāngfǎ.',goiY:['虽然……但……','宣扬','才是','维护'],giai:'"quảng cáo rùm beng" = 宣扬 (không phải "tuyên dương" = 表扬); ……才是…… nhấn "mới là"; 维护 (bài 23) + 健康.'},
-  {vi:'Theo điều tra, ý thức rèn luyện sức khoẻ của người dân đang tăng lên từng năm, người đến công viên tập khí công cũng ngày càng đông.',zh:'据调查，群众的健身意识在逐年提升，到公园练气功的人也越来越多。',py:'Jù diàochá, qúnzhòng de jiànshēn yìshi zài zhúnián tíshēng, dào gōngyuán liàn qìgōng de rén yě yuè lái yuè duō.',goiY:['据调查','群众','逐年','气功'],giai:'逐年 + V (điểm ngữ pháp 1: 逐 = lần lượt theo từng …); "đang" = 在 trước 逐年; 意识 (bài 1).'},
-  {vi:'Người già vận động không nên quá mạnh, những động tác biên độ lớn không hợp với tình trạng cơ thể thì tốt nhất đừng miễn cưỡng.',zh:'老年人运动不宜太剧烈，不适合身体状况的大幅度动作最好别勉强。',py:'Lǎoniánrén yùndòng bùyí tài jùliè, bú shìhé shēntǐ zhuàngkuàng de dà fúdù dòngzuò zuìhǎo bié miǎnqiǎng.',goiY:['不宜','剧烈','幅度','勉强'],giai:'"vận động mạnh" = 剧烈 (không dùng 激烈); 大幅度动作 = động tác biên độ lớn; 勉强 (bài 5) = miễn cưỡng, cố quá sức; 不宜 = không nên (văn viết).'},
-  {vi:'Kết quả khám sức khoẻ cho thấy tôi hơi thiếu canxi, bác sĩ dặn tôi phơi nắng nhiều hơn và định kỳ đến bệnh viện kiểm tra.',zh:'体检结果显示我有点儿缺钙，医生嘱咐我多晒太阳，并定期到医院检查。',py:'Tǐjiǎn jiéguǒ xiǎnshì wǒ yǒudiǎnr quē gài, yīshēng zhǔfù wǒ duō shài tàiyáng, bìng dìngqī dào yīyuàn jiǎnchá.',goiY:['缺钙','嘱咐','并','定期'],giai:'嘱咐 (bài 25) + người + V = dặn ai làm gì; 并 nối hai việc được dặn; 定期 đứng trước động từ làm trạng ngữ.'},
-  {vi:'Cô ấy không hổ danh là vận động viên marathon, không những thể lực tốt mà còn có ý chí vô cùng bền bỉ.',zh:'她不愧是马拉松运动员，不但体力好，而且有着非常坚韧的意志。',py:'Tā búkuì shì mǎlāsōng yùndòngyuán, búdàn tǐlì hǎo, érqiě yǒuzhe fēicháng jiānrèn de yìzhì.',goiY:['不愧是','不但……而且……','坚韧','意志'],giai:'不愧是 + N = không hổ danh là N; "ý chí bền bỉ" = 坚韧的意志 (坚定 nhấn không dao động — xem 词语辨析); 意志 (bài 7).'},
-  {vi:'Nếu thường xuyên dùng não thì trí nhớ sẽ không suy giảm quá nhanh; ngược lại, não không dùng cũng sẽ "gỉ sét".',zh:'如果经常用脑，记忆力就不会衰退得太快；反之，大脑不用也会生锈。',py:'Rúguǒ jīngcháng yòng nǎo, jìyìlì jiù bú huì shuāituì de tài kuài; fǎnzhī, dànǎo bú yòng yě huì shēng xiù.',goiY:['如果……就……','衰退','反之','生锈'],giai:'衰退得太快 (bổ ngữ trạng thái); 反之 = ngược lại (văn viết); 生锈 nghĩa bóng "cùn đi, trì độn" — lấy từ lời thầy Vương.'}
+  {vi:'Mấy năm nay, người đi xe đạp đi làm trong thành phố tăng lên từng năm, xe ô tô trên đường ngược lại ít đi.',zh:'这几年，这个城市骑自行车上班的人逐年增加，路上的汽车反而少了。',py:'Zhè jǐ nián, zhège chéngshì qí zìxíngchē shàngbān de rén zhúnián zēngjiā, lù shang de qìchē fǎn\'ér shǎo le.',goiY:['逐年','反而'],giai:'逐年 + V (逐年增加) = tăng từng năm; 反而 = ngược lại (trái với dự đoán).'},
+  {vi:'Cậu cứ trách thầy dạy không hay, nói cho cùng vẫn là do cậu không chăm ôn bài.',zh:'你总怪老师教得不好，归根到底还是你自己不认真复习。',py:'Nǐ zǒng guài lǎoshī jiāo de bù hǎo, guīgēn-dàodǐ háishi nǐ zìjǐ bú rènzhēn fùxí.',goiY:['怪','归根到底','认真'],giai:'归根到底 + 还是…… = suy cho cùng vẫn là (nguyên nhân gốc); 怪 + người = trách, đổ lỗi.'},
+  {vi:'Chuyện vẽ tranh chỉ có thể tiến dần từng bước, càng nóng vội thì càng dễ bỏ dở nửa chừng.',zh:'画画这种事只能循序渐进，越急于求成，越容易半途而废。',py:'Huà huà zhè zhǒng shì zhǐ néng xúnxù-jiànjìn, yuè jíyú qiú chéng, yuè róngyì bàntú\'érfèi.',goiY:['循序渐进','越……越……','急于求成','半途而废'],giai:'循序渐进 ↔ 急于求成 là cặp trái nghĩa của bài; 越 A，越 B = càng A càng B.'},
+  {vi:'Anh ấy chỉ nghe một lần đã hát được, đúng là không hổ danh người học âm nhạc.',zh:'他只听了一遍就会唱了，不愧是学音乐的。',py:'Tā zhǐ tīngle yí biàn jiù huì chàng le, búkuì shì xué yīnyuè de.',goiY:['一遍','不愧是'],giai:'不愧是 + N (学音乐的 = người học nhạc) = xứng danh là; 一遍 đọc yí biàn (biến điệu 一).'},
+  {vi:'Con muốn gì bố mẹ cho nấy, chiều con như vậy e là hơi quá rồi.',zh:'孩子要什么，父母就给什么，这样迁就孩子未免太过分了。',py:'Háizi yào shénme, fùmǔ jiù gěi shénme, zhèyàng qiānjiù háizi wèimiǎn tài guòfèn le.',goiY:['……什么……就……什么','迁就','未免'],giai:'迁就 + người = chiều theo; 未免 (bài 4) = e là, khó tránh hơi … (nhận xét nhẹ nhàng).'},
+  {vi:'Về nước rồi nhớ thường xuyên liên lạc với bọn mình, cậu giữ gìn sức khoẻ nhé!',zh:'回国以后记得常跟我们联络，你多保重！',py:'Huí guó yǐhòu jìde cháng gēn wǒmen liánluò, nǐ duō bǎozhòng!',goiY:['跟……联络','保重'],giai:'跟 + người + 联络 = giữ liên lạc với ai; 多保重 là lời chào tạm biệt quen thuộc khi chia tay lâu.'}
 ];
 
-// Chiều Trung → Việt — bám ý bài khoá
+// ══════════════════════════════════════════
+// Dịch Trung → Việt — câu mới, không trùng chiều trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Khí công còn là một trong những phương pháp rèn luyện sức khoẻ độc đáo của Trung Quốc, có thể tăng cường thể chất, còn có thể hỗ trợ điều trị một số bệnh.',zh:'气功还是中国独特的健身方法之一，可以增强体质，还可以辅助治疗某些疾病。',py:'Qìgōng hái shì Zhōngguó dútè de jiànshēn fāngfǎ zhī yī, kěyǐ zēngqiáng tǐzhì, hái kěyǐ fǔzhù zhìliáo mǒuxiē jíbìng.',goiY:['气功 = khí công','增强体质 = tăng cường thể chất','辅助治疗 = hỗ trợ điều trị'],giai:'……之一 = một trong những …; 辅助 (bài 12) = hỗ trợ, không dịch "phụ trợ" cho câu văn tự nhiên.'},
-  {vi:'Khái niệm mới về sức khoẻ không chỉ là không bị bệnh, mà còn bao gồm sức khoẻ tâm lý và năng lực giao tiếp xã hội.',zh:'健康的新概念不仅是不生病，还包括心理健康和社会交往方面的能力。',py:'Jiànkāng de xīn gàiniàn bùjǐn shì bù shēngbìng, hái bāokuò xīnlǐ jiànkāng hé shèhuì jiāowǎng fāngmiàn de nénglì.',goiY:['不仅……还…… = không chỉ … mà còn …','社会交往 = giao tiếp xã hội'],giai:'……方面的能力 = năng lực về mặt …; dịch gọn "năng lực giao tiếp xã hội".'},
-  {vi:'Muốn khoẻ mạnh, vấn đề hàng đầu là chăm chỉ sử dụng bộ não, não người không dùng cũng sẽ "gỉ sét".',zh:'要健康，首要问题是勤于运用大脑，人的大脑不用也会生锈。',py:'Yào jiànkāng, shǒuyào wèntí shì qínyú yùnyòng dànǎo, rén de dànǎo bú yòng yě huì shēng xiù.',goiY:['首要 = hàng đầu','勤于 = chăm (làm gì)','生锈 = gỉ sét'],giai:'生锈 ở đây là nghĩa bóng (đầu óc cùn đi) — giữ hình ảnh "gỉ sét" trong ngoặc kép cho sinh động.'},
-  {vi:'Dùng luân phiên não trái và não phải, tư duy thường có thể loé lên những tia sáng mới.',zh:'左右脑交替使用，思维常可以放射出新的火花。',py:'Zuǒ-yòu nǎo jiāotì shǐyòng, sīwéi cháng kěyǐ fàngshè chū xīn de huǒhuā.',goiY:['交替 = luân phiên','放射出火花 = loé lên tia sáng'],giai:'放射 không dịch "phóng xạ"; 火花 nghĩa bóng = ý tưởng loé lên.'},
-  {vi:'Nhiều lý thuyết quan trọng của Tiền Học Sâm không phải do ngồi ngay ngắn trước bàn mà nghĩ ra, mà là nảy ra sau khi nghe nhạc.',zh:'钱学森的很多重要理论不是端端正正地坐在桌子前面想出来的，而是听过音乐之后冒出来的。',py:'Qián Xuésēn de hěn duō zhòngyào lǐlùn bú shì duānduānzhèngzhèng de zuò zài zhuōzi qiánmian xiǎng chūlái de, ér shì tīngguo yīnyuè zhīhòu mào chūlái de.',goiY:['不是……而是…… = không phải … mà là …','端端正正 = ngay ngắn','冒出来 = nảy ra'],giai:'Khung 是……的 nhấn cách thức ra đời của lý thuyết; 冒 = bật ra, trồi lên → "nảy ra".'},
-  {vi:'Một số sách dưỡng sinh chỉ ra rằng, người càng chăm dùng não thì phản xạ có điều kiện được hình thành cũng càng nhiều.',zh:'一些养生著作中指出，人用脑越勤，形成的条件反射也越多。',py:'Yìxiē yǎngshēng zhùzuò zhōng zhǐchū, rén yòng nǎo yuè qín, xíngchéng de tiáojiàn fǎnshè yě yuè duō.',goiY:['养生著作 = sách dưỡng sinh','越……越…… = càng … càng …','条件反射 = phản xạ có điều kiện'],giai:'A 越……，B 也越…… = A càng … thì B cũng càng …; 著作 dịch "sách" cho tự nhiên.'},
-  {vi:'Lười biếng là nhược điểm bẩm sinh của con người, vì vậy phải hạ quyết tâm nghiến răng kiên trì, tuyệt đối không được bỏ dở nửa chừng.',zh:'懒惰是人天生的弱点，所以要下狠心咬牙坚持，绝不能半途而废。',py:'Lǎnduò shì rén tiānshēng de ruòdiǎn, suǒyǐ yào xià hěnxīn yǎoyá jiānchí, jué bù néng bàntú\'érfèi.',goiY:['弱点 = nhược điểm','下狠心 = hạ quyết tâm','半途而废 = bỏ dở nửa chừng'],giai:'下狠心 ở đây là nghĩa tốt (quyết tâm dứt khoát), không dịch "nhẫn tâm"; 绝不能 = tuyệt đối không được.'},
-  {vi:'Vận động rèn luyện sức khoẻ suy cho cùng là việc của bản thân, làm qua loa chiếu lệ thật ra là đang tự lừa mình.',zh:'运动健身归根到底是自己的事，胡乱对付其实是在骗自己。',py:'Yùndòng jiànshēn guīgēn-dàodǐ shì zìjǐ de shì, húluàn duìfu qíshí shì zài piàn zìjǐ.',goiY:['归根到底 = suy cho cùng','胡乱对付 = làm qua loa chiếu lệ'],giai:'归根到底 là xen ngữ (điểm ngữ pháp 2); 对付 ở đây = làm cho có, đối phó cho xong.'},
-  {vi:'Tia tử ngoại trong ánh nắng mùa đông có tác dụng khử trùng cho cơ thể, còn thúc đẩy việc hấp thụ canxi.',zh:'冬天阳光中的紫外线对人体有消毒作用，还能促进对钙的吸收。',py:'Dōngtiān yángguāng zhōng de zǐwàixiàn duì réntǐ yǒu xiāo dú zuòyòng, hái néng cùjìn duì gài de xīshōu.',goiY:['紫外线 = tia tử ngoại','消毒 = khử trùng','钙 = canxi'],giai:'对……有……作用 = có tác dụng … đối với …; 对钙的吸收 dịch động từ hoá: "việc hấp thụ canxi".'},
-  {vi:'Vận động rèn luyện phải tiến dần từng bước, đừng nóng vội; những môn vận động mạnh hoặc động tác biên độ lớn thì cố gắng đừng miễn cưỡng.',zh:'运动健身要循序渐进，不要急于求成，剧烈运动或大幅度动作尽量别勉强。',py:'Yùndòng jiànshēn yào xúnxù-jiànjìn, bú yào jíyú qiú chéng, jùliè yùndòng huò dà fúdù dòngzuò jǐnliàng bié miǎnqiǎng.',goiY:['循序渐进 = tiến dần từng bước','急于求成 = nóng vội','剧烈 = mạnh','幅度 = biên độ'],giai:'剧烈运动 = vận động mạnh (không dịch "vận động kịch liệt"); 尽量别 = cố gắng đừng.'}
+  {vi:'Tia tử ngoại trong ánh nắng có thể khử trùng, nên chăn phải thường xuyên mang ra phơi.',zh:'阳光中的紫外线能消毒，所以被子要常拿出去晒晒。',py:'Yángguāng zhōng de zǐwàixiàn néng xiāo dú, suǒyǐ bèizi yào cháng ná chūqù shàishai.',goiY:['紫外线 = tia tử ngoại','消毒 = khử trùng','晒 = phơi'],giai:'拿出去晒晒 = mang ra phơi một chút (lặp động từ 晒晒 cho nhẹ nhàng).'},
+  {vi:'Trứng gà và sữa có nhiều protein, ăn một ít sau khi tập là tốt nhất.',zh:'鸡蛋和牛奶里有很多蛋白质，运动以后吃一点儿最好。',py:'Jīdàn hé niúnǎi lǐ yǒu hěn duō dànbáizhì, yùndòng yǐhòu chī yìdiǎnr zuì hǎo.',goiY:['蛋白质 = protein, chất đạm'],giai:'运动以后 dịch "sau khi tập" cho tự nhiên; 最好 cuối câu = là tốt nhất.'},
+  {vi:'Cây có thể hấp thụ khí CO₂, trong thành phố trồng nhiều cây thì không khí sẽ tốt hơn một chút.',zh:'树能吸收二氧化碳，城市里多种树，空气就会好一些。',py:'Shù néng xīshōu èryǎnghuàtàn, chéngshì lǐ duō zhòng shù, kōngqì jiù huì hǎo yìxiē.',goiY:['二氧化碳 = khí CO₂','吸收 = hấp thụ'],giai:'Câu điều kiện không có 如果: 多种树，……就…… = (nếu) trồng nhiều cây thì ….'},
+  {vi:'Thành tích của một người tất nhiên quan trọng, nhưng phẩm hạnh còn quan trọng hơn.',zh:'一个人的成绩固然重要，但品行更重要。',py:'Yí ge rén de chéngjì gùrán zhòngyào, dàn pǐnxíng gèng zhòngyào.',goiY:['固然 = tất nhiên (thừa nhận)','品行 = phẩm hạnh'],giai:'固然……，但…… (bài 5) = thừa nhận vế trước rồi nhấn vế sau.'},
+  {vi:'Loại áo này có rất nhiều lỗ nhỏ, mặc khi vận động rất mát.',zh:'这种衣服上有很多小孔，运动的时候穿着很凉快。',py:'Zhè zhǒng yīfu shang yǒu hěn duō xiǎo kǒng, yùndòng de shíhou chuānzhe hěn liángkuai.',goiY:['孔 = lỗ','凉快 = mát'],giai:'孔 = lỗ nhỏ (毛孔 = lỗ chân lông); 穿着 = mặc vào (trạng thái).'}
 ];
 
 
@@ -1966,9 +1900,9 @@ var writingData = {
     'Đã dùng 逐 (逐步 / 逐渐…), 归根到底 và ít nhất 6 từ mới của bài chưa?'
   ],
   model:{
-    zh:'（题目：运动健身好处多）有句名言说：“生命在于运动。”其实健康也在于运动。我从初中开始喜欢上了跑步，到现在已经坚持了三年多。刚开始的时候，我跑不了多远就气喘吁吁，第二天腿还疼得厉害。我曾经想过放弃，可是一想到“懒惰是人天生的弱点”，就下狠心不再迁就自己。我给自己订了计划：每天早上跑二十分钟，每周逐步增加一点儿距离。运动要循序渐进，不能急于求成，所以我从来不做太剧烈的运动。有计划，有落实，慢慢地，我能轻松地跑完五公里了。除了身体的运动，我也很重视大脑的运动。周末我常常和爷爷下棋，晚上睡觉前读半小时书。学习累了的时候，我会听听音乐，让左右脑交替休息，这样思维反而更清楚。运动给我带来了很多好处。以前我一到冬天就感冒，现在身体比以前结实多了，很少生病。每次跑完步，出一身汗，心情都特别舒畅，学习的压力也减轻了不少。更重要的是，坚持运动让我的意志变得更坚定了，遇到困难时我不再轻易放弃。归根到底，健康是自己的事，谁也代替不了。我相信每个人都有巨大的潜力，只要找到适合自己的运动方式，并且绝不半途而废，就一定能享受到运动的好处。',
-    py:'(Tímù: Yùndòng jiànshēn hǎochù duō) Yǒu jù míngyán shuō: “Shēngmìng zàiyú yùndòng.” Qíshí jiànkāng yě zàiyú yùndòng. Wǒ cóng chūzhōng kāishǐ xǐhuan shàngle pǎobù, dào xiànzài yǐjīng jiānchíle sān nián duō. Gāng kāishǐ de shíhou, wǒ pǎo bu liǎo duō yuǎn jiù qìchuǎn-xūxū, dì-èr tiān tuǐ hái téng de lìhai. Wǒ céngjīng xiǎngguo fàngqì, kěshì yì xiǎngdào “lǎnduò shì rén tiānshēng de ruòdiǎn”, jiù xià hěnxīn bú zài qiānjiù zìjǐ. Wǒ gěi zìjǐ dìngle jìhuà: měi tiān zǎoshang pǎo èrshí fēnzhōng, měi zhōu zhúbù zēngjiā yìdiǎnr jùlí. Yùndòng yào xúnxù-jiànjìn, bù néng jíyú qiú chéng, suǒyǐ wǒ cónglái bú zuò tài jùliè de yùndòng. Yǒu jìhuà, yǒu luòshí, mànmàn de, wǒ néng qīngsōng de pǎowán wǔ gōnglǐ le. Chúle shēntǐ de yùndòng, wǒ yě hěn zhòngshì dànǎo de yùndòng. Zhōumò wǒ chángcháng hé yéye xiàqí, wǎnshang shuìjiào qián dú bàn xiǎoshí shū. Xuéxí lèile de shíhou, wǒ huì tīngting yīnyuè, ràng zuǒ-yòu nǎo jiāotì xiūxi, zhèyàng sīwéi fǎn\'ér gèng qīngchu. Yùndòng gěi wǒ dàiláile hěn duō hǎochù. Yǐqián wǒ yí dào dōngtiān jiù gǎnmào, xiànzài shēntǐ bǐ yǐqián jiēshi duō le, hěn shǎo shēngbìng. Měi cì pǎowán bù, chū yì shēn hàn, xīnqíng dōu tèbié shūchàng, xuéxí de yālì yě jiǎnqīngle bù shǎo. Gèng zhòngyào de shì, jiānchí yùndòng ràng wǒ de yìzhì biàn de gèng jiāndìng le, yùdào kùnnan shí wǒ bú zài qīngyì fàngqì. Guīgēn-dàodǐ, jiànkāng shì zìjǐ de shì, shéi yě dàitì bu liǎo. Wǒ xiāngxìn měi ge rén dōu yǒu jùdà de qiánlì, zhǐyào zhǎodào shìhé zìjǐ de yùndòng fāngshì, bìngqiě jué bú bàntú\'érfèi, jiù yídìng néng xiǎngshòu dào yùndòng de hǎochù.',
-    vn:'(Nhan đề: Vận động rèn luyện có nhiều lợi ích) Có câu danh ngôn: "Sự sống nằm ở vận động." Thật ra sức khoẻ cũng nằm ở vận động. Em bắt đầu thích chạy bộ từ hồi cấp hai, đến nay đã kiên trì được hơn ba năm. Lúc mới bắt đầu, em chạy chưa được bao xa đã thở hồng hộc, hôm sau chân còn đau dữ dội. Em từng nghĩ đến chuyện bỏ cuộc, nhưng hễ nghĩ tới câu "lười biếng là nhược điểm bẩm sinh của con người" là em lại hạ quyết tâm không chiều theo bản thân nữa. Em lập cho mình một kế hoạch: mỗi sáng chạy hai mươi phút, mỗi tuần tăng dần quãng đường một chút. Vận động phải tiến dần từng bước, không được nóng vội, nên em chưa bao giờ tập những môn quá mạnh. Có kế hoạch, có thực hiện, dần dần em đã có thể chạy hết năm cây số một cách nhẹ nhàng. Ngoài vận động cơ thể, em cũng rất coi trọng vận động trí não. Cuối tuần em thường đánh cờ với ông, tối trước khi ngủ đọc sách nửa tiếng. Những lúc học mệt, em nghe chút nhạc để não trái và não phải luân phiên nghỉ ngơi, như vậy đầu óc ngược lại còn minh mẫn hơn. Vận động đã mang lại cho em rất nhiều lợi ích. Trước đây cứ đến mùa đông là em bị cảm, bây giờ cơ thể rắn chắc hơn trước nhiều, rất ít khi ốm. Mỗi lần chạy xong, đổ một trận mồ hôi, tâm trạng em đều đặc biệt thư thái, áp lực học tập cũng giảm đi không ít. Quan trọng hơn cả, kiên trì vận động khiến ý chí của em trở nên kiên định hơn, gặp khó khăn em không còn dễ dàng bỏ cuộc nữa. Suy cho cùng, sức khoẻ là việc của chính mình, không ai làm thay được. Em tin rằng ai cũng có tiềm năng to lớn, chỉ cần tìm được cách vận động phù hợp với mình và tuyệt đối không bỏ dở nửa chừng, thì nhất định sẽ tận hưởng được lợi ích của vận động.'
+    zh:'（题目：运动健身好处多）有句名言说：“生命在于运动。”其实健康也在于运动。我从初中开始喜欢上了跑步，到现在已经坚持了三年多。刚开始的时候，我跑不了多远就累得要命，第二天腿还疼得厉害。我曾经想过放弃，可是一想到“懒惰是人天生的弱点”，就下狠心不再迁就自己。我给自己订了计划：每天早上跑二十分钟，每周逐步增加一点儿距离。运动要循序渐进，不能急于求成，所以我从来不做太剧烈的运动。有计划，有落实，慢慢地，我能轻松地跑完五公里了。除了身体的运动，我也很重视大脑的运动。周末我常常和爷爷一起背古诗，晚上睡觉前读半小时书。学习累了的时候，我会听听音乐，让左右脑交替休息，这样思维反而更清楚。运动给我带来了很多好处。以前我一到冬天就感冒，现在身体比以前结实多了，很少生病。每次跑完步，出一身汗，心情都特别舒畅，学习的压力也减轻了不少。更重要的是，坚持运动让我的意志变得更坚定了，遇到困难时我不再轻易放弃。归根到底，健康是自己的事，谁也替不了。我相信每个人都有巨大的潜力，只要找到适合自己的运动方式，并且绝不半途而废，就一定能享受到运动的好处。',
+    py:'(Tímù: Yùndòng jiànshēn hǎochù duō) Yǒu jù míngyán shuō: “Shēngmìng zàiyú yùndòng.” Qíshí jiànkāng yě zàiyú yùndòng. Wǒ cóng chūzhōng kāishǐ xǐhuan shàngle pǎobù, dào xiànzài yǐjīng jiānchíle sān nián duō. Gāng kāishǐ de shíhou, wǒ pǎo bu liǎo duō yuǎn jiù lèi de yàomìng, dì-èr tiān tuǐ hái téng de lìhai. Wǒ céngjīng xiǎngguo fàngqì, kěshì yì xiǎngdào “lǎnduò shì rén tiānshēng de ruòdiǎn”, jiù xià hěnxīn bú zài qiānjiù zìjǐ. Wǒ gěi zìjǐ dìngle jìhuà: měi tiān zǎoshang pǎo èrshí fēnzhōng, měi zhōu zhúbù zēngjiā yìdiǎnr jùlí. Yùndòng yào xúnxù-jiànjìn, bù néng jíyú qiú chéng, suǒyǐ wǒ cónglái bú zuò tài jùliè de yùndòng. Yǒu jìhuà, yǒu luòshí, mànmàn de, wǒ néng qīngsōng de pǎowán wǔ gōnglǐ le. Chúle shēntǐ de yùndòng, wǒ yě hěn zhòngshì dànǎo de yùndòng. Zhōumò wǒ chángcháng hé yéye yìqǐ bèi gǔshī, wǎnshang shuìjiào qián dú bàn xiǎoshí shū. Xuéxí lèile de shíhou, wǒ huì tīngting yīnyuè, ràng zuǒ-yòu nǎo jiāotì xiūxi, zhèyàng sīwéi fǎn\'ér gèng qīngchu. Yùndòng gěi wǒ dàiláile hěn duō hǎochù. Yǐqián wǒ yí dào dōngtiān jiù gǎnmào, xiànzài shēntǐ bǐ yǐqián jiēshi duō le, hěn shǎo shēngbìng. Měi cì pǎowán bù, chū yì shēn hàn, xīnqíng dōu tèbié shūchàng, xuéxí de yālì yě jiǎnqīngle bù shǎo. Gèng zhòngyào de shì, jiānchí yùndòng ràng wǒ de yìzhì biàn de gèng jiāndìng le, yùdào kùnnan shí wǒ bú zài qīngyì fàngqì. Guīgēn-dàodǐ, jiànkāng shì zìjǐ de shì, shéi yě tì bu liǎo. Wǒ xiāngxìn měi ge rén dōu yǒu jùdà de qiánlì, zhǐyào zhǎodào shìhé zìjǐ de yùndòng fāngshì, bìngqiě jué bú bàntú\'érfèi, jiù yídìng néng xiǎngshòu dào yùndòng de hǎochù.',
+    vn:'(Nhan đề: Vận động rèn luyện có nhiều lợi ích) Có câu danh ngôn: "Sự sống nằm ở vận động." Thật ra sức khoẻ cũng nằm ở vận động. Em bắt đầu thích chạy bộ từ hồi cấp hai, đến nay đã kiên trì được hơn ba năm. Lúc mới bắt đầu, em chạy chưa được bao xa đã mệt muốn chết, hôm sau chân còn đau dữ dội. Em từng nghĩ đến chuyện bỏ cuộc, nhưng hễ nghĩ tới câu "lười biếng là nhược điểm bẩm sinh của con người" là em lại hạ quyết tâm không chiều theo bản thân nữa. Em lập cho mình một kế hoạch: mỗi sáng chạy hai mươi phút, mỗi tuần tăng dần quãng đường một chút. Vận động phải tiến dần từng bước, không được nóng vội, nên em chưa bao giờ tập những môn quá mạnh. Có kế hoạch, có thực hiện, dần dần em đã có thể chạy hết năm cây số một cách nhẹ nhàng. Ngoài vận động cơ thể, em cũng rất coi trọng vận động trí não. Cuối tuần em thường cùng ông học thuộc thơ cổ, tối trước khi ngủ đọc sách nửa tiếng. Những lúc học mệt, em nghe chút nhạc để não trái và não phải luân phiên nghỉ ngơi, như vậy đầu óc ngược lại còn minh mẫn hơn. Vận động đã mang lại cho em rất nhiều lợi ích. Trước đây cứ đến mùa đông là em bị cảm, bây giờ cơ thể rắn chắc hơn trước nhiều, rất ít khi ốm. Mỗi lần chạy xong, đổ một trận mồ hôi, tâm trạng em đều đặc biệt thư thái, áp lực học tập cũng giảm đi không ít. Quan trọng hơn cả, kiên trì vận động khiến ý chí của em trở nên kiên định hơn, gặp khó khăn em không còn dễ dàng bỏ cuộc nữa. Suy cho cùng, sức khoẻ là việc của chính mình, không ai làm thay được. Em tin rằng ai cũng có tiềm năng to lớn, chỉ cần tìm được cách vận động phù hợp với mình và tuyệt đối không bỏ dở nửa chừng, thì nhất định sẽ tận hưởng được lợi ích của vận động.'
   }
 };
 
@@ -1976,180 +1910,141 @@ var writingData = {
 // LUYỆN NÓI — đúng bảng 练习5 của sách: 根据提示，简述课文主要内容
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Đây là bảng bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b> (dựa vào gợi ý, trình bày ngắn gọn nội dung chính của bài khoá). Mỗi câu hỏi là một dòng của bảng, cột gợi ý giữ nguyên như sách. Bấm loa nghe câu hỏi, <b>tự ghi âm câu trả lời trước</b> rồi mới mở câu mẫu. Cố dùng đúng các từ trong gợi ý.',
-  questions:[
-    {q_zh:'气功的作用有哪些？',
-     q_vn:'Khí công có những tác dụng gì?',
-     hint:'健身、增强……、促进……、辅助治疗……',
-     sample:'气功不只是那种力量一爆发就能把砖劈开的功夫，它还是中国独特的健身方法之一。练气功可以健身，可以增强体质，促进慢性病康复，还可以辅助治疗某些疾病。',
-     sample_vn:'Khí công không chỉ là loại công phu sức mạnh bùng ra là bổ đôi được gạch, nó còn là một trong những phương pháp rèn luyện sức khoẻ độc đáo của Trung Quốc. Tập khí công có thể rèn luyện sức khoẻ, tăng cường thể chất, thúc đẩy bệnh mãn tính hồi phục, còn có thể hỗ trợ điều trị một số bệnh.',
-     note:'Bốn ý của gợi ý → xếp thành chuỗi: 可以……，可以……，促进……，还可以……; điền đủ tân ngữ: 增强体质, 促进慢性病康复, 辅助治疗某些疾病.'},
-    {q_zh:'健康包括哪些方面？',
-     q_vn:'Sức khoẻ bao gồm những mặt nào?',
-     hint:'①不生病、心理、社会交往 ②健康五要素',
-     sample:'健康的新概念不仅是不生病，还包括心理健康和社会交往方面的能力。甚至有人提出了健康五要素，包括身体、情绪、智力、精神和社交，这五个方面共同构成健康的完美状态。',
-     sample_vn:'Khái niệm mới về sức khoẻ không chỉ là không bị bệnh, mà còn bao gồm sức khoẻ tâm lý và năng lực giao tiếp xã hội. Thậm chí có người đưa ra năm yếu tố của sức khoẻ, gồm thể chất, cảm xúc, trí tuệ, tinh thần và giao tiếp xã hội; năm mặt này cùng cấu thành trạng thái sức khoẻ hoàn hảo.',
-     note:'Ý ① dùng 不仅……还包括……; ý ② mở bằng 甚至 (thậm chí) để nâng cấp, rồi kể đủ 5 yếu tố.'},
-    {q_zh:'运动的学问有哪些？',
-     q_vn:'Kiến thức về vận động gồm những gì?',
-     hint:'①勤于运用大脑：左脑……，右脑…… ②贵在坚持：不要迁就、不能半途而废、有计划、有落实 ③冬季健身好处多：紫外线、二氧化碳、心情、皮肤 ④讲究科学：循序渐进、锻炼后进食',
-     sample:'第一，要勤于运用大脑：左脑主管抽象思维，右脑主管形象思维，左右脑交替使用，思维常能放射出新的火花。第二，运动贵在坚持：不要迁就自己，绝不能半途而废，要有计划，有落实。第三，冬季健身好处多：阳光中的紫外线有消毒作用，还能促进钙的吸收；冬天空气中二氧化碳浓度低；运动还能使人心情舒畅，排汗让皮肤更好。第四，运动要讲究科学：要循序渐进，不要急于求成；锻炼后的两小时要及时补充蛋白质、水和维生素。',
-     sample_vn:'Thứ nhất, phải chăm dùng não: não trái phụ trách tư duy trừu tượng, não phải phụ trách tư duy hình tượng, dùng luân phiên hai bên thì tư duy thường loé lên tia sáng mới. Thứ hai, vận động quý ở kiên trì: đừng chiều theo bản thân, tuyệt đối không bỏ dở nửa chừng, phải có kế hoạch, có thực hiện. Thứ ba, tập luyện mùa đông nhiều lợi ích: tia tử ngoại trong nắng có tác dụng khử trùng, còn giúp hấp thụ canxi; không khí mùa đông nồng độ CO₂ thấp; vận động còn làm tâm trạng thư thái, đổ mồ hôi giúp da đẹp hơn. Thứ tư, vận động phải khoa học: tiến dần từng bước, đừng nóng vội; trong hai tiếng sau khi tập phải kịp thời bổ sung protein, nước và vitamin.',
-     note:'Bốn ý ①–④ → nối bằng 第一 / 第二 / 第三 / 第四 (hoặc 首先 / 其次 / 另外 / 最后 như thầy Vương); mỗi ý nêu tiêu đề trước rồi giải thích.'}
+  intro: 'Đây là bảng bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b> (dựa vào gợi ý, trình bày ngắn gọn nội dung chính của bài khoá). Mỗi câu hỏi là một dòng của bảng, cột gợi ý giữ nguyên như sách. Bấm loa nghe câu hỏi, <b>tự ghi âm câu trả lời trước</b> rồi mới mở câu mẫu. Cố dùng đúng các từ trong gợi ý.',
+  questions: [
+    {q_zh:'气功的作用有哪些？',q_vn:'Khí công có những tác dụng gì?',hint:'健身、增强……、促进……、辅助治疗……',sample:'气功不只是那种力量一爆发就能把砖劈开的功夫，它还是中国独特的健身方法之一。练气功可以健身，可以增强体质，促进慢性病康复，还可以辅助治疗某些疾病。',sample_vn:'Khí công không chỉ là loại công phu sức mạnh bùng ra là bổ đôi được gạch, nó còn là một trong những phương pháp rèn luyện sức khoẻ độc đáo của Trung Quốc. Tập khí công có thể rèn luyện sức khoẻ, tăng cường thể chất, thúc đẩy bệnh mãn tính hồi phục, còn có thể hỗ trợ điều trị một số bệnh.',note:'Bốn ý của gợi ý → xếp thành chuỗi: 可以……，可以……，促进……，还可以……; điền đủ tân ngữ: 增强体质, 促进慢性病康复, 辅助治疗某些疾病.'},
+    {q_zh:'健康包括哪些方面？',q_vn:'Sức khoẻ bao gồm những mặt nào?',hint:'①不生病、心理、社会交往 ②健康五要素',sample:'健康的新概念不仅是不生病，还包括心理健康和社会交往方面的能力。甚至有人提出了健康五要素，包括身体、情绪、智力、精神和社交，这五个方面共同构成健康的完美状态。',sample_vn:'Khái niệm mới về sức khoẻ không chỉ là không bị bệnh, mà còn bao gồm sức khoẻ tâm lý và năng lực giao tiếp xã hội. Thậm chí có người đưa ra năm yếu tố của sức khoẻ, gồm thể chất, cảm xúc, trí tuệ, tinh thần và giao tiếp xã hội; năm mặt này cùng cấu thành trạng thái sức khoẻ hoàn hảo.',note:'Ý ① dùng 不仅……还包括……; ý ② mở bằng 甚至 (thậm chí) để nâng cấp, rồi kể đủ 5 yếu tố.'},
+    {q_zh:'运动的学问有哪些？',q_vn:'Kiến thức về vận động gồm những gì?',hint:'①勤于运用大脑：左脑……，右脑…… ②贵在坚持：不要迁就、不能半途而废、有计划、有落实 ③冬季健身好处多：紫外线、二氧化碳、心情、皮肤 ④讲究科学：循序渐进、锻炼后进食',sample:'第一，要勤于运用大脑：左半球主管抽象思维，右半球主管形象思维，左右脑交替使用，思维常能放射出新的火花。第二，运动贵在坚持：不要迁就自己，绝不能半途而废，要有计划，有落实。第三，冬季健身好处多：阳光中的紫外线有消毒作用，还能促进钙的吸收；冬天空气中二氧化碳浓度低；运动还能使人心情舒畅，排汗让皮肤更好。第四，运动要讲究科学：要循序渐进，不要急于求成；锻炼后的两小时要及时补充蛋白质、水和维生素。',sample_vn:'Thứ nhất, phải chăm dùng não: não trái phụ trách tư duy trừu tượng, não phải phụ trách tư duy hình tượng, dùng luân phiên hai bên thì tư duy thường loé lên tia sáng mới. Thứ hai, vận động quý ở kiên trì: đừng chiều theo bản thân, tuyệt đối không bỏ dở nửa chừng, phải có kế hoạch, có thực hiện. Thứ ba, tập luyện mùa đông nhiều lợi ích: tia tử ngoại trong nắng có tác dụng khử trùng, còn giúp hấp thụ canxi; không khí mùa đông nồng độ CO₂ thấp; vận động còn làm tâm trạng thư thái, đổ mồ hôi giúp da đẹp hơn. Thứ tư, vận động phải khoa học: tiến dần từng bước, đừng nóng vội; trong hai tiếng sau khi tập phải kịp thời bổ sung protein, nước và vitamin.',note:'Bốn ý ①–④ → nối bằng 第一 / 第二 / 第三 / 第四 (hoặc 首先 / 其次 / 另外 / 最后 như thầy Vương); mỗi ý nêu tiêu đề trước rồi giải thích.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — 听力 (sách HSK 6 không có sách bài tập nghe)
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — câu tự soạn (sách HSK 6 không có sách bài tập nghe), mỗi câu một tình huống mới
+// ══════════════════════════════════════════
 var listenExamData = {
-  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. ' +
-         'Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
-  source: 'Soạn theo dạng đề HSK 6 · chủ đề bài 31',
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 31',
   items: [
-    {n:1,
-     lines:[{sp:'女',zh:'你不是说每天都去跑步吗？怎么才坚持了一个星期就不去了？'},
-            {sp:'男',zh:'第一天我就跑了十公里，结果腿疼了好几天，现在一想到跑步就害怕。'}],
-     q:'男的为什么不去跑步了？',qvn:'Vì sao người đàn ông không đi chạy nữa?',
-     opts:['工作太忙了','天气太冷了','一开始跑得太多，腿疼','找不到一起跑步的人'],ans:2,
-     why:'第一天我就跑了十公里，结果腿疼了好几天 → tập quá sức ngay từ đầu (急于求成), không phải bận hay trời lạnh.',
-     words:['急于求成']},
-
-    {n:2,
-     lines:[{sp:'男',zh:'王老师，听说您收了好几个徒弟？'},
-            {sp:'女',zh:'哪儿啊，他们都是太极剑协会的会员，大家一起练，我只是比他们早学了几年。'}],
-     q:'关于那些人，可以知道什么？',qvn:'Về những người đó, có thể biết điều gì?',
-     opts:['是太极剑协会的会员','是王老师的学生','都比王老师年纪大','刚开始学气功'],ans:0,
-     why:'他们都是太极剑协会的会员 → họ là hội viên của hội thái cực kiếm, không phải đồ đệ.',
-     words:['徒弟','剑','协会']},
-
-    {n:3,
-     lines:[{sp:'女',zh:'医生，我最近常常头晕，是不是得吃点儿保健品？'},
-            {sp:'男',zh:'保健品广告宣扬得再好，也不能代替运动。你先每天散散步，多晒晒太阳，以后定期来医院检查就行。'}],
-     q:'医生建议女的怎么做？',qvn:'Bác sĩ khuyên người phụ nữ làm gì?',
-     opts:['马上住院','多吃保健品','做剧烈运动','每天散步、晒太阳'],ans:3,
-     why:'你先每天散散步，多晒晒太阳 → mỗi ngày đi dạo, phơi nắng; bác sĩ nói thực phẩm chức năng không thay được vận động.',
-     words:['宣扬','定期']},
-
-    {n:4,
-     lines:[{sp:'男',zh:'你的皮肤最近怎么变得这么好？用了什么新的化妆品？'},
-            {sp:'女',zh:'什么也没用。我每天下班去游泳，出一身汗，毛孔里的脏东西都排出来了，皮肤自然就好了。'}],
-     q:'女的皮肤为什么变好了？',qvn:'Vì sao da người phụ nữ đẹp lên?',
-     opts:['用了新化妆品','坚持游泳，出汗排毒','每天吃水果','睡得比以前早'],ans:1,
-     why:'我每天下班去游泳，出一身汗，毛孔里的脏东西都排出来了 → nhờ bơi, đổ mồ hôi.',
-     words:['孔']},
-
-    {n:5,
-     lines:[{sp:'女',zh:'这次期末考试你进步这么大，有什么秘诀吗？'},
-            {sp:'男',zh:'也没什么秘诀。以前我总是迁就自己，想玩就玩。这学期我订了计划，每天都按计划落实，归根到底还是坚持的结果。'}],
-     q:'男的认为自己进步的原因是什么？',qvn:'Người đàn ông cho rằng nguyên nhân mình tiến bộ là gì?',
-     opts:['坚持按计划学习','找到了好老师','考试题很简单','上了补习班'],ans:0,
-     why:'每天都按计划落实，归根到底还是坚持的结果 → kiên trì làm theo kế hoạch.',
-     words:['迁就','落实','归根到底']},
-
-    {n:6,
-     lines:[{sp:'男',zh:'我爷爷七十多岁了，他也想跟我去健身房锻炼，你觉得可以吗？'},
-            {sp:'女',zh:'可以是可以，不过老人不适合做剧烈运动，动作的幅度也不能太大。我看让他先练练太极拳，循序渐进比较好。'}],
-     q:'女的是什么意思？',qvn:'Ý của người phụ nữ là gì?',
-     opts:['老人不应该锻炼','老人应该去健身房','老人锻炼要循序渐进','老人只能散步'],ans:2,
-     why:'不适合做剧烈运动……先练练太极拳，循序渐进比较好 → người già tập phải từ từ; A sai vì cô ấy nói 可以.',
-     words:['剧烈','幅度','循序渐进']},
-
-    {n:7,
-     lines:[{sp:'女',zh:'人的大脑潜力巨大，据说一般人只用了很小的一部分。大脑也和身体一样，越用越灵活，不用就会生锈。科学家发现，经常读书、下棋、学外语的老人，记忆力衰退得比较慢。所以，想要健康长寿，不但要锻炼身体，还要经常锻炼大脑。'}],
-     q:'这段话主要想告诉我们什么？',qvn:'Đoạn này chủ yếu muốn nói với chúng ta điều gì?',
-     opts:['老人应该多学外语','大脑也需要经常锻炼','下棋比读书更有用','记忆力一定会衰退'],ans:1,
-     why:'不但要锻炼身体，还要经常锻炼大脑 → câu kết là ý chính; A, C chỉ là ví dụ, D không đúng (chỉ nói suy giảm chậm hơn).',
-     words:['潜力','生锈','衰退']},
-
-    {n:8,
-     lines:[{sp:'男',zh:'很多人以为冬天天气冷，不适合运动。其实冬季健身的好处很多：冬天阳光中的紫外线有消毒作用，还能帮助人体吸收钙；冬天空气中二氧化碳的浓度比夏天低，运动起来对身体更有利。当然，冬天运动前一定要做好准备活动，以免受伤。'}],
-     q:'根据这段话，下列哪项正确？',qvn:'Theo đoạn này, câu nào dưới đây đúng?',
-     opts:['冬天不适合运动','冬天的紫外线对人体有害','冬天运动前不用做准备活动','冬天阳光能帮助人体吸收钙'],ans:3,
-     why:'冬天阳光中的紫外线……还能帮助人体吸收钙 → D đúng; A là quan niệm sai được bác bỏ (其实), C trái với 一定要做好准备活动.',
-     words:['紫外线','消毒','钙','二氧化碳']}
+    {
+      n: 1,
+      lines: [
+        {sp:'女',zh:'你不是说每天都去跑步吗？怎么才一个星期就不去了？'},
+        {sp:'男',zh:'我太急于求成了，第一天就跑了十公里，结果腿疼了好几天。'}
+      ],
+      q: '男的为什么不去跑步了？',
+      qvn: 'Vì sao người đàn ông không đi chạy nữa?',
+      opts: ['工作太忙了','天气太冷了','一开始跑得太多，腿疼','找不到一起跑步的人'],
+      ans: 2,
+      why: '急于求成 + 第一天就跑了十公里，结果腿疼 → tập quá sức ngay từ đầu nên đau chân; không nhắc đến bận hay trời lạnh.',
+      words: ['急于求成']
+    },
+    {
+      n: 2,
+      lines: [
+        {sp:'男',zh:'刘老师，公园里跟您一起练剑的那些人，都是您的徒弟吗？'},
+        {sp:'女',zh:'不是，他们是太极剑协会的会员，我们只是一起练。'}
+      ],
+      q: '那些人是什么人？',
+      qvn: 'Những người đó là ai?',
+      opts: ['协会的会员','刘老师的徒弟','刘老师的家人','公园的工作人员'],
+      ans: 0,
+      why: '他们是太极剑协会的会员 → hội viên của hội thái cực kiếm; 不是 phủ nhận "đồ đệ".',
+      words: ['剑','徒弟','协会']
+    },
+    {
+      n: 3,
+      lines: [
+        {sp:'女',zh:'这种保健食品广告上说能治好多种病，我想给我妈买点儿。'},
+        {sp:'男',zh:'广告宣扬得再好也别信，让你妈多出去走走，比吃什么都有用。'}
+      ],
+      q: '男的是什么意思？',
+      qvn: 'Ý người đàn ông là gì?',
+      opts: ['保健食品很便宜','应该多买一些','广告说得很对','多运动比保健食品有用'],
+      ans: 3,
+      why: '宣扬得再好也别信 + 多出去走走，比吃什么都有用 → vận động có ích hơn thực phẩm chức năng.',
+      words: ['宣扬']
+    },
+    {
+      n: 4,
+      lines: [
+        {sp:'男',zh:'你最近皮肤怎么这么好？'},
+        {sp:'女',zh:'我每天下班都去游泳，出一身汗，毛孔里的脏东西都排出来了。'}
+      ],
+      q: '女的皮肤为什么变好了？',
+      qvn: 'Vì sao da người phụ nữ đẹp lên?',
+      opts: ['吃了很多水果','每天游泳出汗','睡得比以前早','换了一份工作'],
+      ans: 1,
+      why: '每天下班都去游泳，出一身汗 → nhờ bơi và đổ mồ hôi, chất bẩn trong lỗ chân lông được thải ra.',
+      words: ['孔']
+    },
+    {
+      n: 5,
+      lines: [
+        {sp:'女',zh:'这学期你的成绩提高了这么多，是怎么做到的？'},
+        {sp:'男',zh:'以前我总是订了计划不落实，现在每天的计划都完成了再睡觉。归根到底，就是坚持。'}
+      ],
+      q: '男的认为自己进步靠的是什么？',
+      qvn: 'Người đàn ông cho rằng mình tiến bộ là nhờ gì?',
+      opts: ['坚持完成计划','找了个好老师','考试题变容易了','每天睡得很少'],
+      ans: 0,
+      why: '归根到底，就是坚持 → nguyên nhân gốc là kiên trì hoàn thành kế hoạch mỗi ngày.',
+      words: ['落实','归根到底']
+    },
+    {
+      n: 6,
+      lines: [
+        {sp:'男',zh:'我奶奶也想去健身房锻炼，你看行吗？'},
+        {sp:'女',zh:'行是行，不过老人不能做剧烈运动，动作幅度也别太大，得循序渐进。'}
+      ],
+      q: '女的是什么意思？',
+      qvn: 'Ý người phụ nữ là gì?',
+      opts: ['老人不应该锻炼','老人只能在家里锻炼','老人锻炼要慢慢来','老人应该多跑步'],
+      ans: 2,
+      why: '行是行，不过…… = được thì được, nhưng…; 循序渐进 = tiến dần từng bước → tập từ từ. A sai vì cô ấy nói 行.',
+      words: ['剧烈','幅度','循序渐进']
+    },
+    {
+      n: 7,
+      lines: [
+        {sp:'女',zh:'你女儿才八岁就能背一百多首诗，真有潜力！'},
+        {sp:'男',zh:'哦，那都是她自己喜欢，我们从来没要求过她。'}
+      ],
+      q: '男的是什么意思？',
+      qvn: 'Ý người đàn ông là gì?',
+      opts: ['是父母要求她背的','女儿不喜欢诗','女儿已经十岁了','女儿是自己喜欢背'],
+      ans: 3,
+      why: '那都是她自己喜欢，我们从来没要求过她 → con bé tự thích; 哦 = "ồ" mở đầu lời đáp khiêm tốn.',
+      words: ['潜力','哦']
+    }
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
+// ══════════════════════════════════════════
 var situationData = {
-  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
-         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Thầy giáo khen em nói tiếng Trung như người bản xứ.',
-     a:{sp:'Thầy giáo',zh:'你的汉语说得这么地道，简直就是个中国通！',vn:'Tiếng Trung của em nói chuẩn thế, đúng là "người sành Trung Quốc"!'},
-     need:['Dùng 不敢当'],
-     sample:'老师，不敢当，我还差得远呢，以后还得请您多指导。',
-     samplePy:'Lǎoshī, bùgǎndāng, wǒ hái chà de yuǎn ne, yǐhòu hái děi qǐng nín duō zhǐdǎo.',
-     sampleVn:'Thưa thầy, em không dám nhận đâu, em còn kém xa lắm, sau này còn phải nhờ thầy chỉ bảo nhiều.',
-     tip:'不敢当 + 我还差得远呢 là cách đáp lời khen khiêm tốn rất tự nhiên (đáp án sách 练习2 (1)).'},
-
-    {scene:'Bạn định bỏ lớp học bơi vì thấy mệt sau hai buổi.',
-     a:{sp:'Bạn',zh:'学游泳太累了，我才去了两次就不想去了。',vn:'Học bơi mệt quá, tớ mới đi hai buổi đã chẳng muốn đi nữa.'},
-     need:['Dùng 半途而废','Dùng 循序渐进 hoặc 急于求成'],
-     sample:'刚开始累是正常的，学游泳要循序渐进，你可千万别半途而废啊。',
-     samplePy:'Gāng kāishǐ lèi shì zhèngcháng de, xué yóuyǒng yào xúnxù-jiànjìn, nǐ kě qiānwàn bié bàntú\'érfèi a.',
-     sampleVn:'Mới đầu mệt là bình thường, học bơi phải từ từ từng bước, cậu nhất định đừng bỏ dở nửa chừng nhé.',
-     tip:'千万别 + 半途而废 = nhất định đừng bỏ dở; 可 nhấn giọng khuyên.'},
-
-    {scene:'Em trai kể: mẹ cứ để nó chơi game bao lâu cũng được.',
-     a:{sp:'Em trai',zh:'妈妈说我想玩多久就玩多久，反正放假了。',vn:'Mẹ bảo em muốn chơi bao lâu thì chơi, dù sao cũng nghỉ hè rồi.'},
-     need:['Dùng 迁就'],
-     sample:'妈妈这是在迁就你，可你自己要有计划，不能一玩就是一整天。',
-     samplePy:'Māma zhè shì zài qiānjiù nǐ, kě nǐ zìjǐ yào yǒu jìhuà, bù néng yì wán jiù shì yì zhěng tiān.',
-     sampleVn:'Mẹ đang chiều em đấy, nhưng bản thân em phải có kế hoạch, không thể cứ chơi là chơi cả ngày.',
-     tip:'迁就 + người = nuông chiều; 一 V 就是 + thời lượng = hễ làm là làm cả ….'},
-
-    {scene:'Bạn hỏi vì sao em thích tập thể dục buổi sáng mùa đông dù trời lạnh.',
-     a:{sp:'Bạn',zh:'冬天早上那么冷，你还出去跑步，不怕冻着吗？',vn:'Sáng mùa đông lạnh thế mà cậu vẫn ra ngoài chạy, không sợ bị lạnh à?'},
-     need:['Dùng 舒畅','Dùng 归根到底 hoặc 说到底'],
-     sample:'跑完步出一身汗，心情特别舒畅。说到底，锻炼是为了自己的健康，冷一点儿怕什么？',
-     samplePy:'Pǎowán bù chū yì shēn hàn, xīnqíng tèbié shūchàng. Shuō dào dǐ, duànliàn shì wèile zìjǐ de jiànkāng, lěng yìdiǎnr pà shénme?',
-     sampleVn:'Chạy xong đổ một trận mồ hôi, tâm trạng khoan khoái lắm. Nói cho cùng, tập luyện là vì sức khoẻ của mình, lạnh một chút thì sợ gì?',
-     tip:'说到底 / 归根到底 đặt đầu vế nêu kết luận căn bản (điểm ngữ pháp 2).'},
-
-    {scene:'Bạn cùng lớp khen bố em (là huấn luyện viên) hướng dẫn tập rất bài bản.',
-     a:{sp:'Bạn',zh:'你爸爸教我们的方法真科学，才练了一个月，我就能跑三公里了。',vn:'Bố cậu dạy bọn tớ cách tập khoa học thật, mới tập một tháng tớ đã chạy được ba cây số rồi.'},
-     need:['Dùng 不愧'],
-     sample:'那当然，他当了二十年教练，不愧是这方面的专家。',
-     samplePy:'Nà dāngrán, tā dāngle èrshí nián jiàoliàn, búkuì shì zhè fāngmiàn de zhuānjiā.',
-     sampleVn:'Đương nhiên rồi, bố tớ làm huấn luyện viên hai mươi năm, không hổ danh là chuyên gia về mặt này.',
-     tip:'不愧是 + N — lời khen (câu cuối của phóng viên trong bài khoá).'}
+    {scene:'Thầy giáo khen em nói tiếng Trung như người Trung Quốc.',a:{sp:'Thầy giáo',zh:'你的汉语说得这么地道，跟中国人一样！',vn:'Em nói tiếng Trung chuẩn thế, y như người Trung Quốc!'},need:['Dùng 不敢当','Khiêm tốn, nhờ thầy chỉ bảo thêm'],sample:'您这么说我可不敢当，我还差得远呢，以后还得请您多指导。',samplePy:'Nín zhème shuō wǒ kě bùgǎndāng, wǒ hái chà de yuǎn ne, yǐhòu hái děi qǐng nín duō zhǐdǎo.',sampleVn:'Thầy nói vậy em không dám nhận đâu, em còn kém xa lắm, sau này còn phải nhờ thầy chỉ bảo nhiều.',tip:'不敢当 + 我还差得远呢 là cách đáp lời khen khiêm tốn; 可 nhấn giọng.'},
+    {scene:'Bạn định bỏ lớp học bơi vì thấy mệt sau hai buổi.',a:{sp:'Bạn',zh:'学游泳太累了，我才去了两次就不想去了。',vn:'Học bơi mệt quá, tớ mới đi hai buổi đã chẳng muốn đi nữa.'},need:['Dùng 半途而废','Động viên bạn'],sample:'刚开始都会累，过几天就习惯了。学什么都得一步一步来，你可千万别半途而废啊。',samplePy:'Gāng kāishǐ dōu huì lèi, guò jǐ tiān jiù xíguàn le. Xué shénme dōu děi yí bù yí bù lái, nǐ kě qiānwàn bié bàntú\'érfèi a.',sampleVn:'Mới đầu ai cũng mệt, vài hôm là quen thôi. Học gì cũng phải từng bước một, cậu nhất định đừng bỏ dở nửa chừng nhé.',tip:'千万别 + 半途而废 = nhất định đừng bỏ dở; 一步一步来 = từng bước một.'},
+    {scene:'Em trai kể: mẹ cứ để nó chơi game bao lâu cũng được.',a:{sp:'Em trai',zh:'妈妈说我想玩多久就玩多久，反正放假了。',vn:'Mẹ bảo em muốn chơi bao lâu thì chơi, dù sao cũng nghỉ hè rồi.'},need:['Dùng 迁就','Khuyên em tự có kế hoạch'],sample:'妈妈这是在迁就你，可你自己要有计划，不能一玩就是十几个小时。',samplePy:'Māma zhè shì zài qiānjiù nǐ, kě nǐ zìjǐ yào yǒu jìhuà, bù néng yì wán jiù shì shí jǐ ge xiǎoshí.',sampleVn:'Mẹ đang chiều em đấy, nhưng bản thân em phải có kế hoạch, không thể cứ chơi là chơi mười mấy tiếng.',tip:'迁就 + người = nuông chiều; 一 V 就是 + thời lượng = hễ làm là làm cả ….'},
+    {scene:'Bạn hỏi vì sao em vẫn chạy bộ buổi sáng mùa đông dù trời lạnh.',a:{sp:'Bạn',zh:'冬天早上那么冷，你还出去跑步，不怕冻着吗？',vn:'Sáng mùa đông lạnh thế mà cậu vẫn ra ngoài chạy, không sợ bị lạnh à?'},need:['Dùng 舒畅','Dùng 归根到底 hoặc 说到底'],sample:'跑完步出一身汗，心情特别舒畅。说到底，锻炼是为了自己的健康，冷一点儿怕什么？',samplePy:'Pǎowán bù chū yì shēn hàn, xīnqíng tèbié shūchàng. Shuō dào dǐ, duànliàn shì wèile zìjǐ de jiànkāng, lěng yìdiǎnr pà shénme?',sampleVn:'Chạy xong đổ một trận mồ hôi, tâm trạng khoan khoái lắm. Nói cho cùng, tập luyện là vì sức khoẻ của mình, lạnh một chút thì sợ gì?',tip:'说到底 / 归根到底 đặt đầu vế nêu kết luận căn bản.'},
+    {scene:'Bạn cùng lớp khen bố em (huấn luyện viên) hướng dẫn tập rất bài bản.',a:{sp:'Bạn',zh:'你爸爸教我们的方法真科学，才练了一个月，我就能跑三公里了。',vn:'Bố cậu dạy bọn tớ cách tập khoa học thật, mới tập một tháng tớ đã chạy được ba cây số rồi.'},need:['Dùng 不愧'],sample:'那当然，他教了二十年体育，不愧是个老教练，经验丰富着呢。',samplePy:'Nà dāngrán, tā jiāole èrshí nián tǐyù, búkuì shì ge lǎo jiàoliàn, jīngyàn fēngfù zhe ne.',sampleVn:'Đương nhiên rồi, bố tớ dạy thể dục hai mươi năm, đúng là huấn luyện viên lão luyện, kinh nghiệm phong phú lắm.',tip:'不愧是 + N = không hổ danh là; Adj + 着呢 (bài 3) = … lắm (khẩu ngữ).'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 // 🎯 NÓI SAO CHO HAY — 得体 / 语体
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 var registerData = {
-  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
-         'HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
   items: [
-    {scene:'MC mở đầu chương trình truyền hình, chào vị khách mời là chuyên gia.',
-     a:'王老师，欢迎您到我们节目来做客。',b:'老王，来啦？坐吧坐吧。',better:'a',
-     why:'Trên truyền hình với khách mời chuyên gia cần lịch sự: 欢迎您到……来做客. Câu b (老王，来啦) chỉ hợp với người quen thân.'},
-
-    {scene:'Nhắn tin rủ bạn thân sáng mai đi chạy bộ.',
-     a:'明早六点公园门口见，一起跑步去！',b:'兹定于明日清晨六时于公园正门集合，开展晨跑活动。',better:'a',
-     why:'Tin nhắn cho bạn thân dùng khẩu ngữ ngắn gọn. Câu b (兹定于, 开展……活动) là giọng thông báo hành chính.'},
-
-    {scene:'Bài báo khoa học về sức khoẻ.',
-     a:'研究表明，适度运动可以增强体质，促进慢性病康复。',b:'我跟你说，动一动身体倍儿棒，病也好得快。',better:'a',
-     why:'Văn báo chí khoa học dùng 研究表明, 增强体质, 促进……康复. Câu b (倍儿棒) là tiếng lóng khẩu ngữ.'},
-
-    {scene:'Chia tay người bạn già trước khi ông về quê.',
-     a:'您一路平安，多多保重！',b:'请您于返程途中注意人身安全。',better:'a',
-     why:'Lời chia tay cần thân tình: 一路平安，多多保重. Câu b như biển báo, loa phát thanh — lạnh lùng.'},
-
-    {scene:'Em trả lời bạn cùng lớp hỏi: "Trưa ăn gì?"',
-     a:'随便，你定吧。',b:'本人对午餐无特殊要求，由阁下决定即可。',better:'a',
-     why:'Hội thoại bạn bè: 随便 (tính từ làm vị ngữ — 词语辨析). Câu b (本人, 阁下, 即可) quá trang trọng, nghe như đùa.'},
-
-    {scene:'Thông báo của hội khí công dán ở bảng tin công viên.',
-     a:'本协会每周六上午在公园走廊举行气功练习活动，欢迎广大群众参加。',b:'周六早上来走廊那儿一块儿练练呗。',better:'a',
-     why:'Thông báo công khai của một tổ chức dùng văn viết: 本协会, 举行……活动, 欢迎广大群众参加. Câu b (呗, 一块儿) chỉ hợp khi rủ người quen.'}
+    {scene:'Tiễn ông bà nội về quê.',a:'爷爷奶奶，路上小心，到家给我打个电话，你们多保重！',b:'祝二位旅途顺利，望注意人身安全。',better:'a',why:'Nói với ông bà cần thân tình: 路上小心, 多保重. Câu b (二位, 望注意人身安全) như lời thông báo, lạnh lùng.'},
+    {scene:'Em viết nhật ký vui về chuyện hai chị em tranh nhau xem chương trình TV, muốn câu văn hài hước.',a:'为了看哪个电视节目，我和弟弟在客厅里吵了几句。',b:'为了看哪个电视节目，我和弟弟在客厅里爆发了一场“战争”。',better:'b',why:'Muốn hài hước thì dùng "từ lớn cho việc nhỏ": 爆发战争 cho một cuộc cãi nhau vặt. Câu a đúng nhưng nhạt.'},
+    {scene:'Thông báo của hội khí công dán ở bảng tin công viên.',a:'本协会每周六上午在公园走廊举行气功练习活动，欢迎广大群众参加。',b:'周六早上来走廊那儿，咱们一块儿练练吧！',better:'a',why:'Thông báo công khai của một tổ chức dùng văn viết: 本协会, 举行……活动, 欢迎广大群众参加. Câu b chỉ hợp khi rủ người quen.'},
+    {scene:'Bài báo về sức khoẻ đăng trên tạp chí.',a:'你看，多动动身体，啥病都没了！',b:'有关调查发现，经常运动的人比不运动的人更少生病。',better:'b',why:'Văn báo chí dùng 有关调查发现 và nói có chừng mực. Câu a (啥, 啥病都没了) là khẩu ngữ, lại nói quá.'},
+    {scene:'Nhắn tin rủ bạn thân sáng mai đi chạy bộ.',a:'明天六点公园门口见，一起跑步去！',b:'明日上午六时，请准时到公园正门集合，参加跑步活动。',better:'a',why:'Tin nhắn cho bạn thân dùng khẩu ngữ ngắn gọn. Câu b (明日, 六时, 集合) là giọng thông báo hành chính.'},
+    {scene:'Em thay mặt các hội viên phát biểu ở buổi tổng kết của hội, cảm ơn thầy dạy.',a:'老张，谢啦，没你我们练不成。',b:'感谢张老师一年来的耐心指导，没有您，我们不会进步得这么快。',better:'b',why:'Phát biểu trước đông người, cảm ơn thầy cần trang trọng: 感谢……的耐心指导, 您. Câu a (老张, 谢啦) chỉ hợp nói riêng với bạn bè.'}
   ]
 };
 

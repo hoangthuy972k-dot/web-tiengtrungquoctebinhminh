@@ -5412,993 +5412,82 @@ var hvBridgeData = {
 };
 
 var matchData = [
- {
-  "left": "更有人引用《每日电讯报》的",
-  "right": "说法"
- },
- {
-  "left": "截至2060年，人类可能不会再",
-  "right": "创造体坛新纪录"
- },
- {
-  "left": "人们在力争打破世界纪录的同时",
-  "right": "不禁会对自己的身体产生疑问"
- },
- {
-  "left": "谁拿冠军、谁拿亚军、",
-  "right": "谁拿季军"
- },
- {
-  "left": "这是对人类体能",
-  "right": "极限的追问"
- },
- {
-  "left": "在那条狭窄的",
-  "right": "跑道上"
- },
- {
-  "left": "任性的牙买加",
-  "right": "田径比赛选手"
- },
- {
-  "left": "打破了同胞鲍威尔",
-  "right": "保持的世界纪录"
- },
- {
-  "left": "北京奥运会百米决赛",
-  "right": "电视直播"
- },
- {
-  "left": "摇动的旗帜汇成了",
-  "right": "沸腾的海洋"
- },
- {
-  "left": "再次刷新世界纪录，",
-  "right": "领先亚军0.2秒"
- },
- {
-  "left": "利用公式做了",
-  "right": "精密计算"
- },
- {
-  "left": "数据相差",
-  "right": "如此悬殊"
- },
- {
-  "left": "一时舆论哗然，",
-  "right": "质疑不断"
- },
- {
-  "left": "网民纷纷自发掀起",
-  "right": "人体极限的讨论"
- },
- {
-  "left": "空洞的结论",
-  "right": "没有说服力"
- },
- {
-  "left": "这一结构也成为了运动员加速的",
-  "right": "制约因素"
- },
- {
-  "left": "人体结构是确定的，",
-  "right": "科学就是这么冷酷"
- },
- {
-  "left": "跑步其实要动员全身的力量，",
-  "right": "牵扯到各个器官"
- },
- {
-  "left": "如果心脏出了故障，",
-  "right": "腿再快也不管用"
- },
- {
-  "left": "严禁超过心率的极限值，",
-  "right": "否则会因供血不足发生猝死"
- },
- {
-  "left": "积极的精神状态可以激发身体潜能，",
-  "right": "让运动员在竞赛中超水平发挥"
- },
- {
-  "left": "体能、心理素质好的运动员，",
-  "right": "会成为优先选拔的对象"
- },
- {
-  "left": "老运动员作风过硬，",
-  "right": "顽强，有志气，不屈服"
- },
- {
-  "left": "优秀的选手和科学训练",
-  "right": "相辅相成"
- },
- {
-  "left": "谁能越过人体极限这道“悬崖峭壁”，",
-  "right": "谁就能成为涌现出来的明星"
- }
+  {left:'引用',right:'名人的话'},
+  {left:'刷新',right:'纪录'},
+  {left:'掀起',right:'一场讨论'},
+  {left:'严禁',right:'抽烟'},
+  {left:'优先',right:'考虑'},
+  {left:'选拔',right:'人才'},
+  {left:'排除',right:'故障'},
+  {left:'顽强的',right:'意志'},
+  {left:'精密的',right:'仪器'},
+  {left:'冷酷的',right:'现实'}
 ];
 
 var fillData = [
- {
-  "pre": "写论文时",
-  "blank": "引用",
-  "post": "别人的观点，一定要注明出处。",
-  "hint": "(trích dẫn)",
-  "ans": "引用"
- },
- {
-  "pre": "",
-  "blank": "截至",
-  "post": "目前，已有三千多名学生报名参加这次比赛。",
-  "hint": "(tính đến)",
-  "exp": "截至 + mốc thời gian = tính đến…: 截至目前. Khác 截止 = hết hạn, dừng ở hạn chót (截止日期).",
-  "ans": "截至"
- },
- {
-  "pre": "这场比赛我们一定要",
-  "blank": "力争",
-  "post": "第一名，不能输给对手。",
-  "hint": "(cố gắng giành)",
-  "exp": "力争 + mục tiêu = ra sức tranh thủ, cố giành: 力争第一名.",
-  "ans": "力争"
- },
- {
-  "pre": "他只比冠军差一分，最后拿了",
-  "blank": "亚军",
-  "post": "。",
-  "hint": "(á quân, hạng nhì)",
-  "ans": "亚军"
- },
- {
-  "pre": "在三四名决赛中获胜，我们班获得了",
-  "blank": "季军",
-  "post": "。",
-  "hint": "(hạng ba)",
-  "ans": "季军"
- },
- {
-  "pre": "连续工作了三十个小时，他的体力已经到了",
-  "blank": "极限",
-  "post": "。",
-  "hint": "(giới hạn)",
-  "ans": "极限"
- },
- {
-  "pre": "这条胡同很",
-  "blank": "狭窄",
-  "post": "，汽车根本开不进去。",
-  "hint": "(chật hẹp)",
-  "ans": "狭窄"
- },
- {
-  "pre": "你已经十八岁了，别再像小孩子一样",
-  "blank": "任性",
-  "post": "了。",
-  "hint": "(bướng bỉnh)",
-  "ans": "任性"
- },
- {
-  "pre": "短跑、跳远和铅球都属于",
-  "blank": "田径",
-  "post": "项目。",
-  "hint": "(điền kinh)",
-  "ans": "田径"
- },
- {
-  "pre": "这次演讲比赛共有二十名",
-  "blank": "选手",
-  "post": "参加。",
-  "hint": "(tuyển thủ, thí sinh)",
-  "ans": "选手"
- },
- {
-  "pre": "每到春节，许多海外",
-  "blank": "同胞",
-  "post": "都会回国和家人团聚。",
-  "hint": "(đồng bào)",
-  "ans": "同胞"
- },
- {
-  "pre": "今晚的决赛会在电视上现场",
-  "blank": "直播",
-  "post": "，我们一起看吧。",
-  "hint": "(phát trực tiếp)",
-  "ans": "直播"
- },
- {
-  "pre": "观众们挥舞着",
-  "blank": "旗帜",
-  "post": "，为自己国家的运动员加油。",
-  "hint": "(lá cờ)",
-  "ans": "旗帜"
- },
- {
-  "pre": "上半场结束时，主队以二比零",
-  "blank": "领先",
-  "post": "。",
-  "hint": "(dẫn trước)",
-  "ans": "领先"
- },
- {
-  "pre": "老师把这个难动作",
-  "blank": "分解",
-  "post": "成四个步骤来教我们。",
-  "hint": "(chia nhỏ, phân tích)",
-  "ans": "分解"
- },
- {
-  "pre": "学数学不能光背",
-  "blank": "公式",
-  "post": "，还要理解它的原理。",
-  "hint": "(công thức)",
-  "ans": "公式"
- },
- {
-  "pre": "两队实力",
-  "blank": "悬殊",
-  "post": "，比赛还没开始，结果就已经很清楚了。",
-  "hint": "(chênh lệch xa)",
-  "ans": "悬殊"
- },
- {
-  "pre": "在巨大的",
-  "blank": "舆论",
-  "post": "压力下，公司不得不公开道歉。",
-  "hint": "(dư luận)",
-  "ans": "舆论"
- },
- {
-  "pre": "这部电视剧在年轻人中",
-  "blank": "掀起",
-  "post": "了学汉语的热潮。",
-  "hint": "(dấy lên)",
-  "ans": "掀起"
- },
- {
-  "pre": "这篇作文内容",
-  "blank": "空洞",
-  "post": "，没有一个具体的例子。",
-  "hint": "(trống rỗng, suông)",
-  "ans": "空洞"
- },
- {
-  "pre": "风筝能飞上天，利用的是空气流动的",
-  "blank": "原理",
-  "post": "。",
-  "hint": "(nguyên lý)",
-  "ans": "原理"
- },
- {
-  "pre": "不管现实多么",
-  "blank": "冷酷",
-  "post": "，我们都要勇敢地面对。",
-  "hint": "(phũ phàng, khắc nghiệt)",
-  "ans": "冷酷"
- },
- {
-  "pre": "他紧张得心好像要从",
-  "blank": "胸膛",
-  "post": "里跳出来了。",
-  "hint": "(lồng ngực)",
-  "ans": "胸膛"
- },
- {
-  "pre": "这个小岛由附近的县政府",
-  "blank": "管辖",
-  "post": "。",
-  "hint": "(quản lý)",
-  "ans": "管辖"
- },
- {
-  "pre": "电梯出了",
-  "blank": "故障",
-  "post": "，我们只好走楼梯上去。",
-  "hint": "(trục trặc)",
-  "ans": "故障"
- },
- {
-  "pre": "长期熬夜、过度劳累，会增加",
-  "blank": "猝死",
-  "post": "的风险。",
-  "hint": "(đột tử)",
-  "ans": "猝死"
- },
- {
-  "pre": "学校每学期都要举行一次消防",
-  "blank": "演习",
-  "post": "。",
-  "hint": "(diễn tập)",
-  "ans": "演习"
- },
- {
-  "pre": "这种运动鞋的鞋底很有",
-  "blank": "弹性",
-  "post": "，跑起来很舒服。",
-  "hint": "(tính đàn hồi)",
-  "ans": "弹性"
- },
- {
-  "pre": "对一个企业来说，人才是最宝贵的",
-  "blank": "资产",
-  "post": "。",
-  "hint": "(tài sản)",
-  "ans": "资产"
- },
- {
-  "pre": "这里气候温和，雨水充足，种茶有",
-  "blank": "得天独厚",
-  "post": "的条件。",
-  "hint": "(được trời phú)",
-  "ans": "得天独厚"
- },
- {
-  "pre": "年轻人要有",
-  "blank": "志气",
-  "post": "，不能一遇到困难就放弃。",
-  "hint": "(chí khí)",
-  "ans": "志气"
- },
- {
-  "pre": "学习和休息是",
-  "blank": "相辅相成",
-  "post": "的，休息好了才能学得好。",
-  "hint": "(bổ trợ cho nhau)",
-  "ans": "相辅相成"
- },
- {
-  "pre": "这个小镇",
-  "blank": "依托",
-  "post": "当地的自然资源，大力发展旅游业。",
-  "hint": "(dựa vào)",
-  "ans": "依托"
- },
- {
-  "pre": "这条山路两边都是",
-  "blank": "悬崖峭壁",
-  "post": "，开车一定要小心。",
-  "hint": "(vách núi dựng đứng)",
-  "ans": "悬崖峭壁"
- },
- {
-  "pre": "近几年，体育界",
-  "blank": "涌现",
-  "post": "出一大批年轻的优秀选手。",
-  "hint": "(xuất hiện nhiều)",
-  "ans": "涌现"
- },
- {
-  "pre": "下半场，教练及时调整了",
-  "blank": "战术",
-  "post": "，最终反败为胜。",
-  "hint": "(chiến thuật)",
-  "ans": "战术"
- }
+  {pre:'',blank:'截至',post:'上个月底，报名参加比赛的已经有三百多人了。',hint:'(tính đến)',ans:'截至',exp:'截至 + mốc thời gian = tính đến (thời điểm đó), thường đi với số liệu. Khác với "hạn chót" (đứng sau mốc: 报名……为止). 直到 nhấn sự việc kéo dài đến lúc nào đó mới thay đổi.'},
+  {pre:'这次比赛他跑了第二名，拿到了',blank:'亚军',post:'。',hint:'(á quân)',ans:'亚军',exp:'冠军 = hạng nhất, 亚军 = hạng nhì (Á quân), 季军 = hạng ba.'},
+  {pre:'这条路很',blank:'狭窄',post:'，两辆车很难同时通过。',hint:'(chật hẹp)',ans:'狭窄',exp:'狭窄 = chật hẹp (đường, phòng; nghĩa bóng: tầm nhìn hẹp). 窄 một chữ hay dùng trong khẩu ngữ; 紧张 không tả không gian.'},
+  {pre:'孩子想要什么就得马上给他买，不然就哭，太',blank:'任性',post:'了。',hint:'(bướng, tùy hứng)',ans:'任性',exp:'任性 = muốn gì làm nấy, không nghe ai (chê). 个性 = cá tính (trung tính); 任意 (bài 39) là phó từ "tùy ý", không làm vị ngữ sau 太.'},
+  {pre:'明天晚上八点电视台会',blank:'直播',post:'这场足球决赛。',hint:'(phát trực tiếp)',ans:'直播',exp:'直播 = truyền hình / phát trực tiếp (vừa diễn ra vừa phát). 广播 = phát thanh nói chung; 播放 = phát (băng, phim đã quay sẵn).'},
+  {pre:'比赛还剩五分钟，我们队以二比一',blank:'领先',post:'。',hint:'(dẫn trước)',ans:'领先',exp:'以 + tỉ số + 领先 = dẫn trước với tỉ số …. 先进 = tiên tiến (kỹ thuật); 首先 = trước hết — không dùng cho tỉ số.'},
+  {pre:'这两个队实力',blank:'悬殊',post:'，结果是十比零。',hint:'(chênh lệch xa)',ans:'悬殊',exp:'实力 / 差距 / 比分 + 悬殊 = chênh lệch rất xa. 特殊 = đặc biệt; 相似 = giống nhau — ngược nghĩa.'},
+  {pre:'这件事引起了',blank:'舆论',post:'的关注，有关部门不得不出来解释。',hint:'(dư luận)',ans:'舆论',exp:'舆论 = dư luận (ý kiến chung của xã hội): 引起舆论的关注 / 舆论压力. 言论 là lời phát biểu của một người.'},
+  {pre:'他的演讲内容',blank:'空洞',post:'，听了半天也不知道他想说什么。',hint:'(suông, rỗng)',ans:'空洞',exp:'空洞 = trống rỗng, nói suông không có nội dung (bài viết, lời nói). 空闲 = rảnh rỗi (thời gian); 空气 = không khí.'},
+  {pre:'汽车在路上出了',blank:'故障',post:'，我们只好走着回家。',hint:'(sự cố, hỏng hóc)',ans:'故障',exp:'(máy móc) 出故障 = bị trục trặc. 故事 = câu chuyện; 事故 = tai nạn (车祸) — dễ nhầm vì đảo vị trí chữ.'},
+  {pre:'这种运动服',blank:'弹性',post:'很好，跑起来很舒服。',hint:'(độ co giãn)',ans:'弹性',exp:'弹性 = độ co giãn (vải, cao su); nghĩa bóng: tính linh hoạt (弹性工作时间). Đọc tánxìng.'},
+  {pre:'这位经理工作',blank:'作风',post:'认真，从来不说空话。',hint:'(tác phong)',ans:'作风',exp:'工作作风 = tác phong làm việc (thói quen, thái độ). 作用 = tác dụng; 风度 = phong độ (cách cư xử lịch thiệp, bài 1).'},
+  {pre:'人可以穷，但不能没有',blank:'志气',post:'。',hint:'(chí khí)',ans:'志气',exp:'有志气 / 没有志气 = có / không có chí khí, quyết tâm vươn lên. 力气 = sức lực cơ bắp; 脾气 = tính khí.'},
+  {pre:'近年来，我国的田径比赛中',blank:'涌现',post:'出了一大批年轻选手。',hint:'(xuất hiện nhiều)',ans:'涌现',exp:'涌现 (出) + 一大批 / 大量 + người, việc tốt = nổi lên hàng loạt. 出现 không có ý "nhiều, liên tiếp"; 发现 = phát hiện.'},
+  {pre:'他这次考得不好，和他最近睡得太晚',blank:'不无',post:'关系。',hint:'(không phải không có)',ans:'不无',exp:'和……不无关系 = không phải không liên quan (phủ định kép, nói giảm nhẹ: có liên quan). 毫无关系 = hoàn toàn không liên quan — ngược nghĩa.'}
 ];
 
 var sortData = [
- {
-  "words": [
-   "他",
-   "仗着自己业务好",
-   "，",
-   "谁都",
-   "不",
-   "放在眼里",
-   "。"
-  ],
-  "ans": "他仗着自己业务好，谁都不放在眼里。",
-  "audio": "他仗着自己业务好，谁都不放在眼里。"
- },
- {
-  "words": [
-   "博尔特",
-   "简直",
-   "就",
-   "不",
-   "把世界纪录",
-   "放在眼里",
-   "。"
-  ],
-  "ans": "博尔特简直就不把世界纪录放在眼里。",
-  "audio": "博尔特简直就不把世界纪录放在眼里。"
- },
- {
-  "words": [
-   "这些",
-   "别人吃不了的苦",
-   "他",
-   "都",
-   "不",
-   "放在眼里",
-   "。"
-  ],
-  "ans": "这些别人吃不了的苦他都不放在眼里。",
-  "audio": "这些别人吃不了的苦他都不放在眼里。"
- },
- {
-  "words": [
-   "他",
-   "从运动医学角度",
-   "出发",
-   "，",
-   "其观点",
-   "也",
-   "不无道理",
-   "。"
-  ],
-  "ans": "他从运动医学角度出发，其观点也不无道理。",
-  "audio": "他从运动医学角度出发，其观点也不无道理。"
- },
- {
-  "words": [
-   "他的剧本",
-   "和他曾经从商",
-   "不无",
-   "关系",
-   "。"
-  ],
-  "ans": "他的剧本和他曾经从商不无关系。",
-  "audio": "他的剧本和他曾经从商不无关系。"
- },
- {
-  "words": [
-   "经理",
-   "不无得意地",
-   "宣布",
-   "，",
-   "我们的产品",
-   "被评为优秀产品",
-   "。"
-  ],
-  "ans": "经理不无得意地宣布，我们的产品被评为优秀产品。",
-  "audio": "经理不无得意地宣布，我们的产品被评为优秀产品。"
- },
- {
-  "words": [
-   "截至",
-   "今年上半年",
-   "，",
-   "这项工作",
-   "已",
-   "进行了",
-   "一大半",
-   "。"
-  ],
-  "ans": "截至今年上半年，这项工作已进行了一大半。",
-  "audio": "截至今年上半年，这项工作已进行了一大半。"
- },
- {
-  "words": [
-   "人们",
-   "在力争打破世界纪录的同时",
-   "，",
-   "不禁",
-   "会对自己的身体",
-   "产生疑问",
-   "。"
-  ],
-  "ans": "人们在力争打破世界纪录的同时，不禁会对自己的身体产生疑问。",
-  "audio": "人们在力争打破世界纪录的同时，不禁会对自己的身体产生疑问。"
- },
- {
-  "words": [
-   "优秀的选手",
-   "和",
-   "科学训练",
-   "相辅相成",
-   "，",
-   "是通往成功的",
-   "有效手段",
-   "。"
-  ],
-  "ans": "优秀的选手和科学训练相辅相成，是通往成功的有效手段。",
-  "audio": "优秀的选手和科学训练相辅相成，是通往成功的有效手段。"
- },
- {
-  "words": [
-   "教练员",
-   "依托",
-   "先进装备",
-   "来",
-   "指导",
-   "训练",
-   "。"
-  ],
-  "ans": "教练员依托先进装备来指导训练。",
-  "audio": "教练员依托先进装备来指导训练。"
- },
- {
-  "words": [
-   "体能好的运动员",
-   "会",
-   "成为",
-   "优先",
-   "选拔",
-   "的",
-   "对象",
-   "。"
-  ],
-  "ans": "体能好的运动员会成为优先选拔的对象。",
-  "audio": "体能好的运动员会成为优先选拔的对象。"
- },
- {
-  "words": [
-   "如果",
-   "心脏",
-   "出了故障",
-   "，",
-   "腿",
-   "再快",
-   "也不管用",
-   "。"
-  ],
-  "ans": "如果心脏出了故障，腿再快也不管用。",
-  "audio": "如果心脏出了故障，腿再快也不管用。"
- },
- {
-  "words": [
-   "谁",
-   "能越过人体极限",
-   "，",
-   "谁",
-   "就能",
-   "成为",
-   "明星",
-   "。"
-  ],
-  "ans": "谁能越过人体极限，谁就能成为明星。",
-  "audio": "谁能越过人体极限，谁就能成为明星。"
- }
+  {words:['他','从来','不','把','困难','放在','眼里','。'],ans:'他从来不把困难放在眼里。',audio:'他从来不把困难放在眼里。'},
+  {words:['每天','走路','对','身体','不无','好处','。'],ans:'每天走路对身体不无好处。',audio:'每天走路对身体不无好处。'},
+  {words:['图书馆','里','严禁','大声','说话','。'],ans:'图书馆里严禁大声说话。',audio:'图书馆里严禁大声说话。'},
+  {words:['学校','优先','选拔','有','经验','的','选手','。'],ans:'学校优先选拔有经验的选手。',audio:'学校优先选拔有经验的选手。'},
+  {words:['老师','把','这道题','分解','成了','三个','小','问题','。'],ans:'老师把这道题分解成了三个小问题。',audio:'老师把这道题分解成了三个小问题。'},
+  {words:['他','把','胸膛','挺得','高高的','。'],ans:'他把胸膛挺得高高的。',audio:'他把胸膛挺得高高的。'},
+  {words:['这家','公司','的','资产','超过了','十亿元','。'],ans:'这家公司的资产超过了十亿元。',audio:'这家公司的资产超过了十亿元。'},
+  {words:['运动员们','举着','国家的','旗帜','走进了','体育场','。'],ans:'运动员们举着国家的旗帜走进了体育场。',audio:'运动员们举着国家的旗帜走进了体育场。'}
 ];
 
 var errorFixMode = "wordchoice";
 
 var errorFixData = [
- {
-  "wrong": "这台____仪器非常贵，使用时一定要小心。",
-  "opts": [
-   "精确",
-   "精密",
-   "准确",
-   "细心"
-  ],
-  "ans": 1,
-  "exp": "精密仪器 = dụng cụ tinh vi: 精密 nói về cấu tạo máy móc tỉ mỉ; 精确 nói về kết quả, con số (精确的数据); 准确 / 细心 không đi với 仪器."
- },
- {
-  "wrong": "读书要有自己的思考，不能____书本。",
-  "opts": [
-   "迷信",
-   "相信",
-   "信任",
-   "自信"
-  ],
-  "ans": 0,
-  "exp": "迷信书本 = tin sách một cách mù quáng (nghĩa chê). 相信 / 信任 trung tính, không có ý \"mù quáng\"; 自信 không mang tân ngữ."
- },
- {
-  "wrong": "这次清洁活动不是学校安排的，是同学们____组织的。",
-  "opts": [
-   "自动",
-   "自觉",
-   "主动",
-   "自发"
-  ],
-  "ans": 3,
-  "exp": "自发组织 = tự phát tổ chức (không ai sắp xếp). 自动 dùng cho máy móc (自动门); 自觉 = tự giác (tuân thủ quy định); 主动 = chủ động, thường không đi với 组织 trong nghĩa này."
- },
- {
-  "wrong": "交通不便一直____着这个地区的经济发展。",
-  "opts": [
-   "制约",
-   "约束",
-   "控制",
-   "限期"
-  ],
-  "ans": 0,
-  "exp": "制约 + 发展 = kìm hãm sự phát triển (sự vật ràng buộc sự vật). 约束 hay dùng cho hành vi con người (约束自己); 控制 = khống chế chủ động; 限期 = hạn định thời gian."
- },
- {
-  "wrong": "学校____全体学生参加植树活动。",
-  "opts": [
-   "鼓励",
-   "安慰",
-   "动员",
-   "动摇"
-  ],
-  "ans": 2,
-  "exp": "Vận động toàn thể học sinh cùng tham gia → 动员. BẪY: \"động viên\" tiếng Việt ≈ 鼓励 / 安慰, nhưng \"vận động mọi người tham gia\" là 动员; 动摇 = lung lay."
- },
- {
-  "wrong": "这是我们两个人的事，别把别人____进来。",
-  "opts": [
-   "拉扯",
-   "吸引",
-   "牵扯",
-   "参加"
-  ],
-  "ans": 2,
-  "exp": "把……牵扯进来 = kéo ai dính líu vào (chuyện rắc rối). 拉扯 = lôi kéo bằng tay / nuôi nấng; 吸引 = thu hút; 参加 không dùng dạng 把……参加进来."
- },
- {
-  "wrong": "考场内____使用手机，违者成绩作废。",
-  "opts": [
-   "严格",
-   "严肃",
-   "严重",
-   "严禁"
-  ],
-  "ans": 3,
-  "exp": "严禁 + V = nghiêm cấm làm gì (giọng nội quy). 严格 / 严肃 / 严重 đều là tính từ, không trực tiếp mang động từ làm tân ngữ."
- },
- {
-  "wrong": "买药一定要去____的药店，别在网上随便买。",
-  "opts": [
-   "正规",
-   "正常",
-   "正式",
-   "规范"
-  ],
-  "ans": 0,
-  "exp": "正规的药店 = hiệu thuốc chính quy (đúng tiêu chuẩn, được cấp phép). 正常 = bình thường; 正式 = chính thức (正式场合); 规范 thường làm vị ngữ / động từ (规范管理)."
- },
- {
-  "wrong": "她代表学校参加了全国中学生数学____。",
-  "opts": [
-   "竞选",
-   "竞争",
-   "竞赛",
-   "赛跑"
-  ],
-  "ans": 2,
-  "exp": "数学竞赛 = cuộc thi toán (cuộc thi học thuật, trang trọng). 竞争 = cạnh tranh (không phải một cuộc thi cụ thể); 赛跑 = thi chạy."
- },
- {
-  "wrong": "有工作经验的人，公司会____考虑。",
-  "opts": [
-   "首先",
-   "优先",
-   "领先",
-   "事先"
-  ],
-  "ans": 1,
-  "exp": "优先考虑 = ưu tiên xem xét (được đặt trước người khác). 首先 = trước hết (trình tự); 领先 = dẫn đầu; 事先 = làm trước khi sự việc xảy ra."
- },
- {
-  "wrong": "经过层层____，她终于进入了国家队。",
-  "opts": [
-   "选择",
-   "挑选",
-   "选举",
-   "选拔"
-  ],
-  "ans": 3,
-  "exp": "选拔 = tuyển chọn NGƯỜI tài qua các vòng (层层选拔). 选择 / 挑选 nghiêng về chọn đồ vật, phương án; 选举 = bầu cử."
- },
- {
-  "wrong": "他工作____踏实，领导和同事都很信任他。",
-  "opts": [
-   "作风",
-   "风格",
-   "风度",
-   "作为"
-  ],
-  "ans": 0,
-  "exp": "工作作风 = tác phong làm việc (thái độ, cách làm). 风格 thiên về đặc điểm nghệ thuật, cá tính (写作风格); 风度 = phong độ; 作为 = việc làm, hành vi."
- },
- {
-  "wrong": "她在腿部受伤的情况下____奋战，终于获得冠军。",
-  "opts": [
-   "坚强",
-   "顽强",
-   "坚定",
-   "勉强"
-  ],
-  "ans": 1,
-  "exp": "Tả HÀNH ĐỘNG thi đấu không bỏ cuộc → 顽强奋战 (词语辨析: 坚强 không tả hành động). 坚定 = kiên định (lập trường); 勉强 = miễn cưỡng."
- },
- {
-  "wrong": "你一定要____自己的意志，做生活的强者。",
-  "opts": [
-   "顽强",
-   "坚强",
-   "加强",
-   "勇敢"
-  ],
-  "ans": 1,
-  "exp": "Dùng như ĐỘNG TỪ \"làm cho vững vàng\" + 意志 → chỉ 坚强 có cách dùng này (坚强自己的信心 / 意志); 顽强 không mang tân ngữ. 加强 thường đi với 管理 / 联系."
- },
- {
-  "wrong": "无论遇到什么困难，他都没有向命运____。",
-  "opts": [
-   "屈服",
-   "服从",
-   "佩服",
-   "说服"
-  ],
-  "ans": 0,
-  "exp": "向……屈服 = khuất phục, chịu thua trước … . 服从 = phục tùng (mệnh lệnh); 佩服 = khâm phục; 说服 = thuyết phục."
- },
- {
-  "wrong": "去爬雪山之前，一定要准备好登山____。",
-  "opts": [
-   "设施",
-   "装修",
-   "装备",
-   "设计"
-  ],
-  "ans": 2,
-  "exp": "登山装备 = đồ leo núi, trang bị leo núi. 设施 = cơ sở vật chất cố định (公共设施); 装修 = trang trí nội thất; 设计 = thiết kế."
- },
- {
-  "wrong": "____今年上半年，这项工作已进行了一大半。",
-  "opts": [
-   "截止",
-   "到期",
-   "期限",
-   "截至"
-  ],
-  "ans": 3,
-  "exp": "Đầu câu + mốc thời gian + tình hình → 截至 (tính đến) — đáp án 练习2 ①. 截止 = hết hạn, thường đứng cuối (报名下周截止) hoặc 截止到; 到期 / 期限 không dùng như vậy."
- },
- {
-  "wrong": "他____地越过了人体极限这道“悬崖峭壁”。",
-  "opts": [
-   "坚固",
-   "顽强",
-   "坚强",
-   "强大"
-  ],
-  "ans": 1,
-  "exp": "顽强地 + V (越过) — tả hành động không bỏ cuộc (câu bài khoá). 坚强 không tả hành động; 坚固 dùng cho đồ vật (桥很坚固); 强大 = hùng mạnh."
- }
+  {wrong:'这种手表非常____，一年误差不到一秒。',opts:['精密','细心','亲密','秘密'],ans:0,exp:'精密 = tinh vi, chính xác (máy móc, dụng cụ). 细心 tả người cẩn thận; 亲密 = thân mật (quan hệ); 秘密 = bí mật.'},
+  {wrong:'不要盲目____名牌，买东西要看自己用不用得上。',opts:['迷信','信心','自信','信用'],ans:0,exp:'迷信 + N = tin mù quáng, sùng bái (名牌 / 专家). 信心 / 信用 là danh từ, không mang tân ngữ; 自信 = tự tin.'},
+  {wrong:'这次清洁活动不是学校安排的，是同学们____组织的。',opts:['自发','自动','自由','自信'],ans:0,exp:'自发 = tự phát (không ai tổ chức, thúc ép). 自动 dùng cho máy móc (自动门); 自由 = tự do; 自信 = tự tin.'},
+  {wrong:'交通不便一直____着这个地区的经济发展。',opts:['制约','约束','节约','约定'],ans:0,exp:'制约 + sự phát triển = kìm hãm, hạn chế (yếu tố khách quan). 约束 = ràng buộc hành vi con người; 节约 = tiết kiệm; 约定 = hẹn ước.'},
+  {wrong:'村长____全村的人一起修路。',opts:['动员','动摇','感动','活动'],ans:0,exp:'动员 + nhiều người + V = huy động, vận động cùng làm. 动摇 = dao động (ý chí); 感动 = cảm động; 活动 = hoạt động.'},
+  {wrong:'这是我们两个人的事，别把别人____进来。',opts:['牵扯','吸引','参加','引进'],ans:0,exp:'把……牵扯进来 = lôi ai vào chuyện (liên luỵ). 吸引 = thu hút; 参加 không đi với 把……进来; 引进 = du nhập (kỹ thuật, nhân tài).'},
+  {wrong:'买药一定要去____的药店，别在网上随便买。',opts:['正规','正常','正式','真正'],ans:0,exp:'正规 = chính quy, đúng chuẩn, có giấy phép (正规的药店 / 训练). 正常 = bình thường; 正式 = chính thức (会议, 场合); 真正 = thật sự.'},
+  {wrong:'她代表学校参加了全国中学生数学____。',opts:['竞赛','竞争','对手','考验'],ans:0,exp:'数学竞赛 = cuộc thi toán (có xếp hạng). 竞争 = cạnh tranh (quá trình, không làm tên cuộc thi); 对手 = đối thủ; 考验 = thử thách.'},
+  {wrong:'无论遇到什么困难，他都没有向命运____。',opts:['屈服','服从','佩服','说服'],ans:0,exp:'向……屈服 = khuất phục, chịu thua trước. 服从 + mệnh lệnh (không đi với 向命运); 佩服 = khâm phục; 说服 = thuyết phục.'},
+  {wrong:'去沙漠旅行之前，一定要准备好____。',opts:['装备','装修','设施','设计'],ans:0,exp:'装备 = trang bị mang theo người (đồ leo núi, đồ thể thao). 装修 = sửa sang nhà; 设施 = cơ sở vật chất cố định; 设计 = thiết kế.'},
+  {wrong:'我们要____互联网，把家乡的水果卖到全国各地。',opts:['依托','依据','依赖','依然'],ans:0,exp:'依托 + nền tảng = dựa vào làm chỗ dựa để phát triển. 依据 (bài 38) = căn cứ vào (số liệu, quy định); 依赖 = ỷ lại (nghĩa xấu); 依然 = vẫn.'},
+  {wrong:'这里气候温暖，阳光充足，种水果的条件____。',opts:['得天独厚','相辅相成','悬崖峭壁','无穷无尽'],ans:0,exp:'条件得天独厚 = được thiên nhiên ưu đãi. 相辅相成 = hai thứ bổ trợ nhau; 悬崖峭壁 = vách núi dựng đứng; 无穷无尽 (bài 39) = vô tận — không tả "điều kiện".'},
+  {wrong:'他对别人的痛苦一点儿也不关心，真是个____的人。',opts:['冷酷','冷静','凉快','冷水'],ans:0,exp:'冷酷 = lạnh lùng, tàn nhẫn (tả người, hiện thực). 冷静 = bình tĩnh (nghĩa tốt); 凉快 tả thời tiết; 冷水 = nước lạnh (danh từ, không tả tính cách).'},
+  {wrong:'新来的同事很骄傲，连经理都不____。',opts:['放在眼里','放在心上','看在眼里','拿在手里'],ans:0,exp:'不把……放在眼里 = coi thường, chẳng coi ra gì. 不放在心上 = không để bụng, không bận tâm; 看在眼里 = thấy hết, ghi nhận; 拿在手里 = cầm trên tay.'},
+  {wrong:'这个方法虽然很简单，但对提高听力____帮助。',opts:['不无','没有','毫无','无不'],ans:0,exp:'不无 + N hai âm tiết = cũng có (một phần) …; 虽然……但…… đòi hỏi ý khẳng định. 没有 / 毫无 = không có (mâu thuẫn với 但); 无不 (bài 15) = không gì không (đứng trước động từ).'}
 ];
 
 var translateData = [
- {
-  "vi": "Tuy lần này chỉ giành ngôi á quân, nhưng cậu ấy không hề nản lòng, quyết tâm năm sau tiếp tục cố gắng, phấn đấu giành hạng nhất.",
-  "zh": "虽然这次只获得了亚军，但是他一点儿也不灰心，决心明年再接再厉，力争第一名。",
-  "py": "Suīrán zhè cì zhǐ huòdéle yàjūn, dànshì tā yìdiǎnr yě bù huīxīn, juéxīn míngnián zàijiē-zàilì, lìzhēng dì-yī míng.",
-  "goiY": [
-   "虽然……但是……",
-   "亚军",
-   "再接再厉",
-   "力争"
-  ],
-  "giai": "虽然……但是…… nối hai vế trái ý; 力争 + mục tiêu (第一名) = dốc sức giành. 再接再厉 (bài 35) = tiếp tục cố gắng hơn nữa — không dịch word-by-word \"tiếp tục nỗ lực\" thành 继续努力 cũng được, nhưng thành ngữ hay hơn."
- },
- {
-  "vi": "Cậu ta cậy mình là tuyển thủ đội điền kinh nên chẳng coi ai ra gì, vì vậy các bạn trong lớp đều không thích cậu ta lắm.",
-  "zh": "他仗着自己是田径队的选手，谁都不放在眼里，所以同学们都不太喜欢他。",
-  "py": "Tā zhàngzhe zìjǐ shì tiánjìngduì de xuǎnshǒu, shéi dōu bú fàng zài yǎn li, suǒyǐ tóngxuémen dōu bú tài xǐhuan tā.",
-  "goiY": [
-   "田径",
-   "选手",
-   "放在眼里",
-   "所以"
-  ],
-  "giai": "\"Chẳng coi ai ra gì\" = 谁都不放在眼里 (Chú thích 1: (把)……放在眼里, dạng phủ định). 仗着 = cậy, ỷ vào (như câu 练一练 của sách). 不 + 放 (thanh 4) → bú."
- },
- {
-  "vi": "Bố phê bình tôi quá bướng; tuy giọng điệu có phần lạnh lùng, nhưng lời bố nói cũng không phải không có lý, tôi đúng là nên sửa tật này.",
-  "zh": "爸爸批评我太任性，虽然语气有点儿冷酷，但他的话也不无道理，我确实应该纠正这个毛病。",
-  "py": "Bàba pīpíng wǒ tài rènxìng, suīrán yǔqì yǒudiǎnr lěngkù, dàn tā de huà yě bùwú dàolǐ, wǒ quèshí yīnggāi jiūzhèng zhège máobìng.",
-  "goiY": [
-   "任性",
-   "冷酷",
-   "不无道理",
-   "纠正"
-  ],
-  "giai": "\"Không phải không có lý\" = 不无道理 (Chú thích 2: 不无 = không phải không có, ít nhiều có). 纠正 (bài 30) = sửa (lỗi, tật). Đừng dịch thành 没有没有道理."
- },
- {
-  "vi": "Chỉ cần trải qua luyện tập chính quy lâu dài, cộng thêm ý chí ngoan cường, em sẽ có thể không ngừng tiến gần giới hạn của bản thân.",
-  "zh": "只要经过长期正规的训练，再加上顽强的意志，你就能不断接近自己的极限。",
-  "py": "Zhǐyào jīngguò chángqī zhèngguī de xùnliàn, zài jiāshàng wánqiáng de yìzhì, nǐ jiù néng búduàn jiējìn zìjǐ de jíxiàn.",
-  "goiY": [
-   "只要……就……",
-   "正规",
-   "顽强",
-   "极限"
-  ],
-  "giai": "只要 + điều kiện, 就 + kết quả. 顽强的意志 = ý chí ngoan cường (顽强 / 坚强 đều đi được với 意志). 不断 → búduàn."
- },
- {
-  "vi": "Tính đến nay, số người đăng ký tham gia cuộc thi kiến thức của trường đã hơn hai trăm, đủ thấy nhiệt huyết của các bạn cao đến mức nào.",
-  "zh": "截至目前，报名参加学校知识竞赛的已有两百多人，可见同学们的干劲有多大。",
-  "py": "Jiézhì mùqián, bàomíng cānjiā xuéxiào zhīshi jìngsài de yǐ yǒu liǎngbǎi duō rén, kějiàn tóngxuémen de gànjìn yǒu duō dà.",
-  "goiY": [
-   "截至",
-   "竞赛",
-   "可见",
-   "干劲"
-  ],
-  "giai": "截至 + mốc thời gian đứng đầu câu (không dùng 截止 ở đây). 可见 = đủ thấy (rút ra kết luận). 干劲 (bài 35) = hăng hái, nhiệt huyết làm việc."
- },
- {
-  "vi": "Một khi máy tính bị trục trặc, những tài liệu em trích dẫn có thể mất hết, vì vậy tốt nhất lúc nào cũng nên sao lưu.",
-  "zh": "一旦电脑出了故障，你引用的资料就可能全没了，因此最好随时备份。",
-  "py": "Yídàn diànnǎo chūle gùzhàng, nǐ yǐnyòng de zīliào jiù kěnéng quán méi le, yīncǐ zuì hǎo suíshí bèifèn.",
-  "goiY": [
-   "一旦……就……",
-   "故障",
-   "引用",
-   "因此"
-  ],
-  "giai": "一旦 = một khi (giả thiết điều xấu), vế sau 就 + hậu quả. \"Bị trục trặc\" = 出故障 (không dùng 出问题 cho câu văn viết này cũng được, nhưng 出故障 chính xác hơn với máy móc)."
- },
- {
-  "vi": "Thay vì tin mù quáng vào những \"mẹo học tập\" suông trên mạng, chẳng thà chăm chỉ, chắc chắn làm cho hiểu từng bài tập.",
-  "zh": "与其迷信网上那些空洞的“学习窍门”，不如踏踏实实地把每道题都弄懂。",
-  "py": "Yǔqí míxìn wǎng shang nàxiē kōngdòng de “xuéxí qiàomén”, bùrú tātāshíshí de bǎ měi dào tí dōu nòngdǒng.",
-  "goiY": [
-   "与其……不如……",
-   "迷信",
-   "空洞",
-   "窍门"
-  ],
-  "giai": "与其 A 不如 B = thay vì A thì chẳng thà B (chọn B). 迷信 ở đây là động từ \"tin mù quáng\"; 窍门 ôn bài 36. 踏踏实实 = chắc chắn, chăm chỉ."
- },
- {
-  "vi": "Anh ấy tuy chiều cao không có ưu thế, nhưng chưa bao giờ chịu khuất phục trước khó khăn; tác phong có chí khí ấy đã được huấn luyện viên đánh giá cao.",
-  "zh": "他虽然身高不占优势，却从来不向困难屈服，这种有志气的作风赢得了教练的欣赏。",
-  "py": "Tā suīrán shēngāo bú zhàn yōushì, què cónglái bú xiàng kùnnan qūfú, zhè zhǒng yǒu zhìqì de zuòfēng yíngdéle jiàoliàn de xīnshǎng.",
-  "goiY": [
-   "虽然……却……",
-   "屈服",
-   "志气",
-   "作风"
-  ],
-  "giai": "向……屈服 = khuất phục trước …; 有志气的作风 = tác phong có chí khí. 虽然……却…… : 却 đứng sau chủ ngữ, trước động từ."
- },
- {
-  "vi": "Việc này đã dấy lên cuộc thảo luận sôi nổi trên mạng, áp lực dư luận ngày càng lớn, nhà trường buộc phải ra mặt trả lời để tránh tình hình xấu đi đến mức không cứu vãn được.",
-  "zh": "这件事在网上掀起了热烈讨论，舆论的压力越来越大，学校不得不出面回应，以免事态恶化到无法收拾的地步。",
-  "py": "Zhè jiàn shì zài wǎng shang xiānqǐle rèliè tǎolùn, yúlùn de yālì yuè lái yuè dà, xuéxiào bùdébù chūmiàn huíyìng, yǐmiǎn shìtài èhuà dào wúfǎ shōushi de dìbù.",
-  "goiY": [
-   "掀起",
-   "舆论",
-   "以免",
-   "恶化",
-   "地步"
-  ],
-  "giai": "掀起 + 讨论 / 热潮 = dấy lên; 以免 = để tránh (đặt ở đầu vế sau). 恶化, 地步 ôn bài 30: 到……的地步 = đến mức …."
- },
- {
-  "vi": "Vận động viên này sở dĩ có thể phát huy vượt trình độ trong thi đấu, không chỉ vì luyện tập chắc chắn, mà còn vì cậu ấy chưa bao giờ để tâm đến chuyện thắng thua nhất thời.",
-  "zh": "这名选手之所以能在竞赛中超水平发挥，不仅是因为训练扎实，而且是因为他从不把一时的输赢放在眼里。",
-  "py": "Zhè míng xuǎnshǒu zhīsuǒyǐ néng zài jìngsài zhōng chāo shuǐpíng fāhuī, bùjǐn shì yīnwèi xùnliàn zhāshi, érqiě shì yīnwèi tā cóng bù bǎ yìshí de shūyíng fàng zài yǎn li.",
-  "goiY": [
-   "之所以……",
-   "不仅……而且……",
-   "竞赛",
-   "放在眼里"
-  ],
-  "giai": "之所以 A，是因为 B = sở dĩ A là vì B; ở đây kết hợp 不仅是因为……而且是因为…… nêu hai lý do. 不把……放在眼里 = không để tâm, không coi trọng (Chú thích 1). 扎实 ôn bài 35."
- }
+  {vi:'Đội chúng tôi lần này giành hạng ba, năm sau phải phấn đấu giành chức vô địch.',zh:'我们队这次获得了季军，明年要力争拿冠军。',py:'Wǒmen duì zhè cì huòdéle jìjūn, míngnián yào lìzhēng ná guànjūn.',goiY:['季军','力争 + V'],giai:'季军 = hạng ba; 力争 + V/N = cố hết sức để đạt (mục tiêu cụ thể).'},
+  {vi:'Anh ấy chẳng coi số tiền thưởng cỏn con đó ra gì, cái anh ấy muốn là phá kỷ lục.',zh:'他根本不把那点儿奖金放在眼里，他想要的是打破纪录。',py:'Tā gēnběn bù bǎ nà diǎnr jiǎngjīn fàng zài yǎn li, tā xiǎng yào de shì dǎpò jìlù.',goiY:['不把……放在眼里','那点儿 + N (coi nhẹ)','……的是……'],giai:'根本不把 A 放在眼里 = chẳng coi A ra gì; 那点儿 nhấn "chẳng bao nhiêu".'},
+  {vi:'Anh ấy có phần tiếc nuối nói: "Chỉ thiếu 0,1 giây nữa là phá kỷ lục rồi."',zh:'他不无遗憾地说：“只差零点一秒就打破纪录了。”',py:'Tā bùwú yíhàn de shuō: "Zhǐ chà líng diǎn yī miǎo jiù dǎpò jìlù le."',goiY:['不无 + adj + 地 + V','只差……就……了'],giai:'不无遗憾地说 = nói với chút tiếc nuối (phủ định kép, giọng giảm nhẹ). 只差……就……了 = chỉ thiếu … là ….'},
+  {vi:'Anh ấy tuy không cao, nhưng chưa bao giờ khuất phục trước khó khăn; chí khí đó khiến huấn luyện viên rất khâm phục.',zh:'他虽然个子不高，却从来不向困难屈服，这种志气让教练十分佩服。',py:'Tā suīrán gèzi bù gāo, què cónglái bú xiàng kùnnan qūfú, zhè zhǒng zhìqì ràng jiàoliàn shífēn pèifú.',goiY:['向……屈服','志气'],giai:'向 + đối tượng + 屈服 = khuất phục trước …; 虽然……却…… chuyển ý.'},
+  {vi:'Bài viết này đã dấy lên một cuộc tranh luận lớn trên mạng, áp lực dư luận ngày càng lớn.',zh:'这篇文章在网上掀起了一场大讨论，舆论的压力越来越大。',py:'Zhè piān wénzhāng zài wǎngshàng xiānqǐle yì chǎng dà tǎolùn, yúlùn de yālì yuèláiyuè dà.',goiY:['掀起 + 一场……','舆论'],giai:'掀起 + 讨论 / 运动 = dấy lên (làn sóng); lượng từ 场 cho cuộc thảo luận; 舆论 đọc yúlùn.'},
+  {vi:'Sau một đêm không ngủ tuyệt đối không được vận động mạnh, nếu không có thể đột tử.',zh:'一夜没睡以后严禁做剧烈运动，否则可能会猝死。',py:'Yí yè méi shuì yǐhòu yánjìn zuò jùliè yùndòng, fǒuzé kěnéng huì cùsǐ.',goiY:['严禁','否则','猝死'],giai:'严禁 + V = nghiêm cấm (giọng quy định); 否则 = nếu không thì; 猝死 đọc cùsǐ.'}
 ];
 
 var translateDataRev = [
- {
-  "vi": "Trong lúc cố gắng phá kỷ lục thế giới, con người không khỏi nảy sinh nghi vấn về giới hạn thể lực của loài người.",
-  "zh": "人们在力争打破世界纪录的同时，不禁对人类体能的极限产生了疑问。",
-  "py": "Rénmen zài lìzhēng dǎpò shìjiè jìlù de tóngshí, bùjīn duì rénlèi tǐnéng de jíxiàn chǎnshēngle yíwèn.",
-  "goiY": [
-   "力争 = cố gắng giành",
-   "在……的同时 = trong lúc …, đồng thời",
-   "极限 = giới hạn"
-  ],
-  "giai": "在……的同时 dịch \"trong lúc / đồng thời với việc …\"; 不禁 = không kìm được, không khỏi. Đừng dịch 力争 là \"tranh giành bằng sức\"."
- },
- {
-  "vi": "Bolt không những phá kỷ lục thế giới do người đồng hương nắm giữ, mà còn về trước người hạng nhì trọn 0,2 giây.",
-  "zh": "博尔特不但打破了同胞保持的世界纪录，而且领先亚军整整0.2秒。",
-  "py": "Bó'ěrtè búdàn dǎpòle tóngbāo bǎochí de shìjiè jìlù, érqiě lǐngxiān yàjūn zhěngzhěng 0.2 miǎo.",
-  "goiY": [
-   "不但……而且…… = không những … mà còn",
-   "同胞 = người đồng hương",
-   "领先 = dẫn trước",
-   "亚军 = người hạng nhì"
-  ],
-  "giai": "同胞 ở đây là \"người đồng hương (cùng là người Jamaica)\", không dịch \"đồng bào\" cho gượng. 领先 + người + số lượng = về trước / dẫn trước ai bao nhiêu."
- },
- {
-  "vi": "Nếu số liệu của chuyên gia và kết quả thi đấu đã chênh lệch xa đến thế, thì chúng ta không thể tiếp tục tin mù quáng vào chuyên gia nữa, mà nên nghiên cứu, thảo luận lại vấn đề này.",
-  "zh": "既然专家的数据和比赛结果相差如此悬殊，我们就不能再盲目迷信专家，而应该重新探讨这个问题。",
-  "py": "Jìrán zhuānjiā de shùjù hé bǐsài jiéguǒ xiāngchà rúcǐ xuánshū, wǒmen jiù bù néng zài mángmù míxìn zhuānjiā, ér yīnggāi chóngxīn tàntǎo zhège wèntí.",
-  "goiY": [
-   "既然……就…… = đã … thì",
-   "悬殊 = chênh lệch xa",
-   "迷信 = tin mù quáng",
-   "探讨 = nghiên cứu thảo luận"
-  ],
-  "giai": "既然 nêu sự thật đã biết → 就 rút ra kết luận. 迷信专家 dịch \"tin mù quáng vào chuyên gia\", không dịch \"mê tín chuyên gia\". 探讨 ôn bài 29."
- },
- {
-  "vi": "Nhà nghiên cứu đã phân tích từng động tác thi đấu của Bolt và dùng công thức tính toán tỉ mỉ, chính xác, từ đó rút ra một kết luận đáng ngạc nhiên.",
-  "zh": "研究者分解了博尔特的比赛动作，并利用公式做了精密计算，从而得出了一个令人意外的结论。",
-  "py": "Yánjiūzhě fēnjiěle Bó'ěrtè de bǐsài dòngzuò, bìng lìyòng gōngshì zuòle jīngmì jìsuàn, cóng'ér déchūle yí ge lìng rén yìwài de jiélùn.",
-  "goiY": [
-   "分解 = phân tích (từng phần)",
-   "公式 = công thức",
-   "精密 = tỉ mỉ, chính xác",
-   "从而 = từ đó"
-  ],
-  "giai": "分解动作 = chia nhỏ / phân tích từng động tác (không dịch \"phân giải\"). 从而 nối kết quả sinh ra từ hành động trước = \"từ đó, nhờ vậy\"."
- },
- {
-  "vi": "Cấu tạo này tuy giúp vận động viên tăng tốc, nhưng cũng trở thành yếu tố hạn chế việc tăng tốc; đủ thấy khoa học khắc nghiệt đến thế nào.",
-  "zh": "这一结构虽然能让运动员加速，却也成为了加速的制约因素，可见科学是多么冷酷。",
-  "py": "Zhè yì jiégòu suīrán néng ràng yùndòngyuán jiāsù, què yě chéngwéile jiāsù de zhìyuē yīnsù, kějiàn kēxué shì duōme lěngkù.",
-  "goiY": [
-   "虽然……却…… = tuy … nhưng",
-   "制约 = kìm hãm, hạn chế",
-   "可见 = đủ thấy",
-   "冷酷 = khắc nghiệt"
-  ],
-  "giai": "制约因素 = yếu tố hạn chế. 冷酷 nói về khoa học nên dịch \"khắc nghiệt / lạnh lùng (không vì mong muốn con người mà thay đổi)\", không dịch \"tàn nhẫn\"."
- },
- {
-  "vi": "Xét từ góc độ y học thể thao, quan điểm này không phải không có lý, bởi vì chạy bộ phải huy động sức lực toàn thân, liên quan đến mọi cơ quan.",
-  "zh": "从运动医学的角度来看，这种观点不无道理，因为跑步要动员全身的力量，牵扯到各个器官。",
-  "py": "Cóng yùndòng yīxué de jiǎodù lái kàn, zhè zhǒng guāndiǎn bùwú dàolǐ, yīnwèi pǎobù yào dòngyuán quánshēn de lìliàng, qiānchě dào gè ge qìguān.",
-  "goiY": [
-   "不无道理 = không phải không có lý",
-   "动员 = huy động",
-   "牵扯 = liên quan",
-   "从……角度来看 = xét từ góc độ …"
-  ],
-  "giai": "不无 = 不是没有 → dịch \"không phải không có …\" / \"cũng có phần …\". BẪY: 动员 = HUY ĐỘNG, không dịch \"động viên\"."
- },
- {
-  "vi": "Một khi tim bị trục trặc, dù chân có nhanh đến mấy cũng vô dụng; vì thế khi vận động nghiêm cấm vượt quá giá trị giới hạn của nhịp tim.",
-  "zh": "一旦心脏出了故障，哪怕腿再快也不管用，因此运动时严禁超过心率的极限值。",
-  "py": "Yídàn xīnzàng chūle gùzhàng, nǎpà tuǐ zài kuài yě bù guǎnyòng, yīncǐ yùndòng shí yánjìn chāoguò xīnlǜ de jíxiànzhí.",
-  "goiY": [
-   "一旦 = một khi",
-   "哪怕……也…… = dù … cũng",
-   "故障 = trục trặc",
-   "严禁 = nghiêm cấm"
-  ],
-  "giai": "Câu ba vế: giả thiết (一旦) → nhượng bộ (哪怕……再……也……) → kết luận (因此). 故障 dịch \"trục trặc / hỏng\" chứ không dịch \"cố chướng\"."
- },
- {
-  "vi": "Chỉ khi trải qua luyện tập chính quy lâu dài và dùng tâm thế tích cực để khơi dậy tiềm năng, vận động viên mới có thể phát huy vượt trình độ trong thi đấu.",
-  "zh": "只有经过长期正规的训练，并用积极的心态激发潜能，运动员才能在竞赛中超水平发挥。",
-  "py": "Zhǐyǒu jīngguò chángqī zhèngguī de xùnliàn, bìng yòng jījí de xīntài jīfā qiánnéng, yùndòngyuán cái néng zài jìngsài zhōng chāo shuǐpíng fāhuī.",
-  "goiY": [
-   "只有……才…… = chỉ khi … mới",
-   "正规 = chính quy",
-   "激发 = khơi dậy",
-   "竞赛 = thi đấu"
-  ],
-  "giai": "只有 + điều kiện duy nhất, 才 + kết quả. 超水平发挥 = phát huy vượt trình độ (thi tốt hơn thực lực thường ngày). 激发 ôn bài 36."
- },
- {
-  "vi": "Vận động viên trẻ có ưu thế tuổi tác trời phú, còn vận động viên lâu năm thì tác phong vững vàng, bền bỉ ngoan cường, vì vậy đều có thể trở thành đối tượng được ưu tiên tuyển chọn.",
-  "zh": "年轻运动员拥有得天独厚的年龄优势，而老运动员则作风过硬、坚韧顽强，因此都会成为优先选拔的对象。",
-  "py": "Niánqīng yùndòngyuán yōngyǒu détiān-dúhòu de niánlíng yōushì, ér lǎo yùndòngyuán zé zuòfēng guòyìng, jiānrèn wánqiáng, yīncǐ dōu huì chéngwéi yōuxiān xuǎnbá de duìxiàng.",
-  "goiY": [
-   "得天独厚 = trời phú",
-   "而……则…… = còn … thì",
-   "作风 = tác phong",
-   "优先 = ưu tiên",
-   "选拔 = tuyển chọn"
-  ],
-  "giai": "而……则…… đối chiếu hai nhóm (trẻ / lâu năm). 老运动员 = vận động viên LÂU NĂM (nhiều kinh nghiệm), không phải \"vận động viên già\". 坚韧 ôn bài 31."
- },
- {
-  "vi": "Tuyển thủ xuất sắc và luyện tập khoa học bổ trợ cho nhau; ai có thể dựa vào trang bị tiên tiến mà ngoan cường vượt qua giới hạn cơ thể, người đó sẽ nổi bật trong cuộc cạnh tranh.",
-  "zh": "优秀的选手和科学训练相辅相成，谁能依托先进装备顽强地越过人体极限，谁就能在竞争中脱颖而出。",
-  "py": "Yōuxiù de xuǎnshǒu hé kēxué xùnliàn xiāngfǔ-xiāngchéng, shéi néng yītuō xiānjìn zhuāngbèi wánqiáng de yuèguò réntǐ jíxiàn, shéi jiù néng zài jìngzhēng zhōng tuōyǐng'érchū.",
-  "goiY": [
-   "相辅相成 = bổ trợ cho nhau",
-   "谁……谁就…… = ai … người đó …",
-   "依托 = dựa vào",
-   "装备 = trang bị"
-  ],
-  "giai": "Đại từ nghi vấn dùng phiếm chỉ 谁……，谁就…… = \"ai … thì người đó …\". 脱颖而出 = nổi bật hẳn lên (tài năng lộ ra)."
- }
+  {vi:'Cậu ấy là anh em ruột của tôi, chúng tôi lớn lên cùng nhau từ nhỏ.',zh:'他是我的同胞兄弟，我们从小一起长大。',py:'Tā shì wǒ de tóngbāo xiōngdì, wǒmen cóngxiǎo yìqǐ zhǎngdà.',goiY:['同胞兄弟 = anh em ruột'],giai:'同胞 ngoài nghĩa "đồng bào" còn là "cùng cha mẹ sinh ra".'},
+  {vi:'Nguyên lý này nghe thì phức tạp, thật ra dùng một công thức đơn giản là giải thích được.',zh:'这个原理听起来很复杂，其实用一个简单的公式就能说明。',py:'Zhège yuánlǐ tīng qilai hěn fùzá, qíshí yòng yí ge jiǎndān de gōngshì jiù néng shuōmíng.',goiY:['原理 = nguyên lý','公式 = công thức'],giai:'V起来 = khi … thì thấy; 其实 chuyển sang sự thật.'},
+  {vi:'Nơi này do thành phố nào quản lý?',zh:'这个地方由哪个城市管辖？',py:'Zhège dìfang yóu nǎge chéngshì guǎnxiá?',goiY:['由……管辖 = do … quản lý'],giai:'管辖 = quản lý về hành chính (khu vực, cơ quan), trang trọng hơn 管.'},
+  {vi:'Mỗi học kỳ trường đều tổ chức một buổi diễn tập thoát hiểm động đất.',zh:'学校每学期都会举行一次地震逃生演习。',py:'Xuéxiào měi xuéqī dōu huì jǔxíng yí cì dìzhèn táoshēng yǎnxí.',goiY:['演习 = diễn tập','逃生 = thoát thân'],giai:'举行 + 演习 / 比赛; 演习 = làm thử như thật.'},
+  {vi:'Trên con đường này, những khó khăn anh ấy gặp như vách núi dựng đứng, nhưng anh ấy chưa bao giờ bỏ cuộc.',zh:'在这条路上，他遇到的困难就像悬崖峭壁，但他从来没有放弃。',py:'Zài zhè tiáo lù shang, tā yùdào de kùnnan jiù xiàng xuányá qiàobì, dàn tā cónglái méiyǒu fàngqì.',goiY:['悬崖峭壁 = vách núi dựng đứng (trở ngại cực lớn)'],giai:'就像 + N = so sánh; 悬崖峭壁 dùng nghĩa bóng.'}
 ];
 
 var writingData = {
@@ -6484,394 +5573,140 @@ var writingData = {
   "Đã dùng ít nhất 6 từ mới (截至, 力争, 领先, 精密, 悬殊, 冷酷, 严禁, 相辅相成…), viết bằng lời của mình, không chép nguyên câu dài của bài khoá chưa?"
  ],
  "model": {
-  "zh": "（题目：人类超能力会改变世界纪录吗？）\n我们一直以为世界纪录就是要不断被打破的，可是多数世界纪录都是在20世纪90年代创造的，更有人引用《每日电讯报》的说法称：截至2060年，人类可能不会再创造体坛新纪录。人们在力争打破世界纪录的同时，不禁要问：一个人的体能究竟有多大？有专家认为，人类跑100米可能达到的最快速度大约为11.96秒。\n然而，牙买加选手博尔特简直不把世界纪录放在眼里。2008年6月1日，他在纽约以9.72秒获得100米冠军，打破了同胞保持的世界纪录；同年8月16日，他又在北京奥运会上以9.69秒再次刷新世界纪录，领先亚军0.2秒。有研究者分解了他的比赛动作，并利用公式做了精密计算，结论是：如果他跑200米，第二个100米会比第一个更快。数据相差如此悬殊，一时舆论哗然。\n人体运动到底有没有极限？从身体结构看，跑步的动力主要来自股四头肌，超越极限的速度会造成肌腱和膝盖的连接点撕裂，科学就是这么冷酷。从运动医学和心理学角度看，也有人的观点不无道理：跑步要动员全身的力量，心脏一旦出了故障，腿再快也不管用，所以运动时严禁超过心率的极限值。从体能和心理素质方面看，体能只有60%是与生俱来的，其余要靠训练去发掘，积极的精神状态还能让运动员超水平发挥。\n总之，优秀的选手和科学训练相辅相成。谁能顽强地越过人体极限，谁就能成为竞争者中涌现出来的明星。",
-  "py": "(Tímù: Rénlèi chāo nénglì huì gǎibiàn shìjiè jìlù ma?)\nWǒmen yìzhí yǐwéi shìjiè jìlù jiù shì yào búduàn bèi dǎpò de, kěshì duōshù shìjiè jìlù dōu shì zài 20 shìjì 90 niándài chuàngzào de, gèng yǒu rén yǐnyòng 《Měirì Diànxùnbào》 de shuōfǎ chēng: jiézhì 2060 nián, rénlèi kěnéng bú huì zài chuàngzào tǐtán xīn jìlù. Rénmen zài lìzhēng dǎpò shìjiè jìlù de tóngshí, bùjīn yào wèn: yí ge rén de tǐnéng jiūjìng yǒu duō dà? Yǒu zhuānjiā rènwéi, rénlèi pǎo 100 mǐ kěnéng dádào de zuì kuài sùdù dàyuē wéi 11.96 miǎo.\nRán'ér, Yámǎijiā xuǎnshǒu Bó'ěrtè jiǎnzhí bù bǎ shìjiè jìlù fàng zài yǎn li. 2008 nián 6 yuè 1 rì, tā zài Niǔyuē yǐ 9.72 miǎo huòdé 100 mǐ guànjūn, dǎpòle tóngbāo bǎochí de shìjiè jìlù; tóngnián 8 yuè 16 rì, tā yòu zài Běijīng Àoyùnhuì shang yǐ 9.69 miǎo zàicì shuāxīn shìjiè jìlù, lǐngxiān yàjūn 0.2 miǎo. Yǒu yánjiūzhě fēnjiěle tā de bǐsài dòngzuò, bìng lìyòng gōngshì zuòle jīngmì jìsuàn, jiélùn shì: rúguǒ tā pǎo 200 mǐ, dì-èr ge 100 mǐ huì bǐ dì-yī ge gèng kuài. Shùjù xiāngchà rúcǐ xuánshū, yìshí yúlùn huárán.\nRéntǐ yùndòng dàodǐ yǒu méiyǒu jíxiàn? Cóng shēntǐ jiégòu kàn, pǎobù de dònglì zhǔyào láizì gǔsìtóujī, chāoyuè jíxiàn de sùdù huì zàochéng jījiàn hé xīgài de liánjiēdiǎn sīliè, kēxué jiù shì zhème lěngkù. Cóng yùndòng yīxué hé xīnlǐxué jiǎodù kàn, yě yǒu rén de guāndiǎn bùwú dàolǐ: pǎobù yào dòngyuán quánshēn de lìliàng, xīnzàng yídàn chūle gùzhàng, tuǐ zài kuài yě bù guǎnyòng, suǒyǐ yùndòng shí yánjìn chāoguò xīnlǜ de jíxiànzhí. Cóng tǐnéng hé xīnlǐ sùzhì fāngmiàn kàn, tǐnéng zhǐ yǒu 60% shì yǔ shēng jù lái de, qíyú yào kào xùnliàn qù fājué, jījí de jīngshén zhuàngtài hái néng ràng yùndòngyuán chāo shuǐpíng fāhuī.\nZǒngzhī, yōuxiù de xuǎnshǒu hé kēxué xùnliàn xiāngfǔ-xiāngchéng. Shéi néng wánqiáng de yuèguò réntǐ jíxiàn, shéi jiù néng chéngwéi jìngzhēngzhě zhōng yǒngxiàn chūlai de míngxīng.",
-  "vn": "(Đề: Siêu năng lực của con người có làm thay đổi kỷ lục thế giới không?)\nChúng ta vẫn luôn cho rằng kỷ lục thế giới là để không ngừng bị phá, vậy mà phần lớn kỷ lục thế giới đều được lập vào thập niên 90 của thế kỷ 20; còn có người trích dẫn tờ Daily Telegraph rằng: tính đến năm 2060, có thể loài người sẽ không lập thêm kỷ lục thể thao mới nào nữa. Trong lúc cố gắng phá kỷ lục thế giới, con người không khỏi tự hỏi: thể lực của một người rốt cuộc lớn đến đâu? Có chuyên gia cho rằng tốc độ nhanh nhất con người có thể đạt khi chạy 100 mét vào khoảng 11,96 giây.\nThế nhưng, vận động viên người Jamaica Bolt quả thật chẳng coi kỷ lục thế giới ra gì. Ngày 1/6/2008, tại New York, anh giành chức vô địch 100 mét với 9,72 giây, phá kỷ lục thế giới của người đồng hương; ngày 16/8 cùng năm, tại Olympic Bắc Kinh, anh lại phá kỷ lục thế giới với 9,69 giây, về trước người hạng nhì 0,2 giây. Có nhà nghiên cứu đã phân tích động tác thi đấu của anh và dùng công thức tính toán chính xác, kết luận: nếu anh chạy 200 mét thì 100 mét thứ hai sẽ nhanh hơn 100 mét đầu. Số liệu chênh lệch xa đến thế, nhất thời dư luận xôn xao.\nVận động của cơ thể người rốt cuộc có giới hạn không? Xét về cấu tạo cơ thể, lực chạy chủ yếu đến từ cơ tứ đầu đùi; tốc độ vượt giới hạn sẽ làm rách điểm nối giữa gân và đầu gối — khoa học khắc nghiệt như vậy. Xét từ y học thể thao và tâm lý học, có quan điểm cũng không phải không có lý: chạy bộ phải huy động sức lực toàn thân, tim một khi trục trặc thì chân nhanh mấy cũng vô dụng, vì vậy khi vận động nghiêm cấm vượt quá nhịp tim giới hạn. Xét về thể lực và tố chất tâm lý, thể lực chỉ có 60% là bẩm sinh, phần còn lại phải nhờ luyện tập khai thác, trạng thái tinh thần tích cực còn giúp vận động viên phát huy vượt trình độ.\nTóm lại, tuyển thủ xuất sắc và luyện tập khoa học bổ trợ cho nhau. Ai ngoan cường vượt qua giới hạn cơ thể, người đó sẽ trở thành ngôi sao nổi lên giữa những người cạnh tranh."
+  "zh": "（题目：人类超能力会改变世界纪录吗？）\n我们一直以为世界纪录就是要不断被打破的，可是多数世界纪录都是在20世纪90年代创造的，更有人引用《每日电讯报》的说法称：截至2060年，人类可能不会再创造体坛新纪录。人们在力争打破世界纪录的同时，不禁要问：一个人的体能究竟有多大？有专家认为，人类跑100米可能达到的最快速度大约为11.96秒。\n然而，牙买加选手博尔特简直不把世界纪录放在眼里。2008年6月1日，他在纽约以9.72秒获得100米冠军，打破了同胞保持的世界纪录；这一年8月16日，他又在北京奥运会上以9.69秒再次刷新世界纪录，领先亚军0.2秒。有研究者分解了他的比赛动作，并利用公式做了精密计算，结论是：如果他跑200米，第二个100米会比第一个更快。数据相差如此悬殊，一时舆论哗然。\n人体运动到底有没有极限？从身体结构看，跑步的动力主要来自股四头肌，超越极限的速度会造成肌腱和膝盖的连接点撕裂，科学就是这么冷酷。从运动医学和心理学角度看，也有人的观点不无道理：跑步要动员全身的力量，心脏一旦出了故障，腿再快也不管用，所以运动时严禁超过心率的极限值。从体能和心理素质方面看，体能只有60%是与生俱来的，其余要靠训练去发掘，积极的精神状态还能让运动员超水平发挥。\n总之，优秀的选手和科学训练相辅相成。谁能顽强地越过人体极限，谁就能成为竞争者中涌现出来的明星。",
+  "py": "(Tímù: Rénlèi chāo nénglì huì gǎibiàn shìjiè jìlù ma?)\nWǒmen yìzhí yǐwéi shìjiè jìlù jiù shì yào búduàn bèi dǎpò de, kěshì duōshù shìjiè jìlù dōu shì zài 20 shìjì 90 niándài chuàngzào de, gèng yǒu rén yǐnyòng 《Měirì Diànxùnbào》 de shuōfǎ chēng: jiézhì 2060 nián, rénlèi kěnéng bú huì zài chuàngzào tǐtán xīn jìlù. Rénmen zài lìzhēng dǎpò shìjiè jìlù de tóngshí, bùjīn yào wèn: yí ge rén de tǐnéng jiūjìng yǒu duō dà? Yǒu zhuānjiā rènwéi, rénlèi pǎo 100 mǐ kěnéng dádào de zuì kuài sùdù dàyuē wéi 11.96 miǎo.\nRán'ér, Yámǎijiā xuǎnshǒu Bó'ěrtè jiǎnzhí bù bǎ shìjiè jìlù fàng zài yǎn li. 2008 nián 6 yuè 1 rì, tā zài Niǔyuē yǐ 9.72 miǎo huòdé 100 mǐ guànjūn, dǎpòle tóngbāo bǎochí de shìjiè jìlù; zhè yì nián 8 yuè 16 rì, tā yòu zài Běijīng Àoyùnhuì shang yǐ 9.69 miǎo zàicì shuāxīn shìjiè jìlù, lǐngxiān yàjūn 0.2 miǎo. Yǒu yánjiūzhě fēnjiěle tā de bǐsài dòngzuò, bìng lìyòng gōngshì zuòle jīngmì jìsuàn, jiélùn shì: rúguǒ tā pǎo 200 mǐ, dì-èr ge 100 mǐ huì bǐ dì-yī ge gèng kuài. Shùjù xiāngchà rúcǐ xuánshū, yìshí yúlùn huárán.\nRéntǐ yùndòng dàodǐ yǒu méiyǒu jíxiàn? Cóng shēntǐ jiégòu kàn, pǎobù de dònglì zhǔyào láizì gǔsìtóujī, chāoyuè jíxiàn de sùdù huì zàochéng jījiàn hé xīgài de liánjiēdiǎn sīliè, kēxué jiù shì zhème lěngkù. Cóng yùndòng yīxué hé xīnlǐxué jiǎodù kàn, yě yǒu rén de guāndiǎn bùwú dàolǐ: pǎobù yào dòngyuán quánshēn de lìliàng, xīnzàng yídàn chūle gùzhàng, tuǐ zài kuài yě bù guǎnyòng, suǒyǐ yùndòng shí yánjìn chāoguò xīnlǜ de jíxiànzhí. Cóng tǐnéng hé xīnlǐ sùzhì fāngmiàn kàn, tǐnéng zhǐ yǒu 60% shì yǔ shēng jù lái de, qíyú yào kào xùnliàn qù fājué, jījí de jīngshén zhuàngtài hái néng ràng yùndòngyuán chāo shuǐpíng fāhuī.\nZǒngzhī, yōuxiù de xuǎnshǒu hé kēxué xùnliàn xiāngfǔ-xiāngchéng. Shéi néng wánqiáng de yuèguò réntǐ jíxiàn, shéi jiù néng chéngwéi jìngzhēngzhě zhōng yǒngxiàn chūlai de míngxīng.",
+  "vn": "(Đề: Siêu năng lực của con người có làm thay đổi kỷ lục thế giới không?)\nChúng ta vẫn luôn cho rằng kỷ lục thế giới là để không ngừng bị phá, vậy mà phần lớn kỷ lục thế giới đều được lập vào thập niên 90 của thế kỷ 20; còn có người trích dẫn tờ Daily Telegraph rằng: tính đến năm 2060, có thể loài người sẽ không lập thêm kỷ lục thể thao mới nào nữa. Trong lúc cố gắng phá kỷ lục thế giới, con người không khỏi tự hỏi: thể lực của một người rốt cuộc lớn đến đâu? Có chuyên gia cho rằng tốc độ nhanh nhất con người có thể đạt khi chạy 100 mét vào khoảng 11,96 giây.\nThế nhưng, vận động viên người Jamaica Bolt quả thật chẳng coi kỷ lục thế giới ra gì. Ngày 1/6/2008, tại New York, anh giành chức vô địch 100 mét với 9,72 giây, phá kỷ lục thế giới của người đồng hương; ngày 16/8 năm đó, tại Olympic Bắc Kinh, anh lại phá kỷ lục thế giới với 9,69 giây, về trước người hạng nhì 0,2 giây. Có nhà nghiên cứu đã phân tích động tác thi đấu của anh và dùng công thức tính toán chính xác, kết luận: nếu anh chạy 200 mét thì 100 mét thứ hai sẽ nhanh hơn 100 mét đầu. Số liệu chênh lệch xa đến thế, nhất thời dư luận xôn xao.\nVận động của cơ thể người rốt cuộc có giới hạn không? Xét về cấu tạo cơ thể, lực chạy chủ yếu đến từ cơ tứ đầu đùi; tốc độ vượt giới hạn sẽ làm rách điểm nối giữa gân và đầu gối — khoa học khắc nghiệt như vậy. Xét từ y học thể thao và tâm lý học, có quan điểm cũng không phải không có lý: chạy bộ phải huy động sức lực toàn thân, tim một khi trục trặc thì chân nhanh mấy cũng vô dụng, vì vậy khi vận động nghiêm cấm vượt quá nhịp tim giới hạn. Xét về thể lực và tố chất tâm lý, thể lực chỉ có 60% là bẩm sinh, phần còn lại phải nhờ luyện tập khai thác, trạng thái tinh thần tích cực còn giúp vận động viên phát huy vượt trình độ.\nTóm lại, tuyển thủ xuất sắc và luyện tập khoa học bổ trợ cho nhau. Ai ngoan cường vượt qua giới hạn cơ thể, người đó sẽ trở thành ngôi sao nổi lên giữa những người cạnh tranh."
  }
 };
 
 var speakingData = {
- "intro": "Đây là bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b>. Bảng có ba dòng (quan điểm về kỷ lục thế giới · lấy Bolt làm ví dụ kể quá trình phá kỷ lục · phân tích cơ thể người để xem giới hạn vận động). Mỗi câu dưới đây là một dòng — bấm loa nghe câu hỏi, nhìn gợi ý, <b>tự ghi âm câu trả lời của mình trước</b> rồi mới mở câu mẫu. Cố dùng từ mới: 引用 · 截至 · 力争 · 极限 · 狭窄 · 任性 · 同胞 · 领先 · 分解 · 公式 · 精密 · 悬殊 · 舆论 · 空洞 · 制约 · 冷酷 · 动员 · 故障 · 严禁 · 正规 · 选拔 · 相辅相成.",
- "questions": [
-  {
-   "q_zh": "对世界纪录的看法",
-   "q_vn": "Quan điểm về kỷ lục thế giới (có những cách nhìn nào?)",
-   "hint": "①引用《每日电讯报》的说法 ②一个人体能究竟有多大 ③专家认为百米最快速度是多少",
-   "sample": "我们一直以为世界纪录是要不断被打破的，可是有人引用《每日电讯报》的说法称：截至2060年，人类可能不会再创造体坛新纪录。人们在力争打破纪录的同时，也不禁会问：一个人的体能究竟有多大？有专家认为，人类跑100米可能达到的最快速度大约是11.96秒。",
-   "sample_vn": "Chúng ta vẫn cho rằng kỷ lục thế giới là để không ngừng bị phá, nhưng có người trích dẫn tờ Daily Telegraph rằng: tính đến năm 2060, có thể loài người sẽ không lập thêm kỷ lục thể thao mới nào. Trong lúc cố gắng phá kỷ lục, người ta cũng không khỏi hỏi: thể lực một người rốt cuộc lớn đến đâu? Có chuyên gia cho rằng tốc độ nhanh nhất con người có thể đạt khi chạy 100 mét vào khoảng 11,96 giây.",
-   "note": "Ý ① dẫn ý kiến: 有人引用……的说法称 + 截至 + năm; ý ② nêu câu hỏi 究竟有多大; ý ③ nêu con số của chuyên gia bằng 有专家认为…… ."
-  },
-  {
-   "q_zh": "以博尔特为例说说打破世界纪录的过程",
-   "q_vn": "Lấy Bolt làm ví dụ, kể quá trình phá kỷ lục thế giới",
-   "hint": "①博尔特：2008.6.1，纽约……　2008.8.16，北京…… ②分解博尔特的动作，精密计算，结论",
-   "sample": "牙买加选手博尔特简直不把世界纪录放在眼里。2008年6月1日，他在纽约以9.72秒获得100米冠军，打破了同胞保持的世界纪录；同年8月16日，在北京奥运会上，他又以9.69秒刷新了世界纪录，领先亚军0.2秒。后来有研究者分解了他的比赛动作，用公式做了精密计算，结论是：如果他跑200米，第二个100米会比第一个更快。",
-   "sample_vn": "Vận động viên người Jamaica Bolt quả thật chẳng coi kỷ lục thế giới ra gì. Ngày 1/6/2008, tại New York anh vô địch 100 mét với 9,72 giây, phá kỷ lục của người đồng hương; ngày 16/8 cùng năm, tại Olympic Bắc Kinh, anh lại phá kỷ lục với 9,69 giây, về trước người hạng nhì 0,2 giây. Sau đó có nhà nghiên cứu phân tích động tác thi đấu của anh, dùng công thức tính toán chính xác và kết luận: nếu anh chạy 200 mét thì 100 mét thứ hai sẽ nhanh hơn 100 mét đầu.",
-   "note": "Kể theo thời gian: 2008年6月1日 → 同年8月16日; dùng 以……的成绩 / 以……秒 + V, 领先 + người + số. Ý ② dùng 分解……动作, 精密计算, 结论是……."
-  },
-  {
-   "q_zh": "通过对人体的分析来看人类运动极限",
-   "q_vn": "Qua phân tích cơ thể con người, xem giới hạn vận động của loài người",
-   "hint": "①从身体结构看：动力来源，超越极限速度会…… ②从运动医学和心理学角度分析：心脏、心率 ③从体能和心理素质方面分析 ④优秀选手和科学训练相辅相成",
-   "sample": "从身体结构看，跑步的动力主要来自股四头肌，超越极限的速度会造成肌腱和膝盖的连接点撕裂，科学就是这么冷酷。从运动医学和心理学角度看，心脏管辖着全身，如果它出了故障，腿再快也不管用，所以运动时严禁超过心率的极限值。从体能和心理素质方面看，体能只有60%是与生俱来的，其余要靠正规科学的训练去发掘。总之，优秀的选手和科学训练相辅相成。",
-   "sample_vn": "Xét về cấu tạo cơ thể, lực chạy chủ yếu đến từ cơ tứ đầu đùi; tốc độ vượt giới hạn sẽ làm rách điểm nối giữa gân và đầu gối — khoa học khắc nghiệt như vậy. Xét từ y học thể thao và tâm lý học, tim cai quản toàn thân, nếu tim trục trặc thì chân nhanh mấy cũng vô dụng, vì vậy khi vận động nghiêm cấm vượt quá nhịp tim giới hạn. Xét về thể lực và tố chất tâm lý, thể lực chỉ 60% là bẩm sinh, phần còn lại phải nhờ luyện tập chính quy, khoa học để khai thác. Tóm lại, tuyển thủ xuất sắc và luyện tập khoa học bổ trợ cho nhau.",
-   "note": "Bốn ý nói theo khung 从……看，……（×3）+ 总之，…… . Có thể thêm 不无道理 khi chuyển sang ý ② (也有人的观点不无道理)."
-  }
- ]
+  intro: 'Đây là bài tập 5 trong sách: <b>根据提示，简述课文主要内容</b>. Bảng có ba dòng (quan điểm về kỷ lục thế giới · lấy Bolt làm ví dụ kể quá trình phá kỷ lục · phân tích cơ thể người để xem giới hạn vận động). Mỗi câu dưới đây là một dòng — bấm loa nghe câu hỏi, nhìn gợi ý, <b>tự ghi âm câu trả lời của mình trước</b> rồi mới mở câu mẫu. Cố dùng từ mới: 引用 · 截至 · 力争 · 极限 · 狭窄 · 任性 · 同胞 · 领先 · 分解 · 公式 · 精密 · 悬殊 · 舆论 · 空洞 · 制约 · 冷酷 · 动员 · 故障 · 严禁 · 正规 · 选拔 · 相辅相成.',
+  questions: [
+    {q_zh:'对世界纪录的看法',q_vn:'Quan điểm về kỷ lục thế giới (có những cách nhìn nào?)',hint:'①引用《每日电讯报》的说法 ②一个人体能究竟有多大 ③专家认为百米最快速度是多少',sample:'我们一直以为世界纪录是要不断被打破的，可是有人引用《每日电讯报》的说法称：截至2060年，人类可能不会再创造体坛新纪录。人们在力争打破纪录的同时，也不禁会问：一个人的体能究竟有多大？有专家认为，人类跑100米可能达到的最快速度大约是11.96秒。',sample_vn:'Chúng ta vẫn cho rằng kỷ lục thế giới là để không ngừng bị phá, nhưng có người trích dẫn tờ Daily Telegraph rằng: tính đến năm 2060, có thể loài người sẽ không lập thêm kỷ lục thể thao mới nào. Trong lúc cố gắng phá kỷ lục, người ta cũng không khỏi hỏi: thể lực một người rốt cuộc lớn đến đâu? Có chuyên gia cho rằng tốc độ nhanh nhất con người có thể đạt khi chạy 100 mét vào khoảng 11,96 giây.',note:'Ý ① dẫn ý kiến: 有人引用……的说法称 + 截至 + năm; ý ② nêu câu hỏi 究竟有多大; ý ③ nêu con số của chuyên gia bằng 有专家认为…… .'},
+    {q_zh:'以博尔特为例说说打破世界纪录的过程',q_vn:'Lấy Bolt làm ví dụ, kể quá trình phá kỷ lục thế giới',hint:'①博尔特：2008.6.1，纽约……　2008.8.16，北京…… ②分解博尔特的动作，精密计算，结论',sample:'牙买加选手博尔特简直不把世界纪录放在眼里。2008年6月1日，他在纽约以9.72秒获得100米冠军，打破了同胞保持的世界纪录；两个多月后，在北京奥运会上，他又以9.69秒刷新了世界纪录，领先亚军0.2秒。后来有研究者分解了他的比赛动作，用公式做了精密计算，结论是：如果他跑200米，第二个100米会比第一个更快。',sample_vn:'Vận động viên người Jamaica Bolt quả thật chẳng coi kỷ lục thế giới ra gì. Ngày 1/6/2008, tại New York anh vô địch 100 mét với 9,72 giây, phá kỷ lục của người đồng hương; hơn hai tháng sau, tại Olympic Bắc Kinh, anh lại phá kỷ lục với 9,69 giây, về trước người hạng nhì 0,2 giây. Sau đó có nhà nghiên cứu phân tích động tác thi đấu của anh, dùng công thức tính toán chính xác và kết luận: nếu anh chạy 200 mét thì 100 mét thứ hai sẽ nhanh hơn 100 mét đầu.',note:'Kể theo thời gian: 2008年6月1日 → 两个多月后; dùng 以……的成绩 / 以……秒 + V, 领先 + người + số. Ý ② dùng 分解……动作, 精密计算, 结论是…….'},
+    {q_zh:'通过对人体的分析来看人类运动极限',q_vn:'Qua phân tích cơ thể con người, xem giới hạn vận động của loài người',hint:'①从身体结构看：动力来源，超越极限速度会…… ②从运动医学和心理学角度分析：心脏、心率 ③从体能和心理素质方面分析 ④优秀选手和科学训练相辅相成',sample:'从身体结构看，跑步的动力主要来自股四头肌，超越极限的速度会造成肌腱和膝盖的连接点撕裂，科学就是这么冷酷。从运动医学和心理学角度看，心脏管辖着全身，如果它出了故障，腿再快也不管用，所以运动时严禁超过心率的极限值。从体能和心理素质方面看，体能只有60%是与生俱来的，其余要靠正规科学的训练去发掘。总之，优秀的选手和科学训练相辅相成。',sample_vn:'Xét về cấu tạo cơ thể, lực chạy chủ yếu đến từ cơ tứ đầu đùi; tốc độ vượt giới hạn sẽ làm rách điểm nối giữa gân và đầu gối — khoa học khắc nghiệt như vậy. Xét từ y học thể thao và tâm lý học, tim cai quản toàn thân, nếu tim trục trặc thì chân nhanh mấy cũng vô dụng, vì vậy khi vận động nghiêm cấm vượt quá nhịp tim giới hạn. Xét về thể lực và tố chất tâm lý, thể lực chỉ 60% là bẩm sinh, phần còn lại phải nhờ luyện tập chính quy, khoa học để khai thác. Tóm lại, tuyển thủ xuất sắc và luyện tập khoa học bổ trợ cho nhau.',note:'Bốn ý nói theo khung 从……看，……（×3）+ 总之，…… . Có thể thêm 不无道理 khi chuyển sang ý ② (也有人的观点不无道理).'}
+  ]
 };
 
 var listenExamData = {
- "intro": "Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.",
- "source": "Soạn theo dạng đề HSK 6 · chủ đề bài 40",
- "items": [
-  {
-   "n": 1,
-   "lines": [
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Vì vậy ở đây cũng vậy: bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 40',
+  items: [
     {
-     "sp": "女",
-     "zh": "昨天的百米决赛你看直播了吗？"
+      n: 1,
+      lines: [
+        {sp:'男',zh:'这次比赛你拿了第几名？'},
+        {sp:'女',zh:'第三名，是季军，比上次进步了两名。'}
+      ],
+      q: '女的上次比赛是第几名？',
+      qvn: 'Lần thi trước người phụ nữ đứng thứ mấy?',
+      opts: ['第一名','第三名','第五名','第二名'],
+      ans: 2,
+      why: 'Lần này 季军 = hạng ba, 进步了两名 = tiến hai bậc → lần trước hạng năm.',
+      words: ['季军']
     },
     {
-     "sp": "男",
-     "zh": "看了！冠军领先亚军整整0.2秒，还刷新了世界纪录，太振奋人心了。"
-    }
-   ],
-   "q": "关于百米决赛，可以知道什么？",
-   "qvn": "Có thể biết gì về trận chung kết 100 mét?",
-   "opts": [
-    "男的没看比赛",
-    "亚军打破了世界纪录",
-    "冠军创造了新的世界纪录",
-    "冠军和亚军成绩一样"
-   ],
-   "ans": 2,
-   "why": "冠军……还刷新了世界纪录 → C. 男的说\"看了\" (loại A); người phá kỷ lục là 冠军, không phải 亚军 (loại B); hai người cách nhau 0.2 giây (loại D).",
-   "words": [
-    "直播",
-    "领先",
-    "亚军"
-   ]
-  },
-  {
-   "n": 2,
-   "lines": [
-    {
-     "sp": "男",
-     "zh": "教练，我这次只拿了季军，是不是说明我已经到极限了？"
+      n: 2,
+      lines: [
+        {sp:'女',zh:'刚才楼里的铃声怎么响了？'},
+        {sp:'男',zh:'别紧张，那只是演习，不是真的着火。'}
+      ],
+      q: '男的是什么意思？',
+      qvn: 'Ý người đàn ông là gì?',
+      opts: ['那是一次演习','楼里着火了','铃声坏了','要马上离开'],
+      ans: 0,
+      why: '那只是演习 = chỉ là diễn tập, 不是真的着火 → không có cháy thật.',
+      words: ['演习']
     },
     {
-     "sp": "女",
-     "zh": "哪儿啊！你的起跑还有问题，只要改进技术，成绩还能提高。"
-    }
-   ],
-   "q": "女的是什么意思？",
-   "qvn": "Ý của người phụ nữ là gì?",
-   "opts": [
-    "男的还有进步的空间",
-    "男的应该放弃比赛",
-    "季军的成绩已经很好了",
-    "男的体能已经到了极限"
-   ],
-   "ans": 0,
-   "why": "哪儿啊 = đâu có (phủ định ý của nam); 只要改进技术，成绩还能提高 → vẫn còn chỗ để tiến bộ. D là điều nam lo lắng, bị nữ phủ định.",
-   "words": [
-    "季军",
-    "极限"
-   ]
-  },
-  {
-   "n": 3,
-   "lines": [
-    {
-     "sp": "女",
-     "zh": "这台跑步机怎么不动了？"
+      n: 3,
+      lines: [
+        {sp:'男',zh:'我们队员个子没有对方高，怎么打？'},
+        {sp:'女',zh:'那就换个战术，多跑动，少跟他们比力气。'}
+      ],
+      q: '女的建议怎么做？',
+      qvn: 'Người phụ nữ đề nghị làm gì?',
+      opts: ['换几个队员','放弃比赛','换个战术','多练力气'],
+      ans: 2,
+      why: '换个战术 = đổi chiến thuật: chạy nhiều hơn, đừng đọ sức. 少跟他们比力气 nên D sai.',
+      words: ['战术']
     },
     {
-     "sp": "男",
-     "zh": "可能是出故障了。你先别用了，我给售后打个电话，让他们派人来修。"
-    }
-   ],
-   "q": "男的打算做什么？",
-   "qvn": "Người đàn ông định làm gì?",
-   "opts": [
-    "自己修跑步机",
-    "去健身房跑步",
-    "买一台新的",
-    "请人来修理"
-   ],
-   "ans": 3,
-   "why": "给售后打个电话，让他们派人来修 → nhờ người đến sửa (D). Anh ấy không tự sửa (loại A).",
-   "words": [
-    "故障"
-   ]
-  },
-  {
-   "n": 4,
-   "lines": [
-    {
-     "sp": "男",
-     "zh": "听说学校要选拔运动员参加市里的田径比赛？"
+      n: 4,
+      lines: [
+        {sp:'女',zh:'对方是去年的冠军，你心里不紧张吗？'},
+        {sp:'男',zh:'说实话，我还真没把他们放在眼里，我们今年练得比谁都苦。'}
+      ],
+      q: '男的态度怎么样？',
+      qvn: 'Thái độ của người đàn ông thế nào?',
+      opts: ['很紧张','很有信心','想放弃','很生气'],
+      ans: 1,
+      why: '没把他们放在眼里 = không coi đối thủ ra gì + 练得比谁都苦 → rất tự tin.',
+      words: ['放在眼里']
     },
     {
-     "sp": "女",
-     "zh": "对，体育老师说，平时训练认真、心理素质好的同学可以优先考虑。"
-    }
-   ],
-   "q": "什么样的学生会被优先考虑？",
-   "qvn": "Học sinh như thế nào sẽ được ưu tiên xem xét?",
-   "opts": [
-    "个子高的",
-    "训练认真、心理素质好的",
-    "学习成绩好的",
-    "参加过比赛的"
-   ],
-   "ans": 1,
-   "why": "平时训练认真、心理素质好的同学可以优先考虑 → B. Các phương án khác không được nhắc đến.",
-   "words": [
-    "选拔",
-    "田径",
-    "优先"
-   ]
-  },
-  {
-   "n": 5,
-   "lines": [
-    {
-     "sp": "女",
-     "zh": "你写的那篇文章为什么被退回来了？"
+      n: 5,
+      lines: [
+        {sp:'男',zh:'你说小王这次能不能进前三名？'},
+        {sp:'女',zh:'他最近练得很刻苦，进前三也不无可能。'}
+      ],
+      q: '女的认为小王怎么样？',
+      qvn: 'Người phụ nữ cho rằng Tiểu Vương thế nào?',
+      opts: ['肯定进不了前三','一定拿冠军','不想参加比赛','有可能进前三'],
+      ans: 3,
+      why: '不无可能 = không phải không có khả năng → có thể vào top ba (nói dè dặt, không khẳng định chắc chắn).',
+      words: ['不无']
     },
     {
-     "sp": "男",
-     "zh": "编辑说内容太空洞，引用的数据也没注明出处，让我好好修改一下。"
-    }
-   ],
-   "q": "文章为什么被退回来了？",
-   "qvn": "Vì sao bài viết bị trả lại?",
-   "opts": [
-    "内容空洞，数据没注明出处",
-    "字数太少",
-    "题目不合适",
-    "交得太晚了"
-   ],
-   "ans": 0,
-   "why": "内容太空洞，引用的数据也没注明出处 → A. Không nhắc đến số chữ, đề tài hay thời hạn.",
-   "words": [
-    "空洞",
-    "引用"
-   ]
-  },
-  {
-   "n": 6,
-   "lines": [
+      n: 6,
+      lines: [
+        {sp:'女',zh:'这次选拔会优先考虑什么样的人？'},
+        {sp:'男',zh:'有比赛经验的优先，年龄倒不是最重要的。'}
+      ],
+      q: '什么样的人会被优先考虑？',
+      qvn: 'Người như thế nào sẽ được ưu tiên xem xét?',
+      opts: ['年龄小的','有比赛经验的','个子高的','学习好的'],
+      ans: 1,
+      why: '有比赛经验的优先; 年龄倒不是最重要的 → tuổi không quan trọng nhất, loại A.',
+      words: ['选拔','优先']
+    },
     {
-     "sp": "男",
-     "zh": "现在的比赛，教练员依托电脑和超高速摄影机分析每一个动作，再根据对手的特点制定战术。靠经验指导训练的时代已经过去了，先进的装备和科学的分析，才是运动员不断突破极限的关键。"
+      n: 7,
+      lines: [
+        {sp:'男',zh:'你这份报告引用的数据是哪儿来的？'},
+        {sp:'女',zh:'是从国家公布的报告里找的，绝对可靠。'}
+      ],
+      q: '数据是从哪儿来的？',
+      qvn: 'Số liệu lấy từ đâu?',
+      opts: ['自己调查的','朋友给的','国家公布的报告','网上随便找的'],
+      ans: 2,
+      why: '是从国家公布的报告里找的 → số liệu lấy từ báo cáo nhà nước công bố.',
+      words: ['引用']
     }
-   ],
-   "q": "说话人认为，现在的训练靠什么？",
-   "qvn": "Người nói cho rằng việc luyện tập ngày nay dựa vào đâu?",
-   "opts": [
-    "教练员的经验",
-    "运动员的年龄",
-    "先进装备和科学分析",
-    "对手的特点"
-   ],
-   "ans": 2,
-   "why": "靠经验指导训练的时代已经过去了 (loại A); 先进的装备和科学的分析，才是……关键 → C. 对手的特点 chỉ là căn cứ để đặt chiến thuật (loại D).",
-   "words": [
-    "依托",
-    "战术",
-    "装备",
-    "极限"
-   ]
-  },
-  {
-   "n": 7,
-   "lines": [
-    {
-     "sp": "女",
-     "zh": "运动时心率并不是越快越好。一个人运动时的最高心率大约是220减去年龄，比如一个20岁的年轻人，最高心率约为每分钟200次。医生提醒，运动时严禁长时间超过这个极限值，否则可能因为供血不足而发生危险。"
-    }
-   ],
-   "q": "一个20岁的人，运动时最高心率约为多少？",
-   "qvn": "Một người 20 tuổi, nhịp tim tối đa khi vận động khoảng bao nhiêu?",
-   "opts": [
-    "每分钟220次",
-    "每分钟200次",
-    "每分钟150次",
-    "每分钟108次"
-   ],
-   "ans": 1,
-   "why": "Công thức 220 − tuổi: 220 − 20 = 200 → B. 220 chỉ là số trong công thức (loại A).",
-   "words": [
-    "严禁",
-    "极限"
-   ]
-  },
-  {
-   "n": 8,
-   "lines": [
-    {
-     "sp": "男",
-     "zh": "很多人以为体能完全是天生的，其实不然。体能只有一部分是与生俱来的，其余要通过长期正规的训练去发掘。而且，积极的心理状态能激发身体的潜能，让运动员在竞赛中超水平发挥。所以说，天赋和训练是相辅相成的。"
-    }
-   ],
-   "q": "这段话主要想说明什么？",
-   "qvn": "Đoạn nói này chủ yếu muốn nói rõ điều gì?",
-   "opts": [
-    "体能完全是天生的",
-    "心理状态不重要",
-    "只要有天赋就能成功",
-    "天赋和训练相辅相成"
-   ],
-   "ans": 3,
-   "why": "Câu kết 所以说，天赋和训练是相辅相成的 là ý chính → D. 其实不然 phủ định A; 积极的心理状态能激发潜能 phủ định B.",
-   "words": [
-    "正规",
-    "竞赛",
-    "相辅相成"
-   ]
-  }
- ]
+  ]
 };
 
 var situationData = {
- "intro": "Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.",
- "items": [
-  {
-   "scene": "Bạn cùng lớp là tuyển thủ điền kinh, vừa thua ở vòng loại, muốn bỏ tập.",
-   "a": {
-    "sp": "Bạn",
-    "zh": "我已经到极限了，再怎么练也没用，不如放弃吧。",
-    "vn": "Tớ đến giới hạn rồi, tập thế nào cũng vô ích, thôi bỏ đi cho xong."
-   },
-   "need": [
-    "Dùng 极限",
-    "Dùng 只要……就……",
-    "Khích lệ bạn đừng bỏ cuộc"
-   ],
-   "sample": "你还没到极限呢！只要找到问题，坚持正规的训练，你的成绩就一定能提高。一次失败算不了什么，别轻易放弃。",
-   "samplePy": "Nǐ hái méi dào jíxiàn ne! Zhǐyào zhǎodào wèntí, jiānchí zhèngguī de xùnliàn, nǐ de chéngjì jiù yídìng néng tígāo. Yí cì shībài suàn bu liǎo shénme, bié qīngyì fàngqì.",
-   "sampleVn": "Cậu đã tới giới hạn đâu! Chỉ cần tìm ra vấn đề, kiên trì luyện tập bài bản, thành tích của cậu nhất định sẽ tăng. Thua một lần chẳng là gì, đừng dễ dàng bỏ cuộc.",
-   "tip": "Phủ định ý bạn trước (还没到……呢), rồi đưa điều kiện – kết quả bằng 只要……就……; 算不了什么 = chẳng là gì."
-  },
-  {
-   "scene": "Em trai đòi mua đôi giày chạy rất đắt, nói \"không mua thì không tập nữa\".",
-   "a": {
-    "sp": "Em trai",
-    "zh": "不给我买那双名牌跑鞋，我就不去训练了！",
-    "vn": "Không mua cho em đôi giày chạy hàng hiệu đó thì em không đi tập nữa!"
-   },
-   "need": [
-    "Dùng 任性",
-    "Dùng 迷信",
-    "Khuyên em một cách nhẹ nhàng"
-   ],
-   "sample": "你怎么这么任性啊？跑得快不快，关键在训练，不在鞋子。别迷信名牌了，合适的鞋就是好鞋。",
-   "samplePy": "Nǐ zěnme zhème rènxìng a? Pǎo de kuài bu kuài, guānjiàn zài xùnliàn, bú zài xiézi. Bié míxìn míngpái le, héshì de xié jiù shì hǎo xié.",
-   "sampleVn": "Sao em bướng thế? Chạy nhanh hay không, mấu chốt ở luyện tập chứ không ở đôi giày. Đừng tin mù quáng vào hàng hiệu nữa, giày vừa chân là giày tốt.",
-   "tip": "关键在 A，不在 B = mấu chốt ở A chứ không ở B. 迷信 + 名牌 = sùng bái hàng hiệu mù quáng."
-  },
-  {
-   "scene": "Trong giờ thảo luận, bạn đưa ra một ý kiến em thấy có phần đúng nhưng chưa đủ.",
-   "a": {
-    "sp": "Bạn",
-    "zh": "我觉得运动成绩全靠天赋，训练没什么用。",
-    "vn": "Tớ thấy thành tích thể thao hoàn toàn dựa vào năng khiếu, luyện tập chẳng có tác dụng gì."
-   },
-   "need": [
-    "Dùng 不无道理",
-    "Dùng 相辅相成",
-    "Góp ý lịch sự, có lý lẽ"
-   ],
-   "sample": "你的话不无道理，天赋确实很重要。不过，体能只有一部分是与生俱来的，其余要靠训练去发掘。我认为天赋和训练是相辅相成的。",
-   "samplePy": "Nǐ de huà bùwú dàolǐ, tiānfù quèshí hěn zhòngyào. Búguò, tǐnéng zhǐ yǒu yíbùfen shì yǔ shēng jù lái de, qíyú yào kào xùnliàn qù fājué. Wǒ rènwéi tiānfù hé xùnliàn shì xiāngfǔ-xiāngchéng de.",
-   "sampleVn": "Lời cậu nói không phải không có lý, năng khiếu đúng là rất quan trọng. Nhưng thể lực chỉ một phần là bẩm sinh, phần còn lại phải nhờ luyện tập để khai thác. Tớ cho rằng năng khiếu và luyện tập bổ trợ cho nhau.",
-   "tip": "Công nhận trước (不无道理) rồi mới phản biện bằng 不过 — cách góp ý lịch sự. Dẫn luận cứ từ bài khoá."
-  },
-  {
-   "scene": "Bạn thân rủ em thức khuya chơi game rồi sáng hôm sau đi chạy marathon.",
-   "a": {
-    "sp": "Bạn thân",
-    "zh": "今晚通宵打游戏，明天早上直接去跑马拉松，怎么样？",
-    "vn": "Tối nay chơi game thâu đêm, sáng mai đi thẳng chạy marathon, thấy sao?"
-   },
-   "need": [
-    "Dùng 严禁 hoặc 猝死",
-    "Dùng 否则",
-    "Từ chối và giải thích lý do"
-   ],
-   "sample": "这可不行！医生说，熬夜以后做剧烈运动很危险，严重的话还可能猝死。我们今晚早点儿睡，否则明天根本跑不动。",
-   "samplePy": "Zhè kě bù xíng! Yīshēng shuō, áoyè yǐhòu zuò jùliè yùndòng hěn wēixiǎn, yánzhòng dehuà hái kěnéng cùsǐ. Wǒmen jīnwǎn zǎo diǎnr shuì, fǒuzé míngtiān gēnběn pǎo bu dòng.",
-   "sampleVn": "Thế thì không được! Bác sĩ nói thức khuya xong mà vận động mạnh rất nguy hiểm, nặng thì còn có thể đột tử. Tối nay mình ngủ sớm đi, nếu không mai chạy chẳng nổi đâu.",
-   "tip": "这可不行 = thế thì không được (từ chối dứt khoát). 否则 = nếu không thì; 剧烈 ôn bài 31."
-  },
-  {
-   "scene": "Em là lớp trưởng, cần vận động cả lớp tham gia hội thao điền kinh của trường.",
-   "a": {
-    "sp": "Bạn",
-    "zh": "运动会？我体育不好，参加了也拿不到名次，算了吧。",
-    "vn": "Hội thao á? Tớ thể thao kém, tham gia cũng chẳng được giải, thôi khỏi."
-   },
-   "need": [
-    "Dùng 动员",
-    "Dùng 重在参与 hoặc 不在乎名次",
-    "Thuyết phục bạn tham gia"
-   ],
-   "sample": "老师让我动员全班同学参加，比赛重在参与，拿不拿名次不重要。你可以报个接力，大家一起跑，多有意思啊！",
-   "samplePy": "Lǎoshī ràng wǒ dòngyuán quán bān tóngxué cānjiā, bǐsài zhòng zài cānyù, ná bu ná míngcì bú zhòngyào. Nǐ kěyǐ bào ge jiēlì, dàjiā yìqǐ pǎo, duō yǒu yìsi a!",
-   "sampleVn": "Cô giáo bảo tớ vận động cả lớp tham gia, thi đấu quan trọng là tham gia, có được giải hay không không quan trọng. Cậu có thể đăng ký chạy tiếp sức, mọi người cùng chạy, vui biết bao!",
-   "tip": "动员 = VẬN ĐỘNG người khác cùng tham gia (không phải \"động viên\" an ủi). 重在参与 = quan trọng là tham gia."
-  }
- ]
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  items: [
+    {scene:'Bạn cùng lớp là tuyển thủ điền kinh, vừa thua ở vòng loại, muốn bỏ tập.',a:{sp:'Bạn',zh:'我已经到极限了，再怎么练也没用，不如放弃吧。',vn:'Tớ đến giới hạn rồi, tập thế nào cũng vô ích, thôi bỏ đi cho xong.'},need:['Dùng 极限','Dùng 只要……就……','Khích lệ bạn đừng bỏ cuộc'],sample:'你还没到极限呢！只要找到问题，坚持正规的训练，你的成绩就一定能提高。一次失败算不了什么，别轻易放弃。',samplePy:'Nǐ hái méi dào jíxiàn ne! Zhǐyào zhǎodào wèntí, jiānchí zhèngguī de xùnliàn, nǐ de chéngjì jiù yídìng néng tígāo. Yí cì shībài suàn bu liǎo shénme, bié qīngyì fàngqì.',sampleVn:'Cậu đã tới giới hạn đâu! Chỉ cần tìm ra vấn đề, kiên trì luyện tập bài bản, thành tích của cậu nhất định sẽ tăng. Thua một lần chẳng là gì, đừng dễ dàng bỏ cuộc.',tip:'Phủ định ý bạn trước (还没到……呢), rồi đưa điều kiện – kết quả bằng 只要……就……; 算不了什么 = chẳng là gì.'},
+    {scene:'Em trai đòi mua đôi giày chạy rất đắt, nói "không mua thì không tập nữa".',a:{sp:'Em trai',zh:'不给我买那双名牌跑鞋，我就不去训练了！',vn:'Không mua cho em đôi giày chạy hàng hiệu đó thì em không đi tập nữa!'},need:['Dùng 任性','Dùng 迷信','Khuyên em một cách nhẹ nhàng'],sample:'你怎么这么任性啊？跑得快不快，关键在训练，不在鞋子。别迷信名牌了，合适的鞋就是好鞋。',samplePy:'Nǐ zěnme zhème rènxìng a? Pǎo de kuài bu kuài, guānjiàn zài xùnliàn, bú zài xiézi. Bié míxìn míngpái le, héshì de xié jiù shì hǎo xié.',sampleVn:'Sao em bướng thế? Chạy nhanh hay không, mấu chốt ở luyện tập chứ không ở đôi giày. Đừng tin mù quáng vào hàng hiệu nữa, giày vừa chân là giày tốt.',tip:'关键在 A，不在 B = mấu chốt ở A chứ không ở B. 迷信 + 名牌 = sùng bái hàng hiệu mù quáng.'},
+    {scene:'Trong giờ thảo luận, bạn đưa ra một ý kiến em thấy có phần đúng nhưng chưa đủ.',a:{sp:'Bạn',zh:'我觉得运动成绩全靠天赋，训练没什么用。',vn:'Tớ thấy thành tích thể thao hoàn toàn dựa vào năng khiếu, luyện tập chẳng có tác dụng gì.'},need:['Dùng 不无道理','Dùng 相辅相成','Góp ý lịch sự, có lý lẽ'],sample:'你说的也不无道理，天赋确实很重要。不过光有天赋不够，没有正规的训练，再好的天赋也发挥不出来。我觉得两者是相辅相成的。',samplePy:'Nǐ shuō de yě bùwú dàolǐ, tiānfù quèshí hěn zhòngyào. Búguò guāng yǒu tiānfù bú gòu, méiyǒu zhèngguī de xùnliàn, zài hǎo de tiānfù yě fāhuī bu chūlai. Wǒ juéde liǎngzhě shì xiāngfǔ-xiāngchéng de.',sampleVn:'Cậu nói cũng không phải không có lý, năng khiếu đúng là rất quan trọng. Nhưng chỉ có năng khiếu thì chưa đủ, không được tập luyện bài bản thì năng khiếu tốt mấy cũng không phát huy được. Tớ thấy hai thứ bổ trợ cho nhau.',tip:'Công nhận một phần (也不无道理) → 不过 phản bác nhẹ → kết luận (相辅相成). Cách nói 不无 giúp phản đối mà không làm bạn mất lòng.'},
+    {scene:'Bạn thân rủ em thức trắng đêm chơi game rồi sáng hôm sau đi chạy đường dài.',a:{sp:'Bạn',zh:'今天晚上我们玩一夜游戏，明天早上直接去跑步，怎么样？',vn:'Tối nay tụi mình chơi game thâu đêm, sáng mai đi chạy luôn, thế nào?'},need:['Dùng 严禁 hoặc 猝死','Dùng 否则','Từ chối và giải thích lý do'],sample:'这可不行！一夜不睡再做剧烈运动很危险，严重的话还可能猝死。我们还是早点儿睡吧。',samplePy:'Zhè kě bù xíng! Yí yè bú shuì zài zuò jùliè yùndòng hěn wēixiǎn, yánzhòng dehuà hái kěnéng cùsǐ. Wǒmen háishi zǎo diǎnr shuì ba.',sampleVn:'Thế không được đâu! Cả đêm không ngủ rồi vận động mạnh rất nguy hiểm, nặng thì còn có thể đột tử. Tụi mình cứ đi ngủ sớm thì hơn.',tip:'这可不行！ = từ chối dứt khoát; 严重的话 = nếu nặng thì; 还是……吧 đưa ra lựa chọn an toàn.'},
+    {scene:'Em là lớp trưởng, cần vận động cả lớp tham gia hội thao điền kinh của trường.',a:{sp:'Bạn',zh:'运动会？我体育不好，参加了也拿不到名次，算了吧。',vn:'Hội thao á? Tớ thể thao kém, tham gia cũng chẳng được giải, thôi khỏi.'},need:['Dùng 动员','Dùng 重在参与 hoặc 不在乎名次','Thuyết phục bạn tham gia'],sample:'老师让我动员全班同学参加，比赛重在参与，拿不拿名次不重要。你可以报个接力，大家一起跑，多有意思啊！',samplePy:'Lǎoshī ràng wǒ dòngyuán quán bān tóngxué cānjiā, bǐsài zhòng zài cānyù, ná bu ná míngcì bú zhòngyào. Nǐ kěyǐ bào ge jiēlì, dàjiā yìqǐ pǎo, duō yǒu yìsi a!',sampleVn:'Cô giáo bảo tớ vận động cả lớp tham gia, thi đấu quan trọng là tham gia, có được giải hay không không quan trọng. Cậu có thể đăng ký chạy tiếp sức, mọi người cùng chạy, vui biết bao!',tip:'动员 = VẬN ĐỘNG người khác cùng tham gia (không phải "động viên" an ủi). 重在参与 = quan trọng là tham gia.'}
+  ]
 };
 
 var registerData = {
- "intro": "Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.",
- "items": [
-  {
-   "scene": "Bản tin thể thao trên truyền hình đưa tin về trận chung kết.",
-   "a": "牙买加选手博尔特以9.69秒的成绩刷新世界纪录，领先亚军0.2秒。",
-   "b": "那个牙买加小伙子跑得可快了，比第二名快了一大截！",
-   "better": "a",
-   "why": "Bản tin cần chính xác, trang trọng: 以……的成绩, 刷新世界纪录, 领先亚军0.2秒. Câu b (可快了, 一大截) là khẩu ngữ, không có số liệu."
-  },
-  {
-   "scene": "Em nhắn tin cho bạn thân sau khi xem trận đấu.",
-   "a": "本场比赛中，该选手充分发挥了其技术水平。",
-   "b": "哇，他今天太猛了，简直不把对手放在眼里！",
-   "better": "b",
-   "why": "Nhắn tin bạn thân dùng khẩu ngữ, cảm thán tự nhiên (哇, 太猛了, 不把……放在眼里 — \"(把)……放在眼里 多用于口语\"). Câu a (本场, 该选手, 其) là giọng báo chí."
-  },
-  {
-   "scene": "Biển báo đặt trong khu kiến trúc gỗ cổ.",
-   "a": "这里都是木头房子，大家可千万别点火啊！",
-   "b": "木结构建筑，严禁使用明火。",
-   "better": "b",
-   "why": "Biển báo cần ngắn gọn, trang trọng: 严禁 + V. Câu a (可千万别……啊) là lời nhắc miệng."
-  },
-  {
-   "scene": "Luận văn khoa học phân tích giới hạn vận động của con người.",
-   "a": "人体结构是确定的，因此人体活动存在一定的限度。",
-   "b": "说白了，人的身子就这样，能跑多快是有数的。",
-   "better": "a",
-   "why": "Luận văn dùng văn viết, khách quan: 结构是确定的, 存在一定的限度. Câu b (说白了, 身子, 有数的) là khẩu ngữ."
-  },
-  {
-   "scene": "Em an ủi bạn vừa bị loại ở vòng tuyển chọn.",
-   "a": "根据选拔规定，你的成绩未达到入选标准。",
-   "b": "别难过，这次没选上，下次咱们再来！你已经很棒了。",
-   "better": "b",
-   "why": "An ủi bạn cần lời thân mật, ấm áp (别难过, 咱们, 很棒了). Câu a (根据……规定, 未达到……标准) là giọng thông báo hành chính, lạnh lùng."
-  },
-  {
-   "scene": "Huấn luyện viên phát biểu trong buổi họp tổng kết của đội tuyển.",
-   "a": "优秀的选手和科学的训练相辅相成，我们今后要依托先进装备，进一步提高训练水平。",
-   "b": "反正人好、练得好就行了，以后咱们多弄点儿好设备呗。",
-   "better": "a",
-   "why": "Phát biểu tổng kết cần trang trọng, mạch lạc: 相辅相成, 依托先进装备, 进一步提高. Câu b (反正, 弄点儿, 呗) là khẩu ngữ tùy tiện."
-  }
- ]
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
+  items: [
+    {scene:'Bản tin thể thao trên truyền hình đưa tin về trận chung kết.',a:'在这次决赛中，这名选手以明显的优势领先，获得了冠军。',b:'那个小伙子跑得可快了，别人根本追不上！',better:'a',why:'Bản tin dùng văn viết trung tính (这名选手, 以……优势领先, 获得冠军). Câu b là giọng kể chuyện với bạn bè.'},
+    {scene:'Em nhắn tin cho bạn thân ngay sau khi xem trận đấu.',a:'该选手本场发挥出了应有的技术水平。',b:'哇，他今天太厉害了，简直不把对手放在眼里！',better:'b',why:'Tin nhắn bạn bè cần tự nhiên, có cảm xúc; 不把对手放在眼里 ở đây là khen (thi đấu tự tin, áp đảo). Câu a (该选手, 本场) là văn báo chí.'},
+    {scene:'Tấm biển dán trên cửa phòng thí nghiệm.',a:'实验室内严禁吃东西。',b:'大家在这儿最好别吃东西哦。',better:'a',why:'Biển báo dùng giọng quy định ngắn gọn (严禁 + V). Câu b (最好……哦) quá mềm, giống lời nhắc miệng, không đủ tính bắt buộc.'},
+    {scene:'Một đoạn trong bài luận khoa học về giới hạn vận động của con người.',a:'研究表明，人体的结构决定了运动能力存在一定的极限。',b:'说白了，人的身子就这样，能跑多快是有数的。',better:'a',why:'Bài luận khoa học cần văn viết (研究表明, 存在……极限). Câu b (说白了, 身子, 有数) là khẩu ngữ.'},
+    {scene:'Em an ủi bạn thân vừa bị loại ở vòng tuyển chọn đội tuyển của trường.',a:'根据选拔规定，你的成绩没有达到标准。',b:'别难过，这次没选上，下次咱们再来！你已经很棒了。',better:'b',why:'An ủi bạn cần lời ấm áp, khẩu ngữ. Câu a đúng nhưng là giọng thông báo của ban tổ chức, nghe lạnh lùng.'},
+    {scene:'Huấn luyện viên phát biểu trong buổi họp tổng kết của đội tuyển.',a:'优秀的选手离不开科学的训练，二者相辅相成。下一阶段，我们将依托先进装备，进一步提高训练水平。',b:'反正人好、练得好就行了，以后咱们多买点儿好设备吧。',better:'a',why:'Phát biểu tổng kết cần trang trọng, có định hướng (二者相辅相成, 依托先进装备, 进一步). Câu b quá tuỳ tiện cho buổi họp chính thức.'}
+  ]
 };
 
 var retellData = {

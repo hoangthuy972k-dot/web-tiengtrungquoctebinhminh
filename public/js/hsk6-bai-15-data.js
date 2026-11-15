@@ -1489,87 +1489,51 @@ var hvBridgeData = {
 // GHÉP TỪ — cụm trong bài khoá và phần 练习
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'遭遇百年不遇的',right:'干旱'},
-  {left:'庄稼',right:'枯萎而死'},
-  {left:'人和牲畜',right:'饮水困难'},
-  {left:'梯田',right:'壮丽依旧'},
-  {left:'由半山腰',right:'延伸至峡谷'},
-  {left:'铺天盖地',right:'席卷而至'},
-  {left:'蔚蓝的',right:'天空'},
-  {left:'漂浮的',right:'白云'},
-  {left:'更衬托出',right:'梯田的壮美'},
-  {left:'沿着公路',right:'盘旋而行'},
-  {left:'爬升到海拔',right:'一千多米高的山腰'},
-  {left:'纵横万里、',right:'汹涌而来'},
-  {left:'目睹这奇迹',right:'无数次'},
-  {left:'重重叠叠的',right:'山脉'},
-  {left:'用生命和毅力',right:'雕刻出的杰出作品'},
-  {left:'历史悠久的',right:'宫殿'},
-  {left:'一首古老的',right:'曲子'},
-  {left:'采集',right:'树果'},
-  {left:'金闪闪的',right:'稻谷'},
-  {left:'开辟梯田这种',right:'农耕方式'},
-  {left:'日复一日的',right:'辛勤劳动'},
-  {left:'宝贵的生态、文化和',right:'审美价值'},
-  {left:'人类的宝贵',right:'遗产'},
-  {left:'拥有惊人的',right:'创造精神'}
+  {left:'开辟',right:'一条新路'},
+  {left:'采集',right:'草药'},
+  {left:'花了很多',right:'心血'},
+  {left:'蔚蓝的',right:'大海'},
+  {left:'世界文化',right:'遗产'},
+  {left:'拥有',right:'自己的房子'},
+  {left:'遭遇',right:'干旱'},
+  {left:'一颗',right:'种子'},
+  {left:'罕见的',right:'大雪'},
+  {left:'漂浮在',right:'水面上'}
 ];
 
 // ══════════════════════════════════════════
-// ĐIỀN TỪ
+// ĐIỀN TỪ — câu mới (không chép bài khoá / SGK), mỗi câu một tình huống; ôn xoáy ốc từ + ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'喜马拉雅',blank:'山脉',post:'是世界上最高的山脉，绵延两千多公里。',hint:'(dãy núi)',ans:'山脉'},
-  {pre:'爷爷用一块木头',blank:'雕刻',post:'出了一只栩栩如生的小鸟。',hint:'(khắc, chạm)',ans:'雕刻'},
-  {pre:'2010年中国西南遭遇百年不遇的',blank:'干旱',post:'，很多地方连饮水都困难。',hint:'(hạn hán)',ans:'干旱'},
-  {pre:'城市不断扩大，',blank:'耕地',post:'面积却越来越少。',hint:'(đất canh tác)',ans:'耕地'},
-  {pre:'今年雨水充足，地里的',blank:'庄稼',post:'长得特别好。',hint:'(hoa màu)',ans:'庄稼'},
-  {pre:'我出差一个星期没浇水，阳台上的花都',blank:'枯萎',post:'了。',hint:'(khô héo)',ans:'枯萎'},
-  {pre:'这里的牧民主要靠饲养',blank:'牲畜',post:'为生。',hint:'(gia súc)',ans:'牲畜'},
-  {pre:'每年秋天，很多摄影爱好者专程来拍金黄的',blank:'梯田',post:'。',hint:'(ruộng bậc thang)',ans:'梯田'},
-  {pre:'站在山顶上，眼前',blank:'壮丽',post:'的景色让我们久久不愿离开。',hint:'(tráng lệ)',ans:'壮丽'},
-  {pre:'一条小河从',blank:'峡谷',post:'中穿过，两边都是陡峭的山崖。',hint:'(hẻm núi)',ans:'峡谷'},
-  {pre:'妈妈在地上',blank:'铺',post:'了一块厚厚的地毯，免得孩子摔疼。',hint:'(trải)',ans:'铺'},
-  {pre:'一阵大风吹来，把地上的落叶',blank:'卷',post:'到了半空中。',hint:'(cuốn)',ans:'卷'},
-  {pre:'站在海边，眼前是一望无际的',blank:'蔚蓝',post:'的大海。',hint:'(xanh thẳm)',ans:'蔚蓝'},
-  {pre:'几片树叶',blank:'漂浮',post:'在平静的湖面上。',hint:'(trôi bồng bềnh)',ans:'漂浮'},
-  {pre:'他在两个专业之间',blank:'摇摆',post:'不定，迟迟做不了决定。',hint:'(dao động, lắc lư)',ans:'摇摆'},
-  {pre:'番西邦峰',blank:'海拔',post:'三千一百多米，是越南最高的山峰。',hint:'(độ cao so với mặt biển)',ans:'海拔'},
-  {pre:'一条',blank:'瀑布',post:'从几十米高的山崖上飞流直下，场面十分壮观。',hint:'(thác nước)',ans:'瀑布'},
-  {pre:'湄公河三角洲河流',blank:'纵横',post:'，交通主要靠船。',hint:'(chằng chịt ngang dọc)',ans:'纵横'},
-  {pre:'这两门课的内容有一部分是',blank:'重叠',post:'的，可以一起复习。',hint:'(trùng lặp)',ans:'重叠'},
-  {pre:'经过几代人的努力，他们终于将一座座大山',blank:'雕塑',post:'成了梯田。',hint:'(tạc, điêu khắc)',ans:'雕塑'},
-  {pre:'学外语不需要多聪明，但需要',blank:'毅力',post:'，每天坚持才行。',hint:'(nghị lực)',ans:'毅力'},
-  {pre:'顺化皇城里有很多座',blank:'宫殿',post:'，每一座都有自己的故事。',hint:'(cung điện)',ans:'宫殿'},
-  {pre:'她在钢琴上弹了一首欢快的',blank:'曲子',post:'。',hint:'(bản nhạc)',ans:'曲子'},
-  {pre:'生物课上，老师带我们到山上',blank:'采集',post:'植物标本。',hint:'(thu thập)',ans:'采集'},
-  {pre:'春天到了，农民们忙着在田里播',blank:'种子',post:'。',hint:'(hạt giống)',ans:'种子'},
-  {pre:'秋天',blank:'稻谷',post:'成熟了，田野里一片金黄。',hint:'(thóc lúa)',ans:'稻谷'},
-  {pre:'科学研究需要',blank:'锲而不舍',post:'的精神，不能一遇到挫折就放弃。',hint:'(kiên trì bền bỉ)',ans:'锲而不舍'},
-  {pre:'这本词典是几位老教授十几年',blank:'心血',post:'的结晶。',hint:'(tâm huyết)',ans:'心血'},
-  {pre:'乱砍树木会破坏',blank:'生态',post:'平衡，最终伤害的是人类自己。',hint:'(sinh thái)',ans:'生态'},
-  {pre:'多参观博物馆，可以提高孩子的',blank:'审美',post:'能力。',hint:'(thẩm mỹ)',ans:'审美'},
-  {pre:'下龙湾早在1994年就被列入了世界自然',blank:'遗产',post:'名录。',hint:'(di sản)',ans:'遗产'},
-  {pre:'看了这部纪录片，同学们',blank:'无不',post:'为哈尼人的智慧感到惊叹。',hint:'(không ai không, đều)',ans:'无不',exp:'无不 = không ai/cái gì không… = đều (phủ định kép, văn viết).'}
+  {pre:'这个木头盒子上',blank:'雕刻',post:'着很多花，是一百年前的东西了。',hint:'(chạm khắc)',ans:'雕刻',exp:'雕刻 = chạm khắc lên gỗ, đá…; 雕刻着 + hình = có hình được khắc lên. 雕塑 thường chỉ tượng (một khối), không dùng 雕塑着 + hoa văn trên bề mặt.'},
+  {pre:'这个地区常年',blank:'干旱',post:'，一年也下不了几场雨。',hint:'(khô hạn)',ans:'干旱',exp:'干旱 = khô hạn, thiếu mưa lâu ngày (nói về vùng đất, khí hậu); 干燥 là "khô" nói chung (không khí, da).'},
+  {pre:'今年雨水多，地里的',blank:'庄稼',post:'长得特别好。',hint:'(hoa màu)',ans:'庄稼',exp:'庄稼 = hoa màu (lúa, ngô… còn trên ruộng), đi với 长得好 / 种; 粮食 là lương thực đã thu hoạch.'},
+  {pre:'我出差半个月，没人浇水，窗台上的花都',blank:'枯萎',post:'了。',hint:'(khô héo)',ans:'枯萎',exp:'枯萎 = (cây, hoa) khô héo; dùng cho thực vật, không dùng cho người.'},
+  {pre:'大水来之前，村里人把',blank:'牲畜',post:'都赶到了山上，免得被水冲走。',hint:'(gia súc)',ans:'牲畜',exp:'牲畜 = gia súc (trâu, bò, lợn, ngựa…), từ chỉ chung; ôn 免得 (bài 14) = để khỏi.'},
+  {pre:'离开家乡十几年了，可小镇上的一切',blank:'依旧',post:'是老样子。',hint:'(vẫn như cũ)',ans:'依旧',exp:'依旧 = vẫn như cũ (văn viết của 还是 / 仍然), đứng trước động từ / tính từ: 依旧是老样子, 依旧壮丽.'},
+  {pre:'妈妈在地上',blank:'铺',post:'了一张旧报纸，让孩子在上面画画儿。',hint:'(trải)',ans:'铺',exp:'铺 = trải (giấy, khăn, thảm) phẳng ra trên một mặt; 放 chỉ là đặt, để.'},
+  {pre:'他把地图',blank:'卷',post:'起来，放进了包里。',hint:'(cuộn)',ans:'卷',exp:'卷起来 = cuộn lại (giấy, tranh, tay áo); trái nghĩa là 打开 / 铺开.'},
+  {pre:'在白雪的',blank:'衬托',post:'下，那座红色的小房子显得格外好看。',hint:'(tôn lên)',ans:'衬托',exp:'在……的衬托下 = được … tôn lên; vật làm nền đứng sau 在, vật được tôn lên làm chủ ngữ vế sau.'},
+  {pre:'这座山',blank:'海拔',post:'三千多米，走到山顶要整整两天。',hint:'(độ cao so với mặt biển)',ans:'海拔',exp:'海拔 + số mét = cao … so với mặt biển; không thêm 有 / 是 cũng được: 海拔三千多米.'},
+  {pre:'这两个会的时间',blank:'重叠',post:'了，我只能参加一个。',hint:'(trùng nhau)',ans:'重叠',exp:'重叠 = chồng lên nhau, trùng nhau (thời gian, sự việc, núi non): 时间重叠 / 重重叠叠的山.'},
+  {pre:'她是我们国家最',blank:'杰出',post:'的女科学家之一，得过很多国际大奖。',hint:'(kiệt xuất)',ans:'杰出',exp:'杰出 = kiệt xuất, dùng cho người và thành tựu lớn: 杰出的科学家 / 杰出的作品. 突出 (Hán Việt "đột xuất") lại là "nổi bật", đi với 表现, 成绩, 问题.'},
+  {pre:'那个老人说话的声音',blank:'时而',post:'高，时而低，大家都得认真听。',hint:'(lúc thì)',ans:'时而',exp:'时而 A，时而 B = lúc thì A lúc thì B (hai trạng thái luân phiên); phải đi thành cặp, không ghép 时而 với 一会儿.'},
+  {pre:'看到孩子在台上认真表演的样子，妈妈',blank:'不禁',post:'笑了。',hint:'(không kìm được)',ans:'不禁',exp:'不禁 + V = không kìm được mà…, phản ứng tự nhiên; đứng sau chủ ngữ, nghĩa giống 不由得 (bài 2).'},
+  {pre:'听说下周要去海边，班里的同学',blank:'无不',post:'高兴得跳了起来。',hint:'(ai cũng)',ans:'无不',exp:'无不 + V = không ai không… = ai cũng (phủ định kép, nhấn mạnh); chủ ngữ phải là số nhiều (同学们 / 游客).'}
 ];
 
 // ══════════════════════════════════════════
-// SẮP XẾP CÂU — mỗi điểm ngữ pháp ít nhất 2 câu
+// SẮP XẾP CÂU — câu mới, chỉ một trật tự đúng
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['我们的车','时而','行驶在谷底','，','时而','爬升到山腰','。'],ans:'我们的车时而行驶在谷底，时而爬升到山腰。',audio:'我们的车时而行驶在谷底，时而爬升到山腰。'},
-  {words:['他们','玩儿得','兴高采烈','，','时而唱歌','，','时而跳舞','。'],ans:'他们玩儿得兴高采烈，时而唱歌，时而跳舞。',audio:'他们玩儿得兴高采烈，时而唱歌，时而跳舞。'},
-  {words:['那只狗','一点儿东西','不吃','，','时而','发出','伤心的叫声','。'],ans:'那只狗一点儿东西不吃，时而发出伤心的叫声。',audio:'那只狗一点儿东西不吃，时而发出伤心的叫声。'},
-  {words:['我','不禁','问自己','，','这里的人','为什么','选择了梯田','？'],ans:'我不禁问自己，这里的人为什么选择了梯田？',audio:'我不禁问自己，这里的人为什么选择了梯田？'},
-  {words:['听到','这个消息','，','大家','不禁','兴奋起来','。'],ans:'听到这个消息，大家不禁兴奋起来。',audio:'听到这个消息，大家不禁兴奋起来。'},
-  {words:['走上讲台','，','我','不禁','心里','有些发慌','。'],ans:'走上讲台，我不禁心里有些发慌。',audio:'走上讲台，我不禁心里有些发慌。'},
-  {words:['坏人','受到了','应有的惩罚','，','百姓','无不','拍手称快','。'],ans:'坏人受到了应有的惩罚，百姓无不拍手称快。',audio:'坏人受到了应有的惩罚，百姓无不拍手称快。'},
-  {words:['这里的','一切','无不','体现着','当地百姓的','智慧','。'],ans:'这里的一切无不体现着当地百姓的智慧。',audio:'这里的一切无不体现着当地百姓的智慧。'},
-  {words:['他设计的','灯具和家具','，','无不','造型新颖','。'],ans:'他设计的灯具和家具，无不造型新颖。',audio:'他设计的灯具和家具，无不造型新颖。'},
-  {words:['尽管','已','目睹','这奇迹','无数次','，','但我','每次','都会','震惊','。'],ans:'尽管已目睹这奇迹无数次，但我每次都会震惊。',audio:'尽管已目睹这奇迹无数次，但我每次都会震惊。'},
-  {words:['任何困难','也','阻拦','不了','他们','。'],ans:'任何困难也阻拦不了他们。',audio:'任何困难也阻拦不了他们。'},
-  {words:['蔚蓝的天空','，','更','衬托出','梯田的','壮美','。'],ans:'蔚蓝的天空，更衬托出梯田的壮美。',audio:'蔚蓝的天空，更衬托出梯田的壮美。'},
-  {words:['面对大山','，','山民们','没有对抗','，','而是','选择了服从','。'],ans:'面对大山，山民们没有对抗，而是选择了服从。',audio:'面对大山，山民们没有对抗，而是选择了服从。'}
+  {words:['一只','鸟','在','我们','头上','盘旋了','好几圈','。'],ans:'一只鸟在我们头上盘旋了好几圈。',audio:'一只鸟在我们头上盘旋了好几圈。'},
+  {words:['这里的','梯田','是','当地人','用','双手','开辟','出来的','。'],ans:'这里的梯田是当地人用双手开辟出来的。',audio:'这里的梯田是当地人用双手开辟出来的。'},
+  {words:['这些','珍稀','动物','需要','我们','好好','保护','。'],ans:'这些珍稀动物需要我们好好保护。',audio:'这些珍稀动物需要我们好好保护。'},
+  {words:['那首','曲子','让','我','想起了','小时候的','事','。'],ans:'那首曲子让我想起了小时候的事。',audio:'那首曲子让我想起了小时候的事。'},
+  {words:['我们','都','被','那座宫殿的','壮丽','震撼了','。'],ans:'我们都被那座宫殿的壮丽震撼了。',audio:'我们都被那座宫殿的壮丽震撼了。'},
+  {words:['这个','地方','拥有','世界上','最大的','瀑布','之一','。'],ans:'这个地方拥有世界上最大的瀑布之一。',audio:'这个地方拥有世界上最大的瀑布之一。'},
+  {words:['他们','靠着','惊人的','毅力','穿越了','整个','峡谷','。'],ans:'他们靠着惊人的毅力穿越了整个峡谷。',audio:'他们靠着惊人的毅力穿越了整个峡谷。'},
+  {words:['花园里的','花','在','风中','轻轻地','摇摆','着','。'],ans:'花园里的花在风中轻轻地摇摆着。',audio:'花园里的花在风中轻轻地摇摆着。'}
 ];
 
 // ══════════════════════════════════════════
@@ -1577,69 +1541,41 @@ var sortData = [
 // ══════════════════════════════════════════
 var errorFixMode = 'wordchoice';
 var errorFixData = [
-  {wrong:'我国____丰富的水电资源。',opts:['含有','带有','拥有','具有'],ans:2,
-   exp:'资源 là thứ nhiều, quý, thuộc sở hữu → 拥有. 具有 đi với sự vật trừu tượng (意义, 特色); 含有 = chứa (thành phần); 带有 = mang (sắc thái, tính chất).'},
-  {wrong:'山上的天气变化很快，____晴，____下雨。',opts:['经常','时而','有时候','偶尔'],ans:1,
-   exp:'Hai vế song song luân phiên, văn viết → 时而……，时而……. 有时候 cũng tạo được cặp nhưng phải đủ 有时候……有时候……, và là khẩu ngữ; 偶尔, 经常 không tạo cặp song song.'},
-  {wrong:'看着电影中父子情深的画面，他____流下了眼泪。',opts:['不免','不必','不止','不禁'],ans:3,
-   exp:'Phản ứng tự nhiên không kìm được → 不禁. 不免 = khó tránh khỏi (kết quả tất yếu, thường không hay); 不必 = không cần; 不止 = không chỉ.'},
-  {wrong:'几十年过去了，这个地方____贫穷落后。',opts:['依旧','依靠','依然是','依照'],ans:0,
-   exp:'依旧 + adj = vẫn như cũ (练习2 ①). 依靠 = dựa vào; 依照 = theo; 依然是 + adj thừa 是 (không nói 依然是贫穷落后).'},
-  {wrong:'他要做的事情，谁也____不了，你们就别管他了。',opts:['拦路','阻拦','阻力','障碍'],ans:1,
-   exp:'阻拦不了 = không ngăn nổi (练习2 ④): động từ + bổ ngữ khả năng. 阻力 (lực cản) và 障碍 (bài 12, trở ngại) là danh từ; 拦路 là động từ li hợp đã có tân ngữ 路, không mang 不了 như vậy.'},
-  {wrong:'大熊猫是中国特有的____动物。',opts:['稀少','珍惜','稀奇','珍稀'],ans:3,
-   exp:'珍稀动物 = động vật quý hiếm (cụm cố định). 稀少 = thưa thớt, ít (không làm định ngữ trực tiếp kiểu này); 珍惜 = trân trọng (động từ); 稀奇 = lạ lùng.'},
-  {wrong:'她____了自己的家被大火烧掉，内心非常痛苦。',opts:['注目','目标','目睹','目光'],ans:2,
-   exp:'目睹 = tận mắt chứng kiến (động từ, mang tân ngữ mệnh đề). 目光 (bài 2) = ánh mắt; 注目 = chú mục, dõi theo; 目标 = mục tiêu.'},
-  {wrong:'在绿叶的____下，这朵红花显得格外鲜艳。',opts:['衬托','依托','委托','拜托'],ans:0,
-   exp:'在……的衬托下 = được … tôn lên. 依托 = dựa vào; 委托 = uỷ thác; 拜托 (bài 3) = nhờ vả.'},
-  {wrong:'一只老鹰在山谷上空____了很久。',opts:['旋转','转弯','徘徊','盘旋'],ans:3,
-   exp:'Chim bay lượn vòng trên không → 盘旋. 旋转 = xoay tròn tại chỗ (bánh xe, trái đất); 转弯 = rẽ; 徘徊 = đi đi lại lại (người, do dự).'},
-  {wrong:'这家航空公司新____了一条从河内到昆明的航线。',opts:['开展','开辟','开放','开发'],ans:1,
-   exp:'开辟 + 航线 / 道路 = mở ra tuyến mới. 开放 = mở cửa; 开发 = khai thác (tài nguyên, sản phẩm); 开展 = triển khai (hoạt động).'},
-  {wrong:'她闭上眼睛，完全____在优美的音乐中。',opts:['沉默','麻醉','陶醉','喝醉'],ans:2,
-   exp:'陶醉在……中 = đắm chìm say sưa trong …. 喝醉 = say rượu; 沉默 = im lặng; 麻醉 = gây mê.'},
-  {wrong:'他患上了一种____的疾病，连最有经验的大夫都感到头疼。',opts:['罕见','看见','常见','意见'],ans:0,
-   exp:'罕见的疾病 = bệnh hiếm gặp (练习2 ③). 常见 nghĩa ngược lại, không hợp với "bác sĩ giỏi nhất cũng đau đầu".'},
-  {wrong:'第一次站在大海边，我被眼前的景象深深地____了。',opts:['振动','震撼','震动','地震'],ans:1,
-   exp:'被……震撼 = bị … làm cho rung động, choáng ngợp (tác động tinh thần). 震动 thiên về rung chuyển vật lý hoặc gây chấn động dư luận; 振动 = dao động (vật lý).'},
-  {wrong:'他为国家的航天事业做出了____的贡献。',opts:['出色地','突出了','杰作','杰出'],ans:3,
-   exp:'杰出的贡献 = cống hiến kiệt xuất. 出色地 là trạng ngữ (cần động từ sau); 突出了 là động từ; 杰作 là danh từ (kiệt tác).'},
-  {wrong:'老师们就像____的园丁，培育着一代又一代的学生。',opts:['辛勤','辛苦地','勤快地','勤劳地'],ans:0,
-   exp:'辛勤的园丁 là cụm cố định ca ngợi thầy cô; định ngữ cần 的, không dùng dạng trạng ngữ 地. 勤劳 (bài 1) hợp với người lao động nói chung, nhưng ở đây đã thành 勤劳地 — sai.'},
-  {wrong:'台风来临前，海面上波涛____，渔船都回港了。',opts:['涌现','勇敢','汹涌','拥挤'],ans:2,
-   exp:'波涛汹涌 = sóng cả cuồn cuộn (cụm cố định). 拥挤 = chen chúc; 涌现 = xuất hiện ồ ạt (nhân tài, sự vật mới); 勇敢 = dũng cảm (người).'},
-  {wrong:'这部电影____很强的教育意义。',opts:['拥有','占有','所有','具有'],ans:3,
-   exp:'意义 là sự vật trừu tượng → 具有. 拥有 đi với thứ nhiều, quý, sở hữu được; 占有 = chiếm giữ; 所有 = tất cả / sở hữu (danh từ).'}
+  {wrong:'公园门口有一座孔子的____，很多游客在那儿拍照。',opts:['雕塑','雕刻','宫殿','山脉'],ans:0,exp:'Một bức tượng (lượng từ 座) → 雕塑. 雕刻 thường là động từ "chạm khắc" hoặc chỉ hoa văn khắc trên vật; 宫殿 là cung điện; 山脉 là dãy núi.'},
+  {wrong:'这种病非常____，全世界只有几百个病人。',opts:['罕见','珍稀','难得','珍贵'],ans:0,exp:'Rất hiếm gặp (nói về bệnh, hiện tượng) → 罕见. 珍稀 chỉ động vật / thực vật quý hiếm; 难得 là hiếm có (mang nghĩa tốt, đáng quý); 珍贵 là quý giá — không dùng cho bệnh.'},
+  {wrong:'这片森林里生活着很多____动物，所以不让游客随便进去。',opts:['珍稀','珍惜','珍珠','新鲜'],ans:0,exp:'珍稀动物 = động vật quý hiếm. 珍惜 (Hán Việt "trân tích") là động từ "trân trọng, quý"; 珍珠 là ngọc trai; 新鲜 là tươi.'},
+  {wrong:'那天在路口，我____了一场车祸，到现在还忘不了。',opts:['目睹','目光','题目','目标'],ans:0,exp:'Tận mắt chứng kiến (thường là sự việc gây ấn tượng mạnh) → 目睹 + sự việc. 目光 là ánh mắt; 题目 là đề bài, đầu đề; 目标 là mục tiêu — đều là danh từ, không mang tân ngữ.'},
+  {wrong:'父母____不了他，只好同意他一个人去国外读书。',opts:['阻拦','反对','打扰','批评'],ans:0,exp:'V + 不了 = không … nổi: 阻拦不了 = không ngăn nổi. 反对 / 批评 không dùng với 不了 theo nghĩa này; 打扰 là làm phiền.'},
+  {wrong:'美丽的风景让游客们____其中，舍不得离开。',opts:['陶醉','喝醉','沉睡','醉人'],ans:0,exp:'陶醉 + 其中 / 在……里 = say sưa, ngây ngất (nghĩa bóng). 喝醉 là say rượu; 沉睡 là ngủ say; 醉人 là tính từ "làm người ta say", không có chủ ngữ là người.'},
+  {wrong:'第一次站在大峡谷边上，那种景色让我深深地____了。',opts:['震撼','地震','振兴','震惊'],ans:0,exp:'Bị rung động mạnh trước cái đẹp, cái hùng vĩ → 震撼. 震惊 là sững sờ vì chuyện bất ngờ, thường là chuyện xấu; 地震 là động đất; 振兴 (bài 13) là chấn hưng.'},
+  {wrong:'这本词典是他花了十年____才完成的。',opts:['心血','心情','心理','心中'],ans:0,exp:'花了……心血 = bỏ ra bao tâm huyết. 心情 là tâm trạng; 心理 là tâm lý; 心中 là trong lòng — đều không làm tân ngữ của 花.'},
+  {wrong:'天上的云时而像马，____像小狗，一直在变。',opts:['时而','有时','偶尔','时常'],ans:0,exp:'时而 A，时而 B phải đi thành cặp. 有时 / 偶尔 là "thỉnh thoảng", 时常 là "thường xuyên" — không ghép được với 时而 ở vế trước.'},
+  {wrong:'看到这么美的梯田，____拿出手机拍了起来。',opts:['我不禁','不禁我','我不禁地','不禁地我'],ans:0,exp:'不禁 đứng SAU chủ ngữ, ngay trước động từ: 我不禁拿出……. Đặt 不禁 trước chủ ngữ là lỗi hay gặp; 不禁 không thêm 地.'},
+  {wrong:'想起小时候在奶奶家过的日子，我____想念起奶奶来。',opts:['不禁','禁止','不仅','不断'],ans:0,exp:'Cảm xúc tự nhiên trào lên → 不禁 + V + 起来. 禁止 là cấm; 不仅 (gần âm) là "không chỉ"; 不断 là liên tục.'},
+  {wrong:'参观过这里的游客，____被这里的美景吸引。',opts:['无不','无论','并不','从不'],ans:0,exp:'无不 = không ai không, ai cũng (khẳng định mạnh). 无论 cần đi với 都 và đại từ nghi vấn; 并不 / 从不 là phủ định — trái nghĩa.'},
+  {wrong:'____无不喜欢吃妈妈做的饭。',opts:['我们全家','我','爸爸','妈妈自己'],ans:0,exp:'无不 cần chủ ngữ số nhiều / toàn thể (không ai không…): 我们全家无不……. Chủ ngữ một người (我, 爸爸) phải dùng 都很喜欢 / 特别喜欢.'},
+  {wrong:'每个人的____不一样，你觉得好看的衣服，我不一定喜欢。',opts:['审美','美丽','美术','美好'],ans:0,exp:'审美 = gu thẩm mỹ, cách cảm nhận cái đẹp. 美丽 là tính từ "đẹp" (tả vật), không nói 每个人的美丽不一样 theo nghĩa "gu"; 美术 là mỹ thuật (môn học); 美好 là tốt đẹp.'},
+  {wrong:'从山上流下来的水形成了一道美丽的____。',opts:['瀑布','峡谷','梯田','山脉'],ans:0,exp:'Nước từ trên cao đổ xuống, lượng từ 道 → 瀑布 (thác nước). 峡谷 là hẻm núi; 梯田 là ruộng bậc thang; 山脉 là dãy núi.'}
 ];
 
 // ══════════════════════════════════════════
-// LUYỆN DỊCH — câu ghép, dùng từ bài 15 + ôn từ bài trước
+// DỊCH Việt → Trung — câu mới, dùng từ của bài + ôn ngữ pháp các bài trước
 // ══════════════════════════════════════════
 var translateData = [
   {vi:'Tuy cuối tuần trời mưa to một trận, nhưng thác nước trên núi vẫn tráng lệ như xưa, chúng tôi chơi rất hăng say.',zh:'虽然周末下了一场大雨，但是山上的瀑布依旧壮丽，我们玩得兴高采烈。',py:'Suīrán zhōumò xiàle yì cháng dà yǔ, dànshì shān shang de pùbù yījiù zhuànglì, wǒmen wánr de xìnggāo-cǎiliè.',goiY:['虽然……但是……','瀑布','依旧','壮丽'],giai:'依旧 làm phó từ đứng trước tính từ (依旧壮丽 = vẫn tráng lệ như xưa); 兴高采烈 (bài 9) làm bổ ngữ trạng thái sau 玩得.'},
-  {vi:'Nghe tin tôi đỗ vào trường đại học mơ ước, mẹ không kìm được mà rơi nước mắt, mấy năm nay mẹ đã dành cho tôi biết bao tâm huyết.',zh:'听说我考上了理想的大学，妈妈不禁流下了眼泪，这些年她为我花了太多心血。',py:'Tīngshuō wǒ kǎoshàngle lǐxiǎng de dàxué, māma bùjīn liúxiàle yǎnlèi, zhèxiē nián tā wèi wǒ huāle tài duō xīnxuè.',goiY:['不禁','心血','为……花了……'],giai:'不禁 đứng ngay trước động từ chỉ phản ứng tự nhiên (流下了眼泪); "dành tâm huyết cho ai" = 为 + người + 花心血, không dịch 给我心血.'},
-  {vi:'Đã quyết định đi Mù Cang Chải xem ruộng bậc thang rồi thì đừng lưỡng lự nữa, chi bằng đặt vé xe ngay bây giờ đi.',zh:'既然已经决定去木江界看梯田了，就别再摇摆不定了，不妨现在就订车票吧。',py:'Jìrán yǐjīng juédìng qù Mùjiāngjiè kàn tītián le, jiù bié zài yáobǎi bú dìng le, bùfáng xiànzài jiù dìng chēpiào ba.',goiY:['既然……就……','梯田','摇摆不定','不妨'],giai:'既然……就…… nêu tiền đề đã có rồi rút ra lời khuyên; "lưỡng lự" dịch 摇摆不定 (nghĩa bóng của 摇摆); 不妨 (bài 12) = cứ thử, chẳng ngại.'},
-  {vi:'Lời cô chủ nhiệm cứ quẩn quanh trong đầu tôi mấy ngày liền, tôi không khỏi tự hỏi: nếu không dốc sức học, sau này mình làm được gì?',zh:'班主任的话在我脑海里盘旋了好几天，我不禁问自己：如果不拼命学习，将来我能做什么？',py:'Bānzhǔrèn de huà zài wǒ nǎohǎi li pánxuánle hǎo jǐ tiān, wǒ bùjīn wèn zìjǐ: rúguǒ bù pīnmìng xuéxí, jiānglái wǒ néng zuò shénme?',goiY:['盘旋','不禁','如果……','拼命'],giai:'盘旋 nghĩa bóng: ý nghĩ cứ quẩn quanh (在脑海里盘旋); 不禁问自己 lấy từ bài khoá; 拼命 (bài 5) = dốc hết sức.'},
+  {vi:'Nghe tin tôi đỗ vào trường đại học mơ ước, mẹ không kìm được mà vui đến bật khóc, mấy năm nay mẹ đã dành cho tôi biết bao tâm huyết.',zh:'听说我考上了理想的大学，妈妈不禁高兴得哭了起来，这些年她为我花了太多心血。',py:'Tīngshuō wǒ kǎoshàngle lǐxiǎng de dàxué, māma bùjīn gāoxìng de kūle qǐlái, zhèxiē nián tā wèi wǒ huāle tài duō xīnxuè.',goiY:['不禁','心血','为……花了……'],giai:'不禁 đứng ngay trước cụm động từ chỉ phản ứng tự nhiên (高兴得哭了起来); "dành tâm huyết cho ai" = 为 + ai + 花心血.'},
   {vi:'Cho dù nền tảng có kém một chút, chỉ cần có nghị lực kiên trì bền bỉ, em nhất định sẽ đạt được thành tích xuất sắc.',zh:'即便基础差一点儿，只要有锲而不舍的毅力，你就一定能取得杰出的成绩。',py:'Jíbiàn jīchǔ chà yìdiǎnr, zhǐyào yǒu qiè\'érbùshě de yìlì, nǐ jiù yídìng néng qǔdé jiéchū de chéngjì.',goiY:['即便……','只要……就……','锲而不舍','毅力'],giai:'即便 (bài 10) nêu giả thiết nhượng bộ, 只要……就…… nêu điều kiện đủ; 锲而不舍 làm định ngữ cho 毅力; "thành tích xuất sắc" = 杰出的成绩.'},
-  {vi:'Khi lớp chúng tôi đi tham quan ruộng bậc thang Hà Nhì, bạn nào cũng say sưa trước cảnh đẹp, lúc thì chụp ảnh, lúc thì ca hát.',zh:'我们班去参观哈尼梯田时，同学们无不陶醉于眼前的美景，时而拍照，时而唱歌。',py:'Wǒmen bān qù cānguān Hāní tītián shí, tóngxuémen wúbù táozuì yú yǎnqián de měijǐng, shí\'ér pāizhào, shí\'ér chàng gē.',goiY:['无不','陶醉','时而……，时而……'],giai:'"Bạn nào cũng" = 无不 (không ai không) — chủ ngữ phải là số nhiều (同学们); 陶醉于 + đối tượng; hai 时而 tạo vế song song luân phiên.'},
-  {vi:'Cuối tuần này chúng tôi không ở nhà lướt điện thoại mà theo cô giáo ra ngoại ô thu thập mẫu thực vật, còn được ngắm thác nước trong hẻm núi.',zh:'这个周末我们不是在家刷手机，而是跟老师去郊外采集植物标本，还看到了峡谷里的瀑布。',py:'Zhège zhōumò wǒmen bú shì zài jiā shuā shǒujī, ér shì gēn lǎoshī qù jiāowài cǎijí zhíwù biāoběn, hái kàndàole xiágǔ li de pùbù.',goiY:['不是……而是……','采集','峡谷','瀑布'],giai:'不是……而是…… phủ định A khẳng định B; "thu thập mẫu" = 采集标本 (采集 dùng cho thứ lấy từ tự nhiên, không dùng 收集).'},
-  {vi:'Chúng ta sở dĩ phải bảo vệ môi trường sinh thái là vì Trái Đất là ngôi nhà chung mà cả nhân loại cùng có, một khi bị phá hoại thì rất khó khôi phục.',zh:'我们之所以要保护生态环境，是因为地球是全人类共同拥有的家园，一旦被破坏就很难恢复。',py:'Wǒmen zhī suǒyǐ yào bǎohù shēngtài huánjìng, shì yīnwèi dìqiú shì quán rénlèi gòngtóng yōngyǒu de jiāyuán, yídàn bèi pòhuài jiù hěn nán huīfù.',goiY:['之所以……是因为……','生态','拥有','一旦……就……'],giai:'之所以 đứng sau chủ ngữ ở vế đầu, vế sau bắt đầu bằng 是因为; "cùng có" = 共同拥有 (thứ lớn, quý, thuộc sở hữu → 拥有, không dùng 具有).'},
-  {vi:'Dù ông ngoại đã chứng kiến bình minh vô số lần, nhưng mỗi lần đứng trên đỉnh núi cao hơn hai nghìn mét, ông vẫn choáng ngợp trước cảnh sắc trước mắt.',zh:'尽管外公已经目睹过无数次日出，但每次站在海拔两千多米的山顶上，他都会为眼前的景色而震撼。',py:'Jǐnguǎn wàigōng yǐjīng mùdǔguo wúshù cì rìchū, dàn měi cì zhàn zài hǎibá liǎngqiān duō mǐ de shāndǐng shang, tā dōu huì wèi yǎnqián de jǐngsè ér zhènhàn.',goiY:['尽管……但……','目睹','海拔','为……而……'],giai:'Bắt chước câu bài khoá (练习4 ①): 尽管……，但每次……都会……; 为 + nguyên nhân + 而 + phản ứng (为……而震撼); "cao … mét" = 海拔……米.'},
-  {vi:'Đứng trước khó khăn, thay vì trốn tránh, chi bằng giống như người Hà Nhì dùng tâm huyết mở ra một con đường của riêng mình, như vậy mới không phụ kỳ vọng của bố mẹ.',zh:'面对困难，与其逃避，不如像哈尼人那样用心血去开辟一条自己的路，这样才不会辜负父母的期望。',py:'Miànduì kùnnan, yǔqí táobì, bùrú xiàng Hānírén nàyàng yòng xīnxuè qù kāipì yì tiáo zìjǐ de lù, zhèyàng cái bú huì gūfù fùmǔ de qīwàng.',goiY:['与其……不如……','心血','开辟','辜负'],giai:'与其 A 不如 B: chọn B thay vì A; 开辟 + 路 = mở ra con đường (nghĩa bóng); 辜负期望 (bài 3) = phụ lòng kỳ vọng — câu ba vế, 这样才…… nêu kết quả.'}
+  {vi:'Khi lớp chúng tôi đi tham quan ruộng bậc thang Hà Nhì, bạn nào cũng say sưa trước cảnh đẹp, lúc thì chụp ảnh, lúc thì trò chuyện.',zh:'我们班去参观哈尼梯田时，同学们无不陶醉于眼前的美景，时而拍照，时而聊天。',py:'Wǒmen bān qù cānguān Hāní tītián shí, tóngxuémen wúbù táozuì yú yǎnqián de měijǐng, shí\'ér pāizhào, shí\'ér liáotiān.',goiY:['无不','陶醉','时而……，时而……'],giai:'"Bạn nào cũng" = 无不 (không ai không) — chủ ngữ phải là số nhiều (同学们); 陶醉于 + đối tượng; hai 时而 tạo vế song song luân phiên.'},
+  {vi:'Chúng ta sở dĩ phải bảo vệ môi trường sinh thái là vì Trái Đất là ngôi nhà chung mà cả nhân loại cùng có, một khi bị phá hoại thì rất khó khôi phục.',zh:'我们之所以要保护生态环境，是因为地球是全人类共同拥有的家，一旦被破坏就很难恢复。',py:'Wǒmen zhī suǒyǐ yào bǎohù shēngtài huánjìng, shì yīnwèi dìqiú shì quán rénlèi gòngtóng yōngyǒu de jiā, yídàn bèi pòhuài jiù hěn nán huīfù.',goiY:['之所以……是因为……','生态','拥有','一旦……就……'],giai:'之所以 đứng sau chủ ngữ ở vế đầu, vế sau bắt đầu bằng 是因为; "cùng có" = 共同拥有 (thứ lớn, quý, thuộc sở hữu → 拥有, không dùng 具有).'},
+  {vi:'Khi gặp khó khăn, thay vì trốn tránh, chi bằng giống như người Hà Nhì dùng tâm huyết mở ra một con đường của riêng mình, như vậy mới không phụ kỳ vọng của bố mẹ.',zh:'遇到困难的时候，与其逃避，不如像哈尼人那样用心血去开辟一条自己的路，这样才不会辜负父母的期望。',py:'Yùdào kùnnan de shíhou, yǔqí táobì, bùrú xiàng Hānírén nàyàng yòng xīnxuè qù kāipì yì tiáo zìjǐ de lù, zhèyàng cái bú huì gūfù fùmǔ de qīwàng.',goiY:['与其……不如……','心血','开辟','辜负'],giai:'与其 A 不如 B: chọn B thay vì A; 开辟 + 路 = mở ra con đường (nghĩa bóng); 辜负期望 (bài 3) = phụ lòng kỳ vọng — câu ba vế, 这样才…… nêu kết quả.'}
 ];
 
 var translateDataRev = [
-  {vi:'Năm 2010, vùng Tây Nam gặp phải trận hạn hán trăm năm có một, hoa màu khô héo trên diện rộng, cây trồng gần như mất trắng.',zh:'2010年西南地区遭遇了百年不遇的干旱，庄稼大面积枯萎，农作物几乎绝收。',py:'Èr líng yī líng nián xīnán dìqū zāoyùle bǎi nián bú yù de gānhàn, zhuāngjia dà miànjī kūwěi, nóngzuòwù jīhū juéshōu.',goiY:['干旱 = hạn hán','庄稼 = hoa màu','枯萎 = khô héo','百年不遇 = trăm năm có một'],giai:'百年不遇 dịch "trăm năm có một" (không dịch "trăm năm không gặp"); 绝收 = mất trắng, không thu hoạch được gì.'},
-  {vi:'Đúng vào lúc cả người lẫn gia súc đều khó có nước uống, ruộng bậc thang ở núi Ai Lao lại vẫn tráng lệ như xưa.',zh:'就在人和牲畜饮水都困难的时候，哀牢山的梯田却依旧壮丽。',py:'Jiù zài rén hé shēngchù yǐn shuǐ dōu kùnnan de shíhou, Āiláo Shān de tītián què yījiù zhuànglì.',goiY:['牲畜 = gia súc','梯田 = ruộng bậc thang','依旧 = vẫn như xưa','却 = lại (trái ngược)'],giai:'就在……的时候 = đúng vào lúc …; 却 tạo tương phản giữa hạn hán và vẻ tráng lệ — dịch "lại vẫn …" cho rõ ý trái ngược.'},
-  {vi:'Bầu trời xanh thẳm và những đám mây trắng bồng bềnh tôn lên vẻ đẹp hùng tráng của từng tầng ruộng bậc thang.',zh:'蔚蓝的天空和漂浮的白云，把一层层梯田衬托得更加壮美。',py:'Wèilán de tiānkōng hé piāofú de báiyún, bǎ yì céngcéng tītián chèntuō de gèngjiā zhuàngměi.',goiY:['蔚蓝 = xanh thẳm','漂浮 = trôi bồng bềnh','衬托 = tôn lên','把……V得……'],giai:'Câu 把 + V得 + bổ ngữ: tiếng Việt nên đổi thành "tôn lên vẻ đẹp hùng tráng của …" thay vì dịch sát "làm cho … được tôn lên càng đẹp".'},
-  {vi:'Chiếc xe men theo con đường vòng vèo đi lên, lúc thì chạy dưới đáy hẻm núi, lúc thì leo lên lưng chừng núi cao hơn một nghìn mét.',zh:'汽车沿着公路盘旋而行，时而行驶在峡谷底部，时而爬升到海拔一千多米的山腰。',py:'Qìchē yánzhe gōnglù pánxuán ér xíng, shí\'ér xíngshǐ zài xiágǔ dǐbù, shí\'ér páshēng dào hǎibá yìqiān duō mǐ de shānyāo.',goiY:['盘旋而行 = đi vòng vèo','时而……，时而…… = lúc thì …, lúc thì …','峡谷 = hẻm núi','海拔 = độ cao so với mặt biển'],giai:'时而……时而…… là cặp song song luân phiên; 海拔一千多米 dịch "cao hơn một nghìn mét (so với mực nước biển)", không dịch "hải bạt".'},
-  {vi:'Đỉnh núi là rừng rậm bạt ngàn, giữa hẻm núi là suối nhỏ và thác nước, còn bên dưới làng là ruộng bậc thang trải dài muôn dặm, cuồn cuộn ùa tới.',zh:'山顶是大片的森林，峡谷间是小溪和瀑布，村子下面则是纵横万里、汹涌而来的梯田。',py:'Shāndǐng shì dàpiàn de sēnlín, xiágǔ jiān shì xiǎoxī hé pùbù, cūnzi xiàmiàn zé shì zònghéng wàn lǐ, xiōngyǒng ér lái de tītián.',goiY:['瀑布 = thác nước','纵横万里 = trải rộng muôn dặm','汹涌而来 = cuồn cuộn ùa tới','则 = còn (đối chiếu)'],giai:'Ba vế liệt kê theo không gian (đỉnh — giữa — dưới); 则 đối chiếu vế cuối, dịch "còn …". 汹涌 tả nước cuộn trào — ở đây là ẩn dụ ruộng như sóng.'},
-  {vi:'Dù tác giả đã chứng kiến vô số lần, nhưng mỗi lần đặt chân đến tận nơi, ông vẫn bị tác phẩm kiệt xuất này làm cho rung động sâu sắc.',zh:'尽管作者已经目睹过无数次，可每次身临其境，他都会被这件杰出的作品深深震撼。',py:'Jǐnguǎn zuòzhě yǐjīng mùdǔguo wúshù cì, kě měi cì shēn lín qí jìng, tā dōu huì bèi zhè jiàn jiéchū de zuòpǐn shēnshēn zhènhàn.',goiY:['目睹 = chứng kiến','身临其境 = đặt chân tới tận nơi','杰出 = kiệt xuất','震撼 = rung động, choáng ngợp'],giai:'尽管……可每次……都…… = dù … nhưng lần nào cũng …; câu bị động 被……震撼 có thể dịch chủ động: "tác phẩm … khiến ông choáng ngợp".'},
-  {vi:'Tổ tiên phát hiện chỉ dựa vào săn bắn và hái lượm thì không sống nổi, thế là học cách trồng trọt, từ đó không bao giờ rời xa được ruộng bậc thang và nước nữa.',zh:'祖先们发现光靠打猎和采集过不了日子，于是学会了种植，从此再也离不开梯田和水。',py:'Zǔxiānmen fāxiàn guāng kào dǎliè hé cǎijí guò bu liǎo rìzi, yúshì xuéhuìle zhòngzhí, cóngcǐ zài yě lí bu kāi tītián hé shuǐ.',goiY:['光靠 = chỉ dựa vào','打猎 = săn bắn','采集 = hái lượm','从此再也…… = từ đó không bao giờ … nữa'],giai:'于是 nối hệ quả, 从此 nối mốc thời gian mới; 再也离不开 dịch "không bao giờ rời xa được nữa" — 再也 + phủ định = không bao giờ … nữa.'},
-  {vi:'Người dân miền núi không chống lại núi lớn mà thuận theo quy luật tự nhiên; qua nỗ lực bền bỉ của mấy chục thế hệ, họ đã tạc núi thành ruộng bậc thang.',zh:'山民们没有与大山对抗，而是服从自然规律，经过数十代人锲而不舍的努力，把大山雕塑成了梯田。',py:'Shānmínmen méiyǒu yǔ dà shān duìkàng, ér shì fúcóng zìrán guīlǜ, jīngguò shù shí dài rén qiè\'érbùshě de nǔlì, bǎ dà shān diāosù chéngle tītián.',goiY:['没有……而是…… = không … mà …','对抗 = chống lại','锲而不舍 = kiên trì bền bỉ','雕塑成 = tạc thành'],giai:'没有 A 而是 B: phủ định A, khẳng định B (练习4 ②); 对抗 (bài 4); 数十代人 = mấy chục thế hệ (数 = vài, mấy).'},
-  {vi:'Hơn một nghìn ba trăm năm qua, người dân miền núi đã dùng tâm huyết và sự lao động cần cù hoàn thành tác phẩm điêu khắc trên dãy núi, không khó khăn nào cản nổi họ.',zh:'一千三百多年来，山民们用心血和辛勤劳动完成了山脉上的雕刻，任何困难也阻拦不了他们。',py:'Yìqiān sānbǎi duō nián lái, shānmínmen yòng xīnxuè hé xīnqín láodòng wánchéngle shānmài shang de diāokè, rènhé kùnnan yě zǔlán bu liǎo tāmen.',goiY:['心血 = tâm huyết','辛勤 = cần cù','山脉 = dãy núi','阻拦不了 = không cản nổi'],giai:'任何……也…… = bất kỳ … cũng — dịch tự nhiên là "không … nào …"; 阻拦不了 là bổ ngữ khả năng phủ định.'},
-  {vi:'Cảnh đẹp của ruộng bậc thang Hà Nhì khiến người ta ngây ngất; mọi thứ ở đây đều thể hiện trí tuệ chung sống hài hoà giữa người và thiên nhiên, là di sản quý báu của nhân loại.',zh:'哈尼梯田的美景让人陶醉，这里的一切无不体现着人与自然和谐相处的智慧，是人类的宝贵遗产。',py:'Hāní tītián de měijǐng ràng rén táozuì, zhèlǐ de yíqiè wúbù tǐxiànzhe rén yǔ zìrán héxié xiāngchǔ de zhìhuì, shì rénlèi de bǎoguì yíchǎn.',goiY:['陶醉 = ngây ngất','无不 = đều, không gì không','和谐 = hài hoà','遗产 = di sản'],giai:'无不 là phủ định kép = khẳng định mạnh: dịch "đều …" hoặc "không gì là không …"; 和谐相处 (和谐 — bài 10) = chung sống hài hoà.'}
+  {vi:'Con đường nhỏ này lúc thì xuyên qua rừng, lúc thì men theo dòng sông nhỏ, đi mãi mà chẳng thấy chán chút nào.',zh:'这条小路时而穿过森林，时而沿着小河，走起来一点儿也不无聊。',py:'Zhè tiáo xiǎolù shí\'ér chuānguò sēnlín, shí\'ér yánzhe xiǎo hé, zǒu qǐlái yìdiǎnr yě bù wúliáo.',goiY:['时而……，时而…… = lúc thì…, lúc thì…','穿过 = xuyên qua','沿着 = men theo'],giai:'时而……，时而…… dịch "lúc thì…, lúc thì…"; 走起来 = khi đi (V + 起来 nêu cảm nhận khi làm).'},
+  {vi:'Đọc đến câu cuối cùng của bức thư, cô ấy không nhịn được bật cười thành tiếng.',zh:'读到信的最后一句，她不禁笑出了声。',py:'Dúdào xìn de zuìhòu yí jù, tā bùjīn xiàochūle shēng.',goiY:['不禁 = không nhịn được, bất giác','笑出了声 = bật cười thành tiếng'],giai:'不禁 + V dịch "không nhịn được / bất giác"; 笑出了声 = cười thành tiếng (bổ ngữ xu hướng 出).'},
+  {vi:'Ai đã từng ăn món chị ấy nấu cũng đều hết lời khen ngợi.',zh:'吃过她做的菜的人，无不称赞她。',py:'Chīguo tā zuò de cài de rén, wúbù chēngzàn tā.',goiY:['无不 = không ai không, ai cũng','称赞 = khen ngợi'],giai:'无不 là phủ định kép = khẳng định mạnh → dịch "ai… cũng đều…", không dịch "không ai khen".'},
+  {vi:'Dãy núi này trải dài mấy trăm cây số, trên núi có rất nhiều loài chim quý hiếm sinh sống.',zh:'这条山脉纵横几百公里，山上生活着很多珍稀的鸟。',py:'Zhè tiáo shānmài zònghéng jǐ bǎi gōnglǐ, shān shang shēnghuózhe hěn duō zhēnxī de niǎo.',goiY:['山脉 = dãy núi','纵横 = trải dài ngang dọc','珍稀 = quý hiếm'],giai:'山上生活着…… là câu tồn hiện (nơi chốn + V着 + người / vật) → "trên núi có … sinh sống".'},
+  {vi:'Mưa to liền ba ngày, nước sông trong hẻm núi trở nên cuồn cuộn dữ dội, chẳng ai dám lại gần.',zh:'连下了三天大雨，峡谷里的河水变得十分汹涌，谁也不敢靠近。',py:'Lián xiàle sān tiān dà yǔ, xiágǔ li de héshuǐ biàn de shífēn xiōngyǒng, shéi yě bù gǎn kàojìn.',goiY:['峡谷 = hẻm núi','汹涌 = cuồn cuộn, dữ dội','谁也不…… = không ai…'],giai:'汹涌 tả nước (sông, biển, sóng) dâng trào dữ dội; 谁也不敢 = chẳng ai dám.'}
 ];
 
 // ══════════════════════════════════════════
@@ -1674,9 +1610,9 @@ var writingData = {
     'Có chi tiết cụ thể, chính xác (khoảng cách, số liệu, truyền thuyết, cảm xúc của chính em) thay vì chỉ khen chung chung "rất đẹp" không?'
   ],
   model:{
-    zh:'（题目：我熟悉的下龙湾）我的家乡在广宁省，离下龙湾只有几十公里，从小到大，我已经去过十几次了。下龙湾位于越南东北部，离首都河内大约一百七十公里。海湾里有将近两千座大大小小的石岛，它们重重叠叠，像一座座雕塑立在蔚蓝的海面上。下龙湾的周边环境非常优美。坐船在海湾里游览，时而穿过高高的石门，时而经过安静的渔村。蔚蓝的天空，漂浮的白云，碧绿的海水，更衬托出石岛的壮丽。岛上还有不少山洞，洞里的石头千奇百怪，让人陶醉。下龙湾的历史也很悠久。传说古时候，天上的龙飞下来帮助越南人抵抗敌人，龙吐出的珍珠变成了这些石岛，“下龙”这个名字就是这么来的。几十年前，这里只是一个普通的渔港，渔民们世世代代住在海上的船屋里。后来，随着旅游业的发展，这里建起了大桥和酒店，每年都吸引几百万中外游客。下龙湾不仅风景壮丽，而且拥有很高的自然价值。它先后两次被列入世界自然遗产名录，湾里还生活着很多珍稀的动植物。来过这里的游客无不被它的美丽打动。每次站在船头，看着眼前的美景，我都不禁感叹：这是大自然送给我们的宝贵遗产！可是，游客增多也带来了垃圾污染等问题。我希望每一个来到这里的人都能爱护环境，让下龙湾永远这么美丽。',
-    py:'(Tímù: Wǒ shúxī de Xiàlóng Wān) Wǒ de jiāxiāng zài Guǎngníng Shěng, lí Xiàlóng Wān zhǐ yǒu jǐ shí gōnglǐ, cóng xiǎo dào dà, wǒ yǐjīng qùguo shí jǐ cì le. Xiàlóng Wān wèiyú Yuènán dōngběibù, lí shǒudū Hénèi dàyuē yìbǎi qīshí gōnglǐ. Hǎiwān li yǒu jiāngjìn liǎngqiān zuò dàdàxiǎoxiǎo de shídǎo, tāmen chóngchóngdiédié, xiàng yí zuòzuò diāosù lì zài wèilán de hǎimiàn shang. Xiàlóng Wān de zhōubiān huánjìng fēicháng yōuměi. Zuò chuán zài hǎiwān li yóulǎn, shí\'ér chuānguò gāogāo de shímén, shí\'ér jīngguò ānjìng de yúcūn. Wèilán de tiānkōng, piāofú de báiyún, bìlǜ de hǎishuǐ, gèng chèntuō chū shídǎo de zhuànglì. Dǎo shang hái yǒu bùshǎo shāndòng, dòng li de shítou qiānqí-bǎiguài, ràng rén táozuì. Xiàlóng Wān de lìshǐ yě hěn yōujiǔ. Chuánshuō gǔ shíhou, tiān shang de lóng fēi xialai bāngzhù Yuènánrén dǐkàng dírén, lóng tǔchū de zhēnzhū biànchéngle zhèxiē shídǎo, "Xiàlóng" zhège míngzi jiù shì zhème lái de. Jǐ shí nián qián, zhèlǐ zhǐ shì yí ge pǔtōng de yúgǎng, yúmínmen shìshì-dàidài zhù zài hǎi shang de chuánwū li. Hòulái, suízhe lǚyóuyè de fāzhǎn, zhèlǐ jiànqǐle dàqiáo hé jiǔdiàn, měi nián dōu xīyǐn jǐ bǎi wàn zhōng-wài yóukè. Xiàlóng Wān bùjǐn fēngjǐng zhuànglì, érqiě yōngyǒu hěn gāo de zìrán jiàzhí. Tā xiānhòu liǎng cì bèi lièrù shìjiè zìrán yíchǎn mínglù, wān li hái shēnghuózhe hěn duō zhēnxī de dòng-zhíwù. Láiguo zhèlǐ de yóukè wúbù bèi tā de měilì dǎdòng. Měi cì zhàn zài chuántóu, kànzhe yǎnqián de měijǐng, wǒ dōu bùjīn gǎntàn: zhè shì dàzìrán sòng gěi wǒmen de bǎoguì yíchǎn! Kěshì, yóukè zēngduō yě dàiláile lājī wūrǎn děng wèntí. Wǒ xīwàng měi yí ge láidào zhèlǐ de rén dōu néng àihù huánjìng, ràng Xiàlóng Wān yǒngyuǎn zhème měilì.',
-    vn:'(Nhan đề: Vịnh Hạ Long mà tôi quen thuộc) Quê tôi ở tỉnh Quảng Ninh, cách vịnh Hạ Long chỉ vài chục cây số; từ nhỏ đến lớn tôi đã đến đó hơn chục lần. Vịnh Hạ Long nằm ở vùng Đông Bắc Việt Nam, cách thủ đô Hà Nội khoảng 170 km. Trong vịnh có gần hai nghìn hòn đảo đá lớn nhỏ, trùng trùng điệp điệp, như những bức tượng đứng sừng sững trên mặt biển xanh thẳm. Cảnh quan xung quanh vịnh Hạ Long vô cùng đẹp. Ngồi thuyền dạo quanh vịnh, lúc thì luồn qua những cổng đá cao vút, lúc thì đi ngang những làng chài yên tĩnh. Bầu trời xanh thẳm, mây trắng bồng bềnh, nước biển xanh biếc càng tôn lên vẻ tráng lệ của những đảo đá. Trên đảo còn có không ít hang động, đá trong hang muôn hình vạn trạng, khiến người ta say mê. Vịnh Hạ Long cũng có lịch sử lâu đời. Truyền thuyết kể rằng thuở xưa, rồng trên trời bay xuống giúp người Việt chống giặc, những viên ngọc rồng nhả ra biến thành các đảo đá này, cái tên "Hạ Long" (rồng đáp xuống) có từ đó. Mấy chục năm trước, nơi đây chỉ là một cảng cá bình thường, ngư dân đời này qua đời khác sống trong những nhà thuyền trên biển. Về sau, cùng với sự phát triển của ngành du lịch, nơi đây mọc lên cầu lớn, khách sạn, mỗi năm thu hút mấy triệu du khách trong và ngoài nước. Vịnh Hạ Long không chỉ phong cảnh tráng lệ mà còn có giá trị tự nhiên rất cao. Vịnh hai lần được đưa vào danh sách Di sản thiên nhiên thế giới, trong vịnh còn có rất nhiều loài động thực vật quý hiếm sinh sống. Du khách nào đã từng đến đây cũng đều bị vẻ đẹp của nó làm say lòng. Mỗi lần đứng ở mũi thuyền ngắm cảnh đẹp trước mắt, tôi đều không khỏi cảm thán: đây là di sản quý giá mà thiên nhiên ban tặng cho chúng ta! Thế nhưng, du khách tăng lên cũng kéo theo những vấn đề như rác thải, ô nhiễm. Tôi mong mỗi người đến đây đều biết giữ gìn môi trường, để vịnh Hạ Long mãi đẹp như thế này.'
+    zh:'（题目：我熟悉的下龙湾）我的家乡离下龙湾只有几十公里，从小到大，我已经去过十几次了。下龙湾位于越南东北部，离首都河内大约一百七十公里。海上有差不多两千座大大小小的山，它们重重叠叠，像一座座雕塑站在蔚蓝的海面上。下龙湾附近的环境非常优美。坐船在海上游览，时而从两座高高的山中间穿过，时而经过安静的小村子。蔚蓝的天空，漂浮的白云，绿色的海水，更衬托出这些山的壮丽。山里还有不少山洞，洞里的石头千奇百怪，让人陶醉。下龙湾的历史也很悠久。传说古时候，天上的龙飞下来帮助越南人抵抗敌人，龙留下的珍珠变成了这些山，“下龙”这个名字就是这么来的。几十年前，这里只是一个普通的小地方，当地人很多年来一直住在海上的船屋里。后来，随着旅游业的发展，这里有了大桥和酒店，每年都吸引几百万中外游客。下龙湾不仅风景壮丽，而且拥有很高的自然价值。它先后两次成为世界自然遗产，这里还生活着很多珍稀的动植物。来过这里的游客无不被它的美丽打动。每次站在船头，看着眼前的美景，我都不禁在心里说：这是大自然送给我们的宝贵遗产！可是，游客多了，也带来了环境污染等问题。我希望每一个来到这里的人都能爱护环境，让下龙湾永远这么美丽。',
+    py:'(Tímù: Wǒ shúxī de Xiàlóng Wān) Wǒ de jiāxiāng lí Xiàlóng Wān zhǐ yǒu jǐ shí gōnglǐ, cóng xiǎo dào dà, wǒ yǐjīng qùguo shí jǐ cì le. Xiàlóng Wān wèiyú Yuènán dōngběibù, lí shǒudū Hénèi dàyuē yìbǎi qīshí gōnglǐ. Hǎi shang yǒu chàbuduō liǎngqiān zuò dàdàxiǎoxiǎo de shān, tāmen chóngchóngdiédié, xiàng yí zuòzuò diāosù zhàn zài wèilán de hǎimiàn shang. Xiàlóng Wān fùjìn de huánjìng fēicháng yōuměi. Zuò chuán zài hǎi shang yóulǎn, shí\'ér cóng liǎng zuò gāogāo de shān zhōngjiān chuānguò, shí\'ér jīngguò ānjìng de xiǎo cūnzi. Wèilán de tiānkōng, piāofú de báiyún, lǜsè de hǎishuǐ, gèng chèntuō chū zhèxiē shān de zhuànglì. Shān li hái yǒu bùshǎo shāndòng, dòng li de shítou qiānqí-bǎiguài, ràng rén táozuì. Xiàlóng Wān de lìshǐ yě hěn yōujiǔ. Chuánshuō gǔ shíhou, tiān shang de lóng fēi xialai bāngzhù Yuènánrén dǐkàng dírén, lóng liúxià de zhēnzhū biànchéngle zhèxiē shān, "Xiàlóng" zhège míngzi jiù shì zhème lái de. Jǐ shí nián qián, zhèlǐ zhǐ shì yí ge pǔtōng de xiǎo dìfang, dāngdìrén hěn duō nián lái yìzhí zhù zài hǎi shang de chuánwū li. Hòulái, suízhe lǚyóuyè de fāzhǎn, zhèlǐ yǒule dàqiáo hé jiǔdiàn, měi nián dōu xīyǐn jǐ bǎi wàn zhōng-wài yóukè. Xiàlóng Wān bùjǐn fēngjǐng zhuànglì, érqiě yōngyǒu hěn gāo de zìrán jiàzhí. Tā xiānhòu liǎng cì chéngwéi shìjiè zìrán yíchǎn, zhèlǐ hái shēnghuózhe hěn duō zhēnxī de dòng-zhíwù. Láiguo zhèlǐ de yóukè wúbù bèi tā de měilì dǎdòng. Měi cì zhàn zài chuántóu, kànzhe yǎnqián de měijǐng, wǒ dōu bùjīn zài xīnli shuō: zhè shì dàzìrán sòng gěi wǒmen de bǎoguì yíchǎn! Kěshì, yóukè duō le, yě dàiláile huánjìng wūrǎn děng wèntí. Wǒ xīwàng měi yí ge láidào zhèlǐ de rén dōu néng àihù huánjìng, ràng Xiàlóng Wān yǒngyuǎn zhème měilì.',
+    vn:'(Nhan đề: Vịnh Hạ Long mà tôi quen thuộc) Quê tôi cách vịnh Hạ Long chỉ vài chục cây số; từ nhỏ đến lớn tôi đã đến đó hơn chục lần. Vịnh Hạ Long nằm ở vùng Đông Bắc Việt Nam, cách thủ đô Hà Nội khoảng 170 km. Trên biển có gần hai nghìn ngọn núi đá lớn nhỏ, trùng trùng điệp điệp, như những bức tượng đứng sừng sững trên mặt biển xanh thẳm. Cảnh quan xung quanh vịnh Hạ Long vô cùng đẹp. Ngồi thuyền dạo trên biển, lúc thì luồn qua giữa hai ngọn núi cao vút, lúc thì đi ngang những làng nhỏ yên tĩnh. Bầu trời xanh thẳm, mây trắng bồng bềnh, nước biển xanh biếc càng tôn lên vẻ tráng lệ của những ngọn núi ấy. Trong núi còn có không ít hang động, đá trong hang muôn hình vạn trạng, khiến người ta say mê. Vịnh Hạ Long cũng có lịch sử lâu đời. Truyền thuyết kể rằng thuở xưa, rồng trên trời bay xuống giúp người Việt chống giặc, những viên ngọc rồng để lại biến thành các ngọn núi này, cái tên "Hạ Long" (rồng đáp xuống) có từ đó. Mấy chục năm trước, nơi đây chỉ là một nơi nhỏ bé bình thường, người dân nhiều năm nay vẫn sống trong những nhà thuyền trên biển. Về sau, cùng với sự phát triển của ngành du lịch, nơi đây mọc lên cầu lớn, khách sạn, mỗi năm thu hút mấy triệu du khách trong và ngoài nước. Vịnh Hạ Long không chỉ phong cảnh tráng lệ mà còn có giá trị tự nhiên rất cao. Vịnh hai lần được công nhận là Di sản thiên nhiên thế giới, nơi đây còn có rất nhiều loài động thực vật quý hiếm sinh sống. Du khách nào đã từng đến đây cũng đều bị vẻ đẹp của nó làm say lòng. Mỗi lần đứng ở mũi thuyền ngắm cảnh đẹp trước mắt, tôi đều không khỏi thầm nhủ: đây là di sản quý giá mà thiên nhiên ban tặng cho chúng ta! Thế nhưng, du khách đông lên cũng kéo theo những vấn đề như ô nhiễm môi trường. Tôi mong mỗi người đến đây đều biết giữ gìn môi trường, để vịnh Hạ Long mãi đẹp như thế này.'
   }
 };
 
@@ -1684,199 +1620,143 @@ var writingData = {
 // LUYỆN NÓI — đúng bảng 练习5 của sách: 根据课文内容回答问题
 // ══════════════════════════════════════════
 var speakingData = {
-  intro:'Đây là bảng bài tập 5 trong sách: <b>根据课文内容回答问题</b>. Mỗi câu hỏi là một dòng của bảng, cột gợi ý giữ nguyên như sách. Bấm loa nghe câu hỏi, <b>tự ghi âm câu trả lời trước</b> rồi mới mở câu mẫu. Cố dùng đúng các từ trong gợi ý.',
-  questions:[
-    {q_zh:'当中国西南遭遇干旱时，哈尼梯田怎么样？',
-     q_vn:'Khi vùng Tây Nam Trung Quốc gặp hạn hán, ruộng bậc thang Hà Nhì ra sao?',
-     hint:'……壮丽依旧，…… ……的天空，……的白云，……的树影，更衬托出……',
-     sample:'2010年中国西南遭遇百年不遇的干旱，可哈尼梯田却壮丽依旧，一片片、一层层由半山腰延伸至峡谷。蔚蓝的天空，漂浮的白云，摇摆的树影，更衬托出梯田的壮美。',
-     sample_vn:'Năm 2010 vùng Tây Nam Trung Quốc gặp trận hạn hán trăm năm có một, vậy mà ruộng bậc thang Hà Nhì vẫn tráng lệ như xưa, từng thửa từng tầng trải dài từ lưng chừng núi xuống hẻm núi. Trời xanh thẳm, mây trắng bồng bềnh, bóng cây đung đưa càng tôn lên vẻ hùng tráng của ruộng bậc thang.',
-     note:'Mở bằng bối cảnh hạn hán rồi đảo ý bằng 可……却……; câu tả cảnh giữ đúng chuỗi ba định ngữ 蔚蓝的 / 漂浮的 / 摇摆的 + 更衬托出.'},
-    {q_zh:'描述一下坐在车上遥望梯田时看到的风景。',
-     q_vn:'Hãy tả lại phong cảnh nhìn thấy khi ngồi trên xe phóng tầm mắt ngắm ruộng bậc thang.',
-     hint:'山顶……，峡谷间……，半山腰……，村子下……',
-     sample:'我们的车沿着公路盘旋而行，时而在谷底，时而在山腰。遥望山顶，是大片的森林；峡谷间闪闪发光的是小溪、泉水和瀑布；半山腰是村子；村子下是纵横万里、汹涌而来的梯田。',
-     sample_vn:'Xe chúng tôi men theo con đường vòng vèo, lúc ở đáy thung lũng, lúc ở lưng chừng núi. Nhìn xa lên đỉnh núi là rừng rậm bạt ngàn; lấp lánh giữa hẻm núi là suối nhỏ, nước suối nguồn và thác nước; lưng chừng núi là làng bản; dưới làng là ruộng bậc thang trải rộng muôn dặm, cuồn cuộn ùa tới.',
-     note:'Tả theo thứ tự không gian TỪ TRÊN XUỐNG (山顶 → 峡谷间 → 半山腰 → 村子下); mở đầu có thể thêm câu 时而……时而…….'},
-    {q_zh:'为什么“我”每次目睹哈尼梯田都感到震惊？',
-     q_vn:'Vì sao lần nào chứng kiến ruộng bậc thang Hà Nhì "tôi" cũng thấy sững sờ?',
-     hint:'这是……的作品，它比长城……，比宫殿……',
-     sample:'因为这是以大地为背景，用生命和毅力雕刻出的杰出作品。它比万里长城更让“我”震撼，比历史悠久的宫殿更让“我”感动。',
-     sample_vn:'Vì đây là một tác phẩm kiệt xuất lấy mặt đất làm phông nền, được khắc nên bằng sinh mệnh và nghị lực. Nó khiến "tôi" choáng ngợp hơn cả Vạn Lý Trường Thành, xúc động hơn cả những cung điện lâu đời.',
-     note:'Trả lời bằng 因为这是……的作品; hai câu so sánh song song 比……更让我震撼 / 比……更让我感动.'},
-    {q_zh:'这里的人为什么选择了梯田？',
-     q_vn:'Vì sao người ở đây chọn ruộng bậc thang?',
-     hint:'古老的曲子：…… 经过数十代人的锲而不舍…… ……与大自然和谐相处',
-     sample:'一首古老的曲子唱道，祖先们光靠打猎、采集树果过不了日子，于是学会了种植。他们发现种子和水最亲近，从此离不开梯田和水。经过数十代人的锲而不舍，他们把大山雕塑成了梯田。他们没有对抗大山，而是服从自然规律，最终与大自然和谐相处。',
-     sample_vn:'Một khúc hát cổ kể rằng tổ tiên chỉ dựa vào săn bắn, hái lượm quả cây thì không sống nổi, thế là học cách trồng trọt. Họ phát hiện hạt giống gần gũi với nước nhất, từ đó không rời xa được ruộng bậc thang và nước. Qua sự bền bỉ của mấy chục thế hệ, họ đã tạc núi lớn thành ruộng bậc thang. Họ không chống lại núi mà thuận theo quy luật tự nhiên, cuối cùng chung sống hài hoà với thiên nhiên.',
-     note:'Ba ý theo đúng ba dòng gợi ý: lời khúc hát (于是, 从此) → quá trình (经过……终于……) → cách chọn (没有……而是……，最终……).'},
-    {q_zh:'哈尼梯田有什么价值？',
-     q_vn:'Ruộng bậc thang Hà Nhì có những giá trị gì?',
-     hint:'以其……，展示着……',
-     sample:'哈尼梯田以其宝贵的生态、文化和审美价值，展示着它的罕见和珍稀。它是山民们一千三百多年来用汗水、心血和辛勤劳动完成的。',
-     sample_vn:'Ruộng bậc thang Hà Nhì, bằng những giá trị sinh thái, văn hoá và thẩm mỹ quý báu của mình, cho thấy nó hiếm có và quý giá. Nó được người dân miền núi hoàn thành bằng mồ hôi, tâm huyết và lao động cần cù suốt hơn 1.300 năm.',
-     note:'以其 + giá trị, 展示着 + đặc điểm — cấu trúc văn viết (其 = của nó); nêu đủ ba giá trị 生态、文化、审美.'},
-    {q_zh:'哈尼梯田体现了什么样的智慧和精神？',
-     q_vn:'Ruộng bậc thang Hà Nhì thể hiện trí tuệ và tinh thần như thế nào?',
-     hint:'体现：和谐相处、对……的尊重 蕴含：人与自然、人类',
-     sample:'这里的一切无不体现着当地百姓与自然和谐相处的智慧，体现着民众对自身文化和自然环境的尊重。它所蕴含的人与自然高度和谐发展的古老文化特征，正是21世纪人类所追求的精神。它还向我们证明，人类拥有惊人的创造精神。',
-     sample_vn:'Mọi thứ ở đây đều thể hiện trí tuệ chung sống hài hoà với thiên nhiên của người dân địa phương, thể hiện sự tôn trọng của họ với văn hoá của chính mình và môi trường tự nhiên. Đặc trưng văn hoá cổ xưa về sự phát triển hài hoà cao độ giữa người và thiên nhiên mà nó chứa đựng chính là tinh thần mà nhân loại thế kỷ 21 theo đuổi. Nó còn chứng minh con người có tinh thần sáng tạo đáng kinh ngạc.',
-     note:'Dùng điểm ngữ pháp 无不体现着……; ý "蕴含" nói bằng 它所蕴含的……，正是……所追求的…… (所 + động từ làm định ngữ).'}
+  intro: 'Đây là bảng bài tập 5 trong sách: <b>根据课文内容回答问题</b>. Mỗi câu hỏi là một dòng của bảng, cột gợi ý giữ nguyên như sách. Bấm loa nghe câu hỏi, <b>tự ghi âm câu trả lời trước</b> rồi mới mở câu mẫu. Cố dùng đúng các từ trong gợi ý.',
+  questions: [
+    {q_zh:'当中国西南遭遇干旱时，哈尼梯田怎么样？',q_vn:'Khi vùng Tây Nam Trung Quốc gặp hạn hán, ruộng bậc thang Hà Nhì ra sao?',hint:'……壮丽依旧，…… ……的天空，……的白云，……的树影，更衬托出……',sample:'2010年中国西南遭遇百年不遇的干旱，可哈尼梯田却壮丽依旧，一片片、一层层由半山腰延伸至峡谷。蔚蓝的天空，漂浮的白云，摇摆的树影，更衬托出梯田的壮美。',sample_vn:'Năm 2010 vùng Tây Nam Trung Quốc gặp trận hạn hán trăm năm có một, vậy mà ruộng bậc thang Hà Nhì vẫn tráng lệ như xưa, từng thửa từng tầng trải dài từ lưng chừng núi xuống hẻm núi. Trời xanh thẳm, mây trắng bồng bềnh, bóng cây đung đưa càng tôn lên vẻ hùng tráng của ruộng bậc thang.',note:'Mở bằng bối cảnh hạn hán rồi đảo ý bằng 可……却……; câu tả cảnh giữ đúng chuỗi ba định ngữ 蔚蓝的 / 漂浮的 / 摇摆的 + 更衬托出.'},
+    {q_zh:'描述一下坐在车上遥望梯田时看到的风景。',q_vn:'Hãy tả lại phong cảnh nhìn thấy khi ngồi trên xe phóng tầm mắt ngắm ruộng bậc thang.',hint:'山顶……，峡谷间……，半山腰……，村子下……',sample:'我们的车沿着公路盘旋而行，时而在谷底，时而在山腰。遥望山顶，是大片的森林；峡谷间闪闪发光的是小溪、泉水和瀑布；半山腰是村子；村子下是纵横万里、汹涌而来的梯田。',sample_vn:'Xe chúng tôi men theo con đường vòng vèo, lúc ở đáy thung lũng, lúc ở lưng chừng núi. Nhìn xa lên đỉnh núi là rừng rậm bạt ngàn; lấp lánh giữa hẻm núi là suối nhỏ, nước suối nguồn và thác nước; lưng chừng núi là làng bản; dưới làng là ruộng bậc thang trải rộng muôn dặm, cuồn cuộn ùa tới.',note:'Tả theo thứ tự không gian TỪ TRÊN XUỐNG (山顶 → 峡谷间 → 半山腰 → 村子下); mở đầu có thể thêm câu 时而……时而…….'},
+    {q_zh:'为什么“我”每次目睹哈尼梯田都感到震惊？',q_vn:'Vì sao lần nào chứng kiến ruộng bậc thang Hà Nhì "tôi" cũng thấy sững sờ?',hint:'这是……的作品，它比长城……，比宫殿……',sample:'因为这是以大地为背景，用生命和毅力雕刻出的杰出作品。它比万里长城更让“我”震撼，比历史悠久的宫殿更让“我”感动。',sample_vn:'Vì đây là một tác phẩm kiệt xuất lấy mặt đất làm phông nền, được khắc nên bằng sinh mệnh và nghị lực. Nó khiến "tôi" choáng ngợp hơn cả Vạn Lý Trường Thành, xúc động hơn cả những cung điện lâu đời.',note:'Trả lời bằng 因为这是……的作品; hai câu so sánh song song 比……更让我震撼 / 比……更让我感动.'},
+    {q_zh:'这里的人为什么选择了梯田？',q_vn:'Vì sao người ở đây chọn ruộng bậc thang?',hint:'古老的曲子：…… 经过数十代人的锲而不舍…… ……与大自然和谐相处',sample:'一首古老的曲子唱道，祖先们光靠打猎、采集树果过不了日子，于是学会了种植。他们发现种子和水最亲近，从此离不开梯田和水。经过数十代人的锲而不舍，他们把大山雕塑成了梯田。他们没有对抗大山，而是服从自然规律，最终与大自然和谐相处。',sample_vn:'Một khúc hát cổ kể rằng tổ tiên chỉ dựa vào săn bắn, hái lượm quả cây thì không sống nổi, thế là học cách trồng trọt. Họ phát hiện hạt giống gần gũi với nước nhất, từ đó không rời xa được ruộng bậc thang và nước. Qua sự bền bỉ của mấy chục thế hệ, họ đã tạc núi lớn thành ruộng bậc thang. Họ không chống lại núi mà thuận theo quy luật tự nhiên, cuối cùng chung sống hài hoà với thiên nhiên.',note:'Ba ý theo đúng ba dòng gợi ý: lời khúc hát (于是, 从此) → quá trình (经过……终于……) → cách chọn (没有……而是……，最终……).'},
+    {q_zh:'哈尼梯田有什么价值？',q_vn:'Ruộng bậc thang Hà Nhì có những giá trị gì?',hint:'以其……，展示着……',sample:'哈尼梯田以其宝贵的生态、文化和审美价值，展示着它的罕见和珍稀。它是山民们一千三百多年来用汗水、心血和辛勤劳动完成的。',sample_vn:'Ruộng bậc thang Hà Nhì, bằng những giá trị sinh thái, văn hoá và thẩm mỹ quý báu của mình, cho thấy nó hiếm có và quý giá. Nó được người dân miền núi hoàn thành bằng mồ hôi, tâm huyết và lao động cần cù suốt hơn 1.300 năm.',note:'以其 + giá trị, 展示着 + đặc điểm — cấu trúc văn viết (以其 = bằng … của nó); nêu đủ ba giá trị 生态、文化、审美.'},
+    {q_zh:'哈尼梯田体现了什么样的智慧和精神？',q_vn:'Ruộng bậc thang Hà Nhì thể hiện trí tuệ và tinh thần như thế nào?',hint:'体现：和谐相处、对……的尊重 蕴含：人与自然、人类',sample:'这里的一切无不体现着当地百姓与自然和谐相处的智慧，体现着民众对自身文化和自然环境的尊重。它所蕴含的人与自然高度和谐发展的古老文化特征，正是21世纪人类所追求的精神。它还向我们证明，人类拥有惊人的创造精神。',sample_vn:'Mọi thứ ở đây đều thể hiện trí tuệ chung sống hài hoà với thiên nhiên của người dân địa phương, thể hiện sự tôn trọng của họ với văn hoá của chính mình và môi trường tự nhiên. Đặc trưng văn hoá cổ xưa về sự phát triển hài hoà cao độ giữa người và thiên nhiên mà nó chứa đựng chính là tinh thần mà nhân loại thế kỷ 21 theo đuổi. Nó còn chứng minh con người có tinh thần sáng tạo đáng kinh ngạc.',note:'Dùng điểm ngữ pháp 无不体现着……; ý "蕴含" nói bằng 它所蕴含的……，正是……所追求的…… (所 + động từ làm định ngữ).'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — 听力 (sách HSK 6 không có sách bài tập nghe)
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 🎧 NGHE THEO DẠNG ĐỀ HSK 6 — câu tự soạn (sách HSK 6 không có sách bài tập nghe), mỗi câu một tình huống mới
+// ══════════════════════════════════════════
 var listenExamData = {
-  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. ' +
-         'Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
-  source: 'Soạn theo dạng đề HSK 6 · chủ đề bài 15',
+  intro: 'Đề HSK 6 phần nghe chỉ phát <b>một lượt</b>. Bấm nút loa nghe, trả lời ngay, rồi mới mở nguyên văn ra đối chiếu. Đừng mở nguyên văn trước — mở trước là mất tác dụng.',
+  source: 'Tự soạn theo dạng đề HSK 6 · chủ đề bài 15',
   items: [
-    {n:1,
-     lines:[{sp:'女',zh:'听说你们暑假去云南看梯田了？天气怎么样？'},
-            {sp:'男',zh:'别提了，山上的天气时而晴，时而下雨，不过雨后的梯田比照片上还要壮丽。'}],
-     q:'男的觉得梯田怎么样？',qvn:'Người đàn ông thấy ruộng bậc thang thế nào?',
-     opts:['没有照片上漂亮','比照片上更壮丽','下雨后看不清楚','天气太好了'],ans:1,
-     why:'比照片上还要壮丽 → đẹp hơn cả ảnh. 时而晴，时而下雨 là nói thời tiết thất thường, không phải "trời quá đẹp".',
-     words:['梯田','时而','壮丽']},
-
-    {n:2,
-     lines:[{sp:'男',zh:'今年一直不下雨，你老家的庄稼还好吗？'},
-            {sp:'女',zh:'别提多糟了，好多地都枯萎了，村里人想方设法从河里运水来浇地。'}],
-     q:'女的老家现在怎么样？',qvn:'Quê người phụ nữ hiện ra sao?',
-     opts:['庄稼长得很好','遭遇了干旱','发了大水','村民都搬走了'],ans:1,
-     why:'一直不下雨 + 庄稼枯萎 + 运水来浇地 → quê cô ấy đang bị hạn hán.',
-     words:['庄稼','枯萎']},
-
-    {n:3,
-     lines:[{sp:'女',zh:'这个峡谷里的瀑布真漂亮，你以前来过吗？'},
-            {sp:'男',zh:'来过好几次了。尽管已经看过很多次，可每次站在这儿，我都不禁被它震撼。'}],
-     q:'关于男的，下面哪项正确？',qvn:'Về người đàn ông, phương án nào đúng?',
-     opts:['第一次来这里','已经看腻了','每次来都很震撼','不喜欢瀑布'],ans:2,
-     why:'尽管已经看过很多次，可每次……都不禁被它震撼 → lần nào cũng choáng ngợp. 来过好几次了 → không phải lần đầu.',
-     words:['峡谷','瀑布','不禁','震撼']},
-
-    {n:4,
-     lines:[{sp:'男',zh:'你打算大学学什么专业？'},
-            {sp:'女',zh:'我想学生态保护。家人一开始都反对，不过我已经决定了，谁也阻拦不了我。'}],
-     q:'女的是什么态度？',qvn:'Người phụ nữ có thái độ thế nào?',
-     opts:['还在犹豫','听家人的安排','很坚决','想换个专业'],ans:2,
-     why:'我已经决定了，谁也阻拦不了我 → rất kiên quyết. Gia đình phản đối nhưng cô ấy không đổi ý.',
-     words:['生态','阻拦']},
-
-    {n:5,
-     lines:[{sp:'女',zh:'这个自然保护区为什么不让游客随便进去？'},
-            {sp:'男',zh:'因为里面生活着很多珍稀动物，有的在世界上都很罕见，得好好保护。'}],
-     q:'保护区为什么限制游客进入？',qvn:'Vì sao khu bảo tồn hạn chế du khách vào?',
-     opts:['要保护珍稀动物','里面太危险','门票太贵','正在修路'],ans:0,
-     why:'生活着很多珍稀动物……得好好保护 → để bảo vệ động vật quý hiếm.',
-     words:['珍稀','罕见']},
-
-    {n:6,
-     lines:[{sp:'男',zh:'这座木雕真精致，是买的吗？'},
-            {sp:'女',zh:'不是，是我爷爷自己雕刻的，他花了整整两年的心血呢。'}],
-     q:'关于这座木雕，可以知道什么？',qvn:'Về bức tượng gỗ này, có thể biết điều gì?',
-     opts:['是在商店买的','做了两个月','是别人送的','是爷爷做的'],ans:3,
-     why:'是我爷爷自己雕刻的 → ông tự khắc. 花了整整两年 chứ không phải hai tháng.',
-     words:['雕刻','心血']},
-
-    {n:7,
-     lines:[{sp:'女',zh:'哈尼族的祖先当初为什么要在山上开辟梯田呢？在平地种庄稼不是更方便吗？'},
-            {sp:'男',zh:'那里几乎都是山，没有平地。他们没有和大山对抗，而是服从自然规律，一代一代地把大山雕塑成了梯田。'}],
-     q:'哈尼人为什么选择梯田？',qvn:'Vì sao người Hà Nhì chọn ruộng bậc thang?',
-     opts:['梯田的收成更好','政府要求这样做','那里没有平地，只能顺应自然','梯田更好看'],ans:2,
-     why:'几乎都是山，没有平地 + 服从自然规律 → thuận theo tự nhiên. Không nói tới thu hoạch hay chính phủ.',
-     words:['开辟','庄稼','雕塑']},
-
-    {n:8,
-     lines:[{sp:'男',zh:'各位游客，我们现在所在的位置海拔一千八百米。大家往下看，这一层层梯田已经有一千三百多年的历史了，二〇一三年被列入了世界文化遗产名录。它不仅拥有很高的审美价值，还向我们展示了人与自然和谐相处的智慧。请大家拍照时注意安全，不要走进田里。'}],
-     q:'关于这些梯田，下面哪项正确？',qvn:'Về những thửa ruộng bậc thang này, phương án nào đúng?',
-     opts:['有一百多年的历史','游客可以走进田里','是世界文化遗产','海拔一千三百米'],ans:2,
-     why:'二〇一三年被列入了世界文化遗产名录 → là di sản văn hoá thế giới. 1.300 là số năm lịch sử, độ cao là 1.800 m; du khách KHÔNG được vào ruộng.',
-     words:['海拔','梯田','遗产','拥有','审美']}
+    {
+      n: 1,
+      lines: [
+        {sp:'女',zh:'你们昨天去山里玩儿得怎么样？'},
+        {sp:'男',zh:'别提了，山里时而出太阳，时而下大雨，我们一会儿打开伞，一会儿收起伞，累得要命。'}
+      ],
+      q: '山里的天气怎么样？',
+      qvn: 'Thời tiết trên núi thế nào?',
+      opts: ['一直下雨','变化很快','一直很晴','特别冷'],
+      ans: 1,
+      why: '时而出太阳，时而下大雨 = lúc nắng lúc mưa → thời tiết thay đổi liên tục. Ôn 要命 (bài 9).',
+      words: ['时而']
+    },
+    {
+      n: 2,
+      lines: [
+        {sp:'男',zh:'你眼睛怎么红了？'},
+        {sp:'女',zh:'刚才看到新闻里那位老人每天走两个小时山路去给孩子们上课，我不禁被感动了。'}
+      ],
+      q: '女的为什么眼睛红了？',
+      qvn: 'Vì sao mắt người phụ nữ đỏ hoe?',
+      opts: ['被新闻感动了','生病了','被老人批评了','走了很多路'],
+      ans: 0,
+      why: '不禁被感动了 = không kìm được mà xúc động. Người đi bộ hai tiếng là ông cụ trong bản tin, không phải cô ấy.',
+      words: ['不禁']
+    },
+    {
+      n: 3,
+      lines: [
+        {sp:'女',zh:'新来的王老师怎么样？'},
+        {sp:'男',zh:'她讲课又生动又有趣，学生们无不喜欢她的课。'}
+      ],
+      q: '学生们觉得王老师的课怎么样？',
+      qvn: 'Học sinh thấy giờ học của cô Vương thế nào?',
+      opts: ['太难了','有的喜欢有的不喜欢','都很喜欢','没意思'],
+      ans: 2,
+      why: '无不喜欢 = không ai không thích → tất cả đều thích. Phương án 2 là bẫy cho người hiểu nhầm 无不 thành phủ định.',
+      words: ['无不']
+    },
+    {
+      n: 4,
+      lines: [
+        {sp:'男',zh:'今年一直不下雨，你老家那边怎么样了？'},
+        {sp:'女',zh:'很多耕地都干得种不了庄稼了，连牲畜喝的水都不够。'}
+      ],
+      q: '女的老家遇到了什么问题？',
+      qvn: 'Quê người phụ nữ gặp phải vấn đề gì?',
+      opts: ['发大水','干旱','地震','风暴'],
+      ans: 1,
+      why: '一直不下雨, 耕地干得种不了庄稼, 牲畜喝的水都不够 → hạn hán (干旱).',
+      words: ['耕地','庄稼','牲畜']
+    },
+    {
+      n: 5,
+      lines: [
+        {sp:'女',zh:'你爸妈同意你一个人骑车去旅行吗？'},
+        {sp:'男',zh:'他们本来想阻拦我，后来看我每天坚持锻炼，身体越来越好，就放心了。'}
+      ],
+      q: '男的的父母现在是什么态度？',
+      qvn: 'Bố mẹ người đàn ông bây giờ có thái độ thế nào?',
+      opts: ['还在反对','很生气','要跟他一起去','已经放心了'],
+      ans: 3,
+      why: '本来想阻拦我 là chuyện lúc đầu; 后来……就放心了 → giờ đã yên tâm.',
+      words: ['阻拦']
+    },
+    {
+      n: 6,
+      lines: [
+        {sp:'女',zh:'听说那片梯田成了世界文化遗产？'},
+        {sp:'男',zh:'对，现在去的游客比以前多了好几倍，周末连停车的地方都找不到。'}
+      ],
+      q: '那片梯田成为遗产以后有什么变化？',
+      qvn: 'Sau khi trở thành di sản, khu ruộng bậc thang ấy thay đổi gì?',
+      opts: ['游客多了很多','游客少了','不能去了','门票便宜了'],
+      ans: 0,
+      why: '游客比以前多了好几倍 → khách đông hơn nhiều, đến chỗ đỗ xe cũng không có.',
+      words: ['梯田','遗产']
+    },
+    {
+      n: 7,
+      lines: [
+        {sp:'男',zh:'你在听什么呢，这么陶醉？'},
+        {sp:'女',zh:'一首越南的老曲子，是我奶奶年轻时最爱唱的。'}
+      ],
+      q: '女的在听什么？',
+      qvn: 'Người phụ nữ đang nghe gì?',
+      opts: ['一首新歌','一首外国流行歌','奶奶在唱歌','一首越南老曲子'],
+      ans: 3,
+      why: '一首越南的老曲子 — bài hát bà cô thích hát hồi trẻ, chứ không phải đang nghe bà hát (bẫy ở phương án 3).',
+      words: ['陶醉','曲子']
+    }
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
-// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
+// 💬 TÌNH HUỐNG — HOÀN THÀNH HỘI THOẠI (Cấp 2 · 半交际性练习)
+// ══════════════════════════════════════════
 var situationData = {
-  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. ' +
-         'Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
+  intro: 'Mỗi tình huống cho sẵn lời của người kia. Em viết lời đáp của mình, <b>bắt buộc dùng đúng từ/cấu trúc ghi ở ô yêu cầu</b>. Viết xong mới mở câu mẫu — câu mẫu chỉ là MỘT cách nói, em nói khác mà đúng yêu cầu vẫn được.',
   items: [
-    {scene:'Bạn hỏi chuyến đi Mù Cang Chải của em ra sao.',
-     a:{sp:'Bạn',zh:'你去木江界看梯田了？那边的风景怎么样？',vn:'Cậu đi Mù Cang Chải xem ruộng bậc thang rồi à? Phong cảnh bên đó thế nào?'},
-     need:['Dùng 时而……，时而……','Dùng 壮丽 hoặc 陶醉'],
-     sample:'太美了！我们的车在山里盘旋而行，时而开到谷底，时而爬上山腰，一层层金黄的梯田真是壮丽极了，让人陶醉。',
-     samplePy:'Tài měi le! Wǒmen de chē zài shān li pánxuán ér xíng, shí\'ér kāidào gǔdǐ, shí\'ér páshàng shānyāo, yì céngcéng jīnhuáng de tītián zhēn shì zhuànglì jí le, ràng rén táozuì.',
-     sampleVn:'Đẹp lắm! Xe bọn tớ chạy vòng vèo trong núi, lúc xuống đáy thung lũng, lúc leo lên lưng chừng núi, từng tầng ruộng bậc thang vàng óng thật là tráng lệ, khiến người ta ngây ngất.',
-     tip:'Bắt chước câu bài khoá 我们的车……时而……时而……; kết bằng 让人陶醉.'},
-
-    {scene:'Bạn cùng lớp kể đã xem một phim tài liệu về hạn hán.',
-     a:{sp:'Bạn',zh:'昨天看了一部关于干旱的纪录片，庄稼都枯萎了，牲畜也没水喝。',vn:'Hôm qua tớ xem một phim tài liệu về hạn hán, hoa màu khô héo hết, gia súc cũng không có nước uống.'},
-     need:['Dùng 不禁','Dùng 珍惜 hoặc 生态'],
-     sample:'听你这么说，我不禁想到我们平时浪费了多少水。以后真得珍惜每一滴水，保护好生态环境。',
-     samplePy:'Tīng nǐ zhème shuō, wǒ bùjīn xiǎngdào wǒmen píngshí làngfèile duōshao shuǐ. Yǐhòu zhēn děi zhēnxī měi yì dī shuǐ, bǎohù hǎo shēngtài huánjìng.',
-     sampleVn:'Nghe cậu nói vậy, tớ không khỏi nghĩ tới việc bình thường chúng ta lãng phí biết bao nhiêu nước. Sau này thật phải trân trọng từng giọt nước, bảo vệ tốt môi trường sinh thái.',
-     tip:'不禁 + động từ (想到) chỉ phản ứng tự nhiên khi nghe chuyện; 得 (děi) = phải.'},
-
-    {scene:'Em trai định bỏ tập đàn vì thấy khó.',
-     a:{sp:'Em trai',zh:'这首曲子太难了，我练了一个月还弹不好，不想学了。',vn:'Bản nhạc này khó quá, em tập một tháng rồi vẫn đàn không hay, không muốn học nữa.'},
-     need:['Dùng 锲而不舍 hoặc 毅力','Dùng 只要……就……'],
-     sample:'学乐器最需要的就是锲而不舍的毅力。只要你每天坚持练一个小时，就一定能弹好。',
-     samplePy:'Xué yuèqì zuì xūyào de jiù shì qiè\'érbùshě de yìlì. Zhǐyào nǐ měi tiān jiānchí liàn yí ge xiǎoshí, jiù yídìng néng tánhǎo.',
-     sampleVn:'Học nhạc cụ cần nhất chính là nghị lực kiên trì bền bỉ. Chỉ cần mỗi ngày em kiên trì tập một tiếng, nhất định sẽ đàn hay.',
-     tip:'锲而不舍 làm định ngữ cho 毅力; 只要……就…… nêu điều kiện đủ để động viên.'},
-
-    {scene:'Bạn người Trung Quốc hỏi Việt Nam có cảnh đẹp nào nên đi.',
-     a:{sp:'Bạn Trung Quốc',zh:'我下个月去越南旅游，你觉得哪儿最值得去？',vn:'Tháng sau mình đi du lịch Việt Nam, cậu thấy đâu đáng đi nhất?'},
-     need:['Dùng 遗产','Dùng 无不'],
-     sample:'一定要去下龙湾！它是世界自然遗产，海上有将近两千座石岛，去过的朋友无不说那里美得像画一样。',
-     samplePy:'Yídìng yào qù Xiàlóng Wān! Tā shì shìjiè zìrán yíchǎn, hǎi shang yǒu jiāngjìn liǎngqiān zuò shídǎo, qùguo de péngyou wúbù shuō nàlǐ měi de xiàng huà yíyàng.',
-     sampleVn:'Nhất định phải đi vịnh Hạ Long! Đó là di sản thiên nhiên thế giới, trên biển có gần hai nghìn hòn đảo đá, bạn bè ai đã đi cũng đều nói ở đó đẹp như tranh.',
-     tip:'无不 cần chủ ngữ số nhiều (去过的朋友); 美得像画一样 — bổ ngữ trình độ + so sánh.'},
-
-    {scene:'Mẹ hỏi vì sao em quyết định tham gia câu lạc bộ bảo vệ môi trường.',
-     a:{sp:'Mẹ',zh:'你学习这么忙，怎么还要参加环保社团？',vn:'Con học bận thế, sao còn tham gia câu lạc bộ bảo vệ môi trường?'},
-     need:['Dùng 目睹','Dùng 之所以……是因为……'],
-     sample:'我之所以参加环保社团，是因为上次去海边，我亲眼目睹了满地的塑料垃圾，心里特别难受。',
-     samplePy:'Wǒ zhī suǒyǐ cānjiā huánbǎo shètuán, shì yīnwèi shàng cì qù hǎibiān, wǒ qīnyǎn mùdǔle mǎn dì de sùliào lājī, xīnli tèbié nánshòu.',
-     sampleVn:'Con sở dĩ tham gia câu lạc bộ môi trường là vì lần trước ra biển, con tận mắt chứng kiến rác nhựa đầy bãi, trong lòng rất khó chịu.',
-     tip:'之所以 đứng sau chủ ngữ, vế sau 是因为; 亲眼目睹 nhấn mạnh "tận mắt".'}
+    {scene:'Bạn hỏi chuyến đi xem ruộng bậc thang trên vùng núi của em ra sao.',a:{sp:'Bạn',zh:'你去山区看梯田了？那边的风景怎么样？',vn:'Cậu lên vùng núi xem ruộng bậc thang rồi à? Phong cảnh bên đó thế nào?'},need:['Dùng 时而……，时而……','Dùng 壮丽 hoặc 陶醉'],sample:'那边的风景好得没话说！一路上时而看到挂在山上的瀑布，时而经过山间的小村子。一层层梯田一直铺到山脚下，风一吹，稻谷轻轻地摇摆着，那种壮丽的景色让人舍不得走。',samplePy:'Nàbian de fēngjǐng hǎo de méi huà shuō! Yí lù shang shí\'ér kàndào guà zài shān shang de pùbù, shí\'ér jīngguò shān jiān de xiǎo cūnzi. Yì céngcéng tītián yìzhí pūdào shānjiǎo xià, fēng yì chuī, dàogǔ qīngqīng de yáobǎizhe, nà zhǒng zhuànglì de jǐngsè ràng rén shěbude zǒu.',sampleVn:'Phong cảnh bên đó đẹp khỏi chê! Dọc đường lúc thì thấy thác nước treo trên núi, lúc thì đi qua những bản nhỏ giữa núi. Từng tầng ruộng bậc thang trải dài tới tận chân núi, gió thổi qua là lúa khẽ đung đưa, cảnh tráng lệ ấy khiến người ta chẳng nỡ rời đi.',tip:'时而……，时而…… kể hai cảnh xen kẽ trên đường; 好得没话说 = tốt / đẹp khỏi chê (khẩu ngữ); 铺到 = trải dài tới; 一层层 (bài 14) + 梯田.'},
+    {scene:'Bạn cùng lớp kể đã xem một phim tài liệu về hạn hán.',a:{sp:'Bạn',zh:'昨天看了一部关于干旱的纪录片，庄稼都枯萎了，牲畜也没水喝。',vn:'Hôm qua tớ xem một phim tài liệu về hạn hán, hoa màu khô héo hết, gia súc cũng không có nước uống.'},need:['Dùng 不禁','Dùng 珍惜 hoặc 生态'],sample:'听你这么说，我不禁想到我们平时浪费了多少水。以后真得节约用水，保护好生态环境。',samplePy:'Tīng nǐ zhème shuō, wǒ bùjīn xiǎngdào wǒmen píngshí làngfèile duōshao shuǐ. Yǐhòu zhēn děi jiéyuē yòng shuǐ, bǎohù hǎo shēngtài huánjìng.',sampleVn:'Nghe cậu kể vậy, tớ bất giác nghĩ đến chuyện bình thường chúng ta lãng phí bao nhiêu nước. Từ nay thật sự phải tiết kiệm nước, bảo vệ tốt môi trường sinh thái.',tip:'不禁 + động từ (想到) chỉ phản ứng tự nhiên khi nghe chuyện; 得 (děi) = phải.'},
+    {scene:'Em trai định bỏ học vẽ vì thấy khó.',a:{sp:'Em trai',zh:'这幅画太难画了，我画了一个月还画不好，不想学了。',vn:'Bức tranh này khó vẽ quá, em vẽ một tháng rồi vẫn chưa đẹp, không muốn học nữa.'},need:['Dùng 锲而不舍 hoặc 毅力','Dùng 只要……就……'],sample:'学画画儿最需要的就是锲而不舍的毅力。只要你每天坚持画一个小时，就一定能画好。',samplePy:'Xué huà huàr zuì xūyào de jiù shì qiè\'érbùshě de yìlì. Zhǐyào nǐ měi tiān jiānchí huà yí ge xiǎoshí, jiù yídìng néng huàhǎo.',sampleVn:'Học vẽ cần nhất là nghị lực bền bỉ. Chỉ cần mỗi ngày em kiên trì vẽ một tiếng, nhất định sẽ vẽ đẹp.',tip:'锲而不舍 làm định ngữ cho 毅力; 只要……就…… nêu điều kiện đủ để động viên.'},
+    {scene:'Bạn người Trung Quốc hỏi Việt Nam có cảnh đẹp nào nên đi.',a:{sp:'Bạn Trung Quốc',zh:'我下个月去越南旅游，你觉得哪儿最值得去？',vn:'Tháng sau mình đi du lịch Việt Nam, cậu thấy đâu đáng đi nhất?'},need:['Dùng 无不','Dùng 壮丽 hoặc 陶醉'],sample:'一定要去越南北方的山区看看梯田！一层层的梯田像一条条绿色的带子，壮丽极了，去过的朋友无不说那里美得像画一样。',samplePy:'Yídìng yào qù Yuènán běifāng de shānqū kànkan tītián! Yì céngcéng de tītián xiàng yì tiáotiáo lǜsè de dàizi, zhuànglì jí le, qùguo de péngyou wúbù shuō nàlǐ měi de xiàng huà yíyàng.',sampleVn:'Nhất định phải lên vùng núi phía Bắc Việt Nam xem ruộng bậc thang! Từng tầng ruộng như những dải lụa xanh, tráng lệ vô cùng, bạn bè ai đã đến cũng đều nói ở đó đẹp như tranh.',tip:'无不 + V: chủ ngữ số nhiều (去过的朋友); 壮丽极了 = tráng lệ vô cùng.'}
   ]
 };
 
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 // 🎯 NÓI SAO CHO HAY — 得体 / 语体
-// ══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════
 var registerData = {
-  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. ' +
-         'HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
+  intro: 'Ở đây <b>cả hai câu đều đúng ngữ pháp</b> — không có câu sai. Việc của em là chọn câu <b>PHÙ HỢP HƠN</b> với hoàn cảnh. HSK 6 đòi hỏi phân biệt rõ khẩu ngữ và văn viết, lời thân mật và lời trang trọng.',
   items: [
-    {scene:'Em viết bài giới thiệu ruộng bậc thang cho tập san du lịch của trường.',
-     a:'哈尼梯田以其宝贵的生态、文化和审美价值，展示着它的罕见和珍稀。',b:'哈尼梯田特别好看，特别少见，特别值钱。',better:'a',
-     why:'Bài giới thiệu cần văn viết: 以其……展示着……, 罕见, 珍稀. Câu b (特别好看, 值钱) là khẩu ngữ, lặp từ, nghe như lời nói chuyện.'},
-
-    {scene:'Em nhắn tin cho bạn thân ngay khi vừa leo tới đỉnh núi.',
-     a:'哇，我到山顶了！太美了，你一定得来看看！',b:'本人已抵达山顶，眼前景色壮丽，建议您择日前来观赏。',better:'a',
-     why:'Nhắn bạn thân dùng khẩu ngữ, cảm thán (哇, 太美了). Câu b (本人, 抵达, 择日前来) giống thông báo hành chính.'},
-
-    {scene:'Hướng dẫn viên giới thiệu với đoàn khách tại điểm tham quan.',
-     a:'各位游客，这里海拔一千八百米，眼前的梯田已有一千三百多年的历史。',b:'喂，你们看，这儿挺高的，这些田老早就有了。',better:'a',
-     why:'Hướng dẫn viên nói với khách cần lịch sự, chính xác: 各位游客, số liệu cụ thể. Câu b (喂, 挺高的, 老早) quá suồng sã.'},
-
-    {scene:'Em kể với bà về chuyến đi xem thác nước.',
-     a:'奶奶，那个瀑布可大了，水声轰隆隆的，我都看呆了！',b:'该瀑布规模宏大，水声震耳，令人叹为观止。',better:'a',
-     why:'Kể chuyện với bà dùng khẩu ngữ sinh động (可大了, 轰隆隆, 看呆了). Câu b (该瀑布, 叹为观止) hợp với sách hướng dẫn du lịch.'},
-
-    {scene:'Bản tin thời tiết trên truyền hình.',
-     a:'受持续干旱影响，西南部分地区农作物大面积绝收。',b:'西南那边好久没下雨，地里的东西差不多都死了。',better:'a',
-     why:'Bản tin dùng từ ngữ chính thức: 受……影响, 持续干旱, 农作物, 大面积绝收. Câu b là cách kể đời thường.'},
-
-    {scene:'Em an ủi bạn đang nản vì thi trượt đội tuyển.',
-     a:'别灰心，你这么有毅力，下次肯定行！',b:'望你以锲而不舍之精神，再接再厉，争取佳绩。',better:'a',
-     why:'An ủi bạn cần gần gũi, ấm áp (别灰心, 肯定行). Câu b (望你以……之精神, 争取佳绩) giống lời chúc trên giấy khen.'}
+    {scene:'Em viết bài giới thiệu ruộng bậc thang cho tập san du lịch của trường.',a:'这里的梯田特别好看，特别少见，你们一定要来看看。',b:'这里的梯田层层叠叠，是当地人用一千多年的辛勤劳动雕刻出来的作品。',better:'b',why:'Bài giới thiệu cần văn viết, có hình ảnh: 层层叠叠, 辛勤劳动, 雕刻出来的作品. Câu a lặp 特别, giống lời nói chuyện.'},
+    {scene:'Em nhắn tin cho bạn thân ngay khi vừa leo tới đỉnh núi.',a:'我到山顶了！美极了，你一定得来看看！',b:'本人已到达山顶，这里的景色十分壮丽，建议您改日前来参观。',better:'a',why:'Nhắn bạn thân dùng khẩu ngữ, cảm thán (美极了, 一定得来看看). Câu b (本人, 到达, 改日前来) giống thông báo hành chính.'},
+    {scene:'Hướng dẫn viên giới thiệu với đoàn khách tại điểm tham quan.',a:'喂，你们看，这儿挺高的，这些梯田老早就有了。',b:'各位游客，这里海拔一千八百米，眼前的梯田已有一千三百多年的历史。',better:'b',why:'Hướng dẫn viên nói với khách cần lịch sự, chính xác: 各位游客, số liệu cụ thể. Câu a (喂, 挺高的, 老早) quá suồng sã.'},
+    {scene:'Em kể với bà về chuyến đi xem thác nước.',a:'奶奶，那个瀑布可大了，水声响得要命，我都看呆了！',b:'这个瀑布高八十多米，景色十分壮丽，令人震撼。',better:'a',why:'Kể chuyện với bà dùng khẩu ngữ sinh động (可大了, 响得要命 — bài 9, 看呆了). Câu b hợp với sách hướng dẫn du lịch.'},
+    {scene:'Bản tin thời tiết trên truyền hình.',a:'我们省东边好久没下雨了，地里差不多都干了。',b:'受持续干旱影响，本省东部有一半以上的耕地长时间没有得到雨水。',better:'b',why:'Bản tin dùng từ ngữ chính thức: 受……影响, 持续干旱, 本省, 耕地, số liệu. Câu a là cách kể đời thường.'},
+    {scene:'Em an ủi bạn đang nản vì thi trượt đội tuyển.',a:'别灰心，你这么有毅力，下次肯定行！',b:'望你以锲而不舍的精神，继续努力，争取更好的成绩。',better:'a',why:'An ủi bạn cần gần gũi, ấm áp (别灰心, 肯定行). Câu b (望你以……的精神, 争取……) giống lời chúc trên giấy khen.'}
   ]
 };
 

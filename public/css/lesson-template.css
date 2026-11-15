@@ -591,13 +591,18 @@ body{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/20
 .h-ico{width:14px;height:14px;flex-shrink:0;}
 .h-chip-py{font:inherit;font-size:0.8rem;cursor:pointer;}
 .h-chip-py:hover{background:rgba(255,255,255,0.24);}
-.h-chip-py:focus-visible{outline:2px solid #fff;outline-offset:2px;}
+.h-chip-py:focus-within{outline:2px solid #fff;outline-offset:2px;}
+.h-chip-py select{font:inherit;font-weight:700;color:#fff;background:transparent;border:0;padding:0 2px;cursor:pointer;max-width:58vw;}
+.h-chip-py select:focus{outline:none;}
+.h-chip-py option{color:#1f1a17;background:#fff;}
 
-/* Pinyin giam dan: pinyin cua cau mo di, cham de xem */
-body.py-mo :is(.dlg-py,.vc-ex-py,.model-py,.drill-py,.qa-py,.ts-py,.h4-ex-py,.h4-tb-py):not(.py-lo){filter:blur(4px);opacity:0.6;cursor:pointer;user-select:none;transition:filter .2s ease,opacity .2s ease;}
-body.py-mo :is(.dlg-py,.vc-ex-py,.model-py,.drill-py,.qa-py,.ts-py,.h4-ex-py,.h4-tb-py):not(.py-lo):hover{opacity:0.85;}
+/* Phien am an (PinyinCheDo: HSK2+ hoac hoc sinh chon "An, cham de hien"): chu mo, co 👁 ro net;
+   cham (hoac di chuot tren may tinh) de hien. Dung text-fill thay cho filter de 👁 khong bi nhoe. */
+body.py-mo :is(.dlg-py,.vc-ex-py,.model-py,.drill-py,.qa-py,.ts-py,.h4-ex-py,.h4-tb-py,.f-front .f-py):not(.py-lo){-webkit-text-fill-color:transparent;text-shadow:0 0 7px currentColor;cursor:pointer;user-select:none;transition:text-shadow .2s ease;}
+body.py-mo :is(.dlg-py,.vc-ex-py,.model-py,.drill-py,.qa-py,.ts-py,.h4-ex-py,.h4-tb-py,.f-front .f-py):not(.py-lo)::before{content:"👁";-webkit-text-fill-color:var(--mid);text-shadow:none;margin-right:6px;font-size:.9em;}
+@media (hover:hover){body.py-mo :is(.dlg-py,.vc-ex-py,.model-py,.drill-py,.qa-py,.ts-py,.h4-ex-py,.h4-tb-py,.f-front .f-py):not(.py-lo):hover{-webkit-text-fill-color:currentColor;text-shadow:none;}}
 .py-goi-y{margin:8px 0 0;font-size:0.84rem;color:var(--mid);line-height:1.45;}
-@media (prefers-reduced-motion:reduce){body.py-mo :is(.dlg-py,.vc-ex-py,.model-py,.drill-py,.qa-py,.ts-py,.h4-ex-py,.h4-tb-py){transition:none;}}
+@media (prefers-reduced-motion:reduce){body.py-mo :is(.dlg-py,.vc-ex-py,.model-py,.drill-py,.qa-py,.ts-py,.h4-ex-py,.h4-tb-py,.f-front .f-py){transition:none;}}
 .py-hien-het{margin-left:4px;padding:0;border:0;background:none;font:inherit;font-weight:700;color:var(--sky-d);text-decoration:underline;text-underline-offset:2px;cursor:pointer;}
 /* Dien thoai: "← Trang chu" va nhan cap/bai chung mot hang (bot ~40px dau trang) */
 @media (max-width:640px){
@@ -612,3 +617,107 @@ body.py-mo :is(.dlg-py,.vc-ex-py,.model-py,.drill-py,.qa-py,.ts-py,.h4-ex-py,.h4
 .dlg-sp.co-anh { width: 54px; height: auto; flex-direction: column; gap: 2px; background: none; border-radius: 0; font-family: inherit; font-size: 0.7rem; color: var(--mid); }
 .dlg-sp.co-anh img { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; box-shadow: 0 0 0 2px var(--sky); }
 .dlg-scene-anh { display: block; width: 100%; max-width: 560px; max-height: 300px; object-fit: cover; margin: 6px auto 12px; border-radius: 14px; }
+
+/* ============================================================
+   LO TRINH BAI HOC (lesson-engine.js · ltLoTrinh): cac buoc giong lo trinh trong app,
+   thay hang 13 the. Buoc chua toi chi mo di, van bam duoc.
+   ============================================================ */
+body.co-lo-trinh .tab-nav,body.co-lo-trinh .h5-road{display:none;}
+.lt-lo{position:sticky;top:0;z-index:100;background:var(--card,#fff);border-bottom:1px solid var(--border);box-shadow:0 2px 12px rgba(31,26,23,0.06);}
+.lt-lo-in{max-width:1200px;margin:0 auto;padding:8px 20px 6px;}
+.lt-lo-o{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:4px;font-size:0.8rem;color:var(--mid);}
+.lt-lo-dang b{color:var(--sky-d);font-weight:800;}
+.lt-lo-xong{color:var(--soft);font-weight:600;white-space:nowrap;}
+.lt-lo-cuon{overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin:0 -6px;padding:2px 6px 4px;}
+.lt-lo-cuon::-webkit-scrollbar{display:none;}
+.lt-lo-ds{--lt-px:0px;list-style:none;display:flex;gap:4px;position:relative;min-width:max-content;}
+.lt-lo-ds::before,.lt-lo-ds::after{content:"";position:absolute;left:22px;top:50%;height:3px;margin-top:-1.5px;border-radius:3px;pointer-events:none;}
+.lt-lo-ds::before{right:22px;background:var(--border);}
+.lt-lo-ds::after{width:var(--lt-px);background:var(--green);transition:width .6s cubic-bezier(.2,.8,.2,1);}
+.lt-lo-ds>li{flex:1 0 auto;display:flex;justify-content:center;position:relative;z-index:1;}
+.lt-lo-ds>li:first-child{justify-content:flex-start;}
+.lt-lo-ds>li:last-child{justify-content:flex-end;}
+.lt-b{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:5px 12px 5px 6px;border:0;border-radius:999px;background:var(--card,#fff);color:var(--ink2);font-family:inherit;font-size:0.84rem;font-weight:600;cursor:pointer;white-space:nowrap;transition:background .2s ease,color .2s ease,opacity .2s ease,transform .15s ease;}
+.lt-b:hover{background:var(--gold-l);}
+.lt-b:active{transform:scale(.97);}
+.lt-b:focus-visible{outline:3px solid var(--sky);outline-offset:2px;}
+.lt-b-so{display:inline-grid;place-items:center;width:30px;height:30px;flex-shrink:0;border-radius:50%;border:2px solid var(--border);background:var(--card,#fff);color:var(--mid);font-weight:800;font-size:0.82rem;transition:background .25s ease,border-color .25s ease,color .25s ease,box-shadow .25s ease;}
+.lt-b.is-xong .lt-b-so{background:var(--green);border-color:var(--green);color:#fff;}
+.lt-b.is-goi-y .lt-b-so{border-color:var(--sky);color:var(--sky-d);}
+.lt-b.is-sau{opacity:.6;}
+.lt-b.is-sau .lt-b-so{border-style:dashed;}
+.lt-b.is-sau:hover,.lt-b.is-sau:focus-visible{opacity:1;}
+.lt-b.is-dang{background:var(--sky-l);color:var(--sky-d);font-weight:700;}
+.lt-b.is-dang .lt-b-so{background:var(--nen-sky,var(--sky));border-color:var(--nen-sky,var(--sky));color:#fff;box-shadow:0 0 0 4px rgba(200,55,45,0.18);animation:lt-nhip 2.4s ease-in-out infinite;}
+.lt-b.is-dang.is-xong .lt-b-so{background:var(--green);border-color:var(--green);}
+@keyframes lt-nhip{0%,100%{box-shadow:0 0 0 4px rgba(200,55,45,0.18);}50%{box-shadow:0 0 0 7px rgba(200,55,45,0.06);}}
+.lt-ngan{display:none;}
+
+/* Dau buoc (khong dinh): ten buoc, viec can lam, cac phan con */
+.lt-dau{margin:0 0 20px;}
+.lt-dau-t{display:flex;align-items:center;gap:12px;padding:12px 16px;border:1px solid var(--border);border-radius:14px;background:linear-gradient(135deg,var(--gold-l),var(--card,#fff) 70%);}
+.lt-dau-so{display:inline-grid;place-items:center;width:38px;height:38px;flex-shrink:0;border-radius:50%;background:var(--nen-sky,var(--sky));color:#fff;font-weight:800;}
+.lt-dau-chu{display:flex;flex-direction:column;gap:2px;min-width:0;}
+.lt-dau-chu b{font-size:1rem;color:var(--ink);}
+.lt-dau-chu span{font-size:0.84rem;color:var(--mid);line-height:1.4;}
+.lt-dau-tt{margin-left:auto;flex-shrink:0;padding:4px 10px;border-radius:999px;font-size:0.78rem;font-weight:700;}
+.lt-dau-tt.is-ok{background:var(--green-l);color:var(--green);}
+.lt-con{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+.lt-c{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:6px 14px;border:2px solid var(--border);border-radius:999px;background:var(--card,#fff);color:var(--mid);font-family:inherit;font-size:0.84rem;font-weight:600;cursor:pointer;white-space:nowrap;transition:border-color .2s ease,background .2s ease,color .2s ease;}
+.lt-c:hover{border-color:var(--sky);color:var(--sky-d);}
+.lt-c:focus-visible{outline:3px solid var(--sky);outline-offset:2px;}
+.lt-c-so{font-size:0.72rem;font-weight:700;color:var(--soft);}
+.lt-c-td{font-size:0.76rem;font-weight:700;color:var(--soft);}
+.lt-c.is-ok .lt-c-td{color:var(--green);}
+.lt-c.is-dang{border-color:var(--sky);background:var(--sky-l);color:var(--sky-d);}
+.lt-c.is-dang .lt-c-so{color:var(--sky-d);}
+
+/* "Tiep theo" dinh o day man hinh, nam cuoi noi dung buoc */
+.lt-tiep{position:sticky;bottom:12px;z-index:90;display:flex;align-items:center;justify-content:space-between;gap:10px;max-width:640px;margin:28px auto 0;padding:8px;border:1px solid var(--border);border-radius:16px;background:var(--card,#fff);box-shadow:0 10px 28px rgba(31,26,23,0.14);}
+.lt-truoc,.lt-sau{min-height:46px;border-radius:12px;font-family:inherit;font-size:0.9rem;font-weight:700;cursor:pointer;transition:transform .15s ease,box-shadow .2s ease,background .2s ease;}
+.lt-truoc{padding:10px 14px;border:2px solid var(--border);background:var(--card,#fff);color:var(--mid);}
+.lt-truoc:hover{border-color:var(--sky);color:var(--sky-d);}
+.lt-sau{flex:1;max-width:420px;margin-left:auto;padding:10px 18px;border:0;background:var(--nen-sky,var(--sky));color:#fff;box-shadow:0 4px 14px rgba(200,55,45,0.28);}
+.lt-sau:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(200,55,45,0.32);}
+.lt-sau:active,.lt-truoc:active{transform:scale(.98);}
+.lt-truoc:focus-visible,.lt-sau:focus-visible{outline:3px solid var(--sky);outline-offset:2px;}
+
+/* The bai kiem tra cuoi bai / luyen viet trong app */
+.lt-kt{display:flex;align-items:center;gap:14px;margin:0 0 10px;padding:16px 18px;border:2px solid var(--sky-l);border-radius:16px;background:linear-gradient(135deg,var(--gold-l),var(--card,#fff) 75%);}
+.lt-kt-ico{font-size:2rem;line-height:1;}
+.lt-kt-txt{display:flex;flex-direction:column;gap:3px;min-width:0;flex:1;}
+.lt-kt-txt b{font-size:1.05rem;color:var(--ink);}
+.lt-kt-txt span{font-size:0.86rem;color:var(--mid);line-height:1.45;}
+.lt-kt-txt .lt-kt-tt{font-weight:700;color:var(--warm);}
+.lt-kt-txt .lt-kt-tt:empty{display:none;}
+.lt-kt-txt .lt-kt-tt.is-ok{color:var(--green);}
+.lt-kt-nut{flex-shrink:0;padding:12px 18px;border-radius:12px;background:var(--nen-sky,var(--sky));color:#fff;font-weight:700;text-decoration:none;white-space:nowrap;box-shadow:0 4px 14px rgba(200,55,45,0.25);transition:transform .15s ease;}
+.lt-kt-nut:hover{transform:translateY(-1px);}
+.lt-kt-nut:focus-visible,.lt-kt-lt:focus-visible{outline:3px solid var(--sky);outline-offset:2px;}
+.lt-kt-lt{display:inline-block;margin:0 0 20px;font-size:0.86rem;font-weight:600;color:var(--sky-d);}
+
+@media (max-width:899px){
+  .lt-lo-ds>li{flex:none;}
+}
+@media (max-width:640px){
+  .lt-lo-in{padding:6px 12px 4px;}
+  .lt-lo-o{font-size:0.76rem;margin-bottom:2px;}
+  .lt-b{font-size:0.8rem;gap:6px;padding:5px 10px 5px 5px;}
+  .lt-dai{display:none;}
+  .lt-ngan{display:inline;}
+  .lt-dau-t{padding:10px 12px;gap:10px;}
+  .lt-dau-so{width:32px;height:32px;}
+  .lt-con{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:10px -16px 0;padding:2px 16px 4px;}
+  .lt-con::-webkit-scrollbar{display:none;}
+  .lt-tiep{margin-right:72px;bottom:14px;}
+  .lt-truoc span{display:none;}
+  .lt-kt{flex-wrap:wrap;}
+  .lt-kt-nut{width:100%;text-align:center;}
+}
+@media (prefers-reduced-motion:reduce){
+  .lt-b,.lt-b-so,.lt-c,.lt-sau,.lt-truoc,.lt-kt-nut,.lt-lo-ds::after{transition:none;}
+  .lt-b.is-dang .lt-b-so{animation:none;}
+}
+/* Cac khoi dinh khac nam duoi thanh lo trinh (--lt-cao = chieu cao thanh, lesson-engine.js dat) */
+body.co-lo-trinh .audio-box.real-box{top:calc(var(--lt-cao,88px) + 10px);}
+body.co-lo-trinh .nd-kho{top:calc(var(--lt-cao,88px) + 8px);}

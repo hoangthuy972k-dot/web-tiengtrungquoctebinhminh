@@ -472,9 +472,12 @@
 
   /* ---------------- pinyin theo cap ---------------- */
   function laHsk1(lv) { return !!HSK1[lv]; }
+  // Quy tac chung PinyinCheDo (pinyin-che-do.js): ton trong lua chon "Phien am" cua hoc sinh;
+  // chua nap duoc thi giu quy tac cu (HSK 1 / YCT hien, HSK 2+ an sau nut 👁)
   function pyHtml(py, lv, luonHien) {
     if (!py) return '';
-    if (luonHien || laHsk1(lv)) return '<p class="ohn-py" lang="zh-Latn">' + esc(py) + '</p>';
+    var hien = window.PinyinCheDo ? window.PinyinCheDo.nen(lv, 'on') === 'hien' : laHsk1(lv);
+    if (luonHien || hien) return '<p class="ohn-py" lang="zh-Latn">' + esc(py) + '</p>';
     return '<button type="button" class="ohn-py-nut" data-py aria-expanded="false">👁 Pinyin</button><p class="ohn-py" lang="zh-Latn" hidden>' + esc(py) + '</p>';
   }
 
@@ -1025,6 +1028,7 @@
       } else if (ok && window.hwStarAnswer) window.hwStarAnswer('/onhn|' + p.d + '|' + it.id);
       if (ok && it.sai && window.CauSai) { window.CauSai.xoa(it.sai); tk.sua++; }
       if (ok && it.ww) { boTuSaiOn(it.ww); tk.sua++; }
+      if (!ok && it.ww && window.CauSai && window.CauSai.tuSai) window.CauSai.tuSai(it.ww); // bao cao giao vien
       if (!ok && it.t === 'cau' && window.CauSai) {
         // sai lai / sai cau moi -> vao kho "Cau em tung sai" cho nhung ngay sau
         try { window.CauSai.ghi(it.c, { url: it.url || '', lv: it.lv, src: 'ohn' }); } catch (e) { /* bo qua */ }

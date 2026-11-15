@@ -41,7 +41,8 @@ const SHARED = [
   'js/khong-goi-y.js',
   'js/nghe-dien.js',
   'js/bai-tap-sgk.js',
-  'js/doc-zh.js'      // lesson-engine.js tu nap (cung ?v=) — giong doc may chu khi bat Azure
+  'js/doc-zh.js',     // lesson-engine.js tu nap (cung ?v=) — giong doc may chu khi bat Azure
+  'js/pinyin-che-do.js' // lesson-engine.js tu nap (cung ?v=) — quy tac phien am dung chung
 ];
 
 // Git luu file voi LF, may Windows checkout ra CRLF (core.autocrlf), con may chu

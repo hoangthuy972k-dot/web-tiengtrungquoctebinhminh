@@ -1,10 +1,15 @@
 // Giong doc may chu (Azure) khi co giao bat o /admin: nap doc-zh.js (cung ?v= voi file nay, xem
 // tools/stamp-assets.js). Khong bat thi doc-zh.js de speechSynthesis chay y nhu cu.
+// Quy tac phien am dung chung (pinyin-che-do.js) cung nap nhu vay, cung ?v=.
 (function(){
-  if(window.DocZh||document.querySelector('script[src*="/js/doc-zh.js"]')) return;
   var me=document.currentScript,v=me&&/[?&]v=([^&]+)/.exec(me.src||'');
-  var s=document.createElement('script');s.src='/js/doc-zh.js'+(v?'?v='+v[1]:'');
-  (document.head||document.documentElement).appendChild(s);
+  function nap(ten,id){
+    var s=document.createElement('script');s.src='/js/'+ten+(v?'?v='+v[1]:'');
+    if(id) s.id=id;
+    (document.head||document.documentElement).appendChild(s);
+  }
+  if(!window.DocZh&&!document.querySelector('script[src*="/js/doc-zh.js"]')) nap('doc-zh.js');
+  if(!window.PinyinCheDo&&!document.querySelector('script[src*="/js/pinyin-che-do.js"]')) nap('pinyin-che-do.js','pcd-script');
 })();
 // ══════════════════════════════════════════
 // AUDIO (Web Speech API — không có file mp3 thật)
@@ -124,6 +129,8 @@ function savePageScore(key,val){
     // Cung quy tac ngay hoc voi trang chu: xong 1 bai tap tu 5 cau = 1 ngay hoc
     if(val&&val.total>=5) markPageStudyDay();
   }catch(e){/* localStorage unavailable */}
+  // Thanh lo trinh 7 buoc: cap nhat dau ✓ ngay khi vua lam xong
+  if(window.ltLoTrinh) window.ltLoTrinh.capNhat();
 }
 function markPageStudyDay(){
   try{
@@ -152,10 +159,15 @@ function starAnswer(key){
 // NAV
 // ══════════════════════════════════════════
 function showTab(id,btn){
+  var sec=document.getElementById(id);
+  if(!sec) return;
   document.querySelectorAll('.section').forEach(function(s){s.classList.remove('active');});
   document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
-  document.getElementById(id).classList.add('active');
-  btn.classList.add('active');
+  sec.classList.add('active');
+  if(!btn) btn=document.querySelector('.tab-btn[data-tab="'+id+'"]');
+  if(btn) btn.classList.add('active');
+  // Thanh lo trinh: to dung buoc / buoc con dang mo (moi duong vao: #hash, nut cu, Tiep theo)
+  if(window.ltLoTrinh) window.ltLoTrinh.dongBo(id);
   if(id==='tongket' && typeof buildSummary==='function') buildSummary();
   if(id==='dialog'){ var a=document.querySelector('.dlg-tb.active'); markDlgViewed(a?parseInt(a.dataset.idx,10)||0:0); }
 }
@@ -1622,11 +1634,343 @@ if(typeof errorFixData!=='undefined')buildErrorFix();
 })();
 
 // ══════════════════════════════════════════
+// LỘ TRÌNH BÀI HỌC — thay hàng 13 thẻ bằng các bước CÙNG SỐ, CÙNG TÊN với lộ trình
+// trong app (PATH_STEPS / PATH_STEPS_HSK5 / PATH_STEPS_HSK4V3 ở app.js). Không bỏ mục
+// nào: mỗi thẻ cũ thành một bước hoặc một bước con. Không khoá bước nào — bước chưa
+// tới chỉ mờ đi. Dấu ✓ đọc lại đúng điểm đã lưu (hyv_lesson_scores, cả trong app lẫn
+// trên trang này), không ghi thêm gì. Thanh thẻ cũ vẫn nằm trong trang (ẩn) để mọi
+// đường vào cũ (showTab, nút lộ trình HSK 5, #hash) chạy y nguyên.
+// ══════════════════════════════════════════
+(function(){
+  var nav=document.querySelector('.tab-nav');
+  var main=document.querySelector('.main');
+  var m=location.pathname.match(/\/(?:([a-z0-9]+)-)?bai-(\d+)\.html/);
+  if(!nav||!main||!m) return;
+  var cap=m[1]||'hsk2', slug=(m[1]?m[1]+'-':'')+'bai-'+m[2];
+  var caoCap=cap==='hsk5'||cap==='hsk6';
+  var CO_SGK={hsk4v3:1,hsk5:1,hsk6:1}; // = cap co 'sgk' trong LEVEL_GAME_TYPES (app.js)
+  var APP='/?hoc='+slug;
+  function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+  // ---- Các bước (key = khoá bước trong app) ----
+  var DN=[
+    {key:'warmup',ten:'Khởi động',tabs:['warmup'],mo:'Nhìn tranh, đoán nghĩa từ mới'},
+    {key:'vocab',ten:'Từ mới',tabs:caoCap?['vocab','hanviet','synonym','flash']:['vocab','hanviet','flash'],mo:'Thẻ từ có tranh, âm thanh và âm Hán Việt'},
+    {key:'dialog',ten:caoCap?'Bài khoá':'Hội thoại',tabs:caoCap?['dialog','listenexam']:['dialog'],mo:caoCap?'Nghe cả bài → đọc theo → trả lời câu hỏi':'Nghe hiểu → đọc theo → đóng vai'},
+    {key:'grammar',ten:'Ngữ pháp',tabs:caoCap?['grammar','register']:['grammar'],mo:'Xem ví dụ, rút ra công thức, luyện ngay'},
+    {key:'game',ten:'Luyện tập',tabs:['match','listen','fill','sort','errfix','mc','situation'],mo:'Làm ít nhất 2 dạng, đúng từ 70% để được ✓'}
+  ];
+  if(caoCap){
+    DN.push({key:'writing',ten:'Luyện viết',tabs:['writing'],mo:cap==='hsk6'?'Viết theo đề 写一写 của sách → chấm điểm và sửa lỗi chi tiết':'Xếp câu, viết đoạn 80 chữ → chấm điểm và sửa lỗi chi tiết'});
+    DN.push({key:'retell',ten:'Kể lại bài đọc',ngan:'Kể lại',tabs:['retell','speak'],mo:'Ghi âm kể lại bằng lời của em → máy chấm đủ ý, từ mới'});
+  } else {
+    DN.push({key:'speak',ten:'Luyện nói',tabs:['speak'],mo:'Trả lời câu hỏi thật về bản thân'});
+    if(cap==='hsk4v3') DN.push({key:'writing',ten:'Luyện viết',tabs:[],mo:'Viết theo đề 写作 của sách (ít nhất 120 chữ) → chấm điểm và sửa lỗi chi tiết'});
+  }
+  DN.push({key:'final',ten:'Kiểm tra cuối bài',ngan:'Kiểm tra',tabs:['tongket'],mo:'Khoảng 30 câu trộn cả bài, đúng từ 70% là qua bài → sao và chứng nhận'});
+
+  function tabBtn(id){return nav.querySelector('.tab-btn[data-tab="'+id+'"]');}
+  function nhanTab(id){
+    var b=tabBtn(id); if(!b) return id;
+    var c=b.cloneNode(true);
+    c.querySelectorAll('svg,.tab-so').forEach(function(x){x.remove();});
+    return c.textContent.trim()||id;
+  }
+  function laMuc(id){var s=document.getElementById(id);return !!(s&&s.classList.contains('section'));}
+  function taoMuc(id,tieuDe,phu,html){
+    var s=document.createElement('div');
+    s.id=id;s.className='section';
+    s.innerHTML='<div class="sec-head"><div class="sec-title">'+esc(tieuDe)+'</div><div class="sec-sub">'+esc(phu)+'</div></div>'+html;
+    main.appendChild(s);
+    return s;
+  }
+  // Thẻ trên trang mà bảng trên chưa biết (bài sau này thêm dạng mới) -> vào Luyện tập
+  var daCo={};
+  DN.forEach(function(d){d.tabs.forEach(function(t){daCo[t]=1;});});
+  nav.querySelectorAll('.tab-btn[data-tab]').forEach(function(b){
+    var t=b.dataset.tab;
+    if(!daCo[t]&&laMuc(t)){daCo[t]=1;DN.filter(function(d){return d.key==='game';})[0].tabs.push(t);}
+  });
+
+  var BUOC=[];
+  DN.forEach(function(d){
+    var con=d.tabs.filter(laMuc).filter(function(t){
+      // Bắc cầu Hán–Việt không có từ nào thì bỏ khỏi lộ trình (mục vẫn còn, chỉ trống)
+      if(t==='hanviet'){var w=document.getElementById('hanviet-wrap');return !w||w.innerHTML.trim()!=='';}
+      return true;
+    }).map(function(t){return {id:t,ten:nhanTab(t)};});
+    if(d.key==='final'){
+      var ktHtml='<div class="lt-kt"><div class="lt-kt-ico" aria-hidden="true">🎓</div><div class="lt-kt-txt"><b>Bài kiểm tra cuối bài</b>'+
+        '<span>'+esc(d.mo)+'.</span><span class="lt-kt-tt" data-lt-tt="final"></span></div>'+
+        '<a class="lt-kt-nut" href="'+APP+'&buoc=final">Làm bài kiểm tra →</a></div>'+
+        '<a class="lt-kt-lt" href="'+APP+'">Mở lộ trình bài này trong app (Luyện thêm · Kết quả cuối bài) →</a>';
+      if(con.length){
+        var tk=document.getElementById('tongket'),tkDau=tk.querySelector('.sec-head');
+        if(tkDau) tkDau.insertAdjacentHTML('afterend',ktHtml); else tk.insertAdjacentHTML('afterbegin',ktHtml);
+        con[0].ten='Tổng kết';
+      } else {
+        taoMuc('kiemtra',d.ten,'Bước cuối của bài',ktHtml);
+        con=[{id:'kiemtra',ten:d.ten}];
+      }
+    } else if(!con.length&&d.key==='writing'){
+      taoMuc('luyenviet',d.ten,'Phần viết của bài làm trong app',
+        '<div class="lt-kt"><div class="lt-kt-ico" aria-hidden="true">✍️</div><div class="lt-kt-txt"><b>Luyện viết làm trong app</b>'+
+        '<span>Đề viết của sách, nộp bài là được chấm điểm và sửa lỗi chi tiết.</span><span class="lt-kt-tt" data-lt-tt="writing"></span></div>'+
+        '<a class="lt-kt-nut" href="'+APP+'&buoc=writing">Mở Luyện viết →</a></div>');
+      con=[{id:'luyenviet',ten:d.ten}];
+    }
+    if(!con.length) return; // vd bài không có Khởi động (app cũng bỏ bước này)
+    BUOC.push({key:d.key,ten:d.ten,ngan:d.ngan||d.ten,mo:d.key==='final'?'Làm bài kiểm tra cuối bài trong app, rồi xem điểm tổng kết các phần ngay dưới đây':d.mo,con:con});
+  });
+  if(!BUOC.length) return;
+  var DUNG=[]; // mọi điểm dừng theo thứ tự "Tiếp theo"
+  BUOC.forEach(function(b,bi){b.con.forEach(function(c,ci){DUNG.push({b:bi,c:ci,id:c.id});});});
+  function viTri(id){for(var i=0;i<DUNG.length;i++) if(DUNG[i].id===id) return i;return -1;}
+
+  // ---- Đã xong chưa: đọc lại điểm đã lưu (app ghi 'warmup', 'game'...; trang này ghi 'page-...') ----
+  function diem(){try{return (JSON.parse(localStorage.getItem('hyv_lesson_scores')||'{}')[location.pathname])||{};}catch(e){return {};}}
+  function docJ(k){try{return JSON.parse(localStorage.getItem(k)||'{}')||{};}catch(e){return {};}}
+  function xong(v){return !!(v&&(v.done||(typeof v.total==='number'&&v.total>0)));}
+  function dat(v){return !!(v&&v.total>0&&(Number(v.correct)||0)>=Math.ceil(v.total*0.7-1e-9));}
+  var KHOA_TRANG={match:'page-match',listen:'page-listen',fill:'page-fill',sort:'page-sort',errfix:'page-errorfix',mc:'page-mc'};
+  // Điểm tốt nhất của một dạng luyện tập (trên trang này hoặc trong app)
+  function diemCon(s,id){
+    var ds=[s[KHOA_TRANG[id]],s.game&&s.game[id]];
+    if(id==='listen') ds.push(s.listen);
+    var tot=null;
+    ds.forEach(function(v){
+      if(!v||!(v.total>0)) return;
+      var c=Math.max(0,Math.min(v.total,Number(v.correct)||0)),t=v.total;
+      if(v.bt>0&&(Number(v.bc)||0)/v.bt>c/t){c=Math.min(v.bt,Number(v.bc)||0);t=v.bt;}
+      if(!tot||c/t>tot.correct/tot.total) tot={correct:c,total:t};
+    });
+    return tot;
+  }
+  // Giống gameStepStatus() trong app: ít nhất 2 dạng, tổng đúng từ 70%, có Bài tập SGK nếu bài có
+  function luyenTapApp(s){
+    var g=s.game||{},loai=0,dung=0,tong=0;
+    Object.keys(g).forEach(function(k){
+      var v=g[k]; if(!v||!(v.total>0)) return;
+      var c=Math.max(0,Math.min(v.total,Number(v.correct)||0)),t=v.total;
+      if(v.bt>0&&(Number(v.bc)||0)/v.bt>c/t){c=Math.max(0,Math.min(v.bt,Number(v.bc)||0));t=v.bt;}
+      loai++;dung+=c;tong+=t;
+    });
+    var can=Math.min(2,docJ('hyv_game_types')[location.pathname]||2);
+    return loai>=can&&tong>0&&dung>=Math.ceil(tong*0.7-1e-9)&&(!canSgk()||!!(g.sgk&&g.sgk.total>0));
+  }
+  function canSgk(){var mm=docJ('hyv_game_sgk');return (location.pathname in mm)?!!mm[location.pathname]:!!CO_SGK[cap];}
+  function buocXong(b,s){
+    switch(b.key){
+      case 'warmup': return xong(s.warmup)||xong(s['page-warmup']);
+      case 'vocab': return xong(s.vocab)||xong(s['page-vocab']);
+      case 'dialog': return xong(s.dialog)||xong(s['page-dialog']);
+      case 'grammar': return xong(s.grammar);
+      case 'game':
+        if(luyenTapApp(s)) return true;
+        if(canSgk()) return false; // Bài tập SGK bắt buộc chỉ có trong app
+        var co=b.con.filter(function(c){return KHOA_TRANG[c.id];});
+        var datN=co.filter(function(c){return dat(diemCon(s,c.id));}).length;
+        return co.length>0&&datN>=Math.min(2,co.length);
+      case 'speak': return xong(s.speak)||xong(s['page-speak']);
+      case 'writing': return xong(s.writing);
+      case 'retell': return xong(s.retell);
+      case 'final': return dat(s.final);
+    }
+    return false;
+  }
+  function conTrangThai(id,s){
+    if(KHOA_TRANG[id]){var d=diemCon(s,id);return d?{txt:d.correct+'/'+d.total,ok:dat(d)}:null;}
+    if(id==='vocab') return (xong(s.vocab)||xong(s['page-vocab']))?{ok:true}:null;
+    if(id==='dialog') return (xong(s.dialog)||xong(s['page-dialog']))?{ok:true}:null;
+    if(id==='speak') return (xong(s.speak)||xong(s['page-speak']))?{ok:true}:null;
+    if(id==='warmup') return (xong(s.warmup)||xong(s['page-warmup']))?{ok:true}:null;
+    return null;
+  }
+
+  // ---- Dựng giao diện ----
+  document.body.classList.add('co-lo-trinh');
+  var bar=document.createElement('nav');
+  bar.className='lt-lo';
+  bar.setAttribute('aria-label','Các bước của bài học');
+  bar.innerHTML='<div class="lt-lo-in"><div class="lt-lo-o"><p class="lt-lo-dang" aria-live="polite"></p><p class="lt-lo-xong"></p></div>'+
+    '<div class="lt-lo-cuon"><ol class="lt-lo-ds" style="--lt-n:'+BUOC.length+'">'+BUOC.map(function(b,i){
+      return '<li><button type="button" class="lt-b" data-lt-b="'+i+'"><span class="lt-b-so" aria-hidden="true">'+(i+1)+'</span>'+
+        '<span class="lt-b-ten"><span class="lt-dai">'+esc(b.ten)+'</span><span class="lt-ngan">'+esc(b.ngan)+'</span></span></button></li>';
+    }).join('')+'</ol></div></div>';
+  nav.parentNode.insertBefore(bar,nav);
+  var dau=document.createElement('div');
+  dau.className='lt-dau';
+  main.insertBefore(dau,main.firstChild);
+  var chan=document.createElement('div');
+  chan.className='lt-tiep';
+  chan.innerHTML='<button type="button" class="lt-truoc" data-lt-di="-1">← <span>Trước</span></button>'+
+    '<button type="button" class="lt-sau" data-lt-di="1"></button>';
+  main.appendChild(chan);
+
+  var dang=-1; // điểm dừng đang mở
+  var giam=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function nhanSau(i){
+    var d=DUNG[i+1];
+    if(!d) return 'Làm bài kiểm tra cuối bài →';
+    if(d.b===DUNG[i].b) return 'Tiếp theo: '+esc(BUOC[d.b].con[d.c].ten)+' →';
+    return '<span class="lt-dai">Tiếp theo: Bước '+(d.b+1)+' · '+esc(BUOC[d.b].ten)+' →</span><span class="lt-ngan">Tiếp: '+esc(BUOC[d.b].ngan)+' →</span>';
+  }
+  function ve(){
+    if(dang<0) return;
+    var s=diem(),d=DUNG[dang],b=BUOC[d.b];
+    var xongDs=BUOC.map(function(x){return buocXong(x,s);});
+    var soXong=xongDs.filter(Boolean).length;
+    var goiY=xongDs.indexOf(false);
+    bar.querySelector('.lt-lo-dang').innerHTML='Bạn đang ở bước <b>'+(d.b+1)+'/'+BUOC.length+'</b> · '+esc(b.ten);
+    bar.querySelector('.lt-lo-xong').textContent=soXong===BUOC.length?'Đã xong cả bài 🎉':'Đã xong '+soXong+'/'+BUOC.length+' bước';
+    // Vạch xanh chạy tới bước cuối của chuỗi bước đã xong liên tiếp từ đầu
+    var ol=bar.querySelector('.lt-lo-ds'),lien=0;
+    while(lien<xongDs.length&&xongDs[lien]) lien++;
+    var tron=lien?ol.querySelectorAll('.lt-b-so')[lien-1]:null;
+    var px=tron?Math.max(0,tron.getBoundingClientRect().left+tron.offsetWidth/2-ol.getBoundingClientRect().left-22):0;
+    ol.style.setProperty('--lt-px',Math.round(px)+'px');
+    bar.querySelectorAll('.lt-b').forEach(function(nut,i){
+      var x=xongDs[i],o=i===d.b;
+      nut.classList.toggle('is-xong',x);
+      nut.classList.toggle('is-dang',o);
+      nut.classList.toggle('is-goi-y',!x&&!o&&i===goiY);
+      nut.classList.toggle('is-sau',!x&&!o&&goiY>=0&&i>goiY);
+      nut.querySelector('.lt-b-so').textContent=x?'✓':String(i+1);
+      if(o) nut.setAttribute('aria-current','step'); else nut.removeAttribute('aria-current');
+      nut.setAttribute('aria-label','Bước '+(i+1)+'/'+BUOC.length+': '+BUOC[i].ten+(x?' — đã xong':i===goiY?' — nên làm tiếp':''));
+    });
+    var tt=xongDs[d.b]?'<span class="lt-dau-tt is-ok">✓ Đã xong</span>':'';
+    dau.innerHTML='<div class="lt-dau-t"><span class="lt-dau-so" aria-hidden="true">'+(xongDs[d.b]?'✓':(d.b+1))+'</span>'+
+      '<div class="lt-dau-chu"><b>Bước '+(d.b+1)+'/'+BUOC.length+' · '+esc(b.ten)+'</b><span>'+esc(b.mo)+'</span></div>'+tt+'</div>'+
+      (b.con.length>1?'<div class="lt-con" role="group" aria-label="Các phần của bước '+(d.b+1)+'">'+b.con.map(function(c,ci){
+        var t=conTrangThai(c.id,s);
+        return '<button type="button" class="lt-c'+(ci===d.c?' is-dang':'')+(t&&t.ok?' is-ok':'')+'" data-lt-con="'+esc(c.id)+'"'+(ci===d.c?' aria-current="true"':'')+'>'+
+          '<span class="lt-c-so">'+(d.b+1)+'.'+(ci+1)+'</span>'+esc(c.ten)+
+          (t?'<span class="lt-c-td">'+(t.txt?esc(t.txt)+' ':'')+(t.ok?'✓':'')+'</span>':'')+'</button>';
+      }).join('')+'</div>':'');
+    // trạng thái bài kiểm tra / luyện viết trong thẻ của bước cuối
+    document.querySelectorAll('[data-lt-tt]').forEach(function(el){
+      var k=el.getAttribute('data-lt-tt'),v=s[k];
+      if(k==='final'&&v&&v.total>0){var p=Math.round((Number(v.correct)||0)/v.total*100);el.textContent=dat(v)?'✓ Đã qua bài ('+p+'%)':'Chưa đạt ('+p+'%) — làm lại để qua bài';el.classList.toggle('is-ok',dat(v));}
+      else if(k==='writing'&&xong(v)){el.textContent='✓ Đã nộp bài viết';el.classList.add('is-ok');}
+      else el.textContent='';
+    });
+    var truoc=chan.querySelector('.lt-truoc'),sau=chan.querySelector('.lt-sau');
+    truoc.style.visibility=dang>0?'':'hidden';
+    sau.innerHTML=nhanSau(dang);
+  }
+  function giuaBuoc(){
+    var cuon=bar.querySelector('.lt-lo-cuon'),nut=bar.querySelector('.lt-b.is-dang');
+    if(!cuon||!nut||cuon.scrollWidth<=cuon.clientWidth) return;
+    var cr=cuon.getBoundingClientRect(),nr=nut.getBoundingClientRect();
+    var x=cuon.scrollLeft+(nr.left-cr.left)-(cr.width-nr.width)/2;
+    try{cuon.scrollTo({left:x,behavior:giam?'auto':'smooth'});}catch(e){cuon.scrollLeft=x;}
+  }
+  function cuonLen(){
+    var y=dau.getBoundingClientRect().top+window.pageYOffset-bar.offsetHeight-10;
+    if(window.pageYOffset>y+4) window.scrollTo({top:Math.max(0,y),behavior:giam?'auto':'smooth'});
+  }
+  function mo(id,opt){
+    if(viTri(id)<0) return false;
+    showTab(id); // -> dongBo(id)
+    if(opt&&opt.hash){try{history.replaceState(null,'',location.pathname+location.search+'#'+id);}catch(e){}}
+    if(opt&&opt.cuon) cuonLen();
+    return true;
+  }
+  function dongBo(id){
+    var i=viTri(id);
+    if(i<0) return;
+    var doiBuoc=dang<0||DUNG[dang].b!==DUNG[i].b;
+    dang=i;
+    ve();
+    if(doiBuoc) giuaBuoc();
+  }
+  // #hash -> mục: tên mục cũ (#vocab, #match...), khoá bước của app (#game, #final),
+  // số bước (#buoc-3), vài tên Việt (#luyen-tap, #kiem-tra)
+  function tuHash(h){
+    h=decodeURIComponent(String(h||'')).replace(/^#/,'').toLowerCase();
+    if(!h) return null;
+    if(viTri(h)>=0) return h;
+    var BI={luyentap:'game','luyen-tap':'game',kiemtra:'final','kiem-tra':'final',tongket:'final',test:'final',noi:'speak','luyen-noi':'speak','tu-moi':'vocab',baikhoa:'dialog','bai-khoa':'dialog','luyen-viet':'writing','ke-lai':'retell'};
+    var so=h.match(/^(?:buoc|b|step)-?(\d+)$/);
+    var bi=so?(+so[1]-1):-1;
+    if(bi<0){var k=BI[h]||h;BUOC.forEach(function(b,i){if(b.key===k) bi=i;});}
+    if(bi<0&&h==='warmup') bi=0; // bài không có Khởi động -> bước đầu tiên
+    if(bi<0||bi>=BUOC.length){
+      // mục cũ không có trên trang này (vd #speak ở HSK 5 nằm trong "Kể lại") đã xử lý ở trên;
+      // còn lại thì chịu
+      return null;
+    }
+    return BUOC[bi].con[0].id;
+  }
+
+  bar.addEventListener('click',function(e){
+    var n=e.target.closest('[data-lt-b]'); if(!n) return;
+    var b=BUOC[+n.getAttribute('data-lt-b')];
+    // Bấm lại bước đang mở thì giữ phần con đang xem
+    var id=(dang>=0&&DUNG[dang].b===+n.getAttribute('data-lt-b'))?DUNG[dang].id:b.con[0].id;
+    mo(id,{hash:true,cuon:true});
+  });
+  // Bàn phím: ← → Home End đi giữa các bước (Enter / Space để mở — nút thường)
+  bar.addEventListener('keydown',function(e){
+    var n=e.target.closest&&e.target.closest('.lt-b'); if(!n) return;
+    var ds=[].slice.call(bar.querySelectorAll('.lt-b')),i=ds.indexOf(n),j=-1;
+    if(e.key==='ArrowRight'||e.key==='ArrowDown') j=Math.min(ds.length-1,i+1);
+    else if(e.key==='ArrowLeft'||e.key==='ArrowUp') j=Math.max(0,i-1);
+    else if(e.key==='Home') j=0; else if(e.key==='End') j=ds.length-1;
+    if(j<0) return;
+    e.preventDefault(); ds[j].focus();
+    try{ds[j].scrollIntoView({block:'nearest',inline:'nearest'});}catch(er){}
+  });
+  dau.addEventListener('click',function(e){
+    var n=e.target.closest('[data-lt-con]'); if(!n) return;
+    mo(n.getAttribute('data-lt-con'),{hash:true});
+  });
+  chan.addEventListener('click',function(e){
+    var n=e.target.closest('[data-lt-di]'); if(!n||dang<0) return;
+    var j=dang+(+n.getAttribute('data-lt-di'));
+    if(j>=DUNG.length){location.href=APP+'&buoc=final';return;}
+    if(j<0) return;
+    mo(DUNG[j].id,{hash:true,cuon:true});
+  });
+  window.addEventListener('hashchange',function(){var id=tuHash(location.hash);if(id&&id!==(DUNG[dang]||{}).id) mo(id,{cuon:true});});
+  // Làm trong app ở thẻ khác -> cập nhật dấu ✓
+  window.addEventListener('storage',function(e){if(e.key==='hyv_lesson_scores') ve();});
+  function datCao(){document.body.style.setProperty('--lt-cao',bar.offsetHeight+'px');}
+  var henCo=null;
+  window.addEventListener('resize',function(){clearTimeout(henCo);henCo=setTimeout(function(){ve();giuaBuoc();datCao();},120);});
+  // phông chữ nạp xong làm đổi bề rộng nhãn -> tính lại vạch tiến độ
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(function(){ve();datCao();});
+
+  window.ltLoTrinh={
+    dongBo:dongBo,
+    capNhat:ve,
+    moHash:function(h){
+      var id=tuHash(h); if(!id||!mo(id,{cuon:false})) return false;
+      // Trình duyệt tự cuộn tới phần tử trùng #hash (che mất đầu bước) -> đặt lại cho đầu bước nằm ngay dưới thanh lộ trình
+      var dat=function(){window.scrollTo(0,Math.max(0,dau.getBoundingClientRect().top+window.pageYOffset-bar.offsetHeight-10));};
+      if(document.readyState==='complete') setTimeout(dat,0); else window.addEventListener('load',function(){setTimeout(dat,0);},{once:true});
+      return true;
+    },
+    buoc:function(){return BUOC.map(function(b){return {key:b.key,ten:b.ten,con:b.con.map(function(c){return c.id;})};});}
+  };
+
+  // Mục đang mở sẵn trong HTML (Khởi động / Từ mới) -> tô bước tương ứng
+  var dangMo=document.querySelector('.main > .section.active');
+  if(dangMo&&viTri(dangMo.id)>=0) dongBo(dangMo.id); else showTab(DUNG[0].id);
+  datCao();
+})();
+
+// ══════════════════════════════════════════
 // MỞ SẴN TAB THEO #hash (đến từ hub "Danh sách bài học" ở trang chủ)
 // ══════════════════════════════════════════
+// Co lo trinh thi #hash cu (#vocab, #match...) va #hash moi (#game, #final, #buoc-3) deu
+// duoc anh xa ve dung buoc / buoc con; khong co thi giu cach cu (bam the tuong ung).
 (function openTabFromHash(){
   var tabId=location.hash.replace('#','');
   if(!tabId) return;
+  if(window.ltLoTrinh&&window.ltLoTrinh.moHash(tabId)) return;
   var btn=document.querySelector('.tab-btn[data-tab="'+tabId+'"]');
   if(btn) btn.click();
 })();
@@ -1666,10 +2010,11 @@ document.addEventListener('DOMContentLoaded',function(){
   }
   document.querySelectorAll('.sec-title').forEach(function(t){
     var r=boEmoji(t); if(!r) return;
-    if(r.so){ var b=document.createElement('span'); b.className='sec-num'; b.textContent=r.so; t.insertBefore(b,t.firstChild); return; }
     var sec=t.closest('.section');
     var dau=sec&&sec.querySelector('.sec-title')===t;
     var ic=dau&&svgTab(sec.id);
+    // So 1️⃣–5️⃣ cu (phan diem cua Tong ket) de lan voi so buoc cua lo trinh -> dung icon cua muc
+    if(r.so&&!ic){ if(document.body.classList.contains('co-lo-trinh')) return; var b=document.createElement('span'); b.className='sec-num'; b.textContent=r.so; t.insertBefore(b,t.firstChild); return; }
     if(ic){ ic.setAttribute('class','sec-ico'); t.insertBefore(ic,t.firstChild); }
   });
   document.querySelectorAll('.sec-sub').forEach(boEmoji);
@@ -1682,43 +2027,58 @@ document.addEventListener('DOMContentLoaded',function(){
 })();
 
 // ══════════════════════════════════════════
-// PINYIN GIẢM DẦN: 5 bài đầu HSK1 / YCT hiện đủ pinyin; từ bài 6 (và HSK2 trở lên)
-// pinyin của câu mờ đi để tập đọc chữ Hán — chạm vào dòng pinyin để xem.
-// Pinyin của từ mới (thẻ từ) luôn hiện. Chọn tay lưu ở hyv_py_bai.
+// PHIÊN ÂM THEO QUY TẮC CHUNG (public/js/pinyin-che-do.js — PinyinCheDo.nen):
+// HSK1 / HSK1 3.0 / YCT hiện pinyin của câu; HSK2 trở lên ẩn, chạm 👁 để hiện từng dòng.
+// Học sinh chọn "Phiên âm: Luôn hiện / Ẩn, chạm để hiện / Theo cấp độ" ở đầu trang
+// (lưu hyv_phien_am, dùng chung mọi nơi dùng PinyinCheDo; lựa chọn cũ hyv_py_bai vẫn
+// được đọc lại). Pinyin của từ mới (thẻ từ) luôn hiện; thẻ nhớ ẩn pinyin mặt trước
+// theo cùng quy tắc.
 // ══════════════════════════════════════════
 (function(){
   var m=location.pathname.match(/\/(?:([a-z0-9]+)-)?bai-(\d+)\.html/);
   var meta=document.querySelector('.header-meta');
   if(!m||!meta) return;
-  var KEY='hyv_py_bai', cap=m[1]||'hsk2', so=+m[2];
-  var tuDong=/^(hsk1|hsk1v3|yct)$/.test(cap)?so>5:true;
-  var chon=null; try{ chon=localStorage.getItem(KEY); }catch(e){}
-  var mo=chon==='mo'?true:chon==='hien'?false:tuDong;
-  var PY='.dlg-py,.vc-ex-py,.model-py,.drill-py,.qa-py,.ts-py,.h4-ex-py,.h4-tb-py';
-  var nut=document.createElement('button');
-  nut.type='button'; nut.className='h-chip h-chip-py';
+  var cap=m[1]||'hsk2';
+  var soCap=/^(hsk1|hsk1v3|yct)$/.test(cap);
+  var NHAN={cap:'Theo cấp độ (mặc định)',hien:'Luôn hiện',an:'Ẩn, chạm để hiện'};
+  function P(){ return window.PinyinCheDo||null; }
+  // Chưa nạp xong pinyin-che-do.js (hoặc nạp lỗi) thì tạm theo cấp độ
+  function cheDo(){ return P()?P().cheDo():'cap'; }
+  function canAn(){ return P()?P().nen(cap,'hoc')==='an':!soCap; }
+  var mo=canAn();
+  var PY='.dlg-py,.vc-ex-py,.model-py,.drill-py,.qa-py,.ts-py,.h4-ex-py,.h4-tb-py,.f-front .f-py';
+  var chip=document.createElement('label');
+  chip.className='h-chip h-chip-py';
+  chip.innerHTML='<span>Phiên âm:</span> <select aria-label="Cách hiện phiên âm (pinyin)">'+
+    ['cap','hien','an'].map(function(v){return '<option value="'+v+'">'+NHAN[v]+'</option>';}).join('')+'</select>';
+  var sel=chip.querySelector('select');
   var goiY=document.createElement('p');
   goiY.className='py-goi-y';
-  goiY.innerHTML='Pinyin của câu đang mờ để em tập đọc chữ Hán — chạm vào dòng pinyin để xem. <button type="button" class="py-hien-het">Hiện tất cả</button>';
-  goiY.querySelector('button').addEventListener('click',function(){ nut.click(); });
+  goiY.innerHTML='Pinyin của câu đang ẩn để em tập đọc chữ Hán — chạm 👁 ở dòng nào thì dòng đó hiện. <button type="button" class="py-hien-het">Luôn hiện pinyin</button>';
+  goiY.querySelector('button').addEventListener('click',function(){ if(P()) P().datCheDo('hien'); });
   var dlgHead=document.querySelector('#dialog .sec-head');
   if(dlgHead) dlgHead.appendChild(goiY);
   function ap(){
+    mo=canAn();
     document.body.classList.toggle('py-mo',mo);
-    nut.textContent=mo?'Pinyin câu: mờ · bấm để hiện':'Pinyin câu: hiện · bấm để làm mờ';
-    nut.setAttribute('aria-pressed',mo?'false':'true');
+    sel.value=cheDo();
+    sel.options[0].textContent='Theo cấp độ ('+(soCap?'đang hiện':'đang ẩn')+')';
+    chip.title=mo?'Pinyin đang ẩn — chạm 👁 để hiện từng dòng':'Pinyin đang hiện dưới chữ Hán';
     goiY.hidden=!mo;
   }
-  nut.addEventListener('click',function(){
-    mo=!mo;
-    try{ localStorage.setItem(KEY,mo?'mo':'hien'); }catch(e){}
+  sel.addEventListener('change',function(){
     document.querySelectorAll('.py-lo').forEach(function(e){ e.classList.remove('py-lo'); });
-    ap();
+    if(P()) P().datCheDo(sel.value);
   });
-  meta.insertBefore(nut,meta.firstChild); // dau hang: tren dien thoai hang chip cuon ngang
+  window.addEventListener('pinyinchedo',ap);
+  meta.insertBefore(chip,meta.firstChild); // dau hang: tren dien thoai hang chip cuon ngang
   ap();
-  // chạm vào pinyin đang mờ: hiện dòng đó (bắt sớm để không lật thẻ / chọn đáp án)
+  if(!P()){ var sc=document.getElementById('pcd-script'); if(sc) sc.addEventListener('load',ap); }
+  // chạm vào pinyin đang ẩn: hiện dòng đó (bắt sớm để không lật thẻ / chọn đáp án)
   document.addEventListener('click',function(e){
+    // sang thẻ nhớ khác: pinyin mặt trước ẩn lại theo quy tắc
+    var fl=e.target.closest&&e.target.closest('[data-action="flash-prev"],[data-action="flash-next"],[data-action="flash-shuffle"]');
+    if(fl){ document.querySelectorAll('.f-py.py-lo').forEach(function(x){ x.classList.remove('py-lo'); }); return; }
     if(!mo) return;
     var el=e.target.closest&&e.target.closest(PY);
     if(!el||el.classList.contains('py-lo')) return;

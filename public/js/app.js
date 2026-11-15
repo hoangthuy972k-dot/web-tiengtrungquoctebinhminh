@@ -375,6 +375,7 @@
   }
   // Cau em vua lam sai -> kho "Cau em tung sai" (cau-sai.js), de ke hoach "📅 Hom nay em on gi" cho lam lai
   function ghiCauSai(c, src, lesson) {
+    if (rsRestoring) return; // dang dung lai bai lam do (bam lai cac cau cu) -> khong ghi lai lan sai cu
     try {
       var l = lesson || currentHubLesson;
       if (!window.CauSai || !l || !l.fullPageUrl) return;
@@ -1310,6 +1311,7 @@
   function srsAnswer(zh, ok) {
     var all = srsAll(), e = all[zh];
     if (!e) return;
+    if (!ok && window.CauSai && window.CauSai.tuSai) window.CauSai.tuSai(zh); // bao cao giao vien "Câu lớp hay sai"
     e.box = ok ? Math.min(6, (e.box || 0) + 1) : 1;
     e.due = srsDayAfter(SRS_INTERVALS[e.box]);
     e.at = Date.now();
@@ -1332,6 +1334,7 @@
     if (!e) return;
     var today = dateKey(new Date());
     if (!ok) {
+      if (window.CauSai && window.CauSai.tuSai) window.CauSai.tuSai(key); // bao cao giao vien "Câu lớp hay sai"
       // Sai trong bai tap / tro choi (ngoai buoi on): chi lui 1 hop, hen on lai ngay mai.
       // Bam "Chua nho" o the lat va sai o bai kiem tra cuoi bai van ve hop dau (srsAnswer).
       e.box = Math.max(1, (e.box || 0) - 1);
@@ -2761,7 +2764,8 @@
   var PATH_STEPS = [
     { key: 'warmup', title: 'Khởi động', stage: '引', desc: 'Nhìn tranh, đoán nghĩa từ mới', min: 2, icon: '🎯', section: 'warmupPractice',
       open: function (l, s) { showWarmupPractice(l, s); } },
-    { key: 'vocab', title: 'Học từ', stage: '懂', desc: 'Thẻ từ có tranh, âm thanh và âm Hán Việt', min: 5, icon: '📚', section: 'vocabPractice',
+    // Ten buoc dung y nhu thanh lo trinh tren trang bai hoc (lesson-engine.js · ltLoTrinh)
+    { key: 'vocab', title: 'Từ mới', stage: '懂', desc: 'Thẻ từ có tranh, âm thanh và âm Hán Việt', min: 5, icon: '📚', section: 'vocabPractice',
       open: function (l, s) { showVocabPractice(l, s); } },
     { key: 'dialog', title: 'Hội thoại', stage: '懂', desc: 'Nghe hiểu → đọc theo → đóng vai → áp dụng nói về em', min: 8, icon: '💬', section: 'dialoguePractice',
       open: function (l, s) { showDialoguePractice(l, s); } },
@@ -2769,7 +2773,7 @@
       open: function (l, s) { showGrammarPractice(l, s); } },
     { key: 'game', title: 'Luyện tập', stage: '会', desc: 'Nối câu, điền từ, sắp xếp câu — làm ít nhất 2 dạng, đúng từ 70%', min: 5, icon: '🧩', section: 'gamePractice',
       open: function (l, s) { showGamePractice(l, s); } },
-    { key: 'speak', title: 'Nói', stage: '用', desc: 'Trả lời câu hỏi thật về bản thân', min: 3, icon: '🗣️', section: 'speakPractice',
+    { key: 'speak', title: 'Luyện nói', stage: '用', desc: 'Trả lời câu hỏi thật về bản thân', min: 3, icon: '🗣️', section: 'speakPractice',
       open: function (l, s) { showSpeakPractice(l, s); } },
     { key: 'final', title: 'Kiểm tra cuối bài', stage: '验', desc: 'Khoảng 30 câu trộn cả bài, đúng từ 70% là qua bài → sao và chứng nhận', min: 12, icon: '🎓', section: 'finalPractice',
       open: function (l, s) { showFinalPractice(l, s); } }
@@ -3453,8 +3457,8 @@
     if (!ok && it.vocab) fqTuSai(st, it.vocab, it.lessonCu);
     // Cau sai (khong phai cau tu vung — tu da vao lich on o tren; khong lay cau dich AI cham) -> "Cau em tung sai"
     if (!ok && !it.vocab && it.type !== 'dich') {
-      if (it.type === 'go') ghiCauSai({ k: 'go', html: it.prompt, dap: it.dap, why: it.exp }, 'kt', it.lessonCu || st.lesson);
-      else if (it.opts) ghiCauSai({ lenh: it.kind, html: it.prompt, opts: it.opts, dung: it.ans, why: it.exp, oz: it.zhOpts, speak: it.speak }, 'kt', it.lessonCu || st.lesson);
+      if (it.type === 'go') ghiCauSai({ k: 'go', html: it.prompt, dap: it.dap, why: it.exp, tl: given }, 'kt', it.lessonCu || st.lesson);
+      else if (it.opts) ghiCauSai({ lenh: it.kind, html: it.prompt, opts: it.opts, dung: it.ans, why: it.exp, oz: it.zhOpts, speak: it.speak, tl: given }, 'kt', it.lessonCu || st.lesson);
     }
     // Cau on bai cu dung -> tin hieu "nho" cho tu do (sai da xu ly o fqTuSai)
     if (ok && it.lessonCu && it.vocab) srsSignal(it.vocab.zh, true);
@@ -15168,7 +15172,7 @@
         fb.className = 'fg-fb ' + (correct ? 'is-correct' : 'is-wrong');
         pgbRecord('gmFill', i, correct);
         if (v) srsSignal(srsWordFor(q.ans), correct); // o bo trong khong tinh la tra loi
-        if (v && !correct) ghiCauSai({ k: 'go', pre: q.pre, post: q.post, dap: q.ans, why: giaiThichCua(q), hint: q.hint }, 'luyen');
+        if (v && !correct) ghiCauSai({ k: 'go', pre: q.pre, post: q.post, dap: q.ans, why: giaiThichCua(q), hint: q.hint, tl: v }, 'luyen');
         if (correct) ok++;
       });
       recordGameScore(currentHubLesson, 'fill', ok, data.length);
@@ -15262,7 +15266,7 @@
         fb.textContent = correct ? '✓ Đúng!' : '✗ Đáp án: "' + s.ans + '"';
         fb.className = 'sg-fb ' + (correct ? 'is-correct' : 'is-wrong');
         pgbRecord('gmSort', i, correct);
-        if (!correct && placed) ghiCauSai({ k: 'xep', lenh: 'Nghe rồi xếp các từ thành câu đúng', tu: s.words, dap: s.ans, speak: s.audio || s.ans, why: giaiThichCua(s) }, 'luyen');
+        if (!correct && placed) ghiCauSai({ k: 'xep', lenh: 'Nghe rồi xếp các từ thành câu đúng', tu: s.words, dap: s.ans, speak: s.audio || s.ans, why: giaiThichCua(s), tl: placed }, 'luyen');
         if (correct) ok++;
       });
       recordGameScore(currentHubLesson, 'sort', ok, data.length);
@@ -15367,7 +15371,7 @@
         srsSignal(srsWordFor(q.opts[q.ans]), correct); // dap an dung la 1 tu trong lich on
         if (!correct) ghiCauSai({
           lenh: opts.blankMode ? 'Chọn từ phù hợp để điền vào chỗ trống' : opts.wrongPrefix ? 'Câu này sai — chọn câu sửa đúng' : 'Chọn đáp án đúng',
-          zh: opts.blankMode || opts.wrongPrefix ? q.wrong : tachGoiY(q.q).q, opts: q.opts, dung: q.ans, why: giaiThichCua(q)
+          zh: opts.blankMode || opts.wrongPrefix ? q.wrong : tachGoiY(q.q).q, opts: q.opts, dung: q.ans, why: giaiThichCua(q), tl: q.opts[oi]
         }, 'luyen');
         $all('.vp-option-btn[data-qi="' + qi + '"]', wrap).forEach(function (b, j) {
           b.disabled = true;
@@ -18497,15 +18501,27 @@
     openLessonFromQuery();
   }
 
-  // Link thay/co gui qua Zalo (trang quan tri "Can nhac hoc"): /?hoc=bai-3 -> mo thang lo trinh bai do
+  // Link thay/co gui qua Zalo (trang quan tri "Can nhac hoc"): /?hoc=bai-3 -> mo thang lo trinh bai do.
+  // Them &buoc=final (khoa buoc: warmup, vocab, dialog, grammar, game, speak, writing, retell, final)
+  // hoac &buoc=7 (so buoc) -> mo luon buoc do — trang bai hoc dung link nay cho "Kiem tra cuoi bai".
   function openLessonFromQuery() {
     var m = /[?&]hoc=([\w-]{1,60})(?:&|$)/.exec(location.search || '');
     if (!m) return;
+    var buoc = (/[?&]buoc=([\w-]{1,20})(?:&|$)/.exec(location.search || '') || [])[1] || '';
     try { history.replaceState(null, '', location.pathname + location.hash); } catch (e) { /* ignore */ }
     var info = lessonByUrl('/lessons/' + m[1] + '.html');
     if (!info || !READY_LEVELS[info.levelId]) return;
     writeJSON(LAST_LESSON_KEY, { levelId: info.levelId, url: info.lesson.fullPageUrl, uid: currentUserId() });
     showLessonHub(info.levelId, info.lesson);
+    if (buoc && pathEnabled(info.lesson)) {
+      // Doi biet bai co Khoi dong khong (so buoc co the 6 hoac 7) roi moi tim buoc
+      kiemKhoiDong(info.lesson).then(function () {
+        var ps = pathStepsOf(info.lesson), idx = -1;
+        ps.forEach(function (s, i) { if (s.key === buoc) idx = i; });
+        if (idx < 0 && /^\d+$/.test(buoc)) idx = Number(buoc) - 1;
+        if (idx >= 0 && idx < ps.length) openPathStep(info.levelId, info.lesson, idx);
+      });
+    }
     if (!currentUserId()) setTimeout(function () { showToast('Nhớ đăng nhập để bài học được lưu vào tài khoản của em nhé!'); }, 900);
   }
 

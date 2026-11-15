@@ -98,51 +98,41 @@ var dialogData = [
 
 // Điền từ — tình huống địa điểm và xã giao
 var fillData = [
-  {pre:'Con hỏi bạn đi đâu: “你去',blank:'哪儿',post:'？”',hint:'(ở đâu)',ans:'哪儿',exp:'哪儿 = ở đâu: 你去哪儿？'},
-  {pre:'Con trả lời mình đi trường học: “我去',blank:'学校',post:'。”',hint:'(trường học)',ans:'学校',exp:'去 + 学校 = đi đến trường.'},
-  {pre:'Con nói mình đang ở trường: “我',blank:'在',post:'学校。”',hint:'(ở, tại)',ans:'在',exp:'在 + nơi chốn = đang ở đâu.'},
-  {pre:'Con hỏi các bạn có đang ở trường không: “',blank:'你们',post:'在学校吗？”',hint:'(các bạn — số nhiều)',ans:'你们',exp:'你们 = các bạn (nhiều người).'},
-  {pre:'Con trả lời chúng mình đang ở trường: “',blank:'我们',post:'在学校。”',hint:'(chúng mình)',ans:'我们',exp:'我们 = chúng mình.'},
-  {pre:'Con nói mình đi cửa hàng: “我去',blank:'商店',post:'。”',hint:'(cửa hàng)',ans:'商店',exp:'商店 = cửa hàng.'},
-  {pre:'Con cảm ơn bạn: “',blank:'谢谢',post:'你！”',hint:'(cảm ơn)',ans:'谢谢',exp:'谢谢你 = cảm ơn bạn.'},
-  {pre:'Con đáp lại khi được cảm ơn: “不',blank:'谢',post:'。”',hint:'(cảm ơn — trong câu đáp)',ans:'谢',exp:'不谢 = không có gì (đáp lời cảm ơn).'},
+  {pre:'Bạn hỏi anh trai con đang ở đâu. Anh đang ở trường: “哥哥在',blank:'学校',post:'。”',hint:'(trường học)',ans:'学校',exp:'学校 = trường học; 在 + nơi chốn: 在学校.'},
+  {pre:'Mẹ đang ở cửa hàng: “妈妈',blank:'在',post:'商店。”',hint:'(ở)',ans:'在',exp:'在 + nơi chốn = đang ở đâu: 妈妈在商店.'},
+  {pre:'Chiều nay cả nhóm đến nhà cô giáo chơi: “我们',blank:'去',post:'老师家。”',hint:'(đi đến)',ans:'去',exp:'去 + nơi chốn = đi đến đâu: 去老师家.'},
+  {pre:'Không thấy mèo của bạn đâu, con hỏi: “你的猫在',blank:'哪儿',post:'？”',hint:'(ở đâu)',ans:'哪儿',exp:'哪儿 = ở đâu, đứng sau 在: 在哪儿？'},
+  {pre:'Con hỏi hai bạn đứng cạnh: “Các bạn đi cửa hàng à?” — “',blank:'你们',post:'去商店吗？”',hint:'(các bạn)',ans:'你们',exp:'你们 = các bạn (nhiều người); 你 chỉ một người.'},
+  {pre:'Con và Lạc Lạc giới thiệu với cô: “',blank:'我们',post:'是中国人。”',hint:'(chúng mình)',ans:'我们',exp:'我们 = chúng mình (có cả người nói).'},
+  {pre:'Ở góc phố có một cửa hàng: “那儿有一个',blank:'商店',post:'。”',hint:'(cửa hàng)',ans:'商店',exp:'商店 = cửa hàng; 那儿有…… = ở đó có…'},
+  {pre:'Mẹ mua cho con bánh. Con nói: “',blank:'谢谢',post:'妈妈！”',hint:'(cảm ơn)',ans:'谢谢',exp:'谢谢 + người = cảm ơn ai: 谢谢妈妈！'},
 ];
 
-// Sắp xếp — câu về địa điểm và xã giao
+// Sắp xếp — câu nói vị trí & điểm đến
 var sortData = [
-  {words:['你','去','哪儿','？'],ans:'你去哪儿？',audio:'你去哪儿？'},
-  {words:['我','去','学校','。'],ans:'我去学校。',audio:'我去学校。'},
-  {words:['我','在','学校','。'],ans:'我在学校。',audio:'我在学校。'},
-  {words:['你们','在','学校','吗','？'],ans:'你们在学校吗？',audio:'你们在学校吗？'},
-  {words:['我们','在','学校','。'],ans:'我们在学校。',audio:'我们在学校。'},
-  {words:['谢谢','你','！'],ans:'谢谢你！',audio:'谢谢你！'},
+  {words:['我们','的','老师','在','家','。'],ans:'我们的老师在家。',audio:'我们的老师在家。'},
+  {words:['甜甜','在','家','吗','？'],ans:'甜甜在家吗？',audio:'甜甜在家吗？'},
+  {words:['老师','不','在','学校','。'],ans:'老师不在学校。',audio:'老师不在学校。'},
+  {words:['谁','在','商店','？'],ans:'谁在商店？',audio:'谁在商店？'},
+  {words:['我','的','鱼','在','家','。'],ans:'我的鱼在家。',audio:'我的鱼在家。'},
 ];
 
 var matchData = [
   {left:'你去哪儿？',right:'我去学校。'},
-  {left:'你在哪儿？',right:'我在学校。'},
-  {left:'你们在学校吗？',right:'我们在学校。'},
-  {left:'你去商店吗？',right:'我去商店。'},
+  {left:'你在哪儿？',right:'我在商店。'},
   {left:'谢谢你！',right:'不谢。'},
+  {left:'你们在家吗？',right:'我们不在家。'},
+  {left:'学校在哪儿？',right:'在那儿。'},
+  {left:'谁去商店？',right:'我去！'},
 ];
 
 // Trắc nghiệm — không audio
 var mcData = [
-  {q:'"学校" nghĩa là gì?',opts:['trường học','cửa hàng','nhà','công viên'],ans:0,exp:'学校 (xuéxiào) là trường học.'},
-  {q:'"在" nghĩa là gì?',opts:['ở, tại','đi','đến','về'],ans:0,exp:'在 (zài) = ở, tại: 我在学校.'},
-  {q:'"去" nghĩa là gì?',opts:['đi','ở','đến','về'],ans:0,exp:'去 (qù) = đi (đến nơi nào đó): 我去学校.'},
-  {q:'"你们" nghĩa là gì?',opts:['các bạn (số nhiều)','bạn (số ít)','chúng ta','họ'],ans:0,exp:'们 làm thành số nhiều: 你 + 们 = các bạn.'},
-  {q:'"我们" nghĩa là gì?',opts:['chúng ta, chúng mình','các bạn','họ','mình'],ans:0,exp:'我们 (wǒmen) = chúng ta, chúng mình.'},
-  {q:'"哪儿" nghĩa là gì?',opts:['ở đâu','ở đây','ở đó','cái gì'],ans:0,exp:'哪儿 (nǎr) dùng hỏi nơi chốn: ở đâu.'},
-  {q:'"商店" nghĩa là gì?',opts:['cửa hàng','trường học','nhà','sân trường'],ans:0,exp:'商店 (shāngdiàn) là cửa hàng.'},
-  {q:'"谢谢" nghĩa là gì?',opts:['cảm ơn','xin lỗi','tạm biệt','xin chào'],ans:0,exp:'谢谢 (xièxie) = cảm ơn.'},
-  {q:'Câu nào ĐÚNG khi nói "Mình đi trường học."?',opts:['我去学校。','我学校去。','去我学校。','学校我去。'],ans:0,exp:'Trật tự: 我 + 去 + nơi chốn (学校).'},
-  {q:'Khi ai đó cảm ơn mình, con có thể đáp lại bằng gì?',opts:['不谢。','谢谢。','再见。','你好。'],ans:0,exp:'Đáp lại lời cảm ơn có thể nói 不谢 = không có gì.'},
-  {q:'Câu nào ĐÚNG khi hỏi "Các bạn đang ở trường à?"?',opts:['你们在学校吗？','你们学校在吗？','在你们学校吗？','学校你们在吗？'],ans:0,exp:'Trật tự: 你们 + 在 + 学校 + 吗？'},
-  {q:'"你们" và "我们" khác nhau ở đâu?',opts:['你们 chỉ các bạn, 我们 chỉ chúng mình','cả hai đều chỉ chúng mình','cả hai đều chỉ các bạn','không khác nhau'],ans:0,exp:'你们 = các bạn (người nghe); 我们 = chúng mình (có cả người nói).'},
-  {q:'Muốn nói "Mình đi cửa hàng", con nói gì?',opts:['我去商店。','我商店去。','去我商店。','商店我去。'],ans:0,exp:'Trật tự: 我 + 去 + 商店 — nơi chốn đứng sau 去.'},
-  {q:'"们" dùng để làm gì?',opts:['biến đại từ thành số nhiều','phủ định','nghi vấn','sở hữu'],ans:0,exp:'们 thêm sau đại từ để chỉ số nhiều: 我们, 你们.'},
-  {q:'Câu nào ĐÚNG khi hỏi "Bạn đi đâu?"?',opts:['你去哪儿？','你哪儿去？','哪儿你去？','去你哪儿？'],ans:0,exp:'Từ để hỏi 哪儿 đứng ở chỗ của nơi chốn, sau 去: 你去哪儿？'},
+  {q:'Bạn gọi điện hỏi con đang ở đâu. Con đang ở trường. Con đáp:',opts:['在学校。','去学校。','学校在。','是学校。'],ans:0,exp:'在 + nơi chốn = đang ở đâu; 去 + nơi chốn = đi đến đâu.'},
+  {q:'Mẹ hỏi chiều nay con đi đâu. Con đi cửa hàng. Con đáp:',opts:['去商店。','在商店去。','商店去。','我商店。'],ans:0,exp:'去 đứng trước nơi chốn: 去商店. Không đặt 去 ra sau như "cửa hàng đi".'},
+  {q:'Con hỏi hai bạn đứng cạnh: “Các bạn có mèo không?”',opts:['你们有猫吗？','我们有猫吗？','你们是猫吗？','你们猫有吗？'],ans:0,exp:'Hỏi nhiều bạn dùng 你们 (các bạn); 我们 là "chúng mình". Hỏi "có" dùng 有, không dùng 是.'},
+  {q:'Bạn nói: “谢谢你！” Con đáp:',opts:['不谢。','谢谢。','不是。','没有。'],ans:0,exp:'Đáp lại lời cảm ơn: 不谢 (không có gì).'},
+  {q:'Con muốn nói: “Bố không ở nhà.”',opts:['爸爸不在家。','爸爸在不家。','爸爸不是家。','不爸爸在家。'],ans:0,exp:'不 đứng trước 在: 不在家 = không ở nhà.'},
 ];
 
 var speakingData = {
@@ -150,10 +140,8 @@ var speakingData = {
     intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy nhé!',
     models:[
       {zh:'你去哪儿？',py:'Nǐ qù nǎr?',vn:'Bạn đi đâu?'},
-      {zh:'我去学校。',py:'Wǒ qù xuéxiào.',vn:'Mình đi trường học.'},
       {zh:'你们在学校吗？',py:'Nǐmen zài xuéxiào ma?',vn:'Các bạn đang ở trường à?'},
-      {zh:'我们在学校。',py:'Wǒmen zài xuéxiào.',vn:'Chúng mình đang ở trường.'},
-      {zh:'谢谢你！',py:'Xièxie nǐ!',vn:'Cảm ơn bạn!'},
+      {zh:'谢谢你！不谢。',py:'Xièxie nǐ! Bú xiè.',vn:'Cảm ơn bạn! — Không có gì.'},
     ],
   },
   t2:{
@@ -165,24 +153,24 @@ var speakingData = {
   t3:{
     intro:'Không nhìn câu mẫu, con hãy tưởng tượng mình đang ở trong tình huống thật và tự nói câu phù hợp nhé!',
     tasks:[
-      {role:'🏫 Tình huống 1 — Rủ bạn cùng đi học',
-       guide:'Con hỏi bạn đi đâu, bạn trả lời đi trường học, và con nói mình cũng vậy.',
-       structure:['你去哪儿？','我去学校。','我也去学校！'],
-       sample:'你去哪儿？我去学校。我也去学校！',
-       sample_vn:'Bạn đi đâu? Mình đi trường học. Mình cũng đi trường học!',
-       note:'去 luôn đi kèm một địa điểm phía sau để nói "đi đâu đó".'},
-      {role:'📍 Tình huống 2 — Hỏi thăm vị trí của nhóm bạn',
-       guide:'Con hỏi các bạn có đang ở trường không, rồi các bạn trả lời chung.',
-       structure:['你们在学校吗？','我们在学校。'],
-       sample:'你们在学校吗？我们在学校。',
-       sample_vn:'Các bạn đang ở trường à? Chúng mình đang ở trường.',
-       note:'们 biến 你/我 thành số nhiều: 你们 = các bạn, 我们 = chúng mình.'},
-      {role:'🙏 Tình huống 3 — Cảm ơn khi bạn giúp đỡ',
-       guide:'Bạn nói sẽ đi cửa hàng giúp con, con cảm ơn và bạn đáp lại lịch sự.',
-       structure:['我去商店。','谢谢你！','不谢。'],
-       sample:'我去商店。谢谢你！不谢。',
-       sample_vn:'Mình đi cửa hàng. Cảm ơn bạn! Không có gì.',
-       note:'"不谢" là cách đáp lại lịch sự và tự nhiên khi được ai đó cảm ơn.'},
+      {role:'🏠 Tình huống 1 — Bố đâu rồi?',
+       guide:'Con về nhà không thấy bố. Con hỏi mẹ bố đang ở đâu.',
+       structure:['妈妈，……在哪儿？'],
+       sample:'妈妈，爸爸在哪儿？',
+       sample_vn:'Mẹ ơi, bố đâu rồi ạ?',
+       note:'在哪儿 = ở đâu, đứng sau người/vật mình muốn tìm.'},
+      {role:'🎒 Tình huống 2 — Cùng đi học',
+       guide:'Sáng nay con và bạn cùng đi học. Con nói với mẹ.',
+       structure:['我和……去……！'],
+       sample:'我和甜甜去学校！',
+       sample_vn:'Con với Điềm Điềm đi học đây!',
+       note:'去 + nơi chốn = đi đến đâu.'},
+      {role:'🙏 Tình huống 3 — Cảm ơn cô giáo',
+       guide:'Cô giáo cho con mượn bút. Con cảm ơn cô.',
+       structure:['谢谢……！'],
+       sample:'谢谢老师！',
+       sample_vn:'Con cảm ơn cô ạ!',
+       note:'谢谢 + người được cảm ơn. Người kia sẽ đáp 不谢.'},
     ],
   },
 };
@@ -191,47 +179,37 @@ var speakingData = {
 // LUYỆN DỊCH (Việt→Trung) — câu ví dụ của chính bài này
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:"Mình đi trường học.", zh:"我去学校。", py:"Wǒ qù xuéxiào."},
-  {vi:"Mình đang ở trường.", zh:"我在学校。", py:"Wǒ zài xuéxiào."},
-  {vi:"Mình đi cửa hàng.", zh:"我去商店。", py:"Wǒ qù shāngdiàn."},
-  {vi:"Bạn đi đâu?", zh:"你去哪儿？", py:"Nǐ qù nǎr?"},
-  {vi:"Các bạn đang ở trường à?", zh:"你们在学校吗？", py:"Nǐmen zài xuéxiào ma?"},
-  {vi:"Chúng mình đang ở trường.", zh:"我们在学校。", py:"Wǒmen zài xuéxiào."},
+  {vi:"Cảm ơn bố!", zh:"谢谢爸爸！", py:"Xièxie bàba!"},
+  {vi:"Ai ở nhà?", zh:"谁在家？", py:"Shéi zài jiā?"},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung→Việt) — lời thoại trong bài, khác chiều Việt→Trung
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:"Mình cũng đi trường học!", zh:"我也去学校！", py:"Wǒ yě qù xuéxiào!"},
-  {vi:"Bạn đang ở đâu?", zh:"你在哪儿？", py:"Nǐ zài nǎr?"},
-  {vi:"Cảm ơn bạn!", zh:"谢谢你！", py:"Xièxie nǐ!"},
-  {vi:"Không có gì.", zh:"不谢。", py:"Bù xiè."},
+  {vi:"Trường của chúng mình có rất nhiều chim.", zh:"我们的学校有很多鸟。", py:"Wǒmen de xuéxiào yǒu hěn duō niǎo."},
+  {vi:"Các bạn là người Trung Quốc à?", zh:"你们是中国人吗？", py:"Nǐmen shì Zhōngguó rén ma?"},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
 // ══════════════════════════════════════════
 var listenData = [
-  {audio:'乐乐，你去哪儿？我去商店。我也去商店！',
+  {audio:'谁去学校？我去！我也去！',
    questions:[
-     {q:'Lạc Lạc đi đâu?',opts:['学校','商店','家'],ans:1},
-     {q:'Bạn kia cũng đi đâu?',opts:['Cũng đi cửa hàng','Đi trường học','Về nhà'],ans:0},
+     {q:'Người nói đầu tiên hỏi gì?',opts:['Ai đi đến trường','Trường ở đâu','Ai ở nhà'],ans:0,exp:'谁去学校 = ai đi đến trường.'},
    ]},
-  {audio:'你在哪儿？我在学校。',
+  {audio:'我们的学校很大！',
    questions:[
-     {q:'Bạn ấy đang ở đâu?',opts:['Ở nhà','Ở trường','Ở cửa hàng'],ans:1},
+     {q:'Trường học thế nào?',opts:['Nhỏ','To','Không nói'],ans:1,exp:'很大 = rất to.'},
+     {q:'Đó là trường của ai?',opts:['Của các bạn','Của cô giáo','Của chúng mình'],ans:2,exp:'我们的学校 = trường của chúng mình.'},
    ]},
-  {audio:'你们去哪儿？我们去学校。',
+  {audio:'谢谢你们！不谢！',
    questions:[
-     {q:'Các bạn ấy đi đâu?',opts:['Đi đến trường','Đi cửa hàng','Về nhà'],ans:0},
+     {q:'Người nói đầu tiên đang làm gì?',opts:['Cảm ơn các bạn','Chào các bạn','Hỏi đường'],ans:0,exp:'谢谢你们 = cảm ơn các bạn; 不谢 = không có gì.'},
    ]},
-  {audio:'妈妈在哪儿？妈妈在家。',
+  {audio:'你们去哪儿？我们去商店。',
    questions:[
-     {q:'Mẹ đang ở đâu?',opts:['Ở trường','Ở cửa hàng','Ở nhà'],ans:2},
-   ]},
-  {audio:'谢谢你！不谢。',
-   questions:[
-     {q:'Người thứ hai trả lời thế nào?',opts:['Cảm ơn','Không có gì','Tạm biệt'],ans:1},
+     {q:'Các bạn đi đâu?',opts:['Đến trường','Đến cửa hàng','Về nhà'],ans:1,exp:'我们去商店 = chúng mình đi cửa hàng.'},
    ]},
 ];

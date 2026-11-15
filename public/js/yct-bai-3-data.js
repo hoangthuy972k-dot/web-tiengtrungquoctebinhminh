@@ -103,51 +103,38 @@ var dialogData = [
 
 // Điền từ — tình huống hỏi về người & quốc tịch
 var fillData = [
-  {pre:'Con hỏi một người trong ảnh là ai: “他是',blank:'谁',post:'？”',hint:'(ai)',ans:'谁',exp:'谁 (ai) dùng để hỏi về người.'},
-  {pre:'Con hỏi bạn ấy đến từ nước nào: “他是',blank:'哪',post:'国人？”',hint:'(nào, cái nào)',ans:'哪',exp:'哪 + 国人 = người nước nào.'},
-  {pre:'Con khẳng định bạn ấy là người Trung Quốc: “他是中国',blank:'人',post:'。”',hint:'(người)',ans:'人',exp:'中国 + 人 = người Trung Quốc.'},
-  {pre:'Con nói mình là người Trung Quốc: “我',blank:'是',post:'中国人。”',hint:'(là)',ans:'是',exp:'是 (là) nối chủ ngữ 我 với 中国人.'},
-  {pre:'Con hỏi một bạn nam là ai: “',blank:'他',post:'是谁？”',hint:'(anh ấy, bạn ấy)',ans:'他',exp:'他 chỉ một bạn nam: 他是谁？'},
-  {pre:'Con xác nhận lại quốc tịch: “你是中国人',blank:'吗',post:'？”',hint:'(trợ từ hỏi — ôn Bài 2)',ans:'吗',exp:'吗 cuối câu tạo câu hỏi Có/Không (đã học ở Bài 2).'},
-  {pre:'Con nói phần "nước" trong từ quốc gia: “中',blank:'国',post:'人”',hint:'(nước, quốc gia)',ans:'国',exp:'中国 = Trung Quốc; 国 là nước.'},
-  {pre:'Con hỏi một bạn nữ là ai: “她',blank:'是',post:'谁？”',hint:'(là)',ans:'是',exp:'是 + 谁: hỏi "là ai".'},
+  {pre:'Một bạn trai mới vào lớp, chưa ai biết tên. Cô giáo hỏi cả lớp: “',blank:'谁',post:'认识他？”',hint:'(ai)',ans:'谁',exp:'谁 = ai: 谁认识他？ = Ai quen bạn ấy?'},
+  {pre:'Cô giáo nói lớp mình có bạn mới từ nước khác đến. Con hỏi cô: “',blank:'哪',post:'国人？”',hint:'(nào)',ans:'哪',exp:'哪 + 国人 = người nước nào.'},
+  {pre:'Con kể với mẹ: Minh Minh là người Trung Quốc. “明明是',blank:'中国人',post:'。”',hint:'(người Trung Quốc)',ans:'中国人',exp:'中国人 = Trung Quốc + 人 (người).'},
+  {pre:'Cô giáo hỏi bạn gái ngồi cạnh con là ai. Con đáp: “她',blank:'是',post:'甜甜。”',hint:'(là)',ans:'是',exp:'是 = là: 她是甜甜 = bạn ấy là Điềm Điềm.'},
+  {pre:'Bạn hỏi con có quen bạn trai đứng ở cửa không. Con lắc đầu: “我不认识',blank:'他',post:'。”',hint:'(bạn ấy — bạn trai)',ans:'他',exp:'Bạn trai dùng 他; bạn gái dùng 她 (cùng đọc tā).'},
+  {pre:'Con muốn biết bạn mới có phải người Trung Quốc không: “你是中国人',blank:'吗',post:'？”',hint:'(chữ hỏi — Bài 2)',ans:'吗',exp:'Câu kể + 吗 = câu hỏi Có/Không: 你是中国人吗？'},
 ];
 
 // Sắp xếp — câu hỏi về người & quốc tịch
 var sortData = [
-  {words:['他','是','谁','？'],ans:'他是谁？',audio:'他是谁？'},
-  {words:['他','是','中国','人','。'],ans:'他是中国人。',audio:'他是中国人。'},
-  {words:['明明','是','哪','国','人','？'],ans:'明明是哪国人？',audio:'明明是哪国人？'},
-  {words:['她','是','谁','？'],ans:'她是谁？',audio:'她是谁？'},
-  {words:['她','是','甜甜','。'],ans:'她是甜甜。',audio:'她是甜甜。'},
-  {words:['你','是','中国','人','吗','？'],ans:'你是中国人吗？',audio:'你是中国人吗？'},
+  {words:['明明','认识','谁','？'],ans:'明明认识谁？',audio:'明明认识谁？'},
+  {words:['你','是','谁','？'],ans:'你是谁？',audio:'你是谁？'},
+  {words:['谁','是','中国人','？'],ans:'谁是中国人？',audio:'谁是中国人？'},
+  {words:['老师','认识','他','吗','？'],ans:'老师认识他吗？',audio:'老师认识他吗？'},
 ];
 
 var matchData = [
-  {left:'他是谁？',right:'他是明明。'},
-  {left:'明明是哪国人？',right:'他是中国人。'},
-  {left:'她是谁？',right:'她是甜甜。'},
-  {left:'你是中国人吗？',right:'我是中国人。'},
-  {left:'谁是中国人？',right:'明明是中国人。'},
+  {left:'他是谁？',right:'他是乐乐。'},
+  {left:'你是哪国人？',right:'我是中国人。'},
+  {left:'她是老师吗？',right:'不是，她是甜甜。'},
+  {left:'谁认识明明？',right:'我认识他！'},
+  {left:'你是中国人吗？',right:'不是。'},
+  {left:'她叫什么？',right:'她叫甜甜。'},
 ];
 
 // Trắc nghiệm — không audio
 var mcData = [
-  {q:'他是＿＿？(hỏi về người)',opts:['谁','什么','哪','怎么样'],ans:0,exp:'谁 (shéi) dùng để hỏi về người: 他是谁？ — Bạn ấy là ai?'},
-  {q:'他是＿＿国人？(hỏi quốc tịch)',opts:['哪','什么','谁','这'],ans:0,exp:'哪国人 hỏi quốc tịch: 哪 (nào) + 国 (nước) + 人 (người).'},
-  {q:'"是" nghĩa là gì?',opts:['là','có','muốn','đi'],ans:0,exp:'是 (shì) nghĩa là "là": 我是乐乐。'},
-  {q:'"人" nghĩa là gì?',opts:['người','nước','bạn','thầy'],ans:0,exp:'人 (rén) là người — chữ giống hình một người đang đứng.'},
-  {q:'"国" nghĩa là gì?',opts:['nước, quốc gia','người','thành phố','làng'],ans:0,exp:'国 (guó) là nước, quốc gia: 中国 = Trung Quốc.'},
-  {q:'"他" dùng để chỉ ai?',opts:['một bạn nam','một bạn nữ','chính mình','thầy cô'],ans:0,exp:'他 có bộ 亻 (người), dùng chỉ bạn nam; bạn nữ dùng 她.'},
-  {q:'"中国人" nghĩa là gì?',opts:['người Trung Quốc','nước Trung Quốc','tiếng Trung Quốc','bạn Trung Quốc'],ans:0,exp:'中国人 = 中国 (Trung Quốc) + 人 (người): người Trung Quốc.'},
-  {q:'Câu nào ĐÚNG khi hỏi ai đó là người nước nào?',opts:['你是哪国人？','你哪是国人？','哪你是国人？','国你是哪人？'],ans:0,exp:'Từ để hỏi đứng đúng chỗ của câu trả lời: 我是中国人 → 你是哪国人？'},
-  {q:'Từ nào dùng để hỏi "ai"?',opts:['谁','哪','什么','怎么'],ans:0,exp:'谁 hỏi "ai"; 哪 hỏi "nào", 什么 hỏi "gì".'},
-  {q:'Câu nào ĐÚNG khi nói "Cô ấy là ai?"',opts:['她是谁？','她谁是？','谁她是？','是她谁？'],ans:0,exp:'Trật tự: 她 + 是 + 谁 — từ để hỏi 谁 đứng cuối câu.'},
-  {q:'"哪" nghĩa là gì?',opts:['nào, cái nào','đó, kia','ai','gì'],ans:0,exp:'哪 (nǎ) nghĩa là nào: 哪国人 = người nước nào.'},
-  {q:'Câu nào ĐÚNG khi nói "Bạn ấy là Minh Minh."?',opts:['他是明明。','明明是他。','他明明是。','是他明明。'],ans:0,exp:'Trật tự câu: chủ ngữ 他 + 是 + 明明.'},
-  {q:'Trong câu "他是中国人", chữ nào chỉ QUỐC TỊCH?',opts:['中国人','他','是','谁'],ans:0,exp:'中国人 (người Trung Quốc) cho biết quốc tịch của bạn ấy.'},
-  {q:'Muốn hỏi "Bạn là người nước nào?", con nói gì?',opts:['你是哪国人？','你是谁？','你是中国人吗？','他是谁？'],ans:0,exp:'你是哪国人？ hỏi quốc tịch; 你是谁？ chỉ hỏi bạn là ai.'},
-  {q:'"她" và "他" khác nhau ở đâu?',opts:['她 chỉ bạn nữ, 他 chỉ bạn nam','cả hai đều chỉ bạn nam','cả hai đều chỉ bạn nữ','không khác nhau'],ans:0,exp:'Hai chữ cùng đọc tā: 她 có bộ 女 chỉ bạn nữ, 他 có bộ 亻 chỉ bạn nam.'},
+  {q:'Có một bạn trai mới. Con hỏi bạn mình: “Bạn ấy tên gì?”',opts:['他叫什么？','他是什么？','他叫谁？','什么他叫？'],ans:0,exp:'Hỏi tên dùng 叫 + 什么; 谁 dùng để hỏi "ai".'},
+  {q:'Bạn hỏi con có phải người Trung Quốc không. Con là người Việt Nam. Con đáp:',opts:['我不是中国人。','我是不中国人。','我不中国人。','不我是中国人。'],ans:0,exp:'不 đứng trước 是: 我不是中国人. Không được bỏ 是.'},
+  {q:'Cô giáo chỉ ảnh một cô giáo khác, hỏi con đó là ai. Con đáp: “Cô ấy là cô giáo.”',opts:['她是老师。','他是老师。','她老师。','是她老师。'],ans:0,exp:'Cô giáo là nữ → 她; câu phải có 是: 她是老师.'},
+  {q:'Con muốn hỏi các bạn: “Ai là cô giáo?”',opts:['谁是老师？','什么是老师？','老师是什么？','谁老师是？'],ans:0,exp:'谁 hỏi về người; 什么 hỏi về đồ vật.'},
+  {q:'Điềm Điềm hỏi Lạc Lạc có quen Minh Minh không. Lạc Lạc không quen. Lạc Lạc đáp:',opts:['不认识。','认识不。','不是认识。','我认识不。'],ans:0,exp:'不 đứng trước 认识: 不认识. Không chen 是 vào.'},
 ];
 
 var speakingData = {
@@ -155,39 +142,36 @@ var speakingData = {
     intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy nhé!',
     models:[
       {zh:'他是谁？',py:'Tā shì shéi?',vn:'Anh ấy là ai vậy?'},
-      {zh:'他是中国人。',py:'Tā shì Zhōngguó rén.',vn:'Bạn ấy là người Trung Quốc.'},
-      {zh:'明明是哪国人？',py:'Míngming shì nǎ guó rén?',vn:'Minh Minh là người nước nào?'},
-      {zh:'她是谁？',py:'Tā shì shéi?',vn:'Cô ấy là ai vậy?'},
-      {zh:'你是中国人吗？',py:'Nǐ shì Zhōngguó rén ma?',vn:'Bạn là người Trung Quốc phải không?'},
+      {zh:'他是明明。',py:'Tā shì Míngming.',vn:'Đó là Minh Minh.'},
     ],
   },
   t2:{
     intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu con tạo được.',
     drills:[
-      {frame:'＿＿是谁？',frame_py:'___ shì shéi?',vn:'＿＿ là ai vậy?',options:['他','她'],samples:['他是谁？','她是谁？']},
+      {frame:'我不是＿＿。',frame_py:'Wǒ bú shì ___.',vn:'Mình không phải ＿＿.',options:['老师','乐乐'],samples:['我不是老师。','我不是乐乐。']},
     ],
   },
   t3:{
     intro:'Không nhìn câu mẫu, con hãy tưởng tượng mình đang ở trong tình huống thật và tự nói câu phù hợp nhé!',
     tasks:[
-      {role:'📷 Tình huống 1 — Hỏi về người trong ảnh',
-       guide:'Con xem một tấm ảnh và muốn biết người trong đó là ai.',
-       structure:['他是谁？','他是＿＿。'],
-       sample:'他是谁？他是明明。',
-       sample_vn:'Anh ấy là ai vậy? Đó là Minh Minh.',
-       note:'他 dùng để chỉ bạn nam, 她 dùng để chỉ bạn nữ — hai chữ đọc GIỐNG NHAU (tā) nhưng viết KHÁC NHAU, con cần chú ý bộ thủ để phân biệt.'},
-      {role:'🌏 Tình huống 2 — Hỏi thăm quốc tịch bạn bè',
-       guide:'Con muốn biết một người bạn mới đến từ nước nào.',
-       structure:['他是哪国人？','他是中国人。'],
-       sample:'他是哪国人？他是中国人。',
-       sample_vn:'Anh ấy là người nước nào? Bạn ấy là người Trung Quốc.',
-       note:'哪 luôn đi kèm một danh từ phía sau nó (哪国) — không đứng một mình như 谁 hay 什么.'},
-      {role:'✅ Tình huống 3 — Xác nhận lại thông tin',
-       guide:'Con nghe nói một người là người Trung Quốc và muốn xác nhận lại.',
-       structure:['你是中国人吗？','我是中国人。'],
-       sample:'你是中国人吗？我是中国人。',
-       sample_vn:'Bạn là người Trung Quốc phải không? Mình là người Trung Quốc.',
-       note:'Thêm 吗 vào cuối câu khẳng định là cách nhanh nhất để XÁC NHẬN LẠI một thông tin — con đã học cấu trúc này ở Bài 2.'},
+      {role:'📷 Tình huống 1 — Ai trong ảnh?',
+       guide:'Bạn cho con xem ảnh một bạn gái con không quen. Con hỏi bạn ấy là ai.',
+       structure:['……是谁？'],
+       sample:'她是谁？',
+       sample_vn:'Bạn ấy là ai vậy?',
+       note:'他 dùng cho bạn trai, 她 dùng cho bạn gái — đọc giống nhau (tā), viết khác nhau.'},
+      {role:'🔎 Tình huống 2 — Tìm bạn ở lớp bên',
+       guide:'Cô nhờ con sang lớp bên tìm bạn Điềm Điềm. Con không biết bạn ấy. Con hỏi các bạn ở đó.',
+       structure:['谁是……？'],
+       sample:'谁是甜甜？',
+       sample_vn:'Bạn nào là Điềm Điềm?',
+       note:'谁 hỏi về người, đứng ở chỗ của người mình muốn biết.'},
+      {role:'🌏 Tình huống 3 — Cô giáo mới',
+       guide:'Lớp có cô giáo mới nói tiếng Trung rất hay. Con hỏi bạn: cô giáo là người nước nào?',
+       structure:['……是哪国人？'],
+       sample:'老师是哪国人？',
+       sample_vn:'Cô giáo là người nước nào?',
+       note:'哪 luôn đi cùng 国 khi hỏi quốc tịch: 哪国人.'},
     ],
   },
 };
@@ -196,45 +180,39 @@ var speakingData = {
 // LUYỆN DỊCH (Việt→Trung) — câu ví dụ của chính bài này
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:"Anh ấy là ai vậy?", zh:"他是谁？", py:"Tā shì shéi?"},
-  {vi:"Bạn ấy là người Trung Quốc.", zh:"他是中国人。", py:"Tā shì Zhōngguó rén."},
-  {vi:"Minh Minh là người nước nào?", zh:"明明是哪国人？", py:"Míngming shì nǎ guó rén?"},
+  {vi:"Cô ấy không phải Điềm Điềm.", zh:"她不是甜甜。", py:"Tā bú shì Tiántian."},
+  {vi:"Bạn có quen cô giáo không?", zh:"你认识老师吗？", py:"Nǐ rènshi lǎoshī ma?"},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung→Việt) — lời thoại trong bài, khác chiều Việt→Trung
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:"Đó là Minh Minh.", zh:"他是明明。", py:"Tā shì Míngming."},
-  {vi:"Cô ấy là ai vậy?", zh:"她是谁？", py:"Tā shì shéi?"},
-  {vi:"Đó là Điềm Điềm.", zh:"她是甜甜。", py:"Tā shì Tiántian."},
-  {vi:"Bạn là người Trung Quốc phải không?", zh:"你是中国人吗？", py:"Nǐ shì Zhōngguó rén ma?"},
-  {vi:"Mình là người Trung Quốc.", zh:"我是中国人。", py:"Wǒ shì Zhōngguó rén."},
+  {vi:"Chào bạn! Mình là Lạc Lạc.", zh:"你好！我是乐乐。", py:"Nǐ hǎo! Wǒ shì Lèle."},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
 // ══════════════════════════════════════════
 var listenData = [
-  {audio:'他是谁？他是明明。',
+  {audio:'老师，谁叫乐乐？',
    questions:[
-     {q:'Bạn nam đó là ai?',opts:['乐乐','明明','甜甜'],ans:1},
+     {q:'Bạn nhỏ hỏi cô giáo điều gì?',opts:['Lạc Lạc là người nước nào','Bạn nào tên là Lạc Lạc','Lạc Lạc có khỏe không'],ans:1,exp:'谁叫乐乐 = ai tên là Lạc Lạc.'},
    ]},
-  {audio:'她是谁？她是老师。',
+  {audio:'他不是明明。',
    questions:[
-     {q:'Người đó là ai?',opts:['Một bạn học','Cô giáo','Mẹ'],ans:1},
+     {q:'Bạn trai đó có phải Minh Minh không?',opts:['Phải','Không phải','Không biết'],ans:1,exp:'不是 = không phải: 他不是明明.'},
    ]},
-  {audio:'你是哪国人？我是中国人。',
+  {audio:'明明不认识甜甜。',
    questions:[
-     {q:'Bạn ấy là người nước nào?',opts:['Việt Nam','Trung Quốc','Mỹ'],ans:1},
+     {q:'Minh Minh có quen Điềm Điềm không?',opts:['Không quen','Có quen','Rất vui'],ans:0,exp:'不认识 = không quen.'},
    ]},
-  {audio:'他是中国人吗？他不是中国人。',
+  {audio:'甜甜认识乐乐吗？认识。',
    questions:[
-     {q:'Bạn nam đó có phải người Trung Quốc không?',opts:['Phải','Không phải','Không biết'],ans:1},
+     {q:'Điềm Điềm có quen Lạc Lạc không?',opts:['Không quen','Không nói','Có quen'],ans:2,exp:'Câu trả lời 认识 = có quen.'},
    ]},
-  {audio:'你好！我叫甜甜，我是中国人。你是谁？我是乐乐。',
+  {audio:'老师，甜甜是谁？',
    questions:[
-     {q:'Bạn nữ tên là gì?',opts:['甜甜','乐乐','明明'],ans:0},
-     {q:'Bạn nữ là người nước nào?',opts:['Việt Nam','Không nói','Trung Quốc'],ans:2},
+     {q:'Bạn nhỏ hỏi cô giáo điều gì?',opts:['Điềm Điềm là ai','Điềm Điềm là người nước nào','Điềm Điềm tên là gì'],ans:0,exp:'甜甜是谁 = Điềm Điềm là ai.'},
    ]},
 ];

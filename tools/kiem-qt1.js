@@ -83,6 +83,8 @@ CAP.hsk4v3 = {
   // dang tu trong bai khoa HSK4 la ghep cua tu da hoc: [dang, bai]
   them: [
     ['租房', 2],
+    // dang cua chinh diem ngu phap trong sach (来得及/来不及 · 首先……，其次……)
+    ['来不及', 4], ['其次', 14],
   ],
 };
 const cap = process.argv[2];

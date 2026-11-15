@@ -110,51 +110,42 @@ var dialogData = [
 
 // Điền từ — tình huống chỉ vật gần/xa và động vật
 var fillData = [
-  {pre:'Con muốn bạn nhìn con mèo của mình: “你',blank:'看',post:'，这是猫。”',hint:'(nhìn, xem)',ans:'看',exp:'你看 = bạn nhìn này.'},
-  {pre:'Con chỉ vào con mèo ở NGAY gần mình: “',blank:'这',post:'是猫。”',hint:'(này, đây — vật gần)',ans:'这',exp:'这 chỉ vật ở gần mình.'},
-  {pre:'Con chỉ vào con chó ở đằng XA: “',blank:'那',post:'是狗。”',hint:'(đó, kia — vật xa)',ans:'那',exp:'那 chỉ vật ở xa mình.'},
-  {pre:'Con nói nơi mình đang đứng có cá: “',blank:'这儿',post:'有鱼。”',hint:'(ở đây)',ans:'这儿',exp:'这儿 = ở đây (nơi mình đang đứng).'},
-  {pre:'Con hỏi bạn nơi xa có chim không: “',blank:'那儿',post:'有鸟吗？”',hint:'(ở đó, ở kia)',ans:'那儿',exp:'那儿 = ở đó, ở kia (nơi xa).'},
-  {pre:'Con khen con mèo: “猫真',blank:'小',post:'！”',hint:'(nhỏ, bé)',ans:'小',exp:'小 = nhỏ: 猫真小！'},
-  {pre:'Con khen con chó: “狗真',blank:'大',post:'！”',hint:'(to, lớn)',ans:'大',exp:'大 = to: 狗真大！'},
-  {pre:'Con xác nhận đó là con chó của mình: “那是我',blank:'的',post:'狗。”',hint:'(trợ từ sở hữu)',ans:'的',exp:'我的狗 = con chó của mình; 的 chỉ sở hữu.'},
+  {pre:'Con chỉ người phụ nữ đứng ngay cạnh mình, nói với cô giáo: “',blank:'这',post:'是我妈妈。”',hint:'(đây — ở gần)',ans:'这',exp:'Người/vật ở gần dùng 这: 这是我妈妈.'},
+  {pre:'Con chỉ bạn trai đứng xa ở sân trường: “',blank:'那',post:'是明明的哥哥。”',hint:'(đó, kia — ở xa)',ans:'那',exp:'Người/vật ở xa dùng 那: 那是明明的哥哥.'},
+  {pre:'Con kéo tay bạn: “Bạn nhìn kìa!” — “你',blank:'看',post:'，那是狗！”',hint:'(nhìn, xem)',ans:'看',exp:'你看 = bạn nhìn này, dùng để chỉ cho người khác thấy.'},
+  {pre:'Ở công viên, con thấy rất nhiều chim ngay cạnh mình: “',blank:'这儿',post:'有很多鸟。”',hint:'(ở đây)',ans:'这儿',exp:'这儿 = ở đây; nơi chốn + 有 + vật: 这儿有很多鸟.'},
+  {pre:'Con thấy một người đứng ở góc sân xa: “',blank:'那儿',post:'有一个人。”',hint:'(ở đó)',ans:'那儿',exp:'那儿 = ở đó (xa): 那儿有一个人.'},
+  {pre:'Bạn ôm một con mèo. Con hỏi: “这是你的',blank:'猫',post:'吗？”',hint:'(con mèo)',ans:'猫',exp:'猫 = con mèo.'},
+  {pre:'Nhà con không nuôi chó: “我家没有',blank:'狗',post:'。”',hint:'(con chó)',ans:'狗',exp:'狗 = con chó; 没有 = không có.'},
+  {pre:'Ở bể cá, những con cá bé xíu. Con nói: “这儿的',blank:'鱼',post:'真小！”',hint:'(con cá)',ans:'鱼',exp:'鱼 = con cá; 真小 = nhỏ thật.'},
 ];
 
-// Sắp xếp — câu về vật gần/xa và động vật
+// Sắp xếp — câu chỉ vật & con vật
 var sortData = [
-  {words:['这','是','猫','。'],ans:'这是猫。',audio:'这是猫。'},
-  {words:['那','是','狗','。'],ans:'那是狗。',audio:'那是狗。'},
-  {words:['猫','真','小','。'],ans:'猫真小。',audio:'猫真小。'},
-  {words:['狗','真','大','。'],ans:'狗真大。',audio:'狗真大。'},
-  {words:['这儿','有','鱼','。'],ans:'这儿有鱼。',audio:'这儿有鱼。'},
-  {words:['那儿','有','鸟','吗','？'],ans:'那儿有鸟吗？',audio:'那儿有鸟吗？'},
+  {words:['那','是','我','的','狗','。'],ans:'那是我的狗。',audio:'那是我的狗。'},
+  {words:['这儿','有','猫','吗','？'],ans:'这儿有猫吗？',audio:'这儿有猫吗？'},
+  {words:['那儿','的','鸟','很','多','。'],ans:'那儿的鸟很多。',audio:'那儿的鸟很多。'},
+  {words:['这','是','甜甜','的','鸟','。'],ans:'这是甜甜的鸟。',audio:'这是甜甜的鸟。'},
+  {words:['那','不','是','狗','，','那','是','猫','！'],ans:'那不是狗，那是猫！',audio:'那不是狗，那是猫！'},
 ];
 
 var matchData = [
-  {left:'这是什么？',right:'这是猫。'},
-  {left:'那是狗吗？',right:'那是狗。'},
-  {left:'这儿有鱼吗？',right:'这儿有鱼。'},
-  {left:'那儿有鸟吗？',right:'那儿有鸟。'},
-  {left:'猫大吗？',right:'猫很小。'},
+  {left:'这是什么？',right:'这是鱼。'},
+  {left:'那是狗吗？',right:'不是，那是猫。'},
+  {left:'这儿有鸟吗？',right:'没有。'},
+  {left:'那是谁？',right:'那是我姐姐。'},
+  {left:'你看，那是什么？',right:'是鸟！'},
+  {left:'你有猫吗？',right:'有，我的猫很小。'},
 ];
 
 // Trắc nghiệm — không audio
 var mcData = [
-  {q:'"这" nghĩa là gì?',opts:['này, đây (vật gần)','đó, kia (vật xa)','nhìn, xem','con mèo'],ans:0,exp:'这 (zhè) chỉ người/vật ở GẦN: 这是猫.'},
-  {q:'"那" nghĩa là gì?',opts:['đó, kia (vật xa)','này, đây (vật gần)','con chó','con cá'],ans:0,exp:'那 (nà) chỉ người/vật ở XA: 那是狗.'},
-  {q:'"看" nghĩa là gì?',opts:['nhìn, xem','nghe','nói','viết'],ans:0,exp:'看 (kàn) = nhìn, xem — chữ có bộ 目 (mắt).'},
-  {q:'"猫" nghĩa là gì?',opts:['con mèo','con chó','con cá','con chim'],ans:0,exp:'猫 (māo) là con mèo.'},
-  {q:'"狗" nghĩa là gì?',opts:['con chó','con mèo','con chim','con cá'],ans:0,exp:'狗 (gǒu) là con chó.'},
-  {q:'"鱼" nghĩa là gì?',opts:['con cá','con chim','con mèo','con chó'],ans:0,exp:'鱼 (yú) là con cá.'},
-  {q:'"鸟" nghĩa là gì?',opts:['con chim','con cá','con chó','con mèo'],ans:0,exp:'鸟 (niǎo) là con chim.'},
-  {q:'"这儿" dùng để chỉ đâu?',opts:['nơi GẦN người nói (ở đây)','nơi XA người nói (ở đó)','một loài vật','một con số'],ans:0,exp:'这儿 (zhèr) = ở đây, nơi gần người nói.'},
-  {q:'Câu nào ĐÚNG khi nói "Đó là con chó."?',opts:['那是狗。','这是狗。','狗是那。','是那狗。'],ans:0,exp:'Vật ở xa dùng 那: 那 + 是 + 狗。'},
-  {q:'"那儿" dùng để chỉ đâu?',opts:['nơi XA người nói (ở đó)','nơi GẦN người nói (ở đây)','một con vật','một màu sắc'],ans:0,exp:'那儿 (nàr) = ở đó, ở kia — nơi xa người nói.'},
-  {q:'Câu nào ĐÚNG khi nói "Ở đây có cá."?',opts:['这儿有鱼。','鱼有这儿。','有这儿鱼。','这儿鱼有。'],ans:0,exp:'Nơi chốn + 有 + vật: 这儿有鱼 = ở đây có cá.'},
-  {q:'Câu nào ĐÚNG khi khen "Con mèo nhỏ thật!"?',opts:['猫真小！','真猫小！','小猫真！','猫小真！'],ans:0,exp:'Trật tự: 猫 + 真 + 小 (chủ ngữ + 真 + tính từ).'},
-  {q:'"这" và "那" khác nhau ở đâu?',opts:['这 chỉ vật gần, 那 chỉ vật xa','cả hai đều chỉ vật gần','cả hai đều chỉ vật xa','không khác nhau'],ans:0,exp:'这 dùng cho vật gần, 那 dùng cho vật xa.'},
-  {q:'Muốn hỏi "Đó có phải con chó không?", con nói gì?',opts:['那是狗吗？','那是狗。','这是狗吗？','狗是那吗？'],ans:0,exp:'Thêm 吗 vào cuối câu 那是狗 để hỏi: 那是狗吗？'},
-  {q:'"看" dùng trong câu nào?',opts:['你看，这是猫。','你猫，这是看。','看你这是猫。','这看你是猫。'],ans:0,exp:'你看 (bạn nhìn này) đứng đầu câu để gọi bạn chú ý.'},
+  {q:'Con đang ôm con mèo trong lòng, nói với bạn: “Đây là mèo của mình.”',opts:['这是我的猫。','那是我的猫。','这是猫我的。','我的这是猫。'],ans:0,exp:'Mèo đang ở ngay trong lòng (gần) → 这; người sở hữu + 的 + vật: 我的猫.'},
+  {q:'Con thấy trên cây xa xa có con chim. Con nói:',opts:['那儿有鸟。','那儿是鸟有。','有那儿鸟。','那儿鸟有。'],ans:0,exp:'Nơi chốn + 有 + vật: 那儿有鸟.'},
+  {q:'Bạn chỉ con vật ở xa hỏi đó có phải chó không. Không phải, đó là mèo. Con đáp:',opts:['不是，是猫。','没有，是猫。','不，猫是。','不是，那猫。'],ans:0,exp:'Phủ định của 是 là 不是; 没有 là phủ định của 有.'},
+  {q:'Con muốn bạn nhìn con cá: “Bạn xem, cá to thật!”',opts:['你看，鱼真大！','你看，鱼大真！','看你，鱼真大！','你看，真鱼大！'],ans:0,exp:'你看 = bạn xem; 真 đứng trước tính từ: 真大.'},
+  {q:'Con muốn nói: “Ở đây có mèo.”',opts:['这儿有猫。','这儿是有猫。','有猫这儿。','这儿猫有。'],ans:0,exp:'Nói "ở đâu có gì" dùng 这儿 + 有 + vật, không thêm 是.'},
+  {q:'Bạn có con chó rất to. Con khen:',opts:['你的狗真大！','你狗的真大！','你的真狗大！','你的狗大真！'],ans:0,exp:'你的狗 (chó của bạn) + 真大 (to thật).'},
 ];
 
 var speakingData = {
@@ -162,39 +153,31 @@ var speakingData = {
     intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy nhé!',
     models:[
       {zh:'你看，这是猫。',py:'Nǐ kàn, zhè shì māo.',vn:'Bạn xem, đây là con mèo.'},
-      {zh:'那是狗。',py:'Nà shì gǒu.',vn:'Đó là con chó.'},
-      {zh:'猫真小！',py:'Māo zhēn xiǎo!',vn:'Con mèo nhỏ thật!'},
-      {zh:'这儿有鱼。',py:'Zhèr yǒu yú.',vn:'Ở đây có cá.'},
+      {zh:'那是狗吗？',py:'Nà shì gǒu ma?',vn:'Đó có phải con chó không?'},
       {zh:'那儿有鸟吗？',py:'Nàr yǒu niǎo ma?',vn:'Ở đó có chim không?'},
     ],
   },
   t2:{
     intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu con tạo được.',
     drills:[
-      {frame:'这是＿＿。',frame_py:'Zhè shì ___.',vn:'Đây là ＿＿.',options:['猫','狗','鱼'],samples:['这是猫。','这是狗。','这是鱼。']},
+      {frame:'这是＿＿。',frame_py:'Zhè shì ___.',vn:'Đây là ＿＿.',options:['鸟','鱼'],samples:['这是鸟。','这是鱼。']},
     ],
   },
   t3:{
     intro:'Không nhìn câu mẫu, con hãy tưởng tượng mình đang ở trong tình huống thật và tự nói câu phù hợp nhé!',
     tasks:[
-      {role:'🐱 Tình huống 1 — Giới thiệu con mèo của mình',
-       guide:'Con chỉ vào con mèo đang đứng ngay cạnh mình và giới thiệu cho bạn xem.',
-       structure:['你看，这是猫。','这是我的猫。'],
-       sample:'你看，这是猫。这是我的猫。',
-       sample_vn:'Bạn xem, đây là con mèo. Đây là con mèo của mình.',
-       note:'这 dùng khi vật ở NGAY gần mình; nếu vật ở xa thì phải đổi thành 那.'},
-      {role:'🐶 Tình huống 2 — Hỏi về con vật ở đằng xa',
-       guide:'Con nhìn thấy một con vật ở đằng xa và hỏi bạn xem đó là con gì.',
-       structure:['那是狗吗？','那是狗。','狗真大！'],
-       sample:'那是狗吗？那是狗。狗真大！',
-       sample_vn:'Đó có phải con chó không? Đó là con chó. Con chó to thật!',
-       note:'那 dùng cho vật ở XA; 吗 đặt cuối câu để hỏi có/không.'},
-      {role:'🐟 Tình huống 3 — Tả nơi có cá và chim',
-       guide:'Con nói cho bạn biết chỗ mình đứng có cá, rồi hỏi xem đằng kia có chim không.',
-       structure:['这儿有鱼。','那儿有鸟吗？','有，那儿有鸟。'],
-       sample:'这儿有鱼。那儿有鸟吗？有，那儿有鸟。',
-       sample_vn:'Ở đây có cá. Ở đó có chim không? Có, ở đó có chim.',
-       note:'这儿 = ở đây (gần); 那儿 = ở đó (xa) — luôn đi kèm 有 để nói "có gì ở đâu".'},
+      {role:'🐱 Tình huống 1 — Khoe con vật của mình',
+       guide:'Con có một con mèo bé xíu. Con khoe với bạn.',
+       structure:['我的……真……！'],
+       sample:'我的猫真小！',
+       sample_vn:'Mèo của mình nhỏ thật!',
+       note:'Có thể thay 猫 bằng 狗, 鱼, 鸟 và đổi tính từ 大 / 小.'},
+      {role:'🐶 Tình huống 2 — Con chó của ai?',
+       guide:'Ở sân trường xa xa có một con chó. Con hỏi bạn đó là chó của ai.',
+       structure:['那是谁的……？'],
+       sample:'那是谁的狗？',
+       sample_vn:'Đó là chó của ai?',
+       note:'Ở xa dùng 那; 谁的 = của ai.'},
     ],
   },
 };
@@ -203,48 +186,37 @@ var speakingData = {
 // LUYỆN DỊCH (Việt→Trung) — câu ví dụ của chính bài này
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:"Đây là con mèo.", zh:"这是猫。", py:"Zhè shì māo."},
-  {vi:"Đó là con chó.", zh:"那是狗。", py:"Nà shì gǒu."},
-  {vi:"Bạn xem, đây là con cá.", zh:"你看，这是鱼。", py:"Nǐ kàn, zhè shì yú."},
-  {vi:"Ở đây có cá.", zh:"这儿有鱼。", py:"Zhèr yǒu yú."},
-  {vi:"Ở đó có chim.", zh:"那儿有鸟。", py:"Nàr yǒu niǎo."},
-  {vi:"Con mèo nhỏ thật.", zh:"猫真小。", py:"Māo zhēn xiǎo."},
+  {vi:"Bạn xem, đó là chim!", zh:"你看，那是鸟！", py:"Nǐ kàn, nà shì niǎo!"},
+  {vi:"Chó của mình rất nhỏ.", zh:"我的狗很小。", py:"Wǒ de gǒu hěn xiǎo."},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung→Việt) — lời thoại trong bài, khác chiều Việt→Trung
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:"Bạn xem, đây là con mèo.", zh:"你看，这是猫。", py:"Nǐ kàn, zhè shì māo."},
-  {vi:"Con mèo nhỏ thật!", zh:"猫真小！", py:"Māo zhēn xiǎo!"},
-  {vi:"Đây là con mèo của mình.", zh:"这是我的猫。", py:"Zhè shì wǒ de māo."},
-  {vi:"Đó có phải con chó không?", zh:"那是狗吗？", py:"Nà shì gǒu ma?"},
-  {vi:"Con chó to thật!", zh:"狗真大！", py:"Gǒu zhēn dà!"},
+  {vi:"Đây là mèo của ai?", zh:"这是谁的猫？", py:"Zhè shì shéi de māo?"},
+  {vi:"Chó ở đây nhiều thật!", zh:"这儿的狗真多！", py:"Zhèr de gǒu zhēn duō!"},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
 // ══════════════════════════════════════════
 var listenData = [
-  {audio:'你看，这是我的猫。猫真小！',
+  {audio:'你看，猫真小！',
    questions:[
-     {q:'Bạn nhỏ cho xem con gì?',opts:['Con chó','Con mèo','Con cá'],ans:1},
+     {q:'Con mèo thế nào?',opts:['To','Nhỏ','Không nói'],ans:1,exp:'猫真小 = con mèo nhỏ thật.'},
    ]},
-  {audio:'那是什么？那是鸟。',
+  {audio:'你家有狗吗？没有，我家有猫。',
    questions:[
-     {q:'Ở đằng xa là con gì?',opts:['鸟','鱼','狗'],ans:0},
+     {q:'Nhà bạn nhỏ nuôi con gì?',opts:['Chó','Mèo','Cá'],ans:1,exp:'我家有猫 = nhà mình có mèo; 没有 = không có chó.'},
    ]},
-  {audio:'这儿有鱼吗？这儿没有鱼，那儿有鱼。',
+  {audio:'那儿有很多鱼。',
    questions:[
-     {q:'Ở đâu có cá?',opts:['Ở đây','Ở đằng kia','Không có ở đâu'],ans:1},
+     {q:'Ở đó có gì?',opts:['Nhiều cá','Nhiều chim','Nhiều mèo'],ans:0,exp:'很多鱼 = rất nhiều cá.'},
    ]},
-  {audio:'那是你的狗吗？不是，那是我哥哥的狗。',
+  {audio:'甜甜的狗很大，她的猫很小。',
    questions:[
-     {q:'Con chó là của ai?',opts:['Của bạn nhỏ','Của anh trai bạn nhỏ','Của cô giáo'],ans:1},
-   ]},
-  {audio:'你看，那儿有猫，这儿有狗。',
-   questions:[
-     {q:'Con mèo ở đâu?',opts:['Ở đây','Ở đằng kia','Trong nhà'],ans:1},
-     {q:'Con chó ở đâu?',opts:['Ở đây','Ở đằng kia','Ở trường'],ans:0},
+     {q:'Con chó của Điềm Điềm thế nào?',opts:['Nhỏ','Không nói','To'],ans:2,exp:'甜甜的狗很大 = chó của Điềm Điềm rất to.'},
+     {q:'Còn con mèo thì sao?',opts:['To','Nhỏ','Không có mèo'],ans:1,exp:'她的猫很小 = mèo của bạn ấy rất nhỏ.'},
    ]},
 ];

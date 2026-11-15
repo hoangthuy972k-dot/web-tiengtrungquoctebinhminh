@@ -106,91 +106,78 @@ var dialogData = [
 
 // Điền từ — tình huống ngày tháng và sở thích
 var fillData = [
-  {pre:'Con hỏi sinh nhật bạn: “你的',blank:'生日',post:'是几月几号？”',hint:'(sinh nhật)',ans:'生日',exp:'生日 = sinh nhật.'},
-  {pre:'Con nói sinh nhật mình vào tháng 5: “我的生日是五',blank:'月',post:'一号。”',hint:'(tháng)',ans:'月',exp:'五月 = tháng năm; 月 là tháng.'},
-  {pre:'Con nói rõ ngày: “我的生日是五月一',blank:'号',post:'。”',hint:'(ngày, số ngày trong tháng)',ans:'号',exp:'一号 = ngày mùng 1; 号 chỉ ngày.'},
-  {pre:'Con hỏi hôm nay là ngày mấy: “',blank:'今天',post:'是几号？”',hint:'(hôm nay)',ans:'今天',exp:'今天 = hôm nay.'},
-  {pre:'Con hỏi ngày mai có phải sinh nhật bạn không: “',blank:'明天',post:'是你的生日吗？”',hint:'(ngày mai)',ans:'明天',exp:'明天 = ngày mai.'},
-  {pre:'Con hỏi bạn có thích mèo không: “你',blank:'喜欢',post:'猫吗？”',hint:'(thích)',ans:'喜欢',exp:'喜欢 = thích: 你喜欢猫吗？'},
-  {pre:'Con nói mình cũng thích chó: “我也喜欢',blank:'狗',post:'。”',hint:'(con chó)',ans:'狗',exp:'狗 = con chó (ôn Bài 7).'},
-  {pre:'Con nói hôm nay là ngày 3: “今天是三',blank:'号',post:'。”',hint:'(ngày)',ans:'号',exp:'三号 = ngày mùng 3.'},
+  {pre:'Cả nhà chuẩn bị bánh cho mẹ: “今天是妈妈的',blank:'生日',post:'！”',hint:'(sinh nhật)',ans:'生日',exp:'生日 = sinh nhật: 妈妈的生日 = sinh nhật mẹ.'},
+  {pre:'Sinh nhật anh trai là ngày 6 tháng 7: “哥哥的生日是七',blank:'月',post:'六号。”',hint:'(tháng)',ans:'月',exp:'Tháng đứng trước ngày: 七月六号 = ngày 6 tháng 7.'},
+  {pre:'Hôm nay là Giáng sinh, ngày 25 tháng 12: “今天是十二月二十五',blank:'号',post:'。”',hint:'(ngày)',ans:'号',exp:'Số + 号 = ngày: 二十五号 = ngày 25.'},
+  {pre:'Hôm nay là thứ Sáu: “',blank:'今天',post:'是星期五。”',hint:'(hôm nay)',ans:'今天',exp:'今天 = hôm nay; 星期五 = thứ Sáu.'},
+  {pre:'Ngày mai là sinh nhật Điềm Điềm: “',blank:'明天',post:'是甜甜的生日。”',hint:'(ngày mai)',ans:'明天',exp:'明天 = ngày mai.'},
+  {pre:'Con quên mất hôm nay thứ mấy, con hỏi mẹ: “今天',blank:'星期',post:'几？”',hint:'(tuần — thứ)',ans:'星期',exp:'Hỏi thứ: 星期几？ 星期一 là thứ Hai.'},
+  {pre:'Con rất thích trường mình: “我',blank:'喜欢',post:'我的学校。”',hint:'(thích)',ans:'喜欢',exp:'喜欢 + người/vật = thích: 我喜欢我的学校.'},
 ];
 
-// Sắp xếp — câu về ngày tháng và sở thích
+// Sắp xếp — câu ngày tháng & sở thích
 var sortData = [
-  {words:['今天','是','三','号','。'],ans:'今天是三号。',audio:'今天是三号。'},
-  {words:['明天','是','你','的','生日','吗','？'],ans:'明天是你的生日吗？',audio:'明天是你的生日吗？'},
-  {words:['我','的','生日','是','五','月','一','号','。'],ans:'我的生日是五月一号。',audio:'我的生日是五月一号。'},
-  {words:['你','喜欢','猫','吗','？'],ans:'你喜欢猫吗？',audio:'你喜欢猫吗？'},
-  {words:['我','喜欢','狗','。'],ans:'我喜欢狗。',audio:'我喜欢狗。'},
-  {words:['我','也','喜欢','猫','。'],ans:'我也喜欢猫。',audio:'我也喜欢猫。'},
+  {words:['你','喜欢','狗','吗','？'],ans:'你喜欢狗吗？',audio:'你喜欢狗吗？'},
+  {words:['我','的','生日','不','是','明天','。'],ans:'我的生日不是明天。',audio:'我的生日不是明天。'},
+  {words:['明天','是','几','月','几','号','？'],ans:'明天是几月几号？',audio:'明天是几月几号？'},
+  {words:['妹妹','喜欢','鱼','，','不','喜欢','鸟','。'],ans:'妹妹喜欢鱼，不喜欢鸟。',audio:'妹妹喜欢鱼，不喜欢鸟。'},
+  {words:['六月','一','号','是','星期','几','？'],ans:'六月一号是星期几？',audio:'六月一号是星期几？'},
 ];
 
 var matchData = [
-  {left:'你的生日是几月几号？',right:'我的生日是五月一号。'},
-  {left:'今天是几号？',right:'今天是三号。'},
-  {left:'明天是你的生日吗？',right:'不是，我的生日是五月一号。'},
-  {left:'你喜欢猫吗？',right:'我喜欢猫。'},
-  {left:'你喜欢狗吗？',right:'我也喜欢狗。'},
+  {left:'你的生日是几月几号？',right:'五月一号。'},
+  {left:'今天星期几？',right:'星期三。'},
+  {left:'你喜欢猫吗？',right:'喜欢！'},
+  {left:'明天是几号？',right:'明天是八号。'},
+  {left:'今天是你的生日吗？',right:'不是，明天是。'},
+  {left:'你喜欢什么？',right:'我喜欢狗。'},
 ];
 
 // Trắc nghiệm — không audio
 var mcData = [
-  {q:'"生日" nghĩa là gì?',opts:['sinh nhật','ngày mai','hôm nay','tuần'],ans:0,exp:'生日 (shēngrì) là sinh nhật.'},
-  {q:'"月" nghĩa là gì?',opts:['tháng','ngày','tuần','năm'],ans:0,exp:'月 (yuè) là tháng: 五月 = tháng năm.'},
-  {q:'"号" (trong ngày tháng) nghĩa là gì?',opts:['ngày (số)','tháng','tuần','giờ'],ans:0,exp:'号 (hào) chỉ ngày trong tháng: 一号 = ngày mùng 1.'},
-  {q:'"今天" nghĩa là gì?',opts:['hôm nay','ngày mai','hôm qua','tuần này'],ans:0,exp:'今天 (jīntiān) là hôm nay.'},
-  {q:'"明天" nghĩa là gì?',opts:['ngày mai','hôm nay','hôm qua','sinh nhật'],ans:0,exp:'明天 (míngtiān) là ngày mai.'},
-  {q:'"星期" nghĩa là gì?',opts:['tuần','tháng','ngày','năm'],ans:0,exp:'星期 (xīngqī) là tuần: 一个星期 = một tuần.'},
-  {q:'"喜欢" nghĩa là gì?',opts:['thích','ghét','muốn','biết'],ans:0,exp:'喜欢 (xǐhuan) = thích.'},
-  {q:'Câu nào ĐÚNG khi hỏi sinh nhật bạn?',opts:['你的生日是几月几号？','你生日的是几月几号？','几月几号是你？','你是几月几号生日？'],ans:0,exp:'Hỏi sinh nhật: 你的 + 生日 + 是 + 几月几号？ — 的 đứng giữa 你 và 生日.'},
-  {q:'"五月一号" nghĩa là gì?',opts:['ngày 1 tháng 5','ngày 5 tháng 1','tháng 5','ngày 1'],ans:0,exp:'Tiếng Trung nói tháng trước, ngày sau: 五月一号 = ngày 1 tháng 5.'},
-  {q:'Câu nào ĐÚNG khi nói "Mình cũng thích chó."?',opts:['我也喜欢狗。','我喜欢也狗。','也我喜欢狗。','我狗也喜欢。'],ans:0,exp:'也 đứng trước động từ 喜欢: 我也喜欢狗。'},
-  {q:'Câu nào ĐÚNG khi hỏi "Hôm nay là ngày mấy?"?',opts:['今天是几号？','今天几是号？','几号今天是？','是今天几号？'],ans:0,exp:'Trật tự: 今天 + 是 + 几号？'},
-  {q:'"今天" và "明天" khác nhau ở đâu?',opts:['今天 là hôm nay, 明天 là ngày mai','cả hai đều là hôm nay','cả hai đều là ngày mai','không khác nhau'],ans:0,exp:'今天 là hôm nay, 明天 là ngày mai.'},
-  {q:'Muốn nói ngày tháng (ví dụ ngày 1 tháng 5), con cần hai từ nào?',opts:['月, 号','喜欢, 星期','明天, 今天','生日, 星期'],ans:0,exp:'Nói ngày tháng cần 月 (tháng) và 号 (ngày): 五月一号.'},
-  {q:'"星期" thường đi cùng số từ để chỉ điều gì?',opts:['thứ trong tuần','tháng trong năm','giờ trong ngày','ngày trong tháng'],ans:0,exp:'星期 + số chỉ thứ trong tuần: 星期一 = thứ Hai.'},
-  {q:'Câu nào ĐÚNG khi nói "Mình thích mèo."?',opts:['我喜欢猫。','我猫喜欢。','喜欢我猫。','猫我喜欢。'],ans:0,exp:'Trật tự: 我 + 喜欢 + 猫 (chủ ngữ + động từ + tân ngữ).'},
+  {q:'Con muốn nói: “Hôm nay là ngày 3 tháng 8.”',opts:['今天是八月三号。','今天是三号八月。','今天是三月八号。','今天八月是三号。'],ans:0,exp:'Tiếng Trung nói tháng trước, ngày sau: 八月三号 — ngược với tiếng Việt "ngày 3 tháng 8".'},
+  {q:'Con muốn hỏi: “Sinh nhật bố là ngày mấy tháng mấy?”',opts:['爸爸的生日是几月几号？','爸爸的生日是几号几月？','爸爸的生日几月几号是？','爸爸的生日是什么月什么号？'],ans:0,exp:'Hỏi ngày tháng: 几月几号 (tháng trước, ngày sau), dùng 几 chứ không dùng 什么.'},
+  {q:'Con thích chim, cũng thích cá. Con nói:',opts:['我喜欢鸟，也喜欢鱼。','我喜欢鸟，喜欢也鱼。','我喜欢鸟，也鱼喜欢。','我也喜欢鸟，喜欢鱼也。'],ans:0,exp:'也 đứng trước động từ: 也喜欢鱼. Không đặt 也 sau động từ hay cuối câu.'},
+  {q:'Bạn hỏi ngày mai có phải sinh nhật con không. Không phải. Con đáp:',opts:['不是。','没有。','不有。','不在。'],ans:0,exp:'Câu hỏi có 是 → trả lời phủ định bằng 不是.'},
+  {q:'Hôm nay là 星期三 (thứ Tư). Ngày mai là:',opts:['星期四','星期五','星期三','星期六'],ans:0,exp:'星期三 + 1 = 星期四 (thứ Năm). Nhớ: 星期一 là thứ Hai, nên số luôn nhỏ hơn "thứ" trong tiếng Việt 1 đơn vị.'},
+  {q:'Con muốn nói: “Mình không thích chó.”',opts:['我不喜欢狗。','我喜欢不狗。','不我喜欢狗。','我不是喜欢狗。'],ans:0,exp:'不 đứng ngay trước 喜欢: 我不喜欢狗. Không thêm 是.'},
 ];
 
 var speakingData = {
   t1:{
     intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy nhé!',
     models:[
-      {zh:'你的生日是几月几号？',py:'Nǐ de shēngrì shì jǐ yuè jǐ hào?',vn:'Sinh nhật bạn là ngày mấy tháng mấy?'},
-      {zh:'我的生日是五月一号。',py:'Wǒ de shēngrì shì wǔ yuè yī hào.',vn:'Sinh nhật mình là ngày 1 tháng 5.'},
-      {zh:'今天是三号。',py:'Jīntiān shì sān hào.',vn:'Hôm nay là ngày 3.'},
-      {zh:'你喜欢猫吗？',py:'Nǐ xǐhuan māo ma?',vn:'Bạn có thích mèo không?'},
-      {zh:'我喜欢猫，也喜欢狗。',py:'Wǒ xǐhuan māo, yě xǐhuan gǒu.',vn:'Mình thích mèo, cũng thích chó.'},
+      {zh:'今天是几号？',py:'Jīntiān shì jǐ hào?',vn:'Hôm nay là ngày mấy?'},
+      {zh:'明天是你的生日吗？',py:'Míngtiān shì nǐ de shēngrì ma?',vn:'Ngày mai là sinh nhật bạn à?'},
     ],
   },
   t2:{
     intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu con tạo được.',
     drills:[
-      {frame:'我喜欢＿＿。',frame_py:'Wǒ xǐhuan ___.',vn:'Mình thích ＿＿.',options:['猫','狗','鱼'],samples:['我喜欢猫。','我喜欢狗。','我喜欢鱼。']},
+      {frame:'今天是＿＿号。',frame_py:'Jīntiān shì ___ hào.',vn:'Hôm nay là ngày ＿＿.',options:['九','十'],samples:['今天是九号。','今天是十号。']},
     ],
   },
   t3:{
     intro:'Không nhìn câu mẫu, con hãy tưởng tượng mình đang ở trong tình huống thật và tự nói câu phù hợp nhé!',
     tasks:[
-      {role:'🎂 Tình huống 1 — Hỏi sinh nhật bạn',
-       guide:'Con muốn biết sinh nhật của bạn cùng lớp vào ngày nào.',
-       structure:['你的生日是几月几号？','我的生日是＿＿月＿＿号。'],
-       sample:'你的生日是几月几号？我的生日是五月一号。',
-       sample_vn:'Sinh nhật bạn là ngày mấy tháng mấy? Sinh nhật mình là ngày 1 tháng 5.',
-       note:'几月几号 luôn đi liền nhau khi hỏi đầy đủ cả tháng và ngày.'},
-      {role:'📆 Tình huống 2 — Hỏi hôm nay và ngày mai',
-       guide:'Con hỏi hôm nay là ngày mấy, rồi hỏi xem ngày mai có phải sinh nhật bạn không.',
-       structure:['今天是几号？','今天是＿＿号。','明天是你的生日吗？'],
-       sample:'今天是几号？今天是三号。明天是你的生日吗？',
-       sample_vn:'Hôm nay là ngày mấy? Hôm nay là ngày 3. Ngày mai là sinh nhật bạn à?',
-       note:'今天 = hôm nay, 明天 = ngày mai — hai từ hay dùng cùng nhau khi nói về thời gian gần.'},
-      {role:'😍 Tình huống 3 — Chia sẻ sở thích với bạn',
-       guide:'Con hỏi bạn có thích một con vật nào đó không, rồi chia sẻ con cũng thích những gì.',
-       structure:['你喜欢猫吗？','我喜欢猫，也喜欢＿＿。'],
-       sample:'你喜欢猫吗？我喜欢猫，也喜欢狗。',
-       sample_vn:'Bạn có thích mèo không? Mình thích mèo, cũng thích chó.',
-       note:'喜欢 + danh từ dùng để nói mình thích điều gì; dùng 也喜欢 để thêm một điều thích nữa.'},
+      {role:'🎂 Tình huống 1 — Sinh nhật của con',
+       guide:'Bạn hỏi sinh nhật con là ngày nào. Con nói ngày sinh nhật thật của mình.',
+       structure:['我的生日是……月……号。'],
+       sample:'我的生日是十二月二十号。',
+       sample_vn:'Sinh nhật mình là ngày 20 tháng 12.',
+       note:'Nói tháng trước, ngày sau: ……月……号.'},
+      {role:'🐶 Tình huống 2 — Em thích con gì?',
+       guide:'Con kể với cô giáo em gái con thích con vật nào.',
+       structure:['我妹妹喜欢……'],
+       sample:'我妹妹喜欢狗。',
+       sample_vn:'Em gái con thích chó.',
+       note:'喜欢 + con vật / đồ vật mình thích.'},
+      {role:'📅 Tình huống 3 — Sinh nhật vào thứ mấy?',
+       guide:'Con muốn biết năm nay sinh nhật bạn rơi vào thứ mấy.',
+       structure:['你的生日是星期几？'],
+       sample:'你的生日是星期几？',
+       sample_vn:'Sinh nhật bạn vào thứ mấy?',
+       note:'星期 + 几 để hỏi thứ; trả lời 星期一, 星期二……'},
     ],
   },
 };
@@ -199,47 +186,37 @@ var speakingData = {
 // LUYỆN DỊCH (Việt→Trung) — câu ví dụ của chính bài này
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:"Sinh nhật bạn là ngày mấy tháng mấy?", zh:"你的生日是几月几号？", py:"Nǐ de shēngrì shì jǐ yuè jǐ hào?"},
-  {vi:"Sinh nhật mình là ngày 1 tháng 5.", zh:"我的生日是五月一号。", py:"Wǒ de shēngrì shì wǔ yuè yī hào."},
-  {vi:"Hôm nay là ngày 3.", zh:"今天是三号。", py:"Jīntiān shì sān hào."},
-  {vi:"Ngày mai là sinh nhật bạn à?", zh:"明天是你的生日吗？", py:"Míngtiān shì nǐ de shēngrì ma?"},
-  {vi:"một tuần", zh:"一个星期", py:"yí ge xīngqī"},
-  {vi:"Mình thích mèo.", zh:"我喜欢猫。", py:"Wǒ xǐhuan māo."},
+  {vi:"Sinh nhật cô giáo là tháng mấy?", zh:"老师的生日是几月？", py:"Lǎoshī de shēngrì shì jǐ yuè?"},
+  {vi:"Ngày 1 tháng 6 mình không đi học.", zh:"六月一号我不去学校。", py:"Liù yuè yī hào wǒ bú qù xuéxiào."},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung→Việt) — lời thoại trong bài, khác chiều Việt→Trung
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:"Hôm nay là ngày mấy?", zh:"今天是几号？", py:"Jīntiān shì jǐ hào?"},
-  {vi:"Không phải, sinh nhật mình là ngày 1 tháng 5.", zh:"不是，我的生日是五月一号。", py:"Bú shì, wǒ de shēngrì shì wǔ yuè yī hào."},
-  {vi:"Bạn có thích mèo không?", zh:"你喜欢猫吗？", py:"Nǐ xǐhuan māo ma?"},
-  {vi:"Mình thích mèo, cũng thích chó.", zh:"我喜欢猫，也喜欢狗。", py:"Wǒ xǐhuan māo, yě xǐhuan gǒu."},
+  {vi:"Mẹ mình thích chim.", zh:"我妈妈喜欢鸟。", py:"Wǒ māma xǐhuan niǎo."},
+  {vi:"Ngày mai là thứ Hai à?", zh:"明天是星期一吗？", py:"Míngtiān shì xīngqīyī ma?"},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
 // ══════════════════════════════════════════
 var listenData = [
-  {audio:'你的生日是几月几号？我的生日是八月九号。',
+  {audio:'我的生日是三月十号。',
    questions:[
-     {q:'Sinh nhật bạn ấy là ngày nào?',opts:['Ngày 9 tháng 8','Ngày 8 tháng 9','Ngày 1 tháng 5'],ans:0},
+     {q:'Sinh nhật bạn nhỏ là ngày nào?',opts:['Ngày 10 tháng 3','Ngày 3 tháng 10','Ngày 13 tháng 3'],ans:0,exp:'三月十号 = tháng 3, ngày 10.'},
    ]},
-  {audio:'今天是几号？今天是十号。明天是我的生日！',
+  {audio:'明天星期六，我们不去学校。',
    questions:[
-     {q:'Hôm nay là ngày mấy?',opts:['十号','九号','三号'],ans:0},
-     {q:'Khi nào là sinh nhật bạn ấy?',opts:['Hôm nay','Ngày mai','Tuần sau'],ans:1},
+     {q:'Ngày mai là thứ mấy?',opts:['Thứ Sáu','Thứ Bảy','Chủ nhật'],ans:1,exp:'星期六 = thứ Bảy.'},
+     {q:'Ngày mai các bạn có đi học không?',opts:['Có','Không nói','Không'],ans:2,exp:'不去学校 = không đi học.'},
    ]},
-  {audio:'你喜欢狗吗？我不喜欢狗，我喜欢猫。',
+  {audio:'甜甜喜欢猫吗？她喜欢。',
    questions:[
-     {q:'Bạn ấy thích con gì?',opts:['狗','猫','鱼'],ans:1},
+     {q:'Điềm Điềm có thích mèo không?',opts:['Có','Không','Không nói'],ans:0,exp:'她喜欢 = bạn ấy thích.'},
    ]},
-  {audio:'今天是我妈妈的生日。我很高兴！',
+  {audio:'妈妈的生日是明天。',
    questions:[
-     {q:'Hôm nay là sinh nhật của ai?',opts:['Bố','Mẹ','Bạn ấy'],ans:1},
-   ]},
-  {audio:'明天是星期六，我去商店。',
-   questions:[
-     {q:'Ngày mai là thứ mấy?',opts:['Thứ Sáu','Thứ Bảy','Chủ nhật'],ans:1},
+     {q:'Ngày mai là sinh nhật của ai?',opts:['Của bố','Của mẹ','Của bạn nhỏ'],ans:1,exp:'妈妈的生日 = sinh nhật mẹ; 是明天 = là ngày mai.'},
    ]},
 ];

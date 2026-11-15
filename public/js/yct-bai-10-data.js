@@ -94,51 +94,40 @@ var dialogData = [
 
 // Điền từ — tình huống giờ giấc
 var fillData = [
-  {pre:'Con hỏi giờ hiện tại: “',blank:'现在',post:'几点？”',hint:'(bây giờ)',ans:'现在',exp:'现在 = bây giờ.'},
-  {pre:'Con trả lời bây giờ 8 giờ: “现在八',blank:'点',post:'。”',hint:'(giờ — lượng từ)',ans:'点',exp:'Số + 点: 八点 = 8 giờ.'},
-  {pre:'Con nói rõ thêm phút: “现在八点十',blank:'分',post:'。”',hint:'(phút)',ans:'分',exp:'Số + 分: 十分 = 10 phút.'},
-  {pre:'Con khen tình huống tốt đẹp: “太好',blank:'了',post:'！”',hint:'(trợ từ nhấn mạnh)',ans:'了',exp:'太 + tính từ + 了: 太好了！'},
-  {pre:'Con thấy còn sớm quá: “',blank:'太',post:'早了！”',hint:'(quá, rất)',ans:'太',exp:'太早了 = sớm quá.'},
-  {pre:'Con chào buổi sáng: “',blank:'早上',post:'好！”',hint:'(buổi sáng)',ans:'早上',exp:'早上好 = chào buổi sáng.'},
-  {pre:'Con hẹn gặp lại vào ngày mai: “明天',blank:'见',post:'！”',hint:'(gặp)',ans:'见',exp:'明天见 = hẹn mai gặp lại; 见 là gặp.'},
-  {pre:'Con nói mình đi học lúc 8 giờ: “现在八点，我去',blank:'学校',post:'。”',hint:'(trường học)',ans:'学校',exp:'去学校 = đi đến trường (ôn Bài 8).'},
+  {pre:'Đồng hồ báo thức reo, con nhìn đồng hồ: “',blank:'现在',post:'七点！”',hint:'(bây giờ)',ans:'现在',exp:'现在 = bây giờ: 现在七点 = bây giờ là 7 giờ.'},
+  {pre:'Anh trai đi học lúc 6 giờ sáng: “哥哥早上六',blank:'点',post:'去学校。”',hint:'(giờ)',ans:'点',exp:'Số + 点 = mấy giờ; thời gian đứng trước 去学校.'},
+  {pre:'Đồng hồ chỉ 3 giờ 15: “现在三点十五',blank:'分',post:'。”',hint:'(phút)',ans:'分',exp:'Số + 分 = phút: 十五分 = 15 phút.'},
+  {pre:'Lúc 8 giờ sáng con đã ở trường: “',blank:'早上',post:'八点，我在学校。”',hint:'(buổi sáng)',ans:'早上',exp:'早上 = buổi sáng; 早上八点 = 8 giờ sáng.'},
+  {pre:'Mèo của bạn bé xíu, con nói: “你的猫',blank:'太',post:'小了！”',hint:'(quá)',ans:'太',exp:'太 + tính từ + 了 = …quá: 太小了.'},
+  {pre:'Cô nói mai cả lớp đi chơi. Con reo lên: “太好',blank:'了',post:'！”',hint:'(chữ đi cùng 太)',ans:'了',exp:'太……了 luôn đi cùng nhau: 太好了 = tốt quá!'},
+  {pre:'Tan học, con vẫy tay chào bạn, hẹn mai gặp: “',blank:'明天见',post:'！”',hint:'(mai gặp lại)',ans:'明天见',exp:'明天见 = hẹn mai gặp lại.'},
 ];
 
-// Sắp xếp — câu về giờ giấc
+// Sắp xếp — câu hỏi giờ & cảm thán
 var sortData = [
-  {words:['现在','几','点','？'],ans:'现在几点？',audio:'现在几点？'},
-  {words:['现在','八','点','。'],ans:'现在八点。',audio:'现在八点。'},
-  {words:['现在','八','点','十','分','。'],ans:'现在八点十分。',audio:'现在八点十分。'},
-  {words:['太','好','了','！'],ans:'太好了！',audio:'太好了！'},
-  {words:['早上','好','！'],ans:'早上好！',audio:'早上好！'},
-  {words:['明天','见','！'],ans:'明天见！',audio:'明天见！'},
+  {words:['你','早上','几','点','去','学校','？'],ans:'你早上几点去学校？',audio:'你早上几点去学校？'},
+  {words:['这','个','商店','太','大','了','！'],ans:'这个商店太大了！',audio:'这个商店太大了！'},
+  {words:['妈妈','早上','七','点','去','商店','。'],ans:'妈妈早上七点去商店。',audio:'妈妈早上七点去商店。'},
+  {words:['现在','不','是','八','点','。'],ans:'现在不是八点。',audio:'现在不是八点。'},
+  {words:['今天','太','好','了','！'],ans:'今天太好了！',audio:'今天太好了！'},
 ];
 
 var matchData = [
-  {left:'现在几点？',right:'现在八点。'},
-  {left:'你几点去学校？',right:'我八点去学校。'},
-  {left:'早上好！',right:'你好！'},
-  {left:'现在早吗？',right:'现在太早了。'},
-  {left:'明天见！',right:'再见！'},
+  {left:'现在几点？',right:'现在六点。'},
+  {left:'早上好！',right:'老师早上好！'},
+  {left:'明天见！',right:'好，明天见！'},
+  {left:'你几点去学校？',right:'七点。'},
+  {left:'现在五点。',right:'太早了！'},
+  {left:'你的狗太大了！',right:'你的猫也很大！'},
 ];
 
 // Trắc nghiệm — không audio
 var mcData = [
-  {q:'"现在" nghĩa là gì?',opts:['bây giờ','ngày mai','hôm nay','sáng nay'],ans:0,exp:'现在 (xiànzài) = bây giờ.'},
-  {q:'"点" (chỉ giờ) nghĩa là gì?',opts:['giờ (lượng từ)','phút','ngày','tháng'],ans:0,exp:'点 (diǎn) chỉ giờ: 八点 = 8 giờ.'},
-  {q:'"分" nghĩa là gì?',opts:['phút','giờ','giây','ngày'],ans:0,exp:'分 (fēn) là phút: 十分 = 10 phút.'},
-  {q:'"早上" nghĩa là gì?',opts:['buổi sáng','buổi tối','buổi trưa','ban đêm'],ans:0,exp:'早上 (zǎoshang) là buổi sáng: 早上好 = chào buổi sáng.'},
-  {q:'"太...了" dùng để làm gì?',opts:['nhấn mạnh mức độ (quá...)','hỏi câu hỏi','phủ định','so sánh'],ans:0,exp:'太…了 nhấn mạnh mức độ "quá…": 太好了 = tốt quá.'},
-  {q:'"明天见" nghĩa là gì?',opts:['hẹn ngày mai gặp lại','tạm biệt mãi mãi','chào buổi sáng','cảm ơn'],ans:0,exp:'明天见 = 明天 (ngày mai) + 见 (gặp): hẹn mai gặp lại.'},
-  {q:'Câu nào ĐÚNG khi hỏi giờ hiện tại?',opts:['现在几点？','几点现在？','现在点几？','点几现在？'],ans:0,exp:'Trật tự: 现在 + 几点？ — từ chỉ thời gian đứng đầu câu.'},
-  {q:'"现在八点十分" nghĩa là gì?',opts:['bây giờ là 8 giờ 10 phút','bây giờ là 10 giờ 8 phút','bây giờ là 8 giờ','bây giờ là 10 giờ'],ans:0,exp:'Giờ trước, phút sau: 八点十分 = 8 giờ 10 phút.'},
-  {q:'Câu nào ĐÚNG khi nói "Tốt quá!"?',opts:['太好了！','好太了！','了太好！','太了好！'],ans:0,exp:'Mẫu câu: 太 + tính từ + 了 → 太好了！'},
-  {q:'Khi chia tay hẹn gặp lại vào ngày mai, con nói gì?',opts:['明天见！','你好！','谢谢你！','我去学校。'],ans:0,exp:'明天见 dùng khi chia tay và sẽ gặp lại vào ngày mai.'},
-  {q:'"了" trong "太好了" dùng để làm gì?',opts:['trợ từ nhấn mạnh','phủ định','nghi vấn','sở hữu'],ans:0,exp:'了 trong 太…了 nhấn mạnh cảm xúc, luôn đi cùng 太.'},
-  {q:'Câu nào ĐÚNG khi nói "Chào buổi sáng!"?',opts:['早上好！','好早上！','早好上！','上好早！'],ans:0,exp:'Trật tự: 早上 + 好 = chào buổi sáng.'},
-  {q:'"点" và "分" khác nhau ở đâu?',opts:['点 chỉ giờ, 分 chỉ phút','cả hai đều chỉ giờ','cả hai đều chỉ phút','không khác nhau'],ans:0,exp:'点 chỉ giờ, 分 chỉ phút: 七点十分 = 7 giờ 10 phút.'},
-  {q:'Muốn nói "Bây giờ là 7 giờ", con nói gì?',opts:['现在七点。','现在点七。','七点现在。','点七现在。'],ans:0,exp:'Trật tự: 现在 + 七点 (số đứng trước 点).'},
-  {q:'"早上" nghĩa gốc của chữ 早 là gì?',opts:['sớm','muộn','trưa','tối'],ans:0,exp:'早 (zǎo) nghĩa là sớm: 太早了 = sớm quá.'},
+  {q:'Con muốn nói: “Mình đi học lúc 7 giờ sáng.”',opts:['我早上七点去学校。','我去学校早上七点。','早上七点去我学校。','我七点早上去学校。'],ans:0,exp:'Thời gian đứng TRƯỚC động từ: 我 + 早上七点 + 去学校. Đặt giờ ở cuối như tiếng Việt là sai; 早上 đứng trước giờ.'},
+  {q:'Con chó nhà bạn to quá! Con nói:',opts:['狗太大了！','狗太大！','狗大太了！','狗了太大！'],ans:0,exp:'Cảm thán: 太 + tính từ + 了. Thiếu 了 hoặc đảo vị trí đều sai.'},
+  {q:'Con muốn hỏi bố mấy giờ bố đi cửa hàng:',opts:['爸爸，你几点去商店？','爸爸，你去商店几点？','爸爸，几点你去商店吗？','爸爸，你什么点去商店？'],ans:0,exp:'Hỏi giờ: 几点 đứng trước động từ; đã có 几 thì không thêm 吗; không nói 什么点.'},
+  {q:'Đồng hồ chỉ 9 giờ 5 phút. Con đọc:',opts:['九点五分','五点九分','九分五点','九五点分'],ans:0,exp:'Giờ trước, phút sau: 九点五分.'},
+  {q:'Câu nào SAI?',opts:['现在几点吗？','妹妹早上不在家。','我们几点去？','好，再见！'],ans:0,exp:'Đã có 几 để hỏi thì không thêm 吗: 现在几点？'},
 ];
 
 var speakingData = {
@@ -146,39 +135,37 @@ var speakingData = {
     intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy nhé!',
     models:[
       {zh:'现在几点？',py:'Xiànzài jǐ diǎn?',vn:'Bây giờ là mấy giờ?'},
-      {zh:'现在八点。',py:'Xiànzài bā diǎn.',vn:'Bây giờ là 8 giờ.'},
-      {zh:'太好了！',py:'Tài hǎo le!',vn:'Tốt quá!'},
-      {zh:'早上好！',py:'Zǎoshang hǎo!',vn:'Chào buổi sáng!'},
-      {zh:'明天见！',py:'Míngtiān jiàn!',vn:'Hẹn ngày mai gặp lại!'},
+      {zh:'现在八点十分。',py:'Xiànzài bā diǎn shí fēn.',vn:'Bây giờ là 8 giờ 10 phút.'},
+      {zh:'太早了！',py:'Tài zǎo le!',vn:'Sớm quá!'},
     ],
   },
   t2:{
     intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu con tạo được.',
     drills:[
-      {frame:'现在＿＿点。',frame_py:'Xiànzài ___ diǎn.',vn:'Bây giờ là ＿＿ giờ.',options:['七','八','九'],samples:['现在七点。','现在八点。','现在九点。']},
+      {frame:'太＿＿了！',frame_py:'Tài ___ le!',vn:'＿＿ quá!',options:['大','小'],samples:['太大了！','太小了！']},
     ],
   },
   t3:{
     intro:'Không nhìn câu mẫu, con hãy tưởng tượng mình đang ở trong tình huống thật và tự nói câu phù hợp nhé!',
     tasks:[
-      {role:'🕐 Tình huống 1 — Hỏi giờ trước khi đi học',
-       guide:'Con hỏi bây giờ là mấy giờ, biết là 8 giờ rồi thì rất vui vì kịp giờ đi học.',
-       structure:['现在几点？','现在八点。','太好了，我去学校！'],
-       sample:'现在几点？现在八点。太好了，我去学校！',
-       sample_vn:'Bây giờ là mấy giờ? Bây giờ là 8 giờ. Tốt quá, mình đi học đây!',
-       note:'太...了 dùng để nhấn mạnh cảm xúc — vui, tốt, sớm, muộn... đều có thể đặt vào giữa.'},
-      {role:'⏱️ Tình huống 2 — Nói giờ chính xác đến phút',
-       guide:'Con muốn nói giờ hiện tại chính xác cả giờ và phút.',
-       structure:['现在几点？','现在＿＿点＿＿分。'],
-       sample:'现在几点？现在八点十分。',
-       sample_vn:'Bây giờ là mấy giờ? Bây giờ là 8 giờ 10 phút.',
-       note:'点 đứng trước để chỉ GIỜ, 分 đứng sau để chỉ PHÚT — luôn theo đúng thứ tự này.'},
-      {role:'🌄 Tình huống 3 — Chào buổi sáng và tạm biệt',
-       guide:'Con chào bạn vào buổi sáng, hỏi giờ, rồi hẹn gặp lại vào ngày mai.',
-       structure:['早上好！','现在几点？','现在七点。明天见！'],
-       sample:'早上好！现在几点？现在七点。明天见！',
-       sample_vn:'Chào buổi sáng! Bây giờ là mấy giờ? Bây giờ là 7 giờ. Hẹn ngày mai gặp lại!',
-       note:'明天见 thân mật và cụ thể hơn 再见 — dùng khi biết chắc ngày mai sẽ gặp lại.'},
+      {role:'⏰ Tình huống 1 — Bây giờ mấy giờ?',
+       guide:'Em gái hỏi con bây giờ mấy giờ. Đồng hồ chỉ 9 giờ 20.',
+       structure:['现在……点……分。'],
+       sample:'现在九点二十分。',
+       sample_vn:'Bây giờ là 9 giờ 20 phút.',
+       note:'Giờ trước, phút sau: ……点……分.'},
+      {role:'🌞 Tình huống 2 — Chào buổi sáng',
+       guide:'Sáng sớm con đến lớp, gặp cô giáo ở cửa. Con chào cô.',
+       structure:['老师，早上好！'],
+       sample:'老师，早上好！',
+       sample_vn:'Con chào cô buổi sáng ạ!',
+       note:'早上好 dùng để chào buổi sáng.'},
+      {role:'🐶 Tình huống 3 — To quá!',
+       guide:'Bạn dắt theo một con chó rất to. Con ngạc nhiên nói với bạn.',
+       structure:['你的……太……了！'],
+       sample:'你的狗太大了！',
+       sample_vn:'Chó của bạn to quá!',
+       note:'太 + tính từ + 了 để nói "…quá!"'},
     ],
   },
 };
@@ -187,47 +174,37 @@ var speakingData = {
 // LUYỆN DỊCH (Việt→Trung) — câu ví dụ của chính bài này
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:"Bây giờ là mấy giờ?", zh:"现在几点？", py:"Xiànzài jǐ diǎn?"},
-  {vi:"Bây giờ là 8 giờ.", zh:"现在八点。", py:"Xiànzài bā diǎn."},
-  {vi:"Bây giờ là 8 giờ 10 phút.", zh:"现在八点十分。", py:"Xiànzài bā diǎn shí fēn."},
-  {vi:"Chào buổi sáng!", zh:"早上好！", py:"Zǎoshang hǎo!"},
-  {vi:"Tốt quá!", zh:"太好了！", py:"Tài hǎo le!"},
-  {vi:"Hẹn ngày mai gặp lại!", zh:"明天见！", py:"Míngtiān jiàn!"},
+  {vi:"Trường của chúng mình to quá!", zh:"我们的学校太大了！", py:"Wǒmen de xuéxiào tài dà le!"},
+  {vi:"Bây giờ là 6 giờ 5 phút.", zh:"现在六点五分。", py:"Xiànzài liù diǎn wǔ fēn."},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung→Việt) — lời thoại trong bài, khác chiều Việt→Trung
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:"Tốt quá, mình đi học đây!", zh:"太好了，我去学校！", py:"Tài hǎo le, wǒ qù xuéxiào!"},
-  {vi:"Sớm quá!", zh:"太早了！", py:"Tài zǎo le!"},
-  {vi:"Chào buổi sáng! Bây giờ là mấy giờ?", zh:"早上好！现在几点？", py:"Zǎoshang hǎo! Xiànzài jǐ diǎn?"},
-  {vi:"Bây giờ là 7 giờ. Hẹn ngày mai gặp lại!", zh:"现在七点。明天见！", py:"Xiànzài qī diǎn. Míngtiān jiàn!"},
+  {vi:"6 giờ sáng thì sớm quá!", zh:"早上六点太早了！", py:"Zǎoshang liù diǎn tài zǎo le!"},
+  {vi:"Mẹ ơi, bây giờ không còn sớm nữa!", zh:"妈妈，现在不早了！", py:"Māma, xiànzài bù zǎo le!"},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
 // ══════════════════════════════════════════
 var listenData = [
-  {audio:'现在几点？现在九点。',
+  {audio:'妹妹几点去老师家？九点。',
    questions:[
-     {q:'Bây giờ là mấy giờ?',opts:['8 giờ','9 giờ','10 giờ'],ans:1},
+     {q:'Em gái đến nhà cô giáo lúc mấy giờ?',opts:['8 giờ','9 giờ','10 giờ'],ans:1,exp:'九点 = 9 giờ.'},
    ]},
-  {audio:'现在几点？现在七点十分。',
+  {audio:'现在十点四十分。',
    questions:[
-     {q:'Bây giờ là mấy giờ?',opts:['7 giờ 10 phút','10 giờ 7 phút','7 giờ'],ans:0},
+     {q:'Bây giờ là mấy giờ?',opts:['10 giờ 40','4 giờ 10','10 giờ 14'],ans:0,exp:'十点四十分 = 10 giờ 40 phút.'},
    ]},
-  {audio:'早上好！现在六点。太早了！',
+  {audio:'我们明天早上八点去老师家。',
    questions:[
-     {q:'Bây giờ là mấy giờ?',opts:['6 giờ','7 giờ','8 giờ'],ans:0},
-     {q:'Bạn ấy thấy thế nào?',opts:['Muộn quá','Sớm quá','Vui quá'],ans:1},
+     {q:'Các bạn sẽ đi đâu?',opts:['Trường học','Nhà cô giáo','Cửa hàng'],ans:1,exp:'去老师家 = đến nhà cô giáo.'},
+     {q:'Đi lúc mấy giờ?',opts:['7 giờ sáng','8 giờ tối','8 giờ sáng'],ans:2,exp:'早上八点 = 8 giờ sáng.'},
    ]},
-  {audio:'现在八点，我去学校。老师，早上好！',
+  {audio:'这儿的鱼太多了！',
    questions:[
-     {q:'Lúc 8 giờ bạn ấy đi đâu?',opts:['Cửa hàng','Trường học','Về nhà'],ans:1},
-   ]},
-  {audio:'明天是我的生日！太好了！明天见！',
-   questions:[
-     {q:'Ngày mai là ngày gì?',opts:['Sinh nhật bạn ấy','Sinh nhật mẹ','Không có gì đặc biệt'],ans:0},
+     {q:'Người nói thấy gì?',opts:['Cá ở đây nhiều quá','Cá ở đây nhỏ quá','Ở đây không có cá'],ans:0,exp:'太多了 = nhiều quá.'},
    ]},
 ];

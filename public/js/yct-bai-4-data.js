@@ -150,91 +150,73 @@ var dialogData = [
 
 // Điền từ — tình huống hỏi về gia đình
 var fillData = [
-  {pre:'Con hỏi nhà bạn có mấy người: “你家',blank:'有',post:'几口人？”',hint:'(có)',ans:'有',exp:'有 = có: 你家有几口人？'},
-  {pre:'Con hỏi số lượng dưới 10: “你家有',blank:'几',post:'口人？”',hint:'(mấy)',ans:'几',exp:'几 hỏi số lượng nhỏ dưới 10.'},
-  {pre:'Con đếm số người trong nhà: “四',blank:'口',post:'人”',hint:'(lượng từ đếm người)',ans:'口',exp:'Đếm người trong nhà dùng lượng từ 口: 四口人.'},
-  {pre:'Con nối bố và mẹ: “爸爸',blank:'和',post:'妈妈”',hint:'(và)',ans:'和',exp:'和 = và, nối 爸爸 với 妈妈.'},
-  {pre:'Con nói mình không có chị gái: “我',blank:'没有',post:'姐姐。”',hint:'(không có)',ans:'没有',exp:'没有 = không có (phủ định của 有, không nói 不有).'},
-  {pre:'Con nói mình có một em gái: “我有一',blank:'个',post:'妹妹。”',hint:'(cái, con)',ans:'个',exp:'Số + lượng từ + danh từ: 一 + 个 + 妹妹.'},
-  {pre:'Con giới thiệu bố mình: “他是我',blank:'爸爸',post:'。”',hint:'(bố)',ans:'爸爸',exp:'爸爸 = bố: 他是我爸爸 = ông ấy là bố con.'},
-  {pre:'Con giới thiệu nhà mình: “我',blank:'家',post:'有三口人。”',hint:'(nhà, gia đình)',ans:'家',exp:'我家 = nhà mình; 家 là nhà, gia đình.'},
+  {pre:'Con khoe với bạn: “Mình có anh trai và chị gái.” — “我',blank:'有',post:'哥哥和姐姐。”',hint:'(có)',ans:'有',exp:'有 = có: 我有哥哥和姐姐.'},
+  {pre:'Bạn nói Điềm Điềm có em gái. Con hỏi Điềm Điềm có mấy em gái: “甜甜有',blank:'几',post:'个妹妹？”',hint:'(mấy)',ans:'几',exp:'几 hỏi số lượng nhỏ, đi với lượng từ: 几个妹妹.'},
+  {pre:'Nhà Minh Minh có bốn người. Con nói: “明明家有四',blank:'口',post:'人。”',hint:'(lượng từ đếm người trong nhà)',ans:'口',exp:'Đếm số người trong nhà dùng 口: 四口人.'},
+  {pre:'Con có một chị gái và một em gái: “我有一个姐姐',blank:'和',post:'一个妹妹。”',hint:'(và)',ans:'和',exp:'和 = và, nối hai người: 一个姐姐和一个妹妹.'},
+  {pre:'Bố con là con một, bố không có anh trai: “爸爸',blank:'没有',post:'哥哥。”',hint:'(không có)',ans:'没有',exp:'Phủ định của 有 là 没有 (không nói 不有).'},
+  {pre:'Minh Minh có ba chị gái: “明明有三',blank:'个',post:'姐姐。”',hint:'(lượng từ chung)',ans:'个',exp:'Số + 个 + người: 三个姐姐. 口 chỉ dùng khi đếm cả nhà.'},
+  {pre:'Minh Minh nói: “Bố mình là người Trung Quốc.” — “我',blank:'爸爸',post:'是中国人。”',hint:'(bố)',ans:'爸爸',exp:'我爸爸 = bố mình; 爸爸 = bố.'},
 ];
 
 // Sắp xếp — câu hỏi về gia đình
 var sortData = [
   {words:['你','家','有','几','口','人','？'],ans:'你家有几口人？',audio:'你家有几口人？'},
-  {words:['四','口','人','，','爸爸','、','妈妈','、','哥哥','和','我','。'],ans:'四口人，爸爸、妈妈、哥哥和我。',audio:'四口人，爸爸、妈妈、哥哥和我。'},
-  {words:['你','有','姐姐','吗','？'],ans:'你有姐姐吗？',audio:'你有姐姐吗？'},
-  {words:['我','没有','姐姐','。'],ans:'我没有姐姐。',audio:'我没有姐姐。'},
-  {words:['我','有','一','个','妹妹','。'],ans:'我有一个妹妹。',audio:'我有一个妹妹。'},
-  {words:['三','口','人','，','爸爸','、','妈妈','和','我','。'],ans:'三口人，爸爸、妈妈和我。',audio:'三口人，爸爸、妈妈和我。'},
+  {words:['妈妈','有','一','个','哥哥','。'],ans:'妈妈有一个哥哥。',audio:'妈妈有一个哥哥。'},
+  {words:['哥哥','和','姐姐','是','老师','。'],ans:'哥哥和姐姐是老师。',audio:'哥哥和姐姐是老师。'},
+  {words:['谁','是','你','姐姐','？'],ans:'谁是你姐姐？',audio:'谁是你姐姐？'},
+  {words:['他','是','我','哥哥','。'],ans:'他是我哥哥。',audio:'他是我哥哥。'},
 ];
 
 var matchData = [
-  {left:'你家有几口人？',right:'四口人，爸爸、妈妈、哥哥和我。'},
-  {left:'你有姐姐吗？',right:'没有。我有一个妹妹。'},
-  {left:'谁是你哥哥？',right:'他是我哥哥。'},
-  {left:'你家有妹妹吗？',right:'有，我有一个妹妹。'},
-  {left:'你家有几口人？',right:'三口人，爸爸、妈妈和我。'},
+  {left:'你家有几口人？',right:'三口人。'},
+  {left:'你有妹妹吗？',right:'没有。'},
+  {left:'他是谁？',right:'他是我爸爸。'},
+  {left:'你有几个姐姐？',right:'一个。'},
+  {left:'谁是你妈妈？',right:'她是我妈妈。'},
+  {left:'你哥哥是老师吗？',right:'不是。'},
 ];
 
 // Trắc nghiệm — không audio
 var mcData = [
-  {q:'你家＿＿几口人？(có)',opts:['有','是','叫','在'],ans:0,exp:'有 (yǒu) = có: 你家有几口人？'},
-  {q:'你家有＿＿口人？(mấy — số nhỏ)',opts:['几','什么','哪','谁'],ans:0,exp:'几 hỏi số lượng nhỏ (dưới 10): 几口人 = mấy người.'},
-  {q:'"没有" nghĩa là gì?',opts:['không có','có','muốn có','sẽ có'],ans:0,exp:'没有 (méiyǒu) là phủ định của 有: không có. Không nói 不有.'},
-  {q:'"和" nghĩa là gì?',opts:['và','hoặc','nhưng','vì'],ans:0,exp:'和 (hé) = và, dùng nối hai người/vật: 爸爸和妈妈.'},
-  {q:'"哥哥" nghĩa là gì?',opts:['anh trai','em trai','chị gái','em gái'],ans:0,exp:'哥哥 (gēge) là anh trai.'},
-  {q:'"姐姐" nghĩa là gì?',opts:['chị gái','em gái','anh trai','em trai'],ans:0,exp:'姐姐 (jiějie) là chị gái.'},
-  {q:'"妹妹" nghĩa là gì?',opts:['em gái','chị gái','em trai','anh trai'],ans:0,exp:'妹妹 (mèimei) là em gái.'},
-  {q:'"口" trong "几口人" dùng để làm gì?',opts:['lượng từ đếm người trong nhà','danh từ chỉ miệng','động từ ăn uống','tính từ'],ans:0,exp:'口 là lượng từ đếm số người trong gia đình: 三口人.'},
-  {q:'"家" nghĩa là gì?',opts:['nhà, gia đình','trường học','cửa hàng','công viên'],ans:0,exp:'家 (jiā) là nhà, gia đình: 我家 = nhà mình.'},
-  {q:'Lượng từ nào dùng chung cho hầu hết đồ vật/con vật?',opts:['个','口','和','有'],ans:0,exp:'个 là lượng từ dùng chung nhiều nhất: 一个妹妹.'},
-  {q:'"几" nghĩa là gì?',opts:['mấy (số nhỏ)','nhiều','ít','đủ'],ans:0,exp:'几 (jǐ) = mấy, hỏi số lượng nhỏ.'},
-  {q:'Câu nào ĐÚNG khi nói "Nhà mình có bốn người."?',opts:['我家有四口人。','我家四有口人。','四口人我家有。','有我家四口人。'],ans:0,exp:'Trật tự: 我家 + 有 + 四口人 (số + 口 + 人).'},
-  {q:'"爸爸" nghĩa là gì?',opts:['bố','mẹ','anh trai','chị gái'],ans:0,exp:'爸爸 (bàba) là bố.'},
-  {q:'"妈妈" nghĩa là gì?',opts:['mẹ','bố','em gái','em trai'],ans:0,exp:'妈妈 (māma) là mẹ.'},
-  {q:'Muốn hỏi số người trong nhà, con dùng câu nào?',opts:['你家有几口人？','你家在哪儿？','你叫什么？','你几岁？'],ans:0,exp:'你家有几口人？ dùng hỏi nhà có mấy người.'},
+  {q:'Bạn mới hỏi nhà con có mấy người. Nhà con có bố, mẹ và con. Con đáp:',opts:['三口人。','三个口人。','三人口。','口三人。'],ans:0,exp:'Số + 口 + 人: 三口人. Không thêm 个 vào trước 口.'},
+  {q:'Bạn hỏi con có chị gái không. Con không có chị gái. Con đáp:',opts:['我没有姐姐。','我不有姐姐。','我有不姐姐。','我不是有姐姐。'],ans:0,exp:'Phủ định của 有 luôn là 没有: 我没有姐姐. Nói 不有 là lỗi rất hay gặp.'},
+  {q:'Con muốn nói: “Bố và mẹ mình là người Trung Quốc.”',opts:['爸爸和妈妈是中国人。','爸爸妈妈和是中国人。','和爸爸妈妈是中国人。','爸爸和妈妈中国人。'],ans:0,exp:'和 đứng giữa hai người: 爸爸和妈妈; câu cần 是.'},
+  {q:'Con muốn hỏi bạn: “Bạn có mấy chị gái?”',opts:['你有几个姐姐？','你有几姐姐？','你有什么姐姐？','你几个有姐姐？'],ans:0,exp:'几 + 个 + 姐姐: 几 phải đi cùng lượng từ 个.'},
+  {q:'Bạn hỏi con có anh trai không. Con có một anh trai. Con đáp:',opts:['有，一个哥哥。','有，一口哥哥。','是，一个哥哥。','没有，一个哥哥。'],ans:0,exp:'Đáp "có" bằng 有 (không dùng 是); đếm anh chị em dùng 个, 口 chỉ dùng trong 几口人.'},
+  {q:'Mẹ chỉ ảnh một cô gái, hỏi đó là ai. Đó là chị gái con. Con đáp:',opts:['她是我姐姐。','他是我姐姐。','她是姐姐我。','她我是姐姐。'],ans:0,exp:'Chị gái là nữ → 她; trật tự: 她 + 是 + 我姐姐.'},
 ];
 
 var speakingData = {
   t1:{
     intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy nhé!',
     models:[
-      {zh:'你家有几口人？',py:'Nǐ jiā yǒu jǐ kǒu rén?',vn:'Nhà bạn có mấy người?'},
-      {zh:'四口人，爸爸、妈妈、哥哥和我。',py:'Sì kǒu rén, bàba, māma, gēge hé wǒ.',vn:'Bốn người, bố, mẹ, anh trai và mình.'},
       {zh:'你有姐姐吗？',py:'Nǐ yǒu jiějie ma?',vn:'Bạn có chị gái không?'},
       {zh:'没有。我有一个妹妹。',py:'Méiyǒu. Wǒ yǒu yí ge mèimei.',vn:'Không có. Mình có một em gái.'},
-      {zh:'三口人，爸爸、妈妈和我。',py:'Sān kǒu rén, bàba, māma hé wǒ.',vn:'Ba người, bố, mẹ và mình.'},
+      {zh:'四口人，爸爸、妈妈、哥哥和我。',py:'Sì kǒu rén, bàba, māma, gēge hé wǒ.',vn:'Bốn người, bố, mẹ, anh trai và mình.'},
     ],
   },
   t2:{
     intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu con tạo được.',
     drills:[
-      {frame:'我家有＿＿口人。',frame_py:'Wǒ jiā yǒu ___ kǒu rén.',vn:'Nhà mình có ＿＿ người.',options:['三','四','五'],samples:['我家有三口人。','我家有四口人。','我家有五口人。']},
+      {frame:'我有＿＿。',frame_py:'Wǒ yǒu ___.',vn:'Mình có ＿＿.',options:['姐姐','妹妹'],samples:['我有姐姐。','我有妹妹。']},
     ],
   },
   t3:{
     intro:'Không nhìn câu mẫu, con hãy tưởng tượng mình đang ở trong tình huống thật và tự nói câu phù hợp nhé!',
     tasks:[
       {role:'👨‍👩‍👧‍👦 Tình huống 1 — Giới thiệu gia đình mình',
-       guide:'Có bạn hỏi thăm gia đình con, hãy trả lời có bao nhiêu người và gồm những ai.',
-       structure:['你家有几口人？','＿＿口人，爸爸、妈妈和我。'],
-       sample:'你家有几口人？三口人，爸爸、妈妈和我。',
-       sample_vn:'Nhà bạn có mấy người? Ba người, bố, mẹ và mình.',
-       note:'Khi kể tên các thành viên trong nhà, dùng dấu 、để liệt kê, và 和 chỉ dùng để nối HAI THÀNH VIÊN CUỐI CÙNG trong danh sách.'},
-      {role:'👧 Tình huống 2 — Hỏi thăm anh chị em',
-       guide:'Con muốn biết bạn mình có chị gái hay em gái không.',
-       structure:['你有姐姐吗？','没有，我有一个＿＿。'],
-       sample:'你有姐姐吗？没有，我有一个妹妹。',
-       sample_vn:'Bạn có chị gái không? Không có, mình có một em gái.',
-       note:'没有 dùng để phủ định "có" — khác với 不, chỉ dùng được với động từ 有 chứ không dùng cho các động từ khác.'},
-      {role:'🔢 Tình huống 3 — Đếm số người trong nhà',
-       guide:'Con đếm và nói cho bạn nghe nhà mình có bao nhiêu người.',
-       structure:['你家有几口人？','我家有＿＿口人。'],
-       sample:'你家有几口人？我家有四口人。',
-       sample_vn:'Nhà bạn có mấy người? Nhà mình có bốn người.',
-       note:'口 CHỈ dùng để đếm người trong gia đình — với hầu hết đồ vật, con vật khác con dùng 个.'},
+       guide:'Bạn hỏi nhà con có mấy người. Con trả lời số người và kể tên từng người.',
+       structure:['……口人，……和我。'],
+       sample:'五口人，爸爸、妈妈、姐姐、妹妹和我。',
+       sample_vn:'Năm người: bố, mẹ, chị gái, em gái và mình.',
+       note:'Kể nhiều người thì ngăn bằng dấu 、, chỉ dùng 和 trước người cuối cùng.'},
+      {role:'👦 Tình huống 2 — Có anh chị em không?',
+       guide:'Bạn hỏi con có chị gái không. Con không có chị gái, nhưng con có anh trai.',
+       structure:['没有，我有……'],
+       sample:'没有，我有哥哥。',
+       sample_vn:'Không có, mình có anh trai.',
+       note:'Trả lời "không có" bằng 没有, "có" bằng 有.'},
     ],
   },
 };
@@ -243,44 +225,37 @@ var speakingData = {
 // LUYỆN DỊCH (Việt→Trung) — câu ví dụ của chính bài này
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:"Nhà bạn có mấy người?", zh:"你家有几口人？", py:"Nǐ jiā yǒu jǐ kǒu rén?"},
-  {vi:"Bốn người, bố, mẹ, anh trai và mình.", zh:"四口人，爸爸、妈妈、哥哥和我。", py:"Sì kǒu rén, bàba, māma, gēge hé wǒ."},
-  {vi:"Không có. Mình có một em gái.", zh:"没有。我有一个妹妹。", py:"Méiyǒu. Wǒ yǒu yí ge mèimei."},
-  {vi:"Mình có một em gái.", zh:"我有一个妹妹。", py:"Wǒ yǒu yí ge mèimei."},
-  {vi:"Bạn có chị gái không?", zh:"你有姐姐吗？", py:"Nǐ yǒu jiějie ma?"},
+  {vi:"Mình có bố, mẹ và một chị gái.", zh:"我有爸爸、妈妈和一个姐姐。", py:"Wǒ yǒu bàba, māma hé yí ge jiějie."},
+  {vi:"Mẹ và mình là người Trung Quốc.", zh:"妈妈和我是中国人。", py:"Māma hé wǒ shì Zhōngguó rén."},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung→Việt) — lời thoại trong bài, khác chiều Việt→Trung
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:"Ba người, bố, mẹ và mình.", zh:"三口人，爸爸、妈妈和我。", py:"Sān kǒu rén, bàba, māma hé wǒ."},
+  {vi:"Nhà bạn có anh trai không?", zh:"你家有哥哥吗？", py:"Nǐ jiā yǒu gēge ma?"},
+  {vi:"Mẹ ơi, con có một người chị rất tốt!", zh:"妈妈，我有一个好姐姐！", py:"Māma, wǒ yǒu yí ge hǎo jiějie!"},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
 // ══════════════════════════════════════════
 var listenData = [
-  {audio:'你家有几口人？我家有五口人：爸爸、妈妈、姐姐、妹妹和我。',
+  {audio:'我家有六口人，爸爸、妈妈、哥哥、妹妹、姐姐和我。',
    questions:[
-     {q:'Nhà bạn ấy có mấy người?',opts:['四','五','三'],ans:1},
-     {q:'Bạn ấy KHÔNG có ai?',opts:['姐姐','妹妹','哥哥'],ans:2},
+     {q:'Nhà bạn nhỏ có mấy người?',opts:['4','6','5'],ans:1,exp:'六口人 = sáu người.'},
+     {q:'Bạn nhỏ có em gái không?',opts:['Có','Không','Không nói'],ans:0,exp:'Trong đoạn nghe có 妹妹 (em gái).'},
    ]},
-  {audio:'你有哥哥吗？没有。我有一个姐姐。',
+  {audio:'甜甜没有妹妹，她有一个姐姐。',
    questions:[
-     {q:'Bạn ấy có anh trai không?',opts:['Có','Không có','Có hai anh trai'],ans:1},
+     {q:'Điềm Điềm có ai?',opts:['Em gái','Anh trai','Chị gái'],ans:2,exp:'她有一个姐姐 = bạn ấy có một chị gái; 没有妹妹 = không có em gái.'},
    ]},
-  {audio:'我家有三口人，爸爸、妈妈和我。',
+  {audio:'我妈妈是老师，我爸爸不是老师。',
    questions:[
-     {q:'Nhà bạn ấy có những ai?',opts:['Bố, mẹ và bạn ấy','Bố, mẹ và anh trai','Mẹ và em gái'],ans:0},
+     {q:'Ai là giáo viên?',opts:['Bố','Cả bố và mẹ','Mẹ'],ans:2,exp:'我妈妈是老师 = mẹ là giáo viên; 爸爸不是老师 = bố không phải.'},
    ]},
-  {audio:'你有几个妹妹？我有一个妹妹，她叫甜甜。',
+  {audio:'谁有妹妹？我有！',
    questions:[
-     {q:'Em gái của bạn ấy tên là gì?',opts:['乐乐','甜甜','明明'],ans:1},
-   ]},
-  {audio:'我爸爸是老师，我妈妈是中国人。',
-   questions:[
-     {q:'Bố bạn ấy làm nghề gì?',opts:['Bác sĩ','Giáo viên','Bán hàng'],ans:1},
-     {q:'Mẹ bạn ấy là người nước nào?',opts:['Trung Quốc','Việt Nam','Không nói'],ans:0},
+     {q:'Người nói đầu tiên hỏi gì?',opts:['Ai có em gái','Em gái tên là gì','Nhà có mấy người'],ans:0,exp:'谁有妹妹 = ai có em gái.'},
    ]},
 ];

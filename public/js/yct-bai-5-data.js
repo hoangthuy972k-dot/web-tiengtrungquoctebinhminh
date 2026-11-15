@@ -80,91 +80,75 @@ var dialogData = [
 
 // Điền từ — tình huống hỏi tuổi
 var fillData = [
-  {pre:'Con hỏi tuổi bạn nhỏ: “你',blank:'几',post:'岁？”',hint:'(mấy — hỏi trẻ em)',ans:'几',exp:'几岁 hỏi tuổi trẻ em.'},
-  {pre:'Con nói tuổi mình: “我六',blank:'岁',post:'。”',hint:'(tuổi)',ans:'岁',exp:'Số + 岁: 六岁 = sáu tuổi.'},
-  {pre:'Con hỏi tuổi anh trai bạn: “你哥哥',blank:'多',post:'大？”',hint:'(bao nhiêu — hỏi người lớn hơn)',ans:'多',exp:'多大 hỏi tuổi người lớn hơn mình.'},
-  {pre:'Con nói ai đó cũng bằng tuổi mình: “他',blank:'也',post:'六岁。”',hint:'(cũng)',ans:'也',exp:'也 (cũng) đứng sau chủ ngữ 他.'},
-  {pre:'Con hỏi tuổi bố: “你爸爸',blank:'多',post:'大？”',hint:'(bao nhiêu)',ans:'多',exp:'Bố là người lớn nên hỏi tuổi bằng 多大.'},
-  {pre:'Con so sánh: “妹妹小，哥哥',blank:'大',post:'。”',hint:'(to, lớn)',ans:'大',exp:'大 (lớn) trái nghĩa với 小 (nhỏ).'},
-  {pre:'Con xác nhận tuổi mình: “我七',blank:'岁',post:'。”',hint:'(tuổi)',ans:'岁',exp:'Số + 岁 để nói tuổi: 七岁.'},
-  {pre:'Con nói mình giống bạn: “我',blank:'也',post:'七岁。”',hint:'(cũng)',ans:'也',exp:'也 = cũng: 我也七岁。'},
+  {pre:'Bạn có em gái nhỏ. Con hỏi em gái bạn mấy tuổi: “你妹妹',blank:'几',post:'岁？”',hint:'(mấy)',ans:'几',exp:'Hỏi tuổi trẻ nhỏ: 几 + 岁 → 你妹妹几岁？'},
+  {pre:'Anh trai con mười tuổi: “我哥哥十',blank:'岁',post:'。”',hint:'(tuổi)',ans:'岁',exp:'Số + 岁: 十岁 = mười tuổi.'},
+  {pre:'Con hỏi bạn: “Mẹ bạn bao nhiêu tuổi?” — “你妈妈',blank:'多大',post:'？”',hint:'(bao nhiêu tuổi — người lớn)',ans:'多大',exp:'Hỏi tuổi người lớn dùng 多大; 几岁 chỉ dùng hỏi trẻ nhỏ.'},
+  {pre:'Điềm Điềm là người Trung Quốc, Minh Minh cũng vậy: “明明',blank:'也',post:'是中国人。”',hint:'(cũng)',ans:'也',exp:'也 đứng sau chủ ngữ, trước động từ: 明明也是中国人.'},
+  {pre:'Con có một anh trai. Điềm Điềm cũng có một anh trai: “甜甜',blank:'也',post:'有一个哥哥。”',hint:'(cũng)',ans:'也',exp:'也 đứng trước 有: 甜甜也有一个哥哥.'},
 ];
 
 // Sắp xếp — câu hỏi tuổi
 var sortData = [
-  {words:['你','几','岁','？'],ans:'你几岁？',audio:'你几岁？'},
-  {words:['我','六','岁','。'],ans:'我六岁。',audio:'我六岁。'},
-  {words:['你','哥哥','多','大','？'],ans:'你哥哥多大？',audio:'你哥哥多大？'},
-  {words:['他','也','六','岁','。'],ans:'他也六岁。',audio:'他也六岁。'},
-  {words:['我','七','岁','。'],ans:'我七岁。',audio:'我七岁。'},
-  {words:['我','也','七','岁','！'],ans:'我也七岁！',audio:'我也七岁！'},
+  {words:['甜甜','几','岁','？'],ans:'甜甜几岁？',audio:'甜甜几岁？'},
+  {words:['我','妹妹','三','岁','。'],ans:'我妹妹三岁。',audio:'我妹妹三岁。'},
+  {words:['我','也','认识','他','。'],ans:'我也认识他。',audio:'我也认识他。'},
+  {words:['哥哥','九','岁','，','妹妹','五','岁','。'],ans:'哥哥九岁，妹妹五岁。',audio:'哥哥九岁，妹妹五岁。'},
+  {words:['你','也','六','岁','吗','？'],ans:'你也六岁吗？',audio:'你也六岁吗？'},
 ];
 
 var matchData = [
-  {left:'你几岁？',right:'我六岁。'},
-  {left:'你哥哥多大？',right:'他也六岁。'},
-  {left:'你妹妹几岁？',right:'她三岁。'},
   {left:'你几岁？',right:'我七岁。'},
-  {left:'你也七岁吗？',right:'我也七岁。'},
+  {left:'你爸爸多大？',right:'他三十岁。'},
+  {left:'你妹妹几岁？',right:'她三岁。'},
+  {left:'我是中国人。',right:'我也是中国人！'},
+  {left:'你有哥哥吗？',right:'有，他十岁。'},
+  {left:'我八岁。',right:'我也八岁！'},
 ];
 
 // Trắc nghiệm — không audio
 var mcData = [
-  {q:'你＿＿岁？(hỏi tuổi trẻ em)',opts:['几','多','哪','什么'],ans:0,exp:'几岁 dùng hỏi tuổi trẻ em (dưới 10 tuổi): 你几岁？'},
-  {q:'你哥哥＿＿大？(hỏi tuổi người lớn hơn)',opts:['多','几','哪','什么'],ans:0,exp:'多大 dùng hỏi tuổi người lớn hơn mình: 你哥哥多大？'},
-  {q:'"岁" nghĩa là gì?',opts:['tuổi','năm','tháng','ngày'],ans:0,exp:'岁 (suì) là tuổi: 我六岁 = con sáu tuổi.'},
-  {q:'"也" nghĩa là gì?',opts:['cũng','và','nhưng','rất'],ans:0,exp:'也 (yě) = cũng, đứng sau chủ ngữ: 他也六岁.'},
-  {q:'"大" nghĩa là gì?',opts:['to, lớn','nhỏ, bé','cao','thấp'],ans:0,exp:'大 (dà) = to, lớn; trái nghĩa với 小 (nhỏ).'},
-  {q:'Khi nào dùng "多大" thay vì "几岁" để hỏi tuổi?',opts:['khi hỏi người lớn tuổi hơn','khi hỏi trẻ nhỏ','khi hỏi con vật','không có sự khác biệt'],ans:0,exp:'Hỏi tuổi người lớn hơn mình dùng 多大; hỏi bạn nhỏ dùng 几岁.'},
-  {q:'我六岁，他＿＿六岁。',opts:['也','多','大','几'],ans:0,exp:'也 (cũng) cho biết hai người giống nhau: 我六岁，他也六岁.'},
-  {q:'"几岁" dùng để hỏi ai?',opts:['trẻ em, số tuổi nhỏ','người lớn tuổi','ông bà','tất cả mọi người như nhau'],ans:0,exp:'几 dùng cho số nhỏ, nên 几岁 hỏi tuổi trẻ nhỏ.'},
-  {q:'Câu nào ĐÚNG khi nói "Mình cũng bảy tuổi"?',opts:['我也七岁。','我七也岁。','也我七岁。','七我也岁。'],ans:0,exp:'也 phải đứng ngay sau chủ ngữ 我: 我也七岁。'},
-  {q:'"多" nghĩa là gì?',opts:['nhiều, bao nhiêu','ít','vừa đủ','không có'],ans:0,exp:'多 (duō) = nhiều; trong 多大 nghĩa là "bao nhiêu".'},
-  {q:'Câu nào ĐÚNG khi hỏi tuổi anh trai (người lớn hơn)?',opts:['你哥哥多大？','你哥哥几岁？','哥哥你多大？','多大你哥哥？'],ans:0,exp:'Anh trai lớn tuổi hơn nên hỏi bằng 多大: 你哥哥多大？'},
-  {q:'"几岁" và "多大" khác nhau ở đâu?',opts:['几岁 hỏi trẻ em, 多大 hỏi người lớn hơn','cả hai đều hỏi trẻ em','cả hai đều hỏi người lớn','không khác nhau'],ans:0,exp:'几岁 hỏi trẻ em, 多大 hỏi người lớn hơn mình.'},
-  {q:'我七岁，你＿＿七岁吗？',opts:['也','多','大','几'],ans:0,exp:'也 = cũng: 你也七岁吗？ — Bạn cũng bảy tuổi à?'},
-  {q:'"岁" dùng để làm gì?',opts:['lượng từ đếm tuổi','lượng từ đếm người','lượng từ đếm đồ vật','động từ'],ans:0,exp:'岁 đứng sau số để nói tuổi: 六岁, 七岁.'},
-  {q:'Câu nào ĐÚNG khi nói "Bạn mấy tuổi?"?',opts:['你几岁？','你多岁？','几你岁？','岁你几？'],ans:0,exp:'Hỏi tuổi trẻ em: 你 + 几 + 岁？ — không nói 多岁.'},
+  {q:'Bạn kể về bố của Minh Minh. Con muốn hỏi: “Bố bạn ấy bao nhiêu tuổi?”',opts:['他爸爸多大？','他爸爸几岁？','他爸爸多岁？','他爸爸大多？'],ans:0,exp:'Hỏi tuổi người lớn dùng 多大; 几岁 chỉ hỏi trẻ nhỏ (dưới 10 tuổi).'},
+  {q:'Em bé hàng xóm rất đáng yêu. Con hỏi em: “Em mấy tuổi?”',opts:['你几岁？','你多岁？','你几大？','你岁几？'],ans:0,exp:'Hỏi tuổi trẻ nhỏ: 几 + 岁 → 你几岁？'},
+  {q:'Minh Minh có em gái. Lạc Lạc cũng có em gái. Con nói:',opts:['乐乐也有妹妹。','也乐乐有妹妹。','乐乐有也妹妹。','乐乐有妹妹也。'],ans:0,exp:'也 đứng sau chủ ngữ, trước động từ: 乐乐 + 也 + 有. Không đặt 也 cuối câu như "cũng" trong tiếng Việt nói.'},
+  {q:'Bạn hỏi em gái con mấy tuổi. Em gái con bốn tuổi. Con đáp:',opts:['她四岁。','她四个岁。','她岁四。','她四口岁。'],ans:0,exp:'岁 đứng ngay sau số, không cần lượng từ 个 hay 口.'},
+  {q:'Câu nào SAI?',opts:['我爸爸几岁？','你妹妹五岁吗？','老师多大？','我也有姐姐。'],ans:0,exp:'Bố là người lớn → hỏi 多大, không dùng 几岁.'},
 ];
 
 var speakingData = {
   t1:{
     intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy nhé!',
     models:[
-      {zh:'你几岁？',py:'Nǐ jǐ suì?',vn:'Bạn mấy tuổi?'},
       {zh:'我六岁。',py:'Wǒ liù suì.',vn:'Mình sáu tuổi.'},
-      {zh:'你哥哥多大？',py:'Nǐ gēge duō dà?',vn:'Anh trai bạn bao nhiêu tuổi?'},
       {zh:'他也六岁。',py:'Tā yě liù suì.',vn:'Anh ấy cũng sáu tuổi.'},
-      {zh:'我也七岁！',py:'Wǒ yě qī suì!',vn:'Mình cũng bảy tuổi!'},
     ],
   },
   t2:{
     intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu con tạo được.',
     drills:[
-      {frame:'我＿＿岁。',frame_py:'Wǒ ___ suì.',vn:'Mình ＿＿ tuổi.',options:['六','七','八'],samples:['我六岁。','我七岁。','我八岁。']},
+      {frame:'我＿＿岁。',frame_py:'Wǒ ___ suì.',vn:'Mình ＿＿ tuổi.',options:['八','九'],samples:['我八岁。','我九岁。']},
     ],
   },
   t3:{
     intro:'Không nhìn câu mẫu, con hãy tưởng tượng mình đang ở trong tình huống thật và tự nói câu phù hợp nhé!',
     tasks:[
-      {role:'🎂 Tình huống 1 — Hỏi tuổi bạn cùng lớp',
-       guide:'Con muốn biết bạn cùng lớp mấy tuổi.',
-       structure:['你几岁？','我＿＿岁。'],
-       sample:'你几岁？我六岁。',
-       sample_vn:'Bạn mấy tuổi? Mình sáu tuổi.',
-       note:'几岁 dùng để hỏi tuổi TRẺ EM (số nhỏ) — khi lớn lên các con sẽ học cách hỏi tuổi người lớn bằng 多大.'},
-      {role:'👨‍👦 Tình huống 2 — Hỏi tuổi anh trai của bạn',
-       guide:'Con hỏi bạn mình xem anh trai bạn ấy bao nhiêu tuổi.',
-       structure:['你哥哥多大？','他也＿＿岁。'],
-       sample:'你哥哥多大？他也六岁。',
-       sample_vn:'Anh trai bạn bao nhiêu tuổi? Anh ấy cũng sáu tuổi.',
-       note:'也 dùng khi hai người CÙNG chung một đặc điểm — ở đây là cùng tuổi.'},
-      {role:'🙋 Tình huống 3 — So sánh tuổi với bạn mới quen',
-       guide:'Con và bạn mới quen cùng nói tuổi của mình và nhận ra mình bằng tuổi nhau.',
-       structure:['你几岁？','我七岁。','我也七岁！'],
-       sample:'你几岁？我七岁。我也七岁！',
-       sample_vn:'Bạn mấy tuổi? Mình bảy tuổi. Mình cũng bảy tuổi!',
-       note:'Khi phát hiện mình giống bạn (cùng tuổi, cùng sở thích...), dùng 也 để nói "mình cũng vậy" — một cách kết bạn rất tự nhiên.'},
+      {role:'🎂 Tình huống 1 — Con mấy tuổi?',
+       guide:'Bạn mới hỏi con mấy tuổi. Con nói tuổi thật của mình.',
+       structure:['我……岁。'],
+       sample:'我七岁。',
+       sample_vn:'Mình bảy tuổi.',
+       note:'Nói tuổi: 我 + số + 岁, không cần 是.'},
+      {role:'👩 Tình huống 2 — Hỏi tuổi mẹ',
+       guide:'Con muốn biết mẹ bao nhiêu tuổi. Mẹ là người lớn nên con dùng 多大.',
+       structure:['妈妈，你多大？'],
+       sample:'妈妈，你多大？',
+       sample_vn:'Mẹ ơi, mẹ bao nhiêu tuổi ạ?',
+       note:'Người lớn → 多大; em bé → 几岁.'},
+      {role:'🤝 Tình huống 3 — Mình cũng vậy!',
+       guide:'Bạn nói: “我八岁。” Con cũng tám tuổi. Con nói gì?',
+       structure:['我也……岁！'],
+       sample:'我也八岁！',
+       sample_vn:'Mình cũng tám tuổi!',
+       note:'也 đứng sau 我, trước số tuổi.'},
     ],
   },
 };
@@ -173,44 +157,37 @@ var speakingData = {
 // LUYỆN DỊCH (Việt→Trung) — câu ví dụ của chính bài này
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:"Bạn mấy tuổi?", zh:"你几岁？", py:"Nǐ jǐ suì?"},
-  {vi:"Mình sáu tuổi.", zh:"我六岁。", py:"Wǒ liù suì."},
-  {vi:"Anh trai bạn bao nhiêu tuổi?", zh:"你哥哥多大？", py:"Nǐ gēge duō dà?"},
-  {vi:"Anh ấy cũng sáu tuổi.", zh:"他也六岁。", py:"Tā yě liù suì."},
+  {vi:"Chị gái mình chín tuổi.", zh:"我姐姐九岁。", py:"Wǒ jiějie jiǔ suì."},
+  {vi:"Bạn ấy (bạn gái) cũng quen mình.", zh:"她也认识我。", py:"Tā yě rènshi wǒ."},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung→Việt) — lời thoại trong bài, khác chiều Việt→Trung
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:"Lạc Lạc, bạn mấy tuổi?", zh:"乐乐，你几岁？", py:"Lèle, nǐ jǐ suì?"},
-  {vi:"Mình bảy tuổi.", zh:"我七岁。", py:"Wǒ qī suì."},
-  {vi:"Mình cũng bảy tuổi!", zh:"我也七岁！", py:"Wǒ yě qī suì!"},
+  {vi:"Em gái cũng rất vui!", zh:"妹妹也很高兴！", py:"Mèimei yě hěn gāoxìng!"},
+  {vi:"Cô giáo cũng quen mẹ mình.", zh:"老师也认识我妈妈。", py:"Lǎoshī yě rènshi wǒ māma."},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
 // ══════════════════════════════════════════
 var listenData = [
-  {audio:'你几岁？我五岁。',
+  {audio:'我是明明，我十岁。',
    questions:[
-     {q:'Bạn nhỏ mấy tuổi?',opts:['五岁','六岁','七岁'],ans:0},
+     {q:'Minh Minh mấy tuổi?',opts:['6','10','7'],ans:1,exp:'我十岁 = mình mười tuổi.'},
    ]},
-  {audio:'你哥哥多大？他十岁。',
+  {audio:'姐姐多大？她九岁。',
    questions:[
-     {q:'Anh trai bạn ấy bao nhiêu tuổi?',opts:['六岁','十岁','七岁'],ans:1},
+     {q:'Chị gái bao nhiêu tuổi?',opts:['9','5','10'],ans:0,exp:'她九岁 = chị ấy chín tuổi.'},
    ]},
-  {audio:'我七岁，我妹妹三岁。',
+  {audio:'乐乐五岁，明明也五岁。',
    questions:[
-     {q:'Em gái bạn ấy mấy tuổi?',opts:['七岁','五岁','三岁'],ans:2},
-     {q:'Bạn ấy mấy tuổi?',opts:['七岁','三岁','十岁'],ans:0},
+     {q:'Ai cũng năm tuổi giống Lạc Lạc?',opts:['Điềm Điềm','Anh trai','Minh Minh'],ans:2,exp:'明明也五岁 = Minh Minh cũng năm tuổi.'},
    ]},
-  {audio:'乐乐六岁，明明也六岁。',
+  {audio:'我妈妈三十岁，我爸爸也三十岁。',
    questions:[
-     {q:'Minh Minh mấy tuổi?',opts:['五岁','六岁','七岁'],ans:1},
-   ]},
-  {audio:'你姐姐多大？她九岁。我也有一个姐姐，她八岁。',
-   questions:[
-     {q:'Chị gái của người hỏi mấy tuổi?',opts:['九岁','八岁','十岁'],ans:1},
+     {q:'Mẹ bạn nhỏ bao nhiêu tuổi?',opts:['13','30','3'],ans:1,exp:'三十岁 = ba mươi tuổi.'},
+     {q:'Còn bố bao nhiêu tuổi?',opts:['Cũng 30 tuổi','10 tuổi','Không nói'],ans:0,exp:'也三十岁 = cũng ba mươi tuổi.'},
    ]},
 ];

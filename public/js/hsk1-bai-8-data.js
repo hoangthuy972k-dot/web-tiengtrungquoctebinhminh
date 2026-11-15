@@ -1396,89 +1396,94 @@ var dialogData = [
    ]},
 ];
 
-// Điền từ — đổi đối tượng/giá so với bài khoá
+// Điền từ — 想 / 多少 / 个 / 这-那 / tiền; ôn 会/很/怎么/去+nơi chốn/ngày tháng/几/谁的
 var fillData = [
-  {pre:'Bạn muốn gọi món uống ở quán: “我',blank:'想',post:'喝茶。”',hint:'(muốn)',ans:'想',exp:'想 + động từ = muốn làm gì: 我想喝茶.'},
-  {pre:'Bạn hỏi ai đó muốn ăn gì: “你想',blank:'吃',post:'什么？”',hint:'(ăn)',ans:'吃',exp:'吃 = ăn: 你想吃什么？'},
-  {pre:'Bạn hỏi giá của cái ly: “这个杯子',blank:'多少',post:'钱？”',hint:'(bao nhiêu — số lớn)',ans:'多少',exp:'多少钱 dùng để hỏi giá.'},
-  {pre:'Bạn nói giá mười lăm đồng: “十五',blank:'块',post:'。”',hint:'(đồng — đơn vị tiền khẩu ngữ)',ans:'块',exp:'块 là "đồng" trong khẩu ngữ: 十五块.'},
-  {pre:'Bạn hỏi buổi chiều ai đó định làm gì: “',blank:'下午',post:'你想做什么？”',hint:'(buổi chiều)',ans:'下午',exp:'下午 = buổi chiều, đặt đầu câu làm trạng ngữ thời gian.'},
-  {pre:'Bạn nói mình muốn đi mua sắm: “我想去',blank:'商店',post:'。”',hint:'(cửa hàng)',ans:'商店',exp:'去商店 = đi đến cửa hàng.'},
-  {pre:'Chỉ vào vật gần mình: “',blank:'这',post:'是我的杯子。”',hint:'(này, đây)',ans:'这',exp:'这 chỉ vật ở gần: 这是我的杯子.'},
-  {pre:'Chỉ vào vật xa mình: “',blank:'那',post:'是你的杯子。”',hint:'(kia, đó)',ans:'那',exp:'那 chỉ vật ở xa: 那是你的杯子.'},
+  {pre:'Bạn bè hỏi kế hoạch cuối tuần, bạn đáp: “星期六我',blank:'想',post:'去朋友家看书。”',hint:'(muốn)',ans:'想',exp:'想 + động từ = muốn làm gì: 想去朋友家看书 = muốn đến nhà bạn đọc sách.'},
+  {pre:'Khách đến nhà, bạn mời: “您想',blank:'喝',post:'茶吗？”',hint:'(uống)',ans:'喝',exp:'喝茶 = uống trà; 吃 dùng cho đồ ăn.'},
+  {pre:'Bạn đi ngang một tiệm trà, hỏi bạn đi cùng: “那个商店的',blank:'茶',post:'多少钱？”',hint:'(trà)',ans:'茶',exp:'茶 = trà; 那个商店的茶 = trà của cửa hàng kia.'},
+  {pre:'Bạn khoe con gái hai tuổi: “我女儿会',blank:'吃',post:'米饭了！”',hint:'(ăn)',ans:'吃',exp:'吃米饭 = ăn cơm; 会……了 = (bây giờ) đã biết làm gì.'},
+  {pre:'Ở căng tin, A: “',blank:'米饭',post:'多少钱？” — B: “两块。”',hint:'(cơm)',ans:'米饭',exp:'米饭 = cơm; hỏi giá dùng 多少钱.'},
+  {pre:'A: “明天',blank:'下午',post:'你去学校吗？” — B: “不去，我去商店。”',hint:'(buổi chiều)',ans:'下午',exp:'下午 = buổi chiều; 明天下午 = chiều mai, đặt trước động từ.'},
+  {pre:'Bạn hỏi bạn cùng lớp: “学校的',blank:'商店',post:'有杯子吗？”',hint:'(cửa hàng)',ans:'商店',exp:'商店 = cửa hàng; 学校的商店 = cửa hàng trong trường.'},
+  {pre:'Con gái đứng trước tiệm sách: “妈妈，我想',blank:'买',post:'书。”',hint:'(mua)',ans:'买',exp:'买书 = mua sách; 想买 = muốn mua.'},
+  {pre:'Bạn khoe đã học tiếng Trung một năm: “我会写一百多',blank:'个',post:'汉字！”',hint:'(lượng từ chung)',ans:'个',exp:'Số + 个 + danh từ: 一百多个汉字 = hơn một trăm chữ Hán.'},
+  {pre:'Thấy bạn cầm chiếc cốc to: “你的',blank:'杯子',post:'很大！”',hint:'(cái cốc)',ans:'杯子',exp:'杯子 = cái cốc, cái ly; 很大 = rất to.'},
+  {pre:'Bạn mời bạn ăn món đặt ngay trước mặt: “',blank:'这',post:'是我妈妈做的菜，很好吃！”',hint:'(đây, này — gần)',ans:'这',exp:'这 chỉ người/vật ở gần: 这是我妈妈做的菜 = đây là món mẹ tôi nấu.'},
+  {pre:'Bạn hỏi bạn Trung Quốc về trường rất lớn của bạn ấy: “你们学校有',blank:'多少',post:'学生？”',hint:'(bao nhiêu — số lớn)',ans:'多少',exp:'Số lượng lớn (trên 10) hỏi bằng 多少; 多少 không cần 个 đi kèm.'},
 ];
 
-// Sắp xếp — đổi giá/đồ vật so với bài khoá
+// Sắp xếp — câu mới, không chép bài khoá
 var sortData = [
-  {words:['你','想','喝','什么','？'],ans:'你想喝什么？',audio:'你想喝什么？'},
-  {words:['我','想','吃','米饭','。'],ans:'我想吃米饭。',audio:'我想吃米饭。'},
-  {words:['下午','我','想','去','商店','。'],ans:'下午我想去商店。',audio:'下午我想去商店。'},
-  {words:['我','想','买','一','个','杯子','。'],ans:'我想买一个杯子。',audio:'我想买一个杯子。'},
-  {words:['这个','杯子','多少','钱','？'],ans:'这个杯子多少钱？',audio:'这个杯子多少钱？'},
-  {words:['那个','杯子','十五','块','钱','。'],ans:'那个杯子十五块钱。',audio:'那个杯子十五块钱。'},
+  {words:['明天','下午','我','想','去','商店','买','杯子','。'],ans:'明天下午我想去商店买杯子。',audio:'明天下午我想去商店买杯子。'},
+  {words:['那','个','字','怎么','读','？'],ans:'那个字怎么读？',audio:'那个字怎么读？'},
+  {words:['那','个','学生','是','美国人','。'],ans:'那个学生是美国人。',audio:'那个学生是美国人。'},
+  {words:['两','个','杯子','三十','块','。'],ans:'两个杯子三十块。',audio:'两个杯子三十块。'},
+  {words:['这','是','谁','的','杯子','？'],ans:'这是谁的杯子？',audio:'这是谁的杯子？'},
+  {words:['我朋友','家','有','六','口','人','。'],ans:'我朋友家有六口人。',audio:'我朋友家有六口人。'},
 ];
 
+// Nối — câu hỏi ↔ câu trả lời
 var matchData = [
-  {left:'你想喝什么？',right:'我想喝茶。'},
-  {left:'下午你想做什么？',right:'下午我想去商店。'},
-  {left:'你想买什么？',right:'我想买一个杯子。'},
-  {left:'这个杯子多少钱？',right:'28块。'},
-  {left:'那个杯子多少钱？',right:'那个杯子18块钱。'},
+  {left:'米饭好吃吗？',right:'很好吃，你想吃吗？'},
+  {left:'一个杯子多少钱？',right:'十二块。'},
+  {left:'下午你想去商店吗？',right:'不想，我想看书。'},
+  {left:'你有几个中国朋友？',right:'两个。'},
+  {left:'这个字怎么读？',right:'你问老师。'},
+  {left:'你想喝什么茶？',right:'中国茶。'},
 ];
 
-// Trắc nghiệm — trọng tâm 想/多少/这-那, không audio
+// Trắc nghiệm — chọn câu đúng tình huống, chọn câu đáp, tìm câu sai
 var mcData = [
-  {q:'我＿＿喝茶。(muốn)',opts:['想','会','是','有'],ans:0,exp:'想 + động từ: muốn làm gì — 我想喝茶. 会 là "biết", 是 là "là", 有 là "có".'},
-  {q:'这个杯子＿＿钱？(hỏi số lớn hơn 10)',opts:['多少','几','怎么','什么'],ans:0,exp:'Hỏi giá hoặc số lượng lớn dùng 多少: 多少钱？ — 几 chỉ dùng cho số nhỏ dưới 10.'},
-  {q:'"个" là loại từ nào?',opts:['lượng từ dùng chung','danh từ chỉ người','động từ','tính từ'],ans:0,exp:'个 là lượng từ dùng chung, đứng giữa số từ và danh từ: 一个杯子.'},
-  {q:'"这" và "那" khác nhau thế nào?',opts:['这 chỉ vật gần, 那 chỉ vật xa','这 chỉ vật xa, 那 chỉ vật gần','cả hai đều chỉ vật gần','cả hai đều chỉ vật xa'],ans:0,exp:'这 chỉ vật ở gần người nói (này), 那 chỉ vật ở xa (kia).'},
-  {q:'Đơn vị tiền tệ khẩu ngữ (nói) là gì?',opts:['块','元','钱','毛'],ans:0,exp:'块 là đơn vị tiền trong khẩu ngữ; văn viết dùng 元.'},
-  {q:'"米饭" nghĩa là gì?',opts:['cơm','trà','nước','bánh'],ans:0,exp:'米饭 (mǐfàn) là cơm.'},
-  {q:'"商店" nghĩa là gì?',opts:['cửa hàng','trường học','ngân hàng','thư viện'],ans:0,exp:'商店 (shāngdiàn) là cửa hàng.'},
-  {q:'"买" nghĩa là gì?',opts:['mua','bán','cho','tặng'],ans:0,exp:'买 (mǎi, thanh 3) là mua; đừng nhầm với 卖 (mài, thanh 4) là bán.'},
-  {q:'Câu nào ĐÚNG khi hỏi giá?',opts:['这个杯子多少钱？','这个杯子几钱？','这个杯子多钱？','这个杯子怎么钱？'],ans:0,exp:'Hỏi giá dùng 多少钱; không nói 几钱, 多钱 hay 怎么钱.'},
-  {q:'"喝" nghĩa là gì?',opts:['uống','ăn','nói','đọc'],ans:0,exp:'喝 (hē) là uống: 喝茶, 喝水; còn ăn là 吃.'},
+  {q:'Bạn chưa biết viết chữ Hán nhưng rất muốn học viết. Bạn nói: “Tôi muốn viết chữ Hán.”',opts:['我想写汉字。','我会写汉字。','我想汉字写。','我写想汉字。'],ans:0,exp:'想 = muốn (dự định); 会 = biết (đã học được) — chưa biết viết thì không dùng 会.'},
+  {q:'Bạn hỏi bé bốn tuổi: “Cháu có mấy người bạn?”',opts:['你有几个朋友？','你有几朋友？','你有几个朋友吗？','你几个朋友有？'],ans:0,exp:'Sau 几 phải có lượng từ: 几个朋友; đã có 几 thì không thêm 吗.'},
+  {q:'A: “你的杯子多少钱？” — B nói giá 2 đồng:',opts:['两块。','二块。','两个块。','块两。'],ans:0,exp:'Trước lượng từ (块, 个) số 2 đọc là 两, không phải 二; 块 đã là lượng từ nên không thêm 个.'},
+  {q:'Bạn muốn nói: “Nhà cô ấy có bảy người.”',opts:['她家有七口人。','她家有七个口人。','她家有七人。','她家是七口人。'],ans:0,exp:'Đếm số người trong gia đình dùng lượng từ 口: 七口人; không dùng 个 cùng 口, không thay 有 bằng 是.'},
+  {q:'Bạn chỉ vào quyển sách trên bàn phía bên kia phòng, hỏi:',opts:['那是谁的书？','这是谁的书？','那是谁书的？','那是书谁的？'],ans:0,exp:'Vật ở xa dùng 那; trật tự: 谁的 + danh từ (谁的书).'},
+  {q:'A: “你想吃米饭吗？” — B (không muốn) đáp:',opts:['我不想吃。','我想不吃。','我不会吃。','我吃不想。'],ans:0,exp:'Phủ định của 想 là 不想; 不会吃 nghĩa là “không biết ăn”, sai ý.'},
+  {q:'Giá ghi 70 đồng. Người bán nói:',opts:['七十块。','十七块。','七十个块。','块七十。'],ans:0,exp:'70 = 七十 (bảy chục), còn 十七 là 17; số đứng trước 块, không thêm 个.'},
+  {q:'Câu nào SAI?',opts:['这个杯子多少钱吗？','李月想去学校看书。','她不想喝茶。','我朋友想去中国。'],ans:0,exp:'Câu đã có từ để hỏi 多少 thì không thêm 吗: 这个杯子多少钱？'},
+  {q:'Bạn muốn nói: “Chiều nay tôi đi cửa hàng mua trà.”',opts:['今天下午我去商店买茶。','我去商店买茶今天下午。','今天下午我买茶去商店。','我今天去商店下午买茶。'],ans:0,exp:'Thời gian (今天下午) đứng đầu hoặc sau chủ ngữ; 去 + nơi chốn rồi mới đến việc làm (买茶).'},
+  {q:'A: “这是你的杯子吗？” — B (không phải, cốc của B ở đằng kia):',opts:['不是，那是我的杯子。','不是，这是我的杯子。','不，那个我的杯子。','不是，那我的是杯子。'],ans:0,exp:'Cốc ở xa dùng 那; câu “A là B” cần 是: 那是我的杯子.'},
 ];
 
 var speakingData = {
   t1:{
-    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
+    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý 想 (xiǎng) thanh 3, 两个 đọc liǎng ge.',
     models:[
-      {zh:'你想喝什么？',py:'Nǐ xiǎng hē shénme?',vn:'Cô muốn uống gì?'},
-      {zh:'我想喝茶。',py:'Wǒ xiǎng hē chá.',vn:'Tôi muốn uống trà.'},
-      {zh:'下午我想去商店。',py:'Xiàwǔ wǒ xiǎng qù shāngdiàn.',vn:'Chiều nay mình muốn đến cửa hàng.'},
-      {zh:'我想买一个杯子。',py:'Wǒ xiǎng mǎi yí ge bēizi.',vn:'Mình muốn mua một cái ly.'},
-      {zh:'这个杯子多少钱？',py:'Zhège bēizi duōshao qián?',vn:'Cái ly này bao nhiêu tiền?'},
+      {zh:'你想喝什么？',py:'Nǐ xiǎng hē shénme?',vn:'Bạn muốn uống gì?'},
+      {zh:'下午我想去商店。',py:'Xiàwǔ wǒ xiǎng qù shāngdiàn.',vn:'Buổi chiều tôi muốn đến cửa hàng.'},
+      {zh:'我想买两个杯子。',py:'Wǒ xiǎng mǎi liǎng ge bēizi.',vn:'Tôi muốn mua hai cái cốc.'},
+      {zh:'那个人是我的老师。',py:'Nà ge rén shì wǒ de lǎoshī.',vn:'Người kia là thầy giáo của tôi.'},
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay phần gạch chân bằng cụm từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
-      {frame:'我想买＿＿。',frame_py:'Wǒ xiǎng mǎi ___.',vn:'Tôi muốn mua ＿＿.',options:['一个杯子','一本书'],samples:['我想买一个杯子。','我想买一本书。']},
-      {frame:'这个＿＿多少钱？',frame_py:'Zhège ___ duōshao qián?',vn:'Cái ＿＿ này bao nhiêu tiền?',options:['杯子','书'],samples:['这个杯子多少钱？','这本书多少钱？']},
+      {frame:'我想＿＿。',frame_py:'Wǒ xiǎng ___.',vn:'Tôi muốn ＿＿.',options:['喝中国茶','写我的中国名字','买很多书'],samples:['我想喝中国茶。','我想写我的中国名字。','我想买很多书。']},
+      {frame:'我有＿＿。',frame_py:'Wǒ yǒu ___.',vn:'Tôi có ＿＿.',options:['两个女儿','三个中国朋友','很多杯子'],samples:['我有两个女儿。','我有三个中国朋友。','我有很多杯子。']},
     ],
   },
   t3:{
     intro:'Không nhìn câu mẫu, hãy tưởng tượng bạn đang ở trong tình huống thực tế và tự nói ra câu phù hợp.',
     tasks:[
-      {role:'☕ Tình huống 1 — Gọi đồ uống ở quán',
-       guide:'Bạn đang ở quán ăn, nhân viên hỏi bạn muốn dùng gì.',
-       structure:['你想喝什么？','我想喝＿＿。'],
-       sample:'你想喝什么？我想喝茶。',
-       sample_vn:'Bạn muốn uống gì? Tôi muốn uống trà.',
-       note:'想 dùng để diễn tả MONG MUỐN, nguyện vọng cá nhân — nhẹ nhàng hơn 要 (sẽ học sau) vốn mang tính quyết định dứt khoát hơn.'},
-      {role:'🛍️ Tình huống 2 — Lên kế hoạch mua sắm buổi chiều',
-       guide:'Bạn định đi mua sắm buổi chiều và nói cho bạn cùng phòng biết kế hoạch của mình.',
-       structure:['下午你想做什么？','下午我想去商店买＿＿。'],
-       sample:'下午你想做什么？下午我想去商店买杯子。',
-       sample_vn:'Buổi chiều bạn muốn làm gì? Chiều nay mình muốn đến cửa hàng mua ly.',
-       note:'Có thể ghép nhiều động từ liên tiếp trong một câu (去商店买杯子) để diễn tả một CHUỖI HÀNH ĐỘNG có mục đích, giống câu liên động đã học ở Bài 7.'},
-      {role:'💰 Tình huống 3 — Hỏi giá khi mua sắm',
-       guide:'Bạn đang ở cửa hàng, muốn hỏi giá của hai món đồ khác nhau để so sánh.',
-       structure:['这个杯子多少钱？','那个＿＿多少钱？'],
-       sample:'这个杯子多少钱？那个杯子多少钱？',
-       sample_vn:'Cái ly này bao nhiêu tiền? Cái ly kia bao nhiêu tiền?',
-       note:'多少 dùng khi hỏi số lượng LỚN HƠN 10 (đặc biệt là tiền) — khác với 几 chỉ dùng cho số nhỏ hơn 10 đã học ở Bài 5.'},
+      {role:'☕ Tình huống 1 — Gọi đồ ở quán',
+       guide:'Bạn và một người bạn vào quán. Phục vụ hỏi hai bạn muốn dùng gì. Hãy nói bạn muốn uống trà, còn bạn của bạn muốn ăn cơm.',
+       structure:['我想＿＿，','我朋友想＿＿。'],
+       sample:'我想喝茶，我朋友想吃米饭。',
+       sample_vn:'Tôi muốn uống trà, bạn tôi muốn ăn cơm.',
+       note:'Đồ uống dùng 喝, đồ ăn dùng 吃 — người Việt hay nói nhầm “吃茶” vì tiếng Việt có “ăn uống” đi liền nhau.'},
+      {role:'🛍️ Tình huống 2 — Hỏi giá ở cửa hàng',
+       guide:'Bạn thấy hai cái cốc đẹp: một cái ngay trước mặt, một cái trên kệ xa. Hãy chào người bán và hỏi giá cả hai.',
+       structure:['你好！这个＿＿多少钱？','那个呢？'],
+       sample:'你好！这个杯子多少钱？那个呢？',
+       sample_vn:'Chào chị! Cái cốc này bao nhiêu tiền? Còn cái kia?',
+       note:'Vật gần dùng 这个, vật xa dùng 那个. Hỏi giá: 多少钱 — đừng thêm 吗 vào cuối.'},
+      {role:'🫖 Tình huống 3 — Mời bạn đến nhà',
+       guide:'Bạn muốn mời bạn cùng lớp chiều thứ bảy đến nhà uống trà, và khoe mẹ bạn biết nấu món Trung Quốc.',
+       structure:['星期＿＿下午你想＿＿吗？','我妈妈会＿＿。'],
+       sample:'星期六下午你想去我家喝茶吗？我妈妈会做中国菜。',
+       sample_vn:'Chiều thứ bảy bạn có muốn đến nhà mình uống trà không? Mẹ mình biết nấu món Trung Quốc đấy.',
+       note:'Hỏi “có muốn … không” dùng 想……吗; trả lời 想 (muốn) hoặc 不想 (không muốn).'},
     ],
   },
 };
@@ -1487,46 +1492,48 @@ var speakingData = {
 // LUYỆN DỊCH — dùng từ bài 8 + ôn lại từ bài 1-7
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Tôi muốn uống trà.', zh:'我想喝茶。', py:'Wǒ xiǎng hē chá.'},
-  {vi:'Cái cốc này bao nhiêu tiền?', zh:'这个杯子多少钱？', py:'Zhège bēizi duōshao qián?'},
-  {vi:'Chiều nay tôi muốn đi cửa hàng mua cốc.', zh:'下午我想去商店买杯子。', py:'Xiàwǔ wǒ xiǎng qù shāngdiàn mǎi bēizi.'},
-  {vi:'Năm đồng.', zh:'五块钱。', py:'Wǔ kuài qián.'},
+  {vi:'Tôi muốn đi Trung Quốc thăm bạn.', zh:'我想去中国看朋友。', py:'Wǒ xiǎng qù Zhōngguó kàn péngyou.'},
+  {vi:'Trà ở cửa hàng này 99 đồng.', zh:'这个商店的茶九十九块。', py:'Zhège shāngdiàn de chá jiǔshíjiǔ kuài.'},
+  {vi:'Chữ Hán này viết thế nào?', zh:'这个汉字怎么写？', py:'Zhège Hànzì zěnme xiě?'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Tôi muốn uống trà, tôi muốn ăn cơm.', zh:'我想喝茶，我想吃米饭。', py:'Wǒ xiǎng hē chá, wǒ xiǎng chī mǐfàn.'},
-  {vi:'Cái cốc này bao nhiêu tiền? Năm đồng.', zh:'这个杯子多少钱？五块钱。', py:'Zhège bēizi duōshao qián? Wǔ kuài qián.'},
-  {vi:'Chiều nay tôi muốn đi cửa hàng mua cơm.', zh:'下午我想去商店买米饭。', py:'Xiàwǔ wǒ xiǎng qù shāngdiàn mǎi mǐfàn.'},
-  {vi:'Nhà tôi có ba cái cốc.', zh:'我家有三个杯子。', py:'Wǒ jiā yǒu sān ge bēizi.'},
+  {vi:'Cửa hàng kia có rất nhiều cốc.', zh:'那个商店有很多杯子。', py:'Nà ge shāngdiàn yǒu hěn duō bēizi.'},
+  {vi:'Cái cốc này là của con gái tôi, cái kia là của tôi.', zh:'这个杯子是我女儿的，那个是我的。', py:'Zhège bēizi shì wǒ nǚ\'ér de, nà ge shì wǒ de.'},
 ];
 
 // ══════════════════════════════════════════
-// LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
+// LUYỆN NGHE — nghe câu → chọn đáp án (đọc bằng giọng máy), chỉ dùng từ đã học
 // ══════════════════════════════════════════
 var listenData = [
-  {audio:'你想喝茶吗？我不想喝茶。你想吃什么？我想吃米饭。',
+  {audio:'一个杯子二十块，两个四十块。',
    questions:[
-     {q:'Người trả lời muốn gì?',opts:['Uống trà','Ăn cơm','Ăn món Trung Quốc'],ans:1},
+     {q:'Hai cái cốc bao nhiêu tiền?',opts:['20 đồng','24 đồng','40 đồng'],ans:2,exp:'两个四十块 = hai cái bốn mươi đồng.'},
    ]},
-  {audio:'这个杯子多少钱？35块。那个呢？那个杯子20块。',
+  {audio:'我下午去商店买杯子，你去吗？',
    questions:[
-     {q:'Cái cốc thứ nhất giá bao nhiêu?',opts:['20 đồng','25 đồng','35 đồng'],ans:2},
-     {q:'Cái cốc kia giá bao nhiêu?',opts:['20 đồng','30 đồng','35 đồng'],ans:0},
+     {q:'Khi nào người nói đi cửa hàng?',opts:['Buổi sáng','Buổi chiều','Ngày mai'],ans:1,exp:'下午 = buổi chiều.'},
+     {q:'Người nói đi cửa hàng mua gì?',opts:['Cốc','Trà','Sách'],ans:0,exp:'买杯子 = mua cốc.'},
    ]},
-  {audio:'下午你想做什么？我想去商店买书。',
+  {audio:'我不想吃米饭，我想吃中国菜。',
    questions:[
-     {q:'Buổi chiều người trả lời muốn làm gì?',opts:['Đến trường','Đi mua sách','Uống trà'],ans:1},
+     {q:'Người nói muốn ăn gì?',opts:['Cơm trắng','Món Trung Quốc','Cả hai'],ans:1,exp:'不想吃米饭 = không muốn ăn cơm; 想吃中国菜 = muốn ăn món Trung Quốc.'},
    ]},
-  {audio:'我妈妈想喝茶，我去商店买茶。',
+  {audio:'那个人是谁？那是李月的妈妈。',
    questions:[
-     {q:'Người nói đến cửa hàng mua gì?',opts:['Cốc','Trà','Cơm'],ans:1},
+     {q:'Người đó là ai?',opts:['Lý Nguyệt','Cô giáo','Mẹ của Lý Nguyệt'],ans:2,exp:'李月的妈妈 = mẹ của Lý Nguyệt.'},
    ]},
-  {audio:'请问，这个菜多少钱？这个菜40块，米饭3块。',
+  {audio:'这个茶一百块，那个茶八十块。',
    questions:[
-     {q:'Món ăn giá bao nhiêu?',opts:['3 đồng','14 đồng','40 đồng'],ans:2},
+     {q:'Loại trà “này” giá bao nhiêu?',opts:['100 đồng','10 đồng','108 đồng'],ans:0,exp:'这个茶一百块 = loại trà này 100 đồng.'},
+     {q:'Loại nào rẻ hơn?',opts:['Loại này','Loại kia','Bằng giá nhau'],ans:1,exp:'那个茶八十块 — loại kia 80 đồng, rẻ hơn 100 đồng.'},
+   ]},
+  {audio:'明天我想去李月家做中国菜。',
+   questions:[
+     {q:'Ngày mai người nói muốn làm gì?',opts:['Đi mua đồ','Đến trường','Đến nhà Lý Nguyệt nấu món Trung Quốc'],ans:2,exp:'想去李月家做中国菜 = muốn đến nhà Lý Nguyệt nấu món Trung Quốc.'},
    ]},
 ];
 

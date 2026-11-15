@@ -969,89 +969,95 @@ var dialogData = [
    ]},
 ];
 
-// Điền từ — đổi giờ/số ngày so với bài khoá
+// Điền từ — mỗi câu một tình huống mới; ôn 在 + nơi chốn (bài 9), 后面 (bài 10), 想/去 + V (bài 7–8), ngày tháng (bài 7)
 var fillData = [
-  {pre:'Bạn hỏi giờ hiện tại: “',blank:'现在',post:'几点？”',hint:'(bây giờ)',ans:'现在',exp:'现在几点？ dùng để hỏi giờ hiện tại.'},
-  {pre:'Bạn nói bây giờ là 3 giờ 20 phút: “现在三点二十',blank:'分',post:'。”',hint:'(phút)',ans:'分',exp:'Số + 分 = số phút: 二十分 = 20 phút.'},
-  {pre:'Bạn hỏi khi nào mẹ về nhà: “妈妈什么',blank:'时候',post:'回家？”',hint:'(khi nào, lúc nào)',ans:'时候',exp:'什么时候 = khi nào.'},
-  {pre:'Bạn nói mình sẽ về nhà lúc 7 giờ chiều: “下午七',blank:'点',post:'回家。”',hint:'(giờ)',ans:'点',exp:'Số + 点 = giờ: 七点 = 7 giờ.'},
-  {pre:'Bạn hỏi khi nào đi xem phim: “我们什么时候去看',blank:'电影',post:'？”',hint:'(phim)',ans:'电影',exp:'看电影 = xem phim.'},
-  {pre:'Bạn hỏi bạn định ở lại mấy ngày: “你想',blank:'住',post:'几天？”',hint:'(ở, trú ngụ)',ans:'住',exp:'住 + thời gian = ở lại bao lâu: 住几天.'},
-  {pre:'Bạn hỏi có thể về nhà trước thứ ba không: “星期二',blank:'前',post:'能回家吗？”',hint:'(trước — mốc thời gian)',ans:'前',exp:'Mốc thời gian + 前 = trước lúc đó.'},
-  {pre:'Bạn khẳng định có thể về nhà đúng hẹn: “你能回家吗？',blank:'能',post:'。”',hint:'(có thể)',ans:'能',exp:'Trả lời câu hỏi có 能 chỉ cần lặp lại 能 (được, có thể).'},
+  {pre:'Bạn gọi cho mẹ: “妈妈，你',blank:'现在',post:'在哪儿？” — “在商店。”',hint:'(bây giờ)',ans:'现在',exp:'现在 (bây giờ) là trạng ngữ thời gian, đứng trước động từ: 你现在在哪儿？'},
+  {pre:'“你几点去医院？” — “下午两',blank:'点',post:'。”',hint:'(giờ)',ans:'点',exp:'Nói giờ: số + 点; 2 giờ là 两点, không nói 二点.'},
+  {pre:'Đồng hồ chỉ 8:05. Bạn nói: “现在八点零五',blank:'分',post:'。”',hint:'(phút)',ans:'分',exp:'Số + 分 = số phút; phút từ 1–9 thường thêm 零: 八点零五分.'},
+  {pre:'“你',blank:'中午',post:'在哪儿吃饭？” — “在学校。”',hint:'(buổi trưa)',ans:'中午',exp:'中午 = buổi trưa; thời gian đứng trước 在 + nơi chốn + động từ.'},
+  {pre:'Mẹ gọi cả nhà: “十二点了，',blank:'吃饭',post:'了！”',hint:'(ăn cơm)',ans:'吃饭',exp:'吃饭 = ăn cơm (bữa ăn nói chung); 吃饭了 = ăn cơm thôi.'},
+  {pre:'“你朋友什么',blank:'时候',post:'去中国？” — “九月。”',hint:'(lúc, khi)',ans:'时候',exp:'什么时候 = khi nào, hỏi thời điểm; trả lời bằng thời gian (九月).'},
+  {pre:'Đồng nghiệp hỏi: “你今天几点',blank:'回',post:'家？” — “六点。”',hint:'(trở về)',ans:'回',exp:'回家 = về nhà; 回 = trở về nơi của mình.'},
+  {pre:'Gặp hai bạn mới, bạn giới thiệu nhóm mình: “',blank:'我们',post:'是中国人，你们呢？”',hint:'(chúng tôi)',ans:'我们',exp:'我们 = chúng tôi (có cả người nói); 你们 = các bạn (không có người nói).'},
+  {pre:'“明天下午你想做什么？” — “我想去看',blank:'电影',post:'。”',hint:'(phim)',ans:'电影',exp:'看电影 = xem phim; 去 + 看电影 = đi xem phim.'},
+  {pre:'Bạn mới chuyển nhà, kể với bạn cùng lớp: “我现在',blank:'住',post:'在医院后面。”',hint:'(ở, sống)',ans:'住',exp:'住在 + nơi chốn = sống ở …: 住在医院后面.'},
+  {pre:'Cô giáo dặn: “星期四',blank:'前',post:'，请写一百个汉字。”',hint:'(trước — sau mốc thời gian)',ans:'前',exp:'Mốc thời gian + 前 = trước mốc đó: 星期四前 = trước thứ Năm (前 đứng SAU mốc, ngược tiếng Việt).'},
 ];
 
-// Sắp xếp — đổi giờ/số ngày so với bài khoá
+// Sắp xếp — thời gian đứng trước động từ, từ lớn đến nhỏ; mỗi câu một mẫu khác
 var sortData = [
-  {words:['现在','几','点','？'],ans:'现在几点？',audio:'现在几点？'},
-  {words:['现在','十','点','十','分','。'],ans:'现在十点十分。',audio:'现在十点十分。'},
-  {words:['爸爸','什么','时候','回家','？'],ans:'爸爸什么时候回家？',audio:'爸爸什么时候回家？'},
-  {words:['我们','什么','时候','去','看','电影','？'],ans:'我们什么时候去看电影？',audio:'我们什么时候去看电影？'},
-  {words:['你','想','在','北京','住','几','天','？'],ans:'你想在北京住几天？',audio:'你想在北京住几天？'},
-  {words:['星期','五','前','能','回家','吗','？'],ans:'星期五前能回家吗？',audio:'星期五前能回家吗？'},
+  {words:['我','明天','下午','三','点','去','医院','。'],ans:'我明天下午三点去医院。',audio:'我明天下午三点去医院。'},
+  {words:['我们','中午','在','学校','吃饭','。'],ans:'我们中午在学校吃饭。',audio:'我们中午在学校吃饭。'},
+  {words:['你','什么','时候','回','中国','？'],ans:'你什么时候回中国？',audio:'你什么时候回中国？'},
+  {words:['谢朋','的','爸爸','住','在','北京','。'],ans:'谢朋的爸爸住在北京。',audio:'谢朋的爸爸住在北京。'},
+  {words:['十','月','五','号','前','我','想','去','北京','。'],ans:'十月五号前我想去北京。',audio:'十月五号前我想去北京。'},
+  {words:['妈妈','什么','时候','去','医院','？'],ans:'妈妈什么时候去医院？',audio:'妈妈什么时候去医院？'},
+  {words:['爸爸','今天','中午','不','回家','吃饭','。'],ans:'爸爸今天中午不回家吃饭。',audio:'爸爸今天中午不回家吃饭。'},
 ];
 
+// Nối — câu hỏi ↔ câu trả lời (đáp án mỗi cặp chỉ hợp một câu hỏi)
 var matchData = [
-  {left:'现在几点？',right:'现在十点十分。'},
-  {left:'中午几点吃饭？',right:'十二点吃饭。'},
-  {left:'爸爸什么时候回家？',right:'下午五点。'},
-  {left:'你想在北京住几天？',right:'住三天。'},
-  {left:'星期五前能回家吗？',right:'能。'},
+  {left:'电影几点？',right:'下午三点十分。'},
+  {left:'你什么时候去北京？',right:'九月一号。'},
+  {left:'你们中午回家吃饭吗？',right:'不回家，在学校吃饭。'},
+  {left:'你住在哪儿？',right:'在北京。'},
+  {left:'星期三前你能回家吗？',right:'能，星期二回家。'},
+  {left:'现在十点吗？',right:'不是，九点五十分。'},
 ];
 
-// Trắc nghiệm — trọng tâm cách nói giờ & trạng ngữ thời gian, không audio
+// Trắc nghiệm — chọn câu đúng tình huống / câu đáp / câu sai; không hỏi lý thuyết
 var mcData = [
-  {q:'＿＿几点？',opts:['现在','什么','怎么','哪儿'],ans:0,exp:'现在几点？ = Bây giờ mấy giờ? — 现在 nghĩa là "bây giờ".'},
-  {q:'"Bây giờ là 3 giờ" nói thế nào?',opts:['现在三点。','现在三个点。','现在点三。','三点现在。'],ans:0,exp:'Giờ đúng = số + 点: 三点 (không thêm 个); 现在 đứng đầu câu: 现在三点。'},
-  {q:'Trạng ngữ chỉ thời gian thường đứng ở đâu trong câu?',opts:['trước hoặc ngay sau chủ ngữ','luôn ở cuối câu','luôn tách biệt hoàn toàn ở đầu câu','sau động từ'],ans:0,exp:'Trạng ngữ thời gian đứng trước động từ: ở đầu câu hoặc ngay sau chủ ngữ — 我星期一去北京 / 星期一我去北京.'},
-  {q:'"前" trong "星期五前" nghĩa là gì?',opts:['trước (một mốc thời gian)','sau','trong','ngoài'],ans:0,exp:'Mốc thời gian + 前 = trước mốc đó: 星期五前 = trước thứ Sáu.'},
-  {q:'"时候" nghĩa là gì?',opts:['thời gian, lúc, khi','giờ','phút','ngày'],ans:0,exp:'时候 = lúc, khi; 什么时候 = khi nào.'},
-  {q:'"回" nghĩa là gì?',opts:['trở về, về','đi','ở','đến'],ans:0,exp:'回 = trở về: 回家 = về nhà.'},
-  {q:'"电影" nghĩa là gì?',opts:['phim, điện ảnh','tivi','điện thoại','máy tính'],ans:0,exp:'电影 = phim; 看电影 = xem phim.'},
-  {q:'"住" nghĩa là gì?',opts:['ở, trú ngụ','đi','về','đến'],ans:0,exp:'住 = ở, cư trú: 住三天 = ở ba ngày.'},
-  {q:'Câu hỏi giờ ĐÚNG ngữ pháp là?',opts:['现在几点？','现在几点钟的？','几点现在？','点几现在？'],ans:0,exp:'Câu đúng: 现在几点？ — trạng ngữ 现在 đứng trước, 几点 làm vị ngữ.'},
-  {q:'"我们" nghĩa là gì?',opts:['chúng tôi, chúng ta','các bạn','họ','bạn và tôi'],ans:0,exp:'我们 = chúng tôi/chúng ta; 们 tạo số nhiều cho đại từ.'},
+  {q:'Bạn muốn nói: “Chiều nay 4 giờ tôi đi xem phim.”',opts:['我今天下午四点去看电影。','我去看电影今天下午四点。','我今天四点下午去看电影。','今天下午我去看电影四点。'],ans:0,exp:'Thời gian đứng TRƯỚC động từ và đi từ lớn đến nhỏ: 今天 → 下午 → 四点.'},
+  {q:'Đồng hồ chỉ 2:15. Bạn nói:',opts:['现在两点十五分。','现在二点十五分。','现在十五分两点。','现在两个点十五分。'],ans:0,exp:'2 giờ là 两点 (không nói 二点), không thêm 个; giờ trước, phút sau.'},
+  {q:'Câu nào SAI?',opts:['我去学校八点。','我八点去学校。','李月九月去北京。','你今天能回家吗？'],ans:0,exp:'Thời gian phải đứng TRƯỚC động từ: 我八点去学校; không đặt cuối câu như tiếng Việt “tôi đi học lúc 8 giờ”.'},
+  {q:'A: “王方什么时候回北京？” — B đáp:',opts:['星期五回。','她是医生。','在商店后面。','她有一个女儿。'],ans:0,exp:'什么时候 hỏi thời điểm nên trả lời bằng thời gian (星期五); các câu khác trả lời cho “là ai / ở đâu / có gì”.'},
+  {q:'Bạn muốn hỏi bạn mình: “Mấy giờ chúng ta đi?”',opts:['我们几点去？','我们去几点？','我们几点去吗？','我们多少点去？'],ans:0,exp:'几点 đứng trước động từ; câu đã có 几 thì không thêm 吗; hỏi giờ dùng 几, không dùng 多少.'},
+  {q:'Câu nào SAI?',opts:['前星期五我回家。','星期五前我回家。','三点前我能回学校。','明天中午前我去医院。'],ans:0,exp:'前 đứng SAU mốc thời gian: 星期五前 = trước thứ Sáu; không nói 前星期五.'},
+  {q:'Bạn muốn nói: “Con gái tôi sống ở Bắc Kinh.”',opts:['我女儿住在北京。','我女儿北京住在。','我女儿在住北京。','我女儿住在北京里。'],ans:0,exp:'住在 + nơi chốn; tên thành phố, đất nước không thêm 里 (không nói 北京里).'},
+  {q:'Bạn nói với cô giáo về cả nhóm (có bạn): “Cô ơi, ngày mai chúng em không đến trường được.”',opts:['老师，我们明天不能去学校。','老师，你们明天不能去学校。','老师，我们不能去学校明天。','老师，我们明天没有去学校。'],ans:0,exp:'我们 = chúng em (có người nói), 你们 = các bạn; 明天 đứng trước động từ; “không thể” là 不能.'},
+  {q:'Câu nào SAI?',opts:['我在商店下午工作。','我下午在商店工作。','她今天在家吃饭。','明天李月在学校吗？'],ans:0,exp:'Thứ tự: chủ ngữ + thời gian + 在 nơi chốn + động từ: 我下午在商店工作.'},
+  {q:'Bạn muốn nói: “Bây giờ mẹ tôi làm việc ở Bắc Kinh.”',opts:['我妈妈现在在北京工作。','我妈妈在北京工作现在。','我妈妈现在工作在北京。','现在我妈妈北京在工作。'],ans:0,exp:'现在 đứng trước động từ (hoặc đầu câu); 在 + nơi chốn cũng đứng trước động từ 工作.'},
+  {q:'Bạn muốn nói: “Trước ngày 3 tháng 5 tôi về Trung Quốc.”',opts:['五月三号前我回中国。','前五月三号我回中国。','三号五月前我回中国。','五月三号我前回中国。'],ans:0,exp:'Ngày tháng: 月 trước, 号 sau (五月三号); 前 đứng ngay sau mốc: 五月三号前.'},
 ];
 
 var speakingData = {
   t1:{
-    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
+    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý: 点 (diǎn) thanh 3, 分 (fēn) thanh 1; 2 giờ đọc 两点 (liǎng diǎn).',
     models:[
-      {zh:'现在几点？',py:'Xiànzài jǐ diǎn?',vn:'Bây giờ là mấy giờ rồi?'},
+      {zh:'现在几点？',py:'Xiànzài jǐ diǎn?',vn:'Bây giờ là mấy giờ?'},
       {zh:'现在十点十分。',py:'Xiànzài shí diǎn shí fēn.',vn:'Bây giờ là 10 giờ 10 phút.'},
-      {zh:'爸爸什么时候回家？',py:'Bàba shénme shíhou huí jiā?',vn:'Chừng nào cha mới về đến nhà?'},
-      {zh:'我们什么时候去看电影？',py:'Wǒmen shénme shíhou qù kàn diànyǐng?',vn:'Khi nào chúng ta đi xem phim?'},
-      {zh:'你想在北京住几天？',py:'Nǐ xiǎng zài Běijīng zhù jǐ tiān?',vn:'Anh định ở Bắc Kinh mấy ngày?'},
+      {zh:'我星期一去北京。',py:'Wǒ xīngqīyī qù Běijīng.',vn:'Thứ Hai tôi đi Bắc Kinh.'},
+      {zh:'我们下午五点回学校。',py:'Wǒmen xiàwǔ wǔ diǎn huí xuéxiào.',vn:'5 giờ chiều chúng tôi về trường.'},
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng số trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay phần gạch chân bằng cụm thời gian trong ô gợi ý. Nhớ: thời gian đứng TRƯỚC động từ. Nhấn nút loa để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
-      {frame:'现在＿＿点。',frame_py:'Xiànzài ___ diǎn.',vn:'Bây giờ là ＿＿ giờ.',options:['十','十二','六'],samples:['现在十点。','现在十二点。','现在六点。']},
-      {frame:'我们＿＿点去看电影。',frame_py:'Wǒmen ___ diǎn qù kàn diànyǐng.',vn:'Chúng ta ＿＿ giờ đi xem phim.',options:['六','七','八'],samples:['我们六点去看电影。','我们七点去看电影。','我们八点去看电影。']},
+      {frame:'我朋友＿＿去北京。',frame_py:'Wǒ péngyou ___ qù Běijīng.',vn:'Bạn tôi ＿＿ đi Bắc Kinh.',options:['明天中午','七月八号','下午两点'],samples:['我朋友明天中午去北京。','我朋友七月八号去北京。','我朋友下午两点去北京。']},
+      {frame:'我们＿＿吃饭。',frame_py:'Wǒmen ___ chī fàn.',vn:'Chúng tôi ăn cơm lúc ＿＿.',options:['十二点','十一点五十分','一点十分'],samples:['我们十二点吃饭。','我们十一点五十分吃饭。','我们一点十分吃饭。']},
     ],
   },
   t3:{
     intro:'Không nhìn câu mẫu, hãy tưởng tượng bạn đang ở trong tình huống thực tế và tự nói ra câu phù hợp.',
     tasks:[
-      {role:'⏰ Tình huống 1 — Hỏi giờ ngoài đường',
-       guide:'Bạn không mang đồng hồ và muốn hỏi giờ một người lạ ngoài đường.',
-       structure:['现在几点？','现在＿＿点＿＿分。'],
-       sample:'现在几点？现在十点十分。',
-       sample_vn:'Bây giờ là mấy giờ? Bây giờ là 10 giờ 10 phút.',
-       note:'Khi nói giờ, số "2" phải đọc là 两 (liǎng) chứ không phải 二 (èr) — ví dụ 两点 chứ không nói 二点.'},
-      {role:'🏠 Tình huống 2 — Hẹn giờ về nhà với người thân',
-       guide:'Bạn gọi điện hỏi cha mấy giờ về nhà, và hẹn giờ đi xem phim cùng gia đình.',
-       structure:['爸爸什么时候回家？','我们什么时候去看电影？'],
-       sample:'爸爸什么时候回家？我们什么时候去看电影？',
-       sample_vn:'Chừng nào cha về nhà? Khi nào chúng ta đi xem phim?',
-       note:'Trạng ngữ chỉ thời gian (下午五点, 六点三十分) luôn đứng TRƯỚC động từ trong câu tiếng Trung — không đặt ở cuối câu như tiếng Việt hay làm.'},
-      {role:'✈️ Tình huống 3 — Báo lịch trình đi công tác',
-       guide:'Bạn báo cho gia đình biết kế hoạch đi Bắc Kinh của mình và hẹn ngày về.',
-       structure:['我星期一去北京。','星期五前能回家吗？'],
-       sample:'我星期一去北京。你想在北京住几天？住三天。星期五前能回家吗？能。',
-       sample_vn:'Thứ hai anh sẽ đi Bắc Kinh. Anh định ở mấy ngày? Ba ngày. Anh có thể về trước thứ sáu không? Được.',
-       note:'前 sau một mốc thời gian cụ thể (星期五前) nghĩa là "trước mốc đó" — rất hữu ích khi đặt deadline hoặc hẹn lịch trong công việc thực tế.'},
+      {role:'⏰ Tình huống 1 — Kể một ngày của bạn',
+       guide:'Một người bạn Trung Quốc hỏi về một ngày của bạn: mấy giờ đi học / đi làm, trưa ăn cơm ở đâu, mấy giờ về nhà.',
+       structure:['我＿＿点去＿＿。','中午在＿＿吃饭。','下午＿＿回家。'],
+       sample:'我八点去医院工作，中午在医院吃饭，下午五点十分回家。',
+       sample_vn:'Tôi 8 giờ đi làm ở bệnh viện, trưa ăn cơm ở bệnh viện, 5 giờ 10 chiều về nhà.',
+       note:'Người Việt hay nói “tôi đi làm lúc 8 giờ” rồi dịch thành 我去工作八点 — sai. Thời gian luôn đứng TRƯỚC động từ: 我八点去工作.'},
+      {role:'🎬 Tình huống 2 — Hẹn bạn đi xem phim',
+       guide:'Bạn rủ bạn cùng lớp đi xem phim: hỏi ngày nào, đề nghị giờ, bạn kia đồng ý.',
+       structure:['我们星期几去看电影？','＿＿下午＿＿点，好吗？'],
+       sample:'我们星期几去看电影？——星期六下午三点，好吗？——好！',
+       sample_vn:'Thứ mấy chúng mình đi xem phim? — Ba giờ chiều thứ Bảy, được không? — Được!',
+       note:'Đề nghị một giờ hẹn, thêm ……，好吗？ ở cuối câu cho lịch sự. Thứ tự: ngày (星期六) → buổi (下午) → giờ (三点).'},
+      {role:'✈️ Tình huống 3 — Báo lịch đi Bắc Kinh',
+       guide:'Bạn sắp đi Bắc Kinh. Nói với đồng nghiệp ngày đi, bạn ở đâu và về trước ngày nào (dùng 前).',
+       structure:['我＿＿去北京。','住在＿＿。','＿＿前回家。'],
+       sample:'我九月三号去北京，住在朋友家，十号前回家。',
+       sample_vn:'Ngày 3 tháng 9 tôi đi Bắc Kinh, ở nhà bạn, trước ngày 10 về nhà.',
+       note:'Mốc thời gian + 前 (十号前 = trước ngày 10): 前 đứng SAU mốc, ngược với tiếng Việt “trước ngày 10”.'},
     ],
   },
 };
@@ -1060,46 +1066,48 @@ var speakingData = {
 // LUYỆN DỊCH — dùng từ bài 11 + ôn lại từ bài 1-10
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Bây giờ là mười giờ mười phút.', zh:'现在十点十分。', py:'Xiànzài shí diǎn shí fēn.'},
-  {vi:'Chúng tôi mấy giờ ăn cơm?', zh:'我们几点吃饭？', py:'Wǒmen jǐ diǎn chī fàn?'},
-  {vi:'Lúc nào bạn về nhà?', zh:'你什么时候回家？', py:'Nǐ shénme shíhou huí jiā?'},
-  {vi:'Trước thứ Sáu, tôi muốn đọc quyển sách này.', zh:'星期五前，我想看这本书。', py:'Xīngqīwǔ qián, wǒ xiǎng kàn zhè běn shū.'},
+  {vi:'Ngày mai tôi về nhà lúc 4 giờ 20 chiều.', zh:'我明天下午四点二十分回家。', py:'Wǒ míngtiān xiàwǔ sì diǎn èrshí fēn huí jiā.'},
+  {vi:'Chúng tôi sống ở phía sau trường học.', zh:'我们住在学校后面。', py:'Wǒmen zhù zài xuéxiào hòumiàn.'},
+  {vi:'Trước 8 giờ tôi có thể đến trường.', zh:'八点前我能去学校。', py:'Bā diǎn qián wǒ néng qù xuéxiào.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Bây giờ mấy giờ? Bây giờ mười hai giờ, chúng ta ăn cơm đi.', zh:'现在几点？现在十二点，我们吃饭吧。', py:'Xiànzài jǐ diǎn? Xiànzài shí\'èr diǎn, wǒmen chī fàn ba.'},
-  {vi:'Khi nào bạn về nhà? Tôi sáu giờ về nhà.', zh:'你什么时候回家？我六点回家。', py:'Nǐ shénme shíhou huí jiā? Wǒ liù diǎn huí jiā.'},
-  {vi:'Trước thứ Sáu, tôi muốn đọc quyển sách này và quyển sách kia.', zh:'星期五前，我想看这本书和那本书。', py:'Xīngqīwǔ qián, wǒ xiǎng kàn zhè běn shū hé nà běn shū.'},
-  {vi:'Bây giờ mấy giờ rồi?', zh:'现在几点了？', py:'Xiànzài jǐ diǎn le?'},
+  {vi:'Buổi trưa chúng tôi ra phía trước trường ăn cơm.', zh:'中午我们去学校前面吃饭。', py:'Zhōngwǔ wǒmen qù xuéxiào qiánmiàn chī fàn.'},
+  {vi:'Thứ Sáu Tạ Bằng đi Bắc Kinh thăm mẹ.', zh:'谢朋星期五去北京看他妈妈。', py:'Xiè Péng xīngqīwǔ qù Běijīng kàn tā māma.'},
+  {vi:'Trước khi về nhà, tôi đi cửa hàng mua hai cái cốc.', zh:'回家前，我去商店买两个杯子。', py:'Huí jiā qián, wǒ qù shāngdiàn mǎi liǎng ge bēizi.'},
 ];
 
 // ══════════════════════════════════════════
-// LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
+// LUYỆN NGHE — nghe câu → chọn đáp án (đọc bằng giọng máy), chỉ dùng từ đã học
 // ══════════════════════════════════════════
 var listenData = [
-  {audio:'现在几点？现在十点二十分。',
+  {audio:'现在三点四十分，电影四点。',
    questions:[
-     {q:'Bây giờ là mấy giờ?',opts:['10 giờ 20','10 giờ 12','12 giờ 10'],ans:0},
+     {q:'Còn bao lâu nữa thì phim bắt đầu?',opts:['40 phút','20 phút','1 tiếng'],ans:1,exp:'Bây giờ 三点四十分, phim lúc 四点 → còn 20 phút.'},
    ]},
-  {audio:'我们中午几点吃饭？十二点三十分。',
+  {audio:'李月的爸爸是医生，他中午不回家，下午六点回家。',
    questions:[
-     {q:'Họ ăn trưa lúc mấy giờ?',opts:['12 giờ','12 giờ 30','13 giờ'],ans:1},
+     {q:'Bố của Lý Nguyệt về nhà lúc mấy giờ?',opts:['12 giờ trưa','4 giờ chiều','6 giờ chiều'],ans:2,exp:'中午不回家 = trưa không về; 下午六点回家 = 6 giờ chiều về nhà.'},
    ]},
-  {audio:'你什么时候回家？我下午五点回家。',
+  {audio:'李月住在学校里，王方住在商店后面。',
    questions:[
-     {q:'Người trả lời về nhà lúc mấy giờ?',opts:['5 giờ sáng','5 giờ chiều','3 giờ chiều'],ans:1},
+     {q:'Ai sống trong trường?',opts:['Lý Nguyệt','Vương Phương','Cả hai người'],ans:0,exp:'李月住在学校里 = Lý Nguyệt sống trong trường.'},
+     {q:'Vương Phương sống ở đâu?',opts:['Phía trước cửa hàng','Phía sau cửa hàng','Trong trường'],ans:1,exp:'商店后面 = phía sau cửa hàng.'},
    ]},
-  {audio:'我星期三去北京，在北京住四天。',
+  {audio:'我们星期六去北京，星期二回家。',
    questions:[
-     {q:'Người nói đi Bắc Kinh vào thứ mấy?',opts:['Thứ Hai','Thứ Tư','Thứ Năm'],ans:1},
-     {q:'Người nói ở Bắc Kinh mấy ngày?',opts:['3 ngày','4 ngày','5 ngày'],ans:1},
+     {q:'Họ về nhà vào thứ mấy?',opts:['Thứ Bảy','Thứ Ba','Thứ Hai'],ans:1,exp:'星期二回家 = thứ Ba về nhà; 星期六 là ngày đi.'},
    ]},
-  {audio:'明天我们去看电影吗？去，下午六点去。',
+  {audio:'今天是九月八号，星期四。我朋友九月十号回美国。',
    questions:[
-     {q:'Ngày mai họ đi xem phim lúc mấy giờ?',opts:['6 giờ chiều','6 giờ sáng','5 giờ chiều'],ans:0},
+     {q:'Bạn của người nói về Mỹ vào thứ mấy?',opts:['Thứ Năm','Thứ Sáu','Thứ Bảy'],ans:2,exp:'Hôm nay 8/9 là thứ Năm; 10/9 là hai ngày sau → thứ Bảy.'},
+   ]},
+  {audio:'妈妈，现在一点了，我想吃饭！',
+   questions:[
+     {q:'Bây giờ là mấy giờ?',opts:['1 giờ','7 giờ','11 giờ'],ans:0,exp:'一点 = 1 giờ; chú ý phân biệt yī (一) và qī (七).'},
    ]},
 ];
 

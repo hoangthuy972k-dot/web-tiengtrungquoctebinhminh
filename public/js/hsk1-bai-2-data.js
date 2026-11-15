@@ -349,87 +349,79 @@ var dialogData = [
    ]},
 ];
 
-// Điền từ — mô tả tình huống thực tế, không lặp nguyên văn bài khoá
+// Điền từ — mỗi câu một tình huống: cảm ơn, đáp lời cảm ơn, tạm biệt (ôn 你/您/对不起/没关系 bài 1)
 var fillData = [
-  {pre:'Ai đó giúp bạn xách đồ nặng, bạn nói: “',blank:'谢谢',post:'”',hint:'(cảm ơn)',ans:'谢谢',exp:'谢谢 (xièxie) là lời cảm ơn; âm tiết thứ hai đọc thanh nhẹ.'},
-  {pre:'Bạn thân cảm ơn bạn, bạn đáp lại đơn giản, thân mật: “',blank:'不谢',post:'”',hint:'(không cần cảm ơn — thân mật)',ans:'不谢',exp:'不谢 là cách đáp lời cảm ơn ngắn gọn, thân mật giữa bạn bè.'},
-  {pre:'Một người lạ/khách hàng cảm ơn bạn, bạn đáp lại lịch sự hơn: “',blank:'不客气',post:'”',hint:'(đừng khách sáo — lịch sự, trang trọng)',ans:'不客气',exp:'不客气 lịch sự hơn 不谢, hợp với khách hàng, người lạ.'},
-  {pre:'Chia tay bạn bè sau buổi học, bạn nói: “',blank:'再见',post:'”',hint:'(tạm biệt)',ans:'再见',exp:'再见 dùng khi chia tay: "hẹn gặp lại".'},
-  {pre:'Ai đó tặng quà cho bạn, bạn cảm ơn họ: “',blank:'谢谢',post:'”',hint:'(cảm ơn)',ans:'谢谢',exp:'Được tặng quà thì nói 谢谢 để cảm ơn.'},
-  {pre:'Nhân viên phục vụ cảm ơn bạn đã ghé quán, bạn đáp lại: “',blank:'不客气',post:'”',hint:'(đừng khách sáo)',ans:'不客气',exp:'Đáp lại lời cảm ơn của khách một cách lịch sự: 不客气.'},
-  {pre:'Gặp lại thầy giáo sau kỳ nghỉ, trước khi ra về bạn nói: “',blank:'再见',post:'”',hint:'(tạm biệt)',ans:'再见',exp:'Trước khi ra về nói 再见 để chào tạm biệt.'},
-  {pre:'Kết thúc cuộc gọi điện thoại, hai người nói với nhau: “',blank:'再见',post:'”',hint:'(tạm biệt)',ans:'再见',exp:'Kết thúc cuộc gọi, hai bên chào nhau bằng 再见.'},
+  {pre:'Bạn đánh rơi bút, bạn ngồi bàn sau nhặt lên đưa lại. Bạn quay xuống nói: “',blank:'谢谢',post:'你！”',hint:'(cảm ơn)',ans:'谢谢',exp:'Được người khác giúp thì cảm ơn: 谢谢你 = cảm ơn bạn.'},
+  {pre:'Bạn làm thêm ở quán trà sữa. Một vị khách nhận cốc và cảm ơn bạn. Bạn đáp lịch sự: “',blank:'不客气',post:'！”',hint:'(đừng khách sáo — lịch sự)',ans:'不客气',exp:'Với khách hàng, người lạ, đáp 不客气 lịch sự hơn 不谢.'},
+  {pre:'Bạn thân cảm ơn vì bạn cho mượn vở chép bài. Bạn xua tay, đáp kiểu thân mật: “',blank:'不谢',post:'！”',hint:'(khỏi cảm ơn — giữa bạn bè)',ans:'不谢',exp:'不谢 ngắn gọn, thân mật, hợp để nói với bạn bè, người nhà.'},
+  {pre:'Nói chuyện điện thoại với mẹ xong, mẹ dặn bạn ngủ sớm. Bạn đồng ý rồi chào: “好，',blank:'再见',post:'！”',hint:'(tạm biệt)',ans:'再见',exp:'Kết thúc cuộc gọi hay buổi gặp đều chào 再见; 好 ở đầu câu = được, vâng.'},
+  {pre:'Một em bé chạy vội va vào bạn, lí nhí nói “对不起！”. Bạn xoa đầu bé: “',blank:'没关系',post:'！”',hint:'(không sao đâu)',ans:'没关系',exp:'Đáp lời xin lỗi là 没关系; đừng nhầm với 不客气 (đáp lời cảm ơn).'},
 ];
 
-// Sắp xếp — bao gồm 1 câu ôn tập kết hợp từ vựng Bài 1
+// Sắp xếp — ghép chữ thành câu (có dấu câu)
 var sortData = [
-  {words:['谢','谢','！'],ans:'谢谢！',audio:'谢谢！'},
-  {words:['谢','谢','你','！'],ans:'谢谢你！',audio:'谢谢你！'},
-  {words:['不','客','气','！'],ans:'不客气！',audio:'不客气！'},
-  {words:['再','见','！'],ans:'再见！',audio:'再见！'},
-  {words:['你好','，','谢','谢','你','！'],ans:'你好，谢谢你！',audio:'你好，谢谢你！'},
+  {words:['谢','谢','您','，','再','见','！'],ans:'谢谢您，再见！',audio:'谢谢您，再见！',alt:['再见，谢谢您！']},
+  {words:['不','客','气','，','不','客','气','！'],ans:'不客气，不客气！',audio:'不客气，不客气！'},
+  {words:['对','不','起','，','谢','谢','你','！'],ans:'对不起，谢谢你！',audio:'对不起，谢谢你！'},
 ];
 
-// Nối câu — nối tình huống với câu nói phù hợp
+// Nối — tình huống ↔ câu nói phù hợp
 var matchData = [
-  {left:'Cảm ơn ai đó vừa giúp bạn',right:'谢谢！'},
-  {left:'Đáp lại lời cảm ơn một cách thân mật',right:'不谢！'},
-  {left:'Đáp lại lời cảm ơn một cách lịch sự, trang trọng hơn',right:'不客气！'},
-  {left:'Chia tay khi kết thúc cuộc gặp',right:'再见！'},
+  {left:'Em gái cảm ơn vì bạn buộc tóc giúp — bạn đáp',right:'不谢！'},
+  {left:'Hành khách cảm ơn bạn (tài xế) — bạn đáp',right:'不客气！'},
+  {left:'Tiễn khách ra tận cửa',right:'再见！'},
+  {left:'Cô giáo cho bạn mượn sách',right:'谢谢您！'},
+  {left:'Bạn cùng phòng làm đổ nước lên bàn bạn và xin lỗi',right:'没关系！'},
 ];
 
-// Trắc nghiệm — kiểm tra ngữ dụng & quy tắc biến điệu của "不", không audio
+// Trắc nghiệm — chọn câu đúng tình huống, chọn câu đáp; không hỏi lý thuyết
 var mcData = [
-  {q:'Ai đó giúp bạn, cách cảm ơn đúng là?',opts:['谢谢','再见','不客气','对不起'],ans:0,exp:'谢谢 là lời cảm ơn; 再见 là tạm biệt, 不客气 dùng đáp lời cảm ơn, 对不起 là xin lỗi.'},
-  {q:'Đáp lại lời cảm ơn một cách THÂN MẬT, đơn giản nhất là?',opts:['不谢','不客气','谢谢','再见'],ans:0,exp:'不谢 (khỏi cảm ơn) ngắn gọn, thân mật, hay dùng với bạn bè.'},
-  {q:'Đáp lại lời cảm ơn một cách LỊCH SỰ hơn (với khách/người lạ) là?',opts:['不客气','不谢','谢谢','没关系'],ans:0,exp:'不客气 (đừng khách sáo) lịch sự hơn 不谢, hợp khi nói với khách hay người lạ.'},
-  {q:'Kết thúc cuộc gặp, câu tạm biệt đúng là?',opts:['再见','谢谢','你好','对不起'],ans:0,exp:'再见 = 再 (lại) + 见 (gặp): hẹn gặp lại, dùng khi chia tay.'},
-  {q:'"不" đọc giữ nguyên là "bù" (thanh 4) khi đứng trước âm tiết mang thanh mấy?',opts:['Thanh 1, 2 hoặc 3','Chỉ thanh 4','Chỉ thanh 1','Tất cả các thanh đều đổi'],ans:0,exp:'不 giữ thanh 4 (bù) khi đứng trước thanh 1, 2, 3, ví dụ bù chī, bù lái, bù hǎo.'},
-  {q:'"不" đổi thành "bú" (thanh 2) khi đứng trước âm tiết mang thanh mấy?',opts:['Thanh 4','Thanh 1','Thanh 2','Thanh 3'],ans:0,exp:'不 đổi thành bú (thanh 2) khi đứng trước thanh 4: 不谢 bú xiè, 不客气 bú kèqi.'},
-  {q:'"bù chī" (không ăn) — "不" ở đây KHÔNG đổi thanh vì "吃" (chī) mang thanh mấy?',opts:['Thanh 1','Thanh 2','Thanh 3','Thanh 4'],ans:0,exp:'吃 đọc chī (thanh 1), nên 不 vẫn giữ nguyên thanh 4: bù chī.'},
-  {q:'"bú shì" (không phải) — "不" ở đây đổi thành thanh 2 vì "是" (shì) mang thanh mấy?',opts:['Thanh 4','Thanh 1','Thanh 2','Thanh 3'],ans:0,exp:'是 đọc shì (thanh 4), nên 不 đổi thành thanh 2: bú shì.'},
-  {q:'Câu nào dùng để ĐÁP LẠI lời xin lỗi (không phải lời cảm ơn)?',opts:['没关系','不客气','不谢','谢谢'],ans:0,exp:'没关系 đáp lời xin lỗi; còn 不客气 và 不谢 dùng để đáp lời cảm ơn.'},
-  {q:'Muốn cảm ơn TRỰC TIẾP một người cụ thể, thêm từ nào vào sau 谢谢?',opts:['你','好','们','起'],ans:0,exp:'谢谢你 = cảm ơn bạn: thêm 你 sau 谢谢 để cảm ơn trực tiếp một người.'},
+  {q:'Bạn mượn thước của bạn cùng bàn. Bạn ấy đáp lại bạn: “不谢！”. Vậy lúc nãy bạn đã nói:',opts:['谢谢！','对不起！','你好！','再见！'],ans:0,exp:'不谢 là câu đáp lời cảm ơn, nên trước đó bạn đã nói 谢谢.'},
+  {q:'A (bạn thân): “谢谢你！” — B đáp thân mật:',opts:['不谢，不谢！','没关系，没关系！','谢谢，谢谢！','对不起，对不起！'],ans:0,exp:'Đáp lời cảm ơn dùng 不谢; 没关系 là đáp lời xin lỗi — người Việt hay nhầm vì cả hai đều dịch là “không có gì”.'},
+  {q:'Tết đến, ông nội lì xì cho bạn. Bạn cảm ơn ông:',opts:['谢谢您！','谢谢你！','不客气！','没关系！'],ans:0,exp:'Cảm ơn ông bà dùng 您 cho lễ phép; 不客气 là câu đáp, không phải câu cảm ơn.'},
+  {q:'Cặp hỏi – đáp nào SAI?',opts:['A: 对不起！— B: 不客气！','A: 谢谢你！— B: 不谢！','A: 再见！— B: 再见！','A: 你们好！— B: 你好！'],ans:0,exp:'Người ta xin lỗi thì đáp 没关系; 不客气 chỉ dùng để đáp lời cảm ơn.'},
+  {q:'Sáng sớm, bạn gặp bạn cùng lớp ở cổng trường. Bạn nói:',opts:['你好！','再见！','不谢！','谢谢！'],ans:0,exp:'Gặp nhau thì chào 你好; 再见 chỉ dùng lúc chia tay.'},
+  {q:'Một bạn làm rơi sách của bạn và nói “对不起！”, rồi nhặt lên đưa lại cho bạn. Bạn nói:',opts:['没关系，谢谢！','不客气，谢谢！','没关系，不谢！','对不起，不客气！'],ans:0,exp:'Đáp lời xin lỗi: 没关系; được nhặt sách giúp: 谢谢. Còn 不谢 / 不客气 là để đáp lời cảm ơn của người khác.'},
+  {q:'Bạn mua đồ xong, nhân viên đưa túi và nói: “谢谢！再见！”. Bạn đáp:',opts:['再见！','你们好！','没关系！','您好！'],ans:0,exp:'Người ta chào tạm biệt thì chào lại 再见; 你好 / 您好 chỉ dùng khi mới gặp.'},
 ];
 
 var speakingData = {
   t1:{
-    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý biến điệu: "不谢" đọc là "bú xiè" (不 đổi sang thanh 2 vì 谢 mang thanh 4).',
+    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý: 不 đứng trước một chữ thanh 4 thì đọc thành thanh 2 — 不谢 đọc “bú xiè”, 不客气 đọc “bú kèqi”. Chữ thứ hai của 谢谢 đọc nhẹ.',
     models:[
-      {zh:'谢谢！',py:'Xièxie!',vn:'Cảm ơn!'},
-      {zh:'不谢！',py:'Bú xiè!',vn:'Không cần cảm ơn đâu!'},
-      {zh:'谢谢你！',py:'Xièxie nǐ!',vn:'Cảm ơn bạn!'},
-      {zh:'不客气！',py:'Bú kèqi!',vn:'Đừng khách sáo!'},
-      {zh:'再见！',py:'Zàijiàn!',vn:'Tạm biệt!'},
+      {zh:'谢谢！——不谢！',py:'Xièxie! — Bú xiè!',vn:'Cảm ơn! — Không cần cảm ơn đâu!'},
+      {zh:'谢谢，谢谢！',py:'Xièxie, xièxie!',vn:'Cảm ơn, cảm ơn nhiều!'},
+      {zh:'再见！——再见！',py:'Zàijiàn! — Zàijiàn!',vn:'Tạm biệt! — Tạm biệt!'},
+      {zh:'你好！谢谢你！',py:'Nǐ hǎo! Xièxie nǐ!',vn:'Chào bạn! Cảm ơn bạn!'},
     ],
   },
   t2:{
-    intro:'Dùng khung hội thoại cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý để thấy rõ sự khác biệt về mức độ thân mật khi đáp lời cảm ơn. Nhấn nút loa để nghe rồi nói to.',
+    intro:'Thay phần gạch chân bằng từ trong ô gợi ý để cảm ơn đúng người: bạn bè dùng 你, người lớn tuổi dùng 您. Nhấn nút loa để nghe rồi nói to cả hai lượt lời.',
     drills:[
-      {frame:'A: 谢谢你！ B: ＿＿！',frame_py:'A: Xièxie nǐ! B: ___!',vn:'A: Cảm ơn bạn! B: ＿＿! (chọn cách đáp phù hợp với mối quan hệ)',options:['不谢','不客气'],samples:['不谢！ (đáp thân mật — dùng giữa bạn bè, người thân)','不客气！ (đáp lịch sự — dùng với người lạ, khách hàng, cấp trên)']},
+      {frame:'A: 谢谢＿＿！ B: 不客气！',frame_py:'A: Xièxie ___! B: Bú kèqi!',vn:'A: Cảm ơn ＿＿! B: Đừng khách sáo!',options:['你','您'],samples:['A: 谢谢你！ B: 不客气！','A: 谢谢您！ B: 不客气！']},
     ],
   },
   t3:{
-    intro:'Không nhìn câu mẫu, hãy tưởng tượng bạn đang ở trong tình huống thực tế và tự nói ra câu phù hợp. Chú ý chọn đúng mức độ thân mật/trang trọng theo đối tượng giao tiếp.',
+    intro:'Không nhìn câu mẫu, hãy tưởng tượng bạn đang ở trong tình huống thực tế và tự nói ra câu phù hợp. Chú ý chọn đúng câu cảm ơn, câu đáp và lời chào.',
     tasks:[
-      {role:'🛍️ Tình huống 1 — Nhân viên cửa hàng giúp bạn tìm đồ',
-       guide:'Bạn đang mua sắm và một nhân viên đã nhiệt tình giúp bạn tìm đúng món đồ cần mua. Hãy cảm ơn họ.',
-       structure:['谢谢＿＿！'],
-       sample:'谢谢你！',
-       sample_vn:'Cảm ơn bạn!',
-       note:'Với người phục vụ hoặc người mới quen, thêm 你 vào sau 谢谢 nghe lịch sự và trực tiếp hơn là chỉ nói suông "谢谢".'},
-      {role:'🤝 Tình huống 2 — Bạn thân giúp bạn một việc nhỏ',
-       guide:'Bạn thân vừa giúp bạn mượn quyển sách. Bạn cảm ơn, và họ đáp lại. Hãy nói cả hai lượt lời.',
-       structure:['谢谢！','＿＿！'],
-       sample:'谢谢！ —— 不谢！',
-       sample_vn:'Cảm ơn! —— Không cần cảm ơn đâu!',
-       note:'不谢 mang sắc thái THÂN MẬT hơn 不客气 — dùng giữa bạn bè, người thân sẽ tự nhiên hơn là 不客气 (thường dùng trong giao tiếp trang trọng, với người lạ).'},
-      {role:'👋 Tình huống 3 — Kết thúc buổi gặp mặt',
-       guide:'Buổi gặp mặt bạn bè đã kết thúc, mọi người chuẩn bị ra về. Hãy chào tạm biệt.',
-       structure:['再见！'],
-       sample:'再见！',
-       sample_vn:'Tạm biệt!',
-       note:'再见 dùng được trong MỌI tình huống chia tay, không cần phân biệt thân mật hay trang trọng — khác với 你好/您好 phải chọn theo đối tượng giao tiếp.'},
+      {role:'🛍️ Tình huống 1 — Nhân viên giúp bạn tìm đồ',
+       guide:'Bạn tìm mãi không thấy món đồ cần mua, một nhân viên cửa hàng nhiệt tình tìm giúp. Hãy cảm ơn thật lòng.',
+       structure:['谢谢，谢谢＿＿！'],
+       sample:'谢谢，谢谢你！',
+       sample_vn:'Cảm ơn, cảm ơn bạn nhiều!',
+       note:'Nói 谢谢 hai lần hoặc thêm 你 / 您 phía sau nghe chân thành hơn. Đừng nói “你谢谢” — người được cảm ơn luôn đứng sau 谢谢.'},
+      {role:'👵 Tình huống 2 — Giúp cụ bà qua đường',
+       guide:'Bạn dắt một cụ bà qua đường. Cụ cảm ơn bạn rối rít. Hãy đáp lại lễ phép.',
+       structure:['＿＿！'],
+       sample:'不客气！',
+       sample_vn:'Dạ, không có gì ạ!',
+       note:'Người Việt hay đáp “không có gì” bằng 没关系 — sai! 没关系 chỉ dùng khi người ta xin lỗi. Người ta cảm ơn thì đáp 不客气 (lịch sự) hoặc 不谢 (thân mật).'},
+      {role:'🏃 Tình huống 3 — Phải về sớm',
+       guide:'Bạn đang ngồi chơi với nhóm bạn nhưng có việc phải về trước. Hãy xin lỗi và chào tạm biệt mọi người.',
+       structure:['＿＿，＿＿！'],
+       sample:'对不起，再见！',
+       sample_vn:'Xin lỗi nhé, mình về trước đây!',
+       note:'再见 dùng được với mọi người, không cần đổi theo tuổi tác như 你好 / 您好.'},
     ],
   },
 };
@@ -438,45 +430,38 @@ var speakingData = {
 // LUYỆN DỊCH — dùng từ bài 2 + ôn lại từ bài 1
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Cảm ơn bạn!', zh:'谢谢你！', py:'Xièxie nǐ!'},
-  {vi:'Không có gì đâu!', zh:'不客气！', py:'Bú kèqi!'},
-  {vi:'Tạm biệt các bạn!', zh:'你们，再见！', py:'Nǐmen, zàijiàn!'},
-  {vi:'Chào bạn! Cảm ơn nhé!', zh:'你好！谢谢你！', py:'Nǐ hǎo! Xièxie nǐ!'},
+  {vi:'(Đáp lời cảm ơn của khách) Không có gì ạ! Tạm biệt!', zh:'不客气！再见！', py:'Bú kèqi! Zàijiàn!'},
+  {vi:'Cháu chào ông ạ! Cháu cảm ơn ông!', zh:'您好！谢谢您！', py:'Nín hǎo! Xièxie nín!'},
+  {vi:'Chào các bạn! Cảm ơn các bạn!', zh:'你们好！谢谢你们！', py:'Nǐmen hǎo! Xièxie nǐmen!'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Xin lỗi! — Không sao đâu!', zh:'对不起！——没关系！', py:'Duìbuqǐ! — Méi guānxi!'},
-  {vi:'Kính chào ngài! Tạm biệt!', zh:'您好！再见！', py:'Nín hǎo! Zàijiàn!'},
-  {vi:'Cảm ơn ngài! Không có gì đâu!', zh:'谢谢您！不客气！', py:'Xièxie nín! Bú kèqi!'},
-  {vi:'Chào các bạn! Cảm ơn các bạn!', zh:'你们好！谢谢你们！', py:'Nǐmen hǎo! Xièxie nǐmen!'},
+  {vi:'Cảm ơn bạn! Tạm biệt!', zh:'谢谢你！再见！', py:'Xièxie nǐ! Zàijiàn!'},
+  {vi:'Cảm ơn bà! Xin lỗi (đã làm phiền bà)!', zh:'谢谢您！对不起！', py:'Xièxie nín! Duìbuqǐ!'},
 ];
 
 // ══════════════════════════════════════════
-// LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
+// LUYỆN NGHE — nghe câu → chọn đáp án (đọc bằng giọng máy), chỉ dùng từ đã học
 // ══════════════════════════════════════════
 var listenData = [
-  {audio:'谢谢！不谢！',
+  {audio:'再见，再见！',
    questions:[
-     {q:'Người thứ hai đang đáp lại lời gì?',opts:['Lời xin lỗi','Lời cảm ơn','Lời chào'],ans:1},
+     {q:'Câu này thường được nói vào lúc nào?',opts:['Lúc mới gặp nhau','Lúc chia tay','Lúc làm phiền người khác'],ans:1,exp:'再见 = tạm biệt, nói lúc chia tay.'},
    ]},
-  {audio:'谢谢您！不客气！',
+  {audio:'谢谢您！——不谢！',
    questions:[
-     {q:'Người thứ nhất cảm ơn ai?',opts:['Một người cần kính trọng (您)','Một nhóm bạn','Chính mình'],ans:0},
-     {q:'Câu đáp có nghĩa là gì?',opts:['Không sao đâu','Đừng khách sáo','Tạm biệt'],ans:1},
+     {q:'Người thứ nhất cảm ơn ai?',opts:['Một người lớn tuổi','Một bạn cùng tuổi','Cả một nhóm bạn'],ans:0,exp:'谢谢您 dùng 您 (kính trọng) nên người được cảm ơn là người lớn tuổi.'},
+     {q:'Người thứ hai trả lời thế nào?',opts:['Không sao đâu','Tạm biệt','Không cần cảm ơn'],ans:2,exp:'不谢 = khỏi cảm ơn, câu đáp thân mật.'},
    ]},
-  {audio:'对不起！没关系。再见！再见！',
+  {audio:'对不起！——没关系！再见！',
    questions:[
-     {q:'Cuối đoạn hội thoại, hai người làm gì?',opts:['Chào tạm biệt','Cảm ơn nhau','Xin lỗi nhau'],ans:0},
+     {q:'Người thứ hai phản ứng thế nào?',opts:['Cũng xin lỗi lại','Bỏ qua rồi chào tạm biệt','Cảm ơn rồi chào hỏi'],ans:1,exp:'没关系 = không sao đâu (bỏ qua); 再见 = tạm biệt.'},
    ]},
-  {audio:'你们好！谢谢你们！',
+  {audio:'您好！谢谢，谢谢！',
    questions:[
-     {q:'Người nói cảm ơn ai?',opts:['Một người bạn','Một nhóm người','Một người lớn tuổi'],ans:1},
-   ]},
-  {audio:'谢谢你！不客气，再见！',
-   questions:[
-     {q:'Người thứ hai nói những gì?',opts:['Xin lỗi và tạm biệt','Không có gì và tạm biệt','Cảm ơn và xin chào'],ans:1},
+     {q:'Người nói làm những việc gì?',opts:['Chào rồi xin lỗi','Chào rồi cảm ơn','Cảm ơn rồi tạm biệt'],ans:1,exp:'您好 là lời chào (kính trọng); 谢谢 nói hai lần là cảm ơn rất nhiều.'},
    ]},
 ];

@@ -938,89 +938,95 @@ var dialogData = [
    ]},
 ];
 
-// Điền từ — đổi hoạt động so với bài khoá
+// Điền từ — mỗi câu một tình huống mới: gọi điện (喂, 给…打电话), đang làm gì (在…呢), 也, 喜欢, 吧
 var fillData = [
-  {pre:'Nghe điện thoại reo, bạn bắt máy nói: “',blank:'喂',post:'，你好！”',hint:'(a lô)',ans:'喂',exp:'喂 dùng khi nghe hoặc gọi điện thoại: a lô.'},
-  {pre:'Bạn nói mình cũng đang đọc sách: “我',blank:'也',post:'在看书。”',hint:'(cũng)',ans:'也',exp:'也 đứng trước động từ: 我也在看书 = tôi cũng đang đọc sách.'},
-  {pre:'Bạn nói mình đang ngủ: “我在',blank:'睡觉',post:'。”',hint:'(ngủ)',ans:'睡觉',exp:'在 + 睡觉 = đang ngủ.'},
-  {pre:'Bạn hỏi ai đó có thích xem phim không: “你',blank:'喜欢',post:'看电影吗？”',hint:'(thích)',ans:'喜欢',exp:'喜欢 + động từ = thích làm gì.'},
-  {pre:'Bạn nói mình đang xem tivi: “我在看',blank:'电视',post:'。”',hint:'(tivi)',ans:'电视',exp:'看电视 = xem tivi.'},
-  {pre:'Bạn nói sẽ gọi điện cho ai đó: “我',blank:'给',post:'她打电话。”',hint:'(cho, hướng về)',ans:'给',exp:'给 + người + 打电话 = gọi điện cho ai.'},
-  {pre:'Bạn đề nghị nhẹ nhàng ai đó gọi vào buổi chiều: “你下午打',blank:'吧',post:'。”',hint:'(trợ từ đề nghị)',ans:'吧',exp:'吧 làm lời đề nghị nhẹ nhàng hơn.'},
-  {pre:'Bạn nói mình đang học tiếng Trung: “我在',blank:'学习',post:'汉语。”',hint:'(học, học tập)',ans:'学习',exp:'学习 + môn học: 学习汉语 = học tiếng Trung.'},
+  {pre:'Bạn gọi điện cho Vương Phương, đầu dây bên kia vừa nhấc máy. Bạn nói: “',blank:'喂',post:'，是王方吗？”',hint:'(a lô)',ans:'喂',exp:'Mở đầu cuộc gọi điện thoại nói 喂 (a lô); gặp mặt trực tiếp thì không dùng 喂.'},
+  {pre:'Bạn cùng phòng khoe: “我有一个中国朋友。” Bạn cũng có, bạn nói: “我',blank:'也',post:'有，他在北京工作。”',hint:'(cũng)',ans:'也',exp:'也 đứng sau chủ ngữ, trước động từ: 我也有 = tôi cũng có; không nói 也我有.'},
+  {pre:'Hàng xóm hỏi con trai bạn đâu. Bạn đáp: “我儿子在学校',blank:'学习',post:'呢。”',hint:'(học)',ans:'学习',exp:'学习 = học (động từ), 学校 = trường học; 在学校学习呢 = đang học ở trường.'},
+  {pre:'Bạn kể về lịch học của hai anh em: “我们',blank:'上午',post:'去学校，中午回家吃饭。”',hint:'(buổi sáng)',ans:'上午',exp:'上午 = buổi sáng; thời gian đặt trước động từ, không nói 我们去学校上午.'},
+  {pre:'Bé Na sốt nhẹ, mẹ đặt bé lên giường và nói: “你',blank:'睡觉',post:'吧，妈妈在这儿。”',hint:'(ngủ)',ans:'睡觉',exp:'睡觉 = ngủ; động từ + 吧 ở cuối câu là lời khuyên nhẹ nhàng (ngủ đi con).'},
+  {pre:'Bạn đến nhà bạn, thấy bố bạn ấy ngồi trên ghế, mắt nhìn màn hình tivi: “你爸爸坐在椅子上看',blank:'电视',post:'呢。”',hint:'(tivi)',ans:'电视',exp:'看电视 = xem tivi; 坐在椅子上 + 看电视呢 = đang ngồi trên ghế xem tivi.'},
+  {pre:'Bạn muốn mua quà cho mẹ của bạn mình, bạn hỏi: “你妈妈',blank:'喜欢',post:'喝什么茶？”',hint:'(thích)',ans:'喜欢',exp:'喜欢 + động từ + tân ngữ = thích làm gì: 喜欢喝茶; câu có 什么 thì không thêm 吗.'},
+  {pre:'Mẹ bạn làm ở bệnh viện, trưa nào bạn cũng gọi cho mẹ: “妈妈在医院工作，我中午',blank:'给',post:'她打电话。”',hint:'(cho — chỉ người nhận)',ans:'给',exp:'给 + người + 打电话 = gọi điện cho ai; 给她 đứng trước 打电话, khác thứ tự tiếng Việt “gọi cho cô ấy”.'},
+  {pre:'Các bạn đến trường tìm cô Lý nhưng cô không có ở đó: “李老师不在学校，我们给她',blank:'打电话',post:'吧。”',hint:'(gọi điện thoại)',ans:'打电话',exp:'打电话 = gọi điện thoại; 我们给她打电话吧 = mình gọi điện cho cô ấy đi.'},
+  {pre:'Bạn gọi cho bạn thân, bạn ấy nói đang nấu ăn và mời bạn đến: “我',blank:'在',post:'做中国菜呢，你来我家吃饭吧！”',hint:'(đang)',ans:'在',exp:'在 + động từ (+ 呢) = đang làm gì; 在 đứng ngay trước động từ 做.'},
+  {pre:'Bạn nhắn tin cho bố: con mèo đang ngủ dưới gầm ghế. “小猫在椅子下面睡觉',blank:'呢',post:'。”',hint:'(trợ từ cuối câu — đang)',ans:'呢',exp:'呢 cuối câu trần thuật nhấn mạnh việc đang diễn ra: …睡觉呢; không dùng 吗 vì đây không phải câu hỏi.'},
 ];
 
-// Sắp xếp — đổi hoạt động so với bài khoá
+// Sắp xếp — câu mới, mỗi câu một điểm ngữ pháp
 var sortData = [
-  {words:['喂','，','你','在','做','什么','呢','？'],ans:'喂，你在做什么呢？',audio:'喂，你在做什么呢？'},
-  {words:['我','在','看','书','呢','。'],ans:'我在看书呢。',audio:'我在看书呢。'},
-  {words:['我','在','睡觉','呢','。'],ans:'我在睡觉呢。',audio:'我在睡觉呢。'},
-  {words:['你','喜欢','看','电视','吗','？'],ans:'你喜欢看电视吗？',audio:'你喜欢看电视吗？'},
-  {words:['我','不','喜欢','看','电视','。'],ans:'我不喜欢看电视。',audio:'我不喜欢看电视。'},
-  {words:['我','现在','给','她','打电话','。'],ans:'我现在给她打电话。',audio:'我现在给她打电话。'},
+  {words:['你','在','给','谁','打电话','呢','？'],ans:'你在给谁打电话呢？',audio:'你在给谁打电话呢？'},
+  {words:['大卫','也','喜欢','吃','中国','菜','。'],ans:'大卫也喜欢吃中国菜。',audio:'大卫也喜欢吃中国菜。'},
+  {words:['星期六','上午','我们','去','商店','买','杯子','吧','。'],ans:'星期六上午我们去商店买杯子吧。',audio:'星期六上午我们去商店买杯子吧。',alt:['我们星期六上午去商店买杯子吧。']},
+  {words:['喂','，','王','小姐','在','家','吗','？'],ans:'喂，王小姐在家吗？',audio:'喂，王小姐在家吗？'},
+  {words:['爸爸','没有','看','电视','，','他','在','睡觉','呢','。'],ans:'爸爸没有看电视，他在睡觉呢。',audio:'爸爸没有看电视，他在睡觉呢。'},
+  {words:['我','女儿','很','喜欢','学习','汉语','。'],ans:'我女儿很喜欢学习汉语。',audio:'我女儿很喜欢学习汉语。'},
 ];
 
+// Nối — câu hỏi ↔ câu trả lời (mỗi câu trả lời chỉ hợp với một câu hỏi)
 var matchData = [
-  {left:'喂，你在做什么呢？',right:'我在看书呢。'},
-  {left:'大卫也在看书吗？',right:'他没看书，他在学做中国菜呢。'},
-  {left:'昨天上午你在做什么呢？',right:'我在睡觉呢。'},
-  {left:'你喜欢看电视吗？',right:'我不喜欢看电视，我喜欢看电影。'},
-  {left:'这是李老师的电话吗？',right:'不是。她的电话是82304156。'},
+  {left:'喂，你现在在哪儿？',right:'我在学校呢，下午回家。'},
+  {left:'你儿子在学习吗？',right:'没有，他在看电视呢。'},
+  {left:'你喜欢喝茶吗？',right:'不喜欢，我爱喝水。'},
+  {left:'我们什么时候给她打电话？',right:'明天上午吧。'},
+  {left:'谁在给你打电话？',right:'是我的中国朋友。'},
+  {left:'大卫会做中国菜吗？',right:'会，他做的菜很好吃。'},
 ];
 
-// Trắc nghiệm — trọng tâm 在……呢 (đang tiếp diễn), 吧, số điện thoại, không audio
+// Trắc nghiệm — chọn câu đúng tình huống / chọn câu đáp / tìm câu sai
 var mcData = [
-  {q:'喂，你在做什么＿＿？',opts:['呢','吗','吧','了'],ans:0,exp:'在 + động từ + 呢 diễn tả hành động đang diễn ra: 你在做什么呢？'},
-  {q:'我在睡觉＿＿。(diễn tả hành động đang tiếp diễn)',opts:['呢','吗','吧','了'],ans:0,exp:'在……呢 = đang…: 我在睡觉呢 — tôi đang ngủ.'},
-  {q:'Phủ định của hành động đang tiếp diễn dùng cấu trúc nào?',opts:['没(在) + Động từ','不 + Động từ','别 + Động từ','无 + Động từ'],ans:0,exp:'Phủ định hành động đang diễn ra dùng 没(在) + động từ: 他没看书.'},
-  {q:'Số điện thoại "1" đọc như thế nào trong tiếng Trung?',opts:['yāo','yī','yì','yí'],ans:0,exp:'Trong số điện thoại, 1 thường đọc là yāo để khỏi nhầm với 7 (qī).'},
-  {q:'"喜欢" nghĩa là gì?',opts:['thích, ưa thích','ghét','sợ','buồn'],ans:0,exp:'喜欢 = thích: 我喜欢看电影.'},
-  {q:'"睡觉" nghĩa là gì?',opts:['ngủ','thức dậy','ăn cơm','đọc sách'],ans:0,exp:'睡觉 = ngủ.'},
-  {q:'"打电话" nghĩa là gì?',opts:['gọi điện thoại','xem tivi','nghe nhạc','chơi game'],ans:0,exp:'打电话 = gọi điện thoại; 给 + người + 打电话 = gọi cho ai.'},
-  {q:'Trợ từ nào đặt cuối câu để làm dịu giọng, đưa ra lời khuyên?',opts:['吧','呢','吗','了'],ans:0,exp:'吧 cuối câu làm lời nói nhẹ nhàng, mang ý đề nghị/khuyên: 你下午打吧.'},
-  {q:'"电视" nghĩa là gì?',opts:['tivi','điện thoại','máy tính','radio'],ans:0,exp:'电视 = tivi; 看电视 = xem tivi.'},
-  {q:'"给" trong "给她打电话" nghĩa là gì?',opts:['cho, hướng về (đối tượng)','và','ở','là'],ans:0,exp:'给 + người + động từ: hướng hành động tới ai — 给她打电话 = gọi cho cô ấy.'},
+  {q:'Bạn gọi điện cho nhóm bạn đi chơi chưa về, nghe đầu dây bên kia rất ồn. Bạn hỏi: “Các cậu đang ở đâu thế?”',opts:['你们在哪儿呢？','你们在哪儿吗？','你们哪儿在呢？','你们是哪儿呢？'],ans:0,exp:'Câu đã có 哪儿 thì không thêm 吗; 在 đứng trước 哪儿, cuối câu dùng 呢.'},
+  {q:'Câu nào SAI?',opts:['我看电视在家呢。','你们在说什么呢？','那个医生在吃饭呢。','我朋友在北京学习汉语呢。'],ans:0,exp:'Nơi chốn (在家) đặt trước động từ: 我在家看电视呢; không đặt sau như tiếng Việt “xem tivi ở nhà”.'},
+  {q:'A: “你女儿在工作吗？” — B (con gái đang uống trà) đáp:',opts:['没有，她在喝茶呢。','不有，她在喝茶呢。','没有，她喝茶在呢。','没有，她在喝茶吗？'],ans:0,exp:'Phủ định “không đang làm” dùng 没有 (không dùng 不有); 在 đứng trước động từ; câu trần thuật kết thúc bằng 呢, không dùng 吗.'},
+  {q:'Bạn cùng phòng nói: “我喜欢猫。” Bạn cũng thích, bạn đáp:',opts:['我也喜欢。','也我喜欢。','我喜欢也。','我很也喜欢。'],ans:0,exp:'也 đứng sau chủ ngữ, trước động từ: 我也喜欢; không đặt 也 đầu câu hay cuối câu.'},
+  {q:'Trời mưa to, bạn rủ bạn ở nhà xem phim. Bạn nói:',opts:['下雨了，我们在家看电影吧。','下雨了，我们在家看电影吗？','下雨了，我们看电影在家吧。','下雨了，我们在家看电影呢。'],ans:0,exp:'吧 cuối câu = rủ rê, đề nghị (…nhé / …đi); 吗 là câu hỏi, 呢 không dùng để rủ; 在家 đặt trước 看电影.'},
+  {q:'Bạn muốn nói: “Sáng mai tôi gọi điện cho bác sĩ Vương.”',opts:['明天上午我给王医生打电话。','我明天上午打电话王医生。','明天上午我王医生给打电话。','明天我给王医生打电话上午。'],ans:0,exp:'Thời gian (明天上午) đứng đầu câu hoặc sau chủ ngữ; 给 + người đứng trước 打电话: 给王医生打电话.'},
+  {q:'Bạn gặp thầy giáo ở cổng trường. Bạn chào:',opts:['老师好！','喂，老师！','喂，你好！','老师，喂！'],ans:0,exp:'Gặp mặt trực tiếp thì chào 老师好; 喂 chỉ dùng khi nghe/gọi điện thoại, gặp mặt mà nói 喂 nghe thiếu lịch sự.'},
+  {q:'Bạn muốn nói: “Con gái tôi không thích uống nước.”',opts:['我女儿不喜欢喝水。','我女儿没有喜欢喝水。','不我女儿喜欢喝水。','我女儿不喜欢水喝。'],ans:0,exp:'不 đứng ngay trước 喜欢: 不喜欢喝水; nói về sở thích không dùng 没有 喜欢; tân ngữ (水) đứng sau động từ 喝.'},
+  {q:'Bạn muốn nói: “Sáng thứ Bảy tôi học tiếng Trung ở nhà.”',opts:['星期六上午我在家学习汉语。','星期六上午我学习汉语在家。','我学习汉语在家星期六上午。','星期六上午我在家学校汉语。'],ans:0,exp:'Thứ tự: thời gian + chủ ngữ + 在 + nơi chốn + động từ; “học” là 学习, còn 学校 là “trường học”.'},
+  {q:'A: “我们几点去商店？” — B (gợi ý ba giờ chiều) đáp:',opts:['下午三点吧。','下午三点吗？','三点下午吧。','下午三点呢？'],ans:0,exp:'吧 = đề nghị nhẹ nhàng (…nhé); giờ nói từ lớn đến nhỏ: 下午 đứng trước 三点.'},
+  {q:'Câu nào SAI?',opts:['我不也喜欢睡觉。','爸爸也在医院工作。','她也不会写汉字。','我们也想喝茶。'],ans:0,exp:'Có cả 也 và 不 thì 也 đứng trước: 我也不喜欢…; không nói 不也.'},
 ];
 
 var speakingData = {
   t1:{
-    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
+    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý: 喂 khi nghe điện thoại thường đọc lên giọng (wéi); số 1 trong số điện thoại đọc là “yāo”.',
     models:[
-      {zh:'喂，你在做什么呢？',py:'Wèi, nǐ zài zuò shénme ne?',vn:'A lô, anh đang làm gì vậy?'},
-      {zh:'我在看书呢。',py:'Wǒ zài kàn shū ne.',vn:'Tôi đang đọc sách.'},
-      {zh:'我在睡觉呢。',py:'Wǒ zài shuì jiào ne.',vn:'Tôi đang ngủ.'},
-      {zh:'你喜欢看电视吗？',py:'Nǐ xǐhuan kàn diànshì ma?',vn:'Chị có thích xem tivi không?'},
-      {zh:'我现在给她打电话。',py:'Wǒ xiànzài gěi tā dǎ diànhuà.',vn:'Bây giờ tôi gọi điện cho cô ấy đây.'},
+      {zh:'喂，你在做什么呢？',py:'Wèi, nǐ zài zuò shénme ne?',vn:'A lô, bạn đang làm gì thế?'},
+      {zh:'我不喜欢看电视，我喜欢看电影。',py:'Wǒ bù xǐhuan kàn diànshì, wǒ xǐhuan kàn diànyǐng.',vn:'Tôi không thích xem tivi, tôi thích xem phim.'},
+      {zh:'星期六上午我喜欢在家睡觉。',py:'Xīngqīliù shàngwǔ wǒ xǐhuan zài jiā shuì jiào.',vn:'Sáng thứ Bảy tôi thích ngủ ở nhà.'},
+      {zh:'今天上午我们也去吧！',py:'Jīntiān shàngwǔ wǒmen yě qù ba!',vn:'Sáng nay chúng mình cũng đi nhé!'},
+      {zh:'九七一四零五二八。',py:'Jiǔ qī yāo sì líng wǔ èr bā.',vn:'97140528 (đọc từng chữ số, số 1 đọc là yāo).'},
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
-      {frame:'我在＿＿呢。',frame_py:'Wǒ zài ___ ne.',vn:'Tôi đang ＿＿.',options:['看书','睡觉','看电视'],samples:['我在看书呢。','我在睡觉呢。','我在看电视呢。']},
-      {frame:'我喜欢＿＿。',frame_py:'Wǒ xǐhuan ___.',vn:'Tôi thích ＿＿.',options:['看电视','看电影'],samples:['我喜欢看电视。','我喜欢看电影。']},
+      {frame:'他在＿＿呢，你下午给他打电话吧。',frame_py:'Tā zài ___ ne, nǐ xiàwǔ gěi tā dǎ diànhuà ba.',vn:'Anh ấy đang ＿＿, buổi chiều bạn gọi điện cho anh ấy nhé.',options:['写汉字','医院工作','打电话'],samples:['他在写汉字呢，你下午给他打电话吧。','他在医院工作呢，你下午给他打电话吧。','他在打电话呢，你下午给他打电话吧。']},
+      {frame:'我也喜欢＿＿。',frame_py:'Wǒ yě xǐhuan ___.',vn:'Tôi cũng thích ＿＿.',options:['喝茶','吃米饭','写汉字'],samples:['我也喜欢喝茶。','我也喜欢吃米饭。','我也喜欢写汉字。']},
     ],
   },
   t3:{
     intro:'Không nhìn câu mẫu, hãy tưởng tượng bạn đang ở trong tình huống thực tế và tự nói ra câu phù hợp.',
     tasks:[
-      {role:'📞 Tình huống 1 — Gọi điện hỏi thăm bạn bè',
-       guide:'Bạn gọi điện cho bạn và hỏi họ đang làm gì.',
-       structure:['喂，你在做什么呢？','我在＿＿呢。'],
-       sample:'喂，你在做什么呢？我在看书呢。',
-       sample_vn:'A lô, bạn đang làm gì vậy? Tôi đang đọc sách.',
-       note:'喂 CHỈ dùng khi bắt đầu cuộc gọi điện thoại — không dùng để chào hỏi trực tiếp mặt đối mặt như 你好.'},
-      {role:'📺 Tình huống 2 — Chia sẻ sở thích giải trí',
-       guide:'Bạn trò chuyện với bạn bè về việc hôm qua đã làm gì và sở thích xem tivi hay phim.',
-       structure:['昨天上午你在做什么呢？','你喜欢看电视吗？'],
-       sample:'昨天上午你在做什么呢？我在睡觉呢。你喜欢看电视吗？我不喜欢看电视，我喜欢看电影。',
-       sample_vn:'Sáng hôm qua bạn làm gì vậy? Tôi ngủ. Bạn có thích xem tivi không? Tôi không thích xem tivi, tôi thích xem phim.',
-       note:'Có thể trả lời phủ định kèm bổ sung ngay ý đối lập trong cùng câu (不喜欢A，喜欢B) — cách nói rất tự nhiên và thường gặp trong giao tiếp.'},
-      {role:'☎️ Tình huống 3 — Gọi điện tìm người, xử lý khi không tiện',
-       guide:'Bạn gọi điện cho ai đó nhưng người nghe máy báo rằng người bạn cần đang bận, hãy xử lý tình huống lịch sự.',
-       structure:['我现在给她打电话。','她在工作呢，你下午打吧。'],
-       sample:'我现在给她打电话。她在工作呢，你下午打吧。',
-       sample_vn:'Bây giờ tôi gọi điện cho cô ấy đây. Cô ấy đang làm việc, buổi chiều anh hãy gọi.',
-       note:'Trợ từ 吧 ở cuối câu làm cho lời đề nghị "bạn hãy gọi lại vào buổi chiều" nghe NHẸ NHÀNG, thân thiện hơn thay vì ra lệnh cộc lốc.'},
+      {role:'📞 Tình huống 1 — Gọi điện rủ bạn đi chơi',
+       guide:'Bạn gọi điện cho một người bạn: mở đầu bằng “a lô”, hỏi bạn ấy đang ở đâu / đang làm gì, rồi rủ bạn ấy trưa nay đi ăn.',
+       structure:['喂，……','你在……呢？','我们……吧！'],
+       sample:'喂，你在家吗？我们中午去吃中国菜吧！',
+       sample_vn:'A lô, bạn có ở nhà không? Trưa nay chúng mình đi ăn món Trung Quốc nhé!',
+       note:'喂 chỉ dùng trên điện thoại. Cuối lời rủ nhớ thêm 吧 cho mềm mỏng; không có 吧 câu nghe như ra lệnh.'},
+      {role:'📺 Tình huống 2 — Kể một ngày nghỉ của bạn',
+       guide:'Bạn kể cho bạn mới quen nghe: buổi sáng bạn thường làm gì, buổi chiều làm gì, và bạn thích làm gì nhất.',
+       structure:['我上午……','下午……','我喜欢……'],
+       sample:'我上午学习汉语，下午去朋友家。我喜欢做中国菜。',
+       sample_vn:'Buổi sáng tôi học tiếng Trung, buổi chiều đến nhà bạn. Tôi thích nấu món Trung Quốc.',
+       note:'Người Việt hay nói 我睡觉在家 theo thứ tự tiếng Việt. Nhớ: thời gian và nơi chốn (上午, 在家) luôn đứng TRƯỚC động từ.'},
+      {role:'☎️ Tình huống 3 — Cho bạn mới số điện thoại',
+       guide:'Một bạn Trung Quốc muốn liên lạc với bạn. Hãy giới thiệu tên và đọc số điện thoại của bạn, dặn bạn ấy gọi cho bạn.',
+       structure:['我叫……','你给我打电话吧：……'],
+       sample:'我叫王方，你给我打电话吧：一三九零一二八七六五四。',
+       sample_vn:'Mình tên là Vương Phương, bạn gọi cho mình nhé: 139 0128 7654.',
+       note:'Đọc số điện thoại từng chữ số một, không đọc thành hàng trăm, hàng nghìn. Số 1 thường đọc là “yāo” để khỏi nhầm với 7 (qī).'},
     ],
   },
 };
@@ -1029,46 +1035,50 @@ var speakingData = {
 // LUYỆN DỊCH — dùng từ bài 13 + ôn lại từ bài 1-12
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'A lô, bạn đang làm gì vậy?', zh:'喂，你在做什么呢？', py:'Wèi, nǐ zài zuò shénme ne?'},
-  {vi:'Tôi đang ngủ đây.', zh:'我在睡觉呢。', py:'Wǒ zài shuìjiào ne.'},
-  {vi:'Tôi cũng thích xem tivi.', zh:'我也喜欢看电视。', py:'Wǒ yě xǐhuan kàn diànshì.'},
-  {vi:'Chiều nay bạn gọi điện cho tôi nhé.', zh:'你下午给我打电话吧。', py:'Nǐ xiàwǔ gěi wǒ dǎ diànhuà ba.'},
+  {vi:'A lô, cô Lý có ở nhà không ạ?', zh:'喂，李老师在家吗？', py:'Wèi, Lǐ lǎoshī zài jiā ma?'},
+  {vi:'Hôm qua buổi sáng mẹ tôi đang làm việc ở bệnh viện.', zh:'昨天上午我妈妈在医院工作呢。', py:'Zuótiān shàngwǔ wǒ māma zài yīyuàn gōngzuò ne.'},
+  {vi:'Tôi không thích trời nóng, bạn tôi cũng không thích.', zh:'我不喜欢热的天气，我朋友也不喜欢。', py:'Wǒ bù xǐhuan rè de tiānqì, wǒ péngyou yě bù xǐhuan.'},
+  {vi:'Bạn gọi số 67192803 nhé, đó là số của cô Lý.', zh:'你给六七一九二八零三打电话吧，那是李老师。', py:'Nǐ gěi liù qī yāo jiǔ èr bā líng sān dǎ diànhuà ba, nà shì Lǐ lǎoshī.'},
 ];
 
 // ══════════════════════════════════════════
-// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// LUYỆN DỊCH (chiều Trung→Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'A lô, bạn có ở nhà không? Tôi đang ngủ đây.', zh:'喂，你在家吗？我在睡觉呢。', py:'Wèi, nǐ zài jiā ma? Wǒ zài shuìjiào ne.'},
-  {vi:'Tôi thích xem tivi, cũng thích đọc sách.', zh:'我喜欢看电视，也喜欢看书。', py:'Wǒ xǐhuan kàn diànshì, yě xǐhuan kàn shū.'},
-  {vi:'Chiều nay bạn gọi điện cho tôi nhé, được không?', zh:'你下午给我打电话，好吗？', py:'Nǐ xiàwǔ gěi wǒ dǎ diànhuà, hǎoma?'},
-  {vi:'Anh ấy cũng là bạn cùng lớp của tôi.', zh:'他也是我的同学。', py:'Tā yě shì wǒ de tóngxué.'},
+  {vi:'Con trai tôi buổi sáng ngủ, buổi chiều học bài.', zh:'我儿子上午睡觉，下午学习。', py:'Wǒ érzi shàngwǔ shuì jiào, xiàwǔ xuéxí.'},
+  {vi:'Chúng mình mua ít hoa quả cho cô ấy nhé.', zh:'我们给她买些水果吧。', py:'Wǒmen gěi tā mǎi xiē shuǐguǒ ba.'},
+  {vi:'Cô Vương cũng là giáo viên à?', zh:'王小姐也是老师吗？', py:'Wáng xiǎojiě yě shì lǎoshī ma?'},
 ];
 
 // ══════════════════════════════════════════
-// LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
+// LUYỆN NGHE — nghe câu → chọn đáp án (đọc bằng giọng máy), chỉ dùng từ đã học
 // ══════════════════════════════════════════
 var listenData = [
-  {audio:'喂，你在做什么呢？我在看电视呢。',
+  {audio:'喂，王方在吗？——她在医院看医生呢。',
    questions:[
-     {q:'Người trả lời đang làm gì?',opts:['Đọc sách','Xem tivi','Ngủ'],ans:1},
+     {q:'Vương Phương đang ở đâu?',opts:['Ở nhà','Ở bệnh viện','Ở trường'],ans:1,exp:'她在医院… = cô ấy ở bệnh viện.'},
+     {q:'Cô ấy đến đó làm gì?',opts:['Đi khám bệnh','Đi làm','Đi thăm mẹ'],ans:0,exp:'看医生 = đi khám bác sĩ.'},
    ]},
-  {audio:'李月在家吗？她在睡觉呢。你下午给她打电话吧。',
+  {audio:'喂，是八二三零四一五六吗？',
    questions:[
-     {q:'Lý Nguyệt đang làm gì?',opts:['Làm việc','Ngủ','Học bài'],ans:1},
-     {q:'Người nói khuyên gọi lại vào lúc nào?',opts:['Buổi sáng','Buổi trưa','Buổi chiều'],ans:2},
+     {q:'Người gọi hỏi có phải số nào không?',opts:['82304165','83204156','82304156'],ans:2,exp:'八二三零四一五六 = 8-2-3-0-4-1-5-6; đọc từng chữ số một.'},
    ]},
-  {audio:'你喜欢看电影吗？我很喜欢，我也喜欢看电视。',
+  {audio:'我上午在学校，下午在家看电视。',
    questions:[
-     {q:'Người trả lời thích gì?',opts:['Chỉ thích xem phim','Thích xem phim và xem tivi','Không thích xem tivi'],ans:1},
+     {q:'Buổi chiều người nói làm gì?',opts:['Học ở trường','Xem tivi ở nhà','Ngủ ở nhà'],ans:1,exp:'下午在家看电视 = buổi chiều xem tivi ở nhà; 上午 (buổi sáng) mới ở trường.'},
    ]},
-  {audio:'上午你在学习吗？我没学习，我在打电话呢。',
+  {audio:'我很喜欢喝茶，我女儿也喜欢。',
    questions:[
-     {q:'Buổi sáng người trả lời làm gì?',opts:['Học bài','Gọi điện thoại','Xem tivi'],ans:1},
+     {q:'Ai thích uống trà?',opts:['Chỉ người nói','Chỉ con gái','Cả người nói và con gái'],ans:2,exp:'我女儿也喜欢 = con gái tôi cũng thích → cả hai đều thích.'},
    ]},
-  {audio:'大卫的电话是多少？他的电话是83405126。',
+  {audio:'我没有看书，我在给朋友打电话呢。',
    questions:[
-     {q:'Số điện thoại của David là bao nhiêu?',opts:['83405126','83405162','83045126'],ans:0},
+     {q:'Người nói đang làm gì?',opts:['Đọc sách','Gọi điện cho bạn','Xem tivi'],ans:1,exp:'没有看书 = không đọc sách; 在给朋友打电话呢 = đang gọi điện cho bạn.'},
+   ]},
+  {audio:'明天上午下雨，你们下午去吧。',
+   questions:[
+     {q:'Người nói khuyên điều gì?',opts:['Đi vào buổi chiều','Đi vào sáng mai','Ở nhà cả ngày'],ans:0,exp:'你们下午去吧 = các bạn đi buổi chiều nhé; …吧 là lời khuyên nhẹ nhàng.'},
+     {q:'Sáng mai thời tiết thế nào?',opts:['Rất nóng','Có mưa','Rất lạnh'],ans:1,exp:'明天上午下雨 = sáng mai trời mưa.'},
    ]},
 ];
 

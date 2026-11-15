@@ -1061,88 +1061,89 @@ var dialogData = [
    ]},
 ];
 
-// Điền từ — đổi chủ ngữ/đối tượng so với bài khoá
+// Điền từ — mỗi câu một tình huống mới; ôn 是/的/呢/谁/几/多大/了 của bài 3–5
 var fillData = [
-  {pre:'Bạn khẳng định mình biết nói tiếng Trung: “我',blank:'会',post:'说汉语。”',hint:'(biết — qua học tập)',ans:'会',exp:'会 = biết (do học mà có): 我会说汉语.'},
-  {pre:'Bạn phủ định mẹ mình biết nói tiếng Trung: “我妈妈不',blank:'会',post:'说汉语。”',hint:'(biết)',ans:'会',exp:'Phủ định của 会 là 不会.'},
-  {pre:'Bạn khen món ăn ngon: “这个菜',blank:'很',post:'好吃。”',hint:'(rất)',ans:'很',exp:'很 đứng trước tính từ 好吃: 很好吃 = rất ngon.'},
-  {pre:'Bạn hỏi ai đó có biết nấu món Trung Quốc không: “你会',blank:'做',post:'中国菜吗？”',hint:'(làm, nấu)',ans:'做',exp:'做 + 菜 = nấu món ăn: 会做中国菜 = biết nấu món Trung Quốc.'},
-  {pre:'Bạn hỏi ai đó có biết viết chữ Hán không: “你会',blank:'写',post:'汉字吗？”',hint:'(viết)',ans:'写',exp:'写 + 汉字 = viết chữ Hán.'},
-  {pre:'Bạn hỏi cách viết một chữ cụ thể: “这个字',blank:'怎么',post:'写？”',hint:'(như thế nào)',ans:'怎么',exp:'怎么 + 写 = viết như thế nào (hỏi cách làm).'},
-  {pre:'Bạn nói mình biết đọc nhưng không biết viết: “这个字我会读，',blank:'不',post:'会写。”',hint:'(không, chẳng)',ans:'不',exp:'会读，不会写: phủ định 会 bằng 不.'},
-  {pre:'Bạn hỏi mẹ có biết đọc chữ Hán không: “你',blank:'妈妈',post:'会读汉字吗？”',hint:'(mẹ)',ans:'妈妈',exp:'妈妈 là mẹ: 你妈妈 = mẹ bạn.'},
+  {pre:'Bạn khoe với cả lớp về người bạn Mỹ học tiếng Trung đã lâu: “我的美国朋友',blank:'会',post:'说汉语！”',hint:'(biết — nhờ học mà có)',ans:'会',exp:'会 + động từ = biết làm gì nhờ học tập: 会说汉语 = biết nói tiếng Trung.'},
+  {pre:'A: “你女儿会写字吗？” — B: “她两岁，',blank:'不会',post:'写字。”',hint:'(không biết)',ans:'不会',exp:'Phủ định của 会 là 不会; bé mới hai tuổi nên chưa biết viết.'},
+  {pre:'Cô giáo mời cả lớp ăn món cô tự nấu. Bạn khen: “老师，您做的菜',blank:'很',post:'好吃！”',hint:'(rất)',ans:'很',exp:'Tính từ làm vị ngữ thường có 很 đứng trước: 菜很好吃; không nói 菜是好吃.'},
+  {pre:'Mẹ bạn vừa học xong lớp nấu ăn kiểu Mỹ, bạn hỏi: “妈妈，美国菜你会',blank:'做',post:'吗？”',hint:'(làm, nấu)',ans:'做',exp:'做菜 = nấu món ăn; 美国菜你会做吗 = món Mỹ mẹ có biết nấu không.'},
+  {pre:'Bạn người Mỹ nói tiếng Trung rất tốt nhưng chưa học chữ: “汉语我会说，汉字我不会',blank:'写',post:'。”',hint:'(viết)',ans:'写',exp:'写汉字 = viết chữ Hán: người này nói được nhưng không viết được.'},
+  {pre:'Bé năm tuổi nhà hàng xóm cầm tấm thiệp có tên bạn, reo lên: “我会',blank:'读',post:'你的名字！”',hint:'(đọc thành tiếng)',ans:'读',exp:'读 = đọc thành tiếng: bé biết đọc tên của bạn.'},
+  {pre:'Cô giáo viết lên bảng “不客气”, bạn quên mất cách đọc: “老师，“不客气”',blank:'怎么',post:'读？”',hint:'(như thế nào — hỏi cách làm)',ans:'怎么',exp:'怎么 + động từ để hỏi cách làm: 怎么读 = đọc thế nào. Không dùng 什么 ở đây.'},
+  {pre:'Bạn muốn biết từ “xin lỗi” tiếng Trung nói thế nào, hỏi bạn Trung Quốc: ““xin lỗi”汉语怎么',blank:'说',post:'？”',hint:'(nói)',ans:'说',exp:'汉语怎么说 = tiếng Trung nói thế nào — câu hỏi rất hay dùng khi học từ mới.'},
+  {pre:'A: “你',blank:'妈妈',post:'多大了？” — B: “她今年四十八岁了。”',hint:'(mẹ)',ans:'妈妈',exp:'妈妈 = mẹ; với người thân nói 你妈妈, không cần 的.'},
 ];
 
-// Sắp xếp — đổi ngôi/đối tượng so với bài khoá
+// Sắp xếp — câu mới, không chép bài khoá
 var sortData = [
-  {words:['你','会','说','汉语','吗','？'],ans:'你会说汉语吗？',audio:'你会说汉语吗？'},
-  {words:['我','不','会','说','。'],ans:'我不会说。',audio:'我不会说。'},
-  {words:['这个','菜','很','好吃','。'],ans:'这个菜很好吃。',audio:'这个菜很好吃。'},
-  {words:['你','会','做','中国','菜','吗','？'],ans:'你会做中国菜吗？',audio:'你会做中国菜吗？'},
-  {words:['这个','字','怎么','写','？'],ans:'这个字怎么写？',audio:'这个字怎么写？'},
-  {words:['我','会','读','，','不','会','写','。'],ans:'我会读，不会写。',audio:'我会读，不会写。'},
+  {words:['谁','会','说','汉语','？'],ans:'谁会说汉语？',audio:'谁会说汉语？'},
+  {words:['中国','菜','怎么','做','？'],ans:'中国菜怎么做？',audio:'中国菜怎么做？'},
+  {words:['李月','的','汉语','老师','很','好','。'],ans:'李月的汉语老师很好。',audio:'李月的汉语老师很好。'},
+  {words:['她','会','写','她的','名字','。'],ans:'她会写她的名字。',audio:'她会写她的名字。'},
+  {words:['我的','汉字','不','好','，','对不起','。'],ans:'我的汉字不好，对不起。',audio:'我的汉字不好，对不起。'},
+  {words:['我朋友','是','老师','，','她','会','写','很多','汉字','。'],ans:'我朋友是老师，她会写很多汉字。',audio:'我朋友是老师，她会写很多汉字。'},
 ];
 
+// Nối — câu hỏi ↔ câu trả lời
 var matchData = [
-  {left:'你会说汉语吗？',right:'我会说汉语。'},
-  {left:'你妈妈会说汉语吗？',right:'她不会说。'},
-  {left:'中国菜好吃吗？',right:'中国菜很好吃。'},
-  {left:'你会做中国菜吗？',right:'我不会做。'},
-  {left:'这个字怎么写？',right:'对不起，这个字我会读，不会写。'},
+  {left:'谁会做中国菜？',right:'李月的妈妈。'},
+  {left:'你妈妈的菜好吃吗？',right:'很好吃！'},
+  {left:'“谢谢”怎么写？',right:'我会读，不会写。'},
+  {left:'你朋友会说汉语吗？',right:'不会，她是美国人。'},
+  {left:'你会做什么菜？',right:'我会做美国菜。'},
 ];
 
-// Trắc nghiệm — trọng tâm 会/很/怎么, không audio
+// Trắc nghiệm — chọn câu đúng tình huống, chọn câu đáp, tìm câu sai
 var mcData = [
-  {q:'我＿＿说汉语。(biết, qua học tập)',opts:['会','是','有','叫'],ans:0,exp:'会 + động từ: biết làm gì nhờ học tập, rèn luyện — 我会说汉语.'},
-  {q:'Câu vị ngữ tính từ (Chủ ngữ + 很 + Tính từ). Câu nào ĐÚNG?',opts:['中国菜很好吃','中国菜好吃很','很中国菜好吃','中国菜很吃好'],ans:0,exp:'Câu vị ngữ tính từ: Chủ ngữ + 很 + Tính từ → 中国菜很好吃; 很 phải đứng trước tính từ.'},
-  {q:'这个字＿＿写？(hỏi cách thức)',opts:['怎么','什么','谁','哪'],ans:0,exp:'怎么 + động từ dùng để hỏi cách thức: 怎么写 = viết thế nào.'},
-  {q:'Phủ định của "会" là gì?',opts:['不会','没会','不是会','别会'],ans:0,exp:'Phủ định của 会 là 不会 (bú huì); không nói 没会.'},
-  {q:'"写" nghĩa là gì?',opts:['viết','đọc','nói','làm'],ans:0,exp:'写 (xiě) là viết; đọc là 读, nói là 说.'},
-  {q:'"读" nghĩa là gì?',opts:['đọc','viết','nói','nghe'],ans:0,exp:'读 (dú) là đọc thành tiếng; viết là 写.'},
-  {q:'"做" nghĩa là gì?',opts:['làm, nấu','ăn','uống','mua'],ans:0,exp:'做 (zuò) là làm, nấu: 做菜 = nấu ăn.'},
-  {q:'Muốn phủ định "好吃" (ngon), câu đúng là?',opts:['不好吃','不很好吃','没好吃','别好吃'],ans:0,exp:'Phủ định tính từ thì đặt 不 ngay trước nó: 不好吃; không dùng 没 và không kèm 很.'},
-  {q:'"妈妈" nghĩa là gì?',opts:['mẹ','bố','chị gái','em gái'],ans:0,exp:'妈妈 (māma) là mẹ; bố là 爸爸.'},
-  {q:'Câu nào đúng khi nói "Tôi biết đọc nhưng không biết viết"?',opts:['我会读，不会写','我会读，没写','我读会，不写会','我不会读也不会写'],ans:0,exp:'我会读，不会写 = biết đọc nhưng không biết viết; phủ định 会 là 不会.'},
+  {q:'Bạn Trung Quốc hỏi: “你会说汉语吗？” Bạn muốn đáp “Có, tôi biết nói.”',opts:['会，我会说。','有，我会说。','是，我会说。','会，我说会。'],ans:0,exp:'Trả lời “có biết” bằng chính 会, không dùng 有 hay 是; 会 đứng trước động từ.'},
+  {q:'Bạn kể với bạn mới quen: “Nhà tôi rất to.”',opts:['我家很大。','我家是大。','我家大很。','我是家很大。'],ans:0,exp:'Chủ ngữ + 很 + tính từ: 我家很大; không chen 是 trước tính từ.'},
+  {q:'Bạn muốn hỏi bạn cùng lớp: tên của cô giáo đọc thế nào?',opts:['老师的名字怎么读？','老师的名字什么读？','老师的名字读怎么？','老师的名字怎么读吗？'],ans:0,exp:'Hỏi cách làm: 怎么 + động từ (怎么读); đã có từ để hỏi thì không thêm 吗.'},
+  {q:'Bạn muốn nói: “Mẹ tôi biết viết chữ Hán.”',opts:['我妈妈会写汉字。','我妈妈有写汉字。','我妈妈是写汉字。','我妈妈写会汉字。'],ans:0,exp:'“Biết (làm gì)” là 会 + động từ, không dịch “biết/có” thành 有 hay 是.'},
+  {q:'Câu nào SAI?',opts:['我会汉语说。','我朋友不会做菜。','李月会读很多汉字。','谁的家很大？'],ans:0,exp:'会 + động từ + tân ngữ: phải nói 我会说汉语, không đưa 汉语 lên trước 说.'},
+  {q:'A: “你的汉字很好！” — B đáp lịch sự:',opts:['谢谢！','没关系！','不客气！','对不起！'],ans:0,exp:'Được khen thì cảm ơn 谢谢; 不客气 dùng để đáp lời cảm ơn.'},
+  {q:'Bạn ăn thử một món và thấy không ngon, nói nhỏ với bạn:',opts:['菜不好吃。','菜不是好吃。','菜好吃不。','不菜好吃。'],ans:0,exp:'Phủ định tính từ: 不 + tính từ (不好吃), không thêm 是.'},
+  {q:'A: “我会做中国菜，你呢？” — B (không biết nấu) đáp:',opts:['我不会。','我不是。','我不有。','我会不。'],ans:0,exp:'Phủ định 会 là 不会; 你呢 hỏi lại đúng ý “bạn có biết nấu không”.'},
+  {q:'Bạn muốn hỏi bạn cùng lớp: “Món Mỹ có ngon không?”',opts:['美国菜好吃吗？','美国菜好吃呢？','美国菜好吃什么？','好吃美国菜吗？'],ans:0,exp:'Câu hỏi có/không: thêm 吗 cuối câu (美国菜好吃吗); 呢 không dùng như vậy.'},
 ];
 
 var speakingData = {
   t1:{
-    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
+    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý 会 đọc thanh 4; 不会 đọc là bú huì.',
     models:[
-      {zh:'你会说汉语吗？',py:'Nǐ huì shuō Hànyǔ ma?',vn:'Em có biết nói tiếng Trung Quốc không?'},
-      {zh:'我会说汉语。',py:'Wǒ huì shuō Hànyǔ.',vn:'Em có biết.'},
-      {zh:'中国菜很好吃。',py:'Zhōngguó cài hěn hǎochī.',vn:'Món ăn Trung Quốc rất ngon.'},
-      {zh:'你会做中国菜吗？',py:'Nǐ huì zuò Zhōngguó cài ma?',vn:'Anh có biết nấu món Trung Quốc không?'},
-      {zh:'这个字怎么写？',py:'Zhège zì zěnme xiě?',vn:'Vậy chữ này anh viết thế nào?'},
+      {zh:'我会说汉语，不会写汉字。',py:'Wǒ huì shuō Hànyǔ, bú huì xiě Hànzì.',vn:'Tôi biết nói tiếng Trung, không biết viết chữ Hán.'},
+      {zh:'谁会写汉字？',py:'Shéi huì xiě Hànzì?',vn:'Ai biết viết chữ Hán?'},
+      {zh:'我妈妈会做很多菜。',py:'Wǒ māma huì zuò hěn duō cài.',vn:'Mẹ tôi biết nấu rất nhiều món.'},
+      {zh:'对不起，我不会读。',py:'Duìbuqǐ, wǒ bú huì dú.',vn:'Xin lỗi, tôi không biết đọc.'},
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
-      {frame:'你会＿＿汉字吗？',frame_py:'Nǐ huì ___ Hànzì ma?',vn:'Bạn có biết ＿＿ chữ Hán không?',options:['写','读'],samples:['你会写汉字吗？','你会读汉字吗？']},
+      {frame:'你会＿＿吗？',frame_py:'Nǐ huì ___ ma?',vn:'Bạn có biết ＿＿ không?',options:['写你的名字','读老师的名字','做美国菜'],samples:['你会写你的名字吗？','你会读老师的名字吗？','你会做美国菜吗？']},
+      {frame:'中国菜＿＿。',frame_py:'Zhōngguó cài ___.',vn:'Món ăn Trung Quốc ＿＿.',options:['很好吃','很多','不好吃'],samples:['中国菜很好吃。','中国菜很多。','中国菜不好吃。']},
     ],
   },
   t3:{
     intro:'Không nhìn câu mẫu, hãy tưởng tượng bạn đang ở trong tình huống thực tế và tự nói ra câu phù hợp.',
     tasks:[
-      {role:'🗣️ Tình huống 1 — Tự giới thiệu khả năng ngôn ngữ',
-       guide:'Ai đó hỏi bạn có biết nói tiếng Trung không, và hỏi thêm về mẹ của bạn.',
-       structure:['你会说汉语吗？','我会说汉语，我妈妈不会说。'],
-       sample:'你会说汉语吗？我会说汉语，我妈妈不会说。',
-       sample_vn:'Bạn biết nói tiếng Trung không? Tôi biết nói tiếng Trung, mẹ tôi thì không biết.',
-       note:'会 chỉ dùng cho khả năng có được QUA HỌC TẬP, rèn luyện (như ngôn ngữ, tay nghề) — không dùng cho khả năng bẩm sinh.'},
-      {role:'🍜 Tình huống 2 — Nhận xét món ăn khi đi ăn cùng bạn',
-       guide:'Bạn đang ăn món Trung Quốc cùng bạn bè và muốn khen món ăn.',
-       structure:['中国菜好吃吗？','中国菜很好吃。'],
-       sample:'中国菜好吃吗？中国菜很好吃。',
-       sample_vn:'Món ăn Trung Quốc có ngon không? Rất ngon.',
-       note:'Câu vị ngữ tính từ tiếng Trung LUÔN cần 很 ở giữa (dù không nhấn mạnh "rất") — nói "中国菜好吃" (thiếu 很) nghe cộc lốc, không tự nhiên bằng.'},
-      {role:'✍️ Tình huống 3 — Hỏi cách viết chữ Hán khi không chắc',
-       guide:'Bạn đang đọc sách và gặp một chữ Hán mình biết đọc nhưng không chắc cách viết.',
-       structure:['这个字怎么写？','这个字我会读，不会写。'],
-       sample:'这个字怎么写？对不起，这个字我会读，不会写。',
-       sample_vn:'Chữ này viết thế nào? Xin lỗi, chữ này tôi biết đọc chứ không biết viết.',
-       note:'Khả năng ĐỌC và VIẾT chữ Hán thường phát triển KHÔNG ĐỀU nhau — người học có thể đọc hiểu rất nhiều chữ nhưng chỉ viết được một phần nhỏ, đây là điều hoàn toàn bình thường.'},
+      {role:'🗣️ Tình huống 1 — Ngày đầu ở lớp tiếng Trung',
+       guide:'Cô giáo hỏi bạn biết những gì. Hãy chào cô, rồi nói bạn biết đọc chữ Hán nhưng chưa biết viết.',
+       structure:['老师好！','我会＿＿，不会＿＿。'],
+       sample:'老师好！我会读汉字，不会写。',
+       sample_vn:'Em chào cô ạ! Em biết đọc chữ Hán, nhưng không biết viết.',
+       note:'Người Việt hay nói “我有会” hoặc “我是会” vì tiếng Việt nói “có biết”. Trong tiếng Trung chỉ cần 会 + động từ; phủ định là 不会.'},
+      {role:'🍜 Tình huống 2 — Ăn cơm nhà bạn Trung Quốc',
+       guide:'Mẹ của bạn Trung Quốc nấu cơm mời bạn. Hãy khen món ăn, hỏi ai nấu, rồi cảm ơn bác.',
+       structure:['菜很＿＿！','谁＿＿？','谢谢＿＿！'],
+       sample:'菜很好吃！谁做的？谢谢您！',
+       sample_vn:'Món ăn ngon quá! Ai nấu vậy ạ? Cháu cảm ơn bác ạ!',
+       note:'Câu tính từ cần 很: nói 菜很好吃, đừng nói 菜是好吃. Cảm ơn người lớn tuổi thì dùng 您 cho lễ phép.'},
+      {role:'✍️ Tình huống 3 — Hỏi cách viết tên bạn mới',
+       guide:'Bạn mới quen Lý Nguyệt. Bạn biết đọc tên cô ấy nhưng không biết viết. Hãy hỏi tên cô ấy viết thế nào.',
+       structure:['＿＿，你的名字怎么＿＿？'],
+       sample:'李月，你的名字怎么写？',
+       sample_vn:'Lý Nguyệt, tên bạn viết thế nào?',
+       note:'Hỏi cách làm dùng 怎么 + động từ (怎么写, 怎么读, 怎么说). Câu đã có 怎么 thì không thêm 吗 ở cuối.'},
     ],
   },
 };
@@ -1151,46 +1152,45 @@ var speakingData = {
 // LUYỆN DỊCH — dùng từ bài 6 + ôn lại từ bài 1-5
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Tôi biết viết chữ Hán.', zh:'我会写汉字。', py:'Wǒ huì xiě Hànzì.'},
-  {vi:'Món ăn Trung Quốc rất ngon.', zh:'中国菜很好吃。', py:'Zhōngguó cài hěn hǎochī.'},
-  {vi:'Chữ Hán này đọc thế nào?', zh:'汉字怎么读？', py:'Hànzì zěnme dú?'},
-  {vi:'Mẹ tôi biết nói tiếng Trung.', zh:'我妈妈会说汉语。', py:'Wǒ māma huì shuō Hànyǔ.'},
+  {vi:'Bạn tôi là người Mỹ, biết nói tiếng Trung, biết viết chữ Hán.', zh:'我朋友是美国人，会说汉语，会写汉字。', py:'Wǒ péngyou shì Měiguó rén, huì shuō Hànyǔ, huì xiě Hànzì.'},
+  {vi:'Con gái của Lý Nguyệt mấy tuổi rồi? Bé có biết đọc chữ Hán không?', zh:'李月的女儿几岁了？会读汉字吗？', py:'Lǐ Yuè de nǚ\'ér jǐ suì le? Huì dú Hànzì ma?'},
+  {vi:'Chữ của cô giáo tôi rất đẹp.', zh:'我老师的字很好。', py:'Wǒ lǎoshī de zì hěn hǎo.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Mẹ tôi biết nấu món Trung Quốc, rất ngon.', zh:'我妈妈会做中国菜，很好吃。', py:'Wǒ māma huì zuò Zhōngguó cài, hěn hǎochī.'},
-  {vi:'Cô giáo biết viết rất nhiều chữ Hán.', zh:'老师会写很多汉字。', py:'Lǎoshī huì xiě hěn duō Hànzì.'},
-  {vi:'Bạn tôi biết nói tiếng Trung.', zh:'我朋友会说汉语。', py:'Wǒ péngyou huì shuō Hànyǔ.'},
-  {vi:'Bạn có biết viết chữ Hán không?', zh:'你会写汉字吗？', py:'Nǐ huì xiě Hànzì ma?'},
+  {vi:'Cô giáo dạy tiếng Trung của tôi biết nấu món Trung Quốc, rất ngon.', zh:'我的汉语老师会做中国菜，很好吃。', py:'Wǒ de Hànyǔ lǎoshī huì zuò Zhōngguó cài, hěn hǎochī.'},
+  {vi:'Con gái tôi mười tuổi rồi, chữ của cháu rất đẹp.', zh:'我女儿十岁了，她的字很好。', py:'Wǒ nǚ\'ér shí suì le, tā de zì hěn hǎo.'},
 ];
 
 // ══════════════════════════════════════════
-// LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
+// LUYỆN NGHE — nghe câu → chọn đáp án (đọc bằng giọng máy), chỉ dùng từ đã học
 // ══════════════════════════════════════════
 var listenData = [
-  {audio:'你会说汉语吗？我会说。你会写汉字吗？我不会写。',
+  {audio:'李月的妈妈是美国人，不会说汉语。',
    questions:[
-     {q:'Người trả lời biết làm gì?',opts:['Nói và viết tiếng Trung','Chỉ biết nói, không biết viết','Chỉ biết viết'],ans:1},
+     {q:'Mẹ của Lý Nguyệt thế nào?',opts:['Là người Mỹ, không biết nói tiếng Trung','Là người Trung Quốc, biết nói tiếng Trung','Là người Mỹ, biết nói tiếng Trung'],ans:0,exp:'是美国人 = là người Mỹ; 不会说汉语 = không biết nói tiếng Trung.'},
    ]},
-  {audio:'中国菜好吃吗？很好吃。你妈妈会做中国菜吗？她会做。',
+  {audio:'妈妈，“好吃”怎么写？',
    questions:[
-     {q:'Mẹ của người trả lời có biết nấu món Trung Quốc không?',opts:['Có','Không','Không nói'],ans:0},
+     {q:'Người nói đang hỏi ai?',opts:['Cô giáo','Bạn cùng lớp','Mẹ'],ans:2,exp:'Câu mở đầu bằng 妈妈 — người nói đang hỏi mẹ.'},
+     {q:'Người nói muốn biết điều gì?',opts:['Cách viết một từ','Cách đọc một từ','Món nào ngon'],ans:0,exp:'怎么写 = viết thế nào: muốn biết cách viết từ 好吃.'},
    ]},
-  {audio:'老师，这个字怎么读？这个字读“好”。',
+  {audio:'我朋友的女儿八岁，她会做菜！',
    questions:[
-     {q:'Người hỏi muốn biết điều gì?',opts:['Cách viết một chữ','Cách đọc một chữ','Tên của giáo viên'],ans:1},
+     {q:'Con gái của người bạn mấy tuổi?',opts:['Mười tám tuổi','Bốn tuổi','Tám tuổi'],ans:2,exp:'八岁 = tám tuổi.'},
+     {q:'Cô bé biết làm gì?',opts:['Viết chữ Hán','Nấu ăn','Nói tiếng Anh'],ans:1,exp:'会做菜 = biết nấu ăn.'},
    ]},
-  {audio:'我妈妈是美国人，她会说汉语，她不会写汉字。',
+  {audio:'我不会读汉字，李月会。',
    questions:[
-     {q:'Mẹ người nói là người nước nào?',opts:['Trung Quốc','Mỹ','Không nói'],ans:1},
-     {q:'Mẹ người nói KHÔNG biết làm gì?',opts:['Nói tiếng Trung','Viết chữ Hán','Nấu ăn'],ans:1},
+     {q:'Ai biết đọc chữ Hán?',opts:['Người nói','Lý Nguyệt','Không ai biết'],ans:1,exp:'我不会读汉字 = tôi không biết đọc chữ Hán; 李月会 = Lý Nguyệt biết.'},
    ]},
-  {audio:'你的名字怎么写？对不起，我不会写。',
+  {audio:'我今年十六岁，会说汉语了！',
    questions:[
-     {q:'Người thứ hai trả lời thế nào?',opts:['Viết tên ra ngay','Xin lỗi vì không biết viết','Đọc to tên lên'],ans:1},
+     {q:'Người nói bao nhiêu tuổi?',opts:['Mười sáu tuổi','Sáu mươi tuổi','Mười tuổi'],ans:0,exp:'十六岁 = mười sáu tuổi; 六十 mới là sáu mươi.'},
+     {q:'Bây giờ người nói thế nào?',opts:['Đã biết viết chữ Hán','Đã biết nói tiếng Trung','Đã biết nấu ăn'],ans:1,exp:'会说汉语了 = (bây giờ) đã biết nói tiếng Trung rồi; 了 báo thay đổi.'},
    ]},
 ];
 

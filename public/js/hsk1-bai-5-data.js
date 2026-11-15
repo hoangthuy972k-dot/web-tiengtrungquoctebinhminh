@@ -904,89 +904,82 @@ var dialogData = [
    ]},
 ];
 
-// Điền từ — thay đổi số liệu/đối tượng so với bài khoá
+// Điền từ — mỗi câu một tình huống: 几 / 多大 / 口 / 了 / số đếm; ôn 的, 呢, 谁, 是, 吗, 您 bài 1–4
 var fillData = [
-  {pre:'Bạn hỏi số thành viên trong gia đình bạn mới quen: “你',blank:'家',post:'有几口人？”',hint:'(nhà, gia đình)',ans:'家',exp:'家 là nhà, gia đình: 你家有几口人？'},
-  {pre:'Bạn hỏi có bao nhiêu người trong nhà: “你家',blank:'有',post:'几口人？”',hint:'(có)',ans:'有',exp:'有 (có) — hỏi số người trong nhà: 你家有几口人？'},
-  {pre:'Nhà bạn có 4 người: “我家有四',blank:'口',post:'人。”',hint:'(lượng từ đếm người trong nhà)',ans:'口',exp:'Đếm người trong gia đình dùng lượng từ 口: 四口人.'},
-  {pre:'Bạn giới thiệu con gái mình: “这是我',blank:'女儿',post:'。”',hint:'(con gái)',ans:'女儿',exp:'女儿 là con gái.'},
-  {pre:'Bạn hỏi tuổi một em bé: “她',blank:'几',post:'岁了？”',hint:'(mấy — số nhỏ dưới 10)',ans:'几',exp:'Em bé tuổi nhỏ → hỏi bằng 几岁.'},
-  {pre:'Bạn hỏi tuổi một người lớn tuổi: “您',blank:'多',post:'大了？”',hint:'(bao nhiêu — hỏi mức độ)',ans:'多',exp:'Người lớn tuổi → hỏi bằng 多大 (lịch sự hơn thì dùng 您).'},
-  {pre:'Diễn tả tình huống mới (vừa lên tuổi): “她今年五岁',blank:'了',post:'。”',hint:'(trợ từ chỉ sự thay đổi)',ans:'了',exp:'了 cuối câu cho biết đã có thay đổi: năm nay lên năm tuổi rồi.'},
-  {pre:'Nói tuổi của con gái năm nay: “我女儿',blank:'今年',post:'七岁了。”',hint:'(năm nay)',ans:'今年',exp:'今年 = năm nay, đứng trước số tuổi: 今年七岁了 = năm nay lên bảy tuổi rồi.'},
+  {pre:'Đồng nghiệp mới khoe ảnh cô con gái nhỏ. Bạn hỏi: “你女儿',blank:'几',post:'岁了？”',hint:'(mấy — số nhỏ)',ans:'几',exp:'Hỏi tuổi trẻ nhỏ (dưới 10 tuổi): 几岁; cuối câu có 了.'},
+  {pre:'Bạn kể về cô hàng xóm: cô sống với một cô con gái nhỏ. “她家有两',blank:'口',post:'人。”',hint:'(lượng từ đếm người trong nhà)',ans:'口',exp:'Đếm người trong gia đình: số + 口 + 人; hai người là 两口人, không nói 二口人.'},
+  {pre:'Bạn hỏi bạn cùng lớp về cô giáo mới (trông còn rất trẻ): “李老师今年',blank:'多',post:'大？”',hint:'(bao nhiêu — đi với 大)',ans:'多',exp:'Hỏi tuổi người lớn: 多大; 几岁 chỉ hỏi trẻ nhỏ.'},
+  {pre:'Hôm nay là sinh nhật con gái bạn, bé tròn sáu tuổi. Bạn khoe với bạn bè: “我女儿今年六岁',blank:'了',post:'！”',hint:'(trợ từ báo sự thay đổi)',ans:'了',exp:'了 cuối câu báo tình huống mới: bé đã lên sáu tuổi rồi.'},
+  {pre:'A: “李月家有几口人？” — B: “',blank:'有',post:'五口人。”',hint:'(có)',ans:'有',exp:'Nhà có mấy người: (ai) 家 + 有 + số + 口人.'},
+  {pre:'A: “你朋友多大了？” — B: “他',blank:'今年',post:'二十八岁。”',hint:'(năm nay)',ans:'今年',exp:'今年 đứng trước số tuổi: 今年二十八岁 (không đặt cuối câu như “28 tuổi năm nay”).'},
+  {pre:'Bạn muốn biết thầy Lý đã có con gái chưa: “李老师有',blank:'女儿',post:'吗？”',hint:'(con gái)',ans:'女儿',exp:'女儿 = con gái; câu hỏi Có / Không thêm 吗.'},
 ];
 
-// Sắp xếp — thay đổi số liệu/đối tượng so với bài khoá
+// Sắp xếp — câu mới, không chép bài khoá
 var sortData = [
-  {words:['你','家','有','几','口','人','？'],ans:'你家有几口人？',audio:'你家有几口人？'},
-  {words:['我','家','有','四','口','人','。'],ans:'我家有四口人。',audio:'我家有四口人。'},
-  {words:['她','今年','五','岁','了','。'],ans:'她今年五岁了。',audio:'她今年五岁了。'},
-  {words:['你','爸爸','多','大','了','？'],ans:'你爸爸多大了？',audio:'你爸爸多大了？'},
-  {words:['他','今年','六十','岁','了','。'],ans:'他今年六十岁了。',audio:'他今年六十岁了。'},
-  {words:['我','女儿','今年','十','岁','。'],ans:'我女儿今年十岁。',audio:'我女儿今年十岁。'},
+  {words:['李老师','的','女儿','今年','八','岁','了','。'],ans:'李老师的女儿今年八岁了。',audio:'李老师的女儿今年八岁了。'},
+  {words:['我','的','汉语','老师','今年','四十','岁','。'],ans:'我的汉语老师今年四十岁。',audio:'我的汉语老师今年四十岁。'},
+  {words:['我','有','汉语','老师','。'],ans:'我有汉语老师。',audio:'我有汉语老师。'},
 ];
 
+// Nối — câu hỏi ↔ câu trả lời
 var matchData = [
-  {left:'你家有几口人？',right:'我家有四口人。'},
-  {left:'你女儿几岁了？',right:'她今年五岁了。'},
-  {left:'你爸爸多大了？',right:'他今年六十岁了。'},
-  {left:'她女儿呢？',right:'她女儿今年十岁。'},
-  {left:'李老师多大了？',right:'她今年50岁了。'},
+  {left:'你家有几口人？',right:'三口。'},
+  {left:'你女儿几岁了？',right:'四岁了。'},
+  {left:'李老师多大了？',right:'五十岁了。'},
+  {left:'她是谁？',right:'李老师的女儿。'},
+  {left:'你有汉语老师吗？',right:'有，她是中国人。'},
 ];
 
-// Trắc nghiệm — trọng tâm 几/多/了, không audio
+// Trắc nghiệm — chọn câu đúng tình huống, chọn câu đáp, tìm câu sai
 var mcData = [
-  {q:'你女儿＿＿岁了？(hỏi số nhỏ dưới 10)',opts:['几','多','怎么','什么'],ans:0,exp:'Số tuổi nhỏ (dưới 10, thường hỏi trẻ em) dùng 几: 你女儿几岁了？'},
-  {q:'你爸爸＿＿大了？(hỏi tuổi người lớn)',opts:['多','几','怎么','什么'],ans:0,exp:'Hỏi tuổi người lớn dùng 多大: 你爸爸多大了？ — 几 chỉ dùng cho số nhỏ.'},
-  {q:'"了" đặt cuối câu dùng để biểu thị điều gì?',opts:['sự thay đổi/tình huống mới','sự phủ định','câu hỏi','số nhiều'],ans:0,exp:'了 cuối câu báo hiệu tình huống mới, sự thay đổi: 她四岁了 — cô bé đã bốn tuổi rồi.'},
-  {q:'Số "88" đọc là gì?',opts:['bāshíbā','bāshíèr','bāzhěngbā','shíbā'],ans:0,exp:'88 = 八十八: bā + shí + bā → bāshíbā.'},
-  {q:'"大" nghĩa là gì?',opts:['to, lớn','nhỏ, bé','nhiều','ít'],ans:0,exp:'大 (dà) nghĩa là to, lớn; 多大 dùng để hỏi tuổi.'},
-  {q:'"口" trong "三口人" dùng để làm gì?',opts:['lượng từ đếm người trong nhà','động từ ăn uống','danh từ chỉ cái miệng','tính từ chỉ kích thước'],ans:0,exp:'口 là lượng từ đếm số người trong gia đình: 三口人 = ba người.'},
-  {q:'"女儿" nghĩa là gì?',opts:['con gái','con trai','cháu gái','em gái'],ans:0,exp:'女儿 (nǚ\'ér) là con gái; con trai là 儿子.'},
-  {q:'Câu nào dùng ĐÚNG để hỏi tuổi một em bé nhỏ?',opts:['她几岁了？','她多大了？','她几大了？','她多岁了？'],ans:0,exp:'Hỏi tuổi em bé dùng 几岁; 多大 dùng cho người lớn, còn 几大/多岁 là sai.'},
-  {q:'"今年" nghĩa là gì?',opts:['năm nay','năm ngoái','năm sau','mỗi năm'],ans:0,exp:'今年 = 今 (nay) + 年 (năm): năm nay.'},
-  {q:'"有" nghĩa là gì?',opts:['có','không có','là','muốn'],ans:0,exp:'有 (yǒu) nghĩa là có; phủ định là 没有.'},
+  {q:'Bạn muốn hỏi một bé gái đang chơi ở công viên: “Cháu mấy tuổi rồi?”',opts:['你几岁了？','你几岁了吗？','你多岁了？','你岁几了？'],ans:0,exp:'Hỏi trẻ nhỏ: 几岁了; có 几 thì không thêm 吗; không nói 多岁.'},
+  {q:'Bạn muốn hỏi tuổi ông giám đốc một cách lễ phép:',opts:['您多大了？','您几岁了？','您多岁了？','您几大了？'],ans:0,exp:'Người lớn tuổi: 您 + 多大了; hỏi 几岁 nghe như hỏi trẻ con; 多岁 / 几大 đều sai.'},
+  {q:'Bạn muốn nói: “Nhà thầy Lý có bốn người.”',opts:['李老师家有四口人。','李老师家有四人。','李老师家四口人有。','李老师家有口四人。'],ans:0,exp:'Số + lượng từ 口 + 人, đặt sau 有: 有四口人.'},
+  {q:'A: “李月的女儿多大了？” — B (bé 5 tuổi) đáp:',opts:['她五岁了。','她是五岁了。','她了五岁。','她五了岁。'],ans:0,exp:'Nói tuổi không cần 是; 了 đứng cuối câu.'},
+  {q:'Câu nào SAI?',opts:['我家有二口人。','我朋友二十二岁。','李月今年十二岁。','我十岁了。'],ans:0,exp:'Đếm người với lượng từ dùng 两: 两口人; còn khi đọc số (二十二, 十二) vẫn dùng 二.'},
+  {q:'Bạn muốn hỏi bạn mới quen: “Bạn có bạn người Mỹ không?”',opts:['你有美国朋友吗？','你是美国朋友吗？','你有朋友美国吗？','你有美国朋友几？'],ans:0,exp:'“Có” là 有 (không phải 是); 美国朋友 (nước đứng trước).'},
+  {q:'Hôm nay là sinh nhật, bạn vừa tròn mười tám tuổi. Bạn nói:',opts:['我十八岁了！','我了十八岁！','我是十八岁了！','我十八了岁！'],ans:0,exp:'了 cuối câu báo sự thay đổi (vừa sang tuổi mới); không chen 是.'},
+  {q:'A: “李老师多大了？” — B (cô 45 tuổi) đáp:',opts:['她四十五岁了。','她五十四岁了。','她四五岁了。','她十四五岁了。'],ans:0,exp:'45 = 四十五 (bốn – mười – lăm, giống thứ tự tiếng Việt “bốn mươi lăm”).'},
 ];
 
 var speakingData = {
   t1:{
-    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
+    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý 了 cuối câu đọc nhẹ “le”; 一 và 不 biến điệu như đã học.',
     models:[
-      {zh:'你家有几口人？',py:'Nǐ jiā yǒu jǐ kǒu rén?',vn:'Nhà anh có mấy người vậy?'},
-      {zh:'我家有三口人。',py:'Wǒ jiā yǒu sān kǒu rén.',vn:'Nhà tôi có ba người.'},
-      {zh:'你女儿几岁了？',py:"Nǐ nǚ'ér jǐ suì le?",vn:'Con gái của cô mấy tuổi rồi?'},
-      {zh:'她今年四岁了。',py:'Tā jīnnián sì suì le.',vn:'Năm nay cháu được bốn tuổi rồi.'},
-      {zh:'李老师多大了？',py:'Lǐ lǎoshī duō dà le?',vn:'Cô Lý bao nhiêu tuổi rồi?'},
+      {zh:'她女儿呢？——她女儿今年二十岁。',py:'Tā nǚ\'ér ne? — Tā nǚ\'ér jīnnián èrshí suì.',vn:'Còn con gái cô ấy? — Con gái cô ấy năm nay hai mươi tuổi.'},
+      {zh:'她今年四岁了。',py:'Tā jīnnián sì suì le.',vn:'Năm nay bé bốn tuổi rồi.'},
+      {zh:'你朋友呢？',py:'Nǐ péngyou ne?',vn:'Còn bạn của bạn?'},
+      {zh:'我朋友的女儿十一岁。',py:'Wǒ péngyou de nǚ\'ér shíyī suì.',vn:'Con gái của bạn tôi mười một tuổi.'},
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng số trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Thay phần gạch chân bằng số trong ô gợi ý. Chú ý: 2 tuổi nói 两岁, nhưng 12 tuổi vẫn là 十二岁.',
     drills:[
-      {frame:'我家有＿＿口人。',frame_py:'Wǒ jiā yǒu ___ kǒu rén.',vn:'Nhà tôi có ＿＿ người.',options:['三','四','五'],samples:['我家有三口人。','我家有四口人。','我家有五口人。']},
-      {frame:'她今年＿＿岁了。',frame_py:'Tā jīnnián ___ suì le.',vn:'Năm nay cô ấy ＿＿ tuổi rồi.',options:['四','十','二十'],samples:['她今年四岁了。','她今年十岁了。','她今年二十岁了。']},
+      {frame:'她女儿今年＿＿岁了。',frame_py:'Tā nǚ\'ér jīnnián ___ suì le.',vn:'Con gái cô ấy năm nay ＿＿ tuổi rồi.',options:['两','九','十二'],samples:['她女儿今年两岁了。','她女儿今年九岁了。','她女儿今年十二岁了。']},
     ],
   },
   t3:{
-    intro:'Không nhìn câu mẫu, hãy tưởng tượng bạn đang ở trong tình huống thực tế và tự nói ra câu phù hợp.',
+    intro:'Không nhìn câu mẫu, hãy tưởng tượng bạn đang ở trong tình huống thực tế và tự nói ra câu phù hợp về chính bạn.',
     tasks:[
-      {role:'👨‍👩‍👧 Tình huống 1 — Giới thiệu số người trong gia đình',
-       guide:'Có người hỏi thăm gia đình bạn, hãy trả lời có bao nhiêu người.',
-       structure:['你家有几口人？','我家有＿＿口人。'],
-       sample:'你家有几口人？我家有三口人。',
-       sample_vn:'Nhà anh có mấy người vậy? Nhà tôi có ba người.',
-       note:'Với gia đình (thường dưới 10 người), luôn dùng 几 để hỏi số lượng — không dùng 多少 (chỉ dùng cho số lớn hơn 10, sẽ học ở bài sau).'},
-      {role:'🎂 Tình huống 2 — Hỏi tuổi phù hợp với từng đối tượng',
-       guide:'Bạn hỏi tuổi một em bé và một người lớn tuổi trong cùng buổi gặp mặt.',
-       structure:['她＿＿岁了？(hỏi em bé)','您＿＿大了？(hỏi người lớn tuổi)'],
-       sample:'她几岁了？您多大了？',
-       sample_vn:'Cháu mấy tuổi rồi? Ông/bà bao nhiêu tuổi rồi?',
-       note:'几岁 chỉ dùng cho TRẺ EM (số tuổi nhỏ); 多大 dùng được cho NGƯỜI LỚN ở mọi độ tuổi. Hỏi người lớn bằng 几岁 dễ bị coi là thiếu tôn trọng.'},
-      {role:'📅 Tình huống 3 — Cập nhật tuổi theo năm mới',
-       guide:'Đầu năm mới, bạn nói về tuổi của mình năm nay so với năm ngoái.',
-       structure:['去年我＿＿岁，今年我＿＿岁了。'],
-       sample:'去年我十九岁，今年我二十岁了。',
-       sample_vn:'Năm ngoái tôi 19 tuổi, năm nay tôi 20 tuổi rồi.',
-       note:'了 xuất hiện ở cuối câu khi có sự THAY ĐỔI vừa xảy ra — "二十岁了" ngụ ý vừa mới bước sang tuổi mới, khác với chỉ nói suông "二十岁".'},
+      {role:'👨‍👩‍👧 Tình huống 1 — Kể về gia đình',
+       guide:'Bạn mới hỏi nhà bạn có mấy người. Hãy trả lời theo gia đình thật của bạn, rồi hỏi lại bạn ấy.',
+       structure:['我家有＿＿口人。','你家呢？'],
+       sample:'我家有六口人。你家呢？',
+       sample_vn:'Nhà mình có sáu người. Còn nhà bạn?',
+       note:'Đếm người trong nhà phải có 口: 六口人. Người Việt hay quên 口 (我家有六人) vì tiếng Việt chỉ nói “sáu người”.'},
+      {role:'🎂 Tình huống 2 — Hỏi tuổi đúng người',
+       guide:'Ở bữa tiệc, bạn gặp bà của bạn thân và bé con gái của chị họ bạn ấy. Hãy hỏi tuổi bé, rồi lễ phép hỏi tuổi bà.',
+       structure:['你＿＿岁了？','您＿＿大了？'],
+       sample:'你几岁？您今年多大了？',
+       sample_vn:'Cháu mấy tuổi? Bà năm nay bao nhiêu tuổi rồi ạ?',
+       note:'Trẻ nhỏ: 几岁; người lớn: 多大, với người lớn tuổi thêm 您 cho lễ phép. Hỏi người lớn bằng 几岁 nghe như hỏi trẻ con.'},
+      {role:'🥳 Tình huống 3 — Sinh nhật',
+       guide:'Hôm nay là sinh nhật bạn. Hãy nói với cả lớp năm nay bạn bao nhiêu tuổi rồi, và cảm ơn mọi người.',
+       structure:['我今年＿＿岁了！','谢谢！'],
+       sample:'我今年二十一岁了！谢谢！',
+       sample_vn:'Năm nay mình hai mươi mốt tuổi rồi! Cảm ơn các bạn!',
+       note:'了 cuối câu cho biết bạn vừa bước sang tuổi mới. Không nói 我是二十一岁 — nói tuổi không dùng 是.'},
     ],
   },
 };
@@ -995,46 +988,43 @@ var speakingData = {
 // LUYỆN DỊCH — dùng từ bài 5 + ôn lại từ bài 1-4
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Nhà bạn có mấy người?', zh:'你家有几口人？', py:'Nǐ jiā yǒu jǐ kǒu rén?'},
-  {vi:'Bạn của bạn năm nay bao nhiêu tuổi rồi?', zh:'你朋友今年多大了？', py:'Nǐ péngyou jīnnián duō dà le?'},
-  {vi:'Cô giáo năm nay năm mươi tuổi rồi.', zh:'老师今年五十岁了。', py:'Lǎoshī jīnnián wǔshí suì le.'},
-  {vi:'Gia đình tôi có bốn người.', zh:'我家有四口人。', py:'Wǒ jiā yǒu sì kǒu rén.'},
+  {vi:'Bạn của bạn năm nay bao nhiêu tuổi?', zh:'你朋友今年多大？', py:'Nǐ péngyou jīnnián duō dà?'},
+  {vi:'Tôi có bạn người Mỹ, cô ấy năm nay ba mươi tuổi.', zh:'我有美国朋友，她今年三十岁。', py:'Wǒ yǒu Měiguó péngyou, tā jīnnián sānshí suì.'},
+  {vi:'Nhà bạn của tôi có chín người!', zh:'我朋友家有九口人！', py:'Wǒ péngyou jiā yǒu jiǔ kǒu rén!'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Nhà bạn của bạn có mấy người?', zh:'你朋友家有几口人？', py:'Nǐ péngyou jiā yǒu jǐ kǒu rén?'},
-  {vi:'Thưa cô, năm nay cô bao nhiêu tuổi ạ?', zh:'老师，您今年多大了？', py:'Lǎoshī, nín jīnnián duō dà le?'},
-  {vi:'Bạn cùng lớp của tôi năm nay mười lăm tuổi rồi.', zh:'我的同学今年十五岁了。', py:'Wǒ de tóngxué jīnnián shíwǔ suì le.'},
-  {vi:'Nhà anh ấy có mấy người? Nhà anh ấy có bốn người.', zh:'他家有几口人？他家有四口人。', py:'Tā jiā yǒu jǐ kǒu rén? Tā jiā yǒu sì kǒu rén.'},
+  {vi:'Chị có con gái không? Bé năm nay mấy tuổi?', zh:'你有女儿吗？她今年几岁？', py:'Nǐ yǒu nǚ\'ér ma? Tā jīnnián jǐ suì?'},
+  {vi:'Lý Nguyệt hai mươi tuổi rồi, còn bạn?', zh:'李月二十岁了，你呢？', py:'Lǐ Yuè èrshí suì le, nǐ ne?'},
 ];
 
 // ══════════════════════════════════════════
-// LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
+// LUYỆN NGHE — nghe câu → chọn đáp án (đọc bằng giọng máy), chỉ dùng từ đã học
 // ══════════════════════════════════════════
 var listenData = [
-  {audio:'你家有几口人？我家有四口人。',
+  {audio:'李月家有七口人。',
    questions:[
-     {q:'Nhà người trả lời có mấy người?',opts:['3','4','5'],ans:1},
+     {q:'Nhà Lý Nguyệt có mấy người?',opts:['4 người','7 người','10 người'],ans:1,exp:'七口人 = bảy người.'},
    ]},
-  {audio:'你女儿几岁了？她今年三岁了。',
+  {audio:'我的同学今年十九岁。',
    questions:[
-     {q:'Con gái bao nhiêu tuổi?',opts:['3 tuổi','4 tuổi','13 tuổi'],ans:0},
+     {q:'Bạn cùng lớp của người nói bao nhiêu tuổi?',opts:['19 tuổi','9 tuổi','90 tuổi'],ans:0,exp:'十九 = mười chín (十 trước, 九 sau).'},
    ]},
-  {audio:'李老师今年多大了？她今年40岁了。',
+  {audio:'李月的老师今年八十八岁了。',
    questions:[
-     {q:'Cô Lý năm nay bao nhiêu tuổi?',opts:['14','40','50'],ans:1},
+     {q:'Thầy giáo của Lý Nguyệt bao nhiêu tuổi?',opts:['18 tuổi','80 tuổi','88 tuổi'],ans:2,exp:'八十八 = tám mươi tám.'},
    ]},
-  {audio:'我叫李月，我是中国人。我家有三口人，我女儿今年四岁了。',
+  {audio:'他今年十七岁，他的朋友今年七十岁。',
    questions:[
-     {q:'Nhà Lý Nguyệt có mấy người?',opts:['3','4','5'],ans:0},
-     {q:'Con gái chị ấy mấy tuổi?',opts:['3 tuổi','4 tuổi','Không nói'],ans:1},
+     {q:'Anh ấy bao nhiêu tuổi?',opts:['70 tuổi','17 tuổi','71 tuổi'],ans:1,exp:'十七 = mười bảy; 七十 = bảy mươi.'},
+     {q:'Bạn của anh ấy bao nhiêu tuổi?',opts:['17 tuổi','71 tuổi','70 tuổi'],ans:2,exp:'他的朋友今年七十岁 = bạn anh ấy năm nay bảy mươi tuổi.'},
    ]},
-  {audio:'你多大了？我今年20岁。你呢？我今年24岁。',
+  {audio:'谁是你的汉语老师？——李老师，她三十二岁。',
    questions:[
-     {q:'Người hỏi đầu tiên bao nhiêu tuổi?',opts:['20','24','42'],ans:1},
+     {q:'Cô Lý bao nhiêu tuổi?',opts:['23 tuổi','32 tuổi','30 tuổi'],ans:1,exp:'三十二 = ba mươi hai.'},
    ]},
 ];
 

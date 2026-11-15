@@ -1020,89 +1020,79 @@ var dialogData = [
    ]},
 ];
 
-// Điền từ — dùng tên/quốc tịch KHÁC bài khoá để tránh lặp nguyên văn
+// Điền từ — mỗi câu một tình huống: hỏi tên (什么), câu 是 / 不是, câu hỏi 吗; ôn 您/你们/对不起 bài 1–2
 var fillData = [
-  {pre:'Bạn muốn hỏi tên người mới quen: “你',blank:'叫',post:'什么名字？”',hint:'(tên là, gọi là)',ans:'叫',exp:'叫 + tên: 你叫什么名字？ dùng để hỏi tên người khác.'},
-  {pre:'Bạn khẳng định mình là học sinh: “我',blank:'是',post:'学生。”',hint:'(là)',ans:'是',exp:'是 nối chủ ngữ với danh từ: 我是学生 = Tôi là học sinh.'},
-  {pre:'Bạn phủ định mình không phải giáo viên: “我',blank:'不',post:'是老师。”',hint:'(không, chẳng)',ans:'不',exp:'Phủ định của 是 là 不是 — đặt 不 trước 是.'},
-  {pre:'Biến câu “你是学生。” thành câu hỏi Có/Không: “你是学生',blank:'吗',post:'？”',hint:'(trợ từ tạo câu hỏi)',ans:'吗',exp:'Thêm 吗 vào cuối câu trần thuật để tạo câu hỏi Có/Không.'},
-  {pre:'Bạn giới thiệu mình là người Mỹ: “我是',blank:'美国',post:'人。”',hint:'(nước Mỹ)',ans:'美国',exp:'美国人 = người Mỹ: tên nước + 人 chỉ người của nước đó.'},
-  {pre:'Bạn hỏi người mới quen có phải người Trung Quốc không: “你是',blank:'中国',post:'人吗？”',hint:'(Trung Quốc)',ans:'中国',exp:'中国人 = người Trung Quốc; hỏi Có/Không thì thêm 吗 cuối câu.'},
-  {pre:'Bạn hỏi ai đó có phải giáo viên không: “你是',blank:'老师',post:'吗？”',hint:'(thầy/cô giáo)',ans:'老师',exp:'老师 là thầy/cô giáo; 你是老师吗？ = Bạn là giáo viên à?'},
-  {pre:'Trả lời bắt đầu bằng đại từ ngôi thứ nhất: “',blank:'我',post:'叫王芳。”',hint:'(tôi, ta)',ans:'我',exp:'我 (tôi) là đại từ ngôi thứ nhất, đứng đầu câu tự giới thiệu.'},
+  {pre:'Ở sân chơi, một em bé nhìn bạn tò mò. Bạn cúi xuống hỏi tên bé: “你好！你叫',blank:'什么',post:'？”',hint:'(gì)',ans:'什么',exp:'Hỏi tên: 你叫什么？ — 什么 đứng đúng chỗ thông tin cần hỏi, cuối câu không thêm 吗.'},
+  {pre:'Bạn thấy một cô giáo trông giống cô Lý nhưng chưa chắc. Bạn hỏi: “对不起，您是李老师',blank:'吗',post:'？”',hint:'(trợ từ hỏi Có / Không)',ans:'吗',exp:'Câu hỏi Có / Không: thêm 吗 vào cuối câu trần thuật.'},
+  {pre:'Bạn mới tưởng thầy Lý là giáo viên người Mỹ. Bạn giải thích: “李老师',blank:'不',post:'是美国老师。”',hint:'(không)',ans:'不',exp:'Phủ định câu có 是: đặt 不 trước 是 thành 不是.'},
+  {pre:'Bác bảo vệ hỏi hai bạn đứng ở cổng trường: “你们是',blank:'学生',post:'吗？”',hint:'(học sinh)',ans:'学生',exp:'学生 = học sinh; 你们 = các bạn (từ hai người trở lên).'},
+  {pre:'Thầy giáo mới bước vào lớp, chào cả lớp: “你们好！我',blank:'是',post:'李老师。”',hint:'(là)',ans:'是',exp:'Giới thiệu mình là ai: 我是 + danh từ.'},
 ];
 
-// Sắp xếp — đảo vai trò/mục tiêu so với bài khoá (không lặp nguyên văn)
+// Sắp xếp — câu mới, không chép bài khoá
 var sortData = [
-  {words:['你','叫','什么','名字','？'],ans:'你叫什么名字？',audio:'你叫什么名字？'},
-  {words:['我','叫','王芳','。'],ans:'我叫王芳。',audio:'我叫王芳。'},
-  {words:['你','是','学生','吗','？'],ans:'你是学生吗？',audio:'你是学生吗？'},
-  {words:['我','不','是','学生','，','我','是','老师','。'],ans:'我不是学生，我是老师。',audio:'我不是学生，我是老师。'},
-  {words:['你','是','美国','人','吗','？'],ans:'你是美国人吗？',audio:'你是美国人吗？'},
-  {words:['我','不','是','美国','人','，','我','是','中国','人','。'],ans:'我不是美国人，我是中国人。',audio:'我不是美国人，我是中国人。'},
+  {words:['李','老师','是','中国','人','。'],ans:'李老师是中国人。',audio:'李老师是中国人。'},
+  {words:['李月','不','是','美国','人','。'],ans:'李月不是美国人。',audio:'李月不是美国人。'},
+  {words:['你','叫','李月','吗','？'],ans:'你叫李月吗？',audio:'你叫李月吗？'},
 ];
 
+// Nối — câu hỏi ↔ câu trả lời
 var matchData = [
-  {left:'你叫什么名字？',right:'我叫王芳。'},
-  {left:'你是学生吗？',right:'我不是学生，我是老师。'},
-  {left:'你是美国人吗？',right:'我不是美国人，我是中国人。'},
-  {left:'你是中国人吗？',right:'不是，我是美国人。'},
-  {left:'你是老师吗？',right:'不是，我是学生。'},
+  {left:'你是学生吗？',right:'不是，我是老师。'},
+  {left:'李月是美国人吗？',right:'不是，是中国人。'},
+  {left:'你叫什么名字？',right:'我叫李月。'},
+  {left:'谢谢老师！',right:'不客气！'},
+  {left:'对不起，我不是李月。',right:'没关系！'},
 ];
 
-// Trắc nghiệm — trọng tâm ngữ pháp (什么/是-不是/吗), không audio
+// Trắc nghiệm — chọn câu đúng tình huống, chọn câu đáp, tìm câu sai
 var mcData = [
-  {q:'你叫＿＿名字？',opts:['什么','谁','哪','怎么样'],ans:0,exp:'什么 (cái gì) dùng để hỏi tên: 你叫什么名字？ 谁 hỏi "ai", 哪 hỏi "nào", 怎么样 hỏi "thế nào".'},
-  {q:'Muốn biến câu trần thuật thành câu hỏi Có/Không, thêm trợ từ nào vào cuối câu?',opts:['吗','呢','吧','了'],ans:0,exp:'Thêm 吗 vào cuối câu trần thuật là thành câu hỏi Có/Không: 你是学生吗？'},
-  {q:'Câu phủ định của "是" được tạo bằng cách thêm từ nào phía trước?',opts:['不','没','别','很'],ans:0,exp:'Phủ định của 是 là 不是 (bú shì); không dùng 没 để phủ định 是.'},
-  {q:'我＿＿学生，我是老师。',opts:['不是','是','不','没'],ans:0,exp:'Vế sau "我是老师" cho thấy vế trước phải phủ định: 我不是学生 — tôi không phải học sinh.'},
-  {q:'你是中国人＿＿？ (muốn hỏi lại để xác nhận)',opts:['吗','呢','吧','么'],ans:0,exp:'Muốn hỏi xác nhận Có/Không thì đặt 吗 ở cuối câu; 呢 và 吧 có chức năng khác.'},
-  {q:'Từ nào dùng để TỰ XƯNG (ngôi thứ nhất)?',opts:['我','你','他','人'],ans:0,exp:'我 là ngôi thứ nhất (tôi); 你 là ngôi thứ hai, 他 là ngôi thứ ba, còn 人 nghĩa là người.'},
-  {q:'"老师" nghĩa là gì?',opts:['thầy/cô giáo','học sinh','người','tên'],ans:0,exp:'老师 (lǎoshī) là thầy/cô giáo; học sinh là 学生.'},
-  {q:'"学生" nghĩa là gì?',opts:['học sinh','thầy/cô giáo','người Mỹ','người Trung Quốc'],ans:0,exp:'学生 (xuésheng) là học sinh; thầy/cô giáo là 老师.'},
-  {q:'Cách nói ĐÚNG khi phủ định "Tôi là người Mỹ" là?',opts:['我不是美国人','我不美国人','我没是美国人','我别是美国人'],ans:0,exp:'Phủ định câu có 是 phải giữ 是 và thêm 不 phía trước: 我不是美国人.'},
-  {q:'"名字" nghĩa là gì?',opts:['tên','chữ','người','học sinh'],ans:0,exp:'名字 (míngzi) là tên; 你叫什么名字？ = Bạn tên là gì?'},
+  {q:'Bạn muốn hỏi bạn cùng lớp: “Thầy Lý tên là gì?”',opts:['李老师叫什么？','李老师叫什么吗？','李老师什么叫？','什么李老师叫？'],ans:0,exp:'什么 đứng ở đúng chỗ thông tin cần hỏi (sau 叫); câu đã có 什么 thì không thêm 吗.'},
+  {q:'A: “李老师是美国老师吗？” — B biết thầy là giáo viên người Trung Quốc, đáp:',opts:['不是，中国老师。','不是，老师中国。','是，中国老师。','不是，中国人老师。'],ans:0,exp:'Từ chỉ nước đứng TRƯỚC: 中国老师 (ngược với tiếng Việt “giáo viên Trung Quốc”), không chen 人; đoán sai thì đáp 不是.'},
+  {q:'Một người hỏi bạn có phải giáo viên không. Bạn không phải. Bạn đáp ngắn:',opts:['不是。','不。','是，我不是。','我不是吗？'],ans:0,exp:'Câu hỏi có 是 thì trả lời phủ định bằng 不是, không nói 不 trơn như “không” của tiếng Việt.'},
+  {q:'Câu nào SAI?',opts:['你叫什么名字吗？','老师好！','对不起，老师！','不客气！'],ans:0,exp:'Câu đã có 什么 thì không thêm 吗 nữa: 你叫什么名字？'},
+  {q:'Ba vị khách nước ngoài đến thăm lớp. Bạn muốn hỏi họ có phải giáo viên người Trung Quốc không:',opts:['你们是中国老师吗？','你们是老师中国吗？','你们中国老师是吗？','你们是中国老师什么？'],ans:0,exp:'中国老师 (nước đứng trước); 是 đứng sau chủ ngữ; 吗 ở cuối câu.'},
+  {q:'Bạn muốn nói: “Tôi không phải người Trung Quốc.”',opts:['我不是中国人。','我是不中国人。','我不中国人。','我不是人中国。'],ans:0,exp:'不 đứng trước 是, không bỏ 是; 中国人 viết tên nước trước 人.'},
+  {q:'Bạn mới hỏi: “Bạn là người Mỹ à?” Bạn đúng là người Mỹ. Bạn đáp:',opts:['是，我是。','是，我美国人。','是，我是人美国。','是，我是美国人吗？'],ans:0,exp:'Trả lời khẳng định: 是，我是 (hoặc nói đủ 我是美国人); câu trả lời không thêm 吗, không bỏ 是.'},
 ];
 
 var speakingData = {
   t1:{
-    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
+    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý 不是 đọc “bú shì” (不 đứng trước thanh 4 đổi thành thanh 2); 吗 đọc nhẹ, ngắn.',
     models:[
       {zh:'你叫什么名字？',py:'Nǐ jiào shénme míngzi?',vn:'Bạn tên là gì?'},
-      {zh:'我叫王芳。',py:'Wǒ jiào Wáng Fāng.',vn:'Tôi tên là Vương Phương.'},
-      {zh:'你是老师吗？',py:'Nǐ shì lǎoshī ma?',vn:'Bạn là giáo viên phải không?'},
-      {zh:'我不是老师，我是学生。',py:'Wǒ bú shì lǎoshī, wǒ shì xuésheng.',vn:'Không phải, tôi là học sinh.'},
-      {zh:'你是中国人吗？',py:'Nǐ shì Zhōngguó rén ma?',vn:'Bạn là người Trung Quốc phải không?'},
+      {zh:'对不起，我不是李老师。',py:'Duìbuqǐ, wǒ bú shì Lǐ lǎoshī.',vn:'Xin lỗi, tôi không phải thầy Lý.'},
+      {zh:'老师您好！',py:'Lǎoshī nín hǎo!',vn:'Em chào thầy ạ!'},
+      {zh:'老师，再见！',py:'Lǎoshī, zàijiàn!',vn:'Em chào cô, em về ạ!'},
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Thay phần gạch chân bằng từ trong ô gợi ý để hỏi Có / Không bằng 吗. Nhấn nút loa để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
-      {frame:'你是＿＿吗？',frame_py:'Nǐ shì ___ ma?',vn:'Bạn là ＿＿ phải không?',options:['老师','学生'],samples:['你是老师吗？','你是学生吗？']},
-      {frame:'我是＿＿人。',frame_py:'Wǒ shì ___ rén.',vn:'Tôi là người ＿＿.',options:['中国','美国'],samples:['我是中国人。','我是美国人。']},
+      {frame:'你是＿＿吗？',frame_py:'Nǐ shì ___ ma?',vn:'Bạn là ＿＿ phải không?',options:['老师','中国人','美国学生'],samples:['你是老师吗？','你是中国人吗？','你是美国学生吗？']},
     ],
   },
   t3:{
-    intro:'Không nhìn câu mẫu, hãy tưởng tượng bạn đang ở trong tình huống thực tế và tự nói ra câu phù hợp.',
+    intro:'Không nhìn câu mẫu, hãy tưởng tượng bạn đang ở trong tình huống thực tế và tự nói ra câu phù hợp về chính bạn.',
     tasks:[
-      {role:'👋 Tình huống 1 — Làm quen bạn mới',
-       guide:'Bạn gặp một bạn học mới trong lớp tiếng Trung. Hãy hỏi tên và tự giới thiệu tên mình.',
-       structure:['你叫什么名字？','我叫＿＿。'],
-       sample:'你叫什么名字？我叫王芳。',
-       sample_vn:'Bạn tên là gì? Tôi tên là Vương Phương.',
-       note:'Khi tự giới thiệu, người Trung Quốc thường nói thẳng "我叫..." mà không cần thêm từ đệm nào khác — đây là cách giới thiệu ngắn gọn, tự nhiên nhất.'},
-      {role:'🧑‍🏫 Tình huống 2 — Xác minh vai trò của ai đó',
-       guide:'Bạn không chắc người trước mặt là giáo viên hay học sinh. Hãy hỏi và nghe câu trả lời.',
-       structure:['你是老师吗？','我不是老师，我是＿＿。'],
-       sample:'你是老师吗？我不是老师，我是学生。',
-       sample_vn:'Bạn là giáo viên phải không? Không phải, tôi là học sinh.',
-       note:'Cấu trúc "我不是A，我是B" rất phổ biến trong giao tiếp — vừa phủ định vừa bổ sung thông tin đúng ngay trong một câu, tránh phải hỏi lại.'},
-      {role:'🌍 Tình huống 3 — Hỏi thăm quốc tịch',
-       guide:'Bạn gặp một người nước ngoài và tò mò muốn biết họ đến từ đâu.',
-       structure:['你是中国人吗？','我不是中国人，我是＿＿人。'],
-       sample:'你是中国人吗？我不是中国人，我是美国人。',
-       sample_vn:'Bạn là người Trung Quốc phải không? Không phải, mình là người Mỹ.',
-       note:'Ở HSK1 mới chỉ học cách hỏi bằng 吗 (Có/Không) — cách hỏi mở "bạn là người nước nào" (dùng 哪) sẽ được học ở bài sau.'},
+      {role:'👋 Tình huống 1 — Ngày đầu ở lớp tiếng Trung',
+       guide:'Cô giáo bảo từng bạn đứng lên chào cả lớp và nói tên mình.',
+       structure:['你们好！','我叫＿＿。'],
+       sample:'你们好！我叫李月。',
+       sample_vn:'Chào các bạn! Mình tên là Lý Nguyệt.',
+       note:'Người Việt hay nói “我是叫…” vì tiếng Việt nói “tôi là… tên là…”. Đã có 叫 thì bỏ 是: 我叫…'},
+      {role:'🙅 Tình huống 2 — Bị nhận nhầm',
+       guide:'Ở hội trường, một người hỏi bạn có phải học sinh người Mỹ không. Bạn không phải — hãy trả lời lịch sự.',
+       structure:['对不起，','我不是＿＿。'],
+       sample:'对不起，我不是美国学生。',
+       sample_vn:'Xin lỗi, tôi không phải học sinh người Mỹ.',
+       note:'Phủ định câu có 是 luôn là 不是 + danh từ. Đừng bỏ 是 (我不学生) theo kiểu nói “tôi không học sinh”.'},
+      {role:'🌏 Tình huống 3 — Gặp khách nước ngoài',
+       guide:'Ở quán cà phê, bạn gặp một vị khách lớn tuổi nói tiếng Trung. Hãy chào lễ phép và hỏi ông có phải người Mỹ không.',
+       structure:['您好！','您是＿＿吗？'],
+       sample:'您好！您是美国人吗？',
+       sample_vn:'Cháu chào ông ạ! Ông là người Mỹ phải không ạ?',
+       note:'Câu hỏi Có / Không chỉ cần thêm 吗 ở cuối, giữ nguyên trật tự câu. Câu đã có 什么 thì không thêm 吗.'},
     ],
   },
 };
@@ -1111,46 +1101,39 @@ var speakingData = {
 // LUYỆN DỊCH — dùng từ bài 3 + ôn lại từ bài 1-2
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Bạn tên là gì?', zh:'你叫什么名字？', py:'Nǐ jiào shénme míngzi?'},
-  {vi:'Tôi là học sinh.', zh:'我是学生。', py:'Wǒ shì xuésheng.'},
-  {vi:'Bạn là giáo viên phải không?', zh:'你是老师吗？', py:'Nǐ shì lǎoshī ma?'},
-  {vi:'Cảm ơn thầy giáo!', zh:'谢谢老师！', py:'Xièxie lǎoshī!'},
+  {vi:'Các bạn là người Trung Quốc, tôi là người Mỹ.', zh:'你们是中国人，我是美国人。', py:'Nǐmen shì Zhōngguó rén, wǒ shì Měiguó rén.'},
+  {vi:'Tôi là học sinh, không phải giáo viên.', zh:'我是学生，不是老师。', py:'Wǒ shì xuésheng, bú shì lǎoshī.'},
+  {vi:'Thầy Lý ơi, em cảm ơn thầy!', zh:'李老师，谢谢您！', py:'Lǐ lǎoshī, xièxie nín!'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Kính chào ngài! Ngài là giáo viên phải không?', zh:'您好！您是老师吗？', py:'Nín hǎo! Nín shì lǎoshī ma?'},
-  {vi:'Tôi là học sinh, tôi là người Trung Quốc.', zh:'我是学生，我是中国人。', py:'Wǒ shì xuésheng, wǒ shì Zhōngguó rén.'},
-  {vi:'Anh ấy là người Mỹ. Bạn có phải người Mỹ không?', zh:'他是美国人。你是美国人吗？', py:'Tā shì Měiguó rén. Nǐ shì Měiguó rén ma?'},
-  {vi:'Cảm ơn bạn, tạm biệt!', zh:'谢谢你，再见！', py:'Xièxie nǐ, zàijiàn!'},
+  {vi:'Em chào thầy ạ! Em là học sinh Trung Quốc.', zh:'老师好！我是中国学生。', py:'Lǎoshī hǎo! Wǒ shì Zhōngguó xuésheng.'},
+  {vi:'Em cảm ơn cô! Em chào cô ạ!', zh:'谢谢老师！老师再见！', py:'Xièxie lǎoshī! Lǎoshī zàijiàn!'},
 ];
 
 // ══════════════════════════════════════════
-// LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
+// LUYỆN NGHE — nghe câu → chọn đáp án (đọc bằng giọng máy), chỉ dùng từ đã học
 // ══════════════════════════════════════════
 var listenData = [
-  {audio:'你好！我叫李月，我是学生。',
+  {audio:'你们好！我是老师。',
    questions:[
-     {q:'Lý Nguyệt là ai?',opts:['Giáo viên','Học sinh','Người Mỹ'],ans:1},
+     {q:'Người nói là ai?',opts:['Một học sinh','Giáo viên của lớp','Một người Mỹ'],ans:1,exp:'我是老师 = tôi là giáo viên; 你们好 là chào cả lớp.'},
    ]},
-  {audio:'你是美国人吗？我不是美国人，我是中国人。',
+  {audio:'李月是中国学生吗？——不是，美国学生。',
    questions:[
-     {q:'Người trả lời là người nước nào?',opts:['Người Mỹ','Người Trung Quốc','Không nói'],ans:1},
+     {q:'Lý Nguyệt là ai?',opts:['Học sinh người Trung Quốc','Giáo viên người Mỹ','Học sinh người Mỹ'],ans:2,exp:'不是 = không phải (học sinh Trung Quốc); 美国学生 = học sinh người Mỹ.'},
    ]},
-  {audio:'您是老师吗？是，我是老师。您叫什么名字？我叫李月。',
+  {audio:'你好！什么名字？——李月。',
    questions:[
-     {q:'Người trả lời làm nghề gì?',opts:['Học sinh','Giáo viên','Bác sĩ'],ans:1},
-     {q:'Người đó tên là gì?',opts:['Lý Nguyệt','Vương Phương','Không nói tên'],ans:0},
+     {q:'Người thứ nhất muốn biết điều gì?',opts:['Tên','Quốc tịch','Nghề nghiệp'],ans:0,exp:'什么名字？ = tên là gì? (cách hỏi ngắn).'},
+     {q:'Người thứ hai tên là gì?',opts:['Thầy Lý','Lý Nguyệt','Không nói tên'],ans:1,exp:'Người thứ hai đáp 李月 = Lý Nguyệt.'},
    ]},
-  {audio:'对不起，你是中国人吗？不是，我是美国人。谢谢！不客气。',
+  {audio:'你是李月？——不是，我不是。',
    questions:[
-     {q:'Người thứ hai là người nước nào?',opts:['Trung Quốc','Mỹ','Việt Nam'],ans:1},
-   ]},
-  {audio:'我是老师，我不是学生。',
-   questions:[
-     {q:'Câu nào đúng với đoạn nghe?',opts:['Người nói là học sinh','Người nói là giáo viên','Người nói là người Mỹ'],ans:1},
+     {q:'Người thứ hai có phải Lý Nguyệt không?',opts:['Đúng là Lý Nguyệt','Không phải','Không trả lời'],ans:1,exp:'不是，我不是 = không phải, tôi không phải.'},
    ]},
 ];
 

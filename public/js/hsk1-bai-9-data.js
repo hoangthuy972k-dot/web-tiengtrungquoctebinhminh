@@ -1234,89 +1234,92 @@ var dialogData = [
    ]},
 ];
 
-// Điền từ — đổi con vật/nơi chốn so với bài khoá
+// Điền từ — 在 (động từ / giới từ), 哪儿, 那儿, 呢; ôn 想/买/个/这/多少钱/去+nơi chốn/有/很
 var fillData = [
-  {pre:'Bạn hỏi con mèo đang ở đâu: “小猫',blank:'在',post:'哪儿？”',hint:'(ở — động từ)',ans:'在',exp:'在 + 哪儿: hỏi ai/cái gì đang ở đâu.'},
-  {pre:'Bạn nói con mèo ở dưới ghế: “小猫在椅子',blank:'下面',post:'。”',hint:'(bên dưới)',ans:'下面',exp:'下面 = bên dưới: 在椅子下面 = ở dưới ghế.'},
-  {pre:'Bạn hỏi ai đó làm việc ở đâu: “你在',blank:'哪儿',post:'工作？”',hint:'(ở đâu)',ans:'哪儿',exp:'在哪儿工作 = làm việc ở đâu.'},
-  {pre:'Bạn nói mình làm việc ở bệnh viện: “我在',blank:'医院',post:'工作。”',hint:'(bệnh viện)',ans:'医院',exp:'在 + 医院 + 工作 = làm việc ở bệnh viện.'},
-  {pre:'Bạn giới thiệu con trai mình là bác sĩ: “我儿子是',blank:'医生',post:'。”',hint:'(bác sĩ)',ans:'医生',exp:'医生 = bác sĩ (nghề nghiệp), khác 医院 (bệnh viện).'},
-  {pre:'Bạn hỏi cha có ở nhà không: “你',blank:'爸爸',post:'在家吗？”',hint:'(cha, bố)',ans:'爸爸',exp:'爸爸 = bố: 你爸爸在家吗？'},
-  {pre:'Bạn phủ định ai đó không có ở nhà: “他不',blank:'在',post:'家。”',hint:'(ở — động từ)',ans:'在',exp:'Phủ định 在 bằng 不: 不在家 = không có ở nhà.'},
-  {pre:'Bạn hỏi vị trí một cái ghế: “',blank:'椅子',post:'在哪儿？”',hint:'(cái ghế)',ans:'椅子',exp:'椅子 = cái ghế; 在哪儿 hỏi vị trí: 椅子在哪儿？'},
+  {pre:'Bạn mới quen Lý Nguyệt và muốn biết trường của cô ấy ở chỗ nào: “李月，你的学校',blank:'在',post:'哪儿？”',hint:'(ở — chỉ vị trí)',ans:'在',exp:'Người/vật + 在 + 哪儿 = … ở đâu; 在 ở đây là động từ “ở”.'},
+  {pre:'A: “妈妈，我的书呢？” — B: “在我的椅子',blank:'下面',post:'。”',hint:'(bên dưới)',ans:'下面',exp:'在 + nơi + 下面 = ở dưới …; 我的书呢 = sách của con đâu rồi?'},
+  {pre:'Bạn rủ bạn đi chơi ngày mai: “明天你想去',blank:'哪儿',post:'？”',hint:'(đâu, chỗ nào)',ans:'哪儿',exp:'去哪儿 = đi đâu; 哪儿 hỏi nơi chốn, không thêm 吗.'},
+  {pre:'Bạn hỏi người bán cốc để ở đâu, người bán chỉ về góc xa: “',blank:'那儿',post:'有很多杯子。”',hint:'(chỗ kia, đằng kia)',ans:'那儿',exp:'那儿 = đằng kia (chỗ ở xa); 哪儿 mới là “ở đâu”.'},
+  {pre:'Bạn kể về mẹ: “我妈妈在商店',blank:'工作',post:'。”',hint:'(làm việc)',ans:'工作',exp:'在 + nơi chốn + 工作 = làm việc ở đâu; nơi chốn đứng trước động từ.'},
+  {pre:'Bạn kể về các con: “我有一个女儿，两个',blank:'儿子',post:'。”',hint:'(con trai)',ans:'儿子',exp:'儿子 = con trai, 女儿 = con gái; 两个儿子 = hai con trai.'},
+  {pre:'A: “你爸爸今天去哪儿？” — B: “他去',blank:'医院',post:'看朋友。”',hint:'(bệnh viện)',ans:'医院',exp:'医院 = bệnh viện (nơi chốn); 去医院看朋友 = đến bệnh viện thăm bạn.'},
+  {pre:'A: “你女儿想做什么工作？” — B: “她想做',blank:'医生',post:'。”',hint:'(bác sĩ)',ans:'医生',exp:'医生 = bác sĩ (người, nghề nghiệp) — khác 医院 là bệnh viện.'},
+  {pre:'Con mèo không chịu ăn cơm bạn cho: “我的小',blank:'猫',post:'不吃米饭。”',hint:'(con mèo)',ans:'猫',exp:'小猫 = con mèo nhỏ; 不吃米饭 = không ăn cơm.'},
+  {pre:'Bạn hỏi người bạn mới: “你家有',blank:'狗',post:'吗？”',hint:'(con chó)',ans:'狗',exp:'狗 = con chó; 你家有狗吗 = nhà bạn có chó không.'},
+  {pre:'Ở cửa hàng, bạn chỉ vào chiếc ghế ngay trước mặt: “这个',blank:'椅子',post:'多少钱？”',hint:'(cái ghế)',ans:'椅子',exp:'椅子 = cái ghế (có tựa); 这个椅子 = cái ghế này.'},
+  {pre:'Bạn cầm thử chiếc cốc, thấy nó bé quá: “这个杯子很',blank:'小',post:'。”',hint:'(nhỏ)',ans:'小',exp:'Tính từ làm vị ngữ có 很 đứng trước: 很小 = rất nhỏ.'},
 ];
 
-// Sắp xếp — đổi con vật/vị trí so với bài khoá
+// Sắp xếp — nơi chốn đứng TRƯỚC động từ
 var sortData = [
-  {words:['小','猫','在','哪儿','？'],ans:'小猫在哪儿？',audio:'小猫在哪儿？'},
-  {words:['小','狗','在','桌子','下面','。'],ans:'小狗在桌子下面。',audio:'小狗在桌子下面。'},
-  {words:['你','在','哪儿','工作','？'],ans:'你在哪儿工作？',audio:'你在哪儿工作？'},
-  {words:['我','儿子','在','医院','工作','。'],ans:'我儿子在医院工作。',audio:'我儿子在医院工作。'},
-  {words:['你','爸爸','在','家','吗','？'],ans:'你爸爸在家吗？',audio:'你爸爸在家吗？'},
-  {words:['他','在','医院','。'],ans:'他在医院。',audio:'他在医院。'},
+  {words:['我朋友','在','那儿','喝','茶','。'],ans:'我朋友在那儿喝茶。',audio:'我朋友在那儿喝茶。'},
+  {words:['你','在','哪儿','买','杯子','？'],ans:'你在哪儿买杯子？',audio:'你在哪儿买杯子？'},
+  {words:['我爸爸','的','朋友','是','医生','。'],ans:'我爸爸的朋友是医生。',audio:'我爸爸的朋友是医生。'},
+  {words:['星期六','我爸爸','不','在','家','。'],ans:'星期六我爸爸不在家。',audio:'星期六我爸爸不在家。'},
+  {words:['那','个','小','椅子','是','我女儿','的','。'],ans:'那个小椅子是我女儿的。',audio:'那个小椅子是我女儿的。'},
+  {words:['我儿子','想','去','医院','看','他的','老师','。'],ans:'我儿子想去医院看他的老师。',audio:'我儿子想去医院看他的老师。'},
 ];
 
+// Nối — câu hỏi ↔ câu trả lời
 var matchData = [
-  {left:'小猫在哪儿？',right:'小猫在那儿。'},
-  {left:'小狗在哪儿？',right:'小狗在椅子下面。'},
-  {left:'你在哪儿工作？',right:'我在学校工作。'},
-  {left:'你儿子在哪儿工作？',right:'我儿子在医院工作，他是医生。'},
-  {left:'你爸爸在家吗？',right:'不在家。'},
+  {left:'你女儿在哪儿？',right:'她在朋友家。'},
+  {left:'你想在哪儿吃米饭？',right:'在家吃。'},
+  {left:'你爸爸是医生吗？',right:'不是，他是老师。'},
+  {left:'你儿子多大了？',right:'他十岁了。'},
+  {left:'你明天去医院吗？',right:'去，我去看我爸爸。'},
 ];
 
-// Trắc nghiệm — trọng tâm 在/哪儿, không audio
+// Trắc nghiệm — chọn câu đúng tình huống, chọn câu đáp, tìm câu sai
 var mcData = [
-  {q:'小猫＿＿哪儿？',opts:['在','是','有','去'],ans:0,exp:'在 + nơi chốn làm động từ "ở": 小猫在哪儿？ — Con mèo ở đâu?'},
-  {q:'小狗在椅子＿＿。',opts:['下面','上面','里面','外面'],ans:0,exp:'下面 = bên dưới: 在椅子下面 = ở dưới ghế. 上面/里面/外面 là trên/trong/ngoài.'},
-  {q:'你在＿＿工作？',opts:['哪儿','什么','谁','怎么'],ans:0,exp:'哪儿 dùng để hỏi nơi chốn: 你在哪儿工作？'},
-  {q:'Giới từ "在" trong câu "我在学校工作" có nghĩa gì?',opts:['ở, tại (nơi chốn xảy ra hành động)','là','có','muốn'],ans:0,exp:'Giới từ 在 + nơi chốn + động từ chỉ nơi xảy ra hành động: 在学校工作 = làm việc ở trường.'},
-  {q:'"医生" nghĩa là gì?',opts:['bác sĩ','bệnh viện','giáo viên','học sinh'],ans:0,exp:'医生 (yīshēng) là bác sĩ; 医院 là bệnh viện.'},
-  {q:'"工作" nghĩa là gì?',opts:['làm việc, công việc','nghỉ ngơi','học tập','đi chơi'],ans:0,exp:'工作 (gōngzuò) vừa là động từ "làm việc" vừa là danh từ "công việc".'},
-  {q:'"爸爸" nghĩa là gì?',opts:['cha, bố','mẹ','anh trai','ông nội'],ans:0,exp:'爸爸 (bàba) là bố; mẹ là 妈妈.'},
-  {q:'Câu nào ĐÚNG khi phủ định "在" (không ở đâu đó)?',opts:['不在','没在','不是在','别在'],ans:0,exp:'Phủ định của 在 dùng 不在: 他不在家.'},
-  {q:'"哪儿" nghĩa là gì?',opts:['ở đâu, chỗ nào','ở đó','ở đây','cái nào'],ans:0,exp:'哪儿 (nǎr) = ở đâu; 那儿 (nàr) = ở đó — chú ý thanh điệu.'},
-  {q:'"儿子" nghĩa là gì?',opts:['con trai','con gái','cháu trai','em trai'],ans:0,exp:'儿子 (érzi) là con trai; con gái là 女儿.'},
+  {q:'Bạn muốn nói: “Bố tôi làm việc ở trường học.”',opts:['我爸爸在学校工作。','我爸爸工作在学校。','我爸爸在工作学校。','我爸爸学校在工作。'],ans:0,exp:'在 + nơi chốn đứng TRƯỚC động từ: 在学校工作; không nói 工作在学校 theo kiểu tiếng Việt.'},
+  {q:'Bạn muốn nói: “Lý Nguyệt đang ở nhà.”',opts:['李月在家。','李月是家。','李月有家。','李月家在。'],ans:0,exp:'“Ở (đâu)” là 在 + nơi chốn; 是 = là, 有 = có.'},
+  {q:'A: “你儿子在学校吗？” — B (con trai đang ở bệnh viện):',opts:['不在，他在医院。','不是，他是医院。','不在，他医院在。','不有，他在医院。'],ans:0,exp:'Phủ định của 在 là 不在; “ở bệnh viện” là 在医院.'},
+  {q:'Bạn muốn hỏi bạn: “Ngày mai bạn đọc sách ở đâu?”',opts:['明天你在哪儿看书？','明天你看书在哪儿？','明天你在哪儿看书吗？','明天你在那儿看书？'],ans:0,exp:'在哪儿 đứng trước động từ; 哪儿 = ở đâu, 那儿 = ở đó; có 哪儿 thì không thêm 吗.'},
+  {q:'Về đến nhà không thấy con mèo, bạn hỏi mẹ: “Con mèo đâu rồi ạ?”',opts:['妈妈，小猫呢？','妈妈，小猫吗？','妈妈，小猫哪儿？','妈妈，呢小猫？'],ans:0,exp:'Danh từ + 呢？ = … đâu rồi? (hỏi vị trí); nói đủ phải là 小猫在哪儿.'},
+  {q:'Câu nào SAI?',opts:['我儿子在医生工作。','她在家喝茶。','李月的爸爸是老师。','你的狗在那儿。'],ans:0,exp:'医生 là bác sĩ (người); nơi làm việc phải là 医院: 我儿子在医院工作.'},
+  {q:'Bạn tìm thấy con mèo, nói với mẹ: “Con mèo ở dưới ghế.”',opts:['小猫在椅子下面。','小猫是椅子下面。','小猫在下面椅子。','椅子下面在小猫。'],ans:0,exp:'在 + đồ vật + 下面: 在椅子下面 (dưới ghế) — 下面 đứng SAU 椅子, ngược tiếng Việt.'},
+  {q:'A: “请问，李老师在哪儿？” — B (chỉ tay ra phía xa):',opts:['她在那儿。','她在哪儿。','她是那儿。','那儿她在。'],ans:0,exp:'Trả lời vị trí ở xa: 在那儿; 哪儿 chỉ dùng để hỏi.'},
+  {q:'A: “你女儿想去哪儿工作？” — B đáp:',opts:['她想去美国工作。','她想美国工作去。','她去想美国工作。','她想是美国工作。'],ans:0,exp:'想 + 去 + nơi chốn + việc làm: 想去美国工作; 想 đứng trước 去.'},
 ];
 
 var speakingData = {
   t1:{
-    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
+    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Phân biệt 哪儿 nǎr (thanh 3, hỏi “ở đâu”) và 那儿 nàr (thanh 4, “ở đó”).',
     models:[
       {zh:'小猫在哪儿？',py:'Xiǎo māo zài nǎr?',vn:'Con mèo đâu rồi?'},
-      {zh:'小猫在那儿。',py:'Xiǎo māo zài nàr.',vn:'Nó ở đó kìa.'},
-      {zh:'你在哪儿工作？',py:'Nǐ zài nǎr gōngzuò?',vn:'Anh làm việc ở đâu?'},
-      {zh:'我儿子在医院工作，他是医生。',py:'Wǒ érzi zài yīyuàn gōngzuò, tā shì yīshēng.',vn:'Con trai tôi làm việc ở bệnh viện, nó là bác sĩ.'},
-      {zh:'你爸爸在家吗？',py:'Nǐ bàba zài jiā ma?',vn:'Cha cô có ở nhà không?'},
+      {zh:'李月的爸爸在哪儿呢？',py:'Lǐ Yuè de bàba zài nǎr ne?',vn:'Bố của Lý Nguyệt đâu rồi?'},
+      {zh:'你爸爸在家吗？',py:'Nǐ bàba zài jiā ma?',vn:'Bố bạn có ở nhà không?'},
+      {zh:'我想在中国工作。',py:'Wǒ xiǎng zài Zhōngguó gōngzuò.',vn:'Tôi muốn làm việc ở Trung Quốc.'},
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay phần gạch chân bằng cụm từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
-      {frame:'我在＿＿工作。',frame_py:'Wǒ zài ___ gōngzuò.',vn:'Tôi làm việc ở ＿＿.',options:['学校','医院'],samples:['我在学校工作。','我在医院工作。']},
-      {frame:'小狗在椅子＿＿。',frame_py:'Xiǎo gǒu zài yǐzi ___.',vn:'Con chó ở ＿＿ ghế dựa.',options:['下面','上面'],samples:['小狗在椅子下面。','小狗在椅子上面。']},
+      {frame:'＿＿在哪儿？',frame_py:'___ zài nǎr?',vn:'＿＿ ở đâu?',options:['你爸爸的医院','李月的小狗','那个商店'],samples:['你爸爸的医院在哪儿？','李月的小狗在哪儿？','那个商店在哪儿？']},
+      {frame:'我在家，＿＿呢？',frame_py:'Wǒ zài jiā, ___ ne?',vn:'Tôi ở nhà, còn ＿＿ thì sao / đâu?',options:['你','你爸爸','李月'],samples:['我在家，你呢？','我在家，你爸爸呢？','我在家，李月呢？']},
     ],
   },
   t3:{
     intro:'Không nhìn câu mẫu, hãy tưởng tượng bạn đang ở trong tình huống thực tế và tự nói ra câu phù hợp.',
     tasks:[
-      {role:'🐾 Tình huống 1 — Tìm thú cưng trong nhà',
-       guide:'Bạn đang tìm con mèo và con chó của mình trong nhà.',
-       structure:['小猫在哪儿？','小狗在椅子＿＿。'],
-       sample:'小猫在哪儿？小猫在那儿。小狗在椅子下面。',
-       sample_vn:'Con mèo đâu rồi? Nó ở đó kìa. Con chó ở dưới ghế dựa.',
-       note:'在 + Nơi chốn luôn đặt SAU chủ ngữ và trước vị trí cụ thể — khác với tiếng Việt có thể đảo ngược tự do hơn ("Ở đâu con mèo?").'},
-      {role:'💼 Tình huống 2 — Hỏi thăm nơi làm việc của gia đình',
-       guide:'Bạn gặp một người quen và hỏi thăm công việc của họ và con cái họ.',
-       structure:['你在哪儿工作？','我儿子在＿＿工作，他是＿＿。'],
-       sample:'你在哪儿工作？我儿子在医院工作，他是医生。',
-       sample_vn:'Anh làm việc ở đâu? Con trai tôi làm việc ở bệnh viện, nó là bác sĩ.',
-       note:'Câu "在 + Nơi chốn + 工作" là mẫu câu cực kỳ THỰC DỤNG khi giới thiệu nghề nghiệp bản thân hoặc người thân trong giao tiếp hàng ngày.'},
-      {role:'📞 Tình huống 3 — Gọi điện hỏi thăm người thân',
-       guide:'Bạn gọi điện cho một người bạn và hỏi thăm xem cha của họ có ở nhà không.',
-       structure:['你爸爸在家吗？','不在家，他在＿＿。'],
-       sample:'你爸爸在家吗？不在家，他在医院。',
-       sample_vn:'Cha bạn có ở nhà không? Không có, ông ấy ở bệnh viện.',
-       note:'Khi trả lời phủ định "不在家", người Trung Quốc thường nói THÊM địa điểm thực tế ngay sau đó để câu trả lời đầy đủ, tránh chỉ nói cộc lốc.'},
+      {role:'📞 Tình huống 1 — Gọi điện cho bố',
+       guide:'Bạn về nhà không thấy bố. Hãy gọi điện hỏi bố đang ở đâu, nói bạn đang ở trường, rồi hỏi lại.',
+       structure:['爸爸，你在＿＿呢？','我在＿＿，你呢？'],
+       sample:'爸爸，你在哪儿呢？我在学校，你呢？',
+       sample_vn:'Bố ơi, bố đang ở đâu thế? Con ở trường, còn bố?',
+       note:'Thêm 呢 vào cuối câu hỏi 在哪儿 làm câu nghe mềm, thân mật hơn. Đã có 哪儿 thì không dùng 吗.'},
+      {role:'🏥 Tình huống 2 — Giới thiệu nghề nghiệp',
+       guide:'Ở buổi họp phụ huynh, một người hỏi bạn làm nghề gì. Hãy nói bạn là bác sĩ, làm ở bệnh viện, rồi hỏi lại người đó làm việc ở đâu.',
+       structure:['我是＿＿，在＿＿工作。','你在＿＿工作？'],
+       sample:'我是医生，在医院工作。你在哪儿工作？',
+       sample_vn:'Tôi là bác sĩ, làm việc ở bệnh viện. Anh làm việc ở đâu?',
+       note:'Người Việt hay nói “我工作在医院” theo thứ tự tiếng Việt. Tiếng Trung: 在 + nơi chốn đứng TRƯỚC động từ — 在医院工作.'},
+      {role:'🐱 Tình huống 3 — Tìm mèo con',
+       guide:'Con mèo nhỏ của bạn biến mất. Hãy hỏi mẹ mèo ở đâu, rồi đóng vai mẹ chỉ tay về phía xa trả lời.',
+       structure:['妈妈，我的小猫在＿＿？','——在＿＿呢！'],
+       sample:'妈妈，我的小猫在哪儿？——在那儿呢！',
+       sample_vn:'Mẹ ơi, mèo con của con đâu rồi? — Ở đằng kia kìa!',
+       note:'哪儿 (nǎr, thanh 3) để hỏi, 那儿 (nàr, thanh 4) để chỉ chỗ ở xa — viết khác nhau (哪 có bộ khẩu 口), đọc chỉ khác thanh điệu.'},
     ],
   },
 };
@@ -1325,46 +1328,44 @@ var speakingData = {
 // LUYỆN DỊCH — dùng từ bài 9 + ôn lại từ bài 1-8
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Con mèo nhỏ ở đâu?', zh:'小猫在哪儿？', py:'Xiǎo māo zài nǎr?'},
-  {vi:'Bố tôi làm việc ở bệnh viện.', zh:'我爸爸在医院工作。', py:'Wǒ bàba zài yīyuàn gōngzuò.'},
-  {vi:'Con chó ở dưới ghế.', zh:'狗在椅子下面。', py:'Gǒu zài yǐzi xiàmiàn.'},
-  {vi:'Con trai tôi là bác sĩ.', zh:'我儿子是医生。', py:'Wǒ érzi shì yīshēng.'},
+  {vi:'Ngày mai bố tôi không đến bệnh viện.', zh:'明天我爸爸不去医院。', py:'Míngtiān wǒ bàba bú qù yīyuàn.'},
+  {vi:'Cái ghế nhỏ kia 60 đồng.', zh:'那个小椅子六十块。', py:'Nà ge xiǎo yǐzi liùshí kuài.'},
+  {vi:'Chiều nay mẹ tôi ở nhà nấu ăn.', zh:'今天下午我妈妈在家做菜。', py:'Jīntiān xiàwǔ wǒ māma zài jiā zuò cài.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Bố tôi là bác sĩ, làm việc ở bệnh viện.', zh:'我爸爸是医生，在医院工作。', py:'Wǒ bàba shì yīshēng, zài yīyuàn gōngzuò.'},
-  {vi:'Con chó nhỏ ở đâu? Con chó nhỏ ở dưới ghế.', zh:'小狗在哪儿？小狗在椅子下面。', py:'Xiǎo gǒu zài nǎr? Xiǎo gǒu zài yǐzi xiàmiàn.'},
-  {vi:'Con trai tôi có làm việc ở bệnh viện không?', zh:'我儿子在医院工作吗？', py:'Wǒ érzi zài yīyuàn gōngzuò ma?'},
-  {vi:'Cái cốc của bố bạn ở đâu?', zh:'你爸爸的杯子在哪儿？', py:'Nǐ bàba de bēizi zài nǎr?'},
+  {vi:'Con gái tôi ở trường, con trai tôi ở nhà.', zh:'我女儿在学校，我儿子在家。', py:'Wǒ nǚ\'ér zài xuéxiào, wǒ érzi zài jiā.'},
+  {vi:'Xin hỏi, bệnh viện của các anh có bao nhiêu bác sĩ?', zh:'请问，你们医院有多少医生？', py:'Qǐngwèn, nǐmen yīyuàn yǒu duōshao yīshēng?'},
 ];
 
 // ══════════════════════════════════════════
-// LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
+// LUYỆN NGHE — nghe câu → chọn đáp án (đọc bằng giọng máy), chỉ dùng từ đã học
 // ══════════════════════════════════════════
 var listenData = [
-  {audio:'小猫在哪儿？小猫在椅子下面。',
+  {audio:'我爸爸是医生，他在美国工作。',
    questions:[
-     {q:'Con mèo ở đâu?',opts:['Trên ghế','Dưới ghế','Ở đằng kia'],ans:1},
+     {q:'Bố người nói làm nghề gì, ở đâu?',opts:['Giáo viên, ở Mỹ','Bác sĩ, ở Mỹ','Bác sĩ, ở Trung Quốc'],ans:1,exp:'是医生 = là bác sĩ; 在美国工作 = làm việc ở Mỹ.'},
    ]},
-  {audio:'你爸爸在哪儿工作？他在医院工作，他是医生。',
+  {audio:'小狗不在家，在李月家。',
    questions:[
-     {q:'Bố của người trả lời làm nghề gì?',opts:['Giáo viên','Bác sĩ','Bán hàng'],ans:1},
+     {q:'Con chó đang ở đâu?',opts:['Ở nhà','Dưới ghế','Ở nhà Lý Nguyệt'],ans:2,exp:'不在家 = không ở nhà; 在李月家 = ở nhà Lý Nguyệt.'},
    ]},
-  {audio:'李月在家吗？她不在家，她在学校。',
+  {audio:'我在商店买茶，一百块。',
    questions:[
-     {q:'Lý Nguyệt đang ở đâu?',opts:['Ở nhà','Ở trường','Ở bệnh viện'],ans:1},
+     {q:'Người nói đang ở đâu?',opts:['Ở nhà','Ở cửa hàng','Ở trường'],ans:1,exp:'在商店买茶 = đang mua trà ở cửa hàng.'},
+     {q:'Trà bao nhiêu tiền?',opts:['100 đồng','10 đồng','1000 đồng'],ans:0,exp:'一百块 = 100 đồng.'},
    ]},
-  {audio:'我妈妈在商店工作。我爸爸在学校工作，他是汉语老师。',
+  {audio:'李月的儿子是医生，他今年三十岁。',
    questions:[
-     {q:'Mẹ người nói làm việc ở đâu?',opts:['Cửa hàng','Trường học','Bệnh viện'],ans:0},
-     {q:'Bố người nói làm nghề gì?',opts:['Bác sĩ','Giáo viên tiếng Trung','Học sinh'],ans:1},
+     {q:'Con trai Lý Nguyệt làm nghề gì?',opts:['Bác sĩ','Giáo viên','Học sinh'],ans:0,exp:'是医生 = là bác sĩ.'},
+     {q:'Anh ấy bao nhiêu tuổi?',opts:['13 tuổi','30 tuổi','33 tuổi'],ans:1,exp:'三十岁 = 30 tuổi; 13 là 十三.'},
    ]},
-  {audio:'我的杯子在哪儿？你的杯子在那儿。',
+  {audio:'下午你在家吗？我想去你家喝茶。',
    questions:[
-     {q:'Người thứ nhất tìm cái gì?',opts:['Cái ghế','Cái cốc','Quyển sách'],ans:1},
+     {q:'Người nói muốn làm gì?',opts:['Mời người kia đến nhà mình','Đi mua trà','Đến nhà người kia uống trà'],ans:2,exp:'想去你家喝茶 = muốn đến nhà bạn uống trà.'},
    ]},
 ];
 

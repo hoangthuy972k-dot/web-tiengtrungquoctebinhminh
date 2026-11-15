@@ -87,14 +87,36 @@ CAP.hsk4v3 = {
     ['来不及', 4], ['其次', 14],
   ],
 };
+// HSK2 cu (HSK标准教程2): file public/js/bai-N-data.js (khong co tien to); cap duoi = HSK1 cu.
+// Khong co mcData -> errorFixData (cau sai + 4 cau sua) kiem nhu mc; Luyen noi = speakingData.tasks (ai-speak).
+CAP.hsk2 = {
+  duoi: ['hsk1'], soTu: 1, tep: 'bai-',
+  ten: [['花花', 1], ['谢', 4], ['小张', 6], ['张欢', 9], ['杨笑笑', 13], ['杨', 13]],
+  // dang tu xuat hien trong bai khoa HSK2 cu (tu HSK1–2 sach khong liet vao bang tu moi): [dang, bai]
+  them: [
+    ['呀', 1], ['天', 2], ['出去', 2], ['下', 2], ['这么', 2], ['真', 3], ['粉色', 3], ['对', 4], ['电话', 4], ['打', 4],
+    ['饭馆', 5], ['有点儿', 5], ['点儿', 5], ['打球', 5], ['杯', 5], ['没', 6], ['再', 8], ['病', 8], ['红', 8],
+    ['次', 9], ['跟', 9], ['学', 9], ['午饭', 10], ['色', 10], ['左边', 11], ['卖', 11], ['斤', 11],
+    ['早', 12], ['睡', 12], ['饭', 12], ['房子', 12], ['女孩', 13], ['右', 13],
+    ['一定', 14], ['机会', 14], ['周末', 14], ['公园', 14], ['自己', 14], ['大概', 14], ['难', 14],
+    ['计划', 15], ['预报', 15], ['差不多', 15], ['热闹', 15],
+  ],
+};
+// HSK3 cu (HSK标准教程3): 20 bai, file hsk3-bai-N-data.js; cap duoi = HSK1 cu + HSK2 cu (HSK 3.0 khong tinh).
+// Nhu HSK2 cu: errorFixData kiem nhu mc, speakingData.tasks; listenData = de nghe that sach bai tap (khong kiem).
+CAP.hsk3 = {
+  duoi: ['hsk1', 'hsk2'], soTu: 1, soBai: 20,
+  ten: [],
+  them: [],
+};
 const cap = process.argv[2];
 if (!CAP[cap]) { console.log('Dung: node tools/kiem-qt1.js <' + Object.keys(CAP).join('|') + '> [bai|a-b] [--phu]'); process.exit(2); }
 
 function napBai(c0, n) {
   const c = {};
   vm.createContext(c);
-  const code = fs.readFileSync(path.join(JS, c0 + '-bai-' + n + '-data.js'), 'utf8');
-  vm.runInContext(code + ';this.__D={vocab:vocabData,mc:mcData,fill:fillData,sort:sortData,match:matchData,' +
+  const code = fs.readFileSync(path.join(JS, (CAP[c0].tep || c0 + '-bai-') + n + '-data.js'), 'utf8');
+  vm.runInContext(code + ';this.__D={vocab:vocabData,mc:(typeof mcData!=="undefined"?mcData:(typeof errorFixData!=="undefined"?errorFixData.map(function(e){return {q:e.wrong,opts:e.opts,ans:e.ans,exp:e.exp};}):[])),fill:fillData,sort:sortData,match:matchData,' +
     'listen:listenData,tr:translateData,trRev:translateDataRev,speak:speakingData,dialog:dialogData};', c);
   return c.__D;
 }
@@ -171,6 +193,8 @@ function chuoiCuaBai(D) {
   ((sp.t1 && sp.t1.models) || []).forEach((m, i) => add('noi1.' + (i + 1), m.zh));
   ((sp.t2 && sp.t2.drills) || []).forEach((d, i) => [d.frame].concat(d.options || [], d.samples || []).forEach((s) => add('noi2.' + (i + 1), s)));
   ((sp.t3 && sp.t3.tasks) || []).forEach((t, i) => (t.structure || []).concat([t.sample, t.note, t.guide]).forEach((s) => add('noi3.' + (i + 1), s)));
+  // Luyen noi AI (HSK2 cu): speakingData.tasks
+  (sp.mode === 'ai-speak' && sp.tasks || []).forEach((t, i) => [t.q_zh, t.sample, t.tip].forEach((s) => add('noi' + (i + 1), s)));
   return out;
 }
 

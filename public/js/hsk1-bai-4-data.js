@@ -822,89 +822,85 @@ var dialogData = [
    ]},
 ];
 
-// Điền từ — ngữ cảnh khác bài khoá
+// Điền từ — mỗi câu một tình huống: 谁, 的, 呢, 他/她, 同学/朋友/汉语; ôn 什么/是/吗/您 bài 1–3
 var fillData = [
-  {pre:'Bạn chỉ vào một người trong ảnh và hỏi: “他是',blank:'谁',post:'？”',hint:'(ai)',ans:'谁',exp:'谁 dùng để hỏi người: 他是谁？'},
-  {pre:'Bạn giới thiệu cô ấy là giáo viên dạy tiếng Trung của mình: “她是我',blank:'的',post:'汉语老师。”',hint:'(trợ từ sở hữu)',ans:'的',exp:'的 nối người sở hữu với người/vật được sở hữu: 我的汉语老师.'},
-  {pre:'Bạn hỏi bạn mới quen đến từ nước nào: “你是',blank:'哪',post:'国人？”',hint:'(nào)',ans:'哪',exp:'哪国人 hỏi quốc tịch: người nước nào.'},
-  {pre:'Sau khi trả lời, bạn hỏi ngược lại đối phương: “我是中国人，你',blank:'呢',post:'？”',hint:'(còn... thì sao?)',ans:'呢',exp:'呢 đặt sau 你 để hỏi lại: "Còn bạn thì sao?"'},
-  {pre:'Bạn giới thiệu một người không cùng lớp: “她不是我同学，她是我',blank:'朋友',post:'。”',hint:'(bạn bè)',ans:'朋友',exp:'Không phải bạn cùng lớp mà là bạn bè: 朋友.'},
-  {pre:'Bạn khẳng định ai đó là bạn cùng lớp: “他是我',blank:'同学',post:'。”',hint:'(bạn cùng lớp)',ans:'同学',exp:'同学 = bạn học cùng lớp/cùng trường.'},
-  {pre:'Bạn nói rõ cô ấy dạy môn gì cho mình: “她是我的',blank:'汉语',post:'老师。”',hint:'(tiếng Trung Quốc)',ans:'汉语',exp:'汉语老师 = giáo viên dạy tiếng Trung.'},
-  {pre:'Chỉ vào một người nam và hỏi: “',blank:'他',post:'是谁？”',hint:'(anh ấy)',ans:'他',exp:'他 chỉ người nam ở ngôi thứ ba (anh ấy).'},
+  {pre:'Một chàng trai lạ đứng nói chuyện với cô giáo. Bạn hỏi nhỏ bạn bên cạnh: “',blank:'他',post:'是谁？”',hint:'(anh ấy)',ans:'他',exp:'Chỉ người nam dùng 他; người nữ dùng 她 — hai chữ đọc giống nhau.'},
+  {pre:'Bạn giới thiệu thầy Lý với bố: “李老师是我',blank:'的',post:'汉语老师。”',hint:'(của)',ans:'的',exp:'Sở hữu: 我的 + danh từ (của tôi đứng TRƯỚC, ngược với tiếng Việt).'},
+  {pre:'Ở bữa tiệc, bạn nói: “我是李月的朋友。” rồi quay sang hỏi lại người mới quen: “你',blank:'呢',post:'？”',hint:'(còn … thì sao?)',ans:'呢',exp:'Hỏi lại cùng một ý mà không lặp cả câu: 你呢？ = còn bạn?'},
+  {pre:'A: “他是你同学吗？” — B: “不是，他是我',blank:'朋友',post:'。”',hint:'(bạn bè — không học cùng lớp)',ans:'朋友',exp:'朋友 = bạn bè nói chung; 同学 chỉ người học cùng lớp, cùng trường.'},
+  {pre:'Học sinh mới hỏi bạn: “谁是你们的',blank:'汉语',post:'老师？”',hint:'(tiếng Trung)',ans:'汉语',exp:'汉语老师 = giáo viên tiếng Trung; 汉语 đứng trước 老师.'},
+  {pre:'A: “你朋友叫',blank:'什么',post:'？” — B: “李月。”',hint:'(gì)',ans:'什么',exp:'Hỏi tên dùng 什么; hỏi người là ai mới dùng 谁.'},
+  {pre:'Bạn muốn biết thầy Lý người nước nào. A: “李老师是',blank:'哪国',post:'人？” — B: “中国人。”',hint:'(nước nào)',ans:'哪国',exp:'Hỏi quốc tịch: 哪国人 = người nước nào; dùng 哪, không dùng 什么.'},
+  {pre:'Bạn muốn biết cô gái đứng cạnh thầy Lý là bạn của ai: “她是',blank:'谁',post:'的朋友？”',hint:'(ai)',ans:'谁',exp:'Hỏi người: 谁 đặt đúng chỗ thông tin cần hỏi; câu có 谁 không thêm 吗.'},
 ];
 
-// Sắp xếp — kèm 1 câu ôn tập kết hợp Bài 3
+// Sắp xếp — ghép câu có 的 / 谁 / 吗
 var sortData = [
-  {words:['她','是','我','的','汉语','老师','。'],ans:'她是我的汉语老师。',audio:'她是我的汉语老师。'},
-  {words:['你','是','哪','国','人','？'],ans:'你是哪国人？',audio:'你是哪国人？'},
-  {words:['我','是','中国','人','，','你','呢','？'],ans:'我是中国人，你呢？',audio:'我是中国人，你呢？'},
-  {words:['他','是','我','同学','。'],ans:'他是我同学。',audio:'他是我同学。'},
-  {words:['她','不','是','我','同学','，','她','是','我','朋友','。'],ans:'她不是我同学，她是我朋友。',audio:'她不是我同学，她是我朋友。'},
-  {words:['我','叫','王芳','，','我','是','中国','人','。'],ans:'我叫王芳，我是中国人。',audio:'我叫王芳，我是中国人。'},
+  {words:['我','的','汉语','老师','是','美国','人','。'],ans:'我的汉语老师是美国人。',audio:'我的汉语老师是美国人。'},
+  {words:['谁','是','李月','的','朋友','？'],ans:'谁是李月的朋友？',audio:'谁是李月的朋友？'},
+  {words:['他','是','我','的','中国','朋友','。'],ans:'他是我的中国朋友。',audio:'他是我的中国朋友。'},
+  {words:['你','是','她','的','同学','吗','？'],ans:'你是她的同学吗？',audio:'你是她的同学吗？'},
 ];
 
+// Nối — câu hỏi ↔ câu trả lời
 var matchData = [
-  {left:'她是谁？',right:'她是我的汉语老师。'},
-  {left:'你是哪国人？',right:'我是美国人。'},
   {left:'他是谁？',right:'他是我同学。'},
-  {left:'她是你同学吗？',right:'她不是我同学，她是我朋友。'},
-  {left:'我是中国人，你呢？',right:'我是美国人。'},
+  {left:'她叫什么名字？',right:'她叫李月。'},
+  {left:'我是学生，你呢？',right:'我是老师。'},
+  {left:'谁是你们的汉语老师？',right:'李老师。'},
+  {left:'谢谢你，朋友！',right:'不客气！'},
 ];
 
-// Trắc nghiệm — trọng tâm 谁/哪/的/呢, không audio
+// Trắc nghiệm — chọn câu đúng tình huống, chọn câu đáp, tìm câu sai
 var mcData = [
-  {q:'他是＿＿？(hỏi về người)',opts:['谁','什么','哪','怎么样'],ans:0,exp:'谁 (shéi) dùng để hỏi người: 他是谁？ — Anh ấy là ai?'},
-  {q:'你是＿＿国人？',opts:['哪','什么','谁','这'],ans:0,exp:'哪 + 国 + 人 hỏi quốc tịch: 你是哪国人？ — Bạn là người nước nào?'},
-  {q:'Trợ từ nào biểu thị quan hệ SỞ HỮU?',opts:['的','了','吗','呢'],ans:0,exp:'的 biểu thị sở hữu: 我的老师 = thầy giáo của tôi. 了, 吗, 呢 không có chức năng này.'},
-  {q:'我是中国人，你＿＿？',opts:['呢','吗','吧','啊'],ans:0,exp:'呢 đặt sau đại từ/danh từ để hỏi ngược lại: 你呢？ — Còn bạn thì sao?'},
-  {q:'Có thể bỏ "的" (như 我朋友 thay cho 我的朋友) khi danh từ phía sau là:',opts:['người thân, bạn bè thân thiết','đồ vật bất kỳ','tên riêng','số đếm'],ans:0,exp:'Trước danh từ chỉ người thân, bạn bè thân thiết có thể bỏ 的: 我朋友, 我妈妈.'},
-  {q:'"汉语" nghĩa là gì?',opts:['tiếng Trung Quốc','người Trung Quốc','nước Trung Quốc','chữ Hán'],ans:0,exp:'汉语 (Hànyǔ) là tiếng Trung (tiếng Hán); 中国人 là người Trung Quốc, 汉字 là chữ Hán.'},
-  {q:'"同学" nghĩa là gì?',opts:['bạn cùng lớp','bạn bè nói chung','thầy cô giáo','người nước ngoài'],ans:0,exp:'同学 là bạn cùng lớp/cùng trường; 朋友 mới là bạn bè nói chung.'},
-  {q:'Từ nào dùng để chỉ NGƯỜI NỮ đang được nhắc đến (cô ấy)?',opts:['她','他','你','我'],ans:0,exp:'她 có bộ 女 (nữ), chỉ người nữ; 他 chỉ người nam.'},
-  {q:'她不是我同学，她是我＿＿。',opts:['朋友','同学','老师','学生'],ans:0,exp:'Vế trước phủ định "không phải bạn cùng lớp", nên vế sau là 朋友 (bạn bè).'},
-  {q:'Câu nào SAI ngữ pháp?',opts:['她我是朋友','她是我朋友','她是我的朋友','我是她朋友'],ans:0,exp:'她我是朋友 sai trật tự từ; đúng phải là 她是我(的)朋友 hoặc 我是她朋友.'},
+  {q:'Bạn muốn nói: “Cô ấy là bạn của tôi.”',opts:['她是我的朋友。','她是朋友的我。','她的我是朋友。','她是我朋友的。'],ans:0,exp:'Người sở hữu + 的 + vật / người: 我的朋友 (ngược với tiếng Việt “bạn của tôi”).'},
+  {q:'A: “李月是谁？” — B (Lý Nguyệt học cùng lớp với B) đáp:',opts:['她是我同学。','他是我同学。','她是同学我。','她是谁同学。'],ans:0,exp:'李月 là nữ nên dùng 她; 我同学 = bạn cùng lớp của tôi (người thân quen có thể bỏ 的).'},
+  {q:'Câu nào SAI?',opts:['她是谁吗？','谁是美国人？','你的朋友呢？','他不是我朋友。'],ans:0,exp:'Câu đã có 谁 là câu hỏi rồi, không thêm 吗.'},
+  {q:'Một người đoán bạn là người Mỹ. Bạn nói không phải, rồi hỏi lại người đó (không lặp cả câu):',opts:['我不是美国人，你呢？','我不是美国人，你吗？','我不是美国人，呢你？','我不是美国人，你呢吗？'],ans:0,exp:'Hỏi lại ngắn: danh từ / đại từ + 呢; không dùng 吗 sau một mình 你, không dùng cả 呢 lẫn 吗.'},
+  {q:'Bạn muốn hỏi: “Ai là giáo viên tiếng Trung?”',opts:['谁是汉语老师？','什么是汉语老师？','谁是汉语老师吗？','汉语老师是哪？'],ans:0,exp:'Hỏi người dùng 谁 (không dùng 什么, cũng không dùng 哪 = nào); có 谁 thì không thêm 吗.'},
+  {q:'Bạn thấy một cô gái đứng cạnh Lý Nguyệt, bạn hỏi Lý Nguyệt: “Cô ấy là bạn của cậu à?”',opts:['她是你的朋友吗？','她是你的朋友呢？','她是朋友的你吗？','他是你的朋友吗？'],ans:0,exp:'Câu hỏi Có / Không dùng 吗 (không dùng 呢); 你的朋友 đúng trật tự; cô gái thì dùng 她.'},
+  {q:'Thầy giáo mới vào lớp, bạn muốn hỏi thầy là người nước nào:',opts:['老师，您是哪国人？','老师，您是哪国人吗？','老师，哪国人是您？','老师，您是人哪国？'],ans:0,exp:'Hỏi quốc tịch: 是 + 哪国人; câu có 哪 không thêm 吗; không đặt 人 lên trước như tiếng Việt “người nước nào”, chủ ngữ 您 đứng đầu câu.'},
+  {q:'Bạn muốn nói: “Bạn của Lý Nguyệt là người Mỹ.”',opts:['李月的朋友是美国人。','朋友的李月是美国人。','李月朋友的是美国人。','李月的朋友是人美国。'],ans:0,exp:'李月的朋友 = bạn của Lý Nguyệt (người sở hữu đứng trước 的).'},
+  {q:'A: “他是谁的同学？” — B đáp ngắn:',opts:['李月的。','是李月吗？','的李月。','李月呢？'],ans:0,exp:'谁的同学 = bạn cùng lớp của ai → đáp 李月的 (của Lý Nguyệt), 的 đứng sau tên.'},
 ];
 
 var speakingData = {
   t1:{
-    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
+    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. 他 và 她 đọc giống nhau (tā); 的 và 呢 đọc nhẹ, ngắn.',
     models:[
-      {zh:'她是谁？',py:'Tā shì shéi?',vn:'Cô ấy là ai vậy?'},
-      {zh:'她是我的汉语老师。',py:'Tā shì wǒ de Hànyǔ lǎoshī.',vn:'Cô ấy là cô giáo dạy tôi tiếng Trung Quốc.'},
-      {zh:'你是哪国人？',py:'Nǐ shì nǎ guó rén?',vn:'Anh là người nước nào vậy?'},
-      {zh:'我是美国人。你呢？',py:'Wǒ shì Měiguó rén. Nǐ ne?',vn:'Tôi là người Mỹ, còn bạn?'},
-      {zh:'他是我同学。',py:'Tā shì wǒ tóngxué.',vn:'Đó là bạn cùng lớp của tôi.'},
+      {zh:'她是谁？',py:'Tā shì shéi?',vn:'Cô ấy là ai?'},
+      {zh:'我是中国人，你呢？',py:'Wǒ shì Zhōngguó rén, nǐ ne?',vn:'Tôi là người Trung Quốc, còn bạn?'},
+      {zh:'你好，同学！',py:'Nǐ hǎo, tóngxué!',vn:'Chào bạn (cùng lớp)!'},
+      {zh:'谢谢你，朋友！',py:'Xièxie nǐ, péngyou!',vn:'Cảm ơn bạn nhé, bạn tôi!'},
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Thay phần gạch chân bằng từ trong ô gợi ý để nói ai là người thế nào với bạn. Nhấn nút loa để nghe rồi nói to.',
     drills:[
-      {frame:'他是我＿＿。',frame_py:'Tā shì wǒ ___.',vn:'Đó là ＿＿ của tôi.',options:['同学','朋友'],samples:['他是我同学。','他是我朋友。']},
-      {frame:'我是＿＿人。',frame_py:'Wǒ shì ___ rén.',vn:'Tôi là người ＿＿.',options:['中国','美国'],samples:['我是中国人。','我是美国人。']},
+      {frame:'你是＿＿的朋友吗？',frame_py:'Nǐ shì ___ de péngyou ma?',vn:'Bạn là bạn của ＿＿ phải không?',options:['李月','他','李老师'],samples:['你是李月的朋友吗？','你是他的朋友吗？','你是李老师的朋友吗？']},
     ],
   },
   t3:{
-    intro:'Không nhìn câu mẫu, hãy tưởng tượng bạn đang ở trong tình huống thực tế và tự nói ra câu phù hợp.',
+    intro:'Không nhìn câu mẫu, hãy tưởng tượng bạn đang ở trong tình huống thực tế và tự nói ra câu phù hợp về chính bạn.',
     tasks:[
-      {role:'📸 Tình huống 1 — Giới thiệu người trong ảnh',
-       guide:'Bạn cho bạn bè xem một tấm ảnh có cô giáo dạy tiếng Trung của mình. Hãy giới thiệu cô ấy.',
-       structure:['她是谁？','她是我的汉语老师。'],
-       sample:'她是谁？她是我的汉语老师，她叫李月。',
-       sample_vn:'Cô ấy là ai vậy? Đó là cô giáo dạy tôi tiếng Trung Quốc, cô tên là Lý Nguyệt.',
-       note:'Khi giới thiệu mối quan hệ với người quen (giáo viên, bạn bè), vẫn nên giữ 的 để làm rõ nghĩa "của tôi"; càng thân thiết (bạn bè, đồng nghiệp) thì càng dễ lược bỏ 的 hơn.'},
-      {role:'🌏 Tình huống 2 — Hỏi quốc tịch và hỏi ngược lại',
-       guide:'Bạn gặp một người nước ngoài, hỏi quốc tịch của họ, rồi họ hỏi lại bạn.',
-       structure:['你是哪国人？','我是＿＿人。你呢？'],
-       sample:'你是哪国人？我是美国人。你呢？我是中国人。',
-       sample_vn:'Bạn là người nước nào? Tôi là người Mỹ. Còn bạn? Tôi là người Trung Quốc.',
-       note:'呢 là cách hỏi ngược lại NGẮN GỌN nhất — thay vì lặp lại cả câu hỏi đầy đủ, chỉ cần thêm 呢 sau đối tượng để hỏi lại thông tin tương tự.'},
-      {role:'👬 Tình huống 3 — Phân biệt bạn cùng lớp và bạn thân',
-       guide:'Bạn giới thiệu hai người trong ảnh — một người học cùng lớp, một người chỉ là bạn thân không học cùng lớp.',
-       structure:['他是我同学。','她不是我同学，她是我＿＿。'],
-       sample:'他是我同学。她不是我同学，她是我朋友。',
-       sample_vn:'Đó là bạn cùng lớp của tôi. Cô ấy không phải bạn cùng lớp, cô ấy là bạn tôi.',
-       note:'同学 chỉ dùng cho người học CÙNG LỚP/CÙNG TRƯỜNG — nếu chỉ là bạn bè thân thiết nói chung (không cùng học) thì phải dùng 朋友, không dùng 同学.'},
+      {role:'📸 Tình huống 1 — Giới thiệu ảnh lớp',
+       guide:'Bạn cho bạn mới xem ảnh lớp tiếng Trung. Bạn ấy chỉ vào một cô gái và hỏi cô ấy là ai. Hãy trả lời: cô ấy là bạn cùng lớp, tên là gì, là người nước nào.',
+       structure:['她叫＿＿，','是我＿＿，','是＿＿人。'],
+       sample:'她叫李月，是我同学，是中国人。',
+       sample_vn:'Bạn ấy tên là Lý Nguyệt, là bạn cùng lớp của mình, là người Trung Quốc.',
+       note:'Người Việt hay nói “同学我” theo kiểu “bạn cùng lớp (của) tôi”. Người sở hữu luôn đứng trước: 我同学 / 我的同学.'},
+      {role:'🗣️ Tình huống 2 — Hỏi lại cho nhanh',
+       guide:'Một bạn mới hỏi bạn có phải bạn cùng lớp của Lý Nguyệt không. Bạn không phải — hãy nói bạn là bạn (朋友) của Lý Nguyệt, rồi hỏi lại bạn ấy, không lặp cả câu.',
+       structure:['不是，我是她＿＿。','你呢？'],
+       sample:'不是，我是她朋友。你呢？',
+       sample_vn:'Không, mình là bạn của bạn ấy. Còn bạn?',
+       note:'呢 dùng để hỏi lại cùng ý vừa nói. Đừng thêm 吗 sau 呢 (你呢吗 là sai).'},
+      {role:'🧑‍🏫 Tình huống 3 — Hỏi về thầy cô',
+       guide:'Bạn mới chuyển đến trường. Hãy hỏi một bạn trong lớp xem ai là giáo viên tiếng Trung của lớp và thầy cô ấy có phải người Trung Quốc không.',
+       structure:['＿＿是谁？','他 / 她是＿＿吗？'],
+       sample:'你们的汉语老师是谁？他是中国人吗？',
+       sample_vn:'Giáo viên tiếng Trung của các bạn là ai? Thầy ấy là người Trung Quốc phải không?',
+       note:'Câu có 谁 không thêm 吗; câu hỏi Có / Không mới thêm 吗. 你们的汉语老师 = giáo viên tiếng Trung của các bạn.'},
     ],
   },
 };
@@ -913,48 +909,47 @@ var speakingData = {
 // LUYỆN DỊCH — dùng từ bài 4 + ôn lại từ bài 1-3
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Cô ấy là ai?', zh:'她是谁？', py:'Tā shì shéi?'},
-  {vi:'Cô ấy là bạn của tôi.', zh:'她是我的朋友。', py:'Tā shì wǒ de péngyou.'},
-  {vi:'Anh ấy là bạn cùng lớp của tôi.', zh:'他是我的同学。', py:'Tā shì wǒ de tóngxué.'},
-  {vi:'Tôi là học sinh, còn bạn thì sao?', zh:'我是学生，你呢？', py:'Wǒ shì xuésheng, nǐ ne?'},
+  {vi:'Cô ấy không phải bạn cùng lớp của tôi, cô ấy là bạn tôi.', zh:'她不是我同学，是我朋友。', py:'Tā bú shì wǒ tóngxué, shì wǒ péngyou.'},
+  {vi:'Bạn cùng lớp của bạn tên là gì?', zh:'你同学叫什么名字？', py:'Nǐ tóngxué jiào shénme míngzi?'},
+  {vi:'Tôi là bạn cùng lớp của anh ấy, còn bạn?', zh:'我是他的同学，你呢？', py:'Wǒ shì tā de tóngxué, nǐ ne?'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Anh ấy là ai? Anh ấy là bạn cùng lớp của tôi.', zh:'他是谁？他是我的同学。', py:'Tā shì shéi? Tā shì wǒ de tóngxué.'},
-  {vi:'Cô ấy là bạn tôi, cô ấy là người Trung Quốc.', zh:'她是我朋友，她是中国人。', py:'Tā shì wǒ péngyou, tā shì Zhōngguó rén.'},
-  {vi:'Giáo viên tiếng Trung của bạn là ai?', zh:'你的汉语老师是谁？', py:'Nǐ de Hànyǔ lǎoshī shì shéi?'},
-  {vi:'Tôi là giáo viên, còn bạn thì sao?', zh:'我是老师，你呢？', py:'Wǒ shì lǎoshī, nǐ ne?'},
+  {vi:'Còn thầy Lý? Thầy ấy là giáo viên người Mỹ à?', zh:'李老师呢？他是美国老师吗？', py:'Lǐ lǎoshī ne? Tā shì Měiguó lǎoshī ma?'},
+  {vi:'Cảm ơn thầy! Bạn cùng lớp của em tên là Lý Nguyệt.', zh:'谢谢您！我同学叫李月。', py:'Xièxie nín! Wǒ tóngxué jiào Lǐ Yuè.'},
 ];
 
 // ══════════════════════════════════════════
-// LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
+// LUYỆN NGHE — nghe câu → chọn đáp án (đọc bằng giọng máy), chỉ dùng từ đã học
 // ══════════════════════════════════════════
 var listenData = [
-  {audio:'他是谁？他是我的汉语老师，他是中国人。',
+  {audio:'我朋友是汉语老师，她是美国人。',
    questions:[
-     {q:'Người được nhắc đến là ai?',opts:['Bạn cùng lớp','Giáo viên tiếng Trung','Bạn bè'],ans:1},
-     {q:'Người đó là người nước nào?',opts:['Mỹ','Trung Quốc','Không nói'],ans:1},
+     {q:'Bạn của người nói làm nghề gì?',opts:['Học sinh','Giáo viên tiếng Trung','Giáo viên tiếng Anh'],ans:1,exp:'汉语老师 = giáo viên tiếng Trung.'},
+     {q:'Người bạn đó là người nước nào?',opts:['Người Mỹ','Người Trung Quốc','Không nói'],ans:0,exp:'她是美国人 = cô ấy là người Mỹ.'},
    ]},
-  {audio:'你是哪国人？我是美国人。你呢？我是中国人。',
+  {audio:'李月是你的同学吗？——不是，她是我朋友的同学。',
    questions:[
-     {q:'Người hỏi đầu tiên là người nước nào?',opts:['Trung Quốc','Mỹ','Không nói'],ans:0},
+     {q:'Lý Nguyệt là ai đối với người trả lời?',opts:['Bạn cùng lớp của anh ấy','Bạn thân của anh ấy','Bạn cùng lớp của bạn anh ấy'],ans:2,exp:'我朋友的同学 = bạn cùng lớp của bạn tôi.'},
    ]},
-  {audio:'她是你同学吗？她不是我同学，她是我朋友。',
+  {audio:'你朋友是哪国人？——美国人。',
    questions:[
-     {q:'Cô ấy là ai của người trả lời?',opts:['Bạn cùng lớp','Bạn bè','Giáo viên'],ans:1},
+     {q:'Bạn của người trả lời là người nước nào?',opts:['Người Trung Quốc','Người Mỹ','Không nói'],ans:1,exp:'哪国人 = người nước nào; 美国人 = người Mỹ.'},
    ]},
-  {audio:'李月是我的同学，她是中国人。她的朋友是美国人。',
+  {audio:'谁是你朋友？——他。',
    questions:[
-     {q:'Lý Nguyệt là ai của người nói?',opts:['Bạn cùng lớp','Giáo viên','Bạn bè'],ans:0},
-     {q:'Bạn của Lý Nguyệt là người nước nào?',opts:['Trung Quốc','Mỹ','Không nói'],ans:1},
+     {q:'Người trả lời giới thiệu ai?',opts:['Một cô gái','Một chàng trai','Cô giáo'],ans:1,exp:'他 = anh ấy (nam); 她 mới là cô ấy (nữ).'},
    ]},
-  {audio:'你的老师叫什么名字？她叫李月。她是哪国人？她是中国人。',
+  {audio:'她呢？她是中国学生吗？——不是，她是老师。',
    questions:[
-     {q:'Giáo viên tên là gì?',opts:['Lý Nguyệt','Vương Phương','Không nói tên'],ans:0},
-     {q:'Giáo viên là người nước nào?',opts:['Mỹ','Việt Nam','Trung Quốc'],ans:2},
+     {q:'Cô gái được hỏi là ai?',opts:['Học sinh người Trung Quốc','Bạn cùng lớp','Giáo viên'],ans:2,exp:'不是 = không phải học sinh Trung Quốc; 她是老师 = cô ấy là giáo viên.'},
+   ]},
+  {audio:'您好！您是李月的汉语老师吗？',
+   questions:[
+     {q:'Người nói đang hỏi gì?',opts:['Người kia có phải thầy dạy tiếng Trung của Lý Nguyệt không','Người kia tên là gì','Người kia là người nước nào'],ans:0,exp:'李月的汉语老师 = giáo viên tiếng Trung của Lý Nguyệt; 吗 = có phải không.'},
    ]},
 ];
 

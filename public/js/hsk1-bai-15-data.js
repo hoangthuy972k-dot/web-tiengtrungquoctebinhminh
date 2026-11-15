@@ -844,89 +844,93 @@ var dialogData = [
    ]},
 ];
 
-// Điền từ — đổi năm/địa điểm/phương tiện so với bài khoá
+// Điền từ — mỗi câu một tình huống mới: 是……的 (khi nào / ở đâu / bằng gì / với ai), ngày tháng năm, từ mới
 var fillData = [
-  {pre:'Bạn hỏi ai đó quen bạn mình khi nào: “你是什么时候',blank:'认识',post:'他的？”',hint:'(quen biết)',ans:'认识',exp:'Câu 是……的 nhấn mạnh thời gian quen biết: 是什么时候认识他的？'},
-  {pre:'Bạn nói mình quen bạn ấy năm 2015: “我是2015',blank:'年',post:'认识他的。”',hint:'(năm)',ans:'年',exp:'Số năm + 年: 2015年 = năm 2015, đọc từng chữ số.'},
-  {pre:'Bạn giới thiệu bạn học cùng đại học: “她是我',blank:'大学',post:'同学。”',hint:'(trường đại học)',ans:'大学',exp:'大学同学 = bạn học đại học.'},
-  {pre:'Bạn hỏi ai đó đến khách sạn bằng gì: “你们是怎么来',blank:'饭店',post:'的？”',hint:'(khách sạn)',ans:'饭店',exp:'饭店 = khách sạn, nhà hàng.'},
-  {pre:'Bạn nói mình đi taxi đến: “我们是坐',blank:'出租车',post:'来的。”',hint:'(xe taxi)',ans:'出租车',exp:'坐出租车 = đi taxi (nói về cách thức).'},
-  {pre:'Bạn nói rất vui được quen ai đó: “很',blank:'高兴',post:'认识您！”',hint:'(vui mừng)',ans:'高兴',exp:'很高兴认识您 = rất vui được quen ông/bà.'},
-  {pre:'Bạn nói nghe ai đó kể lại: “',blank:'听',post:'张先生说……”',hint:'(nghe)',ans:'听',exp:'听 + người + 说 = nghe ai nói.'},
-  {pre:'Bạn nói mình đến bằng máy bay: “我是坐',blank:'飞机',post:'来的。”',hint:'(máy bay)',ans:'飞机',exp:'坐飞机来的 = đến bằng máy bay.'},
+  {pre:'Ở bữa tiệc, bạn hỏi cô bạn về chàng trai đứng cạnh cô ấy: “你和他是在哪儿',blank:'认识',post:'的？”',hint:'(quen biết)',ans:'认识',exp:'认识 = quen biết (một người); 是 + 在哪儿 + 认识 + 的 hỏi nơi đã quen nhau.'},
+  {pre:'Bạn kể chuyện bố mẹ: “爸爸和妈妈是1998',blank:'年',post:'认识的。”',hint:'(năm)',ans:'年',exp:'Số năm + 年: 1998年 = năm 1998 (đọc từng chữ số một); 是…的 nhấn mạnh thời gian.'},
+  {pre:'Bạn giới thiệu cô Lý: cô dạy ở Đại học Bắc Kinh. “李老师在北京',blank:'大学',post:'工作。”',hint:'(trường đại học)',ans:'大学',exp:'大学 = trường đại học; 北京大学 = Đại học Bắc Kinh; 在 + nơi chốn đứng trước 工作.'},
+  {pre:'Một khách du lịch hỏi đường đến khách sạn: “请问，北京',blank:'饭店',post:'在哪儿？”',hint:'(khách sạn)',ans:'饭店',exp:'饭店 = khách sạn / nhà hàng lớn; 北京饭店 là tên một khách sạn nổi tiếng.'},
+  {pre:'Trời mưa to, hai bạn không có ô. Bạn nói: “下雨了，我们坐',blank:'出租车',post:'回家吧。”',hint:'(xe taxi)',ans:'出租车',exp:'坐出租车 = đi taxi; phương tiện (坐出租车) đứng trước động từ 回家.'},
+  {pre:'Bạn kể: chiều nào bạn cũng học cùng Lý Nguyệt. “我和李月下午',blank:'一起',post:'学习汉语。”',hint:'(cùng nhau)',ans:'一起',exp:'A 和 B + 一起 + động từ = A cùng B làm gì; 一起 đứng trước động từ, không đặt cuối câu.'},
+  {pre:'Gặp lại bạn cũ sau nhiều năm, bạn reo lên: “看见你我太',blank:'高兴',post:'了！”',hint:'(vui mừng)',ans:'高兴',exp:'高兴 = vui; 太高兴了 = vui quá; trước 高兴 không thêm 是.'},
+  {pre:'Bạn báo ngày mai trời mưa, bạn hỏi sao bạn biết. Bạn đáp: “我是',blank:'听',post:'王老师说的。”',hint:'(nghe)',ans:'听',exp:'听 + người + 说 = nghe ai nói; 我是听王老师说的 = tôi nghe thầy Vương nói đấy.'},
+  {pre:'Bố đang đi công tác ở Bắc Kinh, mẹ nói: “爸爸明天坐',blank:'飞机',post:'回来。”',hint:'(máy bay)',ans:'飞机',exp:'坐飞机 = đi máy bay; 坐飞机回来 = đi máy bay về.'},
+  {pre:'Bạn hỏi: bố bạn ấy đến bệnh viện bằng cách nào? “你爸爸',blank:'是',post:'怎么去医院的？”',hint:'(nhấn mạnh việc đã xảy ra)',ans:'是',exp:'Hỏi cách thức của việc đã xảy ra: 是 + 怎么 + động từ + 的.'},
+  {pre:'A: “你们是怎么来的？” — B: “我们是开车来',blank:'的',post:'。”',hint:'(cuối câu nhấn mạnh)',ans:'的',exp:'Câu 是…的 phải có 的 sau động từ: 是开车来的; không thay 的 bằng 了.'},
 ];
 
-// Sắp xếp — đổi năm/địa điểm/phương tiện so với bài khoá
+// Sắp xếp — câu mới, mỗi câu một kiểu 是……的 / ngày tháng
 var sortData = [
-  {words:['你','是','什么','时候','认识','他','的','？'],ans:'你是什么时候认识他的？',audio:'你是什么时候认识他的？'},
-  {words:['我们','是','在','公司','认识','的','。'],ans:'我们是在公司认识的。',audio:'我们是在公司认识的。'},
-  {words:['你们','是','怎么','来','的','？'],ans:'你们是怎么来的？',audio:'你们是怎么来的？'},
-  {words:['我们','是','坐','飞机','来','的','。'],ans:'我们是坐飞机来的。',audio:'我们是坐飞机来的。'},
-  {words:['很','高兴','认识','你','！'],ans:'很高兴认识你！',audio:'很高兴认识你！'},
-  {words:['听','她','说','，','你','要','去','北京','。'],ans:'听她说，你要去北京。',audio:'听她说，你要去北京。'},
+  {words:['李月','是','和','爸爸','一起','开车','来','学校','的','。'],ans:'李月是和爸爸一起开车来学校的。',audio:'李月是和爸爸一起开车来学校的。'},
+  {words:['我','和','大卫','是','在','北京','大学','认识','的','。'],ans:'我和大卫是在北京大学认识的。',audio:'我和大卫是在北京大学认识的。',alt:['大卫和我是在北京大学认识的。']},
+  {words:['你','想','和','我','一起','去','看','电影','吗','？'],ans:'你想和我一起去看电影吗？',audio:'你想和我一起去看电影吗？'},
+  {words:['我','不是','坐','飞机','来','的','。'],ans:'我不是坐飞机来的。',audio:'我不是坐飞机来的。'},
+  {words:['我','女儿','是','九月','一号','去','大学','的','。'],ans:'我女儿是九月一号去大学的。',audio:'我女儿是九月一号去大学的。'},
+  {words:['听','李月','说','，','你','也','认识','他','？'],ans:'听李月说，你也认识他？',audio:'听李月说，你也认识他？'},
 ];
 
+// Nối — câu hỏi ↔ câu trả lời (mỗi câu trả lời chỉ hợp với một câu hỏi)
 var matchData = [
-  {left:'你和李小姐是什么时候认识的？',right:'我们是2011年9月认识的。'},
-  {left:'你们在哪儿认识的？',right:'我们是在学校认识的。'},
-  {left:'你们是怎么来饭店的？',right:'我们是坐出租车来的。'},
-  {left:'很高兴认识您！',right:'认识你我也很高兴！'},
-  {left:'您是坐飞机来北京的？',right:'是的。'},
+  {left:'你是哪年来中国的？',right:'2019年。'},
+  {left:'你们是怎么去饭店的？',right:'坐出租车去的。'},
+  {left:'你是一个人来的吗？',right:'不是，我和朋友一起来的。'},
+  {left:'你们是在哪儿认识的？',right:'在医院，我们都是医生。'},
+  {left:'你听谁说的？',right:'李老师。'},
+  {left:'你的衣服是在哪儿买的？',right:'是我妈妈给我买的。'},
 ];
 
-// Trắc nghiệm — trọng tâm 是……的, không audio
+// Trắc nghiệm — chọn câu đúng tình huống / chọn câu đáp / tìm câu sai
 var mcData = [
-  {q:'你是什么时候＿＿他的？',opts:['认识','知道','看见','听'],ans:0,exp:'认识 = quen biết (một người); 知道 là biết (thông tin), 看见 là nhìn thấy, 听 là nghe.'},
-  {q:'我们是2011年9月＿＿的。',opts:['认识','是','有','在'],ans:0,exp:'Câu 是……的 nhấn mạnh thời gian của việc đã xảy ra: 我们是2011年9月认识的.'},
-  {q:'Cấu trúc nhấn mạnh "是……的" dùng để nhấn mạnh điều gì?',opts:['thời gian, địa điểm, cách thức của hành động đã xảy ra','hành động đang diễn ra','hành động sắp xảy ra','số lượng của sự vật'],ans:0,exp:'是……的 nhấn mạnh thời gian, địa điểm, cách thức của hành động ĐÃ xảy ra.'},
-  {q:'Thể phủ định của "是……的" bắt buộc phải giữ từ nào?',opts:['不是……的','没是……的','别是……的','无是……的'],ans:0,exp:'Phủ định 是……的 là 不是……的, phải giữ 是.'},
-  {q:'"大学" nghĩa là gì?',opts:['trường đại học','trường tiểu học','trường trung học','nhà trẻ'],ans:0,exp:'大学 = trường đại học.'},
-  {q:'"出租车" nghĩa là gì?',opts:['xe taxi','xe buýt','xe máy','xe đạp'],ans:0,exp:'出租车 = xe taxi; 坐出租车 = đi taxi.'},
-  {q:'"飞机" nghĩa là gì?',opts:['máy bay','tàu hoả','tàu thuyền','ô tô'],ans:0,exp:'飞机 = máy bay; 坐飞机 = đi máy bay.'},
-  {q:'"高兴" nghĩa là gì?',opts:['vui mừng, phấn khởi','buồn bã','tức giận','lo lắng'],ans:0,exp:'高兴 = vui mừng: 很高兴认识你.'},
-  {q:'Cách nói năm tháng đúng thứ tự là?',opts:['Năm → Tháng → Ngày','Ngày → Tháng → Năm','Tháng → Năm → Ngày','Ngày → Năm → Tháng'],ans:0,exp:'Tiếng Trung nói thời gian từ lớn đến nhỏ: năm → tháng → ngày.'},
-  {q:'"听" nghĩa là gì?',opts:['nghe, nghe thấy','nói','xem','đọc'],ans:0,exp:'听 = nghe: 听张先生说 = nghe ông Trương nói.'},
+  {q:'Bạn mới quen đang sống ở Bắc Kinh. Bạn hỏi: “Bạn đến Bắc Kinh khi nào?” (việc đã xảy ra)',opts:['你是什么时候来北京的？','你什么时候是来北京的？','你是来北京什么时候的？','你是什么时候来北京吗？'],ans:0,exp:'Hỏi thời gian của việc đã xảy ra: 是 + 什么时候 + động từ + 的; câu có 什么时候 thì không thêm 吗.'},
+  {q:'Câu nào SAI?',opts:['我们是昨天认识了。','谢朋是和妈妈一起来的。','这些苹果是在商店买的。','我不是在北京认识他的。'],ans:0,exp:'Câu 是…的 kết thúc bằng 的, không dùng 了: 我们是昨天认识的.'},
+  {q:'A: “你是坐出租车来的吗？” — B (đi máy bay đến) đáp:',opts:['不是，我是坐飞机来的。','没有，我是坐飞机来的。','不，我坐飞机来了的。','不是，我是坐飞机来了。'],ans:0,exp:'Phủ định câu 是…的 dùng 不是 (không dùng 没有); câu khẳng định giữ nguyên 是…的, không đổi 的 thành 了.'},
+  {q:'Bạn muốn nói: “Chúng tôi quen nhau ngày 8 tháng 3 năm 2015.”',opts:['我们是2015年3月8号认识的。','我们是8号3月2015年认识的。','我们是2015年8号3月认识的。','我们是认识2015年3月8号的。'],ans:0,exp:'Ngày tháng nói từ lớn đến nhỏ: năm → tháng → ngày (2015年3月8号), ngược tiếng Việt; thời gian đứng trước động từ 认识.'},
+  {q:'Bạn thấy cô Vương bước xuống từ một chiếc taxi trước cổng. Bạn nói với bạn mình:',opts:['王小姐是坐出租车来的。','王小姐是来的坐出租车。','王小姐坐出租车是来的。','王小姐是坐出租车来了的。'],ans:0,exp:'Cách thức (坐出租车) đặt giữa 是 và động từ: 是 + 坐出租车 + 来的.'},
+  {q:'Bạn muốn giới thiệu Đại Vệ với cô Lý, bạn hỏi cô: “Cô có quen Đại Vệ không ạ?”',opts:['李老师，您认识大卫吗？','李老师，您有认识大卫吗？','李老师，您看见大卫吗？','李老师，您认识大卫呢？'],ans:0,exp:'“có quen … không” = 认识…吗; không dịch chữ “có” thành 有; 看见 là “nhìn thấy”.'},
+  {q:'Bạn muốn rủ: “Chúng mình cùng đến nhà hàng ăn cơm nhé.”',opts:['我们一起去饭店吃饭吧。','我们去饭店吃饭一起吧。','一起我们去饭店吃饭吧。','我们去一起饭店吃饭吧。'],ans:0,exp:'一起 đứng sau chủ ngữ, trước động từ: 我们一起去…; không đặt cuối câu như tiếng Việt “ăn cùng nhau”.'},
+  {q:'Lần đầu gặp bố của bạn thân, bạn nói:',opts:['您好！很高兴认识您！','您好！我是很高兴认识您！','您好！很高兴是认识您！','您好！很高兴认识您吗？'],ans:0,exp:'高兴 là tính từ nên không thêm 是 trước nó; đây là câu cảm thán, không phải câu hỏi nên không dùng 吗.'},
+  {q:'Cô giáo bảo ngày mai trời mưa. Bạn kể lại với bạn cùng phòng:',opts:['听老师说明天下雨。','老师听说明天下雨。','听说老师明天下雨。','听老师说明天下雨吗。'],ans:0,exp:'听 + người + 说 = nghe ai nói; người nói đứng giữa 听 và 说.'},
+  {q:'A: “你吃饭了吗？” — B: “吃了。” A muốn hỏi tiếp: “Ăn ở đâu thế?”',opts:['你是在哪儿吃的？','你在哪儿吃了的？','你是吃在哪儿的？','你是在哪儿吃吗？'],ans:0,exp:'Việc đã xảy ra rồi, hỏi chi tiết (ở đâu) thì dùng 是…的: 是在哪儿吃的; nơi chốn đứng trước động từ.'},
 ];
 
 var speakingData = {
   t1:{
-    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
+    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý: năm đọc từng chữ số (2011年 = èr líng yī yī nián); 一起 đọc yìqǐ.',
     models:[
-      {zh:'你和李小姐是什么时候认识的？',py:'Nǐ hé Lǐ xiǎojiě shì shénme shíhou rènshi de?',vn:'Cô và cô Lý quen nhau khi nào vậy?'},
-      {zh:'我们是2011年9月认识的。',py:'Wǒmen shì èr líng yī yī nián jiǔ yuè rènshi de.',vn:'Chúng tôi quen nhau vào tháng 9 năm 2011.'},
-      {zh:'你们是怎么来饭店的？',py:'Nǐmen shì zěnme lái fàndiàn de?',vn:'Anh chị đến khách sạn bằng cách nào?'},
-      {zh:'我们是坐出租车来的。',py:'Wǒmen shì zuò chūzūchē lái de.',vn:'Chúng tôi đi xe taxi đến.'},
-      {zh:'很高兴认识您！',py:'Hěn gāoxìng rènshi nín!',vn:'Rất vui được biết ngài!'},
+      {zh:'你和李小姐是什么时候认识的？',py:'Nǐ hé Lǐ xiǎojiě shì shénme shíhou rènshi de?',vn:'Bạn và cô Lý quen nhau khi nào thế?'},
+      {zh:'认识你我也很高兴！',py:'Rènshi nǐ wǒ yě hěn gāoxìng!',vn:'Quen bạn tôi cũng rất vui!'},
+      {zh:'你是几点来学校的？',py:'Nǐ shì jǐ diǎn lái xuéxiào de?',vn:'Bạn đến trường lúc mấy giờ?'},
+      {zh:'你们是在哪个大学学习的？',py:'Nǐmen shì zài nǎge dàxué xuéxí de?',vn:'Các bạn học ở trường đại học nào?'},
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
-      {frame:'我们是坐＿＿来的。',frame_py:'Wǒmen shì zuò ___ lái de.',vn:'Chúng tôi đi ＿＿ đến.',options:['出租车','飞机'],samples:['我们是坐出租车来的。','我们是坐飞机来的。']},
-      {frame:'我们是在＿＿认识的。',frame_py:'Wǒmen shì zài ___ rènshi de.',vn:'Chúng tôi quen nhau ở ＿＿.',options:['学校','公司'],samples:['我们是在学校认识的。','我们是在公司认识的。']},
+      {frame:'他是＿＿来饭店的。',frame_py:'Tā shì ___ lái fàndiàn de.',vn:'Anh ấy đến khách sạn ＿＿ (nhấn mạnh khi nào / bằng gì / với ai).',options:['昨天上午','开车','和女儿一起'],samples:['他是昨天上午来饭店的。','他是开车来饭店的。','他是和女儿一起来饭店的。']},
+      {frame:'我是＿＿去中国的。',frame_py:'Wǒ shì ___ qù Zhōngguó de.',vn:'Tôi đi Trung Quốc vào ＿＿.',options:['2018年3月','2021年7月10号','2024年1月'],samples:['我是2018年3月去中国的。','我是2021年7月10号去中国的。','我是2024年1月去中国的。']},
     ],
   },
   t3:{
     intro:'Không nhìn câu mẫu, hãy tưởng tượng bạn đang ở trong tình huống thực tế và tự nói ra câu phù hợp.',
     tasks:[
-      {role:'🤝 Tình huống 1 — Làm quen và hỏi thăm mối quan hệ',
-       guide:'Bạn gặp một người mới và tò mò muốn biết họ quen một người bạn chung của mình từ khi nào, ở đâu.',
-       structure:['你和他是什么时候认识的？','我们是在＿＿认识的。'],
-       sample:'你和他是什么时候认识的？我们是2011年9月认识的。我们是在学校认识的。',
-       sample_vn:'Bạn quen anh ấy khi nào vậy? Chúng tôi quen nhau vào tháng 9 năm 2011. Chúng tôi quen nhau ở trường học.',
-       note:'Cấu trúc "是……的" dùng để nhấn mạnh CHI TIẾT của một việc đã xảy ra rồi (thời gian, địa điểm, cách thức) — không dùng để hỏi việc chưa xảy ra.'},
-      {role:'🚕 Tình huống 2 — Hỏi thăm phương tiện di chuyển',
-       guide:'Bạn đón khách tại khách sạn và hỏi họ đã đến bằng phương tiện gì.',
-       structure:['你们是怎么来的？','我们是坐＿＿来的。'],
-       sample:'你们是怎么来的？我们是坐出租车来的。',
-       sample_vn:'Các bạn đến bằng gì vậy? Chúng tôi đi xe taxi đến.',
-       note:'Phương tiện di chuyển luôn được đặt giữa "是" và "来的" (是坐出租车来的) — đây là điểm ngữ pháp học sinh Việt hay đặt sai vị trí do ảnh hưởng từ tiếng Việt.'},
-      {role:'😄 Tình huống 3 — Làm quen lịch sự trong công việc',
-       guide:'Bạn được giới thiệu với một đối tác mới trong buổi họp và muốn bày tỏ sự vui mừng khi được quen biết.',
-       structure:['很高兴认识您！','认识你我也很高兴！'],
-       sample:'很高兴认识您！认识你我也很高兴！',
-       sample_vn:'Rất vui được biết ngài! Rất vui được quen anh!',
-       note:'很高兴认识您 là câu xã giao BẮT BUỘC phải thuộc lòng khi làm quen trong môi trường công việc trang trọng ở Trung Quốc.'},
+      {role:'🤝 Tình huống 1 — Kể về người bạn thân',
+       guide:'Hãy kể bạn quen người bạn thân của mình năm nào và ở đâu.',
+       structure:['我和……是……年','在……认识的'],
+       sample:'我和谢朋是2019年在大学认识的，他是我的好朋友。',
+       sample_vn:'Tôi và Tạ Bằng quen nhau ở trường đại học năm 2019, cậu ấy là bạn thân của tôi.',
+       note:'Người Việt hay nói “quen nhau năm 2019” rồi đặt năm ra sau động từ. Trong câu 是…的, thời gian và nơi chốn đều đứng giữa 是 và động từ 认识.'},
+      {role:'🚕 Tình huống 2 — Đón bạn ở khách sạn',
+       guide:'Bạn ra sảnh khách sạn đón một người bạn mới từ xa đến. Hãy hỏi bạn ấy đến bằng gì và đi cùng ai, rồi đóng vai bạn ấy trả lời.',
+       structure:['你是怎么……的？','我是和……一起坐……来的。'],
+       sample:'你是怎么来北京的？——我是和同学一起坐飞机来的。',
+       sample_vn:'Bạn đến Bắc Kinh bằng gì? — Mình đi máy bay cùng bạn học.',
+       note:'Câu 是…的 chỉ dùng cho việc ĐÃ xảy ra. Nếu bạn ấy chưa đến, hãy hỏi bình thường: 你怎么来？'},
+      {role:'😄 Tình huống 3 — Tự giới thiệu ở lớp mới',
+       guide:'Ngày đầu đến lớp học tiếng Trung ở Bắc Kinh: hãy nói tên và kể ngày tháng năm bạn đến Bắc Kinh, đi cùng ai.',
+       structure:['我叫……','……年……月……号，我……'],
+       sample:'我叫大卫，2025年9月1号，我和妈妈来北京了。',
+       sample_vn:'Mình tên là Đại Vệ, ngày 1 tháng 9 năm 2025 mình cùng mẹ đến Bắc Kinh.',
+       note:'Nói ngày tháng theo thứ tự năm → tháng → ngày (2025年9月1号), ngược tiếng Việt. Năm đọc từng chữ số: 2025 = èr líng èr wǔ.'},
     ],
   },
 };
@@ -935,46 +939,51 @@ var speakingData = {
 // LUYỆN DỊCH — dùng từ bài 15 + ôn lại từ bài 1-14
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Tôi đến vào hôm qua.', zh:'我是昨天来的。', py:'Wǒ shì zuótiān lái de.'},
-  {vi:'Rất vui được quen biết bạn.', zh:'很高兴认识你。', py:'Hěn gāoxìng rènshi nǐ.'},
-  {vi:'Chúng tôi không phải đi taxi đến.', zh:'我们不是坐出租车来的。', py:'Wǒmen bú shì zuò chūzūchē lái de.'},
-  {vi:'Anh ấy học ở Đại học Bắc Kinh.', zh:'他在北京大学学习。', py:'Tā zài Běijīng Dàxué xuéxí.'},
+  {vi:'Tôi quen Vương Phương ở trường đại học.', zh:'我是在大学认识王方的。', py:'Wǒ shì zài dàxué rènshi Wáng Fāng de.'},
+  {vi:'Hôm nay là ngày 15 tháng 11 năm 2026.', zh:'今天是2026年11月15号。', py:'Jīntiān shì èr líng èr liù nián shíyī yuè shíwǔ hào.'},
+  {vi:'Bố tôi không đến một mình, mẹ tôi cũng đến.', zh:'我爸爸不是一个人来的，妈妈也来了。', py:'Wǒ bàba bú shì yí ge rén lái de, māma yě lái le.'},
+  {vi:'Bạn đến cùng với ai?', zh:'你是和谁一起来的？', py:'Nǐ shì hé shéi yìqǐ lái de?'},
 ];
 
 // ══════════════════════════════════════════
-// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// LUYỆN DỊCH (chiều Trung→Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Rất vui được quen biết bạn, tôi đến vào hôm qua.', zh:'很高兴认识你，我是昨天来的。', py:'Hěn gāoxìng rènshi nǐ, wǒ shì zuótiān lái de.'},
-  {vi:'Chúng tôi đến bằng taxi, không phải đến bằng máy bay.', zh:'我们是坐出租车来的，不是坐飞机来的。', py:'Wǒmen shì zuò chūzūchē lái de, bú shì zuò fēijī lái de.'},
-  {vi:'Anh ấy học tiếng Trung ở Đại học Bắc Kinh.', zh:'他在北京大学学习汉语。', py:'Tā zài Běijīng Dàxué xuéxí Hànyǔ.'},
-  {vi:'Quen biết bạn, tôi rất vui.', zh:'认识你，我很高兴。', py:'Rènshi nǐ, wǒ hěn gāoxìng.'},
+  {vi:'Con gái tôi đi Bắc Kinh bằng máy bay, con bé rất vui.', zh:'我女儿是坐飞机去北京的，她很高兴。', py:'Wǒ nǚ\'ér shì zuò fēijī qù Běijīng de, tā hěn gāoxìng.'},
+  {vi:'Cái cốc này mẹ tôi mua ở Bắc Kinh.', zh:'这个杯子是我妈妈在北京买的。', py:'Zhège bēizi shì wǒ māma zài Běijīng mǎi de.'},
+  {vi:'Những quyển sách này ai cho bạn thế?', zh:'这些书是谁给你的？', py:'Zhèxiē shū shì shéi gěi nǐ de?'},
 ];
 
 // ══════════════════════════════════════════
-// LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
+// LUYỆN NGHE — nghe câu → chọn đáp án (đọc bằng giọng máy), chỉ dùng từ đã học
 // ══════════════════════════════════════════
 var listenData = [
-  {audio:'你和王方是什么时候认识的？我们是2018年认识的。',
+  {audio:'我和李月是2016年认识的，那年我们都在北京大学学习。',
    questions:[
-     {q:'Họ quen nhau năm nào?',opts:['2008','2018','2080'],ans:1},
+     {q:'Họ quen nhau năm nào?',opts:['2006','2016','2060'],ans:1,exp:'2016年 = năm 2016 (đọc từng chữ số: hai-không-một-sáu).'},
+     {q:'Khi đó họ làm gì?',opts:['Đều học ở Đại học Bắc Kinh','Đều làm ở bệnh viện','Đều dạy học ở Bắc Kinh'],ans:0,exp:'我们都在北京大学学习 = chúng tôi đều học ở Đại học Bắc Kinh.'},
    ]},
-  {audio:'你们是怎么来北京的？我们是坐飞机来的。',
+  {audio:'张先生是坐飞机来北京的，今天下午坐出租车去饭店。',
    questions:[
-     {q:'Họ đến Bắc Kinh bằng gì?',opts:['Taxi','Máy bay','Tự lái xe'],ans:1},
+     {q:'Ông Trương đến Bắc Kinh bằng gì?',opts:['Máy bay','Taxi','Tự lái xe'],ans:0,exp:'是坐飞机来北京的 = đến Bắc Kinh bằng máy bay.'},
+     {q:'Chiều nay ông ấy đi đâu?',opts:['Về nhà','Đến khách sạn','Đến trường đại học'],ans:1,exp:'坐出租车去饭店 = đi taxi đến khách sạn.'},
    ]},
-  {audio:'你们是在哪儿认识的？我们是在大学认识的，他是我同学。',
+  {audio:'今天是三月八号，我妈妈很高兴，爸爸给她买了衣服。',
    questions:[
-     {q:'Họ quen nhau ở đâu?',opts:['Ở bệnh viện','Ở trường đại học','Ở nhà hàng'],ans:1},
+     {q:'Hôm nay là ngày nào?',opts:['Ngày 8 tháng 3','Ngày 3 tháng 8','Ngày 8 tháng 8'],ans:0,exp:'三月八号 = ngày 8 tháng 3 (tháng nói trước, ngày nói sau).'},
+     {q:'Vì sao mẹ vui?',opts:['Mẹ được đi máy bay','Bố mua quần áo cho mẹ','Mẹ gặp lại bạn cũ'],ans:1,exp:'爸爸给她买了衣服 = bố mua quần áo cho mẹ.'},
    ]},
-  {audio:'中午我们一起去饭店吃饭吧。好啊，我们坐出租车去吧。',
+  {audio:'你听！是谁在说汉语呢？——是大卫，他的汉语很好。',
    questions:[
-     {q:'Buổi trưa họ định làm gì?',opts:['Cùng đi ăn ở nhà hàng','Cùng đi xem phim','Cùng đi mua quần áo'],ans:0},
-     {q:'Họ đi bằng gì?',opts:['Máy bay','Taxi','Đi bộ'],ans:1},
+     {q:'Ai đang nói tiếng Trung?',opts:['Tạ Bằng','Cô Lý','Đại Vệ'],ans:2,exp:'是大卫 = là Đại Vệ; 你听！ = bạn nghe kìa!'},
    ]},
-  {audio:'李先生，很高兴认识您！听王小姐说，您是医生？是的，我在医院工作。',
+  {audio:'昨天我在饭店吃饭，看见了我的大学同学。',
    questions:[
-     {q:'Ông Lý làm nghề gì?',opts:['Giáo viên','Bác sĩ','Lái taxi'],ans:1},
+     {q:'Hôm qua người nói gặp ai ở nhà hàng?',opts:['Cô giáo cũ','Bạn học đại học','Bác sĩ'],ans:1,exp:'我的大学同学 = bạn học đại học của tôi.'},
+   ]},
+  {audio:'明天我们一起去北京吧，坐飞机去，好吗？——好啊！',
+   questions:[
+     {q:'Họ định đi Bắc Kinh bằng gì?',opts:['Taxi','Tự lái xe','Máy bay'],ans:2,exp:'坐飞机去 = đi bằng máy bay.'},
    ]},
 ];
 

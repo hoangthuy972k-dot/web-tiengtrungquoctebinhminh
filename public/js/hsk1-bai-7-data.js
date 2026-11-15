@@ -1109,88 +1109,92 @@ var dialogData = [
    ]},
 ];
 
-// Điền từ — đổi ngày/thứ so với bài khoá
+// Điền từ — ngày tháng, câu vị ngữ danh từ, 去 + nơi chốn + việc làm; ôn 会/很/怎么/几/岁/了/的
 var fillData = [
-  {pre:'Bạn hỏi lịch sự về ngày hôm nay: “',blank:'请',post:'问，今天几号？”',hint:'(mời, xin — lịch sự)',ans:'请',exp:'请问 (xin hỏi) dùng mở đầu câu hỏi một cách lịch sự.'},
-  {pre:'Bạn hỏi thứ trong tuần: “今天',blank:'星期',post:'几？”',hint:'(tuần, thứ)',ans:'星期',exp:'星期几 hỏi thứ mấy trong tuần.'},
-  {pre:'Nói hôm nay là ngày 5 tháng 10: “今天10',blank:'月',post:'5号。”',hint:'(tháng)',ans:'月',exp:'Nói ngày tháng: số + 月 (tháng) + số + 号 (ngày).'},
-  {pre:'Nói hôm qua là thứ hai: “',blank:'昨',post:'天是星期一。”',hint:'(hôm qua)',ans:'昨',exp:'昨天 = hôm qua.'},
-  {pre:'Nói ngày mai là thứ sáu: “',blank:'明',post:'天是星期五。”',hint:'(ngày mai)',ans:'明',exp:'明天 = ngày mai.'},
-  {pre:'Bạn hỏi ai đó có đi học không: “你',blank:'去',post:'学校吗？”',hint:'(đi, đi đến)',ans:'去',exp:'去 + nơi chốn: 去学校 = đến trường.'},
-  {pre:'Bạn nói mục đích đến trường là đọc sách: “我去学校看',blank:'书',post:'。”',hint:'(sách)',ans:'书',exp:'看书 = đọc sách.'},
-  {pre:'Bạn hỏi ngày cụ thể: “今天几',blank:'号',post:'？”',hint:'(ngày, mồng)',ans:'号',exp:'几号 hỏi ngày mấy trong tháng.'},
+  {pre:'Ở trường, bạn gặp một cô lạ mặt và muốn hỏi cho lịch sự: “',blank:'请问',post:'，您是汉语老师吗？”',hint:'(xin hỏi)',ans:'请问',exp:'请问 = xin hỏi, đặt đầu câu khi hỏi người lạ cho lịch sự.'},
+  {pre:'Bạn không biết chữ “书” đọc thế nào, bạn nói với bạn cùng bàn: ““书”怎么读？我去',blank:'问',post:'老师。”',hint:'(hỏi)',ans:'问',exp:'问 + người = hỏi ai: 问老师 = hỏi cô giáo.'},
+  {pre:'Bạn rủ bạn cùng lớp đến nhà chơi. A: “你几',blank:'号',post:'去我家？” — B: “十五号。”',hint:'(ngày)',ans:'号',exp:'几号 hỏi ngày mấy trong tháng; trả lời bằng số + 号.'},
+  {pre:'Mẹ bạn kể về chuyến đi sắp tới: “我妈妈五',blank:'月',post:'去中国。”',hint:'(tháng)',ans:'月',exp:'Tiếng Trung nói từ lớn đến nhỏ: tháng (月) → ngày (号) → thứ (星期).'},
+  {pre:'Bạn kể kế hoạch cuối tuần: “明天',blank:'星期',post:'六，我去李月家做菜。”',hint:'(thứ)',ans:'星期',exp:'星期六 = thứ bảy; câu 明天星期六 không cần 是.'},
+  {pre:'Bạn cần ghi ngày của hôm qua vào vở. A: “',blank:'昨天',post:'是几号？” — B: “九号。”',hint:'(hôm qua)',ans:'昨天',exp:'昨天 = hôm qua; 昨天是几号 = hôm qua là ngày mấy.'},
+  {pre:'A: “',blank:'明天',post:'你去学校做什么？” — B: “我去学校读汉字。”',hint:'(ngày mai)',ans:'明天',exp:'明天 = ngày mai; từ chỉ thời gian đứng trước động từ.'},
+  {pre:'Bạn rủ bạn cùng lớp: “星期六你',blank:'去',post:'我家吗？”',hint:'(đi, đến)',ans:'去',exp:'去 + nơi chốn: 去我家 = đến nhà tôi.'},
+  {pre:'Bạn khen trường của con gái: “我女儿的',blank:'学校',post:'很大。”',hint:'(trường học)',ans:'学校',exp:'学校 = trường học; 学校很大 = trường rất to.'},
+  {pre:'A: “你去朋友家',blank:'看',post:'书吗？” — B: “不，我去朋友家写汉字。”',hint:'(xem, đọc)',ans:'看',exp:'看书 = đọc sách; 去 + nơi chốn + việc làm.'},
+  {pre:'Phòng con gái bạn toàn sách là sách: “我女儿有很多',blank:'书',post:'。”',hint:'(sách)',ans:'书',exp:'书 = sách; 很多书 = rất nhiều sách.'},
+  {pre:'Sinh nhật con gái, bạn vui vẻ nói với bạn bè: “',blank:'今天',post:'我女儿八岁了！”',hint:'(hôm nay)',ans:'今天',exp:'今天 = hôm nay; 八岁了 = tròn tám tuổi rồi (了 báo thay đổi).'},
 ];
 
-// Sắp xếp — đổi ngày/thứ so với bài khoá
+// Sắp xếp — thời gian đứng trước động từ; 去 + nơi chốn + việc làm
 var sortData = [
-  {words:['请','问','，','今天','几','号','？'],ans:'请问，今天几号？',audio:'请问，今天几号？'},
-  {words:['今天','10','月','5','号','。'],ans:'今天10月5号。',audio:'今天10月5号。'},
-  {words:['昨天','是','星期','一','。'],ans:'昨天是星期一。',audio:'昨天是星期一。'},
-  {words:['明天','是','星期','五','。'],ans:'明天是星期五。',audio:'明天是星期五。'},
-  {words:['你','去','学校','吗','？'],ans:'你去学校吗？',audio:'你去学校吗？'},
-  {words:['我','去','学校','看','书','。'],ans:'我去学校看书。',audio:'我去学校看书。'},
+  {words:['我','星期六','去','老师','家','看','书','。'],ans:'我星期六去老师家看书。',audio:'我星期六去老师家看书。'},
+  {words:['十二月','二十五号','是','星期几','？'],ans:'十二月二十五号是星期几？',audio:'十二月二十五号是星期几？'},
+  {words:['我朋友','去','中国','看','她妈妈','。'],ans:'我朋友去中国看她妈妈。',audio:'我朋友去中国看她妈妈。'},
+  {words:['今天','星期五','，','明天','我','不','去','学校','。'],ans:'今天星期五，明天我不去学校。',audio:'今天星期五，明天我不去学校。'},
+  {words:['请','你','读','你的','名字','。'],ans:'请你读你的名字。',audio:'请你读你的名字。'},
+  {words:['你','妈妈','几','号','去','美国','？'],ans:'你妈妈几号去美国？',audio:'你妈妈几号去美国？'},
 ];
 
+// Nối — câu hỏi ↔ câu trả lời
 var matchData = [
-  {left:'今天几号？',right:'今天9月1号。'},
-  {left:'今天星期几？',right:'星期三。'},
-  {left:'昨天是几月几号？',right:'昨天是8月31号，星期二。'},
-  {left:'明天星期六，你去学校吗？',right:'我去学校。'},
-  {left:'去学校做什么？',right:'我去学校看书。'},
+  {left:'今天几月几号？',right:'十月一号。'},
+  {left:'昨天星期几？',right:'星期二。'},
+  {left:'你去学校做什么？',right:'我去看书。'},
+  {left:'你女儿今年几岁？',right:'她七岁。'},
+  {left:'你明天去谁家？',right:'我去李月家。'},
 ];
 
-// Trắc nghiệm — trọng tâm ngày tháng & câu liên động 去, không audio
+// Trắc nghiệm — chọn câu đúng tình huống, chọn câu đáp, tìm câu sai
 var mcData = [
-  {q:'请问，今天＿＿号？',opts:['几','什么','怎么','哪'],ans:0,exp:'几 + 号 dùng để hỏi ngày trong tháng: 今天几号？'},
-  {q:'今天＿＿几？(hỏi thứ)',opts:['星期','号','月','今天'],ans:0,exp:'星期几 hỏi thứ trong tuần; trả lời 星期一…星期六, chủ nhật là 星期天.'},
-  {q:'Thứ tự đúng khi nói ngày tháng trong tiếng Trung là?',opts:['Tháng → Ngày → Thứ','Thứ → Ngày → Tháng','Ngày → Tháng → Thứ','Thứ → Tháng → Ngày'],ans:0,exp:'Tiếng Trung nói từ lớn đến nhỏ: tháng → ngày → thứ, ví dụ 9月1号星期三.'},
-  {q:'Trong khẩu ngữ, từ nào thường dùng thay cho "日" khi nói ngày?',opts:['号','月','星期','天'],ans:0,exp:'Khẩu ngữ dùng 号 để nói ngày, văn viết dùng 日.'},
-  {q:'Câu liên động với "去": Chủ ngữ + 去 + Nơi chốn + ＿＿ + Tân ngữ',opts:['Động từ 2','Tính từ','Danh từ','Trợ từ'],ans:0,exp:'Câu liên động: 去 + nơi chốn + động từ 2 (+ tân ngữ), ví dụ 去学校看书.'},
-  {q:'"学校" nghĩa là gì?',opts:['trường học','thư viện','ngân hàng','quán cà phê'],ans:0,exp:'学校 (xuéxiào) là trường học.'},
-  {q:'"书" nghĩa là gì?',opts:['sách','bút','bàn','ghế'],ans:0,exp:'书 (shū) là sách; 看书 = đọc sách.'},
-  {q:'Câu nào ĐÚNG khi nói "Tôi đi trường học đọc sách"?',opts:['我去学校看书','我看书去学校','我学校去看书','看书我去学校'],ans:0,exp:'Trật tự đúng: 我 + 去学校 (đi đâu) + 看书 (để làm gì).'},
-  {q:'"昨天" nghĩa là gì?',opts:['hôm qua','hôm nay','ngày mai','tuần trước'],ans:0,exp:'昨天 = hôm qua; 今天 là hôm nay, 明天 là ngày mai.'},
-  {q:'"明天" nghĩa là gì?',opts:['ngày mai','hôm qua','hôm nay','tuần sau'],ans:0,exp:'明天 = ngày mai; 昨天 là hôm qua, 今天 là hôm nay.'},
+  {q:'Bạn muốn nói: “Hôm nay thứ năm, ngày 3 tháng 10.”',opts:['今天十月三号，星期四。','今天星期四，三号十月。','今天十月三号，星期五。','今天三号十月，星期四。'],ans:0,exp:'Thứ tự tháng → ngày → thứ; “thứ năm” tiếng Việt là 星期四 (thứ hai = 星期一).'},
+  {q:'Bạn muốn nói: “Ngày mai tôi đến trường hỏi cô giáo.”',opts:['明天我去学校问老师。','我去学校明天问老师。','明天我问老师去学校。','我去明天学校问老师。'],ans:0,exp:'Thời gian đứng trước động từ; 去 + nơi chốn rồi mới đến việc làm (问老师).'},
+  {q:'Bạn của bạn nói hôm nay thứ tư, nhưng không phải. Bạn nói: “Hôm nay không phải thứ tư.”',opts:['今天不是星期三。','今天不星期三。','今天是不星期三。','不今天是星期三。'],ans:0,exp:'Câu vị ngữ danh từ khẳng định có thể bỏ 是, nhưng phủ định phải nói 不是.'},
+  {q:'A: “你星期几去李月家？” — B đáp:',opts:['我星期五去。','我去星期五。','我五星期去。','星期我五去。'],ans:0,exp:'Từ chỉ thời gian (星期五) đứng trước động từ 去, không đặt sau như tiếng Việt.'},
+  {q:'Bạn muốn hỏi bạn: “Tháng mấy bạn đi Trung Quốc?”',opts:['你几月去中国？','你去中国几月？','你什么月去中国？','你几月去中国吗？'],ans:0,exp:'Hỏi tháng dùng 几月, đặt trước động từ; đã có 几 thì không thêm 吗.'},
+  {q:'A: “你去中国做什么？” — B đáp hợp lý:',opts:['我去看朋友。','我是中国人。','十月去。','我会说汉语。'],ans:0,exp:'Hỏi 做什么 (làm gì) thì đáp việc làm: 去看朋友 = đi thăm bạn.'},
+  {q:'Có khách đến văn phòng, bạn lịch sự mời khách viết tên:',opts:['请您写您的名字。','请问您写名字。','您请写名字吗？','问您写名字。'],ans:0,exp:'请 + động từ = mời, xin (lịch sự); 请问 chỉ dùng để mở đầu câu hỏi.'},
+  {q:'Hôm nay là 星期三 (thứ tư). Bạn muốn nói “Ngày mai là thứ năm”:',opts:['明天是星期四。','明天是星期五。','昨天是星期四。','明天是四号。'],ans:0,exp:'Thứ năm = 星期四 (số trong tiếng Trung nhỏ hơn tiếng Việt 1); ngày mai là 明天.'},
+  {q:'Câu nào SAI?',opts:['我去学校明天。','我女儿的书很多。','我妈妈去美国看我。','你今天去学校吗？'],ans:0,exp:'Từ chỉ thời gian phải đứng trước động từ: 我明天去学校 / 明天我去学校.'},
 ];
 
 var speakingData = {
   t1:{
-    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
+    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý 请问 đọc liền: qǐngwèn; 星期 đọc xīngqī.',
     models:[
-      {zh:'请问，今天几号？',py:'Qǐngwèn, jīntiān jǐ hào?',vn:'Xin hỏi hôm nay là ngày mấy?'},
-      {zh:'今天9月1号，星期三。',py:'Jīntiān jiǔ yuè yī hào, xīngqī sān.',vn:'Hôm nay ngày 1 tháng 9, thứ tư.'},
-      {zh:'昨天是8月31号，星期二。',py:'Zuótiān shì bā yuè sānshíyī hào, xīngqī èr.',vn:'Hôm qua là thứ ba, ngày 31 tháng 8.'},
-      {zh:'明天是9月2号，星期四。',py:'Míngtiān shì jiǔ yuè èr hào, xīngqī sì.',vn:'Ngày mai là thứ năm, ngày 2 tháng 9.'},
+      {zh:'请问，今天几号？',py:'Qǐngwèn, jīntiān jǐ hào?',vn:'Xin hỏi, hôm nay ngày mấy?'},
       {zh:'我去学校看书。',py:'Wǒ qù xuéxiào kàn shū.',vn:'Tôi đến trường đọc sách.'},
+      {zh:'我去朋友家做中国菜。',py:'Wǒ qù péngyou jiā zuò Zhōngguó cài.',vn:'Tôi đến nhà bạn nấu món Trung Quốc.'},
+      {zh:'我妈妈今年五十岁。',py:'Wǒ māma jīnnián wǔshí suì.',vn:'Mẹ tôi năm nay năm mươi tuổi.'},
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng số trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay phần gạch chân bằng cụm từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
-      {frame:'今天是星期＿＿。',frame_py:'Jīntiān shì xīngqī ___.',vn:'Hôm nay là thứ ＿＿.',options:['一','三','五'],samples:['今天是星期一。','今天是星期三。','今天是星期五。']},
+      {frame:'星期六我去＿＿。',frame_py:'Xīngqī liù wǒ qù ___.',vn:'Thứ bảy tôi đi ＿＿.',options:['老师家写汉字','美国看女儿','同学家做菜'],samples:['星期六我去老师家写汉字。','星期六我去美国看女儿。','星期六我去同学家做菜。']},
+      {frame:'＿＿是星期几？',frame_py:'___ shì xīngqī jǐ?',vn:'＿＿ là thứ mấy?',options:['明天','昨天','五月一号'],samples:['明天是星期几？','昨天是星期几？','五月一号是星期几？']},
     ],
   },
   t3:{
     intro:'Không nhìn câu mẫu, hãy tưởng tượng bạn đang ở trong tình huống thực tế và tự nói ra câu phù hợp.',
     tasks:[
-      {role:'📅 Tình huống 1 — Hỏi ngày ở nơi công cộng',
-       guide:'Bạn cần hỏi ngày hôm nay khi đang ở ngân hàng hoặc một nơi công cộng, nên hỏi thật lịch sự.',
-       structure:['请问，今天几号？','今天是星期几？'],
-       sample:'请问，今天几号？今天是星期几？',
-       sample_vn:'Xin hỏi hôm nay là ngày mấy? Hôm nay là thứ mấy?',
-       note:'请问 là cách mở đầu câu hỏi LỊCH SỰ bắt buộc phải có khi hỏi người lạ ở nơi công cộng — bỏ 请问 sẽ nghe cộc lốc, thiếu lịch sự.'},
-      {role:'🗓️ Tình huống 2 — Xem lịch, nói về hôm qua và ngày mai',
-       guide:'Bạn xem lịch và muốn nói cho bạn bè biết hôm qua, ngày mai là thứ mấy.',
-       structure:['昨天是星期＿＿，','明天是星期＿＿。'],
-       sample:'昨天是星期二，明天是星期四。',
-       sample_vn:'Hôm qua là thứ ba, ngày mai là thứ năm.',
-       note:'Thứ tự nói luôn từ đơn vị LỚN đến NHỎ: Tháng → Ngày → Thứ — không bao giờ đảo ngược kiểu tiếng Việt.'},
-      {role:'🎒 Tình huống 3 — Nói về mục đích đi học',
-       guide:'Bạn bè hỏi bạn có đến trường vào cuối tuần không và để làm gì.',
-       structure:['你去学校吗？','我去学校看书。'],
-       sample:'你去学校吗？我去学校看书。',
-       sample_vn:'Bạn có đến trường không? Tôi đến trường đọc sách.',
-       note:'Câu liên động "去 + Nơi chốn + Động từ" rất phổ biến để diễn tả MỤC ĐÍCH của việc di chuyển — không cần thêm giới từ nối như tiếng Việt ("để").'},
+      {role:'📅 Tình huống 1 — Hỏi ngày ở bưu điện',
+       guide:'Bạn cần điền ngày vào phiếu gửi hàng nhưng quên mất hôm nay ngày mấy, thứ mấy. Hãy hỏi nhân viên thật lịch sự.',
+       structure:['请问，＿＿？','＿＿星期几？'],
+       sample:'请问，今天几月几号？星期几？',
+       sample_vn:'Xin hỏi, hôm nay ngày mấy tháng mấy? Thứ mấy ạ?',
+       note:'Hỏi người lạ nên mở đầu bằng 请问. Đã có 几 trong câu thì không thêm 吗.'},
+      {role:'🎒 Tình huống 2 — Kể kế hoạch cuối tuần',
+       guide:'Bạn cùng lớp hỏi cuối tuần bạn làm gì. Hãy nói thứ bảy bạn đến nhà ai và đến đó làm gì.',
+       structure:['星期＿＿我去＿＿家＿＿。'],
+       sample:'星期六我去李月家看书。',
+       sample_vn:'Thứ bảy tôi đến nhà Lý Nguyệt đọc sách.',
+       note:'Người Việt hay nói “我去朋友家星期六” theo thứ tự tiếng Việt. Tiếng Trung đặt thời gian TRƯỚC động từ: 星期六我去… / 我星期六去…'},
+      {role:'🗓️ Tình huống 3 — Giới thiệu hôm nay',
+       guide:'Đầu giờ học, cô giáo gọi bạn lên nói hôm nay là ngày mấy, thứ mấy, và hôm qua là thứ mấy.',
+       structure:['今天＿＿月＿＿号，星期＿＿。','昨天星期＿＿。'],
+       sample:'今天十一月十七号，星期二。昨天星期一。',
+       sample_vn:'Hôm nay ngày 17 tháng 11, thứ ba. Hôm qua thứ hai.',
+       note:'Đừng đọc thẳng số thứ kiểu tiếng Việt: thứ ba = 星期二 (số tiếng Trung nhỏ hơn 1). Câu ngày tháng không cần 是: 今天星期二.'},
     ],
   },
 };
@@ -1199,46 +1203,45 @@ var speakingData = {
 // LUYỆN DỊCH — dùng từ bài 7 + ôn lại từ bài 1-6
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Hôm nay là ngày mấy?', zh:'今天几号？', py:'Jīntiān jǐ hào?'},
-  {vi:'Xin hỏi, hôm nay là thứ mấy?', zh:'请问，今天星期几？', py:'Qǐngwèn, jīntiān xīngqī jǐ?'},
-  {vi:'Ngày mai tôi đi trường xem sách.', zh:'明天我去学校看书。', py:'Míngtiān wǒ qù xuéxiào kàn shū.'},
-  {vi:'Hôm qua bạn cùng lớp của tôi đi trường xem sách rồi.', zh:'昨天我同学去学校看书了。', py:'Zuótiān wǒ tóngxué qù xuéxiào kàn shū le.'},
+  {vi:'Thứ bảy là ngày 20 tháng 12.', zh:'星期六是十二月二十号。', py:'Xīngqī liù shì shí\'èr yuè èrshí hào.'},
+  {vi:'Ngày mai tôi đến nhà bạn cùng lớp viết chữ Hán.', zh:'明天我去同学家写汉字。', py:'Míngtiān wǒ qù tóngxué jiā xiě Hànzì.'},
+  {vi:'Sách của bạn nhiều quá!', zh:'你的书很多！', py:'Nǐ de shū hěn duō!'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Hôm nay là ngày mấy tháng mấy?', zh:'今天几月几号？', py:'Jīntiān jǐ yuè jǐ hào?'},
-  {vi:'Hôm nay bạn có đi học không?', zh:'你今天去学校吗？', py:'Nǐ jīntiān qù xuéxiào ma?'},
-  {vi:'Ngày mai là thứ mấy?', zh:'明天是星期几？', py:'Míngtiān shì xīngqī jǐ?'},
-  {vi:'Hôm qua cô giáo mời tôi xem sách.', zh:'昨天老师请我看书。', py:'Zuótiān lǎoshī qǐng wǒ kàn shū.'},
+  {vi:'Ngày mai bạn tôi đi Mỹ thăm con gái cô ấy.', zh:'我朋友明天去美国看她女儿。', py:'Wǒ péngyou míngtiān qù Měiguó kàn tā nǚ\'ér.'},
+  {vi:'Ngày mai tôi không đến trường, tôi đi thăm cô giáo tiếng Trung của tôi.', zh:'我明天不去学校，我去看我的汉语老师。', py:'Wǒ míngtiān bú qù xuéxiào, wǒ qù kàn wǒ de Hànyǔ lǎoshī.'},
 ];
 
 // ══════════════════════════════════════════
-// LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
+// LUYỆN NGHE — nghe câu → chọn đáp án (đọc bằng giọng máy), chỉ dùng từ đã học
 // ══════════════════════════════════════════
 var listenData = [
-  {audio:'请问，今天几号？今天10月6号。',
+  {audio:'今天十二月九号，星期一。',
    questions:[
-     {q:'Hôm nay là ngày nào?',opts:['Ngày 6 tháng 10','Ngày 10 tháng 6','Ngày 16 tháng 10'],ans:0},
+     {q:'Hôm nay là ngày nào?',opts:['Ngày 12 tháng 9','Ngày 9 tháng 12','Ngày 19 tháng 12'],ans:1,exp:'十二月九号 = ngày 9 tháng 12 (tháng nói trước, ngày nói sau).'},
+     {q:'Hôm nay là thứ mấy?',opts:['Chủ nhật','Thứ ba','Thứ hai'],ans:2,exp:'星期一 = thứ hai.'},
    ]},
-  {audio:'今天星期几？今天星期四。昨天呢？昨天星期三。',
+  {audio:'星期六我去朋友家，她妈妈会做中国菜。',
    questions:[
-     {q:'Hôm nay là thứ mấy?',opts:['Thứ Ba','Thứ Tư','Thứ Năm'],ans:2},
-     {q:'Hôm qua là thứ mấy?',opts:['Thứ Tư','Thứ Năm','Thứ Sáu'],ans:0},
+     {q:'Thứ bảy người nói đi đâu?',opts:['Đến nhà bạn','Đến trường','Đến nhà cô giáo'],ans:0,exp:'去朋友家 = đến nhà bạn.'},
+     {q:'Mẹ của người bạn biết làm gì?',opts:['Viết chữ Hán','Nấu món Trung Quốc','Nói tiếng Anh'],ans:1,exp:'会做中国菜 = biết nấu món Trung Quốc.'},
    ]},
-  {audio:'明天星期六，我不去学校，我去看我妈妈。',
+  {audio:'我女儿明天去学校，她今年六岁。',
    questions:[
-     {q:'Ngày mai người nói làm gì?',opts:['Đến trường','Đi thăm mẹ','Đọc sách ở nhà'],ans:1},
+     {q:'Con gái người nói mấy tuổi?',opts:['Mười sáu tuổi','Sáu mươi tuổi','Sáu tuổi'],ans:2,exp:'六岁 = sáu tuổi.'},
    ]},
-  {audio:'李月，你看，这是什么书？这是汉语书。',
+  {audio:'请问，“学校”怎么写？',
    questions:[
-     {q:'Đó là sách gì?',opts:['Sách tiếng Trung','Sách tiếng Anh','Sách nấu ăn'],ans:0},
+     {q:'Người nói muốn biết điều gì?',opts:['Cách viết từ “trường học”','Cách đọc từ “trường học”','Trường học ở đâu'],ans:0,exp:'怎么写 = viết thế nào; 学校 = trường học.'},
    ]},
-  {audio:'请问，昨天是几月几号？昨天是3月2号。',
+  {audio:'我九月去中国看我的同学。',
    questions:[
-     {q:'Hôm qua là ngày nào?',opts:['Ngày 2 tháng 3','Ngày 3 tháng 2','Ngày 3 tháng 3'],ans:0},
+     {q:'Người nói sang Trung Quốc làm gì?',opts:['Đi học','Thăm bạn cùng lớp','Nấu ăn'],ans:1,exp:'看我的同学 = thăm bạn cùng lớp của tôi (看 ở đây là thăm).'},
+     {q:'Khi nào người nói đi?',opts:['Thứ hai','Ngày mồng chín','Tháng chín'],ans:2,exp:'九月 = tháng chín; ngày mồng chín là 九号.'},
    ]},
 ];
 

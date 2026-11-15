@@ -1097,89 +1097,97 @@ var dialogData = [
    ]},
 ];
 
-// Điền từ — đổi đồ vật/địa điểm so với bài khoá
+// Điền từ — mỗi câu một tình huống mới; ôn 在/哪儿/下面 (bài 9), 几/有 (bài 5), 多少钱/这个 (bài 8)
 var fillData = [
-  {pre:'Bạn hỏi trên bàn có gì: “桌子',blank:'上',post:'有什么？”',hint:'(trên, phía trên)',ans:'上',exp:'桌子上 = trên mặt bàn.'},
-  {pre:'Bạn nói có sách và máy tính: “桌子上有一本书',blank:'和',post:'一个电脑。”',hint:'(và)',ans:'和',exp:'和 nối hai danh từ: 一本书和一个电脑.'},
-  {pre:'Bạn nói tiền để trong ngăn bàn: “钱在桌子',blank:'里',post:'。”',hint:'(trong, bên trong)',ans:'里',exp:'桌子里 = trong ngăn bàn.'},
-  {pre:'Bạn hỏi tên người đứng phía trước: “',blank:'前面',post:'那个人叫什么名字？”',hint:'(phía trước)',ans:'前面',exp:'前面那个人 = người ở phía trước kia.'},
-  {pre:'Bạn hỏi tên người đứng phía sau: “',blank:'后面',post:'那个人叫什么名字？”',hint:'(phía sau)',ans:'后面',exp:'后面那个人 = người ở phía sau kia.'},
-  {pre:'Bạn nói chỗ này chưa có ai: “这儿',blank:'没有',post:'人。”',hint:'(không có)',ans:'没有',exp:'Phủ định 有 là 没有: 这儿没有人.'},
-  {pre:'Bạn xin phép ngồi: “我',blank:'能',post:'坐这儿吗？”',hint:'(có thể)',ans:'能',exp:'能 + động từ…吗？ dùng để xin phép.'},
-  {pre:'Bạn mời người khác ngồi: “请',blank:'坐',post:'。”',hint:'(ngồi)',ans:'坐',exp:'请坐 = mời ngồi.'},
+  {pre:'“妈妈，小猫呢？” — “你看，小猫在电脑',blank:'上',post:'！”',hint:'(trên, phía trên)',ans:'上',exp:'电脑上 = trên máy tính; danh từ + 上 = trên …, ngược với 下面 (bài 9).'},
+  {pre:'Anh Vương giới thiệu các con: “我有一个儿子',blank:'和',post:'一个女儿。”',hint:'(và)',ans:'和',exp:'和 nối hai danh từ: 一个儿子和一个女儿.'},
+  {pre:'Mới vào trường, bạn hỏi anh khóa trên: “学校',blank:'里',post:'有商店吗？”',hint:'(trong, bên trong)',ans:'里',exp:'学校里 = trong trường; nơi chốn + 里 + 有 + vật = trong … có ….'},
+  {pre:'Ở hiệu sách, bạn hỏi bạn mình: “你想买几',blank:'本',post:'书？”',hint:'(lượng từ của sách)',ans:'本',exp:'Sách dùng lượng từ 本, không dùng 个: 几本书.'},
+  {pre:'Bạn hỏi: “你家有猫吗？” — Nhà bạn ấy chỉ nuôi chó: “',blank:'没有',post:'，我家有狗。”',hint:'(không có)',ans:'没有',exp:'Phủ định của 有 là 没有, không nói 不有.'},
+  {pre:'Bạn thấy mệt, xin phép cô giáo: “老师，我',blank:'能',post:'去医院吗？”',hint:'(có thể, được phép)',ans:'能',exp:'Xin phép dùng 能 + động từ + 吗？; 会 là biết làm (kỹ năng), không dùng để xin phép.'},
+  {pre:'Vào phòng máy, bạn của bạn hỏi: “你想坐哪儿？” — “我想',blank:'坐',post:'那儿，电脑前面。”',hint:'(ngồi)',ans:'坐',exp:'坐 + nơi chốn = ngồi ở …: 坐那儿 = ngồi chỗ kia.'},
+  {pre:'Người lạ hỏi đường, bạn chỉ tay: “商店在医院',blank:'前面',post:'。”',hint:'(phía trước)',ans:'前面',exp:'Nơi chốn + 前面 = phía trước …; 医院前面 = phía trước bệnh viện (từ chỉ hướng đứng sau).'},
+  {pre:'Trong lớp, bạn chỉ người ngồi sau lưng bạn mình: “你',blank:'后面',post:'那个学生是谁？” — “她是我的同学李月。”',hint:'(phía sau)',ans:'后面',exp:'你后面 = phía sau bạn; không nói 后面你 theo kiểu tiếng Việt.'},
+  {pre:'Ở cửa hàng, bạn chỉ chiếc máy tính: “这个',blank:'电脑',post:'多少钱？”',hint:'(máy vi tính)',ans:'电脑',exp:'电脑 = máy vi tính; hỏi giá: 这个 + đồ vật + 多少钱？'},
+  {pre:'“爸爸，我的汉语书在哪儿？” — “',blank:'桌子',post:'里没有吗？”',hint:'(cái bàn)',ans:'桌子',exp:'桌子里 = trong ngăn bàn; đồ vật + 里/上 mới thành nơi chốn.'},
+  {pre:'Bạn đến quán trước, vẫy tay gọi bạn mình: “李月，我在',blank:'这儿',post:'！”',hint:'(ở đây, chỗ này)',ans:'这儿',exp:'这儿 = chỗ này, ở đây; 那儿 = chỗ kia.'},
 ];
 
-// Sắp xếp — đổi câu chữ/đồ vật so với bài khoá
+// Sắp xếp — mỗi câu một mẫu khác: 有 tồn tại, 和, 能 + 在 nơi chốn, 请, 的, 不能
 var sortData = [
-  {words:['桌子','上','有','一','个','电脑','。'],ans:'桌子上有一个电脑。',audio:'桌子上有一个电脑。'},
-  {words:['钱','在','桌子','里','。'],ans:'钱在桌子里。',audio:'钱在桌子里。'},
-  {words:['前面','那个','人','叫','什么','名字','？'],ans:'前面那个人叫什么名字？',audio:'前面那个人叫什么名字？'},
-  {words:['她','在','医院','工作','。'],ans:'她在医院工作。',audio:'她在医院工作。'},
-  {words:['这儿','有','人','吗','？'],ans:'这儿有人吗？',audio:'这儿有人吗？'},
-  {words:['我','能','坐','这儿','吗','？'],ans:'我能坐这儿吗？',audio:'我能坐这儿吗？'},
+  {words:['医院','里','有','很','多','人','。'],ans:'医院里有很多人。',audio:'医院里有很多人。'},
+  {words:['我','想','买','一个','杯子','和','两','本','书','。'],ans:'我想买一个杯子和两本书。',audio:'我想买一个杯子和两本书。'},
+  {words:['我','能','在','这儿','写','汉字','吗','？'],ans:'我能在这儿写汉字吗？',audio:'我能在这儿写汉字吗？'},
+  {words:['桌子','前面','没有','椅子','。'],ans:'桌子前面没有椅子。',audio:'桌子前面没有椅子。'},
+  {words:['李老师','，','请','看','这儿','。'],ans:'李老师，请看这儿。',audio:'李老师，请看这儿。'},
+  {words:['桌子','上','的','电脑','是','谁','的','？'],ans:'桌子上的电脑是谁的？',audio:'桌子上的电脑是谁的？'},
+  {words:['星期三','下午','我','不能','去','学校','。'],ans:'星期三下午我不能去学校。',audio:'星期三下午我不能去学校。'},
 ];
 
+// Nối — câu hỏi ↔ câu trả lời (không trùng câu ở các phần khác)
 var matchData = [
-  {left:'桌子上有什么？',right:'桌子上有一个电脑和一本书。'},
-  {left:'杯子在哪儿？',right:'杯子在桌子里。'},
-  {left:'前面那个人叫什么名字？',right:'她叫王方，在医院工作。'},
-  {left:'这儿有人吗？',right:'没有。'},
-  {left:'我能坐这儿吗？',right:'请坐。'},
+  {left:'你家有几口人？',right:'三口人：爸爸、妈妈和我。'},
+  {left:'你的狗在哪儿？',right:'在我爸爸那儿。'},
+  {left:'这儿能坐吗？',right:'能，请坐。'},
+  {left:'桌子里有什么？',right:'两本书和一个杯子。'},
+  {left:'那个人是谁？',right:'我的汉语老师。'},
+  {left:'椅子多少钱？',right:'九十块。'},
 ];
 
-// Trắc nghiệm — trọng tâm 和/没有/能, không audio
+// Trắc nghiệm — chọn câu đúng tình huống / câu đáp / câu sai; không hỏi lý thuyết
 var mcData = [
-  {q:'桌子＿＿有什么？',opts:['上','下','里','和'],ans:0,exp:'桌子上 = trên bàn; danh từ + 上 chỉ vị trí phía trên.'},
-  {q:'桌子上有一本书＿＿一个电脑。',opts:['和','是','有','在'],ans:0,exp:'和 nối hai danh từ: 一本书和一个电脑; 和 không dùng để nối hai câu.'},
-  {q:'钱在桌子＿＿。',opts:['里','上','和','能'],ans:0,exp:'在桌子里 = ở trong (ngăn) bàn; 里 chỉ bên trong.'},
-  {q:'"能" nghĩa là gì?',opts:['có thể','muốn','biết','cần'],ans:0,exp:'能 = có thể (có khả năng hoặc được phép): 我能坐这儿吗？'},
-  {q:'"没有" là phủ định của từ nào?',opts:['有','是','在','能'],ans:0,exp:'没有 là phủ định của 有; không nói 不有.'},
-  {q:'"这儿有人吗？" — trả lời phủ định đúng là?',opts:['没有','不有','不是','没是'],ans:0,exp:'Phủ định 有 luôn dùng 没有; 不有 là sai.'},
-  {q:'"前面" nghĩa là gì?',opts:['phía trước','phía sau','bên trong','bên trên'],ans:0,exp:'前面 = phía trước; 后面 = phía sau.'},
-  {q:'"后面" nghĩa là gì?',opts:['phía sau','phía trước','bên trong','bên dưới'],ans:0,exp:'后面 = phía sau; 前面 = phía trước.'},
-  {q:'Xin phép ngồi lịch sự dùng cấu trúc nào?',opts:['能……吗？','要……吗？','是……吗？','有……吗？'],ans:0,exp:'能……吗？ dùng để xin phép lịch sự: 我能坐这儿吗？'},
-  {q:'"电脑" nghĩa là gì?',opts:['máy vi tính','điện thoại','sách','bàn'],ans:0,exp:'电脑 = 电 (điện) + 脑 (não): máy vi tính.'},
+  {q:'Bạn muốn nói: “Trên bàn có hai quyển sách.”',opts:['桌子上有两本书。','桌子上有二本书。','两本书有桌子上。','桌子上是两个书。'],ans:0,exp:'Nơi chốn + 有 + số + lượng từ + vật; số 2 trước lượng từ là 两; sách dùng 本.'},
+  {q:'Câu nào SAI?',opts:['他家不有电脑。','我没有汉语书。','这儿没有人。','猫在桌子下面。'],ans:0,exp:'Phủ định của 有 luôn là 没有, không bao giờ dùng 不有: 他家没有电脑.'},
+  {q:'Bạn muốn nói: “Bố và mẹ tôi làm việc ở bệnh viện.”',opts:['我爸爸和妈妈在医院工作。','我爸爸和妈妈工作在医院。','我爸爸妈妈和在医院工作。','我爸爸在医院工作和妈妈。'],ans:0,exp:'和 đứng giữa hai danh từ (爸爸和妈妈); 在 + nơi chốn đặt trước động từ 工作.'},
+  {q:'Bạn khát nước, thấy trên bàn có trà của bạn cùng phòng. Bạn hỏi:',opts:['我能喝你的茶吗？','我会喝你的茶吗？','我能喝你的茶呢？','我喝能你的茶吗？'],ans:0,exp:'Xin phép: 能 + động từ + 吗？; 会 là biết làm (kỹ năng); câu hỏi có/không dùng 吗, không dùng 呢.'},
+  {q:'A: “你有汉语书吗？” — B không có sách, B đáp:',opts:['没有。我想买一本。','不有。我想买一本。','没有。我想买一个。','不是。我想买一本。'],ans:0,exp:'Trả lời phủ định câu hỏi với 有 dùng 没有 (không dùng 不有/不是); sách dùng lượng từ 本.'},
+  {q:'“你的书在哪儿？” — Sách nằm trong ngăn bàn. Bạn đáp:',opts:['在桌子里。','在桌子。','有桌子里。','桌子里在。'],ans:0,exp:'Đồ vật (桌子) phải thêm 里/上 mới thành nơi chốn: 在桌子里; “ở” là 在, không phải 有.'},
+  {q:'Câu nào SAI?',opts:['桌子上在一个杯子。','我的杯子在桌子上。','桌子上有一个杯子。','这个杯子是我妈妈的。'],ans:0,exp:'Nơi chốn + 有 + vật (桌子上有一个杯子); vật + 在 + nơi chốn (杯子在桌子上). Không nói 桌子上在….'},
+  {q:'Bạn muốn nói: “Con chó ở phía sau ghế.”',opts:['狗在椅子后面。','狗在后面椅子。','狗有椅子后面。','椅子后面在狗。'],ans:0,exp:'Vật + 在 + nơi chốn; từ chỉ hướng (后面) đứng SAU danh từ: 椅子后面 = phía sau ghế (ngược tiếng Việt).'},
+  {q:'Thầy giáo đến chơi, bạn mời thầy ngồi và uống trà:',opts:['老师，请坐，请喝茶。','老师，坐请，喝茶请。','老师，我能坐，我能喝茶。','老师，对不起，请坐。'],ans:0,exp:'Mời ai làm gì: 请 + động từ (请坐、请喝茶), 请 đứng TRƯỚC động từ; 能 là xin phép cho mình; không có lỗi gì thì không cần 对不起.'},
+  {q:'Cô giáo hỏi: “明天你能去学校吗？” — Ngày mai bạn phải đi bệnh viện. Bạn đáp:',opts:['不能，明天我去医院。','没有，明天我去医院。','不会，明天我去医院。','能不，明天我去医院。'],ans:0,exp:'Phủ định của 能 là 不能; 不会 = không biết (kỹ năng); 没有 là phủ định của 有.'},
+  {q:'Câu nào SAI?',opts:['我会说汉语和我会写汉字。','我有一个中国朋友和一个美国朋友。','她的猫和狗在家里。','这儿有茶和米饭。'],ans:0,exp:'和 chỉ nối danh từ với danh từ, không nối hai câu như chữ “và” tiếng Việt; nối hai câu chỉ cần dấu phẩy: 我会说汉语，会写汉字.'},
 ];
 
 var speakingData = {
   t1:{
-    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
+    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý: 上 và 里 sau danh từ đọc nhẹ (zhuōzi shang, bēizi li).',
     models:[
-      {zh:'桌子上有什么？',py:'Zhuōzi shang yǒu shénme?',vn:'Trên bàn có gì vậy?'},
-      {zh:'桌子上有一个电脑和一本书。',py:'Zhuōzi shang yǒu yí ge diànnǎo hé yì běn shū.',vn:'Có một chiếc máy vi tính và một quyển sách.'},
-      {zh:'前面那个人叫什么名字？',py:'Qiánmiàn nàge rén jiào shénme míngzi?',vn:'Người ở phía trước tên gì vậy?'},
-      {zh:'这儿有人吗？',py:'Zhèr yǒu rén ma?',vn:'Chỗ này có ai ngồi chưa?'},
-      {zh:'我能坐这儿吗？',py:'Wǒ néng zuò zhèr ma?',vn:'Tôi có thể ngồi ở đây được không?'},
+      {zh:'桌子上有一个电脑和一本书。',py:'Zhuōzi shang yǒu yí ge diànnǎo hé yì běn shū.',vn:'Trên bàn có một chiếc máy vi tính và một quyển sách.'},
+      {zh:'我能坐这儿吗？',py:'Wǒ néng zuò zhèr ma?',vn:'Tôi ngồi đây được không?'},
+      {zh:'我朋友家没有电脑。',py:'Wǒ péngyou jiā méiyǒu diànnǎo.',vn:'Nhà bạn tôi không có máy vi tính.'},
+      {zh:'请写你的名字。',py:'Qǐng xiě nǐ de míngzi.',vn:'Mời bạn viết tên của mình.'},
+      {zh:'你的杯子在电脑前面。',py:'Nǐ de bēizi zài diànnǎo qiánmiàn.',vn:'Cái cốc của bạn ở phía trước máy tính.'},
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
-      {frame:'桌子上有一个＿＿。',frame_py:'Zhuōzi shang yǒu yí ge ___.',vn:'Trên bàn có một cái ＿＿.',options:['电脑','杯子'],samples:['桌子上有一个电脑。','桌子上有一个杯子。']},
-      {frame:'桌子＿＿有钱。',frame_py:'Zhuōzi ___ yǒu qián.',vn:'＿＿ bàn có tiền.',options:['里','上'],samples:['桌子里有钱。','桌子上有钱。']},
+      {frame:'商店里没有＿＿。',frame_py:'Shāngdiàn li méiyǒu ___.',vn:'Trong cửa hàng không có ＿＿.',options:['杯子','电脑','茶'],samples:['商店里没有杯子。','商店里没有电脑。','商店里没有茶。']},
+      {frame:'我能＿＿吗？',frame_py:'Wǒ néng ___ ma?',vn:'Tôi ＿＿ được không? (xin phép)',options:['看看你的猫','写这个字','买这个杯子'],samples:['我能看看你的猫吗？','我能写这个字吗？','我能买这个杯子吗？']},
     ],
   },
   t3:{
     intro:'Không nhìn câu mẫu, hãy tưởng tượng bạn đang ở trong tình huống thực tế và tự nói ra câu phù hợp.',
     tasks:[
-      {role:'💻 Tình huống 1 — Miêu tả đồ vật trên bàn làm việc',
-       guide:'Đồng nghiệp hỏi bạn trên bàn làm việc của bạn có những gì.',
-       structure:['桌子上有什么？','桌子上有一个＿＿和一本＿＿。'],
-       sample:'桌子上有什么？桌子上有一个电脑和一本书。',
-       sample_vn:'Trên bàn có gì vậy? Có một chiếc máy vi tính và một quyển sách.',
-       note:'Liên từ 和 chỉ dùng để nối DANH TỪ với danh từ (电脑 和 书) — không dùng để nối hai câu hoàn chỉnh như "và" trong tiếng Việt.'},
-      {role:'🏋️ Tình huống 2 — Hỏi tên người lạ trong phòng tập',
-       guide:'Bạn muốn hỏi tên hai người đang đứng trước và sau bạn trong phòng tập thể dục.',
-       structure:['前面那个人叫什么名字？','后面那个人呢？'],
-       sample:'前面那个人叫什么名字？后面那个人呢？',
-       sample_vn:'Người ở phía trước tên gì vậy? Còn người ở phía sau?',
-       note:'前面/后面 + 那个人 là cách chỉ người một cách LỊCH SỰ khi chưa biết tên, thường dùng khi mô tả vị trí tương đối trong đám đông.'},
-      {role:'📚 Tình huống 3 — Xin phép ngồi ở thư viện',
-       guide:'Bạn vào thư viện và thấy một chỗ trống, hãy hỏi xem có ai ngồi chưa và xin phép ngồi.',
-       structure:['这儿有人吗？','我能坐这儿吗？'],
-       sample:'这儿有人吗？没有。我能坐这儿吗？请坐。',
-       sample_vn:'Chỗ này có ai ngồi chưa? Chưa. Tôi có thể ngồi ở đây được không? Mời ngồi.',
-       note:'能……吗？ là cách xin phép LỊCH SỰ rất thông dụng — dùng được trong hầu hết tình huống xin phép hàng ngày, không chỉ riêng việc ngồi.'},
+      {role:'🖥️ Tình huống 1 — Tả bàn học của bạn',
+       guide:'Một người bạn gọi video và hỏi trên bàn học của bạn có gì. Hãy kể 2–3 đồ vật, dùng 有 và 和.',
+       structure:['桌子上有＿＿和＿＿。','桌子里有＿＿。'],
+       sample:'我的桌子上有电脑和杯子，桌子里有汉语书。',
+       sample_vn:'Trên bàn tôi có máy tính và cái cốc, trong ngăn bàn có sách tiếng Trung.',
+       note:'Người Việt hay nói “có một cái máy tính trên bàn” rồi dịch thành 有一个电脑桌子上 — sai. Tiếng Trung đặt nơi chốn LÊN ĐẦU: 桌子上有…….'},
+      {role:'🏠 Tình huống 2 — Đến nhà bạn chơi',
+       guide:'Bạn đến nhà một người bạn Trung Quốc. Hãy xin phép xem một quyển sách, rồi đóng vai chủ nhà trả lời và mời.',
+       structure:['我能＿＿吗？','能，请＿＿。'],
+       sample:'我能看看这本汉语书吗？——能，请看。',
+       sample_vn:'Mình xem quyển sách tiếng Trung này được không? — Được, cậu xem đi.',
+       note:'Trả lời câu hỏi 能……吗？ chỉ cần 能 hoặc 不能; muốn mời người khác thì dùng 请 + động từ.'},
+      {role:'🧑‍🤝‍🧑 Tình huống 3 — Giới thiệu bạn ngồi trước, sau bạn',
+       guide:'Trong lớp tiếng Trung, hãy giới thiệu người ngồi phía trước và phía sau bạn (tên, nghề nghiệp hoặc quốc tịch).',
+       structure:['我前面是＿＿。','我后面＿＿。'],
+       sample:'我前面是王方，她是医生。我后面没有人。',
+       sample_vn:'Phía trước tôi là Vương Phương, cô ấy là bác sĩ. Phía sau tôi không có ai.',
+       note:'前面/后面 đứng SAU người hoặc vật làm mốc: 我前面 = phía trước tôi (không nói 前面我).'},
     ],
   },
 };
@@ -1188,46 +1196,49 @@ var speakingData = {
 // LUYỆN DỊCH — dùng từ bài 10 + ôn lại từ bài 1-9
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Trên bàn có một máy tính và một quyển sách.', zh:'桌子上有一个电脑和一本书。', py:'Zhuōzi shang yǒu yí ge diànnǎo hé yì běn shū.'},
-  {vi:'Tôi có thể ngồi đây không?', zh:'我能坐这儿吗？', py:'Wǒ néng zuò zhèr ma?'},
-  {vi:'Trong bàn không có tiền.', zh:'桌子里没有钱。', py:'Zhuōzi lǐ méiyǒu qián.'},
-  {vi:'Mời ngồi!', zh:'请坐！', py:'Qǐng zuò!'},
+  {vi:'Trong cốc có trà, mời bạn uống.', zh:'杯子里有茶，请喝。', py:'Bēizi li yǒu chá, qǐng hē.'},
+  {vi:'Phía sau nhà tôi không có cửa hàng.', zh:'我家后面没有商店。', py:'Wǒ jiā hòumiàn méiyǒu shāngdiàn.'},
+  {vi:'Ngày mai tôi không thể đi làm.', zh:'明天我不能去工作。', py:'Míngtiān wǒ bù néng qù gōngzuò.'},
+  {vi:'Trên bàn có máy tính và cốc của bố tôi.', zh:'桌子上有我爸爸的电脑和杯子。', py:'Zhuōzi shang yǒu wǒ bàba de diànnǎo hé bēizi.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Trên bàn có cốc, trong bàn không có tiền.', zh:'桌子上有杯子，桌子里没有钱。', py:'Zhuōzi shang yǒu bēizi, zhuōzi lǐ méiyǒu qián.'},
-  {vi:'Tôi có thể ngồi đây không? Mời ngồi!', zh:'我能坐这儿吗？请坐！', py:'Wǒ néng zuò zhèr ma? Qǐng zuò!'},
-  {vi:'Phía trước bệnh viện có cửa hàng máy tính.', zh:'医院前面有电脑商店。', py:'Yīyuàn qiánmiàn yǒu diànnǎo shāngdiàn.'},
-  {vi:'Sách và cốc của bạn ở trên bàn.', zh:'你的书和杯子在桌子上。', py:'Nǐ de shū hé bēizi zài zhuōzi shang.'},
+  {vi:'Trên ghế có một quyển sách, của ai vậy?', zh:'椅子上有一本书，是谁的？', py:'Yǐzi shang yǒu yì běn shū, shì shéi de?'},
+  {vi:'Xin lỗi, hôm nay tớ không đến nhà cậu được.', zh:'对不起，我今天不能去你家。', py:'Duìbuqǐ, wǒ jīntiān bù néng qù nǐ jiā.'},
+  {vi:'Máy tính của tôi ở đằng kia, phía sau cái cốc.', zh:'我的电脑在那儿，在杯子后面。', py:'Wǒ de diànnǎo zài nàr, zài bēizi hòumiàn.'},
 ];
 
 // ══════════════════════════════════════════
-// LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
+// LUYỆN NGHE — nghe câu → chọn đáp án (đọc bằng giọng máy), chỉ dùng từ đã học
 // ══════════════════════════════════════════
 var listenData = [
-  {audio:'桌子上有什么？桌子上有三本书和一个杯子。',
+  {audio:'我家有五个椅子，桌子前面有三个，后面有两个。',
    questions:[
-     {q:'Trên bàn có gì?',opts:['Ba quyển sách và một cái cốc','Một cái máy tính và một quyển sách','Ba cái cốc'],ans:0},
+     {q:'Phía trước bàn có mấy cái ghế?',opts:['Hai cái','Năm cái','Ba cái'],ans:2,exp:'桌子前面有三个 = phía trước bàn có ba cái; năm cái là tổng số ghế.'},
    ]},
-  {audio:'请问，这儿有人吗？有，我朋友坐这儿。',
+  {audio:'请问，我能坐你前面吗？——对不起，那儿有人。',
    questions:[
-     {q:'Chỗ này có người ngồi không?',opts:['Không có ai','Có, bạn của người trả lời ngồi','Có, giáo viên ngồi'],ans:1},
+     {q:'Người kia trả lời thế nào?',opts:['Mời ngồi','Không được, chỗ đó có người rồi','Không được, vì không quen'],ans:1,exp:'那儿有人 = chỗ đó có người rồi; 对不起 mở đầu lời từ chối lịch sự.'},
    ]},
-  {audio:'我的电脑在哪儿？你的电脑在桌子上。',
+  {audio:'医院前面有一个小商店，那儿有小猫和小狗。',
    questions:[
-     {q:'Máy tính ở đâu?',opts:['Trên bàn','Dưới ghế','Trong ngăn bàn'],ans:0},
+     {q:'Cửa hàng nhỏ ở đâu?',opts:['Phía trước bệnh viện','Phía sau bệnh viện','Trong trường học'],ans:0,exp:'医院前面 = phía trước bệnh viện.'},
+     {q:'Ở cửa hàng có gì?',opts:['Sách và máy tính','Cốc và trà','Mèo con và chó con'],ans:2,exp:'小猫和小狗 = mèo con và chó con.'},
    ]},
-  {audio:'学校前面有一个商店，后面有一个医院。',
+  {audio:'妈妈，我能去李月家吗？——今天不能，明天能。',
    questions:[
-     {q:'Phía trước trường học có gì?',opts:['Bệnh viện','Cửa hàng','Nhà'],ans:1},
-     {q:'Phía sau trường có gì?',opts:['Bệnh viện','Cửa hàng','Trường học'],ans:0},
+     {q:'Khi nào bạn ấy được đến nhà Lý Nguyệt?',opts:['Hôm nay','Ngày mai','Hôm qua'],ans:1,exp:'今天不能，明天能 = hôm nay không được, ngày mai được.'},
    ]},
-  {audio:'王方在哪儿工作？她在医院工作。谢朋呢？他在学校工作，他是老师。',
+  {audio:'你的杯子不在桌子上，在椅子下面。',
    questions:[
-     {q:'Tạ Bằng làm việc ở đâu?',opts:['Bệnh viện','Cửa hàng','Trường học'],ans:2},
+     {q:'Cái cốc ở đâu?',opts:['Dưới ghế','Trên bàn','Trong ngăn bàn'],ans:0,exp:'不在桌子上 = không ở trên bàn; 在椅子下面 = ở dưới ghế.'},
+   ]},
+  {audio:'前面那个人是我爸爸，后面那个人是我爸爸的同学。',
+   questions:[
+     {q:'Người đứng phía sau là ai?',opts:['Bố của người nói','Bạn học của người nói','Bạn học của bố'],ans:2,exp:'后面那个人是我爸爸的同学 = người phía sau là bạn học của bố tôi.'},
    ]},
 ];
 

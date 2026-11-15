@@ -1407,89 +1407,95 @@ var dialogData = [
    ]},
 ];
 
-// Điền từ — đổi đồ vật/tình huống so với bài khoá
+// Điền từ — mỗi câu một tình huống mới: 了 (đã làm), 没有 + động từ, 后, 啊, 都, 不少 / 一点儿
 var fillData = [
-  {pre:'Bạn hỏi hôm qua ai đó đi đâu: “昨天你去',blank:'哪儿',post:'了？”',hint:'(đâu, chỗ nào)',ans:'哪儿',exp:'去哪儿了？ hỏi ai đó đã đi đâu.'},
-  {pre:'Bạn nói mình đi mua đồ: “我去商店买',blank:'东西',post:'了。”',hint:'(đồ đạc, đồ dùng)',ans:'东西',exp:'买东西 = mua đồ, mua sắm.'},
-  {pre:'Bạn nói mình mua một ít táo: “我买了一点儿',blank:'苹果',post:'。”',hint:'(táo)',ans:'苹果',exp:'一点儿 + danh từ = một ít: 一点儿苹果.'},
-  {pre:'Bạn nói có thấy ai đó: “我',blank:'看见',post:'他了。”',hint:'(nhìn thấy)',ans:'看见',exp:'看见 = nhìn thấy (kết quả của 看).'},
-  {pre:'Bạn hỏi khi nào ai đó quay lại: “他什么时候',blank:'回来',post:'？”',hint:'(quay về)',ans:'回来',exp:'回来 = quay về (chỗ người nói).'},
-  {pre:'Bạn khen quần áo ai đó đẹp: “你的衣服太',blank:'漂亮',post:'了！”',hint:'(đẹp)',ans:'漂亮',exp:'太漂亮了 = đẹp quá.'},
-  {pre:'Bạn nói mua khá nhiều đồ: “我买了不',blank:'少',post:'东西。”',hint:'("không ít" = nhiều)',ans:'少',exp:'不少 = không ít, tức là nhiều.'},
-  {pre:'Bạn nói những thứ này đều là của mình: “这些',blank:'都',post:'是我的。”',hint:'(đều)',ans:'都',exp:'都 đặt trước động từ: 这些都是我的.'},
+  {pre:'Bạn khoe với mẹ thành tích ở lớp hôm nay: “今天我写',blank:'了',post:'三十个汉字！”',hint:'(đã — hành động hoàn thành)',ans:'了',exp:'Động từ + 了 + số lượng + danh từ = đã làm (xong) bao nhiêu: 写了三十个汉字.'},
+  {pre:'Mẹ đi chợ về, tay xách rất nhiều túi. Bạn hỏi: “妈妈，你买了什么',blank:'东西',post:'？”',hint:'(đồ, đồ đạc)',ans:'东西',exp:'买东西 = mua đồ; 买了什么东西 = đã mua những đồ gì.'},
+  {pre:'Chủ nhà mời trà, bạn chỉ muốn uống chút ít: “谢谢，我喝',blank:'一点儿',post:'吧。”',hint:'(một chút, một ít)',ans:'一点儿',exp:'一点儿 = một chút / một ít, đứng sau động từ: 喝一点儿.'},
+  {pre:'Bố rất thích ăn táo, bạn đi chợ mua cho bố: “爸爸爱吃',blank:'苹果',post:'，我给他买了五个。”',hint:'(quả táo)',ans:'苹果',exp:'苹果 = quả táo; 买了五个 = đã mua năm quả.'},
+  {pre:'Bạn cùng phòng tìm cái cốc. Bạn không thấy nó, bạn nói: “我没有',blank:'看见',post:'你的杯子，你看看椅子下面吧。”',hint:'(nhìn thấy)',ans:'看见',exp:'看见 = nhìn thấy; phủ định việc đã xảy ra dùng 没有 + động từ, không thêm 了.'},
+  {pre:'Thư ký mang trà vào cho vị khách nam lớn tuổi: “王',blank:'先生',post:'，这是您的茶。”',hint:'(ông, ngài)',ans:'先生',exp:'Họ + 先生 = ông … (gọi lịch sự đàn ông); họ đứng trước: 王先生.'},
+  {pre:'Bạn đi học, mẹ ở nhà gọi điện hỏi: “喂，你下午几点',blank:'回来',post:'？”',hint:'(quay về)',ans:'回来',exp:'回来 = quay về chỗ người nói; mẹ đang ở nhà nên hỏi 几点回来.'},
+  {pre:'Bạn đang trên đường về, nhắn cho bạn đang đợi ở nhà: “我在开车，十五',blank:'分钟',post:'后回家。”',hint:'(phút — khoảng thời gian)',ans:'分钟',exp:'分钟 = số phút kéo dài: 十五分钟后 = mười lăm phút nữa; 分 dùng khi nói giờ (三点十五分).'},
+  {pre:'Bạn rủ bạn: ăn cơm xong thì đi mua đồ: “吃饭',blank:'后',post:'我们去买衣服吧。”',hint:'(sau khi)',ans:'后',exp:'Việc / khoảng thời gian + 后 = sau khi …; 后 đứng SAU, ngược tiếng Việt “sau khi ăn cơm”.'},
+  {pre:'Bạn thấy cái cốc mới của bạn cùng bàn rất đẹp: “你的杯子很',blank:'漂亮',post:'，是在哪儿买的？”',hint:'(đẹp)',ans:'漂亮',exp:'漂亮 = đẹp; 很漂亮 — trước tính từ dùng 很, không dùng 是.'},
+  {pre:'Bạn của bạn nói: “这个商店的东西很好。” Bạn đồng ý: “是',blank:'啊',post:'，我的衣服都是在这儿买的。”',hint:'(trợ từ đồng ý)',ans:'啊',exp:'是啊 = đúng thế! — 啊 cuối lời làm câu đồng ý nghe tự nhiên, thân mật.'},
+  {pre:'Bạn thấy cả chồng sách trên bàn bạn cùng phòng: “这些书',blank:'都',post:'是你的吗？”',hint:'(đều)',ans:'都',exp:'都 đứng sau chủ ngữ (这些书), trước động từ 是: 这些书都是….'},
 ];
 
-// Sắp xếp — đổi đồ vật/tình huống so với bài khoá
+// Sắp xếp — câu mới, mỗi câu một điểm ngữ pháp
 var sortData = [
-  {words:['你','去','商店','买','东西','了','。'],ans:'你去商店买东西了。',audio:'你去商店买东西了。'},
-  {words:['我','买','了','一点儿','苹果','。'],ans:'我买了一点儿苹果。',audio:'我买了一点儿苹果。'},
-  {words:['我','看见','他','了','。'],ans:'我看见他了。',audio:'我看见他了。'},
-  {words:['他','去','学','开车','了','。'],ans:'他去学开车了。',audio:'他去学开车了。'},
-  {words:['你','的','衣服','太','漂亮','了','！'],ans:'你的衣服太漂亮了！',audio:'你的衣服太漂亮了！'},
-  {words:['这些','都','是','我','的','。'],ans:'这些都是我的。',audio:'这些都是我的。'},
+  {words:['妈妈','给','我','买','了','一个','杯子','。'],ans:'妈妈给我买了一个杯子。',audio:'妈妈给我买了一个杯子。'},
+  {words:['我','在','商店','看见','王','老师','了','。'],ans:'我在商店看见王老师了。',audio:'我在商店看见王老师了。'},
+  {words:['我','和','妈妈','都','爱','吃','苹果','。'],ans:'我和妈妈都爱吃苹果。',audio:'我和妈妈都爱吃苹果。'},
+  {words:['妈妈','二十','分钟','后','给','你','打电话','。'],ans:'妈妈二十分钟后给你打电话。',audio:'妈妈二十分钟后给你打电话。',alt:['二十分钟后妈妈给你打电话。']},
+  {words:['昨天','我','没有','去','学校','。'],ans:'昨天我没有去学校。',audio:'昨天我没有去学校。',alt:['我昨天没有去学校。']},
+  {words:['张','先生','开车','回来','了','。'],ans:'张先生开车回来了。',audio:'张先生开车回来了。'},
 ];
 
+// Nối — câu hỏi ↔ câu trả lời (mỗi câu trả lời chỉ hợp với một câu hỏi)
 var matchData = [
-  {left:'昨天上午你去哪儿了？',right:'我去商店买东西了。'},
-  {left:'你买什么了？',right:'我买了一点儿苹果。'},
-  {left:'你看见张先生了吗？',right:'看见了，他去学开车了。'},
-  {left:'他什么时候能回来？',right:'40分钟后回来。'},
-  {left:'王方的衣服太漂亮了！',right:'是啊，她买了不少衣服。'},
+  {left:'你昨天买什么了？',right:'买了两个杯子。'},
+  {left:'你看见大卫了吗？',right:'看见了，他在医院呢。'},
+  {left:'李小姐什么时候回来？',right:'二十分钟后。'},
+  {left:'这些东西都是你的吗？',right:'是啊，都是我的。'},
+  {left:'你们都是中国人吗？',right:'不都是，大卫是美国人。'},
+  {left:'你去医院了吗？',right:'没有，我身体很好。'},
 ];
 
-// Trắc nghiệm — trọng tâm 了 (hoàn thành), 都, 不少, không audio
+// Trắc nghiệm — chọn câu đúng tình huống / chọn câu đáp / tìm câu sai
 var mcData = [
-  {q:'我去商店买东西＿＿。(hành động đã hoàn thành)',opts:['了','吗','呢','吧'],ans:0,exp:'了 ở cuối câu cho biết hành động đã xảy ra: 我去商店买东西了.'},
-  {q:'我买＿＿一点儿苹果。',opts:['了','吗','呢','吧'],ans:0,exp:'Động từ + 了 + tân ngữ có số lượng: 买了一点儿苹果 (đã mua một ít táo).'},
-  {q:'Phủ định của "了" (đã làm gì) dùng cấu trúc nào?',opts:['没 + Động từ (bỏ 了)','不 + Động từ + 了','没 + Động từ + 了','别 + Động từ + 了'],ans:0,exp:'Phủ định hành động đã xảy ra dùng 没 + động từ và bỏ 了: 我没买.'},
-  {q:'"40分钟后" nghĩa là gì?',opts:['sau 40 phút','trước 40 phút','trong 40 phút','mỗi 40 phút'],ans:0,exp:'Khoảng thời gian + 后 = sau khoảng thời gian đó: 40分钟后 = 40 phút sau.'},
-  {q:'"漂亮" nghĩa là gì?',opts:['đẹp, xinh đẹp','xấu','to lớn','nhỏ bé'],ans:0,exp:'漂亮 = đẹp, xinh đẹp.'},
-  {q:'"不少" nghĩa là gì?',opts:['nhiều, khá nhiều','ít','không có','một ít'],ans:0,exp:'不少 = "không ít", tức là nhiều, khá nhiều.'},
-  {q:'"都" nghĩa là gì?',opts:['đều','cũng','rất','quá'],ans:0,exp:'都 = đều, đứng trước động từ: 这些都是我的.'},
-  {q:'"东西" nghĩa là gì?',opts:['đồ đạc, đồ dùng','phương hướng','quần áo','thức ăn'],ans:0,exp:'东西 (dōngxi, xi đọc thanh nhẹ) = đồ đạc; đọc dōngxī thì là "đông tây" (phương hướng).'},
-  {q:'Câu nào ĐÚNG khi nói "Anh ấy đi học lái xe rồi"?',opts:['他去学开车了。','他学去开车了。','他开车去学了。','他了去学开车。'],ans:0,exp:'Câu liên động: 去 + 学开车 + 了 → 他去学开车了.'},
-  {q:'"衣服" nghĩa là gì?',opts:['quần áo','giày dép','túi xách','mũ nón'],ans:0,exp:'衣服 = quần áo.'},
+  {q:'Bạn kể: “Sáng nay tôi đã uống một chút trà.”',opts:['今天上午我喝了一点儿茶。','今天上午我喝一点儿了茶。','今天上午我了喝一点儿茶。','今天上午我喝了茶一点儿。'],ans:0,exp:'Động từ + 了 + 一点儿 + danh từ: 喝了一点儿茶; 一点儿 đứng trước danh từ, không đặt cuối câu như tiếng Việt “trà một chút”.'},
+  {q:'A: “你昨天去商店了吗？” — B (hôm qua không đi) đáp:',opts:['没有，我昨天在家。','不，我昨天不去了。','没有，我昨天没有去了。','不有，我昨天在家。'],ans:0,exp:'Phủ định việc đã qua dùng 没有 và bỏ 了; 不 dùng cho thói quen / tương lai; không có từ 不有.'},
+  {q:'Câu nào SAI?',opts:['都我们是北京人。','这些苹果都很好吃。','我和妈妈都会做菜。','你们都想去中国吗？'],ans:0,exp:'都 đứng sau chủ ngữ, trước động từ: 我们都是北京人; không đặt 都 ở đầu câu.'},
+  {q:'Nhóm bạn có 3 người: 2 người là học sinh, 1 người là giáo viên. Bạn nói:',opts:['我们不都是学生。','我们都不是学生。','我们都是学生。','我们不是都学生。'],ans:0,exp:'不都 = không phải tất cả (có người là, có người không); 都不 = tất cả đều không.'},
+  {q:'Bạn muốn nói: “Mười phút nữa tôi về.”',opts:['十分钟后我回来。','后十分钟我回来。','我回来十分钟后。','十分后我回来。'],ans:0,exp:'Khoảng thời gian + 后 đứng trước động từ: 十分钟后我回来; “mười phút” (độ dài) là 十分钟, 十分 chỉ dùng khi nói giờ.'},
+  {q:'A: “我们去吃中国菜吧！” — B vui vẻ đồng ý:',opts:['好啊，我们去吧！','好吗，我们去吧！','好呢，我们去吧！','好的吗，我们去吧！'],ans:0,exp:'好啊 = được đó! (đồng ý vui vẻ); 吗 chỉ dùng để hỏi, 呢 không đi sau 好 để đồng ý.'},
+  {q:'Bạn tìm con chó khắp nhà. Bạn hỏi bố:',opts:['爸爸，你看见我的狗了吗？','爸爸，你看我的狗了吗？','爸爸，你看见我的狗吗了？','爸爸，你看见了我的狗没有了？'],ans:0,exp:'“có thấy … không” là 看见…了吗 (看见 = nhìn thấy; 看 chỉ là “nhìn, xem”); 吗 luôn đứng cuối câu.'},
+  {q:'Bạn mua rất nhiều đồ ở cửa hàng. Bạn kể:',opts:['我买了不少东西。','我买了一点儿东西。','我买了少东西。','我买东西了不少。'],ans:0,exp:'不少 = không ít = nhiều; 一点儿 là “một ít”; 少 không đứng một mình trước danh từ.'},
+  {q:'Bạn chỉ vào mấy quả táo trên quầy hỏi giá:',opts:['这些苹果多少钱？','这苹果些多少钱？','这些苹果几钱？','这些苹果是多少钱吗？'],ans:0,exp:'这些 + danh từ = những … này; hỏi giá dùng 多少钱, không dùng 几钱, câu có 多少 thì không thêm 吗.'},
+  {q:'Bạn xem ảnh Bắc Kinh, bạn khen:',opts:['北京太漂亮了！','北京是太漂亮了！','北京太漂亮！','北京漂亮太了！'],ans:0,exp:'太 + tính từ + 了 = … quá!; không thêm 是 trước tính từ, không bỏ 了.'},
+  {q:'A: “昨天下午你做什么了？” — B (đi mua quần áo với mẹ) đáp:',opts:['我和妈妈去买衣服了。','我去买衣服了和妈妈。','我和妈妈了去买衣服。','我和妈妈去买衣服吗。'],ans:0,exp:'“cùng mẹ” (和妈妈) đứng trước động từ, không đặt cuối câu; 了 cuối câu báo việc đã làm.'},
 ];
 
 var speakingData = {
   t1:{
-    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
+    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý: 东西 (đồ đạc) đọc “dōngxi”, âm sau nhẹ; 了 và 啊 đọc nhẹ, ngắn.',
     models:[
-      {zh:'昨天上午你去哪儿了？',py:'Zuótiān shàngwù nǐ qù nǎr le?',vn:'Sáng hôm qua bạn đi đâu vậy?'},
-      {zh:'我去商店买东西了。',py:'Wǒ qù shāngdiàn mǎi dōngxi le.',vn:'Mình đến cửa hàng để mua đồ.'},
-      {zh:'你看见张先生了吗？',py:'Nǐ kànjiàn Zhāng xiānsheng le ma?',vn:'Anh có thấy ông Trương không?'},
-      {zh:'他去学开车了。',py:'Tā qù xué kāi chē le.',vn:'Ông ấy đi học lái xe rồi.'},
-      {zh:'你的衣服太漂亮了！',py:'Nǐ de yīfu tài piàoliang le!',vn:'Quần áo của bạn đẹp quá!'},
+      {zh:'昨天上午你去哪儿了？',py:'Zuótiān shàngwǔ nǐ qù nǎr le?',vn:'Sáng hôm qua bạn đi đâu thế?'},
+      {zh:'是啊，她买了不少衣服。',py:'Shì a, tā mǎile bù shǎo yīfu.',vn:'Đúng thế, cô ấy mua khá nhiều quần áo.'},
+      {zh:'我没有买，我去看电影了。',py:'Wǒ méiyǒu mǎi, wǒ qù kàn diànyǐng le.',vn:'Tôi không mua, tôi đi xem phim rồi.'},
+      {zh:'这些水果都是给你的。',py:'Zhèxiē shuǐguǒ dōu shì gěi nǐ de.',vn:'Chỗ hoa quả này đều là cho bạn đấy.'},
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
-      {frame:'我买了一点儿＿＿。',frame_py:'Wǒ mǎile yìdiǎnr ___.',vn:'Tôi mua một ít ＿＿.',options:['苹果','水果'],samples:['我买了一点儿苹果。','我买了一点儿水果。']},
-      {frame:'我去商店买＿＿了。',frame_py:'Wǒ qù shāngdiàn mǎi ___ le.',vn:'Tôi đến cửa hàng mua ＿＿.',options:['东西','衣服'],samples:['我去商店买东西了。','我去商店买衣服了。']},
+      {frame:'＿＿后我给你打电话。',frame_py:'___ hòu wǒ gěi nǐ dǎ diànhuà.',vn:'Sau ＿＿ tôi sẽ gọi điện cho bạn.',options:['二十分钟','下午五点','吃饭'],samples:['二十分钟后我给你打电话。','下午五点后我给你打电话。','吃饭后我给你打电话。']},
+      {frame:'我买了＿＿。',frame_py:'Wǒ mǎile ___.',vn:'Tôi đã mua ＿＿.',options:['一点儿米饭','三本书','很多水果'],samples:['我买了一点儿米饭。','我买了三本书。','我买了很多水果。']},
     ],
   },
   t3:{
     intro:'Không nhìn câu mẫu, hãy tưởng tượng bạn đang ở trong tình huống thực tế và tự nói ra câu phù hợp.',
     tasks:[
-      {role:'🛍️ Tình huống 1 — Kể lại việc đã làm hôm qua',
-       guide:'Bạn kể cho bạn cùng phòng nghe hôm qua mình đã đi đâu và mua gì.',
-       structure:['昨天上午你去哪儿了？','我去商店买＿＿了。'],
-       sample:'昨天上午你去哪儿了？我去商店买东西了。我买了一点儿苹果。',
-       sample_vn:'Sáng hôm qua bạn đi đâu vậy? Mình đến cửa hàng mua đồ. Mình mua một ít táo.',
-       note:'了 đặt sau động từ (买了) đánh dấu hành động ĐÃ HOÀN THÀNH — khác với 了 cuối câu ở Bài 5 biểu thị sự THAY ĐỔI tình huống.'},
-      {role:'🏢 Tình huống 2 — Hỏi thăm đồng nghiệp vắng mặt',
-       guide:'Bạn hỏi đồng nghiệp có thấy một người nào đó không và khi nào họ quay lại.',
-       structure:['你看见张先生了吗？','他什么时候能回来？'],
-       sample:'你看见张先生了吗？看见了，他去学开车了。他什么时候能回来？40分钟后回来。',
-       sample_vn:'Anh có thấy ông Trương không? Có, ông ấy đi học lái xe rồi. Khi nào ông ấy quay lại? 40 phút nữa.',
-       note:'"看见了" (đã nhìn thấy) là cách trả lời NGẮN GỌN rất tự nhiên — chỉ cần lặp lại động từ + 了 mà không cần nhắc lại cả câu hỏi.'},
-      {role:'✨ Tình huống 3 — Khen ngợi và làm rõ chủ sở hữu',
-       guide:'Bạn khen quần áo đẹp của một người bạn, rồi làm rõ rằng những món đồ đó không phải của mình.',
-       structure:['你的衣服太漂亮了！','这些都是＿＿的东西。'],
-       sample:'你的衣服太漂亮了！是啊，她买了不少衣服。这些都是王方的东西。',
-       sample_vn:'Quần áo của bạn đẹp quá! Đúng vậy, cô ấy mua nhiều quần áo lắm. Những thứ này đều là đồ của Vương Phương.',
-       note:'"太……了" dùng để KHEN NGỢI với cảm xúc mạnh mẽ — thể hiện sự ngạc nhiên, thán phục, phổ biến hơn "很" khi giao tiếp thân mật.'},
+      {role:'🛍️ Tình huống 1 — Kể lại cuối tuần',
+       guide:'Bạn mới quen hỏi thứ Bảy vừa rồi bạn làm gì. Hãy kể bạn đã đi đâu và mua được những gì.',
+       structure:['星期六我去……了','我买了……'],
+       sample:'星期六我和朋友去商店了，我买了一个电脑。',
+       sample_vn:'Thứ Bảy tôi đi cửa hàng với bạn, tôi đã mua một cái máy tính.',
+       note:'Người Việt hay quên 了 vì tiếng Việt thường bỏ chữ “đã”. Kể việc đã xong có số lượng (买了一个…) thì 了 đứng ngay sau động từ.'},
+      {role:'⏰ Tình huống 2 — Báo sắp về',
+       guide:'Bạn đang ở ngoài, người nhà gọi hỏi bao giờ về. Hãy nói bạn đang ở đâu và bao nhiêu phút nữa sẽ về.',
+       structure:['我在……呢','……分钟后回……'],
+       sample:'我在商店呢，三十分钟后回去。',
+       sample_vn:'Con đang ở cửa hàng, ba mươi phút nữa con về.',
+       note:'“… phút nữa” là 分钟后 và đặt TRƯỚC động từ: 三十分钟后回去, không nói 回去三十分钟后.'},
+      {role:'✨ Tình huống 3 — Khen và đáp lời khen',
+       guide:'Đến nhà bạn chơi, bạn thấy con mèo của nhà bạn ấy rất đẹp. Hãy khen, rồi đóng vai bạn ấy đáp lại.',
+       structure:['……太漂亮了！','是啊，……都……'],
+       sample:'你家的猫太漂亮了！——是啊，我们都很喜欢。',
+       sample_vn:'Con mèo nhà bạn đẹp quá! — Đúng thế, cả nhà mình đều rất thích nó.',
+       note:'Đồng ý với lời khen dùng 是啊 cho thân mật. 都 luôn đứng sau chủ ngữ: 我们都很喜欢, không nói 都我们.'},
     ],
   },
 };
@@ -1498,47 +1504,49 @@ var speakingData = {
 // LUYỆN DỊCH — dùng từ bài 14 + ôn lại từ bài 1-13
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Tôi đã mua khá nhiều quần áo.', zh:'我买了不少衣服。', py:'Wǒ mǎile bùshǎo yīfu.'},
-  {vi:'Bốn mươi phút sau tôi sẽ về.', zh:'四十分钟后我回来。', py:'Sìshí fēnzhōng hòu wǒ huílái.'},
-  {vi:'Những bộ quần áo này đều rất đẹp.', zh:'这些衣服都很漂亮。', py:'Zhèxiē yīfu dōu hěn piàoliang.'},
-  {vi:'Những thứ này đều là của bạn tôi.', zh:'这些东西都是我朋友的。', py:'Zhèxiē dōngxi dōu shì wǒ péngyou de.'},
+  {vi:'Hôm qua bố tôi lái xe đi Bắc Kinh rồi.', zh:'昨天我爸爸开车去北京了。', py:'Zuótiān wǒ bàba kāi chē qù Běijīng le.'},
+  {vi:'Những quả táo này đều là mẹ tôi mua.', zh:'这些苹果都是我妈妈买的。', py:'Zhèxiē píngguǒ dōu shì wǒ māma mǎi de.'},
+  {vi:'Hôm nay tôi không mua đồ gì cả.', zh:'今天我没有买东西。', py:'Jīntiān wǒ méiyǒu mǎi dōngxi.'},
+  {vi:'Ba giờ chiều nay cô Lý về.', zh:'李老师下午三点回来。', py:'Lǐ lǎoshī xiàwǔ sān diǎn huílái.'},
 ];
 
 // ══════════════════════════════════════════
-// LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
+// LUYỆN DỊCH (chiều Trung→Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Những bộ quần áo này đều rất đẹp, tôi đã mua khá nhiều.', zh:'这些衣服都很漂亮，我买了不少。', py:'Zhèxiē yīfu dōu hěn piàoliang, wǒ mǎile bùshǎo.'},
-  {vi:'Bốn mươi phút sau, anh ấy đã về.', zh:'四十分钟后，他回来了。', py:'Sìshí fēnzhōng hòu, tā huílái le.'},
-  {vi:'Những thứ này đều rất ít, đều là của tôi.', zh:'这些东西都很少，都是我的。', py:'Zhèxiē dōngxi dōu hěn shǎo, dōu shì wǒ de.'},
-  {vi:'Ôi! Những bộ quần áo này đều đẹp quá!', zh:'啊！这些衣服都很漂亮！', py:'A! Zhèxiē yīfu dōu hěn piàoliang!'},
+  {vi:'Con về rồi à! Hôm nay học thế nào?', zh:'你回来了！今天学习怎么样？', py:'Nǐ huílái le! Jīntiān xuéxí zěnmeyàng?'},
+  {vi:'Chúng tôi đều không nhìn thấy anh ấy.', zh:'我们都没有看见他。', py:'Wǒmen dōu méiyǒu kànjiàn tā.'},
+  {vi:'Thưa ông, ông muốn uống chút gì ạ?', zh:'先生，您想喝一点儿什么？', py:'Xiānsheng, nín xiǎng hē yìdiǎnr shénme?'},
 ];
 
 // ══════════════════════════════════════════
-// LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
+// LUYỆN NGHE — nghe câu → chọn đáp án (đọc bằng giọng máy), chỉ dùng từ đã học
 // ══════════════════════════════════════════
 var listenData = [
-  {audio:'昨天你去哪儿了？我去商店买衣服了。',
+  {audio:'我昨天去商店了，买了一些苹果，没有买衣服。',
    questions:[
-     {q:'Hôm qua người trả lời đi đâu?',opts:['Đến trường','Đến cửa hàng','Đến bệnh viện'],ans:1},
-     {q:'Người đó đã mua gì?',opts:['Táo','Quần áo','Cốc'],ans:1},
+     {q:'Hôm qua người nói đã mua gì?',opts:['Quần áo','Cả táo và quần áo','Táo'],ans:2,exp:'买了一些苹果 = đã mua ít táo; 没有买衣服 = không mua quần áo.'},
    ]},
-  {audio:'你看见我的书了吗？看见了，在桌子上。',
+  {audio:'王小姐不在，她去医院了，五十分钟后回来。',
    questions:[
-     {q:'Quyển sách ở đâu?',opts:['Trên bàn','Dưới ghế','Trong ngăn bàn'],ans:0},
+     {q:'Cô Vương đi đâu?',opts:['Đi bệnh viện','Đi cửa hàng','Về nhà'],ans:0,exp:'她去医院了 = cô ấy đi bệnh viện rồi.'},
+     {q:'Bao lâu nữa cô ấy về?',opts:['15 phút','50 phút','5 phút'],ans:1,exp:'五十分钟后回来 = năm mươi phút nữa quay lại.'},
    ]},
-  {audio:'张先生在吗？他不在，他去学开车了，二十分钟后回来。',
+  {audio:'这些衣服都是我女儿的，不是我的。',
    questions:[
-     {q:'Ông Trương đi đâu?',opts:['Đi mua đồ','Đi học lái xe','Đi làm'],ans:1},
-     {q:'Bao lâu nữa ông ấy về?',opts:['10 phút','20 phút','40 phút'],ans:1},
+     {q:'Những bộ quần áo này là của ai?',opts:['Của con gái người nói','Của người nói','Của mẹ người nói'],ans:0,exp:'都是我女儿的 = đều là của con gái tôi; 不是我的 = không phải của tôi.'},
    ]},
-  {audio:'这些苹果多少钱？这些苹果二十块。',
+  {audio:'我看见大卫了，他在商店里买东西呢。',
    questions:[
-     {q:'Mấy quả táo giá bao nhiêu?',opts:['12 đồng','20 đồng','22 đồng'],ans:1},
+     {q:'Đại Vệ đang làm gì?',opts:['Đang lái xe','Đang ăn cơm','Đang mua đồ'],ans:2,exp:'在商店里买东西呢 = đang mua đồ trong cửa hàng.'},
    ]},
-  {audio:'你的衣服太漂亮了！谢谢！昨天我和妈妈去商店买了不少衣服。',
+  {audio:'今天的苹果太少了，我们明天来买吧。',
    questions:[
-     {q:'Người thứ hai đi mua quần áo cùng ai?',opts:['Bạn bè','Mẹ','Bố'],ans:1},
+     {q:'Vì sao người nói muốn mai mới mua?',opts:['Táo đắt quá','Hôm nay táo ít quá','Cửa hàng đóng cửa'],ans:1,exp:'苹果太少了 = táo ít quá; 明天来买吧 = mai hãy đến mua.'},
+   ]},
+  {audio:'大卫和谢朋都不在家，都去商店了。',
+   questions:[
+     {q:'Đại Vệ và Tạ Bằng đang ở đâu?',opts:['Đều đi cửa hàng rồi','Đều ở nhà','Một người ở nhà, một người đi cửa hàng'],ans:0,exp:'都不在家，都去商店了 = cả hai đều không ở nhà, đều đi cửa hàng rồi.'},
    ]},
 ];
 

@@ -1183,89 +1183,96 @@ var dialogData = [
    ]},
 ];
 
-// Điền từ — đổi tình huống/thời tiết so với bài khoá
+// Điền từ — mỗi câu một tình huống mới; ôn 做的菜/好吃 (bài 6), 多少钱 (bài 8), 什么时候/点 (bài 11), 想 (bài 8)
 var fillData = [
-  {pre:'Bạn hỏi thời tiết hôm nay: “今天天气',blank:'怎么样',post:'？”',hint:'(thế nào)',ans:'怎么样',exp:'天气怎么样？ dùng để hỏi thời tiết.'},
-  {pre:'Bạn nói trời nóng quá: “今天',blank:'太',post:'热了。”',hint:'(quá, lắm)',ans:'太',exp:'太 + tính từ + 了: 太热了 = nóng quá.'},
-  {pre:'Bạn nói thời tiết không lạnh cũng không nóng: “今天不冷不',blank:'热',post:'。”',hint:'(nóng)',ans:'热',exp:'不冷不热 = không lạnh không nóng, dễ chịu.'},
-  {pre:'Bạn nói trời lạnh: “今天很',blank:'冷',post:'。”',hint:'(lạnh)',ans:'冷',exp:'很冷 = rất lạnh.'},
-  {pre:'Bạn hỏi ngày mai có mưa không: “明天会',blank:'下雨',post:'吗？”',hint:'(có mưa)',ans:'下雨',exp:'会下雨 = sẽ mưa, có khả năng mưa.'},
-  {pre:'Bạn hỏi thăm sức khỏe: “你',blank:'身体',post:'怎么样？”',hint:'(sức khỏe, cơ thể)',ans:'身体',exp:'身体 + 怎么样 = sức khỏe thế nào.'},
-  {pre:'Bạn khuyên ai đó ăn thêm trái cây: “你多吃',blank:'些',post:'水果。”',hint:'(một ít, một vài)',ans:'些',exp:'些 = một ít: 多吃些水果.'},
-  {pre:'Bạn nói mình không thích ăn cơm khi trời nóng: “天气太热了，我不',blank:'爱',post:'吃饭。”',hint:'(thích, muốn)',ans:'爱',exp:'不爱 + động từ = không thích làm gì.'},
+  {pre:'Bạn mới mua một cái cốc, hỏi bạn mình: “这个杯子',blank:'怎么样',post:'？” — “太小了，我想买那个。”',hint:'(thế nào)',ans:'怎么样',exp:'Xin nhận xét về người/vật: … + 怎么样？; 怎么 là hỏi cách làm, không hỏi tình trạng.'},
+  {pre:'Bạn ăn món mẹ nấu và khen: “妈妈做的菜',blank:'太',post:'好吃了！”',hint:'(quá)',ans:'太',exp:'太 + tính từ + 了 = … quá (cảm thán); nhớ có 了 ở cuối.'},
+  {pre:'“北京七月天气怎么样？” — “很',blank:'热',post:'。”',hint:'(nóng)',ans:'热',exp:'热 = nóng; câu khẳng định với tính từ thường thêm 很: 很热.'},
+  {pre:'Tháng một ở Bắc Kinh, bạn run cầm cập: “我很',blank:'冷',post:'，我想回家。”',hint:'(lạnh)',ans:'冷',exp:'冷 = lạnh, trái nghĩa với 热 (nóng).'},
+  {pre:'Trời âm u, bạn nhắc bạn mình: “明天中午会',blank:'下雨',post:'。”',hint:'(mưa)',ans:'下雨',exp:'会 + động từ = sẽ (dự đoán): 会下雨 = sẽ mưa.'},
+  {pre:'Gặp lại cô giáo cũ, bạn hỏi thăm: “老师，您',blank:'身体',post:'好吗？”',hint:'(sức khỏe)',ans:'身体',exp:'您身体好吗？ = sức khỏe cô có tốt không; câu chủ–vị: 您 + 身体好.'},
+  {pre:'“李月今天会',blank:'来',post:'学校吗？” — “不会，她今天在家。”',hint:'(đến)',ans:'来',exp:'来 = đến (về phía người nói); 去 = đi (rời khỏi người nói).'},
+  {pre:'“你儿子爱吃什么？” — “他',blank:'爱',post:'吃水果，不爱吃米饭。”',hint:'(thích)',ans:'爱',exp:'爱 + động từ = thích (làm gì): 爱吃水果; phủ định: 不爱.'},
+  {pre:'Khách đến lớp, cô giáo mời: “请喝',blank:'些',post:'水。”',hint:'(một ít)',ans:'些',exp:'(一)些 = một ít: 喝些水 = uống chút nước.'},
+  {pre:'Sau giờ thể dục, bạn khát quá: “我想喝',blank:'水',post:'，这儿有吗？”',hint:'(nước)',ans:'水',exp:'水 = nước; 喝水 = uống nước.'},
+  {pre:'Ở cửa hàng, bạn gọi cô nhân viên trẻ: “',blank:'小姐',post:'，这个多少钱？”',hint:'(cô — gọi phụ nữ trẻ)',ans:'小姐',exp:'小姐 = cô (gọi phụ nữ trẻ một cách lịch sự); 王小姐 = cô Vương.'},
+  {pre:'Bạn gọi cho mẹ ở Bắc Kinh: “妈妈，北京',blank:'天气',post:'冷吗？”',hint:'(thời tiết)',ans:'天气',exp:'Câu chủ–vị: 北京 + 天气冷 (thời tiết Bắc Kinh lạnh).'},
 ];
 
-// Sắp xếp — đổi câu chữ/tình huống so với bài khoá
+// Sắp xếp — 怎么样 đề nghị, câu chủ–vị, 不会太, 太……了, 不爱, 来
 var sortData = [
-  {words:['今天','天气','怎么样','？'],ans:'今天天气怎么样？',audio:'今天天气怎么样？'},
-  {words:['今天','很','冷','。'],ans:'今天很冷。',audio:'今天很冷。'},
-  {words:['明天','会','下雨','吗','？'],ans:'明天会下雨吗？',audio:'明天会下雨吗？'},
-  {words:['你','身体','怎么样','？'],ans:'你身体怎么样？',audio:'你身体怎么样？'},
-  {words:['我','不','爱','吃饭','。'],ans:'我不爱吃饭。',audio:'我不爱吃饭。'},
-  {words:['你','多','喝','水','。'],ans:'你多喝水。',audio:'你多喝水。'},
+  {words:['我们','星期六','去','看','电影','怎么样','？'],ans:'我们星期六去看电影怎么样？',audio:'我们星期六去看电影怎么样？'},
+  {words:['这个','医院','医生','很','多','。'],ans:'这个医院医生很多。',audio:'这个医院医生很多。'},
+  {words:['明天','不会','太','冷','。'],ans:'明天不会太冷。',audio:'明天不会太冷。'},
+  {words:['今天','太','冷','了','，','我','不','想','去','学校','。'],ans:'今天太冷了，我不想去学校。',audio:'今天太冷了，我不想去学校。'},
+  {words:['我','女儿','不','爱','吃','水果','。'],ans:'我女儿不爱吃水果。',audio:'我女儿不爱吃水果。'},
+  {words:['王','小姐','几','点','来','？'],ans:'王小姐几点来？',audio:'王小姐几点来？'},
+  {words:['星期三','会','下雨','，','我们','星期四','去','。'],ans:'星期三会下雨，我们星期四去。',audio:'星期三会下雨，我们星期四去。'},
 ];
 
+// Nối — câu hỏi ↔ câu trả lời (đáp án mỗi cặp chỉ hợp một câu hỏi)
 var matchData = [
-  {left:'昨天北京的天气怎么样？',right:'太热了。'},
-  {left:'明天天气怎么样？',right:'明天天气很好，不冷不热。'},
-  {left:'今天会下雨吗？',right:'今天不会下雨。'},
-  {left:'王小姐今天会来吗？',right:'不会来，天气太冷了。'},
-  {left:'你身体怎么样？',right:'我身体不太好。'},
+  {left:'你的汉语怎么样？',right:'不太好，汉字太多了！'},
+  {left:'这个菜怎么样？',right:'很好吃，我爱吃！'},
+  {left:'你冷吗？',right:'不冷，今天天气很好。'},
+  {left:'你想喝什么？',right:'水，谢谢。'},
+  {left:'北京现在热吗？',right:'不热，现在很冷。'},
 ];
 
-// Trắc nghiệm — trọng tâm 怎么样/太……了/会 dự đoán, không audio
+// Trắc nghiệm — chọn câu đúng tình huống / câu đáp / câu sai; không hỏi lý thuyết
 var mcData = [
-  {q:'今天天气＿＿？',opts:['怎么样','什么','怎么','哪儿'],ans:0,exp:'怎么样 dùng để hỏi tình trạng, xin nhận xét: 天气怎么样？ — Thời tiết thế nào?'},
-  {q:'今天＿＿热了。',opts:['太','很','不','没'],ans:0,exp:'太 + tính từ + 了 = quá…: 太热了.'},
-  {q:'Muốn nói "hôm nay không nóng lắm", dùng câu nào?',opts:['今天不太热。','今天没太热。','今天太不热。','今天不热太。'],ans:0,exp:'不太 + tính từ = không … lắm: 不太热. 没 không dùng để phủ định tính từ chỉ tính chất, và 太 phải đứng trước 热.'},
-  {q:'明天会＿＿吗？(biểu thị khả năng sẽ xảy ra)',opts:['来','是','有','在'],ans:0,exp:'Sau 会 (sẽ, có khả năng) cần một động từ; 来 (đến) hợp nghĩa: 明天会来吗？'},
-  {q:'"身体" nghĩa là gì?',opts:['sức khỏe, cơ thể','tâm trạng','tính cách','ngoại hình'],ans:0,exp:'身体 = cơ thể, sức khỏe: 你身体怎么样？ là câu hỏi thăm sức khỏe.'},
-  {q:'"水果" nghĩa là gì?',opts:['trái cây, hoa quả','rau củ','nước uống','đồ ăn'],ans:0,exp:'水果 = 水 (nước) + 果 (quả): hoa quả, trái cây.'},
-  {q:'"冷" nghĩa là gì?',opts:['lạnh','nóng','ấm','mát'],ans:0,exp:'冷 (lěng) = lạnh; nóng là 热 (rè).'},
-  {q:'Câu vị ngữ chủ-vị nào ĐÚNG?',opts:['我身体不太好。','我不太好身体。','身体我不太好。','不太好我身体。'],ans:0,exp:'Câu vị ngữ chủ–vị: 我 (chủ ngữ) + 身体不太好 (cụm chủ–vị làm vị ngữ).'},
-  {q:'"爱" trong "不爱吃饭" nghĩa là gì?',opts:['thích, muốn','yêu (tình cảm nam nữ)','ghét','sợ'],ans:0,exp:'爱 + động từ = thích làm gì: 不爱吃饭 = không thích ăn.'},
-  {q:'"下雨" nghĩa là gì?',opts:['đổ mưa, có mưa','có nắng','có gió','có tuyết'],ans:0,exp:'下雨 = đổ mưa (下 là rơi xuống, 雨 là mưa).'},
+  {q:'Bạn mình vừa từ Mỹ về. Bạn hỏi: “Thời tiết ở Mỹ thế nào?”',opts:['美国的天气怎么样？','美国的天气怎么样吗？','美国的天气怎么？','怎么样美国的天气？'],ans:0,exp:'怎么样 đứng cuối câu hỏi; đã có 怎么样 thì không thêm 吗; 怎么 hỏi cách làm, không hỏi tình trạng.'},
+  {q:'Câu nào SAI?',opts:['今天天气是很冷。','今天天气很冷。','谢朋的汉语很好。','这儿的水果很多。'],ans:0,exp:'Tính từ làm vị ngữ không cần 是: 天气很冷 (không nói 天气是很冷).'},
+  {q:'Bạn muốn nói: “Hôm nay không lạnh lắm.”',opts:['今天不太冷。','今天太不冷。','今天不冷太。','今天太冷了。'],ans:0,exp:'不太 + tính từ = không … lắm; 太冷了 = lạnh quá (nghĩa ngược lại).'},
+  {q:'Ly trà vừa rót còn rất nóng. Bạn nói:',opts:['这个茶太热了！','这个茶太热！','这个茶热太了！','这个茶是太热了！'],ans:0,exp:'Cảm thán “… quá”: 太 + tính từ + 了; 太 đứng trước tính từ, không thêm 是.'},
+  {q:'A: “明天谢朋会来吗？” — B biết anh ấy không đến. B đáp:',opts:['不会，他明天去北京。','没有，他明天去北京。','不是，他明天去北京。','不太，他明天去北京。'],ans:0,exp:'Câu hỏi 会……吗？ trả lời phủ định bằng 不会 (sẽ không); 没有 phủ định 有, 不是 phủ định 是.'},
+  {q:'Bạn rủ bạn: “Chiều nay chúng mình đi uống trà, thế nào?”',opts:['今天下午我们去喝茶怎么样？','今天下午我们去喝茶怎么？','我们去喝茶今天下午怎么样？','今天下午我们去喝茶怎么样吗？'],ans:0,exp:'Đề nghị rồi hỏi ý kiến: thêm 怎么样？ sau lời đề nghị; thời gian đứng trước động từ; không thêm 吗.'},
+  {q:'Bạn muốn nói: “Tháng 12 thời tiết Bắc Kinh rất lạnh.”',opts:['北京十二月天气很冷。','北京十二月很冷天气。','北京天气十二月冷很。','北京十二月是天气很冷。'],ans:0,exp:'Câu chủ–vị: 北京十二月 + 天气很冷; 很 đứng trước tính từ, tính từ đứng cuối.'},
+  {q:'Bà ngoại bạn đang ốm. Bạn hỏi thăm bà:',opts:['您身体怎么样？','您身体怎么？','您怎么样身体？','您是身体怎么样？'],ans:0,exp:'Hỏi thăm sức khỏe: 您 + 身体 + 怎么样？; dùng 您 với người lớn tuổi.'},
+  {q:'Câu nào SAI?',opts:['明天能下雨吗？','这个月会很冷。','我儿子会写很多汉字。','老师，我能回家吗？'],ans:0,exp:'Dự đoán thời tiết dùng 会 (sẽ), không dùng 能 (có thể / được phép): 明天会下雨吗？'},
+  {q:'A: “你爱喝茶吗？” — B không thích trà, B đáp:',opts:['不爱，我爱喝热水。','不是，我是喝热水。','不会，我会喝热水。','不太，我爱喝热水。'],ans:0,exp:'Hỏi bằng 爱 thì trả lời 爱 / 不爱; 不会 = không biết / sẽ không, không hợp ở đây.'},
+  {q:'Bạn của bạn gầy quá. Bạn khuyên:',opts:['你多吃些米饭。','你吃多些米饭。','你些多吃米饭。','你多吃米饭些。'],ans:0,exp:'Khuyên “ăn thêm”: 多 + động từ + 些 + danh từ; 多 đứng TRƯỚC động từ (ngược tiếng Việt “ăn nhiều”).'},
 ];
 
 var speakingData = {
   t1:{
-    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy.',
+    intro:'Nhấn nút loa nghe từng câu mẫu, đọc to theo cho tới khi trôi chảy. Chú ý: 不 trước thanh 4 đọc thành bú (bú rè, bú tài); 热 (rè) thanh 4, 冷 (lěng) thanh 3.',
     models:[
-      {zh:'今天天气怎么样？',py:'Jīntiān tiānqì zěnmeyàng?',vn:'Hôm nay thời tiết thế nào?'},
+      {zh:'昨天北京的天气怎么样？',py:'Zuótiān Běijīng de tiānqì zěnmeyàng?',vn:'Hôm qua thời tiết ở Bắc Kinh thế nào?'},
       {zh:'明天天气很好，不冷不热。',py:'Míngtiān tiānqì hěn hǎo, bù lěng bú rè.',vn:'Ngày mai thời tiết rất đẹp, không lạnh cũng không nóng.'},
-      {zh:'今天会下雨吗？',py:'Jīntiān huì xià yǔ ma?',vn:'Hôm nay có mưa không nhỉ?'},
-      {zh:'你身体怎么样？',py:'Nǐ shēntǐ zěnmeyàng?',vn:'Sức khỏe của anh thế nào?'},
-      {zh:'你多吃些水果，多喝水。',py:'Nǐ duō chī xiē shuǐguǒ, duō hē shuǐ.',vn:'Anh hãy ăn thêm một ít trái cây và uống thêm nước nhé.'},
+      {zh:'这儿的天气太好了！',py:'Zhèr de tiānqì tài hǎo le!',vn:'Thời tiết ở đây đẹp quá!'},
+      {zh:'明天会很冷吗？',py:'Míngtiān huì hěn lěng ma?',vn:'Ngày mai có lạnh lắm không?'},
+      {zh:'我妈妈爱做中国菜。',py:'Wǒ māma ài zuò Zhōngguó cài.',vn:'Mẹ tôi thích nấu món Trung Quốc.'},
     ],
   },
   t2:{
-    intro:'Dùng khung câu cho sẵn, thay thế phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu bạn tạo được.',
+    intro:'Dùng khung câu cho sẵn, thay phần gạch chân bằng từ trong ô gợi ý. Nhấn nút loa để nghe rồi nói to mỗi câu bạn tạo được.',
     drills:[
-      {frame:'今天天气很＿＿。',frame_py:'Jīntiān tiānqì hěn ___.',vn:'Hôm nay thời tiết rất ＿＿.',options:['冷','热','好'],samples:['今天天气很冷。','今天天气很热。','今天天气很好。']},
-      {frame:'你多吃些＿＿。',frame_py:'Nǐ duō chī xiē ___.',vn:'Bạn hãy ăn thêm một ít ＿＿.',options:['水果','米饭'],samples:['你多吃些水果。','你多吃些米饭。']},
+      {frame:'这个杯子太＿＿了！',frame_py:'Zhège bēizi tài ___ le!',vn:'Cái cốc này ＿＿ quá!',options:['小','大','好'],samples:['这个杯子太小了！','这个杯子太大了！','这个杯子太好了！']},
+      {frame:'＿＿天气怎么样？',frame_py:'___ tiānqì zěnmeyàng?',vn:'Thời tiết ＿＿ thế nào?',options:['今天','明天下午','星期六'],samples:['今天天气怎么样？','明天下午天气怎么样？','星期六天气怎么样？']},
     ],
   },
   t3:{
     intro:'Không nhìn câu mẫu, hãy tưởng tượng bạn đang ở trong tình huống thực tế và tự nói ra câu phù hợp.',
     tasks:[
-      {role:'🌤️ Tình huống 1 — Hỏi thăm thời tiết trước khi ra ngoài',
-       guide:'Bạn chuẩn bị ra ngoài và muốn biết thời tiết hôm nay và ngày mai thế nào.',
-       structure:['今天天气怎么样？','明天呢？明天天气怎么样？'],
-       sample:'今天天气怎么样？太热了。明天呢？明天天气很好，不冷不热。',
-       sample_vn:'Hôm nay thời tiết thế nào? Nóng lắm. Còn ngày mai? Ngày mai thời tiết rất đẹp, không lạnh cũng không nóng.',
-       note:'Cấu trúc "不A不B" (不冷不热) rất thông dụng để diễn tả mức độ VỪA PHẢI, ở giữa hai thái cực — không chỉ dùng cho thời tiết mà còn nhiều tình huống khác.'},
-      {role:'☔ Tình huống 2 — Dự đoán thời tiết và kế hoạch gặp mặt',
-       guide:'Bạn hỏi bạn bè xem hôm nay có mưa không và liệu một người bạn chung có đến không.',
-       structure:['今天会下雨吗？','王小姐今天会来吗？'],
-       sample:'今天会下雨吗？今天不会下雨。王小姐今天会来吗？不会来，天气太冷了。',
-       sample_vn:'Hôm nay có mưa không? Không mưa đâu. Cô Vương hôm nay có đến không? Không đến đâu, trời lạnh quá.',
-       note:'会 ở đây dùng để dự đoán KHẢ NĂNG một sự việc sẽ xảy ra trong tương lai — khác với 会 ở Bài 6 biểu thị "biết" qua học tập.'},
-      {role:'🍎 Tình huống 3 — Thăm hỏi sức khỏe và đưa lời khuyên',
-       guide:'Bạn đến thăm một người ốm, hỏi thăm sức khỏe rồi đưa ra lời khuyên.',
-       structure:['你身体怎么样？','你多吃些＿＿，多喝水。'],
-       sample:'你身体怎么样？我身体不太好。你多吃些水果，多喝水。',
-       sample_vn:'Sức khỏe của anh thế nào? Tôi không được khỏe lắm. Anh hãy ăn thêm trái cây và uống thêm nước nhé.',
-       note:'Cấu trúc "多 + Động từ + 些 + Danh từ" (多吃些水果) là cách khuyên nhủ RẤT TỰ NHIÊN và phổ biến khi quan tâm đến sức khỏe người khác.'},
+      {role:'🌤️ Tình huống 1 — Kể thời tiết cho bạn ở xa',
+       guide:'Một người bạn ở Bắc Kinh gọi điện hỏi thời tiết chỗ bạn hôm nay và dự đoán ngày mai.',
+       structure:['我这儿今天＿＿。','＿＿会＿＿。'],
+       sample:'我这儿今天下雨，星期五会很热。',
+       sample_vn:'Chỗ mình hôm nay mưa, thứ Sáu sẽ rất nóng.',
+       note:'Tính từ làm vị ngữ không cần 是: 今天很热 (không nói 今天是很热). Câu khẳng định thường thêm 很.'},
+      {role:'🏥 Tình huống 2 — Hỏi thăm bạn ốm',
+       guide:'Bạn cùng lớp bị ốm nghỉ học. Bạn gọi hỏi thăm sức khỏe và khuyên bạn ấy.',
+       structure:['你现在怎么样？','多＿＿些＿＿。'],
+       sample:'你现在怎么样？——不太好。——你多喝茶，多吃些水果。',
+       sample_vn:'Bây giờ cậu thấy trong người thế nào? — Không khỏe lắm. — Cậu uống nhiều trà, ăn thêm trái cây nhé.',
+       note:'Người Việt hay nói “ăn nhiều trái cây” rồi dịch thành 吃多水果 — sai. Tiếng Trung đặt 多 TRƯỚC động từ: 多吃些水果, 多喝水.'},
+      {role:'🛍️ Tình huống 3 — Rủ bạn đi mua trái cây',
+       guide:'Bạn rủ bạn đi mua trái cây vào thứ Bảy, hỏi ý kiến bằng 怎么样; bạn kia đồng ý và đoán thời tiết bằng 会.',
+       structure:['＿＿我们去＿＿怎么样？','好，＿＿不会下雨。'],
+       sample:'星期六我们去商店买水果怎么样？——好，星期六不会下雨。',
+       sample_vn:'Thứ Bảy mình đi cửa hàng mua trái cây nhé, thế nào? — Được, thứ Bảy sẽ không mưa đâu.',
+       note:'……怎么样？ đặt sau một lời đề nghị để hỏi ý kiến; 会 dùng để dự đoán: 不会下雨 = sẽ không mưa.'},
     ],
   },
 };
@@ -1274,46 +1281,49 @@ var speakingData = {
 // LUYỆN DỊCH — dùng từ bài 12 + ôn lại từ bài 1-11
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Thời tiết hôm nay thế nào?', zh:'今天天气怎么样？', py:'Jīntiān tiānqì zěnmeyàng?'},
-  {vi:'Hôm nay nóng quá.', zh:'今天太热了。', py:'Jīntiān tài rè le.'},
-  {vi:'Sức khỏe tôi không tốt lắm.', zh:'我身体不太好。', py:'Wǒ shēntǐ bú tài hǎo.'},
-  {vi:'Mai anh ấy sẽ đến chứ?', zh:'明天他会来吗？', py:'Míngtiān tā huì lái ma?'},
+  {vi:'Ngày mai trời sẽ không mưa đâu.', zh:'明天不会下雨。', py:'Míngtiān bú huì xià yǔ.'},
+  {vi:'Cô Vương thích ăn trái cây.', zh:'王小姐爱吃水果。', py:'Wáng xiǎojiě ài chī shuǐguǒ.'},
+  {vi:'Tháng tám Bắc Kinh nóng quá!', zh:'北京八月太热了！', py:'Běijīng bā yuè tài rè le!'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (chiều Trung→Việt) — noi dung KHAC voi chieu Viet->Trung o tren
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Thời tiết hôm nay thế nào? Hôm nay lạnh quá.', zh:'今天天气怎么样？今天太冷了。', py:'Jīntiān tiānqì zěnmeyàng? Jīntiān tài lěng le.'},
-  {vi:'Sức khỏe tôi không tốt lắm, mai không thể đi học được.', zh:'我身体不太好，明天不能去学校。', py:'Wǒ shēntǐ bú tài hǎo, míngtiān bù néng qù xuéxiào.'},
-  {vi:'Anh ấy có đến không? Anh ấy sẽ đến.', zh:'他会来吗？他会来。', py:'Tā huì lái ma? Tā huì lái.'},
-  {vi:'Trời mưa rồi, thời tiết không tốt lắm.', zh:'下雨了，天气不太好。', py:'Xià yǔ le, tiānqì bú tài hǎo.'},
+  {vi:'Cô gái kia là ai? Cô ấy là cô giáo tiếng Trung của chúng tôi.', zh:'那个小姐是谁？她是我们的汉语老师。', py:'Nàge xiǎojiě shì shéi? Tā shì wǒmen de Hànyǔ lǎoshī.'},
+  {vi:'Ở đây tháng 7 rất nóng, tháng 8 không nóng lắm.', zh:'这儿七月很热，八月不太热。', py:'Zhèr qī yuè hěn rè, bā yuè bú tài rè.'},
+  {vi:'Khi nào bạn đến? — Tôi có thể đến trước 10 giờ.', zh:'你什么时候来？——我十点前能来。', py:'Nǐ shénme shíhou lái? — Wǒ shí diǎn qián néng lái.'},
 ];
 
 // ══════════════════════════════════════════
-// LUYỆN NGHE — đoạn nghe ngắn (đọc bằng giọng máy), chỉ dùng từ đã học
+// LUYỆN NGHE — nghe câu → chọn đáp án (đọc bằng giọng máy), chỉ dùng từ đã học
 // ══════════════════════════════════════════
 var listenData = [
-  {audio:'今天天气怎么样？今天太冷了。',
+  {audio:'北京昨天很冷，今天很热。',
    questions:[
-     {q:'Thời tiết hôm nay thế nào?',opts:['Rất nóng','Rất lạnh','Có mưa'],ans:1},
+     {q:'Hôm qua ở Bắc Kinh thời tiết thế nào?',opts:['Nóng','Lạnh','Có mưa'],ans:1,exp:'昨天很冷 = hôm qua rất lạnh.'},
+     {q:'Còn hôm nay thì sao?',opts:['Rất nóng','Không nóng không lạnh','Có mưa'],ans:0,exp:'今天很热 = hôm nay rất nóng.'},
    ]},
-  {audio:'明天会下雨吗？明天不会下雨，天气很好。',
+  {audio:'王小姐今天不会来，她身体不太好。',
    questions:[
-     {q:'Ngày mai thời tiết ra sao?',opts:['Có mưa','Đẹp, không mưa','Lạnh quá'],ans:1},
+     {q:'Vì sao cô Vương không đến?',opts:['Trời mưa','Cô ấy bận đi làm','Cô ấy không khỏe'],ans:2,exp:'身体不太好 = sức khỏe không tốt lắm.'},
    ]},
-  {audio:'你身体怎么样？我身体很好，谢谢！',
+  {audio:'现在十二点，天气很热，我们三点去商店怎么样？',
    questions:[
-     {q:'Sức khỏe người trả lời thế nào?',opts:['Rất tốt','Không tốt lắm','Bị ốm'],ans:0},
+     {q:'Người nói đề nghị mấy giờ đi cửa hàng?',opts:['12 giờ','3 giờ','Ngay bây giờ'],ans:1,exp:'我们三点去商店 = 3 giờ chúng ta đi cửa hàng.'},
+     {q:'Vì sao không đi bây giờ?',opts:['Trời đang nóng','Trời mưa','Cửa hàng chưa mở'],ans:0,exp:'天气很热 = trời rất nóng.'},
    ]},
-  {audio:'天气太热了，我不想吃饭，我想喝水。',
+  {audio:'小姐，我想买些水果，多少钱？——二十八块。',
    questions:[
-     {q:'Vì sao người nói không muốn ăn?',opts:['Trời quá nóng','Trời quá lạnh','Đã ăn rồi'],ans:0},
-     {q:'Người nói muốn làm gì?',opts:['Ăn hoa quả','Uống nước','Uống trà'],ans:1},
+     {q:'Hết bao nhiêu tiền?',opts:['18 tệ','28 tệ','82 tệ'],ans:1,exp:'二十八块 = 28 tệ.'},
    ]},
-  {audio:'王小姐今天会来吗？会来，她下午三点来。',
+  {audio:'我爸爸今年六十岁，爱喝茶，不爱喝水。',
    questions:[
-     {q:'Cô Vương đến lúc mấy giờ?',opts:['3 giờ sáng','3 giờ chiều','Không đến'],ans:1},
+     {q:'Bố của người nói thích uống gì?',opts:['Trà','Nước','Cả nước và trà'],ans:0,exp:'爱喝茶，不爱喝水 = thích uống trà, không thích uống nước.'},
+   ]},
+  {audio:'你几点来我家？——下午四点怎么样？',
+   questions:[
+     {q:'Người kia đề nghị đến lúc mấy giờ?',opts:['10 giờ trưa','2 giờ chiều','4 giờ chiều'],ans:2,exp:'下午四点 = 4 giờ chiều.'},
    ]},
 ];
 

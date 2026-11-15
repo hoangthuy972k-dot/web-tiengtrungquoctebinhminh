@@ -448,7 +448,105 @@ function dungCap(level) {
 
     return { n: L.number, url, title: L.titleHanzi || L.title || '', judges, mcs, sorts, dich, noi };
   });
-  return { out, thongKe };
+  const bo = khuTrung(out);
+  return { out, thongKe, bo };
+}
+
+/* ---- KHONG LAP CAU (yeu cau co giao 2026-11: "tat ca cac cau luyen tap deu ra soat khong bi trung cau nao") ----
+   Sau khi dung xong ca cap, bo cau trung NOI DUNG (khoa chi tinh chu Han + so, bo dau cau) — cung bai hay khac bai:
+     A) A/B/C trung hẳn: cung de (pre＿post) + cung dap an; cau tu vung «我» nghia la gi? / «tôi» — chu Han la gi?
+        tinh theo tu + nghia. Cung bai: giu cau "giau" hon (bai tap soan tay > cau may sinh; co giai thich why/hint);
+        khac bai: giu o bai TRUOC (noi tu duoc day lan dau), chep why/hint con thieu tu cau bi bo.
+     B) cung mot cau (cau day du sau khi dien) ma mot ben la cau MAY SINH tu cau khac (dien tu vao cau bai khoa,
+        chon cau dich, noi tu, cau tu vung): bo cau may sinh, giu cau soan tay. Hai cau soan tay cung cau khac cho trong
+        -> giu ca hai (lop.js chi boc mot trong mot tro) va liet ke cho co giao (tools/kiem-trung-lop.js [HAI NGUON]).
+     C) xep cau cung dap an, dung/sai cung cau (giu dau cau — co cau sai chi vi dau cau), cau dich / cau noi (Kiem tra bai cu) cung cau: giu cau dau (cung bai: giu cau co giai thich).
+   Dinh dang lop-<cap>.js khong doi (chi it cau hon) -> lop.js / nong trai / file cu deu doc duoc. */
+const chuSo = (s) => (String(s || '').match(/[㐀-鿿0-9]/g) || []).join('');
+function khoaMc(m) {
+  const dung = String(m.options[m.answer] || '').trim();
+  if (m.src === 'tu') {
+    const g = /^«([^»]+)»/.exec(m.pre || '');
+    const xuoi = g && /[㐀-鿿]/.test(g[1]);
+    return 'tu:' + (xuoi ? g[1] : dung) + '|' + (xuoi ? dung : (g ? g[1] : ''));
+  }
+  if (m.noBlank) {
+    const hp = chuSo(m.pre);
+    if (!chuSo(dung)) return 'v:' + String(m.pre || '').trim() + '|' + dung; // de + dap an tieng Viet
+    return hp ? 'q:' + hp + '|' + chuSo(dung) : 'zh:' + chuSo(dung);
+  }
+  return 'b:' + chuSo(m.pre) + '＿' + chuSo(m.post) + '|' + (chuSo(dung) || dung);
+}
+function cauDuMc(m) {
+  if (m.src === 'tu') return '';
+  const dung = String(m.options[m.answer] || '');
+  if (m.noBlank) return chuSo(m.pre) ? '' : chuSo(dung);
+  return chuSo(String(m.pre || '') + dung + String(m.post || ''));
+}
+// Cau may sinh tu noi dung khac (khong phai bai tap soan tay)
+const mayMc = (m) => m.src === 'tu' || m.src === 'dich' || m.src === 'noi' || (m.src === 'hk' && m.context === 'Câu trong bài khoá') ||
+  (m.src === 'np' && m.context === 'Dịch câu');
+const hangMc = (m) => (mayMc(m) ? 0 : 4) + (m.why ? 2 : 0) + (m.hint ? 1 : 0) + (m.point ? 0.5 : 0);
+// Cau dung/sai: giu dau cau (co cau sai chi vi dau cau: 不要看手机，了。), chi bo khoang trang, dau nua -> dau toan
+function khoaDs(s) { return String(s || '').replace(/\s+/g, '').replace(/,/g, '，').replace(/\?/g, '？').replace(/!/g, '！').replace(/;/g, '；').replace(/:/g, '：'); }
+function chepThieu(giu, bo) { ['why', 'hint', 'point'].forEach((k) => { if (!giu[k] && bo[k]) giu[k] = bo[k]; }); }
+function khuTrung(out) {
+  const dem = { mcTrung: 0, mcMay: 0, xep: 0, ds: 0, dich: 0, noi: 0, dsNguoc: [] };
+  // A) A/B/C trung hẳn
+  const daA = {};
+  out.forEach((L, li) => {
+    const moi = [];
+    L.mcs.forEach((m) => {
+      const k = khoaMc(m), cu = daA[k];
+      if (!cu) { daA[k] = { li, m, arr: moi, i: moi.length }; moi.push(m); return; }
+      dem.mcTrung++;
+      if (cu.li === li && hangMc(m) > hangMc(cu.m)) {
+        // cung bai, cau moi giau hon: thay cau cu bang cau moi (giu vi tri cu)
+        chepThieu(m, cu.m);
+        cu.arr[cu.i] = m; cu.m = m;
+        return;
+      }
+      chepThieu(cu.m, m);
+    });
+    L.mcs = moi;
+  });
+  // B) cung cau, mot ben la cau may sinh
+  const daB = {};
+  const boB = new Set();
+  out.forEach((L, li) => L.mcs.forEach((m) => {
+    const c = cauDuMc(m);
+    if (c.length < 3) return;
+    const cu = daB[c];
+    if (!cu) { daB[c] = { li, m }; return; }
+    if (mayMc(m)) { boB.add(m); return; }
+    if (mayMc(cu.m)) { boB.add(cu.m); daB[c] = { li, m }; }
+    // hai cau soan tay: giu ca hai
+  }));
+  out.forEach((L) => { const n0 = L.mcs.length; L.mcs = L.mcs.filter((m) => !boB.has(m)); dem.mcMay += n0 - L.mcs.length; });
+  // C) xep cau / dung-sai / dich / noi
+  const daS = {}, daJ = {}, daD = {}, daN = {};
+  out.forEach((L, li) => {
+    const moiS = [];
+    L.sorts.forEach((x) => {
+      const k = chuSo(x.answer) || x.answer, cu = daS[k];
+      if (!cu) { daS[k] = { li, x, i: moiS.length, arr: moiS }; moiS.push(x); return; }
+      dem.xep++;
+      if (cu.li === li && !cu.x.why && x.why) { chepThieu(x, cu.x); cu.arr[cu.i] = x; cu.x = x; return; }
+      chepThieu(cu.x, x);
+    });
+    L.sorts = moiS;
+    L.judges = L.judges.filter((x) => {
+      const k = khoaDs(x.sentence), cu = daJ[k];
+      if (!cu) { daJ[k] = x; return true; }
+      dem.ds++;
+      if (!!cu.isCorrect !== !!x.isCorrect) dem.dsNguoc.push('bai ' + L.n + ': ' + x.sentence);
+      chepThieu(cu, x);
+      return false;
+    });
+    L.dich = (L.dich || []).filter((x) => { const k = chuSo(x.zh); if (!k || !daD[k]) { daD[k] = 1; return true; } dem.dich++; return false; });
+    L.noi = (L.noi || []).filter((x) => { const k = chuSo(x.q) + '|' + chuSo(x.a); if (!daN[k]) { daN[k] = 1; return true; } dem.noi++; return false; });
+  });
+  return dem;
 }
 
 const chi = process.argv[2];
@@ -464,5 +562,7 @@ Object.keys(APP.lessons).forEach((level) => {
   console.log(level + ': ' + r.out.length + ' bai · ' + t.j + ' dung/sai · ' + t.m + ' A/B/C · ' + t.s + ' xep · bai tap rieng ' + r.thongKe.rieng +
     ' · tu vung ' + r.thongKe.tu + ' · bai khoa ' + r.thongKe.hk + ' · ngu phap theo diem ' + r.thongKe.np +
     ' · ngu phap cua bai ' + r.thongKe.chung + ' · noi ' + r.thongKe.noi + ' · dich ' + r.thongKe.dich + (it.length ? ' · bai it cau: ' + it.join(',') : '') +
+    ' · bo trung: A/B/C ' + r.bo.mcTrung + ' + cau may sinh ' + r.bo.mcMay + ', xep ' + r.bo.xep + ', dung/sai ' + r.bo.ds + ', dich ' + r.bo.dich + ', noi ' + r.bo.noi +
     ' · ' + (fs.statSync(f).size / 1024).toFixed(0) + ' KB');
+  r.bo.dsNguoc.forEach((l) => console.log('   ! cau dung/sai vua dung vua sai (can co giao sua): ' + l));
 });

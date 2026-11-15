@@ -85,15 +85,20 @@
     });
     cap.forEach(function (c) { P.hd[laCauHoi(c.a.zh) ? 0 : 1].push(c); });
 
+    var thayM = {};
     mang(opt.mcs).forEach(function (m, i) {
       if (!m || mang(m.options).length < 2 || typeof m.answer !== 'number' || m.answer < 0 || m.answer >= m.options.length) return;
       var opts = m.options.map(str);
       if (opts.some(function (o) { return !o; })) return;
       var x = { id: 'm' + i + khoaZh(str(m.pre) + opts[m.answer] + str(m.post)), pre: str(m.pre), post: str(m.post), noBlank: !!m.noBlank,
-        options: opts, answer: m.answer, context: str(m.context), why: str(m.why), hint: str(m.hint), point: str(m.point) };
+        options: opts, answer: m.answer, context: str(m.context), why: str(m.why), hint: str(m.hint), point: str(m.point), src: str(m.src) };
       if (!x.pre && !x.post) return;
       x.full = x.noBlank ? '' : x.pre + opts[m.answer] + x.post;
       if (x.full && !coHan(x.full)) x.full = '';
+      // khong lap cau: cung noi dung (cung cau o hai nguon / cung tu) chi giu cau dau
+      var nd = ndCua(x)[0];
+      if (nd && thayM[nd]) return;
+      if (nd) thayM[nd] = 1;
       P.mcs.push(x);
     });
     var thayS = {};
@@ -170,6 +175,25 @@
     return P;
   }
 
+  /* Khoa NOI DUNG cua mot muc trong kho (khong lap cau trong mot buoi / mot bo cau):
+     cung tu (doc / nghia / viet / noi / nghe tu / dien tu / cau tu vung cua bai) -> 't'+tu;
+     cung cau (ngu phap, xep cau, sua cau, dich, nghe cau, cau vi du) -> 'c'+cau (bo dau cau). Dien tu vao cau vi du = ca hai. */
+  function ndCua(x) {
+    if (!x) return [];
+    if (x.v && x.v.zh) return x.pre != null ? ['t' + x.v.zh, 'c' + khoaZh(x.v.ex_zh)] : ['t' + x.v.zh];
+    if (x.kieu === 'nguphap') return ['p' + x.point];
+    if (x.a && x.b) return ['c' + khoaZh(x.a.zh)];
+    if (x.options) {
+      var dung = str(x.options[x.answer]);
+      if (x.src === 'tu') { var g = /^«([^»]+)»/.exec(x.pre); return ['t' + (g && coHan(g[1]) ? g[1] : dung)]; }
+      if (x.full) return ['c' + khoaZh(x.full)];
+      return [coHan(x.pre) ? 'q' + khoaZh(x.pre) + '|' + khoaZh(dung) : 'c' + khoaZh(dung)];
+    }
+    if (x.tu && x.answer) return ['c' + khoaZh(x.answer)];
+    if (x.zh) return [/^n?v/.test(String(x.id)) ? 't' + x.zh : 'c' + khoaZh(x.zh)];
+    return [];
+  }
+
   // Sap cac cum tu theo thu tu xuat hien trong cau dung; khong khop het thi bo
   function thuTuTu(answer, tu) {
     var goc = khoaZh(answer), dung = [], ds = [];
@@ -214,6 +238,7 @@
     nho.da = nho.da || {};      // da hoi trong buoi:  loai|id
     nho.luot = nho.luot || {};  // da hoi trong luot cua em nay: id
     nho.loai = nho.loai || {};  // so lan moi dang cau trong luot nay
+    nho.nd = nho.nd || {};      // noi dung (tu / cau) da hoi trong buoi — xem ndCua
     // nho.phu (tu lop.js): { co(zh), ghi(zh) } — tu da hoi tren lop (ca tro choi, ca cac buoi truoc)
     return nho;
   }
@@ -243,13 +268,19 @@
     tiers.forEach(function (list, ti) {
       list.forEach(function (x) {
         var tu = phu ? tuCuaMuc(x) : '';
-        var w = (nho.luot[x.id] ? 0 : 4) + (nho.da[loai + '|' + x.id] ? 0 : 2) + (tu && !phu.co(tu) ? 3 : 0) +
+        // noi dung chua hoi trong buoi (khong lap tu / cau du khac dang) duoc uu tien nhat
+        var lap = ndCua(x).some(function (k) { return nho.nd[k]; });
+        // nho.moi (lop.js): diem them cho noi dung chua chieu trong buoi / chua chieu bao gio — choi lai ra cau khac
+        var w = (lap ? 0 : 5) + (nho.moi ? nho.moi(ndCua(x)) : 0) + (nho.luot[x.id] ? 0 : 4) + (nho.da[loai + '|' + x.id] ? 0 : 2) + (tu && !phu.co(tu) ? 3 : 0) +
           (ti === 0 ? 1 : ti === 1 ? 0.5 : 0) + Math.random() * 0.9;
         if (w > bw) { bw = w; best = x; }
       });
     });
     if (best) {
       nho.da[loai + '|' + best.id] = 1; nho.luot[best.id] = 1;
+      // cuBuoi: noi dung da chieu trong buoi (vd. van truoc) — boCauDt bo qua, thu dang khac truoc khi phai lay lai
+      if (nho.moi && nho.moi(ndCua(best)) < 3) nho.cuBuoi = true;
+      ndCua(best).forEach(function (k) { if (nho.nd[k]) nho.lapNd = true; nho.nd[k] = 1; });
       var t = phu ? tuCuaMuc(best) : '';
       if (t) phu.ghi(t);
     }
@@ -458,13 +489,16 @@
   }
   // n cau, cac dang xen ke deu nhau; ds = danh sach dang (mac dinh LOAI_DT)
   function boCauDt(opt, n, ds) {
-    var P = chuanHoa(opt), nho = nhoSach({}), out = [], thay = {}, lan = 0;
-    while (out.length < n && lan < n * 4) {
+    var P = chuanHoa(opt), nho = nhoSach({ moi: typeof opt.moi === 'function' ? opt.moi : null }), out = [], thay = {}, lan = 0;
+    while (out.length < n && lan < n * 6 + 20) {
       lan++;
       var l = chonLoai(P, ds || LOAI_DT, nho);
       if (!l) break;
+      nho.lapNd = false; nho.cuBuoi = false;
       var q = taoCauP(P, l, nho);
-      if (!q || thay[q.key]) continue;
+      // khong lap: bo cau trung noi dung voi cau da co trong bo (cung tu hoi theo dang khac, cung cau o nguon khac)
+      // cau da chieu o van truoc: chi lay lai khi da thu het cac dang khac (lan > n * 3)
+      if (!q || thay[q.key] || nho.lapNd || (nho.cuBuoi && lan <= n * 3)) continue;
       var c = sangDt(P, q);
       if (!c || (c.opts && c.dung < 0)) continue;
       thay[q.key] = 1;
@@ -474,8 +508,10 @@
   }
   // So cau toi da lam duoc (de giao vien chon "Tat ca")
   function soCauDt(opt) {
-    var P = chuanHoa(opt);
-    return P.vocab.length * 2 + P.mcs.length + P.dien.length + P.sorts.length + Math.floor(P.vocab.length / 4);
+    var P = chuanHoa(opt), k = {};
+    // moi tu / moi cau chi hoi mot lan trong bo (xem ndCua) -> so noi dung khac nhau
+    P.vocab.concat(P.mcs, P.sorts).forEach(function (x) { var c = ndCua(x)[0]; if (c) k[c] = 1; });
+    return Object.keys(k).length;
   }
 
   var LOI = {

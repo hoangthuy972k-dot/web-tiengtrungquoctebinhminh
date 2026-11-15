@@ -331,7 +331,8 @@
     S.diem = [0, 0, 0, 0];
     S.mat = [false, false, false, false];
     S.luot = 0;
-    S.pool = tron(S.goc);
+    // khong lap cau: cau chua chieu / chieu lau nhat truoc (ca cac van truoc)
+    S.pool = window.LopKhongLap ? window.LopKhongLap.thuTu(S.goc) : tron(S.goc);
     S.pi = 0;
     S.doanDung = -1;
     S.tin = '';
@@ -414,7 +415,8 @@
     }
     S.so = '';
     clearTimeout(S.soT);
-    if (S.pi >= S.pool.length) { S.pool = tron(S.goc); S.pi = 0; }
+    if (S.pi >= S.pool.length) { S.pool = window.LopKhongLap ? window.LopKhongLap.thuTu(S.goc) : tron(S.goc); S.pi = 0; }
+    if (window.LopKhongLap) window.LopKhongLap.da(S.pool[S.pi]);
     S.q = chuanBi(S.pool[S.pi++]);
     S.qManh = n;
     S.qDa = false;

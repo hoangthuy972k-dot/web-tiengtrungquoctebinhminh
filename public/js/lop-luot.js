@@ -412,11 +412,14 @@
       var all = [];
       for (var i = 0; i < S.goc.length; i++) all.push(i);
       S.hang = tron(all);
+      // khong lap cau: cau chua chieu / chieu lau nhat lay truoc (hang lay tu cuoi); cau trung noi dung chi giu mot
+      if (window.LopKhongLap) S.hang = window.LopKhongLap.thuTu(S.goc).map(function (q) { return S.goc.indexOf(q); }).reverse();
       if (S.hang.length > 1 && S.hang[S.hang.length - 1] === S.cauCuoi) {
         var x = S.hang.pop(); S.hang.unshift(x);
       }
     }
     S.cauCuoi = S.hang.pop();
+    if (window.LopKhongLap) window.LopKhongLap.da(S.goc[S.cauCuoi]);
     return chuanBi(S.goc[S.cauCuoi]);
   }
   function cauDay(q) {

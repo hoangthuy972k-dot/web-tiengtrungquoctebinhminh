@@ -83,7 +83,8 @@
     var out = [], thay = {};
     function them(c) {
       if (!c) return;
-      var k = c.zh + '|' + c.opts.join('|');
+      // khong lap cau: cung noi dung (cau A/B/C cua bai va cau ngan hang Kiem tra bai cu cung mot cau / cung mot tu) chi giu mot
+      var k = window.LopKhongLap ? window.LopKhongLap.khoa(c) : c.zh + '|' + c.opts.join('|');
       if (thay[k]) return;
       thay[k] = 1; out.push(c);
     }
@@ -101,7 +102,12 @@
     if (S.tuDo) {
       S.cau = [];
       for (var i = 0; i < (S.soCau || 10); i++) S.cau.push({ tuDo: true, lenh: 'Cô đọc câu hỏi — cả lớp giơ thẻ', zh: '', ctx: '', why: '', opts: ['', '', '', ''], dung: -1 });
-    } else S.cau = tron(S.kho).slice(0, n);
+    } else {
+      // cau chua chieu / chieu lau nhat truoc — van sau khong ra lai bo cau van truoc khi kho con cau
+      var KL = window.LopKhongLap;
+      S.cau = (KL ? KL.thuTu(S.kho) : tron(S.kho)).slice(0, n);
+      if (KL) KL.ghi(S.cau);
+    }
   }
 
   /* ---------------- danh sach lop ---------------- */

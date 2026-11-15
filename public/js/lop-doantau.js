@@ -311,7 +311,9 @@
     var chua = tatCa.filter(function (i) { return !S.daDung[i]; });
     if (chua.length < K) { S.daDung = {}; chua = tatCa; }
     var ngan = [], dai = [];
-    tron(chua).forEach(function (i) {
+    // khong lap cau giua cac van: cau chua chieu / chieu lau nhat truoc (LopKhongLap, chi co tren trang /lop)
+    var KL = window.LopKhongLap;
+    (KL ? KL.thuTu(chua.map(function (i) { return S.goc[i]; })).map(function (q) { return S.goc.indexOf(q); }) : tron(chua)).forEach(function (i) {
       var q = S.goc[i];
       (doDai(q) <= 24 && dapCua(q).length <= 8 ? ngan : dai).push(i);
     });
@@ -323,6 +325,7 @@
     // thieu dap an khac nhau thi van lay them (kiem tra theo chu nen van dung)
     thu.concat(tron(tatCa)).forEach(function (i) { if (chon.length < K && chon.indexOf(i) < 0) chon.push(i); });
     chon.forEach(function (i) { S.daDung[i] = 1; });
+    if (KL) KL.ghi(chon.map(function (i) { return S.goc[i]; }));
     return chon.map(function (i) { return chuanBi(S.goc[i], i); });
   }
   function toaMoi(Q) {

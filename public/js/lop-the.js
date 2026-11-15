@@ -329,7 +329,10 @@
   function batDau() {
     if (!S.room) return;
     if (!S.hs.length) { var l = $('#ltLoi'); if (l) l.textContent = 'Chưa có thẻ nào — chọn danh sách lớp hoặc nhập số thẻ.'; return; }
-    S.cau = S.tuDo ? [] : tron(S.goc).slice(0, S.soCau > 0 ? S.soCau : S.goc.length).map(chuanCau);
+    // khong lap cau: cau chua chieu / chieu lau nhat truoc — choi lai khong ra lai bo cau van truoc khi con cau khac
+    var KL = window.LopKhongLap, bo = S.tuDo ? [] : (KL ? KL.thuTu(S.goc) : tron(S.goc)).slice(0, S.soCau > 0 ? S.soCau : S.goc.length);
+    if (KL) KL.ghi(bo);
+    S.cau = bo.map(chuanCau);
     S.kq = [];
     S.i = -1;
     tiep();

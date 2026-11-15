@@ -363,7 +363,10 @@
 
   function batDau() {
     var n = S.soCau && S.soCau < S.goc.length ? S.soCau : S.goc.length;
-    S.cau = tron(S.goc).slice(0, n).map(chuanBi);
+    // khong lap cau: cau chua chieu / chieu lau nhat truoc (choi lai ra bo cau khac khi kho con cau)
+    var KL = window.LopKhongLap, bo = (KL ? KL.thuTu(S.goc) : tron(S.goc)).slice(0, n);
+    if (KL) KL.ghi(bo);
+    S.cau = bo.map(chuanBi);
     S.i = 0;
     S.hp = HP;
     S.chan = 0;

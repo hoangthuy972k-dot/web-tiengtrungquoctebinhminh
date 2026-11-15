@@ -247,6 +247,11 @@
     for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; }
     return a;
   }
+  // Het bo cau, choi tiep vong moi (luot ban sau): xao lai nhung cau vua choi o cuoi vong truoc de sau — khong lap ngay cau vua hoi
+  function vongMoi(ds) {
+    var gan = (S.cau || []).slice(-Math.floor(ds.length / 2)), t = tron(ds);
+    return t.filter(function (x) { return gan.indexOf(x) < 0; }).concat(t.filter(function (x) { return gan.indexOf(x) >= 0; }));
+  }
   function docLS(k, d) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } }
   function ghiLS(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* bo qua */ } }
   function ngau(a, b) { return a + Math.random() * (b - a); }
@@ -641,7 +646,7 @@
       S.muc = 0; // cuoc dua ngoi sao: thang theo vong N cau, khong dung som
       S.vong = { n: +$('vdMuc').value || 5, tu: 0, so: 1 };
       // luot theo tung ban ma bai co it cau hon mot luot -> lap lai bo cau cho du
-      while (S.luot && S.cau.length < S.vong.n) S.cau = S.cau.concat(tron(ds));
+      while (S.luot && S.cau.length < S.vong.n) S.cau = S.cau.concat(vongMoi(ds));
       if (S.luot && S.tro !== 'ngoisao') S.lichSu = [];
       S.lichSu = [];
       S.i = 0; S.diem = 0; S.dung = 0; S.chuoi = 0; S.chuoiMax = 0;
@@ -1829,7 +1834,7 @@
     $('vdTen0').value = S.tenLuot;
     veLop();
     var tu = S.i + 1;
-    if (tu + S.vong.n > S.cau.length) S.cau = S.cau.concat(tron(dsCau.slice()));
+    if (tu + S.vong.n > S.cau.length) S.cau = S.cau.concat(vongMoi(dsCau.slice()));
     S.vong = { n: S.vong.n, tu: tu, so: S.vong.so + 1 };
     S.diem = 0; S.dung = 0; S.chuoi = 0; S.chuoiMax = 0;
     if (window.SaoGame && !lop) window.SaoGame.batDauVan();
@@ -1879,7 +1884,7 @@
     S.cap = null;
     veLop();
     var tu = S.i + 1;
-    if (tu + S.vong.n > S.cau.length) S.cau = S.cau.concat(tron(dsCau.slice()));
+    if (tu + S.vong.n > S.cau.length) S.cau = S.cau.concat(vongMoi(dsCau.slice()));
     S.vong = { n: S.vong.n, tu: tu, so: S.vong.so + 1 };
     S.p = [nguoiMoi(tenNgan(chon[0])), nguoiMoi(tenNgan(chon[1]))];
     S.tay = [null, null];

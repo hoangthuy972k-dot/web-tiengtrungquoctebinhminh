@@ -365,7 +365,10 @@
       f(cfg);
       return;
     }
-    S.ds = tron(S.goc).slice(0, soCauChon());
+    // khong lap cau: cau chua chieu / chieu lau nhat truoc (van sau ra cau khac khi kho con cau)
+    var KL = window.LopKhongLap;
+    S.ds = (KL ? KL.thuTu(S.goc) : tron(S.goc)).slice(0, soCauChon());
+    if (KL) KL.ghi(S.ds);
     S.ci = 0;
     S.diem = [0, 0, 0, 0];
     S.kq = [];

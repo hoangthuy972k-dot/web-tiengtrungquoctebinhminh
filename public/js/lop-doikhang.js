@@ -102,7 +102,10 @@
 
   function moPhong() {
     // bo cau tu ngan hang Kiem tra bai cu (da dung dinh dang cau-hoi.js) hoac cau trac nghiem cu
-    S.cau = S.dt ? tron(S.goc).slice(0, MAX_CAU) : tron(S.goc).slice(0, MAX_CAU).map(chuanCau);
+    // khong lap cau: cau chua chieu / chieu lau nhat truoc (tran sau khong ra lai bo cau tran truoc khi kho con cau)
+    var KL = window.LopKhongLap, bo = (KL ? KL.thuTu(S.goc) : tron(S.goc)).slice(0, MAX_CAU);
+    if (KL) KL.ghi(bo);
+    S.cau = S.dt ? bo : bo.map(chuanCau);
     return fetch('/api/dk/tao', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ cau: S.cau, nhan: S.nhan, giay: S.giay })

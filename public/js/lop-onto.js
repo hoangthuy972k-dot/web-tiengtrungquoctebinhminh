@@ -282,7 +282,9 @@
       // bai dang chon chua co dang nay (vd. chua co cau xep) -> them cau hon hop
       return Promise.resolve(lay(n, null)).then(function (r2) {
         S.ghiChu = 'Các bài đang chọn có ít câu dạng «' + LOAI[S.cfg.loai].ten.replace(/^\S+\s/, '') + '» — thêm câu hỗn hợp.';
-        return r.concat((r2 || []).filter(hopLe));
+        // khong lap: bo cau hon hop co the trung cau voi bo dang tren
+        var all = r.concat((r2 || []).filter(hopLe));
+        return window.LopKhongLap ? window.LopKhongLap.loc(all) : all;
       });
     }).catch(function () { return []; });
   }

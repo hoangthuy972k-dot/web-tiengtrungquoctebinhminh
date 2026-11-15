@@ -154,7 +154,7 @@
     state.lessons.forEach(function (l) {
       if (state.picked[l.url]) out = out.concat(l.judges);
     });
-    return out;
+    return locTrung(out); // khong lap cau: cau trung noi dung (o hai bai / hai nguon) chi giu mot
   }
   /* ---------------- tro choi khong hien pinyin ----------------
      Co yeu cau: moi tro choi chi co chu Han (va tieng Viet). Goi y / giai thich trong
@@ -230,13 +230,53 @@
     return (h >>> 0).toString(36);
   }
   function maTu(zh) { return bam('t' + zh); }
-  function maMuc(x) {
+  /* Khoa NOI DUNG cua mot cau (khong lap cau — yeu cau co giao 2026-11): chi tinh chu Han + so, bo dau cau / khoang trang.
+     Cung mot cau o hai nguon (bai tap rieng, ngu phap, bai khoa, cau dich…) hay khac cho trong -> cung khoa.
+     Cau tu vung «我» nghia la gi? / «tôi» — chu Han la gi? -> khoa theo TU duoc hoi (trung khoa voi tu vung cung tu). */
+  function chuHan(s) { return (String(s == null ? '' : s).match(/[㐀-鿿0-9]/g) || []).join(''); }
+  function khoaNd(x) {
     if (!x) return '';
-    if (x.options && typeof x.answer === 'number') return bam('m' + (x.pre || '') + x.options[x.answer] + (x.post || ''));
-    if (x.sentence) return bam('j' + x.sentence);
-    if (x.words && x.answer) return bam('s' + x.answer);
-    if (x.zh) return maTu(x.zh); // tu vung, cau dich
+    if (x.options && typeof x.answer === 'number') {
+      var dung = String(x.options[x.answer] == null ? '' : x.options[x.answer]);
+      if (x.src === 'tu') { var g = /^«([^»]+)»/.exec(x.pre || ''); return 't' + (g && /[㐀-鿿]/.test(g[1]) ? g[1] : dung).trim(); }
+      // dap an khong co chu Han (tieng Viet, dau cau): khoa theo nguyen de + dap an
+      if (!chuHan(dung)) return 'm' + (x.pre || '') + '＿' + (x.post || '') + '|' + dung;
+      if (x.noBlank) { var hp = chuHan(x.pre); return hp ? 'q' + hp + '|' + chuHan(dung) : 'c' + chuHan(dung); }
+      return 'c' + chuHan((x.pre || '') + dung + (x.post || ''));
+    }
+    // cau dung/sai giu dau cau (co cau sai chi vi dau cau: 不要看手机，了。)
+    if (x.sentence) return 'j' + String(x.sentence).replace(/\s+/g, '').replace(/,/g, '，').replace(/\?/g, '？').replace(/!/g, '！');
+    if (x.words && x.answer) return 'c' + (chuHan(x.answer) || x.answer);
+    // Cau dang dien thoai / the giay (_boCauDt): { zh, opts, dung } · xep { k:'xep', dap } · noi { k:'noi', trai }
+    if (x.k === 'xep' && x.dap) return 'c' + (chuHan(x.dap) || x.dap);
+    if (x.k === 'noi' && x.trai) return 'n' + [].concat(x.trai).join('|');
+    if (x.opts && typeof x.dung === 'number') {
+      var dd = String(x.opts[x.dung] == null ? '' : x.opts[x.dung]), zh = String(x.zh || x.hoi || '');
+      var gg = /^«([^»]+)»/.exec(zh);
+      if (gg) zh = gg[1]; // cau tu vung / cau dich cua bai: «…» nghia la gi?
+      if (/＿/.test(zh)) return 'c' + (chuHan(zh.replace(/＿+/, dd)) || zh + dd);
+      var hz = chuHan(zh), hd = chuHan(dd);
+      if (!hd) return 't' + zh.trim();                       // hoi nghia cua tu
+      if (!hz) return hd.length <= 4 ? 't' + dd.trim() : 'c' + hd; // hoi chu Han cua nghia / chon cau dich
+      return 'q' + hz + '|' + hd;
+    }
+    if (x.zh) return 't' + x.zh; // tu vung, cau dich
     return '';
+  }
+  function maMuc(x) {
+    var k = khoaNd(x);
+    return k ? bam(k) : '';
+  }
+  // Bo cau trung noi dung (giu cau dau tien — bai truoc, nguon dau)
+  function locTrung(list) {
+    var thay = {};
+    return (list || []).filter(function (x) {
+      var k = khoaNd(x);
+      if (!k) return true;
+      if (thay[k]) return false;
+      thay[k] = 1;
+      return true;
+    });
   }
   function daDs() {
     if (!daCache) { try { daCache = JSON.parse(localStorage.getItem(DA_KEY) || '{}') || {}; } catch (e) { daCache = {}; } }
@@ -246,33 +286,59 @@
     clearTimeout(luuHen);
     luuHen = setTimeout(function () { try { localStorage.setItem(DA_KEY, JSON.stringify(daCache)); } catch (e) { /* bo qua */ } }, 300);
   }
-  function ghiMa(k) { var d = daDs(); if (k && !d[k]) { d[k] = 1; luuDa(); } }
+  // Ghi so thu tu lan chieu gan nhat (d._n tang dan) -> xao bai theo "lau chua chieu nhat truoc" (LRU)
+  function ghiMa(k) { var d = daDs(); if (k) { d[k] = d._n = (d._n || 1) + 1; luuDa(); } }
+  // Cau da chieu trong lan mo trang nay (rieng tung cap) — de biet khi nao het cau moi trong buoi
+  var phien = {};
   function daChieu(x) {
     if (!x) return;
-    ghiMa(maMuc(x));
-    // cau hoi tu vung «我» nghia la gi? / «tôi» — chu Han la gi? -> tinh luon la da hoi tu do
-    if (x.src === 'tu' && x.options) {
-      var m = /^«([^»]+)»/.exec(x.pre || '');
-      ghiMa(maTu(m && /[㐀-鿿]/.test(m[1]) ? m[1] : x.options[x.answer]));
-    }
+    // cau hoi tu vung «我» nghia la gi? / «tôi» — chu Han la gi? co khoa = maTu(tu) -> tinh luon la da hoi tu do
+    var k = maMuc(x);
+    ghiMa(k);
+    if (k) (phien[state.level] || (phien[state.level] = {}))[k] = 1;
   }
+  // Xao bai: cau chua chieu truoc, roi cau chieu lau nhat truoc (khong boc lai cau vua choi khi con cau khac);
+  // cau trung noi dung chi giu mot. Het kho thi tu vong lai (cau chieu lau nhat len dau).
   function xaoMoi(list) {
-    list = list || [];
-    var d = daDs(), moi = [], cu = [];
-    list.forEach(function (x) { (d[maMuc(x)] ? cu : moi).push(x); });
-    if (!moi.length && cu.length) {
-      list.forEach(function (x) { delete d[maMuc(x)]; });
-      luuDa();
-      return shuffle(list);
-    }
-    return shuffle(moi).concat(shuffle(cu));
+    var d = daDs();
+    return shuffle(locTrung(list)).map(function (x) { return { x: x, s: d[maMuc(x)] || 0 }; })
+      .sort(function (a, b) { return a.s - b.s; }).map(function (o) { return o.x; });
   }
-  // Boc n cau cho tro / de co dinh: uu tien cau chua hoi, ghi lai la da hoi
+  // Boc n cau cho tro / de co dinh: uu tien cau chua hoi, ghi lai la da hoi.
+  // Ghi nguoc (cau cuoi bo ghi truoc): tro choi chi choi mot phan bo thi cau chua choi toi van duoc boc truoc lan sau.
   function boc(list, n) {
     var r = xaoMoi(list).slice(0, n);
-    r.forEach(daChieu);
+    r.slice().reverse().forEach(daChieu);
     return r;
   }
+  /* Dung chung cho cac tro o file rieng (lop-chuong.js, lop-the.js, lop-zombie.js…): boc KHONG LAP cau.
+     boc(ds, n): n cau khac noi dung, cau chua chieu / chieu lau nhat truoc (nho theo cap, ca cac tro, ca cac buoi);
+     thuTu(ds): ca bo theo thu tu do (khong ghi); da(q): ghi cau vua chieu; ghi(ds): ghi ca bo da lay tu thuTu; loc(ds): bo cau trung; khoa(q): khoa noi dung;
+     vongMoi(ds, n): true neu kho khong con du n cau chua chieu trong buoi (lan mo trang nay) -> tro nhieu vong co the bao "het cau moi, quay lai cau cu". */
+  // Cho ngan hang Kiem tra bai cu (_boCauDt): diem uu tien cua noi dung (khoa ndCua) — chua chieu trong buoi +3, chua chieu bao gio +1
+  function moiDt(ks) {
+    var p = phien[state.level] || {}, d = daDs(), trongBuoi = false, daCo = false;
+    (ks || []).forEach(function (k) {
+      var m = bam(k.charAt(0) === 'c' ? 'c' + (chuHan(k.slice(1)) || k.slice(1)) : k);
+      if (p[m]) trongBuoi = true;
+      if (d[m]) daCo = true;
+    });
+    return (trongBuoi ? 0 : 3) + (daCo ? 0 : 1);
+  }
+  window.LopKhongLap = {
+    boc: function (ds, n) { return boc(ds, n == null ? (ds || []).length : n); },
+    thuTu: xaoMoi,
+    da: daChieu,
+    // ghi ca mot bo vua boc (ghi nguoc nhu boc)
+    ghi: function (ds) { (ds || []).slice().reverse().forEach(daChieu); },
+    loc: locTrung,
+    khoa: khoaNd,
+    vongMoi: function (ds, n) {
+      var p = phien[state.level] || {}, moi = 0;
+      locTrung(ds).forEach(function (x) { if (!p[maMuc(x)]) moi++; });
+      return moi < (n || 1);
+    }
+  };
   // Cho Kiem tra bai cu: tu nao da hoi (trong tro choi hoac luot truoc)
   var phuTu = {
     co: function (zh) { return !!daDs()[maTu(zh)]; },
@@ -314,9 +380,9 @@
       if (state.picked[l.url]) out = out.concat(l.mcs || []);
     });
     // cau hoi ve phat am (dap an / de bai la pinyin) khong dung cho tro choi
-    return out.filter(function (q) {
+    return locTrung(out.filter(function (q) {
       return !PY_RIENG.test((q.options || []).join(' ') + ' ' + (q.pre || '') + ' ' + (q.post || ''));
-    }).map(boPyMc);
+    })).map(boPyMc);
   }
   // Cau dich cho Kiem tra bai cu: cua cac bai dang chon + cac bai TRUOC do trong cap (on lai).
   // Moi cau co cu = [[tu, so bai], ...] la tu cua bai truoc dung lai trong cau.
@@ -338,7 +404,7 @@
     state.lessons.forEach(function (l) {
       if (state.picked[l.url]) out = out.concat(l.sorts || []);
     });
-    return out;
+    return locTrung(out);
   }
 
   // Ten cac bai dang chon, vi du "Bài 1" hoac "Bài 1, 3, 7"
@@ -684,11 +750,13 @@
   /* ---------------- tro: bat loi sai tiep suc ---------------- */
   function dealRows() {
     var pool = pickedJudges();
-    var wrong = shuffle(pool.filter(function (q) { return !q.isCorrect; }));
-    var right = shuffle(pool.filter(function (q) { return q.isCorrect; }));
+    // vong sau khong lap cau vong truoc: cau chua chieu / chieu lau nhat truoc
+    var wrong = xaoMoi(pool.filter(function (q) { return !q.isCorrect; }));
+    var right = xaoMoi(pool.filter(function (q) { return q.isCorrect; }));
     // 5 cau: 3 sai + 2 dung, thieu ben nao thi bu ben kia
     var rows = wrong.slice(0, 3).concat(right.slice(0, 2));
     if (rows.length < 5) rows = rows.concat(wrong.slice(3), right.slice(2)).slice(0, 5);
+    rows.forEach(daChieu);
     state.rows = shuffle(rows);
     state.revealed = {};
   }
@@ -1639,9 +1707,10 @@
   // dien tu, xep cau keo tha, noi tu — khong lay cau dich). Thieu du lieu thi dung cau trac nghiem cu.
   function cauDienThoai(n) {
     return loadPickedVocab().then(function (v) {
+      // khong lap: trong bo khong trung tu / cau; choi lai uu tien cau chua chieu trong buoi (moiDt), ghi lai bo vua boc
       var ds = window.LopKiemTra && window.LopKiemTra._boCauDt
-        ? window.LopKiemTra._boCauDt({ vocab: v.map(boPy), mcs: pickedMcs(), sorts: pickedSorts() }, n) : [];
-      if (ds.length) return ds;
+        ? window.LopKiemTra._boCauDt({ vocab: v.map(boPy), mcs: pickedMcs(), sorts: pickedSorts(), moi: moiDt }, n) : [];
+      if (ds.length) { window.LopKhongLap.ghi(ds); return ds; }
       return boc(pickedMcs(), n).map(function (q) {
         var thu = shuffle(q.options.map(function (_, i) { return i; }));
         return { zh: q.pre + (q.noBlank ? '' : '＿＿') + q.post, ctx: q.context || '', why: q.why || '',
@@ -1875,7 +1944,7 @@
     var pool = state.tileFace === 'em'
       ? vocab.filter(function (v) { return v.em; })
       : vocab.filter(function (v) { return /^[一-鿿]{1,4}$/.test(v.zh); });
-    state.tileWord = shuffle(pool.length ? pool : vocab)[0];
+    state.tileWord = boc(pool.length ? pool : vocab, 1)[0]; // tu chua doan / doan lau nhat truoc — van sau khong ra lai tu vua doan
     var marks = shuffle([1, 1, 1, 1, 1, 1, 'bonus', 'bonus', 'skip']);
     state.tiles = marks.map(function (m) { return { open: false, mark: m }; });
     state.tileShown = false;
@@ -2086,10 +2155,11 @@
 
   /* ---------------- tro: doan chu qua bo thu ---------------- */
   function dealHanzi(vocab) {
-    var pool = [];
+    var pool = [], thayC = {};
     vocab.forEach(function (v) {
       (v.hanzi || []).forEach(function (h) {
-        if (h && h.c && (h.rad || h.tip)) pool.push({ h: h, vn: v.vn });
+        // mot chu o nhieu tu (你 trong 你好, 你们) chi hoi mot lan
+        if (h && h.c && (h.rad || h.tip) && !thayC[h.c]) { thayC[h.c] = 1; pool.push({ h: h, vn: v.vn }); }
       });
     });
     state.deck = shuffle(pool);
@@ -2786,11 +2856,23 @@
     return a;
   }
 
+  // Luot sau khong lap am / tu cua luot truoc khi kho con: am chua kiem tra truoc, het kho moi quay vong
+  function paBoc(kho) {
+    var da = state.paDa || (state.paDa = {}), k = function (t) { return (t.zh || '') + '|' + t.py; };
+    var x = shuffle(kho), bo = x.filter(function (t) { return !da[k(t)]; });
+    if (bo.length < paSoTu) {
+      state.paDa = da = {};
+      bo = bo.concat(x.filter(function (t) { return bo.indexOf(t) < 0; }));
+    }
+    bo = bo.slice(0, paSoTu);
+    bo.forEach(function (t) { da[k(t)] = 1; });
+    return bo;
+  }
   function paBoMoi() {
     var kho = paKho();
     return {
       luot: (state.pa ? state.pa.luot : 0) + 1,
-      bo: shuffle(kho).slice(0, paSoTu),
+      bo: paBoc(kho),
       ket: paTrong(),
       hien: false,
       de: null,
@@ -3117,9 +3199,10 @@
     // bo nhung cau Dung/Sai hay xep tu co cung noi dung voi cau da chon.
     var used = {};
     mcs.slice(0, nMc).forEach(function (q) {
-      used[String((q.pre || '') + q.options[q.answer] + (q.post || '')).replace(/\s/g, '')] = 1;
+      used[chuHan((q.pre || '') + q.options[q.answer] + (q.post || ''))] = 1;
     });
-    function fresh(text) { return !used[String(text || '').replace(/\s/g, '')]; }
+    // so theo chu Han (bo dau cau): cau xep / dung-sai cung cau voi cau trac nghiem da chon thi bo
+    function fresh(text) { var k = chuHan(text); return !k || !used[k]; }
     sorts = sorts.filter(function (q) { return fresh(q.answer); });
     judges = judges.filter(function (q) { return fresh(q.sentence) && fresh(q.fix); });
     nSort = Math.min(sorts.length, nSort);
@@ -3324,7 +3407,9 @@
       if (!ds) return cauDienThoai(n);
       return loadPickedVocab().then(function (v) {
         var kt = window.LopKiemTra;
-        return kt && kt._boCauDt ? kt._boCauDt({ vocab: v.map(boPy), mcs: pickedMcs(), sorts: pickedSorts() }, n, ds) : [];
+        var r = kt && kt._boCauDt ? kt._boCauDt({ vocab: v.map(boPy), mcs: pickedMcs(), sorts: pickedSorts(), moi: moiDt }, n, ds) : [];
+        window.LopKhongLap.ghi(r);
+        return r;
       });
     } });
   }

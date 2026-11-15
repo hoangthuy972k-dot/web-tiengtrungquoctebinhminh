@@ -223,8 +223,10 @@
     }).catch(function (e) { alert(e.message); });
   }
   function rutCau() {
-    if (!S.deck.length) S.deck = tron(S.goc);
+    // khong lap cau: hang lay tu cuoi -> cau chua chieu / chieu lau nhat nam cuoi hang
+    if (!S.deck.length) S.deck = window.LopKhongLap ? window.LopKhongLap.thuTu(S.goc).reverse() : tron(S.goc);
     var q = S.deck.pop();
+    if (window.LopKhongLap) window.LopKhongLap.da(q);
     // toi da 4 lua chon: dap an dung + 3 lua chon khac, tron thu tu
     var khac = tron(q.options.map(function (o, i) { return i; }).filter(function (i) { return i !== q.answer; })).slice(0, 3);
     var thu = tron(khac.concat([q.answer]));

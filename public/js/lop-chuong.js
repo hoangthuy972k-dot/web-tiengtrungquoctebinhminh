@@ -866,7 +866,10 @@
     var n = soCauChon();
     if (S.tuDo) { S.cau = []; for (var k = 0; k < n; k++) S.cau.push(cauTuDo()); S.du = []; }
     else {
-      var xao = tron(S.goc);
+      // khong lap cau: cau chua chieu / chieu lau nhat truoc (Choi lai khong ra lai cau van truoc khi con cau khac)
+      var KL = window.LopKhongLap;
+      var xao = KL ? KL.thuTu(S.goc) : tron(S.goc);
+      if (KL) KL.ghi(xao.slice(0, n));
       S.cau = xao.slice(0, n).map(chuanCau);
       S.du = xao.slice(n); // cau con lai de lam cau cuu tro
     }
@@ -1075,8 +1078,11 @@
   }
   function cauCuu() {
     if (S.tuDo) return cauTuDo();
-    if (S.du.length) return S.du.shift();
-    return chuanCau(S.goc[Math.floor(Math.random() * S.goc.length)]); // het cau du phong: lay lai mot cau (tron lai dap an)
+    var KL = window.LopKhongLap;
+    if (S.du.length) { if (KL) KL.da(S.du[0]); return S.du.shift(); }
+    // het cau du phong: lay lai cau chieu lau nhat (tron lai dap an)
+    if (KL) { var c = KL.boc(S.goc, 1)[0]; if (c) return chuanCau(c); }
+    return chuanCau(S.goc[Math.floor(Math.random() * S.goc.length)]);
   }
   function batDauCuu() {
     if (coTheCuu()) return;

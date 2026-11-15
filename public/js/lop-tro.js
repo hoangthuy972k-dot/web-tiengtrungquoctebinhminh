@@ -205,7 +205,8 @@
   // Doan tau: uu tien cau ngan, dap an khac nhau (giong lop-doantau.js chonCau)
   function chonTau(ds, K) {
     var ngan = [], dai = [];
-    tron(ds).forEach(function (q) {
+    // cau chua chieu / chieu lau nhat truoc (khong lap cau giua cac van)
+    (window.LopKhongLap ? window.LopKhongLap.thuTu(ds) : tron(ds)).forEach(function (q) {
       (String(q.pre || '').length + String(q.post || '').length <= 24 && dapCua(q).length <= 8 ? ngan : dai).push(q);
     });
     var thu = ngan.concat(dai), chon = [], daCo = {};
@@ -215,11 +216,15 @@
   }
   function boCau() {
     if (S.tro === 'bay') {
-      return tron(S.goc).slice(0, Math.max(2, Math.min(S.cfg.so || 8, 100))).map(function (q) {
+      var KL = window.LopKhongLap, bo = (KL ? KL.thuTu(S.goc) : tron(S.goc)).slice(0, Math.max(2, Math.min(S.cfg.so || 8, 100)));
+      if (KL) KL.ghi(bo);
+      return bo.map(function (q) {
         return { words: q.words, answer: q.answer, context: q.context || '', why: q.why || '' };
       });
     }
-    return chonTau(S.goc, Math.max(2, Math.min(7, (S.cfg.soToa || 6) - 1))).map(function (q) {
+    var tau = chonTau(S.goc, Math.max(2, Math.min(7, (S.cfg.soToa || 6) - 1)));
+    if (window.LopKhongLap) window.LopKhongLap.ghi(tau);
+    return tau.map(function (q) {
       return { pre: q.pre || '', post: q.post || '', options: q.options, answer: q.answer, noBlank: !!q.noBlank, context: q.context || '', why: q.why || '' };
     });
   }

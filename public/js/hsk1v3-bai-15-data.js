@@ -2096,30 +2096,30 @@ var matchData = [
 // PHẦN 2 · NGHE — nghe câu (giọng đọc máy) → chọn đáp án
 // ══════════════════════════════════════════
 var listenData = [
-  {audio:'我喜欢吃饺子，也喜欢吃包子。',
+  {audio:'这个菜我爱吃，那个菜我不爱吃。',
    questions:[
-     {q:'Người nói thích ăn gì?', opts:['Chỉ sủi cảo', 'Sủi cảo và bánh bao', 'Mì sợi'], ans:1, exp:'……，也…… = … , cũng …: thích cả sủi cảo lẫn bánh bao.'},
+     {q:'Người nói không thích món nào?', opts:['Món này', 'Món kia', 'Cả hai món'], ans:1, exp:'那个菜我不爱吃 = món kia tôi không thích ăn.'},
    ]},
-  {audio:'坐飞机到北京要九个小时。',
+  {audio:'坐飞机到西安要两个小时，坐火车要五个小时。',
    questions:[
-     {q:'Bay đến Bắc Kinh mất bao lâu?', opts:['9 tiếng', '9 giờ sáng', '2 tiếng'], ans:0, exp:'要 + 九个小时 = mất 9 tiếng; 九点 mới là 9 giờ.'},
+     {q:'Đi tàu hỏa đến Tây An mất bao lâu?', opts:['5 tiếng', '2 tiếng', '7 tiếng'], ans:0, exp:'坐火车要五个小时 = đi tàu mất 5 tiếng; máy bay mới mất 2 tiếng.'},
    ]},
-  {audio:'去年我去了西安，今年我想去北京。',
+  {audio:'我男朋友是西安人，明年我们想去西安看他的家人。',
    questions:[
-     {q:'Năm nay người nói muốn đi đâu?', opts:['Tây An', 'Sân bay', 'Bắc Kinh'], ans:2, exp:'去年 (năm ngoái) đã đi Tây An; 今年 (năm nay) muốn đi Bắc Kinh.'},
+     {q:'Sang năm họ muốn làm gì?', opts:['Đi Bắc Kinh chơi', 'Ở nhà nghỉ ngơi', 'Đi Tây An thăm người nhà bạn trai'], ans:2, exp:'去西安看他的家人 = đi Tây An thăm người nhà anh ấy.'},
    ]},
-  {audio:'星期天我有时间，我去机场接你们。',
+  {audio:'明天早上七点我去机场接妈妈，她的飞机七点半到。',
    questions:[
-     {q:'Khi nào người nói rảnh?', opts:['Thứ Bảy', 'Chủ nhật', 'Hôm nay'], ans:1, exp:'星期天 = Chủ nhật; 有时间 = có thời gian, rảnh.'},
-     {q:'Người nói sẽ làm gì?', opts:['Đi sân bay đón các bạn', 'Đi máy bay', 'Ở nhà nghỉ ngơi'], ans:0, exp:'去机场接你们 = đi sân bay đón các bạn.'},
+     {q:'Máy bay của mẹ đến lúc mấy giờ?', opts:['7 giờ', '7 giờ rưỡi', '8 giờ'], ans:1, exp:'飞机七点半到 = máy bay 7 giờ rưỡi đến; 7 giờ là lúc người nói đi.'},
+     {q:'Người nói đi sân bay làm gì?', opts:['Đón mẹ', 'Đi máy bay', 'Mua đồ'], ans:0, exp:'去机场接妈妈 = đi sân bay đón mẹ.'},
    ]},
-  {audio:'这家店的菜很好吃，还很便宜。',
+  {audio:'这个饭店的饺子很好吃，还不贵。',
    questions:[
-     {q:'Món ăn của quán thế nào?', opts:['Ngon nhưng đắt', 'Không ngon', 'Ngon và còn rẻ'], ans:2, exp:'……，还很便宜 = …, còn rẻ nữa; 还 thêm một ý cùng chiều.'},
+     {q:'Sủi cảo ở nhà hàng này thế nào?', opts:['Ngon nhưng đắt', 'Không ngon', 'Ngon mà còn không đắt'], ans:2, exp:'……，还不贵 = …, lại còn không đắt; 还 thêm một ý cùng chiều.'},
    ]},
-  {audio:'你们可以住我家。那太好了！谢谢！',
+  {audio:'——外边下雨了。——那我们不去超市了，在家吃饭吧。',
    questions:[
-     {q:'Người thứ hai cảm thấy thế nào?', opts:['Rất vui', 'Không vui', 'Hơi mệt'], ans:0, exp:'那太好了！= vậy thì tuyệt quá!'},
+     {q:'Trời mưa, họ quyết định thế nào?', opts:['Vẫn đi siêu thị', 'Ở nhà ăn cơm', 'Đi nhà hàng'], ans:1, exp:'那 = vậy thì; 不去超市了，在家吃饭吧 = không đi siêu thị nữa, ăn ở nhà.'},
    ]},
 ];
 
@@ -2127,23 +2127,17 @@ var listenData = [
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'你们爱吃', blank:'哪个', post:'菜？', hint:'(… nào — 哪 + lượng từ)', ans:'哪个', exp:'哪 + 个 + danh từ = … nào: 哪个菜 = món nào.'},
-  {pre:'我喜欢这个，', blank:'也', post:'喜欢那个。', hint:'(cũng)', ans:'也', exp:'Vế sau dùng 也 trước động từ: …，也喜欢那个; không đẩy 也 xuống cuối câu.'},
-  {pre:'去年我和', blank:'男朋友', post:'去了西安。', hint:'(bạn trai)', ans:'男朋友', exp:'男朋友 = bạn trai; 女朋友 = bạn gái.'},
-  {pre:'你们的飞机到北京要几个', blank:'小时', post:'？', hint:'(tiếng đồng hồ)', ans:'小时', exp:'Thời lượng dùng 小时 (tiếng): 几个小时; 点 chỉ thời điểm.'},
-  {pre:'她可以去机场', blank:'接', post:'你们。', hint:'(đón)', ans:'接', exp:'去机场接你们: động từ sau (接) nói mục đích của việc đi.'},
-  {pre:'我们星期日早上八点到机场，早不', blank:'早', post:'？', hint:'(sớm — câu hỏi chính phản)', ans:'早', exp:'Câu hỏi chính phản với tính từ: 早不早？ — không thêm 吗.'},
-  {pre:'这些菜都好吃，', blank:'还', post:'很好看。', hint:'(còn … nữa — 1 chữ, không phải 也)', ans:'还', exp:'还 + vị ngữ ở vế sau = còn … nữa, thêm một ý cùng chiều.'},
-  {pre:'前几年我去了西安，非常', blank:'好玩儿', post:'。', hint:'(vui, thú vị)', ans:'好玩儿', exp:'好玩儿 = vui, thú vị (nơi chốn, trò chơi).'},
-  {pre:'A: “我今天很忙。” — B: “', blank:'那', post:'我们明天见吧。”', hint:'(vậy thì)', ans:'那', exp:'那 đứng đầu câu = vậy thì, nối tiếp ý người kia vừa nói.'},
-  {pre:'星期天我姐姐有', blank:'时间', post:'，她可以去机场接你们。', hint:'(thời gian)', ans:'时间', exp:'有时间 = có thời gian, rảnh; 小时 là “tiếng đồng hồ”.'},
-  {pre:'你们也可以', blank:'住', post:'我家。', hint:'(ở)', ans:'住', exp:'住 + nơi chốn = ở (lưu trú): 住我家 = ở nhà tôi.'},
-  {pre:'我', blank:'家人', post:'都在北京。', hint:'(người nhà)', ans:'家人', exp:'家人 = người nhà; những người được nói tới đứng trước 都.'},
-  {pre:'Bạn rất thích ăn sủi cảo: “我', blank:'爱', post:'吃饺子。”', hint:'(thích, yêu — 1 chữ)', ans:'爱', exp:'爱 + động từ = rất thích làm gì: 爱吃饺子.'},
-  {pre:'坐火车到西安', blank:'要', post:'五个小时。', hint:'(mất — thời gian)', ans:'要', exp:'要 + thời lượng = mất (bao lâu): 要五个小时.'},
-  {pre:'我们坐', blank:'飞机', post:'去北京。', hint:'(máy bay)', ans:'飞机', exp:'坐 + phương tiện + 去 + nơi: 坐飞机去北京.'},
-  {pre:'我去年去了北京，', blank:'今年', post:'想去西安。', hint:'(năm nay)', ans:'今年', exp:'去年 = năm ngoái, 今年 = năm nay, 明年 = sang năm.'},
-  {pre:'Bạn hỏi giờ đến sân bay: “我们几点到', blank:'机场', post:'？”', hint:'(sân bay)', ans:'机场', exp:'机场 = sân bay; 到 + nơi chốn = đến nơi đó.'},
+  {pre:'A: “这三个苹果，你要', blank:'哪个', post:'？” — B: “我要那个大的。”', hint:'(cái nào)', ans:'哪个', exp:'哪 + 个 = cái nào, hỏi chọn một trong nhiều thứ; không thêm 吗.'},
+  {pre:'A: “今年我想去北京。” — B: “我', blank:'也', post:'想去。”', hint:'(cũng)', ans:'也', exp:'也 đứng sau chủ ngữ, trước 想 — không đặt cuối câu như “cũng … nữa”.'},
+  {pre:'这件衣服很漂亮，', blank:'还', post:'很便宜。', hint:'(còn … nữa)', ans:'还', exp:'还 + vị ngữ ở vế sau = còn … nữa, thêm một ý tốt cùng chiều.'},
+  {pre:'昨天我睡了八个', blank:'小时', post:'。', hint:'(tiếng đồng hồ)', ans:'小时', exp:'Thời lượng dùng số + 个 + 小时; 八点 là thời điểm.'},
+  {pre:'我坐飞机到北京，谁来机场', blank:'接', post:'我？', hint:'(đón)', ans:'接', exp:'接 + người = đón ai; 来机场接我 = đến sân bay đón tôi.'},
+  {pre:'明天我们', blank:'早', post:'一点儿起床吧。', hint:'(sớm)', ans:'早', exp:'早一点儿 + động từ = làm gì sớm hơn một chút.'},
+  {pre:'西安非常', blank:'好玩儿', post:'，明年我还想去。', hint:'(vui, thú vị)', ans:'好玩儿', exp:'好玩儿 = vui, thú vị (nơi chốn, trò chơi); 非常 đứng trước tính từ.'},
+  {pre:'我很想我的', blank:'家人', post:'。', hint:'(người nhà)', ans:'家人', exp:'想 + người = nhớ ai; 家人 = người nhà.'},
+  {pre:'我妹妹很', blank:'爱', post:'唱歌。', hint:'(thích — 1 chữ)', ans:'爱', exp:'爱 + động từ = rất thích làm gì: 爱唱歌.'},
+  {pre:'做这个菜', blank:'要', post:'一个小时。', hint:'(mất — thời gian)', ans:'要', exp:'要 + thời lượng = mất (bao lâu).'},
+  {pre:'我哥哥', blank:'去年', post:'上了大学，现在很忙。', hint:'(năm ngoái)', ans:'去年', exp:'去年 = năm ngoái, đặt trước động từ; 今年 = năm nay, 明年 = sang năm.'},
 ];
 
 // ══════════════════════════════════════════
@@ -2158,31 +2152,23 @@ var sortData = [
   {words:['那','我们','和','您','姐姐','在','大兴机场','见','！'], ans:'那我们和您姐姐在大兴机场见！', audio:'那我们和您姐姐在大兴机场见！'},
   {words:['我','喜欢','这个','，','也','喜欢','那个','。'], ans:'我喜欢这个，也喜欢那个。', audio:'我喜欢这个，也喜欢那个。'},
   {words:['这些','菜','都','好吃','，','还','很','好看','。'], ans:'这些菜都好吃，还很好看。', audio:'这些菜都好吃，还很好看。'},
-  {words:['我','会','说','汉语','，','也','会','写','汉字','。'], ans:'我会说汉语，也会写汉字。', audio:'我会说汉语，也会写汉字。'},
-  {words:['我','买','了','苹果','，','还','买','了','牛奶','。'], ans:'我买了苹果，还买了牛奶。', audio:'我买了苹果，还买了牛奶。'},
-  {words:['你们','也','可以','住','我','家','。'], ans:'你们也可以住我家。', audio:'你们也可以住我家。'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3c · TRẮC NGHIỆM
 // ══════════════════════════════════════════
 var mcData = [
-  {q:'Bạn muốn nói: “Mình thích món này, cũng thích món kia.”', opts:['我喜欢这个，也喜欢那个。', '我喜欢这个，喜欢那个也。', '我喜欢这个，那个也喜欢我。', '也我喜欢这个，喜欢那个。'], ans:0, exp:'也 đứng ở vế sau, TRƯỚC động từ: …，也喜欢那个 — không đẩy 也 xuống cuối như tiếng Việt “nữa”.'},
-  {q:'Khen món ăn: ngon, còn đẹp mắt nữa: “这些菜都好吃，＿＿很好看。”', opts:['还', '都', '再', '在'], ans:0, exp:'还 + vị ngữ = còn … nữa (thêm ý cùng chiều); 再 là “lại, thêm lần nữa” cho hành động.'},
-  {q:'Cô Vương là người Bắc Kinh, Lý Văn cũng vậy: “王老师是北京人，李文＿＿是北京人。”', opts:['也', '还', '都', '再'], ans:0, exp:'Người thứ hai giống người thứ nhất dùng 也, đứng sau chủ ngữ 李文, trước 是.'},
-  {q:'Bạn muốn nói: “Tôi biết nói tiếng Trung, cũng biết viết chữ Hán.”', opts:['我会说汉语，也会写汉字。', '我会说汉语，会写汉字也。', '我会说汉语，也写会汉字。', '也我会说汉语，会写汉字。'], ans:0, exp:'也 đứng trước 会 (động từ năng nguyện) ở vế sau: 也会写汉字.'},
-  {q:'Câu nào SAI?', opts:['王老师是北京人，李文是北京人也。', '我买了苹果，还买了牛奶。', '我喜欢唱歌，也喜欢看电影。', '这儿的菜很好吃，还很便宜。'], ans:0, exp:'也 không đứng cuối câu: 李文也是北京人 — lỗi do dịch “cũng … nữa” theo tiếng Việt.'},
-  {q:'A: “坐飞机到北京要几个小时？” — B đáp:', opts:['要三个小时。', '三个小时要。', '要三点。', '要三个时间。'], ans:0, exp:'要 + thời lượng: 要三个小时; 三点 là thời điểm, 时间 không dùng với số đếm.'},
+  {q:'Câu nào SAI?', opts:['她是西安人，我是西安人也。', '我买了一本书，还买了两个杯子。', '我姐姐是医生，我也是医生。', '我爸爸爱看书，也爱看电视。'], ans:0, exp:'也 không đứng cuối câu: 我也是西安人 — lỗi do dịch “cũng … nữa” theo tiếng Việt.'},
+  {q:'Khen điện thoại của bạn: mới, còn đẹp nữa: “这个手机很新，＿＿很漂亮。”', opts:['还', '再', '在', '没'], ans:0, exp:'还 + vị ngữ = còn … nữa (thêm ý cùng chiều); 再 là “lại, thêm lần nữa” cho hành động.'},
+  {q:'Bạn muốn nói: “Anh ấy biết lái xe, cũng biết nấu cơm.”', opts:['他会开车，也会做饭。', '他会开车，会做饭也。', '他会开车，会也做饭。', '也他会开车，会做饭。'], ans:0, exp:'也 đứng TRƯỚC 会 (động từ năng nguyện) ở vế sau: 也会做饭.'},
+  {q:'Bạn muốn nói: “Đi taxi đến sân bay mất 40 phút.”', opts:['坐出租车到机场要四十分钟。', '坐出租车到机场四十分钟要。', '坐出租车要到机场四十分钟。', '要坐出租车到机场四十分钟。'], ans:0, exp:'要 + thời lượng đứng cuối: …到机场要四十分钟.'},
   {q:'Chủ nhật tôi rảnh: “星期天我有＿＿。”', opts:['时间', '小时', '点', '时候'], ans:0, exp:'有时间 = có thời gian, rảnh; 小时 là tiếng đồng hồ, 时候 là “lúc, khi”.'},
-  {q:'A: “你爱吃＿＿菜？” — B: “我爱吃饺子。”', opts:['哪个', '哪儿', '谁', '几'], ans:0, exp:'Hỏi “món nào” dùng 哪个 + danh từ; 哪儿 hỏi nơi chốn.'},
-  {q:'Bạn đi sân bay đón mẹ: “我去机场＿＿妈妈。”', opts:['接', '住', '来', '开'], ans:0, exp:'接 = đón; 去机场接妈妈: đi sân bay để đón mẹ.'},
-  {q:'Bạn mời bạn bè đến Bắc Kinh ở nhà mình:', opts:['你们可以住我家。', '你们可以接我家。', '你们可以家住我。', '你们住可以我家。'], ans:0, exp:'可以 + 住 + nơi chốn: 可以住我家.'},
-  {q:'A: “我们早上五点到机场，早不早？” — B thấy sớm quá:', opts:['太早了！', '太早！', '很太早了！', '早太了！'], ans:0, exp:'Khung 太 + tính từ + 了: 太早了; không thêm 很 trước 太.'},
+  {q:'Trong hiệu sách, bạn hỏi bạn mình: “Bạn muốn mua quyển nào?”', opts:['你想买哪本书？', '你想买哪本书吗？', '你想买哪儿书？', '哪本书你想买吗？'], ans:0, exp:'哪 + lượng từ (本) + danh từ = … nào; câu đã có 哪 thì không thêm 吗.'},
+  {q:'Bạn hỏi người bạn mới: “Bạn sống ở đâu?”', opts:['你住在哪儿？', '你住在哪儿吗？', '你哪儿住在？', '你在住哪儿？'], ans:0, exp:'住在 + nơi chốn = sống ở…; từ để hỏi 哪儿 đứng đúng chỗ nơi chốn, không thêm 吗.'},
+  {q:'Bạn hỏi bạn: “Bảy giờ sáng có sớm không?”', opts:['早上七点早不早？', '早上七点早不早吗？', '早上七点不早早？', '早上七点早吗不早？'], ans:0, exp:'Câu hỏi chính phản: tính từ + 不 + tính từ (早不早), không thêm 吗.'},
   {q:'A: “我明天没有时间。” — B đáp:', opts:['那我们星期天见吧。', '那里我们星期天见吧。', '这我们星期天见吧。', '那我们星期天见吗。'], ans:0, exp:'那 đứng đầu câu = vậy thì; 那里 là “chỗ kia”; hẹn nhau dùng 吧.'},
-  {q:'Bạn muốn nói: “Năm ngoái tôi đã đi Tây An.”', opts:['去年我去了西安。', '去年我了去西安。', '我去了去年西安。', '去年了我去西安。'], ans:0, exp:'Thời gian (去年) đứng đầu câu hoặc sau chủ ngữ; 了 đứng ngay sau động từ 去.'},
-  {q:'A: “北京怎么样？” — B đáp:', opts:['非常好玩儿，还很漂亮。', '非常好玩儿，很还漂亮。', '好玩儿非常，还很漂亮。', '非常好玩儿，还漂亮很。'], ans:0, exp:'还 đứng trước 很 + tính từ: 还很漂亮; 非常 đứng trước tính từ.'},
-  {q:'Bạn muốn nói: “Mấy năm trước tôi đã đi Bắc Kinh.”', opts:['前几年我去了北京。', '几前年我去了北京。', '前年几我去了北京。', '我去了北京前几年。'], ans:0, exp:'前几年 = mấy năm trước; cụm thời gian đứng trước động từ.'},
-  {q:'Bạn muốn nói: “Người nhà tôi đều ở Bắc Kinh.”', opts:['我家人都在北京。', '都我家人在北京。', '我家人在都北京。', '我家人在北京都。'], ans:0, exp:'都 đứng sau chủ ngữ (我家人), trước động từ 在.'},
+  {q:'Bạn muốn nói: “Năm ngoái tôi đã mua một cái máy tính.”', opts:['去年我买了一个电脑。', '去年我了买一个电脑。', '我买了去年一个电脑。', '去年了我买一个电脑。'], ans:0, exp:'去年 đứng đầu câu hoặc sau chủ ngữ; 了 đứng ngay sau động từ 买.'},
+  {q:'Bạn muốn nói: “Mấy năm trước chị tôi học ở Tây An.”', opts:['前几年我姐姐在西安学习。', '几前年我姐姐在西安学习。', '我姐姐在西安学习前几年。', '前年几我姐姐在西安学习。'], ans:0, exp:'前几年 = mấy năm trước (几 = vài); cụm thời gian đứng trước động từ.'},
 ];
 
 // ══════════════════════════════════════════
@@ -2191,21 +2177,21 @@ var mcData = [
 var speakingData = {
   intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời của bạn (nói về chính bạn).',
   questions: [
-    {q_zh: '你爱吃哪个菜？', q_vn: 'Bạn của bạn hỏi bạn thích ăn món nào. Hãy nói hai món bạn thích thật.',
-     hint: '我喜欢吃……，也喜欢吃……', sample: '我喜欢吃饺子，也喜欢吃面条儿。', sample_vn: 'Mình thích ăn sủi cảo, cũng thích ăn mì.',
+    {q_zh: '中国菜你爱吃哪个？', q_vn: 'Bạn của bạn hỏi bạn thích món Trung Quốc nào. Hãy nói hai món bạn thích thật.',
+     hint: '我爱吃……，也爱吃……', sample: '我爱吃饺子，也爱吃包子。', sample_vn: 'Mình thích ăn sủi cảo, cũng thích ăn bánh bao.',
      note: 'Câu ghép “……，也……”: 也 đứng trước động từ ở vế sau.'},
     {q_zh: '去年你去了哪儿？', q_vn: 'Bạn bè hỏi năm ngoái bạn đã đi đâu chơi. Hãy kể thật và nói thêm nơi đó thế nào.',
-     hint: '去年我去了……，非常……，还……', sample: '去年我去了北京，非常好玩儿，还很漂亮。', sample_vn: 'Năm ngoái mình đã đi Bắc Kinh, rất vui, lại còn rất đẹp.',
-     note: '去年 đặt đầu câu; 还 thêm một ý cùng chiều.'},
+     hint: '去年我和……去了……，那里……', sample: '去年我和家人去了泰国，那里很漂亮。', sample_vn: 'Năm ngoái mình và gia đình đã đi Thái Lan, ở đó rất đẹp.',
+     note: '去年 đặt đầu câu; 了 ngay sau động từ 去.'},
     {q_zh: '你家到学校要多少分钟？', q_vn: 'Bạn học hỏi từ nhà bạn đến trường mất bao lâu. Hãy trả lời thật.',
      hint: '坐……要……分钟。', sample: '坐出租车要二十分钟。', sample_vn: 'Đi taxi mất hai mươi phút.',
      note: '要 + thời lượng = mất (bao lâu).'},
-    {q_zh: '你会做什么？', q_vn: 'Một người bạn mới hỏi bạn biết làm những gì. Hãy nói hai việc bạn biết làm, dùng 也 hoặc 还.',
-     hint: '我会……，还会……', sample: '我会做饭，还会唱中国歌。', sample_vn: 'Mình biết nấu ăn, còn biết hát bài hát Trung Quốc nữa.',
-     note: '还 / 也 đứng trước 会 ở vế sau.'},
-    {q_zh: '星期天你有时间吗？', q_vn: 'Bạn bè hỏi Chủ nhật bạn có rảnh không. Hãy trả lời theo lịch thật của bạn.',
-     hint: '星期天我（没）有时间，……', sample: '星期天我有时间，我们去看电影吧。', sample_vn: 'Chủ nhật mình rảnh, bọn mình đi xem phim nhé.',
-     note: '有时间 = rảnh; rủ rê dùng 吧.'},
+    {q_zh: '你什么时候有时间？', q_vn: 'Bạn bè muốn hẹn gặp, hỏi khi nào bạn rảnh. Hãy trả lời theo lịch thật của bạn.',
+     hint: '我星期……有时间。', sample: '我星期六下午有时间。', sample_vn: 'Chiều thứ Bảy mình rảnh.',
+     note: '有时间 = rảnh; thời gian đứng trước 有.'},
+    {q_zh: '你的朋友来看你，你去机场接他吗？', q_vn: 'Bạn của bạn bay đến thăm bạn. Bạn có ra sân bay đón không? Hãy nói bạn sẽ làm gì.',
+     hint: '我去机场接他，我们……', sample: '我去机场接他，我们坐出租车回家。', sample_vn: 'Mình ra sân bay đón bạn ấy, bọn mình đi taxi về nhà.',
+     note: '去 + nơi + 接 + người: đi đâu để đón ai.'},
   ],
 };
 
@@ -2213,20 +2199,19 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Các bạn thích ăn món nào?', zh:'你们爱吃哪个菜？', py:'Nǐmen ài chī nǎge cài?'},
-  {vi:'Năm ngoái mình và bạn trai đã đi Tây An.', zh:'去年我和男朋友去了西安。', py:'Qùnián wǒ hé nánpéngyou qùle Xī’ān.'},
-  {vi:'Mình và cô Vương đều là người Bắc Kinh.', zh:'我和王老师都是北京人。', py:'Wǒ hé Wáng lǎoshī dōu shì Běijīng rén.'},
-  {vi:'Chuyến bay của các em đến Bắc Kinh mất mấy tiếng?', zh:'你们的飞机到北京要几个小时？', py:'Nǐmen de fēijī dào Běijīng yào jǐ gè xiǎoshí?'},
+  {vi:'Bạn trai của chị tôi làm việc ở sân bay.', zh:'我姐姐的男朋友在机场工作。', py:'Wǒ jiějie de nánpéngyou zài jīchǎng gōngzuò.'},
+  {vi:'Năm nay cả nhà tôi đều muốn đi Bắc Kinh.', zh:'今年我家人都想去北京。', py:'Jīnnián wǒ jiārén dōu xiǎng qù Běijīng.'},
+  {vi:'Máy bay mấy giờ đến? Anh tôi có thể đi đón bạn.', zh:'飞机几点到？我哥哥可以去接你。', py:'Fēijī jǐ diǎn dào? Wǒ gēge kěyǐ qù jiē nǐ.'},
   {vi:'Tôi biết nói tiếng Trung, còn biết viết chữ Hán nữa.', zh:'我会说汉语，还会写汉字。', py:'Wǒ huì shuō Hànyǔ, hái huì xiě Hànzì.'},
-  {vi:'Đồ ăn ở đây rất ngon, cũng rất rẻ.', zh:'这儿的菜很好吃，也很便宜。', py:'Zhèr de cài hěn hǎochī, yě hěn piányi.'},
+  {vi:'Ở Bắc Kinh, chúng tôi ở nhà cô Vương.', zh:'在北京，我们住王老师家。', py:'Zài Běijīng, wǒmen zhù Wáng lǎoshī jiā.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Những món ăn này đều ngon, còn rất đẹp mắt nữa.', zh:'这些菜都好吃，还很好看。', py:'Zhèxiē cài dōu hǎochī, hái hěn hǎokàn.'},
+  {vi:'Thời tiết Bắc Kinh thế nào? Có lạnh không?', zh:'北京的天气怎么样？冷不冷？', py:'Běijīng de tiānqì zěnmeyàng? Lěng bu lěng?'},
   {vi:'Mọi người ăn nhiều một chút nhé.', zh:'大家多吃一点儿。', py:'Dàjiā duō chī yìdiǎnr.'},
-  {vi:'Người nhà cô đều ở Bắc Kinh.', zh:'我家人都在北京。', py:'Wǒ jiārén dōu zài Běijīng.'},
-  {vi:'Có sớm không cô?', zh:'早不早？', py:'Zǎo bu zǎo?'},
+  {vi:'Tám giờ sáng Chủ nhật chúng em đến sân bay Đại Hưng.', zh:'我们星期日早上八点到大兴机场。', py:'Wǒmen xīngqīrì zǎoshang bā diǎn dào Dàxīng Jīchǎng.'},
+  {vi:'Người nhà tôi đều ở Bắc Kinh, các bạn có thể ở nhà tôi.', zh:'我家人都在北京，你们可以住我家。', py:'Wǒ jiārén dōu zài Běijīng, nǐmen kěyǐ zhù wǒ jiā.'},
 ];

@@ -2268,30 +2268,30 @@ var matchData = [
 // PHẦN 2 · NGHE — nghe câu (giọng đọc máy) → chọn đáp án
 // ══════════════════════════════════════════
 var listenData = [
-  {audio:'学校前边有一家书店。',
+  {audio:'学校外边没有超市，也没有书店。',
    questions:[
-     {q:'Phía trước trường có gì?', opts:['Một rạp chiếu phim', 'Một hiệu sách', 'Một siêu thị'], ans:1, exp:'书店 = hiệu sách; 学校前边 = phía trước trường.'},
+     {q:'Bên ngoài trường thế nào?', opts:['Có siêu thị', 'Có hiệu sách', 'Không có siêu thị, cũng không có hiệu sách'], ans:2, exp:'没有超市，也没有书店 = không có siêu thị, cũng không có hiệu sách; phủ định 有 là 没有.'},
    ]},
-  {audio:'我们晚上七点在电影院外边见吧。',
+  {audio:'电视在桌子上，我的书在椅子上。',
    questions:[
-     {q:'Hai người gặp nhau lúc mấy giờ?', opts:['7 giờ tối', '7 giờ sáng', '1 giờ chiều'], ans:0, exp:'晚上七点 = 7 giờ tối; thời gian đứng trước nơi chốn.'},
+     {q:'Sách của người nói ở đâu?', opts:['Trên bàn', 'Trên ghế', 'Dưới ghế'], ans:1, exp:'我的书在椅子上 = sách của tôi ở trên ghế; ti vi mới ở trên bàn.'},
    ]},
-  {audio:'椅子上有两本书，桌子上有一只小猫。',
+  {audio:'今天上午我们学习第九课，下午去书店买书。',
    questions:[
-     {q:'Trên ghế có gì?', opts:['Một con mèo', 'Một quyển sách', 'Hai quyển sách'], ans:2, exp:'椅子上有两本书 = trên ghế có hai quyển sách; con mèo ở trên bàn.'},
+     {q:'Sáng nay học bài nào?', opts:['Bài thứ 9', 'Bài thứ 1', 'Chín bài'], ans:0, exp:'第九课 = bài thứ chín (số thứ tự); 九课 không có 第 thì không phải thứ tự.'},
+     {q:'Buổi chiều họ làm gì?', opts:['Học tiếp', 'Đi hiệu sách mua sách', 'Đi xem phim'], ans:1, exp:'下午去书店买书 = buổi chiều đi hiệu sách mua sách.'},
    ]},
-  {audio:'这是我的第三本中文书。',
+  {audio:'星期天我和姐姐在家里看电视，晚上去朋友家吃饭。',
    questions:[
-     {q:'Đây là quyển sách tiếng Trung thứ mấy?', opts:['Thứ hai', 'Thứ ba', 'Có ba quyển'], ans:1, exp:'第三本 = quyển thứ ba (số thứ tự); 三本 mới là ba quyển.'},
+     {q:'Tối Chủ nhật người nói làm gì?', opts:['Đến nhà bạn ăn cơm', 'Xem ti vi ở nhà', 'Đi hát'], ans:0, exp:'晚上去朋友家吃饭 = buổi tối đến nhà bạn ăn cơm; ban ngày mới xem ti vi với chị.'},
    ]},
-  {audio:'星期六我白天在家里读书，晚上和朋友去唱歌。',
+  {audio:'王老师的女儿唱歌非常好听。',
    questions:[
-     {q:'Tối thứ Bảy người nói làm gì?', opts:['Đi hát với bạn', 'Ở nhà đọc sách', 'Xem ti vi'], ans:0, exp:'晚上和朋友去唱歌 = buổi tối đi hát với bạn.'},
-     {q:'Ban ngày người nói ở đâu?', opts:['Ở trường', 'Ở nhà', 'Ở rạp phim'], ans:1, exp:'白天在家里读书 = ban ngày ở nhà đọc sách.'},
+     {q:'Ai hát rất hay?', opts:['Cô Vương', 'Con gái cô Vương', 'Bạn của cô Vương'], ans:1, exp:'王老师的女儿 = con gái của cô Vương; 唱歌非常好听 = hát cực hay.'},
    ]},
-  {audio:'我家有一只小狗，它很喜欢和孩子们玩。',
+  {audio:'妹妹在房间里玩，哥哥在外边看书。',
    questions:[
-     {q:'Con chó nhỏ thích làm gì?', opts:['Xem ti vi', 'Ở ngoài phòng', 'Chơi với bọn trẻ'], ans:2, exp:'和孩子们玩 = chơi với bọn trẻ.'},
+     {q:'Anh trai đang làm gì?', opts:['Chơi trong phòng', 'Xem ti vi', 'Đọc sách ở bên ngoài'], ans:2, exp:'哥哥在外边看书 = anh trai đọc sách ở bên ngoài; em gái mới chơi trong phòng.'},
    ]},
 ];
 
@@ -2299,21 +2299,17 @@ var listenData = [
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'学校', blank:'前边', post:'有一家电影院。', hint:'(phía trước)', ans:'前边', exp:'前边 đặt sau danh từ: 学校前边; nơi chốn đứng đầu câu tồn tại với 有.'},
-  {pre:'我们晚上去那个电影院', blank:'看电影', post:'吧。', hint:'(xem phim)', ans:'看电影', exp:'去 + nơi chốn + làm gì: 去电影院看电影; 吧 ở cuối để rủ rê.'},
-  {pre:'我们七点在电影院', blank:'外边', post:'见，好吗？', hint:'(bên ngoài)', ans:'外边', exp:'在电影院外边见 = gặp ở bên ngoài rạp; thời gian 七点 đứng trước nơi chốn.'},
-  {pre:'椅子上有一本中文书，那是谁的', blank:'书', post:'？', hint:'(sách)', ans:'书', exp:'谁的书 = sách của ai; 的 nối người sở hữu với vật.'},
-  {pre:'这是我的', blank:'第二本', post:'中文书。', hint:'(quyển thứ hai)', ans:'第二本', exp:'第 + số = số thứ tự, sau đó mới đến lượng từ: 第二本书 (两本 = hai quyển).'},
-  {pre:'我明天上午在学校', blank:'学习', post:'。', hint:'(học tập)', ans:'学习', exp:'Thời gian (明天上午) → nơi chốn (在学校) → động từ (学习).'},
-  {pre:'我白天在家里读书，晚上和朋友们去外边', blank:'唱歌', post:'。', hint:'(hát)', ans:'唱歌', exp:'和朋友们 đứng trước động từ: 和朋友们去唱歌 = đi hát cùng bạn bè.'},
-  {pre:'我在家里做饭、看电视，和孩子们、小狗', blank:'玩', post:'。', hint:'(chơi)', ans:'玩', exp:'和 + người/vật + 玩 = chơi với ai; 和… đứng trước động từ.'},
-  {pre:'Trên bàn có hai quyển sách: “桌子上有两', blank:'本', post:'书。”', hint:'(lượng từ cho sách)', ans:'本', exp:'Sách dùng lượng từ 本; nói 两个书 là lỗi hay gặp.'},
-  {pre:'Trước trường không có siêu thị: “学校前边', blank:'没有', post:'超市。”', hint:'(không có)', ans:'没有', exp:'Phủ định 有 là 没有, không nói 不有; khi phủ định không thêm 一家.'},
-  {pre:'Phòng thứ nhất là phòng của mình: “', blank:'第一', post:'个房间是我的房间。”', hint:'(thứ nhất)', ans:'第一', exp:'第一个房间 = căn phòng thứ nhất; 一个房间 = một căn phòng.'},
-  {pre:'Chú chó nhỏ đang chơi ở phía sau nhà: “我的小狗在家', blank:'后边', post:'玩。”', hint:'(phía sau)', ans:'后边', exp:'后边 = phía sau, đứng sau danh từ: 家后边.'},
-  {pre:'Tối nay mình xem ti vi cùng mẹ: “我晚上', blank:'和', post:'妈妈看电视。”', hint:'(cùng, với)', ans:'和', exp:'和 + người đứng TRƯỚC động từ; nói 看电视和妈妈 theo tiếng Việt là sai.'},
-  {pre:'Anh ấy xem ti vi ở nhà vào buổi tối: “他', blank:'晚上', post:'在家里看电视。”', hint:'(buổi tối)', ans:'晚上', exp:'Thời gian đứng trước nơi chốn: 晚上在家里看电视.'},
-  {pre:'Thứ đặt trên ghế là sách của mình: “椅子上', blank:'是', post:'我的书。”', hint:'(là — nói rõ vật ở đó là gì)', ans:'是', exp:'Nơi chốn + 是 + vật: nói rõ vật ở đó là gì; 有 chỉ nói “có”.'},
+  {pre:'“桌子', blank:'上', post:'有什么？” — “有我的电脑和手机。”', hint:'(trên)', ans:'上', exp:'Nơi chốn + 有 + vật: 桌子上有……; 上 đứng SAU danh từ.'},
+  {pre:'“医院在哪儿？” — “在超市', blank:'前边', post:'。”', hint:'(phía trước)', ans:'前边', exp:'前边 đứng sau danh từ: 超市前边 = phía trước siêu thị.'},
+  {pre:'“小狗呢？” — “它在', blank:'外边', post:'玩。”', hint:'(bên ngoài)', ans:'外边', exp:'在外边 + động từ: 在外边玩 = chơi ở bên ngoài; 外边 đứng một mình được làm nơi chốn.'},
+  {pre:'Bạn chỉ dãy phòng: “我的房间是', blank:'第', post:'三个。”', hint:'(thứ — số thứ tự)', ans:'第', exp:'第 + số + lượng từ = số thứ tự: 第三个 = cái thứ ba.'},
+  {pre:'Gần nhà bạn có hai siêu thị: “我家外边有两', blank:'家', post:'超市。”', hint:'(lượng từ cho cửa hàng)', ans:'家', exp:'Cửa hàng, siêu thị, rạp phim dùng lượng từ 家: 两家超市.'},
+  {pre:'“星期六你', blank:'和', post:'谁去看电影？” — “和我姐姐。”', hint:'(cùng, với)', ans:'和', exp:'和 + người đứng TRƯỚC động từ: 和谁去看电影 = đi xem phim với ai.'},
+  {pre:'Ban ngày bố đi làm, buổi tối mới ở nhà: “爸爸', blank:'白天', post:'上班，晚上在家。”', hint:'(ban ngày)', ans:'白天', exp:'白天 (ban ngày) đối với 晚上 (buổi tối); từ chỉ thời gian đứng trước động từ.'},
+  {pre:'“你在哪儿', blank:'学习', post:'中文？” — “在学校。”', hint:'(học)', ans:'学习', exp:'在 + nơi chốn + 学习 + môn học: 在哪儿学习中文？'},
+  {pre:'Bạn chỉ chiếc máy tính ở bàn xa: “这不是我的电脑，', blank:'那', post:'是我的。”', hint:'(đó, kia)', ans:'那', exp:'那 = đó/kia, chỉ vật ở xa; 这 chỉ vật ở gần.'},
+  {pre:'Bạn rủ cả nhóm: “我们星期六去', blank:'唱', post:'歌吧！”', hint:'(hát)', ans:'唱', exp:'唱歌 = hát; 去 + 唱歌 = đi hát, 吧 ở cuối để rủ.'},
+  {pre:'Bạn của bạn rất mê sách: “我朋友很喜欢', blank:'读书', post:'。”', hint:'(đọc sách)', ans:'读书', exp:'喜欢 + động từ: 喜欢读书 = thích đọc sách.'},
 ];
 
 // ══════════════════════════════════════════
@@ -2322,61 +2318,50 @@ var fillData = [
 var sortData = [
   {words:['学校','前边','有','一家','电影院','。'], ans:'学校前边有一家电影院。', audio:'学校前边有一家电影院。'},
   {words:['我们','七点','在','电影院','外边','见','，','好吗','？'], ans:'我们七点在电影院外边见，好吗？', audio:'我们七点在电影院外边见，好吗？', alt:['七点我们在电影院外边见，好吗？']},
-  {words:['椅子','上','有','一本','中文书','。'], ans:'椅子上有一本中文书。', audio:'椅子上有一本中文书。'},
-  {words:['我','明天','上午','在','学校','学习','。'], ans:'我明天上午在学校学习。', audio:'我明天上午在学校学习。', alt:['明天上午我在学校学习。']},
-  {words:['你','唱歌','很','好听','。'], ans:'你唱歌很好听。', audio:'你唱歌很好听。'},
-  {words:['我','也','有','一只','小狗','。'], ans:'我也有一只小狗。', audio:'我也有一只小狗。'},
-  {words:['学校','前边','没有','电影院','。'], ans:'学校前边没有电影院。', audio:'学校前边没有电影院。'},
-  {words:['我','晚上','和','朋友','去','唱歌','。'], ans:'我晚上和朋友去唱歌。', audio:'我晚上和朋友去唱歌。', alt:['晚上我和朋友去唱歌。']},
-  {words:['这','是','我','的','第一','本','书','。'], ans:'这是我的第一本书。', audio:'这是我的第一本书。'},
-  {words:['我们','星期六','在','家里','看','电视','吧','。'], ans:'我们星期六在家里看电视吧。', audio:'我们星期六在家里看电视吧。', alt:['星期六我们在家里看电视吧。']},
+  {words:['这','是','我','的','第二','本','中文书','。'], ans:'这是我的第二本中文书。', audio:'这是我的第二本中文书。'},
+  {words:['椅子','上','的','书','是','我','朋友','的','。'], ans:'椅子上的书是我朋友的。', audio:'椅子上的书是我朋友的。'},
+  {words:['我','晚上','不能','和','你','去','唱歌','。'], ans:'我晚上不能和你去唱歌。', audio:'我晚上不能和你去唱歌。', alt:['晚上我不能和你去唱歌。']},
+  {words:['我','妹妹','喜欢','在','家里','看','电视','。'], ans:'我妹妹喜欢在家里看电视。', audio:'我妹妹喜欢在家里看电视。'},
+  {words:['书店','里','没有','那','本','书','。'], ans:'书店里没有那本书。', audio:'书店里没有那本书。'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3c · TRẮC NGHIỆM
 // ══════════════════════════════════════════
 var mcData = [
-  {q:'Phía trước trường có một rạp chiếu phim. Câu đúng là:', opts:['学校前边有一家电影院。', '一家电影院有学校前边。', '学校前边有电影院是。', '前边学校有一家电影院。'], ans:0, exp:'Câu tồn hiện: Nơi chốn + 有 + vật; nơi chốn đứng đầu câu, 前边 đứng sau danh từ.'},
-  {q:'Trước trường KHÔNG có rạp chiếu phim. Câu đúng là:', opts:['学校前边没有电影院。', '学校前边不有电影院。', '学校前边没有一家电影院。', '学校前边有没电影院。'], ans:0, exp:'Phủ định 有 là 没有, và khi phủ định không thêm số lượng từ (一家) trước tân ngữ.'},
-  {q:'Trên ghế có một quyển sách: “椅子上有一＿＿书。”', opts:['本', '只', '个', '家'], ans:0, exp:'Sách dùng 本; 只 cho con vật, 家 cho cửa hàng, rạp phim.'},
-  {q:'Phía trước trường có một siêu thị: “学校前边有一＿＿超市。”', opts:['家', '本', '只', '口'], ans:0, exp:'Cửa hàng, siêu thị, rạp phim, bệnh viện dùng lượng từ 家.'},
-  {q:'Bạn hẹn bạn gặp lúc 7 giờ ở bên ngoài rạp phim. Câu đúng là:', opts:['我们七点在电影院外边见吧。', '我们在电影院外边七点见吧。', '我们见七点在电影院外边吧。', '七点我们见在电影院外边吧。'], ans:0, exp:'Thời gian đứng TRƯỚC nơi chốn, cả hai đứng trước động từ; nói “gặp ở rạp lúc 7h” theo tiếng Việt là sai.'},
-  {q:'A: “你明天上午在哪儿？” B đáp:', opts:['我明天上午在学校学习。', '我在学校明天上午学习。', '我学习在学校明天上午。', '我明天上午学习在学校。'], ans:0, exp:'Chủ ngữ + thời gian + nơi chốn + động từ.'},
-  {q:'Đây là quyển sách tiếng Trung thứ hai của tôi. Câu đúng là:', opts:['这是我的第二本中文书。', '这是我的第两本中文书。', '这是我的两本中文书。', '这是我的本第二中文书。'], ans:0, exp:'Sau 第 dùng 二, không dùng 两; 两本 = hai quyển (số lượng), không phải thứ tự.'},
-  {q:'Cô giáo nói đây là bài học đầu tiên: “这是我们的＿＿课。”', opts:['第一', '一', '第', '一个'], ans:0, exp:'Số thứ tự = 第 + số: 第一课 = bài thứ nhất; thiếu 第 hoặc thiếu số đều sai.'},
-  {q:'Câu nào SAI?', opts:['我在家里晚上看电视。', '我晚上在家里看电视。', '晚上我在家里看电视。', '我晚上看电视。'], ans:0, exp:'Thời gian (晚上) phải đứng trước nơi chốn (在家里).'},
-  {q:'Mở cửa nhà ra là thấy ngay bệnh viện: “我家前边＿＿医院。”', opts:['是', '在', '能', '会'], ans:0, exp:'Nơi chốn + 是 + vật: nói rõ vật ở đó là gì; muốn dùng 在 thì vật đứng đầu: 医院在我家前边.'},
-  {q:'A: “椅子上有什么？” B đáp:', opts:['椅子上有一本书。', '一本书有椅子上。', '有椅子上一本书。', '椅子有上一本书。'], ans:0, exp:'Nơi chốn (椅子上) + 有 + số lượng + vật.'},
-  {q:'A: “星期六你做什么？” B (ban ngày ở nhà đọc sách) đáp:', opts:['我白天在家里读书。', '我在家里白天读书。', '我读书在家里白天。', '白天我读书在家里。'], ans:0, exp:'Thời gian (白天) → nơi chốn (在家里) → động từ (读书).'},
-  {q:'Tối nay bạn đi hát cùng bạn bè. Câu đúng là:', opts:['我晚上和朋友去唱歌。', '我晚上去唱歌和朋友。', '我和晚上朋友去唱歌。', '我晚上朋友和去唱歌。'], ans:0, exp:'和 + người đứng trước động từ; tiếng Việt “đi hát với bạn” dễ làm học sinh đặt 和朋友 cuối câu.'},
-  {q:'Bạn rủ bạn tối nay đến rạp phim đó xem phim:', opts:['我们晚上去那个电影院看电影吧。', '我们晚上去看电影那个电影院吧。', '我们晚上去电影院那个看电影吧。', '我们去那个电影院看电影晚上吧。'], ans:0, exp:'去 + nơi chốn + làm gì (bài 6); 那个 đứng trước danh từ; thời gian đứng trước động từ.'},
-  {q:'A: “你唱歌很好听！” B đáp:', opts:['谢谢！', '不客气！', '没关系！', '对不起！'], ans:0, exp:'Được khen thì đáp 谢谢; 不客气 dùng để đáp lời cảm ơn.'},
+  {q:'Bạn muốn nói: “Trên bàn có hai quyển sách.”', opts:['桌子上有两本书。', '桌子上有两个书。', '有两本书桌子上。', '上桌子有两本书。'], ans:0, exp:'Nơi chốn (桌子上) + 有 + số + lượng từ + vật; sách dùng 本; 上 đứng sau danh từ.'},
+  {q:'Bạn mượn sách của bạn: “我能看你的那＿＿书吗？”', opts:['本', '个', '只', '家'], ans:0, exp:'Sách dùng lượng từ 本: 那本书; 只 cho con vật, 家 cho cửa hàng.'},
+  {q:'Bạn muốn nói: “Ban ngày tôi học ở trường.”', opts:['我白天在学校学习。', '我在学校白天学习。', '我学习在学校白天。', '白天我学习在学校。'], ans:0, exp:'Thời gian (白天) → nơi chốn (在学校) → động từ (学习); không đặt nơi chốn, thời gian ở cuối như tiếng Việt.'},
+  {q:'Cô giáo nói: “Đây là bài thứ hai.”', opts:['这是第二课。', '这是第两课。', '这是两课。', '这是课第二。'], ans:0, exp:'Sau 第 dùng 二, không dùng 两; thiếu 第 thì thành số lượng, không phải thứ tự.'},
+  {q:'Ngay trước nhà bạn chính là trường học: “我家前边＿＿学校。”', opts:['是', '在', '能', '会'], ans:0, exp:'Nơi chốn + 是 + vật: nói rõ thứ ở đó là gì; muốn dùng 在 thì vật đứng đầu: 学校在我家前边.'},
+  {q:'Câu nào SAI?', opts:['椅子上一只小狗有。', '椅子上有一只小狗。', '椅子上是我的小狗。', '小狗在椅子上。'], ans:0, exp:'Câu tồn tại: Nơi chốn + 有 + vật; 有 không đứng cuối câu.'},
+  {q:'Bạn hỏi về người đứng đằng kia: “＿＿人是谁？”', opts:['那个', '那本', '那只', '那家'], ans:0, exp:'Người dùng lượng từ 个: 那个人; 本 cho sách, 只 cho con vật, 家 cho cửa hàng.'},
+  {q:'Bạn của bạn vừa hát xong, bạn muốn khen:', opts:['你唱歌很好听。', '你唱歌很好看。', '你歌唱很好听。', '你唱很好听歌。'], ans:0, exp:'Khen giọng hát dùng 好听 (nghe hay); 好看 là nhìn đẹp. 唱歌 không đảo thành 歌唱.'},
+  {q:'Bạn kể: “Chủ nhật tôi đi chơi ở ngoài với bạn bè.”', opts:['星期天我和朋友们去外边玩。', '星期天我去外边玩和朋友们。', '星期天我和去朋友们外边玩。', '星期天我朋友们和去外边玩。'], ans:0, exp:'和 + người đứng TRƯỚC động từ; tiếng Việt “đi chơi với bạn” dễ làm đặt 和朋友们 cuối câu.'},
+  {q:'“你家有狗吗？” — “有两＿＿。”', opts:['只', '本', '口', '岁'], ans:0, exp:'Con vật (狗, 猫) dùng lượng từ 只; 口 đếm người trong nhà.'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời của bạn — các câu cuối hãy nói về chính bạn.',
+  intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời của bạn — hãy nói về chính bạn.',
   questions: [
-    {q_zh: '学校前边有什么？', q_vn: 'Bạn của bạn hỏi phía trước trường có gì. Hãy trả lời (ví dụ: có một rạp chiếu phim).',
-     hint: '学校前边有一家……', sample: '学校前边有一家电影院。', sample_vn: 'Phía trước trường học có một rạp chiếu phim.',
-     note: 'Câu tồn hiện: Nơi chốn + 有 + vật; rạp phim, cửa hàng dùng lượng từ 家.'},
-    {q_zh: '椅子上的书是谁的？', q_vn: 'Có người hỏi quyển sách trên ghế là của ai. Đó là quyển sách tiếng Trung thứ hai của bạn.',
-     hint: '是我的……，这是我的第……', sample: '是我的书，这是我的第二本中文书。', sample_vn: 'Là sách của mình, đây là quyển sách tiếng Trung thứ hai của mình.',
-     note: '第 + số + lượng từ để nói thứ tự: 第二本; sau 第 dùng 二, không dùng 两.'},
-    {q_zh: '明天星期六，你做什么？', q_vn: 'Bạn của bạn hỏi thứ Bảy bạn làm gì. Hãy kể việc ban ngày và buổi tối.',
-     hint: '我白天……，晚上……', sample: '我白天在家里读书，晚上和朋友们去外边唱歌。', sample_vn: 'Ban ngày mình ở nhà đọc sách, buổi tối ra ngoài hát cùng bạn bè.',
-     note: 'Thời gian → nơi chốn → động từ: 白天在家里读书.'},
-    {q_zh: '你晚上在哪儿学习？', q_vn: 'Buổi tối bạn học ở đâu? Hãy nói về chính bạn.',
-     hint: '我晚上在……学习。', sample: '我晚上在家里学习。', sample_vn: 'Buổi tối mình học ở nhà.',
-     note: 'Thời gian (晚上) luôn đứng trước nơi chốn (在家里).'},
-    {q_zh: '你家前边有什么？', q_vn: 'Phía trước nhà bạn có gì? Hãy nói thật về nhà bạn.',
-     hint: '我家前边有一家……', sample: '我家前边有一家超市。', sample_vn: 'Phía trước nhà mình có một siêu thị.',
-     note: 'Không có thì nói: 我家前边没有…… (không thêm 一家).'},
-    {q_zh: '这是你的第几本中文书？', q_vn: 'Quyển sách tiếng Trung bạn đang học là quyển thứ mấy của bạn?',
-     hint: '这是我的第……本中文书。', sample: '这是我的第一本中文书。', sample_vn: 'Đây là quyển sách tiếng Trung đầu tiên của mình.',
-     note: 'Hỏi thứ tự dùng 第几; trả lời bằng 第 + số.'},
+    {q_zh: '你的手机在哪儿？', q_vn: 'Có người hỏi điện thoại của bạn đang ở đâu. Hãy nói vị trí thật.',
+     hint: '我的手机在……上／里。', sample: '我的手机在桌子上。', sample_vn: 'Điện thoại của mình ở trên bàn.',
+     note: 'Vật + 在 + danh từ + 上/里/下: phương vị từ đứng sau danh từ.'},
+    {q_zh: '星期六你做什么？', q_vn: 'Bạn của bạn hỏi thứ Bảy bạn làm gì. Hãy kể việc ban ngày và buổi tối.',
+     hint: '我白天……，晚上……', sample: '我白天和妈妈去超市买东西，晚上和朋友去唱歌。', sample_vn: 'Ban ngày mình đi siêu thị mua đồ với mẹ, buổi tối đi hát với bạn bè.',
+     note: '白天/晚上 đứng trước động từ; 和 + người cũng đứng trước động từ.'},
+    {q_zh: '你晚上在哪儿学习？', q_vn: 'Buổi tối bạn học ở đâu? Hãy nói thật.',
+     hint: '我晚上在……学习。', sample: '我晚上在房间里学习。', sample_vn: 'Buổi tối mình học trong phòng.',
+     note: 'Thời gian (晚上) đứng trước nơi chốn (在房间里).'},
+    {q_zh: '你有狗吗？', q_vn: 'Có người hỏi bạn có nuôi chó không. Hãy trả lời thật về nhà bạn.',
+     hint: '有，我有一只……／没有，……', sample: '没有，我家有一只小猫。', sample_vn: 'Không, nhà mình có một con mèo nhỏ.',
+     note: 'Con vật dùng lượng từ 只; phủ định 有 là 没有.'},
+    {q_zh: '你喜欢唱歌吗？', q_vn: 'Bạn có thích hát không? Hãy trả lời và nói thêm về một người trong nhà.',
+     hint: '喜欢，……唱歌也很好听。', sample: '喜欢，我姐姐唱歌也很好听。', sample_vn: 'Thích chứ, chị mình hát cũng rất hay.',
+     note: '唱歌 + 很好听 = hát hay; không dùng 好看 cho giọng hát.'},
   ],
 };
 
@@ -2384,19 +2369,18 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Phía trước trường học có một rạp chiếu phim.', zh:'学校前边有一家电影院。', py:'Xuéxiào qiánbian yǒu yì jiā diànyǐngyuàn.'},
-  {vi:'Đây là quyển sách tiếng Trung thứ hai của tôi.', zh:'这是我的第二本中文书。', py:'Zhè shì wǒ de dì-èr běn Zhōngwén shū.'},
-  {vi:'Bạn hát rất hay.', zh:'你唱歌很好听。', py:'Nǐ chàng gē hěn hǎotīng.'},
-  {vi:'Tôi cũng có một con chó nhỏ.', zh:'我也有一只小狗。', py:'Wǒ yě yǒu yì zhī xiǎo gǒu.'},
-  {vi:'Tối mai chúng ta gặp nhau lúc 7 giờ ở trước rạp chiếu phim nhé.', zh:'明天晚上我们七点在电影院前边见吧。', py:'Míngtiān wǎnshang wǒmen qī diǎn zài diànyǐngyuàn qiánbian jiàn ba.'},
+  {vi:'Phía sau trường có một hiệu sách, trong hiệu sách có rất nhiều sách.', zh:'学校后边有一家书店，书店里的书很多。', py:'Xuéxiào hòubian yǒu yì jiā shūdiàn, shūdiàn li de shū hěn duō.'},
+  {vi:'Tôi học tiếng Trung với một người bạn Trung Quốc.', zh:'我和一个中国朋友学习中文。', py:'Wǒ hé yí gè Zhōngguó péngyou xuéxí Zhōngwén.'},
+  {vi:'Quyển sách đó là của thầy giáo tôi.', zh:'那本书是我老师的。', py:'Nà běn shū shì wǒ lǎoshī de.'},
+  {vi:'Ban ngày con chó nhà tôi ở bên ngoài.', zh:'白天我家的狗在外边。', py:'Báitiān wǒ jiā de gǒu zài wàibian.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Sáng mai bạn ở đâu?', zh:'你明天上午在哪儿？', py:'Nǐ míngtiān shàngwǔ zài nǎr?'},
-  {vi:'Đó là sách của ai vậy?', zh:'那是谁的书？', py:'Nà shì shéi de shū?'},
-  {vi:'Ban ngày tôi ở nhà đọc sách.', zh:'我白天在家里读书。', py:'Wǒ báitiān zài jiā li dúshū.'},
-  {vi:'Cảm ơn bạn! Thứ Bảy bạn làm gì?', zh:'谢谢你！星期六你做什么？', py:'Xièxie nǐ! Xīngqīliù nǐ zuò shénme?'},
+  {vi:'Đây là người bạn Trung Quốc đầu tiên của tôi.', zh:'这是我的第一个中国朋友。', py:'Zhè shì wǒ de dì-yī gè Zhōngguó péngyou.'},
+  {vi:'Buổi tối tôi muốn ở nhà xem ti vi với bố mẹ.', zh:'晚上我想和爸爸妈妈在家看电视。', py:'Wǎnshang wǒ xiǎng hé bàba māma zài jiā kàn diànshì.'},
+  {vi:'Dưới ghế có một con chó, đó là chó của ai?', zh:'椅子下边有一只狗，那是谁的狗？', py:'Yǐzi xiàbian yǒu yì zhī gǒu, nà shì shéi de gǒu?'},
+  {vi:'Ban ngày bạn đi làm, buổi tối vẫn còn học à?', zh:'你白天工作，晚上还学习吗？', py:'Nǐ báitiān gōngzuò, wǎnshang hái xuéxí ma?'},
 ];

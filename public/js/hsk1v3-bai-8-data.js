@@ -2277,46 +2277,43 @@ var dialogData = [
 // ══════════════════════════════════════════
 var matchData = [
   {left:'房', right:'间'},
-  {left:'看', right:'见'},
   {left:'桌', right:'子'},
-  {left:'学', right:'校'},
   {left:'书', right:'店'},
-  {left:'医', right:'生'},
   {left:'病', right:'人'},
   {left:'漂', right:'亮'},
+  {left:'看', right:'见'},
+  {left:'午', right:'饭'},
+  {left:'学', right:'校'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 2 · NGHE — nghe câu (giọng đọc máy) → chọn đáp án
 // ══════════════════════════════════════════
 var listenData = [
-  {audio:'房间里有一只小猫。',
+  {audio:'我的手机不在房间里，也不在桌子下。',
    questions:[
-     {q:'Con mèo ở đâu?', opts:['Ngoài phòng', 'Trong phòng', 'Dưới bàn'], ans:1, exp:'房间里 = trong phòng; 里 đứng sau danh từ.'},
+     {q:'Điện thoại của người nói ở đâu?', opts:['Ở trong phòng', 'Ở dưới bàn', 'Không ở trong phòng, cũng không ở dưới bàn'], ans:2, exp:'不在房间里，也不在桌子下 = không ở trong phòng, cũng không ở dưới bàn.'},
    ]},
-  {audio:'我在医院工作，我是医生。',
+  {audio:'我妈妈是医生，她在大医院工作，非常忙。',
    questions:[
-     {q:'Người nói làm việc ở đâu?', opts:['Bệnh viện', 'Trường học', 'Hiệu sách'], ans:0, exp:'在医院工作 = làm việc ở bệnh viện.'},
+     {q:'Mẹ của người nói làm việc ở đâu?', opts:['Ở trường học', 'Ở hiệu sách', 'Ở bệnh viện lớn'], ans:2, exp:'在大医院工作 = làm việc ở bệnh viện lớn; 在 + nơi chốn đứng trước động từ.'},
    ]},
-  {audio:'下午我很忙，不能去书店。',
+  {audio:'明天上午我有课，不能去医院看爸爸。',
    questions:[
-     {q:'Buổi chiều người nói thế nào?', opts:['Đi hiệu sách được', 'Ở hiệu sách cả buổi chiều', 'Bận, không đi hiệu sách được'], ans:2, exp:'不能去 = không đi được, vì 很忙 (rất bận).'},
+     {q:'Sáng mai người nói thế nào?', opts:['Đi bệnh viện thăm bố', 'Có tiết học, không đi bệnh viện được', 'Ở nhà nghỉ ngơi'], ans:1, exp:'有课 = có tiết học; 不能去 = không đi được (vì điều kiện không cho phép).'},
    ]},
-  {audio:'我们在学校前见吧。好的。',
+  {audio:'下午三点半我们在电影院前见，你能到吗？',
    questions:[
-     {q:'Hai người hẹn gặp ở đâu?', opts:['Trong trường học', 'Trước trường học', 'Sau trường học'], ans:1, exp:'学校前 = trước trường; 前 đứng sau danh từ.'},
+     {q:'Hai người hẹn gặp lúc mấy giờ?', opts:['3 giờ rưỡi chiều', '2 giờ chiều', '3 giờ sáng'], ans:0, exp:'下午三点半 = 3 giờ rưỡi chiều.'},
+     {q:'Hai người hẹn gặp ở đâu?', opts:['Trong rạp chiếu phim', 'Trước hiệu sách', 'Trước rạp chiếu phim'], ans:2, exp:'电影院前 = trước rạp chiếu phim; 前 đứng sau danh từ.'},
    ]},
-  {audio:'我会做饭。今天我很忙，不能做饭。',
+  {audio:'房间里的两只小猫很漂亮，桌子下还有一只。',
    questions:[
-     {q:'Vì sao hôm nay người nói không nấu cơm?', opts:['Vì bận', 'Vì không biết nấu', 'Vì không thích nấu'], ans:0, exp:'会做饭 = biết nấu; 很忙，不能做饭 = bận nên không nấu được.'},
+     {q:'Có tất cả mấy con mèo?', opts:['Hai con', 'Ba con', 'Một con'], ans:1, exp:'房间里的两只 + 桌子下还有一只 (còn một con nữa) = ba con.'},
    ]},
-  {audio:'小猫在哪儿呢？它在桌子下呢。',
+  {audio:'你在哪儿吃午饭？我在家里吃，妈妈做的饭很好吃。',
    questions:[
-     {q:'Con mèo ở đâu?', opts:['Ngoài phòng', 'Trong phòng', 'Dưới bàn'], ans:2, exp:'桌子下 = dưới bàn.'},
-   ]},
-  {audio:'大医院病人很多，医生非常忙。',
-   questions:[
-     {q:'Câu nào ĐÚNG với đoạn nghe?', opts:['Bác sĩ không bận', 'Bác sĩ rất bận', 'Bệnh nhân ít'], ans:1, exp:'病人很多 = đông bệnh nhân, 医生非常忙 = bác sĩ rất bận.'},
+     {q:'Người thứ hai ăn trưa ở đâu?', opts:['Ở trường', 'Ở nhà', 'Ở siêu thị'], ans:1, exp:'我在家里吃 = tôi ăn ở nhà; 妈妈做的饭 = cơm mẹ nấu.'},
    ]},
 ];
 
@@ -2324,21 +2321,16 @@ var listenData = [
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'', blank:'房间外', post:'有一只小猫。', hint:'(ngoài phòng)', ans:'房间外', exp:'Nơi chốn = danh từ + phương vị từ (房间外), đứng đầu câu; không nói 外房间 theo tiếng Việt.'},
-  {pre:'我没看见，它在', blank:'哪儿', post:'呢？', hint:'(ở đâu)', ans:'哪儿', exp:'Hỏi vị trí dùng 在 + 哪儿: 它在哪儿呢？= nó ở đâu?'},
-  {pre:'它在', blank:'桌子下', post:'呢。', hint:'(dưới bàn)', ans:'桌子下', exp:'在 + danh từ + phương vị từ: 在桌子下 = ở dưới bàn; phương vị từ đứng SAU danh từ.'},
-  {pre:'这只小猫真', blank:'漂亮', post:'！', hint:'(xinh đẹp)', ans:'漂亮', exp:'真 + tính từ để khen: 真漂亮！ — không thêm 是 trước tính từ.'},
-  {pre:'', blank:'在学校书店前', post:'见吧。', hint:'(ở trước hiệu sách trường)', ans:'在学校书店前', exp:'在 + nơi chốn đứng TRƯỚC động từ: 在学校书店前见, không nói 见在……'},
-  {pre:'我', blank:'能到', post:'。我在学校吃午饭。', hint:'(có thể đến)', ans:'能到', exp:'能 + động từ = có thể (điều kiện cho phép): 我能到 = tôi đến được.'},
-  {pre:'大医院', blank:'病人多', post:'，医生非常忙。', hint:'(bệnh nhân đông)', ans:'病人多', exp:'Tính từ 多 làm vị ngữ trực tiếp: 病人多, không cần 是.'},
-  {pre:'我爸爸也在医院', blank:'工作', post:'，他也非常忙。', hint:'(làm việc)', ans:'工作', exp:'在医院 đứng trước động từ 工作: 在医院工作 = làm việc ở bệnh viện.'},
-  {pre:'Con mèo đang ở trong phòng: “小猫在房间', blank:'里', post:'呢。”', hint:'(trong)', ans:'里', exp:'里 = trong, đứng sau danh từ: 房间里; nói 里房间 là lỗi đảo trật tự.'},
-  {pre:'Hôm nay mình bận, không đi được: “今天我很忙，', blank:'不能', post:'去。”', hint:'(không thể)', ans:'不能', exp:'Phủ định của 能 là 不能, 不 đứng trước 能.'},
-  {pre:'Bạn biết nấu cơm (đã học được): “我', blank:'会', post:'做饭。”', hint:'(biết — kỹ năng học được)', ans:'会', exp:'会 chỉ kỹ năng có được nhờ học; 能 chỉ điều kiện cho phép làm.'},
-  {pre:'Mình không nhìn thấy con mèo: “我', blank:'没', post:'看见小猫。”', hint:'(phủ định việc đã không xảy ra)', ans:'没', exp:'Không nhìn thấy (việc đã không xảy ra) dùng 没看见; nói 不看见 là sai.'},
-  {pre:'Dưới bàn có hai con mèo: “桌子下有两', blank:'只', post:'小猫。”', hint:'(lượng từ cho con vật)', ans:'只', exp:'Con vật dùng lượng từ 只: 两只小猫; 口 dùng đếm người trong nhà.'},
-  {pre:'Hẹn gặp ở trước rạp chiếu phim: “我们在电影院', blank:'前', post:'见吧。”', hint:'(trước)', ans:'前', exp:'电影院前 = trước rạp phim; 吧 ở cuối câu để rủ, đề nghị.'},
-  {pre:'Bạn hỏi bạn ăn trưa ở đâu: “你', blank:'在', post:'哪儿吃午饭？”', hint:'(ở — đứng trước nơi chốn)', ans:'在', exp:'在 + nơi chốn + động từ: 你在哪儿吃午饭？'},
+  {pre:'Bố đang đợi bạn ở ngoài cổng trường: “我爸爸在学校', blank:'外', post:'。”', hint:'(ngoài)', ans:'外', exp:'外 = ngoài, đứng SAU danh từ: 学校外; nói 外学校 theo tiếng Việt là sai.'},
+  {pre:'Em gái đang nghỉ trong phòng: “妹妹在房间', blank:'里', post:'休息。”', hint:'(trong)', ans:'里', exp:'里 = trong, đứng sau danh từ: 房间里; 在房间里 đứng trước động từ 休息.'},
+  {pre:'Bạn hẹn bạn: “我们六点在超市', blank:'前', post:'见吧。”', hint:'(trước)', ans:'前', exp:'超市前 = trước siêu thị; 在 + nơi chốn đứng trước động từ 见.'},
+  {pre:'Bạn hỏi bác sĩ: “医生，我明天', blank:'能', post:'上班吗？”', hint:'(có thể — điều kiện cho phép)', ans:'能', exp:'能 + động từ hỏi điều kiện có cho phép làm không: 能上班吗？'},
+  {pre:'Hôm nay bạn có việc nên không đi xem phim được: “今天我有事，', blank:'不能', post:'去看电影。”', hint:'(không thể)', ans:'不能', exp:'Phủ định của 能 là 不能, 不 đứng trước 能.'},
+  {pre:'“我妹妹在哪儿？” — “对不起，我', blank:'没', post:'看见她。”', hint:'(phủ định việc đã không xảy ra)', ans:'没', exp:'Việc đã không xảy ra (không nhìn thấy) dùng 没看见; nói 不看见 là sai.'},
+  {pre:'Bạn thấy chiếc máy tính mới của bạn rất đẹp: “你的新电脑很', blank:'漂亮', post:'。”', hint:'(đẹp)', ans:'漂亮', exp:'Tính từ 漂亮 làm vị ngữ, có 很 phía trước, không thêm 是.'},
+  {pre:'Con mèo này còn bé: “这只猫很', blank:'小', post:'。”', hint:'(nhỏ)', ans:'小', exp:'小 = nhỏ, trái nghĩa với 大; 这只猫 — con vật dùng lượng từ 只.'},
+  {pre:'Bạn thấy bệnh viện rất đông: “医院里的', blank:'病人', post:'真多！”', hint:'(bệnh nhân)', ans:'病人', exp:'病人 = bệnh nhân; 真多 = đông thật (tính từ 多 làm vị ngữ).'},
+  {pre:'“明天上午你在家吗？” — “不在，我', blank:'在', post:'学校。”', hint:'(ở)', ans:'在', exp:'在 + nơi chốn làm vị ngữ: 我在学校 = tôi ở trường.'},
 ];
 
 // ══════════════════════════════════════════
@@ -2346,62 +2338,52 @@ var fillData = [
 // ══════════════════════════════════════════
 var sortData = [
   {words:['房间','外','有','一只','小猫','。'], ans:'房间外有一只小猫。', audio:'房间外有一只小猫。'},
-  {words:['它','在','桌子','下','呢','。'], ans:'它在桌子下呢。', audio:'它在桌子下呢。'},
-  {words:['我们','在','哪儿','见','呢','？'], ans:'我们在哪儿见呢？', audio:'我们在哪儿见呢？'},
   {words:['在','学校','书店','前','见','吧','。'], ans:'在学校书店前见吧。', audio:'在学校书店前见吧。'},
-  {words:['大','医院','病人','多','，','医生','非常','忙','。'], ans:'大医院病人多，医生非常忙。', audio:'大医院病人多，医生非常忙。'},
   {words:['我','爸爸','也','在','医院','工作','。'], ans:'我爸爸也在医院工作。', audio:'我爸爸也在医院工作。'},
-  {words:['桌子','下','有','两只','猫','。'], ans:'桌子下有两只猫。', audio:'桌子下有两只猫。'},
-  {words:['小猫','在','房间','里','吗','？'], ans:'小猫在房间里吗？', audio:'小猫在房间里吗？'},
-  {words:['我','今天','不能','去','医院','。'], ans:'我今天不能去医院。', audio:'我今天不能去医院。', alt:['今天我不能去医院。']},
-  {words:['你','下午','能','到','学校','吗','？'], ans:'你下午能到学校吗？', audio:'你下午能到学校吗？', alt:['下午你能到学校吗？']},
+  {words:['我','今天','很','忙','，','不能','去','书店','。'], ans:'我今天很忙，不能去书店。', audio:'我今天很忙，不能去书店。', alt:['今天我很忙，不能去书店。']},
+  {words:['医生','，','我','能','吃','米饭','吗','？'], ans:'医生，我能吃米饭吗？', audio:'医生，我能吃米饭吗？'},
+  {words:['你','在','学校','吃','午饭','吗','？'], ans:'你在学校吃午饭吗？', audio:'你在学校吃午饭吗？'},
+  {words:['我','家','有','两只','猫','，','一只','大','，','一只','小','。'], ans:'我家有两只猫，一只大，一只小。', audio:'我家有两只猫，一只大，一只小。'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3c · TRẮC NGHIỆM
 // ══════════════════════════════════════════
 var mcData = [
-  {q:'Bạn thấy một con mèo nhỏ ở ngoài phòng. Câu đúng là:', opts:['房间外有一只小猫。', '外房间有一只小猫。', '房间外有一个小猫。', '有一只小猫房间外。'], ans:0, exp:'Phương vị từ đứng SAU danh từ (房间外), nơi chốn đứng đầu câu, con vật dùng lượng từ 只.'},
-  {q:'Đếm con vật: “我家有两＿＿猫。”', opts:['只', '个', '口', '岁'], ans:0, exp:'只 dùng cho con vật; 口 đếm số người trong nhà, 岁 là tuổi.'},
-  {q:'Bạn tìm con mèo nhưng chưa thấy nó: “我＿＿看见，它在哪儿呢？”', opts:['没', '不', '能', '会'], ans:0, exp:'Không nhìn thấy (việc đã không xảy ra) dùng 没看见; 不看见 là lỗi hay gặp.'},
-  {q:'Bạn ăn trưa ở trường. Câu đúng là:', opts:['我在学校吃午饭。', '我吃午饭在学校。', '我学校在吃午饭。', '在我学校吃午饭。'], ans:0, exp:'在 + nơi chốn đứng TRƯỚC động từ; nói “ăn trưa ở trường” theo tiếng Việt thành 吃午饭在学校 là sai.'},
-  {q:'A: “下午两点你能到吗？” B (đến được) đáp:', opts:['能，我能到。', '会，我会到。', '我到能。', '能，我不能到。'], ans:0, exp:'Hỏi bằng 能 (có điều kiện đến không) thì đáp bằng 能; 会 chỉ kỹ năng học được.'},
-  {q:'Bạn biết nấu ăn nhưng hôm nay rất bận: “我会做饭，今天很忙，不＿＿做饭。”', opts:['能', '会', '没', '是'], ans:0, exp:'会 = biết (kỹ năng); bận nên “không nấu được” là do điều kiện → 不能.'},
-  {q:'Câu nào SAI?', opts:['小猫在桌子。', '小猫在桌子下。', '小猫在房间里。', '小猫在房间外。'], ans:0, exp:'Sau danh từ chỉ đồ vật phải có phương vị từ (下/里/外…) mới thành nơi chốn: 在桌子下.'},
-  {q:'Bạn hẹn bạn gặp ở trước hiệu sách. Câu đúng là:', opts:['我们在书店前见吧。', '我们见在书店前吧。', '我们在前书店见吧。', '我们书店前在见吧。'], ans:0, exp:'在 + danh từ + phương vị từ + động từ: 在书店前见; không đặt 前 trước danh từ.'},
-  {q:'A: “你爸爸在哪儿工作？” B đáp:', opts:['他在医院工作。', '他工作在医院。', '他在工作医院。', '医院在他工作。'], ans:0, exp:'Nơi làm việc đặt sau 在 và trước động từ: 在医院工作.'},
-  {q:'Bệnh viện lớn đông bệnh nhân. Câu đúng là:', opts:['大医院病人很多。', '大医院病人是多。', '大医院多病人。', '大医院很多是病人。'], ans:0, exp:'Tính từ 多 làm vị ngữ, thêm 很 phía trước; không chen 是 trước tính từ.'},
-  {q:'Khen con mèo: “这只小猫＿＿漂亮！”', opts:['真', '是', '会', '能'], ans:0, exp:'真 + tính từ để cảm thán (真漂亮); thêm 是 trước tính từ là lỗi hay gặp.'},
-  {q:'Hôm nay bạn có việc, không đi được. Câu đúng là:', opts:['今天我有事，不能去。', '今天我有事，能不去。', '今天我不有事，能去。', '今天我有事，去不能。'], ans:0, exp:'不 đứng trước 能: 不能去; phủ định 有 là 没有, không nói 不有.'},
-  {q:'A: “你在哪儿吃晚饭？” B (ở nhà) đáp:', opts:['我在家里吃晚饭。', '我吃晚饭在家里。', '我在里家吃晚饭。', '我家里在吃晚饭。'], ans:0, exp:'在 + 家里 đứng trước động từ 吃; 里 đứng sau 家.'},
-  {q:'A: “小猫在哪儿呢？” — Nó đang ở dưới bàn. B đáp:', opts:['它在桌子下呢。', '它在下桌子呢。', '它是桌子下呢。', '它有桌子下呢。'], ans:0, exp:'Nói vị trí của vật: vật + 在 + danh từ + phương vị từ.'},
-  {q:'A: “你想去书店吗？” B muốn đi nhưng hôm nay không đi được:', opts:['我想去，今天不能去。', '我不想去，今天能去。', '我会去，今天不会去。', '我想去，今天能不去。'], ans:0, exp:'想 = muốn; 不能 = không thể vì điều kiện. Ôn 想 (bài 6) + 能 (bài 8).'},
+  {q:'Con mèo đang ở ngoài phòng. Bạn nói với bạn:', opts:['它在房间外。', '它在外房间。', '它房间外在。', '它是房间外。'], ans:0, exp:'Phương vị từ đứng SAU danh từ (房间外); nói vị trí dùng 在, không dùng 是.'},
+  {q:'Bạn hỏi bạn: “你有几＿＿小猫？”', opts:['只', '个', '口', '岁'], ans:0, exp:'Con vật dùng lượng từ 只; 口 đếm người trong nhà, 岁 là tuổi.'},
+  {q:'Bác sĩ hỏi Tiểu Hồ đã ăn cơm chưa. Tiểu Hồ chưa ăn, đáp:', opts:['没吃呢。', '不吃呢。', '没吃吗。', '吃没呢。'], ans:0, exp:'Việc chưa xảy ra dùng 没 + động từ; 不吃 là “không (muốn) ăn”.'},
+  {q:'Bạn muốn nói: “Buổi tối tôi xem phim ở nhà.”', opts:['我晚上在家里看电影。', '我晚上看电影在家里。', '我在家里看电影晚上。', '晚上我看电影在家里。'], ans:0, exp:'Thời gian → 在 + nơi chốn → động từ; đặt 在家里 cuối câu theo tiếng Việt là sai.'},
+  {q:'Em gái biết làm sủi cảo, nhưng hôm nay bận nên không làm được: “妹妹会做饺子，今天很忙，＿＿做。”', opts:['不能', '不会', '没有', '不是'], ans:0, exp:'会 = biết (kỹ năng); không làm được vì bận (điều kiện) → 不能.'},
+  {q:'Bạn muốn hỏi bạn: “Chiều nay bạn đến hiệu sách được không?”', opts:['你今天下午能到书店吗？', '你今天下午到书店能吗？', '你今天下午能不到书店吗？', '今天下午你到能书店吗？'], ans:0, exp:'能 đứng ngay trước động từ 到; 吗 ở cuối câu.'},
+  {q:'Câu nào SAI?', opts:['猫在桌子。', '猫在桌子下。', '医生在医院里。', '妈妈在超市里。'], ans:0, exp:'Sau danh từ chỉ đồ vật phải có phương vị từ (下/里/外…) mới thành nơi chốn: 在桌子下.'},
+  {q:'Bạn muốn nói: “Anh trai tôi làm việc ở hiệu sách.”', opts:['我哥哥在书店工作。', '我哥哥工作在书店。', '我哥哥在工作书店。', '书店在我哥哥工作。'], ans:0, exp:'在 + nơi làm việc đứng TRƯỚC động từ 工作.'},
+  {q:'Thứ Bảy hiệu sách của trường rất đông người. Câu đúng là:', opts:['星期六学校书店人很多。', '星期六学校书店人是多。', '星期六学校书店多人。', '星期六学校书店很多是人。'], ans:0, exp:'Tính từ 多 làm vị ngữ, có 很 phía trước; không chen 是, không đặt 多 trước 人 theo tiếng Việt.'},
+  {q:'A: “书店在哪儿？” — Hiệu sách ở trước bệnh viện. B đáp:', opts:['在医院前。', '在前医院。', '是医院前。', '医院前在。'], ans:0, exp:'在 + danh từ + phương vị từ: 在医院前; 前 không đứng trước danh từ.'},
+  {q:'Bạn giới thiệu trường mình rất rộng:', opts:['我们学校很大。', '我们学校是大。', '我们学校大很。', '我们学校有大。'], ans:0, exp:'Tính từ 大 làm vị ngữ trực tiếp, 很 đứng trước; không dùng 是 hay 有.'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời của bạn — câu cuối hãy nói về chính bạn.',
+  intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời của bạn — các câu cuối hãy nói về chính bạn.',
   questions: [
     {q_zh: '小猫在哪儿呢？', q_vn: 'Bạn của bạn hỏi con mèo ở đâu. Con mèo đang ở dưới bàn. Bạn trả lời thế nào?',
      hint: '它在……呢。', sample: '它在桌子下呢。', sample_vn: 'Nó ở dưới bàn kìa.',
-     note: 'Nói vị trí: vật + 在 + danh từ + phương vị từ (下/里/外/前/后).'},
-    {q_zh: '我们在哪儿见呢？', q_vn: 'Bạn của bạn hỏi gặp nhau ở đâu. Hãy hẹn ở trước hiệu sách của trường.',
-     hint: '在……见吧。', sample: '在学校书店前见吧。', sample_vn: 'Gặp nhau ở trước hiệu sách của trường nhé.',
-     note: 'Giới từ 在 + nơi chốn đứng trước động từ 见, chỉ nơi diễn ra hành động.'},
-    {q_zh: '下午两点你能到吗？', q_vn: 'Bạn của bạn hỏi 2 giờ chiều bạn đến được không. Bạn trả lời thế nào?',
-     hint: '我能/不能……', sample: '我能到。', sample_vn: 'Mình đến được.',
-     note: 'Động từ năng nguyện 能 đứng trước động từ, phủ định là 不能.'},
-    {q_zh: '你在哪儿吃午饭？', q_vn: 'Bạn thường ăn trưa ở đâu? Hãy nói về chính bạn.',
-     hint: '我在……吃午饭。', sample: '我在学校吃午饭。', sample_vn: 'Mình ăn trưa ở trường.',
-     note: 'Nơi chốn (在 + nơi chốn) luôn đứng trước động từ 吃.'},
-    {q_zh: '明天下午你能去超市吗？', q_vn: 'Chiều mai bạn đi siêu thị được không? Trả lời thật về bạn, không đi được thì nói lý do.',
-     hint: '我能去。/ 我很忙，不能去。', sample: '明天下午我很忙，不能去超市。', sample_vn: 'Chiều mai mình bận, không đi siêu thị được.',
-     note: 'Không làm được vì điều kiện (bận, có việc) thì dùng 不能, không dùng 不会.'},
-    {q_zh: '你的手机在哪儿？', q_vn: 'Điện thoại của bạn đang ở đâu? Hãy nói vị trí thật.',
-     hint: '我的手机在……里/下/前。', sample: '我的手机在房间里。', sample_vn: 'Điện thoại của mình ở trong phòng.',
-     note: 'Phương vị từ đứng sau danh từ: 房间里, 桌子下.'},
+     note: 'Nói vị trí: vật + 在 + danh từ + phương vị từ (下/里/外/前).'},
+    {q_zh: '你看，这是我的小猫。', q_vn: 'Bạn của bạn khoe con mèo nhỏ của mình. Hãy khen nó.',
+     hint: '这只小猫真……！', sample: '这只小猫真漂亮！', sample_vn: 'Con mèo nhỏ này thật xinh!',
+     note: '真 + tính từ để khen; con vật dùng lượng từ 只.'},
+    {q_zh: '下午两点你能到吗？', q_vn: 'Bạn của bạn hẹn 2 giờ chiều. Bạn có tiết lúc 2 giờ, 3 giờ mới đến được. Hãy trả lời.',
+     hint: '对不起，我……，……能到。', sample: '对不起，我两点有课，三点能到。', sample_vn: 'Xin lỗi, 2 giờ mình có tiết, 3 giờ mình đến được.',
+     note: '能 đứng trước động từ 到; thời gian (三点) đứng trước 能.'},
+    {q_zh: '你们学校大吗？', q_vn: 'Có người hỏi trường của bạn có rộng không. Hãy trả lời thật.',
+     hint: '我们学校很大／不太大……', sample: '我们学校不太大，学生也不多。', sample_vn: 'Trường mình không rộng lắm, học sinh cũng không đông.',
+     note: 'Tính từ (大/多) làm vị ngữ, không dùng 是; 不太 + tính từ = không … lắm.'},
+    {q_zh: '你爸爸妈妈在哪儿工作？', q_vn: 'Bố mẹ bạn làm việc ở đâu? Hãy nói thật về gia đình bạn.',
+     hint: '我爸爸在……工作，我妈妈……', sample: '我妈妈在超市工作，我爸爸是老师。', sample_vn: 'Mẹ mình làm ở siêu thị, bố mình là giáo viên.',
+     note: '在 + nơi chốn đứng trước động từ 工作.'},
   ],
 };
 
@@ -2409,19 +2391,19 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Ngoài phòng có một con mèo nhỏ. Nó ở dưới bàn.', zh:'房间外有一只小猫。它在桌子下呢。', py:'Fángjiān wài yǒu yì zhī xiǎo māo. Tā zài zhuōzi xià ne.'},
-  {vi:'Chúng ta gặp nhau ở trước hiệu sách của trường nhé.', zh:'我们在学校书店前见吧。', py:'Wǒmen zài xuéxiào shūdiàn qián jiàn ba.'},
-  {vi:'2 giờ chiều bạn đến được không? — Mình đến được.', zh:'下午两点你能到吗？——我能到。', py:'Xiàwǔ liǎng diǎn nǐ néng dào ma? — Wǒ néng dào.'},
-  {vi:'Bệnh viện lớn có nhiều bệnh nhân, bác sĩ rất bận.', zh:'大医院病人多，医生非常忙。', py:'Dà yīyuàn bìngrén duō, yīshēng fēicháng máng.'},
-  {vi:'Tôi biết nấu ăn, hôm nay bận quá, không nấu được.', zh:'我会做饭，今天太忙，不能做饭。', py:'Wǒ huì zuò fàn, jīntiān tài máng, bù néng zuò fàn.'},
+  {vi:'Tối nay mẹ không nấu cơm được, chúng ta ăn mì nhé.', zh:'今天晚上妈妈不能做饭，我们吃面条儿吧。', py:'Jīntiān wǎnshang māma bù néng zuò fàn, wǒmen chī miàntiáor ba.'},
+  {vi:'Hôm nay bệnh viện không đông bệnh nhân, bác sĩ không bận lắm.', zh:'今天医院里病人不多，医生不太忙。', py:'Jīntiān yīyuàn li bìngrén bù duō, yīshēng bú tài máng.'},
+  {vi:'Ở trường tôi không nhìn thấy cô Vương.', zh:'我在学校没看见王老师。', py:'Wǒ zài xuéxiào méi kànjiàn Wáng lǎoshī.'},
+  {vi:'Thứ Bảy tôi không đi làm, có thể ở nhà nghỉ ngơi.', zh:'星期六我不上班，能在家里休息。', py:'Xīngqīliù wǒ bú shàngbān, néng zài jiā li xiūxi.'},
+  {vi:'Phòng của tôi rất nhỏ, mà cũng rất đẹp.', zh:'我的房间很小，也很漂亮。', py:'Wǒ de fángjiān hěn xiǎo, yě hěn piàoliang.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Bố tôi cũng làm việc ở bệnh viện.', zh:'我爸爸也在医院工作。', py:'Wǒ bàba yě zài yīyuàn gōngzuò.'},
-  {vi:'Bạn ăn trưa ở đâu?', zh:'你在哪儿吃午饭？', py:'Nǐ zài nǎr chī wǔfàn?'},
-  {vi:'Con mèo này thật xinh đẹp!', zh:'这只小猫真漂亮！', py:'Zhè zhī xiǎo māo zhēn piàoliang!'},
-  {vi:'Tôi hiện giờ có việc, không thể đi được.', zh:'我现在有事，不能去。', py:'Wǒ xiànzài yǒu shì, bù néng qù.'},
+  {vi:'Mấy giờ các bạn đến rạp chiếu phim được?', zh:'你们几点能到电影院？', py:'Nǐmen jǐ diǎn néng dào diànyǐngyuàn?'},
+  {vi:'Hôm nay em gái không ăn trưa ở nhà.', zh:'今天妹妹没在家里吃午饭。', py:'Jīntiān mèimei méi zài jiā li chī wǔfàn.'},
+  {vi:'Con mèo dưới gầm bàn là của ai?', zh:'桌子下的猫是谁的？', py:'Zhuōzi xià de māo shì shéi de?'},
+  {vi:'Chủ nhật bác sĩ cũng không được nghỉ à?', zh:'医生星期天也不能休息吗？', py:'Yīshēng xīngqītiān yě bù néng xiūxi ma?'},
 ];

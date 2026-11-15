@@ -2807,45 +2807,41 @@ var matchData = [
   {left:'火', right:'车'},
   {left:'说', right:'话'},
   {left:'听', right:'见'},
-  {left:'中', right:'学'},
-  {left:'小', right:'学'},
-  {left:'上', right:'学'},
+  {left:'汉', right:'字'},
+  {left:'明', right:'年'},
   {left:'有', right:'些'},
-  {left:'中', right:'午'},
+  {left:'中学', right:'生'},
+  {left:'上', right:'学'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 2 · NGHE — nghe câu (giọng đọc máy) → chọn đáp án
 // ══════════════════════════════════════════
 var listenData = [
-  {audio:'昨天下午我看了一个电影。',
+  {audio:'今天上午我写了十五个汉字，下午写了二十个。',
    questions:[
-     {q:'Chiều hôm qua người nói đã làm gì?', opts:['Đọc sách', 'Xem phim', 'Viết chữ Hán'], ans:1, exp:'看了一个电影 = đã xem một bộ phim; 了 sau động từ chỉ việc đã làm xong.'},
+     {q:'Buổi chiều người nói viết được bao nhiêu chữ Hán?', opts:['15 chữ', '35 chữ', '20 chữ'], ans:2, exp:'下午写了二十个 = buổi chiều đã viết 20 chữ; 15 chữ là buổi sáng.'},
    ]},
-  {audio:'火车中午十二点开，现在十一点半。',
+  {audio:'我们坐下午三点的火车，两点在学校前边见吧。',
    questions:[
-     {q:'Tàu chạy lúc mấy giờ?', opts:['11 giờ', '11 giờ rưỡi', '12 giờ trưa'], ans:2, exp:'中午十二点开 = 12 giờ trưa tàu chạy; 十一点半 là giờ hiện tại.'},
+     {q:'Họ hẹn gặp nhau lúc mấy giờ?', opts:['2 giờ', '3 giờ', '2 giờ rưỡi'], ans:0, exp:'两点……见吧 = 2 giờ gặp nhé; 3 giờ là giờ tàu chạy.'},
    ]},
-  {audio:'我们都会写汉字了。',
+  {audio:'哥哥下班了没有？——还没有，他七点下班。',
    questions:[
-     {q:'Bao nhiêu người đã biết viết chữ Hán?', opts:['Tất cả mọi người', 'Chỉ một người', 'Không ai cả'], ans:0, exp:'都 = đều, tất cả: 我们都会写 = chúng tôi ai cũng biết viết.'},
+     {q:'Anh trai đã tan làm chưa?', opts:['Tan làm rồi', 'Hôm nay không đi làm', 'Chưa, 7 giờ mới tan'], ans:2, exp:'下班了没有？ hỏi đã tan làm chưa; 还没有 = vẫn chưa.'},
    ]},
-  {audio:'老师，我没听见，您再说一下，好吗？',
+  {audio:'对不起，我没听见你的电话，我在开车。',
    questions:[
-     {q:'Học sinh muốn cô làm gì?', opts:['Viết chữ Hán', 'Nói lại một lần', 'Đừng nói chuyện'], ans:1, exp:'没听见 = không nghe thấy; 再说一下 = nói lại một chút.'},
+     {q:'Vì sao người nói không nghe điện thoại?', opts:['Đang ngủ', 'Đang lái xe', 'Đang học'], ans:1, exp:'没听见 = không nghe thấy; 我在开车 = tôi đang lái xe.'},
    ]},
-  {audio:'明年我女儿上中学，儿子上小学。',
+  {audio:'王老师的儿子是中学生，女儿还是小学生。',
    questions:[
-     {q:'Sang năm con trai vào học ở đâu?', opts:['Trung học', 'Đại học', 'Tiểu học'], ans:2, exp:'儿子上小学 = con trai vào tiểu học; con gái mới lên trung học (中学).'},
+     {q:'Con gái cô Vương là:', opts:['Học sinh tiểu học', 'Học sinh trung học', 'Sinh viên đại học'], ans:0, exp:'女儿还是小学生 = con gái vẫn là học sinh tiểu học; con trai mới là 中学生.'},
    ]},
-  {audio:'火车上，有的人在看书，有的人睡觉了，我看了一个电影。',
+  {audio:'晚上在家里，爸爸在看电视，妈妈在做饭，我和妹妹都在写汉字。',
    questions:[
-     {q:'Người nói đã làm gì trên tàu?', opts:['Ngủ', 'Xem phim', 'Đọc sách'], ans:1, exp:'我看了一个电影 = tôi đã xem một bộ phim.'},
-     {q:'Những người khác làm gì?', opts:['Có người đọc sách, có người ngủ', 'Tất cả đều ngủ', 'Tất cả đều xem phim'], ans:0, exp:'有的人……，有的人…… = có người …, có người …'},
-   ]},
-  {audio:'他下班了没有？还没下班呢。',
-   questions:[
-     {q:'Anh ấy đã tan làm chưa?', opts:['Tan làm rồi', 'Chưa tan làm', 'Hôm nay không đi làm'], ans:1, exp:'还没下班呢 = vẫn chưa tan làm; phủ định dùng 没 và bỏ 了.'},
+     {q:'Mẹ đang làm gì?', opts:['Xem tivi', 'Nấu cơm', 'Viết chữ Hán'], ans:1, exp:'妈妈在做饭 = mẹ đang nấu cơm.'},
+     {q:'Ai đang viết chữ Hán?', opts:['Bố và mẹ', 'Chỉ em gái', 'Tôi và em gái'], ans:2, exp:'我和妹妹都在写汉字 = tôi và em gái đều đang viết chữ Hán.'},
    ]},
 ];
 
@@ -2853,25 +2849,17 @@ var listenData = [
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'你们上火车', blank:'后', post:'看见王老师了吗？', hint:'(sau khi)', ans:'后', exp:'……后 = sau khi…; cụm thời gian 上火车后 đứng trước động từ 看见.'},
-  {pre:'我看', blank:'了', post:'一个电影。', hint:'(đã — đứng ngay sau động từ)', ans:'了', exp:'了 đứng NGAY SAU động từ, trước tân ngữ có số lượng: 看了一个电影.'},
-  {pre:'你们会说汉语了，也会', blank:'写', post:'汉字了吗？', hint:'(viết)', ans:'写', exp:'会 + 写 = biết viết; 写汉字 = viết chữ Hán.'},
-  {pre:'请大家', blank:'不要', post:'说话！', hint:'(đừng)', ans:'不要', exp:'不要 + động từ = đừng làm gì: 不要说话 = đừng nói chuyện.'},
-  {pre:'我们', blank:'都', post:'会写了。', hint:'(đều)', ans:'都', exp:'都 đứng SAU chủ ngữ (我们), trước động từ — không đưa 都 lên đầu câu.'},
-  {pre:'明年女儿', blank:'上', post:'中学。', hint:'(lên, vào học)', ans:'上', exp:'上 + trường = bắt đầu vào học: 上中学, 上小学.'},
-  {pre:'中午车开后，', blank:'有些', post:'人在看书，有些人睡觉了。', hint:'(có một số — giống vế sau)', ans:'有些', exp:'有些人……，有些人…… = một số người…, một số người…'},
-  {pre:'有的人在看书，', blank:'有的', post:'人在睡觉。', hint:'(có người — giống vế trước)', ans:'有的', exp:'有的……，有的…… dùng thành cặp để chia nhóm: có người…, có người…'},
-  {pre:'Đêm đã khuya: “太', blank:'晚', post:'了，睡觉吧。”', hint:'(muộn)', ans:'晚', exp:'太晚了 = muộn quá rồi; khung 太…了.'},
-  {pre:'Cô hỏi: “你们听见了吗？” — Bạn: “老师，我没', blank:'听见', post:'。”', hint:'(nghe thấy)', ans:'听见', exp:'没 + 听见 = không nghe thấy (việc đã qua), không thêm 了.'},
-  {pre:'请', blank:'听', post:'老师的问题。', hint:'(nghe)', ans:'听', exp:'听 = nghe (hành động); 听见 = nghe thấy (kết quả).'},
-  {pre:'A: “你会写', blank:'哪些', post:'字？” — B: “我会写这些字。”', hint:'(những … nào)', ans:'哪些', exp:'哪些 hỏi về nhiều người/vật: 哪些字 = những chữ nào; đáp bằng 这些.'},
-  {pre:'Hai con mèo ở trên bàn: “', blank:'它们', post:'都在桌子上。”', hint:'(chúng — chỉ con vật)', ans:'它们', exp:'Con vật, đồ vật số nhiều dùng 它们; 他们 chỉ người.'},
-  {pre:'Hai em gái tôi đều học tiểu học: “', blank:'她们', post:'都是小学生。”', hint:'(họ — đều là nữ)', ans:'她们', exp:'Nhóm toàn nữ dùng 她们; có cả nam thì dùng 他们.'},
-  {pre:'我儿子八岁，他是', blank:'小学生', post:'。', hint:'(học sinh tiểu học)', ans:'小学生', exp:'小学 = trường tiểu học → 小学生 = học sinh tiểu học.'},
-  {pre:'我女儿上中学了，她是', blank:'中学生', post:'。', hint:'(học sinh trung học)', ans:'中学生', exp:'中学 = trường trung học → 中学生 = học sinh trung học.'},
-  {pre:'我昨天去医院看', blank:'了', post:'病，现在不冷了。', hint:'(đã — chen giữa 看 và 病)', ans:'了', exp:'看病 là từ ly hợp: 了 chen vào giữa thành 看了病, không nói 了看病.'},
-  {pre:'A: “火车几点开？” — B: “', blank:'中午', post:'十二点开。”', hint:'(buổi trưa)', ans:'中午', exp:'Buổi trong ngày đứng trước giờ: 中午十二点.'},
-  {pre:'火车几点', blank:'开', post:'？', hint:'(chạy, khởi hành)', ans:'开', exp:'Tàu xe chạy, khởi hành dùng 开: 火车几点开？'},
+  {pre:'昨天我在超市买', blank:'了', post:'两斤苹果。', hint:'(đã — ngay sau động từ)', ans:'了', exp:'了 đứng NGAY SAU động từ, trước tân ngữ có số lượng: 买了两斤苹果.'},
+  {pre:'Thấy em bé chạy chơi trên tàu, mẹ nói: “', blank:'不要', post:'在火车上玩！”', hint:'(đừng)', ans:'不要', exp:'不要 + động từ = đừng làm gì; 不要 đứng trước cả cụm 在火车上玩.'},
+  {pre:'我爸爸妈妈', blank:'都', post:'在医院工作。', hint:'(đều)', ans:'都', exp:'都 đứng SAU những người được nói tới (爸爸妈妈), trước 在 + nơi chốn.'},
+  {pre:'这些菜', blank:'有的', post:'很好吃，有的不太好吃。', hint:'(có món — giống vế sau)', ans:'有的', exp:'有的……，有的…… dùng thành cặp để chia nhóm: có món…, có món…'},
+  {pre:'妈妈叫我起床，我在睡觉，没', blank:'听见', post:'。', hint:'(nghe thấy)', ans:'听见', exp:'没 + 听见 = không nghe thấy (việc đã qua), không thêm 了.'},
+  {pre:'我喜欢', blank:'听', post:'中国歌。', hint:'(nghe)', ans:'听', exp:'听 = nghe (hành động chủ động); 听见 = nghe thấy (kết quả).'},
+  {pre:'A: “你会做', blank:'哪些', post:'菜？” — B: “我会做饺子和包子。”', hint:'(những … nào)', ans:'哪些', exp:'哪些 + danh từ hỏi về nhiều thứ; câu trả lời kể ra nhiều món.'},
+  {pre:'我的两个妹妹九岁，', blank:'她们', post:'都是小学生。', hint:'(các em ấy — đều là nữ)', ans:'她们', exp:'Nhóm toàn nữ dùng 她们; có cả nam dùng 他们; con vật, đồ vật dùng 它们.'},
+  {pre:'爸爸', blank:'开', post:'车去公司上班。', hint:'(lái)', ans:'开', exp:'开车 = lái xe; 开 còn dùng cho tàu xe chạy: 火车开了.'},
+  {pre:'这个字怎么', blank:'写', post:'？', hint:'(viết)', ans:'写', exp:'怎么 + động từ hỏi cách làm: 怎么写 = viết thế nào.'},
+  {pre:'我朋友在中国工作，他会说', blank:'汉语', post:'。', hint:'(tiếng Trung Quốc)', ans:'汉语', exp:'会说 + ngôn ngữ = biết nói tiếng…: 会说汉语.'},
 ];
 
 // ══════════════════════════════════════════
@@ -2879,40 +2867,31 @@ var fillData = [
 // ══════════════════════════════════════════
 var sortData = [
   {words:['你们','上','火车','后','看见','王老师','了','吗','？'], ans:'你们上火车后看见王老师了吗？', audio:'你们上火车后看见王老师了吗？'},
-  {words:['我','看','了','一个','电影','。'], ans:'我看了一个电影。', audio:'我看了一个电影。'},
-  {words:['我们','都','会','写','了','。'], ans:'我们都会写了。', audio:'我们都会写了。'},
+  {words:['有的','人','在','看书','，','有的','人','睡觉','了','。'], ans:'有的人在看书，有的人睡觉了。', audio:'有的人在看书，有的人睡觉了。'},
   {words:['请','大家','不要','说话','！'], ans:'请大家不要说话！', audio:'请大家不要说话！'},
   {words:['明年','女儿','上','中学','。'], ans:'明年女儿上中学。', audio:'明年女儿上中学。', alt:['女儿明年上中学。']},
   {words:['上学','后','，','他们','都','忙','了','。'], ans:'上学后，他们都忙了。', audio:'上学后，他们都忙了。'},
-  {words:['我','昨天','买','了','一','本','书','。'], ans:'我昨天买了一本书。', audio:'我昨天买了一本书。', alt:['昨天我买了一本书。']},
-  {words:['下','了','课','，','我','去','超市','。'], ans:'下了课，我去超市。', audio:'下了课，我去超市。'},
-  {words:['我','女儿','是','中学生','，','儿子','是','小学生','。'], ans:'我女儿是中学生，儿子是小学生。', audio:'我女儿是中学生，儿子是小学生。'},
-  {words:['有的','人','在','看书','，','有的','人','睡觉','了','。'], ans:'有的人在看书，有的人睡觉了。', audio:'有的人在看书，有的人睡觉了。'},
-  {words:['它们','都','在','桌子','上','。'], ans:'它们都在桌子上。', audio:'它们都在桌子上。'},
+  {words:['下','了','课','，','我们','去','书店','吧','。'], ans:'下了课，我们去书店吧。', audio:'下了课，我们去书店吧。'},
+  {words:['你们','都','会','写','哪些','汉字','了','？'], ans:'你们都会写哪些汉字了？', audio:'你们都会写哪些汉字了？'},
   {words:['太','晚','了','，','睡觉','吧','。'], ans:'太晚了，睡觉吧。', audio:'太晚了，睡觉吧。'},
-  {words:['你','会','写','哪些','汉字','？'], ans:'你会写哪些汉字？', audio:'你会写哪些汉字？'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3c · TRẮC NGHIỆM
 // ══════════════════════════════════════════
 var mcData = [
-  {q:'Bạn muốn nói: “Hôm qua tôi đã mua một quyển sách.” Câu đúng là:', opts:['我昨天买了一本书。', '我昨天买书了一本。', '我昨天了买一本书。', '我昨天买一本了书。'], ans:0, exp:'了 (động thái) đứng NGAY SAU động từ, trước tân ngữ có số lượng: 买了一本书.'},
-  {q:'A: “你看见王老师了吗？” — Bạn không thấy. Bạn đáp:', opts:['没看见。', '没看见了。', '不看见了。', '没有看见了。'], ans:0, exp:'Phủ định việc đã xảy ra dùng 没 và BỎ 了 — nói 没看见了 là lỗi rất hay gặp.'},
-  {q:'Hôm qua tôi đã uống hai cốc trà: “昨天我喝＿＿两杯茶。”', opts:['了', '的', '是', '在'], ans:0, exp:'Hành động đã xong + tân ngữ có số lượng: 喝了两杯茶.'},
-  {q:'Bạn muốn nói: “Chúng tôi đều là sinh viên.” Câu đúng là:', opts:['我们都是大学生。', '都我们是大学生。', '我们是都大学生。', '我们是大学生都。'], ans:0, exp:'都 đứng SAU chủ ngữ và TRƯỚC động từ: 我们都是…; tiếng Việt “đều” cũng đứng trước động từ.'},
-  {q:'Không ai trong số họ đi cả: “他们＿＿去。”', opts:['都不', '不都', '都不都', '没都'], ans:0, exp:'都不 + động từ = tất cả đều không; 不都 lại là “không phải ai cũng”; không lặp 都.'},
-  {q:'Bạn muốn nói: “Hôm qua tôi đã đi bệnh viện khám bệnh.”', opts:['我昨天去医院看了病。', '我昨天去医院了看病。', '我昨天了去医院看病。', '我昨天去医院看病了病。'], ans:0, exp:'看病 là từ ly hợp: 了 chen vào giữa thành 看了病 (hoặc để cuối câu: 看病了), không đặt 了 trước động từ.'},
-  {q:'Bạn muốn nói: “Tan học xong, tôi đi siêu thị.”', opts:['我下了课去超市。', '我下课了课去超市。', '我了下课去超市。', '我下了去超市课。'], ans:0, exp:'下课 là từ ly hợp: 了 chen giữa 下 và 课 → 下了课.'},
-  {q:'Bạn hỏi: “Bạn ấy tan học chưa?” Câu đúng là:', opts:['他下课了没有？', '他下课了没有下课？', '他下了没有课？', '他没有下课了吗？'], ans:0, exp:'Hỏi việc đã xảy ra chưa: V + 了 + 没有？ — không lặp lại cả từ ly hợp 下课.'},
-  {q:'Trên tàu, mỗi người làm một việc: “＿＿人在看书，有的人睡觉了。”', opts:['有的', '哪些', '都', '这些'], ans:0, exp:'有的……，有的…… đi thành cặp để chia nhóm người.'},
-  {q:'A: “你会写＿＿汉字？” — B: “我会写这些字。”', opts:['哪些', '哪儿', '谁', '怎么'], ans:0, exp:'Hỏi “những … nào” dùng 哪些 + danh từ; đáp bằng 这些.'},
-  {q:'Cô giáo nhắc cả lớp đừng nói chuyện:', opts:['请大家不要说话！', '请大家没说话！', '请大家说话不要！', '请不要大家说话！'], ans:0, exp:'不要 + động từ = đừng làm gì; 不要 đứng ngay trước động từ, sau chủ ngữ.'},
-  {q:'Sang năm con trai tôi vào tiểu học: “明年我儿子＿＿小学。”', opts:['上', '下', '开', '在'], ans:0, exp:'Bắt đầu vào học một cấp trường dùng 上: 上小学, 上中学.'},
+  {q:'Bạn muốn nói: “Hôm qua tôi đã uống hai cốc trà.” Câu đúng là:', opts:['我昨天喝了两杯茶。', '我昨天喝茶了两杯。', '我昨天了喝两杯茶。', '我昨天喝两杯了茶。'], ans:0, exp:'了 (động thái) đứng NGAY SAU động từ, trước tân ngữ có số lượng: 喝了两杯茶.'},
+  {q:'A: “你看见我的手机了吗？” — Bạn không thấy. Bạn đáp:', opts:['没看见。', '没看见了。', '不看见了。', '没有看见了。'], ans:0, exp:'Phủ định việc đã xảy ra dùng 没 và BỎ 了 — nói 没看见了 là lỗi rất hay gặp.'},
+  {q:'Bạn hỏi: “Mẹ đã về nhà chưa?” Câu đúng là:', opts:['妈妈回家了没有？', '妈妈回家了没有回家？', '妈妈没有回家了吗？', '妈妈回了没有家？'], ans:0, exp:'Hỏi việc đã xảy ra chưa: V + 了 + 没有？ — không lặp lại cả cụm 回家.'},
+  {q:'Bạn muốn nói: “Các bạn ấy đều là người Pháp.” Câu đúng là:', opts:['他们都是法国人。', '都他们是法国人。', '他们是都法国人。', '他们是法国人都。'], ans:0, exp:'都 đứng SAU chủ ngữ và TRƯỚC động từ: 他们都是…; không đưa 都 lên đầu câu.'},
+  {q:'Hôm qua không ai trong số họ đến lớp: “昨天他们＿＿来上课。”', opts:['都没', '没都', '不都', '没有都'], ans:0, exp:'都没 + động từ = tất cả đều không (đã không); 没都, 不都 lại là “không phải ai cũng”.'},
+  {q:'Trong siêu thị, có loại quả rẻ, có loại đắt: “＿＿水果很便宜，有些很贵。”', opts:['有些', '有点儿', '一点儿', '多少'], ans:0, exp:'有些 + danh từ = một số …; 有点儿 đứng trước tính từ, 一点儿 đứng sau, không đứng trước danh từ làm chủ ngữ.'},
+  {q:'A: “你想买＿＿东西？” — B: “我想买一些水果。”', opts:['哪些', '哪儿', '谁', '怎么'], ans:0, exp:'Hỏi “những … nào” dùng 哪些 + danh từ.'},
+  {q:'Bạn bị ốm, mẹ dặn: “Đừng uống nước lạnh!”', opts:['你不要喝冷水！', '你没喝冷水！', '你喝冷水不要！', '不要你喝冷水！'], ans:0, exp:'不要 + động từ = đừng làm gì, đứng sau chủ ngữ, trước động từ; 没喝 là “đã không uống”.'},
+  {q:'Bạn chỉ hai con mèo dưới bàn: “＿＿是我家的猫。”', opts:['它们', '他们', '她们', '我们'], ans:0, exp:'Con vật số nhiều dùng 它们; dùng 他们 cho con vật là lỗi hay gặp.'},
+  {q:'Em gái tôi 6 tuổi, tháng 9 vào tiểu học: “我妹妹九月＿＿小学。”', opts:['上', '下', '开', '坐'], ans:0, exp:'Bắt đầu vào học một cấp trường dùng 上: 上小学, 上中学.'},
   {q:'Bạn đến lớp muộn, bạn nói với cô:', opts:['老师，对不起，我来晚了。', '老师，对不起，我晚来了。', '老师，没关系，我来晚了。', '老师，对不起，我来了晚。'], ans:0, exp:'Đến muộn nói 来晚了 (晚 đứng sau 来); xin lỗi dùng 对不起, không phải 没关系.'},
-  {q:'Hai con mèo đều ở dưới bàn: “＿＿都在桌子下。”', opts:['它们', '他们', '她们', '我们'], ans:0, exp:'Con vật số nhiều dùng 它们; dùng 他们 cho con vật là lỗi hay gặp.'},
-  {q:'Cô hỏi: “你们听见了吗？” — Bạn không nghe thấy. Bạn đáp:', opts:['老师，我没听见。', '老师，我没听见了。', '老师，我不听见。', '老师，我听没见。'], ans:0, exp:'Không nghe thấy (đã qua) = 没听见, không thêm 了; 没 đứng trước cả từ 听见.'},
-  {q:'A: “火车几点开？” — B đáp:', opts:['中午十二点开。', '十二点中午开。', '开中午十二点。', '中午开十二点。'], ans:0, exp:'Thời gian đứng TRƯỚC động từ, buổi đứng trước giờ: 中午十二点开.'},
+  {q:'Bạn muốn nói: “Tàu chạy lúc 12 giờ trưa.”', opts:['火车中午十二点开。', '火车开中午十二点。', '中午十二点开火车。', '火车十二点中午开。'], ans:0, exp:'Thời gian đứng TRƯỚC động từ, buổi đứng trước giờ: 中午十二点开; 开火车 lại là “lái tàu”.'},
 ];
 
 // ══════════════════════════════════════════
@@ -2922,20 +2901,20 @@ var speakingData = {
   intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời của bạn (nói về chính bạn).',
   questions: [
     {q_zh: '你昨天做什么了？', q_vn: 'Bạn học hỏi hôm qua bạn đã làm gì. Hãy kể 1–2 việc thật bạn đã làm.',
-     hint: '我昨天……了一……', sample: '我昨天买了一本书，看了一个电影。', sample_vn: 'Hôm qua tôi đã mua một quyển sách, xem một bộ phim.',
+     hint: '昨天我……了……', sample: '昨天我去书店买了两本书。', sample_vn: 'Hôm qua tôi đi hiệu sách mua hai quyển sách.',
      note: '了 (động thái) đặt ngay sau động từ, trước tân ngữ có số lượng.'},
-    {q_zh: '你们都会写汉字了吗？', q_vn: 'Cô giáo hỏi cả lớp đã biết viết chữ Hán chưa. Bạn trả lời thay cả lớp.',
-     hint: '我们都……了。', sample: '我们都会写了。', sample_vn: 'Chúng em đều biết viết rồi ạ.',
-     note: '都 đặt sau chủ ngữ (我们), trước động từ.'},
+    {q_zh: '你会写多少个汉字？', q_vn: 'Bạn mới hỏi bạn biết viết bao nhiêu chữ Hán. Hãy trả lời thật.',
+     hint: '我会写……个汉字。', sample: '我会写三十个汉字，我还想学。', sample_vn: 'Tôi biết viết ba mươi chữ Hán, tôi còn muốn học nữa.',
+     note: '会 + 写 = biết viết; số + 个 + 汉字.'},
     {q_zh: '明年你想做什么？', q_vn: 'Bạn bè hỏi sang năm bạn muốn làm gì. Hãy nói dự định thật của bạn.',
      hint: '明年我想……', sample: '明年我想去中国学习汉语。', sample_vn: 'Sang năm tôi muốn sang Trung Quốc học tiếng Trung.',
      note: '明年 (sang năm) đặt đầu câu hoặc sau chủ ngữ.'},
     {q_zh: '你家里的人都做什么工作？', q_vn: 'Một người bạn mới hỏi về công việc của mọi người trong nhà bạn. Hãy trả lời thật, dùng 都.',
-     hint: '我爸爸妈妈都……，我和……都……', sample: '我爸爸妈妈都是医生，我和妹妹都是学生。', sample_vn: 'Bố mẹ tôi đều là bác sĩ, tôi và em gái đều là học sinh.',
+     hint: '我爸爸是……，妈妈是……，我和……都……', sample: '我爸爸是医生，妈妈是老师，我和哥哥都是学生。', sample_vn: 'Bố tôi là bác sĩ, mẹ là giáo viên, tôi và anh trai đều là học sinh.',
      note: 'Những người được nói tới đứng TRƯỚC 都.'},
-    {q_zh: '昨天下了课，你做什么了？', q_vn: 'Bạn học hỏi hôm qua tan học xong bạn đã làm gì. Hãy kể việc thật.',
-     hint: '下了课，我……了……', sample: '下了课，我去超市买了一些东西。', sample_vn: 'Tan học xong, tôi đi siêu thị mua ít đồ.',
-     note: '下课 là từ ly hợp: 了 chen vào giữa → 下了课.'},
+    {q_zh: '你的朋友都喜欢做什么？', q_vn: 'Bạn học hỏi các bạn của bạn thích làm gì. Hãy trả lời, dùng 有的……，有的…….',
+     hint: '我的朋友有的……，有的……', sample: '我的朋友有的喜欢唱歌，有的喜欢看电视。', sample_vn: 'Bạn tôi có người thích hát, có người thích xem tivi.',
+     note: '有的……，有的…… đi thành cặp để chia nhóm người.'},
   ],
 };
 
@@ -2943,12 +2922,11 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Mình đã xem một bộ phim.', zh:'我看了一个电影。', py:'Wǒ kànle yí gè diànyǐng.'},
-  {vi:'Chúng em đều biết viết rồi ạ.', zh:'我们都会写了。', py:'Wǒmen dōu huì xiě le.'},
-  {vi:'Mọi người đừng nói chuyện!', zh:'请大家不要说话！', py:'Qǐng dàjiā búyào shuōhuà!'},
-  {vi:'Sang năm con gái lên trung học.', zh:'明年女儿上中学。', py:'Míngnián nǚ’ér shàng zhōngxué.'},
-  {vi:'Tan học xong, chúng ta đi ăn cơm nhé.', zh:'下了课，我们去吃饭吧。', py:'Xiàle kè, wǒmen qù chī fàn ba.'},
-  {vi:'Hai con mèo đều ở dưới gầm bàn.', zh:'两只猫都在桌子下边。', py:'Liǎng zhī māo dōu zài zhuōzi xiàbian.'},
+  {vi:'Tối qua tôi đã xem hai bộ phim.', zh:'昨天晚上我看了两个电影。', py:'Zuótiān wǎnshang wǒ kànle liǎng gè diànyǐng.'},
+  {vi:'Các con tôi đều đã đi học rồi.', zh:'我的孩子都上学了。', py:'Wǒ de háizi dōu shàngxué le.'},
+  {vi:'Tàu chạy rồi, cô Vương vẫn chưa đến.', zh:'火车开了，王老师还没来。', py:'Huǒchē kāi le, Wáng lǎoshī hái méi lái.'},
+  {vi:'Có người đi taxi, có người đi tàu hỏa.', zh:'有的人坐出租车，有的人坐火车。', py:'Yǒude rén zuò chūzūchē, yǒude rén zuò huǒchē.'},
+  {vi:'Hai con mèo của tôi đều ở trên ghế.', zh:'我的两只猫都在椅子上。', py:'Wǒ de liǎng zhī māo dōu zài yǐzi shang.'},
 ];
 
 // ══════════════════════════════════════════
@@ -2956,7 +2934,7 @@ var translateData = [
 // ══════════════════════════════════════════
 var translateDataRev = [
   {vi:'Thưa cô, em không nghe thấy ạ.', zh:'老师，我听不见。', py:'Lǎoshī, wǒ tīng bú jiàn.'},
-  {vi:'Các em đã biết viết những chữ Hán nào rồi?', zh:'你们都会写哪些汉字了？', py:'Nǐmen dōu huì xiě nǎxiē Hànzì le?'},
-  {vi:'Con trai cũng lên tiểu học.', zh:'儿子也上小学了。', py:'Érzi yě shàng xiǎoxué le.'},
-  {vi:'Muộn quá rồi, đi ngủ thôi.', zh:'太晚了，睡觉吧。', py:'Tài wǎn le, shuìjiào ba.'},
+  {vi:'Nhà mình có một học sinh trung học rồi, lại có thêm một học sinh tiểu học nữa.', zh:'我们家有了一个中学生，还有了一个小学生。', py:'Wǒmen jiā yǒule yí gè zhōngxuéshēng, hái yǒule yí gè xiǎoxuéshēng.'},
+  {vi:'Các em đã biết nói tiếng Trung rồi, cũng biết viết chữ Hán rồi chứ?', zh:'你们会说汉语了，也会写汉字了吗？', py:'Nǐmen huì shuō Hànyǔ le, yě huì xiě Hànzì le ma?'},
+  {vi:'Em đã biết viết những chữ này rồi, cô xem này!', zh:'我会写这些字了，您看！', py:'Wǒ huì xiě zhèxiē zì le, nín kàn!'},
 ];

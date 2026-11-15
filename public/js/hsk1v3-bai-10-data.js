@@ -2336,30 +2336,30 @@ var matchData = [
 // PHẦN 2 · NGHE — nghe câu (giọng đọc máy) → chọn đáp án
 // ══════════════════════════════════════════
 var listenData = [
-  {audio:'这些杯子五块钱一个，那些十块钱一个。',
+  {audio:'这儿的苹果五块一斤，那儿的四块一斤。',
    questions:[
-     {q:'Loại cốc rẻ giá bao nhiêu một cái?', opts:['10 đồng', '5 đồng', '15 đồng'], ans:1, exp:'这些五块钱一个 = những cái này 5 đồng một cái; 那些 mới là 10 đồng.'},
+     {q:'Táo ở đằng kia giá bao nhiêu một cân?', opts:['5 đồng', '4 đồng', '9 đồng'], ans:1, exp:'那儿的四块一斤 = (táo) ở đằng kia 4 đồng một cân; 这儿 mới là 5 đồng.'},
    ]},
-  {audio:'苹果三块五一斤，我买两斤。',
+  {audio:'这件衣服二百元，很贵，我不想买。',
    questions:[
-     {q:'Một cân táo giá bao nhiêu?', opts:['3,5 đồng', '5,3 đồng', '7 đồng'], ans:0, exp:'三块五 = 3 đồng rưỡi; đơn vị lớn (块) đứng trước phần lẻ.'},
-     {q:'Người nói mua mấy cân?', opts:['Một cân', 'Ba cân', 'Hai cân'], ans:2, exp:'两斤 = hai cân.'},
+     {q:'Người nói có mua chiếc áo không?', opts:['Có, vì rẻ', 'Không, vì không đẹp', 'Không, vì đắt'], ans:2, exp:'二百元，很贵 = 200 đồng, đắt; 不想买 = không muốn mua.'},
    ]},
-  {audio:'这件衣服一百元，很好看，也不贵。',
+  {audio:'那家商店的水果很少，也不便宜。',
    questions:[
-     {q:'Người nói thấy chiếc áo thế nào?', opts:['Đẹp nhưng đắt', 'Đẹp và không đắt', 'Không đẹp'], ans:1, exp:'很好看 = rất đẹp, 也不贵 = cũng không đắt.'},
+     {q:'Hoa quả ở cửa hàng đó thế nào?', opts:['Nhiều và rẻ', 'Ít nhưng rẻ', 'Ít và không rẻ'], ans:2, exp:'很少 = rất ít; 也不便宜 = cũng không rẻ.'},
    ]},
-  {audio:'这儿的水果真多，也很便宜。',
+  {audio:'明天我们去商店买衣服，怎么样？好的，下午去吧。',
    questions:[
-     {q:'Hoa quả ở đây thế nào?', opts:['Nhiều và rẻ', 'Ít và đắt', 'Nhiều nhưng đắt'], ans:0, exp:'真多 = nhiều thật, 很便宜 = rất rẻ.'},
+     {q:'Hai người định làm gì?', opts:['Đi cửa hàng mua quần áo', 'Đi siêu thị mua hoa quả', 'Đi xem phim'], ans:0, exp:'去商店买衣服 = đi cửa hàng mua quần áo; ……，怎么样？ là rủ và hỏi ý kiến.'},
+     {q:'Khi nào hai người đi?', opts:['Sáng mai', 'Chiều mai', 'Tối nay'], ans:1, exp:'明天……下午去吧 = chiều mai đi nhé.'},
    ]},
-  {audio:'你妈妈怎么样？她很好，谢谢。',
+  {audio:'这些是女孩子穿的衣服，男孩子的衣服在那儿。',
    questions:[
-     {q:'Người thứ nhất hỏi gì?', opts:['Mẹ bạn ở đâu?', 'Mẹ bạn bao nhiêu tuổi?', 'Mẹ bạn thế nào (có khỏe không)?'], ans:2, exp:'怎么样 hỏi tình hình, ý kiến: 你妈妈怎么样？'},
+     {q:'Quần áo bé trai ở đâu?', opts:['Ở bên này', 'Ở đằng kia', 'Không có'], ans:1, exp:'男孩子的衣服在那儿 = quần áo bé trai ở đằng kia; 这些 (ở đây) là quần áo bé gái.'},
    ]},
-  {audio:'男孩子的衣服不在这边，在那儿。',
+  {audio:'我是这家商店的售货员，我们这儿的杯子很便宜。',
    questions:[
-     {q:'Quần áo bé trai ở đâu?', opts:['Ở bên này', 'Ở đằng kia', 'Không có'], ans:1, exp:'不在这边，在那儿 = không ở bên này, ở đằng kia.'},
+     {q:'Người nói là ai?', opts:['Người bán hàng', 'Khách mua hàng', 'Giáo viên'], ans:0, exp:'售货员 = người bán hàng.'},
    ]},
 ];
 
@@ -2367,21 +2367,17 @@ var listenData = [
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'请问，有', blank:'杯子', post:'吗？', hint:'(cốc)', ans:'杯子', exp:'Hỏi cửa hàng có bán gì: 请问，有 + đồ vật + 吗？'},
-  {pre:'', blank:'多少钱', post:'一个？', hint:'(bao nhiêu tiền)', ans:'多少钱', exp:'Hỏi giá dùng 多少钱; đã có 多少 thì không thêm 吗.'},
-  {pre:'这些', blank:'五块钱', post:'一个，那些十块钱一个。', hint:'(5 đồng)', ans:'五块钱', exp:'块 là đơn vị tiền trong khẩu ngữ: 五块钱一个 = 5 đồng một cái.'},
-  {pre:'', blank:'这儿的水果', post:'真不少！', hint:'(hoa quả ở đây)', ans:'这儿的水果', exp:'的 nối định ngữ chỉ nơi chốn với danh từ: 这儿的水果 = hoa quả ở đây.'},
-  {pre:'我想买两斤', blank:'苹果', post:'。', hint:'(táo)', ans:'苹果', exp:'Số + lượng từ (斤) + vật: 两斤苹果; không nói 苹果两斤 theo tiếng Việt.'},
-  {pre:'这儿的苹果真', blank:'便宜', post:'！', hint:'(rẻ)', ans:'便宜', exp:'真 + tính từ làm vị ngữ: 真便宜, không thêm 是.'},
-  {pre:'这件一百元，', blank:'怎么样', post:'？', hint:'(thế nào)', ans:'怎么样', exp:'怎么样 đặt cuối câu để hỏi ý kiến; không nói 怎么.'},
-  {pre:'好看，也不', blank:'贵', post:'。', hint:'(đắt)', ans:'贵', exp:'Phủ định tính từ: 不 + 贵, không cần 是; 也 đứng trước 不: 也不贵.'},
-  {pre:'Táo 3 đồng rưỡi một cân: “苹果三', blank:'块', post:'五一斤。”', hint:'(đồng — khẩu ngữ)', ans:'块', exp:'Nói giá từ đơn vị lớn đến nhỏ: 三块五; nói 三五块 như tiếng Việt là sai.'},
-  {pre:'Phòng của mình rất to: “我的房间', blank:'很', post:'大。”', hint:'(rất — đứng trước tính từ)', ans:'很', exp:'Tính từ làm vị ngữ thường có 很 phía trước; nói 我的房间是大 là lỗi hay gặp.'},
-  {pre:'Hoa quả ở cửa hàng này rất ít: “这家商店的水果很', blank:'少', post:'。”', hint:'(ít)', ans:'少', exp:'少 = ít, làm vị ngữ trực tiếp: 水果很少.'},
-  {pre:'Bạn rủ bạn đi xem phim tối nay: “我们晚上去看电影，', blank:'怎么样', post:'？”', hint:'(thấy thế nào — hỏi ý kiến)', ans:'怎么样', exp:'Đưa ra đề nghị rồi hỏi ý kiến bằng ……，怎么样？'},
-  {pre:'Em gái mình mặc vừa chiếc áo này: “我妹妹能', blank:'穿', post:'这件衣服。”', hint:'(mặc)', ans:'穿', exp:'能 + động từ: 能穿 = mặc được (phù hợp, vừa).'},
-  {pre:'Mua táo: “我想买三', blank:'斤', post:'苹果。”', hint:'(cân — đơn vị khối lượng)', ans:'斤', exp:'斤 = cân (0,5 kg); 件 dùng cho quần áo.'},
-  {pre:'Người bán chỉ chỗ để cốc: “杯子在', blank:'这边', post:'。”', hint:'(phía bên này — có chữ 边)', ans:'这边', exp:'Vật + 在 + nơi chốn: 杯子在这边.'},
+  {pre:'“这件衣服', blank:'多少钱', post:'？” — “九十块。”', hint:'(bao nhiêu tiền)', ans:'多少钱', exp:'Hỏi giá dùng 多少钱; đã có 多少 thì không thêm 吗.'},
+  {pre:'“你的电脑多少钱？” — “四千', blank:'块', post:'钱。”', hint:'(đồng — khẩu ngữ)', ans:'块', exp:'Khẩu ngữ nói tiền: số + 块 + 钱: 四千块钱.'},
+  {pre:'Bạn chỉ hai chiếc áo trên ghế: “这两', blank:'件', post:'衣服是我姐姐的。”', hint:'(lượng từ cho quần áo)', ans:'件', exp:'Quần áo dùng lượng từ 件: 两件衣服; dùng 个 cho mọi thứ là lỗi hay gặp.'},
+  {pre:'Bạn rủ bạn: “这家书店的书很', blank:'便宜', post:'，我们在这儿买吧。”', hint:'(rẻ)', ans:'便宜', exp:'Tính từ 便宜 làm vị ngữ, có 很 phía trước, không thêm 是.'},
+  {pre:'“王老师的新家', blank:'怎么样', post:'？” — “很大，也很新。”', hint:'(thế nào)', ans:'怎么样', exp:'怎么样 đặt CUỐI câu để hỏi tình hình, ý kiến; không thay bằng 怎么.'},
+  {pre:'“妈妈，这件衣服我能', blank:'穿', post:'吗？”', hint:'(mặc)', ans:'穿', exp:'能 + động từ: 能穿 = mặc được (vừa, hợp).'},
+  {pre:'Bạn chỉ mấy chiếc cốc trước mặt: “', blank:'这些', post:'杯子很漂亮，我想买两个。”', hint:'(những … này)', ans:'这些', exp:'这些 = những cái này (gần, số nhiều); 那些 = những cái kia.'},
+  {pre:'“今天商店里人很', blank:'少', post:'，售货员不忙。”', hint:'(ít)', ans:'少', exp:'少 = ít, trái nghĩa với 多; làm vị ngữ trực tiếp: 人很少.'},
+  {pre:'Bạn đứng ở cổng siêu thị gọi điện cho bạn: “我在', blank:'这儿', post:'，在超市外边。”', hint:'(ở đây)', ans:'这儿', exp:'这儿 = ở đây (gần người nói); 那儿 = ở đằng kia.'},
+  {pre:'“我妈妈很喜欢吃', blank:'水果', post:'。”', hint:'(hoa quả)', ans:'水果', exp:'水果 = hoa quả nói chung; 苹果 là một loại hoa quả.'},
+  {pre:'Trên bảng giá viết: “一件八十', blank:'元', post:'。”', hint:'(đồng — văn viết)', ans:'元', exp:'元 dùng trong văn viết, bảng giá; khi nói thường dùng 块.'},
 ];
 
 // ══════════════════════════════════════════
@@ -2390,38 +2386,28 @@ var fillData = [
 var sortData = [
   {words:['请问','，','有','杯子','吗','？'], ans:'请问，有杯子吗？', audio:'请问，有杯子吗？'},
   {words:['这些','五块','钱','一个','，','那些','十块','钱','一个','。'], ans:'这些五块钱一个，那些十块钱一个。', audio:'这些五块钱一个，那些十块钱一个。'},
-  {words:['这儿','的','水果','真','不少','！'], ans:'这儿的水果真不少！', audio:'这儿的水果真不少！'},
   {words:['我','想','买','两斤','苹果','。'], ans:'我想买两斤苹果。', audio:'我想买两斤苹果。'},
   {words:['这','家','商店','衣服','真','多','！'], ans:'这家商店衣服真多！', audio:'这家商店衣服真多！'},
-  {words:['男孩子','的','衣服','在','那儿','。'], ans:'男孩子的衣服在那儿。', audio:'男孩子的衣服在那儿。'},
-  {words:['这家','商店','的','售货员','很','忙','。'], ans:'这家商店的售货员很忙。', audio:'这家商店的售货员很忙。'},
-  {words:['这件','衣服','怎么样','？'], ans:'这件衣服怎么样？', audio:'这件衣服怎么样？'},
-  {words:['这儿','的','苹果','不','贵','，','也','很','好吃','。'], ans:'这儿的苹果不贵，也很好吃。', audio:'这儿的苹果不贵，也很好吃。'},
-  {words:['我','想','买','一件','衣服','。'], ans:'我想买一件衣服。', audio:'我想买一件衣服。'},
-  {words:['这些','是','女孩子','的','衣服','。'], ans:'这些是女孩子的衣服。', audio:'这些是女孩子的衣服。'},
+  {words:['男孩子','能','穿','这件','衣服','吗','？'], ans:'男孩子能穿这件衣服吗？', audio:'男孩子能穿这件衣服吗？'},
+  {words:['那些','水果','不','贵','，','四块','钱','一斤','。'], ans:'那些水果不贵，四块钱一斤。', audio:'那些水果不贵，四块钱一斤。'},
+  {words:['你','穿','这件','衣服','很','好看','。'], ans:'你穿这件衣服很好看。', audio:'你穿这件衣服很好看。'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3c · TRẮC NGHIỆM
 // ══════════════════════════════════════════
 var mcData = [
-  {q:'Bạn hỏi giá cốc ở cửa hàng. Câu đúng là:', opts:['这些杯子多少钱一个？', '这些杯子多少钱一个吗？', '这些杯子一个多少钱吗？', '这些杯子是多少钱一个吗？'], ans:0, exp:'Câu đã có 多少 để hỏi thì không thêm 吗 — lỗi rất hay gặp.'},
-  {q:'Táo 3,5 đồng một cân: “苹果＿＿一斤。”', opts:['三块五', '三五块', '三块钱五', '五块三'], ans:0, exp:'Nói tiền từ đơn vị lớn đến nhỏ: 三块五; đọc liền 三五块 như tiếng Việt “ba năm đồng” là sai.'},
-  {q:'Chiếc áo này giá 100 đồng. Câu đúng là:', opts:['这件衣服一百元。', '这件衣服元一百。', '这本衣服一百元。', '这件衣服是一百个元。'], ans:0, exp:'Số tiền = số + 元/块; áo dùng lượng từ 件, sách mới dùng 本.'},
-  {q:'Táo ở đây rẻ thật! Câu đúng là:', opts:['这儿的苹果真便宜！', '这儿的苹果是便宜！', '这儿的苹果便宜真！', '这儿是苹果真便宜！'], ans:0, exp:'Tính từ làm vị ngữ trực tiếp, 真 đứng TRƯỚC tính từ; không chen 是.'},
-  {q:'Câu nào SAI?', opts:['我的房间是大。', '我的房间很大。', '我的房间不大。', '我的房间真大！'], ans:0, exp:'Tính từ làm vị ngữ không cần 是; tiếng Việt “phòng tôi thì to” dễ làm học sinh thêm 是.'},
-  {q:'Bạn muốn hỏi ý kiến bạn về chiếc áo. Câu đúng là:', opts:['这件衣服怎么样？', '这件衣服怎么？', '怎么样这件衣服？', '这件衣服怎么样吗？'], ans:0, exp:'怎么样 đặt CUỐI câu để hỏi ý kiến; không đưa lên đầu, không thêm 吗, không thay bằng 怎么.'},
-  {q:'A: “这件衣服怎么样？” B (thấy đẹp, không đắt) đáp:', opts:['很好看，也不贵。', '是好看，也不是贵。', '好看很，也贵不。', '很好看，也没贵。'], ans:0, exp:'Tính từ không dùng 是; phủ định tính từ dùng 不, không dùng 没.'},
-  {q:'A: “这边的苹果多少钱一斤？” B đáp:', opts:['三块五一斤。', '一斤三块五个。', '三块五一个斤。', '三五块一斤。'], ans:0, exp:'Giá + 一 + lượng từ: 三块五一斤.'},
-  {q:'Mua táo: “我想买两＿＿苹果。”', opts:['斤', '件', '本', '只'], ans:0, exp:'斤 là đơn vị cân (0,5 kg); 件 cho quần áo, 本 cho sách, 只 cho con vật.'},
-  {q:'Mua áo: “我想买一＿＿衣服。”', opts:['件', '斤', '个', '家'], ans:0, exp:'Quần áo dùng lượng từ 件; dùng 个 cho mọi thứ là lỗi hay gặp.'},
-  {q:'A: “你妈妈＿＿？” B: “她很好，谢谢！”', opts:['怎么样', '怎么', '什么', '哪儿'], ans:0, exp:'Hỏi tình hình dùng 怎么样; 怎么 hỏi cách thức (怎么去), 什么 hỏi cái gì.'},
-  {q:'Áo này là áo bé gái (女孩子的衣服). Bạn hỏi bé trai có mặc được không:', opts:['男孩子能穿吗？', '男孩子会穿吗？', '男孩子穿能吗？', '男孩子能不穿吗？'], ans:0, exp:'Hỏi “có mặc được không” (phù hợp hay không) dùng 能; 会 là biết làm.'},
-  {q:'A: “你想买什么？” B đáp:', opts:['我想买两斤苹果。', '我想买苹果两斤。', '我想两斤苹果买。', '我买想两斤苹果。'], ans:0, exp:'想 + 买 + số + lượng từ + vật; nói “mua táo hai cân” theo tiếng Việt thành 苹果两斤 là sai.'},
-  {q:'Những cái này 5 đồng, những cái kia 10 đồng. Câu đúng là:', opts:['这些五块钱，那些十块钱。', '这些五钱块，那些十钱块。', '这些块五钱，那些块十钱。', '这些是五块，那些是十块钱个。'], ans:0, exp:'Số + 块 + 钱: 五块钱; 这些/那些 = những cái này/kia.'},
-  {q:'Chiếc áo này không đắt. Câu đúng là:', opts:['这件衣服不贵。', '这件衣服没贵。', '这件衣服不是贵。', '这件衣服贵不。'], ans:0, exp:'Phủ định tính từ: 不 + tính từ; không dùng 没 hay 不是.'},
-  {q:'Bạn quyết định mua chiếc áo này. Bạn nói:', opts:['我买这件吧。', '我买吧这件。', '我吧买这件。', '我买这件呢。'], ans:0, exp:'吧 đặt cuối câu để chốt ý định một cách nhẹ nhàng (ôn bài 7).'},
-  {q:'A: “男孩子的衣服在哪儿？” B đáp:', opts:['在那儿。', '是那儿。', '有那儿。', '那儿在。'], ans:0, exp:'Hỏi 在哪儿 thì đáp 在 + nơi chốn: 在那儿.'},
+  {q:'Bạn hỏi giá một cân táo:', opts:['苹果多少钱一斤？', '苹果多少钱一斤吗？', '苹果一斤多少钱吗？', '苹果是多少钱一斤吗？'], ans:0, exp:'Câu đã có 多少 để hỏi thì không thêm 吗 — lỗi rất hay gặp; không chen 是.'},
+  {q:'Bánh bao 2 đồng rưỡi một cái: “包子＿＿一个。”', opts:['两块五', '二五块', '两块钱五', '五块二'], ans:0, exp:'Nói tiền từ đơn vị lớn đến nhỏ: 两块五; đọc liền 二五块 như tiếng Việt là sai.'},
+  {q:'Ở sạp hoa quả, bạn nói: “我买三＿＿苹果。”', opts:['斤', '件', '本', '只'], ans:0, exp:'斤 là đơn vị cân (0,5 kg); 件 cho quần áo, 本 cho sách, 只 cho con vật.'},
+  {q:'Bạn thấy chiếc áo này đắt:', opts:['这件衣服很贵。', '这件衣服是贵。', '这件衣服贵很。', '这件衣服有贵。'], ans:0, exp:'Tính từ 贵 làm vị ngữ trực tiếp, 很 đứng trước; không thêm 是 hay 有.'},
+  {q:'Câu nào SAI?', opts:['这件衣服没贵。', '这件衣服不贵。', '这些苹果不便宜。', '那些杯子很便宜。'], ans:0, exp:'Phủ định tính từ dùng 不 (不贵), không dùng 没.'},
+  {q:'Bạn muốn hỏi bạn thấy hiệu sách mới đó thế nào:', opts:['那家新书店怎么样？', '那家新书店怎么？', '怎么样那家新书店？', '那家新书店怎么样吗？'], ans:0, exp:'怎么样 đặt CUỐI câu; không đưa lên đầu, không thêm 吗, không thay bằng 怎么.'},
+  {q:'A: “你妈妈＿＿？” B: “她很好，谢谢！”', opts:['怎么样', '怎么', '什么', '哪儿'], ans:0, exp:'Hỏi tình hình một người dùng 怎么样; 怎么 hỏi cách thức (怎么去), 什么 hỏi cái gì.'},
+  {q:'Chiếc áo nhỏ quá, anh trai bạn không mặc vừa:', opts:['哥哥不能穿。', '哥哥不会穿。', '哥哥没能穿。', '哥哥穿不能。'], ans:0, exp:'Không mặc được vì điều kiện (áo nhỏ) dùng 不能; 不会 là không biết làm.'},
+  {q:'Khách hỏi cốc ở đâu. Người bán đáp: “Cốc ở bên này.”', opts:['杯子在这边。', '杯子是这边。', '杯子有这边。', '这边在杯子。'], ans:0, exp:'Vật + 在 + nơi chốn: 杯子在这边; không dùng 是/有.'},
+  {q:'Bạn chỉ mấy quả táo ở đằng xa: “＿＿苹果很好吃。”', opts:['那些', '那儿', '那只', '那家'], ans:0, exp:'那些 + danh từ = những … kia; 那儿 chỉ nơi chốn, 只 cho con vật, 家 cho cửa hàng.'},
+  {q:'Bạn quyết định mua chiếc áo này. Bạn nói:', opts:['我买这件吧。', '我买吧这件。', '我吧买这件。', '我买这件呢。'], ans:0, exp:'吧 đặt cuối câu để chốt ý định nhẹ nhàng (ôn bài 7).'},
 ];
 
 // ══════════════════════════════════════════
@@ -2430,24 +2416,21 @@ var mcData = [
 var speakingData = {
   intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời của bạn — các câu cuối hãy nói về chính bạn.',
   questions: [
-    {q_zh: '您想买什么？', q_vn: 'Người bán hàng hỏi bạn muốn mua gì. Bạn muốn mua hai cân táo.',
-     hint: '我想买……', sample: '我想买两斤苹果。', sample_vn: 'Tôi muốn mua hai cân táo.',
-     note: '想 + 买 + số + lượng từ + vật: 两斤苹果.'},
-    {q_zh: '这件衣服怎么样？', q_vn: 'Bạn của bạn hỏi chiếc áo này thế nào. Bạn thấy đẹp mà không đắt.',
-     hint: '很……，也不……。', sample: '很好看，也不贵。', sample_vn: 'Đẹp lắm, mà cũng không đắt.',
-     note: 'Tính từ trực tiếp làm vị ngữ (好看/贵/便宜), không thêm 是.'},
-    {q_zh: '这些杯子多少钱一个？', q_vn: 'Bạn là người bán hàng. Khách hỏi giá cốc; cốc giá 5 đồng một cái.',
-     hint: '……块钱一个。', sample: '五块钱一个。', sample_vn: '5 đồng một cái.',
+    {q_zh: '您想买什么？', q_vn: 'Người bán hàng hỏi bạn muốn mua gì. Bạn muốn mua một chiếc cốc.',
+     hint: '我想买……', sample: '我想买一个杯子。', sample_vn: 'Tôi muốn mua một chiếc cốc.',
+     note: '想 + 买 + số + lượng từ + vật.'},
+    {q_zh: '这件衣服怎么样？', q_vn: 'Bạn của bạn thử áo và hỏi bạn thấy thế nào. Bạn thấy đẹp và không đắt lắm.',
+     hint: '很……，也不太……。', sample: '很漂亮，也不太贵。', sample_vn: 'Đẹp lắm, mà cũng không đắt lắm.',
+     note: 'Tính từ làm vị ngữ không cần 是; 不太 + tính từ = không … lắm.'},
+    {q_zh: '一个杯子多少钱？', q_vn: 'Bạn là người bán hàng. Khách hỏi giá cốc; cốc giá 3 đồng một cái.',
+     hint: '……块钱一个。', sample: '三块钱一个，很便宜。', sample_vn: '3 đồng một cái, rẻ lắm.',
      note: 'Nói giá: số tiền + 块(钱) + 一 + lượng từ.'},
-    {q_zh: '你的房间怎么样？', q_vn: 'Phòng của bạn thế nào? Hãy nói thật về phòng của bạn.',
-     hint: '我的房间很/不……', sample: '我的房间不大，很漂亮。', sample_vn: 'Phòng mình không to, rất đẹp.',
-     note: 'Tính từ làm vị ngữ: 很大/不大/很漂亮; không nói 我的房间是大.'},
-    {q_zh: '你的手机多少钱？', q_vn: 'Điện thoại của bạn giá bao nhiêu? Hãy nói bằng tiếng Trung (đơn vị 块).',
-     hint: '我的手机……块钱。', sample: '我的手机两千块钱。', sample_vn: 'Điện thoại của mình 2000 đồng (tệ).',
-     note: 'Số tiền: số + 块(钱); khẩu ngữ dùng 块, chữ viết dùng 元.'},
-    {q_zh: '我们明天去超市买水果，怎么样？', q_vn: 'Bạn của bạn rủ mai đi siêu thị mua hoa quả. Bạn đồng ý hoặc từ chối và nói lý do.',
-     hint: '好的，……吧。/ 我很忙，不能去。', sample: '好的，我们明天下午去吧。', sample_vn: 'Được, chiều mai mình đi nhé.',
-     note: '……，怎么样？ dùng để rủ và hỏi ý kiến; đồng ý thì đáp 好的, thêm 吧 để chốt.'},
+    {q_zh: '你喜欢吃什么水果？', q_vn: 'Bạn thích ăn hoa quả gì? Hãy trả lời thật.',
+     hint: '我喜欢吃……', sample: '我喜欢吃苹果。', sample_vn: 'Mình thích ăn táo.',
+     note: '喜欢 + 吃 + món ăn.'},
+    {q_zh: '你家外边的超市东西贵吗？', q_vn: 'Bạn của bạn hỏi đồ ở siêu thị gần nhà bạn có đắt không. Hãy trả lời thật.',
+     hint: '不太贵，……很便宜。／很贵……', sample: '不太贵，水果很便宜。', sample_vn: 'Không đắt lắm, hoa quả rẻ lắm.',
+     note: 'Phủ định tính từ dùng 不 (不贵/不太贵), không dùng 没.'},
   ],
 };
 
@@ -2455,19 +2438,18 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Xin hỏi, ở đây có bán cốc không?', zh:'请问，有杯子吗？', py:'Qǐngwèn, yǒu bēizi ma?'},
-  {vi:'Hoa quả ở đây nhiều nhỉ!', zh:'这儿的水果真不少！', py:'Zhèr de shuǐguǒ zhēn bù shǎo!'},
-  {vi:'Tôi muốn mua hai cân táo.', zh:'我想买两斤苹果。', py:'Wǒ xiǎng mǎi liǎng jīn píngguǒ.'},
-  {vi:'Chiếc này 100 đồng, anh thấy thế nào?', zh:'这件一百元，怎么样？', py:'Zhè jiàn yìbǎi yuán, zěnmeyàng?'},
-  {vi:'Táo ở đây không đắt, 4 đồng một cân.', zh:'这儿的苹果不贵，四块钱一斤。', py:'Zhèr de píngguǒ bú guì, sì kuài qián yì jīn.'},
+  {vi:'Cửa hàng này không có nhiều quần áo bé trai.', zh:'这家商店男孩子的衣服不多。', py:'Zhè jiā shāngdiàn nán háizi de yīfu bù duō.'},
+  {vi:'Hôm nay hoa quả ở siêu thị rất rẻ.', zh:'今天超市的水果很便宜。', py:'Jīntiān chāoshì de shuǐguǒ hěn piányi.'},
+  {vi:'Người bán hàng ở cửa hàng đó rất bận.', zh:'那家商店的售货员很忙。', py:'Nà jiā shāngdiàn de shòuhuòyuán hěn máng.'},
+  {vi:'Chiếc áo này 120 đồng, tôi mua một chiếc.', zh:'这件衣服一百二十元，我买一件。', py:'Zhè jiàn yīfu yìbǎi èrshí yuán, wǒ mǎi yí jiàn.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Cốc ở phía bên này.', zh:'杯子在这边。', py:'Bēizi zài zhèbiān.'},
-  {vi:'Táo 3 đồng rưỡi một cân.', zh:'苹果三块五一斤。', py:'Píngguǒ sān kuài wǔ yì jīn.'},
-  {vi:'Đây là quần áo dành cho bé gái.', zh:'这些是女孩子穿的衣服。', py:'Zhèxiē shì nǚ háizi chuān de yīfu.'},
-  {vi:'Cửa hàng này nhiều quần áo thật đấy!', zh:'这家商店衣服真多！', py:'Zhè jiā shāngdiàn yīfu zhēn duō!'},
+  {vi:'Những bộ quần áo này là của ai?', zh:'这些衣服是谁的？', py:'Zhèxiē yīfu shì shéi de?'},
+  {vi:'Chúng ta mua hoa quả nhé, bạn muốn ăn gì?', zh:'我们买水果吧，你想吃什么？', py:'Wǒmen mǎi shuǐguǒ ba, nǐ xiǎng chī shénme?'},
+  {vi:'Anh trai tôi không thích mặc quần áo mới.', zh:'我哥哥不喜欢穿新衣服。', py:'Wǒ gēge bù xǐhuan chuān xīn yīfu.'},
+  {vi:'Mười đồng có mua được hai cân táo không?', zh:'十块钱能买两斤苹果吗？', py:'Shí kuài qián néng mǎi liǎng jīn píngguǒ ma?'},
 ];

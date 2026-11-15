@@ -1320,33 +1320,22 @@ var matchData = [
 // PHẦN 2 · NGHE — nghe câu (giọng đọc máy) → chọn đáp án
 // ══════════════════════════════════════════
 var listenData = [
-  {audio:'老师，您好！',
+  {audio:'王老师好！',
    questions:[
-     {q:'Người nói đang chào ai?', opts:['Một bạn cùng lớp', 'Thầy / cô giáo', 'Cả lớp'], ans:1, exp:'您 là cách gọi kính trọng, dùng với thầy cô: 老师，您好！'},
+     {q:'Người nói đang làm gì?', opts:['Cảm ơn cô Vương', 'Chào cô Vương', 'Tạm biệt cô Vương'], ans:1, exp:'Tên người + 好 là câu chào: 王老师好 = chào cô Vương ạ.'},
    ]},
-  {audio:'同学们，再见！',
+  {audio:'同学们好！——老师好！',
    questions:[
-     {q:'Câu này thường nói lúc nào?', opts:['Lúc tan học, chia tay', 'Lúc mới gặp nhau', 'Lúc được giúp đỡ'], ans:0, exp:'再见 = tạm biệt, nói khi chia tay.'},
+     {q:'Ai nói câu đầu tiên?', opts:['Một học sinh', 'Cô giáo', 'Tiểu Ngữ'], ans:1, exp:'同学们好 = chào các em — cô giáo chào học sinh.'},
+     {q:'Học sinh đáp lại thế nào?', opts:['Tạm biệt cô ạ', 'Cảm ơn cô ạ', 'Chào cô ạ'], ans:2, exp:'老师好 = chào cô ạ.'},
    ]},
-  {audio:'谢谢你们！',
+  {audio:'小语，谢谢！——不客气！',
    questions:[
-     {q:'Người nói cảm ơn bao nhiêu người?', opts:['Một người bạn', 'Một thầy giáo', 'Nhiều người'], ans:2, exp:'你们 = các bạn (số nhiều), nên người nói cảm ơn nhiều người.'},
+     {q:'Ai nói “不客气”?', opts:['Tiểu Ngữ', 'Cô giáo', 'Cả lớp'], ans:0, exp:'Người được cảm ơn (小语) đáp lại 不客气.'},
    ]},
-  {audio:'谢谢！不客气！',
+  {audio:'大家再见！',
    questions:[
-     {q:'Người thứ hai nói gì?', opts:['Đừng khách sáo', 'Cảm ơn', 'Tạm biệt'], ans:0, exp:'不客气 là câu đáp lại lời cảm ơn.'},
-   ]},
-  {audio:'大家好！',
-   questions:[
-     {q:'Bạn nghe được câu nào?', opts:['你们好！', '您好！', '大家好！'], ans:2, exp:'大家好 = chào mọi người.'},
-   ]},
-  {audio:'王老师，再见！',
-   questions:[
-     {q:'Bạn nghe được câu nào?', opts:['王老师，您好！', '王老师，再见！', '谢谢王老师！'], ans:1, exp:'再见 (zàijiàn) = tạm biệt; 您好 (nín hǎo) = chào thầy/cô.'},
-   ]},
-  {audio:'你好，小语！你好！',
-   questions:[
-     {q:'Hai người đang làm gì?', opts:['Chào nhau', 'Cảm ơn nhau', 'Tạm biệt nhau'], ans:0, exp:'Gặp nhau thì chào 你好, người kia cũng đáp 你好.'},
+     {q:'Người nói đang làm gì?', opts:['Chào tạm biệt mọi người', 'Chào mọi người khi mới đến', 'Cảm ơn mọi người'], ans:0, exp:'大家 = mọi người; 再见 = tạm biệt.'},
    ]},
 ];
 
@@ -1354,55 +1343,36 @@ var listenData = [
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'Gặp bạn mới, bạn chào: “', blank:'你好', post:'！”', hint:'(xin chào)', ans:'你好', exp:'Gặp một người thì chào 你好; người kia cũng đáp lại 你好.'},
-  {pre:'Bước vào lớp, thầy giáo chào cả lớp: “', blank:'大家好', post:'！”', hint:'(chào mọi người)', ans:'大家好', exp:'大家 nghĩa là “mọi người”, dùng khi chào cả nhóm, cả lớp; 你好 chỉ dùng để chào một người.'},
-  {pre:'Học sinh chào thầy/cô một cách kính trọng: “老师，', blank:'您好', post:'！”', hint:'(kính ngữ)', ans:'您好', exp:'Với thầy cô, người lớn tuổi dùng 您 (dạng kính trọng), nên nói 您好.'},
-  {pre:'Ai đó giúp bạn, bạn nói: “', blank:'谢谢', post:'！”', hint:'(cảm ơn)', ans:'谢谢', exp:'谢谢 = cảm ơn; chữ thứ hai đọc nhẹ: xièxie.'},
-  {pre:'Bạn học nói “谢谢！”, bạn đáp lại: “', blank:'不客气', post:'！”', hint:'(đừng khách sáo)', ans:'不客气', exp:'Được cảm ơn thì đáp 不客气; không nói lại 谢谢.'},
-  {pre:'Kết thúc buổi học, thầy giáo nói với cả lớp: “同学们，', blank:'再见', post:'！”', hint:'(tạm biệt)', ans:'再见', exp:'再见 = hẹn gặp lại, tạm biệt — nói khi chia tay.'},
   {pre:'Gặp ba người bạn cùng lúc, bạn chào: “', blank:'你们', post:'好！”', hint:'(các bạn — số nhiều)', ans:'你们', exp:'Chào nhiều người bạn dùng 你们好; 你好 chỉ để chào một người.'},
-  {pre:'Cô giáo giúp bạn, bạn cảm ơn: “谢谢', blank:'老师', post:'！”', hint:'(thầy/cô giáo)', ans:'老师', exp:'谢谢 + người được cảm ơn: 谢谢老师！'},
-  {pre:'Bạn chào các bạn cùng lớp: “', blank:'同学们', post:'好！”', hint:'(các bạn học)', ans:'同学们', exp:'同学 = bạn học; thêm 们 để chỉ nhiều người: 同学们.'},
-  {pre:'Bạn muốn cảm ơn tất cả mọi người: “谢谢', blank:'大家', post:'！”', hint:'(mọi người)', ans:'大家', exp:'大家 = mọi người, đã là số nhiều nên không thêm 们.'},
-  {pre:'Gặp cô Vương ở cổng trường, bạn chào lễ phép: “王老师，', blank:'您', post:'好！”', hint:'(“bạn” — dạng kính trọng)', ans:'您', exp:'您 là dạng kính trọng, dùng với thầy cô, người lớn; với bạn bè mới dùng 你好.'},
-  {pre:'Các thầy cô cảm ơn học sinh: “谢谢你们！” — Học sinh đáp: “', blank:'不客气', post:'！”', hint:'(đáp lời cảm ơn)', ans:'不客气', exp:'Ai cảm ơn mình, dù là thầy cô, mình đều đáp 不客气.'},
-  {pre:'Tan học, bạn chào tạm biệt các thầy cô: “', blank:'老师们', post:'，再见！”', hint:'(các thầy cô — số nhiều)', ans:'老师们', exp:'Nhiều thầy cô thì nói 老师们; một thầy/cô thì chỉ nói 老师.'},
-  {pre:'Cô giáo chào các em học sinh: “', blank:'学生们', post:'好！”', hint:'(các em học sinh)', ans:'学生们', exp:'学生 = học sinh; 学生们 = các em học sinh.'},
+  {pre:'Bước vào lớp, thầy giáo chào cả lớp: “', blank:'大家', post:'好！”', hint:'(mọi người)', ans:'大家', exp:'大家 = mọi người, dùng khi chào cả nhóm, cả lớp.'},
+  {pre:'Thầy giáo trả lại vở cho bạn, bạn nói: “谢谢', blank:'老师', post:'！”', hint:'(thầy giáo)', ans:'老师', exp:'谢谢 + người được cảm ơn: 谢谢老师！'},
+  {pre:'Cô giáo chào các em học sinh: “学生', blank:'们', post:'好！”', hint:'(số nhiều)', ans:'们', exp:'Thêm 们 sau danh từ chỉ người để chỉ nhiều người: 学生们.'},
+  {pre:'Tan học, bạn chào tạm biệt các thầy cô: “', blank:'老师们', post:'，再见！”', hint:'(các thầy cô)', ans:'老师们', exp:'Nhiều thầy cô thì nói 老师们; một thầy/cô thì chỉ nói 老师.'},
+  {pre:'Bà của Nhất Phi cho bạn kẹo, bạn cảm ơn lễ phép: “谢谢', blank:'您', post:'！”', hint:'(dạng kính trọng)', ans:'您', exp:'Với người lớn tuổi dùng 您 (kính trọng) thay cho dạng thường.'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['你','好','！'], ans:'你好！', audio:'你好！'},
-  {words:['大家','好','！'], ans:'大家好！', audio:'大家好！'},
+  {words:['谢谢','王老师','！'], ans:'谢谢王老师！', audio:'谢谢王老师！'},
   {words:['老师','，','您','好','！'], ans:'老师，您好！', audio:'老师，您好！', alt:['您好，老师！']},
-  {words:['谢','谢','！'], ans:'谢谢！', audio:'谢谢！'},
-  {words:['不','客气','！'], ans:'不客气！', audio:'不客气！'},
-  {words:['同学','们','，','再见','！'], ans:'同学们，再见！', audio:'同学们，再见！', alt:['再见，同学们！']},
-  {words:['王老师','，','谢谢','您','！'], ans:'王老师，谢谢您！', audio:'王老师，谢谢您！'},
-  {words:['同学们','，','谢谢','大家','！'], ans:'同学们，谢谢大家！', audio:'同学们，谢谢大家！'},
-  {words:['老师们','，','同学们','，','大家','好','！'], ans:'老师们，同学们，大家好！', audio:'老师们，同学们，大家好！', alt:['同学们，老师们，大家好！']},
+  {words:['一飞','，','你好','！'], ans:'一飞，你好！', audio:'一飞，你好！', alt:['你好，一飞！']},
+  {words:['小语','，','再见','！'], ans:'小语，再见！', audio:'小语，再见！', alt:['再见，小语！']},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3c · TRẮC NGHIỆM (HSK1 dùng mc thay cho sửa lỗi sai)
 // ══════════════════════════════════════════
 var mcData = [
-  {q:'Gặp một người bạn mới quen, bạn chào thế nào?', opts:['你好！', '再见！', '谢谢！', '不客气！'], ans:0, exp:'你好 là câu chào khi gặp ai đó; 再见 là tạm biệt, 谢谢 là cảm ơn, 不客气 là đáp lời cảm ơn.'},
-  {q:'Bạn bước vào phòng họp nhóm, có rất nhiều người. Bạn chào cả nhóm:', opts:['大家好！', '大家们好！', '您好！', '谢谢大家！'], ans:0, exp:'大家 = mọi người, đã là số nhiều nên không nói 大家们; 您好 chỉ chào một người.'},
-  {q:'Gặp cô Vương ở cổng trường. Câu chào lễ phép nhất là:', opts:['王老师，您好！', '王老师，你们好！', '王老师，再见！', '王老师，不客气！'], ans:0, exp:'Một cô giáo → dùng 您 (kính trọng); 你们 là số nhiều, 再见 là tạm biệt.'},
-  {q:'Có ba bạn học đang ngồi trong lớp. Bạn chào cả ba bạn:', opts:['你们好！', '你好！', '您好！', '再见！'], ans:0, exp:'Nhiều người nghe → 你们好; 你好 và 您好 chỉ chào một người.'},
-  {q:'Bạn học cho bạn mượn bút. Bạn nói:', opts:['谢谢！', '不客气！', '再见！', '你好！'], ans:0, exp:'Được giúp thì nói 谢谢; 不客气 là câu của người được cảm ơn.'},
-  {q:'Bạn học nói với bạn: “谢谢！” Bạn đáp:', opts:['不客气！', '谢谢！', '你好！', '再见！'], ans:0, exp:'Đáp lời cảm ơn bằng 不客气; nói lại 谢谢 là sai tình huống — lỗi hay gặp.'},
-  {q:'Kết thúc buổi gặp, bạn chào tạm biệt Tiểu Ngữ:', opts:['小语，再见！', '小语，你好！', '小语，谢谢！', '小语，不客气！'], ans:0, exp:'再见 = tạm biệt, hẹn gặp lại; 你好 dùng lúc mới gặp.'},
-  {q:'Hết giờ học, cô giáo chào cả lớp:', opts:['同学们，再见！', '老师们，再见！', '同学们，谢谢！', '同学，不客气！'], ans:0, exp:'Cô nói với các bạn học sinh → 同学们; 老师们 là các thầy cô.'},
+  {q:'Gặp một người bạn mới quen, bạn chào thế nào?', opts:['你好！', '再见！', '谢谢！', '不客气！'], ans:0, exp:'你好 là câu chào khi gặp ai đó; 再见 là tạm biệt, 谢谢 là cảm ơn.'},
+  {q:'Bạn học cho bạn mượn bút. Bạn nói:', opts:['谢谢！', '不客气！', '你好！', '老师好！'], ans:0, exp:'Được giúp thì nói 谢谢; 不客气 là câu của người được cảm ơn.'},
+  {q:'Nhất Phi nói với bạn: “谢谢！” Bạn đáp:', opts:['不客气！', '谢谢！', '您好！', '再见！'], ans:0, exp:'Đáp lời cảm ơn bằng 不客气; nói lại 谢谢 là sai tình huống — lỗi hay gặp.'},
+  {q:'Bạn gặp ông hiệu trưởng lớn tuổi. Câu chào lễ phép nhất là:', opts:['您好！', '你们好！', '大家好！', '好您！'], ans:0, exp:'Một người lớn tuổi → dùng 您 (kính trọng); người được chào đứng trước 好.'},
   {q:'Câu nào SAI?', opts:['大家们好！', '你们好！', '同学们好！', '老师们好！'], ans:0, exp:'大家 đã có nghĩa là “mọi người” nên không thêm 们 — lỗi rất hay gặp.'},
-  {q:'Bạn muốn nói “Chào thầy ạ!” với một thầy giáo. Câu đúng là:', opts:['老师好！', '好老师！', '老师们好！', '好老师们！'], ans:0, exp:'Người được chào đứng TRƯỚC 好: 老师好. Nói theo tiếng Việt “chào thầy” thành 好老师 là sai trật tự; một thầy thì không thêm 们.'},
-  {q:'Cả lớp chào: “老师好！” Cô giáo đáp lại:', opts:['同学们好！', '老师们好！', '谢谢！', '再见！'], ans:0, exp:'Cô đáp lại các bạn học sinh nên nói 同学们好.'},
-  {q:'Cô giáo nói: “同学们，再见！” Bạn đáp:', opts:['老师，再见！', '老师，你好！', '不客气！', '谢谢！'], ans:0, exp:'Người khác chào tạm biệt thì mình cũng đáp 再见.'},
-  {q:'Bạn muốn cảm ơn cô Vương. Câu đúng là:', opts:['谢谢王老师！', '王老师，不客气！', '王老师，再见！', '王老师，你们好！'], ans:0, exp:'谢谢 + người được cảm ơn: 谢谢王老师！'},
-  {q:'Thầy giáo cảm ơn cả lớp: “谢谢大家！” Cả lớp đáp:', opts:['不客气！', '大家好！', '谢谢！', '再见！'], ans:0, exp:'Dù người cảm ơn là thầy cô, câu đáp vẫn là 不客气.'},
+  {q:'Bạn muốn nói “Chào thầy ạ!” với một thầy giáo. Câu đúng là:', opts:['老师好！', '好老师！', '老师们好！', '好老师们！'], ans:0, exp:'Người được chào đứng TRƯỚC 好: 老师好. Nói theo tiếng Việt “chào thầy” thành 好老师 là sai trật tự.'},
+  {q:'Hết giờ học, cô giáo nói: “同学们，再见！” Bạn đáp:', opts:['老师，再见！', '老师，你好！', '不客气！', '再见，同学们！'], ans:0, exp:'Người khác chào tạm biệt thì mình đáp 再见, gọi người nghe là 老师.'},
+  {q:'Tiểu Ngữ và Nhất Phi cùng giúp bạn. Bạn cảm ơn cả hai:', opts:['谢谢你们！', '谢谢大家们！', '你们谢谢！', '谢谢您们！'], ans:0, exp:'Hai người trở lên → 你们; người được cảm ơn đứng SAU 谢谢.'},
 ];
 
 // ══════════════════════════════════════════
@@ -1411,18 +1381,12 @@ var mcData = [
 var speakingData = {
   intro: 'Nhấn nút loa nghe câu người kia nói, rồi tự ghi âm câu đáp của bạn.',
   questions: [
-    {q_zh: '同学们好！', q_vn: 'Cô giáo bước vào lớp và chào cả lớp. Bạn chào lại cô thế nào?',
-     hint: '老师，……！', sample: '老师，您好！', sample_vn: 'Chào cô ạ!',
-     note: '您 là kính ngữ, dùng khi xưng hô với người lớn tuổi hoặc đáng kính trọng như thầy cô.'},
-    {q_zh: '谢谢！', q_vn: 'Bạn vừa giúp một bạn học, bạn ấy cảm ơn bạn. Bạn đáp lại thế nào?',
-     hint: '（đáp lời cảm ơn）', sample: '不客气！', sample_vn: 'Đừng khách sáo!',
-     note: '谢谢 dùng để cảm ơn, 不客气 dùng để đáp lại lời cảm ơn một cách lịch sự.'},
-    {q_zh: '同学们，再见！', q_vn: 'Tan học, cô giáo chào tạm biệt cả lớp. Bạn đáp lại thế nào?',
-     hint: '老师，……！', sample: '老师，再见！', sample_vn: 'Tạm biệt cô ạ!',
-     note: '再见 dùng để chào tạm biệt trong mọi tình huống chia tay.'},
-    {q_zh: '谢谢大家！', q_vn: 'Thầy giáo cảm ơn cả lớp. Bạn thay mặt cả lớp đáp lại, rồi chào tạm biệt thầy.',
-     hint: '不客气！老师，……！', sample: '不客气！老师，再见！', sample_vn: 'Không có gì ạ! Tạm biệt thầy ạ!',
+    {q_zh: '谢谢大家！', q_vn: 'Thầy giáo cảm ơn cả lớp đã giúp thầy. Bạn thay mặt cả lớp đáp lại.',
+     hint: '（đáp lời cảm ơn）', sample: '不客气！', sample_vn: 'Không có gì ạ!',
      note: 'Dù người cảm ơn là thầy cô, câu đáp vẫn là 不客气.'},
+    {q_zh: '你好！', q_vn: 'Bạn gặp cô Vương ở sân trường, cô chào bạn trước. Hãy chào lại thật lễ phép.',
+     hint: '王老师，……！', sample: '王老师，您好！', sample_vn: 'Chào cô Vương ạ!',
+     note: 'Với thầy cô dùng 您 (kính trọng); thầy cô chào học sinh thì dùng 你好.'},
   ],
 };
 
@@ -1430,19 +1394,14 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Chào cậu, AI Tiểu Ngữ!', zh:'AI小语，你好！', py:'AI Xiǎoyǔ, nǐ hǎo!'},
-  {vi:'Chào mọi người! Chào cô ạ!', zh:'大家好！老师，您好！', py:'Dàjiā hǎo! Lǎoshī, nín hǎo!'},
-  {vi:'Cảm ơn! — Đừng khách sáo!', zh:'谢谢！——不客气！', py:'Xièxie! — Bú kèqi!'},
-  {vi:'Tạm biệt các bạn học! Tạm biệt cô ạ!', zh:'同学们，再见！老师，再见！', py:'Tóngxuémen, zàijiàn! Lǎoshī, zàijiàn!'},
-  {vi:'Thưa các thầy cô, các bạn, chào mọi người!', zh:'老师们，同学们，大家好！', py:'Lǎoshīmen, tóngxuémen, dàjiā hǎo!'},
+  {vi:'Chào Tiểu Ngữ! — Chào cậu!', zh:'小语，你好！——你好！', py:'Xiǎoyǔ, nǐ hǎo! — Nǐ hǎo!'},
+  {vi:'Chào các em! — Chào thầy ạ!', zh:'你们好！——老师好！', py:'Nǐmen hǎo! — Lǎoshī hǎo!'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Chào các bạn! Cảm ơn các bạn!', zh:'你们好！谢谢你们！', py:'Nǐmen hǎo! Xièxie nǐmen!'},
-  {vi:'Chào cô Vương ạ! Chào cậu, Tiểu Ngữ!', zh:'王老师，您好！你好，小语！', py:'Wáng lǎoshī, nín hǎo! Nǐ hǎo, Xiǎoyǔ!'},
-  {vi:'Các bạn ơi, cảm ơn mọi người! — Đừng khách sáo!', zh:'同学们，谢谢大家！——不客气！', py:'Tóngxuémen, xièxie dàjiā! — Bú kèqi!'},
-  {vi:'Chào mọi người, tạm biệt nhé!', zh:'大家好，再见！', py:'Dàjiā hǎo, zàijiàn!'},
+  {vi:'Em cảm ơn cô ạ! — Không có gì!', zh:'老师，谢谢！——不客气！', py:'Lǎoshī, xièxie! — Bú kèqi!'},
+  {vi:'Chào ông ạ! — Chào cháu!', zh:'您好！——你好！', py:'Nín hǎo! — Nǐ hǎo!'},
 ];

@@ -2161,30 +2161,30 @@ var matchData = [
 // PHẦN 2 · NGHE — nghe câu (giọng đọc máy) → chọn đáp án
 // ══════════════════════════════════════════
 var listenData = [
-  {audio:'服务员，请给我一杯茶，再要一个面包。',
+  {audio:'你好，我要两杯茶，再要一个面包。',
    questions:[
-     {q:'Người nói gọi những gì?', opts:['Sữa và trứng', 'Trà và bánh mì', 'Trà và sủi cảo'], ans:1, exp:'一杯茶 = một cốc trà; 再要一个面包 = lấy thêm một cái bánh mì.'},
+     {q:'Người nói gọi những gì?', opts:['Hai cốc trà và một cái bánh mì', 'Một cốc trà và hai cái bánh mì', 'Hai cốc sữa và một cái bánh mì'], ans:0, exp:'两杯茶 = hai cốc trà; 再要一个面包 = lấy thêm một cái bánh mì.'},
    ]},
-  {audio:'老师，我可以再问您一个问题吗？',
+  {audio:'老师说，我们可以在这儿看书，不可以吃东西。',
    questions:[
-     {q:'Người nói muốn làm gì?', opts:['Hỏi thêm cô một câu', 'Về nhà', 'Gọi điện thoại'], ans:0, exp:'可以……吗？ dùng để xin phép; 再问 = hỏi thêm.'},
+     {q:'Ở đây được làm gì?', opts:['Ăn đồ ăn', 'Đọc sách', 'Gọi điện thoại'], ans:1, exp:'可以在这儿看书 = được đọc sách ở đây; 不可以吃东西 = không được ăn.'},
    ]},
-  {audio:'这儿不可以打电话。',
+  {audio:'这个超市不卖茶，你可以去那边的商店看看。',
    questions:[
-     {q:'Ở đây KHÔNG được làm gì?', opts:['Ngồi', 'Ăn cơm', 'Gọi điện thoại'], ans:2, exp:'不可以 = không được phép; 打电话 = gọi điện thoại.'},
-   ]},
-  {audio:'我不知道那个商店卖不卖苹果，你可以去问一下。',
-   questions:[
-     {q:'Người nói khuyên bạn làm gì?', opts:['Đi hỏi thử', 'Mua táo ngay', 'Gọi điện cho mẹ'], ans:0, exp:'问一下 = hỏi thử một chút.'},
+     {q:'Siêu thị này có bán trà không?', opts:['Có', 'Không biết', 'Không'], ans:2, exp:'不卖茶 = không bán trà; 你可以去……看看 = bạn có thể sang … xem thử.'},
    ]},
   {audio:'一斤饺子四十个，太多了，我要一半吧。',
    questions:[
      {q:'Người nói lấy bao nhiêu cái sủi cảo?', opts:['40 cái', '20 cái', '4 cái'], ans:1, exp:'一半 = một nửa: một nửa của 40 cái là 20 cái.'},
    ]},
-  {audio:'女士，请坐！您喝什么？我还没吃早饭，请给我一杯牛奶和两个鸡蛋。',
+  {audio:'先生，您要什么？——我要一个面包和两个鸡蛋，再要一杯牛奶。',
    questions:[
-     {q:'Nhân viên đang nói chuyện với ai?', opts:['Một vị khách nam', 'Một vị khách nữ', 'Một em bé'], ans:1, exp:'女士 = quý cô, quý bà (khách nữ); khách nam gọi là 先生.'},
-     {q:'Vị khách gọi mấy quả trứng?', opts:['Hai', 'Một', 'Ba'], ans:0, exp:'两个鸡蛋 = hai quả trứng.'},
+     {q:'Nhân viên đang nói chuyện với ai?', opts:['Một vị khách nam', 'Một vị khách nữ', 'Một em bé'], ans:0, exp:'先生 = ông, anh (khách nam); khách nữ gọi là 女士.'},
+     {q:'Vị khách gọi mấy quả trứng?', opts:['Một', 'Ba', 'Hai'], ans:2, exp:'两个鸡蛋 = hai quả trứng.'},
+   ]},
+  {audio:'妈妈给我一些钱，我去超市买早饭。',
+   questions:[
+     {q:'Mẹ cho người nói cái gì?', opts:['Tiền', 'Bánh mì', 'Trứng'], ans:0, exp:'给 + người + vật: 妈妈给我一些钱 = mẹ cho tôi ít tiền.'},
    ]},
 ];
 
@@ -2192,22 +2192,17 @@ var listenData = [
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'王老师，我', blank:'可以', post:'再问您一个问题吗？', hint:'(xin phép: có thể, được không)', ans:'可以', exp:'可以……吗？ dùng để xin phép; 可以 đứng trước động từ.'},
-  {pre:'那个小店卖不', blank:'卖', post:'手机？', hint:'(bán — câu hỏi chính phản)', ans:'卖', exp:'Câu hỏi chính phản V不V: 卖不卖？ — đã dùng V不V thì không thêm 吗.'},
-  {pre:'你可以打电话问', blank:'一下', post:'。', hint:'(thử — một chút)', ans:'一下', exp:'Động từ + 一下 = làm thử, làm nhanh một chút; 一下 đứng SAU động từ.'},
-  {pre:'请给', blank:'我', post:'一杯牛奶。', hint:'(người nhận — tôi)', ans:'我', exp:'给 + người + vật: người nhận đứng TRƯỚC vật — không nói 给一杯牛奶我.'},
-  {pre:'我还没吃早饭，', blank:'再', post:'要这个面包和鸡蛋吧。', hint:'(thêm)', ans:'再', exp:'再 + động từ = làm thêm: 再要 = lấy thêm; 再 đứng trước động từ.'},
-  {pre:'先生，请坐！您要什么？——我要一斤', blank:'饺子', post:'。', hint:'(sủi cảo)', ans:'饺子', exp:'斤 là lượng từ cân: 一斤饺子 = một cân sủi cảo.'},
-  {pre:'四十个太多了，我要', blank:'一半', post:'吧。', hint:'(một nửa)', ans:'一半', exp:'一半 = một nửa; 吧 làm lời đề nghị nhẹ nhàng.'},
-  {pre:'请给我一杯', blank:'茶', post:'吧。', hint:'(trà)', ans:'茶', exp:'一杯茶 = một cốc trà; 杯 là lượng từ cho đồ uống.'},
-  {pre:'Nhân viên mời một vị khách nam: “', blank:'先生', post:'，请坐！”', hint:'(anh, ông — gọi khách nam)', ans:'先生', exp:'Gọi khách nam lịch sự là 先生, khách nữ là 女士.'},
+  {pre:'Bạn xin phép mẹ: “妈妈，我', blank:'可以', post:'和朋友去看电影吗？”', hint:'(xin phép: có thể, được không)', ans:'可以', exp:'可以……吗？ dùng để xin phép; 可以 đứng trước động từ (cụm 和朋友 + động từ).'},
+  {pre:'Cái bánh mì to quá, bạn chia cho em: “这个面包太大了，我给你', blank:'一半', post:'。”', hint:'(một nửa)', ans:'一半', exp:'一半 = một nửa; 给 + người + vật: 给你一半.'},
+  {pre:'Bạn gọi vị khách nam để quên điện thoại: “', blank:'先生', post:'，这是您的手机吗？”', hint:'(ông, anh — gọi khách nam)', ans:'先生', exp:'Gọi khách nam lịch sự là 先生, khách nữ là 女士.'},
   {pre:'Bạn chỉ vào chiếc bánh trong tủ: “我要', blank:'这个', post:'面包。”', hint:'(cái này)', ans:'这个', exp:'这个 + danh từ = cái … này: 这个面包.'},
-  {pre:'Nhân viên mời khách nữ: “女士，请', blank:'坐', post:'！”', hint:'(ngồi)', ans:'坐', exp:'请坐 = mời ngồi; 请 + động từ để mời lịch sự.'},
-  {pre:'Bạn nói với cô giáo: “老师，我想问您一个', blank:'问题', post:'。”', hint:'(câu hỏi)', ans:'问题', exp:'问 + người + 问题: 问您一个问题 = hỏi cô một câu.'},
-  {pre:'Bạn hơi mệt, muốn nghỉ một lát: “我想休息', blank:'一下', post:'。”', hint:'(một chút)', ans:'一下', exp:'休息一下 = nghỉ một chút; không nói 我一下休息.'},
+  {pre:'Bạn giơ tay trong lớp: “老师，这个', blank:'问题', post:'我不会。”', hint:'(câu hỏi, bài)', ans:'问题', exp:'问题 = câu hỏi, vấn đề; 这个问题 = câu hỏi này.'},
+  {pre:'Bạn hơi mệt, muốn nghỉ một lát: “我想休息', blank:'一下', post:'。”', hint:'(một chút)', ans:'一下', exp:'Động từ + 一下 = làm một chút: 休息一下; 一下 đứng sau động từ.'},
   {pre:'Ở thư viện có biển: “这儿不可以', blank:'打电话', post:'。”', hint:'(gọi điện thoại)', ans:'打电话', exp:'不可以 + động từ = không được phép làm gì.'},
-  {pre:'Phục vụ: “您喝什么？” — Bạn: “请给我一', blank:'杯', post:'牛奶。”', hint:'(cốc — lượng từ)', ans:'杯', exp:'Đồ uống đựng trong cốc dùng 杯: 一杯牛奶, không nói 一个牛奶.'},
-  {pre:'Bạn gọi người phục vụ: “', blank:'服务员', post:'，请给我一杯水。”', hint:'(nhân viên phục vụ)', ans:'服务员', exp:'Trong quán, gọi nhân viên là 服务员.'},
+  {pre:'Bạn mời khách vừa đến nhà: “您喝一', blank:'杯', post:'水吧。”', hint:'(cốc — lượng từ)', ans:'杯', exp:'Đồ uống đựng trong cốc dùng 杯: 一杯水, không nói 一个水.'},
+  {pre:'Bạn gọi nhân viên trong quán: “', blank:'服务员', post:'，这儿有茶吗？”', hint:'(nhân viên phục vụ)', ans:'服务员', exp:'Trong quán, gọi nhân viên là 服务员.'},
+  {pre:'Bạn nhờ bạn đưa cái cốc: “请', blank:'给', post:'我那个杯子，谢谢！”', hint:'(đưa, cho)', ans:'给', exp:'给 + người + vật: 给我那个杯子; 请 + động từ để nhờ lịch sự.'},
+  {pre:'Bạn hỏi ở một cửa hàng: “你们这儿', blank:'卖', post:'不卖鸡蛋？”', hint:'(bán)', ans:'卖', exp:'Câu hỏi chính phản V不V: 卖不卖？ — đã dùng V不V thì không thêm 吗.'},
 ];
 
 // ══════════════════════════════════════════
@@ -2218,33 +2213,26 @@ var sortData = [
   {words:['那个','小店','卖','不','卖','手机','？'], ans:'那个小店卖不卖手机？', audio:'那个小店卖不卖手机？'},
   {words:['请','给','我','一杯','牛奶','。'], ans:'请给我一杯牛奶。', audio:'请给我一杯牛奶。'},
   {words:['我','还','没','吃','早饭','。'], ans:'我还没吃早饭。', audio:'我还没吃早饭。'},
-  {words:['我','要','一斤','饺子','。'], ans:'我要一斤饺子。', audio:'我要一斤饺子。'},
-  {words:['请','给','我','一杯','茶','吧','。'], ans:'请给我一杯茶吧。', audio:'请给我一杯茶吧。'},
   {words:['你','可以','打电话','问','一下','。'], ans:'你可以打电话问一下。', audio:'你可以打电话问一下。'},
-  {words:['女士','，','请','坐','！'], ans:'女士，请坐！', audio:'女士，请坐！'},
-  {words:['我','想','问','老师','一个','问题','。'], ans:'我想问老师一个问题。', audio:'我想问老师一个问题。'},
-  {words:['服务员','，','我','可以','坐','这儿','吗','？'], ans:'服务员，我可以坐这儿吗？', audio:'服务员，我可以坐这儿吗？'},
-  {words:['四十个','太','多','了','，','我','要','一半','吧','。'], ans:'四十个太多了，我要一半吧。', audio:'四十个太多了，我要一半吧。'},
+  {words:['女士','，','我','可以','坐','这儿','吗','？'], ans:'女士，我可以坐这儿吗？', audio:'女士，我可以坐这儿吗？'},
+  {words:['你','可以','看','一下','这','本','书','。'], ans:'你可以看一下这本书。', audio:'你可以看一下这本书。'},
+  {words:['你','可以','给','我','一个','面包','吗','？'], ans:'你可以给我一个面包吗？', audio:'你可以给我一个面包吗？'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3c · TRẮC NGHIỆM
 // ══════════════════════════════════════════
 var mcData = [
-  {q:'Trong quán, bạn muốn ngồi ghế trống cạnh một người. Bạn hỏi:', opts:['我可以坐这儿吗？', '我会坐这儿吗？', '我坐可以这儿吗？', '我可以这儿吗？'], ans:0, exp:'Xin phép dùng 可以 + động từ: 可以坐这儿吗？ — 会 là “biết (kỹ năng)”, 可以 phải đi với động từ.'},
-  {q:'Hết giờ, bạn xin hỏi thêm cô giáo: “老师，我＿＿再问您一个问题吗？”', opts:['可以', '会', '在', '是'], ans:0, exp:'Xin phép làm gì dùng 可以; 会 chỉ kỹ năng học được (会做饭).'},
-  {q:'A: “这儿可以打电话吗？” — Ở thư viện không được phép. B đáp:', opts:['不可以。', '没可以。', '可以不。', '不会。'], ans:0, exp:'Phủ định của 可以 là 不可以; không dùng 没 trước 可以.'},
-  {q:'Bạn gọi đồ: “Cho tôi một cốc trà.” Câu đúng là:', opts:['请给我一杯茶。', '请给一杯茶我。', '请我给一杯茶。', '请给我茶一杯。'], ans:0, exp:'给 + người + vật: 给我一杯茶; nói theo tiếng Việt “cho một cốc trà cho tôi” thành 给一杯茶我 là sai.'},
+  {q:'Bạn muốn xem điện thoại mới của bạn mình. Bạn hỏi:', opts:['我可以看一下你的新手机吗？', '我会看一下你的新手机吗？', '我看可以一下你的新手机吗？', '我可以一下看你的新手机吗？'], ans:0, exp:'Xin phép: 可以 + động từ (+ 一下) + 吗; 会 là “biết (kỹ năng)”, 一下 đứng sau động từ.'},
+  {q:'A: “我可以在这儿吃面包吗？” — Ở đây không được ăn. B đáp:', opts:['不可以。', '没可以。', '可以不。', '不会。'], ans:0, exp:'Phủ định của 可以 là 不可以; không dùng 没 trước 可以.'},
+  {q:'Bạn muốn nói: “Anh trai cho tôi một cái điện thoại.”', opts:['哥哥给我一个手机。', '哥哥给一个手机我。', '哥哥我给一个手机。', '哥哥给我手机一个。'], ans:0, exp:'给 + người + vật: 给我一个手机; nói theo tiếng Việt “cho một cái điện thoại cho tôi” thành 给一个手机我 là sai.'},
   {q:'Bạn muốn nói: “Tôi muốn hỏi thầy một câu.” Câu đúng là:', opts:['我想问老师一个问题。', '我想问一个问题老师。', '我想老师问一个问题。', '我想问老师问题一个。'], ans:0, exp:'问 + người + việc: 问老师一个问题 — người được hỏi đứng trước.'},
-  {q:'Bạn không biết cửa hàng có bán điện thoại không, bạn gợi ý: “你可以打电话问＿＿。”', opts:['一下', '一个', '一些', '一半'], ans:0, exp:'Động từ + 一下 = thử làm một chút: 问一下.'},
+  {q:'Bạn không biết đáp án, bạn bảo bạn mình: “你去问＿＿王老师吧。”', opts:['一下', '一个', '一些', '一半'], ans:0, exp:'Động từ + 一下 = làm thử, làm nhanh một chút: 问一下.'},
   {q:'Phục vụ đưa thực đơn. Bạn nói “Để tôi xem một chút”:', opts:['我看一下。', '我一下看。', '我看看一下。', '一下我看。'], ans:0, exp:'一下 đứng SAU động từ; không lặp 看看 rồi lại thêm 一下.'},
-  {q:'Phục vụ: “先生，请坐！您要什么？” — Bạn đáp:', opts:['我要一杯茶。', '我坐一杯茶。', '我是一杯茶。', '我要一个茶。'], ans:0, exp:'要 + đồ muốn gọi; đồ uống trong cốc dùng lượng từ 杯, không dùng 个.'},
-  {q:'Bạn gọi một cốc sữa: “请给我一＿＿牛奶。”', opts:['杯', '个', '本', '件'], ans:0, exp:'Đồ uống đựng trong cốc dùng 杯; 本 cho sách, 件 cho quần áo.'},
-  {q:'Câu nào SAI?', opts:['我没可以去。', '我可以问您一个问题吗？', '请给我一杯牛奶。', '你可以看一下。'], ans:0, exp:'Không dùng 没 để phủ định 可以 — nói 我不能去 hoặc 我不可以去.'},
-  {q:'Bạn đã uống một cốc trà, muốn thêm một cốc nữa: “请＿＿给我一杯茶。”', opts:['再', '在', '还', '有'], ans:0, exp:'再 + động từ = làm thêm lần nữa; 在 cùng âm zài nhưng là “ở / đang”.'},
+  {q:'Câu nào SAI?', opts:['我没可以去。', '明天我可以去你家吗？', '我们要两个面包。', '你们可以坐这边。'], ans:0, exp:'Không dùng 没 để phủ định 可以 — nói 我不能去 hoặc 我不可以去.'},
+  {q:'Quả táo ngon quá, bạn muốn ăn thêm một quả: “这个苹果很好吃，我想＿＿吃一个。”', opts:['再', '在', '还', '有'], ans:0, exp:'再 + động từ = làm thêm lần nữa; 在 cùng âm zài nhưng là “ở / đang”.'},
   {q:'Nhân viên mời một vị khách nữ ngồi:', opts:['女士，请坐！', '先生，请坐！', '服务员，请坐！', '老师，请坐！'], ans:0, exp:'Khách nữ gọi là 女士, khách nam là 先生; 服务员 là nhân viên phục vụ.'},
-  {q:'A: “一斤饺子四十个。” — B thấy nhiều quá, nói:', opts:['四十个太多了，我要一半吧。', '四十个太多，我要一半吧了。', '四十个很太多了，我要一半。', '四十个太多了，我一半要吧。'], ans:0, exp:'太 + tính từ + 了 (không thêm 很); 要 đứng trước 一半: 我要一半吧.'},
-  {q:'A: “我可以看一下你的书吗？” — B đồng ý:', opts:['可以，你看吧。', '会，你看吧。', '可以，你一下看吧。', '不可以，你看吧。'], ans:0, exp:'Trả lời xin phép: đồng ý 可以, từ chối 不可以; 会 không dùng để cho phép, 一下 phải đứng sau động từ.'},
+  {q:'A: “妈妈，我可以吃一个苹果吗？” — Mẹ đồng ý:', opts:['可以，你吃吧。', '会，你吃吧。', '可以，你一下吃吧。', '不可以，你吃吧。'], ans:0, exp:'Trả lời xin phép: đồng ý 可以, từ chối 不可以; 会 không dùng để cho phép, 一下 phải đứng sau động từ.'},
   {q:'A: “你吃早饭了吗？” — Bạn chưa ăn. Bạn đáp:', opts:['还没吃。', '还没吃了。', '没吃了。', '还不吃了。'], ans:0, exp:'Chưa làm dùng (还)没 + động từ và bỏ 了.'},
 ];
 
@@ -2254,21 +2242,21 @@ var mcData = [
 var speakingData = {
   intro: 'Nhấn nút loa nghe câu người kia nói, rồi tự ghi âm câu trả lời của bạn (nói về chính bạn).',
   questions: [
-    {q_zh: '您喝什么？', q_vn: 'Bạn vào quán, nhân viên phục vụ hỏi bạn uống gì. Hãy gọi đồ uống bạn thích.',
-     hint: '请给我一杯……', sample: '请给我一杯茶。', sample_vn: 'Cho tôi một cốc trà.',
-     note: 'Câu hai tân ngữ với 给: 给 + người + vật.'},
-    {q_zh: '同学们，再见！', q_vn: 'Hết giờ, thầy chào cả lớp. Bạn muốn hỏi thêm thầy một câu — hãy xin phép.',
-     hint: '老师，我可以再问您……吗？', sample: '老师，我可以再问您一个问题吗？', sample_vn: 'Thưa thầy, em có thể hỏi thầy thêm một câu không ạ?',
+    {q_zh: '请坐！今天的面包很好吃。', q_vn: 'Bạn vào quán ăn sáng, nhân viên mời bạn ngồi và giới thiệu bánh mì. Hãy gọi đồ ăn và đồ uống bạn thích.',
+     hint: '我要……和……', sample: '好，我要两个面包和一杯茶。', sample_vn: 'Vâng, cho tôi hai cái bánh mì và một cốc trà.',
+     note: 'Nhớ lượng từ: 个 cho bánh mì, 杯 cho đồ uống.'},
+    {q_zh: '同学们，再见！', q_vn: 'Hết giờ, thầy chào cả lớp. Bạn còn một câu muốn hỏi — hãy xin phép hỏi thầy.',
+     hint: '老师，我还有……，可以……吗？', sample: '老师，我还有一个问题，可以问您吗？', sample_vn: 'Thưa thầy, em còn một câu hỏi, em hỏi thầy được không ạ?',
      note: 'Động từ năng nguyện 可以 đặt trước động từ để xin phép.'},
-    {q_zh: '这个商店卖不卖手机？', q_vn: 'Có người hỏi cửa hàng này có bán điện thoại không. Bạn không biết — hãy trả lời và gợi ý cách hỏi.',
-     hint: '我不知道，你可以……一下。', sample: '我不知道，你可以打电话问一下。', sample_vn: 'Tôi không biết, bạn có thể gọi điện thoại hỏi thử.',
-     note: 'Động từ + 一下 dùng khi đề nghị ai đó thử làm việc gì.'},
-    {q_zh: '我可以坐这儿吗？', q_vn: 'Ở thư viện, một bạn hỏi có thể ngồi chỗ cạnh bạn không. Hãy đồng ý và mời bạn ấy ngồi.',
-     hint: '可以，请……！', sample: '可以，请坐！', sample_vn: 'Được, mời bạn ngồi!',
-     note: 'Đồng ý: 可以; từ chối: 不可以 — không nói 没可以.'},
-    {q_zh: '先生，您要什么？', q_vn: 'Bạn đi ăn sáng, nhân viên hỏi bạn muốn dùng gì. Hãy gọi bữa sáng bạn thật sự thích.',
-     hint: '请给我……，再要……', sample: '请给我一个面包和两个鸡蛋，再要一杯牛奶。', sample_vn: 'Cho tôi một cái bánh mì và hai quả trứng, thêm một cốc sữa nữa.',
-     note: 'Nhớ lượng từ: 一个面包, 两个鸡蛋, 一杯牛奶.'},
+    {q_zh: '你早饭吃什么？', q_vn: 'Bạn của bạn hỏi bạn thường ăn sáng gì. Hãy nói về chính bạn.',
+     hint: '我早饭吃……，喝……', sample: '我早饭吃两个鸡蛋，喝一杯热水。', sample_vn: 'Bữa sáng mình ăn hai quả trứng, uống một cốc nước ấm.',
+     note: 'Nhớ lượng từ: 个 cho trứng, 杯 cho đồ uống.'},
+    {q_zh: '你好，我是新同学。', q_vn: 'Một bạn mới vào lớp đứng cạnh chỗ trống bên bạn. Hãy chào và mời bạn ấy ngồi.',
+     hint: '你好！请……', sample: '你好！请坐这儿吧。', sample_vn: 'Chào bạn! Mời bạn ngồi đây.',
+     note: '请 + động từ dùng để mời lịch sự.'},
+    {q_zh: '饺子好吃吗？', q_vn: 'Bạn đang ăn sủi cảo với bạn bè, bạn ấy hỏi có ngon không. Hãy trả lời và gọi thêm nửa cân.',
+     hint: '很好吃！我想再要……', sample: '很好吃！我想再要半斤。', sample_vn: 'Ngon lắm! Mình muốn gọi thêm nửa cân.',
+     note: '再 + động từ = làm thêm: 再要 = gọi thêm.'},
   ],
 };
 
@@ -2276,20 +2264,19 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Em có thể hỏi thêm cô một câu nữa không ạ?', zh:'我可以再问您一个问题吗？', py:'Wǒ kěyǐ zài wèn nín yí gè wèntí ma?'},
-  {vi:'Cửa hàng nhỏ kia có bán điện thoại di động không ạ?', zh:'那个小店卖不卖手机？', py:'Nàge xiǎo diàn mài bu mài shǒujī?'},
-  {vi:'Cho tôi một cốc sữa.', zh:'请给我一杯牛奶。', py:'Qǐng gěi wǒ yì bēi niúnǎi.'},
-  {vi:'40 cái thì nhiều quá, tôi lấy nửa cân thôi nhé.', zh:'四十个太多了，我要一半吧。', py:'Sìshí gè tài duō le, wǒ yào yíbàn ba.'},
-  {vi:'Tôi có thể xem một chút không?', zh:'我可以看一下吗？', py:'Wǒ kěyǐ kàn yíxià ma?'},
-  {vi:'Mẹ cho tôi một quả táo.', zh:'妈妈给我一个苹果。', py:'Māma gěi wǒ yí gè píngguǒ.'},
+  {vi:'Cô giáo cho tôi một quyển sách.', zh:'老师给我一本书。', py:'Lǎoshī gěi wǒ yì běn shū.'},
+  {vi:'Người phụ nữ kia là ai? — Cô ấy là nhân viên phục vụ ở đây.', zh:'那个女士是谁？——她是这儿的服务员。', py:'Nàge nǚshì shì shéi? — Tā shì zhèr de fúwùyuán.'},
+  {vi:'Ba giờ chiều bạn có thể gọi điện cho tôi không?', zh:'下午三点你可以给我打电话吗？', py:'Xiàwǔ sān diǎn nǐ kěyǐ gěi wǒ dǎ diànhuà ma?'},
+  {vi:'Chỗ bánh mì này, một nửa là của em trai tôi.', zh:'这些面包，一半是我弟弟的。', py:'Zhèxiē miànbāo, yíbàn shì wǒ dìdi de.'},
+  {vi:'Bố tôi buổi sáng thích uống trà.', zh:'我爸爸早上喜欢喝茶。', py:'Wǒ bàba zǎoshang xǐhuan hē chá.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Cô có thể gọi điện thoại hỏi thử.', zh:'您可以打电话问一下。', py:'Nín kěyǐ dǎ diànhuà wèn yíxià.'},
-  {vi:'Cô còn dùng thêm gì nữa không?', zh:'您还要什么？', py:'Nín hái yào shénme?'},
-  {vi:'Tôi vẫn chưa ăn sáng.', zh:'我还没吃早饭。', py:'Wǒ hái méi chī zǎofàn.'},
-  {vi:'Anh muốn uống gì không ạ?', zh:'您想喝什么？', py:'Nín xiǎng hē shénme?'},
+  {vi:'Được. Em có câu hỏi gì?', zh:'可以。你有什么问题？', py:'Kěyǐ. Nǐ yǒu shénme wèntí?'},
+  {vi:'Sủi cảo ở đây rất rẻ, một cân hai mươi tệ.', zh:'这儿的饺子很便宜，一斤二十块。', py:'Zhèr de jiǎozi hěn piányi, yì jīn èrshí kuài.'},
+  {vi:'Xin hỏi, cái bánh mì này bao nhiêu tiền?', zh:'请问，这个面包多少钱？', py:'Qǐngwèn, zhège miànbāo duōshao qián?'},
+  {vi:'Thưa chị, xin hỏi chị cần mấy quả trứng?', zh:'女士，请问您要几个鸡蛋？', py:'Nǚshì, qǐngwèn nín yào jǐ gè jīdàn?'},
 ];

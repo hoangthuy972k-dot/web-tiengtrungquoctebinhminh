@@ -2283,33 +2283,29 @@ var matchData = [
 // PHẦN 2 · NGHE — nghe câu (giọng đọc máy) → chọn đáp án
 // ══════════════════════════════════════════
 var listenData = [
-  {audio:'今天9月8号，星期日。',
+  {audio:'今天十月一号，星期二。',
    questions:[
-     {q:'Hôm nay là ngày nào?', opts:['Ngày 9 tháng 8', 'Ngày 8 tháng 9', 'Ngày 18 tháng 9'], ans:1, exp:'9月8号: tháng nói trước, ngày nói sau → ngày 8 tháng 9.'},
+     {q:'Hôm nay là ngày nào?', opts:['Ngày 10 tháng 1, thứ Ba', 'Ngày 1 tháng 10, thứ Ba', 'Ngày 1 tháng 10, thứ Hai'], ans:1, exp:'十月一号: tháng trước, ngày sau → ngày 1 tháng 10; 星期二 là thứ Ba (không phải thứ Hai).'},
    ]},
-  {audio:'今天星期六，我休息。',
+  {audio:'我哥哥不会做饭，我姐姐会做一些菜。',
    questions:[
-     {q:'Hôm nay người nói làm gì?', opts:['Nghỉ ngơi', 'Đi làm', 'Nấu cơm'], ans:0, exp:'休息 = nghỉ ngơi.'},
+     {q:'Ai biết nấu ăn?', opts:['Chị gái', 'Anh trai', 'Không ai cả'], ans:0, exp:'哥哥不会做饭 = anh trai không biết nấu; 姐姐会做一些菜 = chị gái biết nấu vài món.'},
    ]},
-  {audio:'我会做面条儿，不会做饺子。',
+  {audio:'星期六我不休息，星期天休息。',
    questions:[
-     {q:'Người nói KHÔNG biết làm món gì?', opts:['面条儿', '饺子', '菜'], ans:1, exp:'不会做饺子 = không biết làm sủi cảo.'},
+     {q:'Người nói được nghỉ ngày nào?', opts:['Thứ Bảy', 'Cả hai ngày', 'Chủ nhật'], ans:2, exp:'星期六我不休息 = thứ Bảy không nghỉ; 星期天休息 = Chủ nhật nghỉ.'},
    ]},
-  {audio:'这是我的新电脑，真好看！',
+  {audio:'安妮有一个新电脑，它真好看。',
    questions:[
-     {q:'Người nói đang nói về cái gì?', opts:['Một món ăn', 'Bạn gái', 'Máy tính mới'], ans:2, exp:'新电脑 = máy tính mới; 真好看 = đẹp thật.'},
+     {q:'Cái gì đẹp?', opts:['Em gái An Ni', 'Món ăn An Ni nấu', 'Máy tính mới của An Ni'], ans:2, exp:'它 = nó, chỉ 新电脑 (máy tính mới) ở câu trước; 真好看 = đẹp thật.'},
    ]},
-  {audio:'你会做饭吗？我会做，星期天我也做饭。',
+  {audio:'王一雪今天不下班，她今天很忙。',
    questions:[
-     {q:'Chủ nhật người thứ hai làm gì?', opts:['Nấu cơm', 'Nghỉ, không nấu', 'Đi làm'], ans:0, exp:'星期天我也做饭 = Chủ nhật tôi cũng nấu cơm.'},
+     {q:'Hôm nay Vương Nhất Tuyết thế nào?', opts:['Tan làm về nghỉ', 'Không tan làm, rất bận', 'Ở nhà nấu ăn'], ans:1, exp:'不下班 = không tan làm; 很忙 = rất bận.'},
    ]},
-  {audio:'今天几号？今天十月一号。',
+  {audio:'你喜欢你的新电脑吗？——不太喜欢，它不好看。',
    questions:[
-     {q:'Bạn nghe được ngày nào?', opts:['1月10号', '10月7号', '10月1号'], ans:2, exp:'十月一号 = ngày 1 tháng 10 (tháng trước, ngày sau).'},
-   ]},
-  {audio:'我妹妹今年八岁，她不会做饭。',
-   questions:[
-     {q:'Em gái năm nay bao nhiêu tuổi?', opts:['18 tuổi', '8 tuổi', '10 tuổi'], ans:1, exp:'八岁 = 8 tuổi; nói tuổi không cần 是.'},
+     {q:'Người thứ hai thấy máy tính mới thế nào?', opts:['Rất thích, nó đẹp', 'Không thích lắm, nó không đẹp', 'Thích, nhưng nó không mới'], ans:1, exp:'不太喜欢 = không thích lắm; 它不好看 = nó không đẹp.'},
    ]},
 ];
 
@@ -2317,62 +2313,46 @@ var listenData = [
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'今天', blank:'6月22号', post:'。', hint:'(ngày 22 tháng 6)', ans:'6月22号', exp:'Ngày tháng nói từ lớn đến nhỏ: tháng trước, ngày sau (6月22号); câu nói ngày tháng không cần 是.'},
-  {pre:'杨同乐有一个', blank:'新', post:'电脑。', hint:'(mới)', ans:'新', exp:'新 đứng ngay trước danh từ: 新电脑 = máy tính mới (không nói 电脑新 như tiếng Việt).'},
-  {pre:'王一雪：你会做这两个', blank:'菜', post:'吗？', hint:'(món ăn)', ans:'菜', exp:'两个菜 = hai món ăn; trước lượng từ 个 dùng 两, không dùng 二.'},
-  {pre:'你的电脑', blank:'真', post:'好看！', hint:'(thật, thực sự)', ans:'真', exp:'真 + tính từ = … thật!, dùng để cảm thán: 真好看 = đẹp thật!'},
-  {pre:'我也很', blank:'喜欢', post:'它。', hint:'(thích)', ans:'喜欢', exp:'很 đứng trước 喜欢: 很喜欢它 = rất thích nó.'},
-  {pre:'今天几号？今天9月8', blank:'号', post:'。', hint:'(ngày — đứng sau số ngày)', ans:'号', exp:'号 = ngày (mùng) trong khẩu ngữ, đứng sau số ngày: 9月8号.'},
-  {pre:'你', blank:'会', post:'做饭吗？', hint:'(biết — kỹ năng học được)', ans:'会', exp:'会 + động từ = biết làm gì (kỹ năng có được nhờ học): 会做饭 = biết nấu cơm.'},
-  {pre:'我会做面条儿、', blank:'饺子', post:'。', hint:'(sủi cảo)', ans:'饺子', exp:'会做 + món ăn: 会做面条儿、饺子.'},
-  {pre:'Hôm nay Chủ nhật (khẩu ngữ): “今天', blank:'星期天', post:'。”', hint:'(Chủ nhật — cách nói khẩu ngữ)', ans:'星期天', exp:'Chủ nhật là 星期天 / 星期日, không nói 星期七 — lỗi suy từ 星期一…星期六.'},
-  {pre:'Hôm nay không phải ngày 8: “今天', blank:'不是', post:'8号。”', hint:'(không phải)', ans:'不是', exp:'Câu ngày tháng bình thường không cần 是, nhưng phủ định thì phải nói 不是, không nói 今天不8号.'},
-  {pre:'Tôi không biết nấu cơm: “我', blank:'不会', post:'做饭。”', hint:'(không biết)', ans:'不会', exp:'Phủ định của 会 là 不会; không dùng 没有 trước 会.'},
-  {pre:'A：你妹妹几岁？B：我妹妹十二', blank:'岁', post:'。', hint:'(tuổi)', ans:'岁', exp:'Nói tuổi không cần 是: 我妹妹十二岁 — học sinh Việt hay thêm 是 vì tiếng Việt nói “là 12 tuổi”.'},
-  {pre:'Hôm nay Chủ nhật, tôi được nghỉ: “今天我', blank:'休息', post:'。”', hint:'(nghỉ ngơi)', ans:'休息', exp:'Từ chỉ thời gian 今天 đứng đầu câu hoặc sau chủ ngữ, trước động từ 休息.'},
-  {pre:'王一雪：同乐，', blank:'下班', post:'吗？', hint:'(tan làm)', ans:'下班', exp:'下班 = tan làm; hỏi có/không thì thêm 吗 cuối câu.'},
-  {pre:'我会做面条儿，也会做', blank:'一些', post:'菜。', hint:'(một số, một ít)', ans:'一些', exp:'一些 + danh từ = một số…: 一些菜 = một số món ăn.'},
-  {pre:'今天十', blank:'月', post:'一号，星期三。', hint:'(tháng)', ans:'月', exp:'Tháng đứng trước ngày, thứ đứng cuối: 十月一号，星期三.'},
+  {pre:'Hôm nay là ngày 20 tháng 8: “今天', blank:'八月', post:'二十号。”', hint:'(tháng 8)', ans:'八月', exp:'Ngày tháng nói từ lớn đến nhỏ: tháng trước, ngày sau — 八月二十号, không theo tiếng Việt “ngày 20 tháng 8”.'},
+  {pre:'A: “你星期几休息？” — Bạn nghỉ thứ Sáu. B: “星期', blank:'五', post:'。”', hint:'(thứ Sáu)', ans:'五', exp:'Thứ Hai = 星期一, nên thứ Sáu = 星期五 (lệch một số so với tiếng Việt).'},
+  {pre:'Ghi trên lịch (văn viết), ngày 1 tháng 12: “十二月一', blank:'日', post:'”', hint:'(ngày — văn viết)', ans:'日', exp:'Văn viết dùng 日, khẩu ngữ dùng 号: 十二月一日 = 十二月一号.'},
+  {pre:'Bạn hỏi bạn mới quen: “你', blank:'会', post:'做中国菜吗？”', hint:'(biết)', ans:'会', exp:'会 + động từ = biết làm việc gì nhờ học: 会做中国菜.'},
+  {pre:'“我', blank:'不会', post:'做泰国菜，你会吗？”', hint:'(không biết)', ans:'不会', exp:'Phủ định của 会 là 不会; không dùng 没有 trước 会.'},
+  {pre:'Thấy ảnh em gái của bạn mình, bạn khen: “你妹妹', blank:'真', post:'好看！”', hint:'(thật)', ans:'真', exp:'真 + tính từ = … thật!, câu cảm thán; không dùng 是 trước 好看.'},
+  {pre:'Bạn kể về em gái: “我妹妹不太', blank:'喜欢', post:'面条儿。”', hint:'(thích)', ans:'喜欢', exp:'不太 + 喜欢 = không thích lắm; 不太 đứng trước động từ.'},
+  {pre:'“这是我的电脑，', blank:'它', post:'很新。”', hint:'(nó)', ans:'它', exp:'Chỉ đồ vật, con vật dùng 它; người nữ mới dùng 她.'},
+  {pre:'Năm giờ chiều, bạn hỏi cô giáo: “王老师，您', blank:'下班', post:'吗？”', hint:'(tan làm)', ans:'下班', exp:'下班 = tan làm; thêm 吗 cuối câu để hỏi có/không.'},
+  {pre:'Thấy một cô giáo lạ, bạn hỏi bạn cùng lớp: “这是你们的', blank:'新', post:'老师吗？”', hint:'(mới)', ans:'新', exp:'新 đứng TRƯỚC danh từ: 新老师, không nói 老师新 theo tiếng Việt “cô giáo mới”.'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['今天','几','号','？'], ans:'今天几号？', audio:'今天几号？'},
-  {words:['今天','我','休息','。'], ans:'今天我休息。', audio:'今天我休息。', alt:['我今天休息。']},
-  {words:['你','会','做饭','吗','？'], ans:'你会做饭吗？', audio:'你会做饭吗？'},
-  {words:['我','会','做','面条儿','。'], ans:'我会做面条儿。', audio:'我会做面条儿。'},
-  {words:['这','是','你','的','新','电脑','吗','？'], ans:'这是你的新电脑吗？', audio:'这是你的新电脑吗？'},
-  {words:['我','也','很','喜欢','它','。'], ans:'我也很喜欢它。', audio:'我也很喜欢它。'},
-  {words:['今天','9月','8号','，','星期日','。'], ans:'今天9月8号，星期日。', audio:'今天9月8号，星期日。'},
-  {words:['我','不','会','做','饺子','。'], ans:'我不会做饺子。', audio:'我不会做饺子。'},
+  {words:['你','会','做','哪','国','菜','？'], ans:'你会做哪国菜？', audio:'你会做哪国菜？'},
   {words:['今天','不是','星期六','。'], ans:'今天不是星期六。', audio:'今天不是星期六。'},
-  {words:['你','的','电脑','真','好看','！'], ans:'你的电脑真好看！', audio:'你的电脑真好看！'},
-  {words:['我','妹妹','今年','十二','岁','。'], ans:'我妹妹今年十二岁。', audio:'我妹妹今年十二岁。', alt:['今年我妹妹十二岁。']},
-  {words:['星期天','我','也','做饭','。'], ans:'星期天我也做饭。', audio:'星期天我也做饭。', alt:['我星期天也做饭。']},
+  {words:['我','哥哥','也','会','做饭','。'], ans:'我哥哥也会做饭。', audio:'我哥哥也会做饭。'},
+  {words:['星期天','你','休息','吗','？'], ans:'星期天你休息吗？', audio:'星期天你休息吗？', alt:['你星期天休息吗？']},
+  {words:['这','是','谁','的','电脑','？'], ans:'这是谁的电脑？', audio:'这是谁的电脑？'},
+  {words:['我','很','喜欢','做','饺子','。'], ans:'我很喜欢做饺子。', audio:'我很喜欢做饺子。'},
+  {words:['我','会','做','面条儿','和','饺子','。'], ans:'我会做面条儿和饺子。', audio:'我会做面条儿和饺子。', alt:['我会做饺子和面条儿。']},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3c · TRẮC NGHIỆM
 // ══════════════════════════════════════════
 var mcData = [
-  {q:'Hôm nay là ngày 8 tháng 9. Câu đúng là:', opts:['今天9月8号。', '今天8号9月。', '今天号8月9。', '今天8月9号。'], ans:0, exp:'Tháng trước, ngày sau: 9月8号; nói theo tiếng Việt “ngày 8 tháng 9” thành 8号9月 là sai, 8月9号 lại là ngày 9 tháng 8.'},
-  {q:'Bạn muốn nói “Hôm nay Chủ nhật.” Câu đúng là:', opts:['今天星期天。', '今天星期七。', '今天是星期七。', '今天七星期。'], ans:0, exp:'Chủ nhật là 星期天 / 星期日; nói 星期七 là lỗi suy từ 星期一…星期六.'},
-  {q:'A: “今天几号？” — B đáp:', opts:['今天6月22号。', '今天星期三。', '今天我休息。', '今天几月？'], ans:0, exp:'几号 hỏi ngày; 星期三 trả lời câu 星期几 — hay bị nhầm.'},
-  {q:'A: “今天星期几？” — B đáp:', opts:['星期五。', '5号。', '5月。', '五个。'], ans:0, exp:'星期几 hỏi thứ → trả lời 星期 + số; 5号 là ngày, 5月 là tháng.'},
-  {q:'Câu nào SAI?', opts:['今天不星期四。', '今天不是星期四。', '今天星期四。', '我妹妹12岁。'], ans:0, exp:'Câu ngày tháng khẳng định không cần 是, nhưng phủ định phải nói 不是: 今天不是星期四.'},
-  {q:'Bạn muốn nói “Em gái tôi 12 tuổi.” Câu đúng là:', opts:['我妹妹12岁。', '我妹妹有12岁。', '我妹妹岁12。', '12岁我妹妹。'], ans:0, exp:'Nói tuổi: Chủ ngữ + số + 岁, không cần động từ; không nói 有12岁.'},
-  {q:'Hôm nay không phải thứ Bảy: “今天＿＿星期六。”', opts:['不是', '不', '没有', '是不'], ans:0, exp:'Phủ định câu vị ngữ danh từ phải dùng 不是; 不 luôn đứng trước 是.'},
-  {q:'A: “你会做饭吗？” — Bạn không biết nấu. B đáp:', opts:['我不会做饭。', '我会不做饭。', '我没有会做饭。', '我会做饭不。'], ans:0, exp:'Phủ định của 会 là 不会, 不 đứng trước 会; không dùng 没有 trước 会.'},
-  {q:'Anh ấy biết làm sủi cảo: “他＿＿做饺子。”', opts:['会', '是', '有', '很'], ans:0, exp:'会 + động từ = biết làm (nhờ học mà biết): 会做饺子.'},
-  {q:'Bạn muốn nói “Tôi không biết làm món ăn Trung Quốc.” Câu đúng là:', opts:['我不会做中国菜。', '我会不做中国菜。', '我不做会中国菜。', '不我会做中国菜。'], ans:0, exp:'Trật tự: Chủ ngữ + 不会 + động từ + tân ngữ.'},
-  {q:'Bạn muốn hỏi bạn học có biết nấu mì không:', opts:['你会做面条儿吗？', '你会面条儿吗？', '你做会面条儿吗？', '我会做面条儿吗？'], ans:0, exp:'会 phải đi với động từ (会做), không đứng thẳng trước danh từ (会面条儿).'},
-  {q:'Mẹ hỏi: “你会做什么菜？” — Câu trả lời đúng:', opts:['我会做饺子，也会做一些菜。', '我会饺子，也会一些菜。', '我做会饺子，会也做菜。', '我也会做饺子吗？'], ans:0, exp:'会 + 做 + món ăn; 也 đứng trước 会: 也会做.'},
-  {q:'Đồng nghiệp hỏi: “这是你的新电脑吗？” — Bạn đáp:', opts:['是的，是我的。', '是的，我会做。', '我也很忙。', '今天星期日。'], ans:0, exp:'Hỏi “có phải của bạn không” thì đáp 是的，是我的 (的 chỉ sở hữu).'},
-  {q:'Bạn khen máy tính mới của bạn mình: “Đẹp thật!”', opts:['真好看！', '好看真！', '真很好看！', '太好看吗！'], ans:0, exp:'真 đứng trước tính từ: 真好看; không ghép 真 với 很.'},
-  {q:'Bạn mình hỏi: “你喜欢它吗？” — Bạn đáp “Tôi rất thích nó.”', opts:['我很喜欢它。', '我喜欢很它。', '我很它喜欢。', '它很我喜欢。'], ans:0, exp:'Phó từ 很 đứng trước động từ 喜欢, tân ngữ 它 đứng sau động từ.'},
-  {q:'Hôm nay Chủ nhật, bạn được nghỉ. Bạn nói:', opts:['今天星期天，我休息。', '今天星期天，我休息是。', '我休息今天星期天。', '今天是星期天休息我。'], ans:0, exp:'Câu ngày tháng không cần 是; thời gian đứng trước động từ 休息.'},
+  {q:'Hôm nay là ngày 8 tháng 9. Bạn nói:', opts:['今天九月八号。', '今天八号九月。', '今天是八号九月。', '今天八月九号。'], ans:0, exp:'Tháng trước, ngày sau: 九月八号; 八月九号 lại là ngày 9 tháng 8.'},
+  {q:'Câu nào SAI?', opts:['我的电脑是很新。', '今天我们不工作。', '杨同乐会做饺子。', '她喜欢中国。'], ans:0, exp:'Tính từ (新) làm vị ngữ không dùng 是: 我的电脑很新.'},
+  {q:'A: “今天几号？” — B đáp:', opts:['二十八号。', '星期三。', '今天休息。', '几月？'], ans:0, exp:'几号 hỏi ngày → trả lời số + 号; 星期三 là câu trả lời cho 星期几.'},
+  {q:'Hôm nay thứ Tư. Bạn nói:', opts:['今天星期三。', '今天星期四。', '今天是星期四。', '今天三星期。'], ans:0, exp:'Thứ Tư = 星期三 (thứ Hai là 星期一); số đứng SAU 星期.'},
+  {q:'Bạn muốn hỏi Đồng Lạc có biết nấu mì không:', opts:['同乐，你会做面条儿吗？', '同乐，你会面条儿吗？', '同乐，你做会面条儿吗？', '同乐，你会做面条儿呢？'], ans:0, exp:'会 phải đi với động từ (会做), không đứng thẳng trước món ăn.'},
+  {q:'Đồng Lạc cho bạn xem máy tính mới. Bạn khen “Đẹp thật!”:', opts:['真好看！', '真很好看！', '好看真！', '是真好看！'], ans:0, exp:'真 đứng ngay trước tính từ; không ghép 真 với 很, không thêm 是.'},
+  {q:'Bạn mình hỏi bạn có thích máy tính mới không. Bạn đáp “Tôi rất thích nó.”', opts:['我很喜欢它。', '我喜欢很它。', '我很它喜欢。', '我很喜欢她。'], ans:0, exp:'很 + 喜欢 + tân ngữ; máy tính là đồ vật nên dùng 它, không dùng 她.'},
+  {q:'Bạn muốn nói “Tôi biết nấu vài món Pháp.”', opts:['我会做一些法国菜。', '我会做法国一些菜。', '我一些会做法国菜。', '我会一些做法国菜。'], ans:0, exp:'一些 đứng ngay trước cụm danh từ: 一些法国菜.'},
+  {q:'Bạn muốn nói “Chủ nhật bố tôi nghỉ.”', opts:['星期日我爸爸休息。', '星期七我爸爸休息。', '我爸爸休息星期日。', '星期日我爸爸是休息。'], ans:0, exp:'Chủ nhật là 星期日/星期天 (không có 星期七); thời gian đứng trước động từ; không thêm 是.'},
+  {q:'Bạn muốn hỏi “Mẹ bạn biết nấu món gì?”', opts:['你妈妈会做什么？', '你妈妈会做什么吗？', '你妈妈什么会做？', '你妈妈会什么做？'], ans:0, exp:'Câu đã có 什么 thì không thêm 吗; 什么 đứng sau động từ 做.'},
+  {q:'Bạn muốn nói “máy tính mới của tôi”:', opts:['我的新电脑', '我的电脑新', '新我的电脑', '我新的电脑的'], ans:0, exp:'Người sở hữu + 的 + 新 + danh từ: 我的新电脑.'},
 ];
 
 // ══════════════════════════════════════════
@@ -2381,21 +2361,21 @@ var mcData = [
 var speakingData = {
   intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời về chính bạn.',
   questions: [
-    {q_zh: '今天几号？星期几？', q_vn: 'Bạn học hỏi hôm nay ngày mấy, thứ mấy. Hãy trả lời theo đúng ngày hôm nay.',
-     hint: '今天……月……号，星期……。', sample: '今天9月8号，星期日。', sample_vn: 'Hôm nay là ngày 8 tháng 9, Chủ nhật.',
+    {q_zh: '今天几月几号？星期几？', q_vn: 'Bạn học hỏi hôm nay ngày mấy tháng mấy, thứ mấy. Hãy trả lời theo đúng ngày hôm nay.',
+     hint: '今天……月……号，星期……。', sample: '今天三月六号，星期一。', sample_vn: 'Hôm nay là ngày 6 tháng 3, thứ Hai.',
      note: 'Tháng trước, ngày sau, thứ ở cuối; câu nói ngày tháng không cần 是.'},
-    {q_zh: '你会做饭吗？你会做什么？', q_vn: 'Bạn học hỏi bạn có biết nấu ăn không, biết làm món gì. Hãy nói thật về bạn.',
-     hint: '我会/不会做……。', sample: '我会做饭，我会做面条儿，不会做饺子。', sample_vn: 'Tôi biết nấu ăn, tôi biết nấu mì, không biết làm sủi cảo.',
-     note: '会 + động từ diễn đạt khả năng có được nhờ học tập; phủ định là 不会.'},
-    {q_zh: '这是我的新电脑。', q_vn: 'Bạn của bạn khoe máy tính mới. Hãy khen và nói bạn cũng thích nó.',
-     hint: '真……！我也很……', sample: '真好看！我也很喜欢它。', sample_vn: 'Đẹp thật đấy! Tôi cũng rất thích nó.',
-     note: '真 + tính từ dùng để nhấn mạnh cảm xúc thật sự.'},
-    {q_zh: '你今年多大？', q_vn: 'Bạn mới quen hỏi tuổi bạn. Hãy nói tuổi của bạn và một người trong gia đình.',
-     hint: '我今年……岁，我……', sample: '我今年二十岁，我妹妹十二岁。', sample_vn: 'Năm nay tôi 20 tuổi, em gái tôi 12 tuổi.',
-     note: 'Nói tuổi là câu vị ngữ danh từ: không cần 是.'},
-    {q_zh: '星期天你做什么？', q_vn: 'Bạn học hỏi Chủ nhật bạn thường làm gì. Hãy nói về bạn.',
-     hint: '星期天我……', sample: '星期天我休息，我也做饭。', sample_vn: 'Chủ nhật tôi nghỉ, tôi cũng nấu cơm.',
+    {q_zh: '你会做饭吗？', q_vn: 'Bạn học hỏi bạn có biết nấu ăn không. Hãy trả lời và kể vài món bạn biết nấu.',
+     hint: '我会/不会做饭，我会做……', sample: '我会做饭，我会做饺子和一些中国菜。', sample_vn: 'Tôi biết nấu ăn, tôi biết làm sủi cảo và vài món Trung Quốc.',
+     note: '会 + động từ = biết làm nhờ học; phủ định là 不会.'},
+    {q_zh: '这是我妈妈的新电脑。', q_vn: 'Bạn của bạn khoe máy tính mới của mẹ bạn ấy. Hãy khen và nói bạn thích nó.',
+     hint: '……真好看！我很喜欢。', sample: '你妈妈的电脑真好看！我很喜欢。', sample_vn: 'Máy tính của mẹ bạn đẹp thật! Mình rất thích.',
+     note: '真 + tính từ để khen; không dùng 是 trước 好看.'},
+    {q_zh: '星期天你做什么？', q_vn: 'Bạn học hỏi Chủ nhật bạn làm gì. Hãy nói về bạn.',
+     hint: '星期天我……', sample: '星期天我不工作，我做饭。', sample_vn: 'Chủ nhật tôi không làm việc, tôi nấu cơm.',
      note: 'Từ chỉ thời gian (星期天) đứng trước động từ.'},
+    {q_zh: '你喜欢什么菜？', q_vn: 'Bạn mới quen hỏi bạn thích món ăn gì. Hãy trả lời.',
+     hint: '我喜欢……，也喜欢……', sample: '我喜欢中国菜，也喜欢面条儿。', sample_vn: 'Tôi thích món Trung Quốc, cũng thích mì.',
+     note: '也 đứng trước động từ 喜欢.'},
   ],
 };
 
@@ -2403,20 +2383,18 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Hôm nay ngày mấy? — Hôm nay là ngày 8 tháng 9, Chủ nhật.', zh:'今天几号？——今天9月8号，星期日。', py:'Jīntiān jǐ hào? — Jīntiān jiǔ yuè bā hào, Xīngqīrì.'},
-  {vi:'Bạn có biết nấu ăn không? — Tôi biết, tôi biết nấu mì và sủi cảo.', zh:'你会做饭吗？——我会，我会做面条儿和饺子。', py:'Nǐ huì zuò fàn ma? — Wǒ huì, wǒ huì zuò miàntiáor hé jiǎozi.'},
-  {vi:'Đây là máy tính mới của bạn à? — Đúng vậy, tôi rất thích nó.', zh:'这是你的新电脑吗？——是的，我很喜欢它。', py:'Zhè shì nǐ de xīn diànnǎo ma? — Shì de, wǒ hěn xǐhuan tā.'},
-  {vi:'Hôm nay Chủ nhật, tôi được nghỉ, tôi cũng nấu ăn.', zh:'今天星期日，我休息，我也做饭。', py:'Jīntiān Xīngqīrì, wǒ xiūxi, wǒ yě zuò fàn.'},
-  {vi:'Em gái tôi năm nay 12 tuổi, em ấy không biết nấu ăn.', zh:'我妹妹今年十二岁，她不会做饭。', py:'Wǒ mèimei jīnnián shí\'èr suì, tā bú huì zuò fàn.'},
-  {vi:'Hôm nay không phải thứ Bảy, hôm nay Chủ nhật.', zh:'今天不是星期六，今天星期天。', py:'Jīntiān bú shì Xīngqīliù, jīntiān Xīngqītiān.'},
+  {vi:'Máy tính của chị gái bạn là máy mới à? — Không phải, nó không mới.', zh:'你姐姐的电脑是新的吗？——不是，它不新。', py:'Nǐ jiějie de diànnǎo shì xīn de ma? — Bú shì, tā bù xīn.'},
+  {vi:'Ngày 20 tháng 10 là thứ mấy? — Thứ Năm.', zh:'十月二十号是星期几？——星期四。', py:'Shí yuè èrshí hào shì xīngqī jǐ? — Xīngqīsì.'},
+  {vi:'Con gái tôi năm nay sáu tuổi, cháu rất thích sủi cảo.', zh:'我女儿今年六岁，她很喜欢饺子。', py:'Wǒ nǚ\'ér jīnnián liù suì, tā hěn xǐhuan jiǎozi.'},
+  {vi:'Bố bạn có thích món Thái không? — Rất thích, mẹ tôi cũng biết nấu.', zh:'你爸爸喜欢泰国菜吗？——很喜欢，我妈妈也会做。', py:'Nǐ bàba xǐhuan Tàiguó cài ma? — Hěn xǐhuan, wǒ māma yě huì zuò.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Hôm nay thứ mấy? — Hôm nay thứ Hai, tôi không được nghỉ.', zh:'今天星期几？——今天星期一，我不休息。', py:'Jīntiān xīngqī jǐ? — Jīntiān Xīngqīyī, wǒ bù xiūxi.'},
-  {vi:'Tôi không biết nấu ăn, mẹ tôi biết làm sủi cảo.', zh:'我不会做饭，我妈妈会做饺子。', py:'Wǒ bú huì zuò fàn, wǒ māma huì zuò jiǎozi.'},
-  {vi:'Máy tính mới của tôi thật đẹp, tôi rất thích nó.', zh:'我的新电脑真好看，我很喜欢它。', py:'Wǒ de xīn diànnǎo zhēn hǎokàn, wǒ hěn xǐhuan tā.'},
-  {vi:'Thứ Bảy tôi nghỉ, Chủ nhật tôi cũng nghỉ.', zh:'星期六我休息，星期日我也休息。', py:'Xīngqīliù wǒ xiūxi, Xīngqīrì wǒ yě xiūxi.'},
+  {vi:'Cô Vương Chủ nhật cũng làm việc, cô ấy rất bận.', zh:'王老师星期天也工作，她很忙。', py:'Wáng lǎoshī Xīngqītiān yě gōngzuò, tā hěn máng.'},
+  {vi:'Nó là máy tính của bạn gái tôi, không phải của tôi.', zh:'它是我女朋友的电脑，不是我的。', py:'Tā shì wǒ nǚpéngyou de diànnǎo, bú shì wǒ de.'},
+  {vi:'Dương Đồng Lạc có biết nấu món Pháp không? — Không, anh ấy biết nấu món Trung Quốc.', zh:'杨同乐会做法国菜吗？——不会，他会做中国菜。', py:'Yáng Tónglè huì zuò Fǎguó cài ma? — Bú huì, tā huì zuò Zhōngguó cài.'},
+  {vi:'Nhà bạn ai biết nấu ăn? — Mẹ tôi.', zh:'你们家谁会做饭？——我妈妈。', py:'Nǐmen jiā shéi huì zuò fàn? — Wǒ māma.'},
 ];

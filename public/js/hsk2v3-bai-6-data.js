@@ -1402,135 +1402,157 @@ var dialogData = [
 
 var listenData = [
   {
-    audio: '明天就是女儿的生日了。你不说，我还真忘了。她喜欢画画，你觉得画笔怎么样？就送画笔吧！',
+    audio: '下个星期六是我妈妈的生日，我和爸爸要给她买一个大大的蛋糕。',
     questions: [
-      { q: '他们要准备什么礼物？', opts: ['画', '衣服', '画笔'], ans: 2 },
-      { q: '女儿喜欢做什么？', opts: ['画画', '唱歌', '跑步'], ans: 0 }
+      { q: 'Thứ bảy tuần sau là sinh nhật của ai?', opts: ['Bố', 'Mẹ', 'Em gái'], ans: 1, exp: '是我妈妈的生日 = là sinh nhật của mẹ tôi.' },
+      { q: 'Họ định mua gì?', opts: ['Một chiếc bánh kem to', 'Một bộ quần áo', 'Một ít hoa quả'], ans: 0, exp: '一个大大的蛋糕 = một chiếc bánh kem to; 大大的 = to to, rất to.' }
     ]
   },
   {
-    audio: '小雪，生日快乐！这是爸爸、妈妈送你的礼物。你打开看看喜欢不喜欢。画笔！我很喜欢！',
+    audio: '小明画了一只小狗、一只小猫，还有一些鱼什么的。',
     questions: [
-      { q: '小雪收到了什么礼物？', opts: ['画笔', '蛋糕', '衣服'], ans: 0 },
-      { q: '小雪喜欢这个礼物吗？', opts: ['很喜欢', '不喜欢', '没说'], ans: 0 }
+      { q: 'Tiểu Minh vẽ những gì?', opts: ['Chỉ vẽ một con chó', 'Bố mẹ của mình', 'Chó, mèo, cá…'], ans: 2, exp: '什么的 ở cuối danh sách = vân vân: chó, mèo, cá và những thứ khác.' }
     ]
   },
   {
-    audio: '小雪，看看今天有什么好吃的。长长的面条儿，大大的蛋糕。还有鱼啊肉啊什么的，都是你喜欢吃的。',
+    audio: '对不起，我忘了你的生日，明天我请你吃饭吧。',
     questions: [
-      { q: '今天有什么吃的？', opts: ['面条儿和蛋糕', '只有蛋糕', '只有面条儿'], ans: 0 },
-      { q: '这些东西都是谁爱吃的？', opts: ['爸爸', '妈妈', '小雪'], ans: 2 }
+      { q: 'Người nói đã quên gì?', opts: ['Sinh nhật của bạn', 'Số điện thoại của bạn', 'Tên của bạn'], ans: 0, exp: '忘了你的生日 = quên sinh nhật của bạn.' },
+      { q: 'Người nói muốn làm gì để xin lỗi?', opts: ['Tặng bút vẽ', 'Mua bánh kem', 'Mời bạn ăn cơm'], ans: 2, exp: '请你吃饭 = mời bạn ăn cơm.' }
     ]
   },
   {
-    audio: '今天是女儿的生日。吃完晚饭，一家人去看了个电影。回家后，孩子们早早地就上床了。这是很忙、很累，但很快乐的一天。',
+    audio: '这个房间的床太小了，睡在上边很不舒服。',
     questions: [
-      { q: '吃完晚饭他们做什么了？', opts: ['看电影', '买蛋糕', '画画'], ans: 0 },
-      { q: '今天是怎样的一天？', opts: ['很忙很累但很快乐', '很没意思', '很安静'], ans: 0 }
+      { q: 'Người nói thấy chiếc giường thế nào?', opts: ['To và thoải mái', 'Quá nhỏ, nằm không thoải mái', 'Nhỏ nhưng thoải mái'], ans: 1, exp: '床太小了 = giường nhỏ quá; 很不舒服 = rất khó chịu, không thoải mái.' }
+    ]
+  },
+  {
+    audio: '晚饭有鱼、有肉，还有长长的面条儿，都是奶奶做的。',
+    questions: [
+      { q: 'Ai nấu bữa tối?', opts: ['Mẹ', 'Bà nội', 'Ông nội'], ans: 1, exp: '都是奶奶做的 = đều do bà nội nấu.' },
+      { q: 'Mì sợi thế nào?', opts: ['Dài', 'Ngắn', 'Cay'], ans: 0, exp: '长长的面条儿 = mì sợi dài dài; 长 = dài.' }
+    ]
+  },
+  {
+    audio: '孩子们高高兴兴地跟爷爷出去玩了。',
+    questions: [
+      { q: 'Bọn trẻ đi chơi với ai?', opts: ['Ông nội', 'Bố', 'Thầy giáo'], ans: 0, exp: '跟爷爷出去玩 = đi chơi cùng ông nội.' },
+      { q: 'Bọn trẻ đi chơi với tâm trạng thế nào?', opts: ['Mệt mỏi', 'Vui vẻ', 'Không muốn đi'], ans: 1, exp: '高高兴兴地 + động từ = vui vẻ làm gì; 地 nối trạng ngữ với động từ.' }
     ]
   }
 ];
 
 var matchData = [
-  { left: '生日', right: '快乐' },
-  { left: '打开', right: '礼物' },
+  { left: '过', right: '生日' },
+  { left: '打开', right: '电脑' },
+  { left: '一条', right: '鱼' },
   { left: '长长的', right: '面条儿' },
-  { left: '大大的', right: '蛋糕' },
-  { left: '高高兴兴地', right: '玩' },
-  { left: '舒舒服服地', right: '睡一觉' }
+  { left: '舒舒服服地', right: '睡一觉' },
+  { left: '画', right: '一只小猫' },
+  { left: '生日', right: '快乐' }
 ];
 
 var fillData = [
-  { pre: '明天就是女儿的', blank: '生日', post: '了。', hint: '(sinh nhật)', ans: '生日' },
-  { pre: '你不说，我还真', blank: '忘', post: '了。', hint: '(quên)', ans: '忘' },
-  { pre: '她喜欢', blank: '画画', post: '，你觉得画笔怎么样？', hint: '(vẽ tranh)', ans: '画画' },
-  { pre: '小雪，生日', blank: '快乐', post: '！', hint: '(vui vẻ)', ans: '快乐' },
-  { pre: '你', blank: '打开', post: '看看喜欢不喜欢。', hint: '(mở ra)', ans: '打开', exp: '打开 = mở ra (开 là kết quả của động tác); 打开看看 = mở ra xem thử.' },
-  { pre: '还有鱼啊肉啊', blank: '什么的', post: '。', hint: '(vân vân)', ans: '什么的', exp: '什么的 đặt cuối danh sách liệt kê, nghĩa là “vân vân”.' },
-  { pre: '还要高高兴兴', blank: '地', post: '玩。', hint: '(trợ từ trạng ngữ)', ans: '地', exp: 'Tính từ lặp (高高兴兴) làm trạng ngữ, nối với động từ phía sau bằng 地.' },
-  { pre: '他们说要舒舒服服地睡一觉，早早地上', blank: '床', post: '了。', hint: '(giường)', ans: '床' }
+  { pre: '“你妹妹的', blank: '生日', post: '是哪天？” — “七月十号。”', hint: '(sinh nhật)', ans: '生日', exp: '生日 = sinh nhật; hỏi ngày dùng 哪天 hoặc 几月几号.' },
+  { pre: '“你的书包呢？” — “不好意思，我', blank: '忘', post: '在教室了。”', hint: '(quên)', ans: '忘', exp: '忘 + 在 + nơi chốn = để quên ở đâu.' },
+  { pre: '“你喜欢做什么？” — “我喜欢唱歌、画画、看电影', blank: '什么的', post: '。”', hint: '(vân vân)', ans: '什么的', exp: '什么的 đặt ở cuối danh sách liệt kê = vân vân.' },
+  { pre: '“孩子们在做什么？” — “他们正在高高兴兴', blank: '地', post: '玩呢。”', hint: '(trợ từ nối trạng ngữ với động từ)', ans: '地', exp: 'Trạng ngữ + 地 + động từ: 高高兴兴地玩; 的 thì đứng trước danh từ.' },
+  { pre: 'Ở cửa hàng: “这条裤子太', blank: '长', post: '了，我试试那条红色的吧。”', hint: '(dài)', ans: '长', exp: '长 = dài; 太长了 = dài quá.' },
+  { pre: '“你怎么了？” — “我有点儿不', blank: '舒服', post: '，想回家休息。”', hint: '(dễ chịu, khỏe)', ans: '舒服', exp: '不舒服 = khó chịu, không khỏe; tính từ phủ định bằng 不.' },
+  { pre: 'Bạn nhận được quà, các bạn giục: “快', blank: '打开', post: '看看是什么！”', hint: '(mở ra)', ans: '打开', exp: '打开 = mở ra; 打开看看 = mở ra xem.' },
+  { pre: '“小雪呢？” — “她累了，已经上', blank: '床', post: '睡觉了。”', hint: '(giường)', ans: '床', exp: '上床 = lên giường; 已经……了 = đã … rồi.' },
+  { pre: '“这个', blank: '蛋糕', post: '是你自己做的吗？” — “不是，是在商场买的。”', hint: '(bánh kem)', ans: '蛋糕', exp: '蛋糕 = bánh kem; 是……的 hỏi về người làm / nơi mua.' },
+  { pre: '“你妹妹喜欢什么？” — “她喜欢', blank: '画', post: '画，她有很多画笔。”', hint: '(vẽ)', ans: '画', exp: '画画 = vẽ tranh (画 thứ nhất là động từ, 画 thứ hai là danh từ); 画笔 = bút vẽ.' },
+  { pre: '“今年你想怎么', blank: '过', post: '生日？” — “我想跟朋友们一起去吃北京烤鸭。”', hint: '(đón, trải qua)', ans: '过', exp: '过生日 = đón sinh nhật; 过 ở đây là động từ, không phải “đã từng”.' },
+  { pre: '“你吃', blank: '肉', post: '吗？” — “不吃，我只吃鱼和菜。”', hint: '(thịt)', ans: '肉', exp: '肉 = thịt; 鱼 = cá.' }
 ];
 
 var sortData = [
-  { words: ['明天', '就', '是', '女儿', '的', '生日', '了', '。'], ans: '明天就是女儿的生日了。', audio: '明天就是女儿的生日了。' },
-  { words: ['小雪', '，', '生日', '快乐', '！'], ans: '小雪，生日快乐！', audio: '小雪，生日快乐！' },
-  { words: ['你', '打开', '看看', '喜欢', '不', '喜欢', '。'], ans: '你打开看看喜欢不喜欢。', audio: '你打开看看喜欢不喜欢。' },
-  { words: ['我', '再', '给', '她', '买', '个', '大大的', '生日蛋糕', '。'], ans: '我再给她买个大大的生日蛋糕。', audio: '我再给她买个大大的生日蛋糕。' },
-  { words: ['还有', '鱼', '啊', '肉', '啊', '什么的', '。'], ans: '还有鱼啊肉啊什么的。', audio: '还有鱼啊肉啊什么的。' },
-  { words: ['过', '生日', '就', '要', '高高兴兴', '地', '玩', '。'], ans: '过生日就要高高兴兴地玩。', audio: '过生日就要高高兴兴地玩。' }
+  { words: ['我', '家', '的', '小狗', '小小的', '，', '非常', '好玩儿', '。'], ans: '我家的小狗小小的，非常好玩儿。', audio: '我家的小狗小小的，非常好玩儿。' },
+  { words: ['你', '今天', '好好', '地', '休息', '一下', '吧', '。'], ans: '你今天好好地休息一下吧。', audio: '你今天好好地休息一下吧。', alt: ['今天你好好地休息一下吧。'] },
+  { words: ['晚饭', '我', '想', '吃', '饺子', '、', '面条儿', '什么的', '。'], ans: '晚饭我想吃饺子、面条儿什么的。', audio: '晚饭我想吃饺子、面条儿什么的。', alt: ['我晚饭想吃饺子、面条儿什么的。', '晚饭我想吃面条儿、饺子什么的。', '我晚饭想吃面条儿、饺子什么的。'] },
+  { words: ['这', '是', '我', '第一次', '在', '中国', '过', '生日', '。'], ans: '这是我第一次在中国过生日。', audio: '这是我第一次在中国过生日。' },
+  { words: ['她', '画', '的', '小猫', '非常', '漂亮', '。'], ans: '她画的小猫非常漂亮。', audio: '她画的小猫非常漂亮。' },
+  { words: ['你', '别', '忘', '了', '明天', '是', '奶奶', '的', '生日', '。'], ans: '你别忘了明天是奶奶的生日。', audio: '你别忘了明天是奶奶的生日。' },
+  { words: ['昨天', '我', '很', '累', '，', '早早', '地', '就', '上床', '睡觉', '了', '。'], ans: '昨天我很累，早早地就上床睡觉了。', audio: '昨天我很累，早早地就上床睡觉了。' },
+  { words: ['他', '送', '我', '的', '画笔', '是', '红色', '的', '。'], ans: '他送我的画笔是红色的。', audio: '他送我的画笔是红色的。' }
 ];
 
 var mcData = [
-  { q: '今天买的苹果＿＿，我吃了一个，很好吃。', opts: ['大大的', '大的大', '很大大', '大大得'], ans: 0, exp: 'Tính từ một âm tiết lặp AA + 的: 大大的 = to to; không dùng 很 trước tính từ lặp.' },
-  { q: '桌子上有电脑、杯子、书和画笔＿＿。', opts: ['什么的', '怎么的', '那么的', '这么的'], ans: 0, exp: '什么的 đặt sau danh sách liệt kê = vân vân.' },
-  { q: '爸爸很快＿＿吃完早饭，就去上班了。', opts: ['地', '的', '得', '了'], ans: 0, exp: 'Trạng ngữ (很快) đứng trước động từ 吃 nên nối bằng 地; 的 đứng trước danh từ, 得 đứng sau động từ.' },
-  { q: '中国人过生日一般要吃什么？', opts: ['面条儿', '饺子', '米饭', '面包'], ans: 0, exp: 'Người Trung Quốc thường ăn mì (面条儿) vào ngày sinh nhật, sợi mì dài tượng trưng cho sống lâu.' },
-  { q: 'Hình thức lặp của tính từ hai âm tiết 高兴 là gì?', opts: ['高高兴兴', '高兴高兴', '高兴兴高', '高高兴'], ans: 0, exp: 'Tính từ hai âm tiết AB lặp thành AABB: 高高兴兴; ABAB là kiểu lặp của động từ.' },
-  { q: '“什么的” dùng để làm gì?', opts: ['Liệt kê chưa đầy đủ (vân vân)', 'Hỏi cái gì', 'Phủ định', 'Nhấn mạnh thời gian'], ans: 0, exp: '什么的 đứng cuối loạt liệt kê, nghĩa là “vân vân”, không dùng để hỏi.' },
-  { q: 'Trợ từ nào nối trạng ngữ với động từ?', opts: ['地', '的', '得', '了'], ans: 0, exp: '地 nối trạng ngữ với động từ (高兴地玩); 的 nối định ngữ với danh từ; 得 nối động từ với bổ ngữ.' },
-  { q: '“过生日” nghĩa là gì?', opts: ['Đón sinh nhật', 'Đã từng sinh nhật', 'Qua ngày sinh nhật', 'Quên sinh nhật'], ans: 0, exp: '过 ở đây là động từ “đón, trải qua (ngày lễ)”: 过生日 = đón sinh nhật, không phải 过 chỉ kinh nghiệm.' }
+  { q: 'Bạn muốn nói: “Bọn trẻ vui vẻ hát.”', opts: ['孩子们高高兴兴地唱歌。', '孩子们高高兴兴的唱歌。', '孩子们唱歌高高兴兴地。', '孩子们高高兴兴唱地歌。'], ans: 0, exp: 'Trạng ngữ + 地 + động từ, đặt TRƯỚC động từ: 高高兴兴地唱歌; 的 đứng trước danh từ.' },
+  { q: 'Câu nào SAI?', opts: ['这个蛋糕很大大的。', '这个蛋糕大大的。', '这是一个很大的蛋糕。', '我想买个大大的蛋糕。'], ans: 0, exp: 'Tính từ lặp lại (大大的) đã mang nghĩa “rất”, không thêm 很 phía trước.' },
+  { q: 'A: “你的书包里有什么？” — B:', opts: ['有书、手机、杯子什么的。', '有书、手机、杯子什么。', '有什么的书、手机、杯子。', '有书、手机什么的杯子。'], ans: 0, exp: '什么的 đứng CUỐI danh sách = vân vân; không bỏ 的, không đặt ở giữa.' },
+  { q: 'Hôm nay là sinh nhật bạn thân, bạn chúc:', opts: ['生日快乐！', '快乐生日！', '生日很快乐！', '生日的快乐！'], ans: 0, exp: 'Lời chúc cố định: 生日快乐！ (sinh nhật + vui vẻ), không đảo thành 快乐生日.' },
+  { q: 'Bạn muốn nói: “Tôi quên mua thịt rồi.”', opts: ['我忘了买肉。', '我忘了肉买。', '我没忘了买肉。', '我买忘了肉。'], ans: 0, exp: '忘了 + việc cần làm: 忘了买肉; 没 không đi cùng 了.' },
+  { q: 'A: “去年的生日你是怎么过的？” — B:', opts: ['我是跟家人一起过的。', '我是跟家人一起过了。', '我跟家人是一起过的了。', '我是一起过跟家人的。'], ans: 0, exp: 'Hỏi bằng 是……的 thì đáp bằng 是……的: 是 + 跟家人一起 + 过 + 的; không dùng 了 thay cho 的.' },
+  { q: 'Bạn cùng lớp hôm nay nghỉ học, cô giáo hỏi. Bạn đáp: “Bạn ấy không khỏe lắm.”', opts: ['他今天不太舒服。', '他今天没太舒服。', '他今天太不舒服的。', '他今天舒服不太。'], ans: 0, exp: 'Tính từ phủ định bằng 不, không dùng 没: 不太舒服 = không khỏe lắm.' },
+  { q: 'Bạn tả phòng khách sạn: “Phòng nho nhỏ, nhưng rất thoải mái.”', opts: ['这个酒店的房间小小的，但很舒服。', '这个酒店的房间小小，但很舒服。', '这个酒店的房间很小小的，但很舒服。', '这个酒店的房间小小的，但很舒服地。'], ans: 0, exp: 'Tính từ lặp làm vị ngữ: 小小的 (cần 的, không thêm 很); 地 chỉ đứng trước động từ.' },
+  { q: 'A: “今天这么累，回家后你要做什么？” — B:', opts: ['我想舒舒服服地睡一觉。', '我想舒舒服服的睡一觉。', '我想睡一觉舒舒服服地。', '我想舒服舒服地睡一觉。'], ans: 0, exp: 'Tính từ hai chữ lặp kiểu AABB: 舒舒服服 + 地 + động từ; 舒服舒服 là kiểu lặp của động từ.' },
+  { q: 'Bạn muốn nói: “Hôm nay là sinh nhật ông nội, chúng ta ăn mì sợi dài nhé.”', opts: ['今天是爷爷的生日，我们吃长长的面条儿吧。', '今天是爷爷的生日，我们吃面条儿长长的吧。', '今天是爷爷的生日，我们吃长长面条儿的吧。', '今天是爷爷的生日，我们吃很长长的面条儿吧。'], ans: 0, exp: 'Tính từ lặp + 的 đứng TRƯỚC danh từ: 长长的面条儿; không đặt sau như tiếng Việt “mì dài dài”.' },
+  { q: 'Ở chợ, bạn muốn mua một con cá:', opts: ['我要买一条鱼。', '我要买一个鱼。', '我要买一件鱼。', '我要买鱼一条。'], ans: 0, exp: '鱼 dùng lượng từ 条; số + lượng từ đứng trước danh từ: 一条鱼.' },
+  { q: 'A: “你学过画画吗？” — B (chưa từng học):', opts: ['没学过，但我很喜欢画。', '不学过，但我很喜欢画。', '没学过了，但我很喜欢画。', '没过学，但我很喜欢画。'], ans: 0, exp: 'Phủ định của 过 là 没 + động từ + 过; không thêm 了.' }
 ];
 
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá.',
+  intro: 'Nhấn nút loa nghe câu hỏi / tình huống, rồi tự ghi âm câu trả lời — hãy nói về chính bạn, dùng tính từ lặp lại (大大的, 高高兴兴), ……什么的 và 地.',
   questions: [
     {
-      q_zh: '你想给朋友准备个什么生日礼物？为什么？',
-      q_vn: 'Bạn muốn chuẩn bị quà sinh nhật gì cho bạn mình? Vì sao?',
-      hint: '我想送……，因为他喜欢……',
-      sample: '我想送他画笔，因为他很喜欢画画，我再给他买个大大的生日蛋糕。',
-      sample_vn: 'Tôi muốn tặng bạn ấy bút vẽ, vì bạn ấy rất thích vẽ tranh, tôi sẽ mua thêm một chiếc bánh sinh nhật to.',
-      note: 'Tính từ lặp 大大的 làm câu sinh động và thân mật hơn.'
+      q_zh: '你的生日在几月？去年你是怎么过的？',
+      q_vn: 'Sinh nhật bạn vào tháng mấy? Năm ngoái bạn đã đón sinh nhật thế nào?',
+      hint: '我的生日在……。去年我是……过的。',
+      sample: '我的生日在五月。去年我是跟同学们一起过的，我们去吃了北京烤鸭。',
+      sample_vn: 'Sinh nhật mình vào tháng năm. Năm ngoái mình đón cùng các bạn cùng lớp, bọn mình đi ăn vịt quay Bắc Kinh.',
+      note: '过生日 = đón sinh nhật; 是……的 kể chi tiết việc đã xảy ra.'
     },
     {
-      q_zh: '你收到礼物的时候会说什么？',
-      q_vn: 'Khi nhận được quà bạn sẽ nói gì?',
-      hint: '谢谢！我很喜欢！',
-      sample: '我打开看看，然后说：谢谢你！画笔我很喜欢！',
-      sample_vn: 'Tôi mở ra xem, rồi nói: Cảm ơn bạn! Bút vẽ tôi rất thích!',
-      note: '打开 + 看看 là cách nói tự nhiên khi nhận quà.'
+      q_zh: '你的书包是什么颜色的？里边有什么？',
+      q_vn: 'Cặp sách của bạn màu gì? Bên trong có những gì?',
+      hint: '我的书包是……的，里边有……什么的。',
+      sample: '我的书包是黑色的，里边有书、手机，还有很多画笔什么的。',
+      sample_vn: 'Cặp của mình màu đen, bên trong có sách, điện thoại, còn có nhiều bút vẽ nữa.',
+      note: '什么的 đặt ở cuối danh sách = vân vân.'
     },
     {
-      q_zh: '过生日的时候，你们家一般吃什么？',
-      q_vn: 'Khi sinh nhật, nhà bạn thường ăn gì?',
-      hint: '我们一般吃……什么的。',
-      sample: '我们一般吃长长的面条儿、大大的蛋糕，还有鱼啊肉啊什么的。',
-      sample_vn: 'Nhà tôi thường ăn mì sợi dài, bánh ga tô to, còn có cá, thịt… nữa.',
-      note: '什么的 đặt cuối danh sách để nói "vân vân".'
+      q_zh: '这个星期天不上课，你想怎么过？',
+      q_vn: 'Chủ nhật này không phải đi học, bạn muốn trải qua ngày đó thế nào?',
+      hint: '我想……地……',
+      sample: '我想早早地起床，跟朋友一起去西安玩，晚上回来好好地休息。',
+      sample_vn: 'Mình muốn dậy thật sớm, đi Tây An chơi với bạn, tối về thì nghỉ ngơi cho thật tốt.',
+      note: 'Trạng ngữ + 地 + động từ: 早早地起床、好好地休息.'
     },
     {
-      q_zh: '生日那天你们一家人做了什么？',
-      q_vn: 'Ngày sinh nhật cả nhà bạn đã làm gì?',
-      hint: '吃完饭我们……地……',
-      sample: '吃完晚饭，一家人高高兴兴地去看了个电影，回家后孩子们早早地就上床了。',
-      sample_vn: 'Ăn tối xong, cả nhà vui vẻ đi xem phim, về nhà bọn trẻ đi ngủ sớm.',
-      note: 'Tính từ + 地 + động từ: 高高兴兴地玩、早早地上床。'
+      q_zh: '你想送好朋友什么生日礼物？为什么？',
+      q_vn: 'Bạn muốn tặng bạn thân quà sinh nhật gì? Vì sao?',
+      hint: '我想送他……，因为……',
+      sample: '我想送她一些画笔，因为她非常喜欢画画。',
+      sample_vn: 'Mình muốn tặng bạn ấy mấy cây bút vẽ, vì bạn ấy rất thích vẽ tranh.',
+      note: '送 + người + quà = tặng ai cái gì.'
     },
     {
-      q_zh: '你觉得什么样的一天是快乐的一天？',
-      q_vn: 'Bạn thấy một ngày như thế nào là một ngày vui?',
-      hint: '很忙、很累，但很快乐。',
-      sample: '跟家人一起过生日的那天，虽然很忙、很累，但是很快乐。',
-      sample_vn: 'Ngày đón sinh nhật cùng gia đình, tuy rất bận, rất mệt nhưng lại rất vui.',
-      note: '很忙、很累，但很快乐 — cách nối các tính từ để tả một ngày.'
+      q_zh: '过生日的时候，你想吃什么好吃的？',
+      q_vn: 'Vào ngày sinh nhật, bạn muốn ăn gì?',
+      hint: '我想吃……，还有……',
+      sample: '我想吃妈妈做的鱼，还有一个小小的蛋糕。',
+      sample_vn: 'Mình muốn ăn món cá mẹ nấu, và một chiếc bánh kem nho nhỏ.',
+      note: 'Tính từ lặp + 的 đứng trước danh từ: 小小的蛋糕.'
     }
   ]
 };
 
 var translateData = [
-  { vi: 'Ngày mai là sinh nhật con gái rồi.', zh: '明天就是女儿的生日了。', py: 'Míngtiān jiù shì nǚ’ér de shēngrì le.' },
-  { vi: 'Con mở ra xem có thích không.', zh: '你打开看看喜欢不喜欢。', py: 'Nǐ dǎkāi kànkan xǐhuan bu xǐhuan.' },
-  { vi: 'Còn có cá, thịt và những món khác nữa.', zh: '还有鱼啊肉啊什么的。', py: 'Hái yǒu yú a ròu a shénmede.' },
-  { vi: 'Sinh nhật thì phải ăn món ngon, còn phải chơi vui nữa.', zh: '过生日就要吃好吃的，还要高高兴兴地玩。', py: 'Guò shēngrì jiù yào chī hǎochī de, hái yào gāogāoxìngxìng de wán.' },
-  { vi: 'Hôm nay là một ngày rất bận, rất mệt nhưng rất vui.', zh: '这是很忙、很累，但很快乐的一天。', py: 'Zhè shì hěn máng, hěn lèi, dàn hěn kuàilè de yì tiān.' }
+  { vi: 'Hôm qua là sinh nhật tôi, các bạn tặng tôi rất nhiều quà.', zh: '昨天是我的生日，朋友们送了我很多礼物。', py: 'Zuótiān shì wǒ de shēngrì, péngyoumen sòngle wǒ hěn duō lǐwù.' },
+  { vi: 'Đừng quên gọi điện cho bà nội.', zh: '别忘了给奶奶打电话。', py: 'Bié wàngle gěi nǎinai dǎ diànhuà.' },
+  { vi: 'Cô ấy thích vẽ mèo, chó, vân vân.', zh: '她喜欢画小猫小狗什么的。', py: 'Tā xǐhuan huà xiǎo māo xiǎo gǒu shénmede.' },
+  { vi: 'Mẹ bảo tôi ăn nhiều thịt một chút.', zh: '妈妈让我多吃点儿肉。', py: 'Māma ràng wǒ duō chī diǎnr ròu.' },
+  { vi: 'Cô bé vui vẻ mở quà ra.', zh: '她高高兴兴地打开了礼物。', py: 'Tā gāogāoxìngxìng de dǎkāile lǐwù.' }
 ];
 
 var translateDataRev = [
-  { vi: 'Nếu em không nhắc thì anh đã quên mất rồi.', zh: '你不说，我还真忘了。', py: 'Nǐ bù shuō, wǒ hái zhēn wàng le.' },
-  { vi: 'Anh cũng sẽ mua thêm cho con một chiếc bánh sinh nhật to.', zh: '我再给她买个大大的生日蛋糕。', py: 'Wǒ zài gěi tā mǎi ge dàdà de shēngrì dàngāo.' },
-  { vi: 'Vẽ cả gia đình mình!', zh: '画我们的家！', py: 'Huà wǒmen de jiā!' },
-  { vi: 'Mau gọi em trai con ra ăn cơm đi.', zh: '快去叫弟弟过来吃饭吧。', py: 'Kuài qù jiào dìdi guòlái chīfàn ba.' },
-  { vi: 'Chúng nói muốn ngủ một giấc thật thoải mái.', zh: '他们说要舒舒服服地睡一觉。', py: 'Tāmen shuō yào shūshūfúfú de shuì yí jiào.' }
+  { vi: 'Chiếc bánh kem này to quá, chúng ta cùng ăn nhé.', zh: '这个蛋糕太大了，我们一起吃吧。', py: 'Zhège dàngāo tài dà le, wǒmen yìqǐ chī ba.' },
+  { vi: 'Bạn đã từng đón sinh nhật ở nước ngoài chưa?', zh: '你在外国过过生日吗？', py: 'Nǐ zài wàiguó guòguo shēngrì ma?' },
+  { vi: 'Tôi mệt rồi, muốn nghỉ trên giường một lát.', zh: '我累了，想在床上休息一会儿。', py: 'Wǒ lèi le, xiǎng zài chuáng shang xiūxi yíhuìr.' },
+  { vi: 'Ngày nào cậu ấy cũng đến trường rất sớm.', zh: '他每天都早早地来学校。', py: 'Tā měi tiān dōu zǎozǎo de lái xuéxiào.' }
 ];
 
 // ══════════════════════════════════════════

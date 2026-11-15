@@ -1278,135 +1278,159 @@ var dialogData = [
 
 var listenData = [
   {
-    audio: '王老师，你家楼下站着一个人。那个人穿着黑色的裤子，手里还拿着一个黑色的包。我看见那个人了，他是我男朋友。',
+    audio: '学校门口站着两位老师，她们在等新同学。',
     questions: [
-      { q: '楼下站着谁？', opts: ['王老师的男朋友', '李文', '一个小孩儿'], ans: 0 },
-      { q: '那个人手里拿着什么？', opts: ['黑色的包', '黑色的裤子', '黑色的本子'], ans: 0 }
+      { q: 'Ai đang đứng ở cổng trường?', opts: ['Hai bạn học sinh', 'Hai thầy cô giáo', 'Hai bác sĩ'], ans: 1, exp: '门口站着两位老师 = ở cổng có hai thầy cô đang đứng; 位 là lượng từ lịch sự cho người.' },
+      { q: 'Họ đang đợi ai?', opts: ['Học sinh mới', 'Bố mẹ học sinh', 'Xe buýt của trường'], ans: 0, exp: '在等新同学 = đang đợi học sinh mới.' }
     ]
   },
   {
-    audio: '就要过年了，你一个人在这儿多没意思啊，所以我就早早过来了。你能来，我太高兴了！一飞，你旁边这位是？',
+    audio: '今天多冷啊！我们别出去了，在家看电视吧。',
     questions: [
-      { q: '杨同乐为什么来？', opts: ['跟她一起过年', '来看朋友', '来送礼物'], ans: 0 },
-      { q: '王一飞高兴吗？', opts: ['太高兴了', '不太高兴', '没说'], ans: 0 }
+      { q: 'Hôm nay trời thế nào?', opts: ['Rất nóng', 'Rất lạnh', 'Đang mưa'], ans: 1, exp: '多冷啊 = lạnh biết bao; 多 + tính từ + 啊 là câu cảm thán.' },
+      { q: 'Người nói muốn làm gì?', opts: ['Ra ngoài chơi', 'Đi siêu thị', 'Ở nhà xem TV'], ans: 2, exp: '别出去了，在家看电视吧 = đừng ra ngoài nữa, ở nhà xem TV đi.' }
     ]
   },
   {
-    audio: '一飞，你住的房子真不错，很大，离学校也不远。我楼下还住着一家中国人，他们人很好。我也帮他们家的小孩儿学中文。',
+    audio: '小女孩儿听见妈妈在楼下叫她，就跑下楼去了。',
     questions: [
-      { q: '王一飞的房子怎么样？', opts: ['很不错', '不太大', '离学校很远'], ans: 0 },
-      { q: '楼下住着什么人？', opts: ['一家中国人', '一个老师', '两个学生'], ans: 0 }
+      { q: 'Cô bé chạy đi đâu?', opts: ['Chạy lên lầu', 'Chạy vào phòng', 'Chạy xuống lầu'], ans: 2, exp: '跑下楼去 = chạy xuống lầu; tân ngữ 楼 đứng giữa 下 và 去.' }
     ]
   },
   {
-    audio: '我男朋友姓杨，叫杨同乐。他高个子、大眼睛，唱歌唱得很好，跳舞跳得也不错。他和我姐姐一起工作，是姐姐介绍我们认识的。',
+    audio: '新来的那位医生个子很高，眼睛大大的，说话很慢。',
     questions: [
-      { q: '杨同乐唱歌唱得怎么样？', opts: ['很好', '不太好', '还可以'], ans: 0 },
-      { q: '谁介绍他们认识的？', opts: ['姐姐', '朋友', '老师'], ans: 0 }
+      { q: 'Vị bác sĩ mới trông thế nào?', opts: ['Thấp, mắt nhỏ', 'Cao, mắt to', 'Thấp, mắt to'], ans: 1, exp: '个子很高 = dáng cao; 眼睛大大的 = mắt to to.' },
+      { q: 'Bác sĩ ấy nói chuyện thế nào?', opts: ['Nói rất nhanh', 'Nói rất to', 'Nói chậm'], ans: 2, exp: '说话很慢 = nói chậm.' }
+    ]
+  },
+  {
+    audio: '前面那个房子里住着一家外国人，他们有两个小孩儿。',
+    questions: [
+      { q: 'Ai sống trong ngôi nhà phía trước?', opts: ['Một gia đình người nước ngoài', 'Một gia đình người Trung Quốc', 'Hai thầy giáo'], ans: 0, exp: '房子里住着一家外国人 = trong nhà có một gia đình người nước ngoài sống; nơi chốn + 住着 + người.' },
+      { q: 'Gia đình đó có mấy đứa con?', opts: ['Một', 'Hai', 'Ba'], ans: 1, exp: '两个小孩儿 = hai đứa trẻ.' }
+    ]
+  },
+  {
+    audio: '这家饭店的菜多好吃啊！下次我们还来这儿吃吧。',
+    questions: [
+      { q: 'Người nói thấy món ăn ở đây thế nào?', opts: ['Rất ngon', 'Hơi đắt', 'Không ngon lắm'], ans: 0, exp: '多好吃啊 = ngon biết bao.' },
+      { q: 'Lần sau họ định làm gì?', opts: ['Ăn ở nhà', 'Đi nhà hàng khác', 'Lại đến đây ăn'], ans: 2, exp: '下次我们还来这儿吃 = lần sau chúng ta lại đến đây ăn.' }
     ]
   }
 ];
 
 var matchData = [
-  { left: '楼下', right: '站着一个人' },
-  { left: '手里', right: '拿着一个包' },
-  { left: '楼下还', right: '住着一家中国人' },
-  { left: '她经常', right: '跑上来找我玩' },
-  { left: '跳舞', right: '跳得不错' },
-  { left: '一个人过年', right: '多没意思啊' }
+  { left: '过', right: '年' },
+  { left: '跳', right: '舞' },
+  { left: '眼', right: '睛' },
+  { left: '没', right: '意思' },
+  { left: '前', right: '面' },
+  { left: '这位', right: '先生' },
+  { left: '一条', right: '裤子' },
+  { left: '跑上', right: '楼去' }
 ];
 
 var fillData = [
-  { pre: '你家楼下', blank: '站', post: '着一个人。', hint: '(đứng)', ans: '站', exp: 'Câu tồn hiện: Nơi chốn + động từ + 着 + người/vật: 楼下站着一个人.' },
-  { pre: '手里还拿着一个黑色的', blank: '包', post: '。', hint: '(túi)', ans: '包' },
-  { pre: '就要', blank: '过年', post: '了，你一个人在这儿多没意思啊。', hint: '(đón Tết)', ans: '过年' },
-  { pre: '一飞，你旁边这', blank: '位', post: '是？', hint: '(lượng từ lịch sự cho người)', ans: '位', exp: '位 là lượng từ lịch sự dùng cho người: 这位.' },
-  { pre: '我家就在', blank: '前面', post: '那个楼。', hint: '(phía trước)', ans: '前面' },
-  { pre: '你住的', blank: '房子', post: '真不错，很大。', hint: '(căn nhà)', ans: '房子' },
-  { pre: '他高个子、大', blank: '眼睛', post: '。', hint: '(mắt)', ans: '眼睛' },
-  { pre: '他唱歌唱得很好，', blank: '跳舞', post: '跳得也不错。', hint: '(nhảy múa)', ans: '跳舞', exp: 'Động từ có tân ngữ + 得 thì lặp động từ: 跳舞跳得不错.' }
+  { pre: 'Bạn nhặt được một cuốn vở, mở ra thấy: “本子上写', blank: '着', post: '一个名字：杨小雪。”', hint: '(trợ từ trạng thái)', ans: '着', exp: 'Câu tồn hiện: nơi chốn + động từ + 着 + sự vật; 着 đứng ngay sau động từ 写.' },
+  { pre: 'Đến nhà bạn chơi, thấy một cô bé đang đọc sách, bạn hỏi: “那个看书的', blank: '女孩儿', post: '是你妹妹吗？”', hint: '(bé gái)', ans: '女孩儿', exp: '女孩儿 = bé gái; 看书的女孩儿 = cô bé đang đọc sách.' },
+  { pre: 'Bạn giới thiệu khách với cả lớp một cách lịch sự: “这', blank: '位', post: '是我们学校的王老师。”', hint: '(lượng từ lịch sự cho người)', ans: '位', exp: '位 lịch sự hơn 个 khi nói về người: 这位老师, 两位医生.' },
+  { pre: '“请问，您', blank: '姓', post: '什么？” — “我姓杨。”', hint: '(họ là)', ans: '姓', exp: '姓 là động từ: 您姓什么？— 我姓杨。' },
+  { pre: 'Bạn đứng trên tầng cao nhìn thành phố lên đèn: “这儿的晚上', blank: '多', post: '漂亮啊！”', hint: '(… biết bao — cảm thán)', ans: '多', exp: '多 + tính từ + 啊！= … biết bao!; câu cảm thán, không phải câu hỏi.' },
+  { pre: '“星期天你一个人在家看电视？那多', blank: '没意思', post: '啊！跟我们出去玩吧。”', hint: '(chán, vô vị)', ans: '没意思', exp: '没意思 = chán; 多没意思啊 = chán biết bao.' },
+  { pre: 'Con mèo chạy lên tầng trên, bạn đứng dưới nói: “小猫跑', blank: '上去', post: '了。”', hint: '(lên — xa người nói)', ans: '上去', exp: 'Mèo đi lên, xa chỗ người nói (ở dưới) → 跑上去; nếu người nói ở trên thì dùng 跑上来.' },
+  { pre: 'Bạn ngồi trong lớp, thấy cô giáo ôm nhiều sách đứng ở cửa: “老师，您快', blank: '进来', post: '吧，我们帮您拿书。”', hint: '(vào — về phía người nói)', ans: '进来', exp: 'Người nói ở trong lớp, cô đi vào về phía mình → 进来.' },
+  { pre: 'Bạn lục túi tìm vở: “我从包里拿', blank: '出来', post: '一个本子。”', hint: '(ra — về phía người nói)', ans: '出来', exp: '拿出来 = lấy ra; tân ngữ chỉ vật (一个本子) có thể đứng sau 出来.' },
+  { pre: '“就要', blank: '过年', post: '了，你什么时候回家？”', hint: '(ăn Tết)', ans: '过年', exp: '就要……了 = sắp … rồi; 过年 = ăn Tết.' },
+  { pre: 'Bạn giới thiệu nhà mình: “我家的', blank: '房子', post: '不大，但是离学校很近。”', hint: '(ngôi nhà)', ans: '房子', exp: '房子 = ngôi nhà, căn hộ; 离 + nơi chốn + 近/远.' },
+  { pre: '“你看，商场', blank: '前面', post: '站着很多人，他们在等什么？”', hint: '(phía trước)', ans: '前面', exp: '前面 = phía trước; câu tồn hiện bắt đầu bằng nơi chốn: 商场前面站着很多人.' }
 ];
 
 var sortData = [
-  { words: ['你', '家', '楼下', '站', '着', '一', '个', '人', '。'], ans: '你家楼下站着一个人。', audio: '你家楼下站着一个人。' },
-  { words: ['爸爸', '手', '里', '拿', '着', '一', '杯', '咖啡', '。'], ans: '爸爸手里拿着一杯咖啡。', audio: '爸爸手里拿着一杯咖啡。' },
-  { words: ['你', '一', '个', '人', '在', '这儿', '多', '没意思', '啊', '！'], ans: '你一个人在这儿多没意思啊！', audio: '你一个人在这儿多没意思啊！' },
-  { words: ['她', '经常', '跑', '上来', '找', '我', '玩', '。'], ans: '她经常跑上来找我玩。', audio: '她经常跑上来找我玩。' },
-  { words: ['同学们', '都', '走', '出', '教室', '去', '了', '。'], ans: '同学们都走出教室去了。', audio: '同学们都走出教室去了。' },
-  { words: ['白家月', '从', '书包', '里', '找', '出来', '一', '个', '漂亮', '的', '本子', '。'], ans: '白家月从书包里找出来一个漂亮的本子。', audio: '白家月从书包里找出来一个漂亮的本子。' }
+  { words: ['床', '上', '睡', '着', '一', '只', '小猫', '。'], ans: '床上睡着一只小猫。', audio: '床上睡着一只小猫。' },
+  { words: ['你', '看', '，', '那个', '小孩儿', '的', '眼睛', '多', '大', '啊', '！'], ans: '你看，那个小孩儿的眼睛多大啊！', audio: '你看，那个小孩儿的眼睛多大啊！' },
+  { words: ['这本书', '是', '王老师', '的', '，', '我', '明天', '给', '她', '送', '回去', '。'], ans: '这本书是王老师的，我明天给她送回去。', audio: '这本书是王老师的，我明天给她送回去。', alt: ['这本书是王老师的，明天我给她送回去。'] },
+  { words: ['下雨', '了', '，', '你', '快', '跑', '回', '家', '去', '吧', '。'], ans: '下雨了，你快跑回家去吧。', audio: '下雨了，你快跑回家去吧。' },
+  { words: ['我', '妹妹', '从小', '就', '喜欢', '跳舞', '。'], ans: '我妹妹从小就喜欢跳舞。', audio: '我妹妹从小就喜欢跳舞。' },
+  { words: ['他', '买', '回来', '很多', '过年', '吃', '的', '东西', '。'], ans: '他买回来很多过年吃的东西。', audio: '他买回来很多过年吃的东西。', alt: ['他买很多过年吃的东西回来。'] },
+  { words: ['前面', '走', '过来', '一', '位', '老师', '。'], ans: '前面走过来一位老师。', audio: '前面走过来一位老师。' },
+  { words: ['孩子们', '都', '跑', '出去', '玩', '了', '。'], ans: '孩子们都跑出去玩了。', audio: '孩子们都跑出去玩了。' }
 ];
 
 var mcData = [
-  { q: '那间教室里＿＿不少学生。', opts: ['坐着', '坐了着', '着坐', '在坐着'], ans: 0, exp: 'Câu tồn hiện: Nơi chốn + động từ + 着 + số lượng + người/vật: 教室里坐着不少学生.' },
-  { q: '我们一起去＿＿好啊！', opts: ['多', '很', '真是', '最'], ans: 0, exp: '多 + tính từ + 啊 = thật là…! (cảm thán): 多好啊！' },
-  { q: '一听到老师叫他的名字，他就站＿＿了。', opts: ['起来', '上去', '出来', '回去'], ans: 0, exp: '站起来 = đứng dậy; 起来 chỉ hướng từ thấp lên cao.' },
-  { q: '同学们都走出＿＿去了。', opts: ['教室', '教室里', '去教室', '教室的'], ans: 0, exp: 'Tân ngữ nơi chốn chen giữa động từ và 去: 走出 + 教室 + 去; không thêm 里.' },
-  { q: '妈妈让我买回一些菜＿＿。', opts: ['来', '去', '上', '下'], ans: 0, exp: 'Mua đồ mang về chỗ người nói (mẹ ở nhà) nên dùng 来: 买回一些菜来.' },
-  { q: 'Trong câu tồn hiện, đứng đầu câu là gì?', opts: ['Từ chỉ nơi chốn', 'Người', 'Sự vật', 'Thời gian'], ans: 0, exp: 'Câu tồn hiện: Nơi chốn + động từ (着) + người/vật; nơi chốn đứng đầu câu.' },
-  { q: '“多没意思啊！” biểu thị điều gì?', opts: ['Câu cảm thán, mức độ cao', 'Câu hỏi', 'Câu phủ định', 'Câu so sánh'], ans: 0, exp: '多 + tính từ + 啊 là câu cảm thán, nhấn mạnh mức độ: 多没意思啊 = chán biết bao!' },
-  { q: 'Lượng từ nào lịch sự khi nói về người?', opts: ['位', '个', '条', '块'], ans: 0, exp: '位 là lượng từ lịch sự cho người: 这位老师; 个 là cách nói thông thường, 条/块 không dùng cho người.' }
+  { q: 'Bạn gọi điện kể cho bạn: “Dưới lầu nhà mình có một cậu bé đang đứng.”', opts: ['我家楼下站着一个男孩儿。', '一个男孩儿站着我家楼下。', '在我家楼下站着一个男孩儿。', '我家楼下站一个着男孩儿。'], ans: 0, exp: 'Câu tồn hiện: nơi chốn đứng đầu câu (không thêm 在), rồi động từ + 着 + người.' },
+  { q: 'Câu nào SAI?', opts: ['房间里坐着了三个人。', '车上坐着很多小孩儿。', '门上写着“洗手间”。', '书上画着一只小狗。'], ans: 0, exp: '着 không đi liền với 了: nói 房间里坐着三个人.' },
+  { q: 'Bạn mặc thử chiếc áo mới, thấy rất thoải mái: “这件衣服＿＿！”', opts: ['多舒服啊', '多舒服吗', '舒服多啊', '多是舒服啊'], ans: 0, exp: '多 + tính từ + 啊 = … biết bao; không dùng 吗 (không phải câu hỏi), 多 đứng trước tính từ, không thêm 是.' },
+  { q: 'A: “我们家买了新房子，离公司也很近！” — B đáp:', opts: ['多好啊！什么时候请我们去看看？', '多好吗！什么时候请我们去看看？', '好多啊！什么时候请我们去看看？', '多好了！什么时候请我们去看看？'], ans: 0, exp: '多好啊！= tuyệt biết bao!; 好多啊 lại có nghĩa là “nhiều quá”.' },
+  { q: 'Bạn đang ở dưới nhà, muốn nói: “Bà đi lên lầu rồi.”', opts: ['奶奶走上楼去了。', '奶奶走上去楼了。', '奶奶上楼走去了。', '奶奶楼走上去了。'], ans: 0, exp: 'Tân ngữ chỉ nơi chốn (楼) đứng giữa 上 và 去: 走上楼去; không đặt sau 上去.' },
+  { q: 'Bạn đang ở trong phòng, thấy em trai từ ngoài chạy vào. Bạn kể:', opts: ['弟弟跑进房间来了。', '弟弟跑进房间去了。', '弟弟跑进来房间了。', '弟弟房间跑进来了。'], ans: 0, exp: 'Em chạy về phía người nói (ở trong phòng) → 来; tân ngữ nơi chốn đứng giữa: 跑进房间来.' },
+  { q: 'Bạn đã đến dưới nhà bạn mình, gọi điện lên: “我到你家楼下了，你快走＿＿吧！”', opts: ['下来', '下去', '上来', '上去'], ans: 0, exp: 'Bạn mình ở trên, đi xuống về phía người nói (ở dưới) → 走下来.' },
+  { q: 'Ở bệnh viện, bạn hỏi lịch sự: “Vị bác sĩ này họ gì ạ?”', opts: ['这位医生姓什么？', '这个位医生姓什么？', '这位医生叫什么姓？', '这位医生姓什么吗？'], ans: 0, exp: '这位 + người (không thêm 个); 姓 là động từ: 姓什么; câu đã có 什么 thì không thêm 吗.' },
+  { q: 'Câu nào SAI?', opts: ['今天多热了！', '你唱歌唱得多好听啊！', '我们走了一天，多累啊！', '你哥哥的个子多高啊！'], ans: 0, exp: 'Câu cảm thán 多 + tính từ kết thúc bằng 啊, không dùng 了: 今天多热啊！' },
+  { q: 'Bạn muốn khen: “Cô bé ấy nhảy rất đẹp.”', opts: ['那个女孩儿跳舞跳得很好。', '那个女孩儿跳舞得很好。', '那个女孩儿很好地跳舞。', '那个女孩儿跳舞的很好。'], ans: 0, exp: 'Động từ có tân ngữ (跳舞) + bổ ngữ trạng thái: lặp động từ rồi mới thêm 得: 跳舞跳得很好; không dùng 的 hay 地 ở đây.' },
+  { q: 'A: “请问，这儿离药店远吗？” — B đáp:', opts: ['不远，就在前面，走路五分钟。', '不远，就在前面，五分钟走路。', '不远，在就前面，走路五分钟。', '不远，就前面在，走路五分钟。'], ans: 0, exp: '就在 + nơi chốn = ở ngay …; thời lượng 五分钟 đứng sau động từ 走路.' },
+  { q: 'Bạn muốn nói: “Trong túi tôi có hai quyển sách.”', opts: ['我的包里有两本书。', '我的包里有两个书。', '我的包里有书两本。', '我的里包有两本书。'], ans: 0, exp: 'Lượng từ của sách là 本; số + lượng từ đứng trước danh từ; 里 đứng sau 包.' }
 ];
 
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá.',
+  intro: 'Nhấn nút loa nghe câu hỏi / tình huống, rồi tự ghi âm câu trả lời — hãy nói về chính bạn, dùng câu tồn hiện (nơi chốn + V着 + người/vật), 多……啊！ và bổ ngữ xu hướng kép (跑上去, 走下来…).',
   questions: [
     {
-      q_zh: '看看你的教室（房间），里面有什么？',
-      q_vn: 'Hãy nhìn quanh lớp học (căn phòng) của bạn, bên trong có gì?',
-      hint: '……里坐着／站着／放着……',
-      sample: '教室里坐着不少学生，门口站着一个老师，桌子上面放着本子和笔。',
-      sample_vn: 'Trong lớp có nhiều học sinh đang ngồi, ở cửa có một cô giáo đang đứng, trên bàn để vở và bút.',
-      note: 'Câu tồn hiện: nơi chốn + động từ + 着 + người/sự vật.'
+      q_zh: '说说你的房间：里面有什么？',
+      q_vn: 'Hãy tả căn phòng của bạn: trong phòng có những gì?',
+      hint: '桌子上有……，门上写着……',
+      sample: '我的房间不大，桌子上有电脑和书，门上写着我的名字。',
+      sample_vn: 'Phòng mình không to, trên bàn có máy tính và sách, trên cửa có viết tên mình.',
+      note: 'Câu tồn hiện: nơi chốn + động từ + 着 + sự vật (门上写着……).'
     },
     {
-      q_zh: '你能说说你朋友今天穿着什么吗？',
-      q_vn: 'Bạn có thể tả hôm nay bạn của bạn mặc gì không?',
-      hint: '他穿着……，手里拿着……',
-      sample: '他穿着黑色的裤子，手里还拿着一个黑色的包，看起来很好看。',
-      sample_vn: 'Bạn ấy mặc quần màu đen, trên tay còn cầm một chiếc túi màu đen, trông rất đẹp.',
-      note: 'Ôn 着 (bài 11) khi miêu tả trang phục và vật cầm trên tay.'
+      q_zh: '你家楼下住着什么人？',
+      q_vn: 'Dưới nhà bạn (hoặc nhà bên cạnh) có ai sống? Hãy kể một chút về họ.',
+      hint: '我家楼下住着……',
+      sample: '我家楼下住着一位老师，她每天早上都去跑步。',
+      sample_vn: 'Dưới nhà mình có một cô giáo sống, sáng nào cô ấy cũng đi chạy bộ.',
+      note: 'Nơi chốn + 住着 + người; dùng 位 để nói lịch sự về người lớn.'
     },
     {
-      q_zh: '过年的时候你一个人还是跟家人在一起？',
-      q_vn: 'Dịp Tết bạn ở một mình hay ở cùng gia đình?',
-      hint: '一个人过年多没意思啊！我……',
-      sample: '一个人过年多没意思啊！我一般回家跟家人一起过年，吃好吃的、说说话。',
-      sample_vn: 'Một mình đón Tết thì chán lắm! Tôi thường về nhà đón Tết cùng gia đình, ăn món ngon và trò chuyện.',
-      note: '多 + tính từ + 啊 là câu cảm thán rất thường dùng.'
+      q_zh: '过年的时候你跟谁在一起？做什么？',
+      q_vn: 'Dịp Tết bạn ở cùng ai, làm gì? Kết thúc bằng một câu cảm thán.',
+      hint: '过年的时候我跟……，多……啊！',
+      sample: '过年的时候我跟家人在一起，我们一起做饺子、看电视，多快乐啊！',
+      sample_vn: 'Dịp Tết mình ở cùng gia đình, cả nhà cùng làm sủi cảo, xem TV, vui biết bao!',
+      note: '多 + tính từ + 啊！dùng để bày tỏ cảm xúc mạnh.'
     },
     {
-      q_zh: '请介绍一下你的一个朋友。',
-      q_vn: 'Hãy giới thiệu một người bạn của bạn.',
-      hint: '他姓……，叫……，他……',
-      sample: '我朋友姓杨，叫杨同乐。他高个子、大眼睛，唱歌唱得很好，跳舞跳得也不错。',
-      sample_vn: 'Bạn tôi họ Dương, tên Dương Đồng Lạc. Bạn ấy cao, mắt to, hát rất hay, nhảy cũng đẹp.',
-      note: '姓 + họ, 叫 + tên; bổ ngữ trạng thái với từ li hợp 唱歌唱得、跳舞跳得.'
+      q_zh: '你最好的朋友姓什么？说说他（她）吧。',
+      q_vn: 'Bạn thân nhất của bạn họ gì? Trông bạn ấy thế nào (dáng người, đôi mắt), giỏi việc gì?',
+      hint: '他（她）姓……，个子……，眼睛……',
+      sample: '我最好的朋友姓杨，个子不太高，眼睛很大，唱歌唱得非常好。',
+      sample_vn: 'Bạn thân nhất của mình họ Dương, dáng không cao lắm, mắt rất to, hát cực hay.',
+      note: '姓 + họ; 个子高 / 眼睛大 (câu chủ vị làm vị ngữ); V-O + V得 + tính từ.'
     },
     {
-      q_zh: '你住的房子怎么样？离学校（公司）远吗？',
-      q_vn: 'Căn nhà bạn ở thế nào? Có xa trường (công ty) không?',
-      hint: '我住的房子……，离……',
-      sample: '我住的房子很不错，很大，离学校也不远，楼下还住着一家很好的邻居。',
-      sample_vn: 'Căn nhà tôi ở rất đẹp, rộng, cũng không xa trường, dưới tầng còn có một gia đình hàng xóm rất tốt.',
-      note: 'Kết hợp 离 (bài 9) với câu tồn hiện 楼下住着…….'
+      q_zh: '朋友在楼下等你，你给他打电话说什么？',
+      q_vn: 'Bạn đang ở tầng trên, bạn của bạn đang đợi ở dưới nhà. Hãy gọi điện nói với bạn ấy.',
+      hint: '你在下面等等我，我……就跑下去。',
+      sample: '你在下面等等我，我穿好衣服就跑下去。',
+      sample_vn: 'Cậu ở dưới đợi mình chút nhé, mình mặc quần áo xong là chạy xuống ngay.',
+      note: 'Người nói ở trên, đi xuống xa chỗ mình đang đứng → 跑下去.'
     }
   ]
 };
 
 var translateData = [
-  { vi: 'Ở dưới tầng nhà cô có một người đang đứng.', zh: '你家楼下站着一个人。', py: 'Nǐ jiā lóu xià zhànzhe yí ge rén.' },
-  { vi: 'Trên tay còn đang cầm một chiếc túi màu đen.', zh: '手里还拿着一个黑色的包。', py: 'Shǒu li hái názhe yí ge hēisè de bāo.' },
-  { vi: 'Em ở đây một mình thì thật vô vị.', zh: '你一个人在这儿多没意思啊。', py: 'Nǐ yí ge rén zài zhèr duō méi yìsi a.' },
-  { vi: 'Con bé thường xuyên chạy lên đây chơi với em.', zh: '她经常跑上来找我玩。', py: 'Tā jīngcháng pǎo shànglái zhǎo wǒ wán.' },
-  { vi: 'Anh ấy hát rất hay, nhảy cũng rất đẹp.', zh: '他唱歌唱得很好，跳舞跳得也不错。', py: 'Tā chànggē chàng de hěn hǎo, tiàowǔ tiào de yě búcuò.' }
+  { vi: 'Trong phòng có mấy bạn đang ngồi?', zh: '房间里坐着几个同学？', py: 'Fángjiān li zuòzhe jǐ ge tóngxué?' },
+  { vi: 'Đứa bé đó họ gì, năm nay mấy tuổi?', zh: '那个小孩儿姓什么？今年几岁？', py: 'Nàge xiǎoháir xìng shénme? Jīnnián jǐ suì?' },
+  { vi: 'Chị gái tôi nhảy đẹp hơn tôi.', zh: '姐姐跳舞跳得比我好。', py: 'Jiějie tiàowǔ tiào de bǐ wǒ hǎo.' },
+  { vi: 'Vị đứng ở phía trước là thầy giáo của chúng tôi.', zh: '前面站着的那位是我们的老师。', py: 'Qiánmiàn zhànzhe de nà wèi shì wǒmen de lǎoshī.' },
+  { vi: 'Năm nay tôi muốn đến nhà ông bà ăn Tết.', zh: '今年我想去爷爷奶奶家过年。', py: 'Jīnnián wǒ xiǎng qù yéye nǎinai jiā guònián.' }
 ];
 
 var translateDataRev = [
-  { vi: 'Người đó mặc chiếc quần màu đen.', zh: '那个人穿着黑色的裤子。', py: 'Nàge rén chuānzhe hēisè de kùzi.' },
-  { vi: 'Nhất Phi, bạn bên cạnh em là ai vậy?', zh: '一飞，你旁边这位是？', py: 'Yīfēi, nǐ pángbiān zhè wèi shì?' },
-  { vi: 'Nhà em ở ngay toà nhà phía trước kia.', zh: '我家就在前面那个楼。', py: 'Wǒ jiā jiù zài qiánmiàn nàge lóu.' },
-  { vi: 'Dưới tầng nhà em còn có một gia đình người Trung Quốc sinh sống.', zh: '我楼下还住着一家中国人。', py: 'Wǒ lóu xià hái zhùzhe yì jiā Zhōngguó rén.' },
-  { vi: 'Bạn trai tôi họ Dương, tên là Dương Đồng Lạc.', zh: '我男朋友姓杨，叫杨同乐。', py: 'Wǒ nánpéngyou xìng Yáng, jiào Yáng Tónglè.' }
+  { vi: 'Ngôi nhà phía trước nhà bạn là của ai?', zh: '你家前面那个房子是谁的？', py: 'Nǐ jiā qiánmiàn nàge fángzi shì shéi de?' },
+  { vi: 'Vị bác sĩ mặc áo trắng kia chính là bác sĩ Hồ.', zh: '那位穿着白色衣服的医生就是胡医生。', py: 'Nà wèi chuānzhe báisè yīfu de yīshēng jiù shì Hú yīshēng.' },
+  { vi: 'Bà từ trong phòng đi ra, trên tay cầm một chiếc túi.', zh: '奶奶从房间里走出来，手里拿着一个包。', py: 'Nǎinai cóng fángjiān li zǒu chūlai, shǒu li názhe yí ge bāo.' },
+  { vi: 'Bộ quần áo này tôi mua vào dịp Tết.', zh: '这件衣服是我过年的时候买的。', py: 'Zhè jiàn yīfu shì wǒ guònián de shíhou mǎi de.' }
 ];
 
 // ══════════════════════════════════════════

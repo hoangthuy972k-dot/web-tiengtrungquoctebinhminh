@@ -1555,31 +1555,41 @@ var dialogData = [
 
 var listenData = [
   {
-    audio: '请问，您是王一飞老师的姐姐吗？是的，你们就是她的学生吧？我叫王一雪，一飞给我打电话了，让我来接你们。',
+    audio: '我们是昨天晚上到北京的。',
     questions: [
-      { q: '谁来接白家月了？', opts: ['王一飞', '王一雪', '她的姐姐'], ans: 1 },
-      { q: '王一飞给谁打电话了？', opts: ['安妮', '白家月', '王一雪'], ans: 2 }
+      { q: 'Họ đến Bắc Kinh lúc nào?', opts: ['Sáng hôm qua', 'Tối hôm qua', 'Tối hôm nay'], ans: 1, exp: '是昨天晚上到的 = đến vào tối hôm qua; 是……的 nhấn mạnh thời gian của việc đã xảy ra.' }
     ]
   },
   {
-    audio: '你们是第一次来北京吗？是的，我们都是第一次来。你们是来学中文的吗？不是，我们是来旅游的。',
+    audio: '妈妈让我去超市买牛奶。',
     questions: [
-      { q: '白家月是第几次来北京？', opts: ['第一次', '第四次', '第七次'], ans: 0 },
-      { q: '她们是来北京做什么的？', opts: ['旅游', '学中文', '找王一雪'], ans: 0 }
+      { q: 'Ai bảo người nói đi siêu thị?', opts: ['Bố', 'Chị gái', 'Mẹ'], ans: 2, exp: '妈妈让我去…… = mẹ bảo tôi đi…; 让 + người + động từ.' },
+      { q: 'Người nói đi mua gì?', opts: ['Sữa', 'Bánh mì', 'Hoa quả'], ans: 0, exp: '买牛奶 = mua sữa.' }
     ]
   },
   {
-    audio: '喂，家月，你明天有时间吗？我想请你帮个忙。不好意思，天中，我已经到北京了。你是什么时候到的？我是今天早上到的。',
+    audio: '安妮第一次吃饺子，她说非常好吃。',
     questions: [
-      { q: '陈天中为什么给白家月打电话？', opts: ['找她帮忙', '请她吃饭', '让她接个朋友'], ans: 0 },
-      { q: '白家月是什么时候到北京的？', opts: ['昨天中午', '昨天晚上', '今天早上'], ans: 2 }
+      { q: 'Annie thấy sủi cảo thế nào?', opts: ['Không ngon lắm', 'Rất ngon', 'Hơi đắt'], ans: 1, exp: '第一次吃 = lần đầu ăn; 非常好吃 = rất ngon.' }
     ]
   },
   {
-    audio: '王老师，我们已经到北京了，是您姐姐来接的我们。她请我们吃了北京烤鸭，还给我们介绍了很多东西。',
+    audio: '不好意思，我不懂你的意思，你能再说一下吗？',
     questions: [
-      { q: '王老师到北京了吗？', opts: ['到了', '没到，是学生到了北京', '不知道'], ans: 1 },
-      { q: '她们吃了什么？', opts: ['面包', '饺子', '北京烤鸭'], ans: 2 }
+      { q: 'Người nói muốn người kia làm gì?', opts: ['Nói lại một lần nữa', 'Gọi điện thoại cho mình', 'Đi cùng mình'], ans: 0, exp: '不懂你的意思 = không hiểu ý bạn; 再说一下 = nói lại một chút.' }
+    ]
+  },
+  {
+    audio: '这个菜是我爸爸做的，他让我给你们介绍一下。',
+    questions: [
+      { q: 'Món này do ai nấu?', opts: ['Người nói', 'Mẹ người nói', 'Bố người nói'], ans: 2, exp: '是我爸爸做的 = là bố tôi nấu; 是……的 nhấn mạnh người làm.' }
+    ]
+  },
+  {
+    audio: '我已经给小明打电话了，他说下午来接我们。',
+    questions: [
+      { q: 'Ai sẽ đến đón họ?', opts: ['Tiểu Minh', 'Người nói', 'Thầy giáo'], ans: 0, exp: '他说下午来接我们 — 他 ở đây là 小明.' },
+      { q: 'Khi nào người đó đến?', opts: ['Buổi sáng', 'Buổi trưa', 'Buổi chiều'], ans: 2, exp: '下午 = buổi chiều.' }
     ]
   }
 ];
@@ -1587,103 +1597,112 @@ var listenData = [
 var matchData = [
   { left: '帮个', right: '忙' },
   { left: '打个', right: '电话' },
-  { left: '第一', right: '次' },
-  { left: '来', right: '旅游' },
   { left: '不好', right: '意思' },
-  { left: '北京', right: '烤鸭' }
+  { left: '第一', right: '次' },
+  { left: '北京', right: '烤鸭' },
+  { left: '懂', right: '她的意思' },
+  { left: '介绍', right: '一下' },
+  { left: '去机场', right: '接朋友' }
 ];
 
 var fillData = [
-  { pre: '一飞给我打电话了，', blank: '让', post: '我来接你们。', hint: '(nhờ, bảo)', ans: '让', exp: 'Câu kiêm ngữ: 让 + người + động từ = bảo/nhờ ai làm gì: 让我来接你们.' },
-  { pre: '你们是第一', blank: '次', post: '来北京吗？', hint: '(lần)', ans: '次', exp: '次 là động lượng từ đếm số lần: 第一次来 = lần đầu đến.' },
-  { pre: '不是，我们是来', blank: '旅游', post: '的。', hint: '(du lịch)', ans: '旅游' },
-  { pre: '不好意思，我', blank: '已经', post: '到北京了。', hint: '(đã)', ans: '已经', exp: '已经 + động từ + 了 = đã… rồi; 已经 đứng trước động từ 到.' },
-  { pre: '我想请你帮个', blank: '忙', post: '。', hint: '(giúp đỡ)', ans: '忙', exp: '帮忙 là từ ly hợp nên có thể tách ra: 帮 + 个 + 忙 = giúp một việc.' },
-  { pre: '安妮，我给你', blank: '介绍', post: '一下。', hint: '(giới thiệu)', ans: '介绍' },
-  { pre: '我', blank: '有时', post: '不太懂她的意思。', hint: '(có lúc)', ans: '有时' },
-  { pre: '好的，', blank: '那', post: '我给他打个电话。', hint: '(vậy thì)', ans: '那', exp: '那 đứng đầu câu = “vậy thì”, nối tiếp ý người kia vừa nói: 那我给他打个电话.' }
+  { pre: 'Đã 1 giờ chiều mà bạn mình vẫn ngồi làm việc, bạn đoán: “你还没吃午饭', blank: '吧', post: '？”', hint: '(… nhỉ — đoán)', ans: '吧', exp: '吧 cuối câu = đã đoán trước, hỏi để xác nhận; 吗 là hỏi khi hoàn toàn chưa biết.' },
+  { pre: '“你是哪年来北京', blank: '的', post: '？” — “去年。”', hint: '(trợ từ cuối câu 是……的)', ans: '的', exp: 'Hỏi thời gian của việc ĐÃ xảy ra dùng 是……的; 的 đứng cuối câu.' },
+  { pre: '“这些苹果是在哪儿买的？” — “', blank: '是', post: '在学校外边的超市买的。”', hint: '(nhấn mạnh nơi chốn)', ans: '是', exp: '是 đứng trước phần được nhấn mạnh (在学校外边的超市), 的 ở cuối câu.' },
+  { pre: 'Trong giờ học, thầy giáo không cho nói chuyện: “老师不', blank: '让', post: '我们上课说话。”', hint: '(cho phép, bảo)', ans: '让', exp: '让 + người + động từ = bảo / cho ai làm gì; phủ định đặt 不 trước 让.' },
+  { pre: '“小明，妈妈', blank: '叫', post: '你回家吃晚饭。”', hint: '(gọi, bảo)', ans: '叫', exp: '叫 + người + động từ = gọi / bảo ai làm gì; 你 vừa là tân ngữ của 叫, vừa là chủ ngữ của 回家.' },
+  { pre: '“你还没起床吗？” — “我', blank: '已经', post: '起床了，在吃早饭呢。”', hint: '(đã … rồi)', ans: '已经', exp: '已经 + động từ + 了 = đã … rồi; 已经 đứng trước động từ.' },
+  { pre: '“这是你第几', blank: '次', post: '坐飞机？” — “第一次。”', hint: '(lần)', ans: '次', exp: '第 + số + 次 = lần thứ mấy; 第几次 dùng để hỏi.' },
+  { pre: 'Giảng xong, thầy hỏi cả lớp: “大家都', blank: '懂', post: '了吗？”', hint: '(hiểu)', ans: '懂', exp: '懂 = hiểu; 懂了吗？= đã hiểu chưa?' },
+  { pre: 'Bạn muốn biết thêm về Bắc Kinh, bạn nhờ bạn Trung Quốc: “你能给我', blank: '介绍', post: '一下北京吗？”', hint: '(giới thiệu)', ans: '介绍', exp: '给 + người + 介绍一下 + điều gì = giới thiệu cho ai về điều gì.' },
+  { pre: '“我晚上要上班，不能去超市。” — “', blank: '那', post: '我去吧。”', hint: '(vậy thì)', ans: '那', exp: '那 đầu câu = vậy thì, nối tiếp ý người kia vừa nói.' },
+  { pre: '“晚上你在家做饭吗？” — “', blank: '有时', post: '做，有时去饭店吃。”', hint: '(có lúc)', ans: '有时', exp: '有时……，有时…… = có lúc …, có lúc …; 有时 đứng trước động từ.' },
+  { pre: '“请问，李文在哪儿？” — “我', blank: '就', post: '是李文。”', hint: '(chính là)', ans: '就', exp: '就是 = chính là, nhấn mạnh: 我就是李文 = tôi chính là Lý Văn.' }
 ];
 
 var sortData = [
-  { words: ['一飞', '让', '我', '来', '接', '你们', '。'], ans: '一飞让我来接你们。', audio: '一飞让我来接你们。' },
-  { words: ['我们', '是', '来', '旅游', '的', '。'], ans: '我们是来旅游的。', audio: '我们是来旅游的。' },
-  { words: ['你', '是', '什么时候', '到', '的', '？'], ans: '你是什么时候到的？', audio: '你是什么时候到的？' },
-  { words: ['我', '想', '请', '你', '帮个忙', '。'], ans: '我想请你帮个忙。', audio: '我想请你帮个忙。' },
-  { words: ['她', '请', '我们', '吃', '了', '北京烤鸭', '。'], ans: '她请我们吃了北京烤鸭。', audio: '她请我们吃了北京烤鸭。' },
-  { words: ['你们', '就', '是', '她的', '学生', '吧', '？'], ans: '你们就是她的学生吧？', audio: '你们就是她的学生吧？' }
+  { words: ['我', '是', '坐', '出租车', '来', '的', '。'], ans: '我是坐出租车来的。', audio: '我是坐出租车来的。' },
+  { words: ['医生', '让', '爸爸', '多', '休息', '几天', '。'], ans: '医生让爸爸多休息几天。', audio: '医生让爸爸多休息几天。' },
+  { words: ['你们', '是', '来', '北京', '旅游', '的', '吧', '？'], ans: '你们是来北京旅游的吧？', audio: '你们是来北京旅游的吧？' },
+  { words: ['有事', '你', '就', '给', '我', '打电话', '。'], ans: '有事你就给我打电话。', audio: '有事你就给我打电话。' },
+  { words: ['我', '明天', '去', '机场', '接', '姐姐', '。'], ans: '我明天去机场接姐姐。', audio: '我明天去机场接姐姐。', alt: ['明天我去机场接姐姐。'] },
+  { words: ['他', '已经', '回', '家', '了', '，', '你', '明天', '再', '来', '吧', '。'], ans: '他已经回家了，你明天再来吧。', audio: '他已经回家了，你明天再来吧。' },
+  { words: ['这家', '饭店', '的', '北京烤鸭', '非常', '好吃', '。'], ans: '这家饭店的北京烤鸭非常好吃。', audio: '这家饭店的北京烤鸭非常好吃。' }
 ];
 
 var mcData = [
-  { q: '我＿＿去电影院看个电影。(có khi)', opts: ['有时', '已经', '意思', '介绍'], ans: 0, exp: '有时 = có lúc, đôi khi, đứng trước động từ; 已经 = đã, 意思 = ý nghĩa, 介绍 = giới thiệu.' },
-  { q: '上课要多听、多说，你懂我的＿＿吗？', opts: ['帮忙', '意思', '已经', '旅游'], ans: 1, exp: '懂…的意思 = hiểu ý của…; 意思 là danh từ nên đứng sau 我的.' },
-  { q: '我很喜欢北京，这＿＿是我第三次来北京了。', opts: ['有时', '介绍', '已经', '帮忙'], ans: 2, exp: '已经 + 是… + 了 = đã là… rồi: 这已经是我第三次来北京了.' },
-  { q: '安妮，我给你＿＿一下，这是我的中国朋友李文。', opts: ['介绍', '帮忙', '意思', '有时'], ans: 0, exp: '给 + người + 介绍一下 = giới thiệu cho ai; vế sau chính là người được giới thiệu.' },
-  { q: '今天的工作太多了！那你找个人来＿＿吧。', opts: ['意思', '旅游', '帮忙', '已经'], ans: 2, exp: '找个人来帮忙 = tìm người đến giúp; 帮忙 là động từ ly hợp, không mang tân ngữ phía sau.' },
-  { q: '"你们就是她的学生吧？" — 「吧」ở đây diễn đạt điều gì?', opts: ['Sự suy đoán, ước tính', 'Mệnh lệnh', 'Phủ định', 'Cảm thán'], ans: 0, exp: '吧 cuối câu trần thuật ở đây là suy đoán: 你们就是她的学生吧？= các bạn là học trò của cô ấy phải không?' },
-  { q: 'Câu nào dùng đúng cấu trúc "是……的"?', opts: ['我是今天早上到的。', '我今天早上到的是。', '是我今天早上到。', '我到的是今天早上。'], ans: 0, exp: '是…的 nhấn mạnh thời gian/cách thức của việc đã xảy ra: 是 đứng trước phần nhấn mạnh, 的 ở cuối câu.' },
-  { q: 'Câu kiêm ngữ nào đúng?', opts: ['妈妈叫孩子们回家。', '妈妈回家叫孩子们。', '孩子们叫回家妈妈。', '叫妈妈孩子们回家。'], ans: 0, exp: 'Câu kiêm ngữ: Chủ ngữ + 叫 + người + động từ; 孩子们 vừa là tân ngữ của 叫 vừa là chủ ngữ của 回家.' }
+  { q: 'Bạn mới vào lớp, bạn muốn hỏi bạn ấy đã đến trường bằng cách nào:', opts: ['你是怎么来学校的？', '你怎么来学校的是？', '你是怎么来学校？', '你怎么是来学校的？'], ans: 0, exp: '是 + phần nhấn mạnh (怎么) + động từ + 的: 你是怎么来学校的？; không bỏ 的, không đặt 是 cuối câu.' },
+  { q: 'Câu nào SAI?', opts: ['我们没是坐火车来的。', '她是去年来中国的。', '你是在哪儿认识他的？', '他不是一个人来的。'], ans: 0, exp: 'Phủ định câu 是……的 dùng 不是……的, không dùng 没是.' },
+  { q: 'Cô gái đi cùng Annie trông rất giống Annie, bạn đoán: “你是安妮的妹妹＿＿？”', opts: ['吧', '吗', '呢', '的'], ans: 0, exp: 'Đã đoán gần chắc rồi hỏi để xác nhận dùng 吧; 吗 là hỏi khi chưa biết; 呢 không dùng cho câu hỏi có/không này.' },
+  { q: 'A: “不好意思，我坐了你的椅子。” — B đáp:', opts: ['没关系，请坐吧。', '不客气，请坐吧。', '不好意思，请坐吧。', '谢谢，请坐吧。'], ans: 0, exp: 'Người khác xin lỗi (不好意思) thì đáp 没关系; 不客气 chỉ dùng để đáp lời cảm ơn.' },
+  { q: 'Bạn muốn nói: “Cô giáo bảo chúng tôi viết tên.”', opts: ['老师让我们写名字。', '老师让写我们名字。', '老师我们让写名字。', '让老师我们写名字。'], ans: 0, exp: 'Câu kiêm ngữ: chủ ngữ + 让 + người + động từ + tân ngữ: 老师让我们写名字.' },
+  { q: 'Bạn ra đón bạn ở sân bay, nhìn bảng thông báo rồi nói: “Máy bay đến rồi.”', opts: ['飞机已经到了。', '飞机到已经了。', '已经飞机到了。', '飞机已经了到。'], ans: 0, exp: '已经 đứng trước động từ, 了 ở cuối câu: 飞机已经到了.' },
+  { q: 'Bạn muốn nói: “Đây là lần đầu tôi ăn vịt quay Bắc Kinh.”', opts: ['这是我第一次吃北京烤鸭。', '这是我吃北京烤鸭第一次。', '这是我一次第吃北京烤鸭。', '这是第一我次吃北京烤鸭。'], ans: 0, exp: '第一次 đứng TRƯỚC động từ: 第一次吃; không đặt 第一次 cuối câu như tiếng Việt “ăn … lần đầu”.' },
+  { q: 'Câu nào SAI?', opts: ['我想帮忙你。', '有时间我就来帮忙。', '我想请你帮个忙。', '我们去给她帮忙吧。'], ans: 0, exp: '帮忙 là động từ li hợp, không mang tân ngữ phía sau: không nói 帮忙你, mà nói 给你帮忙 / 帮个忙.' },
+  { q: 'Ở buổi gặp mặt, bạn giới thiệu Lý Văn với mọi người:', opts: ['我给大家介绍一下，他是李文。', '我介绍给大家一下，他是李文。', '我给大家一下介绍，他是李文。', '我介绍大家一下，他是李文。'], ans: 0, exp: '给 + người + 介绍一下: 给大家 đứng trước động từ, 一下 đứng ngay sau 介绍.' },
+  { q: 'A: “这个字是什么意思？” — B cũng không biết, B nói:', opts: ['我也不懂。', '我也没懂了。', '我不也懂。', '我也懂不。'], ans: 0, exp: '也 đứng trước 不: 我也不懂; 没 không đi cùng 了 trong câu phủ định.' },
+  { q: 'A: “电影院的人太多了。” B: “＿＿我们去书店看看书吧。”', opts: ['那', '就', '已经', '有时'], ans: 0, exp: '那 đứng đầu câu = vậy thì, tiếp ý người kia vừa nói; 就 không đứng đầu câu theo cách này.' },
+  { q: 'A: “昨天是谁去机场接你的？” — B:', opts: ['是我哥哥去接的。', '我哥哥是去接的。', '是我哥哥去接。', '我哥哥去接是的。'], ans: 0, exp: '是 đứng ngay trước người được nhấn mạnh (我哥哥), 的 ở cuối câu.' }
 ];
 
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá.',
+  intro: 'Nhấn nút loa nghe câu hỏi / tình huống, rồi tự ghi âm câu trả lời — hãy nói về chính bạn, dùng 是……的, 吧 và 让/请/叫.',
   questions: [
     {
-      q_zh: '有人来机场接你，你想确认对方是谁，你怎么问？',
-      q_vn: 'Có người ra sân bay đón bạn, bạn muốn xác nhận họ là ai, bạn hỏi thế nào?',
-      hint: '请问，您是……吗？',
-      sample: '请问，您是王一飞老师的姐姐吗？',
-      sample_vn: 'Xin hỏi, chị là chị gái của cô Vương Nhất Phi phải không ạ?',
-      note: '请问 dùng để hỏi lịch sự; 您 là cách xưng hô kính trọng.'
+      q_zh: '你是在哪儿认识你的好朋友的？',
+      q_vn: 'Bạn quen người bạn thân của mình ở đâu? Hãy trả lời thật.',
+      hint: '我们是在……认识的。',
+      sample: '我们是在中学认识的。',
+      sample_vn: 'Chúng mình quen nhau ở trường cấp hai.',
+      note: '是 + nơi chốn / thời gian + động từ + 的: nhấn mạnh chi tiết của việc đã xảy ra.'
     },
     {
-      q_zh: '你是什么时候到北京的？',
-      q_vn: 'Bạn đến Bắc Kinh khi nào?',
-      hint: '我是……到的。',
-      sample: '我是今天早上到的。',
-      sample_vn: 'Tôi đến vào sáng nay.',
-      note: 'Câu "是……的" nhấn mạnh thời gian xảy ra sự việc trong quá khứ.'
+      q_zh: '下午你能来帮个忙吗？',
+      q_vn: 'Bạn cùng lớp nhờ bạn chiều nay đến giúp, nhưng bạn bận. Hãy từ chối lịch sự.',
+      hint: '不好意思，我……',
+      sample: '不好意思，我下午有课，明天可以吗？',
+      sample_vn: 'Ngại quá, chiều nay mình có tiết học, mai được không?',
+      note: '不好意思 = ngại quá / xin lỗi, dùng khi từ chối hoặc làm phiền người khác.'
     },
     {
-      q_zh: '你们是来学中文的吗？',
-      q_vn: 'Các bạn đến để học tiếng Trung à?',
-      hint: '不是，我们是来……的。',
-      sample: '不是，我们是来旅游的。',
-      sample_vn: 'Không phải, chúng tôi đến du lịch.',
-      note: 'Câu phủ định của "是……的" không được lược bỏ chữ 是.'
+      q_zh: '在家，爸爸妈妈让你做什么？',
+      q_vn: 'Ở nhà, bố mẹ thường bảo bạn làm gì? Hãy nói hai việc.',
+      hint: '妈妈让我……，爸爸让我……',
+      sample: '妈妈让我早点儿睡觉，爸爸让我多看书。',
+      sample_vn: 'Mẹ bảo mình đi ngủ sớm một chút, bố bảo mình đọc sách nhiều hơn.',
+      note: 'Câu kiêm ngữ: 让 + người + động từ.'
     },
     {
-      q_zh: '你想请朋友帮你一个忙，你怎么说？',
-      q_vn: 'Bạn muốn nhờ bạn mình giúp một việc, bạn nói thế nào?',
-      hint: '我想请你帮个忙。',
-      sample: '你明天有时间吗？我想请你帮个忙。',
-      sample_vn: 'Mai bạn có thời gian không? Mình muốn nhờ bạn giúp một việc.',
-      note: 'Câu kiêm ngữ: 请/让/叫 + người + động từ. 帮忙 là từ ly hợp nên nói 帮个忙.'
+      q_zh: '朋友第一次来你这儿旅游，你想请他吃什么？',
+      q_vn: 'Bạn của bạn lần đầu đến chỗ bạn du lịch. Bạn muốn mời bạn ấy ăn gì?',
+      hint: '我想请他吃……',
+      sample: '我想请他吃我妈妈做的饺子，非常好吃。',
+      sample_vn: 'Mình muốn mời bạn ấy ăn sủi cảo mẹ mình làm, ngon lắm.',
+      note: '请 + người + động từ = mời ai làm gì.'
     },
     {
-      q_zh: '请介绍一下你的中国朋友。',
-      q_vn: 'Hãy giới thiệu một chút về người bạn Trung Quốc của bạn.',
-      hint: '我给你介绍一下，这是……',
-      sample: '我给你介绍一下，这是我的中国朋友李文。',
-      sample_vn: 'Mình giới thiệu một chút, đây là bạn Trung Quốc của mình — Lý Văn.',
-      note: '给 + người + 介绍一下 là mẫu câu giới thiệu rất hay dùng.'
+      q_zh: '你想知道他是不是新同学，你怎么问他？',
+      q_vn: 'Bạn gặp một bạn lạ ở cổng trường và đoán đó là học sinh mới. Hãy hỏi để xác nhận.',
+      hint: '你是……吧？',
+      sample: '你是新来的同学吧？',
+      sample_vn: 'Bạn là học sinh mới đến phải không?',
+      note: '吧 cuối câu: đã đoán rồi, hỏi lại cho chắc.'
     }
   ]
 };
 
 var translateData = [
-  { vi: 'Nhất Phi đã gọi điện thoại cho chị, nhờ chị đến đón các em.', zh: '一飞给我打电话了，让我来接你们。', py: 'Yīfēi gěi wǒ dǎ diànhuà le, ràng wǒ lái jiē nǐmen.' },
-  { vi: 'Không phải, chúng em đến du lịch ạ.', zh: '不是，我们是来旅游的。', py: 'Bú shì, wǒmen shì lái lǚyóu de.' },
-  { vi: 'Mình muốn nhờ bạn giúp một việc.', zh: '我想请你帮个忙。', py: 'Wǒ xiǎng qǐng nǐ bāng ge máng.' },
-  { vi: 'Chị ấy đã mời chúng em ăn vịt quay Bắc Kinh.', zh: '她请我们吃了北京烤鸭。', py: 'Tā qǐng wǒmen chīle Běijīng Kǎoyā.' },
-  { vi: 'Có khi em chưa hiểu lắm ý của chị ấy.', zh: '有时不太懂她的意思。', py: 'Yǒushí bú tài dǒng tā de yìsi.' }
+  { vi: 'Bố bảo tôi đi đón em gái.', zh: '爸爸让我去接妹妹。', py: 'Bàba ràng wǒ qù jiē mèimei.' },
+  { vi: 'Đây là lần thứ hai cô ấy đến Tây An.', zh: '这是她第二次来西安。', py: 'Zhè shì tā dì-èr cì lái Xī\'ān.' },
+  { vi: 'Con vịt quay này là chị gái tôi mua.', zh: '这个烤鸭是我姐姐买的。', py: 'Zhège kǎoyā shì wǒ jiějie mǎi de.' },
+  { vi: 'Tiếng Trung của anh ấy, có lúc tôi không hiểu lắm.', zh: '他的汉语我有时不太懂。', py: 'Tā de Hànyǔ wǒ yǒushí bú tài dǒng.' },
+  { vi: 'Ngại quá, hôm nay tôi không đi đón bạn được nữa.', zh: '不好意思，今天我不能去接你了。', py: 'Bù hǎoyìsi, jīntiān wǒ bù néng qù jiē nǐ le.' }
 ];
 
 var translateDataRev = [
-  { vi: 'Các em chính là học sinh của cô ấy phải không?', zh: '你们就是她的学生吧？', py: 'Nǐmen jiù shì tā de xuésheng ba?' },
-  { vi: 'Đây là lần đầu các em đến Bắc Kinh phải không?', zh: '你们是第一次来北京吗？', py: 'Nǐmen shì dì-yī cì lái Běijīng ma?' },
-  { vi: 'Mấy hôm nay chị đều không bận, các em có việc gì thì cứ tìm chị.', zh: '我这几天都不忙，你们有事就找我。', py: 'Wǒ zhè jǐ tiān dōu bù máng, nǐmen yǒu shì jiù zhǎo wǒ.' },
-  { vi: 'Xin lỗi nhé, mình đã đến Bắc Kinh rồi.', zh: '不好意思，我已经到北京了。', py: 'Bù hǎoyìsi, wǒ yǐjīng dào Běijīng le.' },
-  { vi: 'Được rồi, vậy mình sẽ gọi điện thoại cho bạn ấy.', zh: '好的，那我给他打个电话。', py: 'Hǎo de, nà wǒ gěi tā dǎ ge diànhuà.' }
+  { vi: 'Bạn học tiếng Trung ở đâu?', zh: '你是在哪儿学的中文？', py: 'Nǐ shì zài nǎr xué de Zhōngwén?' },
+  { vi: 'Cô Vương mời mọi người ngày mai đến nhà cô ăn cơm.', zh: '王老师请大家明天去她家吃饭。', py: 'Wáng lǎoshī qǐng dàjiā míngtiān qù tā jiā chīfàn.' },
+  { vi: 'Chúng tôi đã là bạn tốt của nhau rồi.', zh: '我们已经是好朋友了。', py: 'Wǒmen yǐjīng shì hǎo péngyou le.' }
 ];
 
 // ══════════════════════════════════════════

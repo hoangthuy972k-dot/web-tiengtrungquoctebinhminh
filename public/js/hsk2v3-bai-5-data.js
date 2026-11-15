@@ -1741,135 +1741,161 @@ var dialogData = [
 
 var listenData = [
   {
-    audio: '家月，快下来吧，第一次去中国朋友家，别晚了。还有时间，你上来吧。我不上去了，就在下面等你。',
+    audio: '奶奶在下面等你呢，你快点儿下去吧。',
     questions: [
-      { q: '白家月要去哪儿？', opts: ['安妮家', '男朋友家', '中国朋友家'], ans: 2 },
-      { q: '安妮在哪儿等白家月？', opts: ['下面', '上面', '酒店里'], ans: 0 }
+      { q: 'Bà nội đang ở đâu?', opts: ['Ở trên phòng', 'Ở dưới', 'Ở trong bếp'], ans: 1, exp: '在下面等你 = đang đợi bạn ở dưới.' },
+      { q: 'Người nói bảo người nghe làm gì?', opts: ['Đi xuống', 'Đi lên', 'Đi ra ngoài'], ans: 0, exp: '快下去吧 = mau xuống đi; người nói ở trên, việc đi xuống rời chỗ người nói nên dùng 下去.' }
     ]
   },
   {
-    audio: '家月、安妮，快进来！我给你们介绍一下，这是孩子们的爷爷、奶奶。这是送你们的礼物。你们太客气了！',
+    audio: '我们都等了一个小时了，小明怎么还没到？',
     questions: [
-      { q: '王一雪介绍谁了？', opts: ['她的孩子们', '孩子们的爸爸', '孩子们的爷爷和奶奶'], ans: 2 },
-      { q: '白家月她们带了什么？', opts: ['礼物', '奶茶', '水果'], ans: 0 }
+      { q: 'Họ đã đợi bao lâu?', opts: ['Nửa tiếng', 'Hai tiếng', 'Một tiếng'], ans: 2, exp: '都等了一个小时了 = đã đợi cả một tiếng rồi; 都……了 nhấn mạnh thời gian đã lâu.' }
     ]
   },
   {
-    audio: '都12点了，我们吃饭吧。都是我自己做的，你们多吃点儿。奶茶是爷爷买的，就在前边的商场。',
+    audio: '你在酒店下面等我一会儿，我找到手机就下去。',
     questions: [
-      { q: '今天的菜是谁做的？', opts: ['爷爷', '奶奶', '王一雪'], ans: 2 },
-      { q: '奶茶是在哪儿买的？', opts: ['前边的商场', '学校旁边', '酒店里'], ans: 0 }
+      { q: 'Người nói đang tìm gì?', opts: ['Điện thoại', 'Quà', 'Vé'], ans: 0, exp: '找到手机 = tìm thấy điện thoại.' },
+      { q: 'Người nghe đợi ở đâu?', opts: ['Trong phòng', 'Dưới khách sạn', 'Ở siêu thị'], ans: 1, exp: '在酒店下面等我 = đợi tôi ở dưới khách sạn.' }
     ]
   },
   {
-    audio: '回国前一天，我们去一雪姐家了。到她家的时候，饭菜都做好了。因为吃了太多东西，我们吃完饭是走回酒店的。',
+    audio: '明天我们去看爷爷奶奶，我已经准备好礼物了。',
     questions: [
-      { q: '他们什么时候去一雪姐家？', opts: ['回国前一天', '回国后', '第一天'], ans: 0 },
-      { q: '吃完饭他们怎么回酒店？', opts: ['打车', '走回去', '坐地铁'], ans: 1 }
+      { q: 'Ngày mai họ đi thăm ai?', opts: ['Thầy giáo', 'Ông bà nội', 'Bạn học'], ans: 1, exp: '看爷爷奶奶 = thăm ông bà nội.' },
+      { q: 'Người nói đã chuẩn bị xong gì?', opts: ['Quà', 'Trà sữa', 'Cơm tối'], ans: 0, exp: '准备好礼物了 = đã chuẩn bị xong quà; 好 là bổ ngữ kết quả.' }
+    ]
+  },
+  {
+    audio: '下雨了，我们别走回去了，还是打车回酒店吧。',
+    questions: [
+      { q: 'Cuối cùng họ về khách sạn bằng cách nào?', opts: ['Đi bộ', 'Đi xe buýt', 'Đi taxi'], ans: 2, exp: '别走回去了 = đừng đi bộ về nữa; 还是打车吧 = vẫn nên đi taxi.' }
+    ]
+  },
+  {
+    audio: '小明，你同学在外边，你让他进来吧。',
+    questions: [
+      { q: 'Bạn của Tiểu Minh đang ở đâu?', opts: ['Ở trong nhà', 'Ở bên ngoài', 'Ở trường'], ans: 1, exp: '在外边 = ở bên ngoài.' },
+      { q: 'Người nói muốn Tiểu Minh làm gì?', opts: ['Bảo bạn vào nhà', 'Ra ngoài chơi với bạn', 'Đến trường'], ans: 0, exp: '让他进来 = bảo bạn ấy vào đây; người nói ở trong nhà nên dùng 进来.' }
+    ]
+  },
+  {
+    audio: '前边那家店的奶茶不错，下课后你跟我去买两杯吧。',
+    questions: [
+      { q: 'Người nói rủ người kia đi mua gì?', opts: ['Bánh mì', 'Hoa quả', 'Trà sữa'], ans: 2, exp: '奶茶 = trà sữa; 跟我去买 = đi mua cùng tôi.' }
     ]
   }
 ];
 
 var matchData = [
-  { left: '快', right: '下来' },
-  { left: '在下面', right: '等你' },
-  { left: '一会儿', right: '就下去' },
-  { left: '送你们', right: '的礼物' },
-  { left: '准备', right: '奶茶' },
+  { left: '一杯', right: '奶茶' },
+  { left: '送', right: '礼物' },
+  { left: '等', right: '一会儿' },
+  { left: '跟奶奶', right: '学做饭' },
+  { left: '快', right: '进来' },
   { left: '走回', right: '酒店' }
 ];
 
 var fillData = [
-  { pre: '家月，快', blank: '下来', post: '吧。', hint: '(xuống đây)', ans: '下来', exp: 'Người gọi đứng ở dưới, muốn người kia xuống chỗ mình nên dùng 下来 (来 = hướng về người nói).' },
-  { pre: '我不', blank: '上去', post: '了，就在下面等你。', hint: '(lên trên)', ans: '上去', exp: 'Người nói ở dưới và không đi lên (rời chỗ mình) nên dùng 上去.' },
-  { pre: '那我', blank: '一会儿', post: '就下去。', hint: '(một lát)', ans: '一会儿', exp: '一会儿 + 就 + động từ = lát nữa là…: 一会儿就下去.' },
-  { pre: '家月、安妮，快', blank: '进来', post: '！', hint: '(vào đây)', ans: '进来', exp: 'Chủ nhà ở trong nhà mời khách vào chỗ mình nên dùng 进来.' },
-  { pre: '这是送你们的', blank: '礼物', post: '。', hint: '(quà)', ans: '礼物' },
-  { pre: '这是给孩子们', blank: '准备', post: '的礼物。', hint: '(chuẩn bị)', ans: '准备' },
-  { pre: '吃完饭你们可以', blank: '跟', post: '我去看看。', hint: '(cùng, với)', ans: '跟', exp: '跟 + người + động từ = cùng ai làm gì: 跟我去看看.' },
-  { pre: '我们吃完饭是', blank: '走', post: '回酒店的。', hint: '(đi bộ)', ans: '走', exp: '是…的 nhấn mạnh cách thức: 是走回酒店的 = (là) đi bộ về khách sạn.' }
+  { pre: '“你上来坐一会儿吧。” — “不了，我还有事，就不', blank: '上去', post: '了。”', hint: '(đi lên — rời chỗ mình)', ans: '上去', exp: 'Người nói đứng ở dưới, đi lên chỗ người kia là rời chỗ mình nên dùng 上去; 上来 là lời của người ở trên.' },
+  { pre: 'Có người đứng ngoài phòng, bạn ở trong nói: “请', blank: '进来', post: '，桌子上有水，你自己喝吧。”', hint: '(vào đây)', ans: '进来', exp: 'Người nói ở trong phòng, mời người kia vào chỗ mình nên dùng 进来.' },
+  { pre: '“妈妈，我不想穿这么多衣服。” — “', blank: '都', post: '十二月了，外边很冷，多穿点儿吧。”', hint: '(đã … rồi — nhấn mạnh)', ans: '都', exp: '都 + thời gian + 了 = đã … rồi, nhấn mạnh thời gian đã đến mức đó.' },
+  { pre: 'Bạn và bạn Trung Quốc đang học ở Việt Nam, bạn hỏi: “你什么时候回中国', blank: '去', post: '？” — “下个月。”', hint: '(hướng rời xa người nói)', ans: '去', exp: 'Trung Quốc ở xa chỗ người nói nên dùng 去; tân ngữ nơi chốn đứng giữa: 回 + 中国 + 去.' },
+  { pre: '“妈妈，饭做好了吗？” — “还没呢，你再等', blank: '一会儿', post: '。”', hint: '(một lát)', ans: '一会儿', exp: '等一会儿 = đợi một lát; 一会儿 đứng sau động từ.' },
+  { pre: 'Bạn muốn rủ em gái đi siêu thị cùng: “你', blank: '跟', post: '我去超市买点儿水果吧。”', hint: '(cùng, với)', ans: '跟', exp: '跟 + người + động từ = cùng ai làm gì; cụm 跟我 đứng trước động từ.' },
+  { pre: '“明天去王老师家，你', blank: '准备', post: '礼物了吗？” — “我买了一些水果。”', hint: '(chuẩn bị)', ans: '准备', exp: '准备礼物 = chuẩn bị quà.' },
+  { pre: '“我们打车回去吗？” — “酒店就在前边，我们', blank: '走', post: '回去吧。”', hint: '(đi bộ)', ans: '走', exp: '走回去 = đi bộ về; 走 ở đây là đi bộ.' },
+  { pre: 'Bạn tìm mãi không thấy con mèo, mẹ nói: “小猫在桌子', blank: '下面', post: '呢。”', hint: '(phía dưới)', ans: '下面', exp: 'Danh từ + 下面 = ở dưới cái gì: 桌子下面 = dưới gầm bàn.' },
+  { pre: '“这是谁？” — “这是我', blank: '爷爷', post: '，我爸爸的爸爸。”', hint: '(ông nội)', ans: '爷爷', exp: '爷爷 = ông nội (bố của bố); 奶奶 = bà nội.' },
+  { pre: 'Bố khát nước, bố nói với bạn: “你给我拿一杯水', blank: '来', post: '，好吗？”', hint: '(hướng về phía người nói)', ans: '来', exp: 'Mang đồ về phía người nói: 拿 + đồ vật + 来.' }
 ];
 
 var sortData = [
-  { words: ['家月', '，', '快', '下来', '吧', '。'], ans: '家月，快下来吧。', audio: '家月，快下来吧。' },
-  { words: ['我', '不', '上去', '了', '，', '就', '在', '下面', '等', '你', '。'], ans: '我不上去了，就在下面等你。', audio: '我不上去了，就在下面等你。' },
-  { words: ['这', '是', '送', '你们', '的', '礼物', '。'], ans: '这是送你们的礼物。', audio: '这是送你们的礼物。' },
-  { words: ['都', '12点', '了', '，', '我们', '吃饭', '吧', '。'], ans: '都12点了，我们吃饭吧。', audio: '都十二点了，我们吃饭吧。' },
-  { words: ['奶茶', '是', '爷爷', '买', '的', '。'], ans: '奶茶是爷爷买的。', audio: '奶茶是爷爷买的。' },
-  { words: ['我们', '吃完饭', '是', '走', '回', '酒店', '的', '。'], ans: '我们吃完饭是走回酒店的。', audio: '我们吃完饭是走回酒店的。' }
+  { words: ['我们', '回', '酒店', '去', '吧', '。'], ans: '我们回酒店去吧。', audio: '我们回酒店去吧。' },
+  { words: ['都', '八点', '了', '，', '我们', '快', '走', '吧', '。'], ans: '都八点了，我们快走吧。', audio: '都八点了，我们快走吧。' },
+  { words: ['爷爷', '给', '我们', '买', '了', '两杯', '奶茶', '。'], ans: '爷爷给我们买了两杯奶茶。', audio: '爷爷给我们买了两杯奶茶。' },
+  { words: ['我', '去', '超市', '买', '点儿', '东西', '，', '一会儿', '就', '回来', '。'], ans: '我去超市买点儿东西，一会儿就回来。', audio: '我去超市买点儿东西，一会儿就回来。' },
+  { words: ['这', '是', '我', '给', '奶奶', '准备', '的', '礼物', '。'], ans: '这是我给奶奶准备的礼物。', audio: '这是我给奶奶准备的礼物。' },
+  { words: ['下课', '后', '我', '跟', '同学', '一起', '走', '回', '家', '。'], ans: '下课后我跟同学一起走回家。', audio: '下课后我跟同学一起走回家。', alt: ['我下课后跟同学一起走回家。'] },
+  { words: ['你', '下课', '后', '到', '我', '这儿', '来', '一下', '。'], ans: '你下课后到我这儿来一下。', audio: '你下课后到我这儿来一下。' },
+  { words: ['你', '上来', '看看', '吧', '，', '这儿', '的', '房间', '很', '大', '。'], ans: '你上来看看吧，这儿的房间很大。', audio: '你上来看看吧，这儿的房间很大。' }
 ];
 
 var mcData = [
-  { q: '这就是我家，＿＿看看吧。', opts: ['进来', '上去', '下去', '出去'], ans: 0, exp: 'Người nói ở trong nhà mời khách vào: hướng về phía người nói nên dùng 进来.' },
-  { q: '我在楼上，你＿＿吧。', opts: ['上来', '下来', '过去', '回去'], ans: 0, exp: 'Người nói ở trên lầu, muốn người kia lên chỗ mình nên dùng 上来 (来 = hướng về người nói).' },
-  { q: '＿＿12点了，我们吃饭吧。', opts: ['都', '还', '就', '才'], ans: 0, exp: '都…了 = đã… rồi, nhấn mạnh thời gian đã muộn: 都12点了.' },
-  { q: '这是给孩子们＿＿的礼物。', opts: ['准备', '等', '走', '跟'], ans: 0, exp: 'Động từ + 的 làm định ngữ: 给孩子们准备的礼物 = quà chuẩn bị cho các con.' },
-  { q: '“我不上去了，就在下面等你” — người nói đang ở đâu?', opts: ['Ở dưới', 'Ở trên', 'Ở ngoài', 'Ở trong'], ans: 0, exp: '不上去了，就在下面等 → người nói không lên mà ở dưới chờ, vậy đang ở dưới.' },
-  { q: 'Câu nào đúng khi tân ngữ là nơi chốn?', opts: ['你们快进教室来吧。', '你们快进来教室吧。', '你们快来进教室吧。', '你们教室快进来吧。'], ans: 0, exp: 'Tân ngữ chỉ nơi chốn đặt giữa động từ và 来/去: 进 + 教室 + 来.' },
-  { q: '“都……了” diễn đạt sắc thái gì?', opts: ['Nhấn mạnh, đôi khi sốt ruột', 'Nghi vấn', 'Phủ định', 'Cầu khiến nhẹ nhàng'], ans: 0, exp: '都…了 nhấn mạnh đã đến mức nào đó (thường là muộn), đôi khi kèm ý sốt ruột.' },
-  { q: '“奶茶是爷爷买的” nhấn mạnh điều gì?', opts: ['Ai mua trà sữa', 'Khi nào mua', 'Mua bao nhiêu', 'Mua ở đâu'], ans: 0, exp: '是…的 nhấn mạnh thành phần đứng ngay sau 是: 是爷爷买的 → nhấn mạnh ai mua.' }
+  { q: 'Bạn đang ở trên phòng khách sạn, bạn mình đợi dưới sảnh gọi điện giục. Bạn đáp:', opts: ['好，我现在就下去。', '好，我现在就上去。', '好，我现在就进去。', '好，我下去现在就。'], ans: 0, exp: 'Người nói ở trên, đi xuống (rời chỗ mình) nên dùng 下去; 现在就 đứng trước động từ.' },
+  { q: 'Bạn ở trong lớp, thấy bạn đến muộn đứng ngoài cửa không dám vào. Bạn nói:', opts: ['快进来坐吧！', '快进去坐吧！', '快出去坐吧！', '快进来坐了！'], ans: 0, exp: 'Người nói ở trong lớp, mời bạn vào chỗ mình nên dùng 进来; 进去 là đi vào chỗ không có người nói.' },
+  { q: 'Bạn đang ở trường, bạn muốn nói: “Thứ sáu tôi về nhà.”', opts: ['星期五我回家去。', '星期五我回去家。', '星期五我去回家。', '星期五我家回去。'], ans: 0, exp: 'Tân ngữ chỉ nơi chốn đứng giữa động từ và 去: 回 + 家 + 去; không nói 回去家.' },
+  { q: 'Em trai 18 tuổi mà vẫn nhờ mẹ giặt quần áo. Bạn nói:', opts: ['你都十八岁了，自己洗衣服吧。', '你十八岁都了，自己洗衣服吧。', '你都十八岁，自己洗衣服了吧。', '都你十八岁了，自己洗衣服吧。'], ans: 0, exp: '都 đứng trước số tuổi, 了 ở cuối vế: 你都十八岁了 = em đã 18 tuổi rồi.' },
+  { q: 'A: “这些水果是你买的吗？” — B (không phải, bà nội mua) đáp:', opts: ['不是，是奶奶买的。', '不是，奶奶是买的。', '没是，是奶奶买的。', '不是，是奶奶买了的。'], ans: 0, exp: 'Nhấn mạnh người làm: 是 + người + động từ + 的; phủ định là 不是, không dùng 没是; không chen 了 trước 的.' },
+  { q: 'Bạn muốn nói: “Thứ bảy tôi đi Tây An du lịch cùng bố mẹ.”', opts: ['星期六我跟爸爸妈妈去西安旅游。', '星期六我去西安旅游跟爸爸妈妈。', '星期六我跟去西安旅游爸爸妈妈。', '星期六跟我爸爸妈妈旅游去西安。'], ans: 0, exp: 'Cụm 跟 + người đứng TRƯỚC động từ, khác tiếng Việt “đi … cùng bố mẹ”.' },
+  { q: 'Câu nào SAI?', opts: ['他回去学校了。', '他回学校去了。', '你快过来吧。', '我们出去走走吧。'], ans: 0, exp: 'Tân ngữ nơi chốn phải đứng trước 来/去: 回学校去, không nói 回去学校.' },
+  { q: 'Bạn của bạn gọi rủ đi ăn, bạn còn đang làm bài. Bạn nói:', opts: ['你等我一会儿，我写完就去。', '你一会儿等我，我写完就去。', '你等一会儿我，我写完就去。', '你等我一会儿，我写就完去。'], ans: 0, exp: '等 + người + 一会儿: 一会儿 đứng sau tân ngữ; 写完 là động từ + bổ ngữ kết quả, không tách ra.' },
+  { q: 'Bạn đợi dưới nhà, gọi điện cho bạn đang ở trên lầu:', opts: ['你快下来吧，我在下面等你。', '你快下去吧，我在下面等你。', '你快上来吧，我在下面等你。', '你快来下吧，我在下面等你。'], ans: 0, exp: 'Người nói ở dưới, muốn bạn xuống chỗ mình nên dùng 下来 (来 = hướng về người nói).' },
+  { q: 'Bạn đến nhà bạn chơi, đưa quà: “这是我们送您的礼物。” — Ông nội của bạn ấy đáp:', opts: ['你们太客气了！', '你们太客气！', '你们客气太了！', '你们是太客气了！'], ans: 0, exp: '太 + tính từ + 了: 太客气了; không thêm 是 trước tính từ.' },
+  { q: 'Bạn ở nhà, gọi điện bảo bạn ngày mai mang quyển sách đó đến cho mình:', opts: ['明天你拿那本书来吧。', '明天你拿那本书去吧。', '明天你拿来吧那本书。', '明天你拿书那本来吧。'], ans: 0, exp: 'Đồ vật mang về phía người nói: 拿 + đồ vật + 来; 吧 ở cuối câu; 那本 đứng trước 书.' },
+  { q: 'Bạn muốn nói: “Vì hôm nay bà nội đến nên mẹ đang chuẩn bị bữa tối.”', opts: ['因为奶奶今天来，所以妈妈正在准备晚饭。', '所以奶奶今天来，因为妈妈正在准备晚饭。', '因为奶奶今天来，妈妈所以正在准备晚饭。', '因为奶奶今天来，所以妈妈准备正在晚饭。'], ans: 0, exp: '因为 + nguyên nhân, 所以 + kết quả; 所以 đứng đầu vế sau; 正在 đứng trước động từ.' }
 ];
 
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá.',
+  intro: 'Nhấn nút loa nghe câu hỏi / tình huống, rồi tự ghi âm câu trả lời — hãy nói về chính bạn, dùng 来/去 chỉ hướng, 都……了 và 跟.',
   questions: [
     {
-      q_zh: '朋友在楼下等你，你还在房间里，你会怎么说？',
-      q_vn: 'Bạn của bạn đợi ở dưới nhà, bạn vẫn ở trong phòng, bạn sẽ nói gì?',
-      hint: '我一会儿就下去。',
-      sample: '还有时间，我一会儿就下去，你在下面等我一下。',
-      sample_vn: 'Vẫn còn thời gian, một lát nữa mình xuống, bạn đợi mình ở dưới một chút nhé.',
-      note: '下去 (xuống chỗ khác) / 下来 (xuống chỗ người nói) — chú ý hướng.'
+      q_zh: '你的朋友十点了还在睡觉，你怎么叫他起床？',
+      q_vn: 'Đã 10 giờ mà bạn cùng phòng vẫn đang ngủ. Bạn gọi bạn ấy dậy thế nào?',
+      hint: '你都……了，快……吧！',
+      sample: '你都睡了十个小时了，快起床吧！',
+      sample_vn: 'Cậu ngủ mười tiếng đồng hồ rồi đấy, mau dậy đi!',
+      note: '都……了 nhấn mạnh đã đến mức đó rồi (đã muộn, đã lâu).'
     },
     {
-      q_zh: '第一次去中国朋友家，你会带什么礼物？',
-      q_vn: 'Lần đầu đến nhà bạn người Trung Quốc, bạn sẽ mang quà gì?',
-      hint: '我会准备……的礼物。',
-      sample: '我会给他们准备一些礼物，比如水果和茶，也会给孩子们准备小礼物。',
-      sample_vn: 'Tôi sẽ chuẩn bị chút quà cho họ, ví dụ hoa quả và trà, cũng chuẩn bị quà nhỏ cho bọn trẻ.',
-      note: '给 + người + 准备 + 礼物 là mẫu câu rất hay dùng khi đi làm khách.'
+      q_zh: '朋友在酒店下面等你，你还没准备好，你怎么跟他说？',
+      q_vn: 'Bạn của bạn đợi dưới khách sạn, bạn vẫn chưa chuẩn bị xong. Bạn nói với bạn ấy thế nào?',
+      hint: '你再等我……，我……就下去。',
+      sample: '不好意思，你再等我十分钟，我穿好衣服就下去。',
+      sample_vn: 'Ngại quá, cậu đợi mình thêm mười phút nữa, mình mặc quần áo xong là xuống ngay.',
+      note: 'Người nói ở trên, đi xuống rời chỗ mình nên dùng 下去.'
     },
     {
-      q_zh: '客人来你家，你会怎么请他进来、坐下？',
-      q_vn: 'Khách đến nhà bạn, bạn sẽ mời họ vào và ngồi thế nào?',
-      hint: '快进来！/ 你们别客气，快坐吧！',
-      sample: '快进来！我给你们介绍一下，这是我的家人。你们别客气，快坐吧！',
-      sample_vn: 'Mau vào đi! Để tôi giới thiệu một chút, đây là người nhà tôi. Các bạn đừng khách sáo, ngồi xuống đi!',
-      note: '别客气 / 快坐吧 là lời mời quen thuộc của chủ nhà.'
+      q_zh: '你第一次去中国朋友家，会给他们准备什么礼物？',
+      q_vn: 'Lần đầu đến nhà một bạn người Trung Quốc, bạn sẽ chuẩn bị quà gì cho gia đình họ?',
+      hint: '我会给……准备……',
+      sample: '我会给他爸爸妈妈准备一些茶，给他的孩子准备一个小书包。',
+      sample_vn: 'Mình sẽ chuẩn bị một ít trà cho bố mẹ bạn ấy, và một chiếc cặp sách nhỏ cho con bạn ấy.',
+      note: '给 + người + 准备 + quà = chuẩn bị quà cho ai.'
     },
     {
-      q_zh: '已经12点了，你想请大家吃饭，你会怎么说？',
-      q_vn: 'Đã 12 giờ rồi, bạn muốn mời mọi người ăn cơm, bạn nói thế nào?',
-      hint: '都……了，我们……吧。',
-      sample: '都12点了，我们吃饭吧，菜都做好了，你们多吃点儿。',
-      sample_vn: 'Đã 12 giờ rồi, chúng ta ăn cơm thôi, món đã nấu xong cả rồi, mọi người ăn nhiều nhé.',
-      note: '都……了 nhấn mạnh thời gian đã muộn/đã đạt đến mức nào đó.'
+      q_zh: '你喜欢跟谁一起去买东西？为什么？',
+      q_vn: 'Bạn thích đi mua sắm cùng ai? Vì sao?',
+      hint: '我喜欢跟……一起去……，因为……',
+      sample: '我喜欢跟妈妈一起去商场，因为她知道哪件衣服好看。',
+      sample_vn: 'Mình thích đi trung tâm thương mại cùng mẹ, vì mẹ biết bộ quần áo nào đẹp.',
+      note: '跟 + người + 一起 + động từ: cụm 跟…… đứng trước động từ.'
     },
     {
-      q_zh: '你吃完饭是怎么回家的？',
-      q_vn: 'Ăn cơm xong bạn về nhà bằng cách nào?',
-      hint: '我是……回家的。',
-      sample: '因为吃了太多东西，我们吃完饭是走回酒店的。',
-      sample_vn: 'Vì ăn quá nhiều nên ăn xong chúng tôi đi bộ về khách sạn.',
-      note: 'Câu 是……的 nhấn mạnh phương thức: 是走回去的、是打车回去的。'
+      q_zh: '你每天怎么回家？',
+      q_vn: 'Hằng ngày bạn về nhà bằng cách nào?',
+      hint: '我每天……回家。',
+      sample: '我家不太远，所以我每天走回家。',
+      sample_vn: 'Nhà mình không xa lắm nên ngày nào mình cũng đi bộ về nhà.',
+      note: '走回家 = đi bộ về nhà; 回 + nơi chốn.'
     }
   ]
 };
 
 var translateData = [
-  { vi: 'Gia Nguyệt, mau xuống nhé, đừng đến muộn.', zh: '家月，快下来吧，别晚了。', py: 'Jiāyuè, kuài xiàlái ba, bié wǎn le.' },
-  { vi: 'Mình không lên nữa, đợi bạn ở dưới này thôi.', zh: '我不上去了，就在下面等你。', py: 'Wǒ bú shàngqù le, jiù zài xiàmiàn děng nǐ.' },
-  { vi: 'Đây là chút quà chúng cháu biếu hai bác ạ.', zh: '这是送你们的礼物。', py: 'Zhè shì sòng nǐmen de lǐwù.' },
-  { vi: 'Đã 12 giờ rồi, chúng ta ăn cơm thôi.', zh: '都12点了，我们吃饭吧。', py: 'Dōu shí’èr diǎn le, wǒmen chīfàn ba.' },
-  { vi: 'Sau bữa ăn chúng tôi đã đi bộ về khách sạn.', zh: '我们吃完饭是走回酒店的。', py: 'Wǒmen chīwán fàn shì zǒu huí jiǔdiàn de.' }
+  { vi: 'Trà sữa của quán này rất ngon, lần sau tôi lại đến.', zh: '这家店的奶茶很好喝，下次我再来。', py: 'Zhè jiā diàn de nǎichá hěn hǎohē, xià cì wǒ zài lái.' },
+  { vi: 'Đã muộn thế này rồi, sao em gái vẫn chưa về?', zh: '都这么晚了，妹妹怎么还没回来？', py: 'Dōu zhème wǎn le, mèimei zěnme hái méi huílái?' },
+  { vi: 'Ông nội tôi năm nay tám mươi tuổi rồi.', zh: '我爷爷今年八十岁了。', py: 'Wǒ yéye jīnnián bāshí suì le.' },
+  { vi: 'Ngày mai tôi mang ít hoa quả đến nhà bà nội.', zh: '明天我拿一些水果到奶奶家去。', py: 'Míngtiān wǒ ná yìxiē shuǐguǒ dào nǎinai jiā qù.' },
+  { vi: 'Bạn đi xuống dưới xem cùng tôi nhé.', zh: '你跟我下去看看吧。', py: 'Nǐ gēn wǒ xiàqù kànkan ba.' }
 ];
 
 var translateDataRev = [
-  { vi: 'Vẫn còn thời gian, bạn lên đây đi.', zh: '还有时间，你上来吧。', py: 'Hái yǒu shíjiān, nǐ shànglái ba.' },
-  { vi: 'Mau vào đi! Để chị giới thiệu một chút.', zh: '快进来！我给你们介绍一下。', py: 'Kuài jìnlái! Wǒ gěi nǐmen jièshào yíxià.' },
-  { vi: 'Các cháu thật chu đáo, còn mang nhiều quà đến như vậy.', zh: '你们太客气了，还拿这么多礼物来！', py: 'Nǐmen tài kèqi le, hái ná zhème duō lǐwù lái!' },
-  { vi: 'Trà sữa là ông nội mua.', zh: '奶茶是爷爷买的。', py: 'Nǎichá shì yéye mǎi de.' },
-  { vi: 'Ăn xong các em có thể cùng chị đi xem.', zh: '吃完饭你们可以跟我去看看。', py: 'Chīwán fàn nǐmen kěyǐ gēn wǒ qù kànkan.' }
+  { vi: 'Đợi một lát, tôi đi lấy điện thoại.', zh: '等一会儿，我去拿手机。', py: 'Děng yíhuìr, wǒ qù ná shǒujī.' },
+  { vi: 'Bữa sáng là bạn tự chuẩn bị à?', zh: '早饭是你自己准备的吗？', py: 'Zǎofàn shì nǐ zìjǐ zhǔnbèi de ma?' },
+  { vi: 'Hôm qua chúng tôi đi bộ về nhà.', zh: '昨天我们是走回家的。', py: 'Zuótiān wǒmen shì zǒu huí jiā de.' },
+  { vi: 'Khách sạn này không đắt lắm, phòng cũng rất rộng.', zh: '这家酒店不太贵，房间也很大。', py: 'Zhè jiā jiǔdiàn bú tài guì, fángjiān yě hěn dà.' }
 ];
 
 // ══════════════════════════════════════════

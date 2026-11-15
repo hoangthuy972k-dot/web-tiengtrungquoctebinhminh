@@ -1611,135 +1611,154 @@ var dialogData = [
 
 var listenData = [
   {
-    audio: '今天回来这么晚啊！工作太多了，下班的时候没做完。菜都做好了，过来吃饭吧。我想休息一下，喝杯水。',
+    audio: '妈妈，我的饭吃完了，我能出去玩吗？',
     questions: [
-      { q: '刘明为什么回来晚了？', opts: ['没做完工作', '去外边吃饭', '在公司休息'], ans: 0 },
-      { q: '刘明现在要做什么？', opts: ['吃饭', '喝水', '工作'], ans: 1 }
+      { q: 'Bạn nhỏ muốn làm gì?', opts: ['Ăn thêm cơm', 'Ra ngoài chơi', 'Đi ngủ'], ans: 1, exp: '吃完了 = ăn xong rồi; 出去玩 = ra ngoài chơi.' }
     ]
   },
   {
-    audio: '我们找个时间去旅游，怎么样？好啊，我也很想一起出去玩。你想去哪儿？我还没想好呢。那你再想一想，你想好了，我来买票。',
+    audio: '你的手机找到了吗？还没找到，你给我打个电话吧。',
     questions: [
-      { q: '他们想做什么？', opts: ['去吃饭', '去旅游', '买东西'], ans: 1 },
-      { q: '谁来买票？', opts: ['刘明', '王一雪', '孩子'], ans: 0 }
+      { q: 'Người kia đã tìm thấy điện thoại chưa?', opts: ['Tìm thấy rồi', 'Không bị mất', 'Chưa tìm thấy'], ans: 2, exp: '还没找到 = vẫn chưa tìm thấy; 到 là bổ ngữ kết quả (đạt được).' },
+      { q: 'Người đó nhờ làm gì?', opts: ['Gọi vào điện thoại của mình', 'Mua điện thoại mới', 'Cùng đi tìm'], ans: 0, exp: '你给我打个电话吧 = bạn gọi điện cho tôi đi (để nghe chuông).' }
     ]
   },
   {
-    audio: '吃个苹果吧，我都洗好了。就在桌子上，你自己拿。我去洗洗手。对了，我们去西安旅游，怎么样？',
+    audio: '这本书我看了看，觉得很不错，你也看看吧。',
     questions: [
-      { q: '苹果在哪儿？', opts: ['桌子上', '冰箱里', '厨房里'], ans: 0 },
-      { q: '王一雪想去哪儿旅游？', opts: ['西安', '北京', '上海'], ans: 0 }
+      { q: 'Người nói thấy quyển sách thế nào?', opts: ['Hơi đắt', 'Khó hiểu', 'Khá hay'], ans: 2, exp: '不错 = khá tốt, khá hay; 看了看 = đã xem qua (việc đã xảy ra).' },
+      { q: 'Người nói khuyên người kia làm gì?', opts: ['Cũng xem thử', 'Mua một quyển', 'Đừng đọc'], ans: 0, exp: '你也看看吧 = bạn cũng xem thử đi; 看看 = việc chưa làm, xem thử một chút.' }
     ]
   },
   {
-    audio: '早上，刘明开车送孩子去学校，送完孩子回家后，医院就来电话了，让他回去上班。我觉得他这个月每天都很累。',
+    audio: '小雪每天五点就回家了，今天八点还没回来。',
     questions: [
-      { q: '刘明是怎么送的孩子？', opts: ['打车', '开车', '坐公交车'], ans: 1 },
-      { q: '医院来电话让刘明做什么？', opts: ['休息', '去上班', '去开车'], ans: 1 }
+      { q: 'Hôm nay Tiểu Tuyết thế nào?', opts: ['Về sớm hơn mọi ngày', '8 giờ vẫn chưa về', 'Không đi học'], ans: 1, exp: '每天五点就回家了 = ngày nào 5 giờ cũng đã về; 今天八点还没回来 = hôm nay 8 giờ vẫn chưa về.' }
+    ]
+  },
+  {
+    audio: '我太累了，想在家休息休息，不和你们一起出去了。',
+    questions: [
+      { q: 'Người nói sẽ làm gì?', opts: ['Ở nhà nghỉ ngơi', 'Đi chơi cùng mọi người', 'Đi làm'], ans: 0, exp: '休息休息 = nghỉ ngơi một chút; 不和你们一起出去了 = không ra ngoài cùng các bạn nữa.' }
+    ]
+  },
+  {
+    audio: '明天我要送爸爸去机场，不能去上课了。',
+    questions: [
+      { q: 'Ngày mai người nói làm gì?', opts: ['Ra sân bay đón bố', 'Đi máy bay cùng bố', 'Đưa bố ra sân bay'], ans: 2, exp: '送爸爸去机场 = đưa (tiễn) bố ra sân bay; đón là 接.' }
     ]
   }
 ];
 
 var matchData = [
-  { left: '做', right: '完' },
   { left: '洗', right: '手' },
+  { left: '送', right: '孩子去学校' },
   { left: '出去', right: '玩' },
-  { left: '送', right: '孩子' },
-  { left: '休息', right: '休息' },
-  { left: '每天', right: '都很累' }
+  { left: '这么', right: '晚' },
+  { left: '听', right: '见了' },
+  { left: '每天', right: '都很累' },
+  { left: '为什么', right: '不回来' }
 ];
 
 var fillData = [
-  { pre: '今天回来', blank: '这么', post: '晚啊！', hint: '(thế này)', ans: '这么', exp: '这么 + tính từ = … thế này: 这么晚 = muộn thế này.' },
-  { pre: '下班的时候没做', blank: '完', post: '。', hint: '(xong)', ans: '完', exp: '完 là bổ ngữ kết quả (xong); phủ định dùng 没 + động từ + 完: 没做完 = chưa làm xong.' },
-  { pre: '我也很想', blank: '一起', post: '出去玩。', hint: '(cùng nhau)', ans: '一起' },
-  { pre: '就在桌子上，你', blank: '自己', post: '拿。', hint: '(tự mình)', ans: '自己' },
-  { pre: '我去洗洗', blank: '手', post: '。', hint: '(tay)', ans: '手' },
-  { pre: '', blank: '为什么', post: '想去西安？', hint: '(vì sao)', ans: '为什么' },
-  { pre: '这个时候去西安很', blank: '不错', post: '！', hint: '(rất tuyệt)', ans: '不错' },
-  { pre: '他这个月', blank: '每', post: '天都很累。', hint: '(mỗi)', ans: '每', exp: '每 + danh từ/lượng từ thường đi với 都: 每天都很累.' }
+  { pre: 'Bạn hỏi em trai: “这本书你看', blank: '完', post: '了吗？我也想看。”', hint: '(xong — kết quả)', ans: '完', exp: '完 đứng sau động từ chỉ kết quả “xong”: 看完 = đọc xong.' },
+  { pre: '“火车票买', blank: '好', post: '了吗？” — “早上就买了，在我手机里。”', hint: '(xong xuôi — kết quả)', ans: '好', exp: '好 sau động từ = làm xong, đâu vào đấy: 买好了 = mua xong rồi.' },
+  { pre: '“我的手机呢？” — “我在桌子下边找', blank: '到', post: '了。”', hint: '(được, thấy — kết quả)', ans: '到', exp: '找到 = tìm thấy; 找 chỉ là “tìm”, thêm 到 mới có kết quả.' },
+  { pre: '“你听', blank: '见', post: '了吗？外边有人在唱歌。”', hint: '(thấy — kết quả của nghe)', ans: '见', exp: '听见 = nghe thấy; 听 chỉ là hành động nghe.' },
+  { pre: '老师说的汉语你都听', blank: '懂', post: '了吗？', hint: '(hiểu — kết quả)', ans: '懂', exp: '听懂 = nghe hiểu; 懂 làm bổ ngữ kết quả cho 听.' },
+  { pre: '“我们明天去哪儿玩？” — “我也不知道，让我', blank: '想想', post: '。”', hint: '(nghĩ một chút — việc chưa làm)', ans: '想想', exp: 'Lặp động từ 想想 = nghĩ một chút (việc sắp làm), câu nghe nhẹ nhàng.' },
+  { pre: '他', blank: '想了想', post: '，说：“我还是不去了。”', hint: '(nghĩ một lúc — việc đã xảy ra)', ans: '想了想', exp: 'Việc đã xảy ra: V + 了 + V: 想了想 = đã nghĩ một lúc.' },
+  { pre: '“姐姐在家吗？” — “她出去了，下午', blank: '回来', post: '。”', hint: '(quay về — hướng về chỗ người nói)', ans: '回来', exp: 'Người nói đang ở nhà nên dùng 回来 (về đây); 回去 là về chỗ khác.' },
+  { pre: 'Lần đầu đến nhà bạn, bạn khen: “你的房间', blank: '这么', post: '漂亮啊！”', hint: '(… thế này)', ans: '这么', exp: '这么 + tính từ = … thế này: 这么漂亮 = đẹp thế này.' },
+  { pre: '孩子已经六岁了，能', blank: '自己', post: '穿衣服了。', hint: '(tự mình)', ans: '自己', exp: '自己 + động từ = tự mình làm: 自己穿衣服.' },
+  { pre: '“小明', blank: '为什么', post: '没来上课？” — “他生病了。”', hint: '(tại sao)', ans: '为什么', exp: '为什么 = tại sao; đã có 为什么 thì không thêm 吗 ở cuối.' },
+  { pre: '你去', blank: '拿', post: '一下杯子，我们喝茶吧。', hint: '(cầm, lấy)', ans: '拿', exp: '拿 = cầm, lấy: 拿一下杯子 = lấy cái cốc giúp.' }
 ];
 
 var sortData = [
-  { words: ['菜', '都', '做好', '了', '。'], ans: '菜都做好了。', audio: '菜都做好了。' },
-  { words: ['我们', '找', '个', '时间', '去', '旅游', '。'], ans: '我们找个时间去旅游。', audio: '我们找个时间去旅游。' },
-  { words: ['你', '再', '想', '一', '想', '。'], ans: '你再想一想。', audio: '你再想一想。' },
-  { words: ['我', '看', '了', '看', '网上', '的', '介绍', '。'], ans: '我看了看网上的介绍。', audio: '我看了看网上的介绍。' },
-  { words: ['刘明', '开车', '送', '孩子', '去', '学校', '。'], ans: '刘明开车送孩子去学校。', audio: '刘明开车送孩子去学校。' },
-  { words: ['真', '想', '让', '他', '休息休息', '。'], ans: '真想让他休息休息。', audio: '真想让他休息休息。' }
+  { words: ['下午', '我们', '一起', '出去', '玩', '，', '好吗', '？'], ans: '下午我们一起出去玩，好吗？', audio: '下午我们一起出去玩，好吗？', alt: ['我们下午一起出去玩，好吗？'] },
+  { words: ['你', '洗完', '手', '再', '吃', '苹果', '吧', '。'], ans: '你洗完手再吃苹果吧。', audio: '你洗完手再吃苹果吧。' },
+  { words: ['我', '每天', '晚上', '都', '给', '妈妈', '打电话', '。'], ans: '我每天晚上都给妈妈打电话。', audio: '我每天晚上都给妈妈打电话。', alt: ['每天晚上我都给妈妈打电话。'] },
+  { words: ['我', '找了找', '，', '手机', '不', '在', '房间', '里', '。'], ans: '我找了找，手机不在房间里。', audio: '我找了找，手机不在房间里。' },
+  { words: ['你', '给', '大家', '介绍介绍', '北京', '吧', '。'], ans: '你给大家介绍介绍北京吧。', audio: '你给大家介绍介绍北京吧。' },
+  { words: ['已经', '十二点', '了', '，', '你', '为什么', '还', '不', '睡觉', '？'], ans: '已经十二点了，你为什么还不睡觉？', audio: '已经十二点了，你为什么还不睡觉？', alt: ['已经十二点了，为什么你还不睡觉？'] },
+  { words: ['对不起', '，', '你', '的', '电话', '我', '没', '听见', '。'], ans: '对不起，你的电话我没听见。', audio: '对不起，你的电话我没听见。', alt: ['对不起，我没听见你的电话。'] },
+  { words: ['我', '有点儿', '累', '，', '想', '回去', '休息', '了', '。'], ans: '我有点儿累，想回去休息了。', audio: '我有点儿累，想回去休息了。' }
 ];
 
 var mcData = [
-  { q: '已经下班了，你为什么还不＿＿？', opts: ['一起', '送', '回去', '拿'], ans: 2, exp: '回去 = trở về (rời chỗ này về nơi của mình): đã tan làm sao còn chưa về.' },
-  { q: '他每天早上都＿＿女朋友去上班。', opts: ['送', '累', '洗', '完'], ans: 0, exp: '送 + người + đi đâu = đưa ai đi đâu: 送女朋友去上班.' },
-  { q: '爸爸＿＿了一些水果给孩子们吃。', opts: ['回去', '拿', '一起', '完'], ans: 1, exp: '拿 = lấy, cầm: 拿了一些水果给孩子们吃 = lấy ít hoa quả cho các con ăn.' },
-  { q: '我昨天晚上没睡好，今天觉得很＿＿。', opts: ['不错', '累', '自己', '这么'], ans: 1, exp: 'Ngủ không ngon thì thấy mệt: 觉得很累; 不错 mang nghĩa tốt, không hợp ngữ cảnh.' },
-  { q: '"我吃完饭了" — 「完」ở đây là gì?', opts: ['Bổ ngữ kết quả', 'Trợ từ ngữ khí', 'Lượng từ', 'Giới từ'], ans: 0, exp: '完 đứng sau động từ 吃 để nói kết quả của hành động (xong) → bổ ngữ kết quả.' },
-  { q: 'Phủ định của "我吃完饭了" là câu nào?', opts: ['我没吃完饭。', '我不吃完饭了。', '我吃完饭没有了。', '我没吃完饭了。'], ans: 0, exp: 'Phủ định bổ ngữ kết quả: 没 + động từ + bổ ngữ và bỏ 了: 我没吃完饭.' },
-  { q: 'Hình thức lặp lại đúng của động từ hai âm tiết 休息 là gì?', opts: ['休息休息', '休休息息', '休息一休息', '休了休息'], ans: 0, exp: 'Động từ hai âm tiết AB lặp theo kiểu ABAB: 休息休息 = nghỉ ngơi một chút.' },
-  { q: 'Câu nào diễn đạt việc đã xảy ra với động từ lặp lại?', opts: ['我看了看网上的介绍。', '我看看了网上的介绍。', '我看网上的介绍了看。', '我了看看网上的介绍。'], ans: 0, exp: 'Việc đã xảy ra: 了 chen giữa động từ một âm tiết được lặp: 看了看; không đặt 了 sau cả cụm.' }
+  { q: 'Bạn muốn nói: “Hôm nay tôi chưa viết xong chữ Hán.”', opts: ['我今天的汉字还没写完。', '我今天的汉字还不写完。', '我今天的汉字还没写完了。', '我今天的汉字还没完写。'], ans: 0, exp: 'Phủ định bổ ngữ kết quả: 没 + động từ + 完, bỏ 了; 完 luôn đứng sau động từ.' },
+  { q: 'A: “我们去哪儿旅游？想好了没有？” — B chưa quyết định được:', opts: ['我还没想好。', '我还不想好。', '我还没想好了。', '我想不好还。'], ans: 0, exp: 'Chưa có kết quả: 还没 + 想好; không dùng 不, không thêm 了.' },
+  { q: 'Bạn tìm cả buổi mà vẫn không thấy con mèo, bạn nói:', opts: ['我还没找到小猫。', '我还没找小猫到。', '我还不找到小猫。', '我没找到了小猫。'], ans: 0, exp: '到 đứng ngay sau động từ, tân ngữ đứng sau cả cụm: 找到小猫; phủ định dùng 没.' },
+  { q: 'Câu nào SAI?', opts: ['我昨天看见了一个电影。', '我在超市看见王老师了。', '你听见有人叫你了吗？', '饭我已经吃完了。'], ans: 0, exp: 'Xem phim là 看电影 (hành động có chủ ý); 看见 = nhìn thấy (tình cờ), không dùng với 电影.' },
+  { q: 'Bạn mình làm việc vất vả cả tuần, bạn khuyên:', opts: ['你这个星期太忙了，休息休息吧。', '你这个星期太忙了，休息了休息吧。', '你这个星期太忙了，休息一休息吧。', '你这个星期太忙了，休息休息了。'], ans: 0, exp: 'Lời khuyên cho việc chưa làm: lặp ABAB 休息休息 + 吧, không có 了; chỉ động từ một âm tiết mới nói V一V (看一看).' },
+  { q: 'Bạn kể lại: “Bài hát đó tôi đã nghe thử một chút, cũng được.”', opts: ['那个歌我听了听，还不错。', '那个歌我听听了，还不错。', '那个歌我听一听了，还不错。', '那个歌我了听听，还不错。'], ans: 0, exp: 'Việc đã xảy ra: V + 了 + V (听了听); không đặt 了 sau cả cụm lặp.' },
+  { q: 'A: “这个新手机怎么样？” — B muốn cầm xem thử:', opts: ['你给我看看。', '你给我看了看。', '你给我看看了。', '你看看给我。'], ans: 0, exp: 'Việc chưa làm, đề nghị: lặp 看看, không có 了; 给我 đứng trước động từ.' },
+  { q: 'Bạn đang ở nhà, bố đi làm chưa về, bạn hỏi mẹ:', opts: ['爸爸几点回来？', '爸爸几点回去？', '爸爸回来几点？', '爸爸几点回来吗？'], ans: 0, exp: 'Người nói ở nhà, bố về phía mình nên dùng 回来; giờ (几点) đứng trước động từ; có 几 thì không thêm 吗.' },
+  { q: 'Bạn của bạn đến nhà chơi, lúc bạn ấy về, bạn nói:', opts: ['我送你去车站吧。', '我送去你车站吧。', '我给你送车站吧。', '我送你车站去吧。'], ans: 0, exp: '送 + người + 去 + nơi chốn = đưa ai đến đâu: 送你去车站.' },
+  { q: 'Bạn muốn nói: “Chúng ta cùng đi ăn cơm nhé.”', opts: ['我们一起去吃饭吧。', '一起我们去吃饭吧。', '我们去吃饭一起吧。', '我们去一起吃饭吧。'], ans: 0, exp: '一起 đứng sau chủ ngữ, trước động từ: 我们一起去……; không đặt cuối câu như “đi ăn cùng”.' },
+  { q: 'A: “我明天不去学校了。” — B hỏi lý do:', opts: ['你为什么不去？', '你为什么不去吗？', '为什么你不去呢吗？', '你不去为什么？'], ans: 0, exp: 'Câu có 为什么 không thêm 吗; 为什么 đứng trước động từ, không đặt cuối câu như tiếng Việt “sao?”.' },
+  { q: 'Câu nào SAI?', opts: ['每天我起床七点。', '我每天都喝牛奶。', '他每个星期都去看爸爸妈妈。', '每个人都自己拿一杯水。'], ans: 0, exp: 'Thời gian (七点) đứng trước động từ: 我每天七点起床; 每 thường đi cùng 都.' }
 ];
 
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá.',
+  intro: 'Nhấn nút loa nghe câu hỏi / tình huống, rồi tự ghi âm câu trả lời — hãy nói về chính bạn, dùng bổ ngữ kết quả (完/好/到/见/懂) và động từ lặp lại (看看, 休息休息, 看了看).',
   questions: [
     {
-      q_zh: '今天的工作你做完了吗？',
-      q_vn: 'Công việc hôm nay bạn làm xong chưa?',
-      hint: '做完了 / 还没做完。',
-      sample: '还没做完，工作太多了，我下班的时候没做完。',
-      sample_vn: 'Vẫn chưa xong, việc nhiều quá, đến giờ tan làm tôi vẫn chưa làm xong.',
-      note: 'Bổ ngữ kết quả 完: 做完、吃完、看完。Phủ định dùng 没 và bỏ 了.'
+      q_zh: '你今天的事都做完了吗？',
+      q_vn: 'Việc hôm nay bạn làm xong hết chưa? Còn việc gì chưa xong?',
+      hint: '……完了，但……还没……完。',
+      sample: '中文书我看完了，但衣服还没洗完。',
+      sample_vn: 'Sách tiếng Trung mình đọc xong rồi, nhưng quần áo vẫn chưa giặt xong.',
+      note: 'Bổ ngữ kết quả 完; phủ định: 没 + động từ + 完, không có 了.'
     },
     {
-      q_zh: '你想去哪儿旅游？为什么？',
-      q_vn: 'Bạn muốn đi du lịch ở đâu? Vì sao?',
-      hint: '我想去……，因为……',
-      sample: '我想去西安旅游，我看了看网上的介绍，这个时候去西安很不错。',
-      sample_vn: 'Tôi muốn đi Tây An du lịch, tôi có xem giới thiệu trên mạng, thời điểm này đi Tây An rất tuyệt.',
-      note: '看了看 là hình thức lặp lại của động từ đơn âm tiết chỉ việc đã xảy ra.'
+      q_zh: '明天不上课，你想做什么？',
+      q_vn: 'Ngày mai không có tiết học, bạn muốn làm gì?',
+      hint: '我想……看看…… / 玩一玩……',
+      sample: '我想在家看看书，下午出去玩一玩。',
+      sample_vn: 'Mình muốn ở nhà đọc sách một chút, chiều ra ngoài chơi một lát.',
+      note: 'Việc chưa xảy ra: lặp động từ (看看, 玩一玩) cho câu nhẹ nhàng.'
     },
     {
-      q_zh: '朋友说他很累，你会怎么说？',
-      q_vn: 'Bạn của bạn nói rằng rất mệt, bạn sẽ nói gì?',
-      hint: '那你休息休息吧。',
-      sample: '你这个月每天都很累，那你今天休息休息吧。',
-      sample_vn: 'Tháng này ngày nào bạn cũng mệt, vậy hôm nay bạn nghỉ ngơi một chút đi.',
-      note: 'Động từ hai âm tiết lặp ABAB làm câu nhẹ nhàng hơn: 休息休息、看看。'
+      q_zh: '昨天晚上你做什么了？',
+      q_vn: 'Tối qua bạn đã làm gì?',
+      hint: '我……了……，……',
+      sample: '我看了看电视，十点就睡觉了。',
+      sample_vn: 'Mình xem tivi một lúc, 10 giờ là đi ngủ rồi.',
+      note: 'Việc đã xảy ra: V + 了 + V (看了看).'
     },
     {
-      q_zh: '你每天早上做什么？',
-      q_vn: 'Mỗi sáng bạn làm gì?',
-      hint: '我每天早上……',
-      sample: '我每天早上开车送孩子去学校，然后回来上班。',
-      sample_vn: 'Sáng nào tôi cũng lái xe đưa con đến trường, rồi quay về đi làm.',
-      note: '每 + 天/个 thường đi cùng 都: 每天都、每个人都。'
+      q_zh: '你每天几点起床？为什么？',
+      q_vn: 'Mỗi ngày bạn dậy lúc mấy giờ? Tại sao?',
+      hint: '我每天……起床，我要……',
+      sample: '我每天六点起床，我要送妹妹去学校。',
+      sample_vn: 'Ngày nào mình cũng dậy lúc 6 giờ, mình phải đưa em gái đến trường.',
+      note: '每天 + giờ + động từ; 送 + người + 去 + nơi chốn.'
     },
     {
-      q_zh: '吃饭以前你要做什么？',
-      q_vn: 'Trước khi ăn cơm bạn phải làm gì?',
-      hint: '我去洗洗手。',
-      sample: '吃饭以前我要去洗洗手，然后自己拿碗筷。',
-      sample_vn: 'Trước khi ăn cơm tôi đi rửa tay, rồi tự lấy bát đũa.',
-      note: '洗洗手 là dạng AAB của từ ly hợp 洗手.'
+      q_zh: '晚上你想和谁一起吃饭？',
+      q_vn: 'Tối nay bạn muốn ăn cơm cùng ai?',
+      hint: '我想和……一起……',
+      sample: '我想和家人一起吃饭，我自己做菜。',
+      sample_vn: 'Mình muốn ăn cơm cùng gia đình, mình tự nấu.',
+      note: '和 + người + 一起 + động từ; 自己 + động từ = tự làm.'
     }
   ]
 };
 
 var translateData = [
-  { vi: 'Hôm nay anh về muộn thế!', zh: '今天回来这么晚啊！', py: 'Jīntiān huílái zhème wǎn a!' },
-  { vi: 'Cơm nấu xong rồi, anh ra ăn cơm nhé.', zh: '菜都做好了，过来吃饭吧。', py: 'Cài dōu zuòhǎo le, guòlái chīfàn ba.' },
-  { vi: 'Chúng ta sắp xếp thời gian đi du lịch, em thấy thế nào?', zh: '我们找个时间去旅游，怎么样？', py: 'Wǒmen zhǎo ge shíjiān qù lǚyóu, zěnmeyàng?' },
-  { vi: 'Táo để trên bàn, em tự đi lấy nhé.', zh: '就在桌子上，你自己拿。', py: 'Jiù zài zhuōzi shang, nǐ zìjǐ ná.' },
-  { vi: 'Thật muốn anh ấy được nghỉ ngơi một chút.', zh: '真想让他休息休息。', py: 'Zhēn xiǎng ràng tā xiūxi xiūxi.' }
+  { vi: 'Tôi đã hỏi thử mẹ, mẹ nói được.', zh: '我问了问妈妈，她说可以。', py: 'Wǒ wènle wèn māma, tā shuō kěyǐ.' },
+  { vi: 'Ngày nào bố cũng lái xe đưa tôi đến trường.', zh: '爸爸每天都开车送我去学校。', py: 'Bàba měi tiān dōu kāichē sòng wǒ qù xuéxiào.' },
+  { vi: 'Những bộ quần áo này là tôi tự giặt.', zh: '这些衣服是我自己洗的。', py: 'Zhèxiē yīfu shì wǒ zìjǐ xǐ de.' },
+  { vi: 'Mệt thì về nhà nghỉ ngơi đi.', zh: '累了就回家休息吧。', py: 'Lèi le jiù huí jiā xiūxi ba.' },
+  { vi: 'Muộn thế này rồi, sao anh ấy vẫn chưa về?', zh: '这么晚了，他为什么还没回来？', py: 'Zhème wǎn le, tā wèi shénme hái méi huílái?' }
 ];
 
 var translateDataRev = [
-  { vi: 'Đến giờ tan làm mà vẫn chưa xong.', zh: '下班的时候没做完。', py: 'Xiàbān de shíhou méi zuòwán.' },
-  { vi: 'Em vẫn chưa nghĩ ra.', zh: '我还没想好呢。', py: 'Wǒ hái méi xiǎnghǎo ne.' },
-  { vi: 'Em đi rửa tay đã.', zh: '我去洗洗手。', py: 'Wǒ qù xǐxi shǒu.' },
-  { vi: 'Em có xem qua giới thiệu ở trên mạng.', zh: '我看了看网上的介绍。', py: 'Wǒ kànle kàn wǎngshang de jièshào.' },
-  { vi: 'Bệnh viện gọi điện đến, yêu cầu anh ấy quay về làm việc.', zh: '医院来电话了，让他回去上班。', py: 'Yīyuàn lái diànhuà le, ràng tā huíqù shàngbān.' }
+  { vi: 'Quyển sách bạn muốn mua, tôi tìm thấy rồi.', zh: '你想买的那本书我找到了。', py: 'Nǐ xiǎng mǎi de nà běn shū wǒ zhǎodào le.' },
+  { vi: 'Chúng ta cùng ra ngoài ăn tối nhé.', zh: '我们一起出去吃晚饭吧。', py: 'Wǒmen yìqǐ chūqù chī wǎnfàn ba.' },
+  { vi: 'Sao hôm nay bạn mệt thế?', zh: '你今天怎么这么累？', py: 'Nǐ jīntiān zěnme zhème lèi?' }
 ];
 
 // ══════════════════════════════════════════

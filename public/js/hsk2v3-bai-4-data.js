@@ -1642,135 +1642,156 @@ var dialogData = [
 
 var listenData = [
   {
-    audio: '妈妈，我们来过这家商场吗？没来过，这是新开的。我们进去看看吧。好啊！你想买点儿什么？我想买条裤子。',
+    audio: '我没去过西安，但我哥哥去过两次。',
     questions: [
-      { q: '她们要去哪儿看看？', opts: ['商场', '超市', '学校'], ans: 0 },
-      { q: '刘小雪想买什么？', opts: ['裤子', '书包', '衣服'], ans: 0 }
+      { q: 'Ai đã từng đến Tây An?', opts: ['Người nói', 'Anh trai người nói', 'Cả hai người'], ans: 1, exp: '我没去过西安 = tôi chưa từng đến Tây An; 我哥哥去过 = anh tôi từng đến.' },
+      { q: 'Anh trai đã đến đó mấy lần?', opts: ['Hai lần', 'Một lần', 'Chưa lần nào'], ans: 0, exp: '去过两次 = đã từng đến hai lần.' }
     ]
   },
   {
-    audio: '妈妈，我想买这条白色的裤子。你有很多白色的衣服，为什么还买白色的？因为我喜欢白色啊！你试试那条红色的吧。',
+    audio: '因为今天下雨，所以我们没出去，在家看了电视。',
     questions: [
-      { q: '刘小雪想买什么颜色的裤子？', opts: ['白色的', '红色的', '黑色的'], ans: 0 },
-      { q: '妈妈让她试什么？', opts: ['白色的衣服', '红色的裤子', '绿色的书包'], ans: 1 }
+      { q: 'Vì sao họ không ra ngoài?', opts: ['Vì mệt', 'Vì phải làm việc', 'Vì trời mưa'], ans: 2, exp: '因为今天下雨，所以…… = vì hôm nay mưa nên …' }
     ]
   },
   {
-    audio: '妈妈，我想买个新书包。好，那边卖书包，我们过去看看吧。红色的、绿色的、黑色的，你想买哪个？绿色的吧。',
+    audio: '桌子上那个绿色的杯子是我弟弟的。',
     questions: [
-      { q: '刘小雪想买什么？', opts: ['新书', '书包', '衣服'], ans: 1 },
-      { q: '她们觉得哪个好看？', opts: ['红色的', '绿色的', '黑色的'], ans: 1 }
+      { q: 'Cái cốc màu xanh lá là của ai?', opts: ['Của người nói', 'Của em trai người nói', 'Của bố người nói'], ans: 1, exp: '绿色的杯子 = cái cốc màu xanh lá; 是我弟弟的 = là của em trai tôi.' }
     ]
   },
   {
-    audio: '我和妈妈去了一家商场。因为是新开的，所以这几天东西很便宜。商场里的衣服颜色很多。',
+    audio: '我的书包是红色的，妈妈说绿色的更好看。',
     questions: [
-      { q: '商场的东西为什么便宜？', opts: ['因为是新开的', '因为过节', '因为东西不好'], ans: 0 },
-      { q: '商场里衣服的颜色怎么样？', opts: ['很少', '很多', '不漂亮'], ans: 1 }
+      { q: 'Cặp sách của người nói màu gì?', opts: ['Đỏ', 'Xanh lá', 'Đen'], ans: 0, exp: '是红色的 = là màu đỏ; 红色的 thay cho “cái màu đỏ”.' },
+      { q: 'Mẹ thấy màu nào đẹp hơn?', opts: ['Đỏ', 'Đen', 'Xanh lá'], ans: 2, exp: '绿色的更好看 = cái màu xanh lá đẹp hơn; 更 = hơn.' }
+    ]
+  },
+  {
+    audio: '这条裤子我试了试，有点儿小，我想试试大一点儿的。',
+    questions: [
+      { q: 'Chiếc quần thế nào?', opts: ['Hơi rộng', 'Hơi nhỏ', 'Vừa khít'], ans: 1, exp: '试了试 = đã thử qua; 有点儿小 = hơi nhỏ.' },
+      { q: 'Người nói muốn làm gì?', opts: ['Thử chiếc to hơn', 'Mua luôn chiếc này', 'Đổi sang màu khác'], ans: 0, exp: '大一点儿的 = cái to hơn một chút (cụm 的 thay cho danh từ 裤子).' }
+    ]
+  },
+  {
+    audio: '妈妈在那边买书包，我们过去吧。',
+    questions: [
+      { q: 'Mẹ đang làm gì?', opts: ['Mua cặp sách', 'Mua quần', 'Gọi điện'], ans: 0, exp: '买书包 = mua cặp sách.' },
+      { q: 'Người nói rủ làm gì?', opts: ['Đợi mẹ ở đây', 'Đi mua cặp khác', 'Sang chỗ mẹ'], ans: 2, exp: '我们过去吧 = chúng ta sang đó đi; 过去 = đi về phía xa người nói.' }
     ]
   }
 ];
 
 var matchData = [
-  { left: '来', right: '过' },
-  { left: '一条', right: '裤子' },
-  { left: '白色', right: '的衣服' },
-  { left: '因为……', right: '所以……' },
-  { left: '过去', right: '看看' },
+  { left: '一条', right: '黑色的裤子' },
+  { left: '一个', right: '绿色的书包' },
+  { left: '因为下雨', right: '所以没出去' },
+  { left: '衣服的', right: '颜色' },
+  { left: '没去过', right: '中国' },
+  { left: '试试', right: '这件衣服' },
   { left: '更', right: '好看' }
 ];
 
 var fillData = [
-  { pre: '我们来', blank: '过', post: '这家商场吗？', hint: '(đã từng)', ans: '过', exp: 'Động từ + 过 = đã từng làm; hỏi kinh nghiệm: 我们来过这家商场吗？' },
-  { pre: '我们', blank: '进去', post: '看看吧。', hint: '(đi vào)', ans: '进去', exp: '进去 = đi vào trong (rời xa người nói): 进去看看 = vào xem thử.' },
-  { pre: '我想买', blank: '条', post: '裤子。', hint: '(lượng từ cho quần)', ans: '条', exp: '条 là lượng từ cho vật dài, mềm như quần: 一条裤子.' },
-  { pre: '', blank: '因为', post: '我喜欢白色啊！', hint: '(bởi vì)', ans: '因为', exp: '因为 nêu nguyên nhân, dùng để trả lời câu hỏi 为什么.' },
-  { pre: '就是因为没穿过，', blank: '所以', post: '要试试啊！', hint: '(cho nên)', ans: '所以', exp: '因为…，所以…: 所以 mở đầu vế kết quả.' },
-  { pre: '那边卖书包，我们', blank: '过去', post: '看看吧。', hint: '(sang đó)', ans: '过去', exp: '过去 = đi sang đó (rời xa người nói); còn 过来 là qua đây.' },
-  { pre: '我也觉得绿色的', blank: '更', post: '好看。', hint: '(hơn)', ans: '更', exp: '更 + tính từ = … hơn: 绿色的更好看 (so với màu khác).' },
-  { pre: '商场里的衣服', blank: '颜色', post: '很多。', hint: '(màu sắc)', ans: '颜色' }
+  { pre: '“你吃', blank: '过', post: '北京烤鸭吗？” — “吃过，很好吃。”', hint: '(đã từng)', ans: '过', exp: 'Động từ + 过 = đã từng làm (kinh nghiệm): 吃过 = từng ăn.' },
+  { pre: 'Bạn hỏi bạn mình: “他的女朋友漂亮吗？我', blank: '没', post: '见过她。”', hint: '(chưa — phủ định của 过)', ans: '没', exp: 'Phủ định kinh nghiệm: 没 + động từ + 过, không dùng 不.' },
+  { pre: '“你为什么不买那件衣服？” — “', blank: '因为', post: '太贵了。”', hint: '(bởi vì)', ans: '因为', exp: 'Trả lời câu hỏi 为什么 bằng 因为 + lý do.' },
+  { pre: '今天下大雨，', blank: '所以', post: '我打车去公司了。', hint: '(cho nên)', ans: '所以', exp: '所以 mở đầu vế kết quả: mưa to → nên bắt taxi.' },
+  { pre: '这', blank: '条', post: '裤子是我姐姐给我买的。', hint: '(lượng từ cho quần)', ans: '条', exp: '条 là lượng từ cho quần (vật dài, mềm): 这条裤子; áo dùng 件.' },
+  { pre: '这件衣服不错，你', blank: '试', post: '一下吧。', hint: '(thử)', ans: '试', exp: '试一下 = thử một chút; thử quần áo dùng 试.' },
+  { pre: '“小明在房间里吗？” — “在，你', blank: '进去', post: '吧。”', hint: '(đi vào — rời chỗ người nói)', ans: '进去', exp: 'Người nghe đang ở ngoài, đi vào trong phòng: 进去.' },
+  { pre: '小明在那边，我们', blank: '过去', post: '和他说说话吧。', hint: '(sang đó)', ans: '过去', exp: '过去 = đi sang đó (xa người nói); 过来 = qua đây.' },
+  { pre: '红色的好看，但我觉得白色的', blank: '更', post: '漂亮。', hint: '(hơn)', ans: '更', exp: '更 + tính từ = … hơn; không nói 更很漂亮.' },
+  { pre: '这个书包的', blank: '颜色', post: '很好看，是我喜欢的绿色。', hint: '(màu sắc)', ans: '颜色', exp: '颜色 = màu sắc; 书包的颜色 = màu của cặp sách.' },
+  { pre: '“这两个苹果你要哪个？” — “我要小', blank: '的', post: '。”', hint: '(cái … — thay cho danh từ)', ans: '的', exp: 'Tính từ + 的 thay cho danh từ đã nhắc: 小的 = quả nhỏ.' },
+  { pre: '这家', blank: '商场', post: '里有很多外国人。', hint: '(trung tâm thương mại)', ans: '商场', exp: '商场 = trung tâm thương mại; lượng từ 家: 这家商场.' }
 ];
 
 var sortData = [
-  { words: ['我们', '来', '过', '这家', '商场', '吗', '？'], ans: '我们来过这家商场吗？', audio: '我们来过这家商场吗？' },
-  { words: ['我', '想', '买', '条', '裤子', '。'], ans: '我想买条裤子。', audio: '我想买条裤子。' },
-  { words: ['因为', '我', '喜欢', '白色', '啊', '！'], ans: '因为我喜欢白色啊！', audio: '因为我喜欢白色啊！' },
-  { words: ['我', '没', '穿', '过', '红色', '的', '。'], ans: '我没穿过红色的。', audio: '我没穿过红色的。' },
-  { words: ['我', '也', '觉得', '绿色的', '更', '好看', '。'], ans: '我也觉得绿色的更好看。', audio: '我也觉得绿色的更好看。' },
-  { words: ['商场', '里', '的', '衣服', '颜色', '很', '多', '。'], ans: '商场里的衣服颜色很多。', audio: '商场里的衣服颜色很多。' }
+  { words: ['我', '还', '没', '坐', '过', '火车', '呢', '。'], ans: '我还没坐过火车呢。', audio: '我还没坐过火车呢。' },
+  { words: ['因为', '明天', '有', '课', '，', '所以', '我', '不', '能', '去', '旅游', '了', '。'], ans: '因为明天有课，所以我不能去旅游了。', audio: '因为明天有课，所以我不能去旅游了。' },
+  { words: ['这', '是', '我', '妈妈', '新', '买', '的', '。'], ans: '这是我妈妈新买的。', audio: '这是我妈妈新买的。' },
+  { words: ['你', '去', '过', '那家', '新开的', '商场', '吗', '？'], ans: '你去过那家新开的商场吗？', audio: '你去过那家新开的商场吗？' },
+  { words: ['我', '想', '试试', '那条', '黑色', '的', '裤子', '。'], ans: '我想试试那条黑色的裤子。', audio: '我想试试那条黑色的裤子。' },
+  { words: ['你', '的', '手机', '是', '什么', '颜色', '的', '？'], ans: '你的手机是什么颜色的？', audio: '你的手机是什么颜色的？' },
+  { words: ['他', '因为', '生病', '没', '来', '上课', '。'], ans: '他因为生病没来上课。', audio: '他因为生病没来上课。' },
+  { words: ['你', '过去', '问问', '那个', '售货员', '吧', '。'], ans: '你过去问问那个售货员吧。', audio: '你过去问问那个售货员吧。' }
 ];
 
 var mcData = [
-  { q: '我看见老师在教室里，你＿＿找她吧。', opts: ['进去', '书包', '颜色', '条'], ans: 0, exp: 'Cô giáo ở trong lớp, người nghe ở ngoài: đi vào trong dùng 进去.' },
-  { q: '你已经有一＿＿黑色的裤子了，别买了。', opts: ['个', '间', '条', '名'], ans: 2, exp: '条 là lượng từ cho quần (vật dài, mềm); 间 dùng cho phòng, 名 cho người.' },
-  { q: '商场里衣服的＿＿很多。', opts: ['书包', '颜色', '商场', '进去'], ans: 1, exp: '颜色 = màu sắc: 衣服的颜色很多 = quần áo có nhiều màu.' },
-  { q: '"她去过中国" nghĩa là gì?', opts: ['Cô ấy từng đến Trung Quốc', 'Cô ấy đang ở Trung Quốc', 'Cô ấy sẽ đi Trung Quốc', 'Cô ấy không đến Trung Quốc'], ans: 0, exp: 'Động từ + 过 chỉ kinh nghiệm đã từng làm: 去过中国 = từng đến Trung Quốc.' },
-  { q: 'Phủ định của "她去过中国" là câu nào?', opts: ['她没去过中国。', '她不去过中国。', '她去过没中国。', '她没有去中国过。'], ans: 0, exp: 'Phủ định 过 dùng 没 + động từ + 过 và vẫn giữ 过: 没去过; không dùng 不.' },
-  { q: '"红色的、绿色的、黑色的" ở đây thay cho cụm nào?', opts: ['红色的书包…', '红色的人…', '红色的天…', '红色的时间…'], ans: 0, exp: 'Cụm 的 (红色的) thay cho danh từ đã nhắc trước: 红色的 = cái (cặp sách) màu đỏ.' },
-  { q: 'Cặp liên từ nào chỉ quan hệ nguyên nhân – kết quả?', opts: ['因为……所以……', '还是……吧', '虽然……也……', '一……就……'], ans: 0, exp: '因为…所以… nêu nguyên nhân – kết quả; 还是…吧 dùng để chọn phương án.' },
-  { q: '"我觉得绿色的更好看" — 「更」nghĩa là gì?', opts: ['càng, hơn', 'rất', 'không', 'lại'], ans: 0, exp: '更 + tính từ = hơn, càng…: 更好看 = đẹp hơn (so với cái khác).' }
+  { q: 'Bạn muốn nói: “Mẹ tôi chưa từng uống trà Trung Quốc.”', opts: ['我妈妈没喝过中国茶。', '我妈妈不喝过中国茶。', '我妈妈没喝过中国茶了。', '我妈妈喝没过中国茶。'], ans: 0, exp: 'Phủ định 过: 没 + động từ + 过, không dùng 不, không thêm 了.' },
+  { q: 'A: “你看过这个电影吗？” — B đã xem năm ngoái:', opts: ['看过，我去年看的。', '看了过，我去年看的。', '没看过，我去年看的。', '我看，我去年看的。'], ans: 0, exp: 'Trả lời câu hỏi V过 bằng 看过 (đã từng xem); không ghép 了过; 没看过 trái nghĩa với “năm ngoái đã xem”.' },
+  { q: 'Bạn muốn hỏi bạn người Pháp đã từng đến Tây An chưa:', opts: ['你去过西安没有？', '你去西安过吗？', '你过去西安吗？', '你去过西安了吗？'], ans: 0, exp: '过 đứng ngay sau động từ, trước tân ngữ: 去过西安; 过去 là “đi sang”, không phải “đã từng”.' },
+  { q: 'Bạn muốn nói: “Vì nhà tôi xa nên tôi đi học bằng xe buýt.”', opts: ['因为我家很远，所以我坐公交车上学。', '所以我家很远，因为我坐公交车上学。', '因为我家很远，所以坐公交车我上学。', '我家很远因为，所以我坐公交车上学。'], ans: 0, exp: '因为 + nguyên nhân, 所以 + kết quả; 因为 đứng đầu vế, không đặt cuối vế.' },
+  { q: 'A: “你为什么喜欢这家饭店？” — B:', opts: ['因为这儿的菜很好吃。', '所以这儿的菜很好吃。', '因为这儿的菜很好吃吗？', '为什么这儿的菜很好吃。'], ans: 0, exp: 'Trả lời 为什么 bằng 因为 + lý do; 所以 nêu kết quả, không dùng để trả lời lý do.' },
+  { q: 'Trong cửa hàng có cặp đỏ và cặp đen, bạn muốn cái màu đen, bạn nói:', opts: ['我要那个黑色的。', '我要那个的黑色。', '我要黑色那个的。', '我要那个黑色。'], ans: 0, exp: 'Màu + 的 thay cho danh từ: 黑色的 = cái màu đen; 的 đứng sau 黑色.' },
+  { q: 'A: “这些衣服都是你的吗？” — B: “不是，白色的是我的，＿＿是我姐姐的。”', opts: ['红色的', '红色', '红色衣服的', '的红色'], ans: 0, exp: '红色的 = những cái màu đỏ (thay cho 衣服 đã nhắc); thiếu 的 thì chỉ là “màu đỏ”.' },
+  { q: 'Câu nào SAI?', opts: ['这件衣服更很漂亮。', '那家商场更大。', '我更喜欢红色。', '坐公交车更便宜。'], ans: 0, exp: '更 đã có nghĩa “hơn”, không đi cùng 很: 这件衣服更漂亮.' },
+  { q: 'Bạn và bạn mình đứng ngoài cửa lớp, thầy giáo ở trong lớp. Bạn nói:', opts: ['老师在教室里，我们进去问问吧。', '老师在教室里，我们出去问问吧。', '老师在教室里，我们过来问问吧。', '老师在教室里，我们回来问问吧。'], ans: 0, exp: 'Từ ngoài đi vào trong lớp: 进去; 出去 là đi ra, 过来 là qua đây.' },
+  { q: 'Bạn muốn nói: “Tôi muốn mua hai cái quần.”', opts: ['我想买两条裤子。', '我想买两件裤子。', '我想买二条裤子。', '我想买两个裤子。'], ans: 0, exp: 'Quần dùng lượng từ 条 (件 cho áo); trước lượng từ dùng 两, không dùng 二.' },
+  { q: 'Bạn hỏi người bán hàng: “Cái quần này có màu đen không?”', opts: ['这条裤子有黑色的吗？', '这条裤子有黑色吗的？', '这条裤子是黑色的有吗？', '这个书包有黑色的吗？'], ans: 0, exp: '有 + 黑色的 (cái màu đen) + 吗; 吗 luôn ở cuối câu; quần dùng 条.' },
+  { q: 'A: “卖书包的在哪儿？” — B:', opts: ['在那边，你过去看看吧。', '在那边，你过来看看吧。', '在那边，你看看过去吧。', '在那边，你过去看了看吧。'], ans: 0, exp: 'Chỗ đó xa người nói nên dùng 过去; lời đề nghị dùng 看看, không dùng 看了看 (việc đã xảy ra).' }
 ];
 
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá.',
+  intro: 'Nhấn nút loa nghe câu hỏi / tình huống, rồi tự ghi âm câu trả lời — hãy nói về chính bạn, dùng 过, 因为……所以…… và cụm 的 (红色的, 新买的).',
   questions: [
     {
-      q_zh: '你去过中国吗？去过哪些城市？',
-      q_vn: 'Bạn từng đến Trung Quốc chưa? Từng đến những thành phố nào?',
-      hint: '我去过…… / 我没去过……',
-      sample: '我去过中国，去过北京和西安，可是我没去过上海。',
-      sample_vn: 'Tôi từng đến Trung Quốc, từng đến Bắc Kinh và Tây An, nhưng tôi chưa từng đến Thượng Hải.',
-      note: '过 đặt sau động từ để nói việc đã từng xảy ra; phủ định dùng 没.'
+      q_zh: '你吃过什么中国菜？',
+      q_vn: 'Bạn đã từng ăn những món Trung Quốc nào? Món nào chưa ăn?',
+      hint: '我吃过……，还没吃过……',
+      sample: '我吃过饺子和北京烤鸭，还没吃过包子。',
+      sample_vn: 'Mình từng ăn sủi cảo và vịt quay Bắc Kinh, chưa ăn bánh bao bao giờ.',
+      note: 'Động từ + 过 = đã từng; phủ định: 没 + động từ + 过.'
     },
     {
-      q_zh: '你喜欢什么颜色的衣服？为什么？',
-      q_vn: 'Bạn thích quần áo màu gì? Vì sao?',
-      hint: '我喜欢……色的，因为……',
-      sample: '我喜欢白色的衣服，因为白色很干净，我也有很多白色的裤子。',
-      sample_vn: 'Tôi thích quần áo màu trắng, vì màu trắng rất sạch sẽ, tôi cũng có nhiều quần màu trắng.',
-      note: 'Cụm chữ 的: 白色的 = cái/bộ màu trắng, không cần nhắc lại danh từ.'
-    },
-    {
-      q_zh: '今天你为什么没去上班？',
-      q_vn: 'Hôm nay vì sao bạn không đi làm?',
+      q_zh: '你为什么学汉语？',
+      q_vn: 'Vì sao bạn học tiếng Trung?',
       hint: '因为……，所以……',
-      sample: '因为我生病了，所以今天没去上班。',
-      sample_vn: 'Vì tôi bị ốm nên hôm nay không đi làm.',
-      note: '因为……所以…… có thể dùng cả cặp hoặc chỉ dùng một vế.'
+      sample: '因为我喜欢中国电影，所以我想学汉语。',
+      sample_vn: 'Vì mình thích phim Trung Quốc nên mình muốn học tiếng Trung.',
+      note: '因为 + nguyên nhân, 所以 + kết quả.'
     },
     {
-      q_zh: '买衣服的时候，你会试一试吗？',
-      q_vn: 'Khi mua quần áo bạn có thử không?',
-      hint: '我会试试……',
-      sample: '会，我一定要试试。没穿过的颜色，我更要试一试。',
-      sample_vn: 'Có, tôi nhất định phải thử. Màu chưa từng mặc thì tôi càng phải thử.',
-      note: '试试 / 试一试 là dạng lặp của động từ, nghe nhẹ nhàng hơn.'
+      q_zh: '你喜欢什么颜色的衣服？',
+      q_vn: 'Bạn thích quần áo màu gì?',
+      hint: '我喜欢……的，……',
+      sample: '我喜欢黑色的，我有很多黑色的衣服。',
+      sample_vn: 'Mình thích màu đen, mình có rất nhiều quần áo màu đen.',
+      note: 'Màu + 的 có thể thay cho danh từ: 黑色的 = đồ màu đen.'
     },
     {
-      q_zh: '商场里有很多书包，你想买哪个？',
-      q_vn: 'Trong trung tâm thương mại có nhiều cặp sách, bạn muốn mua cái nào?',
-      hint: '我想买……的，因为……更……',
-      sample: '我想买绿色的，因为我觉得绿色的比黑色的更好看。',
-      sample_vn: 'Tôi muốn mua cái màu xanh lá, vì tôi thấy cái màu xanh lá đẹp hơn cái màu đen.',
-      note: '更 + tính từ dùng để so sánh: 更好看、更便宜。'
+      q_zh: '在商场买衣服，你会试一试吗？',
+      q_vn: 'Mua quần áo ở trung tâm thương mại, bạn có thử không?',
+      hint: '会，我觉得……更好……',
+      sample: '会，我觉得试一试更好，不试不知道好不好看。',
+      sample_vn: 'Có, mình thấy thử một chút thì tốt hơn, không thử thì không biết đẹp hay không.',
+      note: '试一试 / 试试 = thử xem; 更 + tính từ = … hơn.'
+    },
+    {
+      q_zh: '你的书包是谁给你买的？',
+      q_vn: 'Cặp sách của bạn ai mua cho bạn? Nó màu gì?',
+      hint: '是……给我买的，是……的。',
+      sample: '是我妈妈给我买的，红色的，很好看。',
+      sample_vn: 'Là mẹ mình mua cho, màu đỏ, đẹp lắm.',
+      note: '是……的 nhấn mạnh người làm; 红色的 = cái màu đỏ.'
     }
   ]
 };
 
 var translateData = [
-  { vi: 'Chúng ta đã từng đến trung tâm mua sắm này chưa ạ?', zh: '我们来过这家商场吗？', py: 'Wǒmen láiguo zhè jiā shāngchǎng ma?' },
-  { vi: 'Con muốn mua chiếc quần màu trắng này.', zh: '我想买这条白色的裤子。', py: 'Wǒ xiǎng mǎi zhè tiáo báisè de kùzi.' },
-  { vi: 'Chính là vì chưa từng mặc nên cần phải thử xem.', zh: '就是因为没穿过，所以要试试啊！', py: 'Jiù shì yīnwèi méi chuānguo, suǒyǐ yào shìshi a!' },
-  { vi: 'Mẹ cũng thấy cặp sách màu xanh lá cây đẹp hơn.', zh: '我也觉得绿色的更好看。', py: 'Wǒ yě juéde lǜsè de gèng hǎokàn.' },
-  { vi: 'Quần áo trong trung tâm thương mại có rất nhiều màu sắc.', zh: '商场里的衣服颜色很多。', py: 'Shāngchǎng li de yīfu yánsè hěn duō.' }
+  { vi: 'Anh ấy đã từng làm việc ở Bắc Kinh.', zh: '他在北京工作过。', py: 'Tā zài Běijīng gōngzuòguo.' },
+  { vi: 'Vì bến xe hơi xa nên chúng tôi bắt taxi đi.', zh: '因为车站有点儿远，所以我们打车去。', py: 'Yīnwèi chēzhàn yǒudiǎnr yuǎn, suǒyǐ wǒmen dǎchē qù.' },
+  { vi: 'Cái này hơi đắt, có cái nào rẻ hơn một chút không?', zh: '这个有点儿贵，有便宜一点儿的吗？', py: 'Zhège yǒudiǎnr guì, yǒu piányi yìdiǎnr de ma?' },
+  { vi: 'Cặp sách mới của tôi màu xanh lá cây.', zh: '我的新书包是绿色的。', py: 'Wǒ de xīn shūbāo shì lǜsè de.' },
+  { vi: 'Chưa ăn bao giờ thì càng phải thử chứ!', zh: '没吃过就要试试啊！', py: 'Méi chīguo jiù yào shìshi a!' }
 ];
 
 var translateDataRev = [
-  { vi: 'Chưa con ạ, đây là trung tâm mua sắm mới mở.', zh: '没来过，这是新开的。', py: 'Méi láiguo, zhè shì xīn kāi de.' },
-  { vi: 'Vì con thích màu trắng ạ.', zh: '因为我喜欢白色啊！', py: 'Yīnwèi wǒ xǐhuan báisè a!' },
-  { vi: 'Đằng kia có bán cặp sách, chúng ta sang đó xem thử nhé.', zh: '那边卖书包，我们过去看看吧。', py: 'Nàbiān mài shūbāo, wǒmen guòqù kànkan ba.' },
-  { vi: 'Vì mới khai trương nên mấy hôm nay đồ rất rẻ.', zh: '因为是新开的，所以这几天东西很便宜。', py: 'Yīnwèi shì xīn kāi de, suǒyǐ zhè jǐ tiān dōngxi hěn piányi.' },
-  { vi: 'Mình nghĩ mình mặc quần màu đỏ cũng rất đẹp.', zh: '我觉得我穿红色的也很好看。', py: 'Wǒ juéde wǒ chuān hóngsè de yě hěn hǎokàn.' }
+  { vi: 'Bạn đã từng thấy con mèo trắng nhà tôi chưa?', zh: '你见过我家那只白色的小猫吗？', py: 'Nǐ jiànguo wǒ jiā nà zhī báisè de xiǎo māo ma?' },
+  { vi: 'Vì tối qua ngủ không ngon nên hôm nay tôi rất mệt.', zh: '因为昨天晚上没睡好，所以今天很累。', py: 'Yīnwèi zuótiān wǎnshang méi shuìhǎo, suǒyǐ jīntiān hěn lèi.' },
+  { vi: 'Táo màu đỏ là tôi mua, quả màu xanh là mẹ mua.', zh: '红色的苹果是我买的，绿色的是妈妈买的。', py: 'Hóngsè de píngguǒ shì wǒ mǎi de, lǜsè de shì māma mǎi de.' }
 ];
 
 // ══════════════════════════════════════════

@@ -1403,135 +1403,155 @@ var dialogData = [
 
 var listenData = [
   {
-    audio: '小明，你们明天开学，你准备好了吗？爸爸，我的书包你看见了吗？书包在门后面。书在哪儿呢？笔呢？书在床上，笔在桌子上。',
+    audio: '快要考试了，这几天我每天晚上都看书看到十一点。',
     questions: [
-      { q: '书包在哪儿？', opts: ['床上', '桌子上', '门后面'], ans: 2 },
-      { q: '笔在哪儿？', opts: ['床上', '桌子上', '门后面'], ans: 1 }
+      { q: 'Mấy hôm nay người nói thế nào?', opts: ['Sắp thi nên tối nào cũng học đến 11 giờ', 'Đã thi xong nên rất thoải mái', 'Tối nào cũng xem TV đến 11 giờ'], ans: 0, exp: '快要考试了 = sắp thi rồi; 看书看到十一点 = học bài đến 11 giờ.' }
     ]
   },
   {
-    audio: '小雪，你在做什么呢？明天考试，我在看书呢。这些词要好好看看。你的本子呢？本子上做错的题也要看一看。',
+    audio: '你明天去北京，坐火车还是坐飞机？',
     questions: [
-      { q: '刘小雪在做什么？', opts: ['看书', '考试', '找本子'], ans: 0 },
-      { q: '妈妈让她看什么？', opts: ['词和做错的题', '电影', '奶茶'], ans: 0 }
+      { q: 'Người nói hỏi điều gì?', opts: ['Ngày mai đi đâu', 'Ngày mai đi bằng tàu hỏa hay máy bay', 'Ngày mai đi với ai'], ans: 1, exp: '坐火车还是坐飞机？= đi tàu hỏa hay đi máy bay? — câu hỏi lựa chọn với 还是.' }
     ]
   },
   {
-    audio: '今天考试考得怎么样？我觉得比上次好。真不错！饭菜快要做好了，你叫弟弟一起去洗手吧。',
+    audio: '这家商店东西很便宜，所以人很多。',
     questions: [
-      { q: '她考得怎么样？', opts: ['很不好', '没上次好', '比上次好'], ans: 2 },
-      { q: '饭菜怎么样了？', opts: ['快要做好了', '还没开始做', '已经吃完了'], ans: 0 }
+      { q: 'Vì sao cửa hàng này đông người?', opts: ['Vì đồ rất đẹp', 'Vì ở gần trường', 'Vì đồ rất rẻ'], ans: 2, exp: '这家商店东西很便宜 = cửa hàng này đồ rất rẻ (câu chủ vị làm vị ngữ).' }
     ]
   },
   {
-    audio: '快要开学了，爸爸帮弟弟准备书包、本子和笔。我就要考试了，妈妈让我看书、看做错的题。我们上学，爸爸、妈妈比我们还忙。',
+    audio: '要上课了，你怎么还不起床？快点儿！',
     questions: [
-      { q: '爸爸帮弟弟准备什么？', opts: ['书包、本子和笔', '奶茶和蛋糕', '衣服和裤子'], ans: 0 },
-      { q: '谁更忙？', opts: ['爸爸妈妈', '孩子们', '一样忙'], ans: 0 }
+      { q: 'Sắp đến việc gì?', opts: ['Sắp tan học', 'Sắp vào học', 'Sắp ăn tối'], ans: 1, exp: '要上课了 = sắp vào học rồi (要……了 = sắp …).' },
+      { q: 'Người nói muốn người kia làm gì?', opts: ['Đi ngủ sớm', 'Ăn sáng', 'Dậy đi học'], ans: 2, exp: '怎么还不起床？快点儿！= sao còn chưa dậy? Nhanh lên!' }
+    ]
+  },
+  {
+    audio: '这次考试我做错了三个题，上次做错了五个。',
+    questions: [
+      { q: 'Lần này người nói làm sai mấy câu?', opts: ['Hai câu', 'Ba câu', 'Mười câu'], ans: 1, exp: '做错了三个题 = làm sai ba câu.' },
+      { q: 'So với lần trước thì sao?', opts: ['Sai ít hơn', 'Sai nhiều hơn', 'Giống lần trước'], ans: 0, exp: '上次做错了五个 = lần trước sai năm câu, nên lần này sai ít hơn.' }
+    ]
+  },
+  {
+    audio: '哥哥下个月就要去中国学习了，他每天都在学汉语。',
+    questions: [
+      { q: 'Khi nào anh trai đi Trung Quốc?', opts: ['Tuần sau', 'Năm sau', 'Tháng sau'], ans: 2, exp: '下个月就要……了 = tháng sau là … rồi; có thời gian cụ thể nên dùng 就要.' }
     ]
   }
 ];
 
 var matchData = [
-  { left: '快要', right: '开学了' },
-  { left: '就要', right: '考试了' },
-  { left: '书包在', right: '门后面' },
-  { left: '做错', right: '的题' },
-  { left: '爸爸', right: '帮弟弟准备书包' },
-  { left: '是你上学', right: '还是我上学？' }
+  { left: '考', right: '第一名' },
+  { left: '帮', right: '妈妈做饭' },
+  { left: '做错', right: '了两个题' },
+  { left: '门', right: '后面' },
+  { left: '快', right: '十点了' },
+  { left: '高兴地', right: '笑了' },
+  { left: '拿', right: '笔和本子' }
 ];
 
 var fillData = [
-  { pre: '小雪，你们什么时候', blank: '开学', post: '？你准备好了吗？', hint: '(khai giảng)', ans: '开学' },
-  { pre: '我们公司', blank: '后面', post: '有一个商店。', hint: '(phía sau)', ans: '后面' },
-  { pre: '不好意思，你能', blank: '帮', post: '我叫一下白家月吗？', hint: '(giúp)', ans: '帮' },
-  { pre: '这个字写', blank: '错', post: '了，左边是“口”，不是“日”。', hint: '(sai)', ans: '错', exp: '错 là bổ ngữ kết quả: 写错了 = viết sai rồi.' },
-  { pre: '看到生日礼物，儿子高兴地', blank: '笑', post: '了。', hint: '(cười)', ans: '笑' },
-  { pre: '明天', blank: '考试', post: '，我在看书呢。', hint: '(thi)', ans: '考试' },
-  { pre: '饭菜', blank: '快要', post: '做好了。', hint: '(sắp)', ans: '快要', exp: '快要…了 = sắp… rồi: 饭菜快要做好了.' },
-  { pre: '是您准备考试', blank: '还是', post: '我准备考试？', hint: '(hay là)', ans: '还是', exp: 'Câu hỏi lựa chọn: A 还是 B？= A hay B?' }
+  { pre: '“你们学校几月', blank: '开学', post: '？” — “九月一号。”', hint: '(khai giảng)', ans: '开学', exp: '开学 = khai giảng, vào năm học mới.' },
+  { pre: '“有人在外边叫你，你去开', blank: '门', post: '吧。”', hint: '(cửa)', ans: '门', exp: '开门 = mở cửa; 门 = cái cửa.' },
+  { pre: '“你的车呢？” — “在饭馆', blank: '后面', post: '。”', hint: '(phía sau)', ans: '后面', exp: 'Nơi chốn + 后面 = phía sau …: 饭馆后面.' },
+  { pre: '“你有', blank: '笔', post: '吗？我想写一下他的电话。”', hint: '(bút)', ans: '笔', exp: '笔 = cây bút, dùng để viết.' },
+  { pre: '“这些东西太多了，我来', blank: '帮', post: '你拿吧。”', hint: '(giúp)', ans: '帮', exp: '帮 + người + động từ = giúp ai làm gì: 帮你拿.' },
+  { pre: '“这个', blank: '词', post: '是什么意思？” — “就是‘高兴’的意思。”', hint: '(từ)', ans: '词', exp: '词 = từ (gồm một hay nhiều chữ); 字 = chữ.' },
+  { pre: '“老师，我的', blank: '本子', post: '忘在家里了。”', hint: '(vở)', ans: '本子', exp: '本子 = quyển vở; 忘在家里了 = để quên ở nhà rồi.' },
+  { pre: '“喂，是李文吗？” — “不是，你打', blank: '错', post: '电话了。”', hint: '(sai, nhầm)', ans: '错', exp: '错 là bổ ngữ kết quả: 打错电话 = gọi nhầm số.' },
+  { pre: '“这次考试有几个', blank: '题', post: '？” — “二十个。”', hint: '(câu hỏi, bài)', ans: '题', exp: '题 = câu hỏi / bài trong đề thi, lượng từ 个.' },
+  { pre: '“这件衣服，你要黑色的', blank: '还是', post: '白色的？” — “黑色的。”', hint: '(hay là)', ans: '还是', exp: 'Câu hỏi lựa chọn: A 还是 B？ — cuối câu không có 吗.' },
+  { pre: '“我们', blank: '快要', post: '到了，你在门口等我们吧。”', hint: '(sắp)', ans: '快要', exp: '快要……了 = sắp … rồi (sự việc sắp xảy ra, không có thời gian cụ thể).' },
+  { pre: '“我们明天', blank: '就要', post: '去旅游了，东西都准备好了吗？”', hint: '(sắp … rồi, có thời gian cụ thể)', ans: '就要', exp: 'Có từ chỉ thời gian (明天) thì dùng 就要……了.' }
 ];
 
 var sortData = [
-  { words: ['我', '的', '书包', '你', '看见', '了', '吗', '？'], ans: '我的书包你看见了吗？', audio: '我的书包你看见了吗？' },
-  { words: ['书包', '在', '门', '后面', '。'], ans: '书包在门后面。', audio: '书包在门后面。' },
-  { words: ['饭菜', '快要', '做', '好', '了', '。'], ans: '饭菜快要做好了。', audio: '饭菜快要做好了。' },
-  { words: ['我们', '下', '星期', '就要', '考试', '了', '。'], ans: '我们下星期就要考试了。', audio: '我们下星期就要考试了。' },
-  { words: ['是', '您', '准备', '考试', '还是', '我', '准备', '考试', '？'], ans: '是您准备考试还是我准备考试？', audio: '是您准备考试还是我准备考试？' },
-  { words: ['爸爸', '妈妈', '比', '我们', '还', '忙', '。'], ans: '爸爸妈妈比我们还忙。', audio: '爸爸妈妈比我们还忙。' }
+  { words: ['这', '家', '饭馆', '菜', '很', '好吃', '，', '人', '也', '不', '多', '。'], ans: '这家饭馆菜很好吃，人也不多。', audio: '这家饭馆菜很好吃，人也不多。' },
+  { words: ['王老师', '工作', '很', '忙', '，', '没有', '时间', '做饭', '。'], ans: '王老师工作很忙，没有时间做饭。', audio: '王老师工作很忙，没有时间做饭。' },
+  { words: ['你', '想', '去', '商场', '还是', '去', '书店', '？'], ans: '你想去商场还是去书店？', audio: '你想去商场还是去书店？', alt: ['你想去书店还是去商场？'] },
+  { words: ['快', '十二', '点', '了', '，', '一起', '去', '吃', '午饭', '吧', '。'], ans: '快十二点了，一起去吃午饭吧。', audio: '快十二点了，一起去吃午饭吧。' },
+  { words: ['电影', '要', '开始', '了', '，', '别', '说话', '了', '。'], ans: '电影要开始了，别说话了。', audio: '电影要开始了，别说话了。' },
+  { words: ['妹妹', '明年', '就要', '上', '小学', '了', '。'], ans: '妹妹明年就要上小学了。', audio: '妹妹明年就要上小学了。' },
+  { words: ['老师', '说', '完', '，', '同学们', '都', '笑', '了', '。'], ans: '老师说完，同学们都笑了。', audio: '老师说完，同学们都笑了。' },
+  { words: ['他', '考', '了', '第一', '名', '，', '妈妈', '非常', '高兴', '。'], ans: '他考了第一名，妈妈非常高兴。', audio: '他考了第一名，妈妈非常高兴。' }
 ];
 
 var mcData = [
-  { q: '看到生日礼物，儿子高兴地＿＿了。', opts: ['笑', '帮', '考', '错'], ans: 0, exp: '高兴地 là trạng ngữ chỉ cách cười; 笑 = cười.' },
-  { q: '这个字写＿＿了，左边是“口”，不是“日”。', opts: ['错', '好', '完', '对'], ans: 0, exp: '错 là bổ ngữ kết quả: 写错了 = viết sai, câu sau giải thích chỗ sai.' },
-  { q: '火车＿＿开了。', opts: ['快要', '很要', '太要', '真要'], ans: 0, exp: '快要…了 = sắp… rồi; không nói 很要/太要/真要.' },
-  { q: '我们下星期＿＿考试了。', opts: ['就要', '快要', '要快', '就快'], ans: 0, exp: 'Có từ chỉ thời gian (下星期) thì dùng 就要…了, không dùng 快要…了.' },
-  { q: 'Câu nào là câu hỏi lựa chọn?', opts: ['你喝奶茶还是喝咖啡？', '你喝奶茶吗？', '你喝不喝奶茶？', '你喝什么？'], ans: 0, exp: 'Câu hỏi lựa chọn dùng A 还是 B, đưa ra hai khả năng: 喝奶茶还是喝咖啡？' },
-  { q: '“弟弟手很小。” là loại câu gì?', opts: ['Câu có cụm chủ vị làm vị ngữ', 'Câu so sánh', 'Câu hỏi lựa chọn', 'Câu chữ 把'], ans: 0, exp: 'Vị ngữ là một cụm chủ vị: 弟弟 (chủ ngữ lớn) + 手很小 (cụm chủ vị).' },
-  { q: 'Khi trong câu có trạng ngữ chỉ thời gian (下星期) thì thường dùng cấu trúc nào?', opts: ['就要……了', '快要……了', '快……了', '要……了'], ans: 0, exp: '快要…了 không đi với từ chỉ thời gian cụ thể; có 下星期 thì dùng 就要…了.' },
-  { q: '“不错” nghĩa là gì?', opts: ['Khá tốt', 'Không sai', 'Rất tệ', 'Không biết'], ans: 0, exp: '不错 = khá tốt, được đấy (lời khen), không hiểu theo nghĩa đen “không sai”.' }
+  { q: 'Bạn muốn hỏi bạn mình: “Bạn đi xe buýt hay đi taxi?”', opts: ['你坐公交车去还是打车去？', '你坐公交车去还是打车去吗？', '你还是坐公交车去打车去？', '你坐公交车去，打车去还是？'], ans: 0, exp: 'A 还是 B tự nó đã là câu hỏi, không thêm 吗; 还是 đứng giữa hai lựa chọn.' },
+  { q: 'Câu nào SAI?', opts: ['你喝茶还是喝咖啡吗？', '你是今天走还是明天走？', '你们是坐火车来的还是坐飞机来的？', '我们吃饺子还是吃面条儿？'], ans: 0, exp: 'Câu hỏi lựa chọn với 还是 không thêm 吗 ở cuối câu.' },
+  { q: 'Ở cửa hàng, người bán hỏi: “你要大的还是小的？” — Bạn đáp:', opts: ['我要小的那个。', '我要还是小的那个。', '是，我要小的那个。', '我要小的那个吗？'], ans: 0, exp: 'Câu hỏi lựa chọn không trả lời bằng 是/对; chọn luôn một phương án: 我要小的那个.' },
+  { q: 'Chọn từ đúng: “我们学校下个星期一＿＿开学了。”', opts: ['就要', '快要', '快', '很要'], ans: 0, exp: 'Có thời gian cụ thể (下个星期一) thì dùng 就要……了, không dùng 快要/快.' },
+  { q: 'Câu nào SAI?', opts: ['他下个星期快要回国了。', '他快要回国了。', '他下个星期就要回国了。', '他快回国了。'], ans: 0, exp: '快要……了 không đi với thời gian cụ thể (下个星期); phải nói 他下个星期就要回国了.' },
+  { q: 'Bạn thấy bánh sinh nhật sắp ăn hết, bạn nói:', opts: ['蛋糕快吃完了。', '蛋糕吃完快了。', '蛋糕快吃完。', '蛋糕快了吃完。'], ans: 0, exp: '快 + động từ + 了 = sắp … rồi; 快 đứng trước động từ, cuối câu phải có 了.' },
+  { q: 'Bạn muốn giới thiệu: “Anh trai tôi dáng cao, thích chơi bóng rổ.”', opts: ['我哥哥个子很高，喜欢打篮球。', '我哥哥是个子很高，喜欢打篮球。', '我哥哥很高个子，喜欢打篮球。', '我哥哥的个子高很，喜欢打篮球。'], ans: 0, exp: 'Câu chủ vị làm vị ngữ: 我哥哥 + 个子很高; không thêm 是 trước tính từ, không nói 很高个子 hay 高很.' },
+  { q: 'Câu nào SAI?', opts: ['今天天气是很好。', '这个房间门有点儿小。', '我妹妹手很小。', '他工作不太忙。'], ans: 0, exp: 'Tính từ làm vị ngữ không cần 是: 今天天气很好.' },
+  { q: 'Bạn muốn nhờ: “Bạn xem giúp mình từ này với.”', opts: ['你帮我看看这个词吧。', '你帮看看我这个词吧。', '你看看帮我这个词吧。', '你帮忙我看看这个词吧。'], ans: 0, exp: '帮 + người + động từ: 帮我看看; 帮忙 không mang tân ngữ chỉ người ngay sau (không nói 帮忙我).' },
+  { q: 'A: “这是小明家吗？” — B đáp:', opts: ['不是，你找错了。', '不是，你错找了。', '不是，你找了错。', '不是，你没找对了。'], ans: 0, exp: '错 là bổ ngữ kết quả, đứng ngay sau động từ: 找错了 = tìm nhầm rồi.' },
+  { q: 'A: “这次考试你考了多少分？” — B đáp:', opts: ['考了九十五分，比上次好。', '考了九十五分，比上次很好。', '考了九十五分，好比上次。', '考了九十五分，比上次是好。'], ans: 0, exp: 'Ôn câu 比 (bài 8): 比 + B + tính từ, không thêm 很/是, không đặt tính từ trước 比.' },
+  { q: 'Bạn muốn nói: “Em bé vừa nhìn thấy mẹ là cười.”', opts: ['孩子一看见妈妈就笑了。', '孩子一看见妈妈笑就了。', '孩子看见一妈妈就笑了。', '孩子就看见妈妈一笑了。'], ans: 0, exp: 'Ôn 一……就…… (bài 7): 一 + động từ 1, 就 + động từ 2: 一看见妈妈就笑了.' }
 ];
 
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá.',
+  intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời về chính bạn — dùng câu chủ vị làm vị ngữ (他个子很高), câu hỏi 还是 và 快要/就要/快……了.',
   questions: [
     {
-      q_zh: '你们什么时候开学？你准备好了吗？',
-      q_vn: 'Khi nào các bạn khai giảng? Bạn đã chuẩn bị xong chưa?',
-      hint: '快要开学了，我准备了……',
-      sample: '快要开学了，我准备好了书包、本子和笔，这次是我自己准备的。',
-      sample_vn: 'Sắp khai giảng rồi, tôi đã chuẩn bị xong cặp sách, vở và bút, lần này là tôi tự chuẩn bị.',
-      note: '快要……了 dùng khi việc gì đó sắp xảy ra.'
+      q_zh: '开学的时候，你要准备什么东西？',
+      q_vn: 'Sắp khai giảng rồi, bạn đã chuẩn bị những gì?',
+      hint: '我买了……，还有……',
+      sample: '我买了一个新书包，还有本子和笔，都是我自己去商店买的。',
+      sample_vn: 'Mình đã mua một chiếc cặp mới, còn có vở và bút, đều là mình tự đi cửa hàng mua.',
+      note: 'Ôn 是……的 nhấn mạnh người làm (都是我自己去商店买的).'
     },
     {
-      q_zh: '考试以前你会做什么准备？',
-      q_vn: 'Trước kỳ thi bạn chuẩn bị thế nào?',
-      hint: '我要看……，还要看做错的题。',
-      sample: '就要考试了，我要好好看看这些词，本子上做错的题也要看一看。',
-      sample_vn: 'Sắp thi rồi, tôi phải xem kỹ những từ này, những câu làm sai trong vở cũng phải xem lại.',
-      note: '就要……了 dùng khi có mốc thời gian cụ thể.'
+      q_zh: '说说你的一个家人：他（她）个子高吗？工作忙不忙？',
+      q_vn: 'Nói về một người trong gia đình: người đó có cao không? Công việc có bận không?',
+      hint: '我……个子……，工作……',
+      sample: '我姐姐个子不太高，工作非常忙，星期六也要上班。',
+      sample_vn: 'Chị mình dáng không cao lắm, công việc rất bận, thứ Bảy cũng phải đi làm.',
+      note: 'Câu chủ vị làm vị ngữ: 我姐姐 + 个子不太高 / 工作非常忙.'
     },
     {
-      q_zh: '你今天考试考得怎么样？',
-      q_vn: 'Hôm nay bạn thi thế nào?',
-      hint: '我考得……，比上次……',
-      sample: '我觉得考得还可以，比上次好，虽然有几个题做错了，但是词我都懂了。',
-      sample_vn: 'Tôi thấy thi cũng tàm tạm, tốt hơn lần trước, tuy có vài câu làm sai nhưng các từ tôi đều hiểu.',
-      note: 'Ôn bổ ngữ trạng thái (bài 7) và 虽然……但是…… (bài 8).'
+      q_zh: '你喜欢早上学习还是晚上学习？为什么？',
+      q_vn: 'Bạn thích học buổi sáng hay buổi tối? Vì sao?',
+      hint: '我喜欢……学习，因为……',
+      sample: '我喜欢晚上学习，因为晚上家里人不多，我能好好看书。',
+      sample_vn: 'Mình thích học buổi tối, vì buổi tối trong nhà ít người, mình có thể chăm chú học bài.',
+      note: 'Trả lời câu hỏi lựa chọn: chọn một phương án, không dùng 是/对.'
     },
     {
-      q_zh: '你更喜欢打篮球、踢足球还是游泳？',
-      q_vn: 'Bạn thích chơi bóng rổ, đá bóng hay bơi hơn?',
-      hint: '我更喜欢……，因为……',
-      sample: '我更喜欢游泳，因为游泳比打篮球有意思，也没有踢足球那么累。',
-      sample_vn: 'Tôi thích bơi hơn, vì bơi thú vị hơn chơi bóng rổ, cũng không mệt bằng đá bóng.',
-      note: 'Câu hỏi lựa chọn A 还是 B; trả lời dùng 比 và 没有 (bài 8, 9).'
+      q_zh: '你下一次考试是什么时候？你准备得怎么样？',
+      q_vn: 'Lần thi tới của bạn là khi nào? Bạn chuẩn bị thế nào rồi?',
+      hint: '……就要考试了，我……',
+      sample: '我们下个星期三就要考试了，我每天都看新词和做错的题。',
+      sample_vn: 'Thứ Tư tuần sau bọn mình thi rồi, ngày nào mình cũng xem từ mới và các câu đã làm sai.',
+      note: 'Có thời gian cụ thể (下个星期三) thì dùng 就要……了.'
     },
     {
-      q_zh: '在你家，谁帮你准备上学的东西？',
-      q_vn: 'Ở nhà bạn, ai giúp bạn chuẩn bị đồ đi học?',
-      hint: '……帮我准备……，下次我自己……',
-      sample: '以前爸爸帮我准备书包和本子，现在我自己准备，爸爸妈妈比我还忙。',
-      sample_vn: 'Trước đây bố giúp tôi chuẩn bị cặp và vở, bây giờ tôi tự chuẩn bị, bố mẹ còn bận hơn cả tôi.',
-      note: '帮 + người + việc; 比……还 nhấn mức độ cao hơn.'
+      q_zh: '在家里，你帮爸爸妈妈做什么？',
+      q_vn: 'Ở nhà, bạn giúp bố mẹ làm gì?',
+      hint: '我帮……，有时也……',
+      sample: '我帮妈妈洗衣服，有时也帮爸爸做饭。',
+      sample_vn: 'Mình giúp mẹ giặt quần áo, có lúc cũng giúp bố nấu cơm.',
+      note: '帮 + người + động từ = giúp ai làm gì.'
     }
   ]
 };
 
 var translateData = [
-  { vi: 'Cặp sách ở phía sau cửa.', zh: '书包在门后面。', py: 'Shūbāo zài mén hòumiàn.' },
-  { vi: 'Ngày mai con thi, nên con đang học bài.', zh: '明天考试，我在看书呢。', py: 'Míngtiān kǎoshì, wǒ zài kàn shū ne.' },
-  { vi: 'Mẹ ơi, là mẹ chuẩn bị thi hay là con chuẩn bị thi vậy?', zh: '妈妈，是您准备考试还是我准备考试？', py: 'Māma, shì nín zhǔnbèi kǎoshì háishi wǒ zhǔnbèi kǎoshì?' },
-  { vi: 'Cơm sắp nấu xong rồi.', zh: '饭菜快要做好了。', py: 'Fàncài kuàiyào zuòhǎo le.' },
-  { vi: 'Chúng tôi đi học, nhưng bố mẹ còn bận hơn cả chúng tôi.', zh: '我们上学，爸爸、妈妈比我们还忙。', py: 'Wǒmen shàngxué, bàba, māma bǐ wǒmen hái máng.' }
+  { vi: 'Bạn về nhà hôm nay hay ngày mai?', zh: '你今天回家还是明天回家？', py: 'Nǐ jīntiān huí jiā háishi míngtiān huí jiā?' },
+  { vi: 'Tàu sắp chạy rồi, chúng ta mau lên tàu đi.', zh: '火车要开了，我们快上车吧。', py: 'Huǒchē yào kāi le, wǒmen kuài shàng chē ba.' },
+  { vi: 'Trường chúng tôi học sinh rất đông, thầy cô cũng rất tốt.', zh: '我们学校学生很多，老师也很好。', py: 'Wǒmen xuéxiào xuésheng hěn duō, lǎoshī yě hěn hǎo.' },
+  { vi: 'Tôi viết sai hai chữ.', zh: '我写错了两个字。', py: 'Wǒ xiěcuò le liǎng ge zì.' },
+  { vi: 'Phía sau nhà tôi có một quán cà phê.', zh: '我家后面有一家咖啡店。', py: 'Wǒ jiā hòumiàn yǒu yì jiā kāfēidiàn.' }
 ];
 
 var translateDataRev = [
-  { vi: 'Ngày mai khai giảng rồi, con đã chuẩn bị xong chưa?', zh: '你们明天开学，你准备好了吗？', py: 'Nǐmen míngtiān kāixué, nǐ zhǔnbèi hǎo le ma?' },
-  { vi: 'Con nên xem lại những từ này thật kỹ nhé.', zh: '这些词要好好看看。', py: 'Zhèxiē cí yào hǎohāo kànkan.' },
-  { vi: 'Những câu làm sai trong vở cũng cần xem lại.', zh: '本子上做错的题也要看一看。', py: 'Běnzi shang zuòcuò de tí yě yào kàn yi kàn.' },
-  { vi: 'Con thấy tốt hơn lần trước.', zh: '我觉得比上次好。', py: 'Wǒ juéde bǐ shàng cì hǎo.' },
-  { vi: 'Tôi hỏi xong, cả hai đều bật cười.', zh: '我问完，他们都笑了。', py: 'Wǒ wènwán, tāmen dōu xiào le.' }
+  { vi: 'Mẹ sắp về rồi, chúng ta mau chuẩn bị đi.', zh: '妈妈就要回来了，我们快准备一下吧。', py: 'Māma jiù yào huílai le, wǒmen kuài zhǔnbèi yíxià ba.' },
+  { vi: 'Quyển vở này là của bạn hay của em trai bạn?', zh: '这个本子是你的还是你弟弟的？', py: 'Zhège běnzi shì nǐ de háishi nǐ dìdi de?' },
+  { vi: 'Những từ mới này bạn hiểu hết chưa?', zh: '这些新词你都懂了吗？', py: 'Zhèxiē xīn cí nǐ dōu dǒng le ma?' },
+  { vi: 'Quả táo này màu rất đẹp.', zh: '这个苹果颜色很好看。', py: 'Zhège píngguǒ yánsè hěn hǎokàn.' }
 ];
 
 // ══════════════════════════════════════════

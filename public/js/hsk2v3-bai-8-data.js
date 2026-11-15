@@ -1661,135 +1661,155 @@ var dialogData = [
 
 var listenData = [
   {
-    audio: '你看，这两块手表怎么样？都不错！我喜欢左边这个。我也觉得左边的比右边的好看。你看看要多少钱！真不便宜！八千八！',
+    audio: '这块黑色的手表八百多块，那块白色的比它还贵。',
     questions: [
-      { q: '他们在看什么？', opts: ['钱', '手表', '裤子'], ans: 1 },
-      { q: '这块手表多少钱？', opts: ['5800元', '6800元', '8800元'], ans: 2 }
+      { q: 'Chiếc đồng hồ màu đen giá bao nhiêu?', opts: ['Khoảng 80 tệ', 'Hơn 800 tệ', 'Hơn 8000 tệ'], ans: 1, exp: '八百多块 = hơn 800 tệ; 多 đứng sau số tròn.' },
+      { q: 'Chiếc đồng hồ màu trắng thế nào?', opts: ['Còn đắt hơn chiếc màu đen', 'Rẻ hơn chiếc màu đen', 'Giá bằng chiếc màu đen'], ans: 0, exp: '那块白色的比它还贵 = chiếc màu trắng còn đắt hơn nó (chiếc màu đen).' }
     ]
   },
   {
-    audio: '今天有不少电影，我们看个电影吧。我记得你喜欢看爱情片。还是看这个吧，网上说这个电影比那个爱情片更有意思。到网上买票吧，网上买比在这里买便宜。',
+    audio: '虽然我丈夫做饭做得不错，但是他很少做。',
     questions: [
-      { q: '他们要去做什么？', opts: ['去吃饭', '看电影', '买东西'], ans: 1 },
-      { q: '在哪儿买票更便宜？', opts: ['网上', '电影院', '商场里'], ans: 0 }
+      { q: 'Chồng của người nói thế nào?', opts: ['Nấu không ngon nên ít khi nấu', 'Ngày nào cũng nấu cơm', 'Nấu khá ngon nhưng ít khi nấu'], ans: 2, exp: '做饭做得不错 = nấu ăn khá ngon; 但是他很少做 = nhưng anh ấy ít khi nấu.' }
     ]
   },
   {
-    audio: '你想想，今天是几月几号？8月27号。啊！我的生日！生日快乐！虽然你忘了，但是我记得。',
+    audio: '这个房间比那个大，也比那个舒服，我们住这个吧。',
     questions: [
-      { q: '今天是几月几号？', opts: ['1月21号', '1月27号', '8月27号'], ans: 2 },
-      { q: '谁记得这个生日？', opts: ['妻子', '丈夫', '两个人都忘了'], ans: 1 }
+      { q: 'Vì sao họ chọn phòng này?', opts: ['Vì rẻ hơn phòng kia', 'Vì to hơn và thoải mái hơn', 'Vì phòng kia không còn'], ans: 1, exp: '比那个大 = to hơn cái kia; 也比那个舒服 = cũng thoải mái hơn cái kia.' }
     ]
   },
   {
-    audio: '虽然妻子忘了今天是自己的生日，但是丈夫记得。丈夫请妻子去饭馆吃饭、去电影院看电影，还给妻子买了一块非常漂亮的手表。妻子觉得今天很快乐。',
+    audio: '服务员，我们点两个菜：一个鱼，一个肉。米饭等一会儿再要。',
     questions: [
-      { q: '丈夫没请妻子做什么？', opts: ['去吃饭', '看电影', '去唱歌'], ans: 2 },
-      { q: '妻子今天觉得怎么样？', opts: ['很快乐', '很累', '不高兴'], ans: 0 }
+      { q: 'Họ gọi mấy món?', opts: ['Một món', 'Ba món', 'Hai món'], ans: 2, exp: '点两个菜 = gọi hai món: một món cá, một món thịt.' },
+      { q: 'Khi nào họ gọi cơm?', opts: ['Lát nữa', 'Ngay bây giờ', 'Không gọi cơm'], ans: 0, exp: '米饭等一会儿再要 = cơm thì lát nữa hãy gọi.' }
+    ]
+  },
+  {
+    audio: '小明记得今天是妈妈的生日，下午他去商场给妈妈买了礼物。',
+    questions: [
+      { q: 'Tiểu Minh đến trung tâm thương mại làm gì?', opts: ['Mua quà cho mẹ', 'Mua quần áo cho mình', 'Đi xem phim'], ans: 0, exp: '给妈妈买了礼物 = mua quà cho mẹ.' },
+      { q: 'Hôm nay là ngày gì?', opts: ['Sinh nhật Tiểu Minh', 'Sinh nhật mẹ Tiểu Minh', 'Sinh nhật bố Tiểu Minh'], ans: 1, exp: '记得今天是妈妈的生日 = nhớ hôm nay là sinh nhật mẹ.' }
+    ]
+  },
+  {
+    audio: '虽然这本书我已经看完了，但是我还想再看一次。',
+    questions: [
+      { q: 'Người nói muốn làm gì?', opts: ['Mua một cuốn sách mới', 'Đọc lại cuốn sách đó một lần nữa', 'Cho bạn mượn cuốn sách'], ans: 1, exp: '已经看完了 = đã đọc xong rồi; 还想再看一次 = vẫn muốn đọc thêm một lần nữa.' }
     ]
   }
 ];
 
 var matchData = [
-  { left: '左边的', right: '比右边的好看' },
-  { left: '虽然你忘了', right: '但是我记得' },
-  { left: '点', right: '菜' },
-  { left: '花', right: '钱' },
+  { left: '点', right: '两个菜' },
+  { left: '花', right: '不少钱' },
   { left: '一块', right: '手表' },
-  { left: '去饭馆', right: '吃饭' }
+  { left: '看', right: '爱情片' },
+  { left: '记得', right: '妈妈的生日' },
+  { left: '去饭馆', right: '吃晚饭' },
+  { left: '虽然很累', right: '但是很快乐' }
 ];
 
 var fillData = [
-  { pre: '我的', blank: '手表', post: '在哪儿？你看见了吗？', hint: '(đồng hồ đeo tay)', ans: '手表' },
-  { pre: '我', blank: '记得', post: '那个超市卖画笔，我们过去看看。', hint: '(nhớ)', ans: '记得' },
-  { pre: '我们在商场买了很多东西，', blank: '花', post: '了很多钱。', hint: '(tiêu tiền)', ans: '花' },
-  { pre: '我昨天看的那个电影很', blank: '有意思', post: '。', hint: '(hay, thú vị)', ans: '有意思' },
-  { pre: '我也觉得', blank: '左边', post: '的比右边的好看。', hint: '(bên trái)', ans: '左边' },
-  { pre: '今天', blank: '比', post: '昨天冷。', hint: '(so với)', ans: '比', exp: 'A + 比 + B + tính từ = A … hơn B: 今天比昨天冷.' },
-  { pre: '', blank: '虽然', post: '你忘了，但是我记得。', hint: '(mặc dù)', ans: '虽然', exp: '虽然…，但是… = tuy… nhưng…; 虽然 đứng ở vế đầu.' },
-  { pre: '丈夫请妻子去', blank: '饭馆', post: '吃饭。', hint: '(nhà hàng)', ans: '饭馆' }
+  { pre: 'Chiếc đồng hồ bên trái 500 tệ, chiếc bên phải 900 tệ: “右边的手表', blank: '比', post: '左边的贵。”', hint: '(so với, hơn)', ans: '比', exp: 'A + 比 + B + tính từ: 右边的手表比左边的贵 = chiếc bên phải đắt hơn chiếc bên trái.' },
+  { pre: '“我穿这件衣服出去，冷吗？” — “冷！今天比昨天', blank: '还', post: '冷，你多穿一件吧。”', hint: '(còn … hơn)', ans: '还', exp: '比 + B + 还 + tính từ = còn … hơn; hôm qua đã lạnh, hôm nay còn lạnh hơn.' },
+  { pre: '“小胡今天来上课了吗？” — “来了。他', blank: '虽然', post: '生病了，但是还是来学校了。”', hint: '(mặc dù)', ans: '虽然', exp: '虽然 có thể đứng sau chủ ngữ vế đầu (他虽然……); vế sau dùng 但是.' },
+  { pre: 'Bạn của bạn học tiếng Trung chưa lâu mà nói rất tốt: “他学汉语的时间虽然不长，', blank: '但是', post: '说得很好。”', hint: '(nhưng)', ans: '但是', exp: '虽然……，但是……: 但是 đứng đầu vế thứ hai, nêu ý trái ngược.' },
+  { pre: '“你还', blank: '记得', post: '我们是在哪儿认识的吗？”', hint: '(nhớ, còn nhớ)', ans: '记得', exp: '记得 = (còn) nhớ; 还记得……吗？= còn nhớ … không?' },
+  { pre: 'Bạn kể chuyến đi Tây An: “在西安的三天，我', blank: '花', post: '了两千多块钱。”', hint: '(tiêu tiền)', ans: '花', exp: '花 + 了 + số tiền = đã tiêu bao nhiêu tiền.' },
+  { pre: 'Ở nhà hàng, phục vụ hỏi: “你们想', blank: '点', post: '什么菜？”', hint: '(gọi món)', ans: '点', exp: '点菜 = gọi món; 想点什么菜 = muốn gọi món gì.' },
+  { pre: '“学校外边新开了一家', blank: '饭馆', post: '，我们中午去吃吧。”', hint: '(quán ăn, nhà hàng)', ans: '饭馆', exp: '饭馆 = quán ăn; lượng từ là 家: 一家饭馆.' },
+  { pre: '“王老师的', blank: '丈夫', post: '也是老师，他在北京大学工作。”', hint: '(chồng)', ans: '丈夫', exp: '丈夫 = chồng (người đàn ông), 妻子 = vợ.' },
+  { pre: '“那个穿红色衣服的女士是谁？” — “是我', blank: '妻子', post: '。”', hint: '(vợ)', ans: '妻子', exp: '妻子 = vợ; 我妻子 = vợ tôi.' },
+  { pre: '“这本书比那本', blank: '有意思', post: '，你看看吧。”', hint: '(hay, thú vị)', ans: '有意思', exp: '有意思 = hay, thú vị; A 比 B 有意思 = A hay hơn B.' }
 ];
 
 var sortData = [
-  { words: ['左边', '的', '比', '右边', '的', '好看', '。'], ans: '左边的比右边的好看。', audio: '左边的比右边的好看。' },
-  { words: ['今天', '比', '昨天', '更', '热', '。'], ans: '今天比昨天更热。', audio: '今天比昨天更热。' },
-  { words: ['网上', '买', '比', '在', '这里', '买', '便宜', '。'], ans: '网上买比在这里买便宜。', audio: '网上买比在这里买便宜。' },
-  { words: ['虽然', '你', '忘', '了', '，', '但是', '我', '记得', '。'], ans: '虽然你忘了，但是我记得。', audio: '虽然你忘了，但是我记得。' },
-  { words: ['丈夫', '请', '妻子', '去', '饭馆', '吃饭', '。'], ans: '丈夫请妻子去饭馆吃饭。', audio: '丈夫请妻子去饭馆吃饭。' },
-  { words: ['今天', '花', '了', '不少', '钱', '吧', '？'], ans: '今天花了不少钱吧？', audio: '今天花了不少钱吧？' }
+  { words: ['妹妹', '的', '画', '比', '我', '的', '还', '好看', '。'], ans: '妹妹的画比我的还好看。', audio: '妹妹的画比我的还好看。', alt: ['我的画比妹妹的还好看。'] },
+  { words: ['虽然', '外边', '下雨', '了', '，', '但是', '孩子们', '还', '在', '踢', '足球', '。'], ans: '虽然外边下雨了，但是孩子们还在踢足球。', audio: '虽然外边下雨了，但是孩子们还在踢足球。' },
+  { words: ['你', '给', '妻子', '买', '的', '手表', '真', '漂亮', '。'], ans: '你给妻子买的手表真漂亮。', audio: '你给妻子买的手表真漂亮。' },
+  { words: ['坐', '公交车', '比', '打车', '便宜', '，', '我们', '坐', '公交车', '去', '吧', '。'], ans: '坐公交车比打车便宜，我们坐公交车去吧。', audio: '坐公交车比打车便宜，我们坐公交车去吧。' },
+  { words: ['这件', '衣服', '虽然', '有点儿', '贵', '，', '但是', '颜色', '很', '好看', '。'], ans: '这件衣服虽然有点儿贵，但是颜色很好看。', audio: '这件衣服虽然有点儿贵，但是颜色很好看。' },
+  { words: ['坐', '在', '你', '右边', '的', '是', '谁', '？'], ans: '坐在你右边的是谁？', audio: '坐在你右边的是谁？' },
+  { words: ['我', '一', '到', '饭馆', '就', '点', '了', '三', '个', '菜', '。'], ans: '我一到饭馆就点了三个菜。', audio: '我一到饭馆就点了三个菜。' },
+  { words: ['这', '次', '旅游', '我们', '花', '了', '一万多', '块', '钱', '。'], ans: '这次旅游我们花了一万多块钱。', audio: '这次旅游我们花了一万多块钱。', alt: ['我们这次旅游花了一万多块钱。'] }
 ];
 
 var mcData = [
-  { q: '我觉得奶茶比牛奶＿＿好喝。', opts: ['还', '很', '非常', '太'], ans: 0, exp: 'Câu 比 không dùng 很/非常/太 trước tính từ; muốn nhấn mạnh thì dùng 还 hoặc 更.' },
-  { q: '今天＿＿昨天更热。', opts: ['比', '跟', '和', '从'], ans: 0, exp: 'A + 比 + B + 更 + tính từ: 今天比昨天更热; 跟/和 không dùng để so hơn kém.' },
-  { q: '＿＿你忘了，但是我记得。', opts: ['虽然', '因为', '所以', '如果'], ans: 0, exp: 'Vế sau có 但是 nên vế trước dùng 虽然: 虽然…，但是… = tuy… nhưng….' },
-  { q: 'A：这个人是你妹妹吗？ B：是我姐姐，她＿＿我大。', opts: ['比', '跟', '很', '更'], ans: 0, exp: 'A + 比 + B + tính từ: 她比我大 = chị ấy lớn hơn tôi; 更 không thay được 比.' },
-  { q: 'Câu nào SAI?', opts: ['左边的比右边的很好看。', '左边的比右边的好看。', '左边的比右边的更好看。', '左边的比右边的还好看。'], ans: 0, exp: 'Câu 比 không dùng 很 trước tính từ; có thể dùng 更 hoặc 还 để nhấn mạnh.' },
-  { q: '“花钱” nghĩa là gì?', opts: ['Tiêu tiền', 'Kiếm tiền', 'Đổi tiền', 'Mượn tiền'], ans: 0, exp: '花 ở đây là động từ “tiêu (tiền, thời gian)”: 花钱 = tiêu tiền.' },
-  { q: '在饭馆我们要先做什么？', opts: ['点菜', '买票', '买手表', '跑步'], ans: 0, exp: 'Vào 饭馆 thì trước hết phải gọi món (点菜) rồi mới ăn.' },
-  { q: '“记得” trái nghĩa với từ nào?', opts: ['忘', '想', '看', '花'], ans: 0, exp: '记得 = nhớ, còn nhớ; trái nghĩa là 忘 = quên.' }
+  { q: 'Bạn muốn nói: “Hôm nay đông người hơn hôm qua.”', opts: ['今天的人比昨天多。', '今天的人多比昨天。', '今天比昨天的人很多。', '今天的人比昨天是多。'], ans: 0, exp: 'A + 比 + B + tính từ: tính từ (多) đứng cuối; không đặt tính từ trước 比 như tiếng Việt “đông hơn”, không thêm 很/是.' },
+  { q: 'Câu nào SAI?', opts: ['这个房间比那个很大。', '这个菜比那个还好吃。', '左边的书包比右边的新。', '坐火车比坐飞机便宜。'], ans: 0, exp: 'Câu 比 không dùng 很 trước tính từ; muốn nhấn mạnh thì dùng 还/更: 比那个还大.' },
+  { q: 'Chiếc áo đỏ đã đẹp, nhưng bạn thấy chiếc áo trắng còn đẹp hơn: “白色的比红色的＿＿好看。”', opts: ['更', '很', '真', '有点儿'], ans: 0, exp: '比 + B + 更 + tính từ = còn … hơn; 很/真/有点儿 không dùng trong câu so sánh với 比.' },
+  { q: 'Chọn từ đúng: “＿＿安妮是外国人，但是她做的中国菜非常好吃。”', opts: ['虽然', '因为', '所以', '还是'], ans: 0, exp: 'Vế sau có 但是 nên vế trước dùng 虽然; 因为/所以 chỉ nguyên nhân – kết quả.' },
+  { q: 'Câu nào SAI?', opts: ['虽然我很累，所以我还想去跑步。', '虽然天气很冷，但是他还去游泳了。', '我们虽然没见过，但是我知道他是谁。', '虽然这家店不大，但是东西很多。'], ans: 0, exp: '虽然 đi với 但是, không đi với 所以 (所以 đi với 因为).' },
+  { q: 'Bạn muốn nói: “Quán ăn này tuy xa, nhưng tôi rất thích.”', opts: ['这家饭馆虽然很远，但是我很喜欢。', '这家饭馆虽然很远，我但是很喜欢。', '这家饭馆很远虽然，但是我很喜欢。', '但是这家饭馆很远，虽然我很喜欢。'], ans: 0, exp: '虽然 đứng đầu câu hoặc sau chủ ngữ vế 1; 但是 đứng đầu vế 2, trước chủ ngữ (但是我…).' },
+  { q: 'A: “这块手表八千多，太贵了！” — B đáp:', opts: ['虽然有点儿贵，但是真的很漂亮。', '虽然一点儿贵，但是真的很漂亮。', '有点儿贵虽然，但是真的很漂亮。', '虽然有点儿贵，但是真的漂亮很。'], ans: 0, exp: '“hơi đắt” là 有点儿贵 (有点儿 + tính từ), không phải 一点儿贵; 很 đứng trước tính từ: 很漂亮.' },
+  { q: 'Bạn của bạn hỏi: “你还记得李文吗？” Bạn vẫn nhớ cậu ấy, bạn đáp:', opts: ['记得，他是我的中学同学。', '记得了，他是我的中学同学。', '是记得，他是我的中学同学。', '没记得，他是我的中学同学。'], ans: 0, exp: 'Trả lời khẳng định chỉ cần 记得 (không thêm 了, không thêm 是); không nhớ thì nói 不记得 hoặc 忘了.' },
+  { q: 'Ở nhà hàng, bạn nói với bạn bè: “Chúng ta gọi thêm một món nữa nhé.”', opts: ['我们再点一个菜吧。', '我们点再一个菜吧。', '我们再买一个菜吧。', '我们一个菜再点吧。'], ans: 0, exp: '点菜 = gọi món (không dùng 买); 再 đứng trước động từ: 再点一个菜.' },
+  { q: '“你买这件衣服＿＿了多少钱？” — “八百多。”', opts: ['花', '卖', '开', '送'], ans: 0, exp: '花 + tiền = tiêu tiền: 花了多少钱 = đã tiêu bao nhiêu tiền.' },
+  { q: 'Bạn thấy bạn mình đeo một chiếc đồng hồ mới, bạn hỏi:', opts: ['你的新手表是在哪儿买的？', '你的新手表在哪儿买的是？', '你的新手表是哪儿买在的？', '你的是新手表在哪儿买的？'], ans: 0, exp: 'Hỏi nơi mua (việc đã xảy ra) dùng 是 + 在哪儿 + động từ + 的.' },
+  { q: 'A: “你丈夫喜欢看足球吗？” — B đáp:', opts: ['他觉得爱情片比足球有意思。', '他觉得爱情片有意思比足球。', '他觉得爱情片比足球很有意思。', '他觉得比足球爱情片有意思。'], ans: 0, exp: 'Trật tự: A + 比 + B + tính từ (爱情片比足球有意思); không thêm 很, không đưa 比 B lên trước A.' }
 ];
 
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá.',
+  intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời về chính bạn — dùng câu 比 (có thể thêm 还/更) và 虽然……，但是…….',
   questions: [
     {
-      q_zh: '这两块手表，你觉得哪块好看？为什么？',
-      q_vn: 'Hai chiếc đồng hồ này, bạn thấy chiếc nào đẹp? Vì sao?',
-      hint: '我觉得……比……好看。',
-      sample: '我喜欢左边这块，我觉得左边的比右边的好看，但是有点儿贵。',
-      sample_vn: 'Tôi thích chiếc bên trái, tôi thấy chiếc bên trái đẹp hơn chiếc bên phải, nhưng hơi đắt.',
-      note: 'A 比 B + tính từ — không thêm 很/非常 trước tính từ.'
+      q_zh: '在家吃饭和去饭馆吃饭，你喜欢哪个？',
+      q_vn: 'Ăn cơm ở nhà và đi ăn nhà hàng, bạn thích cái nào hơn? Hãy so sánh.',
+      hint: '我喜欢……，……比……',
+      sample: '我喜欢在家吃饭，家里的菜比饭馆的便宜，也更好吃。',
+      sample_vn: 'Mình thích ăn ở nhà, món ở nhà rẻ hơn ở nhà hàng, lại còn ngon hơn.',
+      note: 'A 比 B + tính từ; muốn nói “còn … hơn” thì thêm 更/还 trước tính từ.'
     },
     {
-      q_zh: '你喜欢看什么电影？为什么？',
-      q_vn: 'Bạn thích xem phim gì? Vì sao?',
-      hint: '我喜欢看……，因为……比……更有意思。',
-      sample: '我喜欢看爱情片，因为我觉得爱情片比别的电影更有意思。',
-      sample_vn: 'Tôi thích xem phim tình cảm, vì tôi thấy phim tình cảm thú vị hơn các phim khác.',
-      note: 'Dùng 更/还 để nhấn mức độ cao hơn trong câu so sánh.'
+      q_zh: '这个星期和上个星期，哪个星期你更忙？',
+      q_vn: 'Tuần này và tuần trước, tuần nào bạn bận hơn? Vì sao?',
+      hint: '这个星期比上个星期……',
+      sample: '这个星期比上个星期更忙，我每天都有课，晚上还要去打篮球。',
+      sample_vn: 'Tuần này bận hơn tuần trước, ngày nào mình cũng có tiết, buổi tối còn phải đi chơi bóng rổ.',
+      note: 'Không dùng 很 trong câu 比: 比上个星期更忙, không nói 比上个星期很忙.'
     },
     {
-      q_zh: '在网上买东西和在商场买东西，哪个更便宜？',
-      q_vn: 'Mua hàng trên mạng và mua ở trung tâm thương mại, cái nào rẻ hơn?',
-      hint: '……买比……买便宜。',
-      sample: '我觉得网上买比在商场买便宜，虽然要等几天，但是可以花少一点儿钱。',
-      sample_vn: 'Tôi thấy mua trên mạng rẻ hơn mua ở trung tâm thương mại, tuy phải đợi vài ngày nhưng tiêu ít tiền hơn.',
-      note: 'Kết hợp câu so sánh với 虽然……但是…….'
+      q_zh: '你有没有很累但是很快乐的一天？',
+      q_vn: 'Kể một việc: hôm đó bạn rất mệt nhưng rất vui.',
+      hint: '虽然……，但是……',
+      sample: '上个星期天我跟朋友踢了两个小时足球，虽然很累，但是我们都很快乐。',
+      sample_vn: 'Chủ nhật tuần trước mình đá bóng với bạn hai tiếng, tuy rất mệt nhưng ai cũng rất vui.',
+      note: '虽然……，但是…… nối hai ý trái ngược; 但是 đứng đầu vế sau.'
     },
     {
-      q_zh: '你忘过朋友或者家人的生日吗？那天怎么样？',
-      q_vn: 'Bạn từng quên sinh nhật của bạn bè hay người nhà chưa? Hôm đó thế nào?',
-      hint: '虽然我忘了，但是……',
-      sample: '虽然我忘了他的生日，但是我记得给他打电话，还请他去饭馆吃饭。',
-      sample_vn: 'Mặc dù tôi quên sinh nhật của bạn ấy, nhưng tôi vẫn nhớ gọi điện và mời bạn ấy đi ăn ở nhà hàng.',
-      note: '虽然……但是…… nối hai vế trái ngược nhau.'
+      q_zh: '你记得爸爸妈妈的生日吗？你给他们送过什么礼物？',
+      q_vn: 'Bạn có nhớ sinh nhật bố mẹ không? Bạn từng tặng bố mẹ quà gì?',
+      hint: '我记得……，我给……送过……',
+      sample: '我记得，我妈妈的生日是五月十号，去年我给她送了一块手表。',
+      sample_vn: 'Mình nhớ, sinh nhật mẹ mình là ngày 10 tháng 5, năm ngoái mình tặng mẹ một chiếc đồng hồ.',
+      note: '记得 + sự việc = nhớ (điều gì); 送过 = từng tặng.'
     },
     {
-      q_zh: '你今天花了多少钱？都买了什么？',
-      q_vn: 'Hôm nay bạn tiêu bao nhiêu tiền? Đã mua những gì?',
-      hint: '我今天花了……，买了……什么的。',
-      sample: '我今天花了不少钱，吃饭、看电影、买手表什么的，虽然花了一些钱，但是我很快乐。',
-      sample_vn: 'Hôm nay tôi tiêu không ít tiền: ăn cơm, xem phim, mua đồng hồ… Tuy tiêu một ít tiền nhưng tôi rất vui.',
-      note: 'Ôn lại “什么的” của bài 6 trong câu nói về chi tiêu.'
+      q_zh: '你一个月花多少钱？你的钱都买什么了？',
+      q_vn: 'Một tháng bạn tiêu bao nhiêu tiền? Bạn tiêu tiền vào những gì?',
+      hint: '我一个月花……，买……什么的。',
+      sample: '我一个月花两千多块钱，买书、买衣服、吃饭什么的。',
+      sample_vn: 'Một tháng mình tiêu hơn hai nghìn tệ, mua sách, mua quần áo, ăn uống, v.v.',
+      note: '花 + số tiền = tiêu bao nhiêu tiền; ……什么的 = … v.v.'
     }
   ]
 };
 
 var translateData = [
-  { vi: 'Anh cũng thấy chiếc bên trái đẹp hơn chiếc bên phải.', zh: '我也觉得左边的比右边的好看。', py: 'Wǒ yě juéde zuǒbian de bǐ yòubian de hǎokàn.' },
-  { vi: 'Mua trên mạng rẻ hơn mua ở đây.', zh: '网上买比在这里买便宜。', py: 'Wǎngshang mǎi bǐ zài zhèlǐ mǎi piányi.' },
-  { vi: 'Mặc dù em quên, nhưng anh vẫn nhớ.', zh: '虽然你忘了，但是我记得。', py: 'Suīrán nǐ wàng le, dànshì wǒ jìde.' },
-  { vi: 'Hôm nay anh đã tiêu không ít tiền nhỉ?', zh: '今天花了不少钱吧？', py: 'Jīntiān huāle bù shǎo qián ba?' },
-  { vi: 'Người chồng mời vợ đi ăn ở nhà hàng.', zh: '丈夫请妻子去饭馆吃饭。', py: 'Zhàngfu qǐng qīzi qù fànguǎn chīfàn.' }
+  { vi: 'Chiếc đồng hồ của bố tôi còn đắt hơn chiếc của tôi.', zh: '我爸爸的手表比我的还贵。', py: 'Wǒ bàba de shǒubiǎo bǐ wǒ de hái guì.' },
+  { vi: 'Tuy hôm nay là Chủ nhật, nhưng chị tôi vẫn phải đi làm.', zh: '虽然今天是星期天，但是我姐姐还要去上班。', py: 'Suīrán jīntiān shì xīngqītiān, dànshì wǒ jiějie hái yào qù shàngbān.' },
+  { vi: 'Quán ăn này rẻ hơn quán ăn ở ngoài trường.', zh: '这个饭馆比学校外边的饭馆便宜。', py: 'Zhège fànguǎn bǐ xuéxiào wàibian de fànguǎn piányi.' },
+  { vi: 'Chồng chị ấy chơi bóng rổ rất giỏi.', zh: '她丈夫篮球打得很好。', py: 'Tā zhàngfu lánqiú dǎ de hěn hǎo.' },
+  { vi: 'Tôi nhớ là cô ấy không ăn thịt.', zh: '我记得她不吃肉。', py: 'Wǒ jìde tā bù chī ròu.' }
 ];
 
 var translateDataRev = [
-  { vi: 'Anh nhìn này, hai chiếc đồng hồ này thế nào?', zh: '你看，这两块手表怎么样？', py: 'Nǐ kàn, zhè liǎng kuài shǒubiǎo zěnmeyàng?' },
-  { vi: 'Thật không rẻ! Tám nghìn tám!', zh: '真不便宜！八千八！', py: 'Zhēn bù piányi! Bā qiān bā!' },
-  { vi: 'Anh nhớ là em thích xem phim tình cảm.', zh: '我记得你喜欢看爱情片。', py: 'Wǒ jìde nǐ xǐhuan kàn àiqíngpiàn.' },
-  { vi: 'Sao anh gọi nhiều món thế?', zh: '怎么点这么多菜？', py: 'Zěnme diǎn zhème duō cài?' },
-  { vi: 'Người vợ cảm thấy hôm nay rất vui.', zh: '妻子觉得今天很快乐。', py: 'Qīzi juéde jīntiān hěn kuàilè.' }
+  { vi: 'Cá ở quán này ngon hơn quán kia, chúng ta vào quán này nhé.', zh: '这家饭馆的鱼比那家的好吃，我们去这家吧。', py: 'Zhè jiā fànguǎn de yú bǐ nà jiā de hǎochī, wǒmen qù zhè jiā ba.' },
+  { vi: 'Tuy chúng tôi mới gặp lần đầu, nhưng tôi thấy anh ấy rất được.', zh: '虽然我们是第一次见，但是我觉得他很不错。', py: 'Suīrán wǒmen shì dì-yī cì jiàn, dànshì wǒ juéde tā hěn búcuò.' },
+  { vi: 'Cái bạn cầm ở tay phải là gì vậy?', zh: '你右手拿的是什么？', py: 'Nǐ yòushǒu ná de shì shénme?' },
+  { vi: 'Hôm nay anh ấy mất một tiếng để nấu bữa tối.', zh: '今天他花了一个小时做晚饭。', py: 'Jīntiān tā huāle yí ge xiǎoshí zuò wǎnfàn.' }
 ];
 
 // ══════════════════════════════════════════

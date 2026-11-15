@@ -1157,135 +1157,158 @@ var dialogData = [
 
 var listenData = [
   {
-    audio: '考试就要开始了，请大家写上姓名，写好后就可以做题了。我很想去中国，虽然去过一次，但是很想再去一次。',
+    audio: '这本书我看过两次，但是还想再看一次。',
     questions: [
-      { q: '同学们要开始做什么？', opts: ['学习', '考试', '跑步'], ans: 1 },
-      { q: '白家月去过几次中国？', opts: ['一次', '两次', '七次'], ans: 0 }
+      { q: 'Người nói đã đọc cuốn sách này mấy lần?', opts: ['Một lần', 'Hai lần', 'Ba lần'], ans: 1, exp: '看过两次 = đã đọc hai lần; số + 次 đứng sau 过.' },
+      { q: 'Người nói còn muốn đọc nữa không?', opts: ['Muốn đọc thêm một lần', 'Không muốn đọc nữa', 'Chưa đọc lần nào'], ans: 0, exp: '还想再看一次 = còn muốn đọc thêm một lần nữa.' }
     ]
   },
   {
-    audio: '考完试了，我现在可以出国旅游了。我要再去一次北京。因为我想再吃一次烤鸭，再喝一次奶茶。我还在网上买好颐和园的门票了呢。',
+    audio: '我们坐的是早上八点的飞机，从家到机场有四十多分钟，所以六点半就要出门。',
     questions: [
-      { q: '白家月要去哪儿？', opts: ['北京', '学校', '同学家'], ans: 0 },
-      { q: '她的门票是在哪儿买的？', opts: ['网上', '颐和园', '学校'], ans: 0 }
+      { q: 'Máy bay cất cánh lúc mấy giờ?', opts: ['6 giờ rưỡi', '8 giờ', '7 giờ'], ans: 1, exp: '早上八点的飞机 = chuyến bay lúc 8 giờ sáng; 六点半 là giờ ra khỏi nhà.' },
+      { q: 'Từ nhà đến sân bay mất bao lâu?', opts: ['Hơn 40 phút', 'Hơn 30 phút', 'Một tiếng'], ans: 0, exp: '有四十多分钟 = phải hơn 40 phút; 有 + số lượng nhấn mạnh đạt tới con số đó.' }
     ]
   },
   {
-    audio: '李文，你有一年没回国了吧？不到一年。我六月的时候回去了一次。我记得你那次的机票很便宜。这次的机票虽然有点儿贵，但想到就要飞北京了，我还是很高兴的。',
+    audio: '我有半个月没见到小明了，他是不是回国了？',
     questions: [
-      { q: '李文多长时间没回国了？', opts: ['一年', '六个月', '不到一年'], ans: 2 },
-      { q: '这次的机票怎么样？', opts: ['很贵', '很便宜', '有点儿贵'], ans: 2 }
+      { q: 'Người nói không gặp Tiểu Minh bao lâu rồi?', opts: ['Nửa tháng', 'Một tháng', 'Ba ngày'], ans: 0, exp: '有半个月没见到 = đã nửa tháng không gặp; 有 + thời lượng + 没 + V + 了.' },
+      { q: 'Người nói đoán gì?', opts: ['Tiểu Minh bị ốm', 'Tiểu Minh về nước rồi', 'Tiểu Minh đang đi thi'], ans: 1, exp: '是不是回国了？= có phải về nước rồi không?' }
     ]
   },
   {
-    audio: '我六月的时候回过一次北京，现在有半年多没回去了，我有点儿想家。就要过年了，我要回家过年。我们都是星期五的飞机。',
+    audio: '外面阴天了，好像要下雨了，我们快回家吧。',
     questions: [
-      { q: '他为什么要回家？', opts: ['要回家过年', '要去旅游', '要去上学'], ans: 0 },
-      { q: '他们坐什么时候的飞机？', opts: ['星期五', '星期六', '星期天'], ans: 0 }
+      { q: 'Người nói đoán thời tiết thế nào?', opts: ['Sắp có tuyết', 'Sắp mưa', 'Sắp nắng'], ans: 1, exp: '好像要下雨了 = hình như sắp mưa rồi; 好像 dùng khi phỏng đoán.' },
+      { q: 'Người nói muốn làm gì?', opts: ['Mau về nhà', 'Ra ngoài chơi', 'Đi siêu thị'], ans: 0, exp: '我们快回家吧 = chúng ta mau về nhà đi.' }
+    ]
+  },
+  {
+    audio: '颐和园的门票不贵，学生买票还可以便宜一半。',
+    questions: [
+      { q: 'Vé vào Di Hoà Viên thế nào?', opts: ['Rất đắt', 'Không đắt', 'Không cần mua'], ans: 1, exp: '门票不贵 = vé vào cửa không đắt.' },
+      { q: 'Học sinh mua vé được thế nào?', opts: ['Rẻ một nửa', 'Được miễn phí', 'Rẻ 10 tệ'], ans: 0, exp: '便宜一半 = rẻ đi một nửa.' }
+    ]
+  },
+  {
+    audio: '我高中学过一年中文，现在在大学学了半年了。',
+    questions: [
+      { q: 'Ở cấp ba người nói học tiếng Trung bao lâu?', opts: ['Nửa năm', 'Một năm', 'Hai năm'], ans: 1, exp: '高中学过一年 = hồi cấp ba từng học một năm.' },
+      { q: 'Lên đại học, người nói đã học thêm bao lâu?', opts: ['Nửa năm', 'Một năm', 'Ba tháng'], ans: 0, exp: '在大学学了半年了 = ở đại học đã học được nửa năm.' }
     ]
   }
 ];
 
 var matchData = [
   { left: '写上', right: '姓名' },
-  { left: '出国', right: '旅游' },
-  { left: '再去', right: '一次北京' },
-  { left: '买好', right: '颐和园的门票' },
-  { left: '有一年', right: '没回国了' },
-  { left: '好像', right: '小鸟' }
+  { left: '小', right: '鸟' },
+  { left: '高', right: '中' },
+  { left: '一条', right: '路' },
+  { left: '机', right: '票' },
+  { left: '出', right: '门' },
+  { left: '好', right: '像' }
 ];
 
 var fillData = [
-  { pre: '请大家写上', blank: '姓名', post: '。', hint: '(họ tên)', ans: '姓名' },
-  { pre: '考完试了，我现在可以', blank: '出国', post: '旅游了。', hint: '(ra nước ngoài)', ans: '出国' },
-  { pre: '我还在网上买好颐和园的', blank: '门票', post: '了呢。', hint: '(vé vào cửa)', ans: '门票' },
-  { pre: '我的', blank: '高中', post: '同学就在颐和园上班。', hint: '(cấp ba)', ans: '高中' },
-  { pre: '', blank: '出门', post: '旅游，多个朋友多条路。', hint: '(ra khỏi nhà)', ans: '出门' },
-  { pre: '还是我送你去的', blank: '机场', post: '呢。', hint: '(sân bay)', ans: '机场' },
-  { pre: '这次的', blank: '机票', post: '虽然有点儿贵。', hint: '(vé máy bay)', ans: '机票' },
-  { pre: '我们', blank: '好像', post: '小鸟，一起飞到北京。', hint: '(giống như)', ans: '好像' }
+  { pre: 'Trước giờ thi, cô giáo dặn: “请在本子上写好你的', blank: '姓名', post: '，再开始做题。”', hint: '(họ tên)', ans: '姓名', exp: '姓名 = họ tên (dùng trong giấy tờ, bài thi); 写好 = viết xong, viết cẩn thận.' },
+  { pre: '“北京你来过几次？” — “我来过三', blank: '次', post: '了。”', hint: '(lần)', ans: '次', exp: 'Bổ ngữ động lượng: động từ + 过 + số + 次: 来过三次.' },
+  { pre: '“刘明来找过你吗？” — “他昨天找过我', blank: '两次', post: '，我都不在。”', hint: '(hai lần)', ans: '两次', exp: 'Tân ngữ là đại từ (我) thì động lượng đứng sau tân ngữ: 找过我两次.' },
+  { pre: 'Ở chợ, bạn ước lượng túi táo: “这些苹果', blank: '有', post: '五斤吗？” — “没有，只有四斤多。”', hint: '(đạt tới — ước lượng)', ans: '有', exp: '有 + số lượng = đạt tới con số đó: 有五斤吗？= có được năm cân không?' },
+  { pre: '“明天几点', blank: '出门', post: '？” — “七点，我们要去机场接爷爷。”', hint: '(ra khỏi nhà)', ans: '出门', exp: '出门 = ra khỏi nhà, ra ngoài.' },
+  { pre: 'Bạn kể về bạn bè cũ: “我的', blank: '高中', post: '同学现在都在上大学了。”', hint: '(cấp ba)', ans: '高中', exp: '高中同学 = bạn học cấp ba; 高中 đứng trước 同学.' },
+  { pre: '“你的', blank: '机票', post: '买好了吗？” — “买好了，是星期六的。”', hint: '(vé máy bay)', ans: '机票', exp: '机票 = vé máy bay; 买好 = mua xong, mua sẵn.' },
+  { pre: '“我们坐的飞机几点', blank: '飞', post: '？” — “下午三点。”', hint: '(bay, cất cánh)', ans: '飞', exp: '飞 = bay; 几点飞？= mấy giờ bay?' },
+  { pre: '“王老师今天没来上课，她', blank: '好像', post: '生病了。”', hint: '(hình như)', ans: '好像', exp: '好像 + vị ngữ = hình như …; dùng khi phỏng đoán, không chắc chắn.' },
+  { pre: '“你哥哥现在在哪儿？” — “他去年就', blank: '出国', post: '了，现在在法国工作。”', hint: '(ra nước ngoài)', ans: '出国', exp: '出国 = ra nước ngoài; 就……了 = đã … từ (sớm) rồi.' },
+  { pre: '“学校前面那条', blank: '路', post: '车很多，过去的时候慢点儿。”', hint: '(con đường)', ans: '路', exp: '条 là lượng từ của 路: 那条路.' },
+  { pre: 'Đến cổng công viên, nhân viên hỏi: “你的', blank: '门票', post: '呢？没有门票不能进去。”', hint: '(vé vào cửa)', ans: '门票', exp: '门票 = vé vào cửa (công viên, bảo tàng…).' }
 ];
 
 var sortData = [
-  { words: ['我', '想', '再', '去', '一', '次', '中国', '。'], ans: '我想再去一次中国。', audio: '我想再去一次中国。' },
-  { words: ['安妮', '去过', '一', '次', '北京', '。'], ans: '安妮去过一次北京。', audio: '安妮去过一次北京。' },
-  { words: ['李文', '见', '了', '杨同乐', '两', '次', '。'], ans: '李文见了杨同乐两次。', audio: '李文见了杨同乐两次。' },
-  { words: ['你', '有', '一', '年', '没', '回国', '了', '吧', '？'], ans: '你有一年没回国了吧？', audio: '你有一年没回国了吧？' },
-  { words: ['我', '还', '在', '网上', '买好', '门票', '了', '呢', '。'], ans: '我还在网上买好门票了呢。', audio: '我还在网上买好门票了呢。' },
-  { words: ['我们', '好像', '小鸟', '，', '一起', '飞到', '北京', '。'], ans: '我们好像小鸟，一起飞到北京。', audio: '我们好像小鸟，一起飞到北京。' }
+  { words: ['我', '去年', '去', '了', '两', '次', '西安', '。'], ans: '我去年去了两次西安。', audio: '我去年去了两次西安。', alt: ['去年我去了两次西安。', '我去年去了西安两次。', '去年我去了西安两次。'] },
+  { words: ['妈妈', '给', '我', '打', '了', '三', '次', '电话', '。'], ans: '妈妈给我打了三次电话。', audio: '妈妈给我打了三次电话。' },
+  { words: ['这个', '字', '老师', '教', '了', '我们', '三', '次', '。'], ans: '这个字老师教了我们三次。', audio: '这个字老师教了我们三次。' },
+  { words: ['爷爷', '今年', '有', '八十', '岁', '了', '，', '身体', '还', '很', '好', '。'], ans: '爷爷今年有八十岁了，身体还很好。', audio: '爷爷今年有八十岁了，身体还很好。', alt: ['今年爷爷有八十岁了，身体还很好。'] },
+  { words: ['这', '是', '我', '第', '一', '次', '坐', '飞机', '出国', '。'], ans: '这是我第一次坐飞机出国。', audio: '这是我第一次坐飞机出国。' },
+  { words: ['天', '上', '飞', '着', '一', '只', '小鸟', '。'], ans: '天上飞着一只小鸟。', audio: '天上飞着一只小鸟。' },
+  { words: ['门票', '我', '已经', '在', '网上', '买', '好', '了', '。'], ans: '门票我已经在网上买好了。', audio: '门票我已经在网上买好了。', alt: ['我已经在网上买好门票了。'] },
+  { words: ['那', '条', '路', '我', '走', '过', '一', '次', '，', '不', '太', '远', '。'], ans: '那条路我走过一次，不太远。', audio: '那条路我走过一次，不太远。' }
 ];
 
 var mcData = [
-  { q: '我想再吃＿＿烤鸭。', opts: ['一次', '次一', '一个次', '一次的'], ans: 0, exp: 'Động lượng 一次 đứng sau động từ, trước tân ngữ chỉ vật: 再吃一次烤鸭.' },
-  { q: '我想找他＿＿。', opts: ['一次', '一次他', '次一', '他一次'], ans: 0, exp: 'Tân ngữ là đại từ thì động lượng đặt sau đại từ: 找他一次.' },
-  { q: '安妮来过这儿＿＿。', opts: ['两次', '次两', '两个次', '第两次'], ans: 0, exp: 'Số + 次 đặt sau 过: 来过这儿两次; 次 không đi với 个.' },
-  { q: '你女儿今年＿＿10岁了吗？', opts: ['有', '是', '在', '过'], ans: 0, exp: '有 + số lượng = đạt tới mức đó: 有10岁了吗？= đã được 10 tuổi chưa?' },
-  { q: '我＿＿一个月没给家里打电话了。', opts: ['有', '是', '过', '在'], ans: 0, exp: '有 + thời lượng nhấn mạnh thời gian đã khá lâu: 有一个月没打电话了.' },
-  { q: 'Khi tân ngữ là ĐẠI TỪ, bổ ngữ động lượng đặt ở đâu?', opts: ['Sau đại từ', 'Trước đại từ', 'Đầu câu', 'Cuối câu, sau 了'], ans: 0, exp: 'Tân ngữ là đại từ: động từ + đại từ + số + 次, ví dụ 找他一次.' },
-  { q: '“有+数量短语” biểu thị điều gì?', opts: ['Đạt tới một số lượng nhất định', 'Sở hữu một vật', 'Phủ định', 'So sánh'], ans: 0, exp: '有 + cụm số lượng biểu thị đạt tới một con số nhất định, ví dụ 有10岁了.' },
-  { q: '“多个朋友多条路” nghĩa là gì?', opts: ['Thêm một người bạn là thêm một con đường', 'Bạn bè nhiều thì đường xa', 'Đường nhiều bạn ít', 'Đi nhiều đường gặp nhiều bạn'], ans: 0, exp: 'Câu tục ngữ: có thêm một người bạn là có thêm một con đường (thêm người giúp đỡ).' }
+  { q: 'Bạn muốn nói: “Bộ phim này tôi đã xem ba lần rồi.”', opts: ['这个电影我看了三次了。', '这个电影我三次看了。', '这个电影我看了三个次了。', '这个电影我看了三次的。'], ans: 0, exp: 'Động lượng (三次) đứng sau động từ, không đứng trước; 次 không đi với 个; cuối câu dùng 了, không dùng 的.' },
+  { q: 'Bạn muốn nói: “Thầy giáo đã giúp tôi rất nhiều lần.”', opts: ['老师帮过我很多次。', '老师帮过很多次我。', '老师很多次帮过我。', '老师帮我过很多次。'], ans: 0, exp: 'Tân ngữ là đại từ (我) → động lượng đứng sau tân ngữ: 帮过我很多次; 过 đi liền sau động từ.' },
+  { q: 'Câu nào SAI?', opts: ['我见过两次他。', '我去过两次颐和园。', '这个菜我吃过一次。', '我们一起踢过一次足球。'], ans: 0, exp: 'Tân ngữ là đại từ thì động lượng đặt sau đại từ: 我见过他两次; tân ngữ chỉ nơi chốn/vật thì 次 có thể đứng trước: 去过两次颐和园.' },
+  { q: 'A: “你们等了多长时间？” — B đáp:', opts: ['我们等了有一个小时了。', '我们有等了一个小时了。', '我们等了一个小时有了。', '我们一个小时等了有了。'], ans: 0, exp: '有 đứng ngay trước cụm số lượng (有一个小时) để nhấn mạnh là đã khá lâu; không đặt 有 trước động từ.' },
+  { q: 'Bạn thấy một người từ xa trông giống Lý Văn, bạn nói:', opts: ['那个人好像是李文。', '那个人很好像是李文。', '那个人好像是李文吗？', '那个人是好像李文。'], ans: 0, exp: '好像 đứng trước 是 / động từ: 好像是李文; không thêm 很 trước 好像, không thêm 是 trước 好像; câu phỏng đoán không thêm 吗.' },
+  { q: 'A: “你爸爸在家吗？” — B: “不在，他早上七点就＿＿去机场了。”', opts: ['出门', '出国', '出来', '回国'], ans: 0, exp: '出门 = ra khỏi nhà; người nói đang ở nhà nên không dùng 出来; 出国/回国 không hợp với “7 giờ sáng ra sân bay”.' },
+  { q: 'Bạn muốn hỏi giá vé máy bay đi Tây An:', opts: ['去西安的机票多少钱？', '去西安机票的多少钱？', '机票去西安多少钱？', '去西安的机票是多少钱吗？'], ans: 0, exp: 'Định ngữ (去西安的) đứng trước danh từ 机票; câu có 多少 thì không thêm 吗.' },
+  { q: 'A: “你去过颐和园吗？” — B đáp:', opts: ['去过两次，第一次是跟爸爸妈妈去的。', '去了两次过，第一次是跟爸爸妈妈去的。', '两次去过，第一次是跟爸爸妈妈去的。', '去过两个次，第一次是跟爸爸妈妈去的。'], ans: 0, exp: '过 đi liền sau động từ, số + 次 đứng sau: 去过两次; không nói 两个次.' },
+  { q: 'Bạn muốn nói: “Anh ấy là bạn học cấp ba của tôi.”', opts: ['他是我的高中同学。', '他是我的同学高中。', '他是高中我的同学。', '他是我同学的高中。'], ans: 0, exp: 'Định ngữ đứng trước danh từ: 高中同学 — khác tiếng Việt “bạn học cấp ba”.' },
+  { q: 'Bạn bị lạc, muốn hỏi đường đến nhà ga:', opts: ['请问，去火车站走哪条路？', '请问，去火车站走哪个路？', '请问，走哪条路去火车站吗？', '请问，火车站去走哪条路？'], ans: 0, exp: 'Lượng từ của 路 là 条; câu có 哪 không thêm 吗.' },
+  { q: 'A: “你会做北京烤鸭吗？” — B: “不会，我只吃过＿＿。”', opts: ['一次', '一下', '次一', '一个次'], ans: 0, exp: '吃过一次 = từng ăn một lần (đếm số lần); 一下 chỉ làm thử một chút, không dùng với 过 để đếm lần.' }
 ];
 
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá.',
+  intro: 'Nhấn nút loa nghe câu hỏi / tình huống, rồi tự ghi âm câu trả lời — hãy nói về chính bạn, dùng bổ ngữ động lượng (去过两次, 找过他一次) và 有 + số lượng (有半年没……了).',
   questions: [
     {
-      q_zh: '你去过中国吗？去过几次？',
-      q_vn: 'Bạn đã đi Trung Quốc chưa? Đi mấy lần rồi?',
-      hint: '我去过……次，还想再去一次。',
-      sample: '我去过一次中国，虽然去过一次，但是很想再去一次。',
-      sample_vn: 'Tôi từng đi Trung Quốc một lần, tuy đã đi một lần nhưng rất muốn đi thêm lần nữa.',
-      note: 'Bổ ngữ động lượng: số từ + 次, đặt sau động từ.'
+      q_zh: '你去过哪儿旅游？去过几次？',
+      q_vn: 'Bạn đã đi du lịch những nơi nào? Mỗi nơi đi mấy lần?',
+      hint: '我去过……次……，还去过……',
+      sample: '我去过三次西安，还去过一次北京，北京的烤鸭非常好吃。',
+      sample_vn: 'Mình đã đi Tây An ba lần, còn đi Bắc Kinh một lần, vịt quay Bắc Kinh ngon cực.',
+      note: 'Số + 次 đứng sau 过; với tân ngữ chỉ nơi chốn có thể nói 去过三次西安.'
     },
     {
-      q_zh: '考完试以后你想做什么？',
-      q_vn: 'Thi xong bạn muốn làm gì?',
-      hint: '考完试了，我想……',
-      sample: '考完试了，我现在可以出国旅游了，我想再去一次北京，再吃一次烤鸭。',
-      sample_vn: 'Thi xong rồi, giờ tôi có thể đi du lịch nước ngoài, tôi muốn đi Bắc Kinh lần nữa, ăn vịt quay lần nữa.',
-      note: 'Ôn bổ ngữ kết quả 完 và 再……一次.'
+      q_zh: '你一个星期给家里打几次电话？',
+      q_vn: 'Một tuần bạn gọi điện về nhà mấy lần? Thường nói chuyện gì?',
+      hint: '我一个星期给家里打……次电话……',
+      sample: '我一个星期给家里打两次电话，每次都跟妈妈说很长时间。',
+      sample_vn: 'Một tuần mình gọi về nhà hai lần, lần nào cũng nói chuyện với mẹ rất lâu.',
+      note: 'Động từ li hợp 打电话: số + 次 chen vào giữa: 打两次电话.'
     },
     {
       q_zh: '你有多长时间没回家了？',
-      q_vn: 'Bạn đã bao lâu không về nhà rồi?',
-      hint: '我有……没回家了。',
-      sample: '我有半年多没回家了，有点儿想家，就要过年了，我要回家过年。',
-      sample_vn: 'Tôi đã hơn nửa năm không về nhà, hơi nhớ nhà, sắp Tết rồi tôi sẽ về nhà ăn Tết.',
-      note: '有 + cụm số lượng + 没 + động từ + 了.'
+      q_vn: 'Bạn đã bao lâu chưa về nhà (hoặc chưa gặp ông bà)? Bạn thấy thế nào?',
+      hint: '我有……没……了，……',
+      sample: '我有三个月没回家了，有点儿想爸爸妈妈。',
+      sample_vn: 'Mình đã ba tháng chưa về nhà rồi, hơi nhớ bố mẹ.',
+      note: '有 + thời lượng + 没 + động từ + 了: nhấn mạnh đã khá lâu.'
     },
     {
-      q_zh: '你旅游以前会做什么准备？',
-      q_vn: 'Trước khi đi du lịch bạn chuẩn bị những gì?',
-      hint: '我会先买好……，还会……',
-      sample: '我会先在网上买好机票和门票，还会问问在那儿的朋友，出门旅游，多个朋友多条路。',
-      sample_vn: 'Tôi sẽ mua sẵn vé máy bay và vé vào cửa trên mạng, còn hỏi bạn bè ở đó nữa, đi du lịch thêm một người bạn là thêm một con đường.',
-      note: '买好 là bổ ngữ kết quả: mua xong, mua sẵn.'
+      q_zh: '出门旅游，你要准备什么？',
+      q_vn: 'Trước khi đi du lịch xa, bạn cần chuẩn bị những gì?',
+      hint: '我要买好……，还要……',
+      sample: '我要在网上买好机票和门票，还要准备好衣服和药。',
+      sample_vn: 'Mình phải mua sẵn vé máy bay và vé vào cửa trên mạng, còn phải chuẩn bị sẵn quần áo và thuốc.',
+      note: '买好 / 准备好: bổ ngữ kết quả 好 = làm xong, sẵn sàng.'
     },
     {
-      q_zh: '这次的机票贵不贵？你觉得怎么样？',
-      q_vn: 'Vé máy bay lần này có đắt không? Bạn thấy thế nào?',
-      hint: '这次的机票虽然……，但是……',
-      sample: '这次的机票虽然有点儿贵，但是想到就要飞北京了，我还是很高兴的。',
-      sample_vn: 'Vé máy bay lần này tuy hơi đắt, nhưng nghĩ đến sắp được bay tới Bắc Kinh là tôi vẫn rất vui.',
-      note: 'Ôn 虽然……但是…… (bài 8) và 就要……了 (bài 10).'
+      q_zh: '你上高中的时候最喜欢做什么？',
+      q_vn: 'Hồi học cấp ba bạn thích làm gì nhất? Một tuần làm mấy lần?',
+      hint: '我上高中的时候最喜欢……，一个星期……次。',
+      sample: '我上高中的时候最喜欢踢足球，一个星期踢三次。',
+      sample_vn: 'Hồi cấp ba mình thích đá bóng nhất, một tuần đá ba lần.',
+      note: '最 + động từ tâm lý; động lượng 三次 đứng sau động từ 踢.'
     }
   ]
 };
 
 var translateData = [
-  { vi: 'Em rất muốn đi Trung Quốc thêm một lần nữa.', zh: '我很想再去一次中国。', py: 'Wǒ hěn xiǎng zài qù yí cì Zhōngguó.' },
-  { vi: 'Thi xong rồi, bây giờ mình có thể đi du lịch nước ngoài được rồi.', zh: '考完试了，我现在可以出国旅游了。', py: 'Kǎowán shì le, wǒ xiànzài kěyǐ chūguó lǚyóu le.' },
-  { vi: 'Bạn cũng cả năm rồi chưa về nước lần nào nhỉ?', zh: '你有一年没回国了吧？', py: 'Nǐ yǒu yì nián méi huíguó le ba?' },
-  { vi: 'Đi du lịch, thêm một người bạn là thêm một con đường.', zh: '出门旅游，多个朋友多条路。', py: 'Chūmén lǚyóu, duō ge péngyou duō tiáo lù.' },
-  { vi: 'Chúng tôi giống như đôi chim nhỏ, cùng nhau bay đến Bắc Kinh.', zh: '我们好像小鸟，一起飞到北京。', py: 'Wǒmen hǎoxiàng xiǎo niǎo, yìqǐ fēidào Běijīng.' }
+  { vi: 'Câu hỏi này tôi đã hỏi bạn ba lần rồi!', zh: '这个问题我已经问过你三次了！', py: 'Zhège wèntí wǒ yǐjīng wènguo nǐ sān cì le!' },
+  { vi: 'Đã hơn nửa năm tôi không được ăn sủi cảo mẹ làm rồi.', zh: '我有半年多没吃妈妈做的饺子了。', py: 'Wǒ yǒu bàn nián duō méi chī māma zuò de jiǎozi le.' },
+  { vi: 'Hình như ngoài kia có người đang gọi bạn.', zh: '外面好像有人在叫你。', py: 'Wàimiàn hǎoxiàng yǒu rén zài jiào nǐ.' },
+  { vi: 'Năm sau tôi muốn ra nước ngoài học.', zh: '明年我想出国学习。', py: 'Míngnián wǒ xiǎng chūguó xuéxí.' },
+  { vi: 'Con chim nhỏ đó bay lên nóc nhà rồi.', zh: '那只小鸟飞到房子上面去了。', py: 'Nà zhī xiǎo niǎo fēidào fángzi shàngmiàn qù le.' }
 ];
 
 var translateDataRev = [
-  { vi: 'Mời các em viết họ tên mình vào.', zh: '请大家写上姓名。', py: 'Qǐng dàjiā xiě shàng xìngmíng.' },
-  { vi: 'Mình còn mua sẵn vé vào cổng Di Hoà Viên trên mạng rồi.', zh: '我还在网上买好颐和园的门票了。', py: 'Wǒ hái zài wǎngshang mǎihǎo Yíhé Yuán de ménpiào le.' },
-  { vi: 'Chính là mình tiễn bạn ra sân bay mà.', zh: '还是我送你去的机场呢。', py: 'Hái shì wǒ sòng nǐ qù de jīchǎng ne.' },
-  { vi: 'Vé máy bay lần này tuy hơi đắt một chút.', zh: '这次的机票虽然有点儿贵。', py: 'Zhè cì de jīpiào suīrán yǒudiǎnr guì.' },
-  { vi: 'Năm mới sắp đến rồi, tôi phải về nhà đón Tết.', zh: '就要过年了，我要回家过年。', py: 'Jiù yào guònián le, wǒ yào huí jiā guònián.' }
+  { vi: 'Nhà hàng này tôi đến rất nhiều lần rồi, lần nào cũng ăn vịt quay.', zh: '这家饭店我来过很多次，每次都吃烤鸭。', py: 'Zhè jiā fàndiàn wǒ láiguo hěn duō cì, měi cì dōu chī kǎoyā.' },
+  { vi: 'Khi ra khỏi nhà đừng quên mang điện thoại.', zh: '出门的时候别忘了拿手机。', py: 'Chūmén de shíhou bié wàng le ná shǒujī.' },
+  { vi: 'Bay từ Bắc Kinh đến Tây An mất hai tiếng.', zh: '从北京飞到西安要两个小时。', py: 'Cóng Běijīng fēidào Xī\'ān yào liǎng ge xiǎoshí.' },
+  { vi: 'Ông nói hồi nhỏ ông chưa từng đi máy bay.', zh: '爷爷说他小时候没有坐过飞机。', py: 'Yéye shuō tā xiǎoshíhou méiyǒu zuòguo fēijī.' }
 ];
 
 // ══════════════════════════════════════════

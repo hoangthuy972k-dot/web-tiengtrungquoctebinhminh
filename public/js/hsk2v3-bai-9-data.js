@@ -1344,135 +1344,156 @@ var dialogData = [
 
 var listenData = [
   {
-    audio: '儿子的裤子坏了，我们给他买条新的吧。你看这条黑色的怎么样？没有你上次买的那条好看。',
+    audio: '超市离我们酒店不远，走路十五分钟就到了。',
     questions: [
-      { q: '为什么要给儿子买裤子？', opts: ['裤子坏了', '儿子过生日', '裤子太小了'], ans: 0 },
-      { q: '刘明觉得哪条好看？', opts: ['黑色的', '白色的', '上次买的'], ans: 2 }
+      { q: 'Siêu thị cách khách sạn thế nào?', opts: ['Rất xa', 'Không xa', 'Phải đi xe buýt'], ans: 1, exp: '超市离我们酒店不远 = siêu thị cách khách sạn chúng tôi không xa.' },
+      { q: 'Đi bộ mất bao lâu?', opts: ['15 phút', '50 phút', '5 phút'], ans: 0, exp: '走路十五分钟就到了 = đi bộ 15 phút là tới.' }
     ]
   },
   {
-    audio: '门口有家奶茶店。你想喝杯奶茶吗？我想喝咖啡，还是去咖啡店吧。咖啡店离这儿有点儿远。没关系，那家店的咖啡很好喝。',
+    audio: '这件衣服没有那件那么贵，颜色也更好看，我就买这件了。',
     questions: [
-      { q: '刘明想喝什么？', opts: ['牛奶', '奶茶', '咖啡'], ans: 2 },
-      { q: '咖啡店离这儿远吗？', opts: ['有点儿远', '很近', '就在门口'], ans: 0 }
+      { q: 'Người nói chọn chiếc nào, vì sao?', opts: ['Chiếc kia, vì đẹp hơn', 'Chiếc này, vì rẻ hơn và màu đẹp hơn', 'Chiếc này, vì rộng hơn'], ans: 1, exp: '这件没有那件那么贵 = chiếc này không đắt bằng chiếc kia; 颜色也更好看 = màu cũng đẹp hơn.' }
     ]
   },
   {
-    audio: '我们打车回去吧。这里离家很近，还是走路吧。要走多长时间？走半个多小时就到了。',
+    audio: '昨天晚上我看了三个小时电视，今天上课的时候很累。',
     questions: [
-      { q: '这里离家远吗？', opts: ['很近', '很远', '有点儿远'], ans: 0 },
-      { q: '走路要走多长时间？', opts: ['半个多小时', '一个多小时', '两个小时'], ans: 0 }
+      { q: 'Tối qua người nói xem TV bao lâu?', opts: ['Ba tiếng', 'Hai tiếng', 'Nửa tiếng'], ans: 0, exp: '看了三个小时电视 = xem TV ba tiếng; thời lượng đứng sau động từ.' },
+      { q: 'Hôm nay người đó thế nào?', opts: ['Không đi học', 'Rất mệt khi lên lớp', 'Rất vui'], ans: 1, exp: '今天上课的时候很累 = hôm nay lúc lên lớp rất mệt.' }
     ]
   },
   {
-    audio: '这周刘明休息，我下班后跟他去了一家商店。商店里边的衣服没有大商场里的好看。我们没有买到喜欢的衣服。因为想运动运动，所以喝完东西，我们就走回家了。',
+    audio: '我的生日是下个星期三，离今天还有八天。',
     questions: [
-      { q: '商店的衣服怎么样？', opts: ['没有大商场的好看', '比大商场的好看', '跟大商场的一样'], ans: 0 },
-      { q: '他们怎么回家的？', opts: ['走回家的', '打车回家的', '坐车回家的'], ans: 0 }
+      { q: 'Còn mấy ngày nữa đến sinh nhật người nói?', opts: ['Ba ngày', 'Tám ngày', 'Mười ngày'], ans: 1, exp: '离今天还有八天 = cách hôm nay còn tám ngày; 离 cũng dùng cho khoảng cách thời gian.' }
+    ]
+  },
+  {
+    audio: '弟弟的个子没有我高，但是他篮球打得非常好。',
+    questions: [
+      { q: 'Em trai so với người nói thế nào?', opts: ['Cao hơn người nói', 'Cao bằng người nói', 'Không cao bằng người nói'], ans: 2, exp: '弟弟的个子没有我高 = em trai không cao bằng tôi.' },
+      { q: 'Em trai giỏi môn gì?', opts: ['Bóng rổ', 'Bóng đá', 'Bơi'], ans: 0, exp: '篮球打得非常好 = chơi bóng rổ rất giỏi.' }
+    ]
+  },
+  {
+    audio: '妈妈的电脑坏了，下午我跟她去商店看看。',
+    questions: [
+      { q: 'Chiều nay người nói làm gì?', opts: ['Cùng mẹ đến cửa hàng', 'Ở nhà sửa máy tính', 'Đi học'], ans: 0, exp: '电脑坏了 = máy tính hỏng rồi; 跟她去商店看看 = cùng mẹ đến cửa hàng xem.' }
     ]
   }
 ];
 
 var matchData = [
-  { left: '裤子', right: '坏了' },
-  { left: '咖啡店离这儿', right: '有点儿远' },
-  { left: '这里离家', right: '很近' },
-  { left: '走', right: '半个多小时' },
-  { left: '个子', right: '没有他那么高' },
-  { left: '门口', right: '有家奶茶店' }
+  { left: '喝', right: '一杯咖啡' },
+  { left: '手机', right: '坏了' },
+  { left: '个子', right: '很高' },
+  { left: '看了两个小时', right: '电视' },
+  { left: '这周', right: '休息两天' },
+  { left: '一个多', right: '小时' },
+  { left: '走路', right: '二十分钟' }
 ];
 
 var fillData = [
-  { pre: '儿子的裤子', blank: '坏', post: '了，我们给他买条新的吧。', hint: '(hỏng)', ans: '坏' },
-  { pre: '', blank: '旁边', post: '那个男孩儿就穿了这样的裤子。', hint: '(bên cạnh)', ans: '旁边' },
-  { pre: '儿子的', blank: '个子', post: '没有他那么高。', hint: '(chiều cao)', ans: '个子' },
-  { pre: '', blank: '门口', post: '有家奶茶店。', hint: '(cửa ra vào)', ans: '门口' },
-  { pre: '咖啡店', blank: '离', post: '这儿有点儿远。', hint: '(cách)', ans: '离', exp: 'A + 离 + B + xa/gần chỉ khoảng cách giữa hai nơi: 咖啡店离这儿有点儿远.' },
-  { pre: '这里离家很', blank: '近', post: '，还是走路吧。', hint: '(gần)', ans: '近' },
-  { pre: '要', blank: '走路', post: '还是打车？', hint: '(đi bộ)', ans: '走路' },
-  { pre: '这', blank: '周', post: '刘明休息。', hint: '(tuần)', ans: '周' }
+  { pre: 'Bạn hỏi đường: “请问，车站', blank: '离', post: '这儿远吗？”', hint: '(cách)', ans: '离', exp: 'A + 离 + B + 远/近: hỏi khoảng cách giữa hai nơi.' },
+  { pre: '“你家离公司远不远？” — “不远，很', blank: '近', post: '，我每天走路去上班。”', hint: '(gần)', ans: '近', exp: '近 = gần, trái nghĩa với 远; 离……很近 = cách … rất gần.' },
+  { pre: '“你的新房间大吗？” — “不大，', blank: '没有', post: '我在家的房间大。”', hint: '(không … bằng)', ans: '没有', exp: 'A + 没有 + B + tính từ = A không … bằng B (chủ ngữ A được hiểu là căn phòng mới).' },
+  { pre: '“这家饭馆的菜好吃吗？” — “还可以，没有上次那家', blank: '那么', post: '好吃。”', hint: '(… đến thế)', ans: '那么', exp: '没有 + B + 那么 + tính từ: 那么 đứng ngay trước tính từ, nhấn mạnh mức độ của B.' },
+  { pre: '“你怎么没给我打电话？” — “不好意思，我的手机', blank: '坏', post: '了。”', hint: '(hỏng)', ans: '坏', exp: '坏了 = hỏng rồi; 了 chỉ sự thay đổi (trước tốt, giờ hỏng).' },
+  { pre: '“你看见我的书包了吗？” — “在你的椅子', blank: '旁边', post: '。”', hint: '(bên cạnh)', ans: '旁边', exp: 'Danh từ + 旁边 = bên cạnh cái gì: 椅子旁边.' },
+  { pre: '“我们在哪儿见？” — “学校', blank: '门口', post: '吧，我三点到。”', hint: '(cổng, cửa ra vào)', ans: '门口', exp: '学校门口 = cổng trường; nơi chốn + 门口.' },
+  { pre: '“这儿新开了一家', blank: '咖啡', post: '店，我们进去坐坐吧。”', hint: '(cà phê)', ans: '咖啡', exp: '咖啡店 = quán cà phê; 坐坐 = ngồi một chút (lặp động từ).' },
+  { pre: '“这', blank: '周', post: '六你有时间吗？我们去看电影吧。”', hint: '(tuần)', ans: '周', exp: '这周六 = thứ Bảy tuần này; 周 = 星期.' },
+  { pre: '“你别', blank: '这样', post: '说，他不是那个意思。”', hint: '(như thế này)', ans: '这样', exp: '这样 + động từ = (làm) như thế này: 别这样说 = đừng nói như vậy.' },
+  { pre: '“你看，那个', blank: '男孩儿', post: '游泳游得真快！”', hint: '(cậu bé)', ans: '男孩儿', exp: '男孩儿 = cậu bé, con trai; lượng từ 个.' },
+  { pre: '“你昨天睡了多长时间？” — “只睡了五个', blank: '小时', post: '。”', hint: '(tiếng, giờ đồng hồ)', ans: '小时', exp: 'Thời lượng: số + 个 + 小时, đứng sau động từ: 睡了五个小时.' }
 ];
 
 var sortData = [
-  { words: ['儿子', '的', '个子', '没有', '他', '那么', '高', '。'], ans: '儿子的个子没有他那么高。', audio: '儿子的个子没有他那么高。' },
-  { words: ['咖啡店', '离', '这儿', '有点儿', '远', '。'], ans: '咖啡店离这儿有点儿远。', audio: '咖啡店离这儿有点儿远。' },
-  { words: ['这里', '离', '家', '很', '近', '，', '还是', '走路', '吧', '。'], ans: '这里离家很近，还是走路吧。', audio: '这里离家很近，还是走路吧。' },
-  { words: ['走', '半个', '多', '小时', '就', '到', '了', '。'], ans: '走半个多小时就到了。', audio: '走半个多小时就到了。' },
-  { words: ['我', '去', '买', '杯', '奶茶', '。'], ans: '我去买杯奶茶。', audio: '我去买杯奶茶。' },
-  { words: ['陈天中', '跑步', '跑', '了', '两', '个', '小时', '。'], ans: '陈天中跑步跑了两个小时。', audio: '陈天中跑步跑了两个小时。' }
+  { words: ['医院', '离', '我们', '学校', '很', '近', '。'], ans: '医院离我们学校很近。', audio: '医院离我们学校很近。', alt: ['我们学校离医院很近。'] },
+  { words: ['他', '游泳', '游', '了', '一个', '多', '小时', '。'], ans: '他游泳游了一个多小时。', audio: '他游泳游了一个多小时。' },
+  { words: ['我', '等', '了', '他', '二十', '分钟', '。'], ans: '我等了他二十分钟。', audio: '我等了他二十分钟。', alt: ['他等了我二十分钟。'] },
+  { words: ['这', '条', '裤子', '没有', '那', '条', '那么', '长', '。'], ans: '这条裤子没有那条那么长。', audio: '这条裤子没有那条那么长。', alt: ['那条裤子没有这条那么长。'] },
+  { words: ['今天', '我', '看', '了', '两', '个', '小时', '的', '书', '。'], ans: '今天我看了两个小时的书。', audio: '今天我看了两个小时的书。', alt: ['我今天看了两个小时的书。'] },
+  { words: ['门口', '那', '家', '咖啡', '店', '的', '咖啡', '很', '好喝', '。'], ans: '门口那家咖啡店的咖啡很好喝。', audio: '门口那家咖啡店的咖啡很好喝。' },
+  { words: ['现在', '离', '下课', '还', '有', '五', '分钟', '。'], ans: '现在离下课还有五分钟。', audio: '现在离下课还有五分钟。' },
+  { words: ['你', '不', '能', '穿', '这样', '的', '衣服', '去', '上课', '。'], ans: '你不能穿这样的衣服去上课。', audio: '你不能穿这样的衣服去上课。' }
 ];
 
 var mcData = [
-  { q: '昨天＿＿今天这么冷。', opts: ['没有', '不比', '很', '更'], ans: 0, exp: 'A + 没有 + B + 这么/那么 + tính từ = A không… bằng B; 这么 không đi với 不比/很/更.' },
-  { q: '学校＿＿医院不远。', opts: ['离', '从', '比', '往'], ans: 0, exp: '离 chỉ khoảng cách: 学校离医院不远; 从 chỉ điểm xuất phát, 往 chỉ hướng.' },
-  { q: '他们学中文学了＿＿。', opts: ['两年', '年两', '二年', '两个年'], ans: 0, exp: 'Thời lượng đứng sau động từ; 年 không cần lượng từ 个, và trước nó dùng 两 chứ không dùng 二: 两年.' },
-  { q: '李文等了她＿＿。', opts: ['一个小时', '小时一个', '一小时个', '个一小时'], ans: 0, exp: 'Tân ngữ là đại từ thì thời lượng đứng sau: 等了她一个小时; 小时 cần lượng từ 个.' },
-  { q: 'Câu nào đúng khi nói "Trần Thiên Trung chạy bộ hai tiếng"?', opts: ['陈天中跑步跑了两个小时。', '陈天中跑步了两个小时。', '陈天中两个小时跑步了。', '陈天中跑了步两个小时。'], ans: 0, exp: 'Động từ có tân ngữ + thời lượng thì lặp động từ: 跑步跑了两个小时.' },
-  { q: '“没有” trong câu so sánh có nghĩa là gì?', opts: ['Không bằng', 'Hơn', 'Bằng nhau', 'Không có'], ans: 0, exp: 'A + 没有 + B + tính từ = A không bằng B (so sánh kém), không phải “không có”.' },
-  { q: '他写了半个小时汉字了。Câu này có nghĩa là gì?', opts: ['Bây giờ vẫn đang viết', 'Đã viết xong', 'Chưa bắt đầu viết', 'Sẽ viết nửa tiếng'], ans: 0, exp: 'Động từ + 了 + thời lượng + … + 了 (hai chữ 了): hành động vẫn đang tiếp diễn đến bây giờ.' },
-  { q: '现在＿＿我的生日还有三天。', opts: ['离', '从', '比', '在'], ans: 0, exp: 'Khoảng cách thời gian cũng dùng 离: 现在离我的生日还有三天.' }
+  { q: 'Bạn muốn nói: “Em gái tôi không cao bằng tôi.”', opts: ['妹妹没有我高。', '妹妹不有我高。', '妹妹没有我很高。', '妹妹比我不高。'], ans: 0, exp: 'So sánh kém: A + 没有 + B + tính từ; không dùng 不有, không thêm 很, không nói 比我不高.' },
+  { q: 'Câu nào SAI?', opts: ['我家很近离学校。', '书店离这儿不太远。', '机场离酒店有点儿远。', '我们公司离车站很近。'], ans: 0, exp: '离 + nơi chốn đứng TRƯỚC 远/近: 我家离学校很近; không nói 很近离学校 theo kiểu tiếng Việt “gần trường”.' },
+  { q: 'A: “从这儿到机场要多长时间？” — B đáp:', opts: ['打车要一个多小时。', '打车要一个小时多。', '打车要多一个小时。', '打车要一多个小时。'], ans: 0, exp: '多 đứng sau lượng từ 个: 一个多小时 = hơn một tiếng.' },
+  { q: 'Bạn muốn nói: “Hôm qua tôi đợi xe buýt nửa tiếng.”', opts: ['昨天我等公交车等了半个小时。', '昨天我半个小时等公交车了。', '昨天我等公交车了半个小时。', '昨天我等公交车等了半小时个。'], ans: 0, exp: 'Động từ có tân ngữ thì lặp lại động từ rồi mới đặt thời lượng: 等公交车等了半个小时; thời lượng không đứng trước động từ.' },
+  { q: 'A: “你学汉语多长时间了？” — B đáp:', opts: ['我学了两年了。', '我学了二年了。', '我两年学了。', '我学了两个年了。'], ans: 0, exp: 'Thời lượng sau động từ; trước 年 dùng 两 (không dùng 二) và không cần 个; 了……了 = đến nay đã … (vẫn đang học).' },
+  { q: 'Bạn đến muộn, bạn của bạn nói: “Mình đợi bạn bốn mươi phút rồi!”', opts: ['我等了你四十分钟了！', '我等了四十分钟你了！', '我四十分钟等你了！', '我等你了四十分钟！'], ans: 0, exp: 'Tân ngữ là đại từ (你) thì đứng trước thời lượng: 等了你四十分钟; 了 đứng ngay sau động từ.' },
+  { q: 'Chọn từ đúng: “＿＿我家到学校，走路要二十分钟。”', opts: ['从', '离', '往', '在'], ans: 0, exp: '从……到…… = từ … đến …; 离 chỉ khoảng cách (A 离 B 远/近), không đi với 到.' },
+  { q: 'Câu nào SAI?', opts: ['今天没有昨天很热。', '这个苹果没有那个大。', '我的电脑没有你的那么新。', '坐公交车没有打车那么快。'], ans: 0, exp: 'Câu so sánh với 没有 không dùng 很; muốn nhấn mạnh thì dùng 这么/那么: 没有昨天那么热.' },
+  { q: 'Bạn muốn nói: “Phim này không hay bằng phim hôm qua.”', opts: ['这个电影没有昨天的那么有意思。', '这个电影没有昨天的有意思那么。', '这个电影那么没有昨天的有意思。', '这个电影没有那么昨天的有意思。'], ans: 0, exp: '那么 đứng sau B, ngay trước tính từ: 没有昨天的那么有意思.' },
+  { q: 'A: “你今天怎么走路来学校？” — B đáp:', opts: ['我爸爸的车坏了。', '我爸爸的车坏。', '我爸爸的车很坏了。', '我爸爸的车没坏了。'], ans: 0, exp: '坏了 = (bị) hỏng rồi, cần 了 chỉ sự thay đổi; không thêm 很; phủ định là 没坏 (không có 了).' },
+  { q: 'Ở cửa hàng, bạn muốn nói: “Tôi muốn mua một cái cặp như thế này.”', opts: ['我想买一个这样的书包。', '我想买一个书包这样的。', '我想买这样一个的书包。', '我想买一个这样书包的。'], ans: 0, exp: '这样的 + danh từ = (cái) như thế này; định ngữ đứng trước danh từ, không đặt sau như tiếng Việt.' },
+  { q: 'Bạn muốn nói: “Cậu bé bên cạnh cao hơn con trai tôi.”', opts: ['旁边那个男孩儿的个子比我儿子高。', '旁边那个男孩儿的个子高比我儿子。', '旁边那个男孩儿的个子比我儿子很高。', '那个旁边男孩儿的个子比我儿子高。'], ans: 0, exp: 'Ôn câu 比 (bài 8): A 比 B + tính từ, không thêm 很; 旁边 đứng trước 那个男孩儿.' }
 ];
 
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá.',
+  intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời về chính bạn — dùng 离 + 远/近, 没有 + B + (那么) + tính từ và thời lượng sau động từ.',
   questions: [
     {
-      q_zh: '你家离学校（公司）远不远？',
-      q_vn: 'Nhà bạn cách trường (công ty) có xa không?',
-      hint: '我家离……很近／有点儿远。',
-      sample: '我家离公司很近，走路半个多小时就到了，所以我每天都走路上班。',
-      sample_vn: 'Nhà tôi cách công ty rất gần, đi bộ hơn nửa tiếng là tới, nên ngày nào tôi cũng đi bộ đi làm.',
-      note: 'A 离 B + 远/近; bổ ngữ thời lượng đặt sau động từ (走半个多小时).'
+      q_zh: '你家离学校远吗？你每天怎么去？',
+      q_vn: 'Nhà bạn cách trường có xa không? Mỗi ngày bạn đi bằng gì?',
+      hint: '我家离学校……，我每天……',
+      sample: '我家离学校有点儿远，我每天坐公交车去，要坐四十多分钟。',
+      sample_vn: 'Nhà mình cách trường hơi xa, ngày nào mình cũng đi xe buýt, mất hơn bốn mươi phút.',
+      note: 'A 离 B + 远/近; thời lượng đứng sau động từ (坐四十多分钟).'
     },
     {
-      q_zh: '你每天从家到学校（公司）要多长时间？',
-      q_vn: 'Mỗi ngày bạn đi từ nhà đến trường (công ty) mất bao lâu?',
-      hint: '我坐车／走路……了……',
-      sample: '我每天坐车坐半个小时，走路要走一个多小时，所以我一般坐车去。',
-      sample_vn: 'Mỗi ngày tôi ngồi xe nửa tiếng, đi bộ thì mất hơn một tiếng, nên tôi thường đi xe.',
-      note: 'Động từ li hợp/có tân ngữ: lặp lại động từ trước bổ ngữ thời lượng.'
+      q_zh: '你每天学习多长时间汉语？',
+      q_vn: 'Mỗi ngày bạn học tiếng Trung bao lâu?',
+      hint: '我每天学……汉语，还……',
+      sample: '我每天学一个半小时汉语，晚上还要写半个小时汉字。',
+      sample_vn: 'Mỗi ngày mình học tiếng Trung một tiếng rưỡi, buổi tối còn viết chữ Hán nửa tiếng.',
+      note: 'Động từ + thời lượng + tân ngữ: 学一个半小时汉语, 写半个小时汉字.'
     },
     {
-      q_zh: '你的个子有你的朋友高吗？',
-      q_vn: 'Bạn có cao bằng bạn của bạn không?',
-      hint: '我没有他那么高。／我比他高。',
-      sample: '我的个子没有他那么高，但是我跑得比他快。',
-      sample_vn: 'Tôi không cao bằng bạn ấy, nhưng tôi chạy nhanh hơn bạn ấy.',
-      note: 'A 没有 B (这么/那么) + tính từ = "không bằng".'
+      q_zh: '你和你的好朋友，谁的个子高？',
+      q_vn: 'Bạn và bạn thân của bạn, ai cao hơn?',
+      hint: '我的个子没有他（她）……／我比他（她）……',
+      sample: '我的个子没有她那么高，她很喜欢打篮球。',
+      sample_vn: 'Mình không cao bằng bạn ấy, bạn ấy rất thích chơi bóng rổ.',
+      note: 'A 没有 B (那么) + tính từ = A không … bằng B.'
     },
     {
-      q_zh: '你喜欢喝咖啡还是喝奶茶？为什么？',
-      q_vn: 'Bạn thích uống cà phê hay trà sữa? Vì sao?',
-      hint: '我喜欢喝……，因为……',
-      sample: '我喜欢喝奶茶，因为喝了咖啡，晚上就别想睡觉了。',
-      sample_vn: 'Tôi thích uống trà sữa, vì uống cà phê rồi thì buổi tối khỏi ngủ mất.',
-      note: 'Ôn 因为……所以…… của bài 4 khi nêu lý do.'
+      q_zh: '你喜欢喝咖啡吗？一天喝几杯？',
+      q_vn: 'Bạn có thích uống cà phê không? Một ngày uống mấy cốc?',
+      hint: '我……喝咖啡，每天……',
+      sample: '我很喜欢喝咖啡，每天早上喝一杯，晚上不喝。',
+      sample_vn: 'Mình rất thích uống cà phê, mỗi sáng uống một cốc, buổi tối thì không uống.',
+      note: 'Lượng từ của 咖啡 là 杯: 一杯咖啡.'
     },
     {
-      q_zh: '这周你做了什么？',
-      q_vn: 'Tuần này bạn đã làm gì?',
-      hint: '这周我……，还……',
-      sample: '这周我下班后跟朋友去了一家商店，虽然没有买到喜欢的衣服，但是我们去咖啡店坐了坐。',
-      sample_vn: 'Tuần này sau giờ làm tôi đi cùng bạn đến một cửa hàng, tuy không mua được quần áo mình thích nhưng chúng tôi đã đến quán cà phê ngồi một lúc.',
-      note: 'Kết hợp 虽然……但是…… (bài 8) với từ mới 周.'
+      q_zh: '这周你做了什么运动？做了多长时间？',
+      q_vn: 'Tuần này bạn đã chơi môn thể thao gì? Chơi bao lâu?',
+      hint: '……我……了……',
+      sample: '星期六我打了两个小时篮球，星期天游泳游了一个小时。',
+      sample_vn: 'Thứ Bảy mình chơi bóng rổ hai tiếng, Chủ nhật bơi một tiếng.',
+      note: 'V + 了 + thời lượng + tân ngữ, hoặc lặp động từ: 游泳游了一个小时.'
     }
   ]
 };
 
 var translateData = [
-  { vi: 'Con trai chúng ta không cao bằng cậu bé đó.', zh: '儿子的个子没有他那么高。', py: 'Érzi de gèzi méiyǒu tā nàme gāo.' },
-  { vi: 'Quán cà phê cách chỗ này hơi xa.', zh: '咖啡店离这儿有点儿远。', py: 'Kāfēidiàn lí zhèr yǒudiǎnr yuǎn.' },
-  { vi: 'Chỗ này cách nhà mình rất gần, hay là đi bộ về đi.', zh: '这里离家很近，还是走路吧。', py: 'Zhèlǐ lí jiā hěn jìn, háishi zǒulù ba.' },
-  { vi: 'Đi bộ hơn nửa tiếng thì tới.', zh: '走半个多小时就到了。', py: 'Zǒu bàn ge duō xiǎoshí jiù dào le.' },
-  { vi: 'Vậy anh đợi một lát, em đi mua cốc trà sữa.', zh: '那你等一下，我去买杯奶茶。', py: 'Nà nǐ děng yíxià, wǒ qù mǎi bēi nǎichá.' }
+  { vi: 'Trường chúng tôi cách sân bay hơi xa.', zh: '我们学校离机场有点儿远。', py: 'Wǒmen xuéxiào lí jīchǎng yǒudiǎnr yuǎn.' },
+  { vi: 'Hôm qua anh ấy đá bóng hai tiếng.', zh: '昨天他踢足球踢了两个小时。', py: 'Zuótiān tā tī zúqiú tīle liǎng ge xiǎoshí.' },
+  { vi: 'Món mẹ tôi nấu không ngon bằng món bà nấu.', zh: '我妈妈做的菜没有奶奶做的好吃。', py: 'Wǒ māma zuò de cài méiyǒu nǎinai zuò de hǎochī.' },
+  { vi: 'Đồng hồ của bố hỏng rồi, chúng ta tặng bố một chiếc mới nhé.', zh: '爸爸的手表坏了，我们送他一块新的吧。', py: 'Bàba de shǒubiǎo huài le, wǒmen sòng tā yí kuài xīn de ba.' },
+  { vi: 'Cậu bé ở cổng trường là em trai tôi.', zh: '在学校门口的那个男孩儿是我弟弟。', py: 'Zài xuéxiào ménkǒu de nàge nánháir shì wǒ dìdi.' }
 ];
 
 var translateDataRev = [
-  { vi: 'Quần của con trai bị rách rồi.', zh: '儿子的裤子坏了。', py: 'Érzi de kùzi huài le.' },
-  { vi: 'Cậu bé bên cạnh đang mặc kiểu quần này đấy.', zh: '旁边那个男孩儿就穿了这样的裤子。', py: 'Pángbiān nàge nánháir jiù chuānle zhèyàng de kùzi.' },
-  { vi: 'Trước cửa có quán trà sữa.', zh: '门口有家奶茶店。', py: 'Ménkǒu yǒu jiā nǎichádiàn.' },
-  { vi: 'Uống cà phê thì buổi tối khỏi ngủ mất.', zh: '喝了咖啡，晚上就别想睡觉了。', py: 'Hēle kāfēi, wǎnshang jiù bié xiǎng shuìjiào le.' },
-  { vi: 'Quần áo trong cửa hàng không đẹp bằng quần áo trong trung tâm thương mại.', zh: '商店里边的衣服没有大商场里的好看。', py: 'Shāngdiàn lǐbian de yīfu méiyǒu dà shāngchǎng lǐ de hǎokàn.' }
+  { vi: 'Mỗi sáng bà đi bộ một tiếng.', zh: '奶奶每天早上走路走一个小时。', py: 'Nǎinai měitiān zǎoshang zǒulù zǒu yí ge xiǎoshí.' },
+  { vi: 'Tuần này tôi rất bận, không có thời gian đến thăm bạn.', zh: '这周我很忙，没有时间去看你。', py: 'Zhè zhōu wǒ hěn máng, méiyǒu shíjiān qù kàn nǐ.' },
+  { vi: 'Nhà hàng này không đắt bằng nhà hàng kia.', zh: '这个饭馆没有那个那么贵。', py: 'Zhège fànguǎn méiyǒu nàge nàme guì.' },
+  { vi: 'Điện thoại của tôi ở bên cạnh máy tính.', zh: '我的手机在电脑旁边。', py: 'Wǒ de shǒujī zài diànnǎo pángbiān.' }
 ];
 
 // ══════════════════════════════════════════

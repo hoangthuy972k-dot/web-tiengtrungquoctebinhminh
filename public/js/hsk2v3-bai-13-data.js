@@ -1357,135 +1357,155 @@ var dialogData = [
 
 var listenData = [
   {
-    audio: '时间过得真快啊！新年就要到了。我们给她准备个新年礼物吧。王老师喜欢花，就送给她花吧。那我们去花店看看。',
+    audio: '我想送给妈妈一些花，做她的新年礼物。',
     questions: [
-      { q: '同学们想送给王老师什么？', opts: ['花', '衣服', '中文书'], ans: 0 },
-      { q: '他们要去哪儿？', opts: ['教室', '花店', '商店'], ans: 1 }
+      { q: 'Người nói muốn tặng mẹ gì?', opts: ['Một chiếc áo', 'Hoa', 'Bánh sinh nhật'], ans: 1, exp: '送给妈妈一些花 = tặng mẹ ít hoa; V + 给 + người + vật.' },
+      { q: 'Đó là quà dịp gì?', opts: ['Năm mới', 'Sinh nhật mẹ', 'Ngày khai giảng'], ans: 0, exp: '新年礼物 = quà năm mới.' }
     ]
   },
   {
-    audio: '王老师，今天的词比昨天多了十个。你们都学会了吗？学会了，没有问题。同学们，“洗手间”的“间”字写错了，它的里面是“日”，不是“口”。',
+    audio: '我们班有二十五个学生，他们班比我们班多三个。',
     questions: [
-      { q: '今天的词比昨天多多少？', opts: ['四个', '七个', '十个'], ans: 2 },
-      { q: '“间”字里面是什么？', opts: ['日', '口', '门'], ans: 0 }
+      { q: 'Lớp kia có bao nhiêu học sinh?', opts: ['22', '25', '28'], ans: 2, exp: '比我们班多三个 = nhiều hơn lớp mình 3 bạn: 25 + 3 = 28.' }
     ]
   },
   {
-    audio: '家月，你觉得这个本子怎么样？很漂亮，多少钱一个？比我们一起买的那个本子贵一点儿。我是上网买的，我买了两个，送你一个。',
+    audio: '上网买这件衣服只要一百五十块，比商店便宜三十块。',
     questions: [
-      { q: '这个本子是在哪儿买的？', opts: ['商店', '超市', '网上'], ans: 2 },
-      { q: '这个本子比那个贵多少？', opts: ['贵一点儿', '贵多了', '一样贵'], ans: 0 }
+      { q: 'Ở cửa hàng, chiếc áo này giá bao nhiêu?', opts: ['120 tệ', '150 tệ', '180 tệ'], ans: 2, exp: 'Mua trên mạng 150 tệ, rẻ hơn cửa hàng 30 tệ → cửa hàng bán 180 tệ.' }
     ]
   },
   {
-    audio: '新年就要到了，安妮送给我一个新本子。她告诉我是在网上买的，比我的本子贵一点儿。我们班同学也送了王老师漂亮的花。',
+    audio: '洗手间在二楼，上了楼往右走就到了。',
     questions: [
-      { q: '谁送给白家月本子？', opts: ['安妮', '王老师', '陈天中'], ans: 0 },
-      { q: '同学们送王老师什么？', opts: ['漂亮的花', '本子', '咖啡杯'], ans: 0 }
+      { q: 'Nhà vệ sinh ở đâu?', opts: ['Tầng một, rẽ trái', 'Tầng hai, rẽ phải', 'Tầng hai, rẽ trái'], ans: 1, exp: '在二楼 = ở tầng hai; 往右走 = đi về bên phải.' }
+    ]
+  },
+  {
+    audio: '小明告诉我，他明天可能不来上课了，他头有点儿疼。',
+    questions: [
+      { q: 'Tiểu Minh nói gì?', opts: ['Mai có thể không đi học', 'Mai sẽ đến sớm', 'Mai đi bệnh viện thăm bạn'], ans: 0, exp: '可能不来上课了 = có lẽ không đến lớp; 可能 = có thể, có lẽ.' },
+      { q: 'Vì sao?', opts: ['Phải đi làm', 'Bị đau đầu', 'Đi du lịch'], ans: 1, exp: '头有点儿疼 = hơi đau đầu.' }
+    ]
+  },
+  {
+    audio: '这次我考了九十分，比上次多了十五分。',
+    questions: [
+      { q: 'Lần trước người nói được bao nhiêu điểm?', opts: ['75', '85', '90'], ans: 0, exp: '比上次多了十五分 = hơn lần trước 15 điểm: 90 − 15 = 75.' }
     ]
   }
 ];
 
 var matchData = [
-  { left: '送给她', right: '花' },
-  { left: '教', right: '我们中文' },
-  { left: '告诉', right: '我一件事' },
-  { left: '今天的词比昨天', right: '多了十个' },
-  { left: '这个本子比那个', right: '贵一点儿' },
-  { left: '上网', right: '买东西' }
+  { left: '去洗手间', right: '洗洗手' },
+  { left: '上网', right: '买书' },
+  { left: '教', right: '外国学生汉语' },
+  { left: '找给', right: '你五块钱' },
+  { left: '新年', right: '快乐' },
+  { left: '电视', right: '上面有一只猫' },
+  { left: '我们班', right: '有二十个学生' },
+  { left: '希望', right: '明天是晴天' }
 ];
 
 var fillData = [
-  { pre: '', blank: '新年', post: '就要到了。', hint: '(năm mới)', ans: '新年' },
-  { pre: '这一年王老师', blank: '教', post: '我们中文。', hint: '(dạy)', ans: '教' },
-  { pre: '', blank: '希望', post: '花店还有漂亮的花。', hint: '(hy vọng)', ans: '希望' },
-  { pre: '你们在本子', blank: '上面', post: '写。', hint: '(phía trên)', ans: '上面', exp: '在 + danh từ + 上面 chỉ vị trí: 在本子上面写 = viết lên trên vở.' },
-  { pre: '教室的门开着，但是', blank: '里面', post: '没有人。', hint: '(bên trong)', ans: '里面', exp: '里面 = bên trong: 教室里面没有人 = trong lớp không có ai.' },
-  { pre: '我经常', blank: '上网', post: '听歌、看电影。', hint: '(lên mạng)', ans: '上网' },
-  { pre: '她', blank: '告诉', post: '我是在网上买的。', hint: '(kể, nói cho biết)', ans: '告诉' },
-  { pre: '你们', blank: '班', post: '有多少学生？', hint: '(lớp)', ans: '班' }
+  { pre: 'Dùng xong bút của Lý Văn, bạn nói: “李文，你的笔我还', blank: '给', post: '你。”', hint: '(trả lại cho)', ans: '给', exp: 'V + 给 + người: 还给你 = trả lại cho bạn; 给 đứng ngay sau động từ.' },
+  { pre: 'Hai bạn so đồng hồ: “我的手表比你的快', blank: '五分钟', post: '，现在不是八点，是七点五十五。”', hint: '(5 phút)', ans: '五分钟', exp: 'A 比 B + tính từ + số lượng: 快五分钟; số lượng đứng SAU tính từ.' },
+  { pre: 'Ở cửa hàng: “这件衣服太大了，有没有小', blank: '一点儿', post: '的？”', hint: '(… hơn một chút)', ans: '一点儿', exp: 'Tính từ + 一点儿 = … hơn một chút; 一点儿 đứng SAU tính từ.' },
+  { pre: '这次考试的题比上次多', blank: '一些', post: '，但是我都做完了。', hint: '(hơn một chút)', ans: '一些', exp: 'A 比 B + tính từ + 一些 = hơn một chút (giống 一点儿).' },
+  { pre: '“', blank: '新年', post: '快到了，你想回家看看爸爸妈妈吗？”', hint: '(năm mới)', ans: '新年', exp: '新年 = năm mới; ôn 快……了 = sắp … rồi.' },
+  { pre: '我妈妈是老师，她在中学', blank: '教', post: '汉语。', hint: '(dạy)', ans: '教', exp: '教 + môn học / 教 + người + môn học = dạy (ai) môn gì.' },
+  { pre: '“你明年想去哪儿？” — “我', blank: '希望', post: '能去北京大学学习。”', hint: '(hy vọng)', ans: '希望', exp: '希望 + (能) + động từ = hy vọng (được) làm gì.' },
+  { pre: '“我的笔呢？” — “在你书包', blank: '里面', post: '，你找找。”', hint: '(bên trong)', ans: '里面', exp: 'Danh từ + 里面 = bên trong …: 书包里面 = trong cặp.' },
+  { pre: '天阴了，', blank: '可能', post: '要下雨，我们早点儿回去吧。', hint: '(có lẽ)', ans: '可能', exp: '可能 + động từ = có lẽ sẽ …; đứng trước động từ.' },
+  { pre: '你知道小明家在哪儿吗？能', blank: '告诉', post: '我吗？', hint: '(nói cho biết)', ans: '告诉', exp: '告诉 + người (+ việc) = nói cho ai biết; không nói 告诉给.' },
+  { pre: '“请问，', blank: '洗手间', post: '在哪儿？” — “在那边。”', hint: '(nhà vệ sinh)', ans: '洗手间', exp: '洗手间 = nhà vệ sinh; câu hỏi lịch sự hay dùng ở nhà hàng, trường học.' },
+  { pre: '“这儿离公司不远，我们走着去吧。” — “好，', blank: '那样', post: '我们还能运动运动。”', hint: '(như vậy)', ans: '那样', exp: '那样 = như vậy, chỉ lại cách người kia vừa đề nghị.' }
 ];
 
 var sortData = [
-  { words: ['王老师', '喜欢', '花', '，', '就', '送给', '她', '花', '吧', '。'], ans: '王老师喜欢花，就送给她花吧。', audio: '王老师喜欢花，就送给她花吧。' },
-  { words: ['她', '拿给', '我', '一', '杯', '水', '。'], ans: '她拿给我一杯水。', audio: '她拿给我一杯水。' },
-  { words: ['今天', '的', '词', '比', '昨天', '多', '了', '十', '个', '。'], ans: '今天的词比昨天多了十个。', audio: '今天的词比昨天多了十个。' },
-  { words: ['姐姐', '比', '我', '大', '三', '岁', '。'], ans: '姐姐比我大三岁。', audio: '姐姐比我大三岁。' },
-  { words: ['这个', '本子', '比', '那个', '贵', '一点儿', '。'], ans: '这个本子比那个贵一点儿。', audio: '这个本子比那个贵一点儿。' },
-  { words: ['她', '告诉', '我', '是', '在', '网上', '买', '的', '。'], ans: '她告诉我是在网上买的。', audio: '她告诉我是在网上买的。' }
+  { words: ['哥哥', '送', '给', '我', '一', '个', '新', '手机', '。'], ans: '哥哥送给我一个新手机。', audio: '哥哥送给我一个新手机。' },
+  { words: ['他', '比', '我', '多', '买', '了', '两', '斤', '苹果', '。'], ans: '他比我多买了两斤苹果。', audio: '他比我多买了两斤苹果。' },
+  { words: ['这', '条', '裤子', '比', '那', '条', '长', '一点儿', '。'], ans: '这条裤子比那条长一点儿。', audio: '这条裤子比那条长一点儿。' },
+  { words: ['我们', '班', '有', '十', '个', '外国', '学生', '。'], ans: '我们班有十个外国学生。', audio: '我们班有十个外国学生。' },
+  { words: ['奶奶', '教', '我', '做', '饺子', '。'], ans: '奶奶教我做饺子。', audio: '奶奶教我做饺子。' },
+  { words: ['她', '从', '书包', '里面', '拿', '给', '我', '一', '个', '苹果', '。'], ans: '她从书包里面拿给我一个苹果。', audio: '她从书包里面拿给我一个苹果。' },
+  { words: ['桌子', '上面', '有', '一些', '花', '。'], ans: '桌子上面有一些花。', audio: '桌子上面有一些花。' },
+  { words: ['上网', '买', '东西', '比', '去', '商店', '买', '便宜', '一些', '。'], ans: '上网买东西比去商店买便宜一些。', audio: '上网买东西比去商店买便宜一些。' }
 ];
 
 var mcData = [
-  { q: '姐姐比我大＿＿。', opts: ['三岁', '岁三', '三个岁', '大三'], ans: 0, exp: 'A + 比 + B + tính từ + số lượng chênh lệch: 比我大三岁; 岁 không cần lượng từ 个.' },
-  { q: '坐飞机比坐火车快＿＿。', opts: ['五个多小时', '五个多小时得多', '多五个小时了', '五小时个多'], ans: 0, exp: 'Chênh lệch cụ thể đặt sau tính từ: 快五个多小时; không thêm 得多 nữa.' },
-  { q: '那间教室比这间大＿＿。', opts: ['一些', '得多了', '很多的', '非常'], ans: 0, exp: 'Câu 比 có thể dùng tính từ + 一些 (hơn một chút): 大一些; 得多了 thừa 了, 非常 không đặt sau tính từ.' },
-  { q: '他卖＿＿我一本中文书。', opts: ['给', '了给', '给了给', '的'], ans: 0, exp: '卖给 + người + vật: 卖给我一本书; 给 đứng ngay sau động từ.' },
-  { q: '“日”比“口”多＿＿。', opts: ['一笔', '一个笔', '笔一', '一支笔'], ans: 0, exp: '笔 là lượng từ đếm nét chữ: 多一笔 = nhiều hơn một nét; không thêm 个.' },
-  { q: 'Câu nào diễn tả khác biệt NHỎ?', opts: ['这个本子比那个贵一点儿。', '这个本子比那个贵多了。', '这个本子比那个贵得多。', '这个本子比那个贵十块。'], ans: 0, exp: 'Tính từ + 一点儿 sau câu 比 chỉ khác biệt nhỏ; 多了/得多 chỉ khác biệt lớn.' },
-  { q: '“告诉” cần mấy tân ngữ trong câu “她告诉我这件事”?', opts: ['Hai (人 + 事)', 'Một', 'Không có', 'Ba'], ans: 0, exp: '告诉 mang hai tân ngữ: người (我) + việc (这件事).' },
-  { q: 'Chữ “间” bên trong là chữ gì?', opts: ['日', '口', '门', '目'], ans: 0, exp: '间 gồm 门 ở ngoài và 日 ở trong.' }
+  { q: 'Bạn muốn nói: “Cô ấy bán cho tôi một chiếc áo rất đẹp.”', opts: ['她卖给我一件很漂亮的衣服。', '她卖我给一件很漂亮的衣服。', '她卖给一件很漂亮的衣服我。', '她卖了给我一件很漂亮的衣服。'], ans: 0, exp: 'V + 给 + người + vật: 卖给我 + 一件衣服; 了 (nếu có) đặt sau 给 (卖给了我), không chen giữa 卖 và 给.' },
+  { q: 'Câu nào SAI?', opts: ['我送给了一本书她。', '他还给我五十块钱。', '这是妹妹送给我的花。', '老师拿给他一个新本子。'], ans: 0, exp: 'Người nhận đứng ngay sau 给, vật đứng sau cùng: 我送给了她一本书.' },
+  { q: 'Bạn muốn nói: “Hôm nay tôi ngủ nhiều hơn hôm qua hai tiếng.”', opts: ['我今天比昨天多睡了两个小时。', '我今天比昨天睡了多两个小时。', '我今天比昨天两个小时多睡了。', '我今天多睡了比昨天两个小时。'], ans: 0, exp: '比 + B + 多 + V + 了 + số lượng: 比昨天多睡了两个小时; 多 đứng TRƯỚC động từ, số lượng ở cuối.' },
+  { q: 'Áo đỏ giá 200 tệ, áo trắng 210 tệ. Bạn nói:', opts: ['白色的比红色的贵一点儿。', '白色的比红色的贵多了。', '白色的比红色的一点儿贵。', '白色的比红色的有点儿贵。'], ans: 0, exp: 'Chỉ chênh 10 tệ → khác biệt nhỏ: tính từ + 一点儿; 一点儿 đứng sau tính từ, câu 比 không dùng 有点儿.' },
+  { q: 'A: “这家的饺子怎么样？” B: “比那家的好吃＿＿。”', opts: ['一些', '很', '非常', '有点儿'], ans: 0, exp: 'Câu 比: tính từ + 一些 / 一点儿 = hơn một chút; không dùng 很 / 非常 / 有点儿.' },
+  { q: 'Bạn chỉ lỗi chữ cho bạn: “Chữ 大 của bạn viết thừa một nét.”', opts: ['你的“大”字多写了一笔。', '你的“大”字多写了一个笔。', '你的“大”字写了多一笔。', '你的“大”字一笔多写了。'], ans: 0, exp: '多 + V + 了 + số lượng = viết thừa …; 笔 là lượng từ đếm nét, không thêm 个.' },
+  { q: 'Bạn muốn nói: “Anh ấy nói với tôi là anh ấy sắp đi Bắc Kinh.”', opts: ['他告诉我他要去北京了。', '他说我他要去北京了。', '他告诉给我他要去北京了。', '他跟我告诉他要去北京了。'], ans: 0, exp: '告诉 + người + việc; 说 không mang thẳng tân ngữ chỉ người (phải là 跟我说); không nói 告诉给.' },
+  { q: 'A: “小明怎么还没来？” — B đáp:', opts: ['他可能生病了。', '他生病可能了。', '可能他生病吗？', '他可能生病呢。'], ans: 0, exp: '可能 đứng trước động từ: 可能生病了 = có lẽ bị ốm rồi; câu đoán không dùng 吗.' },
+  { q: 'Bạn muốn nói: “Bố dạy tôi bơi.”', opts: ['爸爸教我游泳。', '爸爸教游泳给我。', '爸爸我教游泳。', '爸爸跟我教游泳。'], ans: 0, exp: '教 + người + việc: 教我游泳; không nói 教游泳给我 (dịch theo tiếng Anh) hay 跟我教.' },
+  { q: 'Bạn thấy bạn mình viết bên trong chữ “间” là “口”, bạn nói: “Viết như thế là sai.”', opts: ['那样写不对。', '写那样不对。', '那样不对写。', '那样的写不对。'], ans: 0, exp: '那样 + động từ = làm theo cách đó: 那样写; không đặt 那样 sau động từ, không thêm 的.' },
+  { q: 'Ngày đầu năm bạn gặp thầy giáo, bạn chúc:', opts: ['老师，新年快乐！', '老师，新年快乐吗！', '老师，快乐新年！', '老师，新年很快乐了！'], ans: 0, exp: 'Lời chúc năm mới: 新年快乐！; không đảo thành 快乐新年, không thêm 吗 / 了.' },
+  { q: 'A: “你哥哥多大？” — Anh hơn bạn 5 tuổi, bạn 15 tuổi. B đáp:', opts: ['他比我大五岁，今年二十岁。', '他比我五岁大，今年二十岁。', '他大比我五岁，今年二十岁。', '他比我大五个岁，今年二十岁。'], ans: 0, exp: 'A 比 B + tính từ + số lượng: 比我大五岁; số tuổi đứng SAU tính từ, 岁 không dùng 个.' }
 ];
 
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá.',
+  intro: 'Nhấn nút loa nghe câu hỏi / tình huống, rồi tự ghi âm câu trả lời — hãy nói về chính bạn, dùng V + 给, 比 + số lượng, 比……一点儿 / 一些.',
   questions: [
     {
-      q_zh: '新年就要到了，你想送给老师什么礼物？',
-      q_vn: 'Sắp đến năm mới rồi, bạn muốn tặng thầy cô món quà gì?',
-      hint: '老师喜欢……，就送给她……吧。',
-      sample: '王老师喜欢花，我们就送给她花吧，希望她高高兴兴地过个新年。',
-      sample_vn: 'Cô Vương thích hoa, chúng ta tặng hoa cho cô đi, hy vọng cô đón một năm mới thật vui.',
-      note: 'Câu hai tân ngữ: 送给 + người + vật.'
+      q_zh: '新年的时候，你想送给家里人什么礼物？',
+      q_vn: 'Dịp năm mới, bạn muốn tặng người nhà món quà gì?',
+      hint: '我想送给……',
+      sample: '我想送给爸爸一个新手表，他的手表坏了。',
+      sample_vn: 'Mình muốn tặng bố một chiếc đồng hồ mới, đồng hồ của bố hỏng rồi.',
+      note: 'V + 给 + người + vật: 送给爸爸一个手表.'
     },
     {
-      q_zh: '你们班的中文课怎么样？老师教得好吗？',
-      q_vn: 'Lớp bạn học tiếng Trung thế nào? Thầy cô dạy có hay không?',
-      hint: '老师教得……，我们都爱上……',
-      sample: '我们老师教得很好，因为她，我们班同学都非常爱上中文课。',
-      sample_vn: 'Cô giáo chúng tôi dạy rất hay, nhờ cô mà cả lớp tôi đều rất thích học tiếng Trung.',
-      note: '教 + người + môn học; ôn bổ ngữ trạng thái 教得很好 (bài 7).'
+      q_zh: '你的好朋友比你大吗？大几岁？',
+      q_vn: 'Bạn và bạn thân, ai lớn hơn? Hơn mấy tuổi?',
+      hint: '……比……大……岁。',
+      sample: '我朋友比我大一岁，个子也比我高一点儿。',
+      sample_vn: 'Bạn mình lớn hơn mình một tuổi, cũng cao hơn mình một chút.',
+      note: '比 + số lượng (大一岁) và 比 + 一点儿 (高一点儿).'
     },
     {
-      q_zh: '今天的生词比昨天多还是少？',
-      q_vn: 'Từ mới hôm nay nhiều hơn hay ít hơn hôm qua?',
-      hint: '今天的词比昨天多了……个。',
-      sample: '今天的词比昨天多了十个，但是我都学会了，没有问题。',
-      sample_vn: 'Từ mới hôm nay nhiều hơn hôm qua mười từ, nhưng tôi đã học thuộc hết rồi, không vấn đề gì.',
-      note: 'A 比 B + tính từ + cụm số lượng (多了十个).'
-    },
-    {
-      q_zh: '你常常上网做什么？',
+      q_zh: '你上网经常做什么？',
       q_vn: 'Bạn thường lên mạng làm gì?',
       hint: '我经常上网……',
-      sample: '我经常上网买东西，上网买比在商店买便宜一点儿，我也上网听歌、看电影。',
-      sample_vn: 'Tôi thường lên mạng mua đồ, mua trên mạng rẻ hơn ở cửa hàng một chút, tôi cũng lên mạng nghe nhạc, xem phim.',
-      note: 'Khác biệt nhỏ: 一点儿 / 一些 sau tính từ.'
+      sample: '我经常上网看电影，有时也上网买东西，网上的东西比商店便宜一些。',
+      sample_vn: 'Mình hay lên mạng xem phim, có lúc mua đồ, đồ trên mạng rẻ hơn ở cửa hàng một chút.',
+      note: '上网 + động từ; 比 + B + tính từ + 一些.'
     },
     {
-      q_zh: '朋友送你礼物，你会怎么说？',
-      q_vn: 'Bạn bè tặng quà, bạn sẽ nói gì?',
-      hint: '谢谢！那我送给你什么呢？',
-      sample: '谢谢！那我送给你什么呢？那样我们就都有新年礼物了。',
-      sample_vn: 'Cảm ơn nhé! Vậy mình tặng lại bạn cái gì đây? Như vậy là cả hai đều có quà năm mới rồi.',
-      note: '那样 dùng để chốt lại kết quả của việc vừa bàn.'
+      q_zh: '谁教你中文？他教得怎么样？',
+      q_vn: 'Ai dạy bạn tiếng Trung? Thầy / cô dạy thế nào?',
+      hint: '……教我们中文，……教得……',
+      sample: '王老师教我们中文，她教得很好，我们班同学都很喜欢她。',
+      sample_vn: 'Cô Vương dạy chúng mình tiếng Trung, cô dạy rất hay, cả lớp mình đều rất quý cô.',
+      note: '教 + người + môn học; ôn V + 得 (bài 7).'
+    },
+    {
+      q_zh: '明年你希望做什么？',
+      q_vn: 'Năm sau bạn hy vọng làm được điều gì?',
+      hint: '我希望……',
+      sample: '我希望明年能去中国旅游，也希望家人身体都好。',
+      sample_vn: 'Mình hy vọng năm sau được đi du lịch Trung Quốc, cũng mong cả nhà đều khoẻ.',
+      note: '希望 + (能) + động từ / 希望 + câu.'
     }
   ]
 };
 
 var translateData = [
-  { vi: 'Cô Vương thích hoa đấy, cứ tặng hoa cho cô đi.', zh: '王老师喜欢花，就送给她花吧。', py: 'Wáng lǎoshī xǐhuan huā, jiù sòng gěi tā huā ba.' },
-  { vi: 'Từ mới hôm nay nhiều hơn hôm qua mười từ.', zh: '今天的词比昨天多了十个。', py: 'Jīntiān de cí bǐ zuótiān duōle shí ge.' },
-  { vi: 'Cuốn vở này đắt hơn cuốn kia một chút.', zh: '这个本子比那个贵一点儿。', py: 'Zhège běnzi bǐ nàge guì yìdiǎnr.' },
-  { vi: 'Bạn ấy kể với tôi là mua ở trên mạng.', zh: '她告诉我是在网上买的。', py: 'Tā gàosu wǒ shì zài wǎngshang mǎi de.' },
-  { vi: 'Hy vọng cô sẽ đón một năm mới thật vui vẻ.', zh: '希望她高高兴兴地过个新年。', py: 'Xīwàng tā gāogāoxìngxìng de guò ge xīnnián.' }
+  { vi: 'Chị gái đưa cho tôi hai cái bánh bao.', zh: '姐姐拿给我两个包子。', py: 'Jiějie ná gěi wǒ liǎng ge bāozi.' },
+  { vi: 'Anh trai tôi cao hơn tôi một chút.', zh: '我哥哥比我高一点儿。', py: 'Wǒ gēge bǐ wǒ gāo yìdiǎnr.' },
+  { vi: 'Ngày mai có lẽ trời âm u.', zh: '明天可能是阴天。', py: 'Míngtiān kěnéng shì yīntiān.' },
+  { vi: 'Ở đây chỉ có một nhà vệ sinh, bên trong có người.', zh: '这儿只有一个洗手间，里面有人。', py: 'Zhèr zhǐ yǒu yí ge xǐshǒujiān, lǐmiàn yǒu rén.' },
+  { vi: 'Cô giáo bảo chúng tôi viết tên lên trên vở.', zh: '老师让我们在本子上面写名字。', py: 'Lǎoshī ràng wǒmen zài běnzi shàngmiàn xiě míngzi.' }
 ];
 
 var translateDataRev = [
-  { vi: 'Thời gian trôi nhanh thật đấy! Sắp đến năm mới rồi.', zh: '时间过得真快啊！新年就要到了。', py: 'Shíjiān guò de zhēn kuài a! Xīnnián jiù yào dào le.' },
-  { vi: 'Một năm nay cô Vương dạy chúng ta tiếng Trung.', zh: '这一年王老师教我们中文。', py: 'Zhè yì nián Wáng lǎoshī jiāo wǒmen Zhōngwén.' },
-  { vi: 'Bây giờ cô sẽ đọc, các em viết vào vở nhé.', zh: '现在我来说，你们在本子上面写。', py: 'Xiànzài wǒ lái shuō, nǐmen zài běnzi shàngmiàn xiě.' },
-  { vi: 'Chữ “日” nhiều hơn chữ “口” một nét.', zh: '“日”比“口”多一笔。', py: '“Rì” bǐ “kǒu” duō yì bǐ.' },
-  { vi: 'Như vậy là chúng ta ai cũng đều có quà năm mới rồi!', zh: '那样我们就都有新年礼物了！', py: 'Nàyàng wǒmen jiù dōu yǒu xīnnián lǐwù le!' }
+  { vi: 'Nghe bạn nói, hoa ở cửa hàng này rẻ hơn cửa hàng kia một chút.', zh: '听朋友说，这家店的花比那家便宜一些。', py: 'Tīng péngyou shuō, zhè jiā diàn de huā bǐ nà jiā piányi yìxiē.' },
+  { vi: 'Làm như vậy không hay lắm, bạn nghĩ lại đi.', zh: '那样做不太好，你再想想吧。', py: 'Nàyàng zuò bú tài hǎo, nǐ zài xiǎngxiang ba.' },
+  { vi: 'Chữ này nhiều hơn chữ kia một nét, bạn nhìn ra chưa?', zh: '这个字比那个字多一笔，你看出来了吗？', py: 'Zhège zì bǐ nàge zì duō yì bǐ, nǐ kàn chūlai le ma?' }
 ];
 
 // ══════════════════════════════════════════

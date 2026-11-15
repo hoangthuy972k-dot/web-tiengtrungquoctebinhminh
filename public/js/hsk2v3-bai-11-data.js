@@ -1286,135 +1286,157 @@ var dialogData = [
 
 var listenData = [
   {
-    audio: '家月，都下课了，你怎么还不回家？我头疼，不太舒服。你这几天经常头疼，去医院看看吧。那你在这儿坐着，我去开车，一会儿送你去医院。',
+    audio: '今天下着大雨，路上车很多，我们还是打车去吧。',
     questions: [
-      { q: '白家月怎么了？', opts: ['头疼', '肚子疼', '想睡觉'], ans: 0 },
-      { q: '王一飞要做什么？', opts: ['去开车送她', '回家', '找医生'], ans: 0 }
+      { q: 'Hôm nay thời tiết thế nào?', opts: ['Đang mưa to', 'Đang có tuyết', 'Trời nắng đẹp'], ans: 0, exp: '下着大雨 = đang mưa to; V + 着 chỉ trạng thái đang kéo dài.' },
+      { q: 'Họ định đi bằng gì?', opts: ['Xe buýt', 'Taxi', 'Đi bộ'], ans: 1, exp: '还是打车去吧 = tốt hơn là đi taxi; 还是……吧 = đề nghị phương án tốt hơn.' }
     ]
   },
   {
-    audio: '现在路上车多，还下着雪，我开慢一点儿。没问题，现在头没那么疼了。李文来电话了，你帮我接一下。',
+    audio: '我这两天头疼，医生说要多喝热水，早点儿睡觉。',
     questions: [
-      { q: '今天天气怎么样？', opts: ['很好', '下雨', '下雪'], ans: 2 },
-      { q: '王一飞为什么开慢一点儿？', opts: ['路上车多还下着雪', '车坏了', '不想去医院'], ans: 0 }
+      { q: 'Bác sĩ dặn người nói làm gì?', opts: ['Uống thuốc mỗi ngày', 'Đi bệnh viện khám lại', 'Uống nhiều nước nóng, ngủ sớm'], ans: 2, exp: '多喝热水 = uống nhiều nước nóng; 早点儿睡觉 = đi ngủ sớm một chút.' }
     ]
   },
   {
-    audio: '家月，你怎么样了？头还疼吗？不那么疼了。医生开了一些药，吃完就好多了。身体不舒服时更要好好吃饭。你最喜欢吃中国菜，我做几个中国菜吧。',
+    audio: '药店离这儿不远，往前走五分钟就到了。',
     questions: [
-      { q: '白家月现在怎么样了？', opts: ['不想吃饭', '身体不舒服', '头不那么疼了'], ans: 2 },
-      { q: '白家月最喜欢吃什么？', opts: ['中国菜', '面条儿', '蛋糕'], ans: 0 }
+      { q: 'Hiệu thuốc cách đây bao xa?', opts: ['Rất xa, phải đi xe', 'Đi bộ khoảng 5 phút', 'Ở ngay cạnh trường'], ans: 1, exp: '离这儿不远 = cách đây không xa; 往前走五分钟就到了 = đi thẳng 5 phút là tới.' }
     ]
   },
   {
-    audio: '我这几天经常头疼，从药店买了点儿药，没去医院。今天下课后，王老师看我不舒服，就送我去医院了。从医院回来，李文也来看我了。',
+    audio: '在我们家，爷爷最喜欢运动，他每天早上都去跑步。',
     questions: [
-      { q: '她这几天怎么了？', opts: ['经常头疼', '经常想睡觉', '经常不吃饭'], ans: 0 },
-      { q: '谁送她去医院？', opts: ['王老师', '李文', '她自己去的'], ans: 0 }
+      { q: 'Trong nhà, ai thích vận động nhất?', opts: ['Bà', 'Ông', 'Bố'], ans: 1, exp: '爷爷最喜欢运动 = ông thích vận động nhất; 最 + động từ tâm lý = … nhất.' },
+      { q: 'Mỗi sáng ông làm gì?', opts: ['Đi bơi', 'Đánh bóng rổ', 'Chạy bộ'], ans: 2, exp: '每天早上都去跑步 = sáng nào cũng đi chạy bộ.' }
+    ]
+  },
+  {
+    audio: '王老师开着车呢，不能接电话，你一会儿再打吧。',
+    questions: [
+      { q: 'Vì sao cô Vương không nghe máy được?', opts: ['Cô đang ngủ', 'Cô đang lên lớp', 'Cô đang lái xe'], ans: 2, exp: '开着车呢 = đang lái xe (việc đang kéo dài); 着 + tân ngữ + 呢.' }
+    ]
+  },
+  {
+    audio: '我姐姐穿着白色的衣服，在门口等我们呢。',
+    questions: [
+      { q: 'Chị gái mặc áo màu gì?', opts: ['Màu đỏ', 'Màu trắng', 'Màu đen'], ans: 1, exp: '穿着白色的衣服 = đang mặc áo màu trắng.' },
+      { q: 'Chị ấy đang ở đâu?', opts: ['Ở cửa', 'Trong lớp học', 'Ở bệnh viện'], ans: 0, exp: '在门口等我们 = đợi chúng tôi ở cửa.' }
     ]
   }
 ];
 
 var matchData = [
-  { left: '头', right: '疼' },
-  { left: '经常', right: '头疼' },
-  { left: '在这儿', right: '坐着' },
-  { left: '下', right: '着雪' },
-  { left: '最喜欢', right: '吃中国菜' },
-  { left: '从药店', right: '买药' }
+  { left: '吃', right: '药' },
+  { left: '头有点儿', right: '疼' },
+  { left: '穿着', right: '白色的裤子' },
+  { left: '手里拿着', right: '一杯咖啡' },
+  { left: '外边下着', right: '大雪' },
+  { left: '快请', right: '进' },
+  { left: '去药店', right: '买药' },
+  { left: '一动', right: '就疼' }
 ];
 
 var fillData = [
-  { pre: '我', blank: '头', post: '疼，不太舒服。', hint: '(đầu)', ans: '头' },
-  { pre: '你这几天', blank: '经常', post: '头疼，去医院看看吧。', hint: '(thường xuyên)', ans: '经常' },
-  { pre: '现在不能', blank: '动', post: '，一动就疼。', hint: '(cử động)', ans: '动' },
-  { pre: '那你在这儿坐', blank: '着', post: '，我去开车。', hint: '(trợ từ duy trì)', ans: '着', exp: 'Động từ + 着 chỉ trạng thái được duy trì: 坐着 = (cứ) ngồi đấy.' },
-  { pre: '现在', blank: '路上', post: '车多，还下着雪。', hint: '(trên đường)', ans: '路上' },
-  { pre: '李文，快请', blank: '进', post: '！', hint: '(vào)', ans: '进' },
-  { pre: '医生开了一些', blank: '药', post: '，吃完就好多了。', hint: '(thuốc)', ans: '药' },
-  { pre: '你', blank: '最', post: '喜欢吃中国菜。', hint: '(nhất)', ans: '最', exp: '最 + động từ tâm lý/tính từ = nhất: 最喜欢 = thích nhất.' }
+  { pre: 'Trời lạnh mà cửa phòng vẫn mở, bạn kêu lên: “房间的门还开', blank: '着', post: '呢，好冷啊！”', hint: '(trạng thái vẫn duy trì)', ans: '着', exp: 'V + 着 = trạng thái đang được giữ nguyên: 门开着 = cửa đang mở.' },
+  { pre: '“电视还开着', blank: '没有', post: '？” — “开着呢，爸爸在看足球。”', hint: '(… chưa / không? — hỏi trạng thái)', ans: '没有', exp: 'Hỏi trạng thái với 着: V + 着 + 没有？ (hoặc V着吗？); trả lời 开着呢 / 没开着.' },
+  { pre: '“我给小明打了三次电话，他都没接。” — “他的手机', blank: '没', post: '开着，他在考试呢。”', hint: '(phủ định của 着)', ans: '没', exp: 'Phủ định trạng thái V + 着 dùng 没: 没开着; không nói 不开着.' },
+  { pre: 'Lần đầu hẹn gặp, bạn nhắn tin: “我穿', blank: '着', post: '一条黑色的裤子，你一看就知道了。”', hint: '(đang mặc — trạng thái)', ans: '着', exp: '穿着 + tân ngữ = đang mặc (trạng thái lúc gặp); 穿了 chỉ việc mặc đã xong.' },
+  { pre: '“你们三个人里，谁跑得', blank: '最', post: '快？” — “刘明。”', hint: '(nhất)', ans: '最', exp: 'So sánh trong một nhóm (三个人里) dùng 最 + tính từ: 跑得最快 = chạy nhanh nhất.' },
+  { pre: 'Bạn nói với cô giáo: “我头', blank: '疼', post: '得不能看书。”', hint: '(đau)', ans: '疼', exp: '头疼 = đau đầu; 疼得不能看书 = đau đến mức không đọc sách được.' },
+  { pre: '爸爸的公司离家很远，他', blank: '经常', post: '晚上十点多回家。', hint: '(thường xuyên)', ans: '经常', exp: '经常 đứng trước cụm động từ: 经常……回家 = thường xuyên … mới về nhà.' },
+  { pre: '他走得太', blank: '慢', post: '了，我们等了他二十分钟。', hint: '(chậm)', ans: '慢', exp: '走得太慢了 = đi chậm quá; 慢 ngược nghĩa với 快.' },
+  { pre: 'Bạn đến muộn, đứng ở cửa lớp hỏi: “老师，我可以', blank: '进', post: '教室吗？”', hint: '(vào)', ans: '进', exp: '进 + nơi chốn = vào đâu: 进教室 = vào lớp.' },
+  { pre: '睡觉', blank: '时', post: '别玩手机，对身体不好。', hint: '(khi, lúc)', ans: '时', exp: '……时 = ……的时候 (khi …), đứng SAU sự việc: 睡觉时.' },
+  { pre: 'Bác sĩ khám chân cho bạn: “别', blank: '动', post: '，我看看这儿疼不疼。”', hint: '(cử động)', ans: '动', exp: '别动 = đừng cử động; 别 + động từ = đừng ….' },
+  { pre: '“你到哪儿了？” — “我在', blank: '路上', post: '呢，十分钟就到。”', hint: '(trên đường)', ans: '路上', exp: '在路上 = đang trên đường (đi tới).' }
 ];
 
 var sortData = [
-  { words: ['那', '你', '在', '这儿', '坐', '着', '。'], ans: '那你在这儿坐着。', audio: '那你在这儿坐着。' },
-  { words: ['教室', '的', '门', '开', '着', '。'], ans: '教室的门开着。', audio: '教室的门开着。' },
-  { words: ['现在', '路上', '车', '多', '，', '还', '下', '着', '雪', '。'], ans: '现在路上车多，还下着雪。', audio: '现在路上车多，还下着雪。' },
-  { words: ['我', '最', '喜欢', '吃', '中国菜', '。'], ans: '我最喜欢吃中国菜。', audio: '我最喜欢吃中国菜。' },
-  { words: ['身体', '不', '舒服', '时', '更', '要', '好好', '吃饭', '。'], ans: '身体不舒服时更要好好吃饭。', audio: '身体不舒服时更要好好吃饭。' },
-  { words: ['现在', '不能', '动', '，', '一', '动', '就', '疼', '。'], ans: '现在不能动，一动就疼。', audio: '现在不能动，一动就疼。' }
+  { words: ['他', '穿', '着', '一件', '绿色', '的', '衣服', '。'], ans: '他穿着一件绿色的衣服。', audio: '他穿着一件绿色的衣服。' },
+  { words: ['他', '是', '我们', '学校', '个子', '最', '高', '的', '男孩儿', '。'], ans: '他是我们学校个子最高的男孩儿。', audio: '他是我们学校个子最高的男孩儿。', alt: ['我们学校个子最高的男孩儿是他。'] },
+  { words: ['你', '身体', '不', '舒服', '，', '今天', '就', '别', '去', '上课', '了', '。'], ans: '你身体不舒服，今天就别去上课了。', audio: '你身体不舒服，今天就别去上课了。' },
+  { words: ['我', '经常', '在', '这家', '药店', '买', '药', '。'], ans: '我经常在这家药店买药。', audio: '我经常在这家药店买药。' },
+  { words: ['他', '每天', '都', '听', '着', '歌', '跑步', '。'], ans: '他每天都听着歌跑步。', audio: '他每天都听着歌跑步。' },
+  { words: ['王老师', '在', '门口', '等', '着', '你', '呢', '。'], ans: '王老师在门口等着你呢。', audio: '王老师在门口等着你呢。' },
+  { words: ['路上', '车', '太', '多', '了', '，', '我们', '走', '得', '很', '慢', '。'], ans: '路上车太多了，我们走得很慢。', audio: '路上车太多了，我们走得很慢。' },
+  { words: ['医生', '让', '我', '一天', '吃', '三', '次', '药', '。'], ans: '医生让我一天吃三次药。', audio: '医生让我一天吃三次药。' }
 ];
 
 var mcData = [
-  { q: '教室的门＿＿，你进去吧。', opts: ['开着', '开了着', '着开', '开着了'], ans: 0, exp: '着 đặt ngay sau động từ, chỉ trạng thái đang duy trì: 门开着 = cửa đang mở; không đi cùng 了.' },
-  { q: '她穿＿＿白色的裤子。', opts: ['着', '了', '过', '得'], ans: 0, exp: '穿着 = đang mặc (trạng thái duy trì); 穿了 là đã mặc, 穿过 là đã từng mặc.' },
-  { q: 'Phủ định của 门开着 là gì?', opts: ['门没开着', '门不开着', '门开着不', '门没开着了'], ans: 0, exp: 'Phủ định trạng thái 着 dùng 没 + động từ + 着: 门没开着. Không dùng 不 với 着, và đã có 没 thì không thêm 了.' },
-  { q: '在我们家，爸爸＿＿高。', opts: ['最', '比', '还', '更'], ans: 0, exp: 'Trong một phạm vi (在我们家) muốn nói ai cao nhất thì dùng 最; 比 cần có đối tượng so sánh.' },
-  { q: '你们班谁中文说得＿＿好？', opts: ['最', '很', '非常', '比'], ans: 0, exp: 'Hỏi ai nói giỏi nhất trong lớp dùng 最; 很/非常 không dùng để so sánh trong nhóm.' },
-  { q: '“一动就疼” dùng mẫu câu nào?', opts: ['一……就……', '虽然……但是……', '因为……所以……', '还是……'], ans: 0, exp: '一…就… = hễ… là…: 一动就疼 = hễ cử động là đau.' },
-  { q: '“身体不舒服时” có nghĩa giống với cách nói nào?', opts: ['身体不舒服的时候', '身体不舒服以后', '身体不舒服以前', '身体不舒服因为'], ans: 0, exp: '…时 = …的时候 = khi…: 身体不舒服时 = lúc không khỏe.' },
-  { q: 'Câu hỏi nào KHÔNG dùng được cho câu có 着?', opts: ['门开着不开着？', '门开着吗？', '门开着没有？', '门开没开着？'], ans: 0, exp: '着 phủ định bằng 没, không dùng 不, nên câu hỏi 开着不开着 là sai.' }
+  { q: 'Bạn tả bố trong ảnh: “Bố tôi tay đang cầm một cốc trà.”', opts: ['我爸爸手里拿着一杯茶。', '我爸爸手里拿一杯着茶。', '我爸爸拿着手里一杯茶。', '我爸爸手里着拿一杯茶。'], ans: 0, exp: '着 đứng ngay sau động từ 拿, tân ngữ 一杯茶 ở sau 着; 手里 (trong tay) đặt trước động từ.' },
+  { q: 'A: “药店的门开着没有？” — Cửa hiệu thuốc đang đóng, B đáp:', opts: ['没开着，我们明天再来吧。', '不开着，我们明天再来吧。', '没开着了，我们明天再来吧。', '开着没，我们明天再来吧。'], ans: 0, exp: 'Phủ định trạng thái 着 dùng 没 + V + 着; không dùng 不, không thêm 了.' },
+  { q: 'Bạn muốn nói: “Hiệu thuốc này gần nhà tôi nhất.”', opts: ['这家药店离我家最近。', '这家药店最离我家近。', '这家药店离我家近最。', '这家药店是最离我家近。'], ans: 0, exp: '最 đứng ngay trước tính từ (近): 离我家最近; không đặt 最 trước 离 hay sau tính từ.' },
+  { q: 'Lý Văn cao 1m75, Thiên Trung 1m80, Nhất Phi 1m85. Bạn nói: “一飞＿＿高。”', opts: ['最', '比', '很', '还是'], ans: 0, exp: 'So trong cả nhóm ba người, người cao nhất dùng 最; 比 phải có đối tượng so sánh (A 比 B 高).' },
+  { q: 'Câu nào SAI?', opts: ['她不穿着白色的衣服。', '外边还下着雨呢。', '你的电脑还开着呢。', '大家都在教室里坐着呢。'], ans: 0, exp: 'Phủ định V + 着 dùng 没, không dùng 不: 她没穿着白色的衣服.' },
+  { q: 'A: “你最喜欢什么颜色？” — B đáp:', opts: ['我最喜欢绿色。', '我喜欢最绿色。', '我最喜欢是绿色。', '我是最喜欢绿色。'], ans: 0, exp: '最 đứng trước động từ tâm lý: 最喜欢 + tân ngữ; không chèn 是 vào giữa.' },
+  { q: 'Cô giáo hỏi bạn bị làm sao. Bạn hơi đau đầu, bạn đáp:', opts: ['我头有点儿疼。', '我头一点儿疼。', '我头疼一点儿。', '我是头有点儿疼。'], ans: 0, exp: '“Hơi đau” = 有点儿 + tính từ: 有点儿疼; 一点儿 không đứng trước tính từ, không thêm 是.' },
+  { q: 'Bạn muốn nói: “Tôi thường xuyên đi bơi với bố.”', opts: ['我经常跟爸爸去游泳。', '我跟爸爸去游泳经常。', '我经常跟爸爸去游泳了。', '我跟爸爸经常去了游泳。'], ans: 0, exp: '经常 đứng trước cụm giới từ / động từ; việc lặp lại thường xuyên không dùng 了.' },
+  { q: 'Có người gõ cửa phòng bạn, bạn nói:', opts: ['请进！', '请来进！', '进请！', '请进去！'], ans: 0, exp: 'Mời khách vào phòng mình nói 请进; người nói ở trong phòng nên không dùng 进去.' },
+  { q: 'Bạn muốn nói: “Lúc bị ốm, tôi chẳng muốn ăn gì.”', opts: ['生病时，我什么都不想吃。', '时生病，我什么都不想吃。', '生病时，我不想吃什么都。', '在生病，我什么都不想吃。'], ans: 0, exp: '时 (= 的时候) đứng SAU sự việc: 生病时; “gì cũng không” = 什么都不 + động từ.' },
+  { q: 'Bố chuẩn bị lái xe đi làm, ngoài trời tuyết rơi dày. Bạn dặn bố:', opts: ['雪很大，您开慢一点儿。', '雪很大，您开一点儿慢。', '雪很大，您一点儿慢开。', '雪很大，您开得慢一点儿了。'], ans: 0, exp: 'Động từ + tính từ + 一点儿: 开慢一点儿 = lái chậm một chút; 一点儿 đứng sau tính từ.' },
+  { q: 'Bạn bị đau đầu, muốn mua thuốc, bạn hỏi người đi đường:', opts: ['请问，药店在哪儿？', '请问，药店哪儿在？', '请问，哪儿在药店？', '请问，在药店哪儿？'], ans: 0, exp: 'Hỏi vị trí: nơi chốn + 在 + 哪儿？; không đảo 哪儿 lên trước 在.' }
 ];
 
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá.',
+  intro: 'Nhấn nút loa nghe câu hỏi / tình huống, rồi tự ghi âm câu trả lời — hãy nói về chính bạn, dùng 着, 最, 经常 và ……时.',
   questions: [
     {
-      q_zh: '你身体不舒服时会怎么做？',
-      q_vn: 'Khi cơ thể không khoẻ bạn sẽ làm gì?',
-      hint: '我会去……，还会……',
-      sample: '我头疼的时候会从药店买点儿药，如果经常头疼，我就去医院看看。',
-      sample_vn: 'Khi đau đầu tôi sẽ mua chút thuốc ở hiệu thuốc, nếu thường xuyên đau đầu thì tôi đi bệnh viện khám.',
-      note: 'Dùng 经常 và ……时/的时候 để nói thói quen.'
+      q_zh: '你现在穿着什么颜色的衣服？',
+      q_vn: 'Bây giờ bạn đang mặc quần áo màu gì? Hãy tả.',
+      hint: '我穿着……',
+      sample: '我穿着一件白色的衣服和一条黑色的裤子。',
+      sample_vn: 'Mình đang mặc một chiếc áo màu trắng và một chiếc quần màu đen.',
+      note: 'V + 着 + tân ngữ: tả trạng thái lúc nói (穿着, 拿着).'
     },
     {
-      q_zh: '现在外边怎么样？下着雨还是下着雪？',
-      q_vn: 'Bên ngoài bây giờ thế nào? Đang mưa hay đang có tuyết?',
-      hint: '外边下着……，路上……',
-      sample: '外边下着雪，路上车很多，大家都开得很慢。',
-      sample_vn: 'Bên ngoài đang có tuyết rơi, trên đường rất nhiều xe, mọi người đều lái rất chậm.',
-      note: '动词 + 着 chỉ trạng thái đang duy trì; ôn câu hỏi 还是 (bài 10).'
+      q_zh: '你们家谁做饭做得最好吃？',
+      q_vn: 'Trong nhà bạn, ai nấu ăn ngon nhất?',
+      hint: '我们家……做饭做得最好吃。',
+      sample: '我妈妈做饭做得最好吃，她做的鱼和肉大家都爱吃。',
+      sample_vn: 'Mẹ mình nấu ăn ngon nhất, sủi cảo cá và thịt mẹ làm ai cũng thích.',
+      note: '最 + tính từ; ôn V + O + V + 得 (bài 7).'
     },
     {
-      q_zh: '你最喜欢吃什么菜？为什么？',
-      q_vn: 'Bạn thích ăn món gì nhất? Vì sao?',
-      hint: '我最喜欢吃……，因为……',
-      sample: '我最喜欢吃中国菜，因为中国菜比别的菜好吃，鱼啊肉啊什么的都很香。',
-      sample_vn: 'Tôi thích ăn món Trung Quốc nhất, vì món Trung Quốc ngon hơn các món khác, cá, thịt… đều rất thơm.',
-      note: '最 + động từ chỉ tâm lý; ôn 比 (bài 8) và 什么的 (bài 6).'
+      q_zh: '你身体不舒服时会做什么？',
+      q_vn: 'Khi không khoẻ, bạn thường làm gì?',
+      hint: '我……时会……',
+      sample: '我头疼时会去药店买点儿药，在家休息一天。',
+      sample_vn: 'Khi đau đầu, mình sẽ ra hiệu thuốc mua ít thuốc, ở nhà nghỉ một ngày.',
+      note: '……时 = khi …, đứng sau sự việc.'
     },
     {
-      q_zh: '朋友生病了，你会对他说什么？',
-      q_vn: 'Bạn của bạn bị ốm, bạn sẽ nói gì với họ?',
-      hint: '你怎么样了？……还疼吗？',
-      sample: '你怎么样了？头还疼吗？身体不舒服时更要好好吃饭，我一会儿去看看你。',
-      sample_vn: 'Bạn thế nào rồi? Còn đau đầu không? Khi không khoẻ thì càng phải ăn uống đầy đủ, lát nữa mình sẽ đến thăm bạn.',
-      note: 'Những câu hỏi thăm quen thuộc khi thăm người ốm.'
+      q_zh: '你经常做什么运动？',
+      q_vn: 'Bạn thường chơi môn thể thao nào? Môn nào bạn thích nhất?',
+      hint: '我经常……，最喜欢的是……',
+      sample: '我经常和朋友打篮球，有时也去游泳，最喜欢的是打篮球。',
+      sample_vn: 'Mình hay chơi bóng rổ với bạn, có lúc đi bơi, thích nhất vẫn là bóng rổ.',
+      note: '经常 đứng trước động từ; 最喜欢的是…… = thứ thích nhất là ….'
     },
     {
-      q_zh: '说一说你今天做了什么。',
-      q_vn: 'Kể xem hôm nay bạn đã làm gì.',
-      hint: '今天……，从……回来以后……',
-      sample: '今天下课后我不太舒服，老师送我去了医院，从医院回来，朋友也来看我了。',
-      sample_vn: 'Hôm nay sau khi tan học tôi không được khoẻ, cô giáo đưa tôi đến bệnh viện, từ bệnh viện về bạn tôi cũng đến thăm.',
-      note: 'Ôn 从 (bài 7) và bổ ngữ xu hướng 回来/回去 (bài 5).'
+      q_zh: '朋友生病了，你给他打电话，你会说什么？',
+      q_vn: 'Bạn của bạn bị ốm, bạn gọi điện hỏi thăm. Bạn sẽ nói gì?',
+      hint: '你身体……？吃药了没有？',
+      sample: '你身体好点儿了吗？吃药了没有？我一会儿去看你。',
+      sample_vn: 'Bạn đỡ hơn chút nào chưa? Uống thuốc chưa? Lát nữa mình đến thăm bạn.',
+      note: 'Hỏi thăm người ốm: 好点儿了吗？/ ……了没有？'
     }
   ]
 };
 
 var translateData = [
-  { vi: 'Em bị đau đầu, không được khoẻ lắm.', zh: '我头疼，不太舒服。', py: 'Wǒ tóu téng, bú tài shūfu.' },
-  { vi: 'Vậy em cứ ngồi ở đây nhé, cô đi lấy xe.', zh: '那你在这儿坐着，我去开车。', py: 'Nà nǐ zài zhèr zuòzhe, wǒ qù kāichē.' },
-  { vi: 'Bây giờ trên đường nhiều xe, lại còn đang có tuyết rơi.', zh: '现在路上车多，还下着雪。', py: 'Xiànzài lùshang chē duō, hái xiàzhe xuě.' },
-  { vi: 'Khi cơ thể không khoẻ thì càng phải ăn uống đầy đủ.', zh: '身体不舒服时更要好好吃饭。', py: 'Shēntǐ bù shūfu shí gèng yào hǎohāo chīfàn.' },
-  { vi: 'Em thích ăn món Trung Quốc nhất.', zh: '你最喜欢吃中国菜。', py: 'Nǐ zuì xǐhuan chī Zhōngguó cài.' }
+  { vi: 'Ngoài trời đang có tuyết, hôm nay chúng ta đừng ra ngoài nữa.', zh: '外边下着雪，我们今天别出去了。', py: 'Wàibian xiàzhe xuě, wǒmen jīntiān bié chūqu le.' },
+  { vi: 'Tôi thường xuyên đau đầu, bác sĩ bảo tôi nghỉ ngơi nhiều hơn.', zh: '我经常头疼，医生让我多休息。', py: 'Wǒ jīngcháng tóuténg, yīshēng ràng wǒ duō xiūxi.' },
+  { vi: 'Em gái tôi đang ngồi ở cửa đợi mẹ về.', zh: '妹妹在门口坐着等妈妈回来。', py: 'Mèimei zài ménkǒu zuòzhe děng māma huílai.' },
+  { vi: 'Ở nhà tôi, tôi là người đi ngủ muộn nhất.', zh: '在我家，我睡觉睡得最晚。', py: 'Zài wǒ jiā, wǒ shuìjiào shuì de zuì wǎn.' },
+  { vi: 'Lúc tan học về nhà, tôi ghé hiệu thuốc mua thuốc cho bà.', zh: '下课回家时，我去药店给奶奶买了药。', py: 'Xiàkè huí jiā shí, wǒ qù yàodiàn gěi nǎinai mǎile yào.' }
 ];
 
 var translateDataRev = [
-  { vi: 'Mấy ngày nay em thường xuyên đau đầu.', zh: '你这几天经常头疼。', py: 'Nǐ zhè jǐ tiān jīngcháng tóu téng.' },
-  { vi: 'Bây giờ không cử động được, cứ động là đau.', zh: '现在不能动，一动就疼。', py: 'Xiànzài bù néng dòng, yí dòng jiù téng.' },
-  { vi: 'Cô Vương đang lái xe, bạn tìm cô có việc gì không?', zh: '王老师开着车呢，你找她有事吗？', py: 'Wáng lǎoshī kāizhe chē ne, nǐ zhǎo tā yǒu shì ma?' },
-  { vi: 'Bác sĩ đã kê một ít thuốc, uống xong thấy khoẻ hơn nhiều rồi.', zh: '医生开了一些药，吃完就好多了。', py: 'Yīshēng kāile yìxiē yào, chīwán jiù hǎoduō le.' },
-  { vi: 'Tôi mua một ít thuốc ở hiệu thuốc, không đi bệnh viện.', zh: '从药店买了点儿药，没去医院。', py: 'Cóng yàodiàn mǎile diǎnr yào, méi qù yīyuàn.' }
+  { vi: 'Anh ấy tay cầm hai cốc trà sữa, đang đợi bạn ở bến xe.', zh: '他手里拿着两杯奶茶，在车站等你呢。', py: 'Tā shǒu li názhe liǎng bēi nǎichá, zài chēzhàn děng nǐ ne.' },
+  { vi: 'Đây là phòng học lớn nhất trường chúng tôi.', zh: '这是我们学校最大的教室。', py: 'Zhè shì wǒmen xuéxiào zuì dà de jiàoshì.' },
+  { vi: 'Người lái xe trên đường đều lái rất chậm, vì tuyết to quá.', zh: '路上开车的人都开得很慢，因为雪太大了。', py: 'Lùshang kāichē de rén dōu kāi de hěn màn, yīnwèi xuě tài dà le.' },
+  { vi: 'Bà rất khoẻ, ngày nào cũng ra ngoài đi bộ một lát.', zh: '奶奶身体很好，每天都去外边走走。', py: 'Nǎinai shēntǐ hěn hǎo, měi tiān dōu qù wàibian zǒuzou.' }
 ];
 
 // ══════════════════════════════════════════

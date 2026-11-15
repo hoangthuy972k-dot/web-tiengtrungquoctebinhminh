@@ -1131,135 +1131,154 @@ var dialogData = [
 
 var listenData = [
   {
-    audio: '喂，家月，是你啊！有什么事情吗？没什么事，就想跟您说说话。北京这几天虽然是晴天，但是有点儿冷。我这里比北京冷多了，外边还正下着雪呢！',
+    audio: '今天是阴天，比昨天冷多了，你多穿件衣服吧。',
     questions: [
-      { q: '北京的天气怎么样？', opts: ['晴天，有点儿冷', '下着雪', '很热'], ans: 0 },
-      { q: '白家月那里的天气怎么样？', opts: ['比北京冷多了', '比北京热', '跟北京一样'], ans: 0 }
+      { q: 'Hôm nay trời thế nào?', opts: ['Âm u', 'Nắng đẹp', 'Đang mưa'], ans: 0, exp: '阴天 = trời âm u; 晴天 mới là trời nắng.' },
+      { q: 'So với hôm qua, hôm nay thế nào?', opts: ['Nóng hơn nhiều', 'Lạnh hơn nhiều', 'Giống hôm qua'], ans: 1, exp: '比昨天冷多了 = lạnh hơn hôm qua nhiều; A 比 B + tính từ + 多了.' }
     ]
   },
   {
-    audio: '一飞，听家月说你那边下雪了，下得大不大？今天不大，昨天比今天下得大。天气不好，你去外面的时候多穿点儿衣服。',
+    audio: '我住在六楼，楼下就是地铁站，走两分钟就到了。',
     questions: [
-      { q: '哪天的雪下得大？', opts: ['今天', '昨天', '明天'], ans: 1 },
-      { q: '姐姐让他做什么？', opts: ['多穿点儿衣服', '多买点儿药', '少喝点儿咖啡'], ans: 0 }
+      { q: 'Người nói ở tầng mấy?', opts: ['Tầng 4', 'Tầng 6', 'Tầng 10'], ans: 1, exp: '住在六楼 = ở tầng sáu; 楼 = tầng, toà nhà.' },
+      { q: 'Dưới nhà có gì?', opts: ['Hiệu thuốc', 'Siêu thị', 'Ga tàu điện ngầm'], ans: 2, exp: '楼下就是地铁站 = ngay dưới nhà là ga tàu điện ngầm.' }
     ]
   },
   {
-    audio: '家月，今天天气不错，我们去跑步吧！你跑步跑得比我快，我们能一起跑吗？可以的，我慢慢跑，等着你。我从小就经常跟爸爸跑步。',
+    audio: '小时候我跑得比哥哥快，现在哥哥比我跑得快多了。',
     questions: [
-      { q: '谁跑得快？', opts: ['李文', '白家月', '一样快'], ans: 0 },
-      { q: '李文从什么时候开始跑步？', opts: ['从小', '去年', '这个月'], ans: 0 }
+      { q: 'Bây giờ ai chạy nhanh hơn?', opts: ['Người nói', 'Anh trai', 'Hai người như nhau'], ans: 1, exp: '现在哥哥比我跑得快多了 = bây giờ anh trai chạy nhanh hơn tôi nhiều.' },
+      { q: 'Hồi nhỏ thì sao?', opts: ['Người nói chạy nhanh hơn', 'Anh trai chạy nhanh hơn', 'Hai người không chạy bộ'], ans: 0, exp: '小时候我跑得比哥哥快 = hồi nhỏ tôi chạy nhanh hơn anh.' }
     ]
   },
   {
-    audio: '前几天天气不好，我没走路，每天坐两站地铁去学校。今天是个大晴天，李文让我跟他去外面跑步。跟李文一起跑步，我好高兴啊！',
+    audio: '坐地铁比坐出租车便宜得多，只要三块钱。',
     questions: [
-      { q: '前几天她怎么去学校？', opts: ['坐地铁', '走路', '跑步'], ans: 0 },
-      { q: '今天天气怎么样？', opts: ['大晴天', '阴天', '下雪'], ans: 0 }
+      { q: 'Đi tàu điện ngầm so với taxi thế nào?', opts: ['Đắt hơn nhiều', 'Rẻ hơn nhiều', 'Chậm hơn nhiều'], ans: 1, exp: '便宜得多 = rẻ hơn nhiều; 得多 đặt sau tính từ trong câu 比.' }
+    ]
+  },
+  {
+    audio: '我朋友打篮球打得比我好多了，他从小就经常打。',
+    questions: [
+      { q: 'Vì sao bạn của người nói chơi bóng rổ giỏi hơn?', opts: ['Vì bạn ấy cao hơn', 'Vì bạn ấy chơi thường xuyên từ nhỏ', 'Vì bạn ấy có thầy dạy'], ans: 1, exp: '从小就经常打 = từ nhỏ đã thường xuyên chơi.' }
+    ]
+  },
+  {
+    audio: '我正坐着地铁呢，下了车再给你打电话。',
+    questions: [
+      { q: 'Người nói đang làm gì?', opts: ['Đang lái xe', 'Đang ăn cơm', 'Đang đi tàu điện ngầm'], ans: 2, exp: '正坐着地铁呢 = đang ngồi tàu điện ngầm; 正 + V(着) + 呢 = đang ….' }
     ]
   }
 ];
 
 var matchData = [
-  { left: '这里比北京', right: '冷多了' },
-  { left: '昨天比今天', right: '下得大' },
-  { left: '你跑步跑得', right: '比我快' },
-  { left: '外边正', right: '下着雪呢' },
-  { left: '坐两站', right: '地铁' },
-  { left: '一会儿', right: '楼下见' }
+  { left: '坐', right: '地铁' },
+  { left: '下一', right: '站' },
+  { left: '有什么', right: '事情' },
+  { left: '正', right: '下着雨呢' },
+  { left: '好', right: '冷啊' },
+  { left: '住在', right: '五楼' },
+  { left: '从小', right: '就爱运动' },
+  { left: '今天是个', right: '大晴天' }
 ];
 
 var fillData = [
-  { pre: '有什么', blank: '事情', post: '吗？', hint: '(sự việc)', ans: '事情' },
-  { pre: '北京这几天虽然是', blank: '晴', post: '天，但是有点儿冷。', hint: '(nắng)', ans: '晴' },
-  { pre: '外边还', blank: '正', post: '下着雪呢！', hint: '(đang)', ans: '正', exp: '正 + động từ + 着 + 呢 = đang…: 正下着雪呢 nhấn mạnh hành động đang diễn ra lúc nói.' },
-  { pre: '你去', blank: '外面', post: '的时候多穿点儿衣服。', hint: '(bên ngoài)', ans: '外面' },
-  { pre: '', blank: '阴', post: '天下雪什么的就少出去吧。', hint: '(âm u)', ans: '阴' },
-  { pre: '我', blank: '从小', post: '就经常跟爸爸跑步。', hint: '(từ nhỏ)', ans: '从小', exp: '从小就… = từ nhỏ đã…; 从 chỉ điểm bắt đầu về thời gian.' },
-  { pre: '我现在坐', blank: '地铁', post: '去找你。', hint: '(tàu điện ngầm)', ans: '地铁' },
-  { pre: '你看，前边的那个人', blank: '好', post: '高啊！', hint: '(rất, thật là)', ans: '好', exp: '好 + tính từ + 啊 = thật là…! (cảm thán): 好高啊！' }
+  { pre: '“这家的面条儿怎么样？” — “好吃，比学校的面条儿好吃', blank: '多了', post: '。”', hint: '(hơn nhiều)', ans: '多了', exp: 'A 比 B + tính từ + 多了 = A hơn B nhiều; không dùng 很 / 非常 trong câu 比.' },
+  { pre: '“听说你生病了，现在呢？” — “吃了药，今天比昨天好', blank: '得多', post: '。”', hint: '(hơn nhiều)', ans: '得多', exp: 'Tính từ + 得多 = hơn nhiều: 好得多 = khoẻ hơn nhiều.' },
+  { pre: '弟弟吃饭吃得', blank: '比', post: '我快，每次都第一个吃完。', hint: '(so sánh hơn)', ans: '比', exp: 'V + O + V + 得 + 比 + B + tính từ: 吃饭吃得比我快.' },
+  { pre: '这次考试，安妮考', blank: '得', post: '比我好，老师很高兴。', hint: '(trợ từ bổ ngữ trạng thái)', ans: '得', exp: 'V + 得 + 比 + B + tính từ: 考得比我好; 得 đứng ngay sau động từ.' },
+  { pre: '“喂，你能来一下吗？” — “不好意思，我', blank: '正', post: '洗衣服呢，一会儿过去。”', hint: '(đang)', ans: '正', exp: '正 + động từ + 呢 = đang … (ngay lúc này).' },
+  { pre: '“王老师，您找我有什么', blank: '事情', post: '？” — “明天的考试，你准备得怎么样了？”', hint: '(việc)', ans: '事情', exp: '有什么事情？ = có việc gì không?' },
+  { pre: '天', blank: '阴', post: '了，快要下雨了，我们快回去吧。', hint: '(âm u)', ans: '阴', exp: '天阴了 = trời âm u rồi; ôn 快要……了 = sắp … rồi.' },
+  { pre: '我妹妹', blank: '从小', post: '就爱画画，现在画得比我还好。', hint: '(từ nhỏ)', ans: '从小', exp: '从小就 + động từ = từ nhỏ đã …; 从小 đứng trước động từ.' },
+  { pre: '“你家在几', blank: '楼', post: '？” — “十楼，你到了楼下给我打电话。”', hint: '(tầng)', ans: '楼', exp: '几楼 = tầng mấy; 楼下 = dưới nhà.' },
+  { pre: '这儿离医院不远，坐地铁只有两', blank: '站', post: '。', hint: '(trạm, ga)', ans: '站', exp: '站 làm lượng từ cho chặng tàu / xe: 两站 = hai trạm.' },
+  { pre: 'Lần đầu thấy tuyết, bạn kêu lên: “这里的雪', blank: '好', post: '大啊！”', hint: '(thật là, rất)', ans: '好', exp: '好 + tính từ + 啊 = … thật!, cảm thán; 好 ở đây nghĩa là “rất”.' }
 ];
 
 var sortData = [
-  { words: ['我', '这里', '比', '北京', '冷', '多', '了', '。'], ans: '我这里比北京冷多了。', audio: '我这里比北京冷多了。' },
-  { words: ['昨天', '比', '今天', '下', '得', '大', '。'], ans: '昨天比今天下得大。', audio: '昨天比今天下得大。' },
-  { words: ['你', '跑步', '跑', '得', '比', '我', '快', '。'], ans: '你跑步跑得比我快。', audio: '你跑步跑得比我快。' },
-  { words: ['外边', '还', '正', '下', '着', '雪', '呢', '！'], ans: '外边还正下着雪呢！', audio: '外边还正下着雪呢！' },
-  { words: ['我', '从小', '就', '经常', '跟', '爸爸', '跑步', '。'], ans: '我从小就经常跟爸爸跑步。', audio: '我从小就经常跟爸爸跑步。' },
-  { words: ['坐', '飞机', '比', '坐', '火车', '快', '得', '多', '。'], ans: '坐飞机比坐火车快得多。', audio: '坐飞机比坐火车快得多。' }
+  { words: ['这个', '星期', '比', '上', '个', '星期', '忙', '多', '了', '。'], ans: '这个星期比上个星期忙多了。', audio: '这个星期比上个星期忙多了。' },
+  { words: ['他', '游泳', '游', '得', '比', '我', '快', '得', '多', '。'], ans: '他游泳游得比我快得多。', audio: '他游泳游得比我快得多。' },
+  { words: ['小时候', '我', '经常', '生病', '，', '现在', '身体', '好', '多', '了', '。'], ans: '小时候我经常生病，现在身体好多了。', audio: '小时候我经常生病，现在身体好多了。', alt: ['我小时候经常生病，现在身体好多了。'] },
+  { words: ['外面', '正', '下', '着', '大', '雨', '呢', '。'], ans: '外面正下着大雨呢。', audio: '外面正下着大雨呢。' },
+  { words: ['妈妈', '比', '爸爸', '睡', '得', '早', '。'], ans: '妈妈比爸爸睡得早。', audio: '妈妈比爸爸睡得早。', alt: ['妈妈睡得比爸爸早。'] },
+  { words: ['我们', '在', '下', '一', '站', '下', '车', '。'], ans: '我们在下一站下车。', audio: '我们在下一站下车。' },
+  { words: ['这', '件', '事情', '你', '跟', '妈妈', '说', '了', '没有', '？'], ans: '这件事情你跟妈妈说了没有？', audio: '这件事情你跟妈妈说了没有？' },
+  { words: ['他', '写', '汉字', '写', '得', '比', '我', '好看', '多', '了', '。'], ans: '他写汉字写得比我好看多了。', audio: '他写汉字写得比我好看多了。', alt: ['他写汉字比我写得好看多了。'] }
 ];
 
 var mcData = [
-  { q: '坐飞机比坐火车快＿＿。', opts: ['得多', '多得', '很', '非常'], ans: 0, exp: 'Câu 比 muốn nói hơn nhiều thì thêm 得多 (hoặc 多了) sau tính từ; không dùng 很/非常 trong câu so sánh 比.' },
-  { q: '我这里比北京冷＿＿。', opts: ['多了', '了多', '很', '非常'], ans: 0, exp: 'A 比 B + tính từ + 多了 = A hơn B nhiều. Không đặt 很/非常 trong câu 比; 了多 sai trật tự.' },
-  { q: '妈妈＿＿我睡得晚。', opts: ['比', '跟', '最', '很'], ans: 0, exp: 'So sánh hơn: A 比 B + động từ + 得 + tính từ — 妈妈比我睡得晚 = mẹ ngủ muộn hơn em.' },
-  { q: '白家月汉字写得＿＿陈天中好。', opts: ['比', '最', '很', '真'], ans: 0, exp: 'Động từ + 得 + 比 + B + tính từ: 写得比陈天中好 = viết đẹp hơn Trần Thiên Trung.' },
-  { q: 'Câu nào đúng?', opts: ['你跑步跑得比我快。', '你跑步得比我快。', '你比我跑步得快。', '你跑步比得我快。'], ans: 0, exp: 'Động từ có tân ngữ thì lặp động từ, rồi đặt 比 sau 得: 跑步跑得比我快.' },
-  { q: '“好高啊！” ở đây 好 có nghĩa là gì?', opts: ['Rất', 'Tốt', 'Được', 'Xong'], ans: 0, exp: '好 + tính từ + 啊 = thật là…!: 好高啊 = cao thật!' },
-  { q: '晴天 trái nghĩa với từ nào?', opts: ['阴天', '大风', '热天', '冷天'], ans: 0, exp: '晴天 = trời nắng, 阴天 = trời âm u; hai từ trái nghĩa.' },
-  { q: '“正下着雪呢” nhấn mạnh điều gì?', opts: ['Tuyết đang rơi ngay lúc này', 'Tuyết đã tạnh', 'Tuyết sắp rơi', 'Tuyết rơi rất to'], ans: 0, exp: '正 + động từ + 着 + 呢 nhấn mạnh hành động đang diễn ra ngay lúc nói.' }
+  { q: 'Bạn muốn nói: “Phòng của tôi lớn hơn phòng em gái nhiều.”', opts: ['我的房间比妹妹的大多了。', '我的房间比妹妹的很大。', '我的房间比妹妹的多大了。', '我的房间大比妹妹的多了。'], ans: 0, exp: 'A 比 B + tính từ + 多了: 比妹妹的大多了; câu 比 không dùng 很, 多了 đứng SAU tính từ.' },
+  { q: 'Câu nào SAI?', opts: ['我比他非常高。', '这件衣服比那件贵得多。', '弟弟比我更喜欢运动。', '北京比西安大多了。'], ans: 0, exp: 'Câu 比 không dùng 非常 / 很 trước tính từ; muốn nói hơn nhiều thì dùng 高多了 / 高得多.' },
+  { q: 'Bạn muốn nói: “Mẹ nấu ăn ngon hơn bố.”', opts: ['妈妈做饭做得比爸爸好吃。', '妈妈做饭比爸爸得好吃。', '妈妈比爸爸做饭得好吃。', '妈妈做饭做比爸爸得好吃。'], ans: 0, exp: 'Động từ có tân ngữ: lặp động từ, 比 đặt sau 得 — 做饭做得比爸爸好吃; 得 luôn đứng ngay sau động từ.' },
+  { q: 'A: “你家和学校，哪儿离地铁站近？” — B đáp:', opts: ['学校比我家近得多。', '学校比我家很近。', '学校比我家近很多得。', '学校近得多比我家。'], ans: 0, exp: 'A 比 B + tính từ + 得多; 得多 đứng cuối, sau tính từ; 比 B đứng trước tính từ.' },
+  { q: 'Bạn gọi cho Tiểu Minh, mẹ cậu ấy nghe máy và nói cậu đang ngủ:', opts: ['他正睡觉呢。', '他正睡觉了。', '他睡觉正呢。', '他正睡觉过呢。'], ans: 0, exp: '正 + động từ + 呢 = đang …; 正 đứng trước động từ, không đi với 了 hay 过.' },
+  { q: 'A: “外面还下雨吗？” B: “没有，＿＿，我们去跑步吧。”', opts: ['天晴了', '天阴了', '下大雨了', '雪下得很大'], ans: 0, exp: '晴 = trời quang, nắng (hết mưa) nên mới rủ đi chạy; 阴 = âm u.' },
+  { q: 'Bạn muốn nói: “Hồi nhỏ tôi sống ở Tây An.”', opts: ['小时候我住在西安。', '我住在西安小时候。', '我在西安住小时候。', '小时候我住西安在。'], ans: 0, exp: '小时候 (thời gian) đứng đầu câu hoặc sau chủ ngữ, trước động từ; không đặt cuối câu như tiếng Việt.' },
+  { q: '“这个房间已经很大了，那个房间比它＿＿大。”', opts: ['还', '很', '非常', '最'], ans: 0, exp: '比 + B + 还 / 更 + tính từ = còn … hơn; câu 比 không dùng 很 / 非常, 最 không đi với 比.' },
+  { q: 'Lần đầu thấy núi tuyết, bạn kêu lên: “Đẹp quá!”', opts: ['好漂亮啊！', '漂亮好啊！', '好漂亮吗！', '很好漂亮啊！'], ans: 0, exp: '好 + tính từ + 啊！= … quá!; 好 đứng trước tính từ, câu cảm thán dùng 啊 không dùng 吗.' },
+  { q: 'A: “请问，去北京大学坐地铁要坐几站？” — B đáp:', opts: ['五站就到了。', '五次就到了。', '五楼就到了。', '五点就到了。'], ans: 0, exp: 'Đếm chặng tàu dùng 站: 五站 = năm trạm; 次 = lần, 楼 = tầng, 点 = giờ.' },
+  { q: 'A: “你和你姐姐，谁唱歌唱得好？” — B đáp:', opts: ['姐姐唱得比我好多了。', '姐姐唱得比我很好。', '姐姐比我唱得多好了。', '姐姐唱比我得好。'], ans: 0, exp: 'V + 得 + 比 + B + tính từ + 多了: 唱得比我好多了; không dùng 很, 得 đứng ngay sau động từ.' },
+  { q: 'Câu nào SAI?', opts: ['他说中文得比我好。', '他说中文说得比我好。', '他中文说得比我好。', '他中文比我说得好。'], ans: 0, exp: 'Động từ có tân ngữ không đặt 得 ngay sau tân ngữ: phải lặp động từ (说中文说得) hoặc đưa tân ngữ lên trước (中文说得).' }
 ];
 
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá.',
+  intro: 'Nhấn nút loa nghe câu hỏi / tình huống, rồi tự ghi âm câu trả lời — hãy nói về chính bạn, dùng 比……多了 / 得多, V得比……, 正……呢 và 从小 / 小时候.',
   questions: [
     {
       q_zh: '你那里今天天气怎么样？',
-      q_vn: 'Hôm nay thời tiết chỗ bạn thế nào?',
-      hint: '今天是……天，外边正……',
-      sample: '今天是个大晴天，不过有点儿冷，外边正刮着风呢。',
-      sample_vn: 'Hôm nay trời quang đãng, nhưng hơi lạnh, bên ngoài đang có gió.',
-      note: '正 + động từ + 着 + 呢 để tả việc đang diễn ra.'
+      q_vn: 'Hôm nay thời tiết chỗ bạn thế nào? So với mấy hôm trước ra sao?',
+      hint: '今天……，比前几天……多了。',
+      sample: '我这儿今天天晴了，比前几天热得多，大家都去外面运动了。',
+      sample_vn: 'Chỗ mình hôm nay trời nắng rồi, nóng hơn mấy hôm trước nhiều, mọi người đều ra ngoài vận động.',
+      note: 'A 比 B + tính từ + 得多 / 多了: hơn nhiều.'
     },
     {
-      q_zh: '你那里的天气跟别的城市比怎么样？',
-      q_vn: 'Thời tiết chỗ bạn so với thành phố khác thì thế nào?',
-      hint: '我这里比……冷/热多了。',
-      sample: '我这里比北京冷多了，北京虽然是晴天，但是我们这儿还正下着雪呢。',
-      sample_vn: 'Chỗ tôi lạnh hơn Bắc Kinh nhiều, Bắc Kinh tuy nắng nhưng chỗ chúng tôi tuyết vẫn đang rơi.',
-      note: 'A 比 B + tính từ + 多了/得多 — nhấn sự khác biệt lớn.'
+      q_zh: '你家里人谁做饭做得比你好？',
+      q_vn: 'Trong nhà bạn, ai nấu ăn giỏi hơn bạn?',
+      hint: '我……做饭做得比我……',
+      sample: '我爸爸做饭做得比我好多了，他做的鱼非常好吃。',
+      sample_vn: 'Bố mình nấu ăn giỏi hơn mình nhiều, cá bố làm ngon lắm.',
+      note: 'V + O + V + 得 + 比 + B + tính từ.'
     },
     {
-      q_zh: '你跑步跑得比你的朋友快吗？',
-      q_vn: 'Bạn chạy có nhanh hơn bạn của mình không?',
-      hint: '我跑步跑得比他……',
-      sample: '我跑步跑得比他慢，但是他会慢慢跑，等着我。',
-      sample_vn: 'Tôi chạy chậm hơn bạn ấy, nhưng bạn ấy sẽ chạy chậm lại để đợi tôi.',
-      note: 'Động từ li hợp có bổ ngữ trạng thái: 跑步跑得比……快/慢.'
+      q_zh: '你小时候住在哪儿？',
+      q_vn: 'Hồi nhỏ bạn sống ở đâu? Ở đó thế nào?',
+      hint: '我小时候住在……',
+      sample: '我小时候住在奶奶家，那儿离学校很远，我每天走路去上学。',
+      sample_vn: 'Hồi nhỏ mình ở nhà bà, chỗ đó cách trường rất xa, ngày nào mình cũng đi bộ đi học.',
+      note: '小时候 đứng trước động từ; ôn 离 (bài 9).'
     },
     {
-      q_zh: '你小时候常做什么运动？',
-      q_vn: 'Hồi nhỏ bạn thường chơi môn thể thao gì?',
-      hint: '我从小就……，小时候经常……',
-      sample: '我从小就爱运动，小时候经常跟爸爸一起跑步，跑步能让人快乐。',
-      sample_vn: 'Từ nhỏ tôi đã thích thể thao, hồi nhỏ thường chạy bộ cùng bố, chạy bộ khiến người ta vui vẻ.',
-      note: '从小 đứng trước động từ, 小时候 là danh từ chỉ thời gian.'
+      q_zh: '你每天怎么去学校？',
+      q_vn: 'Mỗi ngày bạn đến trường bằng gì? Vì sao?',
+      hint: '我每天坐……，比……',
+      sample: '我每天坐地铁去学校，只坐三站，比坐公交车快得多。',
+      sample_vn: 'Ngày nào mình cũng đi tàu điện ngầm đến trường, chỉ ba trạm, nhanh hơn xe buýt nhiều.',
+      note: '站 = trạm (lượng từ); 比 + B + tính từ + 得多.'
     },
     {
-      q_zh: '你每天怎么去学校（公司）？',
-      q_vn: 'Mỗi ngày bạn đến trường (công ty) bằng cách nào?',
-      hint: '天气好的时候……，天气不好的时候……',
-      sample: '天气好的时候我走路去，天气不好的时候就坐两站地铁，地铁站离我家很近。',
-      sample_vn: 'Khi thời tiết đẹp tôi đi bộ, khi thời tiết xấu thì đi hai trạm tàu điện ngầm, ga tàu cách nhà tôi rất gần.',
-      note: 'Ôn 离 (bài 9) và 走路 khi nói về đường đi.'
+      q_zh: '现在你正做什么呢？',
+      q_vn: 'Bây giờ bạn đang làm gì? Bên ngoài trời thế nào?',
+      hint: '我正……呢，外面……',
+      sample: '我正在房间里听歌呢，外面天晴了，我一会儿想去打球。',
+      sample_vn: 'Mình đang nghe nhạc trong phòng, bên ngoài trời nắng rồi, lát nữa mình muốn đi chơi bóng.',
+      note: '正 (在) + động từ + 呢 = đang ….'
     }
   ]
 };
 
 var translateData = [
-  { vi: 'Chỗ em lạnh hơn Bắc Kinh nhiều.', zh: '我这里比北京冷多了。', py: 'Wǒ zhèlǐ bǐ Běijīng lěngduō le.' },
-  { vi: 'Bên ngoài tuyết vẫn đang rơi đấy!', zh: '外边还正下着雪呢！', py: 'Wàibian hái zhèng xiàzhe xuě ne!' },
-  { vi: 'Hôm qua tuyết rơi to hơn hôm nay.', zh: '昨天比今天下得大。', py: 'Zuótiān bǐ jīntiān xià de dà.' },
-  { vi: 'Bạn chạy nhanh hơn mình.', zh: '你跑步跑得比我快。', py: 'Nǐ pǎobù pǎo de bǐ wǒ kuài.' },
-  { vi: 'Chạy bộ cùng Lý Văn tôi thấy rất vui!', zh: '跟李文一起跑步，我好高兴啊！', py: 'Gēn Lǐ Wén yìqǐ pǎobù, wǒ hǎo gāoxìng a!' }
+  { vi: 'Nhà tôi ở tầng tám, dưới nhà có một hiệu thuốc.', zh: '我家在八楼，楼下有一家药店。', py: 'Wǒ jiā zài bā lóu, lóu xià yǒu yì jiā yàodiàn.' },
+  { vi: 'Năm nay anh trai tôi cao hơn năm ngoái nhiều.', zh: '我哥哥今年比去年高多了。', py: 'Wǒ gēge jīnnián bǐ qùnián gāo duō le.' },
+  { vi: 'Bố tôi lái xe chậm hơn mẹ.', zh: '爸爸开车开得比妈妈慢。', py: 'Bàba kāichē kāi de bǐ māma màn.' },
+  { vi: 'Lúc tôi gọi điện, cô ấy đang ăn cơm.', zh: '我打电话时，她正吃着饭呢。', py: 'Wǒ dǎ diànhuà shí, tā zhèng chīzhe fàn ne.' }
 ];
 
 var translateDataRev = [
-  { vi: 'Không có việc gì ạ, chỉ là muốn trò chuyện với chị một chút thôi.', zh: '没什么事，就想跟您说说话。', py: 'Méi shénme shì, jiù xiǎng gēn nín shuōshuo huà.' },
-  { vi: 'Khi đi ra ngoài, em nhớ mặc thêm nhiều quần áo một chút nhé.', zh: '你去外面的时候多穿点儿衣服。', py: 'Nǐ qù wàimiàn de shíhou duō chuān diǎnr yīfu.' },
-  { vi: 'Những lúc trời âm u hoặc có tuyết thì nên hạn chế ra ngoài.', zh: '阴天下雪什么的就少出去吧。', py: 'Yīntiān xià xuě shénmede jiù shǎo chūqù ba.' },
-  { vi: 'Từ nhỏ mình đã thường xuyên chạy bộ cùng bố rồi.', zh: '我从小就经常跟爸爸跑步。', py: 'Wǒ cóngxiǎo jiù jīngcháng gēn bàba pǎobù.' },
-  { vi: 'Mỗi ngày đi hai trạm tàu điện ngầm để đến trường.', zh: '每天坐两站地铁去学校。', py: 'Měi tiān zuò liǎng zhàn dìtiě qù xuéxiào.' }
+  { vi: 'Trời tuyết, chúng ta đi tàu điện ngầm đi, nhanh hơn lái xe nhiều.', zh: '下雪天，我们坐地铁去吧，比开车快多了。', py: 'Xià xuě tiān, wǒmen zuò dìtiě qù ba, bǐ kāichē kuài duō le.' },
+  { vi: 'Đồ ăn ở quán kia ngon hơn quán này nhiều, chỉ có điều hơi xa.', zh: '那家饭店的菜比这家好吃得多，就是有点儿远。', py: 'Nà jiā fàndiàn de cài bǐ zhè jiā hǎochī de duō, jiùshì yǒudiǎnr yuǎn.' },
+  { vi: 'Chị tôi nói chậm hơn tôi, mọi người đều nghe hiểu.', zh: '姐姐说话说得比我慢，大家都能听懂。', py: 'Jiějie shuōhuà shuō de bǐ wǒ màn, dàjiā dōu néng tīngdǒng.' }
 ];
 
 // ══════════════════════════════════════════

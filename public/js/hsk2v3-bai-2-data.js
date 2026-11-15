@@ -1733,135 +1733,156 @@ var dialogData = [
 
 var listenData = [
   {
-    audio: '请问，这儿有到北京大学的公交车吗？有，但车站有点儿远。这儿好打车吗？好打车。安妮，我们还是打车去吧。',
+    audio: '机场很远，坐公交车要两个多小时，打车只要一个小时。',
     questions: [
-      { q: '白家月和安妮想去哪儿？', opts: ['饭店', '车站', '北京大学'], ans: 2 },
-      { q: '她们怎么去那儿？', opts: ['开车', '坐出租车', '坐公交车'], ans: 1 }
+      { q: 'Đi xe buýt ra sân bay mất bao lâu?', opts: ['Một tiếng', 'Hơn hai tiếng', 'Hai tiếng'], ans: 1, exp: '两个多小时 = hơn hai tiếng; số dưới 10: số + 个 + 多 + 小时.' },
+      { q: 'Bắt taxi thì mất bao lâu?', opts: ['Hơn hai tiếng', 'Nửa tiếng', 'Một tiếng'], ans: 2, exp: '打车只要一个小时 = bắt taxi chỉ mất một tiếng.' }
     ]
   },
   {
-    audio: '学校里人真多啊！是啊，北京大学有四万多名学生呢！你是怎么知道的？是网上说的，网上还说北京大学有三千多名外国学生。',
+    audio: '这个大学有一万多名学生，有三百多名是外国学生。',
     questions: [
-      { q: '北京大学有多少学生？', opts: ['三千多', '四万多', '十万多'], ans: 1 },
-      { q: '安妮是怎么知道的？', opts: ['网上说的', '老师说的', '书上写的'], ans: 0 }
+      { q: 'Trường đại học này có bao nhiêu sinh viên?', opts: ['Hơn 10 000', 'Đúng 10 000', 'Hơn 1 000'], ans: 0, exp: '一万多 = hơn một vạn (hơn 10 000); 多 đứng sau số tròn, trước lượng từ 名.' },
+      { q: 'Có bao nhiêu học sinh nước ngoài?', opts: ['Khoảng 30', 'Hơn 3 000', 'Hơn 300'], ans: 2, exp: '三百多名 = hơn 300 người; 外国学生 = học sinh nước ngoài.' }
     ]
   },
   {
-    audio: '家月，你看，学校里有家电影院！是啊，电影院还不小。他们卖的电影票也很便宜。天啊！有的还不到二十块钱。',
+    audio: '我在网上买的电影票只要三十多块钱。',
     questions: [
-      { q: '学校里有什么？', opts: ['银行', '电影院', '公交车站'], ans: 1 },
-      { q: '有的电影票还不到多少钱？', opts: ['十块钱', '二十块钱', '三十块钱'], ans: 1 }
+      { q: 'Người nói mua vé xem phim ở đâu?', opts: ['Ở rạp chiếu phim', 'Trên mạng', 'Ở siêu thị'], ans: 1, exp: '在网上买的电影票 = vé xem phim mua trên mạng; cụm 在网上买 làm định ngữ, có 的.' },
+      { q: 'Vé giá bao nhiêu?', opts: ['Hơn 13 đồng', 'Đúng 30 đồng', 'Hơn 30 đồng'], ans: 2, exp: '三十多块 = hơn 30 đồng.' }
     ]
   },
   {
-    audio: '北京大学很大，有四万多名学生。学校很漂亮，里边还有家电影院，电影票也不贵，我们有时间还想再过来看个电影。',
+    audio: '外边在下雨，你别过来了，明天我去你家吧。',
     questions: [
-      { q: '北京大学怎么样？', opts: ['人不多', '很漂亮', '东西很贵'], ans: 1 },
-      { q: '她们有时间还想再来做什么？', opts: ['看学生', '学中文', '看电影'], ans: 2 }
+      { q: 'Người nói bảo người kia làm gì?', opts: ['Mang ô sang', 'Đến ngay', 'Đừng sang nữa'], ans: 2, exp: '别过来了 = đừng sang (đây) nữa; 别 + động từ + 了 = thôi đừng … nữa.' },
+      { q: 'Ngày mai thì sao?', opts: ['Người nói sẽ đến nhà người kia', 'Người kia đến nhà người nói', 'Hai người đi xem phim'], ans: 0, exp: '明天我去你家 = mai tôi đến nhà bạn.' }
+    ]
+  },
+  {
+    audio: '那个在看书的男学生是我哥哥的同学。',
+    questions: [
+      { q: 'Cậu học sinh đang đọc sách là ai?', opts: ['Anh trai người nói', 'Bạn học của anh trai người nói', 'Thầy giáo của người nói'], ans: 1, exp: '在看书的男学生 = cậu học sinh đang đọc sách; 我哥哥的同学 = bạn học của anh trai tôi.' }
+    ]
+  },
+  {
+    audio: '去北京大学的公交车很多，但车上人也很多。',
+    questions: [
+      { q: 'Xe buýt đi Đại học Bắc Kinh thế nào?', opts: ['Ít chuyến và vắng người', 'Nhiều chuyến nhưng đông người', 'Nhiều chuyến và vắng người'], ans: 1, exp: '公交车很多 = xe buýt nhiều; 但车上人也很多 = nhưng trên xe cũng đông người.' }
     ]
   }
 ];
 
 var matchData = [
-  { left: '公交', right: '车' },
+  { left: '坐', right: '公交车' },
   { left: '一间', right: '教室' },
-  { left: '四万多', right: '名学生' },
-  { left: '电影', right: '票' },
-  { left: '还是', right: '打车去吧' },
-  { left: '外国', right: '学生' }
+  { left: '三千多名', right: '外国学生' },
+  { left: '在网上', right: '买票' },
+  { left: '车站', right: '有点儿远' },
+  { left: '别', right: '过来了' },
+  { left: '人真多', right: '啊' }
 ];
 
 var fillData = [
-  { pre: '这儿有到北京大学的', blank: '公交车', post: '吗？', hint: '(xe buýt)', ans: '公交车' },
-  { pre: '有，', blank: '但', post: '车站有点儿远。', hint: '(nhưng)', ans: '但', exp: '但 = nhưng, nối hai vế trái ý: có xe buýt, nhưng bến hơi xa.' },
-  { pre: '我们', blank: '还是', post: '打车去吧。', hint: '(vẫn nên)', ans: '还是', exp: '还是…吧 = thôi thì cứ… đi, dùng khi cân nhắc rồi chọn một cách: 我们还是打车去吧.' },
-  { pre: '北京大学有四万', blank: '多', post: '名学生。', hint: '(hơn, có lẻ)', ans: '多', exp: 'Số tròn (四万) + 多 + lượng từ = hơn…: 四万多名学生; 多 đứng trước lượng từ 名.' },
-  { pre: '那边就有一', blank: '间', post: '教室。', hint: '(lượng từ: gian phòng)', ans: '间', exp: '间 là lượng từ cho phòng: 一间教室.' },
-  { pre: '是', blank: '网上', post: '说的。', hint: '(trên mạng)', ans: '网上' },
-  { pre: '还是', blank: '别', post: '看电影了。', hint: '(đừng)', ans: '别', exp: '别 + động từ + 了 = thôi đừng… nữa: 还是别看电影了.' },
-  { pre: '我们有时间还想再', blank: '过来', post: '看个电影。', hint: '(qua đây)', ans: '过来', exp: '过来 = qua đây (hướng về phía người nói): 再过来看个电影.' }
+  { pre: 'Trời đổ mưa, bạn khuyên bạn mình: “下雨了，你', blank: '还是', post: '打车回家吧。”', hint: '(thôi thì cứ … — chọn cách tốt hơn)', ans: '还是', exp: '还是……吧 = thôi thì cứ … đi: cân nhắc rồi đề nghị cách tốt hơn.' },
+  { pre: '“你们公司有多少人？” — “两万', blank: '多', post: '人。”', hint: '(hơn — số ước lượng)', ans: '多', exp: 'Số tròn (万) + 多 = hơn …: 两万多人 = hơn hai vạn (hơn 20 000) người.' },
+  { pre: '我买的这本书不贵，十五块', blank: '多', post: '。', hint: '(hơn một chút)', ans: '多', exp: 'Số có hàng đơn vị: số + lượng từ + 多: 十五块多 = hơn 15 đồng một chút; không nói 十五多块.' },
+  { pre: '这家医院有三百多', blank: '名', post: '医生。', hint: '(lượng từ chỉ người)', ans: '名', exp: '名 là lượng từ cho người (trang trọng): 三百多名医生.' },
+  { pre: '我家有三', blank: '间', post: '房间，我和姐姐住一间。', hint: '(lượng từ: gian, căn)', ans: '间', exp: '间 là lượng từ cho phòng: 三间房间; không dùng 个 hay 名.' },
+  { pre: '“你家远吗？” — “不', blank: '远', post: '，坐公交车十分钟就到了。”', hint: '(xa)', ans: '远', exp: '远 = xa; 不远 = không xa; 就到了 = là đến rồi.' },
+  { pre: '这家饭店的菜很好吃，', blank: '但', post: '人太多了。', hint: '(nhưng)', ans: '但', exp: '但 = nhưng, nối hai vế trái ý: đồ ăn ngon — nhưng đông người quá.' },
+  { pre: 'Mẹ đang ngủ, bạn nhắc em: “妈妈在睡觉呢，你', blank: '别', post: '说话了。”', hint: '(đừng)', ans: '别', exp: '别 + động từ + 了 = đừng … nữa; 别 đứng trước động từ.' },
+  { pre: '这件衣服是我在', blank: '网上', post: '买的，很便宜。', hint: '(trên mạng)', ans: '网上', exp: '在网上买 = mua trên mạng; 是……的 nhấn mạnh nơi mua.' },
+  { pre: '“去西安的火车', blank: '票', post: '贵吗？” — “不太贵。”', hint: '(vé)', ans: '票', exp: '火车票 = vé tàu hỏa; 去西安的火车票 = vé tàu đi Tây An.' },
+  { pre: '这是妈妈给我买', blank: '的', post: '手机。', hint: '(trợ từ nối định ngữ với danh từ)', ans: '的', exp: 'Cụm 妈妈给我买 làm định ngữ cho 手机, phải có 的: 妈妈给我买的手机 = điện thoại mẹ mua cho tôi.' },
+  { pre: '“你在哪儿？” — “我在车站，你能', blank: '过来', post: '接我吗？”', hint: '(qua đây, đến đây)', ans: '过来', exp: '过来 = qua đây (về phía người nói); 过来接我 = qua đón tôi.' }
 ];
 
 var sortData = [
-  { words: ['这儿', '有', '到', '北京大学', '的', '公交车', '吗', '？'], ans: '这儿有到北京大学的公交车吗？', audio: '这儿有到北京大学的公交车吗？' },
-  { words: ['我们', '还是', '打车', '去', '吧', '。'], ans: '我们还是打车去吧。', audio: '我们还是打车去吧。' },
-  { words: ['北京大学', '有', '四万多', '名', '学生', '。'], ans: '北京大学有四万多名学生。', audio: '北京大学有四万多名学生。' },
-  { words: ['他们', '卖', '的', '电影票', '也', '很', '便宜', '。'], ans: '他们卖的电影票也很便宜。', audio: '他们卖的电影票也很便宜。' },
-  { words: ['那边', '就', '有', '一间', '教室', '。'], ans: '那边就有一间教室。', audio: '那边就有一间教室。' },
-  { words: ['还是', '别', '看', '电影', '了', '。'], ans: '还是别看电影了。', audio: '还是别看电影了。' }
+  { words: ['今天', '外边', '很', '冷', '，', '我们', '还是', '在', '家', '看', '电视', '吧', '。'], ans: '今天外边很冷，我们还是在家看电视吧。', audio: '今天外边很冷，我们还是在家看电视吧。' },
+  { words: ['那家', '饭店', '有', '一百多', '个', '服务员', '。'], ans: '那家饭店有一百多个服务员。', audio: '那家饭店有一百多个服务员。' },
+  { words: ['他', '买', '的', '水果', '都', '很', '好吃', '。'], ans: '他买的水果都很好吃。', audio: '他买的水果都很好吃。' },
+  { words: ['在', '网上', '买', '的', '票', '便宜', '一点儿', '。'], ans: '在网上买的票便宜一点儿。', audio: '在网上买的票便宜一点儿。' },
+  { words: ['这', '间', '教室', '不', '大', '，', '但', '很', '漂亮', '。'], ans: '这间教室不大，但很漂亮。', audio: '这间教室不大，但很漂亮。' },
+  { words: ['别', '看', '电视', '了', '，', '去', '睡觉', '吧', '。'], ans: '别看电视了，去睡觉吧。', audio: '别看电视了，去睡觉吧。' },
+  { words: ['你', '下午', '能', '过来', '一下', '吗', '？'], ans: '你下午能过来一下吗？', audio: '你下午能过来一下吗？', alt: ['下午你能过来一下吗？'] },
+  { words: ['坐', '在', '那边', '的', '人', '是', '我们', '的', '外国', '老师', '。'], ans: '坐在那边的人是我们的外国老师。', audio: '坐在那边的人是我们的外国老师。' }
 ];
 
 var mcData = [
-  { q: '你家太远了，我们是＿＿过来的。', opts: ['打车', '车站', '间', '但'], ans: 0, exp: '打车 = đi taxi; 是打车过来的 nhấn mạnh cách đến (cấu trúc 是…的).' },
-  { q: '那是一＿＿大教室，我们明天要去那儿上课。', opts: ['名', '间', '票', '万'], ans: 1, exp: '间 là lượng từ cho phòng: 一间大教室; 名 dùng cho người, 票 là vé, 万 là số.' },
-  { q: '李文让我去接他的朋友，＿＿我太忙了，没时间。', opts: ['还是', '但', '别', '过来'], ans: 1, exp: 'Hai vế trái ngược nhau (được nhờ đón nhưng không có thời gian) nên dùng 但 = nhưng.' },
-  { q: '请问，去北京大学的＿＿在哪儿？', opts: ['教室', '网上', '车站', '电影院'], ans: 2, exp: '车站 = bến xe; người hỏi tìm bến xe buýt đi Đại học Bắc Kinh. 教室 là phòng học, 网上 là trên mạng.' },
-  { q: '“北京大学有四万多名学生” nghĩa là gì?', opts: ['Hơn 40 000 sinh viên', 'Đúng 40 000 sinh viên', 'Gần 4 000 sinh viên', 'Hơn 400 sinh viên'], ans: 0, exp: 'Số + 多 + lượng từ = hơn số đó: 四万多 = hơn 40 000.' },
-  { q: '“还是……吧” dùng để làm gì?', opts: ['Nêu lựa chọn thiên về một hướng', 'Hỏi thời gian', 'Phủ định hoàn toàn', 'Nhấn mạnh quá khứ'], ans: 0, exp: '还是…吧 dùng khi cân nhắc rồi chọn một phương án: 我们还是打车去吧.' },
-  { q: 'Câu nào có cụm động từ làm định ngữ?', opts: ['他们卖的电影票很便宜。', '他们很便宜卖电影票。', '电影票他们卖很便宜。', '便宜的他们卖电影票。'], ans: 0, exp: 'Cụm động từ làm định ngữ phải có 的 và đứng trước danh từ: 他们卖的电影票 = vé xem phim họ bán.' },
-  { q: '“二十多个学生” và “二十个多学生”, câu nào đúng?', opts: ['二十多个学生', '二十个多学生', 'Cả hai đều đúng', 'Cả hai đều sai'], ans: 0, exp: 'Với số tròn chục, 多 đứng sau số và trước lượng từ: 二十多个学生; không đặt 多 sau 个.' }
+  { q: 'Đã 11 giờ đêm mà em trai vẫn chơi điện thoại, bạn khuyên: “Muộn rồi, em đi ngủ thôi.”', opts: ['很晚了，你还是去睡觉吧。', '很晚了，你还是去睡觉吗？', '很晚了，你去睡觉还是吧。', '很晚了，你是还去睡觉吧。'], ans: 0, exp: '还是 đứng trước động từ, 吧 ở cuối câu: 你还是去睡觉吧; dùng 吗 sẽ thành câu hỏi, không còn là lời khuyên.' },
+  { q: 'A: “坐公交车去电影院要一个多小时。” — B đáp:', opts: ['那我们还是打车去吧。', '那我们打车还是去吧。', '那我们还是打车去吗？', '那我们还是打车去了。'], ans: 0, exp: 'Xe buýt lâu quá nên đề nghị cách tốt hơn: 还是 + cách làm + 吧; 了 ở cuối sẽ thành “đã đi rồi”.' },
+  { q: 'Bạn muốn nói: “Hôm qua có hơn 20 người đến nhà tôi.”', opts: ['昨天有二十多个人来我家。', '昨天有二十个多人来我家。', '昨天有多二十个人来我家。', '昨天来我家有二十多个人。'], ans: 0, exp: 'Số tròn chục + 多 + lượng từ: 二十多个人; 多 không đứng sau 个, cũng không đứng trước số.' },
+  { q: 'Bạn mua táo hết hơn 8 đồng một chút, bạn nói:', opts: ['这些苹果八块多。', '这些苹果八多块。', '这些苹果多八块。', '这些苹果八十多块。'], ans: 0, exp: 'Số dưới 10: số + lượng từ + 多: 八块多 = hơn 8 đồng; 八十多块 là hơn 80 đồng.' },
+  { q: 'Bạn muốn nói: “Mì bố tôi nấu rất ngon.”', opts: ['我爸爸做的面条儿很好吃。', '面条儿我爸爸做的很好吃。', '我爸爸做面条儿的很好吃。', '我爸爸做的面条儿是很好吃。'], ans: 0, exp: 'Định ngữ (我爸爸做) + 的 + danh từ (面条儿): 我爸爸做的面条儿; trước tính từ không thêm 是.' },
+  { q: 'Bạn chỉ vào người đang nói chuyện với thầy giáo và hỏi bạn bên cạnh:', opts: ['和老师说话的那个人是谁？', '那个人和老师说话的是谁？', '那个人是谁和老师说话？', '和老师说话那个的人是谁？'], ans: 0, exp: 'Cụm 和老师说话 làm định ngữ, đứng trước 的 và danh từ: 和老师说话的那个人; không đặt định ngữ sau danh từ như tiếng Việt.' },
+  { q: 'Bạn mình định gọi điện cho thầy lúc 11 giờ đêm, bạn can:', opts: ['现在十一点了，别给老师打电话了。', '现在十一点了，没给老师打电话。', '现在十一点了，给老师别打电话了。', '现在十一点了，别给老师打电话吗？'], ans: 0, exp: '别 đứng trước cụm 给老师打电话: 别给老师打电话了; 没 là “chưa/không (đã)”, không dùng để khuyên can.' },
+  { q: 'A: “这个手机怎么样？” — B: “很好看，＿＿有点儿贵。”', opts: ['但', '还是', '和', '就'], ans: 0, exp: 'Hai vế trái ý (đẹp — hơi đắt) dùng 但 = nhưng; 和 chỉ nối danh từ, không nối hai vế câu.' },
+  { q: 'Câu nào SAI?', opts: ['我家很远学校。', '车站不太远。', '你家远不远？', '我们学校有点儿远。'], ans: 0, exp: '远 là tính từ, không mang tân ngữ phía sau; không dịch từng chữ “nhà tôi rất xa trường”.' },
+  { q: 'Bạn kể: “Trường chúng tôi có hơn 40 phòng học.”', opts: ['我们学校有四十多间教室。', '我们学校有四十多名教室。', '我们学校有四十间多教室。', '我们学校有四十多本教室。'], ans: 0, exp: 'Phòng dùng lượng từ 间 (名 cho người, 本 cho sách); 多 đứng giữa số tròn và lượng từ: 四十多间.' },
+  { q: 'A: “你怎么知道这家饭店的？” — B:', opts: ['是在网上看见的。', '是网上看见的在。', '在网上是看见的。', '是在网上看见了。'], ans: 0, exp: '是 + 在网上 (phần nhấn mạnh) + động từ + 的; 是……的 không dùng 了 ở cuối.' },
+  { q: 'Đến Bắc Kinh, thấy rất nhiều người nước ngoài, bạn thốt lên:', opts: ['这儿的外国人真多啊！', '这儿的外国人真多吗！', '这儿真多外国人啊！', '这儿的外国人多真啊！'], ans: 0, exp: '真 + tính từ + 啊 để cảm thán: 外国人真多啊; không nói 真多外国人 theo trật tự tiếng Việt.' }
 ];
 
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá.',
+  intro: 'Nhấn nút loa nghe câu hỏi / tình huống, rồi tự ghi âm câu trả lời — hãy nói về chính bạn, dùng 还是……吧, số + 多 và cụm “… 的 + danh từ”.',
   questions: [
     {
-      q_zh: '你想问服务员这儿有没有到大学的公交车，你怎么问？',
-      q_vn: 'Bạn muốn hỏi nhân viên ở đây có xe buýt đi đến trường đại học không, bạn hỏi thế nào?',
-      hint: '请问，这儿有到……的公交车吗？',
-      sample: '请问，这儿有到北京大学的公交车吗？',
-      sample_vn: 'Xin hỏi, ở đây có xe buýt đi đến Đại học Bắc Kinh không?',
-      note: '请问 mở đầu câu hỏi lịch sự; 到……的公交车 = xe buýt đi đến…'
-    },
-    {
-      q_zh: '车站有点儿远，你建议朋友怎么去？',
-      q_vn: 'Bến xe hơi xa, bạn khuyên bạn mình đi bằng cách nào?',
-      hint: '我们还是……吧。',
-      sample: '车站有点儿远，我们还是打车去吧。',
-      sample_vn: 'Bến xe hơi xa, chúng ta vẫn nên bắt taxi đi thôi.',
-      note: 'Cấu trúc 还是……吧 dùng khi chọn phương án mình thấy tốt hơn.'
-    },
-    {
-      q_zh: '你们学校有多少学生？',
-      q_vn: 'Trường bạn có bao nhiêu sinh viên?',
+      q_zh: '你们学校有多少学生？有外国学生吗？',
+      q_vn: 'Trường bạn có khoảng bao nhiêu học sinh? Có học sinh nước ngoài không?',
       hint: '我们学校有……多名学生。',
-      sample: '我们学校有两万多名学生。',
-      sample_vn: 'Trường tôi có hơn hai vạn sinh viên.',
-      note: '多 đặt sau số tròn chục/trăm/nghìn để chỉ số lẻ: 四万多名。'
+      sample: '我们学校有两千多名学生，有二十多名外国学生。',
+      sample_vn: 'Trường mình có hơn hai nghìn học sinh, có hơn hai mươi học sinh nước ngoài.',
+      note: 'Số tròn + 多 + lượng từ: 两千多名; 名 là lượng từ cho người.'
     },
     {
-      q_zh: '你是怎么知道这个消息的？',
-      q_vn: 'Bạn biết tin này bằng cách nào?',
-      hint: '是……说的。',
-      sample: '是网上说的，网上还说学校有很多外国学生。',
-      sample_vn: 'Là trên mạng nói vậy, trên mạng còn nói trường có rất nhiều sinh viên nước ngoài.',
-      note: 'Câu “是……的” dùng để nhấn mạnh cách thức, nguồn tin.'
+      q_zh: '我生病了，但下午还有课，我去不去上课？',
+      q_vn: 'Bạn của bạn bị ốm nhưng chiều vẫn muốn đi học. Hãy khuyên bạn ấy.',
+      hint: '你还是……吧，别……了。',
+      sample: '你还是在家休息吧，别去上课了。',
+      sample_vn: 'Cậu cứ ở nhà nghỉ ngơi đi, đừng đi học nữa.',
+      note: '还是……吧 = đề nghị cách tốt hơn; 别……了 = đừng … nữa.'
     },
     {
-      q_zh: '朋友想去看电影，可是你觉得不用去，你怎么说？',
-      q_vn: 'Bạn của bạn muốn đi xem phim, nhưng bạn thấy không cần, bạn nói thế nào?',
-      hint: '还是别……了。',
-      sample: '还是别看电影了，学校里就很好看。',
-      sample_vn: 'Thôi đừng xem phim nữa, trong trường đã rất đẹp rồi.',
-      note: '还是别……了 là cách từ chối nhẹ nhàng, lịch sự.'
+      q_zh: '你喜欢吃谁做的菜？',
+      q_vn: 'Bạn thích ăn món do ai nấu? Hãy kể một món.',
+      hint: '我喜欢吃……做的菜。',
+      sample: '我喜欢吃我妈妈做的菜，她做的饺子非常好吃。',
+      sample_vn: 'Mình thích ăn món mẹ mình nấu, sủi cảo mẹ làm cực kỳ ngon.',
+      note: 'Cụm chủ vị (我妈妈做) + 的 + danh từ: 我妈妈做的菜.'
+    },
+    {
+      q_zh: '你在网上买什么东西？',
+      q_vn: 'Bạn hay mua gì trên mạng? Hãy kể.',
+      hint: '我在网上买……',
+      sample: '我在网上买衣服和书，网上的东西有时很便宜。',
+      sample_vn: 'Mình mua quần áo và sách trên mạng, đồ trên mạng có lúc rất rẻ.',
+      note: '在网上 + động từ = làm gì trên mạng; 在网上 đứng trước động từ.'
+    },
+    {
+      q_zh: '外国朋友第一次来你家，你想请他去哪儿？',
+      q_vn: 'Một người bạn nước ngoài lần đầu đến nhà bạn. Bạn muốn mời bạn ấy đi đâu?',
+      hint: '我想请他去……，再……',
+      sample: '我想请他去书店，再请他吃饺子。',
+      sample_vn: 'Mình muốn mời bạn ấy đi hiệu sách, rồi mời bạn ấy ăn sủi cảo.',
+      note: '请 + người + động từ = mời ai làm gì; 再 = rồi, sau đó.'
     }
   ]
 };
 
 var translateData = [
-  { vi: 'Xin hỏi, ở đây có xe buýt đi đến Đại học Bắc Kinh không?', zh: '请问，这儿有到北京大学的公交车吗？', py: 'Qǐngwèn, zhèr yǒu dào Běijīng Dàxué de gōngjiāochē ma?' },
-  { vi: 'Có đấy, nhưng bến xe buýt hơi xa.', zh: '有，但车站有点儿远。', py: 'Yǒu, dàn chēzhàn yǒudiǎnr yuǎn.' },
-  { vi: 'Chúng ta vẫn nên gọi taxi đi thôi.', zh: '我们还是打车去吧。', py: 'Wǒmen háishi dǎchē qù ba.' },
-  { vi: 'Đại học Bắc Kinh có hơn 40 000 sinh viên.', zh: '北京大学有四万多名学生。', py: 'Běijīng Dàxué yǒu sìwàn duō míng xuésheng.' },
-  { vi: 'Thôi đừng xem phim nữa, Đại học Bắc Kinh đã rất đẹp rồi.', zh: '还是别看电影了，北京大学就很好看！', py: 'Háishi bié kàn diànyǐng le, Běijīng Dàxué jiù hěn hǎokàn!' }
+  { vi: 'Hiệu sách hơi xa, hay là chúng ta đi xe buýt đi.', zh: '书店有点儿远，我们还是坐公交车去吧。', py: 'Shūdiàn yǒudiǎnr yuǎn, wǒmen háishi zuò gōngjiāochē qù ba.' },
+  { vi: 'Quyển sách thầy giáo giới thiệu rất hay.', zh: '老师介绍的那本书很好看。', py: 'Lǎoshī jièshào de nà běn shū hěn hǎokàn.' },
+  { vi: 'Năm ngoái có hơn ba nghìn người nước ngoài đến đây du lịch.', zh: '去年有三千多个外国人来这儿旅游。', py: 'Qùnián yǒu sānqiān duō ge wàiguórén lái zhèr lǚyóu.' },
+  { vi: 'Đừng mua nữa, ở nhà vẫn còn nhiều hoa quả lắm.', zh: '别买了，家里还有很多水果。', py: 'Bié mǎi le, jiā li hái yǒu hěn duō shuǐguǒ.' },
+  { vi: 'Người đến đón chúng tôi là bạn của bố tôi.', zh: '来接我们的人是我爸爸的朋友。', py: 'Lái jiē wǒmen de rén shì wǒ bàba de péngyou.' }
 ];
 
 var translateDataRev = [
-  { vi: 'Trường học đông người quá!', zh: '学校里人真多啊！', py: 'Xuéxiào li rén zhēn duō a!' },
-  { vi: 'Là thông tin trên mạng nói vậy.', zh: '是网上说的。', py: 'Shì wǎngshang shuō de.' },
-  { vi: 'Đằng kia có một phòng học, chúng ta đến xem đi.', zh: '那边就有一间教室，我们去看一下吧。', py: 'Nàbiān jiù yǒu yì jiān jiàoshì, wǒmen qù kàn yíxià ba.' },
-  { vi: 'Vé xem phim họ bán cũng rất rẻ.', zh: '他们卖的电影票也很便宜。', py: 'Tāmen mài de diànyǐngpiào yě hěn piányi.' },
-  { vi: 'Nếu có thời gian chúng tôi vẫn muốn quay lại xem phim.', zh: '我们有时间还想再过来看个电影。', py: 'Wǒmen yǒu shíjiān hái xiǎng zài guòlái kàn ge diànyǐng.' }
+  { vi: 'Vé tàu của bạn là mua trên mạng à?', zh: '你的火车票是在网上买的吗？', py: 'Nǐ de huǒchēpiào shì zài wǎngshang mǎi de ma?' },
+  { vi: 'Hôm nay có hơn mười bạn học không đến lớp.', zh: '今天有十多个同学没来上课。', py: 'Jīntiān yǒu shí duō ge tóngxué méi lái shàngkè.' },
+  { vi: 'Trời ơi, cái điện thoại này hơn năm nghìn tệ cơ à!', zh: '天啊，这个手机五千多块啊！', py: 'Tiān a, zhège shǒujī wǔqiān duō kuài a!' }
 ];
 
 // ══════════════════════════════════════════

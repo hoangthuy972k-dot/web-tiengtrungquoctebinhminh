@@ -1497,31 +1497,43 @@ var dialogData = [
 
 var listenData = [
   {
-    audio: '安妮，你是什么时候从北京回来的？昨天下午。天中，你怎么一下课就往外跑？我跟同学说好了，一起去打篮球。',
+    audio: '我弟弟一回家就往房间里跑，妈妈叫他吃饭他也不来。',
     questions: [
-      { q: '安妮是什么时候回来的？', opts: ['昨天早上', '昨天上午', '昨天下午'], ans: 2 },
-      { q: '陈天中下课以后去做什么？', opts: ['打篮球', '回家', '去教室'], ans: 0 }
+      { q: 'Em trai về đến nhà là làm gì?', opts: ['Ăn cơm ngay', 'Xem ti vi', 'Chạy vào phòng'], ans: 2, exp: '一回家就往房间里跑 = vừa về nhà là chạy ngay vào phòng; 往 + hướng + động từ.' }
     ]
   },
   {
-    audio: '天中，你是不是很喜欢打篮球？没错。你还喜欢什么运动？我还喜欢踢足球，一到星期天就跟朋友们去踢球。',
+    audio: '安妮的汉字写得非常漂亮，老师让她给大家写名字。',
     questions: [
-      { q: '陈天中还喜欢什么运动？', opts: ['游泳', '踢足球', '跑步'], ans: 1 },
-      { q: '他星期天跟谁去踢球？', opts: ['朋友们', '爸爸', '老师'], ans: 0 }
+      { q: 'Annie viết chữ Hán thế nào?', opts: ['Rất nhanh', 'Rất đẹp', 'Không đẹp lắm'], ans: 1, exp: '写得非常漂亮 = viết rất đẹp; động từ + 得 + bổ ngữ đánh giá hành động.' },
+      { q: 'Cô giáo bảo Annie làm gì?', opts: ['Viết tên cho mọi người', 'Đọc bài cho cả lớp', 'Hát một bài'], ans: 0, exp: '让她给大家写名字 = bảo cô ấy viết tên cho mọi người.' }
     ]
   },
   {
-    audio: '跑步呢？你跑得快不快？我跑得不快，也不太喜欢跑步。那你喜欢游泳吗？喜欢，但我游泳游得不快。',
+    audio: '我从上个月开始学游泳，现在游得还不太好。',
     questions: [
-      { q: '安妮跑得怎么样？', opts: ['跑得很快', '跑得不快', '跑得还可以'], ans: 1 },
-      { q: '安妮喜欢游泳吗？', opts: ['喜欢', '不喜欢', '没说'], ans: 0 }
+      { q: 'Người nói bắt đầu học bơi từ khi nào?', opts: ['Năm ngoái', 'Tuần trước', 'Tháng trước'], ans: 2, exp: '从上个月开始 = bắt đầu từ tháng trước.' },
+      { q: 'Bây giờ người nói bơi thế nào?', opts: ['Rất giỏi', 'Chưa giỏi lắm', 'Rất nhanh'], ans: 1, exp: '游得还不太好 = bơi vẫn chưa giỏi lắm; 不 đứng sau 得.' }
     ]
   },
   {
-    audio: '我的爱好是运动。从上小学开始，我每天都跟爸爸去运动。现在我篮球打得很好，足球踢得不错，游泳游得也很快。我一有时间就去运动。',
+    audio: '明天早上七点我们在学校前边见，一起去跑步，别晚了。',
     questions: [
-      { q: '他从什么时候开始运动？', opts: ['从上小学开始', '从去年开始', '从上个月开始'], ans: 0 },
-      { q: '他一有时间就做什么？', opts: ['去运动', '休息', '看电影'], ans: 0 }
+      { q: 'Họ hẹn nhau làm gì?', opts: ['Đá bóng', 'Chạy bộ', 'Bơi'], ans: 1, exp: '一起去跑步 = cùng đi chạy bộ.' },
+      { q: 'Họ hẹn gặp lúc mấy giờ?', opts: ['7 giờ sáng', '6 giờ sáng', '7 giờ tối'], ans: 0, exp: '明天早上七点 = 7 giờ sáng mai.' }
+    ]
+  },
+  {
+    audio: '星期六下午我们去踢足球，你也来吧，我们还少一个人。',
+    questions: [
+      { q: 'Vì sao họ rủ người nghe đi cùng?', opts: ['Người nghe đá rất giỏi', 'Người nghe có bóng', 'Đội còn thiếu một người'], ans: 2, exp: '我们还少一个人 = chúng tôi còn thiếu một người.' }
+    ]
+  },
+  {
+    audio: '妈妈做饭做得很好吃，每次我都吃得很多。',
+    questions: [
+      { q: 'Người nói thấy món mẹ nấu thế nào?', opts: ['Rất ngon', 'Bình thường', 'Hơi mặn'], ans: 0, exp: '做饭做得很好吃 = nấu ăn rất ngon; 做饭 có tân ngữ nên lặp lại động từ 做.' },
+      { q: 'Mỗi lần người nói ăn thế nào?', opts: ['Ăn rất ít', 'Ăn rất nhiều', 'Không muốn ăn'], ans: 1, exp: '吃得很多 = ăn rất nhiều.' }
     ]
   }
 ];
@@ -1529,103 +1541,113 @@ var listenData = [
 var matchData = [
   { left: '打', right: '篮球' },
   { left: '踢', right: '足球' },
-  { left: '跑得', right: '很快' },
-  { left: '游泳游得', right: '不快' },
-  { left: '一下课', right: '就往外跑' },
-  { left: '从上小学', right: '开始' }
+  { left: '唱歌', right: '唱得很好听' },
+  { left: '游泳', right: '游得很快' },
+  { left: '从下个月', right: '开始' },
+  { left: '往前', right: '走' },
+  { left: '一下课', right: '就去打球' }
 ];
 
 var fillData = [
-  { pre: '你是什么时候', blank: '从', post: '北京回来的？', hint: '(từ – giới từ)', ans: '从', exp: '从 + nơi chốn = từ đâu: 从北京回来 = từ Bắc Kinh về.' },
-  { pre: '你怎么一下课就', blank: '往', post: '外跑？', hint: '(về phía)', ans: '往', exp: '往 + phương hướng + động từ = về phía…: 往外跑 = chạy ra ngoài.' },
-  { pre: '我跟同学说好了，一起去', blank: '打', post: '篮球。', hint: '(chơi bằng tay)', ans: '打', exp: 'Môn bóng chơi bằng tay dùng 打: 打篮球; bóng đá dùng 踢.' },
-  { pre: '我还喜欢', blank: '踢', post: '足球。', hint: '(đá)', ans: '踢', exp: '足球 chơi bằng chân nên dùng 踢: 踢足球; bóng rổ dùng 打.' },
-  { pre: '我踢', blank: '得', post: '还可以。', hint: '(trợ từ bổ ngữ)', ans: '得', exp: 'Động từ + 得 + bổ ngữ trạng thái để đánh giá hành động: 踢得还可以 = đá cũng tạm được.' },
-  { pre: '我跑得不快，也不太喜欢', blank: '跑步', post: '。', hint: '(chạy bộ)', ans: '跑步' },
-  { pre: '我的', blank: '爱好', post: '是运动。', hint: '(sở thích)', ans: '爱好' },
-  { pre: '从上小学', blank: '开始', post: '，我每天都跟爸爸去运动。', hint: '(bắt đầu)', ans: '开始', exp: '从 + thời điểm + 开始 = bắt đầu từ…: 从上小学开始.' }
+  { pre: '“你是', blank: '从', post: '哪儿来的？” — “我是法国人。”', hint: '(từ — điểm xuất phát)', ans: '从', exp: '从 + nơi chốn + 来 = đến từ đâu; 是……的 hỏi về nơi xuất phát.' },
+  { pre: 'Bạn chỉ đường: “超市不远，你', blank: '往', post: '前走五分钟就到了。”', hint: '(về phía)', ans: '往', exp: '往 + phương hướng + động từ = đi về phía…: 往前走 = đi thẳng về phía trước.' },
+  { pre: '“你哥哥呢？” — “他一下课就去', blank: '打', post: '球了。”', hint: '(chơi — bóng dùng tay)', ans: '打', exp: 'Bóng chơi bằng tay (bóng rổ) dùng 打: 打球 / 打篮球.' },
+  { pre: '“我弟弟每个星期天都去', blank: '踢', post: '足球，下雨也去。”', hint: '(đá)', ans: '踢', exp: '足球 chơi bằng chân nên dùng 踢: 踢足球.' },
+  { pre: '“你朋友说汉语说', blank: '得', post: '怎么样？” — “说得不错。”', hint: '(trợ từ trước bổ ngữ)', ans: '得', exp: 'Động từ + 得 + bổ ngữ / 怎么样: hỏi và đánh giá hành động; trước động từ dùng 地, sau động từ dùng 得.' },
+  { pre: '“你每天早上做什么运动？” — “我每天早上都去', blank: '跑步', post: '。”', hint: '(chạy bộ)', ans: '跑步', exp: '跑步 = chạy bộ; 运动 = thể thao, vận động.' },
+  { pre: '“你有什么', blank: '爱好', post: '？” — “我喜欢画画和唱歌。”', hint: '(sở thích)', ans: '爱好', exp: '爱好 = sở thích; 你有什么爱好？= bạn có sở thích gì?' },
+  { pre: '“电影几点', blank: '开始', post: '？” — “晚上七点半。”', hint: '(bắt đầu)', ans: '开始', exp: '开始 = bắt đầu.' },
+  { pre: '“你游泳', blank: '游', post: '得快不快？” — “还可以。”', hint: '(lặp lại động từ)', ans: '游', exp: '游泳 có tân ngữ nên phải lặp lại động từ trước 得: 游泳游得…; không nói 游泳得快.' },
+  { pre: 'Bạn kể về em gái: “我妹妹一看见小狗', blank: '就', post: '很高兴。”', hint: '(hễ … là …)', ans: '就', exp: '一……就…… = hễ / vừa … là …; 就 đứng trước động từ / tính từ của vế sau.' },
+  { pre: 'Sắp muộn giờ học, bạn giục bạn: “快', blank: '跑', post: '吧，还有两分钟就上课了！”', hint: '(chạy)', ans: '跑', exp: '跑 = chạy; 快跑吧 = chạy nhanh lên.' },
+  { pre: '“这个', blank: '球', post: '是谁的？” — “是我弟弟的。”', hint: '(quả bóng)', ans: '球', exp: '球 = quả bóng; 篮球, 足球 đều có chữ 球.' }
 ];
 
 var sortData = [
-  { words: ['你', '是', '什么时候', '从', '北京', '回来', '的', '？'], ans: '你是什么时候从北京回来的？', audio: '你是什么时候从北京回来的？' },
-  { words: ['你', '怎么', '一', '下课', '就', '往', '外', '跑', '？'], ans: '你怎么一下课就往外跑？', audio: '你怎么一下课就往外跑？' },
-  { words: ['他', '篮球', '打', '得', '很', '好', '。'], ans: '他篮球打得很好。', audio: '他篮球打得很好。' },
-  { words: ['我', '游泳', '游', '得', '不', '快', '。'], ans: '我游泳游得不快。', audio: '我游泳游得不快。' },
-  { words: ['一', '到', '星期天', '就', '跟', '朋友们', '去', '踢球', '。'], ans: '一到星期天就跟朋友们去踢球。', audio: '一到星期天就跟朋友们去踢球。' },
-  { words: ['我', '一', '有', '时间', '就', '去', '运动', '。'], ans: '我一有时间就去运动。', audio: '我一有时间就去运动。' }
+  { words: ['我', '一', '到', '家', '就', '给', '妈妈', '打电话', '。'], ans: '我一到家就给妈妈打电话。', audio: '我一到家就给妈妈打电话。' },
+  { words: ['她', '唱歌', '唱', '得', '非常', '好听', '。'], ans: '她唱歌唱得非常好听。', audio: '她唱歌唱得非常好听。' },
+  { words: ['我', '从', '去年', '开始', '学', '打', '篮球', '。'], ans: '我从去年开始学打篮球。', audio: '我从去年开始学打篮球。', alt: ['从去年开始我学打篮球。'] },
+  { words: ['孩子们', '高高兴兴', '地', '往', '教室', '里', '跑', '。'], ans: '孩子们高高兴兴地往教室里跑。', audio: '孩子们高高兴兴地往教室里跑。' },
+  { words: ['昨天', '晚上', '我', '睡', '得', '很', '晚', '。'], ans: '昨天晚上我睡得很晚。', audio: '昨天晚上我睡得很晚。', alt: ['我昨天晚上睡得很晚。'] },
+  { words: ['我', '的', '爱好', '是', '踢', '足球', '和', '游泳', '。'], ans: '我的爱好是踢足球和游泳。', audio: '我的爱好是踢足球和游泳。', alt: ['我的爱好是游泳和踢足球。'] },
+  { words: ['你', '汉字', '写', '得', '真', '漂亮', '！'], ans: '你汉字写得真漂亮！', audio: '你汉字写得真漂亮！', alt: ['汉字你写得真漂亮！'] },
+  { words: ['你', '开车', '开', '得', '太', '快', '了', '！'], ans: '你开车开得太快了！', audio: '你开车开得太快了！' }
 ];
 
 var mcData = [
-  { q: '你看过她＿＿吗？游得怎么样？', opts: ['游泳', '跑步', '运动', '开始'], ans: 0, exp: 'Câu sau hỏi 游得怎么样, vậy hoạt động là bơi: 游泳.' },
-  { q: '我们9点＿＿上课，你别来晚了。', opts: ['开始', '从', '往', '球'], ans: 0, exp: '开始 + động từ = bắt đầu làm gì: 9点开始上课.' },
-  { q: '你＿＿跑得快不快？我想跟你一起去运动。', opts: ['跑步', '游泳', '篮球', '足球'], ans: 0, exp: 'Động từ có tân ngữ + 得 thì lặp lại động từ: (你)跑步跑得快不快, nên chỗ trống là 跑步.' },
-  { q: 'A：你喜欢什么＿＿？ B：足球、篮球什么的都喜欢。', opts: ['运动', '爱好', '开始', '球'], ans: 0, exp: '运动 = môn thể thao; câu trả lời nêu bóng đá, bóng rổ nên hỏi 什么运动.' },
-  { q: 'A：你喜欢学中文吗？ B：喜欢，我＿＿8岁就开始学中文了。', opts: ['从', '往', '得', '一'], ans: 0, exp: '从 + thời điểm + 就开始… = bắt đầu từ (lúc)…: 从8岁就开始学中文了.' },
-  { q: 'Môn thể thao nào đi với động từ 踢?', opts: ['足球', '篮球', '游泳', '跑步'], ans: 0, exp: '踢 là đá bằng chân, nên đi với 足球; 篮球 đi với 打.' },
-  { q: '我一到家，妈妈＿＿打来电话了。', opts: ['就', '才', '还', '也'], ans: 0, exp: '一…就… = vừa… là… ngay: 我一到家，妈妈就打来电话了.' },
-  { q: 'Câu nào đúng khi nói "Tôi bơi không nhanh"?', opts: ['我游泳游得不快。', '我游泳得不快。', '我不快游泳。', '我游泳不得快。'], ans: 0, exp: 'Động từ có tân ngữ + bổ ngữ trạng thái thì lặp động từ: 游泳游得不快; 不 đặt sau 得.' }
+  { q: 'Bạn muốn khen bạn mình: “Bạn đá bóng giỏi thật!”', opts: ['你足球踢得真好！', '你踢足球得真好！', '你足球踢真好得！', '你踢得足球真好！'], ans: 0, exp: 'Tân ngữ đặt trước động từ (足球踢得……) hoặc lặp động từ (踢足球踢得……); không nói 踢足球得 / 踢得足球.' },
+  { q: 'Câu nào SAI?', opts: ['他游泳得很快。', '他游泳游得很快。', '他游得很快。', '他很喜欢游泳。'], ans: 0, exp: 'Động từ có tân ngữ (游泳) + bổ ngữ trạng thái thì phải lặp động từ: 游泳游得很快, không nói 游泳得很快.' },
+  { q: 'Bạn muốn nói: “Bố vừa tan làm là về nhà ngay.”', opts: ['爸爸一下班就回家。', '爸爸一下班回家就。', '爸爸就一下班回家。', '一爸爸下班就回家。'], ans: 0, exp: '一 + việc thứ nhất + 就 + việc thứ hai; 一 và 就 đều đứng sau chủ ngữ, trước động từ.' },
+  { q: 'Bạn muốn nói: “Thứ bảy tôi chơi bóng rổ, em trai đá bóng.”', opts: ['星期六我打篮球，弟弟踢足球。', '星期六我踢篮球，弟弟打足球。', '星期六我打篮球，弟弟打足球。', '星期六我踢篮球，弟弟踢足球。'], ans: 0, exp: '篮球 chơi bằng tay → 打篮球; 足球 chơi bằng chân → 踢足球.' },
+  { q: 'A: “你是什么时候开始学汉语的？” — B:', opts: ['我是从去年九月开始学的。', '我是去年九月从开始学的。', '我是开始从去年九月学的。', '我从是去年九月开始学的。'], ans: 0, exp: '从 + thời điểm + 开始 + động từ; hỏi bằng 是……的 thì đáp bằng 是……的.' },
+  { q: 'Bạn muốn hỏi bạn: “Bạn nấu ăn thế nào?”', opts: ['你做饭做得怎么样？', '你做饭得怎么样？', '你做得饭怎么样？', '你怎么样做饭得？'], ans: 0, exp: '做饭 có tân ngữ nên lặp lại động từ: 做饭做得怎么样; 怎么样 đứng sau 得.' },
+  { q: 'Em bé chạy về phía cổng, mẹ gọi: “Đừng chạy ra ngoài!”', opts: ['别往外跑！', '别跑往外！', '别外往跑！', '别往跑外！'], ans: 0, exp: '往 + hướng đứng TRƯỚC động từ: 往外跑, không đặt sau như tiếng Việt “chạy ra ngoài”.' },
+  { q: 'A: “你每天几点睡觉？” — B (hễ lên giường là ngủ ngay):', opts: ['我一上床就睡了。', '我一上床，睡了。', '我一上床都睡了。', '我上床一就睡了。'], ans: 0, exp: '一……就……: vế sau phải có 就; không thay bằng 都, không đảo 一 ra sau động từ.' },
+  { q: 'Bạn muốn hỏi bạn mới quen thích môn thể thao nào:', opts: ['你喜欢什么运动？', '你喜欢什么运动吗？', '你喜欢运动什么？', '什么运动你喜欢吗？'], ans: 0, exp: '什么 đứng trước danh từ (什么运动); câu đã có 什么 thì không thêm 吗.' },
+  { q: 'Bạn muốn nói: “Từ ngày mai, ngày nào tôi cũng chạy bộ.”', opts: ['从明天开始，我每天跑步。', '开始从明天，我每天跑步。', '从明天开始，我跑步每天。', '明天从开始，我每天跑步。'], ans: 0, exp: '从 + thời điểm + 开始 đứng đầu câu; 每天 đứng trước động từ.' },
+  { q: 'Bạn đến lớp lúc 7 giờ, thấy bạn mình đã ngồi đó. Bạn nói:', opts: ['你今天来得真早！', '你今天来真早得！', '你今天得来真早！', '你今天来得是早！'], ans: 0, exp: 'Động từ + 得 + bổ ngữ: 来得真早; không đặt 得 cuối câu, không thêm 是 trước tính từ.' },
+  { q: 'A: “你会游泳吗？” — B (biết, nhưng bơi chưa giỏi):', opts: ['会，但我游得不太好。', '会，但我不游得太好。', '会，但我游得没太好。', '会，但我游泳得不太好。'], ans: 0, exp: 'Phủ định bổ ngữ trạng thái: 不 đặt SAU 得 (游得不太好); không dùng 没.' }
 ];
 
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 4 bài khoá.',
+  intro: 'Nhấn nút loa nghe câu hỏi / tình huống, rồi tự ghi âm câu trả lời — hãy nói về chính bạn, dùng 一……就……, động từ + 得 và 从……开始.',
   questions: [
     {
-      q_zh: '你的爱好是什么？',
-      q_vn: 'Sở thích của bạn là gì?',
-      hint: '我的爱好是……，从……开始……',
-      sample: '我的爱好是运动。从上小学开始，我每天都跟爸爸去运动。',
-      sample_vn: 'Sở thích của tôi là thể thao. Bắt đầu từ khi học tiểu học, ngày nào tôi cũng đi tập cùng bố.',
-      note: '从……开始 dùng để nói mốc thời gian bắt đầu một thói quen.'
+      q_zh: '你的爱好是什么？你是从什么时候开始的？',
+      q_vn: 'Sở thích của bạn là gì? Bạn bắt đầu từ khi nào?',
+      hint: '我的爱好是……，我从……开始……',
+      sample: '我的爱好是唱歌，我从上中学开始学唱歌。',
+      sample_vn: 'Sở thích của mình là ca hát, mình bắt đầu học hát từ hồi lên cấp hai.',
+      note: '从 + thời điểm + 开始 = bắt đầu từ ….'
     },
     {
-      q_zh: '你喜欢什么运动？打得怎么样？',
-      q_vn: 'Bạn thích môn thể thao nào? Chơi thế nào?',
-      hint: '我喜欢……，我……得……',
-      sample: '我喜欢打篮球，也喜欢踢足球。我篮球打得很好，足球踢得还可以。',
-      sample_vn: 'Tôi thích chơi bóng rổ, cũng thích đá bóng. Tôi chơi bóng rổ rất tốt, đá bóng thì tàm tạm.',
-      note: 'Bổ ngữ trạng thái: 名词 + 动词 + 得 + 形容词 (篮球打得很好).'
+      q_zh: '你会打篮球吗？打得怎么样？',
+      q_vn: 'Bạn có biết chơi bóng rổ không? Chơi thế nào?',
+      hint: '我会……，打得……',
+      sample: '我会打篮球，打得还可以，但跑步跑得不快。',
+      sample_vn: 'Mình biết chơi bóng rổ, chơi cũng tạm được, nhưng chạy bộ thì không nhanh.',
+      note: 'Động từ có tân ngữ (跑步) phải lặp động từ trước 得: 跑步跑得…….'
     },
     {
-      q_zh: '你跑步跑得快吗？游泳游得怎么样？',
-      q_vn: 'Bạn chạy bộ có nhanh không? Bơi thế nào?',
-      hint: '我跑得……，我游泳游得……',
-      sample: '我跑得不太快，但是我游泳游得很快，我很喜欢游泳。',
-      sample_vn: 'Tôi chạy không nhanh lắm, nhưng bơi thì rất nhanh, tôi rất thích bơi.',
-      note: 'Với từ li hợp (跑步、游泳) phải lặp lại động từ: 游泳游得快.'
+      q_zh: '你一回家就做什么？',
+      q_vn: 'Vừa về đến nhà là bạn làm gì?',
+      hint: '我一回家就……',
+      sample: '我一回家就洗手，再跟妈妈一起做饭。',
+      sample_vn: 'Vừa về nhà là mình rửa tay, rồi cùng mẹ nấu cơm.',
+      note: '一……就……: việc thứ hai xảy ra ngay sau việc thứ nhất.'
     },
     {
-      q_zh: '你一下课就做什么？',
-      q_vn: 'Vừa tan học là bạn làm gì?',
-      hint: '我一下课就……',
-      sample: '我一下课就跟同学去打篮球，一到星期天就跟朋友们去踢球。',
-      sample_vn: 'Vừa tan học là tôi đi chơi bóng rổ với bạn cùng lớp, cứ đến Chủ nhật là đi đá bóng với bạn bè.',
-      note: '一……就…… diễn tả hành động thứ hai xảy ra ngay sau hành động thứ nhất.'
+      q_zh: '你的好朋友有什么爱好？',
+      q_vn: 'Bạn thân của bạn có sở thích gì? Bạn ấy làm việc đó giỏi không?',
+      hint: '他喜欢……，他……得……',
+      sample: '我的好朋友喜欢画画，她画得非常漂亮。',
+      sample_vn: 'Bạn thân mình thích vẽ, bạn ấy vẽ rất đẹp.',
+      note: 'Động từ + 得 + tính từ để nhận xét người khác làm việc thế nào.'
     },
     {
-      q_zh: '你一有时间就做什么？',
-      q_vn: 'Hễ có thời gian là bạn làm gì?',
-      hint: '我一有时间就……',
-      sample: '我一有时间就去运动，运动以后我觉得很舒服，也很高兴。',
-      sample_vn: 'Hễ có thời gian là tôi đi tập thể thao, tập xong tôi thấy rất thoải mái và rất vui.',
-      note: 'Ôn lại 舒服、高兴 của bài 6 kết hợp với mẫu 一……就…….'
+      q_zh: '你每天睡得早吗？',
+      q_vn: 'Hằng ngày bạn có ngủ sớm không?',
+      hint: '我睡得……，每天……',
+      sample: '我睡得不太早，每天晚上十一点多睡觉。',
+      sample_vn: 'Mình ngủ không sớm lắm, tối nào cũng hơn mười một giờ mới đi ngủ.',
+      note: 'Phủ định: 不 đặt sau 得 — 睡得不太早.'
     }
   ]
 };
 
 var translateData = [
-  { vi: 'Bạn từ Bắc Kinh về khi nào vậy?', zh: '你是什么时候从北京回来的？', py: 'Nǐ shì shénme shíhou cóng Běijīng huílái de?' },
-  { vi: 'Sao vừa tan học bạn đã chạy ra ngoài ngay vậy?', zh: '你怎么一下课就往外跑？', py: 'Nǐ zěnme yí xiàkè jiù wǎng wài pǎo?' },
-  { vi: 'Bạn ấy chơi bóng rổ rất hay.', zh: '他篮球打得很好。', py: 'Tā lánqiú dǎ de hěn hǎo.' },
-  { vi: 'Mình bơi không nhanh lắm.', zh: '我游泳游得不快。', py: 'Wǒ yóuyǒng yóu de bú kuài.' },
-  { vi: 'Hễ có thời gian là tôi lại đi tập thể thao.', zh: '我一有时间就去运动。', py: 'Wǒ yì yǒu shíjiān jiù qù yùndòng.' }
+  { vi: 'Bố tôi chơi bóng rổ rất giỏi.', zh: '我爸爸篮球打得很好。', py: 'Wǒ bàba lánqiú dǎ de hěn hǎo.' },
+  { vi: 'Vừa đến Bắc Kinh là tôi đi ăn vịt quay ngay.', zh: '我一到北京就去吃烤鸭了。', py: 'Wǒ yí dào Běijīng jiù qù chī kǎoyā le.' },
+  { vi: 'Anh ấy từ Tây An đến.', zh: '他是从西安来的。', py: 'Tā shì cóng Xī\'ān lái de.' },
+  { vi: 'Em trai tôi ăn cơm rất nhiều.', zh: '我弟弟吃饭吃得很多。', py: 'Wǒ dìdi chīfàn chī de hěn duō.' },
+  { vi: 'Từ nhà tôi đến trường đi bộ mất mười phút.', zh: '从我家到学校走十分钟。', py: 'Cóng wǒ jiā dào xuéxiào zǒu shí fēnzhōng.' }
 ];
 
 var translateDataRev = [
-  { vi: 'Mình đã hẹn với các bạn cùng đi chơi bóng rổ rồi.', zh: '我跟同学说好了，一起去打篮球。', py: 'Wǒ gēn tóngxué shuōhǎo le, yìqǐ qù dǎ lánqiú.' },
-  { vi: 'Bạn còn thích môn thể thao nào khác?', zh: '你还喜欢什么运动？', py: 'Nǐ hái xǐhuan shénme yùndòng?' },
-  { vi: 'Cứ đến Chủ nhật là mình lại đi đá bóng cùng bạn bè.', zh: '一到星期天就跟朋友们去踢球。', py: 'Yí dào xīngqītiān jiù gēn péngyoumen qù tī qiú.' },
-  { vi: 'Mình chạy không nhanh, cũng không thích chạy bộ lắm.', zh: '我跑得不快，也不太喜欢跑步。', py: 'Wǒ pǎo de bú kuài, yě bú tài xǐhuan pǎobù.' },
-  { vi: 'Bắt đầu từ khi học tiểu học, ngày nào tôi cũng tập thể thao cùng bố.', zh: '从上小学开始，我每天都跟爸爸去运动。', py: 'Cóng shàng xiǎoxué kāishǐ, wǒ měi tiān dōu gēn bàba qù yùndòng.' }
+  { vi: 'Hễ trời mưa là tôi không muốn ra ngoài.', zh: '一下雨我就不想出去。', py: 'Yí xiàyǔ wǒ jiù bù xiǎng chūqù.' },
+  { vi: 'Bóng đá là môn thể thao tôi thích.', zh: '足球是我喜欢的运动。', py: 'Zúqiú shì wǒ xǐhuan de yùndòng.' },
+  { vi: 'Hôm qua bạn ngủ có ngon không?', zh: '昨天你睡得好吗？', py: 'Zuótiān nǐ shuì de hǎo ma?' },
+  { vi: 'Quả bóng này là ông nội mua cho tôi.', zh: '这个球是爷爷给我买的。', py: 'Zhège qiú shì yéye gěi wǒ mǎi de.' }
 ];
 
 // ══════════════════════════════════════════

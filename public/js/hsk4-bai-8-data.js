@@ -3191,46 +3191,53 @@ var dialogData = [
    ]},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
 var matchData = [
-  {left:'伤心',right:'伤心难过'},
-  {left:'心情',right:'心情变得愉快'},
-  {left:'放松',right:'好久都没这么放松了'},
-  {left:'压力',right:'不要有压力'},
-  {left:'回忆',right:'回忆那次比赛'},
-  {left:'堵车',right:'遇到堵车'},
-  {left:'耐心',right:'变得没有耐心'},
-  {left:'缺少',right:'缺少的是'},
-  {left:'态度',right:'生活的态度'},
-  {left:'往往',right:'往往与……有关'},
+  {left:'回忆',right:'小时候的事情'},
+  {left:'证明',right:'自己是对的'},
+  {left:'缺少',right:'工作经验'},
+  {left:'成为',right:'好朋友'},
+  {left:'上下班的时候，路上',right:'经常堵车'},
+  {left:'她对孩子',right:'很有耐心'},
+  {left:'这个城市',right:'到处都是绿色'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ
+// ══════════════════════════════════════════
 var fillData = [
-  {pre:'很多人出国后常常会买外国的巧克力，回来送给',blank:'',post:'朋友。',hint:'qīnqi',ans:'亲戚'},
-  {pre:'听说',blank:'',post:'难过的时候吃块儿巧克力，还能使人的心情变得愉快。',hint:'shāngxīn',ans:'伤心'},
-  {pre:'怎么样，',blank:'',post:'好些了吗？',hint:'xīnqíng',ans:'心情'},
-  {pre:'上次足球比赛后，好久都没这么',blank:'',post:'了。',hint:'fàngsōng',ans:'放松'},
-  {pre:'你不要有',blank:'',post:'，好好儿准备下次比赛就好了。',hint:'yālì',ans:'压力'},
-  {pre:'事情已经',blank:'',post:'了，过去的就让它成为过去吧。',hint:'fāshēng',ans:'发生'},
-  {pre:'',blank:'',post:'这次你好好儿准备，一定能把比赛踢好。',hint:'zhǐyào',ans:'只要',exp:'只要…，就… = chỉ cần… thì…; ở đây vế sau dùng 一定能.'},
-  {pre:'现在是上班时间，前面有点儿',blank:'',post:'，我们走另外一条路。',hint:'dǔchē',ans:'堵车'},
-  {pre:'一遇到堵车，人们就容易变得没有',blank:'',post:'。',hint:'nàixīn',ans:'耐心'},
-  {pre:'生活中不',blank:'',post:'美，缺少的是发现美的眼睛。',hint:'quēshǎo',ans:'缺少'},
-  {pre:'生活的',blank:'',post:'要自己选择。',hint:'tàidù',ans:'态度'},
-  {pre:'每个学生的性格、能力不同，',blank:'',post:'，老师要用不同的方法。',hint:'yīncǐ',ans:'因此',exp:'因此 = vì vậy, do đó; nối kết quả với nguyên nhân ở câu trước, đặt đầu vế sau.'},
-  {pre:'科学研究',blank:'',post:'，女孩子对衣服颜色的选择往往与性格有关。',hint:'zhèngmíng',ans:'证明'},
-  {pre:'喜欢穿白色衣服的女孩子性格比较',blank:'',post:'。',hint:'yángguāng',ans:'阳光'},
-  {pre:'生活态度',blank:'',post:'向上是她们的共同特点。',hint:'jījí',ans:'积极'},
+  {pre:'这个好消息',blank:'使',post:'大家都非常高兴。',hint:'(làm cho, khiến)',ans:'使',exp:'使 + người + tính từ/động từ = khiến ai…; trang trọng hơn 让, nhưng không dùng 使 với nghĩa "cho phép, bảo" (让我去 ≠ 使我去).'},
+  {pre:'',blank:'只要',post:'每天练习半个小时，你的汉语就会越来越好。',hint:'(chỉ cần)',ans:'只要',exp:'只要……就…… = chỉ cần (điều kiện đủ) là…; khác 只有……才…… (điều kiện duy nhất, bắt buộc).'},
+  {pre:'A：我汉语说得不好，也能参加你们的聚会吗？ B：没问题，',blank:'只要',post:'你想来，我们都欢迎！',hint:'(chỉ cần)',ans:'只要',exp:'只要 đứng đầu vế điều kiện, vế sau dùng 就 / 都; trong hội thoại dùng để nói "chỉ cần thế là đủ".'},
+  {pre:'A：这次去南方旅游怎么样？ B：非常',blank:'愉快',post:'，那儿的景色特别漂亮。',hint:'(vui vẻ)',ans:'愉快',exp:'愉快 = vui vẻ, dễ chịu (hơi trang trọng hơn 高兴); hay đi với 心情愉快、旅游愉快、周末愉快.'},
+  {pre:'她上课很',blank:'积极',post:'，老师的问题她总是第一个回答。',hint:'(tích cực)',ans:'积极',exp:'积极 = tích cực, chủ động; 积极 + động từ: 积极参加、积极回答问题.'},
+  {pre:'他从小在中国长大，',blank:'因此',post:'汉语说得跟中国人一样好。',hint:'(vì vậy)',ans:'因此',exp:'因此 = vì vậy, đứng đầu vế kết quả; hơi trang trọng hơn 所以, ít khi đi cặp với 因为.'},
+  {pre:'周末的时候，超市里',blank:'往往',post:'人很多，最好早点儿去。',hint:'(thường thường — theo quy luật)',ans:'往往',exp:'往往 = thường (quy luật rút ra từ những lần đã qua, có điều kiện kèm theo như 周末的时候).'},
+  {pre:'A：到了国外，你要',blank:'经常',post:'给家里打电话啊！ B：放心吧，妈妈，我一定会的。',hint:'(thường xuyên — lời dặn)',ans:'经常',exp:'Nói về việc sẽ làm / lời dặn chỉ dùng 经常, không dùng 往往 (往往 chỉ tổng kết điều đã xảy ra).'},
+  {pre:'快考试了，他的',blank:'压力',post:'很大，每天晚上都睡不好。',hint:'(áp lực)',ans:'压力',exp:'压力大 = áp lực lớn; 有压力 / 没有压力; 压力 là danh từ, không nói 很压力.'},
+  {pre:'A：你怎么才到？ B：别提了，路上',blank:'堵车',post:'，我在出租车上坐了一个小时。',hint:'(kẹt xe)',ans:'堵车',exp:'堵车 = kẹt xe; 路上堵车 = đường bị kẹt; không nói 车很堵车.'},
+  {pre:'李老师对学生很有',blank:'耐心',post:'，一个问题讲好几次也不生气。',hint:'(kiên nhẫn)',ans:'耐心',exp:'对 + ai + 有耐心 = kiên nhẫn với ai; 耐心 cũng làm trạng ngữ: 耐心地等.'},
+  {pre:'工作了一个星期，周末我只想在家听听音乐，',blank:'放松',post:'一下。',hint:'(thư giãn)',ans:'放松',exp:'放松一下 = thư giãn một chút; 放松 là động từ, đối lập với 紧张.'},
+  {pre:'那个服务员的',blank:'态度',post:'不太好，我们换一家饭馆吧。',hint:'(thái độ)',ans:'态度',exp:'态度好 / 态度不好 = thái độ tốt/xấu; 对 + ai + 态度…: 他对顾客态度很好.'},
+  {pre:'和好朋友分开以后，她',blank:'伤心',post:'了好几天。',hint:'(đau lòng, buồn)',ans:'伤心',exp:'伤心 = buồn đau (mức nặng hơn 难过); 伤心了好几天 = buồn mấy ngày liền.'},
+  {pre:'A：今天路上的车真多啊！ B：',blank:'可不是',post:'，我在路上堵车，一个多小时才到。',hint:'(đúng thế, chứ còn gì nữa)',ans:'可不是',exp:'可不是 = đồng ý hoàn toàn với câu người kia vừa nói (khẩu ngữ), đứng đầu câu đáp; không phải câu phủ định.'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
 var sortData = [
-  {words:['这','种','巧克力','味道','不错','，','你','在','哪儿','买','的','？'], ans:'这种巧克力味道不错，你在哪儿买的？',audio:'这种巧克力味道不错，你在哪儿买的？'},
-  {words:['你','不要','有','压力','，','好好儿','准备','下次','比赛','就','好','了'],ans:'你不要有压力，好好儿准备下次比赛就好了',audio:'你不要有压力，好好儿准备下次比赛就好了'},
-  {words:['事情','已经','发生','了','，','过去','的','就','让','它','成为','过去','吧'],ans:'事情已经发生了，过去的就让它成为过去吧',audio:'事情已经发生了，过去的就让它成为过去吧'},
-  {words:['师傅','，','我','去','大使馆','，','你','是不是','走错','了','？'],ans:'师傅，我去大使馆，你是不是走错了？',audio:'师傅，我去大使馆，你是不是走错了？'},
-  {words:['一','遇到','堵车','，','人们','就','容易','变得','没有','耐心'],ans:'一遇到堵车，人们就容易变得没有耐心',audio:'一遇到堵车，人们就容易变得没有耐心'},
-  {words:['生活','中','不','缺少','美','，','缺少','的','是','发现','美','的','眼睛'],ans:'生活中不缺少美，缺少的是发现美的眼睛',audio:'生活中不缺少美，缺少的是发现美的眼睛'},
-  {words:['科学','研究','证明','，','女孩子','对','衣服','颜色','的','选择','往往','与','性格','有关'],ans:'科学研究证明，女孩子对衣服颜色的选择往往与性格有关',audio:'科学研究证明，女孩子对衣服颜色的选择往往与性格有关'},
-  {words:['颜色','也','会','影响','人','的','心情'],ans:'颜色也会影响人的心情',audio:'颜色也会影响人的心情'},
+  {words:['只要','有','时间','，','我','就','去','看看','亲戚','。'],ans:'只要有时间，我就去看看亲戚。',audio:'只要有时间，我就去看看亲戚。'},
+  {words:['这个','消息','使','他','心情','很','不','好','。'],ans:'这个消息使他心情很不好。',audio:'这个消息使他心情很不好。'},
+  {words:['他','每天','都','锻炼','身体','，','因此','很','少','生病','。'],ans:'他每天都锻炼身体，因此很少生病。',audio:'他每天都锻炼身体，因此很少生病。'},
+  {words:['人','在','难过','的','时候','往往','想','吃','甜','的','。'],ans:'人在难过的时候往往想吃甜的。',audio:'人在难过的时候往往想吃甜的。'},
+  {words:['师傅','，','请','送','我','去','大使馆','。'],ans:'师傅，请送我去大使馆。',audio:'师傅，请送我去大使馆。'},
+  {words:['她','从','一个','普通','的','售货员','成为','了','商场','的','经理','。'],ans:'她从一个普通的售货员成为了商场的经理。',audio:'她从一个普通的售货员成为了商场的经理。'},
+  {words:['这里','的','景色','跟','照片','上','一样','漂亮','。'],ans:'这里的景色跟照片上一样漂亮。',audio:'这里的景色跟照片上一样漂亮。'},
+  {words:['我','每次','去','看','爷爷','都','会','带','一些','巧克力','。'],ans:'我每次去看爷爷都会带一些巧克力。',audio:'我每次去看爷爷都会带一些巧克力。'},
+  {words:['科学家','发现','，','经常','笑','的','人','更','健康','。'],ans:'科学家发现，经常笑的人更健康。',audio:'科学家发现，经常笑的人更健康。'},
 ];
 
 var errorFixMode = 'wordchoice';
@@ -3239,7 +3246,7 @@ var errorFixData = [
    opts:['放松','伤心','只要','积极'],ans:0,
    exp:'放松 (thư giãn) phù hợp với ngữ cảnh trạng thái tâm lý cùng "sức khỏe cơ thể" tạo nên hạnh phúc. Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'她听到这个消息后____地哭了。',
-   opts:['放松','积极','只要','伤心'],ans:3,
+   opts:['证明','积极','只要','伤心'],ans:3,
    exp:'伤心 (đau lòng) phù hợp với hành động "khóc". Các từ còn lại không mang nghĩa buồn bã.'},
   {wrong:'这次招聘会提供了差不多1000个工作机会，请同学们____参加。',
    opts:['伤心','放松','证明','积极'],ans:3,
@@ -3257,7 +3264,7 @@ var errorFixData = [
    opts:['缺少','到处','发生','耐心'],ans:3,
    exp:'耐心等消息 là cụm cố định — kiên nhẫn chờ tin. Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'A：不管遇到什么问题、____什么事情，都不要着急。B：谢谢您的关心，我记住了。',
-   opts:['耐心','愉快','到处','发生'],ans:3,
+   opts:['耐心','愉快','缺少','发生'],ans:3,
    exp:'发生 (xảy ra) đi với 什么事情: 发生什么事情. Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'A：你喜欢听什么样的歌？B：我喜欢那些比较慢，听着让人感觉很浪漫，心情____的歌。',
    opts:['到处','缺少','发生','愉快'],ans:3,
@@ -3267,122 +3274,125 @@ var errorFixData = [
    exp:'到处 (khắp nơi) đi với 乱放: 到处乱放. Các từ còn lại không phù hợp nghĩa.'},
 ];
 
+// ══════════════════════════════════════════
+// LUYỆN NÓI
+// ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 8. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu hỏi là một tình huống thật, nói về chính bạn bằng từ và mẫu câu của Bài 8. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Hôm nay bạn có chuyện không vui ở công ty.',
-      q_zh: '伤心难过的时候，你会做什么让自己心情变好？',
-      q_py: 'Shāngxīn nánguò de shíhou, nǐ huì zuò shénme ràng zìjǐ xīnqíng biàn hǎo?',
-      q_vn: 'Lúc buồn bã, bạn làm gì để tâm trạng tốt lên?',
-      grammar: { label: '使 + người + 变得…… (khiến ai đó trở nên…)', any: ['使', '让'] },
+      situation: 'Bạn bè hỏi bí quyết giữ tâm trạng tốt của bạn.',
+      q_zh: '什么事情会使你心情愉快？',
+      q_py: 'Shénme shìqing huì shǐ nǐ xīnqíng yúkuài?',
+      q_vn: 'Việc gì khiến tâm trạng bạn vui vẻ?',
+      grammar: { label: '使 + người + tính từ (khiến…)', any: ['使'] },
       need: [
-        { label: 'Kể việc bạn làm', any: ['音乐', '走', '吃', '睡', '朋友', '运动', '看'] },
-        { label: 'Dùng 使 hoặc 让 nói tác dụng', any: ['使', '让'] }
+        { label: 'Dùng 使', any: ['使'] },
+        { label: 'Nói về tâm trạng', any: ['心情', '愉快', '高兴', '放松'] }
       ],
-      bonus: { label: 'Nói cảm giác sau đó bằng 愉快 / 轻松', any: ['愉快', '轻松', '好多了'] },
-      vocab: ['使', '愉快', '烦恼'],
-      minLen: 22,
-      sample: '我会先出去走走，然后听听音乐，有时候吃一块巧克力。听说甜的东西能使人的心情变得愉快，烦恼也少一些。',
-      sample_py: 'Wǒ huì xiān chū qù zǒuzou, ránhòu tīngting yīnyuè, yǒu shíhou chī yí kuài qiǎokèlì. Tīng shuō tián de dōngxi néng shǐ rén de xīnqíng biàn děi yúkuài, fánnǎo yě shǎo yì xiē.',
-      sample_vn: 'Tôi sẽ ra ngoài đi dạo trước, rồi nghe nhạc, đôi khi ăn một miếng sô-cô-la. Nghe nói đồ ngọt khiến tâm trạng vui hơn, phiền muộn cũng bớt đi.',
-      tip: '使 thường dùng trong văn viết: 这个消息使大家很高兴。'
+      bonus: { label: 'Nói thêm một việc làm bạn buồn', any: ['伤心', '难过'] },
+      vocab: ['使', '心情', '愉快', '放松'],
+      minLen: 20,
+      sample: '和家人一起吃饭最能使我心情愉快。另外，听自己喜欢的音乐也能使我放松下来。心情不好的时候，我就给好朋友打电话。',
+      sample_py: 'Hé jiārén yìqǐ chī fàn zuì néng shǐ wǒ xīnqíng yúkuài. Lìngwài, tīng zìjǐ xǐhuan de yīnyuè yě néng shǐ wǒ fàngsōng xiàlái. Xīnqíng bù hǎo de shíhou, wǒ jiù gěi hǎo péngyou dǎ diànhuà.',
+      sample_vn: 'Ăn cơm cùng gia đình là điều khiến tôi vui nhất. Ngoài ra, nghe nhạc mình thích cũng giúp tôi thư giãn. Lúc tâm trạng không tốt, tôi gọi điện cho bạn thân.',
+      tip: '使 + người + tính từ/động từ: 使我很高兴; tân ngữ của 使 luôn là người/vật bị ảnh hưởng.'
     },
     {
-      situation: 'Bạn bị kẹt xe trên đường đi làm.',
-      q_zh: '遇到堵车的时候，你一般会怎么做？',
-      q_py: 'Yùdào dǔchē de shíhou, nǐ yìbān huì zěnme zuò?',
-      q_vn: 'Khi gặp tắc đường, bạn thường làm gì?',
-      grammar: { label: '虽然……，但是…… (nhượng bộ)', any: ['虽然', '但是'] },
+      situation: 'Một bạn mới học hỏi bạn cách học tiếng Trung.',
+      q_zh: '你觉得怎样才能学好汉语？',
+      q_py: 'Nǐ juéde zěnyàng cái néng xué hǎo Hànyǔ?',
+      q_vn: 'Bạn thấy làm thế nào mới học tốt tiếng Trung?',
+      grammar: { label: '只要……就…… (chỉ cần… là…)', any: ['只要'] },
       need: [
-        { label: 'Thừa nhận không đổi được tình hình', any: ['改变', '堵车', '没办法', '虽然'] },
-        { label: 'Nói cách giữ tâm trạng', any: ['音乐', '广播', '新闻', '心情', '休息', '想'] }
+        { label: 'Dùng 只要……就……', any: ['只要'] },
+        { label: 'Nêu cách học cụ thể', any: ['练习', '听', '说', '写', '看', '每天'] }
       ],
-      bonus: { label: 'Dùng 只要……就…… nêu cách nghĩ tích cực', any: ['只要', '因此'] },
-      vocab: ['改变', '心情', '往往'],
-      minLen: 22,
-      sample: '虽然改变不了堵车，但是我会试着改变自己的心情，听听音乐或者新闻。着急往往没有用，早出门十分钟才有用。',
-      sample_py: 'Suīrán gǎibiàn bù le dǔchē, dànshì wǒ huì shì zhe gǎibiàn zìjǐ de xīnqíng, tīngting yīnyuè huòzhě xīnwén. Zháojí wǎngwǎng méiyǒu yòng, zǎo chū mén shífēn zhōng cái yǒu yòng.',
-      sample_vn: 'Dù không thay đổi được việc tắc đường, tôi sẽ thử thay đổi tâm trạng, nghe nhạc hoặc tin tức. Sốt ruột thường chẳng ích gì, ra khỏi nhà sớm 10 phút mới có tác dụng.',
-      tip: '往往 chỉ quy luật thường xảy ra, không dùng cho tương lai.'
+      bonus: { label: 'Dùng 耐心 / 积极', any: ['耐心', '积极'] },
+      vocab: ['只要', '耐心', '积极'],
+      minLen: 20,
+      sample: '我觉得学汉语要有耐心。只要每天多听多说，再积极地跟中国人交流，就一定能学好。不要担心说错。',
+      sample_py: 'Wǒ juéde xué Hànyǔ yào yǒu nàixīn. Zhǐyào měi tiān duō tīng duō shuō, zài jījí de gēn Zhōngguó rén jiāoliú, jiù yídìng néng xué hǎo. Bú yào dānxīn shuō cuò.',
+      sample_vn: 'Tôi thấy học tiếng Trung phải kiên nhẫn. Chỉ cần mỗi ngày nghe nhiều nói nhiều, lại tích cực giao lưu với người Trung Quốc, thì nhất định học tốt. Đừng sợ nói sai.',
+      tip: '只要 + điều kiện, 就 + kết quả; đừng nhầm với 只有……才…….'
     },
     {
-      situation: 'Bạn bè bàn về một câu nói nổi tiếng.',
-      q_zh: '你同意“生活中不缺少美，缺少的是发现美的眼睛”这句话吗？',
-      q_py: 'Nǐ tóngyì "shēnghuó zhōng bù quēshǎo měi, quēshǎo de shì fāxiàn měi de yǎnjing" zhè jù huà ma?',
-      q_vn: 'Bạn có đồng ý câu "cuộc sống không thiếu cái đẹp, thiếu là đôi mắt biết phát hiện" không?',
-      grammar: { label: '只要……就…… (chỉ cần… thì…)', any: ['只要'] },
+      situation: 'Bạn giải thích vì sao mình chọn học tiếng Trung.',
+      q_zh: '你为什么学汉语？',
+      q_py: 'Nǐ wèishénme xué Hànyǔ?',
+      q_vn: 'Vì sao bạn học tiếng Trung?',
+      grammar: { label: '因此 (vì vậy)', any: ['因此'] },
       need: [
-        { label: 'Nêu quan điểm', any: ['同意', '不同意', '我觉得', '我认为'] },
-        { label: 'Nêu ví dụ trong cuộc sống', any: ['生活', '花', '天空', '早上', '小事', '路上', '笑'] }
+        { label: 'Dùng 因此 nối nguyên nhân – kết quả', any: ['因此'] },
+        { label: 'Nói nguyên nhân', any: ['喜欢', '工作', '公司', '中国', '朋友'] }
       ],
-      bonus: { label: 'Dùng 只要……就……', any: ['只要'] },
-      vocab: ['美', '只要', '因此'],
-      minLen: 22,
-      sample: '我同意。只要愿意留心，生活中的美到处都是，比如早上的阳光、路边的花。因此，心情不好的时候，我会试着多看看身边的小事。',
-      sample_py: 'Wǒ tóngyì. Zhǐyào yuànyì liú xīn, shēnghuó zhōng de měi dàochù dōu shì, bǐrú zǎoshang de yángguāng, lù bian de huā. Yīncǐ, xīnqíng bù hǎo de shíhou, wǒ huì shì zhe duō kànkan shēn bian de xiǎo shì.',
-      sample_vn: 'Tôi đồng ý. Chỉ cần chịu để ý, cái đẹp trong cuộc sống ở khắp nơi, ví dụ nắng sớm, hoa bên đường. Vì vậy, lúc tâm trạng không tốt, tôi thử nhìn nhiều hơn vào những điều nhỏ quanh mình.',
-      tip: '因此 = vì thế, dùng nối câu trong văn viết.'
+      bonus: { label: 'Nói mong muốn trở thành gì bằng 成为', any: ['成为'] },
+      vocab: ['因此', '成为'],
+      minLen: 20,
+      sample: '我们公司跟很多中国公司有生意，因此我需要学好汉语。我希望两年以后能成为公司里汉语最好的人。',
+      sample_py: 'Wǒmen gōngsī gēn hěn duō Zhōngguó gōngsī yǒu shēngyi, yīncǐ wǒ xūyào xué hǎo Hànyǔ. Wǒ xīwàng liǎng nián yǐhòu néng chéngwéi gōngsī li Hànyǔ zuì hǎo de rén.',
+      sample_vn: 'Công ty tôi làm ăn với nhiều công ty Trung Quốc, vì vậy tôi cần học giỏi tiếng Trung. Tôi mong hai năm nữa có thể trở thành người giỏi tiếng Trung nhất công ty.',
+      tip: '因此 đứng đầu vế kết quả: ……，因此…….'
     },
     {
-      situation: 'Bạn đang chọn màu sơn cho phòng làm việc.',
-      q_zh: '你觉得颜色会影响人的心情吗？举例说说。',
-      q_py: 'Nǐ juéde yánsè huì yǐngxiǎng rén de xīnqíng ma? Jǔ lì shuōshuo.',
-      q_vn: 'Bạn thấy màu sắc có ảnh hưởng tâm trạng không? Cho ví dụ.',
-      grammar: { label: '让/使 + người + 变得 + tính từ', any: ['让', '使'] },
+      situation: 'Bạn chia sẻ cách mình đối mặt với áp lực.',
+      q_zh: '你压力大的时候，往往会做什么？',
+      q_py: 'Nǐ yālì dà de shíhou, wǎngwǎng huì zuò shénme?',
+      q_vn: 'Lúc áp lực lớn, bạn thường làm gì?',
+      grammar: { label: '往往 (thường thường — theo quy luật)', any: ['往往'] },
       need: [
-        { label: 'Nêu quan điểm', any: ['会', '不会', '我觉得', '影响'] },
-        { label: 'Nêu ví dụ màu sắc', any: ['红色', '蓝色', '绿色', '黄色', '白色', '比如'] }
+        { label: 'Dùng 往往', any: ['往往'] },
+        { label: 'Nói việc bạn làm', any: ['睡觉', '运动', '音乐', '吃', '朋友', '散步'] }
       ],
-      bonus: { label: 'Nói bạn chọn màu gì cho phòng mình', any: ['房间', '选', '墙', '喜欢'] },
-      vocab: ['影响', '使', '比如'],
-      minLen: 22,
-      sample: '我觉得会。比如红色让人变得热情，蓝色使人变得安静。所以我的房间选了浅蓝色，工作的时候心情比较放松。',
-      sample_py: 'Wǒ juéde huì. Bǐrú hóng sè ràng rén biàn děi rèqíng, lán sè shǐ rén biàn děi ānjìng. Suǒyǐ wǒ de fángjiān xuǎn le qiǎn lán sè, gōngzuò de shíhou xīnqíng bǐjiào fàngsōng.',
-      sample_vn: 'Tôi thấy có. Ví dụ màu đỏ khiến người ta sôi nổi, màu xanh lam khiến người ta trầm tĩnh. Nên phòng tôi chọn màu xanh nhạt, lúc làm việc tâm trạng khá thư thái.',
-      tip: '让/使 + tân ngữ + 变得 + tính từ: 音乐让我变得轻松。'
+      bonus: { label: 'Dùng 压力 / 放松', any: ['压力', '放松'] },
+      vocab: ['往往', '压力', '放松'],
+      minLen: 20,
+      sample: '我压力大的时候往往睡不着，所以我会出去走走，或者听听音乐。走一个小时以后，我的心情就会好很多。',
+      sample_py: 'Wǒ yālì dà de shíhou wǎngwǎng shuì bu zháo, suǒyǐ wǒ huì chūqù zǒuzou, huòzhě tīngting yīnyuè. Zǒu yí ge xiǎoshí yǐhòu, wǒ de xīnqíng jiù huì hǎo hěn duō.',
+      sample_vn: 'Lúc áp lực lớn tôi thường mất ngủ, nên tôi sẽ ra ngoài đi bộ hoặc nghe nhạc. Đi một tiếng xong tâm trạng tôi sẽ tốt hơn nhiều.',
+      tip: '往往 cần có điều kiện đi kèm (……的时候往往……); lời dặn tương lai dùng 经常.'
     },
     {
-      situation: 'Một người bạn đang gặp chuyện buồn và hỏi bạn cách sống.',
-      q_zh: '你觉得生活的态度应该怎么选择？',
-      q_py: 'Nǐ juéde shēnghuó de tàidù yīnggāi zěnme xuǎnzé?',
-      q_vn: 'Bạn thấy nên chọn thái độ sống thế nào?',
-      grammar: { label: '因此…… (vì vậy…)', any: ['因此', '所以'] },
+      situation: 'Bạn đồng nghiệp than phiền chuyện kẹt xe trong thành phố.',
+      q_zh: '现在城市里堵车越来越严重了，你说是不是？',
+      q_py: 'Xiànzài chéngshì li dǔchē yuè lái yuè yánzhòng le, nǐ shuō shì bu shì?',
+      q_vn: 'Bây giờ kẹt xe trong thành phố ngày càng nghiêm trọng, bạn nói có phải không?',
+      grammar: { label: '一……就…… (hễ… là…) + 耐心 / 态度', any: ['一'] },
       need: [
-        { label: 'Nêu quan điểm về thái độ sống', any: ['态度', '选择', '自己', '乐观', '积极'] },
-        { label: 'Nói cách làm khi gặp phiền muộn', any: ['烦恼', '办法', '想', '朋友', '运动', '走出来'] }
+        { label: 'Dùng 一……就……', any: ['就'] },
+        { label: 'Kể chuyện kẹt xe của bạn', any: ['堵车', '迟到', '上班', '出租车', '公共汽车'] }
       ],
-      bonus: { label: 'Dùng 因此 nối ý', any: ['因此'] },
-      vocab: ['态度', '烦恼', '因此'],
-      minLen: 22,
-      sample: '我觉得生活的态度要自己选择。因此，遇到烦恼的时候，应该想办法让自己走出来，比如找朋友聊聊，或者出去运动运动。',
-      sample_py: 'Wǒ juéde shēnghuó de tàidù yào zìjǐ xuǎnzé. Yīncǐ, yùdào fánnǎo de shíhou, yīnggāi xiǎng bànfǎ ràng zìjǐ zǒu chū lái, bǐrú zhǎo péngyou liáo liáo, huòzhě chū qù yùndòng yùndòng.',
-      sample_vn: 'Tôi thấy thái độ sống phải do mình chọn. Vì vậy, khi gặp phiền muộn, nên tìm cách để mình bước ra khỏi nó, ví dụ tìm bạn tâm sự hoặc ra ngoài vận động.',
-      tip: '因此 dùng nối kết quả, trang trọng hơn 所以.'
+      bonus: { label: 'Nêu cách giữ tâm trạng tốt', any: ['心情', '音乐', '耐心', '态度'] },
+      vocab: ['堵车', '耐心', '态度'],
+      minLen: 20,
+      sample: '是啊！我每天上班都要在路上等一个小时，以前一遇到堵车就着急。但是现在我换了个态度，堵车的时候就听听音乐，耐心一点儿，心情也好多了。',
+      sample_py: 'Shì a! Wǒ měi tiān shàngbān dōu yào zài lù shang děng yí ge xiǎoshí, yǐqián yí yùdào dǔchē jiù zháojí. Dànshì xiànzài wǒ huàn le ge tàidù, dǔchē de shíhou jiù tīngting yīnyuè, nàixīn yìdiǎnr, xīnqíng yě hǎo duō le.',
+      sample_vn: 'Đúng vậy! Ngày nào đi làm tôi cũng phải chờ trên đường một tiếng, trước đây hễ gặp kẹt xe là sốt ruột. Nhưng giờ tôi đổi thái độ, lúc kẹt xe thì nghe nhạc, kiên nhẫn một chút, tâm trạng cũng tốt hơn nhiều.',
+      tip: '一 + V1，就 + V2 = hễ… là…: 一遇到堵车就着急.'
     }
   ]
 };
 
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Việt → Trung)
+// ══════════════════════════════════════════
 var translateData = [
-  {vi:'Loại sô cô la này mùi vị khá ngon, bạn mua ở đâu vậy?',zh:'这种巧克力味道不错，你在哪儿买的？',py:'Zhè zhǒng qiǎokèlì wèidào búcuò, nǐ zài nǎr mǎi de?'},
-  {vi:'Nghe nói lúc buồn bã đau lòng ăn miếng sô cô la, còn có thể khiến tâm trạng người ta trở nên vui vẻ.',zh:'听说伤心难过的时候吃块儿巧克力，还能使人的心情变得愉快。',py:'Tīngshuō shāngxīn nánguò de shíhou chī kuàir qiǎokèlì, hái néng shǐ rén de xīnqíng biàn de yúkuài.'},
-  {vi:'Bạn đừng có áp lực, chuẩn bị tốt cho trận đấu lần sau là được.',zh:'你不要有压力，好好儿准备下次比赛就好了。',py:'Nǐ búyào yǒu yālì, hǎohāor zhǔnbèi xià cì bǐsài jiù hǎo le.'},
-  {vi:'Việc đã xảy ra rồi, cái đã qua thì để nó trở thành quá khứ đi.',zh:'事情已经发生了，过去的就让它成为过去吧。',py:'Shìqing yǐjīng fāshēng le, guòqù de jiù ràng tā chéngwéi guòqù ba.'},
-  {vi:'Chúng ta không thể thay đổi tình trạng kẹt xe, nhưng có thể thử thay đổi tâm trạng của mình.',zh:'我们改变不了堵车，但是可以试着改变自己的心情。',py:'Wǒmen gǎibiàn bu liǎo dǔchē, dànshì kěyǐ shìzhe gǎibiàn zìjǐ de xīnqíng.'},
-  {vi:'Cuộc sống không thiếu cái đẹp, thiếu là đôi mắt phát hiện ra cái đẹp.',zh:'生活中不缺少美，缺少的是发现美的眼睛。',py:'Shēnghuó zhōng bù quēshǎo měi, quēshǎo de shì fāxiàn měi de yǎnjing.'},
-  {vi:'Nghiên cứu khoa học chứng minh, sự lựa chọn màu sắc quần áo của các cô gái thường liên quan đến tính cách của họ.',zh:'科学研究证明，女孩子对衣服颜色的选择往往与她们的性格有关。',py:'Kēxué yánjiū zhèngmíng, nǚháizi duì yīfu yánsè de xuǎnzé wǎngwǎng yǔ tāmen de xìnggé yǒuguān.'},
-  {vi:'Màu sắc cũng ảnh hưởng đến tâm trạng con người.',zh:'颜色也会影响人的心情。',py:'Yánsè yě huì yǐngxiǎng rén de xīnqíng.'},
+  {vi:'Chỉ cần bạn gọi một cuộc điện thoại, tôi sẽ đến giúp ngay.', zh:'只要你打个电话，我就马上来帮你。', py:'Zhǐyào nǐ dǎ ge diànhuà, wǒ jiù mǎshàng lái bāng nǐ.'},
+  {vi:'Sáng nay đường kẹt xe, tôi đến muộn nửa tiếng.', zh:'今天早上路上堵车，我迟到了半个小时。', py:'Jīntiān zǎoshang lù shang dǔchē, wǒ chídào le bàn ge xiǎoshí.'},
+  {vi:'Ông tôi thường nhớ lại những chuyện hồi còn trẻ.', zh:'我爷爷经常回忆年轻时候的事情。', py:'Wǒ yéye jīngcháng huíyì niánqīng shíhou de shìqing.'},
+  {vi:'Cô ấy là một người rất lạc quan, tích cực.', zh:'她是一个很阳光、很积极的人。', py:'Tā shì yí ge hěn yángguāng, hěn jījí de rén.'},
+  {vi:'Năm nay ăn Tết tôi về quê thăm họ hàng.', zh:'今年过年我回老家看亲戚。', py:'Jīnnián guònián wǒ huí lǎojiā kàn qīnqi.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Rất nhiều người sau khi ra nước ngoài thường mua sô cô la ngoại, về tặng cho họ hàng bạn bè.',zh:'很多人出国后常常会买外国的巧克力，回来送给亲戚朋友。',py:'Hěn duō rén chū guó hòu chángcháng huì mǎi wàiguó de qiǎokèlì, huílai sònggěi qīnqi péngyou.'},
-  {vi:'Thế nào, tâm trạng đỡ hơn chưa?',zh:'怎么样，心情好些了吗？',py:'Zěnmeyàng, xīnqíng hǎoxiē le ma?'},
-  {vi:'Chỉ cần lần này bạn chuẩn bị thật tốt, nhất định có thể đá tốt trận đấu.',zh:'只要这次你好好儿准备，一定能把比赛踢好。',py:'Zhǐyào zhè cì nǐ hǎohāor zhǔnbèi, yídìng néng bǎ bǐsài tīhǎo.'},
-  {vi:'Hễ gặp kẹt xe, người ta liền dễ trở nên mất kiên nhẫn.',zh:'一遇到堵车，人们就容易变得没有耐心。',py:'Yí yùdào dǔchē, rénmen jiù róngyì biàn de méiyǒu nàixīn.'},
-  {vi:'Chỉ cần có tâm, cái đẹp trong cuộc sống ở khắp nơi.',zh:'只要有心，生活中的美到处都是。',py:'Zhǐyào yǒuxīn, shēnghuó zhōng de měi dàochù dōu shì.'},
-  {vi:'Thái độ sống phải tự mình lựa chọn.',zh:'生活的态度要自己选择。',py:'Shēnghuó de tàidù yào zìjǐ xuǎnzé.'},
-  {vi:'Những cô gái thích mặc đồ trắng tính cách khá lạc quan tươi sáng.',zh:'喜欢穿白色衣服的女孩子性格比较阳光。',py:'Xǐhuan chuān báisè yīfu de nǚháizi xìnggé bǐjiào yángguāng.'},
-  {vi:'Xanh lá khiến mắt chúng ta được nghỉ ngơi.',zh:'绿色让我们的眼睛得到休息。',py:'Lǜsè ràng wǒmen de yǎnjing dédào xiūxi.'},
+  {vi:'Sinh mạng chỉ có một lần, vì vậy chúng ta phải chú ý giữ gìn sức khỏe.', zh:'生命只有一次，因此我们要注意身体健康。', py:'Shēngmìng zhǐ yǒu yí cì, yīncǐ wǒmen yào zhùyì shēntǐ jiànkāng.'},
+  {vi:'Đặc điểm lớn nhất của công ty này là ai cũng rất trẻ.', zh:'这家公司最大的特点是大家都很年轻。', py:'Zhè jiā gōngsī zuì dà de tèdiǎn shì dàjiā dōu hěn niánqīng.'},
+  {vi:'Đã xảy ra chuyện gì vậy? Sao bạn tìm đồ khắp nơi thế?', zh:'发生什么事了？你怎么到处找东西？', py:'Fāshēng shénme shì le? Nǐ zěnme dàochù zhǎo dōngxi?'},
+  {vi:'Khoảng cách giữa hai thành phố này không xa, lái xe một tiếng là đến.', zh:'这两个城市的距离不远，开车一个小时就到了。', py:'Zhè liǎng ge chéngshì de jùlí bù yuǎn, kāichē yí ge xiǎoshí jiù dào le.'},
 ];
 
 var listenData = {

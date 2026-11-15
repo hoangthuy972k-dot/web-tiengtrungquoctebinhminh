@@ -3384,46 +3384,56 @@ var dialogData = [
    ]},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
 var matchData = [
-  {left:'售货员',right:'售货员就'},
-  {left:'打扰',right:'不希望被打扰'},
-  {left:'竟然',right:'竟然忘了'},
-  {left:'百分之',right:'百分之百'},
-  {left:'尝',right:'先买几个尝尝'},
-  {left:'值得',right:'值得考虑'},
-  {left:'免费',right:'免费修理'},
-  {left:'满',right:'满100元'},
-  {left:'其中',right:'其中，小说'},
-  {left:'降低',right:'降低价格'},
+  {left:'修理',right:'坏了的冰箱'},
+  {left:'尝一尝',right:'妈妈做的菜'},
+  {left:'获得',right:'第一'},
+  {left:'举行',right:'运动会'},
+  {left:'支持',right:'孩子的决定'},
+  {left:'这种西红柿',right:'特别新鲜'},
+  {left:'一双白色的',right:'袜子'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ
+// ══════════════════════════════════════════
 var fillData = [
-  {pre:'昨天妻子让我陪她去超市买',blank:'',post:'。',hint:'guǒzhī',ans:'果汁'},
-  {pre:'一进门，',blank:'',post:'就热情地为我们介绍这、介绍那。',hint:'shòuhuòyuán',ans:'售货员'},
-  {pre:'买东西时我只看自己想买的，不希望被别人',blank:'',post:'。',hint:'dǎrǎo',ans:'打扰'},
-  {pre:'回家以后，我才发现，',blank:'',post:'忘了去商场的超市买果汁！',hint:'jìngrán',ans:'竟然',exp:'竟然 = không ngờ lại (ngoài dự đoán): đến siêu thị mà lại quên mua nước ép.'},
-  {pre:'您放心，保证',blank:'',post:'百新鲜。',hint:'bǎifēnzhī',ans:'百分之',exp:'百分之 + số = phần trăm: 百分之百 = 100%.'},
-  {pre:'今天的价格是昨天的两',blank:'',post:'。',hint:'bèi',ans:'倍',exp:'Số + 倍 = gấp… lần: 今天的价格是昨天的两倍 = giá hôm nay gấp đôi hôm qua.'},
-  {pre:'每天吃一两个这种新鲜的西红柿，对',blank:'',post:'有好处。',hint:'pífū',ans:'皮肤'},
-  {pre:'好，那我先买几个',blank:'',post:'。',hint:'chángchang',ans:'尝尝',exp:'Lặp động từ 尝尝 = nếm thử, làm thử một chút; giọng nhẹ nhàng.'},
-  {pre:'我想买一个',blank:'',post:'一点儿的。',hint:'qīng',ans:'轻'},
-  {pre:'不管从价格方面看，还是从质量上看，都是',blank:'',post:'考虑的。',hint:'zhídé',ans:'值得',exp:'不管…还是…，都… = dù… hay… thì đều…; 值得考虑 = đáng để suy nghĩ.'},
-  {pre:'一年内我们都负责',blank:'',post:'修理。',hint:'miǎnfèi',ans:'免费'},
-  {pre:'为了感谢大家的',blank:'',post:'，我们书店今天举行活动。',hint:'zhīchí',ans:'支持'},
-  {pre:'购书',blank:'',post:'100元送一个笔记本。',hint:'mǎn',ans:'满',exp:'满 + số tiền = đủ, đạt mức: 购书满100元 = mua sách đủ 100 tệ.'},
-  {pre:'一些图书还有打折活动，',blank:'',post:'，小说7.5折。',hint:'qízhōng',ans:'其中',exp:'其中 = trong đó (trong số vừa nói): một số sách giảm giá, trong đó tiểu thuyết giảm còn 75%.'},
-  {pre:'商场也会举办各种各样的活动，',blank:'',post:'价格。',hint:'jiàngdī',ans:'降低'},
+  {pre:'我本来以为他不会来，没想到他',blank:'竟然',post:'第一个到了。',hint:'(không ngờ lại)',ans:'竟然',exp:'竟然 đứng trước cụm động từ, báo kết quả trái với điều mình nghĩ; hay đi cùng 没想到 / 本来以为.'},
+  {pre:'A：你们公司今年怎么样？ B：挺好的，今年的收入是去年的三',blank:'倍',post:'。',hint:'(lần — bội số)',ans:'倍',exp:'A 是 B 的 + số + 倍 = A gấp … lần B; 倍 đứng sau số, không cần lượng từ 个.'},
+  {pre:'这本小说写得特别好，',blank:'值得',post:'你花时间看一看。',hint:'(đáng)',ans:'值得',exp:'值得 + động từ = đáng để làm…: 值得看、值得买、值得考虑.'},
+  {pre:'A：这个周末我们去哪儿？ B：我觉得新开的那个公园不太',blank:'值得',post:'去，人太多了。',hint:'(đáng)',ans:'值得',exp:'Phủ định là 不值得 / 不太值得 + V; phó từ đứng trước 值得 chứ không chen vào giữa 值得 và động từ.'},
+  {pre:'我们班有二十个学生，',blank:'其中',post:'八个是从北京来的。',hint:'(trong đó)',ans:'其中',exp:'其中 = trong số đó; đứng đầu vế sau, chỉ một phần của tổng thể vừa nói (không nói 学生其中).'},
+  {pre:'在老师和同学的帮助',blank:'下',post:'，我很快就适应了这里的生活。',hint:'(nhờ… / trong điều kiện…)',ans:'下',exp:'在 + ……的帮助 + 下 = nhờ sự giúp đỡ của…; người Việt hay quên chữ 下 ở cuối.'},
+  {pre:'A：如果明天下雨，足球比赛还举行吗？ B：在这种',blank:'情况',post:'下，比赛就换到下个星期。',hint:'(tình huống)',ans:'情况',exp:'在这种情况下 = trong tình huống này; 情况 đi với 在……下 để nêu điều kiện.'},
+  {pre:'A：请问，',blank:'打扰',post:'一下，洗手间在哪儿？ B：一直往前走，就在电梯旁边。',hint:'(làm phiền)',ans:'打扰',exp:'打扰一下 = xin lỗi làm phiền một chút — câu mở đầu lịch sự khi hỏi người lạ.'},
+  {pre:'这家饭馆的米饭是',blank:'免费',post:'的，想吃多少就吃多少。',hint:'(miễn phí)',ans:'免费',exp:'是 + 免费 + 的 = là miễn phí; 免费 cũng đứng trước động từ: 免费修理、免费送.'},
+  {pre:'A：你为什么每天走路去上班？ B：走路不仅能锻炼身体，而且对环境也有',blank:'好处',post:'。',hint:'(lợi ích)',ans:'好处',exp:'对 + ai/cái gì + 有好处 = có lợi cho…; 好处 là danh từ, không dùng làm tính từ (không nói 很好处).'},
+  {pre:'A：你的',blank:'皮肤',post:'怎么这么好？ B：我每天都喝很多水，也很少吃甜的。',hint:'(da)',ans:'皮肤',exp:'皮肤 = da (người); 皮肤好 / 皮肤白; "có lợi cho da" là 对皮肤有好处.'},
+  {pre:'我妹妹大学毕业以后在商场当',blank:'售货员',post:'，每天要站八个小时。',hint:'(nhân viên bán hàng)',ans:'售货员',exp:'当 + nghề nghiệp = làm…: 当售货员、当老师; 售货员 là người bán hàng trong cửa hàng/trung tâm thương mại.'},
+  {pre:'为了吸引顾客，很多商场都',blank:'降低',post:'了价格。',hint:'(hạ, giảm)',ans:'降低',exp:'降低 + 价格 / 要求 / 水平: làm cho thấp xuống; khác 打折 (giảm theo phần trăm).'},
+  {pre:'A：上次汉语考试的成绩出来了吗？ B：出来了，',blank:'百分之',post:'九十的同学成绩都很好。',hint:'(phần trăm)',ans:'百分之',exp:'百分之 + số = … phần trăm: 百分之九十 = 90%; đọc số phần trăm trước, không nói 九十百分之.'},
+  {pre:'尽管我们俩在很多',blank:'方面',post:'都不一样，但是我们是最好的朋友。',hint:'(mặt, phương diện)',ans:'方面',exp:'在……方面 = về mặt…; 很多方面 / 各方面 = nhiều mặt / mọi mặt.'},
+  {pre:'这本书请在两个星期',blank:'内',post:'还给图书馆。',hint:'(trong vòng)',ans:'内',exp:'Khoảng thời gian + 内 = trong vòng…: 两个星期内、一年内 (cách nói ngắn gọn, hay gặp trong thông báo).'},
+  {pre:'孩子正在睡觉，你说话',blank:'轻',post:'一点儿。',hint:'(nhẹ)',ans:'轻',exp:'轻 = nhẹ (cân nặng) và nhẹ nhàng, khẽ (âm thanh, động tác): 说话轻一点儿 = nói khẽ thôi.'},
+  {pre:'我这个旧手机现在还',blank:'值',post:'多少钱？',hint:'(trị giá, đáng giá — đi với số tiền)',ans:'值',exp:'值 + số tiền = trị giá bao nhiêu; 值得 + động từ = đáng để làm (值得买).'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
 var sortData = [
-  {words:['昨天','晚上','我','给','你','打电话','一直','没','人','接'],ans:'昨天晚上我给你打电话一直没人接',audio:'昨天晚上我给你打电话一直没人接'},
-  {words:['西红柿','新鲜','吗','？','怎么','卖','？'],ans:'西红柿新鲜吗？怎么卖？',audio:'西红柿新鲜吗？怎么卖？'},
-  {words:['今天','的','价格','是','昨天','的','两倍'],ans:'今天的价格是昨天的两倍',audio:'今天的价格是昨天的两倍'},
-  {words:['我','想','买','一个','轻','一点儿','的'],ans:'我想买一个轻一点儿的',audio:'我想买一个轻一点儿的'},
-  {words:['不管','从','价格','方面','看','，','还是','从','质量','上','看'],ans:'不管从价格方面看，还是从质量上看',audio:'不管从价格方面看，还是从质量上看'},
-  {words:['为了','感谢','大家','的','支持','，','我们','书店','今天','举行','活动'],ans:'为了感谢大家的支持，我们书店今天举行活动',audio:'为了感谢大家的支持，我们书店今天举行活动'},
-  {words:['人们','常','说','一分钱','一分货'],ans:'人们常说一分钱一分货',audio:'人们常说一分钱一分货'},
-  {words:['一','到','节日','，','商场','也','会','举办','各种各样','的','活动'],ans:'一到节日，商场也会举办各种各样的活动',audio:'一到节日，商场也会举办各种各样的活动'},
+  {words:['这么','简单','的','问题','，','他','竟然','回答','错','了','。'],ans:'这么简单的问题，他竟然回答错了。',audio:'这么简单的问题，他竟然回答错了。'},
+  {words:['机场','里','的','果汁','比','外面','贵','一倍','。'],ans:'机场里的果汁比外面贵一倍。',audio:'机场里的果汁比外面贵一倍。'},
+  {words:['我','买','了','三','双','袜子','，','其中','一','双','是','送给','爸爸','的','。'],ans:'我买了三双袜子，其中一双是送给爸爸的。',audio:'我买了三双袜子，其中一双是送给爸爸的。'},
+  {words:['在','大家','的','支持','下','，','我们','的','活动','非常','成功','。'],ans:'在大家的支持下，我们的活动非常成功。',audio:'在大家的支持下，我们的活动非常成功。'},
+  {words:['这','家','超市','购物','满','两百','块','可以','免费','送','到','家','。'],ans:'这家超市购物满两百块可以免费送到家。',audio:'这家超市购物满两百块可以免费送到家。'},
+  {words:['我','喜欢','吃','各种','水果','，','例如','苹果','、','香蕉','和','西瓜','。'],ans:'我喜欢吃各种水果，例如苹果、香蕉和西瓜。',audio:'我喜欢吃各种水果，例如苹果、香蕉和西瓜。'},
+  {words:['所有','的','售货员','都','穿着','一样','的','衬衫','。'],ans:'所有的售货员都穿着一样的衬衫。',audio:'所有的售货员都穿着一样的衬衫。'},
+  {words:['这个','行李箱','很','轻','，','我','一只手','就','能','拿','起来','。'],ans:'这个行李箱很轻，我一只手就能拿起来。',audio:'这个行李箱很轻，我一只手就能拿起来。'},
+  {words:['公司','为了','感谢','顾客','，','下个月','要','举办','一个','购物','活动','。'],ans:'公司为了感谢顾客，下个月要举办一个购物活动。',audio:'公司为了感谢顾客，下个月要举办一个购物活动。'},
 ];
 
 var errorFixMode = 'wordchoice';
@@ -3438,7 +3448,7 @@ var errorFixData = [
    opts:['支持','打扰','售货员','百分之'],ans:2,
    exp:'售货员 (nhân viên bán hàng) là chủ ngữ hợp lý cho hành động "nói" trong ngữ cảnh mua sắm. Các từ còn lại không phải danh từ chỉ người.'},
   {wrong:'我们调查的近七千名上班族中，有____六十四的人经常加班。',
-   opts:['皮肤','百分之','支持','打扰'],ans:1,
+   opts:['皮肤','百分之','售货员','打扰'],ans:1,
    exp:'百分之 + số — cách nói tỷ lệ phần trăm: 百分之六十四. Các từ còn lại không dùng để biểu thị tỷ lệ.'},
   {wrong:'这种水不仅很好喝，用它来洗脸对____也很有好处，所以价格要比其他水贵一些。',
    opts:['售货员','打扰','支持','皮肤'],ans:3,
@@ -3450,132 +3460,135 @@ var errorFixData = [
    opts:['轻','内','满','各'],ans:3,
    exp:'各方面 (mỗi phương diện) là cụm cố định. Các từ còn lại không kết hợp được với 方面.'},
   {wrong:'A：这个纸箱里面是酒，麻烦您搬的时候____一点儿。B：好的，我会注意的。',
-   opts:['内','满','各','轻'],ans:3,
+   opts:['尝','满','各','轻'],ans:3,
    exp:'轻一点儿 (nhẹ tay hơn một chút) phù hợp với việc khiêng đồ dễ vỡ. Các từ còn lại không phải tính từ chỉ trọng lượng.'},
   {wrong:'A：现在买沙发，能免费送货上门吗？B：可以，我们三日____给您送到。',
-   opts:['满','各','轻','内'],ans:3,
+   opts:['尝','各','轻','内'],ans:3,
    exp:'内 (trong vòng) đi với khoảng thời gian: 三日内 = trong vòng ba ngày. Các từ còn lại không mang nghĩa phạm vi thời gian.'},
   {wrong:'A：今天购物____四百元的顾客可以免费获得一份小礼物。B：咱们已经买了三百八十多了，再买两双袜子就够了。',
-   opts:['各','内','轻','满'],ans:3,
+   opts:['各','内','尝','满'],ans:3,
    exp:'满 (đạt đủ mức) đi với số tiền: 满四百元 = đủ 400 tệ. Các từ còn lại không mang nghĩa đạt đến mức số lượng.'},
 ];
 
+// ══════════════════════════════════════════
+// LUYỆN NÓI
+// ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 6. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu hỏi là một tình huống thật, nói về chính bạn bằng từ và mẫu câu của Bài 6. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Bạn và bạn bè tranh luận về câu "tiền nào của nấy".',
-      q_zh: '你觉得“一分钱一分货”这句话对吗？为什么？',
-      q_py: 'Nǐ juéde "yì fēn qián yì fēn huò" zhè jù huà duì ma? Wèishénme?',
-      q_vn: 'Bạn thấy câu "tiền nào của nấy" có đúng không? Vì sao?',
-      grammar: { label: '其实……，例如…… (nêu ý thật và ví dụ)', any: ['其实', '例如'] },
-      need: [
-        { label: 'Nêu quan điểm đồng ý hay không', any: ['对', '不对', '不一定', '同意'] },
-        { label: 'Đưa ví dụ cụ thể', any: ['例如', '比如', '打折', '活动', '便宜', '质量'] }
-      ],
-      bonus: { label: 'Dùng 值得 nhận xét món hàng', any: ['值得'] },
-      vocab: ['例如', '值得', '降低'],
-      minLen: 22,
-      sample: '我觉得不一定。其实打折的时候，质量很好的东西也会降低价格，例如上个月我买的那双鞋就很值得买。',
-      sample_py: 'Wǒ juéde bù yí dìng. Qíshí dǎzhé de shíhou, zhìliàng hěn hǎo de dōngxi yě huì jiàngdī jiàgé, lìrú shàng ge yuè wǒ mǎi de nà shuāng xié jiù hěn zhídé mǎi.',
-      sample_vn: 'Tôi thấy không hẳn. Thật ra khi giảm giá, đồ chất lượng tốt cũng hạ giá, ví dụ đôi giày tôi mua tháng trước rất đáng mua.',
-      tip: '例如 / 比如 dùng để nêu ví dụ; 值得 + động từ: 值得考虑、值得买。'
-    },
-    {
-      situation: 'Trong cửa hàng, nhân viên đi theo bạn giới thiệu liên tục.',
-      q_zh: '买东西的时候，你希望售货员一直跟着介绍，还是自己看、自己选？',
-      q_py: 'Mǎi dōngxi de shíhou, nǐ xīwàng shòuhuòyuán yì zhí gēn zhe jièshào, háishi zìjǐ kàn, zìjǐ xuǎn?',
-      q_vn: 'Khi mua đồ, bạn muốn nhân viên đi theo giới thiệu hay tự mình xem, tự chọn?',
-      grammar: { label: '被 + người + 打扰 (bị làm phiền)', any: ['打扰', '被'] },
-      need: [
-        { label: 'Nói bạn thích kiểu nào', any: ['自己', '售货员', '介绍', '喜欢'] },
-        { label: 'Nêu lý do', any: ['打扰', '安静', '考虑', '慢慢', '压力'] }
-      ],
-      bonus: { label: 'Nói khi nào bạn mới cần nhân viên tư vấn', any: ['问', '需要', '不懂', '大小'] },
-      vocab: ['售货员', '打扰', '情况'],
-      minLen: 22,
-      sample: '我更喜欢自己看、自己选，不希望一直被售货员打扰。不过要是遇到不懂的情况，我会主动问他们。',
-      sample_py: 'Wǒ gèng xǐhuan zìjǐ kàn, zìjǐ xuǎn, bù xīwàng yì zhí bèi shòuhuòyuán dǎrǎo. Búguò yàoshi yùdào bù dǒng de qíngkuàng, wǒ huì zhǔ dòng wèn tāmen.',
-      sample_vn: 'Tôi thích tự xem, tự chọn hơn, không muốn bị nhân viên làm phiền suốt. Nhưng nếu gặp tình huống không hiểu thì tôi sẽ chủ động hỏi họ.',
-      tip: '打扰 = làm phiền: 对不起，打扰一下。'
-    },
-    {
-      situation: 'Bạn kể một lần đãng trí khiến cả nhóm bật cười.',
-      q_zh: '你有没有过竟然忘记做某件事的经历？',
-      q_py: 'Nǐ yǒu méiyǒu guo jìngrán wàngjì zuò mǒu jiàn shì de jīnglì?',
-      q_vn: 'Bạn từng có trải nghiệm không ngờ lại quên làm một việc gì chưa?',
+      situation: 'Bạn kể cho bạn bè nghe một chuyện xảy ra ngoài dự đoán của bạn.',
+      q_zh: '有没有一件事让你觉得“真没想到”？',
+      q_py: 'Yǒu méiyǒu yí jiàn shì ràng nǐ juéde “zhēn méi xiǎngdào”?',
+      q_vn: 'Có chuyện gì khiến bạn thấy "thật không ngờ" không?',
       grammar: { label: '竟然 (không ngờ lại…)', any: ['竟然'] },
       need: [
         { label: 'Dùng 竟然', any: ['竟然'] },
-        { label: 'Kể việc bị quên', any: ['忘', '买', '带', '关', '通知', '作业'] }
+        { label: 'Nói điều bạn nghĩ lúc đầu', any: ['以为', '本来', '没想到'] }
       ],
-      bonus: { label: 'Nói kết quả hoặc cách xử lý', any: ['只好', '后来', '再', '又'] },
-      vocab: ['竟然', '情况', '所有'],
-      minLen: 22,
-      sample: '有。有一次我去超市买了所有的东西，回家以后才发现，竟然忘了买最重要的那样，只好又出去了一趟。',
-      sample_py: 'Yǒu. Yǒu yí cì wǒ qù chāoshì mǎi le suǒyǒu de dōngxi, huí jiā yǐhòu cái fāxiàn, jìngrán wàng le mǎi zuì zhòngyào de nà yàng, zhǐhǎo yòu chū qù le yí tàng.',
-      sample_vn: 'Có. Có lần tôi ra siêu thị mua tất cả mọi thứ, về nhà mới phát hiện không ngờ lại quên mua đúng món quan trọng nhất, đành phải đi thêm một chuyến.',
-      tip: '竟然 đứng trước động từ, thể hiện sự bất ngờ: 他竟然不知道。'
+      bonus: { label: 'Nói cảm giác của bạn sau đó', any: ['高兴', '感动', '奇怪', '生气'] },
+      vocab: ['竟然', '以为', '本来'],
+      minLen: 20,
+      sample: '上个月我在网上买了一个小冰箱，我本来以为要等一个星期，没想到昨天下午竟然就送到了。我真的很高兴。',
+      sample_py: 'Shàng ge yuè wǒ zài wǎngshàng mǎi le yí ge xiǎo bīngxiāng, wǒ běnlái yǐwéi yào děng yí ge xīngqī, méi xiǎngdào zuótiān xiàwǔ jìngrán jiù sòng dào le. Wǒ zhēn de hěn gāoxìng.',
+      sample_vn: 'Tháng trước tôi mua một cái tủ lạnh nhỏ trên mạng, tôi cứ tưởng phải đợi một tuần, không ngờ chiều hôm qua đã giao đến rồi. Tôi thật sự rất vui.',
+      tip: '竟然 đứng trước động từ: 他竟然忘记了; không đặt 竟然 trước chủ ngữ.'
     },
     {
-      situation: 'Bạn chọn giữa hai món đồ: một rẻ và một bền hơn.',
-      q_zh: '你买东西时更看重价格方面，还是质量方面？',
-      q_py: 'Nǐ mǎi dōngxi shí gèng kàn zhòng jiàgé fāngmiàn, háishi zhìliàng fāngmiàn?',
-      q_vn: 'Khi mua đồ bạn coi trọng mặt giá cả hay mặt chất lượng hơn?',
-      grammar: { label: '不管从……方面看，还是从……上看，都……', any: ['不管', '方面'] },
+      situation: 'Bạn so sánh cuộc sống bây giờ với mấy năm trước.',
+      q_zh: '跟五年前比，你的生活有什么变化？',
+      q_py: 'Gēn wǔ nián qián bǐ, nǐ de shēnghuó yǒu shénme biànhuà?',
+      q_vn: 'So với năm năm trước, cuộc sống của bạn có thay đổi gì?',
+      grammar: { label: 'A 是 B 的 X 倍 / A 比 B + adj + X 倍', any: ['倍'] },
       need: [
-        { label: 'Dùng 方面 so sánh hai mặt', any: ['方面', '价格', '质量'] },
-        { label: 'Nêu lựa chọn và lý do', any: ['重要', '值得', '用', '久', '便宜'] }
+        { label: 'Dùng 倍 để so sánh', any: ['倍'] },
+        { label: 'Nói về giá cả / thu nhập / thời gian', any: ['价格', '收入', '工资', '时间', '房子'] }
       ],
-      bonus: { label: 'Dùng 不管……都…… nhấn mạnh', any: ['不管'] },
-      vocab: ['方面', '值得', '倍'],
-      minLen: 22,
-      sample: '不管从价格方面看，还是从质量上看，我都觉得质量更重要。质量好的东西就算贵一倍，也能用很多年，很值得。',
-      sample_py: 'Bùguǎn cóng jiàgé fāngmiàn kàn, háishi cóng zhìliàng shàng kàn, wǒ dōu juéde zhìliàng gèng zhòngyào. Zhìliàng hǎo de dōngxi jiù suàn guì yí bèi, yě néng yòng hěn duō nián, hěn zhídé.',
-      sample_vn: 'Dù xét về giá hay về chất lượng, tôi đều thấy chất lượng quan trọng hơn. Đồ tốt dù đắt gấp đôi cũng dùng được nhiều năm, rất đáng.',
-      tip: '倍 = lần (bội số): 贵一倍 = đắt gấp đôi.'
+      bonus: { label: 'Nói lý do thay đổi', any: ['因为', '原因', '所以'] },
+      vocab: ['倍', '价格', '收入'],
+      minLen: 20,
+      sample: '跟五年前比，我的收入是那时候的两倍，但是房子的价格也高了很多。现在我每天工作的时间也比以前长一倍。',
+      sample_py: 'Gēn wǔ nián qián bǐ, wǒ de shōurù shì nà shíhou de liǎng bèi, dànshì fángzi de jiàgé yě gāo le hěn duō. Xiànzài wǒ měi tiān gōngzuò de shíjiān yě bǐ yǐqián cháng yí bèi.',
+      sample_vn: 'So với năm năm trước, thu nhập của tôi gấp đôi hồi đó, nhưng giá nhà cũng cao lên nhiều. Bây giờ thời gian làm việc mỗi ngày của tôi cũng dài gấp đôi trước kia.',
+      tip: '是……的两倍 = gấp đôi; 比……贵一倍 = đắt hơn một lần (tức gấp đôi).'
     },
     {
-      situation: 'Trung tâm thương mại đang có đợt khuyến mãi lớn dịp lễ.',
-      q_zh: '你参加过商场的打折活动吗？说说你的购物经历。',
-      q_py: 'Nǐ cānjiā guo shāng chǎng de dǎzhé huódòng ma? Shuōshuo nǐ de gòuwù jīnglì.',
-      q_vn: 'Bạn từng tham gia đợt giảm giá của trung tâm thương mại chưa? Kể trải nghiệm mua sắm của bạn.',
-      grammar: { label: '举办 + 活动; 降低 + 价格', any: ['举办', '降低'] },
+      situation: 'Một người bạn nước ngoài sắp đến thành phố của bạn.',
+      q_zh: '你们城市有什么地方值得去？',
+      q_py: 'Nǐmen chéngshì yǒu shénme dìfang zhídé qù?',
+      q_vn: 'Thành phố của bạn có chỗ nào đáng đến?',
+      grammar: { label: '值得 + động từ (đáng để…)', any: ['值得'] },
       need: [
-        { label: 'Nói về hoạt động giảm giá', any: ['活动', '打折', '举办', '降低', '节日'] },
-        { label: 'Kể món đồ đã mua', any: ['买', '衣服', '鞋', '袜子', '果汁', '东西'] }
+        { label: 'Dùng 值得 + động từ', any: ['值得'] },
+        { label: 'Giới thiệu một nơi cụ thể', any: ['公园', '饭馆', '超市', '商场', '地方'] }
       ],
-      bonus: { label: 'Nhắc đến ưu đãi khác như 免费 / 修理', any: ['免费', '修理', '其中'] },
-      vocab: ['举办', '活动', '降低', '免费'],
-      minLen: 22,
-      sample: '参加过。一到节日，商场就举办各种各样的活动，降低价格，其中有些东西还免费修理一年，我买到了又便宜又好的衣服。',
-      sample_py: 'Cānjiā guo. Yí dào jiérì, shāng chǎng jiù jǔbàn gè zhǒng gè yàng de huódòng, jiàngdī jiàgé, qízhōng yǒuxiē dōngxi hái miǎnfèi xiūlǐ yì nián, wǒ mǎi dào le yòu piányi yòu hǎo de yīfu.',
-      sample_vn: 'Có tham gia. Cứ đến lễ là trung tâm tổ chức đủ loại hoạt động, hạ giá, trong đó có món còn được sửa miễn phí một năm, tôi mua được quần áo vừa rẻ vừa tốt.',
-      tip: '举办 đi với 活动、比赛、晚会; 举行 cũng tương tự nhưng trang trọng hơn.'
+      bonus: { label: 'Nêu ví dụ bằng 例如', any: ['例如'] },
+      vocab: ['值得', '例如', '免费'],
+      minLen: 20,
+      sample: '我们城市有很多地方值得去，例如我家附近的那个大公园，晚上特别漂亮，而且是免费的。那儿附近的小饭馆也很值得试一试。',
+      sample_py: 'Wǒmen chéngshì yǒu hěn duō dìfang zhídé qù, lìrú wǒ jiā fùjìn de nàge dà gōngyuán, wǎnshang tèbié piàoliang, érqiě shì miǎnfèi de. Nàr fùjìn de xiǎo fànguǎn yě hěn zhídé shì yi shì.',
+      sample_vn: 'Thành phố tôi có nhiều chỗ đáng đến, ví dụ công viên lớn gần nhà tôi, buổi tối đặc biệt đẹp, mà lại miễn phí. Mấy quán ăn nhỏ gần đó cũng rất đáng thử.',
+      tip: '值得 + động từ: 值得去、值得试; phủ định: 不值得.'
+    },
+    {
+      situation: 'Bạn mới quen và đang nói chuyện về sở thích.',
+      q_zh: '你有哪些爱好？其中你最喜欢哪一个？',
+      q_py: 'Nǐ yǒu nǎxiē àihào? Qízhōng nǐ zuì xǐhuan nǎ yí ge?',
+      q_vn: 'Bạn có những sở thích nào? Trong đó bạn thích cái nào nhất?',
+      grammar: { label: '其中 (trong số đó…)', any: ['其中'] },
+      need: [
+        { label: 'Dùng 其中', any: ['其中'] },
+        { label: 'Kể vài sở thích', any: ['看', '游泳', '跑步', '唱歌', '小说', '做饭', '爬山'] }
+      ],
+      bonus: { label: 'Nói lợi ích của sở thích đó', any: ['好处', '健康', '有意思'] },
+      vocab: ['其中', '小说', '好处'],
+      minLen: 20,
+      sample: '我有三个爱好：游泳、看小说和做饭，其中我最喜欢游泳。游泳对身体有很多好处，我每个周末都去。',
+      sample_py: 'Wǒ yǒu sān ge àihào: yóuyǒng, kàn xiǎoshuō hé zuò fàn, qízhōng wǒ zuì xǐhuan yóuyǒng. Yóuyǒng duì shēntǐ yǒu hěn duō hǎochù, wǒ měi ge zhōumò dōu qù.',
+      sample_vn: 'Tôi có ba sở thích: bơi, đọc tiểu thuyết và nấu ăn, trong đó tôi thích bơi nhất. Bơi có nhiều lợi ích cho cơ thể, cuối tuần nào tôi cũng đi.',
+      tip: '其中 đứng đầu vế sau, nói về một phần trong những thứ vừa kể.'
+    },
+    {
+      situation: 'Bạn kể về một việc bạn làm được nhờ có người giúp.',
+      q_zh: '你在谁的帮助下学会了一件事？',
+      q_py: 'Nǐ zài shéi de bāngzhù xià xuéhuì le yí jiàn shì?',
+      q_vn: 'Bạn đã học được một việc nhờ sự giúp đỡ của ai?',
+      grammar: { label: '在……（的帮助/支持）下', any: ['下'] },
+      need: [
+        { label: 'Dùng 在……下', any: ['帮助下', '支持下', '情况下'] },
+        { label: 'Nói việc đã học được', any: ['学会', '会', '游泳', '做饭', '开车', '汉语'] }
+      ],
+      bonus: { label: 'Dùng 感谢 / 支持', any: ['感谢', '支持'] },
+      vocab: ['支持', '获得'],
+      minLen: 20,
+      sample: '我是在哥哥的帮助下学会骑自行车的。开始我总是害怕，他一直在旁边支持我。一个星期以后，我就能自己骑了。',
+      sample_py: 'Wǒ shì zài gēge de bāngzhù xià xuéhuì qí zìxíngchē de. Kāishǐ wǒ zǒngshì hàipà, tā yìzhí zài pángbiān zhīchí wǒ. Yí ge xīngqī yǐhòu, wǒ jiù néng zìjǐ qí le.',
+      sample_vn: 'Tôi học đi xe đạp nhờ anh trai giúp. Lúc đầu tôi luôn sợ, anh ấy luôn ở bên cạnh ủng hộ tôi. Một tuần sau tôi đã tự đi được.',
+      tip: 'Nhớ chữ 下 ở cuối: 在……的帮助下 (không nói 在……的帮助).'
     }
   ]
 };
 
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Việt → Trung)
+// ══════════════════════════════════════════
 var translateData = [
-  {vi:'Hôm qua vợ bảo tôi đi cùng cô ấy ra siêu thị mua nước trái cây.',zh:'昨天妻子让我陪她去超市买果汁。',py:'Zuótiān qīzi ràng wǒ péi tā qù chāoshì mǎi guǒzhī.'},
-  {vi:'Về nhà rồi, tôi mới phát hiện, không ngờ lại quên mất việc mua nước trái cây!',zh:'回家以后，我才发现，竟然忘了去商场的超市买果汁！',py:'Huí jiā yǐhòu, wǒ cái fāxiàn, jìngrán wàngle qù shāngchǎng de chāoshì mǎi guǒzhī!'},
-  {vi:'Cam đoan tươi 100%.',zh:'保证百分之百新鲜。',py:'Bǎozhèng bǎi fēn zhī bǎi xīnxiān.'},
-  {vi:'Giá hôm nay gấp đôi giá hôm qua.',zh:'今天的价格是昨天的两倍。',py:'Jīntiān de jiàgé shì zuótiān de liǎng bèi.'},
-  {vi:'Bất kể từ góc độ giá cả mà xem, hay từ chất lượng mà xem, đều đáng để cân nhắc.',zh:'不管从价格方面看，还是从质量上看，都是值得考虑的。',py:'Bùguǎn cóng jiàgé fāngmiàn kàn, háishi cóng zhìliàng shang kàn, dōu shì zhídé kǎolǜ de.'},
-  {vi:'Để cảm ơn sự ủng hộ của mọi người, cửa hàng sách chúng tôi hôm nay tổ chức chương trình "mua sách tặng quà".',zh:'为了感谢大家的支持，我们书店今天举行"购书送好礼"活动。',py:'Wèile gǎnxiè dàjiā de zhīchí, wǒmen shūdiàn jīntiān jǔxíng "gòu shū sòng hǎo lǐ" huódòng.'},
-  {vi:'Người ta thường nói "tiền nào của nấy".',zh:'人们常说"一分钱一分货"。',py:'Rénmen cháng shuō "yì fēn qián yì fēn huò".'},
-  {vi:'Cứ đến ngày lễ, trung tâm mua sắm cũng sẽ tổ chức đủ loại hoạt động, hạ giá.',zh:'一到节日，商场也会举办各种各样的活动，降低价格。',py:'Yí dào jiérì, shāngchǎng yě huì jǔbàn gè zhǒng gè yàng de huódòng, jiàngdī jiàgé.'},
+  {vi:'Không ngờ anh ấy lại quên sinh nhật của mẹ mình.', zh:'没想到他竟然忘记了自己妈妈的生日。', py:'Méi xiǎngdào tā jìngrán wàngjì le zìjǐ māma de shēngrì.'},
+  {vi:'Căn phòng này rộng gấp ba lần căn phòng kia.', zh:'这个房间是那个房间的三倍大。', py:'Zhège fángjiān shì nàge fángjiān de sān bèi dà.'},
+  {vi:'Trong vòng một năm, trung tâm thương mại này sửa điện thoại miễn phí.', zh:'一年内，这家商场免费修理手机。', py:'Yì nián nèi, zhè jiā shāngchǎng miǎnfèi xiūlǐ shǒujī.'},
+  {vi:'Chị ấy mua một ít nước trái cây và mấy quả cà chua.', zh:'她买了一些果汁和几个西红柿。', py:'Tā mǎi le yìxiē guǒzhī hé jǐ ge xīhóngshì.'},
+  {vi:'Trường chúng tôi mỗi năm đều tổ chức một cuộc thi tiếng Hán.', zh:'我们学校每年都举办一次汉语比赛。', py:'Wǒmen xuéxiào měi nián dōu jǔbàn yí cì Hànyǔ bǐsài.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Mua ít đồ như vậy cũng không cần nhiều thời gian đến thế đâu!',zh:'买这么点儿东西也用不了那么长时间啊！',py:'Mǎi zhème diǎnr dōngxi yě yòng bu liǎo nàme cháng shíjiān a!'},
-  {vi:'Cà chua có tươi không? Bán thế nào?',zh:'西红柿新鲜吗？怎么卖？',py:'Xīhóngshì xīnxiān ma? Zěnme mài?'},
-  {vi:'Được, vậy tôi mua vài quả nếm thử trước đã.',zh:'好，那我先买几个尝尝。',py:'Hǎo, nà wǒ xiān mǎi jǐ ge chángchang.'},
-  {vi:'Chất lượng đúng là tốt. Xin hỏi cái này giá bao nhiêu?',zh:'质量是不错。请问这个多少钱？',py:'Zhìliàng shì búcuò. Qǐngwèn zhège duōshao qián?'},
-  {vi:'Dịch vụ của các bạn tốt, giá cả cũng được.',zh:'你们的服务不错，价格也可以。',py:'Nǐmen de fúwù búcuò, jiàgé yě kěyǐ.'},
-  {vi:'Hoan nghênh mọi người chọn mua!',zh:'欢迎大家选购！',py:'Huānyíng dàjiā xuǎngòu!'},
-  {vi:'Có lúc, đồ chất lượng rất tốt cũng sẽ rất rẻ.',zh:'有的时候，质量很好的东西也会很便宜。',py:'Yǒude shíhou, zhìliàng hěn hǎo de dōngxi yě huì hěn piányi.'},
-  {vi:'Lúc này chúng ta cũng có thể mua được đồ vừa rẻ vừa tốt.',zh:'这个时候我们也可以买到又便宜又好的东西。',py:'Zhège shíhou wǒmen yě kěyǐ mǎidào yòu piányi yòu hǎo de dōngxi.'},
+  {vi:'Thường thì đồ càng đắt chất lượng càng tốt, nhưng cũng không nhất định.', zh:'一般来说，东西越贵质量越好，但是也不一定。', py:'Yìbān lái shuō, dōngxi yuè guì zhìliàng yuè hǎo, dànshì yě bù yídìng.'},
+  {vi:'Về mọi mặt, anh ấy đều là một người bạn đáng tin.', zh:'在各方面，他都是一个值得相信的朋友。', py:'Zài gè fāngmiàn, tā dōu shì yí ge zhídé xiāngxìn de péngyou.'},
+  {vi:'Trong số người tham gia hoạt động lần này, 30% là du học sinh.', zh:'参加这次活动的人中，百分之三十是留学生。', py:'Cānjiā zhè cì huódòng de rén zhōng, bǎi fēn zhī sānshí shì liúxuéshēng.'},
+  {vi:'Bạn nếm thử xem, món này có phải hơi ngọt không?', zh:'你尝尝，这个菜是不是有点儿甜？', py:'Nǐ chángchang, zhège cài shì bu shì yǒudiǎnr tián?'},
 ];
 
 var listenData = {

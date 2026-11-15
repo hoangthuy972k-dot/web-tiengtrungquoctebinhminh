@@ -3336,198 +3336,208 @@ var dialogData = [
    ]},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
 var matchData = [
-  {left:'起飞和',right:'起飞和降落'},
-  {left:'卖得',right:'卖得非常火'},
-  {left:'几秒钟',right:'几秒钟就解决了'},
-  {left:'离不开',right:'离不开电脑'},
-  {left:'加',right:'加密码'},
-  {left:'得到',right:'得到允许'},
-  {left:'抓住',right:'抓住坏人'},
-  {left:'举',right:'举一个例子'},
-  {left:'查',right:'查一下地址'},
-  {left:'把地球',right:'把地球叫作"地球村"'},
+  {left:'我忘记了电脑的',right:'密码'},
+  {left:'警察终于抓住了',right:'那个坏人'},
+  {left:'口渴了，喝点儿',right:'矿泉水'},
+  {left:'这个菜盐放多了，太',right:'咸了'},
+  {left:'去公园要过一座',right:'桥'},
+  {left:'现在买东西都用手机',right:'付款'},
+  {left:'把他家的地址写在',right:'信封上'},
+  {left:'有问题的同学请',right:'举手'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ
+// ══════════════════════════════════════════
 var fillData = [
-  {pre:'上次女儿问我飞机是怎么起飞和',blank:'',post:'的。',hint:'jiàngluò',ans:'降落'},
-  {pre:'有一本书叫《新十万个为什么》，现在卖得非常',blank:'',post:'。',hint:'huǒ',ans:'火'},
-  {pre:'',blank:'',post:'的名字我没记住。',hint:'zuòzhě',ans:'作者'},
-  {pre:'不过她这么小，我不知道她',blank:'',post:'能读懂。',hint:'shìfǒu',ans:'是否',exp:'是否 = có… hay không (văn viết, như 是不是): 不知道她是否能读懂.'},
-  {pre:'几',blank:'',post:'钟就把问题解决了。',hint:'miǎo',ans:'秒'},
-  {pre:'不仅是学习',blank:'',post:'，而且连生活方式也发生了很大改变。',hint:'fāngshì',ans:'方式',exp:'不仅…而且… = không những… mà còn…; ở đây vế sau dùng 连…也 để nhấn mạnh.'},
-  {pre:'天天对着电脑看，眼睛实在',blank:'',post:'。',hint:'shòubuliǎo',ans:'受不了',exp:'受不了 = không chịu nổi (bổ ngữ khả năng): 眼睛受不了.'},
-  {pre:'可以给网上的日记加',blank:'',post:'。',hint:'mìmǎ',ans:'密码'},
-  {pre:'只有得到了',blank:'',post:'，别人才能看到。',hint:'yǔnxǔ',ans:'允许'},
-  {pre:'突然开过来一辆车，非常',blank:'',post:'。',hint:'wēixiǎn',ans:'危险'},
-  {pre:'',blank:'',post:'又梦见我跳到车上，跟警察一起抓住了一个坏人。',hint:'jiēzhe',ans:'接着',exp:'接着 = tiếp theo, tiếp đó; nối hai việc xảy ra nối tiếp nhau.'},
-  {pre:'我晚饭吃得太',blank:'',post:'，那天晚上就梦见自己到处找商店买矿泉水。',hint:'xián',ans:'咸'},
-  {pre:'',blank:'',post:'一个例子，迷路时，只要用手机地图查一下地址就行。',hint:'jǔ',ans:'举'},
-  {pre:'现在连',blank:'',post:'都不用去，只要在家里上网发个电子邮件。',hint:'yóujú',ans:'邮局'},
-  {pre:'只要打开网站，任何',blank:'',post:'都可以在第一时间获得。',hint:'xìnxī',ans:'信息'},
+  {pre:'请你明天告诉我，你',blank:'是否',post:'能参加这次会议。',hint:'(có … hay không)',ans:'是否',exp:'是否 = 是不是 (văn viết), đứng trước động từ/能; câu đã có 是否 thì không thêm 吗 ở cuối.'},
+  {pre:'A：今天才八点就三十多度了，我们走过去吧？ B：不行，太阳这么大，我真',blank:'受不了',post:'，还是打车去吧。',hint:'(chịu không nổi)',ans:'受不了',exp:'受不了 = chịu không nổi (bổ ngữ khả năng), đứng sau chủ ngữ làm vị ngữ; không thêm 很 trước nó.'},
+  {pre:'他先去邮局给奶奶寄了些东西，',blank:'接着',post:'又去银行取了钱。',hint:'(ngay sau đó)',ans:'接着',exp:'接着 nối việc xảy ra liền ngay sau việc trước; 然后 chỉ thứ tự trước–sau, giữa hai việc có thể cách một khoảng.'},
+  {pre:'A：对不起，我刚才说到哪儿了？ B：你说到你在国外迷路了。别停，',blank:'接着',post:'说吧，大家都想听。',hint:'(tiếp tục)',ans:'接着',exp:'接着 + động từ còn có nghĩa "tiếp tục làm (việc đang dở)": 接着说 / 接着看.'},
+  {pre:'这个房子',blank:'除了',post:'大一点儿以外，离地铁站也很近，我很满意。',hint:'(ngoài … ra)',ans:'除了',exp:'除了 A 以外，还/也 B = ngoài A ra còn B (A cũng được tính); câu sau phải có 还 hoặc 也.'},
+  {pre:'他去过的地方，从来不会忘记怎么走，所以大家都把他',blank:'叫做',post:'"地图先生"。',hint:'(gọi là)',ans:'叫做',exp:'把 A 叫做 B = gọi A là B (sách viết jiàozuò, nghĩa như nhau); 叫做 đứng ngay sau tân ngữ của 把.'},
+  {pre:'他参加跑步比赛，一百米只用了十三',blank:'秒',post:'，真厉害！',hint:'(giây)',ans:'秒',exp:'秒 = giây, 分钟 = phút; số + 秒 đứng sau động từ chỉ thời lượng: 用了十三秒.'},
+  {pre:'A：现在都十一点多了，你一个人回家',blank:'安全',post:'吗？ B：没事，我坐出租车，到家就给你发短信。',hint:'(an toàn)',ans:'安全',exp:'安全 là tính từ, làm vị ngữ: 回家安全吗？; trái nghĩa là 危险.'},
+  {pre:'下大雪的时候开车很',blank:'危险',post:'，你最好坐地铁去上班。',hint:'(nguy hiểm)',ans:'危险',exp:'危险 = nguy hiểm, đứng sau 很; cũng dùng như danh từ: 有危险.'},
+  {pre:'没有老师的',blank:'允许',post:'，学生不能随便进这个房间。',hint:'(sự cho phép)',ans:'允许',exp:'允许 vừa là động từ (允许他进来) vừa làm danh từ sau 的: 没有……的允许 = không được ai cho phép.'},
+  {pre:'每个人的学习',blank:'方式',post:'都不一样，适合自己的才是最好的。',hint:'(cách thức)',ans:'方式',exp:'方式 = cách thức, lối (学习方式, 生活方式); 方法 thiên về cách giải quyết một việc cụ thể.'},
+  {pre:'这本小说的',blank:'作者',post:'就是我们学校的一位老师。',hint:'(tác giả)',ans:'作者',exp:'作者 = tác giả của một tác phẩm cụ thể (书、文章); 作家 = nhà văn (nghề nghiệp).'},
+  {pre:'A：楼下那家新开的饭馆怎么样？ B：特别',blank:'火',post:'，每天晚上都要排队。',hint:'(đắt khách, đông khách)',ans:'火',exp:'火 (khẩu ngữ) = đắt hàng, rất được ưa chuộng: 生意很火 / 卖得很火.'},
+  {pre:'我每天早上跑步，',blank:'除此以外',post:'，周末还去游泳。',hint:'(ngoài điều này ra)',ans:'除此以外',exp:'除此以外 = ngoài điều vừa nói ra, đứng đầu vế sau, thường đi với 还/也.'},
+  {pre:'人们把这种花',blank:'叫作',post:'“春天的花”。',hint:'(gọi là)',ans:'叫作',exp:'把 A 叫作 B = gọi A là B (giống 叫做); A là tân ngữ của 把.'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
 var sortData = [
-  {words:['孩子','眼中','的','世界','是','美丽','和','奇特','的'],ans:'孩子眼中的世界是美丽和奇特的',audio:'孩子眼中的世界是美丽和奇特的'},
-  {words:['我','不','知道','她','是否','能','读懂'],ans:'我不知道她是否能读懂',audio:'我不知道她是否能读懂'},
-  {words:['他们','的','生活','已经','离不开','电脑'],ans:'他们的生活已经离不开电脑',audio:'他们的生活已经离不开电脑'},
-  {words:['天天','对着','电脑','看','，','眼睛','实在','受不了'],ans:'天天对着电脑看，眼睛实在受不了',audio:'天天对着电脑看，眼睛实在受不了'},
-  {words:['只有','得到','了','允许','，','别人','才','能','看到'],ans:'只有得到了允许，别人才能看到',audio:'只有得到了允许，别人才能看到'},
-  {words:['每个','人','都','会','做梦','，','区别','只是','有多','有少'],ans:'每个人都会做梦，区别只是有多有少',audio:'每个人都会做梦，区别只是有多有少'},
-  {words:['现代','人','的','生活','已经','越来越','离不开','手机','了'],ans:'现代人的生活已经越来越离不开手机了',audio:'现代人的生活已经越来越离不开手机了'},
-  {words:['现在','人们','都','把','地球','叫作','"地球村"'],ans:'现在人们都把地球叫作"地球村"',audio:'现在人们都把地球叫作"地球村"'},
+  {words:['飞机','还有','二十','分钟','就','要','降落','了','。'],ans:'飞机还有二十分钟就要降落了。',audio:'飞机还有二十分钟就要降落了。'},
+  {words:['这个','城市','的','交通','越来越','方便','了','。'],ans:'这个城市的交通越来越方便了。',audio:'这个城市的交通越来越方便了。'},
+  {words:['我','不','知道','他','是否','同意','我们','的','计划','。'],ans:'我不知道他是否同意我们的计划。',audio:'我不知道他是否同意我们的计划。'},
+  {words:['我','哥哥','开车','的','技术','特别','好','。'],ans:'我哥哥开车的技术特别好。',audio:'我哥哥开车的技术特别好。'},
+  {words:['她','从小','就','有','写','日记','的','习惯','。'],ans:'她从小就有写日记的习惯。',audio:'她从小就有写日记的习惯。'},
+  {words:['你','收到','我','上个月','寄','给','你','的','东西','了','吗','？'],ans:'你收到我上个月寄给你的东西了吗？',audio:'你收到我上个月寄给你的东西了吗？'},
+  {words:['明天','见面','的','地点','在','学校','门口','，','别','忘记','了','。'],ans:'明天见面的地点在学校门口，别忘记了。',audio:'明天见面的地点在学校门口，别忘记了。'},
+  {words:['这','座','桥','是','上个','世纪','的','，','已经','有','一百多','年','了','。'],ans:'这座桥是上个世纪的，已经有一百多年了。',audio:'这座桥是上个世纪的，已经有一百多年了。'},
+  {words:['这个','网站','上','的','信息','每天','都','更新','。'],ans:'这个网站上的信息每天都更新。',audio:'这个网站上的信息每天都更新。'},
 ];
 
 var errorFixMode = 'wordchoice';
 var errorFixData = [
   {wrong:'北京有一____山，叫香山，非常有名。每到秋天，满山都是红叶，风景特别漂亮。',
    opts:['收','座','安全','危险'],ans:1,
-   exp:'座 (lượng từ cho núi) — 一座山. Câu có 香山 (Bài 17), 满 (Bài 11), 风景 (Bài 6). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'座 là lượng từ cho núi, cầu, tòa nhà: 一座山 / 一座桥. 收, 安全, 危险 không làm lượng từ sau 一.'},
   {wrong:'有些人直接拿自己的生日做银行卡或信用卡的密码。其实，这样做很不____。',
    opts:['收','座','安全','降落'],ans:2,
-   exp:'安全 (an toàn) — 很不安全. Câu có 直接 (Bài 12), 拿……做 (Bài 16), 密码 (từ mới). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'很不安全 = rất không an toàn: lấy ngày sinh làm mật khẩu thì người khác dễ đoán ra. Sau 很不 cần một tính từ; 收, 座, 降落 không phải tính từ.'},
   {wrong:'无论对自己还是对其他人来说，喝完酒开车都是极其____的。',
    opts:['收','安全','危险','降落'],ans:2,
-   exp:'危险 (nguy hiểm) — 极其危险. Câu có 无论……都 (Bài 11), 对……来说 (Bài 5). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'极其危险 = cực kỳ nguy hiểm (uống rượu rồi lái xe). 安全 nghĩa ngược lại; 收, 降落 là động từ, không đứng sau 极其.'},
   {wrong:'说出去的话很难____回。因此，生气时不要随便说话，这时候说的一般都是气话，会给别人留下不好的印象，甚至会伤害别人。',
-   opts:['收','座','安全','降落'],ans:0,
-   exp:'收 (thu) — 收回 = thu lại. Câu có 因此 (Bài 8), 随便 (Bài 7), 印象 (Bài 6), 伤害 (Bài 9). Các từ còn lại không phù hợp nghĩa.'},
+   opts:['收','技术','安全','降落'],ans:0,
+   exp:'收回 = thu lại, rút lại (lời đã nói ra). 降落 là máy bay hạ cánh; 技术, 安全 không ghép với 回.'},
   {wrong:'各位乘客，大家好，感谢大家乘坐此次航班，我们的飞机将于20分钟后____在北京首都国际机场。',
    opts:['收','座','危险','降落'],ans:3,
-   exp:'降落 (hạ cánh) — 降落在机场. Câu có 乘坐 (Bài 14), 航班 (Bài 4). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'飞机降落在机场 = máy bay hạ cánh xuống sân bay; 降落 + 在 + nơi chốn. 收, 座, 危险 không hợp nghĩa.'},
   {wrong:'A：饺子很香，不过鸡蛋汤稍微有点儿____。B：那我下次少放点儿盐。',
    opts:['地点','地址','技术','咸'],ans:3,
-   exp:'咸 (mặn) — 有点儿咸. Câu có 稍微 (Bài 13), 盐 (Bài 12). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'B trả lời lần sau cho ít muối (盐) → canh hơi mặn: 有点儿咸. 地点, 地址, 技术 là danh từ, không đứng sau 有点儿.'},
   {wrong:'A：对面那条街上新开了一家理发店，听说那儿的理发师____还不错。B：是吗？正好我也该理发了，那明天下班后我去试试。',
    opts:['地点','地址','技术','迷路'],ans:2,
-   exp:'技术 (tay nghề) — 理发师技术不错. Câu có 理发 (Bài 7), 正好 (Bài 4). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'理发师技术不错 = thợ cắt tóc tay nghề khá. 技术 = kỹ thuật, tay nghề; 地点, 地址 chỉ nơi chốn, 迷路 là động từ.'},
   {wrong:'A：我怎么觉得咱们好像____了？B：没有，我以前来过这儿，前面路口左转就到了。',
    opts:['地点','地址','迷路','咸'],ans:2,
-   exp:'迷路 (lạc đường) — 好像迷路了. Câu có 好像 (Bài 6), 路口 (Bài 2). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'好像迷路了 = hình như bị lạc đường rồi; B đáp mình từng đến đây, rẽ trái là tới. 迷路 là động từ (迷路了); 地点, 地址, 技术 là danh từ.'},
   {wrong:'A：能把照片发到我邮箱里吗？B：没问题，把你的邮箱____告诉我，我整理好了就发给你。',
-   opts:['地点','地址','技术','迷路'],ans:1,
-   exp:'地址 (địa chỉ) — 邮箱地址. Câu có 整理 (Bài 15), câu chữ 把. Các từ còn lại không phù hợp nghĩa.'},
+   opts:['地点','地址','危险','迷路'],ans:1,
+   exp:'邮箱地址 = địa chỉ email. 地址 là địa chỉ cụ thể (nhà, email) để gửi đến; 地点 là nơi diễn ra một hoạt động (gặp mặt, tập trung).'},
   {wrong:'A：今天下午我们还是两点在东门集合吗？B：时间不变，____改在西门了。快去整理一下东西吧，我们马上出发。',
-   opts:['地点','地址','技术','咸'],ans:0,
-   exp:'地点 (địa điểm) — 地点改在西门. Câu có 集合 (Bài 6), 出发 (Bài 2). Các từ còn lại không phù hợp nghĩa.'},
+   opts:['地点','地址','安全','咸'],ans:0,
+   exp:'时间不变，地点改了 = giờ giữ nguyên, đổi chỗ tập trung. 地点 = nơi diễn ra hoạt động; 地址 = địa chỉ nhà/thư, không dùng cho chỗ tập trung.'},
 ];
 
+// ══════════════════════════════════════════
+// LUYỆN NÓI
+// ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 18. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu hỏi là một tình huống thật, nói về chính bạn bằng từ và mẫu câu của Bài 18. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Đồng nghiệp hỏi bạn dùng máy tính vào việc gì nhiều nhất.',
-      q_zh: '你常用电脑做什么？你平均每天上网的时间大概是多长？',
-      q_py: 'Nǐ cháng yòng diànnǎo zuò shénme? Nǐ píng jūn měitiān shàngwǎng de shíjiān dàgài shì duō zhǎng?',
-      q_vn: 'Bạn thường dùng máy tính làm gì? Trung bình mỗi ngày bạn lên mạng bao lâu?',
-      grammar: { label: '除此以外，还…… + 大概……左右', any: ['除此以外', '除了', '大概', '左右'] },
+      situation: 'Bạn bè hỏi bạn có hay mua đồ trên mạng không.',
+      q_zh: '你在网上买东西的时候，担心安全问题吗？',
+      q_py: 'Nǐ zài wǎngshang mǎi dōngxi de shíhou, dānxīn ānquán wèntí ma?',
+      q_vn: 'Khi mua đồ trên mạng, bạn có lo vấn đề an toàn không?',
+      grammar: { label: '是否 (có … hay không)', any: ['是否'] },
       need: [
-        { label: 'Kể việc làm trên máy tính', any: ['信息', '作业', '工作', '电影', '邮件', '查'] },
-        { label: 'Nói thời gian lên mạng', any: ['小时', '大概', '左右', '分钟'] }
+        { label: 'Dùng 是否', any: ['是否'] },
+        { label: 'Nói về trả tiền / mật khẩu / trang web', any: ['付款', '密码', '网站', '安全'] }
       ],
-      bonus: { label: 'Dùng 除此以外 bổ sung ý', any: ['除此以外', '除了'] },
-      vocab: ['信息', '方式', '网站'],
+      bonus: { label: 'Dùng 任何 hoặc 信息', any: ['任何', '信息'] },
+      vocab: ['是否', '付款', '密码', '网站', '安全'],
       minLen: 22,
-      sample: '我常用电脑查信息、写作业，也常上几个新闻网站。除此以外，我还用它看电影。我每天上网的时间大概三个小时左右。',
-      sample_py: 'Wǒ cháng yòng diànnǎo chá xìnxī, xiě zuòyè, yě cháng shàng jǐ ge xīnwén wǎngzhàn. Chú cǐ yǐ wài, wǒ hái yòng tā kàn diànyǐng. Wǒ měitiān shàngwǎng de shíjiān dàgài sān ge xiǎoshí zuǒyòu.',
-      sample_vn: 'Tôi hay dùng máy tính tra thông tin, làm bài tập, cũng hay vào vài trang tin. Ngoài ra tôi còn dùng nó xem phim. Thời gian lên mạng mỗi ngày của tôi khoảng ba tiếng.',
-      tip: '除此以外 = ngoài ra, dùng đầu câu trong văn viết.'
+      sample: '我经常在网上买东西，用手机付款很方便。但是买以前，我会先看看那个网站是否安全。我的密码也从来不告诉任何人。',
+      sample_py: 'Wǒ jīngcháng zài wǎngshang mǎi dōngxi, yòng shǒujī fù kuǎn hěn fāngbiàn. Dànshì mǎi yǐqián, wǒ huì xiān kànkan nàge wǎngzhàn shìfǒu ānquán. Wǒ de mìmǎ yě cónglái bú gàosu rènhé rén.',
+      sample_vn: 'Tôi hay mua đồ trên mạng, trả tiền bằng điện thoại rất tiện. Nhưng trước khi mua, tôi sẽ xem trang web đó có an toàn không. Mật khẩu của tôi cũng chưa bao giờ nói cho ai biết.',
+      tip: '是否 + động từ/tính từ: 是否安全 / 是否同意; có 是否 rồi thì bỏ 吗.'
     },
     {
-      situation: 'Lớp bạn thảo luận Internet thay đổi cuộc sống thế nào.',
-      q_zh: '互联网对你的生活有哪些影响？',
-      q_py: 'Hùliánwǎng duì nǐ de shēnghuó yǒu nǎxiē yǐngxiǎng?',
-      q_vn: 'Internet ảnh hưởng gì đến cuộc sống của bạn?',
-      grammar: { label: '不仅……而且连……也…… ', any: ['不仅', '连'] },
+      situation: 'Cả nhóm kể về những điều khiến mình khó chịu nhất.',
+      q_zh: '你最受不了什么事情？',
+      q_py: 'Nǐ zuì shòubuliǎo shénme shìqing?',
+      q_vn: 'Bạn không chịu nổi nhất là chuyện gì?',
+      grammar: { label: '受不了 (chịu không nổi)', any: ['受不了'] },
       need: [
-        { label: 'Nói ảnh hưởng đến học tập hoặc công việc', any: ['学习', '工作', '方式', '查', '上课'] },
-        { label: 'Nói ảnh hưởng đến sinh hoạt', any: ['付款', '购物', '生活', '手机', '买'] }
+        { label: 'Dùng 受不了', any: ['受不了'] },
+        { label: 'Nói lý do hoặc cách bạn làm', any: ['因为', '所以', '只好', '一定'] }
       ],
-      bonus: { label: 'Dùng 连……也…… nhấn mạnh', any: ['连'] },
-      vocab: ['互联网', '方式', '付款'],
-      minLen: 22,
-      sample: '互联网不仅改变了我的学习方式，而且连生活方式也改变了。现在我付款、购物都用手机，遇到问题也是先上网查，已经离不开它了。',
-      sample_py: 'Hùliánwǎng bùjǐn gǎibiàn le wǒ de xuéxí fāngshì, ér qiě lián shēnghuó fāngshì yě gǎibiàn le. Xiànzài wǒ fùkuǎn, gòuwù dōu yòng shǒujī, yùdào wèntí yě shì xiān shàngwǎng chá, yǐjīng lí bù kāi tā le.',
-      sample_vn: 'Internet không những thay đổi cách học của tôi mà ngay cả cách sống cũng thay đổi. Giờ tôi trả tiền, mua sắm đều dùng điện thoại, gặp vấn đề cũng lên mạng tra trước, đã không thể thiếu nó.',
-      tip: '连……也/都…… nhấn mạnh cả điều bất ngờ nhất: 连孩子都知道。'
+      bonus: { label: 'Dùng 尤其 hoặc 实在', any: ['尤其', '实在'] },
+      vocab: ['受不了', '尤其', '实在'],
+      minLen: 20,
+      sample: '我最受不了看电影的时候旁边的人一直打电话。还有，夏天太热我也受不了，尤其是晚上，所以我睡觉的时候一定要开空调。',
+      sample_py: 'Wǒ zuì shòubuliǎo kàn diànyǐng de shíhou pángbiān de rén yìzhí dǎ diànhuà. Háiyǒu, xiàtiān tài rè wǒ yě shòubuliǎo, yóuqí shì wǎnshang, suǒyǐ wǒ shuìjiào de shíhou yídìng yào kāi kōngtiáo.',
+      sample_vn: 'Tôi không chịu nổi nhất là lúc xem phim người bên cạnh cứ gọi điện thoại mãi. Còn nữa, mùa hè nóng quá tôi cũng không chịu nổi, nhất là buổi tối, nên lúc ngủ tôi nhất định phải bật điều hòa.',
+      tip: '受不了 đứng sau chủ ngữ hoặc sau "太 + tính từ, ……": 太热了，我受不了。'
     },
     {
-      situation: 'Trong buổi gặp mặt, mọi người đều cắm mặt vào điện thoại.',
-      q_zh: '你会因为上网而减少和朋友正常交流的时间吗？',
-      q_py: 'Nǐ huì yīnwèi shàngwǎng ér jiǎnshǎo hé péngyou zhèngcháng jiāoliú de shíjiān ma?',
-      q_vn: 'Bạn có vì lên mạng mà giảm thời gian trò chuyện trực tiếp với bạn bè không?',
-      grammar: { label: '是否…… (có… hay không); 受不了……', any: ['是否', '受不了'] },
+      situation: 'Đồng nghiệp hỏi tối qua bạn làm gì sau giờ làm.',
+      q_zh: '你昨天下班以后做了什么？',
+      q_py: 'Nǐ zuótiān xià bān yǐhòu zuò le shénme?',
+      q_vn: 'Hôm qua tan làm xong bạn đã làm gì?',
+      grammar: { label: '先……，接着…… (trước…, ngay sau đó…)', any: ['接着'] },
       need: [
-        { label: 'Nêu quan điểm hoặc thói quen của bạn', any: ['会', '不会', '减少', '交流', '聚会'] },
-        { label: 'Nói cách xử lý', any: ['提醒', '放下', '少看', '关', '约定'] }
+        { label: 'Dùng 接着', any: ['接着'] },
+        { label: 'Kể ít nhất hai việc theo thứ tự', any: ['先', '然后', '以后', '最后'] }
       ],
-      bonus: { label: 'Dùng 是否 hoặc 受不了', any: ['是否', '受不了'] },
-      vocab: ['是否', '受不了', '方式'],
-      minLen: 22,
-      sample: '我也不知道自己是否完全没有这个问题。有时候朋友聚会大家都在看手机，我真受不了这种情况，所以我会提醒大家把手机放下，好好聊聊天儿。',
-      sample_py: 'Wǒ yě bù zhīdao zìjǐ shìfǒu wánquán méiyǒu zhège wèntí. Yǒu shíhou péngyou jùhuì dàjiā dōu zài kàn shǒujī, wǒ zhēn shòubuliǎo zhè zhǒng qíngkuàng, suǒyǐ wǒ huì tíxǐng dàjiā bǎ shǒujī fàng xià, hǎohāo liáo liáo tiān ér.',
-      sample_vn: 'Tôi cũng không chắc mình có hoàn toàn tránh được chuyện này không. Có lúc bạn bè gặp nhau ai cũng nhìn điện thoại, tôi thật sự không chịu nổi, nên tôi sẽ nhắc mọi người bỏ điện thoại xuống, trò chuyện cho tử tế.',
-      tip: '是否 = 是不是, dùng trong văn viết: 请说明是否同意。'
+      bonus: { label: 'Dùng 日记 hoặc 矿泉水', any: ['日记', '矿泉水'] },
+      vocab: ['接着', '日记', '矿泉水'],
+      minLen: 20,
+      sample: '我昨天六点下班，先去超市买了一些水果和矿泉水，接着又去公园散步。到家以后，我写了一会儿日记就睡了。',
+      sample_py: 'Wǒ zuótiān liù diǎn xià bān, xiān qù chāoshì mǎi le yìxiē shuǐguǒ hé kuàngquánshuǐ, jiēzhe yòu qù gōngyuán sàn bù. Dào jiā yǐhòu, wǒ xiě le yíhuìr rìjì jiù shuì le.',
+      sample_vn: 'Hôm qua sáu giờ tôi tan làm, trước tiên đi siêu thị mua ít hoa quả và nước suối, ngay sau đó lại ra công viên đi dạo. Về đến nhà tôi viết nhật ký một lúc rồi đi ngủ.',
+      tip: '接着 nối việc xảy ra liền sau; thường đi với 又: 先……，接着又……'
     },
     {
-      situation: 'Bạn viết một đoạn ngắn về công nghệ cho lớp.',
-      q_zh: '请举一个例子，说说科技的发展给我们的生活带来了什么变化。',
-      q_py: 'Qǐng jǔ yí ge lì zǐ, shuōshuo kē jì de fāzhǎn gěi wǒmen de shēnghuó dài lái le shénme biànhuà.',
-      q_vn: 'Hãy nêu ví dụ về thay đổi mà công nghệ mang lại cho cuộc sống.',
-      grammar: { label: '举一个例子……; 用不了…… (chưa tới…)', any: ['举', '例子', '用不了'] },
+      situation: 'Bạn giới thiệu chiếc điện thoại của mình cho một người lớn tuổi.',
+      q_zh: '你的手机除了打电话，还能做什么？',
+      q_py: 'Nǐ de shǒujī chúle dǎ diànhuà, hái néng zuò shénme?',
+      q_vn: 'Điện thoại của bạn ngoài gọi điện ra còn làm được gì?',
+      grammar: { label: '除了……以外，还/也…… (ngoài … ra còn…)', any: ['除了'] },
       need: [
-        { label: 'Nêu một ví dụ cụ thể', any: ['寄信', '邮局', '电子邮件', '手机', '网上', '付款', '地图'] },
-        { label: 'So sánh trước và nay', any: ['原来', '以前', '现在', '几天', '一分钟', '秒'] }
+        { label: 'Dùng 除了……以外', any: ['除了'] },
+        { label: 'Kể công dụng', any: ['付款', '地址', '信息', '新闻', '音乐', '迷路'] }
       ],
-      bonus: { label: 'Dùng 连……都…… nhấn mạnh', any: ['连'] },
-      vocab: ['技术', '邮局', '秒'],
+      bonus: { label: 'Dùng 迷路 hoặc 地址', any: ['迷路', '地址'] },
+      vocab: ['除了', '迷路', '地址'],
       minLen: 22,
-      sample: '举一个例子，原来寄信需要好几天，现在发个电子邮件用不了几秒钟朋友就能收到，连邮局都不用去了。技术真的改变了我们的生活。',
-      sample_py: 'Jǔ yí ge lì zǐ, yuánlái jì xìn xūyào hǎo jǐ tiān, xiànzài fā ge diànzǐyóujiàn yòng bù le jǐ miǎo zhōng péngyou jiù néng shōu dào, lián yóujú dōu bú yòng qù le. Jìshù zhēn de gǎibiàn le wǒmen de shēnghuó.',
-      sample_vn: 'Lấy một ví dụ, trước đây gửi thư mất mấy ngày, giờ gửi email chưa tới vài giây bạn bè đã nhận được, đến bưu điện cũng không cần đi. Công nghệ thật sự đã thay đổi cuộc sống của chúng ta.',
-      tip: '用不了 + thời gian = chưa cần đến…: 用不了十分钟就到了。'
+      sample: '除了打电话以外，我每天还用手机听音乐、看新闻，买东西也用它付款。去不熟悉的地方，我就用它找路，所以去哪儿都不会迷路。',
+      sample_py: 'Chúle dǎ diànhuà yǐwài, wǒ měi tiān hái yòng shǒujī tīng yīnyuè, kàn xīnwén, mǎi dōngxi yě yòng tā fù kuǎn. Qù bù shúxi de dìfang, wǒ jiù yòng tā zhǎo lù, suǒyǐ qù nǎr dōu bú huì mí lù.',
+      sample_vn: 'Ngoài gọi điện ra, hằng ngày tôi còn dùng điện thoại nghe nhạc, xem tin tức, mua đồ cũng trả tiền bằng nó. Đến chỗ không quen thì tôi dùng nó tìm đường, nên đi đâu cũng không bị lạc.',
+      tip: '除了 A 以外，还 B: A và B đều có; 除了 A 以外，都 B: trừ A ra, còn lại đều B.'
     },
     {
-      situation: 'Sáng nay bạn tỉnh dậy sau một giấc mơ lạ.',
-      q_zh: '你做过什么奇怪的梦？你觉得梦是否能告诉我们将来的事情？',
-      q_py: 'Nǐ zuò guo shénme qíguài de mèng? Nǐ juéde mèng shìfǒu néng gàosu wǒmen jiānglái de shìqing?',
-      q_vn: 'Bạn từng mơ giấc mơ kỳ lạ nào? Bạn thấy giấc mơ có báo trước tương lai không?',
-      grammar: { label: '接着…… (ngay sau đó); 仍然……', any: ['接着', '仍然'] },
+      situation: 'Bạn mới tham gia một câu lạc bộ, mọi người hỏi biệt danh của bạn.',
+      q_zh: '你的朋友怎么叫你？为什么？',
+      q_py: 'Nǐ de péngyou zěnme jiào nǐ? Wèi shénme?',
+      q_vn: 'Bạn bè gọi bạn là gì? Vì sao?',
+      grammar: { label: '把 A 叫做 B (gọi A là B)', any: ['叫做'] },
       need: [
-        { label: 'Kể nội dung giấc mơ', any: ['梦', '桥', '水', '飞', '考试', '掉'] },
-        { label: 'Nêu quan điểm về giấc mơ', any: ['不能', '能', '将来', '科学', '说明', '相信'] }
+        { label: 'Dùng 把……叫做……', any: ['叫做'] },
+        { label: 'Nói lý do', any: ['因为', '所以', '原因'] }
       ],
-      bonus: { label: 'Dùng 接着 kể diễn biến', any: ['接着'] },
-      vocab: ['危险', '安全', '仍然'],
-      minLen: 22,
-      sample: '我梦到自己在一座很高的桥上走，接着又梦见掉进了水里，醒来以后还觉得很危险。我觉得梦不能告诉我们将来的事，科学家到现在仍然没有一个准确的说法。',
-      sample_py: 'Wǒ mèng dào zìjǐ zài yí zuò hěn gāo de qiáo shàng zǒu, jiēzhe yòu mèng jiàn diào jìn le shuǐ lǐ, xǐng lái yǐhòu hái juéde hěn wēixiǎn. Wǒ juéde mèng bù néng gàosu wǒmen jiānglái de shì, kēxué jiā dào xiànzài réngrán méiyǒu yí ge zhǔnquè de shuō fǎ.',
-      sample_vn: 'Tôi mơ thấy mình đi trên một cây cầu rất cao, ngay sau đó lại mơ rơi xuống nước, tỉnh dậy vẫn thấy nguy hiểm. Tôi thấy giấc mơ không báo trước được tương lai, đến giờ các nhà khoa học vẫn chưa có kết luận chính xác.',
-      tip: '接着 nối sự việc xảy ra tiếp ngay sau: 他说完，接着就走了。'
+      bonus: { label: 'Dùng 技术', any: ['技术'] },
+      vocab: ['叫做', '技术'],
+      minLen: 20,
+      sample: '我的同学都把我叫做"小电脑"，因为我对电脑技术很感兴趣。他们的电脑一有问题，就马上给我打电话。',
+      sample_py: 'Wǒ de tóngxué dōu bǎ wǒ jiàozuò "Xiǎo Diànnǎo", yīnwèi wǒ duì diànnǎo jìshù hěn gǎn xìngqù. Tāmen de diànnǎo yì yǒu wèntí, jiù mǎshàng gěi wǒ dǎ diànhuà.',
+      sample_vn: 'Bạn học đều gọi tôi là "Máy tính nhí", vì tôi rất thích công nghệ máy tính. Máy tính của họ hễ có vấn đề là gọi ngay cho tôi.',
+      tip: '把 + người/vật + 叫做 + tên gọi; sách viết jiàozuò với chữ khác, nghĩa như nhau.'
     }
   ]
 };
 
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Việt → Trung)
+// ══════════════════════════════════════════
 var translateData = [
-  {vi:'Lần trước con gái hỏi tôi máy bay cất cánh và hạ cánh thế nào, thật không biết nên trả lời sao.',zh:'上次女儿问我飞机是怎么起飞和降落的，真不知道该怎么回答她。',py:'Shàng cì nǚ\'ér wèn wǒ fēijī shì zěnme qǐfēi hé jiàngluò de, zhēn bù zhīdào gāi zěnme huídá tā.'},
-  {vi:'Nhưng nó còn nhỏ thế, tôi không biết nó có đọc hiểu được không.',zh:'不过她这么小，我不知道她是否能读懂。',py:'Búguò tā zhème xiǎo, wǒ bù zhīdào tā shìfǒu néng dúdǒng.'},
-  {vi:'Sinh viên bây giờ gặp vấn đề không hiểu, có thể tra ngay trên mạng, vài giây là giải quyết xong.',zh:'现在的大学生一遇到不明白的问题，可以马上在网上查找答案，几秒钟就把问题解决了。',py:'Xiànzài de dàxuéshēng yí yùdào bù míngbai de wèntí, kěyǐ mǎshàng zài wǎngshang cházhǎo dá\'àn, jǐ miǎo zhōng jiù bǎ wèntí jiějué le.'},
-  {vi:'Nhưng ngày nào cũng nhìn màn hình máy tính, mắt thật sự chịu không nổi.',zh:'不过天天对着电脑看，眼睛实在受不了。',py:'Búguò tiāntiān duìzhe diànnǎo kàn, yǎnjing shízài shòubuliǎo.'},
-  {vi:'Có thể đặt mật khẩu cho nhật ký trên mạng, như vậy chỉ khi được cho phép người khác mới xem được.',zh:'可以给网上的日记加密码，那样只有得到了允许，别人才能看到。',py:'Kěyǐ gěi wǎngshang de rìjì jiā mìmǎ, nàyàng zhǐyǒu dédàole yǔnxǔ, biérén cái néng kàndào.'},
-  {vi:'Ngay sau đó lại mơ thấy tôi nhảy lên xe, cùng cảnh sát bắt một kẻ xấu.',zh:'接着又梦见我跳到车上，跟警察一起抓住了一个坏人。',py:'Jiēzhe yòu mèngjiàn wǒ tiàodào chē shang, gēn jǐngchá yìqǐ zhuāzhùle yí ge huàirén.'},
-  {vi:'Nêu một ví dụ, khi lạc đường, chỉ cần dùng bản đồ điện thoại tra địa chỉ, lập tức biết cách đến địa điểm đó.',zh:'举一个例子，迷路时，只要用手机地图查一下地址，马上就能知道怎么去那个地点。',py:'Jǔ yí ge lìzi, mí lù shí, zhǐyào yòng shǒujī dìtú chá yíxià dìzhǐ, mǎshàng jiù néng zhīdào zěnme qù nàge dìdiǎn.'},
-  {vi:'Sự phát triển khoa học kỹ thuật hiện đại khiến thế giới ngày càng nhỏ, nên người ta gọi Trái đất là "làng toàn cầu".',zh:'现代科学技术的发展让世界变得越来越小，所以现在人们都把地球叫作"地球村"。',py:'Xiàndài kēxué jìshù de fāzhǎn ràng shìjiè biànde yuè lái yuè xiǎo, suǒyǐ xiànzài rénmen dōu bǎ dìqiú jiàozuò "dìqiúcūn".'},
+  {vi:'Bây giờ rất ít người đến bưu điện gửi đồ nữa.', zh:'现在很少有人去邮局寄东西了。', py:'Xiànzài hěn shǎo yǒu rén qù yóujú jì dōngxi le.'},
+  {vi:'Xin hãy viết địa chỉ của bạn vào đây.', zh:'请把你的地址写在这儿。', py:'Qǐng bǎ nǐ de dìzhǐ xiě zài zhèr.'},
+  {vi:'Qua cây cầu này là đến nhà tôi rồi.', zh:'过了这座桥就是我家了。', py:'Guò le zhè zuò qiáo jiù shì wǒ jiā le.'},
+  {vi:'Món ăn mặn quá tôi thật sự không chịu nổi.', zh:'太咸的菜我实在受不了。', py:'Tài xián de cài wǒ shízài shòubuliǎo.'},
+  {vi:'Trang web này thông tin vừa nhiều vừa mới.', zh:'这个网站的信息又多又新。', py:'Zhège wǎngzhàn de xìnxī yòu duō yòu xīn.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Có một cuốn sách tên "Mười vạn câu hỏi vì sao mới", hiện bán rất chạy.',zh:'有一本书叫《新十万个为什么》，现在卖得非常火。',py:'Yǒu yì běn shū jiào "Xīn Shíwàn Ge Wèi Shénme", xiànzài mài de fēicháng huǒ.'},
-  {vi:'Theo khảo sát, 70% người gặp vấn đề trước hết nghĩ đến lên mạng tìm đáp án.',zh:'据调查，70%的人遇到问题时，首先想到的就是上网找答案。',py:'Jù diàochá, bǎifēnzhī qīshí de rén yùdào wèntí shí, shǒuxiān xiǎngdào de jiù shì shàng wǎng zhǎo dá\'àn.'},
-  {vi:'Không chỉ phương thức học tập, mà cả lối sống cũng thay đổi rất lớn.',zh:'不仅是学习方式，而且连生活方式也发生了很大改变。',py:'Bùjǐn shì xuéxí fāngshì, érqiě lián shēnghuó fāngshì yě fāshēngle hěn dà gǎibiàn.'},
-  {vi:'Nhưng nếu ai cũng xem được nhật ký của tôi, thì không an toàn chút nào!',zh:'但是如果别人都能看到我的日记的话，多不安全啊！',py:'Dànshì rúguǒ biérén dōu néng kàndào wǒ de rìjì dehuà, duō bù ānquán a!'},
-  {vi:'Ai cũng mơ, khác nhau chỉ là nhiều hay ít.',zh:'每个人都会做梦，区别只是有多有少。',py:'Měi ge rén dōu huì zuò mèng, qūbié zhǐshì yǒu duō yǒu shǎo.'},
-  {vi:'Nhớ có lần bữa tối tôi ăn quá mặn, tối đó mơ thấy mình đi khắp nơi tìm cửa hàng mua nước suối.',zh:'记得有一次，我晚饭吃得太咸，那天晚上就梦见自己到处找商店买矿泉水。',py:'Jìde yǒu yí cì, wǒ wǎnfàn chī de tài xián, nà tiān wǎnshang jiù mèngjiàn zìjǐ dàochù zhǎo shāngdiàn mǎi kuàngquánshuǐ.'},
-  {vi:'Ngoài ra, bạn còn có thể dùng nó để nghe nhạc, xem phim, đọc sách, chơi game, thanh toán mua sắm.',zh:'除此以外，你还可以用它来听音乐、看电影、阅读、玩儿游戏、付款购物等。',py:'Chú cǐ yǐwài, nǐ hái kěyǐ yòng tā lái tīng yīnyuè, kàn diànyǐng, yuèdú, wánr yóuxì, fù kuǎn gòuwù děng.'},
-  {vi:'Nay đến bưu điện cũng không cần, chỉ cần ở nhà lên mạng gửi email, chưa đến một phút bạn ở xa đã nhận được.',zh:'现在连邮局都不用去，只要在家里上网发个电子邮件，用不了一分钟，远处的朋友就能收到。',py:'Xiànzài lián yóujú dōu búyòng qù, zhǐyào zài jiāli shàng wǎng fā ge diànzǐ yóujiàn, yòngbuliǎo yì fēnzhōng, yuǎnchù de péngyou jiù néng shōudào.'},
+  {vi:'Thế kỷ 21, lối sống của con người đã thay đổi rất nhiều.', zh:'二十一世纪，人们的生活方式发生了很大的变化。', py:'Èrshíyī shìjì, rénmen de shēnghuó fāngshì fāshēng le hěn dà de biànhuà.'},
+  {vi:'Anh ấy ăn xong cơm, ngay sau đó lại tiếp tục làm việc.', zh:'他吃完饭，接着又开始工作了。', py:'Tā chī wán fàn, jiēzhe yòu kāishǐ gōngzuò le.'},
+  {vi:'Cảnh sát nhắc mọi người: khi qua đường nhất định phải cẩn thận.', zh:'警察提醒大家：过马路的时候一定要小心。', py:'Jǐngchá tíxǐng dàjiā: guò mǎlù de shíhou yídìng yào xiǎoxīn.'},
 ];
 
 var listenData = {

@@ -3622,46 +3622,55 @@ var dialogData = [
    ]},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
 var matchData = [
-  {left:'咳嗽',right:'咳嗽好点儿了吗'},
-  {left:'估计',right:'估计是天气太干'},
-  {left:'严重',right:'不严重'},
-  {left:'抽烟',right:'不要再抽烟了'},
-  {left:'反对',right:'一直反对'},
-  {left:'来不及',right:'后悔就来不及了'},
-  {left:'研究',right:'研究发现'},
-  {left:'超过',right:'超过6小时'},
-  {left:'要是',right:'要是……就……'},
-  {left:'减肥',right:'既可以……又可以减肥'},
+  {left:'研究',right:'中国历史'},
+  {left:'擦',right:'桌子'},
+  {left:'反对',right:'孩子抽烟'},
+  {left:'他的鼻子',right:'流血了'},
+  {left:'吃得太多，肚子',right:'不舒服'},
+  {left:'休息了一天，他今天',right:'精神好多了'},
+  {left:'他穿这件衬衫',right:'特别帅'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ
+// ══════════════════════════════════════════
 var fillData = [
-  {pre:'你的鼻子怎么流血了？快用纸',blank:'',post:'擦。',hint:'cāca',ans:'擦',exp:'Lặp động từ 擦擦 = lau qua một chút; 用纸擦擦.'},
-  {pre:'我还不习惯北方的',blank:'',post:'，估计是天气太干。',hint:'qìhòu',ans:'气候'},
-  {pre:'没有，我只是',blank:'',post:'，有点儿头疼，不严重。',hint:'késou',ans:'咳嗽'},
-  {pre:'最好经常打开',blank:'',post:'换换空气。',hint:'chuānghu',ans:'窗户'},
-  {pre:'他让我以后不要再',blank:'',post:'了。',hint:'chōuyān',ans:'抽烟'},
-  {pre:'可是我觉得抽烟这个动作看上去很',blank:'',post:'。',hint:'shuài',ans:'帅'},
-  {pre:'等你身体',blank:'',post:'问题了，后悔就来不及了。',hint:'chūxiàn',ans:'出现'},
-  {pre:'其实家人也一直',blank:'',post:'我抽烟。',hint:'fǎnduì',ans:'反对'},
-  {pre:'医生也这么说，他还告诉我要多向远处看看，尤其是多看看绿色的',blank:'',post:'。',hint:'zhíwù',ans:'植物'},
-  {pre:'',blank:'',post:'发现，如果人一天静坐超过6小时，就会影响身体健康。',hint:'yánjiū',ans:'研究'},
-  {pre:'有一位',blank:'',post:'用数字来说明健康有多么重要。',hint:'jiàoshòu',ans:'教授'},
-  {pre:'',blank:'',post:'健康是1，其他都是1后面的0。',hint:'yàoshi',ans:'要是',exp:'要是 = nếu (khẩu ngữ, như 如果): 要是健康是1，其他都是0.'},
-  {pre:'散步',blank:'',post:'可以活动身体，又可以减肥。',hint:'jì',ans:'既',exp:'既A，又B = vừa A vừa B; 既 đứng trước động từ thứ nhất, 又 trước động từ thứ hai.'},
-  {pre:'而且不会像跑步那样',blank:'',post:'。',hint:'xīnkǔ',ans:'辛苦'},
-  {pre:'一天的',blank:'',post:'就都跑掉了。',hint:'fánnǎo',ans:'烦恼'},
+  {pre:'A：小王怎么还没到？ B：现在路上车很多，我',blank:'估计',post:'他还要半个小时。',hint:'(đoán chừng)',ans:'估计',exp:'估计 là động từ: 我估计 + cả một câu = tôi đoán là…; 可能 là phó từ, không nói 我可能他…'},
+  {pre:'A：比赛八点开始，我们吃完饭再去吧？ B：已经七点半了，吃饭就',blank:'来不及',post:'了，买点儿面包路上吃吧。',hint:'(không kịp)',ans:'来不及',exp:'来不及 = không còn đủ thời gian để làm; đứng cuối câu hoặc + động từ: 来不及吃饭.'},
+  {pre:'A：好久不见了，周末我们出来',blank:'见见面',post:'吧？ B：好啊，你想去哪儿？',hint:'(gặp mặt một chút)',ans:'见见面',exp:'Động từ ly hợp (见面、散步、唱歌…) lặp kiểu AAB: 见见面 — không nói 见面见面.'},
+  {pre:'A：这里的',blank:'空气',post:'真好！ B：是啊，周围都是绿色的植物。',hint:'(không khí)',ans:'空气',exp:'空气好 / 空气新鲜 = không khí trong lành; 空气 khác 气候 (khí hậu của cả một vùng).'},
+  {pre:'这个',blank:'动作',post:'有点儿难，你再做一次给我看看。',hint:'(động tác)',ans:'动作',exp:'动作 = động tác (khi tập thể dục, nhảy, chơi thể thao); lượng từ 个: 每个动作.'},
+  {pre:'',blank:'要是',post:'你觉得累了，就先回家休息吧。',hint:'(nếu)',ans:'要是',exp:'要是……（的话），就…… = nếu… thì…; văn nói, nghĩa như 如果; vế sau thường có 就.'},
+  {pre:'A：商场的衣服在打折，我还在考虑要不要买。 B：快去吧，等卖完了，你',blank:'后悔',post:'也没用。',hint:'(hối hận)',ans:'后悔',exp:'后悔 = hối hận (về việc đã làm/chưa làm); 后悔也没用 = có hối hận cũng vô ích.'},
+  {pre:'我的新工作',blank:'既',post:'能学到很多东西，又能认识很多朋友。',hint:'(vừa… — đi với 又)',ans:'既',exp:'既 A 又 B: hai vế cùng chủ ngữ, cùng chiều nghĩa (đều tốt / đều xấu); 既 đứng sau chủ ngữ.'},
+  {pre:'这次感冒挺',blank:'严重',post:'的，我已经发烧三天了。',hint:'(nghiêm trọng, nặng)',ans:'严重',exp:'严重 = nặng, nghiêm trọng (bệnh, vấn đề); 挺……的 = khá là….'},
+  {pre:'房间里人太多了，你把',blank:'窗户',post:'打开吧。',hint:'(cửa sổ)',ans:'窗户',exp:'窗户 = cửa sổ; câu 把: 把窗户打开 / 把窗户关上.'},
+  {pre:'我的电脑又',blank:'出现',post:'问题了，得找人修理一下。',hint:'(xuất hiện, nảy sinh)',ans:'出现',exp:'出现 + 问题 / 情况 = nảy sinh, xuất hiện (điều không lường trước).'},
+  {pre:'A：他今天又没来上课。 B：这',blank:'说明',post:'他可能真的生病了。',hint:'(cho thấy, chứng tỏ)',ans:'说明',exp:'这说明 + câu = điều đó cho thấy…; 说明 còn nghĩa là giải thích rõ: 说明原因.'},
+  {pre:'坐飞机的时候，每个人的行李箱不能',blank:'超过',post:'二十公斤。',hint:'(vượt quá)',ans:'超过',exp:'超过 + số lượng / mức = vượt quá; 不能超过 = không được quá.'},
+  {pre:'她为了',blank:'减肥',post:'，每天只吃一点儿米饭，还走一个小时的路。',hint:'(giảm cân)',ans:'减肥',exp:'减肥 là động từ ly hợp, không mang tân ngữ: 为了减肥、在减肥; muốn nói số cân thì dùng 瘦了五斤.'},
+  {pre:'A：你说的“老地方”是',blank:'指',post:'哪儿？ B：就是我们第一次见面的那个公园。',hint:'(chỉ, ám chỉ)',ans:'指',exp:'A 是指 B = A là nói đến B; dùng để hỏi / giải thích nghĩa của một cách gọi.'},
+  {pre:'你咳嗽了好几天，最好去医院找',blank:'大夫',post:'看看。',hint:'(bác sĩ)',ans:'大夫',exp:'大夫 = bác sĩ (khẩu ngữ, nghĩa như 医生); 找大夫看看 = đi khám bác sĩ.'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
 var sortData = [
-  {words:['你','的','鼻子','怎么','流血','了','？'],ans:'你的鼻子怎么流血了？',audio:'你的鼻子怎么流血了？'},
-  {words:['最近','感冒','的','人','特别','多'],ans:'最近感冒的人特别多',audio:'最近感冒的人特别多'},
-  {words:['抽烟','对','身体','一点儿','好处','也','没有'],ans:'抽烟对身体一点儿好处也没有',audio:'抽烟对身体一点儿好处也没有'},
-  {words:['长','时间','看','电脑','，','眼睛','太','累'],ans:'长时间看电脑，眼睛太累',audio:'长时间看电脑，眼睛太累'},
-  {words:['如果','人','一天','静坐','超过','6小时','，','就','会','影响','身体','健康'],ans:'如果人一天静坐超过6小时，就会影响身体健康',audio:'如果人一天静坐超过6小时，就会影响身体健康'},
-  {words:['只有','身体','和','精神','都','健康','，','才','算','是','真正','的','健康'],ans:'只有身体和精神都健康，才算是真正的健康',audio:'只有身体和精神都健康，才算是真正的健康'},
-  {words:['最好','的','运动','是','散步'],ans:'最好的运动是散步',audio:'最好的运动是散步'},
-  {words:['散步','既','可以','活动','身体','，','又','可以','减肥'],ans:'散步既可以活动身体，又可以减肥',audio:'散步既可以活动身体，又可以减肥'},
+  {words:['我','估计','他','今天','不会','来','了','。'],ans:'我估计他今天不会来了。',audio:'我估计他今天不会来了。'},
+  {words:['要是','明天','下雨','，','运动会','就','不','举行','了','。'],ans:'要是明天下雨，运动会就不举行了。',audio:'要是明天下雨，运动会就不举行了。'},
+  {words:['我','的','新','同事','既','聪明','又','幽默','。'],ans:'我的新同事既聪明又幽默。',audio:'我的新同事既聪明又幽默。'},
+  {words:['周末','我','一般','在','家','洗洗','衣服','、','做做','饭','。'],ans:'周末我一般在家洗洗衣服、做做饭。',audio:'周末我一般在家洗洗衣服、做做饭。'},
+  {words:['当','老师','很','辛苦','，','每天','晚上','还','要','看','学生','的','作业','。'],ans:'当老师很辛苦，每天晚上还要看学生的作业。',audio:'当老师很辛苦，每天晚上还要看学生的作业。'},
+  {words:['这位','教授','研究','了','三十','年','的','植物','。'],ans:'这位教授研究了三十年的植物。',audio:'这位教授研究了三十年的植物。'},
+  {words:['这里','的','气候','跟','我们','那儿','很','不','一样','。'],ans:'这里的气候跟我们那儿很不一样。',audio:'这里的气候跟我们那儿很不一样。'},
+  {words:['周末','的','下午','，','我们','一家人','常常','去','附近','的','公园','散步','。'],ans:'周末的下午，我们一家人常常去附近的公园散步。',audio:'周末的下午，我们一家人常常去附近的公园散步。'},
+  {words:['他','一个人','把','一大碗','面条','都','吃掉','了','。'],ans:'他一个人把一大碗面条都吃掉了。',audio:'他一个人把一大碗面条都吃掉了。'},
+  {words:['吃完饭','我们','去','公园','散散步','吧','。'],ans:'吃完饭我们去公园散散步吧。',audio:'吃完饭我们去公园散散步吧。'},
 ];
 
 var errorFixMode = 'wordchoice';
@@ -3673,13 +3682,13 @@ var errorFixData = [
    opts:['擦','动作','指','后悔'],ans:2,
    exp:'指 (chỉ về, nói đến) phù hợp với ngữ cảnh định nghĩa: 是指……. Các từ còn lại không mang nghĩa "là chỉ về".'},
   {wrong:'生气时不要急着做决定，因为这个时候做的决定可能让你____。',
-   opts:['指','擦','动作','后悔'],ans:3,
+   opts:['指','擦','反对','后悔'],ans:3,
    exp:'后悔 (hối hận) phù hợp với hậu quả của quyết định vội vàng. Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'他对自己的要求很高，希望比赛的时候把每个____都做好。',
    opts:['后悔','指','反对','动作'],ans:3,
    exp:'动作 (động tác) đi với 每个: 每个动作 = mỗi động tác. Các từ còn lại không phải danh từ chỉ hành vi cơ thể.'},
   {wrong:'我本来以为她会____我这么做，没想到她竟然支持我。',
-   opts:['动作','后悔','指','反对'],ans:3,
+   opts:['动作','后悔','擦','反对'],ans:3,
    exp:'反对 (phản đối) tương phản với 支持 (ủng hộ) ở vế sau, phù hợp ngữ cảnh. Các từ còn lại không mang nghĩa phản đối.'},
   {wrong:'A：你的腿怎么了？快坐下休息一会儿吧。B：没事儿，大夫说不____。',
    opts:['严重','研究','辛苦','超过'],ans:0,
@@ -3688,132 +3697,135 @@ var errorFixData = [
    opts:['严重','辛苦','出现','超过'],ans:3,
    exp:'超过 (vượt quá) đi với số lượng/tỷ lệ: 超过三分之二. Các từ còn lại không mang nghĩa vượt mức.'},
   {wrong:'A：今天的晚饭怎么样？B：特别好吃，____你了，一会儿我来洗碗。',
-   opts:['超过','出现','严重','辛苦'],ans:3,
+   opts:['研究','出现','严重','辛苦'],ans:3,
    exp:'辛苦你了 là cụm cố định thể hiện lòng biết ơn với người đã vất vả nấu ăn. Các từ còn lại không phù hợp ngữ cảnh này.'},
   {wrong:'A：你觉得老孙这个人怎么样？B：老孙是个非常热情的人，他总是能在第一时间____，帮助大家解决问题。',
-   opts:['辛苦','严重','超过','出现'],ans:3,
+   opts:['辛苦','研究','超过','出现'],ans:3,
    exp:'出现 (xuất hiện) phù hợp với ngữ cảnh "luôn có mặt kịp thời". Các từ còn lại không mang nghĩa xuất hiện.'},
   {wrong:'A：你毕业后有什么打算？留北京还是回江西？B：还没决定，我在考虑要不要读____生。',
    opts:['出现','超过','严重','研究'],ans:3,
    exp:'研究生 (nghiên cứu sinh) là cụm cố định chỉ bậc học sau đại học. Các từ còn lại không kết hợp được với 生 theo nghĩa này.'},
 ];
 
+// ══════════════════════════════════════════
+// LUYỆN NÓI
+// ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 7. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu hỏi là một tình huống thật, nói về chính bạn bằng từ và mẫu câu của Bài 7. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Đồng nghiệp của bạn hút thuốc ngay cạnh bàn làm việc.',
-      q_zh: '你觉得抽烟对身体有什么影响？',
-      q_py: 'Nǐ juéde chōuyān duì shēntǐ yǒu shénme yǐngxiǎng?',
-      q_vn: 'Bạn thấy hút thuốc ảnh hưởng thế nào đến sức khỏe?',
-      grammar: { label: '不仅……还…… (không những… còn…)', any: ['不仅', '不但'] },
+      situation: 'Bạn bè hỏi về dự định tương lai của bạn.',
+      q_zh: '你估计十年以后自己会做什么工作？',
+      q_py: 'Nǐ gūjì shí nián yǐhòu zìjǐ huì zuò shénme gōngzuò?',
+      q_vn: 'Bạn đoán mười năm nữa mình sẽ làm công việc gì?',
+      grammar: { label: '估计 + câu (đoán chừng…)', any: ['估计'] },
       need: [
-        { label: 'Nói ảnh hưởng với bản thân', any: ['好处', '健康', '咳嗽', '严重', '身体'] },
-        { label: 'Nói ảnh hưởng với người xung quanh', any: ['周围', '别人', '家人', '空气'] }
+        { label: 'Dùng 估计', any: ['估计'] },
+        { label: 'Nói công việc / nơi làm việc', any: ['工作', '公司', '老师', '大夫', '律师', '教授'] }
       ],
-      bonus: { label: 'Nêu lời khuyên bằng 最好', any: ['最好', '应该', '反对'] },
-      vocab: ['抽烟', '好处', '空气'],
-      minLen: 22,
-      sample: '抽烟不仅对自己没有好处，还会让周围的空气变差，影响别人的身体健康。我觉得最好在家里和办公室都别抽。',
-      sample_py: 'Chōuyān bùjǐn duì zìjǐ méiyǒu hǎochù, hái huì ràng zhōuwéi de kōngqì biàn chà, yǐngxiǎng biérén de shēntǐ jiànkāng. Wǒ juéde zuì hǎo zài jiā lǐ hé bàngōngshì dōu bié chōu.',
-      sample_vn: 'Hút thuốc không những chẳng lợi gì cho bản thân, còn làm không khí xung quanh xấu đi, ảnh hưởng sức khỏe người khác. Tôi thấy tốt nhất ở nhà và văn phòng đều không nên hút.',
-      tip: '对……有好处 / 没好处 = có lợi / không có lợi cho…'
+      bonus: { label: 'Nói lý do bằng 因为 / 原因', any: ['因为', '原因'] },
+      vocab: ['估计', '要是', '工作'],
+      minLen: 20,
+      sample: '我估计十年以后我还会当老师，因为我很喜欢跟学生在一起。要是有机会，我也想去国外读书。',
+      sample_py: 'Wǒ gūjì shí nián yǐhòu wǒ hái huì dāng lǎoshī, yīnwèi wǒ hěn xǐhuan gēn xuésheng zài yìqǐ. Yàoshi yǒu jīhuì, wǒ yě xiǎng qù guówài dú shū.',
+      sample_vn: 'Tôi đoán mười năm nữa tôi vẫn làm giáo viên, vì tôi rất thích ở cùng học sinh. Nếu có cơ hội, tôi cũng muốn ra nước ngoài học.',
+      tip: '估计 + cả một câu: 我估计他不来了; 可能 thường đứng sau chủ ngữ: 他可能不来了.'
     },
     {
-      situation: 'Bạn ngồi máy tính cả ngày và thấy mỏi mắt.',
-      q_zh: '长时间坐在电脑前工作，你会怎么保护自己的眼睛和身体？',
-      q_py: 'Zhǎng shíjiān zuò zài diànnǎo qián gōngzuò, nǐ huì zěnme bǎohù zìjǐ de yǎnjing hé shēntǐ?',
-      q_vn: 'Ngồi lâu trước máy tính làm việc, bạn bảo vệ mắt và cơ thể thế nào?',
-      grammar: { label: '最好是……就…… (lời khuyên)', any: ['最好'] },
+      situation: 'Bạn kể một lần suýt trễ giờ quan trọng.',
+      q_zh: '你有没有过时间来不及的时候？后来呢？',
+      q_py: 'Nǐ yǒu méiyǒu guo shíjiān láibují de shíhou? Hòulái ne?',
+      q_vn: 'Bạn có lúc nào không kịp thời gian không? Sau đó thì sao?',
+      grammar: { label: '来不及 (không kịp)', any: ['来不及'] },
       need: [
-        { label: 'Nói cách nghỉ ngơi', any: ['休息', '小时', '站', '走', '动'] },
-        { label: 'Nói cách bảo vệ mắt', any: ['眼睛', '植物', '绿色', '看远', '窗户'] }
+        { label: 'Dùng 来不及', any: ['来不及'] },
+        { label: 'Nói cách bạn giải quyết', any: ['打车', '出租车', '马上', '早一点儿'] }
       ],
-      bonus: { label: 'Nhắc đến không khí trong phòng', any: ['空气', '窗户', '散步'] },
-      vocab: ['植物', '窗户', '空气'],
-      minLen: 22,
-      sample: '最好是每过一个小时就休息休息，站起来走一走，多看看绿色的植物。我还会打开窗户，让房间里的空气好一些。',
-      sample_py: 'Zuì hǎo shì měi guo yí ge xiǎoshí jiù xiūxixiūxi, zhàn qǐlai zǒu yi zǒu, duō kànkan lǜ sè de zhíwù. Wǒ hái huì dǎ kāi chuānghu, ràng fángjiān lǐ de kōngqì hǎo yì xiē.',
-      sample_vn: 'Tốt nhất cứ một tiếng là nghỉ một lát, đứng dậy đi lại, nhìn nhiều cây xanh. Tôi còn mở cửa sổ cho không khí trong phòng tốt hơn.',
-      tip: '最好 + động từ đưa lời khuyên nhẹ nhàng: 你最好早点儿睡。'
+      bonus: { label: 'Dùng 后悔', any: ['后悔'] },
+      vocab: ['来不及', '后悔'],
+      minLen: 20,
+      sample: '有一次我早上八点才起床，来不及吃早饭，只能坐出租车去公司。从那以后，我每天都早一点儿睡，不想再后悔了。',
+      sample_py: 'Yǒu yí cì wǒ zǎoshang bā diǎn cái qǐchuáng, láibují chī zǎofàn, zhǐ néng zuò chūzūchē qù gōngsī. Cóng nà yǐhòu, wǒ měi tiān dōu zǎo yìdiǎnr shuì, bù xiǎng zài hòuhuǐ le.',
+      sample_vn: 'Có lần tám giờ sáng tôi mới dậy, không kịp ăn sáng, chỉ đành đi taxi đến công ty. Từ đó về sau, ngày nào tôi cũng ngủ sớm hơn một chút, không muốn hối hận nữa.',
+      tip: '来不及 + động từ: 来不及吃饭; hoặc đứng cuối: 现在去就来不及了.'
     },
     {
-      situation: 'Lớp học đang thảo luận thế nào là khỏe mạnh.',
-      q_zh: '你觉得健康只是指身体不生病吗？',
-      q_py: 'Nǐ juéde jiànkāng zhǐshì zhǐ shēntǐ bù shēngbìng ma?',
-      q_vn: 'Bạn thấy sức khỏe chỉ là cơ thể không bị bệnh thôi sao?',
-      grammar: { label: '不只是指……，还指……', any: ['指', '不只', '不仅'] },
+      situation: 'Đồng nghiệp hỏi bạn thường làm gì vào cuối tuần.',
+      q_zh: '周末你一般做什么？',
+      q_py: 'Zhōumò nǐ yìbān zuò shénme?',
+      q_vn: 'Cuối tuần bạn thường làm gì?',
+      grammar: { label: 'Lặp động từ ly hợp AAB (见见面、唱唱歌…)', any: ['见见面', '唱唱歌', '洗洗澡', '帮帮忙', '做做饭', '洗洗衣服'] },
       need: [
-        { label: 'Nêu quan điểm', any: ['不是', '不只', '不仅', '我觉得'] },
-        { label: 'Nhắc đến tinh thần', any: ['精神', '心情', '快乐', '烦恼'] }
+        { label: 'Dùng ít nhất một động từ lặp AAB', any: ['见见面', '唱唱歌', '洗洗澡', '帮帮忙', '做做饭', '洗洗衣服'] },
+        { label: 'Nói bạn đi với ai / ở đâu', any: ['朋友', '家人', '公园', '一起'] }
       ],
-      bonus: { label: 'Dùng 说明 hoặc 研究 để dẫn chứng', any: ['说明', '研究', '教授', '数字'] },
-      vocab: ['精神', '指', '研究'],
-      minLen: 22,
-      sample: '我觉得不是。健康不只是指身体不生病，还指精神上的健康。有研究说明，心情好的人一般身体也比较好。',
-      sample_py: 'Wǒ juéde bú shì. Jiànkāng bù zhǐshì zhǐ shēntǐ bù shēngbìng, hái zhǐ jīngshén shàng de jiànkāng. Yǒu yánjiū shuōmíng, xīnqíng hǎo de rén yìbān shēntǐ yě bǐjiào hǎo.',
-      sample_vn: 'Tôi thấy không phải. Sức khỏe không chỉ là cơ thể không bệnh, còn là sức khỏe tinh thần. Có nghiên cứu chỉ ra, người tâm trạng tốt thì cơ thể cũng thường tốt hơn.',
-      tip: '指 = chỉ về, nói đến: 这里说的“健康”指身体和精神。'
+      bonus: { label: 'Nói tác dụng bằng 既……又……', any: ['既'] },
+      vocab: ['精神', '既'],
+      minLen: 20,
+      sample: '周末我一般上午在家休息，下午跟朋友见见面、唱唱歌，晚上在家做做饭、看看电视。这样过周末，我觉得既简单又舒服。',
+      sample_py: 'Zhōumò wǒ yìbān shàngwǔ zài jiā xiūxi, xiàwǔ gēn péngyou jiànjian miàn, chàngchang gē, wǎnshang zài jiā zuòzuo fàn, kànkan diànshì. Zhèyàng guò zhōumò, wǒ juéde jì jiǎndān yòu shūfu.',
+      sample_vn: 'Cuối tuần tôi thường buổi sáng nghỉ ở nhà, buổi chiều gặp bạn bè hát hò một chút, buổi tối ở nhà nấu cơm, xem ti vi. Cuối tuần như vậy tôi thấy vừa đơn giản vừa dễ chịu.',
+      tip: 'Động từ ly hợp chỉ lặp phần động từ: 见见面、唱唱歌 (không nói 见面见面).'
     },
     {
-      situation: 'Bác sĩ khuyên bạn nên vận động mỗi ngày.',
-      q_zh: '要是你每天都有时间锻炼身体，你会选择什么运动？为什么？',
-      q_py: 'Yàoshi nǐ měitiān dōu yǒu shíjiān duànliàn shēntǐ, nǐ huì xuǎnzé shénme yùndòng? Wèishénme?',
-      q_vn: 'Nếu mỗi ngày đều có thời gian rèn luyện, bạn sẽ chọn môn nào? Vì sao?',
-      grammar: { label: '要是……(的话)，就……; 既……又……', any: ['要是', '既'] },
+      situation: 'Bạn bè hỏi một câu giả định cho vui.',
+      q_zh: '要是你有很多钱，你最想做什么？',
+      q_py: 'Yàoshi nǐ yǒu hěn duō qián, nǐ zuì xiǎng zuò shénme?',
+      q_vn: 'Nếu bạn có rất nhiều tiền, bạn muốn làm gì nhất?',
+      grammar: { label: '要是……（的话），就……', any: ['要是'] },
       need: [
-        { label: 'Dùng 要是……就……', any: ['要是', '如果'] },
-        { label: 'Chọn môn và nêu lý do', any: ['散步', '跑步', '游泳', '打球', '因为', '辛苦', '轻松'] }
+        { label: 'Dùng 要是……就……', any: ['要是'] },
+        { label: 'Nói việc bạn muốn làm', any: ['买', '旅游', '帮助', '房子', '学习'] }
       ],
-      bonus: { label: 'Dùng 既……又…… nêu hai ưu điểm', any: ['既'] },
-      vocab: ['要是', '既', '散步', '辛苦'],
-      minLen: 22,
-      sample: '要是我每天都有时间，我就会选择散步。散步既可以活动身体，又不会像跑步那样辛苦，晚饭后走半个小时最舒服。',
-      sample_py: 'Yàoshi wǒ měitiān dōu yǒu shíjiān, wǒ jiù huì xuǎnzé sànbù. Sànbù jì kěyǐ huódòng shēntǐ, yòu bú huì xiàng pǎobù nà yàng xīnkǔ, wǎnfàn hòu zǒu bàn ge xiǎoshí zuì shūfu.',
-      sample_vn: 'Nếu ngày nào tôi cũng có thời gian, tôi sẽ chọn đi bộ. Đi bộ vừa vận động được cơ thể, lại không mệt như chạy, sau bữa tối đi nửa tiếng là dễ chịu nhất.',
-      tip: '既……又…… nêu hai đặc điểm cùng có, chủ ngữ giống nhau.'
+      bonus: { label: 'Nói vì sao', any: ['因为', '为了'] },
+      vocab: ['要是', '辛苦', '房子'],
+      minLen: 20,
+      sample: '要是我有很多钱，我就先给爸爸妈妈买一个大房子，因为他们这么多年太辛苦了。然后我想带他们去国外旅游。',
+      sample_py: 'Yàoshi wǒ yǒu hěn duō qián, wǒ jiù xiān gěi bàba māma mǎi yí ge dà fángzi, yīnwèi tāmen zhème duō nián tài xīnkǔ le. Ránhòu wǒ xiǎng dài tāmen qù guówài lǚyóu.',
+      sample_vn: 'Nếu tôi có nhiều tiền, tôi sẽ mua cho bố mẹ một căn nhà lớn trước, vì bao nhiêu năm nay họ đã quá vất vả. Sau đó tôi muốn đưa họ đi du lịch nước ngoài.',
+      tip: '要是 đứng đầu câu hoặc sau chủ ngữ; vế sau dùng 就: 要是有钱，我就……'
     },
     {
-      situation: 'Cả nhà bạn có thói quen đi dạo sau bữa tối.',
-      q_zh: '晚饭后和家人一起散步有什么好处？',
-      q_py: 'Wǎnfàn hòu hé jiārén yìqǐ sànbù yǒu shénme hǎochù?',
-      q_vn: 'Sau bữa tối cùng người nhà đi dạo có lợi ích gì?',
-      grammar: { label: '既……又……，而且……', any: ['既', '而且'] },
+      situation: 'Bạn khuyên một người bạn ít vận động nên chọn môn thể thao nào.',
+      q_zh: '你觉得什么运动最好？为什么？',
+      q_py: 'Nǐ juéde shénme yùndòng zuì hǎo? Wèishénme?',
+      q_vn: 'Bạn thấy môn vận động nào tốt nhất? Vì sao?',
+      grammar: { label: '既……又/也/还……', any: ['既'] },
       need: [
-        { label: 'Nói lợi ích cho cơ thể', any: ['身体', '健康', '消化', '肚子', '睡'] },
-        { label: 'Nói lợi ích cho tình cảm', any: ['感情', '家人', '聊', '交流'] }
+        { label: 'Dùng 既……又/也……', any: ['既'] },
+        { label: 'Nói lợi ích cho sức khỏe', any: ['健康', '减肥', '身体', '精神', '好处'] }
       ],
-      bonus: { label: 'Nhắc đến việc quên đi phiền muộn bằng 烦恼', any: ['烦恼', '掉', '轻松'] },
-      vocab: ['散步', '感情', '烦恼'],
-      minLen: 22,
-      sample: '晚饭后散步既对身体好，又能加深家人之间的感情。一边走一边聊天儿，一天的烦恼差不多都跑掉了。',
-      sample_py: 'Wǎnfàn hòu sànbù jì duì shēntǐ hǎo, yòu néng jiā shēn jiārén zhī jiān de gǎnqíng. Yìbiān zǒu yìbiān liáo tiān ér, yì tiān de fánnǎo chàbuduō dōu pǎo diào le.',
-      sample_vn: 'Đi dạo sau bữa tối vừa tốt cho cơ thể, vừa làm tình cảm gia đình thêm gắn bó. Vừa đi vừa trò chuyện, phiền muộn cả ngày gần như tan biến.',
-      tip: '掉 làm bổ ngữ kết quả chỉ sự mất đi: 忘掉、跑掉、扔掉。'
+      bonus: { label: 'Nói môn đó không vất vả', any: ['辛苦', '累', '简单'] },
+      vocab: ['既', '减肥', '辛苦', '精神'],
+      minLen: 20,
+      sample: '我觉得游泳最好。游泳既可以锻炼身体，又能让人精神更好，而且对减肥也很有好处。夏天游泳一点儿也不辛苦。',
+      sample_py: 'Wǒ juéde yóuyǒng zuì hǎo. Yóuyǒng jì kěyǐ duànliàn shēntǐ, yòu néng ràng rén jīngshen gèng hǎo, érqiě duì jiǎnféi yě hěn yǒu hǎochù. Xiàtiān yóuyǒng yìdiǎnr yě bù xīnkǔ.',
+      sample_vn: 'Tôi thấy bơi là tốt nhất. Bơi vừa rèn luyện cơ thể, vừa giúp tinh thần tốt hơn, hơn nữa còn rất có ích cho việc giảm cân. Mùa hè bơi chẳng vất vả chút nào.',
+      tip: '既 đứng sau chủ ngữ, vế sau dùng 又/也: 他既会唱歌，也会跳舞.'
     }
   ]
 };
 
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Việt → Trung)
+// ══════════════════════════════════════════
 var translateData = [
-  {vi:'Mũi bạn sao lại chảy máu vậy? Nhanh dùng giấy lau đi.',zh:'你的鼻子怎么流血了？快用纸擦擦。',py:'Nǐ de bízi zěnme liú xiě le? Kuài yòng zhǐ cāca.'},
-  {vi:'Tôi chỉ ho thôi, hơi đau đầu, không nghiêm trọng.',zh:'我只是咳嗽，有点儿头疼，不严重。',py:'Wǒ zhǐ shì késou, yǒudiǎnr tóuténg, bù yánzhòng.'},
-  {vi:'Hút thuốc không có lợi ích gì cho sức khỏe cả.',zh:'抽烟对身体一点儿好处也没有。',py:'Chōuyān duì shēntǐ yìdiǎnr hǎochù yě méiyǒu.'},
-  {vi:'Đợi đến khi cơ thể bạn xuất hiện vấn đề, hối hận cũng không kịp nữa.',zh:'等你身体出现问题了，后悔就来不及了。',py:'Děng nǐ shēntǐ chūxiàn wèntí le, hòuhuǐ jiù láibují le.'},
-  {vi:'Nghiên cứu phát hiện, nếu một người ngồi yên một ngày quá 6 tiếng, sẽ ảnh hưởng đến sức khỏe.',zh:'研究发现，如果人一天静坐超过6小时，就会影响身体健康。',py:'Yánjiū fāxiàn, rúguǒ rén yì tiān jìngzuò chāoguò liù xiǎoshí, jiù huì yǐngxiǎng shēntǐ jiànkāng.'},
-  {vi:'Chỉ khi cả cơ thể và tinh thần đều khỏe mạnh, mới tính là sức khỏe thực sự.',zh:'只有身体和精神都健康，才算是真正的健康。',py:'Zhǐyǒu shēntǐ hé jīngshén dōu jiànkāng, cái suàn shì zhēnzhèng de jiànkāng.'},
-  {vi:'Đi dạo là phương pháp luyện tập đơn giản nhất trong cuộc sống.',zh:'散步是生活中最简单的锻炼方法。',py:'Sànbù shì shēnghuó zhōng zuì jiǎndān de duànliàn fāngfǎ.'},
-  {vi:'Phiền muộn cả ngày liền chạy mất hết.',zh:'一天的烦恼就都跑掉了。',py:'Yì tiān de fánnǎo jiù dōu pǎodiào le.'},
+  {vi:'Nếu bạn vẫn còn ho thì đừng hút thuốc nữa.', zh:'要是你还咳嗽，就别再抽烟了。', py:'Yàoshi nǐ hái késou, jiù bié zài chōuyān le.'},
+  {vi:'Tôi đoán buổi tối sẽ rất lạnh, bạn mặc thêm một chiếc áo nữa đi.', zh:'我估计晚上会很冷，你再多穿一件吧。', py:'Wǒ gūjì wǎnshang huì hěn lěng, nǐ zài duō chuān yí jiàn ba.'},
+  {vi:'Chị ấy vừa biết nấu ăn vừa biết chơi bóng đá.', zh:'她既会做饭，又会踢足球。', py:'Tā jì huì zuò fàn, yòu huì tī zúqiú.'},
+  {vi:'Không khí ở thành phố này càng ngày càng tốt.', zh:'这个城市的空气越来越好了。', py:'Zhège chéngshì de kōngqì yuè lái yuè hǎo le.'},
+  {vi:'Bố tôi phản đối tôi đi nước ngoài một mình.', zh:'我爸爸反对我一个人去国外。', py:'Wǒ bàba fǎnduì wǒ yí ge rén qù guówài.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Tôi vẫn chưa quen với khí hậu miền Bắc.',zh:'我还不习惯北方的气候。',py:'Wǒ hái bù xíguàn běifāng de qìhòu.'},
-  {vi:'Tốt nhất nên thường xuyên mở cửa sổ để thay đổi không khí.',zh:'最好经常打开窗户换换空气。',py:'Zuìhǎo jīngcháng dǎkāi chuānghu huànhuan kōngqì.'},
-  {vi:'Nhưng tôi thấy động tác hút thuốc trông rất ngầu.',zh:'可是我觉得抽烟这个动作看上去很帅。',py:'Kěshì wǒ juéde chōuyān zhège dòngzuò kàn shangqu hěn shuài.'},
-  {vi:'Bác sĩ cũng nói vậy, ông ấy còn bảo tôi nên nhìn xa nhiều hơn.',zh:'医生也这么说，他还告诉我要多向远处看看。',py:'Yīshēng yě zhème shuō, tā hái gàosu wǒ yào duō xiàng yuǎn chù kànkan.'},
-  {vi:'Có một vị giáo sư dùng con số để giải thích sức khỏe quan trọng như thế nào.',zh:'有一位教授用数字来说明健康有多么重要。',py:'Yǒu yí wèi jiàoshòu yòng shùzì lái shuōmíng jiànkāng yǒu duōme zhòngyào.'},
-  {vi:'Bác sĩ tốt nhất là bản thân, thuốc tốt nhất là thời gian.',zh:'最好的医生是自己，最好的药是时间。',py:'Zuì hǎo de yīshēng shì zìjǐ, zuì hǎo de yào shì shíjiān.'},
-  {vi:'Sau bữa tối, cả nhà cùng nhau ra ngoài đi dạo, là một việc rất hạnh phúc.',zh:'晚饭后，一家人一起出去散散步，是一件很幸福的事情。',py:'Wǎnfàn hòu, yì jiā rén yìqǐ chūqu sànsan bù, shì yí jiàn hěn xìngfú de shìqing.'},
-  {vi:'Vợ chồng nói chuyện về công việc trong ngày có thể làm sâu sắc thêm tình cảm.',zh:'夫妻说说一天的工作能加深感情。',py:'Fūqī shuōshuo yì tiān de gōngzuò néng jiāshēn gǎnqíng.'},
+  {vi:'Anh ấy làm động tác nhanh quá, tôi không kịp nhìn rõ.', zh:'他的动作太快了，我来不及看清楚。', py:'Tā de dòngzuò tài kuài le, wǒ láibují kàn qīngchu.'},
+  {vi:'Hai người thường xuyên gặp nhau, nói chuyện thì tình cảm sẽ ngày càng tốt.', zh:'两个人经常见见面、说说话，感情会越来越好。', py:'Liǎng ge rén jīngcháng jiànjian miàn, shuōshuo huà, gǎnqíng huì yuè lái yuè hǎo.'},
+  {vi:'Con số này cho thấy người hút thuốc ngày càng ít.', zh:'这个数字说明，抽烟的人越来越少了。', py:'Zhège shùzì shuōmíng, chōuyān de rén yuè lái yuè shǎo le.'},
+  {vi:'Có chuyện phiền muộn gì thì cứ nói với tôi, đừng một mình buồn bực.', zh:'有什么烦恼就跟我说，别一个人不高兴。', py:'Yǒu shénme fánnǎo jiù gēn wǒ shuō, bié yí ge rén bù gāoxìng.'},
 ];
 
 var listenData = {

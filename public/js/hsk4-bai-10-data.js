@@ -3362,46 +3362,53 @@ var dialogData = [
    ]},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
 var matchData = [
-  {left:'不过',right:'不过现在我很幸福'},
-  {left:'确实',right:'我女儿确实不错'},
-  {left:'建议',right:'听听你的建议'},
-  {left:'关键',right:'兴趣才是关键'},
-  {left:'由于',right:'由于缺钱'},
-  {left:'比如',right:'比如一块橡皮'},
-  {left:'将来',right:'将来也会有更好的发展'},
-  {left:'经济',right:'经济条件越好'},
-  {left:'答案',right:'一个标准答案'},
-  {left:'方向',right:'努力的方向'},
+  {left:'这本小说请你帮我',right:'翻译一下'},
+  {left:'她是我们班最',right:'优秀的学生'},
+  {left:'写错了字，就用',right:'橡皮擦掉'},
+  {left:'我决定接受你的',right:'建议'},
+  {left:'小孩子不要吃太多',right:'糖'},
+  {left:'这个商场的东西价格比较',right:'低'},
+  {left:'太困了，我想先',right:'躺一会儿'},
+  {left:'现在努力学习，是为了',right:'将来有更好的发展'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ
+// ══════════════════════════════════════════
 var fillData = [
-  {pre:'礼拜天有',blank:'',post:'吗？陪我去逛街怎么样？',hint:'kòngr',ans:'空儿'},
-  {pre:'除了工作以外，家里还有',blank:'',post:'和儿子需要照顾。',hint:'mǔqīn',ans:'母亲'},
-  {pre:'',blank:'',post:'现在我很幸福。',hint:'búguò',ans:'不过',exp:'不过 = nhưng mà, có điều (nhẹ hơn 但是); đưa ra ý ngược lại phía trước.'},
-  {pre:'在母亲面前我可以做一个',blank:'',post:'长不大的孩子。',hint:'yǒngyuǎn',ans:'永远'},
-  {pre:'这让我有了努力的',blank:'',post:'。',hint:'fāngxiàng',ans:'方向'},
-  {pre:'硕士毕业后就当了',blank:'',post:'。',hint:'fānyì',ans:'翻译'},
-  {pre:'我女儿',blank:'',post:'不错。',hint:'quèshí',ans:'确实',exp:'确实 = quả thật, xác nhận điều người khác nói là đúng.'},
-  {pre:'就',blank:'',post:'地拉着我和她爸俩去商场。',hint:'xīngfèn',ans:'兴奋'},
-  {pre:'正想听听你的',blank:'',post:'。',hint:'jiànyì',ans:'建议'},
-  {pre:'兴趣才是',blank:'',post:'。',hint:'guānjiàn',ans:'关键'},
-  {pre:'',blank:'',post:'也会有更好的发展。',hint:'jiānglái',ans:'将来'},
-  {pre:'将来也会有更好的',blank:'',post:'。',hint:'fāzhǎn',ans:'发展'},
-  {pre:'然后',blank:'',post:'在床上看看书。',hint:'tǎng',ans:'躺'},
-  {pre:'',blank:'',post:'了睡睡觉，就很幸福。',hint:'kùn',ans:'困'},
-  {pre:'认为',blank:'',post:'条件越好人就越幸福。',hint:'jīngjì',ans:'经济'},
+  {pre:'这家饭馆的菜很好吃，',blank:'不过',post:'价格有点儿高。',hint:'(có điều, nhưng)',ans:'不过',exp:'不过 chuyển ý nhẹ, hay dùng trong khẩu ngữ để bổ sung một điểm chưa tốt; 但是 chuyển ý mạnh và rõ hơn.'},
+  {pre:'A：今天的作业好像有点儿难。 B：是啊，',blank:'确实',post:'很难，我写了两个小时才写完。',hint:'(quả thực, đúng là)',ans:'确实',exp:'确实 (phó từ) đứng trước tính từ/động từ, xác nhận điều người kia vừa nói là đúng: 确实很难.'},
+  {pre:'A：你父母为什么希望你当医生？ B：在很多父母',blank:'看来',post:'，医生是最好的职业。',hint:'(theo … thấy)',ans:'看来',exp:'在 + người + 看来 = theo cách nhìn của ai; phải có đủ 在……看来, không nói 在父母看 hay 看来在父母.'},
+  {pre:'',blank:'由于',post:'路上堵车，他今天上班迟到了。',hint:'(do, bởi vì)',ans:'由于',exp:'由于 đứng đầu vế nguyên nhân, sắc thái trang trọng hơn 因为; vế sau nêu kết quả (có thể thêm 所以/因此).'},
+  {pre:'A：你礼拜天一般做什么？ B：要做的事情很多，',blank:'比如',post:'打扫房间、洗衣服、去超市买东西。',hint:'(ví dụ như)',ans:'比如',exp:'比如 đứng trước các ví dụ cụ thể minh họa cho ý vừa nói; sau chuỗi ví dụ có thể thêm 等.'},
+  {pre:'不管遇到什么困难，我的家人',blank:'永远',post:'都会支持我。',hint:'(mãi mãi, luôn luôn)',ans:'永远',exp:'永远 (phó từ) đứng trước 都/会/động từ: 永远都会支持我 = lúc nào cũng sẽ ủng hộ.'},
+  {pre:'A：你最喜欢什么',blank:'职业',post:'？ B：翻译。我觉得每天跟不同国家的人交流很有意思。',hint:'(nghề nghiệp)',ans:'职业',exp:'职业 = nghề nghiệp (danh từ trang trọng hơn 工作); hỏi nghề yêu thích: 你喜欢什么职业？'},
+  {pre:'听说下个月要去国外旅游，儿子',blank:'兴奋',post:'得一个晚上都没睡好。',hint:'(phấn khích, hào hứng)',ans:'兴奋',exp:'兴奋 + 得 + kết quả: phấn khích đến mức…; 兴奋 thiên về cảm xúc dâng cao, khác 高兴 (vui).'},
+  {pre:'A：你怎么上课的时候睡着了？ B：昨天加班到两点，今天特别',blank:'困',post:'。',hint:'(buồn ngủ)',ans:'困',exp:'困 = buồn ngủ (muốn ngủ); 累 = mệt (cơ thể mỏi). Người học hay dùng 累 cho nghĩa buồn ngủ.'},
+  {pre:'这个公司工资高，工作',blank:'条件',post:'也很好，很多人都想来。',hint:'(điều kiện)',ans:'条件',exp:'条件 = điều kiện; hay đi với 工作条件 / 生活条件 / 经济条件.'},
+  {pre:'我上大学的时候很',blank:'穷',post:'，每个月的钱只够吃饭。',hint:'(nghèo)',ans:'穷',exp:'穷 = nghèo, trái nghĩa với 富 (giàu); khẩu ngữ hay nói 没钱 / 有钱.'},
+  {pre:'过马路的时候，妈妈一直',blank:'拉',post:'着孩子的手。',hint:'(kéo, nắm)',ans:'拉',exp:'拉着……的手 = nắm tay (kéo theo); V + 着 chỉ trạng thái đang được duy trì.'},
+  {pre:'A：火车站是往这儿走吗？ B：不对，你走错',blank:'方向',post:'了，应该往东走。',hint:'(phương hướng)',ans:'方向',exp:'方向 = phương hướng; nghĩa đen: 走错方向 (đi sai hướng), nghĩa bóng: 努力的方向 (hướng phấn đấu).'},
+  {pre:'A：我学了一年汉语，可是说得还是不好。 B：多听多说才是',blank:'关键',post:'。',hint:'(điều mấu chốt)',ans:'关键',exp:'关键 = điểm mấu chốt; dùng trong ……才是关键 hoặc 关键是…….'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
 var sortData = [
-  {words:['礼拜天','有','空儿','吗','？'],ans:'礼拜天有空儿吗？',audio:'礼拜天有空儿吗？'},
-  {words:['除了','工作','以外','，','家里','还有','母亲','和','儿子','需要','照顾','。'],ans:'除了工作以外，家里还有母亲和儿子需要照顾。',audio:'除了工作以外，家里还有母亲和儿子需要照顾。'},
-  {words:['因为','在','母亲','面前','我','可以','做','一个','永远','长','不','大','的','孩子'],ans:'因为在母亲面前我可以做一个永远长不大的孩子',audio:'因为在母亲面前我可以做一个永远长不大的孩子'},
-  {words:['你','有','一个','漂亮','的','女儿','，','还','那么','优秀'],ans:'你有一个漂亮的女儿，还那么优秀',audio:'你有一个漂亮的女儿，还那么优秀'},
-  {words:['硕士','毕业','后','就','当','了','翻译'],ans:'硕士毕业后就当了翻译',audio:'硕士毕业后就当了翻译'},
-  {words:['兴趣','才','是','关键'],ans:'兴趣才是关键',audio:'兴趣才是关键'},
-  {words:['只有','做','自己','喜欢','的','事','，','才会','觉得','幸福'],ans:'只有做自己喜欢的事，才会觉得幸福',audio:'只有做自己喜欢的事，才会觉得幸福'},
-  {words:['幸福','并','没有','一个','标准','答案'],ans:'幸福并没有一个标准答案',audio:'幸福并没有一个标准答案'},
+  {words:['由于','工作','太','忙','，','他','已经','两个月','没','回家','了','。'],ans:'由于工作太忙，他已经两个月没回家了。',audio:'由于工作太忙，他已经两个月没回家了。'},
+  {words:['在','奶奶','看来','，','我','永远','是','个','孩子','。'],ans:'在奶奶看来，我永远是个孩子。',audio:'在奶奶看来，我永远是个孩子。'},
+  {words:['我','喜欢','吃','水果','，','比如','苹果','、','香蕉','、','西瓜','等','。'],ans:'我喜欢吃水果，比如苹果、香蕉、西瓜等。',audio:'我喜欢吃水果，比如苹果、香蕉、西瓜等。'},
+  {words:['那个','电影','我','也','想','看','，','不过','今天','晚上','没有','空儿','。'],ans:'那个电影我也想看，不过今天晚上没有空儿。',audio:'那个电影我也想看，不过今天晚上没有空儿。'},
+  {words:['你','这个','办法','确实','不错','，','又','简单','又','方便','。'],ans:'你这个办法确实不错，又简单又方便。',audio:'你这个办法确实不错，又简单又方便。'},
+  {words:['她','打算','毕业','以后','去','国外','读','硕士','。'],ans:'她打算毕业以后去国外读硕士。',audio:'她打算毕业以后去国外读硕士。'},
+  {words:['这几年','我们','城市','的','经济','发展','得','很','快','。'],ans:'这几年我们城市的经济发展得很快。',audio:'这几年我们城市的经济发展得很快。',alt:['我们城市的经济这几年发展得很快。']},
+  {words:['这个','礼拜天','是','我','母亲','的','生日','。'],ans:'这个礼拜天是我母亲的生日。',audio:'这个礼拜天是我母亲的生日。'},
+  {words:['你','知道','这个','问题','的','答案','吗','？'],ans:'你知道这个问题的答案吗？',audio:'你知道这个问题的答案吗？'},
 ];
 
 var errorFixMode = 'wordchoice';
@@ -3416,7 +3423,7 @@ var errorFixData = [
    opts:['低','困','永远','建议'],ans:3,
    exp:'建议 (đề nghị) đi với đối tượng + động từ: 朋友建议我……. Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'解决问题时，一个人的知识常常是不够的，所以人与人之间需要交流。在交流过程中，一方面，丰富了知识，提高了能力，另一方面，又____近了人们之间的距离。',
-   opts:['困','拉','永远','建议'],ans:1,
+   opts:['低','拉','永远','建议'],ans:1,
    exp:'拉 (kéo) đi với 近: 拉近了……距离 = kéo gần khoảng cách. Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'人比动物聪明，但动物仍然有很多值得人学习的地方。拿狮子来说，它们____的时候才睡觉，饿的时候才吃东西，永远不为昨天的事烦恼，也不为明天的事担心。',
    opts:['低','困','拉','建议'],ans:1,
@@ -3438,122 +3445,124 @@ var errorFixData = [
    exp:'答案 (đáp án) đi với 写: 写答案. Các từ còn lại không phù hợp nghĩa.'},
 ];
 
+// ══════════════════════════════════════════
+// LUYỆN NÓI
+// ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 10. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu hỏi là một tình huống thật, nói về chính bạn bằng từ và mẫu câu của Bài 10. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Nhóm bạn cùng nói về ý nghĩa của hạnh phúc.',
-      q_zh: '你觉得什么是幸福？',
-      q_py: 'Nǐ juéde shénme shì xìngfú?',
-      q_vn: 'Bạn thấy hạnh phúc là gì?',
-      grammar: { label: '并没有……; 每个人对……有不同的理解', any: ['并没有', '并不', '理解'] },
+      situation: 'Nhóm bạn cùng nói chuyện: những việc nhỏ nào làm mình thấy hạnh phúc?',
+      q_zh: '什么小事让你觉得很幸福？',
+      q_py: 'Shénme xiǎo shì ràng nǐ juéde hěn xìngfú?',
+      q_vn: 'Những việc nhỏ nào làm bạn thấy rất hạnh phúc?',
+      grammar: { label: '比如…… (ví dụ như…) / ……等', any: ['比如'] },
       need: [
-        { label: 'Nêu quan điểm riêng', any: ['幸福', '我觉得', '对我来说', '答案'] },
-        { label: 'Đưa ví dụ cụ thể', any: ['家人', '健康', '工作', '朋友', '生活', '比如'] }
+        { label: 'Dùng 比如 đưa ví dụ', any: ['比如'] },
+        { label: 'Nói cảm giác', any: ['幸福', '舒服', '开心', '愉快', '放松'] }
       ],
-      bonus: { label: 'Dùng 并 phủ định nhấn mạnh', any: ['并没有', '并不'] },
-      vocab: ['答案', '比如', '永远'],
+      bonus: { label: 'Kết thúc chuỗi ví dụ bằng 等', any: ['等'] },
+      vocab: ['比如', '等', '躺', '礼拜天'],
       minLen: 22,
-      sample: '我觉得幸福并没有一个标准答案，每个人的理解都不一样。对我来说，家人永远健康、工作做得开心，就是幸福。',
-      sample_py: 'Wǒ juéde xìngfú bìng méiyǒu yí ge biāozhǔn dá\'àn, měi ge rén de lǐjiě dōu bù yí yàng. Duì wǒ lái shuō, jiārén yǒngyuǎn jiànkāng, gōngzuò zuò děi kāixīn, jiù shì xìngfú.',
-      sample_vn: 'Tôi thấy hạnh phúc không có một đáp án chuẩn, mỗi người hiểu một khác. Với tôi, người nhà luôn khỏe mạnh, công việc làm vui vẻ, đó là hạnh phúc.',
-      tip: '并 + 不/没有 dùng để phủ định điều người ta hay nghĩ: 事情并不简单。'
+      sample: '让我觉得幸福的都是一些小事，比如下班后跟家人一起吃饭，礼拜天躺在沙发上看电影等。这些时候我心情特别放松。',
+      sample_py: 'Ràng wǒ juéde xìngfú de dōu shì yìxiē xiǎo shì, bǐrú xiàbān hòu gēn jiārén yìqǐ chī fàn, lǐbàitiān tǎng zài shāfā shang kàn diànyǐng děng. Zhèxiē shíhou wǒ xīnqíng tèbié fàngsōng.',
+      sample_vn: 'Những điều khiến tôi thấy hạnh phúc đều là việc nhỏ, ví dụ như tan làm cùng gia đình ăn cơm, chủ nhật nằm trên sofa xem phim… Những lúc đó tâm trạng tôi rất thoải mái.',
+      tip: '比如 đứng trước ví dụ; ví dụ dài có thể ngăn bằng dấu phẩy, cuối cùng thêm 等.'
     },
     {
-      situation: 'Trên mạng đang tranh luận giàu có và hạnh phúc.',
-      q_zh: '你觉得经济条件越好，人就越幸福吗？',
-      q_py: 'Nǐ juéde jīngjì tiáojiàn yuè hǎo, rén jiù yuè xìngfú ma?',
-      q_vn: 'Bạn thấy điều kiện kinh tế càng tốt thì càng hạnh phúc không?',
-      grammar: { label: '……却…… (nhưng lại) / 由于……', any: ['却', '由于'] },
+      situation: 'Đồng nghiệp hỏi vì sao có lần bạn đến muộn hoặc lỡ một việc quan trọng.',
+      q_zh: '你有没有迟到过？是什么原因？',
+      q_py: 'Nǐ yǒu méiyǒu chídào guo? Shì shénme yuányīn?',
+      q_vn: 'Bạn đã bao giờ đến muộn chưa? Vì nguyên nhân gì?',
+      grammar: { label: '由于……(所以/因此)…… (do…, nên…)', any: ['由于'] },
       need: [
-        { label: 'Nêu quan điểm', any: ['不一定', '同意', '不同意', '我觉得'] },
-        { label: 'So sánh giàu và nghèo', any: ['富', '穷', '经济', '条件', '钱'] }
+        { label: 'Dùng 由于 nêu nguyên nhân', any: ['由于'] },
+        { label: 'Nói kết quả hoặc cách khắc phục', any: ['迟到', '以后', '提前', '所以', '因此'] }
       ],
-      bonus: { label: 'Dùng 却 nêu điều trái ngược', any: ['却'] },
-      vocab: ['经济', '条件', '富', '穷'],
+      bonus: { label: 'Dùng 提前 hoặc 按时', any: ['提前', '按时'] },
+      vocab: ['由于', '按时', '加班'],
       minLen: 22,
-      sample: '不一定。有的人经济条件很好，生活却并不愉快；有些人虽然比较穷，却过得很快乐。幸福主要看自己怎么想。',
-      sample_py: 'Bù yí dìng. Yǒude rén jīngjì tiáojiàn hěn hǎo, shēnghuó què bìng bù yúkuài; yǒuxiē rén suīrán bǐjiào qióng, què guo děi hěn kuàilè. Xìngfú zhǔyào kàn zìjǐ zěnme xiǎng.',
-      sample_vn: 'Không hẳn. Có người điều kiện kinh tế rất tốt nhưng sống lại chẳng vui; có người tuy khá nghèo lại sống rất vui vẻ. Hạnh phúc chủ yếu là do mình nghĩ thế nào.',
-      tip: '却 đứng trước động từ, nhấn mạnh sự trái ngược: 他很累，却很开心。'
+      sample: '有过一次。上个月由于前一天加班太累，早上我睡到九点才起床，上班迟到了半个小时。后来，我每天都按时睡觉。',
+      sample_py: 'Yǒu guo yí cì. Shàng ge yuè yóuyú qián yì tiān jiābān tài lèi, zǎoshang wǒ shuì dào jiǔ diǎn cái qǐchuáng, shàngbān chídào le bàn ge xiǎoshí. Hòulái, wǒ měi tiān dōu ànshí shuìjiào.',
+      sample_vn: 'Có một lần. Tháng trước do hôm trước tăng ca quá mệt, sáng hôm sau tôi ngủ đến 9 giờ mới dậy, đi làm muộn nửa tiếng. Sau đó, ngày nào tôi cũng đi ngủ đúng giờ.',
+      tip: '由于 dùng nhiều trong văn viết và lời giải thích lịch sự; vế sau có thể dùng 所以 hoặc 因此.'
     },
     {
-      situation: 'Bạn đang cân nhắc giữa hai lời mời làm việc.',
-      q_zh: '在选择职业时，你觉得收入和兴趣哪个更重要？',
-      q_py: 'Zài xuǎnzé zhíyè shí, nǐ juéde shōurù hé xìng qù nǎge gèng zhòngyào?',
-      q_vn: 'Khi chọn nghề, bạn thấy thu nhập và hứng thú cái nào quan trọng hơn?',
-      grammar: { label: '在……看来 (theo cách nhìn của…)', any: ['在我看来', '看来'] },
+      situation: 'Bạn đang cân nhắc giữa hai lời mời làm việc: một nơi lương cao, một nơi đúng sở thích.',
+      q_zh: '选择职业时，你最关心的是什么？',
+      q_py: 'Xuǎnzé zhíyè shí, nǐ zuì guānxīn de shì shénme?',
+      q_vn: 'Khi chọn nghề, điều bạn quan tâm nhất là gì?',
+      grammar: { label: '在……看来 (theo cách nhìn của…)', any: ['看来'] },
       need: [
-        { label: 'Nêu lựa chọn', any: ['兴趣', '收入', '关键', '重要'] },
-        { label: 'Nêu lý do', any: ['喜欢', '坚持', '发展', '将来', '快乐', '努力'] }
+        { label: 'Dùng 在……看来 (在我看来 / 在父母看来…)', any: ['看来'] },
+        { label: 'Nêu điều quan trọng', any: ['兴趣', '收入', '关键', '发展', '将来', '条件'] }
       ],
-      bonus: { label: 'Dùng 在我看来 mở đầu', any: ['在我看来'] },
-      vocab: ['职业', '关键', '将来', '发展'],
+      bonus: { label: 'Dùng 不过 bổ sung ý khác', any: ['不过'] },
+      vocab: ['职业', '将来', '发展', '关键'],
       minLen: 22,
-      sample: '在我看来，赚钱多少不是最重要的，兴趣才是关键。做自己喜欢的职业，将来才愿意坚持下去，发展也会更好。',
-      sample_py: 'Zài wǒ kàn lái, zhuàn qián duōshao bú shì zuì zhòngyào de, xìng qù cái shì guānjiàn. Zuò zìjǐ xǐhuan de zhíyè, jiānglái cái yuànyì jiānchí xià qù, fāzhǎn yě huì gèng hǎo.',
-      sample_vn: 'Theo tôi, kiếm được bao nhiêu không phải quan trọng nhất, hứng thú mới là mấu chốt. Làm nghề mình thích thì sau này mới chịu theo đuổi, phát triển cũng tốt hơn.',
-      tip: '在……看来 nêu quan điểm: 在他看来，这件事很简单。'
-    },
-    {
-      situation: 'Sau một ngày làm việc mệt, bạn về đến nhà.',
-      q_zh: '工作结束回家后，你一般做什么让自己感到幸福？',
-      q_py: 'Gōngzuò jiéshù huí jiā hòu, nǐ yìbān zuò shénme ràng zìjǐ gǎn dào xìngfú?',
-      q_vn: 'Sau khi làm việc xong về nhà, bạn thường làm gì để thấy hạnh phúc?',
-      grammar: { label: '躺在……上 + 动词; ……就很幸福', any: ['躺', '幸福'] },
-      need: [
-        { label: 'Kể hoạt động thư giãn', any: ['洗澡', '躺', '看书', '音乐', '电视', '睡', '做饭'] },
-        { label: 'Nói cảm giác', any: ['幸福', '舒服', '轻松', '愉快'] }
-      ],
-      bonus: { label: 'Dùng 困 hoặc 空儿 nói thói quen', any: ['困', '空儿'] },
-      vocab: ['躺', '困', '空儿'],
-      minLen: 22,
-      sample: '我一般先洗个热水澡，然后躺在床上看看书、听听音乐，困了就睡觉。有空儿的时候跟家人打个电话，这样我就觉得很幸福。',
-      sample_py: 'Wǒ yìbān xiān xǐ ge rè shuǐ zǎo, ránhòu tǎng zài chuáng shàng kànkan shū, tīngting yīnyuè, kùn le jiù shuìjiào. Yǒu kòngr de shíhou gēn jiārén dǎ ge diànhuà, zhè yàng wǒ jiù juéde hěn xìngfú.',
-      sample_vn: 'Tôi thường tắm nước nóng trước, rồi nằm trên giường đọc sách, nghe nhạc, buồn ngủ thì đi ngủ. Lúc rảnh thì gọi điện cho người nhà, như vậy tôi thấy rất hạnh phúc.',
-      tip: '躺在 + nơi chốn + 上: 躺在沙发上看电视。'
+      sample: '在年轻人看来，工资高是最重要的。不过我觉得，选择职业的时候最好先想想将来的发展。如果每天都过得不愉快，钱再多也没用。',
+      sample_py: 'Zài niánqīngrén kànlái, gōngzī gāo shì zuì zhòngyào de. Búguò wǒ juéde, xuǎnzé zhíyè de shíhou zuìhǎo xiān xiǎngxiang jiānglái de fāzhǎn. Rúguǒ měi tiān dōu guò de bù yúkuài, qián zài duō yě méi yòng.',
+      sample_vn: 'Theo cách nhìn của người trẻ, lương cao là quan trọng nhất. Có điều tôi thấy khi chọn nghề tốt nhất nên nghĩ trước đến sự phát triển sau này. Nếu ngày nào cũng sống không vui thì tiền nhiều mấy cũng vô ích.',
+      tip: 'Nói quan điểm người khác: 在父母看来，……; quan điểm mình: 在我看来，…….'
     },
     {
       situation: 'Bạn thấy bạn bè trên mạng xã hội có cuộc sống rất đẹp.',
-      q_zh: '你羡慕过别人的生活吗？后来是怎么想的？',
-      q_py: 'Nǐ xiànmù guo biérén de shēnghuó ma? Hòulái shì zěnme xiǎng de?',
-      q_vn: 'Bạn từng ngưỡng mộ cuộc sống của người khác chưa? Sau đó bạn nghĩ thế nào?',
-      grammar: { label: '不过…… (nhưng, song) — nhẹ hơn 但是', any: ['不过'] },
+      q_zh: '你羡慕过别人吗？为什么？',
+      q_py: 'Nǐ xiànmù guo biéren ma? Wèi shénme?',
+      q_vn: 'Bạn từng ngưỡng mộ ai chưa? Vì sao?',
+      grammar: { label: '确实 (quả thực, đúng là)', any: ['确实'] },
       need: [
-        { label: 'Nói từng ngưỡng mộ điều gì', any: ['羡慕', '生活', '工作', '房子', '旅游', '朋友'] },
-        { label: 'Nói suy nghĩ về sau', any: ['后来', '发现', '每个人', '自己', '不用'] }
+        { label: 'Dùng 确实 xác nhận', any: ['确实'] },
+        { label: 'Nói ngưỡng mộ điều gì', any: ['羡慕', '优秀', '工作', '生活', '旅游'] }
       ],
-      bonus: { label: 'Dùng 不过 hoặc 确实 để chuyển ý', any: ['不过', '确实'] },
-      vocab: ['羡慕', '不过', '确实'],
+      bonus: { label: 'Dùng 不过 nói suy nghĩ về sau', any: ['不过'] },
+      vocab: ['确实', '优秀', '羡慕'],
       minLen: 22,
-      sample: '羡慕过。我确实羡慕过同学能常常去旅游，不过后来我发现，每个人有每个人的生活和困难，过好自己的日子最重要。',
-      sample_py: 'Xiànmù guo. Wǒ quèshí xiànmù guo tóngxué néng chángcháng qù lǚyóu, búguò hòulái wǒ fāxiàn, měi ge rén yǒu měi ge rén de shēnghuó hé kùnnan, guo hǎo zìjǐ de rì zi zuì zhòngyào.',
-      sample_vn: 'Có chứ. Tôi từng thật sự ngưỡng mộ bạn học hay được đi du lịch, nhưng sau đó tôi nhận ra mỗi người có cuộc sống và khó khăn riêng, sống tốt ngày của mình mới là quan trọng nhất.',
-      tip: '不过 dùng trong khẩu ngữ, ý chuyển nhẹ hơn 但是.'
+      sample: '我确实羡慕过我的一个同学。她又漂亮又优秀，每年都去国外旅游。不过后来我知道，她的工作压力非常大，经常加班到十点以后。',
+      sample_py: 'Wǒ quèshí xiànmù guo wǒ de yí ge tóngxué. Tā yòu piàoliang yòu yōuxiù, měi nián dōu qù guówài lǚyóu. Búguò hòulái wǒ zhīdào, tā de gōngzuò yālì fēicháng dà, jīngcháng jiābān dào shí diǎn yǐhòu.',
+      sample_vn: 'Tôi đúng là từng ngưỡng mộ một bạn học. Bạn ấy vừa xinh vừa giỏi, năm nào cũng đi du lịch nước ngoài. Có điều sau này tôi biết áp lực công việc của bạn ấy rất lớn, thường tăng ca đến sau 10 giờ tối.',
+      tip: '确实 đứng trước động từ/tính từ: 确实很忙, 确实羡慕过.'
+    },
+    {
+      situation: 'Bạn thân rủ chủ nhật đi dạo phố, nhưng bạn đã có việc khác.',
+      q_zh: '朋友礼拜天请你去逛街，可是你有事，你想怎么跟朋友说？',
+      q_py: 'Péngyou lǐbàitiān qǐng nǐ qù guàng jiē, kěshì nǐ yǒu shì, nǐ xiǎng zěnme gēn péngyou shuō?',
+      q_vn: 'Bạn bè rủ bạn chủ nhật đi dạo phố nhưng bạn có việc. Bạn nói với bạn ấy thế nào?',
+      grammar: { label: '不过…… (có điều, nhưng — nhẹ hơn 但是)', any: ['不过'] },
+      need: [
+        { label: 'Dùng 不过 từ chối nhẹ nhàng', any: ['不过'] },
+        { label: 'Nói lý do', any: ['空儿', '要', '得', '照顾', '陪', '加班'] }
+      ],
+      bonus: { label: 'Hẹn lần khác', any: ['下次', '下个', '改天', '别的时间'] },
+      vocab: ['不过', '空儿', '母亲', '陪'],
+      minLen: 20,
+      sample: '谢谢你请我！我也特别想去，不过这个礼拜天我得陪母亲去看病，没有空儿。我们下个周末再去，好吗？',
+      sample_py: 'Xièxie nǐ qǐng wǒ! Wǒ yě tèbié xiǎng qù, búguò zhège lǐbàitiān wǒ děi péi mǔqīn qù kàn bìng, méiyǒu kòngr. Wǒmen xià ge zhōumò zài qù, hǎo ma?',
+      sample_vn: 'Cảm ơn cậu đã rủ! Mình cũng rất muốn đi, có điều chủ nhật này mình phải đưa mẹ đi khám bệnh, không rảnh. Cuối tuần sau mình đi nhé?',
+      tip: 'Từ chối lịch sự: khen/cảm ơn trước, rồi 不过 + lý do, cuối cùng hẹn lần sau.'
     }
   ]
 };
 
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Việt → Trung)
+// ══════════════════════════════════════════
 var translateData = [
-  {vi:'Chủ nhật rảnh không? Đi cùng tôi dạo phố thì thế nào?',zh:'礼拜天有空儿吗？陪我去逛街怎么样？',py:'Lǐbàitiān yǒu kòngr ma? Péi wǒ qù guàng jiē zěnmeyàng?'},
-  {vi:'Ngoài công việc ra, trong nhà còn có mẹ và con trai cần chăm sóc.',zh:'除了工作以外，家里还有母亲和儿子需要照顾。',py:'Chúle gōngzuò yǐwài, jiā li hái yǒu mǔqīn hé érzi xūyào zhàogù.'},
-  {vi:'Bạn có một cô con gái xinh đẹp, lại xuất sắc như vậy, tốt nghiệp thạc sĩ xong liền làm phiên dịch viên.',zh:'你有一个漂亮的女儿，还那么优秀，硕士毕业后就当了翻译。',py:'Nǐ yǒu yí ge piàoliang de nǚ\'ér, hái nàme yōuxiù, shuòshì bìyè hòu jiù dāngle fānyì.'},
-  {vi:'Theo tôi thấy, kiếm được nhiều tiền hay không không phải điều quan trọng nhất, hứng thú mới là điều mấu chốt.',zh:'在我看来，赚钱多少不是最重要的，兴趣才是关键。',py:'Zài wǒ kànlái, zhuàn qián duōshao bú shì zuì zhòngyào de, xìngqù cái shì guānjiàn.'},
-  {vi:'Có tiền không nhất định hạnh phúc, vì rất nhiều thứ đều không thể dùng tiền mua được.',zh:'有钱不一定幸福，因为很多东西都是不能用钱买到的。',py:'Yǒu qián bù yídìng xìngfú, yīnwèi hěn duō dōngxi dōu shì bù néng yòng qián mǎidào de.'},
-  {vi:'Nếu vì thiếu tiền mà không thể kịp thời đi khám bệnh, sức khỏe của bạn rất khó được đảm bảo.',zh:'如果由于缺钱而不能及时去看医生，你的健康都很难得到保证。',py:'Rúguǒ yóuyú quē qián ér bù néng jíshí qù kàn yīshēng, nǐ de jiànkāng dōu hěn nán dédào bǎozhèng.'},
-  {vi:'Còn có người nói, lúc nhỏ hạnh phúc là một món đồ, ví dụ như cục tẩy, viên kẹo, có được là rất hạnh phúc.',zh:'还有人说，小时候幸福是一件东西，比如一块橡皮、一块糖，得到了就很幸福。',py:'Hái yǒu rén shuō, xiǎo shíhou xìngfú shì yí jiàn dōngxi, bǐrú yí kuài xiàngpí, yí kuài táng, dédàole jiù hěn xìngfú.'},
-  {vi:'Hạnh phúc không hề có một đáp án chuẩn nào, mỗi người đều có cách hiểu khác nhau về hạnh phúc.',zh:'幸福并没有一个标准答案，每个人对幸福都有不同的理解。',py:'Xìngfú bìng méiyǒu yí ge biāozhǔn dá\'àn, měi ge rén duì xìngfú dōu yǒu bùtóng de lǐjiě.'},
+  {vi:'Tốt nghiệp đã một năm rồi mà tôi vẫn chưa tìm được phương hướng của mình.', zh:'毕业已经一年了，我还没找到自己的方向。', py:'Bìyè yǐjīng yì nián le, wǒ hái méi zhǎodào zìjǐ de fāngxiàng.'},
+  {vi:'Do trời mưa, chúng tôi đã không đi leo núi.', zh:'由于下雨，我们没去爬山。', py:'Yóuyú xià yǔ, wǒmen méi qù pá shān.'},
+  {vi:'Anh ấy trước đây rất nghèo, sau này làm ăn nên trở nên giàu có.', zh:'他以前很穷，后来做生意变富了。', py:'Tā yǐqián hěn qióng, hòulái zuò shēngyi biàn fù le.'},
+  {vi:'Sau này tôi muốn làm phiên dịch viên.', zh:'将来我想当翻译。', py:'Jiānglái wǒ xiǎng dāng fānyì.'},
+  {vi:'Điều mấu chốt khi học tiếng Trung là kiên trì.', zh:'学汉语的关键是坚持。', py:'Xué Hànyǔ de guānjiàn shì jiānchí.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Không sao, cảm ơn! Nhưng bây giờ tôi rất hạnh phúc.',zh:'没事儿，谢谢！不过现在我很幸福。',py:'Méishìr, xièxie! Búguò xiànzài wǒ hěn xìngfú.'},
-  {vi:'Thực ra, trong mắt người khác bạn cũng rất hạnh phúc, chỉ là bản thân bạn chưa phát hiện ra thôi.',zh:'其实，你在别人眼中也是很幸福的，只是你自己没有发现。',py:'Qíshí, nǐ zài biérén yǎn zhōng yě shì hěn xìngfú de, zhǐshì nǐ zìjǐ méiyǒu fāxiàn.'},
-  {vi:'Con gái tôi thực sự rất tốt, nhớ lúc nó vừa nhận lương tháng đầu tiên, đã hào hứng kéo tôi và bố nó đi trung tâm mua sắm.',zh:'我女儿确实不错，记得她刚拿到第一个月工资时，就兴奋地拉着我和她爸俩去商场。',py:'Wǒ nǚ\'ér quèshí búcuò, jìde tā gāng nádào dì-yī ge yuè gōngzī shí, jiù xīngfèn de lāzhe wǒ hé tā bà liǎ qù shāngchǎng.'},
-  {vi:'Chỉ khi làm việc mình thích, mới cảm thấy hạnh phúc, tương lai cũng sẽ có sự phát triển tốt hơn.',zh:'只有做自己喜欢的事，才会觉得幸福，将来也会有更好的发展。',py:'Zhǐyǒu zuò zìjǐ xǐhuan de shì, cái huì juéde xìngfú, jiānglái yě huì yǒu gèng hǎo de fāzhǎn.'},
-  {vi:'Thực ra có rất nhiều người giàu sống không hề vui vẻ, mà có người nghèo lại sống rất vui vẻ.',zh:'其实有很多富人过得并不愉快，而有些穷人却过得很快乐。',py:'Qíshí yǒu hěn duō fù rén guò de bìng bù yúkuài, ér yǒuxiē qióng rén què guò de hěn kuàilè.'},
-  {vi:'Nhưng, nhìn từ một phương diện khác, nếu không có tiền, cũng rất khó sống hạnh phúc.',zh:'但是，从另外一个方面看，如果没钱，也很难过得幸福。',py:'Dànshì, cóng lìngwài yí ge fāngmiàn kàn, rúguǒ méi qián, yě hěn nán guò de xìngfú.'},
-  {vi:'Lớn lên hạnh phúc là một thái độ, thái độ sống quyết định mức độ hạnh phúc cao thấp của chúng ta.',zh:'长大后幸福是一种态度，生活的态度决定了我们幸福感的高低。',py:'Zhǎngdà hòu xìngfú shì yì zhǒng tàidù, shēnghuó de tàidù juédìngle wǒmen xìngfúgǎn de gāo dī.'},
-  {vi:'Bất kể bạn cho rằng hạnh phúc là gì, chỉ cần bạn dùng tâm đi tìm, thì nhất định sẽ phát hiện ra nó.',zh:'不管你认为幸福是什么，只要你用心去找，就一定能发现它。',py:'Bùguǎn nǐ rènwéi xìngfú shì shénme, zhǐyào nǐ yòng xīn qù zhǎo, jiù yídìng néng fāxiàn tā.'},
+  {vi:'Tiếng Trung của anh ấy nói khá tốt, có điều viết chữ Hán vẫn còn hơi khó khăn.', zh:'他的汉语说得不错，不过写汉字还有点儿困难。', py:'Tā de Hànyǔ shuō de búcuò, búguò xiě Hànzì hái yǒudiǎnr kùnnan.'},
+  {vi:'Thi xong, thầy giáo phát đáp án cho chúng tôi.', zh:'考试结束以后，老师把答案发给了我们。', py:'Kǎoshì jiéshù yǐhòu, lǎoshī bǎ dá\'àn fā gěi le wǒmen.'},
+  {vi:'Cậu ấy quả thực rất giỏi, chưa tốt nghiệp thạc sĩ đã có mấy công ty muốn mời.', zh:'他确实很优秀，硕士还没毕业，就有好几家公司想请他。', py:'Tā quèshí hěn yōuxiù, shuòshì hái méi bìyè, jiù yǒu hǎo jǐ jiā gōngsī xiǎng qǐng tā.'},
 ];
 
 var listenData = {

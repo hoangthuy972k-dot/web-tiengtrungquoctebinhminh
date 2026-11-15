@@ -3289,198 +3289,208 @@ var dialogData = [
    ]},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
 var matchData = [
-  {left:'重新',right:'重新申请'},
-  {left:'填错',right:'把护照号码填错了'},
-  {left:'复印',right:'把护照复印一下'},
-  {left:'弄破',right:'把手弄破了'},
-  {left:'脱',right:'把衣服脱下来'},
-  {left:'打',right:'打招呼'},
-  {left:'戴',right:'戴眼镜'},
-  {left:'与国籍',right:'与国籍无关'},
-  {left:'记下',right:'记下房东的号码'},
-  {left:'禁止',right:'禁止大声讲话'},
+  {left:'房间里太热了，把衣服',right:'脱了吧'},
+  {left:'早上在楼下见到邻居，要',right:'打招呼'},
+  {left:'头发太长了，我想去',right:'理发'},
+  {left:'做饭的时候，手被刀',right:'弄破了'},
+  {left:'周末我经常和朋友去打',right:'羽毛球'},
+  {left:'早饭我想吃两个',right:'包子'},
+  {left:'这份材料请帮我',right:'复印三份'},
+  {left:'很多外国人喜欢中国',right:'功夫'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ
+// ══════════════════════════════════════════
 var fillData = [
-  {pre:'我希望下个',blank:'',post:'在这里继续学习。',hint:'xuéqī',ans:'学期'},
-  {pre:'',blank:'',post:'年月、性别、护照号码都要填。',hint:'chūshēng',ans:'出生'},
-  {pre:'没关系，不用',blank:'',post:'，谁都有粗心填错的时候。',hint:'dào qiàn',ans:'道歉'},
-  {pre:'我给你重新',blank:'',post:'一份，你等一下。',hint:'dǎyìn',ans:'打印'},
-  {pre:'我们要把护照',blank:'',post:'一下。',hint:'fùyìn',ans:'复印'},
-  {pre:'刚才用',blank:'',post:'切肉的时候把手弄破了。',hint:'dāo',ans:'刀'},
-  {pre:'你把衣服',blank:'',post:'下来，我给你洗洗。',hint:'tuō',ans:'脱'},
-  {pre:'我衣服口袋里有十几块',blank:'',post:'，买包子应该够。',hint:'língqián',ans:'零钱'},
-  {pre:'我早上跟你',blank:'',post:'，你没看见。',hint:'dǎ zhāohu',ans:'打招呼'},
-  {pre:'今天早上我忘',blank:'',post:'眼镜了，看不清楚。',hint:'dài',ans:'戴',exp:'戴 dùng cho đồ đeo trên người: 戴眼镜, 戴帽子. 穿 dùng cho quần áo, giày.'},
-  {pre:'这种语言与',blank:'',post:'无关，无论哪个国家的人都能看懂。',hint:'guójí',ans:'国籍'},
-  {pre:'先',blank:'',post:'胳膊，然后抬腿。',hint:'tái',ans:'抬'},
-  {pre:'周围环境非常',blank:'',post:'。',hint:'chǎo',ans:'吵'},
-  {pre:'可回家后打电话，电话总是',blank:'',post:'。',hint:'zhànxiàn',ans:'占线'},
-  {pre:'观众要安静，',blank:'',post:'大声讲话。',hint:'jìnzhǐ',ans:'禁止'},
+  {pre:'我今天特别累，回家以后',blank:'什么',post:'都不想做，只想睡觉。',hint:'(gì — nghĩa "bất cứ cái gì")',ans:'什么',exp:'什么 + 都/也 + V = bất cứ cái gì cũng…; ở đây 什么 không hỏi, mà chỉ "tất cả".'},
+  {pre:'A：你的眼镜找到了吗？ B：还没有，我家里',blank:'哪儿',post:'都找了，就是找不到。',hint:'(chỗ nào — nghĩa "khắp nơi")',ans:'哪儿',exp:'哪儿 + 都 = chỗ nào cũng, khắp mọi nơi; câu này không phải câu hỏi nên không có 吗.'},
+  {pre:'这么难的题，',blank:'谁',post:'都不可能马上做出来，慢慢来吧。',hint:'(ai — nghĩa "bất kỳ ai")',ans:'谁',exp:'谁 + 都 = bất kỳ ai cũng; 谁 đứng trước 都, không đặt sau động từ như câu hỏi.'},
+  {pre:'他努力工作了五年，终于住',blank:'上',post:'了自己的新房子。',hint:'(được — đạt mong muốn)',ans:'上',exp:'V + 上 = đạt được điều mong muốn (住上, 吃上, 买上); phủ định 住不上 = không được ở.'},
+  {pre:'A：今天的电影票还有吗？ B：都卖完了，今天的已经买不',blank:'上',post:'了，明天早点儿来吧。',hint:'(được — mua được)',ans:'上',exp:'买不上 = muốn mua mà không mua được (hết vé, đến muộn); khẳng định là 买得上.'},
+  {pre:'她在电话里刚说了"喂"，我就听',blank:'出来',post:'是我妈妈了。',hint:'(ra — nhận ra)',ans:'出来',exp:'听出来 / 看出来 = nghe ra, nhìn ra (phân biệt, nhận ra cái vốn có); không dùng 听起来 ở đây.'},
+  {pre:'A：你还记得我们的第一个老师姓什么吗？ B：等一下……我现在想',blank:'起来',post:'了，她姓王！',hint:'(ra — nhớ ra)',ans:'起来',exp:'想起来 = nhớ ra điều đã biết mà tạm quên; 想出来 = nghĩ ra cái mới (办法、主意).'},
+  {pre:'这件事是你不对，你应该先向她',blank:'道歉',post:'。',hint:'(xin lỗi)',ans:'道歉',exp:'向 + người + 道歉 = xin lỗi ai; 道歉 không mang tân ngữ trực tiếp, không nói 道歉她.'},
+  {pre:'A：你怎么不给他打电话？ B：打了好几次了，一直',blank:'占线',post:'，可能他正在跟别人聊天。',hint:'(máy bận)',ans:'占线',exp:'占线 = đường dây đang bận (người kia đang nói chuyện), khác với không ai nghe máy.'},
+  {pre:'坐公共汽车最好准备一些',blank:'零钱',post:'，司机不找钱。',hint:'(tiền lẻ)',ans:'零钱',exp:'零钱 = tiền lẻ; 找钱 = thối lại tiền thừa.'},
+  {pre:'我',blank:'出生',post:'在一个小城市，十八岁才来北京上大学。',hint:'(sinh ra)',ans:'出生',exp:'出生 + 在 + nơi chốn = sinh ra ở…; 出生 là động từ không mang tân ngữ.'},
+  {pre:'楼上的邻居每天晚上都很',blank:'吵',post:'，我十二点以前都睡不着。',hint:'(ồn ào)',ans:'吵',exp:'吵 ở đây là tính từ = ồn ào, đứng sau 很/太; trái nghĩa là 安静.'},
+  {pre:'外面太阳很大，你',blank:'戴',post:'上帽子吧。',hint:'(đội, đeo)',ans:'戴',exp:'戴 dùng cho đồ đội/đeo (帽子、眼镜、手表); 穿 dùng cho quần áo, giày, tất.'},
+  {pre:'学习好不好，关键',blank:'在于',post:'是不是认真。',hint:'(nằm ở, chính là ở)',ans:'在于',exp:'A 在于 B = A nằm ở / do B quyết định (văn viết); thường đi sau 关键/原因.'},
+  {pre:'这个地方虽然有点儿远，但',blank:'总的来说',post:'还不错。',hint:'(nhìn chung)',ans:'总的来说',exp:'总的来说 = nhìn chung, tóm lại; đứng đầu câu/vế câu để nêu đánh giá chung.'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
 var sortData = [
-  {words:['谁','都','有','粗心','填错','的','时候'],ans:'谁都有粗心填错的时候',audio:'谁都有粗心填错的时候'},
-  {words:['我','给','你','重新','打印','一份','，','你','等','一下'],ans:'我给你重新打印一份，你等一下',audio:'我给你重新打印一份，你等一下'},
-  {words:['看来','今天','吃不上','羊肉','饺子','了'],ans:'看来今天吃不上羊肉饺子了',audio:'看来今天吃不上羊肉饺子了'},
-  {words:['没','看','出来','你','跳','得','这么','好'],ans:'没看出来你跳得这么好',audio:'没看出来你跳得这么好'},
-  {words:['这种','语言','与','国籍','无关'],ans:'这种语言与国籍无关',audio:'这种语言与国籍无关'},
-  {words:['总的来说','，','这套','房子','他','很','满意'],ans:'总的来说，这套房子他很满意',audio:'总的来说，这套房子他很满意'},
-  {words:['人们','常','说','"生命在于运动"'],ans:'人们常说"生命在于运动"',audio:'人们常说"生命在于运动"'},
-  {words:['禁止','大声','讲话','或者','离开','座位','随便','走动'],ans:'禁止大声讲话或者离开座位随便走动',audio:'禁止大声讲话或者离开座位随便走动'},
+  {words:['下个','学期','我们','班','要','来','两个','新','同学','。'],ans:'下个学期我们班要来两个新同学。',audio:'下个学期我们班要来两个新同学。'},
+  {words:['请','在','这儿','写上','你','的','性别','和','国籍','。'],ans:'请在这儿写上你的性别和国籍。',audio:'请在这儿写上你的性别和国籍。'},
+  {words:['这个','厨房','虽然','不','大','，','但是','很','干净','。'],ans:'这个厨房虽然不大，但是很干净。',audio:'这个厨房虽然不大，但是很干净。'},
+  {words:['他','打电话','问','房东','，','这个','房子','一个月','租','多少','钱','。'],ans:'他打电话问房东，这个房子一个月租多少钱。',audio:'他打电话问房东，这个房子一个月租多少钱。'},
+  {words:['我们','昨天','打','了','三','场','乒乓球','。'],ans:'我们昨天打了三场乒乓球。',audio:'我们昨天打了三场乒乓球。'},
+  {words:['她','的','舞蹈','动作','越来越','标准','了','。'],ans:'她的舞蹈动作越来越标准了。',audio:'她的舞蹈动作越来越标准了。'},
+  {words:['奶奶','包','的','饺子','比','饭店','的','还','好吃','。'],ans:'奶奶包的饺子比饭店的还好吃。',audio:'奶奶包的饺子比饭店的还好吃。'},
+  {words:['先','把','胳膊','抬','起来','，','然后','慢慢','向','右','转','。'],ans:'先把胳膊抬起来，然后慢慢向右转。',audio:'先把胳膊抬起来，然后慢慢向右转。'},
+  {words:['医院','里','禁止','抽烟','。'],ans:'医院里禁止抽烟。',audio:'医院里禁止抽烟。'},
 ];
 
 var errorFixMode = 'wordchoice';
 var errorFixData = [
   {wrong:'请在表格上填好姓名、____、年龄、职业等，然后再给我们传真过来。',
    opts:['打招呼','场','性别','吵'],ans:2,
-   exp:'性别 (giới tính) — 姓名、性别、年龄. Câu có 表格/传真 (Bài 16), 职业 (Bài 10). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'Trong tờ khai: 姓名、性别、年龄、职业 (họ tên, giới tính, tuổi, nghề) đều là danh từ chỉ thông tin cá nhân → 性别. 打招呼 là động từ, 场 là lượng từ, 吵 là tính từ.'},
   {wrong:'我觉得咱们还是换个地方住吧。这个小区太____了，我怕影响孩子学习和休息。',
    opts:['打招呼','场','吵','禁止'],ans:2,
-   exp:'吵 (ồn) — 太吵了. Câu có 还是……吧 (Bài 1), 怕 (Bài 16), 影响 (Bài 4). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'太吵了 = ồn quá, sợ ảnh hưởng con học và nghỉ → muốn đổi chỗ ở. Sau 太 cần tính từ: chỉ có 吵.'},
   {wrong:'抽烟不但污染空气，影响身体健康，而且在加油站这样的地方抽烟非常危险，因此，很多地方都____抽烟。',
    opts:['打招呼','性别','吵','禁止'],ans:3,
-   exp:'禁止 (cấm) — 禁止抽烟. Câu có 不但……而且 (Bài 2), 污染 (Bài 14), 危险 (Bài 18), 因此 (Bài 8). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'禁止抽烟 = cấm hút thuốc; 禁止 + động từ. Câu trước nói hút thuốc ô nhiễm và nguy hiểm → nhiều nơi cấm.'},
   {wrong:'要想更快适应新环境，其实有很多办法。比如，多和周围的人____，在别人遇到麻烦的时候去帮一把，等等。',
    opts:['打招呼','场','性别','禁止'],ans:0,
-   exp:'打招呼 (chào hỏi) — 和周围的人打招呼. Câu có 适应 (Bài 8), 周围 (Bài 16), 比如 (Bài 3). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'和 + người + 打招呼 = chào hỏi ai; muốn nhanh quen môi trường mới thì chào hỏi người xung quanh.'},
   {wrong:'这个京剧我一直想看，下星期六是他们在这儿的最后一____演出。中午你记得提醒我去买票，否则我就没有机会看了。',
-   opts:['打招呼','场','性别','吵'],ans:1,
-   exp:'场 (lượng từ: buổi diễn) — 一场演出. Câu có 京剧/演出 (Bài 13), 提醒 (Bài 4), 否则 (Bài 11). Các từ còn lại không phù hợp nghĩa.'},
+   opts:['占线','场','性别','吵'],ans:1,
+   exp:'场 là lượng từ cho buổi diễn, trận đấu: 最后一场演出 = buổi diễn cuối cùng. Các từ khác không làm lượng từ sau 一.'},
   {wrong:'A：先生，一共二百三十九块七。您付现金还是刷卡？B：现金。我带的____应该够了。',
    opts:['占线','道歉','座位','零钱'],ans:3,
-   exp:'零钱 (tiền lẻ) — 带的零钱应该够. Câu có 现金/刷卡 (Bài 5), 够 (Bài 14). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'Trả tiền mặt 239,7 tệ, khách nói tiền lẻ mang theo chắc đủ → 零钱 (tiền lẻ).'},
   {wrong:'A：请问，您一共几位？B：我们一共四个人，麻烦你给我们找个安静点儿的____。',
    opts:['占线','道歉','座位','打印'],ans:2,
-   exp:'座位 (chỗ ngồi) — 找个安静点儿的座位. Câu có 麻烦 (Bài 3), 安静 (Bài 2). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'Vào nhà hàng 4 người, nhờ tìm 安静点儿的座位 = chỗ ngồi yên tĩnh hơn. 打印, 道歉, 占线 là động từ, không đứng sau 的 làm trung tâm ngữ ở đây.'},
   {wrong:'A：明天几点到？八点来得及来不及？B：提前点儿吧，咱们还得负责____会议材料呢。',
    opts:['占线','道歉','打印','零钱'],ans:2,
-   exp:'打印 (in) — 打印会议材料. Câu có 来得及 (Bài 4), 提前 (Bài 4), 负责 (Bài 10), 材料 (Bài 4). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'打印会议材料 = in tài liệu cuộc họp; 打印 + tân ngữ là giấy tờ, tài liệu.'},
   {wrong:'A：我是专门来向您____的，我真的觉得很对不起您。B：没关系，过去的事情就让它过去吧，你也别太放在心上。',
-   opts:['占线','道歉','座位','打印'],ans:1,
-   exp:'道歉 (xin lỗi) — 向您道歉. Câu có 专门 (Bài 9), 向 (Bài 2). Các từ còn lại không phù hợp nghĩa.'},
+   opts:['占线','道歉','性别','打印'],ans:1,
+   exp:'向 + người + 道歉 = xin lỗi ai; câu sau 我真的觉得很对不起您 cho thấy đáp án là 道歉.'},
   {wrong:'A：李经理的电话一直____，去办公室找他，敲了半天门，也没人开。B：他刚出去开会了，可能下午才能回来。',
-   opts:['占线','道歉','座位','零钱'],ans:0,
-   exp:'占线 (máy bận) — 电话一直占线. Câu có 敲 (Bài 15), 半天 (Bài 7). Các từ còn lại không phù hợp nghĩa.'},
+   opts:['占线','道歉','座位','场'],ans:0,
+   exp:'电话一直占线 = điện thoại cứ báo bận (giám đốc Lý không nghe được), đến văn phòng gõ cửa cũng không ai mở.'},
 ];
 
+// ══════════════════════════════════════════
+// LUYỆN NÓI
+// ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 19. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu hỏi là một tình huống thật, nói về chính bạn bằng từ và mẫu câu của Bài 19. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Bạn mới chuyển đến căn hộ thuê và bạn bè hỏi thăm.',
-      q_zh: '你现在租房子住吗？你租的房子条件怎么样？',
-      q_py: 'Nǐ xiànzài zū fáng zi zhù ma? Nǐ zū de fáng zi tiáojiàn zěnmeyàng?',
-      q_vn: 'Bạn đang thuê nhà à? Nhà bạn thuê điều kiện thế nào?',
-      grammar: { label: '虽然……但是……; 总的来说……', any: ['虽然', '总的来说'] },
+      situation: 'Bạn được mời ăn cơm, chủ nhà hỏi bạn có kiêng món gì không.',
+      q_zh: '你吃东西有什么不吃的吗？',
+      q_py: 'Nǐ chī dōngxi yǒu shénme bù chī de ma?',
+      q_vn: 'Bạn ăn uống có món gì không ăn không?',
+      grammar: { label: 'Đại từ phiếm chỉ: 什么/怎么……都/也……', any: ['什么', '怎么', '哪儿', '谁'] },
       need: [
-        { label: 'Nói về nhà đang ở', any: ['租', '房子', '房东', '厨房', '房间'] },
-        { label: 'Nhận xét ưu và nhược điểm', any: ['吵', '安静', '方便', '大', '小', '贵', '便宜'] }
+        { label: 'Dùng đại từ nghi vấn + 都/也', any: ['都', '也'] },
+        { label: 'Kể món ăn', any: ['饺子', '包子', '羊肉', '鱼', '菜'] }
       ],
-      bonus: { label: 'Dùng 总的来说 để kết luận', any: ['总的来说'] },
-      vocab: ['租', '吵', '厨房', '房东'],
-      minLen: 22,
-      sample: '我现在租房子住。房子离马路近，有点儿吵，但是交通方便，厨房也很大，房东人很好。总的来说，我挺满意的。',
-      sample_py: 'Wǒ xiànzài zū fáng zi zhù. Fáng zi lí mǎ lù jìn, yǒudiǎnr chǎo, dànshì jiāotōng fāngbiàn, chúfáng yě hěn dà, fángdōng rén hěn hǎo. Zǒng de lái shuō, wǒ tǐng mǎnyì de.',
-      sample_vn: 'Tôi đang thuê nhà. Nhà gần đường lớn nên hơi ồn, nhưng đi lại thuận tiện, bếp cũng rộng, chủ nhà rất tốt. Nói chung tôi khá hài lòng.',
-      tip: '总的来说 = nói chung, dùng để chốt ý.'
+      bonus: { label: 'Nói lý do', any: ['因为', '所以'] },
+      vocab: ['饺子', '包子'],
+      minLen: 20,
+      sample: '在吃的方面，我什么都爱吃，最喜欢饺子和包子。但是羊肉我怎么做都不爱吃，因为我不喜欢它的味道。',
+      sample_py: 'Zài chī de fāngmiàn, wǒ shénme dōu ài chī, zuì xǐhuan jiǎozi hé bāozi. Dànshì yángròu wǒ zěnme zuò dōu bú ài chī, yīnwèi wǒ bù xǐhuan tā de wèidao.',
+      sample_vn: 'Về mặt ăn uống, cái gì tôi cũng thích ăn, nhất là sủi cảo và bánh bao. Nhưng thịt dê thì nấu kiểu gì tôi cũng không thích, vì tôi không thích mùi vị của nó.',
+      tip: 'Đại từ nghi vấn đứng TRƯỚC 都/也: 什么都吃 (không nói 都吃什么).'
     },
     {
-      situation: 'Bạn của bạn sắp thuê nhà và hỏi nên chọn thế nào.',
-      q_zh: '在租房子的时候，房子的哪些条件会吸引你？哪个最重要？',
-      q_py: 'Zài zū fáng zi de shíhou, fáng zi de nǎxiē tiáojiàn huì xīyǐn nǐ? Nǎge zuì zhòngyào?',
-      q_vn: 'Khi thuê nhà, điều kiện nào hấp dẫn bạn? Cái nào quan trọng nhất?',
-      grammar: { label: '对我来说……; 关键在于……', any: ['来说', '关键'] },
+      situation: 'Bạn bè hỏi về mơ ước trong vài năm tới.',
+      q_zh: '你最希望过几年能过上什么样的生活？',
+      q_py: 'Nǐ zuì xīwàng guò jǐ nián néng guò shang shénme yàng de shēnghuó?',
+      q_vn: 'Bạn mong vài năm nữa được sống cuộc sống như thế nào?',
+      grammar: { label: 'V + 上 (đạt được mong muốn)', any: ['住上', '过上', '买上', '吃上', '用上'] },
       need: [
-        { label: 'Kể ít nhất hai tiêu chí', any: ['交通', '安静', '价格', '厨房', '干净', '附近', '安全'] },
-        { label: 'Chọn tiêu chí quan trọng nhất', any: ['最重要', '关键', '首先'] }
+        { label: 'Dùng V + 上', any: ['住上', '过上', '买上', '吃上', '用上'] },
+        { label: 'Nói về nhà ở', any: ['租', '房子', '厨房', '房东'] }
       ],
-      bonus: { label: 'Nhắc đến chủ nhà bằng 房东', any: ['房东'] },
-      vocab: ['吸引', '房东', '安全'],
+      bonus: { label: 'Dùng 厨房 hoặc 房东', any: ['厨房', '房东'] },
+      vocab: ['租', '厨房', '房东'],
       minLen: 22,
-      sample: '对我来说，交通方便、周围安静都很吸引我，价格也要合适。不过关键在于房东是否友好，房子再好，房东不好也住得不安心。',
-      sample_py: 'Duì wǒ lái shuō, jiāotōng fāngbiàn, zhōuwéi ānjìng dōu hěn xīyǐn wǒ, jiàgé yě yào héshì. Búguò guānjiàn zài yú fángdōng shìfǒu yǒuhǎo, fáng zi zài hǎo, fángdōng bù hǎo yě zhù děi bù ān xīn.',
-      sample_vn: 'Với tôi, giao thông thuận tiện, xung quanh yên tĩnh đều hấp dẫn, giá cũng phải hợp lý. Nhưng mấu chốt là chủ nhà có thân thiện không, nhà tốt mấy mà chủ không tốt thì ở cũng không yên tâm.',
-      tip: '关键在于…… = mấu chốt nằm ở…: 关键在于你自己。'
+      sample: '我现在和朋友一起租房子住，厨房特别小，房东也不太好说话。我最希望再过三年能住上自己的房子，周末可以在大厨房里给家人做饭。',
+      sample_py: 'Wǒ xiànzài hé péngyou yìqǐ zū fángzi zhù, chúfáng tèbié xiǎo, fángdōng yě bú tài hǎo shuōhuà. Wǒ zuì xīwàng zài guò sān nián néng zhù shang zìjǐ de fángzi, zhōumò kěyǐ zài dà chúfáng li gěi jiārén zuò fàn.',
+      sample_vn: 'Bây giờ tôi thuê nhà ở chung với bạn, bếp rất nhỏ, chủ nhà cũng hơi khó tính. Tôi mong nhất là ba năm nữa được ở nhà của chính mình, cuối tuần có thể nấu cơm cho gia đình trong căn bếp rộng.',
+      tip: '住上/过上 = được ở/được sống (đạt điều mong muốn); 住不上 = không được ở.'
     },
     {
-      situation: 'Bạn Trung Quốc hỏi về phong trào thể thao ở nước bạn.',
-      q_zh: '在你们国家，哪种运动最普遍？为什么？',
-      q_py: 'Zài nǐmen guójiā, nǎ zhǒng yùndòng zuì pǔbiàn? Wèishénme?',
-      q_vn: 'Ở nước bạn, môn thể thao nào phổ biến nhất? Vì sao?',
-      grammar: { label: '谁都可以……; 一……就……', any: ['谁都', '一', '就'] },
+      situation: 'Bạn kể về một môn bạn từng học hồi nhỏ.',
+      q_zh: '你小时候学过什么？现在还记得吗？',
+      q_py: 'Nǐ xiǎoshíhou xué guo shénme? Xiànzài hái jìde ma?',
+      q_vn: 'Hồi nhỏ bạn từng học gì? Bây giờ còn nhớ không?',
+      grammar: { label: '想起来 / 看出来 (出来 và 起来)', any: ['起来', '出来'] },
       need: [
-        { label: 'Nói môn thể thao', any: ['足球', '羽毛球', '乒乓球', '篮球', '跑步', '运动'] },
-        { label: 'Nêu lý do phổ biến', any: ['条件', '容易', '便宜', '谁都', '场地', '普遍'] }
+        { label: 'Dùng 想起来 hoặc 看出来', any: ['想起来', '看出来', '听出来'] },
+        { label: 'Kể môn đã học', any: ['功夫', '舞蹈', '跳舞', '乒乓球', '羽毛球', '钢琴'] }
       ],
-      bonus: { label: 'Dùng lượng từ 场 với trận đấu', any: ['场'] },
-      vocab: ['羽毛球', '乒乓球', '场'],
+      bonus: { label: 'Dùng 抬 / 胳膊 / 转', any: ['抬', '胳膊', '转'] },
+      vocab: ['功夫', '抬', '胳膊'],
       minLen: 22,
-      sample: '在我们国家，足球和羽毛球最普遍。羽毛球对条件的要求不高，谁都可以打，所以很多人一到周末就去打几场球，公园里也常常有人打乒乓球。',
-      sample_py: 'Zài wǒmen guójiā, zúqiú hé yǔmáoqiú zuì pǔbiàn. Yǔmáoqiú duì tiáojiàn de yāoqiú bù gāo, shéi dōu kěyǐ dǎ, suǒyǐ hěn duō rén yí dào zhōumò jiù qù dǎ jǐ chǎng qiú, gōngyuán lǐ yě chángcháng yǒu rén dǎ pīngpāngqiú.',
-      sample_vn: 'Ở nước tôi, bóng đá và cầu lông phổ biến nhất. Cầu lông không đòi hỏi điều kiện cao, ai cũng chơi được, nên nhiều người cứ đến cuối tuần là đi đánh mấy trận, trong công viên cũng thường có người chơi bóng bàn.',
-      tip: '场 là lượng từ cho trận đấu, buổi biểu diễn: 一场比赛、一场电影。'
+      sample: '我小时候学过一年功夫，现在只能想起来几个动作了。但是我朋友一看就看出来我学过，因为我抬胳膊的样子还很标准。',
+      sample_py: 'Wǒ xiǎoshíhou xué guo yì nián gōngfu, xiànzài zhǐ néng xiǎng qilai jǐ ge dòngzuò le. Dànshì wǒ péngyou yí kàn jiù kàn chulai wǒ xué guo, yīnwèi wǒ tái gēbo de yàngzi hái hěn biāozhǔn.',
+      sample_vn: 'Hồi nhỏ tôi học võ một năm, bây giờ chỉ nhớ ra được vài động tác. Nhưng bạn tôi nhìn một cái là nhận ra tôi từng học, vì dáng giơ tay của tôi vẫn rất chuẩn.',
+      tip: '想起来 = nhớ ra (điều đã biết); 看出来 = nhìn ra, nhận ra (điều chưa ai nói).'
     },
     {
-      situation: 'Bạn lỡ làm hỏng việc của đồng nghiệp.',
-      q_zh: '如果你不小心做错了事，你会怎么向别人道歉？',
-      q_py: 'Rúguǒ nǐ bù xiǎoxīn zuò cuò le shì, nǐ huì zěnme xiàng biérén dàoqiàn?',
-      q_vn: 'Nếu lỡ làm sai, bạn sẽ xin lỗi người khác thế nào?',
-      grammar: { label: '向 + người + 道歉; 既然……就……', any: ['向', '道歉', '既然'] },
+      situation: 'Bạn chuẩn bị đi thuê nhà, người quen hỏi bạn chú trọng điều gì.',
+      q_zh: '租房子的时候，你觉得最重要的是什么？',
+      q_py: 'Zū fángzi de shíhou, nǐ juéde zuì zhòngyào de shì shénme?',
+      q_vn: 'Khi thuê nhà, bạn thấy điều quan trọng nhất là gì?',
+      grammar: { label: '……的关键是…… (mấu chốt là…)', any: ['关键'] },
       need: [
-        { label: 'Dùng 向……道歉', any: ['道歉', '对不起', '向'] },
-        { label: 'Nói thái độ và cách sửa', any: ['故意', '说明', '礼貌', '改', '弥补', '负责'] }
+        { label: 'Dùng 关键', any: ['关键'] },
+        { label: 'Nói điều kiện của nhà', any: ['吵', '安静', '交通', '厨房', '房东'] }
       ],
-      bonus: { label: 'Dùng 原谅 nói mong được tha thứ', any: ['原谅'] },
-      vocab: ['道歉', '打招呼', '故意'],
+      bonus: { label: 'Dùng 吵', any: ['吵'] },
+      vocab: ['吵', '厨房', '租'],
       minLen: 22,
-      sample: '我会主动向他道歉，说明我不是故意的，然后想办法把事情做好。既然知道是自己错了，就应该用礼貌的方法说出来，这样他一般会原谅我。',
-      sample_py: 'Wǒ huì zhǔ dòng xiàng tā dàoqiàn, shuōmíng wǒ bú shì gùyì de, ránhòu xiǎng bànfǎ bǎ shìqing zuò hǎo. Jìrán zhīdao shì zìjǐ cuò le, jiù yīnggāi yòng lǐmào de fāngfǎ shuō chū lái, zhè yàng tā yìbān huì yuánliàng wǒ.',
-      sample_vn: 'Tôi sẽ chủ động xin lỗi họ, nói rõ tôi không cố ý, rồi tìm cách làm lại cho tốt. Đã biết mình sai thì nên nói ra một cách lịch sự, như vậy họ thường sẽ tha thứ.',
-      tip: '向 + người + 道歉/学习/借: 向老师请教。'
+      sample: '我觉得租房子的关键是周围不能太吵，交通也要方便。厨房大不大，对我来说不太重要，因为我很少在家做饭。',
+      sample_py: 'Wǒ juéde zū fángzi de guānjiàn shì zhōuwéi bù néng tài chǎo, jiāotōng yě yào fāngbiàn. Chúfáng dà bu dà, duì wǒ lái shuō bú tài zhòngyào, yīnwèi wǒ hěn shǎo zài jiā zuò fàn.',
+      sample_vn: 'Tôi thấy mấu chốt khi thuê nhà là xung quanh không được quá ồn, giao thông cũng phải tiện. Bếp to hay không với tôi không quan trọng lắm, vì tôi ít khi nấu cơm ở nhà.',
+      tip: '……的关键是…… = mấu chốt của … là …; 对我来说 = đối với tôi mà nói.'
     },
     {
-      situation: 'Bạn đưa bạn bè đi xem một buổi biểu diễn.',
-      q_zh: '看比赛或者演出的时候，观众应该注意什么？',
-      q_py: 'Kàn bǐsài huòzhě yǎnchū de shíhou, guānzhòng yīnggāi zhùyì shénme?',
-      q_vn: 'Khi xem thi đấu hoặc biểu diễn, khán giả nên chú ý gì?',
-      grammar: { label: '禁止 + động từ; 否则……', any: ['禁止', '否则'] },
+      situation: 'Một người bạn mới chuyển đến hỏi bạn về hàng xóm.',
+      q_zh: '你认识你的邻居吗？见面的时候打招呼吗？',
+      q_py: 'Nǐ rènshi nǐ de línjū ma? Jiàn miàn de shíhou dǎ zhāohu ma?',
+      q_vn: 'Bạn có quen hàng xóm không? Gặp nhau có chào hỏi không?',
+      grammar: { label: '谁 + 都…… (ai cũng…)', any: ['谁'] },
       need: [
-        { label: 'Nêu điều nên làm', any: ['安静', '排队', '座位', '关手机', '尊重'] },
-        { label: 'Nêu điều không nên', any: ['禁止', '大声', '离开', '接电话', '照相'] }
+        { label: 'Dùng 谁都……', any: ['谁都', '谁也'] },
+        { label: 'Dùng 打招呼', any: ['打招呼'] }
       ],
-      bonus: { label: 'Dùng 否则 nêu hậu quả', any: ['否则'] },
-      vocab: ['禁止', '座位', '尊重'],
-      minLen: 22,
-      sample: '观众要保持安静，禁止大声讲话，也不要随便离开座位。看演出的时候千万别接电话，否则会影响演员和别的观众，这也是对别人的尊重。',
-      sample_py: 'Guānzhòng yào bǎo chí ānjìng, jìnzhǐ dà shēng jiǎng huà, yě bú yào suíbiàn líkāi zuòwèi. Kàn yǎnchū de shíhou qiānwàn bié jiē diànhuà, fǒuzé huì yǐngxiǎng yǎnyuán hé biéde guānzhòng, zhè yě shì duì biérén de zūnzhòng.',
-      sample_vn: 'Khán giả phải giữ yên lặng, cấm nói to, cũng đừng tùy tiện rời chỗ. Lúc xem biểu diễn tuyệt đối đừng nghe điện thoại, nếu không sẽ ảnh hưởng diễn viên và khán giả khác, đó cũng là tôn trọng người khác.',
-      tip: '禁止 + động từ: 禁止抽烟、禁止照相。'
+      bonus: { label: 'Kể một việc hàng xóm giúp nhau', any: ['帮', '帮助', '借'] },
+      vocab: ['打招呼', '邻居'],
+      minLen: 20,
+      sample: '我在这儿住了五年了，楼里的人我谁都认识。每天早上见面，大家都会互相打招呼。有一次我生病了，邻居还帮我买了药。',
+      sample_py: 'Wǒ zài zhèr zhù le wǔ nián le, lóu li de rén wǒ shéi dōu rènshi. Měi tiān zǎoshang jiàn miàn, dàjiā dōu huì hùxiāng dǎ zhāohu. Yǒu yí cì wǒ shēngbìng le, línjū hái bāng wǒ mǎi le yào.',
+      sample_vn: 'Tôi sống ở đây năm năm rồi, người trong tòa nhà ai tôi cũng quen. Sáng nào gặp nhau mọi người cũng chào hỏi nhau. Có lần tôi bị ốm, hàng xóm còn mua thuốc giúp tôi.',
+      tip: 'Tân ngữ là 谁 thì đưa lên trước 都: 我谁都认识 (không nói 我都认识谁).'
     }
   ]
 };
 
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Việt → Trung)
+// ══════════════════════════════════════════
 var translateData = [
-  {vi:'Em muốn học kỳ sau tiếp tục học ở đây, xin hỏi có cần đăng ký lại không?',zh:'我希望下个学期在这里继续学习，请问还需要重新申请吗？',py:'Wǒ xīwàng xià ge xuéqī zài zhèli jìxù xuéxí, qǐngwèn hái xūyào chóngxīn shēnqǐng ma?'},
-  {vi:'Không sao, không cần xin lỗi, ai cũng có lúc cẩu thả điền sai.',zh:'没关系，不用道歉，谁都有粗心填错的时候。',py:'Méi guānxi, búyòng dào qiàn, shéi dōu yǒu cūxīn tiáncuò de shíhou.'},
-  {vi:'Vừa rồi dùng dao thái thịt làm đứt tay.',zh:'刚才用刀切肉的时候把手弄破了。',py:'Gāngcái yòng dāo qiē ròu de shíhou bǎ shǒu nòngpò le.'},
-  {vi:'Xem ra hôm nay không ăn được sủi cảo thịt dê rồi.',zh:'看来今天吃不上羊肉饺子了。',py:'Kànlái jīntiān chībushàng yángròu jiǎozi le.'},
-  {vi:'Vừa rồi tôi thấy bạn múa Trung Quốc, không ngờ bạn múa hay thế!',zh:'刚才我在旁边看到你跳中国舞了，没看出来你跳得这么好！',py:'Gāngcái wǒ zài pángbiān kàndào nǐ tiào Zhōngguó wǔ le, méi kàn chūlái nǐ tiào de zhème hǎo!'},
-  {vi:'Ngôn ngữ này không liên quan quốc tịch, người nước nào cũng hiểu được.',zh:'这种语言与国籍无关，无论哪个国家的人都能看懂。',py:'Zhè zhǒng yǔyán yǔ guójí wúguān, wúlùn nǎ ge guójiā de rén dōu néng kàndǒng.'},
-  {vi:'Nhìn chung, căn nhà này anh rất hài lòng, thế là ghi lại số điện thoại chủ nhà.',zh:'总的来说，这套房子他很满意，于是他就记下了房东的手机号码。',py:'Zǒng de lái shuō, zhè tào fángzi tā hěn mǎnyì, yúshì tā jiù jìxiàle fángdōng de shǒujī hàomǎ.'},
-  {vi:'Người ta thường nói "sự sống nằm ở vận động", nên nhiều người cứ cuối tuần là đến nhà thi đấu chơi vài trận bóng.',zh:'人们常说"生命在于运动"，所以很多人一到周末就会到体育馆打几场球。',py:'Rénmen cháng shuō "shēngmìng zàiyú yùndòng", suǒyǐ hěn duō rén yí dào zhōumò jiù huì dào tǐyùguǎn dǎ jǐ chǎng qiú.'},
+  {vi:'Tôi quên đeo kính nên không nhìn rõ chữ trên bảng.', zh:'我忘记戴眼镜了，看不清楚黑板上的字。', py:'Wǒ wàngjì dài yǎnjìng le, kàn bu qīngchu hēibǎn shang de zì.'},
+  {vi:'Nhà hàng này hết chỗ ngồi rồi, mình sang quán bên cạnh xem thử nhé.', zh:'这家饭店已经没有座位了，咱们去旁边那家看看吧。', py:'Zhè jiā fàndiàn yǐjīng méiyǒu zuòwèi le, zánmen qù pángbiān nà jiā kànkan ba.'},
+  {vi:'Cầu lông và bóng bàn đều là những môn thể thao tôi thích.', zh:'羽毛球和乒乓球都是我喜欢的运动。', py:'Yǔmáoqiú hé pīngpāngqiú dōu shì wǒ xǐhuan de yùndòng.'},
+  {vi:'Anh ấy vừa nhìn đã nhận ra tôi là người nước ngoài.', zh:'他一看就看出来我是外国人了。', py:'Tā yí kàn jiù kàn chulai wǒ shì wàiguórén le.'},
+  {vi:'Áo của tôi rách rồi, phải mua cái mới thôi.', zh:'我的衣服破了，得买件新的了。', py:'Wǒ de yīfu pò le, děi mǎi jiàn xīn de le.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Ngày tháng năm sinh, giới tính, số hộ chiếu đều phải điền, còn địa chỉ và điện thoại liên lạc.',zh:'出生年月、性别、护照号码都要填，还有联系地址、联系电话。',py:'Chūshēng nián yuè, xìngbié, hùzhào hàomǎ dōu yào tián, hái yǒu liánxì dìzhǐ, liánxì diànhuà.'},
-  {vi:'Đơn đăng ký bị người khác lấy hết rồi, tôi in lại cho em một bản.',zh:'申请表都被别人拿走了，我给你重新打印一份。',py:'Shēnqǐngbiǎo dōu bèi biérén názǒu le, wǒ gěi nǐ chóngxīn dǎyìn yí fèn.'},
-  {vi:'Trên áo cũng có chút máu, em cởi áo ra, anh giặt cho.',zh:'衣服上也有一点儿血，你把衣服脱下来，我给你洗洗。',py:'Yīfu shang yě yǒu yìdiǎnr xiě, nǐ bǎ yīfu tuō xiàlai, wǒ gěi nǐ xǐxi.'},
-  {vi:'Sáng nay tôi quên đeo kính, nhìn không rõ.',zh:'今天早上我忘戴眼镜了，看不清楚。',py:'Jīntiān zǎoshang wǒ wàng dài yǎnjìng le, kànbuqīngchu.'},
-  {vi:'Nên như tôi thế này: giơ cánh tay trước, rồi nhấc chân, cuối cùng đầu quay sang phải.',zh:'应该像我这样：先抬胳膊，然后抬腿，最后头再向右转一下。',py:'Yīnggāi xiàng wǒ zhèyàng: xiān tái gēbo, ránhòu tái tuǐ, zuìhòu tóu zài xiàng yòu zhuǎn yíxià.'},
-  {vi:'Nhà Mã Khắc thuê năm ngoái sát đường lớn, môi trường xung quanh rất ồn.',zh:'马克去年租的房子离马路很近，周围环境非常吵。',py:'Mǎkè qùnián zū de fángzi lí mǎlù hěn jìn, zhōuwéi huánjìng fēicháng chǎo.'},
-  {vi:'Nhưng về nhà gọi điện, điện thoại luôn bận.',zh:'可回家后打电话，电话总是占线。',py:'Kě huí jiā hòu dǎ diànhuà, diànhuà zǒngshì zhànxiàn.'},
-  {vi:'Khán giả phải yên tĩnh, cấm nói to hoặc rời chỗ ngồi đi lại tùy tiện.',zh:'观众要安静，禁止大声讲话或者离开座位随便走动。',py:'Guānzhòng yào ānjìng, jìnzhǐ dàshēng jiǎng huà huòzhě líkāi zuòwèi suíbiàn zǒudòng.'},
+  {vi:'Chuyện này ai cũng không biết, bạn đừng nói với người khác.', zh:'这件事谁都不知道，你别告诉别人。', py:'Zhè jiàn shì shéi dōu bù zhīdào, nǐ bié gàosu biéren.'},
+  {vi:'Tôi vừa in hai bản, bạn một bản, tôi một bản.', zh:'我刚打印了两份，你一份，我一份。', py:'Wǒ gāng dǎyìn le liǎng fèn, nǐ yí fèn, wǒ yí fèn.'},
+  {vi:'Căn nhà chúng tôi thuê rất gần công ty, đi bộ chưa đến mười phút.', zh:'我们租的房子离公司很近，走路不到十分钟。', py:'Wǒmen zū de fángzi lí gōngsī hěn jìn, zǒu lù bú dào shí fēnzhōng.'},
 ];
 
 var listenData = {

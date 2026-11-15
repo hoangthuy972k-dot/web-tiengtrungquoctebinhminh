@@ -3497,46 +3497,53 @@ var dialogData = [
    ]},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
 var matchData = [
-  {left:'难道',right:'难道你不减肥了'},
-  {left:'坚持',right:'只能坚持'},
-  {left:'放弃',right:'打算放弃了'},
-  {left:'轻松',right:'轻轻松松就赢了'},
-  {left:'通过',right:'通过努力才能得到'},
-  {left:'可是',right:'可是她坚持'},
-  {left:'正确',right:'选择是正确的'},
-  {left:'结果',right:'不要担心结果'},
-  {left:'区别',right:'……的区别就是'},
-  {left:'面对',right:'勇敢地面对困难'},
+  {left:'改变',right:'主意'},
+  {left:'面对',right:'困难'},
+  {left:'总结',right:'经验'},
+  {left:'去银行取',right:'钱'},
+  {left:'打',right:'网球'},
+  {left:'通过',right:'考试'},
+  {left:'很多国际学生',right:'在这儿学汉语'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ
+// ══════════════════════════════════════════
 var fillData = [
-  {pre:'怎么又买了这么多饼干和巧克力？',blank:'',post:'你不减肥了？',hint:'nándào',ans:'难道',exp:'难道…吗/？ = lẽ nào…, câu phản vấn tỏ ý ngạc nhiên: lẽ nào cậu không giảm cân nữa?'},
-  {pre:'如果你想减肥，就',blank:'',post:'少吃东西，而且要多运动。',hint:'děi',ans:'得',exp:'得 đọc děi = phải (khẩu ngữ): 就得少吃东西. Không đọc de như trợ từ bổ ngữ.'},
-  {pre:'要想减肥成功，只能',blank:'',post:'，才会慢慢有效果。',hint:'jiānchí',ans:'坚持'},
-  {pre:'我本来已经打算',blank:'',post:'了，但是你刚才的话让我改变了主意。',hint:'fàngqì',ans:'放弃'},
-  {pre:'每次看你比赛，感觉你',blank:'',post:'就赢了。',hint:'qīngqīngsōngsōng',ans:'轻轻松松',exp:'Lặp tính từ AABB: 轻轻松松 = rất nhẹ nhàng, dễ dàng; làm trạng ngữ trước động từ 赢.'},
-  {pre:'任何成功都要',blank:'',post:'努力才能得到。',hint:'tōngguò',ans:'通过',exp:'通过 + cách thức = thông qua, bằng: 要通过努力才能得到.'},
-  {pre:'当时她的父母和亲戚都不支持她，',blank:'',post:'她坚持自己的选择。',hint:'kěshì',ans:'可是',exp:'可是 = nhưng; nối hai vế trái ngược: bố mẹ không ủng hộ, nhưng cô ấy vẫn kiên trì.'},
-  {pre:'现在终于向所有人证明了她的选择是',blank:'',post:'的。',hint:'zhèngquè',ans:'正确'},
-  {pre:'不要担心',blank:'',post:'，不要考虑会不会失败。',hint:'jiéguǒ',ans:'结果'},
-  {pre:'即使最后',blank:'',post:'了也没有关系，因为至少你已经努力过。',hint:'shībài',ans:'失败'},
-  {pre:'我们应该把注意力放在做事情的',blank:'',post:'上。',hint:'guòchéng',ans:'过程'},
-  {pre:'取得成功的人往往都',blank:'',post:'过许多失败。',hint:'jīnglì',ans:'经历'},
-  {pre:'他们和普通人的',blank:'',post:'就是他们都坚持了下来。',hint:'qūbié',ans:'区别'},
-  {pre:'困难只是',blank:'',post:'的。',hint:'zànshí',ans:'暂时'},
-  {pre:'只有我们勇敢地',blank:'',post:'困难，才能有希望取得成功。',hint:'miànduì',ans:'面对'},
+  {pre:'这个汉字你已经学过三次了，',blank:'难道',post:'还不会写吗？',hint:'(chẳng lẽ)',ans:'难道',exp:'难道……吗？ là câu hỏi tu từ, ý thật là khẳng định ngược lại (= bạn phải biết chứ); cuối câu thường có 吗.'},
+  {pre:'A：今天的会我就不去了。 B：经理说每个人都得去，',blank:'难道',post:'你没看到通知吗？',hint:'(chẳng lẽ)',ans:'难道',exp:'难道 đứng trước hoặc sau chủ ngữ đều được: 难道你不知道吗？ = 你难道不知道吗？ — thể hiện ngạc nhiên, trách nhẹ.'},
+  {pre:'',blank:'通过',post:'这次活动，我认识了不少新朋友。',hint:'(thông qua, nhờ)',ans:'通过',exp:'通过 + cách thức / hoạt động / người = nhờ vào… mà đạt kết quả; khác 经过 (trải qua một quá trình, thời gian).'},
+  {pre:'',blank:'经过',post:'一年的练习，她的网球打得越来越好了。',hint:'(trải qua)',ans:'经过',exp:'经过 + khoảng thời gian / quá trình (经过一年的练习、经过努力) — nhấn mạnh đã trải qua; 通过 nhấn mạnh phương tiện.'},
+  {pre:'A：晚上一起去看电影吧？ B：电影我也想看，',blank:'可是',post:'今天我得加班。',hint:'(nhưng)',ans:'可是',exp:'可是 = nhưng (khẩu ngữ, như 但是); vế trước thường nói mong muốn, vế sau nói điều ngược lại.'},
+  {pre:'他考试前一点儿也没复习，',blank:'结果',post:'没有通过。',hint:'(kết quả là, rốt cuộc)',ans:'结果',exp:'结果 đứng đầu vế sau = rốt cuộc, kết cục là (thường là điều không mong muốn); cũng là danh từ: 考试结果.'},
+  {pre:'这个周末的音乐会来了',blank:'上',post:'千人，非常热闹。',hint:'(lên tới, đạt tới)',ans:'上',exp:'上 + 百 / 千 / 万 = lên tới hàng trăm / nghìn / vạn — nhấn mạnh số lượng nhiều.'},
+  {pre:'学汉语最重要的是',blank:'坚持',post:'，每天学一点儿比一个星期学一次好。',hint:'(kiên trì)',ans:'坚持',exp:'坚持 = kiên trì giữ, làm liên tục; 坚持 + V: 坚持跑步、坚持学习.'},
+  {pre:'A：这个问题太难了，我不想做了。 B：别',blank:'放弃',post:'，再想想，我相信你能做对。',hint:'(từ bỏ, bỏ cuộc)',ans:'放弃',exp:'别放弃 = đừng bỏ cuộc; 放弃 + 机会 / 工作 / 希望: từ bỏ điều đang có hoặc đang theo đuổi.'},
+  {pre:'A：这个周末我们一起去打网球怎么样？ B：好',blank:'主意',post:'！我好久没运动了。',hint:'(ý kiến, ý định)',ans:'主意',exp:'好主意 = ý hay; 改变主意 = đổi ý; 主意 đọc zhǔyi (âm sau đọc nhẹ).'},
+  {pre:'A：你喝点儿什么？ B：',blank:'随便',post:'，咖啡、茶都可以。',hint:'(tùy, sao cũng được)',ans:'随便',exp:'随便 = tùy, gì cũng được (khẩu ngữ); 太随便 lại mang nghĩa xấu: tùy tiện, cẩu thả.'},
+  {pre:'她一个人去国外读书，什么都自己做，真',blank:'勇敢',post:'！',hint:'(dũng cảm, gan dạ)',ans:'勇敢',exp:'勇敢 = can đảm; dùng làm trạng ngữ: 勇敢地面对.'},
+  {pre:'这次',blank:'失败',post:'了也没关系，下次再努力就好。',hint:'(thất bại)',ans:'失败',exp:'失败 là động từ: 失败了 = thất bại rồi; trái nghĩa 成功.'},
+  {pre:'老师说我的回答是',blank:'正确',post:'的，我特别高兴。',hint:'(đúng, chính xác)',ans:'正确',exp:'是……的 + 正确 = là đúng; 正确 trang trọng hơn 对: 正确的方法、正确的回答.'},
+  {pre:'十年前我来到这个城市，',blank:'当时',post:'这里还没有地铁。',hint:'(lúc đó)',ans:'当时',exp:'当时 = lúc đó (một thời điểm trong quá khứ vừa nhắc tới); khác 现在 / 那时候 (cùng nghĩa, khẩu ngữ hơn).'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
 var sortData = [
-  {words:['怎么','又','买','了','这么','多','饼干','和','巧克力','？'],ans:'怎么又买了这么多饼干和巧克力？',audio:'怎么又买了这么多饼干和巧克力？'},
-  {words:['要想','减肥','成功','，','只能','坚持'],ans:'要想减肥成功，只能坚持',audio:'要想减肥成功，只能坚持'},
-  {words:['没有','人','随随便便','就','能','成功','的'],ans:'没有人随随便便就能成功的',audio:'没有人随随便便就能成功的'},
-  {words:['任何','成功','都','要','通过','努力','才','能','得到'],ans:'任何成功都要通过努力才能得到',audio:'任何成功都要通过努力才能得到'},
-  {words:['她','现在','已经','是','一个','有名','的','作家','了'],ans:'她现在已经是一个有名的作家了',audio:'她现在已经是一个有名的作家了'},
-  {words:['我们','应该','把','注意力','放','在','做','事情','的','过程','上'],ans:'我们应该把注意力放在做事情的过程上',audio:'我们应该把注意力放在做事情的过程上'},
-  {words:['取得','成功','的','人','往往','都','经历','过','许多','失败'],ans:'取得成功的人往往都经历过许多失败',audio:'取得成功的人往往都经历过许多失败'},
-  {words:['困难','只是','暂时','的'],ans:'困难只是暂时的',audio:'困难只是暂时的'},
+  {words:['难道','你','不','想','赢','吗','？'],ans:'难道你不想赢吗？',audio:'难道你不想赢吗？'},
+  {words:['通过','朋友','的','介绍','，','我','找到','了','这份','工作','。'],ans:'通过朋友的介绍，我找到了这份工作。',audio:'通过朋友的介绍，我找到了这份工作。'},
+  {words:['他','昨天','没','睡好','，','结果','上课','的','时候','一直','想','睡觉','。'],ans:'他昨天没睡好，结果上课的时候一直想睡觉。',audio:'他昨天没睡好，结果上课的时候一直想睡觉。'},
+  {words:['这位','作家','已经','写','了','上百','篇','小说','。'],ans:'这位作家已经写了上百篇小说。',audio:'这位作家已经写了上百篇小说。'},
+  {words:['小时候','我','的','理想','是','当','老师','。'],ans:'小时候我的理想是当老师。',audio:'小时候我的理想是当老师。'},
+  {words:['我','爷爷','经历','过','许多','困难','的','日子','。'],ans:'我爷爷经历过许多困难的日子。',audio:'我爷爷经历过许多困难的日子。'},
+  {words:['每次','考试','以后','，','他','都','会','总结','自己','的','问题','。'],ans:'每次考试以后，他都会总结自己的问题。',audio:'每次考试以后，他都会总结自己的问题。'},
+  {words:['他','打完','网球','，','衣服','上','都是','汗','。'],ans:'他打完网球，衣服上都是汗。',audio:'他打完网球，衣服上都是汗。'},
+  {words:['这次','考试','很','简单','，','大家','都','轻松','地','通过','了','。'],ans:'这次考试很简单，大家都轻松地通过了。',audio:'这次考试很简单，大家都轻松地通过了。'},
 ];
 
 var errorFixMode = 'wordchoice';
@@ -3545,10 +3552,10 @@ var errorFixData = [
    opts:['至少','区别','正确','暂时'],ans:0,
    exp:'至少 (ít nhất) đi với số lượng thời gian: 至少要三十分钟. Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'所有的困难都是____的，要有信心，我相信你一定会成功。',
-   opts:['至少','正确','区别','暂时'],ans:3,
+   opts:['至少','正确','过程','暂时'],ans:3,
    exp:'暂时 (tạm thời) phù hợp với ngữ cảnh "khó khăn không kéo dài mãi". Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'"爱"和"喜欢"有什么____？我认为"爱"比"喜欢"的感情更深。',
-   opts:['暂时','至少','区别','正确'],ans:2,
+   opts:['过程','至少','区别','正确'],ans:2,
    exp:'区别 (sự khác biệt) phù hợp với câu hỏi so sánh hai từ. Các từ còn lại không mang nghĩa khác biệt.'},
   {wrong:'其实，只要我们真正努力过了，就不需要太关心结果。因为不管最后是成功还是失败，在努力的____中，我们已经学到了很多东西。',
    opts:['区别','暂时','至少','过程'],ans:3,
@@ -3560,135 +3567,138 @@ var errorFixData = [
    opts:['取','理想','放弃','得'],ans:3,
    exp:'得 (děi, phải) là động từ năng nguyện diễn tả sự cần thiết. Các từ còn lại không phải động từ năng nguyện.'},
   {wrong:'A：你哥不是说三点到吗？都过去半个小时了，怎么还没出来？B：他还得去____行李箱，您别担心，我打个电话问问。',
-   opts:['得','放弃','理想','取'],ans:3,
+   opts:['得','放弃','汗','取'],ans:3,
    exp:'取 (lấy) đi với 行李箱: 取行李箱 = lấy vali. Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'A：外面热吗？你怎么满头大____？B：电梯坏了，我爬楼梯上来的。',
    opts:['理想','取','放弃','汗'],ans:3,
    exp:'汗 (mồ hôi) đi với 满头大: 满头大汗. Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'A：你考虑清楚了？真的要____这次机会？B：是的，我妈妈身体不太好，我决定留下来照顾她。',
-   opts:['汗','取','理想','放弃'],ans:3,
+   opts:['汗','得','理想','放弃'],ans:3,
    exp:'放弃 (từ bỏ) đi với 机会: 放弃这次机会. Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'A：你研究生考试考得怎么样？B：数学可能考得不太____。',
-   opts:['放弃','汗','取','理想'],ans:3,
+   opts:['得','汗','取','理想'],ans:3,
    exp:'理想 (lý tưởng, ở đây làm tính từ nghĩa "như ý") đi với 考得: 考得不太理想 = thi không được như ý. Các từ còn lại không phù hợp nghĩa.'},
 ];
 
+// ══════════════════════════════════════════
+// LUYỆN NÓI
+// ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 9. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu hỏi là một tình huống thật, nói về chính bạn bằng từ và mẫu câu của Bài 9. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Bạn bè hỏi kinh nghiệm giảm cân của bạn.',
-      q_zh: '你觉得减肥最重要的是什么？',
-      q_py: 'Nǐ juéde jiǎnféi zuì zhòngyào de shì shénme?',
-      q_vn: 'Bạn thấy điều quan trọng nhất khi giảm cân là gì?',
-      grammar: { label: '只有……，才…… (chỉ có… mới…)', any: ['只有', '才'] },
+      situation: 'Bạn của bạn nói học tiếng Trung khó quá, muốn bỏ cuộc.',
+      q_zh: '你的朋友想放弃学汉语，你会对他说什么？',
+      q_py: 'Nǐ de péngyou xiǎng fàngqì xué Hànyǔ, nǐ huì duì tā shuō shénme?',
+      q_vn: 'Bạn của bạn muốn bỏ học tiếng Trung, bạn sẽ nói gì với họ?',
+      grammar: { label: '难道……吗？ (chẳng lẽ…?)', any: ['难道'] },
       need: [
-        { label: 'Nêu điều quan trọng nhất', any: ['坚持', '运动', '吃', '习惯'] },
-        { label: 'Nói về thời gian hoặc hiệu quả', any: ['效果', '个月', '慢慢', '一天', '时间'] }
+        { label: 'Dùng câu hỏi tu từ 难道……吗', any: ['难道'] },
+        { label: 'Khuyên bạn đừng bỏ cuộc', any: ['放弃', '坚持', '努力'] }
       ],
-      bonus: { label: 'Nói điều không nên làm', any: ['放弃', '不吃饭', '着急', '暂时'] },
-      vocab: ['坚持', '放弃', '暂时'],
-      minLen: 22,
-      sample: '我觉得最重要的是坚持。只有每天运动、少吃甜的，才会慢慢有效果，一两个星期是不够的，更不能暂时坚持几天就放弃。',
-      sample_py: 'Wǒ juéde zuì zhòngyào de shì jiānchí. Zhǐyǒu měitiān yùndòng, shǎo chī tián de, cái huì mànmàn yǒu xiàoguǒ, yì liǎng ge xīngqī shì bú gòu de, gèng bù néng zànshí jiānchí jǐ tiān jiù fàngqì.',
-      sample_vn: 'Tôi thấy quan trọng nhất là kiên trì. Chỉ có mỗi ngày vận động, ăn ít đồ ngọt thì mới dần có hiệu quả, một hai tuần là chưa đủ, càng không thể cố mấy hôm rồi bỏ.',
-      tip: '只有……才…… nêu điều kiện duy nhất: 只有努力，才能成功。'
+      bonus: { label: 'Nhắc lại mục tiêu / lý tưởng', any: ['理想', '希望', '打算'] },
+      vocab: ['难道', '放弃', '坚持'],
+      minLen: 20,
+      sample: '你已经学了一年了，难道就这样放弃吗？你不是说想去中国工作吗？只要每天坚持学一点儿，你一定能学好。',
+      sample_py: 'Nǐ yǐjīng xué le yì nián le, nándào jiù zhèyàng fàngqì ma? Nǐ bú shì shuō xiǎng qù Zhōngguó gōngzuò ma? Zhǐyào měi tiān jiānchí xué yìdiǎnr, nǐ yídìng néng xué hǎo.',
+      sample_vn: 'Bạn đã học một năm rồi, chẳng lẽ cứ thế bỏ cuộc sao? Chẳng phải bạn nói muốn sang Trung Quốc làm việc à? Chỉ cần mỗi ngày kiên trì học một chút, bạn nhất định sẽ học tốt.',
+      tip: '难道 + câu phủ định + 吗 = khẳng định mạnh: 难道你不想去吗？ (= chắc chắn bạn muốn đi).'
     },
     {
-      situation: 'Cả lớp bàn về câu "không ai tùy tiện mà thành công".',
-      q_zh: '你同意“没有人随随便便就能成功”这句话吗？',
-      q_py: 'Nǐ tóngyì "méiyǒu rén suí suíbiàn biàn jiù néng chénggōng" zhè jù huà ma?',
-      q_vn: 'Bạn có đồng ý câu "không ai tùy tiện là thành công được" không?',
-      grammar: { label: '通过…… + 才能…… (nhờ vào… mới có thể…)', any: ['通过', '才能'] },
+      situation: 'Một người bạn mới hỏi cách bạn học tiếng Trung.',
+      q_zh: '你是通过什么方法学汉语的？',
+      q_py: 'Nǐ shì tōngguò shénme fāngfǎ xué Hànyǔ de?',
+      q_vn: 'Bạn học tiếng Trung bằng phương pháp nào?',
+      grammar: { label: '通过 / 经过', any: ['通过', '经过'] },
       need: [
-        { label: 'Nêu quan điểm', any: ['同意', '不同意', '我觉得'] },
-        { label: 'Dùng 通过 hoặc 努力 nêu lý do', any: ['通过', '努力', '坚持', '经历', '过程'] }
+        { label: 'Dùng 通过 hoặc 经过', any: ['通过', '经过'] },
+        { label: 'Nói phương pháp cụ thể', any: ['电视', '电影', '朋友', '网上', '书', '老师'] }
       ],
-      bonus: { label: 'Nêu ví dụ người nổi tiếng hoặc bản thân', any: ['作家', '爱迪生', '同学', '我自己', '比如'] },
-      vocab: ['随便', '通过', '坚持'],
-      minLen: 22,
-      sample: '我同意。任何成功都要通过努力才能得到，那些看起来很随便就成功的人，其实在我们看不见的地方坚持了很久。',
-      sample_py: 'Wǒ tóngyì. Rènhé chénggōng dōu yào tōngguò nǔlì cái néng děi dào, nàxiē kàn qǐlai hěn suíbiàn jiù chénggōng de rén, qíshí zài wǒmen kàn bú jiàn de dìfang jiānchí le hěn jiǔ.',
-      sample_vn: 'Tôi đồng ý. Mọi thành công đều phải nhờ nỗ lực mới có được, những người trông có vẻ dễ dàng thành công thật ra đã kiên trì rất lâu ở chỗ ta không thấy.',
-      tip: '通过 + phương thức + 才能…: 通过练习才能提高。'
+      bonus: { label: 'Nói kết quả bằng 结果 / 现在', any: ['结果', '现在'] },
+      vocab: ['通过', '经过', '许多'],
+      minLen: 20,
+      sample: '我主要是通过看中国电视和中文电影学汉语的。经过两年的学习，我现在能听懂许多中国电视节目了。',
+      sample_py: 'Wǒ zhǔyào shì tōngguò kàn Zhōngguó diànshì hé Zhōngwén diànyǐng xué Hànyǔ de. Jīngguò liǎng nián de xuéxí, wǒ xiànzài néng tīng dǒng xǔduō Zhōngguó diànshì jiémù le.',
+      sample_vn: 'Tôi chủ yếu học tiếng Trung qua xem truyền hình Trung Quốc và phim tiếng Trung. Trải qua hai năm học, giờ tôi đã nghe hiểu được nhiều chương trình truyền hình Trung Quốc.',
+      tip: '通过 + cách thức (通过看电视); 经过 + thời gian / quá trình (经过两年的学习).'
     },
     {
-      situation: 'Bạn phải chọn giữa công việc ổn định và ước mơ của mình.',
-      q_zh: '如果为了理想需要放弃一些东西，你会怎么选择？',
-      q_py: 'Rúguǒ wèile lǐxiǎng xūyào fàngqì yì xiē dōngxi, nǐ huì zěnme xuǎnzé?',
-      q_vn: 'Nếu vì lý tưởng phải từ bỏ vài thứ, bạn sẽ chọn thế nào?',
-      grammar: { label: '为了……，放弃……也是值得的', any: ['为了', '值得'] },
+      situation: 'Bạn kể về một lần thất bại và điều bạn học được.',
+      q_zh: '你有没有失败的经历？结果怎么样？',
+      q_py: 'Nǐ yǒu méiyǒu shībài de jīnglì? Jiéguǒ zěnmeyàng?',
+      q_vn: 'Bạn có trải nghiệm thất bại nào không? Kết quả ra sao?',
+      grammar: { label: '结果 (rốt cuộc, kết quả là…)', any: ['结果'] },
       need: [
-        { label: 'Nói lựa chọn của bạn', any: ['理想', '放弃', '选择', '坚持'] },
-        { label: 'Nêu lý do', any: ['值得', '喜欢', '将来', '后悔', '勇敢'] }
+        { label: 'Dùng 结果', any: ['结果'] },
+        { label: 'Kể việc thất bại', any: ['失败', '没通过', '没有通过'] }
       ],
-      bonus: { label: 'Nói điều bạn sẽ không từ bỏ', any: ['家人', '健康', '感情', '不会放弃'] },
-      vocab: ['理想', '放弃', '勇敢'],
-      minLen: 22,
-      sample: '我觉得为了自己的理想，放弃一些暂时的东西也是值得的。年轻的时候应该勇敢一点儿，不过健康和家人我不会放弃。',
-      sample_py: 'Wǒ juéde wèile zìjǐ de lǐxiǎng, fàngqì yì xiē zànshí de dōngxi yě shì zhídé de. Niánqīng de shíhou yīnggāi yǒnggǎn yìdiǎnr, búguò jiànkāng hé jiārén wǒ bú huì fàngqì.',
-      sample_vn: 'Tôi thấy vì lý tưởng của mình, từ bỏ vài thứ tạm thời cũng đáng. Khi còn trẻ nên dũng cảm một chút, nhưng sức khỏe và gia đình thì tôi sẽ không từ bỏ.',
-      tip: '值得 + động từ hoặc 值得 + 小句: 这本书值得看。'
+      bonus: { label: 'Nói bài học bằng 总结 / 经验', any: ['总结', '经验'] },
+      vocab: ['失败', '经历', '结果', '总结'],
+      minLen: 20,
+      sample: '有。去年我参加了一个比赛，准备得不太认真，结果失败了。后来我总结了经验，今年再参加的时候，成绩好多了。',
+      sample_py: 'Yǒu. Qùnián wǒ cānjiā le yí ge bǐsài, zhǔnbèi de bú tài rènzhēn, jiéguǒ shībài le. Hòulái wǒ zǒngjié le jīngyàn, jīnnián zài cānjiā de shíhou, chéngjì hǎo duō le.',
+      sample_vn: 'Có. Năm ngoái tôi tham gia một cuộc thi, chuẩn bị không kỹ lắm, kết quả là thất bại. Sau đó tôi rút kinh nghiệm, năm nay thi lại thì thành tích tốt hơn nhiều.',
+      tip: '结果 nối nguyên nhân → kết cục (thường ngoài ý muốn): 没复习，结果没通过.'
     },
     {
-      situation: 'Bạn vừa thi đấu xong nhưng không đạt giải.',
-      q_zh: '你觉得应该关心结果还是关心过程？为什么？',
-      q_py: 'Nǐ juéde yīnggāi guānxīn jiéguǒ háishi guānxīn guòchéng? Wèishénme?',
-      q_vn: 'Bạn thấy nên quan tâm kết quả hay quá trình? Vì sao?',
-      grammar: { label: '把注意力放在……上 / 结果 · 过程', any: ['过程', '结果'] },
+      situation: 'Bạn chia sẻ về một việc bạn kiên trì làm từ lâu.',
+      q_zh: '有没有一件事你坚持了很长时间？',
+      q_py: 'Yǒu méiyǒu yí jiàn shì nǐ jiānchí le hěn cháng shíjiān?',
+      q_vn: 'Có việc gì bạn đã kiên trì làm trong thời gian dài không?',
+      grammar: { label: '可是 (nhưng)', any: ['可是'] },
       need: [
-        { label: 'Chọn kết quả hay quá trình', any: ['过程', '结果'] },
-        { label: 'Nêu lý do', any: ['快乐', '经验', '总结', '失败', '学到', '成长'] }
+        { label: 'Dùng 可是 nói khó khăn', any: ['可是'] },
+        { label: 'Dùng 坚持', any: ['坚持'] }
       ],
-      bonus: { label: 'Dùng 至少 hoặc 总结 nói điều thu được', any: ['至少', '总结'] },
-      vocab: ['结果', '过程', '总结', '至少'],
-      minLen: 22,
-      sample: '我觉得应该把注意力放在过程上。就算结果是失败，认真总结以后，至少也能积累经验，下次做得更好。',
-      sample_py: 'Wǒ juéde yīnggāi bǎ zhùyì lì fàng zài guòchéng shàng. Jiù suàn jiéguǒ shì shībài, rènzhēn zǒngjié yǐhòu, zhìshǎo yě néng jīlěi jīngyàn, xià cì zuò děi gèng hǎo.',
-      sample_vn: 'Tôi thấy nên đặt sự chú ý vào quá trình. Cho dù kết quả là thất bại, sau khi tổng kết nghiêm túc, ít nhất cũng tích lũy được kinh nghiệm, lần sau làm tốt hơn.',
-      tip: '至少 = ít nhất: 至少要练习一个小时。'
+      bonus: { label: 'Dùng 轻松 / 至少', any: ['轻松', '至少'] },
+      vocab: ['坚持', '可是', '至少', '轻松'],
+      minLen: 20,
+      sample: '我坚持每天早上走路已经三年了。开始的时候很累，好几次都想放弃，可是我还是坚持下来了。现在我每天至少走一个小时，觉得很轻松。',
+      sample_py: 'Wǒ jiānchí měi tiān zǎoshang zǒu lù yǐjīng sān nián le. Kāishǐ de shíhou hěn lèi, hǎo jǐ cì dōu xiǎng fàngqì, kěshì wǒ háishi jiānchí xiàlái le. Xiànzài wǒ měi tiān zhìshǎo zǒu yí ge xiǎoshí, juéde hěn qīngsōng.',
+      sample_vn: 'Tôi kiên trì đi bộ mỗi sáng đã ba năm. Lúc đầu rất mệt, mấy lần muốn bỏ, nhưng tôi vẫn kiên trì được. Bây giờ mỗi ngày tôi đi ít nhất một tiếng, thấy rất nhẹ nhàng.',
+      tip: '可是 = nhưng (khẩu ngữ); 坚持下来 = kiên trì được đến cùng.'
     },
     {
-      situation: 'Bạn kể một lần suýt bỏ cuộc nhưng đã cố đi tiếp.',
-      q_zh: '你有没有遇到过困难想放弃，但最后坚持下来的经历？',
-      q_py: 'Nǐ yǒu méiyǒu yùdào guo kùnnan xiǎng fàngqì, dàn zuìhòu jiānchí xià lái de jīnglì?',
-      q_vn: 'Bạn từng gặp khó khăn muốn bỏ cuộc nhưng cuối cùng vẫn kiên trì chưa?',
-      grammar: { label: '虽然……，可是……，最后……', any: ['虽然', '可是', '最后'] },
+      situation: 'Bạn kể về một sự kiện rất đông người mà bạn từng tham gia.',
+      q_zh: '你参加过人很多的活动吗？有多少人？',
+      q_py: 'Nǐ cānjiā guo rén hěn duō de huódòng ma? Yǒu duōshao rén?',
+      q_vn: 'Bạn từng tham gia hoạt động nào rất đông người chưa? Có bao nhiêu người?',
+      grammar: { label: '上 + 百/千/万 (lên tới hàng…)', any: ['上百', '上千', '上万'] },
       need: [
-        { label: 'Kể khó khăn cụ thể', any: ['考试', '工作', '比赛', '学习', '困难', '当时'] },
-        { label: 'Nói kết quả', any: ['坚持', '成功', '通过', '取得', '完成'] }
+        { label: 'Dùng 上百 / 上千 / 上万', any: ['上百', '上千', '上万'] },
+        { label: 'Nói đó là hoạt động gì', any: ['比赛', '活动', '音乐会', '运动会', '聚会'] }
       ],
-      bonus: { label: 'Dùng 面对 hoặc 经历 nói cảm nhận', any: ['面对', '经历'] },
-      vocab: ['坚持', '当时', '经历'],
-      minLen: 22,
-      sample: '有。准备汉语考试的时候，我觉得太难了，当时真想放弃。可是我每天坚持背二十个词，最后通过了考试，这次经历让我更有信心。',
-      sample_py: 'Yǒu. Zhǔnbèi Hànyǔ kǎoshì de shíhou, wǒ juéde tài nán le, dāngshí zhēn xiǎng fàngqì. Kěshì wǒ měitiān jiānchí bèi èr shí ge cí, zuìhòu tōngguò le kǎoshì, zhè cì jīnglì ràng wǒ gèng yǒu xìnxīn.',
-      sample_vn: 'Có. Lúc ôn thi tiếng Hán, tôi thấy khó quá, khi đó thật sự muốn bỏ. Nhưng tôi kiên trì học 20 từ mỗi ngày, cuối cùng đã đỗ, trải nghiệm này khiến tôi tự tin hơn.',
-      tip: '当时 = lúc đó (trong quá khứ), khác 现在 và 那时候 mang nghĩa gần giống.'
+      bonus: { label: 'Dùng 当时 kể lại', any: ['当时'] },
+      vocab: ['上千', '国际', '当时'],
+      minLen: 20,
+      sample: '去年我去看了一次国际足球比赛，来看比赛的人有上万个。当时大家一起唱歌，我觉得特别热闹。',
+      sample_py: 'Qùnián wǒ qù kàn le yí cì guójì zúqiú bǐsài, lái kàn bǐsài de rén yǒu shàng wàn ge. Dāngshí dàjiā yìqǐ chàng gē, wǒ juéde tèbié rènao.',
+      sample_vn: 'Năm ngoái tôi đi xem một trận bóng đá quốc tế, người đến xem lên tới hàng vạn. Lúc đó mọi người cùng hát, tôi thấy cực kỳ náo nhiệt.',
+      tip: '上 + 百/千/万 nhấn mạnh số lượng nhiều: 上千人、上百篇.'
     }
   ]
 };
 
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Việt → Trung)
+// ══════════════════════════════════════════
 var translateData = [
-  {vi:'Sao lại mua nhiều bánh quy và sô cô la thế này? Chẳng lẽ bạn không giảm cân nữa à?',zh:'怎么又买了这么多饼干和巧克力？难道你不减肥了？',py:'Zěnme yòu mǎile zhème duō bǐnggān hé qiǎokèlì? Nándào nǐ bù jiǎn féi le?'},
-  {vi:'Muốn giảm cân thành công, chỉ có thể kiên trì, mới từ từ có hiệu quả.',zh:'要想减肥成功，只能坚持，才会慢慢有效果。',py:'Yào xiǎng jiǎn féi chénggōng, zhǐ néng jiānchí, cái huì mànman yǒu xiàoguǒ.'},
-  {vi:'Không có ai tùy tiện là có thể thành công được.',zh:'没有人随随便便就能成功的。',py:'Méiyǒu rén suísuíbiànbiàn jiù néng chénggōng de.'},
-  {vi:'Bất kỳ thành công nào cũng phải qua nỗ lực mới có thể đạt được.',zh:'任何成功都要通过努力才能得到。',py:'Rènhé chénggōng dōu yào tōngguò nǔlì cái néng dédào.'},
-  {vi:'Bây giờ cuối cùng đã chứng minh cho tất cả mọi người thấy lựa chọn của cô ấy là đúng đắn.',zh:'现在终于向所有人证明了她的选择是正确的。',py:'Xiànzài zhōngyú xiàng suǒyǒu rén zhèngmíngle tā de xuǎnzé shì zhèngquè de.'},
-  {vi:'Nếu bạn muốn làm việc gì, thì hãy dũng cảm làm đi, đừng lo lắng về kết quả.',zh:'如果你想做什么事情，那就勇敢地去做，不要担心结果。',py:'Rúguǒ nǐ xiǎng zuò shénme shìqing, nà jiù yǒnggǎn de qù zuò, búyào dānxīn jiéguǒ.'},
-  {vi:'Người đạt được thành công thường đều đã trải qua rất nhiều thất bại.',zh:'取得成功的人往往都经历过许多失败。',py:'Qǔdé chénggōng de rén wǎngwǎng dōu jīnglìguo xǔduō shībài.'},
-  {vi:'Khó khăn chỉ là tạm thời, sau cơn mưa trời lại sáng.',zh:'困难只是暂时的，阳光总在风雨后。',py:'Kùnnan zhǐ shì zànshí de, yángguāng zǒng zài fēngyǔ hòu.'},
+  {vi:'Chẳng lẽ bạn không biết anh ấy đã trở thành nhà văn rồi sao?', zh:'难道你不知道他已经成为作家了吗？', py:'Nándào nǐ bù zhīdào tā yǐjīng chéngwéi zuòjiā le ma?'},
+  {vi:'Mỗi tuần tôi chơi quần vợt ít nhất hai lần.', zh:'我每个星期至少打两次网球。', py:'Wǒ měi ge xīngqī zhìshǎo dǎ liǎng cì wǎngqiú.'},
+  {vi:'Căn nhà này tạm thời chưa có ai ở.', zh:'这个房子暂时没有人住。', py:'Zhège fángzi zànshí méiyǒu rén zhù.'},
+  {vi:'Lần đầu tiên tham gia cuộc thi quốc tế cô ấy đã thắng.', zh:'她第一次参加国际比赛就赢了。', py:'Tā dì-yī cì cānjiā guójì bǐsài jiù yíng le.'},
+  {vi:'Bạn phải chọn phương pháp đúng thì mới có hiệu quả.', zh:'你得选择正确的方法，才会有效果。', py:'Nǐ děi xuǎnzé zhèngquè de fāngfǎ, cái huì yǒu xiàoguǒ.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Tôi vốn đã định bỏ cuộc rồi, nhưng lời bạn vừa nói khiến tôi thay đổi ý định.',zh:'我本来已经打算放弃了，但是你刚才的话让我改变了主意。',py:'Wǒ běnlái yǐjīng dǎsuàn fàngqì le, dànshì nǐ gāngcái de huà ràng wǒ gǎibiànle zhǔyi.'},
-  {vi:'Mỗi lần xem bạn thi đấu, tôi cảm thấy bạn thắng rất nhẹ nhàng.',zh:'每次看你比赛，感觉你轻轻松松就赢了。',py:'Měi cì kàn nǐ bǐsài, gǎnjué nǐ qīngqīngsōngsōng jiù yíng le.'},
-  {vi:'Bất kể xuân hạ thu đông, tôi luyện bóng chưa từng nghỉ một ngày nào.',zh:'不管春夏秋冬，我练球从来没有休息过一天。',py:'Bùguǎn chūn xià qiū dōng, wǒ liàn qiú cónglái méiyǒu xiūxiguo yì tiān.'},
-  {vi:'Lúc đó bố mẹ và họ hàng của cô ấy đều không ủng hộ cô ấy.',zh:'当时她的父母和亲戚都不支持她。',py:'Dāngshí tā de fùmǔ hé qīnqi dōu bù zhīchí tā.'},
-  {vi:'Đôi khi từ bỏ là một lựa chọn khôn ngoan.',zh:'有时候放弃是一种聪明的选择。',py:'Yǒu shíhou fàngqì shì yì zhǒng cōngming de xuǎnzé.'},
-  {vi:'Chúng ta nên đặt sự chú ý vào quá trình làm việc.',zh:'我们应该把注意力放在做事情的过程上。',py:'Wǒmen yīnggāi bǎ zhùyìlì fàng zài zuò shìqing de guòchéng shang.'},
-  {vi:'Edison chính là sau khi tìm hàng nghìn loại vật liệu mới tìm được loại vật liệu có thể thắp sáng bóng đèn.',zh:'爱迪生就是在找了上千种材料后才找到了能点亮电灯的材料。',py:'Àidíshēng jiùshì zài zhǎole shàng qiān zhǒng cáiliào hòu cái zhǎodàole néng diǎnliàng diàndēng de cáiliào.'},
-  {vi:'Chỉ khi chúng ta dũng cảm đối mặt với khó khăn, mới có hy vọng đạt được thành công.',zh:'只有我们勇敢地面对困难，才能有希望取得成功。',py:'Zhǐyǒu wǒmen yǒnggǎn de miànduì kùnnan, cái néng yǒu xīwàng qǔdé chénggōng.'},
+  {vi:'Đói thì ăn tạm ít bánh quy đi, mẹ vẫn đang nấu cơm.', zh:'饿了就先吃点儿饼干吧，妈妈还在做饭呢。', py:'È le jiù xiān chī diǎnr bǐnggān ba, māma hái zài zuò fàn ne.'},
+  {vi:'Đối mặt với khó khăn, có người chọn bỏ cuộc, có người chọn kiên trì.', zh:'面对困难，有的人选择放弃，有的人选择坚持。', py:'Miànduì kùnnan, yǒude rén xuǎnzé fàngqì, yǒude rén xuǎnzé jiānchí.'},
+  {vi:'Quá trình này rất dài, nhưng rất thú vị.', zh:'这个过程很长，可是很有意思。', py:'Zhège guòchéng hěn cháng, kěshì hěn yǒu yìsi.'},
+  {vi:'Anh ấy đã trải qua nhiều thất bại, cuối cùng cũng thành công.', zh:'他经历了许多失败，最后终于成功了。', py:'Tā jīnglì le xǔduō shībài, zuìhòu zhōngyú chénggōng le.'},
 ];
 
 var listenData = {

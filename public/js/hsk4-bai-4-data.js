@@ -3496,46 +3496,52 @@ var dialogData = [
    ]},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
 var matchData = [
-  {left:'以为',right:'我以为……没想到……'},
-  {left:'完全',right:'完全适应'},
-  {left:'赚',right:'赚钱'},
-  {left:'原来',right:'原来的计划'},
-  {left:'提前',right:'提前完成'},
-  {left:'保证',right:'周末保证做完'},
-  {left:'积累',right:'积累经验'},
-  {left:'并',right:'并不容易'},
-  {left:'按照',right:'按照计划'},
-  {left:'责任',right:'责任心'},
+  {left:'我们想对大学生的生活做一个',right:'调查'},
+  {left:'经理今天去跟那家公司谈',right:'生意'},
+  {left:'工作三年，他积累了很多',right:'经验'},
+  {left:'这个月他工作特别努力，拿到了三千块',right:'奖金'},
+  {left:'孩子的房间里东西放得',right:'很乱'},
+  {left:'学习汉语要找到适合自己的',right:'方法'},
+  {left:'照顾好家人是每个人的',right:'责任'},
+  {left:'他每天晚上都写好明天的',right:'计划'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ
+// ══════════════════════════════════════════
 var fillData = [
-  {pre:'别提了！我',blank:'',post:'新工作比以前的好，没想到还没有以前好呢。',hint:'yǐwéi',ans:'以为',exp:'以为 = tưởng (nhưng thực tế sai). Vế sau 没想到还没有以前好 cho thấy suy nghĩ ban đầu sai.'},
-  {pre:'完全',blank:'',post:'一个新的工作需要一年时间。',hint:'shìyìng',ans:'适应'},
-  {pre:'你才到新公司，不要太急着',blank:'',post:'，多学习才是最重要的。',hint:'zhuàn qián',ans:'赚钱'},
-  {pre:'按',blank:'',post:'的计划应该是两周，但是我们可以提前完成。',hint:'yuánlái',ans:'原来'},
-  {pre:'我们可以',blank:'',post:'完成，周末保证做完。',hint:'tíqián',ans:'提前'},
-  {pre:'您放心，我',blank:'',post:'明天9点前给您。',hint:'bǎozhèng',ans:'保证'},
-  {pre:'谢谢你的',blank:'',post:'，我差点儿忘记了。',hint:'tíxǐng',ans:'提醒'},
-  {pre:'这样我就不会手忙脚',blank:'',post:'了。',hint:'luàn',ans:'乱'},
-  {pre:'我们和上次那个公司的',blank:'',post:'终于谈成了。',hint:'shēngyi',ans:'生意'},
-  {pre:'我原来以为做生意很简单，后来才发现其实',blank:'',post:'不容易。',hint:'bìng',ans:'并',exp:'并 + 不/没 = hoàn toàn không (phủ nhận điều người ta tưởng): 其实并不容易.'},
-  {pre:'重要的是要多',blank:'',post:'经验。',hint:'jīlěi',ans:'积累'},
-  {pre:'我相信经过我们大家的努力，公司的生意会越做越大，',blank:'',post:'都会好的。',hint:'yíqiè',ans:'一切'},
-  {pre:'我们今年的工作都已经',blank:'',post:'计划完成了。',hint:'ànzhào',ans:'按照',exp:'按照 + kế hoạch/quy định = theo, dựa theo: 按照计划完成.'},
-  {pre:'公司决定这个月给每人多发三千元',blank:'',post:'。',hint:'jiǎngjīn',ans:'奖金'},
-  {pre:'如果对工作没有',blank:'',post:'心，也很难把工作做好。',hint:'zérèn',ans:'责任'},
+  {pre:'我',blank:'以为',post:'今天是星期六，到了公司才发现今天是星期五。',hint:'(cứ tưởng)',ans:'以为',exp:'以为 = cứ tưởng (nhưng thực tế không phải); 认为 chỉ nêu ý kiến, không hàm ý là sai.'},
+  {pre:'A：你怎么来了？我',blank:'以为',post:'你今天不来了呢。 B：我的会提前结束了，就过来看看。',hint:'(tưởng là)',ans:'以为',exp:'Người nói tưởng bạn không đến, nhưng bạn lại đến → dùng 以为; nếu chỉ đoán thì dùng 觉得.'},
+  {pre:'A：小王怎么没来？ B：你还不知道吗？他感冒了，在家休息呢。 A：',blank:'原来',post:'是这样，我还以为他不想来呢。',hint:'(hóa ra)',ans:'原来',exp:'原来 = hóa ra (vừa biết ra sự thật); 本来 (bài 3) không có nghĩa "hóa ra".'},
+  {pre:'十年没回来了，他还住在',blank:'原来',post:'的地方，一点儿也没变。',hint:'(trước đây, cũ)',ans:'原来',exp:'原来的 + danh từ = (cái) lúc trước, ban đầu: 原来的地方; 本来 hầu như không dùng làm định ngữ như vậy.'},
+  {pre:'大家都说这个电影好看，我看了以后觉得',blank:'并',post:'不怎么样。',hint:'(hoàn toàn (không))',ans:'并',exp:'并 + 不/没 nhấn mạnh phủ định, bác bỏ điều người khác nói hoặc tưởng.'},
+  {pre:'A：听说你要去国外工作了？ B：谁说的？我',blank:'并',post:'没有这个打算。',hint:'(hề (không))',ans:'并',exp:'并没有 = hoàn toàn không có (phủ nhận tin đồn); 并 phải đứng ngay trước 不/没.'},
+  {pre:'请大家',blank:'按照',post:'老师的要求写作业。',hint:'(theo, dựa theo)',ans:'按照',exp:'按照 + yêu cầu / kế hoạch / quy định + động từ; không nói 跟老师的要求写.'},
+  {pre:'他工作太忙了，有时候',blank:'甚至',post:'一天只睡四个小时。',hint:'(thậm chí)',ans:'甚至',exp:'甚至 đưa ra ví dụ "nặng" nhất để nhấn mạnh mức độ; đứng trước động từ hoặc cụm số lượng, hay đi với 也/都.'},
+  {pre:'A：你弟弟喜欢运动吗？ B：特别喜欢，下雨天他',blank:'甚至',post:'也要出去跑步。',hint:'(thậm chí)',ans:'甚至',exp:'甚至 + 也/都: ngay cả trong trường hợp khó nhất (trời mưa) vẫn làm — nói lên mức độ thích.'},
+  {pre:'最后一班车已经走了，我们',blank:'不得不',post:'坐出租车回家。',hint:'(buộc phải)',ans:'不得不',exp:'不得不 + V = không muốn nhưng không còn cách nào khác; nghĩa mạnh hơn 只能.'},
+  {pre:'A：听说你找到工作了？ B：是啊，这个好',blank:'消息',post:'我还没告诉别人呢。',hint:'(tin, tin tức)',ans:'消息',exp:'消息 = tin (về một việc cụ thể): 好消息 / 坏消息; 新闻 là tin thời sự trên báo, TV.'},
+  {pre:'医生说这个药要',blank:'按时',post:'吃，一天三次。',hint:'(đúng giờ (theo lịch))',ans:'按时',exp:'按时 = đúng thời gian đã quy định (uống thuốc, nộp bài); 准时 (bài 3) nhấn mạnh có mặt đúng giờ hẹn.'},
+  {pre:'他很少',blank:'提',post:'到自己小时候的事。',hint:'(nhắc (đến))',ans:'提',exp:'提到 + chuyện = nhắc đến; 别提了 = đừng nhắc nữa (khi chuyện không vui).'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
 var sortData = [
-  {words:['别提了','，','我','以为','新','工作','比','以前','的','好'],ans:'别提了，我以为新工作比以前的好',audio:'别提了，我以为新工作比以前的好'},
-  {words:['按','原来','的','计划','应该','是','两周'],ans:'按原来的计划应该是两周',audio:'按原来的计划应该是两周'},
-  {words:['我们','可以','提前','完成'],ans:'我们可以提前完成',audio:'我们可以提前完成'},
-  {words:['我们','和','上次','那个','公司','的','生意','终于','谈成','了'],ans:'我们和上次那个公司的生意终于谈成了',audio:'我们和上次那个公司的生意终于谈成了'},
-  {words:['重要','的','是','要','多','积累','经验'],ans:'重要的是要多积累经验',audio:'重要的是要多积累经验'},
-  {words:['我们','成功','地','解决','了','问题'],ans:'我们成功地解决了问题',audio:'我们成功地解决了问题'},
-  {words:['不要','太','急着','赚钱'],ans:'不要太急着赚钱',audio:'不要太急着赚钱'},
-  {words:['如果','对','工作','没有','责任心','也','很难','把','工作','做好'],ans:'如果对工作没有责任心也很难把工作做好',audio:'如果对工作没有责任心也很难把工作做好'},
+  {words:['我','完全','不','知道','他','在','说','什么','。'],ans:'我完全不知道他在说什么。',audio:'我完全不知道他在说什么。'},
+  {words:['他','一边','上学','一边','工作','赚钱','。'],ans:'他一边上学一边工作赚钱。',audio:'他一边上学一边工作赚钱。'},
+  {words:['妈妈','每天','都','提醒','我','早点儿','睡觉','。'],ans:'妈妈每天都提醒我早点儿睡觉。',audio:'妈妈每天都提醒我早点儿睡觉。'},
+  {words:['我','保证','以后','再','也','不','迟到','了','。'],ans:'我保证以后再也不迟到了。',audio:'我保证以后再也不迟到了。'},
+  {words:['如果','一切','顺利','，','我们','下个月','就','能','搬家','。'],ans:'如果一切顺利，我们下个月就能搬家。',audio:'如果一切顺利，我们下个月就能搬家。'},
+  {words:['我们','要','感谢','那些','帮助','过','我们','的','人','。'],ans:'我们要感谢那些帮助过我们的人。',audio:'我们要感谢那些帮助过我们的人。'},
+  {words:['读书','可以','让','我们','学到','很多','知识','。'],ans:'读书可以让我们学到很多知识。',audio:'读书可以让我们学到很多知识。'},
+  {words:['他','第一份','工作','的','工资','都','给','了','妈妈','。'],ans:'他第一份工作的工资都给了妈妈。',audio:'他第一份工作的工资都给了妈妈。'},
+  {words:['经过','一年','的','努力','，','他','终于','成功','了','。'],ans:'经过一年的努力，他终于成功了。',audio:'经过一年的努力，他终于成功了。'},
 ];
 
 var errorFixMode = 'wordchoice';
@@ -3553,141 +3559,144 @@ var errorFixData = [
    opts:['完全','按时','不得不','责任'],ans:2,
    exp:'不得不 (bắt buộc phải) diễn tả việc không còn lựa chọn khác. Các từ còn lại không mang nghĩa "bắt buộc".'},
   {wrong:'两个人在一起生活，都要对家有____感。',
-   opts:['顺利','完全','按时','责任'],ans:3,
+   opts:['顺利','完全','不得不','责任'],ans:3,
    exp:'责任 (trách nhiệm) đi với 感 tạo thành 责任感 = cảm giác trách nhiệm. Các từ còn lại không kết hợp được với 感.'},
   {wrong:'希望我们的工作能让您满意。____都安排得很好。',
    opts:['一切','保证','积累','提前'],ans:0,
    exp:'一切 (tất cả, mọi thứ) làm chủ ngữ cho "đều được sắp xếp tốt": 一切都安排得很好. Các từ còn lại không phải đại từ chỉ toàn bộ.'},
   {wrong:'这份调查明天上午交，你写好了吗？还差一点儿，您放心，我____明天9点前给您。',
-   opts:['提前','一切','积累','保证'],ans:3,
+   opts:['提前','一切','提醒','保证'],ans:3,
    exp:'保证 (cam đoan) đi với mệnh đề cam kết thời gian: 我保证……给您. Các từ còn lại không mang nghĩa cam kết.'},
   {wrong:'今天下午的会议____一个小时，改在两点开。',
-   opts:['保证','一切','提前','积累'],ans:2,
+   opts:['保证','提醒','提前','积累'],ans:2,
    exp:'提前 (làm sớm hơn) đi với số lượng thời gian: 提前一个小时 = sớm hơn một tiếng. Các từ còn lại không phù hợp nghĩa "dời sớm".'},
   {wrong:'听说你大学二年级的时候就开始在这个公司工作了。是的，这让我____了很多工作经验。',
-   opts:['提前','保证','积累','一切'],ans:2,
+   opts:['提前','提醒','积累','一切'],ans:2,
    exp:'积累 (tích lũy) đi với 经验: 积累经验. Các từ còn lại không kết hợp được với "kinh nghiệm".'},
   {wrong:'今天是王红的生日，记得给她打个电话。谢谢你的____，我差点儿忘记了。',
    opts:['积累','一切','保证','提醒'],ans:3,
    exp:'提醒 (nhắc nhở) phù hợp với ngữ cảnh "suýt quên": 谢谢你的提醒. Các từ còn lại không mang nghĩa nhắc nhở.'},
 ];
 
+// ══════════════════════════════════════════
+// LUYỆN NÓI
+// ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 4. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu hỏi là một tình huống thật, nói về chính bạn bằng từ và mẫu câu của Bài 4. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Một bạn mới ra trường hỏi bạn về chuyện lương bổng.',
-      q_zh: '你觉得刚开始工作的时候，应该太着急赚钱吗？为什么？',
-      q_py: 'Nǐ juéde gāng kāishǐ gōngzuò de shíhou, yīnggāi tài zháojí zhuàn qián ma? Wèishénme?',
-      q_vn: 'Bạn thấy lúc mới đi làm có nên quá nóng vội kiếm tiền không? Vì sao?',
-      grammar: { label: '……才是最重要的', any: ['才是', '最重要'] },
+      situation: 'Bạn bè hỏi về quãng thời gian bận rộn nhất của bạn.',
+      q_zh: '你最忙的时候，每天是怎么过的？',
+      q_py: 'Nǐ zuì máng de shíhou, měi tiān shì zěnme guò de?',
+      q_vn: 'Lúc bận nhất, mỗi ngày của bạn trôi qua thế nào?',
+      grammar: { label: '甚至 (thậm chí)', any: ['甚至'] },
       need: [
-        { label: 'Nêu quan điểm', any: ['应该', '不应该', '我觉得', '我认为'] },
-        { label: 'Nói điều quan trọng hơn', any: ['经验', '积累', '知识', '能力', '学'] }
+        { label: 'Dùng 甚至 nói mức độ', any: ['甚至'] },
+        { label: 'Kể việc bạn bận', any: ['加班', '工作', '学习', '考试', '作业'] }
       ],
-      bonus: { label: 'Nhắc đến lương thưởng bằng 工资 / 奖金', any: ['工资', '奖金', '赚'] },
-      vocab: ['赚', '积累', '经验'],
-      minLen: 22,
-      sample: '我觉得不应该。刚开始工作的时候，多积累经验才是最重要的，工资和奖金可以慢慢来。',
-      sample_py: 'Wǒ juéde bú yīnggāi. Gāng kāishǐ gōngzuò de shíhou, duō jīlěi jīngyàn cái shì zuì zhòngyào de, gōngzī hé jiǎngjīn kěyǐ mànmàn lái.',
-      sample_vn: 'Tôi thấy không nên. Lúc mới đi làm, tích lũy kinh nghiệm mới là quan trọng nhất, lương thưởng có thể từ từ.',
-      tip: '……才是最重要的 nhấn mạnh trọng tâm: 健康才是最重要的。'
+      bonus: { label: 'Dùng 不得不', any: ['不得不'] },
+      vocab: ['甚至', '不得不', '加班'],
+      minLen: 20,
+      sample: '上个月是我最忙的时候，每天都要加班，有时候甚至晚上十点才吃饭。周末我也不得不去公司。',
+      sample_py: 'Shàng ge yuè shì wǒ zuì máng de shíhou, měi tiān dōu yào jiābān, yǒu shíhou shènzhì wǎnshang shí diǎn cái chī fàn. Zhōumò wǒ yě bùdébù qù gōngsī.',
+      sample_vn: 'Tháng trước là lúc tôi bận nhất, ngày nào cũng phải tăng ca, có lúc thậm chí 10 giờ tối mới được ăn cơm. Cuối tuần tôi cũng buộc phải đến công ty.',
+      tip: '甚至 đứng trước động từ hoặc cụm thời gian: 甚至晚上十点才吃饭 / 甚至周末都……'
     },
     {
-      situation: 'Bạn kể một việc tưởng dễ mà hóa ra rất khó.',
-      q_zh: '你有没有以为一件事很简单，后来发现并不容易的经历？',
-      q_py: 'Nǐ yǒu méiyǒu yǐwéi yí jiàn shì hěn jiǎndān, hòulái fāxiàn bìng bù róngyì de jīnglì?',
-      q_vn: 'Bạn từng nghĩ một việc rất đơn giản, sau mới thấy không hề dễ chưa?',
-      grammar: { label: '以为……，后来才发现并不……', any: ['以为', '并'] },
+      situation: 'Bạn kể về một người mà sau này bạn mới hiểu đúng về họ.',
+      q_zh: '有没有一个人，后来你发现他跟你想的不一样？',
+      q_py: 'Yǒu méiyǒu yí ge rén, hòulái nǐ fāxiàn tā gēn nǐ xiǎng de bù yíyàng?',
+      q_vn: 'Có ai mà sau này bạn mới thấy họ khác với điều bạn nghĩ không?',
+      grammar: { label: '原来 (hóa ra)', any: ['原来'] },
+      need: [
+        { label: 'Dùng 原来 nói sự thật bạn phát hiện', any: ['原来'] },
+        { label: 'Nói điều bạn nghĩ lúc đầu', any: ['以为', '觉得', '开始'] }
+      ],
+      bonus: { label: 'Dùng 交流 (bài 2) hoặc 同事', any: ['交流', '同事'] },
+      vocab: ['原来', '以为', '交流'],
+      minLen: 22,
+      sample: '我们公司有一个同事平时不太说话，我以为他不喜欢跟人交流。后来我才知道，原来他刚来中国，汉语说得还不太好。',
+      sample_py: 'Wǒmen gōngsī yǒu yí ge tóngshì píngshí bú tài shuōhuà, wǒ yǐwéi tā bù xǐhuan gēn rén jiāoliú. Hòulái wǒ cái zhīdào, yuánlái tā gāng lái Zhōngguó, Hànyǔ shuō de hái bú tài hǎo.',
+      sample_vn: 'Công ty tôi có một đồng nghiệp ngày thường ít nói, tôi tưởng anh ấy không thích giao tiếp với mọi người. Sau này tôi mới biết, hóa ra anh ấy mới đến Trung Quốc, tiếng Trung còn chưa giỏi lắm.',
+      tip: '以为…… (tưởng) → 原来…… (hóa ra): cặp này hay đi cùng nhau.'
+    },
+    {
+      situation: 'Bạn kể về một việc người khác thấy dễ nhưng bạn thấy khó.',
+      q_zh: '有什么事别人觉得容易，你却觉得很难？',
+      q_py: 'Yǒu shénme shì biéren juéde róngyì, nǐ què juéde hěn nán?',
+      q_vn: 'Có việc gì người khác thấy dễ mà bạn lại thấy khó không?',
+      grammar: { label: '并不 / 并没有 (hoàn toàn không)', any: ['并'] },
+      need: [
+        { label: 'Dùng 并不 hoặc 并没有', any: ['并不', '并没'] },
+        { label: 'Nói việc đó là gì', any: ['开车', '做饭', '游泳', '唱歌', '说', '写'] }
+      ],
+      bonus: { label: 'Dùng 却 (bài 2)', any: ['却'] },
+      vocab: ['并', '却', '紧张'],
+      minLen: 20,
+      sample: '很多人觉得开车很容易，我却觉得并不简单。我已经学了半年，现在开车的时候还是很紧张。',
+      sample_py: 'Hěn duō rén juéde kāichē hěn róngyì, wǒ què juéde bìng bù jiǎndān. Wǒ yǐjīng xué le bàn nián, xiànzài kāichē de shíhou háishi hěn jǐnzhāng.',
+      sample_vn: 'Nhiều người thấy lái xe rất dễ, tôi lại thấy chẳng đơn giản chút nào. Tôi đã học nửa năm rồi, bây giờ lái xe vẫn còn rất hồi hộp.',
+      tip: '并 chỉ đứng trước 不/没: 并不简单 / 并没有…… (không nói 并简单).'
+    },
+    {
+      situation: 'Đồng nghiệp hỏi bí quyết sắp xếp công việc của bạn.',
+      q_zh: '你一般怎么安排一天的时间？',
+      q_py: 'Nǐ yìbān zěnme ānpái yì tiān de shíjiān?',
+      q_vn: 'Bạn thường sắp xếp thời gian trong ngày thế nào?',
+      grammar: { label: '按照 + 计划/要求 + V (theo…)', any: ['按照'] },
+      need: [
+        { label: 'Dùng 按照', any: ['按照'] },
+        { label: 'Nói cách lên kế hoạch', any: ['计划', '提前', '安排', '先'] }
+      ],
+      bonus: { label: 'Dùng 提前 hoặc 乱', any: ['提前', '乱'] },
+      vocab: ['按照', '计划', '提前', '乱'],
+      minLen: 22,
+      sample: '我每天早上都写一个计划，然后按照计划一件一件地做。重要的事情我会提前做完，这样就不会太乱。',
+      sample_py: 'Wǒ měi tiān zǎoshang dōu xiě yí ge jìhuà, ránhòu ànzhào jìhuà yí jiàn yí jiàn de zuò. Zhòngyào de shìqing wǒ huì tíqián zuò wán, zhèyàng jiù bú huì tài luàn.',
+      sample_vn: 'Sáng nào tôi cũng viết một kế hoạch, rồi làm từng việc theo kế hoạch. Việc quan trọng tôi sẽ làm xong trước, như vậy sẽ không bị rối.',
+      tip: '按照 đứng trước động từ chính: 按照计划做 / 按照要求写.'
+    },
+    {
+      situation: 'Một bạn sắp đi làm hỏi bạn: lương có phải quan trọng nhất không?',
+      q_zh: '找工作的时候，你觉得工资最重要吗？',
+      q_py: 'Zhǎo gōngzuò de shíhou, nǐ juéde gōngzī zuì zhòngyào ma?',
+      q_vn: 'Khi tìm việc, bạn thấy lương có phải quan trọng nhất không?',
+      grammar: { label: '以为 (cứ tưởng — nhưng thực tế không phải)', any: ['以为'] },
       need: [
         { label: 'Dùng 以为', any: ['以为'] },
-        { label: 'Dùng 并不 phủ định mạnh', any: ['并不', '并没'] }
+        { label: 'Nói điều quan trọng hơn', any: ['经验', '知识', '积累', '学习', '方法'] }
       ],
-      bonus: { label: 'Dùng 甚至 để nói thêm mức độ', any: ['甚至'] },
-      vocab: ['以为', '并', '甚至'],
+      bonus: { label: 'Dùng 积累 hoặc 知识', any: ['积累', '知识'] },
+      vocab: ['以为', '工资', '积累', '经验', '知识'],
       minLen: 22,
-      sample: '我以为学做饭很简单，后来才发现并不容易，刚开始的时候我甚至连米饭都做不好。',
-      sample_py: 'Wǒ yǐwéi xué zuòfàn hěn jiǎndān, hòulái cái fāxiàn bìng bù róngyì, gāng kāishǐ de shíhou wǒ shènzhì lián mǐfàn dōu zuò bù hǎo.',
-      sample_vn: 'Tôi tưởng học nấu ăn rất đơn giản, sau mới thấy chẳng dễ chút nào, lúc đầu tôi thậm chí nấu cơm cũng không xong.',
-      tip: '以为 = tưởng (nhưng thực tế không phải): 我以为今天是星期六。'
-    },
-    {
-      situation: 'Bạn có nhiều việc chồng lên nhau trong tuần này.',
-      q_zh: '为了不手忙脚乱，你会用什么办法安排自己的时间？',
-      q_py: 'Wèile bù shǒu máng jiǎo luàn, nǐ huì yòng shénme bànfǎ ānpái zìjǐ de shíjiān?',
-      q_vn: 'Để khỏi luống cuống, bạn dùng cách nào sắp xếp thời gian?',
-      grammar: { label: '按照 + 计划 + 做; 把……写在……上', any: ['按照', '把'] },
-      need: [
-        { label: 'Nói cách lên kế hoạch', any: ['计划', '写', '本子', '手机', '提醒', '安排'] },
-        { label: 'Dùng 按照 hoặc 提前', any: ['按照', '提前'] }
-      ],
-      bonus: { label: 'Nói việc quan trọng làm trước', any: ['重要', '先', '首先'] },
-      vocab: ['按照', '计划', '提醒', '提前'],
-      minLen: 22,
-      sample: '我会把每天要做的事情写在本子上，按照计划一件一件地做，重要的工作提前完成，手机也会提醒我。',
-      sample_py: 'Wǒ huì bǎ měitiān yào zuò de shìqing xiě zài běn zi shàng, ànzhào jìhuà yí jiàn yi jiàn de zuò, zhòngyào de gōngzuò tíqián wánchéng, shǒujī yě huì tíxǐng wǒ.',
-      sample_vn: 'Tôi ghi việc phải làm mỗi ngày vào sổ, làm từng việc theo kế hoạch, việc quan trọng thì hoàn thành sớm, điện thoại cũng nhắc tôi.',
-      tip: '按照 + kế hoạch/yêu cầu + động từ: 按照老师的要求做。'
-    },
-    {
-      situation: 'Công ty đang bình chọn nhân viên tiêu biểu.',
-      q_zh: '你觉得一个人对工作有责任心重要吗？为什么？',
-      q_py: 'Nǐ juéde yí ge rén duì gōngzuò yǒu zérèn xīn zhòngyào ma? Wèishénme?',
-      q_vn: 'Bạn thấy tinh thần trách nhiệm với công việc có quan trọng không? Vì sao?',
-      grammar: { label: '即使……，如果……，也……', any: ['即使', '如果'] },
-      need: [
-        { label: 'Nêu quan điểm', any: ['重要', '责任'] },
-        { label: 'Nêu lý do hoặc hậu quả', any: ['能力', '做好', '影响', '保证', '别人'] }
-      ],
-      bonus: { label: 'Dùng 甚至 nói hậu quả nặng hơn', any: ['甚至'] },
-      vocab: ['责任', '保证', '甚至'],
-      minLen: 22,
-      sample: '我觉得非常重要。一个人即使能力再高，如果没有责任心，也很难保证把工作做好，甚至会影响别人的工作。',
-      sample_py: 'Wǒ juéde fēicháng zhòngyào. Yí ge rén jíshǐ nénglì zài gāo, rúguǒ méiyǒu zérèn xīn, yě hěn nán bǎozhèng bǎ gōngzuò zuò hǎo, shènzhì huì yǐngxiǎng biérén de gōngzuò.',
-      sample_vn: 'Tôi thấy rất quan trọng. Một người dù năng lực cao đến mấy, nếu không có trách nhiệm thì cũng khó đảm bảo làm tốt công việc, thậm chí ảnh hưởng đến việc của người khác.',
-      tip: '甚至 nêu mức độ cao hơn ý vừa nói: 他忙得甚至忘了吃饭。'
-    },
-    {
-      situation: 'Bạn làm xong việc sớm hơn thời hạn sếp giao.',
-      q_zh: '如果你完成工作的时间比计划提前，你会怎么做？',
-      q_py: 'Rúguǒ nǐ wánchéng gōngzuò de shíjiān bǐ jìhuà tíqián, nǐ huì zěnme zuò?',
-      q_vn: 'Nếu bạn hoàn thành công việc sớm hơn kế hoạch, bạn sẽ làm gì?',
-      grammar: { label: '提前 + 完成; 保证 + chất lượng', any: ['提前', '保证'] },
-      need: [
-        { label: 'Nói việc làm tiếp theo', any: ['检查', '学', '知识', '帮', '同事', '休息'] },
-        { label: 'Dùng 提前 hoặc 按时', any: ['提前', '按时'] }
-      ],
-      bonus: { label: 'Nhắc đến chất lượng bằng 保证', any: ['保证'] },
-      vocab: ['提前', '保证', '知识'],
-      minLen: 22,
-      sample: '我会先检查一遍，保证质量没有问题。既然提前做完了，我就用多出来的时间积累专业知识，或者帮同事做一些事情。',
-      sample_py: 'Wǒ huì xiān jiǎnchá yí biàn, bǎozhèng zhìliàng méiyǒu wèntí. Jìrán tíqián zuò wán le, wǒ jiù yòng duō chū lái de shíjiān jīlěi zhuānyè zhīshi, huòzhě bāng tóngshì zuò yì xiē shìqing.',
-      sample_vn: 'Tôi sẽ kiểm tra lại một lượt, đảm bảo chất lượng không có vấn đề. Đã làm xong sớm thì tôi dùng thời gian dôi ra để tích lũy kiến thức chuyên môn hoặc giúp đồng nghiệp.',
-      tip: '提前 + động từ: 提前完成、提前到; 按时 = đúng hạn.'
+      sample: '我以前以为工资最重要，工作了两年以后才明白，刚开始的时候积累经验、学习知识更重要。',
+      sample_py: 'Wǒ yǐqián yǐwéi gōngzī zuì zhòngyào, gōngzuò le liǎng nián yǐhòu cái míngbai, gāng kāishǐ de shíhou jīlěi jīngyàn, xuéxí zhīshi gèng zhòngyào.',
+      sample_vn: 'Trước đây tôi cứ tưởng lương là quan trọng nhất, đi làm hai năm rồi mới hiểu, lúc mới bắt đầu thì tích lũy kinh nghiệm, học kiến thức quan trọng hơn.',
+      tip: '以为 thường kèm vế sau cho biết thực tế khác: 我以为……，后来才明白……'
     }
   ]
 };
 
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Việt → Trung)
+// ══════════════════════════════════════════
 var translateData = [
-  {vi:'Tôi cứ tưởng công việc mới tốt hơn công việc cũ, ai ngờ vẫn không bằng công việc cũ.',zh:'我以为新工作比以前的好，没想到还没有以前好呢。',py:'Wǒ yǐwéi xīn gōngzuò bǐ yǐqián de hǎo, méi xiǎngdào hái méiyǒu yǐqián hǎo ne.'},
-  {vi:'Theo kế hoạch ban đầu nên là hai tuần, nhưng chúng tôi có thể hoàn thành sớm hơn.',zh:'按原来的计划应该是两周，但是我们可以提前完成。',py:'Àn yuánlái de jìhuà yīnggāi shì liǎng zhōu, dànshì wǒmen kěyǐ tíqián wánchéng.'},
-  {vi:'Cách này thật hay! Như vậy tôi sẽ không còn luống cuống nữa.',zh:'这个办法真不错！这样我就不会手忙脚乱了。',py:'Zhège bànfǎ zhēn búcuò! Zhèyàng wǒ jiù bú huì shǒumáng-jiǎoluàn le.'},
-  {vi:'Tôi vốn cho rằng kinh doanh rất đơn giản, sau này mới phát hiện thực ra không hề dễ dàng.',zh:'我原来以为做生意很简单，后来才发现其实并不容易。',py:'Wǒ yuánlái yǐwéi zuò shēngyi hěn jiǎndān, hòulái cái fāxiàn qíshí bìng bù róngyì.'},
-  {vi:'Vạn sự khởi đầu nan, quan trọng là phải tích lũy nhiều kinh nghiệm.',zh:'万事开头难，重要的是要多积累经验。',py:'Wànshì kāitóu nán, zhòngyào de shì yào duō jīlěi jīngyàn.'},
-  {vi:'Vô cùng cảm ơn sự giúp đỡ của mọi người dành cho tôi!',zh:'非常感谢大家对我的帮助！',py:'Fēicháng gǎnxiè dàjiā duì wǒ de bāngzhù!'},
-  {vi:'Đừng quá nôn nóng kiếm tiền, đừng để trong mắt chỉ có tiền lương và tiền thưởng.',zh:'不要太急着赚钱，不要眼睛里只有工资和奖金。',py:'Búyào tài jízhe zhuàn qián, búyào yǎnjing li zhǐyǒu gōngzī hé jiǎngjīn.'},
-  {vi:'Một người dù năng lực có cao đến đâu, nếu không có trách nhiệm với công việc, cũng khó làm tốt công việc.',zh:'一个人即使能力再高，如果对工作没有责任心，也很难把工作做好。',py:'Yí ge rén jíshǐ nénglì zài gāo, rúguǒ duì gōngzuò méiyǒu zérènxīn, yě hěn nán bǎ gōngzuò zuòhǎo.'},
+  {vi:'Tôi cứ tưởng anh ấy là giáo viên, hóa ra anh ấy cũng là học sinh.', zh:'我以为他是老师，原来他也是学生。', py:'Wǒ yǐwéi tā shì lǎoshī, yuánlái tā yě shì xuésheng.'},
+  {vi:'Việc này không hề đơn giản như bạn nghĩ.', zh:'这件事并没有你想的那么简单。', py:'Zhè jiàn shì bìng méiyǒu nǐ xiǎng de nàme jiǎndān.'},
+  {vi:'Mọi thứ đều làm theo yêu cầu của khách hàng.', zh:'一切都按照顾客的要求做。', py:'Yíqiè dōu ànzhào gùkè de yāoqiú zuò.'},
+  {vi:'Dạo này anh ấy rất bận, thậm chí cuối tuần cũng phải tăng ca.', zh:'他最近很忙，甚至周末都要加班。', py:'Tā zuìjìn hěn máng, shènzhì zhōumò dōu yào jiābān.'},
+  {vi:'Để kiếm tiền, anh ấy buộc phải làm hai công việc.', zh:'为了赚钱，他不得不做两份工作。', py:'Wèile zhuàn qián, tā bùdébù zuò liǎng fèn gōngzuò.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Bản điều tra đó còn cần bao lâu nữa mới làm xong?',zh:'那份调查还要多长时间才能做完？',py:'Nà fèn diàochá hái yào duō cháng shíjiān cái néng zuòwán?'},
-  {vi:'Cuối tuần cam đoan làm xong.',zh:'周末保证做完。',py:'Zhōumò bǎozhèng zuòwán.'},
-  {vi:'Điều gì khiến bạn vui như vậy?',zh:'什么事让你这么高兴啊？',py:'Shénme shì ràng nǐ zhème gāoxìng a?'},
-  {vi:'Việc làm ăn giữa chúng tôi và công ty lần trước cuối cùng đã đàm phán thành công.',zh:'我们和上次那个公司的生意终于谈成了。',py:'Wǒmen hé shàng cì nàge gōngsī de shēngyi zhōngyú tánchéng le.'},
-  {vi:'Chúng tôi đã giải quyết vấn đề thành công, hoàn thành công việc thuận lợi.',zh:'我们成功地解决了问题，顺利地完成了工作。',py:'Wǒmen chénggōng de jiějuéle wèntí, shùnlì de wánchéngle gōngzuò.'},
-  {vi:'Công ty quyết định tháng này phát thêm cho mỗi người 3000 tệ tiền thưởng.',zh:'公司决定这个月给每人多发三千元奖金。',py:'Gōngsī juédìng zhège yuè gěi měi rén duō fā sānqiān yuán jiǎngjīn.'},
-  {vi:'Trong mấy năm đầu đi làm, quan trọng là làm phong phú kinh nghiệm làm việc của bản thân.',zh:'在工作的前几年，重要的是丰富自己的工作经验。',py:'Zài gōngzuò de qián jǐ nián, zhòngyào de shì fēngfù zìjǐ de gōngzuò jīngyàn.'},
-  {vi:'Chúng ta không thể không làm một số việc mà bản thân không thích.',zh:'我们不得不去做一些自己不喜欢的工作。',py:'Wǒmen bùdébù qù zuò yìxiē zìjǐ bù xǐhuan de gōngzuò.'},
+  {vi:'Học tiếng Trung, phương pháp quan trọng hơn thời gian.', zh:'学汉语，方法比时间更重要。', py:'Xué Hànyǔ, fāngfǎ bǐ shíjiān gèng zhòngyào.'},
+  {vi:'Cuộc khảo sát lần này hỏi tổng cộng năm trăm sinh viên.', zh:'这次调查一共问了五百个大学生。', py:'Zhè cì diàochá yígòng wèn le wǔbǎi ge dàxuéshēng.'},
+  {vi:'Anh ấy đến sân bay sớm nửa tiếng.', zh:'他提前半个小时到了机场。', py:'Tā tíqián bàn ge xiǎoshí dào le jīchǎng.'},
+  {vi:'Bạn tưởng kiếm tiền dễ thế à?', zh:'你以为赚钱那么容易吗？', py:'Nǐ yǐwéi zhuàn qián nàme róngyì ma?'},
 ];
 
 var listenData = {

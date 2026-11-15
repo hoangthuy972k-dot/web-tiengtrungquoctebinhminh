@@ -3329,46 +3329,53 @@ var dialogData = [
    ]},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
 var matchData = [
-  {left:'连',right:'连中文报纸都看得懂'},
-  {left:'来得及',right:'两个小时应该来得及'},
-  {left:'只好',right:'最后只好放弃了'},
-  {left:'否则',right:'否则会做的题也没时间做了'},
-  {left:'无论',right:'无论是杂志还是小说'},
-  {left:'增加',right:'增加知识'},
-  {left:'然而',right:'然而不能完全相信'},
-  {left:'养成',right:'养成阅读的习惯'},
-  {left:'同时',right:'同时还会丰富你的情感'},
-  {left:'精彩',right:'使生活更精彩'},
+  {left:'她在中国住了五年，汉语说得很',right:'流利'},
+  {left:'这本杂志的',right:'内容很丰富'},
+  {left:'从小养成',right:'早睡早起的习惯'},
+  {left:'这件事情比我们想的',right:'复杂得多'},
+  {left:'他是一位很',right:'著名的作家'},
+  {left:'客人来了，请他们先在',right:'客厅坐一会儿'},
+  {left:'学会了很多新的',right:'词语'},
+  {left:'多看书可以提高',right:'阅读能力'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ
+// ══════════════════════════════════════════
 var fillData = [
-  {pre:'你来中国才一年，汉语就说得这么',blank:'',post:'，真厉害！',hint:'liúlì',ans:'流利'},
-  {pre:'其实我的',blank:'',post:'不太好，很多句子说得都不太准确。',hint:'yǔfǎ',ans:'语法'},
-  {pre:'你太厉害了！',blank:'',post:'中文报纸都看得懂。',hint:'lián',ans:'连',exp:'连…都… = ngay cả… cũng…; nhấn mạnh trường hợp khó nhất: ngay cả báo tiếng Trung cũng đọc hiểu.'},
-  {pre:'这次',blank:'',post:'考试的题太多了，我没做完。',hint:'yuèdú',ans:'阅读'},
-  {pre:'两个小时的时间应该',blank:'',post:'吧？',hint:'láidejí',ans:'来得及',exp:'来得及 = kịp (còn đủ thời gian); phủ định là 来不及.'},
-  {pre:'我先做了比较难、比较',blank:'',post:'的题，结果花了太多时间。',hint:'fùzá',ans:'复杂'},
-  {pre:'时间来不及，最后',blank:'',post:'放弃了。',hint:'zhǐhǎo',ans:'只好',exp:'只好 = đành phải (không còn cách khác): không kịp giờ nên đành bỏ.'},
-  {pre:'实在想不出来该选哪个，就随便',blank:'',post:'了一个答案。',hint:'cāi',ans:'猜'},
-  {pre:'还得注意考试的方法，',blank:'',post:'，会做的题也没时间做了。',hint:'fǒuzé',ans:'否则',exp:'否则 = nếu không thì; nói hậu quả khi không làm điều ở vế trước.'},
-  {pre:'',blank:'',post:'是普通杂志，还是著名小说，只要打开它们，就会发现很多有意思的事情。',hint:'wúlùn',ans:'无论',exp:'无论…还是…，都… = bất kể… hay… đều…; ở đây vế sau dùng 只要…就….'},
-  {pre:'如果3分钟读一',blank:'',post:'书，半个小时就可以读10页。',hint:'yè',ans:'页',exp:'页 là lượng từ "trang": 读一页书.'},
-  {pre:'坚持阅读，除了能',blank:'',post:'知识外，还能帮助我减轻压力。',hint:'zēngjiā',ans:'增加'},
-  {pre:'',blank:'',post:'，你不能完全相信书本上的内容。',hint:'rán\'ér',ans:'然而',exp:'然而 = tuy nhiên (văn viết), mở đầu ý trái ngược với câu trước.'},
-  {pre:'"好读书"就是要',blank:'',post:'阅读的习惯。',hint:'yǎngchéng',ans:'养成'},
-  {pre:'它还会丰富你的情感，使你的生活更',blank:'',post:'。',hint:'jīngcǎi',ans:'精彩'},
+  {pre:'A：你平时自己做饭吗？ B：别提了，我',blank:'连',post:'米饭都不会做。',hint:'(ngay cả)',ans:'连',exp:'连 + điều dễ nhất/khó nhất + 都/也 + V: nhấn mạnh mức độ — đến cơm cũng không biết nấu thì món khác càng không.'},
+  {pre:'快点儿走吧，',blank:'否则',post:'要迟到了。',hint:'(nếu không thì)',ans:'否则',exp:'否则 đứng đầu vế sau, nêu hậu quả nếu không làm việc ở vế trước; nghĩa là “nếu không thì”, hay dùng khi khuyên hoặc nhắc nhở.'},
+  {pre:'A：明天的会几点开始？ B：九点。你最好早一点儿到，',blank:'否则',post:'经理会不高兴的。',hint:'(nếu không thì)',ans:'否则',exp:'Vế trước là lời khuyên (最好……), vế sau dùng 否则 nói hậu quả; không đặt 否则 ở đầu cả câu.'},
+  {pre:'',blank:'无论',post:'刮风还是下雨，他每天都骑自行车上班。',hint:'(bất kể)',ans:'无论',exp:'无论 A 还是 B，都……: bất kể A hay B đều…; vế sau bắt buộc có 都/也.'},
+  {pre:'A：这件衣服买红的还是黑的？ B：你长得漂亮，',blank:'无论',post:'穿什么颜色都好看。',hint:'(dù … đi nữa)',ans:'无论',exp:'无论 + từ nghi vấn (什么/哪儿/谁) + 都: nghĩa giống 不管, nhưng 无论 trang trọng hơn, 不管 hay dùng khi nói.'},
+  {pre:'他每天都很努力地复习，',blank:'然而',post:'这次考试的成绩还是不太好。',hint:'(tuy nhiên)',ans:'然而',exp:'然而 = tuy nhiên (văn viết), đứng đầu vế sau, nêu kết quả trái với mong đợi; khẩu ngữ hay dùng 可是/但是.'},
+  {pre:'跑步可以让身体更健康，',blank:'同时',post:'还能让人心情变好。',hint:'(đồng thời)',ans:'同时',exp:'同时 nối thêm một tác dụng/sự việc nữa, hay đi với 还/也: ……，同时还…….'},
+  {pre:'A：比赛七点开始，现在六点半，我们还',blank:'来得及',post:'吗？ B：别着急，坐出租车很快就到。',hint:'(kịp)',ans:'来得及',exp:'来得及 = còn kịp; phủ định là 来不及 (không kịp), không nói 不来得及.'},
+  {pre:'公共汽车已经开走了，我们',blank:'只好',post:'打车回家。',hint:'(đành phải)',ans:'只好',exp:'只好 + V = đành phải (vì không còn cách nào khác); đứng sau chủ ngữ, trước động từ.'},
+  {pre:'A：你',blank:'猜',post:'我给你买了什么礼物？ B：是不是一本书？',hint:'(đoán)',ans:'猜',exp:'猜 = đoán; 你猜……？ là cách mở đầu câu đố vui rất hay dùng khi nói.'},
+  {pre:'A：她才学了半年汉语，就能当翻译了。 B：真',blank:'厉害',post:'！',hint:'(giỏi, lợi hại)',ans:'厉害',exp:'真厉害！ = giỏi thật! dùng để khen; 疼得厉害 lại có nghĩa "đau dữ dội".'},
+  {pre:'这本小说有三百多',blank:'页',post:'，我一个星期就看完了。',hint:'(trang)',ans:'页',exp:'页 là lượng từ "trang": 三百多页, 一页书; đứng ngay sau số từ.'},
+  {pre:'他帮了我很大的忙，我想请他吃饭，',blank:'表示',post:'感谢。',hint:'(bày tỏ)',ans:'表示',exp:'表示 + 感谢/同意/欢迎 = bày tỏ thái độ/tình cảm bằng lời nói hoặc hành động.'},
+  {pre:'昨天的足球比赛非常',blank:'精彩',post:'，最后一分钟才进球。',hint:'(đặc sắc, hấp dẫn)',ans:'精彩',exp:'精彩 khen trận đấu/buổi biểu diễn/bài nói hấp dẫn; không dùng 精彩 để khen người hay đồ ăn.'},
+  {pre:'我们按照年龄的',blank:'顺序',post:'坐吧，年龄大的坐前面。',hint:'(thứ tự)',ans:'顺序',exp:'按照……的顺序 = theo thứ tự…; 顺序 là danh từ.'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
 var sortData = [
-  {words:['你','来','中国','才','一年','，','汉语','就','说','得','这么','流利'],ans:'你来中国才一年，汉语就说得这么流利',audio:'你来中国才一年，汉语就说得这么流利'},
-  {words:['你','太','厉害','了','！','连','中文','报纸','都','看','得','懂','。'],ans:'你太厉害了！连中文报纸都看得懂。',audio:'你太厉害了！连中文报纸都看得懂。'},
-  {words:['时间','来不及','，','最后','只好','放弃','了'],ans:'时间来不及，最后只好放弃了',audio:'时间来不及，最后只好放弃了'},
-  {words:['无论','是','普通','杂志','，','还是','著名','小说','，','都','值得','看'],ans:'无论是普通杂志，还是著名小说，都值得看',audio:'无论是普通杂志，还是著名小说，都值得看'},
-  {words:['一个','真正','爱','看书','的','人','总','能','找出','时间','来','阅读'],ans:'一个真正爱看书的人总能找出时间来阅读',audio:'一个真正爱看书的人总能找出时间来阅读'},
-  {words:['然而','，','你','不能','完全','相信','书本','上','的','内容'],ans:'然而，你不能完全相信书本上的内容',audio:'然而，你不能完全相信书本上的内容'},
-  {words:['好','读书','就是','要','养成','阅读','的','习惯'],ans:'好读书就是要养成阅读的习惯',audio:'好读书就是要养成阅读的习惯'},
-  {words:['同时','，','它','还','会','丰富','你','的','情感'],ans:'同时，它还会丰富你的情感',audio:'同时，它还会丰富你的情感'},
+  {words:['他','忙','得','连','吃饭','的','时间','都','没有','。'],ans:'他忙得连吃饭的时间都没有。',audio:'他忙得连吃饭的时间都没有。'},
+  {words:['你','得','多','穿','点儿','衣服','，','否则','会','感冒','的','。'],ans:'你得多穿点儿衣服，否则会感冒的。',audio:'你得多穿点儿衣服，否则会感冒的。'},
+  {words:['我','无论','去','哪儿','，','都','会','带','一','本','书','。'],ans:'我无论去哪儿，都会带一本书。',audio:'我无论去哪儿，都会带一本书。',alt:['无论我去哪儿，都会带一本书。']},
+  {words:['这','篇','文章','的','内容','很','有意思','。'],ans:'这篇文章的内容很有意思。',audio:'这篇文章的内容很有意思。'},
+  {words:['他','是','中国','著名','的','作家','之','一','。'],ans:'他是中国著名的作家之一。',audio:'他是中国著名的作家之一。'},
+  {words:['我们','俩','对','这个','问题','的','看法','相同','。'],ans:'我们俩对这个问题的看法相同。',audio:'我们俩对这个问题的看法相同。'},
+  {words:['妈妈','在','客厅','里','一边','看','杂志','一边','听','音乐','。'],ans:'妈妈在客厅里一边看杂志一边听音乐。',audio:'妈妈在客厅里一边看杂志一边听音乐。'},
+  {words:['每次','考试','，','我','都','先','做','选择题','，','再','做','填空题','。'],ans:'每次考试，我都先做选择题，再做填空题。',audio:'每次考试，我都先做选择题，再做填空题。'},
 ];
 
 var errorFixMode = 'wordchoice';
@@ -3405,122 +3412,124 @@ var errorFixData = [
    exp:'内容 (nội dung) đi với 丰富: 内容丰富. Câu có câu chữ 被 và 翻译 (Bài 10). Các từ còn lại không phù hợp nghĩa.'},
 ];
 
+// ══════════════════════════════════════════
+// LUYỆN NÓI
+// ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 11. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu hỏi là một tình huống thật, nói về chính bạn bằng từ và mẫu câu của Bài 11. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Bạn mới học hỏi bạn về cách học tiếng Trung hiệu quả.',
-      q_zh: '你学习汉语有什么好方法？',
-      q_py: 'Nǐ xuéxí Hànyǔ yǒu shénme hǎo fāngfǎ?',
-      q_vn: 'Bạn có phương pháp hay nào để học tiếng Trung?',
-      grammar: { label: '通过……来……; 否则…… (nếu không thì)', any: ['通过', '否则'] },
+      situation: 'Một bạn mới bắt đầu học tiếng Trung hỏi về những khó khăn lúc đầu của bạn.',
+      q_zh: '你刚开始学汉语的时候，遇到过什么困难？',
+      q_py: 'Nǐ gāng kāishǐ xué Hànyǔ de shíhou, yùdào guo shénme kùnnan?',
+      q_vn: 'Lúc mới bắt đầu học tiếng Trung, bạn đã gặp khó khăn gì?',
+      grammar: { label: '连……都/也…… (ngay cả… cũng…)', any: ['连'] },
       need: [
-        { label: 'Nêu ít nhất hai cách học', any: ['交朋友', '报纸', '电影', '听', '说', '读', '写', '练习'] },
-        { label: 'Nói về kỹ năng được cải thiện', any: ['听说', '能力', '词语', '语法', '流利', '准确'] }
+        { label: 'Dùng 连……都/也……', any: ['连'] },
+        { label: 'Nói về kỹ năng', any: ['语法', '词语', '流利', '准确', '汉字', '听'] }
       ],
-      bonus: { label: 'Dùng 否则 nêu hậu quả nếu không làm', any: ['否则'] },
-      vocab: ['流利', '词语', '语法', '准确'],
+      bonus: { label: 'Nói bây giờ đã tiến bộ thế nào', any: ['现在', '后来', '越来越'] },
+      vocab: ['连', '准确', '流利', '语法'],
       minLen: 22,
-      sample: '我觉得可以通过多交中国朋友来提高听说能力，说得越多就越流利。同时还要坚持看中文报纸，否则很难记住新词语和准确的语法。',
-      sample_py: 'Wǒ juéde kěyǐ tōngguò duō jiāo Zhōngguó péngyou lái tígāo tīng shuō nénglì, shuō děi yuè duō jiù yuè liúlì. Tóngshí hái yào jiānchí kàn Zhōngwén bàozhǐ, fǒuzé hěn nán jì zhù xīn cíyǔ hé zhǔnquè de yǔfǎ.',
-      sample_vn: 'Tôi thấy có thể kết bạn với người Trung Quốc để nâng khả năng nghe nói, nói càng nhiều càng trôi chảy. Đồng thời phải kiên trì đọc báo tiếng Trung, nếu không thì khó nhớ từ mới và ngữ pháp chuẩn.',
-      tip: '否则 = nếu không thì: 你得快点儿，否则就迟到了。'
+      sample: '刚开始的时候，我连“谢谢”都说得不准确，语法也经常用错。后来我每天跟中国朋友说汉语，现在说得流利多了。',
+      sample_py: 'Gāng kāishǐ de shíhou, wǒ lián “xièxie” dōu shuō de bù zhǔnquè, yǔfǎ yě jīngcháng yòng cuò. Hòulái wǒ měi tiān gēn Zhōngguó péngyou shuō Hànyǔ, xiànzài shuō de liúlì duō le.',
+      sample_vn: 'Lúc đầu, đến chữ “cảm ơn” tôi cũng nói không chuẩn, ngữ pháp cũng hay sai. Sau đó ngày nào tôi cũng nói tiếng Trung với bạn người Trung Quốc, bây giờ nói trôi chảy hơn nhiều rồi.',
+      tip: '连 đứng trước phần được nhấn mạnh, sau đó bắt buộc có 都/也: 连他都知道.'
     },
     {
-      situation: 'Ngày mai lớp bạn có bài kiểm tra dài.',
-      q_zh: '考试的时候，你一般先做难题还是先做简单的题？为什么？',
-      q_py: 'Kǎoshì de shíhou, nǐ yìbān xiān zuò nán tí háishi xiān zuò jiǎndān de tí? Wèishénme?',
-      q_vn: 'Khi thi, bạn thường làm câu khó trước hay câu dễ trước? Vì sao?',
-      grammar: { label: '在我看来……; 否则……只好……', any: ['在我看来', '否则', '只好'] },
+      situation: 'Ngày mai bạn có bài thi dài, bạn cùng lớp hỏi kinh nghiệm làm bài.',
+      q_zh: '参加考试时，你怎么安排时间？',
+      q_py: 'Cānjiā kǎoshì shí, nǐ zěnme ānpái shíjiān?',
+      q_vn: 'Khi đi thi, bạn sắp xếp thời gian thế nào?',
+      grammar: { label: '……，否则…… (…, nếu không thì…)', any: ['否则'] },
       need: [
-        { label: 'Nói thứ tự làm bài', any: ['先做', '简单', '难题', '顺序'] },
-        { label: 'Nêu lý do về thời gian', any: ['来不及', '时间', '否则', '放弃'] }
+        { label: 'Dùng 否则 nói hậu quả', any: ['否则'] },
+        { label: 'Nói thứ tự làm bài', any: ['先', '再', '顺序', '简单', '复杂'] }
       ],
-      bonus: { label: 'Nói mẹo khi gặp câu không biết', any: ['猜', '填空', '跳过', '最后'] },
-      vocab: ['来不及', '只好', '顺序', '猜'],
+      bonus: { label: 'Nói khi gặp câu không biết thì làm gì', any: ['猜', '只好', '放弃', '最后'] },
+      vocab: ['否则', '复杂', '来不及', '猜'],
       minLen: 22,
-      sample: '在我看来，应该按顺序先做简单的题，否则时间来不及，会做的题也只好放弃。遇到完全不懂的填空，我会先猜一个再往下做。',
-      sample_py: 'Zài wǒ kàn lái, yīnggāi àn shùnxù xiān zuò jiǎndān de tí, fǒuzé shíjiān láibují, huì zuò de tí yě zhǐhǎo fàngqì. Yùdào wánquán bù dǒng de tiánkòng, wǒ huì xiān cāi yí ge zài wǎng xià zuò.',
-      sample_vn: 'Theo tôi, nên làm theo thứ tự, câu dễ trước, nếu không thì hết giờ, câu biết làm cũng đành bỏ. Gặp câu điền từ hoàn toàn không hiểu, tôi đoán một đáp án rồi làm tiếp.',
-      tip: '来不及 = không kịp; 来得及 = còn kịp.'
+      sample: '我一般先做简单的题，再做复杂的题，否则后面的题可能会来不及做。实在不会的，我就最后再回来猜一个答案。',
+      sample_py: 'Wǒ yìbān xiān zuò jiǎndān de tí, zài zuò fùzá de tí, fǒuzé hòumiàn de tí kěnéng huì láibují zuò. Shízài bú huì de, wǒ jiù zuìhòu zài huílai cāi yí ge dá\'àn.',
+      sample_vn: 'Tôi thường làm câu dễ trước, câu phức tạp sau, nếu không thì có thể không kịp làm những câu phía sau. Câu thật sự không biết thì cuối cùng tôi quay lại đoán một đáp án.',
+      tip: '否则 luôn đứng đầu vế sau: 你得多喝水，否则会生病。'
     },
     {
-      situation: 'Đồng nghiệp hỏi bạn có còn thói quen đọc sách không.',
-      q_zh: '你每天有时间阅读吗？你一般读什么？',
-      q_py: 'Nǐ měitiān yǒu shíjiān yuèdú ma? Nǐ yìbān dú shénme?',
-      q_vn: 'Mỗi ngày bạn có thời gian đọc không? Bạn thường đọc gì?',
-      grammar: { label: '无论……都…… (bất kể… đều…)', any: ['无论', '不管'] },
+      situation: 'Đồng nghiệp hỏi bạn có thói quen gì duy trì mỗi ngày.',
+      q_zh: '有什么事是你每天都坚持做的？',
+      q_py: 'Yǒu shénme shì shì nǐ měi tiān dōu jiānchí zuò de?',
+      q_vn: 'Có việc gì mà ngày nào bạn cũng kiên trì làm không?',
+      grammar: { label: '无论……都…… (bất kể… đều…)', any: ['无论'] },
       need: [
-        { label: 'Nói có thời gian đọc hay không', any: ['阅读', '读', '看书', '半个小时', '每天', '坚持'] },
-        { label: 'Nói loại sách báo', any: ['杂志', '小说', '报纸', '文章', '新闻'] }
+        { label: 'Dùng 无论……都……', any: ['无论'] },
+        { label: 'Nói về thói quen', any: ['习惯', '养成', '坚持', '每天'] }
       ],
-      bonus: { label: 'Dùng 无论……都……', any: ['无论', '不管'] },
-      vocab: ['阅读', '杂志', '文章'],
+      bonus: { label: 'Nói lợi ích của thói quen đó', any: ['健康', '增加', '放松', '精神', '知识'] },
+      vocab: ['无论', '养成', '阅读', '增加'],
       minLen: 22,
-      sample: '虽然工作很忙，但是我每天都坚持阅读半个小时。无论是杂志、小说还是网上的文章，我都喜欢看，睡觉以前读几页最放松。',
-      sample_py: 'Suīrán gōngzuò hěn máng, dànshì wǒ měitiān dōu jiānchí yuèdú bàn ge xiǎoshí. Wúlùn shì zázhì, xiǎoshuō háishi wǎng shàng de wénzhāng, wǒ dōu xǐhuan kàn, shuìjiào yǐqián dú jǐ yè zuì fàngsōng.',
-      sample_vn: 'Tuy công việc bận, nhưng ngày nào tôi cũng kiên trì đọc nửa tiếng. Dù là tạp chí, tiểu thuyết hay bài viết trên mạng tôi đều thích đọc, trước khi ngủ đọc vài trang là thư giãn nhất.',
-      tip: '无论……都…… trang trọng hơn 不管……都……, hay dùng trong văn viết.'
+      sample: '我已经养成了睡觉前阅读的习惯。无论工作多忙，我每天都会看二三十页书。这样不但能增加知识，还能让我睡得更好。',
+      sample_py: 'Wǒ yǐjīng yǎngchéng le shuìjiào qián yuèdú de xíguàn. Wúlùn gōngzuò duō máng, wǒ měi tiān dōu huì kàn èr-sānshí yè shū. Zhèyàng búdàn néng zēngjiā zhīshi, hái néng ràng wǒ shuì de gèng hǎo.',
+      sample_vn: 'Tôi đã có thói quen đọc sách trước khi ngủ. Bất kể công việc bận đến đâu, ngày nào tôi cũng đọc hai ba chục trang. Như vậy không những tăng thêm kiến thức mà còn giúp tôi ngủ ngon hơn.',
+      tip: '无论 + từ nghi vấn/A还是B, vế sau phải có 都/也: 无论多忙，他都……'
     },
     {
-      situation: 'Thầy khuyên cả lớp nên ghi chép khi đọc.',
-      q_zh: '你觉得做读书笔记有用吗？为什么？',
-      q_py: 'Nǐ juéde zuò dúshū bǐ jì yǒu yòng ma? Wèishénme?',
-      q_vn: 'Bạn thấy ghi chép khi đọc sách có ích không? Vì sao?',
-      grammar: { label: '不仅……还……; 然而…… (tuy nhiên)', any: ['不仅', '然而'] },
+      situation: 'Bạn kể về một lần đã cố gắng rất nhiều nhưng kết quả không như mong muốn.',
+      q_zh: '你有过很努力、结果却不太好的经历吗？',
+      q_py: 'Nǐ yǒu guo hěn nǔlì, jiéguǒ què bú tài hǎo de jīnglì ma?',
+      q_vn: 'Bạn đã từng có trải nghiệm rất cố gắng mà kết quả lại không tốt lắm chưa?',
+      grammar: { label: '然而…… (tuy nhiên…)', any: ['然而'] },
       need: [
-        { label: 'Nêu quan điểm', any: ['有用', '没用', '很有用', '我觉得'] },
-        { label: 'Nêu ích lợi cụ thể', any: ['词语', '记住', '看法', '内容', '复习'] }
+        { label: 'Dùng 然而 nói kết quả trái mong đợi', any: ['然而'] },
+        { label: 'Kể đã chuẩn bị/cố gắng thế nào', any: ['准备', '努力', '复习', '练习', '每天'] }
       ],
-      bonus: { label: 'Dùng 然而 nêu ý ngược lại', any: ['然而'] },
-      vocab: ['内容', '看法', '然而'],
-      minLen: 22,
-      sample: '很有用。做笔记不仅能记住好词语，还能写下自己的看法。然而，我们不能完全相信书上的内容，读的时候也要自己想一想。',
-      sample_py: 'Hěn yǒu yòng. Zuò bǐ jì bùjǐn néng jì zhù hǎo cíyǔ, hái néng xiě xià zìjǐ de kànfǎ. Rán\'ér, wǒmen bù néng wánquán xiāngxìn shū shàng de nèiróng, dú de shíhou yě yào zìjǐ xiǎng yi xiǎng.',
-      sample_vn: 'Rất có ích. Ghi chép không những nhớ được từ hay, còn viết lại được quan điểm của mình. Tuy nhiên, ta không nên tin hoàn toàn vào nội dung sách, khi đọc cũng phải tự suy nghĩ.',
-      tip: '然而 = tuy nhiên, dùng đầu câu trong văn viết.'
+      bonus: { label: 'Nói điều học được', any: ['经验', '学到', '总结', '经历'] },
+      vocab: ['然而', '紧张', '词语'],
+      minLen: 24,
+      sample: '去年我参加了学校的汉语比赛，准备了两个多月。然而比赛那天我太紧张了，好几个词语都想不起来了。虽然没拿到好成绩，但是我积累了很多经验。',
+      sample_py: 'Qùnián wǒ cānjiā le xuéxiào de Hànyǔ bǐsài, zhǔnbèi le liǎng ge duō yuè. Rán\'ér bǐsài nà tiān wǒ tài jǐnzhāng le, hǎo jǐ ge cíyǔ dōu xiǎng bu qǐlái le. Suīrán méi nádào hǎo chéngjì, dànshì wǒ jīlěi le hěn duō jīngyàn.',
+      sample_vn: 'Năm ngoái tôi tham gia cuộc thi tiếng Trung của trường, chuẩn bị hơn hai tháng. Tuy nhiên hôm thi tôi quá căng thẳng, mấy từ liền không nhớ ra. Tuy không đạt thành tích tốt nhưng tôi đã tích lũy được nhiều kinh nghiệm.',
+      tip: '然而 mang sắc thái kể chuyện/văn viết; khi nói chuyện thường dùng 可是 hoặc 但是.'
     },
     {
-      situation: 'Bạn giới thiệu thói quen đọc sách của mình với lớp.',
-      q_zh: '阅读给你的生活带来了什么好处？',
-      q_py: 'Yuèdú gěi nǐ de shēnghuó dài lái le shénme hǎochù?',
-      q_vn: 'Việc đọc mang lại lợi ích gì cho cuộc sống của bạn?',
-      grammar: { label: '使……更……; 同时……; 因此……', any: ['使', '同时', '因此'] },
+      situation: 'Thư viện trường làm khảo sát: đọc sách mang lại cho bạn điều gì?',
+      q_zh: '你觉得读书有什么好处？',
+      q_py: 'Nǐ juéde dú shū yǒu shénme hǎochu?',
+      q_vn: 'Bạn thấy đọc sách có lợi ích gì?',
+      grammar: { label: '……，同时…… (…, đồng thời…)', any: ['同时'] },
       need: [
-        { label: 'Nói lợi ích về kiến thức', any: ['知识', '丰富', '了解', '词语', '世界'] },
-        { label: 'Nói lợi ích về cuộc sống', any: ['生活', '精彩', '轻松', '心情', '习惯'] }
+        { label: 'Dùng 同时 nêu thêm lợi ích', any: ['同时'] },
+        { label: 'Nêu lợi ích', any: ['知识', '增加', '放松', '看法', '丰富', '精彩'] }
       ],
-      bonus: { label: 'Dùng 养成……习惯', any: ['养成'] },
-      vocab: ['增加', '精彩', '养成', '同时'],
+      bonus: { label: 'Nói loại sách/báo bạn thích', any: ['小说', '杂志', '文章', '报纸'] },
+      vocab: ['同时', '看法', '精彩', '小说'],
       minLen: 22,
-      sample: '阅读增加了我的知识，使我的生活更精彩。同时，它也让我遇到问题时更冷静，因此我已经养成了每天阅读的习惯。',
-      sample_py: 'Yuèdú zēngjiā le wǒ de zhīshi, shǐ wǒ de shēnghuó gèng jīngcǎi. Tóngshí, tā yě ràng wǒ yùdào wèntí shí gèng lěngjìng, yīncǐ wǒ yǐjīng yǎngchéng le měitiān yuèdú de xíguàn.',
-      sample_vn: 'Đọc sách làm kiến thức của tôi nhiều lên, khiến cuộc sống của tôi phong phú hơn. Đồng thời nó cũng giúp tôi bình tĩnh hơn khi gặp vấn đề, vì vậy tôi đã hình thành thói quen đọc mỗi ngày.',
-      tip: '养成……的习惯 = hình thành thói quen: 养成早起的习惯。'
+      sample: '读书能让我知道很多以前不知道的事，同时也让我对很多问题有了自己的看法。我最喜欢看小说，好的小说内容精彩，让人放不下。',
+      sample_py: 'Dú shū néng ràng wǒ zhīdào hěn duō yǐqián bù zhīdào de shì, tóngshí yě ràng wǒ duì hěn duō wèntí yǒu le zìjǐ de kànfǎ. Wǒ zuì xǐhuan kàn xiǎoshuō, hǎo de xiǎoshuō nèiróng jīngcǎi, ràng rén fàng bu xià.',
+      sample_vn: 'Đọc sách giúp tôi biết nhiều điều trước đây chưa biết, đồng thời cũng giúp tôi có cách nhìn riêng về nhiều vấn đề. Tôi thích đọc tiểu thuyết nhất, tiểu thuyết hay nội dung hấp dẫn, khiến người ta không đặt xuống được.',
+      tip: '同时 thường đi với 也/还: ……，同时也……'
     }
   ]
 };
 
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Việt → Trung)
+// ══════════════════════════════════════════
 var translateData = [
-  {vi:'Bạn đến Trung Quốc mới một năm, tiếng Trung đã nói lưu loát như vậy, thật giỏi!',zh:'你来中国才一年，汉语就说得这么流利，真厉害！',py:'Nǐ lái Zhōngguó cái yì nián, Hànyǔ jiù shuō de zhème liúlì, zhēn lìhai!'},
-  {vi:'Tôi khuyên bạn kiên trì đọc báo tiếng Trung, như vậy có thể học được rất nhiều từ ngữ mới.',zh:'我建议你坚持看中文报纸，这样能学到很多新词语。',py:'Wǒ jiànyì nǐ jiānchí kàn Zhōngwén bàozhǐ, zhèyàng néng xuédào hěn duō xīn cíyǔ.'},
-  {vi:'Bạn giỏi quá! Ngay cả báo tiếng Trung cũng đọc hiểu được.',zh:'你太厉害了！连中文报纸都看得懂。',py:'Nǐ tài lìhai le! Lián Zhōngwén bàozhǐ dōu kàn de dǒng.'},
-  {vi:'Những câu đơn giản phía sau tôi tuy biết làm, nhưng không kịp thời gian, cuối cùng đành phải bỏ.',zh:'后面简单的题我虽然会，可是时间来不及，最后只好放弃了。',py:'Hòumiàn jiǎndān de tí wǒ suīrán huì, kěshì shíjiān láibují, zuìhòu zhǐhǎo fàngqì le.'},
-  {vi:'Muốn thi tốt, không chỉ phải ôn tập nghiêm túc, còn phải chú ý phương pháp thi, nếu không, câu biết làm cũng không có thời gian làm.',zh:'要想考好，不但要认真复习，还得注意考试的方法，否则，会做的题也没时间做了。',py:'Yào xiǎng kǎohǎo, búdàn yào rènzhēn fùxí, hái děi zhùyì kǎoshì de fāngfǎ, fǒuzé, huì zuò de tí yě méi shíjiān zuò le.'},
-  {vi:'Bất kể là tạp chí bình thường, hay tiểu thuyết nổi tiếng, chỉ cần mở chúng ra, sẽ phát hiện nhiều chuyện thú vị.',zh:'无论是普通杂志，还是著名小说，只要打开它们，就会发现很多有意思的事情。',py:'Wúlùn shì pǔtōng zázhì, háishi zhùmíng xiǎoshuō, zhǐyào dǎkāi tāmen, jiù huì fāxiàn hěn duō yǒu yìsi de shìqing.'},
-  {vi:'Tuy nhiên, bạn không thể hoàn toàn tin vào nội dung trong sách, phải có quan điểm và phán đoán của riêng mình.',zh:'然而，你不能完全相信书本上的内容，要有自己的看法和判断。',py:'Rán\'ér, nǐ bù néng wánquán xiāngxìn shūběn shang de nèiróng, yào yǒu zìjǐ de kànfǎ hé pànduàn.'},
-  {vi:'Đọc sách làm phong phú kiến thức của bạn; đồng thời, nó còn khiến cuộc sống của bạn tuyệt vời hơn.',zh:'阅读能丰富你的知识；同时，它还会使你的生活更精彩。',py:'Yuèdú néng fēngfù nǐ de zhīshi; tóngshí, tā hái huì shǐ nǐ de shēnghuó gèng jīngcǎi.'},
+  {vi:'Chuyện này ngay cả trẻ con cũng biết.', zh:'这件事连孩子都知道。', py:'Zhè jiàn shì lián háizi dōu zhīdào.'},
+  {vi:'Bạn phải ngủ sớm một chút, nếu không ngày mai sẽ rất buồn ngủ.', zh:'你得早点儿睡，否则明天会很困。', py:'Nǐ děi zǎo diǎnr shuì, fǒuzé míngtiān huì hěn kùn.'},
+  {vi:'Anh ấy nói sẽ đến, tuy nhiên đến giờ vẫn chưa đến.', zh:'他说会来，然而到现在还没来。', py:'Tā shuō huì lái, rán\'ér dào xiànzài hái méi lái.'},
+  {vi:'Ban ngày chị ấy đi làm, đồng thời vẫn đang học thạc sĩ.', zh:'她白天上班，同时还在读硕士。', py:'Tā báitiān shàngbān, tóngshí hái zài dú shuòshì.'},
+  {vi:'Câu này ngữ pháp không chính xác lắm.', zh:'这个句子的语法不太准确。', py:'Zhège jùzi de yǔfǎ bú tài zhǔnquè.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Thực ra ngữ pháp của tôi không tốt lắm, rất nhiều câu nói đều không được chính xác lắm.',zh:'其实我的语法不太好，很多句子说得都不太准确。',py:'Qíshí wǒ de yǔfǎ bú tài hǎo, hěn duō jùzi shuō de dōu bú tài zhǔnquè.'},
-  {vi:'Mới bắt đầu chắc chắn có khó khăn, nhưng gặp từ không biết, bạn có thể tra từ điển.',zh:'刚开始肯定有困难，不过遇到不认识的词语，你可以查词典。',py:'Gāng kāishǐ kěndìng yǒu kùnnan, búguò yùdào bú rènshi de cíyǔ, nǐ kěyǐ chá cídiǎn.'},
-  {vi:'Hai tiếng đồng hồ chắc là kịp chứ?',zh:'两个小时的时间应该来得及吧？',py:'Liǎng ge xiǎoshí de shíjiān yīnggāi láidejí ba?'},
-  {vi:'Thực sự không nghĩ ra nên chọn cái nào, thế là đoán bừa một đáp án, kết quả không đoán đúng câu nào.',zh:'实在想不出来该选哪个，就随便猜了一个答案，结果一个都没猜对。',py:'Shízài xiǎng bu chūlái gāi xuǎn nǎ ge, jiù suíbiàn cāile yí ge dá\'àn, jiéguǒ yí ge dōu méi cāiduì.'},
-  {vi:'Không ngờ bạn công việc bận thế, mà vẫn có thể kiên trì đọc sách mỗi ngày.',zh:'想不到你工作那么忙，还能每天坚持阅读。',py:'Xiǎngbudào nǐ gōngzuò nàme máng, hái néng měi tiān jiānchí yuèdú.'},
-  {vi:'Mỗi ngày dành nửa tiếng đọc sách, một tháng là có thể đọc 300 trang.',zh:'每天花半个小时来读书，一个月就可以读300页。',py:'Měi tiān huā bàn ge xiǎoshí lái dú shū, yí ge yuè jiù kěyǐ dú sānbǎi yè.'},
-  {vi:'Sau khi đọc xong một bài văn, còn có thể viết lại nội dung chính của nó và suy nghĩ của mình.',zh:'在看完一篇文章之后，还可以把它的主要内容和自己的想法写下来。',py:'Zài kànwán yì piān wénzhāng zhīhòu, hái kěyǐ bǎ tā de zhǔyào nèiróng hé zìjǐ de xiǎngfǎ xiě xialai.'},
-  {vi:'"Thích đọc sách" chính là phải hình thành thói quen đọc, khiến việc đọc sách thực sự trở thành sở thích của mình.',zh:'"好读书"就是要养成阅读的习惯，使读书真正成为自己的兴趣爱好。',py:'"Hào dú shū" jiù shì yào yǎngchéng yuèdú de xíguàn, shǐ dú shū zhēnzhèng chéngwéi zìjǐ de xìngqù àihào.'},
+  {vi:'Bất kể khi nào bạn đến, tôi đều hoan nghênh.', zh:'无论你什么时候来，我都欢迎。', py:'Wúlùn nǐ shénme shíhou lái, wǒ dōu huānyíng.'},
+  {vi:'Thời gian vẫn còn kịp, chúng ta cứ đi từ từ thôi.', zh:'时间还来得及，我们慢慢走吧。', py:'Shíjiān hái láidejí, wǒmen mànmàn zǒu ba.'},
+  {vi:'Ở nhiều nơi, động tác này biểu thị sự đồng ý, nhưng không phải nước nào cũng giống nhau.', zh:'在很多地方，这个动作表示同意，但是不是每个国家都相同。', py:'Zài hěn duō dìfang, zhège dòngzuò biǎoshì tóngyì, dànshì bú shì měi ge guójiā dōu xiāngtóng.'},
 ];
 
 var listenData = {

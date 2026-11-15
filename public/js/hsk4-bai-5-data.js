@@ -3467,46 +3467,52 @@ var dialogData = [
    ]},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
 var matchData = [
-  {left:'打折',right:'正在打折'},
-  {left:'质量',right:'质量有保证'},
-  {left:'肯定',right:'肯定不会'},
-  {left:'顺便',right:'顺便买'},
-  {left:'实在',right:'实在太旧了'},
-  {left:'邀请',right:'邀请去做客'},
-  {left:'广告',right:'相信广告'},
-  {left:'考虑',right:'认真考虑'},
-  {left:'浪费',right:'是一种浪费'},
-  {left:'受到',right:'受到喜爱'},
+  {left:'这台旧冰箱的',right:'制冷效果不太好'},
+  {left:'这家饭店的菜',right:'味道很不错'},
+  {left:'这个房间太小，放不下这么大的',right:'沙发'},
+  {left:'这个周末商场里的衣服',right:'都在打折'},
+  {left:'她在大学学的是',right:'艺术'},
+  {left:'家里没人还开着空调，',right:'太浪费了'},
+  {left:'他最大的',right:'优点是很诚实'},
+  {left:'奶奶想看我的照片，我就把照片',right:'寄给了她'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ
+// ══════════════════════════════════════════
 var fillData = [
-  {pre:'您看这个沙发怎么样？现在正在',blank:'',post:'，比平时便宜了一千块。',hint:'dǎzhé',ans:'打折'},
-  {pre:'价格还可以，就是不知道',blank:'',post:'有没有保证。',hint:'zhìliàng',ans:'质量'},
-  {pre:'您放心，质量',blank:'',post:'不"打折"。',hint:'kěndìng',ans:'肯定',exp:'肯定 = chắc chắn, đứng trước động từ/phủ định: 质量肯定不打折 = chất lượng chắc chắn không bị "giảm".'},
-  {pre:'这种沙发是今年最',blank:'',post:'的。',hint:'liúxíng',ans:'流行'},
-  {pre:'商场正好打折，我们',blank:'',post:'也买一台吧。',hint:'shùnbiàn',ans:'顺便',exp:'顺便 = tiện thể, nhân tiện làm thêm việc khác: 商场正好打折，顺便也买一台.'},
-  {pre:'咱家的冰箱',blank:'',post:'太旧了，制冷效果也不太好了。',hint:'shízài',ans:'实在',exp:'实在 = thật sự, quả là (nhấn mạnh mức độ): 实在太旧了.'},
-  {pre:'我带的',blank:'',post:'不够，用你的信用卡吧。',hint:'xiànjīn',ans:'现金'},
-  {pre:'李老师',blank:'',post:'咱们去他家做客。',hint:'yāoqǐng',ans:'邀请'},
-  {pre:'他很喜欢',blank:'',post:'酒，我们就给他买两瓶吧。',hint:'pútao',ans:'葡萄'},
-  {pre:'',blank:'',post:'只会介绍优点，却不会说它的缺点。',hint:'guǎnggào',ans:'广告'},
-  {pre:'我认真',blank:'',post:'了一个晚上，最后还是决定不去那家公司了。',hint:'kǎolǜ',ans:'考虑'},
-  {pre:'我买衣服的',blank:'',post:'是"只买对的，不买贵的"。',hint:'biāozhǔn',ans:'标准'},
-  {pre:'如果不适合自己，即使花钱很少，也是一种',blank:'',post:'。',hint:'làngfèi',ans:'浪费'},
-  {pre:'现在网上',blank:'',post:'变得越来越流行了。',hint:'gòuwù',ans:'购物'},
-  {pre:'年轻人',blank:'',post:'喜欢在网上买东西。',hint:'yóuqí',ans:'尤其',exp:'尤其 = đặc biệt là, nhất là; nhấn mạnh một nhóm nổi bật trong cái chung (người trẻ).'},
+  {pre:'他每天都那么努力，这次考试',blank:'肯定',post:'没问题。',hint:'(chắc chắn)',ans:'肯定',exp:'肯定 (phó từ) = chắc chắn — người nói tin chắc; đứng trước động từ hoặc trước 不/没.'},
+  {pre:'A：你看，那个人是不是小王？ B：',blank:'肯定',post:'不是，小王今天去上海了。',hint:'(chắc chắn (khẳng định))',ans:'肯定',exp:'肯定不是 = chắc chắn không phải (vì biết rõ lý do); 肯定 còn là tính từ: 他的回答很肯定.'},
+  {pre:'这家饭店太远了，',blank:'再说',post:'菜也不太好吃，我们换一家吧。',hint:'(hơn nữa)',ans:'再说',exp:'再说 = hơn nữa, đưa thêm một lý do nữa; khẩu ngữ, đứng đầu vế sau, thường kèm 也.'},
+  {pre:'A：咱们打车去吧？ B：不用了，地铁站很近，',blank:'再说',post:'现在路上车很多。',hint:'(vả lại)',ans:'再说',exp:'Từ chối rồi thêm lý do thứ hai bằng 再说; đừng nhầm với 再 + 说 (nói lại lần nữa).'},
+  {pre:'这件衣服看上去很贵，',blank:'实际上',post:'才一百块。',hint:'(thực ra, trên thực tế)',ans:'实际上',exp:'实际上 (phó từ) = trên thực tế, trái với vẻ bề ngoài vừa nói; đứng đầu vế sau.'},
+  {pre:'A：我想一个月学会说汉语。 B：这个计划不太',blank:'实际',post:'，你最好给自己多一点儿时间。',hint:'(thực tế, khả thi)',ans:'实际',exp:'实际 (tính từ) = sát thực tế, làm được; có thể đứng sau 不太/很. 实际上 là phó từ, không đứng sau 不太.'},
+  {pre:'对年轻人',blank:'来说',post:'，手机是生活中最重要的东西。',hint:'(mà nói)',ans:'来说',exp:'对 + người + 来说 = đối với ai mà nói (nêu góc nhìn); đừng nhầm với 对 + người + 说 (nói với ai).'},
+  {pre:'我们班的同学都喜欢运动，',blank:'尤其',post:'是男同学，几乎天天踢足球。',hint:'(nhất là)',ans:'尤其',exp:'尤其(是) nêu phần nổi bật nhất trong nhóm vừa nhắc; 特别 cũng dùng được ở đây, nhưng 特别 còn là tính từ (很特别) còn 尤其 thì không.'},
+  {pre:'A：一会儿我要去超市买东西，你需要什么吗？ B：你',blank:'顺便',post:'帮我买两斤苹果吧。',hint:'(tiện thể)',ans:'顺便',exp:'顺便 = nhân lúc làm việc chính thì làm thêm; trái nghĩa với 专门 (bài 2) = cố ý đi riêng.'},
+  {pre:'他早饭',blank:'光',post:'吃了一点儿葡萄，别的什么也没吃。',hint:'(chỉ)',ans:'光',exp:'光 (phó từ) = chỉ, riêng; 光……就…… = chỉ riêng… đã…; khẩu ngữ hơn 只.'},
+  {pre:'A：再吃一点儿吧。 B：不了，我',blank:'实在',post:'吃不下了。',hint:'(thật sự)',ans:'实在',exp:'实在 = thật sự (nhấn mạnh, hay dùng khi từ chối hoặc than): 实在吃不下 / 实在太忙了.'},
+  {pre:'这件事我没有告诉',blank:'任何',post:'人。',hint:'(bất kỳ)',ans:'任何',exp:'任何 + danh từ = bất kỳ…, thường trong câu phủ định (没告诉任何人) hoặc với 都 (任何人都知道).'},
+  {pre:'买房子的时候，除了价格，还要',blank:'考虑',post:'离公司远不远。',hint:'(cân nhắc)',ans:'考虑',exp:'考虑 + vấn đề = cân nhắc, tính đến; dùng cho quyết định quan trọng, nghiêm túc hơn 想.'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
 var sortData = [
-  {words:['您','看','这个','沙发','怎么样'],ans:'您看这个沙发怎么样',audio:'您看这个沙发怎么样'},
-  {words:['价格','还','可以','，','就是','不','知道','质量','有','没有','保证'],ans:'价格还可以，就是不知道质量有没有保证',audio:'价格还可以，就是不知道质量有没有保证'},
-  {words:['咱','家','的','冰箱','实在','太','旧','了'],ans:'咱家的冰箱实在太旧了',audio:'咱家的冰箱实在太旧了'},
-  {words:['李','老师','邀请','咱们','去','他','家','做客'],ans:'李老师邀请咱们去他家做客',audio:'李老师邀请咱们去他家做客'},
-  {words:['广告','只','会','介绍','优点'],ans:'广告只会介绍优点',audio:'广告只会介绍优点'},
-  {words:['我','买','衣服','的','标准','是','只','买','对','的'],ans:'我买衣服的标准是只买对的',audio:'我买衣服的标准是只买对的'},
-  {words:['现在','网上','购物','变得','越来越','流行','了'],ans:'现在网上购物变得越来越流行了',audio:'现在网上购物变得越来越流行了'},
-  {words:['人们','可以','在','任何','时间','上网','购买','自己','喜欢','的','东西'],ans:'人们可以在任何时间上网购买自己喜欢的东西',audio:'人们可以在任何时间上网购买自己喜欢的东西'},
+  {words:['这家','商店','的','衣服','质量','好','，','价格','也','不','贵','。'],ans:'这家商店的衣服质量好，价格也不贵。',audio:'这家商店的衣服质量好，价格也不贵。'},
+  {words:['朋友','邀请','我','周末','去','他','家','吃饭','。'],ans:'朋友邀请我周末去他家吃饭。',audio:'朋友邀请我周末去他家吃饭。'},
+  {words:['现在','手机','上','的','广告','越来越','多','了','。'],ans:'现在手机上的广告越来越多了。',audio:'现在手机上的广告越来越多了。'},
+  {words:['我','妻子','很','喜欢','在','网上','购物','。'],ans:'我妻子很喜欢在网上购物。',audio:'我妻子很喜欢在网上购物。'},
+  {words:['他','的','年龄','比','我','小','，','但是','经验','比','我','多','。'],ans:'他的年龄比我小，但是经验比我多。',audio:'他的年龄比我小，但是经验比我多。'},
+  {words:['这个','电影','受到','了','很多','年轻人','的','欢迎','。'],ans:'这个电影受到了很多年轻人的欢迎。',audio:'这个电影受到了很多年轻人的欢迎。'},
+  {words:['这个','包','的','样子','我','很','喜欢','，','就是','颜色','太','深','了','。'],ans:'这个包的样子我很喜欢，就是颜色太深了。',audio:'这个包的样子我很喜欢，就是颜色太深了。'},
+  {words:['这些','家具','都','是','我','爸爸','自己','做','的','。'],ans:'这些家具都是我爸爸自己做的。',audio:'这些家具都是我爸爸自己做的。'},
+  {words:['每个人','选择','朋友','的','标准','都','不','一样','。'],ans:'每个人选择朋友的标准都不一样。',audio:'每个人选择朋友的标准都不一样。'},
 ];
 
 var errorFixMode = 'wordchoice';
@@ -3521,7 +3527,7 @@ var errorFixData = [
    opts:['效果','考虑','受到','任何'],ans:2,
    exp:'受到……的影响 là cụm cố định: chịu ảnh hưởng từ…. Các từ còn lại không kết hợp được với "……的影响".'},
   {wrong:'我把我的手机号写给你，以后遇到____问题，你都可以和我联系，我会想办法帮你解决。',
-   opts:['考虑','效果','邀请','任何'],ans:3,
+   opts:['受到','效果','邀请','任何'],ans:3,
    exp:'任何 (bất kỳ) đi với danh từ 问题: 任何问题 = bất kỳ vấn đề nào. Các từ còn lại không phải đại từ chỉ định.'},
   {wrong:'我认真____了一个晚上，最后还是决定不去那家公司了。',
    opts:['受到','任何','邀请','考虑'],ans:3,
@@ -3530,10 +3536,10 @@ var errorFixData = [
    opts:['流行','打折','台','家具'],ans:0,
    exp:'流行 (thịnh hành) phù hợp với "màu sắc được ưa chuộng". Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'A：小王，又去逛街了？买什么东西了？B：现在正是换季，好多商店都在____，你看，这些东西都比平时便宜了一半还多。',
-   opts:['家具','流行','台','打折'],ans:3,
+   opts:['顺便','流行','台','打折'],ans:3,
    exp:'打折 (giảm giá) phù hợp với ngữ cảnh "rẻ hơn bình thường một nửa". Các từ còn lại không mang nghĩa giảm giá.'},
   {wrong:'A：我想换____笔记本电脑，你知道哪种好吗？B：我也不太清楚，你先上网看看吧，多比较比较，然后再做决定。',
-   opts:['打折','家具','流行','台'],ans:3,
+   opts:['打折','家具','顺便','台'],ans:3,
    exp:'台 (lượng từ máy móc) đi với 笔记本电脑: 一台笔记本电脑. Các từ còn lại không phải lượng từ.'},
   {wrong:'A：今天是小王请客？他有什么高兴事呀？B：他搬新家了，晚上请老同学们去家里吃饭，____看看他的新房子。',
    opts:['台','家具','流行','顺便'],ans:3,
@@ -3543,122 +3549,125 @@ var errorFixData = [
    exp:'家具 (đồ nội thất) phù hợp với ngữ cảnh "đồ đạc cũ, đổi mới khi chuyển nhà", và câu sau nhắc đến 沙发 (một loại gia cụ). Các từ còn lại không phải danh từ chỉ đồ vật.'},
 ];
 
+// ══════════════════════════════════════════
+// LUYỆN NÓI
+// ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 5. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu hỏi là một tình huống thật, nói về chính bạn bằng từ và mẫu câu của Bài 5. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Bạn và bạn bè đang chọn đồ trong trung tâm thương mại.',
-      q_zh: '你买东西的标准是什么？价格重要还是质量重要？',
-      q_py: 'Nǐ mǎi dōngxi de biāozhǔn shì shénme? Jiàgé zhòngyào háishi zhìliàng zhòngyào?',
-      q_vn: 'Tiêu chuẩn mua đồ của bạn là gì? Giá cả quan trọng hay chất lượng quan trọng?',
-      grammar: { label: '对……来说 (đối với ai đó mà nói)', any: ['对我来说', '来说'] },
+      situation: 'Bạn bè hỏi bạn chọn quần áo dựa vào điều gì.',
+      q_zh: '你买衣服的时候，最考虑什么？',
+      q_py: 'Nǐ mǎi yīfu de shíhou, zuì kǎolǜ shénme?',
+      q_vn: 'Khi mua quần áo, bạn cân nhắc điều gì nhất?',
+      grammar: { label: '对……来说 (đối với … mà nói)', any: ['来说'] },
       need: [
-        { label: 'Nói tiêu chuẩn của bạn', any: ['标准', '质量', '价格', '样子', '实用'] },
-        { label: 'Dùng 对……来说', any: ['来说'] }
+        { label: 'Dùng 对……来说', any: ['来说'] },
+        { label: 'Nói tiêu chuẩn của bạn', any: ['价格', '质量', '样子', '颜色', '舒服', '标准'] }
       ],
-      bonus: { label: 'Nhắc đến giảm giá bằng 打折', any: ['打折', '便宜'] },
-      vocab: ['标准', '价格', '质量'],
+      bonus: { label: 'Dùng 考虑 hoặc 标准', any: ['考虑', '标准'] },
+      vocab: ['价格', '质量', '考虑', '标准'],
       minLen: 22,
-      sample: '我买东西的标准是质量要好。对我来说，价格并不是最重要的，如果质量好，我愿意多花一点儿钱。',
-      sample_py: 'Wǒ mǎi dōngxi de biāozhǔn shì zhìliàng yào hǎo. Duì wǒ lái shuō, jiàgé bìng bú shì zuì zhòngyào de, rúguǒ zhìliàng hǎo, wǒ yuànyì duō huā yìdiǎnr qián.',
-      sample_vn: 'Tiêu chuẩn mua đồ của tôi là chất lượng phải tốt. Với tôi, giá cả không phải quan trọng nhất, nếu chất lượng tốt tôi sẵn sàng chi thêm.',
-      tip: '对……来说 nêu góc nhìn: 对学生来说，时间很重要。'
+      sample: '对我这样的学生来说，价格是最重要的。但是我也会考虑质量，质量不好的衣服，再便宜我也不买。',
+      sample_py: 'Duì wǒ zhèyàng de xuésheng láishuō, jiàgé shì zuì zhòngyào de. Dànshì wǒ yě huì kǎolǜ zhìliàng, zhìliàng bù hǎo de yīfu, zài piányi wǒ yě bù mǎi.',
+      sample_vn: 'Đối với sinh viên như tôi, giá cả là quan trọng nhất. Nhưng tôi cũng cân nhắc chất lượng, quần áo chất lượng không tốt thì rẻ mấy tôi cũng không mua.',
+      tip: '对 + người + 来说 đứng đầu câu, nêu góc nhìn: 对孩子来说，……'
     },
     {
-      situation: 'Trên tivi vừa chiếu một quảng cáo rất hấp dẫn.',
-      q_zh: '你觉得可以完全相信广告吗？为什么？',
-      q_py: 'Nǐ juéde kěyǐ wánquán xiāngxìn guǎnggào ma? Wèishénme?',
-      q_vn: 'Bạn thấy có thể tin hoàn toàn vào quảng cáo không? Vì sao?',
-      grammar: { label: '实际上……并不像……那么……', any: ['实际', '并不'] },
+      situation: 'Bạn và đồng nghiệp bàn về cách mua sắm.',
+      q_zh: '你喜欢在网上购物还是去商场？为什么？',
+      q_py: 'Nǐ xǐhuan zài wǎngshang gòuwù háishi qù shāngchǎng? Wèishénme?',
+      q_vn: 'Bạn thích mua sắm trên mạng hay đến trung tâm thương mại? Vì sao?',
+      grammar: { label: '再说 (hơn nữa — thêm lý do)', any: ['再说'] },
       need: [
-        { label: 'Nêu quan điểm', any: ['不可以', '不能', '可以', '相信'] },
-        { label: 'Nêu lý do', any: ['优点', '广告', '实际', '并不', '效果'] }
+        { label: 'Dùng 再说 thêm lý do thứ hai', any: ['再说'] },
+        { label: 'Nói bạn chọn cách nào', any: ['网上', '商场', '购物'] }
       ],
-      bonus: { label: 'Nhắc đến ưu điểm bằng 优点', any: ['优点'] },
-      vocab: ['广告', '实际', '优点'],
+      bonus: { label: 'Dùng 寄 hoặc 方便', any: ['寄', '方便'] },
+      vocab: ['再说', '购物', '网上', '寄'],
       minLen: 22,
-      sample: '不可以。广告一般只介绍优点，实际上很多东西并不像广告上说的那么好，所以还要自己考虑清楚。',
-      sample_py: 'Bù kěyǐ. Guǎnggào yìbān zhī jièshào yōudiǎn, shíjì shàng hěn duō dōngxi bìng bú xiàng guǎnggào shàng shuō de nàme hǎo, suǒyǐ hái yào zìjǐ kǎolǜ qīngchu.',
-      sample_vn: 'Không nên. Quảng cáo thường chỉ giới thiệu ưu điểm, thực tế nhiều thứ không tốt như quảng cáo nói, nên vẫn phải tự cân nhắc kỹ.',
-      tip: '并不 + tính từ/động từ là phủ định nhấn mạnh: 我并不喜欢。'
+      sample: '我更喜欢在网上购物，因为网上的东西比较便宜。再说，我工作很忙，没有时间去商场。买的东西会寄到我家，特别方便。',
+      sample_py: 'Wǒ gèng xǐhuan zài wǎngshang gòuwù, yīnwèi wǎngshang de dōngxi bǐjiào piányi. Zàishuō, wǒ gōngzuò hěn máng, méiyǒu shíjiān qù shāngchǎng. Mǎi de dōngxi huì jì dào wǒ jiā, tèbié fāngbiàn.',
+      sample_vn: 'Tôi thích mua sắm trên mạng hơn vì đồ trên mạng khá rẻ. Hơn nữa, tôi làm việc rất bận, không có thời gian đi trung tâm thương mại. Đồ mua sẽ được gửi đến tận nhà, cực kỳ tiện.',
+      tip: '再说 đứng đầu vế/câu sau để thêm lý do: ……，再说……'
     },
     {
-      situation: 'Bạn cần mua sách và vài món đồ dùng trong tuần này.',
-      q_zh: '你喜欢网上购物还是去商店买东西？为什么？',
-      q_py: 'Nǐ xǐhuan wǎng shàng gòuwù háishi qù shāngdiàn mǎi dōngxi? Wèishénme?',
-      q_vn: 'Bạn thích mua sắm trên mạng hay ra cửa hàng? Vì sao?',
-      grammar: { label: '尤其是…… (nhất là…)', any: ['尤其'] },
+      situation: 'Bạn nói về loại hoa quả bạn thích.',
+      q_zh: '你喜欢吃什么水果？',
+      q_py: 'Nǐ xǐhuan chī shénme shuǐguǒ?',
+      q_vn: 'Bạn thích ăn loại hoa quả nào?',
+      grammar: { label: '尤其(是) (nhất là)', any: ['尤其'] },
       need: [
-        { label: 'Chọn một cách mua', any: ['网上', '购物', '商店', '超市'] },
-        { label: 'Nêu lý do', any: ['方便', '便宜', '快', '可以试', '质量', '看得见'] }
+        { label: 'Dùng 尤其(是)', any: ['尤其'] },
+        { label: 'Kể tên hoa quả', any: ['葡萄', '西瓜', '苹果', '香蕉', '水果'] }
       ],
-      bonus: { label: 'Dùng 尤其是 nêu trường hợp tiêu biểu', any: ['尤其'] },
-      vocab: ['购物', '尤其', '价格'],
-      minLen: 22,
-      sample: '我更喜欢网上购物，尤其是买书的时候，网上的价格又便宜又方便。不过买衣服我还是想去商店试一试。',
-      sample_py: 'Wǒ gèng xǐhuan wǎng shàng gòuwù, yóuqí shì mǎi shū de shíhou, wǎng shàng de jiàgé yòu piányi yòu fāngbiàn. Búguò mǎi yīfu wǒ háishi xiǎng qù shāngdiàn shì yi shì.',
-      sample_vn: 'Tôi thích mua trên mạng hơn, nhất là khi mua sách, giá trên mạng vừa rẻ vừa tiện. Nhưng mua quần áo thì tôi vẫn muốn ra cửa hàng thử.',
-      tip: '尤其 thường đi với 是: 我喜欢运动，尤其是游泳。'
+      bonus: { label: 'Dùng 几乎 (bài 1) hoặc 味道', any: ['几乎', '味道'] },
+      vocab: ['尤其', '葡萄', '味道'],
+      minLen: 20,
+      sample: '我什么水果都喜欢，尤其是葡萄和西瓜。夏天的时候，我几乎每天都吃西瓜，味道又甜又好。',
+      sample_py: 'Wǒ shénme shuǐguǒ dōu xǐhuan, yóuqí shì pútao hé xīguā. Xiàtiān de shíhou, wǒ jīhū měi tiān dōu chī xīguā, wèidào yòu tián yòu hǎo.',
+      sample_vn: 'Hoa quả gì tôi cũng thích, nhất là nho và dưa hấu. Mùa hè tôi gần như ngày nào cũng ăn dưa hấu, vị vừa ngọt vừa ngon.',
+      tip: 'Nêu cái chung trước, rồi 尤其是 + phần nổi bật: 我喜欢运动，尤其是游泳。'
     },
     {
-      situation: 'Bạn thử một chiếc áo đang rất mốt nhưng không hợp dáng.',
-      q_zh: '如果一件衣服很流行但不适合你，你会买吗？',
-      q_py: 'Rúguǒ yí jiàn yīfu hěn liúxíng dàn bú shìhé nǐ, nǐ huì mǎi ma?',
-      q_vn: 'Nếu một chiếc áo rất mốt nhưng không hợp với bạn, bạn có mua không?',
-      grammar: { label: '即使……，也是一种浪费', any: ['即使', '浪费'] },
+      situation: 'Cả nhóm đoán cuộc sống mười năm nữa.',
+      q_zh: '你觉得十年以后，人们的生活会有什么变化？',
+      q_py: 'Nǐ juéde shí nián yǐhòu, rénmen de shēnghuó huì yǒu shénme biànhuà?',
+      q_vn: 'Bạn nghĩ mười năm nữa cuộc sống của mọi người sẽ thay đổi thế nào?',
+      grammar: { label: '肯定 (chắc chắn)', any: ['肯定'] },
       need: [
-        { label: 'Trả lời mua hay không', any: ['会买', '不会', '不买'] },
-        { label: 'Nêu lý do', any: ['适合', '流行', '浪费', '样子', '标准'] }
+        { label: 'Dùng 肯定', any: ['肯定'] },
+        { label: 'Nói một thay đổi cụ thể', any: ['网上', '手机', '现金', '电脑', '购物'] }
       ],
-      bonus: { label: 'Dùng 即使……也……', any: ['即使'] },
-      vocab: ['流行', '浪费', '样子'],
-      minLen: 22,
-      sample: '我不会买。如果样子不适合自己，即使很流行，买回来也很少穿，那就是一种浪费。',
-      sample_py: 'Wǒ bú huì mǎi. Rúguǒ yàngzi bú shìhé zìjǐ, jíshǐ hěn liúxíng, mǎi huílai yě hěn shǎo chuān, nà jiù shì yì zhǒng làngfèi.',
-      sample_vn: 'Tôi sẽ không mua. Nếu kiểu dáng không hợp mình, dù có mốt đến mấy, mua về cũng ít mặc, như vậy là lãng phí.',
-      tip: '浪费 đi với 时间、钱、水: 别浪费时间。'
+      bonus: { label: 'Dùng 现金 hoặc 任何', any: ['现金', '任何'] },
+      vocab: ['肯定', '现金', '任何'],
+      minLen: 20,
+      sample: '我觉得十年以后，人们肯定都在网上买东西，买什么都不用现金了。在任何地方，有一个手机就够了。',
+      sample_py: 'Wǒ juéde shí nián yǐhòu, rénmen kěndìng dōu zài wǎngshang mǎi dōngxi, mǎi shénme dōu bú yòng xiànjīn le. Zài rènhé dìfang, yǒu yí ge shǒujī jiù gòu le.',
+      sample_vn: 'Tôi nghĩ mười năm nữa, mọi người chắc chắn đều mua đồ trên mạng, mua gì cũng không cần tiền mặt nữa. Ở bất kỳ đâu, có một chiếc điện thoại là đủ.',
+      tip: '肯定 đứng sau chủ ngữ, trước động từ: 他们肯定会……'
     },
     {
-      situation: 'Bạn được mời đến nhà đồng nghiệp ăn cơm cuối tuần.',
-      q_zh: '你有没有邀请朋友来家里做客的经历？你会准备什么？',
-      q_py: 'Nǐ yǒu méiyǒu yāoqǐng péngyou lái jiā lǐ zuò kè de jīnglì? Nǐ huì zhǔnbèi shénme?',
-      q_vn: 'Bạn từng mời bạn bè đến nhà chơi chưa? Bạn sẽ chuẩn bị gì?',
-      grammar: { label: '邀请 + người + 来/去 + làm gì', any: ['邀请'] },
+      situation: 'Bạn kể lần mua phải món đồ không như quảng cáo.',
+      q_zh: '你买过广告说得很好、其实不怎么样的东西吗？',
+      q_py: 'Nǐ mǎi guo guǎnggào shuō de hěn hǎo, qíshí bù zěnmeyàng de dōngxi ma?',
+      q_vn: 'Bạn đã từng mua món đồ quảng cáo nói rất hay nhưng thực ra chẳng ra sao chưa?',
+      grammar: { label: '实际上 (trên thực tế)', any: ['实际上'] },
       need: [
-        { label: 'Dùng 邀请', any: ['邀请', '请'] },
-        { label: 'Kể việc chuẩn bị', any: ['做饭', '水果', '葡萄', '茶', '打扫', '买'] }
+        { label: 'Dùng 实际上', any: ['实际上'] },
+        { label: 'Nhắc đến quảng cáo', any: ['广告'] }
       ],
-      bonus: { label: 'Nhắc đến món ăn hoặc mùi vị bằng 味道', any: ['味道', '好吃'] },
-      vocab: ['邀请', '葡萄', '味道'],
+      bonus: { label: 'Dùng 并不 (bài 4) hoặc 那样', any: ['并', '那样'] },
+      vocab: ['实际上', '广告', '味道'],
       minLen: 22,
-      sample: '有，我邀请过同事来家里做客。我会提前打扫房间，做几个拿手菜，再准备一些葡萄和茶，大家都说味道不错。',
-      sample_py: 'Yǒu, wǒ yāoqǐng guo tóngshì lái jiā lǐ zuò kè. Wǒ huì tíqián dǎsǎo fángjiān, zuò jǐ ge ná shǒu cài, zài zhǔnbèi yì xiē pútao hé chá, dàjiā dōu shuō wèidào bú cuò.',
-      sample_vn: 'Có, tôi từng mời đồng nghiệp đến nhà chơi. Tôi dọn nhà trước, nấu vài món tủ, chuẩn bị thêm ít nho và trà, mọi người đều khen ngon.',
-      tip: '邀请 trang trọng hơn 请: 我们邀请您参加聚会。'
+      sample: '去年我在网上看到一个广告，说一种水果茶非常好喝。我买了以后才发现，实际上味道很一般，并不像广告说的那样。',
+      sample_py: 'Qùnián wǒ zài wǎngshang kàndào yí ge guǎnggào, shuō yì zhǒng shuǐguǒ chá fēicháng hǎohē. Wǒ mǎi le yǐhòu cái fāxiàn, shíjìshang wèidào hěn yìbān, bìng bú xiàng guǎnggào shuō de nàyàng.',
+      sample_vn: 'Năm ngoái tôi thấy một quảng cáo trên mạng nói một loại trà hoa quả rất ngon. Mua rồi tôi mới thấy, thực tế vị rất bình thường, chẳng hề giống như quảng cáo nói.',
+      tip: '实际上 đứng đầu vế sau, đối lập với điều nói trước đó (quảng cáo / vẻ ngoài).'
     }
   ]
 };
 
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Việt → Trung)
+// ══════════════════════════════════════════
 var translateData = [
-  {vi:'Giá cả cũng được, chỉ là không biết chất lượng có được đảm bảo không.',zh:'价格还可以，就是不知道质量有没有保证。',py:'Jiàgé hái kěyǐ, jiùshì bù zhīdào zhìliàng yǒu méiyǒu bǎozhèng.'},
-  {vi:'Anh yên tâm, chất lượng chắc chắn không "giảm giá".',zh:'您放心，质量肯定不"打折"。',py:'Nín fàngxīn, zhìliàng kěndìng bù "dǎzhé".'},
-  {vi:'Tủ lạnh nhà chúng ta thực sự cũ quá rồi, hiệu quả làm lạnh cũng không tốt lắm nữa.',zh:'咱家的冰箱实在太旧了，制冷效果也不太好了。',py:'Zán jiā de bīngxiāng shízài tài jiù le, zhìlěng xiàoguǒ yě bú tài hǎo le.'},
-  {vi:'Thầy Lý mời chúng ta đến nhà thầy chơi, mang cho thầy chút quà gì thì tốt nhỉ?',zh:'李老师邀请咱们去他家做客，给他带点儿什么礼物好呢？',py:'Lǐ lǎoshī yāoqǐng zánmen qù tā jiā zuòkè, gěi tā dài diǎnr shénme lǐwù hǎo ne?'},
-  {vi:'Quảng cáo chỉ giới thiệu ưu điểm, chứ không nói khuyết điểm của nó.',zh:'广告只会介绍优点，却不会说它的缺点。',py:'Guǎnggào zhǐ huì jièshào yōudiǎn, què bú huì shuō tā de quēdiǎn.'},
-  {vi:'Tiêu chuẩn mua quần áo của tôi là "chỉ mua cái đúng, không mua cái đắt".',zh:'我买衣服的标准是"只买对的，不买贵的"。',py:'Wǒ mǎi yīfu de biāozhǔn shì "zhǐ mǎi duì de, bù mǎi guì de".'},
-  {vi:'Nếu không phù hợp với bản thân, dù chi tiêu rất ít tiền, cũng là một sự lãng phí.',zh:'如果不适合自己，即使花钱很少，也是一种浪费。',py:'Rúguǒ bú shìhé zìjǐ, jíshǐ huā qián hěn shǎo, yě shì yì zhǒng làngfèi.'},
-  {vi:'Bây giờ mua sắm trên mạng ngày càng trở nên thịnh hành, người trẻ đặc biệt thích mua đồ trên mạng.',zh:'现在网上购物变得越来越流行了，年轻人尤其喜欢在网上买东西。',py:'Xiànzài wǎngshang gòuwù biàn de yuè lái yuè liúxíng le, niánqīng rén yóuqí xǐhuan zài wǎngshang mǎi dōngxi.'},
+  {vi:'Lãng phí thời gian cũng là lãng phí tiền bạc.', zh:'浪费时间也是浪费钱。', py:'Làngfèi shíjiān yě shì làngfèi qián.'},
+  {vi:'Lúc tan làm về nhà, tôi tiện thể mua ít hoa quả.', zh:'下班回家的时候，我顺便买了一些水果。', py:'Xiàbān huí jiā de shíhou, wǒ shùnbiàn mǎi le yìxiē shuǐguǒ.'},
+  {vi:'Tôi không muốn đi, hơn nữa bên ngoài cũng mưa rồi.', zh:'我不想去，再说外面也下雨了。', py:'Wǒ bù xiǎng qù, zàishuō wàimian yě xià yǔ le.'},
+  {vi:'Trông anh ấy rất trẻ, thực ra đã năm mươi tuổi rồi.', zh:'他看上去很年轻，实际上已经五十岁了。', py:'Tā kàn shangqu hěn niánqīng, shíjìshang yǐjīng wǔshí suì le.'},
+  {vi:'Cả nhà tôi đều thích ăn nho, nhất là con gái tôi.', zh:'我们家的人都爱吃葡萄，尤其是我女儿。', py:'Wǒmen jiā de rén dōu ài chī pútao, yóuqí shì wǒ nǚ\'ér.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Bạn xem chiếc ghế sô pha này thế nào?',zh:'您看这个沙发怎么样？',py:'Nín kàn zhège shāfā zěnmeyàng?'},
-  {vi:'Không sai. Tuần trước chỉ riêng mua ghế sô pha đã tốn hơn hai nghìn.',zh:'没错。上个星期光买沙发就花了两千多。',py:'Méi cuò. Shàng ge xīngqī guāng mǎi shāfā jiù huāle liǎngqiān duō.'},
-  {vi:'Tiền mặt tôi mang không đủ, dùng thẻ tín dụng của bạn đi.',zh:'我带的现金不够，用你的信用卡吧。',py:'Wǒ dài de xiànjīn bú gòu, yòng nǐ de xìnyòngkǎ ba.'},
-  {vi:'Bạn xem vỏ chai rượu của nó làm đẹp như một tác phẩm nghệ thuật vậy.',zh:'你看它酒瓶做得都这么艺术。',py:'Nǐ kàn tā jiǔpíng zuò de dōu zhème yìshù.'},
-  {vi:'Thực tế thì, rất nhiều thứ không được như quảng cáo nói.',zh:'实际上，很多东西并不像广告上说的那么好。',py:'Shíjìshang, hěn duō dōngxi bìng bú xiàng guǎnggào shang shuō de nàme hǎo.'},
-  {vi:'Đối với tôi, kiểu dáng quần áo có thịnh hành hay không không quan trọng.',zh:'对我来说，衣服的样子流行不流行并不是很重要。',py:'Duì wǒ láishuō, yīfu de yàngzi liúxíng bu liúxíng bìng bú shì hěn zhòngyào.'},
-  {vi:'Trên mạng gần như cái gì cũng có thể mua được.',zh:'在网上几乎什么都可以买到。',py:'Zài wǎngshang jīhū shénme dōu kěyǐ mǎidào.'},
-  {vi:'Người bán có thể gửi đồ bạn mua đến văn phòng hoặc nhà bạn, rất tiện lợi.',zh:'卖家可以把你买的东西寄到你办公室或者家里，非常方便。',py:'Màijiā kěyǐ bǎ nǐ mǎi de dōngxi jìdào nǐ bàngōngshì huòzhě jiā li, fēicháng fāngbiàn.'},
+  {vi:'Em gái tôi từ nhỏ đã thích nghệ thuật.', zh:'我妹妹从小就喜欢艺术。', py:'Wǒ mèimei cóngxiǎo jiù xǐhuan yìshù.'},
+  {vi:'Ở Trung Quốc, nhiều người mua đồ đã không cần dùng tiền mặt nữa.', zh:'在中国，很多人买东西已经不用现金了。', py:'Zài Zhōngguó, hěn duō rén mǎi dōngxi yǐjīng bú yòng xiànjīn le.'},
+  {vi:'Vị của món này hơi giống món mẹ tôi nấu.', zh:'这个菜的味道有点儿像我妈妈做的。', py:'Zhège cài de wèidào yǒudiǎnr xiàng wǒ māma zuò de.'},
+  {vi:'Khi mua đồ không thể chỉ nhìn vào giá cả.', zh:'买东西的时候不能光看价格。', py:'Mǎi dōngxi de shíhou bù néng guāng kàn jiàgé.'},
 ];
 
 var listenData = {

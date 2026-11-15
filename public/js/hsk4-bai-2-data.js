@@ -3526,51 +3526,49 @@ var dialogData = [
 // PHẦN 1 · GHÉP TỪ (Collocation)
 // ══════════════════════════════════════════
 var matchData = [
-  {left:'交',right:'朋友'},
-  {left:'逛',right:'街'},
-  {left:'发',right:'短信'},
-  {left:'同学',right:'聚会'},
-  {left:'重新',right:'认识'},
-  {left:'真正的',right:'友谊'},
-  {left:'当你遇到困难时，',right:'真正的朋友会站出来。'},
-  {left:'尽管已经毕业多年，',right:'我们还是经常联系。'},
-  {left:'如果有共同的爱好，',right:'就更容易成为朋友。'},
-  {left:'只要你有幽默感，',right:'就容易交到朋友。'},
+  {left:'给女朋友发',right:'短信'},
+  {left:'陪奶奶',right:'去医院检查身体'},
+  {left:'一个人在家看了一天电视，',right:'真无聊'},
+  {left:'他总是说别人的缺点，',right:'大家都很讨厌他'},
+  {left:'我们俩几十年的',right:'友谊'},
+  {left:'刚到国外，他遇到了很多',right:'困难'},
+  {left:'她每天上班以前都要看看',right:'镜子'},
+  {left:'和周围的人多',right:'交流'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'开始有点儿不习惯，后来就慢慢',blank:'适应',post:'了。',hint:'(thích nghi)',ans:'适应'},
-  {pre:'最近我还',blank:'交',post:'了一个中国朋友。',hint:'(kết giao)',ans:'交'},
-  {pre:'尽管很忙，他',blank:'还是',post:'每天都给我发短信。',hint:'(vẫn)',ans:'还是',exp:'尽管…，还是… = mặc dù… nhưng vẫn…; 还是 nhấn mạnh hành động không thay đổi dù có trở ngại.'},
-  {pre:'我们下午要去踢足球，',blank:'正好',post:'一起去吧。',hint:'(đúng dịp)',ans:'正好',exp:'正好 = đúng lúc, vừa hay: chúng tôi cũng định đi đá bóng, vừa hay đi cùng.'},
-  {pre:'来聚会的人',blank:'差不多',post:'一半儿。',hint:'(gần như)',ans:'差不多',exp:'差不多 + số lượng = gần như, xấp xỉ: 差不多一半儿.'},
-  {pre:'张远还',blank:'专门',post:'从国外飞回来呢。',hint:'(đặc biệt)',ans:'专门'},
-  {pre:'她',blank:'毕业',post:'后就去上海工作了。',hint:'(tốt nghiệp)',ans:'毕业'},
-  {pre:'麻烦你跟她',blank:'联系',post:'一下。',hint:'(liên hệ)',ans:'联系'},
-  {pre:'一看到这张照片，我就',blank:'好像',post:'重新回到了校园。',hint:'(dường như)',ans:'好像',exp:'好像 = dường như, như thể: nhìn ảnh mà như được quay lại sân trường (cảm giác, không phải thật).'},
-  {pre:'能有一个',blank:'真正',post:'的朋友，是多么不容易！',hint:'(chân chính)',ans:'真正'},
-  {pre:'朋友可以',blank:'丰富',post:'我们的生活。',hint:'(làm phong phú)',ans:'丰富'},
-  {pre:'离开朋友，我们的生活一定会非常',blank:'无聊',post:'。',hint:'(nhàm chán)',ans:'无聊'},
-  {pre:'我们还要经常跟周围的人',blank:'交流',post:'。',hint:'(giao lưu)',ans:'交流'},
-  {pre:'有些人觉得朋友应该像',blank:'镜子',post:'，能帮自己看到缺点。',hint:'(gương)',ans:'镜子'},
-  {pre:'当你遇到',blank:'困难',post:'的时候，真正的朋友会站出来。',hint:'(khó khăn)',ans:'困难'},
+  {pre:'A：我做了一桌子菜，快坐下一起吃吧！ B：太好了，我还没吃饭呢，看来我来得',blank:'正好',post:'！',hint:'(đúng lúc)',ans:'正好',exp:'来得正好 = đến đúng lúc: 正好 làm bổ ngữ sau 得, chỉ sự trùng hợp vừa ý.'},
+  {pre:'A：我下午想去图书馆借本书。 B：我',blank:'正好',post:'也要去那儿，我们一起走吧。',hint:'(vừa hay)',ans:'正好',exp:'正好 (phó từ) đứng trước động từ: vừa hay mình cũng có việc đó — trùng hợp ngẫu nhiên, không phải cố ý.'},
+  {pre:'我和他',blank:'差不多',post:'大，都是大学二年级的学生。',hint:'(xấp xỉ)',ans:'差不多',exp:'差不多 + tính từ (大/高/长) = xấp xỉ, gần bằng nhau; người học hay nói nhầm 我和他几乎大.'},
+  {pre:'A：时间',blank:'差不多',post:'了，快走吧。 B：好，我去拿一下包。',hint:'(gần đến (giờ))',ans:'差不多',exp:'差不多 có thể làm vị ngữ (时间差不多了 = sắp đến giờ rồi); 几乎 là phó từ, không đứng một mình làm vị ngữ được.'},
+  {pre:'',blank:'尽管',post:'外面下雨，他还是骑车来上课了。',hint:'(mặc dù)',ans:'尽管',exp:'尽管……还是/但是…… nói một sự thật đã có (trời đang mưa thật); khác 即使 ở bài 1 là giả thiết.'},
+  {pre:'A：你弟弟身体怎么样？ B：他个子很高，身体',blank:'却',post:'不太好，经常感冒。',hint:'(lại, nhưng lại)',ans:'却',exp:'却 là phó từ, đứng sau chủ ngữ (身体) và trước vị ngữ; không đặt đầu câu như 但是.'},
+  {pre:'北方人喜欢吃面条，',blank:'而',post:'南方人更喜欢吃米饭。',hint:'(còn, trong khi đó)',ans:'而',exp:'而 nối hai vế so sánh hai đối tượng khác nhau (người miền Bắc ↔ người miền Nam), trang trọng hơn 但是.'},
+  {pre:'',blank:'当',post:'我遇到问题的时候，我姐姐总是第一个来帮我。',hint:'(khi)',ans:'当',exp:'当……的时候 = khi…; 当 là giới từ đứng đầu câu, phía sau phải có 的时候 / 时.'},
+  {pre:'谢谢你',blank:'及时',post:'告诉我，要不我就坐错车了。',hint:'(kịp thời)',ans:'及时',exp:'及时 = kịp thời, đúng lúc đang cần (trước khi chuyện xấu xảy ra); 正好 là trùng hợp ngẫu nhiên.'},
+  {pre:'这个蛋糕是我',blank:'专门',post:'为你买的，快打开看看。',hint:'(riêng, đặc biệt (để))',ans:'专门',exp:'专门 + 为/来/去 + V = cố ý làm riêng cho việc này, không phải tiện thể.'},
+  {pre:'A：我的电脑又坏了，',blank:'麻烦',post:'你帮我看看，好吗？ B：没问题，我下课就去。',hint:'(phiền (bạn))',ans:'麻烦',exp:'麻烦 + 你 + V = phiền bạn…, cách nhờ vả lịch sự; đáp lại cảm ơn có thể nói 不麻烦.'},
+  {pre:'你看他的脸，他',blank:'好像',post:'不太高兴。',hint:'(hình như)',ans:'好像',exp:'好像 = hình như, đoán theo những gì nhìn thấy, chưa chắc chắn; đứng sau chủ ngữ, trước vị ngữ.'},
+  {pre:'这个字你写错了，',blank:'重新',post:'写一个吧。',hint:'(lại từ đầu)',ans:'重新',exp:'重新 = làm lại từ đầu (thường vì lần trước sai/không tốt); 再 chỉ đơn thuần lặp lại thêm lần nữa.'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['开始','有点儿','不','习惯','，','后来','就','慢慢','适应','了','。'],ans:'开始有点儿不习惯，后来就慢慢适应了。',audio:'开始有点儿不习惯，后来就慢慢适应了。'},
-  {words:['尽管','已经','毕业','这么','多','年','，','我们','还是','经常','联系','的','。'],ans:'尽管已经毕业这么多年，我们还是经常联系的。',audio:'尽管已经毕业这么多年，我们还是经常联系的。'},
-  {words:['一个','脾气','不好','的','人','，','却','很','难','跟','人','交','朋友','。'],ans:'一个脾气不好的人，却很难跟人交朋友。',audio:'一个脾气不好的人，却很难跟人交朋友。'},
-  {words:['我们','还','要','经常','跟','周围','的','人','交流','。'],ans:'我们还要经常跟周围的人交流。',audio:'我们还要经常跟周围的人交流。'},
-  {words:['当','你','遇到','困难','的','时候','，','真正','的','朋友','会','站','出来','。'],ans:'当你遇到困难的时候，真正的朋友会站出来。',audio:'当你遇到困难的时候，真正的朋友会站出来。'},
-  {words:['如果','有','共同','的','爱好','，','就','更','容易','成为','朋友','了','。'],ans:'如果有共同的爱好，就更容易成为朋友了。',audio:'如果有共同的爱好，就更容易成为朋友了。'},
-  {words:['真正','的','朋友','会','陪','在','你','身边','，','想','办法','让','你','感到','幸福','。'],ans:'真正的朋友会陪在你身边，想办法让你感到幸福。',audio:'真正的朋友会陪在你身边，想办法让你感到幸福。'},
-  {words:['有','一段','真正','的','友谊','，','是','多么','不','容易','！'],ans:'有一段真正的友谊，是多么不容易！',audio:'有一段真正的友谊，是多么不容易！'},
+  {words:['尽管','工作','很','忙','，','他','每个','周末','都','回家','陪','爸爸','妈妈','。'],ans:'尽管工作很忙，他每个周末都回家陪爸爸妈妈。',audio:'尽管工作很忙，他每个周末都回家陪爸爸妈妈。'},
+  {words:['大家','都','去','玩儿','了','，','他','却','一个人','在','家','学习','。'],ans:'大家都去玩儿了，他却一个人在家学习。',audio:'大家都去玩儿了，他却一个人在家学习。'},
+  {words:['我','平时','喝','咖啡','，','而','我','丈夫','只','喝','茶','。'],ans:'我平时喝咖啡，而我丈夫只喝茶。',audio:'我平时喝咖啡，而我丈夫只喝茶。'},
+  {words:['我','花','了','两个月','才','适应','周围','的','环境','。'],ans:'我花了两个月才适应周围的环境。',audio:'我花了两个月才适应周围的环境。'},
+  {words:['毕业','以后','，','我们','一直','用','短信','联系','。'],ans:'毕业以后，我们一直用短信联系。',audio:'毕业以后，我们一直用短信联系。'},
+  {words:['她','的','周末','生活','很','丰富','，','又','学','画画','又','学','游泳','。'],ans:'她的周末生活很丰富，又学画画又学游泳。',audio:'她的周末生活很丰富，又学画画又学游泳。'},
+  {words:['只有','真正','的','朋友','才','能','理解','你','。'],ans:'只有真正的朋友才能理解你。',audio:'只有真正的朋友才能理解你。'},
+  {words:['他','很','快','就','在','聚会','上','交到','了','新','朋友','。'],ans:'他很快就在聚会上交到了新朋友。',audio:'他很快就在聚会上交到了新朋友。'},
+  {words:['我','最','讨厌','别人','上课','的','时候','玩儿','手机','。'],ans:'我最讨厌别人上课的时候玩儿手机。',audio:'我最讨厌别人上课的时候玩儿手机。'},
+  {words:['遇到','困难','要','及时','告诉','老师','。'],ans:'遇到困难要及时告诉老师。',audio:'遇到困难要及时告诉老师。'},
 ];
 
 // ══════════════════════════════════════════
@@ -3603,11 +3601,11 @@ var errorFixData = [
    opts:['联系','麻烦','平时','陪'],ans:0,
    exp:'没联系了 = không còn liên lạc — hợp với "借这个机会见见" (mượn dịp này gặp mặt). 麻烦/平时/陪 không hợp nghĩa.'},
   {wrong:'A：都九点了，你怎么还不起床？B：昨晚看足球比赛看到两点半，这不是周六吗？____哪能睡到九点？',
-   opts:['平时','联系','麻烦','好像'],ans:0,
-   exp:'平时哪能 = ngày thường sao có thể — nhấn mạnh hôm nay là thứ Bảy nên khác ngày thường. 联系/麻烦/好像 không hợp.'},
+   opts:['平时','联系','陪','好像'],ans:0,
+   exp:'平时哪能 = ngày thường sao có thể — nhấn mạnh hôm nay là thứ Bảy nên khác ngày thường. 联系/陪/好像 không hợp.'},
   {wrong:'A：小李，那个女孩儿是谁啊？你认识？B：应该不认识，但是____在哪儿见过。',
-   opts:['好像','联系','麻烦','平时'],ans:0,
-   exp:'好像在哪儿见过 = dường như đã gặp ở đâu đó — diễn tả sự phỏng đoán không chắc chắn, đúng nghĩa 好像. 联系/麻烦/平时 không hợp.'},
+   opts:['好像','陪','麻烦','平时'],ans:0,
+   exp:'好像在哪儿见过 = dường như đã gặp ở đâu đó — diễn tả sự phỏng đoán không chắc chắn, đúng nghĩa 好像. 陪/麻烦/平时 không hợp.'},
   {wrong:'A：经理，我丈夫生病了。我想请一天假，____他去医院看看。B：好，你先把家里照顾好，工作的事别担心。',
    opts:['陪','联系','麻烦','好像'],ans:0,
    exp:'陪他去医院 = đi cùng anh ấy đến bệnh viện — 陪 mang nghĩa đi cùng, ở bên cạnh. 联系/麻烦/好像 không hợp nghĩa này.'},
@@ -3618,97 +3616,97 @@ var errorFixData = [
 // ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 2. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu hỏi là một tình huống thật, nói về chính bạn bằng từ và mẫu câu của Bài 2. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Bạn vừa chuyển tới một thành phố mới để học hoặc làm việc.',
-      q_zh: '到一个新地方，你一般怎么适应新生活？',
-      q_py: 'Dào yí ge xīn dìfang, nǐ yìbān zěnme shìyìng xīn shēnghuó?',
-      q_vn: 'Đến một nơi mới, bạn thường thích nghi với cuộc sống mới thế nào?',
-      grammar: { label: '尽管……，但是/后来…… (mặc dù…)', any: ['尽管', '虽然'] },
+      situation: 'Bạn kể cho bạn mới quen về một người bạn lâu năm.',
+      q_zh: '你有没有认识很多年的老朋友？',
+      q_py: 'Nǐ yǒu méiyǒu rènshi hěn duō nián de lǎo péngyou?',
+      q_vn: 'Bạn có người bạn cũ quen nhau nhiều năm không?',
+      grammar: { label: '尽管……，但是/还是…… (mặc dù…)', any: ['尽管'] },
       need: [
-        { label: 'Dùng 适应 nói việc thích nghi', any: ['适应', '习惯'] },
-        { label: 'Kể cách làm quen', any: ['熟悉', '交流', '认识', '同学', '同事', '周围', '环境'] }
+        { label: 'Dùng 尽管……但是/还是……', any: ['尽管'] },
+        { label: 'Nói cách giữ liên lạc', any: ['联系', '电话', '短信', '见面'] }
       ],
-      bonus: { label: 'Dùng 尽管 để nêu khó khăn ban đầu', any: ['尽管', '虽然'] },
-      vocab: ['适应', '尽管', '交流', '周围'],
+      bonus: { label: 'Dùng 友谊 hoặc 真正', any: ['友谊', '真正'] },
+      vocab: ['尽管', '联系', '友谊', '短信'],
       minLen: 22,
-      sample: '我一般先熟悉周围的环境，然后主动跟同学和邻居交流。尽管开始有点儿不习惯，后来慢慢就适应了。',
-      sample_py: 'Wǒ yìbān xiān shúxi zhōuwéi de huánjìng, ránhòu zhǔ dòng gēn tóngxué hé línjū jiāoliú. Jǐnguǎn kāishǐ yǒudiǎnr bù xíguàn, hòulái mànmàn jiù shìyìng le.',
-      sample_vn: 'Tôi thường làm quen với môi trường xung quanh trước, rồi chủ động trò chuyện với bạn học và hàng xóm. Dù ban đầu hơi lạ lẫm, sau đó dần dần cũng quen.',
-      tip: '尽管……但是/还是…… giống 虽然……但是……, dùng nhiều trong văn viết.'
+      sample: '我有一个小学同学，尽管我们现在不在一个城市，但是我们每个星期都打电话。我们的友谊已经有二十年了。',
+      sample_py: 'Wǒ yǒu yí ge xiǎoxué tóngxué, jǐnguǎn wǒmen xiànzài bú zài yí ge chéngshì, dànshì wǒmen měi ge xīngqī dōu dǎ diànhuà. Wǒmen de yǒuyì yǐjīng yǒu èrshí nián le.',
+      sample_vn: 'Tôi có một người bạn học tiểu học, mặc dù bây giờ chúng tôi không ở cùng một thành phố nhưng tuần nào cũng gọi điện cho nhau. Tình bạn của chúng tôi đã được hai mươi năm rồi.',
+      tip: '尽管 nói sự thật đã có; vế sau dùng 但是 / 还是 / 却 để chuyển ý.'
     },
     {
-      situation: 'Nhóm bạn cũ đang hẹn nhau họp lớp.',
-      q_zh: '你怎么跟老同学保持联系？你们多久聚会一次？',
-      q_py: 'Nǐ zěnme gēn lǎo tóngxué bǎo chí liánxì? Nǐmen duō jiǔ jùhuì yí cì?',
-      q_vn: 'Bạn giữ liên lạc với bạn cũ thế nào? Bao lâu các bạn họp mặt một lần?',
-      grammar: { label: '正好 (vừa hay) / 差不多 (khoảng chừng)', any: ['正好', '差不多'] },
+      situation: 'Bạn so sánh mình với anh/chị/em trong nhà.',
+      q_zh: '你和你的哥哥姐姐（或者弟弟妹妹）有什么不一样？',
+      q_py: 'Nǐ hé nǐ de gēge jiějie (huòzhě dìdi mèimei) yǒu shénme bù yíyàng?',
+      q_vn: 'Bạn và anh chị (hoặc em) của bạn có gì khác nhau?',
+      grammar: { label: '而 (còn, trong khi đó — so sánh hai người)', any: ['而'] },
       need: [
-        { label: 'Nói cách giữ liên lạc', any: ['联系', '短信', '电话', '网上', '微信'] },
-        { label: 'Nói tần suất gặp mặt', any: ['聚会', '一次', '半年', '一年', '个月', '差不多'] }
+        { label: 'Dùng 而 nối hai vế đối lập', any: ['而'] },
+        { label: 'Nói về tính cách hoặc thói quen', any: ['性格', '脾气', '平时', '喜欢', '安静', '热情'] }
       ],
-      bonus: { label: 'Dùng 正好 kể một lần gặp đông đủ', any: ['正好'] },
-      vocab: ['联系', '短信', '差不多', '聚会'],
+      bonus: { label: 'Dùng 平时 hoặc 交朋友', any: ['平时', '交'] },
+      vocab: ['而', '平时', '性格', '交'],
       minLen: 22,
-      sample: '我们平时发短信、打电话联系，差不多半年聚会一次。上次正好大家都有空，来了十几个人，聊到很晚。',
-      sample_py: 'Wǒmen píngshí fā duǎnxìn, dǎdiànhuà liánxì, chàbuduō bàn nián jùhuì yí cì. Shàng cì zhènghǎo dàjiā dōu yǒu kōng, lái le shí jǐ ge rén, liáo dào hěn wǎn.',
-      sample_vn: 'Chúng tôi thường nhắn tin, gọi điện liên lạc, khoảng nửa năm họp mặt một lần. Lần trước vừa hay mọi người đều rảnh, đến hơn chục người, nói chuyện đến khuya.',
-      tip: '正好 = vừa hay, vừa đúng lúc: 我正好也要去。'
+      sample: '我和姐姐性格很不一样。姐姐很爱说话，很容易交朋友，而我比较安静，平时喜欢一个人在家看书。',
+      sample_py: 'Wǒ hé jiějie xìnggé hěn bù yíyàng. Jiějie hěn ài shuōhuà, hěn róngyì jiāo péngyou, ér wǒ bǐjiào ānjìng, píngshí xǐhuan yí ge rén zài jiā kàn shū.',
+      sample_vn: 'Tôi và chị gái tính cách rất khác nhau. Chị rất thích nói chuyện, rất dễ kết bạn, còn tôi khá trầm, ngày thường thích ở nhà một mình đọc sách.',
+      tip: '而 đứng đầu vế sau, trước chủ ngữ thứ hai: 她……，而我……'
     },
     {
-      situation: 'Bạn lật lại album ảnh thời sinh viên.',
-      q_zh: '看到大学时候的照片，你会想起什么？',
-      q_py: 'Kàn dào dàxué shíhou de zhàopiàn, nǐ huì xiǎng qǐ shénme?',
-      q_vn: 'Nhìn ảnh thời đại học, bạn nhớ đến điều gì?',
-      grammar: { label: '好像……一样 (dường như… vậy)', any: ['好像'] },
+      situation: 'Bạn kể về một nơi khi đến rồi mới thấy khác hẳn điều mình nghĩ.',
+      q_zh: '有没有一个地方，去了以后跟你想的不一样？',
+      q_py: 'Yǒu méiyǒu yí ge dìfang, qù le yǐhòu gēn nǐ xiǎng de bù yíyàng?',
+      q_vn: 'Có nơi nào đi rồi mới thấy khác với điều bạn nghĩ không?',
+      grammar: { label: '却 (nhưng lại — trái với dự đoán)', any: ['却'] },
       need: [
-        { label: 'Dùng 好像……一样', any: ['好像'] },
-        { label: 'Kể kỷ niệm cụ thể', any: ['同学', '老师', '校园', '宿舍', '考试', '日子', '毕业'] }
+        { label: 'Dùng 却 sau chủ ngữ', any: ['却'] },
+        { label: 'Nói cảm nhận của bạn', any: ['无聊', '热闹', '安静', '没意思', '有意思', '漂亮'] }
       ],
-      bonus: { label: 'Dùng 重新 nói cảm giác quay lại', any: ['重新'] },
-      vocab: ['重新', '好像', '毕业'],
+      bonus: { label: 'Dùng 几乎 (bài 1) hoặc 周围', any: ['几乎', '周围'] },
+      vocab: ['却', '无聊', '周围', '几乎'],
       minLen: 22,
-      sample: '看到大学时候的照片，我就想起那些快乐的日子，好像重新回到了校园一样。毕业以后，我们很少能再见面了。',
-      sample_py: 'Kàn dào dàxué shíhou de zhàopiàn, wǒ jiù xiǎng qǐ nàxiē kuàilè de rì zi, hǎoxiàng chóngxīn huí dào le xiào yuán yí yàng. Bìyè yǐhòu, wǒmen hěn shǎo néng zàijiàn miàn le.',
-      sample_vn: 'Nhìn ảnh thời đại học là tôi nhớ những ngày vui đó, như thể được quay lại giảng đường vậy. Sau khi tốt nghiệp, chúng tôi rất ít khi gặp lại nhau.',
-      tip: '好像……一样 so sánh tưởng tượng: 他好像没听见一样。'
+      sample: '大家都说那个城市很热闹，我去了以后却觉得很无聊。晚上九点以后，外面几乎没有人，周围的商店也都关门了。',
+      sample_py: 'Dàjiā dōu shuō nàge chéngshì hěn rènao, wǒ qù le yǐhòu què juéde hěn wúliáo. Wǎnshang jiǔ diǎn yǐhòu, wàimian jīhū méiyǒu rén, zhōuwéi de shāngdiàn yě dōu guān mén le.',
+      sample_vn: 'Mọi người đều nói thành phố đó rất náo nhiệt, nhưng tôi đến rồi lại thấy rất chán. Sau 9 giờ tối, ngoài đường gần như không có ai, các cửa hàng xung quanh cũng đóng cửa hết.',
+      tip: '却 luôn đứng sau chủ ngữ: 我却觉得…… (không nói 却我觉得……).'
     },
     {
-      situation: 'Một bạn mới vào lớp hỏi bạn cách kết bạn.',
-      q_zh: '你觉得怎样才能交到更多的朋友？',
-      q_py: 'Nǐ juéde zěn yàng cái néng jiāo dào gèng duō de péngyou?',
-      q_vn: 'Bạn thấy làm thế nào mới kết được nhiều bạn hơn?',
-      grammar: { label: '而 (nối hai vế đối lập)', any: ['而'] },
+      situation: 'Bạn kể một lần tình cờ gặp lại người quen.',
+      q_zh: '你有没有在路上正好遇到老同学？',
+      q_py: 'Nǐ yǒu méiyǒu zài lù shang zhènghǎo yùdào lǎo tóngxué?',
+      q_vn: 'Bạn đã bao giờ tình cờ gặp bạn học cũ trên đường chưa?',
+      grammar: { label: '正好 (vừa hay, đúng lúc)', any: ['正好'] },
       need: [
-        { label: 'Nêu ít nhất hai cách', any: ['交流', '脾气', '爱好', '主动', '帮助', '参加'] },
-        { label: 'Nhắc đến người xung quanh', any: ['周围', '同学', '同事', '邻居'] }
+        { label: 'Dùng 正好', any: ['正好'] },
+        { label: 'Nói đã bao lâu không liên lạc', any: ['联系', '见面', '没见'] }
       ],
-      bonus: { label: 'Dùng 而 để so sánh hai kiểu người', any: ['而'] },
-      vocab: ['交', '周围', '交流', '而'],
+      bonus: { label: 'Dùng 毕业 hoặc 差不多', any: ['毕业', '差不多'] },
+      vocab: ['正好', '联系', '毕业', '差不多'],
       minLen: 22,
-      sample: '要有好脾气，还要经常跟周围的人交流。有共同的兴趣爱好就更容易交到朋友，而不愿意说话的人机会就比较少。',
-      sample_py: 'Yào yǒu hǎo píqi, hái yào jīngcháng gēn zhōuwéi de rén jiāoliú. Yǒu gòngtóng de xìng qù àihào jiù gèng róngyì jiāo dào péngyou, ér bú yuànyì shuōhuà de rén jīhuì jiù bǐjiào shǎo.',
-      sample_vn: 'Phải có tính tình tốt, còn phải hay giao lưu với người xung quanh. Có sở thích chung thì dễ kết bạn hơn, còn người không thích nói chuyện thì cơ hội ít hơn.',
-      tip: '而 nối hai vế tương phản, trang trọng hơn 但是: 他很努力，而我比较懒。'
+      sample: '上个月我去超市，正好遇到了我的高中同学。我们毕业以后差不多三年没联系了，就一起去喝了杯咖啡，说了很多话。',
+      sample_py: 'Shàng ge yuè wǒ qù chāoshì, zhènghǎo yùdào le wǒ de gāozhōng tóngxué. Wǒmen bìyè yǐhòu chàbuduō sān nián méi liánxì le, jiù yìqǐ qù hē le bēi kāfēi, shuō le hěn duō huà.',
+      sample_vn: 'Tháng trước tôi đi siêu thị, vừa hay gặp bạn học cấp ba. Từ khi tốt nghiệp chúng tôi gần ba năm không liên lạc, thế là cùng đi uống cà phê, nói rất nhiều chuyện.',
+      tip: '正好 đứng trước động từ: 正好遇到 / 正好有时间 — chỉ sự trùng hợp đúng lúc.'
     },
     {
-      situation: 'Cả nhóm đang nói về ý nghĩa của tình bạn.',
-      q_zh: '在你看来，真正的朋友应该是什么样的？',
-      q_py: 'Zài nǐ kàn lái, zhēnzhèng de péngyou yīnggāi shì shénme yàng de?',
-      q_vn: 'Theo bạn, người bạn thật sự nên là người thế nào?',
-      grammar: { label: '当……的时候…… (khi…)', any: ['当', '的时候'] },
+      situation: 'Bạn nói về người luôn giúp bạn khi bạn cần.',
+      q_zh: '你需要帮助的时候，一般找谁？',
+      q_py: 'Nǐ xūyào bāngzhù de shíhou, yìbān zhǎo shéi?',
+      q_vn: 'Khi cần giúp đỡ, bạn thường tìm ai?',
+      grammar: { label: '当……的时候 (khi…)', any: ['当'] },
       need: [
-        { label: 'Nói lúc khó khăn', any: ['困难', '难过', '生病', '问题', '着急'] },
-        { label: 'Nói việc người bạn ấy làm', any: ['帮助', '陪', '听', '及时', '在身边'] }
+        { label: 'Dùng 当……的时候', any: ['当'] },
+        { label: 'Kể người đó đã giúp gì', any: ['帮', '陪', '及时', '专门', '照顾'] }
       ],
-      bonus: { label: 'Dùng 真正 nhấn mạnh', any: ['真正'] },
-      vocab: ['真正', '困难', '及时', '陪'],
+      bonus: { label: 'Dùng 及时 hoặc 专门', any: ['及时', '专门'] },
+      vocab: ['当', '及时', '专门', '陪'],
       minLen: 22,
-      sample: '真正的朋友会在你遇到困难的时候及时帮助你，在你难过的时候陪在你身边，而不是只在你成功的时候出现。',
-      sample_py: 'Zhēnzhèng de péngyou huì zài nǐ yùdào kùnnan de shíhou jíshí bāngzhù nǐ, zài nǐ nánguò de shíhou péi zài nǐ shēn bian, ér bú shì zhī zài nǐ chénggōng de shíhou chūxiàn.',
-      sample_vn: 'Người bạn thật sự sẽ giúp bạn kịp thời khi bạn gặp khó khăn, ở bên bạn khi bạn buồn, chứ không phải chỉ xuất hiện khi bạn thành công.',
-      tip: '当……的时候 thường đứng đầu câu: 当我遇到问题的时候，他总是在。'
+      sample: '当我需要帮助的时候，我一般先找我哥哥。去年我搬家，他专门从公司回来帮我，还及时帮我解决了很多问题。',
+      sample_py: 'Dāng wǒ xūyào bāngzhù de shíhou, wǒ yìbān xiān zhǎo wǒ gēge. Qùnián wǒ bān jiā, tā zhuānmén cóng gōngsī huílai bāng wǒ, hái jíshí bāng wǒ jiějué le hěn duō wèntí.',
+      sample_vn: 'Khi tôi cần giúp đỡ, tôi thường tìm anh trai trước. Năm ngoái tôi chuyển nhà, anh ấy đặc biệt từ công ty về giúp, còn kịp thời giúp tôi giải quyết rất nhiều vấn đề.',
+      tip: '当 đứng đầu câu, cuối cụm có 的时候: 当我难过的时候，……'
     }
   ]
 };
@@ -3717,28 +3715,21 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Lúc đầu tôi hơi chưa quen với cuộc sống ở đây, sau đó dần dần thích nghi.', zh:'开始我有点儿不习惯这儿的生活，后来慢慢适应了。', py:'Kāishǐ wǒ yǒudiǎnr bù xíguàn zhèr de shēnghuó, hòulái mànman shìyìng le.'},
-  {vi:'Phiền bạn liên hệ với anh ấy một chút, mời anh ấy tham gia họp lớp.', zh:'麻烦你跟他联系一下，请他参加同学聚会。', py:'Máfan nǐ gēn tā liánxì yíxià, qǐng tā cānjiā tóngxué jùhuì.'},
-  {vi:'Mặc dù tốt nghiệp đã lâu, chúng tôi vẫn thường xuyên liên lạc.', zh:'尽管毕业很久了，我们还是经常联系。', py:'Jǐnguǎn bì yè hěn jiǔ le, wǒmen háishi jīngcháng liánxì.'},
-  {vi:'Gần một nửa số bạn học đến tham gia buổi họp mặt.', zh:'差不多一半的同学来参加了聚会。', py:'Chàbuduō yíbàn de tóngxué lái cānjiāle jùhuì.'},
-  {vi:'Cô ấy đặc biệt xin nghỉ một ngày để đi thăm bạn cũ.', zh:'她专门请了一天假去看老朋友。', py:'Tā zhuānmén qǐngle yì tiān jià qù kàn lǎo péngyou.'},
-  {vi:'Có bạn bè ở bên có thể làm phong phú thêm cuộc sống của chúng ta.', zh:'有朋友陪着可以丰富我们的生活。', py:'Yǒu péngyou péizhe kěyǐ fēngfù wǒmen de shēnghuó.'},
-  {vi:'Khi bạn gặp khó khăn, tôi nhất định sẽ kịp thời giúp đỡ bạn.', zh:'当你遇到困难的时候，我一定会及时帮助你。', py:'Dāng nǐ yùdào kùnnan de shíhou, wǒ yídìng huì jíshí bāngzhù nǐ.'},
-  {vi:'Không ai thích ở cùng một người luôn dễ nổi giận cả.', zh:'没有人会喜欢跟一个总是容易生气的人在一起。', py:'Méiyǒu rén huì xǐhuan gēn yí ge zǒngshì róngyì shēngqì de rén zài yìqǐ.'},
+  {vi:'Lớp chúng tôi gần một nửa số bạn học đã ra nước ngoài.', zh:'我们班差不多一半的同学都去国外了。', py:'Wǒmen bān chàbuduō yíbàn de tóngxué dōu qù guówài le.'},
+  {vi:'Mặc dù đường rất xa, anh ấy vẫn đặc biệt đến ga tiễn tôi.', zh:'尽管路很远，他还是专门来车站送我。', py:'Jǐnguǎn lù hěn yuǎn, tā háishi zhuānmén lái chēzhàn sòng wǒ.'},
+  {vi:'Khi tôi bị ốm, bạn tôi luôn ở bên chăm sóc tôi.', zh:'当我生病的时候，我朋友一直陪着我，照顾我。', py:'Dāng wǒ shēngbìng de shíhou, wǒ péngyou yìzhí péi zhe wǒ, zhàogù wǒ.'},
+  {vi:'Anh ấy sống ở đây ba năm rồi, nhưng lại không quen một ai.', zh:'他在这儿住了三年，却一个人也不认识。', py:'Tā zài zhèr zhù le sān nián, què yí ge rén yě bú rènshi.'},
+  {vi:'Ngày thường chúng tôi dùng tiếng Trung để trao đổi với nhau.', zh:'我们平时用汉语互相交流。', py:'Wǒmen píngshí yòng Hànyǔ hùxiāng jiāoliú.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Anh ấy tính khí không tốt lắm, nhưng lại rất dễ kết bạn.', zh:'他脾气不太好，但却很容易交朋友。', py:'Tā píqi bú tài hǎo, dàn què hěn róngyì jiāo péngyou.'},
-  {vi:'Nhìn thấy tấm ảnh cũ này, tôi dường như quay lại thời học sinh vậy.', zh:'看到这张老照片，我好像回到了学生时代一样。', py:'Kàndào zhè zhāng lǎo zhàopiàn, wǒ hǎoxiàng huídàole xuésheng shídài yíyàng.'},
-  {vi:'Cho dù công việc bận rộn, cô ấy vẫn thường xuyên giao lưu với đồng nghiệp.', zh:'尽管工作很忙，她还是经常跟同事交流。', py:'Jǐnguǎn gōngzuò hěn máng, tā háishi jīngcháng gēn tóngshì jiāoliú.'},
-  {vi:'Người bạn chân chính sẽ giúp bạn nhìn ra khuyết điểm của mình, giống như tấm gương vậy.', zh:'真正的朋友会帮你看到自己的缺点，就像镜子一样。', py:'Zhēnzhèng de péngyou huì bāng nǐ kàndào zìjǐ de quēdiǎn, jiù xiàng jìngzi yíyàng.'},
-  {vi:'Cuối tuần này tôi định đặc biệt đi thăm ông bà.', zh:'这个周末我打算专门去看爷爷奶奶。', py:'Zhège zhōumò wǒ dǎsuàn zhuānmén qù kàn yéye nǎinai.'},
-  {vi:'Sau khi tốt nghiệp, rất nhiều bạn học đã rời xa thành phố này.', zh:'毕业以后，很多同学都离开了这座城市。', py:'Bì yè yǐhòu, hěn duō tóngxué dōu líkāile zhè zuò chéngshì.'},
-  {vi:'Khi bạn buồn chán, hãy gọi điện cho tôi, tôi sẽ ở bên cạnh bạn.', zh:'当你无聊的时候，给我打电话吧，我会陪在你身边。', py:'Dāng nǐ wúliáo de shíhou, gěi wǒ dǎ diànhuà ba, wǒ huì péi zài nǐ shēnbiān.'},
-  {vi:'Môi trường xung quanh nhà tôi rất yên tĩnh, tôi rất thích nơi này.', zh:'我家周围的环境很安静，我很喜欢这个地方。', py:'Wǒ jiā zhōuwéi de huánjìng hěn ānjìng, wǒ hěn xǐhuan zhège dìfang.'},
+  {vi:'Cuối tuần tôi hay đi dạo phố cùng mẹ.', zh:'周末我常常陪妈妈去逛街。', py:'Zhōumò wǒ chángcháng péi māma qù guàng jiē.'},
+  {vi:'Ai cũng có khó khăn của riêng mình, chúng ta phải thông cảm cho nhau.', zh:'每个人都有自己的困难，我们要互相理解。', py:'Měi ge rén dōu yǒu zìjǐ de kùnnan, wǒmen yào hùxiāng lǐjiě.'},
+  {vi:'Một mình sang nước ngoài sống, lúc đầu chắc chắn sẽ thấy rất buồn chán.', zh:'一个人去国外生活，开始一定会觉得很无聊。', py:'Yí ge rén qù guówài shēnghuó, kāishǐ yídìng huì juéde hěn wúliáo.'},
+  {vi:'Tin nhắn này hình như gửi nhầm rồi.', zh:'这条短信好像发错了。', py:'Zhè tiáo duǎnxìn hǎoxiàng fā cuò le.'},
 ];
 
 // ══════════════════════════════════════════

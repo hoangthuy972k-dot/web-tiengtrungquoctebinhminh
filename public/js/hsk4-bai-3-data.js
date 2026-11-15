@@ -3470,46 +3470,53 @@ var dialogData = [
    ]},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
 var matchData = [
-  {left:'挺',right:'挺喜欢'},
-  {left:'紧张',right:'有点儿紧张'},
-  {left:'信心',right:'对自己有信心'},
-  {left:'能力',right:'相信自己的能力'},
-  {left:'招聘',right:'招聘会'},
-  {left:'提供',right:'提供工作机会'},
-  {left:'负责',right:'负责这件事'},
-  {left:'应聘',right:'应聘的人'},
-  {left:'材料',right:'准备材料'},
-  {left:'符合',right:'符合要求'},
+  {left:'第一次用汉语给大家介绍自己，',right:'他紧张得说不好话'},
+  {left:'这家饭店的服务员对',right:'顾客很热情'},
+  {left:'星期六晚上要和女朋友',right:'约会'},
+  {left:'你大学学的是什么',right:'专业'},
+  {left:'公司给新同事',right:'提供住的地方'},
+  {left:'他的汉语水平',right:'符合公司的要求'},
+  {left:'一个人的习惯很难',right:'改变'},
+  {left:'去大公司应聘，最好穿得',right:'正式一点儿'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ
+// ══════════════════════════════════════════
 var fillData = [
-  {pre:'这几天',blank:'',post:'冷的，你不用穿这么多衣服。',hint:'tǐng',ans:'挺',exp:'挺 + tính từ + 的 = khá…, khẩu ngữ: 挺冷的. 挺 thường đi với 的 ở cuối.'},
-  {pre:'第一次跟女朋友见面的时候，他',blank:'',post:'得脸和耳朵都红了。',hint:'jǐnzhāng',ans:'紧张',exp:'Tính từ + 得 + kết quả: 紧张得脸都红了 = hồi hộp đến mức đỏ cả mặt. 得 nối với bổ ngữ trình độ.'},
-  {pre:'面试的时候，一定要对自己有',blank:'',post:'。',hint:'xìnxīn',ans:'信心'},
-  {pre:'要相信自己的',blank:'',post:'，能做好这份工作。',hint:'nénglì',ans:'能力'},
-  {pre:'学校体育馆还有一个',blank:'',post:'会，你去吗？',hint:'zhāopìn',ans:'招聘'},
-  {pre:'这次招聘会',blank:'',post:'的工作机会很多。',hint:'tígōng',ans:'提供'},
-  {pre:'这件事本来是他',blank:'',post:'的，现在交给我了。',hint:'fùzé',ans:'负责'},
-  {pre:'',blank:'',post:'是他负责的，但是他生病了。',hint:'běnlái',ans:'本来',exp:'本来 = vốn dĩ, lúc đầu (sau đó thay đổi): vốn là anh ấy phụ trách, nhưng anh ấy ốm.'},
-  {pre:'这次来',blank:'',post:'的一共有十五人。',hint:'yìngpìn',ans:'应聘'},
-  {pre:'这是他们的',blank:'',post:'，您看看。',hint:'cáiliào',ans:'材料'},
-  {pre:'他的能力比较',blank:'',post:'我们的要求。',hint:'fúhé',ans:'符合'},
-  {pre:'公司说下个星期会发邮件',blank:'',post:'。',hint:'tōngzhī',ans:'通知'},
-  {pre:'她大学学的是法律专业，梦想是当一名',blank:'',post:'。',hint:'lǜshī',ans:'律师'},
-  {pre:'我学的就是法律',blank:'',post:'。',hint:'zhuānyè',ans:'专业'},
-  {pre:'',blank:'',post:'，收入也不错。',hint:'lìngwài',ans:'另外',exp:'另外 = ngoài ra, đặt đầu câu để bổ sung thêm một ý: 另外，收入也不错.'},
+  {pre:'这家饭店的菜',blank:'挺',post:'好吃的，就是有点儿贵。',hint:'(khá)',ans:'挺',exp:'挺 + tính từ + 的 = khá…, cách nói khẩu ngữ, mức độ nhẹ hơn 非常; nhớ có 的 ở cuối.'},
+  {pre:'A：你的新同事怎么样？ B：',blank:'挺',post:'热情的，我去的第一天，他就带我认识了大家。',hint:'(khá, rất)',ans:'挺',exp:'Trả lời nhận xét trong khẩu ngữ: 挺 + tính từ + 的 (挺热情的); không nói 挺热情 rồi bỏ 的 ở câu trả lời ngắn.'},
+  {pre:'我',blank:'本来',post:'打算周末去爬山，但是下雨了，只能在家看书。',hint:'(vốn định, ban đầu)',ans:'本来',exp:'本来 = kế hoạch/tình hình ban đầu, sau đó đã thay đổi; vế sau thường có 但是 / 后来.'},
+  {pre:'A：你不是说这个周末要去北京吗？ B：我',blank:'本来',post:'要去的，但是公司突然让我加班。',hint:'(vốn dĩ)',ans:'本来',exp:'本来 đứng sau chủ ngữ (我本来要去的), rồi vế sau giải thích vì sao kế hoạch thay đổi.'},
+  {pre:'这个周末我要去银行，',blank:'另外',post:'还要去超市买点儿东西。',hint:'(ngoài ra)',ans:'另外',exp:'另外 = ngoài ra, bổ sung thêm một việc; đứng đầu vế sau, thường đi với 还 / 也.'},
+  {pre:'A：你为什么想来这家公司工作？ B：首先是离我家近，',blank:'其次',post:'是工作环境很好。',hint:'(thứ hai là)',ans:'其次',exp:'首先……其次…… = trước hết… thứ hai là…, dùng khi liệt kê lý do theo thứ tự quan trọng.'},
+  {pre:'',blank:'不管',post:'天气怎么样，我爷爷每天早上都去公园锻炼身体。',hint:'(bất kể)',ans:'不管',exp:'不管 + từ để hỏi (怎么样/谁/哪儿) hoặc A không A, vế sau phải có 都 / 也; khác 尽管 (bài 2) nói một sự thật cụ thể.'},
+  {pre:'A：明天下雨的话，咱们还去吗？ B：',blank:'不管',post:'下不下雨，我都去。',hint:'(bất kể)',ans:'不管',exp:'不管 + 下不下雨 (dạng A不A) + 都; người học hay viết nhầm 不管下雨，我都去 (thiếu dạng lựa chọn).'},
+  {pre:'老师通知我们明天的考试八点开始，大家一定要',blank:'准时',post:'到。',hint:'(đúng giờ)',ans:'准时',exp:'准时 = đúng giờ đã hẹn; 及时 (bài 2) = kịp lúc cần, không gắn với giờ cụ thể.'},
+  {pre:'A：这个周末你有什么',blank:'安排',post:'吗？ B：还没想好，可能在家休息。',hint:'(kế hoạch, sắp xếp)',ans:'安排',exp:'安排 ở đây là danh từ (kế hoạch đã sắp xếp); làm động từ thì nói 安排时间 / 安排工作.'},
+  {pre:'A：明天的会几点开？ B：还不知道，经理说下午会',blank:'通知',post:'大家。',hint:'(thông báo)',ans:'通知',exp:'通知 + người = báo cho ai biết một việc chính thức (họp, thi, phỏng vấn); chuyện thường ngày thì dùng 告诉.'},
+  {pre:'我们给你',blank:'留',post:'了一些菜，快吃吧。',hint:'(để dành lại)',ans:'留',exp:'留 + (cho ai) + đồ vật = để dành lại; còn cụm 留下印象 = để lại ấn tượng.'},
+  {pre:'他是一个很',blank:'诚实',post:'的孩子，做错了事总是马上告诉老师。',hint:'(thật thà)',ans:'诚实',exp:'诚实 (tính từ) = thật thà, không nói dối; làm định ngữ: 诚实的孩子.'},
+  {pre:'我们一家四口人，这个房间住不下，能换',blank:'另',post:'一个大一点儿的吗？',hint:'(khác — đứng trước số từ + lượng từ)',ans:'另',exp:'另 + (一) + lượng từ + danh từ = cái khác (另一个); 另外 đứng đầu câu/vế câu = ngoài ra.'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
 var sortData = [
-  {words:['他们','问','的','问题','都','挺','容易','的'],ans:'他们问的问题都挺容易的',audio:'他们问的问题都挺容易的'},
-  {words:['要','对','自己','有','信心'],ans:'要对自己有信心',audio:'要对自己有信心'},
-  {words:['这次','招聘','不是','小李','负责','吗'],ans:'这次招聘不是小李负责吗',audio:'这次招聘不是小李负责吗'},
-  {words:['这','是','他们','的','材料'],ans:'这是他们的材料',audio:'这是他们的材料'},
-  {words:['我','一','毕业','就','去','上海','当','律师','了'],ans:'我一毕业就去上海当律师了',audio:'我一毕业就去上海当律师了'},
-  {words:['另外','收入','也','不错'],ans:'另外收入也不错',audio:'另外收入也不错'},
-  {words:['首先','要','穿','正式','的','衣服'],ans:'首先要穿正式的衣服',audio:'首先要穿正式的衣服'},
-  {words:['不管','是','上课','还是','上班','准时','都','很','重要'],ans:'不管是上课还是上班准时都很重要',audio:'不管是上课还是上班准时都很重要'},
+  {words:['这个','工作','收入','挺','高','的','，','但是','每天','都','要','加班','。'],ans:'这个工作收入挺高的，但是每天都要加班。',audio:'这个工作收入挺高的，但是每天都要加班。'},
+  {words:['他','本来','是','一个','老师','，','后来','当','了','律师','。'],ans:'他本来是一个老师，后来当了律师。',audio:'他本来是一个老师，后来当了律师。'},
+  {words:['她','做','的','菜','很','好吃','，','另外','还','会','做','蛋糕','。'],ans:'她做的菜很好吃，另外还会做蛋糕。',audio:'她做的菜很好吃，另外还会做蛋糕。'},
+  {words:['不管','是','大人','还是','孩子','，','都','喜欢','这个','电影','。'],ans:'不管是大人还是孩子，都喜欢这个电影。',audio:'不管是大人还是孩子，都喜欢这个电影。'},
+  {words:['公司','让','我','负责','招聘','新','同事','。'],ans:'公司让我负责招聘新同事。',audio:'公司让我负责招聘新同事。'},
+  {words:['去','应聘','以前','，','要','先','准备','好','自己','的','材料','。'],ans:'去应聘以前，要先准备好自己的材料。',audio:'去应聘以前，要先准备好自己的材料。'},
+  {words:['他','对','自己','的','能力','很','有','信心','。'],ans:'他对自己的能力很有信心。',audio:'他对自己的能力很有信心。'},
+  {words:['只','见过','一次','，','很','难','判断','他','是不是','好人','。'],ans:'只见过一次，很难判断他是不是好人。',audio:'只见过一次，很难判断他是不是好人。'},
+  {words:['这','件','事','与','他','没有','关系','。'],ans:'这件事与他没有关系。',audio:'这件事与他没有关系。'},
 ];
 
 var errorFixMode = 'wordchoice';
@@ -3539,129 +3546,132 @@ var errorFixData = [
    opts:['咱们','留','准时','感觉'],ans:0,
    exp:'咱们 (chúng ta, bao gồm người nghe) phù hợp làm chủ ngữ mời rủ. 留 (để lại)、准时 (đúng giờ)、感觉 (cảm thấy) không phải đại từ chỉ người.'},
   {wrong:'不管做什么事，都要____，不能迟到。',
-   opts:['留','材料','咱们','准时'],ans:3,
-   exp:'准时 (đúng giờ) phù hợp với ngữ cảnh "không được đến muộn". 留 (để lại)、材料 (tài liệu)、咱们 (chúng ta) không phù hợp nghĩa.'},
+   opts:['留','符合','咱们','准时'],ans:3,
+   exp:'准时 (đúng giờ) phù hợp với ngữ cảnh "không được đến muộn". 留 (để lại)、符合 (phù hợp)、咱们 (chúng ta) không phù hợp nghĩa.'},
   {wrong:'他做事一直很诚实，给大家____下了很好的印象。',
-   opts:['感觉','咱们','留','准时'],ans:2,
-   exp:'留下印象 là cụm cố định: 留 (để lại) + 下 + 印象. 感觉 (cảm thấy)、咱们 (chúng ta)、准时 (đúng giờ) không đi được với 下……印象.'},
+   opts:['感觉','咱们','留','安排'],ans:2,
+   exp:'留下印象 là cụm cố định: 留 (để lại) + 下 + 印象. 感觉 (cảm thấy)、咱们 (chúng ta)、安排 (sắp xếp) không đi được với 下……印象.'},
 ];
 
+// ══════════════════════════════════════════
+// LUYỆN NÓI
+// ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 3. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu hỏi là một tình huống thật, nói về chính bạn bằng từ và mẫu câu của Bài 3. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Ngày mai bạn có buổi phỏng vấn xin việc.',
-      q_zh: '面试的时候，你会紧张吗？为什么？',
-      q_py: 'Miàn shì de shíhou, nǐ huì jǐnzhāng ma? Wèishénme?',
-      q_vn: 'Khi phỏng vấn, bạn có hồi hộp không? Vì sao?',
+      situation: 'Một người bạn lâu ngày gặp lại hỏi thăm công việc/việc học của bạn.',
+      q_zh: '你现在的工作（或者学习）怎么样？',
+      q_py: 'Nǐ xiànzài de gōngzuò (huòzhě xuéxí) zěnmeyàng?',
+      q_vn: 'Công việc (hoặc việc học) hiện tại của bạn thế nào?',
       grammar: { label: '挺……的 (khá…, khẩu ngữ)', any: ['挺'] },
       need: [
-        { label: 'Nói có hồi hộp hay không', any: ['紧张', '不紧张', '有点儿'] },
-        { label: 'Nêu lý do', any: ['信心', '能力', '准备', '经验', '第一次'] }
+        { label: 'Dùng 挺……的', any: ['挺'] },
+        { label: 'Nói về công việc/việc học', any: ['工作', '学习', '收入', '同事', '同学', '老师'] }
       ],
-      bonus: { label: 'Dùng 挺……的', any: ['挺'] },
-      vocab: ['紧张', '信心', '能力'],
-      minLen: 20,
-      sample: '面试的时候我会有点儿紧张，但是我对自己的能力挺有信心的，所以一般能正常回答问题。',
-      sample_py: 'Miàn shì de shíhou wǒ huì yǒudiǎnr jǐnzhāng, dànshì wǒ duì zìjǐ de nénglì tǐng yǒu xìnxīn de, suǒyǐ yìbān néng zhèngcháng huídá wèntí.',
-      sample_vn: 'Khi phỏng vấn tôi hơi hồi hộp, nhưng tôi khá tự tin vào năng lực của mình, nên thường vẫn trả lời bình thường được.',
-      tip: '挺……的 là cách nói khẩu ngữ, mức độ như 很: 这个菜挺好吃的。'
+      bonus: { label: 'Dùng 收入 hoặc 满意', any: ['收入', '满意'] },
+      vocab: ['挺', '收入', '同事', '满意'],
+      minLen: 22,
+      sample: '我现在在一家银行工作，工作挺忙的，但是同事对我都很热情。收入也挺不错，我对这个工作很满意。',
+      sample_py: 'Wǒ xiànzài zài yì jiā yínháng gōngzuò, gōngzuò tǐng máng de, dànshì tóngshì duì wǒ dōu hěn rèqíng. Shōurù yě tǐng búcuò, wǒ duì zhège gōngzuò hěn mǎnyì.',
+      sample_vn: 'Hiện tôi làm ở một ngân hàng, công việc khá bận nhưng đồng nghiệp đều rất nhiệt tình với tôi. Thu nhập cũng khá tốt, tôi rất hài lòng với công việc này.',
+      tip: '挺 + tính từ + 的: 挺忙的 / 挺不错 (riêng 挺不错 có thể bỏ 的).'
     },
     {
-      situation: 'Một bạn sắp tốt nghiệp hỏi kinh nghiệm xin việc của bạn.',
-      q_zh: '你觉得找工作的时候，什么最重要？',
-      q_py: 'Nǐ juéde zhǎo gōngzuò de shíhou, shénme zuì zhòngyào?',
-      q_vn: 'Bạn thấy khi tìm việc, điều gì quan trọng nhất?',
-      grammar: { label: '首先……，其次……，另外……', any: ['首先', '其次', '另外'] },
+      situation: 'Bạn kể về một việc lúc đầu không muốn làm nhưng rồi lại làm.',
+      q_zh: '有没有一件事，你本来不想做，后来却做了？',
+      q_py: 'Yǒu méiyǒu yí jiàn shì, nǐ běnlái bù xiǎng zuò, hòulái què zuò le?',
+      q_vn: 'Có việc gì lúc đầu bạn không muốn làm, sau đó lại làm không?',
+      grammar: { label: '本来……，后来…… (vốn dĩ…, sau đó…)', any: ['本来'] },
+      need: [
+        { label: 'Dùng 本来', any: ['本来'] },
+        { label: 'Nói điều gì đã thay đổi', any: ['后来', '但是', '改变', '慢慢'] }
+      ],
+      bonus: { label: 'Dùng 却 (bài 2) hoặc 改变', any: ['却', '改变'] },
+      vocab: ['本来', '后来', '改变'],
+      minLen: 22,
+      sample: '我本来不想学汉语，觉得汉字太难了。后来我认识了一个中国朋友，他常常跟我用汉语说话，我就慢慢喜欢上汉语了。',
+      sample_py: 'Wǒ běnlái bù xiǎng xué Hànyǔ, juéde Hànzì tài nán le. Hòulái wǒ rènshi le yí ge Zhōngguó péngyou, tā chángcháng gēn wǒ yòng Hànyǔ shuōhuà, wǒ jiù mànmàn xǐhuan shang Hànyǔ le.',
+      sample_vn: 'Lúc đầu tôi không muốn học tiếng Trung vì thấy chữ Hán khó quá. Sau đó tôi quen một người bạn Trung Quốc, anh ấy hay nói chuyện với tôi bằng tiếng Trung, thế là tôi dần dần thích tiếng Trung.',
+      tip: '本来 nói tình hình ban đầu; vế sau dùng 后来 / 但是 để nói sự thay đổi.'
+    },
+    {
+      situation: 'Bạn sắp đi ứng tuyển vào một công ty bạn rất thích.',
+      q_zh: '如果你去应聘，你会怎么准备？',
+      q_py: 'Rúguǒ nǐ qù yìngpìn, nǐ huì zěnme zhǔnbèi?',
+      q_vn: 'Nếu bạn đi ứng tuyển, bạn sẽ chuẩn bị thế nào?',
+      grammar: { label: '首先……，其次…… (trước hết…, thứ hai…)', any: ['首先'] },
       need: [
         { label: 'Dùng 首先……其次……', any: ['首先', '其次'] },
-        { label: 'Nêu phẩm chất cần có', any: ['信心', '诚实', '准时', '能力', '经验', '材料'] }
+        { label: 'Nói việc cần chuẩn bị', any: ['材料', '衣服', '正式', '了解', '准时'] }
       ],
-      bonus: { label: 'Bổ sung ý bằng 另外', any: ['另外'] },
-      vocab: ['首先', '其次', '诚实', '另外'],
+      bonus: { label: 'Dùng 诚实 hoặc 紧张', any: ['诚实', '紧张'] },
+      vocab: ['首先', '其次', '材料', '正式'],
       minLen: 22,
-      sample: '我觉得首先要对自己有信心，其次回答问题一定要诚实。另外，准时到和材料准备得好也会给人留下好印象。',
-      sample_py: 'Wǒ juéde shǒuxiān yào duì zìjǐ yǒu xìnxīn, qícì huídá wèntí yí dìng yào chéngshí. Lìngwài, zhǔnshí dào hé cáiliào zhǔnbèi děi hǎo yě huì gěi rén liú xià hǎo yìnxiàng.',
-      sample_vn: 'Tôi thấy trước hết phải tự tin, thứ hai là trả lời phải thành thật. Ngoài ra, đến đúng giờ và chuẩn bị hồ sơ tốt cũng gây ấn tượng tốt.',
-      tip: '首先……其次……最后…… giúp câu trả lời mạch lạc khi phỏng vấn.'
+      sample: '首先，我会把自己的材料再看一看，穿正式一点儿的衣服。其次，我会多了解这家公司。回答问题的时候要诚实，也不要太紧张。',
+      sample_py: 'Shǒuxiān, wǒ huì bǎ zìjǐ de cáiliào zài kàn yi kàn, chuān zhèngshì yìdiǎnr de yīfu. Qícì, wǒ huì duō liǎojiě zhè jiā gōngsī. Huídá wèntí de shíhou yào chéngshí, yě bú yào tài jǐnzhāng.',
+      sample_vn: 'Trước hết, tôi sẽ xem lại hồ sơ của mình một lượt, mặc quần áo trang trọng một chút. Thứ hai, tôi sẽ tìm hiểu nhiều hơn về công ty này. Khi trả lời câu hỏi phải thành thật, cũng đừng quá hồi hộp.',
+      tip: '首先 / 其次 đứng đầu câu, có thể thêm dấu phẩy: 首先，……其次，……'
     },
     {
-      situation: 'Đồng nghiệp phụ trách dự án đột nhiên phải nghỉ ốm.',
-      q_zh: '如果本来负责一件事的人突然生病了，你会怎么办？',
-      q_py: 'Rúguǒ běnlái fùzé yí jiàn shì de rén tūrán shēngbìng le, nǐ huì zěnme bàn?',
-      q_vn: 'Nếu người vốn phụ trách một việc đột nhiên bị ốm, bạn sẽ làm gì?',
-      grammar: { label: '本来 (vốn dĩ) + 不管……都……', any: ['本来', '不管'] },
+      situation: 'Bạn bè hỏi về một thói quen bạn giữ mỗi ngày.',
+      q_zh: '你每天都一定会做的事情是什么？',
+      q_py: 'Nǐ měi tiān dōu yídìng huì zuò de shìqing shì shénme?',
+      q_vn: 'Việc ngày nào bạn cũng nhất định làm là gì?',
+      grammar: { label: '不管……都…… (bất kể… đều…)', any: ['不管'] },
       need: [
-        { label: 'Dùng 本来 nói việc ban đầu', any: ['本来'] },
-        { label: 'Nói bạn sẽ làm gì', any: ['帮', '负责', '完成', '安排', '通知'] }
+        { label: 'Dùng 不管……都……', any: ['不管'] },
+        { label: 'Nói việc bạn làm mỗi ngày', any: ['每天', '天天', '早上', '晚上'] }
       ],
-      bonus: { label: 'Dùng 不管……都…… thể hiện thái độ', any: ['不管'] },
-      vocab: ['本来', '负责', '不管', '安排'],
-      minLen: 22,
-      sample: '本来这件事是他负责的，但是他生病了，不管我自己有多忙，都会先帮他把工作安排好、做完。',
-      sample_py: 'Běnlái zhè jiàn shì shì tā fùzé de, dànshì tā shēngbìng le, bùguǎn wǒ zìjǐ yǒu duō máng, dōu huì xiān bāng tā bǎ gōngzuò ānpái hǎo, zuò wán.',
-      sample_vn: 'Vốn việc này do anh ấy phụ trách, nhưng anh ấy ốm, dù tôi bận đến mấy cũng sẽ sắp xếp và làm nốt giúp anh ấy.',
-      tip: '不管……都/也…… = bất kể… thì cũng…: 不管天气怎么样，我都去。'
+      bonus: { label: 'Dùng 本来 hoặc 习惯', any: ['本来', '习惯'] },
+      vocab: ['不管', '习惯', '每天'],
+      minLen: 20,
+      sample: '不管工作多忙，我每天晚上都会看半个小时书。这个习惯我已经有五年了，我觉得对我的帮助很大。',
+      sample_py: 'Bùguǎn gōngzuò duō máng, wǒ měi tiān wǎnshang dōu huì kàn bàn ge xiǎoshí shū. Zhège xíguàn wǒ yǐjīng yǒu wǔ nián le, wǒ juéde duì wǒ de bāngzhù hěn dà.',
+      sample_vn: 'Dù công việc bận đến đâu, tối nào tôi cũng đọc sách nửa tiếng. Thói quen này tôi đã giữ năm năm rồi, tôi thấy nó giúp tôi rất nhiều.',
+      tip: '不管 + 多 + tính từ (多忙/多累) + 都……: không nói 不管很忙.'
     },
     {
-      situation: 'Bạn nói chuyện với người thân về ngành học và công việc.',
-      q_zh: '你选专业的时候考虑了什么？现在的工作跟专业符合吗？',
-      q_py: 'Nǐ xuǎn zhuānyè de shíhou kǎolǜ le shénme? Xiànzài de gōngzuò gēn zhuānyè fúhé ma?',
-      q_vn: 'Khi chọn chuyên ngành bạn cân nhắc điều gì? Công việc hiện tại có phù hợp với chuyên ngành không?',
-      grammar: { label: '符合 + 要求/专业; 考虑 + nội dung', any: ['符合', '考虑'] },
+      situation: 'Bạn nói về kiểu đồng nghiệp/bạn học bạn thích làm việc cùng.',
+      q_zh: '你喜欢跟什么人一起工作或者学习？',
+      q_py: 'Nǐ xǐhuan gēn shénme rén yìqǐ gōngzuò huòzhě xuéxí?',
+      q_vn: 'Bạn thích làm việc hoặc học cùng người như thế nào?',
+      grammar: { label: '另外 (ngoài ra — bổ sung ý)', any: ['另外'] },
       need: [
-        { label: 'Nói điều đã cân nhắc', any: ['兴趣', '收入', '能力', '父母', '机会', '考虑'] },
-        { label: 'Nói công việc có hợp chuyên ngành không', any: ['符合', '专业', '差不多', '不太'] }
+        { label: 'Dùng 另外 bổ sung ý thứ hai', any: ['另外'] },
+        { label: 'Nêu phẩm chất', any: ['诚实', '准时', '热情', '认真', '能力'] }
       ],
-      bonus: { label: 'Nhắc đến thu nhập bằng 收入', any: ['收入'] },
-      vocab: ['专业', '符合', '收入'],
+      bonus: { label: 'Dùng 互相 (bài 1) hoặc 感觉', any: ['互相', '感觉'] },
+      vocab: ['另外', '诚实', '准时', '互相'],
       minLen: 22,
-      sample: '我选专业的时候主要考虑自己的兴趣，另外也考虑了以后的收入。现在的工作跟我的专业差不多符合，我挺满意的。',
-      sample_py: 'Wǒ xuǎn zhuānyè de shíhou zhǔyào kǎolǜ zìjǐ de xìng qù, lìngwài yě kǎolǜ le yǐhòu de shōurù. Xiànzài de gōngzuò gēn wǒ de zhuānyè chàbuduō fúhé, wǒ tǐng mǎnyì de.',
-      sample_vn: 'Khi chọn ngành tôi chủ yếu cân nhắc sở thích, ngoài ra cũng tính đến thu nhập sau này. Công việc hiện tại khá phù hợp với ngành của tôi, tôi rất hài lòng.',
-      tip: '符合 đi với 要求、条件、专业: 这份工作符合我的要求。'
-    },
-    {
-      situation: 'Bạn hẹn gặp khách hàng vào chiều mai.',
-      q_zh: '跟别人约会或者上班，你会准时到吗？为什么？',
-      q_py: 'Gēn biérén yuēhuì huòzhě shàngbān, nǐ huì zhǔnshí dào ma? Wèishénme?',
-      q_vn: 'Khi hẹn gặp người khác hoặc đi làm, bạn có đến đúng giờ không? Vì sao?',
-      grammar: { label: '不管……，都…… + 给人留下……印象', any: ['不管', '留'] },
-      need: [
-        { label: 'Nói thói quen về giờ giấc', any: ['准时', '提前', '迟到', '早'] },
-        { label: 'Nêu lý do', any: ['印象', '尊重', '习惯', '重要', '顾客'] }
-      ],
-      bonus: { label: 'Dùng 留下……印象', any: ['留'] },
-      vocab: ['约会', '准时', '留', '顾客'],
-      minLen: 22,
-      sample: '我一般提前十分钟到。不管是跟朋友约会还是见顾客，准时都会给别人留下好印象，也是对别人的尊重。',
-      sample_py: 'Wǒ yìbān tíqián shífēn zhōng dào. Bùguǎn shì gēn péngyou yuēhuì háishi jiàn gùkè, zhǔnshí dōu huì gěi biérén liú xià hǎo yìnxiàng, yě shì duì biérén de zūnzhòng.',
-      sample_vn: 'Tôi thường đến sớm 10 phút. Dù là hẹn bạn hay gặp khách hàng, đúng giờ đều tạo ấn tượng tốt, cũng là tôn trọng người khác.',
-      tip: '给……留下……印象: 他给我留下了很好的印象。'
+      sample: '我喜欢跟诚实、准时的人一起工作。另外，他最好也比较热情，遇到问题的时候大家可以互相帮助。',
+      sample_py: 'Wǒ xǐhuan gēn chéngshí, zhǔnshí de rén yìqǐ gōngzuò. Lìngwài, tā zuìhǎo yě bǐjiào rèqíng, yùdào wèntí de shíhou dàjiā kěyǐ hùxiāng bāngzhù.',
+      sample_vn: 'Tôi thích làm việc với người thật thà, đúng giờ. Ngoài ra, người đó tốt nhất cũng nên khá nhiệt tình, khi gặp vấn đề mọi người có thể giúp đỡ lẫn nhau.',
+      tip: '另外 đứng đầu câu/vế để thêm một ý mới: ……。另外，……'
     }
   ]
 };
 
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Việt → Trung)
+// ══════════════════════════════════════════
 var translateData = [
-  {vi:'Những câu hỏi họ hỏi đều khá dễ.',zh:'他们问的问题都挺容易的。',py:'Tāmen wèn de wèntí dōu tǐng róngyì de.'},
-  {vi:'Phải tự tin vào bản thân.',zh:'要对自己有信心。',py:'Yào duì zìjǐ yǒu xìnxīn.'},
-  {vi:'Ban đầu là Tiểu Lý phụ trách.',zh:'本来是小李负责的。',py:'Běnlái shì Xiǎo Lǐ fùzé de.'},
-  {vi:'Đây là tài liệu của họ, mời anh xem thử.',zh:'这是他们的材料，您看看。',py:'Zhè shì tāmen de cáiliào, nín kànkan.'},
-  {vi:'Tôi vừa tốt nghiệp là đi Thượng Hải làm luật sư ngay.',zh:'我一毕业就去上海当律师了。',py:'Wǒ yí bì yè jiù qù Shànghǎi dāng lùshī le.'},
-  {vi:'Ngoài ra, thu nhập cũng không tệ.',zh:'另外，收入也不错。',py:'Lìngwài, shōurù yě búcuò.'},
-  {vi:'Trước hết phải mặc trang phục lịch sự.',zh:'首先要穿正式的衣服。',py:'Shǒuxiān yào chuān zhèngshì de yīfu.'},
-  {vi:'Bất kể là đi học hay đi làm, đúng giờ đều rất quan trọng。',zh:'不管是上课还是上班，准时都非常重要。',py:'Bùguǎn shì shàng kè háishi shàng bān, zhǔnshí dōu fēicháng zhòngyào.'},
+  {vi:'Bộ phim này khá hay, bạn nên đi xem thử.', zh:'这个电影挺好看的，你应该去看看。', py:'Zhège diànyǐng tǐng hǎokàn de, nǐ yīnggāi qù kànkan.'},
+  {vi:'Bất kể bạn đi đâu, tôi cũng đi cùng bạn.', zh:'不管你去哪儿，我都陪你去。', py:'Bùguǎn nǐ qù nǎr, wǒ dōu péi nǐ qù.'},
+  {vi:'Lúc đầu tôi muốn học toán, sau đó lại chọn chuyên ngành luật.', zh:'我本来想学数学，后来选择了法律专业。', py:'Wǒ běnlái xiǎng xué shùxué, hòulái xuǎnzé le fǎlǜ zhuānyè.'},
+  {vi:'Chúng ta nghỉ một lát rồi hãy làm nhé.', zh:'咱们先休息一会儿再做吧。', py:'Zánmen xiān xiūxi yíhuìr zài zuò ba.'},
+  {vi:'Trước tiên, tôi xin giới thiệu một chút về bản thân.', zh:'首先，我介绍一下我自己。', py:'Shǒuxiān, wǒ jièshào yíxià wǒ zìjǐ.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Đợt tuyển dụng này chẳng phải Tiểu Lý phụ trách sao?',zh:'这次招聘不是小李负责吗？',py:'Zhè cì zhāopìn bú shì Xiǎo Lǐ fùzé ma?'},
-  {vi:'Năng lực của hai người này đều khá phù hợp với yêu cầu.',zh:'这两个人的能力都比较符合要求。',py:'Zhè liǎng ge rén de nénglì dōu bǐjiào fúhé yāoqiú.'},
-  {vi:'Chuyên ngành tôi học chính là luật.',zh:'我学的就是法律专业。',py:'Wǒ xué de jiùshì fǎlǜ zhuānyè.'},
-  {vi:'Chúng ta tìm thời gian tụ họp đi.',zh:'咱们找时间聚一聚吧。',py:'Zánmen zhǎo shíjiān jù yi jù ba.'},
-  {vi:'Điều này sẽ để lại ấn tượng tốt cho người phỏng vấn.',zh:'这会给面试者留下一个好的印象。',py:'Zhè huì gěi miànshìzhě liúxià yí ge hǎo de yìnxiàng.'},
-  {vi:'Quan trọng nhất là trả lời câu hỏi phải thành thật.',zh:'最重要的是回答问题要诚实。',py:'Zuì zhòngyào de shì huídá wèntí yào chéngshí.'},
-  {vi:'Ấn tượng đầu tiên rất quan trọng.',zh:'第一印象很重要。',py:'Dì-yī yìnxiàng hěn zhòngyào.'},
-  {vi:'Muốn thay đổi thì lại rất khó.',zh:'想改变却很困难。',py:'Xiǎng gǎibiàn què hěn kùnnan.'},
+  {vi:'Khách hàng đến cửa hàng này đều là người trẻ.', zh:'来这家商店的顾客都是年轻人。', py:'Lái zhè jiā shāngdiàn de gùkè dōu shì niánqīngrén.'},
+  {vi:'Anh ấy là người rất đúng giờ, hẹn hò chưa bao giờ đến muộn.', zh:'他是一个很准时的人，约会从来不迟到。', py:'Tā shì yí ge hěn zhǔnshí de rén, yuēhuì cónglái bù chídào.'},
+  {vi:'Chuyện này đã thay đổi cuộc sống của tôi.', zh:'这件事改变了我的生活。', py:'Zhè jiàn shì gǎibiàn le wǒ de shēnghuó.'},
+  {vi:'Đây là thông báo tuyển dụng của công ty chúng tôi, bạn xem qua đi.', zh:'这是我们公司的招聘通知，你看一下。', py:'Zhè shì wǒmen gōngsī de zhāopìn tōngzhī, nǐ kàn yíxià.'},
 ];
 
 var listenData = {

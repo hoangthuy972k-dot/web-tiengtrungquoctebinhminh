@@ -3611,46 +3611,53 @@ var dialogData = [
    ]},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
 var matchData = [
-  {left:'商量',right:'跟同事商量商量'},
-  {left:'并且',right:'并且准确地找到方法'},
-  {left:'保护',right:'保护衣服颜色'},
-  {left:'无法',right:'课本上无法学到的知识'},
-  {left:'详细',right:'详细谈谈看法'},
-  {left:'解释',right:'把复杂的问题解释清楚'},
-  {left:'引起',right:'引起别人的误会'},
-  {left:'节约',right:'节约时间'},
-  {left:'仔细',right:'仔细考虑一下'},
-  {left:'达到',right:'达到最好的效果'},
+  {left:'保护',right:'环境'},
+  {left:'节约',right:'用水'},
+  {left:'按时完成',right:'任务'},
+  {left:'他会说三种',right:'语言'},
+  {left:'你这么说很容易引起',right:'误会'},
+  {left:'孩子还不会用筷子，只能用',right:'勺子'},
+  {left:'秋天到了，树上的',right:'叶子都掉了'},
+  {left:'他对每个人都很',right:'友好'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ
+// ══════════════════════════════════════════
 var fillData = [
-  {pre:'有句话叫"',blank:'',post:'和经验是死的，人是活的"。',hint:'guīdìng',ans:'规定'},
-  {pre:'',blank:'',post:'，经验不是全部都是对的。',hint:'kěxī',ans:'可惜',exp:'可惜 = đáng tiếc, đặt đầu câu bày tỏ tiếc nuối.'},
-  {pre:'',blank:'',post:'这样就能找到解决问题的方法了。',hint:'yěxǔ',ans:'也许',exp:'也许 = có lẽ, chỉ khả năng; đặt trước động từ hoặc đầu câu.'},
-  {pre:'我再跟同事',blank:'',post:'商量，希望能及时发现问题。',hint:'shāngliang',ans:'商量',exp:'Lặp động từ hai âm tiết ABAB: 商量商量 = bàn bạc một chút.'},
-  {pre:'希望能及时发现问题，',blank:'',post:'准确地找到解决问题的方法。',hint:'bìngqiě',ans:'并且',exp:'并且 = đồng thời, và; nối hai động từ/vế câu cùng chủ ngữ.'},
-  {pre:'你洗的时候在水里加点儿',blank:'',post:'就不会这样了。',hint:'yán',ans:'盐'},
-  {pre:'盐有',blank:'',post:'衣服颜色的作用。',hint:'bǎohù',ans:'保护'},
-  {pre:'生活中还真有不少课本上',blank:'',post:'学到的知识。',hint:'wúfǎ',ans:'无法',exp:'无法 + động từ = không thể, không có cách (văn viết): 无法学到.'},
-  {pre:'您能',blank:'',post:'谈谈对我的课的看法吗？',hint:'xiángxì',ans:'详细'},
-  {pre:'总是能用最简单的方法把复杂的问题',blank:'',post:'清楚。',hint:'jiěshì',ans:'解释'},
-  {pre:'那您认为',blank:'',post:'老师来说，什么是最难做到的？',hint:'duìyú',ans:'对于',exp:'对于…来说 = đối với… mà nói; nêu góc nhìn của đối tượng.'},
-  {pre:'这样的人虽然很诚实，但是可能会',blank:'',post:'别人的误会。',hint:'yǐnqǐ',ans:'引起'},
-  {pre:'',blank:'',post:'，如果方法不对，可能花十倍的时间都不能完成任务。',hint:'xiāngfǎn',ans:'相反',exp:'相反 = ngược lại; đặt đầu câu, nói tình huống trái với câu trước.'},
-  {pre:'我们应该在听取别人意见的同时，',blank:'',post:'考虑一下。',hint:'zǐxì',ans:'仔细'},
-  {pre:'再根据不同的情况选择不同的方法，这样才能',blank:'',post:'最好的效果。',hint:'dádào',ans:'达到'},
+  {pre:'她每天六点起床，',blank:'并且',post:'坚持锻炼半个小时。',hint:'(và, hơn nữa)',ans:'并且',exp:'并且 nối hai động từ/vế câu cùng chủ ngữ, ý sau tiến thêm một bước; không dùng 并且 để nối hai danh từ (dùng 和).'},
+  {pre:'A：新来的同事怎么样？ B：他工作很认真，',blank:'并且',post:'很愿意帮助别人。',hint:'(hơn nữa)',ans:'并且',exp:'……，并且…… bổ sung thêm một ưu điểm nữa; nghĩa gần 而且, sắc thái trang trọng hơn.'},
+  {pre:'这个问题',blank:'再',post:'难，我们也要想办法解决。',hint:'(dù … đến đâu)',ans:'再',exp:'再 + tính từ + 也 = dù … đến mấy cũng…: 再难也要解决; 也 đứng ở vế sau, trước động từ.'},
+  {pre:'A：这件衣服太贵了，别买了。 B：',blank:'再',post:'贵我也要买，我太喜欢了。',hint:'(dù … đến mấy)',ans:'再',exp:'再贵我也要买 = đắt mấy tôi cũng mua; chủ ngữ của vế sau đứng trước 也.'},
+  {pre:'',blank:'对于',post:'这个计划，大家的看法不太一样。',hint:'(đối với)',ans:'对于',exp:'对于 + đối tượng: nêu thái độ/quan điểm đối với cái gì; 关于 + chủ đề = "về" (một quyển sách 关于历史).'},
+  {pre:'A：你在看什么书？ B：一本',blank:'关于',post:'中国历史的书。',hint:'(về)',ans:'关于',exp:'关于 + chủ đề + 的 + danh từ: sách về…; ở đây không dùng 对于 vì không nói thái độ đối với lịch sử.'},
+  {pre:'这个故事很有名，',blank:'人人',post:'都知道。',hint:'(ai ai cũng)',ans:'人人',exp:'Danh từ/lượng từ lặp lại (人人, 天天, 个个) = "mỗi … đều", sau đó thường có 都.'},
+  {pre:'我以为他会生气，',blank:'相反',post:'，他笑着说没关系。',hint:'(ngược lại)',ans:'相反',exp:'相反 đứng đầu vế sau, nêu sự thật trái ngược với điều đã nghĩ/đã nói ở trước.'},
+  {pre:'A：上个周末的聚会特别热闹，你怎么没来？ B：真',blank:'可惜',post:'，我那天正好加班。',hint:'(đáng tiếc)',ans:'可惜',exp:'真可惜 / 太可惜了 = tiếc quá; 可惜 là tính từ, cũng có thể đứng đầu câu: 可惜他没来.'},
+  {pre:'他今天没来上课，',blank:'也许',post:'是生病了。',hint:'(có lẽ)',ans:'也许',exp:'也许 = có lẽ (phỏng đoán, không chắc chắn), đứng trước động từ; gần nghĩa 可能.'},
+  {pre:'这件事我得先跟家人',blank:'商量',post:'一下，明天再告诉你。',hint:'(bàn bạc)',ans:'商量',exp:'跟 + ai + 商量 = bàn với ai; có thể lặp: 商量商量 = bàn một chút.'},
+  {pre:'考试的时候一定要',blank:'仔细',post:'看题，否则很容易做错。',hint:'(cẩn thận, kỹ)',ans:'仔细',exp:'仔细 + V = làm kỹ, cẩn thận: 仔细看, 仔细考虑; trái nghĩa với làm qua loa.'},
+  {pre:'你有什么意见可以',blank:'直接',post:'告诉我，不用不好意思。',hint:'(trực tiếp, thẳng)',ans:'直接',exp:'直接 + V = nói/làm thẳng, không qua người khác hay vòng vo.'},
+  {pre:'找到好的学习方法，学习就能',blank:'事半功倍',post:'。',hint:'(làm ít được nhiều)',ans:'事半功倍',exp:'事半功倍 = bỏ nửa công sức mà được gấp đôi hiệu quả; ngược lại là tốn nhiều công mà hiệu quả ít.'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
 var sortData = [
-  {words:['规定','和','经验','是','死','的','，','人','是','活','的'],ans:'规定和经验是死的，人是活的',audio:'规定和经验是死的，人是活的'},
-  {words:['可惜','，','经验','不是','全部','都','是','对','的'],ans:'可惜，经验不是全部都是对的',audio:'可惜，经验不是全部都是对的'},
-  {words:['难道','它','还','能','让','衣服','不','掉','颜色','？'],ans:'难道它还能让衣服不掉颜色？',audio:'难道它还能让衣服不掉颜色？'},
-  {words:['穿','得','再','久','，','衣服','也','不','容易','掉','颜色'],ans:'穿得再久，衣服也不容易掉颜色',audio:'穿得再久，衣服也不容易掉颜色'},
-  {words:['对于','老师','来说','，','什么','是','最','难','做到','的','？'],ans:'对于老师来说，什么是最难做到的？',audio:'对于老师来说，什么是最难做到的？'},
-  {words:['世界','上','没有','完全','相同','的','叶子'],ans:'世界上没有完全相同的叶子',audio:'世界上没有完全相同的叶子'},
-  {words:['人人','都','会','使用','语言'],ans:'人人都会使用语言',audio:'人人都会使用语言'},
-  {words:['别人','的','方法','也许','很','有效','，','但是','并','不','一定','适合','自己'],ans:'别人的方法也许很有效，但是并不一定适合自己',audio:'别人的方法也许很有效，但是并不一定适合自己'},
+  {words:['人人','都','应该','保护','环境','。'],ans:'人人都应该保护环境。',audio:'人人都应该保护环境。'},
+  {words:['他','不但','没','生气','，','相反','，','还','请','我','吃','了','饭','。'],ans:'他不但没生气，相反，还请我吃了饭。',audio:'他不但没生气，相反，还请我吃了饭。'},
+  {words:['对于','孩子','的','教育','，','父母','的','看法','不一定','相同','。'],ans:'对于孩子的教育，父母的看法不一定相同。',audio:'对于孩子的教育，父母的看法不一定相同。'},
+  {words:['天气','再','冷','，','他','也','坚持','每天','跑步','。'],ans:'天气再冷，他也坚持每天跑步。',audio:'天气再冷，他也坚持每天跑步。'},
+  {words:['老师','详细','地','解释','了','这个','词语','的','意思','。'],ans:'老师详细地解释了这个词语的意思。',audio:'老师详细地解释了这个词语的意思。'},
+  {words:['我','还','不','太','会','使用','这个','新','手机','。'],ans:'我还不太会使用这个新手机。',audio:'我还不太会使用这个新手机。'},
+  {words:['公司','规定','，','上班','时间','不能','玩儿','手机','。'],ans:'公司规定，上班时间不能玩儿手机。',audio:'公司规定，上班时间不能玩儿手机。'},
+  {words:['做','菜','的','时候','，','盐','不要','放','得','太','多','。'],ans:'做菜的时候，盐不要放得太多。',audio:'做菜的时候，盐不要放得太多。'},
+  {words:['没有','你','的','帮助','，','我','无法','完成','这个','任务','。'],ans:'没有你的帮助，我无法完成这个任务。',audio:'没有你的帮助，我无法完成这个任务。'},
 ];
 
 var errorFixMode = 'wordchoice';
@@ -3677,132 +3684,134 @@ var errorFixData = [
    opts:['详细','商量','力气','直接'],ans:1,
    exp:'商量 (bàn bạc) — 商量……的事情. Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'A：经理，新的计划发您信箱了，您看了吗？B：内容太简单，不够____，明天我们得再开会商量商量。',
-   opts:['详细','解释','商量','直接'],ans:0,
+   opts:['详细','解释','商量','力气'],ans:0,
    exp:'详细 (chi tiết) — 不够详细. Câu có 内容 (Bài 11). Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'A：你有没有李律师的电话号码？我想问他几个法律方面的问题。B：有，我发到你手机上，你____跟他联系就行。',
    opts:['详细','解释','商量','直接'],ans:3,
-   exp:'直接 (trực tiếp) — 直接跟他联系. Câu có 律师 (Bài 9). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'直接 (trực tiếp) — 直接跟他联系. Câu có 律师 (Bài 3). Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'A：怎么样？事情解决了吧？B：对，我向那位顾客____了这次不能及时送货的原因，她表示可以理解。',
    opts:['解释','商量','力气','直接'],ans:0,
    exp:'解释 (giải thích) — 向……解释了原因. Câu có 表示 (Bài 11). Các từ còn lại không phù hợp nghĩa.'},
 ];
 
+// ══════════════════════════════════════════
+// LUYỆN NÓI
+// ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 12. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu hỏi là một tình huống thật, nói về chính bạn bằng từ và mẫu câu của Bài 12. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Đồng nghiệp lớn tuổi khuyên bạn cứ làm theo cách cũ.',
-      q_zh: '你觉得经验有没有用？为什么？',
-      q_py: 'Nǐ juéde jīngyàn yǒu méiyǒu yòng? Wèishénme?',
-      q_vn: 'Bạn thấy kinh nghiệm có ích không? Vì sao?',
-      grammar: { label: '相反…… (ngược lại); 可惜……', any: ['相反', '可惜'] },
+      situation: 'Bạn giới thiệu với bạn bè một thầy/cô giáo mà bạn quý nhất.',
+      q_zh: '你最喜欢哪位老师？为什么？',
+      q_py: 'Nǐ zuì xǐhuan nǎ wèi lǎoshī? Wèi shénme?',
+      q_vn: 'Bạn thích thầy/cô giáo nào nhất? Vì sao?',
+      grammar: { label: '……，并且…… (…, hơn nữa…)', any: ['并且'] },
       need: [
-        { label: 'Nêu quan điểm về kinh nghiệm', any: ['有用', '经验', '当然', '不一定'] },
-        { label: 'Nêu mặt hạn chế', any: ['可惜', '相反', '复杂', '全部', '不对', '变化'] }
+        { label: 'Dùng 并且 nối hai ưu điểm', any: ['并且'] },
+        { label: 'Tả cách dạy hoặc tính cách', any: ['解释', '详细', '友好', '耐心', '认真', '幽默'] }
       ],
-      bonus: { label: 'Đưa ví dụ cụ thể', any: ['比如', '例如', '上次', '有一次'] },
-      vocab: ['可惜', '全部', '相反', '复杂'],
+      bonus: { label: 'Dùng 对于 hoặc AA (个个/天天)', any: ['对于', '个个', '天天', '人人'] },
+      vocab: ['并且', '解释', '友好', '详细'],
       minLen: 22,
-      sample: '经验当然有用，可惜经验不是全部都对。相反，情况变了以后，旧经验有时候会让问题变得更复杂，所以还要多想一想。',
-      sample_py: 'Jīngyàn dāngrán yǒu yòng, kěxī jīngyàn bú shì quánbù dōu duì. Xiāngfǎn, qíngkuàng biàn le yǐhòu, jiù jīngyàn yǒu shíhou huì ràng wèntí biàn děi gèng fùzá, suǒyǐ hái yào duō xiǎng yi xiǎng.',
-      sample_vn: 'Kinh nghiệm tất nhiên có ích, tiếc là kinh nghiệm không phải lúc nào cũng đúng. Ngược lại, khi tình hình đổi, kinh nghiệm cũ đôi khi làm vấn đề phức tạp hơn, nên vẫn phải suy nghĩ thêm.',
-      tip: '相反 dùng đầu câu để nêu ý ngược lại: 相反，他一点儿也不累。'
+      sample: '我最喜欢我的汉语老师。她上课很有意思，并且总是能把复杂的语法解释得很简单。她对每个学生都很友好，我们个个都喜欢她。',
+      sample_py: 'Wǒ zuì xǐhuan wǒ de Hànyǔ lǎoshī. Tā shàngkè hěn yǒu yìsi, bìngqiě zǒngshì néng bǎ fùzá de yǔfǎ jiěshì de hěn jiǎndān. Tā duì měi ge xuésheng dōu hěn yǒuhǎo, wǒmen gègè dōu xǐhuan tā.',
+      sample_vn: 'Tôi thích cô giáo tiếng Trung của tôi nhất. Cô dạy rất thú vị, hơn nữa luôn giải thích ngữ pháp phức tạp thành rất đơn giản. Cô thân thiện với mọi học sinh, ai trong chúng tôi cũng quý cô.',
+      tip: '并且 nối hai vế cùng chủ ngữ; vế sau thường mạnh hơn hoặc bổ sung thêm.'
     },
     {
-      situation: 'Bạn đang bế tắc với một nhiệm vụ ở công ty.',
-      q_zh: '要是工作或学习遇到困难，你可能用什么方法去解决？',
-      q_py: 'Yàoshi gōngzuò huò xuéxí yùdào kùnnan, nǐ kěnéng yòng shénme fāngfǎ qù jiějué?',
-      q_vn: 'Nếu công việc hay học tập gặp khó khăn, bạn có thể dùng cách nào để giải quyết?',
-      grammar: { label: '并且……; 也许…… (có lẽ)', any: ['并且', '也许'] },
+      situation: 'Bạn bè hỏi có việc gì bạn nhất định làm, dù bận đến mấy.',
+      q_zh: '有什么事，你再忙也一定会做？',
+      q_py: 'Yǒu shénme shì, nǐ zài máng yě yídìng huì zuò?',
+      q_vn: 'Có việc gì mà dù bận đến mấy bạn cũng nhất định làm?',
+      grammar: { label: '再 + tính từ + 也…… (dù … đến mấy cũng…)', any: ['再'] },
       need: [
-        { label: 'Nói cách tìm trợ giúp', any: ['商量', '问', '朋友', '同事', '老师', '上网'] },
-        { label: 'Nói cách thử hướng mới', any: ['试', '方法', '路', '换', '重新'] }
+        { label: 'Dùng 再……也……', any: ['也'] },
+        { label: 'Nói lý do', any: ['因为', '担心', '健康', '习惯', '重要'] }
       ],
-      bonus: { label: 'Dùng 也许 thể hiện khả năng', any: ['也许'] },
-      vocab: ['商量', '并且', '也许', '任务'],
+      bonus: { label: 'Dùng 即使……也…… (Bài 1)', any: ['即使'] },
+      vocab: ['再', '也', '即使'],
       minLen: 22,
-      sample: '我会先跟同事商量商量，并且试着走走以前没走过的路。也许换个方法，任务就没有想象的那么难了。',
-      sample_py: 'Wǒ huì xiān gēn tóngshì shāngliang shāngliang, bìngqiě shì zhe zǒuzou yǐqián méi zǒu guo de lù. Yěxǔ huàn ge fāngfǎ, rènwu jiù méiyǒu xiǎng xiàng de nàme nán le.',
-      sample_vn: 'Tôi sẽ bàn bạc với đồng nghiệp trước, đồng thời thử đi con đường mình chưa từng đi. Có lẽ đổi cách làm thì nhiệm vụ không khó như tưởng tượng.',
-      tip: '并且 nối hai vế cùng chiều, trang trọng hơn 而且 trong văn viết.'
+      sample: '我再忙也会每天给妈妈打一个电话。她一个人住，我不打电话她会担心。即使只说两三分钟，她也很高兴。',
+      sample_py: 'Wǒ zài máng yě huì měi tiān gěi māma dǎ yí ge diànhuà. Tā yí ge rén zhù, wǒ bù dǎ diànhuà tā huì dānxīn. Jíshǐ zhǐ shuō liǎng-sān fēnzhōng, tā yě hěn gāoxìng.',
+      sample_vn: 'Bận mấy tôi cũng gọi cho mẹ một cuộc mỗi ngày. Mẹ sống một mình, tôi không gọi thì mẹ sẽ lo. Dù chỉ nói hai ba phút, mẹ cũng rất vui.',
+      tip: '再 + adj + 也 nhấn mạnh mức độ; 即使 + sự việc + 也 nêu giả thiết.'
     },
     {
-      situation: 'Cả nhóm nói về những điều học được ngoài sách vở.',
-      q_zh: '你从生活中学到了哪些课本上学不到的知识？',
-      q_py: 'Nǐ cóng shēnghuó zhōngxué dào le nǎxiē kè běn shàngxué bú dào de zhīshi?',
-      q_vn: 'Bạn học được từ cuộc sống những kiến thức gì mà sách vở không có?',
-      grammar: { label: '无法 + động từ (không cách nào…)', any: ['无法'] },
+      situation: 'Một bạn mới học hỏi kinh nghiệm học tiếng Trung của bạn.',
+      q_zh: '对于学汉语，你有什么好方法？',
+      q_py: 'Duìyú xué Hànyǔ, nǐ yǒu shénme hǎo fāngfǎ?',
+      q_vn: 'Đối với việc học tiếng Trung, bạn có phương pháp hay nào?',
+      grammar: { label: '对于…… (đối với…)', any: ['对于'] },
       need: [
-        { label: 'Nêu một kinh nghiệm cụ thể', any: ['盐', '洗', '做饭', '修', '照顾', '省', '钱'] },
-        { label: 'Dùng 无法 hoặc 需要 nói về sách vở', any: ['无法', '课本', '需要', '发现'] }
+        { label: 'Dùng 对于', any: ['对于'] },
+        { label: 'Nêu phương pháp cụ thể', any: ['每天', '写', '说', '听', '看', '比如'] }
       ],
-      bonus: { label: 'Nói bạn học được từ ai', any: ['妈妈', '奶奶', '同事', '朋友', '网上'] },
-      vocab: ['无法', '作用', '使用'],
+      bonus: { label: 'Dùng 事半功倍', any: ['事半功倍'] },
+      vocab: ['对于', '事半功倍', '方法', '语言'],
       minLen: 22,
-      sample: '比如用盐水洗新衣服可以保护颜色，这种知识课本上无法学到，是我妈妈教我的。生活中很多小方法都很有作用。',
-      sample_py: 'Bǐrú yòng yán shuǐ xǐ xīn yīfu kěyǐ bǎohù yánsè, zhè zhǒng zhīshi kè běn shàng wúfǎ xué dào, shì wǒ māma jiāo wǒ de. Shēnghuó zhōng hěn duō xiǎo fāngfǎ dōu hěn yǒu zuòyòng.',
-      sample_vn: 'Ví dụ dùng nước muối giặt quần áo mới sẽ giữ được màu, kiến thức này sách vở không dạy, là mẹ tôi dạy tôi. Nhiều mẹo nhỏ trong cuộc sống rất có tác dụng.',
-      tip: '无法 + động từ hai âm tiết: 无法解决、无法理解。'
+      sample: '对于学一门语言，我觉得方法最重要。用对了方法，常常能事半功倍。比如我每天都用汉语写几个句子，学新词语又快又好。',
+      sample_py: 'Duìyú xué yì mén yǔyán, wǒ juéde fāngfǎ zuì zhòngyào. Yòng duì le fāngfǎ, chángcháng néng shì bàn gōng bèi. Bǐrú wǒ měi tiān dōu yòng Hànyǔ xiě jǐ ge jùzi, xué xīn cíyǔ yòu kuài yòu hǎo.',
+      sample_vn: 'Đối với việc học một ngôn ngữ, tôi thấy phương pháp quan trọng nhất. Dùng đúng phương pháp thường làm ít được nhiều. Ví dụ ngày nào tôi cũng viết vài câu bằng tiếng Trung, học từ mới vừa nhanh vừa tốt.',
+      tip: '对于 + đối tượng đặt đầu câu: 对于这个问题，……'
     },
     {
-      situation: 'Bạn nói chuyện với một người bạn làm nghề giáo.',
-      q_zh: '对于老师来说，你觉得什么是最难做到的？',
-      q_py: 'Duìyú lǎoshī lái shuō, nǐ juéde shénme shì zuì nán zuò dào de?',
-      q_vn: 'Đối với giáo viên, bạn thấy điều gì khó làm được nhất?',
-      grammar: { label: '对于……来说……', any: ['对于', '来说'] },
+      situation: 'Bạn kể về lớp học hoặc phòng làm việc của mình.',
+      q_zh: '你们班（公司）的人怎么样？',
+      q_py: 'Nǐmen bān (gōngsī) de rén zěnmeyàng?',
+      q_vn: 'Mọi người trong lớp (công ty) bạn thế nào?',
+      grammar: { label: 'Lặp danh từ/lượng từ: 个个、天天、人人 = mỗi … đều', any: ['个个', '天天', '人人', '家家'] },
       need: [
-        { label: 'Dùng 对于……来说', any: ['对于', '来说'] },
-        { label: 'Nêu điều khó', any: ['教育', '学生', '特点', '公平', '耐心', '不一样'] }
+        { label: 'Dùng một từ lặp (个个/天天/人人)', any: ['个个', '天天', '人人'] },
+        { label: 'Tả mọi người', any: ['努力', '友好', '热情', '认真', '帮助'] }
       ],
-      bonus: { label: 'Nêu lý do bằng 因为', any: ['因为', '由于'] },
-      vocab: ['对于', '教育', '解释', '详细'],
-      minLen: 22,
-      sample: '在我看来，对于老师来说，最难的是根据每个学生的特点来教育他们。因为学生再多，也没有完全一样的人，有时候还要一遍一遍详细地解释。',
-      sample_py: 'Zài wǒ kàn lái, duìyú lǎoshī lái shuō, zuì nán de shì gēnjù měi ge xuésheng de tèdiǎn lái jiàoyù tāmen. Yīnwèi xuésheng zài duō, yě méiyǒu wánquán yí yàng de rén, yǒu shíhou hái yào yí biàn yi biàn xiángxì de jiěshì.',
-      sample_vn: 'Theo tôi, với giáo viên, khó nhất là dạy học sinh theo đặc điểm của từng em. Vì học sinh dù đông cũng không có ai giống hệt ai, đôi khi còn phải giải thích tỉ mỉ nhiều lần.',
-      tip: '对于……来说 nêu góc nhìn của một nhóm người: 对于学生来说……'
+      bonus: { label: 'Dùng 并且', any: ['并且'] },
+      vocab: ['个个', '天天', '友好'],
+      minLen: 20,
+      sample: '我们班有十五个同学，个个都很努力，天天早早来教室学习。大家互相帮助，关系非常好。',
+      sample_py: 'Wǒmen bān yǒu shíwǔ ge tóngxué, gègè dōu hěn nǔlì, tiāntiān zǎozǎo lái jiàoshì xuéxí. Dàjiā hùxiāng bāngzhù, guānxi fēicháng hǎo.',
+      sample_vn: 'Lớp tôi có mười lăm bạn, ai cũng rất chăm chỉ, ngày nào cũng đến lớp sớm để học. Mọi người giúp đỡ lẫn nhau, quan hệ rất tốt.',
+      tip: 'Từ lặp mang nghĩa "mỗi…" thường đi với 都: 个个都……'
     },
     {
-      situation: 'Bạn thân của bạn có một thói quen chưa tốt.',
-      q_zh: '看到别人的缺点，你会直接说出来吗？',
-      q_py: 'Kàn dào biérén de quēdiǎn, nǐ huì zhíjiē shuō chū lái ma?',
-      q_vn: 'Thấy khuyết điểm của người khác, bạn có nói thẳng không?',
-      grammar: { label: '虽然……，但是……可能会引起误会', any: ['虽然', '引起', '误会'] },
+      situation: 'Bạn thân có một khuyết điểm, bạn muốn góp ý.',
+      q_zh: '朋友有缺点的时候，你会直接告诉他吗？',
+      q_py: 'Péngyou yǒu quēdiǎn de shíhou, nǐ huì zhíjiē gàosu tā ma?',
+      q_vn: 'Khi bạn bè có khuyết điểm, bạn có nói thẳng với họ không?',
+      grammar: { label: '相反 (ngược lại)', any: ['相反'] },
       need: [
-        { label: 'Nói có nói thẳng hay không', any: ['直接', '不会', '会'] },
-        { label: 'Nêu lý do hoặc cách làm khác', any: ['误会', '友好', '提醒', '方法', '意见', '语言'] }
+        { label: 'Dùng 相反', any: ['相反'] },
+        { label: 'Nói cách góp ý', any: ['直接', '提醒', '友好', '误会', '机会'] }
       ],
-      bonus: { label: 'Dùng 引起误会 hoặc 友好', any: ['引起', '友好'] },
-      vocab: ['直接', '引起', '误会', '友好'],
+      bonus: { label: 'Dùng 引起误会', any: ['误会'] },
+      vocab: ['相反', '直接', '引起', '误会'],
       minLen: 22,
-      sample: '我一般不会直接说。虽然直接说很诚实，但是可能会引起误会，让人不高兴。我会用比较友好的语言提醒他，这样他更容易接受我的意见。',
-      sample_py: 'Wǒ yìbān bú huì zhíjiē shuō. Suīrán zhíjiē shuō hěn chéngshí, dànshì kěnéng huì yǐnqǐ wùhuì, ràng rén bù gāoxìng. Wǒ huì yòng bǐjiào yǒuhǎo de yǔyán tíxǐng tā, zhè yàng tā gèng róngyì jiēshòu wǒ de yìjiàn.',
-      sample_vn: 'Tôi thường không nói thẳng. Tuy nói thẳng là thành thật, nhưng có thể gây hiểu lầm, làm người ta khó chịu. Tôi sẽ dùng lời lẽ thân thiện hơn để nhắc, như vậy họ dễ tiếp nhận ý kiến của tôi hơn.',
-      tip: '引起 + 误会/注意/问题: 这句话引起了很多讨论。'
+      sample: '我一般不会直接说，因为这样可能会引起误会。相反，我会找一个好机会，用比较友好的方法提醒他。',
+      sample_py: 'Wǒ yìbān bú huì zhíjiē shuō, yīnwèi zhèyàng kěnéng huì yǐnqǐ wùhuì. Xiāngfǎn, wǒ huì zhǎo yí ge hǎo jīhuì, yòng bǐjiào yǒuhǎo de fāngfǎ tíxǐng tā.',
+      sample_vn: 'Tôi thường không nói thẳng, vì như vậy có thể gây hiểu lầm. Ngược lại, tôi sẽ tìm một dịp thích hợp, dùng cách thân thiện hơn để nhắc bạn ấy.',
+      tip: '相反 đứng đầu câu/vế sau, thường có dấu phẩy theo sau: 相反，……'
     }
   ]
 };
 
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Việt → Trung)
+// ══════════════════════════════════════════
 var translateData = [
-  {vi:'Quy định và kinh nghiệm là cứng nhắc, con người là linh hoạt.',zh:'规定和经验是死的，人是活的。',py:'Guīdìng hé jīngyàn shì sǐ de, rén shì huó de.'},
-  {vi:'Đáng tiếc, kinh nghiệm không phải toàn bộ đều đúng.',zh:'可惜，经验不是全部都是对的。',py:'Kěxī, jīngyàn bú shì quánbù dōu shì duì de.'},
-  {vi:'Tôi sẽ bàn bạc thêm với đồng nghiệp, hy vọng kịp thời phát hiện vấn đề, đồng thời tìm ra chính xác cách giải quyết.',zh:'我再跟同事商量商量，希望能及时发现问题，并且准确地找到解决问题的方法。',py:'Wǒ zài gēn tóngshì shāngliang shāngliang, xīwàng néng jíshí fāxiàn wèntí, bìngqiě zhǔnquè de zhǎodào jiějué wèntí de fāngfǎ.'},
-  {vi:'Dùng nước muối giặt quần áo mới, mặc lâu đến đâu, giặt nhiều đến đâu, quần áo cũng không dễ phai màu.',zh:'用盐水来洗新衣服，这样穿得再久、洗的次数再多，衣服也不容易掉颜色。',py:'Yòng yánshuǐ lái xǐ xīn yīfu, zhèyàng chuān de zài jiǔ, xǐ de cìshù zài duō, yīfu yě bù róngyì diào yánsè.'},
-  {vi:'Trong cuộc sống thực sự có không ít kiến thức mà sách giáo khoa không thể dạy được.',zh:'生活中还真有不少课本上无法学到的知识。',py:'Shēnghuó zhōng hái zhēn yǒu bùshǎo kèběn shang wúfǎ xuédào de zhīshi.'},
-  {vi:'Đối với giáo viên mà nói, điều gì là khó làm được nhất?',zh:'对于老师来说，什么是最难做到的？',py:'Duìyú lǎoshī lái shuō, shénme shì zuì nán zuòdào de?'},
-  {vi:'Trên thế giới không có hai chiếc lá hoàn toàn giống nhau, cũng không có hai người hoàn toàn giống nhau.',zh:'世界上没有完全相同的叶子，也没有完全一样的人。',py:'Shìjiè shang méiyǒu wánquán xiāngtóng de yèzi, yě méiyǒu wánquán yíyàng de rén.'},
-  {vi:'Phương pháp của người khác có lẽ rất hiệu quả, nhưng không nhất định phù hợp với mình.',zh:'别人的方法也许很有效，但是并不一定适合自己。',py:'Biérén de fāngfǎ yěxǔ hěn yǒuxiào, dànshì bìng bù yídìng shìhé zìjǐ.'},
+  {vi:'Mệt đến mấy, cô ấy cũng làm xong bài tập rồi mới đi ngủ.', zh:'再累，她也会做完作业再睡觉。', py:'Zài lèi, tā yě huì zuò wán zuòyè zài shuìjiào.'},
+  {vi:'Hôm nay tôi có hai tiết tiếng Trung.', zh:'今天我有两节汉语课。', py:'Jīntiān wǒ yǒu liǎng jié Hànyǔ kè.'},
+  {vi:'Ai cũng có khuyết điểm.', zh:'人人都有缺点。', py:'Rénrén dōu yǒu quēdiǎn.'},
+  {vi:'Tôi đã tiêu hết toàn bộ tiền lương tháng này.', zh:'我把这个月的工资全部花完了。', py:'Wǒ bǎ zhège yuè de gōngzī quánbù huā wán le.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Theo kinh nghiệm trước đây của tôi, lẽ ra đã đàm phán xong từ lâu.',zh:'按我以前的经验，早应该谈成了。',py:'Àn wǒ yǐqián de jīngyàn, zǎo yīnggāi tánchéng le.'},
-  {vi:'Chúng ta nên thử đi những con đường trước đây chưa từng đi, có lẽ như vậy sẽ tìm ra cách giải quyết.',zh:'我们应该试着走走以前从来没走过的路，也许这样就能找到解决问题的方法了。',py:'Wǒmen yīnggāi shìzhe zǒuzou yǐqián cónglái méi zǒuguo de lù, yěxǔ zhèyàng jiù néng zhǎodào jiějué wèntí de fāngfǎ le.'},
-  {vi:'Muối chẳng phải dùng để nấu ăn sao? Chẳng lẽ nó còn giúp quần áo không phai màu?',zh:'盐不是用来做饭的吗？难道它还能让衣服不掉颜色？',py:'Yán bú shì yònglái zuò fàn de ma? Nándào tā hái néng ràng yīfu bú diào yánsè?'},
-  {vi:'Đáp án của rất nhiều vấn đề đều có thể tìm thấy trong cuộc sống, nhưng cần dùng mắt để phát hiện, dùng tâm để tổng kết.',zh:'很多问题的答案都可以从生活中找到，但这需要你用眼睛去发现，用心去总结。',py:'Hěn duō wèntí de dá\'àn dōu kěyǐ cóng shēnghuó zhōng zhǎodào, dàn zhè xūyào nǐ yòng yǎnjing qù fāxiàn, yòng xīn qù zǒngjié.'},
-  {vi:'Thầy luôn dùng cách đơn giản nhất giải thích rõ vấn đề phức tạp, để mỗi học sinh đều hiểu.',zh:'您总是能用最简单的方法把复杂的问题解释清楚，让每个学生都能听懂。',py:'Nín zǒngshì néng yòng zuì jiǎndān de fāngfǎ bǎ fùzá de wèntí jiěshì qīngchu, ràng měi ge xuésheng dōu néng tīngdǒng.'},
-  {vi:'Khi giáo dục học sinh, phải căn cứ vào đặc điểm của học sinh để chọn phương pháp khác nhau.',zh:'在教育学生时，要根据学生的特点选择不同的方法。',py:'Zài jiàoyù xuésheng shí, yào gēnjù xuésheng de tèdiǎn xuǎnzé bù tóng de fāngfǎ.'},
-  {vi:'Người như vậy tuy rất thành thật, nhưng có thể gây ra hiểu lầm cho người khác.',zh:'这样的人虽然很诚实，但是可能会引起别人的误会。',py:'Zhèyàng de rén suīrán hěn chéngshí, dànshì kěnéng huì yǐnqǐ biérén de wùhuì.'},
-  {vi:'Chúng ta nên trong lúc lắng nghe ý kiến người khác, cân nhắc kỹ, như vậy mới đạt hiệu quả tốt nhất.',zh:'我们应该在听取别人意见的同时，仔细考虑一下，这样才能达到最好的效果。',py:'Wǒmen yīnggāi zài tīngqǔ biérén yìjiàn de tóngshí, zǐxì kǎolǜ yíxià, zhèyàng cái néng dádào zuì hǎo de xiàoguǒ.'},
+  {vi:'Cách học của cậu ấy cứng nhắc quá, sách viết thế nào thì cậu ấy làm đúng y như thế.', zh:'他的学习方法太死，书上怎么写，他就怎么做。', py:'Tā de xuéxí fāngfǎ tài sǐ, shū shang zěnme xiě, tā jiù zěnme zuò.'},
+  {vi:'Ý kiến của người khác không nhất định tất cả đều đúng.', zh:'别人的意见不一定全部都对。', py:'Biéren de yìjiàn bù yídìng quánbù dōu duì.'},
+  {vi:'Đá bóng hai tiếng xong, tôi chẳng còn chút sức lực nào.', zh:'踢了两个小时足球以后，我一点儿力气都没有了。', py:'Tī le liǎng ge xiǎoshí zúqiú yǐhòu, wǒ yìdiǎnr lìqi dōu méiyǒu le.'},
+  {vi:'Tiếng Trung của anh ấy đã đạt đến trình độ làm phiên dịch.', zh:'他的汉语已经达到了当翻译的水平。', py:'Tā de Hànyǔ yǐjīng dádào le dāng fānyì de shuǐpíng.'},
 ];
 
 var listenData = {

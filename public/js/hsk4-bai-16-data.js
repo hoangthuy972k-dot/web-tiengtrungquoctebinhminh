@@ -3165,198 +3165,209 @@ var dialogData = [
    ]},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
 var matchData = [
-  {left:'办',right:'办签证'},
-  {left:'填写',right:'填写报名表格'},
-  {left:'取得',right:'取得联系'},
-  {left:'参观',right:'参观公司'},
-  {left:'代表',right:'代表钱的多少'},
-  {left:'当',right:'当导游'},
-  {left:'挂在',right:'挂在嘴边'},
-  {left:'推到',right:'推到"明天"'},
-  {left:'找出',right:'找出重点'},
-  {left:'得到',right:'得到别人的尊重'},
+  {left:'申请',right:'签证'},
+  {left:'把衣服',right:'挂起来'},
+  {left:'重视',right:'孩子的教育'},
+  {left:'报名',right:'学开车'},
+  {left:'电话',right:'号码'},
+  {left:'她想当',right:'导游'},
+  {left:'说话要有',right:'礼貌'},
+  {left:'带客人',right:'参观我们的新学校'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ
+// ══════════════════════════════════════════
 var fillData = [
-  {pre:'我想出国读',blank:'',post:'，一直在准备办签证需要的材料。',hint:'bóshì',ans:'博士'},
-  {pre:'下个星期我就要去使馆办',blank:'',post:'了，这可怎么办？',hint:'qiānzhèng',ans:'签证'},
-  {pre:'还跟国外的大学取得了联系，填写了',blank:'',post:'表格。',hint:'bào míng',ans:'报名'},
-  {pre:'他们把邀请信',blank:'',post:'给你了吗？',hint:'chuánzhēn',ans:'传真'},
-  {pre:'谢谢您带我',blank:'',post:'您的公司。',hint:'cānguān',ans:'参观'},
-  {pre:'这个问题以前一个',blank:'',post:'也问过我。',hint:'jìzhě',ans:'记者'},
-  {pre:'我们用西瓜的大小',blank:'',post:'钱的多少。',hint:'dàibiǎo',ans:'代表'},
-  {pre:'听完我的回答，',blank:'',post:'你已经知道我的答案了吧。',hint:'kǒngpà',ans:'恐怕',exp:'恐怕 = e rằng, có lẽ (dự đoán, thường mang ý lo lắng hoặc khách sáo).'},
-  {pre:'这次我父母又要',blank:'',post:'了。',hint:'shīwàng',ans:'失望'},
-  {pre:'你',blank:'',post:'怎么打算的呀？',hint:'dàodǐ',ans:'到底',exp:'到底 dùng trong câu hỏi = rốt cuộc, hỏi dồn để biết câu trả lời cuối cùng.'},
-  {pre:'让我当',blank:'',post:'，我实在不好意思拒绝。',hint:'dǎoyóu',ans:'导游'},
-  {pre:'他一定会',blank:'',post:'你的。',hint:'yuánliàng',ans:'原谅'},
-  {pre:'不要把什么事情都',blank:'',post:'到"明天"。',hint:'tuī',ans:'推'},
-  {pre:'首先要注意课前',blank:'',post:'。',hint:'yùxí',ans:'预习'},
-  {pre:'千万要',blank:'',post:'，不要骄傲。',hint:'lěngjìng',ans:'冷静'},
+  {pre:'A：报名表格写好了，我怎么交给你？ B：你',blank:'传真',post:'给我就行。',hint:'(gửi fax)',ans:'传真',exp:'传真 vừa là động từ (把材料传真给我) vừa là danh từ (发传真 = gửi bản fax).'},
+  {pre:'外面的天阴了，下午',blank:'恐怕',post:'要下雨，你带上伞吧。',hint:'(e rằng, có lẽ)',ans:'恐怕',exp:'恐怕 = e rằng (phỏng đoán điều không mong muốn), là phó từ, đứng trước động từ; không phải "sợ".'},
+  {pre:'我小时候很',blank:'害怕',post:'打针，一看见护士就哭。',hint:'(sợ)',ans:'害怕',exp:'Sợ thật sự → 害怕 + V/N (害怕打针); 恐怕 chỉ là phỏng đoán "e là", không mang tân ngữ chỉ điều mình sợ.'},
+  {pre:'A：你',blank:'到底',post:'去不去呀？大家都在等你呢！ B：去，等我五分钟。',hint:'(rốt cuộc)',ans:'到底',exp:'到底 dùng trong câu hỏi chính phản (去不去) hoặc có đại từ nghi vấn để truy hỏi; không dùng với 吗; 呀 cuối câu = 啊, làm câu hỏi mềm hơn.'},
+  {pre:'很多大城市的房子都很贵，就',blank:'拿',post:'上海来说，很多年轻人工作十年也买不到房子。',hint:'(lấy … mà nói)',ans:'拿',exp:'拿……来说 = lấy … làm ví dụ, đưa ra một ví dụ cụ thể cho ý chung phía trước.'},
+  {pre:'这么高的地方，你',blank:'敢',post:'往下看吗？',hint:'(dám)',ans:'敢',exp:'敢 + V = dám làm; phủ định 不敢 + V: 我不敢往下看.'},
+  {pre:'A：考试结果出来了吗？ B：出来了，没通过，我对自己很',blank:'失望',post:'。',hint:'(thất vọng)',ans:'失望',exp:'对……很失望 = thất vọng về …; 让人失望 = làm người khác thất vọng.'},
+  {pre:'他已经说了对不起，你就',blank:'原谅',post:'他吧。',hint:'(tha thứ)',ans:'原谅',exp:'原谅 + người = tha thứ cho ai; thường dùng sau khi người kia đã xin lỗi.'},
+  {pre:'遇到问题的时候先别着急，',blank:'冷静',post:'下来想想办法。',hint:'(bình tĩnh)',ans:'冷静',exp:'冷静下来 = bình tĩnh lại; 下来 chỉ trạng thái từ động sang tĩnh.'},
+  {pre:'这份材料很重要，你检查的时候千万不能',blank:'马虎',post:'。',hint:'(qua loa, cẩu thả)',ans:'马虎',exp:'马虎 = qua loa, đại khái (thái độ làm việc); gần nghĩa 粗心 (Bài 15).'},
+  {pre:'明天要学新课，今天晚上我得先',blank:'预习',post:'一下。',hint:'(chuẩn bị bài trước)',ans:'预习',exp:'预习 = xem trước bài sắp học; 复习 = ôn lại bài đã học.'},
+  {pre:'时间不多了，你别说那么多，只说',blank:'重点',post:'吧。',hint:'(trọng điểm, ý chính)',ans:'重点',exp:'重点 = phần quan trọng nhất (danh từ): 说重点, 这次考试的重点.'},
+  {pre:'每个人的看法都不一样，我们应该互相',blank:'尊重',post:'。',hint:'(tôn trọng)',ans:'尊重',exp:'尊重 = tôn trọng (người, ý kiến, lựa chọn); 互相尊重 = tôn trọng lẫn nhau.'},
+  {pre:'这个西瓜',blank:'可',post:'甜了，你快尝尝。',hint:'(… thật là — nhấn mạnh, khẩu ngữ)',ans:'可',exp:'可 + tính từ + 了 = thật là… (nhấn mạnh, khẩu ngữ): 可甜了 = ngọt lắm luôn.'},
+  {pre:'他特别',blank:'怕',post:'冷，冬天总是穿得很多。',hint:'(sợ — khẩu ngữ)',ans:'怕',exp:'怕 = sợ (= 害怕, khẩu ngữ, mang tân ngữ: 怕冷); 恐怕 chỉ là “e rằng” khi phỏng đoán.'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
 var sortData = [
-  {words:['你','马上','就','要','硕士','毕业','了','吧','？'],ans:'你马上就要硕士毕业了吧？',audio:'你马上就要硕士毕业了吧？'},
-  {words:['这','可','是','个','大','问题','，','我','也','不太','清楚'],ans:'这可是个大问题，我也不太清楚',audio:'这可是个大问题，我也不太清楚'},
-  {words:['咱们','一边','吃','西瓜','，','一边','聊'],ans:'咱们一边吃西瓜，一边聊',audio:'咱们一边吃西瓜，一边聊'},
-  {words:['恐怕','你','已经','知道','我','的','答案','了','吧'],ans:'恐怕你已经知道我的答案了吧',audio:'恐怕你已经知道我的答案了吧'},
-  {words:['你','到底','怎么','打算','的','呀','？'],ans:'你到底怎么打算的呀？',audio:'你到底怎么打算的呀？'},
-  {words:['拒绝','并','不','表示','不','愿意','帮忙'],ans:'拒绝并不表示不愿意帮忙',audio:'拒绝并不表示不愿意帮忙'},
-  {words:['就','拿','学','汉语','来说','吧','，','首先','要','注意','课前','预习'],ans:'就拿学汉语来说吧，首先要注意课前预习',audio:'就拿学汉语来说吧，首先要注意课前预习'},
-  {words:['没有','人','会','永远','输','，','也','没有','人','会','一直','赢'],ans:'没有人会永远输，也没有人会一直赢',audio:'没有人会永远输，也没有人会一直赢'},
+  {words:['我','朋友','在','国外','读','博士','，','已经','三年','没','回来','了','。'],ans:'我朋友在国外读博士，已经三年没回来了。',audio:'我朋友在国外读博士，已经三年没回来了。'},
+  {words:['申请','签证','需要','准备','很多','材料','。'],ans:'申请签证需要准备很多材料。',audio:'申请签证需要准备很多材料。'},
+  {words:['请','先','把','这张','表格','写好','再','交给','我','。'],ans:'请先把这张表格写好再交给我。',audio:'请先把这张表格写好再交给我。'},
+  {words:['那位','年轻','的','记者','问','了','我','很多','问题','。'],ans:'那位年轻的记者问了我很多问题。',audio:'那位年轻的记者问了我很多问题。'},
+  {words:['这个','小伙子','又','诚实','又','自信','。'],ans:'这个小伙子又诚实又自信。',audio:'这个小伙子又诚实又自信。'},
+  {words:['周末','我们','去','郊区','玩儿','吧','，','那里','空气','新鲜','。'],ans:'周末我们去郊区玩儿吧，那里空气新鲜。',audio:'周末我们去郊区玩儿吧，那里空气新鲜。',alt:['我们周末去郊区玩儿吧，那里空气新鲜。']},
+  {words:['他','代表','我们','班','参加','了','学校','的','比赛','。'],ans:'他代表我们班参加了学校的比赛。',audio:'他代表我们班参加了学校的比赛。'},
+  {words:['听到','这个','好消息','，','大家','都','激动','得','哭','了','。'],ans:'听到这个好消息，大家都激动得哭了。',audio:'听到这个好消息，大家都激动得哭了。'},
+  {words:['输','了','也','没关系','，','重要','的','是','你','努力','过','。'],ans:'输了也没关系，重要的是你努力过。',audio:'输了也没关系，重要的是你努力过。'},
 ];
 
 var errorFixMode = 'wordchoice';
 var errorFixData = [
   {wrong:'虽然得到别人的____很容易，但要重新让别人再相信你却很难。',
    opts:['同情','参观','原谅','郊区'],ans:2,
-   exp:'原谅 (tha thứ) — 得到别人的原谅. Câu có 重新 (Bài 8), 却 (Bài 2). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'原谅 (tha thứ) — 得到别人的原谅. Câu có 重新 (Bài 2), 却 (Bài 2). Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'爱批评人或者没有____心的人是最不受欢迎的，这样的人即使很成功，朋友也很少。',
    opts:['同情','参观','输','原谅'],ans:0,
-   exp:'同情 (thông cảm) — 同情心 = lòng thương người. Câu có 批评 (Bài 15), 即使 (Bài 9). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'同情 (thông cảm) — 同情心 = lòng thương người. Câu có 批评 (Bài 15), 即使 (Bài 1). Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'各位朋友大家好！欢迎来到美丽的海南，这几天就由我带着大家____。',
    opts:['同情','参观','输','郊区'],ans:1,
    exp:'参观 (tham quan) — 带着大家参观. Câu có 由 (Bài 13), 美丽 (Bài 14). Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'现在城市里越来越多的人喜欢到____过周末。他们想找一个空气新鲜、安静的地方好好放松一下。',
    opts:['参观','输','郊区','原谅'],ans:2,
-   exp:'郊区 (ngoại ô) — 到郊区过周末. Câu có 越来越 (Bài 1), 放松 (Bài 9). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'郊区 (ngoại ô) — 到郊区过周末. Câu có 越来越, 放松 (Bài 8). Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'生活的关键就是：只要你努力做了，不管是____是赢，都一样精彩。',
-   opts:['同情','参观','输','郊区'],ans:2,
+   opts:['同情','原谅','输','郊区'],ans:2,
    exp:'输 (thua) — 是输是赢. Câu có 关键 (Bài 10), 只要 (Bài 8), 不管……都 (Bài 3), 精彩 (Bài 11). Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'A：你们这个月空调卖得怎么样？B：不错，我们现在____出了"以旧换新"的活动，吸引了不少顾客。',
    opts:['报名','预习','推','号码'],ans:2,
-   exp:'推 (tung ra) — 推出活动. Câu có 以……换 (Bài 14), 吸引 (Bài 6), 顾客 (Bài 6). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'推 (tung ra) — 推出活动. Câu có 以……换 (Bài 14), 吸引 (Bài 1), 顾客 (Bài 3). Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'A：他什么时候能和我玩儿？B：等他____完课文再跟你玩儿，奶奶先陪你做游戏吧。',
    opts:['报名','预习','尊重','推'],ans:1,
-   exp:'预习 (chuẩn bị bài) — 预习完课文. Câu có 等……再 (Bài 3), 陪 (Bài 3). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'预习 (chuẩn bị bài) — 预习完课文. Câu có 等……再, 陪 (Bài 2). Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'A：我考虑了很久，还是决定离开现在的公司。B：既然这样，那我们____你的选择。',
    opts:['报名','预习','尊重','号码'],ans:2,
-   exp:'尊重 (tôn trọng) — 尊重你的选择. Câu có 考虑 (Bài 3), 既然 (Bài 14). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'尊重 (tôn trọng) — 尊重你的选择. Câu có 考虑 (Bài 5), 既然 (Bài 14). Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'A：我记得上次关教授把他的手机____给我了，可是不知道写哪儿了。B：你当时好像写在本子上了，你看看上面有没有。',
-   opts:['报名','预习','推','号码'],ans:3,
-   exp:'号码 (số) — 手机号码. Câu có 教授 (Bài 12), 当时 (Bài 7). Các từ còn lại không phù hợp nghĩa.'},
+   opts:['尊重','预习','推','号码'],ans:3,
+   exp:'号码 (số) — 手机号码. Câu có 教授 (Bài 7), 当时 (Bài 9). Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'A：我想____参加一万米长跑比赛，你参加不参加？B：恐怕不行，我下星期要考试了。',
-   opts:['报名','预习','尊重','推'],ans:0,
+   opts:['报名','号码','尊重','推'],ans:0,
    exp:'报名 (đăng ký) — 报名参加比赛. Câu có 恐怕 (ngữ pháp bài). Các từ còn lại không phù hợp nghĩa.'},
 ];
 
+// ══════════════════════════════════════════
+// LUYỆN NÓI
+// ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 16. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu hỏi là một tình huống thật, nói về chính bạn bằng từ và mẫu câu của Bài 16. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Thầy nhắc cả lớp chuẩn bị bài trước khi lên lớp.',
-      q_zh: '上课前，你有预习的习惯吗？预习的时候一般看哪些内容？',
-      q_py: 'Shàngkè qián, nǐ yǒu yùxí de xíguàn ma? Yùxí de shíhou yìbān kàn nǎxiē nèiróng?',
-      q_vn: 'Trước giờ học bạn có thói quen chuẩn bị bài không? Thường xem những nội dung gì?',
-      grammar: { label: '拿……来说; 首先……其次……', any: ['来说', '首先', '其次'] },
+      situation: 'Bạn bè hỏi nhau về những nỗi sợ của mình.',
+      q_zh: '有没有什么事是你不敢做的？',
+      q_py: 'Yǒu méiyǒu shénme shì shì nǐ bù gǎn zuò de?',
+      q_vn: 'Có việc gì bạn không dám làm không?',
+      grammar: { label: '敢 / 不敢 + V (dám / không dám)', any: ['敢'] },
       need: [
-        { label: 'Nói có thói quen hay không', any: ['预习', '有', '没有', '习惯'] },
-        { label: 'Kể nội dung chuẩn bị', any: ['生词', '课文', '重点', '语法', '问题', '读'] }
+        { label: 'Dùng 不敢 + động từ', any: ['不敢'] },
+        { label: 'Nói lý do', any: ['因为', '害怕', '担心', '所以'] }
       ],
-      bonus: { label: 'Dùng 马虎 nói điều tránh được', any: ['马虎', '认真', '自信'] },
-      vocab: ['预习', '重点', '马虎'],
-      minLen: 22,
-      sample: '有。拿学汉语来说，首先我会看生词，找出重点；其次读一遍课文，把不懂的地方记下来。这样上课的时候就不会马虎，也更自信。',
-      sample_py: 'Yǒu. Ná xué Hànyǔ lái shuō, shǒuxiān wǒ huì kàn shēng cí, zhǎo chū zhòngdiǎn; qícì dú yí biàn kè wén, bǎ bù dǒng de dìfang jì xià lái. Zhè yàng shàngkè de shíhou jiù bú huì mǎhu, yě gèng zìxìn.',
-      sample_vn: 'Có. Lấy việc học tiếng Hán mà nói, trước hết tôi xem từ mới, tìm ra trọng tâm; sau đó đọc bài khóa một lượt, ghi lại chỗ chưa hiểu. Như vậy vào lớp sẽ không cẩu thả, cũng tự tin hơn.',
-      tip: '拿……来说 dùng để nêu ví dụ: 拿我来说，我每天都跑步。'
+      bonus: { label: 'Dùng 冷静 hoặc 自信', any: ['冷静', '自信'] },
+      vocab: ['敢', '冷静', '自信'],
+      minLen: 20,
+      sample: '我不敢一个人坐飞机，也不敢晚上一个人走路，因为我总是很担心。我希望自己以后能更冷静、更自信一点儿。',
+      sample_py: 'Wǒ bù gǎn yí ge rén zuò fēijī, yě bù gǎn wǎnshang yí ge rén zǒulù, yīnwèi wǒ zǒngshì hěn dānxīn. Wǒ xīwàng zìjǐ yǐhòu néng gèng lěngjìng, gèng zìxìn yìdiǎnr.',
+      sample_vn: 'Tôi không dám đi máy bay một mình, cũng không dám đi bộ một mình buổi tối, vì tôi lúc nào cũng lo lắng. Tôi mong sau này mình có thể bình tĩnh hơn, tự tin hơn.',
+      tip: '敢 là động từ năng nguyện, đứng trước động từ chính: 不敢说, 敢不敢去?'
     },
     {
-      situation: 'Cả nhóm tranh luận yếu tố nào quyết định thành công.',
-      q_zh: '你认为机会和努力，哪个对成功更重要？',
-      q_py: 'Nǐ rènwéi jīhuì hé nǔlì, nǎge duì chénggōng gèng zhòngyào?',
-      q_vn: 'Bạn cho rằng cơ hội và nỗ lực, cái nào quan trọng hơn với thành công?',
-      grammar: { label: '恐怕…… (e rằng); 只有……才敢/才能……', any: ['恐怕', '只有'] },
+      situation: 'Bạn bè rủ cuối tuần đi chơi ngoại ô nhưng bạn bận.',
+      q_zh: '朋友请你周末去郊区玩儿，可是你很忙，你会怎么说？',
+      q_py: 'Péngyou qǐng nǐ zhōumò qù jiāoqū wánr, kěshì nǐ hěn máng, nǐ huì zěnme shuō?',
+      q_vn: 'Bạn bè mời bạn cuối tuần đi chơi ngoại ô nhưng bạn rất bận, bạn sẽ nói thế nào?',
+      grammar: { label: '恐怕 (e rằng) — từ chối nhẹ nhàng', any: ['恐怕'] },
       need: [
-        { label: 'Chọn một bên', any: ['努力', '机会', '重要'] },
-        { label: 'Nêu lý do', any: ['积累', '准备', '抓住', '重视', '经验', '基础'] }
+        { label: 'Dùng 恐怕', any: ['恐怕'] },
+        { label: 'Nêu lý do bận', any: ['加班', '考试', '出差', '工作', '作业'] }
       ],
-      bonus: { label: 'Dùng 恐怕 nêu điều lo ngại', any: ['恐怕'] },
-      vocab: ['恐怕', '重视', '敢'],
-      minLen: 22,
-      sample: '我觉得努力更重要。没有努力，恐怕机会来了也抓不住。只有重视平时的积累，机会出现的时候我们才敢去试。',
-      sample_py: 'Wǒ juéde nǔlì gèng zhòngyào. Méiyǒu nǔlì, kǒngpà jīhuì lái le yě zhuā bú zhù. Zhǐyǒu zhòngshì píngshí de jīlěi, jīhuì chūxiàn de shíhou wǒmen cái gǎn qù shì.',
-      sample_vn: 'Tôi thấy nỗ lực quan trọng hơn. Không nỗ lực thì e rằng cơ hội đến cũng không nắm được. Chỉ khi coi trọng tích lũy hằng ngày, lúc cơ hội xuất hiện ta mới dám thử.',
-      tip: '恐怕 diễn đạt lo ngại về khả năng xấu: 恐怕来不及了。'
+      bonus: { label: 'Hẹn lần sau / nói lời lịch sự', any: ['下次', '不好意思', '抱歉'] },
+      vocab: ['恐怕', '郊区', '礼貌'],
+      minLen: 18,
+      sample: '真不好意思，这个周末我恐怕去不了，公司让我加班。你们好好玩儿，下次有机会我一定去。',
+      sample_py: 'Zhēn bù hǎoyìsi, zhège zhōumò wǒ kǒngpà qù bu liǎo, gōngsī ràng wǒ jiābān. Nǐmen hǎohǎo wánr, xià cì yǒu jīhuì wǒ yídìng qù.',
+      sample_vn: 'Thật ngại quá, cuối tuần này e là tôi không đi được, công ty bắt tôi tăng ca. Các bạn chơi vui nhé, lần sau có dịp tôi nhất định đi.',
+      tip: 'Dùng 恐怕 để từ chối nhẹ nhàng, lịch sự hơn nói thẳng 我不去.'
     },
     {
-      situation: 'Bạn thân hỏi vay tiền đúng lúc bạn cũng đang cần.',
-      q_zh: '好朋友向你借钱，可是你正准备结婚买房子，你会拒绝吗？',
-      q_py: 'Hǎo péngyou xiàng nǐ jiè qián, kěshì nǐ zhèng zhǔnbèi jiéhūn mǎi fáng zi, nǐ huì jùjué ma?',
-      q_vn: 'Bạn thân hỏi vay tiền nhưng bạn đang chuẩn bị cưới và mua nhà, bạn có từ chối không?',
-      grammar: { label: '既……又……; 既然……就……', any: ['既', '既然'] },
+      situation: 'Một người bạn nước ngoài hỏi thành phố của bạn đã thay đổi thế nào.',
+      q_zh: '这几年你住的地方有什么变化？',
+      q_py: 'Zhè jǐ nián nǐ zhù de dìfang yǒu shénme biànhuà?',
+      q_vn: 'Mấy năm nay nơi bạn sống có thay đổi gì?',
+      grammar: { label: '拿……来说 (lấy … mà nói)', any: ['拿'] },
       need: [
-        { label: 'Nói cách trả lời bạn', any: ['拒绝', '说明', '告诉', '困难', '情况'] },
-        { label: 'Nói thái độ lịch sự', any: ['礼貌', '合适', '原谅', '友好', '尊重'] }
+        { label: 'Dùng 拿……来说', any: ['来说'] },
+        { label: 'Kể thay đổi cụ thể', any: ['超市', '商场', '公园', '饭馆', '地铁', '商店'] }
       ],
-      bonus: { label: 'Nói cách giúp khác nếu không cho vay được', any: ['帮', '一部分', '别的办法', '以后'] },
-      vocab: ['礼貌', '原谅', '拒绝'],
+      bonus: { label: 'Dùng 以前……现在……', any: ['以前'] },
+      vocab: ['拿……来说', '变化'],
       minLen: 22,
-      sample: '我会用一个既合适又礼貌的方法告诉他我的困难，如果可以，我会先借一小部分。既然是好朋友，他一定会原谅我，也会理解我。',
-      sample_py: 'Wǒ huì yòng yí ge jì héshì yòu lǐmào de fāngfǎ gàosu tā wǒ de kùnnan, rúguǒ kěyǐ, wǒ huì xiān jiè yì xiǎo bùfen. Jìrán shì hǎo péngyou, tā yí dìng huì yuánliàng wǒ, yě huì lǐjiě wǒ.',
-      sample_vn: 'Tôi sẽ dùng cách vừa hợp lý vừa lịch sự để nói với cậu ấy khó khăn của mình, nếu được thì cho mượn một phần nhỏ trước. Đã là bạn thân thì cậu ấy nhất định tha thứ và hiểu cho tôi.',
-      tip: '既……又…… nêu hai đặc điểm cùng lúc: 既便宜又好吃。'
+      sample: '这几年我住的地方变化很大。就拿我家附近来说吧，以前只有一个小商店，现在有超市、饭馆，还有一个很大的公园。',
+      sample_py: 'Zhè jǐ nián wǒ zhù de dìfang biànhuà hěn dà. Jiù ná wǒ jiā fùjìn lái shuō ba, yǐqián zhǐ yǒu yí ge xiǎo shāngdiàn, xiànzài yǒu chāoshì, fànguǎn, hái yǒu yí ge hěn dà de gōngyuán.',
+      sample_vn: 'Mấy năm nay nơi tôi ở thay đổi rất nhiều. Lấy ngay gần nhà tôi mà nói, trước đây chỉ có một cửa hàng nhỏ, bây giờ có siêu thị, quán ăn, còn có một công viên rất lớn.',
+      tip: '拿……来说 đi sau một nhận xét chung, đưa ra ví dụ cụ thể: 就拿我来说……'
     },
     {
-      situation: 'Sắp tốt nghiệp, gia đình hỏi bạn tính thế nào.',
-      q_zh: '你到底想毕业后工作还是继续读书？为什么？',
-      q_py: 'Nǐ dàodǐ xiǎng bìyè hòu gōngzuò háishi jìxù dúshū? Wèishénme?',
-      q_vn: 'Rốt cuộc sau khi tốt nghiệp bạn muốn đi làm hay học tiếp? Vì sao?',
-      grammar: { label: '到底…… (rốt cuộc) + 先……然后……', any: ['到底', '先', '然后'] },
+      situation: 'Bạn kể về một quyết định khó khăn trong đời.',
+      q_zh: '你有没有很难做的决定？',
+      q_py: 'Nǐ yǒu méiyǒu hěn nán zuò de juédìng?',
+      q_vn: 'Bạn có từng phải đưa ra quyết định khó khăn nào không?',
+      grammar: { label: '到底 (rốt cuộc)', any: ['到底'] },
       need: [
-        { label: 'Nói lựa chọn của bạn', any: ['工作', '读书', '硕士', '博士', '先'] },
-        { label: 'Nêu lý do', any: ['经验', '积累', '重点', '收入', '机会', '兴趣'] }
+        { label: 'Dùng 到底 trong câu hỏi lựa chọn', any: ['到底'] },
+        { label: 'Nói hai lựa chọn', any: ['还是'] }
       ],
-      bonus: { label: 'Dùng 到底 nhấn mạnh quyết định', any: ['到底'] },
-      vocab: ['到底', '重点', '自信'],
+      bonus: { label: 'Dùng 尊重 hoặc 重视', any: ['尊重', '重视'] },
+      vocab: ['到底', '尊重'],
       minLen: 22,
-      sample: '我到底还是想先工作两年，然后再去读硕士。因为先积累一些经验，读书的时候重点会更清楚，我自己也更自信。',
-      sample_py: 'Wǒ dàodǐ háishi xiǎng xiān gōngzuò liǎng nián, ránhòu zài qù dú shuòshì. Yīnwèi xiān jīlěi yì xiē jīngyàn, dúshū de shíhou zhòngdiǎn huì gèng qīngchu, wǒ zìjǐ yě gèng zìxìn.',
-      sample_vn: 'Rốt cuộc tôi vẫn muốn đi làm hai năm trước, rồi mới học thạc sĩ. Vì tích lũy chút kinh nghiệm trước thì lúc học trọng tâm sẽ rõ hơn, bản thân tôi cũng tự tin hơn.',
-      tip: '到底 trong câu trần thuật nghĩa là "rốt cuộc thì vẫn": 他到底还是来了。'
+      sample: '毕业的时候，我不知道到底应该回老家工作，还是在大城市工作。后来父母说他们尊重我的决定，我就先在大城市试试。',
+      sample_py: 'Bìyè de shíhou, wǒ bù zhīdào dàodǐ yīnggāi huí lǎojiā gōngzuò, háishi zài dà chéngshì gōngzuò. Hòulái fùmǔ shuō tāmen zūnzhòng wǒ de juédìng, wǒ jiù xiān zài dà chéngshì shìshi.',
+      sample_vn: 'Lúc tốt nghiệp, tôi không biết rốt cuộc nên về quê làm việc hay ở lại thành phố lớn. Sau đó bố mẹ nói họ tôn trọng quyết định của tôi, tôi liền thử ở thành phố lớn trước.',
+      tip: '到底 + câu hỏi (还是 / A不A / 什么…), không đi với 吗.'
     },
     {
-      situation: 'Trong cuộc họp, ai đó hỏi bạn một vấn đề bạn chưa nắm.',
-      q_zh: '要是别人问你问题，可是你不会，你会觉得不好意思吗？',
-      q_py: 'Yàoshi biérén wèn nǐ wèntí, kěshì nǐ bú huì, nǐ huì juéde bù hǎo yìsi ma?',
-      q_vn: 'Nếu người khác hỏi mà bạn không biết, bạn có ngại không?',
-      grammar: { label: '并不说明……; 相反……', any: ['并不', '相反'] },
+      situation: 'Bạn kể một chuyện gần đây khiến bạn rất xúc động hoặc thất vọng.',
+      q_zh: '最近有什么让你特别激动或者失望的事？',
+      q_py: 'Zuìjìn yǒu shénme ràng nǐ tèbié jīdòng huòzhě shīwàng de shì?',
+      q_vn: 'Gần đây có chuyện gì khiến bạn đặc biệt xúc động hoặc thất vọng?',
+      grammar: { label: 'Tính từ + 得 + kết quả (激动得……)', any: ['得'] },
       need: [
-        { label: 'Nói cảm giác và cách xử lý', any: ['不好意思', '不会', '诚实', '不知道', '问', '查'] },
-        { label: 'Nêu lý do', any: ['尊重', '相反', '并不', '学', '进步'] }
+        { label: 'Dùng tính từ + 得 + kết quả', any: ['得'] },
+        { label: 'Dùng 激动 hoặc 失望', any: ['激动', '失望'] }
       ],
-      bonus: { label: 'Dùng 敢 nói thái độ', any: ['敢'] },
-      vocab: ['尊重', '敢', '冷静'],
-      minLen: 22,
-      sample: '不会。我敢冷静地说“我不知道，我去查一下再回答你”。这并不说明我比别人差，相反，诚实的态度更能得到别人的尊重。',
-      sample_py: 'Bú huì. Wǒ gǎn lěngjìng de shuō "wǒ bù zhīdao, wǒ qù chá yíxià zài huídá nǐ". Zhè bìng bìng shuōmíng wǒ bǐ biérén chà, xiāngfǎn, chéngshí de tàidù gèng néng děi dào biérén de zūnzhòng.',
-      sample_vn: 'Không. Tôi dám bình tĩnh nói "Tôi chưa biết, để tôi tra rồi trả lời bạn". Điều đó không có nghĩa tôi kém hơn người khác, ngược lại, thái độ thành thật càng được người ta tôn trọng.',
-      tip: '并不说明…… = không có nghĩa là…: 输了并不说明你不行。'
+      bonus: { label: 'Dùng 输 hoặc 赢', any: ['输', '赢'] },
+      vocab: ['激动', '失望', '输'],
+      minLen: 20,
+      sample: '上个星期我们公司有一个足球比赛，开始的时候我们输了很多，我很失望。最后我们赢了，大家都激动得叫了起来！',
+      sample_py: 'Shàng ge xīngqī wǒmen gōngsī yǒu yí ge zúqiú bǐsài, kāishǐ de shíhou wǒmen shū le hěn duō, wǒ hěn shīwàng. Zuìhòu wǒmen yíng le, dàjiā dōu jīdòng de jiào le qilai!',
+      sample_vn: 'Tuần trước công ty tôi có một trận bóng đá, lúc đầu chúng tôi thua nhiều, tôi rất thất vọng. Cuối cùng chúng tôi thắng, mọi người đều xúc động đến hét lên!',
+      tip: '激动得 + kết quả = xúc động đến mức …: 激动得哭了, 激动得叫了起来.'
     }
   ]
 };
 
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Việt → Trung)
+// ══════════════════════════════════════════
 var translateData = [
-  {vi:'Tôi muốn ra nước ngoài học tiến sĩ, vẫn đang chuẩn bị tài liệu cần để làm visa.',zh:'我想出国读博士，一直在准备办签证需要的材料。',py:'Wǒ xiǎng chū guó dú bóshì, yìzhí zài zhǔnbèi bàn qiānzhèng xūyào de cáiliào.'},
-  {vi:'Tuần sau tôi phải đến sứ quán làm visa rồi, thế này biết làm sao?',zh:'下个星期我就要去使馆办签证了，这可怎么办？',py:'Xià ge xīngqī wǒ jiù yào qù shǐguǎn bàn qiānzhèng le, zhè kě zěnme bàn?'},
-  {vi:'Làm ăn tuy gặp đủ loại áp lực và khó khăn, nhưng cơ hội của mọi người đều như nhau.',zh:'做生意时虽然会遇到各种压力和困难，但是大家的机会都是相同的。',py:'Zuò shēngyi shí suīrán huì yùdào gè zhǒng yālì hé kùnnan, dànshì dàjiā de jīhuì dōu shì xiāngtóng de.'},
-  {vi:'Nghe xong câu trả lời của tôi, có lẽ cậu đã biết đáp án của tôi rồi.',zh:'听完我的回答，恐怕你已经知道我的答案了吧。',py:'Tīngwán wǒ de huídá, kǒngpà nǐ yǐjīng zhīdào wǒ de dá\'àn le ba.'},
-  {vi:'Thực ra từ chối không có nghĩa là không muốn giúp.',zh:'其实拒绝并不表示不愿意帮忙。',py:'Qíshí jùjué bìng bù biǎoshì bú yuànyì bāng máng.'},
-  {vi:'Đừng đẩy mọi việc sang "ngày mai", tất cả hãy bắt đầu từ bây giờ.',zh:'不要把什么事情都推到"明天"，一切从现在做起。',py:'Búyào bǎ shénme shìqing dōu tuīdào "míngtiān", yíqiè cóng xiànzài zuòqǐ.'},
-  {vi:'Chỉ cần như vậy, tiếng Trung sẽ càng học càng giỏi, càng nói càng tự tin.',zh:'只要这样，汉语就能越学越好，越说越自信。',py:'Zhǐyào zhèyàng, Hànyǔ jiù néng yuè xué yuè hǎo, yuè shuō yuè zìxìn.'},
-  {vi:'Khi bạn cho rằng mình xuất sắc ở mặt nào đó, tuyệt đối phải bình tĩnh, đừng kiêu ngạo.',zh:'当你认为自己在哪方面很优秀时，千万要冷静，不要骄傲。',py:'Dāng nǐ rènwéi zìjǐ zài nǎ fāngmiàn hěn yōuxiù shí, qiānwàn yào lěngjìng, búyào jiāo\'ào.'},
+  {vi:'Rốt cuộc đã xảy ra chuyện gì?', zh:'到底发生了什么事？', py:'Dàodǐ fāshēng le shénme shì?'},
+  {vi:'Bạn có thể fax tài liệu đó cho tôi không?', zh:'你能把那份材料传真给我吗？', py:'Nǐ néng bǎ nà fèn cáiliào chuánzhēn gěi wǒ ma?'},
+  {vi:'Cuộc họp này không thể hoãn lại nữa.', zh:'这个会议不能再往后推了。', py:'Zhège huìyì bù néng zài wǎng hòu tuī le.'},
+  {vi:'Chuyện này tôi không dám nói với bố.', zh:'这件事我不敢告诉爸爸。', py:'Zhè jiàn shì wǒ bù gǎn gàosu bàba.'},
+  {vi:'Cô ấy nói tiếng Trung ngày càng tự tin.', zh:'她说汉语越来越自信了。', py:'Tā shuō Hànyǔ yuè lái yuè zìxìn le.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Còn phải có thư mời của trường đại học nước ngoài chứ? Họ đã fax thư mời cho bạn chưa?',zh:'还应该有国外大学给你的邀请信吧？他们把邀请信传真给你了吗？',py:'Hái yīnggāi yǒu guówài dàxué gěi nǐ de yāoqǐngxìn ba? Tāmen bǎ yāoqǐngxìn chuánzhēn gěi nǐ le ma?'},
-  {vi:'Trong quá trình tham quan tôi rất xúc động, có một câu hỏi luôn muốn hỏi ngài.',zh:'在参观过程中我很激动，有个问题一直想问您。',py:'Zài cānguān guòchéng zhōng wǒ hěn jīdòng, yǒu ge wèntí yìzhí xiǎng wèn nín.'},
-  {vi:'Chúng ta lấy kích thước dưa hấu tượng trưng cho số tiền.',zh:'我们用西瓜的大小代表钱的多少。',py:'Wǒmen yòng xīguā de dàxiǎo dàibiǎo qián de duōshǎo.'},
-  {vi:'Chẳng phải bạn mua vé tàu rồi sao? Rốt cuộc bạn tính thế nào?',zh:'你不是已经买好火车票了吗？你到底怎么打算的呀？',py:'Nǐ bú shì yǐjīng mǎihǎo huǒchēpiào le ma? Nǐ dàodǐ zěnme dǎsuàn de ya?'},
-  {vi:'Nếu bạn dùng cách vừa thích hợp vừa lịch sự nói với bạn bè, họ nhất định sẽ tha thứ cho bạn.',zh:'如果你用一个既合适又礼貌的方法告诉朋友，他一定会原谅你的。',py:'Rúguǒ nǐ yòng yí ge jì héshì yòu lǐmào de fāngfǎ gàosu péngyou, tā yídìng huì yuánliàng nǐ de.'},
-  {vi:'Có bạn thường treo "ngày mai" và "tương lai" trên miệng.',zh:'有些同学经常把"明天"和"将来"挂在嘴边。',py:'Yǒuxiē tóngxué jīngcháng bǎ "míngtiān" hé "jiānglái" guà zài zuǐ biān.'},
-  {vi:'Giống như thi đấu, không ai thua mãi, cũng không ai thắng mãi.',zh:'就像比赛一样，没有人会永远输，也没有人会一直赢。',py:'Jiù xiàng bǐsài yíyàng, méiyǒu rén huì yǒngyuǎn shū, yě méiyǒu rén huì yìzhí yíng.'},
-  {vi:'Nếu bạn dám thành thật nói ra mình không hiểu mặt nào, làm vậy càng được người khác tôn trọng.',zh:'如果你敢诚实地说出自己对哪方面不了解，这样做更能得到别人的尊重。',py:'Rúguǒ nǐ gǎn chéngshí de shuōchū zìjǐ duì nǎ fāngmiàn bù liǎojiě, zhèyàng zuò gèng néng dédào biérén de zūnzhòng.'},
+  {vi:'Nghe câu chuyện của anh ấy, mọi người đều rất thông cảm với anh ấy.', zh:'听了他的故事，大家都很同情他。', py:'Tīng le tā de gùshi, dàjiā dōu hěn tóngqíng tā.'},
+  {vi:'Cô hướng dẫn viên này rất nhiệt tình với mọi người, cũng rất lịch sự.', zh:'这位导游对大家很热情，也很有礼貌。', py:'Zhè wèi dǎoyóu duì dàjiā hěn rèqíng, yě hěn yǒu lǐmào.'},
+  {vi:'Sao giờ bạn mới đến vậy? Chúng tôi đợi cả buổi rồi.', zh:'你怎么现在才来呀？我们都等了半天了。', py:'Nǐ zěnme xiànzài cái lái ya? Wǒmen dōu děng le bàntiān le.'},
+  {vi:'Lấy tôi làm ví dụ, mỗi ngày tôi chỉ ngủ sáu tiếng.', zh:'拿我来说，我每天只睡六个小时。', py:'Ná wǒ lái shuō, wǒ měi tiān zhǐ shuì liù ge xiǎoshí.'},
 ];
 
 var listenData = {

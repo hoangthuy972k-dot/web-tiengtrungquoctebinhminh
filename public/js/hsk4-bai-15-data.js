@@ -3215,198 +3215,207 @@ var dialogData = [
    ]},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
 var matchData = [
-  {left:'一边弹钢琴',right:'一边弹钢琴一边唱歌'},
-  {left:'养成',right:'养成好习惯'},
-  {left:'闹钟',right:'闹钟响了'},
-  {left:'赶',right:'赶时间'},
-  {left:'学会',right:'学会管理时间'},
-  {left:'表扬',right:'表扬千万不要太多'},
-  {left:'怀疑',right:'怀疑自己的能力'},
-  {left:'弄清楚',right:'弄清楚他们的问题'},
-  {left:'合适的',right:'合适的教育方法'},
-  {left:'引起',right:'引起他们的兴趣'},
+  {left:'敲',right:'门'},
+  {left:'闹钟',right:'响了'},
+  {left:'整理',right:'房间'},
+  {left:'管理',right:'时间'},
+  {left:'护士',right:'给孩子打针'},
+  {left:'说',right:'假话'},
+  {left:'这件衣服大小',right:'很合适'},
+  {left:'他不是故意的，',right:'你别生气了'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ
+// ══════════════════════════════════════════
 var fillData = [
-  {pre:'那个一边',blank:'',post:'一边唱歌的男孩子是谁？',hint:'tán gāngqín',ans:'弹钢琴'},
-  {pre:'表演得真',blank:'',post:'！',hint:'bàng',ans:'棒'},
-  {pre:'去年',blank:'',post:'前的新年晚会他也表演过一次。',hint:'hánjià',ans:'寒假'},
-  {pre:'早上',blank:'',post:'响了她不醒。',hint:'nàozhōng',ans:'闹钟'},
-  {pre:'我',blank:'',post:'时间送她上学，她又急着上厕所。',hint:'gǎn',ans:'赶'},
-  {pre:'每天因为这些小事',blank:'',post:'她，弄得我俩心情都不好。',hint:'pīpíng',ans:'批评'},
-  {pre:'你应该让孩子学会',blank:'',post:'时间。',hint:'guǎnlǐ',ans:'管理'},
-  {pre:'他就怕',blank:'',post:'，每次都哭得特别厉害。',hint:'dǎ zhēn',ans:'打针'},
-  {pre:'原来鼓励和',blank:'',post:'对小孩儿挺有用的。',hint:'biǎoyáng',ans:'表扬'},
-  {pre:'表扬',blank:'',post:'不要太多，过多的表扬可能会给孩子带来压力。',hint:'qiānwàn',ans:'千万',exp:'千万 + 不要/别 = nhất định đừng; dùng để dặn dò, khuyên nhủ.'},
-  {pre:'还可能让孩子',blank:'',post:'自己的能力，变得没有信心。',hint:'huáiyí',ans:'怀疑'},
-  {pre:'会通过哭、扔东西或者',blank:'',post:'敲打来引起父母的注意。',hint:'gùyì',ans:'故意'},
-  {pre:'教育孩子应该选择',blank:'',post:'的教育方法。',hint:'héshì',ans:'合适'},
-  {pre:'看到父母',blank:'',post:'人，他们也会学着说假话。',hint:'piàn',ans:'骗'},
-  {pre:'七岁',blank:'',post:'的儿童普遍好动，坐不住。',hint:'zuǒyòu',ans:'左右',exp:'Số + 左右 = khoảng, tầm: 七岁左右.'},
+  {pre:'A：你还记得那个新同事叫什么名字吗？ B：等一下……我',blank:'想起来',post:'她叫什么了，她姓王。',hint:'(nhớ ra)',ans:'想起来',exp:'想起来 = nhớ ra điều đã quên; 想出来 = nghĩ ra cái mới (办法、主意).'},
+  {pre:'对不起，我把你的书',blank:'弄',post:'脏了。',hint:'(làm)',ans:'弄',exp:'弄 thay cho động từ cụ thể trong khẩu ngữ, thường kèm kết quả: 弄脏 (làm bẩn), 弄坏 (làm hỏng), 弄清楚.'},
+  {pre:'邻居家的孩子一直敲桌子，',blank:'弄',post:'得我睡不着。',hint:'(làm cho)',ans:'弄',exp:'弄得 + người + kết quả = làm cho ai đó …: 弄得我睡不着 (khiến tôi không ngủ được).'},
+  {pre:'路上车多，过马路的时候你',blank:'千万',post:'要小心！',hint:'(nhất thiết, tuyệt đối)',ans:'千万',exp:'千万 dùng khi dặn dò người khác, đi với 要/别/不要: 千万要小心, 千万别迟到.'},
+  {pre:'A：明天的会议很重要，你千万别迟到啊！ B：放心，我',blank:'一定',post:'准时到。',hint:'(nhất định)',ans:'一定',exp:'Nói quyết tâm của chính mình → 一定; 千万 chỉ dùng để dặn người khác, không nói 我千万准时到.'},
+  {pre:'A：这么多碗，要洗到什么时候啊？ B：你去休息吧，我',blank:'来',post:'洗。',hint:'(để tôi)',ans:'来',exp:'我来 + V = để tôi làm (chủ động nhận việc); 来 đứng trước động từ chính.'},
+  {pre:'我们可以用做游戏的方法',blank:'来',post:'提高儿童学习的兴趣。',hint:'(để)',ans:'来',exp:'用/通过 A 来 B = dùng A để làm B: 用做游戏的方法来提高兴趣.'},
+  {pre:'从我家到公司，开车要二十分钟',blank:'左右',post:'。',hint:'(khoảng)',ans:'左右',exp:'左右 đứng SAU số lượng: 二十分钟左右; 大约/差不多 đứng TRƯỚC: 大约二十分钟.'},
+  {pre:'A：你儿子今天怎么这么高兴？ B：老师在班上',blank:'表扬',post:'他了，说他作业写得很认真。',hint:'(khen ngợi)',ans:'表扬',exp:'表扬 + người = khen ai (trước mọi người); trái nghĩa 批评.'},
+  {pre:'他说他一个人做完了所有的工作，我有点儿',blank:'怀疑',post:'。',hint:'(nghi ngờ)',ans:'怀疑',exp:'怀疑 = nghi ngờ, không tin hẳn; có thể mang tân ngữ: 怀疑他的话.'},
+  {pre:'我不会',blank:'骗',post:'你的，我说的都是真的。',hint:'(lừa)',ans:'骗',exp:'骗 + người = lừa ai; 骗人 = lừa người khác. Trái với 说真话.'},
+  {pre:'这次考试成绩好也别',blank:'骄傲',post:'，下次还要努力。',hint:'(kiêu ngạo)',ans:'骄傲',exp:'骄傲 ở đây là kiêu ngạo (nghĩa xấu); 为……骄傲 lại là tự hào: 为父母骄傲.'},
+  {pre:'电影马上开始了，我得先去一下',blank:'厕所',post:'。',hint:'(nhà vệ sinh)',ans:'厕所',exp:'厕所 = nhà vệ sinh (khẩu ngữ, nơi công cộng); 卫生间 (Bài 14) lịch sự hơn: 去厕所 / 上厕所.'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
 var sortData = [
-  {words:['我','想','起来','了','，','这','孩子','又','聪明','又','可爱'],ans:'我想起来了，这孩子又聪明又可爱',audio:'我想起来了，这孩子又聪明又可爱'},
-  {words:['父母','是','孩子','最','重要','的','老师'],ans:'父母是孩子最重要的老师',audio:'父母是孩子最重要的老师'},
-  {words:['每天','因为','这些','小事','批评','她','，','弄','得','我俩','心情','都','不好'],ans:'每天因为这些小事批评她，弄得我俩心情都不好',audio:'每天因为这些小事批评她，弄得我俩心情都不好'},
-  {words:['你','应该','让','孩子','学会','管理','时间'],ans:'你应该让孩子学会管理时间',audio:'你应该让孩子学会管理时间'},
-  {words:['表扬','千万','不要','太多'],ans:'表扬千万不要太多',audio:'表扬千万不要太多'},
-  {words:['这个','沙发','这么','大','，','我','来','帮','你们','一起','抬'],ans:'这个沙发这么大，我来帮你们一起抬',audio:'这个沙发这么大，我来帮你们一起抬'},
-  {words:['七岁','左右','的','儿童','普遍','好动','，','坐不住'],ans:'七岁左右的儿童普遍好动，坐不住',audio:'七岁左右的儿童普遍好动，坐不住'},
-  {words:['对','不同','性格','的','孩子','要','使用','不同','的','教育','方法'],ans:'对不同性格的孩子要使用不同的教育方法',audio:'对不同性格的孩子要使用不同的教育方法'},
+  {words:['闹钟','响','了','三次','，','他','才','醒','。'],ans:'闹钟响了三次，他才醒。',audio:'闹钟响了三次，他才醒。'},
+  {words:['今年','寒假','我','打算','带','孩子','回','老家','看看','。'],ans:'今年寒假我打算带孩子回老家看看。',audio:'今年寒假我打算带孩子回老家看看。',alt:['我今年寒假打算带孩子回老家看看。']},
+  {words:['听说','你','父亲','弹钢琴','特别','棒','，','是','真的','吗','？'],ans:'听说你父亲弹钢琴特别棒，是真的吗？',audio:'听说你父亲弹钢琴特别棒，是真的吗？'},
+  {words:['这个','电影','适合','十岁','左右','的','儿童','看','。'],ans:'这个电影适合十岁左右的儿童看。',audio:'这个电影适合十岁左右的儿童看。'},
+  {words:['别','总是','批评','孩子','懒','，','要','多','鼓励','他','。'],ans:'别总是批评孩子懒，要多鼓励他。',audio:'别总是批评孩子懒，要多鼓励他。'},
+  {words:['我','不是','故意','弄坏','你','的','杯子','的','。'],ans:'我不是故意弄坏你的杯子的。',audio:'我不是故意弄坏你的杯子的。'},
+  {words:['快','点儿','吧','，','我们','要','赶','最后','一','班','地铁','。'],ans:'快点儿吧，我们要赶最后一班地铁。',audio:'快点儿吧，我们要赶最后一班地铁。'},
+  {words:['小孙子','第一次','见','我','，','害羞','得','不','说话','。'],ans:'小孙子第一次见我，害羞得不说话。',audio:'小孙子第一次见我，害羞得不说话。'},
+  {words:['谁','说','你','笨','？','你','只是','还','没','找到','好','方法','。'],ans:'谁说你笨？你只是还没找到好方法。',audio:'谁说你笨？你只是还没找到好方法。'},
 ];
 
 var errorFixMode = 'wordchoice';
 var errorFixData = [
   {wrong:'已经放____了，去打球的人肯定不多，星期天我们去学校的体育馆打网球吧。',
-   opts:['粗心','寒假','表扬','整理'],ans:1,
-   exp:'寒假 (kỳ nghỉ đông) — 放寒假. Câu có 肯定 (Bài 5), 网球 (Bài 7). Các từ còn lại không phù hợp nghĩa.'},
+   opts:['粗心','寒假','表扬','批评'],ans:1,
+   exp:'寒假 (kỳ nghỉ đông) — 放寒假. Câu có 肯定 (Bài 5), 网球 (Bài 9). Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'这些只有三分之一吧，还有很多东西没来得及____呢，下周再搬。',
    opts:['粗心','表扬','整理','批评'],ans:2,
-   exp:'整理 (dọn dẹp) — 整理东西. Câu có 分之 (Bài 6), 来得及 (Bài 4). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'整理 (dọn dẹp) — 整理东西. Câu có 分之 (Bài 6), 来得及 (Bài 11). Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'如果遇到不得不____别人的时候，态度要友好一点儿，不要让别人听了心里不舒服。',
    opts:['寒假','整理','批评','表扬'],ans:2,
-   exp:'批评 (phê bình) — 批评别人 khiến người ta khó chịu. Câu có 不得不 (Bài 10), 态度 (Bài 8), 友好 (Bài 12). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'批评 (phê bình) — 批评别人 khiến người ta khó chịu. Câu có 不得不 (Bài 4), 态度 (Bài 8), 友好 (Bài 12). Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'他的优点是有礼貌、诚实，能吃苦，就是太____了，不适合我们这儿的工作。',
    opts:['粗心','寒假','整理','批评'],ans:0,
-   exp:'粗心 (cẩu thả) — 太粗心了. Câu có 优点 (Bài 8), 诚实 (Bài 10), 吃苦 (Bài 13). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'粗心 (cẩu thả) — 太粗心了. Câu có 优点 (Bài 5), 诚实 (Bài 3), 吃苦 (Bài 13). Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'孩子在受到____时，往往会对自己更有信心，对学习的兴趣也会更大，成绩当然会提高。',
    opts:['粗心','表扬','整理','寒假'],ans:1,
-   exp:'表扬 (khen ngợi) — 受到表扬. Câu có 受到 (Bài 8), 往往 (Bài 8), 信心 (Bài 9). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'表扬 (khen ngợi) — 受到表扬. Câu có 受到 (Bài 5), 往往 (Bài 8), 信心 (Bài 3). Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'A：因为那件事，她特别生我的气。B：放心吧，你也不是____的，去跟她解释一下，她会理解的。',
    opts:['响','管理','故意','赶'],ans:2,
-   exp:'故意 (cố ý) — 不是故意的. Câu có 生气 (Bài 1), 解释 (Bài 12), 理解 (Bài 8). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'故意 (cố ý) — 不是故意的. Câu có 生气, 解释 (Bài 12), 理解 (Bài 2). Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'A：你妹妹很可爱，但是好像不太爱说话。B：她只是有点儿____，等跟大家熟悉了就好了。',
    opts:['响','管理','害羞','赶'],ans:2,
-   exp:'害羞 (nhút nhát) — 有点儿害羞. Câu có 好像 (Bài 6), 只是 (Bài 6), 熟悉 (Bài 9). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'害羞 (nhút nhát) — 有点儿害羞. Câu có 好像 (Bài 2), 只是, 熟悉 (Bài 1). Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'A：这次大学同学聚会你联系得怎么样了？能来多少人？B：大约有一半吧，李进还专门从国外____回来呢。',
-   opts:['响','管理','故意','赶'],ans:3,
-   exp:'赶 (vội về kịp) — 赶回来. Câu có 聚会 (Bài 8), 联系 (Bài 2), 大约 (Bài 13), 专门 (Bài 9). Các từ còn lại không phù hợp nghĩa.'},
+   opts:['响','害羞','故意','赶'],ans:3,
+   exp:'赶 (vội về kịp) — 赶回来. Câu có 聚会 (Bài 2), 联系 (Bài 2), 大约 (Bài 13), 专门 (Bài 2). Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'A：桌子上那个一直在____的手机是谁的？可能找他有什么急事。B：那是张经理的，他在会议室开会呢，你快把手机给他拿过去吧。',
    opts:['响','管理','故意','害羞'],ans:0,
-   exp:'响 (reo) — 一直在响的手机. Câu có 一直 (Bài 3), câu chữ 把. Các từ còn lại không phù hợp nghĩa.'},
+   exp:'响 (reo) — 一直在响的手机. Câu có 一直, câu chữ 把. Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'A：听说昨天那个招聘会提供了很多工作机会，你找到合适的公司了吗？B：这个招聘会主要是为经济和____专业的学生举办的，所以没几个合适的。',
-   opts:['响','管理','故意','赶'],ans:1,
-   exp:'管理 (quản lý) — 管理专业. Câu có 招聘 (Bài 10), 提供 (Bài 6), 经济 (Bài 10), 举办 (Bài 11). Các từ còn lại không phù hợp nghĩa.'},
+   opts:['害羞','管理','故意','赶'],ans:1,
+   exp:'管理 (quản lý) — 管理专业. Câu có 招聘 (Bài 3), 提供 (Bài 3), 经济 (Bài 10), 举办 (Bài 6). Các từ còn lại không phù hợp nghĩa.'},
 ];
 
+// ══════════════════════════════════════════
+// LUYỆN NÓI
+// ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 15. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu hỏi là một tình huống thật, nói về chính bạn bằng từ và mẫu câu của Bài 15. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Bạn kể một kỷ niệm bị bố mẹ mắng hồi nhỏ.',
-      q_zh: '你小时候做错了事，你的父母会批评你吗？为什么？',
-      q_py: 'Nǐ xiǎoshí hòu zuò cuò le shì, nǐ de fù mǔ huì pīpíng nǐ ma? Wèishénme?',
-      q_vn: 'Hồi nhỏ làm sai, bố mẹ bạn có phê bình bạn không? Vì sao?',
-      grammar: { label: '批评 + người; 弄得…… (khiến cho…)', any: ['批评', '弄得'] },
+      situation: 'Một người bạn lần đầu đến thành phố của bạn, bạn dặn dò họ.',
+      q_zh: '朋友第一次来你的城市，你会提醒他什么？',
+      q_py: 'Péngyou dì yī cì lái nǐ de chéngshì, nǐ huì tíxǐng tā shénme?',
+      q_vn: 'Bạn bè lần đầu đến thành phố của bạn, bạn sẽ nhắc họ điều gì?',
+      grammar: { label: '千万 + 要/别 (nhất thiết / tuyệt đối đừng)', any: ['千万'] },
       need: [
-        { label: 'Kể việc làm sai', any: ['打坏', '弄坏', '考试', '迟到', '骗', '窗户', '作业'] },
-        { label: 'Nói phản ứng của bố mẹ', any: ['批评', '生气', '说', '教育', '父亲', '母亲'] }
+        { label: 'Dùng 千万要 hoặc 千万别', any: ['千万要', '千万别', '千万不要'] },
+        { label: 'Nói lời nhắc cụ thể', any: ['伞', '小心', '下雨', '假', '车', '晚上'] }
       ],
-      bonus: { label: 'Nói bài học rút ra', any: ['诚实', '以后', '明白', '道理'] },
-      vocab: ['批评', '弄', '父亲'],
-      minLen: 22,
-      sample: '会。小时候我打坏了邻居的窗户，父亲批评了我一顿，弄得我一整天心情都不好。不过他也告诉我，做错事要诚实，这句话我记到现在。',
-      sample_py: 'Huì. Xiǎoshí hòu wǒ dǎ huài le línjū de chuānghu, fùqīn pīpíng le wǒ yí dùn, nòng děi wǒ yì zhěng tiān xīnqíng dōu bù hǎo. Búguò tā yě gàosu wǒ, zuò cuò shì yào chéngshí, zhè jù huà wǒ jì dào xiànzài.',
-      sample_vn: 'Có. Hồi nhỏ tôi làm vỡ cửa sổ nhà hàng xóm, bố mắng tôi một trận, làm tôi buồn cả ngày. Nhưng bố cũng dạy tôi làm sai thì phải thành thật, câu đó tôi nhớ đến giờ.',
-      tip: '弄 thay cho nhiều động từ cụ thể: 弄坏、弄脏、弄丢。'
+      bonus: { label: 'Dùng 假 hoặc 骗', any: ['假', '骗'] },
+      vocab: ['千万', '假', '骗'],
+      minLen: 20,
+      sample: '我们这儿经常下雨，你千万别忘记带伞。买东西的时候也要小心，有的东西是假的，千万别被骗了。',
+      sample_py: 'Wǒmen zhèr jīngcháng xià yǔ, nǐ qiānwàn bié wàngjì dài sǎn. Mǎi dōngxi de shíhou yě yào xiǎoxīn, yǒu de dōngxi shì jiǎ de, qiānwàn bié bèi piàn le.',
+      sample_vn: 'Chỗ chúng tôi hay mưa, bạn tuyệt đối đừng quên mang ô. Mua đồ cũng phải cẩn thận, có đồ là đồ giả, đừng để bị lừa nhé.',
+      tip: '千万 chỉ dùng khi dặn người khác; nói về bản thân thì dùng 一定: 我一定去.'
     },
     {
-      situation: 'Bạn vừa được điểm cao và về khoe gia đình.',
-      q_zh: '你的父母会在什么情况下表扬你？他们会用哪种方式表扬你？',
-      q_py: 'Nǐ de fù mǔ huì zài shénme qíngkuàng xià biǎoyáng nǐ? Tāmen huì yòng nǎ zhǒng fāngshì biǎoyáng nǐ?',
-      q_vn: 'Bố mẹ khen bạn trong hoàn cảnh nào? Họ khen bằng cách nào?',
-      grammar: { label: '不仅……而且……; 千万别…… (nhất định đừng…)', any: ['不仅', '千万'] },
+      situation: 'Bạn kể về buổi sáng thường ngày của mình.',
+      q_zh: '你早上一般几点起床？做些什么？',
+      q_py: 'Nǐ zǎoshang yìbān jǐ diǎn qǐchuáng? Zuò xiē shénme?',
+      q_vn: 'Buổi sáng bạn thường dậy lúc mấy giờ? Làm những gì?',
+      grammar: { label: 'Số lượng + 左右 (khoảng)', any: ['左右'] },
       need: [
-        { label: 'Nói dịp được khen', any: ['成绩', '考试', '帮', '工作', '努力', '进步'] },
-        { label: 'Nói cách khen', any: ['表扬', '带我', '礼物', '说', '高兴', '饭'] }
+        { label: 'Dùng 左右 sau thời gian/số lượng', any: ['左右'] },
+        { label: 'Dùng 闹钟 hoặc 醒', any: ['闹钟', '醒'] }
       ],
-      bonus: { label: 'Dùng 千万 nói lời dặn', any: ['千万'] },
-      vocab: ['表扬', '千万', '骄傲'],
-      minLen: 22,
-      sample: '我考试取得好成绩的时候，父母不仅会表扬我，而且会带我去餐厅吃一顿好的。不过他们常说：千万别骄傲，下次还要努力。',
-      sample_py: 'Wǒ kǎoshì qǔ děi hǎo chéngjì de shíhou, fù mǔ bùjǐn huì biǎoyáng wǒ, ér qiě huì dài wǒ qù cāntīng chī yí dùn hǎo de. Búguò tāmen cháng shuō: qiānwàn bié jiāo\'ào, xià cì hái yào nǔlì.',
-      sample_vn: 'Khi tôi đạt điểm tốt, bố mẹ không những khen mà còn dẫn tôi ra nhà hàng ăn một bữa ngon. Nhưng họ hay dặn: tuyệt đối đừng kiêu, lần sau vẫn phải cố gắng.',
-      tip: '千万 + 别/不要: 千万别忘了带护照。'
+      bonus: { label: 'Dùng 整理 hoặc 赶', any: ['整理', '赶'] },
+      vocab: ['左右', '闹钟', '醒', '整理'],
+      minLen: 20,
+      sample: '我每天六点半左右起床。闹钟响了以后我一般不能马上醒，还要再躺五分钟左右。起床以后我先整理房间，再吃早饭。',
+      sample_py: 'Wǒ měi tiān liù diǎn bàn zuǒyòu qǐchuáng. Nàozhōng xiǎng le yǐhòu wǒ yìbān bù néng mǎshàng xǐng, hái yào zài tǎng wǔ fēnzhōng zuǒyòu. Qǐchuáng yǐhòu wǒ xiān zhěnglǐ fángjiān, zài chī zǎofàn.',
+      sample_vn: 'Mỗi ngày tôi dậy khoảng sáu rưỡi. Báo thức reo xong tôi thường không tỉnh ngay được, còn nằm thêm khoảng năm phút. Dậy rồi tôi dọn phòng trước, sau đó ăn sáng.',
+      tip: '左右 đứng sau con số: 六点半左右, 五分钟左右; không nói 左右六点.'
     },
     {
-      situation: 'Bạn bè có con nhỏ và đang hỏi kinh nghiệm nuôi dạy.',
-      q_zh: '如果你有了孩子，你会怎么帮他养成好习惯？',
-      q_py: 'Rúguǒ nǐ yǒu le háizi, nǐ huì zěnme bāng tā yǎngchéng hǎo xíguàn?',
-      q_vn: 'Nếu có con, bạn sẽ giúp con hình thành thói quen tốt thế nào?',
-      grammar: { label: '让 + người + 学会……; ……左右 (khoảng)', any: ['让', '左右'] },
+      situation: 'Bạn bè kể chuyện tuổi thơ, đến lượt bạn.',
+      q_zh: '说一说你小时候学过的一样东西。',
+      q_py: 'Shuō yi shuō nǐ xiǎoshíhou xué guo de yí yàng dōngxi.',
+      q_vn: 'Hãy kể về một thứ bạn từng học hồi nhỏ.',
+      grammar: { label: '想起来 (nhớ ra / nhớ lại)', any: ['想起来', '想起'] },
       need: [
-        { label: 'Nói cách rèn nền nếp', any: ['计划', '时间', '起床', '整理', '自己', '管理'] },
-        { label: 'Nói thói quen cụ thể', any: ['七点', '房间', '作业', '睡觉', '看书'] }
+        { label: 'Dùng 想起来', any: ['想起来', '想起'] },
+        { label: 'Kể việc đã học', any: ['弹钢琴', '游泳', '画', '跳舞', '唱歌', '汉字'] }
       ],
-      bonus: { label: 'Dùng 左右 nói giờ giấc ước chừng', any: ['左右'] },
-      vocab: ['管理', '整理', '左右'],
+      bonus: { label: 'Dùng 懒 hoặc 批评', any: ['懒', '批评'] },
+      vocab: ['想起来', '弹钢琴', '懒', '批评'],
       minLen: 22,
-      sample: '我会给他定一个简单的计划，让他学会管理自己的时间。比如每天七点左右起床，自己整理房间，自己的事情自己做，做好了就表扬他。',
-      sample_py: 'Wǒ huì gěi tā dìng yí ge jiǎndān de jìhuà, ràng tā xué huì guǎnlǐ zìjǐ de shíjiān. Bǐrú měitiān qī diǎn zuǒyòu qǐchuáng, zìjǐ zhěnglǐ fángjiān, zìjǐ de shìqing zìjǐ zuò, zuò hǎo le jiù biǎoyáng tā.',
-      sample_vn: 'Tôi sẽ lập cho con một kế hoạch đơn giản, để con học cách quản lý thời gian. Ví dụ mỗi ngày dậy khoảng 7 giờ, tự dọn phòng, việc của mình tự làm, làm tốt thì khen con.',
-      tip: '……左右 = khoảng chừng: 三十岁左右、一个小时左右。'
+      sample: '一说到小时候，我就想起来学弹钢琴的事。那时候我很懒，不想练习，父亲就批评我。现在想起来，我真应该感谢他。',
+      sample_py: 'Yì shuō dào xiǎoshíhou, wǒ jiù xiǎng qilai xué tán gāngqín de shì. Nà shíhou wǒ hěn lǎn, bù xiǎng liànxí, fùqīn jiù pīpíng wǒ. Xiànzài xiǎng qilai, wǒ zhēn yīnggāi gǎnxiè tā.',
+      sample_vn: 'Cứ nói đến hồi nhỏ là tôi lại nhớ ra chuyện học đàn piano. Hồi đó tôi rất lười, không muốn tập, bố liền phê bình tôi. Bây giờ nhớ lại, tôi thật nên cảm ơn bố.',
+      tip: '想起来 = nhớ ra điều đã quên; 现在想起来 = giờ nghĩ lại.'
     },
     {
-      situation: 'Cháu nhỏ của bạn sợ đi tiêm và khóc.',
-      q_zh: '孩子怕打针、怕困难的时候，你会怎么鼓励他？',
-      q_py: 'Háizi pà dǎzhēn, pà kùnnan de shíhou, nǐ huì zěnme gǔlì tā?',
-      q_vn: 'Khi trẻ sợ tiêm, sợ khó khăn, bạn sẽ động viên thế nào?',
-      grammar: { label: '既然……就…… + 千万别用 “笨” 这样的词', any: ['既然', '鼓励'] },
+      situation: 'Bạn cùng lớp hỏi bí quyết học từ mới của bạn.',
+      q_zh: '你用什么方法来学汉字？',
+      q_py: 'Nǐ yòng shénme fāngfǎ lái xué Hànzì?',
+      q_vn: 'Bạn dùng cách gì để học chữ Hán?',
+      grammar: { label: '用 A 来 B (dùng A để B)', any: ['来'] },
       need: [
-        { label: 'Nói lời động viên cụ thể', any: ['勇敢', '不怕', '很棒', '可以的', '加油'] },
-        { label: 'Nói điều nên tránh', any: ['笨', '批评', '骂', '别说', '不会说'] }
+        { label: 'Dùng 用……来……', any: ['用'] },
+        { label: 'Nói cách học cụ thể', any: ['句子', '写', '手机', '游戏', '电影', '每天'] }
       ],
-      bonus: { label: 'Dùng 鼓励 nói phương pháp', any: ['鼓励', '表扬'] },
-      vocab: ['鼓励', '打针', '笨'],
+      bonus: { label: 'Dùng 左右 hoặc 合适', any: ['左右', '合适'] },
+      vocab: ['来', '合适', '左右'],
       minLen: 22,
-      sample: '我会小声地跟他说：“你很勇敢，一点儿也不怕。”既然鼓励对孩子有用，我就不会用“笨”这样的词批评他，打针以后还会表扬他。',
-      sample_py: 'Wǒ huì xiǎo shēng de gēn tā shuō: "nǐ hěn yǒnggǎn, yìdiǎnr yě ér yě." Jìrán gǔlì duì háizi yǒu yòng, wǒ jiù yòng huì yòng "bèn" zhè huì de “ pīpíng tā, dǎzhēn yǐhòu hái huì biǎoyáng tā.',
-      sample_vn: 'Tôi sẽ nói nhỏ với bé: "Con dũng cảm lắm, chẳng sợ gì đâu." Đã biết động viên có tác dụng với trẻ thì tôi sẽ không dùng từ "ngốc" để mắng, tiêm xong còn khen bé.',
-      tip: 'Khen trẻ nên khen hành động cụ thể: 你今天自己整理房间，真棒！'
+      sample: '我一般用写句子的方法来学汉字，每学一个新的汉字，就用它写两个句子。我也用手机上的游戏来复习，每天玩儿十分钟左右。',
+      sample_py: 'Wǒ yìbān yòng xiě jùzi de fāngfǎ lái xué Hànzì, měi xué yí ge xīn de Hànzì, jiù yòng tā xiě liǎng ge jùzi. Wǒ yě yòng shǒujī shang de yóuxì lái fùxí, měi tiān wánr shí fēnzhōng zuǒyòu.',
+      sample_vn: 'Tôi thường dùng cách viết câu để học chữ Hán, mỗi lần học một chữ mới thì dùng nó viết hai câu. Tôi cũng dùng trò chơi trên điện thoại để ôn, mỗi ngày chơi khoảng mười phút.',
+      tip: '用 A 来 B: A là cách/công cụ, B là mục đích; 来 có thể lược bỏ nhưng thêm vào câu tự nhiên hơn.'
     },
     {
-      situation: 'Bạn và bạn bè nói về cách bố mẹ dạy con.',
-      q_zh: '你认为你的父母教育你的方式都正确吗？为什么？',
-      q_py: 'Nǐ rènwéi nǐ de fù mǔ jiàoyù nǐ de fāngshì dōu zhèngquè ma? Wèishénme?',
-      q_vn: 'Bạn cho rằng cách bố mẹ giáo dục bạn đều đúng không? Vì sao?',
-      grammar: { label: '并不都……; 不过…… (nhưng)', any: ['并不', '不过'] },
+      situation: 'Bạn kể một lần làm hỏng đồ của người khác.',
+      q_zh: '你有没有弄坏过别人的东西？后来怎么样了？',
+      q_py: 'Nǐ yǒu méiyǒu nòng huài guo biéren de dōngxi? Hòulái zěnmeyàng le?',
+      q_vn: 'Bạn đã từng làm hỏng đồ của người khác chưa? Sau đó thế nào?',
+      grammar: { label: '弄 + kết quả (弄坏 / 弄脏 …)', any: ['弄'] },
       need: [
-        { label: 'Nêu quan điểm', any: ['正确', '并不', '不都', '对'] },
-        { label: 'Nêu ví dụ cụ thể', any: ['严格', '决定', '比较', '批评', '自由', '意见'] }
+        { label: 'Dùng 弄坏 / 弄脏 / 弄丢', any: ['弄坏', '弄脏', '弄丢'] },
+        { label: 'Kể phản ứng của người kia', any: ['批评', '生气', '没关系', '原谅', '表扬'] }
       ],
-      bonus: { label: 'Bày tỏ sự thông cảm với bố mẹ', any: ['理解', '希望', '为了', '优秀'] },
-      vocab: ['教育', '合适', '怀疑'],
+      bonus: { label: 'Dùng 故意', any: ['故意'] },
+      vocab: ['弄', '故意', '批评'],
       minLen: 22,
-      sample: '并不都正确。对我来说，他们有时候太严格，总是替我做决定，我也怀疑过这样合适不合适。不过我理解他们，因为父母都希望孩子优秀。',
-      sample_py: 'Bìng bù dōu zhèngquè. Duì wǒ lái shuō, tāmen yǒu shíhou tài yángé, zǒngshì tì wǒ zuò juédìng, wǒ yě huáiyí guo zhè yàng héshì bù héshì. Búguò wǒ lǐjiě tāmen, yīnwèi fù mǔ dōu xīwàng háizi yōuxiù.',
-      sample_vn: 'Không phải đều đúng. Với tôi, đôi khi bố mẹ quá nghiêm, luôn quyết định thay tôi, tôi cũng từng nghi ngờ như vậy có hợp không. Nhưng tôi hiểu họ, vì cha mẹ nào cũng mong con giỏi giang.',
-      tip: '并不都 = không phải tất cả đều: 这些说法并不都对。'
+      sample: '有一次我把妈妈的手机弄坏了，我很害怕。我跟妈妈说我不是故意的，妈妈没有批评我，只是让我以后小心一点儿。',
+      sample_py: 'Yǒu yí cì wǒ bǎ māma de shǒujī nòng huài le, wǒ hěn hàipà. Wǒ gēn māma shuō wǒ bú shì gùyì de, māma méiyǒu pīpíng wǒ, zhǐshì ràng wǒ yǐhòu xiǎoxīn yìdiǎnr.',
+      sample_vn: 'Có lần tôi làm hỏng điện thoại của mẹ, tôi rất sợ. Tôi nói với mẹ là con không cố ý, mẹ không phê bình tôi, chỉ bảo sau này cẩn thận hơn.',
+      tip: '弄 + bổ ngữ kết quả: 弄坏, 弄脏, 弄丢; câu chữ 把: 把手机弄坏了.'
     }
   ]
 };
 
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Việt → Trung)
+// ══════════════════════════════════════════
 var translateData = [
-  {vi:'Cậu bé vừa chơi piano vừa hát kia là ai? Biểu diễn hay thật!',zh:'那个一边弹钢琴一边唱歌的男孩子是谁？表演得真棒！',py:'Nàge yìbiān tán gāngqín yìbiān chàng gē de nán háizi shì shéi? Biǎoyǎn de zhēn bàng!'},
-  {vi:'Tôi nhớ ra rồi, đứa bé này vừa thông minh vừa đáng yêu, nhà thầy dạy dỗ tốt thật!',zh:'我想起来了，这孩子又聪明又可爱，你们教育得真好！',py:'Wǒ xiǎng qilai le, zhè háizi yòu cōngming yòu kě\'ài, nǐmen jiàoyù de zhēn hǎo!'},
-  {vi:'Ngày nào cũng vì những việc nhỏ này mà phê bình nó, khiến hai mẹ con đều không vui.',zh:'每天因为这些小事批评她，弄得我俩心情都不好。',py:'Měi tiān yīnwèi zhèxiē xiǎo shì pīpíng tā, nòng de wǒ liǎ xīnqíng dōu bù hǎo.'},
-  {vi:'Trẻ làm việc chậm thường vì chúng không biết sắp xếp thời gian.',zh:'孩子做事慢，往往是因为他们不会安排自己的时间。',py:'Háizi zuò shì màn, wǎngwǎng shì yīnwèi tāmen bú huì ānpái zìjǐ de shíjiān.'},
-  {vi:'Khen ngợi cũng là một nghệ thuật, khen tuyệt đối đừng quá nhiều.',zh:'表扬也是一门艺术，表扬千万不要太多。',py:'Biǎoyáng yě shì yì mén yìshù, biǎoyáng qiānwàn búyào tài duō.'},
-  {vi:'Tôi cho rằng khen phải kịp thời, hơn nữa không chỉ nhìn kết quả mà còn phải nhìn quá trình.',zh:'我认为表扬要及时，而且表扬不仅仅要看结果，更要看过程。',py:'Wǒ rènwéi biǎoyáng yào jíshí, érqiě biǎoyáng bù jǐnjǐn yào kàn jiéguǒ, gèng yào kàn guòchéng.'},
-  {vi:'Giáo dục con nên chọn phương pháp thích hợp, tốt nhất đừng vì giải quyết vấn đề mà lừa con.',zh:'教育孩子应该选择合适的教育方法，最好不要为了解决问题而骗孩子。',py:'Jiàoyù háizi yīnggāi xuǎnzé héshì de jiàoyù fāngfǎ, zuìhǎo búyào wèile jiějué wèntí ér piàn háizi.'},
-  {vi:'Trẻ khoảng bảy tuổi thường hiếu động, không ngồi yên được.',zh:'七岁左右的儿童普遍好动，坐不住。',py:'Qī suì zuǒyòu de értóng pǔbiàn hào dòng, zuòbuzhù.'},
+  {vi:'Chuyện này tuyệt đối đừng nói với mẹ tôi.', zh:'这件事千万别告诉我妈妈。', py:'Zhè jiàn shì qiānwàn bié gàosu wǒ māma.'},
+  {vi:'Để tôi giới thiệu với mọi người đồng nghiệp mới của tôi.', zh:'我来给大家介绍一下我的新同事。', py:'Wǒ lái gěi dàjiā jièshào yíxià wǒ de xīn tóngshì.'},
+  {vi:'Tôi chợt nhớ ra hôm nay là sinh nhật mẹ.', zh:'我突然想起来今天是妈妈的生日。', py:'Wǒ tūrán xiǎng qilai jīntiān shì māma de shēngrì.'},
+  {vi:'Cô y tá đó rất kiên nhẫn với trẻ con.', zh:'那个护士对孩子很有耐心。', py:'Nàge hùshi duì háizi hěn yǒu nàixīn.'},
+  {vi:'Đồ giả tuy rẻ nhưng chất lượng không tốt.', zh:'假的东西虽然便宜，但是质量不好。', py:'Jiǎ de dōngxi suīrán piányi, dànshì zhìliàng bù hǎo.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Bố mẹ nó không chỉ dạy kiến thức, mà còn dành rất nhiều thời gian giúp nó hình thành thói quen tốt.',zh:'他父母不仅教他知识，而且还花了很长时间帮助他养成了非常好的习惯。',py:'Tā fùmǔ bùjǐn jiāo tā zhīshi, érqiě hái huāle hěn cháng shíjiān bāngzhù tā yǎngchéngle fēicháng hǎo de xíguàn.'},
-  {vi:'Nếu mong có một đứa con xuất sắc, bạn phải trở thành người cha hoặc mẹ xuất sắc trước.',zh:'如果希望有一个优秀的孩子，你就要先成为一位优秀的父亲或者母亲。',py:'Rúguǒ xīwàng yǒu yí ge yōuxiù de háizi, nǐ jiù yào xiān chéngwéi yí wèi yōuxiù de fùqīn huòzhě mǔqīn.'},
-  {vi:'Sáng báo thức reo nó không dậy, tôi vội đưa nó đi học, nó lại cuống lên đi vệ sinh.',zh:'早上闹钟响了她不醒，我赶时间送她上学，她又急着上厕所。',py:'Zǎoshang nàozhōng xiǎngle tā bù xǐng, wǒ gǎn shíjiān sòng tā shàng xué, tā yòu jízhe shàng cèsuǒ.'},
-  {vi:'Bạn nên để con học cách quản lý thời gian.',zh:'你应该让孩子学会管理时间。',py:'Nǐ yīnggāi ràng háizi xuéhuì guǎnlǐ shíjiān.'},
-  {vi:'Tôi khẽ nói với y tá rằng con gái tôi rất dũng cảm, không sợ tiêm chút nào.',zh:'我就小声地和护士说我女儿很勇敢，一点儿也不怕打针。',py:'Wǒ jiù xiǎoshēng de hé hùshi shuō wǒ nǚ\'ér hěn yǒnggǎn, yìdiǎnr yě bú pà dǎ zhēn.'},
-  {vi:'Khen quá nhiều có thể khiến trẻ nghi ngờ năng lực bản thân, trở nên thiếu tự tin.',zh:'过多的表扬可能让孩子怀疑自己的能力，变得没有信心。',py:'Guò duō de biǎoyáng kěnéng ràng háizi huáiyí zìjǐ de nénglì, biàn de méiyǒu xìnxīn.'},
-  {vi:'Có đứa trẻ sẽ khóc, ném đồ hoặc cố tình gõ đập để thu hút sự chú ý của cha mẹ.',zh:'有的孩子会通过哭、扔东西或者故意敲打来引起父母的注意。',py:'Yǒude háizi huì tōngguò kū, rēng dōngxi huòzhě gùyì qiāodǎ lái yǐnqǐ fùmǔ de zhùyì.'},
-  {vi:'Nếu trẻ nhút nhát, phải thường xuyên khuyến khích nó nói ra ý kiến của mình.',zh:'要是孩子性格有些害羞，就要经常鼓励他说出自己的看法。',py:'Yàoshi háizi xìnggé yǒuxiē hàixiū, jiù yào jīngcháng gǔlì tā shuōchū zìjǐ de kànfǎ.'},
+  {vi:'Cái quần này hơi dài, không vừa lắm.', zh:'这条裤子有点儿长，不太合适。', py:'Zhè tiáo kùzi yǒudiǎnr cháng, bú tài héshì.'},
+  {vi:'Bạn đừng sốt ruột, chúng ta cùng nghĩ cách.', zh:'你别着急，我们来想想办法。', py:'Nǐ bié zháojí, wǒmen lái xiǎngxiang bànfǎ.'},
+  {vi:'Lời khen của bố mẹ có thể khiến con cái tự tin hơn.', zh:'父母的表扬能让孩子更有信心。', py:'Fùmǔ de biǎoyáng néng ràng háizi gèng yǒu xìnxīn.'},
+  {vi:'Lúc làm bài thi anh ấy quá cẩu thả, viết sai mấy chữ liền.', zh:'他考试的时候太粗心了，写错了好几个字。', py:'Tā kǎoshì de shíhou tài cūxīn le, xiě cuò le hǎo jǐ ge zì.'},
 ];
 
 var listenData = {

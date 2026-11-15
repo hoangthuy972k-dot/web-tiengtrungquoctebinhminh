@@ -3112,198 +3112,206 @@ var dialogData = [
    ]},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
 var matchData = [
-  {left:'该',right:'该加油了'},
-  {left:'推迟',right:'推迟了一个小时'},
-  {left:'上',right:'上高速公路'},
-  {left:'换',right:'换登机牌'},
-  {left:'怪',right:'怪可怜的'},
-  {left:'祝贺',right:'祝贺她考试合格'},
-  {left:'讲',right:'讲笑话'},
-  {left:'一棵',right:'一棵一棵地变绿'},
-  {left:'收拾',right:'收拾好行李'},
-  {left:'向目的地',right:'向目的地出发'},
+  {left:'到了机场，先去换',right:'登机牌'},
+  {left:'来，为我们的友谊',right:'干杯'},
+  {left:'明天一早出发，今天晚上得把行李',right:'收拾好'},
+  {left:'我把房间的',right:'钥匙丢了'},
+  {left:'学校门口有一',right:'棵大树'},
+  {left:'他很幽默，特别会讲',right:'笑话'},
+  {left:'我们在饭馆里吃了很多有名的',right:'小吃'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ
+// ══════════════════════════════════════════
 var fillData = [
-  {pre:'该加油了，去机场的路上有',blank:'',post:'吗？',hint:'jiāyóuzhàn',ans:'加油站'},
-  {pre:'你去北京的',blank:'',post:'是几点的？时间来得及吗？',hint:'hángbān',ans:'航班'},
-  {pre:'后来机场网站上通知',blank:'',post:'了一个小时。',hint:'tuīchí',ans:'推迟'},
-  {pre:'往西走五百米就能上',blank:'',post:'。',hint:'gāosù gōnglù',ans:'高速公路'},
-  {pre:'一会儿我自己进去换',blank:'',post:'，你就不用送我了。',hint:'dēngjīpái',ans:'登机牌'},
-  {pre:'总是说想去旅行，但是没时间，怪',blank:'',post:'的。',hint:'kělián',ans:'可怜'},
-  {pre:'中午我们不是要去',blank:'',post:'的饭店吃烤鸭吗？',hint:'duìmiàn',ans:'对面'},
-  {pre:'',blank:'',post:'她考试成绩都合格。',hint:'zhùhè',ans:'祝贺'},
-  {pre:'这张照片上和你',blank:'',post:'的那个人是少数民族吗？',hint:'gān bēi',ans:'干杯'},
-  {pre:'她',blank:'',post:'得真漂亮。',hint:'dǎban',ans:'打扮'},
-  {pre:'有一次我把存包的',blank:'',post:'丢了。',hint:'yàoshi',ans:'钥匙'},
-  {pre:'',blank:'',post:'哪个季节去丽江旅游比较好呢？',hint:'jiūjìng',ans:'究竟',exp:'究竟 = rốt cuộc (như 到底), dùng trong câu hỏi để hỏi dồn.'},
-  {pre:'窗外的树一',blank:'',post:'一棵地变绿。',hint:'kē',ans:'棵',exp:'棵 là lượng từ cho cây: 一棵一棵地 = từng cây một.'},
-  {pre:'虽然上海人也会讲',blank:'',post:'，可是仔细听，还是有上海味儿。',hint:'pǔtōnghuà',ans:'普通话'},
-  {pre:'放假的时候，我会',blank:'',post:'好行李，向目的地出发。',hint:'shōushi',ans:'收拾'},
+  {pre:'我昨天晚上在沙发上看小说，看着',blank:'看着',post:'就睡着了。',hint:'(đang xem… thì)',ans:'看着',exp:'V着V着 + 就/突然…… = đang làm việc này thì (bất ngờ) xảy ra việc khác; động từ lặp hai lần, mỗi lần đều có 着.'},
+  {pre:'A：她怎么突然不说话了？ B：她说着',blank:'说着',post:'就想起了以前的男朋友，所以很难过。',hint:'(đang nói… thì)',ans:'说着',exp:'说着说着就…… = đang nói thì…; vế sau là việc xảy ra không định trước.'},
+  {pre:'这孩子',blank:'一',post:'见到小狗就想抱。',hint:'(hễ)',ans:'一',exp:'一 + V1 + 就 + V2 = hễ… là… (lần nào cũng vậy); 一 đứng sau chủ ngữ, 就 đứng trước động từ thứ hai.'},
+  {pre:'A：考试成绩什么时候能知道？ B：成绩一出来，学校',blank:'就',post:'会通知大家。',hint:'(là, liền)',ans:'就',exp:'一……就…… = vừa… là liền…; 就 đặt sau chủ ngữ của vế sau (学校就……), không đặt trước 学校.'},
+  {pre:'我们都讨论一个小时了，你',blank:'究竟',post:'想去哪儿旅行？',hint:'(rốt cuộc)',ans:'究竟',exp:'究竟 = 到底, dùng trong câu hỏi để hỏi dồn, mang sắc thái văn viết hơn; 到底 còn nghĩa "cuối cùng thì" (他到底来了), 究竟 không có nghĩa này.'},
+  {pre:'这个工作说',blank:'起来',post:'简单，真做起来一点儿也不容易。',hint:'(… thì — khi xét về)',ans:'起来',exp:'V + 起来 = khi (thử) làm V thì thấy…: 说起来简单，做起来不容易; 看起来 = trông có vẻ.'},
+  {pre:'A：你尝尝我做的鸡蛋汤。 B：看',blank:'起来',post:'就很香，一定很好喝。',hint:'(trông có vẻ)',ans:'起来',exp:'看起来 + tính từ = nhìn thì thấy…, trông có vẻ…; dùng để nhận xét theo ấn tượng ban đầu.'},
+  {pre:'因为老师生病了，这次考试',blank:'推迟',post:'到下个星期三了。',hint:'(hoãn lại)',ans:'推迟',exp:'推迟 = dời sang muộn hơn; trái nghĩa 提前 (làm sớm hơn). 推迟 + 到 + thời gian mới.'},
+  {pre:'A：我找到工作了！ B：真的吗？',blank:'祝贺',post:'你！今天晚上我请你吃饭。',hint:'(chúc mừng)',ans:'祝贺',exp:'祝贺 + người = chúc mừng (việc đã thành công); 祝 + người + điều mong muốn = chúc (việc chưa xảy ra): 祝你生日快乐.'},
+  {pre:'这家饭店的东西质量不',blank:'合格',post:'，现在已经关门了。',hint:'(đạt chuẩn)',ans:'合格',exp:'合格 = đạt tiêu chuẩn (kiểm tra, thi cử, chất lượng); phủ định 不合格.'},
+  {pre:'今天',blank:'怪',post:'冷的，你多穿点儿衣服再走吧。',hint:'(khá là, thật là)',ans:'怪',exp:'怪 + tính từ + 的 = khá là…, thật là… (khẩu ngữ); khác 奇怪 = kỳ lạ.'},
+  {pre:'A：你今天',blank:'打扮',post:'得这么漂亮，要去哪儿啊？ B：我去参加大学同学的聚会。',hint:'(ăn diện, trang điểm)',ans:'打扮',exp:'打扮 = chải chuốt, ăn mặc trang điểm; 打扮得 + tính từ: 打扮得很漂亮.'},
+  {pre:'我想先把包',blank:'存',post:'在这儿，下午再来拿。',hint:'(gửi)',ans:'存',exp:'存 = gửi lại (đồ, tiền) để lấy sau: 存包、存钱; 存 + 在 + nơi chốn.'},
+  {pre:'',blank:'说起',post:'小时候的事，奶奶总是特别高兴。',hint:'(nhắc đến, nói đến)',ans:'说起',exp:'说起 + sự việc = nhắc đến/nói đến việc đó, thường đứng đầu câu; vế sau nêu phản ứng của người nói.'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
 var sortData = [
-  {words:['别','开着','开着','没','油','了'],ans:'别开着开着没油了',audio:'别开着开着没油了'},
-  {words:['等','女儿','一','回来','我','就','告诉','她','这个','好','消息'],ans:'等女儿一回来我就告诉她这个好消息',audio:'等女儿一回来我就告诉她这个好消息'},
-  {words:['究竟','哪个','季节','去','丽江','旅游','比较','好','呢','？'],ans:'究竟哪个季节去丽江旅游比较好呢？',audio:'究竟哪个季节去丽江旅游比较好呢？'},
-  {words:['上海话','听','起来','就','像','外语','一样'],ans:'上海话听起来就像外语一样',audio:'上海话听起来就像外语一样'},
-  {words:['说起','吃','的','东西','，','给','我','印象','最','深','的','是','湖南菜'],ans:'说起吃的东西，给我印象最深的是湖南菜',audio:'说起吃的东西，给我印象最深的是湖南菜'},
-  {words:['每年','都','吸引','着','成千上万','的','游客'],ans:'每年都吸引着成千上万的游客',audio:'每年都吸引着成千上万的游客'},
-  {words:['无论','交通','还是','吃','、','住','都','很','便宜'],ans:'无论交通还是吃、住都很便宜',audio:'无论交通还是吃、住都很便宜'},
-  {words:['旅行','不仅','能','丰富','一个','人','的','经历','，','而且','是','很好','的','减压','方法'],ans:'旅行不仅能丰富一个人的经历，而且是很好的减压方法',audio:'旅行不仅能丰富一个人的经历，而且是很好的减压方法'},
+  {words:['从','这儿','到','加油站','大概','还','有','三','公里','。'],ans:'从这儿到加油站大概还有三公里。',audio:'从这儿到加油站大概还有三公里。'},
+  {words:['我们','明天','下午','两点','从','学校','出发','。'],ans:'我们明天下午两点从学校出发。',audio:'我们明天下午两点从学校出发。',alt:['明天下午两点我们从学校出发。']},
+  {words:['北京','烤鸭','是','我','最','喜欢','吃','的','菜','。'],ans:'北京烤鸭是我最喜欢吃的菜。',audio:'北京烤鸭是我最喜欢吃的菜。'},
+  {words:['中国','有','五十六个','民族','。'],ans:'中国有五十六个民族。',audio:'中国有五十六个民族。'},
+  {words:['我','家','对面','新','开','了','一','家','饭馆','。'],ans:'我家对面新开了一家饭馆。',audio:'我家对面新开了一家饭馆。'},
+  {words:['这个','菜','又','酸','又','辣','，','我','特别','喜欢','。'],ans:'这个菜又酸又辣，我特别喜欢。',audio:'这个菜又酸又辣，我特别喜欢。'},
+  {words:['他','在','高速公路','上','开','了','五个','小时','的','车','。'],ans:'他在高速公路上开了五个小时的车。',audio:'他在高速公路上开了五个小时的车。'},
+  {words:['这次','去','首都','旅行','，','我们','一共','去','了','五天','。'],ans:'这次去首都旅行，我们一共去了五天。',audio:'这次去首都旅行，我们一共去了五天。'},
+  {words:['我','第一次','用','普通话','和','中国人','对话','的','时候','很','紧张','。'],ans:'我第一次用普通话和中国人对话的时候很紧张。',audio:'我第一次用普通话和中国人对话的时候很紧张。'},
 ];
 
 var errorFixMode = 'wordchoice';
 var errorFixData = [
   {wrong:'乘客，您好！我们很抱歉地通知您，由于天气原因，您乘坐的CA1864____推迟起飞。',
    opts:['合格','航班','对话','可怜'],ans:1,
-   exp:'航班 (chuyến bay) — CA1864航班. Câu có 抱歉 (Bài 14), 由于 (Bài 10), 乘坐 (Bài 14). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'CA1864 là số hiệu chuyến bay, 乘坐……航班 = đi chuyến bay…; thông báo hoãn cất cánh → 航班.'},
   {wrong:'我走在回家的路上，突然发现商店门口有一只____的小狗，我心里一软，就把它抱回了家。',
    opts:['合格','航班','可怜','旅行'],ans:2,
-   exp:'可怜 (đáng thương) — 可怜的小狗. Câu có 突然 (Bài 8), 抱 (Bài 17). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'可怜的小狗 = chú chó đáng thương; vì thương nên mềm lòng (心里一软) bế về nhà. 可怜 là tính từ làm định ngữ trước 的.'},
   {wrong:'欢迎大家来到美丽的海南，____中有任何事您都可以找我商量，希望我的服务能让您满意。',
    opts:['合格','对话','可怜','旅行'],ans:3,
-   exp:'旅行 (chuyến du lịch) — 旅行中. Câu có 任何 (Bài 11), 商量 (Bài 12), 满意 (Bài 6). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'Hướng dẫn viên chào khách đến Hải Nam: 旅行中 = trong chuyến du lịch, có việc gì cứ tìm tôi.'},
   {wrong:'"活到老，学到老"。在现代社会中，我们必须坚持学习。努力获得新的知识，才能适应社会的发展速度，做一个____的现代人。',
    opts:['合格','航班','对话','旅行'],ans:0,
-   exp:'合格 (đạt chuẩn) — 合格的现代人. Câu có 坚持 (Bài 9), 获得 (Bài 10), 适应 (Bài 8), 速度 (Bài 14). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'合格的现代人 = người hiện đại đạt chuẩn (theo kịp xã hội); 合格 là tính từ làm định ngữ, các từ khác không hợp nghĩa.'},
   {wrong:'上午来应聘的那个小伙子是学电子技术的，成绩很优秀，通过面试时和他的____，感觉他的性格也不错，我觉得他挺适合这份工作的。',
-   opts:['合格','航班','对话','可怜'],ans:2,
-   exp:'对话 (đối thoại) — 和他的对话. Câu có 小伙子 (Bài 16), 技术 (Bài 18), 面试 (Bài 10), 性格 (Bài 8). Các từ còn lại không phù hợp nghĩa.'},
+   opts:['合格','推迟','对话','可怜'],ans:2,
+   exp:'通过……和他的对话 = qua cuộc trò chuyện với cậu ấy (lúc phỏng vấn) mà thấy tính cách tốt → 对话.'},
   {wrong:'A：你的____水平考试考得怎么样？B：我这次没考，因为我错过了报名时间，只能等下次了。',
    opts:['祝贺','笑话','打扮','普通话'],ans:3,
-   exp:'普通话 (tiếng phổ thông) — 普通话水平考试. Câu có 错过 (Bài 4), 报名 (Bài 16). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'普通话水平考试 = kỳ thi trình độ tiếng phổ thông; trước 水平考试 cần danh từ chỉ ngôn ngữ/môn.'},
   {wrong:'A：今晚我穿这条裙子怎么样？今年最流行的。B：很漂亮，不过我觉得这种____参加正式的舞会可能还是不太合适。',
    opts:['祝贺','笑话','打扮','推迟'],ans:2,
-   exp:'打扮 (kiểu ăn diện) — 这种打扮. Câu có 流行 (Bài 5), 正式 (Bài 6), 合适 (Bài 15). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'这种打扮 = kiểu ăn mặc này (váy đang mốt) đi dạ hội trang trọng có lẽ không hợp; 打扮 ở đây dùng như danh từ.'},
   {wrong:'A：小高，听说你出国的时间____了？B：是的，我的签证还没办好，大概得10月底才能走。',
    opts:['祝贺','笑话','普通话','推迟'],ans:3,
-   exp:'推迟 (hoãn) — 时间推迟了. Câu có 签证 (Bài 16), 大概 (Bài 13), 月底 (Bài 11). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'出国的时间推迟了 = ngày đi nước ngoài bị hoãn; B giải thích visa chưa xong, cuối tháng 10 mới đi được.'},
   {wrong:'A：这次活动非常成功，我们顺利完成了公司交给的任务。B：辛苦了，____你们！来，干一杯！',
-   opts:['祝贺','笑话','打扮','推迟'],ans:0,
-   exp:'祝贺 (chúc mừng) — 祝贺你们. Câu có 顺利 (Bài 9), 任务 (Bài 12), 辛苦 (Bài 4). Các từ còn lại không phù hợp nghĩa.'},
+   opts:['祝贺','笑话','航班','推迟'],ans:0,
+   exp:'Hoạt động thành công, hoàn thành nhiệm vụ → 祝贺你们 = chúc mừng các bạn, rồi nâng ly 干一杯.'},
   {wrong:'A：你这一肚子的____，都是从哪儿听来的？B：有个网站上有很多，看到有趣的我就记下来。我把网址发给你，你也去看看吧。',
-   opts:['祝贺','笑话','打扮','普通话'],ans:1,
-   exp:'笑话 (truyện cười) — 一肚子的笑话. Câu có 肚子 (Bài 7), 网站 (Bài 18), 有趣 (Bài 13). Các từ còn lại không phù hợp nghĩa.'},
+   opts:['祝贺','笑话','旅行','普通话'],ans:1,
+   exp:'一肚子的笑话 = cả bụng truyện cười (biết rất nhiều chuyện cười), B nói đọc được trên một trang web.'},
 ];
 
+// ══════════════════════════════════════════
+// LUYỆN NÓI
+// ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 20. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu hỏi là một tình huống thật, nói về chính bạn bằng từ và mẫu câu của Bài 20. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Cả nhóm đang lên kế hoạch cho kỳ nghỉ sắp tới.',
-      q_zh: '你认为理想的旅行方式是什么样的？为什么？',
-      q_py: 'Nǐ rènwéi lǐxiǎng de lǚxíng fāngshì shì shénme yàng de? Wèishénme?',
-      q_vn: 'Bạn cho rằng cách du lịch lý tưởng là thế nào? Vì sao?',
-      grammar: { label: '一……就……; 对我来说……', any: ['一', '就', '来说'] },
+      situation: 'Bạn bè hỏi có khi nào bạn mải làm một việc mà quên cả thời gian không.',
+      q_zh: '你有没有做一件事做得忘记了时间的时候？',
+      q_py: 'Nǐ yǒu méiyǒu zuò yí jiàn shì zuò de wàngjì le shíjiān de shíhou?',
+      q_vn: 'Bạn có lúc nào làm một việc mà quên cả thời gian không?',
+      grammar: { label: 'V着V着 + 就…… (đang… thì…)', any: ['看着看着', '走着走着', '说着说着', '听着听着', '玩着玩着', '聊着聊着', '写着写着'] },
       need: [
-        { label: 'Nói cách đi bạn thích', any: ['火车', '飞机', '自己开车', '出发', '旅行'] },
-        { label: 'Nói điều bạn muốn trải nghiệm', any: ['风景', '小吃', '文化', '朋友', '照相', '尝'] }
+        { label: 'Dùng V着V着', any: ['看着看着', '走着走着', '说着说着', '听着听着', '玩着玩着', '聊着聊着', '写着写着'] },
+        { label: 'Nói kết quả', any: ['就', '突然', '已经'] }
       ],
-      bonus: { label: 'Dùng 一……就…… nói hành động ngay', any: ['一', '就'] },
-      vocab: ['旅行', '出发', '小吃'],
-      minLen: 22,
-      sample: '对我来说，理想的旅行是一放假就出发，坐火车去南方，一路上看不同的风景，尝尝各地有名的小吃，不用赶时间。',
-      sample_py: 'Duì wǒ lái shuō, lǐxiǎng de lǚxíng shì yí fàng jiǎ jiù chūfā, zuò huǒchē qù nánfāng, yí lù shàng kàn bù tóng de fēng jǐng, chángchang gè de yǒumíng de xiǎochī, bú yòng gǎn shíjiān.',
-      sample_vn: 'Với tôi, chuyến đi lý tưởng là vừa nghỉ là lên đường, đi tàu xuống phía Nam, dọc đường ngắm phong cảnh khác nhau, nếm món ăn vặt nổi tiếng từng nơi, không phải vội.',
-      tip: '一……就…… = vừa… là…: 我一到家就给你打电话。'
+      bonus: { label: 'Dùng 收拾 hoặc 小吃', any: ['收拾', '小吃'] },
+      vocab: ['收拾', '小吃'],
+      minLen: 20,
+      sample: '有。上个周末我在家写作业，写着写着就到了晚上十二点，饭也忘记吃了，只吃了一点儿小吃。房间也没收拾，乱极了。',
+      sample_py: 'Yǒu. Shàng ge zhōumò wǒ zài jiā xiě zuòyè, xiě zhe xiě zhe jiù dào le wǎnshang shí\'èr diǎn, fàn yě wàngjì chī le, zhǐ chī le yìdiǎnr xiǎochī. Fángjiān yě méi shōushi, luàn jí le.',
+      sample_vn: 'Có. Cuối tuần trước tôi ở nhà làm bài tập, làm mãi làm mãi đã đến 12 giờ đêm, quên cả ăn cơm, chỉ ăn chút đồ ăn vặt. Phòng cũng chưa dọn, bừa bộn hết sức.',
+      tip: 'V着V着 thường đi với 就 hoặc 突然 ở vế sau: 走着走着就迷路了。'
     },
     {
-      situation: 'Bạn bè hỏi chuyến đi nào bạn nhớ nhất.',
-      q_zh: '哪次旅行是你最难忘的？给你印象最深的是什么？',
-      q_py: 'Nǎ cì lǚxíng shì nǐ zuì nán wàng de? Gěi nǐ yìnxiàng zuì shēn de shì shénme?',
-      q_vn: 'Chuyến đi nào khó quên nhất với bạn? Điều gì để lại ấn tượng sâu nhất?',
-      grammar: { label: '说起……; 给我印象最深的是……', any: ['说起', '印象'] },
+      situation: 'Đồng nghiệp hỏi bạn thường làm gì khi có thời gian rảnh.',
+      q_zh: '你一有空儿就做什么？',
+      q_py: 'Nǐ yì yǒu kòngr jiù zuò shénme?',
+      q_vn: 'Hễ có thời gian rảnh là bạn làm gì?',
+      grammar: { label: '一……就…… (hễ… là…)', any: ['一'] },
       need: [
-        { label: 'Nói chuyến đi nào', any: ['去年', '上次', '旅行', '那一趟', '去过'] },
-        { label: 'Nói điều ấn tượng', any: ['印象', '风景', '导游', '笑话', '民族', '小吃', '人'] }
+        { label: 'Dùng 一……就……', any: ['就'] },
+        { label: 'Nói về đi chơi / đi du lịch', any: ['旅行', '旅游', '出发', '航班', '小吃'] }
       ],
-      bonus: { label: 'Dùng 干杯 hoặc 祝贺 kể chi tiết vui', any: ['干杯', '祝贺', '热闹'] },
-      vocab: ['旅行', '民族', '干杯'],
+      bonus: { label: 'Dùng 收拾 hoặc 出发', any: ['收拾', '出发'] },
+      vocab: ['旅行', '出发', '航班'],
       minLen: 22,
-      sample: '说起旅行，给我印象最深的是去年那一趟。导游一路上讲了很多笑话，风景美极了，我们还和当地少数民族的朋友一起吃饭、干杯，特别热闹。',
-      sample_py: 'Shuō qǐ lǚxíng, gěi wǒ yìnxiàng zuì shēn de shì qùnián nà yí tàng. Dǎoyóu yí lù shàng jiǎng le hěn duō xiàohua, fēng jǐng měi jí le, wǒmen hái hé dāng de shǎo shù mínzú de péngyou yìqǐ chīfàn, gānbēi, tèbié rènao.',
-      sample_vn: 'Nói đến du lịch, ấn tượng sâu nhất với tôi là chuyến năm ngoái. Hướng dẫn viên kể nhiều chuyện cười dọc đường, cảnh đẹp vô cùng, chúng tôi còn ăn cơm, cụng ly với các bạn dân tộc địa phương, rất náo nhiệt.',
-      tip: '说起…… = nói đến…, dùng mở đầu câu chuyện.'
+      sample: '我一有空儿就去旅行。出发以前，我会先看看航班的时间，把行李收拾好。到了一个新地方，我一定要尝尝那儿有名的小吃。',
+      sample_py: 'Wǒ yì yǒu kòngr jiù qù lǚxíng. Chūfā yǐqián, wǒ huì xiān kànkan hángbān de shíjiān, bǎ xíngli shōushi hǎo. Dào le yí ge xīn dìfang, wǒ yídìng yào chángchang nàr yǒumíng de xiǎochī.',
+      sample_vn: 'Hễ rảnh là tôi đi du lịch. Trước khi xuất phát, tôi sẽ xem giờ chuyến bay trước, xếp hành lý xong xuôi. Đến một nơi mới, tôi nhất định phải nếm thử món ăn vặt nổi tiếng ở đó.',
+      tip: '一 + V1 + 就 + V2: 一 và 就 đều đứng sau chủ ngữ của vế mình: 我一有空儿就……'
     },
     {
-      situation: 'Một người bạn sắp sang Trung Quốc và hỏi nên đi miền nào.',
-      q_zh: '在你的印象中，中国南方和北方有什么不同？',
-      q_py: 'Zài nǐ de yìnxiàng zhōng, Zhōngguó nánfāng hé běifāng yǒu shénme bù tóng?',
-      q_vn: 'Theo cảm nhận của bạn, miền Nam và miền Bắc Trung Quốc khác nhau thế nào?',
-      grammar: { label: '……却……; 究竟…… (rốt cuộc)', any: ['却', '究竟'] },
+      situation: 'Bạn kể về một người quen lúc nào cũng khó quyết định.',
+      q_zh: '你身边有没有做事总是决定不了的人？',
+      q_py: 'Nǐ shēnbiān yǒu méiyǒu zuò shì zǒngshì juédìng bu liǎo de rén?',
+      q_vn: 'Bên cạnh bạn có ai làm việc gì cũng không quyết định được không?',
+      grammar: { label: '究竟 / 到底 + câu hỏi (rốt cuộc…?)', any: ['究竟', '到底'] },
       need: [
-        { label: 'So sánh khí hậu', any: ['气候', '冬天', '下雪', '暖和', '冷', '热'] },
-        { label: 'So sánh mặt khác', any: ['语言', '普通话', '吃', '米饭', '面', '习惯'] }
+        { label: 'Dùng 究竟 hoặc 到底 trong câu hỏi', any: ['究竟', '到底'] },
+        { label: 'Kể tình huống cụ thể', any: ['吃', '买', '去', '菜单'] }
       ],
-      bonus: { label: 'Dùng 究竟 nêu điều khó kết luận', any: ['究竟'] },
-      vocab: ['普通话', '究竟', '对话'],
+      bonus: { label: 'Dùng 怪……的', any: ['怪'] },
+      vocab: ['究竟', '怪'],
       minLen: 22,
-      sample: '南北的气候有很大区别，北方冬天下雪，南方却比较暖和。语言也不同，有的地方话听起来就像外语一样，所以大家用普通话对话更方便。究竟哪边更好，我也说不清楚。',
-      sample_py: 'Nán běi de qìhòu yǒu hěn dà qūbié, běifāng dōng tiān xià xuě, nánfāng què bǐjiào nuǎnhuo. Yǔyán yě bù tóng, yǒude dìfang huà tīng qǐlai jiù xiàng wài yǔ yí yàng, suǒyǐ dàjiā yòng pǔtōnghuà duìhuà gèng fāngbiàn. Jiūjìng nǎ bian gèng hǎo, wǒ yě shuō bù qīngchu.',
-      sample_vn: 'Khí hậu Nam Bắc khác nhau nhiều, mùa đông miền Bắc có tuyết, còn miền Nam lại khá ấm. Ngôn ngữ cũng khác, tiếng vài nơi nghe như ngoại ngữ, nên mọi người nói chuyện bằng tiếng phổ thông sẽ tiện hơn. Rốt cuộc bên nào hơn thì tôi cũng không nói rõ được.',
-      tip: '究竟 dùng trong câu hỏi nhấn mạnh: 你究竟想说什么？'
+      sample: '我妹妹就是这样。每次出去吃饭，她看了半天菜单也决定不了，我只好问她："你究竟想吃什么？"最后她总是说："跟你一样吧。"我觉得怪有意思的。',
+      sample_py: 'Wǒ mèimei jiù shì zhèyàng. Měi cì chūqu chī fàn, tā kàn le bàntiān càidān yě juédìng bu liǎo, wǒ zhǐhǎo wèn tā: "Nǐ jiūjìng xiǎng chī shénme?" Zuìhòu tā zǒngshì shuō: "Gēn nǐ yíyàng ba." Wǒ juéde guài yǒu yìsi de.',
+      sample_vn: 'Em gái tôi đúng là như vậy. Lần nào đi ăn, nó xem thực đơn cả buổi cũng không quyết được, tôi đành hỏi: "Rốt cuộc em muốn ăn gì?" Cuối cùng nó luôn nói: "Giống anh/chị đi." Tôi thấy khá là buồn cười.',
+      tip: '究竟 = 到底, đặt trước động từ trong câu hỏi; câu có 究竟 thì không dùng 吗.'
     },
     {
-      situation: 'Bạn dẫn khách nước ngoài đi ăn món quê mình.',
-      q_zh: '你喜欢吃辣的吗？你们国家的菜有什么特点？',
-      q_py: 'Nǐ xǐhuan chī là de ma? Nǐmen guójiā de cài yǒu shénme tèdiǎn?',
-      q_vn: 'Bạn thích ăn cay không? Món ăn nước bạn có đặc điểm gì?',
-      grammar: { label: '一……就……; 又……又……', any: ['一', '就', '又'] },
+      situation: 'Bạn bè hỏi về một món ăn đáng nhớ.',
+      q_zh: '你吃过什么让你印象很深的菜？',
+      q_py: 'Nǐ chī guo shénme ràng nǐ yìnxiàng hěn shēn de cài?',
+      q_vn: 'Bạn từng ăn món nào khiến bạn ấn tượng sâu sắc?',
+      grammar: { label: 'V + 起来 (khi… thì thấy…)', any: ['起来'] },
       need: [
-        { label: 'Nói khẩu vị của bạn', any: ['辣', '不辣', '喜欢', '能吃', '不太'] },
-        { label: 'Tả đặc điểm món ăn', any: ['酸', '香', '甜', '咸', '汤', '小吃', '特点'] }
+        { label: 'Dùng 看起来 / 吃起来 / 闻起来', any: ['看起来', '吃起来', '听起来'] },
+        { label: 'Tả mùi vị', any: ['香', '辣', '酸', '咸', '甜'] }
       ],
-      bonus: { label: 'Kể tên một món cụ thể', any: ['汤', '米饭', '面', '鱼', '烤鸭', '春卷'] },
-      vocab: ['辣', '酸', '香', '汤'],
+      bonus: { label: 'Dùng 烤鸭 hoặc 汤', any: ['烤鸭', '汤'] },
+      vocab: ['烤鸭', '香', '汤'],
       minLen: 22,
-      sample: '我不太能吃辣，一吃辣就咳嗽。我们国家菜的特点是又酸又香，特别是汤，味道很鲜。街上的小吃也很有名，来了一定要尝尝。',
-      sample_py: 'Wǒ bú tài néng chī là, yì chī là jiù késou. Wǒmen guójiā cài de tèdiǎn shì yòu suān yòu xiāng, tèbié shì tāng, wèidào hěn xiān. Jiē shàng de xiǎochī yě hěn yǒumíng, lái le yí dìng yào chángchang.',
-      sample_vn: 'Tôi không ăn cay được mấy, cứ ăn cay là ho. Đặc điểm món ăn nước tôi là vừa chua vừa thơm, nhất là canh, vị rất ngọt thanh. Món ăn vặt ngoài phố cũng rất nổi tiếng, đến thì nhất định phải thử.',
-      tip: '一……就…… còn dùng cho phản ứng ngay: 一累就想睡觉。'
+      sample: '我第一次吃北京烤鸭的时候，觉得它看起来很普通，可是吃起来特别香。除了烤鸭，那家饭店的汤也很好喝，有一点儿酸，也有一点儿辣。',
+      sample_py: 'Wǒ dì yī cì chī Běijīng kǎoyā de shíhou, juéde tā kàn qilai hěn pǔtōng, kěshì chī qilai tèbié xiāng. Chúle kǎoyā, nà jiā fàndiàn de tāng yě hěn hǎohē, yǒu yìdiǎnr suān, yě yǒu yìdiǎnr là.',
+      sample_vn: 'Lần đầu tôi ăn vịt quay Bắc Kinh, thấy trông nó rất bình thường, nhưng ăn vào thì cực kỳ thơm. Ngoài vịt quay, canh của nhà hàng đó cũng rất ngon, hơi chua, cũng hơi cay.',
+      tip: '看起来 = nhìn thì; 吃起来 = ăn vào thì; hai vế đối lập hay dùng 可是.'
     },
     {
-      situation: 'Tối nay bạn phải bay sớm ngày mai.',
-      q_zh: '去机场或者出发旅行前，你一般会做哪些准备？',
-      q_py: 'Qù jīchǎng huòzhě chūfā lǚxíng qián, nǐ yìbān huì zuò nǎxiē zhǔnbèi?',
-      q_vn: 'Trước khi ra sân bay hay lên đường, bạn thường chuẩn bị gì?',
-      grammar: { label: '先……然后……最后……; 千万别……', any: ['先', '然后', '最后', '千万'] },
+      situation: 'Một người bạn Trung Quốc khen bạn nói tiếng Trung.',
+      q_zh: '你觉得你的普通话怎么样？',
+      q_py: 'Nǐ juéde nǐ de pǔtōnghuà zěnmeyàng?',
+      q_vn: 'Bạn thấy tiếng phổ thông của mình thế nào?',
+      grammar: { label: '听起来 / 说起来 (起来 nghĩa mở rộng)', any: ['听起来', '说起来'] },
       need: [
-        { label: 'Kể việc chuẩn bị', any: ['收拾', '行李', '登机牌', '航班', '护照', '查'] },
-        { label: 'Nói thứ tự bằng 先/然后/最后', any: ['先', '然后', '最后'] }
+        { label: 'Dùng 听起来 hoặc 说起来', any: ['听起来', '说起来'] },
+        { label: 'Dùng 普通话 hoặc 对话', any: ['普通话', '对话'] }
       ],
-      bonus: { label: 'Dùng 千万 nhắc điều dễ quên', any: ['千万'] },
-      vocab: ['收拾', '航班', '推迟', '出发'],
+      bonus: { label: 'Dùng 一……就……', any: ['一听就', '一说就'] },
+      vocab: ['普通话', '对话'],
       minLen: 22,
-      sample: '我会先收拾好行李，然后查一下航班有没有推迟，最后提前两个小时出发去机场。千万别忘了带护照和登机牌，否则什么都来不及。',
-      sample_py: 'Wǒ huì xiān shōushi hǎo xíng lǐ, ránhòu chá yíxià hángbān yǒu méiyǒu tuīchí, zuìhòu tíqián liǎng ge xiǎoshí chūfā qù jīchǎng. Qiānwàn bié wàng le dài hùzhào hé dēngjīpái, fǒuzé shénme dōu láibují.',
-      sample_vn: 'Tôi sẽ sắp xếp hành lý trước, rồi kiểm tra chuyến bay có bị hoãn không, cuối cùng xuất phát ra sân bay trước hai tiếng. Tuyệt đối đừng quên hộ chiếu và thẻ lên máy bay, nếu không thì chẳng kịp gì cả.',
-      tip: '推迟 = hoãn lại: 会议推迟到下午。'
+      sample: '我的普通话听起来还不太标准，中国人一听就知道我是外国人。不过跟中国朋友对话的时候，他们都能听懂我的意思，所以我越来越有信心了。',
+      sample_py: 'Wǒ de pǔtōnghuà tīng qilai hái bú tài biāozhǔn, Zhōngguórén yì tīng jiù zhīdào wǒ shì wàiguórén. Búguò gēn Zhōngguó péngyou duìhuà de shíhou, tāmen dōu néng tīngdǒng wǒ de yìsi, suǒyǐ wǒ yuè lái yuè yǒu xìnxīn le.',
+      sample_vn: 'Tiếng phổ thông của tôi nghe vẫn chưa chuẩn lắm, người Trung Quốc nghe một cái là biết tôi là người nước ngoài. Nhưng khi nói chuyện với bạn Trung Quốc, họ đều hiểu ý tôi, nên tôi ngày càng tự tin hơn.',
+      tip: '听起来 + tính từ = nghe thì thấy…; 一听就知道 = nghe là biết ngay.'
     }
   ]
 };
 
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Việt → Trung)
+// ══════════════════════════════════════════
 var translateData = [
-  {vi:'Nên đổ xăng rồi, trên đường ra sân bay có trạm xăng không?',zh:'该加油了，去机场的路上有加油站吗？',py:'Gāi jiā yóu le, qù jīchǎng de lùshang yǒu jiāyóuzhàn ma?'},
-  {vi:'Được, vậy tôi yên tâm, đừng đang lái thì hết xăng.',zh:'好，那我就放心了，别开着开着没油了。',py:'Hǎo, nà wǒ jiù fàng xīn le, bié kāizhe kāizhe méi yóu le.'},
-  {vi:'Chuyến bay vốn 10 giờ, sau đó trang web sân bay thông báo hoãn một tiếng.',zh:'航班本来是十点的，后来机场网站上通知推迟了一个小时。',py:'Hángbān běnlái shì shí diǎn de, hòulái jīchǎng wǎngzhàn shang tōngzhī tuīchíle yí ge xiǎoshí.'},
-  {vi:'Bình thường con gái nhiều bài học, luôn nói muốn đi du lịch nhưng không có thời gian, tội nghiệp thật.',zh:'平时女儿那么多课，总是说想去旅行，但是没时间，怪可怜的。',py:'Píngshí nǚ\'ér nàme duō kè, zǒngshì shuō xiǎng qù lǚxíng, dànshì méi shíjiān, guài kělián de.'},
-  {vi:'Đợi con gái vừa về là tôi báo cho con tin vui này.',zh:'等女儿一回来我就告诉她这个好消息。',py:'Děng nǚ\'ér yì huílai wǒ jiù gàosu tā zhège hǎo xiāoxi.'},
-  {vi:'Rốt cuộc mùa nào đi Lệ Giang du lịch thì tốt hơn?',zh:'究竟哪个季节去丽江旅游比较好呢？',py:'Jiūjìng nǎ ge jìjié qù Lìjiāng lǚyóu bǐjiào hǎo ne?'},
-  {vi:'Ví dụ khi đối thoại với người Thượng Hải, bạn sẽ thấy tiếng Thượng Hải nghe như ngoại ngữ.',zh:'比如你跟上海人对话时，会发现上海话听起来就像外语一样。',py:'Bǐrú nǐ gēn Shànghǎi rén duìhuà shí, huì fāxiàn Shànghǎi huà tīng qilai jiù xiàng wàiyǔ yíyàng.'},
-  {vi:'Nói đến đồ ăn, ấn tượng sâu nhất với tôi là món Hồ Nam.',zh:'说起吃的东西，给我印象最深的是湖南菜。',py:'Shuōqǐ chī de dōngxi, gěi wǒ yìnxiàng zuì shēn de shì Húnán cài.'},
+  {vi:'Chuyến bay của tôi bị hoãn một tiếng rưỡi.', zh:'我的航班推迟了一个半小时。', py:'Wǒ de hángbān tuīchí le yí ge bàn xiǎoshí.'},
+  {vi:'Cạn ly! Chúc mừng chúng ta đã thành công!', zh:'干杯！祝贺我们成功了！', py:'Gān bēi! Zhùhè wǒmen chénggōng le!'},
+  {vi:'Chìa khóa của tôi mất rồi, không vào nhà được.', zh:'我的钥匙丢了，进不了家门。', py:'Wǒ de yàoshi diū le, jìn bu liǎo jiā mén.'},
+  {vi:'Bắc Kinh là thủ đô của Trung Quốc, có rất nhiều món ăn vặt nổi tiếng.', zh:'北京是中国的首都，有很多有名的小吃。', py:'Běijīng shì Zhōngguó de shǒudū, yǒu hěn duō yǒumíng de xiǎochī.'},
+  {vi:'Trời mưa rồi, chú chó nhỏ cứ đứng mãi ở cửa, trông thật đáng thương.', zh:'下雨了，这只小狗一直站在门口，看起来真可怜。', py:'Xià yǔ le, zhè zhī xiǎo gǒu yìzhí zhàn zài ménkǒu, kàn qilai zhēn kělián.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Đi về phía tây 500 mét là lên được cao tốc. Đi cao tốc khoảng nửa tiếng là đến.',zh:'往西走五百米就能上高速公路。走高速公路大约半个小时就到了。',py:'Wǎng xī zǒu wǔbǎi mǐ jiù néng shàng gāosù gōnglù. Zǒu gāosù gōnglù dàyuē bàn ge xiǎoshí jiù dào le.'},
-  {vi:'Lát tôi tự vào đổi thẻ lên máy bay, bạn không cần tiễn, đợi tôi đến sân bay Thủ Đô sẽ nhắn tin.',zh:'一会儿我自己进去换登机牌，你就不用送我了，等我到了首都机场再给你发短信。',py:'Yíhuìr wǒ zìjǐ jìnqu huàn dēngjīpái, nǐ jiù búyòng sòng wǒ le, děng wǒ dàole Shǒudū Jīchǎng zài gěi nǐ fā duǎnxìn.'},
-  {vi:'Trưa nay chẳng phải chúng ta đến nhà hàng đối diện ăn vịt quay, chúc mừng con thi đạt hết sao?',zh:'中午我们不是要去对面的饭店吃烤鸭，祝贺她考试成绩都合格吗？',py:'Zhōngwǔ wǒmen bú shì yào qù duìmiàn de fàndiàn chī kǎoyā, zhùhè tā kǎoshì chéngjì dōu hégé ma?'},
-  {vi:'Người cạn ly với bạn trong ảnh này là dân tộc thiểu số à? Cô ấy trang điểm đẹp thật.',zh:'这张照片上和你干杯的那个人是少数民族吗？她打扮得真漂亮。',py:'Zhè zhāng zhàopiàn shang hé nǐ gān bēi de nàge rén shì shǎoshù mínzú ma? Tā dǎban de zhēn piàoliang.'},
-  {vi:'Có lần tôi làm mất chìa khóa tủ gửi đồ, cuối cùng vẫn là cô ấy giúp tìm được.',zh:'有一次我把存包的钥匙丢了，最后还是她帮我找到的。',py:'Yǒu yí cì wǒ bǎ cún bāo de yàoshi diū le, zuìhòu háishi tā bāng wǒ zhǎodào de.'},
-  {vi:'Cây ngoài cửa sổ từng cây một xanh dần, miền Bắc có lẽ còn tuyết, miền Nam đã khắp nơi xanh rồi.',zh:'窗外的树一棵一棵地变绿，北方也许还下着雪，南方却已经到处都是绿色了。',py:'Chuāngwài de shù yì kē yì kē de biàn lǜ, běifāng yěxǔ hái xiàzhe xuě, nánfāng què yǐjīng dàochù dōu shì lǜsè le.'},
-  {vi:'Khi nghỉ, tôi thu dọn hành lý, mang bản đồ, mua vé tàu, xuất phát đến điểm đến.',zh:'放假的时候，我会收拾好行李，带上地图，买张火车票，向目的地出发。',py:'Fàng jià de shíhou, wǒ huì shōushi hǎo xíngli, dàishàng dìtú, mǎi zhāng huǒchēpiào, xiàng mùdìdì chūfā.'},
-  {vi:'Đặc điểm món Hồ Nam là cay, chủ yếu là cay mặn, cay thơm và cay chua.',zh:'湖南菜的特点就是辣，主要是咸辣、香辣和酸辣。',py:'Húnán cài de tèdiǎn jiù shì là, zhǔyào shì xián là, xiāng là hé suān là.'},
+  {vi:'Cứ đến cuối tuần là quán này lại rất đông người.', zh:'一到周末，这家饭馆的人就特别多。', py:'Yí dào zhōumò, zhè jiā fànguǎn de rén jiù tèbié duō.'},
+  {vi:'Canh này rất thơm, bạn uống thêm chút đi.', zh:'这个汤很香，你多喝点儿。', py:'Zhège tāng hěn xiāng, nǐ duō hē diǎnr.'},
+  {vi:'Đi du lịch về, tôi dọn dẹp phòng mất cả buổi chiều.', zh:'旅行回来以后，我收拾了一下午房间。', py:'Lǚxíng huílai yǐhòu, wǒ shōushi le yí xiàwǔ fángjiān.'},
 ];
 
 var listenData = {

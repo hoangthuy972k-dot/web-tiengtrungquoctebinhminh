@@ -3011,46 +3011,52 @@ var dialogData = [
    ]},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
 var matchData = [
-  {left:'越来越',right:'越来越凉快'},
-  {left:'一层',right:'一层厚厚的黄叶'},
-  {left:'由绿',right:'由绿变黄'},
-  {left:'照',right:'照照片'},
-  {left:'严格',right:'严格按照要求'},
-  {left:'一直',right:'一直陪着你'},
-  {left:'正赶上',right:'正赶上六一儿童节'},
-  {left:'为了阳光',right:'为了阳光而竞争'},
-  {left:'又大',right:'又大又厚'},
-  {left:'排列',right:'排列起来的灯'},
+  {left:'排队',right:'买票'},
+  {left:'妈妈抱着',right:'孩子'},
+  {left:'这只小猫的',right:'毛很漂亮'},
+  {left:'放暑假的时候',right:'去爷爷家住一个月'},
+  {left:'鱼生活在',right:'海洋里'},
+  {left:'天上一点儿',right:'云也没有'},
+  {left:'把书按照大小',right:'排列好'},
+  {left:'森林里有',right:'老虎'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ
+// ══════════════════════════════════════════
 var fillData = [
-  {pre:'最近天气越来越',blank:'',post:'了，看来秋天已经到了。',hint:'liángkuai',ans:'凉快'},
-  {pre:'这几天香山特别',blank:'',post:'，吸引了很多游客参观。',hint:'rènao',ans:'热闹'},
-  {pre:'你看天上的',blank:'',post:'，今天肯定有大雨。',hint:'yún',ans:'云'},
-  {pre:'',blank:'',post:'里说那里也有不少专门看红叶的好地方。',hint:'guǎngbō',ans:'广播'},
-  {pre:'去长城',blank:'',post:'是一个好主意，那我们明天去吧。',hint:'dào',ans:'倒',exp:'倒 = thì lại (nhượng bộ, khác ý trước): 去长城倒是一个好主意.'},
-  {pre:'每次见了都想',blank:'',post:'一抱它。',hint:'bào',ans:'抱',exp:'Lặp động từ đơn âm V一V: 抱一抱 = ôm một cái.'},
-  {pre:'每次你让它',blank:'',post:'什么，它就像能听懂你的话一样去做。',hint:'gàn',ans:'干'},
-  {pre:'然后它就会',blank:'',post:'按照你的要求做了。',hint:'yángé',ans:'严格'},
-  {pre:'在你心里',blank:'',post:'的时候，它会一直陪着你。',hint:'nánshòu',ans:'难受'},
-  {pre:'上个月我去了',blank:'',post:'北京动物园。',hint:'tàng',ans:'趟',exp:'趟 = lượng từ chuyến đi (đi và về): 去了趟北京动物园.'},
-  {pre:'入口处',blank:'',post:'的人很多，动物园里热闹极了。',hint:'pái duì',ans:'排队'},
-  {pre:'熊猫们也变得特别',blank:'',post:'。',hint:'huópō',ans:'活泼'},
-  {pre:'植物会为了阳光、空气和水而',blank:'',post:'。',hint:'jìngzhēng',ans:'竞争'},
-  {pre:'就算在几公里深的海底也',blank:'',post:'能看到东西。',hint:'réngrán',ans:'仍然',exp:'仍然 = vẫn (văn viết, như 还是): 就算…也仍然能看到.'},
-  {pre:'美极了，就像在',blank:'',post:'里一样。',hint:'mèng',ans:'梦'},
+  {pre:'这个房间不大，',blank:'倒',post:'很干净。',hint:'(thì lại — tương phản)',ans:'倒',exp:'倒 (dào, phó từ) = "thì lại": nêu mặt ngược lại với điều vừa nói; đứng sau chủ ngữ, trước tính từ/động từ.'},
+  {pre:'A：听说那家饭馆很贵？ B：我去过，价格',blank:'倒',post:'不贵，就是人太多。',hint:'(lại — trái với điều nghĩ)',ans:'倒',exp:'倒 nêu sự thật trái với điều người kia nghĩ (tưởng đắt nhưng lại không đắt).'},
+  {pre:'A：你刚才在',blank:'干',post:'什么？给你打电话也不接。 B：在洗澡，没听见。',hint:'(làm)',ans:'干',exp:'干 (gàn) = làm, khẩu ngữ, thay cho 做: 干什么, 不想干.'},
+  {pre:'衣服还没',blank:'干',post:'，明天再穿吧。',hint:'(khô)',ans:'干',exp:'干 đọc gān = khô (衣服干了); đọc gàn = làm (干什么).'},
+  {pre:'我下午要去一',blank:'趟',post:'银行，你有什么事要我帮忙吗？',hint:'(chuyến, lượt đi)',ans:'趟',exp:'趟 đếm số lượt đi–về: 去一趟银行; 次 đếm số lần sự việc xảy ra nói chung.'},
+  {pre:'这个电影真不错，我已经看了三',blank:'次',post:'了。',hint:'(lần)',ans:'次',exp:'Xem phim không có đi–về → dùng 次, không dùng 趟.'},
+  {pre:'很多年轻人为了更好的工作',blank:'而',post:'离开了老家。',hint:'(mà — nối mục đích với hành động)',ans:'而',exp:'为了 + mục đích + 而 + hành động (văn viết): vì … mà ….'},
+  {pre:'A：你跟他说了吗？ B：说了好几次了，可是他',blank:'仍然',post:'不听。',hint:'(vẫn)',ans:'仍然',exp:'仍然 = vẫn (như cũ, không thay đổi), trang trọng hơn 还.'},
+  {pre:'蛋糕只',blank:'剩',post:'一块了，给你吧。',hint:'(còn lại)',ans:'剩',exp:'剩 = còn lại, thừa: 只剩一块了, 剩下的钱.'},
+  {pre:'那家饭馆特别有名，每天晚上门口都有很多人',blank:'排队',post:'。',hint:'(xếp hàng)',ans:'排队',exp:'排队 = xếp hàng: 排队买票, 在门口排队.'},
+  {pre:'我昨天吃得太多了，今天肚子很',blank:'难受',post:'。',hint:'(khó chịu)',ans:'难受',exp:'难受 = khó chịu (cơ thể) hoặc buồn bực (tâm trạng): 听到这个消息，我很难受.'},
+  {pre:'春节的时候，到处都很',blank:'热闹',post:'，大家都出来玩儿。',hint:'(náo nhiệt)',ans:'热闹',exp:'热闹 = náo nhiệt, đông vui (nơi chốn, không khí); trái nghĩa 安静.'},
+  {pre:'我每天开车的时候都听',blank:'广播',post:'，可以知道哪儿堵车。',hint:'(chương trình phát thanh)',ans:'广播',exp:'听广播 = nghe đài; 广播里说…… = đài nói ….'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
 var sortData = [
-  {words:['看来','秋天','已经','到','了'],ans:'看来秋天已经到了',audio:'看来秋天已经到了'},
-  {words:['去','长城','倒','是','一个','好','主意'],ans:'去长城倒是一个好主意',audio:'去长城倒是一个好主意'},
-  {words:['只要','稍微','花','点儿','时间','教教','它','，','它','就','能','学会','很多','东西'],ans:'只要稍微花点儿时间教教它，它就能学会很多东西',audio:'只要稍微花点儿时间教教它，它就能学会很多东西'},
-  {words:['在','你','心里','难受','的','时候','，','它','会','一直','陪','着','你'],ans:'在你心里难受的时候，它会一直陪着你',audio:'在你心里难受的时候，它会一直陪着你'},
-  {words:['上个月','我','去','了','趟','北京','动物园'],ans:'上个月我去了趟北京动物园',audio:'上个月我去了趟北京动物园'},
-  {words:['植物','会','为了','阳光','、','空气','和','水','而','竞争'],ans:'植物会为了阳光、空气和水而竞争',audio:'植物会为了阳光、空气和水而竞争'},
-  {words:['就算','在','几','公里','深','的','海底','也','仍然','能','看到','东西'],ans:'就算在几公里深的海底也仍然能看到东西',audio:'就算在几公里深的海底也仍然能看到东西'},
-  {words:['真正','的','海底','世界','比','故事','里','写','的','更','美'],ans:'真正的海底世界比故事里写的更美',audio:'真正的海底世界比故事里写的更美'},
+  {words:['这个','周末','我','要','回','一','趟','老家','。'],ans:'这个周末我要回一趟老家。',audio:'这个周末我要回一趟老家。',alt:['我这个周末要回一趟老家。']},
+  {words:['他','小时候','是','个','很','活泼','的','孩子','。'],ans:'他小时候是个很活泼的孩子。',audio:'他小时候是个很活泼的孩子。'},
+  {words:['妈妈','对','我们','要求','很','严格','。'],ans:'妈妈对我们要求很严格。',audio:'妈妈对我们要求很严格。'},
+  {words:['虽然','在','下雨','，','比赛','仍然','继续','进行','。'],ans:'虽然在下雨，比赛仍然继续进行。',audio:'虽然在下雨，比赛仍然继续进行。'},
+  {words:['我','昨天','晚上','做','了','一个','奇怪','的','梦','。'],ans:'我昨天晚上做了一个奇怪的梦。',audio:'我昨天晚上做了一个奇怪的梦。',alt:['昨天晚上我做了一个奇怪的梦。']},
+  {words:['从','这儿','到','机场','只有','十','公里','。'],ans:'从这儿到机场只有十公里。',audio:'从这儿到机场只有十公里。'},
+  {words:['今天','比','昨天','暖和','多','了','，','不用','穿','那么','多','。'],ans:'今天比昨天暖和多了，不用穿那么多。',audio:'今天比昨天暖和多了，不用穿那么多。'},
+  {words:['现在','社会','上','找','工作','的','竞争','越来越','大','。'],ans:'现在社会上找工作的竞争越来越大。',audio:'现在社会上找工作的竞争越来越大。'},
+  {words:['小时候','我','最','喜欢','听','美人鱼','的','故事','。'],ans:'小时候我最喜欢听美人鱼的故事。',audio:'小时候我最喜欢听美人鱼的故事。',alt:['我小时候最喜欢听美人鱼的故事。']},
 ];
 
 var errorFixMode = 'wordchoice';
@@ -3060,149 +3066,152 @@ var errorFixData = [
    exp:'剩 (còn lại) — 就剩十几页了. Câu có 页 (Bài 11), 到底 (Bài 16). Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'刚才听____说明天可能会下大雨，足球比赛恐怕要推迟了。',
    opts:['广播','剩','照','底'],ans:0,
-   exp:'广播 (đài phát thanh) — 听广播说. Câu có 恐怕 (Bài 16), 推迟 (Bài 4). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'广播 (đài phát thanh) — 听广播说. Câu có 恐怕 (Bài 16). Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'您看这个沙发怎么样？我们年____有活动，正在打折，比平时便宜了一千块。',
    opts:['广播','尊重','照','底'],ans:3,
-   exp:'底 (cuối) — 年底 = cuối năm. Câu có 打折 (Bài 5), 比 (Bài 5). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'底 (cuối) — 年底 = cuối năm. Câu có 打折 (Bài 5), 比. Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'不管男人还是女人，只要能在自己的工作中取得好的成绩，都应该赢得____。',
    opts:['广播','尊重','剩','底'],ans:1,
    exp:'尊重 (tôn trọng) — 赢得尊重. Câu có 不管……都 (Bài 3), 只要 (Bài 8), 取得 (Bài 9), 尊重 (Bài 16). Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'很多自行车后面都有一个灯，虽然小，但用处却很大。每当后面汽车的灯光____到它时，它就会反光，这样就能提醒司机前方有人。',
    opts:['尊重','剩','照','底'],ans:2,
-   exp:'照 (chiếu) — 灯光照到. Câu có 却 (Bài 2), 提醒 (Bài 4), 司机 (Bài 4). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'照 (chiếu) — 灯光照到. Câu có 却 (Bài 2), 提醒 (Bài 4), 司机. Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'A：下了雨，____多了，前几天实在是太热了。B：是啊，前两天晚上热得都睡不着，今天终于能睡个好觉了。',
-   opts:['难受','暖和','凉快','热闹'],ans:2,
-   exp:'凉快 (mát) — 下了雨凉快多了. Câu có 实在 (Bài 11), 终于 (Bài 8), 睡不着. Các từ còn lại không phù hợp nghĩa.'},
+   opts:['活泼','暖和','凉快','热闹'],ans:2,
+   exp:'凉快 (mát) — 下了雨凉快多了. Câu có 实在 (Bài 5), 终于, 睡不着. Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'A：你经常参加学校举办的舞会吗？B：不，我从来没参加过，我不太喜欢____。',
    opts:['难受','活泼','凉快','热闹'],ans:3,
-   exp:'热闹 (náo nhiệt) — 不喜欢热闹. Câu có 举办 (Bài 11), 从来 (Bài 1). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'热闹 (náo nhiệt) — 不喜欢热闹. Câu có 举办 (Bài 6), 从来 (Bài 1). Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'A：工作半天了，起来活动活动。B：好，坐久了确实有些____。',
-   opts:['难受','暖和','活泼','热闹'],ans:0,
-   exp:'难受 (khó chịu) — 坐久了难受. Câu có 确实 (Bài 9), 有些 (Bài 4), 起来 (Bài 15). Các từ còn lại không phù hợp nghĩa.'},
+   opts:['难受','暖和','凉快','热闹'],ans:0,
+   exp:'难受 (khó chịu) — 坐久了难受. Câu có 确实 (Bài 10), 有些, 起来 (Bài 15). Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'A：小李，我给你介绍个女朋友吧，说说你有什么条件。B：我，我喜欢____可爱的女孩子。',
    opts:['难受','暖和','活泼','凉快'],ans:2,
-   exp:'活泼 (hoạt bát) — 活泼可爱. Câu có 条件 (Bài 6), 可爱 (Bài 15). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'活泼 (hoạt bát) — 活泼可爱. Câu có 条件 (Bài 10), 可爱. Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'A：今天很____，外面一点儿也不冷，你不用穿这么多衣服。B：好的，那我脱掉一件。',
    opts:['难受','暖和','活泼','热闹'],ans:1,
-   exp:'暖和 (ấm) — 今天很暖和. Câu có 一点儿也不 (Bài 6), 脱 (Bài 7). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'暖和 (ấm) — 今天很暖和. Câu có 一点儿也不. Các từ còn lại không phù hợp nghĩa.'},
 ];
 
+// ══════════════════════════════════════════
+// LUYỆN NÓI
+// ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 17. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu hỏi là một tình huống thật, nói về chính bạn bằng từ và mẫu câu của Bài 17. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Bạn bè khoe ảnh thú cưng và hỏi bạn thích con vật nào.',
-      q_zh: '你最喜欢什么动物？为什么？',
-      q_py: 'Nǐ zuì xǐhuan shénme dòngwù? Wèishénme?',
-      q_vn: 'Bạn thích loài vật nào nhất? Vì sao?',
-      grammar: { label: '又……又……; 好像……一样', any: ['又', '好像'] },
+      situation: 'Một người bạn hỏi nơi bạn ở có gì tốt, gì chưa tốt.',
+      q_zh: '你住的地方有什么好的和不好的？',
+      q_py: 'Nǐ zhù de dìfang yǒu shénme hǎo de hé bù hǎo de?',
+      q_vn: 'Nơi bạn ở có điểm gì tốt và chưa tốt?',
+      grammar: { label: '倒 (thì lại — mặt tương phản)', any: ['倒'] },
       need: [
-        { label: 'Nói con vật yêu thích', any: ['狗', '猫', '熊猫', '鸟', '马', '动物'] },
-        { label: 'Tả đặc điểm', any: ['聪明', '活泼', '可爱', '安静', '好像'] }
+        { label: 'Dùng 倒 nêu mặt ngược lại', any: ['倒'] },
+        { label: 'Nói một điểm chưa tốt', any: ['远', '小', '贵', '吵', '旧', '不方便'] }
       ],
-      bonus: { label: 'Kể một kỷ niệm với con vật đó', any: ['陪', '难受', '一起', '小时候'] },
-      vocab: ['活泼', '难受', '抱'],
-      minLen: 22,
-      sample: '我最喜欢狗。狗又聪明又活泼，好像朋友一样。我心里难受的时候，它会一直坐在旁边陪着我，抱一抱它心情就好多了。',
-      sample_py: 'Wǒ zuì xǐhuan gǒu. Gǒu yòu cōngming yòu huópō, hǎoxiàng péngyou yí yàng. Wǒ xīn lǐ nánshòu de shíhou, tā huì yì zhí zuò zài pángbiān péi zhe wǒ, bào yi bào tā xīnqíng jiù hǎo duō le.',
-      sample_vn: 'Tôi thích chó nhất. Chó vừa thông minh vừa hoạt bát, như một người bạn vậy. Lúc tôi buồn, nó ngồi cạnh bên tôi mãi, ôm nó một cái là tâm trạng khá hơn nhiều.',
-      tip: '好像……一样 dùng để so sánh: 他跑得好像风一样快。'
+      bonus: { label: 'Dùng 凉快 / 暖和 / 热闹', any: ['凉快', '暖和', '热闹'] },
+      vocab: ['倒', '凉快', '热闹'],
+      minLen: 20,
+      sample: '我住的地方离公司比较远，每天要坐一个小时的车。不过那里很安静，夏天也很凉快，空气倒挺好的。',
+      sample_py: 'Wǒ zhù de dìfang lí gōngsī bǐjiào yuǎn, měi tiān yào zuò yí ge xiǎoshí de chē. Búguò nàlǐ hěn ānjìng, xiàtiān yě hěn liángkuai, kōngqì dào tǐng hǎo de.',
+      sample_vn: 'Chỗ tôi ở khá xa công ty, mỗi ngày phải ngồi xe một tiếng. Nhưng ở đó rất yên tĩnh, mùa hè cũng mát, không khí thì lại khá tốt.',
+      tip: '倒 đứng sau chủ ngữ, trước vị ngữ: 空气倒挺好的 (không nói 倒空气挺好).'
     },
     {
-      situation: 'Lớp bạn làm bài thuyết trình về bảo vệ động vật.',
-      q_zh: '哪些动物应该得到保护？为什么？',
-      q_py: 'Nǎxiē dòngwù yīnggāi děi dào bǎohù? Wèishénme?',
-      q_vn: 'Những loài vật nào nên được bảo vệ? Vì sao?',
-      grammar: { label: '为了……而…… (vì… mà…)', any: ['为了', '而'] },
+      situation: 'Bạn kể về chuyến đi gần đây nhất của mình.',
+      q_zh: '你最近去过什么地方？去了几次？',
+      q_py: 'Nǐ zuìjìn qù guo shénme dìfang? Qù le jǐ cì?',
+      q_vn: 'Gần đây bạn đã đi những đâu? Đi mấy lần?',
+      grammar: { label: '趟 (lượt đi–về) / 次 (lần)', any: ['趟'] },
       need: [
-        { label: 'Kể loài cần bảo vệ', any: ['熊猫', '老虎', '鸟', '鱼', '动物'] },
-        { label: 'Nêu lý do', any: ['数量', '少', '森林', '环境', '伤害', '保护'] }
+        { label: 'Dùng 一趟', any: ['趟'] },
+        { label: 'Dùng 次 cho số lần', any: ['次'] }
       ],
-      bonus: { label: 'Nêu thái độ phản đối việc săn bắt', any: ['不应该', '禁止', '反对', '赚钱'] },
-      vocab: ['老虎', '森林', '社会'],
-      minLen: 22,
-      sample: '大熊猫和老虎应该得到保护，因为它们的数量已经不多了，森林也越来越少。有的人为了赚钱而伤害动物，整个社会都应该反对这种做法。',
-      sample_py: 'Dà xióngmāo hé lǎohǔ yīnggāi děi dào bǎohù, yīnwèi tāmen de shùliàng yǐjīng bù duō le, sēnlín yě yuè lái yuè shǎo. Yǒude rén wèile zhuàn qián ér shāng hài dòngwù, zhěng ge shèhuì dōu yīnggāi fǎnduì zhè zhǒng zuò fǎ.',
-      sample_vn: 'Gấu trúc và hổ nên được bảo vệ, vì số lượng của chúng đã không còn nhiều, rừng cũng ngày càng ít. Có người vì kiếm tiền mà hại động vật, cả xã hội nên phản đối cách làm đó.',
-      tip: '为了……而…… trang trọng: 为了理想而努力。'
+      bonus: { label: 'Dùng 照 (chụp ảnh)', any: ['照'] },
+      vocab: ['趟', '次', '照'],
+      minLen: 20,
+      sample: '上个月我回了一趟老家，看了看爷爷奶奶。我每年都回去两三次，每次都照很多照片。',
+      sample_py: 'Shàng ge yuè wǒ huí le yí tàng lǎojiā, kàn le kàn yéye nǎinai. Wǒ měi nián dōu huíqu liǎng sān cì, měi cì dōu zhào hěn duō zhàopiàn.',
+      sample_vn: 'Tháng trước tôi về quê một chuyến, thăm ông bà. Mỗi năm tôi đều về hai ba lần, lần nào cũng chụp rất nhiều ảnh.',
+      tip: '趟 nhấn mạnh một lượt đi rồi về (回了一趟老家); 次 dùng chung cho mọi việc lặp lại.'
     },
     {
-      situation: 'Bạn kể một chuyến đi sở thú cho lớp nghe.',
-      q_zh: '你去过动物园或者森林公园吗？请说说那一趟的经历。',
-      q_py: 'Nǐ qù guo dòngwù yuán huòzhě sēnlín gōngyuán ma? Qǐng shuōshuo nà yí tàng de jīnglì.',
-      q_vn: 'Bạn từng đi sở thú hoặc công viên rừng chưa? Hãy kể về chuyến đi đó.',
-      grammar: { label: 'Lượng từ 趟 (chuyến); 热闹极了', any: ['趟', '极了'] },
+      situation: 'Bạn bè hỏi động lực học tập của bạn.',
+      q_zh: '你为了什么而学习汉语？',
+      q_py: 'Nǐ wèile shénme ér xuéxí Hànyǔ?',
+      q_vn: 'Bạn học tiếng Trung vì điều gì?',
+      grammar: { label: '为了……而…… (vì … mà …)', any: ['而'] },
       need: [
-        { label: 'Nói thời gian và nơi đến', any: ['去年', '暑假', '动物园', '森林', '公园', '上个月'] },
-        { label: 'Kể hoạt động', any: ['照相', '排队', '看', '熊猫', '老虎', '入口'] }
+        { label: 'Dùng 为了……而……', any: ['为了'] },
+        { label: 'Nói việc bạn làm mỗi ngày', any: ['每天', '下班', '周末', '小时'] }
       ],
-      bonus: { label: 'Dùng 趟 làm lượng từ', any: ['趟'] },
-      vocab: ['趟', '排队', '热闹', '放暑假'],
+      bonus: { label: 'Dùng 竞争 hoặc 社会', any: ['竞争', '社会'] },
+      vocab: ['为了……而……', '竞争'],
       minLen: 22,
-      sample: '去年放暑假我去了一趟动物园。那天正赶上儿童节，入口处排队的人很多，热闹极了。我给熊猫照了不少照片，玩儿得很开心。',
-      sample_py: 'Qùnián fàngshǔjià wǒ qù le yí tàng dòngwù yuán. Nà tiān zhèng gǎn shàng értóng jié, rùkǒu chù páiduì de rén hěn duō, rènao jí le. Wǒ gěi xióngmāo zhào le bù shǎo zhàopiàn, wánr děi hěn kāixīn.',
-      sample_vn: 'Mùa hè năm ngoái tôi đi sở thú một chuyến. Hôm đó đúng dịp Tết thiếu nhi, cổng vào rất đông người xếp hàng, náo nhiệt vô cùng. Tôi chụp khá nhiều ảnh gấu trúc, chơi rất vui.',
-      tip: '趟 dùng cho số lần đi lại: 我去了一趟银行。'
+      sample: '现在找工作的竞争很大，我为了以后能找到更好的工作而学习汉语。每天下班以后我都学一个小时，周末也不休息。',
+      sample_py: 'Xiànzài zhǎo gōngzuò de jìngzhēng hěn dà, wǒ wèile yǐhòu néng zhǎodào gèng hǎo de gōngzuò ér xuéxí Hànyǔ. Měi tiān xiàbān yǐhòu wǒ dōu xué yí ge xiǎoshí, zhōumò yě bù xiūxi.',
+      sample_vn: 'Bây giờ tìm việc cạnh tranh rất lớn, tôi vì sau này có thể tìm được công việc tốt hơn mà học tiếng Trung. Mỗi ngày tan làm tôi đều học một tiếng, cuối tuần cũng không nghỉ.',
+      tip: '为了 + mục đích + 而 + hành động; trong khẩu ngữ có thể bỏ 而.'
     },
     {
-      situation: 'Bài học hôm nay nói về rừng và khí hậu.',
-      q_zh: '如果没有森林，世界会变成什么样子？',
-      q_py: 'Rúguǒ méiyǒu sēnlín, shìjiè huì biàn chéng shénme yàngzi?',
-      q_vn: 'Nếu không có rừng, thế giới sẽ ra sao?',
-      grammar: { label: '尽管……仍然……', any: ['尽管', '仍然'] },
+      situation: 'Bạn kể về một thói quen từ nhỏ đến giờ không đổi.',
+      q_zh: '有什么习惯你从小到现在都没变？',
+      q_py: 'Yǒu shénme xíguàn nǐ cóng xiǎo dào xiànzài dōu méi biàn?',
+      q_vn: 'Có thói quen nào từ nhỏ đến giờ bạn vẫn không thay đổi?',
+      grammar: { label: '仍然 (vẫn)', any: ['仍然'] },
       need: [
-        { label: 'Nói hậu quả', any: ['空气', '脏', '动物', '气候', '污染', '失去'] },
-        { label: 'Nêu điều nên làm', any: ['保护', '努力', '种树', '减少'] }
+        { label: 'Dùng 仍然', any: ['仍然'] },
+        { label: 'Nói về bây giờ', any: ['现在', '每天', '工作'] }
       ],
-      bonus: { label: 'Dùng 仍然 nhấn mạnh', any: ['仍然'] },
-      vocab: ['森林', '仍然', '社会'],
-      minLen: 22,
-      sample: '如果没有森林，空气会越来越脏，很多动物恐怕会失去自己的家，气候也会变得很奇怪。所以尽管现在森林越来越少，我们仍然要努力保护它。',
-      sample_py: 'Rúguǒ méiyǒu sēnlín, kōngqì huì yuè lái yuè zāng, hěn duō dòngwù kǒngpà huì shī qù zìjǐ de jiā, qìhòu yě huì biàn děi hěn qíguài. Suǒyǐ jǐnguǎn xiànzài sēnlín yuè lái yuè shǎo, wǒmen réngrán yào nǔlì bǎohù tā.',
-      sample_vn: 'Nếu không có rừng, không khí sẽ ngày càng bẩn, nhiều loài vật e rằng sẽ mất nhà, khí hậu cũng trở nên kỳ lạ. Nên dù rừng đang ngày càng ít, chúng ta vẫn phải nỗ lực bảo vệ.',
-      tip: '尽管……仍然/还是…… = mặc dù… vẫn…'
+      bonus: { label: 'Dùng 剩 hoặc 梦', any: ['剩', '梦'] },
+      vocab: ['仍然', '剩'],
+      minLen: 20,
+      sample: '我从小就喜欢看书。现在工作很忙，每天剩下的时间不多，可是我仍然每天睡觉前看半个小时。',
+      sample_py: 'Wǒ cóng xiǎo jiù xǐhuan kàn shū. Xiànzài gōngzuò hěn máng, měi tiān shèng xià de shíjiān bù duō, kěshì wǒ réngrán měi tiān shuìjiào qián kàn bàn ge xiǎoshí.',
+      sample_vn: 'Từ nhỏ tôi đã thích đọc sách. Giờ công việc rất bận, thời gian còn lại mỗi ngày không nhiều, nhưng tôi vẫn đọc nửa tiếng trước khi ngủ mỗi ngày.',
+      tip: '仍然 đứng trước động từ/phủ định: 仍然每天看, 仍然不听.'
     },
     {
-      situation: 'Bạn xem một bộ phim tài liệu về đại dương.',
-      q_zh: '海洋跟我们的生活有什么关系？',
-      q_py: 'Hǎiyáng gēn wǒmen de shēnghuó yǒu shénme guānxi?',
-      q_vn: 'Đại dương có quan hệ gì với cuộc sống của chúng ta?',
-      grammar: { label: '就拿……来说; 不仅……而且……', any: ['拿', '来说', '不仅'] },
+      situation: 'Đồng nghiệp hỏi bạn thường làm gì vào kỳ nghỉ.',
+      q_zh: '放假的时候你一般干什么？',
+      q_py: 'Fàngjià de shíhou nǐ yìbān gàn shénme?',
+      q_vn: 'Khi được nghỉ bạn thường làm gì?',
+      grammar: { label: '干 (gàn — làm, khẩu ngữ)', any: ['干'] },
       need: [
-        { label: 'Nêu quan hệ cụ thể', any: ['鱼', '吃', '气候', '海洋', '水', '空气'] },
-        { label: 'Nêu điều nên tránh', any: ['扔', '垃圾', '污染', '千万'] }
+        { label: 'Dùng 干', any: ['干'] },
+        { label: 'Kể hoạt động', any: ['爬山', '看书', '睡觉', '旅游', '朋友', '老家'] }
       ],
-      bonus: { label: 'Dùng 就拿……来说 nêu ví dụ', any: ['拿'] },
-      vocab: ['海洋', '底', '公里'],
-      minLen: 22,
-      sample: '海洋跟我们的关系很大。就拿吃的来说，我们不仅从海洋得到鱼，而且海洋还能影响气候。海底几公里深的地方还有很多我们不了解的植物，所以千万不要往海里扔垃圾。',
-      sample_py: 'Hǎiyáng gēn wǒmen de guānxi hěn dà. Jiù ná chī de lái shuō, wǒmen bùjǐn cóng hǎiyáng děi dào yú, ér qiě hǎiyáng hái néng yǐngxiǎng qìhòu. Hǎi dǐ jǐ gōnglǐ shēn de dìfang hái yǒu hěn duō wǒmen bù liǎojiě de zhíwù, suǒyǐ qiānwàn bú yào wǎng hǎi lǐ rēng lā jī.',
-      sample_vn: 'Đại dương liên quan rất nhiều đến chúng ta. Lấy chuyện ăn uống mà nói, ta không những lấy cá từ biển mà biển còn ảnh hưởng đến khí hậu. Dưới đáy biển sâu mấy km còn nhiều loài thực vật ta chưa biết, nên tuyệt đối đừng vứt rác xuống biển.',
-      tip: '就拿……来说 = lấy… làm ví dụ mà nói.'
+      bonus: { label: 'Dùng 森林 / 海洋 / 老虎', any: ['森林', '海洋', '老虎', '动物'] },
+      vocab: ['干', '森林', '排队'],
+      minLen: 20,
+      sample: '放假的时候我最不想干的事就是排队，所以我不去人多的地方。我一般和朋友去爬山，那里有很大的森林，空气特别好。',
+      sample_py: 'Fàngjià de shíhou wǒ zuì bù xiǎng gàn de shì jiù shì páiduì, suǒyǐ wǒ bú qù rén duō de dìfang. Wǒ yìbān hé péngyou qù páshān, nàlǐ yǒu hěn dà de sēnlín, kōngqì tèbié hǎo.',
+      sample_vn: 'Lúc được nghỉ, việc tôi ít muốn làm nhất là xếp hàng, nên tôi không đến chỗ đông người. Tôi thường đi leo núi với bạn bè, ở đó có rừng rất lớn, không khí rất trong lành.',
+      tip: '干 = 做 trong khẩu ngữ: 干什么, 不想干的事.'
     }
   ]
 };
 
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Việt → Trung)
+// ══════════════════════════════════════════
 var translateData = [
-  {vi:'Dạo này thời tiết ngày càng mát, xem ra mùa thu đã đến.',zh:'最近天气越来越凉快了，看来秋天已经到了。',py:'Zuìjìn tiānqì yuè lái yuè liángkuai le, kànlái qiūtiān yǐjīng dào le.'},
-  {vi:'Bạn xem mây trên trời kìa, hôm nay chắc chắn có mưa to.',zh:'你看天上的云，今天肯定有大雨。',py:'Nǐ kàn tiānshang de yún, jīntiān kěndìng yǒu dà yǔ.'},
-  {vi:'Đi Trường Thành thì đúng là ý hay, vậy mai chúng ta đi nhé.',zh:'去长城倒是一个好主意，那我们明天去吧。',py:'Qù Chángchéng dào shì yí ge hǎo zhǔyi, nà wǒmen míngtiān qù ba.'},
-  {vi:'Chó là động vật rất thông minh, chỉ cần bỏ chút thời gian dạy, nó có thể học được nhiều thứ.',zh:'狗是很聪明的动物，只要稍微花点儿时间教教它，它就能学会很多东西。',py:'Gǒu shì hěn cōngming de dòngwù, zhǐyào shāowēi huā diǎnr shíjiān jiāojiao tā, tā jiù néng xuéhuì hěn duō dōngxi.'},
-  {vi:'Tháng trước tôi đi sở thú Bắc Kinh một chuyến, ở đó có khoảng 500 loài động vật.',zh:'上个月我去了趟北京动物园，那里约有500种动物。',py:'Shàng ge yuè wǒ qùle tàng Běijīng Dòngwùyuán, nàli yuē yǒu wǔbǎi zhǒng dòngwù.'},
-  {vi:'Cây cối sẽ cạnh tranh vì ánh nắng, không khí và nước.',zh:'植物会为了阳光、空气和水而竞争。',py:'Zhíwù huì wèile yángguāng, kōngqì hé shuǐ ér jìngzhēng.'},
-  {vi:'Cho dù ở đáy biển sâu mấy kilômét vẫn có thể nhìn thấy đồ vật.',zh:'就算在几公里深的海底也仍然能看到东西。',py:'Jiùsuàn zài jǐ gōnglǐ shēn de hǎidǐ yě réngrán néng kàndào dōngxi.'},
-  {vi:'Nhiều cá phát ra ánh sáng đủ màu, như những ngọn đèn xếp thành hàng, đẹp vô cùng, như trong mơ vậy.',zh:'许多鱼会发出各种颜色的亮光，像一个个排列起来的灯，美极了，就像在梦里一样。',py:'Xǔduō yú huì fāchū gè zhǒng yánsè de liàngguāng, xiàng yí gègè páiliè qilai de dēng, měi jíle, jiù xiàng zài mèng li yíyàng.'},
+  {vi:'Tôi tưởng bài thi sẽ rất khó, không ngờ lại dễ hơn lần trước.', zh:'我以为考试会很难，没想到倒比上次容易。', py:'Wǒ yǐwéi kǎoshì huì hěn nán, méi xiǎngdào dào bǐ shàng cì róngyì.'},
+  {vi:'Anh ấy vì kiếm tiền mà mỗi ngày làm việc đến mười một giờ đêm.', zh:'他为了赚钱而每天工作到晚上十一点。', py:'Tā wèile zhuàn qián ér měi tiān gōngzuò dào wǎnshang shíyī diǎn.'},
+  {vi:'Bạn đang làm gì vậy? Sao lâu thế?', zh:'你在干什么呢？怎么这么久？', py:'Nǐ zài gàn shénme ne? Zěnme zhème jiǔ?'},
+  {vi:'Mười năm đã trôi qua, tôi vẫn nhớ ngày hôm đó.', zh:'十年过去了，我仍然记得那一天。', py:'Shí nián guòqu le, wǒ réngrán jìde nà yì tiān.'},
+  {vi:'Cô bé đó đang ôm một chú chó nhỏ.', zh:'那个小女孩抱着一只小狗。', py:'Nàge xiǎo nǚhái bào zhe yì zhī xiǎo gǒu.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Mấy hôm nay Hương Sơn rất náo nhiệt, thu hút nhiều du khách tham quan.',zh:'这几天香山特别热闹，吸引了很多游客参观。',py:'Zhè jǐ tiān Xiāng Shān tèbié rènao, xīyǐnle hěn duō yóukè cānguān.'},
-  {vi:'Tiếc thật, tôi còn muốn chụp thêm ảnh Hương Sơn.',zh:'真可惜，我还想多照点儿香山的照片呢。',py:'Zhēn kěxī, wǒ hái xiǎng duō zhào diǎnr Xiāng Shān de zhàopiàn ne.'},
-  {vi:'Mỗi lần bạn bảo nó làm gì, nó làm như thể hiểu lời bạn vậy.',zh:'每次你让它干什么，它就像能听懂你的话一样去做。',py:'Měi cì nǐ ràng tā gàn shénme, tā jiù xiàng néng tīngdǒng nǐ de huà yíyàng qù zuò.'},
-  {vi:'Nên kiên nhẫn dạy nó từng lần một, sau đó nó sẽ làm nghiêm ngặt theo yêu cầu của bạn.',zh:'应该耐心地一遍一遍地教给它，然后它就会严格按照你的要求做了。',py:'Yīnggāi nàixīn de yí biàn yí biàn de jiāo gěi tā, ránhòu tā jiù huì yángé ànzhào nǐ de yāoqiú zuò le.'},
-  {vi:'Khi bạn buồn, nó sẽ luôn ở bên bạn.',zh:'在你心里难受的时候，它会一直陪着你。',py:'Zài nǐ xīnli nánshòu de shíhou, tā huì yìzhí péizhe nǐ.'},
-  {vi:'Ở cổng vào rất nhiều người xếp hàng, trong sở thú náo nhiệt vô cùng.',zh:'入口处排队的人很多，动物园里热闹极了。',py:'Rùkǒu chù pái duì de rén hěn duō, dòngwùyuán li rènao jíle.'},
-  {vi:'Do điều kiện khí hậu khác nhau, hình dáng lá cây khắp nơi trên thế giới cũng rất khác nhau.',zh:'由于气候条件不同，世界各地植物叶子的样子也很不相同。',py:'Yóuyú qìhòu tiáojiàn bù tóng, shìjiè gè dì zhíwù yèzi de yàngzi yě hěn bù xiāngtóng.'},
-  {vi:'Khoảng 71% Trái đất là đại dương xanh.',zh:'地球上大约71%的地方是蓝色的海洋。',py:'Dìqiú shang dàyuē bǎifēnzhī qīshíyī de dìfang shì lánsè de hǎiyáng.'},
+  {vi:'Thầy cô trường chúng tôi rất nghiêm khắc với học sinh, nhưng cũng rất quan tâm đến chúng tôi.', zh:'我们学校的老师对学生很严格，但是也很关心我们。', py:'Wǒmen xuéxiào de lǎoshī duì xuésheng hěn yángé, dànshì yě hěn guānxīn wǒmen.'},
+  {vi:'Nhìn kìa, mây trên trời ngày càng nhiều, chúng ta mau về thôi.', zh:'你看，天上的云越来越多了，我们快回去吧。', py:'Nǐ kàn, tiān shang de yún yuè lái yuè duō le, wǒmen kuài huíqu ba.'},
+  {vi:'Tôi luôn mong được nhìn xem dưới đáy đại dương trông thế nào.', zh:'我一直希望能看看海洋底下的样子。', py:'Wǒ yìzhí xīwàng néng kànkan hǎiyáng dǐxia de yàngzi.'},
+  {vi:'Bức ảnh này chụp ở cổng vào công viên.', zh:'这张照片是在公园入口照的。', py:'Zhè zhāng zhàopiàn shì zài gōngyuán rùkǒu zhào de.'},
 ];
 
 var listenData = {

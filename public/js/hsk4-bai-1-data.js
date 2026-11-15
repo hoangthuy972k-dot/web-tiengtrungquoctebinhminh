@@ -3514,50 +3514,46 @@ var dialogData = [
 // ══════════════════════════════════════════
 var matchData = [
   {left:'开',right:'玩笑'},
-  {left:'留下很深的',right:'印象'},
-  {left:'共同的',right:'爱好'},
-  {left:'找到适合自己的',right:'人'},
-  {left:'接受他的',right:'缺点'},
-  {left:'互相',right:'理解'},
-  {left:'性格上互相',right:'吸引'},
-  {left:'不仅性格好，',right:'也很幽默。'},
-  {left:'从来',right:'不迟到。'},
-  {left:'即使很忙，',right:'也会给家人打电话。'},
+  {left:'接受',right:'朋友的帮助'},
+  {left:'天上的星星',right:'特别亮'},
+  {left:'这个故事让我',right:'非常感动'},
+  {left:'找到适合自己的',right:'工作'},
+  {left:'刚搬来，对这儿',right:'还不熟悉'},
+  {left:'互相',right:'学习'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'他',blank:'不仅',post:'性格好，长得也很帅。',hint:'(không những)',ans:'不仅',exp:'不仅A，(而且/也)B = không những A mà còn B. 不仅 đứng sau chủ ngữ khi hai vế cùng chủ ngữ; vế sau có 也 hô ứng.'},
-  {pre:'我们是',blank:'刚',post:'认识的，还不太熟悉。',hint:'(vừa mới)',ans:'刚',exp:'刚 + động từ = vừa mới (việc xảy ra chưa lâu), đứng trước động từ: 刚认识. Vì mới quen nên 还不太熟悉.'},
-  {pre:'他工作很努力，',blank:'从来',post:'不迟到。',hint:'(từ trước đến nay)',ans:'从来',exp:'从来 + 不/没 = từ trước đến nay chưa bao giờ. 从来 thường đi với dạng phủ định: 从来不迟到.'},
-  {pre:'即使工作很忙，他',blank:'也',post:'会每天给妈妈打电话。',hint:'(cũng)',ans:'也',exp:'即使…，也… = cho dù… thì vẫn…; vế sau bắt buộc có 也 đứng trước động từ.'},
-  {pre:'两个人在性格',blank:'上',post:'很像，所以很聊得来。',hint:'(về phương diện)',ans:'上',exp:'在…上 = về mặt…: 在性格上 = về tính cách. 上 ở đây chỉ phương diện, không chỉ vị trí.'},
-  {pre:'他一个人踢进两个球，我对他',blank:'印象',post:'很深。',hint:'(ấn tượng)',ans:'印象'},
-  {pre:'我们刚搬来这儿，对环境还不太',blank:'熟悉',post:'。',hint:'(hiểu rõ, quen thuộc)',ans:'熟悉'},
-  {pre:'两个人在一起，最好能有',blank:'共同',post:'的爱好。',hint:'(chung)',ans:'共同'},
-  {pre:'看来你真的找到',blank:'适合',post:'你的人了。',hint:'(phù hợp)',ans:'适合'},
-  {pre:'祝你们',blank:'幸福',post:'！',hint:'(hạnh phúc)',ans:'幸福'},
-  {pre:'很多女孩子',blank:'羡慕',post:'浪漫的爱情。',hint:'(ngưỡng mộ)',ans:'羡慕'},
-  {pre:'只有接受了他的',blank:'缺点',post:'，你们才能更好地一起生活。',hint:'(khuyết điểm)',ans:'缺点'},
-  {pre:'这部电影讲了一个',blank:'爱情',post:'故事，很浪漫。',hint:'(tình yêu)',ans:'爱情'},
-  {pre:'更需要性格上互相',blank:'吸引',post:'。',hint:'(thu hút)',ans:'吸引'},
-  {pre:'我丈夫是个很',blank:'幽默',post:'的人。',hint:'(hóm hỉnh)',ans:'幽默'},
+  {pre:'我妹妹',blank:'不仅',post:'会唱歌，还会跳舞。',hint:'(không những)',ans:'不仅',exp:'Hai vế cùng chủ ngữ 我妹妹 → 不仅 đứng sau chủ ngữ, vế sau hô ứng bằng 还.'},
+  {pre:'我爷爷',blank:'从来',post:'不喝咖啡，他只喝茶。',hint:'(từ trước đến nay)',ans:'从来',exp:'从来 + 不 = từ trước tới giờ không (thói quen); kể chuyện đã qua thì dùng 从来没 + V + 过.'},
+  {pre:'',blank:'即使',post:'明天下雨，我们也要去机场接他。',hint:'(cho dù)',ans:'即使',exp:'即使……也…… = cho dù (giả sử) có… thì vẫn…; vế sau phải có 也.'},
+  {pre:'A：一起去吃饭吧？ B：谢谢，我',blank:'刚',post:'喝了一大杯牛奶，什么也不想吃。',hint:'(vừa mới — phó từ)',ans:'刚',exp:'刚 là phó từ, đứng ngay trước động từ: 刚喝了. 刚才 là danh từ thời gian, thường đứng đầu câu hoặc trước chủ ngữ.'},
+  {pre:'我和姐姐在性格',blank:'上',post:'很不一样：她喜欢安静，我喜欢热闹。',hint:'(về mặt …)',ans:'上',exp:'在……上 = về phương diện…: 在性格上 = về tính cách (không phải vị trí "trên").'},
+  {pre:'A：你还记得我们的第一个汉语老师吗？ B：当然记得，我对她的',blank:'印象',post:'特别深。',hint:'(ấn tượng)',ans:'印象',exp:'对……印象很深 = có ấn tượng sâu sắc về ai/cái gì.'},
+  {pre:'他',blank:'脾气',post:'不太好，一点儿小事就生气。',hint:'(tính khí, tính nết)',ans:'脾气',exp:'脾气不好 / 脾气很大 = nóng tính; 脾气好 = hiền, ít nổi nóng.'},
+  {pre:'钱不',blank:'够',post:'的话，我可以先借给你。',hint:'(đủ)',ans:'够',exp:'够 = đủ; phủ định là 不够: 钱不够 = không đủ tiền.'},
+  {pre:'这个问题你应该去问懂',blank:'法律',post:'的人。',hint:'(pháp luật)',ans:'法律',exp:'懂法律 = hiểu luật; 法律 là danh từ, làm tân ngữ của 懂.'},
+  {pre:'这件衣服颜色太深了，不',blank:'适合',post:'你。',hint:'(phù hợp)',ans:'适合',exp:'适合 là động từ, mang tân ngữ trực tiếp: 适合你 (không nói 对你适合).'},
+  {pre:'她一年可以去旅游三次，大家都很',blank:'羡慕',post:'她。',hint:'(ngưỡng mộ, ước ao)',ans:'羡慕',exp:'羡慕 + người = ngưỡng mộ/ghen tị (thiện ý) với ai.'},
+  {pre:'你每天都练习说汉语，',blank:'自然',post:'会说得越来越好。',hint:'(tự nhiên, đương nhiên)',ans:'自然',exp:'自然 (phó từ) đứng trước động từ/会: kết quả tất yếu sẽ đến.'},
+  {pre:'你知道他今天没来上课的',blank:'原因',post:'吗？',hint:'(nguyên nhân)',ans:'原因',exp:'……的原因 = nguyên nhân của việc…; định ngữ đứng trước 的原因.'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3b · SẮP XẾP
 // ══════════════════════════════════════════
 var sortData = [
-  {words:['他','不仅','足球','踢','得','好','，','性格','也','不错','。'],ans:'他不仅足球踢得好，性格也不错。',audio:'他不仅足球踢得好，性格也不错。'},
-  {words:['我','从来','没','这么','快乐','过','。'],ans:'我从来没这么快乐过。',audio:'我从来没这么快乐过。'},
-  {words:['我们','刚','搬来','一个','星期','，','对','环境','还','不太','熟悉','。'],ans:'我们刚搬来一个星期，对环境还不太熟悉。',audio:'我们刚搬来一个星期，对环境还不太熟悉。'},
-  {words:['即使','工作','很','忙','，','他','也','每天','给','家人','打电话','。'],ans:'即使工作很忙，他也每天给家人打电话。',audio:'即使工作很忙，他也每天给家人打电话。'},
-  {words:['两个','人','共同','生活','，','需要','性格','上','互相','吸引','。'],ans:'两个人共同生活，需要性格上互相吸引。',audio:'两个人共同生活，需要性格上互相吸引。'},
-  {words:['只要','两个','人','互相','理解','，','就','容易','幸福','。'],ans:'只要两个人互相理解，就容易幸福。',audio:'只要两个人互相理解，就容易幸福。'},
-  {words:['虽然','我们','认识','的','时间','不长','，','但','我','很','快乐','。'],ans:'虽然我们认识的时间不长，但我很快乐。',audio:'虽然我们认识的时间不长，但我很快乐。'},
-  {words:['只有','接受','对方','的','缺点','，','才','能','幸福','地','生活','。'],ans:'只有接受对方的缺点，才能幸福地生活。',audio:'只有接受对方的缺点，才能幸福地生活。'},
+  {words:['他','不仅','会','说','汉语','，','而且','说','得','非常','好','。'],ans:'他不仅会说汉语，而且说得非常好。',audio:'他不仅会说汉语，而且说得非常好。'},
+  {words:['我','从来','没','见过','这么','大','的','雪','。'],ans:'我从来没见过这么大的雪。',audio:'我从来没见过这么大的雪。'},
+  {words:['即使','你','不','说','，','我','也','知道','你','在','想','什么','。'],ans:'即使你不说，我也知道你在想什么。',audio:'即使你不说，我也知道你在想什么。'},
+  {words:['天气','这么','冷','，','你','最好','多','穿','点儿','衣服','。'],ans:'天气这么冷，你最好多穿点儿衣服。',audio:'天气这么冷，你最好多穿点儿衣服。'},
+  {words:['我们','俩','是','去年','冬天','认识','的','。'],ans:'我们俩是去年冬天认识的。',audio:'我们俩是去年冬天认识的。'},
+  {words:['最近','公司','很','忙','，','他们','几乎','天天','加班','。'],ans:'最近公司很忙，他们几乎天天加班。',audio:'最近公司很忙，他们几乎天天加班。'},
+  {words:['简单','的','生活','也','可以','很','浪漫','。'],ans:'简单的生活也可以很浪漫。',audio:'简单的生活也可以很浪漫。'},
+  {words:['他','在','学习','上','很','努力','，','每天','都','学习','三个','小时','。'],ans:'他在学习上很努力，每天都学习三个小时。',audio:'他在学习上很努力，每天都学习三个小时。'},
+  {words:['每个人','都','有','缺点','，','我们','要','学会','接受','。'],ans:'每个人都有缺点，我们要学会接受。',audio:'每个人都有缺点，我们要学会接受。'},
 ];
 
 // ══════════════════════════════════════════
@@ -3570,7 +3566,7 @@ var errorFixMode = 'wordchoice'; // bài này dùng đúng nội dung SGK (chọ
 var errorFixData = [
   {wrong:'他们两个人____努力，终于完成了工作。',
    opts:['共同','吸引','接受','熟悉'],ans:0,
-   exp:'共同 (chung, cùng) làm định ngữ cho 努力: 共同努力 = cùng nhau cố gắng. 吸引 (thu hút) và 接受 (chấp nhận) không phù hợp nghĩa; 熟悉 (quen thuộc) không đi với 卖力.'},
+   exp:'共同 (chung, cùng) làm định ngữ cho 努力: 共同努力 = cùng nhau cố gắng. 吸引 (thu hút) và 接受 (chấp nhận) không phù hợp nghĩa; 熟悉 (quen thuộc) không dùng để bổ nghĩa cho 努力.'},
   {wrong:'那个地方特别漂亮，每年都会____很多国内外的游客。',
    opts:['吸引','共同','熟悉','感动'],ans:0,
    exp:'吸引 (thu hút) + tân ngữ 游客: nơi đẹp THU HÚT du khách. 共同/熟悉/感动 đều không mang được tân ngữ 游客 theo nghĩa này.'},
@@ -3596,8 +3592,8 @@ var errorFixData = [
    opts:['从来','脾气','开玩笑','原因'],ans:0,
    exp:'从来不迟到 = từ trước đến giờ không đến muộn — 从来 (phó từ) đứng trước 不/没. 脾气/开玩笑/原因 đều là danh từ/cụm động từ, không thể đứng ở vị trí phó từ này.'},
   {wrong:'A：这个电影讲了一个爱情故事，很浪漫，让人特别____。 B：你们女孩子就是喜欢看这种电影。',
-   opts:['感动','熟悉','共同','吸引'],ans:0,
-   exp:'让人特别感动 = khiến người ta đặc biệt cảm động — 感动 làm bổ ngữ sau 让人. 熟悉/共同/吸引 không tạo được nghĩa hợp lý ở vị trí này (吸引 cần tân ngữ trực tiếp, không dùng được sau 让人特别).'},
+   opts:['感动','熟悉','脾气','从来'],ans:0,
+   exp:'让人特别感动 = khiến người ta đặc biệt cảm động — 感动 làm bổ ngữ sau 让人. 熟悉 cần tân ngữ (熟悉这儿), 脾气 là danh từ, 从来 là phó từ phải đứng trước động từ — đều không đứng được sau 让人特别.'},
 ];
 
 // ══════════════════════════════════════════
@@ -3605,97 +3601,97 @@ var errorFixData = [
 // ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 1. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu hỏi là một tình huống thật, nói về chính bạn bằng từ và mẫu câu của Bài 1. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Bạn giới thiệu một người thân thiết với nhóm bạn mới.',
-      q_zh: '说一说你的一个好朋友或者家人，他是个什么样的人？',
-      q_py: 'Shuō yi shuō nǐ de yí ge hǎo péngyou huòzhě jiārén, tā shì ge shénme yàng de rén?',
-      q_vn: 'Hãy kể về một người bạn thân hoặc người nhà của bạn, người đó thế nào?',
-      grammar: { label: '不仅……也/还…… (không những… mà còn…)', any: ['不仅', '不但'] },
+      situation: 'Bạn giới thiệu một người bạn thân với nhóm bạn mới.',
+      q_zh: '你最好的朋友性格怎么样？',
+      q_py: 'Nǐ zuì hǎo de péngyou xìnggé zěnmeyàng?',
+      q_vn: 'Người bạn thân nhất của bạn có tính cách thế nào?',
+      grammar: { label: '不仅……也/还/而且…… (không những… mà còn…)', any: ['不仅'] },
       need: [
-        { label: 'Dùng 不仅……也/还……', any: ['不仅', '不但'] },
+        { label: 'Dùng 不仅……也/还/而且……', any: ['不仅'] },
         { label: 'Tả tính cách', any: ['幽默', '脾气', '性格', '热情', '认真', '聪明'] }
       ],
-      bonus: { label: 'Dùng 从来 nói điều chưa từng xảy ra', any: ['从来'] },
-      vocab: ['幽默', '脾气', '从来', '性格'],
-      minLen: 22,
-      sample: '我的好朋友不仅很幽默，脾气也特别好。我们认识五年了，几乎从来没生过气，有什么事都可以互相说。',
-      sample_py: 'Wǒ de hǎo péngyou bùjǐn hěn yōumò, píqi yě tèbié hǎo. Wǒmen rènshi wǔ nián le, jīhū cónglái méi shēng guo qì, yǒu shénme shì dōu kěyǐ hùxiāng shuō.',
-      sample_vn: 'Bạn thân của tôi không những hóm hỉnh mà tính tình cũng rất tốt. Chúng tôi quen nhau năm năm, gần như chưa từng giận nhau, có chuyện gì cũng nói được với nhau.',
-      tip: '不仅……也…… nối hai ưu điểm: 他不仅会说汉语，还会说法语。'
+      bonus: { label: 'Nói hai người quen nhau thế nào', any: ['认识', '熟悉'] },
+      vocab: ['幽默', '脾气', '性格', '熟悉'],
+      minLen: 20,
+      sample: '我最好的朋友叫小李，她不仅很聪明，而且特别幽默，脾气也很好。我们是上大学的时候认识的，现在已经非常熟悉了。',
+      sample_py: 'Wǒ zuì hǎo de péngyou jiào Xiǎo Lǐ, tā bùjǐn hěn cōngming, érqiě tèbié yōumò, píqi yě hěn hǎo. Wǒmen shì shàng dàxué de shíhou rènshi de, xiànzài yǐjīng fēicháng shúxi le.',
+      sample_vn: 'Bạn thân nhất của tôi tên là Tiểu Lý, cô ấy không những thông minh mà còn rất hóm hỉnh, tính tình cũng tốt. Chúng tôi quen nhau hồi học đại học, giờ đã rất thân rồi.',
+      tip: 'Cùng chủ ngữ: 她不仅……而且……; khác chủ ngữ thì 不仅 đứng trước chủ ngữ thứ nhất.'
     },
     {
-      situation: 'Đồng nghiệp tò mò về cách bạn quen người bạn thân nhất.',
-      q_zh: '你跟最好的朋友是怎么认识的？第一次见面印象怎么样？',
-      q_py: 'Nǐ gēn zuì hǎo de péngyou shì zěnme rènshi de? Dì yī cì jiànmiàn yìnxiàng zěnmeyàng?',
-      q_vn: 'Bạn quen người bạn thân nhất thế nào? Lần đầu gặp ấn tượng ra sao?',
-      grammar: { label: '对……印象很深 / 是在……认识的', any: ['印象', '是在'] },
+      situation: 'Bạn bè hỏi về những thói quen đặc biệt của bạn.',
+      q_zh: '有没有一件事你从来不做或者从来没做过？',
+      q_py: 'Yǒu méiyǒu yí jiàn shì nǐ cónglái bú zuò huòzhě cónglái méi zuò guo?',
+      q_vn: 'Có việc gì bạn từ trước tới giờ không làm hoặc chưa từng làm không?',
+      grammar: { label: '从来不 + V / 从来没 + V + 过', any: ['从来'] },
       need: [
-        { label: 'Kể hoàn cảnh quen nhau', any: ['认识', '比赛', '学校', '公司', '图书馆', '朋友', '网上'] },
-        { label: 'Dùng 印象 nói cảm nhận đầu tiên', any: ['印象'] }
+        { label: 'Dùng 从来不 hoặc 从来没……过', any: ['从来不', '从来没'] },
+        { label: 'Nói lý do', any: ['因为', '原因', '所以'] }
       ],
-      bonus: { label: 'Dùng 熟悉 nói sự thân quen hiện nay', any: ['熟悉'] },
-      vocab: ['印象', '深', '熟悉'],
-      minLen: 22,
-      sample: '我们是在一次足球比赛中认识的。那天他一个人踢进了两个球，我对他的印象很深。现在我们已经非常熟悉了。',
-      sample_py: 'Wǒmen shì zài yí cì zúqiú bǐsài zhōng rènshi de. Nà tiān tā yí ge rén tī jìn le liǎng ge qiú, wǒ duì tā de yìnxiàng hěn shēn. Xiànzài wǒmen yǐjīng fēicháng shúxi le.',
-      sample_vn: 'Chúng tôi quen nhau trong một trận bóng đá. Hôm đó anh ấy một mình ghi hai bàn, tôi ấn tượng rất sâu. Giờ chúng tôi đã rất thân.',
-      tip: '对……印象深 = ấn tượng sâu về ai: 我对那个城市印象很深。'
+      bonus: { label: 'Dùng 即使……也…… nhấn mạnh quyết tâm', any: ['即使'] },
+      vocab: ['从来', '原因', '即使'],
+      minLen: 18,
+      sample: '我从来不吃羊肉，原因很简单：我小时候吃了一次，后来就不舒服了。我也从来没坐过飞机，因为我有点儿害怕。即使票很便宜，我也不想坐。',
+      sample_py: 'Wǒ cónglái bù chī yángròu, yuányīn hěn jiǎndān: wǒ xiǎoshíhou chī le yí cì, hòulái jiù bù shūfu le. Wǒ yě cónglái méi zuò guo fēijī, yīnwèi wǒ yǒudiǎnr hàipà. Jíshǐ piào hěn piányi, wǒ yě bù xiǎng zuò.',
+      sample_vn: 'Tôi chưa bao giờ ăn thịt dê, lý do rất đơn giản: hồi nhỏ ăn một lần xong thì bị khó chịu. Tôi cũng chưa từng đi máy bay vì hơi sợ. Cho dù vé rẻ tôi cũng không muốn đi.',
+      tip: 'Thói quen: 从来不 + V; trải nghiệm chưa có: 从来没 + V + 过 (cuối có 过).'
     },
     {
-      situation: 'Trong buổi trò chuyện về hôn nhân, mọi người nêu quan điểm của mình.',
-      q_zh: '你觉得两个人共同生活，最需要的是什么？',
-      q_py: 'Nǐ juéde liǎng ge rén gòngtóng shēnghuó, zuì xūyào de shì shénme?',
-      q_vn: 'Bạn thấy hai người sống chung, điều cần nhất là gì?',
-      grammar: { label: '只有……是不够的，还要……', any: ['不够', '还要', '还得'] },
+      situation: 'Một người bạn sắp kết hôn hỏi ý kiến bạn.',
+      q_zh: '你觉得两个人在一起生活，最重要的是什么？',
+      q_py: 'Nǐ juéde liǎng ge rén zài yìqǐ shēnghuó, zuì zhòngyào de shì shénme?',
+      q_vn: 'Bạn thấy hai người sống cùng nhau, điều quan trọng nhất là gì?',
+      grammar: { label: '在……上 (về mặt…) / 最好……', any: ['上', '最好'] },
       need: [
-        { label: 'Nêu điều cần nhất', any: ['理解', '接受', '共同', '幸福', '性格', '互相'] },
-        { label: 'Nói thêm điều kiện thứ hai', any: ['还', '也', '另外', '除了'] }
+        { label: 'Nêu điều quan trọng', any: ['互相', '共同', '接受', '缺点', '性格', '爱好'] },
+        { label: 'Đưa lời khuyên bằng 最好', any: ['最好'] }
       ],
-      bonus: { label: 'Nhắc đến khuyết điểm bằng 缺点', any: ['缺点'] },
-      vocab: ['共同', '接受', '缺点', '幸福'],
-      minLen: 22,
-      sample: '我觉得只有浪漫是不够的，还要互相理解，接受对方的缺点。有共同的爱好和目标，生活才会幸福。',
-      sample_py: 'Wǒ juéde zhǐyǒu làngmàn shì bú gòu de, hái yào hùxiāng lǐjiě, jiēshòu duì fāng de quēdiǎn. Yǒu gòngtóng de àihào hé mù biāo, shēnghuó cái huì xìngfú.',
-      sample_vn: 'Tôi thấy chỉ có lãng mạn thì chưa đủ, còn phải hiểu nhau, chấp nhận khuyết điểm của đối phương. Có sở thích và mục tiêu chung thì cuộc sống mới hạnh phúc.',
-      tip: '只有……是不够的 dùng để nói một điều kiện chưa đủ.'
+      bonus: { label: 'Dùng 幸福 hoặc 浪漫', any: ['幸福', '浪漫'] },
+      vocab: ['互相', '共同', '接受', '缺点', '幸福'],
+      minLen: 20,
+      sample: '我觉得最重要的是互相关心。两个人最好有共同的爱好，在性格上也要能接受别人的缺点。两个人在一起才会幸福。',
+      sample_py: 'Wǒ juéde zuì zhòngyào de shì hùxiāng guānxīn. Liǎng ge rén zuìhǎo yǒu gòngtóng de àihào, zài xìnggé shang yě yào hùxiāng jiēshòu biéren de quēdiǎn. Liǎng ge rén zài yìqǐ cái huì xìngfú.',
+      sample_vn: 'Tôi thấy quan trọng nhất là quan tâm lẫn nhau. Hai người tốt nhất nên có sở thích chung, về tính cách cũng phải chấp nhận được khuyết điểm của người kia. Hai người ở bên nhau mới hạnh phúc.',
+      tip: '最好 + V = tốt nhất là nên…: 你最好早点儿睡。'
     },
     {
-      situation: 'Bạn bè tranh luận xem thế nào mới gọi là lãng mạn.',
-      q_zh: '在你看来，什么是浪漫？请举个例子。',
-      q_py: 'Zài nǐ kàn lái, shénme shì làngmàn? Qǐng jǔ ge lì zǐ.',
-      q_vn: 'Theo bạn, thế nào là lãng mạn? Hãy nêu một ví dụ.',
-      grammar: { label: '即使……也…… (cho dù… thì vẫn…)', any: ['即使'] },
+      situation: 'Bạn kể về một việc nhỏ đã khiến bạn rất cảm động.',
+      q_zh: '什么事让你很感动？',
+      q_py: 'Shénme shì ràng nǐ hěn gǎndòng?',
+      q_vn: 'Việc gì đã khiến bạn rất cảm động?',
+      grammar: { label: '即使……也…… (cho dù… vẫn…)', any: ['即使'] },
       need: [
-        { label: 'Nêu quan điểm của bạn về 浪漫', any: ['浪漫', '我觉得', '我认为', '对我来说'] },
-        { label: 'Đưa một ví dụ cụ thể', any: ['加班', '灯', '星星', '月亮', '一起', '生活', '花'] }
+        { label: 'Dùng 即使……也……', any: ['即使'] },
+        { label: 'Dùng 感动', any: ['感动'] }
       ],
-      bonus: { label: 'Dùng 即使……也…… trong ví dụ', any: ['即使'] },
-      vocab: ['即使', '加班', '亮', '浪漫'],
-      minLen: 22,
-      sample: '对我来说，即使加班到很晚，回家的时候家里还亮着一盏灯，有人等我吃饭，这就是浪漫。',
-      sample_py: 'Duì wǒ lái shuō, jíshǐ jiābān dào hěn wǎn, huí jiā de shíhou jiā lǐ hái liàng zhe yì zhǎn dēng, yǒu rén děng wǒ chīfàn, zhè jiù shì làngmàn.',
-      sample_vn: 'Với tôi, dù tăng ca đến rất khuya, về đến nhà vẫn còn một ngọn đèn sáng, có người đợi mình ăn cơm, đó chính là lãng mạn.',
-      tip: '即使……也…… giả thiết nhượng bộ: 即使下雨，我也去。'
+      bonus: { label: 'Dùng 加班 hoặc 亮', any: ['加班', '亮'] },
+      vocab: ['即使', '感动', '加班', '亮'],
+      minLen: 20,
+      sample: '我妈妈每天都等我回家。即使我加班到十一点，回家的时候，家里的灯也还亮着，桌子上还有热菜。这让我非常感动。',
+      sample_py: 'Wǒ māma měi tiān dōu děng wǒ huí jiā. Jíshǐ wǒ jiābān dào shíyī diǎn, huí jiā de shíhou, jiā li de dēng yě hái liàng zhe, zhuōzi shang hái yǒu rè cài. Zhè ràng wǒ fēicháng gǎndòng.',
+      sample_vn: 'Mẹ tôi ngày nào cũng đợi tôi về. Cho dù tôi tăng ca đến 11 giờ, lúc về nhà đèn vẫn còn sáng, trên bàn vẫn có đồ ăn nóng. Điều đó làm tôi rất cảm động.',
+      tip: '即使 đặt giả thiết (có thể chưa xảy ra); vế sau luôn có 也: 即使很忙，他也……'
     },
     {
-      situation: 'Lớp học đang thảo luận vì sao người ta thích nhau.',
-      q_zh: '什么样的人容易互相吸引？为什么？',
-      q_py: 'Shénme yàng de rén róngyì hùxiāng xīyǐn? Wèishénme?',
-      q_vn: 'Người thế nào dễ hấp dẫn lẫn nhau? Vì sao?',
-      grammar: { label: '互相 + động từ (吸引 / 学习 / 帮助)', any: ['互相'] },
+      situation: 'Bạn bè đố nhau: mới chuyển đến nơi ở mới thì cảm thấy thế nào?',
+      q_zh: '你刚到一个新地方的时候，觉得怎么样？',
+      q_py: 'Nǐ gāng dào yí ge xīn dìfang de shíhou, juéde zěnmeyàng?',
+      q_vn: 'Lúc bạn vừa đến một nơi mới, bạn cảm thấy thế nào?',
+      grammar: { label: '刚 + V (vừa mới…)', any: ['刚'] },
       need: [
-        { label: 'Dùng 互相', any: ['互相'] },
-        { label: 'Nêu lý do liên quan tính cách hoặc sở thích', any: ['性格', '爱好', '共同', '一样', '不同', '原因'] }
+        { label: 'Dùng 刚 + động từ', any: ['刚'] },
+        { label: 'Dùng 熟悉', any: ['熟悉'] }
       ],
-      bonus: { label: 'Dùng 吸引 nói sức hút', any: ['吸引'] },
-      vocab: ['性格', '互相', '吸引', '共同'],
-      minLen: 22,
-      sample: '我认为性格不同的人也能互相吸引，因为他们可以互相学习。不过最重要的原因还是有共同的爱好和想法。',
-      sample_py: 'Wǒ rènwéi xìnggé bù tóng de rén yě néng hùxiāng xīyǐn, yīnwèi tāmen kěyǐ hùxiāng xuéxí. Búguò zuì zhòngyào de yuányīn háishi yǒu gòngtóng de àihào hé xiǎng fǎ.',
-      sample_vn: 'Tôi cho rằng người tính cách khác nhau cũng có thể hút nhau, vì họ học được ở nhau. Nhưng nguyên nhân quan trọng nhất vẫn là có sở thích và suy nghĩ chung.',
-      tip: '互相 chỉ dùng trước động từ hai âm tiết: 互相帮助、互相理解。'
+      bonus: { label: 'Nói về ấn tượng đầu tiên bằng 印象', any: ['印象'] },
+      vocab: ['刚', '熟悉', '印象'],
+      minLen: 18,
+      sample: '我刚来这个城市的时候，对这儿一点儿也不熟悉，经常坐错车。但是这里的人很热情，给我的印象很好。',
+      sample_py: 'Wǒ gāng lái zhège chéngshì de shíhou, duì zhèr yìdiǎnr yě bù shúxi, jīngcháng zuò cuò chē. Dànshì zhèlǐ de rén hěn rèqíng, gěi wǒ de yìnxiàng hěn hǎo.',
+      sample_vn: 'Lúc tôi mới đến thành phố này, tôi hoàn toàn không quen chỗ này, hay đi nhầm xe. Nhưng người ở đây rất nhiệt tình, để lại cho tôi ấn tượng rất tốt.',
+      tip: '刚 + V chỉ việc vừa xảy ra chưa lâu; không nói 刚才来这个城市的时候.'
     }
   ]
 };
@@ -3704,28 +3700,21 @@ var speakingData = {
 // LUYỆN DỊCH (Việt → Trung)
 // ══════════════════════════════════════════
 var translateData = [
-  {vi:'Anh ấy không những học giỏi, mà tính cách cũng rất tốt.', zh:'他不仅学习好，性格也很好。', py:'Tā bùjǐn xuéxí hǎo, xìnggé yě hěn hǎo.'},
-  {vi:'Chúng tôi vừa mới quen nhau, vẫn chưa hiểu rõ về nhau lắm.', zh:'我们刚认识，还不太熟悉。', py:'Wǒmen gāng rènshi, hái bú tài shúxi.'},
-  {vi:'Anh ấy từ trước đến giờ chưa từng nói dối tôi.', zh:'他从来没骗过我。', py:'Tā cónglái méi piànguo wǒ.'},
-  {vi:'Cho dù rất bận, mẹ tôi cũng luôn dành thời gian cho gia đình.', zh:'即使很忙，我妈妈也一直留时间给家人。', py:'Jíshǐ hěn máng, wǒ māma yě yìzhí liú shíjiān gěi jiārén.'},
-  {vi:'Về phương diện tính cách, chúng tôi rất giống nhau.', zh:'在性格上，我们很像。', py:'Zài xìnggé shang, wǒmen hěn xiàng.'},
-  {vi:'Chỉ có hiểu nhau, hai người mới có thể sống hạnh phúc.', zh:'只有互相理解，两个人才能幸福地生活。', py:'Zhǐyǒu hùxiāng lǐjiě, liǎng ge rén cái néng xìngfú de shēnghuó.'},
-  {vi:'Tôi hy vọng có thể tìm được một người phù hợp với mình.', zh:'我希望能找到一个适合自己的人。', py:'Wǒ xīwàng néng zhǎodào yí ge shìhé zìjǐ de rén.'},
-  {vi:'Cô ấy là một người rất hóm hỉnh, ai cũng thích ở bên cô ấy.', zh:'她是个很幽默的人，谁都喜欢跟她在一起。', py:'Tā shì ge hěn yōumò de rén, shéi dōu xǐhuan gēn tā zài yìqǐ.'},
+  {vi:'Bố tôi từ trước đến giờ chưa từng đi làm muộn.', zh:'我爸爸从来没迟到过。', py:'Wǒ bàba cónglái méi chídào guo.'},
+  {vi:'Cho dù rất mệt, cô ấy vẫn giúp tôi làm xong bài tập.', zh:'即使很累，她也帮我做完了作业。', py:'Jíshǐ hěn lèi, tā yě bāng wǒ zuò wán le zuòyè.'},
+  {vi:'Hai người chúng tôi có rất nhiều sở thích chung.', zh:'我们俩有很多共同的爱好。', py:'Wǒmen liǎ yǒu hěn duō gòngtóng de àihào.'},
+  {vi:'Ông ấy là người rất hóm hỉnh, nói chuyện gì cũng làm mọi người cười.', zh:'他是个很幽默的人，说什么都让大家笑。', py:'Tā shì ge hěn yōumò de rén, shuō shénme dōu ràng dàjiā xiào.'},
+  {vi:'Tôi vừa mới về đến nhà thì trời mưa.', zh:'我刚到家，就下雨了。', py:'Wǒ gāng dào jiā, jiù xià yǔ le.'},
 ];
 
 // ══════════════════════════════════════════
 // LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
 // ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Tuy tính tình anh ấy không tốt lắm, nhưng công việc lại rất nghiêm túc.', zh:'虽然他脾气不太好，但工作很认真。', py:'Suīrán tā píqi bú tài hǎo, dàn gōngzuò hěn rènzhēn.'},
-  {vi:'Ngay cả khi thất bại, sự cố gắng của cô ấy cũng khiến mọi người cảm động.', zh:'即使失败了，她的努力也让大家感动。', py:'Jíshǐ shībài le, tā de nǔlì yě ràng dàjiā gǎndòng.'},
-  {vi:'Trong lòng tôi, anh ấy luôn là người bạn tốt nhất.', zh:'在我心里，他一直是最好的朋友。', py:'Zài wǒ xīnli, tā yìzhí shì zuì hǎo de péngyou.'},
-  {vi:'Chỉ cần hai người thu hút lẫn nhau về tính cách, sẽ dễ dàng hòa hợp.', zh:'只要两个人性格上互相吸引，就容易合得来。', py:'Zhǐyào liǎng ge rén xìnggé shang hùxiāng xīyǐn, jiù róngyì hédelái.'},
-  {vi:'Cô ấy vừa mới tìm được công việc phù hợp với mình.', zh:'她刚找到适合自己的工作。', py:'Tā gāng zhǎodào shìhé zìjǐ de gōngzuò.'},
-  {vi:'Từ trước đến giờ anh ấy đều rất quan tâm đến cảm nhận của người khác.', zh:'他从来都很关心别人的感受。', py:'Tā cónglái dōu hěn guānxīn biéren de gǎnshòu.'},
-  {vi:'Nguyên nhân khiến anh ấy đến muộn là vì xe hỏng giữa đường.', zh:'他迟到的原因是车在路上坏了。', py:'Tā chídào de yuányīn shì chē zài lùshang huài le.'},
-  {vi:'Không những cô ấy xinh đẹp, mà nụ cười cũng rất thu hút người khác.', zh:'她不仅长得漂亮，笑容也很吸引人。', py:'Tā bùjǐn zhǎng de piàoliang, xiàoróng yě hěn xīyǐn rén.'},
+  {vi:'Thành phố này không những rất đẹp, mà đồ đạc cũng không đắt.', zh:'这个城市不仅很漂亮，而且东西也不贵。', py:'Zhège chéngshì bùjǐn hěn piàoliang, érqiě dōngxi yě bú guì.'},
+  {vi:'Hai người tính cách không giống nhau cũng có thể thu hút lẫn nhau.', zh:'性格不一样的两个人也可以互相吸引。', py:'Xìnggé bù yíyàng de liǎng ge rén yě kěyǐ hùxiāng xīyǐn.'},
+  {vi:'Người già thường nói: sức khỏe chính là hạnh phúc.', zh:'老人经常说：身体健康就是幸福。', py:'Lǎorén jīngcháng shuō: shēntǐ jiànkāng jiù shì xìngfú.'},
+  {vi:'Nhiều cô gái thích xem phim tình yêu.', zh:'很多女孩子喜欢看爱情电影。', py:'Hěn duō nǚháizi xǐhuan kàn àiqíng diànyǐng.'},
 ];
 
 // ══════════════════════════════════════════

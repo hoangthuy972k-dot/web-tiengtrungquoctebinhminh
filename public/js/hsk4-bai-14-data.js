@@ -3365,198 +3365,207 @@ var dialogData = [
    ]},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 1 · GHÉP TỪ (Collocation)
+// ══════════════════════════════════════════
 var matchData = [
-  {left:'免费',right:'免费提供'},
-  {left:'从身边的',right:'从身边的小事做起'},
-  {left:'污染',right:'污染空气'},
-  {left:'留下',right:'留下不好的印象'},
-  {left:'以最快的',right:'以最快的速度完成'},
-  {left:'关灯',right:'关灯停电'},
-  {left:'节约',right:'节约用电'},
-  {left:'拒绝',right:'拒绝使用塑料袋'},
-  {left:'减少',right:'减少污染'},
-  {left:'养成',right:'养成……的习惯'},
+  {left:'乘坐',right:'地铁'},
+  {left:'把空盒子',right:'扔进垃圾桶'},
+  {left:'污染',right:'空气'},
+  {left:'拒绝',right:'别人的邀请'},
+  {left:'减少',right:'塑料袋的数量'},
+  {left:'空调的温度',right:'开得太低了'},
+  {left:'春天到了，天气',right:'慢慢变暖了'},
+  {left:'这块毛巾',right:'已经很脏了'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3a · ĐIỀN TỪ
+// ══════════════════════════════════════════
 var fillData = [
-  {pre:'这是明天你',blank:'',post:'要带的毛巾、牙膏和牙刷。',hint:'chū chāi',ans:'出差'},
-  {pre:'再说，箱子已经够',blank:'',post:'的了！',hint:'zhòng',ans:'重',exp:'够 + tính từ + 的了 = đã đủ… lắm rồi: 箱子已经够重的了.'},
-  {pre:'这样不仅省油钱，而且还不会',blank:'',post:'空气。',hint:'wūrǎn',ans:'污染'},
-  {pre:'小王，',blank:'',post:'怎么那么脏啊？快去打扫一下。',hint:'wèishēngjiān',ans:'卫生间'},
-  {pre:'经理，实在',blank:'',post:'。今天店里太忙了。',hint:'bàoqiàn',ans:'抱歉'},
-  {pre:'那张桌子下面还有一些',blank:'',post:'饮料瓶子和纸盒子。',hint:'kōng',ans:'空'},
-  {pre:'好的，我马上就去把它们',blank:'',post:'掉。',hint:'rēng',ans:'扔'},
-  {pre:'我一定',blank:'',post:'最快的速度完成。',hint:'yǐ',ans:'以',exp:'以 + cách thức = bằng, với (văn viết): 以最快的速度完成.'},
-  {pre:'',blank:'',post:'明天晚上公司会关灯停电，那么我们肯定不用加班了。',hint:'jìrán',ans:'既然',exp:'既然…，那么/就… = đã… thì…; dựa trên sự thật đã biết để kết luận.'},
-  {pre:'看你',blank:'',post:'的样子！原来是因为不用加班啊！',hint:'déyì',ans:'得意'},
-  {pre:'其实',blank:'',post:'挺简单的，就是提醒人们节约用电。',hint:'mùdì',ans:'目的'},
-  {pre:'',blank:'',post:'，一些国家规定，超市不能为顾客提供免费塑料袋。',hint:'yúshì',ans:'于是',exp:'于是 = thế là, vì thế; nói việc xảy ra tiếp theo do việc trước.'},
-  {pre:'并且',blank:'',post:'大家购买可以多次使用的购物袋。',hint:'gǔlì',ans:'鼓励'},
-  {pre:'这样做可以',blank:'',post:'塑料袋的使用数量。',hint:'jiǎnshǎo',ans:'减少'},
-  {pre:'少开车，多骑车或者',blank:'',post:'地铁和公共汽车。',hint:'chéngzuò',ans:'乘坐'},
+  {pre:'别再买了，冰箱里的菜已经',blank:'够',post:'多的了！',hint:'(đủ)',ans:'够',exp:'够 + tính từ + 的了 = đã … lắm rồi (ý: đủ rồi, đừng thêm nữa): 够多的了, 够累的了.'},
+  {pre:'A：你下个星期在公司吗？ B：不在，我要去上海',blank:'出差',post:'，星期五才回来。',hint:'(đi công tác)',ans:'出差',exp:'出差 là động từ li hợp: 去上海出差 / 出差三天; không đặt tân ngữ sau 出差.'},
+  {pre:'A：我有点儿感冒，今天的聚会我不想去了。 B：',blank:'既然',post:'不舒服，那就在家好好休息吧。',hint:'(đã … thì …)',ans:'既然',exp:'Người nói dựa vào việc đã biết (bạn đang ốm) để khuyên: 既然……，那就……吧; khác 如果 (giả thiết chưa xảy ra).'},
+  {pre:'外面突然下雨了，',blank:'于是',post:'我们决定不去公园了，在家看电影。',hint:'(thế là)',ans:'于是',exp:'于是 nối hành động xảy ra ngay sau, do việc trước gây ra; đứng đầu vế sau.'},
+  {pre:'他每天坚持跑步，',blank:'因此',post:'身体一直很健康。',hint:'(vì vậy)',ans:'因此',exp:'因此 nêu kết quả/kết luận lâu dài (vì vậy); 于是 chỉ hành động tiếp theo ngay sau → "身体一直很健康" dùng 因此.'},
+  {pre:'我的包里有毛巾、牙膏、两本书',blank:'什么的',post:'，所以有点儿重。',hint:'(vân vân)',ans:'什么的',exp:'……什么的 đứng cuối một loạt danh từ = "vân vân", dùng trong khẩu ngữ.'},
+  {pre:'这家饭馆',blank:'以',post:'便宜的价格和好吃的菜吸引了很多客人。',hint:'(bằng, dựa vào)',ans:'以',exp:'以 + danh từ (cách thức/phương tiện) + động từ = dựa vào … để …, sắc thái trang trọng, văn viết.'},
+  {pre:'A：喂，电影都开始了，你到了没有？ B：真',blank:'抱歉',post:'，我坐错车了，还要二十分钟。',hint:'(xin lỗi, áy náy)',ans:'抱歉',exp:'抱歉 trang trọng hơn 对不起 một chút; hay đi với 真/很/实在: 真抱歉.'},
+  {pre:'公司想让她去国外工作，可是她',blank:'拒绝',post:'了，因为孩子还小。',hint:'(từ chối)',ans:'拒绝',exp:'拒绝 = từ chối (đề nghị, lời mời, yêu cầu); trái nghĩa 接受.'},
+  {pre:'冬天房间里的',blank:'温度',post:'别开得太高，二十度就行了。',hint:'(nhiệt độ)',ans:'温度',exp:'温度 = nhiệt độ; đi với 高/低, 开得高一些. 行 ở cuối = được, đủ rồi.'},
+  {pre:'下雨的时候开车，一定要降低',blank:'速度',post:'。',hint:'(tốc độ)',ans:'速度',exp:'降低速度 / 速度很快; không nói 降低快.'},
+  {pre:'这儿不能',blank:'停',post:'车，你把车开到前面去吧。',hint:'(dừng, đỗ)',ans:'停',exp:'停车 = đỗ xe; 停 còn dùng cho cúp điện nước: 停水. 车停在门口 = xe đỗ ở cửa.'},
+  {pre:'他每天给妈妈打电话，没有别的',blank:'目的',post:'，只是想听听她的声音。',hint:'(mục đích)',ans:'目的',exp:'目的 = mục đích (danh từ): ……的目的是…… / 没有别的目的.'},
 ];
 
+// ══════════════════════════════════════════
+// PHẦN 3b · SẮP XẾP
+// ══════════════════════════════════════════
 var sortData = [
-  {words:['箱子','已经','够','重','的','了'],ans:'箱子已经够重的了',audio:'箱子已经够重的了'},
-  {words:['现在','就','从','身边','的','小事','做起','吧'],ans:'现在就从身边的小事做起吧',audio:'现在就从身边的小事做起吧'},
-  {words:['这样','不仅','省','油钱','，','而且','还','不会','污染','空气'],ans:'这样不仅省油钱，而且还不会污染空气',audio:'这样不仅省油钱，而且还不会污染空气'},
-  {words:['我','一定','以','最快','的','速度','完成'],ans:'我一定以最快的速度完成',audio:'我一定以最快的速度完成'},
-  {words:['既然','这样','，','就','只好','安排','在','下周','了'],ans:'既然这样，就只好安排在下周了',audio:'既然这样，就只好安排在下周了'},
-  {words:['大家','都','同意','寒假','去','旅行','，','于是','我们','开始','讨论','去','哪里'],ans:'大家都同意寒假去旅行，于是我们开始讨论去哪里',audio:'大家都同意寒假去旅行，于是我们开始讨论去哪里'},
-  {words:['我们','每个','人','都','有','责任','保护','环境'],ans:'我们每个人都有责任保护环境',audio:'我们每个人都有责任保护环境'},
-  {words:['只有','大家','共同','努力','，','才','能','使','我们','的','家','变得','更','美丽'],ans:'只有大家共同努力，才能使我们的家变得更美丽',audio:'只有大家共同努力，才能使我们的家变得更美丽'},
+  {words:['别','担心','，','这些','钱','够','我们','用','一个','星期','。'],ans:'别担心，这些钱够我们用一个星期。',audio:'别担心，这些钱够我们用一个星期。'},
+  {words:['他','以','很','好','的','成绩','通过','了','这次','考试','。'],ans:'他以很好的成绩通过了这次考试。',audio:'他以很好的成绩通过了这次考试。'},
+  {words:['既然','大家','都','同意','，','那','就','这样','决定','吧','。'],ans:'既然大家都同意，那就这样决定吧。',audio:'既然大家都同意，那就这样决定吧。'},
+  {words:['他','觉得','这份','工作','压力','太','大','，','于是','换','了','一个','。'],ans:'他觉得这份工作压力太大，于是换了一个。',audio:'他觉得这份工作压力太大，于是换了一个。'},
+  {words:['牙膏','和','毛巾','我','都','放','在','卫生间','了','。'],ans:'牙膏和毛巾我都放在卫生间了。',audio:'牙膏和毛巾我都放在卫生间了。'},
+  {words:['为了','让','地球','更','美丽','，','我们','应该','少','用','塑料袋','。'],ans:'为了让地球更美丽，我们应该少用塑料袋。',audio:'为了让地球更美丽，我们应该少用塑料袋。'},
+  {words:['请','不要','把','空','盒子','丢','在','地上','，','前面','就','有','垃圾桶','。'],ans:'请不要把空盒子丢在地上，前面就有垃圾桶。',audio:'请不要把空盒子丢在地上，前面就有垃圾桶。'},
+  {words:['乘坐','地铁','上班','不仅','省','时间','，','而且','可以','减少','污染','。'],ans:'乘坐地铁上班不仅省时间，而且可以减少污染。',audio:'乘坐地铁上班不仅省时间，而且可以减少污染。'},
+  {words:['这个','卫生间','太','脏','了','，','我们','去','别的','地方','吧','。'],ans:'这个卫生间太脏了，我们去别的地方吧。',audio:'这个卫生间太脏了，我们去别的地方吧。'},
 ];
 
 var errorFixMode = 'wordchoice';
 var errorFixData = [
   {wrong:'为了____大家少抽烟，人们将每年的4月7日定为"世界无烟日"。',
    opts:['拒绝','鼓励','得意','省'],ans:1,
-   exp:'鼓励 (khuyến khích) — 鼓励大家少抽烟. Câu có 为了 (Bài 4), 抽烟 (Bài 7). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'鼓励 (khuyến khích) — 鼓励大家少抽烟. Câu có 为了, 抽烟 (Bài 7). Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'有的人总是不好意思____朋友的要求，害怕这样会影响两个人的感情。',
    opts:['鼓励','拒绝','省','重'],ans:1,
-   exp:'拒绝 (từ chối) — 拒绝……的要求. Câu có 总是 (Bài 1), 害怕 (Bài 9). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'拒绝 (từ chối) — 拒绝……的要求. Câu có 总是, 害怕. Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'按照规定，您只能免费带20公斤的行李，超____的部分每公斤加收全部票价的1.5%。',
    opts:['拒绝','得意','重','鼓励'],ans:2,
    exp:'重 (zhòng, nặng) — 超重 = quá cân. Câu có 按照 (Bài 4), 规定/全部 (Bài 12), 部分 (Bài 13). Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'不要因一时的成功而____，也不要因一时的失败而伤心，因为那些都已经过去，重要的是怎样过好将来的生活。',
-   opts:['拒绝','鼓励','得意','重'],ans:2,
-   exp:'得意 (đắc chí) — 因成功而得意. Câu có 成功/失败 (Bài 9), 伤心 (Bài 8). Các từ còn lại không phù hợp nghĩa.'},
+   opts:['拒绝','省','得意','重'],ans:2,
+   exp:'得意 (đắc chí) — 因成功而得意. Câu có 成功 (Bài 4), 失败 (Bài 9), 伤心 (Bài 8). Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'山东____烟台市是中国著名的"苹果之都"。由于气候等自然条件较好，那儿的苹果个儿大，味道香甜，颜色也漂亮。',
    opts:['鼓励','得意','省','重'],ans:2,
-   exp:'省 (shěng, tỉnh) — 山东省. Câu có 著名 (Bài 10), 由于 (Bài 10), 气候 (Bài 9). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'省 (shěng, tỉnh) — 山东省. Câu có 著名 (Bài 11), 由于 (Bài 10), 气候 (Bài 7). Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'A：打扰一下，请问李老师在吗？B：他____了。你找他有事吗？',
    opts:['扔','出差','抱歉','行'],ans:1,
    exp:'出差 (đi công tác) — 他出差了. Câu có 打扰 (Bài 6). Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'A：喂，你还在逛街吗？我的钥匙____了，进不了门，你快回来吧。B：好，我马上就回去。',
    opts:['扔','丢','出差','行'],ans:1,
-   exp:'丢 (mất) — 钥匙丢了. Câu có 逛街 (Bài 5), bổ ngữ khả năng 进不了 (Bài 5). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'丢 (mất) — 钥匙丢了. Câu có 逛街 (Bài 2), bổ ngữ khả năng 进不了 (Bài 5). Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'A：实在____，我来晚了。今天路上有点儿堵。B：没关系，请坐。你喝果汁还是咖啡？',
    opts:['扔','丢','抱歉','行'],ans:2,
-   exp:'抱歉 (xin lỗi) — 实在抱歉. Câu có 实在 (Bài 11). Các từ còn lại không phù hợp nghĩa.'},
+   exp:'抱歉 (xin lỗi) — 实在抱歉. Câu có 实在 (Bài 5). Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'A：垃圾桶又满了，你去____一下垃圾吧。B：好的，看完这个节目我就去。',
-   opts:['扔','丢','抱歉','出差'],ans:0,
-   exp:'扔 (đổ, vứt) — 扔垃圾. Câu có 又……了 (Bài 1), 节目 (Bài 6). Các từ còn lại không phù hợp nghĩa.'},
+   opts:['扔','鼓励','抱歉','出差'],ans:0,
+   exp:'扔 (đổ, vứt) — 扔一下垃圾 (đem rác đi đổ). Câu có 又……了 (Bài 1), 节目. Các từ còn lại không phù hợp nghĩa.'},
   {wrong:'A：马上就要毕业了，你准备在学校附近租房子吗？B：学校附近房子太贵。离学校远点儿没关系，只要离地铁或者公交车站近就____。',
-   opts:['扔','丢','抱歉','行'],ans:3,
-   exp:'行 (được) — 只要……就行. Câu có 毕业 (Bài 9), 只要……就 (Bài 8). Các từ còn lại không phù hợp nghĩa.'},
+   opts:['出差','丢','抱歉','行'],ans:3,
+   exp:'行 (được) — 只要……就行. Câu có 毕业 (Bài 2), 只要……就 (Bài 8). Các từ còn lại không phù hợp nghĩa.'},
 ];
 
+// ══════════════════════════════════════════
+// LUYỆN NÓI
+// ══════════════════════════════════════════
 var speakingData = {
   mode: 'ai-speak',
-  intro: 'Mỗi câu hỏi là một tình huống thật trong đời sống, dùng đúng từ vựng và mẫu câu của Bài 14. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm điểm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
+  intro: 'Mỗi câu hỏi là một tình huống thật, nói về chính bạn bằng từ và mẫu câu của Bài 14. Bấm 🎙️ rồi trả lời bằng tiếng Trung — AI sẽ nghe, ghi lại câu bạn nói và chấm theo Nội dung · Mẫu câu · Từ vựng · Độ trôi chảy. Nên tự trả lời trước rồi mới mở “Câu mẫu” để đối chiếu.',
   tasks: [
     {
-      situation: 'Lớp bạn đang làm dự án về môi trường.',
-      q_zh: '你认为在生活中哪些方面会产生污染？',
-      q_py: 'Nǐ rènwéi zài shēnghuó zhōng nǎxiē fāngmiàn huì chǎn shēng wūrǎn?',
-      q_vn: 'Bạn cho rằng những mặt nào trong cuộc sống gây ô nhiễm?',
-      grammar: { label: '不仅……而且……; ……什么的 (…v.v.)', any: ['不仅', '而且', '什么的'] },
+      situation: 'Bạn sắp đi xa vài ngày, bạn bè hỏi bạn thường mang theo gì.',
+      q_zh: '你去别的城市玩儿的时候，一般会带哪些东西？',
+      q_py: 'Nǐ qù bié de chéngshì wánr de shíhou, yìbān huì dài nǎxiē dōngxi?',
+      q_vn: 'Khi đi chơi ở thành phố khác, bạn thường mang theo những thứ gì?',
+      grammar: { label: '……什么的 (… vân vân)', any: ['什么的'] },
       need: [
-        { label: 'Kể ít nhất hai nguồn ô nhiễm', any: ['开车', '垃圾', '塑料袋', '污染', '工厂', '空气'] },
-        { label: 'Nói tác hại', any: ['空气', '脏', '数量', '健康', '地球'] }
+        { label: 'Dùng ……什么的 sau một loạt đồ vật', any: ['什么的'] },
+        { label: 'Kể đồ mang theo', any: ['毛巾', '牙膏', '衣服', '手机', '书', '伞'] }
       ],
-      bonus: { label: 'Dùng 不仅……而且…… nêu hai ý', any: ['不仅', '而且'] },
-      vocab: ['污染', '塑料袋', '数量', '扔'],
-      minLen: 22,
-      sample: '我觉得开车、乱扔垃圾、使用塑料袋什么的都会产生污染。汽车不仅污染空气，而且数量越来越多，城市里的空气越来越脏。',
-      sample_py: 'Wǒ juéde kāichē, luàn rēng lā jī, shǐyòng sùliàodài shénme de dōu huì chǎn shēng wūrǎn. Qì chē bùjǐn wūrǎn kōngqì, ér qiě shùliàng yuè lái yuè duō, chéngshì lǐ de kōngqì yuè lái yuè zāng.',
-      sample_vn: 'Tôi thấy lái xe, vứt rác bừa, dùng túi nilon v.v. đều gây ô nhiễm. Ô tô không những làm bẩn không khí mà số lượng còn ngày càng nhiều, không khí trong thành phố ngày càng bẩn.',
-      tip: '……什么的 = …v.v., dùng cuối danh sách trong khẩu ngữ.'
+      bonus: { label: 'Nói hành lý nặng/nhẹ', any: ['重', '轻'] },
+      vocab: ['毛巾', '牙膏', '重', '什么的'],
+      minLen: 20,
+      sample: '衣服、牙膏、药什么的，我都会带。宾馆的毛巾我不太习惯用，所以也自己带一条。东西不能带太多，太重了很累。',
+      sample_py: 'Yīfu, yágāo, yào shénme de, wǒ dōu huì dài. Bīnguǎn de máojīn wǒ bú tài xíguàn yòng, suǒyǐ yě zìjǐ dài yì tiáo. Dōngxi bù néng dài tài duō, tài zhòng le hěn lèi.',
+      sample_vn: 'Quần áo, kem đánh răng, thuốc v.v. tôi đều mang. Khăn của khách sạn tôi không quen dùng nên cũng tự mang một chiếc. Đồ không thể mang quá nhiều, nặng quá thì rất mệt.',
+      tip: '什么的 đặt sau cả danh sách, không đặt sau từng món: 衣服、牙膏什么的.'
     },
     {
-      situation: 'Bạn viết bài phát biểu về chính sách môi trường.',
-      q_zh: '你认为一个国家应该有哪些规定来保护环境？',
-      q_py: 'Nǐ rènwéi yí ge guójiā yīnggāi yǒu nǎxiē guīdìng lái bǎohù huánjìng?',
-      q_vn: 'Bạn cho rằng một quốc gia nên có quy định gì để bảo vệ môi trường?',
-      grammar: { label: '以 + mục đích (以减少……); 鼓励 + người + động từ', any: ['以', '鼓励'] },
-      need: [
-        { label: 'Nêu một quy định cụ thể', any: ['规定', '塑料袋', '免费', '垃圾', '工厂', '汽车'] },
-        { label: 'Nói mục đích', any: ['减少', '保护', '数量', '环境', '污染'] }
-      ],
-      bonus: { label: 'Dùng 鼓励 nêu biện pháp khuyến khích', any: ['鼓励'] },
-      vocab: ['规定', '减少', '鼓励', '乘坐'],
-      minLen: 22,
-      sample: '我觉得国家应该规定超市不能免费提供塑料袋，以减少塑料袋的使用数量，并且鼓励大家多乘坐公共汽车、少开车。',
-      sample_py: 'Wǒ juéde guójiā yīnggāi guīdìng chāoshì bù néng miǎnfèi tígōng sùliàodài, yǐ jiǎnshǎo sùliàodài de shǐyòng shùliàng, bìngqiě gǔlì dàjiā duō chéngzuò gōnggòngqìchē, shǎo kāichē.',
-      sample_vn: 'Tôi thấy nhà nước nên quy định siêu thị không được phát miễn phí túi nilon để giảm lượng túi sử dụng, đồng thời khuyến khích mọi người đi xe buýt nhiều hơn, lái xe ít đi.',
-      tip: '以 + động từ nêu mục đích, dùng trong văn viết: 以提高质量。'
-    },
-    {
-      situation: 'Cả lớp thảo luận việc mỗi người có thể làm gì cho môi trường.',
-      q_zh: '既然保护环境这么重要，我们应该做些什么？',
-      q_py: 'Jìrán bǎohù huánjìng zhème zhòngyào, wǒmen yīnggāi zuò xiē shénme?',
-      q_vn: 'Đã biết bảo vệ môi trường quan trọng như vậy, chúng ta nên làm gì?',
-      grammar: { label: '既然……，就…… (đã… thì…)', any: ['既然'] },
+      situation: 'Một người bạn nói muốn học tiếng Trung nhưng than không có thời gian.',
+      q_zh: '朋友想学汉语，可是说没有时间，你会怎么跟他说？',
+      q_py: 'Péngyou xiǎng xué Hànyǔ, kěshì shuō méiyǒu shíjiān, nǐ huì zěnme gēn tā shuō?',
+      q_vn: 'Bạn bè muốn học tiếng Trung nhưng nói không có thời gian, bạn sẽ nói gì với họ?',
+      grammar: { label: '既然……，就/那么…… (đã … thì …)', any: ['既然'] },
       need: [
         { label: 'Dùng 既然……就……', any: ['既然'] },
-        { label: 'Kể việc nhỏ có thể làm', any: ['关灯', '垃圾桶', '塑料袋', '省', '自行车', '水', '电'] }
+        { label: 'Đưa ra cách làm cụ thể', any: ['每天', '坚持', '地铁', '听', '分钟'] }
       ],
-      bonus: { label: 'Dùng 从身边的小事做起', any: ['小事', '身边', '开始'] },
-      vocab: ['既然', '垃圾桶', '省'],
+      bonus: { label: 'Dùng 鼓励 hoặc 速度', any: ['鼓励', '速度'] },
+      vocab: ['既然', '鼓励', '速度'],
       minLen: 22,
-      sample: '既然保护环境这么重要，我们就应该从身边的小事做起。比如出门时记得关灯、省一点儿水电，把垃圾丢进垃圾桶，购物时自己带袋子。',
-      sample_py: 'Jìrán bǎohù huánjìng zhème zhòngyào, wǒmen jiù yīnggāi cóng shēn bian de xiǎo shì zuò qǐ. Bǐrú chū mén shí jìde guān dēng, shěng yìdiǎnr shuǐ diàn, bǎ lā jī diū jìn lājītǒng, gòuwù shí zìjǐ dài dài zǐ.',
-      sample_vn: 'Đã biết bảo vệ môi trường quan trọng như vậy thì ta nên bắt đầu từ việc nhỏ quanh mình. Ví dụ ra khỏi nhà nhớ tắt đèn, tiết kiệm điện nước, bỏ rác vào thùng, đi mua sắm tự mang túi.',
-      tip: '既然 nêu tiền đề đã biết, vế sau thường có 就: 既然来了，就多坐一会儿。'
+      sample: '既然你真的想学，就每天学二十分钟吧。坐地铁的时候也可以听汉语。速度慢一点儿没关系，重要的是坚持。',
+      sample_py: 'Jìrán nǐ zhēn de xiǎng xué, jiù měi tiān xué èrshí fēnzhōng ba. Zuò dìtiě de shíhou yě kěyǐ tīng Hànyǔ. Sùdù màn yìdiǎnr méi guānxi, zhòngyào de shì jiānchí.',
+      sample_vn: 'Đã thật sự muốn học thì mỗi ngày học hai mươi phút đi. Lúc ngồi tàu điện ngầm cũng có thể nghe tiếng Trung. Tốc độ chậm một chút không sao, quan trọng là kiên trì.',
+      tip: '既然 + sự thật đã biết, vế sau là lời khuyên/kết luận với 就 hoặc 那么.'
     },
     {
-      situation: 'Dạo này không khí thành phố bạn rất xấu.',
-      q_zh: '污染对你的生活有哪些影响？',
-      q_py: 'Wūrǎn duì nǐ de shēnghuó yǒu nǎxiē yǐngxiǎng?',
-      q_vn: 'Ô nhiễm ảnh hưởng thế nào đến cuộc sống của bạn?',
-      grammar: { label: '随着……的增加; 于是…… (thế là)', any: ['随着', '于是'] },
+      situation: 'Bạn kể về một lần bạn thay đổi thói quen của mình.',
+      q_zh: '你有没有因为一件事改变了自己的习惯？',
+      q_py: 'Nǐ yǒu méiyǒu yīnwèi yí jiàn shì gǎibiàn le zìjǐ de xíguàn?',
+      q_vn: 'Bạn có từng vì một việc mà thay đổi thói quen của mình không?',
+      grammar: { label: '于是 (thế là)', any: ['于是'] },
       need: [
-        { label: 'Nói ảnh hưởng cụ thể', any: ['空气', '脏', '咳嗽', '健康', '窗户', '出门'] },
-        { label: 'Nói bạn thay đổi thế nào', any: ['决定', '少开车', '骑', '走路', '口罩', '乘坐'] }
+        { label: 'Dùng 于是 nối việc tiếp theo', any: ['于是'] },
+        { label: 'Kể thói quen mới', any: ['骑', '走路', '跑步', '早', '少', '不再'] }
       ],
-      bonus: { label: 'Dùng 于是 nối kết quả', any: ['于是'] },
-      vocab: ['污染', '数量', '于是'],
+      bonus: { label: 'Dùng 省 hoặc 减少', any: ['省', '减少'] },
+      vocab: ['于是', '省', '减少'],
       minLen: 22,
-      sample: '随着汽车数量的增加，空气越来越脏，我经常咳嗽，也不太愿意开窗户。于是我决定少开车，多骑自行车或者乘坐地铁。',
-      sample_py: 'Suízhe qì chē shùliàng de zēngjiā, kōngqì yuè lái yuè zāng, wǒ jīngcháng késou, yě bú tài yuànyì kāi chuānghu. Yúshì wǒ juédìng shǎo kāichē, duō qí zìxíngchē huòzhě chéngzuò dìtiě.',
-      sample_vn: 'Cùng với số lượng ô tô tăng lên, không khí ngày càng bẩn, tôi hay bị ho, cũng ngại mở cửa sổ. Thế là tôi quyết định lái xe ít đi, đạp xe hoặc đi tàu điện ngầm nhiều hơn.',
-      tip: '于是 nối sự việc xảy ra tiếp theo: 天黑了，于是我们回家了。'
+      sample: '去年我发现自己越来越胖，于是决定每天骑自行车上班。现在我瘦了一点儿，还省了不少钱。',
+      sample_py: 'Qùnián wǒ fāxiàn zìjǐ yuè lái yuè pàng, yúshì juédìng měi tiān qí zìxíngchē shàngbān. Xiànzài wǒ shòu le yìdiǎnr, hái shěng le bù shǎo qián.',
+      sample_vn: 'Năm ngoái tôi thấy mình ngày càng béo, thế là quyết định ngày nào cũng đạp xe đi làm. Bây giờ tôi gầy đi một chút, lại còn tiết kiệm được kha khá tiền.',
+      tip: '于是 kể hành động xảy ra ngay sau một việc; không dùng 于是 cho kết luận chung chung.'
     },
     {
-      situation: 'Bạn chuẩn bị hành lý cho chuyến công tác ba ngày.',
-      q_zh: '你出差或旅行时，会自己带毛巾、牙膏吗？为什么？',
-      q_py: 'Nǐ chūchāi huò lǚxíng shí, huì zìjǐ dài máojīn, yágāo ma? Wèishénme?',
-      q_vn: 'Khi đi công tác hay du lịch, bạn có tự mang khăn, kem đánh răng không? Vì sao?',
-      grammar: { label: '虽然……但是……; 再说…… (hơn nữa)', any: ['虽然', '再说'] },
+      situation: 'Một người bạn nước ngoài hỏi về môi trường ở thành phố của bạn.',
+      q_zh: '你住的城市空气好吗？',
+      q_py: 'Nǐ zhù de chéngshì kōngqì hǎo ma?',
+      q_vn: 'Không khí ở thành phố bạn sống có tốt không?',
+      grammar: { label: '因此 (vì vậy) — nêu kết quả', any: ['因此'] },
       need: [
-        { label: 'Trả lời có mang hay không', any: ['带', '自己', '不带'] },
-        { label: 'Nêu lý do', any: ['保护环境', '干净', '习惯', '省', '污染', '放心'] }
+        { label: 'Dùng 因此 nêu kết quả', any: ['因此'] },
+        { label: 'Nói về ô nhiễm', any: ['污染', '空气', '脏'] }
       ],
-      bonus: { label: 'Dùng 再说 bổ sung lý do', any: ['再说', '而且'] },
-      vocab: ['出差', '毛巾', '牙膏', '重'],
+      bonus: { label: 'Dùng 乘坐 hoặc 塑料袋', any: ['乘坐', '塑料袋'] },
+      vocab: ['污染', '乘坐', '因此'],
       minLen: 22,
-      sample: '虽然宾馆免费提供，但是我出差还是自己带毛巾和牙膏。这样既干净又可以保护环境，再说这些东西很轻，箱子也不会太重。',
-      sample_py: 'Suīrán bīnguǎn miǎnfèi tígōng, dànshì wǒ chūchāi háishi zìjǐ dài máojīn hé yágāo. Zhè yàng jì gānjìng yòu kěyǐ bǎohù huánjìng, zài shuō zhèxiē dōngxi hěn qīng, xiāng zǐ yě bú huì tài zhòng.',
-      sample_vn: 'Tuy khách sạn có sẵn miễn phí, nhưng đi công tác tôi vẫn tự mang khăn và kem đánh răng. Như vậy vừa sạch vừa bảo vệ môi trường, hơn nữa mấy thứ này rất nhẹ, vali cũng không nặng thêm.',
-      tip: '再说 dùng để thêm lý do trong khẩu ngữ: 太贵了，再说我也不需要。'
+      sample: '我住的城市车太多了，空气污染比较严重，因此我平时一般乘坐地铁，很少开车。去超市的时候，我也不要塑料袋。',
+      sample_py: 'Wǒ zhù de chéngshì chē tài duō le, kōngqì wūrǎn bǐjiào yánzhòng, yīncǐ wǒ píngshí yìbān chéngzuò dìtiě, hěn shǎo kāichē. Qù chāoshì de shíhou, wǒ yě bú yào sùliàodài.',
+      sample_vn: 'Thành phố tôi sống xe quá nhiều, ô nhiễm không khí khá nghiêm trọng, vì vậy bình thường tôi hay đi tàu điện ngầm, rất ít lái xe. Khi đi siêu thị tôi cũng không lấy túi nilông.',
+      tip: '因此 = vì vậy, đứng đầu vế kết quả, trang trọng hơn 所以; hay đi với 由于: 由于……，因此…….'
+    },
+    {
+      situation: 'Bạn bè hỏi chuyện chi tiêu hằng tháng của bạn.',
+      q_zh: '你每个月的钱够用吗？你怎么省钱？',
+      q_py: 'Nǐ měi ge yuè de qián gòu yòng ma? Nǐ zěnme shěng qián?',
+      q_vn: 'Tiền mỗi tháng của bạn có đủ tiêu không? Bạn tiết kiệm tiền thế nào?',
+      grammar: { label: '够 (đủ) — 够用 / 不够', any: ['够'] },
+      need: [
+        { label: 'Dùng 够 hoặc 不够', any: ['够'] },
+        { label: 'Nói cách tiết kiệm', any: ['省', '很少', '不买', '自己做饭', '打折'] }
+      ],
+      bonus: { label: 'Dùng 浪费 hoặc 节约', any: ['浪费', '节约'] },
+      vocab: ['够', '省', '浪费'],
+      minLen: 20,
+      sample: '我的工资不太多，但是够用。我很少在外面吃饭，一般自己做饭，也不乱买东西，这样每个月能省下一些钱。',
+      sample_py: 'Wǒ de gōngzī bú tài duō, dànshì gòu yòng. Wǒ hěn shǎo zài wàimiàn chīfàn, yìbān zìjǐ zuòfàn, yě bú luàn mǎi dōngxi, zhèyàng měi ge yuè néng shěng xià yìxiē qián.',
+      sample_vn: 'Lương của tôi không nhiều lắm nhưng đủ tiêu. Tôi rất ít ăn ngoài, thường tự nấu cơm, cũng không mua sắm linh tinh, như vậy mỗi tháng tiết kiệm được ít tiền.',
+      tip: '够 + động từ = đủ để làm gì: 够用, 够吃; 够 + tính từ + 的了 = … lắm rồi.'
     }
   ]
 };
 
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Việt → Trung)
+// ══════════════════════════════════════════
 var translateData = [
-  {vi:'Đây là khăn mặt, kem đánh răng và bàn chải ngày mai anh đi công tác cần mang, cho vào vali đi.',zh:'这是明天你出差要带的毛巾、牙膏和牙刷，把它们放到箱子里吧。',py:'Zhè shì míngtiān nǐ chū chāi yào dài de máojīn, yágāo hé yáshuā, bǎ tāmen fàngdào xiāngzi li ba.'},
-  {vi:'Không cần mang những thứ này, khách sạn đều cung cấp miễn phí. Hơn nữa, vali đã đủ nặng rồi!',zh:'不用拿这些，宾馆都会免费提供的。再说，箱子已经够重的了！',py:'Búyòng ná zhèxiē, bīnguǎn dōu huì miǎnfèi tígōng de. Zàishuō, xiāngzi yǐjīng gòu zhòng de le!'},
-  {vi:'Như vậy không những tiết kiệm tiền xăng, mà còn không làm ô nhiễm không khí.',zh:'这样不仅省油钱，而且还不会污染空气。',py:'Zhèyàng bùjǐn shěng yóu qián, érqiě hái bú huì wūrǎn kōngqì.'},
-  {vi:'Giám đốc yên tâm, tôi nhất định sẽ hoàn thành với tốc độ nhanh nhất.',zh:'经理您放心，我一定以最快的速度完成。',py:'Jīnglǐ nín fàng xīn, wǒ yídìng yǐ zuì kuài de sùdù wánchéng.'},
-  {vi:'Đã là tối mai công ty tắt đèn cúp điện, thì chúng ta chắc chắn không phải tăng ca rồi.',zh:'既然明天晚上公司会关灯停电，那么我们肯定不用加班了。',py:'Jìrán míngtiān wǎnshang gōngsī huì guān dēng tíng diàn, nàme wǒmen kěndìng búyòng jiā bān le.'},
-  {vi:'Thực ra mục đích khá đơn giản, chính là nhắc nhở mọi người tiết kiệm điện.',zh:'其实目的挺简单的，就是提醒人们节约用电。',py:'Qíshí mùdì tǐng jiǎndān de, jiù shì tíxǐng rénmen jiéyuē yòng diàn.'},
-  {vi:'Thế là, một số nước quy định siêu thị không được cung cấp túi nilông miễn phí cho khách.',zh:'于是，一些国家规定，超市不能为顾客提供免费塑料袋。',py:'Yúshì, yìxiē guójiā guīdìng, chāoshì bù néng wèi gùkè tígōng miǎnfèi sùliàodài.'},
-  {vi:'Chỉ khi mọi người cùng nỗ lực giảm ô nhiễm, bảo vệ môi trường, mới có thể khiến ngôi nhà chúng ta đẹp hơn.',zh:'只有大家共同努力，减少污染、保护环境，才能使我们的家变得更美丽。',py:'Zhǐyǒu dàjiā gòngtóng nǔlì, jiǎnshǎo wūrǎn, bǎohù huánjìng, cái néng shǐ wǒmen de jiā biàn de gèng měilì.'},
+  {vi:'Bạn đã mệt rồi thì nghỉ sớm đi.', zh:'既然你累了，就早点儿休息吧。', py:'Jìrán nǐ lèi le, jiù zǎo diǎnr xiūxi ba.'},
+  {vi:'Cái hộp này rỗng rồi, có thể vứt đi được.', zh:'这个盒子是空的，可以扔了。', py:'Zhège hézi shì kōng de, kěyǐ rēng le.'},
+  {vi:'Mục đích của chuyến công tác này là bàn chuyện làm ăn với công ty đó.', zh:'这次出差的目的是跟那家公司谈生意。', py:'Zhè cì chūchāi de mùdì shì gēn nà jiā gōngsī tán shēngyi.'},
+  {vi:'Anh ấy muốn giảm cân, thế là ngày nào cũng đi bộ đi làm.', zh:'他想减肥，于是每天走路去上班。', py:'Tā xiǎng jiǎnféi, yúshì měi tiān zǒulù qù shàngbān.'},
+  {vi:'Chúng ta nhất định phải hoàn thành nhiệm vụ này với thái độ nghiêm túc nhất.', zh:'我们一定要以最认真的态度完成这个任务。', py:'Wǒmen yídìng yào yǐ zuì rènzhēn de tàidu wánchéng zhège rènwu.'},
 ];
+
+// ══════════════════════════════════════════
+// LUYỆN DỊCH (Trung → Việt) — nội dung KHÁC với chiều Việt→Trung ở trên
+// ══════════════════════════════════════════
 var translateDataRev = [
-  {vi:'Chẳng phải anh luôn nói phải bảo vệ môi trường sao? Bây giờ hãy bắt đầu từ những việc nhỏ quanh mình đi.',zh:'你不是一直说要保护环境吗？现在就从身边的小事做起吧。',py:'Nǐ bú shì yìzhí shuō yào bǎohù huánjìng ma? Xiànzài jiù cóng shēnbiān de xiǎo shì zuòqǐ ba.'},
-  {vi:'Sao nhà vệ sinh bẩn thế? Việc này sẽ để lại ấn tượng xấu cho khách, mau đi dọn dẹp đi.',zh:'卫生间怎么那么脏啊？这会给客人留下不好的印象，快去打扫一下。',py:'Wèishēngjiān zěnme nàme zāng a? Zhè huì gěi kèrén liúxià bù hǎo de yìnxiàng, kuài qù dǎsǎo yíxià.'},
-  {vi:'Bất kể khách đông đến đâu, việc bận đến đâu, chúng ta đều phải đảm bảo nhà hàng sạch sẽ vệ sinh.',zh:'不管客人多多，生意多忙，我们都要保证餐厅干净卫生。',py:'Bùguǎn kèrén duō duō, shēngyi duō máng, wǒmen dōu yào bǎozhèng cāntīng gānjìng wèishēng.'},
-  {vi:'Nhìn cái vẻ hể hả của bạn kìa! Hóa ra là vì không phải tăng ca!',zh:'看你得意的样子！原来是因为不用加班啊！',py:'Kàn nǐ déyì de yàngzi! Yuánlái shì yīnwèi búyòng jiā bān a!'},
-  {vi:'Hy vọng khơi dậy sự quan tâm của mọi người đến vấn đề khí hậu nóng lên.',zh:'希望引起人们对气候变暖问题的关注。',py:'Xīwàng yǐnqǐ rénmen duì qìhòu biàn nuǎn wèntí de guānzhù.'},
-  {vi:'Mong mọi người tiết kiệm dùng túi nilông, hoặc tự mang túi khi mua sắm, thậm chí từ chối dùng túi nilông.',zh:'请大家节约使用塑料袋，或者购物时自备购物袋，甚至拒绝使用塑料袋。',py:'Qǐng dàjiā jiéyuē shǐyòng sùliàodài, huòzhě gòuwù shí zì bèi gòuwùdài, shènzhì jùjué shǐyòng sùliàodài.'},
-  {vi:'Mùa hè để nhiệt độ điều hòa cao hơn một chút, ra ngoài nhớ tắt điều hòa và máy tính.',zh:'夏天把空调的温度开得高一些，出门时记得关空调和电脑。',py:'Xiàtiān bǎ kōngtiáo de wēndù kāi de gāo yìxiē, chū mén shí jìde guān kōngtiáo hé diànnǎo.'},
-  {vi:'Ít lái xe, đi xe đạp nhiều hơn hoặc đi tàu điện ngầm và xe buýt, như vậy có thể giảm ô nhiễm không khí.',zh:'少开车，多骑车或者乘坐地铁和公共汽车，这样能降低空气污染。',py:'Shǎo kāi chē, duō qí chē huòzhě chéngzuò dìtiě hé gōnggòng qìchē, zhèyàng néng jiàngdī kōngqì wūrǎn.'},
+  {vi:'Chúng ta nên khuyến khích trẻ con tự làm việc của mình.', zh:'我们应该鼓励孩子自己的事情自己做。', py:'Wǒmen yīnggāi gǔlì háizi zìjǐ de shìqing zìjǐ zuò.'},
+  {vi:'Kem đánh răng dùng hết rồi, ngày mai tôi đi siêu thị mua cái mới.', zh:'牙膏用完了，明天我去超市买新的。', py:'Yágāo yòng wán le, míngtiān wǒ qù chāoshì mǎi xīn de.'},
+  {vi:'Lần thi này anh ấy điểm cao nhất, có hơi đắc chí rồi.', zh:'他这次考试成绩最好，有点儿得意了。', py:'Tā zhè cì kǎoshì chéngjì zuì hǎo, yǒudiǎnr déyì le.'},
+  {vi:'Giảm dùng túi nilông chính là bảo vệ Trái Đất.', zh:'减少使用塑料袋，就是保护地球。', py:'Jiǎnshǎo shǐyòng sùliàodài, jiù shì bǎohù dìqiú.'},
 ];
 
 var listenData = {

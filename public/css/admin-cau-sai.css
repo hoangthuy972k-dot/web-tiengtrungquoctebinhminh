@@ -1,0 +1,128 @@
+/* Tab "📊 Câu lớp hay sai" o /admin (public/js/admin-cau-sai.js) */
+.cs-zh, .cs-tu-zh, .csc-de .cs-zh { font-family: 'Noto Serif SC', serif; }
+.cs-cong-cu { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 12px 0 14px; }
+.cs-cong-cu .btn { min-height: 40px; }
+.cs-cong-cu .btn[disabled] { opacity: .45; cursor: not-allowed; }
+.cs-chon { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; }
+.cs-chon select { min-height: 40px; padding: 0 10px; border: 1.5px solid var(--color-gray-200); border-radius: var(--radius-md); font: inherit; background: #fff; max-width: 260px; }
+.cs-tuan { display: inline-flex; gap: 6px; flex-wrap: wrap; }
+.cs-gian { flex: 1 1 auto; }
+.cs-tom { font-size: .92rem; color: var(--color-gray-700); margin: 4px 0 12px; }
+.cs-h3 { font-size: 1.02rem; font-weight: 700; margin: 22px 0 10px; }
+.cs-in-dau { display: none; }
+
+.cs-ds { display: flex; flex-direction: column; gap: 12px; }
+.cs-the { background: var(--color-white); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); padding: 14px 16px; border-left: 4px solid var(--color-red-500); break-inside: avoid; }
+.cs-hang { display: flex; gap: 14px; align-items: flex-start; }
+.cs-stt { flex: none; width: 30px; height: 30px; border-radius: 50%; background: var(--color-red-50); color: var(--color-red-700); font-weight: 800; display: inline-flex; align-items: center; justify-content: center; font-size: .9rem; }
+.cs-noi { flex: 1 1 auto; min-width: 0; }
+.cs-nhan { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 6px; }
+.cs-tag, .cs-loai, .cs-nguon { display: inline-block; font-size: .75rem; font-weight: 700; padding: 2px 9px; border-radius: 999px; background: var(--color-gray-100); color: var(--color-gray-700); }
+.cs-tag { background: var(--color-gold-50); color: var(--color-gold-700); }
+.cs-loai { background: var(--color-blue-50); color: var(--color-blue-600); }
+.cs-loai-dien-tu { background: var(--color-teal-50); color: var(--color-teal-600); }
+.cs-loai-sap-xep { background: var(--color-purple-50); color: var(--color-purple-600); }
+.cs-loai-nghe { background: var(--color-orange-50); color: var(--color-orange-600); }
+.cs-loai-tu-vung { background: var(--color-pink-50); color: var(--color-pink-600); }
+.cs-nguon { font-weight: 600; }
+.cs-lenh { margin: 0 0 4px; font-size: .85rem; color: var(--color-gray-600); }
+.cs-de { margin: 0 0 6px; font-size: 1.25rem; line-height: 1.6; color: var(--color-gray-900); word-break: break-word; }
+.cs-ctx { margin: 0 0 6px; font-size: .9rem; color: var(--color-gray-600); }
+.cs-py { color: var(--color-gray-500); font-size: .85em; margin-right: 6px; }
+.cs-tu { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 8px; }
+.cs-o { border: 1.5px solid var(--color-gray-200); border-radius: 8px; padding: 2px 10px; font-size: 1.1rem; background: var(--color-gray-50); }
+.cs-opts { list-style: none; padding: 0; margin: 4px 0 8px; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 4px 12px; }
+.cs-opts li { font-size: 1rem; padding: 3px 8px; border-radius: 6px; }
+.cs-opts li.is-dung { background: var(--color-green-50); color: var(--color-green-600); font-weight: 700; }
+.cs-opts li.is-sai { background: var(--color-red-50); color: var(--color-red-700); }
+.cs-dap { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: .92rem; }
+.cs-dap-dung { color: var(--color-green-600); }
+.cs-dap-sai { color: var(--color-red-700); }
+.cs-dap b { font-size: 1.05rem; }
+.cs-why { margin: 6px 0 0; font-size: .85rem; color: var(--color-gray-600); line-height: 1.5; }
+.cs-so { flex: none; width: 180px; text-align: right; }
+.cs-bar { display: block; height: 10px; border-radius: 999px; background: var(--color-gray-100); overflow: hidden; }
+.cs-bar > span { display: block; height: 100%; background: linear-gradient(90deg, var(--color-gold-500), var(--color-red-500)); border-radius: inherit; }
+.cs-bar-chu { margin-top: 6px; font-size: .95rem; }
+.cs-bar-chu b { font-size: 1.35rem; color: var(--color-red-600); font-variant-numeric: tabular-nums; }
+.cs-phu { display: block; font-size: .75rem; color: var(--color-gray-500); margin-top: 2px; }
+.cs-ai { margin: 10px 0 0 44px; font-size: .88rem; }
+.cs-ai summary { cursor: pointer; font-weight: 600; color: var(--color-red-700); min-height: 32px; display: inline-flex; align-items: center; }
+.cs-ai p { margin: 4px 0 0; color: var(--color-gray-700); line-height: 1.6; }
+
+.cs-tu-ds { list-style: none; padding: 0; margin: 0; background: var(--color-white); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); }
+.cs-tu-hang { display: grid; grid-template-columns: 30px 90px minmax(0, 1fr) 220px; gap: 4px 14px; align-items: center; padding: 10px 16px; border-bottom: 1px solid var(--color-gray-100); break-inside: avoid; }
+.cs-tu-hang:last-child { border-bottom: none; }
+.cs-tu-zh { font-size: 1.6rem; font-weight: 600; color: var(--color-gray-900); }
+.cs-tu-nghia { display: flex; flex-direction: column; font-size: .9rem; color: var(--color-gray-700); }
+.cs-tu-so .cs-phu { font-size: .78rem; }
+.cs-tu-so b { color: var(--color-red-600); }
+.cs-ai-tu { grid-column: 2 / -1; margin: 0; }
+
+.cs-rong { background: var(--color-white); border: 1.5px dashed var(--color-gray-300); border-radius: var(--radius-md); padding: 18px 20px; color: var(--color-gray-700); font-size: .92rem; line-height: 1.6; }
+.cs-rong p { margin: 0 0 6px; }
+.cs-rong p:last-child { margin: 0; }
+.cs-chu-thich { margin-top: 18px; font-size: .8rem; color: var(--color-gray-500); line-height: 1.6; }
+
+@media (max-width: 720px) {
+  .cs-hang { flex-wrap: wrap; }
+  .cs-noi { flex-basis: calc(100% - 44px); }
+  .cs-so { width: 100%; text-align: left; padding-left: 44px; }
+  .cs-tu-hang { grid-template-columns: 30px 70px minmax(0, 1fr); }
+  .cs-tu-so { grid-column: 2 / -1; }
+  .cs-gian { display: none; }
+}
+
+/* ---------- Chieu len lop ---------- */
+html.cs-chieu-mo { overflow: hidden; }
+.cs-chieu { position: fixed; inset: 0; z-index: 9999; background: #fffdf8; color: var(--color-gray-900); display: flex; flex-direction: column; font-family: var(--font-latin); }
+.csc-dau { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 14px 24px; border-bottom: 1px solid var(--color-gray-200); font-size: 1rem; }
+.csc-dau .cs-tag, .csc-dau .cs-loai { font-size: .9rem; padding: 4px 12px; }
+.csc-so { font-weight: 800; font-size: 1.15rem; color: var(--color-red-700); }
+.csc-dem { color: var(--color-gray-600); font-size: .95rem; }
+.csc-x { margin-left: auto; width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid var(--color-gray-200); background: #fff; font-size: 1.3rem; cursor: pointer; }
+.csc-than { flex: 1 1 auto; overflow: auto; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 22px; padding: 24px 5vw; text-align: center; cursor: pointer; }
+.csc-than > :first-child { margin-top: auto; }
+.csc-than > :last-child { margin-bottom: auto; }
+.csc-lenh { font-size: clamp(1.1rem, 2.2vw, 1.6rem); color: var(--color-gray-600); }
+.csc-de { font-size: clamp(2rem, 5.5vw, 4.4rem); line-height: 1.45; font-weight: 600; word-break: break-word; }
+.csc-ctx { font-size: clamp(1.1rem, 2.4vw, 1.8rem); color: var(--color-gray-600); }
+.csc-an { font-size: .5em; color: var(--color-gray-500); font-weight: 400; }
+.csc-tu { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+.csc-o { font-size: clamp(1.6rem, 4vw, 3.2rem); padding: 6px 22px; border: 2px solid var(--color-gold-400); background: var(--color-gold-50); border-radius: 14px; }
+.csc-opts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 22px; width: min(1100px, 100%); }
+.csc-opts li { display: flex; align-items: center; gap: 16px; font-size: clamp(1.4rem, 3.4vw, 2.6rem); padding: 12px 22px; border: 2px solid var(--color-gray-200); border-radius: 16px; background: #fff; text-align: left; }
+.csc-opts li b { flex: none; width: 1.6em; height: 1.6em; border-radius: 50%; background: var(--color-gray-100); display: inline-flex; align-items: center; justify-content: center; font-size: .7em; }
+.csc-opts li.is-mo { opacity: .45; }
+.csc-opts li.is-dung { border-color: var(--color-green-600); background: var(--color-green-50); color: var(--color-green-600); font-weight: 700; }
+.csc-opts li.is-dung b { background: var(--color-green-600); color: #fff; }
+.csc-hien { font: inherit; font-size: clamp(1.1rem, 2.2vw, 1.5rem); font-weight: 700; padding: 14px 28px; border-radius: 999px; border: 2px dashed var(--color-red-500); background: var(--color-red-50); color: var(--color-red-700); cursor: pointer; }
+.csc-hien small { font-weight: 400; opacity: .7; }
+.csc-dap { display: flex; flex-direction: column; gap: 10px; align-items: center; }
+.csc-dap-chu { font-size: clamp(1.8rem, 4.6vw, 3.6rem); font-weight: 800; color: var(--color-green-600); }
+.csc-sai { font-size: clamp(1.1rem, 2.4vw, 1.8rem); color: var(--color-red-700); }
+.csc-why { font-size: clamp(1rem, 2vw, 1.5rem); color: var(--color-gray-700); max-width: 1000px; line-height: 1.5; }
+.csc-chan { display: flex; align-items: center; gap: 12px; padding: 12px 24px; border-top: 1px solid var(--color-gray-200); }
+.csc-nut { font: inherit; font-weight: 700; font-size: 1.05rem; min-height: 52px; padding: 0 24px; border-radius: 999px; border: 1.5px solid var(--color-gray-300); background: #fff; cursor: pointer; }
+.csc-nut[disabled] { opacity: .35; cursor: default; }
+.csc-goi { flex: 1; text-align: center; color: var(--color-gray-500); font-size: .9rem; }
+@media (max-width: 720px) {
+  .csc-opts { grid-template-columns: 1fr; }
+  .csc-goi { display: none; }
+  .csc-chan { justify-content: space-between; }
+}
+
+/* ---------- In (chi khi bam 🖨️ In o tab nay) ---------- */
+@media print {
+  html.cs-dang-in body { background: #fff; }
+  html.cs-dang-in .admin-header, html.cs-dang-in .tr-tabs, html.cs-dang-in .cs-cong-cu, html.cs-dang-in .admin-gate,
+  html.cs-dang-in .cs-wrap > .admin-section-title, html.cs-dang-in .cs-wrap > .tr-hint { display: none !important; }
+  html.cs-dang-in #adminDash > :not(#trCauSai):not(.admin-header):not(.tr-tabs) { display: none !important; }
+  html.cs-dang-in .cs-in-dau { display: block; font-size: 1.2rem; font-weight: 800; margin-bottom: 6px; }
+  html.cs-dang-in .cs-the, html.cs-dang-in .cs-tu-ds { box-shadow: none; border: 1px solid #ccc; }
+  html.cs-dang-in .cs-the { border-left: 4px solid #999; padding: 8px 12px; }
+  html.cs-dang-in .cs-ai:not([open]) { display: none; }
+  html.cs-dang-in .cs-ai summary { color: #000; }
+  html.cs-dang-in .cs-bar > span { background: #888 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  html.cs-dang-in .cs-ds { gap: 8px; }
+}

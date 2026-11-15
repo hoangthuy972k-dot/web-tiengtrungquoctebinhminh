@@ -4788,6 +4788,13 @@ app.get('/api/admin/report', requireAdmin, asyncRoute(async (req, res) => {
   res.json({ generatedAt: Date.now(), today, students });
 }));
 
+// Tab "📊 Câu lớp hay sai" o /admin: cau / tu ca lop hay sai trong tuan (kho "Câu em từng sai" da dong bo
+// + tu dang no) — GET /api/admin/cau-sai, chi giao vien. Xem cau-lop-sai.js.
+require('./cau-lop-sai')(app, {
+  requireAdmin, asyncRoute, loadClassState, loadUserNames, loadScoreOf, loadResume, loadPartDone,
+  MUC_LUC_BAI, tuVungBai, vnWeekKey, VN_OFFSET_MS,
+});
+
 // Giong doc tieng Trung (/api/tts GET + POST, /api/tts/cauhinh, tab "🔊 Giong doc" o /admin):
 // Google nhu truoc hoac Azure neural (co giao chon o trang quan tri), co bo nho dem va han muc thang — xem tts-azure.js.
 // Khoa API chi nam o may chu, khong bao gio toi trinh duyet.

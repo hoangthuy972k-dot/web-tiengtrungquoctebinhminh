@@ -8,6 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/admin.css">
+<link rel="stylesheet" href="/css/admin-cau-sai.css">
 </head>
 <body class="admin-body">
 
@@ -41,6 +42,7 @@
     <button type="button" class="tr-tab active" data-tab="students" role="tab" aria-selected="true">👩‍🎓 Học sinh</button>
     <button type="button" class="tr-tab" data-tab="nhac" role="tab" aria-selected="false">📣 Cần nhắc học <span class="gy-dem" id="nhTabDem" hidden>0</span></button>
     <button type="button" class="tr-tab" data-tab="classes" role="tab" aria-selected="false">🏫 Lớp &amp; bài giao</button>
+    <button type="button" class="tr-tab" data-tab="csai" role="tab" aria-selected="false">📊 Câu lớp hay sai</button>
     <button type="button" class="tr-tab" data-tab="gopy" role="tab" aria-selected="false">💬 Góp ý <span class="gy-dem" id="gyTabDem" hidden>0</span></button>
     <button type="button" class="tr-tab" data-tab="qmk" role="tab" aria-selected="false">🔑 Quên mật khẩu <span class="gy-dem" id="qmkTabDem" hidden>0</span></button>
     <button type="button" class="tr-tab" data-tab="ntin" role="tab" aria-selected="false">🌾 Tin nhắn nông trại <span class="gy-dem" id="ntinTabDem" hidden>0</span></button>
@@ -113,6 +115,9 @@
   <!-- Lop hoc & bai giao -->
   <div id="trClasses" hidden></div>
 
+  <!-- Cau / tu ca lop hay sai trong tuan (kho "Câu em từng sai" cua hoc sinh) — de giang lai tren lop -->
+  <div id="trCauSai" hidden></div>
+
   <!-- Gop y cua hoc sinh -->
   <div id="trGopY" hidden></div>
 
@@ -134,5 +139,6 @@
 <script src="/js/admin-quen-mk.js"></script>
 <script src="/js/admin-nong-trai-tin.js"></script>
 <script src="/js/admin-giong-doc.js"></script>
+<script src="/js/admin-cau-sai.js"></script>
 </body>
 </html>

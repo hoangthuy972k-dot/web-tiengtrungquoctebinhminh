@@ -281,7 +281,7 @@
       S.phim = null;
       if (dung) T.keuDung(); else { T.keuSai(); T.rung(120); }
       // cau sai -> kho "Cau em tung sai" (cau-sai.js) cho ke hoach "📅 Hom nay em on gi" o trang chu
-      if (!dung && window.CauSai && c.k !== 'noi') { try { window.CauSai.ghi(c, { lv: (S.o && S.o.level) || '', src: 'obc' }); } catch (e) { /* bo qua */ } }
+      if (!dung && window.CauSai && c.k !== 'noi') { try { window.CauSai.ghi(c, { lv: (S.o && S.o.level) || '', src: 'obc', tl: typeof chon === 'number' && c.opts ? c.opts[chon] : '' }); } catch (e) { /* bo qua */ } }
       if (c.doc) sau(dung ? 280 : 450, function () { T.doc(c.doc); });
       var dap = '';
       if (c.k && window.CauDT) dap = dung ? '' : '<p class="obc-kq-dap">Đáp án: ' + window.CauDT.dapHtml(c, c.dap) + '</p>';

@@ -4414,446 +4414,609 @@ var dialogData = [
 ];
 var listenData = [
  {
-  "audio": "小林，你最近怎么总是在看手机？我在等一家公司的消息。上周我去应聘了，笔试答得还不错，可是面试的时候有点儿紧张。别担心，你准备得那么认真，肯定没问题。希望吧。不论结果怎么样，这次经历对我都很有帮助。",
+  "audio": "我上次去那家饭馆，菜很贵，服务员态度也不好，从那以后我就再也没去过。",
   "questions": [
    {
-    "q": "小林在等什么？",
+    "q": "Từ lần đó người nói có quay lại nhà hàng ấy không?",
     "opts": [
-     "朋友的短信",
-     "公司的消息",
-     "考试成绩"
+     "Thỉnh thoảng vẫn đến",
+     "Từ đó không đến nữa",
+     "Tuần nào cũng đến"
     ],
-    "ans": 1
-   },
-   {
-    "q": "小林面试的时候怎么样？",
-    "opts": [
-     "答得很好",
-     "非常放松",
-     "有点儿紧张"
-    ],
-    "ans": 2
+    "ans": 1,
+    "exp": "从那以后就再也没去过 = từ đó đến giờ không đến lại lần nào; ôn 态度 (bài 14)."
    }
   ]
  },
  {
-  "audio": "您好，请问你们公司还在招聘实习生吗？在招聘。你先在网上报名，填写个人信息就可以了。需要参加笔试吗？需要，笔试以后还有面试，面试由我们部门的负责人来做。好的，谢谢您！",
+  "audio": "这次晚会由王老师负责安排，同学们有什么想法，可以直接给她发短信。",
   "questions": [
    {
-    "q": "应聘实习生，第一步要做什么？",
+    "q": "Ai phụ trách sắp xếp buổi liên hoan?",
     "opts": [
-     "在网上报名",
-     "参加面试",
-     "给负责人打电话"
+     "Cô Vương",
+     "Lớp trưởng",
+     "Các bạn trong lớp"
     ],
-    "ans": 0
+    "ans": 0,
+    "exp": "由王老师负责安排 = do cô Vương phụ trách sắp xếp; 由 + người + V."
    },
    {
-    "q": "面试由谁来做？",
+    "q": "Có ý kiến thì làm thế nào?",
     "opts": [
-     "公司经理",
-     "学校老师",
-     "部门负责人"
+     "Gặp cô sau giờ học",
+     "Viết lên bảng",
+     "Nhắn tin cho cô"
     ],
-    "ans": 2
+    "ans": 2,
+    "exp": "直接给她发短信 = nhắn tin thẳng cho cô."
    }
   ]
  },
  {
-  "audio": "王明，你在那家工厂实习得怎么样？挺好的，学到了很多课本上没有的东西。我发现在书上看不如自己做一遍，很多细节只有做的时候才能发现。是啊，实习还能让我们更清楚自己的职业方向。",
+  "audio": "我觉得在网上看招聘信息不如直接去公司问问，这样能了解得更清楚。",
   "questions": [
    {
-    "q": "王明在哪儿实习？",
+    "q": "Người nói thấy cách nào tốt hơn?",
     "opts": [
-     "医院",
-     "工厂",
-     "学校"
+     "Xem tin tuyển dụng trên mạng",
+     "Đến thẳng công ty hỏi",
+     "Nhờ bạn bè hỏi giúp"
     ],
-    "ans": 1
+    "ans": 1,
+    "exp": "A 不如 B: xem trên mạng 不如 đến công ty hỏi → cách sau (B) tốt hơn."
+   }
+  ]
+ },
+ {
+  "audio": "你明天就要面试了，今天晚上把自我介绍再看一看，然后早点儿睡，别太紧张。",
+  "questions": [
+   {
+    "q": "Ngày mai người nghe làm gì?",
+    "opts": [
+     "Đi thực tập",
+     "Thi viết",
+     "Đi phỏng vấn"
+    ],
+    "ans": 2,
+    "exp": "你明天就要面试了 = ngày mai bạn sắp phỏng vấn rồi."
    },
    {
-    "q": "王明觉得怎么学更好？",
+    "q": "Người nói khuyên gì?",
     "opts": [
-     "自己做一遍",
-     "在书上看",
-     "问老师"
+     "Xem lại phần tự giới thiệu rồi ngủ sớm",
+     "Thức khuya ôn bài",
+     "Đi mua quần áo mới"
     ],
-    "ans": 0
+    "ans": 0,
+    "exp": "把自我介绍再看一看 = xem lại phần tự giới thiệu một chút; 早点儿睡 = ngủ sớm."
+   }
+  ]
+ },
+ {
+  "audio": "我姐姐大学学的是医药，毕业以后在一家医院工作，她说这个职业又累又有意义。",
+  "questions": [
+   {
+    "q": "Chị gái học ngành gì?",
+    "opts": [
+     "Thương mại",
+     "Giáo dục",
+     "Y dược"
+    ],
+    "ans": 2,
+    "exp": "学的是医药 = học ngành y dược."
+   },
+   {
+    "q": "Chị thấy nghề này thế nào?",
+    "opts": [
+     "Mệt nhưng có ý nghĩa",
+     "Nhẹ nhàng, lương cao",
+     "Không thích lắm"
+    ],
+    "ans": 0,
+    "exp": "又累又有意义 = vừa mệt vừa có ý nghĩa; ôn 意义 (bài 13)."
+   }
+  ]
+ },
+ {
+  "audio": "这次期中考试的题不难，可是我答得太快了，很多细节没注意，结果错了好几道。",
+  "questions": [
+   {
+    "q": "Vì sao người nói làm sai nhiều câu?",
+    "opts": [
+     "Đề quá khó",
+     "Làm quá nhanh, không chú ý chi tiết",
+     "Không kịp làm xong"
+    ],
+    "ans": 1,
+    "exp": "答得太快了，很多细节没注意 = làm bài nhanh quá, nhiều chi tiết không để ý."
+   }
+  ]
+ },
+ {
+  "audio": "报名的时候要填写个人信息，例如姓名、年龄和电话，写完以后公司会给你发短信。",
+  "questions": [
+   {
+    "q": "Khi đăng ký phải làm gì?",
+    "opts": [
+     "Thi viết ngay",
+     "Gọi điện cho công ty",
+     "Điền thông tin cá nhân"
+    ],
+    "ans": 2,
+    "exp": "填写个人信息 = điền thông tin cá nhân; 例如 = ví dụ như (họ tên, tuổi, điện thoại)."
+   },
+   {
+    "q": "Điền xong thì sao?",
+    "opts": [
+     "Công ty sẽ gửi tin nhắn",
+     "Phải đến phỏng vấn ngay",
+     "Được nhận vào làm luôn"
+    ],
+    "ans": 0,
+    "exp": "公司会给你发短信 = công ty sẽ nhắn tin cho bạn."
    }
   ]
  }
 ];
 var matchData = [
  {
-  "left": "招聘",
-  "right": "实习生"
- },
- {
-  "left": "填写",
-  "right": "个人信息"
- },
- {
-  "left": "积累",
-  "right": "工作经验"
- },
- {
   "left": "参加",
   "right": "笔试"
  },
  {
-  "left": "运用",
-  "right": "专业知识"
- },
- {
-  "left": "注意",
-  "right": "细节"
- },
- {
-  "left": "部门",
-  "right": "负责人"
+  "left": "照",
+  "right": "镜子"
  },
  {
   "left": "收到",
   "right": "一条短信"
  },
  {
-  "left": "留个",
-  "right": "好印象"
+  "left": "招聘",
+  "right": "毕业生"
+ },
+ {
+  "left": "注意",
+  "right": "细节"
+ },
+ {
+  "left": "运用",
+  "right": "学到的知识"
+ },
+ {
+  "left": "填写",
+  "right": "个人信息"
+ },
+ {
+  "left": "一道",
+  "right": "题"
  }
 ];
 var fillData = [
  {
-  "pre": "期中考试后就",
+  "pre": "上次吃了那家店的菜，我肚子疼了一晚上，以后",
   "blank": "再也",
-  "post": "没见过你了。",
-  "hint": "(không … nữa)",
+  "post": "不去了。",
+  "hint": "(không bao giờ … nữa)",
   "ans": "再也",
-  "exp": "再也 + 没 + V过: từ đó đến nay không … nữa."
+  "exp": "再也不 + V + 了 = từ nay sẽ không bao giờ … nữa — quyết tâm cho tương lai."
  },
  {
-  "pre": "他们正在",
+  "pre": "下个月的运动会",
+  "blank": "由",
+  "post": "体育老师来安排，我们只要按时参加就行。",
+  "hint": "(do)",
+  "ans": "由",
+  "exp": "由 + người + 来 + V = do ai làm, ai phụ trách: thầy thể dục sắp xếp."
+ },
+ {
+  "pre": "今天风这么大，我们",
+  "blank": "不如",
+  "post": "在家看电视吧。",
+  "hint": "(chi bằng)",
+  "ans": "不如",
+  "exp": "不如 + cách khác (+ 吧) = chi bằng …: gió to thế này, ở nhà xem tivi tốt hơn."
+ },
+ {
+  "pre": "明天考试，今天晚上我要把学过的汉字",
+  "blank": "复习复习",
+  "post": "。",
+  "hint": "(ôn qua một chút)",
+  "ans": "复习复习",
+  "exp": "把 + tân ngữ + ABAB = làm qua một chút (việc sắp làm); động từ hai âm tiết lặp nguyên ABAB."
+ },
+ {
+  "pre": "这家公司最近在",
   "blank": "招聘",
-  "post": "实习生。",
+  "post": "会说中文的人，你可以去试试。",
   "hint": "(tuyển dụng)",
   "ans": "招聘",
-  "exp": "招聘 = công ty tuyển người; 应聘 = người đi xin việc."
+  "exp": "招聘 = công ty tuyển người; người đi xin việc thì là 应聘."
  },
  {
-  "pre": "很多单位都很重视有没有实习",
-  "blank": "经历",
-  "post": "。",
-  "hint": "(kinh nghiệm đã trải qua)",
-  "ans": "经历",
-  "exp": "实习经历 = quá trình / kinh nghiệm thực tập."
+  "pre": "买房子以前，要",
+  "blank": "考虑",
+  "post": "离公司远不远、交通方便不方便。",
+  "hint": "(cân nhắc)",
+  "ans": "考虑",
+  "exp": "考虑 + việc cần tính = cân nhắc, tính đến …; ôn 交通 (bài 8)."
  },
  {
-  "pre": "我还在等",
-  "blank": "消息",
-  "post": "，希望能有好结果。",
-  "hint": "(tin tức)",
-  "ans": "消息",
-  "exp": "等消息 = chờ tin."
+  "pre": "外面下这么大的雨，他",
+  "blank": "肯定",
+  "post": "不会来了，我们先吃吧。",
+  "hint": "(chắc chắn)",
+  "ans": "肯定",
+  "exp": "肯定 + 不会 / 会 + V = chắc chắn (sẽ / không) …, là phán đoán của người nói."
  },
  {
-  "pre": "我先在网上报名，",
-  "blank": "填写",
-  "post": "个人信息。",
-  "hint": "(điền)",
-  "ans": "填写",
-  "exp": "填写 + 信息 / 表格."
+  "pre": "听到自己得了比赛第一名，她",
+  "blank": "激动",
+  "post": "得说不出话来。",
+  "hint": "(xúc động)",
+  "ans": "激动",
+  "exp": "激动得 + kết quả = xúc động đến mức …; bổ ngữ trình độ dùng 得."
  },
  {
-  "pre": "那天是",
-  "blank": "由",
-  "post": "部门负责人来面试的。",
-  "hint": "(do ai làm)",
-  "ans": "由",
-  "exp": "由 + người + 来 + V."
- },
- {
-  "pre": "",
-  "blank": "不论",
-  "post": "结果怎么样，对我以后找工作肯定有帮助。",
-  "hint": "(bất kể)",
-  "ans": "不论",
-  "exp": "不论……，都 / 也……"
- },
- {
-  "pre": "李文激动得把手机",
+  "pre": "这些旧报纸没用了，你帮我",
   "blank": "扔",
-  "post": "到床上。",
-  "hint": "(ném)",
+  "post": "了吧。",
+  "hint": "(vứt)",
   "ans": "扔",
-  "exp": "把 + O + 扔到 + nơi chốn."
+  "exp": "扔 = vứt đi, ném đi: đồ không dùng nữa thì 扔了."
  },
  {
-  "pre": "他去理发店把头发",
-  "blank": "理了理",
-  "post": "。",
-  "hint": "(sửa qua một chút — việc đã làm)",
-  "ans": "理了理",
-  "exp": "把 + O + V了V (điểm 3)."
+  "pre": "这间新教室",
+  "blank": "能够",
+  "post": "坐一百多个学生。",
+  "hint": "(có thể)",
+  "ans": "能够",
+  "exp": "能够 = có thể, đủ khả năng: phòng học chứa được hơn một trăm người."
  },
  {
-  "pre": "有些事情，在课本上学",
-  "blank": "不如",
-  "post": "自己做一遍。",
-  "hint": "(không bằng)",
-  "ans": "不如",
-  "exp": "A不如B (điểm 4)."
+  "pre": "学校",
+  "blank": "规定",
+  "post": "，上课的时候不能用手机。",
+  "hint": "(quy định)",
+  "ans": "规定",
+  "exp": "规定 làm động từ: 学校规定… = nhà trường quy định …."
+ },
+ {
+  "pre": "他说得太快了，我",
+  "blank": "完全",
+  "post": "听不懂。",
+  "hint": "(hoàn toàn)",
+  "ans": "完全",
+  "exp": "完全 + 不 / V不懂 = hoàn toàn không …; đứng trước động từ."
+ },
+ {
+  "pre": "我喜欢很多运动，",
+  "blank": "例如",
+  "post": "游泳、跑步和打篮球。",
+  "hint": "(ví dụ như)",
+  "ans": "例如",
+  "exp": "例如 + vài ví dụ = ví dụ như …, dùng giống 比如."
  }
 ];
 var sortData = [
  {
   "words": [
-   "期中考试后",
-   "就",
-   "再也没",
-   "见过",
-   "你了",
+   "他",
+   "把",
+   "书包",
+   "扔",
+   "在",
+   "床上",
+   "了",
    "。"
   ],
-  "ans": "期中考试后就再也没见过你了。",
-  "audio": "期中考试后就再也没见过你了。"
+  "ans": "他把书包扔在床上了。",
+  "audio": "他把书包扔在床上了。"
  },
  {
   "words": [
-   "那天",
+   "我们",
+   "公司的",
+   "面试",
    "是",
    "由",
-   "部门负责人",
-   "来",
-   "面试",
+   "经理",
+   "负责",
    "的",
    "。"
   ],
-  "ans": "那天是由部门负责人来面试的。",
-  "audio": "那天是由部门负责人来面试的。"
+  "ans": "我们公司的面试是由经理负责的。",
+  "audio": "我们公司的面试是由经理负责的。"
+ },
+ {
+  "words": [
+   "这家店",
+   "的",
+   "衣服",
+   "不如",
+   "那家",
+   "便宜",
+   "。"
+  ],
+  "ans": "这家店的衣服不如那家便宜。",
+  "audio": "这家店的衣服不如那家便宜。"
+ },
+ {
+  "words": [
+   "你",
+   "先",
+   "把",
+   "答案",
+   "检查",
+   "检查",
+   "再",
+   "交",
+   "。"
+  ],
+  "ans": "你先把答案检查检查再交。",
+  "audio": "你先把答案检查检查再交。"
  },
  {
   "words": [
    "他",
-   "去理发店",
-   "把",
-   "头发",
-   "理了理",
+   "去了",
+   "国外",
+   "，",
+   "我们",
+   "再也",
+   "没",
+   "联系",
+   "过",
    "。"
   ],
-  "ans": "他去理发店把头发理了理。",
-  "audio": "他去理发店把头发理了理。"
+  "ans": "他去了国外，我们再也没联系过。",
+  "audio": "他去了国外，我们再也没联系过。"
  },
  {
   "words": [
-   "在课本上学",
-   "不如",
-   "自己",
-   "做一遍",
+   "刘明",
+   "是",
+   "我们",
+   "部门",
+   "的",
+   "负责人",
    "。"
   ],
-  "ans": "在课本上学不如自己做一遍。",
-  "audio": "在课本上学不如自己做一遍。"
+  "ans": "刘明是我们部门的负责人。",
+  "audio": "刘明是我们部门的负责人。"
  },
  {
   "words": [
+   "这个",
+   "工厂",
+   "招聘",
+   "了",
+   "二十多个",
+   "毕业生",
+   "。"
+  ],
+  "ans": "这个工厂招聘了二十多个毕业生。",
+  "audio": "这个工厂招聘了二十多个毕业生。"
+ },
+ {
+  "words": [
+   "镜子",
+   "里",
+   "的",
    "我",
-   "先",
-   "在网上",
-   "报名",
-   "，",
-   "然后",
-   "等",
-   "公司",
-   "通知我",
+   "看起来",
+   "有点儿",
+   "累",
    "。"
   ],
-  "ans": "我先在网上报名，然后等公司通知我。",
-  "audio": "我先在网上报名，然后等公司通知我。"
- },
- {
-  "words": [
-   "学生们",
-   "通过",
-   "实习",
-   "，",
-   "可以",
-   "积累",
-   "工作经验",
-   "。"
-  ],
-  "ans": "学生们通过实习，可以积累工作经验。",
-  "audio": "学生们通过实习，可以积累工作经验。"
+  "ans": "镜子里的我看起来有点儿累。",
+  "audio": "镜子里的我看起来有点儿累。"
  }
 ];
 var mcData = [
  {
-  "q": "期中考试后就再也＿＿见过你了。",
+  "q": "Bạn hứa với mẹ: “Sau này con sẽ không bao giờ về nhà muộn thế này nữa.”",
   "opts": [
-   "不",
-   "别",
-   "没",
-   "也"
-  ],
-  "ans": 2,
-  "exp": "Kể việc từ quá khứ đến nay, có 过 → 再也没."
- },
- {
-  "q": "对不起，我以后再也＿＿迟到了。",
-  "opts": [
-   "不",
-   "没",
-   "别",
-   "还"
+   "以后我再也不这么晚回家了。",
+   "以后我再也没这么晚回家了。",
+   "以后我再也不这么晚回家过。",
+   "以后我不再也这么晚回家了。"
   ],
   "ans": 0,
-  "exp": "Lời hứa về tương lai → 再也不."
+  "exp": "Lời hứa cho tương lai dùng 再也不 + V + 了; 再也没 chỉ dùng cho việc từ trước đến nay, và 过 không đi với lời hứa."
  },
  {
-  "q": "那天是＿＿部门负责人来面试的。",
+  "q": "A: “你还跟你的邻居联系吗？” — B đáp:",
   "opts": [
-   "由于",
-   "被",
-   "从",
-   "由"
-  ],
-  "ans": 3,
-  "exp": "由 dẫn ra người thực hiện; 由于 chỉ nguyên nhân."
- },
- {
-  "q": "你先把作业＿＿，然后再交给老师。",
-  "opts": [
-   "检查",
-   "检查检查",
-   "检查一检查",
-   "检查了检查了"
-  ],
-  "ans": 1,
-  "exp": "把 + O + ABAB; động từ hai âm tiết không chen 一."
- },
- {
-  "q": "坐公交要换两次车，我觉得坐公交＿＿坐地铁方便。",
-  "opts": [
-   "不如",
-   "比",
-   "跟",
-   "被"
+   "他搬家以后，我们就再也没联系过。",
+   "他搬家以后，我们就再也不联系过。",
+   "他搬家以后，我们再也就没联系过。",
+   "他搬家以后，我们就再也没联系了过。"
   ],
   "ans": 0,
-  "exp": "A不如B + Adj = A không … bằng B."
+  "exp": "Việc từ quá khứ đến nay: 就 + 再也没 + V + 过; 就 đứng trước 再也, 过 theo ngay sau động từ."
  },
  {
-  "q": "＿＿结果怎么样，这次经历对我都很有帮助。",
+  "q": "Bạn muốn nói: “Việc này do tôi phụ trách.”",
   "opts": [
-   "虽然",
+   "这件事由我负责。",
+   "这件事由于我负责。",
+   "这件事被我负责。",
+   "这件事从我负责。"
+  ],
+  "ans": 0,
+  "exp": "由 + người + V = do ai làm; 由于 là “bởi vì” (bài 2), 被 là câu bị động, 从 là “từ”."
+ },
+ {
+  "q": "Mẹ nhờ bạn: “Con xem qua lá thư này giúp mẹ một chút.”",
+  "opts": [
+   "你帮我把这些照片看看。",
+   "你帮我把这些照片看了看。",
+   "你帮我看看把这些照片。",
+   "你帮我把这些照片看一看了。"
+  ],
+  "ans": 0,
+  "exp": "Việc chưa làm (nhờ, đề nghị) dùng 把 + O + VV / V一V; V了V là việc đã làm xong; 把 + O phải đứng trước động từ."
+ },
+ {
+  "q": "Câu nào SAI?",
+  "opts": [
+   "你把这个问题考虑一考虑。",
+   "我把今天的作业看了看。",
+   "我们把明天的计划商量商量。",
+   "他把衣服洗了洗就出门了。"
+  ],
+  "ans": 0,
+  "exp": "Động từ hai âm tiết lặp ABAB (考虑考虑), không chen 一; 一 chỉ chen vào động từ một âm tiết (看一看)."
+ },
+ {
+  "q": "Bạn muốn nói: “Đi taxi không nhanh bằng đi tàu điện ngầm.”",
+  "opts": [
+   "坐出租车不如坐地铁快。",
+   "坐出租车不如坐地铁很快。",
+   "坐地铁不如坐出租车快。",
+   "坐出租车不如快坐地铁。"
+  ],
+  "ans": 0,
+  "exp": "A 不如 B + tính từ: cái tốt hơn (地铁) đứng sau 不如; tính từ đứng cuối, không thêm 很."
+ },
+ {
+  "q": "A: “都十一点了，还等车吗？” — B đáp:",
+  "opts": [
+   "我们不如打车回去吧。",
+   "我们打车回去不如吧。",
+   "我们不如打车回去了吗？",
+   "我们没有打车回去吧。"
+  ],
+  "ans": 0,
+  "exp": "不如 + cách làm khác + 吧 = chi bằng …, dùng để đề nghị; 不如 đứng trước động từ, không đặt cuối câu."
+ },
+ {
+  "q": "“＿＿天气怎么样，爷爷每天早上都要出去走一走。”",
+  "opts": [
    "不论",
+   "虽然",
    "因为",
-   "即使"
+   "如果"
   ],
-  "ans": 1,
-  "exp": "不论 + từ nghi vấn (怎么样)，都……"
+  "ans": 0,
+  "exp": "不论 + câu có từ nghi vấn (怎么样) + 都 = bất kể thời tiết thế nào; giống 不管 (bài 8)."
  },
  {
-  "q": "现在很多单位在＿＿毕业生时，都很重视实习经历。",
+  "q": "A: “你哥哥最近忙什么呢？” B: “他在找工作，昨天去一家工厂＿＿了。”",
   "opts": [
    "应聘",
-   "报名",
    "招聘",
-   "面试"
+   "考虑",
+   "毕业"
   ],
-  "ans": 2,
-  "exp": "Đơn vị tuyển người → 招聘."
+  "ans": 0,
+  "exp": "Người đi xin việc thì 应聘; 招聘 là việc của công ty (tuyển người)."
  },
  {
-  "q": "我先在网上报名，＿＿个人信息。",
+  "q": "A: “笔试通过了吗？” B: “通过了，下个星期还要去＿＿，跟负责人见面谈谈。”",
   "opts": [
-   "填写",
-   "运用",
-   "考虑",
+   "面试",
+   "笔试",
+   "报名",
+   "填写"
+  ],
+  "ans": 0,
+  "exp": "Gặp người phụ trách nói chuyện trực tiếp là 面试 (phỏng vấn), vòng sau thi viết 笔试."
+ },
+ {
+  "q": "“你听到那个好＿＿了吗？小雪通过面试了！”",
+  "opts": [
+   "消息",
+   "短信",
+   "答案",
    "规定"
   ],
   "ans": 0,
-  "exp": "填写 + 信息 / 表格."
+  "exp": "消息 = tin tức (chuyện mới xảy ra), 好消息 = tin vui; 短信 là tin nhắn điện thoại."
  },
  {
-  "q": "只有在做的时候，才会发现有很多＿＿需要注意。",
+  "q": "“考试的时候要先看清楚题再＿＿，别太着急。”",
   "opts": [
-   "答案",
-   "细节",
-   "职业",
-   "课堂"
-  ],
-  "ans": 1,
-  "exp": "注意细节 = chú ý chi tiết."
- },
- {
-  "q": "他希望能够＿＿专业知识完成任务。",
-  "opts": [
-   "激动",
-   "扔",
-   "运用",
+   "答",
+   "问",
+   "讲",
    "理发"
   ],
-  "ans": 2,
-  "exp": "运用 + 知识 = vận dụng kiến thức."
+  "ans": 0,
+  "exp": "答 = trả lời, làm bài: đọc rõ đề rồi mới làm; ôn 着急 (lo, vội)."
+ },
+ {
+  "q": "“这次去国外比赛是我最难忘的一次＿＿。”",
+  "opts": [
+   "经历",
+   "经验",
+   "职业",
+   "细节"
+  ],
+  "ans": 0,
+  "exp": "经历 = việc đã trải qua, đếm được (一次经历); 经验 = kinh nghiệm tích luỹ, không nói 一次经验."
  }
 ];
 var speakingData = {
- "intro": "Nhấn nút loa nghe câu hỏi (câu hỏi phần Khởi động, câu hỏi đọc hiểu của 4 bài khoá, kể lại bài khoá và đóng vai phỏng vấn), rồi tự ghi âm câu trả lời — cố dùng từ mới và 4 điểm ngữ pháp của bài.",
+ "intro": "Nhấn nút loa nghe câu hỏi (câu hỏi phần Khởi động, câu hỏi đọc hiểu, kể lại bài khoá và đóng vai của sách), rồi tự ghi âm câu trả lời — cố dùng từ mới và 4 điểm ngữ pháp của bài: 再也不/没, 由, 把+O+V(一/了)V, A不如B.",
  "questions": [
   {
    "q_zh": "你以前实习过吗？是在哪儿实习的？",
    "q_vn": "Trước đây bạn đã thực tập chưa? Thực tập ở đâu?",
    "hint": "我实习过 / 还没实习过。我是在……实习的，……",
-   "sample": "我实习过一次。去年暑假，我是在一家贸易公司实习的，实习了两个月左右。在那里，我不仅积累了一些工作经验，还了解了公司的管理规定。",
-   "sample_vn": "Tôi đã thực tập một lần. Hè năm ngoái tôi thực tập ở một công ty thương mại, khoảng hai tháng. Ở đó tôi không chỉ tích lũy được ít kinh nghiệm làm việc mà còn hiểu được quy định quản lý của công ty.",
-   "note": "Câu hỏi phần Khởi động của sách; ôn 左右 (Bài 13), 不仅……还…… (Bài 3)."
+   "sample": "我实习过一次。去年夏天，我是在一家贸易公司实习的，实习了两个月左右。在那里，我不仅积累了一些工作经验，还了解了公司的管理规定。",
+   "sample_vn": "Tôi đã thực tập một lần. Mùa hè năm ngoái tôi thực tập ở một công ty thương mại, khoảng hai tháng. Ở đó tôi không chỉ tích lũy được ít kinh nghiệm làm việc mà còn hiểu được quy định quản lý của công ty.",
+   "note": "Câu hỏi phần Khởi động của sách; ôn 左右 (bài 13), 不仅……还…… (bài 3)."
   },
   {
    "q_zh": "你觉得面试的时候需要注意哪些方面？",
    "q_vn": "Bạn thấy khi phỏng vấn cần chú ý những mặt nào?",
-   "hint": "首先……，其次……，另外……",
-   "sample": "我觉得首先要穿得正式一点儿，给面试官留个好印象；其次要提前把自我介绍练一练，回答问题的时候不要太紧张；另外，还要了解一下公司的情况，注意说话的细节。",
-   "sample_vn": "Tôi nghĩ trước hết phải ăn mặc trang trọng một chút, để lại ấn tượng tốt cho người phỏng vấn; thứ hai là tập trước phần tự giới thiệu, khi trả lời đừng quá căng thẳng; ngoài ra còn phải tìm hiểu tình hình công ty, chú ý chi tiết khi nói.",
-   "note": "Câu hỏi phần Khởi động; ôn 首先……其次…… (Bài 14), 把……V一V (điểm 3)."
+   "hint": "我觉得首先……，然后……，还有……",
+   "sample": "我觉得首先要穿得正式一点儿，给对方留个好印象；然后要提前了解一下公司的情况；还有，回答问题的时候别太紧张，说话要注意细节。",
+   "sample_vn": "Tôi nghĩ trước hết phải ăn mặc trang trọng một chút, để lại ấn tượng tốt cho người phỏng vấn; sau đó phải tìm hiểu trước tình hình công ty; ngoài ra khi trả lời đừng quá căng thẳng, nói năng phải chú ý chi tiết.",
+   "note": "Câu hỏi phần Khởi động; ôn 首先……然后…… (bài 14)."
   },
   {
    "q_zh": "李文为什么现在就想去实习？他应聘成功了吗？",
    "q_vn": "Vì sao Lý Văn bây giờ đã muốn đi thực tập? Cậu ấy ứng tuyển thành công chưa?",
    "hint": "因为现在很多单位……，所以他想……。他还在……",
-   "sample": "因为现在很多单位在招聘毕业生时，都很重视有没有实习经历，所以他想提前去锻炼一下，积累一些经验。现在还不知道结果，他还在等消息。",
-   "sample_vn": "Vì bây giờ nhiều đơn vị khi tuyển sinh viên tốt nghiệp đều rất coi trọng kinh nghiệm thực tập, nên cậu ấy muốn đi rèn luyện trước, tích lũy ít kinh nghiệm. Hiện chưa biết kết quả, cậu ấy vẫn đang chờ tin.",
+   "sample": "因为找工作的时候，很多单位都要看你有没有实习过，所以他想早点儿去锻炼锻炼。他现在还不知道结果，正在等公司的通知。",
+   "sample_vn": "Vì khi tìm việc, nhiều đơn vị đều xem bạn đã thực tập chưa, nên cậu ấy muốn sớm đi rèn luyện. Hiện cậu ấy chưa biết kết quả, đang chờ thông báo của công ty.",
    "note": "Câu hỏi đọc hiểu bài khoá 1."
   },
   {
-   "q_zh": "请根据提示复述课文一。",
+   "q_zh": "陈天中和李文见面以后聊了些什么？请你用自己的话讲一讲。",
    "q_vn": "Dựa vào gợi ý, kể lại bài khoá 1.",
    "hint": "陈天中很久没有……。他问李文这段时间……。李文说他最近去……，因为那家公司……。他觉得现在很多单位……，所以他想提前……。李文说他还在……，希望……。",
-   "sample": "陈天中很久没有见到李文了。他问李文这段时间在忙什么。李文说他最近去一家医药公司应聘了，因为那家公司正在招聘实习生。他觉得现在很多单位在招聘毕业生时，都很重视有没有实习经历，所以他想提前去锻炼一下，积累一些经验。陈天中又问李文现在有没有结果。李文说他还在等消息，希望能有好结果。",
+   "sample": "陈天中很久没有见到李文了。他问李文这段时间在忙什么。李文说他最近去一家医药公司应聘了，因为那家公司正在招聘实习的学生。他觉得现在很多单位在招聘毕业生时，都很重视有没有实习经历，所以他想提前去锻炼一下，积累一些经验。陈天中又问李文现在有没有结果。李文说他还在等消息，希望能有好结果。",
    "sample_vn": "Trần Thiên Trung lâu rồi không gặp Lý Văn. Cậu hỏi dạo này Lý Văn bận gì. Lý Văn nói gần đây đi ứng tuyển ở một công ty dược vì công ty đó đang tuyển thực tập sinh… Lý Văn nói vẫn đang chờ tin, mong có kết quả tốt.",
-   "note": "Bài tập 复述 của sách (trang 52)."
+   "note": "Bài tập kể lại bài khoá của sách (trang 52)."
   },
   {
    "q_zh": "李文面试的内容是什么？他觉得这次应聘经历怎么样？",
    "q_vn": "Nội dung buổi phỏng vấn của Lý Văn là gì? Cậu ấy thấy lần ứng tuyển này thế nào?",
    "hint": "那天是由……来面试的，他让李文介绍了……。李文觉得……，不论……，都……",
-   "sample": "那天是由部门负责人来面试的，他让李文介绍了自己的学习经历、兴趣爱好和对工作的想法。李文觉得这次经历很有用，不论结果怎么样，对他以后找工作肯定有帮助。",
-   "sample_vn": "Hôm đó người phụ trách bộ phận phỏng vấn, bảo Lý Văn giới thiệu quá trình học tập, sở thích và suy nghĩ về công việc. Lý Văn thấy trải nghiệm này rất có ích, bất kể kết quả thế nào, chắc chắn có ích cho việc tìm việc sau này.",
-   "note": "Câu hỏi đọc hiểu bài khoá 2; dùng 由 (điểm 2)."
+   "sample": "面试是由部门负责人来做的，负责人让李文说了说自己的学习经历、爱好和对工作的想法。李文觉得不论能不能通过，这次经历都很有用。",
+   "sample_vn": "Buổi phỏng vấn do người phụ trách bộ phận thực hiện, người đó bảo Lý Văn nói về quá trình học tập, sở thích và suy nghĩ về công việc. Lý Văn thấy dù có qua hay không, trải nghiệm này đều rất có ích.",
+   "note": "Câu hỏi đọc hiểu bài khoá 2; dùng 由 (điểm 2), 不论……都……."
   },
   {
    "q_zh": "李文看到信息后做什么了？他是怎么看这次实习的？",
    "q_vn": "Đọc tin xong Lý Văn đã làm gì? Cậu ấy nhìn nhận lần thực tập này thế nào?",
    "hint": "他激动得……。为了……，他把……V了V……。在他看来，……",
-   "sample": "他激动得把手机扔到床上，在屋子里跳了起来。为了给大家留个好印象，他去理发店把头发理了理，又买了一身正式的衣服。在他看来，这次实习是一个新的开始，他希望能够运用专业知识完成任务，积累更多经验。",
-   "sample_vn": "Cậu ấy phấn khích đến mức ném điện thoại lên giường, nhảy cẫng lên trong phòng. Để để lại ấn tượng tốt, cậu đi cắt sửa tóc, mua một bộ quần áo lịch sự. Theo cậu, lần thực tập này là một khởi đầu mới; cậu mong vận dụng được kiến thức chuyên ngành để hoàn thành nhiệm vụ, tích lũy thêm kinh nghiệm.",
-   "note": "Câu hỏi đọc hiểu bài khoá 3; dùng 把……V了V (điểm 3)."
+   "sample": "他太激动了，高兴得跳了起来。接着他做了很多准备，例如去理发、买新衣服。在他看来，这是一个新的开始，他想好好运用学过的知识。",
+   "sample_vn": "Cậu ấy quá xúc động, vui đến nhảy cẫng lên. Tiếp đó cậu chuẩn bị rất nhiều, ví dụ đi cắt tóc, mua quần áo mới. Theo cậu, đây là một khởi đầu mới, cậu muốn vận dụng tốt kiến thức đã học.",
+   "note": "Câu hỏi đọc hiểu bài khoá 3; có thể dùng 把……V了V (điểm 3)."
   },
   {
-   "q_zh": "请根据提示复述课文三。",
+   "q_zh": "李文收到短信以后的几天是怎么过的？请你把这个故事讲给大家听。",
    "q_vn": "Dựa vào gợi ý, kể lại bài khoá 3.",
    "hint": "李文收到了一条短信，告诉他……。他看到信息后，激动得……。为了给大家……，他去理发店……，又去商店……，还打算……。他觉得这次实习是……。他希望不仅能够……，还能够……",
-   "sample": "李文收到了一条短信，告诉他通过了面试，让他下周一到公司实习。他看到信息后，激动得把手机扔到床上，在屋子里跳了起来。为了给大家留个好印象，他去理发店把头发理了理，又去商店买了一身正式的衣服，还打算在镜子前把自我介绍练一练。他觉得这次实习是一个新的开始。他希望不仅能够运用专业知识完成任务，还能够积累更多经验，为将来找工作打下基础。",
+   "sample": "李文收到了一条短信，告诉他通过了面试，让他下周一到公司实习。他看到信息后，激动得把手机扔到床上，在屋子里跳了起来。为了给大家留个好印象，他去理发店理发，又去商店买了一身正式的衣服，还打算在镜子前把自我介绍练一练。他觉得这次实习是一个新的开始。他希望不仅能够运用专业知识完成任务，还能够积累更多经验，为将来找工作打下基础。",
    "sample_vn": "Lý Văn nhận được một tin nhắn báo cậu đã qua phỏng vấn, thứ Hai tuần sau đến công ty thực tập… Cậu mong không chỉ vận dụng được kiến thức chuyên ngành mà còn tích lũy thêm kinh nghiệm, đặt nền móng cho việc tìm việc sau này.",
-   "note": "Bài tập 复述 của sách (trang 56)."
+   "note": "Bài tập kể lại bài khoá của sách (trang 56)."
   },
   {
    "q_zh": "通过实习，学生可以学到什么？为什么说有些事情需要自己做一遍？",
@@ -4864,72 +5027,72 @@ var speakingData = {
    "note": "Câu hỏi đọc hiểu bài khoá 4; dùng A不如B (điểm 4)."
   },
   {
-   "q_zh": "角色扮演：两人一组，一人扮演面试官，一人扮演应聘者，模拟面试的过程。面试官可以询问应聘者的学习经历，了解其能力和想法；应聘者可以介绍自己的基本情况，说明应聘的原因，并谈谈自己的优缺点。",
+   "q_zh": "两个人一起练习面试：一个人问，一个人回答。问的人可以问对方的学习经历，了解他的能力和想法；回答的人介绍自己的情况，说说为什么来应聘，再说说自己的优点和缺点。",
    "q_vn": "Đóng vai: nhóm hai người, một người làm người phỏng vấn, một người làm ứng viên, mô phỏng buổi phỏng vấn. Người phỏng vấn có thể hỏi về quá trình học tập của ứng viên, tìm hiểu năng lực và suy nghĩ của họ; ứng viên giới thiệu tình hình bản thân, nói lý do ứng tuyển và nói về ưu, khuyết điểm của mình.",
-   "hint": "面试官：请先做一个简单的自我介绍。/ 你为什么来应聘？/ 你有什么优点和缺点？ 应聘者：我叫……，是……专业的学生。我来应聘，一方面……，另一方面……。我的优点是……，缺点是……，不过……",
-   "sample": "面试官：你好，请坐。今天的面试由我来负责。请你先做一个简单的自我介绍吧。应聘者：您好！我叫阮明，是河内大学国际贸易专业的大三学生。我学了三年中文，已经能够和中国人进行简单的交流了。面试官：你为什么来我们公司应聘？应聘者：一方面，贵公司是一家国际公司，有很多机会运用我的专业知识；另一方面，我想提前积累一些工作经验，为将来的职业发展打下基础。面试官：你以前有过实习经历吗？应聘者：有过。去年暑假我在一家工厂实习了两个月，主要负责翻译工作。在那儿我发现，有些事情在课本上学不如自己做一遍。面试官：那你觉得自己有什么优点和缺点？应聘者：我的优点是认真，很注意细节，不论多忙，都会把工作检查检查再交。缺点是有时候说话太快，不过我现在每天都在镜子前练一练，已经好多了。面试官：好的，请回去等消息吧。应聘者：谢谢您！",
-   "sample_vn": "Người PV: Chào bạn, mời ngồi. Hôm nay tôi phụ trách phỏng vấn. Bạn tự giới thiệu ngắn gọn trước nhé. Ứng viên: Chào anh/chị! Em tên Nguyễn Minh, sinh viên năm ba ngành thương mại quốc tế Đại học Hà Nội. Em đã học tiếng Trung ba năm, có thể giao tiếp đơn giản với người Trung Quốc. Người PV: Vì sao bạn ứng tuyển vào công ty chúng tôi? Ứng viên: Một mặt, quý công ty là công ty quốc tế, có nhiều cơ hội vận dụng kiến thức chuyên ngành của em; mặt khác, em muốn tích lũy kinh nghiệm làm việc sớm, đặt nền móng cho sự phát triển nghề nghiệp sau này. Người PV: Trước đây bạn đã từng thực tập chưa? Ứng viên: Rồi ạ. Hè năm ngoái em thực tập hai tháng ở một nhà máy, chủ yếu phụ trách phiên dịch. Ở đó em thấy có những việc học trên sách không bằng tự làm một lần. Người PV: Vậy bạn thấy mình có ưu điểm, khuyết điểm gì? Ứng viên: Ưu điểm của em là cẩn thận, rất chú ý chi tiết, bận đến mấy cũng kiểm tra lại công việc rồi mới nộp. Khuyết điểm là đôi khi nói quá nhanh, nhưng giờ ngày nào em cũng tập trước gương, đã đỡ nhiều rồi. Người PV: Được rồi, bạn về chờ tin nhé. Ứng viên: Em cảm ơn anh/chị!",
-   "note": "Hoạt động 任务活动 · 角色扮演 (đóng vai phỏng vấn) của sách, trang 60 — dùng 由, 把……VV, 不如, 不论 cùng từ mới về ứng tuyển; ôn 一方面……另一方面…… (Bài 1)."
+   "hint": "问：请先做一个简单的自我介绍。/ 你为什么来应聘？/ 你有什么优点和缺点？ 答：我叫……，是……专业的学生。我来应聘，一方面……，另一方面……。我的优点是……，缺点是……，不过……",
+   "sample": "问：你好，请坐。今天的面试由我来负责。请你先做一个简单的自我介绍吧。答：您好！我叫小明，是国际贸易专业的大三学生。我学了三年中文，已经能够和中国人进行简单的交流了。问：你为什么来我们公司应聘？答：一方面贵公司是一家国际公司，有很多机会运用我的专业知识；另一方面我想提前积累一些工作经验，为将来的职业发展打下基础。问：你以前有过实习经历吗？答：有过。去年夏天我在一家工厂实习了两个月，主要负责翻译工作。在那儿我发现，很多事情要自己做了才知道怎么做好。问：那你觉得自己有什么优点和缺点？答：我的优点是认真，很注意细节，不论多忙，都会把工作检查检查再交。缺点是有时候说话太快，不过我现在每天都在镜子前练一练，已经好多了。问：好的，请回去等消息吧。答：谢谢您！",
+   "sample_vn": "Người PV: Chào bạn, mời ngồi. Hôm nay tôi phụ trách phỏng vấn. Bạn tự giới thiệu ngắn gọn trước nhé. Ứng viên: Chào anh/chị! Em tên Tiểu Minh, sinh viên năm ba ngành thương mại quốc tế. Em đã học tiếng Trung ba năm, có thể giao tiếp đơn giản với người Trung Quốc. Người PV: Vì sao bạn ứng tuyển vào công ty chúng tôi? Ứng viên: Một mặt, quý công ty là công ty quốc tế, có nhiều cơ hội vận dụng kiến thức chuyên ngành của em; mặt khác, em muốn tích lũy kinh nghiệm làm việc sớm, đặt nền móng cho sự phát triển nghề nghiệp sau này. Người PV: Trước đây bạn đã từng thực tập chưa? Ứng viên: Rồi ạ. Hè năm ngoái em thực tập hai tháng ở một nhà máy, chủ yếu phụ trách phiên dịch. Ở đó em thấy có những việc học trên sách không bằng tự làm một lần. Người PV: Vậy bạn thấy mình có ưu điểm, khuyết điểm gì? Ứng viên: Ưu điểm của em là cẩn thận, rất chú ý chi tiết, bận đến mấy cũng kiểm tra lại công việc rồi mới nộp. Khuyết điểm là đôi khi nói quá nhanh, nhưng giờ ngày nào em cũng tập trước gương, đã đỡ nhiều rồi. Người PV: Được rồi, bạn về chờ tin nhé. Ứng viên: Em cảm ơn anh/chị!",
+   "note": "Hoạt động đóng vai phỏng vấn của sách, trang 60 — dùng 由, 把……VV, 不如, 不论 cùng từ mới về ứng tuyển; ôn 一方面……另一方面…… (bài 1)."
   }
  ]
 };
 var translateData = [
  {
-  "vi": "Từ sau kỳ thi giữa kỳ là không gặp lại cậu nữa.",
-  "zh": "期中考试后就再也没见过你了。",
-  "py": "Qīzhōng kǎoshì hòu jiù zài yě méi jiàn guò nǐ le."
+  "vi": "Từ lần bị muộn đó, cô ấy không bao giờ đến muộn nữa.",
+  "zh": "那次迟到以后，她就再也没迟到过。",
+  "py": "Nà cì chídào yǐhòu, tā jiù zài yě méi chídào guò."
  },
  {
-  "vi": "Bây giờ nhiều đơn vị khi tuyển sinh viên tốt nghiệp đều rất coi trọng kinh nghiệm thực tập.",
-  "zh": "现在很多单位在招聘毕业生时，都很重视实习经历。",
-  "py": "Xiànzài hěn duō dānwèi zài zhāopìn bìyèshēng shí, dōu hěn zhòngshì shíxí jīnglì."
+  "vi": "Buổi liên hoan lần này do lớp chúng tôi tổ chức.",
+  "zh": "这次晚会由我们班来举办。",
+  "py": "Zhè cì wǎnhuì yóu wǒmen bān lái jǔbàn."
  },
  {
-  "vi": "Hôm đó là người phụ trách bộ phận đến phỏng vấn, tôi hơi căng thẳng.",
-  "zh": "那天是由部门负责人来面试的，我有点儿紧张。",
-  "py": "Nàtiān shì yóu bùmén fùzérén lái miànshì de, wǒ yǒudiǎnr jǐnzhāng."
+  "vi": "Trước khi gửi, bạn kiểm tra lại email này một chút nhé.",
+  "zh": "发以前，你把这封邮件检查检查吧。",
+  "py": "Fā yǐqián, nǐ bǎ zhè fēng yóujiàn jiǎnchá jiǎnchá ba."
  },
  {
-  "vi": "Bất kể kết quả thế nào, trải nghiệm này chắc chắn có ích cho việc tìm việc sau này của tôi.",
-  "zh": "不论结果怎么样，这次经历对我以后找工作肯定有帮助。",
-  "py": "Búlùn jiéguǒ zěnmeyàng, zhè cì jīnglì duì wǒ yǐhòu zhǎo gōngzuò kěndìng yǒu bāngzhù."
+  "vi": "Tôi thấy một mình học ở nhà không bằng học trên lớp cùng thầy cô.",
+  "zh": "我觉得一个人在家学不如在课堂上跟老师学。",
+  "py": "Wǒ juéde yí gè rén zài jiā xué bùrú zài kètáng shàng gēn lǎoshī xué."
  },
  {
-  "vi": "Cậu ấy ra tiệm cắt tóc sửa lại tóc một chút.",
-  "zh": "他去理发店把头发理了理。",
-  "py": "Tā qù lǐfàdiàn bǎ tóufa lǐ le lǐ."
+  "vi": "Bất kể làm việc ở cơ quan nào, cũng đều phải nghiêm túc, chú ý chi tiết.",
+  "zh": "不论在哪个单位工作，都要认真，注意细节。",
+  "py": "Búlùn zài nǎge dānwèi gōngzuò, dōu yào rènzhēn, zhùyì xìjié."
  },
  {
-  "vi": "Có những việc, học trên sách không bằng tự mình làm một lần.",
-  "zh": "有些事情，在课本上学不如自己做一遍。",
-  "py": "Yǒuxiē shìqing, zài kèběn shàngxué bùrú zìjǐ zuò yí biàn."
+  "vi": "Anh ấy học giỏi, thêm vào đó có kinh nghiệm thực tập, nên rất nhanh đã tìm được việc.",
+  "zh": "他成绩好，加上有实习经历，所以很快就找到了工作。",
+  "py": "Tā chéngjì hǎo, jiāshang yǒu shíxí jīnglì, suǒyǐ hěn kuài jiù zhǎodào le gōngzuò."
  }
 ];
 var translateDataRev = [
  {
-  "vi": "Mình vẫn đang chờ tin, mong là có kết quả tốt.",
-  "zh": "我还在等消息，希望能有好结果。",
-  "py": "Wǒ hái zài děng xiāoxi, xīwàng néng yǒu hǎo jiéguǒ."
+  "vi": "Công ty này đang tuyển sinh viên tốt nghiệp ngành y dược.",
+  "zh": "这家公司正在招聘医药专业的毕业生。",
+  "py": "Zhè jiā gōngsī zhèngzài zhāopìn yīyào zhuānyè de bìyèshēng."
  },
  {
-  "vi": "Mình đăng ký trên mạng trước, điền thông tin cá nhân, sau đó chờ công ty báo đi thi viết.",
-  "zh": "我先在网上报名，填写个人信息，然后等公司通知我去参加笔试。",
-  "py": "Wǒ xiān zài wǎngshang bàomíng, tiánxiě gèrén xìnxī, ránhòu děng gōngsī tōngzhī wǒ qù cānjiā bǐshì."
+  "vi": "Đăng ký trên mạng xong, đừng quên xem tin nhắn.",
+  "zh": "在网上报名以后，别忘了看短信。",
+  "py": "Zài wǎngshang bàomíng yǐhòu, bié wàng le kàn duǎnxìn."
  },
  {
-  "vi": "Lý Văn phấn khích đến mức ném điện thoại lên giường.",
-  "zh": "李文激动得把手机扔到床上。",
-  "py": "Lǐ Wén jīdòng de bǎ shǒujī rēngdào chuáng shàng."
+  "vi": "Sắp đến kỳ thi giữa kỳ rồi, ngày nào tôi cũng ôn bài đến rất khuya.",
+  "zh": "期中考试快到了，我每天都复习到很晚。",
+  "py": "Qīzhōng kǎoshì kuài dào le, wǒ měitiān dōu fùxí dào hěn wǎn."
  },
  {
-  "vi": "Thông qua thực tập, sinh viên có thể tích lũy kinh nghiệm làm việc.",
-  "zh": "学生们通过实习，可以积累工作经验。",
-  "py": "Xuéshengmen tōngguò shíxí, kěyǐ jīlěi gōngzuò jīngyàn."
+  "vi": "Mẹ tôi làm việc ở nhà máy hơn hai mươi năm rồi.",
+  "zh": "我妈妈在工厂工作二十多年了。",
+  "py": "Wǒ māma zài gōngchǎng gōngzuò èrshí duō nián le."
  },
  {
-  "vi": "Sinh viên cũng rõ hơn hướng phát triển nghề nghiệp của mình.",
-  "zh": "学生也更清楚自己的职业发展方向。",
-  "py": "Xuésheng yě gèng qīngchu zìjǐ de zhíyè fāzhǎn fāngxiàng."
+  "vi": "Tóc dài quá rồi, ngày mai tôi phải đi cắt tóc.",
+  "zh": "头发太长了，明天我得去理发。",
+  "py": "Tóufa tài cháng le, míngtiān wǒ děi qù lǐfà."
  }
 ];
 var sgkData = [

@@ -221,96 +221,652 @@
 ],
 
 "listen": [
- {"audio":"老板，这个多少钱？二十五块。我用现金结账可以吗？可以，不过我们这儿大部分客人都扫码支付，用微信或者支付宝都行。好的，那我也扫码吧。好，扫一下这个码就可以了。","questions":[
-   {"q":"顾客一开始想怎么结账？","opts":["用现金","用信用卡","扫码支付"],"ans":0},
-   {"q":"老板说这儿的客人大部分怎么付钱？","opts":["用现金","扫码支付","用银行卡"],"ans":1}]},
- {"audio":"喂，您好，我是快递员，您的快递到了，您在家吗？我不在家，正在学校上课呢。那我把快递放在小区门口的快递站，可以吗？可以，谢谢您。不客气，您回来以后用手机扫码就能拿到了。","questions":[
-   {"q":"女的现在在哪儿？","opts":["在家","在学校","在快递站"],"ans":1},
-   {"q":"快递员把快递放在哪儿了？","opts":["小区门口的快递站","女的家门口","学校门口"],"ans":0}]},
- {"audio":"小王，你怎么在网上发了你的机票照片？我想让朋友们知道我要去旅游了。可是照片上有你的姓名、身份证号等个人信息，别人看到了很不安全。啊，我没想到这个问题，那我现在就把照片拿下来。对，以后别随便在网上发这些信息。","questions":[
-   {"q":"小王在网上发了什么？","opts":["火车票信息","机票照片","身份证照片"],"ans":1},
-   {"q":"朋友为什么觉得不安全？","opts":["照片上有个人信息","小王的密码丢了","机票太贵了"],"ans":0}]}
+ {
+  "audio": "我奶奶七十多岁了，不仅会用手机支付，还会在网上给我们寄东西。",
+  "questions": [
+   {
+    "q": "Bà của người nói biết làm gì?",
+    "opts": [
+     "Chỉ biết gọi điện thoại",
+     "Thanh toán bằng điện thoại và gửi đồ qua mạng",
+     "Dạy người khác dùng điện thoại"
+    ],
+    "ans": 1,
+    "exp": "不仅会用手机支付，还会……寄东西 = không những biết thanh toán bằng điện thoại mà còn biết gửi đồ."
+   }
+  ]
+ },
+ {
+  "audio": "这台电脑好是好，就是太贵了，我再去别的商店看看。",
+  "questions": [
+   {
+    "q": "Người nói thấy chiếc máy tính thế nào?",
+    "opts": [
+     "Tốt nhưng đắt quá",
+     "Rẻ nhưng không tốt",
+     "Vừa tốt vừa rẻ"
+    ],
+    "ans": 0,
+    "exp": "好是好，就是太贵了 = tốt thì tốt thật, chỉ là đắt quá."
+   },
+   {
+    "q": "Người nói sẽ làm gì?",
+    "opts": [
+     "Mua ngay",
+     "Đi xem cửa hàng khác",
+     "Đặt mua trên mạng"
+    ],
+    "ans": 1,
+    "exp": "再去别的商店看看 = đi xem cửa hàng khác thêm."
+   }
+  ]
+ },
+ {
+  "audio": "从学校门口往前走，到第二个十字路口往左转，银行就在路的右边。",
+  "questions": [
+   {
+    "q": "Ngân hàng ở đâu?",
+    "opts": [
+     "Ngã tư thứ nhất rẽ phải",
+     "Đi thẳng, bên trái đường",
+     "Ngã tư thứ hai rẽ trái, ở bên phải đường"
+    ],
+    "ans": 2,
+    "exp": "第二个十字路口往左转 = đến ngã tư thứ hai rẽ trái; 在路的右边 = ở bên phải đường."
+   }
+  ]
+ },
+ {
+  "audio": "昨天我在网上订的衣服，今天上午就送到了，正好我在家。",
+  "questions": [
+   {
+    "q": "Bộ quần áo được giao thế nào?",
+    "opts": [
+     "Đặt hôm qua, sáng nay đã giao tới",
+     "Mua ở cửa hàng hôm qua",
+     "Đến giờ vẫn chưa giao"
+    ],
+    "ans": 0,
+    "exp": "昨天……订的衣服，今天上午就送到了 = đặt hôm qua, sáng nay đã tới."
+   },
+   {
+    "q": "Lúc giao hàng người nói ở đâu?",
+    "opts": [
+     "Ở công ty",
+     "Ở trường",
+     "Ở nhà"
+    ],
+    "ans": 2,
+    "exp": "正好我在家 = vừa khéo tôi ở nhà."
+   }
+  ]
+ },
+ {
+  "audio": "手机没电了，我身上也没有现金，于是走了一个小时才回到家。",
+  "questions": [
+   {
+    "q": "Vì sao người nói đi bộ về nhà?",
+    "opts": [
+     "Muốn tập thể dục",
+     "Không có xe buýt",
+     "Điện thoại hết pin, lại không có tiền mặt"
+    ],
+    "ans": 2,
+    "exp": "手机没电了……也没有现金，于是…… = điện thoại hết pin, không có tiền mặt, thế là phải đi bộ."
+   }
+  ]
+ },
+ {
+  "audio": "他太喜欢网购了，每天都要收好几个快递，有时候甚至一天收十个。",
+  "questions": [
+   {
+    "q": "Có khi một ngày anh ấy nhận bao nhiêu kiện hàng?",
+    "opts": [
+     "Hai kiện",
+     "Mười kiện",
+     "Năm kiện"
+    ],
+    "ans": 1,
+    "exp": "甚至一天收十个 = thậm chí một ngày nhận mười kiện — 甚至 nêu điều bất ngờ nhất."
+   }
+  ]
+ },
+ {
+  "audio": "要是有人打电话问你的银行卡密码，你不要告诉他，这是为了保护你自己。",
+  "questions": [
+   {
+    "q": "Nếu có người gọi điện hỏi mật khẩu thẻ ngân hàng thì nên làm gì?",
+    "opts": [
+     "Đừng nói cho họ",
+     "Nói cho họ biết",
+     "Gọi lại cho ngân hàng hỏi"
+    ],
+    "ans": 0,
+    "exp": "你不要告诉他 = bạn đừng nói cho họ; 为了保护你自己 = để bảo vệ chính mình."
+   },
+   {
+    "q": "Câu này nói về chuyện gì?",
+    "opts": [
+     "Cách gửi tiền",
+     "Bảo vệ thông tin cá nhân",
+     "Cách mở thẻ ngân hàng"
+    ],
+    "ans": 1,
+    "exp": "银行卡密码 là thông tin cá nhân; 保护 = bảo vệ."
+   }
+  ]
+ }
 ],
-
 "match": [
- {"left":"扫码","right":"支付"},
- {"left":"下载","right":"软件"},
- {"left":"寄","right":"快递"},
- {"left":"保护","right":"个人信息"},
- {"left":"提供","right":"帮助"},
- {"left":"改变","right":"购物习惯"},
- {"left":"乱","right":"花钱"},
- {"left":"找到","right":"目的地"},
- {"left":"不仅……","right":"还……"}
+ {
+  "left": "下载",
+  "right": "学中文的软件"
+ },
+ {
+  "left": "寄",
+  "right": "快递"
+ },
+ {
+  "left": "提供",
+  "right": "身份证号"
+ },
+ {
+  "left": "动动",
+  "right": "手指"
+ },
+ {
+  "left": "改变",
+  "right": "生活习惯"
+ },
+ {
+  "left": "扫码",
+  "right": "结账"
+ },
+ {
+  "left": "订",
+  "right": "酒店"
+ },
+ {
+  "left": "熟悉",
+  "right": "这里的路"
+ }
 ],
-
 "fill": [
- {"pre":"北京大是大，","blank":"不过","post":"这边的路基本上都是正南正北的。","hint":"(nhưng)","ans":"不过","exp":"×是×，不过……"},
- {"pre":"到十字路口不要过马路，","blank":"直接","post":"右转就到小区门口了。","hint":"(thẳng, luôn)","ans":"直接","exp":"直接 + V."},
- {"pre":"没关系，你很快就会","blank":"熟悉","post":"的。","hint":"(quen thuộc)","ans":"熟悉","exp":"会……的: chắc chắn sẽ."},
- {"pre":"他帮我","blank":"下载","post":"了微信和支付宝。","hint":"(tải về)","ans":"下载","exp":"下载 + 软件."},
- {"pre":"现在我不仅会","blank":"扫码","post":"结账，还会用手机在网上购物了。","hint":"(quét mã)","ans":"扫码","exp":"扫码结账 / 扫码支付."},
- {"pre":"昨天我就在网上","blank":"订","post":"了一台电脑。","hint":"(đặt)","ans":"订","exp":"订 + hàng / vé / phòng."},
- {"pre":"很多留学生","blank":"甚至","post":"改变了自己的购物习惯。","hint":"(thậm chí)","ans":"甚至","exp":"甚至 + V: vượt dự đoán."},
- {"pre":"怎么才能","blank":"管","post":"住自己不乱花钱呢？","hint":"(kiểm soát)","ans":"管","exp":"管住自己 = tự kiểm soát."},
- {"pre":"我的个人信息能否得到","blank":"保护","post":"？","hint":"(bảo vệ)","ans":"保护","exp":"得到保护 = được bảo vệ."},
- {"pre":"很多国家也通过技术、法律等","blank":"手段","post":"来保证个人信息安全。","hint":"(biện pháp)","ans":"手段","exp":"通过……等手段来……"}
+ {
+  "pre": "这件衣服好看",
+  "blank": "是",
+  "post": "好看，就是颜色我不太喜欢。",
+  "hint": "(thì … thật)",
+  "ans": "是",
+  "exp": "A + 是 + A (好看是好看) = công nhận điểm tốt, rồi vế sau nói hạn chế bằng 就是 / 不过."
+ },
+ {
+  "pre": "这个软件我下载是下载了，",
+  "blank": "就是",
+  "post": "还不太会用。",
+  "hint": "(chỉ là)",
+  "ans": "就是",
+  "exp": "下载是下载了 = tải thì tải rồi; 就是 nêu điều chưa được: vẫn chưa biết dùng."
+ },
+ {
+  "pre": "安妮",
+  "blank": "不仅",
+  "post": "会说中文，还会写不少汉字。",
+  "hint": "(không những)",
+  "ans": "不仅",
+  "exp": "Cùng một chủ ngữ: chủ ngữ (安妮) đứng trước 不仅, vế sau dùng 还."
+ },
+ {
+  "pre": "在网上订酒店不仅方便，",
+  "blank": "而且",
+  "post": "价格常常更便宜。",
+  "hint": "(mà còn)",
+  "ans": "而且",
+  "exp": "不仅……，而且…… = không những … mà còn …; vế sau tiến thêm một bước."
+ },
+ {
+  "pre": "他最近太忙了，",
+  "blank": "甚至",
+  "post": "周末也要去公司。",
+  "hint": "(thậm chí)",
+  "ans": "甚至",
+  "exp": "甚至 + điều bất ngờ nhất: ngày thường bận đã đành, thậm chí cuối tuần cũng phải đi làm."
+ },
+ {
+  "pre": "我在网上看到一个很好看的包，价格也不高，",
+  "blank": "于是",
+  "post": "马上就买了。",
+  "hint": "(thế là)",
+  "ans": "于是",
+  "exp": "于是 nối việc xảy ra tiếp theo do việc trước gây ra: thấy đẹp, rẻ → thế là mua luôn."
+ },
+ {
+  "pre": "我在这个城市住了十年，对这里的每条路都很",
+  "blank": "熟悉",
+  "post": "。",
+  "hint": "(thông thạo)",
+  "ans": "熟悉",
+  "exp": "对 + nơi chốn / việc + 很熟悉 = rất thạo …; ôn bổ ngữ thời lượng 住了十年."
+ },
+ {
+  "pre": "你不用先回家，下了课",
+  "blank": "直接",
+  "post": "来饭馆吧。",
+  "hint": "(thẳng, luôn)",
+  "ans": "直接",
+  "exp": "直接 + động từ = đi thẳng, làm luôn, không qua bước khác."
+ },
+ {
+  "pre": "这家酒店给每个客人都",
+  "blank": "提供",
+  "post": "毛巾和水。",
+  "hint": "(cung cấp)",
+  "ans": "提供",
+  "exp": "给 + người + 提供 + vật = cung cấp … cho …; ôn 毛巾 (bài 2)."
+ },
+ {
+  "pre": "我又忘了手机的",
+  "blank": "密码",
+  "post": "，现在打不开了。",
+  "hint": "(mật khẩu)",
+  "ans": "密码",
+  "exp": "密码 = mật khẩu; 忘了密码 nên 打不开 (không mở được)."
+ },
+ {
+  "pre": "超市里有水果、面包、牛奶",
+  "blank": "等",
+  "post": "，东西很多。",
+  "hint": "(v.v.)",
+  "ans": "等",
+  "exp": "等 đặt sau một loạt danh từ = vân vân, còn nữa."
+ },
+ {
+  "pre": "这里的",
+  "blank": "网络",
+  "post": "不太好，视频一直打不开。",
+  "hint": "(mạng)",
+  "ans": "网络",
+  "exp": "网络 = mạng Internet; 网络不好 thì video không mở được."
+ }
 ],
-
 "sort": [
- {"words":["北京","大是大","，","不过","这边的路","很好找","。"],"ans":"北京大是大，不过这边的路很好找。"},
- {"words":["现在","我","不仅","会扫码结账","，","还","会","在网上购物了","。"],"ans":"现在我不仅会扫码结账，还会在网上购物了。"},
- {"words":["很多","留学生","甚至","改变了","自己的","购物习惯","。"],"ans":"很多留学生甚至改变了自己的购物习惯。"},
- {"words":["她","从小","就想当医生","，","于是","选择了","学医","。"],"ans":"她从小就想当医生，于是选择了学医。"},
- {"words":["别","把","密码","随便","告诉","别人","。"],"ans":"别把密码随便告诉别人。"},
- {"words":["你","可以","用手机地图","找到","目的地","。"],"ans":"你可以用手机地图找到目的地。"}
+ {
+  "words": [
+   "这个",
+   "软件",
+   "好用",
+   "是",
+   "好用",
+   "，",
+   "就是",
+   "要",
+   "花钱",
+   "。"
+  ],
+  "ans": "这个软件好用是好用，就是要花钱。"
+ },
+ {
+  "words": [
+   "她",
+   "不仅",
+   "会",
+   "做",
+   "中国菜",
+   "，",
+   "还",
+   "会",
+   "包",
+   "饺子",
+   "。"
+  ],
+  "ans": "她不仅会做中国菜，还会包饺子。"
+ },
+ {
+  "words": [
+   "她",
+   "觉得",
+   "这个软件",
+   "很有用",
+   "，",
+   "于是",
+   "马上",
+   "下载了",
+   "。"
+  ],
+  "ans": "她觉得这个软件很有用，于是马上下载了。"
+ },
+ {
+  "words": [
+   "到了",
+   "第二个",
+   "十字路口",
+   "再",
+   "往左",
+   "转",
+   "。"
+  ],
+  "ans": "到了第二个十字路口再往左转。"
+ },
+ {
+  "words": [
+   "你",
+   "别",
+   "把",
+   "密码",
+   "写在",
+   "手机上",
+   "。"
+  ],
+  "ans": "你别把密码写在手机上。"
+ },
+ {
+  "words": [
+   "快递员",
+   "把",
+   "我的快递",
+   "放在了",
+   "小区门口",
+   "。"
+  ],
+  "ans": "快递员把我的快递放在了小区门口。"
+ },
+ {
+  "words": [
+   "由于",
+   "网购",
+   "太",
+   "方便",
+   "，",
+   "我",
+   "很少",
+   "去",
+   "商店",
+   "了",
+   "。"
+  ],
+  "ans": "由于网购太方便，我很少去商店了。"
+ },
+ {
+  "words": [
+   "他",
+   "教",
+   "奶奶",
+   "怎么",
+   "用",
+   "手机",
+   "支付",
+   "。"
+  ],
+  "ans": "他教奶奶怎么用手机支付。"
+ }
 ],
-
 "mc": [
- {"q":"这个房子便宜是便宜，＿＿离我的公司太远了。","opts":["就是","所以","于是","甚至"],"ans":0,"exp":"×是×，就是…… — vế sau chỉ ra hạn chế."},
- {"q":"现在很多书店不仅卖书，＿＿卖咖啡和奶茶。","opts":["还","就","才","但是"],"ans":0,"exp":"不仅……，还……"},
- {"q":"高铁速度真快，＿＿还没看清楚，它就已经开过去了。","opts":["甚至","不仅","要是","随着"],"ans":0,"exp":"甚至 nhấn mạnh điều vượt dự đoán."},
- {"q":"她从小就想当医生，＿＿上大学时就选择了学医。","opts":["于是","甚至","不过","而且"],"ans":0,"exp":"……，于是…… kể việc tiếp theo đã xảy ra."},
- {"q":"你往前走，到十字路口＿＿右转就到了。","opts":["直接","正好","随便","甚至"],"ans":0,"exp":"直接 + V = rẽ luôn, không vòng."},
- {"q":"我刚来中国，不＿＿路。","opts":["熟悉","保护","提供","改变"],"ans":0,"exp":"熟悉 + nơi chốn / đường."},
- {"q":"网上购物或者订票时，我们经常需要＿＿个人信息。","opts":["提供","保证","下载","结账"],"ans":0,"exp":"提供 + 信息."},
- {"q":"别把＿＿随便告诉别人。","opts":["密码","现金","手指","快递"],"ans":0,"exp":"密码 = mật khẩu."},
- {"q":"由于网购太方便了，动动＿＿就能买到想要的东西。","opts":["手指","手段","软件","技术"],"ans":0,"exp":"动动手指 = chạm ngón tay một cái."},
- {"q":"我们到电影院的时候，电影＿＿开始了。","opts":["正好","正","直接","乱"],"ans":0,"exp":"正好 = vừa đúng lúc."}
+ {
+  "q": "Bạn muốn nói: “Món ở quán này ngon thì ngon thật, có điều hơi đắt.”",
+  "opts": [
+   "这家的菜好吃是好吃，不过有点儿贵。",
+   "这家的菜是好吃好吃，不过有点儿贵。",
+   "这家的菜好吃是好吃，所以有点儿贵。",
+   "这家的菜好吃好吃是，不过有点儿贵。"
+  ],
+  "ans": 0,
+  "exp": "Thứ tự đúng là A + 是 + A (好吃是好吃); vế sau là ý trái ngược nên dùng 不过, không dùng 所以."
+ },
+ {
+  "q": "A: “你会用这个软件吗？” — B đáp:",
+  "opts": [
+   "会是会，就是用得不太好。",
+   "会是会，所以用得不太好。",
+   "是会会，就是用得不太好。",
+   "会是会，就是用不太好得。"
+  ],
+  "ans": 0,
+  "exp": "会是会 = biết thì biết; 就是 nêu hạn chế; bổ ngữ trạng thái: 用得不太好 (得 ngay sau động từ)."
+ },
+ {
+  "q": "Câu nào SAI?",
+  "opts": [
+   "不仅她会唱歌，还会跳舞。",
+   "这家饭馆不仅菜好吃，而且价格不高。",
+   "他不仅自己不乱花钱，还让我也少买东西。",
+   "我爷爷不仅会发微信，还会看新闻视频。"
+  ],
+  "ans": 0,
+  "exp": "Hai vế cùng một chủ ngữ thì chủ ngữ phải đứng TRƯỚC 不仅: 她不仅会唱歌，还会跳舞."
+ },
+ {
+  "q": "Chọn từ điền vào chỗ trống: “那个地方特别冷，夏天＿＿也要穿两件衣服。”",
+  "opts": [
+   "甚至",
+   "于是",
+   "不过",
+   "正好"
+  ],
+  "ans": 0,
+  "exp": "Mùa hè mà cũng phải mặc hai áo là điều bất ngờ nhất → 甚至 (thậm chí)."
+ },
+ {
+  "q": "A: “你怎么买了这么多水果？” B: “我看水果很便宜，＿＿就多买了一些。”",
+  "opts": [
+   "于是",
+   "甚至",
+   "而且",
+   "不仅"
+  ],
+  "ans": 0,
+  "exp": "Thấy rẻ → thế là mua nhiều: việc sau xảy ra do việc trước → 于是 (……就……)."
+ },
+ {
+  "q": "Bạn muốn nói: “Xuống máy bay bạn cứ đến thẳng khách sạn, đừng đến công ty nữa.”",
+  "opts": [
+   "下了飞机你直接去酒店，别来公司了。",
+   "下了飞机你去酒店直接，别来公司了。",
+   "下了飞机直接你去酒店，别来公司了。",
+   "下了飞机你正好去酒店，别来公司了。"
+  ],
+  "ans": 0,
+  "exp": "直接 là trạng ngữ, đứng sau chủ ngữ và ngay trước động từ 去; 正好 = vừa khéo, không mang nghĩa “thẳng”."
+ },
+ {
+  "q": "A: “你知道去火车站怎么走吗？” B: “对不起，我也刚来，对这儿还不＿＿。”",
+  "opts": [
+   "熟悉",
+   "认识",
+   "保护",
+   "提供"
+  ],
+  "ans": 0,
+  "exp": "对 + nơi chốn + 熟悉 = thông thạo chỗ đó; 认识 dùng cho người / chữ, không đi với 对这儿."
+ },
+ {
+  "q": "“这双鞋我穿着＿＿，不大也不小。”",
+  "opts": [
+   "正好",
+   "直接",
+   "正在",
+   "几乎"
+  ],
+  "ans": 0,
+  "exp": "正好 làm tính từ = vừa vặn, vừa khít; 正在 là “đang”."
+ },
+ {
+  "q": "Bạn khuyên bạn mình: “Đừng tuỳ tiện đăng ảnh vé máy bay lên mạng.”",
+  "opts": [
+   "别随便在网上发机票的照片。",
+   "别在网上发随便机票的照片。",
+   "随便别在网上发机票的照片。",
+   "别在网上发机票的照片随便。"
+  ],
+  "ans": 0,
+  "exp": "随便 làm trạng ngữ, đứng sau 别 và trước cụm động từ (在网上发…), không đặt cuối câu."
+ },
+ {
+  "q": "“我想给在国外工作的哥哥＿＿一些中国茶。”",
+  "opts": [
+   "寄",
+   "订",
+   "下载",
+   "送到"
+  ],
+  "ans": 0,
+  "exp": "寄 = gửi qua bưu điện / chuyển phát; 订 là đặt mua, 下载 là tải về."
+ },
+ {
+  "q": "Chọn từ điền vào chỗ trống: “下个星期我们班要和二班＿＿一次中文比赛。”",
+  "opts": [
+   "进行",
+   "提供",
+   "改变",
+   "保证"
+  ],
+  "ans": 0,
+  "exp": "进行 + 比赛 / 活动 = tiến hành, tổ chức (việc có quy mô); 提供 là cung cấp vật / thông tin."
+ },
+ {
+  "q": "Bạn muốn nói: “Do không thạo đường, anh ấy đến muộn nửa tiếng.”",
+  "opts": [
+   "由于不熟悉路，他晚到了半个小时。",
+   "由于不熟悉路，于是他晚到了半个小时。",
+   "由于不熟悉路，他半个小时晚到了。",
+   "由于熟悉不路，他晚到了半个小时。"
+  ],
+  "ans": 0,
+  "exp": "Ôn 由于 (bài 2): đi với 所以 hoặc không cần từ nối, không đi với 于是; thời lượng 半个小时 đứng sau động từ; 不 đứng trước 熟悉."
+ }
 ],
-
 "speaking": {
- "intro":"Nhấn nút loa nghe câu hỏi (câu hỏi đọc hiểu của sách, câu hỏi phần Khởi động, kể lại bài khoá và tranh luận nhóm), rồi tự ghi âm câu trả lời — cố dùng từ mới và 4 điểm ngữ pháp của bài.",
- "questions":[
-  {"q_zh":"你在网上购物吗？如果你网购，说说你是怎么进行网购的；如果你不网购，为什么？","q_vn":"Bạn có mua sắm trên mạng không? Nếu có, hãy kể bạn mua online như thế nào; nếu không, vì sao?","hint":"我常常网购。先下载……，然后……，最后……。/ 我不网购，因为……","sample":"我常常网购。先在手机上下载一个网购软件，然后找到想要的东西，用微信或者支付宝支付，最后等快递员送货就可以了。在网上购物不仅选择多，而且价格不高。","sample_vn":"Tôi hay mua online. Trước tiên tải một ứng dụng mua sắm về điện thoại, rồi tìm món đồ mình muốn, thanh toán bằng WeChat hoặc Alipay, cuối cùng chờ shipper giao hàng là xong. Mua trên mạng không những nhiều lựa chọn mà giá còn không cao.","note":"Câu hỏi phần Khởi động của sách; dùng 不仅……而且…… (điểm 2)."},
-  {"q_zh":"用手机时，你会怎样保护自己的信息？","q_vn":"Khi dùng điện thoại, bạn sẽ bảo vệ thông tin của mình thế nào?","hint":"我不会……，也不……，还会……","sample":"我不会把密码随便告诉别人，也不在网上发自己的身份证号、车票和机票信息。要是有人打电话问我的个人信息，我就不回答。","sample_vn":"Tôi sẽ không tùy tiện nói mật khẩu cho người khác, cũng không đăng số căn cước, thông tin vé tàu, vé máy bay lên mạng. Nếu có người gọi điện hỏi thông tin cá nhân, tôi sẽ không trả lời.","note":"Câu hỏi phần Khởi động; ôn 要是……就…… (Bài 1)."},
-  {"q_zh":"陈天中为什么找不到花园小区了？他为什么没用手机地图？","q_vn":"Vì sao Trần Thiên Trung không tìm được khu Hoa Viên? Vì sao cậu ấy không dùng bản đồ điện thoại?","hint":"因为他刚……，不熟悉……。因为很多……他还……","sample":"因为他刚来中国，不熟悉路。他没用手机地图，是因为很多中文地名他还不认识。","sample_vn":"Vì cậu ấy mới đến Trung Quốc, chưa thạo đường. Cậu không dùng bản đồ điện thoại là vì nhiều địa danh tiếng Trung cậu chưa đọc được.","note":"Câu hỏi đọc hiểu bài khoá 1."},
-  {"q_zh":"请根据提示复述课文一。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 1.","hint":"陈天中从学校出来，不知道怎么去……，就向一位同学问路。同学告诉他……正好同学……北京的路基本上都是……","sample":"陈天中从学校出来，不知道怎么去花园小区，就向一位同学问路。同学告诉他，先往前走，到十字路口不要过马路，直接右转就到小区门口了。正好同学也去那边，就和他一起走。陈天中说他刚来中国，还不熟悉路。同学告诉他，北京的路基本上都是正南正北、正东正西的，很好找。他也可以用手机地图，很容易就能找到目的地。不过，很多中文地名陈天中还不认识。同学说，他很快就会熟悉的。","sample_vn":"Trần Thiên Trung từ trường đi ra, không biết đi đến khu Hoa Viên thế nào nên hỏi đường một bạn học. Bạn ấy bảo cứ đi thẳng, đến ngã tư đừng sang đường, rẽ phải luôn là tới cổng khu. Vừa khéo bạn ấy cũng đi hướng đó nên đi cùng… Bạn nói cậu sẽ quen nhanh thôi.","note":"Bài tập 复述 của sách (trang 25)."},
-  {"q_zh":"前几天李文帮陈天中做什么了？陈天中现在会用手机做什么了？","q_vn":"Mấy hôm trước Lý Văn đã giúp Trần Thiên Trung làm gì? Bây giờ Trần Thiên Trung biết dùng điện thoại làm gì rồi?","hint":"李文帮他……，教他……，还……。他现在不仅……，还……","sample":"李文帮他下载了微信和支付宝，教他认识里边的汉字，还教他用手机进行支付。陈天中现在不仅会扫码结账，还会用手机在网上购物了。","sample_vn":"Lý Văn giúp cậu tải WeChat và Alipay, dạy cậu nhận chữ Hán trong đó, còn dạy thanh toán bằng điện thoại. Bây giờ Trần Thiên Trung không những biết quét mã thanh toán mà còn biết mua hàng trên mạng.","note":"Câu hỏi đọc hiểu bài khoá 2; dùng 不仅……还…… (điểm 2)."},
-  {"q_zh":"白家月和陈天中学会用手机做什么了？留学生为什么也喜欢网购？","q_vn":"Bạch Gia Nguyệt và Trần Thiên Trung đã học được dùng điện thoại làm gì? Vì sao du học sinh cũng thích mua online?","hint":"他们学会了……等等。因为在中国网购不仅……，而且……","sample":"他们学会了用手机支付、网购、寄快递等等。留学生也喜欢网购，因为在中国网购不仅选择多、价格不高，而且送货很快。","sample_vn":"Họ đã học được thanh toán bằng điện thoại, mua online, gửi chuyển phát nhanh, v.v. Du học sinh cũng thích mua online vì ở Trung Quốc mua online không những nhiều lựa chọn, giá không cao mà giao hàng còn nhanh.","note":"Câu hỏi đọc hiểu bài khoá 3."},
-  {"q_zh":"请根据提示复述课文三。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 3.","hint":"白家月和陈天中……就发现……。后来，在……下，他们也都学会了……。在中国网购，不仅……，而且……，很多留学生甚至……。不过，由于……","sample":"白家月和陈天中刚到北京时就发现，中国人在饭馆或超市结账时，几乎都用手机支付，只有他们用现金结账。后来，在李文的帮助下，他们也都学会了用手机支付、网购、寄快递等等。在中国网购，不仅选择多、价格不高，而且送货很快，很多留学生甚至改变了自己的购物习惯。不过，由于网购太方便了，动动手指就能买到想要的东西，他们也开始担心自己在网购时会乱花钱。怎么才能管住自己不乱花钱呢？","sample_vn":"Bạch Gia Nguyệt và Trần Thiên Trung vừa đến Bắc Kinh đã phát hiện người Trung Quốc gần như đều thanh toán bằng điện thoại, chỉ có họ dùng tiền mặt. Sau đó, nhờ Lý Văn giúp, họ cũng học được thanh toán bằng điện thoại, mua online, gửi chuyển phát nhanh… Nhưng vì mua online quá tiện, họ bắt đầu lo mình tiêu tiền lung tung.","note":"Bài tập 复述 của sách (trang 29)."},
-  {"q_zh":"人们为什么会担心个人信息安全问题？国家会通过什么手段来保证个人信息安全？","q_vn":"Vì sao mọi người lo lắng về an toàn thông tin cá nhân? Nhà nước dùng biện pháp gì để bảo đảm an toàn thông tin cá nhân?","hint":"因为……时，经常需要提供……。国家会通过……等手段……","sample":"因为网上购物或者订票时，经常需要提供姓名、手机号、身份证号等个人信息，人们担心这些信息能否得到保护。国家会通过技术、法律等手段来保证个人信息安全，比如中国的网络安全法和个人信息保护法。","sample_vn":"Vì khi mua sắm hoặc đặt vé trên mạng thường phải cung cấp họ tên, số điện thoại, số căn cước… nên mọi người lo những thông tin này có được bảo vệ không. Nhà nước dùng các biện pháp như công nghệ, pháp luật để bảo đảm, ví dụ Luật An ninh mạng và Luật Bảo vệ thông tin cá nhân của Trung Quốc.","note":"Câu hỏi đọc hiểu bài khoá 4."},
-  {"q_zh":"小组辩论（正方）：手机带来的好处多。请说说你的理由。","q_vn":"Tranh luận nhóm (phe ủng hộ): Điện thoại mang lại nhiều lợi ích hơn. Hãy nêu lý do của bạn.","hint":"我认为手机带来的好处多。首先，……不仅……，还……；其次，……甚至……；要是没有手机，……","sample":"我认为手机带来的好处多。首先，用手机可以购物、结账，不仅很快，还不用带现金。其次，手机地图能帮我们很容易地找到目的地，刚来中国的留学生也不怕迷路了。有了手机，我们还可以下载学习软件，甚至在路上也能学中文。手机带来的问题是有，不过只要我们管住自己，保护好个人信息，这些问题都能解决。所以，手机带来的好处更多。","sample_vn":"Tôi cho rằng điện thoại mang lại nhiều lợi ích hơn. Trước hết, dùng điện thoại mua sắm, thanh toán không những nhanh mà còn không cần mang tiền mặt. Thứ hai, bản đồ điện thoại giúp ta dễ dàng tìm được nơi cần đến, du học sinh mới sang cũng không sợ lạc. Có điện thoại còn tải được phần mềm học tập, thậm chí trên đường cũng học được tiếng Trung. Vấn đề thì có, nhưng chỉ cần tự kiểm soát và bảo vệ tốt thông tin cá nhân là giải quyết được. Vì vậy lợi ích nhiều hơn.","note":"Hoạt động 小组辩论 (tranh luận nhóm) của sách, trang 33 — phe 正方."},
-  {"q_zh":"小组辩论（反方）：手机带来的问题多。请说说你的理由。","q_vn":"Tranh luận nhóm (phe phản đối): Điện thoại mang lại nhiều vấn đề hơn. Hãy nêu lý do của bạn.","hint":"我认为手机带来的问题多。手机方便是方便，就是……；由于……，于是……；有的人甚至……","sample":"我认为手机带来的问题多。手机方便是方便，就是上面的信息太多，看多了，很浪费时间。由于网购太方便了，动动手指就能买到东西，于是很多人开始乱花钱。还有，我们在网上提供了很多个人信息，这些信息能否得到保护，谁也不能保证。有的人甚至一天到晚都在看手机，连跟家人说话的时间都没有了。所以，我觉得手机带来的问题更多。","sample_vn":"Tôi cho rằng điện thoại mang lại nhiều vấn đề hơn. Điện thoại tiện thì tiện thật, nhưng thông tin trên đó quá nhiều, xem nhiều rất lãng phí thời gian. Vì mua online quá tiện, chạm ngón tay là mua được đồ, thế là nhiều người bắt đầu tiêu tiền lung tung. Ngoài ra, ta cung cấp rất nhiều thông tin cá nhân trên mạng, chẳng ai bảo đảm được chúng có được bảo vệ không. Có người thậm chí suốt ngày xem điện thoại, ngay cả thời gian nói chuyện với gia đình cũng không có. Vì vậy tôi thấy vấn đề nhiều hơn.","note":"Hoạt động 小组辩论 của sách — phe 反方; dùng đủ 4 điểm ngữ pháp của bài + 由于 (Bài 2)."}
+ "intro": "Nhấn nút loa nghe câu hỏi (câu hỏi phần Khởi động, câu hỏi đọc hiểu, kể lại bài khoá và tranh luận nhóm của sách), rồi tự ghi âm câu trả lời — cố dùng từ mới và 4 điểm ngữ pháp của bài.",
+ "questions": [
+  {
+   "q_zh": "你在网上购物吗？如果你网购，说说你是怎么进行网购的；如果你不网购，为什么？",
+   "q_vn": "Bạn có mua sắm trên mạng không? Nếu có, hãy kể bạn mua online như thế nào; nếu không, vì sao?",
+   "hint": "我常常网购。先下载……，然后……，最后……。/ 我不网购，因为……",
+   "sample": "我常常网购。先在手机上下载一个购物软件，然后找到想要的东西，用微信或者支付宝支付，最后等快递员把东西送来就行了。网购不仅东西多，而且常常比商店便宜。",
+   "sample_vn": "Tôi hay mua online. Trước tiên tải một ứng dụng mua sắm về điện thoại, rồi tìm món đồ mình muốn, trả tiền bằng WeChat hoặc Alipay, cuối cùng chờ shipper mang đồ đến là xong. Mua online không những nhiều hàng mà còn thường rẻ hơn cửa hàng.",
+   "note": "Câu hỏi phần Khởi động của sách; dùng 不仅……而且…… (điểm 2)."
+  },
+  {
+   "q_zh": "用手机时，你会怎样保护自己的信息？",
+   "q_vn": "Khi dùng điện thoại, bạn sẽ bảo vệ thông tin của mình thế nào?",
+   "hint": "我不会……，也不……，还会……",
+   "sample": "我不会把密码告诉别人，也不在网上发自己的身份证号和车票。要是有人打电话问我的个人信息，我就不回答。",
+   "sample_vn": "Tôi sẽ không nói mật khẩu cho người khác, cũng không đăng số căn cước và vé tàu của mình lên mạng. Nếu có người gọi điện hỏi thông tin cá nhân, tôi sẽ không trả lời.",
+   "note": "Câu hỏi phần Khởi động; ôn 要是……就…… (Bài 1)."
+  },
+  {
+   "q_zh": "陈天中为什么找不到花园小区了？他为什么没用手机地图？",
+   "q_vn": "Vì sao Trần Thiên Trung không tìm được khu Hoa Viên? Vì sao cậu ấy không dùng bản đồ điện thoại?",
+   "hint": "因为他刚……，不熟悉……。因为很多……他还……",
+   "sample": "因为他刚来中国，不熟悉路。他没用手机地图，是因为很多中文地名他还不认识。",
+   "sample_vn": "Vì cậu ấy mới đến Trung Quốc, chưa thạo đường. Cậu không dùng bản đồ điện thoại là vì nhiều địa danh tiếng Trung cậu chưa đọc được.",
+   "note": "Câu hỏi đọc hiểu bài khoá 1."
+  },
+  {
+   "q_zh": "陈天中找不到花园小区的时候，发生了什么事？请你讲一讲。",
+   "q_vn": "Dựa vào gợi ý, kể lại bài khoá 1.",
+   "hint": "陈天中从学校出来，不知道怎么去……，就向一位同学问路。同学告诉他……正好同学……这边的路……",
+   "sample": "陈天中从学校出来，不知道怎么去花园小区，就向一位同学问路。同学告诉他，先往前走，到十字路口不要过马路，直接右转就到小区门口了。正好同学也去那边，就和他一起走。陈天中说他刚来中国，还不熟悉路。同学告诉他，这边的路很好找，他也可以用手机地图，很容易就能找到目的地。不过，很多中文地名陈天中还不认识。同学说，他很快就会熟悉的。",
+   "sample_vn": "Trần Thiên Trung từ trường đi ra, không biết đi đến khu Hoa Viên thế nào nên hỏi đường một bạn học. Bạn ấy bảo cứ đi thẳng, đến ngã tư đừng sang đường, rẽ phải luôn là tới cổng khu. Vừa khéo bạn ấy cũng đi hướng đó nên đi cùng… Bạn nói cậu sẽ quen nhanh thôi.",
+   "note": "Bài tập kể lại bài khoá của sách (trang 25)."
+  },
+  {
+   "q_zh": "前几天李文帮陈天中做什么了？陈天中现在会用手机做什么了？",
+   "q_vn": "Mấy hôm trước Lý Văn đã giúp Trần Thiên Trung làm gì? Bây giờ Trần Thiên Trung biết dùng điện thoại làm gì rồi?",
+   "hint": "李文帮他……，教他……，还……。他现在不仅……，还……",
+   "sample": "李文帮他下载了微信和支付宝，教他认识里边的汉字，还教他用手机进行支付。陈天中现在不仅会扫码结账，还会用手机在网上购物了。",
+   "sample_vn": "Lý Văn giúp cậu tải WeChat và Alipay, dạy cậu nhận chữ Hán trong đó, còn dạy thanh toán bằng điện thoại. Bây giờ Trần Thiên Trung không những biết quét mã thanh toán mà còn biết mua hàng trên mạng.",
+   "note": "Câu hỏi đọc hiểu bài khoá 2; dùng 不仅……还…… (điểm 2)."
+  },
+  {
+   "q_zh": "白家月和陈天中学会用手机做什么了？留学生为什么也喜欢网购？",
+   "q_vn": "Bạch Gia Nguyệt và Trần Thiên Trung đã học được dùng điện thoại làm gì? Vì sao du học sinh cũng thích mua online?",
+   "hint": "他们学会了……等等。因为在中国网购不仅……，而且……",
+   "sample": "他们学会了扫码结账、在网上买东西，还会寄快递。留学生也喜欢网购，因为在中国网购不仅可以选的东西多，而且很快就能送到。",
+   "sample_vn": "Họ đã học được quét mã thanh toán, mua đồ trên mạng, còn biết gửi chuyển phát nhanh. Du học sinh cũng thích mua online vì ở Trung Quốc mua online không những có nhiều thứ để chọn mà còn giao tới rất nhanh.",
+   "note": "Câu hỏi đọc hiểu bài khoá 3."
+  },
+  {
+   "q_zh": "白家月和陈天中到北京以后，学会了用手机做哪些事？后来他们又开始担心什么？请把这件事说给大家听。",
+   "q_vn": "Dựa vào gợi ý, kể lại bài khoá 3.",
+   "hint": "白家月和陈天中……就发现……。后来，在……下，他们也都学会了……。在中国网购，不仅……，而且……，很多留学生甚至……。不过，由于……",
+   "sample": "白家月和陈天中刚到北京时就发现，中国人在饭馆或超市结账时，几乎都用手机支付，只有他们用现金结账。后来，在李文的帮助下，他们也都学会了用手机支付、网购、寄快递等等。在中国网购，不仅选择多、价格不高，而且送货很快，很多留学生甚至改变了自己的购物习惯。不过，由于网购太方便了，动动手指就能买到想要的东西，他们也开始担心自己在网购时会乱花钱。怎么才能管住自己不乱花钱呢？",
+   "sample_vn": "Bạch Gia Nguyệt và Trần Thiên Trung vừa đến Bắc Kinh đã phát hiện người Trung Quốc gần như đều thanh toán bằng điện thoại, chỉ có họ dùng tiền mặt. Sau đó, nhờ Lý Văn giúp, họ cũng học được thanh toán bằng điện thoại, mua online, gửi chuyển phát nhanh… Nhưng vì mua online quá tiện, họ bắt đầu lo mình tiêu tiền lung tung.",
+   "note": "Bài tập kể lại bài khoá của sách (trang 29)."
+  },
+  {
+   "q_zh": "人们为什么会担心自己的个人信息？国家会通过什么手段来保护大家的个人信息？",
+   "q_vn": "Vì sao mọi người lo lắng về an toàn thông tin cá nhân? Nhà nước dùng biện pháp gì để bảo đảm an toàn thông tin cá nhân?",
+   "hint": "因为……时，经常需要提供……。国家会通过……等手段……",
+   "sample": "因为在网上买东西或者订票的时候，常常要提供姓名、手机号、身份证号等个人信息，人们不知道这些信息能否得到保护。国家会通过技术、法律等手段来保护个人信息，中国就有保护个人信息的法律。",
+   "sample_vn": "Vì khi mua đồ hoặc đặt vé trên mạng thường phải cung cấp họ tên, số điện thoại, số căn cước… nên mọi người không biết những thông tin này có được bảo vệ không. Nhà nước dùng các biện pháp như công nghệ, pháp luật để bảo vệ, Trung Quốc có luật bảo vệ thông tin cá nhân.",
+   "note": "Câu hỏi đọc hiểu bài khoá 4."
+  },
+  {
+   "q_zh": "有的同学觉得手机对我们的帮助更多。你也这样想吗？请说说为什么。",
+   "q_vn": "Tranh luận nhóm (phe ủng hộ): Điện thoại mang lại nhiều lợi ích hơn. Hãy nêu lý do của bạn.",
+   "hint": "我觉得手机对我们的帮助更多。第一，……不仅……，还……；第二，……甚至……；要是没有手机，……",
+   "sample": "我觉得手机对我们的帮助更多。第一，用手机买东西、结账不仅很快，还不用带钱包。第二，有了手机地图，刚来中国的留学生也能很快找到要去的地方。我们还可以在手机上学中文，甚至坐地铁的时候也能学。手机问题是有，不过只要我们管住自己，就没什么好担心的。",
+   "sample_vn": "Tôi thấy điện thoại giúp ích cho chúng ta nhiều hơn. Thứ nhất, dùng điện thoại mua đồ, thanh toán không những nhanh mà còn không cần mang ví. Thứ hai, có bản đồ điện thoại, du học sinh mới sang cũng nhanh chóng tìm được nơi cần đến. Ta còn học được tiếng Trung trên điện thoại, thậm chí lúc đi tàu điện ngầm cũng học được. Vấn đề thì có, nhưng chỉ cần tự kiểm soát thì chẳng có gì phải lo.",
+   "note": "Hoạt động tranh luận nhóm của sách, trang 33 — phe ủng hộ."
+  },
+  {
+   "q_zh": "也有同学觉得手机带来的问题更多。请你说一说，手机会带来哪些问题？",
+   "q_vn": "Tranh luận nhóm (phe phản đối): Điện thoại mang lại nhiều vấn đề hơn. Hãy nêu lý do của bạn.",
+   "hint": "我认为手机带来的问题多。手机方便是方便，就是……；由于……，于是……；有的人甚至……",
+   "sample": "我认为手机带来的问题更多。手机方便是方便，就是上面的东西太多，一看就是几个小时。由于在网上买东西太容易，于是有的人买了很多用不着的东西。我们在网上提供了很多个人信息，谁也不能保证这些信息不会被别人看到。有的人甚至吃饭、走路的时候都在看手机，跟家人说话的时间越来越少。",
+   "sample_vn": "Tôi cho rằng điện thoại mang lại nhiều vấn đề hơn. Điện thoại tiện thì tiện thật, nhưng trên đó quá nhiều thứ, xem một cái là mất mấy tiếng. Vì mua đồ trên mạng quá dễ, thế là có người mua rất nhiều thứ không dùng đến. Chúng ta cung cấp nhiều thông tin cá nhân trên mạng, chẳng ai bảo đảm được chúng không bị người khác nhìn thấy. Có người thậm chí lúc ăn cơm, đi đường cũng xem điện thoại, thời gian nói chuyện với gia đình ngày càng ít.",
+   "note": "Hoạt động tranh luận nhóm của sách — phe phản đối; dùng đủ 4 điểm ngữ pháp của bài + 由于 (Bài 2)."
+  }
  ]
 },
-
 "translate": [
- ["Bắc Kinh rộng thì rộng thật, nhưng đường ở đây rất dễ tìm.","北京大是大，不过这边的路很好找。"],
- ["Giờ tôi không những biết quét mã thanh toán, mà còn biết mua hàng trên mạng.","现在我不仅会扫码结账，还会在网上购物了。"],
- ["Nhiều du học sinh thậm chí đã thay đổi thói quen mua sắm của mình.","很多留学生甚至改变了自己的购物习惯。"],
- ["Thế là có người nói ra nỗi lo của mình trên mạng.","于是，有人在网上说出了自己的担心。"],
- ["Đừng tùy tiện nói mật khẩu cho người khác.","别把密码随便告诉别人。"],
- ["Làm thế nào mới kiểm soát được bản thân không tiêu tiền lung tung?","怎么才能管住自己不乱花钱呢？"]
+ [
+  "Chỗ này yên tĩnh thì yên tĩnh thật, chỉ là xa ga tàu điện ngầm quá.",
+  "这里安静是安静，就是离地铁站太远了。"
+ ],
+ [
+  "Bố tôi không những biết mua hàng online mà còn biết dùng WeChat gọi video.",
+  "我爸爸不仅会网购，还会用微信打视频电话。"
+ ],
+ [
+  "Cô ấy học rất chăm, thậm chí Tết cũng không về nhà.",
+  "她学习特别努力，甚至春节也没回家。"
+ ],
+ [
+  "Tôi thấy trời sắp mưa, thế là mang theo ô.",
+  "我看快要下雨了，于是带上了雨伞。"
+ ],
+ [
+  "Đến ngã tư thì rẽ trái, đi thêm năm phút nữa là tới nơi.",
+  "到了十字路口往左转，再走五分钟就到目的地了。"
+ ],
+ [
+  "Khi mua hàng trên mạng, đừng nói mật khẩu cho bất kỳ ai.",
+  "网购的时候，不要把密码告诉任何人。"
+ ]
 ],
 "translateRev": [
- ["Bạn cứ đi thẳng, đến ngã tư rẽ phải luôn là tới cổng khu dân cư.","你往前走，到十字路口直接右转就到小区门口了。"],
- ["Hôm qua tôi đặt một cái máy tính trên mạng, chiều nay giao tới.","昨天我在网上订了一台电脑，今天下午送到。"],
- ["Shipper sắp đến rồi, tôi phải về ngay.","快递员要到了，我得马上回去。"],
- ["Khi mua sắm trên mạng, chúng ta thường phải cung cấp thông tin cá nhân.","网上购物时，我们经常需要提供个人信息。"],
- ["Nhiều quốc gia dùng công nghệ, pháp luật để bảo đảm an toàn thông tin cá nhân.","很多国家通过技术、法律等手段来保证个人信息安全。"]
+ [
+  "Tối qua mạng nhà tôi bị hỏng, tin nhắn không gửi đi được.",
+  "昨天晚上我家的网络坏了，信息发不出去。"
+ ],
+ [
+  "Họ dùng biện pháp kỹ thuật để bảo vệ thông tin cá nhân của khách.",
+  "他们通过技术手段来保护客人的个人信息。"
+ ],
+ [
+  "Kiện hàng này hôm qua đã gửi đi rồi, ngày mai là tới.",
+  "这个快递昨天已经寄出去了，明天就能到。"
+ ],
+ [
+  "Tôi không biết số hàng này có thể giao tới trước thứ Sáu hay không.",
+  "我不知道这些货能否在星期五以前送到。"
+ ],
+ [
+  "Mấy năm nay thói quen mua sắm của mẹ tôi đã thay đổi rất nhiều.",
+  "这几年，我妈妈的购物习惯改变了很多。"
+ ]
 ],
-
 "writing": {
  "kieu":"sgk","soChu":120,"tieuDe":"写作 — viết theo đề của sách (ít nhất 120 chữ)",
  "nhanDe":"写作",

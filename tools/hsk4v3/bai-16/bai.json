@@ -226,97 +226,682 @@
 ],
 
 "listen": [
- {"audio":"小林，你们的旅行怎么样？别提了，本来打算昨天出发，飞机却因为天气不好推迟了，最后航班取消了。真可惜！那你们怎么办？我们只好把酒店也取消了，等到下个月再去。","questions":[
-   {"q":"小林的旅行为什么没去成？","opts":["航班取消了","酒店没有房间了","他生病了"],"ans":0},
-   {"q":"他们打算什么时候再去？","opts":["下个月","明天","下个周末"],"ans":0}]},
- {"audio":"王经理，明天早晨的会议还按时开吗？时间没变，不过会议内容增加了一项。你把材料再调整一下，并且多加几个例子。好的，我今天下午就把材料改好。","questions":[
-   {"q":"明天的会议有什么变化？","opts":["时间推迟了","内容增加了","地点变了"],"ans":1},
-   {"q":"经理让他做什么？","opts":["调整材料并增加例子","通知大家开会","取消会议"],"ans":0}]},
- {"audio":"你每天都做详细的时间表吗？是啊，不做计划，我做事心里没把握。我却正好相反，喜欢想到什么就做什么，觉得这样比较轻松。那你不怕完不成任务吗？不怕，不做计划，说不定还会有新的发现呢。","questions":[
-   {"q":"喜欢做时间表的人为什么做计划？","opts":["不做计划心里没把握","老师要求的","工作太忙了"],"ans":0},
-   {"q":"不爱做计划的人觉得随意一些怎么样？","opts":["比较轻松","很没意思","很累"],"ans":0}]}
+ {
+  "audio": "本来我们约好今天下午去打篮球，可是李文忽然有事来不了，只好改到明天了。",
+  "questions": [
+   {
+    "q": "Vì sao chiều nay không chơi bóng rổ?",
+    "opts": [
+     "Trời mưa",
+     "Lý Văn đột nhiên có việc",
+     "Sân bóng đóng cửa"
+    ],
+    "ans": 1,
+    "exp": "李文忽然有事来不了 = Lý Văn bỗng có việc, không đến được; ôn V不了 (bài 4)."
+   },
+   {
+    "q": "Cuối cùng họ quyết định thế nào?",
+    "opts": [
+     "Đổi sang ngày mai",
+     "Huỷ luôn",
+     "Chơi môn khác"
+    ],
+    "ans": 0,
+    "exp": "只好改到明天了 = đành đổi sang ngày mai; 本来 = lúc đầu định …."
+   }
+  ]
+ },
+ {
+  "audio": "会议的一切都准备好了，我已经把时间表发给大家了，有问题请马上告诉我。",
+  "questions": [
+   {
+    "q": "Người nói đã làm gì?",
+    "opts": [
+     "Huỷ cuộc họp",
+     "Đổi phòng họp",
+     "Gửi lịch trình cho mọi người"
+    ],
+    "ans": 2,
+    "exp": "把时间表发给大家了 = đã gửi lịch trình cho mọi người; câu 把 + V + 了: việc đã làm xong."
+   }
+  ]
+ },
+ {
+  "audio": "天这么阴，说不定一会儿会下雨，你出门的时候带上伞吧。",
+  "questions": [
+   {
+    "q": "Người nói khuyên gì?",
+    "opts": [
+     "Mang theo ô",
+     "Ở nhà đừng đi",
+     "Mặc thêm áo"
+    ],
+    "ans": 0,
+    "exp": "说不定一会儿会下雨 = biết đâu lát nữa mưa, nên 带上伞 = mang theo ô."
+   }
+  ]
+ },
+ {
+  "audio": "他每天都很努力地练习，比赛那天却没有取得好成绩，大家都觉得很可惜。",
+  "questions": [
+   {
+    "q": "Kết quả thi đấu của anh ấy thế nào?",
+    "opts": [
+     "Đạt giải nhất",
+     "Không đạt thành tích tốt",
+     "Không được tham gia"
+    ],
+    "ans": 1,
+    "exp": "却没有取得好成绩 = vậy mà lại không đạt thành tích tốt; 却 = trái với mong đợi."
+   },
+   {
+    "q": "Mọi người cảm thấy thế nào?",
+    "opts": [
+     "Vui mừng",
+     "Tức giận",
+     "Tiếc cho anh ấy"
+    ],
+    "ans": 2,
+    "exp": "大家都觉得很可惜 = mọi người đều thấy rất đáng tiếc."
+   }
+  ]
+ },
+ {
+  "audio": "这家小店的包子很好吃，并且价钱也不贵，所以每天早晨都有很多人排队。",
+  "questions": [
+   {
+    "q": "Vì sao cửa hàng nhỏ này đông khách?",
+    "opts": [
+     "Bánh bao ngon, lại không đắt",
+     "Mở cửa cả đêm",
+     "Đang có khuyến mãi"
+    ],
+    "ans": 0,
+    "exp": "包子很好吃，并且价钱也不贵 = bánh bao ngon, hơn nữa giá cũng không đắt; ôn 价钱 (bài 14), 排队 (bài 6)."
+   }
+  ]
+ },
+ {
+  "audio": "周末我们去公园逛了逛，没想到那里新开了一个小书店，特别有趣。",
+  "questions": [
+   {
+    "q": "Cuối tuần họ phát hiện ra điều gì?",
+    "opts": [
+     "Công viên đóng cửa",
+     "Có một hiệu sách nhỏ mới mở",
+     "Gặp lại bạn cũ"
+    ],
+    "ans": 1,
+    "exp": "没想到那里新开了一个小书店 = không ngờ ở đó mới mở một hiệu sách nhỏ; 逛了逛 = đi dạo một vòng."
+   }
+  ]
+ },
+ {
+  "audio": "经理说，因为天气不好，明天的活动推迟到下个星期，不是取消。",
+  "questions": [
+   {
+    "q": "Hoạt động ngày mai thế nào?",
+    "opts": [
+     "Bị huỷ",
+     "Vẫn tổ chức",
+     "Hoãn sang tuần sau"
+    ],
+    "ans": 2,
+    "exp": "推迟到下个星期 = lùi sang tuần sau; 不是取消 = không phải huỷ."
+   },
+   {
+    "q": "Vì sao có thay đổi?",
+    "opts": [
+     "Thời tiết không tốt",
+     "Giám đốc bận",
+     "Ít người đăng ký"
+    ],
+    "ans": 0,
+    "exp": "因为天气不好 = vì thời tiết xấu."
+   }
+  ]
+ }
 ],
-
 "match": [
- {"left":"取消","right":"机票和酒店"},
- {"left":"推迟","right":"旅行计划"},
- {"left":"调整","right":"会议材料"},
- {"left":"增加","right":"一些例子"},
- {"left":"取得","right":"不错的效果"},
- {"left":"详细的","right":"时间表"},
- {"left":"观看","right":"一部电影"},
- {"left":"接受","right":"新的情况"},
- {"left":"灵活","right":"调整计划"},
- {"left":"逛","right":"商场"}
+ {
+  "left": "调整",
+  "right": "时间表"
+ },
+ {
+  "left": "取得",
+  "right": "好成绩"
+ },
+ {
+  "left": "接受",
+  "right": "礼物"
+ },
+ {
+  "left": "逛",
+  "right": "商场"
+ },
+ {
+  "left": "约",
+  "right": "朋友"
+ },
+ {
+  "left": "一部",
+  "right": "电影"
+ },
+ {
+  "left": "严格",
+  "right": "要求"
+ },
+ {
+  "left": "赶上",
+  "right": "最后一班地铁"
+ }
 ],
-
 "fill": [
- {"pre":"","blank":"本来","post":"都计划好了，可是昨天突然接到通知。","hint":"(vốn dĩ)","ans":"本来","exp":"本来……，可是…… = vốn định … nhưng."},
- {"pre":"下周学校要安排一次考试，所以周末","blank":"只好","post":"在家复习了。","hint":"(đành phải)","ans":"只好","exp":"只好 + V = đành."},
- {"pre":"看来你的旅行计划只能","blank":"推迟","post":"了。","hint":"(hoãn lại)","ans":"推迟","exp":"推迟 = lùi thời gian."},
- {"pre":"虽然有点儿","blank":"可惜","post":"，但学习更重要。","hint":"(đáng tiếc)","ans":"可惜","exp":"有点儿可惜 = hơi tiếc."},
- {"pre":"学习","blank":"确实","post":"要放在第一位。","hint":"(quả thật)","ans":"确实","exp":"确实 + V: khẳng định, đồng ý."},
- {"pre":"是啊，没想到","blank":"忽然","post":"要改时间。","hint":"(đột nhiên)","ans":"忽然","exp":"忽然 chỉ là phó từ."},
- {"pre":"有时候变化不一定是坏事，","blank":"关键","post":"是我们怎么去适应变化。","hint":"(then chốt)","ans":"关键","exp":"关键是…… = mấu chốt là."},
- {"pre":"他们会提前安排好每天要做的事情，然后按照详细的","blank":"时间表","post":"去完成任务。","hint":"(thời gian biểu)","ans":"时间表","exp":"按照时间表 + V."},
- {"pre":"严格按照计划做事，常常能","blank":"取得","post":"不错的效果。","hint":"(đạt được)","ans":"取得","exp":"取得 + 效果 / 成绩."},
- {"pre":"你准备好了一切，却突然出现了新情况，让你","blank":"不得不","post":"改变计划。","hint":"(buộc phải)","ans":"不得不","exp":"让 + ai + 不得不 + V."}
+ {
+  "pre": "这本书",
+  "blank": "本来",
+  "post": "是给你买的，可是你已经有了，我就送给妹妹吧。",
+  "hint": "(vốn dĩ)",
+  "ans": "本来",
+  "exp": "本来 = lúc đầu, vốn định …; vế sau đổi ý (可是…，就…)."
+ },
+ {
+  "pre": "最后一班地铁已经走了，我们",
+  "blank": "只好",
+  "post": "打车回家。",
+  "hint": "(đành phải)",
+  "ans": "只好",
+  "exp": "只好 + V = đành phải …, vì không còn cách nào khác (hết tàu điện ngầm)."
+ },
+ {
+  "pre": "因为老师生病了，明天的考试",
+  "blank": "推迟",
+  "post": "了两天。",
+  "hint": "(hoãn)",
+  "ans": "推迟",
+  "exp": "推迟 = lùi lại, hoãn (vẫn sẽ thi); khác 取消 là huỷ hẳn."
+ },
+ {
+  "pre": "我试了试，这个办法",
+  "blank": "确实",
+  "post": "比我的好。",
+  "hint": "(quả thật)",
+  "ans": "确实",
+  "exp": "确实 = quả thật, đúng là: thử rồi mới thấy; ôn 试了试 (bài 15) và câu so sánh 比."
+ },
+ {
+  "pre": "上午天气还很好，下午",
+  "blank": "忽然",
+  "post": "下起了大雨。",
+  "hint": "(bỗng nhiên)",
+  "ans": "忽然",
+  "exp": "忽然 = bỗng nhiên, việc xảy ra không báo trước; 下起了 = bắt đầu mưa."
+ },
+ {
+  "pre": "最近来学中文的人越来越多，学校又",
+  "blank": "增加",
+  "post": "了两个班。",
+  "hint": "(tăng thêm)",
+  "ans": "增加",
+  "exp": "增加 + số lượng = tăng thêm …; ôn 越来越 (ngày càng)."
+ },
+ {
+  "pre": "他作业里的",
+  "blank": "错误",
+  "post": "比以前少多了。",
+  "hint": "(lỗi sai)",
+  "ans": "错误",
+  "exp": "错误 (danh từ) = lỗi sai; bài tập bây giờ ít lỗi hơn trước nhiều (ôn 比…多了)."
+ },
+ {
+  "pre": "这个词我还是不太懂，老师，您能再说一个",
+  "blank": "例子",
+  "post": "吗？",
+  "hint": "(ví dụ)",
+  "ans": "例子",
+  "exp": "例子 = ví dụ, lượng từ 个: 说一个例子 = nêu một ví dụ."
+ },
+ {
+  "pre": "这是我们这次旅行的",
+  "blank": "详细",
+  "post": "计划，每天去哪儿、住哪儿都写好了。",
+  "hint": "(chi tiết)",
+  "ans": "详细",
+  "exp": "详细 = chi tiết, tỉ mỉ: kế hoạch ghi rõ từng ngày đi đâu, ở đâu."
+ },
+ {
+  "pre": "这次考试我准备得很好，有",
+  "blank": "把握",
+  "post": "考到九十分以上。",
+  "hint": "(nắm chắc)",
+  "ans": "把握",
+  "exp": "有把握 = nắm chắc, tự tin là sẽ …; không chắc thì nói 没有把握."
+ },
+ {
+  "pre": "最后一门考完了，我觉得特别",
+  "blank": "轻松",
+  "post": "，想好好睡一觉。",
+  "hint": "(nhẹ nhõm)",
+  "ans": "轻松",
+  "exp": "轻松 = nhẹ nhõm, thoải mái — cảm giác sau khi xong kỳ thi căng thẳng."
+ },
+ {
+  "pre": "公司突然让我去上海，我",
+  "blank": "不得不",
+  "post": "把周末的计划取消了。",
+  "hint": "(buộc phải)",
+  "ans": "不得不",
+  "exp": "不得不 + V = buộc phải …; vế sau là câu 把 + O + 取消了 (điểm 1)."
+ },
+ {
+  "pre": "昨天晚上，很多人在家",
+  "blank": "观看",
+  "post": "了那次足球比赛。",
+  "hint": "(xem)",
+  "ans": "观看",
+  "exp": "观看 + 比赛 / 演出 = xem, theo dõi (trang trọng hơn 看)."
+ }
 ],
-
 "sort": [
- {"words":["我","已经","把","机票和酒店","取消","了","。"],"ans":"我已经把机票和酒店取消了。"},
- {"words":["再检查一下","有没有","细节上的错误","，","并且","试着","增加一些例子","。"],"ans":"再检查一下有没有细节上的错误，并且试着增加一些例子。"},
- {"words":["不做计划","，","说不定","也会","带来","新的发现","。"],"ans":"不做计划，说不定也会带来新的发现。"},
- {"words":["你","准备好了","一切","，","却","突然出现了","新情况","。"],"ans":"你准备好了一切，却突然出现了新情况。"},
- {"words":["学习","确实","要","放在","第一位","。"],"ans":"学习确实要放在第一位。"},
- {"words":["生活中","很多变化","是","无法","提前知道","的","。"],"ans":"生活中很多变化是无法提前知道的。"}
+ {
+  "words": [
+   "你",
+   "把",
+   "桌子上",
+   "的",
+   "书",
+   "收拾",
+   "了",
+   "吧",
+   "。"
+  ],
+  "ans": "你把桌子上的书收拾了吧。"
+ },
+ {
+  "words": [
+   "我",
+   "找到了",
+   "那本书",
+   "，",
+   "并且",
+   "把",
+   "它",
+   "借",
+   "回来",
+   "了",
+   "。"
+  ],
+  "ans": "我找到了那本书，并且把它借回来了。"
+ },
+ {
+  "words": [
+   "电话",
+   "一直",
+   "没人",
+   "接",
+   "，",
+   "说不定",
+   "已经",
+   "睡",
+   "了",
+   "。"
+  ],
+  "ans": "电话一直没人接，说不定已经睡了。"
+ },
+ {
+  "words": [
+   "他",
+   "学",
+   "了",
+   "三年",
+   "中文",
+   "，",
+   "却",
+   "不会",
+   "写",
+   "汉字",
+   "。"
+  ],
+  "ans": "他学了三年中文，却不会写汉字。"
+ },
+ {
+  "words": [
+   "我们",
+   "老师",
+   "对",
+   "学生",
+   "要求",
+   "很",
+   "严格",
+   "。"
+  ],
+  "ans": "我们老师对学生要求很严格。"
+ },
+ {
+  "words": [
+   "他们",
+   "的",
+   "研究",
+   "取得",
+   "了",
+   "很大",
+   "的",
+   "成功",
+   "。"
+  ],
+  "ans": "他们的研究取得了很大的成功。"
+ },
+ {
+  "words": [
+   "旧",
+   "电脑",
+   "用",
+   "不了",
+   "了",
+   "，",
+   "他",
+   "不得不",
+   "买",
+   "一台",
+   "新的",
+   "。"
+  ],
+  "ans": "旧电脑用不了了，他不得不买一台新的。"
+ },
+ {
+  "words": [
+   "他",
+   "把",
+   "那些",
+   "没用",
+   "的",
+   "东西",
+   "都",
+   "扔",
+   "了",
+   "。"
+  ],
+  "ans": "他把那些没用的东西都扔了。"
+ }
 ],
-
 "mc": [
- {"q":"我已经＿＿机票和酒店取消了。","opts":["把","被","给","对"],"ans":0,"exp":"Câu 把: Chủ ngữ + 把 + O + V + 了."},
- {"q":"他按时完成了任务，＿＿做得很好。","opts":["并且","但是","所以","或者"],"ans":0,"exp":"Vế sau bổ sung, tiến thêm một bước → 并且."},
- {"q":"今天这么阴，＿＿会下雨。","opts":["说不定","不得不","只好","本来"],"ans":0,"exp":"Phỏng đoán khả năng → 说不定."},
- {"q":"她长得很像她姐姐，性格＿＿完全不同。","opts":["却","就","才","并且"],"ans":0,"exp":"Vế sau trái với mong đợi; 却 sau chủ ngữ 性格."},
- {"q":"时间都安排好了，怎么说变＿＿变了？","opts":["就","才","却","也"],"ans":0,"exp":"说 + V + 就 + V: thay đổi rất nhanh, bất ngờ (mẹo của Tiểu Ngữ, bài khoá 2)."},
- {"q":"下周学校要安排一次考试，所以周末我＿＿在家复习了。","opts":["只好","确实","忽然","也许"],"ans":0,"exp":"只好 = đành phải (không còn cách nào khác)."},
- {"q":"要想提高成绩，＿＿是坚持每天复习。","opts":["关键","例子","标准","部分"],"ans":0,"exp":"……，关键是…… = mấu chốt là."},
- {"q":"生活中很多变化是＿＿提前知道的。","opts":["无法","不便","不得不","相反"],"ans":0,"exp":"无法 + V = không thể."},
- {"q":"我们要做的就是学会＿＿变化、适应变化。","opts":["接受","取得","观看","增加"],"ans":0,"exp":"接受变化 = chấp nhận thay đổi."},
- {"q":"没见到朋友，于是在家＿＿了一部电影。","opts":["观看","逛","约","取消"],"ans":0,"exp":"观看 + 电影 / 比赛; lượng từ 部."}
+ {
+  "q": "Bạn nói với em: “Em ăn hết chỗ cơm này đi, đừng lãng phí.”",
+  "opts": [
+   "你把这些饭吃了吧，别浪费。",
+   "你吃了把这些饭吧，别浪费。",
+   "你把这些饭吃吧了，别浪费。",
+   "你把吃了这些饭吧，别浪费。"
+  ],
+  "ans": 0,
+  "exp": "Đề nghị làm cho xong: 把 + tân ngữ + động từ + 了 + 吧; 把 + O đứng trước động từ, 了 ngay sau động từ."
+ },
+ {
+  "q": "Câu nào SAI?",
+  "opts": [
+   "我把那本书看。",
+   "我已经把作业交了。",
+   "别忘了把门关了。",
+   "他没把这件事告诉我。"
+  ],
+  "ans": 0,
+  "exp": "Câu 把 không kết thúc bằng động từ trơ trọi, phải có 了 / 完 / bổ ngữ…: 我把那本书看完了."
+ },
+ {
+  "q": "Bạn muốn nói: “Bài này rất dễ, vậy mà anh ấy lại làm sai.”",
+  "opts": [
+   "这道题很容易，他却做错了。",
+   "这道题很容易，却他做错了。",
+   "这道题很容易，他做错了却。",
+   "这道题很容易，他却做对了。"
+  ],
+  "ans": 0,
+  "exp": "却 đứng SAU chủ ngữ, TRƯỚC động từ (他却做错了), không đứng đầu vế như 但是; vế sau phải trái với điều mong đợi."
+ },
+ {
+  "q": "“我在门口等了他一个小时，他＿＿没来。”",
+  "opts": [
+   "却",
+   "就",
+   "再",
+   "并且"
+  ],
+  "ans": 0,
+  "exp": "却 = vậy mà lại (trái với mong đợi): đợi cả tiếng mà anh ấy lại không đến."
+ },
+ {
+  "q": "A: “新来的同学怎么样？” — B đáp:",
+  "opts": [
+   "她很热情，并且学习也很努力。",
+   "她很热情，并且学习也不努力。",
+   "她很热情，并且是学习很努力。",
+   "并且她很热情，学习也很努力。"
+  ],
+  "ans": 0,
+  "exp": "并且 nối hai ý cùng chiều, tăng tiến (nhiệt tình + chăm chỉ); không đặt 并且 đầu câu, không thêm 是 trước tính từ."
+ },
+ {
+  "q": "Bạn muốn nói: “Gọi lại lần nữa xem, biết đâu cô ấy nghe máy.”",
+  "opts": [
+   "你再打一次，说不定她会接。",
+   "你再打一次，她会接说不定。",
+   "你再打一次，说不定她接了会。",
+   "你再打一次，不一定她会接。"
+  ],
+  "ans": 0,
+  "exp": "说不定 đứng trước (chủ ngữ +) 会 + V = biết đâu …; 不一定 là “chưa chắc”, ngược ý khuyến khích."
+ },
+ {
+  "q": "“他今天没来上课，＿＿是生病了。”",
+  "opts": [
+   "说不定",
+   "不得不",
+   "只好",
+   "相反"
+  ],
+  "ans": 0,
+  "exp": "说不定 = có khi, biết đâu — dùng để đoán: không đi học, có khi là ốm."
+ },
+ {
+  "q": "A: “明天的会还开吗？” B: “不开了，经理把会＿＿了，以后也不开了。”",
+  "opts": [
+   "取消",
+   "推迟",
+   "调整",
+   "增加"
+  ],
+  "ans": 0,
+  "exp": "取消 = huỷ hẳn (以后也不开了); 推迟 chỉ là lùi thời gian, sau vẫn họp."
+ },
+ {
+  "q": "Vé tàu cao tốc đã bán hết. Bạn nói:",
+  "opts": [
+   "高铁票卖完了，我们只好坐飞机去。",
+   "高铁票卖完了，只好我们坐飞机去。",
+   "高铁票卖完了，我们坐飞机去只好。",
+   "高铁票卖完了，我们只好坐飞机去过。"
+  ],
+  "ans": 0,
+  "exp": "只好 đứng sau chủ ngữ, trước động từ (我们只好坐…) — không đứng trước chủ ngữ như “đành” tiếng Việt, không thêm 过."
+ },
+ {
+  "q": "“这＿＿电影我看了三遍，每次都觉得很有趣。”",
+  "opts": [
+   "部",
+   "本",
+   "张",
+   "条"
+  ],
+  "ans": 0,
+  "exp": "部 là lượng từ cho phim (一部电影); 本 dùng cho sách, 张 cho vé / giấy."
+ },
+ {
+  "q": "Bạn muốn nói: “Anh ấy không thấy mệt, ngược lại càng làm càng vui.”",
+  "opts": [
+   "他不觉得累，相反，越做越高兴。",
+   "他不觉得累，相反，越做越累。",
+   "他觉得很累，相反，越做越累。",
+   "他相反不觉得累，越做越高兴。"
+  ],
+  "ans": 0,
+  "exp": "相反 đứng đầu vế sau, nêu điều trái với vế trước (không mệt → càng vui); hai vế phải ngược chiều nhau."
+ },
+ {
+  "q": "“他说好来看我的演出，结果没来，我很＿＿。”",
+  "opts": [
+   "失望",
+   "可惜",
+   "轻松",
+   "灵活"
+  ],
+  "ans": 0,
+  "exp": "失望 = thất vọng (cảm xúc của người): 我很失望; 可惜 = đáng tiếc, nói về sự việc, không nói 我很可惜."
+ },
+ {
+  "q": "“风太大了，飞机＿＿起飞，大家只好在机场等。”",
+  "opts": [
+   "无法",
+   "不便",
+   "不得不",
+   "相反"
+  ],
+  "ans": 0,
+  "exp": "无法 + V = không thể … (vì điều kiện bên ngoài); 不得不 là “buộc phải”, nghĩa ngược lại."
+ }
 ],
-
 "speaking": {
- "intro":"Nhấn nút loa nghe câu hỏi (câu hỏi phần Khởi động, câu hỏi đọc hiểu của 4 bài khoá, kể lại bài khoá và tranh luận nhóm), rồi tự ghi âm câu trả lời — cố dùng từ mới và 4 điểm ngữ pháp của bài.",
- "questions":[
-  {"q_zh":"你平时经常做计划吗？一般会做哪些计划？","q_vn":"Bình thường bạn có hay lập kế hoạch không? Thường lập những kế hoạch gì?","hint":"我平时……做计划。每天早晨，我会……，并且……。放假的时候……。不过计划常常赶不上变化……","sample":"我平时经常做计划。每天早晨，我会做一个简单的时间表，把今天要做的事情写下来，并且把最重要的事情放在第一位。每个星期，我还会做一个学习计划，比如每天记二十个生词、练习半个小时口语。放假的时候，我会提前做旅行计划，订好机票和酒店。不过计划常常赶不上变化，所以我也会根据情况灵活调整。","sample_vn":"Bình thường tôi hay lập kế hoạch. Sáng nào tôi cũng lập một thời gian biểu đơn giản, ghi lại những việc cần làm hôm nay, đồng thời đặt việc quan trọng nhất lên hàng đầu. Mỗi tuần tôi còn lập một kế hoạch học tập, ví dụ mỗi ngày nhớ hai mươi từ mới, luyện nói nửa tiếng. Khi được nghỉ, tôi lập kế hoạch du lịch từ trước, đặt sẵn vé máy bay và khách sạn. Có điều kế hoạch thường không theo kịp thay đổi, nên tôi cũng điều chỉnh linh hoạt theo tình hình.","note":"Câu hỏi phần Khởi động của sách; dùng 并且 (điểm 2) + từ mới 时间表, 灵活, 调整."},
-  {"q_zh":"你觉得做计划重要吗？为什么？","q_vn":"Bạn thấy lập kế hoạch có quan trọng không? Vì sao?","hint":"我觉得……。有了计划，……更有把握，并且……。如果不做计划，……不得不……。当然，……关键是……","sample":"我觉得做计划很重要。有了计划，我就知道每天先做什么、后做什么，做事更有把握，并且能节约很多时间。如果不做计划，我常常会忘了重要的事情，最后不得不熬夜完成任务。当然，计划不能太严格，遇到变化时要灵活调整，关键是能按时完成任务。","sample_vn":"Tôi thấy lập kế hoạch rất quan trọng. Có kế hoạch rồi, tôi biết mỗi ngày làm gì trước, làm gì sau, làm việc nắm chắc hơn, hơn nữa tiết kiệm được nhiều thời gian. Nếu không lập kế hoạch, tôi hay quên những việc quan trọng, cuối cùng buộc phải thức khuya để hoàn thành nhiệm vụ. Tất nhiên kế hoạch không thể quá cứng nhắc, gặp thay đổi phải điều chỉnh linh hoạt, mấu chốt là hoàn thành nhiệm vụ đúng hạn.","note":"Câu hỏi phần Khởi động của sách; dùng 并且 (điểm 2), 不得不, 关键是."},
-  {"q_zh":"白家月为什么周末不能去南京了？旅行计划推迟后，白家月做什么了？","q_vn":"Vì sao cuối tuần Bạch Gia Nguyệt không đi Nam Kinh được nữa? Sau khi hoãn kế hoạch du lịch, Bạch Gia Nguyệt đã làm gì?","hint":"因为昨天她突然……，下周学校要……，所以……只好……。她已经把……取消了，打算等到……","sample":"因为昨天她突然接到通知，下周学校要安排一次考试，所以周末她只好在家复习。旅行计划推迟后，她已经把机票和酒店取消了。虽然有点儿可惜，但她觉得学习更重要，打算等到考试结束后再找个时间去。","sample_vn":"Vì hôm qua cô ấy đột nhiên nhận được thông báo, tuần sau trường sắp xếp một kỳ thi, nên cuối tuần cô ấy đành ở nhà ôn bài. Sau khi hoãn kế hoạch du lịch, cô ấy đã hủy vé máy bay và khách sạn. Tuy hơi tiếc nhưng cô ấy thấy việc học quan trọng hơn, định đợi thi xong sẽ tìm dịp khác đi.","note":"Câu hỏi bài khoá 1; dùng câu chữ 把 (điểm 1)."},
-  {"q_zh":"请根据提示复述课文一。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 1.","hint":"白家月本来计划……，可是昨天突然……，下周学校要……。她周末需要……，旅游计划……。她已经把……，虽然……，但学习……。她打算……后，找个时间……。","sample":"白家月本来计划周末去南京旅游，可是昨天突然接到通知，下周学校要安排一次考试。她周末需要在家复习，旅游计划只能推迟了。她已经把机票和酒店取消了，虽然有点儿可惜，但学习更重要。她打算等到考试结束后，找个时间再去。","sample_vn":"Bạch Gia Nguyệt vốn định cuối tuần đi Nam Kinh du lịch, nhưng hôm qua đột nhiên nhận được thông báo tuần sau trường sắp xếp một kỳ thi. Cuối tuần cô ấy cần ở nhà ôn bài, kế hoạch du lịch chỉ có thể hoãn lại. Cô ấy đã hủy vé máy bay và khách sạn, tuy hơi tiếc nhưng việc học quan trọng hơn. Cô ấy định đợi thi xong sẽ tìm dịp khác đi.","note":"Bài tập 复述 của sách (trang 64)."},
-  {"q_zh":"王一雪建议怎么调整会议材料？对于变化，王一雪是怎么看的？","q_vn":"Vương Nhất Tuyết đề nghị điều chỉnh tài liệu họp thế nào? Vương Nhất Tuyết nhìn nhận sự thay đổi ra sao?","hint":"她建议再检查一下……，并且……，把内容……。她觉得有时候变化……，关键是……","sample":"王一雪建议再检查一下有没有细节上的错误，并且试着增加一些例子，把内容准备得更全一些。对于变化，她觉得有时候变化不一定是坏事，关键是我们怎么去适应变化。","sample_vn":"Vương Nhất Tuyết đề nghị kiểm tra lại xem có lỗi chi tiết nào không, đồng thời thử thêm vài ví dụ, chuẩn bị nội dung đầy đủ hơn. Về sự thay đổi, chị ấy cho rằng có lúc thay đổi chưa chắc là chuyện xấu, mấu chốt là chúng ta thích nghi với thay đổi thế nào.","note":"Câu hỏi bài khoá 2; dùng 并且 (điểm 2) + ôn 对于 (Bài 14 · điểm 4)."},
-  {"q_zh":"喜欢做计划的人一般是怎么安排事情的？事前做计划是好是坏？为什么？","q_vn":"Người thích lập kế hoạch thường sắp xếp công việc thế nào? Lập kế hoạch từ trước là tốt hay xấu? Vì sao?","hint":"他们会提前……，然后按照……。事前做计划是好是坏没有……。严格按照计划做事，常常能……；而不做计划，说不定……","sample":"喜欢做计划的人会提前安排好每天要做的事情，然后按照详细的时间表去完成任务。事前做计划是好是坏没有标准答案。严格按照计划做事，常常能取得不错的效果；而不做计划，说不定也会带来新的发现。","sample_vn":"Người thích lập kế hoạch sẽ sắp xếp trước những việc phải làm mỗi ngày, rồi làm theo thời gian biểu chi tiết để hoàn thành nhiệm vụ. Lập kế hoạch từ trước tốt hay xấu không có đáp án chuẩn. Làm nghiêm túc theo kế hoạch thường đạt hiệu quả khá tốt; còn không lập kế hoạch, không chừng cũng mang lại phát hiện mới.","note":"Câu hỏi bài khoá 3; dùng 说不定 (điểm 3)."},
-  {"q_zh":"请根据提示复述课文三。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 3.","hint":"在生活和工作中，有的人喜欢做计划，他们会……，然后按照……。相反，也有一部分人……。其实，事前做计划是好是坏……。严格按照计划做事，常常能……；而不做计划，说不定……。无论做不做计划，只要既能……，又能……，就是……。","sample":"在生活和工作中，有的人喜欢做计划，他们会提前安排好每天要做的事情，然后按照详细的时间表去完成任务，觉得这样做更有把握。相反，也有一部分人不爱做计划，他们认为随意一些也很好，想到什么就去做什么，感觉这样比较轻松。其实，事前做计划是好是坏没有标准答案。严格按照计划做事，常常能取得不错的效果；而不做计划，说不定也会带来新的发现。无论做不做计划，只要既能按时完成任务，又能根据情况灵活调整，就是适合自己的方式。","sample_vn":"Trong cuộc sống và công việc, có người thích lập kế hoạch… Dù có lập kế hoạch hay không, chỉ cần vừa hoàn thành nhiệm vụ đúng hạn, vừa điều chỉnh linh hoạt theo tình hình, thì đó là cách phù hợp với mình.","note":"Bài tập 复述 của sách (trang 68); ôn 无论 (Bài 12) + 既……又…… (Bài 4)."},
-  {"q_zh":"“计划赶不上变化”是什么意思？我们为什么应该积极适应变化？","q_vn":"“Kế hoạch không theo kịp thay đổi” nghĩa là gì? Vì sao chúng ta nên tích cực thích nghi với thay đổi?","hint":"意思是你准备好了一切，却……，让你不得不……。因为生活中很多变化是……；学会接受变化、适应变化，不仅能……，也能……","sample":"“计划赶不上变化”的意思是，有时候你准备好了一切，却突然出现了新情况，让你不得不改变计划。我们应该积极适应变化，因为生活中很多变化是无法提前知道的。学会接受变化、适应变化，不仅能锻炼自己解决问题的能力，也能让我们的生活更轻松。","sample_vn":"“Kế hoạch không theo kịp thay đổi” nghĩa là có lúc bạn đã chuẩn bị xong mọi thứ, nhưng lại đột nhiên xuất hiện tình huống mới, khiến bạn buộc phải thay đổi kế hoạch. Chúng ta nên tích cực thích nghi với thay đổi, vì nhiều thay đổi trong cuộc sống không thể biết trước. Học cách chấp nhận và thích nghi với thay đổi không chỉ rèn luyện khả năng giải quyết vấn đề, mà còn giúp cuộc sống thoải mái hơn.","note":"Câu hỏi bài khoá 4; dùng 却 (điểm 4) + ôn 不仅……也…… (Bài 3)."},
-  {"q_zh":"小组辩论（正方）：全班分成两组，以“做计划是好是坏”为主题进行辩论。正方的观点是：做计划更好。请说说你们的观点和理由。","q_vn":"Tranh luận nhóm (phe ủng hộ): Cả lớp chia làm hai nhóm, tranh luận với chủ đề “Lập kế hoạch là tốt hay xấu”. Quan điểm phe ủng hộ: lập kế hoạch thì tốt hơn. Hãy nêu quan điểm và lý do của nhóm.","hint":"我们认为做计划更好。第一，……更有把握，并且……。第二，严格按照计划做事……。第三，计划赶不上变化，但……灵活调整。相反，如果不做计划，……却……，最后不得不……","sample":"我们认为做计划更好。第一，做计划能让我们提前安排好每天要做的事情，按照详细的时间表去完成任务，做事更有把握，并且能节约很多时间。第二，严格按照计划做事，常常能取得不错的效果。比如考试前，我做了一份复习时间表，每天复习一部分内容，最后考得很好。第三，当然，计划常常赶不上变化，但有了计划，遇到变化时我们也知道哪些事情最重要，可以灵活调整。相反，如果不做计划，想到什么就做什么，看起来很轻松，却很容易忘了重要的事情，最后不得不加班完成任务。所以，我们认为做计划更好。","sample_vn":"Chúng tôi cho rằng lập kế hoạch thì tốt hơn. Thứ nhất, lập kế hoạch giúp chúng ta sắp xếp trước những việc phải làm mỗi ngày, làm theo thời gian biểu chi tiết, làm việc nắm chắc hơn, hơn nữa tiết kiệm được nhiều thời gian. Thứ hai, làm nghiêm túc theo kế hoạch thường đạt hiệu quả khá tốt. Ví dụ trước kỳ thi, tôi lập một thời gian biểu ôn tập, mỗi ngày ôn một phần nội dung, cuối cùng thi rất tốt. Thứ ba, tất nhiên kế hoạch thường không theo kịp thay đổi, nhưng có kế hoạch rồi thì khi gặp thay đổi ta cũng biết việc gì quan trọng nhất, có thể điều chỉnh linh hoạt. Ngược lại, nếu không lập kế hoạch, nghĩ gì làm nấy, trông thì thoải mái nhưng lại rất dễ quên việc quan trọng, cuối cùng buộc phải tăng ca để hoàn thành nhiệm vụ. Vì vậy, chúng tôi cho rằng lập kế hoạch thì tốt hơn.","note":"Hoạt động 任务活动 · 小组辩论 (tranh luận nhóm) của sách, trang 72 — phe ủng hộ (正方); dùng 并且, 却, 相反, 不得不."},
-  {"q_zh":"小组辩论（反方）：反方的观点是：随意些更好。请说说你们的观点和理由。","q_vn":"Tranh luận nhóm (phe phản đối): Quan điểm phe phản đối: tùy hứng một chút thì tốt hơn. Hãy nêu quan điểm và lý do của nhóm.","hint":"我们认为随意些更好。首先，生活中很多变化是无法……，你准备好了一切，却……。其次，随意一些……比较轻松……，说不定……。比如……。最后，我们不是说……，而是……","sample":"我们认为随意些更好。首先，生活中很多变化是无法提前知道的，你准备好了一切，却常常会突然出现新情况。计划做得再详细，也赶不上变化，这样反而会让人感到失望。其次，随意一些，想到什么就做什么，感觉比较轻松，压力也小，并且不做计划，说不定还会带来新的发现。比如有一次，我本来打算去旅行，后来没去成，于是在家门口的小公园逛了逛，发现那里也很有趣。最后，我们不是说什么都不准备，而是觉得不用把每件事都安排得那么严格，只要能按时完成任务就好。所以，我们认为随意些更好。","sample_vn":"Chúng tôi cho rằng tùy hứng một chút thì tốt hơn. Trước hết, nhiều thay đổi trong cuộc sống là không thể biết trước, bạn chuẩn bị xong mọi thứ nhưng lại thường đột nhiên xuất hiện tình huống mới. Kế hoạch có chi tiết đến đâu cũng không theo kịp thay đổi, như vậy lại càng khiến người ta thất vọng. Thứ hai, tùy hứng một chút, nghĩ gì làm nấy, cảm thấy khá thoải mái, áp lực cũng nhỏ, hơn nữa không lập kế hoạch, biết đâu còn mang lại phát hiện mới. Ví dụ có lần tôi vốn định đi du lịch, sau đó không đi được, thế là đi dạo công viên nhỏ trước cửa nhà, phát hiện ở đó cũng rất thú vị. Cuối cùng, chúng tôi không phải nói là không chuẩn bị gì cả, mà là thấy không cần sắp xếp mọi việc quá cứng nhắc, chỉ cần hoàn thành nhiệm vụ đúng hạn là được. Vì vậy, chúng tôi cho rằng tùy hứng một chút thì tốt hơn.","note":"Hoạt động 任务活动 · 小组辩论 của sách, trang 72 — phe phản đối (反方); dùng 却, 说不定, 并且, ôn 首先……其次…… (Bài 14) + 不是……而是…… (Bài 11)."}
+ "intro": "Nhấn nút loa nghe câu hỏi (câu hỏi phần Khởi động, câu hỏi đọc hiểu, kể lại bài khoá và tranh luận nhóm của sách), rồi tự ghi âm câu trả lời — cố dùng từ mới và 4 điểm ngữ pháp của bài: 把+O+V+了, 并且, 说不定, 却.",
+ "questions": [
+  {
+   "q_zh": "你平时经常做计划吗？一般会做哪些计划？",
+   "q_vn": "Bình thường bạn có hay lập kế hoạch không? Thường lập những kế hoạch gì?",
+   "hint": "我平时……做计划。每天早晨，我会……，并且……。放假的时候……。不过计划常常赶不上变化……",
+   "sample": "我平时经常做计划。每天早晨，我会做一个简单的时间表，把今天要做的事情写下来，并且把最重要的事情放在第一位。每个星期，我还会做一个学习计划，比如每天记二十个词、练习半个小时听力。每次放假以前，我会提前做旅行计划，订好机票和酒店。不过计划常常赶不上变化，所以我也会根据情况灵活调整。",
+   "sample_vn": "Bình thường tôi hay lập kế hoạch. Mỗi sáng, tôi làm một thời gian biểu đơn giản, ghi lại việc cần làm hôm nay, hơn nữa đặt việc quan trọng nhất lên đầu. Mỗi tuần tôi còn lập kế hoạch học tập, ví dụ mỗi ngày nhớ 20 từ, luyện nghe nửa tiếng. Khi được nghỉ, tôi lập kế hoạch du lịch trước, đặt vé máy bay và khách sạn. Nhưng kế hoạch thường không theo kịp thay đổi, nên tôi cũng điều chỉnh linh hoạt theo tình hình.",
+   "note": "Câu hỏi phần Khởi động của sách; dùng 并且 (điểm 2) + từ mới 时间表, 灵活, 调整."
+  },
+  {
+   "q_zh": "你觉得做计划重要吗？为什么？",
+   "q_vn": "Bạn thấy lập kế hoạch có quan trọng không? Vì sao?",
+   "hint": "我觉得……。有了计划，……更有把握，并且……。如果不做计划，……不得不……。当然，……关键是……",
+   "sample": "我觉得做计划很重要。有了计划，我就知道每天先做什么、后做什么，做事更有把握，并且能节约很多时间。要是没有计划，我常常会忘了重要的事情，最后不得不熬夜完成任务。当然，计划不能太严格，遇到变化时要灵活调整，关键是该做的事情都能做完。",
+   "sample_vn": "Tôi thấy lập kế hoạch rất quan trọng. Có kế hoạch, tôi biết mỗi ngày làm gì trước, gì sau, làm việc chắc chắn hơn, hơn nữa tiết kiệm được nhiều thời gian. Nếu không lập kế hoạch, tôi hay quên việc quan trọng, cuối cùng buộc phải thức khuya làm cho xong. Tất nhiên kế hoạch không nên quá cứng nhắc, gặp thay đổi phải điều chỉnh linh hoạt, mấu chốt là hoàn thành đúng hạn.",
+   "note": "Câu hỏi phần Khởi động của sách; dùng 并且 (điểm 2), 不得不, 关键是."
+  },
+  {
+   "q_zh": "白家月为什么周末不能去南京了？旅行计划推迟后，白家月做什么了？",
+   "q_vn": "Vì sao cuối tuần Bạch Gia Nguyệt không đi Nam Kinh được nữa? Sau khi hoãn chuyến đi, cô ấy đã làm gì?",
+   "hint": "因为昨天她突然……，下周学校要……，所以……只好……。她已经把……取消了，打算等到……",
+   "sample": "学校下周有考试，她得在家好好复习，不能出去玩了。她把订好的机票和酒店都取消了，想考完试再去南京。",
+   "sample_vn": "Tuần sau trường có kỳ thi, cô phải ở nhà ôn bài, không đi chơi được. Cô đã huỷ vé máy bay và khách sạn đã đặt, định thi xong rồi mới đi Nam Kinh.",
+   "note": "Câu hỏi bài khoá 1; dùng câu chữ 把 (điểm 1)."
+  },
+  {
+   "q_zh": "白家月为什么没能去南京旅行？请你把经过讲一讲。",
+   "q_vn": "Dựa vào gợi ý, kể lại bài khoá 1.",
+   "hint": "白家月本来计划……，可是昨天突然……，下周学校要……。她周末需要……，旅游计划……。她已经把……，虽然……，但学习……。她打算……后，找个时间……。",
+   "sample": "白家月本来计划周末去南京旅游，可是昨天突然接到通知，下周学校要安排一次考试。她周末需要在家复习，旅游计划只能推迟了。她已经把机票和酒店取消了，虽然有点儿可惜，但学习更重要。她打算等到考试结束后，找个时间再去。",
+   "sample_vn": "Bạch Gia Nguyệt vốn định cuối tuần đi Nam Kinh du lịch, nhưng hôm qua đột nhiên nhận được thông báo tuần sau trường tổ chức thi. Cuối tuần cô phải ở nhà ôn bài, kế hoạch du lịch đành hoãn. Cô đã huỷ vé máy bay và khách sạn, tuy hơi tiếc nhưng việc học quan trọng hơn. Cô định thi xong sẽ tìm dịp đi.",
+   "note": "Bài tập kể lại bài khoá của sách (trang 64)."
+  },
+  {
+   "q_zh": "王一雪建议怎么调整会议材料？对于变化，王一雪是怎么看的？",
+   "q_vn": "Vương Nhất Tuyết gợi ý điều chỉnh tài liệu cuộc họp thế nào? Với sự thay đổi, cô ấy nhìn nhận ra sao?",
+   "hint": "她建议再检查一下……，并且……，把内容……。她觉得有时候变化……，关键是……",
+   "sample": "王一雪建议再检查一下有没有细节上的错误，并且试着增加一些例子，把内容准备得更全一些。对于变化，她觉得有时候变化不一定是坏事，关键是我们怎么去适应变化。",
+   "sample_vn": "Vương Nhất Tuyết gợi ý kiểm tra lại xem có lỗi chi tiết nào không, hơn nữa thử thêm một số ví dụ, chuẩn bị nội dung đầy đủ hơn. Về thay đổi, cô thấy đôi khi thay đổi chưa chắc là chuyện xấu, mấu chốt là chúng ta thích nghi thế nào.",
+   "note": "Câu hỏi bài khoá 2; dùng 并且 (điểm 2) + ôn 对于 (bài 14)."
+  },
+  {
+   "q_zh": "喜欢做计划的人一般是怎么安排事情的？事前做计划是好是坏？有没有标准答案？",
+   "q_vn": "Người thích lập kế hoạch thường sắp xếp công việc thế nào? Lập kế hoạch trước là tốt hay xấu? Vì sao?",
+   "hint": "他们会提前……，然后按照……。事前做计划是好是坏没有……。严格按照计划做事，常常能……；而不做计划，说不定……",
+   "sample": "他们会把每天的事情都先写好，再一件一件地去做。做计划好不好，很难说。一步一步地照着计划走，效果常常不错；不过没有计划，也可能会有让人高兴的发现。",
+   "sample_vn": "Họ viết sẵn mọi việc trong ngày, rồi làm từng việc một. Lập kế hoạch tốt hay không thì khó nói. Làm theo kế hoạch thường hiệu quả, nhưng không lập kế hoạch đôi khi cũng có những phát hiện vui.",
+   "note": "Câu hỏi bài khoá 3; có thể dùng 说不定 (điểm 3)."
+  },
+  {
+   "q_zh": "有的人爱做计划，有的人不爱做计划，白家月在课上是怎么说的？请你讲给大家听。",
+   "q_vn": "Dựa vào gợi ý, kể lại bài khoá 3.",
+   "hint": "在生活和工作中，有的人喜欢做计划，他们会……，然后按照……。相反，也有一部分人……。其实，事前做计划是好是坏……。严格按照计划做事，常常能……；而不做计划，说不定……。无论做不做计划，只要既能……，又能……，就是……。",
+   "sample": "在生活和工作中，有的人喜欢做计划，他们会提前安排好每天要做的事情，然后按照详细的时间表去完成任务，觉得这样做更有把握。相反，也有一部分人不爱做计划，他们认为随意一些也很好，想到什么就去做什么，感觉这样比较轻松。其实，事前做计划是好是坏没有标准答案。严格按照计划做事，常常能取得不错的效果；而不做计划，说不定也会带来新的发现。无论做不做计划，只要既能按时完成任务，又能根据情况灵活调整，就是适合自己的方式。",
+   "sample_vn": "Trong cuộc sống và công việc, có người thích lập kế hoạch… Ngược lại cũng có một bộ phận người không thích lập kế hoạch… Thật ra lập kế hoạch trước là tốt hay xấu không có đáp án chuẩn… Dù có lập kế hoạch hay không, chỉ cần vừa hoàn thành đúng hạn, vừa điều chỉnh linh hoạt theo tình hình, thì đó là cách phù hợp với mình.",
+   "note": "Bài tập kể lại bài khoá của sách (trang 68); ôn 无论 (bài 12) + 既……又…… (bài 4)."
+  },
+  {
+   "q_zh": "人们常说“计划赶不上变化”，这句话想告诉我们什么？我们为什么应该积极适应变化？",
+   "q_vn": "“Kế hoạch không theo kịp thay đổi” nghĩa là gì? Vì sao chúng ta nên tích cực thích nghi với thay đổi?",
+   "hint": "意思是你准备好了一切，却……，让你不得不……。因为生活中很多变化是……；学会接受变化、适应变化，不仅能……，也能……",
+   "sample": "“计划赶不上变化”的意思是，有时候你准备好了一切，却突然出现了新情况，让你不得不改变计划。我们应该积极适应变化，因为生活中很多变化是无法提前知道的。学会接受变化、适应变化，不仅能锻炼自己解决问题的能力，也能让我们的生活更轻松。",
+   "sample_vn": "“Kế hoạch không theo kịp thay đổi” nghĩa là có khi bạn đã chuẩn bị xong mọi thứ, nhưng lại đột nhiên xuất hiện tình huống mới, khiến bạn buộc phải thay đổi kế hoạch. Chúng ta nên tích cực thích nghi vì nhiều thay đổi trong cuộc sống không thể biết trước. Học cách chấp nhận và thích nghi không chỉ rèn khả năng giải quyết vấn đề mà còn giúp cuộc sống nhẹ nhàng hơn.",
+   "note": "Câu hỏi bài khoá 4; dùng 却 (điểm 4) + ôn 不仅……也…… (bài 3)."
+  },
+  {
+   "q_zh": "全班同学分为两个部分，说一说做计划是好还是不好。一部分同学认为做计划更好，请你们说说自己的看法，再说说为什么。",
+   "q_vn": "Tranh luận nhóm: cả lớp chia hai phe, chủ đề “Lập kế hoạch là tốt hay xấu”. Phe ủng hộ cho rằng: lập kế hoạch tốt hơn. Hãy nêu quan điểm và lý do.",
+   "hint": "我们认为做计划更好。第一，……更有把握，并且……。第二，严格按照计划做事……。第三，计划赶不上变化，但……灵活调整。相反，如果不做计划，……却……，最后不得不……",
+   "sample": "我们认为做计划更好。第一，提前把要做的事写下来，心里就有了把握，并且不会浪费时间。第二，有计划的人做事一般效果更好。比如考试前，我做了一份复习时间表，每天复习一部分内容，最后考得很好。第三，生活中变化很多，但有了计划，遇到变化时我们也知道哪些事情最重要，可以灵活调整。相反，要是什么计划都没有，看起来很轻松，却很容易忘了重要的事情，到了晚上还得加班。所以，我们觉得应该做计划。",
+   "sample_vn": "Chúng tôi cho rằng lập kế hoạch tốt hơn. Thứ nhất, viết trước những việc cần làm thì trong lòng chắc chắn hơn, hơn nữa không lãng phí thời gian. Thứ hai, làm theo kế hoạch nghiêm túc thường đạt hiệu quả tốt; ví dụ trước kỳ thi tôi làm một thời gian biểu ôn tập, mỗi ngày ôn một phần, cuối cùng thi rất tốt. Thứ ba, kế hoạch thường không theo kịp thay đổi, nhưng có kế hoạch thì khi gặp thay đổi chúng ta biết việc nào quan trọng nhất để điều chỉnh linh hoạt. Ngược lại, nếu không lập kế hoạch, nghĩ gì làm nấy, trông thì thoải mái nhưng lại rất dễ quên việc quan trọng, cuối cùng buộc phải làm thêm giờ. Vì vậy chúng tôi cho rằng lập kế hoạch tốt hơn.",
+   "note": "Hoạt động tranh luận nhóm của sách, trang 72 — phe ủng hộ; dùng 并且, 却, 相反, 不得不."
+  },
+  {
+   "q_zh": "另一部分同学认为随意一些更好，请你们说说自己是怎么想的。",
+   "q_vn": "Tranh luận nhóm — phe phản đối cho rằng: tùy ý một chút tốt hơn. Hãy nêu quan điểm và lý do.",
+   "hint": "我们认为随意些更好。首先，生活中很多变化是无法……，你准备好了一切，却……。然后，随意一些……比较轻松……，说不定……。比如……。最后，我们不是说……，而是……",
+   "sample": "我们觉得随意一点儿比较好。首先，很多事情是没办法提前知道的，计划写得再详细，也常常会被新情况打乱，最后只会让人失望。然后，随意一些，不用每天看时间表，压力小，并且说不定还会有新的发现。比如有一次，我本来打算去旅行，后来没能去，就在家门口的小公园走了走，发现那里也很有趣。最后，我们不是说什么都不准备，而是觉得不用把每件事都安排得那么严格，只要能按时完成任务就好。所以，随意一点儿没什么不好。",
+   "sample_vn": "Chúng tôi cho rằng tùy ý một chút tốt hơn. Trước hết, nhiều việc không thể biết trước, kế hoạch viết chi tiết đến mấy cũng hay bị tình huống mới làm rối, cuối cùng chỉ khiến người ta thất vọng. Sau đó, tùy ý một chút, nghĩ gì làm nấy, áp lực nhỏ, hơn nữa biết đâu còn có phát hiện mới; ví dụ có lần tôi vốn định đi du lịch nhưng không đi được, bèn dạo công viên nhỏ trước nhà, thấy ở đó cũng rất thú vị. Cuối cùng, chúng tôi không phải nói là không chuẩn bị gì, mà là không cần sắp xếp mọi việc cứng nhắc như vậy, chỉ cần hoàn thành đúng hạn là được. Vì vậy chúng tôi cho rằng tùy ý một chút tốt hơn.",
+   "note": "Hoạt động tranh luận nhóm của sách, trang 72 — phe phản đối; dùng 说不定, 并且, 本来, ôn 首先 (bài 14) + 不是……而是…… (bài 11)."
+  }
  ]
 },
-
 "translate": [
- ["Em đã hủy vé máy bay và khách sạn rồi. Tuy hơi tiếc, nhưng việc học quan trọng hơn.","我已经把机票和酒店取消了。虽然有点儿可惜，但学习更重要。"],
- ["Kiểm tra lại xem có lỗi ở chi tiết không, đồng thời thử thêm một vài ví dụ.","再检查一下有没有细节上的错误，并且试着增加一些例子。"],
- ["Không lập kế hoạch, không chừng cũng sẽ mang lại những phát hiện mới.","不做计划，说不定也会带来新的发现。"],
- ["Bạn đã chuẩn bị xong mọi thứ, nhưng lại đột nhiên xuất hiện tình huống mới.","你准备好了一切，却突然出现了新情况。"],
- ["Đợi thi xong, em hãy tìm dịp khác mà đi.","等到考试结束后，你再找个时间去。"],
- ["Có lúc thay đổi chưa chắc là chuyện xấu, then chốt là chúng ta thích nghi với thay đổi thế nào.","有时候变化不一定是坏事，关键是我们怎么去适应变化。"]
+ [
+  "Tôi đã trả cuốn sách mượn lần trước rồi.",
+  "我已经把上次借的书还了。"
+ ],
+ [
+  "Cô ấy kiên trì chạy bộ mỗi ngày, hơn nữa còn học được bơi.",
+  "她每天坚持跑步，并且还学会了游泳。"
+ ],
+ [
+  "Đừng đi vội, biết đâu lát nữa anh ấy đến.",
+  "先别走，说不定他一会儿就来了。"
+ ],
+ [
+  "Tôi gọi cho anh ấy rất nhiều lần, vậy mà anh ấy lại không nghe máy.",
+  "我给他打了很多次电话，他却一次也没接。"
+ ],
+ [
+  "Có kế hoạch là tốt, nhưng mấu chốt là phải biết điều chỉnh linh hoạt.",
+  "有计划是好事，但关键是要学会灵活调整。"
+ ],
+ [
+  "Đợi đến khi được nghỉ, cả nhà chúng tôi sẽ đi du lịch Bắc Kinh.",
+  "等到放假以后，我们一家人去北京旅行。"
+ ]
 ],
 "translateRev": [
- ["Đúng là kế hoạch không theo kịp thay đổi!","真是计划赶不上变化啊！"],
- ["Thời gian đã sắp xếp xong cả rồi, sao nói đổi là đổi luôn vậy?","时间都安排好了，怎么说变就变了？"],
- ["Làm việc nghiêm ngặt theo kế hoạch thường đạt được hiệu quả khá tốt.","严格按照计划做事，常常能取得不错的效果。"],
- ["Không gặp được bạn, thế là ở nhà xem một bộ phim, tâm trạng cũng trở nên rất vui vẻ.","没见到朋友，于是在家观看了一部电影，心情也变得很愉快。"],
- ["Điều chúng ta cần làm là học cách chấp nhận thay đổi, thích nghi với thay đổi.","我们要做的就是学会接受变化、适应变化。"]
+ [
+  "Cuối tuần này tôi hẹn bạn đi dạo trung tâm thương mại.",
+  "这个周末我约了朋友去逛商场。"
+ ],
+ [
+  "Bị ốm không ra ngoài được, sinh hoạt có nhiều bất tiện.",
+  "生病了不能出门，生活上有很多不便。"
+ ],
+ [
+  "Có lẽ anh ấy vẫn chưa biết tin này.",
+  "也许他还不知道这个消息。"
+ ],
+ [
+  "Phần lớn câu hỏi trong kỳ thi lần này đều rất dễ.",
+  "这次考试的题大部分都很简单。"
+ ],
+ [
+  "Tiếng phổ thông của cô giáo chúng tôi rất chuẩn.",
+  "我们老师的普通话很标准。"
+ ]
 ],
-
 "writing": {
  "kieu":"sgk","soChu":140,"tieuDe":"写作 — viết theo đề của sách (ít nhất 140 chữ)",
  "nhanDe":"写作",

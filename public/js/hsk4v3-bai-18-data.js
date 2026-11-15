@@ -4670,389 +4670,532 @@ var dialogData = [
 ];
 var listenData = [
  {
-  "audio": "你今天怎么来得这么早？我骑共享单车来的，比坐公交车快多了。我还没骑过呢，难不难？一点儿都不难，打开App，对着车上的二维码扫一下就行了。不过第一次骑要先注册。费用贵吗？不贵，骑半个小时才一块五。",
+  "audio": "这家饭馆的饺子特别有名，一大碗才十八块钱，所以中午来吃的学生特别多。",
   "questions": [
    {
-    "q": "说话人今天是怎么来的？",
+    "q": "Một bát to sủi cảo ở quán này giá bao nhiêu?",
     "opts": [
-     "坐公交车",
-     "骑共享单车",
-     "坐地铁"
+     "Mười tám tệ",
+     "Tám tệ",
+     "Tám mươi tệ"
     ],
-    "ans": 1
+    "ans": 0,
+    "exp": "一大碗才十八块钱 = một bát to chỉ có mười tám tệ; 一 + 大 + 碗 nhấn mạnh bát rất đầy."
    },
    {
-    "q": "第一次骑共享单车要先做什么？",
+    "q": "Vì sao buổi trưa có nhiều sinh viên đến ăn?",
     "opts": [
-     "支付费用",
-     "找出口",
-     "注册"
+     "Vì quán ở ngay cạnh thư viện",
+     "Vì sủi cảo nổi tiếng mà lại rẻ",
+     "Vì quán có nhiều chỗ ngồi"
     ],
-    "ans": 2
+    "ans": 1,
+    "exp": "特别有名 + 才十八块钱 (才 = chỉ, rẻ) → 所以……学生特别多."
    }
   ]
  },
  {
-  "audio": "妈，下周您过生日，我在网上预约了上门做饭的服务。上门做饭？厨师会到家里来吗？对，厨师会按我们提出的要求做菜，您就不必自己做饭了。那费用贵不贵啊？不贵，跟去饭店吃差不多，还不用出门。",
+  "audio": "我的雨伞叫同学借走了，他说晚上才能还给我，我只好在教室里等雨停。",
   "questions": [
    {
-    "q": "说话人在网上预约了什么服务？",
+    "q": "Cái ô của người nói đâu rồi?",
     "opts": [
-     "上门做饭",
-     "上门照顾小猫",
-     "上门取快递"
+     "Để quên ở nhà ăn",
+     "Để quên ở nhà",
+     "Bị bạn cùng lớp mượn đi"
     ],
-    "ans": 0
-   },
-   {
-    "q": "厨师会怎么做菜？",
-    "opts": [
-     "做各地的著名小吃",
-     "按他们提出的要求做",
-     "只做一道菜"
-    ],
-    "ans": 1
+    "ans": 2,
+    "exp": "雨伞叫同学借走了 = ô bị bạn cùng lớp mượn mất; 叫 ở đây là “bị” trong khẩu ngữ."
    }
   ]
  },
  {
-  "audio": "你昨天拍的那个短视频呢？我怎么找不到了？别提了，叫我弟弟不小心给删了。啊？那你到底还拍不拍了？拍啊，我们小组已经讨论好了，周末重新拍一个介绍学校的视频。",
+  "audio": "你到底想买哪个手机？我们已经逛了三个小时了，商店都快关门了。",
   "questions": [
    {
-    "q": "那个短视频为什么找不到了？",
+    "q": "Người nói đang cảm thấy thế nào?",
     "opts": [
-     "还没拍完",
-     "放到互联网上了",
-     "让弟弟删了"
+     "Sốt ruột vì bạn mãi chưa chọn được",
+     "Vui vì đã mua được điện thoại",
+     "Lo vì không mang đủ tiền"
     ],
-    "ans": 2
+    "ans": 0,
+    "exp": "到底 + câu hỏi = rốt cuộc …? — truy hỏi khi đã chờ lâu (逛了三个小时了)."
    },
    {
-    "q": "他们周末打算做什么？",
+    "q": "Họ đang ở đâu?",
     "opts": [
-     "重新拍一个视频",
-     "去看弟弟",
-     "讨论作业"
+     "Ở nhà",
+     "Ở cửa hàng",
+     "Ở trường"
     ],
-    "ans": 0
+    "ans": 1,
+    "exp": "商店都快关门了 = cửa hàng sắp đóng cửa rồi → họ đang ở cửa hàng."
+   }
+  ]
+ },
+ {
+  "audio": "这家店的外卖本来说半个小时就能送到，然而我们等了一个多小时，菜都凉了。",
+  "questions": [
+   {
+    "q": "Đồ ăn được giao như thế nào?",
+    "opts": [
+     "Đúng nửa tiếng",
+     "Rất muộn, phải chờ hơn một tiếng",
+     "Cửa hàng không giao"
+    ],
+    "ans": 1,
+    "exp": "本来说半个小时……，然而等了一个多小时 = vốn nói nửa tiếng, thế nhưng chờ hơn một tiếng; 然而 nối điều trái với dự kiến."
+   }
+  ]
+ },
+ {
+  "audio": "现在去医院看病，可以先在网上注册，再预约时间，按预约的时间去，就不必排队等很长时间了。",
+  "questions": [
+   {
+    "q": "Đặt lịch trên mạng có lợi gì?",
+    "opts": [
+     "Không phải xếp hàng lâu",
+     "Được giảm tiền khám",
+     "Bác sĩ đến tận nhà khám"
+    ],
+    "ans": 0,
+    "exp": "不必排队等很长时间 = không cần xếp hàng chờ lâu; 不必 = không cần."
+   },
+   {
+    "q": "Trước khi đặt lịch phải làm gì?",
+    "opts": [
+     "Gọi điện cho bác sĩ",
+     "Đến bệnh viện lấy số",
+     "Đăng ký tài khoản trên mạng"
+    ],
+    "ans": 2,
+    "exp": "先在网上注册，再预约时间 = đăng ký trên mạng trước, rồi mới đặt giờ."
+   }
+  ]
+ },
+ {
+  "audio": "差点儿忘了，明天我要去银行办事，没时间下楼，你能帮我取一下快递吗？",
+  "questions": [
+   {
+    "q": "Ngày mai người nói đi đâu?",
+    "opts": [
+     "Đi bệnh viện",
+     "Đi sân bay",
+     "Đến ngân hàng làm thủ tục"
+    ],
+    "ans": 2,
+    "exp": "去银行办事 = đến ngân hàng làm việc / làm thủ tục."
+   },
+   {
+    "q": "Người nói nhờ bạn làm gì?",
+    "opts": [
+     "Lấy giúp bưu kiện",
+     "Đi ngân hàng cùng",
+     "Gửi giúp bưu kiện"
+    ],
+    "ans": 0,
+    "exp": "取快递 = lấy bưu kiện (về); khác với 寄快递 = gửi bưu kiện."
+   }
+  ]
+ },
+ {
+  "audio": "这个周末家里来了很多亲戚，我得在家帮妈妈做饭，不能跟你们去看电影了。",
+  "questions": [
+   {
+    "q": "Vì sao người nói không đi xem phim được?",
+    "opts": [
+     "Vì phải ôn thi",
+     "Vì nhà có nhiều họ hàng đến, phải giúp mẹ nấu cơm",
+     "Vì đã hết vé xem phim"
+    ],
+    "ans": 1,
+    "exp": "家里来了很多亲戚 = nhà có nhiều họ hàng đến; 得 (děi) = phải ở nhà giúp mẹ."
    }
   ]
  }
 ];
 var matchData = [
  {
-  "left": "骑",
-  "right": "共享单车"
+  "left": "拍",
+  "right": "一个短视频"
  },
  {
-  "left": "扫",
-  "right": "二维码"
+  "left": "演",
+  "right": "一位厨师"
  },
  {
-  "left": "完成",
-  "right": "注册"
+  "left": "推出",
+  "right": "新产品"
+ },
+ {
+  "left": "预约",
+  "right": "看病的时间"
+ },
+ {
+  "left": "取",
+  "right": "快递"
  },
  {
   "left": "支付",
   "right": "费用"
  },
  {
-  "left": "演",
-  "right": "厨师"
- },
- {
-  "left": "中国各地的",
-  "right": "著名小吃"
- },
- {
-  "left": "预约",
-  "right": "上门服务"
+  "left": "按",
+  "right": "说明使用"
  },
  {
   "left": "提出",
-  "right": "要求"
- },
- {
-  "left": "提高",
-  "right": "服务质量"
- },
- {
-  "left": "……，然而",
-  "right": "又很担心猫的安全"
+  "right": "一个好办法"
  }
 ];
 var fillData = [
  {
-  "pre": "天中、家月，你们",
-  "blank": "猜",
-  "post": "我是怎么过来的？",
-  "hint": "(đoán)",
-  "ans": "猜",
-  "exp": "猜 + câu hỏi = đoán xem."
+  "pre": "昨天晚上我太饿了，一个人吃了",
+  "blank": "一大",
+  "post": "块蛋糕。",
+  "hint": "(một … to)",
+  "ans": "一大",
+  "exp": "一 + 大 + lượng từ nhấn mạnh “to, nhiều”: 一大块蛋糕 = cả một miếng bánh to; không nói 一块大."
  },
  {
-  "pre": "快到那边那个出口时又",
-  "blank": "推",
-  "post": "了一小段。",
-  "hint": "(đẩy, dắt xe)",
-  "ans": "推",
-  "exp": "推车 = dắt / đẩy xe."
+  "pre": "从地铁站出来，还要走",
+  "blank": "一小段",
+  "post": "路才能到我们公司。",
+  "hint": "(một đoạn ngắn)",
+  "ans": "一小段",
+  "exp": "一 + 小 + 段 = một đoạn ngắn thôi, nhấn mạnh không xa; ôn 才: phải … mới …."
  },
  {
-  "pre": "你打开微信，对着共享单车上的",
-  "blank": "二维码",
-  "post": "扫一下。",
-  "hint": "(mã QR)",
-  "ans": "二维码",
-  "exp": "扫二维码 = quét mã QR."
+  "pre": "我放在桌子上的面包",
+  "blank": "叫",
+  "post": "弟弟吃了，一块也没给我留。",
+  "hint": "(bị — khẩu ngữ)",
+  "ans": "叫",
+  "exp": "叫 + người làm + động từ + 了 = bị ai làm gì; giống 被 nhưng dùng nhiều trong khẩu ngữ."
  },
  {
-  "pre": "在App上完成",
-  "blank": "注册",
-  "post": "就可以了。",
-  "hint": "(đăng ký)",
-  "ans": "注册",
-  "exp": "完成注册 = hoàn tất đăng ký."
+  "pre": "我的自行车",
+  "blank": "让",
+  "post": "人骑走了，今天只能坐公交车去学校。",
+  "hint": "(bị)",
+  "ans": "让",
+  "exp": "让 + người + 骑走了 = bị người khác đạp mất; sau 让 phải nêu người làm (có thể là 人 chung chung)."
  },
  {
-  "pre": "",
+  "pre": "你们两个人说的不一样，",
+  "blank": "到底",
+  "post": "谁说的是真的？",
+  "hint": "(rốt cuộc)",
+  "ans": "到底",
+  "exp": "Khi chủ ngữ là từ để hỏi 谁, 到底 phải đứng TRƯỚC 谁, không nói 谁到底."
+ },
+ {
+  "pre": "大家都以为他会参加比赛，",
+  "blank": "然而",
+  "post": "他最后却没来。",
+  "hint": "(thế nhưng)",
+  "ans": "然而",
+  "exp": "然而 nối vế sau trái với điều mọi người nghĩ; vế sau hay có 却 (ôn 却 — bài 16)."
+ },
+ {
+  "pre": "我",
   "blank": "差点儿",
-  "post": "忘了，我给你们看个短视频。",
+  "post": "把手机忘在出租车上，还好司机叫住了我。",
   "hint": "(suýt nữa)",
   "ans": "差点儿",
-  "exp": "差点儿 + V = suýt nữa thì."
+  "exp": "差点儿 + động từ = suýt nữa (việc xấu suýt xảy ra nhưng không xảy ra); ôn 把."
  },
  {
-  "pre": "我们小组",
-  "blank": "讨论",
-  "post": "后决定，由AI小语演厨师。",
-  "hint": "(thảo luận)",
-  "ans": "讨论",
-  "exp": "讨论 = thảo luận."
- },
- {
-  "pre": "后来这个视频让我同学放到了互联网上，很多人都来",
-  "blank": "点赞",
-  "post": "。",
-  "hint": "(bấm thích)",
-  "ans": "点赞",
-  "exp": "给……点赞 = bấm thích cho …"
- },
- {
-  "pre": "他们装了一些免费的App，",
-  "blank": "仅",
-  "post": "用几天就拍完了。",
-  "hint": "(chỉ)",
-  "ans": "仅",
-  "exp": "仅 = 只 (văn viết)."
- },
- {
-  "pre": "有了上门服务后，她觉得方便多了，",
+  "pre": "这个活动是免费的，大家",
   "blank": "不必",
-  "post": "再找亲戚帮忙。",
+  "post": "支付任何费用。",
   "hint": "(không cần)",
   "ans": "不必",
-  "exp": "不必 = 不用 / 不需要."
+  "exp": "不必 = không cần (lịch sự hơn 不用); ôn 任何 (bài 1)."
  },
  {
-  "pre": "服务人员就会按她提出的要求上门照顾小猫，",
-  "blank": "大大",
-  "post": "减轻了她的压力。",
-  "hint": "(rất nhiều, đáng kể)",
-  "ans": "大大",
-  "exp": "大大 + V (减轻 / 提高 / 方便)."
+  "pre": "请大家",
+  "blank": "按",
+  "post": "号码排队，一个一个进去。",
+  "hint": "(theo)",
+  "ans": "按",
+  "exp": "按 + tiêu chuẩn (号码 / 顺序 / 要求) = theo …; đứng trước động từ 排队."
+ },
+ {
+  "pre": "他这次没考好，主要",
+  "blank": "原因",
+  "post": "是最近睡得太少。",
+  "hint": "(nguyên nhân)",
+  "ans": "原因",
+  "exp": "主要原因是…… = nguyên nhân chính là …; ôn bổ ngữ trạng thái 睡得太少."
+ },
+ {
+  "pre": "在这个网站上，能买到中国",
+  "blank": "各地",
+  "post": "的小吃。",
+  "hint": "(các nơi)",
+  "ans": "各地",
+  "exp": "各地 = khắp các nơi; 中国各地的小吃 = món ăn vặt của mọi miền Trung Quốc."
+ },
+ {
+  "pre": "你",
+  "blank": "猜",
+  "post": "我今天在地铁站出口遇到谁了？我的中学老师！",
+  "hint": "(đoán)",
+  "ans": "猜",
+  "exp": "猜 + câu hỏi = đoán xem …; người nói đố trước rồi tự nói đáp án."
+ },
+ {
+  "pre": "老师，您能再",
+  "blank": "说明",
+  "post": "一下明天考试的要求吗？",
+  "hint": "(nói rõ)",
+  "ans": "说明",
+  "exp": "说明 làm động từ = giải thích, nói rõ; 说明一下 = nói rõ một chút."
  }
 ];
 var sortData = [
  {
   "words": [
-   "快到出口时",
-   "，",
-   "我",
-   "又",
-   "推了",
-   "一小段",
+   "妹妹",
+   "把",
+   "一大杯",
+   "牛奶",
+   "都",
+   "喝完了",
    "。"
   ],
-  "ans": "快到出口时，我又推了一小段。",
-  "audio": "快到出口时，我又推了一小段。"
+  "ans": "妹妹把一大杯牛奶都喝完了。",
+  "audio": "妹妹把一大杯牛奶都喝完了。"
  },
  {
   "words": [
-   "后来",
-   "这个视频",
+   "桌子上的",
+   "西瓜",
    "让",
-   "我同学",
-   "放到了",
-   "互联网上",
+   "孩子们",
+   "吃",
+   "光了",
    "。"
   ],
-  "ans": "后来这个视频让我同学放到了互联网上。",
-  "audio": "后来这个视频让我同学放到了互联网上。"
+  "ans": "桌子上的西瓜让孩子们吃光了。",
+  "audio": "桌子上的西瓜让孩子们吃光了。"
  },
  {
   "words": [
-   "科技",
-   "到底",
-   "对世界",
-   "产生了",
-   "怎样的",
-   "影响",
-   "？"
-  ],
-  "ans": "科技到底对世界产生了怎样的影响？",
-  "audio": "科技到底对世界产生了怎样的影响？"
- },
- {
-  "words": [
-   "她",
-   "需要经常出差",
+   "学校旁边那家店的",
+   "饺子",
+   "味道不错",
    "，",
    "然而",
-   "又",
-   "很担心",
-   "猫的安全",
+   "服务员",
+   "的态度",
+   "不太好",
    "。"
   ],
-  "ans": "她需要经常出差，然而又很担心猫的安全。",
-  "audio": "她需要经常出差，然而又很担心猫的安全。"
+  "ans": "学校旁边那家店的饺子味道不错，然而服务员的态度不太好。",
+  "audio": "学校旁边那家店的饺子味道不错，然而服务员的态度不太好。"
  },
  {
   "words": [
-   "你",
-   "打开微信",
-   "，",
-   "对着",
-   "二维码",
-   "扫一下",
+   "这家店",
+   "可以",
+   "按",
+   "顾客的要求",
+   "做",
+   "生日蛋糕",
    "。"
   ],
-  "ans": "你打开微信，对着二维码扫一下。",
-  "audio": "你打开微信，对着二维码扫一下。"
+  "ans": "这家店可以按顾客的要求做生日蛋糕。",
+  "audio": "这家店可以按顾客的要求做生日蛋糕。"
  },
  {
   "words": [
-   "短视频",
-   "是",
-   "用手机",
-   "拍",
-   "的",
+   "这位",
+   "著名的",
+   "厨师",
+   "做的",
+   "小吃",
+   "特别",
+   "好吃",
    "。"
   ],
-  "ans": "短视频是用手机拍的。",
-  "audio": "短视频是用手机拍的。"
+  "ans": "这位著名的厨师做的小吃特别好吃。",
+  "audio": "这位著名的厨师做的小吃特别好吃。"
+ },
+ {
+  "words": [
+   "骑共享单车",
+   "比",
+   "坐出租车",
+   "便宜",
+   "多了",
+   "。"
+  ],
+  "ans": "骑共享单车比坐出租车便宜多了。",
+  "audio": "骑共享单车比坐出租车便宜多了。"
+ },
+ {
+  "words": [
+   "他",
+   "只",
+   "吃了",
+   "一小碗",
+   "米饭",
+   "就",
+   "去上班了",
+   "。"
+  ],
+  "ans": "他只吃了一小碗米饭就去上班了。",
+  "audio": "他只吃了一小碗米饭就去上班了。"
+ },
+ {
+  "words": [
+   "我们学校",
+   "各个",
+   "食堂的",
+   "饭菜",
+   "都",
+   "不贵",
+   "。"
+  ],
+  "ans": "我们学校各个食堂的饭菜都不贵。",
+  "audio": "我们学校各个食堂的饭菜都不贵。"
  }
 ];
 var mcData = [
  {
-  "q": "中午饿极了，我吃了＿＿面条儿。",
+  "q": "Bạn muốn kể: “Hôm qua tôi mua một túi to hoa quả.”",
   "opts": [
-   "一大碗",
-   "一碗大",
-   "一很大碗",
-   "大一碗"
+   "我昨天买了一大包水果。",
+   "我昨天买了一包大水果。",
+   "我昨天买了一很大包水果。",
+   "我昨天买了大一包水果。"
   ],
   "ans": 0,
-  "exp": "一 + 大 + 量词 (+ N): 一大碗面条儿."
+  "exp": "大 / 小 đặt giữa 一 và lượng từ: 一大包; 一包大水果 lại thành “quả to”, còn 一很大包 / 大一包 đều sai."
  },
  {
-  "q": "不好意思，月饼都＿＿我吃了。",
+  "q": "Câu nào SAI?",
   "opts": [
-   "让",
-   "把",
-   "对",
-   "向"
+   "我的手机叫弟弟拿。",
+   "我的咖啡叫妹妹喝了。",
+   "我的作业本让同学拿错了。",
+   "这些菜都让客人吃光了。"
   ],
   "ans": 0,
-  "exp": "Bị động khẩu ngữ: 主语 + 让 / 叫 + 宾语 + V + 了."
+  "exp": "Câu bị động với 让 / 叫: sau động từ phải có thêm 了 hoặc bổ ngữ, không để động từ trơ trọi như 叫弟弟拿."
  },
  {
-  "q": "你们到底还来＿＿来？",
+  "q": "Bạn muốn nói: “Xe đạp của tôi không bị ai lấy đi cả.”",
   "opts": [
-   "不",
-   "吗",
-   "没",
-   "也"
+   "我的自行车没让人骑走。",
+   "我的自行车让人没骑走。",
+   "我的自行车不让人骑走了。",
+   "我的自行车让人骑没走。"
   ],
   "ans": 0,
-  "exp": "到底 + V不V; 到底 không đi với 吗."
+  "exp": "Phủ định câu bị động: 没 đặt TRƯỚC 让; 不让人骑走 lại thành “không cho người khác đạp đi”."
  },
  {
-  "q": "她需要经常出差，＿＿又很担心猫的安全。",
+  "q": "Bạn cùng phòng mãi không quyết định có đi hay không. Bạn hỏi:",
+  "opts": [
+   "你到底去不去？",
+   "你到底去不去吗？",
+   "你去不去到底？",
+   "你到底去吗不去？"
+  ],
+  "ans": 0,
+  "exp": "到底 đứng sau chủ ngữ, trước câu hỏi chính phản 去不去; đã có 到底 thì không thêm 吗."
+ },
+ {
+  "q": "Bạn muốn hỏi: “Rốt cuộc ai đã ăn bánh mì của tớ?”",
+  "opts": [
+   "到底谁吃了我的面包？",
+   "谁到底吃了我的面包？",
+   "谁吃了我的面包到底？",
+   "谁吃了到底我的面包？"
+  ],
+  "ans": 0,
+  "exp": "Chủ ngữ là 谁 thì 到底 phải đứng đầu câu, trước 谁; không đặt cuối câu như “rốt cuộc” tiếng Việt."
+ },
+ {
+  "q": "Chọn từ điền vào chỗ trống: “早上出门的时候天还很晴，＿＿到了下午就下起了大雨。”",
   "opts": [
    "然而",
-   "而且",
    "于是",
-   "所以"
+   "而且",
+   "因此"
   ],
   "ans": 0,
-  "exp": "Hai vế trái ngược → 然而."
+  "exp": "Sáng nắng mà chiều lại mưa to → hai vế trái ngược, dùng 然而; 于是 / 因此 chỉ kết quả, 而且 chỉ thêm ý."
  },
  {
-  "q": "第一次骑的时候，在App上完成＿＿就可以了。",
+  "q": "Câu nào SAI?",
   "opts": [
-   "注册",
-   "预约",
-   "讨论",
-   "点赞"
+   "我们准备了很久，然而却比赛没赢。",
+   "这双鞋样子很好看，然而价格太贵了。",
+   "哥哥每天都去跑步，然而还是没瘦下来。",
+   "大家都说这家店好吃，然而我觉得一般。"
   ],
   "ans": 0,
-  "exp": "完成注册 = hoàn tất đăng ký."
+  "exp": "却 là phó từ, phải đứng sau chủ ngữ: 然而比赛却没赢; không đặt 却 trước chủ ngữ."
  },
  {
-  "q": "我们小组讨论后决定，由AI小语＿＿厨师。",
+  "q": "Bạn muốn nói: “Suýt nữa thì tôi quên mang hộ chiếu.”",
   "opts": [
-   "演",
-   "拍",
-   "推",
-   "取"
+   "我差点儿忘了带护照。",
+   "我差不多忘了带护照。",
+   "我一点儿忘了带护照。",
+   "我快点儿忘了带护照。"
   ],
   "ans": 0,
-  "exp": "演 + vai = đóng vai."
+  "exp": "差点儿 = suýt nữa; 差不多 = gần như / khoảng chừng, 一点儿 = một chút, 快点儿 = nhanh lên — đều không mang nghĩa “suýt”."
  },
  {
-  "q": "视频里，小语做的小吃丰富＿＿，看起来好吃极了。",
+  "q": "A: “明天要自己带午饭吗？” — B đáp: “＿＿带，学校会给大家准备。”",
   "opts": [
-   "多样",
-   "著名",
-   "现有",
-   "大大"
+   "不必",
+   "不能",
+   "不得不",
+   "不会"
   ],
   "ans": 0,
-  "exp": "丰富多样 = phong phú đa dạng."
+  "exp": "不必 = không cần (vì trường đã chuẩn bị); 不能 = không được phép, 不得不 = buộc phải (ôn bài 16)."
  },
  {
-  "q": "上门经济，就是预约者通过网上＿＿，让服务人员到家里服务。",
+  "q": "Chọn từ điền vào chỗ trống: “这台3D打印机＿＿用了两个小时，就做出了一把椅子。”",
   "opts": [
-   "预约",
+   "仅",
+   "只好",
+   "刚才",
+   "大约"
+  ],
+  "ans": 0,
+  "exp": "仅 = chỉ (văn viết), nhấn mạnh thời gian rất ít; 只好 = đành phải, 刚才 = vừa nãy, 大约 = khoảng (ôn bài 13) không đi với 就 nhấn mạnh nhanh."
+ },
+ {
+  "q": "A: “这家公司又＿＿了一种新的AI眼镜，听说卖得很好。”",
+  "opts": [
    "推出",
    "提出",
-   "说明"
+   "说出",
+   "取出"
   ],
   "ans": 0,
-  "exp": "网上预约 = đặt lịch qua mạng."
+  "exp": "推出 + sản phẩm mới = tung ra, ra mắt; 提出 đi với yêu cầu / vấn đề / cách làm, không đi với sản phẩm."
  },
  {
-  "q": "由于工作等＿＿，她需要经常出差。",
+  "q": "A: “你发到互联网上的视频怎么样了？” — B đáp:",
   "opts": [
-   "原因",
-   "费用",
-   "说明",
-   "亲戚"
+   "挺好的，已经有两千多人给我点赞了。",
+   "挺好的，已经有两千多人点赞给我了。",
+   "挺好的，我已经给两千多人点赞了。",
+   "挺好的，两千多人已经被我点赞了。"
   ],
   "ans": 0,
-  "exp": "由于……等原因 = vì … và các lý do khác (ôn 由于 – Bài 2)."
- },
- {
-  "q": "服务人员就会＿＿她提出的要求上门照顾小猫。",
-  "opts": [
-   "按",
-   "对",
-   "推",
-   "取"
-  ],
-  "ans": 0,
-  "exp": "按 + 要求 / 说明 = theo yêu cầu / hướng dẫn."
+  "exp": "给 + người + 点赞 = bấm thích cho ai; cụm 给我 đứng trước 点赞, và người bấm thích là 两千多人 chứ không phải “tôi”."
  }
 ];
 var speakingData = {
@@ -5062,39 +5205,39 @@ var speakingData = {
    "q_zh": "你喜欢看什么样的短视频？",
    "q_vn": "Bạn thích xem những video ngắn như thế nào?",
    "hint": "我最喜欢看……的短视频，比如……。因为……。不过……，然而……",
-   "sample": "我最喜欢看介绍美食和旅游的短视频，比如介绍中国各地著名小吃的视频。这些视频一般只有一两分钟，语言也很幽默，看完以后我就特别想去那个地方走一走、尝一尝。我常常给好看的视频点赞。然而，有时候一看就是一大段时间，作业都忘了写，所以我现在每天只看半个小时。",
-   "sample_vn": "Tôi thích nhất là xem video ngắn giới thiệu ẩm thực và du lịch, ví dụ như video giới thiệu các món ăn vặt nổi tiếng của các vùng Trung Quốc. Những video này thường chỉ một hai phút, lời thoại cũng hài hước, xem xong tôi rất muốn đến nơi đó đi dạo, nếm thử. Tôi thường bấm thích cho video hay. Thế nhưng có lúc xem một lúc là cả một quãng thời gian dài, quên cả làm bài, nên bây giờ mỗi ngày tôi chỉ xem nửa tiếng.",
+   "sample": "我最喜欢看介绍美食和旅游的短视频，比如介绍各地有名小吃的视频。这样的视频一般只有一两分钟，说话也很幽默，看完以后我就特别想去那个地方尝一尝。然而，有时候一看就是一大段时间，作业都忘了写，所以我现在每天只看半个小时。",
+   "sample_vn": "Tôi thích nhất là xem video ngắn giới thiệu ẩm thực và du lịch, ví dụ video giới thiệu món ăn vặt nổi tiếng các nơi. Những video này thường chỉ một hai phút, lời nói cũng hài hước, xem xong tôi rất muốn đến nơi đó nếm thử. Thế nhưng có lúc xem một lúc là cả một quãng thời gian dài, quên cả làm bài, nên bây giờ mỗi ngày tôi chỉ xem nửa tiếng.",
    "note": "Câu hỏi phần Khởi động của sách; dùng 然而 (điểm 4), 一大段 (điểm 1)."
   },
   {
    "q_zh": "你拍过短视频吗？如果拍过，请介绍一下你拍的短视频；如果没拍过，你想不想试试拍短视频？",
    "q_vn": "Bạn đã từng quay video ngắn chưa? Nếu đã quay, hãy giới thiệu video bạn quay; nếu chưa, bạn có muốn thử quay video ngắn không?",
    "hint": "我拍过……。那个视频是用……拍的，……。后来视频让……放到了互联网上，……",
-   "sample": "我拍过一个短视频，介绍我们学校的秋天。视频是用手机拍的，我装了一个免费的App，仅用两天就拍完了。后来这个视频让我朋友放到了互联网上，没想到有一百多个人给我点赞。下次我还想拍一个介绍越南小吃的视频，让大家更了解越南。",
-   "sample_vn": "Tôi từng quay một video ngắn giới thiệu mùa thu ở trường. Video quay bằng điện thoại, tôi cài một App miễn phí, chỉ mất hai ngày là quay xong. Sau đó video được bạn tôi đăng lên mạng, không ngờ có hơn một trăm người bấm thích. Lần sau tôi còn muốn quay một video giới thiệu món ăn vặt Việt Nam để mọi người hiểu Việt Nam hơn.",
+   "sample": "我拍过一个介绍我们学校秋天的短视频。我装了一个免费的软件，仅用两天就拍好了。后来这个视频让我朋友发到了网上，没想到有一百多个人给我点赞。下次我还想拍一个介绍我们国家小吃的视频，让大家更了解我的国家。",
+   "sample_vn": "Tôi từng quay một video ngắn giới thiệu mùa thu ở trường. Tôi cài một phần mềm miễn phí, chỉ mất hai ngày là quay xong. Sau đó video được bạn tôi đăng lên mạng, không ngờ có hơn một trăm người bấm thích. Lần sau tôi còn muốn quay một video giới thiệu món ăn vặt nước tôi để mọi người hiểu đất nước tôi hơn.",
    "note": "Câu hỏi phần Khởi động của sách; dùng câu bị động 让 (điểm 2) + từ mới 仅, 点赞, 小吃."
   },
   {
-   "q_zh": "白家月骑过共享单车吗？如果没骑过，她想什么时候骑？第一次骑共享单车时应该做些什么？了解些什么？",
+   "q_zh": "白家月骑过共享单车吗？要是还没骑过，她打算哪天骑？第一次骑共享单车时应该做些什么？了解些什么？",
    "q_vn": "Bạch Gia Nguyệt đã đi xe đạp công cộng chưa? Nếu chưa, cô ấy định khi nào đi? Lần đầu đi xe đạp công cộng nên làm gì? Tìm hiểu những gì?",
-   "hint": "她还没……。她想哪天……。第一次骑的时候，要先……，对着……扫一下，在App上……。还要了解……",
-   "sample": "白家月还没骑过共享单车，她想哪天出去办事时也试试。第一次骑共享单车的时候，要先打开微信，对着共享单车上的二维码扫一下，在App上完成注册。另外，还要了解怎么使用、费用标准什么的，这些App上都有说明。",
-   "sample_vn": "Bạch Gia Nguyệt chưa từng đi xe đạp công cộng, cô định hôm nào ra ngoài làm việc cũng sẽ thử. Lần đầu đi, trước tiên mở WeChat, hướng vào mã QR trên xe quét một cái, hoàn tất đăng ký trên App. Ngoài ra còn phải tìm hiểu cách sử dụng, mức phí…, những thứ này App đều có hướng dẫn.",
+   "hint": "她还没……。她想哪天……。第一次骑的时候，要先……，在App上……。还要了解……",
+   "sample": "白家月还没骑过，她想哪天出去办事时试一试。第一次骑要先打开微信，让手机对着车上的二维码，然后在App上注册。还要看看怎么用、要花多少钱，这些App上都写得很清楚。",
+   "sample_vn": "Bạch Gia Nguyệt chưa từng đi, cô định hôm nào ra ngoài làm việc sẽ thử. Lần đầu đi phải mở WeChat, hướng điện thoại vào mã QR trên xe, rồi đăng ký trên App. Còn phải xem cách dùng, mất bao nhiêu tiền, những thứ này App đều ghi rất rõ.",
    "note": "Câu hỏi bài khoá 1."
   },
   {
-   "q_zh": "请根据提示复述课文一。",
+   "q_zh": "安妮是怎么来到学校的？陈天中又是怎么给白家月介绍共享单车的？把你记得的说出来吧。",
    "q_vn": "Dựa vào gợi ý, kể lại bài khoá 1.",
    "hint": "安妮到白家月和陈天中的学校玩，她先坐……，然后……，快到一个出口时又……。白家月说……。陈天中介绍说……。白家月听完表示……",
-   "sample": "安妮到白家月和陈天中的学校玩，她先坐的公交车，然后骑共享单车，快到一个出口时又推了一小段。白家月说她看很多人都骑共享单车，但她还没骑过呢。陈天中介绍说，他骑过共享单车，很方便。第一次骑的时候，打开微信，对着共享单车上的二维码扫一下，在App上完成注册就可以了，而且，怎么使用、费用标准什么的App上都有说明。白家月听完表示，她哪天出去办事时也试试。",
-   "sample_vn": "Annie đến trường của Bạch Gia Nguyệt và Trần Thiên Trung chơi, cô đi xe buýt trước, sau đó đạp xe đạp công cộng, sắp đến một cổng ra thì lại dắt xe đi một đoạn ngắn… Bạch Gia Nguyệt nghe xong nói hôm nào ra ngoài làm việc cũng sẽ thử.",
-   "note": "Bài tập 复述 của sách (trang 88); dùng 一小段 (điểm 1)."
+   "sample": "安妮到白家月和陈天中的学校玩，她先坐的公交车，然后骑共享单车，快到一个出口时又推了一小段。白家月说很多人都骑共享单车，可是她一次也没骑过。陈天中说他骑过，很好用，第一次骑的时候先用微信对着车上的二维码，再在App上完成注册就行，使用方法和费用标准App上都有说明。白家月听完表示，她出去办事的时候也要试试。",
+   "sample_vn": "Annie đến trường của Bạch Gia Nguyệt và Trần Thiên Trung chơi, cô đi xe buýt trước, sau đó đạp xe đạp công cộng, sắp đến một cổng ra thì lại dắt xe đi một đoạn ngắn… Bạch Gia Nguyệt nghe xong nói khi nào ra ngoài làm việc cũng sẽ thử.",
+   "note": "Bài tập kể lại bài khoá của sách (trang 88); dùng 一小段 (điểm 1)."
   },
   {
    "q_zh": "老师留作业后，安妮和同学们拍了什么样的短视频？安妮后边还想拍什么短视频？",
    "q_vn": "Sau khi cô giáo giao bài tập, Annie và các bạn đã quay video ngắn như thế nào? Sắp tới Annie còn muốn quay video gì?",
    "hint": "他们小组讨论后决定，由……演……，做出……。后来视频让……放到了……。后边他们打算……，让小语……",
-   "sample": "老师叫各个小组拍个短视频，介绍中国美食。安妮他们小组讨论后决定，由AI小语演厨师，做出中国各地的著名小吃。后来这个视频让安妮的同学放到了互联网上，很多人都来点赞。后边他们打算拍第二个、第三个，让小语带大家到中国各地走一走、看一看。",
+   "sample": "老师叫各个小组拍个短视频，介绍中国美食。安妮他们小组讨论以后，决定由AI小语演厨师，做出中国各地的著名小吃。后来这个视频让安妮的同学放到了互联网上，很多人都来点赞。后边他们打算拍第二个、第三个，让小语带大家到中国各地走一走、看一看。",
    "sample_vn": "Cô giáo bảo các nhóm quay video ngắn giới thiệu ẩm thực Trung Quốc. Nhóm Annie thảo luận xong quyết định để AI Tiểu Ngữ đóng vai đầu bếp, làm các món ăn vặt nổi tiếng của các vùng Trung Quốc. Sau đó video được bạn của Annie đăng lên mạng, rất nhiều người vào bấm thích. Sắp tới họ định quay video thứ hai, thứ ba, để Tiểu Ngữ dẫn mọi người đi khắp các nơi ở Trung Quốc.",
    "note": "Câu hỏi bài khoá 2; phân biệt 叫 sai khiến (老师叫各个小组……) và 让 bị động (视频让同学放到了……) — điểm 2; ôn 由 (Bài 15)."
   },
@@ -5107,88 +5250,88 @@ var speakingData = {
    "note": "Câu hỏi bài khoá 3; ôn 对于 (Bài 14 · điểm 4) và 并且 (Bài 16 · điểm 2)."
   },
   {
-   "q_zh": "请根据提示复述课文三。",
+   "q_zh": "你能不能讲一讲：三个人见面后聊了哪些事情？他们对科技有什么看法？",
    "q_vn": "Dựa vào gợi ý, kể lại bài khoá 3.",
-   "hint": "安妮骑……到了白家月、陈天中的学校，三人从……聊到……，从……聊到……。科技到底……？他们都认为……。接着……。安妮说，短视频是……。视频里……。短视频推出后……",
-   "sample": "安妮骑共享单车到了白家月、陈天中的学校，三人从共享单车聊到AI眼镜和3D打印机，从绿色经济聊到上门经济。科技到底对世界产生了怎样的影响？他们都认为，科技确实改变了人们的生活。接着，安妮给大家看了她和同学们拍的短视频。安妮说，短视频是用手机拍的，他们装了一些免费的App，仅用几天就拍完了。视频里，小语做的小吃丰富多样，看起来好吃极了。短视频推出后，大家认为非常精彩，白家月和陈天中看后也特别喜欢，并且表示支持他们拍更多的视频。",
-   "sample_vn": "Annie đạp xe đạp công cộng đến trường của Bạch Gia Nguyệt và Trần Thiên Trung, ba người trò chuyện từ xe đạp công cộng đến kính AI và máy in 3D… Bạch Gia Nguyệt và Trần Thiên Trung xem xong cũng rất thích, đồng thời bày tỏ ủng hộ họ quay thêm nhiều video.",
-   "note": "Bài tập 复述 của sách (trang 92); dùng 到底 (điểm 3)."
+   "hint": "安妮骑……到了白家月、陈天中的学校，三人从……聊到……，从……聊到……。科技到底……？他们都认为……。接着……。短视频推出后……",
+   "sample": "安妮骑共享单车到了白家月、陈天中的学校，三人从共享单车聊到AI眼镜和3D打印机，从绿色经济聊到上门经济。科技到底对世界产生了怎样的影响？他们都认为，科技确实改变了人们的生活。接着，安妮给大家看了她们拍的短视频。视频里小语做的小吃丰富多样，看起来好吃极了。短视频推出后，大家都说非常精彩。",
+   "sample_vn": "Annie đạp xe đạp công cộng đến trường của Bạch Gia Nguyệt và Trần Thiên Trung, ba người trò chuyện từ xe đạp công cộng đến kính AI và máy in 3D… Video ngắn ra mắt xong, mọi người đều nói rất hay.",
+   "note": "Bài tập kể lại bài khoá của sách (trang 92); dùng 到底 (điểm 3)."
   },
   {
    "q_zh": "什么是上门经济？上门经济还有什么问题？",
    "q_vn": "Kinh tế dịch vụ tận nhà là gì? Kinh tế dịch vụ tận nhà còn có vấn đề gì?",
    "hint": "上门经济就是……通过网上预约，让服务人员……。比如……。上门服务很方便，然而……",
-   "sample": "上门经济是一种新的服务方式，就是预约者通过网上预约，让服务人员在合适的时间到家里或者约好的地点服务，比如上门做饭、照顾小动物、取东西等。上门服务很方便，然而也有一些问题，特别是现有服务人员有些还不够专业，需要重新学习，提高服务质量。",
-   "sample_vn": "Kinh tế dịch vụ tận nhà là một hình thức dịch vụ mới, tức là người đặt hẹn đặt lịch qua mạng để nhân viên phục vụ đến nhà hoặc đến địa điểm đã hẹn vào thời gian thích hợp, ví dụ nấu cơm tại nhà, chăm sóc thú cưng, lấy đồ giúp… Dịch vụ tận nhà rất tiện, tuy nhiên cũng có một số vấn đề, đặc biệt là một số nhân viên hiện có chưa đủ chuyên nghiệp, cần học lại để nâng cao chất lượng dịch vụ.",
+   "sample": "上门经济是一种新的服务方式，就是在网上预约以后，服务人员在合适的时间到家里或者约好的地点服务，比如上门做饭、照顾小动物、取东西等。上门服务很方便，然而也有一些问题，比如现有的服务人员有些还不够专业，需要重新学习，提高服务质量。",
+   "sample_vn": "Kinh tế dịch vụ tận nhà là một hình thức dịch vụ mới, tức là sau khi đặt lịch trên mạng, nhân viên phục vụ đến nhà hoặc đến địa điểm đã hẹn vào thời gian thích hợp, ví dụ nấu cơm tại nhà, chăm sóc thú cưng, lấy đồ giúp… Dịch vụ tận nhà rất tiện, tuy nhiên cũng có một số vấn đề, ví dụ một số nhân viên hiện có chưa đủ chuyên nghiệp, cần học lại để nâng cao chất lượng dịch vụ.",
    "note": "Câu hỏi bài khoá 4; dùng 然而 (điểm 4) + ôn 就是说 (Bài 11)."
   },
   {
-   "q_zh": "小组讨论：三至四人一组，根据亲身经历，谈谈科技的发展给人们生活带来的便利，讨论后由一人报告小组讨论结果。",
+   "q_zh": "请三四个人一起讨论：科技的发展给我们的生活带来了哪些方便？讨论以后，请一个人给大家介绍你们小组的看法。",
    "q_vn": "Thảo luận nhóm: Nhóm 3–4 người, dựa vào trải nghiệm của bản thân, nói về những tiện lợi mà sự phát triển của công nghệ mang lại cho cuộc sống; thảo luận xong một người báo cáo kết quả của nhóm.",
-   "hint": "首先，……共享单车……；其次，……上门服务……；另外，……短视频……。然而……。科技到底……？我们认为……",
-   "sample": "大家好！我们小组讨论的题目是“科技的发展给生活带来的便利”。首先是出行。以前我们出门只能坐公交车或者打车，现在路边到处都是共享单车，用手机对着二维码扫一下就能骑，费用也不高。我们组的小王每天都先坐地铁，然后骑一小段共享单车到学校，比以前节约了二十分钟。其次是生活服务。有了上门经济，在网上预约后，就会有人上门做饭、取快递、照顾小动物。小李的姐姐经常出差，她家的猫就是让上门服务人员照顾的，大大减轻了她的压力。另外，短视频也让我们的生活更丰富了。我们用手机就能拍视频，放到互联网上，让更多的人了解我们的生活。然而，科技也带来了一些问题，比如有人一看短视频就是一大段时间。科技到底是好还是坏？我们认为，关键是怎么用它。只要合理使用，科技就会让我们的生活越来越方便。",
-   "sample_vn": "Chào cả lớp! Chủ đề nhóm em thảo luận là “Những tiện lợi mà sự phát triển công nghệ mang lại cho cuộc sống”. Trước hết là đi lại. Trước đây ra ngoài chỉ có thể đi xe buýt hoặc gọi taxi, bây giờ ven đường đâu đâu cũng có xe đạp công cộng, dùng điện thoại quét mã QR là đi được, phí cũng không cao. Bạn Vương trong nhóm em ngày nào cũng đi tàu điện ngầm trước rồi đạp xe công cộng một đoạn ngắn đến trường, tiết kiệm được hai mươi phút so với trước. Tiếp theo là dịch vụ sinh hoạt. Có kinh tế dịch vụ tận nhà, đặt lịch trên mạng là sẽ có người đến nấu cơm, lấy bưu kiện, chăm sóc thú cưng. Chị của bạn Lý thường xuyên đi công tác, con mèo nhà chị ấy chính là do nhân viên dịch vụ tận nhà chăm sóc, giảm nhẹ rất nhiều áp lực cho chị. Ngoài ra, video ngắn cũng làm cuộc sống phong phú hơn. Chỉ cần điện thoại là quay được video, đăng lên mạng để nhiều người hiểu cuộc sống của chúng ta hơn. Tuy nhiên, công nghệ cũng mang lại một số vấn đề, ví dụ có người cứ xem video ngắn là mất cả một quãng thời gian dài. Rốt cuộc công nghệ tốt hay xấu? Chúng em cho rằng mấu chốt là dùng nó như thế nào. Chỉ cần sử dụng hợp lý, công nghệ sẽ làm cuộc sống ngày càng tiện lợi.",
-   "note": "Hoạt động 任务活动 · 小组讨论 (thảo luận nhóm) của sách, trang 96 — dùng đủ 4 điểm ngữ pháp: 一小段 / 一大段, 让 bị động, 到底, 然而; ôn 首先……其次…… (Bài 14 · điểm 2)."
+   "hint": "首先，……共享单车……；然后，……上门服务……；还有，……短视频……。然而……。科技到底……？我们认为……",
+   "sample": "大家好！我们小组讨论的是科技给生活带来的方便。首先是出行。以前出门只能坐公交车或者打车，现在路边到处都是共享单车，用手机就能骑，费用也不高。小明每天先坐地铁，然后骑一小段共享单车到学校，比以前节约了二十分钟。然后是生活服务。有了上门经济，在网上预约后，就会有人来家里做饭、洗衣服。小李的姐姐经常出差，她家的猫就是让服务人员照顾的，大大减轻了她的压力。还有，短视频也让我们的生活更丰富了，用手机就能拍，还能放到互联网上，让更多的人了解我们。然而，科技也带来了一些问题，比如有人一看短视频就停不下来。科技到底是好还是坏？我们觉得，关键是怎么用它。只要用得好，科技就会让我们的生活越来越方便。",
+   "sample_vn": "Chào cả lớp! Nhóm em thảo luận về những tiện lợi công nghệ mang lại cho cuộc sống. Trước hết là đi lại. Trước đây ra ngoài chỉ có thể đi xe buýt hoặc gọi taxi, bây giờ ven đường đâu đâu cũng có xe đạp công cộng, dùng điện thoại là đi được, phí cũng không cao. Tiểu Minh ngày nào cũng đi tàu điện ngầm trước rồi đạp xe công cộng một đoạn ngắn đến trường, tiết kiệm được hai mươi phút so với trước. Tiếp theo là dịch vụ sinh hoạt. Có kinh tế dịch vụ tận nhà, đặt lịch trên mạng là sẽ có người đến nhà nấu cơm, giặt quần áo. Chị của bạn Lý thường xuyên đi công tác, con mèo nhà chị ấy chính là do nhân viên dịch vụ chăm sóc, giảm nhẹ rất nhiều áp lực cho chị. Ngoài ra, video ngắn cũng làm cuộc sống phong phú hơn, chỉ cần điện thoại là quay được, còn đăng lên mạng để nhiều người hiểu chúng ta hơn. Tuy nhiên, công nghệ cũng mang lại một số vấn đề, ví dụ có người cứ xem video ngắn là không dừng được. Rốt cuộc công nghệ tốt hay xấu? Chúng em cho rằng mấu chốt là dùng nó như thế nào. Chỉ cần dùng tốt, công nghệ sẽ làm cuộc sống ngày càng tiện lợi.",
+   "note": "Hoạt động thảo luận nhóm của sách, trang 96 — dùng đủ 4 điểm ngữ pháp: 一小段, 让 bị động, 到底, 然而; ôn 首先…… (Bài 14 · điểm 2)."
   }
  ]
 };
 var translateData = [
  {
-  "vi": "Tớ đi xe buýt trước, sau đó đạp xe đạp công cộng, sắp đến cổng ra thì lại dắt xe đi một đoạn ngắn.",
-  "zh": "我先坐的公交车，然后骑共享单车，快到出口时又推了一小段。",
-  "py": "Wǒ xiān zuò de gōngjiāochē, ránhòu qí gòngxiǎng dānchē, kuài dào chūkǒu shí yòu tuī le yì xiǎo duàn."
+  "vi": "Bạn đoán xem tôi mang gì từ quê lên cho bạn? Một túi to đồ ăn vặt!",
+  "zh": "你猜我从老家给你带来了什么？一大包小吃！",
+  "py": "Nǐ cāi wǒ cóng lǎojiā gěi nǐ dàilái le shénme? Yí dà bāo xiǎochī!"
  },
  {
-  "vi": "Sau đó video này được bạn cùng lớp tôi đăng lên mạng, rất nhiều người vào bấm thích.",
-  "zh": "后来这个视频让我同学放到了互联网上，很多人都来点赞。",
-  "py": "Hòulái zhège shìpín ràng wǒ tóngxué fàngdào le hùliánwǎng shàng, hěn duō rén dōu lái diǎnzàn."
+  "vi": "Kính AI của tôi bị em gái mượn đi rồi, đến giờ vẫn chưa trả.",
+  "zh": "我的AI眼镜让妹妹借走了，到现在还没还给我。",
+  "py": "Wǒ de AI yǎnjìng ràng mèimei jièzǒu le, dào xiànzài hái méi huán gěi wǒ."
  },
  {
-  "vi": "Rốt cuộc công nghệ đã tạo ra ảnh hưởng như thế nào đối với thế giới?",
-  "zh": "科技到底对世界产生了怎样的影响？",
-  "py": "Kējì dàodǐ duì shìjiè chǎnshēng le zěnyàng de yǐngxiǎng?"
+  "vi": "Hôm qua bạn không đến, rốt cuộc là vì lý do gì?",
+  "zh": "你昨天没来，到底是什么原因？",
+  "py": "Nǐ zuótiān méi lái, dàodǐ shì shénme yuányīn?"
  },
  {
-  "vi": "Chị ấy phải thường xuyên đi công tác, thế nhưng lại rất lo cho sự an toàn của con mèo.",
-  "zh": "她需要经常出差，然而又很担心猫的安全。",
-  "py": "Tā xūyào jīngcháng chūchāi, rán'ér yòu hěn dānxīn māo de ānquán."
+  "vi": "Anh ấy đã chuẩn bị rất lâu, thế nhưng vẫn không qua được kỳ thi.",
+  "zh": "他准备了很长时间，然而还是没通过考试。",
+  "py": "Tā zhǔnbèi le hěn chángshíjiān, rán'ér háishi méi tōngguò kǎoshì."
  },
  {
-  "vi": "Lần đầu đi, cậu hướng vào mã QR trên xe quét một cái, hoàn tất đăng ký trên App là được.",
-  "zh": "第一次骑的时候，你对着车上的二维码扫一下，在App上完成注册就可以了。",
-  "py": "Dì yí cì qí de shíhou, nǐ duìzhe chē shàng de èrwéimǎ sǎo yíxià, zài App shàng wánchéng zhùcè jiù kěyǐ le."
+  "vi": "Xe đạp hỏng ngay ở cửa ra ga tàu điện ngầm, tôi đành dắt nó về nhà.",
+  "zh": "自行车在地铁站出口坏了，我只好把它推回家。",
+  "py": "Zìxíngchē zài dìtiězhàn chūkǒu huài le, wǒ zhǐhǎo bǎ tā tuī huíjiā."
  },
  {
-  "vi": "Có dịch vụ tận nhà rồi, cô ấy thấy tiện hơn nhiều, không cần nhờ họ hàng giúp nữa.",
-  "zh": "有了上门服务后，她觉得方便多了，不必再找亲戚帮忙。",
-  "py": "Yǒu le shàngmén fúwù hòu, tā juéde fāngbiàn duō le, búbì zài zhǎo qīnqi bāngmáng."
+  "vi": "Bây giờ rất nhiều dịch vụ đều có thể đến tận nhà, người già không cần tự ra ngoài làm thủ tục nữa.",
+  "zh": "现在很多服务都能上门，老人不必自己出门办事了。",
+  "py": "Xiànzài hěn duō fúwù dōu néng shàngmén, lǎorén búbì zìjǐ chūmén bànshì le."
  }
 ];
 var translateDataRev = [
  {
-  "vi": "Nhóm chúng tôi thảo luận xong quyết định để AI Tiểu Ngữ đóng vai đầu bếp.",
-  "zh": "我们小组讨论后决定，由AI小语演厨师。",
-  "py": "Wǒmen xiǎozǔ tǎolùn hòu juédìng, yóu AI Xiǎoyǔ yǎn chúshī."
+  "vi": "Nhóm chúng tôi thảo luận suốt một buổi chiều, cuối cùng đưa ra được một cách hay.",
+  "zh": "我们小组讨论了一个下午，最后提出了一个好办法。",
+  "py": "Wǒmen xiǎozǔ tǎolùn le yí gè xiàwǔ, zuìhòu tíchū le yí gè hǎo bànfǎ."
  },
  {
-  "vi": "Họ cài vài App miễn phí, chỉ mất vài ngày là quay xong.",
-  "zh": "他们装了一些免费的App，仅用几天就拍完了。",
-  "py": "Tāmen zhuāng le yìxiē miǎnfèi de App, jǐn yòng jǐ tiān jiù pāi wán le."
+  "vi": "Dùng điện thoại hướng vào mã QR là có thể trả tiền.",
+  "zh": "用手机对着二维码就可以付钱了。",
+  "py": "Yòng shǒujī duìzhe èrwéimǎ jiù kěyǐ fùqián le."
  },
  {
-  "vi": "Các món ăn vặt Tiểu Ngữ làm phong phú đa dạng, trông ngon cực kỳ.",
-  "zh": "小语做的小吃丰富多样，看起来好吃极了。",
-  "py": "Xiǎoyǔ zuò de xiǎochī fēngfù duōyàng, kànqǐlai hǎochī jí le."
+  "vi": "Internet đã làm cuộc sống của chúng ta tiện lợi hơn rất nhiều.",
+  "zh": "互联网大大方便了我们的生活。",
+  "py": "Hùliánwǎng dàdà fāngbiàn le wǒmen de shēnghuó."
  },
  {
-  "vi": "Nhân viên phục vụ sẽ đến tận nhà chăm sóc mèo con theo yêu cầu chị ấy đưa ra.",
-  "zh": "服务人员会按她提出的要求上门照顾小猫。",
-  "py": "Fúwù rényuán huì àn tā tíchū de yāoqiú shàngmén zhàogu xiǎomāo."
+  "vi": "Món ăn của quán này phong phú đa dạng, cả người già lẫn trẻ em đều thích.",
+  "zh": "这家店的菜丰富多样，老人和孩子都喜欢。",
+  "py": "Zhè jiā diàn de cài fēngfù duōyàng, lǎorén hé háizi dōu xǐhuan."
  },
  {
-  "vi": "Một số nhân viên phục vụ hiện có vẫn chưa đủ chuyên nghiệp, cần nâng cao chất lượng dịch vụ.",
-  "zh": "现有服务人员有些还不够专业，需要提高服务质量。",
-  "py": "Xiànyǒu fúwù rényuán yǒuxiē hái bú gòu zhuānyè, xūyào tígāo fúwù zhìliàng."
+  "vi": "Những chiếc điện thoại hiện có trong cửa hàng đều đang giảm giá.",
+  "zh": "店里现有的手机都在打折。",
+  "py": "Diàn lǐ xiànyǒu de shǒujī dōu zài dǎzhé."
  }
 ];
 var sgkData = [

@@ -4737,389 +4737,547 @@ var dialogData = [
 ];
 var listenData = [
  {
-  "audio": "小林，下周六是你的生日吧？你打算怎么过？我男朋友说要给我过生日，不过他没告诉我去哪儿。哇，好浪漫啊！他上次送了你什么礼物？一大束花和一盒巧克力。他真细心，我不说他也知道我喜欢什么。是啊，遇见他，我觉得自己很幸运。",
+  "audio": "今天是我和丈夫结婚十年的日子，他送了我一块很漂亮的手表。",
   "questions": [
    {
-    "q": "谁要给小林过生日？",
+    "q": "Hôm nay là ngày gì?",
     "opts": [
-     "她的同学",
-     "她的男朋友",
-     "她的妈妈"
+     "Sinh nhật người chồng",
+     "Kỷ niệm mười năm ngày cưới",
+     "Sinh nhật người nói"
     ],
-    "ans": 1
+    "ans": 1,
+    "exp": "结婚十年的日子 = ngày tròn mười năm kết hôn; 日子 = ngày (có ý nghĩa)."
    },
    {
-    "q": "小林的男朋友上次送了她什么？",
+    "q": "Người chồng tặng gì?",
     "opts": [
-     "花和巧克力",
-     "生日蛋糕",
-     "一本书"
+     "Sô-cô-la",
+     "Hoa",
+     "Một chiếc đồng hồ"
     ],
-    "ans": 0
+    "ans": 2,
+    "exp": "送了我一块很漂亮的手表 = tặng tôi một chiếc đồng hồ rất đẹp; 块 là lượng từ của đồng hồ."
    }
   ]
  },
  {
-  "audio": "听说你姐姐下个月结婚？对，日子已经定了，在五月二十号。她和她男朋友是怎么认识的？他们是同事，一起出过一次差，从此就熟悉了起来。他们性格一样吗？不太一样，姐姐很安静，她男朋友很幽默。尽管性格不同，但是他们有很多共同爱好，都喜欢旅游。",
+  "audio": "尽管外面下着大雨，可是来看比赛的人还是很多。",
   "questions": [
    {
-    "q": "姐姐和她男朋友是怎么熟悉起来的？",
+    "q": "Người đến xem trận đấu thế nào?",
     "opts": [
-     "一起上大学",
-     "一起出差",
-     "一起旅游"
+     "Vẫn rất đông",
+     "Ít vì trời mưa",
+     "Trận đấu bị hoãn"
     ],
-    "ans": 1
-   },
-   {
-    "q": "关于姐姐和她男朋友，可以知道什么？",
-    "opts": [
-     "性格一样",
-     "有共同爱好",
-     "都很幽默"
-    ],
-    "ans": 1
+    "ans": 0,
+    "exp": "尽管……，可是……还是很多 = mặc dù mưa to nhưng người đến xem vẫn rất đông."
    }
   ]
  },
  {
-  "audio": "你和王明是怎么成为好朋友的？我们是大学同学。刚认识的时候，我对他印象不太好，觉得他不爱说话。后来呢？后来有一次我生病了，他每天给我送饭，还帮我复习。尽管毕业后我们去了不同的城市，但是我们的友情一直很深。真好！朋友之间就应该相互支持。",
+  "audio": "我爷爷从来不喝咖啡，他说喝了以后晚上睡不着。",
   "questions": [
    {
-    "q": "说话人刚认识王明的时候，对他的印象怎么样？",
+    "q": "Ông có uống cà phê không?",
     "opts": [
-     "非常好",
-     "不太好",
-     "觉得他很幽默"
+     "Thỉnh thoảng uống",
+     "Chưa bao giờ uống",
+     "Ngày nào cũng uống"
     ],
-    "ans": 1
+    "ans": 1,
+    "exp": "从来不喝 = từ trước đến nay không uống."
    },
    {
-    "q": "毕业后，他们怎么样？",
+    "q": "Vì sao?",
     "opts": [
-     "在一个城市工作",
-     "很少联系了",
-     "友情一直很深"
+     "Không thích vị cà phê",
+     "Bác sĩ không cho",
+     "Uống vào thì tối không ngủ được"
     ],
-    "ans": 2
+    "ans": 2,
+    "exp": "喝了以后晚上睡不着 = uống rồi tối không ngủ được."
+   }
+  ]
+ },
+ {
+  "audio": "我在这个城市住了二十年，不用手机也能找到每个地方。",
+  "questions": [
+   {
+    "q": "Vì sao người nói không cần điện thoại chỉ đường?",
+    "opts": [
+     "Đã sống ở đây hai mươi năm",
+     "Có người dẫn đường",
+     "Thành phố rất nhỏ"
+    ],
+    "ans": 0,
+    "exp": "住了二十年 → 不用手机也能找到 = không cần điện thoại cũng tìm được (不……也……)."
+   }
+  ]
+ },
+ {
+  "audio": "我们经理对新来的小李印象很好，说他做事积极，也很负责。",
+  "questions": [
+   {
+    "q": "Giám đốc nhận xét Tiểu Lý thế nào?",
+    "opts": [
+     "Hài hước, lãng mạn",
+     "Tích cực và có trách nhiệm",
+     "Kiên nhẫn nhưng hơi chậm"
+    ],
+    "ans": 1,
+    "exp": "做事积极，也很负责 = làm việc tích cực, cũng rất có trách nhiệm; 印象很好 = ấn tượng tốt."
+   }
+  ]
+ },
+ {
+  "audio": "我们是在一次旅游中认识的，从此就成为了好朋友，到现在已经十年了。",
+  "questions": [
+   {
+    "q": "Họ quen nhau ở đâu?",
+    "opts": [
+     "Ở trường",
+     "Trong một chuyến du lịch",
+     "Ở công ty"
+    ],
+    "ans": 1,
+    "exp": "在一次旅游中认识的 = quen nhau trong một chuyến du lịch; 是……的 nhấn mạnh nơi chốn."
+   },
+   {
+    "q": "Họ là bạn bao lâu rồi?",
+    "opts": [
+     "Mười năm",
+     "Một năm",
+     "Năm năm"
+    ],
+    "ans": 0,
+    "exp": "从此……到现在已经十年了 = từ đó đến nay đã mười năm."
+   }
+  ]
+ },
+ {
+  "audio": "此次活动吸引了三百多位留学生参加，大家都觉得十分精彩。",
+  "questions": [
+   {
+    "q": "Có bao nhiêu du học sinh tham gia?",
+    "opts": [
+     "Ba mươi",
+     "Hơn một trăm",
+     "Hơn ba trăm"
+    ],
+    "ans": 2,
+    "exp": "三百多位留学生 = hơn ba trăm du học sinh; 此次活动 = hoạt động lần này."
+   },
+   {
+    "q": "Mọi người thấy hoạt động thế nào?",
+    "opts": [
+     "Rất đặc sắc",
+     "Hơi nhàm chán",
+     "Quá đông"
+    ],
+    "ans": 0,
+    "exp": "十分精彩 = vô cùng đặc sắc, hấp dẫn."
    }
   ]
  }
 ];
 var matchData = [
  {
+  "left": "吸引",
+  "right": "游客"
+ },
+ {
+  "left": "错过",
+  "right": "机会"
+ },
+ {
+  "left": "产生",
+  "right": "兴趣"
+ },
+ {
+  "left": "经营",
+  "right": "家庭"
+ },
+ {
   "left": "祝你",
   "right": "生日快乐"
  },
  {
   "left": "相互",
-  "right": "理解、相互支持"
+  "right": "理解"
  },
  {
-  "left": "产生",
-  "right": "爱情"
+  "left": "印象",
+  "right": "很深"
  },
  {
-  "left": "共同",
-  "right": "经营好家庭"
- },
- {
-  "left": "对他印象",
-  "right": "非常好"
- },
- {
-  "left": "关注",
-  "right": "对方的感受"
- },
- {
-  "left": "尽管……",
-  "right": "但是……"
- },
- {
-  "left": "从来没",
-  "right": "见过"
- },
- {
-  "left": "一段",
-  "right": "感情"
- },
- {
-  "left": "错过",
-  "right": "机会"
+  "left": "性格",
+  "right": "很阳光"
  }
 ];
 var fillData = [
  {
-  "pre": "我不说你",
+  "pre": "这些汉字我已经很熟悉了，不看书",
   "blank": "也",
-  "post": "懂我在想什么。",
+  "post": "能写出来。",
   "hint": "(cũng)",
   "ans": "也",
-  "exp": "不……也……: không … cũng …"
+  "exp": "不……也…… = dù không … vẫn …: không nhìn sách vẫn viết được."
  },
  {
-  "pre": "其实刚认识不久，你的幽默与耐心就很",
-  "blank": "吸引",
-  "post": "我。",
-  "hint": "(thu hút)",
-  "ans": "吸引",
-  "exp": "A + 吸引 + B."
- },
- {
-  "pre": "不过我",
-  "blank": "当时",
-  "post": "也只把你当普通朋友。",
-  "hint": "(lúc đó)",
-  "ans": "当时",
-  "exp": "当时 = lúc đó (quá khứ)."
- },
- {
-  "pre": "他们",
+  "pre": "",
   "blank": "尽管",
-  "post": "性格不同，但是有很多共同爱好。",
+  "post": "我们住得很远，但是每个月都会打几次电话。",
   "hint": "(mặc dù)",
   "ans": "尽管",
-  "exp": "尽管……，但是……"
- },
- {
-  "pre": "希望他们能一直",
-  "blank": "相互",
-  "post": "理解、相互支持。",
-  "hint": "(lẫn nhau)",
-  "ans": "相互",
-  "exp": "相互 + V hai âm tiết."
- },
- {
-  "pre": "杨同乐刚来不久，王一雪对他",
-  "blank": "印象",
-  "post": "就非常好。",
-  "hint": "(ấn tượng)",
-  "ans": "印象",
-  "exp": "对……印象很好."
+  "exp": "尽管……，但是…… = mặc dù …, nhưng …: ở xa nhưng tháng nào cũng gọi điện vài lần."
  },
  {
   "pre": "",
   "blank": "此",
-  "post": "次出差，让两人熟悉了起来。",
-  "hint": "(này — văn viết)",
+  "post": "次比赛一共有二十个国家的学生参加。",
+  "hint": "(này)",
   "ans": "此",
-  "exp": "此次 = 这次."
+  "exp": "此次 = 这次 (văn viết, trang trọng): 此 + lượng từ + danh từ."
  },
  {
-  "pre": "两人之间慢慢",
-  "blank": "产生",
-  "post": "了爱情，最后成了夫妻。",
-  "hint": "(nảy sinh)",
-  "ans": "产生",
-  "exp": "产生 + 爱情 / 兴趣 / 问题."
- },
- {
-  "pre": "在一段感情中，两个人要多关注对方的",
-  "blank": "感受",
-  "post": "。",
-  "hint": "(cảm nhận)",
-  "ans": "感受",
-  "exp": "对方的感受 = cảm nhận của người kia."
- },
- {
-  "pre": "爱，",
+  "pre": "他做事很认真，上班",
   "blank": "从来",
-  "post": "都是相互尊重、理解与支持。",
+  "post": "没迟到过。",
   "hint": "(từ trước đến nay)",
   "ans": "从来",
-  "exp": "从来都是…… (khẳng định)."
+  "exp": "从来 + 没 + V + 过 = chưa từng …: 从来没迟到过 = chưa bao giờ đi muộn."
+ },
+ {
+  "pre": "那年他去中国旅游，",
+  "blank": "从此",
+  "post": "喜欢上了中国文化。",
+  "hint": "(từ đó)",
+  "ans": "从此",
+  "exp": "从此 = từ đó trở đi, sau một sự kiện (chuyến du lịch năm ấy)."
+ },
+ {
+  "pre": "我妈妈很有",
+  "blank": "耐心",
+  "post": "，每次都慢慢地教我做菜。",
+  "hint": "(kiên nhẫn)",
+  "ans": "耐心",
+  "exp": "很有耐心 = rất kiên nhẫn; 耐心 ở đây là danh từ sau 有."
+ },
+ {
+  "pre": "我们的中文老师很",
+  "blank": "幽默",
+  "post": "，上课的时候大家常常笑。",
+  "hint": "(hài hước)",
+  "ans": "幽默",
+  "exp": "幽默 = hài hước, dí dỏm → cả lớp hay cười."
+ },
+ {
+  "pre": "看到孩子给自己做的巧克力蛋糕，妈妈",
+  "blank": "感动",
+  "post": "得说不出话来。",
+  "hint": "(cảm động)",
+  "ans": "感动",
+  "exp": "感动得 + kết quả = cảm động đến mức …: 说不出话来 = không nói nên lời."
+ },
+ {
+  "pre": "快点儿走吧，",
+  "blank": "错过",
+  "post": "了这班车，就要再等一个小时。",
+  "hint": "(lỡ)",
+  "ans": "错过",
+  "exp": "错过 + 车 / 机会 / 时间 = lỡ mất …; vế sau là hậu quả."
+ },
+ {
+  "pre": "不管你做什么决定，爸爸妈妈都会",
+  "blank": "支持",
+  "post": "你。",
+  "hint": "(ủng hộ)",
+  "ans": "支持",
+  "exp": "支持 + người = ủng hộ ai; ôn 不管……都…… (bài 8)."
+ },
+ {
+  "pre": "他什么运动都喜欢，",
+  "blank": "尤其",
+  "post": "喜欢游泳。",
+  "hint": "(nhất là)",
+  "ans": "尤其",
+  "exp": "尤其 = đặc biệt là, nhất là — nêu cái nổi bật nhất trong nhóm (运动 → 游泳)."
+ },
+ {
+  "pre": "我对这座城市的",
+  "blank": "印象",
+  "post": "非常好，人很热情，东西也好吃。",
+  "hint": "(ấn tượng)",
+  "ans": "印象",
+  "exp": "对……的印象 = ấn tượng về …; ôn 座 (lượng từ thành phố, bài 1)."
+ },
+ {
+  "pre": "买票的人那么多，我最后拿到了一张，真",
+  "blank": "幸运",
+  "post": "！",
+  "hint": "(may mắn)",
+  "ans": "幸运",
+  "exp": "幸运 = may mắn (gặp chuyện tốt bất ngờ); khác 幸福 = hạnh phúc."
  }
 ];
 var sortData = [
  {
   "words": [
-   "我",
-   "不说",
-   "你",
-   "也",
-   "懂",
-   "我在想什么",
+   "尽管",
+   "已经",
+   "很晚",
+   "了",
+   "，",
+   "他",
+   "还是",
+   "在",
+   "办公室",
+   "工作",
    "。"
   ],
-  "ans": "我不说你也懂我在想什么。",
-  "audio": "我不说你也懂我在想什么。"
+  "ans": "尽管已经很晚了，他还是在办公室工作。",
+  "audio": "尽管已经很晚了，他还是在办公室工作。"
  },
  {
   "words": [
-   "他们",
-   "尽管",
-   "性格不同",
-   "，",
-   "但是",
-   "有很多",
-   "共同爱好",
+   "我",
+   "从来",
+   "没",
+   "见过",
+   "这么",
+   "浪漫",
+   "的",
+   "人",
    "。"
   ],
-  "ans": "他们尽管性格不同，但是有很多共同爱好。",
-  "audio": "他们尽管性格不同，但是有很多共同爱好。"
+  "ans": "我从来没见过这么浪漫的人。",
+  "audio": "我从来没见过这么浪漫的人。"
  },
  {
   "words": [
    "此次",
-   "出差",
-   "，",
-   "让",
-   "两人",
-   "熟悉了起来",
+   "会议",
+   "的",
+   "时间",
+   "改到",
+   "了",
+   "下周一",
    "。"
   ],
-  "ans": "此次出差，让两人熟悉了起来。",
-  "audio": "此次出差，让两人熟悉了起来。"
+  "ans": "此次会议的时间改到了下周一。",
+  "audio": "此次会议的时间改到了下周一。"
  },
  {
   "words": [
-   "爱",
-   "从来",
-   "都是",
-   "相互尊重",
-   "、",
-   "理解与支持",
-   "。"
-  ],
-  "ans": "爱从来都是相互尊重、理解与支持。",
-  "audio": "爱从来都是相互尊重、理解与支持。"
- },
- {
-  "words": [
-   "两人",
+   "他们",
+   "两个人",
    "之间",
    "慢慢",
-   "产生了",
-   "爱情",
+   "产生",
+   "了",
+   "感情",
    "。"
   ],
-  "ans": "两人之间慢慢产生了爱情。",
-  "audio": "两人之间慢慢产生了爱情。"
+  "ans": "他们两个人之间慢慢产生了感情。",
+  "audio": "他们两个人之间慢慢产生了感情。"
  },
  {
   "words": [
-   "他们的",
+   "祝",
+   "你",
+   "在",
+   "新的",
+   "一年",
+   "里",
+   "身体",
+   "健康",
+   "！"
+  ],
+  "ans": "祝你在新的一年里身体健康！",
+  "audio": "祝你在新的一年里身体健康！"
+ },
+ {
+  "words": [
+   "这",
+   "是",
+   "我",
    "人生",
-   "变得",
-   "更加",
+   "中",
+   "最",
    "精彩",
-   "了",
+   "的",
+   "一天",
    "。"
   ],
-  "ans": "他们的人生变得更加精彩了。",
-  "audio": "他们的人生变得更加精彩了。"
+  "ans": "这是我人生中最精彩的一天。",
+  "audio": "这是我人生中最精彩的一天。"
+ },
+ {
+  "words": [
+   "这么",
+   "简单",
+   "的",
+   "问题",
+   "，",
+   "不",
+   "用",
+   "想",
+   "也",
+   "知道",
+   "。"
+  ],
+  "ans": "这么简单的问题，不用想也知道。",
+  "audio": "这么简单的问题，不用想也知道。"
+ },
+ {
+  "words": [
+   "父母",
+   "对",
+   "孩子",
+   "有",
+   "很大",
+   "的",
+   "责任",
+   "。"
+  ],
+  "ans": "父母对孩子有很大的责任。",
+  "audio": "父母对孩子有很大的责任。"
  }
 ];
 var mcData = [
  {
-  "q": "我不说你＿＿懂我在想什么。",
+  "q": "Bạn muốn nói: “Dù trời rất lạnh nhưng anh ấy vẫn đi bơi.”",
+  "opts": [
+   "尽管天气很冷，但是他还是去游泳了。",
+   "尽管天气很冷，所以他还是去游泳了。",
+   "尽管天气很冷，他但是还是去游泳了。",
+   "尽管天气很冷，但是还是他去游泳了。"
+  ],
+  "ans": 0,
+  "exp": "尽管 đi với 但是 / 可是 (không dùng 所以); 但是 đứng đầu vế sau, 还是 đứng sau chủ ngữ 他."
+ },
+ {
+  "q": "Câu nào SAI?",
+  "opts": [
+   "我昨天从来没吃早饭。",
+   "我从来没去过那个地方。",
+   "他从来不喝酒。",
+   "她对孩子从来都很耐心。"
+  ],
+  "ans": 0,
+  "exp": "从来 = từ trước đến nay, không dùng với một thời điểm cụ thể như 昨天: 我昨天没吃早饭."
+ },
+ {
+  "q": "A: “我们要不要告诉他明天开会？” B: “不用，他每个星期一都开会，不告诉他＿＿会来。”",
   "opts": [
    "也",
    "才",
-   "再",
-   "又"
+   "就",
+   "再"
   ],
   "ans": 0,
-  "exp": "Câu phức rút gọn 不……也……: không … cũng …"
+  "exp": "不……也…… = dù không … thì vẫn …: không báo anh ấy vẫn đến."
  },
  {
-  "q": "＿＿他们性格不同，但是有很多共同爱好。",
+  "q": "“大学的时候他参加了一次中文比赛，＿＿爱上了中文。”",
   "opts": [
-   "尽管",
-   "不管",
-   "由于",
-   "既然"
-  ],
-  "ans": 0,
-  "exp": "Sự thật cụ thể + kết quả trái chiều → 尽管……，但是……"
- },
- {
-  "q": "＿＿天气怎么样，他每天都去跑步。",
-  "opts": [
-   "不管",
-   "尽管",
-   "虽然",
-   "由于"
-  ],
-  "ans": 0,
-  "exp": "Điều kiện bất kỳ (怎么样) + 都 → 不管 (Bài 8), không dùng 尽管."
- },
- {
-  "q": "＿＿次活动的地点是校图书馆。",
-  "opts": [
-   "此",
-   "这儿",
-   "那儿",
-   "哪"
-  ],
-  "ans": 0,
-  "exp": "此次 = 这次 (văn viết, thông báo)."
- },
- {
-  "q": "我＿＿没见过这个颜色的花。",
-  "opts": [
-   "从来",
    "从此",
+   "从来",
    "当时",
-   "已经"
+   "尤其"
   ],
   "ans": 0,
-  "exp": "从来没 + V + 过 = chưa từng."
+  "exp": "从此 = từ đó trở đi (sau một sự kiện); 从来 = từ trước đến nay, thường đi với 不 / 没."
  },
  {
-  "q": "他们一起出了次差，＿＿成了好朋友。",
+  "q": "Bạn muốn nói (văn viết): “Chuyến đi Thượng Hải lần này, tôi quen được rất nhiều khách hàng.”",
   "opts": [
-   "从此",
-   "从来",
-   "尤其",
-   "当时"
+   "此次去上海，我认识了很多客户。",
+   "此去上海，我认识了很多客户。",
+   "次此去上海，我认识了很多客户。",
+   "此次去上海，我认识很多了客户。"
   ],
   "ans": 0,
-  "exp": "从此 = từ đó về sau (sau một sự việc làm mốc)."
+  "exp": "此 + lượng từ: 此次 = 这次; không nói 次此; 了 đứng ngay sau động từ 认识. Ôn 客户 (bài 7)."
  },
  {
-  "q": "杨同乐刚来不久，王一雪对他＿＿就非常好。",
-  "opts": [
-   "印象",
-   "感受",
-   "性格",
-   "责任"
-  ],
-  "ans": 0,
-  "exp": "对 + ai + 印象很好."
- },
- {
-  "q": "这里冬天很冷，＿＿是晚上。",
-  "opts": [
-   "尤其",
-   "从来",
-   "相互",
-   "共同"
-  ],
-  "ans": 0,
-  "exp": "……，尤其是 + N: nhấn mạnh phần nổi bật."
- },
- {
-  "q": "在一段感情中，两个人要多关注＿＿的感受。",
-  "opts": [
-   "对方",
-   "对面",
-   "对此",
-   "方面"
-  ],
-  "ans": 0,
-  "exp": "对方 = người kia; 对面 = phía đối diện."
- },
- {
-  "q": "看到他们结婚后这么＿＿，我这个介绍人也特别开心。",
+  "q": "“他们结婚二十年了，日子一直过得很＿＿。”",
   "opts": [
    "幸福",
    "幸运",
-   "浪漫",
-   "精彩"
+   "积极",
+   "耐心"
   ],
   "ans": 0,
-  "exp": "Cuộc sống hôn nhân → 幸福 (hạnh phúc); 幸运 = may mắn."
+  "exp": "幸福 = hạnh phúc (cuộc sống, gia đình); 幸运 = may mắn (gặp chuyện tốt bất ngờ)."
+ },
+ {
+  "q": "A: “你觉得新来的同事怎么样？” — B đáp:",
+  "opts": [
+   "他很阳光，工作也很积极。",
+   "他很阳光，工作也是很积极。",
+   "他是很阳光，工作也很积极。",
+   "他很阳光，也工作很积极。"
+  ],
+  "ans": 0,
+  "exp": "Tính từ làm vị ngữ không cần 是 (他很阳光); 也 đứng sau chủ ngữ 工作, trước vị ngữ."
+ },
+ {
+  "q": "“他刚来公司，对这里的情况还不太＿＿。”",
+  "opts": [
+   "了解",
+   "理解",
+   "感受",
+   "支持"
+  ],
+  "ans": 0,
+  "exp": "了解 = nắm được thông tin, tình hình; 理解 = thấu hiểu suy nghĩ, cảm xúc của ai."
+ },
+ {
+  "q": "Câu nào SAI?",
+  "opts": [
+   "我对这本书的印象很大。",
+   "他们两个人的友情很深。",
+   "这条河的水很深。",
+   "这次比赛给我的感受很深。"
+  ],
+  "ans": 0,
+  "exp": "印象 đi với 深 / 好: 印象很深; không nói 印象很大 như “ấn tượng lớn”."
+ },
+ {
+  "q": "“小李在公司里＿＿管理客户的信息。”",
+  "opts": [
+   "负责",
+   "责任",
+   "支持",
+   "经营"
+  ],
+  "ans": 0,
+  "exp": "负责 + việc = phụ trách việc gì (động từ); 责任 là danh từ “trách nhiệm”."
+ },
+ {
+  "q": "A: “这个菜你怎么不吃了？” B: “＿＿吃不下了，我已经很饱了。”",
+  "opts": [
+   "实在",
+   "从来",
+   "共同",
+   "相互"
+  ],
+  "ans": 0,
+  "exp": "实在 + phủ định / tính từ = thật sự (không thể …): 实在吃不下了."
+ },
+ {
+  "q": "“我和我丈夫有很多＿＿的爱好，周末常常一起去爬山。”",
+  "opts": [
+   "共同",
+   "相互",
+   "对方",
+   "当时"
+  ],
+  "ans": 0,
+  "exp": "共同 + 的 + danh từ = chung: 共同的爱好; 相互 là phó từ, đứng trước động từ (相互帮助)."
  }
 ];
 var speakingData = {
@@ -5129,133 +5287,133 @@ var speakingData = {
    "q_zh": "生日这天你一般都怎么过？",
    "q_vn": "Ngày sinh nhật bạn thường đón thế nào?",
    "hint": "生日那天，我一般……。尽管……，但是……。最难忘的一次是……",
-   "sample": "生日那天，我一般和家人一起吃饭，晚上再跟几个好朋友去唱歌。尽管我从来不要求大家送礼物，但是朋友们每年都会给我准备一个小惊喜。最难忘的一次是去年，我男朋友给我买了花和巧克力，我不说他也知道我喜欢什么，我特别感动。",
-   "sample_vn": "Ngày sinh nhật, tôi thường ăn cơm cùng gia đình, buổi tối đi hát với mấy người bạn thân. Mặc dù tôi chưa bao giờ đòi mọi người tặng quà, nhưng năm nào bạn bè cũng chuẩn bị cho tôi một bất ngờ nhỏ. Lần khó quên nhất là năm ngoái, bạn trai mua cho tôi hoa và sô-cô-la, tôi không nói anh ấy cũng biết tôi thích gì, tôi rất cảm động.",
-   "note": "Câu hỏi phần Khởi động của sách; dùng 尽管……但是…… và 不……也……"
+   "sample": "生日那天，我一般和家人一起吃饭，晚上再跟几个好朋友去唱歌。尽管我从来不让大家送礼物，但是朋友们每年都会给我准备一个小礼物。最难忘的一次是去年，男朋友给我买了花和巧克力，我什么都没说，他就知道我喜欢什么，我特别感动。",
+   "sample_vn": "Ngày sinh nhật, tôi thường ăn cơm cùng gia đình, buổi tối đi hát với mấy người bạn thân. Mặc dù tôi chưa bao giờ bắt mọi người tặng quà, nhưng năm nào bạn bè cũng chuẩn bị cho tôi một món quà nhỏ. Lần khó quên nhất là năm ngoái, bạn trai mua cho tôi hoa và sô-cô-la, tôi chưa nói gì anh ấy đã biết tôi thích gì, tôi rất cảm động.",
+   "note": "Câu hỏi phần Khởi động của sách; dùng 尽管……但是…… và 从来."
   },
   {
    "q_zh": "你和好朋友是怎么认识的？你们经常见面吗？",
    "q_vn": "Bạn và bạn thân quen nhau thế nào? Các bạn có hay gặp nhau không?",
    "hint": "我和……是在……认识的。刚认识不久，……，从此……。现在……",
-   "sample": "我和我的好朋友是在高中认识的。刚认识不久，我们发现有很多共同爱好，都喜欢看书和打篮球，从此就成了好朋友。现在我们在不同的城市上大学，不能经常见面，不过我们每个星期都在网上聊天儿，放假的时候一定会见面。",
-   "sample_vn": "Tôi và bạn thân quen nhau hồi cấp ba. Mới quen không lâu, chúng tôi phát hiện có nhiều sở thích chung, đều thích đọc sách và chơi bóng rổ, từ đó thành bạn tốt. Bây giờ chúng tôi học đại học ở hai thành phố khác nhau, không thể gặp thường xuyên, có điều tuần nào cũng trò chuyện trên mạng, nghỉ lễ nhất định gặp nhau.",
-   "note": "Câu hỏi phần Khởi động của sách; dùng 从此, 共同, 不过 (Bài 2)."
+   "sample": "我和我的好朋友是在高中认识的。刚认识不久，我们发现有很多共同的爱好，都喜欢看书和打篮球，从此两个人就常常一起玩。现在我们在不同的城市上大学，不能经常见面，不过我们每个星期都在网上聊天儿，放假的时候一定会见面。",
+   "sample_vn": "Tôi và bạn thân quen nhau hồi cấp ba. Mới quen không lâu, chúng tôi phát hiện có nhiều sở thích chung, đều thích đọc sách và chơi bóng rổ, từ đó hai người hay chơi cùng nhau. Bây giờ chúng tôi học đại học ở hai thành phố khác nhau, không thể gặp thường xuyên, có điều tuần nào cũng trò chuyện trên mạng, nghỉ lễ nhất định gặp nhau.",
+   "note": "Câu hỏi phần Khởi động của sách; dùng 从此, 共同, 不过 (bài 2)."
   },
   {
    "q_zh": "李文是怎么知道白家月喜欢那个巧克力的？白家月是怎么被李文吸引住的？",
    "q_vn": "Lý Văn làm sao biết Bạch Gia Nguyệt thích loại sô-cô-la đó? Bạch Gia Nguyệt bị Lý Văn thu hút như thế nào?",
    "hint": "上次他们去超市，……，他就记住了。刚认识不久，李文的……就很吸引她……",
-   "sample": "上次他们去超市，李文看到白家月把那个巧克力拿起来看了看又放下了，他就记住了。刚认识不久，李文的幽默与耐心就很吸引白家月，不过她当时只把李文当普通朋友。因为李文一直找她聊天儿，所以他们没有错过对方。",
-   "sample_vn": "Lần trước họ đi siêu thị, Lý Văn thấy Bạch Gia Nguyệt cầm sô-cô-la đó lên xem rồi lại đặt xuống, anh liền nhớ. Mới quen không lâu, sự hài hước và kiên nhẫn của Lý Văn đã thu hút cô, có điều lúc đó cô chỉ coi anh là bạn bình thường. Vì Lý Văn luôn tìm cô trò chuyện nên họ đã không bỏ lỡ nhau.",
+   "sample": "有一次在超市，李文看见白家月拿起那种巧克力，看了一会儿又放回去了，就把这件事记在了心里。白家月说，她刚认识李文的时候，就喜欢他幽默、有耐心，只是那时候还没想到会爱上他。",
+   "sample_vn": "Có lần ở siêu thị, Lý Văn thấy Bạch Gia Nguyệt cầm loại sô-cô-la đó lên, xem một lúc rồi đặt lại, anh liền ghi nhớ trong lòng. Bạch Gia Nguyệt nói khi mới quen Lý Văn cô đã thích sự hài hước, kiên nhẫn của anh, chỉ là lúc đó chưa nghĩ sẽ yêu anh.",
    "note": "Câu hỏi bài khoá 1."
   },
   {
-   "q_zh": "请根据提示复述课文一。",
+   "q_zh": "白家月过生日那天，李文送了她什么？两个人说了些什么？",
    "q_vn": "Dựa vào gợi ý, kể lại bài khoá 1.",
    "hint": "白家月……时，李文给她买了……。李文告诉她，上次……，他就记住了。白家月特别……，觉得自己不说李文也……。白家月告诉李文，……",
-   "sample": "白家月过生日时，李文给她买了花和巧克力。李文告诉她，上次他们去超市时，看到白家月拿起了这个巧克力看了看又放下了，他就记住了。白家月特别感动，觉得自己不说李文也懂她在想什么，他真是个细心又浪漫的人。白家月告诉李文，其实刚认识不久，李文的幽默与耐心就很吸引她，不过她当时也只把李文当普通朋友。如果李文没有一直找她聊天儿，他们可能就错过了。李文认为自己终于遇见了对的人，哪能错过呢？遇见李文，白家月也觉得很幸运。",
-   "sample_vn": "Sinh nhật Bạch Gia Nguyệt, Lý Văn mua cho cô hoa và sô-cô-la… Gặp được Lý Văn, Bạch Gia Nguyệt cũng thấy mình rất may mắn.",
-   "note": "Bài tập 复述 của sách (trang 97)."
+   "sample": "白家月过生日的时候，李文送给她花和巧克力。李文说上次一起去超市，看到她很想买这种巧克力，所以就记住了。白家月非常感动，觉得自己不说李文也懂她在想什么，他真是又细心又浪漫。她还说，当时她只把李文当普通朋友，要是李文没有一直来找她聊天儿，他们可能就错过了。李文说，遇见了对的人，怎么能错过呢？白家月也觉得自己很幸运。",
+   "sample_vn": "Sinh nhật Bạch Gia Nguyệt, Lý Văn tặng cô hoa và sô-cô-la. Lý Văn nói lần trước cùng đi siêu thị, thấy cô rất muốn mua loại sô-cô-la này nên nhớ luôn. Bạch Gia Nguyệt rất cảm động, thấy mình không nói Lý Văn cũng hiểu lòng mình, anh thật vừa tinh tế vừa lãng mạn. Cô còn nói lúc đó cô chỉ coi Lý Văn là bạn bình thường, nếu anh không luôn tìm cô trò chuyện thì có lẽ họ đã lỡ nhau. Lý Văn nói gặp đúng người rồi sao có thể bỏ lỡ? Bạch Gia Nguyệt cũng thấy mình rất may mắn.",
+   "note": "Bài tập kể lại bài khoá của sách (trang 97)."
   },
   {
    "q_zh": "杨同乐和王一飞为什么能成为夫妻？王一雪为什么相信他们“会一直走下去的”？",
    "q_vn": "Vì sao Dương Đồng Lạc và Vương Nhất Phi có thể thành vợ chồng? Vì sao Vương Nhất Tuyết tin họ “sẽ luôn cùng nhau đi tiếp”?",
    "hint": "他们尽管……，但是……。特别是杨同乐……。王一雪了解……，更了解……",
-   "sample": "他们尽管性格不同，但是有很多共同爱好。特别是杨同乐人好，性格也好，很有责任感，王一飞也算在对的时间遇到了对的人。王一雪相信他们会一直走下去，因为杨同乐是她的好朋友，王一飞是她妹妹，她了解杨同乐，更了解王一飞。",
-   "sample_vn": "Họ tuy tính cách khác nhau nhưng có nhiều sở thích chung. Đặc biệt Dương Đồng Lạc người tốt, tính cách tốt, rất có trách nhiệm; Vương Nhất Phi cũng coi như gặp đúng người vào đúng thời điểm. Vương Nhất Tuyết tin họ sẽ đi tiếp cùng nhau, vì Đồng Lạc là bạn tốt của cô, Nhất Phi là em gái cô — cô hiểu Đồng Lạc, càng hiểu Nhất Phi hơn.",
-   "note": "Câu hỏi bài khoá 2; dùng 尽管……但是…… (điểm 2)."
+   "sample": "尽管两个人的性格不一样，可是他们喜欢做的事情差不多。杨同乐是个好人，做事很负责，王一飞遇到他，时间和人都刚刚好。王一雪很了解他们两个人，一个是她的好朋友，一个是她的妹妹，所以她相信他们能一直幸福下去。",
+   "sample_vn": "Mặc dù tính cách hai người không giống nhau, nhưng những việc họ thích làm thì gần giống nhau. Dương Đồng Lạc là người tốt, làm việc rất có trách nhiệm, Vương Nhất Phi gặp anh đúng lúc đúng người. Vương Nhất Tuyết rất hiểu hai người, một là bạn thân, một là em gái, nên cô tin họ sẽ mãi hạnh phúc.",
+   "note": "Câu hỏi bài khoá 2; dùng 尽管……但是 / 可是…… (điểm 2)."
   },
   {
    "q_zh": "杨同乐进入公司后，王一雪对他的印象怎么样？杨同乐为什么感觉自己很幸运？",
    "q_vn": "Sau khi Dương Đồng Lạc vào công ty, Vương Nhất Tuyết có ấn tượng về anh thế nào? Vì sao Dương Đồng Lạc thấy mình rất may mắn?",
    "hint": "王一雪对他印象……：人……，性格……。杨同乐觉得……，因为和王一雪这份……",
-   "sample": "杨同乐刚来不久，王一雪对他印象就非常好：人很实在，性格阳光，工作负责，表现积极。杨同乐觉得自己很幸运，因为他和王一雪这份同事间的友情，给他带来了美好的爱情。他既有了一个好朋友，又遇到了自己的妻子，所以是“双份幸运”。",
-   "sample_vn": "Dương Đồng Lạc mới đến không lâu, Vương Nhất Tuyết đã có ấn tượng rất tốt: người thật thà, tính cách vui tươi, làm việc có trách nhiệm, biểu hiện tích cực. Đồng Lạc thấy mình may mắn vì tình bạn đồng nghiệp với Nhất Tuyết đã mang đến cho anh tình yêu đẹp — vừa có bạn tốt, vừa gặp được vợ, nên là “may mắn nhân đôi”.",
-   "note": "Câu hỏi bài khoá 3; ôn 既……又…… (Bài 4)."
+   "sample": "王一雪觉得杨同乐很不错：为人实在，性格阳光，表现也很好。杨同乐觉得自己很幸运，因为他既有了王一雪这个好朋友，又通过她认识了自己的妻子。",
+   "sample_vn": "Vương Nhất Tuyết thấy Dương Đồng Lạc rất được: con người thật thà, tính cách vui tươi, biểu hiện cũng rất tốt. Đồng Lạc thấy mình may mắn vì vừa có người bạn tốt là Nhất Tuyết, vừa qua cô quen được vợ mình.",
+   "note": "Câu hỏi bài khoá 3; ôn 既……又…… (bài 4)."
   },
   {
-   "q_zh": "请根据提示复述课文三。",
+   "q_zh": "杨同乐为什么说自己有“双份幸运”？请你把他和王一雪、王一飞的故事讲一讲。",
    "q_vn": "Dựa vào gợi ý, kể lại bài khoá 3.",
    "hint": "王一雪比杨同乐……。杨同乐刚来不久，王一雪对他……。后来他们一起……，此次出差，让两人……，从此……。一次聊天儿时，……，于是……",
-   "sample": "王一雪比杨同乐更早进入公司。杨同乐刚来不久，王一雪对他印象就非常好：人很实在，性格阳光，工作负责，表现积极……后来他们一起出了次差，此次出差，让两人熟悉了起来，从此成了好朋友。一次聊天儿时，王一雪了解到杨同乐还没女朋友，正好自己的妹妹王一飞也没有男朋友，于是王一雪就把王一飞介绍给了他。杨同乐和王一飞认识后，很聊得来，两人之间慢慢产生了爱情，最后成了夫妻。杨同乐说自己很幸运，和王一雪这份同事间的友情，给他带来了美好的爱情。",
-   "sample_vn": "Vương Nhất Tuyết vào công ty sớm hơn Dương Đồng Lạc… Dương Đồng Lạc nói mình rất may mắn, tình bạn đồng nghiệp với Vương Nhất Tuyết đã mang đến cho anh một tình yêu đẹp.",
-   "note": "Bài tập 复述 của sách (trang 101); dùng 此次, 从此 (điểm 3)."
+   "sample": "王一雪进公司比杨同乐早。杨同乐来了没多久，王一雪就很喜欢这个同事。后来他们一起去出差，两个人熟悉了，从此成为了好朋友。有一次聊天儿，王一雪知道杨同乐还没有女朋友，她的妹妹王一飞也正好没有男朋友，于是就介绍他们认识。两个人很聊得来，慢慢地有了感情，最后成为了夫妻。杨同乐觉得同事之间的友情给他带来了爱情，所以他有“双份幸运”。",
+   "sample_vn": "Vương Nhất Tuyết vào công ty sớm hơn Dương Đồng Lạc. Đồng Lạc đến chưa lâu, Nhất Tuyết đã rất quý anh đồng nghiệp này. Sau đó họ cùng đi công tác, hai người thân nhau, từ đó hai người hay chơi cùng nhau. Một lần trò chuyện, Nhất Tuyết biết Đồng Lạc chưa có bạn gái, em gái cô là Nhất Phi cũng vừa hay chưa có bạn trai, thế là cô giới thiệu hai người quen nhau. Hai người rất hợp chuyện, dần dần nảy sinh tình cảm, cuối cùng kết hôn. Đồng Lạc nói tình bạn đồng nghiệp đã mang đến cho anh tình yêu, nên anh có “may mắn nhân đôi”.",
+   "note": "Bài tập kể lại bài khoá của sách (trang 101); dùng 从此 (điểm 3)."
   },
   {
    "q_zh": "遇见爱情的方式并不重要，重要的是什么？爱需要怎样经营？",
    "q_vn": "Gặp tình yêu bằng cách nào không quan trọng, vậy điều quan trọng là gì? Tình yêu cần vun đắp như thế nào?",
    "hint": "重要的是……。在一段感情中，两个人要……，尤其是……。爱，从来都是……",
-   "sample": "重要的是在合适的时间遇到了合适的人。不过美好的遇见只是爱的开始，爱更需要经营。在一段感情中，两个人要多关注对方的感受，尤其是结婚后，更要共同经营好家庭，日子才能越过越好。爱，从来都是相互尊重、理解与支持。",
-   "sample_vn": "Quan trọng là gặp đúng người vào đúng thời điểm. Có điều cuộc gặp gỡ đẹp chỉ là khởi đầu, tình yêu càng cần vun đắp. Trong một mối quan hệ, hai người phải quan tâm nhiều hơn đến cảm nhận của nhau, nhất là sau khi cưới càng phải cùng nhau vun vén gia đình, cuộc sống mới ngày càng tốt. Tình yêu từ trước đến nay luôn là tôn trọng, thấu hiểu và ủng hộ lẫn nhau.",
+   "sample": "重要的是在合适的时间遇到了合适的人。不过，遇见只是开始，以后还要好好经营。两个人在一起，要多为对方想一想，尤其是结婚以后，要一起把家庭经营好，生活才会越来越好。真正的爱从来都离不开尊重、理解和支持。",
+   "sample_vn": "Quan trọng là gặp đúng người vào đúng thời điểm. Có điều gặp gỡ chỉ là khởi đầu, sau đó còn phải vun đắp cho tốt. Hai người ở bên nhau phải nghĩ cho đối phương nhiều hơn, nhất là sau khi cưới phải cùng nhau vun vén gia đình, cuộc sống mới ngày càng tốt. Tình yêu thật sự từ trước đến nay không thể thiếu tôn trọng, thấu hiểu và ủng hộ.",
    "note": "Câu hỏi bài khoá 4; dùng 尤其, 从来 (điểm 4)."
   },
   {
-   "q_zh": "小组讨论：两人一组，对比你们国家的人和中国人的爱情观或友情观有哪些相同的地方，有哪些不同的地方，选出一位同学向全班介绍你们讨论的内容。",
-   "q_vn": "Thảo luận nhóm: hai người một nhóm, so sánh quan niệm về tình yêu hoặc tình bạn của người nước mình và người Trung Quốc có những điểm giống và khác nhau nào (điền vào bảng 相同点 / 不同点), rồi cử một bạn giới thiệu với cả lớp.",
-   "hint": "我们组讨论了……。相同的地方是：不管在中国还是在越南，大家都觉得……。不同的地方是：在中国，……；在越南，……。拿……来说，……。尽管……，但是……",
-   "sample": "大家好！我们组讨论了中国人和越南人的爱情观和友情观。相同的地方是：不管在中国还是在越南，大家都觉得爱情需要相互理解、相互支持，结婚以后两个人要共同经营好家庭；朋友之间也要相互帮助，真正的友情从来不会因为离得远就变淡。不同的地方也有一些。拿结婚来说，在中国，很多年轻人觉得有房才有家，结婚前最好先买房；在越南，不少年轻人结婚后先和父母住在一起，过几年再买房。另外，在中国，通过朋友或家人介绍认识对象的人比较多，比如王一雪就把妹妹介绍给了杨同乐；在越南，尽管也有朋友介绍的，但是在学校或者公司里自己认识的更多。总的来说，尽管两个国家的习惯有些不同，但是大家对美好爱情和友情的希望是一样的。谢谢大家！",
-   "sample_vn": "Chào cả lớp! Nhóm mình đã thảo luận về quan niệm tình yêu và tình bạn của người Trung Quốc và người Việt Nam. Điểm giống: dù ở Trung Quốc hay Việt Nam, mọi người đều cho rằng tình yêu cần thấu hiểu, ủng hộ nhau, cưới rồi hai người phải cùng nhau vun vén gia đình; bạn bè cũng phải giúp đỡ nhau, tình bạn thật sự chưa bao giờ phai nhạt chỉ vì ở xa. Điểm khác cũng có. Lấy chuyện kết hôn mà nói, ở Trung Quốc nhiều bạn trẻ cho rằng có nhà mới có tổ ấm, trước khi cưới tốt nhất nên mua nhà; ở Việt Nam, không ít bạn trẻ cưới xong ở cùng bố mẹ trước, vài năm sau mới mua nhà. Ngoài ra, ở Trung Quốc khá nhiều người quen người yêu qua bạn bè, gia đình giới thiệu, như Vương Nhất Tuyết giới thiệu em gái cho Dương Đồng Lạc; ở Việt Nam tuy cũng có người được giới thiệu, nhưng tự quen nhau ở trường hay công ty thì nhiều hơn. Tóm lại, dù thói quen hai nước có khác nhau, nhưng mong ước về tình yêu và tình bạn đẹp thì giống nhau. Cảm ơn cả lớp!",
-   "note": "Hoạt động 小组讨论 (thảo luận nhóm) trong 任务活动 của sách, trang 105 — dùng 尽管……但是……, 从来, 不管 (Bài 8), 拿……来说 (Bài 7)."
+   "q_zh": "请两个人一起说一说：在你们国家和在中国，人们对爱情和友情的看法有哪些相同的地方，有哪些不同的地方？",
+   "q_vn": "Thảo luận nhóm: hai người một nhóm, so sánh quan niệm về tình yêu hoặc tình bạn của người nước mình và người Trung Quốc có những điểm giống và khác nhau nào, rồi cử một bạn giới thiệu với cả lớp.",
+   "hint": "相同的地方是：不管在中国还是在我们国家，大家都觉得……。不同的地方是：在中国，……；在我们国家，……。拿……来说，……。尽管……，但是……",
+   "sample": "大家好！我们来说说中国人和我们国家的人对爱情和友情的看法。相同的地方是：不管在哪个国家，大家都觉得爱情需要相互理解，结婚以后要一起经营家庭；好朋友之间也要相互帮助，真正的友情不会因为离得远就没有了。不同的地方也有。拿结婚来说，在中国，很多年轻人觉得结婚以前最好先买房子；在我们那儿，不少年轻人结婚以后先和父母住在一起。还有，在中国，通过朋友或者家人介绍认识的人比较多；我们国家尽管也有，但是在学校或者公司里自己认识的更多。尽管习惯有些不同，但是大家对美好爱情和友情的希望是一样的。",
+   "sample_vn": "Chào cả lớp! Chúng mình nói về quan niệm tình yêu và tình bạn của người Trung Quốc và người nước mình. Điểm giống: ở nước nào mọi người cũng cho rằng tình yêu cần thấu hiểu nhau, cưới rồi phải cùng vun vén gia đình; bạn thân cũng phải giúp đỡ nhau, tình bạn thật sự không vì ở xa mà mất đi. Điểm khác cũng có. Lấy chuyện kết hôn mà nói, ở Trung Quốc nhiều bạn trẻ cho rằng trước khi cưới tốt nhất nên mua nhà; ở nước mình, không ít bạn trẻ cưới xong ở cùng bố mẹ trước. Còn nữa, ở Trung Quốc khá nhiều người quen nhau qua bạn bè, gia đình giới thiệu; nước mình tuy cũng có, nhưng tự quen nhau ở trường hay công ty thì nhiều hơn. Tuy thói quen có khác, nhưng mong ước về tình yêu và tình bạn đẹp thì giống nhau.",
+   "note": "Hoạt động thảo luận nhóm của sách (trang 105) — dùng 尽管……但是……, 不管 (bài 8), 拿……来说 (bài 7)."
   }
  ]
 };
 var translateData = [
  {
-  "vi": "Em không nói anh cũng hiểu em đang nghĩ gì.",
-  "zh": "我不说你也懂我在想什么。",
-  "py": "Wǒ bù shuō nǐ yě dǒng wǒ zài xiǎng shénme."
+  "vi": "Mặc dù tôi đã sống ở Bắc Kinh ba năm, nhưng chưa từng đến Cố Cung.",
+  "zh": "尽管我在北京住了三年，但是从来没去过故宫。",
+  "py": "Jǐnguǎn wǒ zài Běijīng zhù le sān nián, dànshì cónglái méi qù guò Gùgōng."
  },
  {
-  "vi": "Họ tuy tính cách khác nhau nhưng có rất nhiều sở thích chung.",
-  "zh": "他们尽管性格不同，但是有很多共同爱好。",
-  "py": "Tāmen jǐnguǎn xìnggé bùtóng, dànshì yǒu hěn duō gòngtóng àihào."
+  "vi": "Món này tôi đã làm rất nhiều lần, không cần hỏi mẹ cũng làm được.",
+  "zh": "这个菜我做过很多次了，不用问妈妈也会做。",
+  "py": "Zhège cài wǒ zuò guò hěn duō cì le, búyòng wèn māma yě huì zuò."
  },
  {
-  "vi": "Chuyến công tác lần này khiến hai người trở nên thân quen, từ đó thành bạn tốt.",
-  "zh": "此次出差，让两人熟悉了起来，从此成了好朋友。",
-  "py": "Cǐ cì chūchāi, ràng liǎng rén shúxi le qǐlai, cóngcǐ chéng le hǎo péngyou."
+  "vi": "Từ đó, cuộc sống của họ ngày càng hạnh phúc.",
+  "zh": "从此，他们的日子越过越幸福。",
+  "py": "Cóngcǐ, tāmen de rìzi yuè guò yuè xìngfú."
  },
  {
-  "vi": "Tình yêu từ trước đến nay luôn là tôn trọng, thấu hiểu và ủng hộ lẫn nhau.",
-  "zh": "爱从来都是相互尊重、理解与支持。",
-  "py": "Ài cónglái dōu shì xiānghù zūnzhòng, lǐjiě yǔ zhīchí."
+  "vi": "Trong tình bạn, quan trọng nhất là thấu hiểu và ủng hộ lẫn nhau.",
+  "zh": "在友情中，最重要的是相互理解和支持。",
+  "py": "Zài yǒuqíng zhōng, zuì zhòngyào de shì xiānghù lǐjiě hé zhīchí."
  },
  {
-  "vi": "Mong họ có thể luôn thấu hiểu nhau, ủng hộ nhau.",
-  "zh": "希望他们能一直相互理解、相互支持。",
-  "py": "Xīwàng tāmen néng yìzhí xiānghù lǐjiě, xiānghù zhīchí."
+  "vi": "Lúc đó tôi không biết dự án này là do anh ấy phụ trách.",
+  "zh": "当时我不知道这个项目是他负责的。",
+  "py": "Dāngshí wǒ bù zhīdao zhège xiàngmù shì tā fùzé de."
  },
  {
-  "vi": "Gặp được anh, em cũng thấy mình rất may mắn.",
-  "zh": "遇见你，我也觉得很幸运。",
-  "py": "Yùjiàn nǐ, wǒ yě juéde hěn xìngyùn."
+  "vi": "Bạn ấy tặng tôi sô-cô-la, tôi rất cảm động.",
+  "zh": "他送了我一些巧克力，我很感动。",
+  "py": "Tā sòng le wǒ yìxiē qiǎokèlì, wǒ hěn gǎndòng."
  }
 ];
 var translateDataRev = [
  {
-  "vi": "Thật ra mới quen không lâu, sự hài hước và kiên nhẫn của anh đã rất thu hút em.",
-  "zh": "其实刚认识不久，你的幽默与耐心就很吸引我。",
-  "py": "Qíshí gāng rènshi bùjiǔ, nǐ de yōumò yǔ nàixīn jiù hěn xīyǐn wǒ."
+  "vi": "Hai người họ tính cách khác nhau, nhưng lại rất hợp chuyện.",
+  "zh": "他们两个人性格不同，可是很聊得来。",
+  "py": "Tāmen liǎng gè rén xìnggé bùtóng, kěshì hěn liáo délái."
  },
  {
-  "vi": "Nếu anh không luôn tìm em trò chuyện, có lẽ chúng mình đã lỡ nhau rồi.",
-  "zh": "如果你没有一直找我聊天儿，我们可能就错过了。",
-  "py": "Rúguǒ nǐ méiyǒu yìzhí zhǎo wǒ liáotiānr, wǒmen kěnéng jiù cuòguò le."
+  "vi": "Đừng bỏ lỡ cơ hội tốt như vậy.",
+  "zh": "别错过这么好的机会。",
+  "py": "Bié cuòguò zhème hǎo de jīhuì."
  },
  {
-  "vi": "Giữa hai người dần dần nảy sinh tình yêu, cuối cùng thành vợ chồng.",
-  "zh": "两人之间慢慢产生了爱情，最后成了夫妻。",
-  "py": "Liǎng rén zhījiān mànmàn chǎnshēng le àiqíng, zuìhòu chéng le fūqī."
+  "vi": "Khi nói chuyện, phải chú ý đến cảm nhận của người kia.",
+  "zh": "说话的时候，要注意对方的感受。",
+  "py": "Shuōhuà de shíhou, yào zhùyì duìfāng de gǎnshòu."
  },
  {
-  "vi": "Trong một mối quan hệ tình cảm, hai người phải quan tâm nhiều hơn đến cảm nhận của đối phương.",
-  "zh": "在一段感情中，两个人要多关注对方的感受。",
-  "py": "Zài yí duàn gǎnqíng zhōng, liǎng gè rén yào duō guānzhù duìfāng de gǎnshòu."
+  "vi": "Tình bạn giữa chúng tôi đã kéo dài hai mươi năm rồi.",
+  "zh": "我们之间的友情已经有二十年了。",
+  "py": "Wǒmen zhījiān de yǒuqíng yǐjīng yǒu èrshí nián le."
  },
  {
-  "vi": "Gặp được bạn, thật vừa đúng lúc.",
-  "zh": "遇见你，刚刚好。",
-  "py": "Yùjiàn nǐ, gānggāng hǎo."
+  "vi": "Tôi tin tương lai của bạn nhất định sẽ rất tốt đẹp.",
+  "zh": "我相信你的将来一定会很美好。",
+  "py": "Wǒ xiāngxìn nǐ de jiānglái yídìng huì hěn měihǎo."
  }
 ];
 var sgkData = [

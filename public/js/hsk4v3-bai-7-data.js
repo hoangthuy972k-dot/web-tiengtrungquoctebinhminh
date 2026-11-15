@@ -4601,99 +4601,159 @@ var dialogData = [
 ];
 var listenData = [
  {
-  "audio": "王经理，打扰您一下，明天跟客户见面的时间能不能提前？可以，你打算提前到几点？九点吧，客户下午要去机场。行，那你及时通知大家，再把要谈的内容准备好。好的，我现在就去。",
+  "audio": "经理，明天的会能不能提前到上午九点？下午我要去机场接一位客户。",
   "questions": [
    {
-    "q": "说话人想做什么？",
+    "q": "Người nói muốn làm gì với cuộc họp ngày mai?",
     "opts": [
-     "把见面时间提前",
-     "去机场接客户",
-     "改调查的内容"
+     "Dời sớm lên 9 giờ sáng",
+     "Hủy cuộc họp",
+     "Dời sang buổi chiều"
     ],
-    "ans": 0
+    "ans": 0,
+    "exp": "提前到上午九点 = dời sớm lên 9 giờ sáng; 提前 = sớm hơn giờ đã định."
    },
    {
-    "q": "客户下午要做什么？",
+    "q": "Chiều mai người nói làm gì?",
     "opts": [
-     "去机场",
-     "来公司",
-     "做市场调查"
+     "Đi công tác",
+     "Ra sân bay đón khách hàng",
+     "Phỏng vấn khách hàng"
     ],
-    "ans": 0
+    "ans": 1,
+    "exp": "下午我要去机场接一位客户 = chiều tôi phải ra sân bay đón một khách hàng."
    }
   ]
  },
  {
-  "audio": "小林，你对现在的工作满意吗？说实话，工资不太高，不过在学习方面收获很大。拿和客户交流来说，以前我很紧张，现在一点儿也不紧张了。既然能学到东西，就先别换工作了。嗯，我也是这么想的。",
+  "audio": "下个月我要去上海出差一个星期，主要是去采访几位老客户。",
   "questions": [
    {
-    "q": "小林觉得现在的工作怎么样？",
+    "q": "Chuyến công tác kéo dài bao lâu?",
     "opts": [
-     "工资很高",
-     "能学到很多东西",
-     "没有发展机会"
+     "Bốn ngày",
+     "Một tháng",
+     "Một tuần"
     ],
-    "ans": 1
+    "ans": 2,
+    "exp": "出差一个星期 = đi công tác một tuần; 下个月 là thời điểm (tháng sau)."
    },
    {
-    "q": "以前小林和客户交流时怎么样？",
+    "q": "Việc chính của chuyến đi là gì?",
     "opts": [
-     "很紧张",
-     "很细心",
-     "很及时"
+     "Đi chơi Thượng Hải",
+     "Phỏng vấn mấy khách hàng cũ",
+     "Mở cửa hàng mới"
     ],
-    "ans": 0
+    "ans": 1,
+    "exp": "主要是去采访几位老客户 = chủ yếu là đi phỏng vấn mấy khách hàng cũ."
    }
   ]
  },
  {
-  "audio": "这次市场调查你们采访了多少客户？至少一百位。结果怎么样？年轻客户更关心价格，年纪大一点儿的客户更关心产品好不好用。这次调查使我们更了解客户了，下次介绍产品的时候，效果一定会更好。",
+  "audio": "我们调查了两百位客户，发现年轻人更关心价格，年龄大的人更关心东西好不好用。",
   "questions": [
    {
-    "q": "这次调查采访了多少客户？",
+    "q": "Người trẻ quan tâm điều gì hơn?",
     "opts": [
-     "十几位",
-     "至少一百位",
-     "一千多位"
+     "Dễ dùng hay không",
+     "Giá cả",
+     "Màu sắc"
     ],
-    "ans": 1
+    "ans": 1,
+    "exp": "年轻人更关心价格 = người trẻ quan tâm giá cả hơn."
    },
    {
-    "q": "年轻客户更关心什么？",
+    "q": "Người lớn tuổi quan tâm điều gì hơn?",
     "opts": [
-     "价格",
-     "产品好不好用",
-     "产品的样子"
+     "Đồ có dễ dùng không",
+     "Giá cả",
+     "Cửa hàng ở đâu"
     ],
-    "ans": 0
+    "ans": 0,
+    "exp": "年龄大的人更关心东西好不好用 = người lớn tuổi quan tâm đồ có dễ dùng không."
+   }
+  ]
+ },
+ {
+  "audio": "既然你已经找到了新工作，就好好干吧，别总想着再换了。",
+  "questions": [
+   {
+    "q": "Người nói khuyên điều gì?",
+    "opts": [
+     "Nên tìm thêm việc khác",
+     "Quay lại công ty cũ",
+     "Làm tốt việc mới, đừng cứ nghĩ đến chuyện đổi"
+    ],
+    "ans": 2,
+    "exp": "既然……，就好好干吧 = đã tìm được việc mới thì cứ làm cho tốt; 别总想着再换 = đừng cứ nghĩ đổi nữa."
+   }
+  ]
+ },
+ {
+  "audio": "小雪在管理方面没什么经验，不过她做事很细心，同事们都喜欢跟她一起工作。",
+  "questions": [
+   {
+    "q": "Tiểu Tuyết còn thiếu kinh nghiệm ở mặt nào?",
+    "opts": [
+     "Quản lý",
+     "Ngoại ngữ",
+     "Giao tiếp"
+    ],
+    "ans": 0,
+    "exp": "在管理方面没什么经验 = về mặt quản lý chưa có kinh nghiệm gì."
+   },
+   {
+    "q": "Điểm mạnh của cô ấy là gì?",
+    "opts": [
+     "Nói tiếng Anh giỏi",
+     "Đi làm rất sớm",
+     "Làm việc rất cẩn thận"
+    ],
+    "ans": 2,
+    "exp": "做事很细心 = làm việc rất cẩn thận, tỉ mỉ; ôn 不过 (bài 2)."
+   }
+  ]
+ },
+ {
+  "audio": "参加这次比赛使我明白了，光有能力还不够，还要学会跟别人一起做事。",
+  "questions": [
+   {
+    "q": "Cuộc thi giúp người nói hiểu ra điều gì?",
+    "opts": [
+     "Thi đấu rất khó",
+     "Chỉ có năng lực thôi là chưa đủ",
+     "Phải luyện tập mỗi ngày"
+    ],
+    "ans": 1,
+    "exp": "……使我明白了 = khiến tôi hiểu ra; 光有能力还不够 = chỉ có năng lực là chưa đủ (ôn 光, bài 6)."
+   }
+  ]
+ },
+ {
+  "audio": "我们公司的年轻人很多，拿我们办公室来说，年龄最大的才二十八岁。",
+  "questions": [
+   {
+    "q": "Người nói muốn nói gì về công ty?",
+    "opts": [
+     "Công ty có rất nhiều người trẻ",
+     "Văn phòng có 28 người",
+     "Giám đốc 28 tuổi"
+    ],
+    "ans": 0,
+    "exp": "Câu chung: 年轻人很多; 拿我们办公室来说 = lấy văn phòng chúng tôi làm ví dụ: người lớn tuổi nhất mới 28."
    }
   ]
  }
 ];
 var matchData = [
  {
-  "left": "打扰",
-  "right": "您一下"
- },
- {
-  "left": "做",
-  "right": "市场调查"
- },
- {
-  "left": "按时完成",
-  "right": "任务"
- },
- {
-  "left": "提前准备",
-  "right": "问题"
- },
- {
-  "left": "谈成了一笔",
-  "right": "生意"
- },
- {
   "left": "积累",
   "right": "经验"
+ },
+ {
+  "left": "谈",
+  "right": "生意"
  },
  {
   "left": "进入",
@@ -4701,291 +4761,383 @@ var matchData = [
  },
  {
   "left": "提高",
-  "right": "工作能力"
+  "right": "能力"
  },
  {
-  "left": "既然……",
-  "right": "就……"
+  "left": "一份",
+  "right": "工作"
+ },
+ {
+  "left": "打好",
+  "right": "基础"
+ },
+ {
+  "left": "进行",
+  "right": "市场调查"
+ },
+ {
+  "left": "及时",
+  "right": "联系"
  }
 ];
 var fillData = [
  {
-  "pre": "经理，",
-  "blank": "打扰",
-  "post": "您一下。",
-  "hint": "(làm phiền)",
-  "ans": "打扰",
-  "exp": "打扰您一下: câu mở đầu lịch sự."
- },
- {
-  "pre": "在内容",
+  "pre": "他在学习",
   "blank": "方面",
-  "post": "，您觉得有需要改的吗？",
+  "post": "很努力，可是在生活上还不太会照顾自己。",
   "hint": "(về mặt)",
   "ans": "方面",
-  "exp": "在……方面 khoanh vùng phạm vi."
- },
- {
-  "pre": "做调查的时候要",
-  "blank": "细心",
-  "post": "，注意了解客户真正的想法。",
-  "hint": "(cẩn thận)",
-  "ans": "细心",
-  "exp": "细心 = cẩn thận, tỉ mỉ."
- },
- {
-  "pre": "如果遇到什么问题，",
-  "blank": "及时",
-  "post": "跟我联系。",
-  "hint": "(kịp thời)",
-  "ans": "及时",
-  "exp": "及时 + V = làm ngay."
- },
- {
-  "pre": "经理让我下周去上海",
-  "blank": "出差",
-  "post": "，做市场调查。",
-  "hint": "(đi công tác)",
-  "ans": "出差",
-  "exp": "去 + nơi + 出差."
- },
- {
-  "pre": "那你要",
-  "blank": "提前",
-  "post": "准备好问题，便于和客户交流。",
-  "hint": "(trước)",
-  "ans": "提前",
-  "exp": "提前 + V = làm trước."
+  "exp": "在 + lĩnh vực + 方面 = về mặt …: 在学习方面很努力 = về mặt học tập rất chăm."
  },
  {
   "pre": "",
   "blank": "既然",
-  "post": "出差时间不长，就要安排好时间。",
+  "post": "外面下这么大的雨，我们就别出去了，叫外卖吧。",
   "hint": "(đã … thì)",
   "ans": "既然",
-  "exp": "既然……，就……"
+  "exp": "既然 + sự thật đã biết (trời mưa to), vế sau 就 + đề nghị (đừng ra ngoài)."
  },
  {
-  "pre": "",
+  "pre": "我们公司的同事都很热情，",
   "blank": "拿",
-  "post": "和客户交流来说，实际效果并不理想。",
+  "post": "坐在我旁边的李文来说，我刚来的时候他帮了我很多忙。",
   "hint": "(lấy … mà nói)",
   "ans": "拿",
-  "exp": "拿……来说 dẫn ví dụ."
+  "exp": "Nhận định chung trước (đồng nghiệp nhiệt tình), sau đó 拿 + ví dụ + 来说."
  },
  {
-  "pre": "虽然她能把产品的优缺点说得很清楚，但实际",
-  "blank": "效果",
-  "post": "并不理想。",
-  "hint": "(hiệu quả)",
-  "ans": "效果",
-  "exp": "实际效果 = hiệu quả thực tế."
- },
- {
-  "pre": "如果总是换工作，还可能会",
+  "pre": "这次出差",
   "blank": "使",
-  "post": "自己的发展受到影响。",
-  "hint": "(khiến)",
+  "post": "我积累了很多经验。",
+  "hint": "(khiến cho)",
   "ans": "使",
-  "exp": "A + 使 + B + 受到影响."
+  "exp": "Sự việc + 使 + người + kết quả: chuyến công tác khiến tôi tích lũy nhiều kinh nghiệm."
+ },
+ {
+  "pre": "不好意思，",
+  "blank": "打扰",
+  "post": "你们一下，请问会议室在几楼？",
+  "hint": "(làm phiền)",
+  "ans": "打扰",
+  "exp": "打扰 + người + 一下 = xin làm phiền một chút — câu lịch sự trước khi hỏi người lạ."
+ },
+ {
+  "pre": "昨天手机没电了，没能",
+  "blank": "及时",
+  "post": "回你的信息，真对不起。",
+  "hint": "(kịp thời)",
+  "ans": "及时",
+  "exp": "及时 + động từ = làm ngay, không chậm trễ: 及时回信息 = trả lời tin nhắn ngay."
+ },
+ {
+  "pre": "明天早上路上车多，我们最好",
+  "blank": "提前",
+  "post": "半个小时出发。",
+  "hint": "(sớm hơn)",
+  "ans": "提前",
+  "exp": "提前 + thời lượng + động từ = … sớm hơn bao lâu: 提前半个小时出发."
+ },
+ {
+  "pre": "这个产品最大的",
+  "blank": "优点",
+  "post": "是用起来很方便。",
+  "hint": "(ưu điểm)",
+  "ans": "优点",
+  "exp": "优点 = ưu điểm (ngược với 缺点): 最大的优点是…… = ưu điểm lớn nhất là …."
+ },
+ {
+  "pre": "我的计划书写得不太好，经理让我再",
+  "blank": "改",
+  "post": "改。",
+  "hint": "(sửa)",
+  "ans": "改",
+  "exp": "Động từ lặp 改改 = sửa lại một chút; 让 + người + V: giám đốc bảo tôi sửa."
+ },
+ {
+  "pre": "刚来中国的时候，我遇到了很多",
+  "blank": "困难",
+  "post": "，好在有朋友帮我。",
+  "hint": "(khó khăn)",
+  "ans": "困难",
+  "exp": "遇到困难 = gặp khó khăn; 困难 ở đây là danh từ."
+ },
+ {
+  "pre": "他大学毕业以后找到了一",
+  "blank": "份",
+  "post": "很不错的工作。",
+  "hint": "(lượng từ)",
+  "ans": "份",
+  "exp": "份 là lượng từ của công việc: 一份工作 (không nói 一个工作 / 一件工作 trong văn viết chuẩn)."
+ },
+ {
+  "pre": "我把会议的内容都写下来了，",
+  "blank": "便于",
+  "post": "没来的同事了解。",
+  "hint": "(tiện cho)",
+  "ans": "便于",
+  "exp": "……，便于 + động từ = để tiện …: ghi lại nội dung để đồng nghiệp vắng mặt dễ nắm."
+ },
+ {
+  "pre": "这个年轻人很有",
+  "blank": "能力",
+  "post": "，才工作两年就当上了经理。",
+  "hint": "(năng lực)",
+  "ans": "能力",
+  "exp": "很有能力 = rất có năng lực; ôn 才……就…… (mới … đã …)."
  }
 ];
 var sortData = [
  {
   "words": [
-   "市场调查的",
-   "计划书",
-   "我昨天",
-   "发到",
-   "您邮箱",
+   "他",
+   "在",
+   "管理方面",
+   "的",
+   "经验",
+   "比",
+   "我",
+   "多",
+   "。"
+  ],
+  "ans": "他在管理方面的经验比我多。",
+  "audio": "他在管理方面的经验比我多。"
+ },
+ {
+  "words": [
+   "这次",
+   "采访",
+   "使",
+   "我们",
+   "更",
+   "了解",
+   "客户",
    "了",
    "。"
   ],
-  "ans": "市场调查的计划书我昨天发到您邮箱了。",
-  "audio": "市场调查的计划书我昨天发到您邮箱了。"
+  "ans": "这次采访使我们更了解客户了。",
+  "audio": "这次采访使我们更了解客户了。"
  },
  {
   "words": [
-   "在",
-   "内容",
-   "方面",
+   "既然你",
+   "不喜欢",
+   "这份",
+   "工作",
    "，",
-   "您",
-   "觉得",
-   "有需要改的吗",
-   "？"
-  ],
-  "ans": "在内容方面，您觉得有需要改的吗？",
-  "audio": "在内容方面，您觉得有需要改的吗？"
- },
- {
-  "words": [
-   "既然",
-   "出差时间",
-   "不长",
-   "，",
-   "就要",
-   "安排好",
-   "时间",
+   "就",
+   "换",
+   "一个",
+   "吧",
    "。"
   ],
-  "ans": "既然出差时间不长，就要安排好时间。",
-  "audio": "既然出差时间不长，就要安排好时间。"
+  "ans": "既然你不喜欢这份工作，就换一个吧。",
+  "audio": "既然你不喜欢这份工作，就换一个吧。"
  },
  {
   "words": [
    "拿",
-   "吃饭",
+   "我",
    "来说",
    "，",
-   "一般",
-   "南方人",
-   "更爱吃",
-   "米饭",
+   "每天",
+   "至少",
+   "要",
+   "喝",
+   "两杯",
+   "咖啡",
    "。"
   ],
-  "ans": "拿吃饭来说，一般南方人更爱吃米饭。",
-  "audio": "拿吃饭来说，一般南方人更爱吃米饭。"
+  "ans": "拿我来说，每天至少要喝两杯咖啡。",
+  "audio": "拿我来说，每天至少要喝两杯咖啡。"
  },
  {
   "words": [
-   "这个",
-   "新方法",
-   "使",
-   "工作",
-   "变得",
-   "更加简单了",
+   "他们公司",
+   "谈",
+   "了",
+   "一笔",
+   "很大的",
+   "生意",
    "。"
   ],
-  "ans": "这个新方法使工作变得更加简单了。",
-  "audio": "这个新方法使工作变得更加简单了。"
+  "ans": "他们公司谈了一笔很大的生意。",
+  "audio": "他们公司谈了一笔很大的生意。"
  },
  {
   "words": [
-   "只有",
-   "把这些基础",
-   "打好",
-   "，",
-   "今后",
-   "才会有",
-   "更好的",
-   "发展机会",
+   "经理",
+   "让",
+   "我",
+   "把",
+   "调查的",
+   "内容",
+   "改",
+   "一下",
    "。"
   ],
-  "ans": "只有把这些基础打好，今后才会有更好的发展机会。",
-  "audio": "只有把这些基础打好，今后才会有更好的发展机会。"
+  "ans": "经理让我把调查的内容改一下。",
+  "audio": "经理让我把调查的内容改一下。"
+ },
+ {
+  "words": [
+   "他",
+   "是",
+   "我",
+   "真正",
+   "的",
+   "好朋友",
+   "。"
+  ],
+  "ans": "他是我真正的好朋友。",
+  "audio": "他是我真正的好朋友。"
+ },
+ {
+  "words": [
+   "他",
+   "最大的",
+   "缺点",
+   "是",
+   "做事",
+   "不",
+   "细心",
+   "。"
+  ],
+  "ans": "他最大的缺点是做事不细心。",
+  "audio": "他最大的缺点是做事不细心。"
  }
 ];
 var mcData = [
  {
-  "q": "在内容＿＿，您觉得有需要改的吗？",
+  "q": "Bạn muốn nói: “Về mặt ăn uống, tôi đã quen rồi.”",
   "opts": [
-   "方面",
-   "一方面",
-   "地方",
-   "里面"
+   "在吃饭方面，我已经习惯了。",
+   "我已经习惯了在吃饭方面。",
+   "在吃饭的方面上，我已经习惯了。",
+   "吃饭在方面，我已经习惯了。"
   ],
   "ans": 0,
-  "exp": "Cấu trúc cố định 「在……方面」 = về mặt …"
+  "exp": "在 + N + 方面 đứng đầu câu hoặc trước động từ, không đặt cuối câu như tiếng Việt; không thêm 上."
  },
  {
-  "q": "＿＿大家都同意，我们就这么做吧。",
+  "q": "A: “这个周末我们去哪儿玩？” B: “我没什么＿＿，你决定吧。”",
   "opts": [
-   "既然",
-   "既",
-   "虽然",
-   "由于"
+   "想法",
+   "效果",
+   "经验",
+   "困难"
   ],
   "ans": 0,
-  "exp": "Tiền đề đã biết → kết luận: 既然……，就……"
+  "exp": "没什么想法 = không có ý gì (đi đâu cũng được); 想法 = suy nghĩ, ý định của mình."
  },
  {
-  "q": "现在的生活很方便。＿＿购物来说，人们不出门就能买到想要的东西。",
+  "q": "Câu nào SAI?",
+  "opts": [
+   "既然明天可能下雨，就我们不去了。",
+   "既然你来了，就一起吃饭吧。",
+   "既然时间不够，就先做最重要的。",
+   "既然他已经走了，我们也回家吧。"
+  ],
+  "ans": 0,
+  "exp": "就 / 也 đứng SAU chủ ngữ: 我们就不去了; không đặt 就 trước chủ ngữ như “thì chúng ta” tiếng Việt."
+ },
+ {
+  "q": "Chọn từ điền vào chỗ trống: “现在年轻人买东西很方便。＿＿我妹妹来说，她的衣服都是在网上买的。”",
   "opts": [
    "拿",
-   "对",
+   "用",
    "把",
-   "给"
+   "让"
   ],
   "ans": 0,
-  "exp": "Dẫn ví dụ cho nhận định chung → 拿……来说."
+  "exp": "Sau một nhận định chung, dẫn ví dụ bằng 拿 + ví dụ + 来说."
  },
  {
-  "q": "这个新方法＿＿工作变得更加简单了。",
+  "q": "Bạn muốn nói: “Công việc này giúp tôi học được rất nhiều.”",
   "opts": [
-   "使",
-   "把",
-   "被",
-   "对"
+   "这份工作使我学到了很多。",
+   "这份工作使学到了我很多。",
+   "这份工作把我学到了很多。",
+   "这份工作我使学到了很多。"
   ],
   "ans": 0,
-  "exp": "Câu kiêm ngữ: A 使 B + V / Adj."
+  "exp": "A + 使 + người + động từ: người chịu tác động đứng ngay sau 使; không dùng 把 ở đây."
  },
  {
-  "q": "经理＿＿我下周去上海出差。",
+  "q": "“经理＿＿我下个星期完成这个任务。”",
   "opts": [
    "让",
    "使",
    "被",
-   "把"
+   "给"
   ],
   "ans": 0,
-  "exp": "Sai bảo, giao việc dùng 让; 使 chỉ “khiến cho”."
+  "exp": "Giao việc, sai bảo dùng 让 (叫); 使 dùng khi một sự việc khiến ai thay đổi."
  },
  {
-  "q": "你要提前准备好问题，＿＿和客户交流。",
+  "q": "A: “你明天几点到机场？” B: “飞机十点起飞，我想＿＿两个小时到。”",
   "opts": [
-   "便于",
-   "由于",
-   "及时",
-   "提前"
-  ],
-  "ans": 0,
-  "exp": "……，便于 + V = để tiện làm gì."
- },
- {
-  "q": "如果遇到什么问题，＿＿跟我联系。",
-  "opts": [
+   "提前",
    "及时",
    "按时",
-   "准时",
-   "同时"
+   "一下"
   ],
   "ans": 0,
-  "exp": "及时 = ngay khi cần, không chậm trễ."
+  "exp": "提前 + thời lượng = sớm hơn …: 提前两个小时到 = đến sớm hai tiếng."
  },
  {
-  "q": "前段时间，他谈成了一＿＿不错的生意。",
+  "q": "A: “你有工作经验吗？” — B đáp:",
+  "opts": [
+   "有，我在一家酒店工作过两年。",
+   "有，我在一家酒店工作两年过。",
+   "有，我工作过在一家酒店两年。",
+   "有，我两年在一家酒店工作过了。"
+  ],
+  "ans": 0,
+  "exp": "在 + nơi chốn đứng trước động từ; 过 ngay sau động từ, thời lượng 两年 đứng sau cùng."
+ },
+ {
+  "q": "“为了让我出国留学，爸爸妈妈给我准备了一＿＿钱。”",
   "opts": [
    "笔",
-   "份",
-   "张",
-   "条"
+   "个",
+   "件",
+   "份"
   ],
   "ans": 0,
-  "exp": "Lượng từ cho vụ làm ăn, khoản tiền: 笔."
+  "exp": "笔 là lượng từ cho khoản tiền, vụ làm ăn: 一笔钱, 一笔生意."
  },
  {
-  "q": "有的年轻人经常换工作，总觉得下一＿＿工作会更好。",
+  "q": "A: “你对这个新产品有什么＿＿？” B: “我觉得做得不错，就是价格有点儿高。”",
   "opts": [
-   "份",
-   "笔",
-   "台",
-   "本"
+   "看法",
+   "办法",
+   "效果",
+   "实际"
   ],
   "ans": 0,
-  "exp": "Lượng từ cho công việc: 一份工作."
+  "exp": "对……有什么看法 = có nhận xét / ý kiến gì về …; 办法 là cách làm, 效果 là hiệu quả, 实际 là thực tế. Ôn ……，就是…… (bài 3)."
  },
  {
-  "q": "只有把这些基础打好，今后＿＿会有更好的发展机会。",
+  "q": "Câu nào SAI?",
   "opts": [
-   "才",
-   "就",
-   "都",
-   "再"
+   "他的能力很多。",
+   "他很有能力。",
+   "他的工作能力很高。",
+   "我们要提高自己的能力。"
   ],
   "ans": 0,
-  "exp": "只有……才…… = chỉ có … mới …"
+  "exp": "能力 đi với 有 / 高 / 提高; không nói 能力很多 như “nhiều năng lực”."
+ },
+ {
+  "q": "A: “你觉得在中国生活方便吗？” B: “很方便，＿＿”",
+  "opts": [
+   "拿出门打车来说，用手机就能叫车。",
+   "拿来说出门打车，用手机就能叫车。",
+   "出门打车拿来说，用手机就能叫车。",
+   "拿出门打车说来，用手机就能叫车。"
+  ],
+  "ans": 0,
+  "exp": "Ví dụ đặt GIỮA 拿 và 来说: 拿出门打车来说 = lấy chuyện ra ngoài gọi xe làm ví dụ."
  }
 ];
 var speakingData = {
@@ -4995,141 +5147,141 @@ var speakingData = {
    "q_zh": "你最想做什么工作？为什么？",
    "q_vn": "Bạn muốn làm công việc gì nhất? Vì sao?",
    "hint": "我最想当……。一方面……，另一方面……。拿……来说，……",
-   "sample": "我最想当中文老师。一方面，我很喜欢中文，也喜欢和学生交流；另一方面，当老师可以一边工作一边学习，积累很多经验。拿上课来说，每次准备课的时候，我自己也能学到新的知识。我觉得这样的工作使我每天都有进步。",
-   "sample_vn": "Tôi muốn làm giáo viên tiếng Trung nhất. Một mặt, tôi rất thích tiếng Trung, cũng thích giao lưu với học sinh; mặt khác, làm giáo viên có thể vừa làm vừa học, tích lũy nhiều kinh nghiệm. Lấy việc lên lớp mà nói, mỗi lần soạn bài bản thân tôi cũng học được kiến thức mới. Tôi thấy công việc như vậy khiến mỗi ngày tôi đều tiến bộ.",
-   "note": "Câu hỏi phần Khởi động của sách; ôn 一方面……另一方面…… (Bài 1) + 拿……来说, 使 (điểm 3, 4)."
+   "sample": "我最想当中文老师。一方面，我很喜欢中文，也喜欢和学生交流；另一方面，当老师可以一边工作一边学习。拿每天上课来说，每次准备的时候，我自己也能学到新的知识。这样的工作使我每天都很开心。",
+   "sample_vn": "Tôi muốn làm giáo viên tiếng Trung nhất. Một mặt, tôi rất thích tiếng Trung, cũng thích giao lưu với học sinh; mặt khác, làm giáo viên có thể vừa làm vừa học. Lấy việc lên lớp mà nói, mỗi lần soạn bài bản thân tôi cũng học được kiến thức mới. Công việc như vậy khiến mỗi ngày tôi đều vui.",
+   "note": "Câu hỏi phần Khởi động của sách; ôn 一方面……另一方面…… (bài 1) + 拿……来说, 使 (điểm 3, 4)."
   },
   {
    "q_zh": "你觉得刚开始工作时，要注意什么？",
    "q_vn": "Bạn thấy lúc mới bắt đầu đi làm cần chú ý điều gì?",
    "hint": "我觉得刚开始工作时，在……方面要……；遇到问题要及时……；还要多……",
-   "sample": "我觉得刚开始工作时，在工作方面要细心，按时完成任务；遇到不懂的问题，要及时问同事或者经理。另外，还要多和同事交流，了解公司的管理方式。既然是新人，就不能只关心工资，更要重视学习，积累经验。",
-   "sample_vn": "Tôi thấy lúc mới đi làm, về mặt công việc phải cẩn thận, hoàn thành nhiệm vụ đúng hạn; gặp vấn đề không hiểu thì hỏi đồng nghiệp hoặc giám đốc ngay. Ngoài ra còn phải trao đổi nhiều với đồng nghiệp, hiểu cách quản lý của công ty. Đã là người mới thì không thể chỉ quan tâm lương, mà càng phải coi trọng việc học, tích lũy kinh nghiệm.",
-   "note": "Câu hỏi phần Khởi động của sách; dùng 在……方面 + 既然……就……"
+   "sample": "我觉得刚开始工作时，在工作方面要细心，按时完成任务；遇到不懂的地方，要及时问同事或者经理。还有，要多和同事交流，了解公司的管理方式。既然是新人，就别只关心工资，要多学习，经验才会越来越多。",
+   "sample_vn": "Tôi thấy lúc mới đi làm, về mặt công việc phải cẩn thận, hoàn thành nhiệm vụ đúng hạn; gặp chỗ không hiểu thì hỏi đồng nghiệp hoặc giám đốc ngay. Còn nữa, phải trao đổi nhiều với đồng nghiệp, hiểu cách quản lý của công ty. Đã là người mới thì đừng chỉ quan tâm lương, phải học nhiều, kinh nghiệm mới ngày càng nhiều.",
+   "note": "Câu hỏi phần Khởi động của sách; dùng 在……方面 + 既然……就……."
   },
   {
    "q_zh": "同事交的计划书有什么问题？王一雪建议调查的时候要怎么做？",
    "q_vn": "Bản kế hoạch đồng nghiệp nộp có vấn đề gì? Vương Nhất Tuyết khuyên lúc khảo sát nên làm thế nào?",
-   "hint": "计划书写得……，就是……。王一雪建议……要……，注意……；如果……，及时……",
-   "sample": "计划书写得不错，就是调查的地点只有超市，不太够，所以同事打算再加一些网店。王一雪建议做调查的时候要细心，注意了解客户真正的想法；如果遇到什么问题，要及时跟她联系。",
-   "sample_vn": "Bản kế hoạch viết khá tốt, chỉ có điều địa điểm khảo sát mới có siêu thị, chưa đủ, nên đồng nghiệp định thêm một số cửa hàng trên mạng. Vương Nhất Tuyết khuyên khi khảo sát phải cẩn thận, chú ý tìm hiểu suy nghĩ thật của khách hàng; gặp vấn đề gì thì liên hệ ngay với chị.",
-   "note": "Câu hỏi bài khoá 1; ôn ……，就是…… (Bài 3 · điểm 1)."
+   "hint": "计划书写得……，就是……。王一雪建议……要……，注意……",
+   "sample": "计划书写得挺好，就是调查的地方只有超市，太少了。王一雪让她做调查时细心一点儿，多了解客户心里真正想的是什么。",
+   "sample_vn": "Bản kế hoạch viết khá tốt, chỉ có điều nơi khảo sát chỉ có siêu thị, ít quá. Vương Nhất Tuyết bảo cô ấy khi khảo sát cẩn thận hơn, tìm hiểu xem trong lòng khách hàng thật sự nghĩ gì.",
+   "note": "Câu hỏi bài khoá 1; ôn ……，就是…… (bài 3)."
   },
   {
-   "q_zh": "请根据提示复述课文一。",
+   "q_zh": "同事去王一雪的办公室说了什么事？王一雪是怎么回答的？请你从头说一说。",
    "q_vn": "Dựa vào gợi ý, kể lại bài khoá 1.",
-   "hint": "昨天同事把……发到……，并请她看看……。王一雪觉得……，就是……。同事说她会再加……，并……。王一雪建议她……",
-   "sample": "昨天同事把市场调查的计划书发到王一雪的邮箱，并请她看看在内容方面有没有需要改的。王一雪觉得计划书写得不错，就是调查的地点只有超市，不太够。同事说她会再加一些网店，并认真准备，按时完成任务。王一雪建议她做调查的时候要细心，注意了解客户真正的想法，如果遇到什么问题，及时跟她联系。",
-   "sample_vn": "Hôm qua đồng nghiệp gửi bản kế hoạch khảo sát thị trường vào hộp thư của Vương Nhất Tuyết, nhờ chị xem về nội dung có gì cần sửa không… Vương Nhất Tuyết khuyên cô ấy khảo sát phải cẩn thận, gặp vấn đề thì liên hệ ngay.",
-   "note": "Bài tập 复述 của sách (trang 73); ôn 并 (Bài 2 · điểm 3)."
+   "hint": "昨天同事把……发到……，并请她看看……。王一雪觉得……，就是……。同事说她会再加……，并……。王一雪让她……",
+   "sample": "同事昨天把市场调查的计划书发给了王一雪，并问她内容上有没有要改的地方。王一雪说写得不错，不过调查的地点不够多。同事说那就再加一些网上的商店，还说会认真准备，按时把任务做完。最后王一雪还说，有问题要及时联系。",
+   "sample_vn": "Hôm qua đồng nghiệp gửi bản kế hoạch khảo sát thị trường cho Vương Nhất Tuyết, hỏi chị về nội dung có chỗ nào cần sửa không. Vương Nhất Tuyết nói viết khá tốt, có điều địa điểm khảo sát chưa đủ nhiều. Đồng nghiệp nói sẽ thêm một số cửa hàng trên mạng, sẽ chuẩn bị nghiêm túc, làm xong nhiệm vụ đúng hạn. Vương Nhất Tuyết dặn có vấn đề thì liên hệ ngay.",
+   "note": "Bài tập kể lại bài khoá của sách (trang 73); ôn 并 (bài 2)."
   },
   {
    "q_zh": "同事要调查什么内容？杨同乐提了什么建议？",
    "q_vn": "Đồng nghiệp sẽ khảo sát nội dung gì? Dương Đồng Lạc đã đưa ra lời khuyên gì?",
    "hint": "同事打算采访……，了解……。杨同乐建议她提前……，便于……；既然……，就……",
-   "sample": "同事打算去上海出差四天，采访一些客户，了解他们对新产品的看法。杨同乐建议她提前准备好问题，便于和客户交流；他还说，既然出差时间不长，就要安排好时间，多获得有用的信息。",
-   "sample_vn": "Đồng nghiệp định đi Thượng Hải công tác bốn ngày, phỏng vấn một số khách hàng, tìm hiểu ý kiến của họ về sản phẩm mới. Dương Đồng Lạc khuyên cô ấy chuẩn bị sẵn câu hỏi từ trước để tiện trao đổi; anh còn nói đã đi công tác không lâu thì phải sắp xếp thời gian tốt, thu được nhiều thông tin hữu ích.",
-   "note": "Câu hỏi bài khoá 2 (提 ở đây = 提出, đưa ra); dùng 便于 + 既然……就……"
+   "sample": "她打算去上海四天，采访一些客户，看看他们怎么看新产品。杨同乐让她先把问题准备好，这样跟客户聊天的时候更方便；他还说时间不多，要好好安排，多拿到一些有用的信息。",
+   "sample_vn": "Cô ấy định đi Thượng Hải bốn ngày, phỏng vấn một số khách hàng, xem họ nhìn nhận sản phẩm mới thế nào. Dương Đồng Lạc bảo cô chuẩn bị sẵn câu hỏi, như vậy nói chuyện với khách tiện hơn; anh còn nói thời gian không nhiều, phải sắp xếp cho tốt, thu được nhiều thông tin hữu ích.",
+   "note": "Câu hỏi bài khoá 2; dùng 便于 + 既然……就……."
   },
   {
    "q_zh": "刚开始的时候，同事遇到了什么困难？后来同事是怎么做的？",
    "q_vn": "Lúc mới bắt đầu, đồng nghiệp gặp khó khăn gì? Về sau cô ấy đã làm thế nào?",
-   "hint": "拿……来说，虽然她能……，但……。这是因为……。于是，她……。后来她……，效果……",
-   "sample": "拿和客户交流来说，虽然她能把产品的优缺点说得很清楚，但实际效果并不理想，这是因为她介绍的方式都一样。于是，她又认真地进行了几次市场调查，了解不同客户的想法。后来她能根据客户的情况介绍产品，效果一下就好了很多。",
-   "sample_vn": "Lấy việc trao đổi với khách hàng mà nói, tuy cô ấy nói rõ ưu nhược điểm của sản phẩm nhưng hiệu quả thực tế chẳng lý tưởng, vì cách giới thiệu với ai cũng như nhau. Thế là cô ấy lại nghiêm túc làm mấy cuộc khảo sát thị trường, tìm hiểu suy nghĩ của từng nhóm khách. Về sau cô biết giới thiệu theo tình hình của từng khách, hiệu quả lập tức tốt lên nhiều.",
-   "note": "Câu hỏi bài khoá 3; dùng 拿……来说 (điểm 3) + 于是 (Bài 3 · điểm 4)."
+   "hint": "拿……来说，虽然她能……，但……。这是因为……。于是，她……",
+   "sample": "她给客户介绍产品时，优点和缺点都讲得很清楚，可是客户不太感兴趣，因为她对谁都用一样的方式。于是她又去做了几次调查，后来就能按照每个客户的情况来介绍了。",
+   "sample_vn": "Khi giới thiệu sản phẩm, cô nói rất rõ cả ưu điểm lẫn nhược điểm, nhưng khách hàng không mấy hứng thú, vì với ai cô cũng dùng một cách như nhau. Thế là cô lại đi khảo sát mấy lần, về sau đã biết giới thiệu theo tình hình của từng khách.",
+   "note": "Câu hỏi bài khoá 3; dùng 拿……来说 (điểm 3) + 于是 (bài 3)."
   },
   {
-   "q_zh": "请根据提示复述课文三。",
+   "q_zh": "杨同乐的同事是怎么把那笔生意谈下来的？请你讲讲这个故事。",
    "q_vn": "Dựa vào gợi ý, kể lại bài khoá 3.",
-   "hint": "前段时间，杨同乐的同事……。刚开始，这位同事……。拿……来说，虽然她能……，但实际效果……。杨同乐告诉她，……。于是，……",
-   "sample": "前段时间，杨同乐的同事谈成了一笔不错的生意。刚开始，这位同事也遇到了一些困难。拿和客户交流来说，虽然她能把产品的优缺点说得很清楚，但实际效果并不理想。杨同乐告诉她，这是因为她介绍的方式都一样。其实，不同年龄、不同性别的客户对产品的关注点是不一样的。于是，这位同事又认真地进行了几次市场调查，了解不同客户的想法。后来她在面对不同客户时，能根据他们的情况介绍产品，效果一下就好了很多。",
-   "sample_vn": "Thời gian trước, đồng nghiệp của Dương Đồng Lạc đã bàn thành một vụ làm ăn khá tốt. Lúc đầu cô ấy cũng gặp khó khăn… Về sau, gặp khách nào cô cũng giới thiệu theo tình hình của khách đó, hiệu quả lập tức tốt lên nhiều.",
-   "note": "Bài tập 复述 của sách (trang 76–77)."
+   "hint": "前段时间，杨同乐的同事……。刚开始，……。拿……来说，……。杨同乐告诉她，……。于是，……。后来……",
+   "sample": "前段时间，杨同乐的一位同事谈下了一笔不错的生意。一开始，她也有不少困难。拿和客户交流来说，她能把产品介绍得很清楚，但是实际效果并不好。杨同乐说，问题是她对每个客户都用一样的方式，其实年龄、性别不同的客户，关注的地方也不同。于是她又做了几次市场调查，后来她能根据客户的情况介绍产品，效果一下就好多了。",
+   "sample_vn": "Thời gian trước, một đồng nghiệp của Dương Đồng Lạc đã chốt được một vụ làm ăn khá tốt. Lúc đầu cô cũng gặp không ít khó khăn. Lấy việc trao đổi với khách mà nói, cô giới thiệu sản phẩm rất rõ nhưng hiệu quả thực tế chẳng tốt. Dương Đồng Lạc nói vấn đề là cô dùng một cách cho mọi khách hàng, thật ra khách khác tuổi, khác giới tính quan tâm những điểm khác nhau. Thế là cô lại làm mấy cuộc khảo sát thị trường, về sau giới thiệu theo tình hình từng khách, hiệu quả lập tức tốt hơn nhiều.",
+   "note": "Bài tập kể lại bài khoá của sách (trang 76–77)."
   },
   {
    "q_zh": "为什么不建议年轻人总换工作？年轻人怎样才能获得更好的发展机会？",
    "q_vn": "Vì sao không khuyên người trẻ cứ đổi việc mãi? Người trẻ làm thế nào mới có được cơ hội phát triển tốt hơn?",
-   "hint": "因为适应新工作往往……。如果总是换工作，不但……，还可能会使……。年轻人刚进入社会时，……。只有……，今后才……",
-   "sample": "因为适应新工作往往需要比较长的时间。如果总是换工作，不但很难积累经验，还可能会使自己的发展受到影响。年轻人刚进入社会时，不能只关心工资的高低，更要重视学习，比如学习专业知识，了解公司的管理方式，学会和同事有效交流。只有把这些基础打好，提高工作能力，今后才会有更好的发展机会。",
-   "sample_vn": "Vì thích nghi với việc mới thường cần khá nhiều thời gian. Nếu cứ đổi việc mãi thì không những khó tích lũy kinh nghiệm mà còn có thể ảnh hưởng đến sự phát triển của bản thân. Người trẻ vừa bước vào xã hội không thể chỉ quan tâm lương cao hay thấp, mà càng phải coi trọng việc học… Chỉ có xây chắc nền tảng, nâng cao năng lực, sau này mới có cơ hội phát triển tốt hơn.",
-   "note": "Câu hỏi bài khoá 4; dùng 使 (điểm 4) + 只有……才……"
+   "hint": "因为适应新工作往往……。如果总是换工作，不但……，还可能会使……。只有……，今后才……",
+   "sample": "因为每到一个新地方，都要花很长时间去适应。老换工作的人很难积累经验，还会使自己的发展受到影响。刚工作的年轻人别只看工资高不高，要多学习专业知识，学会跟同事交流。只有基础打好了，能力提高了，今后的机会才会更多。",
+   "sample_vn": "Vì mỗi lần đến chỗ mới đều phải mất nhiều thời gian thích nghi. Người cứ đổi việc mãi khó tích lũy kinh nghiệm, còn ảnh hưởng đến sự phát triển của bản thân. Người trẻ mới đi làm đừng chỉ nhìn lương cao hay thấp, phải học nhiều kiến thức chuyên môn, học cách trao đổi với đồng nghiệp. Chỉ khi nền tảng vững, năng lực được nâng cao, sau này cơ hội mới nhiều hơn.",
+   "note": "Câu hỏi bài khoá 4; dùng 使 (điểm 4) + 只有……才……."
   },
   {
-   "q_zh": "小组辩论（正方）：年轻人应该多换几份工作，找到最适合自己的。",
+   "q_zh": "有人说：年轻人应该多换几份工作，找到最合适的。你同意吗？你是怎么想的？",
    "q_vn": "Tranh luận nhóm (phe ủng hộ): Người trẻ nên đổi vài công việc để tìm ra việc hợp với mình nhất.",
-   "hint": "我们认为……。第一，……；第二，拿……来说，……；既然……，就……",
-   "sample": "我们认为，年轻人应该多换几份工作，找到最适合自己的。第一，刚毕业的时候，很多人并不知道自己真正喜欢什么，多试几份工作，才能了解自己的优点和缺点。第二，不同的工作能使我们积累不同方面的经验。拿我哥哥来说，他做过销售，也做过市场调查，现在在一家国际公司做管理，这些经验对他帮助很大。第三，既然现在的工作没有发展机会，就没有必要一直做下去。所以，我们觉得年轻时多换几份工作并不是坏事。",
-   "sample_vn": "Chúng tôi cho rằng người trẻ nên đổi vài công việc để tìm ra việc hợp nhất. Thứ nhất, mới tốt nghiệp nhiều người chưa biết mình thật sự thích gì, thử vài việc mới hiểu được ưu nhược điểm của bản thân. Thứ hai, công việc khác nhau giúp ta tích lũy kinh nghiệm ở nhiều mặt. Lấy anh trai tôi mà nói, anh từng làm bán hàng, làm khảo sát thị trường, giờ làm quản lý ở một công ty quốc tế, những kinh nghiệm đó giúp anh rất nhiều. Thứ ba, công việc hiện tại đã không có cơ hội phát triển thì chẳng cần làm mãi. Vì vậy chúng tôi thấy lúc trẻ đổi vài việc chẳng phải chuyện xấu.",
-   "note": "Hoạt động 小组辩论 (任务活动) của sách, trang 80 — phe 正方; dùng đủ 4 điểm ngữ pháp + 并不 (Bài 2)."
+   "hint": "我同意。第一，……；第二，拿……来说，……；既然……，就……",
+   "sample": "我同意。第一，很多人刚毕业的时候并不知道自己真正喜欢什么，多做几份工作，才能知道自己的优点和缺点。第二，不同的工作能使我们积累不同方面的经验。拿我的一个朋友来说，他卖过东西，也做过市场调查，现在在一家国际公司做管理，以前的经验对他帮助很大。第三，既然现在的工作没有发展机会，就不用一直做下去。",
+   "sample_vn": "Tôi đồng ý. Thứ nhất, nhiều người mới tốt nghiệp chưa biết mình thật sự thích gì, làm thử vài việc mới thấy rõ ưu nhược điểm của bản thân. Thứ hai, công việc khác nhau giúp ta tích lũy kinh nghiệm ở nhiều mặt. Lấy một người bạn của tôi mà nói, anh ấy từng bán hàng, từng làm khảo sát thị trường, giờ làm quản lý ở một công ty quốc tế, kinh nghiệm cũ giúp anh rất nhiều. Thứ ba, công việc hiện tại đã không có cơ hội phát triển thì không cần làm mãi.",
+   "note": "Hoạt động tranh luận nhóm của sách (trang 80) — phe ủng hộ; dùng đủ 4 điểm ngữ pháp + 并不 (bài 2)."
   },
   {
-   "q_zh": "小组辩论（反方）：年轻人应该坚持一份工作，积累更多工作经验。",
+   "q_zh": "也有人说：年轻人最好一直做一份工作，多积累经验。你怎么看？",
    "q_vn": "Tranh luận nhóm (phe phản đối): Người trẻ nên kiên trì một công việc, tích lũy thêm kinh nghiệm làm việc.",
-   "hint": "我们认为……。因为……往往……；如果总是换工作，……会使……；在……方面……；只有……才……",
-   "sample": "我们认为，年轻人应该坚持一份工作，积累更多工作经验。因为适应新工作往往需要比较长的时间，如果总是换工作，每次都要从头开始，会使自己的发展受到影响。在专业知识方面，一份工作做得久了，才能真正学到东西。拿我们公司的经理来说，她在公司工作了十年，从一个新人慢慢成为了经理。既然选择了一份工作，就要认真做下去。只有把基础打好，提高工作能力，今后才会有更好的发展机会。",
-   "sample_vn": "Chúng tôi cho rằng người trẻ nên kiên trì một công việc, tích lũy thêm kinh nghiệm. Vì thích nghi với việc mới thường mất khá nhiều thời gian, nếu cứ đổi việc mãi, lần nào cũng phải bắt đầu lại từ đầu, sẽ khiến sự phát triển của bản thân bị ảnh hưởng. Về mặt kiến thức chuyên môn, làm một việc lâu mới thật sự học được điều gì đó. Lấy giám đốc công ty chúng tôi mà nói, chị ấy làm ở công ty mười năm, từ một người mới dần trở thành giám đốc. Đã chọn một công việc thì phải làm cho nghiêm túc. Chỉ có xây chắc nền tảng, nâng cao năng lực làm việc, sau này mới có cơ hội phát triển tốt hơn.",
-   "note": "Hoạt động 小组辩论 (任务活动) của sách, trang 80 — phe 反方; dùng đủ 4 điểm ngữ pháp + 成为 (Bài 1)."
+   "hint": "我觉得……。因为……往往……；如果总是换工作，……会使……；在……方面……；只有……才……",
+   "sample": "我觉得年轻人还是应该坚持做一份工作。老是从头开始，会使人很累，也学不到真东西。在专业知识方面，一份工作做得久了，才能学得更好。拿我们公司的经理来说，她在公司工作了十年，从一个新人慢慢成为了经理。既然选择了一份工作，就要认真地做好它。",
+   "sample_vn": "Tôi thấy người trẻ vẫn nên kiên trì một công việc. Cứ bắt đầu lại từ đầu mãi sẽ khiến người ta rất mệt, cũng chẳng học được gì thật sự. Về mặt kiến thức chuyên môn, làm một việc lâu mới học được sâu. Lấy giám đốc công ty chúng tôi mà nói, chị ấy làm ở công ty mười năm, từ một người mới dần trở thành giám đốc. Đã chọn một công việc thì phải nghiêm túc làm cho tốt.",
+   "note": "Hoạt động tranh luận nhóm của sách (trang 80) — phe phản đối; dùng đủ 4 điểm ngữ pháp + 成为 (bài 1)."
   }
  ]
 };
 var translateData = [
  {
-  "vi": "Xin lỗi làm phiền chị một chút, bản kế hoạch em đã gửi vào hộp thư của chị rồi.",
-  "zh": "打扰您一下，计划书我已经发到您邮箱了。",
-  "py": "Dǎrǎo nín yíxià, jìhuàshū wǒ yǐjīng fādào nín yóuxiāng le."
+  "vi": "Về mặt trao đổi với khách hàng, anh ấy là một người rất chu đáo.",
+  "zh": "在和客户交流方面，他是一个很细心的人。",
+  "py": "Zài hé kèhù jiāoliú fāngmiàn, tā shì yí gè hěn xìxīn de rén."
  },
  {
-  "vi": "Về mặt nội dung, chị thấy có chỗ nào cần sửa không?",
-  "zh": "在内容方面，您觉得有需要改的吗？",
-  "py": "Zài nèiróng fāngmiàn, nín juéde yǒu xūyào gǎi de ma?"
+  "vi": "Đã quyết định đi du học thì phải học tiếng Trung cho tốt.",
+  "zh": "既然决定了去留学，就要把中文学好。",
+  "py": "Jìrán juédìng le qù liúxué, jiù yào bǎ Zhōngwén xuéhǎo."
  },
  {
-  "vi": "Đã đi công tác không lâu thì phải sắp xếp thời gian cho tốt.",
-  "zh": "既然出差时间不长，就要安排好时间。",
-  "py": "Jìrán chūchāi shíjiān bù cháng, jiù yào ānpái hǎo shíjiān."
+  "vi": "Lấy chị Vương Nhất Tuyết, giám đốc của chúng tôi, mà nói, mỗi năm chị ấy đi công tác ít nhất mười lần.",
+  "zh": "拿王一雪经理来说，她每年至少要出差十次。",
+  "py": "Ná Wáng Yīxuě jīnglǐ láishuō, tā měinián zhìshǎo yào chūchāi shí cì."
  },
  {
-  "vi": "Lấy việc trao đổi với khách hàng mà nói, hiệu quả thực tế chẳng lý tưởng chút nào.",
-  "zh": "拿和客户交流来说，实际效果并不理想。",
-  "py": "Ná hé kèhù jiāoliú láishuō, shíjì xiàoguǒ bìng bù lǐxiǎng."
+  "vi": "Kinh nghiệm lần này khiến tôi hiểu ra: làm việc phải có kế hoạch.",
+  "zh": "这次的经验使我明白，做事要有计划。",
+  "py": "Zhè cì de jīngyàn shǐ wǒ míngbai, zuòshì yào yǒu jìhuà."
  },
  {
-  "vi": "Thường xuyên đổi việc có thể khiến sự phát triển của bản thân bị ảnh hưởng.",
-  "zh": "经常换工作可能会使自己的发展受到影响。",
-  "py": "Jīngcháng huàn gōngzuò kěnéng huì shǐ zìjǐ de fāzhǎn shòudào yǐngxiǎng."
+  "vi": "Anh ấy lập tức tìm ra vấn đề nằm ở đâu.",
+  "zh": "他一下就找到了问题在哪儿。",
+  "py": "Tā yíxià jiù zhǎodào le wèntí zài nǎr."
  },
  {
-  "vi": "Người trẻ vừa bước vào xã hội càng phải coi trọng việc học.",
-  "zh": "年轻人刚进入社会时，更要重视学习。",
-  "py": "Niánqīngrén gāng jìnrù shèhuì shí, gèng yào zhòngshì xuéxí."
+  "vi": "Sau này tôi muốn làm công việc về mảng quản lý.",
+  "zh": "今后我想做管理方面的工作。",
+  "py": "Jīnhòu wǒ xiǎng zuò guǎnlǐ fāngmiàn de gōngzuò."
  }
 ];
 var translateDataRev = [
  {
-  "vi": "Lúc làm khảo sát phải cẩn thận, chú ý tìm hiểu suy nghĩ thật sự của khách hàng.",
-  "zh": "做调查的时候要细心，注意了解客户真正的想法。",
-  "py": "Zuò diàochá de shíhou yào xìxīn, zhùyì liǎojiě kèhù zhēnzhèng de xiǎngfǎ."
+  "vi": "Xin lỗi đã làm phiền anh, tôi muốn phỏng vấn anh vài câu.",
+  "zh": "对不起，打扰您了，我想采访您几个问题。",
+  "py": "Duìbuqǐ, dǎrǎo nín le, wǒ xiǎng cǎifǎng nín jǐ gè wèntí."
  },
  {
-  "vi": "Em phải chuẩn bị sẵn câu hỏi từ trước, để tiện trao đổi với khách hàng.",
-  "zh": "你要提前准备好问题，便于和客户交流。",
-  "py": "Nǐ yào tíqián zhǔnbèi hǎo wèntí, biànyú hé kèhù jiāoliú."
+  "vi": "Ý tưởng của bạn rất hay, nhưng không thực tế lắm.",
+  "zh": "你的想法很好，不过不太实际。",
+  "py": "Nǐ de xiǎngfǎ hěn hǎo, búguò bú tài shíjì."
  },
  {
-  "vi": "Thời gian trước, đồng nghiệp của Dương Đồng Lạc đã bàn thành một vụ làm ăn khá tốt.",
-  "zh": "前段时间，杨同乐的同事谈成了一笔不错的生意。",
-  "py": "Qián duàn shíjiān, Yáng Tónglè de tóngshì tánchéng le yì bǐ búcuò de shēngyi."
+  "vi": "Trước khi đi làm, tốt nhất là xây chắc nền tảng chuyên ngành trước.",
+  "zh": "工作以前，最好先把专业基础打好。",
+  "py": "Gōngzuò yǐqián, zuìhǎo xiān bǎ zhuānyè jīchǔ dǎhǎo."
  },
  {
-  "vi": "Khách hàng khác tuổi, khác giới tính có điểm quan tâm đến sản phẩm không giống nhau.",
-  "zh": "不同年龄、不同性别的客户对产品的关注点是不一样的。",
-  "py": "Bùtóng niánlíng, bùtóng xìngbié de kèhù duì chǎnpǐn de guānzhù diǎn shì bù yíyàng de."
+  "vi": "Công ty giao cho tôi một nhiệm vụ mới: khảo sát thị trường sản phẩm.",
+  "zh": "公司给了我一个新任务：调查产品的市场。",
+  "py": "Gōngsī gěi le wǒ yí gè xīn rènwù: diàochá chǎnpǐn de shìchǎng."
  },
  {
-  "vi": "Chỉ có xây chắc nền tảng, nâng cao năng lực làm việc, sau này mới có cơ hội phát triển tốt hơn.",
-  "zh": "只有把基础打好，提高工作能力，今后才会有更好的发展机会。",
-  "py": "Zhǐyǒu bǎ jīchǔ dǎhǎo, tígāo gōngzuò nénglì, jīnhòu cái huì yǒu gèng hǎo de fāzhǎn jīhuì."
+  "vi": "Người trẻ vừa bước vào xã hội nên tích lũy thêm kinh nghiệm.",
+  "zh": "刚进入社会的年轻人应该多积累一些经验。",
+  "py": "Gāng jìnrù shèhuì de niánqīngrén yīnggāi duō jīlěi yìxiē jīngyàn."
  }
 ];
 var sgkData = [

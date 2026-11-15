@@ -97,7 +97,7 @@ CAP.hsk2 = {
     ['呀', 1], ['天', 2], ['出去', 2], ['下', 2], ['这么', 2], ['真', 3], ['粉色', 3], ['对', 4], ['电话', 4], ['打', 4],
     ['饭馆', 5], ['有点儿', 5], ['点儿', 5], ['打球', 5], ['杯', 5], ['没', 6], ['再', 8], ['病', 8], ['红', 8],
     ['次', 9], ['跟', 9], ['学', 9], ['午饭', 10], ['色', 10], ['左边', 11], ['卖', 11], ['斤', 11],
-    ['早', 12], ['睡', 12], ['饭', 12], ['房子', 12], ['女孩', 13], ['右', 13],
+    ['见', 11], ['早', 12], ['早起', 12], ['睡', 12], ['饭', 12], ['房子', 12], ['女孩', 13], ['右', 13],
     ['一定', 14], ['机会', 14], ['周末', 14], ['公园', 14], ['自己', 14], ['大概', 14], ['难', 14],
     ['计划', 15], ['预报', 15], ['差不多', 15], ['热闹', 15],
   ],
@@ -106,6 +106,13 @@ CAP.hsk2 = {
 // Nhu HSK2 cu: errorFixData kiem nhu mc, speakingData.tasks; listenData = de nghe that sach bai tap (khong kiem).
 CAP.hsk3 = {
   duoi: ['hsk1', 'hsk2'], soTu: 1, soBai: 20,
+  ten: [],
+  them: [],
+};
+// HSK4 cu (HSK标准教程4上+4下): 20 bai, file hsk4-bai-N-data.js; cap duoi = HSK1 + HSK2 + HSK3 cu (HSK 3.0 khong tinh).
+// errorFixData (errorFixMode 'wordchoice') = nguyen bai 练习2 SGK -> kiem nhu mc; listenData = de nghe that SBT (khong kiem).
+CAP.hsk4 = {
+  duoi: ['hsk1', 'hsk2', 'hsk3'], soTu: 1, soBai: 20,
   ten: [],
   them: [],
 };

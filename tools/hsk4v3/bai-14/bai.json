@@ -228,96 +228,689 @@
 ],
 
 "listen": [
- {"audio":"小姐，这件外套多少钱？三百八。不过现在店里在做促销，满三百减五十。那就是三百三十块？对。这个牌子质量很好，样式也是今年最流行的。好，那我试试。","questions":[
-   {"q":"这件外套现在多少钱？","opts":["三百八十块","三百三十块","三百块"],"ans":1},
-   {"q":"售货员觉得这件外套怎么样？","opts":["质量好，样式流行","价钱很便宜","颜色很好看"],"ans":0}]},
- {"audio":"你听，广播里说什么？说今天晚上八点到九点，超市里所有的水果都打七折，买满五十块还送一盒牛奶。太好了！咱们首先去买水果，然后再去买别的吧。好，不过别买太多，吃不完就浪费了。","questions":[
-   {"q":"什么东西打七折？","opts":["牛奶","水果","茶叶"],"ans":1},
-   {"q":"买满五十块送什么？","opts":["一盒牛奶","一盒茶叶","一个盒子"],"ans":0}]},
- {"audio":"你又买盲盒了？你究竟买了多少个了？这已经是第十个了。对于盲盒，我觉得偶尔买一个还行，买太多就是浪费钱。你说得对，以后买东西以前，我首先想想自己是不是真的需要。","questions":[
-   {"q":"她一共买了多少个盲盒？","opts":["一个","五个","十个"],"ans":2},
-   {"q":"朋友觉得买很多盲盒怎么样？","opts":["很有意思","是浪费钱","能感受到快乐"],"ans":1}]}
+ {
+  "audio": "各位顾客，五一假日，本超市的水果都是低价，买满一百块减二十块。",
+  "questions": [
+   {
+    "q": "Siêu thị đang có chương trình gì?",
+    "opts": [
+     "Rau được tặng kèm",
+     "Hoa quả bán giá thấp",
+     "Sữa giảm một nửa"
+    ],
+    "ans": 1,
+    "exp": "本超市的水果都是低价 = hoa quả của siêu thị chúng tôi đều giá thấp; 各位顾客 = kính thưa quý khách."
+   },
+   {
+    "q": "Mua đủ 100 tệ thì được gì?",
+    "opts": [
+     "Được giảm 20 tệ",
+     "Được tặng một túi hoa quả",
+     "Được giảm một nửa"
+    ],
+    "ans": 0,
+    "exp": "满一百块减二十块 = mua đủ 100 tệ thì bớt 20 tệ."
+   }
+  ]
+ },
+ {
+  "audio": "这个包的颜色我很喜欢，可是要八百多块，我还是等它降价的时候再买吧。",
+  "questions": [
+   {
+    "q": "Vì sao người nói chưa mua cái túi?",
+    "opts": [
+     "Không thích màu của nó",
+     "Đã có túi rồi",
+     "Hơn 800 tệ, muốn đợi giảm giá"
+    ],
+    "ans": 2,
+    "exp": "要八百多块 = mất hơn 800 tệ; 等它降价的时候再买 = đợi lúc nó giảm giá rồi mới mua."
+   }
+  ]
+ },
+ {
+  "audio": "你究竟想买哪个牌子的手机？我们已经看了一个下午了。",
+  "questions": [
+   {
+    "q": "Câu nói cho thấy điều gì?",
+    "opts": [
+     "Họ vừa mới bắt đầu xem",
+     "Người nghe mãi chưa chọn được",
+     "Họ đã mua xong điện thoại"
+    ],
+    "ans": 1,
+    "exp": "究竟 + câu hỏi = rốt cuộc …, giọng sốt ruột; 已经看了一个下午 = đã xem cả buổi chiều rồi."
+   }
+  ]
+ },
+ {
+  "audio": "这家书店离学校很近，加上书的种类很多，所以周末去的学生特别多。",
+  "questions": [
+   {
+    "q": "Vì sao nhiều sinh viên đến hiệu sách này?",
+    "opts": [
+     "Gần trường, lại có nhiều loại sách",
+     "Sách ở đó rất rẻ",
+     "Cuối tuần có khuyến mãi"
+    ],
+    "ans": 0,
+    "exp": "Lý do 1: 离学校很近; 加上 thêm lý do 2: 书的种类很多 (nhiều chủng loại sách)."
+   }
+  ]
+ },
+ {
+  "audio": "对于第一次来中国的人来说，首先要学会用手机付钱，然后再去办一张银行卡。",
+  "questions": [
+   {
+    "q": "Việc đầu tiên nên làm là gì?",
+    "opts": [
+     "Mở thẻ ngân hàng",
+     "Mua điện thoại mới",
+     "Học cách trả tiền bằng điện thoại"
+    ],
+    "ans": 2,
+    "exp": "首先要学会用手机付钱 = trước hết phải biết trả tiền bằng điện thoại; 然后 mới đến thẻ ngân hàng."
+   },
+   {
+    "q": "Lời khuyên này dành cho ai?",
+    "opts": [
+     "Người bán điện thoại",
+     "Người lần đầu đến Trung Quốc",
+     "Nhân viên ngân hàng"
+    ],
+    "ans": 1,
+    "exp": "对于第一次来中国的人来说 = đối với người lần đầu đến Trung Quốc mà nói."
+   }
+  ]
+ },
+ {
+  "audio": "抱歉，您要的那种茶叶暂时缺货，下个星期三才能到。",
+  "questions": [
+   {
+    "q": "Loại trà khách muốn hiện thế nào?",
+    "opts": [
+     "Đã tăng giá",
+     "Tạm thời hết hàng",
+     "Đang giảm giá"
+    ],
+    "ans": 1,
+    "exp": "暂时缺货 = tạm thời hết hàng; 抱歉 = xin lỗi."
+   },
+   {
+    "q": "Khi nào có hàng?",
+    "opts": [
+     "Thứ Tư tuần sau",
+     "Ngày mai",
+     "Thứ Tư tuần này"
+    ],
+    "ans": 0,
+    "exp": "下个星期三才能到 = thứ Tư tuần sau mới về; 才 = muộn hơn mong đợi."
+   }
+  ]
+ },
+ {
+  "audio": "我妹妹常常看了广告就去买盲盒，上个月花了五百多块，妈妈说她太浪费了。",
+  "questions": [
+   {
+    "q": "Em gái người nói hay mua gì?",
+    "opts": [
+     "Áo khoác",
+     "Tất",
+     "Hộp mù"
+    ],
+    "ans": 2,
+    "exp": "看了广告就去买盲盒 = xem quảng cáo xong là đi mua hộp mù."
+   },
+   {
+    "q": "Mẹ nghĩ thế nào?",
+    "opts": [
+     "Em quá lãng phí",
+     "Em biết tiết kiệm",
+     "Em nên xem quảng cáo nhiều hơn"
+    ],
+    "ans": 0,
+    "exp": "太浪费了 = lãng phí quá; một tháng tiêu hơn 500 tệ vào hộp mù (ôn 浪费, bài 10)."
+   }
+  ]
+ }
 ],
-
 "match": [
- {"left":"举办","right":"促销活动"},
- {"left":"服务","right":"态度"},
- {"left":"仔细","right":"比较"},
- {"left":"商品","right":"种类"},
- {"left":"满二两","right":"送半两"},
- {"left":"一双","right":"袜子"},
- {"left":"首先……","right":"然后……"},
- {"left":"不光……","right":"还……"},
- {"left":"……，加上……","right":"使得……"}
+ {
+  "left": "一双",
+  "right": "运动鞋"
+ },
+ {
+  "left": "商品",
+  "right": "种类"
+ },
+ {
+  "left": "暂时",
+  "right": "缺货"
+ },
+ {
+  "left": "举办",
+  "right": "促销活动"
+ },
+ {
+  "left": "仔细",
+  "right": "检查"
+ },
+ {
+  "left": "态度",
+  "right": "友好"
+ },
+ {
+  "left": "用盒子",
+  "right": "装茶叶"
+ },
+ {
+  "left": "超过",
+  "right": "一千块"
+ }
 ],
-
 "fill": [
- {"pre":"这里茶叶这么多，","blank":"究竟","post":"买哪种好呢？","hint":"(rốt cuộc)","ans":"究竟","exp":"究竟 + câu hỏi có đại từ nghi vấn."},
- {"pre":"茶叶主要","blank":"分为","post":"红茶、绿茶等。","hint":"(chia thành)","ans":"分为","exp":"A 分为 B、C……"},
- {"pre":"抱歉，","blank":"暂时","post":"没有。","hint":"(tạm thời)","ans":"暂时","exp":"暂时 + 没有 / 不 + V."},
- {"pre":"今天满二两送半两，","blank":"超过","post":"半斤再送小礼物。","hint":"(vượt quá)","ans":"超过","exp":"超过 + số lượng."},
- {"pre":"本商场正在举办运动鞋假日低价","blank":"促销","post":"活动。","hint":"(khuyến mãi)","ans":"促销","exp":"促销活动 = chương trình khuyến mãi."},
- {"pre":"","blank":"首先","post":"看样子喜不喜欢，然后再看质量怎么样。","hint":"(trước hết)","ans":"首先","exp":"首先……，然后……"},
- {"pre":"这个牌子质量很好，今天又","blank":"降价","post":"，一双减300块。","hint":"(giảm giá)","ans":"降价","exp":"降价 = hạ giá bán."},
- {"pre":"东西适合年轻人，","blank":"加上","post":"店员态度友好，使得小店的生意越来越好。","hint":"(thêm vào đó)","ans":"加上","exp":"……，加上……，使得 + kết quả."},
- {"pre":"前段时间刚进的盲盒很快就卖到了","blank":"缺","post":"货。","hint":"(thiếu, hết)","ans":"缺","exp":"缺货 = hết hàng."},
- {"pre":"","blank":"对于","post":"想买的东西，她不光看质量，还看价格。","hint":"(đối với)","ans":"对于","exp":"对于 + đối tượng，chủ ngữ + V."}
+ {
+  "pre": "这两件外套你都试了好几次了，",
+  "blank": "究竟",
+  "post": "要哪一件？",
+  "hint": "(rốt cuộc)",
+  "ans": "究竟",
+  "exp": "究竟 đứng trước câu hỏi (要哪一件) để hỏi dồn khi người kia mãi chưa quyết; câu đã có 哪 thì không thêm 吗."
+ },
+ {
+  "pre": "做饭的时候，",
+  "blank": "首先",
+  "post": "要把菜洗干净，然后再做。",
+  "hint": "(trước hết)",
+  "ans": "首先",
+  "exp": "首先……，然后再…… = trước hết …, sau đó mới … — nói thứ tự các bước."
+ },
+ {
+  "pre": "这个公园离我家很近，",
+  "blank": "加上",
+  "post": "周末人也不多，所以我常常来这儿跑步。",
+  "hint": "(thêm vào đó)",
+  "ans": "加上",
+  "exp": "加上 thêm một lý do cùng chiều với lý do trước, vế sau dùng 所以 nói kết quả."
+ },
+ {
+  "pre": "",
+  "blank": "对于",
+  "post": "刚上大学的学生来说，最难的是安排好自己的时间。",
+  "hint": "(đối với)",
+  "ans": "对于",
+  "exp": "对于 + ai + 来说 = đối với ai mà nói; đứng đầu câu."
+ },
+ {
+  "pre": "这双运动鞋很好看，可是价钱",
+  "blank": "超过",
+  "post": "了一千块，我现在买不了。",
+  "hint": "(vượt quá)",
+  "ans": "超过",
+  "exp": "超过 + con số = vượt quá …; ôn 买不了 (bài 4): không mua nổi."
+ },
+ {
+  "pre": "这间教室在装空调，我们",
+  "blank": "暂时",
+  "post": "在三楼上课。",
+  "hint": "(tạm thời)",
+  "ans": "暂时",
+  "exp": "暂时 = tạm thời: trong lúc lắp điều hoà thì lớp học tạm ở tầng ba, sau đó sẽ về lại."
+ },
+ {
+  "pre": "我们班",
+  "blank": "许多",
+  "post": "同学都参加过这个比赛，我还从来没参加过。",
+  "hint": "(rất nhiều)",
+  "ans": "许多",
+  "exp": "许多 + danh từ = rất nhiều …; ôn 从来没 + V + 过 (bài 9): chưa bao giờ."
+ },
+ {
+  "pre": "那个售货员",
+  "blank": "态度",
+  "post": "不好，问她什么她都不回答，所以我去了别的店。",
+  "hint": "(thái độ)",
+  "ans": "态度",
+  "exp": "态度 + 好 / 不好 = thái độ tốt / không tốt; ở đây người bán không chịu trả lời."
+ },
+ {
+  "pre": "中国北方的一年",
+  "blank": "分为",
+  "post": "四个季节，每个季节都有三个月。",
+  "hint": "(chia thành)",
+  "ans": "分为",
+  "exp": "A 分为 + số lượng + B = A chia thành mấy phần: 分为四个季节."
+ },
+ {
+  "pre": "他是一个很",
+  "blank": "仔细",
+  "post": "的人，作业写完以后总要再检查一遍。",
+  "hint": "(kỹ lưỡng)",
+  "ans": "仔细",
+  "exp": "仔细 = kỹ, cẩn thận (không phải “tử tế”); người kỹ tính làm xong còn kiểm tra lại."
+ },
+ {
+  "pre": "我们店最近顾客越来越多，还",
+  "blank": "缺",
+  "post": "两个售货员，你认识合适的人吗？",
+  "hint": "(thiếu)",
+  "ans": "缺",
+  "exp": "缺 + người / vật = thiếu …: 缺两个售货员 = còn thiếu hai nhân viên bán hàng."
+ },
+ {
+  "pre": "为了",
+  "blank": "表示",
+  "post": "感谢，我请帮过我的老师吃了晚饭。",
+  "hint": "(bày tỏ)",
+  "ans": "表示",
+  "exp": "表示 + 感谢 / 满意 = bày tỏ lòng cảm ơn / sự hài lòng; 为了 nói mục đích."
+ },
+ {
+  "pre": "刚才",
+  "blank": "广播",
+  "post": "里说，去北京的火车要晚到半个小时。",
+  "hint": "(loa phát thanh)",
+  "ans": "广播",
+  "exp": "广播里说 = loa thông báo rằng …; ở nhà ga hay nghe thông báo tàu đến muộn."
+ }
 ],
-
 "sort": [
- {"words":["这里","茶叶","这么多","，","究竟","买","哪种","好呢","？"],"ans":"这里茶叶这么多，究竟买哪种好呢？"},
- {"words":["首先","看样子","喜不喜欢","，","然后","再看","质量","怎么样","。"],"ans":"首先看样子喜不喜欢，然后再看质量怎么样。"},
- {"words":["请","帮我","分着装","，","盒子里","装","半斤","。"],"ans":"请帮我分着装，盒子里装半斤。"},
- {"words":["加上","店员","态度友好","，","使得","小店的生意","越来越好","。"],"ans":"加上店员态度友好，使得小店的生意越来越好。"},
- {"words":["对于","想买的东西","，","她","不光","看质量","，","还","看价格","。"],"ans":"对于想买的东西，她不光看质量，还看价格。"},
- {"words":["许多","年轻人","表示","，","在","徐前的店里","能","感受到","快乐","。"],"ans":"许多年轻人表示，在徐前的店里能感受到快乐。"}
+ {
+  "words": [
+   "你",
+   "究竟",
+   "想",
+   "买",
+   "什么",
+   "样式",
+   "的",
+   "外套",
+   "？"
+  ],
+  "ans": "你究竟想买什么样式的外套？"
+ },
+ {
+  "words": [
+   "网上的",
+   "价钱",
+   "比",
+   "商店里",
+   "便宜",
+   "一点儿",
+   "。"
+  ],
+  "ans": "网上的价钱比商店里便宜一点儿。"
+ },
+ {
+  "words": [
+   "他",
+   "把",
+   "买来的",
+   "茶叶",
+   "装进",
+   "一个",
+   "盒子里",
+   "。"
+  ],
+  "ans": "他把买来的茶叶装进一个盒子里。"
+ },
+ {
+  "words": [
+   "这个",
+   "牌子",
+   "的",
+   "袜子",
+   "一双",
+   "才",
+   "十块钱",
+   "。"
+  ],
+  "ans": "这个牌子的袜子一双才十块钱。"
+ },
+ {
+  "words": [
+   "那位",
+   "售货员",
+   "的",
+   "服务",
+   "态度",
+   "让",
+   "顾客",
+   "很",
+   "满意",
+   "。"
+  ],
+  "ans": "那位售货员的服务态度让顾客很满意。"
+ },
+ {
+  "words": [
+   "这个",
+   "广告",
+   "使得",
+   "许多",
+   "年轻人",
+   "喜欢",
+   "上",
+   "了",
+   "这个牌子",
+   "。"
+  ],
+  "ans": "这个广告使得许多年轻人喜欢上了这个牌子。"
+ },
+ {
+  "words": [
+   "各位",
+   "同学",
+   "，",
+   "请",
+   "把",
+   "手机",
+   "放进",
+   "书包里",
+   "。"
+  ],
+  "ans": "各位同学，请把手机放进书包里。"
+ },
+ {
+  "words": [
+   "妈妈",
+   "给",
+   "我",
+   "买",
+   "了",
+   "一件",
+   "红色的",
+   "外套",
+   "。"
+  ],
+  "ans": "妈妈给我买了一件红色的外套。"
+ }
 ],
-
 "mc": [
- {"q":"这里茶叶这么多，＿＿买哪种好呢？","opts":["究竟","首先","加上","暂时"],"ans":0,"exp":"究竟 dùng trong câu hỏi để truy hỏi: rốt cuộc."},
- {"q":"你明天究竟去＿＿？","opts":["不去","吗","了","吧"],"ans":0,"exp":"Câu có 究竟 dùng câu hỏi chính phản V不V, không dùng 吗."},
- {"q":"＿＿看样子喜不喜欢，然后再看质量怎么样。","opts":["首先","其次","加上","对于"],"ans":0,"exp":"首先……，然后……: thứ tự trước sau."},
- {"q":"我选这家公司，首先是因为离家近，＿＿是因为工资高。","opts":["其次","然后","首先","加上"],"ans":0,"exp":"Liệt kê lý do chính – phụ → 首先……，其次……"},
- {"q":"小店的东西适合年轻人，＿＿店员态度友好，所以生意越来越好。","opts":["加上","对于","究竟","首先"],"ans":0,"exp":"加上 thêm một lý do cùng chiều, sau đó là kết quả."},
- {"q":"＿＿这个问题，大家有什么看法？","opts":["对于","加上","首先","超过"],"ans":0,"exp":"对于 + đối tượng đứng đầu câu."},
- {"q":"他＿＿朋友非常热情。","opts":["对","对于","关于","加上"],"ans":0,"exp":"Thái độ giữa người với người chỉ dùng 对, không dùng 对于."},
- {"q":"这种茶叶多少钱一＿＿？","opts":["两","个","件","双"],"ans":0,"exp":"两 = lạng (50 g), đơn vị cân trà; 1 斤 = 10 两."},
- {"q":"我想买的那个手机现在＿＿货，过几天再来看看吧。","opts":["缺","减","满","装"],"ans":0,"exp":"缺货 = hết hàng."},
- {"q":"买东西的时候，要从质量、价格等各方面＿＿比较。","opts":["仔细","友好","暂时","许多"],"ans":0,"exp":"仔细 + V = làm kỹ lưỡng (✗ tử tế)."}
+ {
+  "q": "Bạn của bạn nói mãi không rõ, bạn sốt ruột hỏi: “Rốt cuộc cậu có đi hay không?”",
+  "opts": [
+   "你究竟去不去？",
+   "你究竟去吗？",
+   "你去不去究竟？",
+   "究竟你去了不去？"
+  ],
+  "ans": 0,
+  "exp": "究竟 đứng sau chủ ngữ, đi với câu hỏi chính phản 去不去; không dùng 吗, không đặt cuối câu như “rốt cuộc” tiếng Việt."
+ },
+ {
+  "q": "Câu nào SAI?",
+  "opts": [
+   "这件外套究竟很贵。",
+   "你究竟想吃什么？",
+   "他究竟是哪国人？",
+   "究竟谁拿了我的书？"
+  ],
+  "ans": 0,
+  "exp": "究竟 chỉ dùng trong câu hỏi; câu kể “áo này rất đắt” không dùng 究竟."
+ },
+ {
+  "q": "Bạn hướng dẫn bạn mới cách mượn sách: “Trước hết đi làm thẻ sinh viên, sau đó mới mượn được sách.”",
+  "opts": [
+   "首先去办学生证，然后才能借书。",
+   "去办学生证首先，然后才能借书。",
+   "首先去办学生证，然后能才借书。",
+   "然后去办学生证，首先才能借书。"
+  ],
+  "ans": 0,
+  "exp": "首先 đứng đầu bước 1, 然后 đứng đầu bước 2; 才 đứng trước 能, không đặt 首先 sau động từ."
+ },
+ {
+  "q": "A: “你为什么天天在这家饭馆吃饭？” — B đáp:",
+  "opts": [
+   "这里的菜好吃，加上价钱便宜，所以我天天来。",
+   "加上这里的菜好吃，价钱便宜，所以我天天来。",
+   "这里的菜好吃，加上价钱便宜，但是我天天来。",
+   "这里的菜好吃，对于价钱便宜，所以我天天来。"
+  ],
+  "ans": 0,
+  "exp": "加上 đứng giữa, nối lý do thứ hai sau lý do thứ nhất; kết quả nối bằng 所以, không phải 但是."
+ },
+ {
+  "q": "“他学习很努力，＿＿有一位很好的老师，所以这次考得特别好。”",
+  "opts": [
+   "加上",
+   "于是",
+   "甚至",
+   "对于"
+  ],
+  "ans": 0,
+  "exp": "Hai lý do cùng chiều (chăm học + có thầy giỏi) → kết quả tốt, nên dùng 加上; 于是 (bài 3) là “thế là”, chỉ việc xảy ra sau."
+ },
+ {
+  "q": "Câu nào SAI?",
+  "opts": [
+   "她对于顾客很友好。",
+   "对于这件事，我有不同的看法。",
+   "对于这次考试，大家都准备得很好。",
+   "她对顾客很热情。"
+  ],
+  "ans": 0,
+  "exp": "Thái độ với người (友好 / 热情) dùng 对: 对顾客很友好; không dùng 对于."
+ },
+ {
+  "q": "Bạn muốn nói: “Với tôi mà nói, chất lượng quan trọng hơn giá cả.”",
+  "opts": [
+   "对于我来说，质量比价格更重要。",
+   "对于我来说，质量比价格很重要。",
+   "对于我来说，质量更重要比价格。",
+   "关于我来说，质量比价格更重要。"
+  ],
+  "ans": 0,
+  "exp": "对于 + ai + 来说 (không dùng 关于); câu 比 dùng 更, không dùng 很, và 比 + B đứng trước tính từ."
+ },
+ {
+  "q": "A: “这种茶叶怎么卖？” B: “五十块一＿＿，一斤五百。”",
+  "opts": [
+   "两",
+   "双",
+   "条",
+   "张"
+  ],
+  "ans": 0,
+  "exp": "两 = lạng (50 g), 1 斤 = 10 两, nên một lạng 50 tệ thì một cân 500 tệ."
+ },
+ {
+  "q": "Bạn nghe nhân viên nói: “本店今天满两百减五十。” Bạn mua đồ hết 260 tệ, bạn trả bao nhiêu?",
+  "opts": [
+   "210 tệ",
+   "200 tệ",
+   "250 tệ",
+   "130 tệ"
+  ],
+  "ans": 0,
+  "exp": "满两百减五十 = mua đủ 200 thì bớt 50 → 260 − 50 = 210 tệ (không phải giảm một nửa)."
+ },
+ {
+  "q": "“这个牌子的鞋最近＿＿了，一双才两百块。”",
+  "opts": [
+   "降价",
+   "低价",
+   "价钱",
+   "减少"
+  ],
+  "ans": 0,
+  "exp": "降价 là động từ (giảm giá), đứng trước 了; 低价 là danh từ (giá thấp), 价钱 là giá tiền."
+ },
+ {
+  "q": "“这个盒子太小了，这么多东西＿＿不下。”",
+  "opts": [
+   "装",
+   "穿",
+   "满",
+   "减"
+  ],
+  "ans": 0,
+  "exp": "装不下 = không đựng hết, không cho vào được; giống V不了 (bài 4) chỉ không làm được."
+ },
+ {
+  "q": "Khách hỏi mua một món đã hết hàng. Nhân viên nên nói:",
+  "opts": [
+   "抱歉，这种商品暂时没有了。",
+   "抱歉，这种商品暂时不有了。",
+   "抱歉，这种商品没有了暂时。",
+   "抱歉，这种商品暂时没有过。"
+  ],
+  "ans": 0,
+  "exp": "Phủ định của 有 luôn là 没有 (không nói 不有); 暂时 đứng trước động từ; 没有过 là “chưa từng có”, sai nghĩa."
+ },
+ {
+  "q": "“这家店＿＿卖衣服，还卖袜子和鞋。”",
+  "opts": [
+   "不光",
+   "不管",
+   "不过",
+   "不是"
+  ],
+  "ans": 0,
+  "exp": "不光……，还…… = không chỉ … mà còn …; 不管 = bất kể (bài 8), 不过 = nhưng."
+ },
+ {
+  "q": "A: “你为什么选这家饭馆？” — B đáp:",
+  "opts": [
+   "首先，这家的饺子很好吃；其次，价钱也不贵。",
+   "其次，这家的饺子很好吃；首先，价钱也不贵。",
+   "首先，这家的饺子很好吃；然后其次，价钱也不贵。",
+   "这家的饺子首先很好吃；价钱其次也不贵。"
+  ],
+  "ans": 0,
+  "exp": "Liệt kê lý do: 首先 (thứ nhất) đứng trước, 其次 (thứ hai) đứng sau, cả hai đứng đầu vế câu."
+ }
 ],
-
 "speaking": {
- "intro":"Nhấn nút loa nghe câu hỏi (câu hỏi phần Khởi động, câu hỏi đọc hiểu, kể lại bài khoá và đóng vai của sách), rồi tự ghi âm câu trả lời — cố dùng từ mới và 4 điểm ngữ pháp của bài: 究竟, 首先……然后/其次……, 加上, 对于.",
- "questions":[
-  {"q_zh":"当你想买一个东西时，会不会等它降价的时候才买？","q_vn":"Khi muốn mua một món đồ, bạn có đợi đến lúc nó giảm giá mới mua không?","hint":"我一般会 / 不会……，因为……，加上……","sample":"我一般会等它降价的时候才买。因为很多商品过一段时间就会降价，加上商场常常举办促销活动，等一等能省不少钱。不过，如果是马上就需要的东西，我就不等了。","sample_vn":"Tôi thường đợi đến khi nó giảm giá mới mua. Vì nhiều mặt hàng một thời gian sau sẽ giảm giá, thêm vào đó trung tâm thương mại hay tổ chức khuyến mãi, đợi một chút tiết kiệm được kha khá. Nhưng nếu là đồ cần ngay thì tôi không đợi.","note":"Câu hỏi phần Khởi động của sách; dùng 加上 (điểm 3)."},
-  {"q_zh":"买东西时，你觉得质量和价格哪个更重要？","q_vn":"Khi mua đồ, bạn thấy chất lượng và giá cả cái nào quan trọng hơn?","hint":"我觉得……更重要。首先……，其次……","sample":"我觉得质量更重要。首先，质量好的东西能用很长时间，其实更省钱；其次，质量不好的东西很快就坏了，最后还成了垃圾，不环保。当然，价格也要合适。","sample_vn":"Tôi thấy chất lượng quan trọng hơn. Thứ nhất, đồ chất lượng tốt dùng được lâu, thật ra còn tiết kiệm hơn; thứ hai, đồ kém chất lượng nhanh hỏng, cuối cùng thành rác, không bảo vệ môi trường. Tất nhiên giá cũng phải hợp lý.","note":"Câu hỏi phần Khởi động của sách; dùng 首先……，其次…… (điểm 2), ôn 环保 (Bài 10)."},
-  {"q_zh":"安妮为什么要买茶叶？关于买茶叶送人，售货员有什么建议？","q_vn":"Vì sao Annie mua trà? Về việc mua trà để biếu, người bán hàng có gợi ý gì?","hint":"安妮想……，再……。售货员建议她……","sample":"安妮想买一些茶叶自己喝，再买些送人。售货员建议她买个盒子，把送人的茶叶装进去。","sample_vn":"Annie muốn mua một ít trà để tự uống, mua thêm ít để biếu người khác. Người bán gợi ý cô mua một cái hộp, đựng phần trà biếu vào đó.","note":"Câu hỏi bài khoá 1."},
-  {"q_zh":"请根据提示复述课文一。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 1.","hint":"安妮到茶叶店买茶叶，售货员问她……。她不知道究竟买……。安妮想买一些茶……，再……。但她想买的一种绿茶……。安妮最后买了……","sample":"安妮到茶叶店买茶叶，售货员问她要什么茶。她不知道究竟买哪种好，售货员向她介绍了不同的茶叶。安妮想买一些茶自己喝，再买些送人。但她想买的一种绿茶暂时没有了。售货员向她介绍说，自己喝的话，可以买另一种绿茶，今天满二两送半两，超过半斤再送小礼物；送人的话，可以买个盒子装进去。安妮最后买了六两绿茶和一个盒子，盒子里装了半斤，剩下的用纸包起来了。","sample_vn":"Annie đến tiệm trà mua trà, người bán hỏi cô muốn trà gì. Cô không biết rốt cuộc nên mua loại nào, người bán giới thiệu các loại trà khác nhau… Cuối cùng Annie mua sáu lạng trà xanh và một cái hộp, trong hộp để nửa cân, phần còn lại gói giấy.","note":"Bài tập 复述 của sách (trang 40)."},
-  {"q_zh":"听了广播后，王一雪为什么要过去看看？","q_vn":"Nghe loa thông báo xong, vì sao Vương Nhất Tuyết muốn qua xem?","hint":"因为广播里说……，价格……","sample":"因为广播里说商场正在举办运动鞋促销活动，全场五折，价格减了一半。","sample_vn":"Vì loa nói trung tâm thương mại đang khuyến mãi giày thể thao, toàn bộ giảm 50%, giá giảm một nửa.","note":"Câu hỏi bài khoá 2."},
-  {"q_zh":"王一雪是怎么决定买那双运动鞋的？","q_vn":"Vương Nhất Tuyết đã quyết định mua đôi giày thể thao đó như thế nào?","hint":"她首先……，然后再……。这个牌子……，样式……，价钱……","sample":"她首先看样子喜不喜欢，然后再看质量怎么样、价格合适不合适。这个牌子质量很好，鞋的样式很新，今天又降价，价钱也不高，所以她决定买一双37号的。","sample_vn":"Trước hết cô xem kiểu dáng có thích không, sau đó mới xem chất lượng, giá cả có hợp lý không. Hãng này chất lượng tốt, kiểu dáng mới, hôm nay lại giảm giá, giá không cao, nên cô quyết định mua một đôi số 37.","note":"Câu hỏi bài khoá 2; dùng 首先……，然后…… (điểm 2)."},
-  {"q_zh":"年轻人为什么喜欢徐前店里的东西？徐前店里的生意做得怎么样？","q_vn":"Vì sao người trẻ thích đồ ở tiệm Từ Tiền? Việc buôn bán của tiệm thế nào?","hint":"因为徐前自己……，知道……。店里商品种类……，既有……，也有……。加上……，使得……","sample":"因为徐前自己就是年轻人，知道年轻人喜欢什么。他的店里商品种类不少，既有老游戏机，也有流行的盲盒。东西适合年轻人，加上店员态度友好，使得小店的生意越来越好。","sample_vn":"Vì Từ Tiền chính là người trẻ, biết người trẻ thích gì. Tiệm anh có nhiều loại hàng, vừa có máy game cũ vừa có hộp mù thịnh hành. Đồ hợp với người trẻ, thêm vào đó nhân viên thân thiện, khiến tiệm buôn bán ngày càng tốt.","note":"Câu hỏi bài khoá 3; dùng 加上 (điểm 3) + 使得, ôn 既……也…… (Bài 4)."},
-  {"q_zh":"请根据提示复述课文三。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 3.","hint":"李文的朋友徐前在商业区……，专门卖……。他的店里商品……，既有……，也有……。徐前说……。小店虽然小，但……，加上……，使得……","sample":"李文的朋友徐前在商业区开了家小店，专门卖年轻人喜欢的东西。他的店里商品种类不少，既有几十年前的老游戏机，也有最近流行的盲盒等等，很吸引年轻人。徐前说，自己就是年轻人，知道年轻人喜欢什么。他也常和来店里的年轻顾客聊天儿，了解他们的兴趣爱好。前段时间刚进的盲盒很快就卖到了缺货。许多年轻人表示，在徐前的店里能感受到快乐。小店虽然小，但东西适合年轻人，加上店员态度友好，使得小店的生意越来越好。李文觉得自己的朋友真会做生意。","sample_vn":"Bạn của Lý Văn là Từ Tiền mở một tiệm nhỏ ở khu thương mại, chuyên bán đồ người trẻ thích… Tiệm tuy nhỏ nhưng đồ hợp với người trẻ, thêm vào đó nhân viên thân thiện, khiến việc buôn bán ngày càng tốt. Lý Văn thấy bạn mình thật biết làm ăn.","note":"Bài tập 复述 của sách (trang 44)."},
-  {"q_zh":"冷静购物者和不冷静购物者最大的不同是什么？王一飞是冷静购物者吗？为什么？","q_vn":"Điểm khác nhau lớn nhất giữa người mua sắm tỉnh táo và không tỉnh táo là gì? Vương Nhất Phi có phải người mua sắm tỉnh táo không? Vì sao?","hint":"冷静购物者……才买；不冷静购物者只要……就买。王一飞……，对于想买的东西，她不光……，还……","sample":"冷静购物者真正需要一件东西时才买，还会仔细比较；不冷静购物者只要感觉喜欢就买，不管需要不需要。王一飞是冷静购物者，因为她从来不随便买东西，对于想买的东西，她不光看质量，还看价格，都是仔细比较后才决定买不买。","sample_vn":"Người mua sắm tỉnh táo chỉ mua khi thật sự cần và còn so sánh kỹ; người không tỉnh táo cứ thấy thích là mua, bất kể có cần hay không. Vương Nhất Phi là người tỉnh táo, vì cô chưa bao giờ mua đồ tùy tiện; với thứ muốn mua, cô không chỉ xem chất lượng mà còn xem giá, đều so sánh kỹ rồi mới quyết định.","note":"Câu hỏi bài khoá 4; dùng 对于 (điểm 4), ôn 从来 (Bài 9) và 不光……还…… (Bài 3)."},
-  {"q_zh":"角色扮演：两人一组，一人扮演顾客，一人扮演售货员。顾客想买一个手机，售货员向顾客做介绍，最后顾客觉得合适，买下了这个手机。","q_vn":"Đóng vai: hai người một nhóm, một người là khách hàng, một người là nhân viên bán hàng. Khách muốn mua điện thoại, nhân viên giới thiệu, cuối cùng khách thấy hợp và mua chiếc điện thoại đó.","hint":"顾客：……究竟买哪个好呢？ 售货员：首先……，其次……，加上今天……。 顾客：对于……，我……","sample":"顾客：您好，我想买一个手机，可是这里手机这么多，究竟买哪个好呢？售货员：您好！您平时主要用手机做什么？顾客：我经常拍照，也常用手机看电影。售货员：那我建议您看看这个。首先，它拍照特别清楚；其次，用一整天都不用充电。加上今天正在做促销活动，一部减三百块，非常合适。顾客：这个牌子我知道，质量不错，样式也挺新的。现在多少钱？售货员：原来三千，现在两千七，满两千还送一副耳机。顾客：对于这个价钱，我挺满意的。就买这个吧！售货员：好的，请到这边付钱。","sample_vn":"Khách: Chào anh, tôi muốn mua điện thoại, nhưng ở đây nhiều thế này, rốt cuộc nên mua chiếc nào? — Nhân viên: Chào chị! Chị thường dùng điện thoại để làm gì? — Khách: Tôi hay chụp ảnh, cũng hay xem phim. — Nhân viên: Vậy chị xem chiếc này. Thứ nhất, chụp ảnh rất nét; thứ hai, dùng cả ngày không cần sạc. Thêm vào đó hôm nay đang khuyến mãi, mỗi chiếc giảm 300 tệ, rất đáng. — Khách: Hãng này tôi biết, chất lượng tốt, kiểu dáng cũng mới. Giờ bao nhiêu tiền? — Nhân viên: Giá gốc 3000, giờ 2700, mua đủ 2000 còn tặng một bộ tai nghe. — Khách: Với giá này tôi rất hài lòng. Lấy chiếc này nhé! — Nhân viên: Vâng, mời chị qua bên này thanh toán.","note":"Hoạt động 任务活动 · 角色扮演 (đóng vai) của sách, trang 48 — dùng đủ 4 điểm ngữ pháp: 究竟, 首先……其次……, 加上, 对于 cùng các từ 牌子, 样式, 促销, 减, 满."}
+ "intro": "Nhấn nút loa nghe câu hỏi (câu hỏi phần Khởi động, câu hỏi đọc hiểu, kể lại bài khoá và đóng vai của sách), rồi tự ghi âm câu trả lời — cố dùng từ mới và 4 điểm ngữ pháp của bài: 究竟, 首先……然后……, 加上, 对于.",
+ "questions": [
+  {
+   "q_zh": "当你想买一个东西时，会不会等它降价的时候才买？",
+   "q_vn": "Khi muốn mua một món đồ, bạn có đợi đến lúc nó giảm giá mới mua không?",
+   "hint": "我一般会 / 不会……，因为……，加上……",
+   "sample": "我一般会等一等。很多商品过一段时间就便宜了，加上商场常常有促销活动，等一等能省不少钱。不过，要是马上就需要，我就不等了。",
+   "sample_vn": "Tôi thường đợi một chút. Nhiều mặt hàng một thời gian sau sẽ rẻ đi, thêm vào đó trung tâm thương mại hay có khuyến mãi, đợi một chút tiết kiệm được kha khá. Nhưng nếu cần ngay thì tôi không đợi.",
+   "note": "Câu hỏi phần Khởi động của sách; dùng 加上 (điểm 3), ôn 要是……就…… (bài 1)."
+  },
+  {
+   "q_zh": "买东西时，你觉得质量和价格哪个更重要？",
+   "q_vn": "Khi mua đồ, bạn thấy chất lượng và giá cả cái nào quan trọng hơn?",
+   "hint": "我觉得……更重要。首先……，再说……",
+   "sample": "我觉得质量更重要。首先，质量好的东西能用很长时间，其实更省钱；再说，质量不好的东西很快就坏了，还得再买新的，也不环保。当然，价格也要合适。",
+   "sample_vn": "Tôi thấy chất lượng quan trọng hơn. Trước hết, đồ chất lượng tốt dùng được lâu, thật ra còn tiết kiệm hơn; hơn nữa, đồ kém chất lượng nhanh hỏng, cuối cùng thành rác, cũng không bảo vệ môi trường. Tất nhiên giá cũng phải hợp lý.",
+   "note": "Câu hỏi phần Khởi động của sách; dùng 首先 (điểm 2), ôn 再说 (bài 4) và 环保 (bài 10)."
+  },
+  {
+   "q_zh": "安妮为什么要买茶叶？关于买茶叶送人，售货员有什么建议？",
+   "q_vn": "Vì sao Annie mua trà? Về việc mua trà để biếu, người bán hàng có gợi ý gì?",
+   "hint": "安妮想……，再……。售货员建议她……",
+   "sample": "安妮想买点儿茶叶给自己喝，也想买点儿给朋友。售货员建议她买个盒子，把给朋友的茶叶放在盒子里。",
+   "sample_vn": "Annie muốn mua ít trà cho mình uống, cũng muốn mua ít tặng bạn. Người bán gợi ý cô mua một cái hộp, để phần trà tặng bạn vào hộp.",
+   "note": "Câu hỏi bài khoá 1."
+  },
+  {
+   "q_zh": "请你讲一讲安妮在茶叶店买茶叶的经过。",
+   "q_vn": "Dựa vào gợi ý, kể lại bài khoá 1.",
+   "hint": "安妮到茶叶店买茶叶，售货员问她……。她不知道究竟买……。安妮想买一些茶……，再……。但她想买的一种绿茶……。安妮最后买了……",
+   "sample": "安妮到茶叶店买茶叶，售货员问她要什么茶。她不知道究竟买哪种好，售货员向她介绍了不同的茶叶。安妮想买一些茶自己喝，再买些送人。但她想买的一种绿茶暂时没有了。售货员向她介绍说，自己喝的话，可以买另一种绿茶，今天满二两送半两，超过半斤再送小礼物；送人的话，可以买个盒子装进去。安妮最后买了六两绿茶和一个盒子，盒子里装了半斤，剩下的用纸包起来了。",
+   "sample_vn": "Annie đến tiệm trà mua trà, người bán hỏi cô muốn trà gì. Cô không biết rốt cuộc nên mua loại nào, người bán giới thiệu các loại trà khác nhau… Cuối cùng Annie mua sáu lạng trà xanh và một cái hộp, trong hộp để nửa cân, phần còn lại gói giấy.",
+   "note": "Bài tập kể lại bài khoá của sách (trang 40)."
+  },
+  {
+   "q_zh": "听了广播后，王一雪为什么要过去看看？",
+   "q_vn": "Nghe loa thông báo xong, vì sao Vương Nhất Tuyết muốn qua xem?",
+   "hint": "因为广播里说……，价格……",
+   "sample": "因为商场的运动鞋正在做活动，价格只有平时的一半。",
+   "sample_vn": "Vì giày thể thao ở trung tâm thương mại đang khuyến mãi, giá chỉ bằng một nửa ngày thường.",
+   "note": "Câu hỏi bài khoá 2."
+  },
+  {
+   "q_zh": "王一雪是怎么决定买那双运动鞋的？",
+   "q_vn": "Vương Nhất Tuyết đã quyết định mua đôi giày thể thao đó như thế nào?",
+   "hint": "她首先……，然后再……。这个牌子……，样式……，价钱……",
+   "sample": "她先看自己喜欢不喜欢这双鞋的样子，接着看质量和价格。这个牌子的鞋她知道，质量不错，样式新，加上今天又降价了，所以她要了一双37号的。",
+   "sample_vn": "Cô xem trước mình có thích kiểu giày không, tiếp đó xem chất lượng và giá. Hãng này cô biết, chất lượng tốt, kiểu dáng mới, thêm vào đó hôm nay lại giảm giá, nên cô lấy một đôi số 37.",
+   "note": "Câu hỏi bài khoá 2; dùng 首先……，然后…… (điểm 2) và 加上 (điểm 3)."
+  },
+  {
+   "q_zh": "年轻人为什么喜欢徐前店里的东西？徐前店里的生意做得怎么样？",
+   "q_vn": "Vì sao người trẻ thích đồ ở tiệm Từ Tiền? Việc buôn bán của tiệm thế nào?",
+   "hint": "因为徐前自己……，知道……。店里商品种类……，既有……，也有……。加上……，使得……",
+   "sample": "徐前自己也很年轻，最清楚年轻人想要什么。他的店里东西很多，老的新的都有。店员对客人都很热情，所以来买东西的人越来越多，生意非常好。",
+   "sample_vn": "Từ Tiền cũng còn trẻ, hiểu rõ nhất người trẻ muốn gì. Tiệm anh có rất nhiều đồ, cũ mới đều có. Nhân viên đều nhiệt tình với khách, nên người đến mua ngày càng đông, buôn bán rất tốt.",
+   "note": "Câu hỏi bài khoá 3; có thể dùng 加上 (điểm 3) + 使得, ôn 既……也…… (bài 4)."
+  },
+  {
+   "q_zh": "徐前的小店为什么越开越好？请你把他的故事讲给大家听。",
+   "q_vn": "Dựa vào gợi ý, kể lại bài khoá 3.",
+   "hint": "李文的朋友徐前在商业区……，专门卖……。他的店里商品……，既有……，也有……。徐前说……。小店虽然小，但……，加上……，使得……",
+   "sample": "李文的朋友徐前在商业区开了家小店，专门卖年轻人喜欢的东西。他的店里商品种类不少，既有几十年前的老游戏，也有最近流行的盲盒等等，很吸引年轻人。徐前说，自己就是年轻人，知道年轻人喜欢什么。他也常和来店里的年轻顾客聊天儿，了解他们的兴趣爱好。前段时间刚进的盲盒很快就卖到了缺货。许多年轻人表示，在徐前的店里能感受到快乐。小店虽然小，但东西适合年轻人，加上店员态度友好，使得小店的生意越来越好。李文觉得自己的朋友真会做生意。",
+   "sample_vn": "Bạn của Lý Văn là Từ Tiền mở một tiệm nhỏ ở khu thương mại, chuyên bán đồ người trẻ thích… Tiệm tuy nhỏ nhưng đồ hợp với người trẻ, thêm vào đó nhân viên thân thiện, khiến việc buôn bán ngày càng tốt. Lý Văn thấy bạn mình thật biết làm ăn.",
+   "note": "Bài tập kể lại bài khoá của sách (trang 44)."
+  },
+  {
+   "q_zh": "冷静购物者和不冷静购物者最大的不同是什么？王一飞是冷静购物者吗？为什么？",
+   "q_vn": "Điểm khác nhau lớn nhất giữa người mua sắm tỉnh táo và không tỉnh táo là gì? Vương Nhất Phi có phải người mua sắm tỉnh táo không? Vì sao?",
+   "hint": "冷静购物者……才买；不冷静购物者只要……就买。王一飞……，对于想买的东西，她不光……，还……",
+   "sample": "冷静购物者真的需要才买，买以前还要比一比；不冷静购物者一看到喜欢的就买，也不想想有没有用。王一飞是冷静购物者，她从来不随便花钱，买什么都要先看好质量和价格。",
+   "sample_vn": "Người mua sắm tỉnh táo thật sự cần mới mua, trước khi mua còn so sánh; người không tỉnh táo vừa thấy thích là mua, cũng không nghĩ xem có dùng được không. Vương Nhất Phi là người tỉnh táo, cô chưa bao giờ tiêu tiền tùy tiện, mua gì cũng xem kỹ chất lượng và giá trước.",
+   "note": "Câu hỏi bài khoá 4; dùng 对于 (điểm 4), ôn 从来 (bài 9) và 不光……还…… (bài 3)."
+  },
+  {
+   "q_zh": "两个人一起练习：一个人是顾客，一个人是售货员。顾客想买一个手机，售货员给顾客做介绍，最后顾客觉得合适，买下了这个手机。",
+   "q_vn": "Đóng vai: hai người một nhóm, một người là khách hàng, một người là nhân viên bán hàng. Khách muốn mua điện thoại, nhân viên giới thiệu, cuối cùng khách thấy hợp và mua chiếc điện thoại đó.",
+   "hint": "顾客：……究竟买哪个好呢？ 售货员：首先……，然后……，加上今天……。 顾客：对于……，我……",
+   "sample": "顾客：您好，我想买一个手机，可是这里手机这么多，究竟买哪个好呢？售货员：您好！您平时主要用手机做什么？顾客：我经常拍照，也常用手机看电影。售货员：那您看看这个。首先，它拍照特别清楚；还有，用一天都不用充电。加上今天正在做促销活动，一部减三百块，非常值。顾客：这个牌子我知道，样式也挺新的。现在多少钱？售货员：以前三千，现在两千七，满两千还送一个耳机。顾客：对于这个价钱，我挺满意的。就买这个吧！售货员：好的，请到这边付钱。",
+   "sample_vn": "Khách: Chào anh, tôi muốn mua điện thoại, nhưng ở đây nhiều thế này, rốt cuộc nên mua chiếc nào? — Nhân viên: Chào chị! Chị thường dùng điện thoại để làm gì? — Khách: Tôi hay chụp ảnh, cũng hay xem phim. — Nhân viên: Vậy chị xem chiếc này. Trước hết, chụp ảnh rất nét; còn nữa, dùng cả ngày không cần sạc. Thêm vào đó hôm nay đang khuyến mãi, mỗi chiếc giảm 300 tệ, rất đáng. — Khách: Hãng này tôi biết, kiểu dáng cũng mới. Giờ bao nhiêu tiền? — Nhân viên: Trước 3000, giờ 2700, mua đủ 2000 còn tặng một tai nghe. — Khách: Với giá này tôi rất hài lòng. Lấy chiếc này nhé! — Nhân viên: Vâng, mời chị qua bên này thanh toán.",
+   "note": "Hoạt động đóng vai của sách, trang 48 — dùng đủ 4 điểm ngữ pháp: 究竟, 首先……, 加上, 对于 cùng các từ 牌子, 样式, 促销, 减, 满."
+  }
  ]
 },
-
 "translate": [
- ["Ở đây nhiều loại trà thế này, rốt cuộc nên mua loại nào đây?","这里茶叶这么多，究竟买哪种好呢？"],
- ["Trước hết xem kiểu dáng có thích không, sau đó mới xem chất lượng thế nào.","首先看样子喜不喜欢，然后再看质量怎么样。"],
- ["Đồ hợp với người trẻ, thêm vào đó nhân viên thân thiện, khiến việc buôn bán của tiệm ngày càng tốt.","东西适合年轻人，加上店员态度友好，使得小店的生意越来越好。"],
- ["Đối với những thứ muốn mua, cô ấy không chỉ xem chất lượng mà còn xem giá.","对于想买的东西，她不光看质量，还看价格。"],
- ["Xin lỗi, tạm thời hết hàng.","抱歉，暂时没有。"],
- ["Hãng này chất lượng rất tốt, hôm nay lại giảm giá.","这个牌子质量很好，今天又降价了。"]
+ [
+  "Bạn nói lâu như vậy rồi, rốt cuộc bạn muốn nói gì?",
+  "你说了这么久，究竟想说什么？"
+ ],
+ [
+  "Đến Trung Quốc rồi, trước hết tôi phải học tốt tiếng Trung, sau đó mới tìm việc.",
+  "到了中国，我首先要学好中文，然后再找工作。"
+ ],
+ [
+  "Giá rẻ, thêm vào đó chất lượng cũng tốt, khiến điện thoại hãng này bán rất chạy.",
+  "价钱便宜，加上质量也不错，使得这个牌子的手机卖得特别好。"
+ ],
+ [
+  "Đối với người mới bắt đầu học tiếng Trung, chữ Hán là khó nhất.",
+  "对于刚开始学中文的人来说，汉字最难。"
+ ],
+ [
+  "Gần nhà tôi mới mở một khu thương mại, cuối tuần có rất nhiều người đến.",
+  "我家附近新开了一个商业区，周末去的人很多。"
+ ],
+ [
+  "Bất kể mua gì, mẹ tôi cũng đều xem kỹ giá trước.",
+  "不管买什么东西，我妈妈都要先仔细看看价钱。"
+ ]
 ],
 "translateRev": [
- ["Trà chủ yếu chia thành hồng trà, lục trà…","茶叶主要分为红茶、绿茶等。"],
- ["Hôm nay mua đủ hai lạng tặng nửa lạng, quá nửa cân còn tặng thêm quà nhỏ.","今天满二两送半两，超过半斤再送小礼物。"],
- ["Lô hộp mù vừa nhập về bán nhanh đến mức hết hàng.","刚进的盲盒很快就卖到了缺货。"],
- ["Người mua sắm tỉnh táo thường chỉ mua khi thật sự cần một món đồ.","冷静购物者往往是真正需要一件东西时才买。"],
- ["Chọn cái phù hợp mới là tốt nhất.","选择合适的才是最好的。"]
+ [
+  "Một người mua sắm tỉnh táo sẽ không vì quảng cáo mà mua đồ.",
+  "一个冷静的购物者不会因为广告就买东西。"
+ ],
+ [
+  "Mỗi dịp nghỉ lễ, các cửa hàng ở đây đều làm khuyến mãi.",
+  "每到假日，这里的商店都会做促销活动。"
+ ],
+ [
+  "Món ăn ở nhà ăn này có rất nhiều loại, sinh viên đều thích đến đây ăn.",
+  "这个食堂的菜种类很多，学生都喜欢来这儿吃饭。"
+ ],
+ [
+  "Giám đốc cho biết tháng sau giá hàng hoá sẽ không thay đổi.",
+  "经理表示，下个月商品的价钱不会变。"
+ ]
 ],
-
 "writing": {
  "kieu":"sgk","soChu":140,"tieuDe":"写作 — viết theo đề của sách (ít nhất 140 chữ)",
  "nhanDe":"写作",

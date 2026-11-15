@@ -4693,391 +4693,541 @@ var dialogData = [
 ];
 var listenData = [
  {
-  "audio": "同学，请问在哪儿办学生证？在二楼的办公室。要带什么材料？带上你的护照和入学通知书就可以了。谢谢！办好以后，下周一就能用学生证去图书馆借书了。",
+  "audio": "要是你想申请奖学金，下个星期五以前就要把材料给李老师。",
   "questions": [
    {
-    "q": "办学生证要带什么？",
+    "q": "Muốn xin học bổng thì phải làm gì?",
     "opts": [
-     "护照和入学通知书",
-     "签证和照片",
-     "成绩单"
+     "Gặp thầy Lý vào thứ Sáu tuần này",
+     "Nộp hồ sơ cho thầy Lý trước thứ Sáu tuần sau",
+     "Nộp hồ sơ trên mạng"
     ],
-    "ans": 0
-   },
-   {
-    "q": "有了学生证，可以做什么？",
-    "opts": [
-     "去食堂吃饭",
-     "去图书馆借书",
-     "申请奖学金"
-    ],
-    "ans": 1
+    "ans": 1,
+    "exp": "下个星期五以前 = trước thứ Sáu tuần sau; 要是……，就…… = nếu … thì …."
    }
   ]
  },
  {
-  "audio": "小王，你申请奖学金了吗？申请了，可是我不知道能不能获得。你成绩那么好，平时表现也不错，一定没问题。要是能申请到就好了，这样能减轻爸爸妈妈的经济压力。别担心，我们一起加油！",
+  "audio": "学校有三个食堂，二号食堂的饭最好吃，但是中午人特别多。",
   "questions": [
    {
-    "q": "小王为什么想获得奖学金？",
+    "q": "Nhà ăn nào ngon nhất?",
     "opts": [
-     "想买新电脑",
-     "想减轻家里的经济压力",
-     "想去旅游"
+     "Nhà ăn số một",
+     "Nhà ăn số ba",
+     "Nhà ăn số hai"
     ],
-    "ans": 1
+    "ans": 2,
+    "exp": "二号食堂的饭最好吃 = cơm nhà ăn số hai ngon nhất."
    },
    {
-    "q": "朋友觉得小王怎么样？",
+    "q": "Buổi trưa nhà ăn đó thế nào?",
     "opts": [
-     "成绩好，表现也不错",
-     "不太努力",
-     "压力很大"
+     "Rất đông người",
+     "Đóng cửa",
+     "Rất vắng"
     ],
-    "ans": 0
+    "ans": 0,
+    "exp": "中午人特别多 = buổi trưa đặc biệt đông người."
    }
   ]
  },
  {
-  "audio": "安妮，你本科毕业以后打算做什么？我想申请读硕士，研究国际中文教育。为什么选这个专业？一方面我对教育有热情，另一方面我将来想当一名中文老师。",
+  "audio": "我选国际贸易专业，一方面是因为我对经济感兴趣，另一方面是因为我爸爸也在这方面工作。",
   "questions": [
    {
-    "q": "安妮本科毕业以后想做什么？",
+    "q": "Người nói chọn ngành gì?",
     "opts": [
-     "去公司工作",
-     "读硕士",
-     "回国当医生"
+     "Thương mại quốc tế",
+     "Giáo dục quốc tế",
+     "Y học"
     ],
-    "ans": 1
+    "ans": 0,
+    "exp": "国际贸易专业 = chuyên ngành thương mại quốc tế."
    },
    {
-    "q": "安妮为什么选这个专业？",
+    "q": "Lý do thứ hai là gì?",
     "opts": [
-     "因为好找工作",
-     "因为对教育有热情，将来想当老师",
-     "因为家人的要求"
+     "Dễ xin học bổng",
+     "Bố cũng làm trong lĩnh vực này",
+     "Bạn bè khuyên"
     ],
-    "ans": 1
+    "ans": 1,
+    "exp": "另一方面……我爸爸也在这方面工作 = mặt khác bố tôi cũng làm trong lĩnh vực này."
+   }
+  ]
+ },
+ {
+  "audio": "我哥哥本科学的是教育，现在在读硕士，他说将来想当一名大学教师。",
+  "questions": [
+   {
+    "q": "Bây giờ anh trai đang học gì?",
+    "opts": [
+     "Đại học",
+     "Thạc sĩ",
+     "Tiến sĩ"
+    ],
+    "ans": 1,
+    "exp": "现在在读硕士 = bây giờ đang học thạc sĩ; 本科 = hệ đại học (đã học xong)."
+   },
+   {
+    "q": "Sau này anh ấy muốn làm gì?",
+    "opts": [
+     "Làm ở công ty",
+     "Làm bác sĩ",
+     "Làm giảng viên đại học"
+    ],
+    "ans": 2,
+    "exp": "当一名大学教师 = làm một giáo viên đại học; 当 + nghề."
+   }
+  ]
+ },
+ {
+  "audio": "随着考试越来越近，图书馆里学习的人也越来越多了。",
+  "questions": [
+   {
+    "q": "Vì sao thư viện ngày càng đông?",
+    "opts": [
+     "Vì trời lạnh",
+     "Vì thư viện mới mở",
+     "Vì sắp đến kỳ thi"
+    ],
+    "ans": 2,
+    "exp": "随着考试越来越近 = cùng với việc kỳ thi ngày càng đến gần."
+   }
+  ]
+ },
+ {
+  "audio": "明天你就要比赛了吧？加油！我们都会去看你。",
+  "questions": [
+   {
+    "q": "Ngày mai người nghe làm gì?",
+    "opts": [
+     "Thi đấu",
+     "Đi xem thi đấu",
+     "Nghỉ ở nhà"
+    ],
+    "ans": 0,
+    "exp": "你就要比赛了 = bạn sắp thi đấu rồi; 加油 = cố lên."
+   },
+   {
+    "q": "Những người nói sẽ làm gì?",
+    "opts": [
+     "Ở nhà ôn bài",
+     "Đến xem bạn ấy thi",
+     "Đi thi cùng"
+    ],
+    "ans": 1,
+    "exp": "我们都会去看你 = chúng tôi đều sẽ đến xem bạn."
+   }
+  ]
+ },
+ {
+  "audio": "刚来的时候我很不适应这里的天气，现在已经习惯了，还经常和中国同学一起参加活动。",
+  "questions": [
+   {
+    "q": "Bây giờ người nói thế nào?",
+    "opts": [
+     "Vẫn chưa quen thời tiết",
+     "Đã quen và hay tham gia hoạt động",
+     "Muốn về nước"
+    ],
+    "ans": 1,
+    "exp": "现在已经习惯了 = bây giờ đã quen rồi; 参加活动 = tham gia hoạt động."
    }
   ]
  }
 ];
 var matchData = [
  {
-  "left": "申请",
-  "right": "奖学金"
- },
- {
   "left": "减轻",
-  "right": "经济压力"
+  "right": "学习压力"
  },
  {
   "left": "适应",
-  "right": "大学生活"
+  "right": "那里的天气"
+ },
+ {
+  "left": "获得",
+  "right": "好成绩"
+ },
+ {
+  "left": "一座",
+  "right": "高楼"
  },
  {
   "left": "参加",
   "right": "校园活动"
  },
  {
-  "left": "国际",
-  "right": "贸易"
- },
- {
-  "left": "办理",
-  "right": "入学手续"
- },
- {
-  "left": "成为",
+  "left": "当",
   "right": "一名教师"
  },
  {
-  "left": "一方面……",
-  "right": "另一方面……"
+  "left": "跟中国同学",
+  "right": "交流"
+ },
+ {
+  "left": "国际",
+  "right": "贸易"
  }
 ];
 var fillData = [
  {
-  "pre": "你们以后有",
+  "pre": "图书馆里不能吃",
   "blank": "任何",
-  "post": "问题都可以来找我。",
+  "post": "东西，喝水也要去外面。",
   "hint": "(bất kỳ)",
   "ans": "任何",
-  "exp": "任何 + N + 都 + V."
+  "exp": "Phủ định + 任何 + danh từ: 不能吃任何东西 = không được ăn bất cứ thứ gì."
  },
  {
-  "pre": "要是申请到奖学金，就能",
-  "blank": "减轻",
-  "post": "不少经济压力。",
-  "hint": "(giảm bớt)",
-  "ans": "减轻",
-  "exp": "减轻 + 压力."
+  "pre": "你",
+  "blank": "要是",
+  "post": "对这个专业感兴趣，就去问问李老师吧。",
+  "hint": "(nếu)",
+  "ans": "要是",
+  "exp": "要是 có thể đứng sau chủ ngữ: 你要是……，就…… = nếu bạn … thì …."
  },
  {
   "pre": "",
   "blank": "随着",
-  "post": "中国的发展，越来越多的外国学生来中国学习。",
+  "post": "手机越来越方便，现在很多人出门不带钱了。",
   "hint": "(cùng với)",
   "ans": "随着",
-  "exp": "随着 + N 的发展."
+  "exp": "随着 + sự thay đổi (越来越……), vế sau là kết quả: cùng với việc điện thoại ngày càng tiện …."
  },
  {
-  "pre": "通过这些交流，外国学生能更快地",
-  "blank": "适应",
-  "post": "中国的大学生活。",
-  "hint": "(thích nghi)",
-  "ans": "适应",
-  "exp": "适应 + 生活 / 环境."
+  "pre": "我每天早上去跑步，一方面是为了身体健康，",
+  "blank": "另一方面",
+  "post": "也能让我晚上睡得更好。",
+  "hint": "(mặt khác)",
+  "ans": "另一方面",
+  "exp": "一方面……，另一方面…… = một mặt …, mặt khác …; vế sau hay có 也."
  },
  {
-  "pre": "安妮以后想",
+  "pre": "我姐姐大学学的是教育，现在在一个小学",
   "blank": "当",
-  "post": "一名中文老师。",
+  "post": "老师。",
   "hint": "(làm nghề)",
   "ans": "当",
-  "exp": "当 + nghề nghiệp."
+  "exp": "当 + nghề nghiệp = làm …: 当老师 = làm giáo viên."
  },
  {
-  "pre": "我想了解更多国际贸易",
-  "blank": "方面",
-  "post": "的知识。",
-  "hint": "(về mặt)",
-  "ans": "方面",
-  "exp": "N + 方面的知识."
+  "pre": "老师，申请奖学金需要准备哪些",
+  "blank": "材料",
+  "post": "？",
+  "hint": "(hồ sơ)",
+  "ans": "材料",
+  "exp": "材料 = hồ sơ, giấy tờ cần nộp: 申请材料 = hồ sơ xin."
  },
  {
-  "pre": "好像成绩好、",
+  "pre": "刚到一个新地方，很多人都要过一段时间才能",
+  "blank": "适应",
+  "post": "新环境。",
+  "hint": "(thích nghi)",
+  "ans": "适应",
+  "exp": "适应 + 环境 / 生活 / 天气 = thích nghi với …; ôn 才: phải … mới …."
+ },
+ {
+  "pre": "我爸爸是大学老师，他",
+  "blank": "研究",
+  "post": "中国历史已经二十年了。",
+  "hint": "(nghiên cứu)",
+  "ans": "研究",
+  "exp": "研究 + lĩnh vực = nghiên cứu …; ôn bổ ngữ thời lượng: 二十年了."
+ },
+ {
+  "pre": "",
+  "blank": "通过",
+  "post": "这次比赛，我认识了很多新朋友。",
+  "hint": "(thông qua)",
+  "ans": "通过",
+  "exp": "通过 + sự việc / cách làm = thông qua …, nhờ … mà …."
+ },
+ {
+  "pre": "这个学期你的",
   "blank": "表现",
-  "post": "好的学生都有机会获得奖学金。",
-  "hint": "(biểu hiện)",
+  "post": "很好，老师和同学都很满意。",
+  "hint": "(sự thể hiện)",
   "ans": "表现",
-  "exp": "表现好 = biểu hiện tốt."
+  "exp": "表现 làm danh từ: 你的表现很好 = bạn thể hiện rất tốt."
  },
  {
-  "pre": "我觉得学校就像一",
-  "blank": "座",
-  "post": "小城市，什么都有。",
-  "hint": "(lượng từ cho thành phố)",
-  "ans": "座",
-  "exp": "一座城市 / 一座山."
+  "pre": "去银行的时候，别忘了带上你的",
+  "blank": "证件",
+  "post": "。",
+  "hint": "(giấy tờ tuỳ thân)",
+  "ans": "证件",
+  "exp": "证件 = giấy tờ (hộ chiếu, thẻ…): 带上证件 = mang theo giấy tờ."
  },
  {
-  "pre": "她",
-  "blank": "获得",
-  "post": "了三年的奖学金，高兴极了。",
-  "hint": "(giành được)",
-  "ans": "获得",
-  "exp": "获得 + 奖学金."
+  "pre": "这学期我选了五门",
+  "blank": "课程",
+  "post": "，每天都很忙。",
+  "hint": "(môn học)",
+  "ans": "课程",
+  "exp": "门 là lượng từ của môn học: 五门课程 = năm môn học."
  },
  {
-  "pre": "还有人对教育有热情，想要",
-  "blank": "成为",
-  "post": "一名教师。",
-  "hint": "(trở thành)",
-  "ans": "成为",
-  "exp": "成为 + danh từ."
+  "pre": "我有两个哥哥，一个在北京工作，",
+  "blank": "另",
+  "post": "一个在上海读书。",
+  "hint": "(… kia)",
+  "ans": "另",
+  "exp": "一个……，另一个…… = một người …, người kia …; 另 đứng trước số + lượng từ."
  }
 ];
 var sortData = [
  {
   "words": [
-   "你们",
-   "以后",
-   "有",
-   "任何",
-   "问题",
-   "都",
-   "可以",
-   "来找我",
-   "。"
-  ],
-  "ans": "你们以后有任何问题都可以来找我。",
-  "audio": "你们以后有任何问题都可以来找我。"
- },
- {
-  "words": [
    "要是",
-   "申请到",
-   "奖学金",
+   "没有",
+   "签证",
    "，",
    "就",
-   "能",
-   "减轻",
-   "经济压力",
+   "不能",
+   "来中国",
+   "留学",
    "。"
   ],
-  "ans": "要是申请到奖学金，就能减轻经济压力。",
-  "audio": "要是申请到奖学金，就能减轻经济压力。"
+  "ans": "要是没有签证，就不能来中国留学。",
+  "audio": "要是没有签证，就不能来中国留学。"
  },
  {
   "words": [
    "随着",
-   "中文水平",
-   "的",
-   "提高",
+   "年级",
+   "越来越",
+   "高",
    "，",
-   "我",
-   "能看懂",
-   "中文报纸了",
+   "我的",
+   "学习压力",
+   "也",
+   "越来越大",
    "。"
   ],
-  "ans": "随着中文水平的提高，我能看懂中文报纸了。",
-  "audio": "随着中文水平的提高，我能看懂中文报纸了。"
+  "ans": "随着年级越来越高，我的学习压力也越来越大。",
+  "audio": "随着年级越来越高，我的学习压力也越来越大。"
  },
  {
   "words": [
-   "他们",
-   "可以",
-   "先",
-   "上",
-   "一年的",
-   "中文课程",
-   "。"
-  ],
-  "ans": "他们可以先上一年的中文课程。",
-  "audio": "他们可以先上一年的中文课程。"
- },
- {
-  "words": [
-   "我",
-   "想",
-   "了解",
-   "更多",
-   "国际贸易",
-   "方面",
+   "因为",
+   "表现好",
+   "，",
+   "他",
+   "获得了",
+   "一千块钱",
    "的",
-   "知识",
+   "奖学金",
    "。"
   ],
-  "ans": "我想了解更多国际贸易方面的知识。",
-  "audio": "我想了解更多国际贸易方面的知识。"
+  "ans": "因为表现好，他获得了一千块钱的奖学金。",
+  "audio": "因为表现好，他获得了一千块钱的奖学金。"
+ },
+ {
+  "words": [
+   "他",
+   "没",
+   "吃",
+   "任何",
+   "东西",
+   "就",
+   "去上课了",
+   "。"
+  ],
+  "ans": "他没吃任何东西就去上课了。",
+  "audio": "他没吃任何东西就去上课了。"
  },
  {
   "words": [
    "学校",
-   "就像",
-   "一座",
-   "小城市",
-   "，",
-   "什么",
-   "都",
-   "有",
+   "食堂的",
+   "饭菜",
+   "比",
+   "外面",
+   "便宜",
+   "多了",
    "。"
   ],
-  "ans": "学校就像一座小城市，什么都有。",
-  "audio": "学校就像一座小城市，什么都有。"
+  "ans": "学校食堂的饭菜比外面便宜多了。",
+  "audio": "学校食堂的饭菜比外面便宜多了。"
+ },
+ {
+  "words": [
+   "他",
+   "把",
+   "入学通知书",
+   "放在",
+   "书包里",
+   "了",
+   "。"
+  ],
+  "ans": "他把入学通知书放在书包里了。",
+  "audio": "他把入学通知书放在书包里了。"
+ },
+ {
+  "words": [
+   "这位",
+   "老师",
+   "是",
+   "研究",
+   "中国经济",
+   "的",
+   "博士",
+   "。"
+  ],
+  "ans": "这位老师是研究中国经济的博士。",
+  "audio": "这位老师是研究中国经济的博士。"
+ },
+ {
+  "words": [
+   "多",
+   "看书",
+   "能",
+   "让",
+   "我们",
+   "学到",
+   "更多",
+   "知识",
+   "。"
+  ],
+  "ans": "多看书能让我们学到更多知识。",
+  "audio": "多看书能让我们学到更多知识。"
  }
 ];
 var mcData = [
  {
-  "q": "请把护照、＿＿和入学通知书给我。",
+  "q": "Bạn muốn nói: “Nếu làm xong visa thì tháng sau tôi sang Trung Quốc.”",
   "opts": [
-   "签证",
-   "食堂",
-   "知识",
-   "压力"
+   "要是签证办好了，我下个月就去中国。",
+   "要是签证办好了，就我下个月去中国。",
+   "签证办好了要是，我下个月就去中国。",
+   "要是签证办好了，我下个月去中国就。"
   ],
   "ans": 0,
-  "exp": "护照、签证、入学通知书 đều là giấy tờ khi nhập học."
+  "exp": "要是 đứng đầu vế giả thiết; 就 đứng sau chủ ngữ, trước động từ — không nói 就我 như “thì tôi” tiếng Việt."
  },
  {
-  "q": "明天我们8点出发，任何人＿＿不能迟到。",
+  "q": "Câu nào SAI?",
   "opts": [
-   "也",
-   "就",
-   "才",
-   "再"
+   "任何人不能进这个房间。",
+   "这次考试他没有任何问题。",
+   "任何人都可以参加这个活动。",
+   "你有任何不明白的地方都可以问我。"
   ],
   "ans": 0,
-  "exp": "任何……也 / 都 + phủ định."
+  "exp": "任何 + danh từ đứng trước động từ thì phải có 都 / 也: 任何人都不能进."
  },
  {
-  "q": "＿＿明天下雨，我们就不去爬山了。",
-  "opts": [
-   "要是",
-   "虽然",
-   "随着",
-   "通过"
-  ],
-  "ans": 0,
-  "exp": "要是……，就…… nêu giả thiết."
- },
- {
-  "q": "＿＿生活水平的提高，人们越来越关注身体健康。",
+  "q": "Chọn từ điền vào chỗ trống: “＿＿网上买东西越来越方便，去商店的人少了。”",
   "opts": [
    "随着",
-   "要是",
    "通过",
-   "除了"
-  ],
-  "ans": 0,
-  "exp": "随着 + N 的提高: theo sự thay đổi."
- },
- {
-  "q": "他经常在网上买东西，一方面因为便宜，＿＿因为方便。",
-  "opts": [
-   "另一方面",
-   "一方面",
-   "另外的",
-   "还是"
-  ],
-  "ans": 0,
-  "exp": "一方面……，另一方面……"
- },
- {
-  "q": "李文回到北京，读医学＿＿。",
-  "opts": [
-   "博士",
-   "医生",
-   "教师",
-   "本科生"
-  ],
-  "ans": 0,
-  "exp": "读博士 = học tiến sĩ. 博士 (Hán Việt: bác sĩ) nghĩa là tiến sĩ!"
- },
- {
-  "q": "刚来北京的时候，我很不＿＿这里的天气。",
-  "opts": [
-   "适应",
-   "交流",
-   "申请",
-   "成为"
-  ],
-  "ans": 0,
-  "exp": "不适应 + môi trường / thời tiết."
- },
- {
-  "q": "你要多跟中国学生＿＿，这样中文会进步得更快。",
-  "opts": [
-   "交流",
-   "研究",
-   "获得",
-   "减轻"
-  ],
-  "ans": 0,
-  "exp": "跟 + ai + 交流."
- },
- {
-  "q": "有人喜欢学医，打算回国后＿＿一名医生。",
-  "opts": [
-   "当",
-   "成",
-   "做到",
-   "变"
-  ],
-  "ans": 0,
-  "exp": "当 + (一名) + nghề."
- },
- {
-  "q": "＿＿这些交流，外国学生能更快地适应中国的大学生活。",
-  "opts": [
-   "通过",
-   "随着",
    "要是",
    "一方面"
   ],
   "ans": 0,
-  "exp": "通过 = thông qua (cách thức); 随着 = theo sự thay đổi."
+  "exp": "随着 + sự thay đổi (越来越……) → kết quả: 去商店的人少了."
+ },
+ {
+  "q": "A: “你为什么每天走路去学校？” — B đáp:",
+  "opts": [
+   "一方面能锻炼身体，另一方面还能少花钱。",
+   "另一方面能锻炼身体，一方面还能少花钱。",
+   "一方面能锻炼身体，另方面还能少花钱。",
+   "一方面能锻炼身体，别的方面还能少花钱。"
+  ],
+  "ans": 0,
+  "exp": "Thứ tự cố định: 一方面 trước, 另一方面 sau; không rút gọn thành 另方面 / 别的方面."
+ },
+ {
+  "q": "Bạn muốn nói: “Sau này tôi muốn trở thành một bác sĩ giỏi.”",
+  "opts": [
+   "将来我想成为一名好医生。",
+   "将来我想成为一名好医生的。",
+   "我想成为一名好医生将来。",
+   "将来我想变一名好医生。"
+  ],
+  "ans": 0,
+  "exp": "成为 + danh từ = trở thành; 将来 đứng đầu câu hoặc trước động từ, không đặt cuối câu; không thêm 的."
+ },
+ {
+  "q": "Bạn muốn nói: “Chị tôi đang học tiến sĩ.”",
+  "opts": [
+   "我姐姐在读博士。",
+   "我姐姐在读医生。",
+   "我姐姐在当博士。",
+   "我姐姐在读教师。"
+  ],
+  "ans": 0,
+  "exp": "博士 (Hán Việt “bác sĩ”) = tiến sĩ; 读博士 = học tiến sĩ. Bác sĩ chữa bệnh là 医生."
+ },
+ {
+  "q": "“这是一＿＿很有名的山，每年都有很多人来爬。”",
+  "opts": [
+   "座",
+   "张",
+   "条",
+   "件"
+  ],
+  "ans": 0,
+  "exp": "座 là lượng từ cho núi, nhà, cầu, thành phố: 一座山."
+ },
+ {
+  "q": "A: “来中国三个月了，你习惯这里的生活了吗？” B: “刚来的时候不太＿＿，现在好多了。”",
+  "opts": [
+   "适应",
+   "交流",
+   "研究",
+   "减轻"
+  ],
+  "ans": 0,
+  "exp": "不太适应 = chưa thích nghi lắm (với cuộc sống mới)."
+ },
+ {
+  "q": "Bạn muốn nói: “Năm nay cô ấy nhận được học bổng của trường.”",
+  "opts": [
+   "她今年获得了学校的奖学金。",
+   "她今年获得过了学校的奖学金。",
+   "她获得了学校的奖学金今年。",
+   "她今年获得学校的了奖学金。"
+  ],
+  "ans": 0,
+  "exp": "了 đứng ngay sau động từ 获得; thời gian 今年 đứng trước động từ, không đặt cuối câu."
+ },
+ {
+  "q": "Bạn muốn nói: “Tôi thường trao đổi bằng tiếng Trung với bạn cùng lớp.”",
+  "opts": [
+   "我经常跟同学用中文交流。",
+   "我经常用中文交流跟同学。",
+   "我经常交流同学用中文。",
+   "我跟同学经常交流用中文。"
+  ],
+  "ans": 0,
+  "exp": "Trạng ngữ (跟同学, 用中文) đứng TRƯỚC động từ 交流, không đặt sau như tiếng Việt."
+ },
+ {
+  "q": "Câu nào SAI?",
+  "opts": [
+   "他最近压力很多。",
+   "多运动能减轻压力。",
+   "这个月我的经济压力很大。",
+   "考试以前大家的压力都不小。"
+  ],
+  "ans": 0,
+  "exp": "压力 đi với 大 / 小: 压力很大; không nói 压力很多."
+ },
+ {
+  "q": "A: “你姐姐还在读本科吗？” B: “不，她已经毕业了，现在是＿＿。”",
+  "opts": [
+   "研究生",
+   "小学生",
+   "中学生",
+   "留学生"
+  ],
+  "ans": 0,
+  "exp": "Học xong 本科 (đại học) rồi học tiếp lên là 研究生 (học viên sau đại học)."
  }
 ];
 var speakingData = {
@@ -5087,7 +5237,7 @@ var speakingData = {
    "q_zh": "到中国留学，需要准备什么证件和材料？",
    "q_vn": "Đi du học Trung Quốc cần chuẩn bị những giấy tờ và hồ sơ gì?",
    "hint": "需要准备……、……和……",
-   "sample": "需要准备护照、签证和入学通知书，还有一些申请材料。",
+   "sample": "需要准备护照、签证，还有学校的入学通知书和一些申请材料。",
    "sample_vn": "Cần chuẩn bị hộ chiếu, visa và giấy báo nhập học, còn một số hồ sơ đăng ký nữa.",
    "note": "Câu hỏi phần Khởi động của sách."
   },
@@ -5095,117 +5245,117 @@ var speakingData = {
    "q_zh": "你打算学习什么专业？为什么？",
    "q_vn": "Bạn định học chuyên ngành gì? Vì sao?",
    "hint": "我打算学……专业，一方面……，另一方面……",
-   "sample": "我打算学国际贸易专业，一方面我对经济感兴趣，另一方面将来想在国际公司工作。",
-   "sample_vn": "Tôi định học ngành thương mại quốc tế, một mặt tôi có hứng thú với kinh tế, mặt khác sau này muốn làm ở công ty quốc tế.",
+   "sample": "我打算学中文教育专业，一方面我喜欢和孩子们在一起，另一方面将来想回国当中文老师。",
+   "sample_vn": "Tôi định học ngành giáo dục tiếng Trung, một mặt tôi thích ở cùng trẻ con, mặt khác sau này muốn về nước làm giáo viên tiếng Trung.",
    "note": "Câu hỏi phần Khởi động; dùng 一方面……，另一方面…… (điểm 4)."
   },
   {
    "q_zh": "老师给了白家月和陈天中什么？他们什么时候开始上课？",
    "q_vn": "Cô giáo đưa cho Bạch Gia Nguyệt và Trần Thiên Trung cái gì? Khi nào họ bắt đầu lên lớp?",
    "hint": "老师给了他们……，他们……开始上课。",
-   "sample": "老师给了他们学生证，他们下周一开始上课。",
+   "sample": "老师给了他们学生证，还告诉他们下个星期一就上课。",
    "sample_vn": "Cô giáo đưa cho họ thẻ sinh viên, thứ Hai tuần sau họ bắt đầu lên lớp.",
    "note": "Câu hỏi nghe hiểu bài khoá 1."
   },
   {
-   "q_zh": "请根据提示复述课文一。",
+   "q_zh": "请你用自己的话说一说：白家月和陈天中在办公室做了什么？",
    "q_vn": "Dựa vào gợi ý, kể lại bài khoá 1.",
    "hint": "白家月和陈天中来中国……。他们把……给老师……老师告诉他们，下周一……，先……，然后……。",
    "sample": "白家月和陈天中来中国留学。他们把护照、签证和入学通知书给老师，老师给他们办了学生证。老师告诉他们，下周一开始上课，先试听两周，然后在网上选课。以后如果有任何问题，都可以去找老师。",
-   "sample_vn": "Bạch Gia Nguyệt và Trần Thiên Trung đến Trung Quốc du học. Họ đưa hộ chiếu, visa và giấy báo nhập học cho cô giáo, cô làm thẻ sinh viên cho họ. Cô nói thứ Hai tuần sau bắt đầu lên lớp, học thử hai tuần trước, rồi đăng ký môn trên mạng. Sau này có bất kỳ vấn đề gì đều có thể đến tìm cô.",
-   "note": "Bài tập 复述 của sách (trang 3)."
+   "sample_vn": "Bạch Gia Nguyệt và Trần Thiên Trung đến Trung Quốc du học. Họ đưa hộ chiếu, visa và giấy báo nhập học cho cô giáo, cô làm thẻ sinh viên cho họ. Cô nói thứ Hai tuần sau bắt đầu lên lớp, học thử hai tuần trước, rồi đăng ký môn học trên mạng. Sau này có bất kỳ vấn đề gì đều có thể đến tìm cô.",
+   "note": "Bài tập kể lại bài khoá của sách (trang 3)."
   },
   {
    "q_zh": "什么样的学生有机会获得奖学金？要是你获得了奖学金，你会做什么？",
    "q_vn": "Sinh viên như thế nào có cơ hội nhận học bổng? Nếu bạn nhận được học bổng, bạn sẽ làm gì?",
    "hint": "……的学生有机会……。要是我获得了奖学金，我就……",
    "sample": "成绩好、表现好的学生有机会获得奖学金。要是我获得了奖学金，我就用这些钱买书，还能减轻家里的经济压力。",
-   "sample_vn": "Sinh viên học giỏi, biểu hiện tốt có cơ hội nhận học bổng. Nếu tôi nhận được học bổng, tôi sẽ dùng tiền đó mua sách, còn giảm được áp lực kinh tế cho gia đình.",
+   "sample_vn": "Sinh viên học giỏi, thể hiện tốt có cơ hội nhận học bổng. Nếu tôi nhận được học bổng, tôi sẽ dùng tiền đó mua sách, còn giảm được áp lực kinh tế cho gia đình.",
    "note": "Câu hỏi bài khoá 2 + vận dụng 要是……，就…… (điểm 2)."
   },
   {
-   "q_zh": "请根据提示复述课文三。",
+   "q_zh": "请你说说：外国学生在中国的大学里怎么学习和生活？",
    "q_vn": "Dựa vào gợi ý, kể lại bài khoá 3.",
    "hint": "随着……，越来越多的外国学生……。他们可以先……，然后……。除了读……，还可以……。通过这些交流……",
    "sample": "随着中国的发展，越来越多的外国学生来到中国的大学学习。他们可以先上一年的中文课程，然后根据自己的兴趣和需要选择专业。除了读本科课程，他们还可以申请读硕士研究生或者博士研究生。在大学里，他们可以和中国学生一起学习、做研究、参加校园活动。通过这些交流，外国学生能更快地适应中国的大学生活。",
    "sample_vn": "Cùng với sự phát triển của Trung Quốc, ngày càng nhiều sinh viên nước ngoài đến đại học Trung Quốc học tập… Thông qua những giao lưu này, họ thích nghi nhanh hơn với cuộc sống đại học ở Trung Quốc.",
-   "note": "Bài tập 复述 của sách (trang 7)."
+   "note": "Bài tập kể lại bài khoá của sách (trang 7)."
   },
   {
    "q_zh": "陈天中和安妮来到中国留学是为了什么？",
    "q_vn": "Trần Thiên Trung và Annie đến Trung Quốc du học để làm gì?",
    "hint": "一方面是为了……，另一方面也是为……做准备。",
-   "sample": "一方面是为了学习语言和知识，另一方面也是为将来的工作和生活做准备。",
-   "sample_vn": "Một mặt là để học ngôn ngữ và kiến thức, mặt khác cũng là chuẩn bị cho công việc và cuộc sống sau này.",
+   "sample": "他们来中国留学，一方面是为了学习中文和知识，另一方面也是为将来的工作和生活做准备。",
+   "sample_vn": "Họ đến Trung Quốc du học, một mặt là để học tiếng Trung và kiến thức, mặt khác cũng là chuẩn bị cho công việc và cuộc sống sau này.",
    "note": "Câu hỏi bài khoá 4."
   },
   {
-   "q_zh": "你的好朋友明年也想来中国留学，请你给他介绍一下留学手续和在中国的学习生活，并给他一些建议。",
-   "q_vn": "Bạn thân của em năm sau cũng muốn sang Trung Quốc du học. Hãy giới thiệu cho bạn ấy thủ tục du học, việc học và cuộc sống ở Trung Quốc, kèm vài lời khuyên.",
+   "q_zh": "你的好朋友明年也想来中国留学，请你给他介绍一下要办的事和在中国的学习生活，再给他出几个主意。",
+   "q_vn": "Bạn thân của em năm sau cũng muốn sang Trung Quốc du học. Hãy giới thiệu cho bạn ấy những việc cần làm, việc học và cuộc sống ở Trung Quốc, kèm vài lời khuyên.",
    "hint": "先要……，然后……。在大学里……。要是你……，就……。你一方面要……，另一方面要……",
-   "sample": "先要申请学校，拿到入学通知书以后再办签证。来了以后，要把护照、签证和入学通知书交给学院的老师，办学生证。在大学里，你可以先上中文课程，然后选择专业。要是你成绩好、表现好，就可以申请奖学金。我的建议是：一方面要多跟中国学生交流，另一方面要多参加校园活动，这样能更快地适应这里的生活。",
-   "sample_vn": "Trước hết phải nộp đơn vào trường, có giấy báo nhập học rồi mới làm visa. Sang đến nơi thì nộp hộ chiếu, visa, giấy báo nhập học cho thầy cô ở học viện để làm thẻ sinh viên… Lời khuyên của mình: một mặt phải giao lưu nhiều với sinh viên Trung Quốc, mặt khác tham gia nhiều hoạt động trong trường, như vậy sẽ thích nghi nhanh hơn.",
-   "note": "Hoạt động 角色扮演 (đóng vai — gọi video) của sách, trang 10."
+   "sample": "先要申请学校，拿到入学通知书以后再办签证。来了以后，要带上你的证件去办学生证。上大学以后，你可以先上中文课程，然后选择专业。要是你成绩好、表现好，就可以申请奖学金。我觉得你一方面要多跟中国学生交流，另一方面要多参加校园活动，这样能更快地适应这里的生活。",
+   "sample_vn": "Trước hết phải nộp đơn vào trường, có giấy báo nhập học rồi mới làm visa. Sang đến nơi thì nộp hộ chiếu, visa, giấy báo nhập học cho thầy cô để làm thẻ sinh viên… Mình nghĩ một mặt bạn phải giao lưu nhiều với sinh viên Trung Quốc, mặt khác nên tham gia nhiều hoạt động của trường, như vậy sẽ thích nghi nhanh hơn.",
+   "note": "Hoạt động đóng vai (gọi video) của sách, trang 10."
   }
  ]
 };
 var translateData = [
  {
-  "vi": "Sau này các em có bất kỳ vấn đề gì đều có thể đến tìm cô.",
-  "zh": "你们以后有任何问题都可以来找我。",
-  "py": "Nǐmen yǐhòu yǒu rènhé wèntí dōu kěyǐ lái zhǎo wǒ."
+  "vi": "Có bất cứ chuyện gì không hiểu, bạn cứ nói với tôi.",
+  "zh": "你有任何不明白的事都可以跟我说。",
+  "py": "Nǐ yǒu rènhé bù míngbai de shì dōu kěyǐ gēn wǒ shuō."
  },
  {
-  "vi": "Nếu xin được học bổng thì có thể giảm được không ít áp lực kinh tế.",
-  "zh": "要是申请到奖学金，就能减轻不少经济压力。",
-  "py": "Yàoshi shēnqǐng dào jiǎngxuéjīn, jiù néng jiǎnqīng bùshǎo jīngjì yālì."
+  "vi": "Nếu ngày mai trời mưa thì hoạt động dời sang tuần sau.",
+  "zh": "要是明天下雨，活动就放到下个星期。",
+  "py": "Yàoshi míngtiān xiàyǔ, huódòng jiù fàngdào xià gè xīngqī."
  },
  {
-  "vi": "Cùng với sự phát triển của Trung Quốc, ngày càng nhiều sinh viên nước ngoài đến Trung Quốc học tập.",
-  "zh": "随着中国的发展，越来越多的外国学生来中国学习。",
-  "py": "Suízhe Zhōngguó de fāzhǎn, yuèláiyuè duō de wàiguó xuésheng lái Zhōngguó xuéxí."
+  "vi": "Cùng với việc trình độ tiếng Trung được nâng cao, tôi ngày càng thích đọc sách tiếng Trung.",
+  "zh": "随着中文水平的提高，我越来越喜欢看中文书了。",
+  "py": "Suízhe Zhōngwén shuǐpíng de tígāo, wǒ yuèláiyuè xǐhuan kàn Zhōngwén shū le."
  },
  {
-  "vi": "Thông qua giao lưu, sinh viên nước ngoài có thể thích nghi nhanh hơn với cuộc sống đại học.",
-  "zh": "通过交流，外国学生能更快地适应大学生活。",
-  "py": "Tōngguò jiāoliú, wàiguó xuésheng néng gèng kuài de shìyìng dàxué shēnghuó."
+  "vi": "Tôi học tiếng Trung, một mặt là muốn hiểu văn hoá Trung Quốc, mặt khác là muốn quen thêm nhiều bạn mới.",
+  "zh": "我学中文，一方面是想了解中国文化，另一方面是想认识更多的新朋友。",
+  "py": "Wǒ xué Zhōngwén, yìfāngmiàn shì xiǎng liǎojiě Zhōngguó wénhuà, lìngyìfāngmiàn shì xiǎng rènshi gèng duō de xīn péngyou."
  },
  {
-  "vi": "Đến Trung Quốc du học, một mặt là để học ngôn ngữ, mặt khác cũng là chuẩn bị cho công việc sau này.",
-  "zh": "来中国留学，一方面是为了学习语言，另一方面也是为将来的工作做准备。",
-  "py": "Lái Zhōngguó liúxué, yìfāngmiàn shì wèile xuéxí yǔyán, lìngyìfāngmiàn yě shì wèi jiānglái de gōngzuò zuò zhǔnbèi."
+  "vi": "Ông ấy là giáo viên đại học, nghiên cứu kinh tế quốc tế.",
+  "zh": "他是大学教师，研究国际经济。",
+  "py": "Tā shì dàxué jiàoshī, yánjiū guójì jīngjì."
  },
  {
-  "vi": "Sau này Annie muốn làm giáo viên tiếng Trung.",
-  "zh": "安妮以后想当一名中文老师。",
-  "py": "Ānní yǐhòu xiǎng dāng yì míng Zhōngwén lǎoshī."
+  "vi": "Em gái tôi học ngành giáo dục, sau này muốn làm giáo viên tiểu học.",
+  "zh": "我妹妹学的是教育专业，将来想当小学老师。",
+  "py": "Wǒ mèimei xué de shì jiàoyù zhuānyè, jiānglái xiǎng dāng xiǎoxué lǎoshī."
  }
 ];
 var translateDataRev = [
  {
-  "vi": "Thứ Hai tuần sau bắt đầu lên lớp, học thử hai tuần trước, sau đó đăng ký môn học trên mạng.",
-  "zh": "下周一开始上课，先试听两周，然后在网上选课。",
-  "py": "Xià zhōuyī kāishǐ shàngkè, xiān shìtīng liǎng zhōu, ránhòu zài wǎngshang xuǎnkè."
+  "vi": "Đến Trung Quốc rồi, tôi phải nhanh chóng thích nghi với cuộc sống mới.",
+  "zh": "到了中国以后，我要快点儿适应新的生活。",
+  "py": "Dào le Zhōngguó yǐhòu, wǒ yào kuài diǎnr shìyìng xīn de shēnghuó."
  },
  {
-  "vi": "Tớ thấy trường giống như một thành phố nhỏ, cái gì cũng có.",
-  "zh": "我觉得学校就像一座小城市，什么都有。",
-  "py": "Wǒ juéde xuéxiào jiù xiàng yí zuò xiǎo chéngshì, shénme dōu yǒu."
+  "vi": "Thông qua giao lưu, chúng tôi đã làm quen được nhiều bạn Trung Quốc.",
+  "zh": "通过交流，我们认识了很多中国朋友。",
+  "py": "Tōngguò jiāoliú, wǒmen rènshi le hěn duō Zhōngguó péngyou."
  },
  {
-  "vi": "Ngoài học chương trình đại học, họ còn có thể đăng ký học thạc sĩ hoặc tiến sĩ.",
-  "zh": "除了读本科课程，他们还可以申请读硕士研究生或者博士研究生。",
-  "py": "Chúle dú běnkē kèchéng, tāmen hái kěyǐ shēnqǐng dú shuòshì yánjiūshēng huòzhě bóshì yánjiūshēng."
+  "vi": "Đi du học nước ngoài phải chuẩn bị rất nhiều giấy tờ.",
+  "zh": "去国外留学要准备很多证件。",
+  "py": "Qù guówài liúxué yào zhǔnbèi hěn duō zhèngjiàn."
  },
  {
-  "vi": "Có người thích học y, định về nước làm bác sĩ.",
-  "zh": "有人喜欢学医，打算回国后当一名医生。",
-  "py": "Yǒurén xǐhuan xué yī, dǎsuàn huíguó hòu dāng yì míng yīshēng."
+  "vi": "Nếu có thời gian, tôi sẽ đi tham gia các hoạt động của trường.",
+  "zh": "要是有时间，我就去参加学校的活动。",
+  "py": "Yàoshi yǒu shíjiān, wǒ jiù qù cānjiā xuéxiào de huódòng."
  },
  {
-  "vi": "Trần Thiên Trung muốn chọn chuyên ngành liên quan đến kinh tế.",
-  "zh": "陈天中想选择跟经济有关的专业。",
-  "py": "Chén Tiānzhōng xiǎng xuǎnzé gēn jīngjì yǒuguān de zhuānyè."
+  "vi": "Tôi muốn tìm hiểu thêm kiến thức về mặt thương mại quốc tế.",
+  "zh": "我想多了解一些国际贸易方面的知识。",
+  "py": "Wǒ xiǎng duō liǎojiě yìxiē guójì màoyì fāngmiàn de zhīshi."
  }
 ];
 var sgkData = [

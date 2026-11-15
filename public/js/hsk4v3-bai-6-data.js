@@ -4495,538 +4495,689 @@ var dialogData = [
 ];
 var listenData = [
  {
-  "audio": "护士，您好，请问在哪儿挂号？在一楼大厅。你先在这张表上写上姓名、性别和电话号码。写好了，然后呢？然后去那边排队挂号，挂好号以后去三楼找医生。人怎么这么多啊！别着急，现在也可以在网上挂号，下次你就不用排队了。",
+  "audio": "我昨天晚上咳得很厉害，几乎没睡觉，今天早上起来头也疼。",
   "questions": [
    {
-    "q": "挂号以前要做什么？",
+    "q": "Tối qua người nói bị làm sao?",
     "opts": [
-     "在表上写信息",
-     "去三楼找医生",
-     "在网上买药"
+     "Ho rất dữ, gần như không ngủ",
+     "Sốt cao",
+     "Đau bụng"
     ],
-    "ans": 0
+    "ans": 0,
+    "exp": "咳得很厉害 = ho rất dữ; 几乎没睡觉 = gần như không ngủ."
    },
    {
-    "q": "下次怎么做可以不排队？",
+    "q": "Sáng nay người nói thế nào?",
     "opts": [
-     "早点儿来医院",
-     "在网上挂号",
-     "请朋友帮忙"
+     "Đã đỡ nhiều",
+     "Đi làm bình thường",
+     "Đau đầu"
     ],
-    "ans": 1
+    "ans": 2,
+    "exp": "今天早上起来头也疼 = sáng nay dậy thì đầu cũng đau."
    }
   ]
  },
  {
-  "audio": "小王，你怎么了？声音都变了。我这两天一直咳嗽，昨天晚上咳得特别厉害，一夜都没睡好。发烧吗？体温有点儿高，三十八度。那你赶快去医院吧，光吃药恐怕不够。好，我下午就去。你能陪我一起去吗？没问题，咱们有什么好客气的。",
+  "audio": "这家医院国际部的医生都会说外语，不过挂号费比普通部贵多了。",
   "questions": [
    {
-    "q": "小王怎么了？",
+    "q": "Bác sĩ ở khu quốc tế có gì đặc biệt?",
     "opts": [
-     "一直咳嗽，有点儿发烧",
-     "肚子疼得厉害",
-     "头疼，但是没发烧"
+     "Ít bệnh nhân hơn",
+     "Khám miễn phí",
+     "Đều nói được ngoại ngữ"
     ],
-    "ans": 0
+    "ans": 2,
+    "exp": "国际部的医生都会说外语 = bác sĩ khu quốc tế đều nói được ngoại ngữ."
    },
    {
-    "q": "朋友建议小王做什么？",
+    "q": "Phí lấy số ở khu quốc tế thế nào?",
     "opts": [
-     "在家多休息",
-     "多喝点儿水",
-     "赶快去医院"
+     "Đắt hơn khu thường nhiều",
+     "Rẻ hơn khu thường",
+     "Bằng khu thường"
     ],
-    "ans": 2
+    "ans": 0,
+    "exp": "比普通部贵多了 = đắt hơn khu thường nhiều; ôn 不过 (bài 2)."
    }
   ]
  },
  {
-  "audio": "医生，我吃了三天药，现在感觉好多了。我看看……体温已经降下来了，不过你还要按时吃药，多喝水。我平时身体不错，偶尔才生一次病，没想到这次病得这么厉害。所以你要每天出去运动运动，好让身体更健康。",
+  "audio": "医生先问了问我的情况，然后让我去二楼做检查，检查结果下午才能出来。",
   "questions": [
    {
-    "q": "病人现在怎么样？",
+    "q": "Bác sĩ bảo người nói làm gì?",
     "opts": [
-     "感觉好多了",
-     "比以前更难受",
-     "体温还很高"
+     "Về nhà nghỉ",
+     "Lên tầng hai xét nghiệm",
+     "Xuống tầng một lấy thuốc"
     ],
-    "ans": 0
+    "ans": 1,
+    "exp": "让我去二楼做检查 = bảo tôi lên tầng hai làm xét nghiệm."
    },
    {
-    "q": "医生让病人做什么？",
+    "q": "Khi nào có kết quả?",
     "opts": [
-     "再去打针",
-     "按时吃药，多喝水",
-     "马上住院治疗"
+     "Buổi chiều",
+     "Ngay bây giờ",
+     "Ngày mai"
     ],
-    "ans": 1
+    "ans": 0,
+    "exp": "检查结果下午才能出来 = chiều mới có kết quả; 才 = mới (muộn hơn mong đợi)."
+   }
+  ]
+ },
+ {
+  "audio": "我平时很少喝咖啡，偶尔第二天有考试，才会喝一杯。",
+  "questions": [
+   {
+    "q": "Người nói có hay uống cà phê không?",
+    "opts": [
+     "Ngày nào cũng uống",
+     "Thỉnh thoảng mới uống",
+     "Không bao giờ uống"
+    ],
+    "ans": 1,
+    "exp": "很少……，偶尔……才会喝 = ít khi uống, lâu lâu (hôm sau có thi) mới uống."
+   }
+  ]
+ },
+ {
+  "audio": "请您把孩子的家庭地址和电话号码写在这张表上，好让医生以后能联系你们。",
+  "questions": [
+   {
+    "q": "Phải viết gì vào tờ khai?",
+    "opts": [
+     "Tuổi và quốc tịch của bé",
+     "Tên bác sĩ",
+     "Địa chỉ nhà và số điện thoại"
+    ],
+    "ans": 2,
+    "exp": "家庭地址和电话号码 = địa chỉ nhà và số điện thoại."
+   },
+   {
+    "q": "Viết những thông tin đó để làm gì?",
+    "opts": [
+     "Để trả tiền",
+     "Để bác sĩ liên lạc sau này",
+     "Để lấy thuốc"
+    ],
+    "ans": 1,
+    "exp": "……，好让医生以后能联系你们 = để bác sĩ sau này tiện liên lạc; 好 = để (mục đích)."
+   }
+  ]
+ },
+ {
+  "audio": "一次小考试有什么好担心的？你平时学得那么认真。",
+  "questions": [
+   {
+    "q": "Người nói muốn nói gì với bạn?",
+    "opts": [
+     "Không có gì phải lo",
+     "Bạn nên ôn thêm",
+     "Kỳ thi này rất khó"
+    ],
+    "ans": 0,
+    "exp": "有什么好担心的？= có gì mà phải lo (câu hỏi tu từ, ý là không cần lo)."
+   }
+  ]
+ },
+ {
+  "audio": "上个星期我陪奶奶去医院看病，光挂号就用了一个多小时。",
+  "questions": [
+   {
+    "q": "Người nói đưa ai đi bệnh viện?",
+    "opts": [
+     "Ông",
+     "Bà",
+     "Mẹ"
+    ],
+    "ans": 1,
+    "exp": "陪奶奶去医院 = đưa bà (nội) đi bệnh viện."
+   },
+   {
+    "q": "Việc gì mất hơn một tiếng?",
+    "opts": [
+     "Tiêm",
+     "Đợi kết quả",
+     "Chỉ riêng việc lấy số"
+    ],
+    "ans": 2,
+    "exp": "光挂号就用了一个多小时 = chỉ riêng lấy số đã mất hơn một tiếng; 光 = chỉ."
    }
   ]
  }
 ];
 var matchData = [
  {
-  "left": "排队",
-  "right": "挂号"
- },
- {
   "left": "按时",
   "right": "吃药"
- },
- {
-  "left": "把体温",
-  "right": "降下来"
- },
- {
-  "left": "语言",
-  "right": "不通"
  },
  {
   "left": "出了一身",
   "right": "汗"
  },
  {
+  "left": "电话",
+  "right": "打不通"
+ },
+ {
+  "left": "一张",
+  "right": "表"
+ },
+ {
+  "left": "体温",
+  "right": "降下来"
+ },
+ {
+  "left": "咳得",
+  "right": "很厉害"
+ },
+ {
   "left": "检查",
   "right": "结果"
- },
- {
-  "left": "治疗",
-  "right": "方法"
- },
- {
-  "left": "流行性",
-  "right": "感冒"
- },
- {
-  "left": "一步一步",
-  "right": "来"
  }
 ];
 var fillData = [
  {
-  "pre": "我还发烧，一直咳嗽，咳得很",
+  "pre": "昨天晚上我吃了很多辣的菜，现在肚子疼得",
   "blank": "厉害",
   "post": "。",
   "hint": "(dữ dội)",
   "ans": "厉害",
-  "exp": "V + 得 + 很 + 厉害."
+  "exp": "Động từ / tính từ + 得 + 厉害 = … dữ dội: 疼得厉害 = đau dữ dội."
  },
  {
-  "pre": "那挺严重的，最好",
-  "blank": "赶快",
-  "post": "去医院检查一下。",
-  "hint": "(mau, ngay)",
-  "ans": "赶快",
-  "exp": "赶快 + V."
- },
- {
-  "pre": "没关系，我",
-  "blank": "陪",
-  "post": "你一起去，还能帮你翻译。",
-  "hint": "(đi cùng)",
-  "ans": "陪",
-  "exp": "陪 + ai + 一起 + V."
- },
- {
-  "pre": "您拿着病人的护照去",
-  "blank": "挂号",
-  "post": "吧。",
-  "hint": "(lấy số khám bệnh)",
-  "ans": "挂号",
-  "exp": "去挂号."
- },
- {
-  "pre": "你跟我有什么好",
-  "blank": "客气",
+  "pre": "这个电影一点儿意思都没有，我真不知道它有什么好",
+  "blank": "看",
   "post": "的。",
-  "hint": "(khách sáo)",
-  "ans": "客气",
-  "exp": "有什么好 + V + 的."
+  "hint": "(xem)",
+  "ans": "看",
+  "exp": "有什么好 + động từ + 的？ = có gì đáng … đâu: phim chán, chẳng có gì đáng xem."
  },
  {
-  "pre": "她平时身体不错，",
+  "pre": "我平时都坐地铁上班，",
   "blank": "偶尔",
-  "post": "才会生一次病。",
+  "post": "起晚了才打车。",
   "hint": "(thỉnh thoảng)",
   "ans": "偶尔",
-  "exp": "偶尔才 + V."
+  "exp": "平时……，偶尔……才…… = bình thường …, lâu lâu (khi dậy muộn) mới …."
  },
  {
-  "pre": "现在需要把",
-  "blank": "体温",
-  "post": "降下来。",
-  "hint": "(nhiệt độ cơ thể)",
-  "ans": "体温",
-  "exp": "把体温降下来."
- },
- {
-  "pre": "光吃药恐怕不够，打针会更",
-  "blank": "有效",
-  "post": "。",
-  "hint": "(hiệu quả)",
-  "ans": "有效",
-  "exp": "更有效."
- },
- {
-  "pre": "医生还让她回家以后",
-  "blank": "按时",
-  "post": "吃药，多喝水，多休息。",
-  "hint": "(đúng giờ)",
-  "ans": "按时",
-  "exp": "按时 + V."
- },
- {
-  "pre": "医生会问病人的情况，有时还会做一些检查，",
+  "pre": "出门以前看一下天气，",
   "blank": "好",
-  "post": "给出合适的治疗方法。",
+  "post": "决定穿什么衣服。",
   "hint": "(để)",
   "ans": "好",
-  "exp": "……，好 + V: mục đích."
+  "exp": "……，好 + động từ: vế sau là mục đích — để tiện quyết định mặc gì."
+ },
+ {
+  "pre": "妈妈一个人去医院我不放心，明天我请一天假",
+  "blank": "陪",
+  "post": "她去。",
+  "hint": "(đi cùng)",
+  "ans": "陪",
+  "exp": "陪 + người + động từ = đi cùng ai làm gì: 陪她去 = đi cùng mẹ."
+ },
+ {
+  "pre": "比赛八点开始，离现在只有二十分钟了，我们",
+  "blank": "赶快",
+  "post": "走吧！",
+  "hint": "(mau lên)",
+  "ans": "赶快",
+  "exp": "赶快 + động từ = mau, nhanh lên (vì sắp muộn)."
+ },
+ {
+  "pre": "他只是有点儿感冒，不太",
+  "blank": "严重",
+  "post": "，休息两天就好了。",
+  "hint": "(nghiêm trọng)",
+  "ans": "严重",
+  "exp": "病 / 问题 + 严重 = nặng, nghiêm trọng; 不太严重 = không nặng lắm."
+ },
+ {
+  "pre": "我的中文不太好，开会的时候请李文帮我",
+  "blank": "翻译",
+  "post": "一下。",
+  "hint": "(phiên dịch)",
+  "ans": "翻译",
+  "exp": "帮 + người + 翻译 = phiên dịch giúp ai."
+ },
+ {
+  "pre": "飞机到北京的时候，我还没",
+  "blank": "醒",
+  "post": "，是旁边的人叫我的。",
+  "hint": "(tỉnh dậy)",
+  "ans": "醒",
+  "exp": "还没醒 = vẫn chưa tỉnh (đang ngủ); ôn 是……的 nhấn mạnh người làm."
+ },
+ {
+  "pre": "坐了十个小时的飞机，我觉得身上很",
+  "blank": "难受",
+  "post": "。",
+  "hint": "(khó chịu)",
+  "ans": "难受",
+  "exp": "难受 = khó chịu trong người (mệt, đau); 身上很难受."
+ },
+ {
+  "pre": "我给他打了好几次电话，都打不",
+  "blank": "通",
+  "post": "，不知道他怎么了。",
+  "hint": "(thông, gọi được)",
+  "ans": "通",
+  "exp": "打不通 = gọi không được (máy không thông); bổ ngữ khả năng V不 + 通 — ôn bài 4."
+ },
+ {
+  "pre": "每天跑步半个小时，对减轻压力很",
+  "blank": "有效",
+  "post": "。",
+  "hint": "(có hiệu quả)",
+  "ans": "有效",
+  "exp": "对……很有效 = rất có hiệu quả với …; ôn 减轻压力 (bài 1)."
+ },
+ {
+  "pre": "你搬家了吗？把新的",
+  "blank": "地址",
+  "post": "发给我吧。",
+  "hint": "(địa chỉ)",
+  "ans": "地址",
+  "exp": "地址 = địa chỉ; 新的地址 = địa chỉ mới."
  }
 ];
 var sortData = [
  {
   "words": [
-   "我",
-   "还",
-   "发烧",
-   "，",
-   "一直",
-   "咳嗽",
-   "，",
-   "咳得",
-   "很厉害",
+   "外面的",
+   "雨",
+   "下得",
+   "越来越",
+   "厉害",
+   "了",
    "。"
   ],
-  "ans": "我还发烧，一直咳嗽，咳得很厉害。",
-  "audio": "我还发烧，一直咳嗽，咳得很厉害。"
+  "ans": "外面的雨下得越来越厉害了。",
+  "audio": "外面的雨下得越来越厉害了。"
  },
  {
   "words": [
-   "有你",
-   "陪着",
-   "，",
-   "我",
-   "就",
-   "放心",
+   "护士",
+   "让",
+   "我们",
+   "在",
+   "大厅里",
+   "等",
+   "一会儿",
+   "。"
+  ],
+  "ans": "护士让我们在大厅里等一会儿。",
+  "audio": "护士让我们在大厅里等一会儿。"
+ },
+ {
+  "words": [
+   "他",
+   "把",
+   "表上的",
+   "国籍",
+   "写错了",
+   "。"
+  ],
+  "ans": "他把表上的国籍写错了。",
+  "audio": "他把表上的国籍写错了。"
+ },
+ {
+  "words": [
+   "这家",
+   "医院",
+   "国际部的",
+   "收费",
+   "比",
+   "普通部",
+   "高",
    "多了",
    "。"
   ],
-  "ans": "有你陪着，我就放心多了。",
-  "audio": "有你陪着，我就放心多了。"
+  "ans": "这家医院国际部的收费比普通部高多了。",
+  "audio": "这家医院国际部的收费比普通部高多了。"
  },
  {
   "words": [
-   "你",
-   "跟我",
-   "有什么",
+   "这种",
+   "小病",
+   "有",
+   "什么",
    "好",
-   "客气",
+   "着急",
    "的",
-   "。"
+   "？"
   ],
-  "ans": "你跟我有什么好客气的。",
-  "audio": "你跟我有什么好客气的。"
+  "ans": "这种小病有什么好着急的？",
+  "audio": "这种小病有什么好着急的？"
  },
  {
   "words": [
-   "她",
-   "平时",
-   "身体不错",
+   "请",
+   "大家",
+   "把",
+   "护照",
+   "拿",
+   "出来",
    "，",
-   "偶尔",
-   "才会",
-   "生一次病",
+   "好",
+   "让",
+   "护士",
+   "检查",
    "。"
   ],
-  "ans": "她平时身体不错，偶尔才会生一次病。",
-  "audio": "她平时身体不错，偶尔才会生一次病。"
- },
- {
-  "words": [
-   "在中国",
-   "看病",
-   "要",
-   "先",
-   "挂号",
-   "，",
-   "然后",
-   "再去找医生",
-   "。"
-  ],
-  "ans": "在中国看病要先挂号，然后再去找医生。",
-  "audio": "在中国看病要先挂号，然后再去找医生。"
+  "ans": "请大家把护照拿出来，好让护士检查。",
+  "audio": "请大家把护照拿出来，好让护士检查。"
  },
  {
   "words": [
    "医生",
-   "会",
-   "做一些检查",
-   "，",
-   "好",
-   "给出",
-   "合适的",
-   "治疗方法",
+   "让",
+   "他",
+   "每天",
+   "按时",
+   "吃",
+   "三次",
+   "药",
    "。"
   ],
-  "ans": "医生会做一些检查，好给出合适的治疗方法。",
-  "audio": "医生会做一些检查，好给出合适的治疗方法。"
+  "ans": "医生让他每天按时吃三次药。",
+  "audio": "医生让他每天按时吃三次药。"
+ },
+ {
+  "words": [
+   "她",
+   "跑完",
+   "步",
+   "出了",
+   "一身",
+   "汗",
+   "。"
+  ],
+  "ans": "她跑完步出了一身汗。",
+  "audio": "她跑完步出了一身汗。"
  }
 ];
 var mcData = [
  {
-  "q": "我昨天跑步跑多了，今天腿疼得＿＿。",
+  "q": "Bạn muốn nói: “Hôm nay tôi đau đầu dữ dội.”",
   "opts": [
-   "厉害",
-   "严重",
-   "有效",
-   "难受"
+   "我今天头疼得厉害。",
+   "我今天厉害地头疼。",
+   "我今天头疼厉害得。",
+   "我今天头很厉害疼。"
   ],
   "ans": 0,
-  "exp": "V / Adj + 得 + 厉害: mức độ rất cao."
+  "exp": "厉害 làm bổ ngữ mức độ, đứng SAU 得: 疼得厉害; không đặt 厉害 trước động từ."
  },
  {
-  "q": "你跟我有什么好客气＿＿。",
+  "q": "Câu nào SAI?",
   "opts": [
-   "的",
-   "了",
-   "吗",
-   "呢"
+   "这件事很厉害，你要马上告诉经理。",
+   "他病得很厉害，得住院。",
+   "你的中文说得真厉害！",
+   "这次感冒很严重，他一个星期没上班。"
   ],
   "ans": 0,
-  "exp": "(没)有什么(好)×的 — bắt buộc có 的."
+  "exp": "Sự việc / vấn đề nghiêm trọng dùng 严重: 这件事很严重; 厉害 làm bổ ngữ sau 得 hoặc khen “giỏi”."
  },
  {
-  "q": "他经常在家看电影，＿＿才去电影院看。",
+  "q": "A: “你周末常去看电影吗？” — B đáp:",
   "opts": [
+   "不常去，偶尔才去一次。",
+   "不常去，才偶尔去一次。",
+   "不常去，偶尔去一次才。",
+   "不常去，一次偶尔才去。"
+  ],
+  "ans": 0,
+  "exp": "偶尔 đứng trước, 才 theo sau, rồi mới đến động từ: 偶尔才去一次 = lâu lâu mới đi một lần."
+ },
+ {
+  "q": "Chọn từ điền vào chỗ trống: “我把会议的时间发到大家的手机上了，＿＿大家别忘了。”",
+  "opts": [
+   "好让",
+   "所以",
+   "因为",
+   "但是"
+  ],
+  "ans": 0,
+  "exp": "……，好让 + người + … = để ai (tiện) …: gửi giờ họp để mọi người đừng quên."
+ },
+ {
+  "q": "A: “我的中文不好，跟中国人说话总是很紧张。” — B đáp:",
+  "opts": [
+   "大家都很热情，没有什么好紧张的。",
+   "大家都很热情，没有什么紧张好的。",
+   "大家都很热情，没有好什么紧张的。",
+   "大家都很热情，没有什么好紧张。"
+  ],
+  "ans": 0,
+  "exp": "没有什么好 + động từ / tính từ + 的 = chẳng có gì phải …; 好 đứng ngay trước 紧张, cuối câu phải có 的."
+ },
+ {
+  "q": "Bạn muốn nói: “Bố tôi chỉ uống thuốc, không tiêm.”",
+  "opts": [
+   "我爸爸光吃药，没打针。",
+   "我爸爸吃药光，没打针。",
+   "我爸爸吃光药，没打针。",
+   "我爸爸光药吃，没打针。"
+  ],
+  "ans": 0,
+  "exp": "光 (= chỉ) đứng TRƯỚC động từ: 光吃药; 吃光 lại là “ăn / uống hết sạch”."
+ },
+ {
+  "q": "A: “你的感冒怎么样了？” — B đáp:",
+  "opts": [
+   "好多了，不咳嗽了，体温也降下来了。",
+   "好多了，不咳嗽了，体温也低下来了。",
+   "好多了，不咳嗽了，体温也降上去了。",
+   "好多了，不咳嗽了，体温也降起来了。"
+  ],
+  "ans": 0,
+  "exp": "降 là động từ “hạ”, đi với 下来: 降下来; 低 là tính từ “thấp”, không kèm 下来."
+ },
+ {
+  "q": "“这种药一天吃三次，你一定要＿＿吃，别忘了。”",
+  "opts": [
+   "按时",
    "偶尔",
-   "经常",
-   "一直",
-   "按时"
+   "赶快",
+   "光"
   ],
   "ans": 0,
-  "exp": "经常……，偶尔才……"
+  "exp": "按时吃药 = uống thuốc đúng giờ; 一定要 + 按时 → không được quên."
  },
  {
-  "q": "我把电话号码告诉你，以后有什么事＿＿联系我。",
+  "q": "Câu nào SAI?",
   "opts": [
-   "好",
-   "就",
-   "再",
-   "才"
+   "我的感觉很好了今天。",
+   "我感觉今天比昨天好多了。",
+   "吃了医生给的药，我感觉身上舒服一些了。",
+   "第一次上台的感觉很奇怪。"
   ],
   "ans": 0,
-  "exp": "……，好 + V: để tiện làm gì."
+  "exp": "Thời gian 今天 phải đứng trước vị ngữ, không đặt cuối câu như tiếng Việt: 今天我感觉很好."
  },
  {
-  "q": "请在这张表上写上病人的姓名、＿＿、国籍和年龄。",
+  "q": "Bạn muốn nói: “Hôm nay người lấy số đông quá, chúng ta phải xếp hàng đợi rất lâu.”",
   "opts": [
-   "性别",
-   "结果",
+   "今天挂号的人太多了，我们要排队等很久。",
+   "今天挂号的人太多了，我们要等很久排队。",
+   "今天挂号的人太多了，我们排队要很久等。",
+   "今天的人挂号太多了，我们要排队等很久。"
+  ],
+  "ans": 0,
+  "exp": "Hai động từ nối tiếp theo thứ tự: 排队 trước, 等很久 sau; 挂号的人 = những người lấy số (định ngữ + 的 + danh từ)."
+ },
+ {
+  "q": "“我想了解一下办签证的＿＿，要准备哪些材料？”",
+  "opts": [
    "过程",
-   "体温"
+   "结果",
+   "家庭",
+   "性别"
   ],
   "ans": 0,
-  "exp": "Các mục trên tờ khai: 姓名、性别、国籍、年龄."
+  "exp": "过程 = các bước, quá trình làm một việc: 办签证的过程; ôn 签证、材料 (bài 1)."
  },
  {
-  "q": "家月，我去排队＿＿，你先在大厅休息。",
+  "q": "A: “昨天的比赛怎么样？” B: “＿＿出来了，我们班是第一名！”",
   "opts": [
-   "挂号",
-   "打针",
-   "收费",
-   "治疗"
-  ],
-  "ans": 0,
-  "exp": "排队挂号 = xếp hàng lấy số."
- },
- {
-  "q": "现在需要把体温＿＿下来。",
-  "opts": [
-   "降",
-   "低",
-   "醒",
-   "通"
-  ],
-  "ans": 0,
-  "exp": "把……降下来: hạ xuống. 低 là tính từ, không đi với 下来 như vậy."
- },
- {
-  "q": "外国人第一次在中国看病，可能会担心语言不＿＿。",
-  "opts": [
-   "通",
-   "好",
-   "过",
-   "懂"
-  ],
-  "ans": 0,
-  "exp": "语言不通 = bất đồng ngôn ngữ."
- },
- {
-  "q": "国际部交流比较方便，但是＿＿比较高。",
-  "opts": [
-   "收费",
+   "结果",
    "情况",
-   "步",
-   "部"
-  ],
-  "ans": 0,
-  "exp": "收费比较高 = phí khá cao."
- },
- {
-  "q": "只要按照医生说的一步一步来，一般都可以顺利得到＿＿。",
-  "opts": [
    "治疗",
-   "挂号",
-   "检查",
-   "结果"
+   "过程"
   ],
   "ans": 0,
-  "exp": "得到治疗 = được điều trị."
+  "exp": "结果出来了 = có kết quả rồi; 情况 (tình hình), 治疗 (điều trị), 过程 (quá trình) không “出来” như kết quả."
  }
 ];
 var speakingData = {
  "intro": "Nhấn nút loa nghe câu hỏi (câu hỏi phần Khởi động, câu hỏi đọc hiểu của 4 bài khoá, kể lại bài khoá, đóng vai và thảo luận nhóm), rồi tự ghi âm câu trả lời — cố dùng từ mới và 4 điểm ngữ pháp của bài.",
  "questions": [
   {
-   "q_zh": "你在中国生过病吗？生病后，你是怎么做的？",
+   "q_zh": "你在中国的时候生病了没有？生病以后，你是怎么做的？",
    "q_vn": "Bạn đã từng bị ốm ở Trung Quốc (hoặc khi ở xa nhà) chưa? Ốm rồi bạn đã làm gì?",
-   "hint": "我生过一次病，……得很厉害。我先……，然后……",
-   "sample": "我生过一次病。那次我感冒了，咳嗽咳得很厉害，还发烧。我先在家吃了一点儿药，可是体温降不下来，于是我的中国朋友陪我去了医院。医生给我打了针，让我按时吃药，多喝水，多休息。三天以后我就好多了。",
-   "sample_vn": "Tôi từng ốm một lần. Lần đó tôi bị cảm, ho rất dữ, còn sốt nữa. Tôi uống chút thuốc ở nhà trước, nhưng nhiệt độ không hạ, thế là bạn Trung Quốc đưa tôi đi bệnh viện. Bác sĩ tiêm cho tôi, dặn uống thuốc đúng giờ, uống nhiều nước, nghỉ ngơi nhiều. Ba ngày sau tôi đỡ nhiều rồi.",
-   "note": "Câu hỏi phần Khởi động của sách; ôn 于是 (Bài 3), V不下来 (Bài 4)."
+   "hint": "我感冒过一次，……得很厉害。我先……，然后……",
+   "sample": "我感冒过一次，咳得特别厉害，晚上都睡不好。开始我只在家吃了点儿药，可是体温一直降不下来，于是一个中国朋友带我去了医院。打针以后，过了三天我就好了。",
+   "sample_vn": "Tôi từng bị cảm một lần, ho rất dữ, tối không ngủ được. Lúc đầu tôi chỉ uống chút thuốc ở nhà, nhưng nhiệt độ mãi không hạ, thế là một người bạn Trung Quốc đưa tôi đi bệnh viện. Tiêm xong, ba ngày sau tôi khỏi.",
+   "note": "Câu hỏi phần Khởi động của sách; ôn 于是 (bài 3), V不下来 (bài 4)."
   },
   {
    "q_zh": "你在中国的医院看过病吗？看病的过程中有没有遇到什么问题？",
    "q_vn": "Bạn đã đi khám ở bệnh viện Trung Quốc chưa? Trong quá trình khám có gặp vấn đề gì không?",
    "hint": "我看过……。最大的问题是……，不过……",
-   "sample": "我看过一次病。最大的问题是语言不通，我听不懂医生说的一些话，也不知道应该先挂号。不过护士很热情，一步一步地告诉我怎么做，我的朋友还帮我翻译，所以最后没有什么好担心的。",
-   "sample_vn": "Tôi đã khám một lần. Vấn đề lớn nhất là bất đồng ngôn ngữ, tôi nghe không hiểu một số câu bác sĩ nói, cũng không biết phải lấy số trước. Có điều y tá rất nhiệt tình, chỉ tôi từng bước, bạn tôi còn phiên dịch giúp, nên cuối cùng chẳng có gì phải lo.",
-   "note": "Câu hỏi phần Khởi động; ôn 不过 (Bài 2), dùng 没有什么好……的 (điểm 2)."
+   "sample": "我看过一次病。最大的问题是我听不懂医生的话，也不知道要先挂号。不过护士很热情，一步一步地告诉我怎么做，所以最后很顺利。",
+   "sample_vn": "Tôi đã khám một lần. Vấn đề lớn nhất là tôi nghe không hiểu bác sĩ nói, cũng không biết phải lấy số trước. Có điều y tá rất nhiệt tình, chỉ tôi từng bước, nên cuối cùng rất suôn sẻ.",
+   "note": "Câu hỏi phần Khởi động; ôn 不过 (bài 2)."
   },
   {
    "q_zh": "白家月怎么了？李文为什么要陪白家月去医院？",
    "q_vn": "Bạch Gia Nguyệt bị làm sao? Vì sao Lý Văn muốn đưa cô ấy đi bệnh viện?",
    "hint": "她……，咳得……。因为她来中国后……，李文还能帮她……",
-   "sample": "白家月感冒了，还发烧，一直咳嗽，咳得很厉害。因为她来中国后还没去过医院，不知道怎么在中国的医院看病，李文陪她去还能帮她翻译。",
-   "sample_vn": "Bạch Gia Nguyệt bị cảm, còn sốt, ho suốt, ho rất dữ. Vì từ khi sang Trung Quốc cô ấy chưa đi bệnh viện, không biết khám bệnh ở Trung Quốc thế nào, Lý Văn đi cùng còn phiên dịch giúp được.",
+   "sample": "她感冒发烧了，咳嗽也很厉害。她来中国以后还没去过医院，所以李文要陪她去，帮她跟医生交流。",
+   "sample_vn": "Cô ấy bị cảm sốt, ho cũng rất dữ. Từ khi sang Trung Quốc cô chưa đi bệnh viện lần nào, nên Lý Văn muốn đi cùng, giúp cô nói chuyện với bác sĩ.",
    "note": "Câu hỏi đọc hiểu bài khoá 1."
   },
   {
-   "q_zh": "请根据提示复述课文一。",
+   "q_zh": "白家月给李文打了电话以后，李文是怎么帮她的？请你把这件事说一遍。",
    "q_vn": "Dựa vào gợi ý, kể lại bài khoá 1.",
-   "hint": "白家月给李文打电话，告诉他自己……，发烧，一直……。李文觉得她病得……，建议她……",
-   "sample": "白家月给李文打电话，告诉他自己身体不舒服，发烧，一直咳嗽，还咳得很厉害。李文觉得她病得挺严重的，建议她赶快去医院检查一下。不过，白家月来中国后还没去过医院，不知道怎么在中国的医院看病。李文让她在家等一下，说马上去接她，陪她一起去医院，还能帮她翻译。白家月觉得，有李文陪着，她就放心多了。",
-   "sample_vn": "Bạch Gia Nguyệt gọi điện cho Lý Văn, nói mình không khỏe, sốt, ho suốt, ho rất dữ. Lý Văn thấy cô ấy ốm khá nặng, khuyên cô mau đi bệnh viện khám. Có điều từ khi sang Trung Quốc cô chưa đi bệnh viện, không biết khám thế nào. Lý Văn bảo cô ở nhà đợi, nói sẽ qua đón ngay, đưa cô đi bệnh viện, còn phiên dịch giúp. Bạch Gia Nguyệt thấy có Lý Văn đi cùng thì yên tâm hơn nhiều.",
-   "note": "Bài tập 复述 của sách (trang 61)."
+   "hint": "白家月给李文打电话，告诉他自己……，发烧，……。李文觉得她病得……，让她……",
+   "sample": "白家月身体不舒服，给李文打了电话。她又发烧又咳嗽。李文觉得她病得挺严重，让她赶快去医院。白家月不知道在中国怎么看病，李文就说马上去接她，陪她一起去，还能帮她翻译。有李文在，白家月放心多了。",
+   "sample_vn": "Bạch Gia Nguyệt không khỏe, gọi điện cho Lý Văn. Cô vừa sốt vừa ho. Lý Văn thấy cô ốm khá nặng, bảo cô mau đi bệnh viện. Bạch Gia Nguyệt không biết khám bệnh ở Trung Quốc thế nào, Lý Văn liền nói sẽ qua đón ngay, đi cùng cô, còn phiên dịch giúp. Có Lý Văn, cô yên tâm hơn nhiều.",
+   "note": "Bài tập kể lại bài khoá của sách (trang 61)."
   },
   {
    "q_zh": "李文要在表上写什么？李文让白家月做什么？",
    "q_vn": "Lý Văn phải viết gì vào tờ khai? Lý Văn bảo Bạch Gia Nguyệt làm gì?",
    "hint": "他要在表上写上……。李文让白家月……",
-   "sample": "他要在表上写上病人的姓名、性别、国籍、年龄、电话号码和家庭地址。李文去排队挂号，让白家月先在大厅休息，别着急。",
-   "sample_vn": "Anh ấy phải viết vào tờ khai họ tên, giới tính, quốc tịch, tuổi, số điện thoại và địa chỉ nhà của bệnh nhân. Lý Văn đi xếp hàng lấy số, bảo Bạch Gia Nguyệt ngồi nghỉ ở sảnh trước, đừng sốt ruột.",
+   "sample": "他要写上病人的姓名、性别、国籍、年龄、电话号码和家庭地址。写好以后他去挂号，让白家月坐在大厅等他。",
+   "sample_vn": "Anh ấy phải viết họ tên, giới tính, quốc tịch, tuổi, số điện thoại và địa chỉ nhà của bệnh nhân. Viết xong anh đi lấy số, bảo Bạch Gia Nguyệt ngồi ở sảnh đợi.",
    "note": "Câu hỏi đọc hiểu bài khoá 2."
   },
   {
-   "q_zh": "白家月得了什么病？医生让白家月做什么？",
+   "q_zh": "白家月得了什么病？医生是怎么说的？",
    "q_vn": "Bạch Gia Nguyệt bị bệnh gì? Bác sĩ bảo cô ấy làm gì?",
    "hint": "她得了……。医生让她……，还让她回家以后……",
-   "sample": "她得了比较严重的流行性感冒。医生让她打针，因为光吃药恐怕不够，打针会更有效。医生还让她回家以后按时吃药，多喝水，多休息。",
-   "sample_vn": "Cô ấy bị cúm khá nặng. Bác sĩ cho cô ấy tiêm, vì chỉ uống thuốc e là không đủ, tiêm hiệu quả hơn. Bác sĩ còn dặn cô về nhà uống thuốc đúng giờ, uống nhiều nước, nghỉ ngơi nhiều.",
+   "sample": "她得了比较严重的流行性感冒。医生给她打针，让她回家按时吃药，多喝水，多休息。",
+   "sample_vn": "Cô ấy bị cúm khá nặng. Bác sĩ tiêm cho cô, dặn về nhà uống thuốc đúng giờ, uống nhiều nước, nghỉ ngơi nhiều.",
    "note": "Câu hỏi đọc hiểu bài khoá 3."
   },
   {
-   "q_zh": "请根据提示复述课文三。",
+   "q_zh": "白家月这次是怎么看病的？她的病是怎么好起来的？",
    "q_vn": "Dựa vào gợi ý, kể lại bài khoá 3.",
-   "hint": "下午白家月去看病了，她告诉医生，自己……，偶尔……。这次她……",
-   "sample": "下午白家月去看病了，她告诉医生，自己平时身体不错，偶尔才会生一次病。这次她病得很厉害，头也一直疼，身上一点儿力气都没有。医生给她做了检查，检查结果出来后，发现她得了比较严重的流行性感冒。医生建议她打针，因为那样会更有效。医生还让她回家以后按时吃药，多喝水，多休息。晚上，白家月睡觉时出了一身汗。第二天醒来时，她感觉头不那么疼了，体温也低了一些，身体不那么难受了。",
-   "sample_vn": "Buổi chiều Bạch Gia Nguyệt đi khám bệnh… Bác sĩ khuyên cô tiêm vì hiệu quả hơn, dặn về nhà uống thuốc đúng giờ, uống nhiều nước, nghỉ ngơi nhiều. Tối cô toát mồ hôi khắp người; hôm sau tỉnh dậy, đầu bớt đau, nhiệt độ hạ, người không còn khó chịu như trước.",
-   "note": "Bài tập 复述 của sách (trang 64–65)."
+   "hint": "白家月平时……，偶尔……。这次她……。医生……。晚上……，第二天……",
+   "sample": "白家月平时很少生病，可是这次她病得很重，头一直疼，身上也没有力气。检查结果出来以后，医生说她得了流行性感冒，光吃药不够，最好打针。医生还让她回家以后按时吃药。那天晚上她出了一身汗，第二天醒来以后，体温低了一些，人也舒服多了。",
+   "sample_vn": "Bạch Gia Nguyệt bình thường ít khi ốm, nhưng lần này cô ốm nặng, đầu đau mãi, người không còn sức. Có kết quả xét nghiệm, bác sĩ nói cô bị cúm, chỉ uống thuốc không đủ, tốt nhất là tiêm, về nhà uống thuốc đúng giờ. Tối hôm đó cô toát mồ hôi khắp người; hôm sau tỉnh dậy nhiệt độ hạ bớt, người dễ chịu hơn nhiều.",
+   "note": "Bài tập kể lại bài khoá của sách (trang 64–65)."
   },
   {
    "q_zh": "外国人第一次在中国看病，可能会担心什么问题？在中国的医院，看病的过程是怎样的？",
    "q_vn": "Người nước ngoài lần đầu khám bệnh ở Trung Quốc có thể lo vấn đề gì? Quy trình khám bệnh ở bệnh viện Trung Quốc như thế nào?",
    "hint": "可能会担心……，或者……。看病要先……，然后再……。医生会……，好……",
-   "sample": "外国人可能会担心语言不通，或者觉得看病的过程和自己的国家不同。在中国看病要先挂号，然后再去找医生。医生会问病人的情况，有时还会做一些检查，好给出合适的治疗方法。只要按照医生说的一步一步来，就可以顺利得到治疗。",
-   "sample_vn": "Người nước ngoài có thể lo bất đồng ngôn ngữ, hoặc thấy quy trình khám khác nước mình. Ở Trung Quốc phải lấy số trước, rồi mới gặp bác sĩ. Bác sĩ hỏi tình hình, có khi làm xét nghiệm để đưa ra cách điều trị phù hợp. Chỉ cần làm từng bước theo lời bác sĩ là được điều trị suôn sẻ.",
+   "sample": "他们可能会担心听不懂医生的话，或者觉得看病的过程跟自己国家不一样。在中国要先挂号，再去看医生。医生问完情况，有时还要做检查，好找到合适的治疗方法。",
+   "sample_vn": "Họ có thể lo nghe không hiểu bác sĩ, hoặc thấy quy trình khám khác nước mình. Ở Trung Quốc phải lấy số trước rồi mới gặp bác sĩ. Bác sĩ hỏi xong tình hình, có khi còn làm xét nghiệm để tìm ra cách điều trị phù hợp.",
    "note": "Câu hỏi đọc hiểu bài khoá 4; dùng ……，好…… (điểm 4)."
   },
   {
-   "q_zh": "角色扮演：你的朋友生病了，你陪他/她去医院。一个人演病人，一个人演朋友，一个人演护士/医生。",
+   "q_zh": "你的朋友病了，你陪他去医院。请三个人一起说一说：一个是病人，一个是朋友，一个是护士或者医生。",
    "q_vn": "Đóng vai: Bạn của em bị ốm, em đưa bạn đi bệnh viện. Một người đóng bệnh nhân, một người đóng bạn, một người đóng y tá / bác sĩ.",
    "hint": "病人：我……得很厉害。朋友：别着急，我陪你……。护士：请在这张表上写上……。医生：你哪儿不舒服？……好……",
-   "sample": "朋友：护士，您好，我的朋友病了，第一次来这里看病，需要怎么做？护士：请在这张表上写上病人的姓名、性别、年龄和电话号码，然后去那边排队挂号。朋友：好的。你先在大厅休息，我去挂号。病人：真是太谢谢你了！朋友：咱们有什么好客气的。医生：你哪儿不舒服？病人：我头疼得厉害，还一直咳嗽。我平时身体不错，偶尔才感冒一次。医生：我先给你量一下体温……三十八度五，有点儿高。你先去做个检查，好看看是不是流行性感冒。病人：需要打针吗？医生：先打一针，好把体温降下来。回家以后要按时吃药，多喝水，多休息，没有什么好担心的。",
-   "sample_vn": "Bạn: Chào chị y tá, bạn tôi bị ốm, lần đầu đến khám, cần làm thế nào ạ? Y tá: Mời điền họ tên, giới tính, tuổi, số điện thoại vào tờ khai, rồi qua kia xếp hàng lấy số… Bác sĩ: Bạn khó chịu ở đâu? Bệnh nhân: Tôi đau đầu dữ lắm, còn ho suốt… Bác sĩ: Tiêm một mũi trước để hạ nhiệt; về nhà uống thuốc đúng giờ, uống nhiều nước, nghỉ ngơi, chẳng có gì phải lo.",
-   "note": "Hoạt động 分角色朗读 / đóng vai mở rộng từ bài khoá 1–2; dùng đủ 4 điểm ngữ pháp."
+   "sample": "朋友：您好，我朋友病了，是第一次来，我们要先做什么？护士：先在这张表上写上他的名字和手机号，然后去那边挂号。病人：谢谢你一直陪着我。朋友：你跟我还客气什么！医生：你哪儿不舒服？病人：我头疼得很厉害，平时偶尔才感冒。医生：你先去做个检查，好看看是什么病。回家以后按时吃药，很快就会好的。",
+   "sample_vn": "Bạn: Chào chị, bạn tôi bị ốm, lần đầu đến, chúng tôi phải làm gì trước ạ? Y tá: Trước tiên viết tên và số điện thoại vào tờ khai này, rồi qua kia lấy số. Bệnh nhân: Cảm ơn cậu đã luôn ở bên tớ. Bạn: Cậu với tớ còn khách sáo gì! Bác sĩ: Bạn khó chịu ở đâu? Bệnh nhân: Tôi đau đầu dữ lắm, bình thường lâu lâu mới bị cảm. Bác sĩ: Đi xét nghiệm trước để xem là bệnh gì. Về nhà uống thuốc đúng giờ, sẽ nhanh khỏi thôi.",
+   "note": "Hoạt động đóng vai của sách (mở rộng từ bài khoá 1–2); dùng đủ 4 điểm ngữ pháp."
   },
   {
-   "q_zh": "小组讨论：介绍一下你们国家的医疗情况，比如医疗体系、看病流程以及常见病的处理方式。",
+   "q_zh": "请大家说一说：在你们国家，人们生病了怎么看病？到了医院以后要做哪些事？小病和大病怎么办？",
    "q_vn": "Thảo luận nhóm: Giới thiệu tình hình y tế của nước em, ví dụ hệ thống y tế, quy trình khám bệnh và cách xử lý các bệnh thường gặp.",
-   "hint": "在越南，……。看病的时候，先……，然后……。要是只是小感冒，就……；要是病得很厉害，最好赶快……",
-   "sample": "我给大家介绍一下越南的医疗情况。在越南，有公立医院，也有私立医院和国际医院。公立医院收费比较低，但是人很多，有时候要排很长时间的队；国际医院的医生一般会说英文，不过收费比较高。看病的时候，先要挂号，在表上写上姓名、年龄和地址，然后再去找医生。医生会问病人的情况，有时还会做一些检查，好给出合适的治疗方法。要是只是小感冒，很多越南人就在药店买点儿药，多喝水，多休息，没有什么好担心的；要是发烧发得很厉害，或者咳嗽好几天还不好，最好赶快去医院。现在很多医院也可以在网上挂号，既方便又能节省时间。",
-   "sample_vn": "Mình xin giới thiệu tình hình y tế ở Việt Nam. Ở Việt Nam có bệnh viện công, bệnh viện tư và bệnh viện quốc tế. Bệnh viện công phí thấp nhưng đông, có lúc phải xếp hàng rất lâu; bệnh viện quốc tế bác sĩ thường nói tiếng Anh, có điều phí khá cao. Khi khám phải lấy số, điền họ tên, tuổi, địa chỉ vào tờ khai rồi mới gặp bác sĩ… Nếu chỉ cảm nhẹ, nhiều người Việt mua ít thuốc ở hiệu thuốc, uống nhiều nước, nghỉ ngơi, chẳng có gì phải lo; nếu sốt cao hoặc ho mấy ngày không khỏi thì tốt nhất mau đi bệnh viện. Bây giờ nhiều bệnh viện cho lấy số trên mạng, vừa tiện vừa tiết kiệm thời gian.",
-   "note": "Hoạt động 小组讨论 (任务活动) của sách, trang 68; ôn 既……又…… (Bài 4), 要是……就…… (Bài 1)."
+   "hint": "在我们国家，……。看病的时候，先……，然后……。要是只是小感冒，就……；要是病得很厉害，最好赶快……",
+   "sample": "在我们国家，大医院的人很多，看病常常要排队。看病以前，先要在网上或者在医院里挂号，然后再去找医生。要是只是小感冒，很多人就去药店买点儿药，在家休息两天；要是病得很重，就最好赶快去大医院。有的医院也有国际部，医生会说外语，不过收费比较高。",
+   "sample_vn": "Ở nước mình, bệnh viện lớn rất đông, đi khám thường phải xếp hàng. Trước khi khám phải lấy số trên mạng hoặc ở bệnh viện, rồi mới gặp bác sĩ. Nếu chỉ cảm nhẹ, nhiều người ra hiệu thuốc mua ít thuốc, nghỉ ở nhà hai ngày; nếu ốm nặng thì tốt nhất mau đến bệnh viện lớn. Có bệnh viện có khu quốc tế, bác sĩ nói ngoại ngữ, có điều phí khá cao.",
+   "note": "Hoạt động thảo luận nhóm của sách (trang 68); ôn 要是……就…… (bài 1)."
   }
  ]
 };
 var translateData = [
  {
-  "vi": "Tớ còn sốt nữa, ho suốt, ho dữ lắm.",
-  "zh": "我还发烧，一直咳嗽，咳得很厉害。",
-  "py": "Wǒ hái fāshāo, yìzhí késou, ké de hěn lìhai."
+  "vi": "Mấy hôm nay tôi ho rất dữ, uống thuốc rồi cũng không đỡ.",
+  "zh": "这几天我咳嗽得很厉害，吃了药也没好。",
+  "py": "Zhè jǐ tiān wǒ késou de hěn lìhai, chī le yào yě méi hǎo."
  },
  {
-  "vi": "Không sao, tớ đi cùng cậu, còn phiên dịch giúp cậu được nữa.",
-  "zh": "没关系，我陪你一起去，还能帮你翻译。",
-  "py": "Méiguānxì, wǒ péi nǐ yìqǐ qù, hái néng bāng nǐ fānyì."
+  "vi": "Có tớ ở đây, cậu có gì phải sợ đâu?",
+  "zh": "有我在，你有什么好怕的？",
+  "py": "Yǒu wǒ zài, nǐ yǒu shénme hǎo pà de?"
  },
  {
-  "vi": "Cậu với tớ thì có gì mà phải khách sáo.",
-  "zh": "你跟我有什么好客气的。",
-  "py": "Nǐ gēn wǒ yǒu shénme hǎo kèqi de."
+  "vi": "Anh ấy bình thường rất ít uống rượu, thỉnh thoảng mới uống một chút với bạn bè.",
+  "zh": "他平时很少喝酒，偶尔才跟朋友喝一点儿。",
+  "py": "Tā píngshí hěn shǎo hējiǔ, ǒu'ěr cái gēn péngyou hē yìdiǎnr."
  },
  {
-  "vi": "Bình thường cô ấy khá khỏe, lâu lâu mới ốm một lần.",
-  "zh": "她平时身体不错，偶尔才会生一次病。",
-  "py": "Tā píngshí shēntǐ búcuò, ǒu'ěr cái huì shēng yí cì bìng."
+  "vi": "Tối nay tôi ngủ sớm, để sáng mai dậy sớm ra sân bay.",
+  "zh": "我今天晚上早点儿睡，明天好早点儿起床去机场。",
+  "py": "Wǒ jīntiān wǎnshang zǎodiǎnr shuì, míngtiān hǎo zǎodiǎnr qǐchuáng qù jīchǎng."
  },
  {
-  "vi": "Chỉ uống thuốc e là không đủ, tiêm sẽ hiệu quả hơn.",
-  "zh": "光吃药恐怕不够，打针会更有效。",
-  "py": "Guāng chī yào kǒngpà bú gòu, dǎzhēn huì gèng yǒuxiào."
+  "vi": "Làm món này không khó, bạn cứ làm từng bước một là được.",
+  "zh": "做这个菜不难，你一步一步地做就行了。",
+  "py": "Zuò zhège cài bù nán, nǐ yí bù yi bù de zuò jiù xíng le."
  },
  {
-  "vi": "Bác sĩ sẽ làm một số xét nghiệm, để đưa ra cách điều trị phù hợp.",
-  "zh": "医生会做一些检查，好给出合适的治疗方法。",
-  "py": "Yīshēng huì zuò yìxiē jiǎnchá, hǎo gěichū héshì de zhìliáo fāngfǎ."
+  "vi": "Y tá bảo chúng tôi xếp hàng ở sảnh tầng một.",
+  "zh": "护士让我们在一楼大厅排队。",
+  "py": "Hùshi ràng wǒmen zài yì lóu dàtīng páiduì."
  }
 ];
 var translateDataRev = [
  {
-  "vi": "Mời viết vào tờ khai này họ tên, giới tính, quốc tịch, tuổi, số điện thoại và địa chỉ nhà của bệnh nhân.",
-  "zh": "请在这张表上写上病人的姓名、性别、国籍、年龄、电话号码和家庭地址。",
-  "py": "Qǐng zài zhè zhāng biǎo shàng xiěshang bìngrén de xìngmíng, xìngbié, guójí, niánlíng, diànhuà hàomǎ hé jiātíng dìzhǐ."
+  "vi": "Khi viết tờ khai, đừng quên ghi quốc tịch và địa chỉ nhà.",
+  "zh": "写表的时候，别忘了写上国籍和家庭地址。",
+  "py": "Xiě biǎo de shíhou, bié wàng le xiěshang guójí hé jiātíng dìzhǐ."
  },
  {
-  "vi": "Tớ đi xếp hàng lấy số, cậu ngồi nghỉ ở sảnh trước, đừng sốt ruột.",
-  "zh": "我去排队挂号，你先在大厅休息，别着急。",
-  "py": "Wǒ qù páiduì guàhào, nǐ xiān zài dàtīng xiūxi, bié zháojí."
+  "vi": "Bác sĩ nói ngày mai mới có kết quả xét nghiệm.",
+  "zh": "医生说检查结果明天才有。",
+  "py": "Yīshēng shuō jiǎnchá jiéguǒ míngtiān cái yǒu."
  },
  {
-  "vi": "Bác sĩ dặn cô ấy về nhà uống thuốc đúng giờ, uống nhiều nước, nghỉ ngơi nhiều.",
-  "zh": "医生让她回家以后按时吃药，多喝水，多休息。",
-  "py": "Yīshēng ràng tā huíjiā yǐhòu ànshí chī yào, duō hē shuǐ, duō xiūxi."
+  "vi": "Cách điều trị này rất hiệu quả, bà tôi đã đỡ nhiều rồi.",
+  "zh": "这种治疗方法很有效，我奶奶已经好多了。",
+  "py": "Zhè zhǒng zhìliáo fāngfǎ hěn yǒuxiào, wǒ nǎinai yǐjīng hǎoduō le."
  },
  {
-  "vi": "Khu quốc tế giao tiếp khá thuận tiện, nhưng phí khá cao.",
-  "zh": "国际部交流比较方便，但是收费比较高。",
-  "py": "Guójì bù jiāoliú bǐjiào fāngbiàn, dànshì shōufèi bǐjiào gāo."
+  "vi": "Tôi gọi điện cho mẹ để mẹ yên tâm.",
+  "zh": "我给妈妈打个电话，好让她放心。",
+  "py": "Wǒ gěi māma dǎ gè diànhuà, hǎo ràng tā fàngxīn."
  },
  {
-  "vi": "Khám bệnh ở Trung Quốc phải lấy số trước, rồi mới đi gặp bác sĩ.",
-  "zh": "在中国看病要先挂号，然后再去找医生。",
-  "py": "Zài Zhōngguó kànbìng yào xiān guàhào, ránhòu zài qù zhǎo yīshēng."
+  "vi": "Mấy hôm nay thân nhiệt của bé hơi thấp, tôi muốn đưa bé đi bệnh viện khám xem sao.",
+  "zh": "这几天孩子的体温有点儿低，我想带他去医院看看。",
+  "py": "Zhè jǐ tiān háizi de tǐwēn yǒudiǎnr dī, wǒ xiǎng dài tā qù yīyuàn kànkan."
  }
 ];
 var sgkData = [

@@ -226,97 +226,662 @@
 ],
 
 "listen": [
- {"audio":"小王，这个周末你有什么打算？最近加班太多了，我想去郊区放松放松。郊区有山有水，空气也好。你怎么去？乘坐公交车，一个多小时就到了。不管去哪儿，记得戴帽子，这几天太阳特别大。好主意，谢谢你提醒我。","questions":[
-   {"q":"小王为什么想去郊区？","opts":["最近加班太多了","想参观有名的景点","朋友请他去玩"],"ans":0},
-   {"q":"小王打算怎么去郊区？","opts":["自己开车","乘坐公交车","坐高铁"],"ans":1}]},
- {"audio":"你最近怎么了？上课的时候总是想睡觉。晚上一直准备考试，常常熬夜到两三点。跟熬夜相比，早点儿睡、早上起来复习，效率更高。你说得对，我最近的成绩也下降了。今天晚上早点儿睡吧，否则身体会受不了的。","questions":[
-   {"q":"他最近上课时为什么总是想睡觉？","opts":["常常熬夜","工作太忙","身体不舒服"],"ans":0},
-   {"q":"说话人建议他怎么复习？","opts":["晚上熬夜复习","早点儿睡，早上起来复习","周末再复习"],"ans":1}]},
- {"audio":"下个月我爸妈来北京，你说带他们去哪儿好？故宫和长城都很值得去，放松心情的同时，也能了解历史文化。故宫在市区，交通很方便。长城有点儿远，不过实际上坐高铁去也不太累。那我们先参观故宫，再去爬长城。不管去哪儿，我觉得他们都会很高兴的。","questions":[
-   {"q":"说话人的父母什么时候来北京？","opts":["下个星期","下个月","明年"],"ans":1},
-   {"q":"关于故宫，下面哪个是对的？","opts":["在郊区","交通很方便","离市区很远"],"ans":1}]}
+ {
+  "audio": "这个周末我们去郊区爬山吧，听说那儿有山有水，风景特别好。",
+  "questions": [
+   {
+    "q": "Người nói rủ đi đâu?",
+    "opts": [
+     "Ra ngoại ô leo núi",
+     "Vào trung tâm thành phố",
+     "Ra bờ biển"
+    ],
+    "ans": 0,
+    "exp": "去郊区爬山 = ra ngoại ô leo núi."
+   },
+   {
+    "q": "Nơi đó thế nào?",
+    "opts": [
+     "Rất đông người",
+     "Đi lại bất tiện",
+     "Có núi có sông, phong cảnh đẹp"
+    ],
+    "ans": 2,
+    "exp": "有山有水，风景特别好 = có núi có sông, phong cảnh rất đẹp."
+   }
+  ]
+ },
+ {
+  "audio": "明天是早上七点的飞机，你今天晚上别熬夜了，否则明天起不来。",
+  "questions": [
+   {
+    "q": "Người nói khuyên điều gì?",
+    "opts": [
+     "Đặt vé máy bay sớm",
+     "Tối nay đừng thức khuya",
+     "Ra sân bay ngay"
+    ],
+    "ans": 1,
+    "exp": "今天晚上别熬夜了 = tối nay đừng thức khuya nữa."
+   },
+   {
+    "q": "Nếu không nghe lời thì sao?",
+    "opts": [
+     "Sáng mai không dậy nổi",
+     "Sẽ bị ốm",
+     "Không mua được vé"
+    ],
+    "ans": 0,
+    "exp": "否则明天起不来 = nếu không thì mai không dậy nổi; 否则 = nếu không thì."
+   }
+  ]
+ },
+ {
+  "audio": "跟坐公交车相比，坐地铁去故宫要快多了，也不用担心路上车多。",
+  "questions": [
+   {
+    "q": "Đi Cố Cung bằng gì nhanh hơn?",
+    "opts": [
+     "Xe buýt",
+     "Tàu điện ngầm",
+     "Taxi"
+    ],
+    "ans": 1,
+    "exp": "跟坐公交车相比，坐地铁……快多了 = so với xe buýt, tàu điện ngầm nhanh hơn nhiều."
+   }
+  ]
+ },
+ {
+  "audio": "不管工作多忙，我爸爸每天晚上都要出去走一走。",
+  "questions": [
+   {
+    "q": "Tối nào bố người nói cũng làm gì?",
+    "opts": [
+     "Tăng ca",
+     "Xem tivi",
+     "Ra ngoài đi bộ một lát"
+    ],
+    "ans": 2,
+    "exp": "不管工作多忙……都要出去走一走 = dù bận đến đâu cũng ra ngoài đi bộ một lát."
+   }
+  ]
+ },
+ {
+  "audio": "这个项目下个月就要结束了，所以最近大家都在加班。",
+  "questions": [
+   {
+    "q": "Vì sao dạo này mọi người tăng ca?",
+    "opts": [
+     "Công ty có khách mới",
+     "Giám đốc bắt buộc",
+     "Dự án sắp kết thúc vào tháng sau"
+    ],
+    "ans": 2,
+    "exp": "这个项目下个月就要结束了 = dự án này tháng sau sẽ kết thúc; 就要……了 = sắp …."
+   }
+  ]
+ },
+ {
+  "audio": "外面太阳很大，你出去的时候记得戴帽子，再多带点儿水。",
+  "questions": [
+   {
+    "q": "Người nói nhắc điều gì?",
+    "opts": [
+     "Đội mũ và mang thêm nước",
+     "Mang ô",
+     "Mặc áo ấm"
+    ],
+    "ans": 0,
+    "exp": "记得戴帽子，再多带点儿水 = nhớ đội mũ, mang thêm ít nước."
+   }
+  ]
+ },
+ {
+  "audio": "我们先暂停一下，休息十分钟之后再接着开会。",
+  "questions": [
+   {
+    "q": "Bây giờ mọi người làm gì?",
+    "opts": [
+     "Họp tiếp",
+     "Nghỉ mười phút",
+     "Tan họp về nhà"
+    ],
+    "ans": 1,
+    "exp": "先暂停一下，休息十分钟 = tạm dừng, nghỉ mười phút."
+   },
+   {
+    "q": "Sau đó thì sao?",
+    "opts": [
+     "Ra ngoài ăn trưa",
+     "Đi tham quan",
+     "Họp tiếp"
+    ],
+    "ans": 2,
+    "exp": "之后再接着开会 = sau đó họp tiếp; 之后 = sau khi."
+   }
+  ]
+ }
 ],
-
 "match": [
- {"left":"戴","right":"帽子"},
- {"left":"参观","right":"故宫"},
- {"left":"乘坐","right":"公交车"},
- {"left":"失去","right":"健康"},
- {"left":"提醒","right":"自己多放松"},
- {"left":"工作效率","right":"下降"},
- {"left":"好","right":"主意"},
- {"left":"有山","right":"有水"},
- {"left":"跟一直加班","right":"相比"},
- {"left":"去郊区","right":"游玩"}
+ {
+  "left": "戴",
+  "right": "帽子"
+ },
+ {
+  "left": "乘坐",
+  "right": "高铁"
+ },
+ {
+  "left": "参观",
+  "right": "故宫"
+ },
+ {
+  "left": "失去",
+  "right": "健康"
+ },
+ {
+  "left": "放松",
+  "right": "心情"
+ },
+ {
+  "left": "效率",
+  "right": "下降"
+ },
+ {
+  "left": "交通",
+  "right": "很方便"
+ },
+ {
+  "left": "值得",
+  "right": "去看看"
+ }
 ],
-
 "fill": [
- {"pre":"家月，最近学习太","blank":"紧张","post":"了，咱们明天出去放松放松吧。","hint":"(căng thẳng)","ans":"紧张","exp":"学习紧张 = học hành căng thẳng."},
- {"pre":"","blank":"不管","post":"去哪儿，能放松的地方都行。","hint":"(bất kể)","ans":"不管","exp":"不管 + từ để hỏi，……都……"},
- {"pre":"好主意！不过明天是个大晴天，外出记得","blank":"戴","post":"帽子。","hint":"(đội)","ans":"戴","exp":"戴帽子 = đội mũ; đừng nhầm với 带 (mang theo)."},
- {"pre":"以前我经常加班、","blank":"熬夜","post":"，身体也亮起了红灯。","hint":"(thức khuya)","ans":"熬夜","exp":"加班、熬夜 — cặp từ hay đi cùng."},
- {"pre":"还是别给自己太大压力，","blank":"否则","post":"，失去健康就不值得了。","hint":"(nếu không thì)","ans":"否则","exp":"Lời khuyên，否则 + hậu quả."},
- {"pre":"跟一直加班","blank":"相比","post":"，休息好了再工作，效率更高。","hint":"(so với)","ans":"相比","exp":"跟 + A + 相比."},
- {"pre":"休息不够，结果工作效率","blank":"下降","post":"，健康也受到了影响。","hint":"(giảm sút)","ans":"下降","exp":"效率下降 = hiệu suất giảm."},
- {"pre":"","blank":"因此","post":"，很多人开始做出改变，提醒自己减轻压力、多多放松。","hint":"(vì vậy)","ans":"因此","exp":"因此 nêu kết quả, trang trọng hơn 所以."},
- {"pre":"郊区","blank":"有山有水","post":"，还有很多农家乐。","hint":"(có núi có sông)","ans":"有山有水","exp":"Cụm cố định 有A有B."},
- {"pre":"北京交通很方便，所以我和家人更爱","blank":"乘坐","post":"公交车去郊区。","hint":"(đi — xe, tàu)","ans":"乘坐","exp":"乘坐 + phương tiện = 坐 (trang trọng)."}
+ {
+  "pre": "",
+  "blank": "不管",
+  "post": "你什么时候来，我都在家等你。",
+  "hint": "(bất kể)",
+  "ans": "不管",
+  "exp": "不管 + từ để hỏi (什么时候), vế sau có 都: bất kể lúc nào tôi cũng ở nhà."
+ },
+ {
+  "pre": "你最好提前买票，",
+  "blank": "否则",
+  "post": "到时候就买不到了。",
+  "hint": "(nếu không thì)",
+  "ans": "否则",
+  "exp": "Vế 1 là lời khuyên (mua vé trước), 否则 + hậu quả (đến lúc đó không mua được); ôn 提前 (bài 7)."
+ },
+ {
+  "pre": "跟前几年",
+  "blank": "相比",
+  "post": "，今年来这儿旅游的人多了很多。",
+  "hint": "(so với)",
+  "ans": "相比",
+  "exp": "跟 + A + 相比，B + …: so với mấy năm trước, năm nay …."
+ },
+ {
+  "pre": "这家饭馆的菜有酸",
+  "blank": "有",
+  "post": "甜，大家都很爱吃。",
+  "hint": "(có)",
+  "ans": "有",
+  "exp": "有A有B với hai từ đơn: 有酸有甜 = có chua có ngọt."
+ },
+ {
+  "pre": "这个月项目太多，他差不多每天都要",
+  "blank": "加班",
+  "post": "到晚上十点。",
+  "hint": "(tăng ca)",
+  "ans": "加班",
+  "exp": "加班到 + giờ = tăng ca đến mấy giờ."
+ },
+ {
+  "pre": "考试前一天晚上别",
+  "blank": "熬夜",
+  "post": "了，早点儿睡吧。",
+  "hint": "(thức khuya)",
+  "ans": "熬夜",
+  "exp": "别熬夜了 = đừng thức khuya nữa; 熬夜 là động từ li hợp, không mang tân ngữ."
+ },
+ {
+  "pre": "这部电影很好看，",
+  "blank": "值得",
+  "post": "再看一遍。",
+  "hint": "(đáng)",
+  "ans": "值得",
+  "exp": "值得 + động từ = đáng để …: 值得再看一遍 = đáng xem lại một lần."
+ },
+ {
+  "pre": "明天开会，请你",
+  "blank": "提醒",
+  "post": "我带上那份计划书。",
+  "hint": "(nhắc)",
+  "ans": "提醒",
+  "exp": "提醒 + người + việc = nhắc ai làm gì; ôn 份、计划书 (bài 7)."
+ },
+ {
+  "pre": "这个周末去郊区爬山？好",
+  "blank": "主意",
+  "post": "！我早就想去了。",
+  "hint": "(ý kiến, ý tưởng)",
+  "ans": "主意",
+  "exp": "好主意！= ý hay! — đáp lại khi đồng ý với đề nghị của người khác."
+ },
+ {
+  "pre": "去机场可以",
+  "blank": "乘坐",
+  "post": "地铁，也可以打车。",
+  "hint": "(đi, ngồi phương tiện)",
+  "ans": "乘坐",
+  "exp": "乘坐 + phương tiện (地铁、高铁、飞机) = đi bằng …, sắc thái trang trọng hơn 坐."
+ },
+ {
+  "pre": "这件衣服看起来很贵，",
+  "blank": "实际上",
+  "post": "只要一百块。",
+  "hint": "(thực ra)",
+  "ans": "实际上",
+  "exp": "看起来…… , 实际上…… = trông thì …, thực ra …: hai vế trái ngược."
+ },
+ {
+  "pre": "他每天坚持锻炼，",
+  "blank": "因此",
+  "post": "身体比以前好多了。",
+  "hint": "(vì vậy)",
+  "ans": "因此",
+  "exp": "因此 = vì vậy: vế trước là nguyên nhân (kiên trì tập), vế sau là kết quả."
+ },
+ {
+  "pre": "突然下起了大雨，比赛",
+  "blank": "暂停",
+  "post": "了半个小时。",
+  "hint": "(tạm dừng)",
+  "ans": "暂停",
+  "exp": "暂停 + thời lượng = tạm dừng bao lâu; sau đó sẽ tiếp tục."
+ }
 ],
-
 "sort": [
- {"words":["不管","去哪儿","，","能放松的","地方","都行","。"],"ans":"不管去哪儿，能放松的地方都行。"},
- {"words":["别","给自己","太大压力","，","否则","会","失去健康","。"],"ans":"别给自己太大压力，否则会失去健康。"},
- {"words":["跟","一直加班","相比","，","休息好了","再工作","效率更高","。"],"ans":"跟一直加班相比，休息好了再工作效率更高。"},
- {"words":["郊区","有山","有水","，","吃、玩、住","都","十分方便","。"],"ans":"郊区有山有水，吃、玩、住都十分方便。"},
- {"words":["很多人","开始","提醒自己","减轻压力","、","多多","放松","。"],"ans":"很多人开始提醒自己减轻压力、多多放松。"},
- {"words":["有人","喜欢","去参观","长城、故宫","等","有名的","景点","。"],"ans":"有人喜欢去参观长城、故宫等有名的景点。"}
+ {
+  "words": [
+   "不管",
+   "天气",
+   "怎么样",
+   "，",
+   "他",
+   "每天",
+   "都",
+   "去",
+   "跑步",
+   "。"
+  ],
+  "ans": "不管天气怎么样，他每天都去跑步。"
+ },
+ {
+  "words": [
+   "跟",
+   "上个月",
+   "相比",
+   "，",
+   "他的",
+   "工作效率",
+   "高",
+   "多了",
+   "。"
+  ],
+  "ans": "跟上个月相比，他的工作效率高多了。"
+ },
+ {
+  "words": [
+   "你",
+   "要",
+   "按时",
+   "吃饭",
+   "，",
+   "否则",
+   "身体",
+   "会",
+   "出问题",
+   "的",
+   "。"
+  ],
+  "ans": "你要按时吃饭，否则身体会出问题的。"
+ },
+ {
+  "words": [
+   "我家",
+   "附近",
+   "的",
+   "公园",
+   "里",
+   "有花有树",
+   "。"
+  ],
+  "ans": "我家附近的公园里有花有树。"
+ },
+ {
+  "words": [
+   "那个",
+   "戴",
+   "帽子",
+   "的",
+   "人",
+   "是",
+   "我们的",
+   "经理",
+   "。"
+  ],
+  "ans": "那个戴帽子的人是我们的经理。"
+ },
+ {
+  "words": [
+   "每年",
+   "去",
+   "故宫",
+   "参观",
+   "的",
+   "人",
+   "非常",
+   "多",
+   "。"
+  ],
+  "ans": "每年去故宫参观的人非常多。"
+ },
+ {
+  "words": [
+   "晚上",
+   "熬夜",
+   "会",
+   "使",
+   "第二天的",
+   "学习效率",
+   "下降",
+   "。"
+  ],
+  "ans": "晚上熬夜会使第二天的学习效率下降。"
+ },
+ {
+  "words": [
+   "经理",
+   "提醒",
+   "大家",
+   "把",
+   "手机",
+   "关",
+   "上",
+   "。"
+  ],
+  "ans": "经理提醒大家把手机关上。"
+ }
 ],
-
 "mc": [
- {"q":"＿＿去哪儿，能放松的地方都行。","opts":["不管","虽然","因为","既然"],"ans":0,"exp":"不管 + từ để hỏi (哪儿)，……都…… — điều kiện bất kỳ, kết quả không đổi."},
- {"q":"不管明天＿＿，我们都去爬长城。","opts":["下不下雨","下雨","很下雨","下雨了"],"ans":0,"exp":"Sau 不管 dùng dạng lựa chọn V不V, không dùng sự thật xác định."},
- {"q":"快走吧，＿＿我们就来不及了。","opts":["否则","因此","不过","于是"],"ans":0,"exp":"Lời khuyên，否则 + hậu quả xấu."},
- {"q":"跟坐地铁相比，打车＿＿。","opts":["贵多了","很贵","非常贵","太贵"],"ans":0,"exp":"Câu so sánh 跟……相比: dùng Adj + 多了 / 更 + Adj, không dùng 很 / 非常."},
- {"q":"＿＿去年相比，今年来这里游玩的人更多了。（văn viết）","opts":["与","比","被","把"],"ans":0,"exp":"与……相比 = 跟……相比 (trang trọng, văn viết)."},
- {"q":"郊区有山＿＿水，还有很多农家乐。","opts":["有","和","也","又"],"ans":0,"exp":"Cụm cố định 有A有B — không thay bằng 和."},
- {"q":"外出记得＿＿帽子。","opts":["戴","穿","带","拿"],"ans":0,"exp":"Đội mũ dùng 戴; 穿 = mặc quần áo; 带 = mang theo."},
- {"q":"由于工作紧张，休息不够，结果工作效率＿＿了。","opts":["下降","失去","暂停","提醒"],"ans":0,"exp":"效率下降 = hiệu suất giảm sút."},
- {"q":"北京交通很方便，我和家人更爱＿＿公交车去郊区。","opts":["乘坐","参观","游玩","外出"],"ans":0,"exp":"乘坐 + phương tiện giao thông."},
- {"q":"这道菜看着不太好吃，＿＿挺好吃的。","opts":["实际上","因此","否则","不管"],"ans":0,"exp":"看着……，实际上…… — vẻ ngoài khác với sự thật."}
+ {
+  "q": "Bạn muốn nói: “Dù bận thế nào, tôi cũng ăn sáng.”",
+  "opts": [
+   "不管多忙，我都吃早饭。",
+   "不管很忙，我都吃早饭。",
+   "不管多忙，我吃早饭都。",
+   "不管多忙，都我吃早饭。"
+  ],
+  "ans": 0,
+  "exp": "Sau 不管 dùng 多 + tính từ (多忙), không dùng 很忙; 都 đứng sau chủ ngữ, trước động từ."
+ },
+ {
+  "q": "Câu nào SAI?",
+  "opts": [
+   "不管天气很好，我们都去爬山。",
+   "不管天气好不好，我们都去爬山。",
+   "不管谁来，我都不开门。",
+   "不管是你还是他，都要先排队。"
+  ],
+  "ans": 0,
+  "exp": "不管 không đi với một tình huống cố định (天气很好); phải là 好不好 / 怎么样 / A还是B / 谁…."
+ },
+ {
+  "q": "A: “我想看完这个电影再睡。” B: “太晚了，快睡吧，＿＿明天上课你会很累。”",
+  "opts": [
+   "否则",
+   "因此",
+   "不管",
+   "实际上"
+  ],
+  "ans": 0,
+  "exp": "否则 = nếu không (đi ngủ) thì …: vế sau là hậu quả (mai lên lớp rất mệt)."
+ },
+ {
+  "q": "Bạn muốn nói: “So với mùa hè, mùa đông khách đến đây ít hơn nhiều.”",
+  "opts": [
+   "跟夏天相比，冬天来这儿的游客少多了。",
+   "跟夏天相比，冬天来这儿的游客很少多了。",
+   "跟夏天相比，冬天来这儿的游客更少多了。",
+   "跟夏天相比，冬天来这儿的游客比少多了。"
+  ],
+  "ans": 0,
+  "exp": "跟 A 相比，B + tính từ + 多了; khi đã có 多了 thì không thêm 很 / 更 / 比 trước tính từ."
+ },
+ {
+  "q": "A: “你们公司的同事都是年轻人吗？” — B đáp:",
+  "opts": [
+   "不是，有老有少，大家关系很好。",
+   "不是，有老和少，大家关系很好。",
+   "不是，又老又少，大家关系很好。",
+   "不是，老有少有，大家关系很好。"
+  ],
+  "ans": 0,
+  "exp": "有A有B với hai từ trái nghĩa: 有老有少 = có già có trẻ; 又A又B dùng cho hai tính chất của cùng một người / vật."
+ },
+ {
+  "q": "“他＿＿着一块很贵的手表。”",
+  "opts": [
+   "戴",
+   "穿",
+   "带",
+   "拿"
+  ],
+  "ans": 0,
+  "exp": "戴 dùng cho mũ, đồng hồ, kính…; 穿 cho quần áo, giày; 带 = mang theo."
+ },
+ {
+  "q": "A: “那个地方值得去吗？” — B đáp:",
+  "opts": [
+   "十分值得，那里的景色美丽极了。",
+   "十分值得，那里的景色很美丽极了。",
+   "值得十分，那里的景色美丽极了。",
+   "十分值得，那里的景色是美丽极了。"
+  ],
+  "ans": 0,
+  "exp": "十分 (= rất) đứng trước động từ / tính từ; 极了 không đi cùng 很; không thêm 是 trước tính từ."
+ },
+ {
+  "q": "Câu nào SAI?",
+  "opts": [
+   "我昨天在公交车上失去了手机。",
+   "他失去了这次比赛的机会。",
+   "经常熬夜会失去健康。",
+   "因为太紧张，她失去了一个好机会。"
+  ],
+  "ans": 0,
+  "exp": "Mất đồ vật cụ thể dùng 丢: 手机丢了; 失去 dùng cho thứ trừu tượng: 机会、健康."
+ },
+ {
+  "q": "A: “这个周末你们打算做什么？” B: “去郊区＿＿，听说那儿风景很好。”",
+  "opts": [
+   "游玩",
+   "参观",
+   "乘坐",
+   "外出"
+  ],
+  "ans": 0,
+  "exp": "去郊区游玩 = ra ngoại ô đi chơi; 参观 đi với nơi cụ thể (故宫、学校), 乘坐 đi với phương tiện, 外出 không mang tân ngữ nơi chốn."
+ },
+ {
+  "q": "“最近他总是熬夜，＿＿上班的时候常常觉得很累。”",
+  "opts": [
+   "因此",
+   "否则",
+   "不管",
+   "与"
+  ],
+  "ans": 0,
+  "exp": "因此 = vì vậy: thức khuya (nguyên nhân) → đi làm hay mệt (kết quả)."
+ },
+ {
+  "q": "Bạn muốn nói: “Thực ra anh ấy không giận đâu.”",
+  "opts": [
+   "实际上他没有生气。",
+   "实际他上没有生气。",
+   "他没有生气实际上。",
+   "实际上他不有生气。"
+  ],
+  "ans": 0,
+  "exp": "实际上 (= thực ra) đứng đầu câu hoặc trước động từ, không đặt cuối câu; phủ định của 有 là 没有."
+ },
+ {
+  "q": "“北京是中国的＿＿，有很多有名的景点。”",
+  "opts": [
+   "首都",
+   "市区",
+   "郊区",
+   "交通"
+  ],
+  "ans": 0,
+  "exp": "首都 = thủ đô; 市区 = nội thành, 郊区 = ngoại ô."
+ }
 ],
-
 "speaking": {
- "intro":"Nhấn nút loa nghe câu hỏi (câu hỏi phần Khởi động, câu hỏi đọc hiểu của 4 bài khoá, kể lại bài khoá, thảo luận nhóm và đóng vai), rồi tự ghi âm câu trả lời — cố dùng từ mới và 4 điểm ngữ pháp của bài.",
- "questions":[
-  {"q_zh":"压力大时，你会怎样放松自己？","q_vn":"Khi áp lực lớn, bạn sẽ tự thư giãn như thế nào?","hint":"压力大时，我一般会……。不管……，我都……。跟……相比，……更……","sample":"压力大时，我一般会去公园跑跑步，或者听听音乐。不管学习多紧张，我每个周末都会跟朋友出去走走。跟在家玩手机相比，在大自然里走一走更能让我放松。","sample_vn":"Khi áp lực lớn, tôi thường ra công viên chạy bộ, hoặc nghe nhạc. Dù học hành căng thẳng đến đâu, cuối tuần nào tôi cũng đi dạo cùng bạn bè. So với ở nhà chơi điện thoại, đi dạo giữa thiên nhiên giúp tôi thư giãn hơn.","note":"Câu hỏi phần Khởi động của sách; dùng 不管……都…… (điểm 1) + 跟……相比 (điểm 3)."},
-  {"q_zh":"外出游玩时，你喜欢看风景还是参观历史文化景点？","q_vn":"Khi đi chơi xa, bạn thích ngắm phong cảnh hay tham quan các điểm di tích lịch sử văn hóa?","hint":"我更喜欢……，因为……。跟……相比，……。比如……有山有水……","sample":"我更喜欢看风景。跟参观历史文化景点相比，在有山有水的地方走走更能让我放松。比如去年我去了下龙湾，那里的景色十分美丽，我到现在都忘不了。不过有时候我也会去参观博物馆，了解一下当地的历史。","sample_vn":"Tôi thích ngắm phong cảnh hơn. So với tham quan di tích lịch sử văn hóa, đi dạo ở nơi có núi có sông giúp tôi thư giãn hơn. Ví dụ năm ngoái tôi đi Vịnh Hạ Long, cảnh sắc ở đó vô cùng đẹp, đến giờ tôi vẫn không quên được. Có điều thỉnh thoảng tôi cũng đi tham quan bảo tàng, tìm hiểu lịch sử địa phương.","note":"Câu hỏi phần Khởi động của sách; dùng 跟……相比 + 有A有B + ôn 不过 (Bài 2)."},
-  {"q_zh":"安妮为什么想出去放松放松？她觉得白家月提的爬长城的建议怎么样？","q_vn":"Vì sao Annie muốn ra ngoài thư giãn? Cô ấy thấy đề nghị leo Trường Thành của Bạch Gia Nguyệt thế nào?","hint":"因为最近……。安妮觉得……，不过……，外出记得……","sample":"因为最近学习太紧张了，所以安妮想出去放松放松。她觉得爬长城是个好主意，不过明天是个大晴天，所以她提醒白家月外出记得戴帽子。","sample_vn":"Vì dạo này học hành quá căng thẳng nên Annie muốn ra ngoài thư giãn. Cô ấy thấy leo Trường Thành là ý hay, có điều mai trời nắng to nên cô ấy nhắc Bạch Gia Nguyệt ra ngoài nhớ đội mũ.","note":"Câu hỏi bài khoá 1."},
-  {"q_zh":"请根据提示复述课文一。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 1.","hint":"安妮最近学习……，于是她给白家月打电话，想……。安妮觉得……都行。白家月问……，安妮告诉白家月，……。白家月又建议去……，安妮觉得这是个……，并提醒白家月，……。","sample":"安妮最近学习太紧张了，于是她给白家月打电话，想明天出去放松放松。去哪儿好呢？安妮觉得能放松的地方都行。白家月问郊区怎么样，安妮告诉白家月，陈天中说下周王老师要带他们去郊区游玩。白家月又建议去爬长城，安妮觉得这是个好主意，并提醒白家月，明天是个大晴天，外出记得戴帽子。","sample_vn":"Dạo này Annie học hành quá căng thẳng, thế là cô ấy gọi điện cho Bạch Gia Nguyệt, muốn ngày mai ra ngoài thư giãn… Bạch Gia Nguyệt lại đề nghị đi leo Trường Thành, Annie thấy đó là ý hay, và nhắc Bạch Gia Nguyệt mai trời nắng to, ra ngoài nhớ đội mũ.","note":"Bài tập 复述 của sách (trang 85); ôn 于是 (Bài 3) + 并 (Bài 2)."},
-  {"q_zh":"杨同乐以前为什么经常加班、熬夜？李文为什么说别给自己太大压力？","q_vn":"Vì sao trước đây Dương Đồng Lạc thường tăng ca, thức khuya? Vì sao Lý Văn bảo đừng tự tạo áp lực quá lớn?","hint":"因为他以前总觉得……，所以……。李文觉得……，否则……","sample":"因为杨同乐以前总觉得年轻时要多学多干，所以参加了公司里的很多项目，经常加班、熬夜，身体也亮起了红灯。李文觉得压力太大对身体不好，否则失去了健康，就不值得了。","sample_vn":"Vì trước đây Dương Đồng Lạc luôn nghĩ lúc trẻ phải học nhiều làm nhiều, nên tham gia rất nhiều dự án của công ty, thường tăng ca, thức khuya, sức khỏe cũng báo động đỏ. Lý Văn thấy áp lực quá lớn không tốt cho sức khỏe, nếu không giữ gìn mà mất sức khỏe thì chẳng đáng.","note":"Câu hỏi bài khoá 2; dùng 否则 (điểm 2)."},
-  {"q_zh":"跟一直加班相比，现在人们认识到，怎样才能效率更高？现在杨同乐周末时一般会怎样放松自己？","q_vn":"So với tăng ca liên tục, bây giờ mọi người nhận ra làm thế nào thì hiệu suất mới cao hơn? Bây giờ cuối tuần Dương Đồng Lạc thường thư giãn thế nào?","hint":"跟……相比，休息好了……。他或者……，或者……","sample":"现在人们认识到，跟一直加班相比，休息好了再工作，效率更高。杨同乐周末时或者与朋友们去郊区游玩，在大自然美丽的景色中好好放松自己；或者就在家里安安静静地看看书。","sample_vn":"Bây giờ mọi người nhận ra so với tăng ca liên tục, nghỉ ngơi đủ rồi mới làm thì hiệu suất cao hơn. Cuối tuần Dương Đồng Lạc có khi cùng bạn bè đi chơi ngoại ô, thư giãn giữa cảnh sắc thiên nhiên tươi đẹp; có khi ở nhà yên lặng đọc sách.","note":"Câu hỏi bài khoá 3; dùng 跟……相比 (điểm 3)."},
-  {"q_zh":"请根据提示复述课文三。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 3.","hint":"以前杨同乐总觉得……，就应该……。但是，由于……，他们经常……，结果……。现在越来越多的人认识到，跟……相比，……。因此，……。比如，……。休息好了，……。","sample":"以前杨同乐总觉得自己年轻，就应该多学多干、积累经验。很多年轻人和他想法一样。但是，由于工作紧张，他们经常加班、熬夜，休息不够，结果工作效率下降，健康也受到了影响。现在越来越多的人认识到，跟一直加班相比，休息好了再工作，效率更高。因此，很多人开始做出改变，提醒自己减轻压力、多多放松。比如，杨同乐周末时或者与朋友们去郊区游玩，在大自然美丽的景色中好好放松自己；或者就在家里安安静静地看看书。休息好了，再回去上班时，心情愉快，工作效率也更高。","sample_vn":"Trước đây Dương Đồng Lạc luôn nghĩ mình còn trẻ thì nên học nhiều làm nhiều, tích lũy kinh nghiệm… Nghỉ ngơi đầy đủ rồi, khi quay lại làm việc, tâm trạng vui vẻ, hiệu suất cũng cao hơn.","note":"Bài tập 复述 của sách (trang 88–89); ôn 由于 (Bài 2) + 因此."},
-  {"q_zh":"在北京，周末外出游玩，人们一般会去哪里？农家乐怎么样？","q_vn":"Ở Bắc Kinh, cuối tuần đi chơi, người ta thường đi đâu? Nông gia lạc thế nào?","hint":"有人会……；有人喜欢去参观……等有名的景点；还有人……。郊区有A有B，农家乐……","sample":"在北京，周末的时候，有人会在市区公园走走，看看眼前的美景；有人喜欢去参观长城、故宫等有名的景点，放松心情的同时，也能了解历史文化；还有人乘坐公交车去郊区。郊区有山有水，还有很多农家乐，吃、玩、住都十分方便。","sample_vn":"Ở Bắc Kinh, cuối tuần có người đi dạo công viên nội thành, ngắm cảnh đẹp trước mắt; có người thích tham quan Trường Thành, Cố Cung…, vừa thư giãn vừa tìm hiểu lịch sử văn hóa; còn có người đi xe buýt ra ngoại ô. Ngoại ô có núi có sông, lại có nhiều nông gia lạc, ăn, chơi, ở đều rất tiện.","note":"Câu hỏi bài khoá 4; dùng 有A有B (điểm 4)."},
-  {"q_zh":"小组讨论：人应该不应该有压力？请说一说你们小组的观点。","q_vn":"Thảo luận nhóm (3–5 người): Con người có nên có áp lực hay không? Sau khi thảo luận, một người đại diện nhóm trình bày quan điểm.","hint":"我们小组认为……。一方面……，另一方面……。不过……，否则……。跟……相比，……。不管……，都……","sample":"我们小组认为，人应该有一点儿压力，但是压力不能太大。一方面，有压力的时候，我们会更努力，学习和工作的效率也更高；另一方面，如果压力太大，经常加班、熬夜，健康就会受到影响。跟一直紧张地工作相比，该工作时就工作，该放松时就放松，效果更好。所以，不管学习和工作多忙，我们都应该提醒自己按时休息，否则失去了健康，就不值得了。","sample_vn":"Nhóm chúng em cho rằng con người nên có chút áp lực, nhưng áp lực không được quá lớn. Một mặt, khi có áp lực chúng ta sẽ cố gắng hơn, hiệu suất học tập và làm việc cũng cao hơn; mặt khác, nếu áp lực quá lớn, thường xuyên tăng ca, thức khuya thì sức khỏe sẽ bị ảnh hưởng. So với làm việc căng thẳng liên tục, lúc cần làm thì làm, lúc cần thư giãn thì thư giãn sẽ hiệu quả hơn. Vì vậy dù học và làm bận đến đâu, chúng ta cũng nên nhắc mình nghỉ ngơi đúng giờ, nếu không mất sức khỏe thì chẳng đáng.","note":"Hoạt động 小组讨论 (thảo luận nhóm) trong phần 任务活动 của sách, trang 92–93; ôn 一方面……另一方面…… (Bài 1)."},
-  {"q_zh":"角色扮演：一个人最近压力很大，经常加班、熬夜；另一个人劝他放松一下，并给他出主意，介绍一个放松的好地方。","q_vn":"Đóng vai: một người dạo này áp lực rất lớn, thường tăng ca, thức khuya; người kia khuyên bạn thư giãn, bày cách và giới thiệu một nơi thư giãn lý tưởng.","hint":"A：最近……，经常……。 B：别……，否则……。跟……相比，……。 A：去哪儿好呢？ B：不管去哪儿……。……有山有水……","sample":"A：最近项目太多了，我天天加班，昨天又熬夜到两点。B：你别给自己太大压力，否则身体会受不了的。A：可是工作做不完啊。B：跟一直加班相比，休息好了再工作，效率更高。这个周末咱们出去放松放松吧。A：好主意！去哪儿好呢？B：不管去哪儿，能放松就行。我知道郊区有个农家乐，那里有山有水，风景十分美丽，吃、住都很方便。A：怎么去呢？B：乘坐公交车一个多小时就到了，交通很方便。A：太好了，那我周六早上去找你。B：别忘了戴帽子，最近太阳很大。","sample_vn":"A: Dạo này nhiều dự án quá, ngày nào tớ cũng tăng ca, hôm qua lại thức đến 2 giờ. B: Cậu đừng tự tạo áp lực quá lớn, nếu không cơ thể không chịu nổi đâu. A: Nhưng việc làm không hết. B: So với tăng ca liên tục, nghỉ ngơi đủ rồi làm thì hiệu suất cao hơn. Cuối tuần này mình ra ngoài thư giãn đi. A: Ý hay! Đi đâu được nhỉ? B: Đi đâu cũng được, thư giãn được là ổn. Tớ biết ở ngoại ô có một nông gia lạc, có núi có sông, phong cảnh rất đẹp, ăn ở đều tiện. A: Đi thế nào? B: Đi xe buýt hơn một tiếng là tới, giao thông rất tiện. A: Tuyệt quá, sáng thứ Bảy tớ qua tìm cậu. B: Đừng quên đội mũ nhé, dạo này nắng to lắm.","note":"Hoạt động đóng vai mở rộng từ phần 分角色朗读对话 của sách — dùng đủ 4 điểm ngữ pháp: 不管……都, 否则, 跟……相比, 有A有B."}
+ "intro": "Nhấn nút loa nghe câu hỏi (câu hỏi phần Khởi động, câu hỏi đọc hiểu của 4 bài khoá, kể lại bài khoá, thảo luận và đóng vai), rồi tự ghi âm câu trả lời — cố dùng từ mới và 4 điểm ngữ pháp của bài.",
+ "questions": [
+  {
+   "q_zh": "压力大时，你会怎样放松自己？",
+   "q_vn": "Khi áp lực lớn, bạn sẽ tự thư giãn như thế nào?",
+   "hint": "压力大时，我一般会……。不管……，我都……。跟……相比，……更……",
+   "sample": "压力大时，我一般会去公园跑跑步，或者听听音乐。不管学习多紧张，我每个周末都会跟朋友出去走走。跟在家玩手机相比，在外面走一走更能让我放松。",
+   "sample_vn": "Khi áp lực lớn, tôi thường ra công viên chạy bộ, hoặc nghe nhạc. Dù học hành căng thẳng đến đâu, cuối tuần nào tôi cũng đi dạo cùng bạn bè. So với ở nhà chơi điện thoại, ra ngoài đi dạo giúp tôi thư giãn hơn.",
+   "note": "Câu hỏi phần Khởi động của sách; dùng 不管……都…… (điểm 1) + 跟……相比 (điểm 3)."
+  },
+  {
+   "q_zh": "外出游玩时，你喜欢看风景还是参观历史文化景点？",
+   "q_vn": "Khi đi chơi xa, bạn thích ngắm phong cảnh hay tham quan các điểm di tích lịch sử văn hóa?",
+   "hint": "我更喜欢……，因为……。跟……相比，……。比如……有山有水……",
+   "sample": "我更喜欢看风景。跟参观历史文化景点相比，去山上、海边走走更让我开心。比如去年我去了一个海边的小城市，那里的景色十分美丽，我到现在都忘不了。不过有时候我也会去看看有名的老地方，了解一下那里的历史。",
+   "sample_vn": "Tôi thích ngắm phong cảnh hơn. So với tham quan di tích lịch sử văn hóa, lên núi, ra biển dạo chơi khiến tôi vui hơn. Ví dụ năm ngoái tôi đến một thành phố nhỏ ven biển, cảnh sắc ở đó vô cùng đẹp, đến giờ tôi vẫn không quên được. Có điều thỉnh thoảng tôi cũng đi xem những nơi cổ nổi tiếng, tìm hiểu lịch sử ở đó.",
+   "note": "Câu hỏi phần Khởi động của sách; dùng 跟……相比 + ôn 不过 (bài 2)."
+  },
+  {
+   "q_zh": "安妮为什么想出去放松放松？她觉得白家月提的爬长城的建议怎么样？",
+   "q_vn": "Vì sao Annie muốn ra ngoài thư giãn? Cô ấy thấy đề nghị leo Trường Thành của Bạch Gia Nguyệt thế nào?",
+   "hint": "因为最近……。安妮觉得……，不过……，外出记得……",
+   "sample": "因为这段时间学习压力很大，所以安妮想出去玩玩。她觉得去爬长城很好，还让白家月别忘了戴帽子，因为明天天气很晴。",
+   "sample_vn": "Vì dạo này áp lực học tập lớn nên Annie muốn ra ngoài chơi. Cô thấy đi leo Trường Thành rất hay, còn dặn Bạch Gia Nguyệt đừng quên đội mũ, vì mai trời nắng.",
+   "note": "Câu hỏi bài khoá 1."
+  },
+  {
+   "q_zh": "安妮给白家月打电话想做什么？她们最后决定去哪儿？请你把这个电话的内容说一说。",
+   "q_vn": "Dựa vào gợi ý, kể lại bài khoá 1.",
+   "hint": "安妮最近学习……，于是她给白家月打电话，想……。安妮觉得……都行。白家月问……，安妮告诉白家月，……。白家月又建议去……，安妮觉得这是个……，并提醒白家月，……。",
+   "sample": "安妮觉得最近学习太累了，于是给白家月打电话，想跟她明天一起出去放松。安妮说只要能放松，哪儿都行。白家月问去郊区好不好，安妮说下周王老师就要带大家去郊区了。白家月就说那去爬长城吧，安妮说这是个好主意，并告诉她明天太阳很大，出门要戴帽子。",
+   "sample_vn": "Annie thấy dạo này học mệt quá, thế là gọi điện cho Bạch Gia Nguyệt, rủ ngày mai ra ngoài thư giãn. Annie nói chỉ cần thư giãn được thì đi đâu cũng được. Bạch Gia Nguyệt hỏi đi ngoại ô được không, Annie nói tuần sau cô Vương sẽ đưa cả lớp đi ngoại ô rồi. Bạch Gia Nguyệt liền nói vậy đi leo Trường Thành, Annie bảo đó là ý hay, và dặn mai nắng to, ra ngoài phải đội mũ.",
+   "note": "Bài tập kể lại bài khoá của sách (trang 85); ôn 于是 (bài 3) + 并 (bài 2)."
+  },
+  {
+   "q_zh": "杨同乐以前为什么经常加班、熬夜？李文为什么说别给自己太大压力？",
+   "q_vn": "Vì sao trước đây Dương Đồng Lạc thường tăng ca, thức khuya? Vì sao Lý Văn bảo đừng tự tạo áp lực quá lớn?",
+   "hint": "因为他以前总觉得……，所以……。李文觉得……，否则……",
+   "sample": "因为杨同乐以前总觉得年轻时要多学多干，所以参加了公司里的很多项目，身体也亮起了红灯。李文觉得压力太大会影响健康，要是身体不好了，工作做得再多也不值得。",
+   "sample_vn": "Vì trước đây Dương Đồng Lạc luôn nghĩ lúc trẻ phải học nhiều làm nhiều, nên tham gia rất nhiều dự án của công ty, sức khỏe cũng báo động đỏ. Lý Văn thấy áp lực quá lớn sẽ ảnh hưởng sức khỏe, nếu sức khỏe kém thì làm được bao nhiêu việc cũng chẳng đáng.",
+   "note": "Câu hỏi bài khoá 2; dùng 否则 (điểm 2)."
+  },
+  {
+   "q_zh": "跟一直加班相比，现在人们认识到，怎样才能效率更高？现在杨同乐周末时一般会怎样放松自己？",
+   "q_vn": "So với tăng ca liên tục, bây giờ mọi người nhận ra làm thế nào thì hiệu suất mới cao hơn? Bây giờ cuối tuần Dương Đồng Lạc thường thư giãn thế nào?",
+   "hint": "跟……相比，休息好了……。他或者……，或者……",
+   "sample": "大家发现，先好好休息，再去工作，效率会更高。现在的周末，杨同乐有时候和朋友一起去郊区，在美丽的大自然里放松；有时候就在家里看看书。",
+   "sample_vn": "Mọi người nhận ra nghỉ ngơi cho tốt rồi mới làm việc thì hiệu suất sẽ cao hơn. Bây giờ cuối tuần, Dương Đồng Lạc có khi cùng bạn bè ra ngoại ô, thư giãn giữa thiên nhiên tươi đẹp; có khi ở nhà đọc sách.",
+   "note": "Câu hỏi bài khoá 3; dùng 跟……相比 (điểm 3)."
+  },
+  {
+   "q_zh": "杨同乐以前是怎么工作的？后来他和很多年轻人一样，有了什么改变？",
+   "q_vn": "Dựa vào gợi ý, kể lại bài khoá 3.",
+   "hint": "以前杨同乐总觉得……，就应该……。但是，由于……，他们经常……，结果……。现在越来越多的人认识到，跟……相比，……。因此，……。比如，……。休息好了，……。",
+   "sample": "以前杨同乐觉得自己还年轻，应该多做事，好积累经验，很多年轻人也这么想。但是由于工作太紧张，他们常常加班、熬夜，结果效率下降了，身体也不好了。现在越来越多的人明白，休息好了再工作，比一直加班效果更好。因此，很多人开始减轻自己的压力。杨同乐周末会和朋友去郊区玩，或者在家看书。休息好了，再去上班，心情好，效率也高了。",
+   "sample_vn": "Trước đây Dương Đồng Lạc nghĩ mình còn trẻ, nên làm nhiều việc, tích lũy kinh nghiệm, nhiều người trẻ cũng nghĩ vậy. Nhưng do công việc quá căng thẳng, họ thường tăng ca, thức khuya, kết quả hiệu suất giảm, sức khỏe cũng kém. Bây giờ ngày càng nhiều người hiểu rằng so với tăng ca liên tục, nghỉ ngơi đủ rồi mới làm thì hiệu quả hơn. Vì vậy nhiều người bắt đầu giảm áp lực cho mình. Cuối tuần Dương Đồng Lạc cùng bạn ra ngoại ô chơi, hoặc ở nhà đọc sách. Nghỉ ngơi đủ rồi đi làm, tâm trạng tốt, hiệu suất cũng cao.",
+   "note": "Bài tập kể lại bài khoá của sách (trang 88–89); ôn 由于 (bài 2) + 因此."
+  },
+  {
+   "q_zh": "在北京，周末外出游玩，人们一般会去哪里？郊区那边怎么样？",
+   "q_vn": "Ở Bắc Kinh, cuối tuần đi chơi, người ta thường đi đâu? Ngoại ô (và nông gia lạc) thế nào?",
+   "hint": "有人会……；有人喜欢去参观……等有名的景点；还有人……。郊区有A有B……",
+   "sample": "在北京，有的人喜欢去市区的公园看看美景；有的人去参观长城、故宫这些有名的景点，一边玩一边了解历史文化；还有很多人坐公交车去郊区。郊区有山有水，吃和住都很方便。",
+   "sample_vn": "Ở Bắc Kinh, có người thích ra công viên nội thành ngắm cảnh đẹp; có người đi tham quan Trường Thành, Cố Cung, vừa chơi vừa tìm hiểu lịch sử văn hóa; còn nhiều người đi xe buýt ra ngoại ô. Ngoại ô có núi có sông, ăn ở đều rất tiện.",
+   "note": "Câu hỏi bài khoá 4; dùng 有A有B (điểm 4)."
+  },
+  {
+   "q_zh": "人应该不应该有压力？请大家说一说自己的看法。",
+   "q_vn": "Thảo luận nhóm (3–5 người): Con người có nên có áp lực hay không? Sau khi thảo luận, một người đại diện nhóm trình bày quan điểm.",
+   "hint": "我们认为……。一方面……，另一方面……。不过……，否则……。跟……相比，……。不管……，都……",
+   "sample": "我们认为，人应该有一点儿压力，但是压力不能太大。一方面有压力的时候，我们会更努力，做事更快；另一方面压力太大的话，健康就会受到影响。该工作时就工作，该放松时就放松，这样最好。所以不管多忙，都要记得按时休息，否则身体累坏了，什么都做不了。",
+   "sample_vn": "Chúng em cho rằng con người nên có chút áp lực, nhưng không được quá lớn. Một mặt, khi có áp lực chúng ta sẽ cố gắng hơn, làm việc nhanh hơn; mặt khác, nếu áp lực quá lớn thì sức khỏe sẽ bị ảnh hưởng. Lúc cần làm thì làm, lúc cần thư giãn thì thư giãn, như vậy là tốt nhất. Vì vậy dù bận đến đâu cũng nhớ nghỉ ngơi đúng giờ, nếu không cơ thể kiệt sức thì chẳng làm được gì.",
+   "note": "Hoạt động thảo luận nhóm của sách (trang 92–93); ôn 一方面……另一方面…… (bài 1)."
+  },
+  {
+   "q_zh": "两个人一起说一说：一个人最近压力很大，经常加班、熬夜；另一个人让他放松一下，给他出主意，介绍一个放松的好地方。",
+   "q_vn": "Đóng vai: một người dạo này áp lực rất lớn, thường tăng ca, thức khuya; người kia khuyên bạn thư giãn, bày cách và giới thiệu một nơi thư giãn lý tưởng.",
+   "hint": "A：最近……，经常……。 B：别……，否则……。跟……相比，……。 A：去哪儿好呢？ B：不管去哪儿……。……有山有水……",
+   "sample": "A：最近项目太多了，我天天加班，昨天又到两点才睡。B：你得休息休息了，身体最重要。A：可是工作做不完啊。B：跟累着工作相比，睡好了再做，速度更快。这个周末咱们去郊区吧。A：好啊！去哪儿呢？B：不管去哪儿，能放松就好。我知道一个地方，有花有树，还能爬山，乘坐公交车一个多小时就到。A：太好了，周六早上我去找你。B：别忘了戴帽子，最近天气很热。",
+   "sample_vn": "A: Dạo này nhiều dự án quá, ngày nào tớ cũng tăng ca, hôm qua lại thức đến 2 giờ mới ngủ. B: Cậu phải nghỉ ngơi đi, sức khỏe là quan trọng nhất. A: Nhưng việc làm không hết. B: So với làm việc khi mệt, ngủ đủ rồi làm sẽ nhanh hơn. Cuối tuần này mình ra ngoại ô đi. A: Được! Đi đâu nhỉ? B: Đi đâu cũng được, thư giãn được là tốt. Tớ biết một chỗ có hoa có cây, còn leo núi được, đi xe buýt hơn một tiếng là tới. A: Tuyệt, sáng thứ Bảy tớ qua tìm cậu. B: Đừng quên đội mũ nhé, dạo này trời nóng lắm.",
+   "note": "Hoạt động đóng vai của sách (mở rộng từ phần đọc phân vai) — dùng đủ 4 điểm ngữ pháp: 不管……都, 否则, 跟……相比, 有A有B."
+  }
  ]
 },
-
 "translate": [
- ["Dạo này học hành căng thẳng quá, ngày mai chúng mình ra ngoài thư giãn chút đi.","最近学习太紧张了，咱们明天出去放松放松吧。"],
- ["Đi đâu cũng được, miễn là nơi có thể thư giãn.","不管去哪儿，能放松的地方都行。"],
- ["Đừng tự tạo áp lực quá lớn cho mình, nếu không mất sức khỏe thì chẳng đáng.","别给自己太大压力，否则，失去健康就不值得了。"],
- ["So với tăng ca liên tục, nghỉ ngơi đầy đủ rồi mới làm thì hiệu suất cao hơn.","跟一直加班相比，休息好了再工作，效率更高。"],
- ["Ngoại ô có núi có sông, ăn, chơi, ở đều rất tiện.","郊区有山有水，吃、玩、住都十分方便。"],
- ["Theo tôi, bất kể đi đâu chơi, thực ra đều là để thư giãn.","在我看来，不管去哪里玩，实际上都是为了放松。"]
+ [
+  "Dù gặp chuyện gì, bạn cũng có thể gọi điện cho tôi.",
+  "不管遇到什么事，你都可以给我打电话。"
+ ],
+ [
+  "Trời lạnh rồi, ra ngoài mặc thêm một chiếc áo, nếu không sẽ bị cảm đấy.",
+  "天冷了，出门多穿一件衣服，否则会感冒的。"
+ ],
+ [
+  "So với đi máy bay, đi tàu cao tốc rẻ hơn mà cũng tiện hơn.",
+  "与坐飞机相比，坐高铁更便宜，也更方便。"
+ ],
+ [
+  "Thành phố nhỏ này có núi có sông, cuối tuần rất nhiều người đến chơi.",
+  "这个小城市有山有水，周末很多人来游玩。"
+ ],
+ [
+  "Đứng trên núi ngắm cảnh đẹp trước mắt, tôi thấy vô cùng thư thái.",
+  "站在山上看着眼前的美景，我觉得十分放松。"
+ ],
+ [
+  "Cuối tuần tôi thích cùng bạn bè ra ngoại ô, đến giữa thiên nhiên dạo một vòng.",
+  "周末我喜欢跟朋友去郊区，到大自然中走一走。"
+ ]
 ],
 "translateRev": [
- ["Lúc cần làm thì làm, lúc cần thư giãn thì phải thư giãn.","该工作时就工作，该放松时就要放松。"],
- ["Sau khi tạm dừng lại, nghỉ ngơi cho tử tế, tôi có thể làm việc nhanh hơn và tốt hơn.","暂停下来、好好休息之后，我能把工作做得更快更好。"],
- ["Do công việc căng thẳng, họ thường tăng ca, thức khuya, kết quả là hiệu suất giảm sút.","由于工作紧张，他们经常加班、熬夜，结果工作效率下降。"],
- ["Có người thích tham quan các thắng cảnh nổi tiếng như Trường Thành, Cố Cung.","有人喜欢去参观长城、故宫等有名的景点。"],
- ["Giao thông Bắc Kinh rất tiện, nên tôi và gia đình thích đi xe buýt ra ngoại ô hơn.","北京交通很方便，所以我和家人更爱乘坐公交车去郊区。"]
+ [
+  "Giao thông nội thành rất tiện, đi đâu cũng có thể đi tàu điện ngầm.",
+  "市区的交通很方便，去哪儿都可以坐地铁。"
+ ],
+ [
+  "Ôi, sao bạn cũng ở đây?",
+  "呀，你怎么也在这儿？"
+ ],
+ [
+  "Tốt nghiệp đại học xong, anh ấy vào làm ở một công ty quốc tế.",
+  "大学毕业之后，他去了一家国际公司工作。"
+ ],
+ [
+  "Cố Cung là điểm tham quan nổi tiếng nhất Bắc Kinh.",
+  "故宫是北京最有名的景点。"
+ ],
+ [
+  "Tháng sau tôi có một dự án mới, có lẽ sẽ phải tăng ca thường xuyên.",
+  "下个月我有一个新项目，可能会经常加班。"
+ ]
 ],
-
 "writing": {
  "kieu":"sgk","soChu":120,"tieuDe":"写作 — viết theo đề của sách (ít nhất 120 chữ)",
  "nhanDe":"写作",

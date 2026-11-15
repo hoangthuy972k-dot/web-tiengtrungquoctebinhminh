@@ -231,97 +231,658 @@
 ],
 
 "listen": [
- {"audio":"小王，听说你寒假要去哈尔滨？是啊，我想去看冰雪活动。那里的气温一般低于零下十摄氏度，你受得了吗？没问题，我有的是厚衣服。那你说什么也得多带一双厚袜子，别把脚冻坏了。好的，谢谢你提醒我。","questions":[
-   {"q":"小王寒假去哈尔滨做什么？","opts":["看冰雪活动","出差","学方言"],"ans":0},
-   {"q":"朋友建议小王多带什么？","opts":["厚衣服","厚袜子","热水"],"ans":1}]},
- {"audio":"你刚从广州回来？那里怎么样？冬天特别暖和，有二十几度，而且到处都是鲜花。听说广州话很难懂？是啊，我第一天就因为听不懂广州话而引起了一个误会。后来呢？后来我们都说普通话，就没问题了。","questions":[
-   {"q":"广州的冬天怎么样？","opts":["很暖和","很冷","经常下雪"],"ans":0},
-   {"q":"说话人为什么引起了误会？","opts":["听不懂广州话","普通话说得不好","走错了路"],"ans":0}]},
- {"audio":"这个星期学校再次开展环保活动，你参加吗？当然参加！这次活动主要做什么？主要是学习垃圾分类知识，还要做到餐餐光盘，拒绝浪费。我平时吃饭常常剩很多，看来以后得节约一点儿了。是啊，保护环境是每个人的责任。","questions":[
-   {"q":"这次环保活动主要做什么？","opts":["学习垃圾分类知识","骑自行车出行","种植物"],"ans":0},
-   {"q":"说话人以后打算怎么做？","opts":["多买点儿菜","吃饭不再浪费","不参加活动"],"ans":1}]}
+ {
+  "audio": "明天的气温会降到零下五度，你出门的时候说什么也得戴上帽子，要不耳朵会冻坏的。",
+  "questions": [
+   {
+    "q": "Ngày mai nhiệt độ thế nào?",
+    "opts": [
+     "Khoảng 5 độ",
+     "Âm 5 độ",
+     "Âm 15 độ"
+    ],
+    "ans": 1,
+    "exp": "零下五度 = âm 5 độ; 零下 đứng trước con số."
+   },
+   {
+    "q": "Người nói dặn khi ra ngoài phải làm gì?",
+    "opts": [
+     "Nhất định phải đội mũ",
+     "Mang theo ô",
+     "Đi xe buýt cho ấm"
+    ],
+    "ans": 0,
+    "exp": "说什么也得戴上帽子 = dù thế nào cũng phải đội mũ, kẻo tai bị cóng (冻坏)."
+   }
+  ]
+ },
+ {
+  "audio": "你别去超市买了，我们家有的是苹果，下午来我家拿吧。",
+  "questions": [
+   {
+    "q": "Vì sao không cần đi siêu thị?",
+    "opts": [
+     "Siêu thị đã đóng cửa",
+     "Táo ở siêu thị đắt",
+     "Nhà người nói có rất nhiều táo"
+    ],
+    "ans": 2,
+    "exp": "有的是苹果 = táo có khối, có thừa — nên không cần mua."
+   }
+  ]
+ },
+ {
+  "audio": "哥哥喜欢安静，周末总是在家看书；而弟弟特别爱热闹，一有时间就跟朋友出去玩。",
+  "questions": [
+   {
+    "q": "Người em trai là người thế nào?",
+    "opts": [
+     "Thích náo nhiệt, hay hẹn bạn đi chơi",
+     "Thích yên tĩnh, ở nhà đọc sách",
+     "Thích đi làm thêm cuối tuần"
+    ],
+    "ans": 0,
+    "exp": "而 nối hai vế trái ngược: anh thích yên tĩnh, còn 弟弟特别爱热闹 = em rất thích náo nhiệt."
+   }
+  ]
+ },
+ {
+  "audio": "去年的运动会我们班只得了第五名，今年学校再次举办运动会，同学们都想好好表现一下。",
+  "questions": [
+   {
+    "q": "Năm ngoái lớp này đứng thứ mấy?",
+    "opts": [
+     "Thứ nhất",
+     "Thứ ba",
+     "Thứ năm"
+    ],
+    "ans": 2,
+    "exp": "只得了第五名 = chỉ được hạng năm."
+   },
+   {
+    "q": "Năm nay trường làm gì?",
+    "opts": [
+     "Huỷ đại hội thể thao",
+     "Lại tổ chức đại hội thể thao",
+     "Mở thêm lớp thể dục"
+    ],
+    "ans": 1,
+    "exp": "再次举办运动会 = lại một lần nữa tổ chức đại hội thể thao."
+   }
+  ]
+ },
+ {
+  "audio": "我奶奶只会说方言，不会说普通话，我常常听不懂，有一次还因为这个而引起了误会。",
+  "questions": [
+   {
+    "q": "Vì sao người nói hay gặp hiểu lầm với bà?",
+    "opts": [
+     "Bà chỉ nói tiếng địa phương",
+     "Bà nói quá nhỏ",
+     "Bà không thích nói chuyện"
+    ],
+    "ans": 0,
+    "exp": "只会说方言 = chỉ biết nói tiếng địa phương; 因为……而引起了误会 = vì vậy mà gây hiểu lầm."
+   }
+  ]
+ },
+ {
+  "audio": "小区开展垃圾分类活动以后，路边干净多了，大家用水用电也比以前节约了。",
+  "questions": [
+   {
+    "q": "Sau khi khu dân cư phát động phân loại rác, điều gì thay đổi?",
+    "opts": [
+     "Rác nhiều hơn",
+     "Đường sạch hơn nhiều",
+     "Nhiều người chuyển đi"
+    ],
+    "ans": 1,
+    "exp": "路边干净多了 = bên đường sạch hơn nhiều; 开展活动 = phát động hoạt động."
+   },
+   {
+    "q": "Mọi người dùng điện nước thế nào?",
+    "opts": [
+     "Lãng phí hơn",
+     "Như trước",
+     "Tiết kiệm hơn trước"
+    ],
+    "ans": 2,
+    "exp": "比以前节约了 = tiết kiệm hơn trước; ôn câu so sánh 比."
+   }
+  ]
+ },
+ {
+  "audio": "这个寒假我去了哈尔滨，那里白天的温度也低于零下十摄氏度，冷得我受不了。",
+  "questions": [
+   {
+    "q": "Ban ngày ở Cáp Nhĩ Tân nhiệt độ thế nào?",
+    "opts": [
+     "Dưới âm 10 độ C",
+     "Khoảng 10 độ C",
+     "Trên 0 độ C"
+    ],
+    "ans": 0,
+    "exp": "低于零下十摄氏度 = thấp hơn âm 10 độ C; 低于 = thấp hơn, dưới mức."
+   }
+  ]
+ }
 ],
-
 "match": [
- {"left":"气温","right":"降到零下"},
- {"left":"穿上","right":"厚一点儿的衣服"},
- {"left":"举办","right":"很多活动"},
- {"left":"引起","right":"误会"},
- {"left":"学习","right":"普通话"},
- {"left":"节约","right":"资源"},
- {"left":"拒绝","right":"浪费"},
- {"left":"垃圾","right":"分类"},
- {"left":"绿色","right":"出行"},
- {"left":"因为……","right":"而……"}
+ {
+  "left": "引起",
+  "right": "误会"
+ },
+ {
+  "left": "节约",
+  "right": "资源"
+ },
+ {
+  "left": "垃圾",
+  "right": "分类"
+ },
+ {
+  "left": "一件",
+  "right": "厚衣服"
+ },
+ {
+  "left": "零下",
+  "right": "二十度"
+ },
+ {
+  "left": "举办",
+  "right": "运动会"
+ },
+ {
+  "left": "拒绝",
+  "right": "他的要求"
+ },
+ {
+  "left": "绿色",
+  "right": "出行"
+ }
 ],
-
 "fill": [
- {"pre":"没想到哈尔滨的气温降到了","blank":"零下","post":"二十几度，把他冻坏了。","hint":"(dưới 0 độ, âm)","ans":"零下","exp":"零下 + số + 度 = âm … độ."},
- {"pre":"他一定","blank":"后悔","post":"自己穿少了吧？","hint":"(hối hận)","ans":"后悔","exp":"后悔 + 自己 + V了."},
- {"pre":"更重要的是，说什么","blank":"也得","post":"穿上厚一点儿的衣服。","hint":"(cũng phải)","ans":"也得","exp":"说什么也得 + V = dù thế nào cũng phải."},
- {"pre":"没问题，受得了，我","blank":"有的是","post":"厚衣服。","hint":"(có thừa)","ans":"有的是","exp":"有的是 + N = có rất nhiều."},
- {"pre":"气温一般都","blank":"低于","post":"零下十摄氏度。","hint":"(thấp hơn)","ans":"低于","exp":"低于 + số liệu."},
- {"pre":"听说春节时那里会","blank":"举办","post":"很多活动。","hint":"(tổ chức)","ans":"举办","exp":"举办活动 = tổ chức hoạt động."},
- {"pre":"广州基本上没有冬天，","blank":"而","post":"哈尔滨的冬天一般会从十月开始。","hint":"(còn, trong khi đó)","ans":"而","exp":"而 nối hai vế đối lập."},
- {"pre":"","blank":"此外","post":"，两地的方言也不一样。","hint":"(ngoài ra)","ans":"此外","exp":"此外 đứng đầu câu bổ sung thông tin."},
- {"pre":"今年的“世界环境日”，我们","blank":"再次","post":"开展“绿色生活”活动。","hint":"(lại một lần nữa)","ans":"再次","exp":"再次 + V."},
- {"pre":"让绿色生活成为我们的","blank":"日常","post":"习惯！","hint":"(hằng ngày)","ans":"日常","exp":"日常 + N (định ngữ)."}
+ {
+  "pre": "这次考试对我很重要，今天晚上我说什么",
+  "blank": "也得",
+  "post": "把这一课复习完。",
+  "hint": "(cũng phải)",
+  "ans": "也得",
+  "exp": "说什么 + 也得 + động từ = dù thế nào cũng phải …; 也得 đứng ngay trước động từ."
+ },
+ {
+  "pre": "妈妈病了，工作再忙，我",
+  "blank": "怎么着",
+  "post": "也得回家看看她。",
+  "hint": "(dù thế nào)",
+  "ans": "怎么着",
+  "exp": "怎么着也得 = 说什么也得: dù thế nào cũng phải về thăm mẹ."
+ },
+ {
+  "pre": "你的中文这么好，好工作",
+  "blank": "有的是",
+  "post": "，别担心。",
+  "hint": "(có khối, thiếu gì)",
+  "ans": "有的是",
+  "exp": "Danh từ + 有的是 = cái đó có rất nhiều: 好工作有的是 = việc tốt thiếu gì."
+ },
+ {
+  "pre": "我姐姐喜欢热的夏天，",
+  "blank": "而",
+  "post": "我更喜欢下雪的冬天。",
+  "hint": "(còn, trong khi đó)",
+  "ans": "而",
+  "exp": "而 nối hai vế có ý trái ngược: chị thích mùa hè, còn tôi thích mùa đông."
+ },
+ {
+  "pre": "第一次申请奖学金没申请到，今年他决定",
+  "blank": "再次",
+  "post": "申请。",
+  "hint": "(lại một lần nữa)",
+  "ans": "再次",
+  "exp": "再次 + động từ = làm lại lần nữa; ôn 申请奖学金 (bài 1)."
+ },
+ {
+  "pre": "这几天晚上的气温都",
+  "blank": "低于",
+  "post": "零度，你多穿点儿再出门。",
+  "hint": "(thấp hơn)",
+  "ans": "低于",
+  "exp": "低于 + con số = thấp hơn mức đó: 低于零度 = dưới 0 độ."
+ },
+ {
+  "pre": "点了这么多菜又吃不完，太",
+  "blank": "浪费",
+  "post": "了！",
+  "hint": "(lãng phí)",
+  "ans": "浪费",
+  "exp": "太浪费了 = lãng phí quá; ôn V不完 (bài 4)."
+ },
+ {
+  "pre": "他太饿了，一会儿就把一大碗饭吃",
+  "blank": "光",
+  "post": "了。",
+  "hint": "(hết sạch)",
+  "ans": "光",
+  "exp": "光 làm bổ ngữ sau động từ: 吃光 = ăn sạch; ôn câu 把."
+ },
+ {
+  "pre": "这条路上的车",
+  "blank": "较",
+  "post": "少，我们走这条吧。",
+  "hint": "(khá, tương đối)",
+  "ans": "较",
+  "exp": "较 = 比较, đứng trước tính từ một âm tiết: 较少 = khá ít."
+ },
+ {
+  "pre": "这个月公司",
+  "blank": "开展",
+  "post": "了“走路上班”活动，很多人都参加了。",
+  "hint": "(phát động)",
+  "ans": "开展",
+  "exp": "开展 + 活动 = phát động, triển khai hoạt động."
+ },
+ {
+  "pre": "今天风特别大，我在车站等了半个小时，手都",
+  "blank": "冻",
+  "post": "红了。",
+  "hint": "(rét cóng)",
+  "ans": "冻",
+  "exp": "冻红了 = lạnh đến đỏ cả tay; 冻 + kết quả (红 / 坏)."
+ },
+ {
+  "pre": "考试的时候不能",
+  "blank": "使用",
+  "post": "手机和词典。",
+  "hint": "(sử dụng)",
+  "ans": "使用",
+  "exp": "使用 + đồ vật = dùng (trang trọng hơn 用)."
+ }
 ],
-
 "sort": [
- {"words":["更重要的是","，","说什么","也得","穿上","厚一点儿的","衣服","。"],"ans":"更重要的是，说什么也得穿上厚一点儿的衣服。"},
- {"words":["没问题","，","我","有的是","厚衣服","。"],"ans":"没问题，我有的是厚衣服。"},
- {"words":["广州方言","和","普通话","差别","较大","。"],"ans":"广州方言和普通话差别较大。"},
- {"words":["这个城市","因为","天气暖和","而","吸引了","很多游客","。"],"ans":"这个城市因为天气暖和而吸引了很多游客。"},
- {"words":["我们","再次","开展","“绿色生活”","活动","。"],"ans":"我们再次开展“绿色生活”活动。"},
- {"words":["保护环境","是","每一个人","的","责任","。"],"ans":"保护环境是每一个人的责任。"}
+ {
+  "words": [
+   "我",
+   "有的是",
+   "时间",
+   "陪",
+   "你",
+   "去",
+   "买衣服",
+   "。"
+  ],
+  "ans": "我有的是时间陪你去买衣服。"
+ },
+ {
+  "words": [
+   "你",
+   "怎么着",
+   "也得",
+   "把",
+   "房间",
+   "收拾",
+   "干净",
+   "。"
+  ],
+  "ans": "你怎么着也得把房间收拾干净。"
+ },
+ {
+  "words": [
+   "广州",
+   "离",
+   "哈尔滨",
+   "有",
+   "三千多",
+   "公里",
+   "。"
+  ],
+  "ans": "广州离哈尔滨有三千多公里。"
+ },
+ {
+  "words": [
+   "这件",
+   "厚衣服",
+   "是",
+   "妈妈",
+   "给我",
+   "买",
+   "的",
+   "。"
+  ],
+  "ans": "这件厚衣服是妈妈给我买的。"
+ },
+ {
+  "words": [
+   "她",
+   "再次",
+   "拒绝了",
+   "那个",
+   "小伙子",
+   "送",
+   "的",
+   "花",
+   "。"
+  ],
+  "ans": "她再次拒绝了那个小伙子送的花。"
+ },
+ {
+  "words": [
+   "他们",
+   "因为",
+   "方言",
+   "不同",
+   "而",
+   "引起了",
+   "误会",
+   "。"
+  ],
+  "ans": "他们因为方言不同而引起了误会。"
+ },
+ {
+  "words": [
+   "请",
+   "大家",
+   "把",
+   "用过的",
+   "纸",
+   "放进",
+   "这个",
+   "箱子里",
+   "。"
+  ],
+  "ans": "请大家把用过的纸放进这个箱子里。"
+ },
+ {
+  "words": [
+   "哈尔滨的",
+   "冬天",
+   "比",
+   "广州",
+   "冷",
+   "多了",
+   "。"
+  ],
+  "ans": "哈尔滨的冬天比广州冷多了。"
+ }
 ],
-
 "mc": [
- {"q":"冬天去哈尔滨，说什么＿＿穿上厚一点儿的衣服。","opts":["也得","就是","才能","都是"],"ans":0,"exp":"Cấu trúc cố định 「说什么也得×」 = dù thế nào cũng phải."},
- {"q":"别着急，以后＿＿机会。","opts":["有的是","有的","是有","有一些是"],"ans":0,"exp":"有的是 + N = có thừa, thiếu gì."},
- {"q":"南方冬天很暖和，＿＿北方冬天特别冷。","opts":["而","和","跟","并"],"ans":0,"exp":"而 nối hai vế đối lập; 和 / 跟 nối danh từ."},
- {"q":"这个城市因为天气暖和＿＿吸引了很多游客。","opts":["而","所以","但是","而且"],"ans":0,"exp":"因为……而…… (nhân quả)."},
- {"q":"今年的“世界环境日”，我们＿＿开展“绿色生活”活动。","opts":["再次","从来","偶尔","又再次"],"ans":0,"exp":"再次 + V; không nói 又再次."},
- {"q":"这么低的温度，你受＿＿吗？——没问题，受得了。","opts":["得了","不了","得到","不到"],"ans":0,"exp":"Câu hỏi khả năng: V得了吗？ (ôn Bài 4 · điểm 1)."},
- {"q":"如果只使用自己的方言，交流就很困难，甚至还可能＿＿误会。","opts":["引起","举办","开展","拒绝"],"ans":0,"exp":"引起误会 = gây hiểu lầm."},
- {"q":"每个人平时都应该注意＿＿用水，不要浪费。","opts":["节约","拒绝","使用","分类"],"ans":0,"exp":"节约用水 = tiết kiệm nước; trái nghĩa 浪费."},
- {"q":"——今天太冷了！——＿＿啊，冬天北方和南方的温度差别还是很大的。","opts":["就是","就是了","而且","此外"],"ans":0,"exp":"就是 (phó từ) đứng đầu câu đáp = đúng thế; ……就是了 đặt cuối câu (Bài 2)."},
- {"q":"广州和哈尔滨之间的距离有三千多＿＿。","opts":["公里","度","摄氏度","种"],"ans":0,"exp":"公里 = ki-lô-mét, đơn vị khoảng cách."}
+ {
+  "q": "Bạn muốn nói: “Tối nay dù thế nào tôi cũng phải làm xong bài tập.”",
+  "opts": [
+   "今天晚上我说什么也得做完作业。",
+   "今天晚上我说什么也做得完作业。",
+   "我说什么也得做完作业今天晚上。",
+   "今天晚上我说什么得也做完作业。"
+  ],
+  "ans": 0,
+  "exp": "说什么也得 + V: 也得 liền nhau, đứng trước động từ; thời gian 今天晚上 không đặt cuối câu như tiếng Việt."
+ },
+ {
+  "q": "A: “你带的水够不够？要不要再去买一些？” — B đáp:",
+  "opts": [
+   "不用，我包里有的是水。",
+   "不用，我包里是有的水。",
+   "不用，我包里有的水是。",
+   "不用，我包里水有的多。"
+  ],
+  "ans": 0,
+  "exp": "有的是 là một cụm cố định, đứng trước danh từ: 有的是水 = nước có thừa; ôn 够 (bài 5)."
+ },
+ {
+  "q": "Chọn từ điền vào chỗ trống: “北方人爱吃饺子，＿＿南方人更爱吃米饭。”",
+  "opts": [
+   "而",
+   "和",
+   "并",
+   "于是"
+  ],
+  "ans": 0,
+  "exp": "而 nối hai vế trái ngược (người Bắc… còn người Nam…); 和 chỉ nối danh từ, 并 (bài 2) nối hành động, 于是 (bài 3) = thế là."
+ },
+ {
+  "q": "“这是一个简单＿＿有用的办法，你可以试试。”",
+  "opts": [
+   "而",
+   "很",
+   "就",
+   "得"
+  ],
+  "ans": 0,
+  "exp": "Tính từ + 而 + tính từ: 简单而有用 = đơn giản mà hữu ích."
+ },
+ {
+  "q": "Câu nào SAI?",
+  "opts": [
+   "因为他太累了，而他早早就睡了。",
+   "他因为感冒而没来上课。",
+   "我们因为天气不好而改了时间。",
+   "这家饭店因为菜好吃而很有名。"
+  ],
+  "ans": 0,
+  "exp": "因为……而 + kết quả nối liền trong một vế, cùng chủ ngữ; không dùng 而 thay 所以 sau dấu phẩy."
+ },
+ {
+  "q": "A: “上次去广州的鲜花市场，好玩吗？” B: “太漂亮了，春节我想＿＿去看看。”",
+  "opts": [
+   "再次",
+   "从来",
+   "已经",
+   "刚才"
+  ],
+  "ans": 0,
+  "exp": "再次 = lại một lần nữa (việc sắp làm); 从来 (bài 9) hay đi với phủ định; 已经, 刚才 chỉ việc đã xong."
+ },
+ {
+  "q": "Câu nào SAI?",
+  "opts": [
+   "他又再次迟到了。",
+   "感谢大家再次来到我们学校。",
+   "明年我想再次参加这个比赛。",
+   "医生让他下个月再次来检查。"
+  ],
+  "ans": 0,
+  "exp": "再次 đã có nghĩa “lại lần nữa”, không dùng chung với 又: nói 他又迟到了 hoặc 他再次迟到了."
+ },
+ {
+  "q": "A: “你们那儿的夏天热不热？” B: “热极了，有时候三十八度，我真＿＿。”",
+  "opts": [
+   "受不了",
+   "来得及",
+   "用不了",
+   "看不起"
+  ],
+  "ans": 0,
+  "exp": "受不了 = chịu không nổi (nóng, lạnh, ồn…); 来得及 (bài 4) = kịp, 用不了 = dùng không hết."
+ },
+ {
+  "q": "“广州的＿＿很好，一年四季都开着花。”",
+  "opts": [
+   "气候",
+   "气温",
+   "体温",
+   "温度"
+  ],
+  "ans": 0,
+  "exp": "气候 = khí hậu (cả năm, cả mùa); 气温 / 温度 là con số nhiệt độ, đi với 高 / 低; 体温 là thân nhiệt."
+ },
+ {
+  "q": "A: “昨天的音乐会太好听了，你怎么没来？” — B đáp:",
+  "opts": [
+   "我真后悔没跟你一起去。",
+   "我真后悔跟你一起没去。",
+   "我真没后悔跟你一起去。",
+   "我后悔真没跟你一起去。"
+  ],
+  "ans": 0,
+  "exp": "后悔 + việc đã không làm: 后悔没去; 没 đứng trước cả cụm 跟你一起去, không chen vào giữa."
+ },
+ {
+  "q": "A: “现在很多人看手机的时间太长了。” B: “＿＿，我弟弟每天至少看五个小时。”",
+  "opts": [
+   "就是",
+   "就是了",
+   "于是",
+   "可是"
+  ],
+  "ans": 0,
+  "exp": "就是 đứng đầu câu đáp = đúng thế (tán thành); ……就是了 (bài 2) đặt cuối câu; ôn 至少 (bài 5)."
+ },
+ {
+  "q": "“屋子里开着空调，＿＿多了，快进来吧。”",
+  "opts": [
+   "暖和",
+   "热闹",
+   "厚",
+   "亲爱"
+  ],
+  "ans": 0,
+  "exp": "暖和 = ấm áp (thời tiết, phòng); 热闹 = náo nhiệt (đông người), 厚 = dày (quần áo, sách)."
+ },
+ {
+  "q": "“这个饭馆的菜做得不错，价格也不贵。＿＿，服务员也很热情。”",
+  "opts": [
+   "此外",
+   "因此",
+   "否则",
+   "于是"
+  ],
+  "ans": 0,
+  "exp": "此外 = ngoài ra, thêm một ý nữa; 因此 = vì vậy, 否则 (bài 8) = nếu không."
+ }
 ],
-
 "speaking": {
- "intro":"Nhấn nút loa nghe câu hỏi (câu hỏi phần Khởi động, câu hỏi đọc hiểu của 4 bài khoá, kể lại bài khoá và hoạt động thảo luận nhóm), rồi tự ghi âm câu trả lời — cố dùng từ mới và 4 điểm ngữ pháp của bài.",
- "questions":[
-  {"q_zh":"你住的地方气候怎么样？对你们的生活有什么影响？","q_vn":"Khí hậu nơi bạn sống thế nào? Có ảnh hưởng gì đến cuộc sống của mọi người?","hint":"我住在……，那里的气候……。夏天……，而冬天……。所以……","sample":"我住在河内。河内一年有四个季节，夏天很热，气温常常有三十五摄氏度，而冬天比较冷，有时候只有十度左右。由于夏天太热，很多人都不喜欢中午出门，家家都有空调；冬天的时候，大家说什么也得穿上厚一点儿的衣服。此外，天气变化大，很容易感冒，所以要注意身体。","sample_vn":"Tôi sống ở Hà Nội. Hà Nội một năm có bốn mùa, mùa hè rất nóng, nhiệt độ thường 35 độ C, còn mùa đông khá lạnh, có lúc chỉ khoảng 10 độ. Do mùa hè quá nóng, nhiều người không thích ra ngoài buổi trưa, nhà nào cũng có điều hoà; mùa đông thì ai cũng nhất định phải mặc áo dày một chút. Ngoài ra, thời tiết thay đổi nhiều, rất dễ bị cảm, nên phải chú ý sức khoẻ.","note":"Câu hỏi phần Khởi động của sách; dùng 而 (điểm 3), 说什么也得 (điểm 1), 此外 + ôn 由于 (Bài 2)."},
-  {"q_zh":"你喜欢比较冷还是比较热的天气？为什么？","q_vn":"Bạn thích thời tiết hơi lạnh hay hơi nóng? Vì sao?","hint":"我喜欢……的天气。一方面……，另一方面……。不过……","sample":"我喜欢比较冷的天气。一方面，天冷的时候可以穿漂亮的厚衣服，还可以吃火锅；另一方面，我特别怕热，夏天热得我实在受不了。不过太冷也不好，要是气温低于零度，我就不想出门了。","sample_vn":"Tôi thích thời tiết hơi lạnh. Một mặt, trời lạnh có thể mặc áo dày đẹp, lại được ăn lẩu; mặt khác, tôi rất sợ nóng, mùa hè nóng đến mức tôi thật sự chịu không nổi. Có điều quá lạnh cũng không tốt, nếu nhiệt độ dưới 0 độ thì tôi chẳng muốn ra khỏi nhà.","note":"Câu hỏi phần Khởi động của sách; ôn 一方面……另一方面…… (Bài 1), 不过 (Bài 2), 受不了, 低于."},
-  {"q_zh":"小伙子为什么后悔自己穿少了？南方人冬天来北方，刘明和王一雪有什么建议？","q_vn":"Vì sao cậu thanh niên hối hận vì mặc ít? Người miền Nam mùa đông đến miền Bắc, Lưu Minh và Vương Nhất Tuyết có lời khuyên gì?","hint":"因为……，没想到……。他们建议，……一定要提前……，更重要的是，说什么也得……","sample":"因为小伙子从广州去哈尔滨出差，没想到哈尔滨的气温降到了零下二十几度，把他冻坏了。刘明和王一雪建议，冬天来北方，尤其是东北，一定要提前查好目的地的天气，看看下不下雪，气温怎么样。更重要的是，说什么也得穿上厚一点儿的衣服。","sample_vn":"Vì cậu thanh niên từ Quảng Châu đi công tác Cáp Nhĩ Tân, không ngờ nhiệt độ ở đó xuống tới âm hai mươi mấy độ, làm cậu rét cóng. Lưu Minh và Vương Nhất Tuyết khuyên: mùa đông đến miền Bắc, nhất là Đông Bắc, nhất định phải xem trước thời tiết nơi đến; quan trọng hơn, dù thế nào cũng phải mặc áo dày một chút.","note":"Câu hỏi bài khoá 1."},
-  {"q_zh":"请根据提示复述课文一。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 1.","hint":"刘明和王一雪说他在网上看到的一条信息：一个小伙子从广州去……，没想到……。王一雪说，小伙子一定后悔……。刘明说这就叫……。所以，刘明建议，……。王一雪也说，……","sample":"刘明和王一雪说他在网上看到的一条信息：一个小伙子从广州去哈尔滨出差，没想到哈尔滨的气温降到了零下二十几度，把他冻坏了。王一雪说，小伙子一定后悔自己穿少了。刘明说这就叫南方不懂北方的冷。王一雪认为，冬天北方和南方的温度差别还是很大的。所以，刘明建议，冬天来北方，尤其是东北，一定要提前查好目的地的天气，看看下不下雪，气温怎么样。王一雪也说，更重要的是，说什么也得穿上厚一点儿的衣服。","sample_vn":"Lưu Minh kể với Vương Nhất Tuyết một tin trên mạng: một cậu thanh niên từ Quảng Châu đi công tác Cáp Nhĩ Tân, không ngờ nhiệt độ xuống tới âm hai mươi mấy độ, làm cậu rét cóng… Vương Nhất Tuyết cũng nói, quan trọng hơn là dù thế nào cũng phải mặc áo dày một chút.","note":"Bài tập 复述 của sách (trang 109)."},
-  {"q_zh":"春节时，陈天中为什么要去哈尔滨？白家月为什么想在广州过年？","q_vn":"Dịp Tết, vì sao Trần Thiên Trung muốn đi Cáp Nhĩ Tân? Vì sao Bạch Gia Nguyệt muốn ăn Tết ở Quảng Châu?","hint":"陈天中去哈尔滨主要是想……，听说……。白家月想在广州过年，因为……，而且……","sample":"陈天中去哈尔滨主要是想看雪，听说春节时那里会举办很多活动。他不怕冷，因为他有的是厚衣服。白家月想在广州过年，因为那里冬天比较暖和，而且她喜欢看花，听说广州的鲜花市场很有名，里面有各种植物。","sample_vn":"Trần Thiên Trung đi Cáp Nhĩ Tân chủ yếu để ngắm tuyết, nghe nói dịp Tết ở đó tổ chức nhiều hoạt động. Cậu ấy không sợ lạnh vì áo dày có thừa. Bạch Gia Nguyệt muốn ăn Tết ở Quảng Châu vì mùa đông ở đó khá ấm, hơn nữa cô ấy thích ngắm hoa, nghe nói chợ hoa Quảng Châu rất nổi tiếng, có đủ loại cây.","note":"Câu hỏi bài khoá 2; dùng 有的是 (điểm 2)."},
-  {"q_zh":"听完陈天中和白家月的计划，王一飞有什么想法？你寒假有什么计划？","q_vn":"Nghe xong kế hoạch của Trần Thiên Trung và Bạch Gia Nguyệt, Vương Nhất Phi nghĩ gì? Kỳ nghỉ đông của bạn có kế hoạch gì?","hint":"听他们这么一说，王一飞也想……。我寒假打算……","sample":"听他们这么一说，王一飞也想外出旅游了。我寒假打算先回老家过年，接着和朋友去大理玩儿几天，因为那里冬天也很暖和，有的是好看的花。","sample_vn":"Nghe họ kể vậy, Vương Nhất Phi cũng muốn đi du lịch. Kỳ nghỉ đông tôi định về quê ăn Tết trước, tiếp đó đi Đại Lý chơi mấy ngày với bạn, vì mùa đông ở đó cũng ấm, hoa đẹp có khối.","note":"Câu hỏi bài khoá 2; ôn 接着 (Bài 2)."},
-  {"q_zh":"广州和哈尔滨都有哪些不同？中国人为什么从小都要学习普通话？","q_vn":"Quảng Châu và Cáp Nhĩ Tân khác nhau những gì? Vì sao người Trung Quốc từ nhỏ đều phải học tiếng phổ thông?","hint":"广州基本上……，而哈尔滨……。此外，……。因为……，所以为了……","sample":"广州在南方，哈尔滨在北方，两个城市的气候大不相同：广州基本上没有冬天，而哈尔滨的冬天从十月开始，到第二年的三四月才结束。此外，两地的方言也不一样，广州方言和普通话差别较大。中国很多地方都有自己的方言，如果只使用自己的方言，交流就很困难，甚至还可能引起误会，所以为了顺利交流，中国人从小都要学习普通话。","sample_vn":"Quảng Châu ở miền Nam, Cáp Nhĩ Tân ở miền Bắc, khí hậu hai nơi khác nhau rất nhiều… Ngoài ra, phương ngữ hai nơi cũng khác. Nhiều nơi ở Trung Quốc có phương ngữ riêng, nếu chỉ dùng phương ngữ thì giao tiếp rất khó, thậm chí gây hiểu lầm, nên để giao tiếp thuận lợi, người Trung Quốc từ nhỏ đều phải học tiếng phổ thông.","note":"Câu hỏi bài khoá 3; dùng 而 (điểm 3) + 此外 + 甚至 (Bài 3)."},
-  {"q_zh":"请根据提示复述课文三。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 3.","hint":"广州和哈尔滨，一个在……，一个在……，两个城市之间的距离有……，气候……。广州基本上……，而哈尔滨……。此外，……。如果……，那么……。其实，……","sample":"广州和哈尔滨，一个在南方，一个在北方，两个城市之间的距离有三千多公里，气候也大不相同。广州基本上没有冬天，而哈尔滨的冬天一般会从十月开始，到第二年的三四月才结束。广州四季开满鲜花，所以又叫“花城”；哈尔滨冬天冰雪多，所以也叫“冰城”。此外，两地的方言也不一样。哈尔滨方言和普通话听起来比较像，而广州方言和普通话差别较大。如果广州人和哈尔滨人都只使用自己的方言，那么交流就很困难，甚至还可能引起误会。其实，中国很多地方都有自己的方言，所以，为了顺利交流，中国人从小都要学习普通话。","sample_vn":"Quảng Châu và Cáp Nhĩ Tân, một ở miền Nam, một ở miền Bắc, cách nhau hơn ba nghìn ki-lô-mét, khí hậu cũng rất khác… Vì vậy, để giao tiếp thuận lợi, người Trung Quốc từ nhỏ đều phải học tiếng phổ thông.","note":"Bài tập 复述 của sách (trang 113)."},
-  {"q_zh":"怎样做到绿色出行？关于“拒绝浪费”和垃圾分类，应该做些什么？","q_vn":"Làm thế nào để đi lại xanh? Về “nói không với lãng phí” và phân loại rác, nên làm những gì?","hint":"根据距离……：距离短时……，距离长时……。节约资源，坚持……。此外，要积极参加……，学习……","sample":"要根据距离选择绿色交通方式：距离短时可以走路或者骑自行车，距离长时多乘坐公交车或者地铁。拒绝浪费就是要节约资源，坚持一水多用、人走灯关、餐餐都“光盘”。此外，还要积极参加校园、小区环保活动，学习垃圾分类知识，从小事做起，做好垃圾分类。","sample_vn":"Phải chọn phương tiện xanh theo khoảng cách: gần thì đi bộ hoặc xe đạp, xa thì đi xe buýt hoặc tàu điện ngầm. Nói không với lãng phí là tiết kiệm tài nguyên: một nước dùng nhiều lần, người đi đèn tắt, bữa nào cũng ăn sạch đĩa. Ngoài ra, còn phải tích cực tham gia hoạt động bảo vệ môi trường, học kiến thức phân loại rác, làm tốt từ việc nhỏ.","note":"Câu hỏi bài khoá 4."},
-  {"q_zh":"小组讨论：三人一组，说说各自的寒假/暑假旅行计划，包括：打算去哪儿？那里的气候、气温怎么样？根据气候、气温情况，你需要做哪些准备？小组讨论后，选出一位同学向全班介绍大家的计划。","q_vn":"Thảo luận nhóm: nhóm 3 người, mỗi người kể kế hoạch du lịch nghỉ đông / nghỉ hè của mình: định đi đâu? Khí hậu, nhiệt độ ở đó thế nào? Dựa vào khí hậu, nhiệt độ, cần chuẩn bị những gì? Thảo luận xong, chọn một bạn giới thiệu kế hoạch của cả nhóm trước lớp.","hint":"我们组有三个人。……打算寒假去……，那里……，气温一般……。所以他说什么也得……。……想去……，而……。此外，……","sample":"大家好！我们组有三个人，我来介绍一下大家的寒假旅行计划。安妮打算去哈尔滨看冰雪节。那里冬天特别冷，气温一般低于零下十摄氏度，甚至可能到零下二十几度，所以她说什么也得多带几件厚衣服，还要提前查好天气。李文想去广州过年。广州冬天很暖和，有二十度左右，而且有的是鲜花，他只需要带几件薄一点儿的衣服就行了。此外，广州方言和普通话差别较大，他打算先学几句简单的广州话，免得引起误会。我呢，去年去过一次海南，今年计划再次去那儿看海。海南冬天的温度能达到二十几度，所以我要准备好帽子和太阳镜。虽然我们去的地方不一样，准备的东西也不一样，但是大家都很期待这个寒假！","sample_vn":"Chào cả lớp! Nhóm em có ba người, em xin giới thiệu kế hoạch nghỉ đông của nhóm. An Ni định đi Cáp Nhĩ Tân xem lễ hội băng tuyết. Ở đó mùa đông cực lạnh, nhiệt độ thường dưới âm 10 độ C, thậm chí có thể âm hai mươi mấy độ, nên bạn ấy nhất định phải mang thêm mấy chiếc áo dày, còn phải xem trước thời tiết. Lý Văn muốn ăn Tết ở Quảng Châu. Mùa đông Quảng Châu rất ấm, khoảng 20 độ, hoa tươi có khối, bạn ấy chỉ cần mang vài bộ đồ mỏng là được. Ngoài ra, tiếng Quảng Châu khác tiếng phổ thông khá nhiều, nên bạn ấy định học trước vài câu tiếng Quảng đơn giản để khỏi gây hiểu lầm. Còn em, năm ngoái đã đi Hải Nam một lần, năm nay định lại đến đó ngắm biển lần nữa. Mùa đông Hải Nam nhiệt độ có thể lên hai mươi mấy độ, nên em phải chuẩn bị mũ và kính râm. Tuy nơi chúng em đi khác nhau, đồ chuẩn bị cũng khác nhau, nhưng ai cũng rất mong chờ kỳ nghỉ đông này!","note":"Hoạt động 任务活动 · 小组讨论 (thảo luận nhóm) của sách, trang 117–118 — dùng đủ 4 điểm ngữ pháp: 说什么也得, 有的是, 而, 再次 cùng các từ mới về khí hậu."}
+ "intro": "Nhấn nút loa nghe câu hỏi (câu hỏi phần Khởi động, câu hỏi đọc hiểu của 4 bài khoá, kể lại bài khoá và hoạt động thảo luận nhóm của sách), rồi tự ghi âm câu trả lời — cố dùng từ mới và 4 điểm ngữ pháp của bài.",
+ "questions": [
+  {
+   "q_zh": "你住的地方气候怎么样？对你们的生活有什么影响？",
+   "q_vn": "Khí hậu nơi bạn sống thế nào? Có ảnh hưởng gì đến cuộc sống của mọi người?",
+   "hint": "我住在……，那里的气候……。夏天……，而冬天……。所以……",
+   "sample": "我住的城市一年有四个季节。夏天特别热，常常有三十五摄氏度，而冬天比较冷，最低的时候只有八度。由于夏天太热，大家中午都不爱出门，家家都开着空调。此外，春天和秋天天气变化大，很容易感冒，所以要多注意身体。",
+   "sample_vn": "Thành phố tôi sống một năm có bốn mùa. Mùa hè rất nóng, thường 35 độ C, còn mùa đông khá lạnh, lúc thấp nhất chỉ 8 độ. Do mùa hè quá nóng, buổi trưa mọi người không thích ra ngoài, nhà nào cũng bật điều hoà. Ngoài ra, lúc giao mùa thời tiết thay đổi nhiều, rất dễ bị cảm, nên phải chú ý sức khoẻ.",
+   "note": "Câu hỏi phần Khởi động của sách; dùng 而 (điểm 3), 此外, ôn 由于 (bài 2)."
+  },
+  {
+   "q_zh": "你喜欢比较冷还是比较热的天气？为什么？",
+   "q_vn": "Bạn thích thời tiết hơi lạnh hay hơi nóng? Vì sao?",
+   "hint": "我喜欢……的天气。一方面……，另一方面……。不过……",
+   "sample": "我喜欢比较冷的天气。一方面，天冷的时候可以穿漂亮的大衣，还可以喝热茶；另一方面我特别怕热，夏天一出汗我就难受。不过太冷也不好，要是气温低于零度，我就不想出门了。",
+   "sample_vn": "Tôi thích thời tiết hơi lạnh. Một mặt, trời lạnh có thể mặc áo khoác đẹp, lại được uống trà nóng; mặt khác, tôi rất sợ nóng, mùa hè cứ ra mồ hôi là khó chịu. Có điều quá lạnh cũng không tốt, nếu nhiệt độ dưới 0 độ thì tôi chẳng muốn ra khỏi nhà.",
+   "note": "Câu hỏi phần Khởi động của sách; ôn 一方面……另一方面…… (bài 1), 不过 (bài 2), 低于."
+  },
+  {
+   "q_zh": "小伙子为什么后悔自己穿少了？南方人冬天来北方，刘明和王一雪有什么建议？",
+   "q_vn": "Vì sao cậu thanh niên hối hận vì mặc ít? Người miền Nam mùa đông đến miền Bắc, Lưu Minh và Vương Nhất Tuyết có lời khuyên gì?",
+   "hint": "因为……，而他……。他们建议，去以前要……，还要……",
+   "sample": "因为哈尔滨冷极了，气温比零下二十度还低，而他带的衣服太少，一下飞机就冷得不行。他们建议，南方人冬天去北方以前，应该先看看那边的天气怎么样，而且一定要带上厚衣服。",
+   "sample_vn": "Vì Cáp Nhĩ Tân lạnh khủng khiếp, nhiệt độ dưới âm 20 độ, mà cậu ấy mang quá ít quần áo nên bị rét cóng. Họ khuyên người miền Nam trước khi đến miền Bắc vào mùa đông nên xem thời tiết ở đó trước, và nhất định phải mang áo dày.",
+   "note": "Câu hỏi bài khoá 1."
+  },
+  {
+   "q_zh": "刘明在网上看到了一个什么新闻？请你把这件事讲给大家听。",
+   "q_vn": "Dựa vào gợi ý, kể lại bài khoá 1.",
+   "hint": "刘明在网上看到，一个小伙子……，结果……。王一雪觉得……。两个人都认为……",
+   "sample": "刘明在网上看到，一个广州的小伙子去哈尔滨出差，那里特别冷，他穿得太少，结果冻坏了。王一雪觉得他一定很后悔。刘明说，这就是“南方不懂北方的冷”。两个人都认为，南方和北方冬天的温度差别很大，去北方要提前查天气，还得穿上厚厚的衣服。",
+   "sample_vn": "Lưu Minh đọc được trên mạng: một chàng trai Quảng Châu đi công tác Cáp Nhĩ Tân, ở đó rất lạnh, cậu mặc quá ít nên bị rét cóng. Vương Nhất Tuyết nghĩ chắc cậu ấy hối hận lắm. Lưu Minh nói đây chính là “phương Nam không hiểu cái lạnh phương Bắc”. Hai người đều cho rằng mùa đông nhiệt độ hai miền chênh lệch lớn, đi miền Bắc phải xem trước thời tiết, còn phải mặc thật dày.",
+   "note": "Bài tập kể lại bài khoá của sách (trang 109)."
+  },
+  {
+   "q_zh": "春节时，陈天中为什么要去哈尔滨？白家月为什么想在广州过年？",
+   "q_vn": "Dịp Tết, vì sao Trần Thiên Trung muốn đi Cáp Nhĩ Tân? Vì sao Bạch Gia Nguyệt muốn ăn Tết ở Quảng Châu?",
+   "hint": "陈天中去哈尔滨主要是想……。他不怕冷，因为……。白家月想在广州过年，因为……，而且……",
+   "sample": "陈天中去哈尔滨主要是为了看雪和参加春节的活动。他一点儿也不怕冷，因为他的厚衣服有的是。白家月想在广州过年，因为那里冬天很暖和，而且她爱看花，广州的鲜花市场很有名，能看到各种植物。",
+   "sample_vn": "Trần Thiên Trung đi Cáp Nhĩ Tân chủ yếu để ngắm tuyết và tham gia các hoạt động dịp Tết. Cậu ấy chẳng sợ lạnh vì áo dày có thừa. Bạch Gia Nguyệt muốn ăn Tết ở Quảng Châu vì mùa đông ở đó không lạnh, hơn nữa cô ấy thích ngắm hoa, chợ hoa Quảng Châu rất nổi tiếng, có thể thấy đủ loại cây.",
+   "note": "Câu hỏi bài khoá 2; dùng 有的是 (điểm 2)."
+  },
+  {
+   "q_zh": "听完陈天中和白家月的计划，王一飞有什么想法？你寒假有什么计划？",
+   "q_vn": "Nghe xong kế hoạch của Trần Thiên Trung và Bạch Gia Nguyệt, Vương Nhất Phi nghĩ gì? Kỳ nghỉ đông của bạn có kế hoạch gì?",
+   "hint": "王一飞也想……。我寒假打算先……，接着……",
+   "sample": "王一飞听了他们的计划，也想出去旅游了。我寒假打算先回家过年，接着和两个朋友去北京玩几天，去看看长城上的雪。",
+   "sample_vn": "Vương Nhất Phi nghe kế hoạch của họ cũng muốn đi du lịch. Kỳ nghỉ đông tôi định về nhà ăn Tết trước, tiếp đó đi Bắc Kinh chơi mấy ngày với hai người bạn, đi ngắm tuyết trên Vạn Lý Trường Thành.",
+   "note": "Câu hỏi bài khoá 2; ôn 接着 (bài 2)."
+  },
+  {
+   "q_zh": "广州和哈尔滨都有哪些不同？中国人为什么从小都要学习普通话？",
+   "q_vn": "Quảng Châu và Cáp Nhĩ Tân khác nhau những gì? Vì sao người Trung Quốc từ nhỏ đều phải học tiếng phổ thông?",
+   "hint": "广州……，而哈尔滨……。此外，……。因为……，所以为了……",
+   "sample": "这两个城市的冬天很不一样：广州几乎没有冬天，而哈尔滨一年有五六个月都很冷。两个地方说的话也不一样。因为中国不少地方都有方言，大家只说方言就很难交流，所以为了让大家都能听懂，孩子们从小就学普通话。",
+   "sample_vn": "Mùa đông hai thành phố rất khác: Quảng Châu gần như không có mùa đông, còn Cáp Nhĩ Tân một năm lạnh đến năm sáu tháng. Tiếng nói hai nơi cũng khác. Vì các vùng ở Trung Quốc đều có phương ngữ, chỉ nói phương ngữ thì khó giao tiếp, nên để mọi người đều hiểu nhau, trẻ em từ nhỏ đã học tiếng phổ thông.",
+   "note": "Câu hỏi bài khoá 3; dùng 而 (điểm 3)."
+  },
+  {
+   "q_zh": "请你给朋友介绍一下广州和哈尔滨这两个城市。",
+   "q_vn": "Dựa vào gợi ý, kể lại bài khoá 3.",
+   "hint": "广州在……，哈尔滨在……，两个城市离得……。广州……，而哈尔滨……。此外，……。如果……，那么……。所以……",
+   "sample": "广州在南方，哈尔滨在北方，两个城市离得很远，有三千多公里。广州四季都有鲜花，所以人们叫它“花的城市”；哈尔滨冬天有很多冰和雪，冬天从十月一直到第二年春天。此外，哈尔滨话跟普通话很像，而广州话跟普通话很不一样。如果两个地方的人都只用自己的方言，那么说话就很难听懂，甚至会有误会。所以，中国人从小就要学好普通话。",
+   "sample_vn": "Quảng Châu ở miền Nam, Cáp Nhĩ Tân ở miền Bắc, cách nhau hơn ba nghìn ki-lô-mét. Quảng Châu bốn mùa có hoa, nên được gọi là “thành phố hoa”; Cáp Nhĩ Tân mùa đông nhiều băng tuyết, mùa đông kéo dài từ tháng Mười đến mùa xuân năm sau. Ngoài ra, tiếng Cáp Nhĩ Tân rất giống tiếng phổ thông, còn tiếng Quảng Châu rất khác. Nếu người hai nơi chỉ dùng phương ngữ của mình thì rất khó nghe hiểu, thậm chí có hiểu lầm. Vì vậy, người Trung Quốc từ nhỏ đã phải học tốt tiếng phổ thông.",
+   "note": "Bài tập kể lại bài khoá của sách (trang 113)."
+  },
+  {
+   "q_zh": "怎样做到绿色出行？关于“拒绝浪费”和垃圾分类，应该做些什么？",
+   "q_vn": "Làm thế nào để đi lại xanh? Về “nói không với lãng phí” và phân loại rác, nên làm những gì?",
+   "hint": "路近的时候……，路远的时候……。要节约……，……。此外，还要……",
+   "sample": "路近的时候可以走路或者骑自行车，路远的时候最好坐公交车或者地铁。我们要节约用水用电，离开房间时把灯关上，吃饭时把饭菜吃完。此外，还要多参加环保活动，学一学怎么给垃圾分类，从每一件小事做起。",
+   "sample_vn": "Đường gần thì có thể đi bộ hoặc đi xe đạp, đường xa thì tốt nhất đi xe buýt hoặc tàu điện ngầm. Chúng ta phải tiết kiệm điện nước, ra khỏi phòng thì tắt đèn, ăn cơm thì ăn hết thức ăn. Ngoài ra còn phải tham gia nhiều hoạt động bảo vệ môi trường, học cách phân loại rác, bắt đầu từ từng việc nhỏ.",
+   "note": "Câu hỏi bài khoá 4."
+  },
+  {
+   "q_zh": "请你和两个同学一起说说自己的寒假计划：打算去哪儿？那里的气候和气温怎么样？要做哪些准备？最后请一个人给大家介绍。",
+   "q_vn": "Thảo luận nhóm: nhóm 3 người, mỗi người kể kế hoạch du lịch nghỉ đông / nghỉ hè của mình: định đi đâu? Khí hậu, nhiệt độ ở đó thế nào? Dựa vào khí hậu, nhiệt độ, cần chuẩn bị những gì? Thảo luận xong, chọn một bạn giới thiệu kế hoạch của cả nhóm trước lớp.",
+   "hint": "我们三个人……。……打算去……，那里……，所以他说什么也得……。……想去……，而……。我去年去过……，今年想再次……",
+   "sample": "大家好！我来介绍一下我们三个人的寒假计划。安妮打算去哈尔滨看冰灯。那里冬天冷得厉害，常常是零下十几度，所以她说什么也得多带几件大衣。李文想去广州过春节，广州冬天有二十度，而且鲜花有的是，他不用带厚衣服。此外，他还想先学几句广州话，这样就不会引起误会了。我呢，去年去过一次北京，今年计划再次去那儿爬长城。虽然我们去的地方不一样，但是大家都很想快点儿放寒假！",
+   "sample_vn": "Chào cả lớp! Em xin giới thiệu kế hoạch nghỉ đông của ba bạn chúng em. An Ni định đi Cáp Nhĩ Tân xem đèn băng. Ở đó mùa đông lạnh dữ dội, thường âm mười mấy độ, nên bạn ấy nhất định phải mang thêm mấy chiếc áo khoác. Lý Văn muốn ăn Tết ở Quảng Châu, mùa đông ở đó 20 độ, hoa tươi có khối, bạn ấy không cần mang áo dày. Ngoài ra, bạn ấy còn muốn học trước vài câu tiếng Quảng để khỏi gây hiểu lầm. Còn em, năm ngoái đã đi Bắc Kinh một lần, năm nay định lại đến đó leo Trường Thành. Tuy nơi chúng em đi khác nhau, nhưng ai cũng mong mau được nghỉ đông!",
+   "note": "Hoạt động thảo luận nhóm của sách (trang 117–118) — dùng đủ 4 điểm ngữ pháp của bài cùng các từ mới về khí hậu."
+  }
  ]
 },
-
 "translate": [
- ["Quan trọng hơn là, dù thế nào cũng phải mặc quần áo dày một chút.","更重要的是，说什么也得穿上厚一点儿的衣服。"],
- ["Không sao, chịu được, áo dày tớ có thừa.","没问题，受得了，我有的是厚衣服。"],
- ["Quảng Châu gần như không có mùa đông, còn mùa đông Cáp Nhĩ Tân thường bắt đầu từ tháng Mười.","广州基本上没有冬天，而哈尔滨的冬天一般会从十月开始。"],
- ["Ngày Môi trường Thế giới năm nay, chúng ta lại một lần nữa phát động hoạt động “Sống xanh”.","今年的“世界环境日”，我们再次开展“绿色生活”活动。"],
- ["Mùa đông nhiệt độ miền Bắc và miền Nam chênh lệch vẫn rất lớn.","冬天北方和南方的温度差别还是很大的。"],
- ["Bảo vệ môi trường là trách nhiệm của mỗi người.","保护环境是每一个人的责任。"]
+ [
+  "Dù trời lạnh thế nào, sáng mai tôi cũng phải đi chạy bộ.",
+  "不管天气多冷，明天早上我说什么也得去跑步。"
+ ],
+ [
+  "Siêu thị gần nhà tôi có khối hoa quả tươi.",
+  "我家附近的超市有的是新鲜水果。"
+ ],
+ [
+  "Tôi thích ở nhà đọc sách, còn em gái tôi thích ra ngoài chơi.",
+  "我喜欢在家看书，而我妹妹喜欢出去玩。"
+ ],
+ [
+  "Bác sĩ bảo tôi tuần sau lại đến kiểm tra lần nữa.",
+  "医生让我下个星期再次来检查。"
+ ],
+ [
+  "Nếu chỉ nói tiếng địa phương, người nơi khác có thể nghe không hiểu.",
+  "要是只说方言，外地人可能听不懂。"
+ ],
+ [
+  "Tôi đi làm bằng xe đạp, vừa bảo vệ môi trường vừa rèn luyện được sức khoẻ.",
+  "我骑自行车上班，既环保又能锻炼身体。"
+ ]
 ],
 "translateRev": [
- ["Không ngờ nhiệt độ ở Cáp Nhĩ Tân xuống tới âm hai mươi mấy độ, làm cậu ấy rét cóng.","没想到哈尔滨的气温降到了零下二十几度，把他冻坏了。"],
- ["Nhiệt độ thấp thế này chắc cậu chịu không nổi đâu nhỉ?","这么低的温度你受不了吧？"],
- ["Nghe nói chợ hoa tươi Quảng Châu rất nổi tiếng, trong đó có đủ loại cây cối.","听说广州的鲜花市场很有名，里面有各种植物。"],
- ["Nếu chỉ dùng phương ngữ của mình thì giao tiếp sẽ rất khó, thậm chí còn có thể gây hiểu lầm.","如果只使用自己的方言，那么交流就很困难，甚至还可能引起误会。"],
- ["Tiết kiệm tài nguyên, kiên trì một nước dùng nhiều lần, người đi đèn tắt.","节约资源，坚持一水多用、人走灯关。"]
+ [
+  "Các bạn thân mến, chào mừng các bạn đến Cáp Nhĩ Tân!",
+  "亲爱的朋友们，欢迎你们来哈尔滨！"
+ ],
+ [
+  "Nói tiếng Trung đã trở thành thói quen hằng ngày của tôi.",
+  "说中文已经成为我的日常习惯了。"
+ ],
+ [
+  "Trong phòng cô ấy có đủ loại cây xanh.",
+  "她的房间里有各种绿色植物。"
+ ],
+ [
+  "Trò chuyện với bạn bè ở thành phố khác, chúng tôi đều nói tiếng phổ thông.",
+  "跟别的城市的朋友聊天，我们都说普通话。"
+ ],
+ [
+  "Mấy hôm nay trời trở lạnh, buổi tối chỉ có ba độ.",
+  "这几天天气变冷了，晚上只有三度。"
+ ]
 ],
-
 "writing": {
  "kieu":"sgk","soChu":120,"tieuDe":"写作 — viết theo đề của sách (ít nhất 120 chữ)",
  "nhanDe":"写作",

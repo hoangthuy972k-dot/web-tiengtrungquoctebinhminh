@@ -217,96 +217,659 @@
 ],
 
 "listen": [
- {"audio":"师傅，我的手机没电了，扫不了码，也没带现金，怎么办啊？别着急，我帮你付吧。太感谢您了！能告诉我您的联系方式吗？我想把钱还给您。别客气，才两块钱，谁都有需要帮忙的时候。","questions":[
-   {"q":"说话人为什么扫不了码？","opts":["手机没电了","手机没有信号","忘带手机了"],"ans":0},
-   {"q":"帮忙的人觉得这件事怎么样？","opts":["很麻烦","是小事，不用客气","一定要还钱"],"ans":1}]},
- {"audio":"王阿姨，您的箱子这么重，提得了吗？我帮您搬上去吧。太好了，那就辛苦你了。我车里还剩两个袋子。没事，我下楼的时候顺便帮您拿上来。再说邻居之间就是要互相帮助嘛。","questions":[
-   {"q":"王阿姨的东西怎么样？","opts":["很重","很便宜","很少"],"ans":0},
-   {"q":"剩下的袋子在哪儿？","opts":["超市里","车里","邻居家"],"ans":1}]},
- {"audio":"你每天怎么来公司？以前坐地铁，现在骑电动车。为什么换了？电动车既省力气，速度又快，充电也很方便。再说我家到公司的距离不算远，二十分钟就到了。","questions":[
-   {"q":"他现在怎么来公司？","opts":["坐地铁","骑电动车","骑自行车"],"ans":1},
-   {"q":"他从家到公司要多长时间？","opts":["十分钟","二十分钟","半个小时"],"ans":1}]}
+ {
+  "audio": "这台电脑太旧了，很多新软件都用不了，我想换一台新的。",
+  "questions": [
+   {
+    "q": "Vì sao người nói muốn đổi máy tính?",
+    "opts": [
+     "Máy bị hỏng màn hình",
+     "Máy quá cũ, nhiều phần mềm mới không dùng được",
+     "Muốn mua máy rẻ hơn"
+    ],
+    "ans": 1,
+    "exp": "用不了 = không dùng được (bổ ngữ khả năng V不了); 太旧了 = cũ quá."
+   }
+  ]
+ },
+ {
+  "audio": "上课八点开始，现在才七点半，骑车去还来得及。",
+  "questions": [
+   {
+    "q": "Người nói có kịp giờ học không?",
+    "opts": [
+     "Không kịp nữa",
+     "Lớp đã bắt đầu",
+     "Vẫn kịp nếu đạp xe đi"
+    ],
+    "ans": 2,
+    "exp": "还来得及 = vẫn còn kịp; 现在才七点半 = bây giờ mới bảy rưỡi."
+   }
+  ]
+ },
+ {
+  "audio": "我不想去那家饭馆，太远了，再说那儿的菜也不太好吃。",
+  "questions": [
+   {
+    "q": "Vì sao người nói không muốn đến quán đó?",
+    "opts": [
+     "Xa quá, vả lại đồ ăn cũng không ngon lắm",
+     "Đắt quá",
+     "Đã ăn ở đó hôm qua"
+    ],
+    "ans": 0,
+    "exp": "太远了，再说……也不太好吃 = xa quá, vả lại cũng không ngon lắm — 再说 thêm lý do thứ hai."
+   }
+  ]
+ },
+ {
+  "audio": "我每天骑自行车上班，既能锻炼身体，又能省下坐地铁的钱。",
+  "questions": [
+   {
+    "q": "Đạp xe đi làm có lợi gì?",
+    "opts": [
+     "Nhanh hơn tàu điện ngầm",
+     "Không sợ trời mưa",
+     "Rèn luyện sức khoẻ và tiết kiệm tiền đi tàu"
+    ],
+    "ans": 2,
+    "exp": "既能锻炼身体，又能省下……的钱 = vừa rèn luyện được sức khoẻ, vừa tiết kiệm được tiền."
+   }
+  ]
+ },
+ {
+  "audio": "我下午去银行交房租，顺便去超市买点儿水果，晚上回来给你做饭。",
+  "questions": [
+   {
+    "q": "Buổi chiều người nói đi ngân hàng làm gì?",
+    "opts": [
+     "Nộp tiền thuê nhà",
+     "Rút tiền",
+     "Mở thẻ"
+    ],
+    "ans": 0,
+    "exp": "去银行交房租 = đi ngân hàng nộp tiền thuê nhà; ôn 房租 (bài 2)."
+   },
+   {
+    "q": "Tiện thể người nói làm thêm việc gì?",
+    "opts": [
+     "Mua hoa tươi",
+     "Ghé siêu thị mua trái cây",
+     "Đi đón bạn"
+    ],
+    "ans": 1,
+    "exp": "顺便去超市买点儿水果 = tiện thể ghé siêu thị mua ít trái cây."
+   }
+  ]
+ },
+ {
+  "audio": "昨天晚上我的手机没有信号，跟家里联系不上，妈妈着急得一晚上没睡好。",
+  "questions": [
+   {
+    "q": "Vì sao mẹ người nói cả đêm ngủ không ngon?",
+    "opts": [
+     "Mẹ bị ốm",
+     "Hàng xóm ồn ào",
+     "Không liên lạc được với con vì điện thoại mất sóng"
+    ],
+    "ans": 2,
+    "exp": "手机没有信号，跟家里联系不上 = điện thoại không có sóng, không liên lạc được với nhà."
+   }
+  ]
+ },
+ {
+  "audio": "这家店的鲜花又便宜又好看，每到周末，来买花的人特别多，卖花的阿姨心情也特别愉快。",
+  "questions": [
+   {
+    "q": "Cuối tuần tiệm hoa thế nào?",
+    "opts": [
+     "Đóng cửa",
+     "Rất đông người mua",
+     "Hoa đắt hơn"
+    ],
+    "ans": 1,
+    "exp": "每到周末，来买花的人特别多 = cứ đến cuối tuần, người đến mua hoa rất đông."
+   },
+   {
+    "q": "Cô bán hoa thế nào?",
+    "opts": [
+     "Rất vui vẻ",
+     "Rất mệt",
+     "Muốn đóng cửa sớm"
+    ],
+    "ans": 0,
+    "exp": "心情也特别愉快 = tâm trạng cũng đặc biệt vui vẻ."
+   }
+  ]
+ }
 ],
-
 "match": [
- {"left":"交","right":"电话费"},
- {"left":"互相","right":"帮助"},
- {"left":"省","right":"力气"},
- {"left":"购买","right":"食物和饮料"},
- {"left":"免费","right":"借雨伞"},
- {"left":"骑","right":"电动车"},
- {"left":"心情","right":"更加愉快"},
- {"left":"既……","right":"又……"},
- {"left":"没来得及","right":"吃早饭"}
+ {
+  "left": "交",
+  "right": "学费"
+ },
+ {
+  "left": "提",
+  "right": "两个袋子"
+ },
+ {
+  "left": "省",
+  "right": "力气"
+ },
+ {
+  "left": "给手机",
+  "right": "充电"
+ },
+ {
+  "left": "跟家人",
+  "right": "联系"
+ },
+ {
+  "left": "速度",
+  "right": "很快"
+ },
+ {
+  "left": "免费",
+  "right": "提供早餐"
+ },
+ {
+  "left": "更加",
+  "right": "愉快"
+ }
 ],
-
 "fill": [
- {"pre":"我忘了交电话","blank":"费","post":"，手机停机了。","hint":"(phí, tiền)","ans":"费","exp":"电话费 = tiền điện thoại."},
- {"pre":"手机没有","blank":"信号","post":"，上不了网。","hint":"(sóng)","ans":"信号","exp":"没有信号 = không có sóng."},
- {"pre":"能不能告诉我你的联系","blank":"方式","post":"？","hint":"(cách)","ans":"方式","exp":"联系方式 = cách liên lạc."},
- {"pre":"我先休息一会儿，再去车里拿","blank":"剩","post":"下的。","hint":"(còn lại)","ans":"剩","exp":"剩下的 = phần còn lại."},
- {"pre":"邻居之间就是要","blank":"互相","post":"帮助啊。","hint":"(lẫn nhau)","ans":"互相","exp":"互相 + 帮助."},
- {"pre":"短距离出行时，骑自行车","blank":"往往","post":"是人们常见的选择。","hint":"(thường thường)","ans":"往往","exp":"往往 + điều kiện / quy luật."},
- {"pre":"电动车","blank":"速度","post":"快，价格不高。","hint":"(tốc độ)","ans":"速度","exp":"速度快 = tốc độ nhanh."},
- {"pre":"不过为了省","blank":"力气","post":"，他最近打算买一辆电动车。","hint":"(sức lực)","ans":"力气","exp":"省力气 = đỡ tốn sức."},
- {"pre":"乘客下班时可以","blank":"顺便","post":"买花送给家人。","hint":"(tiện thể)","ans":"顺便","exp":"顺便 + V; ≠ 方便."},
- {"pre":"也让大家的心情变得更加","blank":"愉快","post":"。","hint":"(vui vẻ)","ans":"愉快","exp":"心情愉快 = tâm trạng vui vẻ."}
+ {
+  "pre": "我最近太忙了，这个周末的活动恐怕参加",
+  "blank": "不了",
+  "post": "了。",
+  "hint": "(không … được)",
+  "ans": "不了",
+  "exp": "V + 不了 = không thể làm được (vì điều kiện không cho phép); ôn 恐怕 (bài 2) và 活动 (bài 1)."
+ },
+ {
+  "pre": "这个箱子很重，你自己拿",
+  "blank": "得了",
+  "post": "吗？",
+  "hint": "(… được)",
+  "ans": "得了",
+  "exp": "V + 得了 = làm được; câu hỏi: 拿得了吗？= có xách nổi không?"
+ },
+ {
+  "pre": "这家店的东西不便宜，",
+  "blank": "再说",
+  "post": "离我家也很远，我很少去。",
+  "hint": "(vả lại)",
+  "ans": "再说",
+  "exp": "再说 thêm một lý do nữa (không rẻ + xa nhà); vế sau hay có 也 / 还."
+ },
+ {
+  "pre": "这个软件",
+  "blank": "既",
+  "post": "能听音乐，又能看视频。",
+  "hint": "(vừa)",
+  "ans": "既",
+  "exp": "既……又…… = vừa … vừa …; 既 đứng sau chủ ngữ; ôn 软件 (bài 3)."
+ },
+ {
+  "pre": "别着急，飞机下午才起飞，我们吃了午饭再去机场也",
+  "blank": "来得及",
+  "post": "。",
+  "hint": "(kịp)",
+  "ans": "来得及",
+  "exp": "Còn nhiều thời gian → (也 / 还) 来得及 = vẫn kịp."
+ },
+ {
+  "pre": "公司的事太多了，我",
+  "blank": "没来得及",
+  "post": "吃午饭。",
+  "hint": "(đã không kịp)",
+  "ans": "没来得及",
+  "exp": "Việc đã qua mà không kịp làm → 没来得及 + động từ."
+ },
+ {
+  "pre": "你去图书馆的时候，",
+  "blank": "顺便",
+  "post": "帮我借一本书吧。",
+  "hint": "(tiện thể)",
+  "ans": "顺便",
+  "exp": "顺便 = nhân tiện đang làm việc này thì làm luôn việc kia."
+ },
+ {
+  "pre": "到了上海以后，记得多跟家里",
+  "blank": "联系",
+  "post": "。",
+  "hint": "(liên lạc)",
+  "ans": "联系",
+  "exp": "跟 + người + 联系 = liên lạc với ai; trạng ngữ 跟家里 đứng trước động từ."
+ },
+ {
+  "pre": "人在心情不好的时候，",
+  "blank": "往往",
+  "post": "吃得特别多。",
+  "hint": "(thường thường)",
+  "ans": "往往",
+  "exp": "往往 = thường (theo quy luật, nói về tình huống chung), đứng trước động từ."
+ },
+ {
+  "pre": "他骑车的",
+  "blank": "速度",
+  "post": "太快了，我跟不上他。",
+  "hint": "(tốc độ)",
+  "ans": "速度",
+  "exp": "速度快 / 慢 = tốc độ nhanh / chậm; 跟不上 = theo không kịp."
+ },
+ {
+  "pre": "这个月的工资只",
+  "blank": "剩",
+  "post": "五百块了，不能再网购了。",
+  "hint": "(còn lại)",
+  "ans": "剩",
+  "exp": "只剩 + số lượng = chỉ còn …; ôn 工资 (bài 2), 网购 (bài 3)."
+ },
+ {
+  "pre": "你每天晚上十点才下班，太",
+  "blank": "辛苦",
+  "post": "了！",
+  "hint": "(vất vả)",
+  "ans": "辛苦",
+  "exp": "太辛苦了 = vất vả quá; dùng để thông cảm với người khác."
+ },
+ {
+  "pre": "快走吧，火车八点就开了，再不走就",
+  "blank": "来不及",
+  "post": "了！",
+  "hint": "(không kịp)",
+  "ans": "来不及",
+  "exp": "Thời gian không đủ nữa → 来不及; 再不……就来不及了 = không … nữa thì không kịp đâu."
+ }
 ],
-
 "sort": [
- {"words":["手机","没有信号","，","上不了","网","。"],"ans":"手机没有信号，上不了网。"},
- {"words":["我","提着","这些东西","就算","锻炼身体","了","。"],"ans":"我提着这些东西就算锻炼身体了。"},
- {"words":["今天","太晚了","，","再说","外面","还在下雨呢","。"],"ans":"今天太晚了，再说外面还在下雨呢。"},
- {"words":["她","觉得","这样","既方便","，","又能","锻炼身体","。"],"ans":"她觉得这样既方便，又能锻炼身体。"},
- {"words":["中午12点的飞机","，","咱们","9点出发","来得及","吗","？"],"ans":"中午12点的飞机，咱们9点出发来得及吗？"},
- {"words":["乘客","下班时","可以","顺便","买花","送给家人","。"],"ans":"乘客下班时可以顺便买花送给家人。"}
+ {
+  "words": [
+   "桌子上的",
+   "东西",
+   "太多",
+   "，",
+   "我",
+   "拿",
+   "不了",
+   "。"
+  ],
+  "ans": "桌子上的东西太多，我拿不了。"
+ },
+ {
+  "words": [
+   "我",
+   "不想",
+   "出门",
+   "，",
+   "再说",
+   "外面",
+   "也",
+   "很冷",
+   "。"
+  ],
+  "ans": "我不想出门，再说外面也很冷。"
+ },
+ {
+  "words": [
+   "现在",
+   "出发",
+   "还",
+   "来得及",
+   "吗",
+   "？"
+  ],
+  "ans": "现在出发还来得及吗？"
+ },
+ {
+  "words": [
+   "她",
+   "把",
+   "剩下的",
+   "菜",
+   "带",
+   "回家",
+   "了",
+   "。"
+  ],
+  "ans": "她把剩下的菜带回家了。"
+ },
+ {
+  "words": [
+   "他",
+   "顺便",
+   "给",
+   "妈妈",
+   "买了",
+   "一些",
+   "鲜花",
+   "。"
+  ],
+  "ans": "他顺便给妈妈买了一些鲜花。"
+ },
+ {
+  "words": [
+   "电动车",
+   "的",
+   "速度",
+   "比",
+   "自行车",
+   "快",
+   "多了",
+   "。"
+  ],
+  "ans": "电动车的速度比自行车快多了。"
+ },
+ {
+  "words": [
+   "我",
+   "找了",
+   "他",
+   "一下午",
+   "，",
+   "可是",
+   "一直",
+   "联系",
+   "不",
+   "上",
+   "他",
+   "。"
+  ],
+  "ans": "我找了他一下午，可是一直联系不上他。"
+ },
+ {
+  "words": [
+   "由于",
+   "下大雨",
+   "，",
+   "今天的比赛",
+   "进行",
+   "不了",
+   "了",
+   "。"
+  ],
+  "ans": "由于下大雨，今天的比赛进行不了了。"
+ }
 ],
-
 "mc": [
- {"q":"手机没有信号，上＿＿网。","opts":["不了","得了","不能","没"],"ans":0,"exp":"上网 là từ ly hợp → 上不了网 (bổ ngữ khả năng)."},
- {"q":"明天的足球比赛，你们班男生参加＿＿吗？","opts":["得了","不了了","了得","得不"],"ans":0,"exp":"Hỏi khả năng: V + 得了 + 吗？"},
- {"q":"今天太晚了，别去超市了，＿＿外面还在下雨呢。","opts":["再说","不过","于是","甚至"],"ans":0,"exp":"再说 bổ sung lý do thứ hai cùng chiều."},
- {"q":"这家饭馆的菜既好吃，＿＿便宜。","opts":["又","还是","就","再"],"ans":0,"exp":"既……又……"},
- {"q":"你现在才告诉我，我＿＿通知大家了。","opts":["来不及","来得及","没来得及","不来及"],"ans":0,"exp":"来不及 + V + 了: không kịp nữa."},
- {"q":"我提着这些东西就＿＿锻炼身体了。","opts":["算","像","成为","变"],"ans":0,"exp":"就算……了 = coi như là."},
- {"q":"短距离出行时，骑自行车＿＿是人们常见的选择。","opts":["往往","刚才","以后","将来"],"ans":0,"exp":"往往 = thường thường (theo quy luật)."},
- {"q":"你要去超市吗？能不能＿＿帮我买个面包？","opts":["顺便","方便","随便","简单"],"ans":0,"exp":"顺便 = tiện thể; 方便 = thuận tiện (bẫy Hán Việt)."},
- {"q":"在中国，乘客可以在地铁站里直接扫码＿＿食物和饮料。","opts":["购买","免费","提供","充电"],"ans":0,"exp":"购买 + 食物 (mua, trang trọng)."},
- {"q":"谢谢家月！那就＿＿你了。","opts":["辛苦","客气","愉快","互相"],"ans":0,"exp":"辛苦你了 = làm phiền bạn / bạn vất vả rồi."}
+ {
+  "q": "Bạn muốn nói: “Chân tôi đau, ngày mai không đi leo núi được.”",
+  "opts": [
+   "我腿疼，明天爬不了山了。",
+   "我腿疼，明天不了爬山了。",
+   "我腿疼，明天爬山不了了。",
+   "我腿疼，明天爬得了山了。"
+  ],
+  "ans": 0,
+  "exp": "Với từ ly hợp 爬山, 不了 chen vào giữa động từ và tân ngữ: 爬不了山; 爬得了 là “leo được”, ngược nghĩa."
+ },
+ {
+  "q": "A: “你点了这么多菜，咱们吃得了吗？” — B đáp:",
+  "opts": [
+   "吃得了，我今天特别饿。",
+   "吃了得，我今天特别饿。",
+   "吃得不了，我今天特别饿。",
+   "不吃得了，我今天特别饿。"
+  ],
+  "ans": 0,
+  "exp": "Khẳng định: V + 得了 (吃得了); phủ định là 吃不了 — không ghép 得 với 不."
+ },
+ {
+  "q": "A: “周末一起去爬山吧？” — B đáp:",
+  "opts": [
+   "好啊，我正好有时间，再说爬山也能锻炼身体。",
+   "好啊，我正好有时间，于是爬山也能锻炼身体。",
+   "好啊，我正好有时间，但是爬山也能锻炼身体。",
+   "好啊，再说我正好有时间，爬山也能锻炼身体。"
+  ],
+  "ans": 0,
+  "exp": "再说 mở đầu VẾ SAU để thêm lý do (có thời gian + tập thể dục); 于是 / 但是 sai quan hệ ý."
+ },
+ {
+  "q": "Câu nào SAI?",
+  "opts": [
+   "既他会做饭，又会打扫房间。",
+   "他既是我的老师，又是我的朋友。",
+   "这个房间既大，又很亮。",
+   "这种水果既好吃，也不贵。"
+  ],
+  "ans": 0,
+  "exp": "Cùng chủ ngữ thì chủ ngữ đứng TRƯỚC 既: 他既会做饭，又会打扫房间."
+ },
+ {
+  "q": "A: “电影七点开始，我们现在去还来得及吗？” B: “＿＿”",
+  "opts": [
+   "来得及，还有一个多小时呢。",
+   "来得及了，电影已经开始了。",
+   "没来得及，还有一个多小时呢。",
+   "来不了，还有一个多小时呢。"
+  ],
+  "ans": 0,
+  "exp": "Việc sắp tới còn kịp → 来得及; 没来得及 chỉ dùng cho việc đã qua; 来不了 là “không đến được”, khác nghĩa."
+ },
+ {
+  "q": "Bạn muốn nói: “Hôm qua đi vội quá, tôi không kịp gọi điện cho bạn.”",
+  "opts": [
+   "昨天走得太急了，我没来得及给你打电话。",
+   "昨天走得太急了，我不来得及给你打电话。",
+   "昨天走得太急了，我来得及没给你打电话。",
+   "昨天走得太急了，我没给你来得及打电话。"
+  ],
+  "ans": 0,
+  "exp": "Chuyện đã qua: 没来得及 + 给你打电话; 没 đứng trước 来得及, không dùng 不."
+ },
+ {
+  "q": "“我出去买早餐，＿＿帮你也带一个包子吧？”",
+  "opts": [
+   "顺便",
+   "随便",
+   "方便",
+   "直接"
+  ],
+  "ans": 0,
+  "exp": "顺便 = tiện thể (đang đi mua cho mình thì mua luôn cho bạn); 随便 = tuỳ ý."
+ },
+ {
+  "q": "“三块钱一斤，这个价格不＿＿贵。”",
+  "opts": [
+   "算",
+   "像",
+   "变成",
+   "往往"
+  ],
+  "ans": 0,
+  "exp": "不算 + tính từ = không được coi là …: 不算贵 = cũng không tính là đắt."
+ },
+ {
+  "q": "Bạn muốn nói: “Tôi và cậu ấy thường xuyên giúp đỡ lẫn nhau.”",
+  "opts": [
+   "我和他经常互相帮助。",
+   "我和他经常帮助互相。",
+   "我和他互相帮助经常。",
+   "我和他经常互相地帮助了。"
+  ],
+  "ans": 0,
+  "exp": "互相 là phó từ, đứng trước động từ (互相帮助), sau 经常; không đặt sau động từ như “giúp lẫn nhau”."
+ },
+ {
+  "q": "A: “这里的水要钱吗？” B: “不要钱，是＿＿的。”",
+  "opts": [
+   "免费",
+   "流行",
+   "辛苦",
+   "客气"
+  ],
+  "ans": 0,
+  "exp": "免费 = miễn phí, không mất tiền."
+ },
+ {
+  "q": "Bạn muốn nói: “Nhận được hoa bạn tặng, tâm trạng cô ấy càng vui hơn.”",
+  "opts": [
+   "收到朋友送的鲜花，她的心情更加愉快了。",
+   "收到朋友送的鲜花，她的心情愉快更加了。",
+   "收到朋友送的鲜花，她更加的心情愉快了。",
+   "收到朋友送的鲜花，她的心情更加很愉快了。"
+  ],
+  "ans": 0,
+  "exp": "更加 đứng ngay trước tính từ (更加愉快); đã có 更加 thì không thêm 很."
+ },
+ {
+  "q": "A: “太感谢你了！” — B đáp:",
+  "opts": [
+   "不客气，这是我应该做的。",
+   "别辛苦，这是我应该做的。",
+   "别感谢，这是我应该做的。",
+   "不客气了吗，这是我应该做的。"
+  ],
+  "ans": 0,
+  "exp": "Đáp lời cảm ơn: 不客气 / 别客气 (đừng khách sáo); 辛苦 là vất vả."
+ },
+ {
+  "q": "Bạn muốn nói: “Muộn quá rồi, không kịp ăn sáng nữa.”",
+  "opts": [
+   "太晚了，来不及吃早饭了。",
+   "太晚了，没来不及吃早饭了。",
+   "太晚了，不来得及吃早饭了。",
+   "太晚了，来得及不吃早饭了。"
+  ],
+  "ans": 0,
+  "exp": "Phủ định của 来得及 là 来不及 (đổi 得 thành 不), không nói 不来得及; không thêm 没 trước 来不及."
+ }
 ],
-
 "speaking": {
- "intro":"Nhấn nút loa nghe câu hỏi (câu hỏi phần Khởi động, câu hỏi đọc hiểu, kể lại bài khoá, khảo sát và đóng vai), rồi tự ghi âm câu trả lời — cố dùng từ mới và 4 điểm ngữ pháp của bài.",
- "questions":[
-  {"q_zh":"你帮助过别人吗？你是怎么提供帮助的？","q_vn":"Bạn đã từng giúp đỡ người khác chưa? Bạn đã giúp như thế nào?","hint":"有一次，……，我看他很着急，就……。他很感谢我……","sample":"帮助过。有一次在地铁站，一位老人的袋子太重了，提不了，我正好要出站，就帮他提了上去。他很感谢我，我说别客气，很高兴能帮到他。","sample_vn":"Có. Có lần ở ga tàu điện ngầm, túi đồ của một cụ già nặng quá, cụ xách không nổi, tôi vừa hay ra khỏi ga nên xách lên giúp cụ. Cụ rất cảm ơn tôi, tôi nói đừng khách sáo, rất vui vì giúp được cụ.","note":"Câu hỏi phần Khởi động (1); dùng V不了 (điểm 1)."},
-  {"q_zh":"你最常用的出行方式是什么？为什么？","q_vn":"Cách đi lại bạn dùng nhiều nhất là gì? Vì sao?","hint":"我最常……，因为既……，又……，再说……","sample":"我最常骑电动车，因为电动车既省力气，速度又快，再说充电也很方便。","sample_vn":"Tôi hay đi xe điện nhất, vì xe điện vừa đỡ tốn sức, tốc độ lại nhanh, vả lại sạc điện cũng rất tiện.","note":"Câu hỏi phần Khởi động (2); dùng 既……又…… (điểm 3) + 再说 (điểm 2)."},
-  {"q_zh":"陈天中为什么很着急？他为什么想要那个人的联系方式？","q_vn":"Vì sao Trần Thiên Trung rất sốt ruột? Vì sao cậu ấy muốn xin cách liên lạc của người kia?","hint":"因为他忘了……，手机……，上不了……，买不了……。因为那个人……，他想……","sample":"因为他忘了交电话费，手机停机了，没有信号，上不了网，也买不了地铁票。他想要那个人的联系方式，是因为那个人帮他买了票，他想把钱还给她。","sample_vn":"Vì cậu quên đóng tiền điện thoại, máy bị cắt, không có sóng, không lên mạng được, cũng không mua được vé tàu. Cậu muốn xin cách liên lạc của người kia vì người đó đã mua vé giúp, cậu muốn trả lại tiền.","note":"Câu hỏi đọc hiểu bài khoá 1."},
-  {"q_zh":"请根据提示复述课文一。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 1.","hint":"陈天中发现他的手机……，因为没有信号，……，自己也没带……，所以……。这时，一个人……，就帮他……。陈天中很……，想要……，想把钱……。那个人说……","sample":"陈天中发现他的手机停机了，因为没有信号，上不了网，自己也没带现金，所以买不了地铁票了。这时，一个人看他很着急，就帮他买了一张票。陈天中很感谢她，想要她的联系方式，想把钱还给她。那个人说别客气，很高兴能帮到陈天中。","sample_vn":"Trần Thiên Trung phát hiện điện thoại bị cắt, vì không có sóng nên không lên mạng được, bản thân cũng không mang tiền mặt nên không mua được vé tàu điện ngầm. Lúc đó, một người thấy cậu sốt ruột liền mua giúp cậu một vé. Trần Thiên Trung rất cảm ơn, muốn xin cách liên lạc để trả lại tiền. Người đó nói đừng khách sáo, rất vui vì giúp được cậu.","note":"Bài tập 复述 của sách (trang 37)."},
-  {"q_zh":"邻居为什么不上楼？白家月为什么帮邻居提东西？","q_vn":"Vì sao cô hàng xóm không lên lầu? Vì sao Bạch Gia Nguyệt giúp cô ấy xách đồ?","hint":"因为她买了……，袋子……，她想先……。白家月正好……，她觉得……就算……，再说……","sample":"因为她买了不少东西，袋子太重了，她想先休息一会儿，再去车里拿剩下的。白家月正好要上楼，她觉得提着这些东西就算锻炼身体了，再说邻居之间就是要互相帮助。","sample_vn":"Vì cô mua khá nhiều đồ, túi nặng quá, cô muốn nghỉ một lát rồi mới ra xe lấy chỗ còn lại. Bạch Gia Nguyệt vừa hay lên lầu, cô thấy xách đồ coi như tập thể dục, vả lại hàng xóm phải giúp đỡ lẫn nhau.","note":"Câu hỏi đọc hiểu bài khoá 2; dùng 再说 (điểm 2)."},
-  {"q_zh":"白家月为什么喜欢骑车？电动车为什么越来越流行？","q_vn":"Vì sao Bạch Gia Nguyệt thích đạp xe? Vì sao xe điện ngày càng thịnh hành?","hint":"她觉得骑车既……，又……，还……。因为电动车……，价格……，充电……","sample":"白家月觉得骑车既方便，又能锻炼身体，还能保护环境。电动车越来越流行，是因为它速度快，价格不高，充电也很方便。","sample_vn":"Bạch Gia Nguyệt thấy đạp xe vừa tiện, vừa rèn luyện thân thể, lại bảo vệ môi trường. Xe điện ngày càng thịnh hành vì tốc độ nhanh, giá không cao, sạc điện cũng tiện.","note":"Câu hỏi đọc hiểu bài khoá 3; dùng 既……又…… (điểm 3)."},
-  {"q_zh":"请根据提示复述课文三。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 3.","hint":"在城市里，人们出行的方式……。……出行时，骑自行车往往是……。白家月就……，她觉得这样既……，又……，还……。除了……，人们还会选择……。电动车……，所以……。陈天中平时……，不过为了……，他最近……","sample":"在城市里，人们出行的方式越来越多。短距离出行时，骑自行车往往是人们常见的选择。白家月就很喜欢骑车去学校，她觉得这样既方便，又能锻炼身体，还能保护环境。除了骑自行车，人们还会选择骑电动车。电动车速度快，价格不高，充电也很方便，所以越来越流行。陈天中平时也骑自行车，不过为了省力气，他最近打算买一辆电动车。","sample_vn":"Ở thành phố, cách đi lại ngày càng nhiều. Đi quãng ngắn thì xe đạp thường là lựa chọn phổ biến… Trần Thiên Trung bình thường cũng đạp xe, có điều để đỡ tốn sức, gần đây cậu định mua một chiếc xe điện.","note":"Bài tập 复述 của sách (trang 40–41)."},
-  {"q_zh":"在中国，不少地铁站都提供什么服务？这些服务有什么作用？","q_vn":"Ở Trung Quốc, nhiều ga tàu điện ngầm cung cấp những dịch vụ gì? Những dịch vụ đó có tác dụng gì?","hint":"乘客可以……，有的地铁站还提供……，甚至还有……。这些服务不仅……，也……","sample":"乘客可以在站里扫码购买食物和饮料，有的地铁站还提供免费借雨伞、发雨衣等服务，有的还有早餐车，甚至还有鲜花店。这些服务不仅方便了人们的出行，也让大家的心情变得更加愉快。","sample_vn":"Hành khách có thể quét mã mua đồ ăn, đồ uống trong ga; có ga còn cho mượn ô, phát áo mưa miễn phí, có xe đồ ăn sáng, thậm chí có tiệm hoa. Những dịch vụ này không chỉ giúp đi lại tiện lợi mà còn làm tâm trạng mọi người vui hơn.","note":"Câu hỏi đọc hiểu bài khoá 4; ôn 甚至, 不仅……也…… (Bài 3)."},
-  {"q_zh":"调查：请采访一位同学——你住在校内还是校外？你每天怎么来学校？为什么选择这种出行方式？","q_vn":"Khảo sát: phỏng vấn một bạn trong lớp — Bạn ở trong trường hay ngoài trường? Hằng ngày bạn đến trường bằng cách nào? Vì sao chọn cách đi lại đó?","hint":"我住在……。我每天……来学校，因为……既……又……，再说……。要是……，我就……","sample":"我住在校外，我家到学校的距离不算远，大概三公里。我每天骑自行车来学校，因为骑车既方便，又能锻炼身体，再说也不会堵车。要是下大雨，我就坐地铁，地铁站离我家很近，坐地铁十五分钟就到了，上课一定来得及。我觉得骑自行车还能保护环境，所以我很少打车。","sample_vn":"Mình ở ngoài trường, nhà cách trường không xa lắm, khoảng 3 km. Hằng ngày mình đạp xe đến trường vì đạp xe vừa tiện vừa rèn luyện thân thể, vả lại không bị tắc đường. Nếu mưa to thì mình đi tàu điện ngầm, ga gần nhà, 15 phút là tới, chắc chắn kịp giờ học. Mình thấy đạp xe còn bảo vệ môi trường nên rất ít khi đi taxi.","note":"Hoạt động 调查 (khảo sát) trong 任务活动 của sách, trang 45 — hỏi đủ 4 cột: 姓名, 居住情况, 日常出行方式, 原因."},
-  {"q_zh":"角色扮演：你在地铁站，手机没电了，扫不了码，也没带现金。请向一位路人寻求帮助；另一位同学扮演路人。","q_vn":"Đóng vai: Em đang ở ga tàu điện ngầm, điện thoại hết pin, không quét mã được, cũng không mang tiền mặt. Hãy nhờ một người qua đường giúp; một bạn khác đóng vai người qua đường.","hint":"不好意思，打扰一下……，我的手机……，扫不了……。能不能……？太感谢你了！能不能告诉我……？——别客气……再说……","sample":"A：不好意思，打扰一下。我的手机没电了，扫不了码，也没带现金，买不了地铁票。您能帮帮我吗？B：没问题，你要去哪儿？A：我要去北京大学站，上午十点有课，现在九点半了，不知道还来得及吗？B：来得及，坐地铁二十分钟就到了。我帮你买张票吧。A：太感谢您了！能不能告诉我您的联系方式？我回到学校就把钱还给您。B：别客气，才几块钱。再说谁都有需要帮忙的时候。A：那就辛苦您了，您真是个好人！B：很高兴能帮到你，快去上课吧！","sample_vn":"A: Xin lỗi, làm phiền một chút. Điện thoại tôi hết pin, không quét mã được, cũng không mang tiền mặt nên không mua được vé. Anh/chị giúp tôi được không? B: Được chứ, bạn đi đâu? A: Tôi đến ga Đại học Bắc Kinh, 10 giờ có tiết, giờ 9 rưỡi rồi, không biết còn kịp không? B: Kịp, đi tàu 20 phút là tới. Để tôi mua vé giúp. A: Cảm ơn nhiều lắm! Cho tôi xin cách liên lạc, về trường tôi trả lại tiền. B: Đừng khách sáo, có mấy đồng. Vả lại ai cũng có lúc cần giúp đỡ. A: Vậy làm phiền anh/chị rồi! B: Rất vui vì giúp được bạn, mau đi học đi!","note":"Hoạt động đóng vai bổ sung theo mục tiêu 1 của bài (nhờ / giúp đỡ trong đời sống); dùng đủ 4 điểm ngữ pháp: V不了, 再说, 来得及 và từ mới 联系方式, 客气, 辛苦."}
+ "intro": "Nhấn nút loa nghe câu hỏi (câu hỏi phần Khởi động, câu hỏi đọc hiểu, kể lại bài khoá, khảo sát và đóng vai), rồi tự ghi âm câu trả lời — cố dùng từ mới và 4 điểm ngữ pháp của bài.",
+ "questions": [
+  {
+   "q_zh": "你帮助过别人吗？你是怎么提供帮助的？",
+   "q_vn": "Bạn đã từng giúp đỡ người khác chưa? Bạn đã giúp như thế nào?",
+   "hint": "有一次，……，我看他很着急，就……。他很感谢我……",
+   "sample": "帮助过。有一次在地铁站，一位老人的东西太多，提不了，我正好要出站，就帮他提了上去。他一直说谢谢，我说这是小事。",
+   "sample_vn": "Có. Có lần ở ga tàu điện ngầm, đồ của một cụ già nhiều quá, cụ xách không nổi, tôi vừa hay ra khỏi ga nên xách lên giúp cụ. Cụ cảm ơn mãi, tôi nói chuyện nhỏ thôi mà.",
+   "note": "Câu hỏi phần Khởi động (1); dùng V不了 (điểm 1)."
+  },
+  {
+   "q_zh": "你最常用的出行方式是什么？为什么？",
+   "q_vn": "Cách đi lại bạn dùng nhiều nhất là gì? Vì sao?",
+   "hint": "我最常……，因为既……，又……，再说……",
+   "sample": "我最常坐地铁，因为坐地铁既不用等很久，又很便宜，再说我家楼下就有地铁站。",
+   "sample_vn": "Tôi hay đi tàu điện ngầm nhất, vì đi tàu vừa không phải chờ lâu vừa rẻ, vả lại ngay dưới nhà tôi có ga.",
+   "note": "Câu hỏi phần Khởi động (2); dùng 既……又…… (điểm 3) + 再说 (điểm 2)."
+  },
+  {
+   "q_zh": "陈天中为什么很着急？他为什么想要那个人的联系方式？",
+   "q_vn": "Vì sao Trần Thiên Trung rất sốt ruột? Vì sao cậu ấy muốn xin cách liên lạc của người kia?",
+   "hint": "因为他忘了……，手机……，买不了……。因为那个人……，他想……",
+   "sample": "因为他的手机用不了，身上又没有钱，没办法买票。那个人帮了他，他想知道以后怎么找到她，好还她钱。",
+   "sample_vn": "Vì điện thoại của cậu không dùng được, trên người lại không có tiền nên không mua được vé. Người kia đã giúp cậu, cậu muốn biết sau này tìm cô ấy thế nào để trả tiền.",
+   "note": "Câu hỏi đọc hiểu bài khoá 1."
+  },
+  {
+   "q_zh": "陈天中在地铁站为什么买不了票？后来是谁帮了他？请你说说这件事。",
+   "q_vn": "Dựa vào gợi ý, kể lại bài khoá 1.",
+   "hint": "陈天中发现他的手机……，因为没有信号，……，自己也没带……，所以……。这时，一个人……，就帮他……。陈天中很……，想要……，想把钱……。那个人说……",
+   "sample": "陈天中忘了交电话费，手机没有信号，自己也没带现金，所以买不了地铁票了。这时，一个人看他很着急，就帮他买了一张票。陈天中很感谢她，想要她的联系方式，想把钱还给她。那个人说别客气，很高兴能帮到陈天中。",
+   "sample_vn": "Trần Thiên Trung quên đóng tiền điện thoại, máy không có sóng, bản thân cũng không mang tiền mặt nên không mua được vé tàu điện ngầm. Lúc đó, một người thấy cậu sốt ruột liền mua giúp cậu một vé. Trần Thiên Trung rất cảm ơn, muốn xin cách liên lạc để trả lại tiền. Người đó nói đừng khách sáo, rất vui vì giúp được cậu.",
+   "note": "Bài tập kể lại bài khoá của sách (trang 37)."
+  },
+  {
+   "q_zh": "邻居为什么不上楼？白家月为什么帮邻居提东西？",
+   "q_vn": "Vì sao cô hàng xóm không lên lầu? Vì sao Bạch Gia Nguyệt giúp cô ấy xách đồ?",
+   "hint": "因为她买了……，袋子……，她想先……。白家月正好……，她觉得……就算……，再说……",
+   "sample": "因为她买了不少东西，袋子太重了，她想先休息一会儿，再去车里拿剩下的。白家月正好要上楼，她觉得提着这些东西就算锻炼身体了，再说邻居之间就是要互相帮助。",
+   "sample_vn": "Vì cô mua khá nhiều đồ, túi nặng quá, cô muốn nghỉ một lát rồi mới ra xe lấy chỗ còn lại. Bạch Gia Nguyệt vừa hay lên lầu, cô thấy xách đồ coi như tập thể dục, vả lại hàng xóm phải giúp đỡ lẫn nhau.",
+   "note": "Câu hỏi đọc hiểu bài khoá 2; dùng 再说 (điểm 2)."
+  },
+  {
+   "q_zh": "白家月为什么喜欢骑车？电动车为什么越来越流行？",
+   "q_vn": "Vì sao Bạch Gia Nguyệt thích đạp xe? Vì sao xe điện ngày càng thịnh hành?",
+   "hint": "她觉得骑车既……，又……，还……。因为电动车……，价格……，充电……",
+   "sample": "白家月觉得骑车很方便，对身体好，也对环境好。现在骑电动车的人多了，是因为它跑得快，价格也合适，在哪儿充电都很方便。",
+   "sample_vn": "Bạch Gia Nguyệt thấy đạp xe rất tiện, tốt cho sức khoẻ, cũng tốt cho môi trường. Bây giờ người đi xe điện nhiều lên vì xe chạy nhanh, giá cũng hợp lý, sạc ở đâu cũng tiện.",
+   "note": "Câu hỏi đọc hiểu bài khoá 3; dùng 既……又…… (điểm 3)."
+  },
+  {
+   "q_zh": "在城市里，人们出行都有哪些选择？白家月和陈天中喜欢怎么出行？请你介绍一下。",
+   "q_vn": "Dựa vào gợi ý, kể lại bài khoá 3.",
+   "hint": "在城市里，人们出行的方式……。……出行时，骑自行车往往是……。白家月就……，她觉得这样既……，又……，还……。除了……，人们还会选择……。电动车……，所以……。陈天中平时……，不过为了……，他最近……",
+   "sample": "在城市里，人们出行的方式越来越多。短距离出行时，骑自行车往往是人们常见的选择。白家月就很喜欢骑车去学校，她觉得这样既方便，又能锻炼身体，还能保护环境。除了骑自行车，人们还会选择骑电动车。电动车速度快，买一辆也不用花很多钱，充电也很方便，所以越来越流行。陈天中平时也骑自行车，不过为了省力气，他最近打算买一辆电动车。",
+   "sample_vn": "Ở thành phố, cách đi lại ngày càng nhiều. Đi quãng ngắn thì xe đạp thường là lựa chọn phổ biến… Trần Thiên Trung bình thường cũng đạp xe, có điều để đỡ tốn sức, gần đây cậu định mua một chiếc xe điện.",
+   "note": "Bài tập kể lại bài khoá của sách (trang 40–41)."
+  },
+  {
+   "q_zh": "在中国，不少地铁站都提供什么服务？这些服务给乘客带来了什么方便？",
+   "q_vn": "Ở Trung Quốc, nhiều ga tàu điện ngầm cung cấp những dịch vụ gì? Những dịch vụ đó có tác dụng gì?",
+   "hint": "乘客可以……，有的地铁站还提供……，甚至还有……。这些服务不仅……，也……",
+   "sample": "乘客可以在站里扫码购买食物和饮料，有的地铁站还提供免费借雨伞、发雨衣等服务，有的还有早餐车，甚至还有鲜花店。这些服务不仅方便了人们的出行，也让大家的心情变得更加愉快。",
+   "sample_vn": "Hành khách có thể quét mã mua đồ ăn, đồ uống trong ga; có ga còn cho mượn ô, phát áo mưa miễn phí, có xe đồ ăn sáng, thậm chí có tiệm hoa. Những dịch vụ này không chỉ giúp đi lại tiện lợi mà còn làm tâm trạng mọi người vui hơn.",
+   "note": "Câu hỏi đọc hiểu bài khoá 4; ôn 甚至, 不仅……也…… (Bài 3)."
+  },
+  {
+   "q_zh": "请问问班里的一位同学：你住在学校里还是学校外边？你每天怎么来学校？为什么这样来？",
+   "q_vn": "Khảo sát: phỏng vấn một bạn trong lớp — Bạn ở trong trường hay ngoài trường? Hằng ngày bạn đến trường bằng cách nào? Vì sao chọn cách đi lại đó?",
+   "hint": "我住在……。我每天……来学校，因为……既……又……，再说……。要是……，我就……",
+   "sample": "我住在学校外边，我家到学校的距离不算远。平时我骑自行车来学校，因为骑车既方便，又不用花钱，再说路上也不用等车。要是天气不好，我就坐地铁，十五分钟就到了，上课一定来得及。",
+   "sample_vn": "Mình ở ngoài trường, nhà cách trường không xa lắm. Bình thường mình đạp xe đến trường vì đạp xe vừa tiện vừa không tốn tiền, vả lại trên đường cũng không phải chờ xe. Nếu thời tiết xấu thì mình đi tàu điện ngầm, 15 phút là tới, chắc chắn kịp giờ học.",
+   "note": "Hoạt động khảo sát (nhiệm vụ) của sách, trang 45 — hỏi đủ 4 cột: họ tên, chỗ ở, cách đi lại hằng ngày, lý do."
+  },
+  {
+   "q_zh": "两位同学一起说：你在地铁站，手机一点儿电也没有了，不能扫码，钱包里也没有钱。请你找一位路人帮忙，另一位同学当这个路人。",
+   "q_vn": "Đóng vai: Em đang ở ga tàu điện ngầm, điện thoại hết pin, không quét mã được, cũng không mang tiền mặt. Hãy nhờ một người qua đường giúp; một bạn khác đóng vai người qua đường.",
+   "hint": "不好意思，请问……，我的手机……，不能扫码……。能不能……？太感谢你了！能不能告诉我……？——别客气……再说……",
+   "sample": "A：不好意思，请问您能帮我一下吗？我的手机一点儿电也没有了，扫码用不了，身上也没有现金，买不了票。B：没问题，你要去哪儿？A：我要去北京大学站，十点有课，现在九点半了，不知道还来得及吗？B：没问题，坐地铁二十分钟就到了。我帮你买张票吧。A：真是太谢谢您了！能不能告诉我您的联系方式？我回到学校就把钱还给您。B：不用还了，才几块钱。再说谁都有需要帮忙的时候。A：那就辛苦您了！B：没事，快去上课吧！",
+   "sample_vn": "A: Xin lỗi, anh/chị giúp tôi một chút được không? Điện thoại tôi hết pin, không quét mã được, cũng không mang tiền mặt nên không mua được vé. B: Được chứ, bạn đi đâu? A: Tôi đến ga Đại học Bắc Kinh, 10 giờ có tiết, giờ 9 rưỡi rồi, không biết còn kịp không? B: Không sao, đi tàu 20 phút là tới. Để tôi mua vé giúp. A: Cảm ơn nhiều lắm! Cho tôi xin cách liên lạc, về trường tôi trả lại tiền. B: Không cần trả đâu, có mấy đồng. Vả lại ai cũng có lúc cần giúp đỡ. A: Vậy làm phiền anh/chị rồi! B: Không có gì, mau đi học đi!",
+   "note": "Hoạt động đóng vai bổ sung theo mục tiêu 1 của bài (nhờ / giúp đỡ trong đời sống); dùng V不了, 再说, 来得及 và từ mới 联系方式, 客气, 辛苦."
+  }
  ]
 },
-
 "translate": [
- ["Điện thoại không có sóng, không lên mạng được, không mua được vé tàu điện ngầm nữa.","手机没有信号，上不了网，买不了地铁票了。"],
- ["Cháu xách mấy thứ này coi như tập thể dục, vả lại hàng xóm với nhau phải giúp đỡ lẫn nhau.","我提着这些东西就算锻炼身体了，再说邻居之间就是要互相帮助。"],
- ["Cô ấy thấy đi xe đạp vừa tiện, vừa rèn luyện được thân thể.","她觉得骑自行车既方便，又能锻炼身体。"],
- ["Người không kịp ăn sáng có thể mua bánh bao nóng ở đây.","没来得及吃早饭的人可以在这里买到热包子。"],
- ["Để đỡ tốn sức, gần đây anh ấy định mua một chiếc xe điện.","为了省力气，他最近打算买一辆电动车。"],
- ["Hành khách lúc tan làm có thể tiện thể mua hoa tặng người nhà.","乘客下班时可以顺便买花送给家人。"]
+ [
+  "Tôi không uống được rượu, cho tôi một cốc trà nhé.",
+  "我喝不了酒，给我一杯茶吧。"
+ ],
+ [
+  "Đừng mua nữa, ở nhà còn nhiều lắm, vả lại cái này cũng không rẻ.",
+  "别买了，家里还有很多，再说这个也不便宜。"
+ ],
+ [
+  "Đi tàu điện ngầm đi làm vừa nhanh, lại không phải lo không tìm được chỗ đỗ xe.",
+  "坐地铁上班既快，又不用担心找不到停车的地方。"
+ ],
+ [
+  "Còn mười phút nữa, bây giờ đi vẫn kịp.",
+  "还有十分钟，现在走还来得及。"
+ ],
+ [
+  "Bạn đi thư viện à? Tiện thể xem giúp tôi có sách tiếng Trung mới không nhé.",
+  "你去图书馆吗？顺便帮我看看有没有新的中文书。"
+ ],
+ [
+  "Do quên mang ô, tôi không về nhà được.",
+  "由于忘了带伞，我回不了家了。"
+ ]
 ],
 "translateRev": [
- ["Cảm ơn bạn nhiều lắm! Bạn có thể cho tôi cách liên lạc của bạn không?","太感谢你了！能不能告诉我你的联系方式？"],
- ["Đừng khách sáo, rất vui vì đã giúp được bạn.","别客气，很高兴能帮到你。"],
- ["Xe điện tốc độ nhanh, giá không cao, sạc điện cũng rất tiện.","电动车速度快，价格不高，充电也很方便。"],
- ["Có ga tàu điện ngầm còn cung cấp dịch vụ cho mượn ô miễn phí.","有的地铁站还提供免费借雨伞的服务。"],
- ["Những dịch vụ nho nhỏ này khiến tâm trạng mọi người càng vui vẻ hơn.","这些小小的服务让大家的心情变得更加愉快。"]
+ [
+  "Khoảng cách giữa hai thành phố này không xa, đi tàu cao tốc một tiếng là tới.",
+  "这两个城市之间的距离不远，坐高铁一个小时就到了。"
+ ],
+ [
+  "Cảm ơn bạn đã giúp tôi nhiều như vậy.",
+  "感谢你给了我这么多帮助。"
+ ],
+ [
+  "Có nhà hàng phục vụ trà miễn phí cho khách.",
+  "有的饭馆给客人提供免费的茶。"
+ ],
+ [
+  "Những hôm trời mưa, người đi taxi thường khá đông.",
+  "下雨天，坐出租车的人往往比较多。"
+ ],
+ [
+  "Điện thoại tôi sắp hết pin rồi, ở đây có sạc được không?",
+  "我的手机快没电了，这儿能充电吗？"
+ ]
 ],
-
 "writing": {
  "kieu":"sgk","soChu":120,"tieuDe":"写作 — viết theo đề của sách (ít nhất 120 chữ)",
  "nhanDe":"写作",

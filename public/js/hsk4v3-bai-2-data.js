@@ -4346,71 +4346,137 @@ var dialogData = [
 ];
 var listenData = [
  {
-  "audio": "你好，我在网上看到了你们的出租信息，那个房子还在吗？在，一室一厅，房租每月三千元。离地铁站远吗？不远，走路五分钟就到了。周围环境怎么样？小区里种了很多树，挺安静的，不过附近没有大超市。那我明天下午过去看看。好，到了给我打电话就是了。",
+  "audio": "我在网上查看了很多出租信息，最后找到一个离公司很近的房子，不过房租有点儿贵。",
   "questions": [
    {
-    "q": "这个房子每个月房租是多少？",
+    "q": "Căn nhà người nói tìm được thế nào?",
     "opts": [
-     "两千元",
-     "三千元",
-     "五千元"
+     "Gần công ty nhưng tiền thuê hơi đắt",
+     "Xa công ty nhưng rất rẻ",
+     "Gần công ty và rất rẻ"
     ],
-    "ans": 1
-   },
-   {
-    "q": "这个小区有什么不好？",
-    "opts": [
-     "离地铁站很远",
-     "附近没有大超市",
-     "周围不太安静"
-    ],
-    "ans": 1
+    "ans": 0,
+    "exp": "离公司很近 = rất gần công ty; 不过房租有点儿贵 = có điều tiền thuê hơi đắt."
    }
   ]
  },
  {
-  "audio": "小林，听说你搬家了？是啊，上周末入住新家的。新家怎么样？客厅很大，也很亮，厨房里冰箱什么的都有。不过我平常工作太忙，基本上不做饭。那你周末请我们去热闹热闹吧！没问题，我先把房间收拾一下。",
+  "audio": "由于公司换了地方，我每天上班要坐一个多小时的地铁，所以打算在公司附近租个房子。",
   "questions": [
    {
-    "q": "小林的新家怎么样？",
+    "q": "Vì sao người nói định thuê nhà mới?",
     "opts": [
-     "客厅又大又亮",
-     "厨房里什么都没有",
-     "离公司很远"
+     "Tiền thuê nhà cũ tăng",
+     "Công ty chuyển chỗ, đi làm quá xa",
+     "Muốn ở gần trường học"
     ],
-    "ans": 0
+    "ans": 1,
+    "exp": "由于公司换了地方 = do công ty đổi địa điểm; 由于……，所以…… nêu nguyên nhân – kết quả."
    },
    {
-    "q": "小林为什么基本上不做饭？",
+    "q": "Bây giờ mỗi ngày người nói đi làm mất bao lâu?",
     "opts": [
-     "不会做饭",
-     "平常工作太忙",
-     "厨房太小"
+     "Hơn một tiếng đi tàu điện ngầm",
+     "Nửa tiếng đi xe buýt",
+     "Mười phút đi bộ"
     ],
-    "ans": 1
+    "ans": 0,
+    "exp": "坐一个多小时的地铁 = đi tàu điện ngầm hơn một tiếng."
    }
   ]
  },
  {
-  "audio": "由于房租越来越贵，我打算跟朋友一起租房子。一起租好啊，一方面能减轻经济压力，另一方面两个人住也热闹。你们想租什么样的房子？位置要好，离公司近，价格也不能太高。要是需要帮忙，告诉我就是了。",
+  "audio": "你的房间我已经收拾好了，毛巾在洗手间里。你要是还需要什么，给我打个电话就是了。",
   "questions": [
    {
-    "q": "说话人为什么打算跟朋友一起租房子？",
+    "q": "Nếu còn cần gì, người nghe nên làm gì?",
     "opts": [
-     "房租越来越贵",
-     "工资越来越高",
-     "朋友要来北京工作"
+     "Tự đi siêu thị mua",
+     "Hỏi bạn cùng phòng",
+     "Cứ gọi điện cho người nói là được"
     ],
-    "ans": 0
+    "ans": 2,
+    "exp": "给我打个电话就是了 = cứ gọi cho tôi là được; V + 就是了 dùng để trấn an."
+   }
+  ]
+ },
+ {
+  "audio": "我平常工作很忙，很少在家做饭，所以厨房小一点儿并没有关系。",
+  "questions": [
+   {
+    "q": "Người nói nghĩ gì về nhà bếp?",
+    "opts": [
+     "Bếp phải thật to",
+     "Không cần có bếp",
+     "Bếp nhỏ một chút cũng chẳng sao"
+    ],
+    "ans": 2,
+    "exp": "并没有关系 = hoàn toàn không sao; 并 + 没 nhấn mạnh phủ định."
    },
    {
-    "q": "他们想租什么样的房子？",
+    "q": "Vì sao người nói nghĩ như vậy?",
     "opts": [
-     "很大很亮的",
-     "位置好、价格不太高的",
-     "周围很热闹的"
+     "Vì ngày thường ít khi nấu ăn ở nhà",
+     "Vì không biết nấu ăn",
+     "Vì hay ăn ở nhà bạn"
     ],
-    "ans": 1
+    "ans": 0,
+    "exp": "平常……很少在家做饭 = ngày thường ít khi nấu cơm ở nhà."
+   }
+  ]
+ },
+ {
+  "audio": "这个小区周围有超市、饭馆，还有一个大公园，一到周末就特别热闹。",
+  "questions": [
+   {
+    "q": "Cuối tuần khu chung cư này thế nào?",
+    "opts": [
+     "Rất yên tĩnh",
+     "Rất nhộn nhịp",
+     "Siêu thị đóng cửa"
+    ],
+    "ans": 1,
+    "exp": "一到周末就特别热闹 = cứ đến cuối tuần là đặc biệt nhộn nhịp."
+   }
+  ]
+ },
+ {
+  "audio": "我哥哥今年大学毕业，找到了一个理想的工作，工资也不错。他打算明年自己买个房子。",
+  "questions": [
+   {
+    "q": "Năm nay anh trai người nói thế nào?",
+    "opts": [
+     "Đang học thạc sĩ",
+     "Vừa đổi công việc",
+     "Tốt nghiệp và tìm được việc lý tưởng"
+    ],
+    "ans": 2,
+    "exp": "大学毕业，找到了一个理想的工作 = tốt nghiệp đại học, tìm được công việc lý tưởng."
+   },
+   {
+    "q": "Sang năm anh ấy định làm gì?",
+    "opts": [
+     "Mua nhà",
+     "Thuê nhà",
+     "Đi du học"
+    ],
+    "ans": 0,
+    "exp": "明年自己买个房子 = sang năm tự mua một căn nhà."
+   }
+  ]
+ },
+ {
+  "audio": "昨天晚上客厅的灯坏了，房东今天早上就来帮我们换了一个新的，他人真热情。",
+  "questions": [
+   {
+    "q": "Chủ nhà đã làm gì?",
+    "opts": [
+     "Đến thay đèn mới cho họ",
+     "Tăng tiền thuê nhà",
+     "Dọn dẹp phòng khách"
+    ],
+    "ans": 0,
+    "exp": "房东……帮我们换了一个新的 = chủ nhà thay giúp một cái (đèn) mới."
    }
   ]
  }
@@ -4418,319 +4484,392 @@ var listenData = [
 var matchData = [
  {
   "left": "收拾",
-  "right": "房间"
+  "right": "行李"
  },
  {
-  "left": "查看",
-  "right": "有关信息"
- },
- {
-  "left": "租到",
-  "right": "理想的房子"
- },
- {
-  "left": "入住",
-  "right": "新家"
+  "left": "查找",
+  "right": "出租信息"
  },
  {
   "left": "一台",
-  "right": "空调"
+  "right": "洗衣机"
  },
  {
   "left": "几条",
   "right": "毛巾"
  },
  {
-  "left": "种了",
-  "right": "不少树"
+  "left": "种",
+  "right": "一些花"
  },
  {
-  "left": "更有",
-  "right": "安全感"
+  "left": "写",
+  "right": "日记"
  },
  {
-  "left": "由于……",
-  "right": "所以……"
+  "left": "从北京大学",
+  "right": "毕业"
+ },
+ {
+  "left": "搬家搬得",
+  "right": "很顺利"
  }
 ];
 var fillData = [
  {
-  "pre": "如果决定租了，告诉我",
+  "pre": "这个问题不会没关系，下课以后去问老师",
   "blank": "就是了",
   "post": "。",
   "hint": "(… là được)",
   "ans": "就是了",
-  "exp": "V + 就是了: khẳng định, trấn an."
+  "exp": "V + 就是了 đặt cuối câu: cứ đi hỏi thầy là được — giọng trấn an, “có gì đâu”."
  },
  {
-  "pre": "这个房子有两个房间，那个大房间",
-  "blank": "出租",
-  "post": "。",
-  "hint": "(cho thuê)",
-  "ans": "出租",
-  "exp": "Chủ nhà nói → 出租."
- },
- {
-  "pre": "现在已经",
-  "blank": "收拾",
-  "post": "好了，今天就可以搬进来。",
-  "hint": "(dọn dẹp)",
-  "ans": "收拾",
-  "exp": "收拾好了 = dọn xong."
- },
- {
-  "pre": "这个小区的环境真不错，",
+  "pre": "楼下那家饭馆的菜很好吃，",
   "blank": "不过",
-  "post": "附近有十几家公司。",
+  "post": "每次都要等很长时间。",
   "hint": "(có điều)",
   "ans": "不过",
-  "exp": "……，不过…… chuyển ngoặt nhẹ."
+  "exp": "Khen trước rồi nêu điểm chưa tốt → 不过 (chuyển ý nhẹ hơn 但是)."
  },
  {
-  "pre": "周末他们可能会玩到很晚，",
-  "blank": "恐怕",
-  "post": "会影响你休息。",
-  "hint": "(e là)",
-  "ans": "恐怕",
-  "exp": "恐怕 + 会: phỏng đoán có lo lắng."
- },
- {
-  "pre": "房东向我介绍了房子里的东西，",
+  "pre": "王老师看完了我的申请材料，",
   "blank": "并",
-  "post": "告诉我这些东西怎么用。",
-  "hint": "(và)",
+  "post": "给了我一些建议。",
+  "hint": "(và, đồng thời)",
   "ans": "并",
-  "exp": "Liên từ 并 nối hai hành động."
+  "exp": "Liên từ 并 nối hai cụm động từ cùng chủ ngữ (看完…, 给了…), vế sau tiến thêm một bước; không dùng 和 ở đây; ôn 申请材料 (bài 1)."
  },
  {
-  "pre": "对白家月来说，这次租房",
+  "pre": "你以为我生气了？其实我",
   "blank": "并",
-  "post": "不容易。",
-  "hint": "(chẳng hề)",
+  "post": "没有生气。",
+  "hint": "(hoàn toàn)",
   "ans": "并",
-  "exp": "并不 + Adj."
- },
- {
-  "pre": "客厅里有椅子、沙发，还有一",
-  "blank": "台",
-  "post": "大电视。",
-  "hint": "(lượng từ máy móc)",
-  "ans": "台",
-  "exp": "一台电视 / 一台空调."
+  "exp": "并没有 = hoàn toàn không — dùng để phản bác điều người khác tưởng."
  },
  {
   "pre": "",
   "blank": "由于",
-  "post": "很多刚工作的年轻人工资还不太高，所以他们都选择租房。",
+  "post": "工作太忙，他已经三个月没回家了。",
   "hint": "(do)",
   "ans": "由于",
-  "exp": "由于……，所以……"
+  "exp": "由于 + nguyên nhân, vế sau nêu kết quả; ôn bổ ngữ thời lượng phủ định: 三个月没回家了."
  },
  {
-  "pre": "她看了好几个房子，才找到一个位置、环境和",
-  "blank": "价格",
-  "post": "都合适的。",
-  "hint": "(giá cả)",
-  "ans": "价格",
-  "exp": "价格合适 = giá phù hợp."
+  "pre": "已经八点了，现在出发，",
+  "blank": "恐怕",
+  "post": "要迟到了。",
+  "hint": "(e rằng)",
+  "ans": "恐怕",
+  "exp": "恐怕 = e là, đoán điều không hay sắp xảy ra; đứng trước động từ."
+ },
+ {
+  "pre": "有了李老师的帮助，她的签证办得很",
+  "blank": "顺利",
+  "post": "。",
+  "hint": "(suôn sẻ)",
+  "ans": "顺利",
+  "exp": "V + 得 + 很顺利 = làm … rất suôn sẻ; ôn 签证 (bài 1)."
+ },
+ {
+  "pre": "我家",
+  "blank": "周围",
+  "post": "有很多饭馆，吃饭很方便。",
+  "hint": "(xung quanh)",
+  "ans": "周围",
+  "exp": "Nơi chốn + 周围 = xung quanh …; câu tồn tại: 周围有 + N."
+ },
+ {
+  "pre": "房东先带我们看了客厅，",
+  "blank": "接着",
+  "post": "又带我们去看了厨房。",
+  "hint": "(tiếp đó)",
+  "ans": "接着",
+  "exp": "先……，接着…… = trước … rồi tiếp đó …, kể việc theo thứ tự."
+ },
+ {
+  "pre": "他在大学读硕士，",
+  "blank": "同时",
+  "post": "还在一家公司工作。",
+  "hint": "(đồng thời)",
+  "ans": "同时",
+  "exp": "同时 = cùng lúc làm hai việc; ôn 读硕士 (bài 1)."
+ },
+ {
+  "pre": "他刚工作，",
+  "blank": "工资",
+  "post": "还不太高，所以想先租房。",
+  "hint": "(tiền lương)",
+  "ans": "工资",
+  "exp": "工资高 / 不高 = lương cao / không cao; 租房 = thuê nhà."
+ },
+ {
+  "pre": "我的方向",
+  "blank": "感",
+  "post": "不太好，第一次来这个小区就找不到路了。",
+  "hint": "(cảm giác, khả năng nhận biết)",
+  "ans": "感",
+  "exp": "感 là hậu tố: 方向感 = khả năng định hướng; 方向感不好 = hay lạc đường."
+ },
+ {
+  "pre": "他",
+  "blank": "整个",
+  "post": "周末都在图书馆准备考试。",
+  "hint": "(cả, toàn bộ)",
+  "ans": "整个",
+  "exp": "整个 + danh từ + 都 = cả … đều …: 整个周末 = cả cuối tuần."
  }
 ];
 var sortData = [
  {
   "words": [
-   "如果",
-   "决定",
-   "租了",
-   "，",
-   "告诉我",
-   "就是了",
+   "妈妈",
+   "把",
+   "客厅",
+   "收拾",
+   "得",
+   "很干净",
    "。"
   ],
-  "ans": "如果决定租了，告诉我就是了。",
-  "audio": "如果决定租了，告诉我就是了。"
- },
- {
-  "words": [
-   "这个小区",
-   "环境",
-   "不错",
-   "，",
-   "不过",
-   "附近",
-   "有很多公司",
-   "。"
-  ],
-  "ans": "这个小区环境不错，不过附近有很多公司。",
-  "audio": "这个小区环境不错，不过附近有很多公司。"
- },
- {
-  "words": [
-   "房东",
-   "向我",
-   "介绍了",
-   "房子里的东西",
-   "，",
-   "并",
-   "告诉我",
-   "怎么用",
-   "。"
-  ],
-  "ans": "房东向我介绍了房子里的东西，并告诉我怎么用。",
-  "audio": "房东向我介绍了房子里的东西，并告诉我怎么用。"
+  "ans": "妈妈把客厅收拾得很干净。",
+  "audio": "妈妈把客厅收拾得很干净。"
  },
  {
   "words": [
    "由于",
-   "工资",
-   "不太高",
+   "这个房子",
+   "离地铁站",
+   "很远",
    "，",
    "所以",
-   "他们",
-   "都选择",
-   "租房",
+   "房租",
+   "比较",
+   "便宜",
    "。"
   ],
-  "ans": "由于工资不太高，所以他们都选择租房。",
-  "audio": "由于工资不太高，所以他们都选择租房。"
+  "ans": "由于这个房子离地铁站很远，所以房租比较便宜。",
+  "audio": "由于这个房子离地铁站很远，所以房租比较便宜。"
+ },
+ {
+  "words": [
+   "他",
+   "并",
+   "不",
+   "喜欢",
+   "住在",
+   "热闹的",
+   "地方",
+   "。"
+  ],
+  "ans": "他并不喜欢住在热闹的地方。",
+  "audio": "他并不喜欢住在热闹的地方。"
+ },
+ {
+  "words": [
+   "这些",
+   "东西",
+   "放",
+   "在",
+   "客厅里",
+   "就是了",
+   "。"
+  ],
+  "ans": "这些东西放在客厅里就是了。",
+  "audio": "这些东西放在客厅里就是了。"
  },
  {
   "words": [
    "我",
-   "平常",
-   "主要",
-   "在学校食堂",
-   "吃",
-   "，",
-   "基本上",
-   "不做饭",
+   "想",
+   "买",
+   "一台",
+   "新",
+   "洗衣机",
    "。"
   ],
-  "ans": "我平常主要在学校食堂吃，基本上不做饭。",
-  "audio": "我平常主要在学校食堂吃，基本上不做饭。"
+  "ans": "我想买一台新洗衣机。",
+  "audio": "我想买一台新洗衣机。"
  },
  {
   "words": [
-   "有自己的房子",
-   "会",
-   "更",
-   "有",
-   "安全感",
+   "这个",
+   "小区的",
+   "房租",
+   "比",
+   "那个",
+   "小区",
+   "高",
+   "多了",
    "。"
   ],
-  "ans": "有自己的房子会更有安全感。",
-  "audio": "有自己的房子会更有安全感。"
+  "ans": "这个小区的房租比那个小区高多了。",
+  "audio": "这个小区的房租比那个小区高多了。"
+ },
+ {
+  "words": [
+   "随着",
+   "工资",
+   "越来越",
+   "高",
+   "，",
+   "他",
+   "租的",
+   "房子",
+   "也",
+   "越来越大",
+   "。"
+  ],
+  "ans": "随着工资越来越高，他租的房子也越来越大。",
+  "audio": "随着工资越来越高，他租的房子也越来越大。"
+ },
+ {
+  "words": [
+   "我",
+   "姐姐",
+   "是",
+   "从",
+   "北京大学",
+   "毕业",
+   "的",
+   "。"
+  ],
+  "ans": "我姐姐是从北京大学毕业的。",
+  "audio": "我姐姐是从北京大学毕业的。"
  }
 ];
 var mcData = [
  {
-  "q": "如果决定租了，告诉我＿＿。",
+  "q": "Bạn của bạn lo không tìm được nhà. Bạn trấn an: “Không tìm được thì cứ ở nhà tôi trước là được.”",
   "opts": [
-   "就是了",
-   "就是",
-   "是了",
-   "就好吗"
+   "找不到的话，先住我家就是了。",
+   "找不到的话，就是了先住我家。",
+   "找不到的话，先住我家了就是。",
+   "找不到的话，先就是住我家。"
   ],
   "ans": 0,
-  "exp": "Cấu trúc cố định 「×就是了」 phải có 了, đặt cuối câu."
+  "exp": "就是了 luôn đứng cuối câu, sau cả cụm động từ (先住我家), không chen vào giữa."
  },
  {
-  "q": "这个房子很漂亮，＿＿房租有点儿贵。",
+  "q": "A: “新房子怎么样？” — B đáp:",
   "opts": [
-   "不过",
-   "所以",
-   "而且",
-   "并"
+   "房间很亮，不过离地铁站有点儿远。",
+   "房间很亮，所以离地铁站有点儿远。",
+   "虽然房间很亮，而且离地铁站有点儿远。",
+   "房间很亮，不过有点儿远离地铁站。"
   ],
   "ans": 0,
-  "exp": "Khen trước, góp ý sau → 不过."
+  "exp": "Ý trái ngược nhẹ → 不过; 离 + nơi chốn đứng trước 远, không đặt sau như “xa ga tàu” tiếng Việt."
  },
  {
-  "q": "她考上了北京大学＿＿申请到了奖学金。",
+  "q": "Bạn muốn phản bác: “Thật ra tiếng Trung chẳng hề khó như bạn nghĩ.”",
   "opts": [
-   "并",
-   "和",
-   "跟",
-   "但"
+   "其实中文并不像你想的那么难。",
+   "其实中文不并像你想的那么难。",
+   "其实并中文不像你想的那么难。",
+   "其实中文并不难像你想的那么。"
   ],
   "ans": 0,
-  "exp": "Liên từ 并 nối hai cụm động từ; 和 nối danh từ."
+  "exp": "并 đứng ngay trước 不 / 没 (并不), sau chủ ngữ; 像……那么 + tính từ đứng trước 难."
  },
  {
-  "q": "其实，在大城市租房子＿＿不便宜。",
+  "q": "Câu nào SAI?",
   "opts": [
-   "并",
-   "也就",
-   "很",
-   "还是"
+   "我买了面包并牛奶。",
+   "他找到了工作，并在公司附近租了房子。",
+   "老师检查了我们的作业，并告诉我们哪里错了。",
+   "她申请了奖学金，并顺利拿到了。"
   ],
   "ans": 0,
-  "exp": "并不 + Adj: phủ định mạnh, phản bác."
+  "exp": "Liên từ 并 chỉ nối hai động từ / cụm động từ; nối hai danh từ phải dùng 和: 面包和牛奶."
  },
  {
-  "q": "＿＿一直下大雨，所以我们决定不爬山了。",
+  "q": "Chọn từ điền vào chỗ trống: “＿＿价格比外面便宜，学校食堂每天中午人都很多。”",
   "opts": [
    "由于",
+   "随着",
    "虽然",
-   "要是",
-   "随着"
+   "要是"
   ],
   "ans": 0,
-  "exp": "由于……，所以…… nêu nguyên nhân."
+  "exp": "Vế đầu là nguyên nhân (giá rẻ), vế sau là kết quả (đông người) → 由于; 要是 chỉ giả thiết, 虽然 cần vế 但是."
  },
  {
-  "q": "这个小区＿＿是花，还种了不少树。",
+  "q": "A: “我们走路去火车站吧？” — B đáp:",
   "opts": [
-   "到处",
-   "周围",
-   "位置",
-   "附近"
+   "太远了，走路恐怕要一个多小时。",
+   "太远了，走路要恐怕一个多小时。",
+   "太远了，走路一个多小时恐怕要。",
+   "太远了，我恐怕走路。"
   ],
   "ans": 0,
-  "exp": "到处是 + N = đâu đâu cũng là …"
+  "exp": "恐怕 (e là) là phó từ, đứng trước động từ 要; không mang nghĩa “sợ” như 害怕, nên không nói 我恐怕走路."
  },
  {
-  "q": "客厅里有一＿＿大电视，房间里还有一＿＿空调。",
+  "q": "“我在超市买了三＿＿毛巾。”",
   "opts": [
-   "台，台",
-   "张，把",
-   "条，台",
-   "个，张"
+   "条",
+   "台",
+   "张",
+   "把"
   ],
   "ans": 0,
-  "exp": "Máy móc dùng lượng từ 台."
+  "exp": "条 dùng cho vật dài, mềm như khăn; 台 cho máy móc, 张 cho vật phẳng, 把 cho vật có tay cầm."
  },
  {
-  "q": "她先查看有关信息，＿＿又去看了看房子。",
+  "q": "A: “春节的时候你家人多吗？” B: “多啊，爷爷奶奶、叔叔阿姨都来了，特别＿＿。”",
   "opts": [
-   "接着",
-   "同时",
-   "由于",
-   "不过"
+   "热闹",
+   "顺利",
+   "理想",
+   "平常"
   ],
   "ans": 0,
-  "exp": "先……，接着…… kể việc theo thứ tự."
+  "exp": "Đông người, vui vẻ → 热闹 (nhộn nhịp)."
  },
  {
-  "q": "他每天都把房间＿＿得干干净净的。",
+  "q": "Bạn muốn nói: “Anh tôi tốt nghiệp đại học năm ngoái.”",
   "opts": [
+   "我哥哥去年大学毕业了。",
+   "我哥哥去年毕业大学了。",
+   "我哥哥大学毕业了去年。",
+   "我哥哥去年大学毕业过了。"
+  ],
+  "ans": 0,
+  "exp": "毕业 không mang tân ngữ phía sau: nói 大学毕业 / 从大学毕业; thời gian 去年 đứng trước động từ."
+ },
+ {
+  "q": "A: “我不知道该选哪个专业。” B: “我的＿＿是你先去问问李老师。”",
+  "opts": [
+   "建议",
+   "信息",
+   "理想",
+   "位置"
+  ],
+  "ans": 0,
+  "exp": "建议 = lời khuyên: 我的建议是…… = tôi khuyên là …; ôn 专业 (bài 1)."
+ },
+ {
+  "q": "“手机上来了一条新信息，你快＿＿一下。”",
+  "opts": [
+   "查看",
+   "查找",
    "收拾",
-   "出租",
-   "入住",
-   "查找"
+   "入住"
   ],
   "ans": 0,
-  "exp": "把 + N + 收拾得 + Adj."
+  "exp": "查看 = xem, kiểm tra cái đã có; 查找 = tìm kiếm cái chưa thấy."
  },
  {
-  "q": "很多人觉得，有房才有家，有自己的房子会更有安全＿＿。",
+  "q": "A: “你周末常常在家做饭吗？” — B đáp:",
   "opts": [
-   "感",
-   "心",
-   "意",
-   "情"
+   "嗯，我周末基本上都在家做饭。",
+   "嗯，我周末在家做饭基本上。",
+   "嗯，我周末基本上都做饭在家。",
+   "嗯，我周末基本上都在家做饭过。"
   ],
   "ans": 0,
-  "exp": "安全感 = cảm giác an toàn; 感 là hậu tố."
+  "exp": "基本上 đứng trước động từ, 在家 cũng đứng trước 做饭; thói quen không dùng 过."
  }
 ];
 var speakingData = {
@@ -4740,33 +4879,33 @@ var speakingData = {
    "q_zh": "你觉得租房子好，还是买房子好？为什么？",
    "q_vn": "Bạn thấy thuê nhà tốt hay mua nhà tốt? Vì sao?",
    "hint": "我觉得……好，一方面……，另一方面……。不过……",
-   "sample": "我觉得刚工作的时候租房子好。一方面工资还不太高，买房压力太大；另一方面租房子比较自由，换工作的时候也可以换地方住。不过工作几年以后，我也想买一个自己的房子，因为有自己的房子会更有安全感。",
-   "sample_vn": "Tôi thấy lúc mới đi làm thì thuê nhà tốt hơn. Một mặt lương chưa cao, mua nhà áp lực quá lớn; mặt khác thuê nhà khá tự do, đổi việc thì cũng có thể đổi chỗ ở. Có điều đi làm vài năm, tôi cũng muốn mua một căn nhà của riêng mình, vì có nhà riêng sẽ an tâm hơn.",
+   "sample": "我觉得刚工作的时候租房子更好。一方面钱还不多，买房子压力太大；另一方面换工作的时候，也能跟着换地方住。不过工作几年以后，我也希望能有一个自己的家。",
+   "sample_vn": "Tôi thấy lúc mới đi làm thì thuê nhà tốt hơn. Một mặt tiền chưa nhiều, mua nhà áp lực quá lớn; mặt khác khi đổi việc cũng có thể đổi chỗ ở theo. Có điều đi làm vài năm, tôi cũng mong có một mái nhà của riêng mình.",
    "note": "Câu hỏi phần Khởi động của sách; ôn 一方面……另一方面…… (Bài 1) + 不过 (điểm 2)."
   },
   {
    "q_zh": "如果租房子，你喜欢租什么样的房子？",
    "q_vn": "Nếu thuê nhà, bạn thích thuê căn nhà như thế nào?",
    "hint": "我喜欢……的房子，房间要……，周围……，价格……",
-   "sample": "我喜欢租离学校近、周围安静的房子。房间不用太大，不过一定要亮，最好有一台空调和一张书桌。价格不要太高，每月两千元左右就行。",
-   "sample_vn": "Tôi thích thuê căn nhà gần trường, xung quanh yên tĩnh. Phòng không cần quá to, có điều nhất định phải sáng, tốt nhất có một chiếc điều hòa và một cái bàn học. Giá đừng quá cao, khoảng hai nghìn tệ một tháng là được.",
+   "sample": "我喜欢租离学校近、周围安静的房子。房间不用太大，不过一定要亮，最好有空调和洗衣机。价格不要太高，每个月两千块钱就行。",
+   "sample_vn": "Tôi thích thuê căn nhà gần trường, xung quanh yên tĩnh. Phòng không cần quá to, có điều nhất định phải sáng, tốt nhất có điều hoà và máy giặt. Giá đừng quá cao, mỗi tháng hai nghìn tệ là được.",
    "note": "Câu hỏi phần Khởi động của sách."
   },
   {
    "q_zh": "房东要出租哪个房间？那个房间怎么样？",
    "q_vn": "Chủ nhà muốn cho thuê phòng nào? Phòng đó thế nào?",
    "hint": "房东要出租……。那个房间……，还……",
-   "sample": "房东要出租那个大房间。那个房间真不小，还挺亮，现在已经收拾好了，今天就可以搬进去。",
-   "sample_vn": "Chủ nhà muốn cho thuê căn phòng lớn. Phòng đó rộng thật, lại khá sáng, giờ đã dọn dẹp xong, hôm nay có thể dọn vào luôn.",
+   "sample": "房东打算把大房间租出去。房间不小，也挺亮，房东已经收拾好了，今天就能住进去。",
+   "sample_vn": "Chủ nhà muốn cho thuê căn phòng lớn. Phòng không nhỏ, cũng khá sáng, chủ nhà đã dọn xong, hôm nay có thể vào ở luôn.",
    "note": "Câu hỏi bài khoá 1."
   },
   {
-   "q_zh": "请根据提示复述课文一。",
+   "q_zh": "你能不能说说：李文和白家月在房东家看到了一个什么样的房间？",
    "q_vn": "Dựa vào gợi ý, kể lại bài khoá 1.",
    "hint": "李文和白家月到房东家看房子。房东要出租的是……，房租……。房东告诉白家月，……。这个房间……。小区离……不远，离地铁站……。",
    "sample": "李文和白家月到房东家看房子。房东要出租的是那个大房间，房租每月5500元。房东告诉白家月，要出租的房间现在已经收拾好了，想租的话，今天就可以搬进来。这个房间真不小，还挺亮。小区离白家月的学校不远，离地铁站也很近，生活上很方便。白家月比较满意，他们决定再去看看外边的环境。",
    "sample_vn": "Lý Văn và Bạch Gia Nguyệt đến nhà chủ nhà xem phòng. Chủ nhà cho thuê căn phòng lớn, tiền thuê 5500 tệ/tháng… Bạch Gia Nguyệt khá hài lòng, họ quyết định đi xem thêm môi trường bên ngoài.",
-   "note": "Bài tập 复述 của sách (trang 14)."
+   "note": "Bài tập kể lại bài khoá của sách (trang 14)."
   },
   {
    "q_zh": "李文为什么担心周末白家月休息不好？白家月为什么还是决定租那个房子？",
@@ -4780,101 +4919,101 @@ var speakingData = {
    "q_zh": "白家月租的房间里都有什么？她准备去买什么？",
    "q_vn": "Trong phòng Bạch Gia Nguyệt thuê có những gì? Cô ấy định đi mua gì?",
    "hint": "除了……以外，还有……。她准备再去买……",
-   "sample": "她租的房间里，除了一张床以外，还有一台空调、一张书桌和一把椅子。她准备再去买几条毛巾，其他东西还不需要。",
-   "sample_vn": "Trong phòng cô ấy thuê, ngoài một chiếc giường ra còn có một chiếc điều hòa, một bàn học và một chiếc ghế. Cô ấy định đi mua thêm mấy chiếc khăn, những thứ khác chưa cần.",
+   "sample": "她的房间里有一张床、一台空调，还有桌子和椅子。她打算再去商店买几条毛巾，别的东西还不用买。",
+   "sample_vn": "Trong phòng cô ấy có một chiếc giường, một chiếc điều hoà, còn có bàn và ghế. Cô ấy định ra cửa hàng mua thêm mấy chiếc khăn, những thứ khác chưa cần mua.",
    "note": "Câu hỏi bài khoá 3."
   },
   {
-   "q_zh": "请根据提示复述课文三。",
+   "q_zh": "白家月搬家那天，房东做了什么？她看到房子里有哪些东西？请你说一下。",
    "q_vn": "Dựa vào gợi ý, kể lại bài khoá 3.",
    "hint": "昨天白家月顺利……，今天李文帮她……。搬进去的时候，房东又……，并……。客厅里有……；厨房里有……，不过……。",
-   "sample": "昨天白家月顺利租到了合适的房子，今天李文帮她搬家。搬进去的时候，房东又向白家月介绍了一下房子里的东西，并告诉她这些东西怎么用。白家月看到，客厅里有椅子、沙发，还有一台大电视；厨房里有冰箱和一些做饭用的东西，不过，白家月平常主要在学校食堂吃，基本上不做饭。白家月租的房间里，除了一张床以外，还有一台空调、一张书桌和一把椅子。看完整个房子后，她觉得再去买几条毛巾就行了。",
+   "sample": "昨天白家月顺利租到了合适的房子，今天李文帮她搬家。搬进去的时候，房东又向白家月介绍了一下房子里的东西，并告诉她这些东西怎么用。白家月看到，客厅里有椅子、沙发，还有一台大电视；厨房里有冰箱和一些做饭用的东西，不过，白家月平常主要在学校食堂吃，基本上不做饭。她租的房间里，除了一张床以外，还有一台空调、一张桌子和一把椅子。看完整个房子后，她觉得再去买几条毛巾就行了。",
    "sample_vn": "Hôm qua Bạch Gia Nguyệt đã thuê được căn nhà vừa ý, hôm nay Lý Văn giúp cô ấy chuyển nhà… Xem xong cả căn nhà, cô ấy thấy chỉ cần đi mua thêm mấy chiếc khăn là được.",
-   "note": "Bài tập 复述 của sách (trang 17–18)."
+   "note": "Bài tập kể lại bài khoá của sách (trang 17–18)."
   },
   {
    "q_zh": "白家月是怎么租到合适的房子的？",
    "q_vn": "Bạch Gia Nguyệt đã thuê được căn nhà phù hợp như thế nào?",
    "hint": "她先……，查找……，接着……，同时……。她看了好几个房子，才……",
-   "sample": "根据李文的建议，她先在租房网站和App上查看有关信息，查找合适的房子，接着又去看了看房子，同时了解房子周围的环境。她看了好几个房子，才找到一个位置、环境和价格都合适的。",
-   "sample_vn": "Theo gợi ý của Lý Văn, trước tiên cô ấy xem thông tin trên web và App thuê nhà, tìm nhà phù hợp, tiếp đó đến xem nhà, đồng thời tìm hiểu môi trường xung quanh. Cô ấy xem mấy căn liền mới tìm được căn vị trí, môi trường và giá cả đều phù hợp.",
+   "sample": "根据李文的建议，她先在租房网站上查看有关信息，查找合适的房子，接着又去看了看房子，同时了解房子周围的环境。她看了好几个房子，才找到一个位置、环境和价格都合适的。",
+   "sample_vn": "Theo gợi ý của Lý Văn, trước tiên cô ấy xem thông tin trên trang web thuê nhà, tìm nhà phù hợp, tiếp đó đến xem nhà, đồng thời tìm hiểu môi trường xung quanh. Cô ấy xem mấy căn liền mới tìm được căn vị trí, môi trường và giá cả đều phù hợp.",
    "note": "Câu hỏi bài khoá 4; dùng 先……，接着……，同时……"
   },
   {
-   "q_zh": "在中国，为什么很多刚工作的年轻人选择租房？为什么不少人工作几年后会买房？",
+   "q_zh": "在中国，为什么很多刚工作的年轻人选择租房？为什么不少人工作几年后会买房子？",
    "q_vn": "Ở Trung Quốc, vì sao nhiều người trẻ mới đi làm chọn thuê nhà? Vì sao không ít người đi làm vài năm thì mua nhà?",
-   "hint": "由于……，所以……。因为大家觉得，有房才……",
-   "sample": "由于很多刚工作的年轻人工资还不太高，所以他们一开始不买房，都选择租房。工作几年后，不少人会买房，因为大家一直觉得，有房才有家，有自己的房子会更有安全感。",
-   "sample_vn": "Do nhiều người trẻ mới đi làm lương chưa cao, nên lúc đầu họ không mua mà chọn thuê nhà. Đi làm vài năm, không ít người mua nhà, vì mọi người luôn cho rằng có nhà mới có tổ ấm, có nhà riêng sẽ an tâm hơn.",
+   "hint": "由于……，所以……。因为大家觉得，有房子才……",
+   "sample": "由于很多刚工作的年轻人工资还不太高，所以他们一开始不买房子，都选择租房。工作几年后，不少人就会买房子，因为大家觉得，有了房子才有家。",
+   "sample_vn": "Do nhiều người trẻ mới đi làm lương chưa cao, nên lúc đầu họ không mua mà chọn thuê nhà. Đi làm vài năm, không ít người mua nhà, vì mọi người cho rằng có nhà mới có tổ ấm.",
    "note": "Câu hỏi bài khoá 4; dùng 由于……，所以…… (điểm 4)."
   },
   {
-   "q_zh": "角色扮演：一个人扮演租房人，另一个人扮演房东。租房人到房东那儿看房子，询问租房价格、房屋情况及周围环境等，房东一一向租房人介绍。",
+   "q_zh": "两位同学一起说一说：一位同学想租房子，另一位同学当房东。想租房子的人来看房子，问问房租、房子里有什么和周围的环境，房东都要回答。",
    "q_vn": "Đóng vai: một người làm người thuê nhà, một người làm chủ nhà. Người thuê đến chỗ chủ nhà xem nhà, hỏi về giá thuê, tình trạng căn nhà và môi trường xung quanh…; chủ nhà lần lượt giới thiệu từng mục.",
    "hint": "租房人：请问房租……？房间里有……吗？周围……？ 房东：……。由于……，所以……。不过……。要是……，告诉我就是了。",
-   "sample": "租房人：您好，我在网上看到了您的出租信息，想来看看房子。房东：请进！这个房子是一室一厅，客厅很大，也很亮。租房人：房间里都有什么？房东：除了一张床以外，还有一台空调、一张书桌和一把椅子。厨房里有冰箱，做饭也很方便。租房人：房租每个月多少钱？房东：每月三千元。由于离地铁站很近，所以价格比旁边的小区高一点儿。租房人：周围的环境怎么样？房东：小区里种了很多树，周围很安静，附近还有超市和饭馆。不过周末楼下有点儿热闹。租房人：嗯，房子我挺满意的，我想再考虑一下。房东：没问题，要是决定租了，告诉我就是了。",
-   "sample_vn": "Người thuê: Chào chú, cháu thấy tin cho thuê của chú trên mạng, muốn đến xem nhà. Chủ nhà: Mời vào! Căn này một phòng ngủ một phòng khách, phòng khách rộng, lại sáng… Do gần ga tàu điện nên giá cao hơn khu bên cạnh một chút… Có điều cuối tuần dưới nhà hơi ồn. Người thuê: Vâng, cháu khá hài lòng, cháu muốn cân nhắc thêm. Chủ nhà: Không sao, nếu quyết định thuê thì cứ báo chú là được.",
-   "note": "Hoạt động 角色扮演 (đóng vai) của sách, trang 21 — dùng đủ 4 điểm ngữ pháp: 就是了, 不过, 并, 由于."
+   "sample": "租房人：您好，我在网上看到了您的出租信息，想来看看房子。房东：请进！这个房子有一个大客厅，很亮。租房人：房间里都有什么？房东：有床、空调和桌子，厨房里还有冰箱，做饭也很方便。租房人：房租每个月多少钱？房东：每月三千元。由于离地铁站很近，所以价格比旁边的小区高一点儿。租房人：周围的环境怎么样？房东：小区里种了很多树，周围很安静，附近还有超市。不过周末楼下有点儿热闹。租房人：嗯，房子我挺满意的，我想再想想。房东：没问题，要是决定租了，打电话告诉我就是了。",
+   "sample_vn": "Người thuê: Chào chú, cháu thấy tin cho thuê của chú trên mạng, muốn đến xem nhà. Chủ nhà: Mời vào! Căn này có phòng khách lớn, rất sáng… Do gần ga tàu điện nên giá cao hơn khu bên cạnh một chút… Có điều cuối tuần dưới nhà hơi ồn. Người thuê: Vâng, cháu khá hài lòng, cháu muốn nghĩ thêm. Chủ nhà: Không sao, nếu quyết định thuê thì cứ gọi báo chú là được.",
+   "note": "Hoạt động đóng vai của sách, trang 21 — dùng đủ 4 điểm ngữ pháp: 就是了, 不过, 并, 由于."
   }
  ]
 };
 var translateData = [
  {
-  "vi": "Nếu quyết định thuê thì cứ báo tôi là được.",
-  "zh": "如果决定租了，告诉我就是了。",
-  "py": "Rúguǒ juédìng zū le, gàosu wǒ jiùshì le."
+  "vi": "Nếu bạn không có thời gian thì để tôi đi mua là được.",
+  "zh": "你没时间的话，我去买就是了。",
+  "py": "Nǐ méi shíjiān dehuà, wǒ qù mǎi jiùshì le."
  },
  {
-  "vi": "Môi trường khu chung cư này đẹp thật, có điều gần đây có mười mấy công ty.",
-  "zh": "这个小区的环境真不错，不过附近有十几家公司。",
-  "py": "Zhège xiǎoqū de huánjìng zhēn búcuò, búguò fùjìn yǒu shíjǐ jiā gōngsī."
+  "vi": "Căn phòng này rất sáng, có điều hơi nhỏ.",
+  "zh": "这个房间很亮，不过有点儿小。",
+  "py": "Zhège fángjiān hěn liàng, búguò yǒudiǎnr xiǎo."
  },
  {
-  "vi": "Chủ nhà giới thiệu đồ đạc trong nhà và chỉ cho tôi cách dùng.",
-  "zh": "房东介绍了一下房子里的东西，并告诉我这些东西怎么用。",
-  "py": "Fángdōng jièshào le yíxià fángzi lǐ de dōngxi, bìng gàosu wǒ zhèxiē dōngxi zěnme yòng."
+  "vi": "Hôm qua tôi tìm được một căn nhà trên mạng và đã gọi điện cho chủ nhà.",
+  "zh": "昨天我在网上找到了一个房子，并给房东打了电话。",
+  "py": "Zuótiān wǒ zài wǎngshang zhǎodào le yí gè fángzi, bìng gěi fángdōng dǎ le diànhuà."
  },
  {
-  "vi": "Đối với Bạch Gia Nguyệt, lần thuê nhà này chẳng hề dễ dàng.",
-  "zh": "对白家月来说，这次租房并不容易。",
-  "py": "Duì Bái Jiāyuè láishuō, zhè cì zū fáng bìng bù róngyì."
+  "vi": "Tôi hoàn toàn không quên chuyện đó, chỉ là bận quá thôi.",
+  "zh": "我并没有忘记那件事，只是太忙了。",
+  "py": "Wǒ bìng méiyǒu wàngjì nà jiàn shì, zhǐshì tài máng le."
  },
  {
-  "vi": "Do lương còn chưa cao nên nhiều người trẻ chọn thuê nhà.",
-  "zh": "由于工资还不太高，所以很多年轻人选择租房。",
-  "py": "Yóuyú gōngzī hái bú tài gāo, suǒyǐ hěn duō niánqīngrén xuǎnzé zū fáng."
+  "vi": "Do giá cả hợp lý nên rất nhiều người thích đến siêu thị này mua đồ.",
+  "zh": "由于价格合适，所以很多人喜欢来这个超市买东西。",
+  "py": "Yóuyú jiàgé héshì, suǒyǐ hěn duō rén xǐhuan lái zhège chāoshì mǎi dōngxi."
  },
  {
-  "vi": "Có nhà của riêng mình sẽ có cảm giác an toàn hơn.",
-  "zh": "有自己的房子会更有安全感。",
-  "py": "Yǒu zìjǐ de fángzi huì gèng yǒu ānquángǎn."
+  "vi": "Đã mười giờ rưỡi rồi, e là thư viện đóng cửa rồi.",
+  "zh": "都十点半了，图书馆恐怕关门了。",
+  "py": "Dōu shí diǎn bàn le, túshūguǎn kǒngpà guānmén le."
  }
 ];
 var translateDataRev = [
  {
-  "vi": "Căn nhà này có hai phòng, phòng lớn kia cho thuê, tiền thuê mỗi tháng 5500 tệ.",
-  "zh": "这个房子有两个房间，那个大房间出租，房租每月5500元。",
-  "py": "Zhège fángzi yǒu liǎng gè fángjiān, nàge dà fángjiān chūzū, fángzū měi yuè 5500 yuán."
+  "vi": "Mấy hôm nay tôi bận chuyển nhà, cả tuần không đi thư viện.",
+  "zh": "这几天我忙着搬家，整个星期都没去图书馆。",
+  "py": "Zhè jǐ tiān wǒ máng zhe bānjiā, zhěnggè xīngqī dōu méi qù túshūguǎn."
  },
  {
-  "vi": "Cuối tuần họ có thể chơi đến rất muộn, e là sẽ ảnh hưởng đến việc nghỉ ngơi của cậu.",
-  "zh": "周末他们可能会玩到很晚，恐怕会影响你休息。",
-  "py": "Zhōumò tāmen kěnéng huì wán dào hěn wǎn, kǒngpà huì yǐngxiǎng nǐ xiūxi."
+  "vi": "Anh ấy tốt nghiệp xong thì về nước làm việc.",
+  "zh": "他毕业以后回国工作了。",
+  "py": "Tā bìyè yǐhòu huíguó gōngzuò le."
  },
  {
-  "vi": "Ngày thường tôi chủ yếu ăn ở nhà ăn của trường, hầu như không nấu cơm.",
-  "zh": "我平常主要在学校食堂吃，基本上不做饭。",
-  "py": "Wǒ píngcháng zhǔyào zài xuéxiào shítáng chī, jīběnshàng bú zuòfàn."
+  "vi": "Gần nhà tôi mới mở một siêu thị, rất nhộn nhịp.",
+  "zh": "我家附近新开了一家超市，非常热闹。",
+  "py": "Wǒ jiā fùjìn xīn kāi le yì jiā chāoshì, fēicháng rènao."
  },
  {
-  "vi": "Cô ấy xem mấy căn liền mới tìm được một căn vị trí, môi trường và giá cả đều phù hợp.",
-  "zh": "她看了好几个房子，才找到一个位置、环境和价格都合适的。",
-  "py": "Tā kàn le hǎojǐ gè fángzi, cái zhǎodào yí gè wèizhì, huánjìng hé jiàgé dōu héshì de."
+  "vi": "Bạn có thể xem thông tin thuê nhà trên trang web này.",
+  "zh": "你可以在这个网站上查看租房信息。",
+  "py": "Nǐ kěyǐ zài zhège wǎngzhàn shàng chákàn zū fáng xìnxī."
  },
  {
-  "vi": "Xem xong cả căn nhà, tôi định đi mua thêm mấy chiếc khăn.",
-  "zh": "看完整个房子后，我准备再去买几条毛巾。",
-  "py": "Kànwán zhěnggè fángzi hòu, wǒ zhǔnbèi zài qù mǎi jǐ tiáo máojīn."
+  "vi": "Mong rằng ở công ty mới mọi việc của bạn đều suôn sẻ.",
+  "zh": "希望你在新公司工作顺利。",
+  "py": "Xīwàng nǐ zài xīn gōngsī gōngzuò shùnlì."
  }
 ];
 var sgkData = [

@@ -4756,530 +4756,682 @@ var dialogData = [
 ];
 var listenData = [
  {
-  "audio": "你好，我想了解一下你们健身房。欢迎！我们这儿环境好、设备全，还有专业教练。现在办会员卡打八折。一年多少钱？原价三千，打完折两千四。那挺合适的，我先办一张吧。",
+  "audio": "你看你的电视吧，我去一趟超市，马上回来。",
   "questions": [
    {
-    "q": "这家健身房现在有什么活动？",
+    "q": "Người nói sắp làm gì?",
     "opts": [
-     "送饼干和果汁",
-     "办会员卡打八折",
-     "免费请教练"
+     "Xem tivi",
+     "Đi siêu thị một chuyến",
+     "Đi ngủ"
     ],
-    "ans": 1
-   },
-   {
-    "q": "打折以后，一年的会员卡多少钱？",
-    "opts": [
-     "两千四",
-     "三千",
-     "两千"
-    ],
-    "ans": 0
+    "ans": 1,
+    "exp": "你看你的电视吧 = bạn cứ xem tivi đi (không cần đi cùng); 去一趟超市 = đi siêu thị một chuyến."
    }
   ]
  },
  {
-  "audio": "小李，你的腿怎么了？昨天在健身房受伤了。你没跟教练练吗？没有，我自己看着视频练的，动作不太准确。锻炼要科学，否则容易受伤。你现在连走路都困难，更不能去打球了，好好儿休息吧。",
+  "audio": "王老师表扬小雪上课认真，并且鼓励她多参加比赛。",
   "questions": [
    {
-    "q": "小李是怎么受伤的？",
+    "q": "Cô Vương khen Tiểu Tuyết điều gì?",
     "opts": [
-     "打球的时候",
-     "在操场跑步的时候",
-     "在健身房自己练的时候"
+     "Thi đạt giải",
+     "Hay giúp đỡ bạn",
+     "Học trên lớp chăm chú"
     ],
-    "ans": 2
+    "ans": 2,
+    "exp": "表扬小雪上课认真 = khen Tiểu Tuyết học trên lớp chăm chú; 表扬 + người + việc."
    },
    {
-    "q": "说话人认为锻炼应该怎么样？",
+    "q": "Cô động viên Tiểu Tuyết làm gì?",
     "opts": [
-     "要科学",
-     "要每天练",
-     "要看视频"
+     "Tham gia nhiều cuộc thi hơn",
+     "Đi tập gym",
+     "Làm lớp trưởng"
     ],
-    "ans": 0
+    "ans": 0,
+    "exp": "鼓励她多参加比赛 = động viên em tham gia thi nhiều hơn; ôn 并且 (bài 16)."
    }
   ]
  },
  {
-  "audio": "妈妈，今天我们学校的乒乓球比赛，我们班三比一赢了！真棒！你打得怎么样？教练表扬我动作很标准，还鼓励我参加市里的大赛。那你要不断练习啊。我知道，我的梦想就是进入国家队！",
+  "audio": "我弟弟特别喜欢踢足球，连下雨天都要去操场踢，作业就更不想写了。",
   "questions": [
    {
-    "q": "比赛结果怎么样？",
+    "q": "Em trai người nói thế nào?",
     "opts": [
-     "二比二",
-     "三比一赢了",
-     "三比一输了"
+     "Trời mưa thì ở nhà",
+     "Trời mưa cũng ra sân đá bóng",
+     "Làm xong bài tập mới đá bóng"
     ],
-    "ans": 1
+    "ans": 1,
+    "exp": "连下雨天都要去操场踢 = ngay cả trời mưa cũng ra sân đá; 作业就更不想写了 = bài tập thì càng không muốn làm."
+   }
+  ]
+ },
+ {
+  "audio": "我在这家健身房健身两个月了，体重少了五公斤，教练说我进步很大。",
+  "questions": [
+   {
+    "q": "Người nói tập gym bao lâu rồi?",
+    "opts": [
+     "Hai tháng",
+     "Hai tuần",
+     "Hai năm"
+    ],
+    "ans": 0,
+    "exp": "健身两个月了 = tập được hai tháng rồi."
    },
    {
-    "q": "孩子的梦想是什么？",
+    "q": "Cân nặng thay đổi thế nào?",
     "opts": [
-     "当教练",
-     "当球迷",
-     "进入国家队"
+     "Tăng 5 kg",
+     "Không đổi",
+     "Giảm 5 kg"
     ],
-    "ans": 2
+    "ans": 2,
+    "exp": "体重少了五公斤 = cân nặng giảm 5 kg; 进步很大 = tiến bộ nhiều."
+   }
+  ]
+ },
+ {
+  "audio": "这个乒乓球队一共有八个队员，其中三个是大学生。",
+  "questions": [
+   {
+    "q": "Trong đội có bao nhiêu sinh viên đại học?",
+    "opts": [
+     "Tám người",
+     "Ba người",
+     "Năm người"
+    ],
+    "ans": 1,
+    "exp": "一共有八个队员，其中三个是大学生 = cả đội 8 người, trong đó 3 người là sinh viên."
+   }
+  ]
+ },
+ {
+  "audio": "锻炼以前一定要先活动活动，动作不准确的话，很容易受伤。",
+  "questions": [
+   {
+    "q": "Người nói nhắc điều gì?",
+    "opts": [
+     "Động tác không chuẩn dễ bị thương",
+     "Tập càng lâu càng tốt",
+     "Không cần khởi động"
+    ],
+    "ans": 0,
+    "exp": "动作不准确的话，很容易受伤 = động tác không chính xác thì rất dễ bị thương; 先活动活动 = khởi động trước."
+   }
+  ]
+ },
+ {
+  "audio": "昨天晚上的比赛我们球队赢了，球迷们高兴得一晚上都没睡。",
+  "questions": [
+   {
+    "q": "Kết quả trận đấu thế nào?",
+    "opts": [
+     "Đội nhà thua",
+     "Hai đội hoà",
+     "Đội nhà thắng"
+    ],
+    "ans": 2,
+    "exp": "我们球队赢了 = đội bóng của chúng tôi thắng rồi."
+   },
+   {
+    "q": "Người hâm mộ thế nào?",
+    "opts": [
+     "Vui đến mức cả đêm không ngủ",
+     "Rất thất vọng",
+     "Về nhà sớm"
+    ],
+    "ans": 0,
+    "exp": "高兴得一晚上都没睡 = vui đến mức cả đêm không ngủ; bổ ngữ trình độ 得."
    }
   ]
  }
 ];
 var matchData = [
  {
-  "left": "路过",
-  "right": "你们家那边"
- },
- {
-  "left": "办一张",
+  "left": "办",
   "right": "会员卡"
  },
  {
-  "left": "去一趟",
-  "right": "健身房"
+  "left": "喝",
+  "right": "果汁"
  },
  {
-  "left": "把动作",
-  "right": "做准确"
+  "left": "打",
+  "right": "乒乓球"
+ },
+ {
+  "left": "赢得",
+  "right": "球迷的喜爱"
+ },
+ {
+  "left": "参加",
+  "right": "世界大赛"
  },
  {
   "left": "锻炼",
   "right": "全身"
  },
  {
-  "left": "取得了很大的",
-  "right": "进步"
+  "left": "一位",
+  "right": "教练"
  },
  {
-  "left": "赢得",
-  "right": "第一名"
- },
- {
-  "left": "进行严格的",
-  "right": "训练"
- },
- {
-  "left": "您走",
-  "right": "您的吧"
- },
- {
-  "left": "连……也/都……",
-  "right": "……更……"
+  "left": "一项",
+  "right": "任务"
  }
 ];
 var fillData = [
  {
-  "pre": "同乐，我今天正好要",
+  "pre": "我每天上班都会",
   "blank": "路过",
-  "post": "你们家那边，用不用我开车送你？",
+  "post": "一家面包店，有时候会进去买点儿早饭。",
   "hint": "(đi ngang qua)",
   "ans": "路过",
-  "exp": "路过 + nơi chốn."
+  "exp": "路过 + nơi chốn = đi ngang qua …, tiện đường thì ghé vào."
  },
  {
-  "pre": "我一会儿还要去一",
+  "pre": "这个周末我得回一",
   "blank": "趟",
-  "post": "健身房。",
+  "post": "老家，看看爷爷奶奶。",
   "hint": "(chuyến)",
   "ans": "趟",
-  "exp": "去一趟 + nơi."
+  "exp": "趟 là lượng từ cho chuyến đi (đi rồi về): 回一趟老家 = về quê một chuyến."
  },
  {
-  "pre": "我最近",
+  "pre": "医生说我的",
   "blank": "体重",
-  "post": "增加了不少，正好想运动一下。",
+  "post": "有点儿高，让我少吃甜的东西。",
   "hint": "(cân nặng)",
   "ans": "体重",
-  "exp": "体重增加 = tăng cân."
+  "exp": "体重 = cân nặng; 体重高 nên bác sĩ bảo ăn ít đồ ngọt."
  },
  {
-  "pre": "当时正好有打折活动，我就办了一张",
-  "blank": "会员",
-  "post": "卡。",
-  "hint": "(hội viên)",
-  "ans": "会员",
-  "exp": "会员卡 = thẻ hội viên."
- },
- {
-  "pre": "教练很热情，也非常专业，",
-  "blank": "动作",
-  "post": "讲得很清楚。",
-  "hint": "(động tác)",
-  "ans": "动作",
-  "exp": "动作讲得很清楚."
- },
- {
-  "pre": "锻炼要科学，否则容易",
-  "blank": "受伤",
-  "post": "。",
-  "hint": "(bị thương)",
-  "ans": "受伤",
-  "exp": "容易受伤."
- },
- {
-  "pre": "还有一部分人愿意去健身房健身，杨同乐就是",
-  "blank": "其中",
-  "post": "之一。",
-  "hint": "(trong số đó)",
-  "ans": "其中",
-  "exp": "其中之一 = một trong số đó."
- },
- {
-  "pre": "健身房能帮助大家把动作做",
-  "blank": "准确",
-  "post": "，练习的效果也更好。",
-  "hint": "(chính xác)",
-  "ans": "准确",
-  "exp": "把 + O + 做准确."
- },
- {
-  "pre": "教练也表扬他取得了很大的进步，并",
+  "pre": "妈妈常常",
   "blank": "鼓励",
-  "post": "他坚持下去。",
-  "hint": "(động viên)",
+  "post": "我多跟别人交流，不要怕说错。",
+  "hint": "(khích lệ)",
   "ans": "鼓励",
-  "exp": "鼓励 + ai + V."
+  "exp": "鼓励 + người + V = khích lệ ai làm gì; người được động viên đứng ngay sau 鼓励."
  },
  {
-  "pre": "为了",
+  "pre": "随着经济的发展，城市里的高楼",
   "blank": "不断",
-  "post": "提高自己的水平，队员们每天都要进行严格的训练。",
+  "post": "增加。",
   "hint": "(không ngừng)",
   "ans": "不断",
-  "exp": "不断 + V."
+  "exp": "不断 + V = không ngừng, liên tục …; ôn 随着 (bài 1)."
+ },
+ {
+  "pre": "踢足球的时候他不小心",
+  "blank": "受伤",
+  "post": "了，一个星期都不能上体育课。",
+  "hint": "(bị thương)",
+  "ans": "受伤",
+  "exp": "受伤 = bị thương; 不小心受伤了 = không cẩn thận bị thương."
+ },
+ {
+  "pre": "我们班有三十个学生，",
+  "blank": "其中",
+  "post": "一半是女生。",
+  "hint": "(trong số đó)",
+  "ans": "其中",
+  "exp": "其中 = trong số đó, đứng đầu vế sau, chỉ một phần của nhóm vừa nói (30 học sinh)."
+ },
+ {
+  "pre": "每天走路上班有很多",
+  "blank": "好处",
+  "post": "，既能省钱，又对身体好。",
+  "hint": "(lợi ích)",
+  "ans": "好处",
+  "exp": "好处 = lợi ích; ôn 既……又…… (bài 4): vừa tiết kiệm tiền, vừa tốt cho sức khoẻ."
+ },
+ {
+  "pre": "你今天穿得这么正式，看起来真",
+  "blank": "帅",
+  "post": "！",
+  "hint": "(đẹp trai)",
+  "ans": "帅",
+  "exp": "帅 = đẹp trai, phong độ — lời khen dành cho nam."
+ },
+ {
+  "pre": "这家医院的",
+  "blank": "设备",
+  "post": "很新，来看病的人也越来越多了。",
+  "hint": "(thiết bị)",
+  "ans": "设备",
+  "exp": "设备 = thiết bị, máy móc; thiết bị mới nên người đến khám ngày càng đông."
+ },
+ {
+  "pre": "他太忙了，",
+  "blank": "连",
+  "post": "午饭都没时间吃。",
+  "hint": "(ngay cả)",
+  "ans": "连",
+  "exp": "连 + điều tối thiểu (午饭) + 都 = ngay cả … cũng (không) …, nhấn mạnh mức độ bận."
+ },
+ {
+  "pre": "这种饼干在我们那儿",
+  "blank": "叫作",
+  "post": "“小月亮”，因为它的样子很像月亮。",
+  "hint": "(gọi là)",
+  "ans": "叫作",
+  "exp": "叫作 + tên = được gọi là …; ở đây giải thích tên gọi của loại bánh."
+ },
+ {
+  "pre": "昨天晚上我做了一个",
+  "blank": "梦",
+  "post": "，在梦里我变成了一名乒乓球运动员。",
+  "hint": "(giấc mơ)",
+  "ans": "梦",
+  "exp": "做梦 = nằm mơ: 做了一个梦; 在梦里 = trong giấc mơ."
  }
 ];
 var sortData = [
  {
   "words": [
-   "您",
-   "走",
-   "您的吧",
+   "你",
+   "写",
+   "你的",
+   "作业",
+   "吧",
    "，",
    "我",
-   "一会儿",
-   "还要去",
-   "一趟健身房",
+   "自己",
+   "去",
+   "买菜",
    "。"
   ],
-  "ans": "您走您的吧，我一会儿还要去一趟健身房。",
-  "audio": "您走您的吧，我一会儿还要去一趟健身房。"
+  "ans": "你写你的作业吧，我自己去买菜。",
+  "audio": "你写你的作业吧，我自己去买菜。"
  },
  {
   "words": [
-   "一来一回",
-   "得",
-   "半个小时",
-   "，",
-   "太",
-   "浪费时间了",
+   "我们",
+   "两个",
+   "一前一后",
+   "走",
+   "进了",
+   "教室",
    "。"
   ],
-  "ans": "一来一回得半个小时，太浪费时间了。",
-  "audio": "一来一回得半个小时，太浪费时间了。"
+  "ans": "我们两个一前一后走进了教室。",
+  "audio": "我们两个一前一后走进了教室。"
  },
  {
   "words": [
-   "教练",
-   "也",
+   "妈妈",
    "表扬",
+   "弟弟",
+   "把",
+   "自己的",
+   "房间",
+   "收拾",
+   "得",
+   "很",
+   "干净",
+   "。"
+  ],
+  "ans": "妈妈表扬弟弟把自己的房间收拾得很干净。",
+  "audio": "妈妈表扬弟弟把自己的房间收拾得很干净。"
+ },
+ {
+  "words": [
+   "老师",
+   "批评",
    "他",
-   "取得了",
-   "很大的进步",
+   "上课",
+   "的时候",
+   "玩",
+   "手机",
    "。"
   ],
-  "ans": "教练也表扬他取得了很大的进步。",
-  "audio": "教练也表扬他取得了很大的进步。"
+  "ans": "老师批评他上课的时候玩手机。",
+  "audio": "老师批评他上课的时候玩手机。"
  },
  {
   "words": [
+   "他",
    "连",
-   "一些老人",
+   "自己的",
+   "名字",
    "都",
-   "坚持打球",
-   "，",
-   "年轻人",
-   "更",
-   "喜欢打",
+   "写",
+   "错",
+   "了",
    "。"
   ],
-  "ans": "连一些老人都坚持打球，年轻人更喜欢打。",
-  "audio": "连一些老人都坚持打球，年轻人更喜欢打。"
+  "ans": "他连自己的名字都写错了。",
+  "audio": "他连自己的名字都写错了。"
  },
  {
   "words": [
-   "锻炼",
-   "要",
-   "科学",
-   "，",
-   "否则",
-   "容易",
-   "受伤",
+   "中国",
+   "乒乓球队",
+   "赢得",
+   "了",
+   "这次",
+   "大赛",
+   "的",
+   "第一名",
    "。"
   ],
-  "ans": "锻炼要科学，否则容易受伤。",
-  "audio": "锻炼要科学，否则容易受伤。"
+  "ans": "中国乒乓球队赢得了这次大赛的第一名。",
+  "audio": "中国乒乓球队赢得了这次大赛的第一名。"
  },
  {
   "words": [
-   "乒乓球",
-   "是",
-   "中国人",
-   "最常见的",
-   "运动",
-   "之一",
+   "我",
+   "的",
+   "体重",
+   "比",
+   "上个月",
+   "少",
+   "了",
+   "两公斤",
    "。"
   ],
-  "ans": "乒乓球是中国人最常见的运动之一。",
-  "audio": "乒乓球是中国人最常见的运动之一。"
+  "ans": "我的体重比上个月少了两公斤。",
+  "audio": "我的体重比上个月少了两公斤。"
+ },
+ {
+  "words": [
+   "操场",
+   "上",
+   "有",
+   "很多",
+   "跑步",
+   "的",
+   "学生",
+   "。"
+  ],
+  "ans": "操场上有很多跑步的学生。",
+  "audio": "操场上有很多跑步的学生。"
  }
 ];
 var mcData = [
  {
-  "q": "谢谢一雪姐，不过您走＿＿吧，我一会儿还要去健身房。",
+  "q": "Mẹ muốn giúp bạn dọn phòng. Bạn nói: “Mẹ cứ xem tivi của mẹ đi, con tự làm được.”",
   "opts": [
-   "您的",
-   "你的",
-   "我的",
-   "他的"
+   "您看您的电视吧，我自己能做。",
+   "您看我的电视吧，我自己能做。",
+   "您看电视您的吧，我自己能做。",
+   "您看您电视的吧，我自己能做。"
   ],
   "ans": 0,
-  "exp": "您走您的吧: hai đại từ phải giống nhau."
+  "exp": "您 + V + 您的 (+ danh từ) + 吧: hai đại từ phải giống nhau, 的 đứng ngay sau đại từ thứ hai."
  },
  {
-  "q": "离我家最近的健身房也要坐两站公交车，一来一＿＿得半个小时。",
+  "q": "A: “要不要我帮你做饭？” — B đáp:",
   "opts": [
-   "回",
-   "去",
-   "到",
-   "走"
+   "不用，你玩你的吧，我一个人就行。",
+   "不用，你玩你的吧，你一个人就行。",
+   "不用，你帮你的吧，我一个人就行。",
+   "不用，我玩我的吧，我一个人就行。"
   ],
   "ans": 0,
-  "exp": "一来一回 = cả đi lẫn về."
+  "exp": "你玩你的吧 = bạn cứ chơi đi (không cần giúp), vế sau nói việc của mình: 我一个人就行."
  },
  {
-  "q": "教练也＿＿他取得了很大的进步。",
+  "q": "“我家有两只小狗，＿＿＿＿，大的是黑色的，小的是白色的。”",
   "opts": [
-   "表扬",
+   "一大一小",
+   "一来一回",
+   "一问一答",
+   "一前一后"
+  ],
+  "ans": 0,
+  "exp": "一大一小 = một con lớn một con nhỏ — vế sau nói rõ 大的…，小的…."
+ },
+ {
+  "q": "Bạn muốn nói: “Ra sân bay, cả đi lẫn về mất ba tiếng.”",
+  "opts": [
+   "去机场一来一回得三个小时。",
+   "去机场得三个小时一来一回。",
+   "去机场一来一回得三个小时的。",
+   "去机场一个来一个回得三个小时。"
+  ],
+  "ans": 0,
+  "exp": "一来一回 đứng đầu vế, trước 得 / 要 + thời gian; không đặt cuối câu như tiếng Việt, không chen lượng từ 个."
+ },
+ {
+  "q": "Bạn muốn nói: “Cô giáo khen tôi viết chữ Hán rất đẹp.”",
+  "opts": [
+   "老师表扬我汉字写得很好看。",
+   "老师表扬汉字我写得很好看。",
+   "老师给我表扬汉字写得很好看。",
+   "我表扬老师汉字写得很好看。"
+  ],
+  "ans": 0,
+  "exp": "表扬 + người được khen + việc người đó làm: 表扬我 + 汉字写得很好看; không dùng 给."
+ },
+ {
+  "q": "“他又没写作业，老师＿＿了他。”",
+  "opts": [
    "批评",
-   "受伤",
-   "路过"
-  ],
-  "ans": 0,
-  "exp": "Tiến bộ → khen: 表扬 + ai + V + O."
- },
- {
-  "q": "＿＿一些年龄比较大的老人都坚持打球，年轻人更是把它作为一种日常锻炼的方式。",
-  "opts": [
-   "连",
-   "就",
-   "才",
-   "把"
-  ],
-  "ans": 0,
-  "exp": "连……都……，……更……"
- },
- {
-  "q": "我有时候连老师说的话也听不懂，听广播就＿＿难了。",
-  "opts": [
-   "更",
-   "最",
-   "太",
-   "还"
-  ],
-  "ans": 0,
-  "exp": "Vế 2 dùng 更 (càng)."
- },
- {
-  "q": "中国乒乓球队常在各项比赛中＿＿第一名。",
-  "opts": [
-   "赢得",
-   "赢",
-   "获取",
+   "表扬",
+   "鼓励",
    "进步"
   ],
   "ans": 0,
-  "exp": "赢得 + tân ngữ (第一名); 赢 thường không mang 第一名."
+  "exp": "Không làm bài tập là việc sai → 批评 (phê bình); 表扬 / 鼓励 là khen, động viên."
  },
  {
-  "q": "中国乒乓球队非常有名，被＿＿“梦之队”。",
+  "q": "Bạn muốn nói: “Anh ấy bận đến mức ngay cả cuối tuần cũng phải đi làm.”",
   "opts": [
-   "叫作",
-   "表扬",
-   "训练",
-   "鼓励"
+   "他忙得连周末都要上班。",
+   "他忙得周末连都要上班。",
+   "他忙得连周末要都上班。",
+   "他忙得连周末上班。"
   ],
   "ans": 0,
-  "exp": "被叫作 = được gọi là."
+  "exp": "连 + thứ được nhấn mạnh (周末) + 都 + V; thiếu 都 hoặc đặt sai chỗ đều sai."
  },
  {
-  "q": "仅仅经过一个月左右的锻炼，杨同乐＿＿感觉自己的身体比以前更健康了。",
+  "q": "A: “你会说上海话吗？” — B đáp:",
   "opts": [
-   "就",
-   "才",
-   "也",
-   "都"
+   "我连普通话都说不好，上海话就更不会了。",
+   "我连普通话都说不好，上海话就最不会了。",
+   "我连普通话都说不好，上海话就很会了。",
+   "我普通话都连说不好，上海话就更不会了。"
   ],
   "ans": 0,
-  "exp": "仅仅……就…… = chỉ mới … đã …"
+  "exp": "连……都……，……就更…… = ngay cả … còn …, thì … càng …; vế sau dùng 更, không dùng 最; 连 đứng trước 普通话."
  },
  {
-  "q": "健身房环境好、＿＿全，可以锻炼全身。",
+  "q": "“他的表演＿＿了大家的喜爱。”",
   "opts": [
+   "赢得",
+   "赢",
+   "进步",
+   "训练"
+  ],
+  "ans": 0,
+  "exp": "赢得 + danh từ trừu tượng (喜爱 / 第一名) = giành được; 赢 = thắng (赢了比赛), không đi với 喜爱."
+ },
+ {
+  "q": "Bạn muốn nói: “Chỉ mới tập một tuần, cô ấy đã học được bơi.”",
+  "opts": [
+   "仅仅练了一个星期，她就学会了游泳。",
+   "仅仅练了一个星期，她才学会了游泳。",
+   "她练了一个星期仅仅，就学会了游泳。",
+   "仅仅练了一个星期，她都学会了游泳。"
+  ],
+  "ans": 0,
+  "exp": "仅仅 + thời gian ngắn, vế sau dùng 就 (nhanh, sớm); 才 là “mới” (muộn, lâu) — ngược nghĩa."
+ },
+ {
+  "q": "“这次运动会一共有二十＿＿比赛。”",
+  "opts": [
+   "项",
+   "趟",
+   "队",
+   "部"
+  ],
+  "ans": 0,
+  "exp": "项 là lượng từ cho hạng mục, môn thi: 二十项比赛; 趟 là chuyến đi, 部 dùng cho phim."
+ },
+ {
+  "q": "A: “那家饭馆最近怎么天天排队？” B: “听说它在网上特别＿＿。”",
+  "opts": [
+   "火",
+   "热",
+   "帅",
+   "准确"
+  ],
+  "ans": 0,
+  "exp": "火 (khẩu ngữ) = đang hot, đắt khách; 热 chỉ nhiệt độ / nhiệt tình, không dùng với nghĩa này."
+ },
+ {
+  "q": "“吃饭也要讲＿＿，不能只吃肉不吃菜。”",
+  "opts": [
+   "科学",
+   "准确",
    "设备",
-   "好处",
-   "动作",
-   "会员"
+   "全身"
   ],
   "ans": 0,
-  "exp": "设备全 = thiết bị đầy đủ."
- },
- {
-  "q": "她早上一般都会喝杯＿＿，觉得这样对身体有好处。",
-  "opts": [
-   "酸奶",
-   "饼干",
-   "乒乓球",
-   "操场"
-  ],
-  "ans": 0,
-  "exp": "喝 + 酸奶 (người Trung “uống” sữa chua)."
+  "exp": "讲科学 = theo cách khoa học, hợp lý: ăn uống cân đối, không chỉ ăn thịt."
  }
 ];
 var speakingData = {
- "intro": "Nhấn nút loa nghe câu hỏi (câu hỏi phần Khởi động, câu hỏi đọc hiểu của 4 bài khoá, kể lại bài khoá và hoạt động điều tra), rồi tự ghi âm câu trả lời — cố dùng từ mới và 4 điểm ngữ pháp của bài.",
+ "intro": "Nhấn nút loa nghe câu hỏi (câu hỏi phần Khởi động, câu hỏi đọc hiểu, kể lại bài khoá và hoạt động điều tra của sách), rồi tự ghi âm câu trả lời — cố dùng từ mới và 4 điểm ngữ pháp của bài: 你V你的吧, 一A一B, 表扬/批评 + người + V, 连……都……，……更…….",
  "questions": [
   {
    "q_zh": "你去过健身房吗？你喜欢去健身房锻炼身体吗？",
-   "q_vn": "Bạn đã từng đến phòng gym chưa? Bạn có thích đến phòng gym rèn luyện thân thể không?",
+   "q_vn": "Bạn đã từng đến phòng gym chưa? Bạn có thích đến phòng gym rèn luyện sức khoẻ không?",
    "hint": "我去过……。我觉得健身房……，不过……。我更喜欢……",
-   "sample": "我去过健身房，去年还办了一张会员卡。健身房环境好、设备全，还有专业教练，能帮我把动作做准确。不过，离我家最近的健身房也很远，一来一回要一个小时，所以后来我去得越来越少了。现在我更喜欢晚饭后在操场跑步，又方便又不用花钱。",
-   "sample_vn": "Tôi từng đến phòng gym, năm ngoái còn làm một thẻ hội viên. Phòng gym môi trường tốt, thiết bị đầy đủ, còn có HLV chuyên nghiệp giúp tôi tập động tác cho chuẩn. Có điều phòng gym gần nhà tôi nhất cũng rất xa, cả đi lẫn về mất một tiếng, nên về sau tôi đi ngày càng ít. Bây giờ tôi thích chạy bộ ở sân tập sau bữa tối hơn, vừa tiện vừa không tốn tiền.",
-   "note": "Câu hỏi phần Khởi động của sách; dùng 一来一回 (điểm 2) + ôn 既……又…… / 又……又……"
+   "sample": "我去过，去年还办了一张会员卡。那里什么都有，练起来很方便。不过健身房离我家太远，一来一回要一个小时，所以后来我去得越来越少了。现在我更喜欢晚饭后在操场跑步，又方便又不用花钱。",
+   "sample_vn": "Tôi đã đến rồi, năm ngoái còn làm một thẻ hội viên. Ở đó cái gì cũng có, tập rất tiện. Nhưng phòng gym xa nhà quá, cả đi lẫn về mất một tiếng, nên sau đó tôi đi ngày càng ít. Bây giờ tôi thích chạy bộ ở sân trường sau bữa tối hơn, vừa tiện vừa không tốn tiền.",
+   "note": "Câu hỏi phần Khởi động của sách; dùng 一来一回 (điểm 2), ôn 又……又……."
   },
   {
    "q_zh": "你喜欢看什么体育比赛？你有喜欢的运动员或球队吗？",
-   "q_vn": "Bạn thích xem các trận đấu thể thao nào? Bạn có vận động viên hay đội bóng yêu thích không?",
-   "hint": "我最喜欢看……比赛。我是……迷。我最喜欢的球队是……，因为……",
-   "sample": "我最喜欢看足球比赛，我是一个老球迷了。我最喜欢的球队是越南国家队。队员们每天都进行严格的训练，水平不断提高，这几年在东南亚的比赛中常常赢得第一名。每次比赛的时候，连我奶奶都会和我们一起看电视，我爸爸就更激动了。",
-   "sample_vn": "Tôi thích xem bóng đá nhất, tôi là fan lâu năm rồi. Đội bóng tôi thích nhất là đội tuyển quốc gia Việt Nam. Các cầu thủ ngày nào cũng tập luyện nghiêm ngặt, trình độ không ngừng nâng cao, mấy năm nay thường giành chức vô địch các giải Đông Nam Á. Mỗi lần có trận đấu, đến bà tôi cũng xem tivi cùng cả nhà, bố tôi thì càng phấn khích hơn.",
+   "q_vn": "Bạn thích xem môn thể thao nào? Bạn có vận động viên hay đội bóng yêu thích không?",
+   "hint": "我最喜欢看……比赛。我是……的球迷。我最喜欢的球队是……，因为……",
+   "sample": "我最喜欢看足球比赛，我是一个老球迷了。我最喜欢的球队是我们国家的足球队。队员们每天都要训练，水平不断提高，这几年常常在大赛中赢得第一名。每次比赛的时候，连我奶奶都会和我们一起看电视，我爸爸就更激动了。",
+   "sample_vn": "Tôi thích xem bóng đá nhất, tôi là fan lâu năm rồi. Đội tôi thích nhất là đội tuyển bóng đá nước mình. Các cầu thủ ngày nào cũng tập luyện, trình độ không ngừng nâng cao, mấy năm nay thường giành hạng nhất ở các giải lớn. Mỗi lần có trận, ngay cả bà tôi cũng xem tivi cùng cả nhà, bố tôi thì càng phấn khích hơn.",
    "note": "Câu hỏi phần Khởi động của sách; dùng 连……都……，……更…… (điểm 4) + từ 球迷, 队员, 训练, 不断, 赢得."
   },
   {
    "q_zh": "杨同乐为什么想健身？他为什么办了会员卡？",
-   "q_vn": "Vì sao Dương Đồng Lạc muốn tập luyện? Vì sao anh ấy làm thẻ hội viên?",
+   "q_vn": "Vì sao Dương Đồng Lạc muốn tập thể hình? Vì sao cậu ấy làm thẻ hội viên?",
    "hint": "因为他最近……，正好想……。因为那家健身房……，当时正好……",
-   "sample": "杨同乐想健身，是因为他最近体重增加了不少，正好想运动一下。他上个星期发现单位旁边新开了一家健身房，进去看了看，觉得挺不错的，当时正好有打折活动，所以他就办了一张会员卡。",
-   "sample_vn": "Dương Đồng Lạc muốn tập luyện vì dạo này anh tăng cân khá nhiều, đúng lúc muốn vận động một chút. Tuần trước anh phát hiện bên cạnh cơ quan mới mở một phòng gym, vào xem thấy khá ổn, lúc đó đúng dịp có khuyến mãi nên anh làm luôn một thẻ hội viên.",
+   "sample": "他觉得自己最近胖了，想多运动运动。公司旁边那家健身房他去看过，觉得不错，那时候办卡还能打折，所以他就办了。",
+   "sample_vn": "Cậu thấy dạo này mình béo lên, muốn vận động nhiều hơn. Phòng gym cạnh công ty cậu đã đến xem, thấy được, lúc đó làm thẻ còn được giảm giá, nên cậu làm luôn.",
    "note": "Câu hỏi bài khoá 1."
   },
   {
-   "q_zh": "请根据提示复述课文一。",
+   "q_zh": "下班的时候王一雪和杨同乐聊了些什么？说说看。",
    "q_vn": "Dựa vào gợi ý, kể lại bài khoá 1.",
    "hint": "下班时，王一雪问杨同乐……，因为她今天开车会……。不过，杨同乐不回家，他要先……。他上个星期发现……，就进去……。他最近……，正好想……。那家健身房……，当时……，他就……。",
    "sample": "下班时，王一雪问杨同乐用不用她开车送他，因为她今天开车会路过他们家那边。不过，杨同乐不回家，他要先去一趟健身房。他上个星期发现单位旁边新开了一家健身房，就进去看了看。他最近体重增加了不少，正好想运动一下。那家健身房挺不错的，当时正好有打折活动，他就办了一张会员卡。",
-   "sample_vn": "Lúc tan làm, Vương Nhất Tuyết hỏi Dương Đồng Lạc có cần chị lái xe đưa về không, vì hôm nay chị lái xe sẽ đi ngang qua bên nhà anh. Nhưng Dương Đồng Lạc không về nhà, anh phải đến phòng gym một chuyến trước. Tuần trước anh phát hiện bên cạnh cơ quan mới mở một phòng gym nên vào xem thử. Dạo này anh tăng cân khá nhiều, đúng lúc muốn vận động. Phòng gym đó khá ổn, lúc ấy đúng dịp giảm giá, anh liền làm một thẻ hội viên.",
-   "note": "Bài tập 复述 của sách (trang 76)."
+   "sample_vn": "Lúc tan làm, Vương Nhất Tuyết hỏi Dương Đồng Lạc có cần cô lái xe đưa về không, vì hôm nay cô lái xe sẽ đi qua bên nhà cậu. Nhưng Đồng Lạc không về nhà, cậu phải đến phòng gym một chuyến. Tuần trước cậu phát hiện cạnh cơ quan mới mở một phòng gym, liền vào xem. Dạo này cậu tăng cân khá nhiều, đúng lúc muốn vận động. Phòng gym đó khá tốt, lúc đó lại đang giảm giá, nên cậu làm một thẻ hội viên.",
+   "note": "Bài tập kể lại bài khoá của sách (trang 76)."
   },
   {
    "q_zh": "杨同乐去健身房前要做什么？王一雪为什么也想去健身房锻炼？",
-   "q_vn": "Trước khi đến phòng gym Dương Đồng Lạc phải làm gì? Vì sao Vương Nhất Tuyết cũng muốn đến phòng gym tập?",
+   "q_vn": "Dương Đồng Lạc phải làm gì trước khi đến phòng gym? Vì sao Vương Nhất Tuyết cũng muốn đến phòng gym tập?",
    "hint": "他要先把……吃完。因为杨同乐说那里的教练……；而王一雪现在都是……，动作……",
    "sample": "杨同乐去健身房以前，要先把带来的饼干、酸奶和果汁吃完。王一雪也想去健身房锻炼，因为杨同乐说那里的教练很热情，也非常专业，动作讲得很清楚；而她现在都是在家看着视频练，动作不一定标准。杨同乐还提醒她，锻炼要科学，否则容易受伤。",
-   "sample_vn": "Trước khi đến phòng gym, Dương Đồng Lạc phải ăn hết bánh quy, sữa chua và nước ép mang theo. Vương Nhất Tuyết cũng muốn đến phòng gym tập vì Đồng Lạc nói HLV ở đó rất nhiệt tình, chuyên nghiệp, giảng động tác rất rõ; còn chị bây giờ toàn ở nhà xem video tập theo, động tác chưa chắc đã chuẩn. Đồng Lạc còn nhắc chị tập luyện phải khoa học, nếu không dễ bị thương.",
-   "note": "Câu hỏi bài khoá 2; ôn 否则 (Bài 8 · điểm 2) + câu 把."
+   "sample_vn": "Trước khi đến phòng gym, Dương Đồng Lạc phải ăn hết bánh quy, sữa chua và nước ép mang theo. Vương Nhất Tuyết cũng muốn đến tập vì Đồng Lạc nói huấn luyện viên ở đó rất nhiệt tình, rất chuyên nghiệp, giảng động tác rõ ràng; còn cô hiện toàn xem video tập ở nhà, động tác chưa chắc chuẩn. Đồng Lạc còn nhắc cô tập phải khoa học, nếu không dễ bị thương.",
+   "note": "Câu hỏi bài khoá 2; ôn 否则 (bài 8) + câu 把."
   },
   {
    "q_zh": "健身房为什么会火起来？教练为什么表扬杨同乐？",
-   "q_vn": "Vì sao phòng gym trở nên “hot”? Vì sao huấn luyện viên khen Dương Đồng Lạc?",
+   "q_vn": "Vì sao phòng gym trở nên thịnh hành? Vì sao huấn luyện viên khen Dương Đồng Lạc?",
    "hint": "因为它有很多好处——……。另外，……。教练表扬他……，因为仅仅经过……，他就……",
-   "sample": "健身房火起来，是因为它有很多好处——环境好、设备全，可以锻炼全身。另外，健身房里一般还有专业教练，能帮助大家把动作做准确，练习的效果也更好。教练表扬杨同乐取得了很大的进步，因为仅仅经过一个月左右的锻炼，他的身体就比以前更健康了。",
-   "sample_vn": "Phòng gym trở nên “hot” vì nó có nhiều lợi ích — môi trường tốt, thiết bị đầy đủ, rèn luyện được toàn thân. Ngoài ra, phòng gym thường có HLV chuyên nghiệp giúp mọi người làm động tác cho chuẩn, hiệu quả tập luyện cũng tốt hơn. HLV khen Dương Đồng Lạc đã tiến bộ rất lớn, vì chỉ sau khoảng một tháng tập, sức khoẻ của anh đã tốt hơn trước.",
-   "note": "Câu hỏi bài khoá 3; dùng câu kiêm ngữ 表扬 (điểm 3) + 仅仅……就……"
+   "sample": "去健身房的人多，是因为那里条件好，还有人教你怎么练。杨同乐只练了一个月，身体就好了很多，所以教练表扬他进步很快。",
+   "sample_vn": "Người đến phòng gym đông vì ở đó điều kiện tốt, lại có người dạy bạn tập thế nào. Dương Đồng Lạc mới tập một tháng mà sức khoẻ đã tốt lên nhiều, nên huấn luyện viên khen cậu tiến bộ rất nhanh.",
+   "note": "Câu hỏi bài khoá 3; dùng câu kiêm ngữ 表扬 (điểm 3)."
   },
   {
-   "q_zh": "请根据提示复述课文三。",
+   "q_zh": "杨同乐为什么选择去健身房？练了一个月后他有什么变化？请你从开始说到最后。",
    "q_vn": "Dựa vào gợi ý, kể lại bài khoá 3.",
    "hint": "有人爱……，有人喜欢……，还有一部分人……，杨同乐就是……。杨同乐认为健身房……是因为……。另外，……。仅仅经过……，杨同乐就……。教练也表扬他……，并鼓励……，还说随着……，人看起来也会……。",
    "sample": "有人爱在操场跑步，有人喜欢通过打球锻炼身体，还有一部分人愿意去健身房健身，杨同乐就是其中之一。杨同乐认为健身房火起来是因为它有很多好处——环境好、设备全，可以锻炼全身。另外，健身房里一般还有专业教练，能帮助大家把动作做准确，练习的效果也更好。仅仅经过一个月左右的锻炼，杨同乐就感觉自己的身体比以前更健康了。教练也表扬他取得了很大的进步，并鼓励他坚持下去，还说随着身体越来越好，人看起来也会更帅。",
-   "sample_vn": "Có người thích chạy bộ ở sân tập, có người thích rèn luyện bằng cách chơi bóng, còn một bộ phận người thích đến phòng gym, Dương Đồng Lạc là một trong số đó… HLV cũng khen anh tiến bộ rất lớn, động viên anh kiên trì tiếp, còn nói cùng với sức khoẻ ngày càng tốt, trông người cũng sẽ đẹp trai hơn.",
-   "note": "Bài tập 复述 của sách (trang 80)."
+   "sample_vn": "Có người thích chạy bộ ở sân, có người thích chơi bóng để rèn luyện, còn một bộ phận người muốn đến phòng gym, Dương Đồng Lạc là một trong số đó… Chỉ sau khoảng một tháng tập, cậu đã thấy cơ thể khoẻ hơn trước. Huấn luyện viên khen cậu tiến bộ nhiều, khích lệ cậu kiên trì, còn nói sức khoẻ càng tốt thì trông càng phong độ.",
+   "note": "Bài tập kể lại bài khoá của sách (trang 80)."
   },
   {
    "q_zh": "乒乓球队为什么每天都要进行严格的训练？许多年轻的乒乓球运动员有什么梦想？",
    "q_vn": "Vì sao đội bóng bàn ngày nào cũng phải tập luyện nghiêm ngặt? Nhiều vận động viên bóng bàn trẻ có ước mơ gì?",
    "hint": "为了不断提高……。正因为这样，……。他们的梦想是……，参加……，为……",
    "sample": "中国乒乓球队每天都要进行严格的训练，是为了不断提高自己的水平。正因为这样，球队才能在比赛中取得更好的成绩，获得更多球迷的喜爱。许多年轻的乒乓球运动员都有一个梦想，那就是进入国家队，参加世界大赛，为球队赢下比赛。",
-   "sample_vn": "Đội tuyển bóng bàn Trung Quốc ngày nào cũng tập luyện nghiêm ngặt là để không ngừng nâng cao trình độ. Chính vì thế, đội mới đạt thành tích tốt hơn trong thi đấu, được nhiều người hâm mộ yêu mến hơn. Nhiều VĐV bóng bàn trẻ đều có một ước mơ, đó là vào đội tuyển quốc gia, dự các giải đấu lớn thế giới, thắng trận vì đội.",
+   "sample_vn": "Đội bóng bàn Trung Quốc ngày nào cũng tập luyện nghiêm ngặt để không ngừng nâng cao trình độ. Chính vì vậy đội mới đạt thành tích tốt hơn trong thi đấu, được nhiều người hâm mộ yêu mến hơn. Nhiều vận động viên trẻ đều có một ước mơ: vào đội tuyển quốc gia, tham gia giải đấu thế giới, giành chiến thắng cho đội.",
    "note": "Câu hỏi bài khoá 4; từ mới 不断, 训练, 球迷, 梦想, 大赛, 赢."
   },
   {
-   "q_zh": "调查：请在班级中做一个调查，了解同学们的运动情况，包括是否有锻炼的习惯、锻炼的方式、选择这种方式的原因、每周锻炼的次数以及每次多长时间等等。调查后，向全班介绍调查结果。",
-   "q_vn": "Điều tra: Hãy làm một cuộc khảo sát trong lớp, tìm hiểu tình hình vận động của các bạn, gồm: có thói quen rèn luyện không, rèn luyện bằng cách nào, vì sao chọn cách đó, mỗi tuần tập mấy lần và mỗi lần bao lâu… (bảng: 姓名 · 是否有锻炼的习惯 · 锻炼方式 · 原因 · 每周锻炼的次数和时长). Sau đó trình bày kết quả trước lớp.",
+   "q_zh": "请你在班上做一个调查，问问同学们：有没有锻炼的习惯？一般怎么锻炼？为什么选这种方式？每个星期锻炼几次？每次多长时间？问完以后，把结果介绍给全班同学。",
+   "q_vn": "Điều tra: hãy làm một cuộc điều tra trong lớp, tìm hiểu tình hình vận động của các bạn: có thói quen tập luyện không, tập theo cách nào, vì sao chọn cách đó, mỗi tuần tập mấy lần, mỗi lần bao lâu… Sau đó giới thiệu kết quả với cả lớp.",
    "hint": "你有锻炼的习惯吗？你一般怎么锻炼？为什么？每周锻炼几次？每次多长时间？ → 我一共问了……位同学，其中……；有人……，有人……；……连……都……，更……",
-   "sample": "（采访）A：你有锻炼的习惯吗？B：有，我每周去三次健身房。A：为什么选择去健身房？B：因为健身房设备全，还有专业教练，能帮我把动作做准确。A：每次锻炼多长时间？B：一个小时左右。（报告）大家好！我在班里一共问了八位同学，其中六位有锻炼的习惯。有人爱在操场跑步，有人喜欢打乒乓球，还有两位同学去健身房健身。他们每周锻炼两到三次，每次一个小时左右。另外两位同学不太运动，因为学习太忙，有时候连周末都要上课，更没有时间锻炼了。我觉得，大家应该互相鼓励，一起锻炼，让身体更健康。",
-   "sample_vn": "(Phỏng vấn) A: Bạn có thói quen tập luyện không? B: Có, mỗi tuần mình đến phòng gym ba lần. A: Sao bạn chọn phòng gym? B: Vì phòng gym thiết bị đầy đủ, có HLV chuyên nghiệp giúp mình tập động tác cho chuẩn. A: Mỗi lần tập bao lâu? B: Khoảng một tiếng. (Báo cáo) Chào cả lớp! Mình hỏi tổng cộng tám bạn, trong đó sáu bạn có thói quen tập luyện. Có người thích chạy bộ ở sân tập, có người thích chơi bóng bàn, còn hai bạn đến phòng gym. Các bạn tập mỗi tuần hai đến ba lần, mỗi lần khoảng một tiếng. Hai bạn còn lại ít vận động vì học quá bận, có khi đến cuối tuần cũng phải đi học, càng không có thời gian tập. Mình nghĩ mọi người nên động viên nhau cùng tập luyện để khoẻ mạnh hơn.",
-   "note": "Hoạt động 任务活动 · 调查 (điều tra) của sách, trang 84 — dùng 其中, 左右 (Bài 13 · điểm 3), 连……都……，……更…… (điểm 4), 鼓励."
+   "sample": "（问）A：你有锻炼的习惯吗？B：有，我每周去三次健身房。A：你为什么喜欢去那儿？B：因为那里有专业教练，能告诉我哪些动作不对。A：每次锻炼多长时间？B：一个小时左右。（介绍）大家好！我在班上一共问了八位同学，其中六位有锻炼的习惯。有的同学喜欢跑步，有的喜欢打乒乓球，还有两位同学去健身房健身。他们每周锻炼两到三次，每次一个小时左右。另外两位同学不太运动，因为学习太忙，有时候连周末都要上课，更没有时间锻炼了。我觉得，大家应该互相鼓励，一起锻炼，让身体更健康。",
+   "sample_vn": "(Hỏi) A: Bạn có thói quen tập luyện không? B: Có, mỗi tuần mình đến phòng gym ba lần. A: Vì sao bạn thích đến đó? B: Vì ở đó có huấn luyện viên chuyên nghiệp, chỉ cho mình động tác nào sai. A: Mỗi lần tập bao lâu? B: Khoảng một tiếng. (Giới thiệu) Chào cả lớp! Mình đã hỏi tám bạn, trong đó sáu bạn có thói quen tập luyện. Có bạn thích chạy bộ, có bạn thích chơi bóng bàn, còn hai bạn đến phòng gym. Các bạn tập mỗi tuần hai đến ba lần, mỗi lần khoảng một tiếng. Hai bạn còn lại ít vận động, vì học bận quá, có khi ngay cả cuối tuần cũng phải đi học, càng không có thời gian tập. Mình nghĩ mọi người nên động viên nhau cùng tập, để cơ thể khoẻ hơn.",
+   "note": "Hoạt động điều tra của sách, trang 84 — dùng 其中, 左右 (bài 13), 连……都……，……更…… (điểm 4), 鼓励."
   }
  ]
 };
 var translateData = [
  {
-  "vi": "Cảm ơn chị, nhưng chị cứ về trước đi, lát nữa em còn phải đến phòng gym một chuyến.",
-  "zh": "谢谢您，不过您走您的吧，我一会儿还要去一趟健身房。",
-  "py": "Xièxie nín, búguò nín zǒu nín de ba, wǒ yíhuìr hái yào qù yí tàng jiànshēnfáng."
+  "vi": "Các bạn cứ ăn đi, tôi ăn rồi.",
+  "zh": "你们吃你们的吧，我已经吃过了。",
+  "py": "Nǐmen chī nǐmen de ba, wǒ yǐjīng chī guò le."
  },
  {
-  "vi": "Phòng gym gần nhà tôi nhất cũng phải đi xe buýt hai bến, cả đi lẫn về mất nửa tiếng.",
-  "zh": "离我家最近的健身房也要坐两站公交车，一来一回得半个小时。",
-  "py": "Lí wǒ jiā zuìjìn de jiànshēnfáng yě yào zuò liǎng zhàn gōngjiāochē, yì lái yì huí děi bàn gè xiǎoshí."
+  "vi": "Hai người họ một hỏi một đáp, nói chuyện suốt một tiếng.",
+  "zh": "他们两个一问一答，聊了一个小时。",
+  "py": "Tāmen liǎng gè yí wèn yì dá, liáo le yí gè xiǎoshí."
  },
  {
-  "vi": "Huấn luyện viên khen anh ấy đã có tiến bộ rất lớn, và động viên anh ấy kiên trì tiếp.",
-  "zh": "教练表扬他取得了很大的进步，并鼓励他坚持下去。",
-  "py": "Jiàoliàn biǎoyáng tā qǔdé le hěn dà de jìnbù, bìng gǔlì tā jiānchí xiàqu."
+  "vi": "Giám đốc phê bình anh ấy không chú ý chi tiết.",
+  "zh": "经理批评他不注意细节。",
+  "py": "Jīnglǐ pīpíng tā bú zhùyì xìjié."
  },
  {
-  "vi": "Ngay cả một số người già cũng kiên trì chơi bóng bàn, người trẻ thì càng thích hơn.",
-  "zh": "连一些老人都坚持打乒乓球，年轻人就更喜欢了。",
-  "py": "Lián yìxiē lǎorén dōu jiānchí dǎ pīngpāngqiú, niánqīngrén jiù gèng xǐhuan le."
+  "vi": "Ngay cả người Trung Quốc cũng thấy câu này khó, chúng tôi lại càng thấy khó.",
+  "zh": "连中国人都觉得这个句子难，我们就更觉得难了。",
+  "py": "Lián Zhōngguórén dōu juéde zhège jùzi nán, wǒmen jiù gèng juéde nán le."
  },
  {
-  "vi": "Tập luyện phải khoa học, nếu không dễ bị thương.",
-  "zh": "锻炼要科学，否则容易受伤。",
-  "py": "Duànliàn yào kēxué, fǒuzé róngyì shòushāng."
+  "vi": "Vì giải đấu lớn lần này, đội bóng ngày nào cũng tập ba tiếng.",
+  "zh": "为了这次大赛，球队每天训练三个小时。",
+  "py": "Wèile zhè cì dàsài, qiúduì měitiān xùnliàn sān gè xiǎoshí."
  },
  {
-  "vi": "Bóng bàn là một trong những môn thể thao phổ biến nhất trong đời sống người Trung Quốc.",
-  "zh": "乒乓球是中国人生活中最常见的运动之一。",
-  "py": "Pīngpāngqiú shì Zhōngguórén shēnghuó zhōng zuì chángjiàn de yùndòng zhīyī."
+  "vi": "Nhờ sự khích lệ của thầy, tiếng Trung của cô ấy tiến bộ rất nhanh.",
+  "zh": "在老师的鼓励下，她的中文进步得很快。",
+  "py": "Zài lǎoshī de gǔlì xià, tā de Zhōngwén jìnbù de hěn kuài."
  }
 ];
 var translateDataRev = [
  {
-  "vi": "Dạo này cân nặng của tôi tăng không ít, đúng lúc muốn vận động một chút.",
-  "zh": "我最近体重增加了不少，正好想运动一下。",
-  "py": "Wǒ zuìjìn tǐzhòng zēngjiā le bùshǎo, zhènghǎo xiǎng yùndòng yíxià."
+  "vi": "Nghe nói gần trường mới mở một phòng gym, chúng ta đi xem thử nhé.",
+  "zh": "听说学校附近新开了一家健身房，我们去看看吧。",
+  "py": "Tīngshuō xuéxiào fùjìn xīn kāi le yì jiā jiànshēnfáng, wǒmen qù kànkan ba."
  },
  {
-  "vi": "Lúc đó đúng dịp có khuyến mãi giảm giá, tôi liền làm một thẻ hội viên.",
-  "zh": "当时正好有打折活动，我就办了一张会员卡。",
-  "py": "Dāngshí zhènghǎo yǒu dǎzhé huódòng, wǒ jiù bàn le yì zhāng huìyuánkǎ."
+  "vi": "Sáng nào tôi cũng ăn bánh quy, uống sữa chua.",
+  "zh": "我每天早上都吃饼干，喝酸奶。",
+  "py": "Wǒ měitiān zǎoshang dōu chī bǐnggān, hē suānnǎi."
  },
  {
-  "vi": "Phòng gym có nhiều lợi ích: môi trường tốt, thiết bị đầy đủ, có thể rèn luyện toàn thân.",
-  "zh": "健身房有很多好处：环境好、设备全，可以锻炼全身。",
-  "py": "Jiànshēnfáng yǒu hěn duō hǎochù: huánjìng hǎo, shèbèi quán, kěyǐ duànliàn quánshēn."
+  "vi": "Anh trai tôi là fan bóng đá, trận nào cũng xem.",
+  "zh": "我哥哥是个球迷，每次足球比赛都看。",
+  "py": "Wǒ gēge shì gè qiúmí, měi cì zúqiú bǐsài dōu kàn."
  },
  {
-  "vi": "Chỉ sau khoảng một tháng tập luyện, anh ấy đã thấy cơ thể khoẻ mạnh hơn trước.",
-  "zh": "仅仅经过一个月左右的锻炼，他就感觉身体比以前更健康了。",
-  "py": "Jǐnjǐn jīngguò yí gè yuè zuǒyòu de duànliàn, tā jiù gǎnjué shēntǐ bǐ yǐqián gèng jiànkāng le."
+  "vi": "Bóng bàn là một trong những môn thể thao tôi thích nhất.",
+  "zh": "乒乓球是我最喜欢的运动之一。",
+  "py": "Pīngpāngqiú shì wǒ zuì xǐhuan de yùndòng zhīyī."
  },
  {
-  "vi": "Để không ngừng nâng cao trình độ, các đội viên ngày nào cũng tập luyện nghiêm ngặt.",
-  "zh": "为了不断提高水平，队员们每天都要进行严格的训练。",
-  "py": "Wèile búduàn tígāo shuǐpíng, duìyuánmen měitiān dōu yào jìnxíng yángé de xùnliàn."
+  "vi": "Bơi lội giúp toàn thân đều được rèn luyện.",
+  "zh": "游泳能让全身都得到锻炼。",
+  "py": "Yóuyǒng néng ràng quánshēn dōu dédào duànliàn."
  }
 ];
 var sgkData = [

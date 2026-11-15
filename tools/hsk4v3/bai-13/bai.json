@@ -232,96 +232,635 @@
 ],
 
 "listen": [
- {"audio":"小王，中秋节晚上剧院有演出，你想去看吗？好啊，几点开始？七点半开始。咱们七点左右在剧院门口见吧。好，我大约六点半从家出发。千万别迟到，演出开始以后就不能进去了。","questions":[
-   {"q":"他们打算几点在哪儿见面？","opts":["七点左右在剧院门口","七点半在家里","六点半在学校"],"ans":0},
-   {"q":"为什么千万别迟到？","opts":["票会卖完","演出开始以后就不能进去了","剧院离家很远"],"ans":1}]},
- {"audio":"妈妈，这个景区真大！我们已经走了两个小时了，怎么都走不完。是啊，听说这里有几千种植物和动物。现在是节假日，人这么多，你千万别跑丢了。放心吧，我一直跟着您呢。","questions":[
-   {"q":"他们在景区走了多长时间？","opts":["两个小时","三个小时","半天"],"ans":0},
-   {"q":"妈妈提醒孩子什么？","opts":["多拍照片","千万别跑丢了","不要大喊"],"ans":1}]},
- {"audio":"李文，今年春节你回家吗？当然回。我们家每年除夕都一起吃年夜饭、看春晚，一年比一年热闹。真好！我今年要工作，回不了国。那你来我家过年吧！作为好朋友，我一定要请你尝尝我妈妈包的饺子。","questions":[
-   {"q":"李文家除夕会做什么？","opts":["吃年夜饭、看春晚","去剧院看演出","出去旅游"],"ans":0},
-   {"q":"李文为什么请朋友去他家过年？","opts":["朋友想学包饺子","朋友春节要工作，回不了国","朋友没去过北京"],"ans":1}]}
+ {
+  "audio": "这道题我想了一个晚上，怎么也想不出来，明天去问问老师吧。",
+  "questions": [
+   {
+    "q": "Bài tập này người nói làm thế nào rồi?",
+    "opts": [
+     "Đã làm xong",
+     "Nghĩ cả tối vẫn không ra",
+     "Chưa xem đến"
+    ],
+    "ans": 1,
+    "exp": "怎么也想不出来 = nghĩ thế nào cũng không ra."
+   }
+  ]
+ },
+ {
+  "audio": "这个人我见过好几次，可是他叫什么，我怎么也想不起来了。",
+  "questions": [
+   {
+    "q": "Người nói không nhớ ra điều gì?",
+    "opts": [
+     "Tên của người đó",
+     "Đã gặp người đó ở đâu",
+     "Số điện thoại của người đó"
+    ],
+    "ans": 0,
+    "exp": "他叫什么，我怎么也想不起来了 = anh ấy tên gì tôi nghĩ mãi không nhớ ra."
+   }
+  ]
+ },
+ {
+  "audio": "春天到了，公园里的花一天比一天多，来散步的人也越来越多了。",
+  "questions": [
+   {
+    "q": "Công viên thay đổi thế nào?",
+    "opts": [
+     "Ít người đến hơn",
+     "Công viên đóng cửa",
+     "Hoa ngày một nhiều hơn"
+    ],
+    "ans": 2,
+    "exp": "一天比一天多 = mỗi ngày một nhiều hơn."
+   }
+  ]
+ },
+ {
+  "audio": "从这儿坐地铁到剧院大约四十分钟，演出七点半开始，我们六点左右出发吧。",
+  "questions": [
+   {
+    "q": "Từ đây đến nhà hát mất bao lâu?",
+    "opts": [
+     "Khoảng 14 phút",
+     "Khoảng 40 phút",
+     "Khoảng một tiếng"
+    ],
+    "ans": 1,
+    "exp": "大约四十分钟 = khoảng bốn mươi phút; 大约 đứng trước số."
+   },
+   {
+    "q": "Họ định xuất phát lúc mấy giờ?",
+    "opts": [
+     "Khoảng 6 giờ",
+     "7 giờ rưỡi",
+     "6 giờ rưỡi"
+    ],
+    "ans": 0,
+    "exp": "六点左右 = khoảng 6 giờ; 左右 đứng sau số. 7 giờ rưỡi là giờ bắt đầu biểu diễn."
+   }
+  ]
+ },
+ {
+  "audio": "作为班长，他每天都是第一个到教室、最后一个离开的。",
+  "questions": [
+   {
+    "q": "Lớp trưởng làm gì mỗi ngày?",
+    "opts": [
+     "Đến muộn nhất",
+     "Điểm danh cả lớp",
+     "Đến lớp sớm nhất, về muộn nhất"
+    ],
+    "ans": 2,
+    "exp": "第一个到教室、最后一个离开 = người đến lớp đầu tiên, rời đi cuối cùng; 作为班长 = với tư cách lớp trưởng."
+   }
+  ]
+ },
+ {
+  "audio": "小明，动物园里人多，千万别乱跑，看完老虎就在门口等我们。",
+  "questions": [
+   {
+    "q": "Bố mẹ dặn Tiểu Minh điều gì?",
+    "opts": [
+     "Tuyệt đối đừng chạy lung tung",
+     "Đi xem hổ một mình",
+     "Mua vé trước"
+    ],
+    "ans": 0,
+    "exp": "千万别乱跑 = tuyệt đối đừng chạy lung tung (lời dặn dò)."
+   },
+   {
+    "q": "Xem hổ xong Tiểu Minh phải làm gì?",
+    "opts": [
+     "Đi xem gấu",
+     "Đứng chờ ở cổng",
+     "Gọi điện cho bố"
+    ],
+    "ans": 1,
+    "exp": "看完老虎就在门口等我们 = xem hổ xong thì đợi ở cổng."
+   }
+  ]
+ },
+ {
+  "audio": "今年中秋节正好赶在星期六，我们全家要去奶奶家，一边吃月饼，一边看月亮。",
+  "questions": [
+   {
+    "q": "Tết Trung thu năm nay rơi vào ngày nào?",
+    "opts": [
+     "Chủ nhật",
+     "Thứ Bảy",
+     "Thứ Sáu"
+    ],
+    "ans": 1,
+    "exp": "正好赶在星期六 = vừa trùng vào thứ Bảy (赶 = trùng dịp)."
+   },
+   {
+    "q": "Cả nhà sẽ làm gì?",
+    "opts": [
+     "Ăn ở nhà hàng",
+     "Đi xem biểu diễn",
+     "Đến nhà bà ăn bánh Trung thu, ngắm trăng"
+    ],
+    "ans": 2,
+    "exp": "去奶奶家，一边吃月饼，一边看月亮 = đến nhà bà, vừa ăn bánh vừa ngắm trăng."
+   }
+  ]
+ }
 ],
-
 "match": [
- {"left":"国家一级","right":"保护动物"},
- {"left":"近距离","right":"看看这些动物"},
- {"left":"过","right":"中秋节"},
- {"left":"中秋节和生日","right":"赶在了一块儿"},
- {"left":"反向","right":"团圆"},
- {"left":"一边吃年夜饭","right":"一边看春晚"},
- {"left":"回忆起","right":"童年"},
- {"left":"准备","right":"各种美食"},
- {"left":"传统","right":"节日"},
- {"left":"有着","right":"特别的意义"}
+ {
+  "left": "开",
+  "right": "玩笑"
+ },
+ {
+  "left": "大声",
+  "right": "喊"
+ },
+ {
+  "left": "一只",
+  "right": "老虎"
+ },
+ {
+  "left": "一座",
+  "right": "剧院"
+ },
+ {
+  "left": "铁路",
+  "right": "工作人员"
+ },
+ {
+  "left": "吃",
+  "right": "年夜饭"
+ },
+ {
+  "left": "有着",
+  "right": "特别的意义"
+ },
+ {
+  "left": "美好的",
+  "right": "童年"
+ }
 ],
-
 "fill": [
- {"pre":"小明，一会儿","blank":"千万","post":"别跑丢了，我可不是开玩笑呢。","hint":"(tuyệt đối)","ans":"千万","exp":"千万 + 别 + V: lời dặn dò."},
- {"pre":"那个叫东北虎，是国家一","blank":"级","post":"保护动物。","hint":"(cấp)","ans":"级","exp":"一级保护动物 = động vật bảo vệ cấp một."},
- {"pre":"我知道北京野生动物园很大，可","blank":"怎么","post":"也没想到这么大！","hint":"(thế nào)","ans":"怎么","exp":"怎么也没想到 = không ngờ."},
- {"pre":"这几年中秋节一年","blank":"比","post":"一年热闹。","hint":"(hơn)","ans":"比","exp":"一年比一年 + Adj."},
- {"pre":"好的。这茶闻着真","blank":"香","post":"！","hint":"(thơm)","ans":"香","exp":"闻着真香 = ngửi thấy thơm thật."},
- {"pre":"中秋节和生日","blank":"赶","post":"在了一块儿，真巧、真好！","hint":"(trùng dịp)","ans":"赶","exp":"赶在了一块儿 = trùng vào một ngày."},
- {"pre":"早上五点","blank":"左右","post":"他们就坐上了高铁。","hint":"(khoảng — đứng sau)","ans":"左右","exp":"Thời gian + 左右."},
- {"pre":"","blank":"作为","post":"一年里最重要的传统节日，春节对中国人来说有着特别的意义。","hint":"(là, với tư cách)","ans":"作为","exp":"作为 + N."},
- {"pre":"周力就是这些人","blank":"之中","post":"的一位。","hint":"(trong số)","ans":"之中","exp":"……之中的一位 = một trong số …"},
- {"pre":"虽然现在已人到中年，但是春节","blank":"仍然","post":"是我最喜欢的节日。","hint":"(vẫn)","ans":"仍然","exp":"虽然……，但是……仍然……"}
+ {
+  "pre": "这个字我写了很多遍，",
+  "blank": "怎么",
+  "post": "也写不好。",
+  "hint": "(thế nào)",
+  "ans": "怎么",
+  "exp": "怎么也 + 不 / bổ ngữ phủ định = thế nào cũng không …: viết mãi vẫn không đẹp."
+ },
+ {
+  "pre": "我给他打了三次电话，他怎么",
+  "blank": "都",
+  "post": "不接。",
+  "hint": "(cũng, đều)",
+  "ans": "都",
+  "exp": "怎么都不 + V = nhất định không … (ý chí): gọi mấy lần anh ấy vẫn không nghe máy."
+ },
+ {
+  "pre": "来中国以后，我的中文",
+  "blank": "一天比一天",
+  "post": "好。",
+  "hint": "(ngày một)",
+  "ans": "一天比一天",
+  "exp": "一天比一天 + tính từ = mỗi ngày một … hơn (thay đổi theo thời gian)."
+ },
+ {
+  "pre": "这个班的学生",
+  "blank": "一个比一个",
+  "post": "努力，老师满意极了。",
+  "hint": "(người nào cũng … hơn)",
+  "ans": "一个比一个",
+  "exp": "一个比一个 + tính từ = ai cũng …, người nào cũng … (so sánh từng người)."
+ },
+ {
+  "pre": "我晚上十点",
+  "blank": "左右",
+  "post": "给你打电话，好吗？",
+  "hint": "(khoảng)",
+  "ans": "左右",
+  "exp": "左右 đứng SAU thời gian / số lượng: 十点左右 = khoảng 10 giờ."
+ },
+ {
+  "pre": "从我家走到公司",
+  "blank": "大约",
+  "post": "要二十分钟。",
+  "hint": "(khoảng)",
+  "ans": "大约",
+  "exp": "大约 đứng TRƯỚC số lượng / động từ: 大约要二十分钟."
+ },
+ {
+  "pre": "",
+  "blank": "作为",
+  "post": "一名老师，他对每个学生都很有耐心。",
+  "hint": "(với tư cách là)",
+  "ans": "作为",
+  "exp": "作为 + thân phận đứng đầu câu: với tư cách là giáo viên …; ôn 耐心 (bài 9)."
+ },
+ {
+  "pre": "外面下雪了，你开车",
+  "blank": "千万",
+  "post": "要小心。",
+  "hint": "(nhất định, tuyệt đối)",
+  "ans": "千万",
+  "exp": "千万 dùng trong lời dặn dò: 千万要小心 = nhất định phải cẩn thận."
+ },
+ {
+  "pre": "我们正在说他呢，他就",
+  "blank": "出现",
+  "post": "在门口了。",
+  "hint": "(xuất hiện)",
+  "ans": "出现",
+  "exp": "出现在 + nơi chốn = xuất hiện ở đâu."
+ },
+ {
+  "pre": "十年没见了，她",
+  "blank": "仍然",
+  "post": "那么年轻、漂亮。",
+  "hint": "(vẫn)",
+  "ans": "仍然",
+  "exp": "仍然 = vẫn (như trước), đứng trước vị ngữ."
+ },
+ {
+  "pre": "这些照片里有我们很多美好的",
+  "blank": "回忆",
+  "post": "。",
+  "hint": "(kỷ niệm)",
+  "ans": "回忆",
+  "exp": "回忆 làm danh từ: 美好的回忆 = kỷ niệm đẹp."
+ },
+ {
+  "pre": "他已经通过了HSK四",
+  "blank": "级",
+  "post": "考试。",
+  "hint": "(cấp)",
+  "ans": "级",
+  "exp": "级 = cấp, bậc: HSK四级 = HSK cấp 4."
+ }
 ],
-
 "sort": [
- {"words":["她","在包里","找了半天","，","怎么","都","没找到","。"],"ans":"她在包里找了半天，怎么都没找到。"},
- {"words":["这几年","中秋节","一年","比","一年","热闹","。"],"ans":"这几年中秋节一年比一年热闹。"},
- {"words":["他们","大约","七点","就","来到了","儿子工作的城市","。"],"ans":"他们大约七点就来到了儿子工作的城市。"},
- {"words":["作为","好朋友","，","我们","一直","互相帮助","。"],"ans":"作为好朋友，我们一直互相帮助。"},
- {"words":["一家人","一边","吃年夜饭","，","一边","看春晚","。"],"ans":"一家人一边吃年夜饭，一边看春晚。"},
- {"words":["景区的车","每到","一个动物区","都会","停","一会儿","。"],"ans":"景区的车每到一个动物区都会停一会儿。"}
+ {
+  "words": [
+   "我",
+   "怎么",
+   "也",
+   "没",
+   "想到",
+   "他",
+   "会",
+   "来",
+   "。"
+  ],
+  "ans": "我怎么也没想到他会来。"
+ },
+ {
+  "words": [
+   "街道",
+   "两边的",
+   "房子",
+   "一座比一座",
+   "高",
+   "。"
+  ],
+  "ans": "街道两边的房子一座比一座高。"
+ },
+ {
+  "words": [
+   "这本书",
+   "一共",
+   "有",
+   "三百页",
+   "左右",
+   "。"
+  ],
+  "ans": "这本书一共有三百页左右。"
+ },
+ {
+  "words": [
+   "这个",
+   "西红柿",
+   "鸡蛋汤",
+   "的",
+   "味道",
+   "好极了",
+   "。"
+  ],
+  "ans": "这个西红柿鸡蛋汤的味道好极了。"
+ },
+ {
+  "words": [
+   "端午节",
+   "是",
+   "一个",
+   "有着",
+   "两千多年",
+   "历史",
+   "的",
+   "传统节日",
+   "。"
+  ],
+  "ans": "端午节是一个有着两千多年历史的传统节日。"
+ },
+ {
+  "words": [
+   "我们",
+   "在",
+   "树林里",
+   "看到了",
+   "两只",
+   "熊",
+   "。"
+  ],
+  "ans": "我们在树林里看到了两只熊。"
+ },
+ {
+  "words": [
+   "他",
+   "把",
+   "买来的",
+   "葡萄",
+   "洗",
+   "干净",
+   "了",
+   "。"
+  ],
+  "ans": "他把买来的葡萄洗干净了。"
+ },
+ {
+  "words": [
+   "妈妈",
+   "给",
+   "我们",
+   "烤",
+   "了",
+   "一条",
+   "大鱼",
+   "。"
+  ],
+  "ans": "妈妈给我们烤了一条大鱼。"
+ }
 ],
-
 "mc": [
- {"q":"小明，一会儿＿＿别跑丢了。","opts":["千万","一定","仍然","已"],"ans":0,"exp":"千万 + 别 + V dùng để dặn dò; 一定 không đi với 别."},
- {"q":"我知道这里很大，可＿＿也没想到这么大！","opts":["怎么","什么","为什么","多么"],"ans":0,"exp":"怎么也没想到 = thế nào cũng không ngờ (ngạc nhiên)."},
- {"q":"这道题太难了，我做了好久，怎么都做＿＿出来。","opts":["不","没","得","了"],"ans":0,"exp":"Bổ ngữ khả năng 做不出来."},
- {"q":"夏天快到了，天气一天比＿＿热。","opts":["一天","两天","昨天","每天"],"ans":0,"exp":"一天比一天 — hai vế cùng 一 + cùng lượng từ."},
- {"q":"早上五点＿＿他们就坐上了高铁。","opts":["左右","大约","大概","已经"],"ans":0,"exp":"Sau thời gian dùng 左右; 大约 / 大概 phải đứng trước."},
- {"q":"他们＿＿七点就来到了儿子工作的城市。","opts":["大约","左右","以后","之中"],"ans":0,"exp":"大约 đứng trước thời gian."},
- {"q":"＿＿父母，我们应该多陪陪孩子。","opts":["作为","成为","因为","对于"],"ans":0,"exp":"作为 + thân phận，chủ ngữ + ……"},
- {"q":"河内是一座＿＿一千多年历史的城市。","opts":["有着","出现","到来","赶"],"ans":0,"exp":"有着 + ……历史 (văn viết, danh từ trừu tượng)."},
- {"q":"中秋节是家人＿＿的节日。","opts":["团圆","团员","反向","演出"],"ans":0,"exp":"团圆 = sum họp (bẫy Hán Việt “đoàn viên”); 团员 = thành viên đoàn."},
- {"q":"每当＿＿起童年，我都觉得很幸福。","opts":["回忆","记忆","意义","美食"],"ans":0,"exp":"回忆起 + N = nhớ lại; 记忆 là danh từ (ký ức)."}
+ {
+  "q": "Bạn muốn nói: “Tôi nghĩ mãi vẫn không hiểu vì sao anh ấy bỏ đi.”",
+  "opts": [
+   "我怎么也想不明白他为什么走了。",
+   "我怎么也不想明白他为什么走了。",
+   "我也怎么想不明白他为什么走了。",
+   "我怎么想也明白不他为什么走了。"
+  ],
+  "ans": 0,
+  "exp": "怎么也 + bổ ngữ khả năng phủ định (想不明白); 不 chen giữa động từ và bổ ngữ, 也 đứng sau 怎么."
+ },
+ {
+  "q": "A: “你怎么还没睡？” — B đáp:",
+  "opts": [
+   "晚上喝了咖啡，怎么也睡不着。",
+   "晚上喝了咖啡，怎么也没睡不着。",
+   "晚上喝了咖啡，怎么睡也着不。",
+   "晚上喝了咖啡，什么也睡不着。"
+  ],
+  "ans": 0,
+  "exp": "怎么也睡不着 = nằm thế nào cũng không ngủ được; không dùng 没 cùng với bổ ngữ 不着."
+ },
+ {
+  "q": "Bạn muốn nói: “Váy ở cửa hàng này chiếc nào cũng đẹp.”",
+  "opts": [
+   "这家店的裙子一条比一条漂亮。",
+   "这家店的裙子一个比一个漂亮。",
+   "这家店的裙子一条一条比漂亮。",
+   "这家店的裙子比一条一条漂亮。"
+  ],
+  "ans": 0,
+  "exp": "一 + lượng từ + 比 + 一 + lượng từ + tính từ; lượng từ của 裙子 là 条, không dùng 个."
+ },
+ {
+  "q": "Câu nào SAI?",
+  "opts": [
+   "天气一天比一天很冷了。",
+   "天气一天比一天冷了。",
+   "最近天气越来越凉了。",
+   "今天比昨天冷多了。"
+  ],
+  "ans": 0,
+  "exp": "Sau 一天比一天 tính từ đứng một mình, không thêm 很 / 非常 (giống câu 比)."
+ },
+ {
+  "q": "Câu nào SAI?",
+  "opts": [
+   "我们大约八点左右出发。",
+   "我们大约八点出发。",
+   "我们八点左右出发。",
+   "路上大约要走两个小时。"
+  ],
+  "ans": 0,
+  "exp": "大约 (trước số) và 左右 (sau số) chỉ dùng một trong hai, không dùng cùng lúc."
+ },
+ {
+  "q": "Bạn muốn nói: “Cái áo này khoảng 200 tệ.”",
+  "opts": [
+   "这件衣服两百块左右。",
+   "这件衣服左右两百块。",
+   "这件衣服两百左右块。",
+   "这件衣服两百块大约。"
+  ],
+  "ans": 0,
+  "exp": "左右 đứng sau cả số và đơn vị (两百块左右); 大约 phải đứng trước số."
+ },
+ {
+  "q": "Bạn muốn nói: “Là giáo viên, chúng tôi phải quan tâm đến từng học sinh.”",
+  "opts": [
+   "作为老师，我们要关心每一个学生。",
+   "为了老师，我们要关心每一个学生。",
+   "作为老师，我们要关心每一个学生们。",
+   "作为老师，我们要每一个学生关心。"
+  ],
+  "ans": 0,
+  "exp": "作为 + thân phận = với tư cách là; 为了 = để, vì; sau 每一个 không thêm 们; tân ngữ đứng sau động từ."
+ },
+ {
+  "q": "“他大学毕业以后＿＿了一名铁路工作人员。”",
+  "opts": [
+   "成为",
+   "作为",
+   "认为",
+   "以为"
+  ],
+  "ans": 0,
+  "exp": "成为 + nghề = trở thành (bài 1); 作为 = với tư cách là, thường đứng đầu câu."
+ },
+ {
+  "q": "A: “明天去机场，我要带什么？” B: “＿＿别忘了带护照！”",
+  "opts": [
+   "千万",
+   "大约",
+   "左右",
+   "仍然"
+  ],
+  "ans": 0,
+  "exp": "千万 + 别 / 不要 = tuyệt đối đừng (dặn dò); 大约 / 左右 chỉ dùng với số lượng."
+ },
+ {
+  "q": "A: “我正想给你打电话，你就打来了。” B: “真＿＿！”",
+  "opts": [
+   "巧",
+   "香",
+   "美",
+   "传统"
+  ],
+  "ans": 0,
+  "exp": "真巧 = thật trùng hợp, đúng lúc."
+ },
+ {
+  "q": "“他离开老家的时候才十八岁，现在＿＿是两个孩子的父亲了。”",
+  "opts": [
+   "已",
+   "刚才",
+   "马上",
+   "从来"
+  ],
+  "ans": 0,
+  "exp": "已 = 已经 (văn viết): đã là bố của hai đứa trẻ; ôn 父亲 (bài 12)."
+ },
+ {
+  "q": "“中秋节是一家人＿＿的日子，在外地的人都想回家。”",
+  "opts": [
+   "团圆",
+   "出现",
+   "回忆",
+   "演出"
+  ],
+  "ans": 0,
+  "exp": "团圆 = sum họp, đoàn tụ — Trung thu là ngày cả nhà sum họp."
+ }
 ],
-
 "speaking": {
- "intro":"Nhấn nút loa nghe câu hỏi (câu hỏi phần Khởi động, câu hỏi đọc hiểu của sách, kể lại bài khoá và thảo luận nhóm), rồi tự ghi âm câu trả lời — cố dùng từ mới và 4 điểm ngữ pháp của bài.",
- "questions":[
-  {"q_zh":"你的国家有哪些重要节日？这些节日到来时人们会吃什么美食？","q_vn":"Nước bạn có những ngày lễ quan trọng nào? Khi những ngày lễ đó đến, mọi người ăn những món ngon gì?","hint":"我的国家有……、……等重要节日。……到来时，人们会吃……","sample":"越南有春节、中秋节、端午节等重要节日。春节到来时，人们会吃粽子、春卷等传统美食；中秋节的时候，大家会吃月饼；端午节的时候，人们会吃水果、喝米酒。","sample_vn":"Việt Nam có Tết Nguyên đán, Tết Trung thu, Tết Đoan ngọ… Khi Tết đến, mọi người ăn bánh chưng, nem rán và các món truyền thống; Trung thu thì ăn bánh Trung thu; Tết Đoan ngọ thì ăn hoa quả, uống rượu nếp.","note":"Câu hỏi phần Khởi động của sách (热身 2)."},
-  {"q_zh":"你和兄弟姐妹或者好朋友节假日在一起时都会做些什么？","q_vn":"Ngày lễ, bạn và anh chị em hoặc bạn thân ở cùng nhau thường làm những gì?","hint":"节假日的时候，我和……一起……，有时候也……","sample":"节假日的时候，我和哥哥常常一起去看电影、逛街，有时候也和好朋友去景区游玩。晚上我们一边吃饭一边聊天，觉得特别开心。","sample_vn":"Ngày lễ, tôi và anh trai thường đi xem phim, dạo phố, có lúc cũng đi khu du lịch chơi với bạn thân. Buổi tối chúng tôi vừa ăn cơm vừa trò chuyện, vui lắm.","note":"Câu hỏi phần Khởi động của sách (热身 2)."},
-  {"q_zh":"小明在北京野生动物园里先看到了什么动物？北京野生动物园有多少只动物？","q_vn":"Ở Công viên Động vật hoang dã Bắc Kinh, Tiểu Minh nhìn thấy con vật gì trước tiên? Công viên có bao nhiêu con thú?","hint":"他先看到了……。北京野生动物园有……","sample":"他先看到了熊和老虎。北京野生动物园有几千只动物，所以刘明怎么也没想到它这么大。","sample_vn":"Cậu bé nhìn thấy gấu và hổ trước tiên. Công viên có mấy nghìn con thú, nên Lưu Minh thế nào cũng không ngờ nó rộng đến vậy.","note":"Câu hỏi đọc hiểu bài khoá 1."},
-  {"q_zh":"请根据提示复述课文一。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 1.","hint":"六一儿童节，刘明、王一雪带儿子……。小明兴奋地喊着：“……！”王一雪让他……。刘明说，……叫东北虎……","sample":"六一儿童节，刘明、王一雪带儿子刘小明到北京野生动物园游玩。在动物园里，小明兴奋地喊着：“爸爸、妈妈，快看，熊和老虎都在这儿呢！”王一雪让他注意安全，不要一直大喊。刘明说，他们看到的老虎叫东北虎，是国家一级保护动物。刘明还说，那边树林里还有很多动物。小明很想看到那些动物，王一雪告诉他，景区的车每到一个动物区都会停一会儿，让人们能近距离看看这些动物。北京野生动物园很大，刘明说他怎么也没想到这么大。王一雪说，这里有几千只动物呢。同时，王一雪也提醒小明，节假日人多，千万别跑丢了。","sample_vn":"Ngày Quốc tế Thiếu nhi, Lưu Minh và Vương Nhất Tuyết đưa con trai Lưu Tiểu Minh đến Công viên Động vật hoang dã Bắc Kinh chơi… Vương Nhất Tuyết còn nhắc Tiểu Minh: ngày lễ đông người, tuyệt đối đừng chạy lạc.","note":"Bài tập 复述 của sách (trang 27)."},
-  {"q_zh":"白家月以前在中国过过中秋节吗？在加拿大，安妮和中国朋友过中秋节时那里有什么活动？","q_vn":"Bạch Gia Nguyệt trước đây đã từng đón Trung thu ở Trung Quốc chưa? Ở Canada, khi An Ni đón Trung thu với bạn Trung Quốc, ở đó có những hoạt động gì?","hint":"没有，她还是第一次……。安妮记得那天，……有很多……","sample":"没有，她还是第一次在中国过中秋节。安妮记得那天，外面的街道、剧院有很多演出活动。","sample_vn":"Chưa, đây vẫn là lần đầu tiên cô ấy đón Trung thu ở Trung Quốc. An Ni nhớ hôm đó, ngoài đường phố, trong nhà hát có rất nhiều hoạt động biểu diễn.","note":"Câu hỏi đọc hiểu bài khoá 2."},
-  {"q_zh":"“反向团圆”是什么意思？周力为什么感觉特别幸福？","q_vn":"“Sum họp ngược” nghĩa là gì? Vì sao Chu Lực cảm thấy vô cùng hạnh phúc?","hint":"一般是……回家……，“反向团圆”是……。因为……","sample":"一般是孩子回家和父母团圆，“反向团圆”是父母到孩子工作的城市去，和孩子一起过节。周力感觉特别幸福，因为他不能回家，可是父母大约七点就来到了他工作的城市，还给他做了一桌他爱吃的饭菜。","sample_vn":"Thường là con cái về nhà sum họp với bố mẹ, còn “sum họp ngược” là bố mẹ đến thành phố nơi con làm việc để cùng con đón Tết. Chu Lực vô cùng hạnh phúc vì anh không về nhà được, nhưng bố mẹ đã đến thành phố anh làm việc từ khoảng bảy giờ sáng, còn nấu cho anh cả mâm món anh thích.","note":"Câu hỏi đọc hiểu bài khoá 3."},
-  {"q_zh":"请根据提示复述课文三。","q_vn":"Dựa vào gợi ý, kể lại bài khoá 3.","hint":"中秋节时中国人一般都……。但是有些人由于……，不能回家……。周力就是……。周力的父母……就决定来一次……","sample":"中秋节时中国人一般都会回家过节。但是有些人由于工作需要，不能回家，只能一个人留在工作的地方过节。周力就是这些人之中的一位。他是一名铁路工作人员，今年中秋假期，要负责铁路安全检查。周力的父母知道周力这次不能回家后，就决定来一次“反向团圆”。早上五点左右他们就坐上了高铁，大约七点就来到了儿子工作的城市。在儿子家，他们做了一桌儿子爱吃的饭菜，有烤肉、烤鱼、饺子等等，还有西红柿鸡蛋汤。周力下班回家，看到一桌子饭菜和突然出现的父母，他感觉特别幸福。这个中秋节，地点变了，但爱没变。","sample_vn":"Dịp Trung thu người Trung Quốc thường về nhà đón Tết… Trung thu năm nay, địa điểm đã thay đổi, nhưng tình yêu thương thì không đổi.","note":"Bài tập 复述 của sách (trang 32)."},
-  {"q_zh":"为什么说春节对中国人来说有着特别的意义？春节为什么一直是他最喜欢的节日？","q_vn":"Vì sao nói Tết có ý nghĩa đặc biệt đối với người Trung Quốc? Vì sao Tết luôn là ngày lễ ông ấy thích nhất?","hint":"因为作为……，春节到来时，人们不管……都……。他最美好的记忆……","sample":"因为作为一年里最重要的传统节日，春节到来时，人们不管在哪里，都想回家和家人团圆。春节一直是他最喜欢的节日，因为他童年最美好的记忆很多都发生在过年时。虽然现在已人到中年，离开了家，但是过年时他也更想父母、兄弟姐妹。","sample_vn":"Vì là ngày lễ truyền thống quan trọng nhất trong năm, khi Tết đến, dù ở đâu người ta cũng muốn về nhà sum họp với gia đình. Tết luôn là ngày lễ ông thích nhất vì rất nhiều ký ức đẹp nhất tuổi thơ của ông diễn ra vào dịp Tết. Tuy giờ đã trung niên, rời xa nhà, đến Tết ông lại càng nhớ bố mẹ, anh chị em.","note":"Câu hỏi đọc hiểu bài khoá 4; dùng 作为 (điểm 4)."},
-  {"q_zh":"小组讨论：三至四人一组，每人介绍一个你最喜欢的节日，说说为什么喜欢，过节时你都会做什么，等等。讨论后，每人再向大家介绍小组中另一位同学最喜欢的节日。","q_vn":"Thảo luận nhóm: nhóm 3–4 người, mỗi người giới thiệu ngày lễ mình thích nhất, nói vì sao thích, ngày lễ thường làm gì… Thảo luận xong, mỗi người giới thiệu trước lớp ngày lễ yêu thích của một bạn khác trong nhóm.","hint":"我来介绍一下……最喜欢的节日。……最喜欢……，因为……。每当……到来，……都会……。作为……，……。……一年比一年……","sample":"大家好！我来介绍一下我们组安妮最喜欢的节日。安妮最喜欢过中秋节。她说，作为一个外国人，她第一次在中国过中秋节就喜欢上了这个节日，因为中秋节是家人团圆的节日，特别温暖。每当中秋节到来，她都会和中国朋友一起吃月饼、看月亮，有时候还会去剧院看演出。她觉得这几年中秋节的活动一年比一年热闹。去年中秋节，她晚上八点左右到了朋友家，一进门就闻到了月饼的香味。她本来以为自己会想家，可怎么也没想到，那天她过得特别开心。安妮说，中秋节让她明白了：不管在哪儿，有朋友在一起，就像在家一样。","sample_vn":"Chào cả lớp! Em xin giới thiệu ngày lễ yêu thích của bạn An Ni trong nhóm. An Ni thích nhất Tết Trung thu. Bạn nói, là người nước ngoài, lần đầu đón Trung thu ở Trung Quốc bạn đã thích ngày lễ này, vì Trung thu là ngày gia đình sum họp, rất ấm áp. Mỗi khi Trung thu đến, bạn đều cùng bạn bè Trung Quốc ăn bánh, ngắm trăng, có khi còn đi nhà hát xem biểu diễn. Bạn thấy mấy năm nay hoạt động Trung thu năm sau náo nhiệt hơn năm trước. Trung thu năm ngoái, khoảng tám giờ tối bạn đến nhà một người bạn, vừa vào cửa đã ngửi thấy mùi bánh thơm. Bạn tưởng mình sẽ nhớ nhà, nhưng thế nào cũng không ngờ hôm đó lại vui đến thế. An Ni nói, Trung thu giúp bạn hiểu: dù ở đâu, có bạn bè bên cạnh thì cũng như ở nhà.","note":"Hoạt động 任务活动 · 小组讨论 (thảo luận nhóm) của sách, trang 36 — dùng đủ 4 điểm ngữ pháp: 怎么也没想到, 一年比一年, 左右, 作为."}
+ "intro": "Nhấn nút loa nghe câu hỏi (câu hỏi phần Khởi động, câu hỏi đọc hiểu của sách, kể lại bài khoá và hoạt động thảo luận nhóm của sách), rồi tự ghi âm câu trả lời — cố dùng từ mới và 4 điểm ngữ pháp của bài.",
+ "questions": [
+  {
+   "q_zh": "你的国家有哪些重要节日？这些节日到来时人们会吃什么美食？",
+   "q_vn": "Nước bạn có những ngày lễ quan trọng nào? Khi những ngày lễ đó đến, mọi người ăn những món ngon gì?",
+   "hint": "我的国家有……、……等重要节日。……到来时，人们会吃……",
+   "sample": "我的国家也过春节和中秋节。作为一年里最热闹的节日，春节一到，家家都要准备很多美食，一家人坐在一块儿边吃边聊。中秋节到来时，孩子们最开心，因为可以吃月饼、看月亮。",
+   "sample_vn": "Nước tôi cũng ăn Tết và Trung thu. Là ngày lễ náo nhiệt nhất trong năm, dịp Tết nhà nào cũng chuẩn bị nhiều món ngon, mọi người cùng ăn uống, trò chuyện. Khi Trung thu đến, trẻ con vui nhất vì được ăn bánh Trung thu, ngắm trăng.",
+   "note": "Câu hỏi phần Khởi động của sách; dùng 作为 (điểm 4)."
+  },
+  {
+   "q_zh": "你和兄弟、姐姐、妹妹或者好朋友节假日在一起时都会做些什么？",
+   "q_vn": "Ngày lễ, bạn và anh chị em hoặc bạn thân ở cùng nhau thường làm những gì?",
+   "hint": "节假日我和……一起……，有时候也……",
+   "sample": "节假日我和哥哥常常一起去看电影，或者去商场买东西。有时候我们也在家做饭，一边吃一边聊，一聊就是两三个小时。",
+   "sample_vn": "Những ngày nghỉ, tôi và anh trai hay cùng đi xem phim hoặc đi trung tâm thương mại mua đồ. Có lúc chúng tôi ở nhà nấu cơm, vừa ăn vừa trò chuyện, nói chuyện một mạch hai ba tiếng.",
+   "note": "Câu hỏi phần Khởi động của sách."
+  },
+  {
+   "q_zh": "小明在北京野生动物园里先看到了什么动物？北京野生动物园有多少只动物？",
+   "q_vn": "Ở Công viên Động vật hoang dã Bắc Kinh, Tiểu Minh nhìn thấy con vật gì trước tiên? Công viên có bao nhiêu con thú?",
+   "hint": "他先看到了……。这个动物园有……",
+   "sample": "在这些动物之中，小明最先看到的是熊和老虎。这个动物园特别大，里面的动物有好几千只。",
+   "sample_vn": "Thứ Tiểu Minh nhìn thấy đầu tiên là gấu và hổ. Công viên này rất lớn, bên trong có mấy nghìn con thú.",
+   "note": "Câu hỏi đọc hiểu bài khoá 1."
+  },
+  {
+   "q_zh": "刘明一家在北京野生动物园玩得怎么样？请你把他们看到的、说到的都讲一讲。",
+   "q_vn": "Dựa vào gợi ý, kể lại bài khoá 1.",
+   "hint": "刘明、王一雪带儿子……。小明看到……，很高兴地……。刘明告诉儿子……。王一雪觉得……，怎么也没想到……",
+   "sample": "刘明和王一雪带着小明去了北京野生动物园。小明看到熊和老虎，高兴得一直喊，妈妈让他小声一点儿。爸爸告诉他，那只老虎是东北虎，是国家保护的动物。景区的车开到每个动物区都会停下来，大家能看得很清楚。王一雪觉得这里又大又美，她怎么也没想到会这么大。因为是节假日，人特别多，爸爸妈妈让小明一定不要离开他们。",
+   "sample_vn": "Lưu Minh và Vương Nhất Tuyết đưa Tiểu Minh đến Công viên Động vật hoang dã Bắc Kinh. Tiểu Minh thấy gấu và hổ, vui đến mức kêu ầm lên, mẹ bảo cậu nói nhỏ thôi. Bố nói con hổ đó là hổ Đông Bắc, là động vật được nhà nước bảo vệ. Xe của khu du lịch đến mỗi khu động vật đều dừng lại, mọi người nhìn rất rõ. Vương Nhất Tuyết thấy nơi này vừa rộng vừa đẹp, không ngờ lại rộng đến thế. Vì là ngày lễ nên rất đông, bố mẹ dặn Tiểu Minh phải đi sát họ.",
+   "note": "Bài tập kể lại bài khoá của sách (trang 27)."
+  },
+  {
+   "q_zh": "白家月以前在中国过过中秋节吗？在加拿大，安妮和中国朋友过中秋节时那里有什么活动？",
+   "q_vn": "Bạch Gia Nguyệt trước đây đã từng đón Trung thu ở Trung Quốc chưa? Ở Canada, khi An Ni đón Trung thu với bạn Trung Quốc, ở đó có những hoạt động gì?",
+   "hint": "没有，这是她……。安妮记得……",
+   "sample": "没有，这是白家月第一次在中国过中秋节。安妮说，她在加拿大的时候，街上和剧院里都有很多中秋节的演出。",
+   "sample_vn": "Chưa, đây là lần đầu Bạch Gia Nguyệt đón Trung thu ở Trung Quốc. An Ni kể khi ở Canada, ngoài phố và trong nhà hát đều có nhiều buổi biểu diễn Trung thu.",
+   "note": "Câu hỏi đọc hiểu bài khoá 2."
+  },
+  {
+   "q_zh": "“反向团圆”说的是什么？周力为什么感觉特别幸福？",
+   "q_vn": "“Sum họp ngược” nghĩa là gì? Vì sao Chu Lực cảm thấy vô cùng hạnh phúc?",
+   "hint": "一般是……回家，“反向团圆”是……。因为……",
+   "sample": "一般是孩子回家看父母，“反向团圆”就是孩子回不了家，父母去孩子那儿过节。周力下班回到家，看到爸爸妈妈来了，还做了很多他爱吃的菜，所以觉得特别幸福。",
+   "sample_vn": "Thường là con về nhà thăm bố mẹ, “sum họp ngược” là con không về được nên bố mẹ đến chỗ con đón lễ. Chu Lực tan làm về nhà thấy bố mẹ đến, còn nấu nhiều món anh thích, nên thấy vô cùng hạnh phúc.",
+   "note": "Câu hỏi đọc hiểu bài khoá 3."
+  },
+  {
+   "q_zh": "请你用几句话说说周力一家今年是怎么过中秋节的。",
+   "q_vn": "Dựa vào gợi ý, kể lại bài khoá 3.",
+   "hint": "中秋节大家一般都……。可是周力……，不能……。他的父母……，早上……左右……，大约……就……",
+   "sample": "到了中秋节，很多人都回家过节，可是周力是铁路上的工作人员，假期要上班，回不了家。他的父母听说以后，决定自己去看儿子。他们早上五点多就上了高铁，七点左右到了儿子的城市。父母在儿子家做了烤鱼、饺子和西红柿汤。周力一进门，看到父母突然出现在家里，高兴极了。过节的地方不一样了，可是一家人的爱还在。",
+   "sample_vn": "Dịp Trung thu đa số mọi người về nhà đón lễ, nhưng Chu Lực là nhân viên đường sắt, ngày nghỉ phải đi làm, không về được. Bố mẹ anh biết chuyện liền quyết định tự đi thăm con. Họ hơn năm giờ sáng đã lên tàu cao tốc, khoảng bảy giờ đến thành phố của con. Bố mẹ làm cá nướng, sủi cảo và canh cà chua ở nhà con. Chu Lực về nhà thấy bố mẹ bỗng xuất hiện, vui vô cùng. Nơi đón lễ đã khác, nhưng tình thương của cả nhà vẫn còn đó.",
+   "note": "Bài tập kể lại bài khoá của sách (trang 32)."
+  },
+  {
+   "q_zh": "为什么说春节对中国人来说有着特别的意义？春节为什么一直是他最喜欢的节日？",
+   "q_vn": "Vì sao nói Tết có ý nghĩa đặc biệt đối với người Trung Quốc? Vì sao Tết luôn là ngày lễ ông ấy thích nhất?",
+   "hint": "因为作为……，春节到来时，人们不管……都……。他童年……",
+   "sample": "因为春节是中国最重要的传统节日，不管人在哪儿，过年的时候都想回家和家人在一起。他小时候很多快乐的事都发生在过年的时候，现在离开家了，过年时他更想父母和兄弟，所以春节一直是他最喜欢的节日。",
+   "sample_vn": "Vì Tết là ngày lễ truyền thống quan trọng nhất của Trung Quốc, dù ở đâu, đến Tết ai cũng muốn về nhà ở cùng gia đình. Hồi nhỏ nhiều chuyện vui của ông đều xảy ra dịp Tết; bây giờ đi xa nhà, đến Tết ông càng nhớ bố mẹ và anh em, nên Tết luôn là ngày lễ ông thích nhất.",
+   "note": "Câu hỏi đọc hiểu bài khoá 4."
+  },
+  {
+   "q_zh": "三四个同学在一起，每个人说说自己最喜欢的节日：为什么喜欢？过节时都做什么？大家都说了以后，每个人再向大家介绍另一位同学最喜欢的节日。",
+   "q_vn": "Thảo luận nhóm: nhóm 3–4 người, mỗi người giới thiệu ngày lễ mình thích nhất, nói vì sao thích, ngày lễ thường làm gì… Thảo luận xong, mỗi người giới thiệu trước lớp ngày lễ yêu thích của một bạn khác trong nhóm.",
+   "hint": "我来介绍一下……最喜欢的节日。……最喜欢……，因为……。每当……到来，……都会……。作为……，……。……一年比一年……",
+   "sample": "我来介绍一下安妮最喜欢的节日。安妮最喜欢中秋节，因为她第一次在中国过节就是中秋节。那天她去了王一飞家，一进门就闻到月饼很香，大家一起吃葡萄、喝茶，聊了三个小时左右，她觉得心里特别暖。她以为自己会想家，可是怎么也没想到，这个中秋节过得这么开心。作为外国学生，她觉得中国的节日一年比一年有意思。",
+   "sample_vn": "Em xin giới thiệu ngày lễ An Ni thích nhất. An Ni thích nhất Tết Trung thu, vì lần đầu bạn ấy đón lễ ở Trung Quốc chính là Trung thu. Hôm đó bạn đến nhà Vương Nhất Phi, vừa vào cửa đã ngửi thấy bánh Trung thu thơm phức, mọi người cùng ăn nho, uống trà, trò chuyện khoảng ba tiếng, bạn thấy trong lòng rất ấm áp. Bạn tưởng mình sẽ nhớ nhà, nhưng không ngờ Trung thu năm ấy lại vui đến vậy. Là sinh viên nước ngoài, bạn thấy các ngày lễ ở Trung Quốc năm sau thú vị hơn năm trước.",
+   "note": "Hoạt động thảo luận nhóm của sách (trang 36) — dùng đủ 4 điểm ngữ pháp: 怎么也没想到, 一年比一年, 左右, 作为."
+  }
  ]
 },
-
 "translate": [
- ["Tôi biết Công viên Động vật hoang dã Bắc Kinh rất rộng, nhưng thế nào cũng không ngờ lại rộng đến vậy.","我知道北京野生动物园很大，可怎么也没想到这么大。"],
- ["Mấy năm nay, Tết Trung thu năm sau náo nhiệt hơn năm trước.","这几年中秋节一年比一年热闹。"],
- ["Khoảng năm giờ sáng họ đã lên tàu cao tốc, chừng bảy giờ đã đến nơi.","早上五点左右他们就坐上了高铁，大约七点就到了。"],
- ["Là ngày lễ truyền thống quan trọng nhất, Tết có ý nghĩa đặc biệt đối với người Trung Quốc.","作为最重要的传统节日，春节对中国人来说有着特别的意义。"],
- ["Ngày lễ đông người, con tuyệt đối đừng chạy lạc nhé.","节假日人多，你千万别跑丢了。"],
- ["Trung thu với sinh nhật trùng vào cùng một ngày, khéo thật!","中秋节和生日赶在了一块儿，真巧！"]
+ [
+  "Tôi nói mấy lần rồi mà anh ấy thế nào cũng không tin.",
+  "我说了好几遍，他怎么也不相信。"
+ ],
+ [
+  "Các món bà nấu, món nào cũng ngon.",
+  "奶奶做的菜一道比一道好吃。"
+ ],
+ [
+  "Cuộc họp ngày mai bắt đầu khoảng 9 giờ.",
+  "明天的会大约九点开始。"
+ ],
+ [
+  "Là con trai cả trong nhà, anh ấy phải chăm sóc bố mẹ.",
+  "作为家里的大儿子，他要照顾父母。"
+ ],
+ [
+  "Năm nay tôi không về nhà được, nên ăn cơm tất niên ở trường với các bạn.",
+  "今年我回不了家，就在学校和朋友们一起吃年夜饭。"
+ ],
+ [
+  "Kỷ niệm tuổi thơ đẹp nhất của tôi là cùng anh trai ra bờ sông chơi.",
+  "我童年最美好的记忆是跟哥哥一起去河边玩。"
+ ]
 ],
 "translateRev": [
- ["Xe của khu du lịch mỗi lần đến một khu động vật đều dừng một lát.","景区的车每到一个动物区都会停一会儿。"],
- ["Đây vẫn là lần đầu tiên mình đón Tết Trung thu ở Trung Quốc đấy.","我还是第一次在中国过中秋节呢。"],
- ["Chu Lực chính là một trong số những người này.","周力就是这些人之中的一位。"],
- ["Tối hôm giao thừa, cả nhà vừa ăn cơm tất niên vừa xem Gala Xuân.","除夕这天晚上，一家人一边吃年夜饭，一边看春晚。"],
- ["Mỗi khi nhớ lại tuổi thơ, rất nhiều ký ức đẹp nhất của tôi đều diễn ra vào dịp Tết.","每当回忆起童年，我最美好的记忆很多都发生在过年时。"]
+ [
+  "Nhân viên đường sắt ngày lễ cũng phải đi làm.",
+  "铁路工作人员节假日也要上班。"
+ ],
+ [
+  "Món ngon của vùng này rất nổi tiếng.",
+  "这个地方的美食很有名。"
+ ],
+ [
+  "Tết Nguyên tiêu và Tết Đoan ngọ đều là ngày lễ truyền thống của Trung Quốc.",
+  "元宵节和端午节都是中国的传统节日。"
+ ],
+ [
+  "Ông ấy đã ngoài bốn mươi nhưng sức khoẻ vẫn tốt như người trẻ.",
+  "他已经是中年人了，身体还像年轻人一样好。"
+ ],
+ [
+  "Ba anh em chúng tôi lớn lên cùng nhau từ nhỏ.",
+  "我们兄弟三个从小一起长大。"
+ ]
 ],
-
 "writing": {
  "kieu":"sgk","soChu":140,"tieuDe":"写作 — viết theo đề của sách (ít nhất 140 chữ)",
  "nhanDe":"写作",

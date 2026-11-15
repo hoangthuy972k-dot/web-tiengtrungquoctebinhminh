@@ -13,6 +13,7 @@ window.NT_HUONGDAN = {
     ['sx', '🏭 Sản xuất'],
     ['thi', '🏆 Thi đua & bạn bè'],
     ['pl', '🗺️ Phiêu lưu & truyện'],
+    ['cao', '🏅 Cấp độ & cấp cao'],
   ],
   // "Bắt đầu từ đâu?" — 5 buoc cho nguoi moi
   batDau: [
@@ -56,11 +57,11 @@ window.NT_HUONGDAN = {
     /* ---------- Học & câu hỏi ---------- */
     nhiemvu: { ten: 'Học hôm nay & nhiệm vụ', ic: '🎯', nhom: 'hoc', lv: 1, tom: 'Rương học tập và nhiệm vụ mỗi ngày.',
       de: 'Xem hôm nay em đã học được bao nhiêu sao và còn việc gì cần làm.',
-      buoc: [['📚', 'Học bài trên web: sao học hôm nay tăng lên.'], ['🎁', 'Đủ 20 / 50 / 100 sao trong ngày thì mở rương gỗ / bạc / vàng: +15 / +30 / +60 xu.'], ['✅', 'Làm nhiệm vụ trong ngày: xong 3 việc +10 xu, xong hết +20 xu và 1 lượt vòng quay.'], ['🔁', 'Sang ngày mới mọi thứ tính lại từ đầu.']],
+      buoc: [['📚', 'Học bài trên web: sao học hôm nay tăng lên.'], ['🎁', 'Đủ 20 / 50 / 100 sao trong ngày thì mở rương gỗ / bạc / vàng: +15 / +30 / +60 xu.'], ['✅', 'Làm nhiệm vụ trong ngày: xong 3 việc +10 xu, xong hết +20 xu và 1 lượt vòng quay (từ cấp 30 mục tiêu và thưởng lớn dần, cấp 80: +50 / +100 xu).'], ['🔁', 'Sang ngày mới mọi thứ tính lại từ đầu.']],
       meo: 'Rương gỗ còn cộng thêm xu theo số ngày em học liên tiếp (tối đa +10).', mo: { bang: 'hoc', tab: 'muc' } },
     chuhan: { ten: 'Thử thách chữ Hán', ic: '字', nhom: 'hoc', lv: 1, tom: '10 câu từ bài em học → hộp quà.',
       de: 'Ôn bài bằng 10 câu hỏi và nhận hộp quà bí ẩn.',
-      buoc: [['▶️', 'Bấm bắt đầu: 10 câu lấy từ bài em đã học hoặc bài thầy cô giao.'], ['✍️', 'Có câu chọn nghĩa, chọn pinyin, xếp câu, nối từ, nghe, viết chữ.'], ['🎁', 'Đúng từ 8/10 câu thì mở hộp quà: nông sản, xu, đồ trang trí hoặc vật nuôi.'], ['🌟', 'Đúng 10/10: chắc chắn ra đồ trang trí hoặc vật nuôi. Mỗi ngày tối đa 3 hộp.']],
+      buoc: [['▶️', 'Bấm bắt đầu: 10 câu lấy từ bài em đã học hoặc bài thầy cô giao.'], ['✍️', 'Có câu chọn nghĩa, chọn pinyin, xếp câu, nối từ, nghe, viết chữ.'], ['🎁', 'Đúng từ 8/10 câu thì mở hộp quà: nông sản, xu, đồ trang trí hoặc vật nuôi (từ cấp 45 cần 9/10, câu khó hơn).'], ['🌟', 'Đúng 10/10: chắc chắn ra đồ trang trí hoặc vật nuôi. Mỗi ngày tối đa 3 hộp.']],
       meo: 'Mỗi chữ trả lời đúng 3 lần thành 1 thẻ chữ Hán — đủ 10 / 25 / 50 / 100 thẻ nhận đồ trang trí độc quyền.', mo: { bang: 'hoc', tab: 'chuhan' } },
     vongquay: { ten: 'Vòng quay may mắn 幸运大转盘 (xìngyùn dà zhuànpán)', ic: '🎡', nhom: 'hoc', lv: 1, tom: 'Lượt quay theo số sao học trong ngày.',
       de: 'Quay lấy xu, hạt giống, nông sản, đồ trang trí… nhờ số sao học hôm nay.',
@@ -80,7 +81,7 @@ window.NT_HUONGDAN = {
       meo: 'Chỉ cần học một ít mỗi ngày là giữ được hoa — học dồn một hôm không thay được.', mo: { bang: 'cay7' } },
     thientai: { ten: 'Thiên tai & khiên bảo vệ', ic: '⛈️', nhom: 'hoc', lv: 2, tom: 'Mỗi ngày một thiên tai — chống bằng câu hỏi.',
       de: 'Từ cấp 2, mỗi ngày nông trại gặp một thiên tai (hạn hán, sâu bệnh, mưa bão…) làm cây hoặc vật nuôi chậm lại.',
-      buoc: [['⚠️', 'Bấm thanh thiên tai ở trên để xem hôm nay bị gì.'], ['❓', 'Trả lời câu hỏi chữ Hán: mỗi câu đúng xong 1 phần việc (cần 5–6 phần).'], ['🎉', 'Chống xong: hết tác hại và được +10 xu.'], ['🤝', 'Bạn sang thăm có thể giúp em 1 phần việc mỗi ngày.']],
+      buoc: [['⚠️', 'Bấm thanh thiên tai ở trên để xem hôm nay bị gì.'], ['❓', 'Trả lời câu hỏi chữ Hán: mỗi câu đúng xong 1 phần việc (cần 5–6 phần).'], ['🎉', 'Chống xong: hết tác hại và được +10 xu (cấp cao thiên tai cần thêm 1–2 phần việc nhưng thưởng tới +30 xu).'], ['🤝', 'Bạn sang thăm có thể giúp em 1 phần việc mỗi ngày.']],
       meo: 'Học đủ 30 sao trong ngày thì có khiên 护盾 (hùdùn): thiên tai không còn tác hại gì.', mo: { bang: 'thientai' } },
 
     /* ---------- Mua bán ---------- */
@@ -171,6 +172,28 @@ window.NT_HUONGDAN = {
       de: 'Đọc truyện về làng Tre Xanh và giúp các nhân vật — có những câu tiếng Trung em phải hiểu để đi tiếp.',
       buoc: [['📖', 'Bấm “Đọc” chương mới, bấm “Tiếp” để xem từng cảnh.'], ['💬', 'Khi nhân vật nói tiếng Trung: chọn nghĩa, chọn câu đáp hoặc xếp câu. Sai thì được nghe lại kèm pinyin.'], ['🧺', 'Làm 1–2 việc giúp làng (thu hoạch, giao hàng, học đủ sao…) rồi quay lại nghe kể tiếp.'], ['🎁', 'Hết chương nhận quà: xu, hạt giống và một đồ trang trí riêng của chương.']],
       meo: 'Mỗi tuần chỉ mở 1 chương. Câu tiếng Trung trong truyện lấy từ bài em đã học.', mo: { bang: 'kt-truyen' } },
+
+    /* ---------- Cap do & cap cao (2026-11-15) ---------- */
+    capdo: { ten: 'Cấp độ & phần thưởng', ic: '🏅', nhom: 'cao', lv: 1, tom: 'Cấp 1–100, 7 danh hiệu, thưởng mỗi cấp.',
+      de: 'Xem em đang ở danh hiệu nào, còn thiếu bao nhiêu kinh nghiệm, 10 cấp tới mở khoá gì và được thưởng gì.',
+      buoc: [['🏅', 'Bấm chip cấp ở góc trên (hoặc ⋯ Thêm → Cấp độ & phần thưởng).'], ['📈', 'Cấp 1–30 như cũ; từ cấp 31 mỗi cấp cần nhiều kinh nghiệm hơn hẳn, tới cấp 100.'], ['🎁', 'Mỗi cấp: xu + 2 hạt giống cây tốt nhất; cấp 35, 40, 50… 100 thêm hạt quý.'], ['🐉', 'Lên danh hiệu mới (cấp 10, 20, 30, 45, 60, 80): thêm xu và biển danh hiệu độc quyền — khung chip cấp đổi màu.']],
+      meo: 'Cấp càng cao câu hỏi càng khó (nhiều lựa chọn, ít pinyin, nhiều ngữ pháp) nhưng vẫn chỉ từ bài em đã học.', mo: { bang: 'cap-capdo' } },
+    nhakinh: { ten: 'Nhà kính 温室 (wēnshì)', ic: '🏡', nhom: 'cao', tn: 'nhk', tom: 'Ngày học 10 sao: ruộng không sợ thiên tai.',
+      de: 'Che ruộng khỏi thiên tai thời tiết vào những ngày em học bài.',
+      buoc: [['🪙', 'Mở ⋯ Thêm → Hoạt động cấp cao → Nhà kính, bấm Xây (2500 xu).'], ['📍', 'Chọn chỗ trống 2×2 ô để đặt nhà kính lên nông trại.'], ['📚', 'Ngày nào học từ 10 sao: cây không chậm lớn, thu đủ nông sản, vẫn gieo và tưới được dù có thiên tai.'], ['🛡', 'Vật nuôi và giá bán vẫn cần khiên 30 sao.']],
+      meo: 'Nhà kính chỉ bật vào ngày em học — không học thì ruộng vẫn bị thiên tai như thường.', mo: { bang: 'cap-hd', tab: 'nk' } },
+    chuyengia: { ten: 'Nhiệm vụ chuyên gia 专家任务', ic: '🎓', nhom: 'cao', tn: 'cg', tom: 'Mỗi tuần 10 câu khó nhất, thưởng hạt quý.',
+      de: 'Thử thách khó nhất tuần: 10 câu từ bài em đã học: câu từ vựng 5 lựa chọn, không pinyin, nhiều ngữ pháp và xếp câu.',
+      buoc: [['🎓', 'Mở ⋯ Thêm → Hoạt động cấp cao → Chuyên gia, bấm Bắt đầu.'], ['❓', 'Trả lời 10 câu (chọn đáp án, xếp câu, nối từ).'], ['🏆', 'Đúng từ 8 câu: +120 xu và 2 hạt giống quý; lần đầu thêm Đỉnh đồng chuyên gia.'], ['🔁', 'Mỗi tuần thử tối đa 3 lần, thưởng nhận 1 lần.']],
+      meo: 'Ôn lại bài trước khi thử — câu hỏi lấy đúng từ những bài em đã học.', mo: { bang: 'cap-hd', tab: 'cg' } },
+    lehoi: { ten: 'Lễ hội nông trại 农场节', ic: '🎪', nhom: 'cao', tn: 'le', tom: 'Mỗi tháng mở lễ hội, bạn sang dự cùng có xu.',
+      de: 'Mở lễ hội 2 ngày ở nông trại em — bạn cùng lớp sang dự, ai cũng được thưởng.',
+      buoc: [['🎪', 'Mở ⋯ Thêm → Hoạt động cấp cao → Lễ hội, bấm Mở lễ hội (mỗi tháng 1 lần).'], ['🎈', 'Cờ lễ hội hiện trên nông trại; bạn sang thăm bấm “Dự lễ hội”.'], ['❓', 'Bạn trả lời đúng 1 câu từ bài của bạn ấy: bạn +5 xu, em +15 xu (tối đa 12 khách).'], ['🎟', 'Đủ 5 khách: em được 1 hạt giống quý.']],
+      meo: 'Bạn nào cũng phải trả lời câu từ bài của chính mình — lễ hội là dịp cả lớp cùng ôn bài.', mo: { bang: 'cap-hd', tab: 'le' } },
+    hoctro: { ten: 'Kèm học trò 师徒 (shītú)', ic: '👩‍🏫', nhom: 'cao', tn: 'ht', tom: 'Kèm bạn cấp thấp, thưởng khi bạn học đủ.',
+      de: 'Giúp bạn cùng lớp cấp thấp hơn học đều mỗi ngày.',
+      buoc: [['📨', 'Mời tối đa 3 bạn cùng lớp cấp ≤ 40; bạn đồng ý là bắt đầu kèm.'], ['💬', 'Mỗi ngày gửi mỗi bạn một lời khuyên học tập bằng tiếng Trung.'], ['📚', 'Hôm nào bạn học đủ 20 sao: em bấm Nhận thưởng — em +25 xu, bạn +10 xu.'], ['🚫', 'Bạn không học thì không có thưởng.']],
+      meo: 'Bạn cấp thấp cũng nhận được lời mời ở Nhật ký — đồng ý để có người kèm học nhé.', mo: { bang: 'cap-hd', tab: 'ht' } },
   },
   // Bang (loai + the) -> ma huong dan. Ham nay duoc public/js/nong-trai-hd.js goi khi em mo 1 bang.
   theoBang: function (loai, tab) {
@@ -181,9 +204,10 @@ window.NT_HUONGDAN = {
       cacthitran: 'thitran', loidai: 'thitran', dukhach: 'thitran', bangtin: 'thitran', vongquay: 'vongquay',
       thidua: tab === 'dep' ? 'binhchon' : tab === 'tdh' ? 'thachdau' : tab === 'ke' ? 'kecup' : 'cup', vuon: 'vuon', cay7: 'cay7',
       'kt-pl': 'bando', 'kt-mk': 'cho', 'kt-tiem': 'tiem', 'kt-xuong': 'xuong', 'kt-nc': 'nhancong', 'kt-xk': 'xuatkhau', 'kt-dg': 'daugia', 'kt-truyen': 'truyen', tuthien: 'tuthien',
+      'cap-capdo': 'capdo', 'cap-dule': 'lehoi', 'cap-hd': tab === 'cg' ? 'chuyengia' : tab === 'le' ? 'lehoi' : tab === 'ht' ? 'hoctro' : 'nhakinh',
     };
     return B[loai] || '';
   },
   // Khoa MO_TN (the gioi thieu khi mo tinh nang) -> ma huong dan
-  theoTn: { cau: 'hocau', hd: 'donhang', tl: 'thuonglai', nh: 'nhahang', vuon: 'vuon', bc: 'binhchon', tdh: 'thachdau', pl: 'bando', cho: 'cho', xuong: 'xuong', tiem: 'tiem', nc: 'nhancong', xk: 'xuatkhau', dg: 'daugia', truyen: 'truyen', qt: 'tuthien' },
+  theoTn: { cau: 'hocau', hd: 'donhang', tl: 'thuonglai', nh: 'nhahang', vuon: 'vuon', bc: 'binhchon', tdh: 'thachdau', pl: 'bando', cho: 'cho', xuong: 'xuong', tiem: 'tiem', nc: 'nhancong', xk: 'xuatkhau', dg: 'daugia', truyen: 'truyen', qt: 'tuthien', nhk: 'nhakinh', cg: 'chuyengia', le: 'lehoi', ht: 'hoctro' },
 };

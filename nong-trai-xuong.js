@@ -27,13 +27,29 @@ const HANG_GC = {
   caomeizhi: { zh: '草莓汁', py: 'cǎoméi zhī', vn: 'Nước ép dâu', can: { dautay: 3 }, phut: 45, l: '杯' },
   putaozhi: { zh: '葡萄汁', py: 'pútao zhī', vn: 'Nước ép nho', can: { nho: 3 }, phut: 90, l: '瓶' },
   fanqiezhi: { zh: '番茄汁', py: 'fānqié zhī', vn: 'Nước ép cà chua', can: { cachua: 3, yan: 1 }, phut: 40, l: '杯' },
+  // Cap cao (2026-11-15): lv = cap mo cong thuc (nha may xay tu cap cua no, mon kho hon mo sau)
+  chaye: { zh: '茶叶', py: 'cháyè', vn: 'Trà khô', can: { cha: 3 }, phut: 90, l: '包', lv: 33 },
+  suyoucha: { zh: '酥油茶', py: 'sūyóuchá', vn: 'Trà bơ Tây Tạng', can: { chaye: 1, maoniunai: 1, yan: 1 }, phut: 120, l: '杯', lv: 55 },
+  huacha: { zh: '牡丹花茶', py: 'mǔdān huāchá', vn: 'Trà hoa mẫu đơn', can: { chaye: 1, mudan: 2 }, phut: 150, l: '包', lv: 75 },
+  sichou: { zh: '丝绸', py: 'sīchóu', vn: 'Lụa tơ tằm', can: { canjian: 3 }, phut: 240, l: '匹', lv: 42 },
+  sijin: { zh: '丝巾', py: 'sījīn', vn: 'Khăn lụa thêu lông công', can: { sichou: 1, kongqueyu: 1 }, phut: 300, l: '条', lv: 68 },
+  tangyuan: { zh: '汤圆', py: 'tāngyuán', vn: 'Chè trôi nước', can: { nuomi: 2, duong: 1 }, phut: 60, l: '碗', lv: 46 },
+  zongzi: { zh: '粽子', py: 'zòngzi', vn: 'Bánh ú nhân trứng muối', can: { nuomi: 3, trung: 1, yan: 1 }, phut: 150, l: '个', lv: 46 },
+  yuebing: { zh: '月饼', py: 'yuèbing', vn: 'Bánh trung thu nhân sen', can: { mifen: 2, lianou: 1, trung: 2, duong: 1 }, phut: 180, l: '个', lv: 50 },
+  zaogao: { zh: '枣糕', py: 'zǎogāo', vn: 'Bánh táo đỏ', can: { hongzao: 2, mifen: 1, trung: 1 }, phut: 150, l: '块', lv: 62 },
 };
 const XUONG = {
   bot: { zh: '磨坊', py: 'mòfáng', vn: 'Cối xay bột', lv: 5, xu: 300, r: ['mifen', 'yumimian'] },
   banh: { zh: '面包房', py: 'miànbāofáng', vn: 'Lò bánh', lv: 6, xu: 500, r: ['mianbao', 'binggan', 'dangao'] },
   sua: { zh: '乳品厂', py: 'rǔpǐnchǎng', vn: 'Xưởng sữa', lv: 7, xu: 700, r: ['nailao', 'suannai'] },
   ep: { zh: '果汁厂', py: 'guǒzhīchǎng', vn: 'Xưởng nước ép', lv: 8, xu: 900, r: ['caomeizhi', 'putaozhi', 'fanqiezhi'] },
+  // cap cao (2026-11-15): gia xay la cho tieu xu lon cua nong trai cap cao
+  cha: { zh: '茶坊', py: 'cháfāng', vn: 'Xưởng trà', lv: 33, xu: 3000, r: ['chaye', 'suyoucha', 'huacha'] },
+  si: { zh: '丝绸坊', py: 'sīchóufāng', vn: 'Xưởng tơ lụa', lv: 42, xu: 4500, r: ['sichou', 'sijin'] },
+  gao: { zh: '糕点铺', py: 'gāodiǎnpù', vn: 'Tiệm bánh truyền thống', lv: 46, xu: 5500, r: ['tangyuan', 'zongzi', 'yuebing', 'zaogao'] },
 };
+// cong thuc da mo o cap lv (khong co lv = mo cung nha may)
+const moCt = (r, lv) => !HANG_GC[r].lv || lv == null || HANG_GC[r].lv <= lv;
 const hangDoi = (lv) => (lv >= 12 ? 3 : 2); // so me xep hang moi nha may
 const NHANH_NGAY = 8, NHANH_CHO_MS = 3 * 60000;
 const soCauNhanh = (conMs) => (conMs <= 30 * 60000 ? 1 : conMs <= 120 * 60000 ? 2 : 3);
@@ -62,7 +78,7 @@ const XK_HANG = {
 const XK_GIO = { lang: 4, thung: 6, pho: 8, dao: 10, de: 12 };
 const XK_TUAN = 6, XK_DANG = 3, XK_SO_CAU = 2, XK_CHO_MS = 60000;
 
-const LUONG = {}, LUONG_PY = { '袋': 'dài', '盒': 'hé', '块': 'kuài' };
+const LUONG = {}, LUONG_PY = { '袋': 'dài', '盒': 'hé', '块': 'kuài', '包': 'bāo', '匹': 'pǐ', '条': 'tiáo', '碗': 'wǎn', '杯': 'bēi', '个': 'ge' };
 Object.keys(NL).forEach((k) => { LUONG[k] = NL[k].l; });
 Object.keys(HANG_GC).forEach((k) => { LUONG[k] = HANG_GC[k].l; });
 function dangKySp(SP) {
@@ -74,10 +90,10 @@ function dangKySp(SP) {
     SP[k] = { zh: x.zh, py: x.py, vn: x.vn, ban: Math.round(goc * 1.4 + x.phut * 0.08 + 3), gc: 1 };
   });
 }
-// hang che bien cua cac nha may em da xay (de ra don hang hang ngay)
-function hangCua(f) {
+// hang che bien cua cac nha may em da xay (de ra don hang hang ngay); lv: chi cong thuc da mo
+function hangCua(f, lv) {
   const b = (f.xuong && f.xuong.b) || {};
-  return Object.keys(b).reduce((a, k) => a.concat(XUONG[k] ? XUONG[k].r : []), []);
+  return Object.keys(b).reduce((a, k) => a.concat(XUONG[k] ? XUONG[k].r.filter((r) => moCt(r, lv)) : []), []);
 }
 const DEP = 15; // diem dep cua 1 nha may dat tren nong trai
 const CAT = { NL, HANG_GC, XUONG, LUONG, LUONG_PY, DEP, dangKySp, hangCua };
@@ -142,7 +158,7 @@ function gan(app, d, h, c) {
         const m = XUONG[b], co = x.b[b];
         return { b, zh: m.zh, py: m.py, vn: m.vn, lv: m.lv, xu: m.xu, co: !!co, khoa: m.lv > lv, o: co ? viTri(f, b) : '',
           q: co ? (co.q || []).map((j) => ({ id: j.id, r: j.r, bd: j.bd, kt: j.kt, xong: j.kt <= now, chay: j.bd <= now && j.kt > now, cho: j.cho && j.cho > now ? j.cho : 0 })) : [],
-          r: m.r.map((r) => ({ k: r, can: HANG_GC[r].can, phut: HANG_GC[r].phut, ban: SP[r].ban })) };
+          r: m.r.map((r) => ({ k: r, can: HANG_GC[r].can, phut: HANG_GC[r].phut, ban: SP[r].ban, lv: HANG_GC[r].lv || 0, khoa: !moCt(r, lv) })) };
       }),
       cau: f.xuong.cau ? { b: f.xuong.cau.b, j: f.xuong.cau.j, da: f.xuong.cau.tl.length, so: f.xuong.cau.ds.length } : null,
     };
@@ -170,6 +186,7 @@ function gan(app, d, h, c) {
         if (!co) throw loi('Xây ' + m.vn + ' trước đã.');
         if (viTri(f, bk) !== 'dat') throw loi(m.vn + ' đang cất trong túi đồ — đặt lên nông trại (Kho → Túi đồ) rồi mới chạy máy được.');
         if (!ct || m.r.indexOf(r) < 0) throw loi('Nhà máy này không làm món đó.');
+        if (!moCt(r, lv)) throw loi('Lên cấp ' + ct.lv + ' để làm ' + SP[r].vn.toLowerCase() + '.');
         co.q = co.q || [];
         if (co.q.length >= hangDoi(lv)) throw loi('Hàng chờ đầy (' + hangDoi(lv) + ' mẻ) — đợi xong hoặc thu hàng trước.');
         Object.keys(ct.can).forEach((y) => { if ((f.kho[y] || 0) < ct.can[y]) throw loi('Chưa đủ ' + SP[y].vn.toLowerCase() + ' (cần ' + ct.can[y] + ', có ' + (f.kho[y] || 0) + ').' + (SP[y].nl ? ' Mua ở Chợ nông sản nhé.' : '')); });

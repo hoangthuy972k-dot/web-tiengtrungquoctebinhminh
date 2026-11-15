@@ -61,7 +61,9 @@ const evMoi = giaTri / N / (1 - pLuot);
 // Vong quay cu (truoc 2026-11-13): 8 o
 const CU = [{ l: 'xu', n: 5, w: 20 }, { l: 'sp', n: 3, w: 16 }, { l: 'xu', n: 10, w: 18 }, { l: 'tt', w: 10 }, { l: 'xu', n: 20, w: 12 }, { l: 'luot', w: 8 }, { l: 'xu', n: 50, w: 5 }, { l: 'con', w: 3 }];
 const tongCu = CU.reduce((s, o) => s + o.w, 0);
-const spCu = tb(Object.keys(SP).filter((k) => !SP[k].mon && !SP[k].ca && !SP[k].nl && !SP[k].gc && !SP[k].hiem && (!CAY[k] || CAY[k].lv <= lvMau + 1)).map((k) => SP[k].ban));
+// (giu moc so sanh cu: bo san pham cua vat nuoi cap cao them 2026-11-15 — vong quay cu khong co chung)
+const spCapCao = {}; Object.keys(CON).forEach((c) => { if (CON[c].lv > 30) spCapCao[CON[c].sp] = 1; });
+const spCu = tb(Object.keys(SP).filter((k) => !SP[k].mon && !SP[k].ca && !SP[k].nl && !SP[k].gc && !SP[k].hiem && !spCapCao[k] && (!CAY[k] || CAY[k].lv <= lvMau + 1)).map((k) => SP[k].ban));
 const evCu = CU.reduce((s, o) => s + o.w / tongCu * (o.l === 'xu' ? o.n : o.l === 'sp' ? 3 * spCu : o.l === 'tt' ? GT.tt() : o.l === 'con' ? GT.con(lvMau + 1) : 0), 0) / (1 - 8 / tongCu);
 console.log('  Gia tri ky vong 1 luot (quy ra xu, nong trai mau cap ' + lvMau + '): cu ≈ ' + evCu.toFixed(1) + ' · moi ≈ ' + evMoi.toFixed(1) + ' (' + ((evMoi / evCu - 1) * 100).toFixed(0) + '%)');
 console.log('  O xau (mat luot + chuot): ' + VQ_O.filter((o) => o.xau).reduce((s, o) => s + o.w, 0) + '% · o hiem (hat quy + thu hiem): ' + VQ_O.filter((o) => o.hiem).reduce((s, o) => s + o.w, 0) + '%');

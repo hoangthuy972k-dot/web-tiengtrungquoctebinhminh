@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="/css/nong-trai.css">
 <link rel="stylesheet" href="/css/nong-trai-kt.css">
 <link rel="stylesheet" href="/css/nong-trai-tuthien.css">
+<link rel="stylesheet" href="/css/nong-trai-cap.css">
 </head>
 <body class="nt">
 
@@ -18,10 +19,11 @@
   <a class="nt-ve" href="/" aria-label="Về trang học"><span aria-hidden="true">←</span><b>Học bài</b></a>
   <button type="button" class="nt-nv-nut" id="ntNvNut" aria-label="Nhân vật của em" title="Nhân vật của em"></button>
   <div class="nt-hud">
-    <button type="button" class="nt-chip nt-chip-lv" id="ntLv" aria-label="Cấp nông trại">
+    <button type="button" class="nt-chip nt-chip-lv" id="ntLv" aria-label="Cấp nông trại — xem cấp độ và phần thưởng">
       <img src="/images/farm/ic-xp.svg" alt="" draggable="false">
       <span class="nt-lv-so" id="ntLvSo">1</span>
-      <span class="nt-xp"><i id="ntXpThanh"></i></span>
+      <span class="nt-bac-ic" id="ntBacIc" aria-hidden="true">🌱</span>
+      <span class="nt-xp-cot"><span class="nt-xp"><i id="ntXpThanh"></i></span><small class="nt-xp-con" id="ntXpCon"></small></span>
     </button>
     <button type="button" class="nt-chip" id="ntSao" aria-label="Sao học tập">
       <img src="/images/farm/ic-sao.svg" alt="" draggable="false">
@@ -174,6 +176,8 @@
   <span class="nt-ch-ic nt-hc-ic" aria-hidden="true"><svg viewBox="0 0 40 40"><g fill="none" stroke="#2b1d3a" stroke-width="2.2" stroke-linecap="round"><path d="M8 34L30 6"/><path d="M30 6Q36 14 32 24" stroke-width="1.4"/></g><path d="M14 30C18 23 28 23 32 28L37 24V34L32 31C28 36 18 36 14 30Z" fill="#ff9f43" stroke="#2b1d3a" stroke-width="2" stroke-linejoin="round"/><circle cx="19" cy="29" r="1.6" fill="#2b1d3a"/></svg></span>
   <span class="nt-muc-chu"><b>Hồ câu cá</b><small id="ntHcPhu">câu cá · trả lời chữ Hán</small></span>
 </button>
+        <button type="button" class="nt-them-o nt-them-cap" data-mo="cap-capdo"><span class="nt-them-emo" aria-hidden="true">🏅</span><span class="nt-muc-chu"><b>Cấp độ &amp; phần thưởng</b><small id="ntCapPhu">danh hiệu · cấp 1–100 · mở khoá</small></span><i class="nt-cham" id="ntCapCham" hidden></i></button>
+        <button type="button" class="nt-them-o" data-mo="cap-hd"><span class="nt-them-emo" aria-hidden="true">🌟</span><span class="nt-muc-chu"><b>Hoạt động cấp cao</b><small id="ntCaoPhu">nhà kính · chuyên gia · lễ hội · kèm học trò</small></span><i class="nt-cham" id="ntCaoCham" hidden></i></button>
         <button type="button" class="nt-them-o nt-them-sotay" data-mo="kt-sotay"><img src="/images/farm/tb-sotay.svg" alt="" draggable="false"><span class="nt-muc-chu"><b>Sổ tay nông trại</b><small>hướng dẫn mọi phần · bắt đầu từ đâu?</small></span></button>
         <button type="button" class="nt-them-o" data-mo="kt-truyen"><img src="/images/farm/tb-truyen.svg" alt="" draggable="false"><span class="nt-muc-chu"><b>Câu chuyện</b><small id="ntTrPhu">làng Tre Xanh · mỗi tuần một chương</small></span><i class="nt-cham" id="ntTrCham" hidden></i></button>
         <button type="button" class="nt-them-o nt-them-pl" data-mo="kt-pl"><img src="/images/farm/tb-bando.svg" alt="" draggable="false"><span class="nt-muc-chu"><b>Bản đồ phiêu lưu</b><small id="ntPlPhu">5 vùng đất · câu hỏi từ bài em học</small></span></button>
@@ -252,6 +256,7 @@
 <script src="/js/nong-trai.js"></script>
 <script src="/js/nong-trai-kt.js"></script>
 <script src="/js/nong-trai-tuthien.js"></script>
+<script src="/js/nong-trai-cap.js"></script>
 <script src="/js/nong-trai-que.js"></script>
 <script src="/js/nong-trai-huongdan.js"></script>
 <script src="/js/nong-trai-hd.js"></script>

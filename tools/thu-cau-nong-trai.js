@@ -46,6 +46,30 @@ for (let t = 1; t <= 5; t++) for (let i = 0; i < 60; i++) {
   const de = deCaKt(bo, t, { nghe: true });
   if (de) de.ds.forEach(kiem);
 }
+// ---- Do kho theo cap (DO_KHO, 2026-11-15): moi bac van chi ra cau thuoc bai cho phep; in mau thong ke tung bac ----
+const { DO_KHO } = nt._thuCau;
+const CAP_MAU = [1, 15, 30, 45, 60, 80, 100], BAC_TU = [1, 10, 20, 30, 45, 60, 80];
+console.log('Do kho theo bac (thu thach chu Han 100 bo / ca be 60 lan moi bac):');
+DO_KHO.forEach((dk, b) => {
+  const tk = { vung: 0, luaTu: 0, soTu: 0, py: 0, caLua: 0, caSo: 0, caPy: 0 };
+  for (let i = 0; i < 100; i++) {
+    const de = deChuHanKt(bo, { nghe: true, viet: true, dk });
+    if (!de) continue;
+    de.ds.forEach((q) => {
+      kiem(q);
+      if (q.k === 'xep' || q.k === 'noi' || (q.k === 'kt' && !q.zh)) tk.vung++;
+      if (q.k === 'kt' && q.zh && /^(Từ này nghĩa là gì|Chọn chữ Hán đúng nghĩa)/.test(q.c.lenh)) { tk.luaTu += q.lua.length; tk.soTu++; }
+    });
+  }
+  for (let i = 0; i < 60; i++) {
+    const de = deCaKt(bo, 1, { dk });
+    if (!de) continue;
+    de.ds.forEach((q) => { kiem(q); tk.caSo++; tk.caLua += q.lua.length || 0; if (q.hoi && q.hoi.ctx) tk.caPy++; });
+  }
+  console.log('  bac ' + b + ' (cap ' + BAC_TU[b] + '+): ngu phap/xep/noi ' + (tk.vung / 100).toFixed(1) + '/10 cau · lua chon cau tu ' + (tk.luaTu / Math.max(1, tk.soTu)).toFixed(1) +
+    ' · ca be: ' + (tk.caLua / Math.max(1, tk.caSo)).toFixed(1) + ' lua chon, pinyin ' + Math.round(100 * tk.caPy / Math.max(1, tk.caSo)) + '% · hop qua can ' + dk.chDat + '/10 · gio ca ×' + dk.giay);
+});
+void CAP_MAU;
 console.log('Bai cho phep:', urls.join(', '), '| tu:', ng.vocab.length, '| trac nghiem bai:', ng.mcs.length, '| xep cau:', ng.sorts.length);
 console.log('Da kiem', soCau, 'cau', JSON.stringify(theoKieu), '->', loi ? loi + ' LOI' : 'tat ca thuoc bai cho phep ✓');
 // ---- Ban do phieu luu (nong-trai-phieuluu.js): cau moi vung dat cung chi tu bai cho phep ----

@@ -28,6 +28,14 @@ const CAY = {
   khoaitay: { zh: '土豆', py: 'tǔdòu', vn: 'Khoai tây', lv: 5, gia: 18, phut: 240, ban: 30, xp: 7 },
   duahau: { zh: '西瓜', py: 'xīguā', vn: 'Dưa hấu', lv: 7, gia: 38, phut: 600, ban: 66, xp: 12 },
   nho: { zh: '葡萄', py: 'pútao', vn: 'Nho', lv: 8, gia: 46, phut: 720, ban: 80, xp: 14 },
+  // Cay cap cao (2026-11-15): lau lon, ban duoc gia; lai / gio ~ 8–10 xu/gio/o (nhu nho) — khong phai "may in xu"
+  cha: { zh: '茶', py: 'chá', vn: 'Chè (lá trà tươi)', lv: 32, gia: 60, phut: 600, ban: 100, xp: 16 },
+  nuomi: { zh: '糯米', py: 'nuòmǐ', vn: 'Gạo nếp', lv: 34, gia: 50, phut: 480, ban: 85, xp: 15 },
+  zhusun: { zh: '竹笋', py: 'zhúsǔn', vn: 'Măng tre', lv: 38, gia: 70, phut: 720, ban: 120, xp: 18 },
+  lizhi: { zh: '荔枝', py: 'lìzhī', vn: 'Vải thiều', lv: 44, gia: 90, phut: 900, ban: 155, xp: 21 },
+  lianou: { zh: '莲藕', py: 'lián\'ǒu', vn: 'Củ sen', lv: 50, gia: 110, phut: 1080, ban: 190, xp: 24 },
+  hongzao: { zh: '红枣', py: 'hóngzǎo', vn: 'Táo đỏ', lv: 62, gia: 130, phut: 1200, ban: 225, xp: 28 },
+  mudan: { zh: '牡丹', py: 'mǔdān', vn: 'Hoa mẫu đơn', lv: 75, gia: 160, phut: 1440, ban: 280, xp: 32 },
   // Cay quy 珍稀 (2026-11-13): KHONG mua hat duoc — chi gieo bang hat quy (vong quay, ban do phieu luu, dau gia).
   // lv 99 = khong bao gio "mo khoa theo cap" -> khong vao don hang, dac san, hop qua, gieo hang loat.
   nhansam: { zh: '人参', py: 'rénshēn', vn: 'Nhân sâm', lv: 99, gia: 0, phut: 480, ban: 110, xp: 10, hiem: 1 },
@@ -90,6 +98,10 @@ const CON = {
   ho: { zh: '老虎', py: 'lǎohǔ', vn: 'Hổ', lv: 20, sao: 320, sp: 'jinianpin', phut: 720, xp: 18 },
   khunglong: { zh: '恐龙', py: 'kǒnglóng', vn: 'Khủng long', lv: 25, sao: 450, sp: 'kongdan', phut: 960, xp: 25 },
   gautruc: { zh: '熊猫', py: 'xióngmāo', vn: 'Gấu trúc', lv: 30, sao: 600, sp: 'gaubong', phut: 1200, xp: 30 },
+  // Vat nuoi cap cao (2026-11-15): tra bang SAO hoc tap; san pham la nguyen lieu cho xuong to lua / xuong tra
+  can: { zh: '桑蚕', py: 'sāngcán', vn: 'Tằm dâu', lv: 40, sao: 650, sp: 'canjian', phut: 600, xp: 22 },
+  maoniu: { zh: '牦牛', py: 'máoniú', vn: 'Bò Tây Tạng', lv: 55, sao: 850, sp: 'maoniunai', phut: 720, xp: 26 },
+  kongque: { zh: '孔雀', py: 'kǒngquè', vn: 'Chim công', lv: 68, sao: 1100, sp: 'kongqueyu', phut: 1440, xp: 32 },
 };
 const CON_TOI_DA = 6; // moi loai toi da 6 con
 
@@ -105,6 +117,9 @@ const SP = {
   jinianpin: { zh: '纪念品', py: 'jìniànpǐn', vn: 'Quà lưu niệm hổ', ban: 200 },
   kongdan: { zh: '恐龙蛋', py: 'kǒnglóng dàn', vn: 'Trứng khủng long', ban: 300 },
   gaubong: { zh: '熊猫玩偶', py: 'xióngmāo wán\'ǒu', vn: 'Gấu bông gấu trúc', ban: 420 },
+  canjian: { zh: '蚕茧', py: 'cánjiǎn', vn: 'Kén tằm', ban: 150 },
+  maoniunai: { zh: '牦牛奶', py: 'máoniú nǎi', vn: 'Sữa bò Tây Tạng', ban: 200 },
+  kongqueyu: { zh: '孔雀羽毛', py: 'kǒngquè yǔmáo', vn: 'Lông chim công', ban: 480 },
 };
 Object.keys(CAY).forEach((k) => { SP[k] = { zh: CAY[k].zh, py: CAY[k].py, vn: CAY[k].vn, ban: CAY[k].ban }; if (CAY[k].hiem) SP[k].hiem = 1; });
 // Hang che bien (nha may) + hang mua o cho (nguyen lieu, thuc an chan nuoi) — danh muc o nong-trai-xuong.js
@@ -177,6 +192,7 @@ const LUONG = { lua: '斤', carot: '根', ngo: '根', caibap: '棵', dautay: '�
 Object.keys(CA).forEach((k) => { LUONG[k] = '条'; });
 Object.assign(LUONG, { 'yu-tang': '碗', 'fanqie-dan': '盘', 'hongshao-yu': '盘', 'xigua-zhi': '杯', shuiguo: '盘', 'songlu-fan': '碗', manhan: '桌', 'konglong-gao': '个' });
 Object.assign(LUONG, { nhansam: '根', tuyetlien: '朵', 'nailao-mianbao': '个', 'suannai-bei': '杯' }, XuongCat.LUONG);
+Object.assign(LUONG, { cha: '斤', nuomi: '斤', zhusun: '根', lizhi: '斤', lianou: '节', hongzao: '斤', mudan: '朵', canjian: '个', maoniunai: '瓶', kongqueyu: '根' });
 const SO_ZH = ['', '一', '两', '三', '四', '五'];
 // Bang "Can mua" o cho cong dong: moi em toi da 2 tin, xu giu lai khi dang, qua 2 ngay tu huy tra xu
 const CAN_TOI_DA = 2, CAN_SL_TOI_DA = 5, CAN_HAN_MS = 2 * 86400000;
@@ -192,7 +208,7 @@ const MAC_CA = [
 const VN_MAC_CA = { '这个多少钱？': 'Cái này bao nhiêu tiền?', '这个怎么卖？': 'Cái này bán thế nào?', '太贵了，便宜一点儿吧！': 'Đắt quá, rẻ chút đi!',
   '能便宜一点儿吗？': 'Rẻ chút được không?', '好，我买了。': 'Được, tôi mua.', '好的，我要这个。': 'Được, tôi lấy cái này.' };
 const SO_PY = ['', 'yì', 'liǎng', 'sān', 'sì', 'wǔ'];
-const LUONG_PY = { '袋': 'dài', '盒': 'hé', '块': 'kuài', '斤': 'jīn', '根': 'gēn', '棵': 'kē', '个': 'ge', '朵': 'duǒ', '瓶': 'píng', '碗': 'wǎn', '杯': 'bēi', '份': 'fèn', '盘': 'pán', '串': 'chuàn', '张': 'zhāng', '条': 'tiáo', '桌': 'zhuō' };
+const LUONG_PY = { '袋': 'dài', '盒': 'hé', '块': 'kuài', '斤': 'jīn', '根': 'gēn', '棵': 'kē', '个': 'ge', '朵': 'duǒ', '瓶': 'píng', '碗': 'wǎn', '杯': 'bēi', '份': 'fèn', '盘': 'pán', '串': 'chuàn', '张': 'zhāng', '条': 'tiáo', '桌': 'zhuō', '节': 'jié', '包': 'bāo', '匹': 'pǐ' };
 
 // Do trang tri: tra bang sao hoac xu; dep = diem "dep" cua nong trai; w = 2 la vat 2x2
 const TT = {
@@ -229,6 +245,31 @@ const TT = {
   bonsai: { zh: '盆景', py: 'pénjǐng', vn: 'Cây bonsai', lv: 22, sao: 130, dep: 65 },
   'cot-rong': { zh: '龙柱', py: 'lóngzhù', vn: 'Cột rồng', lv: 25, sao: 170, dep: 85 },
   'cung-dien': { zh: '宫殿', py: 'gōngdiàn', vn: 'Cung điện', lv: 30, sao: 400, dep: 220, w: 2 },
+  // Trang tri cap cao (2026-11-15)
+  meihua: { zh: '梅花', py: 'méihuā', vn: 'Cây hoa mai đỏ', lv: 38, sao: 140, dep: 70 },
+  jinlichi: { zh: '锦鲤池', py: 'jǐnlǐ chí', vn: 'Hồ cá koi', lv: 46, xu: 2500, dep: 120, w: 2 },
+  fengzheng: { zh: '风筝', py: 'fēngzheng', vn: 'Diều rồng', lv: 56, sao: 180, dep: 85 },
+  fenghuang: { zh: '凤凰', py: 'fènghuáng', vn: 'Tượng phượng hoàng', lv: 76, sao: 300, dep: 140 },
+  // Cong trinh moc cap (moc: 1): chi mua o cua hang khi DU CAP, moi em 1 cai; doc: 1 de KHONG roi ra o
+  // vong quay / hop qua / dau gia he thong (cac kho ngau nhien deu bo qua do doc quyen)
+  'lm-yuedongmen': { zh: '月洞门', py: 'yuèdòngmén', vn: 'Cổng trăng', lv: 35, xu: 3000, dep: 130, w: 2, moc: 1, doc: 1 },
+  'lm-jiuquqiao': { zh: '九曲桥', py: 'jiǔqū qiáo', vn: 'Cầu chín khúc', lv: 40, xu: 5000, dep: 160, w: 2, moc: 1, doc: 1 },
+  'lm-tiantan': { zh: '天坛', py: 'Tiāntán', vn: 'Thiên Đàn', lv: 50, sao: 600, dep: 220, w: 2, moc: 1, doc: 1 },
+  'lm-changcheng': { zh: '长城', py: 'Chángchéng', vn: 'Đoạn Vạn Lý Trường Thành', lv: 60, xu: 10000, dep: 280, w: 2, moc: 1, doc: 1 },
+  'lm-jiulongbi': { zh: '九龙壁', py: 'jiǔlóngbì', vn: 'Bức tường chín rồng', lv: 70, sao: 900, dep: 340, w: 2, moc: 1, doc: 1 },
+  'lm-huanghelou': { zh: '黄鹤楼', py: 'Huánghè Lóu', vn: 'Lầu Hoàng Hạc', lv: 80, xu: 18000, dep: 420, w: 2, moc: 1, doc: 1 },
+  'lm-xiongmao': { zh: '熊猫乐园', py: 'xióngmāo lèyuán', vn: 'Khu bảo tồn gấu trúc', lv: 90, sao: 1200, dep: 520, w: 2, moc: 1, doc: 1 },
+  'lm-chuanqi': { zh: '传奇丰碑', py: 'chuánqí fēngbēi', vn: 'Tượng đài Huyền thoại', lv: 100, xu: 30000, dep: 800, w: 2, moc: 1, doc: 1 },
+  // Doc quyen: bien danh hieu khi len bac moi (bac 2–7)
+  'bac-1': { zh: '种田能手', py: 'zhòngtián néngshǒu', vn: 'Biển danh hiệu Nhà nông giỏi', lv: 1, doc: 1, dep: 15 },
+  'bac-2': { zh: '农场主', py: 'nóngchǎngzhǔ', vn: 'Biển danh hiệu Chủ trang trại', lv: 1, doc: 1, dep: 25 },
+  'bac-3': { zh: '大农场主', py: 'dà nóngchǎngzhǔ', vn: 'Biển danh hiệu Đại điền chủ', lv: 1, doc: 1, dep: 40 },
+  'bac-4': { zh: '农业专家', py: 'nóngyè zhuānjiā', vn: 'Biển danh hiệu Chuyên gia', lv: 1, doc: 1, dep: 60 },
+  'bac-5': { zh: '农业大师', py: 'nóngyè dàshī', vn: 'Biển danh hiệu Bậc thầy', lv: 1, doc: 1, dep: 85 },
+  'bac-6': { zh: '传奇农场主', py: 'chuánqí nóngchǎngzhǔ', vn: 'Biển danh hiệu Huyền thoại', lv: 1, doc: 1, dep: 120 },
+  // Doc quyen: nha kinh (xay o bang Cap do, nong-trai-capcao.js) + qua Nhiem vu chuyen gia
+  'nha-kinh': { zh: '温室', py: 'wēnshì', vn: 'Nhà kính', lv: 1, doc: 1, dep: 40, w: 2 },
+  'cg-ding': { zh: '专家鼎', py: 'zhuānjiā dǐng', vn: 'Đỉnh đồng chuyên gia', lv: 1, doc: 1, dep: 60 },
   // Doc quyen: chi mo khoa bang Bo suu tap chu Han (khong ban trong cua hang)
   'den-phuc': { zh: '福字灯笼', py: 'fúzì dēnglong', vn: 'Đèn lồng chữ Phúc', lv: 1, doc: 1, dep: 12 },
   'cau-doi': { zh: '春联', py: 'chūnlián', vn: 'Câu đối đỏ', lv: 1, doc: 1, dep: 18 },
@@ -269,6 +310,8 @@ const HOC_VI = [
 ];
 // Ban cho cua hang: goi dung ten tieng Trung +10%, sai chi 70%; han muc xu/ngay = 30 + 10 x sao hoc hom nay
 const BAN_CO_BAN = 30, BAN_MOI_SAO = 10;
+// tren cap 30 han muc nhan them heSoBanCap (1%/cap, toi da ×1,7) — hang cap cao dat hon nhung van phai hoc moi ban duoc
+const toiDaBan = (homNay, lv) => Math.round((BAN_CO_BAN + BAN_MOI_SAO * homNay) * heSoBanCap(lv || 1));
 
 // Nha: nang cap 1 -> 2 -> 3
 const NHA = [
@@ -299,12 +342,95 @@ const CHAI_XU = 3; // gio qua giau trong bui cay canh ruong moi ngay (bam nhat; 
 function giaODat(soO) { return 3 + Math.max(0, soO - O_MIEN_PHI); }
 function oToiDa(lv) { return Math.min(40, 6 + 2 * lv); }
 
+// ---- Cap nong trai 1–100 (2026-11-15, co giao: "them level, level cao kho hon va nhieu dieu thu vi hon") ----
+// Cap 1–30 GIU NGUYEN cong thuc cu (5·n·(n−1) kinh nghiem) -> khong ai bi tut cap.
+// Tu cap 31: moi cap can them XP_TUYEN·(n−30) + XP_BINH·(n−30)² kinh nghiem so voi cong thuc cu
+// -> buoc cap 31 = 322, cap 45 = 1190, cap 60 = 2990, cap 80 = 6790, cap 100 = 12190 (xem bang trong bao cao).
+const LV_CU = 30, LV_TOI_DA = 100, XP_TUYEN = 20, XP_BINH = 2;
+const XP_LV = [0, 0];
+for (let n = 2; n <= LV_TOI_DA; n++) {
+  const t = Math.max(0, n - LV_CU);
+  XP_LV[n] = XP_LV[n - 1] + 10 * (n - 1) + XP_TUYEN * t + XP_BINH * t * t;
+}
 function lvTuXp(xp) {
   let n = 1;
-  while (n < 30 && 5 * n * (n + 1) <= xp) n++;
+  while (n < LV_TOI_DA && XP_LV[n + 1] <= xp) n++;
   return n;
 }
-function xpCuaLv(n) { return 5 * n * (n - 1); }
+// kinh nghiem can de DAT cap n (cap 101 = "het cap": tra ve moc cap 100 de thanh XP day)
+function xpCuaLv(n) { return XP_LV[Math.max(1, Math.min(LV_TOI_DA, n))]; }
+
+// Danh hieu theo cap (khung huy hieu rieng moi bac, hien tren chip cap, bien ten thi tran, khi sang tham).
+// Len bac moi: the chuc mung + bien danh hieu doc quyen (tt 'bac-<i>') + xu thuong.
+const BAC = [
+  { tu: 1, den: 9, zh: '农民', py: 'nóngmín', vn: 'Nông dân', ic: '🌱' },
+  { tu: 10, den: 19, zh: '种田能手', py: 'zhòngtián néngshǒu', vn: 'Nhà nông giỏi', ic: '🌾' },
+  { tu: 20, den: 29, zh: '农场主', py: 'nóngchǎngzhǔ', vn: 'Chủ trang trại', ic: '🏡' },
+  { tu: 30, den: 44, zh: '大农场主', py: 'dà nóngchǎngzhǔ', vn: 'Đại điền chủ', ic: '🏯' },
+  { tu: 45, den: 59, zh: '农业专家', py: 'nóngyè zhuānjiā', vn: 'Chuyên gia nông nghiệp', ic: '🎓' },
+  { tu: 60, den: 79, zh: '农业大师', py: 'nóngyè dàshī', vn: 'Bậc thầy nông nghiệp', ic: '👑' },
+  { tu: 80, den: 100, zh: '传奇农场主', py: 'chuánqí nóngchǎngzhǔ', vn: 'Huyền thoại', ic: '🐉' },
+];
+const bacCua = (lv) => { let i = 0; while (i < BAC.length - 1 && lv >= BAC[i + 1].tu) i++; return i; };
+// Do kho cau hoi theo bac (may chu ap dung; KHONG BAO GIO lay bai em chua hoc — chi doi DANG cau / so lua chon / goi y / gio):
+//  lua  = so lua chon toi thieu cua cau tu vung (0 = giu nhu cu); them lua chon nhieu = tu / nghia khac CUNG bo bai em hoc
+//  py   = cau de (ca be, cau tuoi nuoc) con hien pinyin
+//  np   = so cau ngu phap / xep cau / noi tu THEM vao Thu thach chu Han (thay cho cau nghia don gian)
+//  dich = ca o bac cao ra dang cau cua bac ca kho hon 1 bac (ca be cung hoi nghia + viet, khong pinyin)
+//  giay = he so dong ho cau ca co gio (0.75 = con 75% thoi gian)
+//  chDat = so cau dung (tren 10) de mo hop qua Thu thach chu Han
+const DO_KHO = [
+  { lua: 0, py: 1, np: 0, dich: 0, giay: 1, chDat: 8 },     // 1–9   (nhu cu)
+  { lua: 0, py: 1, np: 0, dich: 0, giay: 1, chDat: 8 },     // 10–19 (nhu cu)
+  { lua: 0, py: 1, np: 0, dich: 0, giay: 1, chDat: 8 },     // 20–29 (nhu cu)
+  { lua: 4, py: 1, np: 1, dich: 0, giay: 0.9, chDat: 8 },   // 30–44
+  { lua: 5, py: 0, np: 2, dich: 1, giay: 0.85, chDat: 9 },  // 45–59
+  { lua: 5, py: 0, np: 3, dich: 1, giay: 0.8, chDat: 9 },   // 60–79
+  { lua: 5, py: 0, np: 4, dich: 1, giay: 0.75, chDat: 9 },  // 80–100
+];
+const doKho = (lv) => DO_KHO[bacCua(lv)];
+// Thuong len cap (tra 1 lan / cap, f.lvT = cap da tra toi): xu, 2 hat cua cay tot nhat da mo, moc cap +1 hat quy,
+// len bac moi +XU_BAC × cap. Tai khoan cu: chi tra tu cap hien tai tro di (khong tra bu cap 2–30 da qua).
+const MOC_CAP = [35, 40, 50, 60, 70, 80, 90, 100];
+const XU_BAC = 10;
+const xuLenCap = (n) => (n <= LV_CU ? 3 * n : 5 * n);
+// Han muc ban moi ngay tang nhe theo cap tren 30 (1%/cap, toi da ×1,7) — van nhan theo sao hoc hom nay
+const heSoBanCap = (lv) => 1 + Math.min(0.7, Math.max(0, lv - LV_CU) * 0.01);
+// Don hang ngay tra 1,6 × gia hang (cap 1–30); tren 30 giam 0,01/cap con 1,3 tu cap 60 — hang cap cao dat gap 2–3 lan
+// nen don van lon hon, nhung khong phinh xu theo gia hang (xem mo phong kinh te trong bao cao)
+const heSoDon = (lv) => Math.max(1.3, 1.6 - Math.max(0, lv - LV_CU) * 0.01);
+// Cay tot nhat da mo o cap n (hat thuong len cap)
+const cayTotNhat = (n) => Object.keys(CAY).filter((k) => !CAY[k].hiem && CAY[k].lv <= n).sort((a, b) => CAY[b].lv - CAY[a].lv || CAY[b].ban - CAY[a].ban)[0] || 'lua';
+// Thuong cua 1 cap (dung cho trang Cap do & phan thuong + khi tra): { xu, hat: {k, n}, quy, bac, tt }
+function thuongCap(n) {
+  const t = { xu: xuLenCap(n), hat: { k: cayTotNhat(n), n: 2 } };
+  if (MOC_CAP.indexOf(n) >= 0) t.quy = 1;
+  const b = BAC.findIndex((x, i) => i > 0 && x.tu === n);
+  if (b > 0) { t.bac = b; t.tt = 'bac-' + b; t.xu += XU_BAC * n; }
+  return t;
+}
+// Tra thuong len cap / len bac DUNG 1 LAN — goi trong ghi() nen moi duong cong kinh nghiem (thu hoach, cau ca,
+// nha may, hop qua...) deu duoc tinh, khong phu thuoc client. f.lvT = cap da tra toi, f.bacT = bac da tang bien,
+// f.capLs = thuong chua xem (client hien the chuc mung roi gui 'capxem').
+function traThuongCap(f) {
+  const lv = lvTuXp(f.xp || 0), ds = [];
+  // moc bat dau: tai khoan cu chi nhan thuong tu cap hien tai (toi da cap 30) tro di
+  if (!Number.isInteger(f.lvT)) f.lvT = Math.min(lv, LV_CU);
+  if (!Number.isInteger(f.bacT)) f.bacT = 0;
+  f.tui = f.tui || {}; f.hat = f.hat || {};
+  // bien danh hieu cua cac bac da dat truoc moc (khong kem xu)
+  while (f.bacT < bacCua(f.lvT)) { f.bacT++; const k = 'bac-' + f.bacT; f.tui[k] = (f.tui[k] || 0) + 1; ds.push({ lv: BAC[f.bacT].tu, bac: f.bacT, tt: k, cu: 1 }); }
+  while (f.lvT < lv) {
+    const n = ++f.lvT, t = thuongCap(n), e = { lv: n, xu: t.xu, hat: t.hat };
+    f.xu += t.xu;
+    f.hat[t.hat.k] = (f.hat[t.hat.k] || 0) + t.hat.n;
+    if (t.quy) { const k = CAY_HIEM[n % CAY_HIEM.length]; f.hat[k] = (f.hat[k] || 0) + 1; e.quy = k; }
+    if (t.bac && t.bac > f.bacT) { f.bacT = t.bac; f.tui[t.tt] = (f.tui[t.tt] || 0) + 1; e.bac = t.bac; e.tt = t.tt; }
+    ds.push(e);
+  }
+  if (ds.length) f.capLs = (Array.isArray(f.capLs) ? f.capLs : []).concat(ds).slice(-80);
+  return ds.length > 0;
+}
 
 // Nha may che bien dat tren nong trai: vat 'xg-<ma>' rong 2x2 (nong-trai-xuong.js)
 const xgCua = (k) => (/^xg-/.test(String(k)) && XuongCat.XUONG[String(k).slice(3)] ? String(k).slice(3) : '');
@@ -368,7 +494,7 @@ function donHang(f, userId, ngay, ngoai) {
   const coCon = {};
   f.o.forEach((o) => { if (CON[o.k]) coCon[o.k] = 1; });
   const hang = Object.keys(CAY).filter((k) => CAY[k].lv <= lv)
-    .concat(Object.keys(CON).filter((k) => coCon[k]).map((k) => CON[k].sp), XuongCat.hangCua(f));
+    .concat(Object.keys(CON).filter((k) => coCon[k]).map((k) => CON[k].sp), XuongCat.hangCua(f, lv));
   const r = soNgauNhien(userId + '|' + ngay);
   const ds = [];
   for (let i = 0; i < 3; i++) {
@@ -386,7 +512,7 @@ function donHang(f, userId, ngay, ngoai) {
       tien += SP[k].ban * sl;
       xp += sl;
     }
-    ds.push({ can, xu: Math.round(tien * 1.6) + 5, xp });
+    ds.push({ can, xu: Math.round(tien * heSoDon(lv)) + 5, xp });
   }
   // Don thu 3: can dac san cua ban khac -> phai mua ban voi nhau (tra cong cao hon don thuong)
   if (ngoai && ngoai.length) {
@@ -476,14 +602,32 @@ const taiConHan = (t) => (t.d ? t.d === ngayVn() : Date.now() - t.bd < TAI_HAN_M
 const taiDang = (f, k) => !!(f.tai && !f.tai.xong && TAI[f.tai.k] && taiConHan(f.tai) && (!k || f.tai.k === k));
 // gia tri hieu ung cua thien tai dang co (0 neu khong co)
 // Khien bao ve 护盾: hoc du KHIEN_SAO sao trong ngay thi thien tai khong con tac dung (van chong de nhan thuong)
-const KHIEN_SAO = 30;
-const taiHieu = (f, x) => (taiDang(f) && !f.tai.khien && TAI[f.tai.k][x]) || 0;
+const KHIEN_SAO = 30, NK_SAO = 10;
+// Thien tai o bac cao (ghi vao f.tai.m luc ap den, giu nguyen ca ngay): manh hon mot chut (cham them he, can them
+// phan viec) nhung chong xong duoc nhieu xu hon. Khien 30 sao van chan HET hieu ung — hoc du thi khong bao gio bi phat.
+const TAI_MANH = [null, null, null,
+  { he: 0, can: 1, xu: 5 },      // 30–44
+  { he: 0.25, can: 1, xu: 10 },  // 45–59
+  { he: 0.25, can: 2, xu: 15 },  // 60–79
+  { he: 0.5, can: 2, xu: 20 },   // 80–100
+];
+const taiManh = (f) => (f.tai && TAI_MANH[f.tai.m]) || null;
+// Nha kinh (nong-trai-capcao.js): ngay em hoc du 10 sao (f.tai.nk = 1) thi cay trong ruong khong bi hieu ung thoi tiet
+const TAI_CAY = { cay: 1, thu: 1, khongTrong: 1, khongTuoi: 1 };
+const taiHieu = (f, x) => {
+  if (!taiDang(f) || f.tai.khien || (f.tai.nk && TAI_CAY[x])) return 0;
+  const v = TAI[f.tai.k][x] || 0, m = taiManh(f);
+  return v && m && m.he && (x === 'cay' || x === 'con') ? v + m.he : v;
+};
 const heSoTai = (f, x) => taiHieu(f, x) || 1;
+const canTai = (f) => TAI[f.tai.k].can + ((taiManh(f) || {}).can || 0);
+const xuTai = (f) => TAI_XU + ((taiManh(f) || {}).xu || 0);
 function taiChoHs(f) {
   if (!taiDang(f)) return null;
-  const t = TAI[f.tai.k];
+  const t = TAI[f.tai.k], m = taiManh(f);
   const het = f.tai.d ? Date.parse(f.tai.d + 'T00:00:00Z') - 7 * 3600000 + 86400000 : f.tai.bd + TAI_HAN_MS;
-  return Object.assign({ k: f.tai.k, co: f.tai.co, bd: f.tai.bd, conMs: Math.max(0, het - Date.now()), xu: TAI_XU, khien: !!f.tai.khien }, t);
+  return Object.assign({ k: f.tai.k, co: f.tai.co, bd: f.tai.bd, conMs: Math.max(0, het - Date.now()), khien: !!f.tai.khien }, t,
+    { xu: xuTai(f), can: canTai(f), manh: m ? { he: m.he, can: m.can } : null, nk: !!f.tai.nk });
 }
 // Mo dan tinh nang theo cap (co giao); client hien loi gioi thieu ngan khi len cap / lan dau mo
 const MO_TN = {
@@ -506,11 +650,17 @@ const MO_TN = {
   // them 2026-11-14 (tu thien / tang qua cho ban) — xem nong-trai-tuthien.js
   qt: { lv: 2, zh: '爱心礼物', vn: 'Từ thiện · Tặng quà cho bạn', gt: 'Tặng xu, nông sản trong kho hoặc hạt giống cho bạn cùng lớp, kèm một lời chúc tiếng Trung. Bạn nhận quà bấm “Cảm ơn 谢谢！” thì em được +1 ❤. Hàng quý và hàng mua ở chợ không tặng được.' },
   dg: { lv: 10, zh: '拍卖会', vn: 'Đấu giá', gt: 'Mỗi tuần có phiên đấu giá hạt giống quý, vật nuôi hiếm, đồ trang trí đặc biệt. Đặt giá bằng xu — xu được giữ lại, ai trả cao hơn thì em được hoàn xu ngay.' },
+  // them 2026-11-15 (cap cao 31–100) — xem nong-trai-capcao.js
+  nhk: { lv: 35, zh: '温室', vn: 'Nhà kính', gt: 'Xây nhà kính trên nông trại: ngày nào em học từ 10 sao, cây trong ruộng không sợ thiên tai thời tiết (hạn hán, mưa bão, sâu bệnh…). Vật nuôi và kho vẫn cần khiên 30 sao.' },
+  cg: { lv: 40, zh: '专家任务', vn: 'Nhiệm vụ chuyên gia', gt: 'Mỗi tuần một thử thách khó: 10 câu từ bài em đã học, nhiều ngữ pháp, xếp câu, nhiều lựa chọn hơn, không pinyin. Đúng từ 8 câu được hạt giống quý, xu và đỉnh đồng chuyên gia.' },
+  le: { lv: 50, zh: '农场节', vn: 'Lễ hội nông trại', gt: 'Mỗi tháng em mở một lễ hội 2 ngày ở nông trại mình. Bạn cùng lớp sang dự, trả lời 1 câu từ bài của bạn ấy là vào hội — mỗi khách em được xu, đủ 5 khách được hạt giống quý.' },
+  ht: { lv: 60, zh: '师徒', vn: 'Kèm học trò', gt: 'Nhận kèm tối đa 3 bạn cấp thấp hơn (cấp ≤ 40). Mỗi ngày gửi một lời khuyên học tập; hôm nào học trò học đủ 20 sao thì cả thầy lẫn trò cùng có thưởng. Trò không học thì không có thưởng.' },
 };
 // Giai dau thi dua theo cap nong trai
 const GIAI = [
   { tu: 1, den: 5, zh: '铜', vn: 'Đồng' }, { tu: 6, den: 10, zh: '银', vn: 'Bạc' }, { tu: 11, den: 15, zh: '金', vn: 'Vàng' },
-  { tu: 16, den: 20, zh: '白金', vn: 'Bạch kim' }, { tu: 21, den: 99, zh: '钻石', vn: 'Kim cương' },
+  { tu: 16, den: 20, zh: '白金', vn: 'Bạch kim' }, { tu: 21, den: 30, zh: '钻石', vn: 'Kim cương' },
+  { tu: 31, den: 59, zh: '大师', vn: 'Cao thủ' }, { tu: 60, den: 100, zh: '王者', vn: 'Vương giả' },
 ];
 const giaiCua = (lv) => GIAI.findIndex((g) => lv >= g.tu && lv <= g.den);
 // On cach quang (Leitner): tu tra loi dung len hop, sai ve hop 0; hop n hen on lai sau ON_NGAY[n] ngay
@@ -778,6 +928,7 @@ module.exports = function ganNongTrai(app, d) {
     return Object.assign(nongTraiMoi(), raw);
   }
   async function ghi(userId, f) {
+    traThuongCap(f); // thuong len cap (1 lan / cap) — truoc khi luu
     const lv = lvTuXp(f.xp), dep = diemDep(f);
     if (!d.USE_DB) {
       const all = d.readJsonFile(FILE) || {};
@@ -840,24 +991,39 @@ module.exports = function ganNongTrai(app, d) {
   // Han muc xu kiem tu BAN HANG moi ngay (cua hang + thuong lai + nha hang + don lon): 30 + 10 x sao hoc hom nay
   async function hanMuc(userId, f) {
     const homNay = saoHoc(await d.loadStar(userId)).homNay;
-    const toiDa = BAN_CO_BAN + BAN_MOI_SAO * homNay;
+    const toiDa = toiDaBan(homNay, lvTuXp(f.xp));
     return { toiDa, con: Math.max(0, toiDa - daBanHomNay(f)), homNay };
   }
   function ghiBanNgay(f, xu) { f.banNgay = { d: d.vnDayKey(), xu: daBanHomNay(f) + xu }; }
   // Nhiem vu hom nay: viec hoc + viec nong trai (mo theo cap); du 3 viec / du het -> nhan thuong
+  // Muc tieu nhiem vu theo bac (cap cao: muc tieu lon hon, thuong lon hon) — bac 0–2 giu nguyen nhu cu
+  const NV_BAC = [
+    { hoc: 20, don: 1, cau: 1, nh: 1, xu: [10, 20] }, { hoc: 20, don: 1, cau: 1, nh: 1, xu: [10, 20] }, { hoc: 20, don: 1, cau: 1, nh: 1, xu: [10, 20] },
+    { hoc: 25, don: 2, cau: 2, nh: 1, xu: [20, 40] },  // 30–44
+    { hoc: 30, don: 2, cau: 2, nh: 2, xu: [30, 60] },  // 45–59
+    { hoc: 40, don: 3, cau: 3, nh: 2, xu: [40, 80] },  // 60–79
+    { hoc: 50, don: 3, cau: 3, nh: 3, xu: [50, 100] }, // 80–100
+  ];
   function nhiemVu(f, homNay, lv) {
-    const ngay = d.vnDayKey();
+    const ngay = d.vnDayKey(), m = NV_BAC[bacCua(lv)];
+    const soDon = f.don && f.don.d === ngay ? Object.values(f.don.x || {}).filter(Boolean).length : 0;
     const ds = [
-      { k: 'hoc', ten: 'Học bài được 20 sao', xong: homNay >= 20 },
+      { k: 'hoc', ten: 'Học bài được ' + m.hoc + ' sao', xong: homNay >= m.hoc },
       { k: 'ruong', ten: 'Mở 1 rương học tập', xong: ruongDaMo(f).length > 0 },
       { k: 'chuhan', ten: 'Thử thách chữ Hán — mở 1 hộp quà', xong: !!(f.chQua && f.chQua.d === ngay && f.chQua.n > 0) },
-      { k: 'don', ten: 'Giao 1 đơn hàng', xong: !!(f.don && f.don.d === ngay && Object.values(f.don.x || {}).some(Boolean)) },
+      { k: 'don', ten: 'Giao ' + m.don + ' đơn hàng' + (m.don > 1 ? ' (' + Math.min(soDon, m.don) + '/' + m.don + ')' : ''), xong: soDon >= m.don },
     ];
     if (f.tai && f.tai.d === ngay) ds.push({ k: 'tai', ten: 'Chống thiên tai hôm nay', xong: f.tai.xong === 'ok' });
-    if (lv >= MO_TN.cau.lv) ds.push({ k: 'cau', ten: 'Thả câu ở hồ cá', xong: !!(f.hc && f.hc.d === ngay && f.hc.n > 0) });
-    if (lv >= MO_TN.nh.lv) ds.push({ k: 'nh', ten: 'Phục vụ 1 khách nhà hàng', xong: !!(f.nh && f.nh.d === ngay && f.nh.ds.some((o) => o.xong)) });
+    if (lv >= MO_TN.cau.lv) {
+      const n = f.hc && f.hc.d === ngay ? f.hc.n || 0 : 0;
+      ds.push({ k: 'cau', ten: m.cau > 1 ? 'Thả câu ' + m.cau + ' lần (' + Math.min(n, m.cau) + '/' + m.cau + ')' : 'Thả câu ở hồ cá', xong: n >= m.cau });
+    }
+    if (lv >= MO_TN.nh.lv) {
+      const n = f.nh && f.nh.d === ngay ? f.nh.ds.filter((o) => o.xong).length : 0;
+      ds.push({ k: 'nh', ten: 'Phục vụ ' + m.nh + ' khách nhà hàng' + (m.nh > 1 ? ' (' + Math.min(n, m.nh) + '/' + m.nh + ')' : ''), xong: n >= m.nh });
+    }
     const nhan = f.nv && f.nv.d === ngay ? f.nv.nhan : [];
-    return { ds, xong: ds.filter((x) => x.xong).length, nhan, thuong: [{ can: 3, xu: 10 }, { can: ds.length, xu: 20, luot: 1 }] };
+    return { ds, xong: ds.filter((x) => x.xong).length, nhan, thuong: [{ can: 3, xu: m.xu[0] }, { can: ds.length, xu: m.xu[1], luot: 1 }] };
   }
   function soThe(f) { return Object.keys(f.the || {}).filter((z) => f.the[z][0] >= THE_DUNG).length; }
   // Khach nha hang hom nay (tao lan dau trong ngay): uu tien mon da mo khoa, co ca mon cao cap
@@ -907,9 +1073,10 @@ module.exports = function ganNongTrai(app, d) {
       vq: vongQuay(f, sh.homNay),
       nv: nhiemVu(f, sh.homNay, lv),
       cau: moiCa({ n: f.hc && f.hc.d === ngay ? f.hc.n || 0 : 0 }, sh.homNay),
-      ban: { da: daBanHomNay(f), toiDa: BAN_CO_BAN + BAN_MOI_SAO * sh.homNay }, x2thu: !!f.x2thu,
+      ban: { da: daBanHomNay(f), toiDa: toiDaBan(sh.homNay, lv) }, x2thu: !!f.x2thu,
       the: soThe(f), theMoc: f.theMoc || 0,
-      xu: f.xu, xp: f.xp, lv, xpLv: xpCuaLv(lv), xpSau: xpCuaLv(lv + 1),
+      xu: f.xu, xp: f.xp, lv, xpLv: xpCuaLv(lv), xpSau: lv >= LV_TOI_DA ? xpCuaLv(lv) : xpCuaLv(lv + 1),
+      bac: bacCua(lv), lvMax: LV_TOI_DA, capMoi: Array.isArray(f.capLs) ? f.capLs : [], doKho: doKho(lv),
       dat: f.dat, kich: DAT[f.dat], o: f.o, kho: f.kho, tui: f.tui,
       quaHomNay: f.ngay !== ngay, chuoi: f.chuoi,
       don, dep: diemDep(f), tim: f.tim || 0,
@@ -1121,7 +1288,7 @@ module.exports = function ganNongTrai(app, d) {
       const goiDung = String(b.goi || '') === SP[k].zh;
       const tien = Math.max(1, Math.round(SP[k].ban * n * (goiDung ? 1.1 : 0.7) * heSoCua(tt, k) * heSoTai(f, 'ban')));
       const homNay = saoHoc(await d.loadStar(userId)).homNay;
-      const toiDa = BAN_CO_BAN + BAN_MOI_SAO * homNay, da = daBanHomNay(f);
+      const toiDa = toiDaBan(homNay, lv), da = daBanHomNay(f);
       if (da + tien > toiDa) throw loi('Hạn mức bán cho cửa hàng hôm nay còn ' + Math.max(0, toiDa - da) + ' xu. Học thêm để mở rộng: mỗi sao học = +' + BAN_MOI_SAO + ' xu hạn mức!');
       f.banNgay = { d: ngay, xu: da + tien };
       f.kho[k] -= n;
@@ -1135,7 +1302,9 @@ module.exports = function ganNongTrai(app, d) {
       const x = Number(b.x), y = Number(b.y);
       const laO = k === 'o', con = CON[k], tt = TT[k], xgK = xgCua(k), xgM = xgK ? XuongCat.XUONG[xgK] : null;
       if (!laO && !con && !tt && !xgM) throw loi('Không có món này.');
-      if (a === 'mua' && tt && tt.doc) throw loi('Món này là quà độc quyền (Bộ sưu tập chữ Hán, công trình lớp, lễ hội) — không bán ở cửa hàng.');
+      if (a === 'mua' && tt && tt.doc && !tt.moc) throw loi('Món này là quà độc quyền (Bộ sưu tập chữ Hán, công trình lớp, lễ hội) — không bán ở cửa hàng.');
+      // cong trinh moc cap: moi em 1 cai (dang dat + trong tui)
+      if (a === 'mua' && tt && tt.moc && f.o.filter((o) => o.k === k).length + (f.tui[k] || 0) >= 1) throw loi('Em đã có ' + tt.vn + ' rồi — mỗi công trình mốc cấp chỉ có một.');
       const w = (tt && tt.w) || xgM ? 2 : 1;
       if (!datDuoc(f, x, y, w)) throw loi(xgM ? 'Nhà máy cần khoảng trống 2×2 ô — chọn chỗ rộng hơn, dời bớt đồ hoặc mở rộng đất nhé.' : 'Chỗ này không đặt được.');
       if (a === 'dat') {
@@ -1256,6 +1425,9 @@ module.exports = function ganNongTrai(app, d) {
       f.avMua = mua;
     } else if (a === 'xemnk') {
       f.nkXem = now;
+    } else if (a === 'capxem') {
+      // da xem the chuc mung len cap / len bac
+      f.capLs = [];
     } else if (a === 'chai') {
       // Gio qua trong bui cay (2026-11): nhat 1 lan / ngay VN -> +3 xu (lanLuot khoa theo hoc sinh, lan 2 bao loi)
       if (f.chai === ngay) throw loi('Hôm nay em đã nhặt giỏ quà rồi — mai quay lại ruộng tìm giỏ mới nhé!');
@@ -1371,7 +1543,8 @@ module.exports = function ganNongTrai(app, d) {
 
   const CATALOG = { VQ_X2_O, CAY_HIEM, MO_TN, GIAI, KHIEN_SAO, CA, CA_BAC, VQ_O, VQ_MOC, CAN_TOI_DA, CAN_SL_TOI_DA, MON, LUONG, LUONG_PY, CAY, CON, SP, TT, NHA, KHO, O_DAT, DAT, THU_MOI_O, CON_TOI_DA, O_MIEN_PHI, LOI_CHAO, GIUP_NGAY, SAP_SL_TOI_DA, NV_SAO, XU_MOI_SAO, RUONG,
     MOC_THE, HOC_VI, THE_DUNG, BAN_CO_BAN, BAN_MOI_SAO, TAI, TAI_GIUP_XU,
-    TIN_TU, TIN_MAU, TIN_HOI, TIN_BAN_NGAY, QUA_NGAY };
+    TIN_TU, TIN_MAU, TIN_HOI, TIN_BAN_NGAY, QUA_NGAY,
+    BAC, XP_LV, LV_TOI_DA, LV_CU, MOC_CAP, DO_KHO, XU_BAC };
 
   // Don dac biet moi ngay: can hang em CHUA tu lam ra (cay cap cao, san pham vat nuoi em chua co, mon an),
   // uu tien hang dang bay o cho cong dong; de bai chi viet bang chu Han
@@ -1409,7 +1582,12 @@ module.exports = function ganNongTrai(app, d) {
       if (donHomNay(f, req.user.id, d.vnDayKey(), ngoai).moi) await ghi(req.user.id, f);
       if (xetThienTai(f)) await ghi(req.user.id, f);
       // khien bao ve: hoc du KHIEN_SAO sao hom nay -> thien tai khong con tac dung
-      if (taiDang(f) && !f.tai.khien && saoHoc(await d.loadStar(req.user.id)).homNay >= KHIEN_SAO) { f.tai.khien = 1; await ghi(req.user.id, f); }
+      if (taiDang(f) && (!f.tai.khien || (!f.tai.nk && f.o.some((o) => o.k === 'nha-kinh')))) {
+        const hn = saoHoc(await d.loadStar(req.user.id)).homNay;
+        if (!f.tai.khien && hn >= KHIEN_SAO) { f.tai.khien = 1; await ghi(req.user.id, f); }
+        // nha kinh dang dat tren nong trai + hoc du NK_SAO sao hom nay -> cay khong bi thien tai thoi tiet
+        if (!f.tai.nk && hn >= NK_SAO && f.o.some((o) => o.k === 'nha-kinh')) { f.tai.nk = 1; await ghi(req.user.id, f); }
+      }
       // cac module kinh te (nhan cong lam viec, hang tiem het han ve kho, hop thu dau gia...) — moi ham tu ghi neu doi
       for (const fn of vaoHook) { try { if (await fn(req.user, f)) await ghi(req.user.id, f); } catch (e) { console.error('Nong trai (vao):', e.message); } }
       return trangThai(req.user.id, f);
@@ -1432,17 +1610,18 @@ module.exports = function ganNongTrai(app, d) {
     if (!ds.length) ds = Object.keys(TAI).filter((k) => (!TAI[k].canCon || coCon) && k !== gan[0]);
     const k = ds[Math.floor(Math.random() * ds.length)];
     f.tai = { k, d: ngay, bd: now, co: 0, giup: [] };
+    if (TAI_MANH[bacCua(lvTuXp(f.xp))]) f.tai.m = bacCua(lvTuXp(f.xp)); // bac cao: manh hon (TAI_MANH)
     f.taiDa = [k].concat(gan).slice(0, TAI_NHO);
     delete f.taiq;
     return true;
   }
   // Mot phan viec chong thien tai hoan thanh (em tu lam hoac ban giup); du thi thien tai qua di
   function lamTai(f, n) {
-    const t = TAI[f.tai.k];
-    f.tai.co = Math.min(t.can, f.tai.co + n);
-    if (f.tai.co >= t.can) {
+    const can = canTai(f);
+    f.tai.co = Math.min(can, f.tai.co + n);
+    if (f.tai.co >= can) {
       f.tai.xong = 'ok'; f.tai.kt = Date.now();
-      f.xu += TAI_XU; f.xp += 5;
+      f.xu += xuTai(f); f.xp += 5;
       return true;
     }
     return false;
@@ -1754,10 +1933,27 @@ module.exports = function ganNongTrai(app, d) {
     return ng.vocab.length >= 4 ? ng : null;
   }
   // Giu n lua chon (luon co dap an dung)
-  function catLua(c, n) {
-    if (c.k || !n || c.opts.length <= n) return c;
+  function catLua(c, n, ng) {
+    if (c.k || !n) return c;
+    if (c.opts.length < n && ng) return themLua(c, n, ng);
+    if (c.opts.length <= n) return c;
     const dung = c.opts[c.dung];
     const opts = tronMang([dung].concat(tronMang(c.opts.filter((o, j) => j !== c.dung)).slice(0, n - 1)));
+    return Object.assign({}, c, { opts, dung: opts.indexOf(dung) });
+  }
+  // Cap cao (DO_KHO.lua): cau tu vung duoc them lua chon nhieu — CHI lay tu / nghia trong bo bai em da hoc (ng.vocab).
+  // Nghia -> them nghia khac; chon chu Han -> them chu Han khac. Cau dien tu / ngu phap KHONG them (de tranh 2 dap an deu dung).
+  function themLua(c, n, ng) {
+    const dung = c.opts[c.dung];
+    const laNghia = /^Từ này nghĩa là gì/.test(c.lenh || '');
+    const laTu = /^Chọn chữ Hán đúng nghĩa/.test(c.lenh || '');
+    if (!laNghia && !laTu) return c;
+    const khoa = laNghia ? 'vn' : 'zh', co = {};
+    c.opts.forEach((o) => { co[o] = 1; });
+    const them = tronMang(ng.vocab.filter((v) => v[khoa] && !co[v[khoa]] && v.zh !== c.zh && v.vn !== c.zh))
+      .filter((v) => { if (co[v[khoa]]) return false; co[v[khoa]] = 1; return true; }).slice(0, n - c.opts.length).map((v) => v[khoa]);
+    if (!them.length) return c;
+    const opts = tronMang(c.opts.concat(them));
     return Object.assign({}, c, { opts, dung: opts.indexOf(dung) });
   }
   function cauKt(c, ng) {
@@ -1781,7 +1977,7 @@ module.exports = function ganNongTrai(app, d) {
     opt = opt || {};
     if (n <= 0) return [];
     const thay = opt.thay || {}, tuDa = opt.tuDa || {};
-    const ung = Ktbc.taoCau(ng, ds, Math.max(n * 4, 8), opt.coPy).map((c) => cauKt(catLua(c, opt.lua), ng));
+    const ung = Ktbc.taoCau(ng, ds, Math.max(n * 4, 8), opt.coPy).map((c) => cauKt(catLua(c, opt.lua, ng), ng));
     const ut = opt.uuTien || (() => 0);
     const xep = ung.map((q) => ({ q, d: ut(q) + Math.random() })).sort((a, b) => b.d - a.d).map((x) => x.q);
     const ra = [];
@@ -1799,6 +1995,8 @@ module.exports = function ganNongTrai(app, d) {
   function deChuHanKt(bo, opt) {
     const ng = boKtbc(bo);
     if (!ng) return null;
+    // opt.dk = DO_KHO theo cap: lua chon nhieu hon, them cau ngu phap / xep cau / noi tu (khong doi bai nguon)
+    const dk = opt.dk || DO_KHO[0], nLua = Math.max(4, dk.lua || 0);
     const den = bo.den || [], sai = bo.sai || [];
     const ut = (zh) => (den.indexOf(zh) >= 0 ? 3 : sai.indexOf(zh) >= 0 ? 2 : 0);
     const tuDa = {}, thay = {}, dacBiet = [];
@@ -1807,23 +2005,26 @@ module.exports = function ganNongTrai(app, d) {
     if (opt.nghe) {
       const soNghe = 1 + (Math.random() < 0.5 ? 1 : 0);
       for (; vi < tuUt.length && dacBiet.length < soNghe; vi++) {
-        const q = taoCau(bo, tuUt[vi], 'nghe', 4, true);
+        const q = taoCau(bo, tuUt[vi], 'nghe', nLua, true);
         if (cauDung(q)) { dacBiet.push(q); tuDa[q.zh] = 1; }
       }
     }
     if (opt.viet) {
       for (let lan = 0; vi < tuUt.length && lan < 12; vi++, lan++) {
-        const q = taoCau(bo, tuUt[vi], 'viet', 4, true);
+        const q = taoCau(bo, tuUt[vi], 'viet', nLua, true);
         if (q.k === 'viet') { dacBiet.push(q); tuDa[q.zh] = 1; vi++; break; }
       }
     }
     const con = CH_SO - dacBiet.length;
-    const soNp = Ktbc.coDang(ng, 'nguphap') ? 2 : 0, soXep = Ktbc.coDang(ng, 'xepcau') ? 1 : 0, soNoi = Ktbc.coDang(ng, 'noi') ? 1 : 0;
+    const x = dk.np || 0, tran = Math.max(0, con - 2); // luon giu it nhat 2 cau tu vung
+    let soNp = Ktbc.coDang(ng, 'nguphap') ? 2 + Math.ceil(x / 2) : 0, soXep = Ktbc.coDang(ng, 'xepcau') ? 1 + Math.floor(x / 2) : 0;
+    let soNoi = Ktbc.coDang(ng, 'noi') ? 1 + (x >= 3 ? 1 : 0) : 0;
+    while (soNp + soXep + soNoi > tran) { if (soNp >= soXep && soNp > 0) soNp--; else if (soXep > 0) soXep--; else soNoi--; }
     const dsTu = KT_TU.filter((l) => Ktbc.coDang(ng, l));
-    const khac = chonKt(ng, ['nguphap'], soNp, { thay, tuDa }).concat(chonKt(ng, ['xepcau'], soXep, { thay, tuDa }), chonKt(ng, ['noi'], soNoi, { thay, tuDa }));
-    const tuVung = chonKt(ng, dsTu, con - khac.length, { thay, tuDa, uuTien: (q) => (q.zh ? ut(q.zh) : 0) });
+    const khac = chonKt(ng, ['nguphap'], soNp, { thay, tuDa, lua: dk.lua }).concat(chonKt(ng, ['xepcau'], soXep, { thay, tuDa }), chonKt(ng, ['noi'], soNoi, { thay, tuDa }));
+    const tuVung = chonKt(ng, dsTu, con - khac.length, { thay, tuDa, lua: dk.lua, uuTien: (q) => (q.zh ? ut(q.zh) : 0) });
     let ds = tuVung.concat(khac);
-    if (ds.length < con) ds = ds.concat(chonKt(ng, Ktbc.LOAI_DT, con - ds.length, { thay, tuDa }));
+    if (ds.length < con) ds = ds.concat(chonKt(ng, Ktbc.LOAI_DT, con - ds.length, { thay, tuDa, lua: dk.lua }));
     ds = tronMang(dacBiet.concat(ds.slice(0, con)));
     return ds.length >= 5 ? { nguon: bo.nguon, ds } : null;
   }
@@ -1840,8 +2041,8 @@ module.exports = function ganNongTrai(app, d) {
     const kieu = ['nghia', 'nghia', 'nghia', 'py', 'py', 'py', 'thieu', 'thieu', 'chu', 'chu'];
     if (opt.nghe) { kieu[0] = 'nghe'; kieu[8] = 'nghe'; }
     if (opt.viet) kieu[3] = 'viet';
-    const k2 = tronMang(kieu);
-    return { nguon: bo.nguon, ds: chon.map((v, i) => taoCau(bo, v, k2[i], 4, true)).filter(cauDung) };
+    const k2 = tronMang(kieu), nLua = Math.max(4, (opt.dk && opt.dk.lua) || 0);
+    return { nguon: bo.nguon, ds: chon.map((v, i) => taoCau(bo, v, k2[i], nLua, true)).filter(cauDung) };
   }
   // De cho 1 con ca bac t: ca cang to -> nhieu cau hon, dap an giong nhau hon, uu tien tu em hay sai / tu dai
   const KIEU_CA = [null, ['chu'], ['chu', 'nghia'], ['nghia', 'py'], ['py', 'thieu', 'nghia'], ['thieu', 'py', 'nghia']];
@@ -1850,8 +2051,10 @@ module.exports = function ganNongTrai(app, d) {
   function deCaKt(bo, t, opt) {
     const ng = boKtbc(bo);
     if (!ng) return null;
-    const bac = CA_BAC[t];
-    let ks = KIEU_CA_KT[t].filter((l) => Ktbc.coDang(ng, l));
+    const bac = CA_BAC[t], dk = (opt && opt.dk) || DO_KHO[0];
+    // cap cao: nhieu lua chon hon (ca be 3 -> 4 -> 5), ca be het pinyin (dk.py = 0), dang cau nhu ca to hon 1 bac (dk.dich)
+    const nLua = Math.max(bac.lua, dk.lua || 0), coPy = t === 1 && !!dk.py, tk = Math.min(5, t + (dk.dich || 0));
+    let ks = KIEU_CA_KT[tk].filter((l) => Ktbc.coDang(ng, l));
     if (!ks.length) ks = (t <= 2 ? ['nghia', 'viet'] : ['dien', 'viet', 'nghia']).filter((l) => Ktbc.coDang(ng, l));
     if (!ks.length) return null;
     ks = tronMang(ks);
@@ -1865,17 +2068,17 @@ module.exports = function ganNongTrai(app, d) {
       if (l === 'nghe') {
         const ds = tronMang(bo.tu.filter((v) => !tuDa[v.zh]));
         const v = (t >= 4 ? ds.filter((x) => kho(x.zh)) : []).concat(ds)[0];
-        const q = v && taoCau(bo, v, 'nghe', bac.lua, bac.giong);
+        const q = v && taoCau(bo, v, 'nghe', nLua, bac.giong);
         if (q && cauDung(q)) { cau.push(q); tuDa[q.zh] = 1; } else ks = ks.filter((x) => x !== 'nghe');
         continue;
       }
-      const q = chonKt(ng, [l], 1, { thay, tuDa, uuTien: ut, lua: bac.lua, coPy: t === 1 })[0];
+      const q = chonKt(ng, [l], 1, { thay, tuDa, uuTien: ut, lua: nLua, coPy })[0];
       if (q) cau.push(q);
     }
     return cau.length >= bac.so ? { nguon: bo.nguon, ds: cau } : null;
   }
   async function deCa(user, t, opt) {
-    const bo = await tuHocCua(user), bac = CA_BAC[t];
+    const bo = await tuHocCua(user), bac = CA_BAC[t], dk = (opt && opt.dk) || DO_KHO[0];
     const kt = deCaKt(bo, t, opt);
     if (kt) return kt;
     const kho = (v) => bo.sai.indexOf(v.zh) >= 0 || (bo.den || []).indexOf(v.zh) >= 0;
@@ -1890,7 +2093,7 @@ module.exports = function ganNongTrai(app, d) {
     const cau = [];
     for (const v of nguon) {
       if (cau.length >= bac.so) break;
-      const q = taoCau(bo, v, kieu[cau.length % kieu.length], bac.lua, bac.giong, t === 1);
+      const q = taoCau(bo, v, kieu[cau.length % kieu.length], Math.max(bac.lua, dk.lua || 0), bac.giong, t === 1 && !!dk.py);
       if (cauDung(q)) cau.push(q);
     }
     return { nguon: bo.nguon, ds: cau };
@@ -1917,8 +2120,8 @@ module.exports = function ganNongTrai(app, d) {
     return kq;
   }
   // So giay cho 1 cau ca (xep cau / noi tu gap doi, cau ngu phap co cau dai gap ruoi)
-  function giayCau(t, q) {
-    const g = CA_BAC[t].giay;
+  function giayCau(t, q, hs) {
+    const g = Math.round(CA_BAC[t].giay * (hs || 1));
     if (!g || !q) return g;
     return q.k === 'xep' || q.k === 'noi' ? g * 2 : q.k === 'kt' && q.c && /＿＿/.test(q.c.zh) ? Math.round(g * 1.5) : g;
   }
@@ -1949,7 +2152,7 @@ module.exports = function ganNongTrai(app, d) {
     const f = await doc(req.user.id);
     const ch = f.ch && !f.ch.xong && f.ch.ngay === d.vnDayKey() ? f.ch : null;
     const bo = await tuHocCua(req.user);
-    res.json({ conQua: conQua(f), quaNgay: CH_QUA_NGAY, dat: CH_DAT, so: CH_SO, dang: ch ? deChoHs(ch) : null, coBai: bo.coBai, nguon: bo.nguon });
+    res.json({ conQua: conQua(f), quaNgay: CH_QUA_NGAY, dat: ch && ch.dat ? ch.dat : doKho(lvTuXp(f.xp)).chDat, so: CH_SO, dang: ch ? deChoHs(ch) : null, coBai: bo.coBai, nguon: bo.nguon });
   }));
   app.get('/api/farm/bosuutap', d.requireAuth, d.asyncRoute(async (req, res) => {
     const f = await doc(req.user.id);
@@ -1958,11 +2161,12 @@ module.exports = function ganNongTrai(app, d) {
     res.json({ ds, the: soThe(f), theMoc: f.theMoc || 0 });
   }));
   app.post('/api/farm/chuhan/moi', d.requireAuth, d.asyncRoute(async (req, res) => {
-    const de = await deChuHan(req.user, { nghe: !!(req.body && req.body.nghe), viet: true, ktbc: true });
+    const dk = doKho(lvTuXp((await doc(req.user.id)).xp)); // cap cao: cau kho hon + can dung nhieu hon (DO_KHO)
+    const de = await deChuHan(req.user, { nghe: !!(req.body && req.body.nghe), viet: true, ktbc: true, dk });
     if (de.ds.length < 5) return res.status(400).json({ error: CHUA_HOC, chuaHoc: true });
     const out = await lanLuot(req.user.id, async () => {
       const f = await doc(req.user.id);
-      f.ch = { id: Math.random().toString(36).slice(2, 10), ngay: d.vnDayKey(), nguon: de.nguon, ds: de.ds, tl: [], xong: false };
+      f.ch = { id: Math.random().toString(36).slice(2, 10), ngay: d.vnDayKey(), nguon: de.nguon, ds: de.ds, tl: [], xong: false, dat: dk.chDat };
       await ghi(req.user.id, f);
       return { conQua: conQua(f), dang: deChoHs(f.ch) };
     });
@@ -2000,8 +2204,9 @@ module.exports = function ganNongTrai(app, d) {
       if (ch.tl.length >= ch.ds.length) {
         ch.xong = true;
         const soDung = ch.tl.filter((x) => x.dung).length;
-        kq.ketThuc = { soDung, so: ch.ds.length, dat: soDung >= CH_DAT };
-        if (soDung >= CH_DAT && conQua(f) > 0) {
+        const can = ch.dat || CH_DAT;
+        kq.ketThuc = { soDung, so: ch.ds.length, dat: soDung >= can, can };
+        if (soDung >= can && conQua(f) > 0) {
           const ngay = d.vnDayKey();
           f.chQua = { d: ngay, n: (f.chQua && f.chQua.d === ngay ? f.chQua.n : 0) + 1 };
           kq.ketThuc.qua = moQua(f, lvTuXp(f.xp), soDung === ch.ds.length);
@@ -2039,10 +2244,10 @@ module.exports = function ganNongTrai(app, d) {
     return { co, da: hc.n, con: Math.max(0, co - hc.n), sau: co >= MOI_TOI_DA ? 0 : (them + 1) * MOI_MOI_SAO - homNay };
   }
   const dangCaChoHs = (g) => {
-    const gy = giayCau(g.t, g.ds[g.tl.length]);
-    return { id: g.id, t: g.t, ca: g.ca, i: g.tl.length, so: g.ds.length, giay: CA_BAC[g.t].giay, nguon: g.nguon,
+    const gy = giayCau(g.t, g.ds[g.tl.length], g.hs);
+    return { id: g.id, t: g.t, ca: g.ca, i: g.tl.length, so: g.ds.length, giay: giayCau(g.t, null, g.hs), nguon: g.nguon,
       conMs: gy ? Math.max(0, g.bd + gy * 1000 - Date.now()) : 0,
-      ds: g.ds.map((q) => ({ k: q.k, hoi: q.hoi, lua: q.lua, gy: giayCau(g.t, q) })) };
+      ds: g.ds.map((q) => ({ k: q.k, hoi: q.hoi, lua: q.lua, gy: giayCau(g.t, q, g.hs) })) };
   };
   const hoChoHs = (hc, homNay, coBai) => ({ ho: hc.ho, moi: moiCa(hc, homNay), bst: hc.bst, dang: hc.dang ? dangCaChoHs(hc.dang) : null, coBai: coBai !== false });
   const homNayCua = async (userId) => saoHoc(await d.loadStar(userId)).homNay;
@@ -2069,13 +2274,14 @@ module.exports = function ganNongTrai(app, d) {
       if (hc.dang && hc.dang.ca === c.id) return { ok: true, dang: dangCaChoHs(hc.dang), ho: hoChoHs(hc, homNay) };
       const m = moiCa(hc, homNay);
       if (m.con <= 0) throw loi(m.sau ? 'Hết mồi câu rồi — học thêm ' + m.sau + ' sao nữa để có thêm 1 mồi nhé!' : 'Hôm nay em dùng hết ' + MOI_TOI_DA + ' mồi rồi — mai câu tiếp nhé!');
-      const de = await deCa(req.user, c.t, { nghe: !!b.nghe });
+      const dk = doKho(lvTuXp(f.xp));
+      const de = await deCa(req.user, c.t, { nghe: !!b.nghe, dk });
       if (de.ds.length < CA_BAC[c.t].so) throw loi(CHUA_HOC);
       // dang cau con khac ma bo do -> con do bơi mất
       if (hc.dang) { const cu = hc.dang.ca; hc.ho = hc.ho.filter((x) => x.id !== cu); }
       hc.n++;
       // 1,5 giay dau la luc phao chim (ca can cau) -> dong ho bat dau sau do
-      hc.dang = { id: Math.random().toString(36).slice(2, 10), ca: c.id, t: c.t, ds: de.ds, tl: [], bd: Date.now() + 1500, nguon: de.nguon };
+      hc.dang = { id: Math.random().toString(36).slice(2, 10), ca: c.id, t: c.t, ds: de.ds, tl: [], bd: Date.now() + 1500, nguon: de.nguon, hs: dk.giay };
       hoCa(f);
       await ghi(req.user.id, f);
       return { ok: true, dang: dangCaChoHs(hc.dang), ho: hoChoHs(hc, homNay) };
@@ -2091,7 +2297,7 @@ module.exports = function ganNongTrai(app, d) {
       const i = g.tl.length;
       if (Number(b.i) !== i) throw loi('Câu này em đã trả lời rồi.');
       const q = g.ds[i], bac = CA_BAC[g.t];
-      const gy = giayCau(g.t, q);
+      const gy = giayCau(g.t, q, g.hs);
       const cham = !!gy && Date.now() - g.bd > (gy + 4) * 1000;
       const dung = !cham && chamCau(q, b);
       g.tl.push(dung);
@@ -2160,6 +2366,8 @@ module.exports = function ganNongTrai(app, d) {
       daThich: !!(fm.bc && fm.bc.d === ngay && fm.bc.ids.indexOf(id) >= 0),
       tnMo: tinMod ? (await tinMod.duocNhan(req.user.id, id)).duoc : false,
       qtMo: qtMod ? await qtMod.cungLopThat(req.user.id, id) : false,
+      // le hoi nong trai cua ban (nong-trai-capcao.js): dang mo thi khach vao du duoc
+      le: f.le && f.le.kt > now ? { kt: f.le.kt, khach: (f.le.khach || []).length, da: (f.le.khach || []).indexOf(req.user.id) >= 0 } : null,
     });
   }));
 
@@ -2554,6 +2762,13 @@ module.exports = function ganNongTrai(app, d) {
         ['kho', 'tui', 'hat'].forEach((k) => { if (b[k] && typeof b[k] === 'object') f[k] = Object.assign(f[k] || {}, b[k]); });
         if (b.trTuan && f.tr) f.tr.moTuan = '2000-01-03'; // cot truyen: coi nhu chuong truoc mo tu tuan cu
         if (b.chin) f.o.forEach((o) => { if ((o.k === 'o' && o.c) || (CON[o.k] && o.h)) o.h = Date.now() - 1000; });
+        // thu thien tai cap cao / nha kinh: ep thien tai kieu b.tai ngay hom nay (nhu xetThienTai)
+        if (b.tai && TAI[b.tai]) {
+          const bc = bacCua(lvTuXp(f.xp));
+          f.tai = { k: b.tai, d: d.vnDayKey(), bd: Date.now(), co: 0, giup: [] };
+          if (TAI_MANH[bc]) f.tai.m = bc;
+          f.taiXet = d.vnDayKey();
+        }
         await ghi(req.user.id, f);
         return { ok: true, st: await trangThai(req.user.id, f) };
       }));
@@ -2579,6 +2794,8 @@ module.exports = function ganNongTrai(app, d) {
     doc, ghi, lanLuot, haiLuot, loi, traLoi, trangThai, ghiNk, docNhieu, thiTruong, hanMuc, ghiBanNgay, lvTuXp, saoHoc, taiCongDong, boNhoCongDong,
     tuHocCua, boKtbc, chonKt, taoCau, cauDung, chamCau, onCau, ketQuaCau, ghiOn, thuRuong, nhatCon, donHomNay, moQua, vaoHook, ttThem, banCungLop,
     MO_TN, SP, CAY, CON, TT, CA, MON, HANG, LUONG, LUONG_PY, CON_TOI_DA, CAY_HIEM, BAN_MOI_SAO, Ktbc, CauHoi, CATALOG, NHOM_TT: null, datDuoc, rong, suKien, suKienHook, TIN_BAN_NGAY, TIN_NGAY,
+    // cap cao 31–100 (nong-trai-capcao.js)
+    deChuHanKt, cungLop, DO_KHO, doKho, BAC, bacCua, XP_LV, LV_TOI_DA, thuongCap, MOC_CAP, DAT, NHA,
   };
   const phieuLuu = require('./nong-trai-phieuluu')(app, d, hKt, chung);
   hKt.phieuLuu = phieuLuu;
@@ -2590,10 +2807,12 @@ module.exports = function ganNongTrai(app, d) {
   tinMod = require('./nong-trai-tin')(app, d, hKt, chung);
   // Tu thien: tang xu / nong san / hat giong cho ban cung lop
   qtMod = require('./nong-trai-tuthien')(app, d, hKt, chung);
+  // Cap cao: trang Cap do & phan thuong, nha kinh, nhiem vu chuyen gia, le hoi nong trai, kem hoc tro
+  require('./nong-trai-capcao')(app, d, hKt);
   async function initTatCa() { await initTable(); await chung.initTable(); }
 
   // _thuCau: chi de chay tools/thu-cau-nong-trai.js (kiem tra cau hoi chi thuoc bai em da hoc / duoc giao)
-  return { initTable: initTatCa, _thuCau: { deChuHanKt, deCaKt, ghiOn, deVung: phieuLuu.deVung, VUNG: phieuLuu.VUNG, cauTruyen: phieuLuu.cauTruyen } };
+  return { initTable: initTatCa, _thuCau: { deChuHanKt, deCaKt, ghiOn, DO_KHO, doKho, XP_LV, lvTuXp, traThuongCap, thuongCap, deVung: phieuLuu.deVung, VUNG: phieuLuu.VUNG, cauTruyen: phieuLuu.cauTruyen } };
 };
 
 // Cho cong cu thu (tools/thu-kinh-te-nong-trai.js): ham thuan cua vong quay

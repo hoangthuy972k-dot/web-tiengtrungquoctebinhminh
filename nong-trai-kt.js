@@ -250,8 +250,9 @@ module.exports = function ganKinhTe(app, d, h, c) {
   const tuanTruoc = (t) => new Date(Date.parse(t + 'T00:00:00Z') - 7 * 86400000).toISOString().slice(0, 10);
   // gio dong phien: ngay thu (0 = thu Hai) luc 20h gio VN cua tuan tk
   const gioDong = (tk, thu) => Date.parse(tk + 'T00:00:00Z') - 7 * 3600000 + thu * 86400000 + 20 * 3600000;
-  const CON_QUY = () => Object.keys(h.CON).filter((k) => h.CON[k].lv >= 10);
-  const TT_QUY = () => Object.keys(h.TT).filter((k) => !h.TT[k].doc && h.TT[k].lv >= 12);
+  // vat nuoi cap cao (tren 30) chi mua duoc khi du cap -> khong dua vao phien dau gia he thong
+  const CON_QUY = () => Object.keys(h.CON).filter((k) => h.CON[k].lv >= 10 && h.CON[k].lv <= 30);
+  const TT_QUY = () => Object.keys(h.TT).filter((k) => !h.TT[k].doc && h.TT[k].lv >= 12 && h.TT[k].lv <= 30);
   function loHe(tk, pvK) {
     const r = (s) => soHat(pvK + '|' + tk + '|' + s);
     const chon = (a, s) => a[Math.floor(r(s) * a.length) % a.length];
@@ -349,7 +350,7 @@ module.exports = function ganKinhTe(app, d, h, c) {
     h.CAY_HIEM.forEach((k) => { if ((f.hat || {})[k] > 0) coThe.push({ loai: 'hat', k, co: f.hat[k] }); });
     Object.keys(f.tui || {}).forEach((k) => {
       if (f.tui[k] > 0 && h.CON[k] && h.CON[k].lv >= 10) coThe.push({ loai: 'con', k, co: f.tui[k] });
-      if (f.tui[k] > 0 && h.TT[k] && (h.TT[k].doc || h.TT[k].lv >= 12) && !/^cup-/.test(k)) coThe.push({ loai: 'tt', k, co: f.tui[k] });
+      if (f.tui[k] > 0 && h.TT[k] && (h.TT[k].doc || h.TT[k].lv >= 12) && !h.TT[k].moc && !/^(cup|bac|cg|nha)-/.test(k)) coThe.push({ loai: 'tt', k, co: f.tui[k] });
     });
     res.json({ pham: pv.ten, ds, giu, giuToiDa: DG_GIU_TOI_DA, xu: f.xu, mo: lv >= h.MO_TN.dg.lv, tb: r.tb, coThe, phi: DG_PHI, now: now() });
   }));
@@ -407,7 +408,7 @@ module.exports = function ganKinhTe(app, d, h, c) {
       if (h.lvTuXp(f.xp) < h.MO_TN.dg.lv) throw loi('Đấu giá mở ở cấp ' + h.MO_TN.dg.lv + '.');
       const hopLe = (loai === 'hat' && h.CAY_HIEM.indexOf(k) >= 0 && ((f.hat || {})[k] || 0) >= n) ||
         (loai === 'con' && h.CON[k] && h.CON[k].lv >= 10 && (f.tui[k] || 0) >= 1) ||
-        (loai === 'tt' && h.TT[k] && (h.TT[k].doc || h.TT[k].lv >= 12) && !/^cup-/.test(k) && (f.tui[k] || 0) >= 1);
+        (loai === 'tt' && h.TT[k] && (h.TT[k].doc || h.TT[k].lv >= 12) && !h.TT[k].moc && !/^(cup|bac|cg|nha)-/.test(k) && (f.tui[k] || 0) >= 1);
       if (!hopLe) throw loi('Chỉ đưa lên được hạt giống quý, vật nuôi quý hoặc đồ trang trí quý đang có trong túi.');
       const san = loai === 'hat' ? 30 * n : loai === 'con' ? 60 : 40;
       if (gia < san || gia > 3000) throw loi('Giá khởi điểm từ ' + san + ' đến 3000 xu.');

@@ -1,0 +1,166 @@
+/* ══════════ Nong trai — cap do 1–100, danh hieu, hoat dong cap cao (2026-11-15) ══════════ */
+/* mau khung theo bac (b0..b6) */
+.b0 { --bac: #7cc456; --bac-2: #eaf7df; }
+.b1 { --bac: #26a69a; --bac-2: #e0f2f1; }
+.b2 { --bac: #1e88e5; --bac-2: #e3f2fd; }
+.b3 { --bac: #8e24aa; --bac-2: #f3e5f5; }
+.b4 { --bac: #fb8c00; --bac-2: #fff3e0; }
+.b5 { --bac: #d32f2f; --bac-2: #ffebee; }
+.b6 { --bac: #ffb300; --bac-2: #fff8e1; }
+
+/* ---- chip cap tren HUD: khung mau bac + bieu tuong bac + kinh nghiem con thieu ---- */
+.nt-chip-lv { --bac: #7cc456; }
+.nt-chip-lv[data-bac="1"] { --bac: #26a69a; } .nt-chip-lv[data-bac="2"] { --bac: #1e88e5; } .nt-chip-lv[data-bac="3"] { --bac: #8e24aa; }
+.nt-chip-lv[data-bac="4"] { --bac: #fb8c00; } .nt-chip-lv[data-bac="5"] { --bac: #d32f2f; } .nt-chip-lv[data-bac="6"] { --bac: #ffb300; }
+.nt-chip-lv { box-shadow: 0 4px 0 var(--vien), inset 0 0 0 3px var(--bac); }
+.nt-chip-lv[data-bac="6"] { background: linear-gradient(135deg, #fff8e1, #ffe082 45%, #fff8e1); animation: cap-lap 3s ease-in-out infinite; }
+.nt-chip-lv[data-bac="5"] { background: linear-gradient(135deg, #fff8ec, #ffd6d6); }
+@keyframes cap-lap { 0%, 100% { filter: none; } 50% { filter: drop-shadow(0 0 6px #ffca28); } }
+.nt-bac-ic {
+  position: absolute; left: -6px; top: -9px; width: 22px; height: 22px; display: grid; place-items: center;
+  border-radius: 50%; background: var(--bac); border: 2px solid var(--vien); font-size: 0.72rem; line-height: 1; z-index: 1;
+}
+.nt-xp-cot { display: flex; flex-direction: column; align-items: stretch; gap: 1px; }
+.nt-xp-con { font-size: 0.62rem; line-height: 1; font-weight: 800; color: var(--mo); text-align: center; white-space: nowrap; }
+@media (max-width: 640px) { .nt-xp-con { font-size: 0.56rem; } .nt-bac-ic { width: 18px; height: 18px; font-size: 0.6rem; left: -5px; top: -7px; } }
+@media (max-width: 420px) { .nt-xp-con { font-size: 0.5rem; letter-spacing: -0.02em; } .nt-chip-lv .nt-xp { width: 24px; } }
+@media (max-width: 340px) { .nt-xp-con { display: none; } }
+
+/* ---- huy hieu bac nho (bien ten thi tran, khi sang tham, danh sach) ---- */
+.nt-dh {
+  display: inline-grid; place-items: center; width: 1.45em; height: 1.45em; margin-right: 4px; vertical-align: -0.25em;
+  border-radius: 50%; background: var(--bac-2); border: 2px solid var(--bac); font-style: normal; font-size: 0.9em; line-height: 1;
+}
+.nt-dh.nho { width: 1.3em; height: 1.3em; font-size: 0.78em; border-width: 1.5px; margin-right: 3px; }
+.nt-dh.b6 { background: linear-gradient(135deg, #fff8e1, #ffd54f); box-shadow: 0 0 0 1px #fff inset; }
+
+/* ---- the danh hieu (dau bang Cap do) ---- */
+.cap-the {
+  display: flex; gap: 12px; align-items: center; padding: 12px; margin-bottom: 10px;
+  border: 3px solid var(--vien); border-radius: 18px; background: var(--bac-2); box-shadow: 0 4px 0 var(--vien), inset 0 0 0 4px var(--bac);
+}
+.cap-the.b6 { background: linear-gradient(135deg, #fff8e1, #ffe082, #fff3cd); }
+.cap-the-ic { flex: none; width: 58px; height: 58px; display: grid; place-items: center; border-radius: 50%; background: var(--bac); border: 3px solid var(--vien); font-size: 1.9rem; }
+.cap-the-chu { display: flex; flex-direction: column; gap: 3px; min-width: 0; flex: 1; }
+.cap-the-ten { all: unset; cursor: pointer; font-size: 1.25rem; }
+.cap-the-ten b { font-family: 'Noto Serif SC', serif; font-weight: 900; }
+.cap-the-ten small { font-size: 0.8rem; color: var(--mo); font-weight: 700; }
+.cap-the-vn { font-weight: 700; }
+.cap-thanh { display: block; height: 12px; border-radius: 99px; background: #fff; border: 2px solid var(--vien); overflow: hidden; }
+.cap-thanh i { display: block; height: 100%; background: linear-gradient(180deg, #8be36b, #3fae3a); }
+.cap-the-con { color: var(--mo); font-weight: 600; }
+
+/* ---- 10 cap toi ---- */
+.cap-ds { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.cap-cap { padding: 10px 12px; border: 2.5px solid var(--vien); border-radius: 16px; background: #fff; }
+.cap-cap.moc { background: #fffbea; }
+.cap-cap.doi-bac { background: #f3e9ff; box-shadow: inset 0 0 0 3px #b388ff; }
+.cap-cap-dau { display: flex; gap: 10px; align-items: center; }
+.cap-cap-dau small { display: block; color: var(--mo); font-weight: 600; font-size: 0.8rem; }
+.cap-so { flex: none; min-width: 38px; height: 38px; padding: 0 4px; display: inline-grid; place-items: center; border-radius: 12px; background: var(--vang); border: 2.5px solid var(--vien); font-weight: 900; }
+.cap-thuong { margin: 6px 0 4px; font-weight: 600; font-size: 0.9rem; }
+.cap-trong { margin: 4px 0 0; color: var(--mo); font-size: 0.85rem; }
+.cap-mo-ds { list-style: none; margin: 4px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 6px; }
+.cap-mo { display: flex; gap: 8px; align-items: center; padding: 4px 6px; border-radius: 12px; background: var(--kem); font-size: 0.88rem; }
+.cap-mo b[lang="zh"] { font-family: 'Noto Serif SC', serif; }
+.cap-mo small { display: block; color: var(--mo); font-size: 0.74rem; font-weight: 600; }
+.cap-mo-hinh img { width: 38px; height: 38px; display: block; }
+.cap-mo-ic { flex: none; width: 38px; text-align: center; font-size: 1.4rem; }
+.cap-mo.tn { background: #eef7ff; }
+.cap-mo.kho { background: #fff3e0; grid-column: 1 / -1; }
+.cap-mo.bac { background: #f3e9ff; }
+
+/* ---- cac bac ---- */
+.cap-bac-ds { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.cap-bac { display: flex; gap: 10px; align-items: center; padding: 10px; border: 2.5px solid var(--vien); border-radius: 16px; background: var(--bac-2); box-shadow: inset 0 0 0 3px var(--bac); }
+.cap-bac.chua { opacity: 0.72; filter: saturate(0.6); }
+.cap-bac.dang { box-shadow: inset 0 0 0 3px var(--bac), 0 0 0 3px var(--vang); }
+.cap-bac > div { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.cap-bac b[lang="zh"] { font-family: 'Noto Serif SC', serif; font-size: 1.1rem; }
+.cap-bac small { color: var(--mo); font-weight: 600; }
+.cap-bac em { font-style: normal; font-weight: 900; color: var(--do); }
+.cap-bac-ic { flex: none; width: 46px; height: 46px; display: grid; place-items: center; border-radius: 50%; background: var(--bac); border: 3px solid var(--vien); font-size: 1.4rem; }
+.cap-bac-bien { flex: none; width: 56px; height: 56px; }
+.cap-bac-kho { font-size: 0.78rem; }
+
+/* ---- moc cap cao ---- */
+.cap-luoi { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+.cap-o { position: relative; padding: 8px; border: 2.5px solid var(--vien); border-radius: 14px; background: #fff; display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+.cap-o.da { background: #eaf7df; }
+.cap-o.moc { background: #fffbea; box-shadow: inset 0 0 0 3px var(--vang); }
+.cap-o img { width: 34px; height: 34px; }
+.cap-o small { flex-basis: 100%; color: var(--mo); font-weight: 600; font-size: 0.74rem; }
+.cap-o .cap-so { min-width: 30px; height: 30px; font-size: 0.85rem; }
+.cap-o-tn { font-size: 1.3rem; }
+.cap-cach ul { margin: 0 0 8px; padding-left: 20px; display: grid; gap: 4px; }
+
+/* ---- the chuc mung len cap / len bac ---- */
+.cap-chuc .cap-chuc-ic { font-size: 3.4rem; line-height: 1; animation: nt-bat 0.6s cubic-bezier(0.34, 1.6, 0.64, 1); }
+.cap-chuc-bac { padding: 14px 10px; border-radius: 20px; background: radial-gradient(circle at 50% 20%, #fff, var(--bac-2) 70%); box-shadow: inset 0 0 0 4px var(--bac); }
+.cap-chuc-bac .cap-chuc-ic { width: 92px; height: 92px; display: grid; place-items: center; border-radius: 50%; background: var(--bac); border: 4px solid var(--vien); box-shadow: 0 5px 0 var(--vien); }
+.cap-chuc-bac h2 { font-family: 'Noto Serif SC', serif; font-size: 2rem; }
+.cap-chuc-nho { margin: 0 !important; font-weight: 900 !important; color: var(--do) !important; letter-spacing: 0.04em; text-transform: uppercase; }
+.cap-chuc-py { margin: 0 !important; }
+.cap-chuc-qua { list-style: none; margin: 4px 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
+.cap-chuc-qua li { display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px 4px 4px; border-radius: 99px; background: #fff; border: 2px solid var(--vien); font-size: 0.86rem; }
+.cap-chuc-qua img { width: 30px; height: 30px; }
+.cap-chuc-qua small { color: var(--mo); }
+.cap-chuc-mo { font-size: 0.9rem; }
+.cap-chuc .nt-gt { width: 100%; }
+
+/* ---- hoat dong cap cao ---- */
+.cap-nk, .cap-cg, .cap-le-the { display: flex; gap: 12px; align-items: center; padding: 10px 12px; margin-bottom: 10px; border: 2.5px solid var(--vien); border-radius: 16px; background: #fff; }
+.cap-nk-hinh { flex: none; width: 92px; height: 92px; }
+.cap-nk p, .cap-cg p, .cap-le-the p { margin: 4px 0; font-size: 0.9rem; color: var(--chu); }
+.cap-nk b[lang="zh"], .cap-cg b[lang="zh"], .cap-le-the b[lang="zh"] { font-family: 'Noto Serif SC', serif; color: var(--do); }
+.cap-cg small { color: var(--mo); font-weight: 600; }
+.cap-cg-ic { flex: none; width: 64px; height: 64px; display: grid; place-items: center; border-radius: 50%; background: var(--kem-2); border: 3px solid var(--vien); font-size: 2rem; }
+.cap-nk-tt { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.cap-nk-tt li { padding: 8px 12px; border-radius: 12px; background: #fff3e0; border: 2px solid var(--vien); font-weight: 600; }
+.cap-nk-tt li.ok { background: #e8f5e9; }
+.cap-tb { padding: 8px 12px; border-radius: 12px; background: var(--kem); border: 2px dashed var(--mo); font-weight: 600; }
+.cap-tb.ok { background: #e8f5e9; border-color: var(--xanh-dam); }
+.cap-ket { padding: 10px 12px; margin-bottom: 10px; border-radius: 14px; border: 2.5px solid var(--vien); background: #fff3e0; text-align: center; }
+.cap-ket.dat { background: #e8f5e9; }
+.cap-ket p { margin: 4px 0 0; }
+.cap-khach { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.cap-khach li { padding: 4px 10px; border-radius: 99px; background: #fff; border: 2px solid var(--vien); font-weight: 700; font-size: 0.86rem; }
+.cap-ht-ds { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.cap-ht-ds > li { padding: 10px 12px; border: 2.5px solid var(--vien); border-radius: 14px; background: #fff; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; justify-content: space-between; }
+.cap-tro { flex-direction: column; align-items: stretch !important; }
+.cap-tro-dau { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.cap-tro-dau small { color: var(--mo); font-weight: 600; }
+.cap-tro-sao { margin-left: auto; padding: 2px 8px; border-radius: 99px; background: #fff3e0; border: 2px solid var(--vien); font-weight: 800; font-size: 0.82rem; }
+.cap-tro-sao.ok { background: #c8e6c9; }
+.cap-tro-hd { margin: 2px 0; font-size: 0.86rem; font-weight: 600; }
+.cap-tro-hd b[lang="zh"] { font-family: 'Noto Serif SC', serif; }
+.cap-meo { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 6px; }
+.cap-meo button { display: flex; flex-direction: column; gap: 2px; padding: 6px 8px; border-radius: 12px; background: var(--kem); border: 2px solid var(--vien); text-align: left; }
+.cap-meo button:hover { background: #fff3cf; }
+.cap-meo b { font-family: 'Noto Serif SC', serif; }
+.cap-meo small { color: var(--mo); font-size: 0.74rem; }
+.cap-uv em { margin-left: auto; color: var(--mo); font-weight: 700; }
+.cap-uv .nt-nut { margin-left: auto; }
+
+/* ---- co le hoi tren nong trai ---- */
+.cap-le-co { position: absolute; left: 0; right: 0; top: 0; height: 64px; pointer-events: none; z-index: 900; }
+.cap-le-day { position: absolute; left: 0; right: 0; top: 8px; height: 22px; border-top: 3px solid var(--vien); border-radius: 0 0 50% 50% / 0 0 100% 100%; }
+.cap-le-co i {
+  position: absolute; top: 12px; width: 14px; height: 18px; clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: 50% 0; animation: cap-co 1.6s ease-in-out infinite;
+}
+@keyframes cap-co { 0%, 100% { transform: rotate(-8deg); } 50% { transform: rotate(8deg); } }
+.cap-le-bien {
+  position: absolute; left: 50%; top: 30px; transform: translateX(-50%); padding: 4px 12px; border-radius: 99px;
+  background: #fff8e1; border: 2.5px solid var(--vien); box-shadow: 0 3px 0 var(--vien); font-size: 0.85rem; white-space: nowrap;
+}
+.cap-le-bien [lang="zh"] { font-family: 'Noto Serif SC', serif; color: var(--do); }
+
+@media (max-width: 420px) {
+  .cap-the { padding: 10px; gap: 8px; }
+  .cap-the-ic { width: 46px; height: 46px; font-size: 1.5rem; }
+  .cap-nk, .cap-cg, .cap-le-the { flex-direction: column; text-align: center; }
+  .cap-mo-ds { grid-template-columns: 1fr; }
+  .cap-luoi { grid-template-columns: repeat(2, 1fr); }
+  .cap-bac-bien { width: 44px; height: 44px; }
+}

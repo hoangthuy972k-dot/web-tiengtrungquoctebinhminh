@@ -515,7 +515,7 @@
         html += '<div class="kt-ct">' + x.r.map(function (r) {
           var m = sp(r.k);
           return '<div class="kt-ct-o">' + img('sp-' + r.k) + '<b lang="zh">' + esc(m.zh) + '</b><small>' + esc(m.vn) + ' · ' + N.thoiLuong(r.phut) + ' · bán ~' + r.ban + ' xu</small>' +
-            '<div class="kt-can-ds">' + dongCan(r.can) + '</div><button type="button" class="nt-nut nt-nut-nho nt-nut-xanh" data-xg-lam="' + x.b + '" data-r="' + r.k + '"' + (x.q.length >= d.hang || x.o !== 'dat' ? ' disabled' : '') + '>Làm</button></div>';
+            '<div class="kt-can-ds">' + dongCan(r.can) + '</div><button type="button" class="nt-nut nt-nut-nho nt-nut-xanh" data-xg-lam="' + x.b + '" data-r="' + r.k + '"' + (r.khoa || x.q.length >= d.hang || x.o !== 'dat' ? ' disabled' : '') + '>' + (r.khoa ? '🔒 Cấp ' + r.lv : 'Làm') + '</button></div>';
         }).join('') + '</div>';
       } else html += '<p class="kt-nho">Làm: ' + x.r.map(function (r) { return esc(sp(r.k).vn); }).join(', ') + '</p>';
       html += '</section>';

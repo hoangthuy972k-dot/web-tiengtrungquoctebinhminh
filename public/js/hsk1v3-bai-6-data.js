@@ -2395,25 +2395,61 @@ var matchData = [
   {left:'牛', right:'奶'},
   {left:'包', right:'子'},
   {left:'出租', right:'车'},
+  {left:'电', right:'话'},
+  {left:'晚', right:'饭'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 2 · NGHE — để trống, chờ audio + tài liệu gốc giáo trình HSK1 3.0
+// PHẦN 2 · NGHE — nghe câu (giọng đọc máy) → chọn đáp án
 // ══════════════════════════════════════════
-var listenData = [];
+var listenData = [
+  {audio:'我想去超市买些牛奶。',
+   questions:[
+     {q:'Người nói muốn mua gì?', opts:['包子', '牛奶', '米饭'], ans:1, exp:'买些牛奶 = mua ít sữa.'},
+   ]},
+  {audio:'我们怎么去？坐出租车去。',
+   questions:[
+     {q:'Họ đi bằng gì?', opts:['Đi bộ', 'Xe buýt', 'Taxi'], ans:2, exp:'坐出租车去 = đi bằng taxi.'},
+   ]},
+  {audio:'明天你去哪儿？我想去西安饭店吃晚饭。',
+   questions:[
+     {q:'Ngày mai người thứ hai muốn đi đâu?', opts:['Nhà hàng Tây An', 'Siêu thị', 'Về nhà'], ans:0, exp:'去西安饭店 = đi nhà hàng Tây An.'},
+     {q:'Đi đến đó để làm gì?', opts:['Mua sữa', 'Ăn tối', 'Đi làm'], ans:1, exp:'Động từ thứ hai nói mục đích: 吃晚饭 = ăn tối.'},
+   ]},
+  {audio:'妈妈，我想吃米饭，不想吃包子。',
+   questions:[
+     {q:'Đứa trẻ KHÔNG muốn ăn gì?', opts:['米饭', '面条儿', '包子'], ans:2, exp:'不想吃包子 = không muốn ăn bánh bao.'},
+   ]},
+  {audio:'那边的包子非常好吃。',
+   questions:[
+     {q:'Người nói khen cái gì?', opts:['Bánh bao ở đằng kia', 'Cơm ở nhà', 'Sữa ở siêu thị'], ans:0, exp:'那边的包子 = bánh bao ở đằng kia; 非常好吃 = rất ngon.'},
+   ]},
+  {audio:'你的手机号是多少？',
+   questions:[
+     {q:'Người nói hỏi gì?', opts:['Tên của bạn', 'Số điện thoại di động', 'Bạn đi đâu'], ans:1, exp:'手机号 = số điện thoại di động; 多少 = bao nhiêu.'},
+   ]},
+];
 
 // ══════════════════════════════════════════
-// PHẦN 3a · ĐIỀN TỪ (dựa theo bài tập tổng hợp thật trong sách)
+// PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
   {pre:'我想', blank:'去', post:'超市买牛奶。', hint:'(đi)', ans:'去', exp:'Câu liên động: 去 + nơi chốn trước, việc cần làm sau: 去超市买牛奶.'},
   {pre:'我想去超市', blank:'买', post:'牛奶。', hint:'(mua)', ans:'买', exp:'Động từ thứ hai 买 nói mục đích của việc đi siêu thị: 去超市 + 买牛奶.'},
-  {pre:'我们', blank:'坐', post:'出租车去西安饭店吃晚饭。', hint:'(ngồi, đi bằng)', ans:'坐', exp:'坐 + phương tiện + 去 + nơi đến: cách đi đứng trước, nơi đến đứng sau (坐出租车去…).'},
-  {pre:'妈妈：你想吃什么？孩子：我想吃', blank:'米饭', post:'。', hint:'(cơm)', ans:'米饭'},
+  {pre:'我们', blank:'坐', post:'出租车去西安饭店吃晚饭。', hint:'(đi bằng — phương tiện)', ans:'坐', exp:'坐 + phương tiện + 去 + nơi đến: cách đi đứng trước, nơi đến đứng sau (坐出租车去…).'},
+  {pre:'妈妈：你想吃什么？孩子：我想吃', blank:'米饭', post:'。', hint:'(cơm)', ans:'米饭', exp:'Hỏi 想吃什么 thì trả lời 想吃 + món ăn, đặt món ăn vào đúng chỗ của 什么.'},
   {pre:'老师：你的手机号是', blank:'多少', post:'？', hint:'(bao nhiêu)', ans:'多少', exp:'Số điện thoại có nhiều chữ số nên hỏi bằng 多少; 几 chỉ hỏi số nhỏ, thường dưới 10.'},
-  {pre:'王一雪想', blank:'坐', post:'出租车去超市。', hint:'(ngồi, đi bằng)', ans:'坐', exp:'Nói đi bằng phương tiện gì dùng 坐 + phương tiện + 去: 坐出租车去超市.'},
-  {pre:'这些包子非常', blank:'好吃', post:'。', hint:'(ngon)', ans:'好吃'},
-  {pre:'她的', blank:'手机', post:'号是多少？', hint:'(điện thoại di động)', ans:'手机'},
+  {pre:'妈妈，我想吃米饭，', blank:'不想', post:'吃包子。', hint:'(không muốn)', ans:'不想', exp:'Phủ định của 想 là 不想; không dùng 没有想.'},
+  {pre:'那边的包子非常', blank:'好吃', post:'。', hint:'(ngon)', ans:'好吃', exp:'非常 đứng trước tính từ: 非常好吃 = rất ngon.'},
+  {pre:'她的', blank:'手机', post:'号是多少？', hint:'(điện thoại di động)', ans:'手机', exp:'手机号 = số điện thoại di động.'},
+  {pre:'A：我们', blank:'怎么', post:'去？B：坐出租车去。', hint:'(bằng cách nào)', ans:'怎么', exp:'怎么 đứng TRƯỚC động từ để hỏi cách làm: 怎么去; không nói 去怎么.'},
+  {pre:'A：明天你去', blank:'哪儿', post:'？B：我想去超市。', hint:'(đâu)', ans:'哪儿', exp:'Từ để hỏi đứng đúng chỗ của địa điểm, sau 去: 去哪儿.'},
+  {pre:'我想买', blank:'些', post:'牛奶。', hint:'(một ít)', ans:'些', exp:'买些 + danh từ = mua ít…: 买些牛奶.'},
+  {pre:'星期天我们去西安饭店吃', blank:'晚饭', post:'。', hint:'(bữa tối)', ans:'晚饭', exp:'去 + nơi + 吃晚饭: việc đi trước, mục đích (ăn tối) sau.'},
+  {pre:'我不会做饭，我想去那边', blank:'吃', post:'包子。', hint:'(ăn)', ans:'吃', exp:'去那边 + 吃包子: đi đến chỗ đó để ăn — câu liên động chỉ mục đích.'},
+  {pre:'老师，您的', blank:'电话', post:'号是多少？', hint:'(điện thoại)', ans:'电话', exp:'电话号 = số điện thoại; hỏi số dài dùng 多少.'},
+  {pre:'', blank:'那边', post:'的米饭非常好吃。', hint:'(bên kia, đằng kia)', ans:'那边', exp:'那边 + 的 + danh từ: 那边的米饭 = cơm ở đằng kia.'},
+  {pre:'明天我想去超市买', blank:'东西', post:'。', hint:'(đồ, đồ đạc)', ans:'东西', exp:'买东西 = mua đồ; 东西 ở đây đọc nhẹ: dōngxi.'},
 ];
 
 // ══════════════════════════════════════════
@@ -2426,37 +2462,55 @@ var sortData = [
   {words:['我们','去','哪儿','吃','晚饭','？'], ans:'我们去哪儿吃晚饭？', audio:'我们去哪儿吃晚饭？'},
   {words:['那边','的','包子','非常','好吃','。'], ans:'那边的包子非常好吃。', audio:'那边的包子非常好吃。'},
   {words:['我们','坐','出租车','去','。'], ans:'我们坐出租车去。', audio:'我们坐出租车去。'},
+  {words:['明天','我','想','去','超市','买','牛奶','。'], ans:'明天我想去超市买牛奶。', audio:'明天我想去超市买牛奶。', alt:['我明天想去超市买牛奶。']},
+  {words:['她','怎么','去','超市','？'], ans:'她怎么去超市？', audio:'她怎么去超市？'},
+  {words:['我','不','想','吃','包子','。'], ans:'我不想吃包子。', audio:'我不想吃包子。'},
+  {words:['老师','的','电话','号','是','多少','？'], ans:'老师的电话号是多少？', audio:'老师的电话号是多少？'},
+  {words:['星期天','我们','坐','出租车','去','西安饭店','吃','晚饭','。'], ans:'星期天我们坐出租车去西安饭店吃晚饭。', audio:'星期天我们坐出租车去西安饭店吃晚饭。', alt:['我们星期天坐出租车去西安饭店吃晚饭。']},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3c · TRẮC NGHIỆM
 // ══════════════════════════════════════════
 var mcData = [
-  {q:'Khi đọc số điện thoại, số "1" phải đọc là gì?', opts:['yāo', 'yī', 'yì', 'yí'], ans:0, exp:'Khi đọc số điện thoại, số phòng, “1” thường đọc là yāo để khỏi nhầm với “7” (qī).'},
-  {q:'"你的手机号是多少？" — vì sao dùng "多少" mà không dùng "几"?', opts:['多少 dùng khi số lượng lớn/không giới hạn chữ số', '几 mới đúng ngữ pháp', 'Không có sự khác biệt', '多少 chỉ dùng cho tuổi tác'], ans:0, exp:'几 hỏi số nhỏ (thường dưới 10); số điện thoại dài nhiều chữ số nên dùng 多少.'},
-  {q:'"想" (động từ năng nguyện) biểu thị điều gì?', opts:['Mong muốn, dự định', 'Khả năng do học tập (giống 会)', 'Sự sở hữu', 'Sự phủ định'], ans:0, exp:'想 + động từ = muốn, định làm gì: 我想去超市; biết làm nhờ học thì dùng 会.'},
-  {q:'"我想去超市买东西" là câu gì?', opts:['Câu liên động biểu thị mục đích', 'Câu liên động biểu thị phương thức', 'Câu chữ 是', 'Câu vị ngữ danh từ'], ans:0, exp:'去超市 rồi 买东西: động từ sau nói mục đích của động từ trước → câu liên động chỉ mục đích.'},
-  {q:'"坐出租车去" là câu gì?', opts:['Câu liên động biểu thị phương thức (đi bằng cách nào)', 'Câu liên động biểu thị mục đích', 'Câu nghi vấn', 'Câu phủ định'], ans:0, exp:'坐出租车 nói cách đi (bằng gì), 去 là hành động chính → câu liên động chỉ phương thức.'},
-  {q:'"怎么" dùng để hỏi về điều gì?', opts:['Phương thức thực hiện hành động', 'Số lượng', 'Thời gian', 'Địa điểm cụ thể'], ans:0, exp:'怎么 + động từ hỏi cách làm: 怎么去？= đi bằng cách nào?'},
-  {q:'"我们怎么去？" trả lời phù hợp là gì?', opts:['坐出租车去', '去超市', '想买东西', '很好吃'], ans:0, exp:'Hỏi 怎么去 (đi bằng gì) thì trả lời bằng phương thức: 坐出租车去.'},
-  {q:'"那边的包子非常好吃" — "非常" bổ nghĩa cho từ nào?', opts:['好吃', '包子', '那边', '的'], ans:0, exp:'非常 là phó từ chỉ mức độ, đứng trước và bổ nghĩa cho tính từ 好吃 (rất ngon).'},
+  {q:'Bạn muốn xin số điện thoại di động của Gia Nguyệt:', opts:['家月，你的手机号是多少？', '家月，你的手机号是几？', '家月，你的手机号多少是？', '家月，多少是你的手机号？'], ans:0, exp:'Số điện thoại dài nhiều chữ số nên hỏi 多少; 几 chỉ hỏi số nhỏ; từ để hỏi đứng đúng chỗ của câu trả lời.'},
+  {q:'Hỏi số điện thoại của thầy: “老师，您的手机号是＿＿？”', opts:['多少', '几', '几个', '哪'], ans:0, exp:'Số dài, nhiều chữ số → 多少; 几 / 几个 dùng cho số nhỏ dưới 10.'},
+  {q:'Ngày mai tôi muốn đi siêu thị: “明天我＿＿去超市。”', opts:['想', '是', '有', '很'], ans:0, exp:'想 + động từ = muốn làm gì: 想去超市.'},
+  {q:'Câu nào SAI?', opts:['我想超市买东西。', '我想去超市买东西。', '我不想去超市。', '你想去超市吗？'], ans:0, exp:'Thiếu động từ 去: phải nói 想去超市买东西 — tiếng Việt “muốn (đi) siêu thị” hay bỏ động từ.'},
+  {q:'Bạn không muốn ăn bánh bao: “我＿＿吃包子。”', opts:['不想', '没有想', '想不', '不是想'], ans:0, exp:'Phủ định của 想 là 不想, 不 đứng trước 想; không dùng 没有 trước động từ năng nguyện.'},
+  {q:'Mẹ hỏi: “你想吃什么？” — Con đáp:', opts:['我想吃米饭。', '我想米饭吃。', '我吃想米饭。', '我想吃什么。'], ans:0, exp:'Trật tự: Chủ ngữ + 想 + động từ + tân ngữ: 我想吃米饭.'},
+  {q:'Bạn muốn nói “Tôi đi siêu thị mua đồ.” Câu đúng là:', opts:['我去超市买东西。', '我买东西去超市。', '我去超市和买东西。', '我超市去买东西。'], ans:0, exp:'Câu liên động: việc làm trước (去超市) nói trước, mục đích (买东西) nói sau; không thêm 和 giữa hai động từ.'},
+  {q:'Bạn muốn nói “Chúng tôi đi taxi đến nhà hàng Tây An.” Câu đúng là:', opts:['我们坐出租车去西安饭店。', '我们去西安饭店坐出租车。', '我们坐西安饭店去出租车。', '我们去坐出租车西安饭店。'], ans:0, exp:'Phương tiện (坐出租车) đứng trước, nơi đến (去西安饭店) đứng sau.'},
+  {q:'A: “你去超市买什么？” — B đáp:', opts:['我想买些牛奶。', '我坐出租车去。', '我去超市。', '那边的包子非常好吃。'], ans:0, exp:'Hỏi 买什么 (mua gì) thì trả lời đồ cần mua: 买些牛奶.'},
+  {q:'A: “明天你去哪儿？” — B đáp:', opts:['我想去超市买东西。', '我想买东西。', '坐出租车去。', '我想吃包子。'], ans:0, exp:'Hỏi 去哪儿 (đi đâu) thì câu trả lời phải có nơi chốn: 去超市.'},
+  {q:'Bạn muốn hỏi “Chủ nhật nhà mình đi đâu ăn tối?”', opts:['星期天我们去哪儿吃晚饭？', '星期天我们吃晚饭去哪儿？', '星期天我们去吃晚饭哪儿？', '我们去哪儿星期天吃晚饭？'], ans:0, exp:'去哪儿 đứng trước mục đích 吃晚饭; thời gian 星期天 đứng trước động từ.'},
+  {q:'A: “我们怎么去？” — B đáp:', opts:['坐出租车去。', '去西安饭店。', '想吃包子。', '非常好吃。'], ans:0, exp:'Hỏi 怎么去 (đi bằng gì) thì trả lời bằng phương thức: 坐出租车去.'},
+  {q:'Bạn hỏi: “Cô ấy đi siêu thị bằng cách nào?”', opts:['她怎么去超市？', '她去超市怎么？', '她怎么去超市吗？', '怎么她去超市？'], ans:0, exp:'怎么 đứng trước động từ; câu đã có 怎么 thì không thêm 吗.'},
+  {q:'Câu nào SAI?', opts:['你怎么去吗？', '你怎么去？', '你想去哪儿？', '你去超市吗？'], ans:0, exp:'Câu đã có từ để hỏi 怎么 thì không thêm 吗 — lỗi quen dùng 吗 cho mọi câu hỏi.'},
+  {q:'Bạn muốn nói “Bánh bao ở đằng kia rất ngon.” Câu đúng là:', opts:['那边的包子非常好吃。', '那边的包子好吃非常。', '那边非常的包子好吃。', '那边的非常包子好吃。'], ans:0, exp:'Phó từ 非常 đứng trước tính từ 好吃, không đặt sau như “ngon lắm” trong tiếng Việt.'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 3 bài khoá.',
+  intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời về chính bạn.',
   questions: [
-    {q_zh: '有人问你："你的手机号是多少？" 你怎么回答？', q_vn: 'Có người hỏi bạn: "Số điện thoại di động của bạn là bao nhiêu?" Bạn trả lời thế nào?',
+    {q_zh: '你的手机号是多少？', q_vn: 'Bạn mới quen xin số điện thoại di động của bạn. Hãy trả lời.',
      hint: '我的手机号是……', sample: '我的手机号是13801234567。', sample_vn: 'Số điện thoại di động của tôi là 13801234567.',
      note: 'Khi đọc số điện thoại, đọc từng chữ số một, số "1" đọc là "yāo".'},
-    {q_zh: '朋友问你明天想去哪儿，你怎么回答？', q_vn: 'Bạn của bạn hỏi ngày mai bạn muốn đi đâu, bạn trả lời thế nào?',
-     hint: '我想去……买/吃……', sample: '我想去超市买东西。', sample_vn: 'Tôi muốn đi siêu thị mua đồ.',
+    {q_zh: '明天你想去哪儿？想做什么？', q_vn: 'Bạn học hỏi ngày mai bạn muốn đi đâu, làm gì. Hãy nói về kế hoạch của bạn.',
+     hint: '明天我想去……买/吃……', sample: '明天我想去超市买东西。', sample_vn: 'Ngày mai tôi muốn đi siêu thị mua đồ.',
      note: 'Câu liên động: 去 + địa điểm + động từ mục đích (买东西/吃晚饭...).'},
-    {q_zh: '有人问你："我们怎么去？" 你怎么回答？', q_vn: 'Có người hỏi: "Chúng ta đi thế nào?" Bạn trả lời thế nào?',
+    {q_zh: '我们怎么去？', q_vn: 'Bạn bè hỏi cả nhóm đi đến nhà hàng bằng cách nào. Hãy trả lời.',
      hint: '坐……去。', sample: '坐出租车去。', sample_vn: 'Đi taxi nhé.',
      note: '怎么 hỏi về phương thức; trả lời bằng 坐 + phương tiện + 去.'},
+    {q_zh: '晚饭你想吃什么？', q_vn: 'Mẹ hỏi tối nay bạn muốn ăn gì. Hãy nói món bạn muốn ăn và món không muốn ăn.',
+     hint: '我想吃……，不想吃……', sample: '我想吃米饭，不想吃面条儿。', sample_vn: 'Con muốn ăn cơm, không muốn ăn mì.',
+     note: 'Phủ định của 想 là 不想.'},
+    {q_zh: '星期天你想做什么？', q_vn: 'Bạn học hỏi Chủ nhật bạn muốn làm gì. Hãy nói thật về bạn.',
+     hint: '星期天我想……', sample: '星期天我想去西安饭店吃包子。', sample_vn: 'Chủ nhật tôi muốn đến nhà hàng Tây An ăn bánh bao.',
+     note: '想 + 去 + nơi chốn + việc làm: muốn đi đâu để làm gì.'},
   ],
 };
 
@@ -2468,6 +2522,8 @@ var translateData = [
   {vi:'Tôi muốn đi siêu thị mua ít sữa.', zh:'我想去超市买些牛奶。', py:'Wǒ xiǎng qù chāoshì mǎi xiē niúnǎi.'},
   {vi:'Bánh bao ở đó rất ngon, tôi muốn ăn bánh bao.', zh:'那边的包子非常好吃，我想吃包子。', py:'Nàbiān de bāozi fēicháng hǎochī, wǒ xiǎng chī bāozi.'},
   {vi:'Chúng ta đi thế nào? — Đi taxi nhé.', zh:'我们怎么去？——坐出租车去。', py:'Wǒmen zěnme qù? — Zuò chūzūchē qù.'},
+  {vi:'Chủ nhật bạn muốn ăn gì? — Tôi muốn ăn sủi cảo.', zh:'星期天你想吃什么？——我想吃饺子。', py:'Xīngqītiān nǐ xiǎng chī shénme? — Wǒ xiǎng chī jiǎozi.'},
+  {vi:'Cô ấy đi siêu thị bằng cách nào? — Cô ấy đi taxi.', zh:'她怎么去超市？——她坐出租车去。', py:'Tā zěnme qù chāoshì? — Tā zuò chūzūchē qù.'},
 ];
 
 // ══════════════════════════════════════════
@@ -2475,7 +2531,7 @@ var translateData = [
 // ══════════════════════════════════════════
 var translateDataRev = [
   {vi:'Ngày mai bạn muốn đi đâu? — Tôi muốn đi siêu thị mua ít đồ.', zh:'明天你想去哪儿？——我想去超市买些东西。', py:'Míngtiān nǐ xiǎng qù nǎr? — Wǒ xiǎng qù chāoshì mǎi xiē dōngxi.'},
-  {vi:'Cơm ở nhà hàng này rất ngon, con tôi rất thích ăn.', zh:'这家饭店的米饭非常好吃，我的孩子很喜欢吃。', py:'Zhè jiā fàndiàn de mǐfàn fēicháng hǎochī, wǒ de háizi hěn xǐhuan chī.'},
-  {vi:'Anh trai tôi không muốn nghỉ, anh ấy muốn đi làm.', zh:'我哥哥不想休息，他想去上班。', py:'Wǒ gēge bù xiǎng xiūxi, tā xiǎng qù shàngbān.'},
+  {vi:'Cơm ở nhà hàng Tây An rất ngon, con tôi rất thích ăn.', zh:'西安饭店的米饭非常好吃，我的孩子很喜欢吃。', py:'Xī\'ān Fàndiàn de mǐfàn fēicháng hǎochī, wǒ de háizi hěn xǐhuan chī.'},
+  {vi:'Anh trai tôi không muốn nghỉ, anh ấy muốn đi siêu thị mua đồ.', zh:'我哥哥不想休息，他想去超市买东西。', py:'Wǒ gēge bù xiǎng xiūxi, tā xiǎng qù chāoshì mǎi dōngxi.'},
   {vi:'Chúng tôi ngồi taxi đi siêu thị mua sữa và bánh bao.', zh:'我们坐出租车去超市买牛奶和包子。', py:'Wǒmen zuò chūzūchē qù chāoshì mǎi niúnǎi hé bāozi.'},
 ];

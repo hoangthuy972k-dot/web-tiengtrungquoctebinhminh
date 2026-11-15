@@ -2485,25 +2485,61 @@ var matchData = [
   {left:'睡', right:'觉'},
   {left:'小朋', right:'友'},
   {left:'昨', right:'天'},
+  {left:'知', right:'道'},
+  {left:'时', right:'候'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 2 · NGHE — để trống, chờ tài liệu gốc giáo trình HSK1 3.0
+// PHẦN 2 · NGHE — nghe câu (giọng đọc máy) → chọn đáp án
 // ══════════════════════════════════════════
-var listenData = [];
+var listenData = [
+  {audio:'喂，我正在找饭店呢。饭店是不是在超市后边？',
+   questions:[
+     {q:'Người nói đang làm gì?', opts:['Đang ăn ở nhà hàng', 'Đang tìm nhà hàng', 'Đang mua đồ ở siêu thị'], ans:1, exp:'正在找饭店呢 = đang tìm nhà hàng.'},
+   ]},
+  {audio:'弟弟没起床呢，还在睡觉。',
+   questions:[
+     {q:'Em trai đang làm gì?', opts:['Đang ngủ', 'Đang ăn', 'Đang chơi'], ans:0, exp:'没起床呢，还在睡觉 = chưa dậy, vẫn đang ngủ.'},
+   ]},
+  {audio:'明天我要去书店，你去不去？',
+   questions:[
+     {q:'Ngày mai người nói định đi đâu?', opts:['Siêu thị', 'Nhà hàng', 'Hiệu sách'], ans:2, exp:'要去书店 = định đi hiệu sách.'},
+     {q:'Người nói hỏi bạn điều gì?', opts:['Bạn có đi không?', 'Bạn đã đi chưa?', 'Bạn đi lúc mấy giờ?'], ans:0, exp:'去不去 (V不V) hỏi việc chưa xảy ra: có đi không?'},
+   ]},
+  {audio:'我哥哥是大学生，他学医，他的课很多，非常忙。',
+   questions:[
+     {q:'Anh trai học ngành gì?', opts:['Tiếng Trung', 'Y', 'Máy tính'], ans:1, exp:'学医 = học ngành y.'},
+   ]},
+  {audio:'昨天我没开车，我坐出租车去饭店。',
+   questions:[
+     {q:'Hôm qua người nói đến nhà hàng bằng gì?', opts:['Tự lái xe', 'Đi bộ', 'Đi taxi'], ans:2, exp:'没开车 = không lái xe; 坐出租车 = đi taxi.'},
+   ]},
+  {audio:'你在做什么呢？我在看电视呢。',
+   questions:[
+     {q:'Người thứ hai đang làm gì?', opts:['Xem ti vi', 'Xem phim ở rạp', 'Đọc sách'], ans:0, exp:'在看电视呢 = đang xem ti vi.'},
+   ]},
+];
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
   {pre:'你什么', blank:'时候', post:'能到饭店？', hint:'(lúc, khi)', ans:'时候', exp:'什么时候 = khi nào, đứng trước động từ để hỏi thời gian: 你什么时候能到？'},
-  {pre:'还不知道，', blank:'正在找', post:'呢。', hint:'(đang tìm)', ans:'正在找', exp:'正在 + động từ (+ 呢) = đang làm gì: 正在找呢 = đang tìm đây.'},
-  {pre:'你', blank:'开车没开车', post:'？', hint:'(có lái xe không)', ans:'开车没开车', exp:'Câu hỏi chính phản về việc đã xảy ra: V + 没 + V (开车没开车), không thêm 吗.'},
+  {pre:'还不知道，', blank:'正在找', post:'呢。', hint:'(đang tìm)', ans:'正在找', exp:'正在 + động từ (+ 呢) = đang làm gì; 正在 đứng TRƯỚC động từ.'},
+  {pre:'你', blank:'开车没开车', post:'？', hint:'(có lái xe không)', ans:'开车没开车', exp:'Hỏi việc đã xảy ra: V + 没 + V (开车没开车), không thêm 吗.'},
   {pre:'你还', blank:'在读大学', post:'吗？', hint:'(đang học đại học)', ans:'在读大学', exp:'在 + động từ = đang; 还在读大学 = vẫn đang học đại học.'},
-  {pre:'非常忙，我学医，我们的', blank:'课很多', post:'。', hint:'(nhiều môn học)', ans:'课很多', exp:'Câu vị ngữ tính từ: 课 + 很多, tính từ 多 làm vị ngữ, không cần 是.'},
-  {pre:'', blank:'弟弟起床没起床', post:'呢？', hint:'(em trai đã dậy chưa)', ans:'弟弟起床没起床', exp:'Hỏi việc đã làm chưa dùng V没V: 弟弟起床没起床？= em trai dậy chưa?'},
-  {pre:'他今天', blank:'去不去', post:'那里？', hint:'(có đi không)', ans:'去不去', exp:'Hỏi ý định (việc chưa xảy ra) dùng V + 不 + V: 去不去？= có đi không?'},
-  {pre:'他今天', blank:'要和小朋友玩', post:'。', hint:'(muốn chơi với các bạn)', ans:'要和小朋友玩', exp:'要 (muốn) đứng trước cụm 和 + người, rồi mới đến động từ 玩: 要和小朋友玩.'},
+  {pre:'非常忙，我学医，我们的', blank:'课很多', post:'。', hint:'(nhiều môn học)', ans:'课很多', exp:'Tính từ 多 làm vị ngữ: 课很多, không cần 是.'},
+  {pre:'', blank:'弟弟起床没起床', post:'呢？', hint:'(em trai đã dậy chưa)', ans:'弟弟起床没起床', exp:'Hỏi việc đã làm chưa dùng V没V: 弟弟起床没起床？'},
+  {pre:'他今天', blank:'去不去', post:'那里？', hint:'(có đi không)', ans:'去不去', exp:'Hỏi ý định (việc chưa xảy ra) dùng V + 不 + V: 去不去？'},
+  {pre:'他今天', blank:'要和小朋友玩', post:'。', hint:'(muốn chơi với các bạn)', ans:'要和小朋友玩', exp:'要 (muốn) đứng trước cụm 和 + người, rồi mới đến động từ 玩.'},
+  {pre:'Bạn hỏi chiếc áo có đắt không: “这件衣服贵', blank:'不贵', post:'？”', hint:'(có … không — tính từ)', ans:'不贵', exp:'Tính từ hỏi chính phản chỉ dùng 不: 贵不贵; không thêm 吗.'},
+  {pre:'Bạn hỏi bạn đã xem bộ phim đó chưa: “你看', blank:'没看', post:'那个电影？”', hint:'(… chưa — việc đã xảy ra)', ans:'没看', exp:'Hỏi việc đã xảy ra hay chưa dùng V没V: 看没看.'},
+  {pre:'Bố đang ngủ: “爸爸', blank:'在', post:'睡觉呢。”', hint:'(đang — 1 chữ)', ans:'在', exp:'在 + động từ + 呢 = đang làm gì; 在 đứng trước động từ, không đứng sau.'},
+  {pre:'Mình đang tìm điện thoại: “我', blank:'正在', post:'找我的手机。”', hint:'(đang — 2 chữ)', ans:'正在', exp:'正在 + động từ = đang làm gì.'},
+  {pre:'Mai mình định đi hiệu sách: “明天我', blank:'要', post:'去书店。”', hint:'(muốn, định — từ mới của bài này)', ans:'要', exp:'要 + động từ = muốn, định làm gì; 要 phải đi kèm động từ (去).'},
+  {pre:'Em trai chưa dậy, vẫn đang ngủ: “弟弟', blank:'没', post:'起床呢，还在睡觉。”', hint:'(chưa)', ans:'没', exp:'Phủ định việc chưa xảy ra / không đang làm dùng 没, không dùng 不.'},
+  {pre:'Bạn hỏi bạn có biết nhà hàng ở đâu không: “你', blank:'知道', post:'饭店在哪儿吗？”', hint:'(biết — biết thông tin)', ans:'知道', exp:'知道 = biết (thông tin); 会 = biết làm (kỹ năng học được).'},
+  {pre:'Hôm qua mình hỏi anh ấy: “我昨天', blank:'问', post:'他。”', hint:'(hỏi)', ans:'问', exp:'Thời gian 昨天 đứng trước động từ: 我昨天问他.'},
 ];
 
 // ══════════════════════════════════════════
@@ -2515,38 +2551,64 @@ var sortData = [
   {words:['你','还','在','读','大学','吗','？'], ans:'你还在读大学吗？', audio:'你还在读大学吗？'},
   {words:['我们','的','课','很多','。'], ans:'我们的课很多。', audio:'我们的课很多。'},
   {words:['弟弟','起床','没','起床','呢','？'], ans:'弟弟起床没起床呢？', audio:'弟弟起床没起床呢？'},
-  {words:['他','今天','要','和','小朋友','玩','。'], ans:'他今天要和小朋友玩。', audio:'他今天要和小朋友玩。'},
+  {words:['他','今天','要','和','小朋友','玩','。'], ans:'他今天要和小朋友玩。', audio:'他今天要和小朋友玩。', alt:['今天他要和小朋友玩。']},
+  {words:['你','今天','去','不','去','超市','？'], ans:'你今天去不去超市？', audio:'你今天去不去超市？', alt:['今天你去不去超市？']},
+  {words:['我','没','看','电视','，','我','在','睡觉','呢','。'], ans:'我没看电视，我在睡觉呢。', audio:'我没看电视，我在睡觉呢。'},
+  {words:['妈妈','正在','做饭','呢','。'], ans:'妈妈正在做饭呢。', audio:'妈妈正在做饭呢。'},
+  {words:['明天','我','要','和','朋友','去','看','电影','。'], ans:'明天我要和朋友去看电影。', audio:'明天我要和朋友去看电影。', alt:['我明天要和朋友去看电影。']},
+  {words:['你','是','不','是','大学生','？'], ans:'你是不是大学生？', audio:'你是不是大学生？'},
+  {words:['你','想','去','哪里','？'], ans:'你想去哪里？', audio:'你想去哪里？'},
+  {words:['我','哥哥','在','大学','学','医','。'], ans:'我哥哥在大学学医。', audio:'我哥哥在大学学医。'},
+  {words:['他','对','我','说','，','他','不','去','。'], ans:'他对我说，他不去。', audio:'他对我说，他不去。'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3c · TRẮC NGHIỆM
 // ══════════════════════════════════════════
 var mcData = [
-  {q:'"你什么时候能到饭店？" nghĩa là gì?', opts:['Khi nào bạn có thể đến nhà hàng?', 'Nhà hàng ở đâu?', 'Bạn có đến nhà hàng không?', 'Nhà hàng có ngon không?'], ans:0, exp:'什么时候 = khi nào (hỏi thời gian); 能到 = có thể đến.'},
-  {q:'"你开车没开车？" là dạng câu hỏi gì?', opts:['câu hỏi chính phản (正反问)', 'câu hỏi dùng 吗', 'câu hỏi dùng từ để hỏi', 'câu cảm thán'], ans:0, exp:'Ghép dạng khẳng định và phủ định (开车 + 没开车) để hỏi là câu hỏi chính phản, không cần 吗.'},
-  {q:'"你还在读大学吗？" nghĩa là gì?', opts:['Bạn vẫn đang học đại học à?', 'Bạn đã tốt nghiệp đại học chưa?', 'Bạn có muốn học đại học không?', 'Bạn học đại học nào?'], ans:0, exp:'还 = vẫn, 在 + động từ = đang: 还在读大学吗？= vẫn đang học đại học à?'},
-  {q:'Phó từ "正在" dùng để biểu thị điều gì?', opts:['hành động đang diễn ra', 'hành động đã hoàn thành', 'hành động sắp xảy ra', 'hành động phủ định'], ans:0, exp:'正在 + động từ = đang làm, hành động đang diễn ra; việc đã xong thì dùng 了.'},
-  {q:'"弟弟起床没起床呢？" nghĩa là gì?', opts:['Em trai đã dậy chưa?', 'Em trai đi đâu rồi?', 'Em trai đang ăn gì?', 'Em trai bao nhiêu tuổi?'], ans:0, exp:'起床没起床 hỏi việc đã xảy ra hay chưa: em trai đã dậy chưa?'},
-  {q:'"他今天要和小朋友玩。" nghĩa là gì?', opts:['Hôm nay cậu ấy muốn chơi với các bạn.', 'Hôm nay cậu ấy phải đi học.', 'Hôm nay cậu ấy không muốn chơi.', 'Hôm nay cậu ấy đi làm.'], ans:0, exp:'要 = muốn; 和小朋友玩 = chơi với các bạn nhỏ.'},
-  {q:'Động từ năng nguyện "要" trong bài dùng để biểu thị điều gì?', opts:['mong muốn, dự định làm gì', 'khả năng làm gì', 'sự cho phép', 'sự phủ định'], ans:0, exp:'要 + động từ ở đây = muốn, định làm gì: 他今天要和小朋友玩.'},
-  {q:'Câu hỏi chính phản với động từ dùng phó từ phủ định nào?', opts:['不/没', '不 (chỉ dùng 不)', '没 (chỉ dùng 没)', '别'], ans:0, exp:'Hỏi việc chưa xảy ra dùng V不V (去不去); hỏi việc đã xảy ra dùng V没V (开车没开车).'},
+  {q:'Bạn muốn hỏi “Bạn có phải là sinh viên không?”. Câu đúng là:', opts:['你是不是大学生？', '你是不是大学生吗？', '你是没是大学生？', '你不是是大学生？'], ans:0, exp:'Câu hỏi chính phản 是不是 đã là câu hỏi, không thêm 吗; 是 phủ định bằng 不, không bằng 没.'},
+  {q:'Bạn hỏi bạn ngày mai có đến đó không:', opts:['明天你去不去那里？', '明天你去没去那里？', '明天你去不去那里吗？', '明天你不去去那里？'], ans:0, exp:'Việc chưa xảy ra (明天) dùng V不V; 去没去 hỏi việc đã qua; không thêm 吗.'},
+  {q:'Bố hỏi em trai đã dậy chưa:', opts:['弟弟起床没起床？', '弟弟起床没起床吗？', '弟弟起床不起床吗？', '弟弟没起床起床？'], ans:0, exp:'Hỏi việc đã xảy ra hay chưa dùng V没V, không thêm 吗.'},
+  {q:'Bạn hỏi các bạn sinh viên: “你们学习＿＿？” (có bận không)', opts:['忙不忙', '忙没忙', '很忙不忙', '忙吗不'], ans:0, exp:'Tính từ hỏi chính phản chỉ dùng 不 (忙不忙), không dùng 没, không thêm 很.'},
+  {q:'Bạn đang tìm nhà hàng, bạn nói qua điện thoại:', opts:['我正在找饭店呢。', '我找饭店正在呢。', '我找饭店在呢。', '我正在找饭店吗。'], ans:0, exp:'正在 đứng ngay TRƯỚC động từ, 呢 ở cuối câu; đặt 正在 sau động từ là lỗi hay gặp.'},
+  {q:'A: “你在做什么呢？” B (đang xem ti vi) đáp:', opts:['我在看电视呢。', '我看电视在呢。', '我在看电视吗。', '我是看电视呢。'], ans:0, exp:'在 + động từ + 呢 = đang làm gì; câu trả lời không dùng 吗.'},
+  {q:'A: “弟弟在看电视吗？” B (không, em ấy đang ngủ) đáp:', opts:['他没看电视，在睡觉呢。', '他不看电视，在睡觉呢。', '他没看电视，睡觉在呢。', '他看电视没，在睡觉呢。'], ans:0, exp:'Phủ định hành động đang diễn ra dùng 没 + động từ; 不看 nghĩa là “không (bao giờ) xem”.'},
+  {q:'Hôm nay em trai muốn chơi với các bạn. Câu đúng là:', opts:['他今天要和小朋友玩。', '他今天要玩和小朋友。', '他今天和要小朋友玩。', '他今天要小朋友和玩。'], ans:0, exp:'要 → 和 + người → động từ; tiếng Việt “chơi với bạn” dễ làm học sinh đặt 和小朋友 sau 玩.'},
+  {q:'Ngày mai bạn KHÔNG muốn đi siêu thị. Câu đúng là:', opts:['我明天不想去超市。', '我明天没要去超市。', '我明天要不去超市。', '我明天不去要超市。'], ans:0, exp:'“Không muốn” nói 不想; không dùng 没 để phủ định 要.'},
+  {q:'Câu nào SAI?', opts:['我要超市。', '我要去超市。', '我想去超市。', '我明天要去超市。'], ans:0, exp:'要 (muốn, định) phải đi kèm động từ: 要去超市.'},
+  {q:'A: “你知道不知道饭店在哪儿？” B (không biết) đáp:', opts:['我不知道。', '我没知道。', '我知道不。', '我不知道吗。'], ans:0, exp:'知道 phủ định bằng 不: 不知道.'},
+  {q:'A: “你昨天开车没开车？” B (không lái) đáp:', opts:['我没开车。', '我不开车。', '我开车没。', '我没开车吗。'], ans:0, exp:'Hỏi việc đã qua (昨天) → đáp 没 + động từ; 不开车 là “không lái xe” nói chung.'},
+  {q:'A: “你哥哥在哪儿工作？” B (anh ấy vẫn đang học đại học) đáp:', opts:['他还在读大学呢。', '他还读大学在呢。', '他在还读大学呢。', '他还是在读大学吗。'], ans:0, exp:'还 (vẫn) + 在 + động từ + 呢 = vẫn đang làm gì.'},
+  {q:'A: “你什么时候起床？” B đáp:', opts:['我早上七点起床。', '我起床早上七点。', '我七点早上起床。', '我起床在七点。'], ans:0, exp:'Thời gian đứng trước động từ, giờ lớn đến nhỏ: 早上七点 (ôn bài 7).'},
+  {q:'Kể lại lời em trai: “我问他，他＿＿我说，他不去超市。”', opts:['对', '在', '是', '到'], ans:0, exp:'对 + người + 说 = nói với ai; 对我 đứng trước động từ 说.'},
+  {q:'Bạn hỏi bạn có anh trai không:', opts:['你有没有哥哥？', '你有不有哥哥？', '你有没有哥哥吗？', '你没有有哥哥？'], ans:0, exp:'有 phủ định là 没有 nên hỏi chính phản là 有没有; không thêm 吗.'},
+  {q:'A: “你去哪里？” B (đi siêu thị mua đồ) đáp:', opts:['我去超市买东西。', '我去买东西超市。', '我去超市东西买。', '超市我去买东西。'], ans:0, exp:'去 + nơi chốn + làm gì (ôn bài 6): 去超市买东西.'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 3 bài khoá.',
+  intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời của bạn — các câu cuối hãy nói về chính bạn.',
   questions: [
-    {q_zh: '有人问你："你在做什么呢？" 你怎么回答？', q_vn: 'Có người hỏi bạn: "Bạn đang làm gì đấy?" Bạn trả lời thế nào?',
-     hint: '我正在……呢。', sample: '我正在找饭店呢。', sample_vn: 'Tôi đang tìm nhà hàng đây.',
-     note: 'Cấu trúc "正在 + động từ + 呢" dùng để nói về hành động đang diễn ra.'},
-    {q_zh: '有人问你："你还在读大学吗？" 你怎么回答？', q_vn: 'Có người hỏi bạn: "Bạn vẫn đang học đại học à?" Bạn trả lời thế nào?',
-     hint: '对，我……', sample: '对，我读大学呢，还是大学生。', sample_vn: 'Đúng vậy, tôi đang học đại học, vẫn đang là sinh viên.',
-     note: 'Có thể trả lời khẳng định bằng "对" rồi nhắc lại nội dung câu hỏi.'},
-    {q_zh: '朋友问你今天要做什么，你怎么回答？', q_vn: 'Bạn của bạn hỏi hôm nay bạn định làm gì, bạn trả lời thế nào?',
-     hint: '我今天要……', sample: '我今天要和小朋友玩。', sample_vn: 'Hôm nay tôi muốn chơi với các bạn.',
-     note: 'Động từ năng nguyện "要" đặt trước động từ để nói về dự định.'},
+    {q_zh: '你在做什么呢？', q_vn: 'Bạn của bạn gọi điện hỏi bạn đang làm gì. Hãy trả lời thật về việc bạn đang làm.',
+     hint: '我在/正在……呢。', sample: '我正在学习中文呢。', sample_vn: 'Mình đang học tiếng Trung đây.',
+     note: '正在/在 + động từ + 呢 dùng để nói hành động đang diễn ra.'},
+    {q_zh: '你还在读大学吗？', q_vn: 'Có người hỏi bạn có còn đang học đại học không. Hãy trả lời (giả sử bạn là sinh viên).',
+     hint: '对，我……', sample: '对，我读大学呢，还是大学生。', sample_vn: 'Đúng vậy, mình đang học đại học, vẫn là sinh viên.',
+     note: 'Trả lời khẳng định bằng 对 rồi nhắc lại nội dung câu hỏi.'},
+    {q_zh: '你今天要做什么？', q_vn: 'Hôm nay bạn định làm gì? Hãy nói về chính bạn.',
+     hint: '我今天要……', sample: '我今天要去超市买东西。', sample_vn: 'Hôm nay mình định đi siêu thị mua đồ.',
+     note: '要 + động từ nói dự định; “không muốn” thì nói 不想.'},
+    {q_zh: '你忙不忙？', q_vn: 'Dạo này bạn có bận không? Trả lời thật và nói lý do.',
+     hint: '我很忙/不太忙，……', sample: '我很忙，我们的课很多。', sample_vn: 'Mình bận lắm, bọn mình có nhiều môn học.',
+     note: 'Câu hỏi chính phản 忙不忙 không cần 吗; trả lời bằng 很忙 / 不忙.'},
+    {q_zh: '你明天去不去学校？', q_vn: 'Ngày mai bạn có đến trường không? Trả lời thật về bạn.',
+     hint: '我明天去/不去学校，……', sample: '我明天去学校，上午有课。', sample_vn: 'Mai mình đến trường, buổi sáng có tiết học.',
+     note: 'Việc chưa xảy ra dùng V不V; trả lời bằng 去 / 不去.'},
+    {q_zh: '我有一个弟弟。', q_vn: 'Bạn của bạn nói “Mình có một em trai.” Hãy hỏi lại xem em trai có phải là sinh viên không (dùng 是不是).',
+     hint: '你弟弟是不是……？', sample: '你弟弟是不是大学生？', sample_vn: 'Em trai bạn có phải là sinh viên không?',
+     note: 'Đã dùng 是不是 thì không thêm 吗 ở cuối câu.'},
   ],
 };
 
@@ -2558,6 +2620,7 @@ var translateData = [
   {vi:'Tôi không lái xe, đang đi taxi đây.', zh:'我没开车，坐车呢。', py:'Wǒ méi kāichē, zuò chē ne.'},
   {vi:'Bạn vẫn đang học đại học à?', zh:'你还在读大学吗？', py:'Nǐ hái zài dú dàxué ma?'},
   {vi:'Hôm nay cậu ấy muốn chơi với các bạn.', zh:'他今天要和小朋友玩。', py:'Tā jīntiān yào hé xiǎopéngyǒu wán.'},
+  {vi:'Ngày mai bạn có đi siêu thị không? — Không đi, mai tôi muốn ở nhà học bài.', zh:'明天你去不去超市？——不去，明天我要在家里学习。', py:'Míngtiān nǐ qù bu qù chāoshì? — Bú qù, míngtiān wǒ yào zài jiā li xuéxí.'},
 ];
 
 // ══════════════════════════════════════════

@@ -2630,25 +2630,65 @@ var matchData = [
   {left:'上', right:'班'},
   {left:'分', right:'钟'},
   {left:'现', right:'在'},
+  {left:'医', right:'院'},
+  {left:'晚', right:'上'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 2 · NGHE — để trống, chờ audio + tài liệu gốc giáo trình HSK1 3.0
+// PHẦN 2 · NGHE — nghe câu (giọng đọc máy) → chọn đáp án
 // ══════════════════════════════════════════
-var listenData = [];
+var listenData = [
+  {audio:'现在早上八点四十。',
+   questions:[
+     {q:'Bây giờ là mấy giờ?', opts:['8:14', '8:40', '4:08'], ans:1, exp:'八点四十 = 8 giờ 40 phút.'},
+   ]},
+  {audio:'我们下午两点见吧。',
+   questions:[
+     {q:'Họ hẹn gặp lúc nào?', opts:['2 giờ chiều', '2 giờ sáng', '12 giờ trưa'], ans:0, exp:'下午两点 = 2 giờ chiều; 吧 cuối câu là lời đề nghị.'},
+   ]},
+  {audio:'我明天下午两点还上课呢，四点半下课。',
+   questions:[
+     {q:'Ngày mai mấy giờ người nói tan học?', opts:['2 giờ', '4 giờ', '4 giờ rưỡi'], ans:2, exp:'四点半下课 = 4 giờ rưỡi tan học.'},
+   ]},
+  {audio:'下午我想去电影院看电影，你去吗？我不想去，下午还有事。',
+   questions:[
+     {q:'Người thứ hai có đi xem phim không?', opts:['Có đi', 'Không đi, vì còn có việc', 'Không đi, vì phải lên lớp'], ans:1, exp:'不想去，下午还有事 = không muốn đi, chiều còn có việc.'},
+   ]},
+  {audio:'喂，你在哪儿呢？我在家里呢。',
+   questions:[
+     {q:'Người thứ hai đang ở đâu?', opts:['Ở bệnh viện', 'Ở cửa hàng', 'Ở nhà'], ans:2, exp:'在家里 = ở nhà.'},
+   ]},
+  {audio:'我晚上六点半下班，你去店里买些菜吧。',
+   questions:[
+     {q:'Người nói nhờ người kia làm gì?', opts:['Ra cửa hàng mua ít thức ăn', 'Nấu cơm', 'Đi xem phim'], ans:0, exp:'去店里买些菜吧 = ra cửa hàng mua ít thức ăn nhé.'},
+     {q:'Mấy giờ người nói tan làm?', opts:['6 giờ', '6 giờ rưỡi', '7 giờ rưỡi'], ans:1, exp:'晚上六点半 = 6 giờ rưỡi tối.'},
+   ]},
+  {audio:'我十分钟后去医院。',
+   questions:[
+     {q:'Khi nào người nói đi bệnh viện?', opts:['10 giờ', '10 phút nữa', '10 phút trước'], ans:1, exp:'十分钟后 = sau 10 phút, 10 phút nữa.'},
+   ]},
+];
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'', blank:'现在', post:'几点？', hint:'(bây giờ)', ans:'现在'},
-  {pre:'早上八点', blank:'四十', post:'。', hint:'(bốn mươi — phút)', ans:'四十'},
-  {pre:'我上午十点十分', blank:'有课', post:'。', hint:'(có tiết học)', ans:'有课'},
-  {pre:'好的，我们下午两点', blank:'见', post:'吧。', hint:'(gặp)', ans:'见'},
-  {pre:'下午我想去电影院', blank:'看电影', post:'，你去吗？', hint:'(xem phim)', ans:'看电影'},
-  {pre:'我明天下午两点还', blank:'上课', post:'呢。', hint:'(lên lớp)', ans:'上课'},
+  {pre:'', blank:'现在', post:'几点？', hint:'(bây giờ)', ans:'现在', exp:'Hỏi giờ: 现在几点？ — không thêm 是 hay 吗.'},
+  {pre:'早上八点', blank:'四十', post:'。', hint:'(bốn mươi — phút)', ans:'四十', exp:'Giờ + 点 + phút: 八点四十 = 8 giờ 40.'},
+  {pre:'我上午十点十分', blank:'有课', post:'。', hint:'(có tiết học)', ans:'有课', exp:'Thời gian (上午十点十分) đứng trước động từ: 我上午十点十分有课.'},
+  {pre:'好的，我们下午两点', blank:'见', post:'吧。', hint:'(gặp)', ans:'见', exp:'Thời gian hẹn đứng trước 见, 吧 ở cuối câu là lời đề nghị.'},
+  {pre:'下午我想去电影院', blank:'看电影', post:'，你去吗？', hint:'(xem phim)', ans:'看电影', exp:'去 + nơi chốn + việc làm: 去电影院看电影 (câu liên động bài 6).'},
+  {pre:'我明天下午两点还', blank:'上课', post:'呢。', hint:'(lên lớp)', ans:'上课', exp:'还 + động từ + 呢: nhấn mạnh sự thật “vẫn còn phải lên lớp”.'},
   {pre:'我', blank:'晚上六点半', post:'下班。', hint:'(6 giờ rưỡi tối)', ans:'晚上六点半', exp:'Từ chỉ thời gian làm trạng ngữ đứng trước động từ: 我 + 晚上六点半 + 下班, không đặt cuối câu như tiếng Việt.'},
   {pre:'我', blank:'十分钟后', post:'去。', hint:'(sau 10 phút)', ans:'十分钟后', exp:'十分钟后 (10 phút nữa) là trạng ngữ thời gian, phải đứng trước động từ 去.'},
+  {pre:'我们去西安饭店吃晚饭', blank:'吧', post:'。', hint:'(nhé — lời đề nghị)', ans:'吧', exp:'吧 cuối câu để rủ rê, đề nghị; dùng 吗 thì thành câu hỏi thông tin.'},
+  {pre:'A：喂，你在哪儿呢？B：我在家', blank:'里', post:'呢。', hint:'(trong)', ans:'里', exp:'家里 = trong nhà; 在 + nơi chốn = ở đâu.'},
+  {pre:'我下午两点上课，四点', blank:'半', post:'下课。', hint:'(rưỡi)', ans:'半', exp:'半 đứng sau 点: 四点半 = 4 giờ rưỡi.'},
+  {pre:'A：现在几点？B：现在下午', blank:'两', post:'点。', hint:'(số 2 — đứng trước 点)', ans:'两', exp:'Trước 点 dùng 两, không dùng 二: 两点.'},
+  {pre:'刘明八点去', blank:'医院', post:'上班。', hint:'(bệnh viện)', ans:'医院', exp:'去 + nơi làm việc + 上班: 去医院上班 = đến bệnh viện làm việc.'},
+  {pre:'你去', blank:'店', post:'里买些菜吧。', hint:'(cửa hàng)', ans:'店', exp:'店里 = trong cửa hàng; 去店里买菜: đi đến cửa hàng để mua thức ăn.'},
+  {pre:'我不想去，下午还有', blank:'事', post:'。', hint:'(việc)', ans:'事', exp:'有事 = có việc; 还有事 = còn có việc — cách từ chối lịch sự.'},
+  {pre:'我四点半', blank:'下课', post:'。', hint:'(tan học)', ans:'下课', exp:'Thời gian (四点半) đứng trước động từ 下课.'},
 ];
 
 // ══════════════════════════════════════════
@@ -2656,42 +2696,61 @@ var fillData = [
 // ══════════════════════════════════════════
 var sortData = [
   {words:['现在','几点','？'], ans:'现在几点？', audio:'现在几点？'},
-  {words:['我们','下午','两点','见','吧','。'], ans:'我们下午两点见吧。', audio:'我们下午两点见吧。'},
-  {words:['下午','我','想','去','电影院','看电影','。'], ans:'下午我想去电影院看电影。', audio:'下午我想去电影院看电影。'},
-  {words:['我','明天','下午','两点','还','上课','呢','。'], ans:'我明天下午两点还上课呢。', audio:'我明天下午两点还上课呢。'},
-  {words:['我','晚上','六点半','下班','。'], ans:'我晚上六点半下班。', audio:'我晚上六点半下班。'},
+  {words:['我们','下午','两点','见','吧','。'], ans:'我们下午两点见吧。', audio:'我们下午两点见吧。', alt:['下午两点我们见吧。']},
+  {words:['下午','我','想','去','电影院','看电影','。'], ans:'下午我想去电影院看电影。', audio:'下午我想去电影院看电影。', alt:['我下午想去电影院看电影。']},
+  {words:['我','明天','下午','两点','还','上课','呢','。'], ans:'我明天下午两点还上课呢。', audio:'我明天下午两点还上课呢。', alt:['明天下午两点我还上课呢。']},
+  {words:['我','晚上','六点半','下班','。'], ans:'我晚上六点半下班。', audio:'我晚上六点半下班。', alt:['晚上六点半我下班。']},
   {words:['你','去','店里','买','些','菜','吧','。'], ans:'你去店里买些菜吧。', audio:'你去店里买些菜吧。'},
+  {words:['我','早上','八点','上课','。'], ans:'我早上八点上课。', audio:'我早上八点上课。', alt:['早上八点我上课。']},
+  {words:['现在','下午','两点','半','。'], ans:'现在下午两点半。', audio:'现在下午两点半。'},
+  {words:['我','在','家里','呢','。'], ans:'我在家里呢。', audio:'我在家里呢。'},
+  {words:['我','十分钟','后','去','医院','。'], ans:'我十分钟后去医院。', audio:'我十分钟后去医院。', alt:['十分钟后我去医院。']},
+  {words:['妹妹','很','高兴','。'], ans:'妹妹很高兴。', audio:'妹妹很高兴。'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3c · TRẮC NGHIỆM
 // ══════════════════════════════════════════
 var mcData = [
-  {q:'"现在几点？" nghĩa là gì?', opts:['Bây giờ mấy giờ rồi?', 'Hôm nay thứ mấy?', 'Bạn đi đâu?', 'Ai gọi điện?'], ans:0, exp:'现在 = bây giờ, 几点 = mấy giờ; hỏi giờ không cần dùng 是.'},
-  {q:'"十点十分" nghĩa là gì?', opts:['10 giờ 10 phút', '10 giờ', '10 giờ rưỡi', '1 giờ 10 phút'], ans:0, exp:'点 là giờ, 分 là phút: 十点十分 = 10 giờ 10 phút; 10 giờ rưỡi là 十点半.'},
-  {q:'Trợ từ "吧" trong "我们下午两点见吧" dùng để làm gì?', opts:['đưa ra đề nghị, gợi ý', 'hỏi có/không', 'phủ định', 'chỉ quá khứ'], ans:0, exp:'吧 ở cuối câu này mang ý đề nghị, rủ rê: 我们下午两点见吧 = chiều 2 giờ mình gặp nhau nhé.'},
-  {q:'"我不想去，下午还有事" nghĩa là gì?', opts:['Tôi không muốn đi, chiều còn có việc', 'Tôi muốn đi xem phim', 'Tôi rất bận rộn', 'Tôi sẽ đi'], ans:0, exp:'不想 = không muốn; 还有事 = còn có việc. Vế sau nêu lý do không đi.'},
-  {q:'"四点半下课" nghĩa là gì?', opts:['4 giờ rưỡi tan học', '4 giờ tan học', '4 giờ 15 tan học', '4 giờ vào học'], ans:0, exp:'半 = rưỡi (30 phút), 下课 = tan học: 四点半下课 = 4 giờ rưỡi tan học.'},
-  {q:'"我在家里呢" nghĩa là gì?', opts:['Tôi đang ở nhà', 'Tôi đang ở bệnh viện', 'Tôi đang đi làm', 'Tôi đang ở cửa hàng'], ans:0, exp:'在 + nơi chốn = ở đâu; 呢 cuối câu nhấn mạnh trạng thái đang diễn ra: 我在家里呢 = tôi đang ở nhà.'},
-  {q:'"十分钟后去" nghĩa là gì?', opts:['10 phút nữa đi', 'Đã đi được 10 phút', '10 giờ thì đi', 'Không đi nữa'], ans:0, exp:'十分钟后 = sau 10 phút; đứng trước 去 nên là thời điểm sẽ đi, không phải việc đã qua.'},
-  {q:'Phó từ, từ ngữ chỉ thời gian làm trạng ngữ thường đặt ở đâu?', opts:['trước động từ/tính từ', 'sau động từ/tính từ', 'luôn ở đầu câu', 'luôn ở cuối câu'], ans:0, exp:'Trạng ngữ (phó từ, từ chỉ thời gian) đứng trước động từ/tính từ: 我晚上六点半下班; không đặt sau động từ.'},
+  {q:'Bạn muốn hỏi bây giờ mấy giờ:', opts:['现在几点？', '现在是几点吗？', '几点现在？', '现在几点吗？'], ans:0, exp:'Câu đã có 几 thì không thêm 吗; hỏi giờ cũng không cần 是.'},
+  {q:'“10 giờ 10 phút sáng” nói thế nào?', opts:['上午十点十分', '十点十分上午', '上午十点十', '十点上午十分'], ans:0, exp:'Buổi đứng trước giờ; phút là 十分 thì không được bỏ 分.'},
+  {q:'“2 giờ chiều” nói thế nào?', opts:['下午两点', '下午二点', '两点下午', '下午两个点'], ans:0, exp:'Trước 点 dùng 两, không dùng 二; buổi (下午) đứng trước giờ, không đặt cuối như tiếng Việt.'},
+  {q:'“8 giờ 5 phút sáng” nói thế nào?', opts:['早上八点零五分', '早上八点五', '早上五分八点', '八点零五分早上'], ans:0, exp:'Phút dưới 10 phải thêm 零: 八点零五分; 八点五 dễ bị hiểu là 8 giờ 50.'},
+  {q:'Bạn muốn nói “4 giờ rưỡi tan học.” Câu đúng là:', opts:['四点半下课。', '四点下课半。', '半四点下课。', '四半点下课。'], ans:0, exp:'半 đứng ngay sau 点: 四点半; cả cụm thời gian đứng trước động từ 下课.'},
+  {q:'Bạn rủ bạn: “Chiều 2 giờ mình gặp nhau nhé.”', opts:['我们下午两点见吧。', '我们下午两点见吗？', '吧我们下午两点见。', '我们下午两点见吧吗？'], ans:0, exp:'Đề nghị, rủ rê dùng 吧 ở cuối câu; dùng 吗 nghe như đang hỏi; không dùng 吧 và 吗 cùng lúc.'},
+  {q:'A: “我们去哪儿吃晚饭？” — B muốn đề nghị đi nhà hàng Tây An:', opts:['我们去西安饭店吧。', '我们去西安饭店吗？', '吧，我们去西安饭店。', '我们吧去西安饭店。'], ans:0, exp:'吧 luôn đứng cuối câu đề nghị, không đứng đầu hay giữa câu.'},
+  {q:'Vợ nhờ chồng: “你去店里买些菜＿＿。”', opts:['吧', '吗', '呢', '的'], ans:0, exp:'Nhờ, khuyên ai làm gì thì cuối câu dùng 吧 (… nhé).'},
+  {q:'Câu nào SAI?', opts:['我吃晚饭晚上七点。', '我晚上七点吃晚饭。', '晚上七点我吃晚饭。', '我不想去电影院。'], ans:0, exp:'Thời gian phải đứng trước động từ: 我晚上七点吃晚饭 — không đặt sau như tiếng Việt “ăn tối lúc 7 giờ”.'},
+  {q:'Bạn muốn nói “8 giờ tôi đến bệnh viện làm việc.” Câu đúng là:', opts:['我八点去医院上班。', '我去医院上班八点。', '我上班八点去医院。', '八点去我医院上班。'], ans:0, exp:'Thời gian (八点) đứng sau chủ ngữ, trước động từ 去.'},
+  {q:'Bạn muốn nói “Tôi không muốn đi.” Câu đúng là:', opts:['我不想去。', '我想去不。', '我去不想。', '不我想去。'], ans:0, exp:'Phó từ 不 đứng trước 想, không đặt cuối câu như “không” trong tiếng Việt.'},
+  {q:'Bạn muốn nói “Em gái rất vui.” Câu đúng là:', opts:['妹妹很高兴。', '妹妹高兴很。', '很妹妹高兴。', '妹妹是很高兴。'], ans:0, exp:'很 đứng trước tính từ; câu tính từ không cần 是 — hai lỗi rất hay gặp.'},
+  {q:'A: “喂，你在哪儿呢？” — B đáp:', opts:['我在家里呢。', '我家里在呢。', '我在家里吗？', '在我家里呢。'], ans:0, exp:'在 + nơi chốn; 呢 cuối câu xác nhận sự thật, không phải câu hỏi nên không dùng 吗.'},
+  {q:'A: “明天下午你去看电影吗？” — B từ chối vì còn phải lên lớp:', opts:['不去，我明天下午还上课呢。', '不去，我明天下午还上课吗？', '不去，我还上课明天下午呢。', '去，我明天下午还上课呢。'], ans:0, exp:'还 + động từ + 呢 nhấn mạnh “vẫn còn phải…”; thời gian đứng trước động từ.'},
+  {q:'Câu nào SAI?', opts:['我还上课吗呢？', '我还上课呢。', '李文晚上还有事呢。', '妹妹会做两个菜呢。'], ans:0, exp:'Câu nhấn mạnh dùng 呢, không trộn 吗 với 呢.'},
+  {q:'Bạn muốn nói “10 phút nữa tôi đi.” Câu đúng là:', opts:['我十分钟后去。', '我去十分钟后。', '我后十分钟去。', '十分钟我后去。'], ans:0, exp:'十分钟后 = 10 phút nữa, là trạng ngữ thời gian nên đứng trước động từ 去.'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 3 bài khoá.',
+  intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời về chính bạn.',
   questions: [
-    {q_zh: '有人问你："现在几点？" 你怎么回答？', q_vn: 'Có người hỏi bạn: "Bây giờ mấy giờ rồi?" Bạn trả lời thế nào?',
-     hint: '现在……点。', sample: '现在早上八点四十。', sample_vn: 'Bây giờ là 8 giờ 40 sáng.',
-     note: 'Cấu trúc "现在 + giờ + 点(+分)" dùng để nói giờ hiện tại.'},
-    {q_zh: '朋友约你下午一起去看电影，但你还有事，你怎么说？', q_vn: 'Bạn của bạn rủ chiều nay đi xem phim, nhưng bạn còn bận việc, bạn nói thế nào?',
+    {q_zh: '现在几点？', q_vn: 'Có người hỏi bạn bây giờ mấy giờ. Hãy nhìn đồng hồ và trả lời.',
+     hint: '现在……点……。', sample: '现在下午两点半。', sample_vn: 'Bây giờ là 2 giờ rưỡi chiều.',
+     note: 'Buổi + giờ + 点 (+ phút / 半); trước 点 dùng 两 chứ không dùng 二.'},
+    {q_zh: '下午我想去电影院看电影，你去吗？', q_vn: 'Bạn rủ chiều nay đi xem phim, nhưng bạn còn bận việc. Hãy từ chối.',
      hint: '我不想去，……还有事。', sample: '我不想去，下午还有事。', sample_vn: 'Mình không muốn đi, chiều nay mình còn có việc.',
-     note: 'Cấu trúc "不想 + động từ" dùng để từ chối một cách lịch sự.'},
-    {q_zh: '有人问你几点上班/下班，你怎么回答？', q_vn: 'Có người hỏi bạn mấy giờ đi làm/tan làm, bạn trả lời thế nào?',
-     hint: '我……点上班/下班。', sample: '我晚上六点半下班。', sample_vn: 'Tôi tan làm lúc 6 giờ rưỡi tối.',
-     note: 'Từ chỉ thời gian (点/半) luôn đứng trước động từ 上班/下班 làm trạng ngữ.'},
+     note: 'Cấu trúc "不想 + động từ" và "还有事" dùng để từ chối một cách lịch sự.'},
+    {q_zh: '你几点上课？几点下课？', q_vn: 'Bạn học hỏi bạn mấy giờ vào học, mấy giờ tan học. Hãy nói về bạn.',
+     hint: '我……点上课，……点下课。', sample: '我早上八点上课，十一点半下课。', sample_vn: 'Tôi vào học lúc 8 giờ sáng, 11 giờ rưỡi tan học.',
+     note: 'Từ chỉ thời gian luôn đứng trước động từ 上课 / 下课.'},
+    {q_zh: '星期天我们做什么？', q_vn: 'Bạn bè bàn kế hoạch Chủ nhật. Hãy đề nghị một việc, dùng 吧.',
+     hint: '我们去……吧。', sample: '我们去西安饭店吃晚饭吧。', sample_vn: 'Chúng mình đến nhà hàng Tây An ăn tối nhé.',
+     note: '吧 ở cuối câu biến câu kể thành lời rủ rê, đề nghị.'},
+    {q_zh: '喂，你在哪儿呢？', q_vn: 'Người nhà gọi điện hỏi bạn đang ở đâu. Hãy trả lời.',
+     hint: '我在……呢。', sample: '我在家里呢。', sample_vn: 'Con đang ở nhà ạ.',
+     note: '在 + nơi chốn + 呢: xác nhận mình đang ở đâu.'},
   ],
 };
 
@@ -2703,6 +2762,8 @@ var translateData = [
   {vi:'Chiều nay tôi muốn đi rạp chiếu phim xem phim.', zh:'下午我想去电影院看电影。', py:'Xiàwǔ wǒ xiǎng qù diànyǐngyuàn kàn diànyǐng.'},
   {vi:'Tôi tối nay 6 giờ rưỡi tan làm.', zh:'我晚上六点半下班。', py:'Wǒ wǎnshang liù diǎn bàn xiàbān.'},
   {vi:'Bạn ra cửa hàng mua ít rau đi.', zh:'你去店里买些菜吧。', py:'Nǐ qù diàn li mǎi xiē cài ba.'},
+  {vi:'Bây giờ 2 giờ rưỡi chiều, 3 giờ tôi có tiết học.', zh:'现在下午两点半，我三点有课。', py:'Xiànzài xiàwǔ liǎng diǎn bàn, wǒ sān diǎn yǒu kè.'},
+  {vi:'Chúng ta đi xem phim nhé! — Tôi không muốn đi, tối nay tôi còn có việc.', zh:'我们去看电影吧！——我不想去，晚上我还有事呢。', py:'Wǒmen qù kàn diànyǐng ba! — Wǒ bù xiǎng qù, wǎnshang wǒ hái yǒu shì ne.'},
 ];
 
 // ══════════════════════════════════════════
@@ -2712,5 +2773,5 @@ var translateDataRev = [
   {vi:'Chúng ta hẹn gặp nhau lúc 3 giờ chiều nhé.', zh:'我们下午三点见吧。', py:'Wǒmen xiàwǔ sān diǎn jiàn ba.'},
   {vi:'Sáng nay cô ấy không có tiết học.', zh:'她上午没有课。', py:'Tā shàngwǔ méiyǒu kè.'},
   {vi:'Mấy giờ bạn đi làm? — Tôi 8 giờ đến bệnh viện làm việc.', zh:'你几点上班？——我八点去医院上班。', py:'Nǐ jǐ diǎn shàngbān? — Wǒ bā diǎn qù yīyuàn shàngbān.'},
-  {vi:'5 phút nữa tôi sẽ đến, bạn đợi tôi một chút.', zh:'我五分钟后去，你等我一下。', py:'Wǒ wǔ fēnzhōng hòu qù, nǐ děng wǒ yíxià.'},
+  {vi:'5 phút nữa tôi ra cửa hàng mua thức ăn.', zh:'我五分钟后去店里买菜。', py:'Wǒ wǔ fēnzhōng hòu qù diàn li mǎi cài.'},
 ];

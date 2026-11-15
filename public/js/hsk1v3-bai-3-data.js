@@ -2025,25 +2025,64 @@ var matchData = [
   {left:'法', right:'国'},
   {left:'泰', right:'国'},
   {left:'我', right:'们'},
+  {left:'姐', right:'姐'},
+  {left:'中', right:'文'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 2 · NGHE — để trống, chờ audio + tài liệu gốc giáo trình HSK1 3.0
+// PHẦN 2 · NGHE — nghe câu (giọng đọc máy) → chọn đáp án
 // ══════════════════════════════════════════
-var listenData = [];
+var listenData = [
+  {audio:'我是法国人。',
+   questions:[
+     {q:'Người nói là người nước nào?', opts:['Trung Quốc', 'Pháp', 'Thái Lan'], ans:1, exp:'法国人 = người Pháp.'},
+   ]},
+  {audio:'这是谁？这是我姐姐。',
+   questions:[
+     {q:'Người trong ảnh là ai?', opts:['Chị gái', 'Bạn gái', 'Giáo viên'], ans:0, exp:'这是我姐姐 = đây là chị gái tôi.'},
+   ]},
+  {audio:'你工作还忙吗？对，还很忙。',
+   questions:[
+     {q:'Người thứ hai trả lời thế nào?', opts:['Không bận lắm', 'Không bận', 'Vẫn rất bận'], ans:2, exp:'还很忙 = vẫn còn rất bận.'},
+   ]},
+  {audio:'她不是中国人，她是泰国人。',
+   questions:[
+     {q:'Cô ấy là người nước nào?', opts:['Trung Quốc', 'Thái Lan', 'Pháp'], ans:1, exp:'不是中国人 → 是泰国人: cô ấy là người Thái Lan.'},
+   ]},
+  {audio:'你也很忙吗？我不太忙。',
+   questions:[
+     {q:'Người thứ hai trả lời thế nào?', opts:['Không bận lắm', 'Rất bận', 'Cũng rất bận'], ans:0, exp:'不太忙 = không bận lắm.'},
+   ]},
+  {audio:'喂，一飞！姐姐！我们很想你。',
+   questions:[
+     {q:'Người gọi điện nói gì?', opts:['Mọi người rất bận', 'Mọi người là người Trung Quốc', 'Mọi người rất nhớ em'], ans:2, exp:'想 + người = nhớ ai: 我们很想你.'},
+   ]},
+  {audio:'这是我的中文老师。',
+   questions:[
+     {q:'Bạn nghe được câu nào?', opts:['这是我的中文老师。', '这是我女朋友。', '这是我姐姐。'], ans:0, exp:'中文老师 = giáo viên tiếng Trung.'},
+   ]},
+];
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'我是', blank:'中国', post:'人。', hint:'(Trung Quốc)', ans:'中国'},
-  {pre:'这是我', blank:'女朋友', post:'。', hint:'(bạn gái)', ans:'女朋友'},
-  {pre:'你女朋友是哪', blank:'国', post:'人？', hint:'(quốc gia — nước nào)', ans:'国', exp:'哪国人 = người nước nào: 哪 (nào) + 国 (nước) + 人, dùng để hỏi quốc tịch.'},
-  {pre:'她也是', blank:'泰国', post:'人。', hint:'(Thái Lan)', ans:'泰国'},
-  {pre:'你工作还忙', blank:'吗', post:'？', hint:'(trợ từ nghi vấn cuối câu)', ans:'吗', exp:'Thêm 吗 vào cuối câu trần thuật để thành câu hỏi có/không: 你工作还忙吗？'},
-  {pre:'我不', blank:'太', post:'忙。', hint:'(quá, lắm)', ans:'太', exp:'不太 + tính từ = không … lắm: 不太忙 = không bận lắm (nhẹ nhàng hơn 不忙).'},
-  {pre:'我们很', blank:'想', post:'你。', hint:'(nhớ)', ans:'想'},
-  {pre:'你', blank:'也', post:'很忙吗？', hint:'(cũng)', ans:'也', exp:'也 đứng sau chủ ngữ 你 và trước 很忙: 你也很忙吗？'},
+  {pre:'Lý Văn giới thiệu: “我是', blank:'中国', post:'人。”', hint:'(Trung Quốc)', ans:'中国', exp:'Tên nước + 人 = người nước đó: 中国人.'},
+  {pre:'Chỉ vào ảnh, bạn nói: “这是我', blank:'女朋友', post:'。”', hint:'(bạn gái)', ans:'女朋友', exp:'Với người thân thiết, sau 我 có thể lược 的: 我女朋友.'},
+  {pre:'Bạn hỏi: “你女朋友是哪', blank:'国', post:'人？”', hint:'(quốc gia — nước nào)', ans:'国', exp:'哪国人 = người nước nào: 哪 (nào) + 国 (nước) + 人, dùng để hỏi quốc tịch.'},
+  {pre:'“你女朋友是哪国人？” — “她也是', blank:'泰国', post:'人。”', hint:'(Thái Lan)', ans:'泰国', exp:'也 đứng trước 是: 她也是泰国人 = cô ấy cũng là người Thái.'},
+  {pre:'Bạn hỏi chị gái: “你工作还忙', blank:'吗', post:'？”', hint:'(trợ từ nghi vấn cuối câu)', ans:'吗', exp:'Thêm 吗 vào cuối câu trần thuật để thành câu hỏi có/không: 你工作还忙吗？'},
+  {pre:'Bạn trả lời: “我不', blank:'太', post:'忙。”', hint:'(lắm)', ans:'太', exp:'不太 + tính từ = không … lắm: 不太忙 = không bận lắm (nhẹ nhàng hơn 不忙).'},
+  {pre:'Gọi điện cho em trai ở xa: “我们很', blank:'想', post:'你。”', hint:'(nhớ)', ans:'想', exp:'想 + người = nhớ ai đó: 我们很想你.'},
+  {pre:'Bạn hỏi lại: “你', blank:'也', post:'很忙吗？”', hint:'(cũng)', ans:'也', exp:'也 đứng sau chủ ngữ 你 và trước 很忙: 你也很忙吗？'},
+  {pre:'Chỉ vào ảnh, bạn hỏi: “这是', blank:'谁', post:'？”', hint:'(ai)', ans:'谁', exp:'谁 đứng đúng chỗ người cần hỏi: 这是谁？ — không đưa lên đầu câu, không thêm 吗.'},
+  {pre:'Giới thiệu chị gái của bạn cùng lớp: “她是我同学', blank:'的', post:'姐姐。”', hint:'(của)', ans:'的', exp:'Người sở hữu + 的 + người/vật: 我同学的姐姐; người sở hữu đứng TRƯỚC, ngược với tiếng Việt “của …”.'},
+  {pre:'Bạn hỏi Bạch Gia Nguyệt: “你是', blank:'哪', post:'国人？”', hint:'(nào)', ans:'哪', exp:'哪 + 国 + 人 hỏi quốc tịch; không dùng 什么国人.'},
+  {pre:'Nhấc điện thoại, bạn nói: “', blank:'喂', post:'，姐姐！”', hint:'(alô)', ans:'喂', exp:'喂 (wéi) dùng khi bắt đầu nói chuyện điện thoại.'},
+  {pre:'“你是中国人吗？” — “', blank:'对', post:'，我是中国人。”', hint:'(đúng)', ans:'对', exp:'Trả lời câu hỏi 吗 khẳng định có thể mở đầu bằng 对 (đúng vậy).'},
+  {pre:'Bạn và các bạn cùng lớp: “', blank:'我们', post:'是学生。”', hint:'(chúng tôi)', ans:'我们', exp:'我 + 们 = 我们 (chúng tôi), giống 你们 ở bài 1.'},
+  {pre:'“这是谁？” — “这是我姐姐，', blank:'她', post:'是中文老师。”', hint:'(cô ấy)', ans:'她', exp:'Nói về một người nữ (chị gái, cô giáo…) dùng 她 = cô ấy, chị ấy.'},
+  {pre:'Hỏi thăm chị gái: “你', blank:'工作', post:'忙吗？”', hint:'(công việc)', ans:'工作', exp:'你工作忙吗？ = công việc của chị có bận không? — tính từ 忙 không cần 是.'},
 ];
 
 // ══════════════════════════════════════════
@@ -2056,37 +2095,55 @@ var sortData = [
   {words:['你','工作','还','忙','吗','？'], ans:'你工作还忙吗？', audio:'你工作还忙吗？'},
   {words:['我','不','太','忙','。'], ans:'我不太忙。', audio:'我不太忙。'},
   {words:['我们','很','想','你','。'], ans:'我们很想你。', audio:'我们很想你。'},
+  {words:['这','是','谁','？'], ans:'这是谁？', audio:'这是谁？'},
+  {words:['她','是','我','的','中文','老师','。'], ans:'她是我的中文老师。', audio:'她是我的中文老师。'},
+  {words:['我','不','是','法国','人','，','我','是','中国','人','。'], ans:'我不是法国人，我是中国人。', audio:'我不是法国人，我是中国人。', alt:['我是中国人，我不是法国人。']},
+  {words:['你','姐姐','工作','忙','吗','？'], ans:'你姐姐工作忙吗？', audio:'你姐姐工作忙吗？'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3c · TRẮC NGHIỆM
 // ══════════════════════════════════════════
 var mcData = [
-  {q:'"我是中国人" nghĩa là gì?', opts:['Tôi là người Trung Quốc', 'Tôi là người Pháp', 'Tôi là người Thái Lan', 'Tôi là giáo viên'], ans:0, exp:'Tên nước + 人 = người nước đó: 中国人 = người Trung Quốc.'},
-  {q:'Muốn hỏi "đây là ai", bạn nói?', opts:['这是谁？', '你好吗？', '你叫什么名字？', '再见！'], ans:0, exp:'谁 = ai. Muốn hỏi người nào thì đặt 谁 vào đúng chỗ của người đó: 这是谁？'},
-  {q:'"女朋友" nghĩa là gì?', opts:['bạn gái', 'bạn trai', 'bạn học', 'giáo viên'], ans:0, exp:'女 = nữ, 朋友 = bạn, nên 女朋友 là bạn gái; bạn học là 同学, giáo viên là 老师.'},
-  {q:'Muốn hỏi quốc tịch, dùng cấu trúc nào?', opts:['哪国人', '什么名字', '怎么样', '多大'], ans:0, exp:'哪国人 = người nước nào, dùng để hỏi quốc tịch; 什么名字 dùng để hỏi tên.'},
-  {q:'Trợ từ "吗" dùng để làm gì?', opts:['tạo câu hỏi có/không ở cuối câu', 'phủ định', 'chỉ số nhiều', 'chỉ sở hữu'], ans:0, exp:'吗 đặt cuối câu trần thuật để tạo câu hỏi có/không, ví dụ 你忙吗？'},
-  {q:'"还很忙" nghĩa là gì?', opts:['vẫn còn rất bận', 'không bận nữa', 'rất rảnh', 'đã xong việc'], ans:0, exp:'还 = vẫn, còn; 还很忙 = vẫn còn rất bận (tình trạng vẫn tiếp diễn), không phải hết bận.'},
-  {q:'"我们很想你" nghĩa là gì?', opts:['Chúng tôi rất nhớ bạn', 'Chúng tôi không thích bạn', 'Bạn rất bận', 'Bạn phải làm việc'], ans:0, exp:'想 ở đây nghĩa là “nhớ”; 我们很想你 = chúng tôi rất nhớ bạn.'},
-  {q:'Trợ từ "的" dùng để làm gì?', opts:['nối định ngữ với danh từ trung tâm, biểu thị sở hữu', 'tạo câu hỏi', 'phủ định', 'chỉ số nhiều'], ans:0, exp:'的 nối định ngữ với danh từ, thường chỉ sở hữu: 我的朋友 = bạn của tôi.'},
+  {q:'Bạn muốn nói: “Tôi là người Trung Quốc.”', opts:['我是中国人。', '我中国人是。', '我是人中国。', '我是中国。'], ans:0, exp:'Tên nước + 人 đứng sau 是: 我是中国人; đặt 人 trước tên nước theo tiếng Việt “người Trung Quốc” là sai.'},
+  {q:'Câu nào SAI?', opts:['我是很忙。', '我很忙。', '她是中国人。', '她工作很忙。'], ans:0, exp:'Tính từ (忙) làm vị ngữ không dùng 是: 我很忙. Thêm 是 theo kiểu “tôi thì bận” là lỗi rất hay gặp.'},
+  {q:'Bạn muốn nói: “Cô ấy không phải giáo viên tiếng Trung.”', opts:['她不是中文老师。', '她是不中文老师。', '她不中文老师。', '不她是中文老师。'], ans:0, exp:'Phủ định câu chữ 是 là 不是, 不 đứng TRƯỚC 是.'},
+  {q:'Bạn muốn nói: “thầy giáo của tôi”', opts:['我的老师', '老师的我', '我老师的', '的我老师'], ans:0, exp:'Người sở hữu đứng TRƯỚC 的: 我的老师; tiếng Việt “thầy của tôi” làm học sinh hay đảo ngược.'},
+  {q:'Giới thiệu chị gái của bạn cùng lớp: “她是我同学＿＿姐姐。”', opts:['的', '吗', '是', '很'], ans:0, exp:'X 的 Y = Y của X: 我同学的姐姐.'},
+  {q:'Giới thiệu chị gái mình với bạn, câu tự nhiên nhất là:', opts:['这是我姐姐。', '这是姐姐我。', '这是姐姐的我。', '姐姐是这我。'], ans:0, exp:'Với người thân, sau đại từ thường lược 的: 我姐姐; người sở hữu luôn đứng trước.'},
+  {q:'Bạn muốn hỏi bạn mình: “Bạn có bận không?”', opts:['你忙吗？', '吗你忙？', '你是忙吗？', '你忙是吗？'], ans:0, exp:'吗 đứng CUỐI câu; tính từ 忙 không cần 是.'},
+  {q:'Câu hỏi nào SAI?', opts:['你叫什么名字吗？', '你是老师吗？', '她是谁？', '你是哪国人？'], ans:0, exp:'Câu đã có từ để hỏi (什么, 谁, 哪) thì không thêm 吗.'},
+  {q:'A: “你是法国人吗？” — B là người Pháp, B trả lời:', opts:['对，我是法国人。', '对，我不是法国人。', '吗，我是法国人。', '我是法国人吗。'], ans:0, exp:'Trả lời câu hỏi 吗: bỏ 吗, khẳng định bằng 对，我是…; 对 đi với 不是 là mâu thuẫn.'},
+  {q:'A: “这是谁？” — B trả lời:', opts:['这是我姐姐。', '这是谁姐姐？', '我是这姐姐。', '这是姐姐吗？'], ans:0, exp:'Trả lời câu hỏi 谁: thay 谁 bằng người đó, giữ nguyên trật tự: 这是我姐姐.'},
+  {q:'Chỉ vào một người trong ảnh, bạn hỏi: “Đây là ai?”', opts:['这是谁？', '这谁是？', '这是谁吗？', '谁这是？'], ans:0, exp:'谁 đứng đúng chỗ người cần hỏi (sau 是), không thêm 吗.'},
+  {q:'Bạn hỏi An Ni: “Bạn là người nước nào?”', opts:['你是哪国人？', '你是什么国人？', '哪国人你是？', '你是哪国人吗？'], ans:0, exp:'Hỏi quốc tịch: 是 + 哪国人; không dùng 什么国, không đưa lên đầu câu, không thêm 吗.'},
+  {q:'A: “你工作还忙吗？” — B vẫn rất bận, B trả lời:', opts:['对，还很忙。', '对，很还忙。', '对，还忙很。', '对，忙还很。'], ans:0, exp:'还 (vẫn) đứng trước 很忙: 还很忙.'},
+  {q:'Chị gái gọi điện từ xa. Bạn muốn nói: “Em rất nhớ chị.”', opts:['我很想你。', '我想很你。', '我很你想。', '我是想你。'], ans:0, exp:'很 đứng trước động từ 想 (nhớ): 我很想你; không thêm 是.'},
+  {q:'A: “你忙吗？” — B không bận lắm, B nói:', opts:['我不太忙。', '我太不忙。', '我是不太忙。', '我不忙太。'], ans:0, exp:'不太 + tính từ = không … lắm; 不 đứng trước 太.'},
+  {q:'Bạn nhận điện thoại của chị gái. Câu mở đầu tự nhiên:', opts:['喂，姐姐！', '再见，姐姐！', '对不起，姐姐！', '不客气，姐姐！'], ans:0, exp:'喂 dùng khi bắt đầu cuộc gọi điện thoại.'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 3 bài khoá.',
+  intro: 'Nhấn nút loa nghe câu người kia nói, rồi tự ghi âm câu trả lời của bạn (nói về chính bạn).',
   questions: [
-    {q_zh: '有人问你："你是哪国人？" 你怎么回答？', q_vn: 'Có người hỏi bạn: "Bạn là người nước nào?" Bạn trả lời thế nào?',
-     hint: '我是……人。', sample: '我是越南人。', sample_vn: 'Tôi là người Việt Nam.',
-     note: 'Cấu trúc "我是 + tên nước + 人" dùng để nói quốc tịch của mình.'},
-    {q_zh: '朋友问你："你工作忙吗？" 你怎么回答？', q_vn: 'Bạn của bạn hỏi: "Công việc của bạn có bận không?" Bạn trả lời thế nào?',
-     hint: '我（不）太忙。', sample: '我不太忙。', sample_vn: 'Tôi không bận lắm.',
-     note: '"太 + tính từ" thường đi kèm "不" để nói mức độ không quá cao: 不太忙 = không bận lắm.'},
-    {q_zh: '你很久没见家人了，见面的时候你想说什么？', q_vn: 'Bạn đã lâu không gặp gia đình, khi gặp mặt bạn muốn nói gì?',
-     hint: '我很想你/你们。', sample: '我很想你们。', sample_vn: 'Con rất nhớ mọi người.',
-     note: '想 + người ở đây có nghĩa là "nhớ" (nhớ ai đó), khác với 想 mang nghĩa "muốn" khi đi với động từ.'},
+    {q_zh: '你是中国人吗？', q_vn: 'Có người hỏi bạn có phải người Trung Quốc không. Hãy trả lời đúng về bạn.',
+     hint: '我不是……人。／对，我是……人。', sample: '我不是中国人。', sample_vn: 'Tôi không phải người Trung Quốc.',
+     note: 'Phủ định câu chữ 是 dùng 不是. Tên nước Việt Nam sẽ học ở bài sau.'},
+    {q_zh: '你工作忙吗？', q_vn: 'Bạn của bạn hỏi công việc (việc học) của bạn có bận không. Hãy trả lời về bạn.',
+     hint: '我很忙。／我不太忙。', sample: '我不太忙。', sample_vn: 'Tôi không bận lắm.',
+     note: '"不太 + tính từ" = không … lắm; tính từ làm vị ngữ không dùng 是.'},
+    {q_zh: '喂，我是姐姐。', q_vn: 'Chị gái ở xa gọi điện cho bạn. Hãy chào chị và nói bạn rất nhớ chị.',
+     hint: '喂，姐姐！我很想你。', sample: '喂，姐姐！我很想你。', sample_vn: 'Alô, chị ơi! Em rất nhớ chị.',
+     note: '想 + người ở đây có nghĩa là "nhớ" (nhớ ai đó).'},
+    {q_zh: '这是谁？', q_vn: 'Bạn cho bạn mới xem ảnh một người thân hoặc bạn của bạn. Bạn ấy hỏi “Đây là ai?”. Hãy trả lời.',
+     hint: '这是我……，她是……。', sample: '这是我姐姐，她是中文老师。', sample_vn: 'Đây là chị gái tôi, chị ấy là giáo viên tiếng Trung.',
+     note: 'Với người thân, sau 我 thường lược 的: 我姐姐.'},
+    {q_zh: '你的中文老师是哪国人？', q_vn: 'Thầy/cô tiếng Trung của bạn là người nước nào? Hãy trả lời.',
+     hint: '我的中文老师是……人。', sample: '我的中文老师是中国人。', sample_vn: 'Cô giáo tiếng Trung của tôi là người Trung Quốc.',
+     note: 'Trả lời câu hỏi 哪国人: thay 哪国 bằng tên nước.'},
   ],
 };
 
@@ -2098,6 +2155,7 @@ var translateData = [
   {vi:'Đây là bạn gái tôi, cô ấy là người Thái Lan.', zh:'这是我女朋友，她是泰国人。', py:'Zhè shì wǒ nǚpéngyou, tā shì Tàiguó rén.'},
   {vi:'Công việc của bạn vẫn bận chứ? — Đúng vậy, vẫn rất bận.', zh:'你工作还忙吗？——对，还很忙。', py:'Nǐ gōngzuò hái máng ma? — Duì, hái hěn máng.'},
   {vi:'Chúng tôi rất nhớ bạn.', zh:'我们很想你。', py:'Wǒmen hěn xiǎng nǐ.'},
+  {vi:'Cô giáo tiếng Trung của tôi là người Trung Quốc, cô ấy rất bận.', zh:'我的中文老师是中国人，她很忙。', py:'Wǒ de Zhōngwén lǎoshī shì Zhōngguó rén, tā hěn máng.'},
 ];
 
 // ══════════════════════════════════════════

@@ -1455,25 +1455,62 @@ var matchData = [
   {left:'对不', right:'起'},
   {left:'没', right:'关系'},
   {left:'高', right:'兴'},
+  {left:'认', right:'识'},
+  {left:'没', right:'事'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 2 · NGHE — để trống, chờ audio + tài liệu gốc giáo trình HSK1 3.0
+// PHẦN 2 · NGHE — nghe câu (giọng đọc máy) → chọn đáp án
 // ══════════════════════════════════════════
-var listenData = [];
+var listenData = [
+  {audio:'请问，你叫什么名字？',
+   questions:[
+     {q:'Người nói đang làm gì?', opts:['Hỏi tên', 'Xin lỗi', 'Cảm ơn'], ans:0, exp:'你叫什么名字？ = bạn tên là gì? — câu hỏi tên.'},
+   ]},
+  {audio:'我叫陈天中。',
+   questions:[
+     {q:'Người nói tên là gì?', opts:['安妮', '李文', '陈天中'], ans:2, exp:'我叫 + tên: 我叫陈天中.'},
+   ]},
+  {audio:'对不起！没事，没事！',
+   questions:[
+     {q:'Người thứ hai nói gì?', opts:['Xin lỗi', 'Không sao đâu', 'Cảm ơn'], ans:1, exp:'没事 = không sao, dùng để đáp lại 对不起.'},
+   ]},
+  {audio:'你好，安妮！我不是安妮，我是白家月。',
+   questions:[
+     {q:'Người thứ hai tên là gì?', opts:['安妮', '白家月', '李文'], ans:1, exp:'我不是安妮，我是白家月 — người đó không phải An Ni.'},
+   ]},
+  {audio:'我是学生，我不是老师。',
+   questions:[
+     {q:'Người nói là ai?', opts:['Học sinh', 'Giáo viên', 'Cô Vương'], ans:0, exp:'我是学生 = tôi là học sinh; 不是老师 = không phải giáo viên.'},
+   ]},
+  {audio:'很高兴认识你。认识你我也很高兴。',
+   questions:[
+     {q:'Hai người đang làm gì?', opts:['Xin lỗi nhau', 'Chào tạm biệt', 'Vui vẻ làm quen'], ans:2, exp:'很高兴认识你 = rất vui được làm quen với bạn.'},
+   ]},
+  {audio:'我叫李文，我也是学生。',
+   questions:[
+     {q:'Bạn nghe được câu nào?', opts:['我叫李文，我不是学生。', '我叫李文，我是老师。', '我叫李文，我也是学生。'], ans:2, exp:'也 (yě) = cũng: 我也是学生.'},
+   ]},
+];
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'Muốn hỏi lịch sự tên của ai đó, bạn nói: “', blank:'请问', post:'，你叫什么名字？”', hint:'(xin hỏi)', ans:'请问'},
-  {pre:'请问，你', blank:'叫', post:'什么名字？', hint:'(gọi là, tên là)', ans:'叫'},
-  {pre:'我', blank:'叫', post:'陈天中。', hint:'(tên là)', ans:'叫'},
-  {pre:'Nhận ra mình gọi nhầm tên bạn, bạn xin lỗi: “', blank:'对不起', post:'！”', hint:'(xin lỗi)', ans:'对不起'},
-  {pre:'Đáp lại lời xin lỗi, bạn nói: “', blank:'没关系', post:'！”', hint:'(không sao)', ans:'没关系'},
-  {pre:'我不', blank:'是', post:'安妮。', hint:'(là — phủ định)', ans:'是', exp:'是 là động từ “là”; phủ định thì đặt 不 trước 是: 不是 = không phải là.'},
-  {pre:'很', blank:'高兴', post:'认识你。', hint:'(vui)', ans:'高兴'},
-  {pre:'认识你我', blank:'也', post:'很高兴。', hint:'(cũng)', ans:'也', exp:'也 (cũng) đứng sau chủ ngữ, trước động từ/tính từ: 我也很高兴; không đặt cuối câu như tiếng Việt.'},
+  {pre:'Muốn hỏi lịch sự tên của ai đó, bạn nói: “', blank:'请问', post:'，你叫什么名字？”', hint:'(xin hỏi)', ans:'请问', exp:'请问 (xin hỏi) đặt đầu câu cho lịch sự khi hỏi người khác.'},
+  {pre:'Bạn hỏi tên bạn mới: “请问，你', blank:'叫', post:'什么名字？”', hint:'(gọi là, tên là)', ans:'叫', exp:'Hỏi tên dùng 你叫什么名字？ — động từ 叫 đứng sau chủ ngữ 你.'},
+  {pre:'Bạn tự giới thiệu: “我', blank:'叫', post:'陈天中。”', hint:'(tên là)', ans:'叫', exp:'我叫 + tên; không nói 我叫名字陈天中 theo kiểu “tên tôi là”.'},
+  {pre:'Nhận ra mình gọi nhầm tên bạn, bạn xin lỗi: “', blank:'对不起', post:'！”', hint:'(xin lỗi)', ans:'对不起', exp:'Người làm sai nói 对不起; người kia đáp 没关系 / 没事.'},
+  {pre:'Đáp lại lời xin lỗi, bạn nói: “', blank:'没关系', post:'！”', hint:'(không sao — 3 chữ)', ans:'没关系', exp:'Nghe 对不起 thì đáp 没关系, không nói lại 对不起.'},
+  {pre:'Có người gọi nhầm bạn là An Ni: “我不', blank:'是', post:'安妮。”', hint:'(là — phủ định)', ans:'是', exp:'是 là động từ “là”; phủ định thì đặt 不 trước 是: 不是 = không phải là.'},
+  {pre:'Lần đầu gặp bạn mới: “很', blank:'高兴', post:'认识你。”', hint:'(vui)', ans:'高兴', exp:'很高兴认识你 = rất vui được làm quen với bạn.'},
+  {pre:'Bạn mới nói “很高兴认识你”, bạn đáp: “认识你我', blank:'也', post:'很高兴。”', hint:'(cũng)', ans:'也', exp:'也 (cũng) đứng sau chủ ngữ, trước động từ/tính từ: 我也很高兴; không đặt cuối câu như tiếng Việt.'},
+  {pre:'Bạn hỏi tên một bạn mới: “你叫', blank:'什么', post:'名字？”', hint:'(gì)', ans:'什么', exp:'Từ để hỏi đứng đúng chỗ của tân ngữ cần hỏi, không đưa lên đầu câu: 你叫什么名字？'},
+  {pre:'Có người gọi nhầm bạn: “你好，安妮！” Bạn nói: “我', blank:'不', post:'是安妮，我是白家月。”', hint:'(không)', ans:'不', exp:'不 luôn đứng TRƯỚC 是: 我不是…; nói 我是不… là lỗi hay gặp.'},
+  {pre:'Gặp cả lớp lần đầu, bạn nói: “认识你们，我', blank:'很', post:'高兴。”', hint:'(rất)', ans:'很', exp:'Tính từ làm vị ngữ thường có 很 đứng trước: 我很高兴; không nói 我是高兴.'},
+  {pre:'Bạn học nói “对不起！”, bạn đáp nhẹ nhàng: “', blank:'没事', post:'！”', hint:'(không sao — 2 chữ)', ans:'没事', exp:'没事 = không sao, dùng thân mật như 没关系 khi đáp lời xin lỗi.'},
+  {pre:'Bạn giới thiệu với cô giáo: “老师，您好！我', blank:'是', post:'学生，我叫陈天中。”', hint:'(là)', ans:'是', exp:'Chủ ngữ + 是 + danh từ chỉ thân phận: 我是学生.'},
+  {pre:'Chào hỏi xong, bạn nói: “很高兴', blank:'认识', post:'你。”', hint:'(quen biết)', ans:'认识', exp:'认识 + người = quen biết ai: 很高兴认识你.'},
 ];
 
 // ══════════════════════════════════════════
@@ -1485,38 +1522,51 @@ var sortData = [
   {words:['我','不','是','安妮','。'], ans:'我不是安妮。', audio:'我不是安妮。'},
   {words:['对','不','起','！'], ans:'对不起！', audio:'对不起！'},
   {words:['没','关系','！'], ans:'没关系！', audio:'没关系！'},
-  {words:['很','高兴','认识','你','。'], ans:'很高兴认识你。', audio:'很高兴认识你。'},
+  {words:['很','高兴','认识','你','。'], ans:'很高兴认识你。', audio:'很高兴认识你。', alt:['认识你很高兴。']},
+  {words:['请问','，','您','叫','什么','名字','？'], ans:'请问，您叫什么名字？', audio:'请问，您叫什么名字？'},
+  {words:['你好','，','我','叫','白家月','。'], ans:'你好，我叫白家月。', audio:'你好，我叫白家月。'},
+  {words:['我','不','是','老师','，','我','是','学生','。'], ans:'我不是老师，我是学生。', audio:'我不是老师，我是学生。', alt:['我是学生，我不是老师。']},
+  {words:['认识','你们','，','我','也','很','高兴','。'], ans:'认识你们，我也很高兴。', audio:'认识你们，我也很高兴。'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3c · TRẮC NGHIỆM
 // ══════════════════════════════════════════
 var mcData = [
-  {q:'Muốn hỏi tên ai đó một cách lịch sự, bạn nói?', opts:['请问，你叫什么名字？', '你好！', '谢谢！', '再见！'], ans:0, exp:'请问 (xin hỏi) đặt đầu câu cho lịch sự, rồi hỏi tên bằng 你叫什么名字？; các câu còn lại không phải để hỏi tên.'},
-  {q:'"我叫李文" có nghĩa là gì?', opts:['Tôi tên là Lý Văn', 'Tôi là học sinh', 'Tôi rất vui', 'Xin lỗi bạn'], ans:0, exp:'叫 = gọi là, tên là; 我叫李文 = Tôi tên là Lý Văn. Câu này chỉ nói tên, không nói nghề nghiệp hay cảm xúc.'},
-  {q:'Gọi nhầm tên người khác, câu xin lỗi đúng là?', opts:['对不起', '没关系', '谢谢', '你好'], ans:0, exp:'对不起 = xin lỗi (người làm sai nói); 没关系 = không sao (người kia đáp lại).'},
-  {q:'Đáp lại lời xin lỗi một cách phù hợp là?', opts:['没关系', '对不起', '认识你', '高兴'], ans:0, exp:'Người kia nói 对不起 thì ta đáp 没关系 = không sao đâu; nói lại 对不起 là sai tình huống.'},
-  {q:'"我不是安妮" nghĩa là gì?', opts:['Tôi không phải là Annie', 'Tôi là Annie', 'Bạn là Annie', 'Annie rất vui'], ans:0, exp:'不 đặt trước 是 tạo phủ định: 不是 = không phải là. Vậy 我不是安妮 = tôi không phải là Annie.'},
-  {q:'Câu nào dùng để bày tỏ niềm vui khi làm quen ai đó?', opts:['很高兴认识你', '请问你叫什么名字', '对不起', '没关系'], ans:0, exp:'很高兴认识你 = rất vui được quen bạn; 认识 = quen biết. 对不起 và 没关系 dùng khi xin lỗi.'},
-  {q:'Trật tự từ cơ bản của câu tiếng Trung là gì?', opts:['Chủ ngữ + Vị ngữ + Tân ngữ', 'Vị ngữ + Chủ ngữ + Tân ngữ', 'Tân ngữ + Chủ ngữ + Vị ngữ', 'Không có trật tự cố định'], ans:0, exp:'Câu tiếng Trung cơ bản theo trật tự Chủ ngữ + Vị ngữ (động từ) + Tân ngữ, giống tiếng Việt: 我叫陈天中.'},
-  {q:'Trong câu "我叫陈天中" đâu là Vị ngữ (động từ)?', opts:['叫', '我', '陈天中', 'Không có'], ans:0, exp:'叫 là động từ nên làm vị ngữ; 我 là chủ ngữ, 陈天中 là tân ngữ.'},
+  {q:'Muốn hỏi tên ai đó một cách lịch sự, câu đúng trật tự là:', opts:['请问，你叫什么名字？', '请问，什么你叫名字？', '请问，你什么叫名字？', '请问，你叫名字什么？'], ans:0, exp:'Từ để hỏi 什么 đứng đúng chỗ tân ngữ (什么名字), không đảo lên đầu câu theo thói quen tiếng Việt.'},
+  {q:'Bạn muốn giới thiệu: “Tôi tên là Lý Văn.”', opts:['我叫李文。', '我叫名字李文。', '李文我叫。', '我是叫李文。'], ans:0, exp:'我 + 叫 + tên. Tiếng Việt nói “tên tôi là…” nên học sinh hay thêm 名字 hoặc 是 vào sau 叫 — đều sai.'},
+  {q:'Bạn gọi nhầm tên bạn học. Bạn nói:', opts:['对不起！', '没关系！', '谢谢！', '不客气！'], ans:0, exp:'对不起 = xin lỗi (người làm sai nói); 没关系 = không sao (người kia đáp lại).'},
+  {q:'Bạn học nói với bạn: “对不起！” Bạn đáp:', opts:['没关系！', '对不起！', '不客气！', '谢谢！'], ans:0, exp:'Người kia nói 对不起 thì ta đáp 没关系; 不客气 là để đáp lời cảm ơn, không phải lời xin lỗi.'},
+  {q:'Có người gọi nhầm bạn là An Ni. Bạn nói: “Tôi không phải An Ni.”', opts:['我不是安妮。', '我是不安妮。', '不我是安妮。', '我不安妮是。'], ans:0, exp:'不 đứng ngay TRƯỚC động từ 是: 我不是安妮; đặt 不 sau 是 theo kiểu “là không phải” là lỗi hay gặp.'},
+  {q:'Lần đầu gặp Bạch Gia Nguyệt, chào xong bạn nói:', opts:['很高兴认识你。', '很认识你高兴。', '高兴很认识你。', '认识很高兴你。'], ans:0, exp:'很 đứng trước tính từ 高兴, rồi mới đến 认识你: 很高兴认识你.'},
+  {q:'Câu nào SAI trật tự từ?', opts:['名字你叫什么？', '你叫什么名字？', '我叫陈天中。', '我是学生。'], ans:0, exp:'Trật tự cơ bản là Chủ ngữ + Động từ + Tân ngữ: 你叫什么名字？; không đưa 名字 lên đầu câu.'},
+  {q:'A: “你叫什么名字？” — B trả lời:', opts:['我叫白家月。', '我是名字白家月。', '你叫白家月。', '我叫什么白家月。'], ans:0, exp:'Trả lời thì thay 什么名字 bằng tên của mình, giữ nguyên trật tự: 我叫白家月.'},
+  {q:'A: “很高兴认识你！” — B đáp lại:', opts:['认识你，我也很高兴。', '认识你，我很高兴也。', '没关系！', '不客气！'], ans:0, exp:'也 đứng sau chủ ngữ 我, trước 很高兴; không đặt cuối câu như tiếng Việt “… cũng vậy”.'},
+  {q:'Bạn học nói: “我是学生。” Bạn cũng là học sinh, bạn nói:', opts:['我也是学生。', '我是学生也。', '也我是学生。', '我是也学生。'], ans:0, exp:'也 (cũng) đứng sau chủ ngữ, trước động từ 是: 我也是学生.'},
+  {q:'Bạn muốn nói: “Tôi không phải giáo viên, tôi là học sinh.”', opts:['我不是老师，我是学生。', '我是不老师，我是学生。', '我不老师，我是学生。', '我不是学生，我是老师。'], ans:0, exp:'Phủ định của 是 là 不是 (không bỏ 是, không đặt 不 sau 是).'},
+  {q:'Bạn học va vào bạn và nói: “对不起！” Bạn đáp nhẹ nhàng:', opts:['没事！', '对不起！', '谢谢！', '请问！'], ans:0, exp:'没事 = không sao (thân mật), dùng như 没关系 để đáp lời xin lỗi.'},
+  {q:'Bạn muốn hỏi tên thầy giáo một cách lễ phép:', opts:['请问，您叫什么名字？', '请问，你们叫什么名字？', '请问，您叫名字什么？', '您好，再见！'], ans:0, exp:'Với thầy cô dùng 您 (bài 1); 什么 đứng trước 名字: 您叫什么名字？'},
+  {q:'Bạn muốn nói: “Tôi rất vui.”', opts:['我很高兴。', '我是很高兴。', '我高兴很。', '很我高兴。'], ans:0, exp:'Tính từ làm vị ngữ không cần 是: 我很高兴. Tiếng Việt “tôi thì vui” khiến học sinh hay thêm 是.'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 3 bài khoá.',
+  intro: 'Nhấn nút loa nghe câu người kia nói, rồi tự ghi âm câu trả lời của bạn (nói về chính bạn).',
   questions: [
-    {q_zh: '有人问你："请问，你叫什么名字？" 你怎么回答？', q_vn: 'Có người hỏi bạn: "Xin hỏi, bạn tên là gì?" Bạn trả lời thế nào?',
+    {q_zh: '请问，你叫什么名字？', q_vn: 'Một bạn mới hỏi tên bạn. Hãy trả lời bằng tên thật của bạn.',
      hint: '我叫……', sample: '我叫李文。', sample_vn: 'Mình tên là Lý Văn.',
      note: 'Cấu trúc "我叫 + tên" dùng để tự giới thiệu tên của mình.'},
-    {q_zh: '你叫错了朋友的名字，你应该说什么？', q_vn: 'Bạn gọi nhầm tên bạn của mình, bạn nên nói gì?',
-     hint: '对不起！——没关系！', sample: '对不起！——没关系！', sample_vn: 'Xin lỗi! — Không sao đâu!',
+    {q_zh: '对不起！', q_vn: 'Bạn học gọi nhầm tên bạn rồi xin lỗi. Bạn đáp lại thế nào?',
+     hint: '没关系 / 没事', sample: '没关系！', sample_vn: 'Không sao đâu!',
      note: '对不起 dùng để xin lỗi, 没关系/没事 dùng để đáp lại lời xin lỗi.'},
-    {q_zh: '你第一次认识一个新朋友，你应该说什么？', q_vn: 'Bạn lần đầu làm quen một người bạn mới, bạn nên nói gì?',
-     hint: '很高兴认识你。', sample: '你好！我叫……，很高兴认识你。', sample_vn: 'Chào bạn! Mình tên là..., rất vui được làm quen với bạn.',
+    {q_zh: '你好！我叫白家月。', q_vn: 'Một bạn mới chào và tự giới thiệu. Hãy chào lại, nói tên bạn và nói rất vui được làm quen.',
+     hint: '你好！我叫……，很高兴认识你。', sample: '你好！我叫陈天中，很高兴认识你。', sample_vn: 'Chào bạn! Mình tên là Trần Thiên Trung, rất vui được làm quen với bạn.',
      note: '很高兴认识你 là câu xã giao phổ biến khi lần đầu gặp gỡ, làm quen.'},
+    {q_zh: '我是学生。', q_vn: 'Bạn mới nói: “Mình là học sinh.” Hãy nói về bạn: bạn cũng là học sinh, hay bạn không phải học sinh?',
+     hint: '我也是……／我不是……，我是……', sample: '我也是学生。', sample_vn: 'Mình cũng là học sinh.',
+     note: '也 đứng sau chủ ngữ (我也是…); 不 đứng trước 是 (我不是…).'},
   ],
 };
 
@@ -1528,6 +1578,7 @@ var translateData = [
   {vi:'Tôi tên là Lý Văn, tôi là học sinh.', zh:'我叫李文，我是学生。', py:'Wǒ jiào Lǐ Wén, wǒ shì xuésheng.'},
   {vi:'Xin lỗi! — Không sao đâu!', zh:'对不起！——没关系！', py:'Duìbuqǐ! — Méi guānxi!'},
   {vi:'Rất vui được làm quen với bạn, tôi cũng rất vui.', zh:'很高兴认识你，我也很高兴。', py:'Hěn gāoxìng rènshi nǐ, wǒ yě hěn gāoxìng.'},
+  {vi:'Tôi cũng là học sinh, rất vui được làm quen với các bạn.', zh:'我也是学生，很高兴认识你们。', py:'Wǒ yě shì xuésheng, hěn gāoxìng rènshi nǐmen.'},
 ];
 
 // ══════════════════════════════════════════
@@ -1536,6 +1587,6 @@ var translateData = [
 var translateDataRev = [
   {vi:'Xin hỏi, thầy tên là gì ạ?', zh:'请问，老师叫什么名字？', py:'Qǐngwèn, lǎoshī jiào shénme míngzi?'},
   {vi:'Tôi không phải là học sinh, tôi là giáo viên.', zh:'我不是学生，我是老师。', py:'Wǒ bú shì xuésheng, wǒ shì lǎoshī.'},
-  {vi:'Xin lỗi, mình gọi nhầm tên bạn rồi! — Không sao đâu, không sao đâu!', zh:'对不起，我叫错你的名字了！——没事，没事！', py:'Duìbuqǐ, wǒ jiàocuò nǐ de míngzi le! — Méishì, méishì!'},
+  {vi:'Chào An Ni! — Tôi không phải An Ni, tôi là Bạch Gia Nguyệt. — Xin lỗi! — Không sao!', zh:'你好，安妮！——我不是安妮，我是白家月。——对不起！——没事！', py:'Nǐ hǎo, Ānnī! — Wǒ bú shì Ānnī, wǒ shì Bái Jiāyuè. — Duìbuqǐ! — Méishì!'},
   {vi:'Quen biết các bạn, mình rất vui.', zh:'认识你们，我很高兴。', py:'Rènshi nǐmen, wǒ hěn gāoxìng.'},
 ];

@@ -2123,25 +2123,65 @@ var matchData = [
   {left:'儿', right:'子'},
   {left:'女', right:'儿'},
   {left:'今', right:'年'},
+  {left:'孩', right:'子'},
+  {left:'妹', right:'妹'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 2 · NGHE — để trống, chờ audio + tài liệu gốc giáo trình HSK1 3.0
+// PHẦN 2 · NGHE — nghe câu (giọng đọc máy) → chọn đáp án
 // ══════════════════════════════════════════
-var listenData = [];
+var listenData = [
+  {audio:'我家有五口人。',
+   questions:[
+     {q:'Nhà người nói có mấy người?', opts:['4', '5', '3'], ans:1, exp:'五口人 = năm người (口 là lượng từ đếm người trong nhà).'},
+   ]},
+  {audio:'我有两个哥哥，你呢？我没有哥哥。',
+   questions:[
+     {q:'Người thứ hai có anh trai không?', opts:['Không có', 'Có một', 'Có hai'], ans:0, exp:'没有哥哥 = không có anh trai; người thứ nhất mới có hai anh.'},
+   ]},
+  {audio:'她有二十个学生。',
+   questions:[
+     {q:'Cô ấy có bao nhiêu học sinh?', opts:['12', '2', '20'], ans:2, exp:'二十 = 20; 十二 = 12.'},
+   ]},
+  {audio:'我儿子今年六岁。',
+   questions:[
+     {q:'Con trai người nói mấy tuổi?', opts:['16', '6', '10'], ans:1, exp:'六岁 = 6 tuổi.'},
+   ]},
+  {audio:'我家有四口人，爸爸、妈妈、妹妹和我。',
+   questions:[
+     {q:'Nhà người nói KHÔNG có ai?', opts:['Anh trai', 'Em gái', 'Bố'], ans:0, exp:'Nhà có 爸爸、妈妈、妹妹 và 我 — không có 哥哥.'},
+   ]},
+  {audio:'您女儿今年多大？她今年十二岁。',
+   questions:[
+     {q:'Con gái bao nhiêu tuổi?', opts:['20', '2', '12'], ans:2, exp:'十二岁 = 12 tuổi.'},
+   ]},
+  {audio:'我有两个孩子，一个儿子，一个女儿。',
+   questions:[
+     {q:'Người nói có những con nào?', opts:['Một con trai', 'Một con trai và một con gái', 'Hai con gái'], ans:1, exp:'两个孩子：一个儿子，一个女儿.'},
+   ]},
+];
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ (dựa theo bài tập tổng hợp thật trong sách)
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'王一飞老师有', blank:'二十', post:'个学生。', hint:'(20)', ans:'二十'},
-  {pre:'杨同乐家有四', blank:'口', post:'人。', hint:'(lượng từ đếm người)', ans:'口', exp:'口 là lượng từ đếm số thành viên trong gia đình: 家有四口人; đếm người nói chung thì dùng 个.'},
-  {pre:'王一雪：我有两个孩子，你', blank:'呢', post:'？ 杨同乐：我', ans:'呢', exp:'“…，你呢？” = còn bạn thì sao? 呢 dùng để hỏi lại người kia về cùng chuyện vừa nói.'},
-  {pre:'杨同乐：我', blank:'没', post:'孩子。', hint:'(không — phủ định của 有)', ans:'没', exp:'Phủ định của 有 luôn là 没 (没有): 我没孩子; không bao giờ nói 不有.'},
-  {pre:'杨同乐：您女儿今年多', blank:'大', post:'？', hint:'(hỏi tuổi người lớn)', ans:'大', exp:'Hỏi tuổi người lớn dùng 多大; 几岁 chỉ dùng để hỏi tuổi trẻ nhỏ.'},
-  {pre:'您儿子', blank:'几', post:'岁？', hint:'(mấy — hỏi tuổi trẻ em)', ans:'几', exp:'Hỏi tuổi trẻ nhỏ (thường dưới 10 tuổi) dùng 几岁; 几 dùng để hỏi số nhỏ.'},
-  {pre:'我家有四口人，爸爸、妈妈、妹妹', blank:'和', post:'我。', hint:'(và)', ans:'和', exp:'和 = và, nối các danh từ; khi liệt kê, 和 đứng trước thành phần cuối cùng: 妈妈、妹妹和我.'},
-  {pre:'我有两个孩子，一个儿子，一个', blank:'女儿', post:'。', hint:'(con gái)', ans:'女儿'},
+  {pre:'王一飞老师有', blank:'二十', post:'个学生。', hint:'(20)', ans:'二十', exp:'20 đọc là 二十; 两 chỉ thay cho số 2 đứng một mình trước lượng từ.'},
+  {pre:'杨同乐家有四', blank:'口', post:'人。', hint:'(lượng từ đếm người trong nhà)', ans:'口', exp:'口 là lượng từ đếm số thành viên trong gia đình: 家有四口人; đếm người nói chung thì dùng 个.'},
+  {pre:'王一雪：“我有两个孩子，你', blank:'呢', post:'？” 杨同乐：“我没有孩子。”', hint:'(còn … thì sao?)', ans:'呢', exp:'“…，你呢？” = còn bạn thì sao? 呢 dùng để hỏi lại người kia về cùng chuyện vừa nói.'},
+  {pre:'杨同乐：“我', blank:'没有', post:'孩子。”', hint:'(không có)', ans:'没有', exp:'Phủ định của 有 là 没有: 我没有孩子; không bao giờ nói 不有.'},
+  {pre:'杨同乐：“您女儿今年多', blank:'大', post:'？”', hint:'(hỏi tuổi người trên 10 tuổi)', ans:'大', exp:'Hỏi tuổi người lớn hơn dùng 多大; 几岁 chỉ dùng để hỏi tuổi trẻ nhỏ.'},
+  {pre:'“您儿子', blank:'几', post:'岁？” — “他今年五岁。”', hint:'(mấy — hỏi tuổi trẻ em)', ans:'几', exp:'Hỏi tuổi trẻ nhỏ (thường dưới 10 tuổi) dùng 几岁; 几 dùng để hỏi số nhỏ.'},
+  {pre:'我家有四口人，爸爸、妈妈、妹妹', blank:'和', post:'我。', hint:'(và)', ans:'和', exp:'和 = và, nối các danh từ; khi liệt kê, 和 chỉ đứng trước thành phần cuối cùng: 妈妈、妹妹和我.'},
+  {pre:'我有两个孩子，一个儿子，一个', blank:'女儿', post:'。', hint:'(con gái)', ans:'女儿', exp:'儿子 = con trai, 女儿 = con gái, 孩子 = con nói chung.'},
+  {pre:'Bạn có 2 anh trai: “我有', blank:'两', post:'个哥哥。”', hint:'(2)', ans:'两', exp:'Trước lượng từ, số 2 dùng 两: 两个哥哥; nói 二个 là lỗi hay gặp.'},
+  {pre:'Hỏi cô giáo (lớp rất đông): “您有', blank:'多少', post:'个学生？”', hint:'(bao nhiêu — số lớn)', ans:'多少', exp:'Số lớn hoặc không biết trước thì hỏi bằng 多少; 几 dùng cho số nhỏ (dưới 10).'},
+  {pre:'Nói về em bé nhà bạn: “他今年五', blank:'岁', post:'。”', hint:'(tuổi)', ans:'岁', exp:'岁 tự nó là lượng từ chỉ tuổi, nên nói 五岁, không nói 五个岁.'},
+  {pre:'Bạn có một em gái: “我有一', blank:'个', post:'妹妹。”', hint:'(lượng từ chung)', ans:'个', exp:'Số + lượng từ + danh từ: 一个妹妹; tiếng Việt “một em gái” không cần lượng từ nên hay bị quên.'},
+  {pre:'Chỉ vào ảnh: “这是我', blank:'爸爸', post:'，他是老师。”', hint:'(bố)', ans:'爸爸', exp:'Với người thân, sau 我 thường lược 的: 我爸爸.'},
+  {pre:'Nói về mẹ: “我', blank:'妈妈', post:'是老师，她很忙。”', hint:'(mẹ)', ans:'妈妈', exp:'我妈妈 = mẹ tôi; 她很忙 — tính từ làm vị ngữ không cần 是.'},
+  {pre:'Nói tuổi em gái: “我妹妹', blank:'今年', post:'八岁。”', hint:'(năm nay)', ans:'今年', exp:'Từ chỉ thời gian 今年 đứng trước động từ/số tuổi: 我妹妹今年八岁.'},
+  {pre:'“您儿子几岁？” — “我', blank:'儿子', post:'今年六岁。”', hint:'(con trai)', ans:'儿子', exp:'儿子 = con trai; câu nói tuổi không cần 是: 我儿子今年六岁.'},
+  {pre:'Bạn hỏi bạn mới: “你', blank:'家', post:'有几口人？”', hint:'(nhà)', ans:'家', exp:'你家 = nhà bạn; hỏi số người trong nhà dùng 有几口人.'},
 ];
 
 // ══════════════════════════════════════════
@@ -2152,39 +2192,57 @@ var sortData = [
   {words:['我','没有','哥哥','。'], ans:'我没有哥哥。', audio:'我没有哥哥。'},
   {words:['你','家','有','几','口','人','？'], ans:'你家有几口人？', audio:'你家有几口人？'},
   {words:['我','有','两个','孩子','。'], ans:'我有两个孩子。', audio:'我有两个孩子。'},
-  {words:['他','今年','五','岁','。'], ans:'他今年五岁。', audio:'他今年五岁。'},
+  {words:['他','今年','五','岁','。'], ans:'他今年五岁。', audio:'他今年五岁。', alt:['今年他五岁。']},
   {words:['您','女儿','多','大','？'], ans:'您女儿多大？', audio:'您女儿多大？'},
+  {words:['我','有','一','个','哥哥','，','你','呢','？'], ans:'我有一个哥哥，你呢？', audio:'我有一个哥哥，你呢？'},
+  {words:['您','有','多少','个','学生','？'], ans:'您有多少个学生？', audio:'您有多少个学生？'},
+  {words:['他','今年','几','岁','？'], ans:'他今年几岁？', audio:'他今年几岁？', alt:['今年他几岁？']},
+  {words:['我','家','有','三','口','人','，','爸爸','、','妈妈','和','我','。'], ans:'我家有三口人，爸爸、妈妈和我。', audio:'我家有三口人，爸爸、妈妈和我。'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3c · TRẮC NGHIỆM
 // ══════════════════════════════════════════
 var mcData = [
-  {q:'Phủ định của "有" (có) là gì?', opts:['没/没有', '不有', '不是', '没是'], ans:0, exp:'有 chỉ phủ định bằng 没/没有: 我没有孩子. 不有 là sai; 不是 là phủ định của 是.'},
-  {q:'"你家有几口人？" — "口" ở đây dùng để làm gì?', opts:['Lượng từ đếm người trong gia đình', 'Lượng từ đếm sách', 'Danh từ chỉ cái miệng', 'Động từ ăn uống'], ans:0, exp:'Ở đây 口 là lượng từ đếm thành viên trong gia đình: 你家有几口人？= nhà bạn có mấy người?'},
-  {q:'"我有两个哥哥，你呢？" — "呢" dùng để làm gì?', opts:['Hỏi lại về tình huống tương tự đã nêu', 'Phủ định câu trước', 'Kết thúc câu trần thuật', 'Nhấn mạnh số nhiều'], ans:0, exp:'“…，你呢？” = còn bạn thì sao? 呢 hỏi lại về tình huống tương tự vừa nêu ở câu trước.'},
-  {q:'Hỏi tuổi một em bé dưới 10 tuổi, dùng cụm từ nào?', opts:['几岁', '多大', '多少岁', '几年'], ans:0, exp:'Trẻ nhỏ thì hỏi tuổi bằng 几岁 vì 几 dùng cho số nhỏ; 多大 dùng cho người lớn hơn.'},
-  {q:'Hỏi tuổi một người trên 10 tuổi, dùng cụm từ nào?', opts:['多大', '几岁', '几年', '多少'], ans:0, exp:'Người trên 10 tuổi hỏi bằng 多大; 几岁 chỉ dùng để hỏi trẻ nhỏ.'},
-  {q:'Số "2" khi đứng trước lượng từ (như 个) được đọc là gì?', opts:['两 (liǎng)', '二 (èr)', 'Cả hai đều được, không phân biệt', '贰 (đại tự)'], ans:0, exp:'Trước lượng từ, số 2 đọc là 两: 两个孩子, không nói 二个.'},
-  {q:'"我家有四口人，爸爸、妈妈、妹妹和我" — có bao nhiêu người trong câu?', opts:['4', '3', '5', '2'], ans:0, exp:'Đếm 爸爸、妈妈、妹妹 và 我 là 4 người, khớp với 四口人.'},
-  {q:'"孩子" và "儿子" khác nhau thế nào?', opts:['孩子 = con nói chung, 儿子 = con trai cụ thể', 'Không khác gì cả', '孩子 chỉ dùng cho con gái', '儿子 chỉ dùng số nhiều'], ans:0, exp:'孩子 là “con, trẻ con” nói chung (cả trai lẫn gái); 儿子 là con trai, 女儿 là con gái.'},
+  {q:'Bạn muốn nói: “Tôi không có anh trai.”', opts:['我没有哥哥。', '我不有哥哥。', '我有不哥哥。', '我不是有哥哥。'], ans:0, exp:'Phủ định của 有 luôn là 没有; ghép thẳng “không” thành 不有 là lỗi rất hay gặp.'},
+  {q:'Câu nào SAI?', opts:['我家有四人。', '我家有四口人。', '我有两个妹妹。', '她有二十个学生。'], ans:0, exp:'Đếm người trong nhà phải có lượng từ 口: 四口人; tiếng Việt “bốn người” không cần lượng từ nên hay bị bỏ.'},
+  {q:'Bạn muốn hỏi: “Nhà bạn có mấy người?”', opts:['你家有几口人？', '你家有几个口人？', '你家几口人有？', '你家有几人口？'], ans:0, exp:'Trật tự: 几 + 口 + 人; chỉ dùng một lượng từ (口), không thêm 个.'},
+  {q:'Bạn muốn nói: “Tôi có hai chị gái.”', opts:['我有两个姐姐。', '我有二个姐姐。', '我有两姐姐。', '我两个有姐姐。'], ans:0, exp:'Trước lượng từ dùng 两, không dùng 二; và không được bỏ lượng từ 个.'},
+  {q:'Cô Vương có 20 học sinh: “她有＿＿个学生。”', opts:['二十', '两十', '十二', '二十二'], ans:0, exp:'20 = 二十; 两 chỉ thay cho số 2 đứng một mình trước lượng từ, không nói 两十.'},
+  {q:'Con trai bạn 12 tuổi: “他今年＿＿岁。”', opts:['十二', '二十', '两十', '一十二'], ans:0, exp:'12 = 十二 (mười + hai); 二十 là 20.'},
+  {q:'A: “我有两个哥哥，你呢？” — B không có anh trai, B trả lời:', opts:['我没有哥哥。', '我有没有哥哥。', '我呢没有哥哥。', '你呢？'], ans:0, exp:'“你呢？” hỏi lại cùng chuyện (có anh trai không), nên trả lời thẳng: 我没有哥哥.'},
+  {q:'Bạn kể có một em gái, rồi hỏi lại bạn mình “Còn bạn?”:', opts:['我有一个妹妹，你呢？', '我有一个妹妹，你呢吗？', '我有一个妹妹，呢你？', '我有一个妹妹，你有呢吗？'], ans:0, exp:'呢 đứng sau người được hỏi lại (你呢), không dùng cùng 吗.'},
+  {q:'Câu hỏi nào SAI?', opts:['你呢有几个哥哥？', '你家有几口人？', '我很好，你呢？', '她有多少个学生？'], ans:0, exp:'呢 không đặt giữa câu; muốn hỏi lại thì nói gọn 你呢？ hoặc 你有几个哥哥？'},
+  {q:'Bạn hỏi tuổi một em bé khoảng 5 tuổi:', opts:['你几岁？', '你几个岁？', '你岁几？', '你多少大？'], ans:0, exp:'Trẻ nhỏ hỏi 几岁; 岁 đã là lượng từ nên không thêm 个.'},
+  {q:'Bạn hỏi chị Vương về con gái (khoảng 15 tuổi) một cách lịch sự:', opts:['您女儿今年多大？', '您女儿今年多少大？', '您女儿今年大多？', '您女儿多大今年岁？'], ans:0, exp:'Người trên 10 tuổi hỏi 多大; 今年 đứng trước 多大.'},
+  {q:'Bạn hỏi cô giáo có bao nhiêu học sinh (lớp rất đông):', opts:['您有多少个学生？', '您有学生多少？', '您多少有学生？', '您有多少几个学生？'], ans:0, exp:'多少 đứng trước danh từ (多少个学生); nói “có học sinh bao nhiêu” theo tiếng Việt là sai.'},
+  {q:'Nhà bạn có ba người: bố, mẹ và bạn. Câu đúng là:', opts:['我家有三口人，爸爸、妈妈和我。', '我家有三口人，爸爸和妈妈和我。', '我家有三个口人，爸爸、妈妈和我。', '我家三口人有，爸爸、妈妈和我。'], ans:0, exp:'Liệt kê dùng dấu 、 và chỉ đặt 和 trước thành phần cuối; lượng từ chỉ dùng 口.'},
+  {q:'Chị Vương có một con trai và một con gái: “我有两个＿＿，一个儿子，一个女儿。”', opts:['孩子', '儿子', '女儿', '哥哥'], ans:0, exp:'孩子 = con nói chung (cả trai lẫn gái); 儿子 chỉ con trai, 女儿 chỉ con gái.'},
+  {q:'A: “你家有几口人？” — B trả lời:', opts:['我家有四口人。', '我家有四个人口。', '我家是四口人。', '我有家四口人。'], ans:0, exp:'Câu chữ 有: 我家 + 有 + số + 口 + 人; không thay 有 bằng 是.'},
+  {q:'Nói về con trai bạn: “＿＿今年五岁。”', opts:['他', '她', '你们', '我们'], ans:0, exp:'他 dùng cho nam (anh ấy, cậu bé); 她 dùng cho nữ.'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 3 bài khoá.',
+  intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời của bạn (nói về chính bạn và gia đình bạn).',
   questions: [
-    {q_zh: '有人问你："你家有几口人？" 你怎么回答？', q_vn: 'Có người hỏi bạn: "Nhà bạn có mấy người?" Bạn trả lời thế nào?',
-     hint: '我家有……口人。', sample: '我家有四口人，爸爸、妈妈、妹妹和我。', sample_vn: 'Nhà tôi có bốn người: bố, mẹ, em gái và tôi.',
+    {q_zh: '你家有几口人？', q_vn: 'Nhà bạn có mấy người? Gồm những ai? Hãy trả lời về gia đình bạn.',
+     hint: '我家有……口人，……和我。', sample: '我家有四口人，爸爸、妈妈、妹妹和我。', sample_vn: 'Nhà tôi có bốn người: bố, mẹ, em gái và tôi.',
      note: 'Cấu trúc "我家有 + số + 口人" dùng để nói số thành viên trong gia đình.'},
-    {q_zh: '朋友问你有没有哥哥/姐姐，你怎么回答？', q_vn: 'Bạn của bạn hỏi bạn có anh/chị không, bạn trả lời thế nào?',
-     hint: '我有/没有……', sample: '我没有哥哥，我有一个姐姐。', sample_vn: 'Tôi không có anh trai, tôi có một chị gái.',
-     note: '没有 là dạng phủ định của 有, dùng để nói "không có".'},
-    {q_zh: '有人问你孩子多大了，你怎么回答？', q_vn: 'Có người hỏi con bạn bao nhiêu tuổi rồi, bạn trả lời thế nào?',
-     hint: '他/她今年……岁。', sample: '我儿子今年五岁，我女儿今年十二岁。', sample_vn: 'Con trai tôi năm nay năm tuổi, con gái tôi năm nay mười hai tuổi.',
-     note: 'Trẻ dưới 10 tuổi hỏi 几岁, trên 10 tuổi hỏi 多大.'},
+    {q_zh: '你有哥哥吗？', q_vn: 'Bạn có anh trai không? Hãy trả lời về bạn, rồi hỏi lại bạn ấy.',
+     hint: '我有／没有……，你呢？', sample: '我没有哥哥，我有一个姐姐。你呢？', sample_vn: 'Tôi không có anh trai, tôi có một chị gái. Còn bạn?',
+     note: '没有 là dạng phủ định của 有; “你呢？” dùng để hỏi lại.'},
+    {q_zh: '你今年多大？', q_vn: 'Năm nay bạn bao nhiêu tuổi? Hãy trả lời bằng tuổi thật của bạn.',
+     hint: '我今年……岁。', sample: '我今年十八岁。', sample_vn: 'Năm nay tôi mười tám tuổi.',
+     note: 'Câu nói tuổi không cần 是: 我今年十八岁.'},
+    {q_zh: '你的中文老师有多少个学生？', q_vn: 'Thầy/cô tiếng Trung của bạn có bao nhiêu học sinh? Hãy trả lời.',
+     hint: '我的中文老师有……个学生。', sample: '我的中文老师有三十个学生。', sample_vn: 'Cô giáo tiếng Trung của tôi có ba mươi học sinh.',
+     note: 'Số lớn hỏi bằng 多少; trả lời: số + 个 + 学生.'},
+    {q_zh: '我有两个妹妹，你呢？', q_vn: 'Bạn mới nói có hai em gái và hỏi lại bạn. Hãy trả lời về bạn.',
+     hint: '我有……个……／我没有……', sample: '我有一个妹妹。', sample_vn: 'Tôi có một em gái.',
+     note: 'Trước lượng từ, số 2 đọc là 两: 两个妹妹.'},
   ],
 };
 
@@ -2196,6 +2254,7 @@ var translateData = [
   {vi:'Nhà em có mấy người? — Nhà em có bốn người: bố, mẹ, em gái và em.', zh:'你家有几口人？——我家有四口人，爸爸、妈妈、妹妹和我。', py:'Nǐ jiā yǒu jǐ kǒu rén? — Wǒ jiā yǒu sì kǒu rén, bàba, māma, mèimei hé wǒ.'},
   {vi:'Tôi có hai con, một con trai, một con gái.', zh:'我有两个孩子，一个儿子，一个女儿。', py:'Wǒ yǒu liǎng gè háizi, yí gè érzi, yí gè nǚ\'ér.'},
   {vi:'Con trai chị mấy tuổi rồi? — Cháu năm nay năm tuổi.', zh:'您儿子几岁？——他今年五岁。', py:'Nín érzi jǐ suì? — Tā jīnnián wǔ suì.'},
+  {vi:'Tôi không có em gái, tôi có hai anh trai. Còn bạn?', zh:'我没有妹妹，我有两个哥哥。你呢？', py:'Wǒ méiyǒu mèimei, wǒ yǒu liǎng gè gēge. Nǐ ne?'},
 ];
 
 // ══════════════════════════════════════════
@@ -2203,7 +2262,7 @@ var translateData = [
 // ══════════════════════════════════════════
 var translateDataRev = [
   {vi:'Tôi có một anh trai, tôi không có em gái.', zh:'我有一个哥哥，我没有妹妹。', py:'Wǒ yǒu yí gè gēge, wǒ méiyǒu mèimei.'},
-  {vi:'Giáo viên của tôi có bao nhiêu học sinh, bạn biết không?', zh:'我老师有多少个学生，你知道吗？', py:'Wǒ lǎoshī yǒu duōshao gè xuésheng, nǐ zhīdào ma?'},
-  {vi:'Con gái chị bao nhiêu tuổi rồi? — Cháu năm nay mười hai tuổi.', zh:'您女儿多大了？——她今年十二。', py:'Nín nǚ\'ér duō dà le? — Tā jīnnián shí\'èr.'},
+  {vi:'Giáo viên của bạn có bao nhiêu học sinh? — Cô ấy có ba mươi hai học sinh.', zh:'你老师有多少个学生？——她有三十二个学生。', py:'Nǐ lǎoshī yǒu duōshao gè xuésheng? — Tā yǒu sānshí\'èr gè xuésheng.'},
+  {vi:'Con gái chị năm nay bao nhiêu tuổi? — Cháu năm nay mười hai tuổi.', zh:'您女儿今年多大？——她今年十二岁。', py:'Nín nǚ\'ér jīnnián duō dà? — Tā jīnnián shí\'èr suì.'},
   {vi:'Nhà tôi có ba người: bố, mẹ và tôi, không có anh chị em.', zh:'我家有三口人，爸爸、妈妈和我，没有哥哥姐姐。', py:'Wǒ jiā yǒu sān kǒu rén, bàba, māma hé wǒ, méiyǒu gēge jiějie.'},
 ];

@@ -2348,25 +2348,64 @@ var matchData = [
   {left:'生', right:'病'},
   {left:'看', right:'病'},
   {left:'公', right:'司'},
+  {left:'热', right:'水'},
+  {left:'觉', right:'得'},
 ];
 
 // ══════════════════════════════════════════
-// PHẦN 2 · NGHE — để trống, chờ tài liệu gốc giáo trình HSK1 3.0
+// PHẦN 2 · NGHE — nghe câu (giọng đọc máy) → chọn đáp án
 // ══════════════════════════════════════════
-var listenData = [];
+var listenData = [
+  {audio:'今天下雨了，有点儿冷。',
+   questions:[
+     {q:'Thời tiết hôm nay thế nào?', opts:['Nắng và nóng', 'Mưa, hơi lạnh', 'Tuyết rơi, rất lạnh'], ans:1, exp:'下雨了 = trời mưa rồi; 有点儿冷 = hơi lạnh.'},
+   ]},
+  {audio:'昨天我生病了，没来公司，去医院看病了。',
+   questions:[
+     {q:'Hôm qua người nói đã đi đâu?', opts:['Bệnh viện', 'Công ty', 'Siêu thị'], ans:0, exp:'没来公司 = không đến công ty; 去医院看病了 = đi bệnh viện khám bệnh.'},
+   ]},
+  {audio:'这件衣服太贵了！',
+   questions:[
+     {q:'Người nói thấy chiếc áo thế nào?', opts:['Rẻ quá', 'Đẹp quá', 'Đắt quá'], ans:2, exp:'太贵了 = đắt quá; 便宜 mới là rẻ.'},
+   ]},
+  {audio:'医生说，吃一点儿药，回家后再喝些热水。',
+   questions:[
+     {q:'Bác sĩ dặn về nhà uống gì?', opts:['Sữa', 'Nước ấm', 'Nước lạnh'], ans:1, exp:'热水 = nước nóng, nước ấm; 回家后再… = về nhà rồi hãy…'},
+   ]},
+  {audio:'现在十二点了，我们去吃午饭吧。',
+   questions:[
+     {q:'Bây giờ là mấy giờ?', opts:['12 giờ', '2 giờ', '10 giờ'], ans:0, exp:'十二点了 = 12 giờ rồi; 了 báo thời điểm mới đã đến.'},
+     {q:'Họ định làm gì?', opts:['Đi làm', 'Đi ăn trưa', 'Đi ngủ'], ans:1, exp:'吃午饭 = ăn cơm trưa; 吧 dùng để rủ.'},
+   ]},
+  {audio:'下雪了！太好了！',
+   questions:[
+     {q:'Người nói cảm thấy thế nào khi tuyết rơi?', opts:['Không vui', 'Hơi lạnh', 'Rất vui'], ans:2, exp:'太好了！= tuyệt quá! — khung 太…了 để cảm thán.'},
+   ]},
+  {audio:'你觉得怎么样？我不冷了。',
+   questions:[
+     {q:'Bây giờ người thứ hai thế nào?', opts:['Vẫn còn lạnh', 'Hết lạnh rồi', 'Rất nóng'], ans:1, exp:'不……了 = không … nữa (đã thay đổi): 我不冷了 = tôi hết lạnh rồi.'},
+   ]},
+];
 
 // ══════════════════════════════════════════
 // PHẦN 3a · ĐIỀN TỪ
 // ══════════════════════════════════════════
 var fillData = [
-  {pre:'', blank:'今天天气', post:'怎么样？', hint:'(thời tiết hôm nay)', ans:'今天天气'},
-  {pre:'这里的天不太好，', blank:'下雨了', post:'。', hint:'(mưa rồi)', ans:'下雨了', exp:'了 cuối câu báo một tình huống mới xuất hiện: 下雨了 = trời mưa rồi.'},
-  {pre:'有点儿大，我', blank:'觉得很冷', post:'。', hint:'(cảm thấy rất lạnh)', ans:'觉得很冷', exp:'觉得 + tính từ = cảm thấy…; tính từ thường có 很 đi trước: 觉得很冷.'},
-  {pre:'', blank:'昨天下雪了', post:'。', hint:'(hôm qua tuyết rơi)', ans:'昨天下雪了', exp:'了 cuối câu xác nhận sự việc đã xảy ra; từ chỉ thời gian 昨天 đứng đầu câu.'},
-  {pre:'你昨天没来公司，', blank:'生病了', post:'？', hint:'(bị ốm)', ans:'生病了', exp:'生病了 = bị ốm rồi; 了 báo tình trạng mới (trước khỏe, giờ ốm).'},
-  {pre:'对，我昨天去医院', blank:'看病了', post:'。', hint:'(khám bệnh)', ans:'看病了', exp:'了 cuối câu xác nhận việc đã xảy ra: 去医院看病了 = đã đi bệnh viện khám bệnh.'},
-  {pre:'好的，吃一点儿药，今天', blank:'休息半天', post:'吧。', hint:'(nghỉ nửa ngày)', ans:'休息半天', exp:'Thời lượng (半天) đặt sau động từ: 休息半天 = nghỉ nửa ngày.'},
-  {pre:'回家后再', blank:'喝些热水', post:'。', hint:'(uống ít nước ấm)', ans:'喝些热水', exp:'些 = một ít, đặt trước danh từ: 喝些热水 = uống ít nước ấm.'},
+  {pre:'今天', blank:'天气', post:'怎么样？', hint:'(thời tiết)', ans:'天气', exp:'Hỏi thời tiết: 今天天气怎么样？ — 怎么样 đứng cuối câu.'},
+  {pre:'这里的天不太好，下雨', blank:'了', post:'。', hint:'(trợ từ báo tình huống mới)', ans:'了', exp:'了 cuối câu báo tình huống mới: 下雨了 = trời mưa rồi (trước đó chưa mưa).'},
+  {pre:'雨有点儿大，我', blank:'觉得', post:'很冷。', hint:'(cảm thấy)', ans:'觉得', exp:'觉得 + tính từ = cảm thấy…: 我觉得很冷.'},
+  {pre:'昨天下', blank:'雪', post:'了，太冷了。', hint:'(tuyết)', ans:'雪', exp:'下雪 = tuyết rơi; hiện tượng tự nhiên nói thẳng 下雪了, không cần chủ ngữ.'},
+  {pre:'你昨天没来公司，', blank:'生病', post:'了？', hint:'(bị ốm)', ans:'生病', exp:'生病了 = bị ốm rồi; 了 báo tình trạng mới (trước khỏe, giờ ốm).'},
+  {pre:'我昨天去医院', blank:'看病', post:'了。', hint:'(khám bệnh)', ans:'看病', exp:'Đến bệnh viện để 看病 (khám bệnh); 生病 là bị ốm — đừng nhầm hai từ.'},
+  {pre:'医生说：“吃', blank:'一点儿', post:'药，休息半天吧。”', hint:'(một ít — đứng SAU động từ)', ans:'一点儿', exp:'Động từ + 一点儿 + danh từ = … một ít: 吃一点儿药.'},
+  {pre:'回家后再喝些', blank:'热', post:'水。', hint:'(nóng, ấm)', ans:'热', exp:'热水 = nước nóng/ấm; 热 là tính từ đứng trước danh từ.'},
+  {pre:'Chiếc áo giá 2000 tệ, bạn kêu lên: “这件衣服太贵', blank:'了', post:'！”', hint:'(khung 太…＿)', ans:'了', exp:'太 + tính từ + 了: thiếu 了 thì câu cảm thán chưa trọn — lỗi hay gặp.'},
+  {pre:'Hôm nay trời hơi lạnh: “今天', blank:'有点儿', post:'冷。”', hint:'(hơi — đứng TRƯỚC tính từ)', ans:'有点儿', exp:'有点儿 + tính từ (thường là cảm giác không dễ chịu): 有点儿冷; không nói 一点儿冷.'},
+  {pre:'Trời mưa, bạn không muốn đi siêu thị: “下雨了，我不想去超市了。明天', blank:'再', post:'去吧。”', hint:'(rồi hãy — làm sau)', ans:'再', exp:'再 = để sau rồi hãy làm: 明天再去 — đừng viết nhầm thành 在 (cùng âm zài).'},
+  {pre:'Món sủi cảo ở đây ngon quá: “这儿的饺子', blank:'太', post:'好吃了！”', hint:'(quá — khung ＿…了)', ans:'太', exp:'太……了 diễn tả mức độ rất cao; không dùng thêm 很 trước 太.'},
+  {pre:'A: “你今天来公司吗？” — B: “我病了，今天不', blank:'来', post:'了。”', hint:'(đến)', ans:'来', exp:'Người hỏi đang ở công ty nên dùng 来; 不来了 = không đến nữa (đổi kế hoạch).'},
+  {pre:'Tan làm, bạn chào đồng nghiệp: “我', blank:'回', post:'家了，明天见！”', hint:'(về)', ans:'回', exp:'回家 = về nhà; 回 + nơi chốn = quay về chỗ đó.'},
+  {pre:'Con trai bạn năm nay tròn 6 tuổi: “我儿子今年六岁', blank:'了', post:'。”', hint:'(báo đã đến một mức mới)', ans:'了', exp:'六岁了 = đã 6 tuổi rồi; 了 cuối câu báo sự thay đổi.'},
 ];
 
 // ══════════════════════════════════════════
@@ -2376,40 +2415,56 @@ var sortData = [
   {words:['今天','天气','怎么样','？'], ans:'今天天气怎么样？', audio:'今天天气怎么样？'},
   {words:['这里','的','天','不太好','，','下雨','了','。'], ans:'这里的天不太好，下雨了。', audio:'这里的天不太好，下雨了。'},
   {words:['昨天','下雪','了','。'], ans:'昨天下雪了。', audio:'昨天下雪了。'},
-  {words:['你','昨天','没','来','公司','，','生病','了','？'], ans:'你昨天没来公司，生病了？', audio:'你昨天没来公司，生病了？'},
+  {words:['你','昨天','没','来','公司','，','生病','了','？'], ans:'你昨天没来公司，生病了？', audio:'你昨天没来公司，生病了？', alt:['昨天你没来公司，生病了？']},
   {words:['医生','，','我','病','了','。'], ans:'医生，我病了。', audio:'医生，我病了。'},
   {words:['回家','后','再','喝','些','热水','。'], ans:'回家后再喝些热水。', audio:'回家后再喝些热水。'},
+  {words:['我','觉得','有点儿','冷','。'], ans:'我觉得有点儿冷。', audio:'我觉得有点儿冷。'},
+  {words:['这','件','衣服','太','贵','了','！'], ans:'这件衣服太贵了！', audio:'这件衣服太贵了！'},
+  {words:['吃','一点儿','药','，','今天','休息','半天','吧','。'], ans:'吃一点儿药，今天休息半天吧。', audio:'吃一点儿药，今天休息半天吧。'},
+  {words:['现在','十点','了','，','我','要','睡觉','了','。'], ans:'现在十点了，我要睡觉了。', audio:'现在十点了，我要睡觉了。'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 3c · TRẮC NGHIỆM
 // ══════════════════════════════════════════
 var mcData = [
-  {q:'"今天天气怎么样？" nghĩa là gì?', opts:['Hôm nay thời tiết thế nào?', 'Hôm nay thứ mấy?', 'Hôm nay bạn đi đâu?', 'Hôm nay mấy giờ rồi?'], ans:0, exp:'天气 = thời tiết; 怎么样 hỏi tình hình thế nào.'},
-  {q:'"下雨了" nghĩa là gì?', opts:['Trời mưa rồi', 'Trời nắng rồi', 'Trời tuyết rồi', 'Trời lạnh rồi'], ans:0, exp:'下雨 = mưa; 了 cuối câu báo tình huống mới: trời mưa rồi.'},
-  {q:'Trợ từ ngữ khí "了(1)" dùng để biểu thị điều gì?', opts:['sự thay đổi hoặc xuất hiện tình huống mới', 'sự phủ định', 'câu hỏi', 'mệnh lệnh'], ans:0, exp:'了(1) cuối câu cho biết có sự thay đổi hoặc tình huống mới: 下雨了, 我生病了.'},
-  {q:'"你昨天没来公司，生病了？" nghĩa là gì?', opts:['Hôm qua bạn không đến công ty, bị ốm à?', 'Hôm qua bạn đến công ty làm việc.', 'Hôm nay bạn không đến công ty.', 'Bạn thích công ty này không?'], ans:0, exp:'没来 = không đến (việc đã qua); 生病了？ dùng ngữ điệu hỏi để đoán lý do: bị ốm à?'},
-  {q:'"太冷了！" thuộc cấu trúc nào?', opts:['太……了 (cảm thán mức độ cao)', '正反问', '存现句', '疑问代词'], ans:0, exp:'太 + tính từ + 了 diễn đạt mức độ rất cao, mang tính cảm thán: 太冷了！'},
-  {q:'"我很冷。" — "冷" thuộc từ loại gì?', opts:['tính từ', 'danh từ', 'động từ', 'phó từ'], ans:0, exp:'冷 là tính từ, làm vị ngữ trực tiếp cùng 很: 我很冷.'},
-  {q:'"回家后再喝些热水。" nghĩa là gì?', opts:['Sau khi về nhà nhớ uống thêm ít nước ấm.', 'Trước khi về nhà hãy uống nước.', 'Đừng uống nước khi về nhà.', 'Về nhà rồi mới nấu nước.'], ans:0, exp:'回家后 = sau khi về nhà; 再 ở đây là “rồi hãy”; 喝些热水 = uống chút nước ấm.'},
-  {q:'Câu phi chủ vị (非主谓句) thường dùng khi nào?', opts:['trong khẩu ngữ, câu ngắn không rõ chủ-vị', 'chỉ dùng trong văn viết trang trọng', 'chỉ dùng khi hỏi', 'chỉ dùng khi phủ định'], ans:0, exp:'Câu phi chủ vị là câu ngắn không tách được chủ ngữ – vị ngữ, rất hay dùng trong khẩu ngữ: 下雨了！'},
+  {q:'Bạn nhìn ra cửa sổ, thấy trời bắt đầu mưa. Bạn nói với mẹ:', opts:['下雨了！', '是下雨了。', '了下雨！', '下雨很！'], ans:0, exp:'Hiện tượng tự nhiên dùng câu ngắn không chủ ngữ: 下雨了！ — không thêm 是, 了 đứng cuối câu.'},
+  {q:'Mấy hôm trước còn ấm, hôm nay trời lạnh hẳn: “天冷＿＿。”', opts:['了', '很', '太', '的'], ans:0, exp:'了 cuối câu báo sự thay đổi: 天冷了 = trời lạnh rồi (trước không lạnh).'},
+  {q:'A: “你昨天没来公司，怎么了？” — B đáp:', opts:['我生病了。', '我很生病。', '我太生病。', '我是生病。'], ans:0, exp:'生病 là động từ: 我生病了; không đặt 很 / 太 trước 生病, cũng không thêm 是.'},
+  {q:'A: “昨天下雪了吗？” — Hôm qua không có tuyết. B đáp:', opts:['没下雪。', '没下雪了。', '不下雪了。', '没有下雪了。'], ans:0, exp:'Phủ định việc đã qua dùng 没 và BỎ 了: 没下雪. 不下雪了 lại là “không rơi nữa”.'},
+  {q:'Chiếc áo giá 2000 tệ. Bạn kêu lên:', opts:['太贵了！', '是太贵了！', '很太贵了！', '太了贵！'], ans:0, exp:'太 + tính từ + 了: không thêm 是 hay 很 trước 太, và 了 đứng sau tính từ.'},
+  {q:'Bạn thấy hơi lạnh một chút: “我觉得＿＿冷。”', opts:['有点儿', '一点儿', '多', '些'], ans:0, exp:'有点儿 đứng TRƯỚC tính từ: 有点儿冷; 一点儿 đứng sau động từ (吃一点儿药).'},
+  {q:'Bác sĩ dặn: “吃＿＿药，今天休息半天吧。”', opts:['一点儿', '有点儿', '太', '很'], ans:0, exp:'Sau động từ dùng 一点儿 = một ít: 吃一点儿药; 有点儿 chỉ đứng trước tính từ.'},
+  {q:'Câu nào SAI?', opts:['我一点儿冷。', '下雪了！', '太冷了！', '我觉得有点儿冷。'], ans:0, exp:'“Tôi hơi lạnh” phải nói 我有点儿冷; dịch “một chút” thành 一点儿 đặt trước tính từ là lỗi hay gặp.'},
+  {q:'Bạn muốn nói “Bây giờ 10 giờ rồi.” Câu đúng là:', opts:['现在十点了。', '现在了十点。', '了现在十点。', '现在十点是了。'], ans:0, exp:'了 (ngữ khí) đứng CUỐI câu: 现在十点了.'},
+  {q:'A: “今天天气怎么样？” — B đáp:', opts:['下雨了，有点儿冷。', '今天天气是冷。', '天气很下雨。', '我有点儿雨。'], ans:0, exp:'Tính từ làm vị ngữ không cần 是; 下雨 là động từ nên không đi với 很.'},
+  {q:'Bác sĩ dặn: về nhà rồi hãy uống nước ấm: “回家后＿＿喝热水。”', opts:['再', '在', '了', '很'], ans:0, exp:'再 = rồi mới, sau đó hãy (trình tự); 在 cùng âm zài nhưng là “ở / đang” — hay viết nhầm.'},
+  {q:'Bạn đang ở công ty, gọi về nhà hỏi: Mấy giờ bố về nhà? “爸爸几点＿＿家？”', opts:['回', '来', '去', '上'], ans:0, exp:'Trở về nơi của mình dùng 回: 回家; không nói 来家 hay 去家.'},
+  {q:'A: “我生病了，有点儿冷。” — B đáp:', opts:['喝一点儿热水吧。', '喝有点儿热水吧。', '太冷吗？', '下雨了吗？'], ans:0, exp:'Khuyên làm gì dùng 吧; “uống một ít” là 喝一点儿, không dùng 有点儿 sau động từ.'},
+  {q:'Hôm qua tôi đi bệnh viện khám bệnh: “我昨天去医院＿＿了。”', opts:['看病', '生病', '病人', '医生'], ans:0, exp:'Đến bệnh viện để 看病 (khám bệnh); 生病 là bị ốm, 病人 là bệnh nhân.'},
 ];
 
 // ══════════════════════════════════════════
 // PHẦN 4 · LUYỆN NÓI
 // ══════════════════════════════════════════
 var speakingData = {
-  intro: 'Nhấn nút loa nghe câu hỏi/tình huống, rồi tự ghi âm câu trả lời của bạn dựa theo nội dung 3 bài khoá.',
+  intro: 'Nhấn nút loa nghe câu hỏi, rồi tự ghi âm câu trả lời của bạn (nói về chính bạn).',
   questions: [
-    {q_zh: '有人问你："今天天气怎么样？" 你怎么回答？', q_vn: 'Có người hỏi bạn: "Hôm nay thời tiết thế nào?" Bạn trả lời thế nào?',
-     hint: '今天……，有点儿……', sample: '今天下雨了，有点儿冷。', sample_vn: 'Hôm nay trời mưa rồi, hơi lạnh.',
-     note: 'Trợ từ "了" đặt cuối câu để nói về một tình huống mới xảy ra.'},
-    {q_zh: '同事问你昨天为什么没来公司，你怎么回答？', q_vn: 'Đồng nghiệp hỏi vì sao hôm qua bạn không đến công ty, bạn trả lời thế nào?',
-     hint: '我昨天……了。', sample: '我昨天生病了，去医院看病了。', sample_vn: 'Hôm qua tôi bị ốm, đã đi bệnh viện khám bệnh.',
-     note: '"生病了" và "看病了" đều dùng "了" để nói về việc đã xảy ra.'},
-    {q_zh: '医生问你："你觉得怎么样？" 你怎么回答？', q_vn: 'Bác sĩ hỏi bạn: "Anh/chị cảm thấy thế nào?" Bạn trả lời thế nào?',
-     hint: '我觉得……', sample: '我觉得很冷。', sample_vn: 'Tôi cảm thấy rất lạnh.',
-     note: '"觉得" + tính từ dùng để miêu tả cảm giác của bản thân.'},
+    {q_zh: '今天天气怎么样？', q_vn: 'Bạn của bạn hỏi thời tiết hôm nay ở chỗ bạn thế nào. Hãy trả lời theo thời tiết thật hôm nay.',
+     hint: '今天……了，有点儿……', sample: '今天下雨了，有点儿冷。', sample_vn: 'Hôm nay trời mưa rồi, hơi lạnh.',
+     note: 'Hiện tượng tự nhiên nói thẳng 下雨了 / 下雪了, không cần chủ ngữ.'},
+    {q_zh: '你昨天没来学校，怎么了？', q_vn: 'Bạn học hỏi vì sao hôm qua bạn không đến trường. Bạn trả lời thế nào?',
+     hint: '我昨天……了，去……', sample: '我昨天生病了，去医院看病了。', sample_vn: 'Hôm qua tôi bị ốm, đã đi bệnh viện khám bệnh.',
+     note: '生病了 = bị ốm rồi; 看病 = đi khám bệnh.'},
+    {q_zh: '你觉得怎么样？', q_vn: 'Bác sĩ hỏi bạn cảm thấy thế nào. Bạn trả lời thế nào?',
+     hint: '我觉得有点儿……', sample: '我觉得有点儿冷。', sample_vn: 'Tôi cảm thấy hơi lạnh.',
+     note: '有点儿 đứng trước tính từ; không nói 我一点儿冷.'},
+    {q_zh: '你觉得这儿的菜怎么样？', q_vn: 'Bạn bè hỏi bạn thấy món ăn ở quán quen của bạn thế nào. Hãy khen thật nhiệt tình.',
+     hint: '太……了！', sample: '太好吃了！我非常喜欢。', sample_vn: 'Ngon quá! Tôi rất thích.',
+     note: 'Khung 太 + tính từ + 了; không nói 很太好吃.'},
+    {q_zh: '你今年多大了？', q_vn: 'Một người bạn mới hỏi tuổi bạn. Hãy nói tuổi thật của bạn.',
+     hint: '我今年……岁了。', sample: '我今年二十岁了。', sample_vn: 'Năm nay tôi hai mươi tuổi rồi.',
+     note: '了 cuối câu báo đã đến một mức mới (tuổi, giờ…).'},
   ],
 };
 
@@ -2421,6 +2476,8 @@ var translateData = [
   {vi:'Hôm qua tuyết rơi rồi, trời lạnh quá.', zh:'昨天下雪了，太冷了。', py:'Zuótiān xià xuě le, tài lěng le.'},
   {vi:'Thưa bác sĩ, tôi bị ốm rồi.', zh:'医生，我病了。', py:'Yīshēng, wǒ bìng le.'},
   {vi:'Sau khi về nhà nhớ uống thêm ít nước ấm.', zh:'回家后再喝些热水。', py:'Huí jiā hòu zài hē xiē rè shuǐ.'},
+  {vi:'Bây giờ tôi không bận nữa rồi.', zh:'现在我不忙了。', py:'Xiànzài wǒ bù máng le.'},
+  {vi:'Quần áo ở đây đắt quá!', zh:'这儿的衣服太贵了！', py:'Zhèr de yīfu tài guì le!'},
 ];
 
 // ══════════════════════════════════════════

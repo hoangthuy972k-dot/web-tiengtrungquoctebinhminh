@@ -1773,6 +1773,40 @@ app.post('/api/stars/tasks', requireAuth, asyncRoute(async (req, res) => {
   res.json(starView(s, awarded));
 }));
 
+// "📅 Hom nay em on gi" (public/js/on-hom-nay.js): xong ke hoach on cua ngay -> +5 sao, 1 lan / ngay (gio VN).
+// Ghi bang 1 khoa trong star_answers ('/onhn-xong|<ngay VN>') nen bam lai / goi lai khong duoc them,
+// va trang Bao cao doc chinh khoa nay de hien "Da on hom nay ✓".
+const STAR_OHN = 5;
+function khoaOnHomNay(day) { return '/onhn-xong|' + (day || vnDayKey()); }
+app.post('/api/stars/on-hom-nay', requireAuth, asyncRoute(async (req, res) => {
+  const s = await loadStar(req.user.id);
+  rollStarDay(s);
+  let awarded = 0;
+  const fresh = await addStarAnswerKeys(req.user.id, [khoaOnHomNay()]);
+  if (fresh) {
+    addStars(s, STAR_OHN);
+    s.dayAnswer = (s.dayAnswer || 0) + STAR_OHN;
+    awarded = STAR_OHN;
+    await saveStar(req.user.id, s);
+  }
+  res.json(Object.assign(starView(s, 0), { ohnAwarded: awarded }));
+}));
+// Nhung hoc sinh (trong danh sach) da xong ke hoach on hom nay: Set userId
+async function daOnHomNay(userIds) {
+  const ids = (userIds || []).filter(Boolean);
+  const out = new Set();
+  if (!ids.length) return out;
+  const key = khoaOnHomNay();
+  if (!USE_DB) {
+    const all = readJsonFile(STAR_ANSWERS_FILE) || {};
+    ids.forEach((id) => { if (all[id] && all[id][key]) out.add(id); });
+    return out;
+  }
+  const [rows] = await dbPool.query('SELECT user_id FROM star_answers WHERE qkey = ? AND user_id IN (?)', [key, ids]);
+  rows.forEach((r) => out.add(r.user_id));
+  return out;
+}
+
 // Client bao "toi vua hoc them N giay" (chi khi tab dang mo va co thao tac).
 app.post('/api/stars/tick', requireAuth, asyncRoute(async (req, res) => {
   const s = await loadStar(req.user.id);
@@ -4702,6 +4736,8 @@ app.get('/api/admin/report', requireAdmin, asyncRoute(async (req, res) => {
   } catch (err) { console.error('lastLesson', err.message); }
   const today = vnDayKey();
   const week = vnWeekKey();
+  let onHomNay = new Set();
+  try { onHomNay = await daOnHomNay(users.map((u) => u.id)); } catch (err) { console.error('onHomNay', err.message); }
   const days30 = [];
   for (let i = 29; i >= 0; i--) days30.push(new Date(Date.now() - i * 86400000).toISOString().slice(0, 10));
   const students = users.map((u) => {
@@ -4736,6 +4772,7 @@ app.get('/api/admin/report', requireAdmin, asyncRoute(async (req, res) => {
       wrongWords: Array.from(wrong).slice(0, 60),
       srsTotal: srsKeys.length,
       srsDue: srsKeys.filter((k) => srs[k].due <= today).length,
+      onHomNay: onHomNay.has(u.id), // da xong ke hoach "📅 Hom nay em on gi" hom nay
       stars: s ? {
         total: s.total || 0,
         week: s.week === week ? (s.weekStars || 0) : 0,

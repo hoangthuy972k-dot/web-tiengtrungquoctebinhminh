@@ -292,7 +292,7 @@
   // Cac khoa luu tien do RIENG cua nguoi dang hoc — xoa khi dang xuat
   var KHOA_TIEN_DO = ['hyv_visited_lessons', 'hyv_study_days', 'hyv_lesson_scores', 'hyv_review_wrong_words', 'hyv_srs',
     'hyv_daily_tasks', 'hyv_day_sec', 'hyv_last_lesson', 'hyv_resume', 'hyv_quick_review', 'hyv_wb_answers', 'hyv_khoi_dong', 'hyv_level_pick',
-    'hyv_srs_gram', 'hyv_badges', 'hyv_comeback'];
+    'hyv_srs_gram', 'hyv_badges', 'hyv_comeback', 'hyv_ohn', 'hyv_cau_sai'];
   function xoaTienDoTrenMay() {
     KHOA_TIEN_DO.forEach(function (k) { try { localStorage.removeItem(k); } catch (e) { /* bo qua */ } });
     // Ky luc tung tro o San choi chu Han (/game): hyv_tn_kl_<tro>
@@ -372,6 +372,15 @@
     var s = giaiThichCua(q);
     if (!s) return '';
     return '<div class="ex-why' + (dung ? ' is-ngan' : '') + '">💡 ' + fqText(dung ? giaiThichNgan(s) : s) + '</div>';
+  }
+  // Cau em vua lam sai -> kho "Cau em tung sai" (cau-sai.js), de ke hoach "📅 Hom nay em on gi" cho lam lai
+  function ghiCauSai(c, src, lesson) {
+    try {
+      var l = lesson || currentHubLesson;
+      if (!window.CauSai || !l || !l.fullPageUrl) return;
+      var info = lessonByUrl(l.fullPageUrl);
+      window.CauSai.ghi(c, { url: l.fullPageUrl, lv: info ? info.levelId : '', src: src });
+    } catch (e) { /* bo qua */ }
   }
 
   document.addEventListener('click', function (e) {
@@ -1061,7 +1070,8 @@
       return;
     }
     // Da co bai dang hoc: dua the len DAU trang chu (truoc nhiem vu, cap do) — viec quan trong nhat
-    var home = $('#home'), dauTrang = home && home.querySelector('.home-head');
+    // (the "📅 Hom nay em on gi" — on-hom-nay.js — dung tren cung, the hoc tiep nam ngay duoi no)
+    var home = $('#home'), dauTrang = home && (home.querySelector('#ohnCard:not([hidden])') || home.querySelector('.home-head'));
     if (dauTrang && dauTrang.nextElementSibling !== box) { dauTrang.insertAdjacentElement('afterend', box); box.classList.add('resume-top'); }
     var l = target.lesson;
     var levelName = PRACTICE_LEVEL_LABEL[target.levelId] || target.levelId.toUpperCase();
@@ -1223,6 +1233,7 @@
           : '🔥 Giữ chuỗi chỉ cần 1 việc: xong 1 lượt ôn, 1 bước bài học hoặc làm từ 5 câu bài tập.') + '</span>';
     }
     renderTaskGoal();
+    if (window.OnHomNay) { try { window.OnHomNay.veThe(); } catch (e) { /* bo qua */ } }
     renderResumeCard();
   }
 
@@ -3440,6 +3451,11 @@
     st.log.push({ n: st.pos + 1, it: it, ok: ok, given: given == null ? '' : String(given) });
     $all('#fqContent .fq-py-an').forEach(function (e) { e.hidden = false; });
     if (!ok && it.vocab) fqTuSai(st, it.vocab, it.lessonCu);
+    // Cau sai (khong phai cau tu vung — tu da vao lich on o tren; khong lay cau dich AI cham) -> "Cau em tung sai"
+    if (!ok && !it.vocab && it.type !== 'dich') {
+      if (it.type === 'go') ghiCauSai({ k: 'go', html: it.prompt, dap: it.dap, why: it.exp }, 'kt', it.lessonCu || st.lesson);
+      else if (it.opts) ghiCauSai({ lenh: it.kind, html: it.prompt, opts: it.opts, dung: it.ans, why: it.exp, oz: it.zhOpts, speak: it.speak }, 'kt', it.lessonCu || st.lesson);
+    }
     // Cau on bai cu dung -> tin hieu "nho" cho tu do (sai da xu ly o fqTuSai)
     if (ok && it.lessonCu && it.vocab) srsSignal(it.vocab.zh, true);
     var wait = typeof opts.wait === 'boolean' ? opts.wait : !ok;
@@ -15152,6 +15168,7 @@
         fb.className = 'fg-fb ' + (correct ? 'is-correct' : 'is-wrong');
         pgbRecord('gmFill', i, correct);
         if (v) srsSignal(srsWordFor(q.ans), correct); // o bo trong khong tinh la tra loi
+        if (v && !correct) ghiCauSai({ k: 'go', pre: q.pre, post: q.post, dap: q.ans, why: giaiThichCua(q), hint: q.hint }, 'luyen');
         if (correct) ok++;
       });
       recordGameScore(currentHubLesson, 'fill', ok, data.length);
@@ -15245,6 +15262,7 @@
         fb.textContent = correct ? '✓ Đúng!' : '✗ Đáp án: "' + s.ans + '"';
         fb.className = 'sg-fb ' + (correct ? 'is-correct' : 'is-wrong');
         pgbRecord('gmSort', i, correct);
+        if (!correct && placed) ghiCauSai({ k: 'xep', lenh: 'Nghe rồi xếp các từ thành câu đúng', tu: s.words, dap: s.ans, speak: s.audio || s.ans, why: giaiThichCua(s) }, 'luyen');
         if (correct) ok++;
       });
       recordGameScore(currentHubLesson, 'sort', ok, data.length);
@@ -15347,6 +15365,10 @@
         answered[qi] = correct;
         pgbRecord(pgbId, qi, correct);
         srsSignal(srsWordFor(q.opts[q.ans]), correct); // dap an dung la 1 tu trong lich on
+        if (!correct) ghiCauSai({
+          lenh: opts.blankMode ? 'Chọn từ phù hợp để điền vào chỗ trống' : opts.wrongPrefix ? 'Câu này sai — chọn câu sửa đúng' : 'Chọn đáp án đúng',
+          zh: opts.blankMode || opts.wrongPrefix ? q.wrong : tachGoiY(q.q).q, opts: q.opts, dung: q.ans, why: giaiThichCua(q)
+        }, 'luyen');
         $all('.vp-option-btn[data-qi="' + qi + '"]', wrap).forEach(function (b, j) {
           b.disabled = true;
           if (j === q.ans) b.classList.add('is-correct');
@@ -16515,9 +16537,15 @@
     if (!box) return;
     if (info.hocHomNay || info.streak < 1 || gioVietNam() < 18) { box.hidden = true; box.innerHTML = ''; return; }
     box.hidden = false;
-    box.innerHTML = '<p><b>Hôm nay chưa học</b> — học 1 bài ôn để giữ chuỗi ' + info.streak + ' ngày</p>' +
-      '<button type="button" class="btn btn-primary" id="streakNudgeGo">Ôn nhanh 3 phút</button>';
-    $('#streakNudgeGo').addEventListener('click', function () { runTask('review'); });
+    // Ke hoach "📅 Hom nay em on gi" (on-hom-nay.js) chua xong -> nut dua vao ke hoach do
+    var ohn = window.OnHomNay && window.OnHomNay.trangThai ? window.OnHomNay.trangThai() : null;
+    var veKeHoach = !!(ohn && !ohn.xong);
+    box.innerHTML = '<p><b>Hôm nay chưa học</b> — ' + (veKeHoach ? 'làm kế hoạch ôn hôm nay (khoảng ' + (ohn.phut || 12) + ' phút)' : 'học 1 bài ôn') + ' để giữ chuỗi ' + info.streak + ' ngày</p>' +
+      '<button type="button" class="btn btn-primary" id="streakNudgeGo">' + (veKeHoach ? '📅 Hôm nay em ôn gì' : 'Ôn nhanh 3 phút') + '</button>';
+    $('#streakNudgeGo').addEventListener('click', function () {
+      if (veKeHoach && window.OnHomNay) window.OnHomNay.moThe(true);
+      else runTask('review');
+    });
   }
 
   /* "Chao mung quay lai": vang tu 3 ngay tro len, hien 1 lan cho moi lan vang
@@ -18491,6 +18519,22 @@
     });
     try { sessionStorage.setItem('hyv_board', which); } catch (e) { /* ignore */ }
   }
+
+  // Cho "📅 Hom nay em on gi" (public/js/on-hom-nay.js): dung lai DUNG cac ham cua trang (lich on SRS,
+  // the ngu phap, du lieu bai, ngay hoc, nhiem vu) — khong chep lai logic.
+  window.HyvHomNay = {
+    srsAll: srsAll, srsAnswer: srsAnswer, srsFillDetails: srsFillDetails, srsRecallMatch: srsRecallMatch,
+    srsPyParse: srsPyParse, srsStats: srsStats,
+    srgPickCards: srgPickCards, srgAnswer: srgAnswer, srgBox: srgBox, SRG_KEY: SRG_KEY,
+    loadLessonRawData: loadLessonRawData, lessonByUrl: lessonByUrl, lessonHasAnyProgress: lessonHasAnyProgress,
+    getLastLesson: getLastLesson, nextLearnTarget: nextLearnTarget,
+    markStudyDay: markStudyDay, demCau: demCauNgayHoc, taskMark: taskMark, syncProgressToServer: syncProgressToServer,
+    dateKey: dateKey, readJSON: readJSON, writeJSON: writeJSON, rsGet: rsGet, rsSet: rsSet, esc: rsEsc,
+    runTask: runTask, showDashboard: showDashboard, showToast: showToast, renderStreak: renderStreak,
+    sfx: function (k) { try { sfxPlay(k); } catch (e) { /* bo qua */ } },
+    uid: currentUserId, levelLabel: function (id) { return PRACTICE_LEVEL_LABEL[id] || id; },
+    readyLevels: READY_LEVELS, visitedKey: STORAGE_KEYS.visitedLessons, wrongWordsKey: STORAGE_KEYS.reviewWrongWords
+  };
 
   document.addEventListener('DOMContentLoaded', init);
 })();

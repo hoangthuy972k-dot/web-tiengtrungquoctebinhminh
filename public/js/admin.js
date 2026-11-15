@@ -301,7 +301,9 @@
         '<td>' + s._lessons + '</td>' +
         '<td><span class="tr-acc ' + accClass(s._acc) + '">' + (s._acc == null ? '—' : s._acc + '%') + '</span></td>' +
         '<td>⭐ ' + (s.stars.week || 0) + ' <span class="tr-muted">/ ' + (s.stars.total || 0) + '</span></td>' +
-        '<td>' + (s.streak ? '🔥 ' + s.streak : '—') + '</td>' +
+        '<td>' + (s.streak ? '🔥 ' + s.streak : '—') +
+          // ke hoach "📅 Hom nay em on gi" cua trang chu hoc sinh
+          '<div class="tr-ohn" title="Kế hoạch “Hôm nay em ôn gì”">' + (s.onHomNay ? '<span class="tr-chip is-fresh">📅 Đã ôn hôm nay ✓</span>' : '<span class="tr-muted">📅 chưa ôn hôm nay</span>') + '</div></td>' +
       '</tr>';
     }).join('');
     $all('.tr-row').forEach(function (tr) {
@@ -417,7 +419,8 @@
       { label: 'Bài đã học', value: s._lessons },
       { label: 'Độ chính xác', value: s._acc == null ? '—' : s._acc + '%', sub: s._answered ? s._answered + ' câu đã làm' : '' },
       { label: 'Sao', value: '⭐ ' + (s.stars.total || 0), sub: 'tuần này ' + (s.stars.week || 0) + ' · hôm nay ' + (s.stars.today || 0) },
-      { label: 'Chuỗi ngày học', value: s.streak ? '🔥 ' + s.streak : '—' }
+      { label: 'Chuỗi ngày học', value: s.streak ? '🔥 ' + s.streak : '—' },
+      { label: 'Ôn hôm nay', value: s.onHomNay ? '📅 Đã ôn ✓' : 'Chưa', sub: 'kế hoạch “Hôm nay em ôn gì”' }
     ];
     var exams = (s.exams || []).length
       ? '<div class="admin-table-wrap"><table class="admin-table"><thead><tr><th>Đề thi</th><th>Điểm</th><th>Đúng</th><th>Thời gian</th><th>Ngày thi</th></tr></thead><tbody>' +

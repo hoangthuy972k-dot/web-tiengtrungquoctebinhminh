@@ -5,8 +5,9 @@
      ca khi trang ban; hinh (vong nhip, nhun, den) ap theo dung thoi diem am thanh phat.
    · Tieng nhip (click, nhip 1 cao hon) va nhac nen (chay theo BPM) bat/tat rieng. Hai dieu nhac (Cai dat san khau):
      'pop' (trong + bass + hop am C–Am–F–G) va 'piano' (piano rai not hop am Am–F–C–G tren nen trong dance);
-     'rieng' = nhac cua toi: file am thanh / video chon tu may (URL blob, khong tai len web), phat cung tro choi;
-     nut "Go theo nhac" tinh BPM tu cac lan bam, "Nhac bat dau tu giay" bo qua doan dau bai.
+     'rieng' = nhac cua toi: file am thanh / video chon tu may (giai ma ngay tren may, khong tai len web), phat
+     bang AudioContext nen nhip bam theo vi tri trong bai; tu do nhip + phach 1, Go theo nhac, chinh som/muon,
+     doi 1 phach, +-0.5 nhip/phut, "Nhac bat dau tu giay"; nho cai dat theo tung file.
    · Doc mau: may doc tu o nhip 1 (DocZh — giong may chu neu co giao bat, khong thi giong trinh duyet),
      nua sau cua o nhip la luot ca lop doc.
    · Hai linh vat hai ben co nut "Chon hoc sinh": boc ngau nhien mot ban co mat (diem danh hom nay) tu danh
@@ -59,7 +60,7 @@
   function napPref() {
     var p = docLS(PREF_KEY, {}) || {};
     Object.keys(P).forEach(function (k) { if (p[k] != null && typeof p[k] === typeof P[k]) P[k] = p[k]; });
-    P.bpm = kep(Math.round(P.bpm), BPM_MIN, BPM_MAX);
+    P.bpm = kep(Math.round(P.bpm * 100) / 100, BPM_MIN, BPM_MAX);
     if (P.beats !== 8) P.beats = 4;
     if ([0, 10, 15, 20].indexOf(P.so) < 0) P.so = 0;
     if (DIEU.indexOf(P.dieu) < 0) P.dieu = 'pop';
@@ -188,84 +189,233 @@
   }
 
   /* ================= nhac cua toi (file tren may) ================= */
-  // File chi phat tren may nay (URL blob), khong tai len web. Di qua busNhac nen cong tac Nhac nen
-  // va ha nho khi doc mau van ap dung. Trinh duyet khong cho mo lai file sau khi tai lai trang -> chon lai.
-  var file = { el: null, url: '', nguon: null, nghe: false };
-  function coFile() { return P.dieu === 'rieng' && !!file.el; }
-  function thaFile() {
-    if (!file.el) return;
-    try { file.el.pause(); } catch (e) { /* bo qua */ }
-    if (file.nguon) { try { file.nguon.disconnect(); } catch (e) { /* bo qua */ } }
-    URL.revokeObjectURL(file.url);
-    file = { el: null, url: '', nguon: null, nghe: false };
+  // File doc thanh AudioBuffer ngay tren may (khong tai len web) va phat bang chinh AudioContext cua nhip,
+  // nen chu nhay theo dung vi tri trong bai, khong troi. Luoi phach cua bai: file.moc (giay, mot phach 1)
+  // + buoc 60/bpm; dem vao va moi tu bat dau o dau o nhip (4 phach) cua luoi. Vong lap cat tron o nhip.
+  // Tu do nhip khi nap file lan dau; bpm / moc / bdau nho theo tung file (ten + co).
+  var FILE_KEY = 'hyv_docnhip_file';
+  var file = { buf: null, khoa: '', dang: false, src: null, g: null, T0: 0, p0: 0, loopS: 0, loopE: 0, dung: 0, nghe: false, moc: 0 };
+  function coFile() { return P.dieu === 'rieng' && !!file.buf; }
+  function soBpm() { return String(Math.round(P.bpm * 10) / 10); }
+  function luuFile() {
+    if (!file.khoa) return;
+    var m = docLS(FILE_KEY, {}) || {};
+    m[file.khoa] = { bpm: P.bpm, moc: file.moc, bdau: P.bdau, t: Date.now() };
+    var ks = Object.keys(m);
+    if (ks.length > 30) {
+      ks.sort(function (x, y) { return m[x].t - m[y].t; }).slice(0, ks.length - 30).forEach(function (k) { delete m[k]; });
+    }
+    ghiLS(FILE_KEY, m);
   }
   function napFile(f) {
-    thaFile();
-    var el = new Audio();
-    el.preload = 'auto';
-    el.loop = true;
-    file.url = URL.createObjectURL(f);
-    el.src = file.url;
-    el.addEventListener('error', function () {
-      if (file.el !== el) return;
-      baoLoi('Không phát được file này — thử file mp3 khác.');
-      thaFile(); veNut();
+    if (!amThanh()) { baoLoi('Trình duyệt này không phát được nhạc từ file.'); return; }
+    dungFile();
+    file.buf = null; file.khoa = ''; file.dang = true;
+    P.tenFile = f.name; P.dieu = 'rieng'; luuPref(); veNut();
+    var khoa = f.name + '|' + f.size;
+    f.arrayBuffer().then(function (ab) {
+      return new Promise(function (ok, loi) {
+        var p = ac.decodeAudioData(ab, ok, loi);
+        if (p && p.then) p.then(ok, loi);
+      });
+    }).then(function (buf) {
+      file.buf = buf; file.khoa = khoa; file.dang = false;
+      var cu = (docLS(FILE_KEY, {}) || {})[khoa];
+      if (cu) {
+        P.bpm = kep(+cu.bpm || P.bpm, BPM_MIN, BPM_MAX); file.moc = +cu.moc || 0; P.bdau = kep(+cu.bdau || 0, 0, 600);
+        luuPref(); veNut();
+        $('#dnGoKq').textContent = 'Dùng lại cài đặt lần trước: ' + soBpm() + ' nhịp/phút';
+      } else { veNut(); doNhip(); }
+      file.dung = P.bdau;
+      if (S.chay) phatFile(true);
+    }).catch(function () {
+      file.dang = false;
+      baoLoi('Không đọc được file này — thử file mp3 khác.');
+      veNut();
     });
-    file.el = el;
-    if (amThanh()) {
-      try { file.nguon = ac.createMediaElementSource(el); file.nguon.connect(busNhac); } catch (e) { file.nguon = null; }
-    }
-    P.tenFile = f.name; P.dieu = 'rieng'; luuPref();
-    veNut();
-    if (S.chay) phatFile(true);
+  }
+  function viTri() {     // vi tri (giay) dang phat trong bai
+    if (!file.src) return file.dung;
+    var p = file.p0 + (ac.currentTime - file.T0);
+    if (file.loopE > file.loopS && p >= file.loopE) p = file.loopS + (p - file.loopS) % (file.loopE - file.loopS);
+    return p;
+  }
+  function dauO(p) {     // dau o nhip (4 phach) dau tien cua luoi tu vi tri p tro di
+    var o = spb() * 4;
+    return file.moc + Math.ceil((p - file.moc) / o - 1e-6) * o;
+  }
+  function tatNguon() {
+    if (!file.src) return;
+    file.dung = viTri();
+    try { file.src.stop(); } catch (e) { /* bo qua */ }
+    try { file.g.disconnect(); } catch (e) { /* bo qua */ }
+    file.src = null;
+  }
+  function batNguon(p) {
+    tatNguon();
+    var buf = file.buf, s = ac.createBufferSource(), g = ac.createGain(), o = spb() * 4;
+    s.buffer = buf;
+    s.loop = true;
+    var ls = dauO(Math.min(P.bdau, Math.max(0, buf.duration - o))), dai = Math.floor((buf.duration - ls) / o) * o;
+    if (dai >= o) { s.loopStart = ls; s.loopEnd = ls + dai; file.loopS = ls; file.loopE = ls + dai; }
+    else { file.loopS = 0; file.loopE = buf.duration; }
+    p = kep(p, 0, buf.duration - 0.05);
+    g.gain.value = 1.4;
+    s.connect(g); g.connect(busNhac);
+    file.T0 = ac.currentTime + 0.04; file.p0 = p;
+    s.start(file.T0, p);
+    file.src = s; file.g = g;
+  }
+  // dat lai lich nhip cho khop luoi phach cua bai: tu dang doc (hoac dem vao) bat dau lai o dau o nhip ke tiep
+  function khopLich() {
+    if (!sch || !file.src || !coTieng) return;
+    var c = viTri(), g = dauO(c + 0.12);
+    dungHen(); hangDoi = [];
+    sch.t = ac.currentTime + (g - c);
+    sch.b = 0;
+    if (sch.pha === 'doc') sch.w = S.i;
+    if (sch.t - ac.currentTime > 0.3) dauHieu('🎵 Chờ vào nhịp…', 'dem');
   }
   function phatFile(tuDau) {
-    if (!coFile()) return;
+    if (!coFile() || !ac) return;
     file.nghe = false;
-    if (tuDau) { try { file.el.currentTime = P.bdau; } catch (e) { /* bo qua */ } }
-    var p = file.el.play();
-    if (p && p.catch) p.catch(function () { /* bo qua */ });
+    if (tuDau || !file.src) batNguon(tuDau ? P.bdau : file.dung);
+    khopLich();
     veFile();
   }
-  function dungFile() {
-    if (!file.el) return;
-    file.el.pause(); file.nghe = false;
-    veFile();
-  }
+  function dungFile() { tatNguon(); file.nghe = false; veFile(); }
   function ngheThu() {
-    if (!file.el || S.chay) return;
+    if (!file.buf || S.chay) return;
     if (file.nghe) { dungFile(); return; }
     amThanh();
-    try { file.el.currentTime = P.bdau; } catch (e) { /* bo qua */ }
+    batNguon(P.bdau);
     file.nghe = true;
-    var p = file.el.play();
-    if (p && p.catch) p.catch(function () { /* bo qua */ });
     veFile();
+  }
+  // doi bpm / luoi khi dang phat: phat lai nguon tu cho cu (vong lap theo bpm moi) roi khop lich
+  function nhacDoiNhip() {
+    luuFile();
+    if (file.src) { batNguon(viTri()); if (S.chay) khopLich(); }
+  }
+  function chinhFile(kieu) {
+    if (!file.buf) return;
+    var lech = kieu === 'som' ? -0.02 : kieu === 'muon' ? 0.02 : kieu === 'phach' ? spb() : 0;
+    if (lech) {
+      file.moc += lech;
+      if (S.chay && sch) sch.t += lech;
+      luuFile();
+    } else {
+      P.bpm = kep(Math.round((P.bpm + (kieu === 'nhanh' ? 0.5 : -0.5)) * 100) / 100, BPM_MIN, BPM_MAX);
+      luuPref(); nhacDoiNhip();
+    }
+    veNut();
   }
   function veFile() {
     if (!root) return;
-    if (file.el && !file.nguon) file.el.muted = !P.nhac;
-    $('#dnFileTen').textContent = file.el ? P.tenFile : P.tenFile ? 'Chọn lại file: ' + P.tenFile : 'chưa chọn file';
+    $('#dnFileTen').textContent = file.dang ? 'Đang đọc file…' : file.buf ? P.tenFile : P.tenFile ? 'Chọn lại file: ' + P.tenFile : 'chưa chọn file';
     var n = $('#dnNghe');
-    n.disabled = !file.el || S.chay;
+    n.disabled = !file.buf || S.chay;
     n.textContent = file.nghe ? '❚❚ Dừng nghe' : '▶ Nghe thử';
+    $all('[data-chinh], #dnDoNhip').forEach(function (x) { x.disabled = !file.buf; });
+    $('#dnBpm2').textContent = soBpm();
     var b = $('#dnBdau');
     if (document.activeElement !== b) b.value = P.bdau;
   }
-  // Go theo nhac: trung binh khoang cach cac lan bam (toi da 9 lan gan nhat, nghi > 2 giay thi dem lai)
+  // Go theo nhac: khi nhac dang phat, lay vi tri trong bai (hoi quy -> bpm va phach 1 = lan go dau);
+  // khong co nhac thi chi tinh bpm. Nghi > 2 giay thi dem lai.
   var goLan = [];
   function goNhip() {
-    var t = performance.now(), kq = $('#dnGoKq');
-    if (goLan.length && t - goLan[goLan.length - 1] > 2000) goLan = [];
+    var kq = $('#dnGoKq'), theoBai = !!file.src, t = theoBai ? viTri() : performance.now() / 1000;
+    var cuoi = goLan[goLan.length - 1];
+    if (goLan.length && (t - cuoi > 2 || t <= cuoi)) goLan = [];
     goLan.push(t);
-    if (goLan.length > 9) goLan.shift();
+    if (goLan.length > 12) goLan.shift();
     if (goLan.length < 4) { kq.textContent = 'Gõ tiếp… (' + goLan.length + '/4)'; return; }
-    var bpm = 60000 / ((goLan[goLan.length - 1] - goLan[0]) / (goLan.length - 1));
+    var n = goLan.length, sx = 0, sy = 0, sxy = 0, sxx = 0;
+    goLan.forEach(function (y, i) { sx += i; sy += y; sxy += i * y; sxx += i * i; });
+    var per = (n * sxy - sx * sy) / (n * sxx - sx * sx), dau = (sy - per * sx) / n;
+    if (!(per > 0)) return;
+    var bpm = 60 / per;
     while (bpm > BPM_MAX) bpm /= 2;
     while (bpm < BPM_MIN) bpm *= 2;
-    P.bpm = kep(Math.round(bpm), BPM_MIN, BPM_MAX);
-    luuPref(); veNut();
-    kq.textContent = '≈ ' + P.bpm + ' nhịp/phút';
+    P.bpm = kep(Math.round(bpm * 100) / 100, BPM_MIN, BPM_MAX);
+    luuPref();
+    if (theoBai) { file.moc = dau; nhacDoiNhip(); }
+    veNut();
+    kq.textContent = '👆 ≈ ' + soBpm() + ' nhịp/phút' + (theoBai ? ' · phách 1 = lần gõ đầu' : '');
+  }
+  // Tu do nhip: duong bao "tieng vao" (nang luong toan dai + dai tram), tu tuong quan -> nhip tho (uu tien quanh
+  // 118/phut), quet tinh bpm +-3% va pha de cong tieng vao tai cac phach lon nhat, roi chon phach 1 trong o nhip
+  // la phach co tieng tram (trong cai) manh nhat. Phan tich toi da 90 giay tu "Nhac bat dau tu giay".
+  function doNhipBuf(buf, tu) {
+    var sr = buf.sampleRate, HOP = 512, fr = sr / HOP;
+    var a = Math.floor(Math.max(0, tu) * sr), b = Math.min(buf.length, a + Math.floor(90 * sr));
+    if (b - a < sr * 8) { a = 0; b = Math.min(buf.length, Math.floor(90 * sr)); }
+    if (b - a < sr * 8) return null;
+    var nk = buf.numberOfChannels, ch = [], k, f, i;
+    for (k = 0; k < nk; k++) ch.push(buf.getChannelData(k));
+    var nf = Math.floor((b - a) / HOP), E = new Float32Array(nf), L = new Float32Array(nf);
+    var lp = 0, al = 1 - Math.exp(-2 * Math.PI * 150 / sr);
+    for (f = 0; f < nf; f++) {
+      var e = 0, l = 0, s0 = a + f * HOP;
+      for (i = s0; i < s0 + HOP; i++) {
+        var x = 0;
+        for (k = 0; k < nk; k++) x += ch[k][i];
+        x /= nk;
+        lp += al * (x - lp);
+        e += x * x; l += lp * lp;
+      }
+      E[f] = Math.log(1 + 1000 * e / HOP); L[f] = Math.log(1 + 1000 * l / HOP);
+    }
+    var O = new Float32Array(nf), OL = new Float32Array(nf), ps = new Float64Array(nf + 1);
+    for (f = 1; f < nf; f++) { OL[f] = Math.max(0, L[f] - L[f - 1]); O[f] = Math.max(0, E[f] - E[f - 1]) + OL[f]; }
+    for (f = 0; f < nf; f++) ps[f + 1] = ps[f] + O[f];
+    var w = Math.round(fr * 0.2), O2 = new Float32Array(nf);
+    for (f = 0; f < nf; f++) {
+      var lo = Math.max(0, f - w), hi = Math.min(nf, f + w + 1);
+      O2[f] = Math.max(0, O[f] - (ps[hi] - ps[lo]) / (hi - lo));
+    }
+    O = O2;
+    var tot = -1, lagT = 0, lag;
+    for (lag = Math.floor(fr * 60 / 180); lag <= Math.ceil(fr * 60 / 60); lag++) {
+      var s = 0;
+      for (f = lag; f < nf; f++) s += O[f] * O[f - lag];
+      var x2 = Math.log(60 * fr / lag / 118) / Math.LN2;
+      s = s / (nf - lag) * Math.exp(-2 * x2 * x2);
+      if (s > tot) { tot = s; lagT = lag; }
+    }
+    if (!lagT || !(tot > 0)) return null;
+    var lay = function (arr, x) { var j = Math.floor(x), d = x - j; return j + 1 < nf ? arr[j] * (1 - d) + arr[j + 1] * d : 0; };
+    var bpm0 = 60 * fr / lagT, tot2 = -1, best = null;
+    for (var bb = bpm0 * 0.97; bb <= bpm0 * 1.03; bb += 0.05) {
+      var per = fr * 60 / bb;
+      for (var ph = 0; ph < per; ph++) {
+        var s2 = 0, n2 = 0;
+        for (var xx = ph; xx < nf - 1; xx += per) { s2 += lay(O, xx); n2++; }
+        s2 /= n2;
+        if (s2 > tot2) { tot2 = s2; best = { bpm: bb, ph: ph, per: per }; }
+      }
+    }
+    if (!best) return null;
+    var bar = [0, 0, 0, 0], kk = 0;
+    for (var x3 = best.ph; x3 < nf - 1; x3 += best.per, kk++) bar[kk % 4] += lay(OL, x3) + 0.5 * lay(O, x3);
+    var j1 = bar.indexOf(Math.max.apply(null, bar)), bpm = best.bpm;
+    while (bpm > BPM_MAX) bpm /= 2;
+    while (bpm < BPM_MIN) bpm *= 2;
+    return { bpm: Math.round(bpm * 100) / 100, moc: a / sr + (best.ph + j1 * best.per) / fr };
+  }
+  function doNhip() {
+    if (!file.buf) return;
+    var kq = $('#dnGoKq');
+    kq.textContent = '🔍 Đang dò nhịp…';
+    setTimeout(function () {
+      var r = null;
+      try { r = doNhipBuf(file.buf, P.bdau); } catch (e) { r = null; }
+      if (!r) { kq.textContent = 'Không dò được nhịp — hãy bấm Gõ theo nhạc.'; return; }
+      P.bpm = kep(r.bpm, BPM_MIN, BPM_MAX); file.moc = r.moc;
+      luuPref(); nhacDoiNhip(); veNut();
+      kq.textContent = '🔍 Dò được ≈ ' + soBpm() + ' nhịp/phút';
+    }, 30);
   }
 
   /* ================= doc mau ================= */
@@ -338,6 +488,7 @@
     }
     dungHen(); hangDoi = [];
     sch = { t: gio() + 0.08, pha: coDem ? 'dem' : 'doc', b: 0, w: S.i };
+    if (coFile() && file.src) khopLich();
     if (!tick) tick = setInterval(nhipMay, 25);
     henLich();
     if (!khung) khung = requestAnimationFrame(vongHinh);
@@ -464,7 +615,7 @@
     if (tl) tl.style.width = (n ? ((S.i + 1) / n) * 100 : 0) + '%';
   }
   function veNut() {
-    $('#dnBpm').textContent = P.bpm;
+    $('#dnBpm').textContent = soBpm();
     $('#dnBpmTru').disabled = P.bpm <= BPM_MIN;
     $('#dnBpmCong').disabled = P.bpm >= BPM_MAX;
     root.style.setProperty('--dn-spb', spb() + 's');
@@ -547,8 +698,9 @@
     $('.dn-dung').hidden = true;
   }
   function doiBpm(d) {
-    P.bpm = kep(P.bpm + d, BPM_MIN, BPM_MAX);
+    P.bpm = kep(Math.round((P.bpm + d) * 100) / 100, BPM_MIN, BPM_MAX);
     luuPref(); veNut();
+    if (file.buf) nhacDoiNhip();
   }
 
   /* ================= bo tu ================= */
@@ -822,8 +974,14 @@
             '<button type="button" id="dnFileNut">📂 Chọn file…</button><input type="file" id="dnFile" accept="audio/*,video/*" hidden>' +
             '<span class="dn-lop-ten" id="dnFileTen">chưa chọn file</span><button type="button" id="dnNghe">▶ Nghe thử</button></div></div>' +
           '<div class="dn-cai-hang dn-rieng"><span>Khớp nhịp với bài</span><div class="dn-chon">' +
-            '<button type="button" id="dnGoNhip">👆 Gõ theo nhạc</button><span class="dn-lop-ten" id="dnGoKq">Nghe thử rồi bấm theo phách ít nhất 4 lần</span></div>' +
-            '<div class="dn-chon"><label class="dn-bdau">Nhạc bắt đầu từ giây <input type="number" id="dnBdau" min="0" max="600" step="0.5" inputmode="decimal"></label></div></div>' +
+            '<button type="button" id="dnDoNhip">🔍 Tự dò nhịp</button><button type="button" id="dnGoNhip">👆 Gõ theo nhạc</button>' +
+            '<span class="dn-lop-ten" id="dnGoKq">Chọn file là máy tự dò nhịp</span></div>' +
+            '<div class="dn-chon"><span class="dn-nho">Chữ nhảy</span><button type="button" data-chinh="som">◀ Sớm hơn</button>' +
+              '<button type="button" data-chinh="muon">Muộn hơn ▶</button><button type="button" data-chinh="phach" title="Đổi phách nào là phách 1 của từ">↷ Dời 1 phách</button></div>' +
+            '<div class="dn-chon"><span class="dn-nho">Tốc độ</span><button type="button" data-chinh="cham">− 0.5</button>' +
+              '<b class="dn-bpm2" id="dnBpm2"></b><button type="button" data-chinh="nhanh">+ 0.5</button><span class="dn-nho">nhịp/phút</span></div>' +
+            '<div class="dn-chon"><label class="dn-bdau">Nhạc bắt đầu từ giây <input type="number" id="dnBdau" min="0" max="600" step="0.5" inputmode="decimal"></label></div>' +
+            '<p class="dn-cai-meo">Bật <b>Tiếng nhịp</b>, bấm <b>Bắt đầu</b> rồi nghe: tiếng tích trùng phách nhạc là khớp. Chỉnh ngay khi đang chạy được; máy nhớ cài đặt cho file này.</p></div>' +
           '<div class="dn-cai-hang"><span>Mỗi từ đọc</span><div class="dn-chon"><button type="button" data-st="beats" data-v="4">4 nhịp</button><button type="button" data-st="beats" data-v="8">8 nhịp (2 lượt)</button></div></div>' +
           '<div class="dn-cai-hang"><span>Số từ</span><div class="dn-chon"><button type="button" data-st="so" data-v="0">Tất cả</button><button type="button" data-st="so" data-v="10">10</button><button type="button" data-st="so" data-v="15">15</button><button type="button" data-st="so" data-v="20">20</button></div></div>' +
           '<div class="dn-cai-hang"><span>Hiển thị</span><div class="dn-chon">' +
@@ -879,7 +1037,7 @@
         if (k === 'dieu') {
           if (!coFile()) dungFile();
           else if (S.chay) phatFile(false);
-          if (P.dieu === 'rieng' && !file.el) $('#dnFile').click();
+          if (P.dieu === 'rieng' && !file.buf && !file.dang) $('#dnFile').click();
         }
       });
     });
@@ -895,10 +1053,15 @@
     });
     $('#dnNghe').addEventListener('click', ngheThu);
     $('#dnGoNhip').addEventListener('click', goNhip);
+    $('#dnDoNhip').addEventListener('click', doNhip);
+    $all('[data-chinh]').forEach(function (b) {
+      b.addEventListener('click', function () { chinhFile(b.getAttribute('data-chinh')); });
+    });
     $('#dnBdau').addEventListener('change', function () {
       P.bdau = kep(+this.value || 0, 0, 600);
       this.value = P.bdau;
-      luuPref();
+      if (!file.src) file.dung = P.bdau;
+      luuPref(); luuFile();
     });
     $('#dnDoiLop').addEventListener('click', function () { $('.dn-cai').hidden = true; moLop(null); });
     $('#dnFull').addEventListener('click', toanManHinh);
@@ -954,5 +1117,5 @@
     document.documentElement.classList.remove('dn-open');
   }
 
-  window.LopDocNhip = { mo: mo, dong: dong, _S: S, _P: P, _am: function () { return [ac && ac.state, coTieng]; } };
+  window.LopDocNhip = { mo: mo, dong: dong, _S: S, _P: P, _am: function () { return [ac && ac.state, coTieng]; }, _f: function () { return file; } };
 })();

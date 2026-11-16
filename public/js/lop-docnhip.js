@@ -12,6 +12,8 @@
    · Hai linh vat hai ben co nut "Chon hoc sinh": boc ngau nhien mot ban co mat (diem danh hom nay) tu danh
      sach lop dung chung (lop tren he thong / danh sach nhanh hyv_ufo_lists — qua window.DiemDanh._).
    · Khong hien pinyin (quy uoc tro choi cua site); co nut Pinyin de bat khi can.
+   · Hai giao dien (Cai dat san khau): 'san' (chu to giua san khau) va 'khoi' (khoi o: hang the nghia o tren,
+     4 o xep so le, moi nhip tu hien them vao mot o).
    Mo bang window.LopDocNhip.mo({ nhan, cap, bai: [{ ten, url }], tai: function (urls) -> Promise<[{ zh, py, vn }]> }).
    Tien to CSS: dn-                                                                                            */
 (function () {
@@ -30,7 +32,9 @@
   var RAI = [[0, 2, 3, 4], [5, 4, 3, 2], [1, 3, 4, 6], [5, 4, 2, 3]];
   var DIEU = ['pop', 'piano', 'rieng'];
 
-  var P = { bpm: 100, nhip: true, nhac: true, dieu: 'pop', bdau: 0, tenFile: '', mau: false, py: false, nghia: true, tiep: true, lv: true, tron: false, lap: false, beats: 4, so: 0, src: '' };
+  var GIAO = ['san', 'khoi'];
+
+  var P = { bpm: 100, nhip: true, nhac: true, giao: 'san', dieu: 'pop', bdau: 0, tenFile: '', mau: false, py: false, nghia: true, tiep: true, lv: true, tron: false, lap: false, beats: 4, so: 0, src: '' };
   var S = {
     opt: null, goc: [], tu: [], i: 0, chay: false, xong: false, daChay: false, bo: 'all',
     ds: [], dsSrc: '', daGoi: {}, chon: [null, null], quay: [false, false]
@@ -59,6 +63,7 @@
     if (P.beats !== 8) P.beats = 4;
     if ([0, 10, 15, 20].indexOf(P.so) < 0) P.so = 0;
     if (DIEU.indexOf(P.dieu) < 0) P.dieu = 'pop';
+    if (GIAO.indexOf(P.giao) < 0) P.giao = 'san';
     P.bdau = kep(+P.bdau || 0, 0, 600);
   }
   function luuPref() { ghiLS(PREF_KEY, P); }
@@ -360,9 +365,11 @@
     nhun(san);
     if (ev.pha === 'dem') {
       dauHieu('Chuẩn bị… ' + (4 - ev.b), 'dem');
+      if (P.giao === 'khoi') veKhoi(ev);
       return;
     }
     if (ev.w !== S.i || ev.b === 0) { S.i = ev.w; veTu(); }
+    if (P.giao === 'khoi') veKhoi(ev);
     nhun($('.dn-zh'));
     var luot = P.beats === 8 ? (ev.b < 4 ? ' · lượt 1' : ' · lượt 2') : '';
     if (P.mau) {
@@ -375,10 +382,50 @@
     var e = $('.dn-cue');
     e.textContent = txt;
     e.setAttribute('data-k', kieu || '');
+    e = $('.dn-khoi-cue');
+    e.textContent = txt;
+    e.setAttribute('data-k', kieu || '');
   }
   function xoaNhip() {
     $all('.dn-nhip').forEach(function (c) { c.classList.remove('on', 'qua'); });
     $('.dn-san').classList.remove('dau');
+    veKhoiTu();
+    $all('.dn-o').forEach(function (o, k) { o.className = 'dn-o' + (k === 0 ? ' qua' : ''); });
+  }
+
+  /* ================= giao dien khoi o ================= */
+  // Hang the nghia (tu dang doc + 4 tu ke, bam de nhay toi) va 4 o xep so le: moi nhip tu hien them vao mot o,
+  // o cua nhip hien tai sang; dem vao thi o hien so 3-2-1.
+  function veKhoiTu() {
+    var v = S.tu[S.i], n = S.tu.length;
+    $all('.dn-o').forEach(function (o) {
+      var b = o.querySelector('b');
+      b.textContent = v ? v.zh : '';
+      b.className = v ? coChu(v.zh) : 'c1';
+      o.querySelector('small').textContent = v && P.py ? (v.py || '') : '';
+    });
+    var h = '';
+    for (var k = 0; k < Math.min(5, n); k++) {
+      var j = S.i + k;
+      if (j >= n) { if (!P.lap) break; j %= n; }
+      var x = S.tu[j];
+      h += '<button type="button" class="dn-tab' + (k === 0 ? ' on' : '') + '" data-i="' + j + '">' +
+        (P.nghia && x.vn ? esc(x.vn) : '<span class="dn-tab-zh" lang="zh">' + esc(x.zh) + '</span>') + '</button>';
+    }
+    $('.dn-khoi-tabs').innerHTML = h;
+  }
+  function veKhoi(ev) {
+    var nb = ev.b % 4, dem = ev.pha === 'dem';
+    $all('.dn-o').forEach(function (o, k) {
+      if (dem) {
+        var b = o.querySelector('b');
+        b.textContent = k === nb ? String(4 - ev.b) : '';
+        b.className = 'c1';
+        o.querySelector('small').textContent = '';
+        o.className = 'dn-o' + (k === nb ? ' on dem' : '');
+      } else o.className = 'dn-o' + (k < nb ? ' qua' : k === nb ? ' on' : '');
+    });
+    nhun($all('.dn-o')[nb]);
   }
 
   /* ================= ve ================= */
@@ -389,6 +436,7 @@
   function veTu() {
     var v = S.tu[S.i], n = S.tu.length;
     var zh = $('.dn-zh');
+    veKhoiTu();
     if (!v) {
       zh.textContent = '—'; zh.className = 'dn-zh c1';
       $('.dn-py').textContent = ''; $('.dn-vn').textContent = '';
@@ -429,6 +477,7 @@
     $('#dnPy').setAttribute('aria-pressed', P.py ? 'true' : 'false');
     root.classList.toggle('dn-khong-lv', !P.lv);
     root.classList.toggle('dn-co-rieng', P.dieu === 'rieng');
+    root.classList.toggle('dn-g-khoi', P.giao === 'khoi');
     veFile();
     var go = $('#dnGo');
     go.innerHTML = S.chay ? '<span aria-hidden="true">❚❚</span> Tạm dừng' : '<span aria-hidden="true">▶</span> ' + (S.i > 0 && !S.xong ? 'Tiếp tục' : 'Bắt đầu');
@@ -752,6 +801,11 @@
           '<div class="dn-cue" aria-live="polite"></div>' +
           '<div class="dn-tiep"><span class="dn-tiep-nhan">Từ tiếp theo</span><b class="dn-tiep-zh" lang="zh"></b><span class="dn-tiep-py"></span><span class="dn-tiep-vn"></span></div>' +
         '</div>' +
+        '<div class="dn-khoi">' +
+          '<div class="dn-khoi-tabs"></div>' +
+          '<div class="dn-khoi-o" aria-hidden="true">' + new Array(5).join('<div class="dn-o"><b lang="zh"></b><small></small></div>') + '</div>' +
+          '<div class="dn-khoi-cue" aria-live="polite"></div>' +
+        '</div>' +
         lv +
         '<div class="dn-het" hidden><div class="dn-het-the">' +
           '<div class="dn-het-ic" aria-hidden="true">🎉</div><b>Cả lớp đọc xong <span class="dn-het-so">0</span> từ!</b>' +
@@ -762,6 +816,7 @@
         // bang cai dat san khau
         '<div class="dn-cai" hidden role="dialog" aria-label="Cài đặt sân khấu">' +
           '<div class="dn-cai-dau"><b>⚙ Sân khấu</b><button type="button" class="dn-btn dn-ic" id="dnCaiDong" aria-label="Đóng">✕</button></div>' +
+          '<div class="dn-cai-hang"><span>Giao diện</span><div class="dn-chon"><button type="button" data-st="giao" data-v="san">🎤 Sân khấu</button><button type="button" data-st="giao" data-v="khoi">🟦 Khối ô</button></div></div>' +
           '<div class="dn-cai-hang"><span>Điệu nhạc</span><div class="dn-chon"><button type="button" data-st="dieu" data-v="pop">🥁 Pop</button><button type="button" data-st="dieu" data-v="piano">🎹 Piano sôi động</button><button type="button" data-st="dieu" data-v="rieng">🎵 Nhạc của tôi</button></div></div>' +
           '<div class="dn-cai-hang dn-rieng"><span>Nhạc của tôi — file trên máy này, không tải lên web</span><div class="dn-chon">' +
             '<button type="button" id="dnFileNut">📂 Chọn file…</button><input type="file" id="dnFile" accept="audio/*,video/*" hidden>' +
@@ -827,6 +882,10 @@
           if (P.dieu === 'rieng' && !file.el) $('#dnFile').click();
         }
       });
+    });
+    $('.dn-khoi-tabs').addEventListener('click', function (e) {
+      var t = e.target.closest('[data-i]');
+      if (t) denTu(+t.getAttribute('data-i'));
     });
     $('#dnFileNut').addEventListener('click', function () { $('#dnFile').click(); });
     $('#dnFile').addEventListener('change', function () {

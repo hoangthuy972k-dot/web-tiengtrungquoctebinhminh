@@ -39,6 +39,21 @@
   taiCfg();
 
   function bat() { return !!(cfg && cfg.p === 'azure' && cfg.on && Date.now() > hongDen); }
+
+  /* ---------- toc do giong doc tieng Trung (2026-11-16, co giao: "giong doc mau nhanh qua, hoi kho nghe") ----------
+     3 muc, luu localStorage hyv_toc_doc (dung chung moi trang): cham / vua (mac dinh) / nhanh (= toc do cu).
+     Cac trang dat rate ~0.85–0.9 nhu cu; o day nhan theo ty le (giu nguyen cho nao co y doc cham hon). */
+  var TOC_KEY = 'hyv_toc_doc';
+  var TOC = { cham: { r: 0.6, ten: 'Chậm', ic: '🐢' }, vua: { r: 0.75, ten: 'Vừa', ic: '🐢' }, nhanh: { r: 0.9, ten: 'Nhanh', ic: '🐇' } };
+  var TOC_THU_TU = ['cham', 'vua', 'nhanh'];
+  function tocDo() { try { var v = localStorage.getItem(TOC_KEY); return TOC[v] ? v : 'vua'; } catch (e) { return 'vua'; } }
+  function heSo() { return TOC[tocDo()].r / 0.9; }
+  function chinhToc(u) {
+    if (!u || u._hyvToc) return;
+    u._hyvToc = 1;
+    var r = typeof u.rate === 'number' && u.rate > 0 ? u.rate : 1;
+    u.rate = Math.max(0.4, Math.min(1.2, Math.round(r * heSo() * 100) / 100));
+  }
   function hopLe(t) { return !!t && t.length <= 200 && CHU_HOP_LE.test(t); }
   // Cap HSK cua trang bai hoc (doan theo duong dan) — de may chu chinh nhip doc
   var CAP = (function () {
@@ -117,6 +132,7 @@
       u.onend = function () { if (it.cb.onend) it.cb.onend(); };
       u.onerror = function (e) { if (it.cb.onerror) it.cb.onerror(e); };
     }
+    chinhToc(u);
     try { speak0.call(SS, u); } catch (e) { biNgat(it, 'synthesis-failed'); }
   }
   function thatBai(it) {
@@ -137,6 +153,7 @@
     henCho = setTimeout(function () { if (!cu() && !it.daBd) thatBai(it); }, 8000);
     try {
       a.src = blobCua(url(it)) || url(it);
+      try { a.playbackRate = Math.max(0.6, Math.min(1, heSo())); } catch (e) { /* bo qua */ }
       var p = HTMLMediaElement.prototype.play.call(a); // luc goi, khong giu ban cu
       if (p && p.catch) p.catch(function (err) { if (cu() || (err && err.name === 'AbortError')) return; thatBai(it); });
     } catch (e) { thatBai(it); }
@@ -161,6 +178,7 @@
   if (SS && speak0 && cancel0) {
     SS.speak = function (u) {
       var t = u && typeof u.text === 'string' ? u.text.trim() : '';
+      if (u && t && laTiengTrung(u)) chinhToc(u);
       if (!u || !bat() || !t || u.volume === 0 || !hopLe(t) || !laTiengTrung(u)) return speak0.apply(SS, arguments);
       xepHang({ text: t, m: '', cap: CAP, u: u, cb: {} });
     };
@@ -204,6 +222,36 @@
     khoa: function (k) { return bat() ? k + '_mc' : k; },   // khoa localStorage rieng cho "may khong nghe duoc" khi dung giong may chu
     taiTruoc: taiTruoc,
     cauHinh: function () { return cfg; },
-    lamMoi: taiCfg
+    lamMoi: taiCfg,
+    tocDo: tocDo,
+    datTocDo: function (v) { if (TOC[v]) { try { localStorage.setItem(TOC_KEY, v); } catch (e) { /* bo qua */ } veNutToc(); } }
   };
+
+  // Nut "🐢 Vừa" canh nut Am thanh / Pinyin: bam de doi Cham -> Vua -> Nhanh, doc thu 1 cau
+  function veNutToc() {
+    var b = document.getElementById('tocDocToggle');
+    if (!b) return;
+    var v = tocDo(), m = TOC[v];
+    b.innerHTML = '<span aria-hidden="true">' + m.ic + '</span><span class="tt-label">Đọc:</span><span class="toc-ten">' + m.ten + '</span>';
+    b.setAttribute('aria-label', 'Tốc độ giọng đọc tiếng Trung: ' + m.ten + '. Bấm để đổi');
+    b.title = 'Tốc độ giọng đọc tiếng Trung: ' + m.ten + ' (bấm để đổi Chậm / Vừa / Nhanh)';
+  }
+  function ganNutToc() {
+    var hop = document.querySelector('.top-toggles');
+    if (!hop || document.getElementById('tocDocToggle')) return;
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.id = 'tocDocToggle';
+    b.className = 'pinyin-toggle toc-doc-toggle';
+    var truoc = document.getElementById('pinyinToggle');
+    if (truoc && truoc.parentNode === hop) hop.insertBefore(b, truoc); else hop.appendChild(b);
+    veNutToc();
+    b.addEventListener('click', function () {
+      var v = TOC_THU_TU[(TOC_THU_TU.indexOf(tocDo()) + 1) % TOC_THU_TU.length];
+      window.DocZh.datTocDo(v);
+      window.DocZh.doc('你好，我们一起学习中文吧。', { m: 'cau' });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', ganNutToc);
+  else ganNutToc();
 })();

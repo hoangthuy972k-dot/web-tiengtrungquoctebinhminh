@@ -10158,3 +10158,7 @@ html:has(.modal-overlay.is-open) .hw-fab-stack { display: none; }
 .srs-chon-bai em { font-style: normal; color: var(--color-red-600); font-weight: 700; }
 .srs-chon-nut { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
 .srs-chon-loi { margin: 0; color: var(--color-red-600); font-weight: 600; font-size: .88rem; text-align: right; }
+
+/* nut toc do giong doc (doc-zh.js gan vao .top-toggles) — ten muc luon hien ca tren dien thoai */
+.toc-doc-toggle { gap: 4px; }
+.toc-doc-toggle .toc-ten { font-weight: 700; }

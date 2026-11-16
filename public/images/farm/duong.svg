@@ -1,10 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<!-- Duong da trong nong trai — 2026-11-16 co giao: "nen gach trong nong trai thiet ke dep hon, sang mau hon":
+     da kem sang, vien nau nhat manh (bo vien den dam), mach vua sang -->
 <defs>
-<linearGradient id="dg-s" x1="0" y1="0" x2=".7" y2="1"><stop offset="0" stop-color="#fffaf0"/><stop offset=".55" stop-color="#f3e6c8"/><stop offset="1" stop-color="#dcc79c"/></linearGradient>
+<linearGradient id="dg-s" x1="0" y1="0" x2=".7" y2="1"><stop offset="0" stop-color="#fffdf8"/><stop offset=".6" stop-color="#fbf3e2"/><stop offset="1" stop-color="#f1e3c4"/></linearGradient>
 </defs>
-<rect width="100" height="100" fill="#c9b07e"/>
-<g fill="#a88c5c" opacity=".55"><circle cx="49" cy="34" r="2"/><circle cx="22" cy="63" r="1.6"/><circle cx="77" cy="58" r="1.8"/><circle cx="51" cy="88" r="1.5"/></g>
-<g stroke="#2b1d3a" stroke-width="2.4" stroke-linejoin="round" fill="url(#dg-s)">
+<rect width="100" height="100" fill="#efe1c2"/>
+<g fill="#e3d0a8" opacity=".6"><circle cx="49" cy="33" r="1.4"/><circle cx="34" cy="65" r="1.2"/><circle cx="76" cy="63" r="1.3"/><circle cx="49" cy="98" r="1.1"/></g>
+<g stroke="#cdb68b" stroke-width="1.7" stroke-linejoin="round" fill="url(#dg-s)">
 <path d="M4 6Q5 2 11 2H36Q43 3 43 9L42 24Q41 30 34 30H10Q4 30 3 24Z"/>
 <path d="M50 4Q51 1 57 1H90Q97 2 97 8V22Q96 28 90 28H57Q50 28 49 22Z"/>
 <path d="M2 38Q3 34 9 34H25Q31 35 31 41V58Q30 64 24 64H8Q2 64 2 58Z"/>
@@ -13,11 +15,11 @@
 <path d="M5 72Q6 68 12 68H40Q46 69 46 75V92Q45 98 39 98H11Q5 98 4 92Z"/>
 <path d="M53 69Q54 66 60 66H91Q97 67 97 73V91Q96 97 90 97H60Q53 97 52 91Z"/>
 </g>
-<g fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" opacity=".9">
+<g fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" opacity=".95">
 <path d="M10 8H24M56 6H70M8 40H16M44 39H56M84 38H90M11 74H26M59 72H72"/>
 </g>
-<g fill="none" stroke="#c2a873" stroke-width="2.6" stroke-linecap="round" opacity=".85">
+<g fill="none" stroke="#e6d3ad" stroke-width="2.2" stroke-linecap="round" opacity=".8">
 <path d="M12 27H36M57 25H90M9 61H25M45 58H65M85 61H93M12 95H39M60 94H90"/>
 </g>
-<g fill="#7fbf4f" stroke="#2b1d3a" stroke-width="1.2" stroke-linejoin="round"><path d="M45 31L46.5 27L48 30.5L49.5 27.5L50.5 32Z"/><path d="M73 64L74.5 60.5L76 63.5L77.5 61L78.5 65Z"/></g>
+<g fill="#9bd36a" stroke="#6aa847" stroke-width="1" stroke-linejoin="round"><path d="M45 31L46.5 27L48 30.5L49.5 27.5L50.5 32Z"/><path d="M73 64L74.5 60.5L76 63.5L77.5 61L78.5 65Z"/></g>
 </svg>

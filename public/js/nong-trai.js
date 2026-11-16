@@ -14,7 +14,7 @@
   var $ = function (s, g) { return (g || document).querySelector(s); };
   var $all = function (s, g) { return Array.prototype.slice.call((g || document).querySelectorAll(s)); };
   var ANH = '/images/farm/';
-  var V = '?v=2'; // 2026-11: ve lai duong da cuoi, o ruong, hang rao
+  var V = '?v=3'; // 2026-11: ve lai duong da cuoi, o ruong, hang rao; v3: duong da sang mau, vien nhat
 
   function esc(s) {
     return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {

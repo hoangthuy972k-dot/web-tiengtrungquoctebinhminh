@@ -172,7 +172,7 @@
     may.forEach(function (x) { all[x.url] = 1; });
     var lvs = {};
     Object.keys(all).forEach(function (u) { var l = lvCua(u); if (l) lvs[l] = 1; });
-    return { urls: urls, all: all, lvs: lvs, gan: ganUrl };
+    return { urls: urls, all: all, lvs: lvs, gan: ganUrl, cap: cap };
   }
 
   /* ---------------- nguon tung khoi ---------------- */
@@ -180,7 +180,7 @@
     var all = A().srsAll(), today = homNay();
     return Object.keys(all).filter(function (k) {
       var e = all[k];
-      return e && e.due <= today && e.up !== today && (!e.url || tap.all[e.url]);
+      return e && e.due <= today && e.up !== today && (e.url ? !!tap.all[e.url] : !tap.cap);
     }).sort(function (a, b) {
       var x = all[a], y = all[b];
       return x.due < y.due ? -1 : x.due > y.due ? 1 : (x.box || 0) - (y.box || 0);
@@ -190,7 +190,7 @@
     if (!window.CauSai) return [];
     return window.CauSai.ds().filter(function (x) {
       if (x.url) return !!tap.all[x.url];
-      return !x.lv || !!tap.lvs[x.lv];
+      return x.lv ? !!tap.lvs[x.lv] : !tap.cap;
     });
   }
   function tuSaiOn() {
@@ -623,14 +623,23 @@
   document.addEventListener('change', function (e) {
     var sel = e.target.closest && e.target.closest('[data-ohn-cap]');
     if (!sel || !A().datCapHoc) return;
+    var p = docKeHoach();
+    if (p && !p.xong && (p.kq || []).some(function (x) { return x != null; }) &&
+      !confirm('Kế hoạch hôm nay đang làm dở. Đổi sang ' + A().levelLabel(sel.value) + ' sẽ soạn lại kế hoạch mới chỉ gồm bài cấp này (các câu đã làm vẫn được tính sao). Đổi nhé?')) {
+      sel.value = capDangHoc();
+      return;
+    }
+    xoaKeHoachDo = true;
     A().datCapHoc(sel.value);
     A().showToast('Từ giờ ôn tập hằng ngày lấy bài ' + A().levelLabel(sel.value) + '.');
   });
-  // Doi cap: ke hoach hom nay chua lam cau nao thi soan lai theo cap moi; dang lam do thi giu (mai theo cap moi)
+  // Doi cap: ke hoach hom nay chua xong thi soan lai theo cap moi (dang lam do: chi khi em dong y o hop hoi tren)
+  var xoaKeHoachDo = false;
   function lamMoi() {
     tapMay = null;
-    var p = docKeHoach();
-    if (p && !p.xong && !(p.kq || []).some(function (x) { return x != null; })) {
+    var p = docKeHoach(), xoaDo = xoaKeHoachDo;
+    xoaKeHoachDo = false;
+    if (p && !p.xong && (xoaDo || !(p.kq || []).some(function (x) { return x != null; }))) {
       var m = docLS(KHOA, null);
       if (m && typeof m === 'object') { delete m[uid() || '_khach']; ghiLS(KHOA, m); }
     }

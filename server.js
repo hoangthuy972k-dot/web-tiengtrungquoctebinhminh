@@ -1837,7 +1837,7 @@ const nongTrai = require('./nong-trai')(app, {
   DATA_DIR, USE_DB, db: () => dbPool, readJsonFile, writeJsonFile, requireAuth, asyncRoute,
   loadStar, vnDayKey, loadClassState, loadUserNames,
   loadAllStars, starsToday, vnWeekKey, secondsToVnWeekEnd, loadScoreOf, baiOnCua, tuVungBai, findUserById,
-  suKien: suKienNt, requireAdmin,
+  suKien: suKienNt, requireAdmin, loadStarAnswerKeys,
 });
 // Thi tren lop (/thi-lop giao vien, /thi hoc sinh): de lay tu kho thi thu HSK — xem thi-lop.js
 const thiLop = require('./thi-lop')(app, {

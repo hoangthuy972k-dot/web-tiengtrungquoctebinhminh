@@ -163,6 +163,11 @@ window.NT_HUONGDAN = {
       buoc: [['🎁', 'Sang nhà bạn bấm “Tặng quà” ở thanh dưới, hoặc mở ⋯ Thêm → Từ thiện rồi chọn bạn.'], ['🧺', 'Chọn Xu, Hàng trong kho hoặc Hạt giống, chọn món và số lượng (bấm “Tất cả” để tặng hết).'], ['💌', 'Chọn một lời chúc tiếng Trung như 加油！ (jiāyóu — cố lên) rồi bấm “Tặng”.'], ['💛', 'Bạn bấm “Cảm ơn 谢谢！” thì em được +1 ❤ (tối đa 5 ❤ cảm ơn mỗi ngày). Ai tặng quà cho nhiều bạn khác nhau nhất tuần thành “Bạn tốt bụng nhất tuần”.']],
       meo: 'Hàng quý (giá từ 95 xu, hạt quý) và hàng mua ở chợ (đường, muối, thức ăn chăn nuôi) không tặng được. Lời chúc luôn có pinyin — đọc to lên nhé!', mo: { bang: 'tuthien' } },
 
+    thue: { ten: 'Thuế nông trại 税 (shuì)', ic: '🧾', nhom: 'thi', tn: 'thue', tom: 'Nông trại lớn (cấp 10+) đóng thuế nhỏ mỗi tuần vào Quỹ thị trấn.',
+      de: 'Nông trại nhiều tài sản hoặc bán được nhiều hàng góp một phần nhỏ vào Quỹ thị trấn — để xây công trình chung và trợ cấp bạn khó khăn.',
+      buoc: [['🏠', '财产税 cáichǎn shuì (thuế tài sản): tài sản vượt 5000 + 600 × cấp thì phần vượt chịu 0,5% / 1% / 2%.'], ['🧺', '所得税 suǒdé shuì (thuế thu nhập): bán hàng hơn 2000 xu/tuần thì phần vượt chịu 3% / 6%.'], ['📚', 'Mỗi ngày học từ 20 sao giảm 10% (tối đa 50%); làm “Hôm nay em ôn gì” từ 4 ngày giảm thêm 20%.'], ['🧾', 'Đầu tuần mới, lần đầu mở nông trại em nhận hoá đơn 纳税 nàshuì. Xem ước tính tuần này ở ⋯ Thêm → Thuế.']],
+      meo: 'Cấp dưới 10 không bao giờ đóng thuế. Thuế không quá 10% số xu, không lấy đồ, không ghi nợ. Người đóng nhiều nhất được vinh danh “Nhà hảo tâm của tuần” ở thị trấn; 5 bạn ít tài sản nhất mà học đều nhận trợ cấp 补助 bǔzhù.', mo: { bang: 'kt-thue' } },
+
     /* ---------- Phiêu lưu & truyện ---------- */
     bando: { ten: 'Bản đồ phiêu lưu 冒险地图 (màoxiǎn dìtú)', ic: '🗺️', nhom: 'pl', tn: 'pl', tom: '5 vùng đất, mỗi vùng luyện một kỹ năng.',
       de: 'Đi qua 5 vùng đất để luyện pinyin, từ vựng, hội thoại, ngữ pháp và thử thách tổng hợp.',
@@ -203,11 +208,11 @@ window.NT_HUONGDAN = {
       congdong: tab === 'tl' ? 'thuonglai' : 'congdong', thientai: 'thientai', chung: tab === 'hd' ? 'donhang' : 'cungnhau',
       cacthitran: 'thitran', loidai: 'thitran', dukhach: 'thitran', bangtin: 'thitran', vongquay: 'vongquay',
       thidua: tab === 'dep' ? 'binhchon' : tab === 'tdh' ? 'thachdau' : tab === 'ke' ? 'kecup' : 'cup', vuon: 'vuon', cay7: 'cay7',
-      'kt-pl': 'bando', 'kt-mk': 'cho', 'kt-tiem': 'tiem', 'kt-xuong': 'xuong', 'kt-nc': 'nhancong', 'kt-xk': 'xuatkhau', 'kt-dg': 'daugia', 'kt-truyen': 'truyen', tuthien: 'tuthien',
+      'kt-pl': 'bando', 'kt-mk': 'cho', 'kt-tiem': 'tiem', 'kt-xuong': 'xuong', 'kt-nc': 'nhancong', 'kt-xk': 'xuatkhau', 'kt-dg': 'daugia', 'kt-truyen': 'truyen', tuthien: 'tuthien', 'kt-thue': 'thue',
       'cap-capdo': 'capdo', 'cap-dule': 'lehoi', 'cap-hd': tab === 'cg' ? 'chuyengia' : tab === 'le' ? 'lehoi' : tab === 'ht' ? 'hoctro' : 'nhakinh',
     };
     return B[loai] || '';
   },
   // Khoa MO_TN (the gioi thieu khi mo tinh nang) -> ma huong dan
-  theoTn: { cau: 'hocau', hd: 'donhang', tl: 'thuonglai', nh: 'nhahang', vuon: 'vuon', bc: 'binhchon', tdh: 'thachdau', pl: 'bando', cho: 'cho', xuong: 'xuong', tiem: 'tiem', nc: 'nhancong', xk: 'xuatkhau', dg: 'daugia', truyen: 'truyen', qt: 'tuthien', nhk: 'nhakinh', cg: 'chuyengia', le: 'lehoi', ht: 'hoctro' },
+  theoTn: { cau: 'hocau', hd: 'donhang', tl: 'thuonglai', nh: 'nhahang', vuon: 'vuon', bc: 'binhchon', tdh: 'thachdau', pl: 'bando', cho: 'cho', xuong: 'xuong', tiem: 'tiem', nc: 'nhancong', xk: 'xuatkhau', dg: 'daugia', truyen: 'truyen', qt: 'tuthien', thue: 'thue', nhk: 'nhakinh', cg: 'chuyengia', le: 'lehoi', ht: 'hoctro' },
 };

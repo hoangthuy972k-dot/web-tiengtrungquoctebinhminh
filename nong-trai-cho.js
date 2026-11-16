@@ -93,6 +93,7 @@ module.exports = function ganCho(app, d, h, c) {
           if (!ban) return 0;
           fs.sap = fs.sap.filter((y) => y !== o);
           fs.xu += gia;
+          if (h.ghiThuNhap) h.ghiThuNhap(fs, gia);
           fs.xp += 2;
           h.ghiNk(fs, { ai: 'tl', l: 'thuonglai', k: o.k, n: o.n, xu: gia, tl: tl0.nguoi.zh });
           await h.ghi(x.id, fs);

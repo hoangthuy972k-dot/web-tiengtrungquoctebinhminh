@@ -3,7 +3,7 @@
 (function () {
   'use strict';
   var PW_KEY = 'hyv_admin_pw';
-  var state = { d: null, lop: '', qua: null };
+  var state = { d: null, lop: '', qua: null, thue: null };
   function $(s, r) { return (r || document).querySelector(s); }
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   function goi(url, opts) {
@@ -19,6 +19,8 @@
     return goi('/api/admin/farm-tin' + (state.lop ? '?lop=' + encodeURIComponent(state.lop) : '')).then(function (d) { state.d = d; state.lop = d.lop; demTab(d.tongBaoCao || 0); })
       // nhat ky qua tang (tu thien) cua cung lop — chi xem
       .then(function () { return goi('/api/admin/farm-qua?lop=' + encodeURIComponent(state.lop || '')).then(function (q) { state.qua = q; }, function () { state.qua = null; }); })
+      // thue nong trai cua lop (nong-trai-thue.js) — chi xem
+      .then(function () { return goi('/api/admin/farm-thue?lop=' + encodeURIComponent(state.lop || '')).then(function (q) { state.thue = q; }, function () { state.thue = null; }); })
       .catch(function () { /* chua dang nhap */ });
   }
   function ve() {
@@ -40,7 +42,21 @@
           '<div class="gy-hanh-dong"><button type="button" class="btn btn-outline" data-nt-xoa>Xoá tin</button>' +
           '<button type="button" class="btn btn-outline" data-nt-khoa="' + esc(x.tu) + '" data-ngay="3">Khoá nhắn tự do của ' + esc(x.tenTu || 'em này') + ' 3 ngày</button>' +
           '<button type="button" class="btn btn-outline" data-nt-khoa="' + esc(x.tu) + '" data-ngay="7">7 ngày</button></div><p class="gy-kq" aria-live="polite"></p></article>';
-      }).join('') + '</div>' : '<p class="admin-empty">Lớp này chưa có tin nhắn tự do nào.</p>') + '</section>' + veQua();
+      }).join('') + '</div>' : '<p class="admin-empty">Lớp này chưa có tin nhắn tự do nào.</p>') + '</section>' + veQua() + veThue();
+  }
+  // Thue nong trai: lop thu bao nhieu, quy con bao nhieu, tro cap cho ai (chi xem)
+  function veThue() {
+    var q = state.thue;
+    if (!q || q.lop !== state.lop) return '';
+    var dong = function (x, ten) {
+      return '<p class="tc-hint"><b>' + ten + ':</b> thu ' + x.thu + ' xu từ ' + x.nop.length + ' em' + (x.gach ? ', thuê thợ xây ' + x.gach + ' viên gạch' : '') +
+        (x.nop.length ? ' — ' + x.nop.slice(0, 8).map(function (n) { return esc(n.ten) + ' ' + n.xu; }).join(', ') + (x.nop.length > 8 ? '…' : '') : '') +
+        (x.tc.length ? '<br>Trợ cấp: ' + x.tc.map(function (n) { return esc(n.ten) + ' +' + n.xu + (n.nhan ? ' ✓' : ' (chưa nhận)'); }).join(', ') : '') + '</p>';
+    };
+    return '<section class="admin-section"><div class="admin-section-title">🧾 Thuế nông trại (Quỹ thị trấn)</div>' +
+      '<p class="tc-hint">Chỉ xem. Nông trại từ cấp ' + q.luat.lv + ' có tài sản vượt ' + q.luat.mien + ' + ' + q.luat.moiCap + ' × cấp hoặc bán hàng nhiều đóng thuế nhỏ mỗi tuần (giảm đến 70% nếu học đều, tối đa 10% số xu). Tiền vào quỹ lớp: xây công trình chung + trợ cấp 5 em ít tài sản nhất có học.</p>' +
+      '<p class="tc-hint"><b>Quỹ hiện có:</b> ' + q.du + ' xu · đã thu tổng ' + q.tong + ' xu · đã xây ' + q.gachTong + ' viên gạch · đã trợ cấp ' + q.tcTong + ' xu.</p>' +
+      dong(q.nay, 'Tuần này') + dong(q.truoc, 'Tuần trước') + '</section>';
   }
   // Qua tang giua cac em (Tu thien, nong-trai-tuthien.js): ai tang ai, mon gi, luc nao — de co nhan ra ep buoc / "mua chuộc"
   function veQua() {

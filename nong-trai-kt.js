@@ -225,7 +225,7 @@ module.exports = function ganKinhTe(app, d, h, c) {
       const phi = Math.max(1, Math.ceil(o.gia * TIEM_PHI));
       fb.xu -= o.gia; fb.kho[o.k] = (fb.kho[o.k] || 0) + o.n; fb.tiemMua.n++; fb.xp += 1;
       t.ds = t.ds.filter((x) => x !== o);
-      fs.xu += o.gia - phi; fs.xp += 2;
+      fs.xu += o.gia - phi; fs.xp += 2; h.ghiThuNhap(fs, o.gia - phi);
       t.tb = (t.tb || []).concat({ k: o.k, n: o.n, xu: o.gia - phi, phi, ai: me, t: now() }).slice(-10);
       await h.ghi(id, fs);
       await h.ghi(me, fb);
@@ -306,7 +306,8 @@ module.exports = function ganKinhTe(app, d, h, c) {
         if (!hop.length) return [];
         f.dgDa = Array.isArray(f.dgDa) ? f.dgDa : [];
         const moi = hop.filter((e) => f.dgDa.indexOf(e.id) < 0);
-        moi.forEach((e) => { if (e.loai === 'xu') f.xu += e.xu; else giaoVat(f, e.vat); f.dgDa.unshift(e.id); });
+        // tien ban dau gia (ma 's...') la thu nhap tinh thue; hoan xu bi tra gia cao hon ('r...') thi khong
+        moi.forEach((e) => { if (e.loai === 'xu') { f.xu += e.xu; if (/^s/.test(String(e.id))) h.ghiThuNhap(f, e.xu); } else giaoVat(f, e.vat); f.dgDa.unshift(e.id); });
         f.dgDa = f.dgDa.slice(0, 200);
         if (moi.length) await h.ghi(me, f);
         delete dg.hop[me];

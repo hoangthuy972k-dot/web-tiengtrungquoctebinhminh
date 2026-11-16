@@ -157,6 +157,21 @@ module.exports = function ganHoatDongChung(app, d, h) {
     return false;
   }
   function gachHomNay(f) { return f.ctGach && f.ctGach.d === d.vnDayKey() ? f.ctGach.n : 0; }
+  // Quy thi tran (nong-trai-thue.js): tien thue thue tho xay — toi da phan (0..1) so gach cua cong trinh dang xay,
+  // phan con lai van phai gop bang cau hoi. Tra ve so gach da xay (ghi vao gop['quy'], khong phai ban nao).
+  async function quyXayCt(pv, gach, phan) {
+    return khoaC('ct:' + pv.k, async () => {
+      const s = await layCt(pv), ct = s.ct;
+      if (ct.xong) return 0;
+      const tran = Math.floor(ct.can.gach * phan) - (ct.quy || 0);
+      const n = Math.max(0, Math.min(gach, tran, ct.can.gach - (ct.co.gach || 0)));
+      if (!n) return 0;
+      ct.quy = (ct.quy || 0) + n;
+      gopCt(s, 'quy', { gach: n }, 0);
+      await ghiC('ct:' + pv.k, s);
+      return n;
+    });
+  }
 
   async function deGach(user) {
     const de = await h.deChuHan(user);
@@ -769,6 +784,8 @@ module.exports = function ganHoatDongChung(app, d, h) {
   }));
 
   // Phan thuong thi tran cua em: top tuan, lop duoc yeu men, moc cap thi tran, co vu du 7 ngay
+  // + phan thuong cua module khac (thuongThem: { loai, ds(me, f) -> [muc], nhan(me, f, muc) } — vd tro cap thue)
+  const thuongThem = [];
   async function thuongCua(me, f) {
     const st = await d.loadClassState();
     const lopId = st.members[me] ? st.members[me].classId : '';
@@ -785,6 +802,7 @@ module.exports = function ganHoatDongChung(app, d, h) {
       const da = (nhan.moc || {})[lopId] || 0;
       for (let i = 1; i <= cap; i++) out.ds.push({ loai: 'moc', cap: i, zh: TT_CAP[i].zh, py: TT_CAP[i].py, vn: TT_CAP[i].vn, d: TT_CAP[i].d, xu: TT_CAP[i].xu, qua: !!TT_CAP[i].qua, daNhan: i <= da });
     }
+    for (const t of thuongThem) { try { (await t.ds(me, f)).forEach((x) => out.ds.push(x)); } catch (e) { console.error('Thuong them:', e.message); } }
     const cvt = f.cvNgay && f.cvNgay.tuan === d.vnWeekKey() ? f.cvNgay.ds.length : 0;
     out.coVu = { ngay: cvt, can: CV_TUAN_NGAY };
     out.conNhan = out.ds.filter((x) => !x.daNhan).length;
@@ -803,10 +821,12 @@ module.exports = function ganHoatDongChung(app, d, h) {
       if (!x) throw loi('Em chưa có phần thưởng này.');
       if (x.daNhan) throw loi('Em đã nhận phần thưởng này rồi.');
       const st = await d.loadClassState();
-      const lopId = st.members[me].classId;
+      const lopId = st.members[me] ? st.members[me].classId : '';
       f.ttNhan = f.ttNhan || {};
       const kq = { ok: true, xu: x.xu || 0 };
-      if (loai === 'tuan') { f.ttNhan.tuan = tg.tuanTruoc.tuan; f.tui[x.mon] = (f.tui[x.mon] || 0) + 1; kq.mon = x.mon; }
+      const them = thuongThem.find((t) => t.loai === loai);
+      if (them) await them.nhan(me, f, x);
+      else if (loai === 'tuan') { f.ttNhan.tuan = tg.tuanTruoc.tuan; f.tui[x.mon] = (f.tui[x.mon] || 0) + 1; kq.mon = x.mon; }
       else if (loai === 'yeumen') f.ttNhan.ym = tg.tuanTruoc.tuan;
       else if (loai === 'ld') f.ttNhan.ld = tg.tuanTruoc.tuan;
       else {
@@ -1137,5 +1157,5 @@ module.exports = function ganHoatDongChung(app, d, h) {
   }));
 
   async function diemThem(lopId) { return LD_DIEM_TT * (await soLdThang(lopId)); }
-  return { initTable, CT, LH, ctLop, coVuLop, danhHieuLop, diemThem, ldCong: ldCongNen, docC, ghiC, khoaC, phamVi };
+  return { initTable, CT, LH, ctLop, coVuLop, danhHieuLop, diemThem, ldCong: ldCongNen, docC, ghiC, khoaC, phamVi, quyXayCt, thuongThem };
 };

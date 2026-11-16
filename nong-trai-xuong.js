@@ -286,7 +286,7 @@ function gan(app, d, h, c) {
       if (Object.keys(o.can).some(laHangQuy)) return;
       if (!Object.keys(o.can).every((k) => (f.kho[k] || 0) >= o.can[k])) return;
       Object.keys(o.can).forEach((k) => { truKho(f, k, o.can[k]); dung[k] = (dung[k] || 0) + o.can[k]; });
-      f.don.x[i] = 1; f.xu += o.xu; f.xp += o.xp; n++; xu += o.xu;
+      f.don.x[i] = 1; f.xu += o.xu; f.xp += o.xp; n++; xu += o.xu; h.ghiThuNhap(f, o.xu);
     });
     // ghi ro da lay hang gi trong kho de em biet hang di dau
     const ghi = Object.keys(dung).map((k) => dung[k] + ' ' + SP[k].vn.toLowerCase()).join(', ');

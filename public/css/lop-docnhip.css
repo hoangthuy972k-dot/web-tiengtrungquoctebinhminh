@@ -276,6 +276,15 @@ html.dn-open, html.dn-open body { overflow: hidden; }
 }
 .dn-chon button.on { border-color: var(--dn-vang); background: rgba(233, 162, 59, 0.2); color: var(--dn-vang-sang); }
 .dn-lop-ten { font-weight: 700; margin-right: 6px; }
+.dn-chon button:disabled { opacity: .45; cursor: default; }
+.dn:not(.dn-co-rieng) .dn-rieng { display: none; }
+.dn-rieng .dn-chon + .dn-chon { margin-top: 4px; }
+.dn-bdau { display: flex; align-items: center; gap: 8px; color: var(--dn-mo); font-size: .88rem; font-weight: 600; }
+.dn-bdau input {
+  width: 80px; min-height: 36px; padding: 4px 8px; border-radius: 10px; border: 1px solid var(--dn-the-vien);
+  background: var(--dn-the); color: inherit; font: inherit; font-weight: 700;
+}
+#dnGoNhip:active { transform: scale(.95); }
 .dn-cai-meo { margin: 8px 0 0; color: var(--dn-mo); font-size: .82rem; line-height: 1.7; }
 .dn-cai-meo kbd {
   display: inline-block; min-width: 1.6em; padding: 0 5px; border-radius: 5px; border: 1px solid rgba(255, 255, 255, 0.25);

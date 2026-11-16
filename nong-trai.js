@@ -923,6 +923,56 @@ module.exports = function ganNongTrai(app, d) {
   let qtMod = null;    // nong-trai-tuthien.js (gan o cuoi)
   let thueMod = null;  // nong-trai-thue.js (gan o cuoi)
   const FILE = path.join(d.DATA_DIR, 'farms.json');
+
+  /* ---- Thi tran Tu Do 自由 (2026-11-16, co giao: "hoc sinh tu do khong co thi tran rieng — gom chung 1 thi tran") ----
+     Moi em co nong trai ma CHUA vao lop nao duoc xep vao 1 "lop ao" id 'tudo' — chi trong phan nong trai (d nay chi
+     nong-trai*.js dung; trang hoc / thi tren lop van doc lop that). Vao lop that roi thi tu roi Thi tran Tu Do.
+     Chi gom em con choi trong TD_NGAY ngay (toi da TD_TOI_DA em choi gan nhat) de thi tran song dong, tai nhanh;
+     em vua mo nong trai (doc) duoc them ngay. Khong sua ban ghi lop that (ban sao moi, cache dung chung khong doi). */
+  const LOP_TU_DO = { id: 'tudo', name: 'Tự Do 自由', code: '', createdMs: 0, tuDo: true };
+  const TD_NGAY = 30, TD_TOI_DA = 150;
+  const loadLopThat = d.loadClassState;
+  let tdChu = null, tdLuc = 0, tdMemo = null;
+  const tdMoi = new Set(); // em vua mo nong trai: luon co mat trong thi tran (khong tinh vao gioi han)
+  async function dsChuTuDo() {
+    if (tdChu && Date.now() - tdLuc < 60000) return tdChu;
+    let ids = [];
+    try {
+      if (!d.USE_DB) ids = Object.keys(d.readJsonFile(FILE) || {});
+      else {
+        const [rows] = await d.db().query('SELECT user_id FROM farms WHERE updated_ms > ? ORDER BY updated_ms DESC LIMIT ?', [Date.now() - TD_NGAY * 864e5, TD_TOI_DA * 3]);
+        ids = rows.map((r) => r.user_id);
+      }
+    } catch (e) { ids = tdChu ? Array.from(tdChu) : []; }
+    tdChu = new Set(ids);
+    tdMoi.forEach((id) => tdChu.add(id));
+    tdLuc = Date.now();
+    tdMemo = null;
+    return tdChu;
+  }
+  function tdThem(userId) {
+    if (!userId || tdMoi.has(userId)) return;
+    if (tdMoi.size > 2000) tdMoi.clear();
+    tdMoi.add(userId);
+    if (tdChu) { tdChu.add(userId); tdMemo = null; }
+  }
+  d.loadClassState = async function () {
+    const st = await loadLopThat();
+    const chu = await dsChuTuDo();
+    if (tdMemo && tdMemo.st === st && tdMemo.n === chu.size) return tdMemo.kq;
+    const them = {};
+    let n = 0;
+    for (const id of chu) {
+      if (st.members[id]) continue;
+      if (n >= TD_TOI_DA && !tdMoi.has(id)) continue;
+      them[id] = { classId: LOP_TU_DO.id, joinedMs: 0, tuDo: true };
+      n++;
+    }
+    const kq = Object.assign({}, st, { classes: st.classes.concat([LOP_TU_DO]), members: Object.assign({}, st.members, them) });
+    tdMemo = { st, n: chu.size, kq };
+    return kq;
+  };
+
   const khoa = new Map(); // userId -> Promise (xu ly lan luot tung nguoi)
   const suKienHook = []; // (f, ten su kien, so) — cot truyen dem viec
   const suKien = (f, ten, n) => { suKienHook.forEach((fn) => { try { fn(f, ten, n); } catch (e) { /* bo qua */ } }); };
@@ -953,6 +1003,7 @@ module.exports = function ganNongTrai(app, d) {
       if (rows.length) { try { raw = JSON.parse(rows[0].data); } catch (e) { raw = null; } }
     }
     if (!raw) return nongTraiMoi();
+    tdThem(userId); // co nong trai -> co mat o Thi tran Tu Do neu chua vao lop
     return Object.assign(nongTraiMoi(), raw);
   }
   async function ghi(userId, f) {

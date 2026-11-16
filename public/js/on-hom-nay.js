@@ -130,12 +130,22 @@
     return out;
   }
   // { urls: bo bai on (theo thu tu gan day nhat truoc), all: { url: 1 } (moi bai da hoc + duoc giao), gan }
+  // Cap em dang hoc: em tu chon (HyvHomNay.capHoc) > may chu doan (/api/farm/on .cap) > cap bai gan nhat
+  function capDangHoc() {
+    var c = A().capHoc ? A().capHoc() : '';
+    if (!c && tapMay && tapMay.cap && A().readyLevels[tapMay.cap]) c = tapMay.cap;
+    return c;
+  }
   function tapBai() {
-    var may = baiTrenMay(), last = A().getLastLesson();
+    var may = baiTrenMay(), last = A().getLastLesson(), cap = capDangHoc();
+    // bai mo xem thu o cap khac (to mo bam vao HSK4...) khong duoc dua vao on tap
+    if (cap) may = may.filter(function (x) { return x.lv === cap; });
+    if (cap && last && last.levelId !== cap) last = null;
     // bai gan nhat: bai mo sau cung tren may nay (theo tai khoan) — may chu chi biet khi co "bai dang lam do"
     var ganUrl = (last && last.lesson.fullPageUrl) || (tapMay && tapMay.gan) || '';
     var urls = [];
     if (tapMay && tapMay.urls && tapMay.urls.length) urls = tapMay.urls.slice();
+    if (ganUrl && cap && lvCua(ganUrl) !== cap) ganUrl = '';
     else if (may.length) {
       // giong baiOnCua: cap cua bai hoc gan nhat, toi da 6 bai
       var lv = last ? last.levelId : '';
@@ -598,8 +608,35 @@
         '<div class="ohn-card-act"><button type="button" class="ohn-go" data-ohn="go">' + (dangLam ? 'Làm tiếp' : 'Bắt đầu') + ' →</button>' +
           '<span class="ohn-hint">Xong cả kế hoạch: ' + (auth() ? '<b>+5 ⭐</b>' : 'đăng nhập để nhận <b>+5 ⭐</b>') + ' rồi chơi Sân chơi / Nông trại</span></div>';
     }
-    box.innerHTML = '<div class="ohn-card-in">' + html + '</div>';
+    box.innerHTML = '<div class="ohn-card-in">' + html + htmlCap() + '</div>';
   }
+  // Dong nho cuoi the: cap ma ke hoach dang lay bai + nut doi (hoc sinh to mo xem cap khac van on dung cap minh)
+  function htmlCap() {
+    var cap = capDangHoc();
+    if (!cap) return '';
+    var ds = Object.keys(A().readyLevels);
+    return '<div class="ohn-cap"><span>📚 Ôn theo cấp em đang học: <b>' + esc(A().levelLabel(cap)) + '</b></span>' +
+      '<label class="ohn-cap-doi">Đổi <select data-ohn-cap aria-label="Chọn cấp em đang học">' +
+      ds.map(function (l) { return '<option value="' + esc(l) + '"' + (l === cap ? ' selected' : '') + '>' + esc(A().levelLabel(l)) + '</option>'; }).join('') +
+      '</select></label></div>';
+  }
+  document.addEventListener('change', function (e) {
+    var sel = e.target.closest && e.target.closest('[data-ohn-cap]');
+    if (!sel || !A().datCapHoc) return;
+    A().datCapHoc(sel.value);
+    A().showToast('Từ giờ ôn tập hằng ngày lấy bài ' + A().levelLabel(sel.value) + '.');
+  });
+  // Doi cap: ke hoach hom nay chua lam cau nao thi soan lai theo cap moi; dang lam do thi giu (mai theo cap moi)
+  function lamMoi() {
+    tapMay = null;
+    var p = docKeHoach();
+    if (p && !p.xong && !(p.kq || []).some(function (x) { return x != null; })) {
+      var m = docLS(KHOA, null);
+      if (m && typeof m === 'object') { delete m[uid() || '_khach']; ghiLS(KHOA, m); }
+    }
+    veThe();
+  }
+  window.HyvOnHomNay = { lamMoi: lamMoi };
 
   function hoaGiay(n) {
     var mau = ['#c8372d', '#e9a23b', '#2f8a57', '#3f7fb5', '#d4588f', '#f2bf6b'], s = '';

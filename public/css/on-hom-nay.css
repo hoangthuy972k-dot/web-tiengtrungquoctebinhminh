@@ -316,3 +316,34 @@ html.ho-tro-toi[data-theme="dark"] .ohn-sheet .cdt-goi { color: #b8ab9f; }
 @media (min-width: 900px) {
   .ohn-blocks { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
 }
+
+/* ---------- "Cap em dang hoc" (2026-11-16): dong cuoi the + bang "xem thu" o trang bai cap khac ---------- */
+.ohn-cap {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 6px 12px;
+  margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--ohn-vien-nhat);
+  font-size: .85rem; color: var(--ohn-nhat);
+}
+.ohn-cap b { color: var(--ohn-chu); }
+.ohn-cap-doi { display: inline-flex; align-items: center; gap: 6px; font-weight: 700; color: var(--ohn-do); }
+.ohn-cap-doi select {
+  font: inherit; font-weight: 600; color: var(--ohn-chu); background: var(--ohn-giay);
+  border: 1.5px solid var(--ohn-vien-nhat); border-radius: 10px; padding: 4px 8px; max-width: 170px;
+}
+.ohn-cap-doi select:focus-visible { outline: 2px solid var(--ohn-do); outline-offset: 2px; }
+.xem-thu {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 16px;
+  margin: 10px 0 14px; padding: 12px 14px; border-radius: 16px;
+  background: var(--ohn-vang-nhat); border: 2px solid var(--ohn-vang); color: var(--ohn-chu);
+}
+.xem-thu.hoi { background: var(--ohn-giay); border-color: var(--ohn-do); box-shadow: 0 3px 0 var(--ohn-bong); }
+.xem-thu-chu { margin: 0; display: flex; flex-direction: column; gap: 2px; flex: 1 1 260px; }
+.xem-thu-chu b { font-size: 1rem; }
+.xem-thu-chu span { font-size: .88rem; color: var(--ohn-nhat); }
+.xem-thu-nut { display: flex; flex-wrap: wrap; gap: 8px; }
+.xem-thu-b {
+  font: inherit; font-weight: 700; font-size: .9rem; min-height: 40px; padding: 8px 14px; border-radius: 12px; cursor: pointer;
+  background: var(--ohn-giay); color: var(--ohn-chu); border: 2px solid var(--ohn-vien-nhat);
+}
+.xem-thu-b.is-chinh { background: var(--ohn-do); color: #fff; border-color: var(--ohn-do-dam); }
+.xem-thu-b:hover { filter: brightness(1.04); }
+.xem-thu-b:focus-visible { outline: 2px solid var(--ohn-do); outline-offset: 2px; }

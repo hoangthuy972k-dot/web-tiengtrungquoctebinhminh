@@ -375,6 +375,12 @@ async function initDb() {
   } catch (err) {
     if (err.code !== 'ER_DUP_FIELDNAME') throw err;
   }
+  // "Cap em dang hoc" do hoc sinh tu chon (2026-11-16): loi khac thi chi ghi log — tinh nang tu tat, web van chay
+  try {
+    await dbPool.query('ALTER TABLE users ADD COLUMN cap_hoc VARCHAR(32) NULL');
+  } catch (err) {
+    if (err.code !== 'ER_DUP_FIELDNAME') console.error('Khong them duoc cot users.cap_hoc:', err.message);
+  }
   await initExamAttemptsTable();
   await initDailyPointsTable();
   await initResumeTable();
@@ -427,6 +433,7 @@ function userFromRow(r) {
     name: r.name,
     email: r.email,
     level: r.level,
+    capHoc: r.cap_hoc || '',
     passwordSalt: r.password_salt,
     passwordHash: r.password_hash,
     createdAt: r.created_at,
@@ -659,8 +666,27 @@ const KNOWN_LEVELS = (() => {
 })();
 
 function publicUser(user) {
-  return { id: user.id, name: user.name, email: user.email, level: user.level };
+  return { id: user.id, name: user.name, email: user.email, level: user.level, capHoc: user.capHoc || '' };
 }
+
+// "Cap em dang hoc" (2026-11-16, co giao: hoc sinh HSK1 to mo bam xem HSK4 roi may cu day bai HSK4 vao on tap).
+// Hoc sinh chon 1 lan (hoac tra loi "chi xem thu"); tu do On hom nay, nong trai, "Tiep tuc hoc" chi lay bai cap nay
+// (+ bai thay co giao). '' = bo chon, may tu doan theo so cau da lam that.
+async function datCapHoc(user, cap) {
+  user.capHoc = cap;
+  if (USE_DB) await dbPool.query('UPDATE users SET cap_hoc = ? WHERE id = ?', [cap || null, user.id]);
+  else {
+    const users = await loadUsers();
+    const u = users.find((x) => x.id === user.id);
+    if (u) { if (cap) u.capHoc = cap; else delete u.capHoc; await saveUsers(users); }
+  }
+}
+app.post('/api/auth/cap-hoc', requireAuth, asyncRoute(async (req, res) => {
+  const cap = typeof req.body?.cap === 'string' ? req.body.cap.trim() : '';
+  if (cap && !KNOWN_LEVELS.has(cap)) return res.status(400).json({ error: 'Cấp độ không hợp lệ.' });
+  await datCapHoc(req.user, cap);
+  res.json({ ok: true, capHoc: cap });
+}));
 
 // Tra ve toan bo tien do da luu tren server cho 1 user — dung de dong bo
 // lai xuong bat ky thiet bi nao dang nhap dung tai khoan (may tinh, dien
@@ -1926,19 +1952,6 @@ async function baiOnCua(user) {
   // em chua hoc ma cung khong duoc giao (co giao: "tuyet doi khong ra cau hoi ma hoc sinh chua hoc").
   // Khong co bai nao -> urls rong: nong trai bao em hoc 1 bai truoc, khong tu ra cau.
   const daLam = Object.keys(hd).map((u) => Object.assign({}, MUC_LUC_BAI.theoUrl[u], hd[u]));
-  let ds = [], lv = '';
-  if (daLam.length) {
-    // Cap em dang hoc: cap cua bai lam GAN NHAT (neu biet thoi diem), khong thi cap em lam nhieu nhat
-    const ganNhat = daLam.filter((x) => x.t > 0).sort((a, b) => b.t - a.t)[0];
-    lv = ganNhat && ganNhat.lv;
-    if (!lv) {
-      const tong = {};
-      daLam.forEach((x) => { tong[x.lv] = (tong[x.lv] || 0) + x.cau; });
-      lv = Object.keys(tong).sort((a, b) => tong[b] - tong[a])[0];
-    }
-    // toi da 6 bai em lam gan day nhat trong cap do (chua biet thoi diem thi lay bai sau cung)
-    ds = daLam.filter((x) => x.lv === lv).sort((a, b) => (b.t - a.t) || (b.i - a.i)).slice(0, 6);
-  }
   // Bai thay co giao cho lop (giao = da day tren lop): 6 bai giao gan nhat, ke ca bai em chua mo
   const st = await loadClassState();
   const mem = st.members[uid];
@@ -1949,6 +1962,22 @@ async function baiOnCua(user) {
       if (x && giao.length < 6 && giao.indexOf(x) < 0) giao.push(x);
     });
   }
+  // Cap em dang hoc — mo xem thu bai cap khac (to mo) KHONG duoc keo ca bo on sang cap do:
+  //  1. cap em tu chon (user.capHoc)  2. cap cua bai thay co giao moi nhat
+  //  3. cap em da luyen THAT (>= 20 cau) co bai lam gan nhat  4. cap em lam nhieu cau nhat
+  const ghim = user.capHoc && KNOWN_LEVELS.has(user.capHoc) ? user.capHoc : '';
+  let ds = [], lv = ghim || (giao[0] && giao[0].lv) || '';
+  if (daLam.length) {
+    const tong = {};
+    daLam.forEach((x) => { tong[x.lv] = (tong[x.lv] || 0) + x.cau; });
+    if (!lv) {
+      const that = Object.keys(tong).filter((l) => tong[l] >= 20);
+      const ganNhat = daLam.filter((x) => x.t > 0 && (!that.length || that.indexOf(x.lv) >= 0)).sort((a, b) => b.t - a.t)[0];
+      lv = (ganNhat && ganNhat.lv) || Object.keys(tong).sort((a, b) => tong[b] - tong[a])[0];
+    }
+    // toi da 6 bai em lam gan day nhat trong cap do (chua biet thoi diem thi lay bai sau cung)
+    ds = daLam.filter((x) => x.lv === lv).sort((a, b) => (b.t - a.t) || (b.i - a.i)).slice(0, 6);
+  }
   const daCo = {};
   ds.forEach((x) => { daCo[x.url] = 1; });
   const coGiao = giao.filter((x) => !daCo[x.url]);
@@ -1957,8 +1986,8 @@ async function baiOnCua(user) {
   ds.sort((a, b) => (a.lv === b.lv ? a.i - b.i : a.lv < b.lv ? -1 : 1));
   const loai = daLam.length && giao.length ? 'bài em đã học + bài được giao' : daLam.length ? 'bài em đã học' : 'bài thầy cô giao';
   // gan: bai em hoc gan nhat (nut 'Học kiếm sao' mo bai nay), chua hoc bai nao thi bai giao moi nhat
-  const ganUrl = (daLam.filter((x) => x.t > 0).sort((a, b) => b.t - a.t)[0] || {}).url || (giao[0] && giao[0].url) || (ds[0] && ds[0].url) || '';
-  return { urls: ds.map((x) => x.url), gan: ganUrl, nguon: tenNguonOn(ds, loai), sai, cap: lv || '' };
+  const ganUrl = (daLam.filter((x) => x.t > 0 && x.lv === lv).sort((a, b) => b.t - a.t)[0] || {}).url || (giao[0] && giao[0].url) || (ds[0] && ds[0].url) || '';
+  return { urls: ds.map((x) => x.url), gan: ganUrl, nguon: tenNguonOn(ds, loai), sai, cap: lv || '', ghim };
 }
 // Tu vung 1 bai: doc vocabData trong public/js/<bai>-data.js (chi doc 1 lan, giu trong bo nho)
 const tuVungCache = new Map();

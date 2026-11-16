@@ -260,6 +260,10 @@
       })
       .then(function (data) {
         if (!data) return;
+        if (data.user) {
+          var a2 = readJSON(STORAGE_KEYS.auth, null);
+          if (a2 && a2.user && (a2.user.capHoc || '') !== (data.user.capHoc || '')) { a2.user.capHoc = data.user.capHoc || ''; writeJSON(STORAGE_KEYS.auth, a2); }
+        }
         if (data.progress) mergeProgressFromServer(data.progress);
         else daCoTienDoMay();
         syncProgressToServer();
@@ -969,13 +973,45 @@
   var LAST_LESSON_KEY = 'hyv_last_lesson';
   var WEEKDAY_FULL = ['Chủ nhật', 'Thứ Hai', 'Thứ Ba', 'Thứ Tư', 'Thứ Năm', 'Thứ Sáu', 'Thứ Bảy'];
 
+  /* "Cap em dang hoc" (2026-11-16, co giao: hoc sinh HSK1 to mo bam xem HSK4 roi may cu day bai HSK4 vao on tap).
+     Em chon 1 lan (hoi ngay khi em mo bai cap khac, hoac nut "Đổi" o the Hom nay em on gi). Da chon thi mo bai cap
+     khac = XEM THU: khong doi "Tiep tuc hoc", On hom nay va nong trai van theo cap em chon (may chu: baiOnCua).
+     Dang nhap: luu theo tai khoan (users.cap_hoc); khach: localStorage hyv_cap_hoc. */
+  var CAP_HOC_KEY = 'hyv_cap_hoc';
+  function capHoc() {
+    var a = readJSON(STORAGE_KEYS.auth, null), c;
+    if (a && a.user) c = a.user.capHoc || '';
+    else c = (readJSON(CAP_HOC_KEY, null) || {}).lv || '';
+    return READY_LEVELS[c] ? c : '';
+  }
+  function datCapHoc(lv) {
+    var a = readJSON(STORAGE_KEYS.auth, null);
+    if (a && a.user) {
+      a.user.capHoc = lv || '';
+      writeJSON(STORAGE_KEYS.auth, a);
+      if (a.token) {
+        fetch('/api/auth/cap-hoc', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + a.token }, body: JSON.stringify({ cap: lv || '' }) })
+          .catch(function () { /* lan sau */ });
+      }
+    } else writeJSON(CAP_HOC_KEY, { lv: lv || '' });
+    try { if (window.HyvOnHomNay && HyvOnHomNay.lamMoi) HyvOnHomNay.lamMoi(); } catch (e) { /* bo qua */ }
+  }
+  // Bai co tien do xa nhat cua 1 cap (khi "bai mo gan nhat" la bai xem thu o cap khac)
+  function baiGanNhatCuaCap(lv) {
+    var b = null;
+    ((APP_DATA.lessons && APP_DATA.lessons[lv]) || []).forEach(function (l) { if (lessonHasAnyProgress(l)) b = l; });
+    return b ? { levelId: lv, lesson: b } : null;
+  }
+
   // Bai hoc mo gan nhat (luu khi mo trang bai hoc) — null neu chua hoc bai nao
   function getLastLesson() {
-    var saved = readJSON(LAST_LESSON_KEY, null);
-    if (!saved || !saved.levelId || !READY_LEVELS[saved.levelId]) return null;
+    var saved = readJSON(LAST_LESSON_KEY, null), cap = capHoc();
+    if (!saved || !saved.levelId || !READY_LEVELS[saved.levelId]) return cap ? baiGanNhatCuaCap(cap) : null;
     // "Bai dang hoc" gan voi tung tai khoan: may dung chung thi khong hien bai
     // cua ban khac (ban ghi cu chua co uid thi van dung nhu truoc)
-    if (saved.uid !== undefined && (saved.uid || null) !== (currentUserId() || null)) return null;
+    if (saved.uid !== undefined && (saved.uid || null) !== (currentUserId() || null)) return cap ? baiGanNhatCuaCap(cap) : null;
+    // bai mo gan nhat la bai XEM THU cap khac -> bai xa nhat cua cap em dang hoc
+    if (cap && saved.levelId !== cap) return baiGanNhatCuaCap(cap);
     var lessons = (APP_DATA.lessons && APP_DATA.lessons[saved.levelId]) || [];
     var lesson = lessons.find(function (l) { return l.fullPageUrl === saved.url; });
     return lesson ? { levelId: saved.levelId, lesson: lesson } : null;
@@ -2616,10 +2652,54 @@
     speak: ['speak:ai', 'speak:rec:'], translate: ['translate:q:'], workbook: ['workbook']
   };
 
+  // Mo bai o cap khac cap em dang hoc: da chon cap -> chi la xem thu; chua chon -> hoi 1 lan
+  function xemThuCua(levelId) {
+    var cap = capHoc();
+    if (cap) return cap !== levelId ? { kieu: 'thu', cap: cap } : null;
+    var cu = readJSON(LAST_LESSON_KEY, null);
+    if (!cu || !cu.levelId || !READY_LEVELS[cu.levelId] || cu.levelId === levelId) return null;
+    if (cu.uid !== undefined && (cu.uid || null) !== (currentUserId() || null)) return null;
+    return { kieu: 'hoi', cap: cu.levelId };
+  }
+  function veXemThu(levelId, lesson, xt) {
+    var box = document.getElementById('hubXemThu');
+    if (!box) {
+      box = document.createElement('div');
+      box.id = 'hubXemThu';
+      var q = document.getElementById('hubQuickWrap');
+      q.parentNode.insertBefore(box, q);
+    }
+    if (!xt) { box.hidden = true; box.innerHTML = ''; return; }
+    var moi = rsEsc(PRACTICE_LEVEL_LABEL[levelId] || levelId), cu = rsEsc(PRACTICE_LEVEL_LABEL[xt.cap] || xt.cap);
+    box.hidden = false;
+    box.className = 'xem-thu' + (xt.kieu === 'hoi' ? ' hoi' : '');
+    box.innerHTML = xt.kieu === 'hoi'
+      ? '<p class="xem-thu-chu"><b>Em chuyển hẳn sang học ' + moi + '?</b><span>Em đang học ' + cu + '. Nếu chỉ xem thử, ôn tập hằng ngày và nông trại vẫn theo ' + cu + '.</span></p>' +
+        '<div class="xem-thu-nut"><button type="button" class="xem-thu-b" data-xt="thu">👀 Chỉ xem thử</button><button type="button" class="xem-thu-b is-chinh" data-xt="doi">Học ' + moi + '</button></div>'
+      : '<p class="xem-thu-chu"><b>👀 Em đang xem thử ' + moi + '</b><span>Ôn tập hằng ngày, “Tiếp tục học” và nông trại vẫn theo ' + cu + ' — cấp em đang học.</span></p>' +
+        '<div class="xem-thu-nut"><button type="button" class="xem-thu-b" data-xt="doi">Chuyển sang học ' + moi + '</button></div>';
+    $all('[data-xt]', box).forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (b.getAttribute('data-xt') === 'doi') {
+          datCapHoc(levelId);
+          writeJSON(LAST_LESSON_KEY, { levelId: levelId, url: lesson.fullPageUrl, uid: currentUserId() });
+          showToast('Đã chuyển sang học ' + (PRACTICE_LEVEL_LABEL[levelId] || levelId) + '. Ôn tập hằng ngày sẽ lấy bài cấp này.');
+          veXemThu(levelId, lesson, null);
+        } else {
+          datCapHoc(xt.cap);
+          showToast('Được rồi! Em cứ xem thử — ôn tập vẫn theo ' + (PRACTICE_LEVEL_LABEL[xt.cap] || xt.cap) + '.');
+          veXemThu(levelId, lesson, { kieu: 'thu', cap: xt.cap });
+        }
+      });
+    });
+  }
+
   function showLessonHub(levelId, lesson) {
     currentHubLevelId = levelId;
     currentHubLesson = lesson;
-    writeJSON(LAST_LESSON_KEY, { levelId: levelId, url: lesson.fullPageUrl, uid: currentUserId() });
+    var xemThu = xemThuCua(levelId);
+    if (!xemThu) writeJSON(LAST_LESSON_KEY, { levelId: levelId, url: lesson.fullPageUrl, uid: currentUserId() });
+    veXemThu(levelId, lesson, xemThu);
     if (practiceLevel !== levelId) {
       practiceLevel = levelId;
       renderLevelSubmenu();
@@ -18530,7 +18610,7 @@
     }
     var info = lessonByUrl('/lessons/' + m[1] + '.html');
     if (!info || !READY_LEVELS[info.levelId]) return;
-    writeJSON(LAST_LESSON_KEY, { levelId: info.levelId, url: info.lesson.fullPageUrl, uid: currentUserId() });
+    // showLessonHub tu ghi "bai dang hoc" (tru khi la bai xem thu o cap khac cap em dang hoc)
     showLessonHub(info.levelId, info.lesson);
     if (buoc && pathEnabled(info.lesson)) {
       // Doi biet bai co Khoi dong khong (so buoc co the 6 hoac 7) roi moi tim buoc
@@ -18567,7 +18647,7 @@
     dateKey: dateKey, readJSON: readJSON, writeJSON: writeJSON, rsGet: rsGet, rsSet: rsSet, esc: rsEsc,
     runTask: runTask, showDashboard: showDashboard, showToast: showToast, renderStreak: renderStreak,
     sfx: function (k) { try { sfxPlay(k); } catch (e) { /* bo qua */ } },
-    uid: currentUserId, levelLabel: function (id) { return PRACTICE_LEVEL_LABEL[id] || id; },
+    uid: currentUserId, levelLabel: function (id) { return PRACTICE_LEVEL_LABEL[id] || id; }, capHoc: capHoc, datCapHoc: datCapHoc,
     readyLevels: READY_LEVELS, visitedKey: STORAGE_KEYS.visitedLessons, wrongWordsKey: STORAGE_KEYS.reviewWrongWords
   };
 

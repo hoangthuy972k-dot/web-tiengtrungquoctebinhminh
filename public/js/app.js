@@ -1121,7 +1121,6 @@
     var l = target.lesson;
     var levelName = PRACTICE_LEVEL_LABEL[target.levelId] || target.levelId.toUpperCase();
     var lps = pathStepsOf(l);
-    var srs = srsStats();
     var done = target.isNext ? 0 : lps.filter(function (st) { return pathStepDone(l, st); }).length;
     var pct = Math.round(done / lps.length * 100);
     var eyebrow = target.finished ? 'Đã học xong ' + levelName : (target.isNext ? 'Bài tiếp theo' : 'Tiếp tục học');
@@ -1140,7 +1139,7 @@
         '<div class="resume-sao" id="resumeSao" hidden></div>' +
         '<div class="resume-actions">' +
           '<button type="button" class="btn btn-white" data-resume="go">' + (target.finished ? 'Ôn lại bài ' + l.number : 'Học tiếp') + uiIcon('arrow') + '</button>' +
-          (srs.total >= 4 ? '<button type="button" class="btn btn-outline-white" data-resume="review">' + (srs.due ? 'Ôn ' + Math.min(srs.due, 15) + ' từ hôm nay' : 'Ôn nhanh 10 từ') + '</button>' : '') +
+          // (bo nut "On N tu hom nay": trung voi khoi "Tu den han on" cua the "Hom nay em on gi" ngay phia tren)
           '<button type="button" class="btn btn-outline-white" data-resume="levels">Chọn bài khác</button>' +
         '</div>' +
       '</div>';

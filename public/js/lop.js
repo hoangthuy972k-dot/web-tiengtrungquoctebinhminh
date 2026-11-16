@@ -3414,6 +3414,21 @@
     } });
   }
 
+  function moDocNhip() {
+    if (!pickedLabel()) return;
+    var bai = state.lessons.filter(function (l) { return state.picked[l.url]; }).map(function (l) { return { ten: 'Bài ' + l.n, url: l.url }; });
+    window.LopDocNhip.mo({
+      nhan: (LEVEL_NAME[state.level] || '') + ' · ' + pickedLabel(), cap: state.level, bai: bai,
+      tai: function (urls) {
+        return Promise.all(urls.map(loadVocabOf)).then(function (parts) {
+          var out = [];
+          parts.forEach(function (p) { out = out.concat(p.vocab || []); });
+          return out;
+        });
+      }
+    });
+  }
+
   function startGame(game) {
     if (window.LopOnTo && window.LopOnTo.co(game)) { moOnTo(game); return; }
     // Tro camera: hoi truoc "choi tren bang (webcam lop)" hay "moi em choi tren dien thoai (ma QR)" — lop-cam.js.
@@ -3437,6 +3452,8 @@
     }
     if (game === 'zombie' && window.LopZombie) { window.LopZombie.mo({ cau: pickedMcs(), nhan: pickedLabel() }); return; }
     if (game === 'ghep' && window.LopGhep) { window.LopGhep.mo({ cau: pickedMcs(), nhan: pickedLabel() }); return; }
+    // Doc theo nhip: san khau toi, ca lop doc to tu vung theo nhip nhac (lop-docnhip.js) — bo tu = cac bai dang chon
+    if (game === 'docnhip' && window.LopDocNhip) { moDocNhip(); return; }
     if (game === 'ochu' && window.LopOChu) {
       loadPickedVocab().then(function (v) { window.LopOChu.mo({ vocab: v.map(boPy), nhan: pickedLabel() }); });
       return;
@@ -3755,7 +3772,7 @@
     { ten: '🏆 Đấu tổ kịch tính', g: ['tug', 'train', 'mine', 'ghep', 'luot'] },
     { ten: '🧸 Ôn bài theo tổ — gắp thú, xây lâu đài, vượt hồ băng', g: ['gapthu', 'laudai', 'duongbang'] },
     { ten: '📱 Học sinh dùng điện thoại', g: ['dua', 'nhip', 'doikhang'] },
-    { ten: '📚 Ôn từ vựng', g: ['bingo', 'ochu', 'guess', 'tiles', 'hanzi', 'chain'] },
+    { ten: '📚 Ôn từ vựng', g: ['docnhip', 'bingo', 'ochu', 'guess', 'tiles', 'hanzi', 'chain'] },
     { ten: '🧩 Câu & ngữ pháp', g: ['errfix', 'sort', 'bay', 'doantau', 'trans'] },
     { ten: '🎤 Nói – viết', g: ['taboo', 'role', 'write'] }
   ];
@@ -3763,7 +3780,7 @@
     abc: ['3–5′', 'cả lớp'], thegiay: ['5–15′', 'thẻ giấy in', 'không cần điện thoại'], nghieng: ['5′', 'webcam lớp', 'hoặc mã QR'], chem: ['5′', 'webcam lớp', 'hoặc mã QR'], theduc: ['5′', 'webcam lớp', 'hoặc mã QR', 'vận động'], ngoisao: ['5′', 'webcam', '2 bạn đấu'], dam: ['5′', 'webcam lớp', 'hoặc mã QR', 'vận động'],
     zombie: ['3–5′', 'cả lớp'], dua: ['10–15′', 'quét mã QR', 'chọn linh vật'], chuong: ['15′', 'cả lớp', 'bảng con / điện thoại'], luot: ['10–15′', '2–4 tổ'], bay: ['5–10′', 'trên bảng', 'hoặc mã QR theo tổ'], doantau: ['5–10′', 'trên bảng', 'hoặc mã QR theo tổ'], doikhang: ['5–10′', 'quét mã QR', '1–1'],
     ghep: ['10′', 'theo tổ'], ochu: ['5–10′', 'cả lớp / tổ'], listen: ['3′', '2 em đấu'], match: ['3′', 'theo tổ'], hv: ['3–5′', 'theo tổ'],
-    bingo: ['5–7′', 'cá nhân'], guess: ['3–5′', 'theo tổ'], tiles: ['5′', 'theo tổ'], hanzi: ['5′', 'theo tổ'], chain: ['3–5′', 'theo tổ'],
+    docnhip: ['3–5′', 'cả lớp đọc to', 'theo nhạc'], bingo: ['5–7′', 'cá nhân'], guess: ['3–5′', 'theo tổ'], tiles: ['5′', 'theo tổ'], hanzi: ['5′', 'theo tổ'], chain: ['3–5′', 'theo tổ'],
     errfix: ['5′', 'đại diện'], sort: ['5–7′', 'vận động'], trans: ['5′', 'đại diện'],
     taboo: ['5′', 'nói'], role: ['5–7′', 'đóng vai'], write: ['5′', 'lên bảng'],
     nhip: ['5–10′', 'quét mã QR', 'tự làm'], tug: ['5′', '2 tổ đấu', 'bảng hoặc mã QR'], train: ['5–7′', 'các tổ đua'], mine: ['5–7′', 'theo lượt'],

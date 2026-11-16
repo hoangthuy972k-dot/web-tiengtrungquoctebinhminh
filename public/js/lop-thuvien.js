@@ -18,7 +18,7 @@
     errfix: ['on', 'doi'], abc: ['on'], sort: ['on', 'vd', 'doi'], bingo: ['on'], guess: ['on', 'doi'], tiles: ['on', 'doi'],
     taboo: ['on', 'doi'], trans: ['on', 'doi'], listen: ['on', 'goi'], hanzi: ['on', 'doi'], role: ['on', 'goi'], hv: ['on', 'doi'],
     match: ['on', 'doi'], chain: ['on', 'doi'], write: ['on', 'doi'],
-    gapthu: ['doi', 'on'], laudai: ['doi', 'on'], duongbang: ['doi', 'on']
+    gapthu: ['doi', 'on'], laudai: ['doi', 'on'], duongbang: ['doi', 'on'], docnhip: ['on', 'goi']
   };
   // Xem nhanh: b = 3 buoc cua thay co, hs = hoc sinh lam gi
   var XN = {
@@ -68,6 +68,7 @@
     write: { b: ['Chọn bài rồi mở trò.', 'Máy đọc một từ hoặc cả câu.', 'Các tổ viết lên bảng, cô lật đáp án để chấm.'], hs: 'Nghe và viết chữ Hán lên bảng thật nhanh, thật đúng.' },
     gapthu: { b: ['Chọn bài và 2–6 tổ, mở trò.', 'Tổ trả lời đúng được điều khiển cần gắp, bấm THẢ đúng lúc.', 'Thú hiếm nhiều điểm, có bóng ⭐ x2 và 🎁 bất ngờ — tủ thú nhiều điểm nhất thắng.'], hs: 'Cả tổ trả lời, rồi một bạn canh lúc bấm THẢ để gắp thú.' },
     laudai: { b: ['Chọn bài và 2–6 tổ, mở trò.', 'Tổ trả lời đúng được chọn mảnh ghép (tường, tháp, cổng…); câu khó được mảnh lớn.', 'Coi chừng gió lớn — lâu đài hoàn chỉnh được thưởng.'], hs: 'Bàn trong tổ để trả lời và chọn mảnh ghép xây lâu đài.' },
+    docnhip: { b: ['Chọn bài rồi mở trò — chỉnh tốc độ nhịp (mặc định 100), bật nhạc nền.', 'Bấm Bắt đầu: 4 nhịp đếm vào, mỗi từ 4 nhịp, vòng nhịp sáng lần lượt; bật Đọc mẫu để máy đọc trước.', 'Bấm Chọn học sinh dưới linh vật để bốc bạn dẫn đọc.'], hs: 'Cả lớp nhìn chữ Hán, đọc to theo nhịp nhạc, nhìn trước từ tiếp theo.' },
     duongbang: { b: ['Chọn bài và 2–6 tổ, mở trò.', 'Tổ trả lời đúng được chọn một ô băng phía trước.', 'Ô an toàn, băng nứt (lùi 1) hoặc cá thưởng (+1) — tổ tới lâu đài trước thắng.'], hs: 'Trả lời đúng rồi đoán ô băng an toàn để chim cánh cụt của tổ đi tiếp.' }
   };
   var ID_KHOA = { lopKiemTraOpen: 'kiemtra', lopNoiOpen: 'noi', lopUfoOpen: 'ufo', lopGoiTenOpen: 'goiten', lopRongOpen: 'rong', lopTheOpen: 'the' };

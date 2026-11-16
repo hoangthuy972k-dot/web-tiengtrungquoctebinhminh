@@ -37,6 +37,7 @@
 <link rel="stylesheet" href="/css/lop-onto-qr.css">
 <link rel="stylesheet" href="/css/lop-quanly.css">
 <link rel="stylesheet" href="/css/lop-cam.css">
+<link rel="stylesheet" href="/css/lop-docnhip.css">
 <script>
 // CDN phuc vu thang duong dan co duoi .html nen trang khong duoc dong dau ?v=
 // va trinh duyet giu mai ban CSS/JS cu. Chuyen sang /lop de luon qua may chu.
@@ -339,6 +340,12 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
           <span class="lop-game-desc">Chiếu các thẻ từ lộn xộn. Mỗi tổ cử mấy em lên bảng, mỗi em cầm một thẻ rồi đứng xếp thành câu đúng.</span>
           <span class="lop-game-count" id="lopCountSort">—</span>
         </button>
+        <button type="button" class="lop-game-card" data-game="docnhip">
+          <span class="lop-game-emoji">🥁</span>
+          <span class="lop-game-name">Đọc theo nhịp</span>
+          <span class="lop-game-desc">Sân khấu tối có đèn, chữ Hán thật to giữa màn hình, 4 vòng nhịp sáng lần lượt theo nhạc — cả lớp đọc to từng từ, hết 4 nhịp tự sang từ kế. Chỉnh tốc độ, bật đọc mẫu, hai linh vật bốc tên bạn dẫn đọc.</span>
+          <span class="lop-game-count lop-count-vocab">từ vựng</span>
+        </button>
         <button type="button" class="lop-game-card" data-game="bingo">
           <span class="lop-game-emoji">🔢</span>
           <span class="lop-game-name">Bingo 3×3</span>
@@ -596,6 +603,7 @@ if (location.pathname.slice(-9) === '/lop.html') location.replace('/lop' + locat
 <script src="/js/lop-gapthu.js"></script>
 <script src="/js/lop-laudai.js"></script>
 <script src="/js/lop-duongbang.js"></script>
+<script src="/js/lop-docnhip.js"></script>
 <script src="/js/lop-onto-qr.js"></script>
 <script src="/js/thegiay-ma.js"></script>
 <script src="/js/lop-thegiay.js"></script>

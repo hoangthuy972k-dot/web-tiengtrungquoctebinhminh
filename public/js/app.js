@@ -1457,6 +1457,118 @@
     }));
   }
 
+  /* ---- Chon bai on (2026-11-16, co giao: "on tap ngat quang cho chon bai on tap") ----
+     Mac dinh: cac bai cua "cap em dang hoc" (capHoc), chua chon cap thi tat ca. Em chon 1 / vai bai / ca cap;
+     luu theo tai khoan tren may (hyv_srs_chon). Tu cu chua ghi bai (khong co url) chi on khi chon "Tat ca bai". */
+  var SRS_CHON_KEY = 'hyv_srs_chon';
+  var srsChonMo = false;
+  function srsBaiCo(all) {
+    var today = dateKey(new Date()), m = {};
+    Object.keys(all).forEach(function (k) {
+      var e = all[k];
+      if (!e || !e.url) return;
+      var x = m[e.url] || (m[e.url] = { tong: 0, han: 0 });
+      x.tong++;
+      if (e.due <= today) x.han++;
+    });
+    var thuTu = Object.keys(READY_LEVELS);
+    return Object.keys(m).map(function (u) {
+      var i = lessonByUrl(u);
+      return i && READY_LEVELS[i.levelId] ? { url: u, levelId: i.levelId, lesson: i.lesson, tong: m[u].tong, han: m[u].han } : null;
+    }).filter(Boolean).sort(function (a, b) {
+      return (thuTu.indexOf(a.levelId) - thuTu.indexOf(b.levelId)) || (a.lesson.number - b.lesson.number);
+    });
+  }
+  // { map: { url: 1 } | null (= tat ca bai), ten: mo ta ngan, tuChon: em da tu chon }
+  function srsChonHieuLuc(bai) {
+    var co = {};
+    bai.forEach(function (b) { co[b.url] = 1; });
+    var luu = readJSON(SRS_CHON_KEY, null), map = null, tuChon = false;
+    if (luu && (luu.uid || null) === (currentUserId() || null)) {
+      tuChon = true;
+      if (luu.urls && luu.urls.length) {
+        map = {};
+        luu.urls.forEach(function (u) { if (co[u]) map[u] = 1; });
+        if (!Object.keys(map).length) { map = null; tuChon = false; }
+      }
+    }
+    if (!tuChon) {
+      var cap = capHoc();
+      var cuaCap = cap ? bai.filter(function (b) { return b.levelId === cap; }) : [];
+      if (cuaCap.length && cuaCap.length < bai.length) { map = {}; cuaCap.forEach(function (b) { map[b.url] = 1; }); }
+    }
+    var ten = 'Tất cả bài đã học';
+    if (map) {
+      var ds = bai.filter(function (b) { return map[b.url]; });
+      var lvs = {};
+      ds.forEach(function (b) { lvs[b.levelId] = (lvs[b.levelId] || 0) + 1; });
+      var lk = Object.keys(lvs);
+      var caCap = lk.length === 1 && bai.filter(function (b) { return b.levelId === lk[0]; }).length === ds.length;
+      ten = caCap ? 'Cả ' + (PRACTICE_LEVEL_LABEL[lk[0]] || lk[0])
+        : ds.length <= 3 ? ds.map(function (b) { return (lk.length > 1 ? (PRACTICE_LEVEL_LABEL[b.levelId] || b.levelId) + ' ' : '') + 'Bài ' + b.lesson.number; }).join(', ')
+        : ds.length + ' bài đã chọn';
+    }
+    return { map: map, ten: ten, tuChon: tuChon };
+  }
+  function srsVeChon(bai, chon) {
+    var box = document.getElementById('srsChon');
+    if (!box) {
+      box = document.createElement('div');
+      box.id = 'srsChon';
+      var c = document.getElementById('srsContent');
+      c.parentNode.insertBefore(box, c);
+    }
+    if (!bai.length) { box.hidden = true; return; }
+    box.hidden = false;
+    var dangChon = chon.map || {};
+    var h = '<div class="srs-chon-dau"><span>📚 Ôn từ: <b>' + rsEsc(chon.ten) + '</b></span>' +
+      '<button type="button" class="srs-chon-mo" aria-expanded="' + srsChonMo + '" data-srs-chon="mo">' + (srsChonMo ? 'Đóng' : 'Chọn bài ôn') + '</button></div>';
+    if (srsChonMo) {
+      var nhom = {};
+      bai.forEach(function (b) { (nhom[b.levelId] = nhom[b.levelId] || []).push(b); });
+      h += '<div class="srs-chon-than">';
+      Object.keys(nhom).forEach(function (lv) {
+        h += '<div class="srs-chon-cap"><div class="srs-chon-cap-dau"><b>' + rsEsc(PRACTICE_LEVEL_LABEL[lv] || lv) + '</b>' +
+          '<button type="button" class="srs-chon-link" data-srs-cap="' + rsEsc(lv) + '">Chọn cả cấp</button></div><div class="srs-chon-ds">';
+        nhom[lv].forEach(function (b) {
+          var on = chon.map ? !!dangChon[b.url] : true;
+          h += '<label class="srs-chon-bai"><input type="checkbox" value="' + rsEsc(b.url) + '" data-lv="' + rsEsc(lv) + '"' + (on ? ' checked' : '') + '>' +
+            '<span><b>Bài ' + b.lesson.number + '</b><small>' + b.tong + ' từ' + (b.han ? ' · <em>' + b.han + ' đến hạn</em>' : '') + '</small></span></label>';
+        });
+        h += '</div></div>';
+      });
+      h += '<div class="srs-chon-nut"><button type="button" class="srs-chon-phu" data-srs-chon="tat">Tất cả bài</button>' +
+        '<button type="button" class="srs-chon-chinh" data-srs-chon="on">Ôn các bài đã chọn</button></div><p class="srs-chon-loi" hidden></p></div>';
+    }
+    box.className = 'srs-chon' + (srsChonMo ? ' is-mo' : '');
+    box.innerHTML = h;
+    var hop = function () { return $all('.srs-chon-bai input', box); };
+    box.onclick = function (e) {
+      var t = e.target.closest('[data-srs-chon], [data-srs-cap]');
+      if (!t) return;
+      if (t.hasAttribute('data-srs-cap')) {
+        var lv = t.getAttribute('data-srs-cap');
+        hop().forEach(function (i) { i.checked = i.getAttribute('data-lv') === lv; });
+        return;
+      }
+      var hd = t.getAttribute('data-srs-chon');
+      if (hd === 'mo') { srsChonMo = !srsChonMo; srsVeChon(bai, chon); return; }
+      if (hd === 'tat') {
+        writeJSON(SRS_CHON_KEY, { uid: currentUserId(), urls: [] });
+        srsChonMo = false;
+        showSrsPractice();
+        return;
+      }
+      if (hd === 'on') {
+        var urls = hop().filter(function (i) { return i.checked; }).map(function (i) { return i.value; });
+        if (!urls.length) { var l = box.querySelector('.srs-chon-loi'); l.textContent = 'Chọn ít nhất 1 bài nhé.'; l.hidden = false; return; }
+        writeJSON(SRS_CHON_KEY, { uid: currentUserId(), urls: urls.length === bai.length ? [] : urls });
+        srsChonMo = false;
+        showSrsPractice();
+      }
+    };
+  }
+
   var srsState = null;
   function showSrsPractice() {
     $all('#main > .dash-section').forEach(function (s) { s.hidden = s.id !== 'srsPractice'; });
@@ -1464,7 +1576,11 @@
     wrap.innerHTML = '<p style="color:var(--color-gray-500);">Đang chuẩn bị từ cần ôn…</p>';
     window.scrollTo({ top: 0, behavior: 'smooth' });
     var all = srsAll(), today = dateKey(new Date());
-    var keys = Object.keys(all);
+    var tatCaKeys = Object.keys(all);
+    var baiCo = srsBaiCo(all), chon = srsChonHieuLuc(baiCo);
+    srsVeChon(baiCo, chon);
+    // chi lay tu cua cac bai da chon (tu cu khong ghi bai chi on khi chon tat ca)
+    var keys = chon.map ? tatCaKeys.filter(function (k) { return all[k] && chon.map[all[k].url]; }) : tatCaKeys;
     // Tu den han truoc (cu nhat, hop thap nhat), thieu thi bu tu hop thap nhat cho du 10
     var due = keys.filter(function (k) { return all[k].due <= today; })
       .sort(function (a, b) { return all[a].due < all[b].due ? -1 : all[a].due > all[b].due ? 1 : all[a].box - all[b].box; });
@@ -1474,12 +1590,22 @@
         .sort(function (a, b) { return all[a].box - all[b].box || (all[a].due < all[b].due ? -1 : 1); })
         .slice(0, SRS_SESSION - pick.length).forEach(function (k) { pick.push(k); });
     }
-    Promise.all([srsFillDetails(keys), srgPickCards().catch(function () { return []; })]).then(function (res) {
+    Promise.all([srsFillDetails(tatCaKeys), srgPickCards(chon.map).catch(function () { return []; })]).then(function (res) {
       var a = srsAll();
       var items = shuffle(pick.filter(function (k) { return a[k] && a[k].vn; })).map(function (k) { return { zh: k }; });
-      var pool = keys.filter(function (k) { return a[k] && a[k].vn; });
+      // dap an nhieu: lay tu cung cap voi cac bai da chon (de du 4 lua chon ca khi chi chon 1 bai it tu);
+      // khong du 4 tu cung cap thi lay ca kho tu
+      var pool = tatCaKeys.filter(function (k) { return a[k] && a[k].vn; });
+      if (chon.map) {
+        var capChon = {};
+        baiCo.forEach(function (b) { if (chon.map[b.url]) capChon[b.levelId] = 1; });
+        var cungCap = pool.filter(function (k) { var i = a[k].url && lessonByUrl(a[k].url); return i && capChon[i.levelId]; });
+        if (cungCap.length >= 4) pool = cungCap;
+      }
       if (items.length < 1 || pool.length < 4) {
-        wrap.innerHTML = '<p>Bạn cần học ít nhất 4 từ (mở phần Học từ của một bài) để bắt đầu ôn tập ngắt quãng.</p>';
+        wrap.innerHTML = chon.map && pool.length >= 4
+          ? '<p>Các bài em chọn chưa có từ để ôn. Bấm <b>Chọn bài ôn</b> ở trên để chọn bài khác nhé.</p>'
+          : '<p>Bạn cần học ít nhất 4 từ (mở phần Học từ của một bài) để bắt đầu ôn tập ngắt quãng.</p>';
         return;
       }
       // Xen the ngu phap (toi da SRG_PER_SESSION) rai deu giua cac tu, khong dat o cau dau
@@ -1582,11 +1708,12 @@
     return out;
   }
 
-  function srgPickCards() {
+  function srgPickCards(chiUrls) {
     var studied = [];
     Object.keys(READY_LEVELS).forEach(function (id) {
       ((APP_DATA.lessons && APP_DATA.lessons[id]) || []).forEach(function (l) {
-        if (lessonHasAnyProgress(l)) studied.push({ levelId: id, url: l.fullPageUrl });
+        // chiUrls: chi lay the ngu phap cua cac bai em chon o "On tap ngat quang"
+        if (lessonHasAnyProgress(l) && (!chiUrls || chiUrls[l.fullPageUrl])) studied.push({ levelId: id, url: l.fullPageUrl });
       });
     });
     if (!studied.length) return Promise.resolve([]);

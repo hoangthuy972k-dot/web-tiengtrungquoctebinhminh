@@ -10125,3 +10125,36 @@ html:has(.modal-overlay.is-open) .hw-fab-stack { display: none; }
 .rp-av .nv-anh { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
 .rp-av:has(.nv-anh) { background: var(--color-white); box-shadow: 0 0 0 2px currentColor; overflow: hidden; }
 .dp-scene-anh { display: block; width: 100%; max-width: 560px; max-height: 300px; object-fit: cover; margin: 10px auto 4px; border-radius: 14px; box-shadow: 0 3px 10px rgba(43, 29, 58, 0.15); }
+
+/* ---------- On tap ngat quang: chon bai on (2026-11-16) ---------- */
+.srs-chon {
+  margin: 0 0 16px; padding: 12px 14px; border-radius: 16px;
+  background: var(--color-gray-50); border: 1.5px solid var(--color-gray-200);
+}
+.srs-chon.is-mo { border-color: var(--color-red-600); }
+.srs-chon-dau { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 12px; }
+.srs-chon-dau span { font-size: .95rem; color: var(--color-gray-700); }
+.srs-chon-dau b { color: var(--color-gray-900); }
+.srs-chon-mo, .srs-chon-phu, .srs-chon-chinh {
+  font: inherit; font-weight: 700; font-size: .9rem; min-height: 40px; padding: 8px 14px; border-radius: 12px; cursor: pointer;
+  border: 1.5px solid var(--color-gray-300); background: var(--color-white, #fff); color: var(--color-gray-800);
+}
+.srs-chon-mo { color: var(--color-red-600); border-color: var(--color-red-600); }
+.srs-chon-chinh { background: var(--color-red-600); border-color: var(--color-red-700); color: #fff; }
+.srs-chon-mo:focus-visible, .srs-chon-phu:focus-visible, .srs-chon-chinh:focus-visible, .srs-chon-link:focus-visible { outline: 2px solid var(--color-red-600); outline-offset: 2px; }
+.srs-chon-than { margin-top: 12px; display: flex; flex-direction: column; gap: 14px; }
+.srs-chon-cap-dau { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+.srs-chon-link { font: inherit; font-size: .85rem; font-weight: 700; color: var(--color-red-600); background: none; border: 0; padding: 4px 2px; cursor: pointer; text-decoration: underline; }
+.srs-chon-ds { display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 8px; }
+.srs-chon-bai {
+  display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 12px; cursor: pointer;
+  background: var(--color-white, #fff); border: 1.5px solid var(--color-gray-200);
+}
+.srs-chon-bai:has(input:checked) { border-color: var(--color-red-600); background: var(--color-red-50); }
+.srs-chon-bai input { width: 18px; height: 18px; accent-color: var(--color-red-600); flex: none; }
+.srs-chon-bai span { display: flex; flex-direction: column; line-height: 1.25; }
+.srs-chon-bai b { font-size: .92rem; color: var(--color-gray-900); }
+.srs-chon-bai small { font-size: .78rem; color: var(--color-gray-500); }
+.srs-chon-bai em { font-style: normal; color: var(--color-red-600); font-weight: 700; }
+.srs-chon-nut { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+.srs-chon-loi { margin: 0; color: var(--color-red-600); font-weight: 600; font-size: .88rem; text-align: right; }

@@ -2606,3 +2606,31 @@ body.dang-tham .nt-top .nt-hud { margin-left: auto; }
   /* con nut an ben phai -> mo dan o mep de em biet vuot ngang duoc */
   .nt-tham-cuon { -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 18px), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 18px), transparent); padding-right: 14px; }
 }
+
+/* ---------- nen lat da lien mach (2026-11-16) — class do nong-trai-fx.js gan sau moi lan ve ---------- */
+body:not(.nt-ng) .nt-vat.nt-k-duong.lien {
+  background-color: #ecdfc3;
+  background-image: url('/images/farm/lat-da.svg?v=1');
+  background-size: calc(var(--o) * 2) calc(var(--o) * 2);
+  background-repeat: repeat;
+  box-shadow: var(--et, 0 0 transparent), var(--eb, 0 0 transparent), var(--el, 0 0 transparent), var(--er, 0 0 transparent);
+}
+body:not(.nt-ng) .nt-vat.nt-k-duong.lien .nt-hinh { visibility: hidden; }
+body:not(.nt-ng) .nt-vat.nt-k-duong.lien:hover .nt-hinh { transform: none; }
+/* via da giap co: vien kem dam phia trong, canh duoi day hon cho co chieu sau */
+body:not(.nt-ng) .nt-k-duong.dn-t { --et: inset 0 3px 0 #dccaa2; }
+body:not(.nt-ng) .nt-k-duong.dn-b { --eb: inset 0 -4px 0 #cfb88b; }
+body:not(.nt-ng) .nt-k-duong.dn-l { --el: inset 3px 0 0 #dccaa2; }
+body:not(.nt-ng) .nt-k-duong.dn-r { --er: inset -3px 0 0 #d4bf94; }
+body:not(.nt-ng) .nt-k-duong.gc-tl { border-top-left-radius: 34%; }
+body:not(.nt-ng) .nt-k-duong.gc-tr { border-top-right-radius: 34%; }
+body:not(.nt-ng) .nt-k-duong.gc-bl { border-bottom-left-radius: 34%; }
+body:not(.nt-ng) .nt-k-duong.gc-br { border-bottom-right-radius: 34%; }
+body:not(.nt-ng) .nt-vat.nt-k-duong.lien.chon { outline-offset: -4px; }
+
+/* bong mem duoi vat dung tren dat (con vat, cay, do trang tri) — vat co ve tren nen, khong "dan" phang */
+body:not(.nt-ng) .nt-vat:not(.phang)::before {
+  content: ''; position: absolute; left: 16%; right: 16%; bottom: 2%; height: 18%;
+  border-radius: 50%; pointer-events: none; z-index: -1;
+  background: radial-gradient(closest-side, rgba(58, 44, 20, 0.26), rgba(58, 44, 20, 0.1) 60%, transparent);
+}

@@ -150,3 +150,42 @@ window.NTFX = (function () {
   return { phao: phao, lapLanh: lapLanh, xuBay: xuBay, demLen: demLen, nhay: nhay, rung: rung, xanh: xanh, chuBay: chuBay, chuoi: chuoi,
     dongDau: dongDau, bangRon: bangRon, mung: mung, diem: function () { return cham; }, soHat: function () { return dem; } };
 })();
+
+/* ══════════════════════════════════════════════════════════════════
+   NEN LAT DA LIEN MACH (2026-11-16, co giao: "giao dien van hoi xau"):
+   cac o "duong" canh nhau ghep thanh 1 mang da lien (hoa van chay xuyen o, khong lo ke o vuong),
+   canh giap co co bo via nhe, goc ngoai bo tron. Chi them class + bien CSS sau moi lan ve ban do.
+   Goc nhin nghieng (body.nt-ng) giu nguyen kieu cu.
+   ══════════════════════════════════════════════════════════════════ */
+(function () {
+  'use strict';
+  function latDa() {
+    var dat = document.getElementById('ntDat');
+    if (!dat || document.body.classList.contains('nt-ng')) return;
+    var els = dat.querySelectorAll('.nt-vat.nt-k-duong');
+    if (!els.length) return;
+    var co = {}, ds = [];
+    for (var i = 0; i < els.length; i++) {
+      var el = els[i], T = el.offsetWidth || parseFloat(el.style.width) || 1;
+      var x = Math.round(parseFloat(el.style.left) / T), y = Math.round(parseFloat(el.style.top) / T);
+      co[x + ',' + y] = 1;
+      ds.push([el, x, y, T]);
+    }
+    ds.forEach(function (d) {
+      var el = d[0], x = d[1], y = d[2], T = d[3];
+      var t = !co[x + ',' + (y - 1)], b = !co[x + ',' + (y + 1)], l = !co[(x - 1) + ',' + y], r = !co[(x + 1) + ',' + y];
+      el.classList.add('lien');
+      el.classList.toggle('dn-t', t); el.classList.toggle('dn-b', b);
+      el.classList.toggle('dn-l', l); el.classList.toggle('dn-r', r);
+      el.classList.toggle('gc-tl', t && l); el.classList.toggle('gc-tr', t && r);
+      el.classList.toggle('gc-bl', b && l); el.classList.toggle('gc-br', b && r);
+      // hoa van 2x2 o chay lien: lech nen theo vi tri o tren ban do
+      el.style.backgroundPosition = (-(x % 2) * T) + 'px ' + (-(y % 2) * T) + 'px';
+    });
+  }
+  function gan() {
+    if (window.NTX && NTX.sauVe) { NTX.sauVe.push(latDa); latDa(); return true; }
+    return false;
+  }
+  if (!gan()) document.addEventListener('DOMContentLoaded', function () { if (!gan()) setTimeout(gan, 300); });
+})();

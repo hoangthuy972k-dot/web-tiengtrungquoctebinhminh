@@ -1473,7 +1473,7 @@
       }).join('') + '</div></div>';
   }
   function diNhiemVu(k) {
-    if (k === 'hoc') { location.href = (hocTiep && hocTiep.url) || '/'; return; }
+    if (k === 'hoc') { location.href = linkHoc(); return; }
     if (k === 'ruong') { moBang('hoc', 'muc'); return; }
     if (k === 'chuhan') { moBang('hoc', 'chuhan'); return; }
     if (k === 'don') { moBang('don'); return; }
@@ -1510,7 +1510,7 @@
       '<div id="ntHnChuoi" class="nt-hn-chuoi" hidden></div>' +
       '<h3 class="nt-hn-h">Kiếm sao ngay</h3><div class="nt-hn-viec">' +
         '<button type="button" class="nt-viec nt-viec-ch" data-tab="chuhan"><span class="nt-ch-ic" aria-hidden="true">字</span><span><b>Thử thách chữ Hán</b><small>10 câu · đúng từ 8 câu mở hộp quà bí ẩn 🎁</small></span></button>' +
-        '<a class="nt-viec" id="ntHocTiep" href="/">' + img('tb-hoc') + '<span><b>Học tiếp bài đang học</b><small id="ntHocTiepPhu">Mỗi câu đúng lần đầu +1 sao</small></span></a>' +
+        '<a class="nt-viec" id="ntHocTiep" href="' + esc(linkHoc()) + '">' + img('tb-hoc') + '<span><b>Học tiếp bài đang học</b><small id="ntHocTiepPhu">Mỗi câu đúng lần đầu +1 sao</small></span></a>' +
         '<button type="button" class="nt-viec" id="ntOnNhanh">' + img('ga') + '<span><b>Ôn từ — cho vật nuôi ăn</b><small>Trả lời đúng để vật nuôi lớn nhanh</small></span></button>' +
         '<a class="nt-viec" href="/game">' + img('tb-cuahang') + '<span><b>Trò chơi tự học</b><small>Mỗi câu đúng +1 sao</small></span></a>' +
         '<a class="nt-viec" href="/exam/">' + img('tb-don') + '<span><b>Thi thử HSK</b><small>Lên bảng xếp hạng đề thi</small></span></a>' +
@@ -1547,8 +1547,9 @@
     // bai dang hoc + chuoi ngay hoc (tai sau, khong chan ve)
     var hienHocTiep = function () {
       var a = $('#ntHocTiep', than);
-      if (!a || !hocTiep || !hocTiep.url) return;
-      a.href = hocTiep.url;
+      if (!a) return;
+      a.href = linkHoc(); // trang lo trinh, may tu chon bai (/?hoc=tiep…&tu=nt)
+      if (!hocTiep || !hocTiep.url) return;
       if (hocTiep.nguon) $('#ntHocTiepPhu', than).textContent = hocTiep.nguon;
     };
     if (hocTiep) hienHocTiep();
@@ -1868,7 +1869,7 @@
     return '<div class="nt-chua-hoc"><span class="nt-chua-hoc-ic" aria-hidden="true">📚</span>' +
       '<b>Em hãy học ít nhất một bài (hoặc bài thầy cô giao) để có câu hỏi nhé!</b>' +
       '<p>Câu hỏi ở nông trại chỉ lấy từ những bài em đã học và bài được giao.' + (them ? ' ' + them : '') + '</p>' +
-      '<a class="nt-nut nt-nut-xanh nt-nut-to" href="' + esc((hocTiep && hocTiep.url) || '/') + '">📖 Vào học bài</a></div>';
+      '<a class="nt-nut nt-nut-xanh nt-nut-to" href="' + esc(linkHoc()) + '">📖 Vào học bài</a></div>';
   }
   var TEN_KIEU_CH = { nghia: 'Chọn chữ Hán đúng nghĩa', py: 'Chữ này đọc là gì?', chu: 'Chữ này nghĩa là gì?', thieu: 'Điền chữ còn thiếu', nghe: 'Nghe và chọn chữ đúng', viet: 'Viết chữ còn thiếu' };
   function veNutChuHan() {
@@ -2074,7 +2075,7 @@
         html += '<div class="nt-td-em"><span class="nt-td-hang">#' + em.hang + '</span><div><b>Em: ' + em.tuan + ' sao tuần này</b><small>' +
           (em.hang === 1 && em.tuan > 0 ? 'Em đang dẫn đầu! Giữ vững nhé 💪'
             : em.tren ? 'Còn <b>' + em.tren.can + ' sao</b> nữa để vượt ' + esc(em.tren.ten) + ' (hạng ' + (em.hang - 1) + ')'
-            : 'Học để ghi những sao đầu tiên của tuần!') + '</small></div><a class="nt-nut nt-nut-xanh" href="' + esc((hocTiep && hocTiep.url) || '/') + '">Học ngay</a></div>';
+            : 'Học để ghi những sao đầu tiên của tuần!') + '</small></div><a class="nt-nut nt-nut-xanh" href="' + esc(linkHoc()) + '">Học ngay</a></div>';
       }
       html += '<ol class="nt-td-ds">' + d.ds.map(function (r) {
         return '<li class="' + (r.la ? 'la' : '') + '"><span class="nt-td-so">' + (r.hang <= 3 && r.tuan > 0 ? ['🥇', '🥈', '🥉'][r.hang - 1] : r.hang) + '</span>' +
@@ -3510,7 +3511,7 @@
         '<div class="nt-hang-nut"><button type="button" class="nt-nut nt-nut-xanh" id="ntHbRuong"' + (hb.coTheNhan ? '' : ' disabled') + '>' +
         (hb.daNhan ? '✓ Đã mở rương hôm nay' : hb.coTheNhan ? '🎁 Mở rương đôi' : '🎁 Rương đôi (chưa đủ sao)') + '</button>' +
         '<button type="button" class="nt-nut" id="ntHbNhac"' + (hb.daNhac ? ' disabled' : '') + '>' + (hb.daNhac ? '✓ Đã nhắc bạn' : '📣 Nhắc bạn: 加油！') + '</button>' +
-        '<a class="nt-nut" href="' + esc((hocTiep && hocTiep.url) || '/') + '">Đi học</a></div>' +
+        '<a class="nt-nut" href="' + esc(linkHoc()) + '">Đi học</a></div>' +
         '<p class="nt-cn-nho"><button type="button" class="nt-link" id="ntHbHuy">Thôi kết đôi</button></p></div>';
     } else {
       html = '<div class="nt-cn-hb"><p class="nt-cn-to"><span lang="zh">学伴</span> xuébàn · Bạn học cặp đôi</p>' +
@@ -5428,7 +5429,7 @@
       (cy.rung ? '<p class="nt-c7-tb">🍂 Hôm qua em quên học nên cây rụng 1 bông — học hôm nay để cây nở lại nhé!</p>' : '') +
       (cy.chin ? '<div class="nt-hang-nut"><button type="button" class="nt-nut nt-nut-vang nt-nut-to" id="ntC7Thu">🍊 Thu hoạch quả vàng</button></div>'
         : cy.hocHom ? '<p class="nt-c7-tb">✅ Hôm nay em đã học — mai học tiếp để có bông thứ ' + Math.min(7, cy.n + 1) + '!</p>'
-        : '<div class="nt-hang-nut"><a class="nt-nut nt-nut-xanh nt-nut-to" href="' + esc((hocTiep && hocTiep.url) || '/') + '">📚 Học hôm nay</a></div>') + '</div>';
+        : '<div class="nt-hang-nut"><a class="nt-nut nt-nut-xanh nt-nut-to" href="' + esc(linkHoc()) + '">📚 Học hôm nay</a></div>') + '</div>';
     var b = $('#ntC7Thu', than);
     if (b) b.addEventListener('click', function () {
       b.disabled = true;
@@ -5519,7 +5520,7 @@
       if (d) doc(d.getAttribute('data-doc'), d.classList.contains('nt-hoi-loa') && hoi ? hoi.hienPy : null);
       var nk = e.target.closest('[data-nk-chung]');
       if (nk) { dongThiTran(); if (S.tham) veNha(); CN.chon = null; taiCN(); moBang('chung', nk.getAttribute('data-nk-chung')); }
-      if (e.target.closest('[data-nk-hoc]')) location.href = (hocTiep && hocTiep.url) || '/';
+      if (e.target.closest('[data-nk-hoc]')) location.href = linkHoc();
     });
     $('#ntThamVe').addEventListener('click', veNha);
     $('#ntThamTim').addEventListener('click', thaTim);

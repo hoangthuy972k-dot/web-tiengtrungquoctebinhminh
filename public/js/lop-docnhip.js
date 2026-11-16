@@ -3,7 +3,8 @@
    o "Tu tiep theo". Ca lop doc to tu theo nhip; het 4 nhip (hoac 8) tu dong sang tu ke.
    · Am thanh tong hop bang Web Audio, hen gio truoc tren dong ho cua AudioContext (lookahead) nen nhip deu
      ca khi trang ban; hinh (vong nhip, nhun, den) ap theo dung thoi diem am thanh phat.
-   · Tieng nhip (click, nhip 1 cao hon) va nhac nen (trong + bass + hop am C–Am–F–G, chay theo BPM) bat/tat rieng.
+   · Tieng nhip (click, nhip 1 cao hon) va nhac nen (chay theo BPM) bat/tat rieng. Hai dieu nhac (Cai dat san khau):
+     'pop' (trong + bass + hop am C–Am–F–G) va 'piano' (piano rai not hop am Am–F–C–G tren nen trong dance).
    · Doc mau: may doc tu o nhip 1 (DocZh — giong may chu neu co giao bat, khong thi giong trinh duyet),
      nua sau cua o nhip la luot ca lop doc.
    · Hai linh vat hai ben co nut "Chon hoc sinh": boc ngau nhien mot ban co mat (diem danh hom nay) tu danh
@@ -22,8 +23,12 @@
   ];
   // hop am moi tu (C – Am – F – G), nut goc MIDI + quang
   var HOP = [[48, [0, 4, 7]], [45, [0, 3, 7]], [41, [0, 4, 7]], [43, [0, 4, 7]]];
+  // dieu piano: Am – F – C – G; thu tu not rai moi nhip (4 not moc den, chi so vao bac hop am trai 2 quang)
+  var HOP_PIANO = [[45, [0, 3, 7]], [41, [0, 4, 7]], [48, [0, 4, 7]], [43, [0, 4, 7]]];
+  var RAI = [[0, 2, 3, 4], [5, 4, 3, 2], [1, 3, 4, 6], [5, 4, 2, 3]];
+  var DIEU = ['pop', 'piano'];
 
-  var P = { bpm: 100, nhip: true, nhac: true, mau: false, py: false, nghia: true, tiep: true, lv: true, tron: false, lap: false, beats: 4, so: 0, src: '' };
+  var P = { bpm: 100, nhip: true, nhac: true, dieu: 'pop', mau: false, py: false, nghia: true, tiep: true, lv: true, tron: false, lap: false, beats: 4, so: 0, src: '' };
   var S = {
     opt: null, goc: [], tu: [], i: 0, chay: false, xong: false, daChay: false, bo: 'all',
     ds: [], dsSrc: '', daGoi: {}, chon: [null, null], quay: [false, false]
@@ -51,6 +56,7 @@
     P.bpm = kep(Math.round(P.bpm), BPM_MIN, BPM_MAX);
     if (P.beats !== 8) P.beats = 4;
     if ([0, 10, 15, 20].indexOf(P.so) < 0) P.so = 0;
+    if (DIEU.indexOf(P.dieu) < 0) P.dieu = 'pop';
   }
   function luuPref() { ghiLS(PREF_KEY, P); }
   function spb() { return 60 / P.bpm; }
@@ -125,8 +131,36 @@
     not(busNhip, 'sine', dau ? 1568 : 1046, t, 0.06, dau ? 0.32 : 0.2);
     not(busNhip, 'square', dau ? 3136 : 2093, t, 0.015, dau ? 0.05 : 0.03);
   }
-  // nhac nen mot nhip: trong + hi-hat + bass + hop am (o dau tu) + arp nhe
+  // tieng phim dan: tam giac + boi am quang tam, tat nhanh
+  function phim(bus, f, t, dai, to) {
+    not(bus, 'triangle', f, t, dai, to);
+    not(bus, 'sine', f * 2, t, dai * 0.6, to * 0.35);
+  }
   function nhacNhip(t, b, w) {
+    if (P.dieu === 'piano') nhacPiano(t, b, w); else nhacPop(t, b, w);
+  }
+  // dieu piano soi dong: trong cai moi phach + vo tay 2/4 + hi-hat mo sau phach,
+  // bass nhay quang, piano rai not moc den theo hop am, cymbal o dau moi vong 4 tu
+  function nhacPiano(t, b, w) {
+    var d = spb(), hop = HOP_PIANO[w % HOP_PIANO.length], goc = hop[0], q = hop[1], nb = b % 4;
+    var bac = [0, q[1], q[2], 12, 12 + q[1], 12 + q[2], 24];
+    not(busNhac, 'sine', 150, t, 0.28, 0.6, 42);                                             // trong cai
+    if (nb === 1 || nb === 3) ti(busNhac, t, 0.14, 0.2, 'bandpass', 1500);                   // vo tay
+    ti(busNhac, t + d / 4, 0.025, 0.035, 'highpass', 9000);                                  // hi-hat dong
+    ti(busNhac, t + d / 2, 0.09, 0.08, 'highpass', 6500);                                    // hi-hat mo
+    ti(busNhac, t + d * 3 / 4, 0.025, 0.035, 'highpass', 9000);
+    not(busNhac, 'triangle', hz(goc - 12), t, d * 0.45, 0.28);                               // bass
+    not(busNhac, 'triangle', hz(goc), t + d / 2, d * 0.4, 0.2);
+    if (b === 0) {
+      q.forEach(function (x) { dem(busNhac, hz(goc + 12 + x), t, d * P.beats * 0.98, 0.025); });
+      if (w % 4 === 0) ti(busNhac, t, 1.2, 0.06, 'highpass', 5000);                          // cymbal
+    }
+    RAI[nb].forEach(function (k, j) {
+      phim(busNhac, hz(goc + 12 + bac[k]), t + j * d / 4, d * 0.7, j === 0 ? 0.12 : 0.08);
+    });
+  }
+  // dieu pop: trong + hi-hat + bass + hop am (o dau tu) + arp nhe
+  function nhacPop(t, b, w) {
     var d = spb(), hop = HOP[w % HOP.length], goc = hop[0], q = hop[1], nb = b % 4;
     if (nb === 0 || nb === 2) not(busNhac, 'sine', 140, t, 0.32, 0.55, 45);            // trong cai
     if (nb === 1 || nb === 3) { ti(busNhac, t, 0.16, 0.22, 'bandpass', 1800); not(busNhac, 'triangle', 220, t, 0.08, 0.08, 120); } // vo tay
@@ -638,6 +672,7 @@
         // bang cai dat san khau
         '<div class="dn-cai" hidden role="dialog" aria-label="Cài đặt sân khấu">' +
           '<div class="dn-cai-dau"><b>⚙ Sân khấu</b><button type="button" class="dn-btn dn-ic" id="dnCaiDong" aria-label="Đóng">✕</button></div>' +
+          '<div class="dn-cai-hang"><span>Điệu nhạc</span><div class="dn-chon"><button type="button" data-st="dieu" data-v="pop">🥁 Pop</button><button type="button" data-st="dieu" data-v="piano">🎹 Piano sôi động</button></div></div>' +
           '<div class="dn-cai-hang"><span>Mỗi từ đọc</span><div class="dn-chon"><button type="button" data-st="beats" data-v="4">4 nhịp</button><button type="button" data-st="beats" data-v="8">8 nhịp (2 lượt)</button></div></div>' +
           '<div class="dn-cai-hang"><span>Số từ</span><div class="dn-chon"><button type="button" data-st="so" data-v="0">Tất cả</button><button type="button" data-st="so" data-v="10">10</button><button type="button" data-st="so" data-v="15">15</button><button type="button" data-st="so" data-v="20">20</button></div></div>' +
           '<div class="dn-cai-hang"><span>Hiển thị</span><div class="dn-chon">' +

@@ -1036,12 +1036,20 @@
   }
 
   // Bai va phan nen hoc tiep: phan chua lam cua bai gan nhat; het thi sang bai sau
-  function nextLearnTarget() {
-    var last = getLastLesson();
+  // Bai da "luyen du" de len bai sau (co giao: "da luyen tap bai do nhieu lan thi tu day len bai tiep theo"):
+  // qua bai kiem tra cuoi bai (>=70%), HOAC da xong moi buoc tru toi da 1 buoc va buoc Luyen tap da dat.
+  function baiDaLuyenDu(lesson) {
+    var ps = pathStepsOf(lesson), xong = ps.filter(function (s) { return pathStepDone(lesson, s); }).length;
+    var fin = ps.filter(function (s) { return s.key === 'final'; })[0], game = ps.filter(function (s) { return s.key === 'game'; })[0];
+    if (fin && pathStepDone(lesson, fin)) return true;
+    return xong >= ps.length - 1 && (!game || pathStepDone(lesson, game));
+  }
+  function nextLearnTarget(goiY) {
+    var last = getLastLesson() || goiY || null;
     if (!last) return null;
-    // Theo thu tu lo trinh 7 buoc: buoc dau tien chua xong cua bai dang hoc
+    // Theo thu tu lo trinh 7 buoc: buoc dau tien chua xong cua bai dang hoc; bai da luyen du -> bai tiep theo
     var i = pathCurrentIndex(last.lesson);
-    if (i < pathStepsOf(last.lesson).length) return { levelId: last.levelId, lesson: last.lesson, step: pathStepsOf(last.lesson)[i], stepNo: i + 1 };
+    if (i < pathStepsOf(last.lesson).length && !baiDaLuyenDu(last.lesson)) return { levelId: last.levelId, lesson: last.lesson, step: pathStepsOf(last.lesson)[i], stepNo: i + 1 };
     var lessons = (APP_DATA.lessons && APP_DATA.lessons[last.levelId]) || [];
     var after = lessons.filter(function (l) { return l.number > last.lesson.number; }).sort(function (a, b) { return a.number - b.number; })[0];
     if (after) return { levelId: last.levelId, lesson: after, step: pathStepsOf(after)[0], stepNo: 1, isNext: true };
@@ -18508,7 +18516,18 @@
     var m = /[?&]hoc=([\w-]{1,60})(?:&|$)/.exec(location.search || '');
     if (!m) return;
     var buoc = (/[?&]buoc=([\w-]{1,20})(?:&|$)/.exec(location.search || '') || [])[1] || '';
+    var goi = (/[?&]goi=([\w-]{1,60})(?:&|$)/.exec(location.search || '') || [])[1] || ''; // doc truoc khi xoa ?… khoi dia chi
     try { history.replaceState(null, '', location.pathname + location.hash); } catch (e) { /* ignore */ }
+    // /?hoc=tiep (nut "Học kiếm sao" o nong trai): may tu chon bai — bai dang hoc chua xong thi hoc tiep bai do,
+    // bai da luyen du thi len bai sau. &goi=<bai> = bai gan nhat may chu biet (may moi chua co lich su hoc).
+    if (m[1] === 'tiep') {
+      var gi =goi ? lessonByUrl('/lessons/' + goi + '.html') : null;
+      var t = nextLearnTarget(gi && READY_LEVELS[gi.levelId] ? { levelId: gi.levelId, lesson: gi.lesson } : null);
+      if (!t) return; // chua hoc bai nao: o lai trang chu (the "Bắt đầu học")
+      writeJSON(LAST_LESSON_KEY, { levelId: t.levelId, url: t.lesson.fullPageUrl, uid: currentUserId() });
+      showLessonHub(t.levelId, t.lesson);
+      return;
+    }
     var info = lessonByUrl('/lessons/' + m[1] + '.html');
     if (!info || !READY_LEVELS[info.levelId]) return;
     writeJSON(LAST_LESSON_KEY, { levelId: info.levelId, url: info.lesson.fullPageUrl, uid: currentUserId() });

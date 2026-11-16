@@ -540,7 +540,7 @@ body.o-thi-tran .nt-zoom, body.o-thi-tran .nt-thu-het { display: none !important
 .nt-tt-luoi {
   display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); column-gap: 40px; row-gap: 12px;
   max-width: 1240px; margin: 0 auto; padding: 0 40px;
-  background-color: #d9c7a5; background-image: url('/images/farm/duong.svg?v=2'); background-size: 48px 48px;
+  background-color: #fbf2dc; background-image: url('/images/farm/duong-sang.svg?v=1'); background-size: 56px 56px;
   overflow: hidden;
   border: 4px solid var(--vien); border-radius: 22px; box-shadow: 0 8px 0 rgba(43, 29, 58, 0.35);
 }
@@ -608,7 +608,7 @@ body.o-thi-tran .nt-zoom, body.o-thi-tran .nt-thu-het { display: none !important
 .nt-tt-quang {
   display: flex; justify-content: center; align-items: flex-end; gap: 6px; flex-wrap: nowrap; overflow: hidden;
   max-width: 1240px; margin: 0 auto 14px; padding: 10px 14px 6px;
-  background-color: #d9c7a5; background-image: url('/images/farm/duong.svg?v=2'); background-size: 48px 48px;
+  background-color: #fbf2dc; background-image: url('/images/farm/duong-sang.svg?v=1'); background-size: 56px 56px;
   border: 4px solid var(--vien); border-radius: 22px; box-shadow: 0 6px 0 rgba(43, 29, 58, 0.35);
 }
 .nt-tt-quang:empty { display: none; }

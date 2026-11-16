@@ -5085,14 +5085,22 @@
       (S.st && CH.conQua > 0 && !$('#ntChuHan').classList.contains('het'));
     c.hidden = !co;
   }
-  // Link "Học kiếm sao" -> bai em dang hoc (lay tu /api/farm/on), khong co thi trang hoc
+  // Link "Học kiếm sao" -> trang LO TRINH bai hoc (co giao: khong mo thang trang bai day du).
+  // /?hoc=tiep: app.js tu chon bai — bai dang hoc chua xong thi hoc tiep, da luyen du thi len bai sau;
+  // &goi = bai gan nhat may chu biet (may moi chua co lich su); &tu=nt -> trang hoc hien nut "🏡 Về nông trại".
+  function linkHoc() {
+    var m = /\/lessons\/([\w-]+)\.html/.exec((hocTiep && hocTiep.url) || '');
+    return '/?hoc=tiep' + (m ? '&goi=' + m[1] : '') + '&tu=nt';
+  }
   function datLinkHoc() {
     var a = $('#ntHocCta');
     if (!a) return;
-    if (hocTiep && hocTiep.url) { a.href = hocTiep.url; if (hocTiep.nguon) a.title = 'Học tiếp: ' + hocTiep.nguon; return; }
+    a.href = linkHoc();
+    if (hocTiep && hocTiep.url) { if (hocTiep.nguon) a.title = 'Học tiếp: ' + hocTiep.nguon; return; }
     goi('/api/farm/on').then(function (d) {
       hocTiep = hocTiep || { url: d.gan || (d.urls || [])[0] || '', nguon: (d.nguon || '').replace(/^Ôn từ /, '') };
-      if (hocTiep.url) { a.href = hocTiep.url; if (hocTiep.nguon) a.title = 'Học tiếp: ' + hocTiep.nguon; }
+      a.href = linkHoc();
+      if (hocTiep.nguon) a.title = 'Học tiếp: ' + hocTiep.nguon;
     }, function () {});
   }
 
@@ -5294,7 +5302,7 @@
         '<div class="nt-tdh-thanh"><i style="width:' + Math.round(t.em / tong * 100) + '%"></i></div>' +
         '<div class="nt-tdh-so"><span><b>' + t.em + '</b> ⭐ em</span><span>' + esc(t.ban.ten) + ' <b>' + t.banSao + '</b> ⭐</span></div>' +
         '<p>' + (t.em > t.banSao ? 'Em đang dẫn trước — giữ vững nhé!' : t.em < t.banSao ? 'Bạn đang dẫn — học thêm vài bài để vượt lên!' : 'Đang hoà — ai học tiếp sẽ dẫn trước!') + '</p>' +
-        '<a class="nt-nut nt-nut-xanh nt-nut-to" href="' + esc((hocTiep && hocTiep.url) || '/') + '">📚 Học kiếm sao</a></div>';
+        '<a class="nt-nut nt-nut-xanh nt-nut-to" href="' + esc(linkHoc()) + '">📚 Học kiếm sao</a></div>';
       than.innerHTML = html; return;
     }
     if (t && t.tt === 'cho') {
@@ -5580,7 +5588,7 @@
     dangKy: function (loai, fn) { NGOAI[loai] = fn; },
     batDauDat: batDauDat, datDuoc: datDuoc, rong: rong, xgCua: xgCua, moNoi: moNoi, dongNoi: dongNoi, duLieuBanDo: duLieuBanDo, bayGio: bayGio,
     veBanDo: veBanDo, hangPx: hangPx, huyBac: huyBac, bacCua: bacCua, xpCap: xpCap, lenCapCu: null,
-    fx: FX, moiBaiHoc: function () { return (hocTiep && hocTiep.url) || '/'; },
+    fx: FX, moiBaiHoc: function () { return linkHoc(); },
     sauBang: [], // ham goi sau moi lan ve 1 bang (bangDang) — nut ❓ + huong dan lan dau
     sauVe: [], // ham goi sau moi lan ve lai ban do (innerHTML thay het)
     nhip: [],  // ham goi moi giay

@@ -10,6 +10,8 @@
   }
   if(!window.DocZh&&!document.querySelector('script[src*="/js/doc-zh.js"]')) nap('doc-zh.js');
   if(!window.PinyinCheDo&&!document.querySelector('script[src*="/js/pinyin-che-do.js"]')) nap('pinyin-che-do.js','pcd-script');
+  // Di tu nong trai sang (Học kiếm sao) -> nut "Về nông trại"
+  if(!document.querySelector('script[src*="/js/ve-nong-trai.js"]')) nap('ve-nong-trai.js');
 })();
 // ══════════════════════════════════════════
 // AUDIO (Web Speech API — không có file mp3 thật)

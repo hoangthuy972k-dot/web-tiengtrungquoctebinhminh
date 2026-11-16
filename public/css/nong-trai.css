@@ -2634,3 +2634,26 @@ body:not(.nt-ng) .nt-vat:not(.phang)::before {
   border-radius: 50%; pointer-events: none; z-index: -1;
   background: radial-gradient(closest-side, rgba(58, 44, 20, 0.26), rgba(58, 44, 20, 0.1) 60%, transparent);
 }
+
+/* ---------- phong to vat pham ×2…×5 (2026-11-16) ---------- */
+.nt-pt-mo { align-self: flex-start; background: #ffe08a; }
+.nt-pt-luoi { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 8px; }
+.nt-pt-o {
+  display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 8px 6px;
+  border-radius: 14px; border: 3px solid var(--vien); background: #fff8e6; box-shadow: 0 3px 0 var(--vien);
+  font: inherit; color: var(--chu); cursor: pointer; transition: transform 0.1s, box-shadow 0.1s;
+}
+.nt-pt-o:not(:disabled):hover { transform: translateY(-2px); background: #ffeeb8; }
+.nt-pt-o:not(:disabled):active { transform: translateY(2px); box-shadow: 0 1px 0 var(--vien); }
+.nt-pt-o b { font-size: 1.35rem; font-weight: 900; line-height: 1; }
+.nt-pt-o span { font-size: 0.78rem; font-weight: 700; color: var(--mo); }
+.nt-pt-o em { font-style: normal; font-weight: 800; font-size: 0.86rem; display: inline-flex; align-items: center; gap: 3px; }
+.nt-pt-o em img, .nt-pt-gt img { width: 18px; height: 18px; }
+.nt-pt-o small { font-size: 0.72rem; font-weight: 700; color: var(--do); }
+.nt-pt-o.dang { background: #d8f5c4; cursor: default; }
+.nt-pt-o.nho { background: #f1ece2; }
+.nt-pt-o:disabled { opacity: 0.6; cursor: not-allowed; box-shadow: 0 2px 0 var(--vien); }
+.nt-pt-chu { font-size: 0.82rem; }
+/* vat da phong to: bong bong, giot nuoc, thanh thoi gian giu co vua mat (khong to theo vat) */
+.nt-vat.pt .nt-bong { width: calc(58% / var(--z, 1)); top: calc(-34% / var(--z, 1)); }
+.nt-vat.pt .nt-thoi { left: calc(50% - 38% / var(--z, 1)); right: calc(50% - 38% / var(--z, 1)); }

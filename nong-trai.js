@@ -434,9 +434,34 @@ function traThuongCap(f) {
 
 // Nha may che bien dat tren nong trai: vat 'xg-<ma>' rong 2x2 (nong-trai-xuong.js)
 const xgCua = (k) => (/^xg-/.test(String(k)) && XuongCat.XUONG[String(k).slice(3)] ? String(k).slice(3) : '');
-function rong(o) {
+function rongGoc(o) {
   if (o.k === 'nha' || o.k === 'kho' || xgCua(o.k)) return 2;
   return (TT[o.k] && TT[o.k].w) || 1;
+}
+// o.z = he so phong to (2..5) mua bang xu: vat chiem (rong goc x z) o moi chieu
+function rong(o) { return rongGoc(o) * (o.z > 1 ? o.z : 1); }
+
+// Phong to vat pham (2026-11-16, co giao): cham vat -> "Phong to" x2 x3 x4 x5, tra xu.
+// Gia 1 nac = gia mon x2 (mon dat, >= 1000 xu) hoac x3 (mon re); len nhieu nac thi tra theo so nac tang them.
+// Mon khong ban (qua doc quyen) tinh gia goc = diem dep x 10 xu. Thu nho mien phi, khong hoan xu.
+// (public/js/nong-trai.js tinh y het de hien gia — sua o day thi sua ca ben do)
+const PT_TOI_DA = 5;
+function phongToDuoc(o) {
+  if (!o || o.k === 'o' || o.k === 'nha' || o.k === 'kho' || /^rao/.test(o.k)) return false;
+  if (TT[o.k]) return !TT[o.k].phang;
+  return !!(CON[o.k] || xgCua(o.k));
+}
+function giaGocXu(o) {
+  const xg = xgCua(o.k), tt = TT[o.k], con = CON[o.k];
+  let g = 0;
+  if (xg) g = XuongCat.XUONG[xg].xu || 0;
+  else if (con) g = con.sao * XU_MOI_SAO;
+  else if (tt) g = tt.xu || (tt.sao ? tt.sao * XU_MOI_SAO : (tt.dep || 10) * 10);
+  return Math.max(20, g);
+}
+function giaPhongTo(o, z) {
+  const g = giaGocXu(o);
+  return g * (g >= 1000 ? 2 : 3) * Math.max(0, z - (o.z > 1 ? o.z : 1));
 }
 
 function nongTraiMoi() {
@@ -473,8 +498,8 @@ function diemDep(f) {
   f.o.forEach((o) => {
     if (o.k === 'nha') d += NHA[o.n || 1].dep;
     else if (o.k === 'kho') d += KHO.dep;
-    else if (TT[o.k]) d += TT[o.k].dep;
-    else if (xgCua(o.k)) d += XuongCat.DEP;
+    else if (TT[o.k]) d += TT[o.k].dep * (o.z > 1 ? o.z : 1);
+    else if (xgCua(o.k)) d += XuongCat.DEP * (o.z > 1 ? o.z : 1);
   });
   return d;
 }
@@ -655,6 +680,8 @@ const MO_TN = {
   cg: { lv: 40, zh: '专家任务', vn: 'Nhiệm vụ chuyên gia', gt: 'Mỗi tuần một thử thách khó: 10 câu từ bài em đã học, nhiều ngữ pháp, xếp câu, nhiều lựa chọn hơn, không pinyin. Đúng từ 8 câu được hạt giống quý, xu và đỉnh đồng chuyên gia.' },
   le: { lv: 50, zh: '农场节', vn: 'Lễ hội nông trại', gt: 'Mỗi tháng em mở một lễ hội 2 ngày ở nông trại mình. Bạn cùng lớp sang dự, trả lời 1 câu từ bài của bạn ấy là vào hội — mỗi khách em được xu, đủ 5 khách được hạt giống quý.' },
   ht: { lv: 60, zh: '师徒', vn: 'Kèm học trò', gt: 'Nhận kèm tối đa 3 bạn cấp thấp hơn (cấp ≤ 40). Mỗi ngày gửi một lời khuyên học tập; hôm nào học trò học đủ 20 sao thì cả thầy lẫn trò cùng có thưởng. Trò không học thì không có thưởng.' },
+  // them 2026-11-16 (thue nong trai) — xem nong-trai-thue.js
+  thue: { lv: 10, zh: '纳税', vn: 'Thuế nông trại', gt: 'Nông trại lớn đóng một khoản thuế nhỏ mỗi tuần: thuế tài sản 财产税 khi tài sản vượt mức miễn thuế (5000 + 600 × cấp) và thuế thu nhập 所得税 khi bán hàng hơn 2000 xu/tuần. Mỗi ngày học từ 20 sao giảm 10% (tối đa 50%), ôn “Hôm nay em ôn gì” từ 4 ngày giảm thêm 20%. Thuế không quá 10% số xu, không bao giờ lấy đồ — tiền vào Quỹ thị trấn để xây công trình và trợ cấp bạn khó khăn.' },
 };
 // Giai dau thi dua theo cap nong trai
 const GIAI = [
@@ -894,6 +921,7 @@ module.exports = function ganNongTrai(app, d) {
   let xuongMod = null; // nong-trai-xuong.js (gan o cuoi)
   let tinMod = null;   // nong-trai-tin.js (gan o cuoi)
   let qtMod = null;    // nong-trai-tuthien.js (gan o cuoi)
+  let thueMod = null;  // nong-trai-thue.js (gan o cuoi)
   const FILE = path.join(d.DATA_DIR, 'farms.json');
   const khoa = new Map(); // userId -> Promise (xu ly lan luot tung nguoi)
   const suKienHook = []; // (f, ten su kien, so) — cot truyen dem viec
@@ -994,7 +1022,15 @@ module.exports = function ganNongTrai(app, d) {
     const toiDa = toiDaBan(homNay, lvTuXp(f.xp));
     return { toiDa, con: Math.max(0, toiDa - daBanHomNay(f)), homNay };
   }
-  function ghiBanNgay(f, xu) { f.banNgay = { d: d.vnDayKey(), xu: daBanHomNay(f) + xu }; }
+  function ghiBanNgay(f, xu) { f.banNgay = { d: d.vnDayKey(), xu: daBanHomNay(f) + xu }; ghiThuNhap(f, xu); }
+  // Thu nhap tu BAN HANG trong tuan VN (tinh thue thu nhap — nong-trai-thue.js): giu tuan nay + tuan truoc
+  function ghiThuNhap(f, xu) {
+    xu = Math.round(Number(xu) || 0);
+    if (xu <= 0) return;
+    const w = d.vnWeekKey();
+    if (!f.thn || f.thn.w !== w) f.thn = { w, n: 0, tw: f.thn ? f.thn.w : '', tn: f.thn ? f.thn.n || 0 : 0 };
+    f.thn.n += xu;
+  }
   // Nhiem vu hom nay: viec hoc + viec nong trai (mo theo cap); du 3 viec / du het -> nhan thuong
   // Muc tieu nhiem vu theo bac (cap cao: muc tieu lon hon, thuong lon hon) — bac 0–2 giu nguyen nhu cu
   const NV_BAC = [
@@ -1291,6 +1327,7 @@ module.exports = function ganNongTrai(app, d) {
       const toiDa = toiDaBan(homNay, lv), da = daBanHomNay(f);
       if (da + tien > toiDa) throw loi('Hạn mức bán cho cửa hàng hôm nay còn ' + Math.max(0, toiDa - da) + ' xu. Học thêm để mở rộng: mỗi sao học = +' + BAN_MOI_SAO + ' xu hạn mức!');
       f.banNgay = { d: ngay, xu: da + tien };
+      ghiThuNhap(f, tien);
       f.kho[k] -= n;
       if (!f.kho[k]) delete f.kho[k];
       them.xu = tien;
@@ -1348,11 +1385,38 @@ module.exports = function ganNongTrai(app, d) {
     } else if (a === 'cat') {
       const o = timO();
       if (o.k === 'nha' || o.k === 'kho') throw loi('Không cất được nhà.');
+      if (o.z > 1) throw loi('Vật đã phóng to không cất vào túi được — thu nhỏ về cỡ gốc trước (bấm vào vật → Phóng to).');
       if (o.k === 'o' && o.c) throw loi('Thu hoạch xong mới cất ô ruộng được.');
       if (CON[o.k] && o.h) throw loi(o.h > now ? 'Đợi con vật làm xong sản phẩm đã.' : 'Thu sản phẩm trước đã.');
       if (xgCua(o.k) && f.xuong && f.xuong.b && f.xuong.b[xgCua(o.k)] && (f.xuong.b[xgCua(o.k)].q || []).length) throw loi('Nhà máy đang có mẻ hàng — đợi xong và thu hàng rồi mới cất được.');
       f.o = f.o.filter((x) => x !== o);
       f.tui[o.k] = (f.tui[o.k] || 0) + 1;
+    } else if (a === 'phongto') {
+      const o = timO();
+      if (!phongToDuoc(o)) throw loi('Món này không phóng to được.');
+      const z = Number(b.z), cu = o.z > 1 ? o.z : 1;
+      if (!Number.isInteger(z) || z < 1 || z > PT_TOI_DA) throw loi('Cỡ phóng to chưa hợp lệ.');
+      if (z === cu) throw loi('Vật đang ở cỡ này rồi.');
+      const w = rongGoc(o) * z, K = DAT[f.dat];
+      if (w > K.w || w > K.h) throw loi('Đất chưa đủ rộng cho cỡ ×' + z + ' — mở rộng đất trước nhé.');
+      // cho dat moi: gan cho cu nhat (giu tam vat), khong de len vat khac
+      const r0 = rong(o), cx = o.x + r0 / 2, cy = o.y + r0 / 2;
+      let cho = null, gan = Infinity;
+      for (let y = 0; y + w <= K.h; y++) {
+        for (let x = 0; x + w <= K.w; x++) {
+          const kc = Math.abs(x + w / 2 - cx) + Math.abs(y + w / 2 - cy) - (x === o.x && y === o.y ? 0.25 : 0);
+          if (kc < gan && datDuoc(f, x, y, w, o.id)) { gan = kc; cho = { x, y }; }
+        }
+      }
+      if (!cho) throw loi('Không còn khoảng trống ' + w + '×' + w + ' ô cho cỡ ×' + z + ' — dời bớt đồ hoặc mở rộng đất nhé.');
+      if (z > cu) {
+        const gia = giaPhongTo(o, z);
+        if (f.xu < gia) throw loi('Cần ' + gia + ' xu để phóng to ×' + z + ' — em đang có ' + f.xu + ' xu.');
+        f.xu -= gia;
+        them.xp += Math.min(50, 5 * (z - cu));
+      }
+      o.x = cho.x; o.y = cho.y;
+      if (z > 1) o.z = z; else delete o.z;
     } else if (a === 'morong') {
       const sau = DAT[f.dat + 1];
       if (!sau) throw loi('Đất đã rộng tối đa.');
@@ -1390,6 +1454,7 @@ module.exports = function ganNongTrai(app, d) {
       f.don.x[i] = 1;
       them.xu = ds[i].xu;
       f.xu += them.xu;
+      ghiThuNhap(f, them.xu);
       them.xp += ds[i].xp;
     } else if (a === 'sap') {
       // bay nong san len sap: hang roi kho ngay (khong ban 2 lan)
@@ -1504,6 +1569,7 @@ module.exports = function ganNongTrai(app, d) {
       Object.keys(dd.can).forEach((x) => { f.kho[x] -= dd.can[x]; if (!f.kho[x]) delete f.kho[x]; });
       dd.xong = true;
       f.xu += dd.xu;
+      ghiThuNhap(f, dd.xu);
       them.xu += dd.xu;
       them.xp += 5;
     } else if (a === 'doisao') {
@@ -2353,7 +2419,7 @@ module.exports = function ganNongTrai(app, d) {
     res.json({
       ten: ten[id] || '', lv: lvTuXp(f.xp), dep: diemDep(f), tim: f.tim || 0, kich: DAT[f.dat], now, hv: svb.total || 0,
       // chi gui hinh dang nong trai + sap hang, khong gui xu / kho
-      o: f.o.map((o) => ({ id: o.id, k: o.k, x: o.x, y: o.y, n: o.n, c: o.c, h: o.h, t: o.t })),
+      o: f.o.map((o) => ({ id: o.id, k: o.k, x: o.x, y: o.y, n: o.n, c: o.c, h: o.h, t: o.t, z: o.z })),
       sap: sapHien(f.sap), av: f.av || null, xg: xuongMod ? xuongMod.xgTom(f) : {}, nc: xuongMod ? xuongMod.ncTom(f, false) : [],
       daTim: fm.tham.d === ngay && fm.tham.ids.indexOf(id) >= 0,
       daChao: !!(fm.chao && fm.chao.d === ngay && fm.chao.ids.indexOf(id) >= 0),
@@ -2463,14 +2529,15 @@ module.exports = function ganNongTrai(app, d) {
         lv: lvTuXp(f.xp), dep: diemDep(f), tim: f.tim || 0, kich: DAT[f.dat], sap: (f.sap || []).length, av: f.av || null,
         // lo dat tren thi tran: co vang trai so 1 + ruy bang nong trai dep cua tuan (chi them truong, khong doi gi khac)
         coVang: thanhTich(f).coVang, ruy: thanhTich(f).ruy,
-        o: f.o.map((o) => ({ id: o.id, k: o.k, x: o.x, y: o.y, n: o.n, c: o.c, h: o.h, t: o.t })),
+        o: f.o.map((o) => ({ id: o.id, k: o.k, x: o.x, y: o.y, n: o.n, c: o.c, h: o.h, t: o.t, z: o.z })),
       });
       return x;
     }).sort((a, b) => (b.dep || 0) - (a.dep || 0) || (b.lv || 0) - (a.lv || 0) || a.ten.localeCompare(b.ten, 'vi'));
     const [ct, cv] = await Promise.all([chung.ctLop(lop.id), chung.coVuLop(lop.id, req.user.id)]);
     const diem = ds.filter((x) => x.co).reduce((t, x) => t + (x.dep || 0) + (x.tuan || 0), 0) + 150 * ct.xay.length + (await chung.diemThem(lop.id));
     const dh = await chung.danhHieuLop(lop.id, diem);
-    res.json({ lop: lop.ten, lopId: lop.id, cuaEm: !!(lopEm && lopEm.id === lop.id), now: Date.now(), ds, ct, covu: cv, diem, cap: dh.cap, hangTuanTruoc: dh.hangTuanTruoc, yeuMen: dh.yeuMen, loiChu: dh.loiChu });
+    const quy = thueMod ? await thueMod.tomQuy('lop:' + lop.id, req.user.id).catch(() => null) : null;
+    res.json({ lop: lop.ten, lopId: lop.id, cuaEm: !!(lopEm && lopEm.id === lop.id), now: Date.now(), ds, ct, covu: cv, diem, cap: dh.cap, hangTuanTruoc: dh.hangTuanTruoc, yeuMen: dh.yeuMen, loiChu: dh.loiChu, quy });
   }));
 
   /* ---- Bang "Can mua": dang nhu cau, ban cho ban dang can ---- */
@@ -2527,6 +2594,7 @@ module.exports = function ganNongTrai(app, d) {
       fm.kho[c.k] -= c.n;
       if (!fm.kho[c.k]) delete fm.kho[c.k];
       fm.xu += c.gia;
+      ghiThuNhap(fm, c.gia);
       fm.xp += 2;
       fc.kho[c.k] = (fc.kho[c.k] || 0) + c.n;
       fc.can = fc.can.filter((x) => x !== c);
@@ -2607,6 +2675,7 @@ module.exports = function ganNongTrai(app, d) {
       fb.xp += 1;
       fs.sap = fs.sap.filter((x) => x !== o);
       fs.xu += gia;
+      ghiThuNhap(fs, gia);
       fs.xp += 2;
       ghiNk(fs, { ai: me, l: 'mua', k: o.k, n: o.n, xu: gia });
       await ghi(id, fs);
@@ -2781,7 +2850,7 @@ module.exports = function ganNongTrai(app, d) {
   });
   require('./nong-trai-cho')(app, d, {
     doc, ghi, lanLuot, loi, traLoi, trangThai, ghiNk, docNhieu, thiTruong, giaSap, boNhoCongDong, SP, CA, CAY, HANG, LUONG, LUONG_PY,
-    hanMuc, ghiBanNgay, lvTuXp, MO_TN, BAN_MOI_SAO,
+    hanMuc, ghiBanNgay, ghiThuNhap, lvTuXp, MO_TN, BAN_MOI_SAO,
   }, chung);
   // Thi dua giua cac nong trai + vuon tu kho + co thuong + cay cham chi
   thiDua = require('./nong-trai-thidua')(app, d, {
@@ -2791,7 +2860,7 @@ module.exports = function ganNongTrai(app, d) {
   // Kinh te nong trai 2026-11-13: ban do phieu luu (cau hoi theo vung dat), cho nong san + tiem rieng + dau gia,
   // nha may che bien + nhan cong + xuat khau sang cac vung dat
   const hKt = {
-    doc, ghi, lanLuot, haiLuot, loi, traLoi, trangThai, ghiNk, docNhieu, thiTruong, hanMuc, ghiBanNgay, lvTuXp, saoHoc, taiCongDong, boNhoCongDong,
+    doc, ghi, lanLuot, haiLuot, loi, traLoi, trangThai, ghiNk, docNhieu, thiTruong, hanMuc, ghiBanNgay, ghiThuNhap, lvTuXp, saoHoc, taiCongDong, boNhoCongDong,
     tuHocCua, boKtbc, chonKt, taoCau, cauDung, chamCau, onCau, ketQuaCau, ghiOn, thuRuong, nhatCon, donHomNay, moQua, vaoHook, ttThem, banCungLop,
     MO_TN, SP, CAY, CON, TT, CA, MON, HANG, LUONG, LUONG_PY, CON_TOI_DA, CAY_HIEM, BAN_MOI_SAO, Ktbc, CauHoi, CATALOG, NHOM_TT: null, datDuoc, rong, suKien, suKienHook, TIN_BAN_NGAY, TIN_NGAY,
     // cap cao 31–100 (nong-trai-capcao.js)
@@ -2809,6 +2878,8 @@ module.exports = function ganNongTrai(app, d) {
   qtMod = require('./nong-trai-tuthien')(app, d, hKt, chung);
   // Cap cao: trang Cap do & phan thuong, nha kinh, nhiem vu chuyen gia, le hoi nong trai, kem hoc tro
   require('./nong-trai-capcao')(app, d, hKt);
+  // Thue nong trai: thue tai san + thu nhap moi tuan cho nong trai lon (cap >= 10) -> Quy thi tran
+  thueMod = require('./nong-trai-thue').gan(app, d, hKt, chung);
   async function initTatCa() { await initTable(); await chung.initTable(); }
 
   // _thuCau: chi de chay tools/thu-cau-nong-trai.js (kiem tra cau hoi chi thuoc bai em da hoc / duoc giao)
@@ -2816,4 +2887,4 @@ module.exports = function ganNongTrai(app, d) {
 };
 
 // Cho cong cu thu (tools/thu-kinh-te-nong-trai.js): ham thuan cua vong quay
-module.exports._thuVq = { quayO, VQ_O, VQ_X2_O, SP, CAY, CON, TT, thuRuong, hangChuotAn };
+module.exports._thuVq = { quayO, VQ_O, VQ_X2_O, SP, CAY, CON, TT, NHA, DAT, thuRuong, hangChuotAn };

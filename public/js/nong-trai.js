@@ -272,10 +272,68 @@
   function xgCua(k) { var m = /^xg-(.+)$/.exec(String(k)); return m && S.cat.XG && S.cat.XG.XUONG[m[1]] ? m[1] : ''; }
   // hang doi cua nha may tren ban do dang xem (nha em: st.kt.xg; nha ban: tham.xg)
   function xgHang(bk) { var d = S.tham ? S.tham.xg : (S.st && S.st.kt && S.st.kt.xg); return (d && d[bk]) || []; }
-  function rong(o) {
+  function rongGoc(o) {
     if (o.k === 'nha' || o.k === 'kho' || xgCua(o.k)) return 2;
     var t = S.cat.TT[o.k];
     return (t && t.w) || 1;
+  }
+  // o.z: he so phong to da mua (2..5) — vat chiem (rong goc x z) o
+  function rong(o) { return rongGoc(o) * (o.z > 1 ? o.z : 1); }
+  // Phong to vat pham — tinh y het may chu (nong-trai.js: phongToDuoc / giaGocXu / giaPhongTo)
+  function phongToDuoc(o) {
+    if (!o || o.k === 'o' || o.k === 'nha' || o.k === 'kho' || /^rao/.test(o.k)) return false;
+    var t = S.cat.TT[o.k];
+    if (t) return !t.phang;
+    return !!(S.cat.CON[o.k] || xgCua(o.k));
+  }
+  function giaGocXu(o) {
+    var xg = xgCua(o.k), t = S.cat.TT[o.k], con = S.cat.CON[o.k], g = 0;
+    if (xg) g = S.cat.XG.XUONG[xg].xu || 0;
+    else if (con) g = con.sao;
+    else if (t) g = t.xu || t.sao || (t.dep || 10) * 10;
+    return Math.max(20, g);
+  }
+  function giaPhongTo(o, z) {
+    var g = giaGocXu(o);
+    return g * (g >= 1000 ? 2 : 3) * Math.max(0, z - (o.z > 1 ? o.z : 1));
+  }
+  function nutPhongTo(o) {
+    if (S.tham || !phongToDuoc(o)) return '';
+    return '<button type="button" class="nt-nut nt-nut-nho nt-pt-mo" data-phong-to>🔍 Phóng to' + (o.z > 1 ? ' <small>(đang ×' + o.z + ')</small>' : '') + '</button>';
+  }
+  function ganNutPhongTo(o, el) {
+    var b = $('#ntNoi [data-phong-to]');
+    if (b) b.addEventListener('click', function () { moPhongTo(o, el); });
+  }
+  function moPhongTo(o, el) {
+    var cu = o.z > 1 ? o.z : 1, g = rongGoc(o), K = S.st.kich, xu = S.st.xu;
+    var m = tenMon(o.k, o.n), h = '';
+    for (var z = 1; z <= 5; z++) {
+      var w = g * z, vua = w <= K.w && w <= K.h, gia = giaPhongTo(o, z);
+      if (z === cu) { h += '<div class="nt-pt-o dang"><b>×' + z + '</b><span>' + w + '×' + w + ' ô</span><em>Đang dùng</em></div>'; continue; }
+      if (z === 1 && cu === 1) continue;
+      var lyDo = !vua ? 'Đất chưa đủ rộng' : (z > cu && xu < gia ? 'Thiếu ' + (gia - xu) + ' xu' : '');
+      h += '<button type="button" class="nt-pt-o' + (z < cu ? ' nho' : '') + '" data-z="' + z + '"' + (lyDo ? ' disabled' : '') + '><b>×' + z + '</b><span>' + w + '×' + w + ' ô</span>' +
+        (z > cu ? '<em>' + img('ic-xu') + ' ' + gia.toLocaleString('vi-VN') + '</em>' : '<em>Thu nhỏ · miễn phí</em>') +
+        (lyDo ? '<small>' + lyDo + '</small>' : '') + '</button>';
+    }
+    moNoi(el, '<div class="nt-noi-dau">' + img(trangThai(o).hinh) + htmlTen(m) + '</div>' +
+      '<p class="nt-noi-phu nt-pt-gt">Phóng to cho nông trại thêm nổi bật' + (S.cat.TT[o.k] || xgCua(o.k) ? ' — điểm đẹp nhân theo cỡ' : '') + '. Em đang có ' + img('ic-xu') + ' <b>' + xu.toLocaleString('vi-VN') + '</b> xu.</p>' +
+      '<div class="nt-pt-luoi">' + h + '</div>' +
+      '<p class="nt-noi-phu nt-pt-chu">Vật cần khoảng trống vừa cỡ mới (tự dời sang chỗ trống gần nhất). Thu nhỏ không hoàn lại xu.</p>', o.id);
+    $all('#ntNoi [data-z]').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var z = +b.getAttribute('data-z');
+        if (z < cu && !confirm('Thu nhỏ ' + m.vn + ' về ×' + z + '? Số xu đã trả để phóng to sẽ không được hoàn lại.')) return;
+        lam({ a: 'phongto', id: o.id, z: z }, el).then(function () {
+          dongNoi();
+          tieng(z > cu ? 'len' : 'mua');
+          bao(z > cu ? '🔍 ' + m.vn + ' đã to gấp ' + z + ' lần!' : 'Đã thu nhỏ ' + m.vn + ' về ×' + z + '.');
+          var moi = document.querySelector('.nt-vat[data-id="' + o.id + '"]');
+          if (moi && FX && z > cu) FX.mung(moi);
+        }, function () {});
+      });
+    });
   }
   function tenMon(k, n) {
     var c = S.cat;
@@ -348,10 +406,10 @@
   function htmlVat(o) {
     var T = S.o, w = rong(o), t = trangThai(o);
     var phang = o.k === 'o' || (S.cat.TT[o.k] && S.cat.TT[o.k].phang);
-    var cls = 'nt-vat nt-k-' + o.k + (phang ? ' phang' : '') + (t.loai ? ' tt-' + t.loai : '') + (S.chon === o.id ? ' chon' : '');
+    var cls = 'nt-vat nt-k-' + o.k + (phang ? ' phang' : '') + (o.z > 1 ? ' pt' : '') + (t.loai ? ' tt-' + t.loai : '') + (S.chon === o.id ? ' chon' : '');
     // nghieng: do phang (o ruong, duong) cung xep theo hang de ngon cay / ao khong de len do dung phia sau
     var h = '<button type="button" class="' + cls + '" data-id="' + o.id + '" style="left:' + o.x * T + 'px;top:' + o.y * T +
-      'px;width:' + w * T + 'px;height:' + w * T + 'px;z-index:' + (phang && !S.ng ? 1 : (o.y + w) * 10) + ';--lech:-' + ((o.id * 0.73) % 3).toFixed(2) + 's" aria-label="' + esc(tenMon(o.k, o.n).vn) + '">';
+      'px;width:' + w * T + 'px;height:' + w * T + 'px;z-index:' + (phang && !S.ng ? 1 : (o.y + w) * 10) + (o.z > 1 ? ';--z:' + o.z : '') + ';--lech:-' + ((o.id * 0.73) % 3).toFixed(2) + 's" aria-label="' + esc(tenMon(o.k, o.n).vn) + '">';
     // nghieng: phan "dung" (hinh, bong bong, thanh thoi gian) nam trong .nt-dung de dung thang tren mat dat nghieng
     if (S.ng) h += '<span class="nt-dung">';
     h += '<img class="nt-hinh" src="' + anh(t.hinh) + '" alt="" draggable="false">';
@@ -787,8 +845,9 @@
     var con = S.cat.CON[o.k], sp = S.cat.SP[con.sp];
     var html = '<div class="nt-noi-dau">' + img(o.k) + htmlTen(con) + '</div>' +
       '<p class="nt-noi-gio">' + img('sp-' + con.sp) + ' ' + esc(sp.vn) + ' <span lang="zh">' + esc(sp.zh) + '</span> sau <b data-con></b></p>' +
-      '<p class="nt-noi-phu">Nhấn giữ rồi kéo để dời chỗ</p>';
+      '<p class="nt-noi-phu">Nhấn giữ rồi kéo để dời chỗ</p>' + nutPhongTo(o);
     moNoi(el, html, o.id);
+    ganNutPhongTo(o, el);
     doc(con.zh);
     noiCua.capNhat = function () {
       var o2 = timTheoId(o.id);
@@ -820,9 +879,10 @@
     var m = o.k === 'o' && o.c ? S.cat.CAY[o.c] : tenMon(o.k, o.n);
     var catDuoc = !S.tham && (S.cat.TT[o.k] || xgCua(o.k));
     moNoi(el, '<div class="nt-noi-dau">' + img(t.hinh) + htmlTen(m) + '</div>' +
-      (S.cat.TT[o.k] ? '<p class="nt-noi-phu">Điểm đẹp +' + S.cat.TT[o.k].dep + '</p>' : '') +
+      (S.cat.TT[o.k] ? '<p class="nt-noi-phu">Điểm đẹp +' + S.cat.TT[o.k].dep * (o.z > 1 ? o.z : 1) + (o.z > 1 ? ' <small>(×' + o.z + ')</small>' : '') + '</p>' : '') +
       (t.xg ? '<p class="nt-noi-phu">' + (t.loai === 'xglam' ? '⚙ Đang chế biến ' + esc(S.cat.SP[t.r].vn.toLowerCase()) + ' <span lang="zh">' + esc(S.cat.SP[t.r].zh) + '</span>' : S.tham ? 'Nhà máy chế biến của bạn' : 'Nhà máy đang rảnh') + '</p>' : '') +
-      (catDuoc ? '<p class="nt-noi-phu">Nhấn giữ rồi kéo để dời chỗ · <button type="button" class="nt-link" data-cat-tui>Cất vào túi</button></p>' : ''), o.id);
+      (catDuoc ? '<p class="nt-noi-phu">Nhấn giữ rồi kéo để dời chỗ' + (o.z > 1 ? '' : ' · <button type="button" class="nt-link" data-cat-tui>Cất vào túi</button>') + '</p>' : '') + nutPhongTo(o), o.id);
+    ganNutPhongTo(o, el);
     var nutCat = $('#ntNoi [data-cat-tui]');
     if (nutCat) nutCat.addEventListener('click', function () {
       lam({ a: 'cat', id: o.id }).then(function () { dongNoi(); bao('Đã cất ' + m.vn + ' vào túi đồ (trong Kho).'); }, function () {});
@@ -3689,6 +3749,7 @@
     if (r && r.loiChu) dhs.push('⚔ 擂主 Lôi chủ tuần trước');
     dh.hidden = !dhs.length;
     dh.textContent = dhs.join(' · ');
+    if (window.NTX && NTX.veQuyTt) NTX.veQuyTt(r); // Quy thi tran + Nha hao tam (nong-trai-thue.js)
   }
   // Phan thuong thi tran (top tuan, yeu men, moc cap, co vu 7 ngay) — cham do tren nut Thi tran
   var TG = null;
@@ -3706,6 +3767,7 @@
       var chu = x.loai === 'tuan' ? ['🥇', '🥈', '🥉'][x.hang - 1] + ' Lớp em hạng ' + x.hang + ' tuần trước: <b>+' + x.xu + ' xu</b> + ' + esc(tenMon(x.mon).vn) + ' <span lang="zh">' + esc(tenMon(x.mon).zh) + '</span>'
         : x.loai === 'yeumen' ? '❤ Lớp em được yêu mến nhất (' + x.n + ' lượt cổ vũ): <b>+' + x.xu + ' xu</b>'
         : x.loai === 'ld' ? '⚔ Lớp em thắng lôi đài chữ Hán <span lang="zh">擂主</span>: <b>+' + x.xu + ' xu</b>'
+        : x.loai === 'trocap' ? '🎁 Trợ cấp tuần <span lang="zh">补助</span> từ Quỹ thị trấn: <b>+' + x.xu + ' xu</b>'
         : '🏯 Thị trấn lên <span lang="zh">' + esc(x.zh) + '</span> ' + esc(x.vn) + ' (' + x.d.toLocaleString('vi-VN') + ' điểm): <b>+' + x.xu + ' xu</b>' + (x.qua ? ' + hộp quà' : '');
       return '<li>' + (x.loai === 'tuan' ? img(x.mon) : '') + '<span>' + chu + '</span><button type="button" class="nt-mua" data-tgnhan="' + x.loai + '" data-cap="' + (x.cap || 0) + '">Nhận</button></li>';
     }).join('') + '</ul>';

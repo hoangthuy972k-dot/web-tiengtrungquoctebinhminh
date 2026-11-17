@@ -225,6 +225,14 @@ html.dn-open, html.dn-open body { overflow: hidden; }
   box-shadow: 0 0 24px rgba(120, 110, 255, 0.45);
 }
 .dn-tab-zh { font-family: 'Noto Serif SC', serif; font-weight: 900; }
+.dn-khoi-dau { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: calc(-1 * clamp(4px, 1.5vh, 16px)); }
+.dn-khoi-goi { color: var(--dn-mo); font-size: .88rem; font-weight: 700; }
+.dn-khoi-goi::before { content: ''; display: inline-block; width: 7px; height: 7px; margin-right: 8px; border-radius: 50%; background: #62f0c9; vertical-align: middle; }
+.dn-khoi-che {
+  min-height: 38px; padding: 6px 14px; border-radius: 10px; border: 1px solid rgba(98, 240, 201, 0.45);
+  background: rgba(40, 140, 140, 0.16); color: #bff8e8; font-size: .9rem; font-weight: 800; cursor: pointer;
+}
+.dn-khoi-che:hover { background: rgba(40, 140, 140, 0.28); }
 .dn-khoi-o {
   flex: 1; min-height: 0;
   display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr));

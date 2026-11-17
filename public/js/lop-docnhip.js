@@ -61,7 +61,7 @@
     var p = docLS(PREF_KEY, {}) || {};
     Object.keys(P).forEach(function (k) { if (p[k] != null && typeof p[k] === typeof P[k]) P[k] = p[k]; });
     P.bpm = kep(Math.round(P.bpm * 100) / 100, BPM_MIN, BPM_MAX);
-    if (P.beats !== 8) P.beats = 4;
+    if ([1, 2, 4, 8].indexOf(P.beats) < 0) P.beats = 4;
     if ([0, 10, 15, 20].indexOf(P.so) < 0) P.so = 0;
     if (DIEU.indexOf(P.dieu) < 0) P.dieu = 'pop';
     if (GIAO.indexOf(P.giao) < 0) P.giao = 'san';
@@ -162,7 +162,7 @@
     not(busNhac, 'triangle', hz(goc - 12), t, d * 0.45, 0.28);                               // bass
     not(busNhac, 'triangle', hz(goc), t + d / 2, d * 0.4, 0.2);
     if (b === 0) {
-      q.forEach(function (x) { dem(busNhac, hz(goc + 12 + x), t, d * P.beats * 0.98, 0.025); });
+      q.forEach(function (x) { dem(busNhac, hz(goc + 12 + x), t, d * 4 * 0.98, 0.025); });
       if (w % 4 === 0) ti(busNhac, t, 1.2, 0.06, 'highpass', 5000);                          // cymbal
     }
     RAI[nb].forEach(function (k, j) {
@@ -178,7 +178,7 @@
     ti(busNhac, t + d / 2, 0.035, 0.05, 'highpass', 8000);
     not(busNhac, 'triangle', hz(goc - 12 + (nb === 3 ? 7 : 0)), t, d * 0.5, 0.3);           // bass
     not(busNhac, 'triangle', hz(goc), t + d / 2, d * 0.3, 0.16);
-    if (b === 0) q.forEach(function (x) { dem(busNhac, hz(goc + 12 + x), t, d * P.beats * 0.98, 0.035); });
+    if (b === 0) q.forEach(function (x) { dem(busNhac, hz(goc + 12 + x), t, d * 4 * 0.98, 0.035); });
     not(busNhac, 'square', hz(goc + 24 + q[(b * 2 + 1) % 3]), t + d / 2, 0.09, 0.025);     // arp sau phach
   }
   function datTieng() {
@@ -272,8 +272,8 @@
     var c = viTri(), g = dauO(c + 0.12);
     dungHen(); hangDoi = [];
     sch.t = ac.currentTime + (g - c);
-    sch.b = 0;
-    if (sch.pha === 'doc') sch.w = S.i;
+    sch.b = 0; sch.n = 0;
+    if (sch.pha === 'doc') sch.w = P.beats < 4 ? dauNhom(S.i) : S.i;
     if (sch.t - ac.currentTime > 0.3) dauHieu('🎵 Chờ vào nhịp…', 'dem');
   }
   function phatFile(tuDau) {
@@ -449,15 +449,18 @@
     if (!sch) return;
     while (sch && sch.t < gio() + LOOK) {
       if (sch.pha === 'het') { hangDoi.push({ t: sch.t, pha: 'het' }); sch = null; break; }
-      var t = sch.t;
+      // n = so phach da doc ke tu dau (khong tinh dem vao): nhac va vong nhip di theo o nhip 4 phach,
+      // con tu thi doi sau moi P.beats phach (1, 2, 4 hoac 8)
+      var t = sch.t, n = sch.n || 0, doc = sch.pha === 'doc';
       if (coTieng) {
-        tiengNhip(t, sch.b % 4 === 0);
-        if (sch.pha === 'doc') nhacNhip(t, sch.b, sch.w);
+        tiengNhip(t, (doc ? n : sch.b) % 4 === 0);
+        if (doc) nhacNhip(t, n % 4, Math.floor(n / 4));
         else if (!coFile()) ti(busNhac, t, 0.04, 0.07, 'highpass', 7000);
       }
-      hangDoi.push({ t: t, pha: sch.pha, b: sch.b, w: sch.w });
+      hangDoi.push({ t: t, pha: sch.pha, b: sch.b, w: sch.w, n: n });
       sch.t += spb();
       sch.b++;
+      if (doc) sch.n = n + 1;
       if (sch.pha === 'dem') { if (sch.b >= 4) { sch.pha = 'doc'; sch.b = 0; } }
       else if (sch.b >= P.beats) {
         sch.b = 0; sch.w++;
@@ -504,7 +507,7 @@
   function nhun(el) { if (!el) return; el.classList.remove('nhun'); void el.offsetWidth; el.classList.add('nhun'); }
   function apDung(ev) {
     if (ev.pha === 'het') { ketThuc(); return; }
-    var nb = ev.b % 4;
+    var nb = (ev.pha === 'dem' ? ev.b : ev.n) % 4;
     $all('.dn-nhip').forEach(function (c, k) {
       c.classList.toggle('on', k === nb);
       c.classList.toggle('qua', k < nb);
@@ -523,7 +526,7 @@
     if (P.giao === 'khoi') veKhoi(ev);
     nhun($('.dn-zh'));
     var luot = P.beats === 8 ? (ev.b < 4 ? ' · lượt 1' : ' · lượt 2') : '';
-    if (P.mau) {
+    if (P.mau && P.beats >= 4) {      // doc mau can it nhat 4 phach: nua dau nghe, nua sau ca lop doc
       var nghe = ev.b < P.beats / 2;
       if (ev.b === 0) docMau(S.tu[S.i] && S.tu[S.i].zh);
       dauHieu(nghe ? '🔊 Nghe mẫu' : '📣 Cả lớp đọc!', nghe ? 'nghe' : 'doc');
@@ -541,20 +544,32 @@
     $all('.dn-nhip').forEach(function (c) { c.classList.remove('on', 'qua'); });
     $('.dn-san').classList.remove('dau');
     veKhoiTu();
-    $all('.dn-o').forEach(function (o, k) { o.className = 'dn-o' + (k === 0 ? ' qua' : ''); });
   }
 
   /* ================= giao dien khoi o ================= */
-  // Hang the nghia (tu dang doc + 4 tu ke, bam de nhay toi) va 4 o xep so le: moi nhip tu hien them vao mot o,
-  // o cua nhip hien tai sang; dem vao thi o hien so 3-2-1.
+  // Hang the nghia (tu dang doc + 4 tu ke, bam de nhay toi) va 4 o xep so le: moi phach hien them mot o,
+  // o cua phach hien tai sang; dem vao thi o hien so 3-2-1. Mot luot 4 o = 1 tu doc 4 lan (P.beats 4/8),
+  // 2 tu moi tu 2 o (P.beats 2) hoac 4 tu khac nhau (P.beats 1). Tu chia nhom theo so thu tu trong bo tu.
+  function tuMoiLuot() { return Math.max(1, 4 / P.beats); }
+  function dauNhom(i) { var m = tuMoiLuot(); return i - (i % m); }
+  function tuO(k) {          // so thu tu tu o o thu k (0-3) cua luot dang hien
+    var n = S.tu.length, j = P.beats >= 4 ? S.i : dauNhom(S.i) + Math.floor(k / P.beats);
+    if (j >= n) j = P.lap && n ? j % n : -1;
+    return j;
+  }
   function veKhoiTu() {
-    var v = S.tu[S.i], n = S.tu.length;
-    $all('.dn-o').forEach(function (o) {
-      var b = o.querySelector('b');
+    // dang dung: hien mo cac o tu dau luot toi het tu dang doc
+    var hien = P.beats >= 4 ? 1 : (S.i - dauNhom(S.i) + 1) * P.beats;
+    $all('.dn-o').forEach(function (o, k) {
+      var v = S.tu[tuO(k)], b = o.querySelector('b');
       b.textContent = v ? v.zh : '';
       b.className = v ? coChu(v.zh) : 'c1';
       o.querySelector('small').textContent = v && P.py ? (v.py || '') : '';
+      if (!S.chay) o.className = 'dn-o' + (k < hien ? ' qua' : '');
     });
+    var che = $('.dn-khoi-che');
+    if (che) che.textContent = P.beats === 1 ? '4 từ khác nhau' : P.beats === 2 ? '2 từ · mỗi từ 2 ô' : P.beats === 8 ? 'Đọc 8 lần' : 'Đọc 4 lần';
+    var n = S.tu.length;
     var h = '';
     for (var k = 0; k < Math.min(5, n); k++) {
       var j = S.i + k;
@@ -566,7 +581,8 @@
     $('.dn-khoi-tabs').innerHTML = h;
   }
   function veKhoi(ev) {
-    var nb = ev.b % 4, dem = ev.pha === 'dem';
+    var dem = ev.pha === 'dem';
+    var nb = dem ? ev.b % 4 : P.beats >= 4 ? ev.b % 4 : ((ev.w - dauNhom(ev.w)) * P.beats + ev.b) % 4;
     $all('.dn-o').forEach(function (o, k) {
       if (dem) {
         var b = o.querySelector('b');
@@ -696,6 +712,12 @@
     h.hidden = false;
     veNut();
     $('.dn-dung').hidden = true;
+  }
+  // doi so phach moi tu khi dang chay: doc lai tu nhom hien tai cho o va nhip khop
+  function doiBeats() {
+    if (S.chay) { S.i = P.beats < 4 ? dauNhom(S.i) : S.i; imDoc(); veTu(); chayLich(false); }
+    else veTu();
+    veNut();
   }
   function doiBpm(d) {
     P.bpm = kep(Math.round((P.bpm + d) * 100) / 100, BPM_MIN, BPM_MAX);
@@ -955,6 +977,8 @@
         '</div>' +
         '<div class="dn-khoi">' +
           '<div class="dn-khoi-tabs"></div>' +
+          '<div class="dn-khoi-dau"><span class="dn-khoi-goi">Theo nhịp · nhìn chữ đọc to</span>' +
+            '<button type="button" class="dn-khoi-che" title="Đổi: đọc 1 từ 4 lần / 2 từ / 4 từ khác nhau"></button></div>' +
           '<div class="dn-khoi-o" aria-hidden="true">' + new Array(5).join('<div class="dn-o"><b lang="zh"></b><small></small></div>') + '</div>' +
           '<div class="dn-khoi-cue" aria-live="polite"></div>' +
         '</div>' +
@@ -982,7 +1006,7 @@
               '<b class="dn-bpm2" id="dnBpm2"></b><button type="button" data-chinh="nhanh">+ 0.5</button><span class="dn-nho">nhịp/phút</span></div>' +
             '<div class="dn-chon"><label class="dn-bdau">Nhạc bắt đầu từ giây <input type="number" id="dnBdau" min="0" max="600" step="0.5" inputmode="decimal"></label></div>' +
             '<p class="dn-cai-meo">Bật <b>Tiếng nhịp</b>, bấm <b>Bắt đầu</b> rồi nghe: tiếng tích trùng phách nhạc là khớp. Chỉnh ngay khi đang chạy được; máy nhớ cài đặt cho file này.</p></div>' +
-          '<div class="dn-cai-hang"><span>Mỗi từ đọc</span><div class="dn-chon"><button type="button" data-st="beats" data-v="4">4 nhịp</button><button type="button" data-st="beats" data-v="8">8 nhịp (2 lượt)</button></div></div>' +
+          '<div class="dn-cai-hang"><span>Mỗi từ đọc</span><div class="dn-chon"><button type="button" data-st="beats" data-v="1">1 nhịp (4 từ khác nhau)</button><button type="button" data-st="beats" data-v="2">2 nhịp (2 từ)</button><button type="button" data-st="beats" data-v="4">4 nhịp</button><button type="button" data-st="beats" data-v="8">8 nhịp (2 lượt)</button></div></div>' +
           '<div class="dn-cai-hang"><span>Số từ</span><div class="dn-chon"><button type="button" data-st="so" data-v="0">Tất cả</button><button type="button" data-st="so" data-v="10">10</button><button type="button" data-st="so" data-v="15">15</button><button type="button" data-st="so" data-v="20">20</button></div></div>' +
           '<div class="dn-cai-hang"><span>Hiển thị</span><div class="dn-chon">' +
             '<button type="button" data-st="nghia">Nghĩa tiếng Việt</button><button type="button" data-st="tiep">Từ tiếp theo</button>' +
@@ -1033,6 +1057,7 @@
         if (v != null) P[k] = typeof P[k] === 'number' ? +v : v; else P[k] = !P[k];
         luuPref();
         if (k === 'tron' || k === 'so') { if (S.chay) tamDung(); apBoTu(); }
+        else if (k === 'beats') doiBeats();
         else { veTu(); veNut(); }
         if (k === 'dieu') {
           if (!coFile()) dungFile();
@@ -1040,6 +1065,10 @@
           if (P.dieu === 'rieng' && !file.buf && !file.dang) $('#dnFile').click();
         }
       });
+    });
+    $('.dn-khoi-che').addEventListener('click', function () {
+      P.beats = P.beats === 4 ? 2 : P.beats === 2 ? 1 : 4;
+      luuPref(); doiBeats();
     });
     $('.dn-khoi-tabs').addEventListener('click', function (e) {
       var t = e.target.closest('[data-i]');

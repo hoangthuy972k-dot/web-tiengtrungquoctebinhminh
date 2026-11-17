@@ -269,7 +269,7 @@ module.exports = function ganPhieuLuu(app, d, h, c) {
       f.hat[k] = (f.hat[k] || 0) + q.hat; ra.push({ loai: 'hat', k, n: q.hat });
     }
     if (q.hatquy) { const k = chon(h.CAY_HIEM); f.hat[k] = (f.hat[k] || 0) + q.hatquy; ra.push({ loai: 'hatquy', k, n: q.hatquy }); }
-    if (q.tt) { const k = chon(Object.keys(h.TT).filter((x) => h.TT[x].lv <= lv + 1 && !h.TT[x].doc)); f.tui[k] = (f.tui[k] || 0) + 1; ra.push({ loai: 'tt', k, n: 1 }); }
+    if (q.tt) { const k = chon(Object.keys(h.TT).filter((x) => h.TT[x].lv <= lv + 1 && !h.TT[x].doc && !h.TT[x].noel)); f.tui[k] = (f.tui[k] || 0) + 1; ra.push({ loai: 'tt', k, n: 1 }); }
     if (q.con) {
       const ds = Object.keys(h.CON).filter((k) => h.CON[k].lv <= lv + 2 && f.o.filter((o) => o.k === k).length + (f.tui[k] || 0) < h.CON_TOI_DA);
       if (ds.length) { const k = chon(ds); f.tui[k] = (f.tui[k] || 0) + 1; ra.push({ loai: 'con', k, n: 1 }); }

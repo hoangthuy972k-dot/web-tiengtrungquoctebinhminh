@@ -43,7 +43,7 @@ module.exports = function ganCapCao(app, d, h) {
     const vao = (lv, x) => { if (lv >= 1 && lv <= h.LV_TOI_DA) ds[lv].push(x); };
     Object.keys(h.CAY).forEach((k) => { const c = h.CAY[k]; if (!c.hiem) vao(c.lv, { loai: 'cay', k, zh: c.zh, py: c.py, vn: c.vn, hinh: 'sp-' + k }); });
     Object.keys(h.CON).forEach((k) => { const c = h.CON[k]; vao(c.lv, { loai: 'con', k, zh: c.zh, py: c.py, vn: c.vn, hinh: k, sao: c.sao }); });
-    Object.keys(h.TT).forEach((k) => { const t = h.TT[k]; if (!t.doc || t.moc) vao(t.lv, { loai: t.moc ? 'moc' : 'tt', k, zh: t.zh, py: t.py, vn: t.vn, hinh: k, dep: t.dep, sao: t.sao || 0, xu: t.xu || 0 }); });
+    Object.keys(h.TT).forEach((k) => { const t = h.TT[k]; if ((!t.doc || t.moc) && !t.noel) vao(t.lv, { loai: t.moc ? 'moc' : 'tt', k, zh: t.zh, py: t.py, vn: t.vn, hinh: k, dep: t.dep, sao: t.sao || 0, xu: t.xu || 0 }); });
     Object.keys(XuongCat.XUONG).forEach((k) => { const x = XuongCat.XUONG[k]; vao(x.lv, { loai: 'xuong', k, zh: x.zh, py: x.py, vn: x.vn, hinh: 'xg-' + k, xu: x.xu }); });
     Object.keys(XuongCat.HANG_GC).forEach((k) => {
       const r = XuongCat.HANG_GC[k], xg = Object.keys(XuongCat.XUONG).find((b) => XuongCat.XUONG[b].r.indexOf(k) >= 0);

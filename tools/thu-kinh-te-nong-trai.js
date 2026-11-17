@@ -23,7 +23,7 @@ const giaTt = (k) => (TT[k].xu || TT[k].sao || 0);
 const GT = {
   hat: (n) => n * tb(cayMo.map((k) => CAY[k].gia)),
   sp: (n) => n * tb(cayMo.map((k) => SP[k].ban).concat([SP.trung.ban, SP.sua.ban])),
-  tt: () => tb(Object.keys(TT).filter((k) => !TT[k].doc && TT[k].lv <= lvMau + 1).map(giaTt)),
+  tt: () => tb(Object.keys(TT).filter((k) => !TT[k].doc && !TT[k].noel && TT[k].lv <= lvMau + 1).map(giaTt)),
   con: (lvToi) => tb(Object.keys(CON).filter((k) => CON[k].lv <= lvToi).map((k) => CON[k].sao)),
   hatquy: () => tb(Object.keys(CAY).filter((k) => CAY[k].hiem).map((k) => CAY[k].ban * 2)),
   // ×2: them 1 lan thu hoach cho toi da 8 o (trang trai mau 10 o -> 8 o x 2 nong san x gia trung binh)

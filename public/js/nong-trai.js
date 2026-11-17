@@ -888,6 +888,8 @@
       lam({ a: 'cat', id: o.id }).then(function () { dongNoi(); bao('Đã cất ' + m.vn + ' vào túi đồ (trong Kho).'); }, function () {});
     });
     doc(m.zh);
+    // module them noi dung vao bong noi (vd. cay thong Noel: nut "Trang tri cay thong" — public/js/nong-trai-noel.js)
+    if (window.NTX) NTX.sauNoi.forEach(function (fn) { try { fn(o, el); } catch (e) { /* bo qua */ } });
   }
   function timTheoId(id) { return S.st.o.filter(function (o) { return o.id === id; })[0]; }
 
@@ -1247,6 +1249,8 @@
       '<div class="nt-the-anh">' + img(hinh) + (khoa ? '<span class="nt-khoa">Cấp ' + khoa + '</span>' : '') + '</div>' +
       htmlTen(m) + (them || '') + nut + '</div>';
   }
+  // Mua Noel 17/11–6/1 (may chu bao trong trang thai: st.kt.noel)
+  function noelMua() { var n = S.st && S.st.kt && S.st.kt.noel; return !!(n && n.mua); }
   function veCuaHang(than) {
     var tab = bangDang.tab || 'con';
     $('#ntBangTit').textContent = 'Cửa hàng';
@@ -1273,9 +1277,11 @@
           '<button type="button" class="nt-mua" data-mua="' + k + '"' + (m.lv > lv || het ? ' disabled' : '') + '>' + (het ? 'Đã đủ' : giaHtml(m)) + '</button>');
       });
     } else if (tab === 'tt') {
-      Object.keys(c.TT).filter(function (k) { return !c.TT[k].doc || c.TT[k].moc; }).sort(function (a, b) { return c.TT[a].lv - c.TT[b].lv; }).forEach(function (k) {
+      // mon mua Noel (noel: 1): chi hien trong mua le, xep len dau
+      if (noelMua()) html += '<p class="nt-noel-loi">🎄 <b>Mùa Noel</b> <span lang="zh">圣诞节</span> Shèngdànjié — mua cây thông rồi bấm vào cây để treo ngôi sao, nơ, quả châu… (bán đến 6/1)</p>';
+      Object.keys(c.TT).filter(function (k) { return (!c.TT[k].doc || c.TT[k].moc) && (!c.TT[k].noel || noelMua()); }).sort(function (a, b) { return (c.TT[b].noel ? 1 : 0) - (c.TT[a].noel ? 1 : 0) || c.TT[a].lv - c.TT[b].lv; }).forEach(function (k) {
         var m = c.TT[k];
-        html += theMon(k, m, k, '<p class="nt-the-phu">' + (m.moc ? '🏛 Công trình mốc cấp · ' : '') + 'Điểm đẹp +' + m.dep + (m.w ? ' · ô 2×2' : '') + '</p>',
+        html += theMon(k, m, k, '<p class="nt-the-phu">' + (m.noel ? '<b class="nt-noel-nhan">🎄 Mùa Noel</b> · ' : '') + (m.moc ? '🏛 Công trình mốc cấp · ' : '') + 'Điểm đẹp +' + m.dep + (m.w ? ' · ô 2×2' : '') + '</p>',
           m.lv > lv ? m.lv : 0,
           m.moc && s.o.some(function (o) { return o.k === k; }) + (s.tui[k] || 0) ? '<button type="button" class="nt-mua" disabled>Đã có</button>' :
           '<button type="button" class="nt-mua" data-mua="' + k + '"' + (m.lv > lv ? ' disabled' : '') + '>' + giaHtml(m) + '</button>');
@@ -4105,6 +4111,7 @@
     veQuangTruong();
     veDanQuang();
     veCtThiTran();
+    if (window.NTX && NTX.veNoelTt) NTX.veNoelTt(r); // cay thong Noel cua thi tran (trong mua le)
     if (r.cuaEm) taiDk().catch(function () {}); else { var dkn = $('#ntDkNut'); if (dkn) dkn.hidden = true; }
     // so lo moi hang theo be rong man hinh -> chen 1 con pho truoc moi hang
     var cot = soCotTt = soCot(luoi), html = '', hang = 0, dung = 0;
@@ -4279,6 +4286,7 @@
       var phang = o.k === 'o' || (S.cat.TT[o.k] && S.cat.TT[o.k].phang);
       html += '<img src="' + anh(t.hinh) + '" alt="" loading="lazy" draggable="false" style="left:' + (o.x * 100 / w) + '%;top:' + (o.y * 100 / h) + '%;width:' + (r * 100 / w) +
         '%;height:' + (r * 100 / h) + '%;z-index:' + (phang ? 1 : o.y + r + 1) + '">';
+      if (o.tr && window.NTX && NTX.noelNho) html += NTX.noelNho(o, r, w, h, phang ? 1 : o.y + r + 1); // do trang tri tren cay thong Noel
     });
     return html + '</div>';
   }
@@ -5654,6 +5662,8 @@
     fx: FX, moiBaiHoc: function () { return linkHoc(); },
     sauBang: [], // ham goi sau moi lan ve 1 bang (bangDang) — nut ❓ + huong dan lan dau
     sauVe: [], // ham goi sau moi lan ve lai ban do (innerHTML thay het)
+    sauNoi: [], // (o, el) goi sau khi mo bong noi gioi thieu 1 vat (gioiThieu)
+    datViTriNoi: datViTriNoi, veNoelTt: null, noelNho: null, // mua Noel (public/js/nong-trai-noel.js)
     nhip: [],  // ham goi moi giay
     sau: [], // ham goi sau moi lan nhan trang thai
     htmlNk: {}, // loai nhat ky -> function (e, ai) { return { hinh, chu } } (module them)

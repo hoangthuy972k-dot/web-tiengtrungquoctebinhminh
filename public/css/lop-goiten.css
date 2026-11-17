@@ -146,6 +146,7 @@ html.gt-open, html.gt-open body { overflow: hidden; }
   font: inherit; font-weight: 800; cursor: pointer;
 }
 .gt-per button.is-on { background: #b8432f; color: #fff; }
+.gt-toc button { width: auto; padding: 0 10px; white-space: nowrap; }
 .gt-bo {
   display: inline-flex; align-items: center; gap: 8px;
   font-size: .92em; color: var(--gt-ink); font-weight: 600; cursor: pointer;

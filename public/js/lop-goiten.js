@@ -24,7 +24,7 @@
 
   var S = {
     src: '', classes: [], kids: [], ngan: {}, absent: {}, round: {},
-    per: 1, bo: true, kieu: 'quay', sound: true, voice: true,
+    per: 1, bo: true, kieu: 'quay', sound: true, voice: true, toc: 'cham',
     nhomKieu: 'cap', nhomN: 4, nhomK: 4, nhomKq: null,
     busy: false, built: false, lan: 0, srcDaNap: ''
   };
@@ -41,7 +41,9 @@
   function docLS(k, d) { try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch (e) { return d; } }
   function ghiLS(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* bo qua */ } }
   function pw() { try { return sessionStorage.getItem(PW_KEY) || ''; } catch (e) { return ''; } }
-  function giam() { return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches); }
+  // Tro choi chieu len bang: hoat anh quay / dua CHINH LA tro choi, nen khong bo qua khi Windows tat
+  // "Hien thi hoat anh" (prefers-reduced-motion) — may lop hay tat san, lam ket qua hien ngay, het hoi hop.
+  function giam() { return false; }
   function kep(v, a, b) { return v < a ? a : v > b ? b : v; }
   function now() { return window.performance && performance.now ? performance.now() : Date.now(); }
   function raf(f) { return window.requestAnimationFrame(f); }
@@ -50,6 +52,9 @@
     for (var i = b.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = b[i]; b[i] = b[j]; b[j] = t; }
     return b;
   }
+  // Toc do: he so keo dai thoi gian (vong quay, dua vit, ong kinh) — 'cham' cho hoi hop, 'vua' nhu cu
+  var TOC = { cham: 1.8, vua: 1, nhanh: 0.6 };
+  function tocK() { return TOC[S.toc] || 1; }
   function timKieu(id) { for (var i = 0; i < KIEU.length; i++) if (KIEU[i].id === id) return KIEU[i]; return null; }
   function mau(name) {
     var h = 0;
@@ -123,7 +128,7 @@
 
   /* ---------------- luu lua chon ---------------- */
   function luuPref() {
-    ghiLS(PREF_KEY, { src: S.src, kieu: S.kieu, per: S.per, bo: S.bo, sound: S.sound, voice: S.voice,
+    ghiLS(PREF_KEY, { src: S.src, kieu: S.kieu, per: S.per, bo: S.bo, sound: S.sound, voice: S.voice, toc: S.toc,
       nhomKieu: S.nhomKieu, nhomN: S.nhomN, nhomK: S.nhomK });
   }
   function napPref() {
@@ -134,6 +139,7 @@
     S.bo = p.bo !== false;
     S.sound = p.sound !== false;
     S.voice = p.voice !== false;
+    S.toc = TOC[p.toc] ? p.toc : 'cham';
     S.nhomKieu = p.nhomKieu === 'n' || p.nhomKieu === 'k' ? p.nhomKieu : 'cap';
     S.nhomN = p.nhomN >= 2 && p.nhomN <= 6 ? p.nhomN : 4;
     S.nhomK = p.nhomK >= 2 && p.nhomK <= 12 ? p.nhomK : 4;
@@ -190,6 +196,10 @@
         '<span class="gt-per" id="gtPer" role="group" aria-label="Số bạn mỗi lượt">Mỗi lượt' +
           '<button type="button" data-n="1">1</button><button type="button" data-n="2">2</button><button type="button" data-n="3">3</button>' +
         '</span>' +
+        '<span class="gt-per gt-toc" id="gtToc" role="group" aria-label="Tốc độ">Tốc độ' +
+          '<button type="button" data-t="cham" title="Quay / đua lâu hơn, dừng sát nút">🐢 Hồi hộp</button>' +
+          '<button type="button" data-t="vua">Vừa</button><button type="button" data-t="nhanh">⚡ Nhanh</button>' +
+        '</span>' +
         '<label class="gt-bo" id="gtBoWrap"><input type="checkbox" id="gtBo"> <span>Bỏ bạn đã được gọi khỏi lượt sau</span></label>' +
         '<button type="button" class="gt-btn" id="gtRound" title="Cho cả lớp vào lại vòng gọi">↺ Vòng mới</button>' +
         '<span class="gt-nhom-opt" id="gtNhomOpt">' +
@@ -226,6 +236,9 @@
     $all('#gtPer button').forEach(function (b) {
       b.addEventListener('click', function () { S.per = +b.getAttribute('data-n'); luuPref(); veNut(); });
     });
+    $all('#gtToc button').forEach(function (b) {
+      b.addEventListener('click', function () { S.toc = b.getAttribute('data-t'); luuPref(); veNut(); });
+    });
     $('#gtBo').addEventListener('change', function () { S.bo = this.checked; luuPref(); if (!S.busy) veView(); });
     $('#gtRound').addEventListener('click', vongMoi);
     $('#gtNhomKieu').addEventListener('change', function () { S.nhomKieu = this.value; S.nhomKq = null; luuPref(); veNut(); if (!S.busy) veView(); });
@@ -261,8 +274,10 @@
       b.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
     $all('#gtPer button').forEach(function (b) { b.classList.toggle('is-on', +b.getAttribute('data-n') === S.per); });
+    $all('#gtToc button').forEach(function (b) { b.classList.toggle('is-on', b.getAttribute('data-t') === S.toc); });
     $('#gtBo').checked = S.bo;
     $('#gtPer').hidden = nhom;
+    $('#gtToc').hidden = nhom;
     $('#gtBoWrap').hidden = nhom;
     $('#gtRound').hidden = nhom || !S.bo;
     $('#gtNhomOpt').hidden = !nhom;
@@ -706,18 +721,21 @@
   function quayMot(token, k, dau) {
     return new Promise(function (res) {
       var n = Q.items.length, seg = TAU / n, wi = Q.items.indexOf(k);
-      var f = 0.18 + Math.random() * 0.64;
+      // cham: hay dung sat mep o (vua lot qua vach) cho hoi hop; quay lau hon va bo cham dan dai hon o cuoi
+      var cham = S.toc === 'cham', K2 = tocK();
+      var f = cham && Math.random() < 0.6 ? 0.04 + Math.random() * 0.12 : 0.18 + Math.random() * 0.64;
       var r0 = Q.rot;
       var delta = (((-(wi + f) * seg) - r0) % TAU + TAU) % TAU;
       var vong = dau ? 5 + Math.floor(Math.random() * 3) : 3 + Math.floor(Math.random() * 2);
       var tong = delta + vong * TAU;
-      var dur = dau ? 6200 + Math.random() * 1200 : 4200 + Math.random() * 600;
+      var dur = (dau ? 6200 + Math.random() * 1200 : 4200 + Math.random() * 600) * K2;
+      var mu = cham ? 4.6 : 3.4;
       if (giam()) { Q.rot = r0 + tong; Q.hl.push(wi); quayVe(); res(wi); return; }
       var t0 = now(), cu = quayChiSo(r0, n);
       function buoc(ts) {
         if (token !== S.lan) return;
         var p = Math.min(1, (ts - t0) / dur);
-        var e = 1 - Math.pow(1 - p, 3.4);
+        var e = 1 - Math.pow(1 - p, mu);
         Q.rot = r0 + tong * e;
         var idx = quayChiSo(Q.rot, n);
         if (idx !== cu) { cu = idx; Q.flick = 1; sndTick(); }
@@ -954,7 +972,8 @@
       return Promise.resolve(thu.map(function (d) { return d.k; }));
     }
     return new Promise(function (res) {
-      var base = V.L / 8.6, t0 = now(), truoc = t0, ketThuc = 0;
+      // cham: boi lau hon va bay vit ban sat nhau hon (vit sau duoc day manh hon) de ve dich nghet tho
+      var K2 = tocK(), base = V.L / (8.6 * K2), duoi = S.toc === 'cham' ? 1.7 : 1.1, t0 = now(), truoc = t0, ketThuc = 0;
       V.phase = 'dem'; V.t = 0; V.td = 0; V.demSo = 4;
       function buoc(ts) {
         if (token !== S.lan) return;
@@ -980,7 +999,7 @@
             }
             var tg = d.tg;
             if (d.xong) tg = base * 0.25;
-            else tg *= 1 + Math.min(0.35, Math.max(0, (dau - d.x) / V.L)) * 1.1;
+            else tg *= 1 + Math.min(0.35, Math.max(0, (dau - d.x) / V.L)) * duoi;
             d.v += (tg - d.v) * Math.min(1, dt * 2.6);
             d.x = Math.min(V.L * 1.08, d.x + d.v * dt);
             if (!d.xong && d.x >= V.L) {
@@ -1006,7 +1025,7 @@
           res(V.thu.concat(con).map(function (d) { return d.k; }));
           return;
         }
-        if (V.t > 40 && V.phase === 'dua') { ketThuc = V.t - 2; }
+        if (V.t > 40 * K2 && V.phase === 'dua') { ketThuc = V.t - 2; }
         raf(buoc);
       }
       raf(buoc);
@@ -1278,7 +1297,9 @@
         var dt = Math.min(1 / 30, (ts - truoc) / 1000); truoc = ts;
         var cv = $('#gtBi');
         vuaCanvas(cv);
-        var steps = Math.max(1, Math.ceil(dt / (1 / 240))), hh = dt / steps;
+        // cham: bi lan nhu quay cham (thoi gian mo phong chay cham hon thoi gian that)
+        var mp = B.phase === 'dem' ? dt : dt * Math.min(1, 1 / Math.pow(tocK(), 0.3));
+        var steps = Math.max(1, Math.ceil(mp / (1 / 240))), hh = mp / steps;
         for (var k = 0; k < steps; k++) biBuoc(hh);
         B.t += dt;
         if (B.td < 3) B.td += dt;
@@ -1399,7 +1420,7 @@
             var el = ung[Math.floor(Math.random() * ung.length)] || khac[0];
             truoc = el;
             var pos = tamThe(el);
-            var ms = 120 + 520 * Math.pow(i / soBuoc, 2.3);
+            var ms = (120 + 520 * Math.pow(i / soBuoc, 2.3)) * tocK();
             return lensToi(token, pos.x, pos.y, ms).then(function () {
               if (token !== S.lan) return null;
               el.classList.add('is-soi');
@@ -1415,7 +1436,7 @@
       var pos = tamThe(dich);
       var den;
       if (g) { K.x = pos.x; K.y = pos.y; datLens(); den = Promise.resolve(); }
-      else den = lensToi(token, pos.x, pos.y, 900);
+      else den = lensToi(token, pos.x, pos.y, 900 * tocK());
       return den.then(function () {
         if (token !== S.lan) return null;
         dich.classList.add('is-chon');

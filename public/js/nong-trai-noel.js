@@ -445,6 +445,52 @@
     ], { duration: ms, easing: 'linear' });
     a.onfinish = function () { b.hidden = true; };
   }
+  // Trong khung cay thong thi tran: ong gia bay vao, luon 1 vong quanh cay (vong sau thi khuat sau cay), roi bay ra
+  // (2026-11-18 co giao: "ong gia noel cuoi di quanh thi tran va ca qua cho cay thong noel")
+  function bayQuanhCay(noi) {
+    if (!noi || noi._santaHen) return;
+    function luot() {
+      if (!noi.isConnected) { noi._santaHen = 0; return; }
+      noi._santaHen = setTimeout(luot, 17000 + Math.random() * 9000);
+      if (document.hidden || !document.body.classList.contains('nt-noel')) return;
+      var cayEl = noi.querySelector('.nt-ntt-cay');
+      if (!cayEl || !Element.prototype.animate) return;
+      var pr = noi.getBoundingClientRect(), cr = cayEl.getBoundingClientRect();
+      if (pr.width < 50 || cr.width < 50) return;
+      var sa = noi.querySelector('.nt-ntt-santa');
+      if (!sa) {
+        sa = document.createElement('div');
+        sa.className = 'nt-ntt-santa';
+        sa.setAttribute('aria-hidden', 'true');
+        sa.innerHTML = '<span class="nt-sa-nhun">' + svgOngGia() + '</span>';
+        noi.appendChild(sa);
+      }
+      var rong = Math.max(110, Math.min(190, cr.width * 0.55)), cao = rong * 112 / 256;
+      sa.style.width = rong + 'px';
+      // tam cay trong khung + quy dao elip quanh cay
+      var cx = cr.left - pr.left + cr.width / 2, cy = cr.top - pr.top + cr.height * 0.48;
+      var rx = cr.width * 0.62, ry = cr.height * 0.42;
+      var vaoPhai = Math.random() < 0.5, diem = [];
+      diem.push([vaoPhai ? pr.width + 20 : -rong - 20, cy - ry - cao * 0.6, 1]);
+      // 1 vong: bat dau phia truoc-tren, vong qua phia sau (y nho = phia sau cay), quay lai phia truoc
+      var n = 14, goc0 = vaoPhai ? -0.15 : Math.PI + 0.15, chieu = vaoPhai ? 1 : -1;
+      for (var i = 0; i <= n; i++) {
+        var g = goc0 + chieu * (i / n) * Math.PI * 2;
+        diem.push([cx + Math.cos(g) * rx - rong / 2, cy + Math.sin(g) * ry - cao / 2, Math.sin(g) < -0.15 ? 0 : 3]);
+      }
+      diem.push([vaoPhai ? -rong - 30 : pr.width + 30, cy - ry - cao, 3]);
+      var khung = diem.map(function (p, k) {
+        var sau = diem[Math.min(k + 1, diem.length - 1)], truoc = diem[Math.max(k - 1, 0)];
+        var dx = (sau[0] - truoc[0]) || (vaoPhai ? -1 : 1);
+        return { transform: 'translate(' + Math.round(p[0]) + 'px,' + Math.round(p[1]) + 'px) scaleX(' + (dx > 0 ? -1 : 1) + ') scale(' + (p[2] ? 1 : 0.82) + ')', zIndex: p[2], offset: k / (diem.length - 1) };
+      });
+      sa.hidden = false;
+      var a = sa.animate(khung, { duration: giam() ? 20000 : 13000, easing: 'linear' });
+      a.onfinish = function () { sa.hidden = true; };
+    }
+    noi._santaHen = setTimeout(luot, 2500);
+  }
+
   function batOngGia() {
     if (oG.batDau) return;
     oG.batDau = true;
@@ -522,6 +568,7 @@
       cayEl.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); moDem(); } });
     }
     canhTuyet(cv, { mat: 3800, to: 0.9, toc: 0.8, sao: 2, gio: 5, lapTu: cayEl ? lapTrenCay(cayEl, cv) : null, lapSo: 6 });
+    bayQuanhCay(noi);
   }
   function bamTt(e) {
     var b = e.target.closest('[data-noel-treo]');

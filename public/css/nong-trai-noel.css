@@ -389,3 +389,9 @@ body.co-bang .nt-santa { display: none; }
   .nt-sa-chan path { animation-duration: 0.9s; }
   .nt-nd-santa { animation-duration: 26s; }
 }
+
+/* ong gia bay ngang ca trang thi tran (truoc day bi khung thi tran che) */
+body.nt-noel.o-thi-tran .nt-santa { z-index: 49; }
+/* ong gia bay vong quanh cay thong trong khung troi dem cua thi tran */
+.nt-ntt-santa { position: absolute; left: 0; top: 0; z-index: 3; pointer-events: none; transform-origin: 50% 50%; filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.35)); }
+.nt-ntt-santa[hidden] { display: none; }

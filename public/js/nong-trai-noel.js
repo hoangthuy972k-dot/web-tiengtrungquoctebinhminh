@@ -352,6 +352,105 @@
     };
   }
 
+  /* ---------- Ong gia Noel cuoi xe tuan loc bay ngang troi (2026-11-18, co giao: "hinh dong ong gia noel cuoi tuan loc
+     bay di bay lai") — SVG ve tay cung phong cach (vien dam #2b1d3a), chan tuan loc phi, mui do sang, vet sao lap lanh ---------- */
+  function tuanLoc(x, y, dau, tre) {
+    var V = '#2b1d3a';
+    return '<g transform="translate(' + x + ' ' + y + ')">' +
+      // chan sau (phai) + chan truoc (trai): moi cap 2 chan lech pha
+      '<g class="nt-sa-chan" style="animation-delay:-' + tre + 's"><path d="M12 5 L17 19" stroke="' + V + '" stroke-width="5" stroke-linecap="round"/><path d="M12 5 L17 19" stroke="#8a5530" stroke-width="2.6" stroke-linecap="round"/></g>' +
+      '<g class="nt-sa-chan b" style="animation-delay:-' + (tre + 0.18) + 's"><path d="M-12 5 L-17 19" stroke="' + V + '" stroke-width="5" stroke-linecap="round"/><path d="M-12 5 L-17 19" stroke="#8a5530" stroke-width="2.6" stroke-linecap="round"/></g>' +
+      '<path d="M21 -3 q7 -3 6 -9" fill="none" stroke="' + V + '" stroke-width="3" stroke-linecap="round"/>' +
+      '<ellipse cx="0" cy="0" rx="22" ry="9.5" fill="#a86b3c" stroke="' + V + '" stroke-width="2.2"/>' +
+      '<ellipse cx="-2" cy="4" rx="14" ry="4" fill="#e8c9a0"/>' +
+      '<path d="M-14 -4 C-18 -10 -22 -15 -24 -19 L-17 -23 C-14 -17 -10 -11 -6 -7 Z" fill="#a86b3c" stroke="' + V + '" stroke-width="2" stroke-linejoin="round"/>' +
+      // gac
+      '<g fill="none" stroke="#6b4423" stroke-width="2.4" stroke-linecap="round"><path d="M-22 -26 l-3 -11 m1.5 4 l-6 -3 m7.5 -1 l-1 -7"/><path d="M-17 -26 l2 -10 m-1 4 l5 -4 m-4 0 l1 -6"/></g>' +
+      '<ellipse cx="-27" cy="-23" rx="9" ry="6.2" transform="rotate(-14 -27 -23)" fill="#a86b3c" stroke="' + V + '" stroke-width="2"/>' +
+      '<path d="M-19 -27 l6 -4 l-1 6 z" fill="#e8c9a0" stroke="' + V + '" stroke-width="1.6" stroke-linejoin="round"/>' +
+      '<circle cx="-27" cy="-25" r="1.6" fill="' + V + '"/>' +
+      (dau ? '<circle cx="-36.5" cy="-21" r="6.5" class="nt-sa-mui-hao" fill="#ff5252" opacity=".35"/>' : '') +
+      '<circle cx="-36" cy="-21.5" r="' + (dau ? 3.4 : 2.6) + '" fill="' + (dau ? '#ff3b3b' : '#4a2c1a') + '" stroke="' + V + '" stroke-width="1.4"' + (dau ? ' class="nt-sa-mui"' : '') + '/>' +
+      // yen cuong do co chuong vang
+      '<path d="M-8 -9 C-6 -2 6 -2 8 -9" fill="none" stroke="#c62828" stroke-width="3.2"/><circle cx="0" cy="-3" r="2.4" fill="#ffd54f" stroke="' + V + '" stroke-width="1.2"/>' +
+      '</g>';
+  }
+  function svgOngGia() {
+    var V = '#2b1d3a';
+    return '<svg class="nt-sa-hinh" viewBox="-14 -26 256 112" aria-hidden="true">' +
+      // day cuong: tay ong -> 2 tuan loc
+      '<path d="M162 30 C130 30 100 22 64 24" fill="none" stroke="#7a4a1e" stroke-width="1.6"/><path d="M162 31 C120 34 60 26 12 22" fill="none" stroke="#7a4a1e" stroke-width="1.6"/>' +
+      '<path d="M126 52 L102 48 M126 56 L52 46" stroke="#5d3a1a" stroke-width="2" stroke-linecap="round"/>' +
+      tuanLoc(92, 48, false, 0.3) + tuanLoc(40, 42, true, 0) +
+      // bao qua sau xe
+      '<g><ellipse cx="208" cy="24" rx="14" ry="15" fill="#8d5a2b" stroke="' + V + '" stroke-width="2.2"/>' +
+      '<rect x="199" y="2" width="9" height="9" rx="1.5" fill="#43a047" stroke="' + V + '" stroke-width="1.6"/><rect x="208" y="5" width="8" height="8" rx="1.5" fill="#1e88e5" stroke="' + V + '" stroke-width="1.6"/>' +
+      '<path d="M200 12 q8 4 16 0" fill="none" stroke="#5d3a1a" stroke-width="2.4"/></g>' +
+      // ong gia
+      '<g><ellipse cx="179" cy="31" rx="15" ry="14" fill="#d32f2f" stroke="' + V + '" stroke-width="2.2"/>' +
+      '<rect x="164" y="34" width="30" height="5" fill="#fff" stroke="' + V + '" stroke-width="1.6"/>' +
+      '<path d="M168 27 C160 28 156 30 154 32" stroke="' + V + '" stroke-width="7" stroke-linecap="round"/><path d="M168 27 C160 28 156 30 154 32" stroke="#d32f2f" stroke-width="4.2" stroke-linecap="round"/>' +
+      '<circle cx="153" cy="32" r="3.4" fill="#fff" stroke="' + V + '" stroke-width="1.5"/>' +
+      '<circle cx="175" cy="12" r="8.5" fill="#ffd7b5" stroke="' + V + '" stroke-width="2"/>' +
+      '<path d="M166 13 C164 24 172 30 178 26 C183 23 184 17 183 13 C179 17 171 17 166 13 Z" fill="#fff" stroke="' + V + '" stroke-width="1.8" stroke-linejoin="round"/>' +
+      '<circle cx="170.5" cy="10.5" r="1.3" fill="' + V + '"/><circle cx="168" cy="14" r="2" fill="#ff8a80"/>' +
+      '<path d="M166 7 C168 -1 182 -4 188 0 C194 2 196 8 199 9" fill="#d32f2f" stroke="' + V + '" stroke-width="2" stroke-linejoin="round"/>' +
+      '<rect x="165" y="4" width="20" height="5" rx="2.5" fill="#fff" stroke="' + V + '" stroke-width="1.6"/>' +
+      '<circle cx="200" cy="9" r="3.4" fill="#fff" stroke="' + V + '" stroke-width="1.5"/></g>' +
+      // xe truot
+      '<path d="M128 52 C128 40 140 36 150 38 L198 38 C208 38 216 32 220 22 C230 28 230 44 220 54 C212 62 196 66 176 66 L146 66 C136 66 128 60 128 52 Z" fill="#d32f2f" stroke="' + V + '" stroke-width="2.4" stroke-linejoin="round"/>' +
+      '<path d="M134 52 C136 44 144 42 152 43 L196 43" fill="none" stroke="#ffca28" stroke-width="2.6" stroke-linecap="round"/>' +
+      '<path d="M146 66 L146 75 M200 64 L200 75" stroke="' + V + '" stroke-width="2.6"/>' +
+      '<path d="M120 76 L214 76 C224 76 230 70 228 62" fill="none" stroke="' + V + '" stroke-width="5" stroke-linecap="round"/>' +
+      '<path d="M120 76 L214 76 C224 76 230 70 228 62" fill="none" stroke="#ffca28" stroke-width="2.6" stroke-linecap="round"/>' +
+      '<path d="M120 76 C112 76 112 66 120 67" fill="none" stroke="#ffca28" stroke-width="2.6" stroke-linecap="round"/>' +
+      '</svg>' +
+      '<span class="nt-sa-vet" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></span>';
+  }
+  // Bay 1 luot: tu canh nay sang canh kia o 1 do cao ngau nhien phia tren
+  var oG = { el: null, hen: 0, luot: 0 };
+  function oGiaEl() {
+    if (oG.el && oG.el.isConnected) return oG.el;
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'nt-santa';
+    b.setAttribute('aria-label', 'Ông già Noel 圣诞老人 Shèngdàn lǎorén');
+    b.innerHTML = '<span class="nt-sa-nhun">' + svgOngGia() + '</span>';
+    b.addEventListener('click', function () {
+      N.doc('圣诞老人');
+      N.bao('🎅 Ông già Noel 圣诞老人 Shèngdàn lǎorén — Hô hô hô! 圣诞快乐！');
+      if (N.fx && N.fx.mung) N.fx.mung(b);
+    });
+    document.body.appendChild(b);
+    oG.el = b;
+    return b;
+  }
+  function bayOngGia() {
+    clearTimeout(oG.hen);
+    oG.hen = setTimeout(bayOngGia, 26000 + Math.random() * 16000);
+    if (!document.body.classList.contains('nt-noel') || document.hidden || document.body.classList.contains('co-bang')) return;
+    var b = oGiaEl(), W = innerWidth, rong = Math.min(260, Math.max(170, W * 0.22));
+    var sangPhai = (oG.luot++ % 2) === 1, y = Math.round(innerHeight * (0.1 + Math.random() * 0.22));
+    b.style.width = rong + 'px';
+    b.style.top = y + 'px';
+    b.classList.toggle('phai', sangPhai);
+    b.hidden = false;
+    var tu = sangPhai ? -rong - 40 : W + 40, den = sangPhai ? W + 40 : -rong - 40;
+    var ms = (giam() ? 22000 : 13000) * Math.max(0.8, Math.min(1.4, W / 1200));
+    if (!b.animate) { b.hidden = true; return; }
+    var a = b.animate([
+      { transform: 'translate(' + tu + 'px, 0)' },
+      { transform: 'translate(' + ((tu + den) / 2) + 'px, ' + (-innerHeight * 0.05) + 'px)' },
+      { transform: 'translate(' + den + 'px, ' + (innerHeight * 0.02) + 'px)' }
+    ], { duration: ms, easing: 'linear' });
+    a.onfinish = function () { b.hidden = true; };
+  }
+  function batOngGia() {
+    if (oG.batDau) return;
+    oG.batDau = true;
+    setTimeout(bayOngGia, 4000);
+  }
+
   /* ---------- man "Dem Giang sinh": cham cay thong thi tran ---------- */
   function moDem() {
     if (!TT.d || !TT.d.cay || $('#ntNoelDem')) return;
@@ -365,6 +464,7 @@
     d.innerHTML = '<div class="nt-nd-troi" aria-hidden="true"><i class="nt-nd-cuc a"></i><i class="nt-nd-cuc b"></i><i class="nt-nd-cuc c"></i></div>' +
       '<canvas class="nt-nd-sau" aria-hidden="true"></canvas>' +
       '<div class="nt-nd-trang" aria-hidden="true"></div>' +
+      '<div class="nt-nd-santa" aria-hidden="true"><span class="nt-sa-nhun">' + svgOngGia() + '</span></div>' +
       '<div class="nt-nd-doi" aria-hidden="true"><i class="xa"></i><i class="gan"></i></div>' +
       '<div class="nt-nd-cay"><i class="nt-nd-tia" aria-hidden="true"></i><i class="nt-nd-hao" aria-hidden="true"></i>' +
         '<img class="nt-ntt-nen" src="' + N.anh('noel-cay-lon') + '" alt="" draggable="false">' + svgTt(cay) + '</div>' +
@@ -565,6 +665,7 @@
     dung();
     mu();
     bangChao();
+    batOngGia();
   }
   N.sau.push(apDung);
   if (S.st) apDung();

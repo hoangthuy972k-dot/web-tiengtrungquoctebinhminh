@@ -341,3 +341,51 @@ body.nt-noel .nt-noel-tuyet .nt-tuyet-hat.bong-tuyet {
   box-shadow: none; opacity: 0.95; font-size: 20px; color: #fff;
   text-shadow: 0 0 2px #4a78b8, 0 0 1px #2c5a9a, 0 1px 3px rgba(20, 50, 110, 0.6), 0 0 8px rgba(255, 255, 255, 0.9);
 }
+
+/* ---------- Ong gia Noel cuoi xe tuan loc bay ngang troi (2026-11-18) ---------- */
+.nt-santa {
+  position: fixed; left: 0; top: 12vh; z-index: 37; width: 220px; padding: 0; border: 0; background: none; cursor: pointer;
+  filter: drop-shadow(0 6px 6px rgba(20, 30, 60, 0.25));
+}
+.nt-santa[hidden] { display: none; }
+.nt-santa:focus-visible { outline: 3px solid #ffe066; outline-offset: 4px; border-radius: 16px; }
+.nt-sa-nhun { position: relative; display: block; animation: nt-sa-nhun 1.6s ease-in-out infinite; }
+.nt-santa.phai .nt-sa-nhun, .nt-nd-santa .nt-sa-nhun { transform: scaleX(-1); }
+@keyframes nt-sa-nhun { 0%, 100% { translate: 0 0; rotate: -2deg; } 50% { translate: 0 -10px; rotate: 2deg; } }
+.nt-sa-hinh { display: block; width: 100%; height: auto; overflow: visible; }
+.nt-sa-chan path { transform-box: fill-box; transform-origin: 50% 0; }
+.nt-sa-chan path { animation: nt-sa-chan 0.5s ease-in-out infinite alternate; animation-delay: inherit; }
+.nt-sa-chan.b path { animation-direction: alternate-reverse; }
+@keyframes nt-sa-chan { from { rotate: -28deg; } to { rotate: 22deg; } }
+.nt-sa-mui { animation: nt-sa-mui 1.2s ease-in-out infinite; }
+.nt-sa-mui-hao { transform-box: fill-box; transform-origin: center; animation: nt-sa-hao 1.2s ease-in-out infinite; }
+@keyframes nt-sa-mui { 0%, 100% { fill: #ff3b3b; } 50% { fill: #ff8a80; } }
+@keyframes nt-sa-hao { 0%, 100% { scale: 0.8; opacity: 0.25; } 50% { scale: 1.5; opacity: 0.6; } }
+/* vet sao lap lanh sau xe (ben phai khi bay sang trai; lat theo .phai) */
+.nt-sa-vet { position: absolute; left: 88%; top: 52%; width: 70%; height: 30%; pointer-events: none; }
+.nt-sa-vet i {
+  position: absolute; width: 10px; height: 10px; top: 0;
+  background: radial-gradient(circle, #fffbe0 0 22%, #ffd54f 36%, transparent 70%);
+  clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
+  animation: nt-sa-vet 1.1s ease-out infinite;
+}
+.nt-sa-vet i:nth-child(1) { left: 2%; top: 10%; animation-delay: 0s; }
+.nt-sa-vet i:nth-child(2) { left: 16%; top: 60%; animation-delay: -0.2s; width: 8px; height: 8px; }
+.nt-sa-vet i:nth-child(3) { left: 30%; top: 20%; animation-delay: -0.45s; }
+.nt-sa-vet i:nth-child(4) { left: 46%; top: 70%; animation-delay: -0.6s; width: 7px; height: 7px; }
+.nt-sa-vet i:nth-child(5) { left: 62%; top: 30%; animation-delay: -0.8s; width: 8px; height: 8px; }
+.nt-sa-vet i:nth-child(6) { left: 80%; top: 55%; animation-delay: -0.95s; width: 6px; height: 6px; }
+@keyframes nt-sa-vet { 0% { opacity: 0; transform: scale(0.3) rotate(0); } 25% { opacity: 1; transform: scale(1.2) rotate(30deg); } 100% { opacity: 0; transform: scale(0.4) rotate(90deg); } }
+body.co-bang .nt-santa { display: none; }
+/* man Dem Giang sinh: bay qua mat trang moi 16 giay */
+.nt-nd-santa {
+  position: absolute; top: 9vh; left: 0; z-index: 1; width: clamp(150px, 20vw, 240px); pointer-events: none;
+  animation: nt-nd-santa 16s linear infinite; animation-delay: 1.5s; translate: -110% 0;
+}
+@keyframes nt-nd-santa { 0% { translate: -110% 2vh; } 60% { translate: 105vw -3vh; } 100% { translate: 105vw -3vh; } }
+@media (max-width: 640px) { .nt-santa { filter: none; } .nt-nd-santa { top: 20vh; } }
+@media (prefers-reduced-motion: reduce) {
+  .nt-sa-nhun { animation-duration: 3s; }
+  .nt-sa-chan path { animation-duration: 0.9s; }
+  .nt-nd-santa { animation-duration: 26s; }
+}

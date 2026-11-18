@@ -46,6 +46,25 @@
   };
   Object.keys(KIEU).forEach(function (k) { KIEU[k].cau[2] = KIEU[k].cau[0]; });
 
+  // 'noel': "We Wish You a Merry Christmas" (dan ca Anh, pho thong — giai dieu tu do su dung), Sol truong, nhip 3/4.
+  // Moi o nhip 6 not moc (nhip: 6); 16 o lap vong (o 16 ket bang not D lam phach don vao o 1).
+  // giu: not ngan lien sau la 0 thi ngan dai ra (not den / not trang) thay vi nhat nhu cac kieu kia.
+  // gocO / hopO: hop am rieng tung o; chuong leng keng (hat) nhe moi phach.
+  var MAJ = [0, 4, 7], MIN = [0, 3, 7];
+  KIEU.noel = {
+    bpm: 150, mel: 'triangle', melTo: 0.24, nhip: 6, giu: true,
+    o: [
+      [79, 0, 79, 81, 79, 78], [76, 0, 76, 0, 76, 0], [81, 0, 81, 83, 81, 79], [78, 0, 74, 0, 74, 0],
+      [83, 0, 83, 84, 83, 81], [79, 0, 76, 0, 74, 74], [76, 0, 81, 0, 78, 0], [79, 0, 0, 0, 74, 0],
+      [79, 0, 79, 0, 79, 0], [78, 0, 0, 0, 78, 0], [79, 0, 78, 0, 76, 0], [74, 0, 0, 0, 81, 0],
+      [83, 0, 81, 0, 79, 0], [86, 0, 74, 0, 74, 74], [76, 0, 81, 0, 78, 0], [79, 0, 0, 0, 74, 0]
+    ],
+    //        G   C   A   D   B   Em  Am  G   G   D   Em  D   G   D   Am  G
+    gocO: [43, 48, 45, 50, 47, 40, 45, 43, 43, 50, 40, 50, 43, 50, 45, 43],
+    hopO: [MAJ, MAJ, MAJ, MAJ, MAJ, MIN, MIN, MAJ, MAJ, MAJ, MIN, MAJ, MAJ, MAJ, MIN, MAJ],
+    bass: [0, null, 7, null, 12, null], kick: [0], snare: [], hat: [0, 2, 4]
+  };
+
   var ac = null, chu = null, on = null, hen = null, buoc = 0, tiep = 0;
   var chay = false, phien = false, K = KIEU.vui, NUA = 60 / K.bpm / 2, nut = null, coNut = true;
 
@@ -113,14 +132,23 @@
   }
   function co(ds, k) { return ds.indexOf(k) >= 0; }
   function datBuoc(i, t) {
-    var o = Math.floor(i / 8) % 16, k = i % 8; // 16 o nhip = 4 cau x 4 o
-    var dong = o % 4, goc = K.goc[dong], m = K.cau[Math.floor(o / 4)][dong][k];
-    if (m) not(hz(m), t, NUA * 1.6, K.mel, K.melTo);
+    var NB = K.nhip || 8, soO = K.o ? K.o.length : 16;
+    var o = Math.floor(i / NB) % soO, k = i % NB; // mac dinh 16 o nhip = 4 cau x 4 o
+    var dong = o % 4;
+    var goc = K.gocO ? K.gocO[o] : K.goc[dong];
+    var hop = K.hopO ? K.hopO[o] : K.hop[dong];
+    var o8 = K.o ? K.o[o] : K.cau[Math.floor(o / 4)][dong];
+    var m = o8[k];
+    if (m) {
+      var dai = NUA * 1.6;
+      if (K.giu) { var j = k + 1; while (j < NB && !o8[j]) j++; dai = NUA * (j - k) * 0.92; }
+      not(hz(m), t, dai, K.mel, K.melTo);
+    }
     if (K.bass[k] != null) not(hz(goc + K.bass[k]), t, NUA * 0.9, 'triangle', 0.5);
     if (co(K.kick, k)) kick(t);
     if (co(K.snare, k)) xoe(t, 0.12, 1800, 0.25);
-    if (co(K.hat, k)) xoe(t, 0.04, 7000, 0.1);
-    if (k === 0) K.hop[dong].forEach(function (x) { not(hz(goc + 24 + x), t, NUA * 7, 'sine', 0.05); });
+    if (co(K.hat, k)) xoe(t, K.giu ? 0.09 : 0.04, K.giu ? 9000 : 7000, K.giu ? 0.07 : 0.1);
+    if (k === 0) hop.forEach(function (x) { not(hz(goc + 24 + x), t, NUA * (NB - 1), 'sine', 0.05); });
   }
   function lich() {
     if (!chay) return;

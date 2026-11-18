@@ -4531,7 +4531,9 @@
     }
     nut.addEventListener('click', function () { NhacNen.datBat(!(NhacNen.batDuoc ? NhacNen.batDuoc() : true)); ve(); });
     $('.nt-hud').appendChild(nut);
-    NhacNen.bat({ kieu: 'em', nut: false });
+    // mua Noel (may chu bao st.kt.noel.mua): nhac "We Wish You a Merry Christmas"; ngoai mua nhac nhe nhu cu
+    var noel = S.st && S.st.kt && S.st.kt.noel && S.st.kt.noel.mua;
+    NhacNen.bat({ kieu: noel ? 'noel' : 'em', nut: false });
     ve();
   }
 

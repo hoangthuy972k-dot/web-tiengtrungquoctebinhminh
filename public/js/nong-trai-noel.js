@@ -22,6 +22,9 @@
   function soTr(tr) { var c = cat(), n = 0; if (!tr || !c) return 0; Object.keys(c.TR).forEach(function (k) { n += tr[k] || 0; }); return n; }
   function depTr(tr) { return Math.floor(soTr(tr) / 2) + (tr && tr.sao ? 3 : 0); }
   function giam() { try { return matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { return false; } }
+  // Tuyet roi: mac dinh BAT ca khi may dat "giam chuyen dong" (nhieu may Windows tat hieu ung san — co giao khong thay
+  // tuyet); may giam chuyen dong thi tuyet roi cham, thua hon. Nut ❄ tren thanh tren cung de em tu tat / bat (hyv_noel_tuyet).
+  function tuyetBat() { try { return localStorage.getItem('hyv_noel_tuyet') !== '0'; } catch (e) { return true; } }
   function xuHtml(n) { return '<span class="nt-gia xu">' + N.img('ic-xu') + Number(n).toLocaleString('vi-VN') + '</span>'; }
 
   /* ---------------- do trang tri tren cay thong cua nong trai (viewBox 100x100 = hinh noel-thong.svg) ---------------- */
@@ -259,14 +262,15 @@
       cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
+    var cham = giam() ? 0.55 : 1;
     function moi(dau) {
       var to = o.to || 1;
       return { x: Math.random() * W, y: dau ? -6 - Math.random() * 20 : Math.random() * H, r: (0.7 + Math.random() * 2.3) * to,
-        v: (16 + Math.random() * 36) * (o.toc || 1), l: Math.random() * 6.28, lv: 0.5 + Math.random() * 1.3,
+        v: (16 + Math.random() * 36) * (o.toc || 1) * cham, l: Math.random() * 6.28, lv: 0.5 + Math.random() * 1.3,
         a: 0.5 + Math.random() * 0.5, bong: Math.random() < 0.14, q: Math.random() * 6.28 };
     }
     co();
-    var n = Math.min(260, Math.round(W * H / (o.mat || 4200)));
+    var n = Math.min(260, Math.round(W * H / (o.mat || 4200) * (giam() ? 0.6 : 1)));
     for (var i = 0; i < n; i++) hat.push(moi());
     var ns = Math.round(W * H / 10000 * (o.sao || 0));
     for (var j = 0; j < ns; j++) sao.push({ x: Math.random() * W, y: Math.random() * H * 0.62, r: 0.5 + Math.random() * 1.3, p: Math.random() * 6.28, t: 0.6 + Math.random() * 1.8 });
@@ -294,6 +298,7 @@
       var t = now / 1000, dt = last ? Math.min(0.05, t - last) : 0;
       last = t;
       ctx.clearRect(0, 0, W, H);
+      if (!tuyetBat()) return;
       sao.forEach(function (x) {
         var a = 0.35 + 0.65 * Math.abs(Math.sin(t * x.t + x.p));
         ctx.globalAlpha = a; ctx.fillStyle = '#fffbe6';
@@ -328,7 +333,6 @@
       }
       ctx.globalAlpha = 1;
     }
-    if (giam()) { khung(1000); return; }
     var hen = 0;
     window.addEventListener('resize', function lai() { if (!cv.isConnected) return window.removeEventListener('resize', lai); clearTimeout(hen); hen = setTimeout(co, 150); });
     (function vong(now) {
@@ -484,9 +488,9 @@
     tuyet.className = 'nt-noel-tuyet';
     tuyet.setAttribute('aria-hidden', 'true');
     var h = '';
-    for (var s = 0; s < 26; s++) {
-      var to = 3 + (s * 7) % 6;
-      h += '<i class="nt-tuyet-hat' + (s % 7 === 0 ? ' bong-tuyet' : '') + '" style="left:' + ((s * 37) % 100) + '%;width:' + to + 'px;height:' + to + 'px;--lac:' + (10 + (s * 5) % 22) + 'px;animation-duration:' + (10 + (s * 3) % 9) + 's,' + (2.6 + (s % 4) * 0.6) + 's;animation-delay:-' + ((s * 1.7) % 16).toFixed(1) + 's,-' + (s % 3) + 's">' + (s % 7 === 0 ? '❄' : '') + '</i>';
+    for (var s = 0; s < 48; s++) { // 2026-11-18: day hon, to hon cho de thay (co giao: "sao may toi khong co tuyet")
+      var to = 4 + (s * 7) % 8;
+      h += '<i class="nt-tuyet-hat' + (s % 5 === 0 ? ' bong-tuyet' : '') + '" style="left:' + ((s * 37) % 100) + '%;width:' + to + 'px;height:' + to + 'px;--lac:' + (10 + (s * 5) % 22) + 'px;animation-duration:' + (10 + (s * 3) % 9) + 's,' + (2.6 + (s % 4) * 0.6) + 's;animation-delay:-' + ((s * 1.7) % 16).toFixed(1) + 's,-' + (s % 3) + 's">' + (s % 5 === 0 ? '❄' : '') + '</i>';
     }
     tuyet.innerHTML = h;
     document.body.appendChild(tuyet);
@@ -527,9 +531,36 @@
       if (k === 'tt') { var t = document.querySelector('[data-mo="thitran"]'); if (t) t.click(); }
     });
   }
+  function nutTuyet() {
+    var hud = $('.nt-hud');
+    document.body.classList.toggle('tuyet-tat', !tuyetBat());
+    if (!hud || $('#ntNoelNutTuyet')) return;
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.id = 'ntNoelNutTuyet';
+    b.className = 'nt-chip nt-chip-nhac nt-noel-nut-tuyet';
+    function ve() {
+      var bat = tuyetBat();
+      b.textContent = '❄';
+      b.classList.toggle('tat', !bat);
+      b.setAttribute('aria-pressed', bat ? 'true' : 'false');
+      b.setAttribute('aria-label', bat ? 'Tắt tuyết rơi' : 'Bật tuyết rơi');
+      b.title = b.getAttribute('aria-label');
+    }
+    b.addEventListener('click', function () {
+      try { localStorage.setItem('hyv_noel_tuyet', tuyetBat() ? '0' : '1'); } catch (e) { /* bo qua */ }
+      document.body.classList.toggle('tuyet-tat', !tuyetBat());
+      ve();
+      N.bao(tuyetBat() ? '❄ Đã bật tuyết rơi' : 'Đã tắt tuyết rơi');
+    });
+    var nhac = hud.querySelector('.nt-chip-nhac');
+    if (nhac && nhac.parentNode === hud) hud.insertBefore(b, nhac); else hud.appendChild(b);
+    ve();
+  }
   function apDung() {
     var on = mua();
     document.body.classList.toggle('nt-noel', on);
+    if (on) nutTuyet(); else { var nt = $('#ntNoelNutTuyet'); if (nt) nt.remove(); }
     if (!on) { var bn = $('#ntNoelBan'); if (bn) bn.remove(); return; }
     dung();
     mu();

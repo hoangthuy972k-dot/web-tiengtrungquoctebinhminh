@@ -223,8 +223,11 @@ body:not(.nt-noel) .nt-noel-ban, body.co-bang .nt-noel-ban, body.o-thi-tran .nt-
   .nt-noel-ban-chu small { display: none; }
   body.nt-noel .nt-noel-mu { width: 28px; height: 28px; left: -10px; top: -14px; }
 }
+body.nt-noel.tuyet-tat .nt-noel-tuyet { display: none; }
+.nt-noel-nut-tuyet.tat { opacity: 0.55; text-decoration: line-through; }
 @media (prefers-reduced-motion: reduce) {
-  body.nt-noel .nt-noel-tuyet { display: none; }
+  /* may tat hieu ung: tuyet van roi nhung cham gap doi (co giao muon thay tuyet) */
+  body.nt-noel .nt-noel-tuyet .nt-tuyet-hat { animation-duration: 22s, 6s !important; }
   .nt-noel-tr, .nt-noel-tr *, .nt-ntt-tr *, .nt-noel-day *, .nt-vat.nt-k-noel-thong .nt-hinh, .nt-noel-ban { animation: none !important; }
 }
 .nt-ntt-phu .nt-gia img { width: 18px; height: 18px; }
@@ -327,4 +330,14 @@ body.nt-nd-mo { overflow: hidden; }
 }
 @media (prefers-reduced-motion: reduce) {
   .nt-ntt-cay::before, .nt-ntt-xem, .nt-nd-cuc, .nt-nd-hao, .nt-nd-tia, .nt-nd-chu b, .nt-noel-dem, .nt-noel-dem.dang-dong { animation: none; }
+}
+
+/* bong tuyet mua le noi tren nen sang (co non, nang): vien xanh nhat + bong, khong thi trang lan vao nen (2026-11-18) */
+body.nt-noel .nt-noel-tuyet .nt-tuyet-hat {
+  opacity: 0.95;
+  box-shadow: 0 0 0 1px rgba(110, 145, 200, 0.55), 0 1px 4px rgba(30, 60, 120, 0.45), 0 0 8px rgba(255, 255, 255, 0.9);
+}
+body.nt-noel .nt-noel-tuyet .nt-tuyet-hat.bong-tuyet {
+  box-shadow: none; opacity: 0.95; font-size: 20px; color: #fff;
+  text-shadow: 0 0 2px #4a78b8, 0 0 1px #2c5a9a, 0 1px 3px rgba(20, 50, 110, 0.6), 0 0 8px rgba(255, 255, 255, 0.9);
 }

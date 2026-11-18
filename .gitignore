@@ -12,3 +12,6 @@ gcloud-key.json
 
 # Am thanh bai hoc nam tren ten mien phu amthanh.hihanchinese.online (kho git qua nang)
 public/audio/
+
+# may thu song song (DATA_DIR rieng)
+data-*/

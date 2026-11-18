@@ -278,7 +278,7 @@ app.get('/api/health', asyncRoute(async (req, res) => {
 // khong can them dependency). KHONG chua du lieu gia — bang xep hang
 // chi hien thi hoc sinh da that su dang ky va nop diem.
 // ══════════════════════════════════════════════════════════════════
-const DATA_DIR = path.join(__dirname, 'data');
+const DATA_DIR = process.env.DATA_DIR ? path.resolve(process.env.DATA_DIR) : path.join(__dirname, 'data'); // DATA_DIR: chi dung cho may thu song song (moi may 1 thu muc rieng)
 const USERS_FILE = path.join(DATA_DIR, 'users.json');
 const SCORES_FILE = path.join(DATA_DIR, 'scores.json');
 const SESSIONS_FILE = path.join(DATA_DIR, 'sessions.json');

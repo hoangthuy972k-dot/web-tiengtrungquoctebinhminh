@@ -243,6 +243,157 @@
     else h += '<p class="nt-ntt-ai-t">Chưa ai treo — em hãy là người đầu tiên!</p>';
     return h + '</div>';
   }
+  /* ---------- tuyet roi + sao lap lanh + kim tuyen vang (canvas, 2026-11-18 co giao: "cham cay thong ra giao dien
+     dep hon, tuyet bay, lung linh hon") ----------
+     o: { mat: so px2 / 1 bong (cang nho cang day), to: co bong, toc: toc do, sao: so sao troi / 10000 px2,
+          lapTu: ham tra { x, y } (toa do canvas) cho kim tuyen vang lap lanh tren cay, lapSo: so hat / giay }
+     Tu dung khi canvas roi khoi trang; tab an thi nghi; giam chuyen dong -> ve 1 khung tinh. */
+  function canhTuyet(cv, o) {
+    o = o || {};
+    var ctx = cv && cv.getContext && cv.getContext('2d');
+    if (!ctx) return;
+    var dpr = Math.min(2, window.devicePixelRatio || 1), W = 1, H = 1, hat = [], sao = [], lap = [], dem = 0;
+    function co() {
+      var r = cv.getBoundingClientRect();
+      W = Math.max(1, r.width); H = Math.max(1, r.height);
+      cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+    function moi(dau) {
+      var to = o.to || 1;
+      return { x: Math.random() * W, y: dau ? -6 - Math.random() * 20 : Math.random() * H, r: (0.7 + Math.random() * 2.3) * to,
+        v: (16 + Math.random() * 36) * (o.toc || 1), l: Math.random() * 6.28, lv: 0.5 + Math.random() * 1.3,
+        a: 0.5 + Math.random() * 0.5, bong: Math.random() < 0.14, q: Math.random() * 6.28 };
+    }
+    co();
+    var n = Math.min(260, Math.round(W * H / (o.mat || 4200)));
+    for (var i = 0; i < n; i++) hat.push(moi());
+    var ns = Math.round(W * H / 10000 * (o.sao || 0));
+    for (var j = 0; j < ns; j++) sao.push({ x: Math.random() * W, y: Math.random() * H * 0.62, r: 0.5 + Math.random() * 1.3, p: Math.random() * 6.28, t: 0.6 + Math.random() * 1.8 });
+    function bongTuyet(x, y, r, q) {
+      ctx.save(); ctx.translate(x, y); ctx.rotate(q);
+      ctx.beginPath();
+      for (var k = 0; k < 6; k++) {
+        ctx.moveTo(0, 0); ctx.lineTo(0, -r * 2.4);
+        ctx.moveTo(0, -r * 1.4); ctx.lineTo(r * 0.7, -r * 2); ctx.moveTo(0, -r * 1.4); ctx.lineTo(-r * 0.7, -r * 2);
+        ctx.rotate(Math.PI / 3);
+      }
+      ctx.stroke(); ctx.restore();
+    }
+    function kimTuyen(x, y, r, a, mau) {
+      ctx.globalAlpha = a;
+      ctx.fillStyle = mau;
+      ctx.beginPath();
+      ctx.moveTo(x, y - r); ctx.quadraticCurveTo(x, y, x + r, y); ctx.quadraticCurveTo(x, y, x, y + r);
+      ctx.quadraticCurveTo(x, y, x - r, y); ctx.quadraticCurveTo(x, y, x, y - r); ctx.fill();
+      ctx.globalAlpha = a * 0.35;
+      ctx.beginPath(); ctx.arc(x, y, r * 0.9, 0, 6.29); ctx.fill();
+    }
+    var last = 0;
+    function khung(now) {
+      var t = now / 1000, dt = last ? Math.min(0.05, t - last) : 0;
+      last = t;
+      ctx.clearRect(0, 0, W, H);
+      sao.forEach(function (x) {
+        var a = 0.35 + 0.65 * Math.abs(Math.sin(t * x.t + x.p));
+        ctx.globalAlpha = a; ctx.fillStyle = '#fffbe6';
+        ctx.beginPath(); ctx.arc(x.x, x.y, x.r, 0, 6.29); ctx.fill();
+        if (x.r > 1.3) { ctx.globalAlpha = a * 0.5; ctx.fillRect(x.x - x.r * 2.6, x.y - 0.35, x.r * 5.2, 0.7); ctx.fillRect(x.x - 0.35, x.y - x.r * 2.6, 0.7, x.r * 5.2); }
+      });
+      ctx.strokeStyle = 'rgba(255,255,255,.9)'; ctx.lineWidth = 0.9; ctx.lineCap = 'round';
+      hat.forEach(function (x, k) {
+        x.y += x.v * dt;
+        x.x += (Math.sin(t * x.lv + x.l) * 14 + (o.gio || 6)) * dt;
+        x.q += dt * 0.6;
+        if (x.y > H + 8) hat[k] = x = moi(true);
+        if (x.x > W + 6) x.x = -6; else if (x.x < -6) x.x = W + 6;
+        ctx.globalAlpha = x.a;
+        if (x.bong && x.r > 1.4) bongTuyet(x.x, x.y, x.r, x.q);
+        else {
+          ctx.fillStyle = '#fff';
+          ctx.beginPath(); ctx.arc(x.x, x.y, x.r, 0, 6.29); ctx.fill();
+          ctx.globalAlpha = x.a * 0.25; ctx.beginPath(); ctx.arc(x.x, x.y, x.r * 2.2, 0, 6.29); ctx.fill();
+        }
+      });
+      if (o.lapTu) {
+        dem += dt * (o.lapSo || 8);
+        while (dem >= 1 && lap.length < 60) { dem -= 1; var p = o.lapTu(); if (p) lap.push({ x: p.x, y: p.y, s: 0, d: 0.7 + Math.random() * 0.8, r: 2.5 + Math.random() * 4.5, m: Math.random() < 0.7 ? '#ffe680' : (Math.random() < 0.5 ? '#ffffff' : '#ffb3c7') }); }
+        lap = lap.filter(function (x) {
+          x.s += dt;
+          var k = x.s / x.d;
+          if (k >= 1) return false;
+          kimTuyen(x.x, x.y, x.r * Math.sin(k * Math.PI), Math.sin(k * Math.PI), x.m);
+          return true;
+        });
+      }
+      ctx.globalAlpha = 1;
+    }
+    if (giam()) { khung(1000); return; }
+    var hen = 0;
+    window.addEventListener('resize', function lai() { if (!cv.isConnected) return window.removeEventListener('resize', lai); clearTimeout(hen); hen = setTimeout(co, 150); });
+    (function vong(now) {
+      if (!cv.isConnected) return;
+      requestAnimationFrame(vong);
+      if (document.hidden) { last = 0; return; }
+      khung(now);
+    })(performance.now());
+  }
+  // diem ngau nhien trong long cay (viewBox 200 x 240 cua cay thi tran) -> toa do trong canvas
+  function lapTrenCay(cayEl, cv) {
+    return function () {
+      if (!cayEl.isConnected) return null;
+      var r = cayEl.getBoundingClientRect(), c = cv.getBoundingClientRect(), p = CHO_TT[Math.floor(Math.random() * CHO_TT.length)];
+      if (Math.random() < 0.12) p = [100, 15]; // ngoi sao tren ngon
+      return { x: r.left - c.left + (p[0] + (Math.random() * 12 - 6)) / 200 * r.width, y: r.top - c.top + (p[1] + (Math.random() * 10 - 5)) / 240 * r.height };
+    };
+  }
+
+  /* ---------- man "Dem Giang sinh": cham cay thong thi tran ---------- */
+  function moDem() {
+    if (!TT.d || !TT.d.cay || $('#ntNoelDem')) return;
+    var c = cat(), cay = TT.d.cay, truoc = document.activeElement;
+    var d = document.createElement('div');
+    d.id = 'ntNoelDem';
+    d.className = 'nt-noel-dem';
+    d.setAttribute('role', 'dialog');
+    d.setAttribute('aria-modal', 'true');
+    d.setAttribute('aria-label', 'Cây thông Noel của thị trấn — đêm Giáng sinh');
+    d.innerHTML = '<div class="nt-nd-troi" aria-hidden="true"><i class="nt-nd-cuc a"></i><i class="nt-nd-cuc b"></i><i class="nt-nd-cuc c"></i></div>' +
+      '<canvas class="nt-nd-sau" aria-hidden="true"></canvas>' +
+      '<div class="nt-nd-trang" aria-hidden="true"></div>' +
+      '<div class="nt-nd-doi" aria-hidden="true"><i class="xa"></i><i class="gan"></i></div>' +
+      '<div class="nt-nd-cay"><i class="nt-nd-tia" aria-hidden="true"></i><i class="nt-nd-hao" aria-hidden="true"></i>' +
+        '<img class="nt-ntt-nen" src="' + N.anh('noel-cay-lon') + '" alt="" draggable="false">' + svgTt(cay) + '</div>' +
+      '<canvas class="nt-nd-truoc" aria-hidden="true"></canvas>' +
+      '<button type="button" class="nt-nd-chu" data-doc="' + esc(c.CHUC.zh) + '"><b lang="zh">' + esc(c.CHUC.zh) + '</b><span>' + esc(c.CHUC.py) + '</span><i>' + esc(c.CHUC.vn) + ' 🔊</i></button>' +
+      '<p class="nt-nd-tien">🎄 Cây thông của thị trấn · <b>' + cay.n + ' món</b> · ' + esc(c.MOC_SANG[cay.cap].vn) + '</p>' +
+      '<button type="button" class="nt-nd-dong" aria-label="Đóng">✕</button>';
+    document.body.appendChild(d);
+    document.body.classList.add('nt-nd-mo');
+    $all('img', d).forEach(function (im) { im.addEventListener('error', function () { im.classList.add('hong'); }, { once: true }); });
+    var cayEl = d.querySelector('.nt-nd-cay'), sau = d.querySelector('.nt-nd-sau'), tr = d.querySelector('.nt-nd-truoc');
+    canhTuyet(sau, { mat: 2600, to: 0.75, toc: 0.7, sao: 4, gio: 4 });
+    canhTuyet(tr, { mat: 9000, to: 1.6, toc: 1.25, gio: 10, lapTu: lapTrenCay(cayEl, tr), lapSo: 14 });
+    function dong() {
+      document.removeEventListener('keydown', phim, true);
+      d.classList.add('dang-dong');
+      setTimeout(function () { d.remove(); document.body.classList.remove('nt-nd-mo'); }, giam() ? 0 : 260);
+      if (truoc && truoc.focus) try { truoc.focus(); } catch (e) { /* bo qua */ }
+    }
+    function phim(e) { if (e.key === 'Escape') { e.preventDefault(); dong(); } }
+    document.addEventListener('keydown', phim, true);
+    d.addEventListener('click', function (e) {
+      if (e.target.closest('.nt-nd-dong')) return dong();
+      var chu = e.target.closest('.nt-nd-chu');
+      if (chu) { N.doc(chu.getAttribute('data-doc')); return; }
+      var g = e.target.closest('[data-ntt]');
+      if (g) { var x = cay.ds[+g.getAttribute('data-ntt')], m = x && c.TT_TR[x.k]; if (m) N.bao('🎄 ' + (x.em ? 'Em' : tenNgan(x.ten)) + ' đã treo ' + m.vn.toLowerCase() + ' ' + m.zh + ' ' + m.py); return; }
+      if (e.target === d || e.target.closest('.nt-nd-doi')) dong();
+    });
+    d.querySelector('.nt-nd-dong').focus();
+    N.doc(c.CHUC.zh);
+  }
+
   function veTt(r) {
     var tt = $('#ntThiTran'), noi = $('#ntNoelTt');
     if (!tt) return;
@@ -256,8 +407,17 @@
       tt.insertBefore(noi, q);
       noi.addEventListener('click', bamTt);
     }
-    noi.innerHTML = htmlTt(r);
+    noi.innerHTML = '<canvas class="nt-ntt-tuyet" aria-hidden="true"></canvas>' + htmlTt(r);
     $all('img', noi).forEach(function (im) { im.addEventListener('error', function () { im.classList.add('hong'); }, { once: true }); });
+    var cayEl = noi.querySelector('.nt-ntt-cay'), cv = noi.querySelector('.nt-ntt-tuyet');
+    if (cayEl) {
+      cayEl.setAttribute('role', 'button');
+      cayEl.setAttribute('tabindex', '0');
+      cayEl.setAttribute('aria-label', 'Xem cây thông lung linh');
+      cayEl.insertAdjacentHTML('beforeend', '<span class="nt-ntt-xem" aria-hidden="true">✨ Chạm để xem lung linh</span>');
+      cayEl.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); moDem(); } });
+    }
+    canhTuyet(cv, { mat: 3800, to: 0.9, toc: 0.8, sao: 2, gio: 5, lapTu: cayEl ? lapTrenCay(cayEl, cv) : null, lapSo: 6 });
   }
   function bamTt(e) {
     var b = e.target.closest('[data-noel-treo]');
@@ -266,7 +426,9 @@
     if (g && TT.d) {
       var x = TT.d.cay.ds[+g.getAttribute('data-ntt')], m = x && cat().TT_TR[x.k];
       if (m) N.bao('🎄 ' + (x.em ? 'Em' : tenNgan(x.ten)) + ' đã treo ' + m.vn.toLowerCase() + ' ' + m.zh + ' ' + m.py);
+      return;
     }
+    if (e.target.closest('.nt-ntt-cay')) moDem();
   }
   function treoTt(b) {
     if (TT.dang) return;

@@ -229,3 +229,102 @@ body:not(.nt-noel) .nt-noel-ban, body.co-bang .nt-noel-ban, body.o-thi-tran .nt-
 }
 .nt-ntt-phu .nt-gia img { width: 18px; height: 18px; }
 .nt-noel-noi-ds small { font-size: 0.7rem; color: var(--mo); font-weight: 700; margin-left: 2px; }
+
+/* ---------- tuyet roi trong khung cay thong thi tran + "cham de xem" (2026-11-18) ---------- */
+.nt-ntt-tuyet { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+.nt-noel-tt > .nt-ntt-cay, .nt-noel-tt > .nt-ntt-ben { position: relative; z-index: 1; }
+.nt-noel-tt > .nt-ntt-cay { cursor: zoom-in; border-radius: 18px; }
+.nt-ntt-cay::before {
+  content: ''; position: absolute; left: 6%; right: 6%; top: 4%; bottom: 10%; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(closest-side, rgba(255, 224, 120, 0.32), rgba(255, 200, 80, 0.08) 60%, transparent);
+  animation: nt-ntt-tho 3.6s ease-in-out infinite;
+}
+@keyframes nt-ntt-tho { 0%, 100% { opacity: 0.55; transform: scale(0.94); } 50% { opacity: 1; transform: scale(1.04); } }
+.nt-ntt-cay:focus-visible { outline: 3px solid #ffe066; outline-offset: 4px; }
+.nt-ntt-xem {
+  position: absolute; left: 50%; bottom: 2%; transform: translateX(-50%); white-space: nowrap; pointer-events: none;
+  padding: 4px 12px; border-radius: 99px; font-size: 0.82rem; font-weight: 800; color: #3a2400;
+  background: linear-gradient(90deg, #ffe680, #fff6c8, #ffd54f); border: 2px solid #2b1d3a; box-shadow: 0 3px 0 #2b1d3a;
+  animation: nt-ntt-goi 2.4s ease-in-out infinite;
+}
+@keyframes nt-ntt-goi { 0%, 100% { translate: 0 0; } 50% { translate: 0 -4px; } }
+
+/* ---------- man "Dem Giang sinh" (cham cay thong thi tran) ---------- */
+body.nt-nd-mo { overflow: hidden; }
+.nt-noel-dem {
+  position: fixed; inset: 0; z-index: 2147482000; overflow: hidden; color: #fff8ec;
+  background: radial-gradient(ellipse at 50% 120%, #2a4f86 0%, transparent 60%), linear-gradient(180deg, #050a1f 0%, #0d1d45 45%, #1b3a6e 100%);
+  animation: nt-nd-vao 0.35s ease-out;
+}
+.nt-noel-dem.dang-dong { animation: nt-nd-ra 0.26s ease-in forwards; }
+@keyframes nt-nd-vao { from { opacity: 0; } to { opacity: 1; } }
+@keyframes nt-nd-ra { to { opacity: 0; } }
+.nt-nd-troi { position: absolute; inset: 0; pointer-events: none; }
+.nt-nd-cuc { position: absolute; border-radius: 50%; filter: blur(48px); opacity: 0.45; mix-blend-mode: screen; }
+.nt-nd-cuc.a { width: 60vw; height: 26vh; left: -10vw; top: 6vh; background: #2bd99a; animation: nt-nd-troi1 14s ease-in-out infinite alternate; }
+.nt-nd-cuc.b { width: 50vw; height: 22vh; right: -8vw; top: 12vh; background: #6a7cff; animation: nt-nd-troi2 17s ease-in-out infinite alternate; }
+.nt-nd-cuc.c { width: 40vw; height: 18vh; left: 30vw; top: 2vh; background: #c06cff; opacity: 0.3; animation: nt-nd-troi1 21s ease-in-out infinite alternate-reverse; }
+@keyframes nt-nd-troi1 { to { transform: translate(14vw, 4vh) scale(1.2, 0.8); } }
+@keyframes nt-nd-troi2 { to { transform: translate(-12vw, 6vh) scale(0.85, 1.25); } }
+.nt-nd-sau, .nt-nd-truoc { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.nt-nd-truoc { z-index: 3; }
+.nt-nd-trang {
+  position: absolute; right: 9vw; top: 7vh; width: clamp(54px, 9vw, 110px); aspect-ratio: 1; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(circle at 38% 36%, #fffdf2 0 52%, #f3e6b8 72%, #e9d59a 100%);
+  box-shadow: 0 0 40px 12px rgba(255, 246, 200, 0.35), 0 0 120px 40px rgba(255, 246, 200, 0.12);
+}
+.nt-nd-doi { position: absolute; left: 0; right: 0; bottom: 0; height: 30vh; }
+.nt-nd-doi i { position: absolute; left: -10%; right: -10%; bottom: 0; border-radius: 50% 50% 0 0 / 100% 100% 0 0; }
+.nt-nd-doi .xa { height: 70%; background: linear-gradient(180deg, #cfe0f5, #9fbbe0); left: -30%; right: 20%; opacity: 0.85; }
+.nt-nd-doi .gan { height: 52%; background: linear-gradient(180deg, #ffffff, #dce9f8); left: 10%; right: -30%; box-shadow: 0 -6px 30px rgba(255, 255, 255, 0.35); }
+.nt-nd-cay {
+  position: absolute; left: 50%; bottom: 8vh; z-index: 2; transform: translateX(-50%);
+  height: min(68vh, 680px); aspect-ratio: 200 / 240; max-width: 92vw;
+}
+.nt-nd-cay .nt-ntt-nen { filter: drop-shadow(0 0 18px rgba(255, 226, 140, 0.45)) drop-shadow(6px 10px 6px rgba(0, 0, 0, 0.35)); }
+.nt-nd-hao {
+  position: absolute; left: -12%; right: -12%; top: -8%; bottom: 4%; border-radius: 50%; pointer-events: none;
+  background: radial-gradient(closest-side, rgba(255, 230, 140, 0.5), rgba(255, 200, 90, 0.16) 55%, transparent);
+  animation: nt-ntt-tho 3.2s ease-in-out infinite;
+}
+.nt-nd-tia {
+  position: absolute; left: 50%; top: 6%; width: 230%; aspect-ratio: 1; translate: -50% -50%; pointer-events: none; opacity: 0.55;
+  background: repeating-conic-gradient(from 0deg, rgba(255, 240, 180, 0.22) 0deg 6deg, transparent 6deg 22deg);
+  -webkit-mask: radial-gradient(closest-side, #000 0 18%, transparent 70%); mask: radial-gradient(closest-side, #000 0 18%, transparent 70%);
+  animation: nt-nd-xoay 26s linear infinite;
+}
+@keyframes nt-nd-xoay { to { rotate: 360deg; } }
+.nt-nd-cay .nt-ntt-tr { cursor: default; }
+.nt-nd-chu {
+  position: absolute; left: 50%; top: max(14px, 3vh); z-index: 4; transform: translateX(-50%); width: max-content; max-width: calc(100vw - 120px);
+  display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 18px; border: 0; background: none; color: inherit; cursor: pointer; text-align: center;
+}
+.nt-nd-chu b {
+  font-family: 'Noto Serif SC', serif; font-weight: 900; font-size: clamp(2rem, 9vw, 4.4rem); line-height: 1.1; white-space: nowrap;
+  background: linear-gradient(100deg, #ffd54f 0%, #fff6c8 20%, #ffb300 40%, #fff6c8 60%, #ffd54f 80%) 0 0 / 250% 100%;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  filter: drop-shadow(0 3px 0 #5a2a00) drop-shadow(0 0 14px rgba(255, 214, 90, 0.55));
+  animation: nt-nd-anh 4s linear infinite;
+}
+@keyframes nt-nd-anh { to { background-position: -250% 0; } }
+.nt-nd-chu span { font-weight: 800; font-size: clamp(1rem, 2.6vw, 1.35rem); text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); }
+.nt-nd-chu i { font-style: normal; font-weight: 600; font-size: 0.95rem; opacity: 0.9; }
+.nt-nd-chu:focus-visible { outline: 3px solid #ffe066; outline-offset: 4px; border-radius: 14px; }
+.nt-nd-tien {
+  position: absolute; left: 50%; bottom: 2vh; z-index: 4; transform: translateX(-50%); margin: 0; white-space: nowrap;
+  padding: 5px 14px; border-radius: 99px; background: rgba(10, 22, 52, 0.62); border: 1.5px solid rgba(255, 255, 255, 0.35);
+  font-weight: 600; font-size: 0.9rem; max-width: calc(100vw - 24px); overflow: hidden; text-overflow: ellipsis;
+}
+.nt-nd-tien b { color: #ffe066; }
+.nt-nd-dong {
+  position: absolute; right: 14px; top: 14px; z-index: 5; width: 46px; height: 46px; border-radius: 50%;
+  border: 3px solid #2b1d3a; background: #fff8ec; color: #2b1d3a; font-size: 1.3rem; font-weight: 900; cursor: pointer; box-shadow: 0 4px 0 #2b1d3a;
+}
+.nt-nd-dong:focus-visible { outline: 3px solid #ffe066; outline-offset: 3px; }
+@media (max-width: 640px) {
+  .nt-nd-cay { height: min(58vh, 520px); bottom: 9vh; }
+  .nt-nd-trang { right: 5vw; top: 15vh; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nt-ntt-cay::before, .nt-ntt-xem, .nt-nd-cuc, .nt-nd-hao, .nt-nd-tia, .nt-nd-chu b, .nt-noel-dem, .nt-noel-dem.dang-dong { animation: none; }
+}

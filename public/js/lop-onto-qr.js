@@ -19,6 +19,9 @@
     duongbang: 'được <b>bước lên một ô băng</b> — đội trưởng chọn 1 trong 3 ô phía trước trên điện thoại. Ô đã lật giữ nguyên cho cả lớp cùng nhớ!'
   };
   var DONG = { gapthu: 'gắp thú', laudai: 'xây mảnh', duongbang: 'bước ô băng' };
+  // Tro moi (vd. Xe tuan loc giao qua — lop-tuanloc.js) tu khai bao loi luat / dong tu trong def: qrLuat, qrDong
+  function luatTro(d) { return LUAT[d.id] || d.qrLuat || ''; }
+  function dongTro() { return (G && G.def && (DONG[G.def.id] || G.def.qrDong)) || 'đi tiếp'; }
   var S = { room: null, poll: 0, info: null, pha: '', dsKy: '', so: 0, c: null, het: 0, dem: 0, lat: false, kq: null,
     hang: [], hangI: 0, toHt: -1, cho: null, daiDem: 0, bar: null, xongVan: false, ganMan: false };
   var G = null;
@@ -193,8 +196,8 @@
       '<div class="ltr-sanh-phai">' +
         '<h2><span class="oq-logo" aria-hidden="true">' + d.logo + '</span>' + esc(d.ten) + ' <small>· thi qua mã QR</small></h2>' +
         '<p class="ltr-luat">📱 Các em quét mã, nhập tên và <b>chọn tổ</b>. Mỗi vòng cả lớp cùng trả lời một câu trên điện thoại. Tổ có từ <b>' + c.nguong + '% bạn đúng</b> trở lên ' +
-          LUAT[d.id] + ' Bạn đúng nhanh nhất là <b>đội trưởng lượt này</b>, có ' + HAN + ' giây để chọn — hết giờ máy tự chọn.</p>' +
-        '<div class="ltr-tomtat"><span>' + c.vong + ' câu</span><span>⏱ ' + c.secs + ' giây / câu</span><span>✓ Tổ ≥ ' + c.nguong + '% bạn đúng được ' + DONG[d.id] + '</span>' +
+          luatTro(d) + (d.qrKhongChon ? '' : ' Bạn đúng nhanh nhất là <b>đội trưởng lượt này</b>, có ' + HAN + ' giây để chọn — hết giờ máy tự chọn.') + '</p>' +
+        '<div class="ltr-tomtat"><span>' + c.vong + ' câu</span><span>⏱ ' + c.secs + ' giây / câu</span><span>✓ Tổ ≥ ' + c.nguong + '% bạn đúng được ' + dongTro() + '</span>' +
           '<span>' + soTo() + ' tổ</span><button type="button" class="ltr-nut-nho" data-oq="caidat">⚙ Đổi cài đặt</button></div>' +
         '<div class="ltr-dem" id="oqDem"></div>' +
         '<div id="oqDs"></div>' +
@@ -313,11 +316,11 @@
         : CHU[c.dung] + '. ' + zh(c.opts[c.dung]);
       var why = c.why ? '<p class="ot-why">💡 ' + zh(c.why) + '</p>' : (c.k === 'xep' && c.ctx ? '<p class="ot-why">💡 Nghĩa: ' + zh(c.ctx) + '</p>' : '');
       var co = k.duoc.length;
-      cuoi = '<div class="ot-giai ' + (co ? 'is-dung' : 'is-sai') + '"><div class="ot-giai-kq">' + (co ? '✓ ' + co + ' tổ được ' + DONG[G.def.id] : '✗ Chưa tổ nào có bạn đúng') + '</div>' +
+      cuoi = '<div class="ot-giai ' + (co ? 'is-dung' : 'is-sai') + '"><div class="ot-giai-kq">' + (co ? '✓ ' + co + ' tổ được ' + dongTro() : '✗ Chưa tổ nào có bạn đúng') + '</div>' +
         '<div class="ot-giai-noi"><p class="ot-dap"><span>Đáp án:</span> ' + dap + '</p>' + why + '</div>' +
-        '<div class="ot-giai-nut"><button type="button" class="ot-nut ot-nut--vang ot-nut--to" data-oq="tiep">' + (co ? '🎯 Các tổ ' + DONG[G.def.id] : 'Tiếp tục') + ' ▶ <kbd>Enter</kbd></button></div></div>';
+        '<div class="ot-giai-nut"><button type="button" class="ot-nut ot-nut--vang ot-nut--to" data-oq="tiep">' + (co ? '🎯 Các tổ ' + dongTro() : 'Tiếp tục') + ' ▶ <kbd>Enter</kbd></button></div></div>';
     } else {
-      cuoi = '<div class="ot-cham"><span class="ot-cham-goi">📱 Cả lớp trả lời trên điện thoại — tổ có từ ' + G.cfg.nguong + '% bạn đúng được ' + DONG[G.def.id] + '</span>' +
+      cuoi = '<div class="ot-cham"><span class="ot-cham-goi">📱 Cả lớp trả lời trên điện thoại — tổ có từ ' + G.cfg.nguong + '% bạn đúng được ' + dongTro() + '</span>' +
         '<button type="button" class="ot-nut ot-nut--vang ot-nut--to" data-oq="lat">👀 Lật đáp án <kbd>Enter</kbd></button></div>';
     }
     box.innerHTML = '<div class="ot-hoi-dau"><span class="oq-so">Câu ' + S.so + '/' + G.cfg.vong + '</span><span class="ot-tag">' + G.tenDang(c) + '</span>' +
@@ -340,7 +343,7 @@
       html += '<div class="oq-to' + (k ? (thu >= 0 ? ' is-duoc' : ' is-truot') : '') + (k || !n || x.daTL < n ? '' : ' is-du') + '" style="--tc:' + t.mau + ';--p:' + pt + '%">' +
         '<img src="' + esc(t.hinh) + '" alt="" draggable="false"><b>' + esc(t.ten) + '</b>' +
         '<span class="oq-to-so">' + (k ? 'đúng <em>' + x.dung + '/' + n + '</em> bạn' : 'đã trả lời <em>' + x.daTL + '/' + n + '</em>') + '</span>' +
-        (k ? '<span class="oq-to-kq">' + (thu >= 0 ? '✓ #' + (thu + 1) + (dt ? ' · 👑 ' + esc(dt.ten) : '') : '✗') + '</span>' : '') +
+        (k ? '<span class="oq-to-kq">' + (thu >= 0 ? '✓ #' + (thu + 1) + (dt && !G.def.qrKhongChon ? ' · 👑 ' + esc(dt.ten) : '') : '✗') + '</span>' : '') +
         '<i class="oq-to-thanh"></i></div>';
     }
     el.innerHTML = html;

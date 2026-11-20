@@ -313,7 +313,7 @@ function hangTro(p, h) { return [...p.hs.values()].sort(soSanh(p)).indexOf(h) + 
 function tenToPhong(p) { return p.tro ? p.tro.to : p.keo ? p.keo.to : p.onto ? p.onto.to : []; }
 
 /* ---- On bai theo to qua ma QR (kieu 'onto') ---- */
-const GAME_ONTO = { gapthu: 1, laudai: 1, duongbang: 1 };
+const GAME_ONTO = { gapthu: 1, laudai: 1, duongbang: 1, tuanloc: 1 }; // tuanloc: Xe tuan loc giao qua (public/js/lop-tuanloc.js)
 const LOAI_LUOT = { tha: 1, manh: 1, o: 1, cuop: 1 };
 const LOAI_O = { an: 1, nut: 1, ca: 1, daan: 1 };
 function sachMau(m) { return /^#[0-9a-f]{3,8}$/i.test(String(m || '')) ? String(m) : ''; }

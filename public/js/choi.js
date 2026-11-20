@@ -769,8 +769,10 @@
   /* ---- On bai theo to qua ma QR (phong kieu 'onto'): Gap thu bong / Xay lau dai / Duong bang bi mat ----
      Chon to -> moi vong tra loi cau chung (trac nghiem / xep / noi) -> lat: dung / sai + to em dung x/n ban;
      neu em la doi truong luot nay (dung nhanh nhat cua to duoc thuong) thi hien man chon (THA / manh / o bang / to). */
-  var TEN_OT = { gapthu: '🧸 Gắp thú bông', laudai: '🏰 Xây lâu đài', duongbang: '🐧 Đường băng bí mật' };
-  var DONG_OT = { gapthu: 'gắp thú', laudai: 'xây thêm mảnh', duongbang: 'bước lên ô băng' };
+  var TEN_OT = { gapthu: '🧸 Gắp thú bông', laudai: '🏰 Xây lâu đài', duongbang: '🐧 Đường băng bí mật', tuanloc: '🛷 Xe tuần lộc giao quà 驯鹿送礼物 xùnlù sòng lǐwù' };
+  var DONG_OT = { gapthu: 'gắp thú', laudai: 'xây thêm mảnh', duongbang: 'bước lên ô băng', tuanloc: 'bay tới nhà tiếp theo thả quà 🎁' };
+  // Tro khong co luot doi truong chon (Xe tuan loc): thay cau "dung nhanh nhat lam doi truong" bang loi rieng
+  var LOI_OT = { tuanloc: 'Tổ chưa đủ bạn đúng thì xe trượt băng lùi một chút 🛷💨 — cả tổ cùng cố gắng nhé!' };
   var NHAN_O = { '': '❓ Chưa lật', an: '✓ An toàn', daan: '✓ An toàn', ca: '🐟 Cá thưởng', nut: '💦 Lỗ nước' };
   function phanTram() { return Math.round((s.otNguong || 0.5) * 100); }
   function veOnTo(d) {
@@ -791,7 +793,7 @@
         $('tenCho').textContent = d.ten + ' · ' + toEm.ten;
         $('titCho').textContent = 'Em thi cho ' + toEm.ten + '!';
         $('moCho').innerHTML = 'Trò chơi: <b>' + (TEN_OT[d.game] || '') + '</b>. Mỗi vòng cả lớp cùng trả lời một câu — tổ có từ ' + phanTram() + '% bạn đúng được ' +
-          DONG_OT[d.game] + '. Trả lời đúng <b>nhanh nhất tổ</b> thì em làm đội trưởng! Chờ cô bắt đầu nhé…';
+          DONG_OT[d.game] + '. ' + (LOI_OT[d.game] || 'Trả lời đúng <b>nhanh nhất tổ</b> thì em làm đội trưởng!') + ' Chờ cô bắt đầu nhé…';
         hien('manCho');
       }
       return;
@@ -856,7 +858,7 @@
     var dt = thu >= 0 && k.doiTruong ? k.doiTruong[d.to] : null;
     $('kqHang').innerHTML = '👥 <b>' + esc(toEm.ten) + '</b> đúng ' + x.dung + '/' + x.soTv + ' bạn' +
       (thu >= 0 ? '<br>🎯 Tổ em được ' + DONG_OT[d.game] + ((k.duoc || []).length > 1 ? ' (lượt ' + (thu + 1) + ')' : '') + '!' : '<br><small>Tổ em chưa được lượt này — cố lên câu sau!</small>') +
-      (dt ? '<br>👑 Đội trưởng: <b>' + esc(dt.ten) + '</b>' : '');
+      (dt && !LOI_OT[d.game] ? '<br>👑 Đội trưởng: <b>' + esc(dt.ten) + '</b>' : '');
     var trang = '';
     if (L && !L.xong) {
       trang = L.to === d.to ? '<div class="ch-ot-cho">⏳ Đội trưởng <b>' + esc(L.ten) + '</b> đang chọn…</div>'

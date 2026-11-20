@@ -3403,7 +3403,7 @@
     if (!pickedLabel()) return;
     var to = [];
     for (var i = 0; i < TEAM_DEF.length; i++) to.push({ ten: teamName(i), mau: teamColor(i), hinh: '/images/game/lop-team-' + TEAM_IMG[i] + '.svg' });
-    window.LopOnTo.mo(game, { nhan: (LEVEL_NAME[state.level] || '') + ' · ' + pickedLabel(), to: to, soTo: state.teams, layCau: function (n, ds) {
+    window.LopOnTo.mo(game, { nhan: (LEVEL_NAME[state.level] || '') + ' · ' + pickedLabel(), to: to, soTo: state.teams, toiDa: soCauDtToiDa, layCau: function (n, ds) {
       if (!ds) return cauDienThoai(n);
       return loadPickedVocab().then(function (v) {
         var kt = window.LopKiemTra;
@@ -3776,6 +3776,12 @@
     { ten: '🧩 Câu & ngữ pháp', g: ['errfix', 'sort', 'bay', 'doantau', 'trans'] },
     { ten: '🎤 Nói – viết', g: ['taboo', 'role', 'write'] }
   ];
+  // Tro Noel (Xe tuan loc giao qua — lop-tuanloc.js): luon co trong nhom On bai theo to; mua Noel (17/11–6/1) them nhom rieng len dau
+  (function () {
+    var d = new Date(), m = d.getMonth() + 1, n = d.getDate();
+    if ((m === 11 && n >= 17) || m === 12 || (m === 1 && n <= 6)) GAME_GROUPS.unshift({ ten: '🎄 Mùa Noel — trò chơi Giáng sinh', g: ['tuanloc'] });
+    else GAME_GROUPS.forEach(function (gr) { if (gr.g.indexOf('duongbang') >= 0) gr.g.push('tuanloc'); });
+  })();
   var GAME_TAGS = {
     abc: ['3–5′', 'cả lớp'], thegiay: ['5–15′', 'thẻ giấy in', 'không cần điện thoại'], nghieng: ['5′', 'webcam lớp', 'hoặc mã QR'], chem: ['5′', 'webcam lớp', 'hoặc mã QR'], theduc: ['5′', 'webcam lớp', 'hoặc mã QR', 'vận động'], ngoisao: ['5′', 'webcam', '2 bạn đấu'], dam: ['5′', 'webcam lớp', 'hoặc mã QR', 'vận động'],
     zombie: ['3–5′', 'cả lớp'], dua: ['10–15′', 'quét mã QR', 'chọn linh vật'], chuong: ['15′', 'cả lớp', 'bảng con / điện thoại'], luot: ['10–15′', '2–4 tổ'], bay: ['5–10′', 'trên bảng', 'hoặc mã QR theo tổ'], doantau: ['5–10′', 'trên bảng', 'hoặc mã QR theo tổ'], doikhang: ['5–10′', 'quét mã QR', '1–1'],
@@ -3784,7 +3790,8 @@
     errfix: ['5′', 'đại diện'], sort: ['5–7′', 'vận động'], trans: ['5′', 'đại diện'],
     taboo: ['5′', 'nói'], role: ['5–7′', 'đóng vai'], write: ['5′', 'lên bảng'],
     nhip: ['5–10′', 'quét mã QR', 'tự làm'], tug: ['5′', '2 tổ đấu', 'bảng hoặc mã QR'], train: ['5–7′', 'các tổ đua'], mine: ['5–7′', 'theo lượt'],
-    gapthu: ['10–15′', '2–6 tổ', 'trên bảng'], laudai: ['10–15′', '2–6 tổ', 'câu khó mảnh lớn'], duongbang: ['10′', '2–6 tổ', 'ô băng bí mật']
+    gapthu: ['10–15′', '2–6 tổ', 'trên bảng'], laudai: ['10–15′', '2–6 tổ', 'câu khó mảnh lớn'], duongbang: ['10′', '2–6 tổ', 'ô băng bí mật'],
+    tuanloc: ['🎄 Noel', '10–15′', '2–4 tổ', 'bảng hoặc mã QR']
   };
   function decorateSetup() {
     var grid = $('.lop-games');

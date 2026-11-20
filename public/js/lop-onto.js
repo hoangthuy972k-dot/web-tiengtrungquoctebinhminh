@@ -5,7 +5,9 @@
    bai cu (khong co cau dich), the cau hoi to chu (trac nghiem / xep cau / noi tu, giao vien bam
    dap an hoac Dung / Sai, sau do hien dap an + giai thich), hop thoai, am thanh, buc trao giai.
    Moi tro dang ky bang LopOnTo.dangKy({ id, ten, logo, luat, vong, them, batDau(G), phim(e, G) }).
-   Trang giao vien mo bang LopOnTo.mo(id, { nhan, to: [{ ten, mau, hinh }], soTo, layCau(n, ds) }). */
+   Tuy chon them cua tro: soCau (hang "So cau" 10–50 / Tat ca / so khac thay cho so vong — c.vong la tong so cau),
+   toMax (so to toi da, mac dinh 6), ghiSoCau(cfg, laQr) (dong ghi chu canh so cau), qrLuat / qrDong / qrKhongChon (lop-onto-qr.js).
+   Trang giao vien mo bang LopOnTo.mo(id, { nhan, to: [{ ten, mau, hinh }], soTo, layCau(n, ds), toiDa() -> Promise<so cau> }). */
 (function () {
   'use strict';
 
@@ -197,8 +199,10 @@
         '<img src="' + esc(t.hinh) + '" alt="" draggable="false"><input type="text" maxlength="18" data-i="' + i + '" value="' + esc(t.ten) + '" aria-label="Tên tổ ' + (i + 1) + '"></label>';
     }
     var to = '';
-    for (var n = 2; n <= 6; n++) to += chip('to', n, n + ' tổ', c.soTo === n);
-    var vong = d.vong.ds.map(function (v) { return chip('vong', v, v + ' ' + (d.vong.don || 'vòng'), c.vong === v); }).join('');
+    for (var n = 2; n <= (d.toMax || 6); n++) to += chip('to', n, n + ' tổ', c.soTo === n);
+    // d.soCau: hang "So cau" dung chung (lop-socau.js: 10–50 / Tat ca / so khac, toi da 100) thay cho cac chip so vong
+    var vong = d.soCau && window.LopSoCau ? window.LopSoCau.html(c.vong, S.max || 30)
+      : d.vong.ds.map(function (v) { return chip('vong', v, v + ' ' + (d.vong.don || 'vòng'), c.vong === v); }).join('');
     var loai = Object.keys(LOAI).map(function (k) { return chip('loai', k, LOAI[k].ten, c.loai === k); }).join('');
     var them = (d.them || []).map(function (h) {
       return '<div class="ot-hang"><span class="ot-nhan">' + esc(h.ten) + '</span><div class="ot-chon">' +
@@ -220,7 +224,7 @@
         '</div>' + cach +
         '<div class="ot-hang"><span class="ot-nhan">Số tổ</span><div class="ot-chon">' + to + '</div></div>' +
         '<div class="ot-hang"><span class="ot-nhan">Tên tổ</span><div class="ot-chon ot-chon-ten">' + ten + '</div></div>' +
-        '<div class="ot-hang"><span class="ot-nhan">' + esc(d.vong.ten || 'Số vòng') + '</span><div class="ot-chon">' + vong +
+        '<div class="ot-hang"><span class="ot-nhan">' + esc(d.vong.ten || 'Số vòng') + '</span><div class="ot-chon' + (d.soCau ? ' ot-socau' : '') + '" id="otVongChon">' + vong +
           '<span class="ot-ghi" id="otSoCau"></span></div></div>' +
         '<div class="ot-hang"><span class="ot-nhan">Dạng câu hỏi</span><div class="ot-chon">' + loai + '</div></div>' +
         them + qr +
@@ -228,6 +232,9 @@
           '<button type="button" class="ot-nut ot-nut--do ot-nut--to" id="otBatDau">' + nhanBatDau() + '</button></div>' +
       '</div>';
     veSoCau();
+    if (d.soCau && window.LopSoCau) {
+      window.LopSoCau.gan($('#otVongChon'), S.max || 30, function (n) { c.vong = n; veSoCau(); luuPref(); });
+    }
     $all('.ot-opt').forEach(function (b) {
       b.addEventListener('click', function () {
         var k = b.getAttribute('data-k'), v = b.getAttribute('data-v');
@@ -260,6 +267,7 @@
   }
   function veSoCau() {
     var el = $('#otSoCau');
+    if (el && S.def.ghiSoCau) { el.textContent = S.def.ghiSoCau(S.cfg, laQr()); return; }
     if (el) el.textContent = laQr() ? '≈ ' + S.cfg.vong + ' câu, cả lớp cùng trả lời mỗi câu' : '≈ ' + (S.cfg.vong * S.cfg.soTo) + ' câu cho ' + S.cfg.soTo + ' tổ';
   }
 
@@ -318,8 +326,14 @@
     S.pha = 'tai';
     $('#otMan').innerHTML = '<div class="ot-the ot-tai"><div class="ot-logo ot-logo-quay" aria-hidden="true">' + S.def.logo + '</div><p>Đang chuẩn bị câu hỏi của các bài đã chọn…</p></div>';
     var ve = S.van;
-    napCau(Math.max(24, c.vong * c.soTo * 2 + 8)).then(function (ds) {
+    // d.soCau: c.vong = tong so cau cua van (them vai cau du phong cho nut "Doi cau")
+    napCau(S.def.soCau ? Math.min(100, c.vong + 6) : Math.max(24, c.vong * c.soTo * 2 + 8)).then(function (ds) {
       if (ve !== S.van) return;
+      // bai khong du cau nhu da chon: choi voi so cau co (khong lap lai cau), bao cho co biet
+      if (S.def.soCau && ds.length && ds.length < c.vong) {
+        S.ghiChu = (S.ghiChu ? S.ghiChu + '<br>' : '') + 'ℹ️ Các bài đang chọn chỉ có ' + ds.length + ' câu (cô chọn ' + c.vong + ') — chơi ' + ds.length + ' câu.';
+        c.vong = ds.length;
+      }
       if (!ds.length) {
         S.pha = 'trong';
         $('#otMan').innerHTML = '<div class="ot-the ot-tai"><div class="ot-logo" aria-hidden="true">' + S.def.logo + '</div>' +
@@ -614,13 +628,24 @@
       var co = p.x && h.ds.some(function (o) { return String(o[0]) === String(p.x[h.k]); });
       x[h.k] = co ? p.x[h.k] : h.md;
     });
-    var soLop = +S.opt.soTo;
+    var soLop = +S.opt.soTo, toMax = d.toMax || 6;
+    S.max = 0;
+    // d.soCau: so cau toi da cac bai dang chon lam duoc (lop.js soCauDtToiDa) cho o "Tat ca" — co roi thi ve lai the cai dat
+    if (d.soCau && typeof S.opt.toiDa === 'function') {
+      var moLuc = S.opt;
+      Promise.resolve(S.opt.toiDa()).then(function (n) {
+        if (S.opt !== moLuc || !(n > 0)) return;
+        S.max = n;
+        if (S.cfg && window.LopSoCau) S.cfg.vong = window.LopSoCau.kep(S.cfg.vong, n);
+        if (root && !root.hidden && S.pha === 'sanh') veSanh();
+      }).catch(function () { /* giu uoc luong */ });
+    }
     S.cfg = {
-      soTo: p.soTo >= 2 && p.soTo <= 6 ? p.soTo : (soLop >= 2 && soLop <= 6 ? soLop : 3),
+      soTo: p.soTo >= 2 && p.soTo <= toMax ? p.soTo : (soLop >= 2 && soLop <= toMax ? soLop : Math.min(3, toMax)),
       // ten to: lay ten to cua lop; neu giao vien da sua trong tro (va ten lop chua doi) thi giu ban da sua
       ten: Array.isArray(p.ten) && JSON.stringify(p.tenGoc) === JSON.stringify(tenLop) ? p.ten.slice(0, 6) : tenLop.slice(),
       tenGoc: tenLop,
-      vong: d.vong.ds.indexOf(+p.vong) >= 0 ? +p.vong : d.vong.md,
+      vong: d.soCau ? (+p.vong >= 5 && +p.vong <= 100 ? +p.vong : d.vong.md) : d.vong.ds.indexOf(+p.vong) >= 0 ? +p.vong : d.vong.md,
       loai: LOAI[p.loai] ? p.loai : 'honhop',
       x: x,
       cach: p.cach === 'qr' ? 'qr' : 'bang',

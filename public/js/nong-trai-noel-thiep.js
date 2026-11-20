@@ -441,7 +441,7 @@
     var h = '<div class="th-tat-bang"><div class="th-tat-to' + (r.n ? ' co' : '') + (r.moDuoc ? ' mo-duoc' : '') + '">' + svgTat(r.n, true) + '</div>' +
       '<div class="th-tat-ben"><h3><span lang="zh">圣诞袜</span> Shèngdàn wà · Tất Noel của em</h3>' +
       '<p class="th-tat-dem">🧦 <b>' + r.n + '</b> quà đang chờ</p>';
-    if (!r.n) h += '<p>Tất còn trống. Các bạn cùng thị trấn sang thăm nông trại em sẽ bỏ quà nhỏ vào đây. Em cũng sang thăm và bỏ quà cho các bạn nhé!</p>';
+    if (!r.n) h += '<p>Tất còn trống. Các bạn sang thăm nông trại em (cùng lớp hay khác lớp đều được) sẽ bỏ quà nhỏ vào đây. Em cũng sang thăm và bỏ quà cho các bạn nhé!</p>';
     else if (r.moDuoc) h += '<p>🎄 Đêm Giáng sinh tới rồi! Mở tất xem các bạn tặng gì nào!</p><button type="button" class="nt-nut nt-nut-vang nt-nut-to" id="thTatMo">🎁 Mở tất <span lang="zh">打开</span></button>';
     else h += '<p>Bí mật nhé! 🤫 Tất mở được từ đêm Giáng sinh <b>' + ngayVn(r.ngayMo) + '</b>' + (con ? ' — còn <b>' + con + '</b> ngày.' : '.') + '</p>';
     h += '</div></div>';
@@ -486,7 +486,7 @@
     var h = '<div class="th-tat-bang"><div class="th-tat-to' + (r.n ? ' co' : '') + '">' + svgTat(r.n, true) + '</div><div class="th-tat-ben">' +
       '<h3>Tất Noel của ' + esc(ten) + ' <small lang="zh">圣诞袜</small></h3><p class="th-tat-dem">🧦 <b>' + r.n + '</b> món quà đang chờ</p>' +
       '<p>Bỏ một món quà nhỏ kèm lời chúc — ' + esc(ten) + ' mở tất vào đêm Giáng sinh <b>' + ngayVn(r.ngayMo) + '</b> sẽ thấy tên em!</p></div></div>';
-    var ly = !r.mua ? 'Mùa Noel đã qua — hẹn em mùa sau nhé!' : !r.cung ? 'Chỉ bạn cùng thị trấn mới bỏ quà vào tất được.' : r.da ? '✓ Hôm nay em đã bỏ quà vào tất của bạn này rồi — mai nhé!'
+    var ly = !r.mua ? 'Mùa Noel đã qua — hẹn em mùa sau nhé!' : !r.cung ? 'Bạn này chưa mở nông trại.' : r.da ? '✓ Hôm nay em đã bỏ quà vào tất của bạn này rồi — mai nhé!'
       : !r.con ? 'Hôm nay em đã tặng đủ ' + c.tatNgay + ' món quà rồi — mai tặng tiếp nhé!' : r.day ? 'Tất của bạn đầy quà rồi!' : '';
     if (ly) { than.innerHTML = h + '<p class="nt-trong">' + ly + '</p>'; return; }
     if (TAT.loai !== 'xu' && !r.hang.some(function (x) { return x.loai === TAT.loai; })) TAT.loai = 'xu';

@@ -3,7 +3,7 @@
 //    (cung classId, ca thi tran Tu Do 'tudo') hoac "Gửi cô". Moi ngay toi da TH_NGAY thiep, moi ban 1 thiep / ngay, co 1 thiep / ngay.
 //    Nguoi nhan: f.thN [{id, ai, m, c, t, mo}] (Hop thiep, mo xem co hieu ung). Nguoi gui: f.thD [{id, den, m, c, t}] + f.thNg {d, n, ai}.
 //    Thiep gui co: KV farm_chung 'thiepco:<lop>:<nam>' { ds: [{id, ai, m, c, t}] } — thay co xem o trang Bao cao.
-//  - Tat Noel: moi nong trai treo 1 chiec tat canh nha (trong mua). Ban cung thi tran sang tham bo 1 mon qua nho
+//  - Tat Noel: moi nong trai treo 1 chiec tat canh nha (trong mua). Ban nao sang tham cung bo 1 mon qua nho
 //    (xu / hat giong / hang trong kho — khong hang quy) + 1..2 cau chuc mau. May chu tru do cua nguoi tang NGAY, giu trong tat;
 //    chu nong trai chi mo tat tu 25/12 (gio VN) -> do cong vao kho / tui hat / xu. Nguoi tang: f.tatG {d, n, ai}.
 //    Chu: f.tat { ds: [{id, ai, loai, k, n, c, t, nam, mo}] }.
@@ -91,6 +91,11 @@ function gan(app, d, h, c) {
     return out;
   }
   async function lopCua(uid) { const st = await d.loadClassState(); const m = st.members[uid]; return m ? m.classId : ''; }
+  // Tat Noel: ai co nong trai cung bo qua duoc (2026-11-20 co giao: "bo gioi han cung thi tran, ai tang cung duoc")
+  async function coNongTrai(me, id) {
+    if (!id || id === me) return false;
+    return !!(await h.docNhieu([id]))[id];
+  }
   async function cungThiTran(me, id) {
     if (!id || id === me) return false;
     const st = await d.loadClassState();
@@ -222,7 +227,7 @@ function gan(app, d, h, c) {
       const daMo = ds.filter((x) => x.mo).slice(0, 40).map((x) => ({ id: x.id, ten: ten[x.ai] || 'Một bạn', loai: x.loai, k: x.k, n: x.n, c: x.c, t: x.t }));
       return res.json({ cuaEm: true, mua: muaNay(), ngay, ngayMo: ngayMoTat(nam), n: cho.length, moDuoc: cho.some((x) => ngay >= ngayMoTat(x.nam)), daMo });
     }
-    const [fb, fm, cung] = await Promise.all([h.doc(id), h.doc(me), cungThiTran(me, id)]);
+    const [fb, fm, cung] = await Promise.all([h.doc(id), h.doc(me), coNongTrai(me, id)]);
     const g = ngayNg(fm.tatG, ngay);
     res.json({ cuaEm: false, mua: muaNay(), ngay, ngayMo: ngayMoTat(nam), n: chuaMo(fb).length, cung, da: g.ai.indexOf(id) >= 0,
       con: Math.max(0, TAT_NGAY - g.n), day: chuaMo(fb).length >= TAT_TOI_DA, xu: fm.xu, hang: cung ? cacMon(fm) : [] });
@@ -240,7 +245,7 @@ function gan(app, d, h, c) {
     if (loai === 'hat' && !hatDuoc(k)) return res.status(400).json({ error: CAY[k] ? 'Hạt giống quý không tặng được, em chọn hạt khác nhé.' : 'Không có hạt giống này.' });
     const cau = cauHop(b.c, TAT_CAU, false);
     if (!cau) return res.status(400).json({ error: 'Em chọn 1–' + TAT_CAU + ' câu chúc nhé.' });
-    if (!(await cungThiTran(me, id))) return res.status(400).json({ error: 'Em chỉ bỏ quà được vào tất của bạn cùng thị trấn.' });
+    if (!(await coNongTrai(me, id))) return res.status(400).json({ error: 'Bạn này chưa mở nông trại.' });
     const ngay = homNay(d), nam = namNay();
     await h.traLoi(res, h.haiLuot(me, id, async () => {
       const fm = await h.doc(me), ff = await h.doc(id), t = Date.now();

@@ -655,6 +655,8 @@
     return s + '</g></svg>';
   }
   var NCF = { ds: [], boi: '', luot: 0 };
+  // 3D xoay: nhan cong dung truoc / sau theo goc nhin moi
+  if (N.sauXoay) N.sauXoay.push(function () { NCF.ds.forEach(function (n) { if (n.el) n.el.style.zIndex = Math.round(N.zSau(n.x + 0.5, n.y + 1, 0) * 10) + 6; }); });
   function ncDuLieu() { return S.tham ? (S.tham.nc || []) : ((S.st && S.st.kt && S.st.kt.nc) || []); }
   function ncDangLam(w) { return w.tt === 'lam'; }
   // diem dung nghi: canh nha, moi nguoi 1 cho
@@ -683,8 +685,8 @@
     n.el.style.width = w + 'px';
     n.el.style.transitionDuration = (ms || 0) + 'ms';
     // goc nhin nghieng (S.ng): keo dan nguoc chieu doc quanh chan (transform-origin 50% 100% trong CSS) de dung thang
-    n.el.style.transform = 'translate(' + ((n.x + 0.5) * T - w / 2).toFixed(1) + 'px,' + ((n.y + 0.95) * T - w * 1.31).toFixed(1) + 'px)' + (S.ng ? ' scaleY(' + (1 / S.ng).toFixed(4) + ')' : '');
-    n.el.style.zIndex = Math.round((n.y + 1) * 10 + 6);
+    n.el.style.transform = 'translate(' + ((n.x + 0.5) * T - w / 2).toFixed(1) + 'px,' + ((n.y + 0.95) * T - w * 1.31).toFixed(1) + 'px)' + (S.ng ? ' rotate(var(--xn, 0deg)) scaleY(' + (1 / S.ng).toFixed(4) + ')' : '');
+    n.el.style.zIndex = Math.round(N.zSau(n.x + 0.5, n.y + 1, 0) * 10) + 6;
   }
   function ncBong(n, chu, ms) {
     var b = n.el.querySelector('.kt-ncf-bong');

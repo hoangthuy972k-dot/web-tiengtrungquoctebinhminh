@@ -2418,7 +2418,7 @@ body.nt-ng .nt-que-nen { display: block; position: absolute; inset: 0; pointer-e
 /* --- mat ruong nghieng --- */
 body.nt-ng .nt-que .nt-dat {
   margin: 0 0 calc(var(--o) * var(--dat-h, 10) * (var(--ng-c) - 1)); border: 0; border-radius: 8px;
-  transform: scaleY(var(--ng-c)); transform-origin: 0 0;
+  transform: scaleY(var(--ng-c)) rotate(var(--xoay, 0deg)); transform-origin: 0 0;
   background-color: var(--q-dat);
   background-image:
     radial-gradient(closest-side, rgba(255, 255, 190, 0.2), rgba(255, 255, 190, 0)),
@@ -2429,10 +2429,12 @@ body.nt-ng .nt-que .nt-dat {
   box-shadow: inset 0 0 calc(var(--o) * 0.5) rgba(36, 90, 30, 0.3);
 }
 body.nt-ng .nt-que .nt-dat.no { animation: q-no 1.2s cubic-bezier(0.34, 1.5, 0.64, 1); }
-@keyframes q-no { 0% { transform: scaleY(var(--ng-c)) scale(0.93); } 60% { transform: scaleY(var(--ng-c)) scale(1.02); } 100% { transform: scaleY(var(--ng-c)); } }
+@keyframes q-no { 0% { transform: scaleY(var(--ng-c)) rotate(var(--xoay, 0deg)) scale(0.93); } 60% { transform: scaleY(var(--ng-c)) rotate(var(--xoay, 0deg)) scale(1.02); } 100% { transform: scaleY(var(--ng-c)) rotate(var(--xoay, 0deg)); } }
 body.nt-ng .nt-luoi { border-radius: 8px; }
 /* do vat dung thang: chan o mep truoc cua o, keo dan nguoc chieu doc */
-body.nt-ng .nt-dung { position: absolute; inset: 0; z-index: 1; pointer-events: none; transform-origin: 50% 100%; transform: scaleY(var(--ng-ic)); }
+/* tam o lam goc: rotate(-θ) scaleY(1/c) = nghich dao mat dat -> hinh dung thang, quay mat ve phia em (ca khi xoay 3D);
+   translateY dua chan hinh xuong dung mep truoc o (nhu kieu cu khi θ = 0) */
+body.nt-ng .nt-dung { position: absolute; inset: 0; z-index: 1; pointer-events: none; transform-origin: 50% 50%; transform: rotate(var(--xn, 0deg)) scaleY(var(--ng-ic)) translateY(calc(-50% * (1 - var(--ng-c)))); }
 /* vung cham cua phan dung thang (gon hon hinh vuong de cham trung o phia sau) */
 body.nt-ng .nt-dung::after { content: ''; position: absolute; left: 16%; right: 16%; top: 12%; bottom: 0; pointer-events: auto; }
 body.nt-ng .nt-dat .nt-vat .nt-hinh { filter: none; }
@@ -2464,10 +2466,10 @@ body.nt-ng .nt-dat .nt-vat.nt-k-duong .nt-dung::after { display: none; }
 /* ao: lun xuong mat dat (vien toi phia trong mep tren) */
 body.nt-ng .nt-dat .nt-vat:is(.nt-k-ao-ca, .nt-k-ao-sen)::after { top: 30%; height: 64%; background: radial-gradient(closest-side, rgba(43, 29, 58, 0.3), rgba(43, 29, 58, 0)); transform: none; }
 /* nhan vat, nhan cong, bong mo khi dat do, gio qua: dung thang */
-body.nt-ng .nt-nv { transform: scaleY(var(--ng-ic)) translate(-50%, -100%); transform-origin: 0 0; }
+body.nt-ng .nt-nv { transform: rotate(var(--xn, 0deg)) scaleY(var(--ng-ic)) translate(-50%, -100%); transform-origin: 0 0; }
 body.nt-ng .nt-nv::after { content: ''; position: absolute; left: 20%; right: 20%; bottom: -4%; height: 8%; border-radius: 50%; z-index: -1; background: radial-gradient(closest-side, rgba(43, 29, 58, 0.34), rgba(43, 29, 58, 0)); }
 body.nt-ng .kt-ncf { transform-origin: 50% 100%; }
-body.nt-ng .nt-bong-dat img { transform-origin: 50% 100%; transform: scaleY(var(--ng-ic)); }
+body.nt-ng .nt-bong-dat img { transform-origin: 50% 100%; transform: rotate(var(--xn, 0deg)) scaleY(var(--ng-ic)); }
 
 /* --- gio qua trong bui cay (ca 2 goc nhin) --- */
 .nt-gio-qua {
@@ -2478,7 +2480,7 @@ body.nt-ng .nt-bong-dat img { transform-origin: 50% 100%; transform: scaleY(var(
 .nt-gio-bui { position: absolute; left: -18%; right: -18%; bottom: -6%; height: 58%; border-radius: 50% 50% 40% 40%; background: radial-gradient(circle at 35% 30%, #8fdc66, #4c9f3e); border: 2.5px solid var(--vien); }
 .nt-gio-bui::before { content: ''; position: absolute; left: 18%; top: 22%; width: 7px; height: 7px; border-radius: 50%; background: #fff; box-shadow: 18px 6px 0 #fff, 34px -2px 0 #fff; }
 .nt-gio-qua:focus-visible { outline: 3px solid var(--vang); outline-offset: 2px; border-radius: 50%; }
-body.nt-ng .nt-gio-qua { transform-origin: 50% 100%; transform: scaleY(var(--ng-ic)); }
+body.nt-ng .nt-gio-qua { transform-origin: 50% 100%; transform: rotate(var(--xn, 0deg)) scaleY(var(--ng-ic)); }
 @keyframes nt-gio-lac { 0%, 100% { transform: rotate(-6deg) translateY(0); } 50% { transform: rotate(6deg) translateY(-6%); } }
 .nt-gio-thu { text-align: center; }
 .nt-gio-to { display: block; font-size: 2.6rem; line-height: 1; }
@@ -2516,6 +2518,36 @@ body.nt-ng.nt-b-toi .nt-dat .nt-vat.nt-k-nha::before {
   content: ''; position: absolute; left: 4%; top: 10%; width: 92%; height: 84%; border-radius: 50%; pointer-events: none; z-index: 0;
   background: radial-gradient(closest-side, rgba(255, 220, 140, 0.5), rgba(255, 220, 140, 0));
 }
+
+/* ══════════ 3D XOAY (nong-trai-que.js) — body.nt-xoay khi goc xoay ≠ 0 ══════════
+   Ruong thanh 1 "dao dat noi" xoay quanh tam: mat co + de dat day (nhieu lop drop-shadow chong nhau tren 1 lop rieng),
+   nen troi + dong co xa. Vung que SVG (ve san cho huong chinh) an di. Khung giu co dinh khi xoay (khong nhay bo cuc). */
+body.nt.nt-xoay:not(.o-thi-tran) {
+  background: linear-gradient(180deg, var(--q-troi1) 0, var(--q-troi2) 34%, #d6eeb8 37%, var(--q-co1) 44%, var(--q-co3) 100%) fixed;
+}
+body.nt-xoay .nt-que { display: flow-root; padding: 0; }
+body.nt-xoay .nt-que-nen { display: none; }
+body.nt-xoay .nt-que .nt-dat { position: relative; z-index: 1; margin: var(--xm-t, 0) var(--xm-x, 0) var(--xm-b, 0); transform-origin: 50% 50%; border-radius: 10px; }
+.nt-de-boc { display: none; }
+body.nt-xoay .nt-de-boc {
+  display: block; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  filter: drop-shadow(0 calc(var(--o) * 0.08) 0 #c08a52) drop-shadow(0 calc(var(--o) * 0.09) 0 #a8703f) drop-shadow(0 calc(var(--o) * 0.1) 0 #8d5a31)
+    drop-shadow(0 calc(var(--o) * 0.1) 0 #6f4524) drop-shadow(0 3px 0 #2b1d3a) drop-shadow(0 calc(var(--o) * 0.45) calc(var(--o) * 0.3) rgba(43, 29, 58, 0.22));
+}
+.nt-de {
+  position: absolute; left: var(--xm-x, 0); top: var(--xm-t, 0); width: var(--xw, 0); height: var(--xh, 0); border-radius: 10px;
+  background: #6fae47; box-shadow: 0 0 0 3px #2b1d3a;
+  transform-origin: 50% 50%; transform: scaleY(var(--ng-c)) rotate(var(--xoay, 0deg));
+}
+/* luong dat noi: mat truoc luon lo ra phia duoi man hinh (trinh duyet cu khong co sin()/cos() -> giu kieu cu) */
+body.nt-xoay .nt-dat .nt-vat.nt-k-o::before {
+  transform: translate(calc(var(--o) * 0.14 * var(--ng-ic) * sin(var(--xoay, 0deg))), calc(var(--o) * 0.14 * var(--ng-ic) * cos(var(--xoay, 0deg))));
+}
+/* nut xoay trai / phai (chi hien o che do 3D) */
+.nt-zoom .nt-nut-xoay { display: none; padding: 0; align-items: center; justify-content: center; touch-action: none; -webkit-user-select: none; user-select: none; }
+body.nt-ng .nt-zoom .nt-nut-xoay { display: flex; }
+.nt-nut-xoay svg { width: 22px; height: 22px; fill: none; stroke: var(--vien); stroke-width: 2.6; stroke-linecap: round; stroke-linejoin: round; pointer-events: none; }
+.nt-nut-xoay.dang { background: var(--vang); }
 
 /* --- nut doi goc nhin trong "⋯ Thêm" --- */
 .nt-them-goc .nt-them-emo { background: #dff3ff; }

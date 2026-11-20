@@ -8,6 +8,7 @@
    · Mo rong dat -> khoang ruong da khai hoang to ra giua vung que (hieu ung "dat no rong" lan dau).
    · Nang theo gio Viet Nam: bong ngan buoi trua, dai buoi sang / chieu, chieu muon vang ruc, toi = hoang hon nhe (KHONG toi).
      Thu tren may local: ?gio=17.
+   · 3D xoay: nut xoay trai / phai canh nut 3D (giu = xoay lien tuc), 2 ngon tay tren dien thoai; goc ≠ 0 -> "dao dat noi" (body.nt-xoay).
    · Goc nhin ▦ Phang = nong trai kieu cu (khong ve vung que). Doi bang nut 3D canh nut + − (hoac "⋯ Thêm" → Góc nhìn), luu theo may.
    · Gio qua trong bui cay canh ruong: nhat 1 lan / ngay (may chu: a='chai', +3 xu).
    ══════════════════════════════════════════════════════════════════ */
@@ -216,6 +217,7 @@
       return;
     }
     var W = dl.kich.w, H = dl.kich.h, T = S.o;
+    khungXoay();
     var key = W + 'x' + H + '|' + chu + '|' + T + '|' + Math.round(innerWidth / 40) + 'x' + Math.round(innerHeight / 40);
     que.style.setProperty('--o', T + 'px');
     if (key !== QUE.key) {
@@ -359,6 +361,7 @@
     var giu = giuCho && cu && S.st ? giuTam() : null;
     S.ng = nghieng ? NG_C : 0;
     document.body.classList.toggle('nt-ng', !!nghieng);
+    datBienXoay();
     capNhatNutGoc();
     if (cu === !!nghieng || !S.st) return;
     QUE.key = '';
@@ -404,13 +407,12 @@
   function giuTam() {
     var k = $('#ntKhung'), dat = $('#ntDat');
     if (!S.ng || !k || !dat) return null;
-    var r = dat.getBoundingClientRect(), cx = innerWidth / 2, cy = innerHeight / 2;
-    var tx = (cx - r.left) / S.o, ty = (cy - r.top) / N.hangPx();
+    var cx = innerWidth / 2, cy = innerHeight / 2, p = N.datTuManHinh(cx, cy), tx = p.x / S.o, ty = p.y / S.o;
     return function () {
       if (!S.ng) return;
-      var r2 = $('#ntDat').getBoundingClientRect();
-      k.scrollLeft += r2.left + tx * S.o - cx;
-      k.scrollTop += r2.top + ty * N.hangPx() - cy;
+      var q = N.manHinhTuDat(tx * S.o, ty * S.o);
+      k.scrollLeft += q.x - cx;
+      k.scrollTop += q.y - cy;
     };
   }
   // do khung hinh khi keo / cuon ban do o goc nghieng: trung vi > 40 ms hai lan -> ve Phang
@@ -441,6 +443,160 @@
     setTimeout(function () { N.bao('🐢 Máy hơi chậm ' + BAO_YEU); }, 600);
   }
 
+  /* ---------------- 3D XOAY: xoay ruong quanh tam (nut xoay canh nut 3D, giu de xoay lien tuc, 2 ngon tay tren dien thoai) ----------------
+     Goc luu theo may (hyv_nt_xoay). Goc 0 = huong chinh voi vung que; goc khac = "dao dat noi" (body.nt-xoay). */
+  var XO = { goc: 0, anim: 0, giu: null, tw: null };
+  function chuanGoc(g) { g = g % 360; if (g < 0) g += 360; return g > 359.95 || g < 0.05 ? 0 : g; }
+  try { XO.goc = chuanGoc(+localStorage.getItem('hyv_nt_xoay') || 0); } catch (e) { /* bo qua */ }
+  function ghiXoay() { try { localStorage.setItem('hyv_nt_xoay', String(Math.round(XO.goc * 10) / 10)); } catch (e) { /* bo qua */ } }
+  // kich thuoc khung co dinh cho moi goc (theo duong cheo ruong) -> khong nhay bo cuc khi xoay
+  function khungXoay() {
+    var que = $('#ntQue'), dl = N.duLieuBanDo();
+    if (!que || !dl || !dl.kich || !document.body.classList.contains('nt-xoay')) return;
+    var T = S.o, W = dl.kich.w * T, H = dl.kich.h * T, D = Math.sqrt(W * W + H * H), c = NG_C;
+    que.style.setProperty('--xw', W + 'px');
+    que.style.setProperty('--xh', H + 'px');
+    que.style.setProperty('--xm-x', f2((D - W) / 2 + T * 1.4) + 'px');
+    que.style.setProperty('--xm-t', f2(D * c / 2 - H / 2 + T * 3) + 'px');
+    que.style.setProperty('--xm-b', f2(D * c / 2 - H / 2 + T * 2.2) + 'px');
+    if (!$('#ntDeBoc')) {
+      var b = document.createElement('div');
+      b.id = 'ntDeBoc'; b.className = 'nt-de-boc'; b.setAttribute('aria-hidden', 'true');
+      b.innerHTML = '<div class="nt-de" id="ntDe"></div>';
+      que.insertBefore(b, $('#ntDat'));
+    }
+    datBienCss();
+  }
+  function datBienCss() {
+    var g = S.xoay || 0;
+    ['#ntDat', '#ntDe'].forEach(function (s) {
+      var el = $(s);
+      if (!el) return;
+      el.style.setProperty('--xoay', f2(g) + 'deg');
+      el.style.setProperty('--xn', f2(-g) + 'deg');
+    });
+  }
+  // dat S.xoay + lop body theo XO.goc (chi khi dang 3D); tra ve true neu doi lop (bo cuc doi)
+  function datBienXoay() {
+    S.xoay = S.ng ? XO.goc : 0;
+    var on = !!S.xoay, doi = document.body.classList.contains('nt-xoay') !== on;
+    document.body.classList.toggle('nt-xoay', on);
+    datBienCss();
+    if (doi) khungXoay();
+    return doi;
+  }
+  function apXoay(g) {
+    var moi = chuanGoc(g), on = !!(S.ng && moi);
+    var giu = S.st && S.ng && on !== document.body.classList.contains('nt-xoay') ? giuTam() : null;
+    XO.goc = moi;
+    var doi = datBienXoay();
+    if (doi && giu) giu();
+    if (S.st) N.capNhatSau();
+    if (N.datViTriNoi) N.datViTriNoi();
+  }
+  function huyAnim() { if (XO.anim) cancelAnimationFrame(XO.anim); XO.anim = 0; }
+  function giamDong() { try { return matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) { return false; } }
+  // bam nhanh: xoay 45 do muot (toi huong gan nhat chia het cho 45)
+  function buoc(huong) {
+    huyAnim();
+    var tu = XO.goc, den = (huong > 0 ? Math.floor(tu / 45 + 0.01) + 1 : Math.ceil(tu / 45 - 0.01) - 1) * 45;
+    if (giamDong()) { apXoay(den); ghiXoay(); return; }
+    var t0 = performance.now(), dai = 380;
+    (function khung(t) {
+      var k = Math.max(0, Math.min(1, (t - t0) / dai)), e = 1 - Math.pow(1 - k, 3);
+      apXoay(tu + (den - tu) * e);
+      if (k < 1) XO.anim = requestAnimationFrame(khung); else { XO.anim = 0; apXoay(den); ghiXoay(); }
+    })(t0);
+  }
+  // giu nut: xoay lien tuc ~100 do / giay
+  function xoayLienTuc(huong, nut) {
+    huyAnim();
+    var tr = performance.now();
+    nut.classList.add('dang');
+    (function khung(t) {
+      if (!XO.giu) return;
+      apXoay(XO.goc + huong * 100 * Math.max(0, Math.min(0.1, (t - tr) / 1000)));
+      tr = t;
+      XO.anim = requestAnimationFrame(khung);
+    })(tr);
+  }
+  var ICON_XOAY = {
+    '-1': '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>',
+    '1': '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>'
+  };
+  function taoXoay() {
+    var n3 = $('#ntNut3d');
+    if (!n3 || $('#ntXoayTrai')) return;
+    [[-1, 'ntXoayTrai', 'Xoay nông trại sang trái'], [1, 'ntXoayPhai', 'Xoay nông trại sang phải']].forEach(function (x) {
+      var b = document.createElement('button');
+      var huong = x[0];
+      b.type = 'button'; b.id = x[1]; b.className = 'nt-nut-xoay';
+      b.setAttribute('aria-label', x[2]);
+      b.title = x[2] + ' (giữ nút để xoay liên tục)';
+      b.innerHTML = ICON_XOAY[huong];
+      n3.parentNode.insertBefore(b, huong < 0 ? n3 : n3.nextSibling);
+      b.addEventListener('pointerdown', function (e) {
+        if (e.pointerType === 'mouse' && e.button !== 0) return;
+        try { b.setPointerCapture(e.pointerId); } catch (er) { /* bo qua */ }
+        XO.giu = { dai: false, hen: setTimeout(function () { if (XO.giu) { XO.giu.dai = true; xoayLienTuc(huong, b); } }, 320) };
+      });
+      b.addEventListener('pointerup', function () {
+        var g = XO.giu;
+        if (!g) return;
+        clearTimeout(g.hen);
+        XO.giu = null;
+        b.classList.remove('dang');
+        if (g.dai) { huyAnim(); ghiXoay(); } else buoc(huong);
+        meoXoay();
+      });
+      b.addEventListener('pointercancel', function () {
+        var g = XO.giu;
+        if (!g) return;
+        clearTimeout(g.hen);
+        XO.giu = null;
+        b.classList.remove('dang');
+        huyAnim(); ghiXoay();
+      });
+      b.addEventListener('click', function (e) { if (e.detail === 0) buoc(huong); }); // ban phim (Enter / Space)
+      b.addEventListener('contextmenu', function (e) { e.preventDefault(); });
+    });
+    // 2 ngon tay xoay tren dien thoai
+    var k = $('#ntKhung');
+    if (!k) return;
+    function gocCham(t) { return Math.atan2(t[1].clientY - t[0].clientY, t[1].clientX - t[0].clientX) * 180 / Math.PI; }
+    k.addEventListener('touchstart', function (e) {
+      if (e.touches.length !== 2) { XO.tw = null; return; }
+      if (!S.ng || document.body.classList.contains('o-thi-tran')) return;
+      huyAnim();
+      XO.tw = { a0: gocCham(e.touches), g0: XO.goc, on: false };
+    }, { passive: true });
+    k.addEventListener('touchmove', function (e) {
+      var tw = XO.tw;
+      if (!tw || e.touches.length !== 2) return;
+      var da = gocCham(e.touches) - tw.a0;
+      if (da > 180) da -= 360; else if (da < -180) da += 360;
+      if (!tw.on) {
+        if (Math.abs(da) < 10) return;
+        tw.on = true;
+        tw.a0 += da > 0 ? 10 : -10;
+        da += da > 0 ? -10 : 10;
+      }
+      e.preventDefault();
+      apXoay(tw.g0 + da);
+    }, { passive: false });
+    function hetCham(e) {
+      if (!XO.tw || e.touches.length >= 2) return;
+      if (XO.tw.on) { ghiXoay(); meoXoay(); }
+      XO.tw = null;
+    }
+    k.addEventListener('touchend', hetCham, { passive: true });
+    k.addEventListener('touchcancel', hetCham, { passive: true });
+  }
+  function meoXoay() {
+    try { if (localStorage.getItem('hyv_nt_meo_xoay')) return; localStorage.setItem('hyv_nt_meo_xoay', '1'); } catch (e) { return; }
+    setTimeout(function () { N.bao('🔄 Mẹo: giữ nút xoay để xoay liên tục; trên điện thoại xoay bằng 2 ngón tay cũng được. Bấm 3D để về 2D.'); }, 500);
+  }
+
   /* ---------------- khoi dong ---------------- */
   // Co giao (2026-11-14): mac dinh quay ve giao dien cu (Phang). Chi bat Nghieng khi em tu chon trong ⋯ Thêm → Góc nhìn.
   // em tu bam nut 3D -> giu 3D (ke ca may yeu); may yeu chi khong tu bat
@@ -450,6 +606,8 @@
   taoNutGoc();
   var nut3d = $('#ntNut3d');
   if (nut3d) nut3d.addEventListener('click', doiGoc);
+  taoXoay();
+  datBienXoay();
   capNhatNutGoc();
   apNang();
   N.sauVe.push(veQue);
@@ -468,6 +626,7 @@
 
   window.NTQue = {
     canh: canh, giuTam: giuTam, nghieng: function () { return !!S.ng; },
+    xoay: function (g) { if (g == null) return S.xoay; apXoay(g); ghiXoay(); return S.xoay; },
     // chi de thu: dua vao 30 khung hinh gia (ms) nhu khi keo ban do tren may cham
     _thuKhung: function (ms) { for (var i = 0; i < 30; i++) GOC.ds.push(ms); xetKhung(); return GOC.cham; },
   };

@@ -57,10 +57,58 @@
     tham: null,      // nong trai ban dang tham { id, ten, ... }
     o: 64,           // kich thuoc 1 o (px)
     ng: 0,           // goc nhin nghieng 2.5D (nong-trai-que.js): 0 = phang (kieu cu); >0 = he so nen hang (cos goc nghieng)
+    xoay: 0,         // 3D xoay (nong-trai-que.js): goc xoay mat dat (do, chieu kim dong ho); 0 = huong chinh. Chi co tac dung khi S.ng
     ban: false       // dang gui hanh dong
   };
   // chieu cao 1 hang o tren man hinh (px): phang = S.o, nghieng = S.o * S.ng
   function hangPx() { return S.o * (S.ng || 1); }
+  /* 3D xoay: mat dat = transform scaleY(c) rotate(θ) (phep chieu truc giao cua mat phang da xoay).
+     Do vat dung thang = nghich dao (rotate(-θ) scaleY(1/c)) -> luon quay mat ve phia em.
+     Doi toa do man hinh <-> mat dat (px trong #ntDat) va thu tu truoc / sau (z-index) theo do sau tren man hinh. */
+  function xoayLuong() { var a = (S.ng && S.xoay ? S.xoay : 0) * Math.PI / 180; return { s: Math.sin(a), c: Math.cos(a) }; }
+  // goc tren trai cua mat dat (diem (0,0)) tren man hinh + ham chieu xuoi
+  function gocDat() {
+    var dat = $('#ntDat'), d = duLieuBanDo(), r = dat.getBoundingClientRect(), c = S.ng || 1, L = xoayLuong();
+    if (!d || !d.kich || (!S.xoay || !S.ng)) return { x: r.left, y: r.top, L: L, c: c };
+    var W = d.kich.w * S.o, H = d.kich.h * S.o;
+    var xs = [0, W * L.c, -H * L.s, W * L.c - H * L.s], ys = [0, W * L.s * c, H * L.c * c, (W * L.s + H * L.c) * c];
+    return { x: r.left - Math.min.apply(null, xs), y: r.top - Math.min.apply(null, ys), L: L, c: c };
+  }
+  function datTuManHinh(x, y) {
+    var g = gocDat(), X = x - g.x, Y = (y - g.y) / g.c;
+    return { x: X * g.L.c + Y * g.L.s, y: -X * g.L.s + Y * g.L.c };
+  }
+  function manHinhTuDat(px, py) {
+    var g = gocDat();
+    return { x: g.x + px * g.L.c - py * g.L.s, y: g.y + (px * g.L.s + py * g.L.c) * g.c };
+  }
+  // doi do dich chuyen cua ngon tay tren man hinh -> do dich tren mat dat
+  function dichTuManHinh(dx, dy) {
+    var L = xoayLuong(), Y = dy / (S.ng || 1);
+    return { x: dx * L.c + Y * L.s, y: -dx * L.s + Y * L.c };
+  }
+  // do sau (don vi o) cua diem truoc nhat cua 1 vat tam (cx, cy), nua canh r: huong chinh = cy + r (nhu cu)
+  function zSau(cx, cy, r) {
+    if (!S.ng || !S.xoay) return cy + r;
+    var L = xoayLuong(), d = duLieuBanDo(), W = d && d.kich ? d.kich.w : 0, H = d && d.kich ? d.kich.h : 0;
+    return cx * L.s + cy * L.c + r * (Math.abs(L.s) + Math.abs(L.c)) - (W * Math.min(L.s, 0) + H * Math.min(L.c, 0));
+  }
+  function zVat(o) { var w = rong(o); return Math.round(zSau(o.x + w / 2, o.y + w / 2, w / 2) * 10); }
+  // dang xoay: cap nhat lai thu tu truoc / sau cua moi thu dung tren mat dat
+  function capNhatSau() {
+    var d = duLieuBanDo();
+    if (!d) return;
+    var theoId = {};
+    d.o.forEach(function (o) { theoId[o.id] = o; });
+    $all('#ntDat > .nt-vat').forEach(function (el) {
+      var o = theoId[el.getAttribute('data-id')];
+      if (!o) return;
+      var phang = o.k === 'o' || (S.cat.TT[o.k] && S.cat.TT[o.k].phang);
+      el.style.zIndex = phang && !S.ng ? 1 : zVat(o);
+    });
+    nvDs.forEach(function (n) { if (n.el) n.el.style.zIndex = Math.round(zSau(n.x + 0.5, n.y + 1, 0) * 10) + 5; });
+    if (window.NTX) NTX.sauXoay.forEach(function (fn) { try { fn(); } catch (e) { /* bo qua */ } });
+  }
   function bayGio() { return Date.now() + S.lech; }
 
   try { var z = +localStorage.getItem('hyv_nt_zoom'); if (z >= 40 && z <= 110) S.o = z; } catch (e) { /* bo qua */ }
@@ -409,7 +457,7 @@
     var cls = 'nt-vat nt-k-' + o.k + (phang ? ' phang' : '') + (o.z > 1 ? ' pt' : '') + (t.loai ? ' tt-' + t.loai : '') + (S.chon === o.id ? ' chon' : '');
     // nghieng: do phang (o ruong, duong) cung xep theo hang de ngon cay / ao khong de len do dung phia sau
     var h = '<button type="button" class="' + cls + '" data-id="' + o.id + '" style="left:' + o.x * T + 'px;top:' + o.y * T +
-      'px;width:' + w * T + 'px;height:' + w * T + 'px;z-index:' + (phang && !S.ng ? 1 : (o.y + w) * 10) + (o.z > 1 ? ';--z:' + o.z : '') + ';--lech:-' + ((o.id * 0.73) % 3).toFixed(2) + 's" aria-label="' + esc(tenMon(o.k, o.n).vn) + '">';
+      'px;width:' + w * T + 'px;height:' + w * T + 'px;z-index:' + (phang && !S.ng ? 1 : zVat(o)) + (o.z > 1 ? ';--z:' + o.z : '') + ';--lech:-' + ((o.id * 0.73) % 3).toFixed(2) + 's" aria-label="' + esc(tenMon(o.k, o.n).vn) + '">';
     // nghieng: phan "dung" (hinh, bong bong, thanh thoi gian) nam trong .nt-dung de dung thang tren mat dat nghieng
     if (S.ng) h += '<span class="nt-dung">';
     h += '<img class="nt-hinh" src="' + anh(t.hinh) + '" alt="" draggable="false">';
@@ -682,9 +730,9 @@
 
   /* ---------------- bam vao ban do ---------------- */
   function oTuSuKien(e) {
-    var r = $('#ntDat').getBoundingClientRect();
-    // nghieng: mat dat chi nen theo chieu doc (scaleY) -> nghich dao = chia cho chieu cao hang tren man hinh
-    return { x: Math.floor((e.clientX - r.left) / S.o), y: Math.floor((e.clientY - r.top) / hangPx()) };
+    // nghieng / 3D xoay: nghich dao phep chieu mat dat (datTuManHinh)
+    var p = datTuManHinh(e.clientX, e.clientY);
+    return { x: Math.floor(p.x / S.o), y: Math.floor(p.y / S.o) };
   }
   function datDuoc(x, y, w, boQua) {
     var d = S.st;
@@ -1001,7 +1049,8 @@
       if (!kv.dang) return;
     }
     // nghieng: do vat nam trong mat dat da nen -> doi do dich doc cua ngon tay ve don vi mat dat
-    var dyd = dy / (S.ng || 1);
+    var dd = dichTuManHinh(dx, dy), dyd = dd.y;
+    dx = dd.x;
     kv.el.style.translate = dx + 'px ' + dyd + 'px';
     var w = rong(kv.o), k = S.st.kich;
     var nx = Math.max(0, Math.min(k.w - w, Math.round((kv.o.x * S.o + dx) / S.o)));
@@ -2330,7 +2379,7 @@
     var T = S.o;
     n.el.style.left = (n.x + 0.5) * T + 'px';
     n.el.style.top = (n.y + 1) * T + 'px';
-    n.el.style.zIndex = (n.y + 1) * 10 + 5;
+    n.el.style.zIndex = Math.round(zSau(n.x + 0.5, n.y + 1, 0) * 10) + 5;
   }
   // Goi sau moi lan ve ban do (innerHTML thay het) -> gan lai nhan vat
   function veNhanVat() {
@@ -5728,7 +5777,8 @@
     capEm: capEm, dongThiTran: dongThiTran, veNha: veNha, htmlTen: htmlTen, soGon: soGon, tenMon: tenMon, moBangNho: moBangNho, thoiLuong: thoiLuong,
     dangKy: function (loai, fn) { NGOAI[loai] = fn; },
     batDauDat: batDauDat, datDuoc: datDuoc, rong: rong, xgCua: xgCua, moNoi: moNoi, dongNoi: dongNoi, duLieuBanDo: duLieuBanDo, bayGio: bayGio,
-    veBanDo: veBanDo, hangPx: hangPx, huyBac: huyBac, bacCua: bacCua, xpCap: xpCap, lenCapCu: null,
+    veBanDo: veBanDo, hangPx: hangPx, datTuManHinh: datTuManHinh, manHinhTuDat: manHinhTuDat, zSau: zSau, capNhatSau: capNhatSau,
+    sauXoay: [], // ham goi khi goc xoay 3D doi (cap nhat z-index cua do dung thang module them) huyBac: huyBac, bacCua: bacCua, xpCap: xpCap, lenCapCu: null,
     fx: FX, moiBaiHoc: function () { return linkHoc(); },
     sauBang: [], // ham goi sau moi lan ve 1 bang (bangDang) — nut ❓ + huong dan lan dau
     sauVe: [], // ham goi sau moi lan ve lai ban do (innerHTML thay het)

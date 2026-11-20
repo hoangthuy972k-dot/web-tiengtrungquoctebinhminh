@@ -1,7 +1,7 @@
 /* ══════════ Ong gia Noel tha qua (public/js/nong-trai-noel-qua.js) ══════════ */
 .nq-hop { position: absolute; z-index: 9001; padding: 0; border: 0; background: none; cursor: pointer; touch-action: manipulation; overflow: visible; }
 .nq-dung { position: absolute; inset: 0; display: block; }
-body.nt-ng .nq-dung { transform-origin: 50% 100%; transform: scaleY(var(--ng-ic)); }
+body.nt-ng .nq-dung { transform-origin: 50% 100%; transform: rotate(var(--xn, 0deg)) scaleY(var(--ng-ic)); }
 .nq-hop img { position: absolute; left: 14%; bottom: 4%; width: 72%; height: 72%; filter: drop-shadow(0 2px 0 rgba(43, 29, 58, 0.3)); }
 .nq-du { position: absolute; left: 0; width: 100%; bottom: 62%; height: 90%; opacity: 0; transition: opacity 0.4s; }
 .nq-hao { position: absolute; left: 0; right: 0; bottom: -8%; height: 70%; border-radius: 50%; background: radial-gradient(ellipse, rgba(255, 236, 140, 0.85), rgba(255, 214, 90, 0) 70%); animation: nq-hao 1.8s ease-in-out infinite; }

@@ -63,7 +63,7 @@
 /* ---------- bong tuyet lap lanh tren nong trai ---------- */
 .nsn-bong { position: absolute; z-index: 9000; padding: 0; border: 0; background: none; cursor: pointer; touch-action: manipulation; }
 .nsn-bong-dung { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; animation: nsn-roi 1.1s cubic-bezier(0.3, 1.3, 0.5, 1) both; }
-body.nt-ng .nsn-bong-dung { transform-origin: 50% 100%; transform: scaleY(var(--ng-ic)); }
+body.nt-ng .nsn-bong-dung { transform-origin: 50% 100%; transform: rotate(var(--xn, 0deg)) scaleY(var(--ng-ic)); }
 .nsn-bong img { position: relative; width: 62%; height: 62%; animation: nsn-xoay 6s linear infinite, nsn-noi 2.6s ease-in-out infinite alternate; filter: drop-shadow(0 0 6px #bfe8ff) drop-shadow(0 0 2px #fff); }
 .nsn-bong-hao { position: absolute; width: 90%; height: 90%; border-radius: 50%; background: radial-gradient(circle, rgba(255, 255, 255, 0.95), rgba(160, 220, 255, 0.55) 45%, rgba(160, 220, 255, 0) 70%); animation: nsn-hao 1.6s ease-in-out infinite; }
 .nsn-bong i { position: absolute; width: 6px; height: 6px; background: #fff; clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%); animation: nsn-sao 1.8s ease-in-out infinite; }

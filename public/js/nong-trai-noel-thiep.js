@@ -156,13 +156,14 @@
     T.c = T.c.filter(function (i) { return cauHop(i, choCo); });
     var ban = r.ban.filter(function (x) { return x.id === T.den; })[0];
     if (ban) T.denTen = ban.ten;
-    if (T.den && !choCo && !ban) { T.den = ''; T.denTen = ''; }
+    // nguoi nhan chon tu luc sang tham (ban khac thi tran) khong co trong danh sach cung thi tran -> van giu
+    if (T.den && !choCo && !ban && !T.denTen) { T.den = ''; T.denTen = ''; }
     var tenDen = choCo ? 'cô giáo' : T.denTen ? tenNgan(T.denTen) : '';
     // cau chuc: cau co chu em da hoc len truoc
     var ds = c.cau.map(function (x, i) { return i; }).filter(function (i) { return cauHop(i, choCo); });
     ds.sort(function (a, b2) { return (r.hoc[b2] || 0) - (r.hoc[a] || 0) || a - b2; });
     var h = '<div class="th-viet">' +
-      '<p class="nt-meo">Gửi thiệp tiếng Trung cho bạn cùng thị trấn <b>' + esc(r.lop) + '</b> hoặc cho cô. Hôm nay còn <b>' + r.con + '/' + c.thNgay + '</b> thiệp · mỗi thiệp +3 kinh nghiệm.</p>' +
+      '<p class="nt-meo">Gửi thiệp tiếng Trung cho bạn cùng thị trấn <b>' + esc(r.lop) + '</b>, cho cô — hoặc sang thăm nông trại bạn lớp khác rồi bấm <b>💌 Gửi thiệp</b>. Hôm nay còn <b>' + r.con + '/' + c.thNgay + '</b> thiệp · mỗi thiệp +3 kinh nghiệm.</p>' +
       '<div class="th-xem">' + htmlThe(T.m, T.c, { den: tenDen, tu: 'Em' }) + '</div>' +
       '<h3 class="th-h">1 · Chọn mẫu thiệp</h3><div class="th-mau">' + THU_TU_MAU.map(function (k) {
         var M = c.mau[k];

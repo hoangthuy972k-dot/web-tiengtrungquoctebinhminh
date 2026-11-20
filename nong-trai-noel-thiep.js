@@ -1,5 +1,5 @@
 // Mua Noel — Thiep Giang sinh 圣诞贺卡 + Treo tat Noel 圣诞袜 (2026-11-18).
-//  - Thiep: chon 1 mau thiep (5 mau ve o client) + 1..3 cau chuc MAU (khong go tu do) -> gui ban cung thi tran
+//  - Thiep: chon 1 mau thiep (5 mau ve o client) + 1..3 cau chuc MAU (khong go tu do) -> gui bat ky ban nao co nong trai
 //    (cung classId, ca thi tran Tu Do 'tudo') hoac "Gửi cô". Moi ngay toi da TH_NGAY thiep, moi ban 1 thiep / ngay, co 1 thiep / ngay.
 //    Nguoi nhan: f.thN [{id, ai, m, c, t, mo}] (Hop thiep, mo xem co hieu ung). Nguoi gui: f.thD [{id, den, m, c, t}] + f.thNg {d, n, ai}.
 //    Thiep gui co: KV farm_chung 'thiepco:<lop>:<nam>' { ds: [{id, ai, m, c, t}] } — thay co xem o trang Bao cao.
@@ -96,13 +96,6 @@ function gan(app, d, h, c) {
     if (!id || id === me) return false;
     return !!(await h.docNhieu([id]))[id];
   }
-  async function cungThiTran(me, id) {
-    if (!id || id === me) return false;
-    const st = await d.loadClassState();
-    const a = st.members[me], b = st.members[id];
-    if (!a || !b || a.classId !== b.classId) return false;
-    return !!(await h.docNhieu([id]))[id];
-  }
   // % chu Han cua tung cau em da hoc (tu cac bai em hoc / duoc giao)
   async function phanHoc(user) {
     try {
@@ -153,7 +146,8 @@ function gan(app, d, h, c) {
     if (!cau) return res.status(400).json({ error: 'Em chọn 1–' + TH_CAU + ' câu chúc trong danh sách nhé.' });
     const lop = await lopCua(me);
     if (!lop) return res.status(400).json({ error: 'Em chưa có thị trấn — mở nông trại để vào thị trấn nhé.' });
-    if (!choCo && !(await cungThiTran(me, den))) return res.status(400).json({ error: 'Em chỉ gửi thiệp được cho bạn cùng thị trấn (bạn đã mở nông trại).' });
+    // 2026-11-20 co giao: bo gioi han cung thi tran — gui thiep cho bat ky ban nao da mo nong trai
+    if (!choCo && !(await coNongTrai(me, den))) return res.status(400).json({ error: 'Bạn này chưa mở nông trại.' });
     const ngay = homNay(d), nam = namNay(), t = Date.now();
     const kiem = (fm) => {
       fm.thD = Array.isArray(fm.thD) ? fm.thD : [];

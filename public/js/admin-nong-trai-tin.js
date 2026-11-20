@@ -56,7 +56,7 @@
         (x.tc.length ? '<br>Trợ cấp: ' + x.tc.map(function (n) { return esc(n.ten) + ' +' + n.xu + (n.nhan ? ' ✓' : ' (chưa nhận)'); }).join(', ') : '') + '</p>';
     };
     return '<section class="admin-section"><div class="admin-section-title">🧾 Thuế nông trại (Quỹ thị trấn)</div>' +
-      '<p class="tc-hint">Chỉ xem. Nông trại từ cấp ' + q.luat.lv + ' có tài sản vượt ' + q.luat.mien + ' + ' + q.luat.moiCap + ' × cấp hoặc bán hàng nhiều đóng thuế nhỏ mỗi tuần (giảm đến 70% nếu học đều, tối đa 10% số xu). Tiền vào quỹ lớp: xây công trình chung + trợ cấp 5 em ít tài sản nhất có học.</p>' +
+      '<p class="tc-hint">Chỉ xem. Nông trại từ cấp ' + q.luat.lv + ' có tài sản vượt ' + q.luat.mien + ' + ' + q.luat.moiCap + ' × cấp hoặc bán hàng nhiều đóng thuế nhỏ mỗi tuần (giảm đến 70% nếu học đều; thiếu xu thì ghi nợ, trừ dần — đang nợ không mua được đồ trang trí, đất, nhà máy). Tiền vào quỹ lớp: xây công trình chung + trợ cấp 5 em ít tài sản nhất có học.</p>' +
       '<p class="tc-hint"><b>Quỹ hiện có:</b> ' + q.du + ' xu · đã thu tổng ' + q.tong + ' xu · đã xây ' + q.gachTong + ' viên gạch · đã trợ cấp ' + q.tcTong + ' xu.</p>' +
       dong(q.nay, 'Tuần này') + dong(q.truoc, 'Tuần trước') + '</section>';
   }

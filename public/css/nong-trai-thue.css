@@ -66,3 +66,10 @@ button.tx-tt-quy:hover { background: #ffecb3; }
   .tx-dong { font-size: 0.8rem; }
   .tx-tt { font-size: 0.74rem; }
 }
+
+/* no thue (2026-11-20) */
+.tx-no-the { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin: 0 0 12px; padding: 12px 14px; border-radius: 16px; background: #fff1e6; border: 3px solid #c62828; }
+.tx-no-the > div { flex: 1 1 220px; display: flex; flex-direction: column; gap: 2px; }
+.tx-no-the b { color: #b71c1c; font-size: 1.02rem; }
+.tx-no-the small { font-weight: 600; font-size: 0.85rem; }
+.tx-no { color: #b71c1c; font-weight: 700; }

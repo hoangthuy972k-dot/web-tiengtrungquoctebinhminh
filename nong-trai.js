@@ -466,6 +466,15 @@ function giaGocXu(o) {
   else if (tt) g = tt.xu || (tt.sao ? tt.sao * XU_MOI_SAO : (tt.dep || 10) * 10);
   return Math.max(20, g);
 }
+// Dang no thue (nong-trai-thue.js f.thue.no): khong tieu xu vao do trang tri / dat / nha may / phong to
+function chanNoThue(f) {
+  const no = f && f.thue && f.thue.no;
+  if (no > 0) {
+    const e = new Error('Em đang nợ thuế ' + no + ' xu 税 — trả hết nợ (⋯ Thêm → Thuế → Trả nợ) rồi mới mua đồ trang trí, mở rộng đất hay phóng to được nhé. Nợ cũng tự trừ dần khi em có xu.');
+    e.farm = true;
+    throw e;
+  }
+}
 function giaPhongTo(o, z) {
   const g = giaGocXu(o);
   return g * (g >= 1000 ? 2 : 3) * Math.max(0, z - (o.z > 1 ? o.z : 1));
@@ -688,7 +697,7 @@ const MO_TN = {
   le: { lv: 50, zh: '农场节', vn: 'Lễ hội nông trại', gt: 'Mỗi tháng em mở một lễ hội 2 ngày ở nông trại mình. Bạn cùng lớp sang dự, trả lời 1 câu từ bài của bạn ấy là vào hội — mỗi khách em được xu, đủ 5 khách được hạt giống quý.' },
   ht: { lv: 60, zh: '师徒', vn: 'Kèm học trò', gt: 'Nhận kèm tối đa 3 bạn cấp thấp hơn (cấp ≤ 40). Mỗi ngày gửi một lời khuyên học tập; hôm nào học trò học đủ 20 sao thì cả thầy lẫn trò cùng có thưởng. Trò không học thì không có thưởng.' },
   // them 2026-11-16 (thue nong trai) — xem nong-trai-thue.js
-  thue: { lv: 10, zh: '纳税', vn: 'Thuế nông trại', gt: 'Nông trại lớn đóng một khoản thuế nhỏ mỗi tuần: thuế tài sản 财产税 khi tài sản vượt mức miễn thuế (5000 + 600 × cấp) và thuế thu nhập 所得税 khi bán hàng hơn 2000 xu/tuần. Mỗi ngày học từ 20 sao giảm 10% (tối đa 50%), ôn “Hôm nay em ôn gì” từ 4 ngày giảm thêm 20%. Thuế không quá 10% số xu, không bao giờ lấy đồ — tiền vào Quỹ thị trấn để xây công trình và trợ cấp bạn khó khăn.' },
+  thue: { lv: 10, zh: '纳税', vn: 'Thuế nông trại', gt: 'Nông trại lớn đóng một khoản thuế nhỏ mỗi tuần: thuế tài sản 财产税 khi tài sản vượt mức miễn thuế (5000 + 600 × cấp) và thuế thu nhập 所得税 khi bán hàng hơn 2000 xu/tuần. Mỗi ngày học từ 20 sao giảm 10% (tối đa 50%), ôn “Hôm nay em ôn gì” từ 4 ngày giảm thêm 20%. Thiếu xu thì ghi nợ thuế, tự trừ dần khi có xu; đang nợ thì chưa mua được đồ trang trí, đất, nhà máy. Không bao giờ lấy đồ — tiền vào Quỹ thị trấn để xây công trình và trợ cấp bạn khó khăn.' },
 };
 // Giai dau thi dua theo cap nong trai
 const GIAI = [
@@ -1424,12 +1433,13 @@ module.exports = function ganNongTrai(app, d) {
           if (xgM.lv > lv) throw loi('Lên cấp ' + xgM.lv + ' để xây ' + xgM.vn + '.');
           f.xuong = f.xuong || {}; f.xuong.b = f.xuong.b || {};
           if (f.xuong.b[xgK]) throw loi('Em đã xây ' + xgM.vn + ' rồi.');
+          chanNoThue(f);
           if (f.xu < xgM.xu) throw loi('Cần ' + xgM.xu + ' xu để xây ' + xgM.vn + ' — em đang có ' + f.xu + ' xu.');
           f.xu -= xgM.xu;
           f.xuong.b[xgK] = { q: [], t: now };
           them.xp += 15;
         } else if (tt.sao) await tieuSao(tt.sao);
-        else tieuXu(tt.xu);
+        else { chanNoThue(f); tieuXu(tt.xu); }
         if (tt) them.xp += Math.ceil(tt.dep / 2);
         if (con) them.xp += 3;
       }
@@ -1471,6 +1481,7 @@ module.exports = function ganNongTrai(app, d) {
       }
       if (!cho) throw loi('Không còn khoảng trống ' + w + '×' + w + ' ô cho cỡ ×' + z + ' — dời bớt đồ hoặc mở rộng đất nhé.');
       if (z > cu) {
+        chanNoThue(f);
         const gia = giaPhongTo(o, z);
         if (f.xu < gia) throw loi('Cần ' + gia + ' xu để phóng to ×' + z + ' — em đang có ' + f.xu + ' xu.');
         f.xu -= gia;
@@ -1488,6 +1499,7 @@ module.exports = function ganNongTrai(app, d) {
       o.tr = o.tr && typeof o.tr === 'object' ? o.tr : {};
       const co = o.tr[t] || 0;
       if (co >= m.max) throw loi('Cây thông đã có đủ ' + m.max + ' ' + m.vn.toLowerCase() + ' rồi.');
+      chanNoThue(f);
       if (f.xu < m.xu) throw loi('Cần ' + m.xu + ' xu để mua ' + m.vn.toLowerCase() + ' — em đang có ' + f.xu + ' xu.');
       f.xu -= m.xu;
       o.tr[t] = co + 1;
@@ -1498,6 +1510,7 @@ module.exports = function ganNongTrai(app, d) {
       if (!sau) throw loi('Đất đã rộng tối đa.');
       if (sau.lv > lv) throw loi('Lên cấp ' + sau.lv + ' để mở rộng đất.');
       if (sau.xu) {
+        chanNoThue(f);
         if (f.xu < sau.xu) throw loi('Cần ' + sau.xu + ' xu để mở rộng — em đang có ' + f.xu + ' xu. Bán hàng, giao đơn để có thêm xu nhé!');
         f.xu -= sau.xu;
       } else await tieuSao(sau.sao);

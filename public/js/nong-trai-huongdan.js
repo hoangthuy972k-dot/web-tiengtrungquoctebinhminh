@@ -166,7 +166,7 @@ window.NT_HUONGDAN = {
     thue: { ten: 'Thuế nông trại 税 (shuì)', ic: '🧾', nhom: 'thi', tn: 'thue', tom: 'Nông trại lớn (cấp 10+) đóng thuế nhỏ mỗi tuần vào Quỹ thị trấn.',
       de: 'Nông trại nhiều tài sản hoặc bán được nhiều hàng góp một phần nhỏ vào Quỹ thị trấn — để xây công trình chung và trợ cấp bạn khó khăn.',
       buoc: [['🏠', '财产税 cáichǎn shuì (thuế tài sản): tài sản vượt 5000 + 600 × cấp thì phần vượt chịu 0,5% / 1% / 2%.'], ['🧺', '所得税 suǒdé shuì (thuế thu nhập): bán hàng hơn 2000 xu/tuần thì phần vượt chịu 3% / 6%.'], ['📚', 'Mỗi ngày học từ 20 sao giảm 10% (tối đa 50%); làm “Hôm nay em ôn gì” từ 4 ngày giảm thêm 20%.'], ['🧾', 'Đầu tuần mới, lần đầu mở nông trại em nhận hoá đơn 纳税 nàshuì. Xem ước tính tuần này ở ⋯ Thêm → Thuế.']],
-      meo: 'Cấp dưới 10 không bao giờ đóng thuế. Thuế không quá 10% số xu, không lấy đồ, không ghi nợ. Người đóng nhiều nhất được vinh danh “Nhà hảo tâm của tuần” ở thị trấn; 5 bạn ít tài sản nhất mà học đều nhận trợ cấp 补助 bǔzhù.', mo: { bang: 'kt-thue' } },
+      meo: 'Cấp dưới 10 không bao giờ đóng thuế. Thiếu xu thì ghi nợ thuế, tự trừ dần khi có xu — đang nợ thì chưa mua được đồ trang trí, đất, nhà máy (tiêu hết xu trước ngày chốt không thoát thuế). Không bao giờ lấy đồ. Người đóng nhiều nhất được vinh danh “Nhà hảo tâm của tuần” ở thị trấn; 5 bạn ít tài sản nhất mà học đều nhận trợ cấp 补助 bǔzhù.', mo: { bang: 'kt-thue' } },
 
     /* ---------- Phiêu lưu & truyện ---------- */
     bando: { ten: 'Bản đồ phiêu lưu 冒险地图 (màoxiǎn dìtú)', ic: '🗺️', nhom: 'pl', tn: 'pl', tom: '5 vùng đất, mỗi vùng luyện một kỹ năng.',

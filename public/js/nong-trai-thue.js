@@ -52,6 +52,7 @@
       '<p class="tx-dong"><span>Ôn “Hôm nay em ôn gì” ' + b.ngayOn + ' ngày (từ ' + (T().ON_NGAY || 4) + ' ngày: −20%)</span><b>−' + pt(b.giamOn) + '</b></p>' +
       '<p class="tx-dong tx-tong"><span>Sau khi giảm</span><b>' + so(b.sauGiam) + ' xu</b></p>' +
       (b.catTran ? '<p class="tx-nho">Trần: không quá 10% số xu em có (' + so(b.xu) + ' xu → tối đa ' + so(b.tran) + ' xu). Phần vượt được xoá, không ghi nợ.</p>' : '') +
+      (b.no > 0 ? '<p class="tx-nho tx-no">Em có ' + so(b.xu) + ' xu → trả ngay <b>' + so(b.tuXu) + ' xu</b>, còn <b>' + so(b.no) + ' xu</b> ghi nợ thuế (tự trừ dần khi em có xu).</p>' : '') +
       (b.sauGiam > 0 && b.thue === 0 ? '<p class="tx-nho">Dưới ' + (T().TOI_THIEU || 5) + ' xu thì được miễn.</p>' : '') + '</section>';
     h += '<p class="tx-cuoi"><span>' + ZH.nop + ' · ' + (uoc ? 'Ước tính phải đóng' : 'Đã đóng') + '</span><b>' + so(b.thue) + ' xu</b></p>';
     if (!uoc && b.thue > 0) h += '<p class="tx-di">🏛️ Góp vào Quỹ thị trấn' + (b.pham ? ' ' + esc(b.pham) : '') + ' → ' +
@@ -78,6 +79,9 @@
     var r = X.d, html = N.htmlGt('thue');
     if (tab === 'uoc') {
       var u = r.uoc;
+      if (r.no > 0) html += '<div class="tx-no-the"><span class="tx-chu" lang="zh" aria-hidden="true">欠</span><div><b>Em đang nợ thuế ' + so(r.no) + ' xu</b>' +
+        '<small>Mỗi ngày nợ tự trừ 1 lần (tối đa một nửa số xu em đang có), hoặc em bấm “Trả nợ ngay”. Đang nợ thì chưa mua được đồ trang trí, mở rộng đất, xây nhà máy, phóng to.</small></div>' +
+        '<button type="button" class="nt-nut nt-nut-vang" data-tx-trano>💰 Trả nợ ngay</button></div>';
       html += '<div class="tx-dau"><span class="tx-chu" lang="zh" aria-hidden="true">税</span><div><b>Ước tính thuế tuần này</b>' +
         '<small>Nếu tuần kết thúc bây giờ · thuế thật chốt sau Chủ nhật (còn ' + conNgay(r.giayHetTuan || 0) + '), lúc em mở nông trại.</small></div></div>';
       html += u ? htmlHoaDon(u, true) : '<p class="tx-ok">✓ Nông trại em chưa phải đóng thuế.</p>';
@@ -93,7 +97,7 @@
     return '<div class="tx-meo"><h4>💡 Muốn đóng ít thuế hơn?</h4><ul>' +
       '<li>📚 Mỗi ngày học từ <b>' + (T().SAO_NGAY || 20) + ' sao</b>: −10% (tối đa −50%). Tuần này em đã có <b>' + n + '/5</b> ngày.</li>' +
       '<li>📅 Làm “Hôm nay em ôn gì” từ <b>' + (T().ON_NGAY || 4) + ' ngày</b>: −20% nữa. Tuần này: <b>' + on + '</b> ngày.</li>' +
-      '<li>🧮 Thuế không bao giờ quá <b>10% số xu</b>, không lấy đồ, không ghi nợ.</li>' +
+      '<li>🧮 Tiêu hết xu trước ngày chốt <b>không thoát thuế</b>: đồ mua vẫn tính vào tài sản, thiếu xu thì <b>ghi nợ thuế</b>; đang nợ thì chưa mua được đồ trang trí, đất, nhà máy.</li>' +
       '<li>🤝 Thuế không mất đi: vào Quỹ thị trấn để xây công trình chung và trợ cấp bạn khó khăn. Người đóng nhiều được vinh danh “Nhà hảo tâm của tuần”.</li></ul>' +
       '<div class="nt-hang-nut"><a class="nt-nut nt-nut-xanh" href="' + esc(N.moiBaiHoc()) + '">📚 Học kiếm sao</a></div></div>';
   }
@@ -113,7 +117,7 @@
       '<h4>' + ZH.tn + ' · Thuế thu nhập (mỗi tuần)</h4>' + bac(t.BAC_TN || [], t.MIEN_TN, 'Xu bán hàng / tuần') +
       '<p class="tx-nho">Chỉ tính xu <b>bán hàng</b>: cửa hàng, chợ, thương lái, tiệm, sạp, đơn hàng, nhà hàng, xuất khẩu, đấu giá. Rương sao, đổi sao, quà, thưởng học tập <b>không</b> tính.</p>' +
       '<h4>Luật bảo vệ</h4><ul class="tx-ul"><li>Cấp dưới ' + t.LV + ': không bao giờ đóng thuế.</li><li>Tối đa ' + pt(t.TRAN) + ' số xu đang có, không bao giờ âm xu, không lấy đồ.</li>' +
-      '<li>Thiếu xu thì phần còn lại được xoá — không ghi nợ.</li><li>Dưới ' + t.TOI_THIEU + ' xu: miễn.</li><li>Chỉ tính 1 tuần gần nhất; tuần em không mở nông trại không truy thu.</li></ul></div>';
+      '<li>Thiếu xu thì phần còn lại ghi <b>nợ thuế</b>: mỗi ngày tự trừ 1 lần, tối đa một nửa số xu đang có, hoặc em bấm “Trả nợ”. Đang nợ thì chưa mua được đồ trang trí, mở rộng đất, xây nhà máy, phóng to.</li><li>Dưới ' + t.TOI_THIEU + ' xu: miễn.</li><li>Chỉ tính 1 tuần gần nhất; tuần em không mở nông trại không truy thu.</li></ul></div>';
   }
   function htmlLs(ls) {
     if (!ls || !ls.length) return '<p class="nt-trong">Chưa có hoá đơn thuế nào. Hoá đơn đầu tiên đến sau khi hết một tuần trọn vẹn.</p>';
@@ -146,6 +150,16 @@
   function ganNut(than) {
     var b = $('[data-tx-tc]', than);
     if (b) b.addEventListener('click', function () { nhanTc(b); });
+    var tn = $('[data-tx-trano]', than);
+    if (tn) tn.addEventListener('click', function () {
+      tn.disabled = true;
+      goi('/api/farm/thue/trano', {}).then(function (r) {
+        if (r.st) N.nhanTrangThai(r.st);
+        N.tieng('xu');
+        bao(r.no > 0 ? '💰 Đã trả ' + so(r.tra) + ' xu nợ thuế · còn nợ ' + so(r.no) + ' xu' : '✓ Đã trả hết nợ thuế ' + so(r.tra) + ' xu — cảm ơn em đã góp cho Quỹ thị trấn!');
+        tai().then(function () { if (laBang()) N.veBang(); }, function () {});
+      }, function (e) { tn.disabled = false; bao(e.message, 'loi'); });
+    });
   }
   function nhanTc(nut) {
     if (nut) nut.disabled = true;
@@ -190,7 +204,7 @@
       '<li>' + ZH.ts + ': khi tài sản vượt <b>' + so(t.MIEN_CO_BAN) + ' + ' + so(t.MIEN_MOI_CAP) + ' × cấp</b>.</li>' +
       '<li>' + ZH.tn + ': khi bán hàng hơn <b>' + so(t.MIEN_TN) + ' xu/tuần</b>.</li>' +
       '<li>📚 Mỗi ngày học từ ' + t.SAO_NGAY + ' sao: <b>−10%</b> (tối đa −50%); ôn “Hôm nay em ôn gì” từ ' + t.ON_NGAY + ' ngày: <b>−20%</b> nữa.</li>' +
-      '<li>🛡 Không quá 10% số xu, không lấy đồ, không ghi nợ.</li>' +
+      '<li>🛡 Không lấy đồ; thiếu xu thì ghi nợ, trừ dần khi em có xu.</li>' +
       '<li>🏛️ Tiền thuế vào <b>Quỹ thị trấn</b>: xây công trình chung và trợ cấp bạn khó khăn.</li></ul>' +
       '<div class="nt-hang-nut"><button type="button" class="nt-nut nt-nut-xanh nt-nut-to" data-tx="xem">Xem bảng thuế</button><button type="button" class="nt-nut" data-tx="ok">Đã hiểu</button></div></div>');
     ghiGt();

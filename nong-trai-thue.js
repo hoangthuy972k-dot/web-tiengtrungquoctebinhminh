@@ -7,7 +7,11 @@
 //    xuat khau, dau gia, ban cho bang Can mua) — dem bang f.thn (ghiThuNhap trong nong-trai.js). Thuong hoc tap,
 //    ruong sao, doi sao, qua... KHONG tinh. Mien MIEN_TN xu / tuan, phan vuot tinh BAC_TN.
 //  - Giam thue vi hoc: moi ngay tuan truoc hoc >= SAO_NGAY sao -10% (toi da -50%); lam "Hôm nay em ôn gì" >= ON_NGAY ngay -20% nua.
-//  - Tran: khong qua TRAN (10%) so xu dang co, khong bao gio am xu, khong bao gio lay do vat; thieu thi bo qua (khong ghi no).
+//  - 2026-11-20 (co giao: "co ban lach luat thue — mua het do de khoi nop thue"): BO tran 10% xu. Thue tinh du;
+//    co xu thi tru ngay, thieu thi ghi NO THUE (f.thue.no) — tu tru dan moi lan em mo nong trai (toi da NO_PHAN so xu
+//    dang co, 1 lan / ngay, de em van choi duoc) hoac em bam "Tra no". Dang no thue thi KHONG mua do trang tri / mo rong dat /
+//    xay nha may / phong to / treo do cay thong bang xu (nong-trai.js chanNoThue) — mua het do truoc ngay chot vo ich.
+//    Khong bao gio am xu, khong bao gio lay do vat.
 //    Duoi TOI_THIEU xu thi mien. Cap < LV khong bao gio dong thue.
 //  - Tien thue vao Quy thi tran (pham vi lop / cong dong): CT_PHAN thue tho xay cong trinh chung (XU_GACH xu = 1 vien gach,
 //    toi da GACH_PHAN so gach cua moi cong trinh — phan con lai van phai tra loi cau hoi), phan con lai la tro cap tuan
@@ -23,7 +27,7 @@ const THUE = {
   BAC_TN: [[6000, 0.03], [Infinity, 0.06]],
   HE_HANG: 0.8, HE_TAI_SAN: 0.4, XU_SAO: 1,
   SAO_NGAY: 20, GIAM_NGAY: 0.10, GIAM_NGAY_MAX: 0.5, ON_NGAY: 4, GIAM_ON: 0.2,
-  TRAN: 0.10, TOI_THIEU: 5,
+  TRAN: 0.10, TOI_THIEU: 5, NO_PHAN: 0.5,
   CT_PHAN: 0.6, XU_GACH: 10, GACH_PHAN: 0.5,
   TC_SO: 5, TC_MIN: 20, TC_MAX: 50, TC_NGAY_HOC: 3,
 };
@@ -83,13 +87,14 @@ function tinhThue(x) {
   const giamNgay = Math.min(T.GIAM_NGAY_MAX, T.GIAM_NGAY * (x.ngay20 || 0)), giamOn = (x.ngayOn || 0) >= T.ON_NGAY ? T.GIAM_ON : 0;
   const giam = Math.round((giamNgay + giamOn) * 100) / 100;
   const sauGiam = Math.round(gop * (1 - giam));
-  const xu = Math.max(0, Math.floor(x.xu || 0)), tran = Math.floor(xu * T.TRAN);
-  let thue = Math.min(sauGiam, tran, xu);
-  const catTran = sauGiam > thue;
+  // khong con tran 10% xu: thue tinh du; tuXu = phan tru ngay bang xu dang co, no = phan con lai ghi no
+  const xu = Math.max(0, Math.floor(x.xu || 0)), tran = 0, catTran = false;
+  let thue = sauGiam;
   if (thue < T.TOI_THIEU) thue = 0;
+  const tuXu = Math.min(thue, xu), no = thue - tuXu;
   const r = (ds) => ds.map((b) => ({ tu: b.tu, den: b.den, tl: b.tl, so: b.so, thue: Math.round(b.thue) }));
   return { lv: x.lv, ts: Math.round(x.ts), mien, bacTs: r(bacTs), tTs: Math.round(tTs), tn: Math.round(x.tn), mienTn: T.MIEN_TN, bacTn: r(bacTn), tTn: Math.round(tTn),
-    gop, ngay20: x.ngay20 || 0, ngayOn: x.ngayOn || 0, giamNgay, giamOn, giam, sauGiam, xu, tran, catTran, thue };
+    gop, ngay20: x.ngay20 || 0, ngayOn: x.ngayOn || 0, giamNgay, giamOn, giam, sauGiam, xu, tran, catTran, thue, tuXu, no };
 }
 
 function gan(app, d, h, c) {
@@ -177,6 +182,19 @@ function gan(app, d, h, c) {
       return { gach };
     });
   }
+  // Tra no thue vao quy (cong don vao phan em da nop tuan nay)
+  async function traNoQuy(pv, uid, w, xu) {
+    return c.khoaC('thue:' + pv.k, async () => {
+      const q = await docQuy(pv.k);
+      const ww = q.w[w] = Object.assign(tuanMoi(), q.w[w] || {});
+      ww.ng[uid] = (ww.ng[uid] || 0) + xu; ww.thu += xu; q.tong += xu;
+      const ct = Math.round(xu * T.CT_PHAN);
+      q.ctDu += ct; q.tcDu += xu - ct;
+      catTuan(q);
+      await c.ghiC('thue:' + pv.k, q);
+      return true;
+    });
+  }
   // Tro cap tuan w: TC_SO ban tai san thap nhat co hoc >= TC_NGAY_HOC ngay tuan truoc (tinh 1 lan / pham vi / tuan)
   async function xetTroCap(pv) {
     const w = d.vnWeekKey();
@@ -243,6 +261,15 @@ function gan(app, d, h, c) {
       if (coTc && !(f.thue.tcCho && f.thue.tcCho.w === w)) { f.thue.tcCho = { w, xu: ww.tc[uid] }; doi = true; }
       if (!coTc && f.thue.tcCho) { delete f.thue.tcCho; doi = true; }
     } catch (e) { console.error('Thue (tro cap):', e.message); }
+    // tru dan no thue: moi ngay 1 lan (lan dau em mo nong trai trong ngay), toi da NO_PHAN so xu dang co
+    if (f.thue.no > 0 && f.xu >= 2 && f.thue.noD !== d.vnDayKey()) {
+      f.thue.noD = d.vnDayKey(); doi = true;
+      const tra = Math.min(f.thue.no, Math.floor(f.xu * T.NO_PHAN));
+      if (tra >= 1) {
+        const ok = await traNoQuy(pv, uid, w, tra).catch((e) => { console.error('Thue (tra no):', e.message); return false; });
+        if (ok) { f.xu -= tra; f.thue.no -= tra; h.ghiNk(f, { l: 'thueno', xu: tra, con: f.thue.no }); doi = true; }
+      }
+    }
     if (f.thue.tuan >= tw || f.thue.tu > tw) return doi;
     // chua chot tuan truoc (bo tuan cu hon: khong truy thu)
     f.thue.tuan = tw;
@@ -250,12 +277,13 @@ function gan(app, d, h, c) {
     if (!b || b.gop < T.TOI_THIEU) return true; // cap < 10 hoac duoi muc mien thue: khong co hoa don
     b.w = tw; b.tra = w; b.t = Date.now(); b.pham = pv.ten; b.gach = 0;
     if (b.thue > 0) {
-      const r = await nopQuy(pv, uid, w, b.thue).catch((e) => { console.error('Thue (nop quy):', e.message); return { loi: 1 }; });
+      const r = await nopQuy(pv, uid, w, b.tuXu).catch((e) => { console.error('Thue (nop quy):', e.message); return { loi: 1 }; });
       // quy da ghi em nop tuan nay (vd du lieu nong trai bi ghi de) -> khong thu lan 2; quy loi -> tuan nay mien (khong mat xu oan)
       if (r.trung || r.loi) return true;
       b.gach = r.gach || 0;
-      f.xu = Math.max(0, f.xu - b.thue);
-      h.ghiNk(f, { l: 'thue', xu: b.thue, w: tw });
+      f.xu = Math.max(0, f.xu - b.tuXu);
+      if (b.no > 0) f.thue.no = (f.thue.no || 0) + b.no;
+      h.ghiNk(f, { l: 'thue', xu: b.tuXu, no: b.no, w: tw });
     }
     delete b.chiTiet.hangGoc; delete b.chiTiet.coGoc;
     f.thue.ls = [b].concat(f.thue.ls || []).slice(0, LS_GIU);
@@ -264,7 +292,7 @@ function gan(app, d, h, c) {
   });
   h.ttThem.push((userId, f, lv) => {
     const t = f.thue || {}, w = d.vnWeekKey();
-    return { thue: { mo: lv >= T.LV, moi: t.moi && t.ls && t.ls[0] ? t.ls[0] : null, tc: t.tcCho && t.tcCho.w === w ? t.tcCho : null } };
+    return { thue: { mo: lv >= T.LV, moi: t.moi && t.ls && t.ls[0] ? t.ls[0] : null, tc: t.tcCho && t.tcCho.w === w ? t.tcCho : null, no: t.no || 0 } };
   });
 
   /* ---- Tro cap nhan qua "Phần thưởng thị trấn" (nong-trai-chung.js thuongtt) ---- */
@@ -298,8 +326,25 @@ function gan(app, d, h, c) {
     const f = await h.doc(me), lv = h.lvTuXp(f.xp);
     const [uoc, quy] = await Promise.all([hoaDon(me, f, w), (async () => { await xetTroCap(pv).catch(() => null); return tomQuy(pv.k, me); })()]);
     if (uoc) { delete uoc.chiTiet.hangGoc; delete uoc.chiTiet.coGoc; }
-    res.json({ mo: lv >= T.LV, lv, lvMo: T.LV, uoc, ls: (f.thue && f.thue.ls) || [], quy, pham: { ten: pv.ten, loai: pv.loai },
+    res.json({ mo: lv >= T.LV, lv, lvMo: T.LV, uoc, no: (f.thue && f.thue.no) || 0, ls: (f.thue && f.thue.ls) || [], quy, pham: { ten: pv.ten, loai: pv.loai },
       giayHetTuan: d.secondsToVnWeekEnd(), tu: f.thue ? f.thue.tu : w });
+  }));
+  // Em tu tra no thue bang xu dang co (tra het hoac bang so xu em co)
+  app.post('/api/farm/thue/trano', d.requireAuth, d.asyncRoute(async (req, res) => {
+    const me = req.user.id, w = d.vnWeekKey();
+    const pv = await c.phamVi(me);
+    await h.traLoi(res, h.lanLuot(me, async () => {
+      const f = await h.doc(me);
+      const no = (f.thue && f.thue.no) || 0;
+      if (no < 1) throw loi('Em không nợ thuế.');
+      const tra = Math.min(no, Math.max(0, Math.floor(f.xu)));
+      if (tra < 1) throw loi('Em chưa có xu để trả nợ thuế — bán hàng, giao đơn để có xu nhé.');
+      await traNoQuy(pv, me, w, tra);
+      f.xu -= tra; f.thue.no -= tra;
+      h.ghiNk(f, { l: 'thueno', xu: tra, con: f.thue.no });
+      await h.ghi(me, f);
+      return { ok: true, tra, no: f.thue.no, st: await h.trangThai(me, f) };
+    }));
   }));
   app.post('/api/farm/thue/xem', d.requireAuth, d.asyncRoute(async (req, res) => {
     await h.traLoi(res, h.lanLuot(req.user.id, async () => {

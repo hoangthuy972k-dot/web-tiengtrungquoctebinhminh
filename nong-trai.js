@@ -343,11 +343,20 @@ const DAT = [
   { w: 24, h: 22, xu: 7000, lv: 20, zh: '庄园', py: 'zhuāngyuán', vn: 'Điền trang' },
   { w: 26, h: 24, xu: 12000, lv: 25, zh: '庄园', py: 'zhuāngyuán', vn: 'Điền trang' },
   { w: 28, h: 26, xu: 20000, lv: 30, zh: '皇家庄园', py: 'huángjiā zhuāngyuán', vn: 'Điền trang hoàng gia' },
+  // 2026-11-20 co giao: "cho them dat, mo rong them, nhung tang gia" — moi muc dat gap ~1,5 lan muc truoc, can cap cao hon
+  { w: 30, h: 28, xu: 32000, lv: 35, zh: '皇家庄园', py: 'huángjiā zhuāngyuán', vn: 'Điền trang hoàng gia' },
+  { w: 32, h: 30, xu: 50000, lv: 40, zh: '山庄', py: 'shānzhuāng', vn: 'Sơn trang' },
+  { w: 34, h: 32, xu: 75000, lv: 48, zh: '山庄', py: 'shānzhuāng', vn: 'Sơn trang' },
+  { w: 36, h: 34, xu: 110000, lv: 56, zh: '田园王国', py: 'tiányuán wángguó', vn: 'Vương quốc điền viên' },
+  { w: 38, h: 36, xu: 160000, lv: 65, zh: '田园王国', py: 'tiányuán wángguó', vn: 'Vương quốc điền viên' },
+  { w: 40, h: 38, xu: 230000, lv: 75, zh: '农业帝国', py: 'nóngyè dìguó', vn: 'Đế chế nông nghiệp' },
 ];
 const O_MIEN_PHI = 4;
 const CHAI_XU = 3; // gio qua giau trong bui cay canh ruong moi ngay (bam nhat; ten hanh dong 'chai' giu nguyen)
-function giaODat(soO) { return 3 + Math.max(0, soO - O_MIEN_PHI); }
-function oToiDa(lv) { return Math.min(40, 6 + 2 * lv); }
+// o ruong thu 41 tro di (cap > 30 moi mo) dat hon: +2 sao moi o (giu cong thuc cu toi o thu 40)
+function giaODat(soO) { return 3 + Math.max(0, soO - O_MIEN_PHI) + 2 * Math.max(0, soO - 39); }
+// toi da o ruong: cu (40 o tu cap 17); tu cap 31 them 1 o / 2 cap, toi da 60 o (cap 70)
+function oToiDa(lv) { return Math.min(40, 6 + 2 * lv) + Math.max(0, Math.min(20, Math.floor((lv - 30) / 2))); }
 
 // ---- Cap nong trai 1–100 (2026-11-15, co giao: "them level, level cao kho hon va nhieu dieu thu vi hon") ----
 // Cap 1–30 GIU NGUYEN cong thuc cu (5·n·(n−1) kinh nghiem) -> khong ai bi tut cap.

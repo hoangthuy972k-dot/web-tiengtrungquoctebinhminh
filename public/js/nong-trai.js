@@ -1287,7 +1287,7 @@
           '<button type="button" class="nt-mua" data-mua="' + k + '"' + (m.lv > lv ? ' disabled' : '') + '>' + giaHtml(m) + '</button>');
       });
     } else {
-      var soO = s.soO, giaO = 3 + Math.max(0, soO - c.O_MIEN_PHI), duO = soO < s.oToiDa;
+      var soO = s.soO, giaO = 3 + Math.max(0, soO - c.O_MIEN_PHI) + 2 * Math.max(0, soO - 39), duO = soO < s.oToiDa;
       html += theMon('o', c.O_DAT, 'dat', '<p class="nt-the-phu">Ô ruộng ' + soO + '/' + s.oToiDa + ' (lên cấp mở thêm)</p>', 0,
         '<button type="button" class="nt-mua" data-mua="o"' + (duO ? '' : ' disabled') + '>' + (duO ? giaHtml({ sao: giaO }) : 'Đã tối đa') + '</button>');
       var sau = c.DAT[s.dat + 1];
@@ -1304,7 +1304,7 @@
     $all('[data-mua]', than).forEach(function (b) {
       b.addEventListener('click', function () {
         var k = b.getAttribute('data-mua');
-        var m = k === 'o' ? { sao: 3 + Math.max(0, s.soO - c.O_MIEN_PHI) } : c.CON[k] || c.TT[k];
+        var m = k === 'o' ? { sao: 3 + Math.max(0, s.soO - c.O_MIEN_PHI) + 2 * Math.max(0, s.soO - 39) } : c.CON[k] || c.TT[k];
         if (m.sao && s.sao < m.sao) return thieuSao(m.sao);
         if (m.xu && s.xu < m.xu) { bao('Chưa đủ xu — bán nông sản trong Kho để có xu.', 'loi'); return; }
         doc(tenMon(k).zh);
@@ -4275,7 +4275,7 @@
       (b.tuan ? ' · ⭐ ' + b.tuan + ' tuần' : '') + '</small>' +
       (b.ruy ? '<span class="nt-lo-ruy">🎀 Nông trại đẹp #' + b.ruy + '</span>' : '') +
       (b.coVang ? '<span class="nt-lo-ruy vang">🚩 Trại vô địch tuần</span>' : '') +
-      (laDatLon(b) ? '<span class="nt-lo-to">🏰 ' + (b.kich.w >= 28 ? 'Điền trang hoàng gia <span lang="zh">皇家庄园</span>' : b.kich.w >= 24 ? 'Điền trang <span lang="zh">庄园</span>' : 'Trang trại lớn <span lang="zh">大农场</span>') + ' · ' + b.kich.w + '×' + b.kich.h + '</span>' : '') + (b.vuaHoc ? '<span class="nt-lo-vua">👑 Chăm học nhất tuần</span>' : '') + '</div></button>';
+      (laDatLon(b) ? '<span class="nt-lo-to">🏰 ' + (b.kich.w >= 40 ? 'Đế chế nông nghiệp <span lang="zh">农业帝国</span>' : b.kich.w >= 36 ? 'Vương quốc điền viên <span lang="zh">田园王国</span>' : b.kich.w >= 32 ? 'Sơn trang <span lang="zh">山庄</span>' : b.kich.w >= 28 ? 'Điền trang hoàng gia <span lang="zh">皇家庄园</span>' : b.kich.w >= 24 ? 'Điền trang <span lang="zh">庄园</span>' : 'Trang trại lớn <span lang="zh">大农场</span>') + ' · ' + b.kich.w + '×' + b.kich.h + '</span>' : '') + (b.vuaHoc ? '<span class="nt-lo-vua">👑 Chăm học nhất tuần</span>' : '') + '</div></button>';
   }
   // Ve thu nho: vi tri tinh theo % kich thuoc dat nen lo nao cung vua khung
   function farmNho(b) {

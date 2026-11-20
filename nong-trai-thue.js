@@ -35,7 +35,7 @@ const GIA_RIENG = { 'nha-kinh': 2500 }; // do doc quyen mua bang xu o module kha
 const LS_GIU = 4, TUAN_GIU = 8;
 const XUONG = require('./nong-trai-xuong').CAT.XUONG;
 
-const giaODat = (i) => 3 + Math.max(0, i - 4); // giong nong-trai.js giaODat (sao)
+const giaODat = (i) => 3 + Math.max(0, i - 4) + 2 * Math.max(0, i - 39); // giong nong-trai.js giaODat (sao)
 // Uoc tinh tai san cua 1 nong trai (cat = { SP, CON, TT, NHA, DAT })
 function taiSan(f, cat) {
   const T = THUE, xuSao = (n) => n * T.XU_SAO;

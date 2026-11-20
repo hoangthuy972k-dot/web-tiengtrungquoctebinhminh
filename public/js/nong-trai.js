@@ -4855,13 +4855,14 @@
     var html = htmlGt('tl') + '<div class="nt-tl-dau"><span class="nt-tl-nv">' + av + '</span><div><b><span lang="zh">' + esc(n.zh) + '</span> ' + esc(n.py) + '</b><small>' + esc(n.vn) + ' · thương lái <span lang="zh">商人</span> đến chợ lớp em</small>' +
       '<small>Đi sau <b>' + giayRaGio(r.sau) + '</b>' + (t.quetN ? ' · đã mua <b>' + t.quetN + '</b> món ở sạp các bạn' : '') + '</small></div>' +
       '<button type="button" class="nt-nut" id="ntTlPy">' + (TL.py ? 'Ẩn pinyin' : 'Hiện pinyin') + '</button></div>' +
-      '<p class="nt-meo">Đọc câu thương lái nói, <b>chạm đúng tranh món hàng</b> để bán ngay từ kho — giá cao hơn cửa hàng (tính vào <b>hạn mức bán</b> hằng ngày: mỗi sao học +10 xu). Chọn nhầm thì thương lái không mua món đó của em nữa! Thương lái cũng tự mua hàng ở sạp nào bán rẻ.</p>' +
+      '<p class="nt-meo">Đọc câu thương lái nói, <b>chạm đúng tranh món hàng</b> để bán ngay từ kho — giá cao hơn cửa hàng (tính vào <b>hạn mức bán</b> hằng ngày: mỗi sao học +10 xu). <b>Mỗi bạn có phần riêng</b> — không lo bạn khác mua hết. Chọn nhầm được <b>thử lại 1 lần</b>. Luôn có 2 món <b>khách quen</b> (trứng, lúa, sữa…) để em chuẩn bị trước.</p>' +
       '<div class="nt-tl-ds">' + t.ds.map(function (o) {
-        var het = o.con < 1, du = o.emBan >= o.gioiHan;
+        var het = !o.rieng && o.con < 1, du = o.emBan >= o.gioiHan;
         return '<div class="nt-tl-dong' + (het || du ? ' xong' : '') + (o.sai ? ' sai' : '') + '">' +
           '<button type="button" class="nt-tl-cau" data-doc="' + esc(o.zh) + '"><b lang="zh">' + esc(o.zh) + '</b>' + (TL.py ? '<small>' + esc(o.py) + '</small>' : '') + ' 🔊</button>' +
-          '<div class="nt-tl-so"><span>Còn mua <b>' + o.con + '/' + o.tong + '</b></span><span>' + img('ic-xu') + '<b>' + o.gia + '</b>/món</span>' +
-          (o.emBan ? '<span>Em đã bán <b>' + o.emBan + '</b>/' + o.gioiHan + '</span>' : '<span>Mỗi bạn tối đa ' + o.gioiHan + '</span>') + '</div>' +
+          '<div class="nt-tl-so">' + (o.rieng ? '<span>Phần của em: còn <b>' + o.con + '/' + o.gioiHan + '</b> món</span>' : '<span>Còn mua <b>' + o.con + '/' + o.tong + '</b></span>') +
+          '<span>' + img('ic-xu') + '<b>' + o.gia + '</b>/món</span>' +
+          (o.rieng ? (o.nham && !o.sai ? '<span class="nt-tl-thu">⚠ Còn 1 lần chọn</span>' : '') : (o.emBan ? '<span>Em đã bán <b>' + o.emBan + '</b>/' + o.gioiHan + '</span>' : '<span>Mỗi bạn tối đa ' + o.gioiHan + '</span>')) + '</div>' +
           (o.sai ? '<p class="nt-tl-sai">❌ Em chọn nhầm. Đây là <b>' + esc(tenSp(o.k).vn) + '</b> <span lang="zh">' + esc(tenSp(o.k).zh) + '</span> ' + esc(tenSp(o.k).py) + '.</p>'
             : het ? '<p class="nt-tl-xong">Thương lái đã mua đủ món này.</p>'
             : du ? '<p class="nt-tl-xong">Em đã bán đủ phần của em.</p>'
@@ -4880,7 +4881,8 @@
         goi('/api/farm/thuonglai/ban', { ma: t.ma, i: +b.getAttribute('data-tl'), chon: b.getAttribute('data-tlk') }).then(function (k) {
           TL.dang = false;
           var m = tenSp(k.k);
-          if (k.sai) { tieng('sai'); bao('不对！Thương lái cần ' + m.vn + ' ' + m.zh + ' — em chọn nhầm rồi.', 'loi'); }
+          if (k.sai && k.thuLai) { tieng('sai'); bao('不对！Chưa đúng món — đọc lại câu thương lái nói rồi chọn lại nhé (còn ' + k.thuLai + ' lần).', 'loi'); }
+          else if (k.sai) { tieng('sai'); bao('不对！Thương lái cần ' + m.vn + ' ' + m.zh + ' — em chọn nhầm rồi.', 'loi'); }
           else if (k.n > 0) { tieng('xu'); bao('Bán cho thương lái ' + k.n + ' ' + m.vn + ' ' + m.zh + ' · +' + k.xu + ' xu!'); doc(m.zh); }
           else { tieng('dung'); bao(k.ly === 'kho' ? 'Đúng rồi: ' + m.zh + ' ' + m.py + ' — ' + m.vn + '! Nhưng kho em chưa có món này.' : k.ly === 'hanmuc' ? 'Đúng rồi! Nhưng hạn mức bán hôm nay (' + k.toiDa + ' xu) đã hết — học thêm sao để bán tiếp: mỗi sao +10 xu hạn mức.' : 'Đúng rồi, nhưng thương lái đã mua đủ món này.'); }
           if (k.st) nhanTrangThai(k.st);

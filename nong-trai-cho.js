@@ -18,6 +18,12 @@ const TL_GIO = [6, 12, 18];       // gio VN thuong lai den; 0h-6h khong co
 const TL_TY_LE = 0.35;            // moi dot mua ~35% luong hang dang thua trong pham vi
 const TL_QUET = 0.5;              // toi da nua so luong mua tu sap cac ban
 const TL_GIA = 1.2;               // tra 1,2 lan gia cua hang
+// 2026-11-20 co giao: "thuong lai cho mua hang on dinh hon":
+//  - moi ban co PHAN RIENG moi dong hang (khong bi ban vao truoc mua het): phanEm(k) mon / dot, hang re duoc nhieu mon hon
+//  - luon co 2 mon "khach quen" co dinh theo ngay (doan truoc duoc) + toi da 2 mon dang thua nhieu nhat trong lop
+//  - chon nhầm duoc thu lai 1 lan (nham lan 2 moi khoa dong do)
+const TL_KHACH_QUEN = ['trung', 'lua', 'carot', 'ngo', 'sua', 'trungvit', 'dauphong', 'cachua', 'khoaitay', 'len'];
+const TL_THU = 2;
 const HD_THUONG = 30, HD_TOP = [30, 20, 10];
 
 module.exports = function ganCho(app, d, h, c) {
@@ -42,13 +48,20 @@ module.exports = function ganCho(app, d, h, c) {
   const giaTl = (k) => Math.max(SP[k].ban + 1, Math.round(SP[k].ban * TL_GIA));
   const hangThuong = () => h.HANG.filter((k) => SP[k]);
 
+  // so mon moi ban duoc ban cho 1 dong hang trong 1 dot: hang re nhieu mon, hang dat it mon (~150 xu / dong)
+  const phanEm = (k) => Math.max(4, Math.min(15, Math.round(150 / Math.max(1, giaTl(k)))));
   async function taoTl(me, ma, dot) {
     const tt = await h.thiTruong(me);
     const cung = tt.cung || {};
-    let ds = Object.keys(cung).filter((k) => SP[k] && cung[k] >= 2).sort((a, b) => cung[b] * SP[b].ban - cung[a] * SP[a].ban).slice(0, 3);
-    const them = tronMang(hangThuong().filter((k) => ds.indexOf(k) < 0 && (cung[k] || 0) > 0)).slice(0, 4 - ds.length);
-    ds = ds.concat(them);
-    if (ds.length < 2) ds = ds.concat(tronMang(['trung', 'lua', 'carot', 'ngo', 'sua'].filter((k) => ds.indexOf(k) < 0))).slice(0, 3);
+    // 2 mon khach quen co dinh theo ngay + dot (ca lop doan truoc duoc), roi toi da 2 mon dang thua nhieu nhat
+    const quen = TL_KHACH_QUEN.filter((k) => SP[k]);
+    const so = Number(ma.slice(0, 8)) || 0;
+    let ds = [];
+    [0, 1].forEach((j) => { const k = quen[(so + dot * 3 + j * 5) % quen.length]; if (k && ds.indexOf(k) < 0) ds.push(k); });
+    Object.keys(cung).filter((k) => SP[k] && cung[k] >= 2 && ds.indexOf(k) < 0)
+      .sort((a, b) => cung[b] * SP[b].ban - cung[a] * SP[a].ban).slice(0, 2).forEach((k) => ds.push(k));
+    if (ds.length < 4) ds = ds.concat(tronMang(hangThuong().filter((k) => ds.indexOf(k) < 0 && (cung[k] || 0) > 0))).slice(0, 4);
+    if (ds.length < 3) ds = ds.concat(quen.filter((k) => ds.indexOf(k) < 0)).slice(0, 3);
     const ngau = hangThuong().concat(Object.keys(h.CA));
     const nguoi = TL_NGUOI[(Number(ma.replace(/\D/g, '').slice(-6)) + dot) % TL_NGUOI.length];
     return {
@@ -56,7 +69,7 @@ module.exports = function ganCho(app, d, h, c) {
       ds: ds.map((k) => {
         const n = Math.max(3, Math.min(40, Math.ceil((cung[k] || 0) * TL_TY_LE)));
         const lua = tronMang([k].concat(tronMang(ngau.filter((x) => x !== k)).slice(0, 3)));
-        return { k, tong: n, con: n, gia: giaTl(k), lua };
+        return { k, tong: n, con: n, gia: giaTl(k), lua, moi: phanEm(k) };
       }),
     };
   }
@@ -119,14 +132,25 @@ module.exports = function ganCho(app, d, h, c) {
     if (moi) { await quetSap(pv.k, key, pv.ids); tl = await c.docC(key); }
     return { dot, sau, tl, key };
   }
-  const gioiHan = (it) => Math.max(3, Math.ceil(it.tong / 2));
+  // phan rieng cua moi ban (dot cu chua co .moi: giu cach tinh cu)
+  const gioiHan = (it) => it.moi || Math.max(3, Math.ceil(it.tong / 2));
+  // so lan chon nham cua em o dong i (ban cu luu mang chi so = 1 lan nham la khoa)
+  function soSai(tl, me, i) {
+    const x = tl.sai && tl.sai[me];
+    if (!x) return 0;
+    if (Array.isArray(x)) return x.indexOf(i) >= 0 ? TL_THU : 0;
+    return x[i] || 0;
+  }
   function tlChoHs(tl, me) {
     return {
       ma: tl.ma, nguoi: tl.nguoi,
       ds: tl.ds.map((it, i) => {
-        const emBan = (tl.ban[me] && tl.ban[me][i]) || 0, sai = (tl.sai[me] || []).indexOf(i) >= 0;
+        const emBan = (tl.ban[me] && tl.ban[me][i]) || 0, nham = soSai(tl, me, i), sai = nham >= TL_THU;
         const biet = emBan > 0 || sai || (tl.biet && tl.biet[me] && tl.biet[me].indexOf(i) >= 0);
-        return Object.assign({ i, con: it.con, tong: it.tong, gia: it.gia, lua: it.lua, emBan, sai, gioiHan: gioiHan(it), k: biet ? it.k : null }, cauMua(it.k, it.tong, it.gia));
+        // phan rieng: "con" la phan em con ban duoc (khong phu thuoc ban khac)
+        const con = it.moi ? Math.max(0, gioiHan(it) - emBan) : it.con;
+        return Object.assign({ i, con, tong: it.moi ? gioiHan(it) : it.tong, gia: it.gia, lua: it.lua, emBan, sai, nham, thu: TL_THU, rieng: !!it.moi, gioiHan: gioiHan(it), k: biet ? it.k : null },
+          cauMua(it.k, it.moi ? gioiHan(it) : it.tong, it.gia));
       }),
       quet: (tl.quet || []).length, quetN: (tl.quet || []).reduce((a, x) => a + x.n, 0),
     };
@@ -150,24 +174,28 @@ module.exports = function ganCho(app, d, h, c) {
         const tl = await c.docC(r.key);
         const i = Number(b.i), it = tl.ds[i];
         if (!it) throw loi('Không có dòng hàng này.');
-        tl.sai[me] = tl.sai[me] || [];
-        if (tl.sai[me].indexOf(i) >= 0) throw loi('Em đã chọn nhầm món này — thương lái không mua của em món này nữa.');
+        if (soSai(tl, me, i) >= TL_THU) throw loi('Em đã chọn nhầm món này ' + TL_THU + ' lần — đợt sau thương lái mới mua món này của em.');
         if (String(b.chon || '') !== it.k) {
-          tl.sai[me].push(i);
+          if (Array.isArray(tl.sai[me])) { const cu = {}; tl.sai[me].forEach((x) => { cu[x] = TL_THU; }); tl.sai[me] = cu; }
+          tl.sai[me] = tl.sai[me] || {};
+          tl.sai[me][i] = (tl.sai[me][i] || 0) + 1;
           await c.ghiC(r.key, tl);
-          return { sai: true, k: it.k };
+          const conThu = TL_THU - tl.sai[me][i];
+          return conThu > 0 ? { sai: true, thuLai: conThu } : { sai: true, k: it.k };
         }
         tl.biet = tl.biet || {};
         tl.biet[me] = tl.biet[me] || [];
         if (tl.biet[me].indexOf(i) < 0) tl.biet[me].push(i);
         tl.ban[me] = tl.ban[me] || {};
         const da = tl.ban[me][i] || 0;
-        const n = Math.min(Math.floor(Number(b.n) || 0) || 999, it.con, gioiHan(it) - da, f.kho[it.k] || 0, Math.floor(hm.con / it.gia));
+        // phan rieng (it.moi): khong bi gioi han boi luong chung con lai cua ca lop
+        const chung = it.moi ? 999 : it.con;
+        const n = Math.min(Math.floor(Number(b.n) || 0) || 999, chung, gioiHan(it) - da, f.kho[it.k] || 0, Math.floor(hm.con / it.gia));
         if (n < 1) {
           await c.ghiC(r.key, tl);
-          return { k: it.k, n: 0, ly: it.con < 1 ? 'het' : da >= gioiHan(it) ? 'du' : (f.kho[it.k] || 0) < 1 ? 'kho' : 'hanmuc', toiDa: hm.toiDa };
+          return { k: it.k, n: 0, ly: chung < 1 ? 'het' : da >= gioiHan(it) ? 'du' : (f.kho[it.k] || 0) < 1 ? 'kho' : 'hanmuc', toiDa: hm.toiDa };
         }
-        it.con -= n;
+        if (!it.moi) it.con -= n;
         tl.ban[me][i] = da + n;
         await c.ghiC(r.key, tl);
         return { k: it.k, n, xu: n * it.gia };

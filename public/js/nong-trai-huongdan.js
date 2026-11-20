@@ -91,7 +91,7 @@ window.NT_HUONGDAN = {
       meo: 'Tiền đơn hằng ngày không tính vào hạn mức bán — nên giữ nông sản để giao đơn trước.', mo: { bang: 'don' } },
     thuonglai: { ten: 'Thương lái 商人 (shāngrén)', ic: '🧑‍💼', nhom: 'mua', tn: 'tl', tom: 'Đọc đơn tiếng Trung, bán giá cao hơn 20%.',
       de: 'Thương lái đến mua hàng với giá cao hơn cửa hàng.',
-      buoc: [['🕕', 'Thương lái đến 3 đợt mỗi ngày: 6 giờ, 12 giờ và 18 giờ.'], ['📜', 'Ông ấy viết món cần mua bằng tiếng Trung — đọc rồi chọn đúng hình món hàng.'], ['💰', 'Chọn đúng thì bán được hàng trong kho với giá gấp 1,2 lần.'], ['⛔', 'Chọn nhầm thì đợt đó ông không mua món ấy của em nữa.']],
+      buoc: [['🕕', 'Thương lái đến 3 đợt mỗi ngày: 6 giờ, 12 giờ và 18 giờ.'], ['📜', 'Ông ấy viết món cần mua bằng tiếng Trung — đọc rồi chọn đúng hình món hàng.'], ['💰', 'Chọn đúng thì bán được hàng trong kho với giá gấp 1,2 lần.'], ['🧺', 'Mỗi bạn có phần riêng cho từng món — bạn khác bán trước cũng không hết phần của em. Luôn có 2 món khách quen (trứng, lúa, sữa…).'], ['⛔', 'Chọn nhầm được thử lại 1 lần; nhầm lần thứ 2 thì đợt đó ông không mua món ấy của em nữa.']],
       meo: 'Tiền bán cho thương lái tính vào hạn mức bán trong ngày — học thêm sao để bán được nhiều hơn.', mo: { bang: 'congdong', tab: 'tl' } },
     nhahang: { ten: 'Bếp & nhà hàng 餐厅 (cāntīng)', ic: '🍜', nhom: 'mua', tn: 'nh', tom: 'Nấu món, phục vụ 3 khách mỗi ngày.',
       de: 'Nấu nông sản thành món ăn rồi phục vụ khách gọi món bằng tiếng Trung.',

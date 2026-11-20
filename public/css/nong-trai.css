@@ -2701,3 +2701,29 @@ body:not(.nt-ng) .nt-vat:not(.phang)::before {
 .ntc-bo { display: block; margin: 8px auto 0; font: inherit; font-size: 0.85rem; font-weight: 600; color: var(--mo); background: none; border: 0; text-decoration: underline; cursor: pointer; }
 .nt-hoi-chon > .ntc-cum-ds, .nt-hoi-chon > .ntc-noi, .nt-hoi-chon > .ntc-go, .nt-hoi-chon > .ntc-kt, .nt-hoi-chon > .ntc-bo { grid-column: 1 / -1; justify-self: center; }
 .nt-hoi-chon > .ntc-cum-ds, .nt-hoi-chon > .ntc-noi, .nt-hoi-chon > .ntc-go { justify-self: stretch; }
+
+/* ---------- HUD dien thoai gon, khong de len nhau (2026-11-20, co giao: "giao dien dep, de nhin, de dung") ----------
+   cot phai (sao hom nay · nhiem vu · thien tai) toi da 205px, cot trai (cay cham chi, thach dau…) lay phan con lai */
+@media (max-width: 640px) {
+  .nt-phai { max-width: 224px; gap: 5px; }
+  .nt-phai .nt-muc { padding-right: 10px; }
+  .nt-phai .nt-muc-chu small { white-space: nowrap; font-size: 0.64rem; overflow: hidden; text-overflow: ellipsis; }
+  .nt-phai .nt-muc { max-width: calc(100% - 36px); min-width: 0; }
+  .nt-phai .nt-muc-chu { min-width: 0; }
+  .nt-nvc-tiep { font-size: 0.74rem; padding: 5px 8px; }
+  .nt-phai .nt-tai-thanh b { font-size: 0.76rem; overflow: hidden; text-overflow: ellipsis; max-width: 130px; }
+  .nt-trai-cot { max-width: calc(100vw - 252px); min-width: 0; }
+  .nt-cot-o { max-width: 100%; }
+  .nt-cot-o > span.nt-cot-cham { gap: 2px; }
+  .nt-cot-cham i { width: 9px; height: 9px; }
+}
+@media (max-width: 380px) {
+  .nt-phai { max-width: 210px; }
+  .nt-trai-cot { max-width: calc(100vw - 236px); }
+}
+
+/* bang "Them": tieu de nhom */
+.nt-them-nhom { grid-column: 1 / -1; margin: 6px 2px -2px; font-size: 0.86rem; font-weight: 900; color: var(--mo); letter-spacing: 0.02em; display: flex; align-items: center; gap: 8px; }
+.nt-them-nhom::after { content: ''; flex: 1; height: 2px; border-radius: 2px; background: var(--kem-2, #efe3c8); }
+.nt-them-nhom:first-child { margin-top: 0; }
+.nt-them-nhom[hidden] { display: none; }

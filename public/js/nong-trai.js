@@ -526,7 +526,8 @@
     veNvTiep();
   }
   // The nho duoi muc tieu: chi hien nhiem vu ke tiep (bam de di toi); thu gon duoc, danh sach day du o bang Nhiem vu
-  function nvGon() { try { return localStorage.getItem('hyv_nt_nv_gon') === '1'; } catch (e) { return false; } }
+  // dien thoai: mac dinh thu gon (dong nhiem vu chiem cho, de len cot ben trai) — em mo lai thi nho lua chon
+  function nvGon() { try { var v = localStorage.getItem('hyv_nt_nv_gon'); return v == null ? (window.innerWidth || 800) <= 640 : v === '1'; } catch (e) { return false; } }
   function veNvTiep() {
     var el = $('#ntNvTiep'), gon = $('#ntNvGon'), nv = S.st && S.st.nv;
     if (!el || !gon) return;
@@ -5173,10 +5174,39 @@
     mo.observe(document.body, { childList: true, subtree: true });
   }
   /* ---------------- bang "Thêm": hoat dong it dung hon ---------------- */
+  // Bang "Them" chia nhom co tieu de (2026-11-20, co giao: "de nhin, de su dung") — chay moi lan mo vi cac module
+  // (mua Noel, thue, tu thien...) tu them nut luc chay; nut khong nam trong nhom nao vao "Khác"
+  var NHOM_THEM = [
+    ['🎄 Mùa Noel', function (b) { return /^noel-/.test(b.getAttribute('data-mo') || '') || /Noel/i.test(b.id); }],
+    ['📚 Học & thử thách', function (b) { return ['ntChuHan', 'ntThemVuon'].indexOf(b.id) >= 0 || ['kt-truyen', 'kt-pl', 'cay7', 'hoc', 'vuon'].indexOf(b.getAttribute('data-mo')) >= 0; }],
+    ['💰 Làm ăn', function (b) { return ['kt-mk', 'kt-xuong', 'kt-tiem', 'kt-nc', 'kt-xk', 'kt-dg', 'don', 'kt-thue'].indexOf(b.getAttribute('data-mo')) >= 0; }],
+    ['👫 Cùng bạn bè', function (b) { return ['chung', 'tuthien', 'congdong', 'thidua'].indexOf(b.getAttribute('data-mo')) >= 0; }],
+    ['🎲 Giải trí', function (b) { return ['ntVongQuay', 'ntHoCauNut'].indexOf(b.id) >= 0; }],
+    ['⚙ Cấp độ & cài đặt', function () { return true; }]
+  ];
+  function nhomThem() {
+    var luoi = $('#ntThemLuoi');
+    if (!luoi) return;
+    $all('.nt-them-nhom', luoi).forEach(function (h) { h.remove(); });
+    var nut = $all('#ntThemLuoi > button'), da = [];
+    NHOM_THEM.forEach(function (n) {
+      var ds = nut.filter(function (b) { return da.indexOf(b) < 0 && n[1](b); });
+      if (!ds.length) return;
+      ds.forEach(function (b) { da.push(b); });
+      var h = document.createElement('h3');
+      h.className = 'nt-them-nhom';
+      h.textContent = n[0];
+      // nhom toan nut an (vd ngoai mua Noel) thi an tieu de
+      h.hidden = ds.every(function (b) { return b.hidden; });
+      luoi.appendChild(h);
+      ds.forEach(function (b) { luoi.appendChild(b); });
+    });
+  }
   function moThem() {
     dongBang();
     dongNoi();
     if (S.che !== 'xem') thoatDat();
+    try { nhomThem(); } catch (e) { /* giu thu tu cu */ }
     $('#ntThem').hidden = false;
     document.body.classList.add('co-them');
     var dau = $('#ntThemLuoi button:not([hidden])');

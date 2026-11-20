@@ -4298,6 +4298,7 @@
   var nguonTu = '';
   var khoBai = {};
   var tuHaySai = null; // chu Han em hay lam sai o cac bai on -> hoi lai nhieu hon
+  var khoCau = {}; // url -> { xep: [{ w, zh }], dich: [{ zh, vn, py }] } (chi bai em da hoc / duoc giao)
   function napBai(url) {
     if (khoBai[url]) return Promise.resolve(khoBai[url]);
     var src = url.replace('/lessons/', '/js/').replace('.html', '-data.js');
@@ -4318,6 +4319,15 @@
       sc.src = src;
       sc.onload = function () {
         var raw = (ifr.contentWindow && ifr.contentWindow.vocabData) || [];
+        // cau cua bai (xep cau, dich 2 chieu, cau vi du cua tu) cho cac kieu cau hoi moi (nong-trai-cau.js)
+        try {
+          var w = ifr.contentWindow || {};
+          var cd = { xep: [], dich: [] };
+          (w.sortData || []).forEach(function (x) { if (x && Array.isArray(x.words) && x.ans && x.words.length >= 3 && x.words.length <= 12) cd.xep.push({ w: x.words.slice(), zh: x.ans }); });
+          (w.translateData || []).concat(w.translateDataRev || []).forEach(function (x) { if (x && x.zh && x.vi && x.zh.length <= 40) cd.dich.push({ zh: x.zh, vn: x.vi, py: x.py || '' }); });
+          raw.forEach(function (v) { if (v && v.ex_zh && v.ex_vn && v.ex_zh.length <= 30) cd.dich.push({ zh: v.ex_zh, vn: v.ex_vn, py: v.ex_py || '' }); });
+          khoCau[url] = cd;
+        } catch (e) { khoCau[url] = { xep: [], dich: [] }; }
         tra(raw.filter(function (v) {
           // bo ten rieng (ten nhan vat trong bai): hoi "Ton Nguyet (ten nguoi)" khong giup on tu
           return v && v.zh && v.vn && !/riêng/i.test(v.pos || '') && !/\(tên|tên người|tên riêng/i.test(v.vn);
@@ -4348,7 +4358,7 @@
       var sai = docJson('hyv_review_wrong_words', {});
       Object.keys(sai || {}).forEach(function (k) { (Array.isArray(sai[k]) ? sai[k] : []).forEach(function (z) { tuHaySai[z] = 1; }); });
     }
-    return baiOn().then(function (urls) { return Promise.all(urls.map(napBai)); }).then(function (phan) {
+    return baiOn().then(function (urls) { urlsOn = urls.slice(); return Promise.all(urls.map(napBai)); }).then(function (phan) {
       var ra = [], thay = {};
       phan.forEach(function (ds) { ds.forEach(function (v) { if (!thay[v.zh]) { thay[v.zh] = 1; ra.push(v); } }); });
       // KHONG bu ten cac mon trong nong trai: cau hoi chi lay tu bai em da hoc / duoc giao
@@ -4361,10 +4371,20 @@
     return a;
   }
 
-  var hoi = null;
+  var hoi = null, urlsOn = [];
+  function cauDangOn() {
+    var ra = { xep: [], dich: [] }, thay = {};
+    urlsOn.forEach(function (u) {
+      var c = khoCau[u];
+      if (!c) return;
+      c.xep.forEach(function (x) { if (!thay['x' + x.zh]) { thay['x' + x.zh] = 1; ra.xep.push(x); } });
+      c.dich.forEach(function (x) { if (!thay['d' + x.zh]) { thay['d' + x.zh] = 1; ra.dich.push(x); } });
+    });
+    return ra;
+  }
   function moHoi(opt, xong) {
     dongNoi();
-    hoi = { can: opt.so, dung: 0, xong: xong, khoa: false, daHoi: {} };
+    hoi = { can: opt.so, dung: 0, xong: xong, khoa: false, daHoi: {}, soCau: Math.random() < 0.5 ? 0 : 1 };
     $('#ntHoiAnh').src = anh(opt.anh);
     $('#ntHoiTit').textContent = opt.tit;
     $('#ntHoiPhu').textContent = opt.phu;
@@ -4393,6 +4413,8 @@
     $('#ntHoiTien').innerHTML = h;
   }
   function cauMoi() {
+    // kieu cau moi (xep cau, dich Viet-Trung / Trung-Viet, noi tu - nghia, tu go dap an) — nong-trai-cau.js
+    if (window.NTCau && hoi.soCau++ > 0 && window.NTCau.thu({ tu: tuVung, cau: cauDangOn(), hoi: hoi, esc: esc, doc: doc, tron: tron, xong: ketThucCau, dk: (S.st && S.st.doKho) || {} })) return;
     var ds = tuVung.filter(function (v) { return !hoi.daHoi[v.zh]; });
     if (ds.length < 1) { hoi.daHoi = {}; ds = tuVung.slice(); }
     // Mot nua so cau hoi lai tu em hay sai (neu trong bai on co)
@@ -4455,6 +4477,20 @@
       if (hoi !== h) return;
       if (h.dung >= h.can) { dongHoi(); h.xong(); } else cauMoi();
     }, dung ? 1100 : 2200);
+  }
+  // nong-trai-cau.js goi khi em tra loi xong 1 cau kieu moi: dung/sai, loi bao (html), cau doc to
+  function ketThucCau(dung, bao, docZh) {
+    if (!hoi || hoi.khoa) return;
+    hoi.khoa = true;
+    if (dung) { hoi.dung++; tieng('dung'); } else tieng('sai');
+    $('#ntHoiBao').innerHTML = bao || (dung ? 'Đúng rồi!' : 'Chưa đúng — thử câu khác nhé!');
+    if (docZh) doc(docZh);
+    veTienHoi();
+    var h = hoi;
+    setTimeout(function () {
+      if (hoi !== h) return;
+      if (h.dung >= h.can) { dongHoi(); h.xong(); } else cauMoi();
+    }, dung ? 1500 : 2800);
   }
   function dongHoi() { $('#ntHoi').hidden = true; document.body.classList.remove('co-hoi'); hoi = null; }
 

@@ -496,7 +496,7 @@
     var co = TAT.loai === 'xu' ? r.xu : ((dsLoai.filter(function (x) { return x.k === TAT.k; })[0] || {}).n || 0);
     var max = Math.min(co, TAT.loai === 'xu' ? c.tatXu : c.tatSl);
     TAT.n = Math.max(1, Math.min(max || 1, TAT.n));
-    h += '<h3 class="th-h">1 · Chọn quà <small>(hôm nay còn ' + r.con + '/' + c.tatNgay + ' lần tặng)</small></h3><div class="th-loai">' +
+    h += '<h3 class="th-h">1 · Chọn quà' + (c.tatNgay ? ' <small>(hôm nay còn ' + r.con + '/' + c.tatNgay + ' lần tặng)</small>' : '') + '</h3><div class="th-loai">' +
       [['xu', '💰 Xu'], ['sp', '🧺 Kho'], ['hat', '🌱 Hạt giống']].map(function (l) {
         var co2 = l[0] === 'xu' ? r.xu > 0 : r.hang.some(function (x) { return x.loai === l[0]; });
         return '<button type="button" class="' + (TAT.loai === l[0] ? 'bat' : '') + '" data-tat-loai="' + l[0] + '"' + (co2 ? '' : ' disabled') + '>' + l[1] + '</button>';

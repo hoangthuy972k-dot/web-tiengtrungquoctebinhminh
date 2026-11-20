@@ -42,7 +42,7 @@ const TH_CAU = 3;       // toi da 3 cau / thiep
 const TH_GIU = 40;      // hop thiep giu 40 thiep gan nhat
 const TH_XP = 3;        // gui 1 thiep +3 kinh nghiem
 const TH_CO_TOI_DA = 400;
-const TAT_NGAY = 3;     // 1 em bo toi da 3 mon qua / ngay (moi tat 1 mon / ngay)
+const TAT_NGAY = 0;     // 2026-11-20 co giao: bo gioi han so lan tang moi ngay (0 = khong gioi han); moi tat van 1 mon / ngay / nguoi
 const TAT_XU = 50;      // qua xu toi da 50 xu / lan
 const TAT_SL = 10;      // hang / hat toi da 10 / lan
 const TAT_CAU = 2;
@@ -224,7 +224,7 @@ function gan(app, d, h, c) {
     const [fb, fm, cung] = await Promise.all([h.doc(id), h.doc(me), coNongTrai(me, id)]);
     const g = ngayNg(fm.tatG, ngay);
     res.json({ cuaEm: false, mua: muaNay(), ngay, ngayMo: ngayMoTat(nam), n: chuaMo(fb).length, cung, da: g.ai.indexOf(id) >= 0,
-      con: Math.max(0, TAT_NGAY - g.n), day: chuaMo(fb).length >= TAT_TOI_DA, xu: fm.xu, hang: cung ? cacMon(fm) : [] });
+      con: TAT_NGAY ? Math.max(0, TAT_NGAY - g.n) : 999, day: chuaMo(fb).length >= TAT_TOI_DA, xu: fm.xu, hang: cung ? cacMon(fm) : [] });
   }));
 
   app.post('/api/farm/noel/tat/bo', d.requireAuth, d.asyncRoute(async (req, res) => {
@@ -248,7 +248,7 @@ function gan(app, d, h, c) {
       if ((ff.tnChan || []).indexOf(me) >= 0) throw loi('Bạn này hiện chưa nhận quà từ em.');
       const g = ngayNg(fm.tatG, ngay);
       if (g.ai.indexOf(id) >= 0) throw loi('Hôm nay em đã bỏ quà vào tất của bạn này rồi — mai nhé!');
-      if (g.n >= TAT_NGAY) throw loi('Hôm nay em đã bỏ ' + TAT_NGAY + ' món quà rồi — mai tặng tiếp nhé!');
+      if (TAT_NGAY && g.n >= TAT_NGAY) throw loi('Hôm nay em đã bỏ ' + TAT_NGAY + ' món quà rồi — mai tặng tiếp nhé!');
       if (chuaMo(ff).length >= TAT_TOI_DA) throw loi('Tất của bạn đầy quà rồi!');
       if (loai === 'xu') {
         if (!(fm.xu >= n)) throw loi('Em chỉ có ' + (fm.xu || 0) + ' xu thôi.');

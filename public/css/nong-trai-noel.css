@@ -21,10 +21,10 @@
 .nt-ntt-tr .nt-ntr-day { stroke-width: 1.4; }
 .nt-ntr-bong { stroke: #2b1d3a; stroke-width: 0.55; }
 .nt-ntr-bong.sang { animation: nt-ntr-nhay 1.8s steps(1, end) infinite; }
-@keyframes nt-ntr-nhay { 0% { opacity: 1; filter: brightness(1.25) drop-shadow(0 0 1.6px #fff3b0); } 50% { opacity: 0.45; filter: none; } }
+@keyframes nt-ntr-nhay { 0% { opacity: 1; } 50% { opacity: 0.4; } }
 .nt-ntr-sao-h { transform-box: fill-box; transform-origin: 50% 55%; }
 .nt-ntr-sao.sang .nt-ntr-sao-h { animation: nt-ntr-sao 2.4s ease-in-out infinite; }
-@keyframes nt-ntr-sao { 0%, 100% { scale: 1; filter: drop-shadow(0 0 1px #fff3b0); } 50% { scale: 1.13; filter: drop-shadow(0 0 3px #fff6c0); } }
+@keyframes nt-ntr-sao { 0%, 100% { scale: 1; } 50% { scale: 1.13; } }
 .nt-ntr-sao:not(.sang) .nt-ntr-sao-h { filter: grayscale(0.85) brightness(0.92); opacity: 0.72; }
 .nt-ntr-hao { transform-box: fill-box; transform-origin: center; animation: nt-ntr-hao 2.4s ease-in-out infinite; }
 @keyframes nt-ntr-hao { 0%, 100% { scale: 0.85; opacity: 0.75; } 50% { scale: 1.2; opacity: 1; } }
@@ -395,3 +395,21 @@ body.nt-noel.o-thi-tran .nt-santa { z-index: 49; }
 /* ong gia bay vong quanh cay thong trong khung troi dem cua thi tran */
 .nt-ntt-santa { position: absolute; left: 0; top: 0; z-index: 3; pointer-events: none; transform-origin: 50% 50%; filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.35)); }
 .nt-ntt-santa[hidden] { display: none; }
+
+/* ---------- nhe cho dien thoai (2026-11-20, co giao: "choi tren dien thoai hoi lag") ----------
+   Giu hinh dep, bo bot thu bat may ve lai lien tuc: bong tuyet khong do bong, do trang tri tren cay dung yen
+   (sao va den van nhap nhay bang do mo), hao quang khong lam mo dong, vet sao sau xe ong gia an. */
+.nt-tuyet-hat { will-change: transform; }
+@media (max-width: 760px), (pointer: coarse) {
+  body.nt-noel .nt-noel-tuyet .nt-tuyet-hat { box-shadow: 0 0 0 1px rgba(110, 145, 200, 0.6); }
+  body.nt-noel .nt-noel-tuyet .nt-tuyet-hat.bong-tuyet { text-shadow: 0 0 2px #4a78b8; }
+  body.nt-noel .nt-noel-tuyet .nt-tuyet-hat:nth-child(2n) { display: none; }
+  .nt-ntr-o, .nt-ntr-chuong, .nt-ntr-no, .nt-ntr-tuyet { animation: none !important; }
+  .nt-ntt-tr .nt-ntr-lap:nth-child(2n) { display: none; }
+  .nt-ntt-hao { animation: none; filter: none; fill: rgba(255, 220, 110, 0.12); }
+  .nt-ntt-tr.cap-5 .nt-ntr-bong.sang { animation: nt-ntr-nhay 1.8s steps(1, end) infinite; }
+  .nt-noel-tr.du { filter: none; }
+  .nt-sa-vet { display: none; }
+  .nt-ntt-cay::before { animation: none; opacity: 0.8; }
+  .nt-noel-day-b:nth-child(3n) { animation: none; }
+}

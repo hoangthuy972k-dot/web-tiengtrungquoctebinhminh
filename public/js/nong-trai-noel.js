@@ -255,7 +255,9 @@
     o = o || {};
     var ctx = cv && cv.getContext && cv.getContext('2d');
     if (!ctx) return;
-    var dpr = Math.min(2, window.devicePixelRatio || 1), W = 1, H = 1, hat = [], sao = [], lap = [], dem = 0;
+    // dien thoai: ve o do phan giai 1x, it bong hon (giam lag)
+    var dt_ = (window.matchMedia && matchMedia('(max-width: 760px), (pointer: coarse)').matches);
+    var dpr = dt_ ? 1 : Math.min(2, window.devicePixelRatio || 1), W = 1, H = 1, hat = [], sao = [], lap = [], dem = 0;
     function co() {
       var r = cv.getBoundingClientRect();
       W = Math.max(1, r.width); H = Math.max(1, r.height);
@@ -270,7 +272,7 @@
         a: 0.5 + Math.random() * 0.5, bong: Math.random() < 0.14, q: Math.random() * 6.28 };
     }
     co();
-    var n = Math.min(260, Math.round(W * H / (o.mat || 4200) * (giam() ? 0.6 : 1)));
+    var n = Math.min(dt_ ? 90 : 260, Math.round(W * H / (o.mat || 4200) * (giam() ? 0.6 : 1) * (dt_ ? 0.55 : 1)));
     for (var i = 0; i < n; i++) hat.push(moi());
     var ns = Math.round(W * H / 10000 * (o.sao || 0));
     for (var j = 0; j < ns; j++) sao.push({ x: Math.random() * W, y: Math.random() * H * 0.62, r: 0.5 + Math.random() * 1.3, p: Math.random() * 6.28, t: 0.6 + Math.random() * 1.8 });
@@ -322,7 +324,7 @@
       });
       if (o.lapTu) {
         dem += dt * (o.lapSo || 8);
-        while (dem >= 1 && lap.length < 60) { dem -= 1; var p = o.lapTu(); if (p) lap.push({ x: p.x, y: p.y, s: 0, d: 0.7 + Math.random() * 0.8, r: 2.5 + Math.random() * 4.5, m: Math.random() < 0.7 ? '#ffe680' : (Math.random() < 0.5 ? '#ffffff' : '#ffb3c7') }); }
+        while (dem >= 1 && lap.length < (dt_ ? 24 : 60)) { dem -= 1; var p = o.lapTu(); if (p) lap.push({ x: p.x, y: p.y, s: 0, d: 0.7 + Math.random() * 0.8, r: 2.5 + Math.random() * 4.5, m: Math.random() < 0.7 ? '#ffe680' : (Math.random() < 0.5 ? '#ffffff' : '#ffb3c7') }); }
         lap = lap.filter(function (x) {
           x.s += dt;
           var k = x.s / x.d;
@@ -338,7 +340,8 @@
     (function vong(now) {
       if (!cv.isConnected) return;
       requestAnimationFrame(vong);
-      if (document.hidden) { last = 0; return; }
+      // tab an / khung dang an (vd thi tran da dong — canvas van con trong trang): khong ve, do ton pin + lag
+      if (document.hidden || !cv.offsetWidth) { last = 0; return; }
       khung(now);
     })(performance.now());
   }
@@ -427,7 +430,8 @@
   }
   function bayOngGia() {
     clearTimeout(oG.hen);
-    oG.hen = setTimeout(bayOngGia, 26000 + Math.random() * 16000);
+    var dtB = window.matchMedia && matchMedia('(max-width: 760px), (pointer: coarse)').matches;
+    oG.hen = setTimeout(bayOngGia, (dtB ? 45000 : 26000) + Math.random() * 16000);
     if (!document.body.classList.contains('nt-noel') || document.hidden || document.body.classList.contains('co-bang')) return;
     var b = oGiaEl(), W = innerWidth, rong = Math.min(260, Math.max(170, W * 0.22));
     var sangPhai = (oG.luot++ % 2) === 1, y = Math.round(innerHeight * (0.1 + Math.random() * 0.22));

@@ -1612,7 +1612,8 @@ body.o-thi-tran .nt-tai-lop, body.co-bang .nt-tai-lop { display: none !important
 .nt-tuyet-hat { position: absolute; top: -20px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: #fff; box-shadow: 0 0 6px rgba(255, 255, 255, 0.9); opacity: 0.95; font-style: normal; color: #fff; line-height: 1;
   animation-name: nt-tuyet-roi, nt-tuyet-lac; animation-timing-function: linear, ease-in-out; animation-iteration-count: infinite; animation-direction: normal, alternate; }
 .nt-tuyet-hat.bong-tuyet { width: auto !important; height: auto !important; background: none; box-shadow: none; font-size: 22px; text-shadow: 0 0 6px rgba(120, 170, 230, 0.9); }
-@keyframes nt-tuyet-roi { from { top: -24px; } to { top: 104%; } }
+/* 2026-11-20 (lag tren dien thoai): roi bang transform thay vi top -> khong tinh lai bo cuc moi khung hinh */
+@keyframes nt-tuyet-roi { from { transform: translateY(-24px); } to { transform: translateY(106vh); } }
 @keyframes nt-tuyet-lac { from { translate: calc(var(--lac) * -1) 0; rotate: -20deg; } to { translate: var(--lac) 0; rotate: 20deg; } }
 
 /* ---------- Canh vat bay luon: may, chim, buom ---------- */

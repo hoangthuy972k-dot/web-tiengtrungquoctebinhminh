@@ -7,8 +7,8 @@
      loi da cuoi mau kem, ao sen nho. Ve 1 lan bang SVG (tinh), chi vai phan tu nho chuyen dong (transform/opacity).
    · Mo rong dat -> khoang ruong da khai hoang to ra giua vung que (hieu ung "dat no rong" lan dau).
    · Nang theo gio Viet Nam: bong ngan buoi trua, dai buoi sang / chieu, chieu muon vang ruc, toi = hoang hon nhe (KHONG toi).
-     Thu tren may local: ?gio=17 ; may yeu: ?mayyeu=1.
-   · Goc nhin ▦ Phang = nong trai kieu cu (khong ve vung que). Doi trong "⋯ Thêm" → Góc nhìn, luu theo may.
+     Thu tren may local: ?gio=17.
+   · Goc nhin ▦ Phang = nong trai kieu cu (khong ve vung que). Doi bang nut 3D canh nut + − (hoac "⋯ Thêm" → Góc nhìn), luu theo may.
    · Gio qua trong bui cay canh ruong: nhat 1 lan / ngay (may chu: a='chai', +3 xu).
    ══════════════════════════════════════════════════════════════════ */
 (function () {
@@ -354,10 +354,6 @@
   var laLocal = /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
   function docGoc() { try { return localStorage.getItem('hyv_nt_goc') || ''; } catch (e) { return ''; } }
   function ghiGoc(v) { try { localStorage.setItem('hyv_nt_goc', v); } catch (e) { /* bo qua */ } }
-  function mayYeu() {
-    if (laLocal && /[?&]mayyeu=1/.test(location.search)) return true;
-    return !!(navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 2);
-  }
   function datGoc(nghieng, giuCho) {
     var cu = !!S.ng;
     var giu = giuCho && cu && S.st ? giuTam() : null;
@@ -372,12 +368,25 @@
   }
   function capNhatNutGoc() {
     var b = GOC.nut;
-    if (!b) return;
     var ng = !!S.ng;
-    b.querySelector('b').textContent = 'Góc nhìn: ' + (ng ? 'Nghiêng' : 'Phẳng');
-    b.querySelector('small').textContent = ng ? 'nông trại nổi khối, có chiều sâu · chạm để đổi sang ▦ Phẳng' : 'nhìn thẳng từ trên xuống · chạm để đổi sang 🏡 Nghiêng';
+    var n3 = $('#ntNut3d');
+    if (n3) {
+      n3.setAttribute('aria-pressed', ng ? 'true' : 'false');
+      n3.classList.toggle('bat', ng);
+      n3.title = ng ? 'Đang ở chế độ 3D · chạm để về 2D (phẳng)' : 'Chạm để bật chế độ 3D';
+      n3.setAttribute('aria-label', ng ? 'Chế độ 3D đang bật — chạm để về 2D' : 'Bật chế độ 3D');
+    }
+    if (!b) return;
+    b.querySelector('b').textContent = 'Góc nhìn: ' + (ng ? '3D' : '2D (phẳng)');
+    b.querySelector('small').textContent = ng ? 'nông trại nổi khối, có chiều sâu · chạm để về ▦ 2D' : 'nhìn thẳng từ trên xuống · chạm để bật 🏡 3D';
     b.querySelector('.nt-them-emo').textContent = ng ? '🏡' : '▦';
     b.setAttribute('aria-pressed', ng ? 'true' : 'false');
+  }
+  function doiGoc() {
+    var ng = !S.ng;
+    ghiGoc(ng ? 'nghieng' : 'phang');
+    datGoc(ng, true);
+    N.bao(ng ? '🏡 Chế độ 3D — nông trại nổi khối, có đồi, rừng thông và bóng đổ!' : '▦ Chế độ 2D — nhìn thẳng từ trên xuống.');
   }
   function taoNutGoc() {
     var luoi = $('#ntThemLuoi');
@@ -388,12 +397,7 @@
     var sau = luoi.querySelector('[data-mo="kt-sotay"]');
     luoi.insertBefore(b, sau ? sau.nextSibling : null);
     GOC.nut = b;
-    b.addEventListener('click', function () {
-      var ng = !S.ng;
-      ghiGoc(ng ? 'nghieng' : 'phang');
-      datGoc(ng, true);
-      N.bao(ng ? '🏡 Góc nhìn Nghiêng — nông trại nổi khối như thật!' : '▦ Góc nhìn Phẳng — nhìn thẳng từ trên xuống.');
-    });
+    b.addEventListener('click', doiGoc);
     capNhatNutGoc();
   }
   // giu diem dat dang o giua man hinh (phong to / thu nho / doi goc nhin)
@@ -430,7 +434,7 @@
     GOC.cuoi = performance.now();
     if (!GOC.chay) { GOC.chay = true; GOC.t = 0; requestAnimationFrame(doKhung); }
   }
-  var BAO_YEU = 'nên nông trại dùng góc nhìn Phẳng cho mượt. Muốn xem góc Nghiêng: ⋯ Thêm → Góc nhìn.';
+  var BAO_YEU = 'nên nông trại về chế độ 2D cho mượt. Muốn xem lại 3D: bấm nút 3D cạnh nút + −.';
   function tuVePhang() {
     ghiGoc('phang-tu');
     datGoc(false, true);
@@ -439,10 +443,14 @@
 
   /* ---------------- khoi dong ---------------- */
   // Co giao (2026-11-14): mac dinh quay ve giao dien cu (Phang). Chi bat Nghieng khi em tu chon trong ⋯ Thêm → Góc nhìn.
-  var chon = docGoc(), ngDau = chon === 'nghieng' && !mayYeu();
+  // em tu bam nut 3D -> giu 3D (ke ca may yeu); may yeu chi khong tu bat
+  var chon = docGoc(), ngDau = chon === 'nghieng';
   S.ng = ngDau ? NG_C : 0;
   document.body.classList.toggle('nt-ng', ngDau);
   taoNutGoc();
+  var nut3d = $('#ntNut3d');
+  if (nut3d) nut3d.addEventListener('click', doiGoc);
+  capNhatNutGoc();
   apNang();
   N.sauVe.push(veQue);
   var khung = $('#ntKhung');

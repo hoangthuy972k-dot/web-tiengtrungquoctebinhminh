@@ -170,6 +170,12 @@ button:focus-visible, a:focus-visible { outline: 3px solid #1e88e5; outline-offs
   box-shadow: 0 3px 0 var(--vien); font-size: 1.4rem; font-weight: 900; line-height: 1;
 }
 
+/* nut 3D (nong-trai-que.js): bat / tat goc nhin nghieng noi khoi; dang bat = vang + chu nhan xuong */
+.nt-zoom .nt-nut-3d { font-size: 0.95rem; letter-spacing: 0.02em; background: linear-gradient(160deg, #fff 0%, var(--kem) 60%, #e8d9b8 100%); }
+.nt-zoom .nt-nut-3d b { display: inline-block; transform: perspective(60px) rotateX(18deg); text-shadow: 0 2px 0 rgba(43, 29, 58, 0.25); }
+.nt-zoom .nt-nut-3d.bat { background: var(--vang); box-shadow: 0 1px 0 var(--vien), inset 0 3px 0 rgba(0, 0, 0, 0.15); transform: translateY(2px); }
+.nt-zoom .nt-nut-3d:focus-visible { outline: 3px solid #4a90e2; outline-offset: 2px; }
+
 /* ---------- nut chung ---------- */
 .nt-nut {
   display: inline-flex; align-items: center; justify-content: center; gap: 6px;

@@ -1,0 +1,26 @@
+/* Bao ve hanh tinh (public/js/tro-nha-thienthach.js) */
+.tn-thienthach .tn-san { display: flex; justify-content: center; align-items: center; min-height: 0; padding: 0; overflow: hidden; }
+.tn-tt-cv { display: block; max-width: 100%; border-radius: 18px; touch-action: manipulation; box-shadow: 0 6px 0 rgba(43, 29, 58, 0.3); }
+.tn-tt-de { font-size: 0.95rem; font-weight: 600; }
+.tn-tt-duoi { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 12px; padding: 8px 0 2px; width: 100%; }
+.tn-tt-go { display: flex; align-items: center; gap: 8px; flex: 1 1 280px; max-width: 460px; }
+.tn-tt-go span { font-weight: 800; white-space: nowrap; }
+.tn-tt-go input {
+  flex: 1; min-width: 0; font: inherit; font-size: 1.25rem; font-weight: 700; padding: 10px 14px; border-radius: 14px;
+  border: 3px solid #2b1d3a; background: #fffdf6; color: #2b1d3a; box-shadow: 0 3px 0 #2b1d3a; letter-spacing: 0.02em;
+}
+.tn-tt-go input:focus { outline: 3px solid #4f8cff; outline-offset: 2px; }
+.tn-tt-go input.sai { background: #ffe1e1; border-color: #c62828; }
+.tn-tt-nho { font: inherit; font-size: 0.85rem; font-weight: 700; padding: 8px 12px; border-radius: 12px; border: 2px solid #2b1d3a; background: #fff3c4; cursor: pointer; }
+.tn-tt-nho[aria-pressed="false"] { background: #eee; }
+.tn-tt-chon { width: 100%; max-width: 560px; }
+.tn-tt-hoi { margin: 0 0 6px; text-align: center; font-weight: 600; }
+.tn-tt-hoi b { font-family: 'Noto Serif SC', serif; font-size: 1.4rem; color: #c62828; }
+.tn-tt-cho { margin: 0; text-align: center; opacity: 0.7; }
+.tn-tt-luoi { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.tn-tt-lua { font: inherit; font-weight: 700; min-height: 48px; padding: 8px; border-radius: 14px; border: 3px solid #2b1d3a; background: #fffdf6; box-shadow: 0 3px 0 #2b1d3a; cursor: pointer; }
+.tn-tt-lua:active { transform: translateY(2px); box-shadow: 0 1px 0 #2b1d3a; }
+.tn-tt-lua.sai { background: #ff9c9c; }
+.tn-tt-kieu { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 12px; }
+.tn-tt-kieu button { font: inherit; font-weight: 700; padding: 8px 14px; border-radius: 999px; border: 2px solid #2b1d3a; background: #fff; cursor: pointer; }
+.tn-tt-kieu button.on { background: #4f8cff; color: #fff; }

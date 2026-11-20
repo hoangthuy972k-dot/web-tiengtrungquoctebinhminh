@@ -2727,3 +2727,34 @@ body:not(.nt-ng) .nt-vat:not(.phang)::before {
 .nt-them-nhom::after { content: ''; flex: 1; height: 2px; border-radius: 2px; background: var(--kem-2, #efe3c8); }
 .nt-them-nhom:first-child { margin-top: 0; }
 .nt-them-nhom[hidden] { display: none; }
+
+/* ---------- Cua hang + Kho tren dien thoai: the ngang (2026-11-20, co giao: "lam dep cua hang va kho") ----------
+   Hinh ben trai, ten + thong tin ben phai, nut o duoi ten; ten chu Han khong bi vo dong; tab truot ngang 1 hang. */
+.nt-the { transition: transform 0.12s; }
+.nt-the:not(.khoa):hover { transform: translateY(-2px); }
+.nt-the-anh { background: radial-gradient(circle at 50% 68%, #d8f5c0 0%, #b5e596 55%, #9fd67b 100%); box-shadow: inset 0 -3px 0 rgba(43, 29, 58, 0.08); }
+.nt-the .nt-ten b { white-space: nowrap; }
+.nt-mua { min-height: 40px; }
+@media (max-width: 560px) {
+  .nt-tab { flex: none; flex-wrap: nowrap; overflow-x: auto; overflow-y: hidden; scrollbar-width: none; padding: 10px 12px 4px; -webkit-overflow-scrolling: touch; }
+  .nt-tab::-webkit-scrollbar { display: none; }
+  .nt-tab button { flex: none; padding: 6px 13px; font-size: 0.86rem; }
+  .nt-luoi-the { grid-template-columns: 1fr; gap: 10px; }
+  .nt-the {
+    display: grid; grid-template-columns: 76px minmax(0, 1fr); column-gap: 10px; row-gap: 4px; align-items: center;
+    padding: 8px 10px 10px 8px; border-radius: 16px;
+  }
+  .nt-the > .nt-the-anh { grid-row: 1 / span 4; align-self: start; width: 76px; height: 76px; }
+  .nt-the > .nt-the-anh img { width: 64px; height: 64px; }
+  .nt-the > * { grid-column: 2; min-width: 0; }
+  .nt-the > .nt-the-anh { grid-column: 1; }
+  .nt-the .nt-ten { padding: 0; justify-self: start; text-align: left; }
+  .nt-the .nt-ten b { font-size: 1.35rem; }
+  .nt-the .nt-ten span { font-size: 0.85rem; }
+  .nt-the .nt-ten i { font-size: 0.86rem; }
+  .nt-the-phu { font-size: 0.78rem; line-height: 1.35; }
+  .nt-the > .nt-mua { justify-self: start; min-width: 120px; padding: 6px 14px; margin-top: 2px; }
+  .nt-the > .nt-ban-nut { margin-top: 2px; flex-wrap: wrap; gap: 6px; }
+  .nt-ban-nut .nt-mua { flex: 1 1 0; min-width: 0; padding: 6px 4px; font-size: 0.82rem; white-space: nowrap; }
+  .nt-khoa { top: 4px; right: 4px; font-size: 0.68rem; padding: 1px 6px; }
+}

@@ -21,6 +21,8 @@
       .then(function () { return goi('/api/admin/farm-qua?lop=' + encodeURIComponent(state.lop || '')).then(function (q) { state.qua = q; }, function () { state.qua = null; }); })
       // thue nong trai cua lop (nong-trai-thue.js) — chi xem
       .then(function () { return goi('/api/admin/farm-thue?lop=' + encodeURIComponent(state.lop || '')).then(function (q) { state.thue = q; }, function () { state.thue = null; }); })
+      // mua Noel: thiep + tat Noel (admin-nong-trai-noel.js) — chi xem
+      .then(function () { return window.__trNtNoel ? window.__trNtNoel.tai(goi, state.lop || '') : null; })
       .catch(function () { /* chua dang nhap */ });
   }
   function ve() {
@@ -42,7 +44,7 @@
           '<div class="gy-hanh-dong"><button type="button" class="btn btn-outline" data-nt-xoa>Xoá tin</button>' +
           '<button type="button" class="btn btn-outline" data-nt-khoa="' + esc(x.tu) + '" data-ngay="3">Khoá nhắn tự do của ' + esc(x.tenTu || 'em này') + ' 3 ngày</button>' +
           '<button type="button" class="btn btn-outline" data-nt-khoa="' + esc(x.tu) + '" data-ngay="7">7 ngày</button></div><p class="gy-kq" aria-live="polite"></p></article>';
-      }).join('') + '</div>' : '<p class="admin-empty">Lớp này chưa có tin nhắn tự do nào.</p>') + '</section>' + veQua() + veThue();
+      }).join('') + '</div>' : '<p class="admin-empty">Lớp này chưa có tin nhắn tự do nào.</p>') + '</section>' + veQua() + veThue() + (window.__trNtNoel ? window.__trNtNoel.html(state.lop, esc, thoiGian) : '');
   }
   // Thue nong trai: lop thu bao nhieu, quy con bao nhieu, tro cap cho ai (chi xem)
   function veThue() {

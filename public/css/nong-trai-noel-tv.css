@@ -1,0 +1,147 @@
+/* Hoc tu Noel 圣诞词汇 — bang 'noel-tv' (public/js/nong-trai-noel-tv.js) */
+.ntv { display: flex; flex-direction: column; gap: 12px; }
+.ntv [lang="zh"], .ntv-the b, .ntv-tu b { font-family: 'Noto Serif SC', serif; }
+.ntv-dau {
+  display: flex; gap: 10px; align-items: flex-start; margin: 0; padding: 10px 12px; border-radius: 16px;
+  background: linear-gradient(135deg, #fff1d6, #ffe3e0); border: 3px solid var(--vien); box-shadow: 0 3px 0 var(--vien);
+}
+.ntv-dau > span { font-size: 1.6rem; line-height: 1; }
+.ntv-dau p { margin: 0; font-size: 0.92rem; font-weight: 600; line-height: 1.45; }
+.ntv-dau.xong { background: linear-gradient(135deg, #e3f8d8, #d8f1ff); }
+
+/* the tu */
+.ntv-luoi { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+.ntv-the {
+  position: relative; display: flex; flex-direction: column; align-items: center; gap: 1px;
+  padding: 10px 6px 10px; border-radius: 18px; border: 3px solid var(--vien); background: #fff;
+  box-shadow: 0 4px 0 var(--vien); color: var(--chu); cursor: pointer;
+  background-image: radial-gradient(circle at 18% 12%, rgba(229, 57, 53, 0.08) 0 22px, transparent 23px), radial-gradient(circle at 88% 86%, rgba(46, 155, 79, 0.08) 0 26px, transparent 27px);
+  animation: ntv-vao 0.4s cubic-bezier(0.2, 1.2, 0.4, 1) both; animation-delay: calc(var(--i, 0) * 35ms);
+  transition: transform 0.12s, box-shadow 0.12s;
+}
+.ntv-the:hover { transform: translateY(-2px); }
+.ntv-the:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--vien); }
+.ntv-the.da { border-color: #2e7d32; box-shadow: 0 4px 0 #2e7d32; }
+.ntv-the.da::after { content: '✓'; position: absolute; left: 8px; top: 6px; width: 20px; height: 20px; border-radius: 50%; background: #6fd05a; border: 2px solid var(--vien); font-size: 0.72rem; font-weight: 900; display: grid; place-items: center; }
+.ntv-the.nay .ntv-the-hinh { animation: ntv-nhun 0.5s; }
+.ntv-the-hinh { width: 64px; height: 64px; display: block; }
+.ntv-the-hinh img { width: 100%; height: 100%; }
+.ntv-the b { font-size: 1.85rem; font-weight: 700; line-height: 1.2; margin-top: 2px; }
+.ntv-py { color: #c0392b; font-weight: 800; font-size: 1rem; }
+.ntv-the i { font-style: normal; font-weight: 700; font-size: 0.86rem; color: var(--mo); text-align: center; line-height: 1.25; }
+.ntv-loa { position: absolute; right: 7px; top: 5px; font-style: normal; font-size: 0.95rem; opacity: 0.75; }
+.ntv-dem { margin: 0; text-align: center; font-weight: 700; color: var(--mo); }
+.ntv-nut-hang { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.ntv .nt-nut.ntv-tiep, .ntv #ntvLai, .ntv-bat-nut { background: var(--vang); }
+.ntv .nt-nut-phu { background: #fff; }
+
+/* cau mau */
+.ntv-mau { color: #c62828; font-weight: 800; }
+.ntv-cau {
+  padding: 12px; border-radius: 18px; border: 3px solid var(--vien); background: #fff; box-shadow: 0 4px 0 var(--vien);
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  animation: ntv-vao 0.4s cubic-bezier(0.2, 1.2, 0.4, 1) both; animation-delay: calc(var(--i, 0) * 70ms);
+}
+.ntv-cau-tu { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-end; gap: 2px 4px; }
+.ntv-tu {
+  display: inline-flex; flex-direction: column; align-items: center; padding: 2px 5px 3px; border: 0; border-radius: 10px;
+  background: none; color: var(--chu); cursor: pointer;
+}
+.ntv-tu:hover { background: #fff3d6; }
+.ntv-tu small { font-size: 0.78rem; font-weight: 700; color: var(--mo); line-height: 1.2; }
+.ntv-tu b { font-size: 1.6rem; font-weight: 600; line-height: 1.2; }
+.ntv-tu.n b { color: #c62828; font-weight: 700; }
+.ntv-tu.n small { color: #c62828; }
+.ntv-tu.n { background: #fff0ee; box-shadow: inset 0 -3px 0 #ffcdc7; }
+.ntv-dau-cau { font-family: 'Noto Serif SC', serif; font-size: 1.5rem; padding-bottom: 3px; }
+.ntv-cau-py { margin: 2px 0 0; color: #c0392b; font-weight: 700; text-align: center; }
+.ntv-cau-vn { margin: 0; font-weight: 700; text-align: center; }
+.ntv-cau-nghe {
+  margin-top: 4px; padding: 6px 14px; border-radius: 999px; border: 3px solid var(--vien); background: #bfe6ff;
+  font-weight: 800; box-shadow: 0 3px 0 var(--vien); color: var(--chu); cursor: pointer;
+}
+
+/* luyen tap */
+.ntv-bat { display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; padding: 6px 4px; }
+.ntv-bat-hinh { width: 96px; height: 96px; animation: ntv-lac 3s ease-in-out infinite; }
+.ntv-bat-hinh img { width: 100%; height: 100%; }
+.ntv-bat h3 { margin: 0; font-size: 1.25rem; font-weight: 900; }
+.ntv-bat p { margin: 0; font-weight: 600; color: var(--mo); line-height: 1.5; }
+.ntv-bat-nut { padding: 12px 30px; font-size: 1.1rem; }
+.ntv-qua {
+  display: flex; align-items: center; gap: 10px; text-align: left; padding: 8px 12px; border-radius: 16px;
+  background: #fff6dd; border: 3px dashed #e09b12; width: min(100%, 460px);
+}
+.ntv-qua.nhan { border-style: solid; background: linear-gradient(135deg, #fff6dd, #ffe9e6); margin: 0 auto; }
+.ntv-qua-hop { width: 52px; height: 52px; flex: none; }
+.ntv-qua-hop img { width: 100%; height: 100%; }
+.ntv-qua.nhan .ntv-qua-hop { animation: ntv-nhun 1.4s ease-in-out infinite; }
+.ntv-qua b { font-weight: 900; }
+.ntv-qua p { margin: 2px 0 0; font-weight: 600; line-height: 1.6; }
+.ntv-qua .nt-gia { font-weight: 900; }
+.ntv-qua .nt-gia img { width: 20px; height: 20px; }
+
+.ntv-lam { max-width: 560px; margin: 0 auto; width: 100%; }
+.ntv-lam-dau { display: flex; justify-content: space-between; font-weight: 700; color: var(--mo); }
+.ntv-dung-so { color: #2e7d32; font-weight: 900; }
+.ntv-tien { flex-wrap: wrap; gap: 6px; }
+.ntv-tien i { width: 18px; height: 18px; border-width: 2px; }
+.ntv-tien i.sai { background: #ff8a80; }
+.ntv-tien i.nay { background: var(--vang); transform: scale(1.18); }
+.ntv-hoi { min-height: 150px; }
+.ntv-hoi .nt-hoi-zh { font-family: 'Noto Serif SC', serif; color: var(--chu); }
+.ntv-hoi-hinh { width: 70px; height: 70px; display: block; }
+.ntv-hoi-hinh img { width: 100%; height: 100%; }
+.ntv-hoi .nt-hoi-vn { margin: 2px 0; }
+.ntv-loa-to { font-size: 1.25rem; padding: 14px 28px; cursor: pointer; }
+.ntv-goi-py { margin: 0; font-size: 0.9rem; color: var(--mo); }
+.ntv-chon button { color: var(--chu); cursor: pointer; }
+.ntv-chon button.zh { font-family: 'Noto Serif SC', serif; font-size: 1.7rem; }
+.ntv-chon button.mo { opacity: 0.55; }
+.ntv-chon button:disabled { cursor: default; }
+.ntv-chon button.dung { animation: ntv-nhun 0.45s; }
+.ntv-bao { min-height: 2.6em; line-height: 1.5; }
+.ntv-ok { color: #2e7d32; font-weight: 900; }
+.ntv-sai { color: #c62828; font-weight: 900; }
+.ntv-bao-tu { border: 0; background: #fff3d6; border-radius: 8px; padding: 1px 6px; font-weight: 700; color: var(--chu); cursor: pointer; }
+.ntv-bao-tu b { font-size: 1.15rem; }
+
+.ntv-ket { align-items: center; text-align: center; padding: 6px 0; }
+.ntv-ket h3 { margin: 0; font-size: 1.4rem; font-weight: 900; }
+.ntv-ket.dat h3 { color: #c62828; }
+.ntv-ket-so { margin: 0; font-weight: 700; }
+.ntv-ket-sao { display: flex; gap: 6px; justify-content: center; font-size: 2.6rem; line-height: 1; }
+.ntv-ket-sao span { color: #e3d9c8; -webkit-text-stroke: 2px var(--vien); }
+.ntv-ket-sao span.co { color: #ffc93c; animation: ntv-sao 0.55s cubic-bezier(0.2, 1.6, 0.4, 1) both; animation-delay: calc(var(--j) * 180ms + 150ms); }
+.ntv-mo { margin: 0; padding: 8px 12px; border-radius: 12px; background: #e9f7e3; font-weight: 600; }
+
+/* nut trong bang Them */
+.ntv-them img { width: 44px; height: 44px; }
+.ntv-them [lang="zh"] { font-family: 'Noto Serif SC', serif; font-weight: 700; color: #c62828; }
+
+@keyframes ntv-vao { from { opacity: 0; transform: translateY(10px) scale(0.96); } }
+@keyframes ntv-nhun { 0%, 100% { transform: scale(1); } 40% { transform: scale(1.15) rotate(-4deg); } 70% { transform: scale(0.96) rotate(2deg); } }
+@keyframes ntv-lac { 0%, 100% { transform: rotate(-4deg); } 50% { transform: rotate(4deg) translateY(-3px); } }
+@keyframes ntv-sao { from { opacity: 0; transform: scale(0.2) rotate(-60deg); } }
+
+@media (max-width: 480px) {
+  .ntv-luoi { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .ntv-the b { font-size: 1.6rem; }
+  .ntv-the-hinh { width: 54px; height: 54px; }
+  .ntv-tu b { font-size: 1.4rem; }
+  .ntv-chon button.zh { font-size: 1.45rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ntv-the, .ntv-cau { animation-duration: 0.01s; animation-delay: 0s; }
+  .ntv-bat-hinh, .ntv-qua.nhan .ntv-qua-hop { animation-duration: 6s; }
+}
+.ntv-cum { display: inline-flex; align-items: flex-end; white-space: nowrap; }
+.ntv .ntv-tu small { font-family: 'Be Vietnam Pro', sans-serif; }
+@media (max-width: 480px) {
+  .ntv-cau { padding: 10px 6px; }
+  .ntv-cau-tu { gap: 2px 1px; }
+  .ntv-tu { padding: 2px 3px 3px; }
+  .ntv-tu small { font-size: 0.72rem; }
+  .ntv-tu b { font-size: 1.3rem; }
+  .ntv-dau-cau { font-size: 1.25rem; }
+}

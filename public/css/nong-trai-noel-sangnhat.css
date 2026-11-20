@@ -1,0 +1,46 @@
+/* ══════════ Mua Noel: Thi dua "Thị trấn sáng nhất" 最亮的小镇 (public/js/nong-trai-noel-sangnhat.js) ══════════ */
+.sn-bang { margin-top: 12px; padding: 10px 12px; border: 3px solid var(--vien, #2b1d3a); border-radius: 16px; background: linear-gradient(170deg, #fff8e1, #ffe8a8); color: var(--chu, #2b1d3a); }
+.sn-bang h4 { margin: 0 0 4px; font-size: 1rem; font-weight: 900; }
+.sn-bang h4 small { font-weight: 700; color: #b26a00; }
+.sn-phu { margin: 0 0 6px; font-size: 0.8rem; }
+.sn-ds { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.sn-ds li { display: grid; grid-template-columns: 34px minmax(0, 1fr) minmax(50px, 30%) 34px; align-items: center; gap: 6px; padding: 3px 6px; border-radius: 10px; background: rgba(255, 255, 255, 0.7); font-size: 0.85rem; }
+.sn-ds li.la { background: #c8f2b8; font-weight: 800; }
+.sn-ds li.xem { outline: 2px dashed #b26a00; }
+.sn-ds li.thang { background: linear-gradient(90deg, #ffe082, #fff3c4); box-shadow: inset 0 0 0 2px #e0a800; }
+.sn-hang { text-align: center; font-weight: 900; }
+.sn-ten { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sn-ten em { font-style: normal; font-size: 0.7rem; padding: 0 5px; border-radius: 999px; background: #2e7d32; color: #fff; }
+.sn-thanh { height: 9px; border-radius: 999px; background: #f1dfb0; border: 1.5px solid var(--vien, #2b1d3a); overflow: hidden; }
+.sn-thanh i { display: block; height: 100%; background: linear-gradient(90deg, #ffca28, #ff7043); }
+.sn-n { text-align: right; font-weight: 900; }
+.sn-em { margin: 8px 0 0; font-size: 0.84rem; }
+.sn-nhan { margin-top: 8px; }
+/* trong bang cay thong thi tran (nen toi) van giu the sang */
+.nt-noel-tt .sn-bang { position: relative; z-index: 2; }
+/* Cac thi tran */
+.sn-cac { margin-bottom: 12px; }
+.sn-cac .sn-bang { margin-top: 0; }
+.sn-cac-n { font-weight: 800; }
+.nt-cac-tt li.sn-vang { box-shadow: 0 0 0 4px #ffd54f, 0 0 18px 4px rgba(255, 200, 40, 0.65); }
+
+/* ---------- khung vang cho thi tran thang ---------- */
+.sn-huy { display: block; margin-top: 4px; padding: 2px 12px; border-radius: 999px; background: linear-gradient(90deg, #ffd54f, #fff59d, #ffd54f); background-size: 200% 100%; border: 2px solid var(--vien, #2b1d3a); color: var(--chu, #2b1d3a); font-weight: 900; font-size: 0.82rem; text-shadow: none; animation: sn-anh 3s linear infinite; }
+.nt-tt.sn-vang .nt-tt-bien { background: linear-gradient(160deg, #f6c445, #d9971c); box-shadow: 0 6px 0 var(--vien, #2b1d3a), 0 0 0 4px #fff3b0, 0 0 26px 8px rgba(255, 210, 60, 0.7); }
+.nt-tt.sn-vang .nt-lo { box-shadow: 0 5px 0 var(--vien, #2b1d3a), 0 0 0 3px #ffd54f; }
+.nt-tham-chu.sn-vang { background: linear-gradient(90deg, #ffd54f, #fff6c8, #ffd54f); background-size: 200% 100%; box-shadow: 0 3px 0 var(--vien, #2b1d3a), 0 0 0 3px #fff3b0, 0 0 14px 4px rgba(255, 200, 40, 0.7); animation: sn-anh 3s linear infinite; }
+.nt-tham-chu.sn-vang::before { content: '🏆'; }
+@keyframes sn-anh { to { background-position: -200% 0; } }
+/* bien vang "最亮小镇" canh nha */
+.sn-bien { position: absolute; left: -6%; top: 6%; z-index: 6; display: flex; flex-direction: column; align-items: center; padding: 2px 5px; border-radius: 7px; border: 2px solid var(--vien, #2b1d3a); background: linear-gradient(160deg, #ffe082, #f9b821); box-shadow: 0 2px 0 var(--vien, #2b1d3a), 0 0 10px 2px rgba(255, 210, 60, 0.75); line-height: 1.05; pointer-events: none; rotate: -8deg; }
+.sn-bien b { font-size: 0.6rem; font-weight: 900; white-space: nowrap; }
+.sn-bien small { font-size: 0.5rem; font-weight: 800; }
+/* the nhan thuong */
+.sn-the { text-align: center; }
+.sn-the-nhan { display: inline-block; padding: 3px 12px; border-radius: 999px; background: #ffd54f; border: 2px solid var(--vien, #2b1d3a); font-weight: 900; font-size: 0.85rem; }
+.sn-the h2 { margin: 8px 0 0; font-size: 1.8rem; color: #c77800; text-shadow: 0 2px 0 #fff3b0; }
+.sn-py { margin: 0 0 6px; font-weight: 700; color: var(--mo, #6b5a77); }
+@media (prefers-reduced-motion: reduce) { .sn-huy, .nt-tham-chu.sn-vang { animation-duration: 10s; } }
+@media (max-width: 420px) {
+  .sn-ds li { grid-template-columns: 28px minmax(0, 1fr) 54px 28px; font-size: 0.8rem; }
+}

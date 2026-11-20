@@ -14,6 +14,8 @@ const Ktbc = require('./nong-trai-ktbc');
 const CauHoi = Ktbc.CauHoi;
 // Mua Noel: cay thong Noel + do trang tri + cay thong thi tran (nong-trai-noel.js)
 const Noel = require('./nong-trai-noel');
+const NoelLich = require('./nong-trai-noel-lich'), NoelTuyet = require('./nong-trai-noel-tuyet'); // lich dem nguoc Noel + nguoi tuyet (o.sn)
+const NoelTv = require('./nong-trai-noel-tv'); // goi tu vung Noel 圣诞词汇 (tu Noel chi vao cau hoi sau khi em hoc xong)
 
 const PHUT = 60000;
 
@@ -290,6 +292,7 @@ const TT = {
   'lh-gongdeng': { zh: '宫灯', py: 'gōngdēng', vn: 'Đèn cung đình', lv: 1, doc: 1, dep: 20 },
   // Mua Noel (noel: 1): chi ban trong mua le 17/11–6/1, khong roi ra o vong quay / hop qua; mua roi giu mai
   [Noel.CAY_K]: Noel.TT_MUC,
+  ...NoelLich.TT, ...NoelTuyet.TT, // tuan loc + huy hieu (lich Noel), nguoi tuyet — doc quyen, khong ban
   // Doc quyen: cup cho lop dung top 3 thi tran tuan
   'cup-vang': { zh: '金杯', py: 'jīnbēi', vn: 'Cúp vàng thị trấn', lv: 1, doc: 1, dep: 30 },
   'cup-bac': { zh: '银杯', py: 'yínbēi', vn: 'Cúp bạc thị trấn', lv: 1, doc: 1, dep: 24 },
@@ -502,7 +505,7 @@ function diemDep(f) {
   f.o.forEach((o) => {
     if (o.k === 'nha') d += NHA[o.n || 1].dep;
     else if (o.k === 'kho') d += KHO.dep;
-    else if (TT[o.k]) d += TT[o.k].dep * (o.z > 1 ? o.z : 1) + (o.tr ? Noel.depTr(o.tr) : 0);
+    else if (TT[o.k]) d += TT[o.k].dep * (o.z > 1 ? o.z : 1) + (o.tr ? Noel.depTr(o.tr) : 0) + (o.sn ? NoelTuyet.depSn(o.sn) : 0);
     else if (xgCua(o.k)) d += XuongCat.DEP * (o.z > 1 ? o.z : 1);
   });
   return d;
@@ -1443,6 +1446,7 @@ module.exports = function ganNongTrai(app, d) {
       if (o.k === 'nha' || o.k === 'kho') throw loi('Không cất được nhà.');
       if (o.z > 1) throw loi('Vật đã phóng to không cất vào túi được — thu nhỏ về cỡ gốc trước (bấm vào vật → Phóng to).');
       if (o.tr && Noel.soTr(o.tr) > 0) throw loi('Cây thông đã treo đồ trang trí — cất vào túi thì đồ sẽ rơi mất. Em vẫn nhấn giữ rồi kéo để dời chỗ được.');
+      if (o.sn && NoelTuyet.soSn(o.sn) > 0) throw loi('Người tuyết đã gắn mũ, khăn… — cất vào túi thì sẽ tan mất. Em vẫn nhấn giữ rồi kéo để dời chỗ được.');
       if (o.k === 'o' && o.c) throw loi('Thu hoạch xong mới cất ô ruộng được.');
       if (CON[o.k] && o.h) throw loi(o.h > now ? 'Đợi con vật làm xong sản phẩm đã.' : 'Thu sản phẩm trước đã.');
       if (xgCua(o.k) && f.xuong && f.xuong.b && f.xuong.b[xgCua(o.k)] && (f.xuong.b[xgCua(o.k)].q || []).length) throw loi('Nhà máy đang có mẻ hàng — đợi xong và thu hàng rồi mới cất được.');
@@ -2015,9 +2019,11 @@ module.exports = function ganNongTrai(app, d) {
     const nguon = (on.nguon || '').replace(/^Ôn từ /, '');
     // tu den han on lai (on cach quang), hop thap truoc
     const fm = await doc(user.id), ghi0 = fm.on || {}, bay = Date.now();
+    const coBai = tu.length >= 4;
+    NoelTv.themTu(tu, thay, fm, d.vnDayKey()); // + 12 tu Noel: chi khi em da hoc xong bai Noel (trong mua le)
     const den = tu.filter((v) => ghi0[v.zh] && ghi0[v.zh][1] <= bay).sort((a, b) => ghi0[a.zh][0] - ghi0[b.zh][0]).map((v) => v.zh);
     return { tu, nguon, sai: (on.sai || []).filter((z) => thay[z]), chu: [...new Set(tu.map((v) => v.zh).join('').split(''))], den,
-      urls: on.urls || [], cap: on.cap, coBai: tu.length >= 4 };
+      urls: on.urls || [], cap: on.cap, coBai };
   }
   // nhieu de: chon ngau nhien (khong can giong)
   function ngauNhien(ds, tu, n, khoa) {
@@ -2491,7 +2497,7 @@ module.exports = function ganNongTrai(app, d) {
     res.json({
       ten: ten[id] || '', lv: lvTuXp(f.xp), dep: diemDep(f), tim: f.tim || 0, kich: DAT[f.dat], now, hv: svb.total || 0,
       // chi gui hinh dang nong trai + sap hang, khong gui xu / kho
-      o: f.o.map((o) => ({ id: o.id, k: o.k, x: o.x, y: o.y, n: o.n, c: o.c, h: o.h, t: o.t, z: o.z, tr: o.tr })),
+      o: f.o.map((o) => ({ id: o.id, k: o.k, x: o.x, y: o.y, n: o.n, c: o.c, h: o.h, t: o.t, z: o.z, tr: o.tr, sn: o.sn })),
       sap: sapHien(f.sap), av: f.av || null, xg: xuongMod ? xuongMod.xgTom(f) : {}, nc: xuongMod ? xuongMod.ncTom(f, false) : [],
       daTim: fm.tham.d === ngay && fm.tham.ids.indexOf(id) >= 0,
       daChao: !!(fm.chao && fm.chao.d === ngay && fm.chao.ids.indexOf(id) >= 0),
@@ -2954,6 +2960,11 @@ module.exports = function ganNongTrai(app, d) {
   thueMod = require('./nong-trai-thue').gan(app, d, hKt, chung);
   // Mua Noel: cay thong thi tran (treo do chung ca lop) + trang thai mua le cho client
   Noel.gan(app, d, hKt, chung);
+  require('./nong-trai-noel-thiep').gan(app, d, hKt, chung); // thiep Giang sinh 圣诞贺卡 + tat Noel 圣诞袜
+  require('./nong-trai-noel-sangnhat').gan(app, d, hKt, chung); // thi dua "Thị trấn sáng nhất"
+  NoelTv.gan(app, d, hKt); // bai tu vung Noel 圣诞词汇
+  NoelLich.gan(app, d, hKt); require('./nong-trai-noel-qua').gan(app, d, hKt); NoelTuyet.gan(app, d, hKt); // lich Noel, qua ong gia Noel, nguoi tuyet
+  require('./nong-trai-noel-namoi').gan(app, d, hKt); // dem nguoc + phao hoa + qua nam moi 新年快乐
   async function initTatCa() { await initTable(); await chung.initTable(); }
 
   // _thuCau: chi de chay tools/thu-cau-nong-trai.js (kiem tra cau hoi chi thuoc bai em da hoc / duoc giao)

@@ -1,0 +1,119 @@
+/* ══════════ Lich dem nguoc Noel 圣诞倒计时 (public/js/nong-trai-noel-lich.js) ══════════ */
+.nl-bang { display: flex; flex-direction: column; gap: 10px; container-type: inline-size; }
+.nl-dau { background: linear-gradient(135deg, #fff7e8, #ffeef0); border: 2.5px solid #2b1d3a; border-radius: 16px; padding: 10px 12px; box-shadow: 0 3px 0 #2b1d3a; }
+.nl-ten { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; background: none; border: 0; padding: 0; cursor: pointer; text-align: left; font: inherit; color: #2b1d3a; }
+.nl-ten b { font-family: 'Noto Serif SC', serif; font-size: 1.35rem; color: #c62828; }
+.nl-ten span { font-weight: 700; color: #2f7a4a; }
+.nl-ten i { font-style: normal; font-size: 0.85rem; color: #6b5a7a; }
+.nl-tb, .nl-nay, .nl-chuoi { margin: 8px 0 0; font-size: 0.9rem; line-height: 1.45; }
+.nl-chuoi { font-size: 0.82rem; color: #5b4a6a; }
+.nl-dem { margin: 8px 0 0; display: grid; grid-template-columns: auto 1fr; align-items: center; column-gap: 10px; }
+.nl-dem b { grid-row: span 2; font-size: 2.4rem; line-height: 1; color: #fff; background: #c62828; border: 2.5px solid #2b1d3a; border-radius: 14px; padding: 6px 12px; box-shadow: 0 3px 0 #2b1d3a; font-variant-numeric: tabular-nums; }
+.nl-dem span { font-weight: 800; font-size: 1.05rem; }
+.nl-dem small { color: #6b5a7a; font-size: 0.8rem; }
+.nl-hoc { margin-top: 8px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; font-size: 0.85rem; }
+.nl-hoc > span { flex: 1 1 200px; }
+.nl-hoc > i { flex: 1 1 100%; order: 3; height: 9px; border-radius: 6px; background: #f0e2d0; border: 2px solid #2b1d3a; overflow: hidden; }
+.nl-hoc > i u { display: block; height: 100%; background: linear-gradient(90deg, #ffc93c, #ff8a3d); }
+.nl-hoc.du > i u { background: linear-gradient(90deg, #66bb6a, #2f9e5c); }
+.nl-hoc .nt-nut { order: 2; }
+
+/* ---------- khung lich ---------- */
+.nl-khung { position: relative; padding: 26px 12px 14px; border-radius: 20px; border: 3px solid #2b1d3a; box-shadow: 0 4px 0 #2b1d3a, inset 0 0 0 6px #8a5530;
+  background: radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.18) 0 1.5px, transparent 2px) 0 0 / 34px 34px,
+    radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.14) 0 1.2px, transparent 2px) 0 0 / 46px 46px,
+    linear-gradient(180deg, #1f5f3c, #164a2f 60%, #123b26); }
+.nl-day { position: absolute; left: 10px; right: 10px; top: 6px; height: 14px; display: flex; justify-content: space-between; pointer-events: none;
+  background: radial-gradient(ellipse at 50% -40%, transparent 62%, #2b1d3a 63% 70%, transparent 71%) 0 0 / calc(100% / 12) 14px repeat-x; }
+.nl-day i { width: 8px; height: 11px; margin-top: 3px; border-radius: 50% 50% 45% 45%; border: 1.5px solid #2b1d3a; background: #ff5252; animation: nl-den 1.6s steps(1, end) infinite; }
+.nl-day i:nth-child(5n+2) { background: #ffd740; animation-delay: -0.4s; }
+.nl-day i:nth-child(5n+3) { background: #40c4ff; animation-delay: -0.8s; }
+.nl-day i:nth-child(5n+4) { background: #69f0ae; animation-delay: -1.2s; }
+.nl-day i:nth-child(5n) { background: #ff80ab; animation-delay: -0.2s; }
+@keyframes nl-den { 0% { filter: brightness(1.3) drop-shadow(0 0 3px #fff3b0); } 50% { filter: brightness(0.7); } }
+
+.nl-luoi { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 9px; }
+@container (max-width: 460px) { .nl-luoi { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 7px; } .nl-khung { padding: 24px 8px 10px; } }
+@media (max-width: 560px) { .nl-luoi { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 7px; } .nl-khung { padding: 24px 8px 10px; } }
+
+/* ---------- 1 o cua ---------- */
+.nl-o { position: relative; aspect-ratio: 1 / 1.08; padding: 0; border: 0; background: none; cursor: pointer; perspective: 520px; font: inherit; color: #2b1d3a; border-radius: 11px; }
+.nl-o:focus-visible { outline: 3px solid #ffd740; outline-offset: 2px; }
+.nl-trong { position: absolute; inset: 0; border-radius: 11px; border: 2.5px solid #2b1d3a; background: radial-gradient(circle at 50% 35%, #fffdf3, #ffeec9); box-shadow: inset 0 3px 6px rgba(80, 40, 0, 0.25);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; overflow: hidden; padding: 2px; }
+.nl-trong-ic { width: 46%; max-width: 34px; aspect-ratio: 1; display: flex; }
+.nl-trong-ic img { width: 100%; height: 100%; object-fit: contain; }
+.nl-trong b { font-family: 'Noto Serif SC', serif; font-size: clamp(0.72rem, 2.6vw, 0.95rem); line-height: 1.1; color: #c62828; white-space: nowrap; }
+.nl-trong small { font-size: 0.62rem; color: #6b5a7a; line-height: 1.1; white-space: nowrap; max-width: 100%; overflow: hidden; text-overflow: ellipsis; }
+.nl-cua { position: absolute; inset: 0; border-radius: 11px; border: 2.5px solid #2b1d3a; transform-origin: 0 50%;
+  transition: transform 0.85s cubic-bezier(0.3, 1.25, 0.5, 1), filter 0.3s; display: flex; align-items: center; justify-content: center; box-shadow: 0 3px 0 #2b1d3a;
+  --c1: #e53935; --c2: #c62828; background: repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.09) 0 6px, transparent 6px 12px), linear-gradient(160deg, var(--c1), var(--c2)); }
+.nl-o.m1 .nl-cua { --c1: #34a863; --c2: #1f7a45; }
+.nl-o.m2 .nl-cua { --c1: #3f7fe0; --c2: #2a5cb0; }
+.nl-o.m3 .nl-cua { --c1: #9c5bd6; --c2: #6a2fa0; }
+.nl-o.m4 .nl-cua { --c1: #ff8a3d; --c2: #d8611a; }
+/* tuyet dong tren mep cua */
+.nl-cua::before { content: ''; position: absolute; left: -2px; right: -2px; top: -4px; height: 11px; border-radius: 9px 9px 6px 6px;
+  background: radial-gradient(circle at 15% 100%, #fff 0 4px, transparent 4.5px), radial-gradient(circle at 50% 110%, #fff 0 5px, transparent 5.5px), radial-gradient(circle at 85% 100%, #fff 0 4px, transparent 4.5px), linear-gradient(#fff, #eef6ff);
+  border: 2px solid #2b1d3a; border-bottom: 0; }
+/* num cua */
+.nl-num { position: absolute; right: 7px; top: 50%; width: 6px; height: 6px; border-radius: 50%; background: #ffd740; border: 1.5px solid #2b1d3a; }
+.nl-so { font-weight: 900; font-size: clamp(1.2rem, 4.6vw, 1.75rem); color: #fff; text-shadow: 0 2px 0 #2b1d3a, 1px 0 0 #2b1d3a, -1px 0 0 #2b1d3a, 0 -1px 0 #2b1d3a; font-variant-numeric: tabular-nums; }
+.nl-khoa { position: absolute; left: 5px; bottom: 3px; font-size: 0.7rem; opacity: 0.9; }
+.nl-nhan { position: absolute; left: 50%; bottom: 4px; transform: translateX(-50%); white-space: nowrap; font-size: 0.58rem; font-weight: 800; background: #fff; border: 1.5px solid #2b1d3a; border-radius: 8px; padding: 0 5px; color: #6b4423; }
+.nl-nhan.nay { background: #ffd740; color: #2b1d3a; }
+.nl-no { position: absolute; right: 3px; top: 6px; font-size: 0.85rem; }
+.nl-o.o24 .nl-cua { --c1: #ffd54f; --c2: #f0a800;
+  background: linear-gradient(90deg, transparent 44%, #e53935 44% 56%, transparent 56%), linear-gradient(0deg, transparent 44%, #e53935 44% 56%, transparent 56%), linear-gradient(160deg, var(--c1), var(--c2)); }
+.nl-o.o24 .nl-so { font-size: clamp(1.35rem, 5vw, 2rem); }
+/* trang thai */
+.nl-o.tt-khoa .nl-cua { filter: saturate(0.5) brightness(0.88); }
+.nl-o.tt-khoa { cursor: default; }
+.nl-o.tt-nay .nl-cua { animation: nl-goi 2.2s ease-in-out infinite; animation-delay: var(--tre, 0s); box-shadow: 0 3px 0 #2b1d3a, 0 0 0 3px #ffd740, 0 0 16px 4px rgba(255, 215, 64, 0.75); }
+.nl-o.tt-bu .nl-cua { box-shadow: 0 3px 0 #2b1d3a, 0 0 0 2px #fff3b0; }
+@keyframes nl-goi { 0%, 70%, 100% { transform: rotateY(0); } 78% { transform: rotateY(-14deg); } 86% { transform: rotateY(-4deg); } 92% { transform: rotateY(-9deg); } }
+.nl-o.tt-mo .nl-cua, .nl-o.lat .nl-cua { transform: rotateY(-98deg); animation: none; filter: brightness(0.82); }
+.nl-o.lat .nl-cua { transition: transform 0.85s cubic-bezier(0.3, 1.25, 0.5, 1), opacity 0.3s 0.6s; opacity: 0; }
+.nl-o.tt-mo .nl-cua { opacity: 0; transition: none; }
+/* o da mo: con ban le cua (dai mau ben trai) */
+.nl-o.tt-mo .nl-trong::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: #e53935; border-right: 2px solid #2b1d3a; }
+.nl-o.m1 .nl-trong::before { background: #34a863; }
+.nl-o.m2 .nl-trong::before { background: #3f7fe0; }
+.nl-o.m3 .nl-trong::before { background: #9c5bd6; }
+.nl-o.m4 .nl-trong::before { background: #ff8a3d; }
+.nl-o.o24 .nl-trong::before { background: #ffd54f; }
+.nl-o.vua .nl-trong { animation: nl-sang 1.4s ease-out 1; }
+@keyframes nl-sang { 0% { box-shadow: inset 0 3px 6px rgba(80, 40, 0, 0.25), 0 0 0 0 rgba(255, 215, 64, 0.9); } 100% { box-shadow: inset 0 3px 6px rgba(80, 40, 0, 0.25), 0 0 0 14px rgba(255, 215, 64, 0); } }
+.nl-o.dang .nl-cua { filter: brightness(1.1); transform: rotateY(-12deg); }
+.nl-sao { position: absolute; right: -5px; top: -7px; z-index: 2; width: 20px; height: 20px; border-radius: 50%; background: #ffd740; border: 2px solid #2b1d3a; color: #c62828; font-size: 0.72rem; line-height: 16px; text-align: center; font-weight: 900; }
+.nl-o.tt-mo .nl-trong { cursor: pointer; }
+
+/* ---------- the qua vua mo ---------- */
+.nl-mo { position: fixed; inset: 0; z-index: 1200; display: flex; align-items: center; justify-content: center; padding: 16px; background: rgba(20, 12, 34, 0.55); }
+.nl-mo[hidden] { display: none; }
+.nl-mo-the { width: min(360px, 100%); max-height: calc(100vh - 32px); overflow: auto; background: #fffdf5; border: 3px solid #2b1d3a; border-radius: 20px; box-shadow: 0 5px 0 #2b1d3a; padding: 16px; text-align: center;
+  animation: nl-bat 0.45s cubic-bezier(0.3, 1.5, 0.5, 1); background-image: radial-gradient(circle at 50% 0, #ffe9ec, transparent 60%); }
+.nl-mo-the.lon { background-image: radial-gradient(circle at 50% 0, #fff3b0, transparent 65%); }
+@keyframes nl-bat { from { transform: scale(0.6); opacity: 0; } }
+.nl-mo-so { margin: 0; font-weight: 800; color: #6b5a7a; font-size: 0.85rem; }
+.nl-mo-tu { display: flex; flex-direction: column; align-items: center; margin: 6px auto 8px; background: none; border: 0; cursor: pointer; font: inherit; color: #2b1d3a; }
+.nl-mo-tu b { font-family: 'Noto Serif SC', serif; font-size: 2.3rem; color: #c62828; line-height: 1.15; }
+.nl-mo-tu span { font-weight: 800; color: #2f7a4a; font-size: 1.05rem; }
+.nl-mo-tu i { font-style: normal; color: #5b4a6a; }
+.nl-mo-t { margin: 4px 0; font-weight: 800; text-align: left; }
+.nl-mo-hh { background: #fff3b0; border: 2px solid #2b1d3a; border-radius: 12px; padding: 8px; font-size: 0.88rem; }
+.nl-qua-ds { list-style: none; margin: 0 0 12px; padding: 0; display: flex; flex-direction: column; gap: 6px; text-align: left; }
+.nl-qua-ds li { display: flex; align-items: center; gap: 8px; background: #fff; border: 2px solid #e7c9a0; border-radius: 12px; padding: 5px 8px; font-size: 0.88rem; line-height: 1.35; }
+.nl-qua-ds li [lang="zh"] { font-family: 'Noto Serif SC', serif; color: #c62828; }
+.nl-qua-ds li i { color: #2f7a4a; font-style: normal; }
+.nl-qua-ds li em { font-style: normal; font-size: 0.72rem; background: #9c5bd6; color: #fff; border-radius: 6px; padding: 0 4px; }
+.nl-qua-h { width: 30px; height: 30px; flex: none; object-fit: contain; }
+
+.nl-them .nt-them-emo { filter: drop-shadow(0 0 4px rgba(255, 215, 64, 0.8)); }
+
+@media (prefers-reduced-motion: reduce) {
+  .nl-cua { transition-duration: 0.3s; }
+  .nl-o.tt-nay .nl-cua { animation: none; }
+  .nl-day i { animation-duration: 3.2s; }
+  .nl-mo-the { animation: none; }
+}

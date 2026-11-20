@@ -1,0 +1,49 @@
+/* ══════════ Ong gia Noel tha qua (public/js/nong-trai-noel-qua.js) ══════════ */
+.nq-hop { position: absolute; z-index: 9001; padding: 0; border: 0; background: none; cursor: pointer; touch-action: manipulation; overflow: visible; }
+.nq-dung { position: absolute; inset: 0; display: block; }
+body.nt-ng .nq-dung { transform-origin: 50% 100%; transform: scaleY(var(--ng-ic)); }
+.nq-hop img { position: absolute; left: 14%; bottom: 4%; width: 72%; height: 72%; filter: drop-shadow(0 2px 0 rgba(43, 29, 58, 0.3)); }
+.nq-du { position: absolute; left: 0; width: 100%; bottom: 62%; height: 90%; opacity: 0; transition: opacity 0.4s; }
+.nq-hao { position: absolute; left: 0; right: 0; bottom: -8%; height: 70%; border-radius: 50%; background: radial-gradient(ellipse, rgba(255, 236, 140, 0.85), rgba(255, 214, 90, 0) 70%); animation: nq-hao 1.8s ease-in-out infinite; }
+.nq-hop i { position: absolute; width: 8px; height: 8px; background: #fff6b0; clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%); animation: nq-sao 1.7s ease-in-out infinite; }
+.nq-hop i:nth-of-type(1) { left: -6%; top: 10%; }
+.nq-hop i:nth-of-type(2) { right: -8%; top: 22%; animation-delay: -0.5s; }
+.nq-hop i:nth-of-type(3) { left: 8%; bottom: 0; animation-delay: -1s; width: 6px; height: 6px; }
+.nq-hop i:nth-of-type(4) { right: 6%; bottom: 10%; animation-delay: -1.3s; width: 6px; height: 6px; }
+/* dang roi: du mo, lac nhe, tu tren troi xuong */
+.nq-hop.roi .nq-du { opacity: 1; }
+.nq-hop.roi .nq-dung { animation: nq-roi 3.2s cubic-bezier(0.25, 0.6, 0.45, 1) both; }
+.nq-hop.roi img { animation: nq-lac 0.9s ease-in-out infinite alternate; transform-origin: 50% -40%; }
+@keyframes nq-roi { from { translate: 0 -70vh; } 85% { translate: 0 4px; } to { translate: 0 0; } }
+@keyframes nq-lac { from { rotate: -7deg; } to { rotate: 7deg; } }
+/* da nam tren dat: nhun nhay goi em cham */
+.nq-hop.dat img { animation: nq-goi 2.4s ease-in-out infinite; transform-origin: 50% 100%; }
+@keyframes nq-goi { 0%, 60%, 100% { scale: 1; rotate: 0deg; } 68% { scale: 1.08 0.92; } 76% { scale: 0.95 1.08; rotate: -6deg; } 84% { rotate: 5deg; scale: 1; } 92% { rotate: -2deg; } }
+@keyframes nq-hao { 0%, 100% { opacity: 0.6; scale: 0.9; } 50% { opacity: 1; scale: 1.1; } }
+@keyframes nq-sao { 0%, 100% { scale: 0.2; opacity: 0; } 50% { scale: 1; opacity: 1; } }
+.nq-hop.cham img { filter: brightness(1.15) drop-shadow(0 0 6px #fff3b0); }
+.nq-hop.mo .nq-dung { animation: nq-bien 0.6s ease-in forwards; }
+@keyframes nq-bien { to { scale: 1.6; opacity: 0; translate: 0 -20px; } }
+.nq-hop:focus-visible { outline: 3px solid #ffd740; outline-offset: 2px; border-radius: 10px; }
+
+/* ---------- bang cau hoi ---------- */
+.nq-dau { display: flex; align-items: center; gap: 12px; background: linear-gradient(135deg, #fff1f1, #fff8e6); border: 2.5px solid #2b1d3a; border-radius: 16px; padding: 10px 12px; box-shadow: 0 3px 0 #2b1d3a; margin-bottom: 12px; }
+.nq-dau-h { width: 56px; height: 56px; flex: none; animation: nq-goi 2.4s ease-in-out infinite; transform-origin: 50% 100%; }
+.nq-dau p { margin: 4px 0 0; font-size: 0.88rem; }
+.nq-ten { background: none; border: 0; padding: 0; cursor: pointer; font: inherit; font-weight: 700; color: #2b1d3a; text-align: left; }
+.nq-ten b { font-family: 'Noto Serif SC', serif; color: #c62828; font-size: 1.15rem; }
+.nq-tb { background: #fff8e6; border: 2px dashed #e0b060; border-radius: 12px; padding: 10px; font-size: 0.9rem; line-height: 1.45; }
+.nq-mo { text-align: center; margin-top: 10px; }
+.nq-mo-hop { position: relative; width: 84px; height: 84px; margin: 0 auto; }
+.nq-nap img { width: 100%; height: 100%; animation: nq-bat 0.7s cubic-bezier(0.3, 1.6, 0.5, 1); }
+.nq-tia { position: absolute; inset: -30%; border-radius: 50%; background: repeating-conic-gradient(rgba(255, 220, 90, 0.55) 0 10deg, transparent 10deg 30deg); z-index: -1; animation: nq-xoay 8s linear infinite;
+  -webkit-mask: radial-gradient(circle, #000 30%, transparent 70%); mask: radial-gradient(circle, #000 30%, transparent 70%); }
+@keyframes nq-bat { from { scale: 0.4; rotate: -20deg; } }
+@keyframes nq-xoay { to { rotate: 360deg; } }
+.nq-mo-t { font-weight: 800; margin: 8px 0 6px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .nq-hop.roi .nq-dung { animation-duration: 2.6s; }
+  .nq-hop.dat img, .nq-dau-h { animation-duration: 4.8s; }
+  .nq-tia { animation: none; }
+}

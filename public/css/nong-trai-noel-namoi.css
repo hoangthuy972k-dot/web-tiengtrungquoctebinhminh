@@ -1,0 +1,83 @@
+/* Dem nguoc + phao hoa nam moi 新年快乐 (public/js/nong-trai-noel-namoi.js) */
+.nnm-chip {
+  position: fixed; left: 50%; top: calc(64px + env(safe-area-inset-top, 0px)); z-index: 47; transform: translateX(-50%);
+  display: inline-flex; align-items: center; gap: 6px; max-width: calc(100vw - 24px);
+  padding: 6px 14px; border-radius: 999px; border: 3px solid var(--vien, #2b1d3a);
+  background: linear-gradient(135deg, #24305e, #4a2a6e); color: #fff6d8; box-shadow: 0 4px 0 var(--vien, #2b1d3a);
+  font: 700 0.95rem 'Be Vietnam Pro', sans-serif; white-space: nowrap; cursor: pointer;
+  animation: nnm-chip-vao 0.4s cubic-bezier(0.2, 1.3, 0.4, 1);
+}
+.nnm-chip b { font-variant-numeric: tabular-nums; color: #ffd54f; font-size: 1.05rem; letter-spacing: 0.02em; }
+.nnm-chip.qua { background: linear-gradient(135deg, #e53935, #b71c1c); color: #fff; }
+.nnm-chip.qua b { color: #ffe082; }
+.nnm-chip [lang="zh"] { font-family: 'Noto Serif SC', serif; }
+.nnm-chip > span { animation: nnm-nhay 2.4s ease-in-out infinite; display: inline-block; }
+@keyframes nnm-chip-vao { from { opacity: 0; transform: translate(-50%, -12px) scale(0.9); } }
+@keyframes nnm-nhay { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.22) rotate(-8deg); } }
+
+/* 10 giay cuoi */
+.nnm-dem {
+  position: fixed; left: 50%; top: 42%; z-index: 57; transform: translate(-50%, -50%); pointer-events: none;
+  display: flex; flex-direction: column; align-items: center; color: #fff; text-shadow: 0 4px 0 #2b1d3a, 0 0 24px rgba(255, 213, 79, 0.9);
+}
+.nnm-dem b { font: 900 clamp(5rem, 22vw, 9rem)/1 'Be Vietnam Pro', sans-serif; color: #ffd54f; -webkit-text-stroke: 3px #2b1d3a; }
+.nnm-dem span { font: 700 clamp(2rem, 8vw, 3rem)/1.1 'Noto Serif SC', serif; }
+.nnm-dem small { font: 800 1.2rem 'Be Vietnam Pro', sans-serif; }
+.nnm-dem.nhay { animation: nnm-so 0.9s cubic-bezier(0.2, 1.4, 0.4, 1); }
+@keyframes nnm-so { 0% { opacity: 0; transform: translate(-50%, -50%) scale(2.2); } 30% { opacity: 1; transform: translate(-50%, -50%) scale(0.95); } 100% { transform: translate(-50%, -50%) scale(1); } }
+
+/* lop phao hoa phu nong trai + thi tran (khong chan bam vao nong trai, tru loi chuc) */
+.nnm-phao { position: fixed; inset: 0; z-index: 56; pointer-events: none; opacity: 0; transition: opacity 0.45s; }
+.nnm-phao.hien { opacity: 1; }
+.nnm-dem-troi {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 110%, rgba(74, 42, 110, 0.35), rgba(10, 14, 40, 0.62) 60%, rgba(6, 8, 26, 0.72));
+}
+.nnm-cv { position: absolute; inset: 0; width: 100%; height: 100%; }
+.nnm-chao {
+  position: absolute; left: 50%; top: max(76px, 12vh); transform: translateX(-50%);
+  width: min(420px, calc(100vw - 32px)); padding: 14px 18px 16px; border-radius: 24px; pointer-events: auto;
+  display: flex; flex-direction: column; align-items: center; gap: 2px; text-align: center; color: #fff8ec;
+  background: linear-gradient(160deg, rgba(183, 28, 28, 0.92), rgba(120, 18, 40, 0.92)); border: 3px solid #ffd54f;
+  box-shadow: 0 6px 0 #2b1d3a, 0 0 40px rgba(255, 213, 79, 0.45);
+  animation: nnm-chao-vao 0.7s cubic-bezier(0.2, 1.3, 0.4, 1) 0.2s both;
+}
+.nnm-zh {
+  border: 0; background: none; cursor: pointer; padding: 0 8px; border-radius: 14px;
+  font: 900 clamp(2.4rem, 11vw, 3.4rem)/1.15 'Noto Serif SC', serif; color: #ffd54f;
+  text-shadow: 0 3px 0 #2b1d3a, 0 0 18px rgba(255, 213, 79, 0.75);
+  background-image: linear-gradient(100deg, #ffd54f 30%, #fff8d0 45%, #ffd54f 60%); background-size: 250% 100%;
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  animation: nnm-anh 3s linear infinite;
+}
+.nnm-zh:focus-visible { outline: 3px solid #fff; }
+.nnm-py { margin: 0; font: 800 1.15rem 'Be Vietnam Pro', sans-serif; color: #ffe9a8; }
+.nnm-vn { margin: 2px 0 6px; font: 700 1.05rem 'Be Vietnam Pro', sans-serif; }
+.nnm-vn b { color: #ffd54f; font-size: 1.2rem; }
+.nnm-qua { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.nnm-qua small { font: 600 0.8rem 'Be Vietnam Pro', sans-serif; opacity: 0.9; }
+.nnm-nhan {
+  padding: 10px 22px; border-radius: 16px; border: 3px solid #2b1d3a; background: #ffd54f; color: #2b1d3a; cursor: pointer;
+  font: 900 1.05rem 'Be Vietnam Pro', sans-serif; box-shadow: 0 4px 0 #2b1d3a; animation: nnm-nhun 1.6s ease-in-out infinite;
+}
+.nnm-nhan:active { transform: translateY(3px); box-shadow: 0 1px 0 #2b1d3a; }
+.nnm-nhan:disabled { opacity: 0.6; animation: none; }
+.nnm-da { margin: 0; font: 700 0.92rem 'Be Vietnam Pro', sans-serif; }
+.nnm-da b { color: #ffd54f; }
+.nnm-da [lang="zh"] { font-family: 'Noto Serif SC', serif; white-space: nowrap; }
+.nnm-dong {
+  position: absolute; right: -10px; top: -12px; width: 38px; height: 38px; border-radius: 50%; cursor: pointer;
+  border: 3px solid #2b1d3a; background: #fff8ec; color: #2b1d3a; font: 900 1rem sans-serif; box-shadow: 0 3px 0 #2b1d3a;
+}
+@keyframes nnm-chao-vao { from { opacity: 0; transform: translateX(-50%) translateY(-20px) scale(0.85); } }
+@keyframes nnm-anh { to { background-position: -250% 0; } }
+@keyframes nnm-nhun { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+
+@media (max-width: 480px) {
+  .nnm-chip { top: calc(188px + env(safe-area-inset-top, 0px)); font-size: 0.85rem; padding: 5px 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .nnm-zh { animation-duration: 8s; }
+  .nnm-nhan, .nnm-chip > span { animation: none; }
+  .nnm-dem.nhay { animation-duration: 0.3s; }
+}

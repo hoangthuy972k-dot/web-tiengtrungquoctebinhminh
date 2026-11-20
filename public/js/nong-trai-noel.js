@@ -444,6 +444,8 @@
       { transform: 'translate(' + den + 'px, ' + (innerHeight * 0.02) + 'px)' }
     ], { duration: ms, easing: 'linear' });
     a.onfinish = function () { b.hidden = true; };
+    // giua duong: ong gia Noel co the tha hop qua (public/js/nong-trai-noel-qua.js)
+    setTimeout(function () { try { if (N.noelSantaGiua) N.noelSantaGiua(b); } catch (e) { /* bo qua */ } }, ms * 0.45);
   }
   // Trong khung cay thong thi tran: ong gia bay vao, luon 1 vong quanh cay (vong sau thi khuat sau cay), roi bay ra
   // (2026-11-18 co giao: "ong gia noel cuoi di quanh thi tran va ca qua cho cay thong noel")

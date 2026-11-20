@@ -129,7 +129,29 @@
       }
 
       /* ---------------- ban ---------------- */
+      // Sau khi ban trung: xoa o go. Bo go tieng Viet (Unikey/Telex) hay "dien lai" chu vua go ngay sau khi xoa
+      // -> trong 2,5 giay, neu o go bat dau bang pinyin vua ban thi cat bo phan do (giu phan em go tiep).
+      var vuaBan = '', vuaBanLuc = 0, daiTruoc = 0;
+      function xoaGo(g) {
+        vuaBan = g || ''; vuaBanLuc = Date.now(); daiTruoc = 0;
+        oGo.value = ''; oGo.classList.remove('sai');
+        setTimeout(function () { if (oGo && pyKhong(oGo.value) === vuaBan) { oGo.value = ''; oGo.classList.remove('sai'); } }, 0);
+        setTimeout(function () { if (oGo && pyKhong(oGo.value) === vuaBan) { oGo.value = ''; oGo.classList.remove('sai'); } }, 120);
+      }
       function goPhim() {
+        // chi cat khi chu cu duoc dien lai CA CUM mot luc (bo go lam) — em go tung chu thi khong dung toi
+        var dai = oGo.value.length, nhay = dai - daiTruoc;
+        daiTruoc = dai;
+        if (vuaBan && Date.now() - vuaBanLuc < 2500 && nhay >= Math.max(2, vuaBan.length)) {
+          var g0 = pyKhong(oGo.value);
+          if (g0.indexOf(vuaBan) === 0) {
+            // giu phan sau pinyin cu (chu em go tiep)
+            oGo.value = g0.slice(vuaBan.length);
+            daiTruoc = oGo.value.length;
+            vuaBan = '';
+            if (!oGo.value) { oGo.classList.remove('sai'); st.ngam = null; return; }
+          }
+        }
         var g = pyKhong(oGo.value);
         st.ngam = null;
         if (!g) return;
@@ -144,7 +166,7 @@
         var g = pyKhong(oGo.value);
         if (!g) return;
         var trung = st.tt.filter(function (x) { return !x.chet && cacPy(x.tu).indexOf(g) >= 0; }).sort(function (a, b) { return b.y - a.y; })[0];
-        if (trung) { ban(trung); oGo.value = ''; oGo.classList.remove('sai'); st.ngam = null; return; }
+        if (trung) { ban(trung); xoaGo(g); st.ngam = null; return; }
         if (enter) {
           // Enter ma khong khop: rung nhe, xoa o go
           T.keu(200, 0.12, 'square'); oGo.classList.add('sai');

@@ -61,19 +61,101 @@
     // tranh tron ra dung thu tu
     if (tron.every(function (o, j) { return o.i === j; }) && tron.length > 1) tron.push(tron.shift());
     var chon = [];
-    $('#ntHoiCau').innerHTML = '<p class="nt-hoi-hd">🧩 Sắp xếp thành câu đúng</p><div class="ntc-xep-dong" aria-live="polite"><span class="ntc-trong">Chạm các cụm bên dưới theo thứ tự…</span></div>';
+    $('#ntHoiCau').innerHTML = '<p class="nt-hoi-hd">🧩 Sắp xếp thành câu đúng</p><div class="ntc-xep-dong" aria-live="polite"><span class="ntc-trong">Chạm hoặc kéo các cụm bên dưới vào đây…</span></div>' +
+      '<p class="ntc-xep-meo">Kéo cụm trong câu để đổi chỗ · kéo ra ngoài hoặc chạm để bỏ</p>';
     var hop = $('#ntHoiChon');
+    // keo tha: kv = { o: cum dang keo, tu: 'dong'|'ds', chen: vi tri chen trong cau (-1 = ngoai cau) }
+    var kv = null, vuaKeo = false;
     function ve() {
       var dong = $('#ntHoiCau .ntc-xep-dong');
-      dong.innerHTML = chon.length ? chon.map(function (o, j) { return '<button type="button" class="ntc-cum chon" data-bo="' + j + '" lang="zh">' + esc(o.w) + '</button>'; }).join('') + (dau.length && chon.length === cum.length ? '<span class="ntc-dau">' + esc(dau[dau.length - 1]) + '</span>' : '')
-        : '<span class="ntc-trong">Chạm các cụm bên dưới theo thứ tự…</span>';
+      var ds = chon.slice();
+      if (kv && kv.dang) {
+        ds = ds.filter(function (o) { return o !== kv.o; });
+        if (kv.chen >= 0) ds.splice(Math.min(kv.chen, ds.length), 0, { cho: true, w: kv.o.w });
+      }
+      dong.innerHTML = ds.length ? ds.map(function (o) {
+        if (o.cho) return '<span class="ntc-cum ntc-cho" lang="zh" aria-hidden="true">' + esc(o.w) + '</span>';
+        return '<button type="button" class="ntc-cum chon" data-bo="' + chon.indexOf(o) + '" lang="zh">' + esc(o.w) + '</button>';
+      }).join('') + (dau.length && chon.length === cum.length && !(kv && kv.dang) ? '<span class="ntc-dau">' + esc(dau[dau.length - 1]) + '</span>' : '')
+        : '<span class="ntc-trong">Chạm hoặc kéo các cụm bên dưới vào đây…</span>';
       hop.innerHTML = '<div class="ntc-cum-ds">' + tron.map(function (o, j) {
-        var da = chon.indexOf(o) >= 0;
+        var da = chon.indexOf(o) >= 0 || (kv && kv.dang && kv.o === o && kv.chen >= 0);
         return '<button type="button" class="ntc-cum" data-lay="' + j + '"' + (da ? ' disabled' : '') + ' lang="zh">' + esc(o.w) + '</button>';
       }).join('') + '</div><button type="button" class="ntc-kt" data-kt' + (chon.length === cum.length ? '' : ' disabled') + '>Kiểm tra ✓</button>';
     }
+    // vi tri chen theo diem ngon tay: truoc cum dau tien ma diem nam tren / ben trai tam cum (cau xuong dong van dung)
+    function viTriChen(x, y) {
+      var dong = $('#ntHoiCau .ntc-xep-dong'), r = dong.getBoundingClientRect();
+      if (x < r.left - 30 || x > r.right + 30 || y < r.top - 34 || y > r.bottom + 34) return -1;
+      var els = dong.querySelectorAll('.ntc-cum.chon'), i = 0;
+      for (; i < els.length; i++) {
+        var q = els[i].getBoundingClientRect();
+        if (y < q.top) break;
+        if (y <= q.bottom && x < q.left + q.width / 2) break;
+      }
+      return i;
+    }
+    function batDauKeo(e) {
+      if (ctx.hoi.khoa || (e.pointerType === 'mouse' && e.button !== 0)) return;
+      var b = e.target.closest('.ntc-cum');
+      if (!b || b.disabled || b.classList.contains('ntc-cho')) return;
+      var o = b.hasAttribute('data-bo') ? chon[+b.getAttribute('data-bo')] : b.hasAttribute('data-lay') ? tron[+b.getAttribute('data-lay')] : null;
+      if (!o) return;
+      var r = b.getBoundingClientRect();
+      kv = { o: o, tu: b.hasAttribute('data-bo') ? 'dong' : 'ds', x0: e.clientX, y0: e.clientY, dx: e.clientX - r.left, dy: e.clientY - r.top, w: r.width, dang: false, chen: -1, bong: null };
+    }
+    function diKeo(e) {
+      if (!kv) return;
+      if (!kv.dang) {
+        if (Math.abs(e.clientX - kv.x0) + Math.abs(e.clientY - kv.y0) < 8) return;
+        kv.dang = true;
+        var bong = document.createElement('div');
+        bong.className = 'ntc-cum chon ntc-bong-keo';
+        bong.setAttribute('lang', 'zh');
+        bong.textContent = kv.o.w;
+        bong.style.width = kv.w + 'px';
+        document.body.appendChild(bong);
+        kv.bong = bong;
+      }
+      e.preventDefault();
+      kv.bong.style.left = (e.clientX - kv.dx) + 'px';
+      kv.bong.style.top = (e.clientY - kv.dy) + 'px';
+      var moi = viTriChen(e.clientX, e.clientY);
+      if (moi !== kv.chen || !kv.daVe) { kv.chen = moi; kv.daVe = true; ve(); }
+    }
+    function thaKeo() {
+      if (!kv) return;
+      var k = kv;
+      kv = null;
+      if (!k.dang) return;
+      if (k.bong) k.bong.remove();
+      vuaKeo = true;
+      setTimeout(function () { vuaKeo = false; }, 0);
+      var cu = chon.indexOf(k.o);
+      if (cu >= 0) chon.splice(cu, 1);
+      if (k.chen >= 0) chon.splice(Math.min(k.chen, chon.length), 0, k.o);
+      ve();
+    }
+    var vung = $('#ntHoiCau').parentNode || document.body;
+    var xepId = (vung._xepId || 0) + 1;
+    vung._xepId = xepId;
+    vung.onpointerdown = batDauKeo;
+    window.addEventListener('pointermove', diKeo, { passive: false });
+    window.addEventListener('pointerup', thaKeo);
+    window.addEventListener('pointercancel', thaKeo);
+    // cau hoi dong / sang cau khac: go trinh keo cua cau nay
+    var go = setInterval(function () {
+      if ($('#ntHoiCau .ntc-xep-dong') && vung._xepId === xepId) return;
+      clearInterval(go);
+      window.removeEventListener('pointermove', diKeo);
+      window.removeEventListener('pointerup', thaKeo);
+      window.removeEventListener('pointercancel', thaKeo);
+      if (vung.onpointerdown === batDauKeo) vung.onpointerdown = null;
+      if (kv && kv.bong) kv.bong.remove();
+      kv = null;
+    }, 700);
     function bam(e) {
-      if (ctx.hoi.khoa) return;
+      if (ctx.hoi.khoa || vuaKeo) return;
       var b = e.target.closest('button');
       if (!b) return;
       if (b.hasAttribute('data-lay')) { chon.push(tron[+b.getAttribute('data-lay')]); ve(); }

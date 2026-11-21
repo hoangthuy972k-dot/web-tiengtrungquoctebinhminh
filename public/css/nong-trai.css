@@ -2715,6 +2715,12 @@ body:not(.nt-ng) .nt-vat:not(.phang)::before {
   border: 2.5px solid var(--vien); background: #fff; color: var(--chu); box-shadow: 0 3px 0 var(--vien); cursor: pointer;
 }
 .ntc-cum.chon { background: #ffe9a8; }
+/* sap xep: keo tha tu do (cum dang keo noi theo ngon tay, cho trong tam = vien net dut) */
+.ntc-xep-dong .ntc-cum, .ntc-cum-ds .ntc-cum { touch-action: none; -webkit-user-select: none; user-select: none; }
+.ntc-xep-dong .ntc-cum.chon { cursor: grab; }
+.ntc-cho { display: inline-flex; align-items: center; color: transparent; background: rgba(255, 233, 168, 0.35); border-style: dashed; box-shadow: none; }
+.ntc-bong-keo { position: fixed; z-index: 9999; margin: 0; pointer-events: none; display: flex; align-items: center; justify-content: center; box-sizing: border-box; transform: rotate(-3deg) scale(1.08); box-shadow: 0 10px 18px rgba(43, 29, 58, 0.3); cursor: grabbing; }
+.ntc-xep-meo { margin: 4px 0 0; font-size: 0.74rem; color: var(--mo); font-weight: 600; text-align: center; }
 .ntc-cum:disabled { opacity: 0.25; box-shadow: none; }
 .ntc-kt, .ntc-go button {
   font: inherit; font-weight: 800; min-height: 46px; padding: 8px 18px; border-radius: 14px; border: 3px solid var(--vien);

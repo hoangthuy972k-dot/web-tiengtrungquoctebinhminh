@@ -4510,7 +4510,8 @@
         var qid = inp.getAttribute('data-wbq');
         var v = wbNorm(inp.value);
         if (!v) { inp.classList.remove('is-ok', 'is-no'); return; }
-        var ok = v === wbNorm(inp.getAttribute('data-wbans'));
+        // it.accept (data-wbacc): dap an khac cung dung nghia
+        var ok = [inp.getAttribute('data-wbans')].concat((inp.getAttribute('data-wbacc') || '').split('|')).some(function (d) { return d && v === wbNorm(d); });
         inp.classList.toggle('is-ok', ok);
         inp.classList.toggle('is-no', !ok);
         wbAnswer(qid, ok);
@@ -4743,7 +4744,7 @@
         return '<span class="wb-drill-chip">' +
           '<span class="wb-drill-no">' + (ii + 1) + '</span>' +
           it.before +
-          '<input type="text" class="wb-drill-input" maxlength="' + (block.maxlength || 6) + '" autocomplete="off" spellcheck="false" data-wbq="' + wbQid(si, bi, ii) + '" data-wbans="' + String(it.answer).replace(/"/g, '&quot;') + '">' +
+          '<input type="text" class="wb-drill-input" maxlength="' + (block.maxlength || 6) + '" autocomplete="off" spellcheck="false" data-wbq="' + wbQid(si, bi, ii) + '" data-wbans="' + String(it.answer).replace(/"/g, '&quot;') + '"' + (it.accept && it.accept.length ? ' data-wbacc="' + it.accept.join('|').replace(/"/g, '&quot;') + '"' : '') + '>' +
           it.after +
           '<span class="wb-drill-answer">→ ' + it.answer + '</span></span>';
       }).join('') +

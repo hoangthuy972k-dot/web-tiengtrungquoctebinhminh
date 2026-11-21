@@ -1,0 +1,5 @@
+[
+  { "in": "p051.jpg", "x": 19.4, "y": 43.1, "w": 18.8, "h": 10.4, "out": "public/images/hsk3v3-bai-5-wb/q28.webp", "rong": 520, "q": 74 },
+  { "in": "p051.jpg", "x": 19.4, "y": 59.0, "w": 18.8, "h": 10.4, "out": "public/images/hsk3v3-bai-5-wb/q29.webp", "rong": 520, "q": 74 },
+  { "in": "p051.jpg", "x": 19.4, "y": 75.2, "w": 18.8, "h": 10.4, "out": "public/images/hsk3v3-bai-5-wb/q30.webp", "rong": 520, "q": 74 }
+]

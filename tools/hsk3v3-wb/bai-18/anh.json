@@ -1,0 +1,5 @@
+[
+  { "in": "p170.jpg", "x": 16.9, "y": 42.8, "w": 18.5, "h": 10.6, "out": "public/images/hsk3v3-bai-18-wb/q28.webp", "rong": 520, "q": 74 },
+  { "in": "p170.jpg", "x": 16.9, "y": 58.5, "w": 18.5, "h": 10.7, "out": "public/images/hsk3v3-bai-18-wb/q29.webp", "rong": 520, "q": 74 },
+  { "in": "p170.jpg", "x": 16.9, "y": 74.4, "w": 18.5, "h": 10.8, "out": "public/images/hsk3v3-bai-18-wb/q30.webp", "rong": 520, "q": 74 }
+]

@@ -389,6 +389,7 @@ async function initDb() {
   await initStarsTable();
   await nongTrai.initTable();
   await thiLop.initTable();
+  await hocChoi.initTable();
   await initClassTables();
   await initQuenMkTables();
   console.log('MySQL: da san sang (bang users/scores/exam_attempts).');
@@ -1857,6 +1858,13 @@ app.post('/api/stars/tick', requireAuth, asyncRoute(async (req, res) => {
   await saveStar(req.user.id, s);
   res.json(starView(s, awarded));
 }));
+
+// Tab "🎯 Học vs Chơi" o /admin (GET /api/admin/hoc-choi, chi giao vien): moi tuan hoc sinh hoc nhieu hay choi nong trai nhieu.
+// Dang ky TRUOC nong trai vi co them 1 bo dem nhe cho moi yeu cau /api/farm (bang farm_activity) — xem hoc-choi.js.
+const hocChoi = require('./hoc-choi')(app, {
+  DATA_DIR, USE_DB, db: () => dbPool, readJsonFile, writeJsonFile, requireAdmin, asyncRoute, vnDayKey, vnWeekKey, VN_OFFSET_MS,
+  loadUserNames, loadClassState, loadPartDone, loadAllStars, DAILY_POINTS_FILE, SCORES_FILE,
+});
 
 // Nong trai cua em (/nong-trai): tieu sao hoc tap de trang tri nong trai — xem nong-trai.js
 const nongTrai = require('./nong-trai')(app, {

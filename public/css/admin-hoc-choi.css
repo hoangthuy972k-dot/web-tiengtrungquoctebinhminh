@@ -1,0 +1,47 @@
+/* Tab "🎯 Học vs Chơi" o /admin (public/js/admin-hoc-choi.js). Hoc = xanh duong, Choi nong trai = xanh la. */
+.hc-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 10px 0 12px; }
+.hc-tools .btn { min-height: 40px; }
+.hc-nhanxet { font-size: .95rem; line-height: 1.6; color: var(--color-gray-700); margin: 4px 0 14px; }
+.hc-cards { margin-bottom: 12px; }
+
+.hc-help { font-size: .85rem; color: var(--color-gray-700); background: var(--color-white); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); padding: 4px 14px; }
+.hc-help summary { cursor: pointer; font-weight: 600; min-height: 36px; display: flex; align-items: center; }
+.hc-help ul { margin: 4px 0 10px; padding-left: 18px; line-height: 1.6; }
+
+/* Bieu do 8 tuan: 2 thanh ngang moi tuan */
+.hc-chart { background: var(--color-white); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); padding: 12px 16px; margin-bottom: 14px; }
+.hc-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: .82rem; color: var(--color-gray-700); margin-bottom: 8px; }
+.hc-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.hc-dot { display: inline-block; width: 12px; height: 12px; border-radius: 3px; }
+.hc-dot.is-hoc, .hc-bar span.is-hoc { background: var(--color-blue-500); }
+.hc-dot.is-choi, .hc-bar span.is-choi { background: var(--color-green-500); }
+.hc-row { display: grid; grid-template-columns: 120px minmax(0, 1fr) 70px; gap: 10px; align-items: center; padding: 6px 0; border-top: 1px solid var(--color-gray-100); }
+.hc-row:first-of-type { border-top: none; }
+.hc-row.is-now .hc-wk { color: var(--color-gray-900); }
+.hc-wk { display: flex; flex-direction: column; font-size: .8rem; color: var(--color-gray-600); line-height: 1.3; }
+.hc-bars { display: flex; flex-direction: column; gap: 3px; }
+.hc-bar { display: flex; align-items: center; gap: 6px; height: 14px; }
+.hc-bar span { display: block; height: 100%; min-width: 2px; border-radius: 0 4px 4px 0; }
+.hc-bar em { font-style: normal; font-size: .78rem; color: var(--color-gray-700); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.hc-ratio { text-align: right; font-weight: 700; font-size: .88rem; font-variant-numeric: tabular-nums; }
+
+.hc-table { min-width: 860px; }
+.hc-table td { white-space: nowrap; }
+.hc-bar span.is-0 { min-width: 0; width: 0 !important; }
+.hc-table th.hc-h-hoc { color: var(--color-blue-600); }
+.hc-table th.hc-h-choi { color: var(--color-green-600); }
+.hc-table tr.hc-now td { background: var(--color-gold-50); }
+.hc-table tr.hc-warn td { background: var(--color-red-50); }
+.hc-hs th { padding: 0; }
+.hc-sort { width: 100%; min-height: 40px; padding: 0 var(--space-4); border: 0; background: none; font: inherit; color: inherit; font-weight: 600; text-transform: inherit; letter-spacing: inherit; text-align: left; cursor: pointer; white-space: nowrap; }
+.hc-sort:hover { color: var(--color-red-600); }
+.hc-sort:focus-visible, .hc-ten:focus-visible { outline: 2px solid var(--color-gold-500); outline-offset: -2px; }
+.hc-ten { border: 0; background: none; padding: 0; font: inherit; font-weight: 700; color: inherit; text-align: left; cursor: pointer; }
+.hc-ten:hover { color: var(--color-red-600); text-decoration: underline; }
+.tr-chip.hc-chip-choi { background: var(--color-orange-50); color: var(--color-orange-600); }
+.tr-chip.hc-chip-hoc { background: var(--color-blue-50); color: var(--color-blue-600); }
+
+@media (max-width: 720px) {
+  .hc-row { grid-template-columns: 86px minmax(0, 1fr) 56px; gap: 6px; }
+  .hc-ratio { font-size: .8rem; }
+}

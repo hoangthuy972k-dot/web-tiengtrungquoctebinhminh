@@ -4179,6 +4179,7 @@
     }
     luoi.innerHTML = html + hangPho(hang);
     $all('img', luoi).forEach(ganLoiAnh);
+    if (window.NTX) NTX.sauTt.forEach(function (fn) { try { fn(r); } catch (e) { /* bo qua */ } });
   }
   // Duong pho: moi hang lo dat la 1 con pho mang ten tieng Trung (bam vao bien de nghe doc)
   var PHO = [
@@ -5777,6 +5778,8 @@
     capEm: capEm, dongThiTran: dongThiTran, veNha: veNha, htmlTen: htmlTen, soGon: soGon, tenMon: tenMon, moBangNho: moBangNho, thoiLuong: thoiLuong,
     dangKy: function (loai, fn) { NGOAI[loai] = fn; },
     batDauDat: batDauDat, datDuoc: datDuoc, rong: rong, xgCua: xgCua, moNoi: moNoi, dongNoi: dongNoi, duLieuBanDo: duLieuBanDo, bayGio: bayGio,
+    thiTran: function () { return thiTran; }, trangThai: trangThai, danTt: function () { return DAN; }, svgDan: svgDan,
+    sauTt: [], // (r) goi sau moi lan ve thi tran (ban do thi tran 3D: nong-trai-tt3d.js)
     veBanDo: veBanDo, hangPx: hangPx, datTuManHinh: datTuManHinh, manHinhTuDat: manHinhTuDat, zSau: zSau, capNhatSau: capNhatSau,
     sauXoay: [], // ham goi khi goc xoay 3D doi (cap nhat z-index cua do dung thang module them) huyBac: huyBac, bacCua: bacCua, xpCap: xpCap, lenCapCu: null,
     fx: FX, moiBaiHoc: function () { return linkHoc(); },

@@ -2796,3 +2796,68 @@ body:not(.nt-ng) .nt-vat:not(.phang)::before {
   .nt-ban-nut .nt-mua { flex: 1 1 0; min-width: 0; padding: 6px 4px; font-size: 0.82rem; white-space: nowrap; }
   .nt-khoa { top: 4px; right: 4px; font-size: 0.68rem; padding: 1px 6px; }
 }
+
+/* ══════════ BAN DO THI TRAN 3D XOAY (nong-trai-tt3d.js) — body.tt-3d khi o che do 3D ══════════
+   Mat thi tran = scaleY(c) rotate(θ) quanh tam; do dung thang (.tt3-dung) = rotate(-θ) scaleY(1/c) quanh chan.
+   Duong da = nen mat; lo dat co + rao go; de dat day ben duoi (drop-shadow chong lop nhu ruong). */
+body.tt-3d #ntTtQuang, body.tt-3d #ntTtLuoi { display: none !important; }
+body.o-thi-tran .nt-zoom { display: flex !important; z-index: 49; }
+body.o-thi-tran:not(.nt-ng) .nt-zoom #ntZoomCong, body.o-thi-tran:not(.nt-ng) .nt-zoom #ntZoomTru { display: none; }
+body.o-ho-cau .nt-zoom { display: none !important; }
+.tt3 { position: relative; max-width: 100%; height: min(78vh, 900px); margin: 0 auto 16px; overflow: auto; border-radius: 22px; scrollbar-width: thin; overscroll-behavior: contain; touch-action: pan-x pan-y; }
+.tt3.dang-keo { cursor: grabbing; }
+.tt3-goi { position: sticky; left: 0; top: 0; z-index: 5; margin: 0 auto; width: fit-content; max-width: calc(100% - 16px); padding: 6px 14px; border: 2px solid var(--vien); border-radius: 999px; background: rgba(255, 248, 236, 0.94); font-size: 0.82rem; font-weight: 600; text-align: center; box-shadow: 0 3px 0 rgba(43, 29, 58, 0.25); }
+.tt3-que { position: relative; display: flow-root; width: fit-content; margin: 0 auto; }
+.tt3-mat {
+  position: relative; z-index: 1; margin: var(--xm-t) var(--xm-x) var(--xm-b); border-radius: 14px;
+  transform-origin: 50% 50%; transform: scaleY(var(--ng-c)) rotate(var(--xoay, 0deg));
+  background-color: #d9c39a;
+  background-image: radial-gradient(ellipse 10px 7px at 30% 35%, #ecdcb8 0 70%, transparent 76%), radial-gradient(ellipse 9px 6px at 78% 76%, #e6d3a8 0 70%, transparent 76%);
+  background-size: 28px 22px;
+  box-shadow: inset 0 0 0 4px #b89a6a;
+}
+.tt3-de-boc { position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  filter: drop-shadow(0 calc(var(--dg, 50px) * 0.12) 0 #c08a52) drop-shadow(0 calc(var(--dg, 50px) * 0.14) 0 #a8703f) drop-shadow(0 calc(var(--dg, 50px) * 0.16) 0 #8d5a31)
+    drop-shadow(0 calc(var(--dg, 50px) * 0.16) 0 #6f4524) drop-shadow(0 3px 0 #2b1d3a) drop-shadow(0 30px 24px rgba(43, 29, 58, 0.22)); }
+.tt3-de { position: absolute; left: var(--xm-x); top: var(--xm-t); width: var(--xw); height: var(--xh); border-radius: 14px; background: #a88a5c; box-shadow: 0 0 0 3px #2b1d3a;
+  transform-origin: 50% 50%; transform: scaleY(var(--ng-c)) rotate(var(--xoay, 0deg)); }
+.tt3-lo, .tt3-quang, .tt3-trong { position: absolute; padding: 0; border-radius: 10px; }
+.tt3-lo {
+  border: 0; cursor: pointer; background-color: #8fd35e; background-image: url('/images/farm/co.svg?v=1'); background-size: 22px 22px;
+  box-shadow: 0 0 0 5px #c98a4b, 0 0 0 7px #2b1d3a, inset 0 0 18px rgba(36, 90, 30, 0.35);
+}
+.tt3-lo.la { box-shadow: 0 0 0 5px #ffc83d, 0 0 0 7px #2b1d3a, inset 0 0 18px rgba(36, 90, 30, 0.35); }
+.tt3-lo.trong { background-color: #b9d99a; filter: saturate(0.6); }
+.tt3-lo:hover { background-color: #9edb6c; }
+.tt3-lo:focus-visible { outline: 4px solid #4a90e2; outline-offset: 6px; }
+.tt3-quang { background: radial-gradient(circle, #f3e6c8 0 55%, #e2cfa2 56% 62%, #f3e6c8 63%); box-shadow: 0 0 0 4px #b89a6a; }
+.tt3-trong { background: #a7cf7f; box-shadow: 0 0 0 4px #8fbf63; }
+.tt3-phang { position: absolute; pointer-events: none; }
+.tt3-chu { position: absolute; text-align: center; font-weight: 800; color: rgba(43, 29, 58, 0.55); pointer-events: none; }
+/* do dung thang: chan = giua canh duoi */
+.tt3-dung { position: absolute; display: block; pointer-events: none; transform-origin: 50% 100%; transform: rotate(var(--xn, 0deg)) scaleY(var(--ng-ic)); }
+.tt3-dung > img, .tt3-dung > svg, .tt3-dung > .nv-svg { position: absolute; left: 0; bottom: 0; width: 100%; height: 100%; object-fit: contain; object-position: 50% 100%; }
+.tt3-vat::before { content: ''; position: absolute; left: 12%; right: 12%; bottom: -6%; height: 16%; border-radius: 50%; background: radial-gradient(closest-side, rgba(43, 29, 58, 0.32), rgba(43, 29, 58, 0)); }
+.tt3-nv > svg { height: auto; top: auto; }
+.tt3-den > img { filter: drop-shadow(0 0 6px rgba(255, 196, 87, 0.7)); }
+.tt3-bien { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; }
+.tt3-bien-b { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; max-width: 100%; padding: 2px 8px; border: 2px solid var(--vien); border-radius: 8px; background: #fff8ec; box-shadow: 0 2px 0 var(--vien); line-height: 1.15; text-align: center; }
+.tt3-bien-b b { font-size: clamp(0.62rem, calc(var(--lo, 160px) * 0.075), 0.95rem); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+.tt3-bien-b small { font-size: clamp(0.55rem, calc(var(--lo, 160px) * 0.058), 0.75rem); font-weight: 700; color: var(--mo); white-space: nowrap; }
+.tt3-cot { display: block; width: 4px; height: 26%; background: #8b5a2b; border: 1px solid var(--vien); border-top: 0; }
+.tt3-cay { pointer-events: auto; cursor: zoom-in; }
+.tt3-cay > img { filter: drop-shadow(0 0 14px rgba(255, 226, 140, 0.55)); }
+.tt3-cay-xem { position: absolute; left: 50%; bottom: -14%; translate: -50% 0; white-space: nowrap; padding: 2px 8px; border: 2px solid var(--vien); border-radius: 999px; background: #fff6d8; font-size: 0.7rem; font-weight: 800; }
+.tt3-cay:focus-visible { outline: 3px solid #ffe066; outline-offset: 4px; border-radius: 12px; }
+/* cu dan: hop 0x0 tai cho dung, di theo pho bang translate; hinh dung thang ben trong */
+.tt3-dan { position: absolute; width: 0; height: 0; padding: 0; border: 0; background: none; cursor: pointer; animation: tt3-di linear infinite; }
+.tt3-dan.doc { animation-name: tt3-di-doc; }
+.tt3-dan.nguoc { animation-direction: reverse; }
+.tt3-dan-nv { left: calc(var(--w) / -2); bottom: 0; top: auto; width: var(--w); height: calc(var(--w) * 1.6); pointer-events: auto; }
+.tt3-dan-nv > svg { animation: nt-lac-buoc 0.45s ease-in-out infinite alternate; }
+.tt3-dan-nv > i { position: absolute; left: 50%; top: -14px; translate: -50% 0; white-space: nowrap; font-style: normal; font-size: 0.6rem; font-weight: 800; padding: 0 5px; border-radius: 6px; background: rgba(255, 248, 236, 0.92); border: 1.5px solid var(--vien); }
+@keyframes tt3-di { from { transform: translateX(0); } to { transform: translateX(var(--dai)); } }
+@keyframes tt3-di-doc { from { transform: translateY(0); } to { transform: translateY(var(--dai)); } }
+body.nt-an-tab .tt3-dan, body.nt-an-tab .tt3-dan-nv > svg { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .tt3-dan, .tt3-dan-nv > svg { animation: none; } }
+@media (max-width: 640px) { .tt3 { height: 70vh; border-radius: 16px; } .tt3-goi { font-size: 0.72rem; } }

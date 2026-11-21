@@ -492,6 +492,7 @@
     var doi = datBienXoay();
     if (doi && giu) giu();
     if (S.st) N.capNhatSau();
+    else N.sauXoay.forEach(function (fn) { try { fn(); } catch (e) { /* bo qua */ } });
     if (N.datViTriNoi) N.datViTriNoi();
   }
   function huyAnim() { if (XO.anim) cancelAnimationFrame(XO.anim); XO.anim = 0; }
@@ -560,13 +561,16 @@
       b.addEventListener('click', function (e) { if (e.detail === 0) buoc(huong); }); // ban phim (Enter / Space)
       b.addEventListener('contextmenu', function (e) { e.preventDefault(); });
     });
-    // 2 ngon tay xoay tren dien thoai
-    var k = $('#ntKhung');
-    if (!k) return;
+    ganVan($('#ntKhung'));
+  }
+  // 2 ngon tay xoay tren dien thoai (vung k: ruong / ban do thi tran 3D)
+  function ganVan(k) {
+    if (!k || k._ganVan) return;
+    k._ganVan = 1;
     function gocCham(t) { return Math.atan2(t[1].clientY - t[0].clientY, t[1].clientX - t[0].clientX) * 180 / Math.PI; }
     k.addEventListener('touchstart', function (e) {
       if (e.touches.length !== 2) { XO.tw = null; return; }
-      if (!S.ng || document.body.classList.contains('o-thi-tran')) return;
+      if (!S.ng || (k.id === 'ntKhung' && document.body.classList.contains('o-thi-tran'))) return;
       huyAnim();
       XO.tw = { a0: gocCham(e.touches), g0: XO.goc, on: false };
     }, { passive: true });
@@ -627,6 +631,7 @@
   window.NTQue = {
     canh: canh, giuTam: giuTam, nghieng: function () { return !!S.ng; },
     xoay: function (g) { if (g == null) return S.xoay; apXoay(g); ghiXoay(); return S.xoay; },
+    ganVan: ganVan, ngC: NG_C,
     // chi de thu: dua vao 30 khung hinh gia (ms) nhu khi keo ban do tren may cham
     _thuKhung: function (ms) { for (var i = 0; i < 30; i++) GOC.ds.push(ms); xetKhung(); return GOC.cham; },
   };

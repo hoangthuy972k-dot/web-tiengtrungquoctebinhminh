@@ -1,0 +1,9 @@
+{
+  "name": "hsk3v3-wb-cong-cu",
+  "private": true,
+  "description": "Cong cu soan 'Luyen tap sach bai tap' HSK 3 (3.0): chi chay luc soan bai, khong dung tren server",
+  "dependencies": {
+    "pdfjs-dist": "^4.10.38",
+    "sharp": "^0.34.5"
+  }
+}

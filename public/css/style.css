@@ -8985,6 +8985,7 @@ html.ho-tro-toi[data-theme="dark"] .h4-peek { color: #5cc8bd; }
 .mt-input.is-correct { border-color: var(--color-green-600); background: var(--color-green-50); }
 .mt-input.is-wrong { border-color: var(--color-red-600); background: var(--color-red-50); }
 .mt-input-ans { margin-left: 10px; color: var(--color-green-600); font-weight: 700; }
+.mt-input.mt-input-free { display: block; width: 100%; max-width: 32em; box-sizing: border-box; resize: vertical; line-height: 1.5; font-family: inherit; }
 .mt-q-explain { margin-top: var(--space-2); padding: var(--space-2) var(--space-3); border-radius: var(--radius-md); background: var(--color-gray-50); font-size: 0.9rem; line-height: 1.6; }
 .mt-q-explain .hanzi { color: var(--fg-gray-900); }
 .mt-q-vn { color: var(--fg-text-muted); margin-top: 4px; }

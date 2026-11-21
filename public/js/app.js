@@ -4893,9 +4893,12 @@
     var promptHtml = q.prompt
       ? '<div class="mt-q-prompt">' + (q.promptPy ? '<div class="mt-q-py">' + q.promptPy.replace(/\n/g, '<br>') + '</div>' : '') + '<div class="hanzi">' + q.prompt.replace(/\n/g, '<br>') + '</div></div>'
       : '';
-    var pendingTag = !q.answer ? '<span class="mt-q-pending">Đang chờ đáp án</span>' : '';
+    var pendingTag = !q.answer && !q.free ? '<span class="mt-q-pending">Đang chờ đáp án</span>' : '';
     // q.input: go chu Han (HSK 2 cau 28–30) · q.letters: chi nut chu cai (tranh / tu / cau o ngan dung chung phia tren)
-    var optsHtml = q.input
+    // q.free: tu viet ca cau (HSK 3 "nhin tranh, dung tu dat cau") — khong cham, nop bai thi hien cau tham khao (q.script)
+    var optsHtml = q.free
+      ? '<textarea class="mt-input mt-input-free hanzi" data-mt-q="' + qKey + '" rows="2" maxlength="' + (q.maxlength || 60) + '" autocomplete="off" spellcheck="false" lang="zh" placeholder="' + (q.placeholder || 'Viết câu bằng chữ Hán…') + '"></textarea>'
+      : q.input
       ? '<input type="text" class="mt-input hanzi" data-mt-q="' + qKey + '" maxlength="' + (q.maxlength || 4) + '" autocomplete="off" spellcheck="false" lang="zh" placeholder="Gõ chữ Hán…">'
       : '<div class="mt-q-opts' + (q.letters ? ' mt-q-letters' : '') + '">' + (q.letters ? q.letters.map(function (k) { return { key: k, text: '' }; }) : q.options).map(function (o) {
           return q.letters
@@ -4903,7 +4906,7 @@
             : mtOptHtml(qKey, o);
         }).join('') + '</div>';
     var explainHtml = q.script || q.vn
-      ? '<div class="mt-q-explain" hidden>' + (q.script ? '<div class="hanzi">' + q.script.replace(/\n/g, '<br>') + '</div>' : '') + (q.vn ? '<div class="mt-q-vn">' + q.vn.replace(/\n/g, '<br>') + '</div>' : '') + '</div>'
+      ? '<div class="mt-q-explain" hidden>' + (q.free ? '<div class="mt-q-vn">Câu tham khảo (tự đối chiếu):</div>' : '') + (q.script ? '<div class="hanzi">' + q.script.replace(/\n/g, '<br>') + '</div>' : '') + (q.vn ? '<div class="mt-q-vn">' + q.vn.replace(/\n/g, '<br>') + '</div>' : '') + '</div>'
       : '';
     return mtPartHtml(q) + '<div class="mt-q" data-mt-qkey="' + qKey + '">' +
       '<div class="mt-q-num">' + q.n + '</div>' +
@@ -4917,7 +4920,7 @@
     var readingHtml = block.reading.map(function (q) { return mtQuestionHtml(q, 'R' + q.n); }).join('');
     var writing = block.writing || [];
     var writingHtml = writing.map(function (q) { return mtQuestionHtml(q, 'W' + q.n); }).join('');
-    var hasPending = mtAll(block).some(function (q) { return !q.answer; });
+    var hasPending = mtAll(block).some(function (q) { return !q.answer && !q.free; });
     return '<div class="wb-block mt-wrap" data-wbq-base="' + wbQid(si, bi, '') + '">' +
       (block.listening.length ? '<div class="mt-part-title">🎧 Nghe (câu ' + mtRange(block.listening) + ')</div>' : '') +
       (hasPending ? '<p class="wb-note">Phần này chưa có đáp án chính thức từ sách, tạm thời chưa chấm điểm — vẫn có thể chọn để luyện tập.</p>' : '') +
@@ -4950,7 +4953,14 @@
         if (ex) ex.hidden = false;
       }
       if (!q.answer) {
-        if (qEl) $all('.mt-opt', qEl).forEach(function (btn) { btn.disabled = true; });
+        if (qEl) $all('.mt-opt, .mt-input', qEl).forEach(function (btn) { btn.disabled = true; });
+        // cau tu viet (q.free): chi nhac neu chua dung tu de bai cho (q.must), khong tinh diem
+        var ex2 = q.free && q.must && qEl && $('.mt-q-explain', qEl);
+        if (ex2) {
+          var used = String(picked || '').indexOf(q.must) > -1;
+          ex2.insertAdjacentHTML('afterbegin', '<div class="mt-q-vn" style="font-weight:700;color:var(' + (used ? '--color-green-600' : '--color-red-600') + ');">' +
+            (used ? '✓ Câu của em có dùng từ <span class="hanzi">' + q.must + '</span>.' : (picked ? '✗ Câu của em chưa dùng từ ' : '✗ Em chưa viết câu với từ ') + '<span class="hanzi">' + q.must + '</span>.') + '</div>');
+        }
         return;
       }
       gradableCount++;

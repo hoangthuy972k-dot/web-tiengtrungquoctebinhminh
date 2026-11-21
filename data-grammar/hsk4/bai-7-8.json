@@ -82,7 +82,7 @@
     ],
     "items": [
      { "context": "“Nếu mai mưa thì chúng ta không đi.”", "pre": "要是明天下雨，", "blank": "我们就不去", "post": "。", "options": ["我们就不去", "就我们不去", "我们不去就"], "answer": 0, "explanation": "Chủ ngữ vế sau + 就." },
-     { "context": "Có thể thêm 的话 ở cuối vế giả thiết.", "pre": "要是你有时间", "blank": "的话，就来我家吧", "post": "。", "options": ["的话，就来我家吧", "就的话，来我家吧", "的话就，来我家吧"], "answer": 0, "explanation": "要是……的话，就……." },
+     { "context": "Có thể thêm 的话 ở cuối vế giả thiết.", "pre": "要是你有时间", "blank": "的话，就来我家吧", "post": "。", "options": ["的话，就来我家吧", "就的话，来我家吧", "的话，才来我家吧"], "answer": 0, "explanation": "要是……的话，就……: 的话 đứng cuối vế giả thiết (trước dấu phẩy); vế sau dùng 就, không dùng 才." },
      { "context": "要是 = 如果 (khẩu ngữ hơn).", "pre": "", "blank": "要是你喜欢，我就送给你", "post": "。", "options": ["要是你喜欢，我就送给你", "要是你喜欢，就我送给你", "要是你喜欢，我送给你就"], "answer": 0, "explanation": "要是……就……." },
      { "context": "Cùng chủ ngữ thì vế sau lược chủ ngữ.", "pre": "要是我有钱，", "blank": "就去中国旅游", "post": "。", "options": ["就去中国旅游", "去中国旅游就", "就我去中国旅游"], "answer": 0, "explanation": "Chủ ngữ giống nhau nên lược." },
      { "context": "Điều kiện DUY NHẤT thì dùng 只有……才…….", "pre": "", "blank": "只有努力，才能成功", "post": "。", "options": ["只有努力，才能成功", "要是努力，才能成功", "要是努力，就能成功吗"], "answer": 0, "explanation": "Phân biệt với 只有……才……." },

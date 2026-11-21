@@ -515,9 +515,9 @@ var vocabData = [
     "vn": "Đến cuối đời Thanh thì chế độ thư viện chấm dứt."
    },
    {
-    "zh": "因为突然下起了大雨，比赛不得不终止。",
-    "py": "Yīnwèi tūrán xiàqǐle dàyǔ, bǐsài bùdébù zhōngzhǐ.",
-    "vn": "Vì trời bỗng đổ mưa to nên trận đấu buộc phải dừng lại."
+    "zh": "雨越下越大，裁判只好宣布终止比赛，改天重新比。",
+    "py": "Yǔ yuè xià yuè dà, cáipàn zhǐhǎo xuānbù zhōngzhǐ bǐsài, gǎitiān chóngxīn bǐ.",
+    "vn": "Mưa mỗi lúc một to, trọng tài đành tuyên bố chấm dứt trận đấu, hôm khác đấu lại từ đầu."
    },
    {
     "zh": "对方一再违反约定，公司决定终止合同。",
@@ -565,7 +565,7 @@ var vocabData = [
   "checkList": [
    {
     "promptLang": "vi",
-    "prompt": "Vì thiếu kinh phí, hoạt động này buộc phải dừng giữa chừng.",
+    "prompt": "Vì thiếu kinh phí, hoạt động này buộc phải chấm dứt giữa chừng.",
     "answer": "由于缺少经费，这项活动不得不中途终止。",
     "answerPy": "Yóuyú quēshǎo jīngfèi, zhè xiàng huódòng bùdébù zhōngtú zhōngzhǐ.",
     "note": "由于 = do, vì (ôn HSK 4); 不得不 = buộc phải.",
@@ -5009,8 +5009,8 @@ var synonymData = [
     ],
     "ex": [
      {
-      "zh": "因为下大雨，比赛不得不终止。",
-      "vn": "Vì mưa to nên trận đấu buộc phải dừng."
+      "zh": "战争终止以后，人们的生活慢慢恢复了正常。",
+      "vn": "Sau khi chiến tranh chấm dứt, cuộc sống của người dân dần trở lại bình thường."
      },
      {
       "zh": "婚姻关系终止时，夫妻按照约定分割共有财产。",
@@ -5048,13 +5048,13 @@ var synonymData = [
     "why": "截止到 + thời điểm = tính đến … (chỉ 截止 đi với từ chỉ thời gian)."
    },
    {
-    "sentence": "裁判发现一名球员受了重伤，马上＿＿了比赛。",
+    "sentence": "比赛进行到一半，一支球队突然退场，裁判只好宣布＿＿比赛。",
     "options": [
      "截止",
      "终止"
     ],
     "answer": 1,
-    "why": "终止比赛 = dừng trận đấu; ×截止比赛 (sách: 截止比赛 ×)."
+    "why": "Một đội bỏ về, trận đấu chấm dứt hẳn → 终止比赛; ×截止比赛 (sách: 截止比赛 ×)."
    }
   ],
   "sgk": {

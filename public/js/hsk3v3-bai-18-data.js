@@ -2638,7 +2638,7 @@ var matchData = [
 var fillData = [
   { pre: '这双鞋不贵，', blank: '两三百', post: '块钱就能买到。', hint: '(khoảng hai ba trăm)', ans: '两三百', exp: 'Hai số liền nhau = số ước lượng: 两三百块 = khoảng hai, ba trăm tệ.' },
   { pre: '我', blank: '刚刚', post: '来北京一个月，还不认识路。', hint: '(vừa mới — 2 chữ)', ans: '刚刚', exp: '刚刚 / 刚 + V + thời lượng = mới… được bao lâu; 刚才 không dùng được ở đây.' },
-  { pre: '', blank: '刚才', post: '的电话是谁打来的？', hint: '(lúc nãy)', ans: '刚才', exp: '刚才 là danh từ thời gian nên làm định ngữ được: 刚才的电话 = cuộc điện thoại lúc nãy.' },
+  { pre: '你们国家有哪些重要的', blank: '节日', post: '？春节也放假吗？', hint: '(ngày lễ, ngày tết)', ans: '节日', exp: '节日 = ngày lễ, ngày tết (danh từ), đứng sau định ngữ 重要的; còn 过节 là động từ “đón lễ”.' },
   { pre: '只要你喜欢，这件衣服我', blank: '就', post: '送给你。', hint: '(thì)', ans: '就', exp: '只要……，就…… = chỉ cần… thì…; 就 đứng sau chủ ngữ vế sau.' },
   { pre: '从明天', blank: '起', post: '，我不再喝咖啡了。', hint: '(bắt đầu từ)', ans: '起', exp: '从 + thời điểm + 起 = bắt đầu từ…; không nói 从明天起来.' },
   { pre: '他上课', blank: '总', post: '迟到，老师已经说过他好几次了。', hint: '(lúc nào cũng)', ans: '总', exp: '总 = luôn luôn (như 总是); ôn 迟到 (bài 6).' },

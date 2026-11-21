@@ -190,7 +190,7 @@
     ],
     "items": [
      { "context": "“Nếu mai mưa thì chúng ta không đi.”", "pre": "如果明天下雨，", "blank": "我们就不去", "post": "。", "options": ["我们就不去", "就我们不去", "我们不去就"], "answer": 0, "explanation": "Chủ ngữ vế sau đứng TRƯỚC 就." },
-     { "context": "Có thể thêm 的话 ở cuối vế giả thiết.", "pre": "如果你有时间", "blank": "的话，就来我家吧", "post": "。", "options": ["的话，就来我家吧", "就的话，来我家吧", "的话就，来我家吧"], "answer": 0, "explanation": "如果……的话，(chủ ngữ) + 就……." },
+     { "context": "Có thể thêm 的话 ở cuối vế giả thiết.", "pre": "如果你有时间", "blank": "的话，就来我家吧", "post": "。", "options": ["的话，就来我家吧", "就的话，来我家吧", "的话，才来我家吧"], "answer": 0, "explanation": "如果……的话，(chủ ngữ) + 就……: 的话 đứng cuối vế giả thiết (trước dấu phẩy); vế sau dùng 就, không dùng 才." },
      { "context": "“Nếu bạn thích thì tôi tặng bạn.”", "pre": "如果你喜欢，", "blank": "我就送给你", "post": "。", "options": ["我就送给你", "就我送给你", "我送给你就"], "answer": 0, "explanation": "就 đứng trước động từ." },
      { "context": "Cùng một chủ ngữ thì vế sau có thể lược chủ ngữ.", "pre": "如果我有钱，", "blank": "就去中国旅游", "post": "。", "options": ["就去中国旅游", "去中国旅游就", "就我去中国旅游"], "answer": 0, "explanation": "Chủ ngữ giống nhau nên lược ở vế sau." },
      { "context": "“Nếu ngày mai bạn không đến thì gọi điện cho tôi nhé.”", "pre": "如果明天你不来，", "blank": "就给我打个电话", "post": "。", "options": ["就给我打个电话", "给我打个电话就", "就打个电话给我吗"], "answer": 0, "explanation": "就 + cụm động từ." },

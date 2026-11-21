@@ -54,11 +54,11 @@
       "post": "。——行，我不常点外卖，你点吧。",
       "options": [
        "的话，我们就点外卖吧",
-       "，的话我们就点外卖吧",
+       "的话，我们点外卖就吧",
        "的话，就我们点外卖吧"
       ],
       "answer": 0,
-      "explanation": "外卖 (ôn HSK3 Bài 2); 的话 đứng trước dấu phẩy, 就 sau chủ ngữ."
+      "explanation": "外卖 (ôn HSK3 Bài 2); 的话 đứng cuối vế giả định, trước dấu phẩy; 就 đứng sau chủ ngữ, ngay trước động từ 点 — không đứng trước chủ ngữ, không dời ra cuối câu."
      },
      {
       "context": "“Bạn thấy hài lòng thì chúng ta mua.” (满意 – ôn HSK3 Bài 4)",
@@ -67,11 +67,11 @@
       "post": "。",
       "options": [
        "的话，咱们就买",
-       "，的话咱们就买",
+       "的话，咱们买就",
        "的话，就咱们买"
       ],
       "answer": 0,
-      "explanation": "咱们 (ôn HSK3 Bài 3) đứng trước 就."
+      "explanation": "咱们 (ôn HSK3 Bài 3) đứng trước 就; 就 đứng ngay trước động từ 买, không đặt ở cuối câu."
      },
      {
       "context": "“Mai trời đẹp thì tôi đi leo núi.” (爬山 – ôn HSK3 Bài 5)",

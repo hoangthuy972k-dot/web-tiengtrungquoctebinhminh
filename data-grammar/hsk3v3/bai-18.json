@@ -188,8 +188,8 @@
     "title": "「刚才」 và 「刚刚」 — danh từ thời gian và phó từ thời gian",
     "errors": [
      {
-      "wrong": "刚刚的电话是谁打来的？",
-      "why": "刚刚 là phó từ, không làm định ngữ với 的; muốn nói “cuộc điện thoại lúc nãy” phải dùng danh từ 刚才.",
+      "wrong": "刚的电话是谁打来的？",
+      "why": "刚 là phó từ, chỉ đứng trước động từ, không làm định ngữ với 的; muốn nói “cuộc điện thoại lúc nãy” phải dùng danh từ 刚才.",
       "right": "刚才的电话是谁打来的？"
      },
      {
@@ -250,11 +250,11 @@
       "post": "的电话是我妈妈打来的。",
       "options": [
        "刚才",
-       "刚刚",
-       "刚"
+       "刚",
+       "马上"
       ],
       "answer": 0,
-      "explanation": "刚才的 + N; 是……的 nhấn mạnh người thực hiện; 打电话 (ôn HSK1 Bài 13)."
+      "explanation": "刚才 là danh từ nên làm định ngữ được: 刚才的 + N; 刚 / 马上 là phó từ, chỉ đứng trước động từ. 是……的 nhấn mạnh người thực hiện; 打电话 (ôn HSK1 Bài 13)."
      },
      {
       "context": "“Anh ấy vừa mới đến Bắc Kinh được hai tháng.”",
@@ -285,10 +285,10 @@
      {
       "type": "judge",
       "context": "Xét câu sau đúng hay sai.",
-      "sentence": "刚刚的电话是谁打来的？",
+      "sentence": "我们刚才认识一个月。",
       "isCorrect": false,
-      "correctVersion": "刚才的电话是谁打来的？",
-      "explanation": "刚刚 là phó từ, không làm định ngữ; dùng 刚才的 + N."
+      "correctVersion": "我们刚刚认识一个月。",
+      "explanation": "刚才 chỉ vài phút trước lúc nói, không đi với thời lượng dài (一个月); mới quen được một tháng thì dùng 刚刚 / 刚 + V + thời lượng."
      },
      {
       "type": "judge",

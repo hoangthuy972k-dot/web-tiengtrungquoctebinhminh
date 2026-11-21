@@ -5779,7 +5779,7 @@
     dangKy: function (loai, fn) { NGOAI[loai] = fn; },
     batDauDat: batDauDat, datDuoc: datDuoc, rong: rong, xgCua: xgCua, moNoi: moNoi, dongNoi: dongNoi, duLieuBanDo: duLieuBanDo, bayGio: bayGio,
     thiTran: function () { return thiTran; }, trangThai: trangThai, danTt: function () { return DAN; }, svgDan: svgDan,
-    sauTt: [], // (r) goi sau moi lan ve thi tran (ban do thi tran 3D: nong-trai-tt3d.js)
+    sauTt: [], // (r) goi sau moi lan ve thi tran (module them)
     veBanDo: veBanDo, hangPx: hangPx, datTuManHinh: datTuManHinh, manHinhTuDat: manHinhTuDat, zSau: zSau, capNhatSau: capNhatSau,
     sauXoay: [], // ham goi khi goc xoay 3D doi (cap nhat z-index cua do dung thang module them) huyBac: huyBac, bacCua: bacCua, xpCap: xpCap, lenCapCu: null,
     fx: FX, moiBaiHoc: function () { return linkHoc(); },

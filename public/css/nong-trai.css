@@ -2802,3 +2802,14 @@ body:not(.nt-ng) .nt-vat:not(.phang)::before {
   .nt-ban-nut .nt-mua { flex: 1 1 0; min-width: 0; padding: 6px 4px; font-size: 0.82rem; white-space: nowrap; }
   .nt-khoa { top: 4px; right: 4px; font-size: 0.68rem; padding: 1px 6px; }
 }
+
+/* ══════════ CHE DO NHE (nong-trai-nhe.js) — body.nt-nhe: bot hieu ung cho may cham ══════════
+   An lop trang tri chay lien tuc (may, buom, chim, tuyet, ong gia Noel, dom dom), dung chuyen dong trang tri tren ruong,
+   bo filter bong do (ton GPU nhat tren dien thoai). Do vat, thanh thoi gian, bong bong viec, nhan vat di lai van giu. */
+body.nt-nhe .nt-canh, body.nt-nhe .nt-noel-tuyet, body.nt-nhe .nt-santa, body.nt-nhe .nt-que-tren,
+body.nt-nhe .nt-ntt-tuyet, body.nt-nhe .nt-noel-day { display: none !important; }
+body.nt-nhe .nt-dat .nt-vat, body.nt-nhe .nt-dat .nt-vat *, body.nt-nhe .nt-dat .nt-vat::before, body.nt-nhe .nt-dat .nt-vat::after, body.nt-nhe .nt-dat .nt-vat *::before, body.nt-nhe .nt-dat .nt-vat *::after,
+body.nt-nhe .nt-nv-hinh, body.nt-nhe .nt-nv-hinh * { animation: none !important; }
+body.nt-nhe .nt-dat .nt-hinh, body.nt-nhe .nt-dat img, body.nt-nhe .nt-dat svg { filter: none !important; }
+body.nt-nhe .nt-tt-troi .may, body.nt-nhe .nt-tt-troi .chim { animation: none !important; }
+.nt-them-nhe .nt-them-emo { background: #e8f5e9; }

@@ -413,10 +413,3 @@ body.nt-noel.o-thi-tran .nt-santa { z-index: 49; }
   .nt-ntt-cay::before { animation: none; opacity: 0.8; }
   .nt-noel-day-b:nth-child(3n) { animation: none; }
 }
-
-/* ══════════ cay thong 3D xoay (nong-trai-noel-3d.js): canvas thay anh nen + lop SVG ══════════ */
-.c3d > .nt-c3d { position: absolute; inset: -4% -10% 0; width: 120%; height: 104%; display: block; touch-action: pan-y; cursor: grab; }
-.c3d > .nt-c3d:active { cursor: grabbing; }
-.c3d > .nt-c3d:focus-visible { outline: 3px solid #ffe066; outline-offset: 2px; border-radius: 16px; }
-.nt-nd-cay.c3d { aspect-ratio: 200 / 230; }
-.nt-nd-tien small { font-weight: 600; opacity: 0.85; }

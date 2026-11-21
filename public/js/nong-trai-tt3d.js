@@ -160,7 +160,7 @@
   function quang(x, y, LO) {
     var h = '<span class="tt3-quang" style="left:' + x + 'px;top:' + y + 'px;width:' + LO + 'px;height:' + LO + 'px"></span>';
     var noel = document.body.classList.contains('nt-noel');
-    if (noel) h += dung('<img src="' + N.anh('noel-cay-lon') + '" alt="" draggable="false"><span class="tt3-cay-xem">✨ Chạm để xem cây 3D</span>', x + LO / 2, y + LO * 0.62, LO * 0.8, LO * 0.96, 'tt3-cay', 0, ' data-tt3-cay role="button" tabindex="0" aria-label="Cây thông Noel của thị trấn — chạm để xem 3D"');
+    if (noel) h += dung('<img src="' + N.anh('noel-cay-lon') + '" alt="" draggable="false"><span class="tt3-cay-xem">✨ Chạm để xem lung linh</span>', x + LO / 2, y + LO * 0.62, LO * 0.8, LO * 0.96, 'tt3-cay', 0, ' data-tt3-cay role="button" tabindex="0" aria-label="Cây thông Noel của thị trấn — chạm để xem lung linh"');
     else h += dung('<img src="' + N.anh('dinh') + '" alt="" draggable="false">', x + LO / 2, y + LO * 0.6, LO * 0.6, LO * 0.6, 'tt3-vat');
     h += dung('<img src="' + N.anh('gieng') + '" alt="" draggable="false">', x + LO * 0.18, y + LO * 0.85, LO * 0.22, LO * 0.22, 'tt3-vat');
     h += dung('<img src="' + N.anh('chau-hoa') + '" alt="" draggable="false">', x + LO * 0.85, y + LO * 0.86, LO * 0.18, LO * 0.18, 'tt3-vat');

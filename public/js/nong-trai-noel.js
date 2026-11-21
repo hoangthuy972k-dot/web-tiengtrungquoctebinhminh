@@ -135,40 +135,6 @@
     N.datViTriNoi();
   });
 
-  /* ---------------- cay thong 3D xoay (public/js/nong-trai-noel-3d.js): du lieu + gan canvas ---------------- */
-  function c3dTt(cay) {
-    var mon = [], qua = [], vat = 0, cap = cay.cap || 0;
-    (cay.ds || []).forEach(function (x, i) {
-      if (x.k === 'qua') { if (qua.length < 12) qua.push(N.anh(['noel-qua', 'noel-qua-2', 'noel-qua-3'][qua.length % 3])); return; }
-      mon.push({ hinh: N.anh(x.k === 'chau' ? MAU_CHAU[vat % 4] : 'noel-' + x.k), co: x.k === 'chau' ? 0.9 : 1, du: i });
-      vat++;
-    });
-    return { mon: mon, qua: qua, sao: true, saoAnh: N.anh('noel-sao'), saoSang: cap >= 3, den: [0, 0.3, 0.6, 1, 1, 1][cap] || 0, hao: cap >= 5 };
-  }
-  function c3dTr(tr) {
-    tr = tr || {};
-    var mon = [], qua = [], c = cat();
-    ['chau', 'keo', 'chuong', 'no'].forEach(function (k) {
-      for (var i = 0; i < (tr[k] || 0); i++) mon.push({ hinh: N.anh(k === 'chau' ? MAU_CHAU[i % MAU_CHAU.length] : 'noel-' + k), co: k === 'chau' ? 1.15 : 1.3, du: k });
-    });
-    for (var q = 0; q < Math.min(QUA.length, tr.qua || 0); q++) qua.push(N.anh(QUA[q][3]));
-    return { mon: mon, qua: qua, sao: !!tr.sao, saoAnh: N.anh('noel-sao'), saoSang: !!tr.sao, den: Math.min(2, tr.den || 0) / 2, hao: !!(c && soTr(tr) >= c.TR_DU) };
-  }
-  // thay hinh phang (anh nen + lop SVG) bang canvas 3D xoay; may khong ho tro canvas -> giu hinh phang
-  function gan3d(cayEl, o) {
-    if (!window.NTCay3D || !cayEl) return null;
-    var cv = document.createElement('canvas');
-    if (!cv.getContext || !cv.getContext('2d')) return null;
-    cv.className = 'nt-c3d';
-    cv.setAttribute('role', 'img');
-    cv.setAttribute('aria-label', 'Cây thông Noel 3D — kéo sang trái hoặc phải để xoay');
-    $all('.nt-ntt-nen, .nt-ntt-tr, .nt-noel-xem-hinh, .nt-noel-tr', cayEl).forEach(function (x) { x.remove(); });
-    cayEl.classList.add('c3d');
-    cayEl.insertBefore(cv, cayEl.firstChild);
-    return NTCay3D.tao(cv, o);
-  }
-  N.noelC3d = { tt: c3dTt, tr: c3dTr, gan: gan3d };
-
   /* ---------------- bang trang tri cay thong cua em ---------------- */
   var THU_TU = ['sao', 'den', 'no', 'chau', 'chuong', 'keo', 'qua'];
   N.dangKy('noel-cay', function (than, bang) {
@@ -194,7 +160,6 @@
     });
     h += '</div><p class="nt-meo">' + N.img('ic-xu') + ' Em có <b>' + xu.toLocaleString('vi-VN') + '</b> xu. Mỗi 2 món +1 điểm đẹp, ngôi sao +3. Đồ đã treo giữ mãi, cả sau mùa Noel.</p></div></div>';
     than.innerHTML = h;
-    gan3d(than.querySelector('.nt-noel-xem-cay'), c3dTr(tr));
     $all('[data-noel-tr]', than).forEach(function (b) {
       b.addEventListener('click', function () {
         var k = b.getAttribute('data-noel-tr'), m = c.TR[k];
@@ -557,15 +522,12 @@
         '<img class="nt-ntt-nen" src="' + N.anh('noel-cay-lon') + '" alt="" draggable="false">' + svgTt(cay) + '</div>' +
       '<canvas class="nt-nd-truoc" aria-hidden="true"></canvas>' +
       '<button type="button" class="nt-nd-chu" data-doc="' + esc(c.CHUC.zh) + '"><b lang="zh">' + esc(c.CHUC.zh) + '</b><span>' + esc(c.CHUC.py) + '</span><i>' + esc(c.CHUC.vn) + ' 🔊</i></button>' +
-      '<p class="nt-nd-tien">🎄 Cây thông của thị trấn · <b>' + cay.n + ' món</b> · ' + esc(c.MOC_SANG[cay.cap].vn) + (window.NTCay3D ? '<br><small>👆 Kéo sang trái / phải để xoay cây · chạm vào món để xem ai treo</small>' : '') + '</p>' +
+      '<p class="nt-nd-tien">🎄 Cây thông của thị trấn · <b>' + cay.n + ' món</b> · ' + esc(c.MOC_SANG[cay.cap].vn) + '</p>' +
       '<button type="button" class="nt-nd-dong" aria-label="Đóng">✕</button>';
     document.body.appendChild(d);
     document.body.classList.add('nt-nd-mo');
     $all('img', d).forEach(function (im) { im.addEventListener('error', function () { im.classList.add('hong'); }, { once: true }); });
     var cayEl = d.querySelector('.nt-nd-cay'), sau = d.querySelector('.nt-nd-sau'), tr = d.querySelector('.nt-nd-truoc');
-    gan3d(cayEl, Object.assign(c3dTt(cay), {
-      cham: function (i) { var x = cay.ds[i], m = x && c.TT_TR[x.k]; if (m) N.bao('🎄 ' + (x.em ? 'Em' : tenNgan(x.ten)) + ' đã treo ' + m.vn.toLowerCase() + ' ' + m.zh + ' ' + m.py); }
-    }));
     canhTuyet(sau, { mat: 2600, to: 0.75, toc: 0.7, sao: 4, gio: 4 });
     canhTuyet(tr, { mat: 9000, to: 1.6, toc: 1.25, gio: 10, lapTu: lapTrenCay(cayEl, tr), lapSo: 14 });
     function dong() {
@@ -604,7 +566,6 @@
     noi.innerHTML = '<canvas class="nt-ntt-tuyet" aria-hidden="true"></canvas>' + htmlTt(r);
     $all('img', noi).forEach(function (im) { im.addEventListener('error', function () { im.classList.add('hong'); }, { once: true }); });
     var cayEl = noi.querySelector('.nt-ntt-cay'), cv = noi.querySelector('.nt-ntt-tuyet');
-    gan3d(cayEl, c3dTt(r.cay));
     if (cayEl) {
       cayEl.setAttribute('role', 'button');
       cayEl.setAttribute('tabindex', '0');
@@ -624,9 +585,7 @@
       if (m) N.bao('🎄 ' + (x.em ? 'Em' : tenNgan(x.ten)) + ' đã treo ' + m.vn.toLowerCase() + ' ' + m.zh + ' ' + m.py);
       return;
     }
-    var cayB = e.target.closest('.nt-ntt-cay');
-    // vua keo de xoay cay 3D thi khong mo man dem
-    if (cayB) { var c3 = cayB.querySelector('.nt-c3d'); if (c3 && c3._keoLuc && performance.now() - c3._keoLuc < 450) return; moDem(); }
+    if (e.target.closest('.nt-ntt-cay')) moDem();
   }
   function treoTt(b) {
     if (TT.dang) return;

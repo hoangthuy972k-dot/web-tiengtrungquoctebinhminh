@@ -126,6 +126,26 @@ const SP = {
   kongqueyu: { zh: '孔雀羽毛', py: 'kǒngquè yǔmáo', vn: 'Lông chim công', ban: 480 },
 };
 Object.keys(CAY).forEach((k) => { SP[k] = { zh: CAY[k].zh, py: CAY[k].py, vn: CAY[k].vn, ban: CAY[k].ban }; if (CAY[k].hiem) SP[k].hiem = 1; });
+// Dot bien 突变 (2026-11-23, y tuong cua hoc sinh: "qua dot bien mau / gene, gia cao hon nhung khong nau an duoc"):
+// thu hoach 1 o co xac suat DB_TL ra 1 qua dot bien (o da tuoi = tra loi dung cau hoi -> x2). Hang dot bien la SP rieng
+// 'db<l>-<cay>' (db: l, goc: cay): ban duoc gia cao, KHONG nau an / che bien / giao don duoc (cong thuc dung ma goc).
+// Hinh: may chu ve tu hinh goc (/images/farm/db/<l>/<cay>.svg).
+const DOT_BIEN = [
+  { l: 1, zh: '巨型', py: 'jùxíng', vn: 'khổng lồ', tl: 3, min: 12, ti: 55 },
+  { l: 2, zh: '金色', py: 'jīnsè', vn: 'vàng kim', tl: 6, min: 30, ti: 33 },
+  { l: 3, zh: '彩虹', py: 'cǎihóng', vn: 'cầu vồng', tl: 12, min: 80, ti: 12 },
+];
+const DB_TL = 0.025;
+const dbKey = (l, c) => 'db' + l + '-' + c;
+Object.keys(CAY).forEach((c) => DOT_BIEN.forEach((m) => {
+  SP[dbKey(m.l, c)] = { zh: m.zh + CAY[c].zh, py: m.py + ' ' + CAY[c].py, vn: CAY[c].vn + ' ' + m.vn, ban: Math.max(m.min, Math.round(CAY[c].ban * m.tl)), db: m.l, goc: c };
+}));
+function quayDotBien(o) {
+  if (Math.random() >= DB_TL * (o.t ? 2 : 1)) return null;
+  let r = Math.random() * 100;
+  for (const m of DOT_BIEN) { if (r < m.ti) return m; r -= m.ti; }
+  return DOT_BIEN[0];
+}
 // Hang che bien (nha may) + hang mua o cho (nguyen lieu, thuc an chan nuoi) — danh muc o nong-trai-xuong.js
 const XuongCat = require('./nong-trai-xuong').CAT;
 XuongCat.dangKySp(SP);
@@ -919,16 +939,24 @@ function quayO(f, lv, rnd) {
 // Thu hoach cac o ruong da chin (em bam hoac nguoi lam thue): ×2 tu vong quay ap dung toi da VQ_X2_O o
 function thuRuong(f, ds, dacSanEm, congSp) {
   let x2 = f.x2thu ? VQ_X2_O : 0, dung = 0, xp = 0, dacSan = '';
+  const db = [];
   ds.forEach((o) => {
     let n = (taiHieu(f, 'thu') || THU_MOI_O) + (o.c === dacSanEm ? 1 : 0);
     if (x2 > 0) { n *= 2; x2--; dung++; }
-    congSp(o.c, n);
+    // dot bien: 1 qua trong me thu hoach bien thanh qua dot bien
+    const m = !CAY[o.c].hiem && quayDotBien(o);
+    if (m) {
+      const k = dbKey(m.l, o.c);
+      congSp(k, 1); n = Math.max(0, n - 1);
+      db.push(k); f.dotBien = f.dotBien || {}; f.dotBien[k] = (f.dotBien[k] || 0) + 1;
+    }
+    if (n) congSp(o.c, n);
     if (o.c === dacSanEm) dacSan = o.c;
     xp += CAY[o.c].xp;
     o.c = null; o.h = null; o.t = 0;
   });
   if (dung) delete f.x2thu;
-  return { xp, dacSan, x2: dung };
+  return { xp, dacSan, x2: dung, db };
 }
 // Nhat san pham vat nuoi (dac san +1, an thuc an chan nuoi +1)
 function nhatCon(f, ds, dacSanEm, congSp) {
@@ -943,7 +971,55 @@ function nhatCon(f, ds, dacSanEm, congSp) {
   return { xp, dacSan };
 }
 
+// Hinh qua dot bien: ve tu hinh nong san goc (giu net ve tay vien dam) — khong luu file, cache trong bo nho
+const HINH_DB = new Map();
+function hinhDotBien(l, c) {
+  const key = l + '/' + c;
+  if (HINH_DB.has(key)) return HINH_DB.get(key);
+  const goc = path.join(__dirname, 'public', 'images', 'farm', 'sp-' + c + '.svg');
+  let s;
+  try { s = fsMod.readFileSync(goc, 'utf8'); } catch (e) { return null; }
+  const m = /<svg[^>]*>([\s\S]*)<\/svg>/.exec(s);
+  if (!m) return null;
+  const ruot = m[1].replace(/id="([^"]+)"/g, 'id="g-$1"').replace(/url\(#([^)]+)\)/g, 'url(#g-$1)').replace(/href="#([^"]+)"/g, 'href="#g-$1"');
+  const V = '#2b1d3a';
+  const lap = (x, y, r, mau) => '<path d="M' + x + ' ' + (y - r) + 'Q' + x + ' ' + y + ' ' + (x + r) + ' ' + y + 'Q' + x + ' ' + y + ' ' + x + ' ' + (y + r) + 'Q' + x + ' ' + y + ' ' + (x - r) + ' ' + y + 'Q' + x + ' ' + y + ' ' + x + ' ' + (y - r) + 'Z" fill="' + mau + '" stroke="' + V + '" stroke-width="1.2"/>';
+  // huy hieu gene (chuoi xoan ADN nho) goc tren phai
+  const gen = '<g transform="translate(80 16)"><circle r="12" fill="#fff8ec" stroke="' + V + '" stroke-width="2.4"/>' +
+    '<path d="M-4-8Q6-4-4 0T-4 8M4-8Q-6-4 4 0T4 8" fill="none" stroke="#7b1fa2" stroke-width="2" stroke-linecap="round"/>' +
+    '<path d="M-3-5H3M-3 4H3" stroke="' + V + '" stroke-width="1.4"/></g>';
+  let o;
+  if (l === 1) {
+    o = '<ellipse cx="50" cy="90" rx="40" ry="6" fill="#000" opacity=".18"/>' +
+      '<g transform="translate(50 92) scale(1.16) translate(-50 -92)">' + ruot + '</g>' +
+      '<text x="14" y="22" font-size="15" font-weight="900" fill="#e65100" stroke="#fff8ec" stroke-width="3" paint-order="stroke" font-family="Noto Serif SC, serif">巨</text>';
+  } else if (l === 2) {
+    o = '<defs><filter id="db-vang" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0.55 0.55 0.15 0 0.2  0.45 0.45 0.12 0 0.12  0.12 0.12 0.06 0 0  0 0 0 1 0"/></filter>' +
+      '<radialGradient id="db-hao"><stop offset="0" stop-color="#fff59d" stop-opacity=".9"/><stop offset="1" stop-color="#ffd54f" stop-opacity="0"/></radialGradient></defs>' +
+      '<circle cx="50" cy="52" r="46" fill="url(#db-hao)"/><g filter="url(#db-vang)">' + ruot + '</g>' +
+      lap(20, 28, 7, '#fff59d') + lap(78, 70, 5, '#ffe082') + lap(28, 74, 4, '#fff');
+  } else {
+    o = '<defs><linearGradient id="db-cv" gradientUnits="userSpaceOnUse" x1="20" y1="20" x2="62" y2="62" spreadMethod="reflect"><stop offset="0" stop-color="#ff5252"/><stop offset=".2" stop-color="#ffb300"/><stop offset=".4" stop-color="#ffee58"/>' +
+      '<stop offset=".6" stop-color="#66bb6a"/><stop offset=".8" stop-color="#42a5f5"/><stop offset="1" stop-color="#ab47bc"/></linearGradient>' +
+      '<filter id="db-trang" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0"/></filter>' +
+      '<mask id="db-m" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100"><g filter="url(#db-trang)">' + ruot + '</g></mask></defs>' +
+      '<g>' + ruot + '</g><rect width="100" height="100" fill="url(#db-cv)" mask="url(#db-m)" style="mix-blend-mode:color"/><rect width="100" height="100" fill="url(#db-cv)" mask="url(#db-m)" opacity=".18"/>' +
+      lap(18, 26, 6, '#fff') + lap(82, 72, 5, '#b3e5fc') + lap(24, 76, 4, '#f8bbd0');
+  }
+  const svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">' + o + gen + '</svg>';
+  HINH_DB.set(key, svg);
+  return svg;
+}
+
 module.exports = function ganNongTrai(app, d) {
+  app.get('/images/farm/db/:l/:c.svg', (req, res, next) => {
+    const l = Number(req.params.l), c = String(req.params.c);
+    if (!(l >= 1 && l <= 3) || !CAY[c]) return next();
+    const svg = hinhDotBien(l, c);
+    if (!svg) return next();
+    res.setHeader('Cache-Control', 'public, max-age=86400');
+    res.type('image/svg+xml').send(svg);
+  });
   let thiDua = null; // nong-trai-thidua.js (gan o cuoi)
   let xuongMod = null; // nong-trai-xuong.js (gan o cuoi)
   let tinMod = null;   // nong-trai-tin.js (gan o cuoi)
@@ -1374,6 +1450,7 @@ module.exports = function ganNongTrai(app, d) {
       them.soO = ds.length;
       if (r.dacSan) them.dacSan = r.dacSan;
       if (r.x2) them.x2 = r.x2;
+      if (r.db && r.db.length) them.db = r.db;
     } else if (a === 'choan') {
       const o = timO();
       if (!CON[o.k]) throw loi('Không phải vật nuôi.');
@@ -1723,7 +1800,7 @@ module.exports = function ganNongTrai(app, d) {
     let cho = {};
     try { (await taiCongDong()).forEach((x) => { if (x.id !== userId) x.sap.forEach((o) => { cho[o.k] = (cho[o.k] || 0) + o.n; }); }); } catch (e) { cho = {}; }
     let ung = Object.keys(cho).filter((k) => SP[k] && k !== 'len' && !SP[k].nl && !tuLam(k));
-    if (!ung.length) ung = Object.keys(SP).filter((k) => k !== 'len' && !CA[k] && !SP[k].hiem && !SP[k].nl && !(MON[k] && MON[k].lv) && !tuLam(k));
+    if (!ung.length) ung = Object.keys(SP).filter((k) => k !== 'len' && !CA[k] && !SP[k].hiem && !SP[k].nl && !SP[k].db && !(MON[k] && MON[k].lv) && !tuLam(k));
     if (!ung.length) ung = Object.keys(MON);
     const can = {};
     tronMang(ung).slice(0, Math.random() < 0.5 ? 1 : 2).forEach((k) => { can[k] = Math.max(1, Math.min(3, cho[k] || 2, 1 + Math.floor(Math.random() * 3))); });
@@ -2307,7 +2384,7 @@ module.exports = function ganNongTrai(app, d) {
       return { loai: 'tt', k, n: 1, hiem: r >= 85 ? 'Quý' : 'Đẹp' };
     }
     if (r >= 45) { const n = 20 + Math.floor(Math.random() * 21); f.xu += n; return { loai: 'xu', k: 'xu', n, hiem: 'Thường' }; }
-    const sp = Object.keys(SP).filter((k) => !CA[k] && !SP[k].hiem && !SP[k].nl && (!CAY[k] || CAY[k].lv <= lv + 1));
+    const sp = Object.keys(SP).filter((k) => !CA[k] && !SP[k].hiem && !SP[k].nl && !SP[k].db && (!CAY[k] || CAY[k].lv <= lv + 1));
     const k = chon(sp), n = CAY[k] ? 3 : 2;
     f.kho[k] = (f.kho[k] || 0) + n;
     return { loai: 'sp', k, n, hiem: 'Thường' };

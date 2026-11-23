@@ -24,6 +24,7 @@
   function anh(ten) {
     var sp = /^sp-/.test(ten) && typeof S !== 'undefined' && S && S.cat && S.cat.SP[ten.slice(3)];
     if (sp && sp.hinh) return '/images/wu/' + sp.hinh + '.png';
+    if (sp && sp.db) return '/images/farm/db/' + sp.db + '/' + sp.goc + '.svg';
     return ANH + ten + '.svg' + V;
   }
   function img(ten, cls) {
@@ -702,6 +703,7 @@
       nhanTrangThai(r.st);
       hienThem(r.them, vt);
       if (nguonThu && nguonThu.length) hieuUngThu(nguonThu, r.them);
+      if (r.them && r.them.db && r.them.db.length) setTimeout(function () { dotBien(r.them.db); }, 700);
       if (r.them && r.them.dacSan) setTimeout(function () { var m = S.cat.SP[r.them.dacSan]; bao('⭐ Đặc sản ' + (m ? m.zh + ' ' + m.vn.toLowerCase() : '') + ': thu thêm được 1! Bán cho các bạn đang cần nhé.'); }, 900);
       if (r.lenCap) setTimeout(function () { lenCap(r.lenCap); }, 700);
       return r;
@@ -710,6 +712,23 @@
       if (err.message !== 'ban') { bao(err.message, 'loi'); tieng('sai'); }
       throw err;
     });
+  }
+  // Qua dot bien 突变 khi thu hoach (may chu quay): bang chuc mung + doc to ten
+  function dotBien(ds) {
+    var LOAI = { 1: 'Khổng lồ', 2: 'Vàng kim', 3: 'Cầu vồng' };
+    var h = ds.map(function (k) {
+      var m = S.cat.SP[k] || {};
+      return '<div class="nt-db-mon db' + m.db + '">' + img('sp-' + k, 'nt-db-hinh') + '<b lang="zh">' + esc(m.zh || '') + '</b><small>' + esc(m.py || '') + '</small>' +
+        '<span>' + esc(m.vn || '') + '</span><em>Bán ' + img('ic-xu') + ' ' + (m.ban || 0) + ' xu</em></div>';
+    }).join('');
+    var m0 = S.cat.SP[ds[0]] || {};
+    tieng('len');
+    doc((m0.zh || '') + '！');
+    if (FX) FX.mung({ x: innerWidth / 2, y: innerHeight * 0.4 }, m0.db >= 2);
+    moBangNho('<div class="nt-chuc nt-db"><span class="nt-db-gen" aria-hidden="true">🧬</span><h2>Đột biến! <span lang="zh">突变</span></h2>' +
+      '<p class="nt-cn-nho">tūbiàn · ' + esc(LOAI[m0.db] || '') + '</p>' + h +
+      '<p class="nt-db-chu">Quả đột biến hiếm, <b>bán được giá cao</b> — nhưng gene đã đổi nên <b>không nấu ăn hay chế biến được</b>. Cây được em <b>tưới</b> (trả lời đúng câu hỏi) dễ đột biến gấp đôi!</p>' +
+      '<div class="nt-hang-nut"><button type="button" class="nt-nut nt-nut-xanh" data-dong>Tuyệt quá! 太好了</button></div></div>');
   }
   function soGon(n) {
     if (n < 10000) return String(n);

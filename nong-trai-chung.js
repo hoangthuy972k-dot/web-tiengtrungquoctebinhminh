@@ -1036,7 +1036,7 @@ module.exports = function ganHoatDongChung(app, d, h) {
   /* ---------------- Bang tin 公告栏 + cay uoc nguyen 许愿树 ---------------- */
   function tuBt(o) {
     if (o === 'con') return Object.keys(h.CON);
-    if (o === 'sp') return Object.keys(h.SP);
+    if (o === 'sp') return Object.keys(h.SP).filter((k) => !h.SP[k].db);
     return (h.TIN_TU[o] || []).map((w) => w.k);
   }
   app.get('/api/farm/bangtin', d.requireAuth, d.asyncRoute(async (req, res) => {

@@ -2813,3 +2813,18 @@ body.nt-nhe .nt-nv-hinh, body.nt-nhe .nt-nv-hinh * { animation: none !important;
 body.nt-nhe .nt-dat .nt-hinh, body.nt-nhe .nt-dat img, body.nt-nhe .nt-dat svg { filter: none !important; }
 body.nt-nhe .nt-tt-troi .may, body.nt-nhe .nt-tt-troi .chim { animation: none !important; }
 .nt-them-nhe .nt-them-emo { background: #e8f5e9; }
+
+/* ---------- qua dot bien 突变 (thu hoach) ---------- */
+.nt-db { text-align: center; }
+.nt-db-gen { display: block; font-size: 2.4rem; line-height: 1; }
+.nt-db-mon { display: inline-flex; flex-direction: column; align-items: center; gap: 2px; margin: 8px 6px; padding: 10px 14px; border: 3px solid var(--vien); border-radius: 18px; background: #fff8ec; box-shadow: var(--bong); min-width: 140px; }
+.nt-db-mon.db2 { background: linear-gradient(160deg, #fffde7, #ffe082); }
+.nt-db-mon.db3 { background: linear-gradient(135deg, #ffcdd2, #fff9c4, #c8e6c9, #bbdefb, #e1bee7); }
+.nt-db-hinh { width: 96px; height: 96px; }
+.nt-db-mon b { font-family: 'Noto Serif SC', serif; font-size: 1.3rem; }
+.nt-db-mon small { color: var(--mo); font-weight: 700; }
+.nt-db-mon em { font-style: normal; font-weight: 800; display: inline-flex; align-items: center; gap: 4px; }
+.nt-db-mon em img { width: 20px; height: 20px; }
+.nt-db-chu { max-width: 34em; margin: 8px auto; line-height: 1.5; }
+@media (prefers-reduced-motion: no-preference) { .nt-db-hinh { animation: nt-db-nay 1.6s ease-in-out infinite alternate; } }
+@keyframes nt-db-nay { from { transform: translateY(0) rotate(-3deg); } to { transform: translateY(-5px) rotate(3deg); } }

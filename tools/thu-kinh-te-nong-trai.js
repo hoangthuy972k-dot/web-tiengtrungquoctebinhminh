@@ -63,7 +63,7 @@ const CU = [{ l: 'xu', n: 5, w: 20 }, { l: 'sp', n: 3, w: 16 }, { l: 'xu', n: 10
 const tongCu = CU.reduce((s, o) => s + o.w, 0);
 // (giu moc so sanh cu: bo san pham cua vat nuoi cap cao them 2026-11-15 — vong quay cu khong co chung)
 const spCapCao = {}; Object.keys(CON).forEach((c) => { if (CON[c].lv > 30) spCapCao[CON[c].sp] = 1; });
-const spCu = tb(Object.keys(SP).filter((k) => !SP[k].mon && !SP[k].ca && !SP[k].nl && !SP[k].gc && !SP[k].hiem && !spCapCao[k] && (!CAY[k] || CAY[k].lv <= lvMau + 1)).map((k) => SP[k].ban));
+const spCu = tb(Object.keys(SP).filter((k) => !SP[k].mon && !SP[k].ca && !SP[k].nl && !SP[k].gc && !SP[k].hiem && !SP[k].db && !spCapCao[k] && (!CAY[k] || CAY[k].lv <= lvMau + 1)).map((k) => SP[k].ban));
 const evCu = CU.reduce((s, o) => s + o.w / tongCu * (o.l === 'xu' ? o.n : o.l === 'sp' ? 3 * spCu : o.l === 'tt' ? GT.tt() : o.l === 'con' ? GT.con(lvMau + 1) : 0), 0) / (1 - 8 / tongCu);
 console.log('  Gia tri ky vong 1 luot (quy ra xu, nong trai mau cap ' + lvMau + '): cu ≈ ' + evCu.toFixed(1) + ' · moi ≈ ' + evMoi.toFixed(1) + ' (' + ((evMoi / evCu - 1) * 100).toFixed(0) + '%)');
 console.log('  O xau (mat luot + chuot): ' + VQ_O.filter((o) => o.xau).reduce((s, o) => s + o.w, 0) + '% · o hiem (hat quy + thu hiem): ' + VQ_O.filter((o) => o.hiem).reduce((s, o) => s + o.w, 0) + '%');
@@ -109,7 +109,9 @@ const ds = [];
 for (let i = 0; i < 10; i++) ds.push({ k: 'o', c: 'lua', h: 0 });
 const cong = (k, n) => { f2.kho[k] = (f2.kho[k] || 0) + n; };
 const r2 = thuRuong(f2, ds, '', cong);
-if (f2.kho.lua !== VQ_X2_O * 4 + (10 - VQ_X2_O) * 2 || f2.x2thu || r2.x2 !== VQ_X2_O) sai('×2 thu hoach sai: ' + JSON.stringify(f2));
+// qua dot bien (ngau nhien) cung tinh vao so luong thu duoc
+const luaVaDb = (f2.kho.lua || 0) + Object.keys(f2.kho).filter((k) => /^db[1-3]-lua$/.test(k)).reduce((t, k) => t + f2.kho[k], 0);
+if (luaVaDb !== VQ_X2_O * 4 + (10 - VQ_X2_O) * 2 || f2.x2thu || r2.x2 !== VQ_X2_O) sai('×2 thu hoach sai: ' + JSON.stringify(f2));
 const r3 = thuRuong(f2, [{ k: 'o', c: 'lua', h: 0 }], '', cong);
 if (r3.x2) sai('×2 dung lai lan 2');
 console.log('×2 thu hoach: 10 o -> ' + VQ_X2_O + ' o gap doi, lan sau binh thuong ✓');

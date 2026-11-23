@@ -5800,7 +5800,8 @@
     thiTran: function () { return thiTran; }, trangThai: trangThai, danTt: function () { return DAN; }, svgDan: svgDan,
     sauTt: [], // (r) goi sau moi lan ve thi tran (module them)
     veBanDo: veBanDo, hangPx: hangPx, datTuManHinh: datTuManHinh, manHinhTuDat: manHinhTuDat, zSau: zSau, capNhatSau: capNhatSau,
-    sauXoay: [], // ham goi khi goc xoay 3D doi (cap nhat z-index cua do dung thang module them) huyBac: huyBac, bacCua: bacCua, xpCap: xpCap, lenCapCu: null,
+    sauXoay: [], // ham goi khi goc xoay 3D doi (cap nhat z-index cua do dung thang module them)
+    huyBac: huyBac, bacCua: bacCua, xpCap: xpCap, lenCapCu: null,
     fx: FX, moiBaiHoc: function () { return linkHoc(); },
     sauBang: [], // ham goi sau moi lan ve 1 bang (bangDang) — nut ❓ + huong dan lan dau
     sauVe: [], // ham goi sau moi lan ve lai ban do (innerHTML thay het)

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Truyện song ngữ · Hi Hán 喜汉</title>
+<meta name="description" content="Truyện ngắn song ngữ Trung – Việt theo từng bài HSK (3.0): chỉ dùng từ em đã học, bấm vào từ để xem pinyin, nghĩa và nghe đọc, trả lời 3 câu hỏi để nhận sao.">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/truyen.css">
+</head>
+<body class="tr-body">
+
+<div class="tr-khung">
+
+  <!-- ═════════════ DANH SÁCH TRUYỆN ═════════════ -->
+  <section id="trDs" class="tr-man" aria-labelledby="trTieuDe">
+    <nav class="tr-dau" aria-label="Điều hướng">
+      <a class="tr-ve" href="/"><span aria-hidden="true">←</span> Trang chủ</a>
+      <span class="tr-tien-do" id="trTienDo" hidden></span>
+    </nav>
+
+    <header class="tr-hero">
+      <div class="tr-hero-dau" aria-hidden="true">故事</div>
+      <div class="tr-hero-chu">
+        <h1 id="trTieuDe">Truyện song ngữ <span lang="zh" class="tr-zh-nho">双语故事</span></h1>
+        <p>Truyện ngắn chỉ dùng từ em đã học. Bấm vào từ để xem pinyin, nghĩa và nghe đọc — đọc xong trả lời 3 câu hỏi để nhận ⭐.</p>
+      </div>
+    </header>
+
+    <p class="tr-khach" id="trKhach" hidden>
+      <span aria-hidden="true">🔑</span> Em đang đọc với tư cách khách: đọc được các truyện HSK 1.
+      <a href="/">Đăng nhập</a> để mở truyện theo bài em đã học, lưu truyện đã đọc và nhận sao.
+    </p>
+
+    <div class="tr-cap" role="tablist" aria-label="Chọn cấp độ" id="trCap"></div>
+    <div class="tr-luoi" id="trLuoi" role="tabpanel" aria-live="polite">
+      <p class="tr-cho">Đang tải truyện…</p>
+    </div>
+  </section>
+
+  <!-- ═════════════ ĐỌC TRUYỆN ═════════════ -->
+  <section id="trDoc" class="tr-man" hidden aria-labelledby="trDocTen">
+    <div class="tr-thanh">
+      <button type="button" class="tr-ve" id="trVeDs"><span aria-hidden="true">←</span> Danh sách</button>
+      <div class="top-toggles tr-bat-tat">
+        <button type="button" class="pinyin-toggle" id="trBatPy" aria-pressed="true">
+          <span class="tt-label">Pinyin</span>
+          <span class="pinyin-toggle-switch" aria-hidden="true"><span class="pinyin-toggle-knob"></span></span>
+        </button>
+        <button type="button" class="pinyin-toggle" id="trBatVn" aria-pressed="false">
+          <span class="tt-label">Dịch</span>
+          <span class="pinyin-toggle-switch" aria-hidden="true"><span class="pinyin-toggle-knob"></span></span>
+        </button>
+      </div>
+    </div>
+
+    <article class="tr-bai" id="trBai">
+      <header class="tr-bai-dau">
+        <div class="tr-bai-hinh" id="trDocHinh"></div>
+        <div class="tr-bai-ten">
+          <p class="tr-bai-cap" id="trDocCap"></p>
+          <h2 id="trDocTen" lang="zh"></h2>
+          <p class="tr-bai-py" id="trDocPy"></p>
+          <p class="tr-bai-vn" id="trDocVn"></p>
+        </div>
+      </header>
+      <div class="tr-nghe-ca">
+        <button type="button" class="tr-nut tr-nut-chinh" id="trNgheCa"><span aria-hidden="true">🔊</span> <span class="tr-nghe-ca-chu">Nghe cả truyện</span></button>
+        <p class="tr-meo">Bấm vào một từ để xem pinyin, nghĩa và nghe đọc.</p>
+      </div>
+      <ol class="tr-cau" id="trCau"></ol>
+    </article>
+
+    <section class="tr-hoi" id="trHoi" aria-labelledby="trHoiTen">
+      <h2 id="trHoiTen">Em hiểu truyện không? <span lang="zh" class="tr-zh-nho">你看懂了吗？</span></h2>
+      <p class="tr-hoi-meo" id="trHoiMeo">Trả lời đúng ít nhất 2/3 câu để đánh dấu đã đọc.</p>
+      <div id="trHoiDs"></div>
+      <div class="tr-hoi-nop">
+        <button type="button" class="tr-nut tr-nut-chinh" id="trNop" disabled>Nộp bài</button>
+      </div>
+      <div class="tr-kq" id="trKq" role="status" aria-live="polite" hidden></div>
+    </section>
+  </section>
+</div>
+
+<!-- Ô nghĩa của từ (bấm vào từ) -->
+<div class="tr-o-tu" id="trOTu" role="dialog" aria-modal="false" aria-labelledby="trOTuZh" hidden>
+  <div class="tr-o-tu-chu">
+    <div class="tr-o-tu-zh" id="trOTuZh" lang="zh"></div>
+    <div class="tr-o-tu-py" id="trOTuPy"></div>
+    <div class="tr-o-tu-vn" id="trOTuVn"></div>
+  </div>
+  <div class="tr-o-tu-nut">
+    <button type="button" class="tr-nut tr-nut-chinh" id="trOTuNghe"><span aria-hidden="true">🔊</span> Nghe</button>
+    <button type="button" class="tr-nut" id="trOTuDong">Đóng</button>
+  </div>
+</div>
+
+<script src="/js/doc-zh.js"></script>
+<script src="/js/truyen-hinh.js"></script>
+<script src="/js/truyen-data.js"></script>
+<script src="/js/truyen.js"></script>
+</body>
+</html>

@@ -120,7 +120,7 @@ window.NT_HUONGDAN = {
       buoc: [['🧑‍🌾', 'Chọn việc rồi bấm “Thuê” (tiền thuê 40 xu): thu hoạch, chăn nuôi hoặc vận chuyển.'], ['💰', 'Lương mỗi ngày làm việc: 15 / 12 / 10 xu.'], ['📚', 'Họ chỉ đi làm vào ngày em học đủ 10 sao. Ngày em chưa học, họ nghỉ phép và không lấy lương.'], ['😊', 'Xem tâm trạng và sổ công việc ở bảng Quản lý. Không trả được lương thì họ buồn, buồn quá sẽ nghỉ việc.']],
       meo: 'Nhân công không tưới nước và không cho ăn — hai việc đó em vẫn làm bằng cách trả lời câu hỏi.', mo: { bang: 'kt-nc' } },
     xuatkhau: { ten: 'Xuất khẩu 出口 (chūkǒu)', ic: '🚚', nhom: 'sx', tn: 'xk', tom: 'Chở hàng tới các vùng đất, lời thêm 20–60%.',
-      de: 'Bán hàng sang 5 vùng đất trên Bản đồ phiêu lưu với giá cao hơn.',
+      de: 'Bán hàng sang 6 vùng đất trên Bản đồ phiêu lưu với giá cao hơn.',
       buoc: [['🗺️', 'Vùng nào em đã tới trạm 2 trên Bản đồ phiêu lưu thì xuất hàng sang được.'], ['📋', 'Chọn hợp đồng có đủ hàng trong kho rồi bấm “Xuất hàng”.'], ['✍️', 'Làm giấy tờ: trả lời đúng 2 câu tiếng Trung theo kiểu của vùng đất đó.'], ['⏳', 'Hàng đi 4–12 giờ. Tới nơi thì bấm “Nhận tiền”.']],
       meo: 'Mỗi tuần xuất tối đa 6 chuyến. Tiền hàng tính vào hạn mức bán ngày — học thêm sao để nhận đủ.', mo: { bang: 'kt-xk' } },
 
@@ -169,10 +169,10 @@ window.NT_HUONGDAN = {
       meo: 'Cấp dưới 10 không bao giờ đóng thuế. Thiếu xu thì ghi nợ thuế, tự trừ dần khi có xu — đang nợ thì chưa mua được đồ trang trí, đất, nhà máy (tiêu hết xu trước ngày chốt không thoát thuế). Không bao giờ lấy đồ. Người đóng nhiều nhất được vinh danh “Nhà hảo tâm của tuần” ở thị trấn; 5 bạn ít tài sản nhất mà học đều nhận trợ cấp 补助 bǔzhù.', mo: { bang: 'kt-thue' } },
 
     /* ---------- Phiêu lưu & truyện ---------- */
-    bando: { ten: 'Bản đồ phiêu lưu 冒险地图 (màoxiǎn dìtú)', ic: '🗺️', nhom: 'pl', tn: 'pl', tom: '5 vùng đất, mỗi vùng luyện một kỹ năng.',
-      de: 'Đi qua 5 vùng đất để luyện pinyin, từ vựng, hội thoại, ngữ pháp và thử thách tổng hợp.',
+    bando: { ten: 'Bản đồ phiêu lưu 冒险地图 (màoxiǎn dìtú)', ic: '🗺️', nhom: 'pl', tn: 'pl', tom: '7 vùng đất, mỗi vùng luyện một kỹ năng — có cả Tháp Thử Thách leo không giới hạn.',
+      de: 'Đi qua 7 vùng đất để luyện pinyin, từ vựng, hội thoại, ngữ pháp, thử thách tổng hợp, nghe hiểu (Rừng Lắng Nghe) và leo Tháp Thử Thách không có đỉnh.',
       buoc: [['📍', 'Chạm một vùng đất đã mở, rồi chọn trạm kế tiếp trên con đường.'], ['❓', 'Mỗi trạm 5 câu từ bài em đã học — đúng 4 câu là qua (5/5 được 3 sao).'], ['🎁', 'Qua trạm lần đầu được quà: xu, hạt giống, hạt quý, đồ trang trí. Trạm cuối có đồ trang trí riêng của vùng.'], ['👑', 'Đế Chế Hán Ngữ mở khi 4 vùng kia mỗi vùng qua ít nhất 3 trạm (10 câu, cần đúng 8).']],
-      meo: 'Chơi lại trạm cũ được +5 xu (tối đa 25 xu mỗi ngày) — ôn bài mà vẫn có thưởng.', mo: { bang: 'kt-pl' } },
+      meo: 'Chơi lại trạm cũ được +5 xu (tối đa 25 xu mỗi ngày) và vẫn tính nhiệm vụ “Qua 1 trạm” — ôn bài mà vẫn có thưởng.', mo: { bang: 'kt-pl' } },
     truyen: { ten: 'Câu chuyện làng Tre Xanh', ic: '📖', nhom: 'pl', tn: 'truyen', tom: 'Mỗi tuần một chương truyện với 5 nhân vật.',
       de: 'Đọc truyện về làng Tre Xanh và giúp các nhân vật — có những câu tiếng Trung em phải hiểu để đi tiếp.',
       buoc: [['📖', 'Bấm “Đọc” chương mới, bấm “Tiếp” để xem từng cảnh.'], ['💬', 'Khi nhân vật nói tiếng Trung: chọn nghĩa, chọn câu đáp hoặc xếp câu. Sai thì được nghe lại kèm pinyin.'], ['🧺', 'Làm 1–2 việc giúp làng (thu hoạch, giao hàng, học đủ sao…) rồi quay lại nghe kể tiếp.'], ['🎁', 'Hết chương nhận quà: xu, hạt giống và một đồ trang trí riêng của chương.']],

@@ -37,6 +37,11 @@ const HANG_GC = {
   zongzi: { zh: '粽子', py: 'zòngzi', vn: 'Bánh ú nhân trứng muối', can: { nuomi: 3, trung: 1, yan: 1 }, phut: 150, l: '个', lv: 46 },
   yuebing: { zh: '月饼', py: 'yuèbing', vn: 'Bánh trung thu nhân sen', can: { mifen: 2, lianou: 1, trung: 2, duong: 1 }, phut: 180, l: '个', lv: 50 },
   zaogao: { zh: '枣糕', py: 'zǎogāo', vn: 'Bánh táo đỏ', can: { hongzao: 2, mifen: 1, trung: 1 }, phut: 150, l: '块', lv: 62 },
+  // Xuong thu bong (2026-11-23, hoc sinh de nghi: 'de gau truc co ich'): gau bong cua gau truc + len cua cuu
+  maoyi: { zh: '毛衣', py: 'máoyī', vn: 'Áo len', can: { len: 4 }, phut: 120, l: '件' },
+  yaoshikou: { zh: '熊猫钥匙扣', py: 'xióngmāo yàoshikòu', vn: 'Móc khóa gấu trúc', can: { gaubong: 1 }, phut: 45, l: '个' },
+  baozhen: { zh: '熊猫抱枕', py: 'xióngmāo bàozhěn', vn: 'Gối ôm gấu trúc', can: { gaubong: 1, len: 2 }, phut: 150, l: '个', lv: 35 },
+  gongzai: { zh: '大熊猫公仔', py: 'dà xióngmāo gōngzǎi', vn: 'Gấu trúc bông khổng lồ', can: { gaubong: 3, len: 3 }, phut: 300, l: '个', lv: 45 },
 };
 const XUONG = {
   bot: { zh: '磨坊', py: 'mòfáng', vn: 'Cối xay bột', lv: 5, xu: 300, r: ['mifen', 'yumimian'] },
@@ -47,6 +52,7 @@ const XUONG = {
   cha: { zh: '茶坊', py: 'cháfāng', vn: 'Xưởng trà', lv: 33, xu: 3000, r: ['chaye', 'suyoucha', 'huacha'] },
   si: { zh: '丝绸坊', py: 'sīchóufāng', vn: 'Xưởng tơ lụa', lv: 42, xu: 4500, r: ['sichou', 'sijin'] },
   gao: { zh: '糕点铺', py: 'gāodiǎnpù', vn: 'Tiệm bánh truyền thống', lv: 46, xu: 5500, r: ['tangyuan', 'zongzi', 'yuebing', 'zaogao'] },
+  thubong: { zh: '玩具厂', py: 'wánjùchǎng', vn: 'Xưởng thú bông', lv: 30, xu: 4000, r: ['maoyi', 'yaoshikou', 'baozhen', 'gongzai'] },
 };
 // cong thuc da mo o cap lv (khong co lv = mo cung nha may)
 const moCt = (r, lv) => !HANG_GC[r].lv || lv == null || HANG_GC[r].lv <= lv;
@@ -74,11 +80,12 @@ const XK_HANG = {
   pho: ['mianbao', 'binggan', 'dangao', 'sua', 'trungvit', 'khoaitay'],
   dao: ['nailao', 'suannai', 'mat', 'len', 'cadiec', 'cachep'],
   de: ['dangao', 'putaozhi', 'nailao', 'nho', 'mat', 'huongduong'],
+  rung: ['maoyi', 'chaye', 'mat', 'len', 'huongduong', 'nho'],
 };
-const XK_GIO = { lang: 4, thung: 6, pho: 8, dao: 10, de: 12 };
+const XK_GIO = { lang: 4, thung: 6, pho: 8, dao: 10, de: 12, rung: 12 };
 const XK_TUAN = 6, XK_DANG = 3, XK_SO_CAU = 2, XK_CHO_MS = 60000;
 
-const LUONG = {}, LUONG_PY = { '袋': 'dài', '盒': 'hé', '块': 'kuài', '包': 'bāo', '匹': 'pǐ', '条': 'tiáo', '碗': 'wǎn', '杯': 'bēi', '个': 'ge' };
+const LUONG = {}, LUONG_PY = { '袋': 'dài', '盒': 'hé', '块': 'kuài', '包': 'bāo', '匹': 'pǐ', '条': 'tiáo', '碗': 'wǎn', '杯': 'bēi', '个': 'ge', '件': 'jiàn' };
 Object.keys(NL).forEach((k) => { LUONG[k] = NL[k].l; });
 Object.keys(HANG_GC).forEach((k) => { LUONG[k] = HANG_GC[k].l; });
 function dangKySp(SP) {
@@ -442,7 +449,7 @@ function gan(app, d, h, c) {
     const x = xkf(f), now = Date.now();
     return {
       tuan: x.tuan, conTuan: Math.max(0, XK_TUAN - (x.soTuan || 0)), toiDaTuan: XK_TUAN, dangToiDa: XK_DANG,
-      vung: h.phieuLuu.VUNG.map((v) => ({ k: v.k, zh: v.zh, py: v.py, vn: v.vn, mau: v.mau, toi: h.phieuLuu.daToi(f, v.k),
+      vung: h.phieuLuu.VUNG.filter((v) => XK_HANG[v.k]).map((v) => ({ k: v.k, zh: v.zh, py: v.py, vn: v.vn, mau: v.mau, toi: h.phieuLuu.daToi(f, v.k),
         hd: hopDong(v.k, x.tuan).map((hd) => Object.assign({ da: x.da.indexOf(v.k + ':' + hd.i) >= 0, co: f.kho[hd.k] || 0 }, hd, donZh(v.k, hd))) })),
       gui: x.gui.filter((g) => !g.xong).map((g) => ({ id: g.id, v: g.v, k: g.k, n: g.n, xu: g.xu, nhan: g.nhan || 0, bd: g.bd, den: g.den, toi: g.den <= now, xe: g.xe })),
       cau: x.cau ? { v: x.cau.v, i: x.cau.i } : null, cho: x.choDen && x.choDen > now ? x.choDen : 0,

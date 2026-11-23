@@ -90,7 +90,7 @@ const MUA = {
       ],
       viec: [
         { hoc: 10, mo: 'Học bài được 10 sao trong hôm nay' },
-        { ev: ['pl'], n: 1, mo: 'Qua 1 trạm trên Bản đồ phiêu lưu' },
+        { ev: ['pl'], n: 1, mo: 'Qua 1 trạm trên Bản đồ phiêu lưu (chơi lại trạm cũ cũng được)' },
       ],
       ket: [
         ['bach', 'vui', 'Hôm nay ông nhớ được hẳn hai chữ! Mai chắc còn một.'],
@@ -183,7 +183,7 @@ const MUA = {
       ],
       viec: [
         { giao: { lua: 3, trung: 2 }, ai: 'lan', mo: 'Góp 3 lúa và 2 trứng cho mâm hội' },
-        { ev: ['pl'], n: 1, mo: 'Qua 1 trạm trên Bản đồ phiêu lưu' },
+        { ev: ['pl'], n: 1, mo: 'Qua 1 trạm trên Bản đồ phiêu lưu (chơi lại trạm cũ cũng được)' },
       ],
       ket: [
         ['minh', 'vui', '“Cháu… chào… cả làng! Cháu… thích… gà!” — cả làng vỗ tay rào rào.'],

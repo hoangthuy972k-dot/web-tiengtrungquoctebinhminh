@@ -17,12 +17,29 @@ const VUNG = [
     mo: { lv: 7, vung: 'pho', n: 3 }, qua: 'pl-dao', kieu: ['np', 'xep'], mau: '#4db6ac' },
   { k: 'de', zh: '汉语帝国', py: 'Hànyǔ dìguó', vn: 'Đế Chế Hán Ngữ', chu: 'Thử thách tổng hợp', tram: 3, so: 10, dat: 8,
     mo: { tatCa: 3 }, qua: 'pl-de', kieu: ['tonghop'], mau: '#e57373' },
+  // 2026-11-23 (hoc sinh: "kham pha het ban do roi, khong con gi de hoan thanh"): them 2 vung sau De Che
+  //  Rung Lang Nghe: nghe tu -> chon pinyin, nghe CA CAU cua bai -> chon nghia (may khong phat duoc tieng: hien chu)
+  //  Thap Thu Thach: leo tang KHONG gioi han (tram = so tang toi da), 6 cau tong hop / tang, dung >= 5 la len tang
+  { k: 'rung', zh: '听力林', py: 'Tīnglì lín', vn: 'Rừng Lắng Nghe', chu: 'Nghe hiểu', tram: 6, so: 5, dat: 4,
+    mo: { lv: 14, vung: 'de', n: 1 }, qua: 'pl-rung', kieu: ['nghe', 'nghecau', 'nghecau'], mau: '#9ccc65' },
+  { k: 'thap', zh: '挑战塔', py: 'Tiǎozhàn tǎ', vn: 'Tháp Thử Thách', chu: 'Leo tháp không giới hạn', tram: 200, so: 6, dat: 5,
+    mo: { lv: 16, vung: 'de', n: 1 }, qua: 'pl-thap', kieu: ['tonghop'], mau: '#ba68c8', thap: 1 },
 ];
+// 4 vung goc: dieu kien mo De Che chi tinh 4 vung nay (vung moi khong lam khoa De Che cua em da qua)
+const VUNG_GOC = ['lang', 'thung', 'pho', 'dao'];
 const VUNG_MAP = {};
 VUNG.forEach((v) => { VUNG_MAP[v.k] = v; });
 // Qua lan dau qua tram (theo thu tu tram). doc = do trang tri rieng cua vung
 const QUA_TRAM = [{ xu: 20 }, { hat: 3 }, { xu: 30, tt: 1 }, { hatquy: 1 }, { xu: 40 }, { doc: 1, xu: 30 }];
 const QUA_DE = [{ hatquy: 2, xu: 50 }, { xu: 100, con: 1 }, { doc: 1, xu: 100 }];
+// Thap: tang t (0 = tang 1): xu tang dan (toi da 120); moi 5 tang 1 hat quy, moi 10 tang them 1 tuong thap
+function quaThap(t) {
+  const q = { xu: Math.min(120, 20 + 5 * t) };
+  if ((t + 1) % 5 === 0) q.hatquy = 1;
+  if ((t + 1) % 10 === 0) q.doc = 1;
+  if ((t + 1) % 3 === 0 && !q.hatquy) q.hat = 2;
+  return q;
+}
 const PL_LAI_XU = 5, PL_LAI_NGAY = 25;
 const PL_HAN_MS = 30 * 60000; // 1 luot choi tram giu 30 phut
 
@@ -157,6 +174,8 @@ module.exports = function ganPhieuLuu(app, d, h, c) {
       case 'xephk': return cauXepHt(canh, thay) || (Ktbc.coDang(ng, 'xepcau') ? kt(ng, ['xepcau']) : null);
       case 'np': return loc(ng, ['np']).mcs.length ? kt(loc(ng, ['np']), ['nguphap']) : null;
       case 'xep': return Ktbc.coDang(ng, 'xepcau') ? kt(ng, ['xepcau']) : null;
+      case 'nghecau': return cauNghiaCau(ng, canh, thay, !!opt.nghe);
+      case 'nghiacau': return cauNghiaCau(ng, canh, thay, false);
     }
     return null;
   }
@@ -164,6 +183,7 @@ module.exports = function ganPhieuLuu(app, d, h, c) {
   const DU_PHONG = {
     lang: ['py', 'thanh'], thung: ['nghia', 'viet', 'thieu'],
     pho: ['dap', 'xephk', 'np', 'xep', 'nghia'], dao: ['np', 'xep', 'dap', 'nghia', 'viet'],
+    rung: ['nghe', 'nghiacau', 'py', 'nghia'],
   };
   // n cau cua vung (ham thuan theo bo tu em hoc — dung cho tools/thu-cau-nong-trai.js)
   function deVung(bo, vk, n, opt) {
@@ -175,16 +195,17 @@ module.exports = function ganPhieuLuu(app, d, h, c) {
     const canh = boHoiThoai(bo);
     const ctx = { thay: {}, tuDa: {} };
     let ke;
-    if (vk === 'de') {
-      // De Che: 2 pinyin + 3 tu vung + 2 hoi thoai + 3 ngu phap, tron
-      ke = tron(['py', 'thanh', 'nghia', 'viet', 'thieu', 'dap', 'xephk', 'np', 'xep', 'noi']);
+    const tongHop = vk === 'de' || v.thap;
+    if (tongHop) {
+      // De Che / Thap: tron moi dang (pinyin, tu vung, nghe, hoi thoai, ngu phap)
+      ke = tron(['py', 'thanh', 'nghia', 'viet', 'thieu', 'dap', 'xephk', 'np', 'xep', 'noi'].concat(v.thap ? ['nghecau', 'nghiacau'] : []));
     } else ke = [];
     const ra = [];
     for (let i = 0; ra.length < n && i < n * 4; i++) {
-      const k = vk === 'de' ? ke[ra.length % ke.length] : v.kieu[i % v.kieu.length];
+      const k = tongHop ? ke[ra.length % ke.length] : v.kieu[i % v.kieu.length];
       let q = cauKieu(bo, ng, canh, k, ctx, opt);
       if (!q) {
-        const nhom = vk === 'de' ? ['nghia', 'viet', 'np', 'xep', 'py', 'thieu'] : DU_PHONG[vk];
+        const nhom = tongHop ? ['nghia', 'viet', 'np', 'xep', 'py', 'thieu'] : DU_PHONG[vk];
         for (const k2 of tron(nhom)) { q = cauKieu(bo, ng, canh, k2, ctx, opt); if (q) break; }
       }
       if (q) { q.kv = k; ra.push(q); }
@@ -194,7 +215,7 @@ module.exports = function ganPhieuLuu(app, d, h, c) {
   /* ---- Cot truyen (nong-trai-cottruyen.js): "khoanh khac tieng Trung" — cau NGUYEN VAN cua bai em hoc ----
      nghia: 1 cau hoi thoai / cau vi du cua bai -> chon nghia tieng Viet (cac nghia nhieu cung la cau cua bai)
      dap  : chon cau dap trong hoi thoai cua bai · xep: xep tu thanh cau (cau xep cua bai) */
-  function cauNghiaCau(ng, canh, thay) {
+  function cauNghiaCau(ng, canh, thay, nghe) {
     let cau = [];
     canh.forEach((sc) => sc.lines.forEach((l) => { if (l.zh.length <= 60 && l.vn && l.vn.length <= 110) cau.push({ u: sc.u, zh: l.zh, py: l.py, vn: l.vn }); }));
     if (cau.length < 4) ng.vocab.forEach((v) => { if (v.ex_zh && v.ex_vn && v.ex_zh !== v.zh && v.ex_zh.length <= 60 && v.ex_vn.length <= 110) cau.push({ u: v.u, zh: v.ex_zh, py: v.ex_py, vn: v.ex_vn }); });
@@ -205,7 +226,10 @@ module.exports = function ganPhieuLuu(app, d, h, c) {
       const key = 'nc|' + x.zh;
       if (thay[key]) continue;
       const opts = tron([x.vn].concat(tron(cau.filter((y) => y !== x)).slice(0, 3).map((y) => y.vn)));
-      const q = boc({ lenh: 'Câu này nghĩa là gì?', zh: x.zh, ctx: '', why: x.py || '', opts, dung: opts.indexOf(x.vn) }, x.u, null, { doc: x.zh, pyCau: x.py });
+      // nghe = true: an chu, em nghe ca cau roi chon nghia (Rung Lang Nghe); dap an hien chu + pinyin
+      const q = nghe
+        ? boc({ lenh: 'Nghe câu rồi chọn nghĩa đúng', zh: '', ctx: '', why: x.zh + ' — ' + (x.py || ''), opts, dung: opts.indexOf(x.vn) }, x.u, null, { nghe: x.zh, doc: x.zh, pyCau: x.py })
+        : boc({ lenh: 'Câu này nghĩa là gì?', zh: x.zh, ctx: '', why: x.py || '', opts, dung: opts.indexOf(x.vn) }, x.u, null, { doc: x.zh, pyCau: x.py });
       if (q) { thay[key] = 1; return q; }
     }
     return null;
@@ -239,7 +263,7 @@ module.exports = function ganPhieuLuu(app, d, h, c) {
   // vung mo chua: theo cap nong trai hoac tien do vung truoc; De Che: 4 vung kia moi vung >= 3 tram
   function moVung(f, v, lv) {
     if (v.mo.tatCa) {
-      const thieu = VUNG.filter((x) => x.k !== 'de' && soQua(f, x.k) < v.mo.tatCa);
+      const thieu = VUNG.filter((x) => VUNG_GOC.indexOf(x.k) >= 0 && soQua(f, x.k) < v.mo.tatCa);
       return thieu.length ? { mo: false, ly: 'Qua ít nhất ' + v.mo.tatCa + ' trạm ở mỗi vùng: còn ' + thieu.map((x) => x.vn).join(', ') } : { mo: true };
     }
     if (lv >= v.mo.lv) return { mo: true };
@@ -248,7 +272,7 @@ module.exports = function ganPhieuLuu(app, d, h, c) {
   }
   // da toi tram 2 (qua tram 1) -> xuat khau sang vung nay duoc
   const daToi = (f, vk) => soQua(f, vk) >= 1;
-  const quaCua = (v, t) => (v.k === 'de' ? QUA_DE : QUA_TRAM)[t] || { xu: 10 };
+  const quaCua = (v, t) => (v.thap ? quaThap(t) : (v.k === 'de' ? QUA_DE : QUA_TRAM)[t] || { xu: 10 });
   function moTaQua(v, t) {
     const q = quaCua(v, t), ds = [];
     if (q.xu) ds.push(q.xu + ' xu');
@@ -283,7 +307,9 @@ module.exports = function ganPhieuLuu(app, d, h, c) {
       vung: VUNG.map((v) => {
         const m = moVung(f, v, lv), s = ((f.pl && f.pl.v && f.pl.v[v.k]) || []);
         return { k: v.k, zh: v.zh, py: v.py, vn: v.vn, chu: v.chu, tram: v.tram, so: v.so, dat: v.dat, mau: v.mau, qua: v.qua,
-          mo: m.mo, ly: m.ly || '', sao: s.slice(), xk: daToi(f, v.k), quaTram: Array.from({ length: v.tram }, (x, t) => moTaQua(v, t)) };
+          mo: m.mo, ly: m.ly || '', sao: s.slice(), xk: daToi(f, v.k), thap: v.thap ? 1 : 0,
+          quaTram: v.thap ? null : Array.from({ length: v.tram }, (x, t) => moTaQua(v, t)),
+          quaThap: v.thap ? Array.from({ length: 8 }, (x, i) => { const t = Math.max(0, s.length - 4) + i; return { t, mo: moTaQua(v, t) }; }) : null };
       }),
       lai: { xu: laiHomNay(f), toiDa: PL_LAI_NGAY, moi: PL_LAI_XU },
       dang: f.pl && f.pl.q && Date.now() - f.pl.q.bd < PL_HAN_MS ? { v: f.pl.q.v, t: f.pl.q.t, da: f.pl.q.tl.length, so: f.pl.q.ds.length, dung: f.pl.q.tl.filter(Boolean).length } : null,
@@ -354,6 +380,6 @@ module.exports = function ganPhieuLuu(app, d, h, c) {
   }));
 
   Object.assign(h.CATALOG, { PL_VUNG: VUNG.map((v) => ({ k: v.k, zh: v.zh, py: v.py, vn: v.vn, chu: v.chu, mau: v.mau, qua: v.qua })) });
-  return { VUNG, VUNG_MAP, deVung, layCau, daToi, moVung, soQua, bienThanh, cauTruyen };
+  return { VUNG, VUNG_MAP, VUNG_GOC, deVung, layCau, daToi, moVung, soQua, bienThanh, cauTruyen };
 };
 module.exports.VUNG = VUNG;

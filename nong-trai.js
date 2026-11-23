@@ -303,6 +303,8 @@ const TT = {
   'pl-pho': { zh: '茶馆', py: 'cháguǎn', vn: 'Quán trà giao tiếp', lv: 1, doc: 1, dep: 35 },
   'pl-dao': { zh: '灯塔', py: 'dēngtǎ', vn: 'Ngọn hải đăng ngữ pháp', lv: 1, doc: 1, dep: 40 },
   'pl-de': { zh: '金龙像', py: 'jīnlóng xiàng', vn: 'Tượng rồng vàng Đế Chế', lv: 1, doc: 1, dep: 60 },
+  'pl-rung': { zh: '风铃', py: 'fēnglíng', vn: 'Chuông gió Rừng Lắng Nghe', lv: 1, doc: 1, dep: 45 },
+  'pl-thap': { zh: '挑战塔模型', py: 'tiǎozhàn tǎ móxíng', vn: 'Mô hình Tháp Thử Thách', lv: 1, doc: 1, dep: 50 },
 };
 // Doc quyen: qua tung chuong cot truyen (noi dung o nong-trai-truyen.js)
 Object.assign(TT, require('./nong-trai-truyen').TT);
@@ -691,7 +693,7 @@ const MO_TN = {
   tdh: { lv: 3, zh: '学习挑战', vn: 'Thách đấu học 24 giờ', gt: 'Mời một bạn cùng lớp đua học trong 24 giờ: ai kiếm được nhiều sao học hơn thì thắng (+60 xu), cả hai cùng học được +10 xu.' },
   // them 2026-11-13 (kinh te nong trai) — xem nong-trai-kt.js, nong-trai-xuong.js, nong-trai-phieuluu.js
   truyen: { lv: 1, zh: '村里的故事', vn: 'Câu chuyện làng Tre Xanh', gt: 'Mỗi tuần một chương truyện mới với bà Lan, chú Tư, cô Mai, ông Bách và Minh Minh — cậu bạn hàng xóm chỉ nói tiếng Trung. Đọc truyện, hiểu câu tiếng Trung (lấy từ bài em đã học), làm việc giúp cả làng và nhận quà.' },
-  pl: { lv: 1, zh: '冒险地图', vn: 'Bản đồ phiêu lưu', gt: 'Năm vùng đất: Làng Khởi Đầu (pinyin), Thung Lũng Từ Vựng, Thành Phố Giao Tiếp (hội thoại), Đảo Ngữ Pháp và Đế Chế Hán Ngữ. Mỗi trạm 5 câu từ bài em đã học — đúng 4/5 là qua trạm, nhận quà lần đầu.' },
+  pl: { lv: 1, zh: '冒险地图', vn: 'Bản đồ phiêu lưu', gt: 'Bảy vùng đất: Làng Khởi Đầu (pinyin), Thung Lũng Từ Vựng, Thành Phố Giao Tiếp (hội thoại), Đảo Ngữ Pháp, Đế Chế Hán Ngữ, Rừng Lắng Nghe (nghe hiểu) và Tháp Thử Thách (leo tầng không giới hạn). Mỗi trạm 5 câu từ bài em đã học — đúng 4/5 là qua trạm, nhận quà lần đầu; trạm đã qua chơi lại vẫn được thưởng xu và tính nhiệm vụ.' },
   cho: { lv: 3, zh: '农贸市场', vn: 'Chợ nông sản', gt: 'Giá ở chợ lên xuống theo cung cầu cả lớp: nhiều bạn bán thì giá giảm, nhiều bạn mua thì giá tăng. Bán đúng lúc giá cao (vẫn tính hạn mức bán ngày), mua hạt giống, đường, muối, thức ăn chăn nuôi.' },
   xuong: { lv: 5, zh: '加工厂', vn: 'Nhà máy chế biến', gt: 'Xây cối xay bột, lò bánh, xưởng sữa, xưởng nước ép: biến nông sản thành hàng chế biến đắt hơn — cần cho nhà hàng, đơn hàng và xuất khẩu. Muốn làm nhanh? Trả lời 1–3 câu từ bài đã học.' },
   tiem: { lv: 6, zh: '我的小店', vn: 'Cửa hàng riêng', gt: 'Mở tiệm riêng: bày hàng với giá trong khoảng ±30% giá chợ, các bạn cùng lớp vào mua. Chợ thu phí 5%; hàng bày quá 48 giờ tự về kho.' },

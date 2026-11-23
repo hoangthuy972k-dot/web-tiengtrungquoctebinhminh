@@ -115,9 +115,27 @@
     goi('/api/farm/pl').then(function (r) { PL.tai = false; PL.d = r; veLai('kt-pl'); capNhatPhu(); }, function (e) { PL.tai = false; loiGoi(e); });
   }
   // Ban do tong: 5 vung dat noi nhau bang con duong (SVG ve tay, phong cach vien dam cua nong trai)
-  var VT = { lang: [84, 430], thung: [270, 360], pho: [94, 250], dao: [272, 150], de: [170, 56] };
+  // 2026-11-23: them Rung Lang Nghe + Thap Thu Thach phia tren De Che (ban do cao hon 200)
+  var VT = { lang: [84, 630], thung: [270, 560], pho: [94, 450], dao: [272, 350], de: [170, 256], rung: [90, 150], thap: [250, 48] };
   function veVung(k) {
     var V = '#2b1d3a';
+    if (k === 'rung') return '<ellipse cx="0" cy="18" rx="62" ry="18" fill="#a5d66f" stroke="' + V + '" stroke-width="3"/>' +
+      '<path d="M-36 16V-28M-22 16V-40M28 16V-24" stroke="' + V + '" stroke-width="9" stroke-linecap="round"/>' +
+      '<path d="M-36 16V-28M-22 16V-40M28 16V-24" stroke="#8bc34a" stroke-width="5" stroke-linecap="round"/>' +
+      '<path d="M-40-8h8M-26-16h8M-26 2h8M24-6h8" stroke="' + V + '" stroke-width="2.2"/>' +
+      '<g fill="#5aa845" stroke="' + V + '" stroke-width="2"><ellipse cx="-46" cy="-26" rx="10" ry="4" transform="rotate(-25 -46 -26)"/><ellipse cx="-10" cy="-40" rx="10" ry="4" transform="rotate(20 -10 -40)"/><ellipse cx="40" cy="-26" rx="10" ry="4" transform="rotate(25 40 -26)"/></g>' +
+      '<path d="M2-12q7 6 0 13M8-18q13 12 0 25" fill="none" stroke="' + V + '" stroke-width="2.6" stroke-linecap="round"/>' +
+      '<text x="-4" y="-2" font-size="13" font-weight="900" fill="#2e7d32" font-family="Noto Serif SC, serif">听</text>';
+    if (k === 'thap') return '<ellipse cx="0" cy="20" rx="48" ry="12" fill="#ce93d8" stroke="' + V + '" stroke-width="3"/>' +
+      '<rect x="-20" y="-4" width="40" height="24" rx="2" fill="#fff3d6" stroke="' + V + '" stroke-width="2.5"/>' +
+      '<path d="M-30-2L0-14L30-2Z" fill="#8e24aa" stroke="' + V + '" stroke-width="2.5" stroke-linejoin="round"/>' +
+      '<rect x="-14" y="-28" width="28" height="16" rx="2" fill="#fff3d6" stroke="' + V + '" stroke-width="2.5"/>' +
+      '<path d="M-24-26L0-38L24-26Z" fill="#ab47bc" stroke="' + V + '" stroke-width="2.5" stroke-linejoin="round"/>' +
+      '<rect x="-9" y="-50" width="18" height="14" rx="2" fill="#fff3d6" stroke="' + V + '" stroke-width="2.5"/>' +
+      '<path d="M-17-48L0-60L17-48Z" fill="#8e24aa" stroke="' + V + '" stroke-width="2.5" stroke-linejoin="round"/>' +
+      '<path d="M0-60V-72" stroke="' + V + '" stroke-width="2.5"/><path d="M0-72L12-68L0-64Z" fill="#ffd54f" stroke="' + V + '" stroke-width="2"/>' +
+      '<rect x="-6" y="6" width="12" height="14" rx="6" fill="#7a2e1f" stroke="' + V + '" stroke-width="2"/>' +
+      '<text x="-7" y="-17" font-size="12" font-weight="900" fill="#7b1fa2" font-family="Noto Serif SC, serif">塔</text>';
     if (k === 'lang') return '<ellipse cx="0" cy="18" rx="62" ry="20" fill="#9ad66f" stroke="' + V + '" stroke-width="3"/>' +
       '<path d="M-38 10V-6L-26-18L-14-6V10Z" fill="#fff3d6" stroke="' + V + '" stroke-width="2.5"/><path d="M-42-4L-26-22L-10-4Z" fill="#e5533d" stroke="' + V + '" stroke-width="2.5" stroke-linejoin="round"/>' +
       '<path d="M2 12V-2L14-12L26-2V12Z" fill="#fff3d6" stroke="' + V + '" stroke-width="2.5"/><path d="M-2 0L14-16L30 0Z" fill="#ffb74d" stroke="' + V + '" stroke-width="2.5" stroke-linejoin="round"/>' +
@@ -154,15 +172,17 @@
   }
   function veBanDoTong(than) {
     var d = PL.d, ds = d.vung;
-    var duong = 'M70 470 C 40 430, 150 420, 200 400 S 300 370, 250 330 S 70 300, 90 260 S 180 200, 250 180 S 300 110, 210 90 S 150 70, 150 60';
+    var duong = 'M70 670 C 40 630, 150 620, 200 600 S 300 570, 250 530 S 70 500, 90 460 S 180 400, 250 380 S 300 310, 210 290 S 150 270, 150 260 S 40 220, 100 190 S 230 150, 250 110';
     var cuoi = null;
     ds.forEach(function (v) { if (v.mo) cuoi = v.k; });
-    var h = '<svg class="kt-bd" viewBox="0 0 360 500" role="img" aria-label="Bản đồ phiêu lưu">' +
-      '<rect width="360" height="500" rx="18" fill="#cdeefd"/>' +
-      '<path d="M0 120Q60 100 120 130T260 120T360 130V0H0Z" fill="#b3e5fc"/>' +
-      '<path d="M0 500V300Q80 280 160 320T360 300V500Z" fill="#c5e8a4"/>' +
-      '<path d="M0 240Q90 200 180 230T360 220V320Q260 300 180 330T0 320Z" fill="#d7f0b8"/>' +
-      '<g fill="#fff" opacity=".85"><ellipse cx="60" cy="40" rx="26" ry="9"/><ellipse cx="300" cy="60" rx="30" ry="10"/><ellipse cx="320" cy="250" rx="22" ry="8"/></g>' +
+    var h = '<svg class="kt-bd" viewBox="0 0 360 700" role="img" aria-label="Bản đồ phiêu lưu">' +
+      '<rect width="360" height="700" rx="18" fill="#cdeefd"/>' +
+      '<path d="M0 90Q60 70 120 100T260 90T360 100V0H0Z" fill="#e1bee7" opacity=".6"/>' +
+      '<path d="M0 230Q80 200 170 225T360 210V300Q260 280 170 300T0 290Z" fill="#c8e6a0" opacity=".7"/>' +
+      '<path d="M0 320Q60 300 120 330T260 320T360 330V280H0Z" fill="#b3e5fc"/>' +
+      '<path d="M0 700V500Q80 480 160 520T360 500V700Z" fill="#c5e8a4"/>' +
+      '<path d="M0 440Q90 400 180 430T360 420V520Q260 500 180 530T0 520Z" fill="#d7f0b8"/>' +
+      '<g fill="#fff" opacity=".85"><ellipse cx="60" cy="40" rx="26" ry="9"/><ellipse cx="150" cy="96" rx="22" ry="8"/><ellipse cx="300" cy="260" rx="30" ry="10"/><ellipse cx="320" cy="450" rx="22" ry="8"/></g>' +
       '<path d="' + duong + '" fill="none" stroke="#fff8ec" stroke-width="14" stroke-linecap="round"/>' +
       '<path d="' + duong + '" fill="none" stroke="#c98a5a" stroke-width="4" stroke-dasharray="2 10" stroke-linecap="round"/>';
     ds.forEach(function (v) {
@@ -171,7 +191,7 @@
         '<g class="kt-bd-hinh">' + veVung(v.k) + '</g>' +
         '<rect x="-72" y="28" width="144" height="34" rx="10" fill="#fff8ec" stroke="#2b1d3a" stroke-width="2.5"/>' +
         '<text x="0" y="42" text-anchor="middle" font-size="12" font-weight="900" fill="#2b1d3a" font-family="Noto Serif SC, serif">' + esc(v.zh) + '</text>' +
-        '<text x="0" y="56" text-anchor="middle" font-size="10" font-weight="700" fill="#6b5a77">' + esc(v.vn) + ' · ' + xong + '/' + tong + '</text>' +
+        '<text x="0" y="56" text-anchor="middle" font-size="10" font-weight="700" fill="#6b5a77">' + esc(v.vn) + ' · ' + (v.thap ? 'tầng ' + xong : xong + '/' + tong) + '</text>' +
         (v.mo ? '' : khoaSvg(48, -20)) + '</g>';
     });
     if (cuoi) h += '<g transform="translate(' + (VT[cuoi][0] + (VT[cuoi][0] < 180 ? 92 : -92)) + ' ' + (VT[cuoi][1] + 46) + ')">' + xeSvg() + '</g>';
@@ -180,6 +200,9 @@
       '<p class="nt-meo">Chạm một vùng đất để vào. Mỗi trạm 5 câu từ <b>bài em đã học</b>' + (d.nguon ? ' (' + esc(d.nguon) + ')' : '') + ' — đúng 4/5 là qua. ' +
       'Chơi lại trạm đã qua: +' + d.lai.moi + ' xu (hôm nay ' + d.lai.xu + '/' + d.lai.toiDa + ').</p>' +
       (d.coBai ? '' : '<p class="nt-trong">Em hãy học ít nhất một bài (hoặc bài thầy cô giao) để có câu hỏi nhé!</p>') + '</div>';
+    // ban do cao (7 vung): cuon toi cho xe cua em dang dung (vung moi nhat em da mo)
+    var xe = than.querySelector('.kt-bd .kt-xe');
+    if (xe && !PL.daCuon) { PL.daCuon = 1; setTimeout(function () { try { xe.scrollIntoView({ block: 'center', inline: 'nearest' }); } catch (e) { /* bo qua */ } }, 50); }
     $all('[data-pl-v]', than).forEach(function (g) {
       var mo = function () {
         var v = ds.filter(function (x) { return x.k === g.getAttribute('data-pl-v'); })[0];
@@ -193,8 +216,13 @@
   // Vung dat: con duong uon luon, moi tram 1 cot moc; xe dung o tram ke tiep
   function veVungDat(than) {
     var v = PL.d.vung.filter(function (x) { return x.k === PL.v; })[0];
-    var n = v.tram, w = 340, ht = 120 + n * 58, pts = [];
-    for (var i = 0; i < n; i++) pts.push([i % 2 ? 250 : 90, ht - 50 - i * 58]);
+    var n = v.tram, w = 340, tiep = v.sao.length;
+    // so (chi so tram that) cua tung moc ve: thap = 4 tang da qua gan nhat + tang ke tiep
+    var so = [];
+    if (v.thap) { for (var a = Math.max(0, tiep - 4); a <= Math.min(n - 1, tiep); a++) so.push(a); }
+    else for (var b2 = 0; b2 < n; b2++) so.push(b2);
+    var ht = 120 + so.length * 58, pts = [];
+    for (var i = 0; i < so.length; i++) pts.push([v.thap ? 170 + (i % 2 ? 40 : -40) : i % 2 ? 250 : 90, ht - 50 - i * 58]);
     var p = 'M' + pts[0][0] + ' ' + (pts[0][1] + 40);
     pts.forEach(function (q, i) { var tr = i ? pts[i - 1] : [q[0], q[1] + 40]; p += ' C ' + tr[0] + ' ' + (tr[1] - 30) + ', ' + q[0] + ' ' + (q[1] + 30) + ', ' + q[0] + ' ' + q[1]; });
     var s = '<svg class="kt-vd" viewBox="0 0 ' + w + ' ' + ht + '" role="img" aria-label="' + esc(v.vn) + '">' +
@@ -202,26 +230,31 @@
       '<g transform="translate(' + (w - 70) + ' 56) scale(.8)">' + veVung(v.k) + '</g>' +
       '<path d="' + p + '" fill="none" stroke="#fff8ec" stroke-width="16" stroke-linecap="round"/>' +
       '<path d="' + p + '" fill="none" stroke="#c98a5a" stroke-width="4" stroke-dasharray="2 10" stroke-linecap="round"/>';
-    var tiep = v.sao.length;
-    pts.forEach(function (q, i) {
-      var xong = i < tiep, laTiep = i === tiep, sao = v.sao[i] || 0;
-      s += '<g class="kt-tram' + (xong ? ' xong' : laTiep ? ' tiep' : ' khoa') + '" data-pl-t="' + i + '" transform="translate(' + q[0] + ' ' + q[1] + ')" tabindex="0" role="button" aria-label="Trạm ' + (i + 1) + '">' +
+    var TEN = v.thap ? 'Tầng' : 'Trạm';
+    if (v.thap) s += '<rect x="122" y="20" width="96" height="' + (ht - 40) + '" rx="10" fill="#f3e5f5" stroke="#2b1d3a" stroke-width="2.5" opacity=".9"/>';
+    pts.forEach(function (q, j) {
+      var i = so[j], xong = i < tiep, laTiep = i === tiep, sao = v.sao[i] || 0;
+      s += '<g class="kt-tram' + (xong ? ' xong' : laTiep ? ' tiep' : ' khoa') + '" data-pl-t="' + i + '" transform="translate(' + q[0] + ' ' + q[1] + ')" tabindex="0" role="button" aria-label="' + TEN + ' ' + (i + 1) + '">' +
         '<circle r="22" fill="' + (xong ? '#ffd54f' : laTiep ? '#fff' : '#d7d0de') + '" stroke="#2b1d3a" stroke-width="3"/>' +
-        '<text y="7" text-anchor="middle" font-size="19" font-weight="900" fill="#2b1d3a">' + (i === n - 1 ? '🏁' : i + 1) + '</text>' +
+        '<text y="7" text-anchor="middle" font-size="' + (i + 1 >= 100 ? 14 : 19) + '" font-weight="900" fill="#2b1d3a">' + (!v.thap && i === n - 1 ? '🏁' : i + 1) + '</text>' +
         (xong ? '<text y="40" text-anchor="middle" font-size="13">' + '⭐'.repeat(sao) + '</text>' : '') + '</g>';
     });
-    var dung = pts[Math.min(tiep, n - 1)];
+    var dung = pts[Math.max(0, Math.min(so.indexOf(Math.min(tiep, n - 1)), pts.length - 1))];
     s += '<g transform="translate(' + (dung[0] + (dung[0] < 170 ? 44 : -44)) + ' ' + (dung[1] + 4) + ')">' + xeSvg() + '</g></svg>';
-    var list = '<ol class="kt-tram-ds">' + v.quaTram.map(function (q, i) {
-      var xong = i < tiep, mo = i <= tiep;
-      return '<li class="' + (xong ? 'xong' : mo ? 'tiep' : 'khoa') + '"><span class="kt-tram-so">' + (i + 1) + '</span><span><b>Trạm ' + (i + 1) + (i === n - 1 ? ' · đích' : '') + '</b>' +
+    var dsQua = v.thap ? (v.quaThap || []).filter(function (x) { return so.indexOf(x.t) >= 0; }).reverse() : v.quaTram.map(function (q, i) { return { t: i, mo: q }; });
+    var list = '<ol class="kt-tram-ds">' + dsQua.map(function (x) {
+      var q = x.mo, i = x.t, xong = i < tiep, mo = i <= tiep;
+      return '<li class="' + (xong ? 'xong' : mo ? 'tiep' : 'khoa') + '"><span class="kt-tram-so">' + (i + 1) + '</span><span><b>' + TEN + ' ' + (i + 1) + (!v.thap && i === n - 1 ? ' · đích' : '') + '</b>' +
         '<small>' + (xong ? '⭐'.repeat(v.sao[i]) + ' · chơi lại +' + PL.d.lai.moi + ' xu' : '🎁 Lần đầu: ' + esc(q)) + '</small></span>' +
-        '<button type="button" class="nt-nut nt-nut-nho' + (mo ? ' nt-nut-xanh' : '') + '" data-pl-choi="' + i + '"' + (mo ? '' : ' disabled') + '>' + (xong ? 'Chơi lại' : mo ? 'Vào trạm' : '🔒') + '</button></li>';
+        '<button type="button" class="nt-nut nt-nut-nho' + (mo ? ' nt-nut-xanh' : '') + '" data-pl-choi="' + i + '"' + (mo ? '' : ' disabled') + '>' + (xong ? 'Chơi lại' : mo ? (v.thap ? 'Leo tầng' : 'Vào trạm') : '🔒') + '</button></li>';
     }).join('') + '</ol>';
     than.innerHTML = '<div class="kt-pl">' +
       '<div class="kt-pl-dau"><button type="button" class="nt-nut nt-nut-nho" data-pl-ve>← Bản đồ</button><div><b lang="zh">' + esc(v.zh) + '</b> <small>' + esc(v.py) + '</small><br><span>' + esc(v.vn) + ' — ' + esc(v.chu) + '</span></div></div>' +
-      s + list + '<p class="nt-meo">' + (v.k === 'de' ? '10 câu tổng hợp mọi dạng — đúng 8/10 là qua (10 = 3 sao).' : '5 câu — đúng 4/5 là qua trạm (5/5 = 3 sao, 4/5 = 2 sao).') +
-      (v.xk ? ' 🚚 Đã mở xuất khẩu tới vùng này.' : ' Tới trạm 2 để mở xuất khẩu sang vùng này.') + '</p></div>';
+      s + list + '<p class="nt-meo">' + (v.thap ? 'Tháp không có đỉnh! Mỗi tầng 6 câu tổng hợp mọi dạng (cả nghe) — đúng 5/6 là lên tầng. Leo càng cao quà càng lớn: cứ 5 tầng 1 hạt quý, 10 tầng 1 mô hình tháp. Tầng cao nhất của em: <b>' + tiep + '</b>.'
+        : v.k === 'de' ? '10 câu tổng hợp mọi dạng — đúng 8/10 là qua (10 = 3 sao).'
+        : v.k === 'rung' ? '5 câu nghe — nghe từ chọn pinyin, nghe cả câu của bài chọn nghĩa. Đúng 4/5 là qua trạm. 🔊 Bật loa nhé!'
+        : '5 câu — đúng 4/5 là qua trạm (5/5 = 3 sao, 4/5 = 2 sao).') +
+      (v.thap ? '' : v.xk ? ' 🚚 Đã mở xuất khẩu tới vùng này.' : ' Tới trạm 2 để mở xuất khẩu sang vùng này.') + '</p></div>';
     $('[data-pl-ve]', than).addEventListener('click', function () { PL.v = null; N.veBang(); });
     var choi = function (t) { if (t > tiep) return; batDauTram(v, t); };
     $all('[data-pl-choi]', than).forEach(function (b) { b.addEventListener('click', function () { choi(+b.getAttribute('data-pl-choi')); }); });
@@ -239,7 +272,7 @@
     var c = PL.chay;
     chayCau(than, {
       st: c, ds: c.ds, url: '/api/farm/pl/tl',
-      tren: '<p class="kt-tram-dau"><b lang="zh">' + esc(c.v.zh) + '</b> · Trạm ' + (c.t + 1) + ' · cần đúng ' + c.can + '/' + c.ds.length + '</p>',
+      tren: '<p class="kt-tram-dau"><b lang="zh">' + esc(c.v.zh) + '</b> · ' + (c.v.thap ? 'Tầng ' : 'Trạm ') + (c.t + 1) + ' · cần đúng ' + c.can + '/' + c.ds.length + '</p>',
       sau: function (r) { if (r.ket) { PL.ket = r.ket; PL.d = r.pl || PL.d; if (r.st) N.nhanTrangThai(r.st); return true; } return false; },
       xong: function () { PL.chay = null; N.veBang(); },
     });
@@ -255,18 +288,20 @@
     var k = PL.ket, v = PL.d.vung.filter(function (x) { return x.k === k.v; })[0];
     var h = '<div class="nt-chuc kt-ket">';
     if (k.dat) {
-      h += '<span class="kt-sao-to">' + '⭐'.repeat(k.sao) + '</span><h2 lang="zh">太棒了！</h2><p>Qua trạm ' + (k.t + 1) + ' · đúng ' + k.dung + '/' + k.so + '</p>';
+      h += '<span class="kt-sao-to">' + '⭐'.repeat(k.sao) + '</span><h2 lang="zh">太棒了！</h2><p>' + (v.thap ? 'Lên tầng ' : 'Qua trạm ') + (k.t + 1) + ' · đúng ' + k.dung + '/' + k.so + '</p>';
       if (k.lanDau && k.qua.length) h += '<div class="kt-qua-ds">' + k.qua.map(function (q) { var t = tenQuaPl(q); return '<span>' + img(t.hinh) + esc(t.t) + '</span>'; }).join('') + '</div>';
       else h += '<p>' + (k.xuLai ? 'Chơi lại: +' + k.xuLai + ' xu' : 'Chơi lại: hôm nay đã đủ xu thưởng chơi lại') + '</p>';
       if (k.moiMo === 'het') h += '<p class="kt-ket-to">🏁 Em đã đi hết ' + esc(v.vn) + '!</p>';
       N.tieng('len'); N.doc('太棒了');
-      if (N.fx) { N.fx.mung({ x: innerWidth / 2, y: innerHeight * 0.38 }, k.sao >= 3); if (k.lanDau) N.fx.bangRon('⭐ Qua trạm ' + (k.t + 1) + '!'); }
+      if (N.fx) { N.fx.mung({ x: innerWidth / 2, y: innerHeight * 0.38 }, k.sao >= 3); if (k.lanDau) N.fx.bangRon(v.thap ? '🏯 Tầng ' + (k.t + 1) + '!' : '⭐ Qua trạm ' + (k.t + 1) + '!'); }
     } else {
-      h += '<h2>Chưa qua trạm</h2><p>Đúng ' + k.dung + '/' + k.so + ' — cần ' + (v.k === 'de' ? 8 : 4) + '. Ôn lại bài rồi thử lại nhé!</p>';
+      h += '<h2>' + (v.thap ? 'Chưa lên được tầng' : 'Chưa qua trạm') + '</h2><p>Đúng ' + k.dung + '/' + k.so + ' — cần ' + v.dat + '. Ôn lại bài rồi thử lại nhé!</p>';
     }
-    h += '<div class="nt-hang-nut"><button type="button" class="nt-nut" data-pl-lai>Chơi lại trạm</button><button type="button" class="nt-nut nt-nut-xanh" data-pl-tiep>Về ' + esc(v.vn) + '</button></div></div>';
+    h += '<div class="nt-hang-nut">' + (v.thap && k.dat && k.t + 1 <= v.sao.length ? '<button type="button" class="nt-nut nt-nut-vang" data-pl-len>🏯 Leo tầng ' + (k.t + 2) + '</button>' : '') + '<button type="button" class="nt-nut" data-pl-lai>' + (v.thap ? 'Chơi lại tầng' : 'Chơi lại trạm') + '</button><button type="button" class="nt-nut nt-nut-xanh" data-pl-tiep>Về ' + esc(v.vn) + '</button></div></div>';
     than.innerHTML = h;
     $('[data-pl-lai]', than).addEventListener('click', function () { PL.ket = null; batDauTram(v, k.t); });
+    var len = $('[data-pl-len]', than);
+    if (len) len.addEventListener('click', function () { PL.ket = null; batDauTram(v, k.t + 1); });
     $('[data-pl-tiep]', than).addEventListener('click', function () { PL.ket = null; PL.v = k.v; N.veBang(); });
   }
   N.dangKy('kt-pl', function (than) {

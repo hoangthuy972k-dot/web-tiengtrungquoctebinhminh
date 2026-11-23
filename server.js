@@ -208,7 +208,7 @@ function sendVersionedHtml(res, filePath) {
 // CDN cua Hostinger phuc vu thang cac duong dan co duoi .html nen chung khong di
 // qua day, khong duoc dong dau ?v= va trinh duyet giu mai ban CSS/JS cu. Cac trang
 // dung thuong xuyen co them duong dan khong duoi file de luon qua Node.
-const CLEAN_PAGES = { '/lop': 'lop.html', '/choi': 'choi.html', '/quet': 'quet.html', '/nghieng': 'nghieng.html', '/van-dong': 'van-dong.html', '/dk': 'dk.html', '/dua': 'dua.html','/game': 'game.html', '/bao-cao': 'admin.html', '/hsk30': 'hsk30.html', '/nong-trai': 'nong-trai.html', '/thi-lop': 'thi-lop.html', '/thi': 'exam/test/index.html' };
+const CLEAN_PAGES = { '/lop': 'lop.html', '/choi': 'choi.html', '/quet': 'quet.html', '/nghieng': 'nghieng.html', '/van-dong': 'van-dong.html', '/dk': 'dk.html', '/dua': 'dua.html','/game': 'game.html', '/bao-cao': 'admin.html', '/hsk30': 'hsk30.html', '/nong-trai': 'nong-trai.html', '/truyen': 'truyen.html', '/the-chu': 'the-chu.html', '/moi-ngay': 'moi-ngay.html', '/dau': 'dau.html', '/thi-lop': 'thi-lop.html', '/thi': 'exam/test/index.html' };
 
 // Trang Phat am da bo: ai con giu duong dan cu thi dua ve trang chu
 app.get(['/phat-am', '/phat-am.html'], (req, res) => res.redirect(301, '/'));
@@ -390,6 +390,7 @@ async function initDb() {
   await nongTrai.initTable();
   await thiLop.initTable();
   await hocChoi.initTable();
+  for (const m of hocThem) if (m && m.initTable) await m.initTable();
   await initClassTables();
   await initQuenMkTables();
   console.log('MySQL: da san sang (bang users/scores/exam_attempts).');
@@ -1864,6 +1865,21 @@ app.post('/api/stars/tick', requireAuth, asyncRoute(async (req, res) => {
 const hocChoi = require('./hoc-choi')(app, {
   DATA_DIR, USE_DB, db: () => dbPool, readJsonFile, writeJsonFile, requireAdmin, asyncRoute, vnDayKey, vnWeekKey, VN_OFFSET_MS,
   loadUserNames, loadClassState, loadPartDone, loadAllStars, DAILY_POINTS_FILE, SCORES_FILE,
+});
+
+// Tinh nang hoc them (2026-11-23, co giao: 'them cac tinh nang cho web thu vi'): moi tinh nang 1 file rieng, 1 trang rieng.
+//   truyen-doc.js (/truyen: truyen song ngu theo cap) · the-chu.js (/the-chu: bo suu tap the chu Han)
+//   moi-ngay.js (/moi-ngay: moi ngay mot cau) · dau-mot.js (/dau: dau 1-1 truc tuyen). File chua co thi bo qua.
+// Quy tac chung: cau hoi / tu / cau chi lay tu bai em DA HOC hoac duoc giao (baiOnCua -> tuVungBai).
+const HOC_THEM_DEPS = {
+  DATA_DIR, USE_DB, db: () => dbPool, readJsonFile, writeJsonFile, requireAuth, requireAdmin, asyncRoute, vnDayKey, vnWeekKey, VN_OFFSET_MS,
+  baiOnCua, tuVungBai, loadUserNames, loadClassState, loadStar, saveStar, rollStarDay, addStars,
+};
+const hocThem = ['truyen-doc', 'the-chu', 'moi-ngay', 'dau-mot'].map((ten) => {
+  try { return require('./' + ten)(app, HOC_THEM_DEPS); } catch (e) {
+    if (e.code === 'MODULE_NOT_FOUND' && String(e.message).indexOf("'./" + ten + "'") >= 0) return null;
+    throw e;
+  }
 });
 
 // Nong trai cua em (/nong-trai): tieu sao hoc tap de trang tri nong trai — xem nong-trai.js

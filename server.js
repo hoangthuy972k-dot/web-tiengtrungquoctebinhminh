@@ -390,7 +390,8 @@ async function initDb() {
   await nongTrai.initTable();
   await thiLop.initTable();
   await hocChoi.initTable();
-  for (const m of hocThem) if (m && m.initTable) await m.initTable();
+  // tinh nang hoc them: loi khoi tao 1 tinh nang khong duoc chan cac bang khac (lop hoc, quen mat khau...)
+  for (const m of hocThem) if (m && m.initTable) { try { await m.initTable(); } catch (e) { console.error('Tinh nang hoc them: khong tao duoc bang —', e.message); } }
   await initClassTables();
   await initQuenMkTables();
   console.log('MySQL: da san sang (bang users/scores/exam_attempts).');

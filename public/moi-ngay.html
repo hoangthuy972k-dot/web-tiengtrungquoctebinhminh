@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Mỗi ngày một câu 每日一句 · Hi Hán 喜汉</title>
+<meta name="description" content="Mỗi ngày một câu tiếng Trung lấy từ chính bài em đang học: nghe, nói, viết trong 2 phút và giữ chuỗi ngày học liên tiếp.">
+<meta name="theme-color" content="#fbf3e4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/moi-ngay.css">
+</head>
+<body class="mn-body">
+
+<header class="mn-top">
+  <a class="mn-ve" href="/"><span aria-hidden="true">←</span> Trang chủ</a>
+  <div class="mn-chip" id="mnChip" hidden>
+    <svg class="mn-lua-nho" viewBox="0 0 40 48" aria-hidden="true"><path d="M20 4c3 8 13 13 13 25 0 8-6 15-13 15S7 37 7 29c0-6 3-9 6-12 0 5 2 7 4 8-1-8 0-15 3-21z" fill="#ff9a3c" stroke="#2b1d3a" stroke-width="4" stroke-linejoin="round"/><path d="M20 26c2 4 6 6 6 11 0 4-3 6-6 6s-6-2-6-6c0-4 4-6 6-11z" fill="#ffd45e" stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round"/></svg>
+    <b id="mnChipSo">0</b><span>ngày</span>
+  </div>
+</header>
+
+<main class="mn-khung">
+  <section class="mn-dau">
+    <svg class="mn-lich" viewBox="0 0 120 124" aria-hidden="true">
+      <path d="M17 31c0-5 3-8 8-8l71-1c5 0 8 3 8 8l1 74c0 5-3 8-8 8l-72 1c-5 0-8-3-8-8z" fill="#fffaf0" stroke="#2b1d3a" stroke-width="5" stroke-linejoin="round"/>
+      <path d="M17 31c0-5 3-8 8-8l71-1c5 0 8 3 8 8v20l-87 1z" fill="#e2553f" stroke="#2b1d3a" stroke-width="5" stroke-linejoin="round"/>
+      <rect x="36" y="11" width="10" height="22" rx="5" fill="#fffaf0" stroke="#2b1d3a" stroke-width="4.5"/>
+      <rect x="75" y="11" width="10" height="22" rx="5" fill="#fffaf0" stroke="#2b1d3a" stroke-width="4.5"/>
+      <text x="61" y="46" text-anchor="middle" class="mn-lich-chu1">每日</text>
+      <text x="61" y="92" text-anchor="middle" class="mn-lich-chu2">一句</text>
+      <path d="M30 101c10 3 20 3 30 0s20-3 31 0" fill="none" stroke="#f0b33a" stroke-width="4" stroke-linecap="round"/>
+    </svg>
+    <div class="mn-dau-chu">
+      <h1>Mỗi ngày một câu <span lang="zh-CN" class="zh">每日一句</span></h1>
+      <p id="mnNgay">Một câu từ chính bài em đang học — nghe, nói, viết trong 2 phút.</p>
+    </div>
+  </section>
+
+  <ol class="mn-buoc" id="mnBuoc" aria-label="Các bước hôm nay">
+    <li data-b="nghe"><span class="mn-buoc-ic" aria-hidden="true">🎧</span><span>Nghe</span></li>
+    <li data-b="noi"><span class="mn-buoc-ic" aria-hidden="true">🎤</span><span>Nói</span></li>
+    <li data-b="viet"><span class="mn-buoc-ic" aria-hidden="true">✍️</span><span>Viết</span></li>
+  </ol>
+
+  <section class="mn-the" id="mnThe" aria-live="polite">
+    <p class="mn-cho">Đang lấy câu hôm nay…</p>
+  </section>
+
+  <section class="mn-bang" id="mnBang" hidden></section>
+</main>
+
+<script src="/js/doc-zh.js"></script>
+<script src="/js/moi-ngay.js"></script>
+</body>
+</html>

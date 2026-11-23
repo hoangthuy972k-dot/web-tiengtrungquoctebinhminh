@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Đấu 1–1 trực tuyến · Hi Hán 喜汉</title>
+<meta name="description" content="Đấu 1–1 trực tuyến với bạn cùng lớp: 10 câu nhanh từ chính những bài em đã học, cùng lúc, 10 giây mỗi câu.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#fbf5ea">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Noto+Serif+SC:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/dau.css">
+</head>
+<body class="dau-body">
+
+<header class="dau-dau">
+  <a class="dau-ve" href="/"><span aria-hidden="true">←</span> Trang chủ</a>
+  <div class="dau-logo"><span aria-hidden="true">⚔️</span> Đấu 1–1 <span class="dau-logo-zh" lang="zh">对战</span></div>
+  <button type="button" class="dau-loa" id="nutLoa" aria-pressed="false" title="Bật / tắt âm thanh">🔊</button>
+</header>
+
+<main class="dau" id="dau">
+
+  <!-- Chua dang nhap -->
+  <section class="dau-man" id="manDn" hidden>
+    <div class="dau-hero" aria-hidden="true">
+      <img src="/images/game/duel-kid-a.svg" alt="" draggable="false">
+      <img class="dau-hero-vs" src="/images/game/duel-vs.svg" alt="" draggable="false">
+      <img src="/images/game/duel-kid-b.svg" alt="" draggable="false">
+    </div>
+    <h1 class="dau-tit">Đấu 1–1 trực tuyến</h1>
+    <p class="dau-mo">Thách đấu bạn cùng lớp: 10 câu nhanh lấy từ chính những bài em đã học. Em đăng nhập để vào sàn đấu nhé!</p>
+    <a class="dau-nut dau-nut-do" href="/#dang-nhap">Đăng nhập</a>
+  </section>
+
+  <!-- Sanh -->
+  <section class="dau-man dau-sanh" id="manSanh" hidden>
+    <div class="dau-the dau-toi" id="theToi"></div>
+
+    <div id="loiMoi" class="dau-loimoi" aria-live="polite"></div>
+    <div id="tranDo" class="dau-trando" hidden></div>
+
+    <div class="dau-cach">
+      <button type="button" class="dau-cach-nut c-tim" id="nutTim">
+        <span class="dau-cach-ic" aria-hidden="true"><img src="/images/game/duel-fist.svg" alt="" draggable="false"></span>
+        <b>Tìm đối thủ</b><small>Ghép ngẫu nhiên — ưu tiên bạn cùng lớp, cùng cấp</small>
+      </button>
+      <button type="button" class="dau-cach-nut c-moi" id="nutTaoPhong">
+        <span class="dau-cach-ic" aria-hidden="true"><img src="/images/game/duel-bell.svg" alt="" draggable="false"></span>
+        <b>Mời bạn</b><small>Tạo phòng, gửi mã 4 số cho bạn</small>
+      </button>
+    </div>
+
+    <form class="dau-the dau-nhapma" id="formMa" autocomplete="off">
+      <label for="oMa">Có mã phòng của bạn? <span lang="zh">房间号</span></label>
+      <div class="dau-nhapma-hang">
+        <input id="oMa" inputmode="numeric" pattern="[0-9]*" maxlength="4" placeholder="1234" aria-label="Mã phòng 4 chữ số">
+        <button type="submit" class="dau-nut dau-nut-xanh">Vào đấu ▶</button>
+      </div>
+      <p class="dau-loi" id="loiMa" role="alert"></p>
+    </form>
+
+    <section class="dau-the dau-ban">
+      <h2>👥 Bạn cùng lớp đang online <span lang="zh">在线同学</span></h2>
+      <div id="dsBan" class="dau-dsban"><p class="dau-nhat">Đang tải…</p></div>
+    </section>
+
+    <section class="dau-the dau-bxh">
+      <div class="dau-bxh-dau">
+        <h2>🏆 Bảng tuần <span lang="zh">本周排行</span></h2>
+        <div class="dau-tab" role="tablist">
+          <button type="button" role="tab" data-pham="lop" class="is-on" id="tabLop">Lớp em</button>
+          <button type="button" role="tab" data-pham="all" id="tabAll">Toàn trường</button>
+        </div>
+      </div>
+      <p class="dau-nhat dau-bxh-reset" id="bxhReset"></p>
+      <div id="bxh" class="dau-bxh-ds"><p class="dau-nhat">Đang tải…</p></div>
+      <p class="dau-nhat dau-bxh-meo">Chỉ tính trận với bạn thật — trận với Rô-bốt không vào bảng. Làm mới mỗi thứ Hai.</p>
+    </section>
+
+    <details class="dau-the dau-luat">
+      <summary>📜 Luật đấu <span lang="zh">规则</span></summary>
+      <ul>
+        <li>10 câu, hai bạn thấy cùng một câu cùng lúc, mỗi câu <b>10 giây</b>.</li>
+        <li>Đúng được <b>100 điểm</b> + thưởng nhanh tới <b>50 điểm</b> (trả lời càng sớm càng nhiều). Sai / hết giờ: 0 điểm.</li>
+        <li>Câu hỏi chỉ lấy từ bài <b>cả hai em đã học</b> (hoặc bài của bạn học ít hơn).</li>
+        <li>Mỗi câu đúng <b>+1 ⭐</b>, thắng thêm <b>+2 ⭐</b> (tối đa 10 ⭐ một trận, chung hạn sao trò chơi mỗi ngày).</li>
+        <li>Rời trận giữa chừng là xử thua.</li>
+      </ul>
+    </details>
+  </section>
+
+  <!-- Dang tim doi thu -->
+  <section class="dau-man" id="manTim" hidden>
+    <div class="dau-radar" aria-hidden="true"><span></span><span></span><span></span><div class="dau-radar-nv" id="timNv"></div></div>
+    <h2 class="dau-tit">Đang tìm đối thủ…</h2>
+    <p class="dau-mo" id="timMo">Ưu tiên bạn cùng lớp, cùng cấp độ.</p>
+    <p class="dau-dem" id="timDem">0 giây</p>
+    <div class="dau-bot" id="timBot" hidden>
+      <img src="/images/game/duel-robot.svg" alt="" draggable="false">
+      <p>Chưa có bạn nào đang tìm trận. Đấu thử với <b>Rô-bốt</b> trong lúc chờ nhé?</p>
+      <button type="button" class="dau-nut dau-nut-vang" id="nutBot">🤖 Đấu với Rô-bốt</button>
+    </div>
+    <button type="button" class="dau-nut dau-nut-trang" id="nutHuyTim">Hủy</button>
+  </section>
+
+  <!-- Phong moi ban / thach dau -->
+  <section class="dau-man" id="manPhong" hidden>
+    <h2 class="dau-tit" id="phongTit">Phòng của em</h2>
+    <p class="dau-mo" id="phongMo">Gửi mã này cho bạn. Bạn mở <b>/dau</b> và nhập mã là vào đấu ngay.</p>
+    <div class="dau-ma" id="phongMa" aria-label="Mã phòng"></div>
+    <div class="dau-chia" id="phongChia">
+      <button type="button" class="dau-nut dau-nut-xanh" id="nutChepLink">📋 Chép link</button>
+      <button type="button" class="dau-nut dau-nut-vang" id="nutChiaSe" hidden>📤 Gửi cho bạn</button>
+    </div>
+    <p class="dau-nhat" id="phongLink"></p>
+    <div class="dau-cho-dot" aria-hidden="true"><span></span><span></span><span></span></div>
+    <p class="dau-nhat" id="phongCho">Đang chờ bạn vào phòng…</p>
+    <button type="button" class="dau-nut dau-nut-trang" id="nutHuyPhong">Hủy phòng</button>
+  </section>
+
+  <!-- VS -->
+  <section class="dau-man dau-vs" id="manVs" hidden>
+    <div class="dau-vs-ben vs-a" id="vsA"></div>
+    <img class="dau-vs-huy" src="/images/game/duel-vs.svg" alt="VS" draggable="false">
+    <div class="dau-vs-ben vs-b" id="vsB"></div>
+    <p class="dau-vs-nguon" id="vsNguon"></p>
+    <div class="dau-vs-dem" id="vsDem" aria-live="assertive"></div>
+  </section>
+
+  <!-- Dang dau -->
+  <section class="dau-man dau-tran" id="manDau" hidden>
+    <div class="dau-bang">
+      <div class="dau-ben b-toi"><span class="dau-ben-nv" id="dToiNv"></span><span class="dau-ben-chu"><b id="dToiTen"></b><span class="dau-diem" id="dToiDiem">0</span></span></div>
+      <div class="dau-cau-so" id="dCauSo">1/10</div>
+      <div class="dau-ben b-doi"><span class="dau-ben-chu"><b id="dDoiTen"></b><span class="dau-diem" id="dDoiDiem">0</span></span><span class="dau-ben-nv" id="dDoiNv"></span></div>
+    </div>
+    <div class="dau-keo" aria-hidden="true"><div class="dau-keo-toi" id="dKeo"></div></div>
+    <div class="dau-vet">
+      <div class="dau-vet-hang" id="dVetToi"></div>
+      <div class="dau-vet-hang is-doi" id="dVetDoi"></div>
+    </div>
+    <div class="dau-gio" aria-hidden="true"><div class="dau-gio-thanh" id="dGio"></div><span class="dau-gio-so" id="dGioSo">10</span></div>
+
+    <div class="dau-cau" id="dCau">
+      <p class="dau-lenh" id="dLenh"></p>
+      <button type="button" class="dau-nghe" id="dNghe" hidden>🔊 <span>Nghe lại</span></button>
+      <div class="dau-de" id="dDe"></div>
+      <p class="dau-ctx" id="dCtx"></p>
+    </div>
+    <div class="dau-lua" id="dLua"></div>
+    <p class="dau-tb" id="dTb" aria-live="polite"></p>
+  </section>
+
+  <!-- Ket qua -->
+  <section class="dau-man dau-kq" id="manKq" hidden>
+    <div class="dau-kq-dau" id="kqDau"></div>
+    <div class="dau-kq-ti" id="kqTi"></div>
+    <p class="dau-kq-sao" id="kqSao"></p>
+    <div class="dau-kq-nut">
+      <button type="button" class="dau-nut dau-nut-do" id="nutLai">⚔️ Đấu lại</button>
+      <button type="button" class="dau-nut dau-nut-trang" id="nutVeSanh">Về sảnh</button>
+    </div>
+    <p class="dau-nhat" id="kqLai"></p>
+    <h2 class="dau-kq-h">Xem lại từng câu <span lang="zh">答案解析</span></h2>
+    <ol class="dau-kq-ds" id="kqDs"></ol>
+  </section>
+
+  <div class="dau-tbao" id="tbao" role="status" aria-live="polite" hidden></div>
+</main>
+
+<script src="/js/nong-trai-nv.js"></script>
+<script src="/js/doc-zh.js"></script>
+<script src="/js/dau.js"></script>
+</body>
+</html>

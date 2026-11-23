@@ -47,6 +47,10 @@ const CAY = {
 };
 // Cay lai 杂交 (nong-trai-lai.js): CAY rieng (hiem + lai), chi gieo bang hat lai tu Phong lai giong
 const Lai = require('./nong-trai-lai');
+// Diem moc he so cho module them (vd. Bon mua nong-trai-bonmua.js): fn(f, k) -> he so nhan (1 = khong doi)
+const HE_SO_CAY = [];  // thoi gian lon cua cay k khi gieo
+const HE_SO_BAN = [];  // gia ban hang k cho cua hang
+const heSoMoc = (ds, f, k) => ds.reduce((t, fn) => { try { const x = Number(fn(f, k)); return x > 0 && x < 10 ? t * x : t; } catch (e) { return t; } }, 1);
 Lai.dangKyCay(CAY);
 const CAY_HIEM = Object.keys(CAY).filter((k) => CAY[k].hiem && !CAY[k].lai);
 const THU_MOI_O = 2; // moi o dat thu duoc 2 nong san
@@ -1424,13 +1428,13 @@ module.exports = function ganNongTrai(app, d) {
       if (taiHieu(f, 'khongTrong')) throw loi(TAI[f.tai.k].zh + '！' + TAI[f.tai.k].hieu + ' — chống thiên tai trước (bấm thanh thiên tai).');
       // hat giong quy (Co thuong) gieo khong ton xu
       if (f.hat && f.hat[b.c] > 0) { f.hat[b.c]--; if (!f.hat[b.c]) delete f.hat[b.c]; } else tieuXu(c.gia);
-      o.c = b.c; o.h = now + Math.round(c.phut * PHUT * heSoTai(f, 'cay')); o.t = 0;
+      o.c = b.c; o.h = now + Math.round(c.phut * PHUT * heSoTai(f, 'cay') * heSoMoc(HE_SO_CAY, f, b.c)); o.t = 0;
     } else if (a === 'trongHet') {
       // gieo cung 1 loai hat vao moi o trong (het xu thi dung)
       const c = CAY[b.c];
       if (!c || c.lv > lv) throw loi('Không có loại hạt này.');
       if (taiHieu(f, 'khongTrong')) throw loi(TAI[f.tai.k].zh + '！' + TAI[f.tai.k].hieu + ' — chống thiên tai trước (bấm thanh thiên tai).');
-      const heSo = heSoTai(f, 'cay');
+      const heSo = heSoTai(f, 'cay') * heSoMoc(HE_SO_CAY, f, b.c);
       let n = 0;
       f.o.forEach((o) => {
         if (o.k === 'o' && !o.c && f.xu >= c.gia) { f.xu -= c.gia; o.c = b.c; o.h = now + Math.round(c.phut * PHUT * heSo); o.t = 0; n++; }
@@ -1480,7 +1484,7 @@ module.exports = function ganNongTrai(app, d) {
       if (!SP[k] || n < 1 || (f.kho[k] || 0) < n) throw loi('Không đủ hàng để bán.');
       if (SP[k].nl) throw loi(SP[k].vn + ' mua ở chợ để dùng (nấu, chế biến, chăn nuôi) — không bán lại được.');
       const goiDung = String(b.goi || '') === SP[k].zh;
-      const tien = Math.max(1, Math.round(SP[k].ban * n * (goiDung ? 1.1 : 0.7) * heSoCua(tt, k) * heSoTai(f, 'ban')));
+      const tien = Math.max(1, Math.round(SP[k].ban * n * (goiDung ? 1.1 : 0.7) * heSoCua(tt, k) * heSoTai(f, 'ban') * heSoMoc(HE_SO_BAN, f, k)));
       const homNay = saoHoc(await d.loadStar(userId)).homNay;
       const toiDa = toiDaBan(homNay, lv), da = daBanHomNay(f);
       if (da + tien > toiDa) throw loi('Hạn mức bán cho cửa hàng hôm nay còn ' + Math.max(0, toiDa - da) + ' xu. Học thêm để mở rộng: mỗi sao học = +' + BAN_MOI_SAO + ' xu hạn mức!');
@@ -3051,6 +3055,17 @@ module.exports = function ganNongTrai(app, d) {
   const phieuLuu = require('./nong-trai-phieuluu')(app, d, hKt, chung);
   hKt.phieuLuu = phieuLuu;
   Lai.gan(app, d, hKt); // Phong lai giong 育种室 (nong-trai-lai.js)
+  // Tinh nang them 2026-11-23 (moi cai 1 file, chua co file thi bo qua): thu cung hoc lenh, cho dem cuoi tuan,
+  // bon mua 春夏秋冬, hoi cho nong san tuan. hKt.HE_SO_CAY / HE_SO_BAN: diem moc he so (xem tren).
+  hKt.HE_SO_CAY = HE_SO_CAY; hKt.HE_SO_BAN = HE_SO_BAN;
+  ['nong-trai-thucung', 'nong-trai-chodem', 'nong-trai-bonmua', 'nong-trai-hoicho'].forEach((ten) => {
+    let m = null;
+    try { m = require('./' + ten); } catch (e) {
+      if (e.code === 'MODULE_NOT_FOUND' && String(e.message).indexOf("'./" + ten + "'") >= 0) return;
+      throw e;
+    }
+    m.gan(app, d, hKt, chung);
+  });
   require('./nong-trai-kt')(app, d, hKt, chung);
   xuongMod = require('./nong-trai-xuong').gan(app, d, hKt, chung);
   // Cot truyen + nhan vat (noi dung: nong-trai-truyen.js)

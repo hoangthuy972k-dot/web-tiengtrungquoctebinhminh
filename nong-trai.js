@@ -45,7 +45,10 @@ const CAY = {
   nhansam: { zh: '人参', py: 'rénshēn', vn: 'Nhân sâm', lv: 99, gia: 0, phut: 480, ban: 110, xp: 10, hiem: 1 },
   tuyetlien: { zh: '雪莲', py: 'xuělián', vn: 'Tuyết liên', lv: 99, gia: 0, phut: 720, ban: 160, xp: 14, hiem: 1 },
 };
-const CAY_HIEM = Object.keys(CAY).filter((k) => CAY[k].hiem);
+// Cay lai 杂交 (nong-trai-lai.js): CAY rieng (hiem + lai), chi gieo bang hat lai tu Phong lai giong
+const Lai = require('./nong-trai-lai');
+Lai.dangKyCay(CAY);
+const CAY_HIEM = Object.keys(CAY).filter((k) => CAY[k].hiem && !CAY[k].lai);
 const THU_MOI_O = 2; // moi o dat thu duoc 2 nong san
 const XU_MOI_SAO = 1; // doi 1 sao hoc tap = 1 xu nong trai
 // Ruong hoc tap: hoc du so sao trong ngay (lam bai, hoc du gio, tro choi tu hoc...) thi mo ruong lay xu.
@@ -1416,7 +1419,7 @@ module.exports = function ganNongTrai(app, d) {
       const c = CAY[b.c];
       if (o.k !== 'o' || o.c) throw loi('Ô này đang có cây.');
       if (!c) throw loi('Không có loại hạt này.');
-      if (c.hiem && !(f.hat && f.hat[b.c] > 0)) throw loi(c.vn + ' là cây quý — chỉ gieo được bằng hạt quý (vòng quay, bản đồ phiêu lưu, đấu giá).');
+      if (c.hiem && !(f.hat && f.hat[b.c] > 0)) throw loi(c.lai ? c.vn + ' là giống lai — chỉ gieo được bằng hạt lai (Phòng lai giống 育种室).' : c.vn + ' là cây quý — chỉ gieo được bằng hạt quý (vòng quay, bản đồ phiêu lưu, đấu giá).');
       if (c.lv > lv && !c.hiem) throw loi('Lên cấp ' + c.lv + ' để trồng ' + c.vn + '.');
       if (taiHieu(f, 'khongTrong')) throw loi(TAI[f.tai.k].zh + '！' + TAI[f.tai.k].hieu + ' — chống thiên tai trước (bấm thanh thiên tai).');
       // hat giong quy (Co thuong) gieo khong ton xu
@@ -3047,6 +3050,7 @@ module.exports = function ganNongTrai(app, d) {
   };
   const phieuLuu = require('./nong-trai-phieuluu')(app, d, hKt, chung);
   hKt.phieuLuu = phieuLuu;
+  Lai.gan(app, d, hKt); // Phong lai giong 育种室 (nong-trai-lai.js)
   require('./nong-trai-kt')(app, d, hKt, chung);
   xuongMod = require('./nong-trai-xuong').gan(app, d, hKt, chung);
   // Cot truyen + nhan vat (noi dung: nong-trai-truyen.js)

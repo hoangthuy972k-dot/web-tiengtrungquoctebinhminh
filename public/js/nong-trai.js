@@ -971,7 +971,7 @@
       html += '<div class="nt-hat-o' + (khoa ? ' khoa' : '') + '">' +
         '<button type="button" class="nt-hat-chon" data-hat="' + k + '"' + (khoa ? ' disabled' : '') + '>' + img('sp-' + k) +
         '<b lang="zh">' + esc(cay.zh) + '</b><span>' + esc(cay.vn) + '</span>' +
-        (khoa ? '<em>Cấp ' + cay.lv + '</em>' : (S.st.hat && S.st.hat[k] ? '<em class="nt-hat-quy">🎟 ' + S.st.hat[k] + ' hạt quý · miễn phí</em>' : '<em>' + img('ic-xu') + cay.gia + ' · ' + thoiLuong(cay.phut) + '</em>')) +
+        (khoa ? '<em>Cấp ' + cay.lv + '</em>' : (S.st.hat && S.st.hat[k] ? '<em class="nt-hat-quy">' + (cay.lai ? '🧬 ' + S.st.hat[k] + ' hạt lai' : '🎟 ' + S.st.hat[k] + ' hạt quý') + ' · miễn phí</em>' : '<em>' + img('ic-xu') + cay.gia + ' · ' + thoiLuong(cay.phut) + '</em>')) +
         (khoa ? '' : '<span class="nt-hat-nhan">' + nhanDacSan(k) + nhanCan(k) + '</span>') + '</button>' +
         (!khoa && !cay.hiem && soTrong > 1 ? '<button type="button" class="nt-hat-het" data-het="' + k + '" title="Gieo vào mọi ô trống">Gieo hết</button>' : '') +
         '</div>';
@@ -5248,7 +5248,7 @@
   var NHOM_THEM = [
     ['🎄 Mùa Noel', function (b) { return /^noel-/.test(b.getAttribute('data-mo') || '') || /Noel/i.test(b.id); }],
     ['📚 Học & thử thách', function (b) { return ['ntChuHan', 'ntThemVuon'].indexOf(b.id) >= 0 || ['kt-truyen', 'kt-pl', 'cay7', 'hoc', 'vuon'].indexOf(b.getAttribute('data-mo')) >= 0; }],
-    ['💰 Làm ăn', function (b) { return ['kt-mk', 'kt-xuong', 'kt-tiem', 'kt-nc', 'kt-xk', 'kt-dg', 'don', 'kt-thue'].indexOf(b.getAttribute('data-mo')) >= 0; }],
+    ['💰 Làm ăn', function (b) { return ['kt-mk', 'kt-xuong', 'lai', 'kt-tiem', 'kt-nc', 'kt-xk', 'kt-dg', 'don', 'kt-thue'].indexOf(b.getAttribute('data-mo')) >= 0; }],
     ['👫 Cùng bạn bè', function (b) { return ['chung', 'tuthien', 'congdong', 'thidua'].indexOf(b.getAttribute('data-mo')) >= 0; }],
     ['🎲 Giải trí', function (b) { return ['ntVongQuay', 'ntHoCauNut'].indexOf(b.id) >= 0; }],
     ['⚙ Cấp độ & cài đặt', function () { return true; }]

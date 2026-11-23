@@ -1,0 +1,49 @@
+/* Phong lai giong 育种室 (public/js/nong-trai-lai.js) */
+.nl-gt { margin: 0 0 10px; padding: 10px 12px; border: 2.5px solid var(--vien); border-radius: 14px; background: #e0f2f1; line-height: 1.5; }
+.nl-gt [lang="zh"], .nl [lang="zh"] { font-family: 'Noto Serif SC', serif; }
+.nl-ghep { display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap; margin: 6px 0; }
+.nl-x { font-size: 1.4rem; font-weight: 900; color: var(--mo); }
+.nl .nl-o { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; width: 108px; min-height: 120px; padding: 8px 6px;
+  border: 3px solid var(--vien); border-radius: 16px; background: #fff8ec; box-shadow: 0 3px 0 var(--vien); font: inherit; color: var(--chu); cursor: pointer; }
+.nl .nl-o img { width: 58px; height: 58px; }
+.nl .nl-o b { font-size: 1.05rem; }
+.nl .nl-o small { font-size: 0.74rem; font-weight: 700; color: var(--mo); text-align: center; }
+.nl .nl-o.trong { border-style: dashed; background: #fffdf7; box-shadow: none; }
+.nl .nl-o.trong span { font-size: 2rem; font-weight: 900; color: var(--mo); }
+.nl .nl-o.kq { cursor: default; background: linear-gradient(160deg, #e0f7fa, #f3e5f5); }
+.nl .nl-o.kq span { font-size: 2.4rem; font-weight: 900; color: #00796b; }
+.nl-phi { margin: 6px 0; font-size: 0.85rem; text-align: center; color: var(--mo); font-weight: 600; }
+.nl-phi img { width: 16px; height: 16px; vertical-align: -3px; }
+.nl-h { margin: 14px 0 6px; font-size: 1rem; }
+.nl-h small { color: var(--mo); font-weight: 700; }
+.nl-kho { display: grid; grid-template-columns: repeat(auto-fill, minmax(92px, 1fr)); gap: 8px; }
+.nl .nl-mon { display: flex; flex-direction: column; align-items: center; gap: 1px; padding: 6px 4px; border: 2.5px solid var(--vien); border-radius: 14px; background: #fff; font: inherit; color: var(--chu); cursor: pointer; }
+.nl .nl-mon img { width: 44px; height: 44px; }
+.nl .nl-mon b { font-size: 0.95rem; }
+.nl .nl-mon small { font-size: 0.7rem; font-weight: 700; color: var(--mo); text-align: center; line-height: 1.2; }
+.nl .nl-mon em { font-style: normal; font-size: 0.72rem; font-weight: 800; }
+.nl .nl-mon.chon { background: #c8e6c9; box-shadow: 0 0 0 3px #43a047 inset; }
+.nl .nl-mon.thieu { opacity: 0.45; }
+.nl .nl-mon.db { background: linear-gradient(160deg, #fffde7, #f3e5f5); }
+.nl-so { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+.nl-the { display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 8px; border: 2.5px solid var(--vien); border-radius: 14px; background: #fff8ec; text-align: center; }
+.nl-the img { width: 56px; height: 56px; }
+.nl-the p { margin: 0; font-size: 0.76rem; line-height: 1.35; }
+.nl-the em { font-style: normal; font-size: 0.74rem; font-weight: 800; }
+.nl-the em img { width: 14px; height: 14px; vertical-align: -2px; }
+.nl-cm { display: flex; align-items: center; gap: 2px; font-weight: 900; }
+.nl-cm img { width: 26px; height: 26px; }
+.nl-the.an { background: #eceff1; border-style: dashed; }
+.nl-hoi { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%; border: 2.5px solid var(--vien); background: #cfd8dc; font-size: 1.6rem; font-weight: 900; color: #546e7a; }
+.nl-the.khoa { opacity: 0.6; }
+.nl-dau { margin: 0 0 8px; text-align: center; font-weight: 700; }
+.nl-ket { text-align: center; }
+.nl-ket-hinh img { width: 110px; height: 110px; }
+.nl-ket-ten b { font-family: 'Noto Serif SC', serif; font-size: 1.5rem; }
+.nl-ket-ghep { color: #00796b; font-weight: 700; }
+.nl-goi { padding: 8px 10px; border-radius: 12px; background: #fff3e0; }
+.nl-noi { color: #00796b; font-weight: 700; }
+@media (prefers-reduced-motion: no-preference) { .nl-ket-hinh img { animation: nt-db-nay 1.6s ease-in-out infinite alternate; } }
+/* chu trong phong lai giong luon mau dam, khong bong (tranh ke thua chu trang cua the khac trong bang) */
+.nl, .nl p, .nl small, .nl b, .nl em, .nl-ket p { color: var(--chu); text-shadow: none; }
+.nl small, .nl-the small { color: var(--mo); }

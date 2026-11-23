@@ -50,6 +50,7 @@ const Lai = require('./nong-trai-lai');
 // Diem moc he so cho module them (vd. Bon mua nong-trai-bonmua.js): fn(f, k) -> he so nhan (1 = khong doi)
 const HE_SO_CAY = [];  // thoi gian lon cua cay k khi gieo
 const HE_SO_BAN = [];  // gia ban hang k cho cua hang
+const CHAN_CHUOT = []; // (f) -> {zh, py, vn, hinh} neu chuot o vong quay bi duoi di (thu cung nong-trai-thucung.js, module tu dem 1 lan / ngay)
 const heSoMoc = (ds, f, k) => ds.reduce((t, fn) => { try { const x = Number(fn(f, k)); return x > 0 && x < 10 ? t * x : t; } catch (e) { return t; } }, 1);
 Lai.dangKyCay(CAY);
 const CAY_HIEM = Object.keys(CAY).filter((k) => CAY[k].hiem && !CAY[k].lai);
@@ -902,6 +903,11 @@ function hangChuotAn(k) {
   const s = SP[k];
   return !!s && !s.hiem && !s.nl && !s.mon && !s.ca && (s.gc || (CAY[k] && !CAY[k].hiem) || (s.ban < 95 && Object.keys(CON).some((c) => CON[c].sp === k)));
 }
+// thu cung canh kho (CHAN_CHUOT): tra ve loi bao neu chuot bi duoi di
+function chanChuot(f) {
+  for (const fn of CHAN_CHUOT) { try { const r = fn(f); if (r) return r; } catch (e) { /* bo qua */ } }
+  return null;
+}
 function quayO(f, lv, rnd) {
   const tong = VQ_O.reduce((a, o) => a + o.w, 0);
   let r = rnd() * tong, i = 0;
@@ -934,7 +940,9 @@ function quayO(f, lv, rnd) {
     const tran = Math.floor(tongKho * VQ_CHUOT_PHAN);
     const ds = Object.keys(f.kho).filter((k) => f.kho[k] > 0 && hangChuotAn(k));
     const muon = 1 + Math.floor(rnd() * VQ_CHUOT_TOI_DA);
+    let chan = null;
     if (!ds.length || tran < 1) out.qua = { loai: 'chuot', n: 0, doi: 1 };
+    else if ((chan = chanChuot(f))) out.qua = { loai: 'chuot', n: 0, chan };
     else {
       const k = chon(ds), n = Math.min(muon, tran, f.kho[k]);
       f.kho[k] -= n; if (!f.kho[k]) delete f.kho[k];
@@ -3057,7 +3065,7 @@ module.exports = function ganNongTrai(app, d) {
   Lai.gan(app, d, hKt); // Phong lai giong 育种室 (nong-trai-lai.js)
   // Tinh nang them 2026-11-23 (moi cai 1 file, chua co file thi bo qua): thu cung hoc lenh, cho dem cuoi tuan,
   // bon mua 春夏秋冬, hoi cho nong san tuan. hKt.HE_SO_CAY / HE_SO_BAN: diem moc he so (xem tren).
-  hKt.HE_SO_CAY = HE_SO_CAY; hKt.HE_SO_BAN = HE_SO_BAN;
+  hKt.HE_SO_CAY = HE_SO_CAY; hKt.HE_SO_BAN = HE_SO_BAN; hKt.CHAN_CHUOT = CHAN_CHUOT;
   ['nong-trai-thucung', 'nong-trai-chodem', 'nong-trai-bonmua', 'nong-trai-hoicho'].forEach((ten) => {
     let m = null;
     try { m = require('./' + ten); } catch (e) {
@@ -3092,4 +3100,4 @@ module.exports = function ganNongTrai(app, d) {
 };
 
 // Cho cong cu thu (tools/thu-kinh-te-nong-trai.js): ham thuan cua vong quay
-module.exports._thuVq = { quayO, VQ_O, VQ_X2_O, SP, CAY, CON, TT, NHA, DAT, thuRuong, hangChuotAn };
+module.exports._thuVq = { quayO, VQ_O, VQ_X2_O, SP, CAY, CON, TT, NHA, DAT, thuRuong, hangChuotAn, CHAN_CHUOT };

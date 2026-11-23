@@ -116,5 +116,30 @@ const r3 = thuRuong(f2, [{ k: 'o', c: 'lua', h: 0 }], '', cong);
 if (r3.x2) sai('×2 dung lai lan 2');
 console.log('×2 thu hoach: 10 o -> ' + VQ_X2_O + ' o gap doi, lan sau binh thuong ✓');
 
+// ---- 4) Thu cung 宠物 (nong-trai-thucung.js): 去拿 toi da ~90 xu / ngay, 别动 duoi chuot toi da 1 lan / ngay ----
+{
+  const Pet = require(path.join(__dirname, '..', 'nong-trai-thucung.js'))._thu;
+  const { CHAN_CHUOT } = require(path.join(__dirname, '..', 'nong-trai.js'))._thuVq;
+  let maxGt = 0;
+  for (let lv = 1; lv <= 100; lv += 3) for (let i = 0; i < 100; i++) {
+    const q = Pet.quaLay(CAY, SP, lv);
+    maxGt = Math.max(maxGt, SP[q.k].ban * q.n);
+    if (CAY[q.k].hiem || CAY[q.k].lai || q.n < 1 || q.n > Pet.LAY_TOI_DA) sai('去拿 sai: ' + JSON.stringify(q));
+  }
+  if (maxGt > 90) sai('去拿 qua dat: ' + maxGt + ' xu');
+  CHAN_CHUOT.push((f) => Pet.chanChuot(f, '2026-01-01'));
+  const f = { xu: 0, o: [], kho: { lua: 40 }, tui: {}, hat: {}, pet: { loai: 'cho', ten: 'A', vui: 90, vt: Date.now(), lenh: { biedong: { n: 3 } } } };
+  let chan = 0;
+  for (let i = 0; i < 20; i++) {
+    const g = { n: 0 };
+    let r0 = 0; for (let j = 0; j < iChuot; j++) r0 += VQ_O[j].w;
+    const r = quayO(f, 6, () => (g.n++ === 0 ? (r0 + VQ_O[iChuot].w / 2) / tong : Math.random()));
+    if (r.qua.chan) chan++;
+  }
+  CHAN_CHUOT.length = 0;
+  if (chan !== 1) sai('thu cung duoi chuot ' + chan + ' lan / ngay (phai la 1)');
+  console.log('Thu cung: 去拿 toi da ' + maxGt + ' xu / ngay, 别动 duoi chuot ' + chan + ' lan / 20 lan chuot trong ngay ✓');
+}
+
 console.log(loi ? loi + ' LOI ✗' : 'Tat ca dung ✓');
 process.exit(loi ? 1 : 0);

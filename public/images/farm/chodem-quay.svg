@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" preserveAspectRatio="none">
+<g stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<rect x="4" y="18" width="392" height="80" rx="4" fill="#8d5a3b"/>
+<path d="M4 44H396M4 70H396" fill="none" stroke="#6d4129" stroke-width="2"/>
+<path d="M40 44V70M360 44V70M110 70V98M290 70V98" fill="none" stroke="#6d4129" stroke-width="2"/>
+<path d="M18 30Q28 28 40 31M352 84Q362 82 372 85" fill="none" stroke="#b07a52" stroke-width="2"/>
+<path d="M70 18H330V58Q296 72 262 62Q232 76 200 64Q168 76 138 62Q104 72 70 58Z" fill="#c62828"/>
+<path d="M70 52Q104 66 138 56Q168 70 200 58Q232 70 262 56Q296 66 330 52" fill="none" stroke="#ffc93c" stroke-width="3"/>
+<rect x="0" y="6" width="400" height="16" rx="5" fill="#c98a5a"/>
+<path d="M14 13H120M160 13H260M300 13H386" fill="none" stroke="#e0ab7c" stroke-width="2"/>
+</g>
+<text x="200" y="46" text-anchor="middle" font-size="20" font-weight="900" fill="#ffd54f" stroke="#2b1d3a" stroke-width="1" paint-order="stroke" font-family="Noto Serif SC, serif">夜 市</text>
+</svg>

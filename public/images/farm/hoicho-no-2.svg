@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<g stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<path d="M38 52L24 92L35 85L42 95L52 58Z" fill="#1e88e5"/>
+<path d="M62 52L76 92L65 85L58 95L48 58Z" fill="#1e88e5"/>
+<path d="M33 78L38 64M67 78L62 64" stroke="#0d47a1" stroke-width="2"/>
+<path d="M50 6L55.5 12.5L63 8.6L65.6 16.7L74 16L73.3 24.4L81.4 27L77.5 34.5L84 40L77.5 45.5L81.4 53L73.3 55.6L74 64L65.6 63.3L63 71.4L55.5 67.5L50 74L44.5 67.5L37 71.4L34.4 63.3L26 64L26.7 55.6L18.6 53L22.5 45.5L16 40L22.5 34.5L18.6 27L26.7 24.4L26 16L34.4 16.7L37 8.6L44.5 12.5Z" fill="#dfe6ea"/>
+<path d="M50 15L54.1 19.4L59.6 16.9L61.7 22.5L67.7 22.3L67.5 28.3L73.1 30.4L70.6 35.9L75 40L70.6 44.1L73.1 49.6L67.5 51.7L67.7 57.7L61.7 57.5L59.6 63.1L54.1 60.6L50 65L45.9 60.6L40.4 63.1L38.3 57.5L32.3 57.7L32.5 51.7L26.9 49.6L29.4 44.1L25 40L29.4 35.9L26.9 30.4L32.5 28.3L32.3 22.3L38.3 22.5L40.4 16.9L45.9 19.4Z" fill="#9fb0ba" stroke-width="2"/>
+<circle cx="50" cy="40" r="17" fill="#fff8ec"/>
+<path d="M39 33Q42 27 49 26" fill="none" stroke="#fff" stroke-width="2.5"/>
+</g>
+<text x="50" y="47.5" text-anchor="middle" font-size="19" font-weight="900" fill="#455a64" font-family="Noto Serif SC, serif">银</text>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<ellipse cx="50" cy="92" rx="32" ry="4.5" fill="#000" opacity=".15"/>
+<g stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<path d="M20 88L24 76H76L80 88Z" fill="#8d5a3b"/>
+<path d="M26 79H74" stroke="#b9783f" stroke-width="2"/>
+<rect x="38" y="80" width="24" height="6" rx="1.5" fill="#ffc83d" stroke-width="2"/>
+<path d="M30 76L33 68H67L70 76Z" fill="#a86a3e"/>
+<path d="M42 68L44 60H56L58 68Z" fill="#e09b12"/>
+<path d="M46 50Q48 56 45 60H55Q52 56 54 50Z" fill="#e09b12"/>
+<path d="M29 18Q12 19 15 32Q18 44 36 46M71 18Q88 19 85 32Q82 44 64 46" fill="none" stroke-width="7"/>
+<path d="M29 18Q12 19 15 32Q18 44 36 46M71 18Q88 19 85 32Q82 44 64 46" fill="none" stroke="#ffc83d" stroke-width="2.5"/>
+<path d="M26 13H74Q74 40 58 48Q54 51 50 51Q46 51 42 48Q26 40 26 13Z" fill="#ffc83d"/>
+<path d="M64 15H72Q71 38 56 47Q66 36 64 15Z" fill="#e09b12" stroke="none"/>
+<rect x="23" y="8" width="54" height="7" rx="3" fill="#e09b12"/>
+<path d="M27 11H45" stroke="#fff1a8" stroke-width="2"/>
+<path d="M33 20Q33 33 40 41" fill="none" stroke="#fff1a8" stroke-width="3"/>
+<path d="M14 86Q8 70 14 56M86 86Q92 70 86 56" fill="none" stroke="#4e8b2c" stroke-width="2.6"/>
+<g fill="#7cc04b" stroke-width="2">
+<path d="M14 58Q8 54 9 48Q15 51 14 58Z"/><path d="M12 68Q5 66 4 60Q11 61 12 68Z"/><path d="M12 78Q5 77 3 71Q10 71 12 78Z"/>
+<path d="M14 62Q20 58 20 52Q14 55 14 62Z"/><path d="M13 73Q19 70 20 64Q14 66 13 73Z"/>
+<path d="M86 58Q92 54 91 48Q85 51 86 58Z"/><path d="M88 68Q95 66 96 60Q89 61 88 68Z"/><path d="M88 78Q95 77 97 71Q90 71 88 78Z"/>
+<path d="M86 62Q80 58 80 52Q86 55 86 62Z"/><path d="M87 73Q81 70 80 64Q86 66 87 73Z"/>
+</g>
+<path d="M44 40L38 58L43 55L46 60L50 44Z" fill="#e53935" stroke-width="2.2"/>
+<path d="M56 40L62 58L57 55L54 60L50 44Z" fill="#e53935" stroke-width="2.2"/>
+<circle cx="50" cy="31" r="11" fill="#e53935"/>
+<circle cx="50" cy="31" r="7.5" fill="#fff8ec" stroke-width="2"/>
+</g>
+<text x="50" y="35" text-anchor="middle" font-size="10" font-weight="900" fill="#b71c1c" font-family="Noto Serif SC, serif">奖</text>
+</svg>

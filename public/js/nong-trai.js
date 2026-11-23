@@ -972,7 +972,7 @@
         '<button type="button" class="nt-hat-chon" data-hat="' + k + '"' + (khoa ? ' disabled' : '') + '>' + img('sp-' + k) +
         '<b lang="zh">' + esc(cay.zh) + '</b><span>' + esc(cay.vn) + '</span>' +
         (khoa ? '<em>Cấp ' + cay.lv + '</em>' : (S.st.hat && S.st.hat[k] ? '<em class="nt-hat-quy">' + (cay.lai ? '🧬 ' + S.st.hat[k] + ' hạt lai' : '🎟 ' + S.st.hat[k] + ' hạt quý') + ' · miễn phí</em>' : '<em>' + img('ic-xu') + cay.gia + ' · ' + thoiLuong(cay.phut) + '</em>')) +
-        (khoa ? '' : '<span class="nt-hat-nhan">' + nhanDacSan(k) + nhanCan(k) + '</span>') + '</button>' +
+        (khoa ? '' : '<span class="nt-hat-nhan">' + nhanDacSan(k) + nhanCan(k) + nhanHatThem(k) + '</span>') + '</button>' +
         (!khoa && !cay.hiem && soTrong > 1 ? '<button type="button" class="nt-hat-het" data-het="' + k + '" title="Gieo vào mọi ô trống">Gieo hết</button>' : '') +
         '</div>';
     });
@@ -1217,6 +1217,7 @@
     if (q.loai === 'luot') return { zh: '再来一次！', vn: 'Thêm 1 lượt quay', hinh: 'ic-xp' };
     if (q.loai === 'mat') return { zh: '谢谢参与', vn: 'Mất lượt rồi — lượt sau may hơn nhé!', hinh: 'ic-mat', xau: 1 };
     if (q.loai === 'chuot') {
+      if (q.chan) return { zh: q.chan.zh, vn: q.chan.vn, hinh: q.chan.hinh || 'ic-chuot' }; // thu cung canh kho (nong-trai-thucung.js)
       if (!q.n) return { zh: '老鼠饿了', vn: 'Chuột vào kho… nhưng chẳng có gì ăn, đói bụng đi về! 😅', hinh: 'ic-chuot', xau: 1 };
       var mc = c.SP[q.k] || {};
       return { zh: '老鼠来了！', vn: 'Chuột gặm mất ' + q.n + ' ' + (mc.vn || '').toLowerCase() + ' ' + (mc.zh || ''), hinh: 'ic-chuot', xau: 1 };
@@ -1742,6 +1743,8 @@
   }
   function nhanDacSan(k) { return thiTr().dacSan === k ? '<span class="nt-ds-nhan">⭐ Đặc sản</span>' : ''; }
   function nhanCan(k) { var n = thiTr().can[k] || 0; return n ? '<span class="nt-can-nhan">🔥 Lớp cần ' + n + '</span>' : ''; }
+  // nhan them cua module (vd. 当季 / 反季 — public/js/nong-trai-bonmua.js): NTX.nhanHat = [fn(k) -> html]
+  function nhanHatThem(k) { return window.NTX && NTX.nhanHat ? NTX.nhanHat.map(function (fn) { try { return fn(k) || ''; } catch (e) { return ''; } }).join('') : ''; }
 
   /* ---------------- Ban hang: goi ten bang tieng Trung ---------------- */
   function hanMucBan() { var b = S.st.ban || { da: 0, toiDa: 0 }; return { da: b.da, toiDa: b.toiDa, con: Math.max(0, b.toiDa - b.da) }; }
@@ -5247,10 +5250,10 @@
   // (mua Noel, thue, tu thien...) tu them nut luc chay; nut khong nam trong nhom nao vao "Khác"
   var NHOM_THEM = [
     ['🎄 Mùa Noel', function (b) { return /^noel-/.test(b.getAttribute('data-mo') || '') || /Noel/i.test(b.id); }],
-    ['📚 Học & thử thách', function (b) { return ['ntChuHan', 'ntThemVuon'].indexOf(b.id) >= 0 || ['kt-truyen', 'kt-pl', 'cay7', 'hoc', 'vuon'].indexOf(b.getAttribute('data-mo')) >= 0; }],
-    ['💰 Làm ăn', function (b) { return ['kt-mk', 'kt-xuong', 'lai', 'kt-tiem', 'kt-nc', 'kt-xk', 'kt-dg', 'don', 'kt-thue'].indexOf(b.getAttribute('data-mo')) >= 0; }],
+    ['📚 Học & thử thách', function (b) { return ['ntChuHan', 'ntThemVuon'].indexOf(b.id) >= 0 || ['kt-truyen', 'kt-pl', 'cay7', 'hoc', 'vuon', 'bonmua'].indexOf(b.getAttribute('data-mo')) >= 0; }],
+    ['💰 Làm ăn', function (b) { return ['kt-mk', 'chodem', 'kt-xuong', 'lai', 'kt-tiem', 'kt-nc', 'kt-xk', 'kt-dg', 'don', 'kt-thue'].indexOf(b.getAttribute('data-mo')) >= 0; }],
     ['👫 Cùng bạn bè', function (b) { return ['chung', 'tuthien', 'congdong', 'thidua'].indexOf(b.getAttribute('data-mo')) >= 0; }],
-    ['🎲 Giải trí', function (b) { return ['ntVongQuay', 'ntHoCauNut'].indexOf(b.id) >= 0; }],
+    ['🎲 Giải trí', function (b) { return ['ntVongQuay', 'ntHoCauNut'].indexOf(b.id) >= 0 || b.getAttribute('data-mo') === 'thucung'; }],
     ['⚙ Cấp độ & cài đặt', function () { return true; }]
   ];
   function nhomThem() {
@@ -5806,6 +5809,7 @@
     sauBang: [], // ham goi sau moi lan ve 1 bang (bangDang) — nut ❓ + huong dan lan dau
     sauVe: [], // ham goi sau moi lan ve lai ban do (innerHTML thay het)
     sauNoi: [], // (o, el) goi sau khi mo bong noi gioi thieu 1 vat (gioiThieu)
+    nhanHat: [], // fn(k) -> html: nhan them cho hat giong k trong bang gieo hat (moGieoHat)
     datViTriNoi: datViTriNoi, veNoelTt: null, noelNho: null, // mua Noel (public/js/nong-trai-noel.js)
     nhip: [],  // ham goi moi giay
     sau: [], // ham goi sau moi lan nhan trang thai

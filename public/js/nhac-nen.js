@@ -64,6 +64,21 @@
     hopO: [MAJ, MAJ, MAJ, MAJ, MAJ, MIN, MIN, MAJ, MAJ, MAJ, MIN, MAJ, MAJ, MAJ, MIN, MAJ],
     bass: [0, null, 7, null, 12, null], kick: [0], snare: [], hat: [0, 2, 4]
   };
+  // 'tet': "新年好" (dan ca thieu nhi, giai dieu dan gian — tu do su dung), Do truong, nhip 3/4 (6 not moc / o nhip), 14 o + 2 o nghi.
+  // Mua Tet tren nong trai (public/js/nong-trai-tet.js) bat kieu nay.
+  KIEU.tet = {
+    bpm: 150, mel: 'triangle', melTo: 0.24, nhip: 6, giu: true,
+    o: [
+      [72, 0, 72, 0, 72, 0], [67, 0, 0, 0, 0, 0], [76, 0, 76, 0, 76, 0], [72, 0, 0, 0, 0, 0],
+      [72, 0, 76, 0, 79, 0], [79, 0, 77, 0, 76, 0], [74, 0, 0, 0, 0, 0], [74, 0, 76, 0, 77, 0],
+      [77, 0, 0, 0, 0, 0], [76, 0, 74, 0, 76, 0], [72, 0, 0, 0, 0, 0], [72, 0, 76, 0, 74, 0],
+      [67, 0, 71, 0, 74, 0], [72, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0]
+    ],
+    //        C   C   C   C   C   C   G   G   G   C   C   C   G   C   C   C
+    gocO: [48, 48, 48, 48, 48, 48, 43, 43, 43, 48, 48, 48, 43, 48, 48, 48],
+    hopO: [MAJ, MAJ, MAJ, MAJ, MAJ, MAJ, MAJ, MAJ, MAJ, MAJ, MAJ, MAJ, MAJ, MAJ, MAJ, MAJ],
+    bass: [0, null, 7, null, 12, null], kick: [0], snare: [], hat: [0, 2, 4]
+  };
 
   var ac = null, chu = null, on = null, hen = null, buoc = 0, tiep = 0;
   var chay = false, phien = false, K = KIEU.vui, NUA = 60 / K.bpm / 2, nut = null, coNut = true;

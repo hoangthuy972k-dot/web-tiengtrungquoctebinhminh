@@ -5250,7 +5250,7 @@
   // (mua Noel, thue, tu thien...) tu them nut luc chay; nut khong nam trong nhom nao vao "Khác"
   var NHOM_THEM = [
     ['🎄 Mùa Noel', function (b) { return /^noel-/.test(b.getAttribute('data-mo') || '') || /Noel/i.test(b.id); }],
-    ['📚 Học & thử thách', function (b) { return ['ntChuHan', 'ntThemVuon'].indexOf(b.id) >= 0 || ['kt-truyen', 'kt-pl', 'cay7', 'hoc', 'vuon', 'bonmua'].indexOf(b.getAttribute('data-mo')) >= 0; }],
+    ['📚 Học & thử thách', function (b) { return ['ntChuHan', 'ntThemVuon'].indexOf(b.id) >= 0 || ['kt-truyen', 'kt-pl', 'cay7', 'hoc', 'vuon', 'bonmua', 'thoitiet', 'homthu', 'baotang', 'tet'].indexOf(b.getAttribute('data-mo')) >= 0; }],
     ['💰 Làm ăn', function (b) { return ['kt-mk', 'chodem', 'kt-xuong', 'lai', 'kt-tiem', 'kt-nc', 'kt-xk', 'kt-dg', 'don', 'kt-thue'].indexOf(b.getAttribute('data-mo')) >= 0; }],
     ['👫 Cùng bạn bè', function (b) { return ['chung', 'tuthien', 'congdong', 'thidua'].indexOf(b.getAttribute('data-mo')) >= 0; }],
     ['🎲 Giải trí', function (b) { return ['ntVongQuay', 'ntHoCauNut'].indexOf(b.id) >= 0 || b.getAttribute('data-mo') === 'thucung'; }],

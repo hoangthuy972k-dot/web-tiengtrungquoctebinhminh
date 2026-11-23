@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120">
+<ellipse cx="50" cy="113" rx="30" ry="5" fill="#000" opacity=".16"/>
+<g stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<path d="M43 58H57V112H43Z" fill="#a86a3e"/>
+<path d="M47 66V80M53 88V104" stroke="#7a4a2a" stroke-width="2"/>
+<path d="M30 112Q34 100 38 110Q40 98 44 111M56 111Q60 99 62 110Q66 100 70 112" fill="#7cc04b" stroke-width="2.4"/>
+<path d="M28 54H76L72 61H32Z" fill="#8d5a3b"/>
+<path d="M26 19H79Q93 19 93 35V56H26Z" fill="#3f9e6e"/>
+<path d="M33 24H78Q87 24 88 33" fill="none" stroke="#8fe0b0" stroke-width="2.6"/>
+<rect x="53" y="30" width="26" height="19" rx="3.5" fill="#fff3d6" stroke-width="2.6"/>
+<path d="M11 56V35Q11 18 26 18Q41 18 41 35V56Z" fill="#5cc08a"/>
+<path d="M16 52V36Q16 23 26 23Q36 23 36 36V52Z" fill="none" stroke="#2f7d55" stroke-width="2"/>
+<rect x="22" y="38" width="8" height="5" rx="2" fill="#ffc83d" stroke-width="2.2"/>
+<circle cx="89" cy="44" r="3.2" fill="#ffc83d" stroke-width="2"/>
+</g>
+<text x="66" y="45" text-anchor="middle" font-size="14" font-weight="900" fill="#c62828" font-family="Noto Serif SC, serif">信</text>
+</svg>

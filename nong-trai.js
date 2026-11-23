@@ -1096,6 +1096,7 @@ module.exports = function ganNongTrai(app, d) {
   const suKien = (f, ten, n) => { suKienHook.forEach((fn) => { try { fn(f, ten, n); } catch (e) { /* bo qua */ } }); };
   const vaoHook = [];  // async (user, f) -> true neu da doi f (chay trong khoa cua em khi mo nong trai)
   const ttThem = [];   // (userId, f, st) -> them truong vao trang thai gui client
+  const truocGhi = []; // (f) -> chay ngay truoc moi lan luu nong trai (bao tang nong-trai-baotang.js ghi hien vat moi)
 
   async function initTable() {
     if (!d.USE_DB) return;
@@ -1126,6 +1127,7 @@ module.exports = function ganNongTrai(app, d) {
   }
   async function ghi(userId, f) {
     traThuongCap(f); // thuong len cap (1 lan / cap) — truoc khi luu
+    truocGhi.forEach((fn) => { try { fn(f); } catch (e) { /* bo qua */ } });
     const lv = lvTuXp(f.xp), dep = diemDep(f);
     if (!d.USE_DB) {
       const all = d.readJsonFile(FILE) || {};
@@ -1866,9 +1868,14 @@ module.exports = function ganNongTrai(app, d) {
     const gan = Array.isArray(f.taiDa) ? f.taiDa : [];
     let ds = Object.keys(TAI).filter((k) => (!TAI[k].canCon || coCon) && gan.indexOf(k) < 0);
     if (!ds.length) ds = Object.keys(TAI).filter((k) => (!TAI[k].canCon || coCon) && k !== gan[0]);
-    const k = ds[Math.floor(Math.random() * ds.length)];
+    // du bao thoi tiet (nong-trai-thoitiet.js): kieu thien tai hom nay da chon truoc (f.taiDb[ngay]) va bao tren ban tin
+    const k = f.taiDb && TAI[f.taiDb[ngay]] ? f.taiDb[ngay] : ds[Math.floor(Math.random() * ds.length)];
     f.tai = { k, d: ngay, bd: now, co: 0, giup: [] };
     if (TAI_MANH[bacCua(lvTuXp(f.xp))]) f.tai.m = bacCua(lvTuXp(f.xp)); // bac cao: manh hon (TAI_MANH)
+    // em da chuan bi tu hom qua (ban tin thoi tiet): lam san vai phan viec, van con it nhat 1 phan de tu chong
+    if (f.taiCb && f.taiCb.d === ngay && f.taiCb.k === k) { f.tai.cb = Math.max(0, Math.min(canTai(f) - 1, f.taiCb.n | 0)); f.tai.co = f.tai.cb; }
+    if (f.taiDb) { delete f.taiDb[ngay]; if (!Object.keys(f.taiDb).length) delete f.taiDb; }
+    if (f.taiCb && f.taiCb.d <= ngay) delete f.taiCb;
     f.taiDa = [k].concat(gan).slice(0, TAI_NHO);
     delete f.taiq;
     return true;
@@ -3055,7 +3062,7 @@ module.exports = function ganNongTrai(app, d) {
   // nha may che bien + nhan cong + xuat khau sang cac vung dat
   const hKt = {
     doc, ghi, lanLuot, haiLuot, loi, traLoi, trangThai, ghiNk, docNhieu, thiTruong, hanMuc, ghiBanNgay, ghiThuNhap, lvTuXp, saoHoc, taiCongDong, boNhoCongDong,
-    tuHocCua, boKtbc, chonKt, taoCau, cauDung, chamCau, onCau, ketQuaCau, ghiOn, thuRuong, nhatCon, donHomNay, moQua, vaoHook, ttThem, banCungLop,
+    tuHocCua, boKtbc, chonKt, taoCau, cauDung, chamCau, onCau, ketQuaCau, ghiOn, thuRuong, nhatCon, donHomNay, moQua, vaoHook, ttThem, truocGhi, banCungLop,
     MO_TN, SP, CAY, CON, TT, CA, MON, HANG, LUONG, LUONG_PY, CON_TOI_DA, CAY_HIEM, BAN_MOI_SAO, Ktbc, CauHoi, CATALOG, NHOM_TT: null, datDuoc, rong, suKien, suKienHook, TIN_BAN_NGAY, TIN_NGAY,
     // cap cao 31–100 (nong-trai-capcao.js)
     deChuHanKt, cungLop, DO_KHO, doKho, BAC, bacCua, XP_LV, LV_TOI_DA, thuongCap, MOC_CAP, DAT, NHA,

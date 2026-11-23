@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100">
+<defs>
+<g id="tjz"><path d="M-17 4Q-18 -12 0 -13Q18 -12 17 4Q0 10 -17 4Z" fill="#fff8ec" stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round"/>
+<path d="M-13 -5Q-11 -9 -8 -7M-6 -10Q-3 -13 0 -10M6 -10Q9 -12 11 -8" fill="none" stroke="#2b1d3a" stroke-width="1.6" stroke-linecap="round"/>
+<path d="M-12 1Q0 5 12 1" fill="none" stroke="#e6d5b8" stroke-width="2" stroke-linecap="round"/></g>
+</defs>
+<ellipse cx="50" cy="86" rx="40" ry="5" fill="#000" opacity=".15"/>
+<g stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round">
+<ellipse cx="50" cy="70" rx="42" ry="13" fill="#fffdf6"/>
+<ellipse cx="50" cy="68" rx="32" ry="8" fill="none" stroke="#90caf9" stroke-width="2"/>
+</g>
+<use href="#tjz" xlink:href="#tjz" transform="translate(32 62)"/>
+<use href="#tjz" xlink:href="#tjz" transform="translate(68 62)"/>
+<use href="#tjz" xlink:href="#tjz" transform="translate(50 52)"/>
+<g stroke="#2b1d3a" stroke-width="2.4" stroke-linecap="round"><path d="M70 26L92 50M76 22L95 45" fill="none"/></g>
+<g fill="#c62828" stroke="#2b1d3a" stroke-width="1.6"><circle cx="18" cy="38" r="4"/></g>
+<path d="M14 44Q18 41 22 44" fill="none" stroke="#2b1d3a" stroke-width="1.5"/>
+</svg>

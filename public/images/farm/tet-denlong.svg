@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<ellipse cx="50" cy="92" rx="38" ry="4.5" fill="#000" opacity=".15"/>
+<circle cx="30" cy="46" r="21" fill="#ffd54f" opacity=".2"/><circle cx="70" cy="46" r="21" fill="#ffd54f" opacity=".2"/>
+<g stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<path d="M10 92V86Q10 83 14 83H22Q26 83 26 86V92Z" fill="#a9afb9"/><path d="M74 92V86Q74 83 78 83H86Q90 83 90 86V92Z" fill="#a9afb9"/>
+<rect x="15" y="12" width="6" height="72" rx="2" fill="#a86b45"/><rect x="79" y="12" width="6" height="72" rx="2" fill="#a86b45"/>
+<rect x="10" y="9" width="80" height="7" rx="3" fill="#c62828"/>
+<path d="M30 16V25M70 16V25" fill="none" stroke-width="2.5"/>
+<rect x="23" y="24" width="14" height="5" rx="2" fill="#ffc93c"/><rect x="63" y="24" width="14" height="5" rx="2" fill="#ffc93c"/>
+<ellipse cx="30" cy="45" rx="15" ry="16" fill="#e53935"/><ellipse cx="70" cy="45" rx="15" ry="16" fill="#e53935"/>
+<path d="M30 29V61M22 31Q15 45 22 59M38 31Q45 45 38 59M70 29V61M62 31Q55 45 62 59M78 31Q85 45 78 59" fill="none" stroke="#b71c1c" stroke-width="1.8"/>
+<ellipse cx="30" cy="45" rx="15" ry="16" fill="none"/><ellipse cx="70" cy="45" rx="15" ry="16" fill="none"/>
+<rect x="23" y="60" width="14" height="5" rx="2" fill="#ffc93c"/><rect x="63" y="60" width="14" height="5" rx="2" fill="#ffc93c"/>
+<path d="M27 65L25 78M30 65V80M33 65L35 78M67 65L65 78M70 65V80M73 65L75 78" fill="none" stroke="#e53935" stroke-width="2.4"/>
+</g>
+<g font-family="'Noto Serif SC','SimSun',serif" font-weight="900" font-size="13" text-anchor="middle" fill="#ffd54f" stroke="#2b1d3a" stroke-width=".8" paint-order="stroke"><text x="30" y="50">春</text><text x="70" y="50">福</text></g>
+<ellipse cx="23" cy="38" rx="2.6" ry="5" fill="#ff8a80" opacity=".8"/><ellipse cx="63" cy="38" rx="2.6" ry="5" fill="#ff8a80" opacity=".8"/>
+</svg>

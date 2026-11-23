@@ -141,5 +141,53 @@ console.log('×2 thu hoach: 10 o -> ' + VQ_X2_O + ' o gap doi, lan sau binh thuo
   console.log('Thu cung: 去拿 toi da ' + maxGt + ' xu / ngay, 别动 duoi chuot ' + chan + ' lan / 20 lan chuot trong ngay ✓');
 }
 
+// ---- 5) Bao tang nong trai 博物馆 (nong-trai-baotang.js): thuong cot moc tra 1 lan, huong dan vien co tran / ngay ----
+{
+  const Bt = require(path.join(__dirname, '..', 'nong-trai-baotang.js'));
+  const tong = 245, sanh = {};
+  Bt.SANH.forEach((s, i) => { sanh[s.k] = { n: 20 + i, tong: 20 + i }; });
+  const dem = { n: tong, tong, sanh };
+  const f = { xu: 0, tui: {} };
+  const ds = Bt._thu.dsMoc(dem, null);
+  let tongXu = 0;
+  ds.forEach((m) => { tongXu += Bt._thu.nhanMoc(f, m.k, dem, '2026-01-01').xu; });
+  let lai = 0;
+  ds.forEach((m) => { try { Bt._thu.nhanMoc(f, m.k, dem, '2026-01-02'); lai++; } catch (e) { /* da nhan */ } });
+  if (lai) sai('bao tang: nhan lai cot moc ' + lai + ' lan');
+  if (f.xu !== tongXu) sai('bao tang: xu cot moc lech');
+  const ttNhan = Object.keys(f.tui).length;
+  if (ttNhan !== Object.keys(Bt.TT_BT).length) sai('bao tang: do trang tri cot moc ' + ttNhan);
+  // chua dat thi khong nhan duoc
+  const f2 = { xu: 0, tui: {} };
+  try { Bt._thu.nhanMoc(f2, 'p25', { n: 10, tong, sanh }, '2026-01-01'); sai('bao tang: nhan moc chua dat'); } catch (e) { /* dung */ }
+  const hdvNgay = Bt.SANH.length * Bt.HDV_SO * Bt.HDV_XU;
+  if (hdvNgay > 100) sai('bao tang: huong dan vien toi da ' + hdvNgay + ' xu / ngay');
+  console.log('Bao tang: ' + ds.length + ' cot moc tra 1 lan (tong ' + tongXu + ' xu + ' + ttNhan + ' do doc quyen), huong dan vien toi da ' + hdvNgay + ' xu / ngay ✓');
+}
+
+// ---- Hom thu lang 信箱 (nong-trai-homthu.js): thu xin hang — gia tri <= GT_TOI_DA, thuong chi hon gia tri mot chut; khuon thu chi dung tu duoc phep ----
+{
+  const Ht = require(path.join(__dirname, '..', 'nong-trai-homthu.js'))._thu;
+  const nguon = { cau: [{ zh: '你好！', py: 'Nǐ hǎo!', vn: 'Chào!', u: 'x', tk: [] }], cap: [], tatCa: [], tuDien: {} };
+  const duoc = new Set(Object.keys(Ht.TU).concat(['一', '两', '三', '四', '五', '六', '七', '八', '九', '十', '，', '：', '！', '？', '。']));
+  let maxGt = 0, maxLai = 0;
+  for (let lv = 1; lv <= 100; lv += 3) for (let i = 0; i < 60; i++) {
+    const f = { o: [{ k: 'ga' }, { k: 'vit' }, { k: 'cuu' }], kho: { trung: 5 } };
+    const t = Ht.taoThu({ nguon, f, lv, CAY, CON, SP, loai: 'xin' });
+    if (!t) { sai('hom thu: khong tao duoc thu o cap ' + lv); break; }
+    const gt = SP[t.k].ban * t.n;
+    maxGt = Math.max(maxGt, gt); maxLai = Math.max(maxLai, Ht.thuongXin(gt, true) - gt);
+    if (t.n < 1 || t.n > 10 || ['个', '斤'].indexOf(t.lg) < 0 || (CAY[t.k] && (CAY[t.k].hiem || CAY[t.k].lv > lv))) sai('hom thu sai: ' + JSON.stringify(t));
+    Ht.dongThu(t, 'An', SP).forEach((l) => {
+      if (l.hoc || l.ky || l.mo) return;
+      l.tk.forEach((w) => { if (!duoc.has(w.z) && w.z !== SP[t.k].zh) sai('hom thu: tu ngoai danh sach "' + w.z + '"'); });
+    });
+  }
+  if (maxGt > Ht.GT_TOI_DA) sai('hom thu: thu xin qua dat ' + maxGt);
+  const ngay = Ht.SO_THU_NGAY * Math.max(maxLai, Ht.THUONG_HOI);
+  if (ngay > 60) sai('hom thu: lai moi ngay qua cao ' + ngay);
+  console.log('Hom thu: thu xin toi da ' + maxGt + ' xu hang, lai toi da ' + maxLai + ' xu / thu, ' + Ht.SO_THU_NGAY + ' thu / ngay (<= ' + ngay + ' xu lai) ✓');
+}
+
 console.log(loi ? loi + ' LOI ✗' : 'Tat ca dung ✓');
 process.exit(loi ? 1 : 0);

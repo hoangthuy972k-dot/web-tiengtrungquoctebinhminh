@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100">
+<defs>
+<g id="tth"><g stroke="#2b1d3a" stroke-width="1.6" fill="#f8a5c2"><circle cx="0" cy="-3.6" r="3.2"/><circle cx="3.4" cy="-1.1" r="3.2"/><circle cx="2.1" cy="2.9" r="3.2"/><circle cx="-2.1" cy="2.9" r="3.2"/><circle cx="-3.4" cy="-1.1" r="3.2"/></g><circle r="1.8" fill="#e91e63"/></g>
+</defs>
+<ellipse cx="50" cy="92" rx="26" ry="4.5" fill="#000" opacity=".15"/>
+<g stroke-linejoin="round" stroke-linecap="round" fill="none">
+<path d="M50 72Q48 52 36 40Q28 32 18 30M48 58Q58 46 70 40Q78 36 86 26M44 46Q46 32 52 18M38 42Q30 46 22 52M64 44Q70 50 80 52M52 24Q60 18 62 10" stroke="#2b1d3a" stroke-width="6.5"/>
+<path d="M50 72Q48 52 36 40Q28 32 18 30M48 58Q58 46 70 40Q78 36 86 26M44 46Q46 32 52 18M38 42Q30 46 22 52M64 44Q70 50 80 52M52 24Q60 18 62 10" stroke="#6d4c41" stroke-width="3"/>
+</g>
+<g stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round">
+<path d="M34 72H66L62 90Q50 94 38 90Z" fill="#e3f2fd"/>
+<path d="M32 70H68V75H32Z" fill="#1e5aa8"/>
+</g>
+<path d="M40 80Q45 77 50 80T60 80M42 86Q50 83 58 86" fill="none" stroke="#1e5aa8" stroke-width="2" stroke-linecap="round"/>
+<use href="#tth" xlink:href="#tth" transform="translate(18 30)"/><use href="#tth" xlink:href="#tth" transform="translate(30 37) scale(.9)"/><use href="#tth" xlink:href="#tth" transform="translate(86 26)"/><use href="#tth" xlink:href="#tth" transform="translate(74 38) scale(.9)"/>
+<use href="#tth" xlink:href="#tth" transform="translate(52 18)"/><use href="#tth" xlink:href="#tth" transform="translate(62 10) scale(.85)"/><use href="#tth" xlink:href="#tth" transform="translate(22 52)"/><use href="#tth" xlink:href="#tth" transform="translate(80 52)"/>
+<use href="#tth" xlink:href="#tth" transform="translate(46 32) scale(.8)"/><use href="#tth" xlink:href="#tth" transform="translate(60 46) scale(.85)"/><use href="#tth" xlink:href="#tth" transform="translate(36 48) scale(.75)"/>
+<g fill="#f8bbd0" stroke="#2b1d3a" stroke-width="1"><circle cx="66" cy="22" r="2"/><circle cx="28" cy="22" r="1.8"/><circle cx="90" cy="40" r="1.8"/></g>
+</svg>

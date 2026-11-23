@@ -204,6 +204,8 @@
     };
   }
 
+  N.phaoHoa = Phao; // dung chung: phao hoa giao thua Tet (public/js/nong-trai-tet.js)
+
   function moPhao(tuDong) {
     var x = Y.x;
     if (!x || Y.dangPhao) return;

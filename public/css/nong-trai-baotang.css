@@ -1,1 +1,147 @@
-/* nong-trai-baotang.css — dang lam */
+/* Bao tang nong trai 博物馆 (public/js/nong-trai-baotang.js) — tien to btg- */
+.btg [lang="zh"], .btg-tag [lang="zh"], .btg-chuc [lang="zh"], .btg-ket [lang="zh"] { font-family: 'Noto Serif SC', serif; }
+.btg, .btg p, .btg b, .btg small, .btg em { color: var(--chu); text-shadow: none; }
+.btg small { color: var(--mo); }
+.btg img.hong { visibility: hidden; }
+
+/* dau trang: hinh bao tang + tien do */
+.btg-dau { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 3px solid var(--vien); border-radius: 18px;
+  background: linear-gradient(170deg, #fff4d8, #ffe3c2); box-shadow: 0 3px 0 var(--vien); }
+.btg-dau-hinh { flex: none; width: 104px; height: 104px; }
+.btg-dau-chu { flex: 1; min-width: 0; }
+.btg-ten { display: flex; flex-direction: column; align-items: flex-start; gap: 0; padding: 2px 4px; margin: 0 0 2px -4px; border: 0; border-radius: 10px;
+  background: transparent; font: inherit; color: var(--chu); text-align: left; cursor: pointer; min-height: 44px; justify-content: center; }
+.btg-ten:hover { background: rgba(43, 29, 58, 0.06); }
+.btg-ten b { font-size: 1.35rem; line-height: 1.2; }
+.btg-ten small { font-size: 0.8rem; font-weight: 700; color: #c0392b; }
+.btg-so { margin: 2px 0 4px; font-size: 0.9rem; font-weight: 600; }
+.btg-so b { font-size: 1.05rem; }
+.btg-thanh { display: block; height: 12px; border: 2.5px solid var(--vien); border-radius: 99px; background: #fff; overflow: hidden; }
+.btg-thanh i { display: block; height: 100%; background: linear-gradient(90deg, #ffc83d, #ff9f43); border-right: 2px solid var(--vien); }
+.btg-thanh i[style="width:0%"] { border-right: 0; }
+.btg-deo { margin: 6px 0 0; font-size: 0.82rem; font-weight: 700; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.btg-ch { display: inline-flex; align-items: center; gap: 4px; padding: 1px 8px 1px 2px; border: 2px solid var(--vien); border-radius: 99px; background: #fff8ec; }
+.btg-ch img { width: 22px; height: 22px; }
+.btg-ch b { font-size: 0.95rem; color: #8b1e12; }
+.btg-ch small { font-size: 0.72rem; font-weight: 700; }
+.btg-ch b, .btg-moc-ten b, .btg-tag b { white-space: nowrap; }
+.btg-ch.to { flex-wrap: wrap; border-radius: 14px; padding: 2px 8px 2px 2px; }
+.btg-ch.to small { flex-basis: 100%; padding-left: 28px; line-height: 1.25; }
+.btg-h { margin: 16px 0 8px; font-size: 1rem; }
+.btg-h small { color: var(--mo); font-weight: 700; }
+.btg-meo { margin: 12px 0 0; font-size: 0.8rem; color: var(--mo); line-height: 1.45; }
+
+/* cot moc / danh hieu */
+.btg-moc { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 8px; }
+.btg-moc-o { display: flex; align-items: center; gap: 8px; padding: 6px 8px; border: 2.5px solid var(--vien); border-radius: 14px; background: #f3efe8; }
+.btg-moc-o > img { flex: none; width: 46px; height: 46px; }
+.btg-moc-o > div { flex: 1; min-width: 0; }
+.btg-moc-o img.btg-mo { filter: grayscale(1); opacity: 0.45; }
+.btg-moc-o.dat { background: #fff4c9; box-shadow: 0 0 0 3px #ffc83d inset; }
+.btg-moc-o.da { background: #eaf6e4; }
+.btg-moc-ten { padding: 0; border: 0; background: transparent; font: inherit; color: var(--chu); cursor: pointer; text-align: left; }
+.btg-moc-ten b { font-size: 1.02rem; color: #8b1e12; }
+.btg-moc-ten small { font-size: 0.74rem; color: #c0392b; font-weight: 700; }
+.btg-moc-o p { margin: 0; font-size: 0.74rem; line-height: 1.35; }
+.btg-moc-o p span { color: var(--mo); }
+.btg-qua { font-weight: 800; color: #b26a00 !important; }
+.btg-moc-nut { flex: none; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+.btg .btg-nho { min-height: 44px; padding: 4px 10px; font-size: 0.8rem; }
+.btg-moc-deo { font-size: 0.75rem; font-weight: 800; color: var(--xanh-dam); }
+.btg-moc-con { font-size: 0.82rem; font-weight: 800; color: var(--mo); }
+
+/* o phong trung bay o sanh chinh */
+.btg-sanh { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+.btg .btg-o { position: relative; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 8px 8px 10px; min-height: 44px;
+  border: 3px solid var(--vien); border-radius: 16px; background: #fff8ec; box-shadow: 0 3px 0 var(--vien); font: inherit; color: var(--chu); cursor: pointer; text-align: center; }
+.btg .btg-o:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--vien); }
+.btg .btg-o.xong { background: linear-gradient(170deg, #fff8d6, #e8f7dd); }
+.btg-o-hinh { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 50%; background: #f1e3c8; border: 2.5px solid var(--vien); overflow: hidden; }
+.btg-o-hinh img { width: 52px; height: 52px; }
+.btg-o-emo { font-size: 2rem; line-height: 1; }
+.btg .btg-o b { font-size: 1.1rem; }
+.btg .btg-o small { font-size: 0.72rem; font-weight: 700; line-height: 1.25; }
+.btg .btg-o .btg-thanh { width: 100%; margin-top: 4px; height: 10px; }
+.btg .btg-o em { font-style: normal; font-size: 0.78rem; font-weight: 800; }
+.btg-o-hdv { position: absolute; top: 6px; right: 6px; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%;
+  background: #ffe082; border: 2px solid var(--vien); font-size: 0.95rem; }
+
+/* trong 1 phong */
+.btg .btg-lui { min-height: 44px; margin-bottom: 8px; }
+.btg-sanh-dau { display: grid; grid-template-columns: auto 1fr; column-gap: 10px; align-items: center; padding: 10px 12px;
+  border: 3px solid var(--vien); border-radius: 18px; background: #fff4d8; }
+.btg-sanh-dau .btg-o-emo { grid-row: span 3; font-size: 2.6rem; }
+.btg-sanh-dau .btg-so, .btg-sanh-dau .btg-thanh { grid-column: 2; }
+.btg-hdv { display: flex; align-items: center; gap: 10px; margin-top: 10px; padding: 8px 10px; border: 2.5px dashed var(--vien); border-radius: 14px; background: #e8f4fd; }
+.btg-hdv-ic { font-size: 1.8rem; }
+.btg-hdv > div { flex: 1; min-width: 0; }
+.btg-hdv p { margin: 2px 0 0; font-size: 0.78rem; line-height: 1.35; }
+.btg-hdv .nt-nut { flex: none; min-height: 44px; }
+.btg-luoi { display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: 8px; }
+.btg-the { position: relative; display: flex; flex-direction: column; align-items: center; gap: 1px; padding: 8px 6px; border: 2.5px solid var(--vien);
+  border-radius: 14px; text-align: center; min-height: 44px; }
+.btg .btg-the.co { background: #fff; font: inherit; color: var(--chu); cursor: pointer; box-shadow: 0 2px 0 var(--vien); }
+.btg-the.co img { width: 60px; height: 60px; }
+.btg-the.co b { font-size: 1.15rem; line-height: 1.2; margin-top: 2px; }
+.btg .btg-the .btg-py { color: #c0392b; font-weight: 700; font-size: 0.74rem; }
+.btg .btg-the small { font-size: 0.72rem; font-weight: 700; line-height: 1.25; }
+.btg .btg-the em { font-style: normal; font-size: 0.66rem; font-weight: 700; color: var(--xanh-dam); margin-top: 2px; }
+.btg-loa { position: absolute; top: 4px; right: 6px; font-style: normal; font-size: 0.8rem; opacity: 0.7; }
+.btg-the.an { background: #eceff1; border-style: dashed; }
+.btg-bong { position: relative; display: grid; place-items: center; width: 60px; height: 60px; }
+.btg-bong img { width: 60px; height: 60px; filter: brightness(0); opacity: 0.18; }
+.btg-hoi { position: absolute; inset: 0; display: grid; place-items: center; font-size: 1.7rem; font-weight: 900; color: #546e7a; }
+.btg-the.an p { margin: 2px 0 0; font-size: 0.68rem; line-height: 1.3; color: #546e7a; }
+@media (prefers-reduced-motion: no-preference) {
+  .btg-nay { animation: btg-nay 0.45s ease-out; }
+  .btg-o-hdv { animation: btg-nhun 1.4s ease-in-out infinite alternate; }
+}
+@keyframes btg-nay { 0% { transform: scale(1); } 40% { transform: scale(1.07) rotate(-1.5deg); } 100% { transform: scale(1); } }
+@keyframes btg-nhun { from { transform: translateY(0); } to { transform: translateY(-3px); } }
+body.nt-nhe .btg-nay, body.nt-nhe .btg-o-hdv { animation: none; }
+
+/* huong dan vien: cau hoi */
+.btg-dau-hdv { margin: 0 0 8px; text-align: center; font-weight: 700; }
+.btg-lenh { margin: 4px 0 8px; text-align: center; font-weight: 800; }
+.btg-hoi-hinh { display: grid; place-items: center; margin: 0 auto 10px; width: 132px; height: 132px; border: 3px solid var(--vien); border-radius: 20px; background: #fff8ec; }
+.btg-hoi-hinh img { width: 108px; height: 108px; }
+.btg-hoi-zh { display: flex; flex-direction: column; align-items: center; margin-bottom: 10px; }
+.btg-hoi-zh b { font-family: 'Noto Serif SC', serif; font-size: 2.2rem; line-height: 1.2; }
+.btg-hoi-zh span { font-size: 1rem; font-weight: 700; color: #c0392b; }
+.btg-hoi-vn { margin-bottom: 10px; text-align: center; font-size: 1.3rem; font-weight: 800; }
+.btg-lua { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.btg-lua button { min-height: 52px; padding: 8px; border: 3px solid var(--vien); border-radius: 14px; background: #fff; box-shadow: 0 3px 0 var(--vien);
+  font: inherit; font-weight: 700; color: var(--chu); cursor: pointer; }
+.btg-lua.zh button { font-family: 'Noto Serif SC', serif; font-size: 1.3rem; }
+.btg-lua.hinh button { display: grid; place-items: center; min-height: 96px; }
+.btg-lua.hinh img { width: 76px; height: 76px; }
+.btg-lua button.dung { background: #c8e6c9; box-shadow: 0 0 0 3px #43a047 inset; }
+.btg-lua button.sai { background: #ffcdd2; box-shadow: 0 0 0 3px #e53935 inset; }
+.btg-lua button.mo { opacity: 0.5; }
+.btg-giai { display: flex; align-items: center; justify-content: center; gap: 6px; flex-wrap: wrap; width: 100%; margin: 4px 0 8px; padding: 6px 8px; min-height: 44px;
+  border: 2px dashed var(--vien); border-radius: 12px; background: #fff8ec; font: inherit; color: var(--chu); cursor: pointer; }
+.btg-giai img { width: 34px; height: 34px; }
+.btg-giai b { font-family: 'Noto Serif SC', serif; font-size: 1.2rem; }
+.btg-ket { text-align: center; }
+.btg-ket-ic { font-size: 3rem; }
+.btg-ket-cau { font-size: 1.6rem; font-weight: 700; margin: 6px 0 0; }
+.btg-chuc { text-align: center; }
+.btg-chuc-huy { width: 96px; height: 96px; }
+.btg-chuc-ten b { font-size: 1.5rem; color: #8b1e12; }
+.btg-chuc-tt { width: 40px; height: 40px; vertical-align: middle; }
+
+/* danh hieu canh ten nhan vat tren nong trai */
+.btg-tag { display: inline-flex; align-items: center; gap: 1px; margin-right: 3px; vertical-align: -2px; }
+.btg-tag img { width: 14px; height: 14px; }
+.btg-tag b { font-size: 0.66rem; font-weight: 800; color: #8b1e12; }
+
+@media (max-width: 480px) {
+  .btg-dau { gap: 8px; padding: 8px; }
+  .btg-dau-hinh { width: 76px; height: 76px; }
+  .btg-ten b { font-size: 1.15rem; }
+  .btg-sanh { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .btg-luoi { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+  .btg-the.co img, .btg-bong, .btg-bong img { width: 50px; height: 50px; }
+  .btg-moc { grid-template-columns: 1fr; }
+  .btg-the.an p { font-size: 0.62rem; }
+}

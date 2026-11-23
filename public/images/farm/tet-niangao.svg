@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<ellipse cx="50" cy="86" rx="40" ry="5" fill="#000" opacity=".15"/>
+<g stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<ellipse cx="50" cy="72" rx="42" ry="12" fill="#fffdf6"/>
+<ellipse cx="50" cy="70" rx="32" ry="7" fill="none" stroke="#90caf9" stroke-width="2"/>
+<path d="M20 64V44Q20 36 50 36Q80 36 80 44V64Q80 72 50 72Q20 72 20 64Z" fill="#f2c057"/>
+<ellipse cx="50" cy="44" rx="30" ry="8" fill="#ffd77a"/>
+<path d="M26 58Q50 66 74 58" fill="none" stroke="#c98a1d" stroke-width="2"/>
+<circle cx="50" cy="42" r="7" fill="#e53935" stroke-width="2.4"/>
+</g>
+<text x="50" y="45.5" font-size="8.5" font-weight="900" text-anchor="middle" fill="#ffd54f" font-family="'Noto Serif SC','SimSun',serif">年</text>
+<g fill="#b71c1c" stroke="#2b1d3a" stroke-width="1.5"><ellipse cx="34" cy="44" rx="3" ry="2.2"/><ellipse cx="66" cy="45" rx="3" ry="2.2"/><ellipse cx="44" cy="49" rx="2.6" ry="2"/></g>
+<path d="M30 40Q36 37 42 38" fill="none" stroke="#fff3c4" stroke-width="2.4" stroke-linecap="round"/>
+</svg>

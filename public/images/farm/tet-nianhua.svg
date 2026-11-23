@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<ellipse cx="50" cy="92" rx="34" ry="4.5" fill="#000" opacity=".15"/>
+<g stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<path d="M30 92L38 70M70 92L62 70M50 78V92" fill="none" stroke-width="6"/>
+<path d="M30 92L38 70M70 92L62 70M50 78V92" fill="none" stroke="#7a4a2c" stroke-width="2.6"/>
+<rect x="16" y="8" width="68" height="70" rx="4" fill="#8d5a3b"/>
+<rect x="22" y="14" width="56" height="58" rx="2" fill="#fff3d6"/>
+<path d="M22 62Q36 56 50 62T78 62V72H22Z" fill="#81d4fa" stroke-width="2"/>
+<path d="M33 46Q44 41 55 46L57 63H31Z" fill="#e53935"/>
+<circle cx="44" cy="34" r="11" fill="#ffe0c2"/>
+<path d="M33 31Q35 21 44 22Q53 21 55 31Q50 26 44 27Q38 26 33 31Z" fill="#2b1d3a"/>
+<circle cx="44" cy="19" r="3.5" fill="#e53935" stroke-width="2"/>
+<path d="M48 52Q60 42 70 47Q75 52 69 57Q59 61 48 57Z" fill="#ff8f00"/>
+<path d="M69 47L76 41L76 55Z" fill="#ff8f00" stroke-width="2"/>
+<path d="M36 52L50 56" fill="none" stroke-width="2.6"/>
+</g>
+<circle cx="40" cy="34" r="1.6" fill="#2b1d3a"/><circle cx="48" cy="34" r="1.6" fill="#2b1d3a"/>
+<path d="M41 39Q44 41 47 39" fill="none" stroke="#2b1d3a" stroke-width="1.6" stroke-linecap="round"/>
+<circle cx="38" cy="37.5" r="2.2" fill="#ff8a80" opacity=".8"/><circle cx="50" cy="37.5" r="2.2" fill="#ff8a80" opacity=".8"/>
+<circle cx="54" cy="51" r="1.4" fill="#2b1d3a"/>
+<path d="M57 53Q61 51 65 53M58 56Q62 54 66 56" fill="none" stroke="#c43e00" stroke-width="1.4" stroke-linecap="round"/>
+<g font-family="'Noto Serif SC','SimSun',serif" font-weight="900" fill="#c62828" font-size="7" text-anchor="middle"><text x="69" y="24">年年</text><text x="69" y="33">有余</text></g>
+</svg>

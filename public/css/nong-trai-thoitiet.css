@@ -1,1 +1,143 @@
-/* nong-trai-thoitiet.css — dang lam */
+/* Ban tin thoi tiet 天气预报 (public/js/nong-trai-thoitiet.js) */
+:root { --tt-troi: #e3f4ff; --tt-troi-dam: #7aa6d6; --tt-nang: #fff4cc; }
+
+/* ---------- o thoi tiet o goc phai (duoi chip thien tai) ---------- */
+.tt-nut {
+  position: relative; display: inline-flex; align-items: center; gap: 4px; min-height: 44px; max-width: 100%;
+  padding: 2px 12px 2px 3px; border-radius: 999px; border: 2.5px solid var(--vien); background: var(--tt-troi);
+  box-shadow: 0 3px 0 var(--vien); font: inherit; color: var(--chu); cursor: pointer;
+}
+.tt-nut[hidden] { display: none; }
+.tt-nut:active { transform: translateY(2px); box-shadow: 0 1px 0 var(--vien); }
+.tt-nut-hinh { width: 36px; height: 36px; flex: none; }
+.tt-nut-chu { display: flex; align-items: baseline; gap: 4px; line-height: 1; }
+.tt-nut-chu b { font-family: 'Noto Serif SC', serif; font-size: 0.95rem; font-weight: 900; }
+.tt-nut-chu small { font-size: 0.95rem; font-weight: 900; font-variant-numeric: tabular-nums; }
+.tt-nut.chua { background: var(--tt-nang); }
+.tt-nut-cham { position: absolute; right: -3px; top: -3px; width: 12px; height: 12px; border-radius: 50%; background: var(--do); border: 2px solid var(--vien); }
+.tt-nut-bao {
+  display: grid; place-items: center; width: 20px; height: 20px; margin-left: 2px; border-radius: 50%;
+  border: 2px solid var(--vien); background: var(--do); color: #fff; font: 900 0.75rem/1 'Be Vietnam Pro', sans-serif;
+}
+.tt-nut-bao.ok { background: var(--xanh); }
+@media (prefers-reduced-motion: no-preference) {
+  body:not(.nt-nhe) .tt-nut.chua .tt-nut-hinh { animation: tt-lac 2.4s ease-in-out infinite; transform-origin: 50% 90%; }
+}
+@keyframes tt-lac { 0%, 70%, 100% { transform: rotate(0); } 78% { transform: rotate(-8deg); } 86% { transform: rotate(7deg); } 94% { transform: rotate(-3deg); } }
+@media (max-width: 640px) {
+  .tt-nut { min-height: 40px; padding-right: 9px; }
+  .tt-nut-hinh { width: 32px; height: 32px; }
+}
+
+/* ---------- bang ban tin ---------- */
+.tt { display: grid; gap: 12px; }
+.tt img.hong { visibility: hidden; }
+.tt-dau { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 16px; background: var(--tt-troi); border: 2.5px solid var(--vien); }
+.tt-tv { width: 96px; height: 80px; flex: none; }
+.tt-ten { margin: 0; font-size: 1.05rem; }
+.tt-ten b { font-family: 'Noto Serif SC', serif; font-size: 1.35rem; }
+.tt-ten span { color: var(--mo); font-weight: 700; font-size: 0.9rem; }
+.tt-gt { margin: 4px 0 0; font-size: 0.9rem; line-height: 1.45; }
+.tt-gt [lang="zh"] { font-family: 'Noto Serif SC', serif; }
+
+.tt-nghe-hop { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 10px; }
+.tt-nghe {
+  position: relative; display: inline-flex; align-items: center; gap: 8px; min-height: 56px; padding: 6px 20px 6px 8px;
+  border: 3px solid var(--vien); border-radius: 18px; background: #eef7ff; box-shadow: var(--bong);
+  font: inherit; font-size: 1.1rem; font-weight: 800; color: var(--chu); cursor: pointer;
+}
+.tt-nghe:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--vien); }
+.tt-radio { width: 44px; height: 44px; }
+.tt-song { position: absolute; right: -6px; top: -6px; width: 16px; height: 16px; border-radius: 50%; background: var(--tt-troi-dam); opacity: 0; }
+@media (prefers-reduced-motion: no-preference) {
+  body:not(.nt-nhe) .tt-nghe.dang .tt-song { animation: tt-song 1s ease-out infinite; }
+  body:not(.nt-nhe) .tt-nghe.dang .tt-radio { animation: tt-rung 0.35s ease-in-out infinite alternate; }
+}
+@keyframes tt-song { from { opacity: 0.8; transform: scale(0.6); } to { opacity: 0; transform: scale(2.2); } }
+@keyframes tt-rung { from { transform: translateY(0); } to { transform: translateY(-2px); } }
+.tt-xem { min-height: 44px; }
+.tt-chu { flex-basis: 100%; margin: 0; padding: 10px 12px; border-radius: 12px; background: #fff; border: 2px dashed #e4d6c6; text-align: center; }
+.tt-chu[hidden] { display: none; }
+.tt-chu small { display: block; color: var(--mo); font-weight: 700; margin-bottom: 4px; }
+.tt-chu b { font-family: 'Noto Serif SC', serif; font-size: 1.2rem; line-height: 1.6; }
+
+/* cau hoi */
+.tt-cau { display: grid; gap: 10px; padding: 12px; border-radius: 16px; background: #fff; border: 2.5px solid var(--vien); box-shadow: 0 3px 0 var(--vien); }
+.tt-cau-so { margin: 0; font-weight: 800; color: var(--mo); font-size: 0.85rem; }
+.tt-hoi {
+  display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 6px 10px;
+  border: 0; background: none; font: inherit; color: var(--chu); cursor: pointer;
+}
+.tt-hoi b { font-family: 'Noto Serif SC', serif; font-size: 1.45rem; }
+.tt-hoi span { color: #c0392b; font-weight: 700; font-size: 0.9rem; }
+.tt-hoi small { color: var(--mo); font-weight: 600; }
+.tt-luoi { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.tt-luoi.w { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 480px) { .tt-luoi.w { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.tt-lua {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; min-height: 64px; min-width: 0;
+  padding: 8px 6px; border: 2.5px solid var(--vien); border-radius: 14px; background: var(--kem); box-shadow: 0 3px 0 var(--vien);
+  font: inherit; color: var(--chu); cursor: pointer; text-align: center;
+}
+.tt-lua:hover:not(:disabled) { background: #fff3c4; }
+.tt-lua:active:not(:disabled) { transform: translateY(3px); box-shadow: 0 1px 0 var(--vien); }
+.tt-lua.w img { width: 64px; height: 64px; }
+.tt-lua.w b { font-family: 'Noto Serif SC', serif; font-size: 1.05rem; }
+.tt-lua small { font-size: 0.72rem; color: var(--mo); font-weight: 700; overflow-wrap: anywhere; }
+.tt-lua.t b { font-size: 1.6rem; font-weight: 900; font-variant-numeric: tabular-nums; }
+.tt-lua.t small[lang="zh"] { font-family: 'Noto Serif SC', serif; font-size: 0.9rem; color: var(--chu); }
+.tt-lua.v { flex-direction: row; justify-content: flex-start; gap: 8px; text-align: left; flex-wrap: wrap; }
+.tt-lua.v b { font-size: 0.92rem; flex: 1 1 60%; min-width: 0; }
+.tt-lua.v small { flex-basis: 100%; padding-left: 34px; }
+.tt-lua.v small [lang="zh"] { font-family: 'Noto Serif SC', serif; color: var(--chu); font-size: 0.85rem; }
+.tt-lua-ic { font-size: 1.4rem; width: 26px; text-align: center; }
+.tt-lua.dung { background: #c8f0b8; }
+.tt-lua.sai { background: #ffc9c0; }
+.tt-lua.mo { opacity: 0.55; }
+.tt-dg { margin: 0; text-align: center; font-weight: 900; }
+.tt-dg.dung { color: var(--xanh-dam); }
+.tt-dg.sai { color: var(--do); }
+
+/* ket qua */
+.tt-diem { text-align: center; font-weight: 700; padding: 8px; border-radius: 12px; background: var(--tt-nang); border: 2px solid var(--vien); }
+.tt-diem b { font-size: 1.1rem; }
+.tt-du { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.tt-ngay { display: flex; align-items: center; gap: 8px; padding: 8px; border-radius: 14px; background: #fff; border: 2.5px solid var(--vien); min-width: 0; }
+.tt-ngay.mai { background: var(--tt-troi); }
+.tt-ngay img { width: 52px; height: 52px; flex: none; }
+.tt-ngay span { display: flex; flex-direction: column; min-width: 0; line-height: 1.2; }
+.tt-ngay small { color: var(--mo); font-weight: 700; font-size: 0.75rem; }
+.tt-ngay small [lang="zh"], .tt-ngay b { font-family: 'Noto Serif SC', serif; }
+.tt-ngay b { font-size: 1.1rem; }
+.tt-ngay em { font-style: normal; font-weight: 900; font-size: 1.15rem; font-variant-numeric: tabular-nums; }
+.tt-cb { padding: 12px; border-radius: 16px; background: #ffe9e2; border: 2.5px solid var(--vien); box-shadow: 0 3px 0 var(--vien); }
+.tt-cb.xong { background: #e3f7d8; }
+.tt-cb p { margin: 0 0 8px; line-height: 1.45; font-size: 0.92rem; }
+.tt-cb [lang="zh"] { font-family: 'Noto Serif SC', serif; }
+.tt-cb-dau { display: flex; align-items: center; gap: 8px; font-size: 1rem !important; }
+.tt-cb-dau span[aria-hidden] { font-size: 1.6rem; }
+.tt-cb-hieu { color: var(--mo); font-weight: 600; }
+.tt-cb-gia { font-weight: 600; }
+.tt-cb-ok { font-weight: 700; color: var(--xanh-dam); margin-bottom: 0 !important; }
+.tt-cb .nt-hang-nut { margin: 0; }
+.tt-yen { margin: 0; text-align: center; font-weight: 700; color: var(--mo); }
+.tt-h { margin: 4px 0 0; font-size: 1rem; }
+.tt-h small { font-weight: 600; color: var(--mo); font-size: 0.78rem; margin-left: 4px; }
+.tt-loi { display: grid; gap: 6px; }
+.tt-loi .nt-cau b[lang] { font-family: 'Noto Serif SC', serif; }
+.tt-tus { display: flex; flex-wrap: wrap; gap: 6px; }
+.tt-tu {
+  display: inline-flex; flex-direction: column; align-items: center; min-width: 76px; min-height: 44px; padding: 5px 9px;
+  border: 2px solid #e4d6c6; border-radius: 12px; background: #fff; font: inherit; color: var(--chu); cursor: pointer; line-height: 1.2;
+}
+.tt-tu:hover { border-color: var(--vien); }
+.tt-tu b { font-family: 'Noto Serif SC', serif; font-size: 1.1rem; }
+.tt-tu span { color: #c0392b; font-weight: 700; font-size: 0.78rem; }
+.tt-tu small { color: var(--mo); font-size: 0.72rem; font-weight: 600; }
+.tt-tu.co-hinh img { width: 40px; height: 40px; }
+.tt-them summary { cursor: pointer; font-weight: 700; color: var(--mo); min-height: 32px; }
+.tt-them .tt-tus { margin-top: 6px; }
+
+/* ghi chu tren thong bao / bang chong thien tai khi da chuan bi tu hom qua */
+.tt-cb-ghi { margin: 6px 0; padding: 6px 10px; border-radius: 12px; background: #e3f7d8; border: 2px solid var(--vien); font-weight: 700; font-size: 0.88rem; }
+.tt-cb-ghi [lang="zh"] { font-family: 'Noto Serif SC', serif; }

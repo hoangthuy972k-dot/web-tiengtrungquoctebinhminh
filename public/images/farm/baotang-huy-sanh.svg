@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<g stroke="#2b1d3a" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round">
+<path d="M30 6H46L54 34H38Z" fill="#ffc83d"/><path d="M70 6H54L46 34H62Z" fill="#ffc83d" opacity=".92"/>
+<circle cx="50" cy="60" r="31" fill="#4fc3c7"/>
+<circle cx="50" cy="60" r="23" fill="none" stroke="#00838f" stroke-width="3"/>
+</g>
+<path d="M34 7H42M58 7H66" stroke="#fff" stroke-width="2" opacity=".6" stroke-linecap="round"/>
+<path d="M28 50Q26 62 33 72" stroke="#d4f7f5" stroke-width="3.4" fill="none" opacity=".8" stroke-linecap="round"/>
+<g fill="#00838f"><circle cx="50" cy="34" r="2"/><circle cx="76" cy="60" r="2"/><circle cx="24" cy="60" r="2"/><circle cx="50" cy="86" r="2"/></g>
+<text x="50" y="68" text-anchor="middle" font-size="22" font-weight="900" fill="#2b1d3a" font-family="Noto Serif SC, serif">展</text>
+</svg>

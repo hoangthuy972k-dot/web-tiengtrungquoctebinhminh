@@ -1,1 +1,115 @@
-/* nong-trai-homthu.css — dang lam */
+/* Hom thu lang 信箱 (public/js/nong-trai-homthu.js) */
+
+/* --- hom thu canh nha (dung thang trong goc nhin 3D nhu .nt-nv) --- */
+.ht-hom { position: absolute; transform: translate(-50%, -100%); pointer-events: none; }
+body.nt-ng .ht-hom { transform: rotate(var(--xn, 0deg)) scaleY(var(--ng-ic)) translate(-50%, -100%); transform-origin: 0 0; }
+.ht-hom-nut { position: relative; display: block; width: 100%; padding: 0; border: 0; background: none; cursor: pointer; pointer-events: auto; touch-action: manipulation; }
+.ht-hom-hinh { display: block; width: 100%; height: auto; }
+.ht-hom-nut:hover .ht-hom-hinh, .ht-hom-nut:focus-visible .ht-hom-hinh { filter: brightness(1.06) drop-shadow(0 0 3px #fff8c4); }
+/* co do: ha xuong (nam ngang) khi khong co thu, dung len khi co thu chua doc */
+.ht-co { position: absolute; left: 82%; top: 12%; width: 22%; height: auto; transform-origin: 30% 95%; transform: rotate(90deg); transition: transform 0.5s cubic-bezier(.3, 1.6, .5, 1); }
+.ht-hom.co-thu .ht-co { transform: rotate(0deg); animation: ht-phat 1.6s ease-in-out infinite; }
+/* phong bi nho nhun nhay tren hom khi co thu */
+.ht-bay { position: absolute; left: 14%; top: -30%; width: 48%; height: auto; opacity: 0; pointer-events: none; }
+.ht-hom.co-thu .ht-bay { opacity: 1; animation: ht-nhun 1.8s ease-in-out infinite; }
+@keyframes ht-phat { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-8deg); } }
+@keyframes ht-nhun { 0%, 100% { transform: translateY(0) rotate(-6deg); } 50% { transform: translateY(-14%) rotate(4deg); } }
+body.nt-nhe .ht-hom *, body.nt-nhe .ht-hom { animation: none !important; transition: none !important; }
+
+/* --- bang --- */
+.ht [lang="zh"], .ht-ket [lang="zh"] { font-family: 'Noto Serif SC', serif; }
+.ht-gt { margin: 0 0 10px; padding: 10px 12px; border: 2.5px solid var(--vien); border-radius: 14px; background: #fff3e0; line-height: 1.5; }
+.ht-ds { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.ht-phong { display: flex; align-items: center; gap: 10px; width: 100%; min-height: 64px; padding: 8px 12px; border: 2.5px solid var(--vien); border-radius: 16px;
+  background: #fffaf0; box-shadow: 0 3px 0 var(--vien); font: inherit; color: var(--chu); text-align: left; cursor: pointer; }
+.ht-phong.moi { background: linear-gradient(160deg, #fff8e1, #ffe0d6); }
+.ht-phong > img { width: 48px; height: 48px; flex: none; }
+.ht-phong-chu { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.ht-phong-chu small { color: var(--mo); font-weight: 600; font-size: 0.8rem; }
+.ht-nhan { flex: none; font-style: normal; font-size: 0.75rem; font-weight: 800; padding: 3px 8px; border-radius: 999px; border: 2px solid var(--vien); background: #fff; }
+.ht-nhan.do { background: #e5533d; color: #fff; }
+.ht-nhan.xanh { background: #c8e6c9; }
+
+.ht-thanh { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+.ht-thanh .nt-nut { min-height: 44px; }
+.ht-py.bat { background: #fff4c9; }
+
+/* la thu: giay ke dong, viet tay */
+.ht-giay { position: relative; margin: 0 0 10px; padding: 16px 16px 14px; border: 3px solid var(--vien); border-radius: 6px 18px 6px 18px;
+  background: repeating-linear-gradient(180deg, #fffdf6 0 33px, #f1e2c4 33px 35px); box-shadow: 0 4px 0 var(--vien); font-size: 1.28rem; line-height: 1.6; overflow-wrap: anywhere; }
+.ht-giay.co-py { line-height: 2.1; }
+.ht-tem { position: absolute; top: -14px; right: -8px; width: 54px; height: 54px; transform: rotate(8deg); pointer-events: none; }
+.ht-dong { margin: 0 0 4px; }
+.ht-dong.mo { font-weight: 700; }
+.ht-dong.ky { text-align: right; font-weight: 700; margin-top: 8px; }
+.ht-dong.hoc { padding: 2px 6px; margin-left: -6px; margin-right: -6px; border-radius: 10px; background: rgba(126, 217, 87, 0.2); }
+.ht-hoc { font-size: 0.9rem; margin-right: 4px; vertical-align: 2px; }
+.ht-tu { display: inline; padding: 0 1px; margin: 0; border: 0; border-radius: 6px; background: none; font: inherit; color: inherit; cursor: pointer; line-height: inherit; }
+.ht-tu:hover, .ht-tu.bat { background: #ffe58f; }
+.ht-tu ruby rt { font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.52em; color: #6b5a77; font-weight: 600; }
+.ht-dau { white-space: pre; }
+.ht-vn, .ht-py-cau { display: block; font-family: 'Be Vietnam Pro', sans-serif; font-size: 0.82rem; line-height: 1.4; color: var(--mo); font-weight: 600; }
+.ht-py-cau { color: #8a6d3b; }
+.ht-tra { margin: 0 0 10px; padding: 8px 12px; border: 2.5px solid var(--vien); border-radius: 12px; background: #fffde7; font-weight: 600; }
+.ht-tra b { font-size: 1.2rem; }
+
+/* cau hoi doc hieu */
+.ht-cau { display: grid; gap: 10px; }
+.ht-q { padding: 10px; border: 2.5px solid var(--vien); border-radius: 14px; background: #f3f8ff; }
+.ht-q-lenh { margin: 0 0 8px; }
+.ht-lua { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.ht-lua.dai { grid-template-columns: 1fr; }
+.ht-o { display: flex; align-items: center; justify-content: center; gap: 6px; min-height: 48px; padding: 6px 10px; border: 2.5px solid var(--vien); border-radius: 12px;
+  background: #fff; box-shadow: 0 3px 0 var(--vien); font: inherit; font-weight: 700; color: var(--chu); cursor: pointer; text-align: center; }
+.ht-lua.dai .ht-o { justify-content: flex-start; text-align: left; font-size: 1.1rem; font-weight: 600; }
+.ht-o img { width: 34px; height: 34px; flex: none; }
+.ht-o:disabled { cursor: default; box-shadow: none; transform: translateY(3px); }
+.ht-o.dung { background: #c8e6c9; box-shadow: 0 0 0 3px #43a047 inset; }
+.ht-o.sai { background: #ffcdd2; box-shadow: 0 0 0 3px #e53935 inset; }
+.ht-emo { font-size: 1.4rem; }
+.ht-q-kq { margin: 8px 0 0; font-weight: 800; }
+.ht-q-kq.dung { color: #2e7d32; }
+.ht-q-kq.sai { color: #c62828; }
+
+/* gui */
+.ht-gui { margin-top: 12px; padding: 12px; border: 3px dashed var(--vien); border-radius: 16px; background: #fff8ec; text-align: center; }
+.ht-gui-mon { display: flex; align-items: center; gap: 10px; text-align: left; }
+.ht-gui-mon > img { width: 56px; height: 56px; flex: none; }
+.ht-gui-mon p { margin: 0; }
+.ht-gui small, .ht-dap small { display: block; color: var(--mo); font-weight: 600; margin-top: 3px; }
+.ht-gui small img, .ht-thuong img, .ht-nhan-qua img { width: 16px; height: 16px; vertical-align: -3px; }
+.ht-gui .du { color: #2e7d32; }
+.ht-gui .thieu { color: #c62828; }
+.ht-nut-gui { margin-top: 10px; min-height: 48px; min-width: 160px; font-size: 1.05rem; }
+.ht-thieu { margin: 8px 0 0; font-size: 0.85rem; font-weight: 700; color: #c62828; }
+.ht-dap { margin: 0; text-align: left; }
+.ht-dap b { font-size: 1.2rem; }
+.ht-thuong { margin: 8px 0 0; font-weight: 700; }
+
+/* buu thiep + ket qua */
+.ht-thiep { position: relative; display: flex; align-items: center; gap: 12px; margin: 10px 0; padding: 12px 52px 12px 12px; border: 3px solid var(--vien); border-radius: 14px;
+  background: linear-gradient(150deg, #fff3d6, #ffe0e6); text-align: left; }
+.ht-thiep > img { width: 60px; height: 60px; flex: none; transform: rotate(-8deg); }
+.ht-thiep-zh { margin: 0; font-size: 1.35rem; font-weight: 900; }
+.ht-thiep small { display: block; color: var(--mo); font-weight: 600; }
+.ht-thiep em { display: block; margin-top: 4px; font-style: normal; font-weight: 700; font-size: 0.85rem; }
+.ht-thiep .ht-loa { position: absolute; top: 8px; right: 8px; width: 44px; height: 44px; border: 2.5px solid var(--vien); border-radius: 50%; background: #fff; font-size: 1.1rem; cursor: pointer; }
+.ht-nhan-qua { font-size: 1.05rem; }
+.ht-qua-tt { display: flex; align-items: center; gap: 10px; padding: 8px 12px; border: 2.5px solid var(--vien); border-radius: 14px; background: #e8f5e9; text-align: left; }
+.ht-qua-tt img { width: 54px; height: 54px; flex: none; }
+
+/* album */
+.ht-al { margin-bottom: 8px; border: 2.5px solid var(--vien); border-radius: 14px; background: #fffaf0; }
+.ht-al summary { display: flex; align-items: center; gap: 10px; min-height: 52px; padding: 6px 10px; cursor: pointer; list-style: none; }
+.ht-al summary::-webkit-details-marker { display: none; }
+.ht-al summary img { width: 38px; height: 38px; flex: none; }
+.ht-al summary span { display: flex; flex-direction: column; }
+.ht-al summary small { color: var(--mo); font-weight: 600; }
+.ht-al-than { padding: 4px 10px 10px; }
+.ht-al-than > .ht-loa { margin-bottom: 10px; min-height: 44px; }
+
+@media (max-width: 420px) {
+  .ht-giay { font-size: 1.15rem; padding: 14px 12px 12px; }
+  .ht-lua { grid-template-columns: 1fr 1fr; }
+  .ht-gui-mon { flex-direction: column; text-align: center; }
+}

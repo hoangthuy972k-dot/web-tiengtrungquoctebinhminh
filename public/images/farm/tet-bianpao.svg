@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<ellipse cx="50" cy="92" rx="34" ry="4.5" fill="#000" opacity=".15"/>
+<g stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<path d="M18 92V20Q18 8 32 8H68Q82 8 82 20V92" fill="none" stroke-width="7"/>
+<path d="M18 92V20Q18 8 32 8H68Q82 8 82 20V92" fill="none" stroke="#c62828" stroke-width="3"/>
+<path d="M50 9V19" fill="none" stroke-width="2.5"/>
+<path d="M50 17L43 24L50 31L57 24Z" fill="#ffc93c"/>
+<path d="M50 31V78" fill="none" stroke-width="2.2"/>
+<g fill="#e53935">
+<rect x="36" y="34" width="13" height="6" rx="2" transform="rotate(-18 49 37)"/><rect x="51" y="38" width="13" height="6" rx="2" transform="rotate(18 51 41)"/>
+<rect x="36" y="43" width="13" height="6" rx="2" transform="rotate(-18 49 46)"/><rect x="51" y="47" width="13" height="6" rx="2" transform="rotate(18 51 50)"/>
+<rect x="36" y="52" width="13" height="6" rx="2" transform="rotate(-18 49 55)"/><rect x="51" y="56" width="13" height="6" rx="2" transform="rotate(18 51 59)"/>
+<rect x="36" y="61" width="13" height="6" rx="2" transform="rotate(-18 49 64)"/><rect x="51" y="65" width="13" height="6" rx="2" transform="rotate(18 51 68)"/>
+</g>
+<circle cx="50" cy="77" r="4.5" fill="#ffc93c"/>
+<path d="M47 81L44 91M50 81V92M53 81L56 91" fill="none" stroke="#e53935" stroke-width="2.4"/>
+</g>
+<text x="50" y="27.5" font-size="7" font-weight="900" text-anchor="middle" fill="#c62828" font-family="'Noto Serif SC','SimSun',serif">福</text>
+<g stroke="#ffd54f" stroke-width="1.6" stroke-linecap="round"><path d="M38 35.5L40 34.8M38 44.5L40 43.8M38 53.5L40 52.8M38 62.5L40 61.8M62 43L60 42.3M62 52L60 51.3M62 61L60 60.3M62 70L60 69.3"/></g>
+<g fill="#e53935" stroke="#2b1d3a" stroke-width="1.2"><rect x="26" y="86" width="5" height="3" rx="1" transform="rotate(20 28 87)"/><rect x="66" y="87" width="5" height="3" rx="1" transform="rotate(-25 68 88)"/><rect x="34" y="89" width="4" height="2.6" rx="1"/><rect x="60" y="90" width="4" height="2.6" rx="1" transform="rotate(35 62 91)"/></g>
+</svg>

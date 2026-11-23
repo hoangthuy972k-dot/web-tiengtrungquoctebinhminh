@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100">
+<defs>
+<g id="tmh"><g stroke="#2b1d3a" stroke-width="1.5" fill="#ffd600"><ellipse cx="0" cy="-3.4" rx="2.4" ry="3.3"/><ellipse cx="0" cy="-3.4" rx="2.4" ry="3.3" transform="rotate(72)"/><ellipse cx="0" cy="-3.4" rx="2.4" ry="3.3" transform="rotate(144)"/><ellipse cx="0" cy="-3.4" rx="2.4" ry="3.3" transform="rotate(216)"/><ellipse cx="0" cy="-3.4" rx="2.4" ry="3.3" transform="rotate(288)"/></g><circle r="1.6" fill="#e65100"/></g>
+</defs>
+<ellipse cx="50" cy="92" rx="28" ry="4.5" fill="#000" opacity=".15"/>
+<g stroke-linejoin="round" stroke-linecap="round" fill="none">
+<path d="M50 70Q52 50 40 38Q32 30 20 26M50 56Q60 44 74 38Q82 34 88 22M46 44Q42 30 48 14M40 40Q30 44 20 50M66 42Q72 50 82 54" stroke="#2b1d3a" stroke-width="6.5"/>
+<path d="M50 70Q52 50 40 38Q32 30 20 26M50 56Q60 44 74 38Q82 34 88 22M46 44Q42 30 48 14M40 40Q30 44 20 50M66 42Q72 50 82 54" stroke="#5d4037" stroke-width="3"/>
+</g>
+<g stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round">
+<path d="M30 70H70L64 90H36Z" fill="#c62828"/>
+<rect x="28" y="66" width="44" height="6" rx="2" fill="#ffc93c"/>
+</g>
+<text x="50" y="86" font-size="11" font-weight="900" text-anchor="middle" fill="#ffd54f" font-family="'Noto Serif SC','SimSun',serif">福</text>
+<use href="#tmh" xlink:href="#tmh" transform="translate(20 26)"/><use href="#tmh" xlink:href="#tmh" transform="translate(32 33) scale(.9)"/><use href="#tmh" xlink:href="#tmh" transform="translate(88 22)"/><use href="#tmh" xlink:href="#tmh" transform="translate(76 36) scale(.9)"/>
+<use href="#tmh" xlink:href="#tmh" transform="translate(48 14)"/><use href="#tmh" xlink:href="#tmh" transform="translate(44 28) scale(.85)"/><use href="#tmh" xlink:href="#tmh" transform="translate(20 50)"/><use href="#tmh" xlink:href="#tmh" transform="translate(82 54)"/>
+<use href="#tmh" xlink:href="#tmh" transform="translate(58 47) scale(.8)"/><use href="#tmh" xlink:href="#tmh" transform="translate(30 46) scale(.75)"/>
+<g stroke="#2b1d3a" stroke-width="1.5"><path d="M62 40V46M28 36V42" fill="none"/><rect x="58.5" y="46" width="7" height="10" rx="1" fill="#e53935"/><rect x="24.5" y="42" width="7" height="10" rx="1" fill="#e53935"/></g>
+<g fill="#ffd54f"><circle cx="62" cy="51" r="1.6"/><circle cx="28" cy="47" r="1.6"/></g>
+</svg>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Bộ sưu tập thẻ chữ Hán 汉字卡 · Hi Hán 喜汉</title>
+<meta name="description" content="Mỗi chữ Hán em đã học thành một thẻ sưu tập — ôn luyện để nâng thẻ từ Thường lên Bạc, Vàng, Kim cương.">
+<meta name="theme-color" content="#fdf1da">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Noto+Serif+SC:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/sao-game.css">
+<link rel="stylesheet" href="/css/the-chu.css">
+</head>
+<body class="tc">
+
+<header class="tc-top">
+  <a class="tc-ve" href="/"><span aria-hidden="true">←</span> Trang chủ</a>
+  <h1 class="tc-tieude">
+    <span class="tc-tieude-ic" aria-hidden="true">🃏</span>
+    <span>Bộ sưu tập thẻ chữ Hán <b lang="zh">汉字卡</b></span>
+  </h1>
+</header>
+
+<main class="tc-main" id="tcMain">
+  <p class="tc-dang" id="tcDang">Đang mở bộ sưu tập…</p>
+
+  <!-- Chua dang nhap / chua hoc bai nao -->
+  <section class="tc-hop tc-trong" id="tcKhach" hidden>
+    <div class="tc-trong-the" aria-hidden="true"><span lang="zh">汉</span></div>
+    <h2>Đăng nhập để sưu tập thẻ chữ</h2>
+    <p>Mỗi chữ Hán em học sẽ thành một thẻ trong bộ sưu tập. Đăng nhập ở trang chủ rồi quay lại nhé!</p>
+    <a class="tc-nut tc-nut-chinh" href="/">Về trang chủ đăng nhập</a>
+  </section>
+  <section class="tc-hop tc-trong" id="tcChuaHoc" hidden>
+    <div class="tc-trong-the" aria-hidden="true"><span lang="zh">学</span></div>
+    <h2>Bộ sưu tập còn trống</h2>
+    <p>Em học xong một bài (hoặc thầy cô giao bài cho lớp) thì các chữ Hán của bài đó sẽ thành thẻ ở đây.</p>
+    <a class="tc-nut tc-nut-chinh" href="/">Đi học bài đầu tiên</a>
+  </section>
+
+  <!-- Tong quan -->
+  <section class="tc-hop tc-tong" id="tcTong" hidden>
+    <div class="tc-tong-dau">
+      <div class="tc-tong-so">
+        <span class="tc-tong-nhan">Đã sưu tập</span>
+        <b id="tcCo">0</b><span class="tc-tong-tren">/<span id="tcTongCap">0</span> chữ</span>
+        <span class="tc-tong-cap" id="tcCap"></span>
+      </div>
+      <button type="button" class="tc-nut tc-nut-chinh tc-nut-luyen" id="tcLuyenNut">⚡ Luyện thẻ</button>
+    </div>
+    <div class="tc-thanh" role="progressbar" aria-label="Tiến độ sưu tập" id="tcThanh"><i id="tcThanhI"></i></div>
+    <p class="tc-tong-phu" id="tcTongPhu"></p>
+    <div class="tc-hang-dem" id="tcHangDem"></div>
+    <p class="tc-ngay" id="tcNgay"></p>
+  </section>
+
+  <!-- Sap xep / loc -->
+  <section class="tc-loc" id="tcLoc" hidden>
+    <div class="tc-xep" role="group" aria-label="Sắp xếp album">
+      <button type="button" class="tc-chip is-on" data-xep="bo">Theo bộ thủ <span lang="zh">部首</span></button>
+      <button type="button" class="tc-chip" data-xep="bai">Theo bài <span lang="zh">课</span></button>
+    </div>
+    <div class="tc-loc-hang" role="group" aria-label="Lọc theo hạng thẻ" id="tcLocHang"></div>
+    <label class="tc-tim">
+      <span class="sr">Tìm thẻ</span>
+      <input type="search" id="tcTim" placeholder="Tìm chữ, pinyin, Hán Việt…" autocomplete="off">
+    </label>
+  </section>
+
+  <section class="tc-album" id="tcAlbum" aria-live="polite"></section>
+</main>
+
+<!-- Chi tiet the -->
+<div class="tc-phu" id="tcChiTiet" hidden role="dialog" aria-modal="true" aria-labelledby="tcCtTen">
+  <div class="tc-phu-nen" data-dong></div>
+  <div class="tc-phu-hop tc-ct">
+    <button type="button" class="tc-dong" data-dong aria-label="Đóng">✕</button>
+    <div id="tcCtNoi"></div>
+  </div>
+</div>
+
+<!-- Luyen the -->
+<div class="tc-phu tc-phu-luyen" id="tcLuyen" hidden role="dialog" aria-modal="true" aria-label="Luyện thẻ">
+  <div class="tc-phu-nen"></div>
+  <div class="tc-phu-hop tc-lt">
+    <div class="tc-lt-tren">
+      <button type="button" class="tc-dong" id="tcLtDong" aria-label="Thoát luyện thẻ">✕</button>
+      <div class="tc-lt-cham" id="tcLtCham"></div>
+      <span class="tc-lt-diem" id="tcLtDiem"></span>
+    </div>
+    <div id="tcLtNoi"></div>
+  </div>
+</div>
+
+<!-- Mo the moi -->
+<div class="tc-phu tc-phu-mo" id="tcMo" hidden role="dialog" aria-modal="true" aria-labelledby="tcMoTen">
+  <div class="tc-phu-nen"></div>
+  <div class="tc-mo">
+    <h2 id="tcMoTen"></h2>
+    <div class="tc-mo-bo" id="tcMoBo"></div>
+    <p class="tc-mo-them" id="tcMoThem"></p>
+    <button type="button" class="tc-nut tc-nut-chinh" id="tcMoXong">Cất vào album</button>
+  </div>
+</div>
+
+<script src="/js/doc-zh.js"></script>
+<script src="/js/sao-game.js"></script>
+<script src="/js/the-chu.js"></script>
+</body>
+</html>

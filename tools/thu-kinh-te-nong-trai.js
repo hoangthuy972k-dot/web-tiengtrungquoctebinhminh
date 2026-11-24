@@ -189,5 +189,32 @@ console.log('×2 thu hoach: 10 o -> ' + VQ_X2_O + ' o gap doi, lan sau binh thuo
   console.log('Hom thu: thu xin toi da ' + maxGt + ' xu hang, lai toi da ' + maxLai + ' xu / thu, ' + Ht.SO_THU_NGAY + ' thu / ngay (<= ' + ngay + ' xu lai) ✓');
 }
 
+// ---- Thu thach ca lop 全班挑战 (thu-thach-lop.js + nong-trai-thuthachlop.js): moi moc 1 lan / tuan, toi da 80 xu / tuan, cup 1 lan ----
+{
+  const Ttl = require(path.join(__dirname, '..', 'thu-thach-lop.js'));
+  const Tn = require(path.join(__dirname, '..', 'nong-trai-thuthachlop.js'));
+  const tra = Tn._thu.traThuong;
+  const tuanToiDa = Ttl.MOC.reduce((t, m) => t + m.xu, 0);
+  if (tuanToiDa > 80) sai('thu thach ca lop: toi da ' + tuanToiDa + ' xu / tuan');
+  const f = { xu: 0, tui: {} };
+  const tat = Ttl.MOC.map((m) => m.p);
+  let xu = 0;
+  // khong du dieu kien -> khong gi
+  if (tra(f, '2026-01-05', tat, false).xu || f.xu) sai('thu thach ca lop: chua gop van nhan');
+  // nhan dan theo moc, roi bam lai nhieu lan
+  xu += tra(f, '2026-01-05', [50], true).xu;
+  xu += tra(f, '2026-01-05', [50, 100], true).xu;
+  for (let i = 0; i < 5; i++) xu += tra(f, '2026-01-05', tat, true).xu;
+  if (xu !== tuanToiDa || f.xu !== tuanToiDa) sai('thu thach ca lop: 1 tuan nhan ' + xu + ' xu (phai ' + tuanToiDa + ')');
+  // 20 tuan dat het moc: cup chi 1 lan, xu = 20 x toi da
+  for (let i = 1; i <= 20; i++) tra(f, '2026-' + String(Math.floor(i / 4) + 2).padStart(2, '0') + '-' + String(1 + (i % 4) * 7).padStart(2, '0'), tat, true);
+  if ((f.tui[Ttl.CUP.k] || 0) !== 1) sai('thu thach ca lop: cup ' + f.tui[Ttl.CUP.k] + ' lan');
+  if (Object.keys(f.ttl.w).length > Tn._thu.GIU_TUAN) sai('thu thach ca lop: giu qua nhieu tuan');
+  if (!Tn.TT_TTL[Ttl.CUP.k] || !Tn.TT_TTL[Ttl.CUP.k].doc) sai('thu thach ca lop: cup phai la do doc quyen');
+  // diem: phan bai toi da 10 / tuan; dieu kien nhan
+  if (Ttl.diemCua({ cau: 0, phan: 40 }) !== 50 || Ttl.duDieuKien({ cau: 9, phan: 0 }) || !Ttl.duDieuKien({ cau: 0, phan: 1 })) sai('thu thach ca lop: diem / dieu kien sai');
+  console.log('Thu thach ca lop: toi da ' + tuanToiDa + ' xu / tuan (moi moc 1 lan), cup ca lop 1 lan, chua gop thi khong nhan ✓');
+}
+
 console.log(loi ? loi + ' LOI ✗' : 'Tat ca dung ✓');
 process.exit(loi ? 1 : 0);

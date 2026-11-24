@@ -12790,7 +12790,7 @@
   var dpBuoc = {};   // doan -> buoc dang lam
   var DP_BUOC = [
     { ic: '🎧', ten: 'Nghe hiểu', mo: 'Nghe audio của đoạn hội thoại (ở trên) rồi trả lời câu hỏi.' },
-    { ic: '📖', ten: 'Đọc theo', mo: 'Bấm 🔊 từng câu, nghe rồi đọc to theo cho trôi chảy.' },
+    { ic: '📖', ten: 'Đọc theo', mo: 'Bấm 🔊 nghe từng câu, rồi bấm 🎙️ Đọc và đọc to theo — máy nghe và chấm từng chữ.' },
     { ic: '🎭', ten: 'Đóng vai', mo: 'Chọn một vai, máy đóng vai còn lại — đến lượt em thì nói câu của mình.' },
     { ic: '🗣️', ten: 'Áp dụng', mo: 'Trả lời các câu hỏi trong bài bằng thông tin thật của em — AI chấm đúng ý, đúng ngữ pháp.' }
   ];
@@ -12811,6 +12811,7 @@
       '<div class="dpb-than" id="dpbThan">' + noiDung + '</div>' +
       '<div class="dpb-nav">' + (buoc > 1 ? '<button type="button" class="btn btn-outline" data-dpb="' + (buoc - 1) + '">← Bước trước</button>' : '<span></span>') +
         (tiep ? '<button type="button" class="btn btn-primary" data-dpb-tiep="1">' + tiep + '</button>' : '<span class="dpb-het">🎉 Em đã làm xong phần Hội thoại của bài!</span>') + '</div>';
+    if (buoc === 2) dtGan($('#dpbThan', body), scene);
     if (buoc === 3) rpMount($('#dpbThan', body), scene, dpIndex);
     if (buoc === 4) dpApDungGan(body, scene);
     $all('[data-speak]', body).forEach(function (b) { b.addEventListener('click', function () { vpSpeak(b.getAttribute('data-speak')); }); });
@@ -12824,6 +12825,26 @@
       renderDialogueScene();
       dpSave();
       $('#dialoguePractice').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+  // Buoc Doc theo: luyen doc to co cham tung cau (public/js/doc-to.js, chi nap khi mo buoc nay)
+  var dtNap = null;
+  function dtGan(than, scene) {
+    if (!than || !currentHubLesson) return;
+    var bai = currentHubLesson, idx = dpIndex;
+    if (!dtNap) dtNap = window.DocTo ? Promise.resolve() : new Promise(function (xong) {
+      var el = document.createElement('script');
+      el.src = '/js/doc-to.js' + (ASSET_VERSION ? '?v=' + ASSET_VERSION : '');
+      el.onload = xong;
+      el.onerror = function () { dtNap = null; xong(); };
+      document.head.appendChild(el);
+    });
+    dtNap.then(function () {
+      if (!window.DocTo || !document.body.contains(than)) return;
+      window.DocTo.mount(than, {
+        key: bai.fullPageUrl + '#' + idx, scene: scene, say: vpSpeak,
+        onPass: function (li) { if (window.hwStarAnswer) window.hwStarAnswer(bai.fullPageUrl + '|dt|' + idx + '|' + li); }
+      });
     });
   }
   function dpDoiBuoc(n) {
@@ -12964,6 +12985,7 @@
   }
   function rpStopRec() {
     if (rpRec) { try { rpRec.abort(); } catch (e) { /* bo qua */ } rpRec = null; }
+    if (window.DocTo) window.DocTo.stop();   // luot doc to (buoc Doc theo) dang nghe
   }
   function rpSpeakers(scene) {
     var seen = {}, out = [];

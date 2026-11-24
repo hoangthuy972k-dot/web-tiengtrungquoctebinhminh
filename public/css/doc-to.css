@@ -1,0 +1,77 @@
+/* Luyện đọc to có chấm — bước "📖 Đọc theo" của Hội thoại (public/js/doc-to.js).
+   Dùng lại token màu / nút rp-btn của style.css nên tự theo chế độ sáng / tối. */
+
+/* Ô tổng kết đầu bước */
+.dt-tong { margin: 0 0 var(--space-3, 12px); padding: 12px 14px; border-radius: var(--radius-md, 12px); background: var(--color-green-50); border: 1.5px solid var(--color-gray-200); }
+.dt-tong-dong { display: flex; gap: 10px; align-items: flex-start; }
+.dt-tong-ic { flex: none; font-size: 1.5rem; line-height: 1.2; }
+.dt-tong-txt { display: flex; flex-direction: column; gap: 2px; min-width: 0; font-size: 1rem; line-height: 1.5; color: var(--fg-gray-800); }
+.dt-tong-txt > span:first-child > b { font-size: 1.08rem; color: var(--fg-gray-900); }
+.dt-tong-meo { font-size: 0.92rem; color: var(--fg-gray-600); }
+.dt-thanh { margin-top: 10px; height: 8px; border-radius: 99px; background: var(--color-gray-200); overflow: hidden; }
+.dt-thanh i { display: block; height: 100%; border-radius: inherit; background: var(--color-success); transition: width .4s ease; }
+
+/* Hàng [🎙️ Đọc] [điểm] ở cuối bong bóng câu (cùng bong bóng với nút 🔊) */
+.dt-hang { clear: both; display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 8px; }
+.dp-line.is-b .dt-hang { justify-content: flex-end; }
+.dp-lines.dp-passage .dp-line.is-b .dt-hang { justify-content: flex-start; }
+.dt-mic {
+  min-height: 44px; min-width: 44px; padding: 6px 14px;
+  border: 2px solid var(--color-success); border-radius: var(--radius-pill, 999px);
+  background: var(--color-white); color: var(--fg-success);
+  font: inherit; font-weight: 700; font-size: 0.92rem; line-height: 1.2; cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center; gap: 4px; white-space: nowrap;
+}
+.dt-mic:hover { background: var(--color-success); color: #fff; }
+.dt-mic.is-rec { background: #c62828; border-color: #c62828; color: #fff; animation: dtNhip 1.2s ease-in-out infinite; }
+.dt-mic:focus-visible, .dt-kq .rp-btn:focus-visible { outline: 3px solid var(--color-gold-500); outline-offset: 2px; }
+@keyframes dtNhip { 50% { box-shadow: 0 0 0 6px rgba(198, 40, 40, .18); } }
+.dp-bubble .dp-say { min-width: 44px; min-height: 44px; }
+
+/* Chip điểm tốt nhất ở cuối bong bóng */
+.dt-chip:empty { display: none; }
+.dt-chip.is-ok, .dt-chip.is-low, .dt-chip.is-tu { display: inline-block; padding: 2px 10px; border-radius: var(--radius-pill, 999px); font-size: 0.82rem; font-weight: 700; }
+.dt-chip.is-ok { background: var(--color-green-50); color: var(--xt-1f6b3d); }
+.dt-chip.is-low { background: var(--color-red-50); color: var(--xt-a51f1f); }
+.dt-chip.is-tu { background: var(--color-gold-50); color: var(--xt-7a4f12); }
+.dt-chip .dt-sao { font-size: 0.9rem; }
+
+/* Sao */
+.dt-sao { display: inline-flex; gap: 1px; letter-spacing: 0; }
+.dt-sao i { font-style: normal; color: var(--color-gray-300, #c9c9c9); }
+.dt-sao i.on { color: var(--color-gold-500, #e0a020); }
+
+/* Khung kết quả ngay dưới câu (rộng hết hàng) */
+.dt-kq { margin: -6px 0 var(--space-4, 16px); padding: 12px 14px; border-radius: var(--radius-lg, 16px); border: 1.5px solid var(--color-gray-200); background: var(--color-white); max-width: 100%; box-sizing: border-box; overflow-wrap: anywhere; }
+.dt-kq.is-ok { border-color: var(--color-green-500, #3a9a5b); }
+.dt-kq.is-low { border-color: var(--color-red-500, #d84a3a); }
+.dt-kq.is-warn { border-color: var(--color-gold-500, #e0a020); background: var(--color-gold-50); }
+.dt-kq.is-dang { border-color: #c62828; border-style: dashed; }
+.dt-dong { font-family: var(--font-hanzi); font-size: var(--zh-text, 1.5rem); font-weight: 700; line-height: 1.5; color: var(--fg-gray-900); }
+.dt-dong .dt-ok { color: var(--fg-success); }
+.dt-dong .dt-miss { color: var(--xt-c62828); text-decoration: underline wavy rgba(198, 40, 40, .55); text-underline-offset: 4px; }
+.dt-py { color: var(--fg-pinyin); font-weight: 600; font-size: 0.9rem; margin-top: 2px; }
+.dt-nghe { margin-top: 8px; font-size: 0.92rem; color: var(--fg-gray-600); }
+.dt-diem { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin-top: 8px; font-size: 0.98rem; line-height: 1.45; color: var(--fg-gray-800); }
+.dt-diem .dt-sao { font-size: 1.35rem; }
+.dt-diem > b { font-size: 1.15rem; }
+.dt-kq.is-ok .dt-diem > b { color: var(--fg-success); }
+.dt-kq.is-low .dt-diem > b { color: var(--xt-c62828); }
+.dt-diem > span:last-child { flex: 1 1 200px; min-width: 0; }
+.dt-best { margin-top: 6px; font-size: 0.88rem; color: var(--fg-gray-600); }
+.dt-loi { margin-top: 6px; font-size: 0.95rem; line-height: 1.5; color: var(--xt-7a4f12); }
+.dt-dang { margin-top: 8px; font-weight: 600; color: var(--fg-gray-800); }
+.dt-live { min-height: 1.5em; margin-top: 4px; font-size: 1.1rem; color: var(--fg-gray-600); }
+.dt-nut { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.dt-nut .rp-btn { flex: 0 1 auto; }
+.dt-nut .rp-btn[disabled] { opacity: .65; cursor: default; }
+.dt-tu { border-color: var(--color-gold-500, #e0a020); }
+
+@media (max-width: 520px) {
+  .dt-kq { padding: 10px 12px; }
+  .dt-nut .rp-btn { flex: 1 1 calc(50% - 8px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dt-mic.is-rec { animation: none; }
+  .dt-thanh i { transition: none; }
+}

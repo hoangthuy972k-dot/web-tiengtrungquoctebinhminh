@@ -1,0 +1,118 @@
+/* Tab "📋 Báo cáo tuần" o /admin (public/js/admin-bao-cao-tuan.js) — bao cao tung em gui phu huynh. */
+.bct-wrap { min-width: 0; }
+.bct-cong-cu { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 10px 0 12px; }
+.bct-cong-cu .btn { min-height: 40px; }
+.bct-cong-cu .btn[disabled] { opacity: .45; cursor: not-allowed; }
+.bct-cong-cu select { max-width: 100%; }
+.bct-help { margin-bottom: 14px; }
+.bct-h3 { font-size: 1.02rem; font-weight: 700; margin: 22px 0 10px; }
+.bct-in-dau { display: none; }
+.bct-zh, .bct-tu-zh, .bct-cau-de { font-family: 'Noto Serif SC', var(--font-hanzi), serif; }
+
+/* Tong quan lop */
+.bct-cards { margin-bottom: 12px; }
+.bct-ai { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; }
+.bct-ai-nhom { background: var(--color-white); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); padding: 10px 14px; border-top: 3px solid var(--color-gray-200); }
+.bct-ai-nhom.is-hoc { border-top-color: var(--color-green-500); }
+.bct-ai-nhom.is-khong { border-top-color: var(--color-red-500); }
+.bct-ai-tieu { font-weight: 700; font-size: .9rem; margin-bottom: 6px; }
+.bct-ai-ds { display: flex; flex-wrap: wrap; gap: 6px; }
+.bct-ten-chip { min-height: 34px; padding: 2px 12px; border: 1px solid var(--color-gray-200); border-radius: 999px; background: var(--color-gray-50); font: inherit; font-size: .85rem; font-weight: 600; color: inherit; cursor: pointer; }
+.bct-ten-chip:hover { border-color: var(--color-red-500); color: var(--color-red-600); }
+.bct-ten-chip .tr-muted { font-size: .78rem; }
+
+/* Bang ca lop */
+.bct-table { min-width: 780px; }
+.bct-table td { white-space: nowrap; }
+.bct-table th { padding: 0; }
+.bct-table tr.bct-tr-nhac td { background: var(--color-red-50); }
+.bct-table tr.bct-tr-tk td { color: var(--color-gray-500); }
+.bct-sort { width: 100%; min-height: 40px; padding: 0 var(--space-4); border: 0; background: none; font: inherit; color: inherit; font-weight: 600; text-transform: inherit; letter-spacing: inherit; text-align: left; cursor: pointer; white-space: nowrap; }
+.bct-sort:hover, .bct-ten:hover { color: var(--color-red-600); }
+.bct-ten { border: 0; background: none; padding: 0; font: inherit; font-weight: 700; color: inherit; text-align: left; cursor: pointer; }
+.bct-ten:hover { text-decoration: underline; }
+.bct-sort:focus-visible, .bct-ten:focus-visible, .bct-ten-chip:focus-visible { outline: 2px solid var(--color-gold-500); outline-offset: 1px; }
+.bct-ss { font-size: .76rem; color: var(--color-gray-500); white-space: nowrap; }
+.bct-ss.is-up { color: var(--color-green-600); }
+.bct-ss.is-down { color: var(--color-red-600); }
+.tr-chip.bct-chip.is-muted { background: var(--color-gray-100); color: var(--color-gray-600); }
+.tr-chip.bct-chip.is-warn { background: var(--color-gold-50); color: var(--color-gold-700); }
+.tr-chip.bct-chip.is-mid { background: var(--color-blue-50); color: var(--color-blue-600); }
+.tr-chip.bct-chip.is-up { background: var(--color-teal-50); color: var(--color-teal-600); }
+
+/* The tung em */
+.bct-ds { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 460px), 1fr)); gap: 14px; }
+.bct-the { min-width: 0; background: var(--color-white); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); padding: 14px 16px; border-top: 4px solid var(--color-green-500); scroll-margin-top: 12px; transition: box-shadow .3s; }
+.bct-the.is-nhac { border-top-color: var(--color-red-500); }
+.bct-the.is-tk { border-top-color: var(--color-gray-300); }
+.bct-the.is-sang { box-shadow: 0 0 0 3px var(--color-gold-400); }
+.bct-the-dau { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; justify-content: space-between; margin-bottom: 8px; }
+.bct-the-ten { font-size: 1.1rem; font-weight: 800; overflow-wrap: anywhere; }
+.bct-lich { display: flex; gap: 4px; margin-bottom: 10px; }
+.bct-ngay { flex: 1 1 0; text-align: center; font-size: .75rem; font-weight: 700; padding: 4px 0; border-radius: 6px; background: var(--color-gray-100); color: var(--color-gray-500); }
+.bct-ngay.is-on { background: var(--color-green-500); color: #fff; }
+.bct-so-ds { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin-bottom: 10px; }
+.bct-so { background: var(--color-gray-50); border-radius: var(--radius-sm); padding: 6px 8px; min-width: 0; }
+.bct-so-nhan { font-size: .72rem; color: var(--color-gray-600); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bct-so-gt { font-size: 1.15rem; font-weight: 800; font-variant-numeric: tabular-nums; }
+.bct-so-phu { font-size: .72rem; color: var(--color-gray-500); }
+.bct-nx { margin: 0 0 10px; padding: 8px 12px; background: var(--color-gold-50); border-radius: var(--radius-sm); font-size: .9rem; line-height: 1.55; color: var(--color-gray-800); }
+.bct-muc { margin-bottom: 10px; }
+.bct-muc-tieu { font-weight: 700; font-size: .88rem; margin-bottom: 4px; }
+.bct-bai, .bct-kt, .bct-tu, .bct-cau { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.bct-bai-ten { font-size: .88rem; line-height: 1.45; }
+.bct-phan { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 3px; }
+.bct-phan-chip { font-size: .74rem; font-weight: 600; padding: 1px 8px; border-radius: 999px; background: var(--color-blue-50); color: var(--color-blue-600); }
+.bct-phan-chip.is-lai { background: var(--color-gray-100); color: var(--color-gray-700); }
+.bct-phan-chip i { font-style: normal; opacity: .8; }
+.bct-kt li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 10px; font-size: .86rem; }
+.bct-diem { white-space: nowrap; }
+.bct-diem.is-tot { color: var(--color-green-600); }
+.bct-diem.is-tb { color: var(--color-gold-700); }
+.bct-diem.is-thap { color: var(--color-red-600); }
+.bct-tu li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; font-size: .86rem; }
+.bct-tu-zh { font-size: 1.25rem; font-weight: 700; color: var(--color-red-700); }
+.bct-tu-py { color: var(--color-teal-600); font-size: .85rem; }
+.bct-tu-vn { color: var(--color-gray-700); flex: 1 1 120px; min-width: 0; }
+.bct-lan { font-size: .74rem; font-weight: 700; color: var(--color-red-600); }
+.bct-cau li { border-left: 3px solid var(--color-red-100); padding: 2px 0 2px 10px; font-size: .86rem; }
+.bct-cau-nhan { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 6px; margin-bottom: 2px; }
+.bct-cau-lenh { color: var(--color-gray-600); font-size: .8rem; }
+.bct-cau-de { font-size: 1.05rem; line-height: 1.5; overflow-wrap: anywhere; }
+.bct-cau-dap { font-size: .84rem; }
+.bct-nt { margin: 0 0 10px; font-size: .82rem; color: var(--color-gray-600); }
+.bct-nut { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.bct-nut .btn { min-height: 40px; }
+.bct-tt { font-size: .82rem; color: var(--color-green-600); font-weight: 600; }
+.bct-msg { display: block; width: 100%; box-sizing: border-box; margin-top: 8px; padding: 10px 12px; border: 1px solid var(--color-gray-200); border-radius: var(--radius-md); background: var(--color-gray-50); color: inherit; font: inherit; font-size: .86rem; line-height: 1.5; resize: vertical; }
+.bct-msg[hidden] { display: none; }
+
+@media (max-width: 640px) {
+  .bct-cong-cu .tr-field, .bct-cong-cu select { width: 100%; }
+  .bct-so-ds { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .bct-the { padding: 12px; }
+  .bct-nut .btn { flex: 1 1 auto; }
+  .bct-nut .btn-primary { flex-basis: 100%; }
+}
+
+/* In: chi khung bao cao (ca lop, hoac 1 em khi bam 🖨 In o the em do) */
+@media print {
+  html.bct-dang-in body { background: #fff; }
+  html.bct-dang-in #adminDash > :not(#trBaoCaoTuan) { display: none !important; }
+  html.bct-dang-in .admin-gate, html.bct-dang-in .bct-cong-cu, html.bct-dang-in .bct-help, html.bct-dang-in .bct-nut,
+  html.bct-dang-in .bct-msg, html.bct-dang-in .bct-wrap > .admin-section-title, html.bct-dang-in .bct-wrap > .tr-hint,
+  html.bct-dang-in .cs-chu-thich { display: none !important; }
+  html.bct-dang-in .bct-in-dau { display: block; font-size: 1.2rem; font-weight: 800; margin-bottom: 8px; }
+  html.bct-dang-in .bct-the, html.bct-dang-in .bct-ai-nhom, html.bct-dang-in .admin-card, html.bct-dang-in .admin-table-wrap { box-shadow: none; border: 1px solid #ccc; }
+  html.bct-dang-in .bct-the { break-inside: avoid; page-break-inside: avoid; }
+  html.bct-dang-in .bct-ds { display: block; }
+  html.bct-dang-in .bct-ds .bct-the { margin-bottom: 10px; }
+  html.bct-dang-in .admin-table-wrap { overflow: visible; }
+  html.bct-dang-in .bct-table { min-width: 0; font-size: .78rem; }
+  html.bct-dang-in .bct-table th, html.bct-dang-in .bct-table td { padding: 4px 6px; }
+  html.bct-dang-in .bct-ten-chip { border-color: #ccc; background: none; }
+  html.bct-dang-in .bct-ngay.is-on, html.bct-dang-in .bct-phan-chip { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  /* chi 1 em */
+  html.bct-in-1 .bct-wrap > :not(.bct-ds):not(.bct-in-dau) { display: none !important; }
+  html.bct-in-1 .bct-ds > .bct-the:not(.is-in) { display: none !important; }
+}

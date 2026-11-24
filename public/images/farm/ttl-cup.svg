@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+<ellipse cx="50" cy="92" rx="34" ry="4.5" fill="#000" opacity=".15"/>
+<g stroke="#2b1d3a" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+<path d="M22 89L25 78H75L78 89Z" fill="#8d5a3b"/>
+<path d="M27 81H73" stroke="#b9783f" stroke-width="2"/>
+<path d="M31 78L34 70H66L69 78Z" fill="#a86a3e"/>
+<path d="M42 70L44 63H56L58 70Z" fill="#e09b12"/>
+<path d="M46 54Q48 59 45 63H55Q52 59 54 54Z" fill="#e09b12"/>
+<path d="M29 22Q12 23 15 36Q18 48 36 50M71 22Q88 23 85 36Q82 48 64 50" fill="none" stroke-width="7"/>
+<path d="M29 22Q12 23 15 36Q18 48 36 50M71 22Q88 23 85 36Q82 48 64 50" fill="none" stroke="#ffc83d" stroke-width="2.5"/>
+<path d="M26 17H74Q74 44 58 52Q54 55 50 55Q46 55 42 52Q26 44 26 17Z" fill="#ffc83d"/>
+<path d="M64 19H72Q71 42 56 51Q66 40 64 19Z" fill="#e09b12" stroke="none"/>
+<rect x="23" y="12" width="54" height="7" rx="3" fill="#e09b12"/>
+<path d="M27 15H45" stroke="#fff1a8" stroke-width="2"/>
+<path d="M50 29Q42 25 35 27V42Q42 40 50 44Q58 40 65 42V27Q58 25 50 29Z" fill="#fff8ec" stroke-width="2.4"/>
+<path d="M50 29V44" stroke-width="2"/>
+<path d="M39 32Q43 31 46 32.5M39 36Q43 35 46 36.5M54 32.5Q57 31 61 32M54 36.5Q57 35 61 36" fill="none" stroke="#7a5c8a" stroke-width="1.6"/>
+<circle cx="36" cy="75" r="5" fill="#ffd9b0" stroke-width="2.2"/>
+<path d="M31.5 73.5Q32 69 36 69Q40 69 40.5 73.5Q36 71.5 31.5 73.5Z" fill="#3b2a1f" stroke-width="1.6"/>
+<circle cx="50" cy="74" r="5.5" fill="#f6c9a0" stroke-width="2.2"/>
+<path d="M44.6 72.5Q45 67.5 50 67.5Q55 67.5 55.4 72.5Q53 70 50 71Q47 70 44.6 72.5Z" fill="#2b1d3a" stroke-width="1.6"/>
+<circle cx="64" cy="75" r="5" fill="#ffd9b0" stroke-width="2.2"/>
+<path d="M59.5 74Q59 68.5 64 69Q69 68.5 68.5 74L67 71.5Q64 70.5 61 71.5Z" fill="#8a4b22" stroke-width="1.6"/>
+<path d="M16 86Q14 80 19 77H81Q86 80 84 86Q80 84 76 85H24Q20 84 16 86Z" fill="#e53935"/>
+<path d="M19 77L14 75L16 81M81 77L86 75L84 81" fill="#c62828" stroke-width="2.2"/>
+<path d="M50 3.5L51.6 7.6L56 7.8L52.6 10.6L53.8 14.8L50 12.4L46.2 14.8L47.4 10.6L44 7.8L48.4 7.6Z" fill="#e53935" stroke-width="1.8"/>
+<path d="M33 5L34.2 8L37.4 8.2L34.9 10.2L35.8 13.3L33 11.5L30.2 13.3L31.1 10.2L28.6 8.2L31.8 8Z" fill="#ff8a3d" stroke-width="1.6"/>
+<path d="M67 5L68.2 8L71.4 8.2L68.9 10.2L69.8 13.3L67 11.5L64.2 13.3L65.1 10.2L62.6 8.2L65.8 8Z" fill="#ff8a3d" stroke-width="1.6"/>
+</g>
+<text x="50" y="84.5" text-anchor="middle" font-size="7.5" font-weight="900" fill="#fff8ec" font-family="Noto Serif SC, serif" letter-spacing="3">全班</text>
+</svg>

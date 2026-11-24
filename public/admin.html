@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="/css/admin.css">
 <link rel="stylesheet" href="/css/admin-cau-sai.css">
 <link rel="stylesheet" href="/css/admin-hoc-choi.css">
+<link rel="stylesheet" href="/css/admin-bao-cao-tuan.css">
 </head>
 <body class="admin-body">
 
@@ -45,6 +46,7 @@
     <button type="button" class="tr-tab" data-tab="classes" role="tab" aria-selected="false">🏫 Lớp &amp; bài giao</button>
     <button type="button" class="tr-tab" data-tab="csai" role="tab" aria-selected="false">📊 Câu lớp hay sai</button>
     <button type="button" class="tr-tab" data-tab="hvc" role="tab" aria-selected="false">🎯 Học vs Chơi</button>
+    <button type="button" class="tr-tab" data-tab="bct" role="tab" aria-selected="false">📋 Báo cáo tuần</button>
     <button type="button" class="tr-tab" data-tab="gopy" role="tab" aria-selected="false">💬 Góp ý <span class="gy-dem" id="gyTabDem" hidden>0</span></button>
     <button type="button" class="tr-tab" data-tab="qmk" role="tab" aria-selected="false">🔑 Quên mật khẩu <span class="gy-dem" id="qmkTabDem" hidden>0</span></button>
     <button type="button" class="tr-tab" data-tab="ntin" role="tab" aria-selected="false">🌾 Tin nhắn nông trại <span class="gy-dem" id="ntinTabDem" hidden>0</span></button>
@@ -123,6 +125,9 @@
   <!-- Hoc vs Choi: moi tuan hoc sinh hoc bai nhieu hay choi nong trai nhieu (GET /api/admin/hoc-choi) -->
   <div id="trHocChoi" hidden></div>
 
+  <!-- Bao cao tuan tung em (gui phu huynh): GET /api/admin/bao-cao-tuan (bao-cao-tuan.js) -->
+  <div id="trBaoCaoTuan" hidden></div>
+
   <!-- Gop y cua hoc sinh -->
   <div id="trGopY" hidden></div>
 
@@ -147,5 +152,6 @@
 <script src="/js/admin-giong-doc.js"></script>
 <script src="/js/admin-cau-sai.js"></script>
 <script src="/js/admin-hoc-choi.js"></script>
+<script src="/js/admin-bao-cao-tuan.js"></script>
 </body>
 </html>

@@ -1306,6 +1306,7 @@
     else if (l === 'vuon') veVuon(than);
     else if (l === 'cay7') veCay7(than);
     else if (NGOAI[l]) NGOAI[l](than, bangDang);
+    else if (window.NTX && NTX.thieuBang) NTX.thieuBang(l, than); // module nap khi can (public/js/nong-trai-tai.js): "Đang mở…" roi ve lai
     $all('img', than).forEach(ganLoiAnh);
     if (window.NTX) NTX.sauBang.forEach(function (fn) { try { fn(bangDang); } catch (e) { /* bo qua */ } });
   }
@@ -5823,7 +5824,7 @@
     capEm: capEm, dongThiTran: dongThiTran, veNha: veNha, htmlTen: htmlTen, soGon: soGon, tenMon: tenMon, moBangNho: moBangNho, thoiLuong: thoiLuong,
     dangKy: function (loai, fn) { NGOAI[loai] = fn; },
     batDauDat: batDauDat, datDuoc: datDuoc, rong: rong, xgCua: xgCua, moNoi: moNoi, dongNoi: dongNoi, duLieuBanDo: duLieuBanDo, bayGio: bayGio,
-    thiTran: function () { return thiTran; }, trangThai: trangThai, danTt: function () { return DAN; }, svgDan: svgDan,
+    thiTran: function () { return thiTran; }, veThiTran: veThiTran, trangThai: trangThai, danTt: function () { return DAN; }, svgDan: svgDan,
     sauTt: [], // (r) goi sau moi lan ve thi tran (module them)
     veBanDo: veBanDo, hangPx: hangPx, datTuManHinh: datTuManHinh, manHinhTuDat: manHinhTuDat, zSau: zSau, capNhatSau: capNhatSau,
     sauXoay: [], // ham goi khi goc xoay 3D doi (cap nhat z-index cua do dung thang module them)

@@ -73,6 +73,7 @@ function goiTt(k, t) {
     [/^cg-/, 'Danh hiệu & cúp', 'Đạt từ 8/10 câu ở Nhiệm vụ chuyên gia (cấp 40)'],
     [/^nha-kinh$/, 'Công trình mốc', 'Xây nhà kính ở bảng Cấp độ (cấp 35)'],
     [/^ct-/, 'Cùng cả lớp', 'Cùng cả lớp xây công trình chung ở thị trấn'],
+    [/^ttl-/, 'Cùng cả lớp', 'Thử thách cả lớp 全班挑战: cả lớp học bài đạt chỉ tiêu tuần'],
     [/^pl-/, 'Phiêu lưu & câu chuyện', 'Qua trạm cuối một vùng đất trên Bản đồ phiêu lưu'],
     [/^tr-/, 'Phiêu lưu & câu chuyện', 'Hoàn thành một chương Câu chuyện làng Tre Xanh'],
     [/^lh-/, 'Lễ hội & mùa', 'Quà lễ hội cuối tuần'],

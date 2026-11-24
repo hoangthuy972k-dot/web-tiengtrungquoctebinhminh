@@ -3074,7 +3074,7 @@ module.exports = function ganNongTrai(app, d) {
   // bon mua 春夏秋冬, hoi cho nong san tuan. hKt.HE_SO_CAY / HE_SO_BAN: diem moc he so (xem tren).
   hKt.HE_SO_CAY = HE_SO_CAY; hKt.HE_SO_BAN = HE_SO_BAN; hKt.CHAN_CHUOT = CHAN_CHUOT;
   // 2026-11-24: + le hoi Tet 春节, hom thu lang 信箱, ban tin thoi tiet 天气预报, bao tang nong trai 博物馆
-  ['nong-trai-thucung', 'nong-trai-chodem', 'nong-trai-bonmua', 'nong-trai-hoicho', 'nong-trai-tet', 'nong-trai-homthu', 'nong-trai-thoitiet', 'nong-trai-baotang'].forEach((ten) => {
+  ['nong-trai-thucung', 'nong-trai-chodem', 'nong-trai-bonmua', 'nong-trai-hoicho', 'nong-trai-tet', 'nong-trai-homthu', 'nong-trai-thoitiet', 'nong-trai-baotang', 'nong-trai-thuthachlop'].forEach((ten) => {
     let m = null;
     try { m = require('./' + ten); } catch (e) {
       if (e.code === 'MODULE_NOT_FOUND' && String(e.message).indexOf("'./" + ten + "'") >= 0) return;

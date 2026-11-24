@@ -208,7 +208,7 @@ function sendVersionedHtml(res, filePath) {
 // CDN cua Hostinger phuc vu thang cac duong dan co duoi .html nen chung khong di
 // qua day, khong duoc dong dau ?v= va trinh duyet giu mai ban CSS/JS cu. Cac trang
 // dung thuong xuyen co them duong dan khong duoi file de luon qua Node.
-const CLEAN_PAGES = { '/lop': 'lop.html', '/choi': 'choi.html', '/quet': 'quet.html', '/nghieng': 'nghieng.html', '/van-dong': 'van-dong.html', '/dk': 'dk.html', '/dua': 'dua.html','/game': 'game.html', '/bao-cao': 'admin.html', '/hsk30': 'hsk30.html', '/nong-trai': 'nong-trai.html', '/truyen': 'truyen.html', '/the-chu': 'the-chu.html', '/moi-ngay': 'moi-ngay.html', '/dau': 'dau.html', '/thi-lop': 'thi-lop.html', '/thi': 'exam/test/index.html' };
+const CLEAN_PAGES = { '/lop': 'lop.html', '/choi': 'choi.html', '/quet': 'quet.html', '/nghieng': 'nghieng.html', '/van-dong': 'van-dong.html', '/dk': 'dk.html', '/dua': 'dua.html','/game': 'game.html', '/bao-cao': 'admin.html', '/hsk30': 'hsk30.html', '/nong-trai': 'nong-trai.html', '/truyen': 'truyen.html', '/the-chu': 'the-chu.html', '/moi-ngay': 'moi-ngay.html', '/dau': 'dau.html', '/thu-thach-lop': 'thu-thach-lop.html', '/thi-lop': 'thi-lop.html', '/thi': 'exam/test/index.html' };
 
 // Trang Phat am da bo: ai con giu duong dan cu thi dua ve trang chu
 app.get(['/phat-am', '/phat-am.html'], (req, res) => res.redirect(301, '/'));
@@ -1875,8 +1875,9 @@ const hocChoi = require('./hoc-choi')(app, {
 const HOC_THEM_DEPS = {
   DATA_DIR, USE_DB, db: () => dbPool, readJsonFile, writeJsonFile, requireAuth, requireAdmin, asyncRoute, vnDayKey, vnWeekKey, VN_OFFSET_MS,
   baiOnCua, tuVungBai, loadUserNames, loadClassState, loadStar, saveStar, rollStarDay, addStars,
+  loadScoreOf, loadResume, loadPartDone, loadExamDef, // bao-cao-tuan.js
 };
-const hocThem = ['truyen-doc', 'the-chu', 'moi-ngay', 'dau-mot'].map((ten) => {
+const hocThem = ['truyen-doc', 'the-chu', 'moi-ngay', 'dau-mot', 'bao-cao-tuan', 'thu-thach-lop'].map((ten) => {
   try { return require('./' + ten)(app, HOC_THEM_DEPS); } catch (e) {
     if (e.code === 'MODULE_NOT_FOUND' && String(e.message).indexOf("'./" + ten + "'") >= 0) return null;
     throw e;

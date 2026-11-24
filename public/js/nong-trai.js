@@ -5136,6 +5136,16 @@
   function tenKt(q) { return (q.hoi && q.hoi.lenh) || (q.k === 'xep' ? 'Xếp các từ thành câu đúng' : q.k === 'noi' ? 'Nối từ với nghĩa đúng' : 'Chọn đáp án đúng'); }
   function htmlKt(q, attr) {
     var h = q.hoi || {}, html = '';
+    // cau viet chu (HanziWriter) / nghe chon chu: truoc day bi trong o Nhiem vu chuyen gia (2026-11-24)
+    if (q.k === 'viet') {
+      return '<p class="nt-ch-kieu">✏️ Viết chữ Hán còn thiếu</p>' + deBaiDacBiet(q) +
+        '<div class="nt-hang-nut"><button type="button" class="nt-nut" data-viet-bo>Bỏ qua</button></div>';
+    }
+    if (q.k === 'nghe') {
+      return '<p class="nt-ch-kieu">🔊 Nghe rồi chọn chữ Hán</p>' + deBaiDacBiet(q) + '<div class="nt-ch-lua zh">' + q.lua.map(function (l, j) {
+        return '<button type="button" data-' + attr + '="' + j + '" lang="zh">' + esc(l) + '</button>';
+      }).join('') + '</div>';
+    }
     if (q.k === 'kt') {
       if (h.zh) {
         var han = CO_HAN.test(h.zh);
@@ -5155,7 +5165,16 @@
   }
   // gui(b, chon): b = { chon } | { xep: [...] } | { noi: [...] }
   function ganKt(than, q, attr, gui) {
-    if (q.k === 'kt') {
+    if (q.k === 'viet') {
+      // nguoi goi (chayCau...) tu khoa chong gui 2 lan va mo lai khi loi mang
+      var guiViet = function (j) { var b = $('[data-viet-bo]', than); if (b) b.disabled = true; gui({ chon: j }, j); };
+      ganDacBiet(q, than, function () { guiViet(0); });
+      var bo = $('[data-viet-bo]', than);
+      if (bo) bo.addEventListener('click', function () { guiViet(-1); });
+      return;
+    }
+    if (q.k === 'nghe') ganDacBiet(q, than, function () {});
+    if (q.k === 'kt' || q.k === 'nghe') {
       $all('[data-' + attr + ']', than).forEach(function (b) {
         b.addEventListener('click', function () { var j = +b.getAttribute('data-' + attr); gui({ chon: j }, j); });
       });
@@ -5166,14 +5185,18 @@
     CauDT.ve(el, q.hoi, function (b) { gui(b, -1); });
   }
   function danhDauKt(than, q, r, chon, attr) {
-    if (q.k === 'kt') {
+    if (q.k === 'viet') { var bo = $('[data-viet-bo]', than); if (bo) bo.disabled = true; return; }
+    if (q.k === 'kt' || q.k === 'nghe') {
       $all('[data-' + attr + ']', than).forEach(function (x, j) { x.disabled = true; x.classList.add(j === r.dap ? 'dung' : j === chon ? 'sai' : 'mo'); });
       return;
     }
     var el = $('[data-kt-dt]', than);
     if (el) { el.classList.add('cdt-khoa', r.dung ? 'nt-kt-dung' : 'nt-kt-sai'); }
   }
-  function moLaiKt(than, q) { if (q.k !== 'kt' && window.CauDT) CauDT.moLai($('[data-kt-dt]', than)); }
+  function moLaiKt(than, q) {
+    if (q.k === 'viet') { var bo = $('[data-viet-bo]', than); if (bo) bo.disabled = false; return; }
+    if (q.k !== 'kt' && q.k !== 'nghe' && window.CauDT) CauDT.moLai($('[data-kt-dt]', than));
+  }
   function giaiKt(r, q) {
     var s = '';
     if (r.kt === 'xep' || r.kt === 'noi') s = '<span class="nt-kt-dap">' + (r.dung ? '✔ ' : 'Đáp án: ') + (window.CauDT ? CauDT.dapHtml(q.hoi, r.dap) : '') + '</span>';

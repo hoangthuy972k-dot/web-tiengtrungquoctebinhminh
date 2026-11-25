@@ -1768,20 +1768,20 @@ var wbData = {
   sections: [
     { title: 'Hán tự & từ mới', blocks: [
       { type: 'table', caption: 'Bộ thủ (偏旁) — tên gọi và chữ ví dụ', headers: ['Tên gọi', 'Bộ thủ', 'Chữ ví dụ'], rows: [
-        ['三点水 sāndiǎnshuǐ', '氵', '汉 hàn (người Hán, tiếng Hán) · 洗 xǐ (rửa, giặt)'],
-        ['宝盖头 bǎogàitóu', '宀', '家 jiā (nhà) · 完 wán (xong, hết)']
+        ['三点水', '氵', '汉 (người Hán, tiếng Hán) · 洗 (rửa, giặt)'],
+        ['宝盖头', '宀', '家 (nhà) · 完 (xong, hết)']
       ] },
       { type: 'table', caption: 'Tập viết (摹写) — chữ → từ → câu', headers: ['Chữ', 'Từ', 'Câu'], rows: [
-        ['汉 hàn', '汉字 Hànzì — chữ Hán', '我每天都会写写汉字。— Ngày nào tôi cũng viết chữ Hán một chút.'],
-        ['洗 xǐ', '洗手 xǐ shǒu — rửa tay', '饭前要洗洗手。— Trước khi ăn phải rửa tay.'],
-        ['家 jiā', '在家 zài jiā — ở nhà', '你在家休息休息吧。— Bạn ở nhà nghỉ ngơi đi.'],
-        ['完 wán', '做完 zuòwán — làm xong', '我的工作做完了。— Công việc của tôi làm xong rồi.']
+        ['汉', '汉字 — chữ Hán', '我每天都会写写汉字。— Ngày nào tôi cũng viết chữ Hán một chút.'],
+        ['洗', '洗手 — rửa tay', '饭前要洗洗手。— Trước khi ăn phải rửa tay.'],
+        ['家', '在家 — ở nhà', '你在家休息休息吧。— Bạn ở nhà nghỉ ngơi đi.'],
+        ['完', '做完 — làm xong', '我的工作做完了。— Công việc của tôi làm xong rồi.']
       ],
         note: 'Luyện viết tay từng nét theo mẫu trong sách (bấm vào chữ ở phần Từ vựng để xem nét viết).' },
       { type: 'table', caption: 'Từ ghép mới (学一学)', headers: ['Từ đã biết', 'Từ mới', 'Nghĩa'], rows: [
-        ['书 · 桌子', '书桌 shūzhuō', 'bàn học, bàn viết'],
-        ['洗 · 公交车', '洗车 xǐchē', 'rửa xe'],
-        ['回来 · 中国', '回国 huí guó', 'về nước']
+        ['书 · 桌子', '书桌', 'bàn học, bàn viết'],
+        ['洗 · 公交车', '洗车', 'rửa xe'],
+        ['回来 · 中国', '回国', 'về nước']
       ] },
       { type: 'blankdrill', caption: 'Điền từ mới vào chỗ trống (做一做)', hint: 'Gõ từ mới (chữ Hán) vào ô trống rồi bấm "Xem đáp án" để đối chiếu.', maxlength: 4,
         items: [
@@ -1823,27 +1823,27 @@ var wbData = {
           { n: 6, letters: ['A', 'B', 'C', 'D'], answer: 'C',
             script: '女：每天都是您送我上学，为什么不让妈妈送我啊？\n男：她工作太忙，没时间。', vn: 'Nữ: Ngày nào cũng là bố đưa con đi học, sao không để mẹ đưa con ạ?\nNam: Mẹ bận việc quá, không có thời gian.' },
           { n: 7, part: 'Phần 3 · Nghe hội thoại, chọn đáp án đúng', options: [
-            { key: 'A', text: '书店', py: 'shūdiàn' },
-            { key: 'B', text: '教室', py: 'jiàoshì' },
-            { key: 'C', text: '家里', py: 'jiā li' }
+            { key: 'A', text: '书店' },
+            { key: 'B', text: '教室' },
+            { key: 'C', text: '家里' }
           ], answer: 'C',
             script: '女：别写了，生病的时候要多休息，别太累。\n男：好的，写完这几个字我就去我房间休息。\n问：他们现在在哪儿？', vn: 'Nữ: Đừng viết nữa, lúc ốm phải nghỉ ngơi nhiều, đừng mệt quá.\nNam: Vâng, viết xong mấy chữ này con sẽ về phòng mình nghỉ.\nHỏi: Bây giờ họ đang ở đâu? → ở nhà (về "phòng của mình").' },
           { n: 8, options: [
-            { key: 'A', text: '上课了', py: 'shàngkè le' },
-            { key: 'B', text: '听歌了', py: 'tīng gē le' },
-            { key: 'C', text: '看电影了', py: 'kàn diànyǐng le' }
+            { key: 'A', text: '上课了' },
+            { key: 'B', text: '听歌了' },
+            { key: 'C', text: '看电影了' }
           ], answer: 'C',
             script: '男：这个中文电影很不错，你都听懂了吗？\n女：听懂了一点儿。\n问：他们做什么了？', vn: 'Nam: Bộ phim tiếng Trung này hay lắm, bạn nghe hiểu hết không?\nNữ: Hiểu được một chút.\nHỏi: Họ đã làm gì? → xem phim.' },
           { n: 9, options: [
-            { key: 'A', text: '鸡蛋', py: 'jīdàn' },
-            { key: 'B', text: '包子', py: 'bāozi' },
-            { key: 'C', text: '面包', py: 'miànbāo' }
+            { key: 'A', text: '鸡蛋' },
+            { key: 'B', text: '包子' },
+            { key: 'C', text: '面包' }
           ], answer: 'B',
             script: '女：昨天晚上睡好了吗？\n男：睡好了。\n女：快来吃早饭吧！有鸡蛋、面包和牛奶。\n男：昨天的包子还有吗？我想吃包子。\n问：男的想吃什么？', vn: 'Nữ: Tối qua ngủ ngon không?\nNam: Ngon ạ.\nNữ: Mau ra ăn sáng đi! Có trứng, bánh mì và sữa.\nNam: Bánh bao hôm qua còn không ạ? Con muốn ăn bánh bao.\nHỏi: Người nam muốn ăn gì?' },
           { n: 10, options: [
-            { key: 'A', text: '手里', py: 'shǒu li' },
-            { key: 'B', text: '椅子上', py: 'yǐzi shang' },
-            { key: 'C', text: '桌子上', py: 'zhuōzi shang' }
+            { key: 'A', text: '手里' },
+            { key: 'B', text: '椅子上' },
+            { key: 'C', text: '桌子上' }
           ], answer: 'A',
             script: '男：你看见我的手机了吗？\n女：没看见，没在桌子上吗？\n男：桌子上、椅子上我都找了，没有。\n女：你看看，你手里是什么？\n问：手机在哪儿？', vn: 'Nam: Em có thấy điện thoại của anh không?\nNữ: Không thấy, không ở trên bàn à?\nNam: Trên bàn, trên ghế anh tìm hết rồi, không có.\nNữ: Anh nhìn xem, trong tay anh là cái gì?\nHỏi: Điện thoại ở đâu? → trong tay.' }
         ],
@@ -1853,56 +1853,56 @@ var wbData = {
             { key: 'B', img: '/images/hsk2v3-bai-3-wb/q11to13_b.jpg' },
             { key: 'C', img: '/images/hsk2v3-bai-3-wb/q11to13_c.jpg' },
             { key: 'D', img: '/images/hsk2v3-bai-3-wb/q11to13_d.jpg' }
-          ], letters: ['A', 'B', 'C', 'D'], prompt: '去洗洗手吧，洗完手来吃饭。', promptPy: 'Qù xǐxi shǒu ba, xǐwán shǒu lái chī fàn.', answer: 'B',
+          ], letters: ['A', 'B', 'C', 'D'], prompt: '去洗洗手吧，洗完手来吃饭。', answer: 'B',
             vn: 'Đi rửa tay đi, rửa tay xong thì vào ăn cơm. — Tranh B: đang rửa tay.' },
-          { n: 12, letters: ['A', 'B', 'C', 'D'], prompt: '不到五点，她就做完工作了。', promptPy: 'Bú dào wǔ diǎn, tā jiù zuòwán gōngzuò le.', answer: 'A',
+          { n: 12, letters: ['A', 'B', 'C', 'D'], prompt: '不到五点，她就做完工作了。', answer: 'A',
             vn: 'Chưa đến 5 giờ cô ấy đã làm xong việc rồi. — Tranh A: cô gái vươn vai bên máy tính, vừa xong việc.' },
-          { n: 13, letters: ['A', 'B', 'C', 'D'], prompt: '这家饭店的菜很不错，你看看想吃什么。', promptPy: 'Zhè jiā fàndiàn de cài hěn búcuò, nǐ kànkan xiǎng chī shénme.', answer: 'C',
+          { n: 13, letters: ['A', 'B', 'C', 'D'], prompt: '这家饭店的菜很不错，你看看想吃什么。', answer: 'C',
             vn: 'Món ăn của nhà hàng này rất ngon, bạn xem muốn ăn gì nhé. — Tranh C: hai người xem thực đơn trong nhà hàng.' },
           { n: 14, part: 'Phần 2 · Chọn từ điền vào chỗ trống', bank: [
-            { key: 'A', text: '每', py: 'měi' },
-            { key: 'B', text: '自己', py: 'zìjǐ' },
-            { key: 'C', text: '这么', py: 'zhème' },
-            { key: 'D', text: '出去', py: 'chūqù' },
-            { key: 'E', text: '完', py: 'wán' }
-          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '学校里（　）间教室都有学生在上课。', promptPy: 'Xuéxiào li (　) jiān jiàoshì dōu yǒu xuésheng zài shàngkè.', answer: 'A',
+            { key: 'A', text: '每' },
+            { key: 'B', text: '自己' },
+            { key: 'C', text: '这么' },
+            { key: 'D', text: '出去' },
+            { key: 'E', text: '完' }
+          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '学校里（　）间教室都有学生在上课。', answer: 'A',
             vn: 'Trong trường, phòng học nào cũng có học sinh đang học. — 每 + lượng từ (间) + danh từ, đi với 都.' },
-          { n: 15, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '这几天工作忙，我都是早上七点多（　），晚上八点多回来的。', promptPy: 'Zhè jǐ tiān gōngzuò máng, wǒ dōu shì zǎoshang qī diǎn duō (　), wǎnshang bā diǎn duō huílai de.', answer: 'D',
+          { n: 15, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '这几天工作忙，我都是早上七点多（　），晚上八点多回来的。', answer: 'D',
             vn: 'Mấy hôm nay công việc bận, sáng nào tôi cũng hơn 7 giờ ra khỏi nhà, tối hơn 8 giờ mới về. — 出去 (đi ra ngoài) đối với 回来 (trở về).' },
-          { n: 16, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '女：在我们学校，20多块钱就能看个电影。\n男：学校电影院的电影票（　）便宜啊！', promptPy: 'Zài wǒmen xuéxiào, 20 duō kuài qián jiù néng kàn gè diànyǐng. / Xuéxiào diànyǐngyuàn de diànyǐngpiào (　) piányi a!', answer: 'C',
+          { n: 16, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '女：在我们学校，20多块钱就能看个电影。\n男：学校电影院的电影票（　）便宜啊！', answer: 'C',
             vn: 'Nữ: Ở trường mình, hơn 20 đồng là xem được một bộ phim.\nNam: Vé xem phim ở rạp của trường rẻ thế cơ à! — 这么 + tính từ: … thế, … như vậy.' },
-          { n: 17, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '男：今天接你吗？\n女：今天下班后我（　）回去，你别来接我了。', promptPy: 'Jīntiān jiē nǐ ma? / Jīntiān xiàbān hòu wǒ (　) huíqù, nǐ bié lái jiē wǒ le.', answer: 'B',
+          { n: 17, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '男：今天接你吗？\n女：今天下班后我（　）回去，你别来接我了。', answer: 'B',
             vn: 'Nam: Hôm nay có cần đón em không?\nNữ: Hôm nay tan làm em tự về, anh đừng đến đón em nữa. — 自己回去: tự về, không cần người đón.' },
           { n: 18, part: 'Phần 3 · Ghép câu hỏi với câu trả lời', bank: [
-            { key: 'A', text: '她去医院看病了。', py: 'Tā qù yīyuàn kànbìng le.' },
-            { key: 'B', text: '我这个星期工作太多了。', py: 'Wǒ zhège xīngqī gōngzuò tài duō le.' },
-            { key: 'C', text: '给我吧，我去洗一洗。', py: 'Gěi wǒ ba, wǒ qù xǐ yi xǐ.' },
-            { key: 'D', text: '是的，今天的菜非常好吃。', py: 'Shì de, jīntiān de cài fēicháng hǎochī.' },
-            { key: 'E', text: '他出去了，一会儿就回来。', py: 'Tā chūqù le, yíhuìr jiù huílai.' }
-          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你们都吃好了吗？', promptPy: 'Nǐmen dōu chīhǎole ma?', answer: 'D',
+            { key: 'A', text: '她去医院看病了。' },
+            { key: 'B', text: '我这个星期工作太多了。' },
+            { key: 'C', text: '给我吧，我去洗一洗。' },
+            { key: 'D', text: '是的，今天的菜非常好吃。' },
+            { key: 'E', text: '他出去了，一会儿就回来。' }
+          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你们都吃好了吗？', answer: 'D',
             vn: 'Các bạn đều ăn xong cả chưa? — D: Rồi, món hôm nay rất ngon.' },
-          { n: 19, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '家月为什么没有来上课？', promptPy: 'Jiāyuè wèi shénme méiyǒu lái shàngkè?', answer: 'A',
+          { n: 19, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '家月为什么没有来上课？', answer: 'A',
             vn: 'Sao Gia Nguyệt không đến lớp? — A: Bạn ấy đi bệnh viện khám bệnh rồi (hỏi lý do → trả lời lý do; 她 = Gia Nguyệt).' },
-          { n: 20, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你看，我今天买了这么多苹果。', promptPy: 'Nǐ kàn, wǒ jīntiān mǎile zhème duō píngguǒ.', answer: 'C',
+          { n: 20, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你看，我今天买了这么多苹果。', answer: 'C',
             vn: 'Nhìn này, hôm nay tôi mua nhiều táo thế này. — C: Đưa tôi, tôi đi rửa một chút.' },
-          { n: 21, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你为什么每天都这么晚回来啊？', promptPy: 'Nǐ wèi shénme měi tiān dōu zhème wǎn huílai a?', answer: 'B',
+          { n: 21, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你为什么每天都这么晚回来啊？', answer: 'B',
             vn: 'Sao ngày nào anh cũng về muộn thế? — B: Tuần này anh nhiều việc quá.' },
-          { n: 22, part: 'Phần 4 · Đọc đoạn văn, chọn đáp án đúng', prompt: '我这几天看完了一本书。这本书很不错，我想给我的学生们介绍一下，让他们也看看。\n★他想让谁看看那本书？', promptPy: 'Wǒ zhè jǐ tiān kànwánle yì běn shū. Zhè běn shū hěn búcuò, wǒ xiǎng gěi wǒ de xuéshengmen jièshào yíxià, ràng tāmen yě kànkan. / Tā xiǎng ràng shéi kànkan nà běn shū?', options: [
-            { key: 'A', text: '朋友', py: 'péngyou' },
-            { key: 'B', text: '学生', py: 'xuésheng' },
-            { key: 'C', text: '老师', py: 'lǎoshī' }
+          { n: 22, part: 'Phần 4 · Đọc đoạn văn, chọn đáp án đúng', prompt: '我这几天看完了一本书。这本书很不错，我想给我的学生们介绍一下，让他们也看看。\n★他想让谁看看那本书？', options: [
+            { key: 'A', text: '朋友' },
+            { key: 'B', text: '学生' },
+            { key: 'C', text: '老师' }
           ], answer: 'B',
             vn: 'Mấy hôm nay tôi đọc xong một cuốn sách. Cuốn này rất hay, tôi muốn giới thiệu cho học sinh của mình để các em cũng đọc. ★ Anh ấy muốn để ai đọc cuốn sách đó? → học sinh (我的学生们).' },
-          { n: 23, prompt: '我买了这个星期六的电影票，想和女朋友一起去看电影，但她公司有事，我就和同学去看电影了。\n★他是和谁一起看的电影？', promptPy: 'Wǒ mǎile zhège Xīngqīliù de diànyǐngpiào, xiǎng hé nǚpéngyou yìqǐ qù kàn diànyǐng, dàn tā gōngsī yǒu shì, wǒ jiù hé tóngxué qù kàn diànyǐng le. / Tā shì hé shéi yìqǐ kàn de diànyǐng?', options: [
-            { key: 'A', text: '自己', py: 'zìjǐ' },
-            { key: 'B', text: '同学', py: 'tóngxué' },
-            { key: 'C', text: '女朋友', py: 'nǚpéngyou' }
+          { n: 23, prompt: '我买了这个星期六的电影票，想和女朋友一起去看电影，但她公司有事，我就和同学去看电影了。\n★他是和谁一起看的电影？', options: [
+            { key: 'A', text: '自己' },
+            { key: 'B', text: '同学' },
+            { key: 'C', text: '女朋友' }
           ], answer: 'B',
             vn: 'Tôi mua vé xem phim thứ Bảy này, định đi xem với bạn gái, nhưng công ty cô ấy có việc nên tôi đi xem với bạn học. ★ Anh ấy xem phim với ai? → bạn học (bạn gái bận nên không đi).' },
-          { n: 24, prompt: '我是和朋友一起来北京旅游的。昨天我们到北京大学看了看。北京大学很大，人也很多。网上说有三千多名外国学生在这里学习。\n★他到北京大学做什么？', promptPy: 'Wǒ shì hé péngyou yìqǐ lái Běijīng lǚyóu de. Zuótiān wǒmen dào Běijīng Dàxué kànle kàn. Běijīng Dàxué hěn dà, rén yě hěn duō. Wǎngshang shuō yǒu sānqiān duō míng wàiguó xuésheng zài zhèlǐ xuéxí. / Tā dào Běijīng Dàxué zuò shénme?', options: [
-            { key: 'A', text: '旅游', py: 'lǚyóu' },
-            { key: 'B', text: '学习', py: 'xuéxí' },
-            { key: 'C', text: '看朋友', py: 'kàn péngyou' }
+          { n: 24, prompt: '我是和朋友一起来北京旅游的。昨天我们到北京大学看了看。北京大学很大，人也很多。网上说有三千多名外国学生在这里学习。\n★他到北京大学做什么？', options: [
+            { key: 'A', text: '旅游' },
+            { key: 'B', text: '学习' },
+            { key: 'C', text: '看朋友' }
           ], answer: 'A',
             vn: 'Tôi cùng bạn đến Bắc Kinh du lịch. Hôm qua chúng tôi đến Đại học Bắc Kinh tham quan. Trường rất rộng, người cũng đông. Trên mạng nói có hơn 3000 sinh viên nước ngoài học ở đây. ★ Anh ấy đến Đại học Bắc Kinh làm gì? → du lịch, tham quan (người học ở đó là sinh viên nước ngoài, không phải anh ấy).' }
         ],
@@ -1912,9 +1912,9 @@ var wbData = {
           ], letters: ['A', 'B', 'C', 'D'], prompt: '（关）你 — sòng nǐ', answer: 'A', vn: '送 = 辶 + 关 → 送你 (đưa bạn, tiễn bạn)' },
           { n: 26, letters: ['A', 'B', 'C', 'D'], prompt: '（先）手 — xǐ shǒu', answer: 'C', vn: '洗 = 氵 + 先 → 洗手 (rửa tay)' },
           { n: 27, letters: ['A', 'B', 'C', 'D'], prompt: '写（元）— xiě wán', answer: 'B', vn: '完 = 宀 + 元 → 写完 (viết xong)' },
-          { n: 28, part: 'Viết · Phần 2 · Viết chữ Hán theo pinyin', input: true, prompt: '你今天（ wèi ）什么来晚了？', promptPy: 'Nǐ jīntiān wèi shénme láiwǎn le?', answer: '为', vn: 'Hôm nay sao bạn đến muộn? — 为什么: tại sao.' },
-          { n: 29, input: true, prompt: '外边（ zhè ）么热，我们还是回去吧。', promptPy: 'Wàibian zhème rè, wǒmen háishi huíqù ba.', answer: '这', vn: 'Bên ngoài nóng thế này, chúng ta về thôi. — 这么: thế này.' },
-          { n: 30, input: true, prompt: '这个电影很（ bú ）错，你也可以看看。', promptPy: 'Zhège diànyǐng hěn búcuò, nǐ yě kěyǐ kànkan.', answer: '不', vn: 'Bộ phim này rất hay, bạn cũng có thể xem thử. — 不错: hay, khá tốt.' }
+          { n: 28, part: 'Viết · Phần 2 · Viết chữ Hán theo pinyin', input: true, prompt: '你今天（ wèi ）什么来晚了？', answer: '为', vn: 'Hôm nay sao bạn đến muộn? — 为什么: tại sao.' },
+          { n: 29, input: true, prompt: '外边（ zhè ）么热，我们还是回去吧。', answer: '这', vn: 'Bên ngoài nóng thế này, chúng ta về thôi. — 这么: thế này.' },
+          { n: 30, input: true, prompt: '这个电影很（ bú ）错，你也可以看看。', answer: '不', vn: 'Bộ phim này rất hay, bạn cũng có thể xem thử. — 不错: hay, khá tốt.' }
         ] }
     ]}
   ]

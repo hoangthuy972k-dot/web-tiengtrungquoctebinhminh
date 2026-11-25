@@ -1318,20 +1318,20 @@ var wbData = {
   sections: [
     { title: 'Hán tự & từ mới', blocks: [
       { type: 'table', caption: 'Bộ thủ (偏旁) — tên gọi và chữ ví dụ', headers: ['Tên gọi', 'Bộ thủ', 'Chữ ví dụ'], rows: [
-        ['女字旁 nǚzìpáng', '女', '姐 jiě (chị gái) · 姓 xìng (họ)'],
-        ['月字旁 yuèzìpáng', '月', '期 qī (kỳ, thời kỳ) · 脑 nǎo (não, đầu óc)']
+        ['女字旁', '女', '姐 (chị gái) · 姓 (họ)'],
+        ['月字旁', '月', '期 (kỳ, thời kỳ) · 脑 (não, đầu óc)']
       ] },
       { type: 'table', caption: 'Tập viết (摹写) — chữ → từ → câu', headers: ['Chữ', 'Từ', 'Câu'], rows: [
-        ['姐 jiě', '姐姐 jiějie — chị gái', '姐姐昨天去了两次超市。— Hôm qua chị gái đi siêu thị hai lần.'],
-        ['姓 xìng', '姓名 xìngmíng — họ tên', '请再说一下您的姓名。— Xin nói lại họ tên của ông/bà một lần nữa.'],
-        ['期 qī', '星期 xīngqī — tuần', '我在北京玩了一个星期。— Tôi chơi ở Bắc Kinh một tuần.'],
-        ['脑 nǎo', '电脑 diànnǎo — máy tính', '她左手拿着手机，右手拿着电脑。— Cô ấy tay trái cầm điện thoại, tay phải cầm máy tính.']
+        ['姐', '姐姐 — chị gái', '姐姐昨天去了两次超市。— Hôm qua chị gái đi siêu thị hai lần.'],
+        ['姓', '姓名 — họ tên', '请再说一下您的姓名。— Xin nói lại họ tên của ông/bà một lần nữa.'],
+        ['期', '星期 — tuần', '我在北京玩了一个星期。— Tôi chơi ở Bắc Kinh một tuần.'],
+        ['脑', '电脑 — máy tính', '她左手拿着手机，右手拿着电脑。— Cô ấy tay trái cầm điện thoại, tay phải cầm máy tính.']
       ],
         note: 'Luyện viết tay từng nét theo mẫu trong sách (bấm vào chữ ở phần Từ vựng để xem nét viết).' },
       { type: 'table', caption: 'Từ ghép mới (学一学)', headers: ['Từ đã biết', 'Từ mới', 'Nghĩa'], rows: [
-        ['车 · 机票', '车票 chēpiào', 'vé xe, vé tàu'],
-        ['书 · 姓名', '书名 shūmíng', 'tên sách'],
-        ['高中 · 学生', '高中生 gāozhōngshēng', 'học sinh cấp ba (THPT)']
+        ['车 · 机票', '车票', 'vé xe, vé tàu'],
+        ['书 · 姓名', '书名', 'tên sách'],
+        ['高中 · 学生', '高中生', 'học sinh cấp ba (THPT)']
       ] },
       { type: 'blankdrill', caption: 'Điền từ mới vào chỗ trống (做一做)', hint: 'Gõ từ mới (chữ Hán) vào ô trống rồi bấm "Xem đáp án" để đối chiếu.', maxlength: 4,
         items: [
@@ -1373,27 +1373,27 @@ var wbData = {
           { n: 6, letters: ['A', 'B', 'C', 'D'], answer: 'B',
             script: '女：你去过北京大学吗？\n男：去过一次，是跟朋友一起去的。', vn: 'Nữ: Anh đến Đại học Bắc Kinh bao giờ chưa?\nNam: Đến một lần rồi, đi cùng với bạn. (Tranh B: cổng Đại học Bắc Kinh)' },
           { n: 7, part: 'Phần 3 · Nghe hội thoại, chọn đáp án đúng', options: [
-            { key: 'A', text: '开车', py: 'kāichē' },
-            { key: 'B', text: '等她', py: 'děng tā' },
-            { key: 'C', text: '买门票', py: 'mǎi ménpiào' }
+            { key: 'A', text: '开车' },
+            { key: 'B', text: '等她' },
+            { key: 'C', text: '买门票' }
           ], answer: 'C',
             script: '女：你去买门票吧，我去门口等你。\n男：你别去了，我买完票开车一起进去吧。\n问：女的让男的做什么？', vn: 'Nữ: Anh đi mua vé vào cửa đi, em ra cổng đợi anh.\nNam: Em đừng đi nữa, anh mua vé xong rồi mình lái xe vào cùng nhé.\nHỏi: Cô gái bảo chàng trai làm gì? → Mua vé vào cửa (lái xe là ý của chàng trai, người đợi là cô gái).' },
           { n: 8, options: [
-            { key: 'A', text: '手表', py: 'shǒubiǎo' },
-            { key: 'B', text: '手机', py: 'shǒujī' },
-            { key: 'C', text: '电脑', py: 'diànnǎo' }
+            { key: 'A', text: '手表' },
+            { key: 'B', text: '手机' },
+            { key: 'C', text: '电脑' }
           ], answer: 'B',
             script: '男：儿子就要上高中了，开学前，我们送给他一块手表吧。\n女：他想要一个五千多的手机，我还没想好要不要买这么贵的。\n问：儿子想要什么？', vn: 'Nam: Con trai sắp lên cấp ba rồi, trước khi khai giảng mình tặng con một chiếc đồng hồ đeo tay nhé.\nNữ: Con muốn một chiếc điện thoại hơn năm nghìn đồng, em vẫn chưa nghĩ kỹ có nên mua cái đắt thế không.\nHỏi: Con trai muốn gì? → Điện thoại (đồng hồ là ý của bố).' },
           { n: 9, options: [
-            { key: 'A', text: '爸妈', py: 'bà-mā' },
-            { key: 'B', text: '朋友', py: 'péngyou' },
-            { key: 'C', text: '高中同学', py: 'gāozhōng tóngxué' }
+            { key: 'A', text: '爸妈' },
+            { key: 'B', text: '朋友' },
+            { key: 'C', text: '高中同学' }
           ], answer: 'C',
             script: '女：考试后你去哪儿玩？\n男：我要出国旅游。\n女：跟爸妈去还是跟朋友去？\n男：我跟高中同学一起去。\n问：男的跟谁去旅游？', vn: 'Nữ: Thi xong cậu đi chơi đâu?\nNam: Mình sẽ ra nước ngoài du lịch.\nNữ: Đi với bố mẹ hay với bạn bè?\nNam: Mình đi cùng bạn học cấp ba.\nHỏi: Chàng trai đi du lịch với ai? → Bạn học cấp ba.' },
           { n: 10, options: [
-            { key: 'A', text: '女儿病了', py: 'nǚ\'ér bìng le' },
-            { key: 'B', text: '儿子要考大学', py: 'érzi yào kǎo dàxué' },
-            { key: 'C', text: '他去过很多次了', py: 'tā qùguo hěn duō cì le' }
+            { key: 'A', text: '女儿病了' },
+            { key: 'B', text: '儿子要考大学' },
+            { key: 'C', text: '他去过很多次了' }
           ], answer: 'C',
             script: '男：公司让我明天去上海。\n女：怎么还是你？你这个月都去五次了。\n男：小王的儿子要考大学，小李的女儿生病了，小刘的妻子……\n女：别说了，你还是去吧。\n问：女的为什么不想让男的去上海？', vn: 'Nam: Công ty bảo anh mai đi Thượng Hải.\nNữ: Sao lại là anh nữa? Tháng này anh đi năm lần rồi.\nNam: Con trai Tiểu Vương sắp thi đại học, con gái Tiểu Lý bị ốm, vợ Tiểu Lưu thì…\nNữ: Thôi đừng nói nữa, anh cứ đi đi.\nHỏi: Vì sao cô ấy không muốn anh ấy đi Thượng Hải? → Anh ấy đã đi nhiều lần rồi (con ốm, thi đại học là chuyện nhà đồng nghiệp).' }
         ],
@@ -1403,56 +1403,56 @@ var wbData = {
             { key: 'B', img: '/images/hsk2v3-bai-15-wb/q11to13_b.jpg' },
             { key: 'C', img: '/images/hsk2v3-bai-15-wb/q11to13_c.jpg' },
             { key: 'D', img: '/images/hsk2v3-bai-15-wb/q11to13_d.jpg' }
-          ], letters: ['A', 'B', 'C', 'D'], prompt: '我这个月已经出国两次了。', promptPy: 'Wǒ zhège yuè yǐjīng chūguó liǎng cì le.', answer: 'B',
+          ], letters: ['A', 'B', 'C', 'D'], prompt: '我这个月已经出国两次了。', answer: 'B',
             vn: 'Tháng này tôi đã ra nước ngoài hai lần rồi. — tranh B: máy bay, hộ chiếu và vé máy bay.' },
-          { n: 12, letters: ['A', 'B', 'C', 'D'], prompt: '不到七点，他就出门上班了。', promptPy: 'Bú dào qī diǎn, tā jiù chūmén shàngbān le.', answer: 'A',
+          { n: 12, letters: ['A', 'B', 'C', 'D'], prompt: '不到七点，他就出门上班了。', answer: 'A',
             vn: 'Chưa đến bảy giờ anh ấy đã ra khỏi nhà đi làm rồi. — tranh A: người đàn ông đeo ba lô đi bộ qua đường tới tòa văn phòng.' },
-          { n: 13, letters: ['A', 'B', 'C', 'D'], prompt: '这些鸟每天都来，因为奶奶会给它们准备吃的。', promptPy: 'Zhèxiē niǎo měi tiān dōu lái, yīnwèi nǎinai huì gěi tāmen zhǔnbèi chī de.', answer: 'C',
+          { n: 13, letters: ['A', 'B', 'C', 'D'], prompt: '这些鸟每天都来，因为奶奶会给它们准备吃的。', answer: 'C',
             vn: 'Những con chim này ngày nào cũng đến, vì bà sẽ chuẩn bị đồ ăn cho chúng. — tranh C: đàn chim sẻ.' },
           { n: 14, part: 'Phần 2 · Chọn từ điền vào chỗ trống', bank: [
-            { key: 'A', text: '路', py: 'lù' },
-            { key: 'B', text: '出国', py: 'chūguó' },
-            { key: 'C', text: '机票', py: 'jīpiào' },
-            { key: 'D', text: '高中', py: 'gāozhōng' },
-            { key: 'E', text: '完', py: 'wán' }
-          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '这条（　）很长，我每天都来这里跑步。', promptPy: 'Zhè tiáo (　) hěn cháng, wǒ měi tiān dōu lái zhèlǐ pǎobù.', answer: 'A',
+            { key: 'A', text: '路' },
+            { key: 'B', text: '出国' },
+            { key: 'C', text: '机票' },
+            { key: 'D', text: '高中' },
+            { key: 'E', text: '完' }
+          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '这条（　）很长，我每天都来这里跑步。', answer: 'A',
             vn: 'Con đường này rất dài, ngày nào tôi cũng đến đây chạy bộ. — 条 là lượng từ của 路 (con đường).' },
-          { n: 15, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '姐姐比我大三岁，我上（　）时，她都上大学了。', promptPy: 'Jiějie bǐ wǒ dà sān suì, wǒ shàng (　) shí, tā dōu shàng dàxué le.', answer: 'D',
+          { n: 15, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '姐姐比我大三岁，我上（　）时，她都上大学了。', answer: 'D',
             vn: 'Chị gái hơn tôi ba tuổi, lúc tôi học cấp ba thì chị đã học đại học rồi. — 上高中: học cấp ba (đối với 上大学).' },
-          { n: 16, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '女：请问，有没有明天到上海的（　）？\n男：我看一下。', promptPy: 'Qǐngwèn, yǒu méiyǒu míngtiān dào Shànghǎi de (　)? / Wǒ kàn yíxià.', answer: 'C',
+          { n: 16, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '女：请问，有没有明天到上海的（　）？\n男：我看一下。', answer: 'C',
             vn: 'Nữ: Xin hỏi có vé máy bay ngày mai đi Thượng Hải không? Nam: Để tôi xem một chút. — cần danh từ: 机票 (vé máy bay).' },
-          { n: 17, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '男：你是第一次（　）吗？\n女：不是，出过一次了。', promptPy: 'Nǐ shì dì-yī cì (　) ma? / Bú shì, chūguo yí cì le.', answer: 'B',
+          { n: 17, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '男：你是第一次（　）吗？\n女：不是，出过一次了。', answer: 'B',
             vn: 'Nam: Đây là lần đầu bạn ra nước ngoài à? Nữ: Không, mình ra nước ngoài một lần rồi. — câu trả lời "出过一次" → 出国.' },
           { n: 18, part: 'Phần 3 · Ghép câu hỏi với câu trả lời', bank: [
-            { key: 'A', text: '没有，她就比我大四岁。', py: 'Méiyǒu, tā jiù bǐ wǒ dà sì suì.' },
-            { key: 'B', text: '是的，她说要去中国上大学。', py: 'Shì de, tā shuō yào qù Zhōngguó shàng dàxué.' },
-            { key: 'C', text: '这条路我开过很多次，没事。', py: 'Zhè tiáo lù wǒ kāiguo hěn duō cì, méishì.' },
-            { key: 'D', text: '我们一起去买吧。', py: 'Wǒmen yìqǐ qù mǎi ba.' },
-            { key: 'E', text: '他出去了，一会儿就回来。', py: 'Tā chūqù le, yíhuìr jiù huílái.' }
-          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你在这儿等着，我去买门票。', promptPy: 'Nǐ zài zhèr děngzhe, wǒ qù mǎi ménpiào.', answer: 'D',
+            { key: 'A', text: '没有，她就比我大四岁。' },
+            { key: 'B', text: '是的，她说要去中国上大学。' },
+            { key: 'C', text: '这条路我开过很多次，没事。' },
+            { key: 'D', text: '我们一起去买吧。' },
+            { key: 'E', text: '他出去了，一会儿就回来。' }
+          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你在这儿等着，我去买门票。', answer: 'D',
             vn: 'Bạn đợi ở đây, mình đi mua vé vào cửa. — D: Chúng ta cùng đi mua đi.' },
-          { n: 19, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你们的中文老师有30岁吗？', promptPy: 'Nǐmen de Zhōngwén lǎoshī yǒu 30 suì ma?', answer: 'A',
+          { n: 19, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你们的中文老师有30岁吗？', answer: 'A',
             vn: 'Cô giáo tiếng Trung của các bạn có tới 30 tuổi không? — A: Không, cô ấy chỉ hơn mình bốn tuổi thôi (hỏi tuổi → đáp tuổi).' },
-          { n: 20, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '安妮就要出国了，她告诉你了吗？', promptPy: 'Ānnī jiù yào chūguó le, tā gàosu nǐ le ma?', answer: 'B',
+          { n: 20, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '安妮就要出国了，她告诉你了吗？', answer: 'B',
             vn: 'Annie sắp ra nước ngoài rồi, cô ấy nói với bạn chưa? — B: Rồi, cô ấy nói sẽ sang Trung Quốc học đại học.' },
-          { n: 21, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '可能要下雨了，你别开车了。', promptPy: 'Kěnéng yào xià yǔ le, nǐ bié kāichē le.', answer: 'C',
+          { n: 21, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '可能要下雨了，你别开车了。', answer: 'C',
             vn: 'Có lẽ sắp mưa rồi, anh đừng lái xe nữa. — C: Con đường này anh lái qua nhiều lần rồi, không sao đâu.' },
-          { n: 22, part: 'Phần 4 · Đọc đoạn văn, chọn đáp án đúng', prompt: '大家都说坐飞机比坐火车贵，但是有时候机票比火车票还便宜。你早一点儿买，就可能买到便宜的机票。\n★机票：', promptPy: 'Dàjiā dōu shuō zuò fēijī bǐ zuò huǒchē guì, dànshì yǒu shíhou jīpiào bǐ huǒchēpiào hái piányi. Nǐ zǎo yìdiǎnr mǎi, jiù kěnéng mǎidào piányi de jīpiào.\nJīpiào:', options: [
-            { key: 'A', text: '都很贵', py: 'dōu hěn guì' },
-            { key: 'B', text: '都很便宜', py: 'dōu hěn piányi' },
-            { key: 'C', text: '有时很便宜', py: 'yǒushí hěn piányi' }
+          { n: 22, part: 'Phần 4 · Đọc đoạn văn, chọn đáp án đúng', prompt: '大家都说坐飞机比坐火车贵，但是有时候机票比火车票还便宜。你早一点儿买，就可能买到便宜的机票。\n★机票：', options: [
+            { key: 'A', text: '都很贵' },
+            { key: 'B', text: '都很便宜' },
+            { key: 'C', text: '有时很便宜' }
           ], answer: 'C',
             vn: 'Ai cũng nói đi máy bay đắt hơn đi tàu hỏa, nhưng có lúc vé máy bay còn rẻ hơn vé tàu. Bạn mua sớm một chút là có thể mua được vé máy bay rẻ. — "有时候机票比火车票还便宜" → có lúc rất rẻ (C), không phải lúc nào cũng đắt hay lúc nào cũng rẻ.' },
-          { n: 23, prompt: '我去过一次北京的新机场。新机场很大，也很漂亮。网上说每天有十多万人在那里坐飞机。\n★北京的新机场怎么样？', promptPy: 'Wǒ qùguo yí cì Běijīng de xīn jīchǎng. Xīn jīchǎng hěn dà, yě hěn piàoliang. Wǎngshang shuō měi tiān yǒu shí duō wàn rén zài nàlǐ zuò fēijī.\nBěijīng de xīn jīchǎng zěnmeyàng?', options: [
-            { key: 'A', text: '人不多', py: 'rén bù duō' },
-            { key: 'B', text: '很漂亮', py: 'hěn piàoliang' },
-            { key: 'C', text: '不太大', py: 'bú tài dà' }
+          { n: 23, prompt: '我去过一次北京的新机场。新机场很大，也很漂亮。网上说每天有十多万人在那里坐飞机。\n★北京的新机场怎么样？', options: [
+            { key: 'A', text: '人不多' },
+            { key: 'B', text: '很漂亮' },
+            { key: 'C', text: '不太大' }
           ], answer: 'B',
             vn: 'Tôi từng đến sân bay mới của Bắc Kinh một lần. Sân bay mới rất lớn, cũng rất đẹp. Trên mạng nói mỗi ngày có hơn một trăm nghìn người đi máy bay ở đó. — "很大，也很漂亮" → B; hơn 10 vạn người mỗi ngày nên A sai, "很大" nên C sai.' },
-          { n: 24, prompt: '我每个星期上七次中文课，每天上午都有课，有时候下午也上课。我们的老师是从中国来的。她教得很好，所以我很喜欢上她的中文课。\n★他为什么喜欢那位中文老师的课？', promptPy: 'Wǒ měi gè xīngqī shàng qī cì Zhōngwén kè, měi tiān shàngwǔ dōu yǒu kè, yǒu shíhou xiàwǔ yě shàngkè. Wǒmen de lǎoshī shì cóng Zhōngguó lái de. Tā jiāo de hěn hǎo, suǒyǐ wǒ hěn xǐhuan shàng tā de Zhōngwén kè.\nTā wèi shénme xǐhuan nà wèi Zhōngwén lǎoshī de kè?', options: [
-            { key: 'A', text: '她的课多', py: 'tā de kè duō' },
-            { key: 'B', text: '她是中国人', py: 'tā shì Zhōngguó rén' },
-            { key: 'C', text: '她教得很好', py: 'tā jiāo de hěn hǎo' }
+          { n: 24, prompt: '我每个星期上七次中文课，每天上午都有课，有时候下午也上课。我们的老师是从中国来的。她教得很好，所以我很喜欢上她的中文课。\n★他为什么喜欢那位中文老师的课？', options: [
+            { key: 'A', text: '她的课多' },
+            { key: 'B', text: '她是中国人' },
+            { key: 'C', text: '她教得很好' }
           ], answer: 'C',
             vn: 'Mỗi tuần tôi học bảy buổi tiếng Trung, sáng nào cũng có tiết, có hôm buổi chiều cũng học. Cô giáo của chúng tôi đến từ Trung Quốc. Cô dạy rất hay, nên tôi rất thích học tiết tiếng Trung của cô. — 因为……所以: "她教得很好，所以我很喜欢" → C.' }
         ],
@@ -1462,9 +1462,9 @@ var wbData = {
           ], letters: ['A', 'B', 'C', 'D'], prompt: '门（示）— mén piào', answer: 'C', vn: '票 = 覀 + 示 → 门票 (vé vào cửa)' },
           { n: 26, letters: ['A', 'B', 'C', 'D'], prompt: '（几）场 — jī chǎng', answer: 'A', vn: '机 = 木 + 几 → 机场 (sân bay)' },
           { n: 27, letters: ['A', 'B', 'C', 'D'], prompt: '姓（口）— xìng míng', answer: 'B', vn: '名 = 夕 + 口 → 姓名 (họ tên)' },
-          { n: 28, part: 'Viết · Phần 2 · Viết chữ Hán theo pinyin', input: true, prompt: '小月是我的高（ zhōng ）同学。', promptPy: 'Xiǎoyuè shì wǒ de gāozhōng tóngxué.', answer: '中', vn: 'Tiểu Nguyệt là bạn học cấp ba của tôi. — 高中: cấp ba.' },
-          { n: 29, input: true, prompt: '这条到学校的（ lù ），我每天都要走。', promptPy: 'Zhè tiáo dào xuéxiào de lù, wǒ měi tiān dōu yào zǒu.', answer: '路', vn: 'Con đường đến trường này, ngày nào tôi cũng phải đi. — 路 (bộ túc ⻊).' },
-          { n: 30, input: true, prompt: '还有半个月，我就要出（ guó ）上学了。', promptPy: 'Hái yǒu bàn gè yuè, wǒ jiù yào chūguó shàngxué le.', answer: '国', vn: 'Còn nửa tháng nữa là tôi sẽ ra nước ngoài đi học rồi. — 出国: ra nước ngoài.' }
+          { n: 28, part: 'Viết · Phần 2 · Viết chữ Hán theo pinyin', input: true, prompt: '小月是我的高（ zhōng ）同学。', answer: '中', vn: 'Tiểu Nguyệt là bạn học cấp ba của tôi. — 高中: cấp ba.' },
+          { n: 29, input: true, prompt: '这条到学校的（ lù ），我每天都要走。', answer: '路', vn: 'Con đường đến trường này, ngày nào tôi cũng phải đi. — 路 (bộ túc ⻊).' },
+          { n: 30, input: true, prompt: '还有半个月，我就要出（ guó ）上学了。', answer: '国', vn: 'Còn nửa tháng nữa là tôi sẽ ra nước ngoài đi học rồi. — 出国: ra nước ngoài.' }
         ] }
     ]}
   ]

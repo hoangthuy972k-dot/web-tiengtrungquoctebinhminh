@@ -1446,20 +1446,20 @@ var wbData = {
   sections: [
     { title: 'Hán tự & từ mới', blocks: [
       { type: 'table', caption: 'Bộ thủ (偏旁) — tên gọi và chữ ví dụ', headers: ['Tên gọi', 'Bộ thủ', 'Chữ ví dụ'], rows: [
-        ['单人旁 dānrénpáng', '亻', '他 tā (anh ấy) · 体 tǐ (thân thể)'],
-        ['病字头 bìngzìtóu', '疒', '病 bìng (bệnh, ốm) · 疼 téng (đau)']
+        ['单人旁', '亻', '他 (anh ấy) · 体 (thân thể)'],
+        ['病字头', '疒', '病 (bệnh, ốm) · 疼 (đau)']
       ] },
       { type: 'table', caption: 'Tập viết (摹写) — chữ → từ → câu', headers: ['Chữ', 'Từ', 'Câu'], rows: [
-        ['他 tā', '他们 tāmen — họ, các anh ấy', '他们穿着黑色的衣服。— Họ đang mặc quần áo màu đen.'],
-        ['体 tǐ', '身体 shēntǐ — cơ thể, sức khỏe', '爷爷身体很好。— Sức khỏe của ông rất tốt.'],
-        ['病 bìng', '生病 shēngbìng — bị ốm', '你生病了，坐着吧。— Bạn đang ốm, cứ ngồi đi.'],
-        ['疼 téng', '头疼 tóuténg — đau đầu', '我头疼，不能动，一动就疼。— Tôi đau đầu, không cử động được, hễ cử động là đau.']
+        ['他', '他们 — họ, các anh ấy', '他们穿着黑色的衣服。— Họ đang mặc quần áo màu đen.'],
+        ['体', '身体 — cơ thể, sức khỏe', '爷爷身体很好。— Sức khỏe của ông rất tốt.'],
+        ['病', '生病 — bị ốm', '你生病了，坐着吧。— Bạn đang ốm, cứ ngồi đi.'],
+        ['疼', '头疼 — đau đầu', '我头疼，不能动，一动就疼。— Tôi đau đầu, không cử động được, hễ cử động là đau.']
       ],
         note: 'Luyện viết tay từng nét theo mẫu trong sách (bấm vào chữ ở phần Từ vựng để xem nét viết).' },
       { type: 'table', caption: 'Từ ghép mới (学一学)', headers: ['Từ đã biết', 'Từ mới', 'Nghĩa'], rows: [
-        ['身体 · 旁边', '身旁 shēnpáng', 'bên cạnh (mình)'],
-        ['水果 · 药店', '水果店 shuǐguǒdiàn', 'cửa hàng hoa quả'],
-        ['游泳 · 裤子', '泳裤 yǒngkù', 'quần bơi']
+        ['身体 · 旁边', '身旁', 'bên cạnh (mình)'],
+        ['水果 · 药店', '水果店', 'cửa hàng hoa quả'],
+        ['游泳 · 裤子', '泳裤', 'quần bơi']
       ] },
       { type: 'blankdrill', caption: 'Điền từ mới vào chỗ trống (做一做)', hint: 'Gõ từ mới (chữ Hán) vào ô trống rồi bấm "Xem đáp án" để đối chiếu.', maxlength: 4,
         items: [
@@ -1501,27 +1501,27 @@ var wbData = {
           { n: 6, letters: ['A', 'B', 'C', 'D'], answer: 'A',
             script: '女：下课了，你别在这儿坐着，出去运动运动。\n男：老师，我不太舒服，想休息一下。', vn: 'Nữ: Tan học rồi, em đừng ngồi mãi ở đây, ra ngoài vận động chút đi.\nNam: Thưa cô, em thấy hơi mệt, muốn nghỉ một lát. (Tranh A: cậu học sinh mệt mỏi trong lớp)' },
           { n: 7, part: 'Phần 3 · Nghe hội thoại, chọn đáp án đúng', options: [
-            { key: 'A', text: '看电视', py: 'kàn diànshì' },
-            { key: 'B', text: '洗水果', py: 'xǐ shuǐguǒ' },
-            { key: 'C', text: '去吃饭', py: 'qù chī fàn' }
+            { key: 'A', text: '看电视' },
+            { key: 'B', text: '洗水果' },
+            { key: 'C', text: '去吃饭' }
           ], answer: 'B',
             script: '女：爸，你也过来看电视吧。\n男：你们看着，我去洗点儿水果。\n问：男的要去做什么？', vn: 'Nữ: Bố ơi, bố cũng qua xem tivi đi.\nNam: Mọi người cứ xem đi, bố đi rửa ít hoa quả.\nHỏi: Người đàn ông định đi làm gì? → Rửa hoa quả.' },
           { n: 8, options: [
-            { key: 'A', text: '开车', py: 'kāichē' },
-            { key: 'B', text: '看病', py: 'kànbìng' },
-            { key: 'C', text: '休息', py: 'xiūxi' }
+            { key: 'A', text: '开车' },
+            { key: 'B', text: '看病' },
+            { key: 'C', text: '休息' }
           ], answer: 'A',
             script: '男：天气不好，你慢点儿开。\n女：没问题。你身体不舒服，就好好休息吧。\n问：女的在做什么？', vn: 'Nam: Thời tiết xấu, em lái chậm thôi nhé.\nNữ: Không sao đâu. Anh không khỏe thì cứ nghỉ ngơi cho tốt.\nHỏi: Người phụ nữ đang làm gì? → Lái xe ("你慢点儿开"; người nghỉ ngơi là anh).' },
           { n: 9, options: [
-            { key: 'A', text: '家里', py: 'jiā li' },
-            { key: 'B', text: '公司', py: 'gōngsī' },
-            { key: 'C', text: '医院', py: 'yīyuàn' }
+            { key: 'A', text: '家里' },
+            { key: 'B', text: '公司' },
+            { key: 'C', text: '医院' }
           ], answer: 'C',
             script: '女：医生，我这几天经常头疼。\n男：晚上睡觉睡得怎么样？\n女：睡得不好。\n男：我给你开点儿药，吃药后睡个好觉，头就不疼了。\n问：女的现在在哪儿？', vn: 'Nữ: Bác sĩ ơi, mấy hôm nay tôi hay bị đau đầu.\nNam: Buổi tối chị ngủ thế nào?\nNữ: Ngủ không ngon.\nNam: Tôi kê cho chị ít thuốc, uống thuốc rồi ngủ một giấc thật ngon là hết đau đầu.\nHỏi: Bây giờ người phụ nữ đang ở đâu? → Bệnh viện (đang khám bác sĩ).' },
           { n: 10, options: [
-            { key: 'A', text: '白色', py: 'báisè' },
-            { key: 'B', text: '黑色', py: 'hēisè' },
-            { key: 'C', text: '红色', py: 'hóngsè' }
+            { key: 'A', text: '白色' },
+            { key: 'B', text: '黑色' },
+            { key: 'C', text: '红色' }
           ], answer: 'A',
             script: '男：陈雪，你好！我是李文的朋友，我叫李明。\n女：李明，你好！我已经到了，穿着红色的衣服，你一出来就能看见我。\n男：太好了！我穿着一条白色的裤子，现在往外走呢。\n女：我看见你了，你往前走吧。\n问：李明穿着什么颜色的裤子？', vn: 'Nam: Chào Trần Tuyết! Mình là bạn của Lý Văn, mình tên là Lý Minh.\nNữ: Chào Lý Minh! Mình đến rồi, mình mặc áo đỏ, bạn vừa ra là thấy mình ngay.\nNam: Tốt quá! Mình mặc quần trắng, đang đi ra đây.\nNữ: Mình thấy bạn rồi, bạn cứ đi thẳng tới đi.\nHỏi: Lý Minh mặc quần màu gì? → Màu trắng (màu đỏ là áo của Trần Tuyết).' }
         ],
@@ -1531,56 +1531,56 @@ var wbData = {
             { key: 'B', img: '/images/hsk2v3-bai-11-wb/q11to13_b.jpg' },
             { key: 'C', img: '/images/hsk2v3-bai-11-wb/q11to13_c.jpg' },
             { key: 'D', img: '/images/hsk2v3-bai-11-wb/q11to13_d.jpg' }
-          ], letters: ['A', 'B', 'C', 'D'], prompt: '这是我们店里最贵的手表。', promptPy: 'Zhè shì wǒmen diàn li zuì guì de shǒubiǎo.', answer: 'C',
+          ], letters: ['A', 'B', 'C', 'D'], prompt: '这是我们店里最贵的手表。', answer: 'C',
             vn: 'Đây là chiếc đồng hồ đeo tay đắt nhất trong cửa hàng chúng tôi. — tranh C: đồng hồ đeo tay.' },
-          { n: 12, letters: ['A', 'B', 'C', 'D'], prompt: '下雪时，路上的车都开得很慢。', promptPy: 'Xià xuě shí, lùshang de chē dōu kāi de hěn màn.', answer: 'A',
+          { n: 12, letters: ['A', 'B', 'C', 'D'], prompt: '下雪时，路上的车都开得很慢。', answer: 'A',
             vn: 'Khi tuyết rơi, xe trên đường đều chạy rất chậm. — tranh A: ô tô chạy trên con đường phủ tuyết.' },
-          { n: 13, letters: ['A', 'B', 'C', 'D'], prompt: '虽然吃了药，但她还是觉得疼。', promptPy: 'Suīrán chīle yào, dàn tā háishi juéde téng.', answer: 'B',
+          { n: 13, letters: ['A', 'B', 'C', 'D'], prompt: '虽然吃了药，但她还是觉得疼。', answer: 'B',
             vn: 'Tuy đã uống thuốc nhưng cô ấy vẫn thấy đau. — tranh B: cô gái ôm má, nhăn mặt vì đau.' },
           { n: 14, part: 'Phần 2 · Chọn từ điền vào chỗ trống', bank: [
-            { key: 'A', text: '药店', py: 'yàodiàn' },
-            { key: 'B', text: '疼', py: 'téng' },
-            { key: 'C', text: '最', py: 'zuì' },
-            { key: 'D', text: '进', py: 'jìn' },
-            { key: 'E', text: '完', py: 'wán' }
-          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '我一（　）门就看见爷爷在那儿坐着。', promptPy: 'Wǒ yī (　) mén jiù kànjiàn yéye zài nàr zuòzhe.', answer: 'D',
+            { key: 'A', text: '药店' },
+            { key: 'B', text: '疼' },
+            { key: 'C', text: '最' },
+            { key: 'D', text: '进' },
+            { key: 'E', text: '完' }
+          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '我一（　）门就看见爷爷在那儿坐着。', answer: 'D',
             vn: 'Tôi vừa bước vào cửa đã thấy ông đang ngồi ở đó. — 进门: vào cửa; 一……就……: vừa… là….' },
-          { n: 15, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '我儿子是学校里个子（　）高的男孩儿。', promptPy: 'Wǒ érzi shì xuéxiào li gèzi (　) gāo de nánháir.', answer: 'C',
+          { n: 15, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '我儿子是学校里个子（　）高的男孩儿。', answer: 'C',
             vn: 'Con trai tôi là cậu bé cao nhất trường. — 最 + tính từ: … nhất.' },
-          { n: 16, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '女：你怎么了？\n男：这几天我晚上没睡好，现在头很（　）。', promptPy: 'Nǐ zěnme le? / Zhè jǐ tiān wǒ wǎnshang méi shuìhǎo, xiànzài tóu hěn (　).', answer: 'B',
+          { n: 16, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '女：你怎么了？\n男：这几天我晚上没睡好，现在头很（　）。', answer: 'B',
             vn: 'Nữ: Anh sao thế? Nam: Mấy hôm nay tối nào anh cũng ngủ không ngon, giờ đầu đau lắm. — 头很疼: rất đau đầu.' },
-          { n: 17, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '男：请问，这儿有（　）吗？\n女：有一个，从这儿往右走，十分钟就到了。', promptPy: 'Qǐngwèn, zhèr yǒu (　) ma? / Yǒu yí gè, cóng zhèr wǎng yòu zǒu, shí fēnzhōng jiù dào le.', answer: 'A',
+          { n: 17, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '男：请问，这儿有（　）吗？\n女：有一个，从这儿往右走，十分钟就到了。', answer: 'A',
             vn: 'Nam: Xin hỏi, ở đây có hiệu thuốc không? Nữ: Có một hiệu, từ đây đi về bên phải, mười phút là tới. — cần danh từ chỉ nơi chốn: 药店.' },
           { n: 18, part: 'Phần 3 · Ghép câu hỏi với câu trả lời', bank: [
-            { key: 'A', text: '你打电话时，我正在上课呢。', py: 'Nǐ dǎ diànhuà shí, wǒ zhèngzài shàngkè ne.' },
-            { key: 'B', text: '没事，我慢点儿开。', py: 'Méishì, wǒ màn diǎnr kāi.' },
-            { key: 'C', text: '好的，我会跟他说的。', py: 'Hǎo de, wǒ huì gēn tā shuō de.' },
-            { key: 'D', text: '现在没有昨天那么疼了。', py: 'Xiànzài méiyǒu zuótiān nàme téng le.' },
-            { key: 'E', text: '他出去了，一会儿就回来。', py: 'Tā chūqù le, yíhuìr jiù huílái.' }
-          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你怎么没接电话？', promptPy: 'Nǐ zěnme méi jiē diànhuà?', answer: 'A',
+            { key: 'A', text: '你打电话时，我正在上课呢。' },
+            { key: 'B', text: '没事，我慢点儿开。' },
+            { key: 'C', text: '好的，我会跟他说的。' },
+            { key: 'D', text: '现在没有昨天那么疼了。' },
+            { key: 'E', text: '他出去了，一会儿就回来。' }
+          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你怎么没接电话？', answer: 'A',
             vn: 'Sao bạn không nghe điện thoại? — A: Lúc bạn gọi, mình đang trong giờ học.' },
-          { n: 19, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '外边下着雪，你别开车了。', promptPy: 'Wàibian xiàzhe xuě, nǐ bié kāichē le.', answer: 'B',
+          { n: 19, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '外边下着雪，你别开车了。', answer: 'B',
             vn: 'Bên ngoài đang có tuyết, bạn đừng lái xe nữa. — B: Không sao, mình lái chậm một chút.' },
-          { n: 20, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你现在动一动手，看看还疼不疼。', promptPy: 'Nǐ xiànzài dòng yi dòng shǒu, kànkan hái téng bu téng.', answer: 'D',
+          { n: 20, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你现在动一动手，看看还疼不疼。', answer: 'D',
             vn: 'Giờ bạn cử động tay thử xem còn đau không. — D: Bây giờ không đau như hôm qua nữa.' },
-          { n: 21, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '爷爷身体不好，你记得让他吃药。', promptPy: 'Yéye shēntǐ bù hǎo, nǐ jìde ràng tā chī yào.', answer: 'C',
+          { n: 21, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '爷爷身体不好，你记得让他吃药。', answer: 'C',
             vn: 'Ông sức khỏe không tốt, bạn nhớ nhắc ông uống thuốc nhé. — C: Được, mình sẽ nói với ông.' },
-          { n: 22, part: 'Phần 4 · Đọc đoạn văn, chọn đáp án đúng', prompt: '女儿生病了，医生开了很多药。白色的药一天三次，绿色的药一天两次，红色的药一天一次。\n★白色的药怎么吃？', promptPy: 'Nǚ\'ér shēngbìng le, yīshēng kāile hěn duō yào. Báisè de yào yì tiān sān cì, lǜsè de yào yì tiān liǎng cì, hóngsè de yào yì tiān yí cì.\nBáisè de yào zěnme chī?', options: [
-            { key: 'A', text: '一天一次', py: 'yì tiān yí cì' },
-            { key: 'B', text: '一天两次', py: 'yì tiān liǎng cì' },
-            { key: 'C', text: '一天三次', py: 'yì tiān sān cì' }
+          { n: 22, part: 'Phần 4 · Đọc đoạn văn, chọn đáp án đúng', prompt: '女儿生病了，医生开了很多药。白色的药一天三次，绿色的药一天两次，红色的药一天一次。\n★白色的药怎么吃？', options: [
+            { key: 'A', text: '一天一次' },
+            { key: 'B', text: '一天两次' },
+            { key: 'C', text: '一天三次' }
           ], answer: 'C',
             vn: 'Con gái bị ốm, bác sĩ kê rất nhiều thuốc. Thuốc trắng ngày ba lần, thuốc xanh lá ngày hai lần, thuốc đỏ ngày một lần. — "白色的药一天三次" → C.' },
-          { n: 23, prompt: '上小学时，爷爷经常走路送我上学。上中学后，爷爷就没送过我了，学校离家远，我都是自己坐车去。\n★上小学时，爷爷是怎么送他的？', promptPy: 'Shàng xiǎoxué shí, yéye jīngcháng zǒulù sòng wǒ shàngxué. Shàng zhōngxué hòu, yéye jiù méi sòngguo wǒ le, xuéxiào lí jiā yuǎn, wǒ dōu shì zìjǐ zuò chē qù.\nShàng xiǎoxué shí, yéye shì zěnme sòng tā de?', options: [
-            { key: 'A', text: '开车', py: 'kāichē' },
-            { key: 'B', text: '坐车', py: 'zuò chē' },
-            { key: 'C', text: '走路', py: 'zǒulù' }
+          { n: 23, prompt: '上小学时，爷爷经常走路送我上学。上中学后，爷爷就没送过我了，学校离家远，我都是自己坐车去。\n★上小学时，爷爷是怎么送他的？', options: [
+            { key: 'A', text: '开车' },
+            { key: 'B', text: '坐车' },
+            { key: 'C', text: '走路' }
           ], answer: 'C',
             vn: 'Hồi học tiểu học, ông thường đi bộ đưa tôi đến trường. Lên trung học thì ông không đưa tôi nữa, trường xa nhà nên tôi toàn tự đi xe. — Hồi tiểu học: "走路送我" → C (坐车 là chuyện hồi trung học).' },
-          { n: 24, prompt: '我经常早早地到公司。但是今天早上我头疼，路上我开得很慢，是最晚到公司的。\n★他今天：', promptPy: 'Wǒ jīngcháng zǎozǎo de dào gōngsī. Dànshì jīntiān zǎoshang wǒ tóu téng, lùshang wǒ kāi de hěn màn, shì zuì wǎn dào gōngsī de.\nTā jīntiān:', options: [
-            { key: 'A', text: '头疼', py: 'tóu téng' },
-            { key: 'B', text: '起床晚了', py: 'qǐchuáng wǎn le' },
-            { key: 'C', text: '没休息好', py: 'méi xiūxi hǎo' }
+          { n: 24, prompt: '我经常早早地到公司。但是今天早上我头疼，路上我开得很慢，是最晚到公司的。\n★他今天：', options: [
+            { key: 'A', text: '头疼' },
+            { key: 'B', text: '起床晚了' },
+            { key: 'C', text: '没休息好' }
           ], answer: 'A',
             vn: 'Tôi thường đến công ty rất sớm. Nhưng sáng nay tôi đau đầu, trên đường lái xe rất chậm nên là người đến công ty muộn nhất. — "今天早上我头疼" → A (bài không nói dậy muộn hay nghỉ ngơi không đủ).' }
         ],
@@ -1593,9 +1593,9 @@ var wbData = {
           ], letters: ['A', 'B', 'C', 'D'], prompt: '头（冬）— tóu téng', answer: 'C', vn: '疼 = 疒 + 冬 → 头疼 (đau đầu)' },
           { n: 26, letters: ['A', 'B', 'C', 'D'], prompt: '（经 còn thiếu phần bên trái）常 — jīng cháng', answer: 'A', vn: '经 = 纟 + phần bên phải (又 trên, 工 dưới) → 经常 (thường xuyên)' },
           { n: 27, letters: ['A', 'B', 'C', 'D'], prompt: '（约）店 — yào diàn', answer: 'B', vn: '药 = 艹 + 约 → 药店 (hiệu thuốc)' },
-          { n: 28, part: 'Viết · Phần 2 · Viết chữ Hán theo pinyin', input: true, prompt: '李爷爷，您请（ jìn ）。', promptPy: 'Lǐ yéye, nín qǐng jìn.', answer: '进', vn: 'Ông Lý ơi, mời ông vào ạ. — 请进: mời vào.' },
-          { n: 29, input: true, prompt: '我到家（ shí ），妈妈已经做好了饭菜。', promptPy: 'Wǒ dào jiā shí, māma yǐjīng zuòhǎole fàncài.', answer: '时', vn: 'Lúc tôi về đến nhà, mẹ đã nấu xong cơm nước rồi. — ……时: lúc….' },
-          { n: 30, input: true, prompt: '我每天都去跑步，但是跑得很（ màn ）。', promptPy: 'Wǒ měi tiān dōu qù pǎobù, dànshì pǎo de hěn màn.', answer: '慢', vn: 'Ngày nào tôi cũng đi chạy bộ, nhưng chạy rất chậm. — V + 得 + 很慢.' }
+          { n: 28, part: 'Viết · Phần 2 · Viết chữ Hán theo pinyin', input: true, prompt: '李爷爷，您请（ jìn ）。', answer: '进', vn: 'Ông Lý ơi, mời ông vào ạ. — 请进: mời vào.' },
+          { n: 29, input: true, prompt: '我到家（ shí ），妈妈已经做好了饭菜。', answer: '时', vn: 'Lúc tôi về đến nhà, mẹ đã nấu xong cơm nước rồi. — ……时: lúc….' },
+          { n: 30, input: true, prompt: '我每天都去跑步，但是跑得很（ màn ）。', answer: '慢', vn: 'Ngày nào tôi cũng đi chạy bộ, nhưng chạy rất chậm. — V + 得 + 很慢.' }
         ] }
     ]}
   ]

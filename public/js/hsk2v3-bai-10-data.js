@@ -1561,20 +1561,20 @@ var wbData = {
   sections: [
     { title: 'Hán tự & từ mới', blocks: [
       { type: 'table', caption: 'Bộ thủ (偏旁) — tên gọi và chữ ví dụ', headers: ['Tên gọi', 'Bộ thủ', 'Chữ ví dụ'], rows: [
-        ['言字旁 yánzìpáng', '讠', '词 cí (từ) · 试 shì (thử, thi)'],
-        ['日字旁 rìzìpáng', '日', '昨 zuó (hôm qua) · 明 míng (sáng; ngày mai)']
+        ['言字旁', '讠', '词 (từ) · 试 (thử, thi)'],
+        ['日字旁', '日', '昨 (hôm qua) · 明 (sáng; ngày mai)']
       ] },
       { type: 'table', caption: 'Tập viết (摹写) — chữ → từ → câu', headers: ['Chữ', 'Từ', 'Câu'], rows: [
-        ['词 cí', '生词 shēngcí — từ mới', '要学习生词了，请打开书。— Sắp học từ mới rồi, các em mở sách ra nhé.'],
-        ['试 shì', '考试 kǎoshì — thi, kiểm tra', '我们快要考试了。— Chúng ta sắp thi rồi.'],
-        ['昨 zuó', '昨天 zuótiān — hôm qua', '昨天天气很好。— Hôm qua trời rất đẹp.'],
-        ['明 míng', '明天 míngtiān — ngày mai', '你今天去还是明天去？— Bạn đi hôm nay hay ngày mai?']
+        ['词', '生词 — từ mới', '要学习生词了，请打开书。— Sắp học từ mới rồi, các em mở sách ra nhé.'],
+        ['试', '考试 — thi, kiểm tra', '我们快要考试了。— Chúng ta sắp thi rồi.'],
+        ['昨', '昨天 — hôm qua', '昨天天气很好。— Hôm qua trời rất đẹp.'],
+        ['明', '明天 — ngày mai', '你今天去还是明天去？— Bạn đi hôm nay hay ngày mai?']
       ],
         note: 'Luyện viết tay từng nét theo mẫu trong sách (bấm vào chữ ở phần Từ vựng để xem nét viết).' },
       { type: 'table', caption: 'Từ ghép mới (学一学)', headers: ['Từ đã biết', 'Từ mới', 'Nghĩa'], rows: [
-        ['说话 shuōhuà · 错 cuò', '说错 shuōcuò', 'nói sai, nói nhầm'],
-        ['门 mén · 后面 hòumiàn', '门后 mén hòu', 'sau cánh cửa'],
-        ['汉字 Hànzì · 本子 běnzi', '汉字本 hànzìběn', 'vở tập viết chữ Hán']
+        ['说话 · 错', '说错', 'nói sai, nói nhầm'],
+        ['门 · 后面', '门后', 'sau cánh cửa'],
+        ['汉字 · 本子', '汉字本', 'vở tập viết chữ Hán']
       ] },
       { type: 'blankdrill', caption: 'Điền từ mới vào chỗ trống (做一做)', hint: 'Gõ từ mới (chữ Hán) vào ô trống rồi bấm "Xem đáp án" để đối chiếu.', maxlength: 4,
         items: [
@@ -1616,27 +1616,27 @@ var wbData = {
           { n: 6, letters: ['A', 'B', 'C', 'D'], answer: 'B',
             script: '女：我还不知道你的手机号呢。\n男：我给你写在本子上吧。', vn: 'Nữ: Em vẫn chưa biết số điện thoại của anh đấy.\nNam: Để anh viết vào vở cho em nhé.' },
           { n: 7, part: 'Phần 3 · Nghe hội thoại, chọn đáp án đúng', options: [
-            { key: 'A', text: '水', py: 'shuǐ' },
-            { key: 'B', text: '奶茶', py: 'nǎichá' },
-            { key: 'C', text: '咖啡', py: 'kāfēi' }
+            { key: 'A', text: '水' },
+            { key: 'B', text: '奶茶' },
+            { key: 'C', text: '咖啡' }
           ], answer: 'A',
             script: '女：你喝奶茶还是咖啡？\n男：我都不想喝，给我杯水吧。\n问：男的要喝什么？', vn: 'Nữ: Anh uống trà sữa hay cà phê?\nNam: Anh đều không muốn uống, cho anh cốc nước đi.\nHỏi: Người nam muốn uống gì? → Nước.' },
           { n: 8, options: [
-            { key: 'A', text: '小雨的同学', py: 'Xiǎoyǔ de tóngxué' },
-            { key: 'B', text: '小雨的哥哥', py: 'Xiǎoyǔ de gēge' },
-            { key: 'C', text: '小雨的男朋友', py: 'Xiǎoyǔ de nánpéngyou' }
+            { key: 'A', text: '小雨的同学' },
+            { key: 'B', text: '小雨的哥哥' },
+            { key: 'C', text: '小雨的男朋友' }
           ], answer: 'B',
             script: '男：小雨，这个男孩儿是你同学还是你男朋友？\n女：都不是，他是我哥哥。\n问：那个男孩儿是谁？', vn: 'Nam: Tiểu Vũ, cậu bé này là bạn học hay bạn trai của em?\nNữ: Đều không phải, anh ấy là anh trai em.\nHỏi: Cậu bé đó là ai? → Anh trai của Tiểu Vũ.' },
           { n: 9, options: [
-            { key: 'A', text: '书包里', py: 'shūbāo li' },
-            { key: 'B', text: '桌子上', py: 'zhuōzi shang' },
-            { key: 'C', text: '椅子下面', py: 'yǐzi xiàmiàn' }
+            { key: 'A', text: '书包里' },
+            { key: 'B', text: '桌子上' },
+            { key: 'C', text: '椅子下面' }
           ], answer: 'C',
             script: '女：我的本子你看见了吗？\n男：没在书包里吗？\n女：没有，桌子上也没有，你帮我找找。\n男：找到了，在椅子下面。\n问：本子在哪儿？', vn: 'Nữ: Anh có thấy quyển vở của em không?\nNam: Không có trong cặp sách à?\nNữ: Không có, trên bàn cũng không có, anh tìm giúp em với.\nNam: Tìm thấy rồi, ở dưới ghế.\nHỏi: Quyển vở ở đâu? → Dưới ghế.' },
           { n: 10, options: [
-            { key: 'A', text: '看书', py: 'kàn shū' },
-            { key: 'B', text: '出去玩', py: 'chūqù wán' },
-            { key: 'C', text: '在家休息', py: 'zài jiā xiūxi' }
+            { key: 'A', text: '看书' },
+            { key: 'B', text: '出去玩' },
+            { key: 'C', text: '在家休息' }
           ], answer: 'C',
             script: '男：就要考试了，你准备得怎么样？\n女：还可以吧，这几天我再好好看看书。\n男：考完就没事了，你想去哪儿玩啊？\n女：不出去玩了，准备考试太累了，就在家休息休息。\n问：考试后女的要做什么？', vn: 'Nam: Sắp thi rồi, em chuẩn bị thế nào rồi?\nNữ: Cũng tạm ổn, mấy hôm nay em sẽ đọc sách kỹ thêm.\nNam: Thi xong là rảnh rồi, em muốn đi đâu chơi?\nNữ: Không đi chơi đâu, ôn thi mệt quá, cứ ở nhà nghỉ ngơi thôi.\nHỏi: Thi xong cô gái sẽ làm gì? → Ở nhà nghỉ ngơi (đọc sách là việc trước khi thi).' }
         ],
@@ -1646,56 +1646,56 @@ var wbData = {
             { key: 'B', img: '/images/hsk2v3-bai-10-wb/q11to13_b.jpg' },
             { key: 'C', img: '/images/hsk2v3-bai-10-wb/q11to13_c.jpg' },
             { key: 'D', img: '/images/hsk2v3-bai-10-wb/q11to13_d.jpg' }
-          ], letters: ['A', 'B', 'C', 'D'], prompt: '就要开学了，今天我去买了一个新书包。', promptPy: 'Jiù yào kāixué le, jīntiān wǒ qù mǎile yí gè xīn shūbāo.', answer: 'C',
+          ], letters: ['A', 'B', 'C', 'D'], prompt: '就要开学了，今天我去买了一个新书包。', answer: 'C',
             vn: 'Sắp khai giảng rồi, hôm nay mình đi mua một chiếc cặp sách mới. — tranh C: cậu bé chọn cặp sách trong cửa hàng.' },
-          { n: 12, letters: ['A', 'B', 'C', 'D'], prompt: '请帮我拿一下本子。', promptPy: 'Qǐng bāng wǒ ná yíxià běnzi.', answer: 'A',
+          { n: 12, letters: ['A', 'B', 'C', 'D'], prompt: '请帮我拿一下本子。', answer: 'A',
             vn: 'Lấy giúp mình quyển vở với. — tranh A: quyển vở gáy lò xo.' },
-          { n: 13, letters: ['A', 'B', 'C', 'D'], prompt: '这次考试我考得非常好。', promptPy: 'Zhè cì kǎoshì wǒ kǎo de fēicháng hǎo.', answer: 'B',
+          { n: 13, letters: ['A', 'B', 'C', 'D'], prompt: '这次考试我考得非常好。', answer: 'B',
             vn: 'Kỳ thi lần này mình làm bài rất tốt. — tranh B: cô bé giơ bài thi được điểm 优 (giỏi).' },
           { n: 14, part: 'Phần 2 · Chọn từ điền vào chỗ trống', bank: [
-            { key: 'A', text: '题', py: 'tí' },
-            { key: 'B', text: '考试', py: 'kǎoshì' },
-            { key: 'C', text: '本子', py: 'běnzi' },
-            { key: 'D', text: '后面', py: 'hòumiàn' },
-            { key: 'E', text: '完', py: 'wán' }
-          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '这个（　）你做错了，再看一下。', promptPy: 'Zhège (　) nǐ zuòcuò le, zài kàn yíxià.', answer: 'A',
+            { key: 'A', text: '题' },
+            { key: 'B', text: '考试' },
+            { key: 'C', text: '本子' },
+            { key: 'D', text: '后面' },
+            { key: 'E', text: '完' }
+          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '这个（　）你做错了，再看一下。', answer: 'A',
             vn: 'Câu này bạn làm sai rồi, xem lại một chút đi. — 做题: làm bài/câu hỏi → 题.' },
-          { n: 15, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '这是你的（　）吧？上边有你的名字。', promptPy: 'Zhè shì nǐ de (　) ba? Shàngbian yǒu nǐ de míngzi.', answer: 'C',
+          { n: 15, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '这是你的（　）吧？上边有你的名字。', answer: 'C',
             vn: 'Đây là vở của bạn phải không? Trên đó có tên bạn. — cần danh từ chỉ đồ vật có thể ghi tên: 本子.' },
-          { n: 16, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '女：这次（　）你考得怎么样？\n男：这次比上次好。', promptPy: 'Zhè cì (　) nǐ kǎo de zěnmeyàng? / Zhè cì bǐ shàng cì hǎo.', answer: 'B',
+          { n: 16, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '女：这次（　）你考得怎么样？\n男：这次比上次好。', answer: 'B',
             vn: 'Nữ: Kỳ thi lần này bạn làm bài thế nào? Nam: Lần này tốt hơn lần trước. — 这次考试 + 考得…… → 考试.' },
-          { n: 17, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '男：小红坐在哪儿？\n女：她个子比我高，坐在我（　）。', promptPy: 'Xiǎohóng zuò zài nǎr? / Tā gèzi bǐ wǒ gāo, zuò zài wǒ (　).', answer: 'D',
+          { n: 17, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '男：小红坐在哪儿？\n女：她个子比我高，坐在我（　）。', answer: 'D',
             vn: 'Nam: Tiểu Hồng ngồi ở đâu? Nữ: Bạn ấy cao hơn mình nên ngồi sau mình. — 坐在 + 我后面 (chỉ vị trí).' },
           { n: 18, part: 'Phần 3 · Ghép câu hỏi với câu trả lời', bank: [
-            { key: 'A', text: '我26号回去。', py: 'Wǒ 26 hào huíqù.' },
-            { key: 'B', text: '我也不知道，你去问问老师吧。', py: 'Wǒ yě bù zhīdào, nǐ qù wènwen lǎoshī ba.' },
-            { key: 'C', text: '都不是，是我自己。', py: 'Dōu bú shì, shì wǒ zìjǐ.' },
-            { key: 'D', text: '别去了，我有两个本子，给你一个。', py: 'Bié qù le, wǒ yǒu liǎng gè běnzi, gěi nǐ yí gè.' },
-            { key: 'E', text: '他出去了，一会儿就回来。', py: 'Tā chūqù le, yíhuìr jiù huílái.' }
-          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '谁帮你准备的画笔？是爸爸还是妈妈？', promptPy: 'Shéi bāng nǐ zhǔnbèi de huàbǐ? Shì bàba háishi māma?', answer: 'C',
+            { key: 'A', text: '我26号回去。' },
+            { key: 'B', text: '我也不知道，你去问问老师吧。' },
+            { key: 'C', text: '都不是，是我自己。' },
+            { key: 'D', text: '别去了，我有两个本子，给你一个。' },
+            { key: 'E', text: '他出去了，一会儿就回来。' }
+          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '谁帮你准备的画笔？是爸爸还是妈妈？', answer: 'C',
             vn: 'Ai chuẩn bị bút vẽ giúp bạn? Bố hay mẹ? — C: Đều không phải, là tự mình (hỏi "A还是B" → đáp "都不是").' },
-          { n: 19, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你看，这个题做对了还是做错了？', promptPy: 'Nǐ kàn, zhège tí zuòduìle háishi zuòcuò le?', answer: 'B',
+          { n: 19, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你看，这个题做对了还是做错了？', answer: 'B',
             vn: 'Bạn xem, câu này làm đúng hay sai? — B: Mình cũng không biết, bạn đi hỏi thầy cô đi.' },
-          { n: 20, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '我忘了拿本子，现在去商店买一个。', promptPy: 'Wǒ wàngle ná běnzi, xiànzài qù shāngdiàn mǎi yí gè.', answer: 'D',
+          { n: 20, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '我忘了拿本子，现在去商店买一个。', answer: 'D',
             vn: 'Mình quên mang vở, giờ đi cửa hàng mua một quyển. — D: Đừng đi nữa, mình có hai quyển, cho bạn một quyển.' },
-          { n: 21, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '快要开学了，你什么时候回来？', promptPy: 'Kuàiyào kāixué le, nǐ shénme shíhou huílái?', answer: 'A',
+          { n: 21, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '快要开学了，你什么时候回来？', answer: 'A',
             vn: 'Sắp khai giảng rồi, khi nào bạn quay về? — A: Ngày 26 mình về (hỏi 什么时候 → đáp ngày).' },
-          { n: 22, part: 'Phần 4 · Đọc đoạn văn, chọn đáp án đúng', prompt: '女儿已经上小学了，她学习不错，她的本子我看过，错题不多，字写得也很好。\n★女儿现在：', promptPy: 'Nǚ\'ér yǐjīng shàng xiǎoxué le, tā xuéxí búcuò, tā de běnzi wǒ kànguo, cuò tí bù duō, zì xiě de yě hěn hǎo.\nNǚ\'ér xiànzài:', options: [
-            { key: 'A', text: '很少写字', py: 'hěn shǎo xiě zì' },
-            { key: 'B', text: '是小学生', py: 'shì xiǎoxuéshēng' },
-            { key: 'C', text: '没有本子', py: 'méiyǒu běnzi' }
+          { n: 22, part: 'Phần 4 · Đọc đoạn văn, chọn đáp án đúng', prompt: '女儿已经上小学了，她学习不错，她的本子我看过，错题不多，字写得也很好。\n★女儿现在：', options: [
+            { key: 'A', text: '很少写字' },
+            { key: 'B', text: '是小学生' },
+            { key: 'C', text: '没有本子' }
           ], answer: 'B',
             vn: 'Con gái đã vào tiểu học rồi, con học khá, vở của con tôi đã xem, câu sai không nhiều, chữ viết cũng rất đẹp. — "已经上小学了" → bây giờ là học sinh tiểu học.' },
-          { n: 23, prompt: '还有一个星期爷爷就要过生日了。爸爸想去饭馆给爷爷过生日，但是爷爷觉得饭馆的菜没有家里的好吃，所以今年还是在家里过。\n★爷爷要在家里过生日，因为：', promptPy: 'Hái yǒu yí gè xīngqī yéye jiù yào guò shēngrì le. Bàba xiǎng qù fànguǎn gěi yéye guò shēngrì, dànshì yéye juéde fànguǎn de cài méiyǒu jiā li de hǎochī, suǒyǐ jīnnián háishi zài jiā li guò.\nYéye yào zài jiā li guò shēngrì, yīnwèi:', options: [
-            { key: 'A', text: '饭馆人太多', py: 'fànguǎn rén tài duō' },
-            { key: 'B', text: '爸爸不去饭馆', py: 'bàba bú qù fànguǎn' },
-            { key: 'C', text: '家里的菜好吃', py: 'jiā li de cài hǎochī' }
+          { n: 23, prompt: '还有一个星期爷爷就要过生日了。爸爸想去饭馆给爷爷过生日，但是爷爷觉得饭馆的菜没有家里的好吃，所以今年还是在家里过。\n★爷爷要在家里过生日，因为：', options: [
+            { key: 'A', text: '饭馆人太多' },
+            { key: 'B', text: '爸爸不去饭馆' },
+            { key: 'C', text: '家里的菜好吃' }
           ], answer: 'C',
             vn: 'Còn một tuần nữa là sinh nhật ông. Bố muốn ra nhà hàng tổ chức sinh nhật cho ông, nhưng ông thấy món ở nhà hàng không ngon bằng ở nhà, nên năm nay vẫn tổ chức ở nhà. — "饭馆的菜没有家里的好吃" → món ở nhà ngon hơn.' },
-          { n: 24, prompt: '就要开学了，儿子的笔、本子什么的都没有准备好。我在网上看了看，网上有很多，今天买完，明天就能送到家，真不错！\n★他在网上给儿子买什么？', promptPy: 'Jiù yào kāixué le, érzi de bǐ, běnzi shénmede dōu méiyǒu zhǔnbèi hǎo. Wǒ zài wǎngshang kànle kàn, wǎngshang yǒu hěn duō, jīntiān mǎiwán, míngtiān jiù néng sòngdào jiā, zhēn búcuò!\nTā zài wǎngshang gěi érzi mǎi shénme?', options: [
-            { key: 'A', text: '笔', py: 'bǐ' },
-            { key: 'B', text: '衣服', py: 'yīfu' },
-            { key: 'C', text: '电影票', py: 'diànyǐngpiào' }
+          { n: 24, prompt: '就要开学了，儿子的笔、本子什么的都没有准备好。我在网上看了看，网上有很多，今天买完，明天就能送到家，真不错！\n★他在网上给儿子买什么？', options: [
+            { key: 'A', text: '笔' },
+            { key: 'B', text: '衣服' },
+            { key: 'C', text: '电影票' }
           ], answer: 'A',
             vn: 'Sắp khai giảng rồi, bút, vở… của con trai đều chưa chuẩn bị. Tôi lên mạng xem thử, trên mạng có rất nhiều, hôm nay mua xong thì mai đã giao đến nhà, thật tuyệt! — đồ dùng học tập chưa chuẩn bị là 笔、本子 → A.' }
         ],
@@ -1705,9 +1705,9 @@ var wbData = {
           ], letters: ['A', 'B', 'C', 'D'], prompt: '写（昔）— xiě cuò', answer: 'B', vn: '错 = 钅 + 昔 → 写错 (viết sai)' },
           { n: 26, letters: ['A', 'B', 'C', 'D'], prompt: '做（页）— zuò tí', answer: 'A', vn: '题 = 是 + 页 → 做题 (làm bài tập)' },
           { n: 27, letters: ['A', 'B', 'C', 'D'], prompt: '（夭）了 — xiào le', answer: 'C', vn: '笑 = ⺮ + 夭 → 笑了 (cười rồi)' },
-          { n: 28, part: 'Viết · Phần 2 · Viết chữ Hán theo pinyin', input: true, prompt: '你的书包在门（ hòu ）面呢。', promptPy: 'Nǐ de shūbāo zài mén hòumiàn ne.', answer: '后', vn: 'Cặp sách của bạn ở sau cửa đấy. — 后面: phía sau.' },
-          { n: 29, input: true, prompt: '我们明天就要开（ xué ）了。', promptPy: 'Wǒmen míngtiān jiù yào kāixué le.', answer: '学', vn: 'Ngày mai chúng tôi khai giảng rồi. — 就要……了: sắp…; 开学: khai giảng.' },
-          { n: 30, input: true, prompt: '这个（ cí ）写得对还是错？', promptPy: 'Zhège cí xiě de duì háishi cuò?', answer: '词', vn: 'Từ này viết đúng hay sai? — 词 (bộ 讠): từ, như 生词.' }
+          { n: 28, part: 'Viết · Phần 2 · Viết chữ Hán theo pinyin', input: true, prompt: '你的书包在门（ hòu ）面呢。', answer: '后', vn: 'Cặp sách của bạn ở sau cửa đấy. — 后面: phía sau.' },
+          { n: 29, input: true, prompt: '我们明天就要开（ xué ）了。', answer: '学', vn: 'Ngày mai chúng tôi khai giảng rồi. — 就要……了: sắp…; 开学: khai giảng.' },
+          { n: 30, input: true, prompt: '这个（ cí ）写得对还是错？', answer: '词', vn: 'Từ này viết đúng hay sai? — 词 (bộ 讠): từ, như 生词.' }
         ] }
     ]}
   ]

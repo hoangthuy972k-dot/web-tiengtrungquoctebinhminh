@@ -2105,7 +2105,7 @@ var wbData = {
             ['Nét cơ bản', 'ngang (一), sổ (｜) — ví dụ: 十 = ngang trước, sổ sau'],
             ['Bộ phận từ', 'nét → bộ phận (部件) → chữ hoàn chỉnh (整字)'],
             ['2 loại chữ hoàn chỉnh', 'chữ độc thể (独体字, 1 bộ phận) và chữ hợp thể (合体字, ≥2 bộ phận)'],
-            ['Ví dụ luyện viết', '二 (èr) → 二十 (èrshí); 工 (gōng) → 工作 (gōngzuò)']
+            ['Ví dụ luyện viết', '二 → 二十; 工 → 工作']
           ],
           note: 'Chữ Hán gồm 3 yếu tố hình - âm - nghĩa. Cấu trúc: nét bút → bộ phận → chữ hoàn chỉnh. Phần luyện viết tay theo từng nét cần thực hành trực tiếp trên giấy/vở theo mẫu trong sách.' }
       ]
@@ -2132,14 +2132,14 @@ var wbData = {
               {key:'C', img:'/images/hsk1v3-bai-8-wb/q3c.jpg'}
             ], answer: 'A' },
             { n: 4, options: [
-              {key:'A', text:'去学校', py:'qù xuéxiào'},
-              {key:'B', text:'房间外', py:'fángjiān wài'},
-              {key:'C', text:'在吃东西', py:'zài chī dōngxi'}
+              {key:'A', text:'去学校'},
+              {key:'B', text:'房间外'},
+              {key:'C', text:'在吃东西'}
             ], answer: 'B' },
             { n: 5, options: [
-              {key:'A', text:'我能到', py:'wǒ néng dào'},
-              {key:'B', text:'我吃午饭', py:'wǒ chī wǔfàn'},
-              {key:'C', text:'我不能工作', py:'wǒ bù néng gōngzuò'}
+              {key:'A', text:'我能到'},
+              {key:'B', text:'我吃午饭'},
+              {key:'C', text:'我不能工作'}
             ], answer: 'A' },
             { n: 6, options: [
               {key:'A', img:'/images/hsk1v3-bai-8-wb/q6to8_a.jpg'},
@@ -2160,72 +2160,72 @@ var wbData = {
               {key:'D', img:'/images/hsk1v3-bai-8-wb/q6to8_d.jpg'}
             ], answer: 'B' },
             { n: 9, options: [
-              {key:'A', text:'超市', py:'chāoshì'},
-              {key:'B', text:'饭店', py:'fàndiàn'},
-              {key:'C', text:'学校书店', py:'xuéxiào shūdiàn'}
+              {key:'A', text:'超市'},
+              {key:'B', text:'饭店'},
+              {key:'C', text:'学校书店'}
             ], answer: 'C' },
             { n: 10, options: [
-              {key:'A', text:'去学校', py:'qù xuéxiào'},
-              {key:'B', text:'看电影', py:'kàn diànyǐng'},
-              {key:'C', text:'去上班', py:'qù shàngbān'}
+              {key:'A', text:'去学校'},
+              {key:'B', text:'看电影'},
+              {key:'C', text:'去上班'}
             ], answer: 'B' }
           ],
           reading: [
-            { n: 11, prompt: '你的手机在桌子上呢。', promptPy: 'Nǐ de shǒujī zài zhuōzi shang ne.', options: [
+            { n: 11, prompt: '你的手机在桌子上呢。', options: [
               {key:'A', img:'/images/hsk1v3-bai-8-wb/q11to13_a.jpg'},
               {key:'B', img:'/images/hsk1v3-bai-8-wb/q11to13_b.jpg'},
               {key:'C', img:'/images/hsk1v3-bai-8-wb/q11to13_c.jpg'},
               {key:'D', img:'/images/hsk1v3-bai-8-wb/q11to13_d.jpg'}
             ], answer: 'B' },
-            { n: 12, prompt: '我在学校吃午饭。', promptPy: 'Wǒ zài xuéxiào chī wǔfàn.', options: [
+            { n: 12, prompt: '我在学校吃午饭。', options: [
               {key:'A', img:'/images/hsk1v3-bai-8-wb/q11to13_a.jpg'},
               {key:'B', img:'/images/hsk1v3-bai-8-wb/q11to13_b.jpg'},
               {key:'C', img:'/images/hsk1v3-bai-8-wb/q11to13_c.jpg'},
               {key:'D', img:'/images/hsk1v3-bai-8-wb/q11to13_d.jpg'}
             ], answer: 'D' },
-            { n: 13, prompt: '这个医院里病人多，医生工作很忙。', promptPy: 'Zhège yīyuàn li bìngrén duō, yīshēng gōngzuò hěn máng.', options: [
+            { n: 13, prompt: '这个医院里病人多，医生工作很忙。', options: [
               {key:'A', img:'/images/hsk1v3-bai-8-wb/q11to13_a.jpg'},
               {key:'B', img:'/images/hsk1v3-bai-8-wb/q11to13_b.jpg'},
               {key:'C', img:'/images/hsk1v3-bai-8-wb/q11to13_c.jpg'},
               {key:'D', img:'/images/hsk1v3-bai-8-wb/q11to13_d.jpg'}
             ], answer: 'C' },
-            { n: 14, prompt: '桌子上有什么？', promptPy: 'Zhuōzi shang yǒu shénme?', options: [
-              {key:'A', text:'医院。', py:'Yīyuàn.'},
-              {key:'B', text:'我老师。', py:'Wǒ lǎoshī.'},
-              {key:'C', text:'饺子和面条儿。', py:'Jiǎozi hé miàntiáor.'},
-              {key:'D', text:'好的，谢谢！', py:'Hǎo de, xièxie!'}
+            { n: 14, prompt: '桌子上有什么？', options: [
+              {key:'A', text:'医院。'},
+              {key:'B', text:'我老师。'},
+              {key:'C', text:'饺子和面条儿。'},
+              {key:'D', text:'好的，谢谢！'}
             ], answer: 'C' },
-            { n: 15, prompt: '她是谁？', promptPy: 'Tā shì shéi?', options: [
-              {key:'A', text:'医院。', py:'Yīyuàn.'},
-              {key:'B', text:'我老师。', py:'Wǒ lǎoshī.'},
-              {key:'C', text:'饺子和面条儿。', py:'Jiǎozi hé miàntiáor.'},
-              {key:'D', text:'好的，谢谢！', py:'Hǎo de, xièxie!'}
+            { n: 15, prompt: '她是谁？', options: [
+              {key:'A', text:'医院。'},
+              {key:'B', text:'我老师。'},
+              {key:'C', text:'饺子和面条儿。'},
+              {key:'D', text:'好的，谢谢！'}
             ], answer: 'B' },
-            { n: 16, prompt: '你爸爸在哪儿工作？', promptPy: 'Nǐ bàba zài nǎr gōngzuò?', options: [
-              {key:'A', text:'医院。', py:'Yīyuàn.'},
-              {key:'B', text:'我老师。', py:'Wǒ lǎoshī.'},
-              {key:'C', text:'饺子和面条儿。', py:'Jiǎozi hé miàntiáor.'},
-              {key:'D', text:'好的，谢谢！', py:'Hǎo de, xièxie!'}
+            { n: 16, prompt: '你爸爸在哪儿工作？', options: [
+              {key:'A', text:'医院。'},
+              {key:'B', text:'我老师。'},
+              {key:'C', text:'饺子和面条儿。'},
+              {key:'D', text:'好的，谢谢！'}
             ], answer: 'A' },
-            { n: 17, prompt: '我的房间里（　）一只小猫。', promptPy: 'Wǒ de fángjiān li ( ) yì zhī xiǎo māo.', options: [
-              {key:'A', text:'能', py:'néng'},
-              {key:'B', text:'有', py:'yǒu'},
-              {key:'C', text:'名字', py:'míngzi'}
+            { n: 17, prompt: '我的房间里（　）一只小猫。', options: [
+              {key:'A', text:'能'},
+              {key:'B', text:'有'},
+              {key:'C', text:'名字'}
             ], answer: 'B' },
-            { n: 18, prompt: '男：我们下午在书店见吧。\n女：好的，我7:00（　）到。', promptPy: 'Wǒmen xiàwǔ zài shūdiàn jiàn ba. / Hǎo de, wǒ 7:00 ( ) dào.', options: [
-              {key:'A', text:'能', py:'néng'},
-              {key:'B', text:'有', py:'yǒu'},
-              {key:'C', text:'名字', py:'míngzi'}
+            { n: 18, prompt: '男：我们下午在书店见吧。\n女：好的，我7:00（　）到。', options: [
+              {key:'A', text:'能'},
+              {key:'B', text:'有'},
+              {key:'C', text:'名字'}
             ], answer: 'A' },
-            { n: 19, prompt: '昨天爸爸在医院工作，哥哥在家里休息，没去书店。\n★说话人的哥哥昨天：', promptPy: 'Zuótiān bàba zài yīyuàn gōngzuò, gēge zài jiā li xiūxi, méi qù shūdiàn.', options: [
-              {key:'A', text:'在家里', py:'zài jiā li'},
-              {key:'B', text:'在书店', py:'zài shūdiàn'},
-              {key:'C', text:'在医院工作', py:'zài yīyuàn gōngzuò'}
+            { n: 19, prompt: '昨天爸爸在医院工作，哥哥在家里休息，没去书店。\n★说话人的哥哥昨天：', options: [
+              {key:'A', text:'在家里'},
+              {key:'B', text:'在书店'},
+              {key:'C', text:'在医院工作'}
             ], answer: 'A' },
-            { n: 20, prompt: '我喜欢吃米饭，我女朋友不喜欢。\n★说话人的女朋友不喜欢吃：', promptPy: 'Wǒ xǐhuan chī mǐfàn, wǒ nǚpéngyou bù xǐhuan.', options: [
-              {key:'A', text:'米饭', py:'mǐfàn'},
-              {key:'B', text:'包子', py:'bāozi'},
-              {key:'C', text:'面条儿', py:'miàntiáor'}
+            { n: 20, prompt: '我喜欢吃米饭，我女朋友不喜欢。\n★说话人的女朋友不喜欢吃：', options: [
+              {key:'A', text:'米饭'},
+              {key:'B', text:'包子'},
+              {key:'C', text:'面条儿'}
             ], answer: 'A' }
           ]
         }

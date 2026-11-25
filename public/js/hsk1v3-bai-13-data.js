@@ -1970,13 +1970,13 @@ var wbData = {
           ] },
         { type: 'table', caption: 'Cấu trúc chữ hợp thể — luyện viết',
           rows: [
-            ['左右结构 (trái-phải)', '和 (hé)'],
-            ['左中右结构 (trái-giữa-phải)', '做 (zuò)']
+            ['左右结构 (trái-phải)', '和'],
+            ['左中右结构 (trái-giữa-phải)', '做']
           ] },
         { type: 'table', caption: 'Ví dụ luyện viết từ',
           rows: [
-            ['儿 (ér) → 女儿 (nǚ\'ér)', '弟 (dì) → 弟弟 (dìdi)'],
-            ['汉 (Hàn) → 汉语 (Hànyǔ)', '谢 (xiè) → 谢谢 (xièxie)']
+            ['儿 → 女儿', '弟 → 弟弟'],
+            ['汉 → 汉语', '谢 → 谢谢']
           ],
           note: 'Phần luyện viết tay theo từng nét cần thực hành trực tiếp trên giấy/vở theo mẫu trong sách.' }
       ]
@@ -2003,14 +2003,14 @@ var wbData = {
               {key:'C', img:'/images/hsk1v3-bai-13-wb/q3c.jpg'}
             ], answer: 'C' },
             { n: 4, options: [
-              {key:'A', text:'给你', py:'gěi nǐ'},
-              {key:'B', text:'吃早饭', py:'chī zǎofàn'},
-              {key:'C', text:'要一杯茶', py:'yào yì bēi chá'}
+              {key:'A', text:'给你'},
+              {key:'B', text:'吃早饭'},
+              {key:'C', text:'要一杯茶'}
             ], answer: 'C' },
             { n: 5, options: [
-              {key:'A', text:'学习', py:'xuéxí'},
-              {key:'B', text:'不对', py:'bú duì'},
-              {key:'C', text:'没问题', py:'méi wèntí'}
+              {key:'A', text:'学习'},
+              {key:'B', text:'不对'},
+              {key:'C', text:'没问题'}
             ], answer: 'C' },
             { n: 6, options: [
               {key:'A', img:'/images/hsk1v3-bai-13-wb/q6to8_a.jpg'},
@@ -2031,72 +2031,72 @@ var wbData = {
               {key:'D', img:'/images/hsk1v3-bai-13-wb/q6to8_d.jpg'}
             ], answer: 'B' },
             { n: 9, options: [
-              {key:'A', text:'问问题', py:'wèn wèntí'},
-              {key:'B', text:'找人玩', py:'zhǎo rén wán'},
-              {key:'C', text:'看医生', py:'kàn yīshēng'}
+              {key:'A', text:'问问题'},
+              {key:'B', text:'找人玩'},
+              {key:'C', text:'看医生'}
             ], answer: 'B' },
             { n: 10, options: [
-              {key:'A', text:'饭店', py:'fàndiàn'},
-              {key:'B', text:'学校', py:'xuéxiào'},
-              {key:'C', text:'朋友家', py:'péngyou jiā'}
+              {key:'A', text:'饭店'},
+              {key:'B', text:'学校'},
+              {key:'C', text:'朋友家'}
             ], answer: 'A' }
           ],
           reading: [
-            { n: 11, prompt: '她太小了，这个苹果给她一半吧。', promptPy: 'Tā tài xiǎo le, zhège píngguǒ gěi tā yíbàn ba.', options: [
+            { n: 11, prompt: '她太小了，这个苹果给她一半吧。', options: [
               {key:'A', img:'/images/hsk1v3-bai-13-wb/q11to13_a.jpg'},
               {key:'B', img:'/images/hsk1v3-bai-13-wb/q11to13_b.jpg'},
               {key:'C', img:'/images/hsk1v3-bai-13-wb/q11to13_c.jpg'},
               {key:'D', img:'/images/hsk1v3-bai-13-wb/q11to13_d.jpg'}
             ], answer: 'B' },
-            { n: 12, prompt: '请给我一杯牛奶，谢谢。', promptPy: 'Qǐng gěi wǒ yì bēi niúnǎi, xièxie.', options: [
+            { n: 12, prompt: '请给我一杯牛奶，谢谢。', options: [
               {key:'A', img:'/images/hsk1v3-bai-13-wb/q11to13_a.jpg'},
               {key:'B', img:'/images/hsk1v3-bai-13-wb/q11to13_b.jpg'},
               {key:'C', img:'/images/hsk1v3-bai-13-wb/q11to13_c.jpg'},
               {key:'D', img:'/images/hsk1v3-bai-13-wb/q11to13_d.jpg'}
             ], answer: 'D' },
-            { n: 13, prompt: '我打电话问一下吧。', promptPy: 'Wǒ dǎ diànhuà wèn yíxià ba.', options: [
+            { n: 13, prompt: '我打电话问一下吧。', options: [
               {key:'A', img:'/images/hsk1v3-bai-13-wb/q11to13_a.jpg'},
               {key:'B', img:'/images/hsk1v3-bai-13-wb/q11to13_b.jpg'},
               {key:'C', img:'/images/hsk1v3-bai-13-wb/q11to13_c.jpg'},
               {key:'D', img:'/images/hsk1v3-bai-13-wb/q11to13_d.jpg'}
             ], answer: 'C' },
-            { n: 14, prompt: '那里卖不卖手机？', promptPy: 'Nàlǐ mài bu mài shǒujī?', options: [
-              {key:'A', text:'不客气。', py:'Bú kèqi.'},
-              {key:'B', text:'一个面包。', py:'Yí gè miànbāo.'},
-              {key:'C', text:'不知道。', py:'Bù zhīdào.'},
-              {key:'D', text:'好的，谢谢！', py:'Hǎo de, xièxie!'}
+            { n: 14, prompt: '那里卖不卖手机？', options: [
+              {key:'A', text:'不客气。'},
+              {key:'B', text:'一个面包。'},
+              {key:'C', text:'不知道。'},
+              {key:'D', text:'好的，谢谢！'}
             ], answer: 'C' },
-            { n: 15, prompt: '我会写了，谢谢老师。', promptPy: 'Wǒ huì xiě le, xièxie lǎoshī.', options: [
-              {key:'A', text:'不客气。', py:'Bú kèqi.'},
-              {key:'B', text:'一个面包。', py:'Yí gè miànbāo.'},
-              {key:'C', text:'不知道。', py:'Bù zhīdào.'},
-              {key:'D', text:'好的，谢谢！', py:'Hǎo de, xièxie!'}
+            { n: 15, prompt: '我会写了，谢谢老师。', options: [
+              {key:'A', text:'不客气。'},
+              {key:'B', text:'一个面包。'},
+              {key:'C', text:'不知道。'},
+              {key:'D', text:'好的，谢谢！'}
             ], answer: 'A' },
-            { n: 16, prompt: '你要什么？', promptPy: 'Nǐ yào shénme?', options: [
-              {key:'A', text:'不客气。', py:'Bú kèqi.'},
-              {key:'B', text:'一个面包。', py:'Yí gè miànbāo.'},
-              {key:'C', text:'不知道。', py:'Bù zhīdào.'},
-              {key:'D', text:'好的，谢谢！', py:'Hǎo de, xièxie!'}
+            { n: 16, prompt: '你要什么？', options: [
+              {key:'A', text:'不客气。'},
+              {key:'B', text:'一个面包。'},
+              {key:'C', text:'不知道。'},
+              {key:'D', text:'好的，谢谢！'}
             ], answer: 'B' },
-            { n: 17, prompt: '你看（　），你要什么？', promptPy: 'Nǐ kàn ( ), nǐ yào shénme?', options: [
-              {key:'A', text:'给', py:'gěi'},
-              {key:'B', text:'一下', py:'yíxià'},
-              {key:'C', text:'名字', py:'míngzi'}
+            { n: 17, prompt: '你看（　），你要什么？', options: [
+              {key:'A', text:'给'},
+              {key:'B', text:'一下'},
+              {key:'C', text:'名字'}
             ], answer: 'B' },
-            { n: 18, prompt: '男：请坐，您要什么？\n女：请（　）我一杯茶。', promptPy: 'Qǐng zuò, nín yào shénme? / Qǐng ( ) wǒ yì bēi chá.', options: [
-              {key:'A', text:'给', py:'gěi'},
-              {key:'B', text:'一下', py:'yíxià'},
-              {key:'C', text:'名字', py:'míngzi'}
+            { n: 18, prompt: '男：请坐，您要什么？\n女：请（　）我一杯茶。', options: [
+              {key:'A', text:'给'},
+              {key:'B', text:'一下'},
+              {key:'C', text:'名字'}
             ], answer: 'A' },
-            { n: 19, prompt: '明天星期天，我们可以去饭店吃饺子吗？\n★明天是：', promptPy: 'Míngtiān Xīngqītiān, wǒmen kěyǐ qù fàndiàn chī jiǎozi ma?', options: [
-              {key:'A', text:'星期五', py:'Xīngqīwǔ'},
-              {key:'B', text:'星期六', py:'Xīngqīliù'},
-              {key:'C', text:'星期日', py:'Xīngqīrì'}
+            { n: 19, prompt: '明天星期天，我们可以去饭店吃饺子吗？\n★明天是：', options: [
+              {key:'A', text:'星期五'},
+              {key:'B', text:'星期六'},
+              {key:'C', text:'星期日'}
             ], answer: 'C' },
-            { n: 20, prompt: '爸爸今天在家里工作，我们不要去他的房间。\n★爸爸今天：', promptPy: 'Bàba jīntiān zài jiā li gōngzuò, wǒmen búyào qù tā de fángjiān.', options: [
-              {key:'A', text:'在家里工作', py:'zài jiā li gōngzuò'},
-              {key:'B', text:'做了面条儿', py:'zuòle miàntiáor'},
-              {key:'C', text:'不能去公司', py:'bù néng qù gōngsī'}
+            { n: 20, prompt: '爸爸今天在家里工作，我们不要去他的房间。\n★爸爸今天：', options: [
+              {key:'A', text:'在家里工作'},
+              {key:'B', text:'做了面条儿'},
+              {key:'C', text:'不能去公司'}
             ], answer: 'A' }
           ]
         }

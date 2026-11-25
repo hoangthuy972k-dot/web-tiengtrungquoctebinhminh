@@ -1515,20 +1515,20 @@ var wbData = {
   sections: [
     { title: 'Hán tự & từ mới', blocks: [
       { type: 'table', caption: 'Bộ thủ (偏旁) — tên gọi và chữ ví dụ', headers: ['Tên gọi', 'Bộ thủ', 'Chữ ví dụ'], rows: [
-        ['右耳旁 yòu\'ěrpáng', '阝', '都 dōu (đều) · 那 nà (kia, đó)'],
-        ['反文旁 fǎnwénpáng', '攵', '教 jiāo/jiào (dạy / giáo dục) — chữ đa âm: 教中文 jiāo Zhōngwén, 教室 jiàoshì']
+        ['右耳旁', '阝', '都 (đều) · 那 (kia, đó)'],
+        ['反文旁', '攵', '教 jiāo/jiào (dạy / giáo dục) — chữ đa âm: 教中文 jiāo Zhōngwén, 教室 jiàoshì']
       ] },
       { type: 'table', caption: 'Tập viết (摹写) — chữ → từ → câu', headers: ['Chữ', 'Từ', 'Câu'], rows: [
-        ['都 dōu', '都来了 dōu lái le — đều đến rồi', '我们班同学都来了。— Các bạn lớp mình đều đến cả rồi.'],
-        ['那 nà', '那件 nà jiàn — chiếc kia', '这件衣服比那件好看一些。— Chiếc áo này đẹp hơn chiếc kia một chút.'],
-        ['教 jiāo', '教中文 jiāo Zhōngwén — dạy tiếng Trung', '王老师教我们中文。— Thầy Vương dạy chúng tôi tiếng Trung.'],
-        ['教 jiào', '教室 jiàoshì — phòng học', '这间教室比那间大一点儿。— Phòng học này rộng hơn phòng kia một chút.']
+        ['都', '都来了 — đều đến rồi', '我们班同学都来了。— Các bạn lớp mình đều đến cả rồi.'],
+        ['那', '那件 — chiếc kia', '这件衣服比那件好看一些。— Chiếc áo này đẹp hơn chiếc kia một chút.'],
+        ['教', '教中文 — dạy tiếng Trung', '王老师教我们中文。— Thầy Vương dạy chúng tôi tiếng Trung.'],
+        ['教', '教室 — phòng học', '这间教室比那间大一点儿。— Phòng học này rộng hơn phòng kia một chút.']
       ],
         note: 'Luyện viết tay từng nét theo mẫu trong sách (bấm vào chữ ở phần Từ vựng để xem nét viết). Lưu ý: 教 là chữ đa âm — jiāo (động từ "dạy"), jiào (trong 教室, 教学…).' },
       { type: 'table', caption: 'Từ ghép mới (学一学)', headers: ['Từ đã biết', 'Từ mới', 'Nghĩa'], rows: [
-        ['上网 shàngwǎng · 名字 míngzi', '网名 wǎngmíng', 'tên trên mạng, nickname'],
-        ['红色 hóngsè · 花 huā', '红花 hóng huā', 'hoa đỏ'],
-        ['大 dà · 楼 lóu', '大楼 dàlóu', 'tòa nhà lớn, cao ốc']
+        ['上网 · 名字', '网名', 'tên trên mạng, nickname'],
+        ['红色 · 花', '红花', 'hoa đỏ'],
+        ['大 · 楼', '大楼', 'tòa nhà lớn, cao ốc']
       ] },
       { type: 'blankdrill', caption: 'Điền từ mới vào chỗ trống (做一做)', hint: 'Gõ từ mới (chữ Hán) vào ô trống rồi bấm "Xem đáp án" để đối chiếu.', maxlength: 4,
         items: [
@@ -1570,27 +1570,27 @@ var wbData = {
           { n: 6, letters: ['A', 'B', 'C', 'D'], answer: 'C',
             script: '女：老师，您看我画的花。\n男：画得很好，颜色很漂亮。', vn: 'Nữ: Thầy ơi, thầy xem bông hoa em vẽ này.\nNam: Vẽ đẹp lắm, màu sắc rất đẹp.' },
           { n: 7, part: 'Phần 3 · Nghe hội thoại, chọn đáp án đúng', options: [
-            { key: 'A', text: '水果', py: 'shuǐguǒ' },
-            { key: 'B', text: '奶茶', py: 'nǎichá' },
-            { key: 'C', text: '晚饭', py: 'wǎnfàn' }
+            { key: 'A', text: '水果' },
+            { key: 'B', text: '奶茶' },
+            { key: 'C', text: '晚饭' }
           ], answer: 'B',
             script: '女：奶茶很好喝，你是在楼下商场里面那家奶茶店买的吗？\n男：是啊，它旁边还新开了一家水果店。吃完饭，我们可以去看看。\n问：男的买了什么？', vn: 'Nữ: Trà sữa ngon quá, anh mua ở quán trà sữa trong trung tâm thương mại dưới lầu à?\nNam: Ừ, bên cạnh nó còn mới mở một cửa hàng hoa quả. Ăn cơm xong mình có thể qua xem.\nHỏi: Người nam đã mua gì? → Trà sữa (cửa hàng hoa quả chỉ là định đi xem).' },
           { n: 8, options: [
-            { key: 'A', text: '学生', py: 'xuésheng' },
-            { key: 'B', text: '朋友', py: 'péngyou' },
-            { key: 'C', text: '男朋友', py: 'nánpéngyou' }
+            { key: 'A', text: '学生' },
+            { key: 'B', text: '朋友' },
+            { key: 'C', text: '男朋友' }
           ], answer: 'A',
             script: '男：桌子上面的花真漂亮，是男朋友送的吧？\n女：不是，是我们班的学生送的。\n问：谁送给女的花了？', vn: 'Nam: Hoa trên bàn đẹp thật, bạn trai tặng phải không?\nNữ: Không phải, học sinh lớp tôi tặng đấy.\nHỏi: Ai đã tặng hoa cho người nữ? → Học sinh.' },
           { n: 9, options: [
-            { key: 'A', text: '打车', py: 'dǎchē' },
-            { key: 'B', text: '坐地铁', py: 'zuò dìtiě' },
-            { key: 'C', text: '坐公交车', py: 'zuò gōngjiāochē' }
+            { key: 'A', text: '打车' },
+            { key: 'B', text: '坐地铁' },
+            { key: 'C', text: '坐公交车' }
           ], answer: 'B',
             script: '女：你今天还坐公交车去上班吗？\n男：今天有点儿晚了，还是打车吧，打车比坐公交车快一点儿。\n女：现在是上班时间，路上车多，出租车也开得很慢。\n男：那就坐地铁吧。\n问：男的今天怎么去上班？', vn: 'Nữ: Hôm nay anh vẫn đi xe buýt đi làm à?\nNam: Hôm nay hơi muộn rồi, thôi bắt taxi vậy, taxi nhanh hơn xe buýt một chút.\nNữ: Giờ là giờ đi làm, đường đông xe, taxi cũng chạy chậm lắm.\nNam: Vậy đi tàu điện ngầm thôi.\nHỏi: Hôm nay người nam đi làm bằng gì? → Tàu điện ngầm.' },
           { n: 10, options: [
-            { key: 'A', text: '旅游', py: 'lǚyóu' },
-            { key: 'B', text: '回国', py: 'huí guó' },
-            { key: 'C', text: '上网', py: 'shàngwǎng' }
+            { key: 'A', text: '旅游' },
+            { key: 'B', text: '回国' },
+            { key: 'C', text: '上网' }
           ], answer: 'A',
             script: '男：老师，您回国过新年吗？\n女：今年不回去了，我想去旅游。\n男：您想去哪儿玩？\n女：我上网看了看，这个时候去泰国很不错。\n问：女的过新年时要做什么？', vn: 'Nam: Cô ơi, cô có về nước đón năm mới không ạ?\nNữ: Năm nay cô không về, cô muốn đi du lịch.\nNam: Cô muốn đi chơi ở đâu ạ?\nNữ: Cô lên mạng xem rồi, thời điểm này đi Thái Lan rất tuyệt.\nHỏi: Dịp năm mới người nữ định làm gì? → Đi du lịch.' }
         ],
@@ -1600,56 +1600,56 @@ var wbData = {
             { key: 'B', img: '/images/hsk2v3-bai-13-wb/q11to13_b.jpg' },
             { key: 'C', img: '/images/hsk2v3-bai-13-wb/q11to13_c.jpg' },
             { key: 'D', img: '/images/hsk2v3-bai-13-wb/q11to13_d.jpg' }
-          ], letters: ['A', 'B', 'C', 'D'], prompt: '学生们都在教室里面坐着。', promptPy: 'Xuéshengmen dōu zài jiàoshì lǐmiàn zuòzhe.', answer: 'C',
+          ], letters: ['A', 'B', 'C', 'D'], prompt: '学生们都在教室里面坐着。', answer: 'C',
             vn: 'Các học sinh đều đang ngồi trong lớp học. — tranh C: lớp học, học sinh ngồi nghe giảng.' },
-          { n: 12, letters: ['A', 'B', 'C', 'D'], prompt: '左边是男洗手间，右边是女洗手间。', promptPy: 'Zuǒbian shì nán xǐshǒujiān, yòubian shì nǚ xǐshǒujiān.', answer: 'A',
+          { n: 12, letters: ['A', 'B', 'C', 'D'], prompt: '左边是男洗手间，右边是女洗手间。', answer: 'A',
             vn: 'Bên trái là nhà vệ sinh nam, bên phải là nhà vệ sinh nữ. — tranh A: biển nam (xanh) bên trái, nữ (hồng) bên phải.' },
-          { n: 13, letters: ['A', 'B', 'C', 'D'], prompt: '桌子上的花好漂亮，是谁送的？', promptPy: 'Zhuōzi shang de huā hǎo piàoliang, shì shéi sòng de?', answer: 'B',
+          { n: 13, letters: ['A', 'B', 'C', 'D'], prompt: '桌子上的花好漂亮，是谁送的？', answer: 'B',
             vn: 'Hoa trên bàn đẹp quá, ai tặng vậy? — tranh B: lẵng hoa đặt trên bàn.' },
           { n: 14, part: 'Phần 2 · Chọn từ điền vào chỗ trống', bank: [
-            { key: 'A', text: '教', py: 'jiāo' },
-            { key: 'B', text: '那样', py: 'nàyàng' },
-            { key: 'C', text: '上面', py: 'shàngmiàn' },
-            { key: 'D', text: '新年', py: 'xīnnián' },
-            { key: 'E', text: '完', py: 'wán' }
-          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '我送你一个本子，（　）你就可以写字了。', promptPy: 'Wǒ sòng nǐ yí gè běnzi, (　) nǐ jiù kěyǐ xiě zì le.', answer: 'B',
+            { key: 'A', text: '教' },
+            { key: 'B', text: '那样' },
+            { key: 'C', text: '上面' },
+            { key: 'D', text: '新年' },
+            { key: 'E', text: '完' }
+          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '我送你一个本子，（　）你就可以写字了。', answer: 'B',
             vn: 'Mình tặng bạn một quyển vở, như vậy bạn có thể viết chữ rồi. — 那样: như thế, như vậy (nối với 就).' },
-          { n: 15, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '桌子（　）的咖啡和奶茶都是我点的。', promptPy: 'Zhuōzi (　) de kāfēi hé nǎichá dōu shì wǒ diǎn de.', answer: 'C',
+          { n: 15, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '桌子（　）的咖啡和奶茶都是我点的。', answer: 'C',
             vn: 'Cà phê và trà sữa trên bàn đều là tôi gọi. — 桌子上面: trên mặt bàn (danh từ + từ chỉ phương hướng).' },
-          { n: 16, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '女：你们喜欢上谁的课？\n男：我们都喜欢上王老师的课，因为她（　）得很好。', promptPy: 'Nǐmen xǐhuan shàng shéi de kè? / Wǒmen dōu xǐhuan shàng Wáng lǎoshī de kè, yīnwèi tā (　) de hěn hǎo.', answer: 'A',
+          { n: 16, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '女：你们喜欢上谁的课？\n男：我们都喜欢上王老师的课，因为她（　）得很好。', answer: 'A',
             vn: 'Nữ: Các bạn thích học tiết của ai?\nNam: Chúng mình đều thích học tiết của cô Vương, vì cô dạy rất hay. — cần động từ trước 得: 教得很好.' },
-          { n: 17, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '男：你下午要去商场吗？\n女：对，（　）快要到了，我想给奶奶准备一个礼物。', promptPy: 'Nǐ xiàwǔ yào qù shāngchǎng ma? / Duì, (　) kuàiyào dào le, wǒ xiǎng gěi nǎinai zhǔnbèi yí gè lǐwù.', answer: 'D',
+          { n: 17, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '男：你下午要去商场吗？\n女：对，（　）快要到了，我想给奶奶准备一个礼物。', answer: 'D',
             vn: 'Nam: Chiều nay bạn định đi trung tâm thương mại à?\nNữ: Ừ, sắp đến năm mới rồi, mình muốn chuẩn bị một món quà cho bà. — 新年快要到了: năm mới sắp đến.' },
           { n: 18, part: 'Phần 3 · Ghép câu hỏi với câu trả lời', bank: [
-            { key: 'A', text: '但是我没有女朋友，找谁一起去看电影呢？', py: 'Dànshì wǒ méiyǒu nǚpéngyou, zhǎo shéi yìqǐ qù kàn diànyǐng ne?' },
-            { key: 'B', text: '可能会下雨。', py: 'Kěnéng huì xià yǔ.' },
-            { key: 'C', text: '没有，我还比他高一点儿呢。', py: 'Méiyǒu, wǒ hái bǐ tā gāo yìdiǎnr ne.' },
-            { key: 'D', text: '我就是想告诉你，我要去上海旅游了。', py: 'Wǒ jiù shì xiǎng gàosu nǐ, wǒ yào qù Shànghǎi lǚyóu le.' },
-            { key: 'E', text: '他出去了，一会儿就回来。', py: 'Tā chūqù le, yíhuìr jiù huílái.' }
-          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你找我有什么事情吗？', promptPy: 'Nǐ zhǎo wǒ yǒu shénme shìqing ma?', answer: 'D',
+            { key: 'A', text: '但是我没有女朋友，找谁一起去看电影呢？' },
+            { key: 'B', text: '可能会下雨。' },
+            { key: 'C', text: '没有，我还比他高一点儿呢。' },
+            { key: 'D', text: '我就是想告诉你，我要去上海旅游了。' },
+            { key: 'E', text: '他出去了，一会儿就回来。' }
+          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你找我有什么事情吗？', answer: 'D',
             vn: 'Bạn tìm mình có việc gì không? — D: Mình chỉ muốn nói với bạn là mình sắp đi Thượng Hải du lịch.' },
-          { n: 19, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '明天天气怎么样？', promptPy: 'Míngtiān tiānqì zěnmeyàng?', answer: 'B',
+          { n: 19, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '明天天气怎么样？', answer: 'B',
             vn: 'Thời tiết ngày mai thế nào? — B: Có thể sẽ mưa.' },
-          { n: 20, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你儿子现在比你高了吧？', promptPy: 'Nǐ érzi xiànzài bǐ nǐ gāole ba?', answer: 'C',
+          { n: 20, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你儿子现在比你高了吧？', answer: 'C',
             vn: 'Con trai bạn giờ cao hơn bạn rồi nhỉ? — C: Chưa đâu, mình còn cao hơn nó một chút đấy.' },
-          { n: 21, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '家月送了我两张电影票。', promptPy: 'Jiāyuè sòngle wǒ liǎng zhāng diànyǐngpiào.', answer: 'A',
+          { n: 21, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '家月送了我两张电影票。', answer: 'A',
             vn: 'Gia Nguyệt tặng mình hai vé xem phim. — A: Nhưng mình không có bạn gái, rủ ai đi xem phim cùng đây?' },
-          { n: 22, part: 'Phần 4 · Đọc đoạn văn, chọn đáp án đúng', prompt: '我教会奶奶上网买东西了，她很高兴。她说：“在家就能买东西，还比去商场买便宜一些，真不错！”\n★奶奶为什么很高兴？', promptPy: 'Wǒ jiāohuì nǎinai shàngwǎng mǎi dōngxi le, tā hěn gāoxìng. Tā shuō: "Zài jiā jiù néng mǎi dōngxi, hái bǐ qù shāngchǎng mǎi piányi yìxiē, zhēn búcuò!"\nNǎinai wèi shénme hěn gāoxìng?', options: [
-            { key: 'A', text: '买的东西好', py: 'mǎi de dōngxi hǎo' },
-            { key: 'B', text: '能去商场了', py: 'néng qù shāngchǎng le' },
-            { key: 'C', text: '会上网买东西了', py: 'huì shàngwǎng mǎi dōngxi le' }
+          { n: 22, part: 'Phần 4 · Đọc đoạn văn, chọn đáp án đúng', prompt: '我教会奶奶上网买东西了，她很高兴。她说：“在家就能买东西，还比去商场买便宜一些，真不错！”\n★奶奶为什么很高兴？', options: [
+            { key: 'A', text: '买的东西好' },
+            { key: 'B', text: '能去商场了' },
+            { key: 'C', text: '会上网买东西了' }
           ], answer: 'C',
             vn: 'Tôi đã dạy bà biết lên mạng mua đồ, bà rất vui. Bà nói: "Ở nhà cũng mua được đồ, lại rẻ hơn đi trung tâm thương mại một chút, tuyệt thật!" — 教会奶奶上网买东西 → bà đã biết mua đồ trên mạng → C.' },
-          { n: 23, prompt: '过完新年，我们就要开学了。陈天中告诉我，李老师要回国了，我们班会有一个新老师。他说新老师比李老师小两岁，个子高高的，还很爱笑。\n★新老师：', promptPy: 'Guòwán xīnnián, wǒmen jiù yào kāixué le. Chén Tiānzhōng gàosu wǒ, Lǐ lǎoshī yào huí guó le, wǒmen bān huì yǒu yí gè xīn lǎoshī. Tā shuō xīn lǎoshī bǐ Lǐ lǎoshī xiǎo liǎng suì, gèzi gāogāo de, hái hěn ài xiào.\nXīn lǎoshī:', options: [
-            { key: 'A', text: '回国了', py: 'huí guó le' },
-            { key: 'B', text: '个子高', py: 'gèzi gāo' },
-            { key: 'C', text: '比我们大两岁', py: 'bǐ wǒmen dà liǎng suì' }
+          { n: 23, prompt: '过完新年，我们就要开学了。陈天中告诉我，李老师要回国了，我们班会有一个新老师。他说新老师比李老师小两岁，个子高高的，还很爱笑。\n★新老师：', options: [
+            { key: 'A', text: '回国了' },
+            { key: 'B', text: '个子高' },
+            { key: 'C', text: '比我们大两岁' }
           ], answer: 'B',
             vn: 'Ăn Tết xong là chúng tôi sắp vào học. Trần Thiên Trung nói với tôi thầy Lý sắp về nước, lớp mình sẽ có giáo viên mới. Cậu ấy nói giáo viên mới kém thầy Lý hai tuổi, dáng người cao, lại rất hay cười. — 个子高高的 → B; người về nước là thầy Lý, còn "kém thầy Lý hai tuổi" chứ không phải "hơn chúng tôi hai tuổi".' },
-          { n: 24, prompt: '今天下班回到家，我一开门，丈夫就送给我一个礼物。没想到，他记得我的生日，早早地回来做了生日面，还给我准备了生日礼物。\n★丈夫：', promptPy: 'Jīntiān xiàbān huídào jiā, wǒ yì kāi mén, zhàngfu jiù sòng gěi wǒ yí gè lǐwù. Méi xiǎngdào, tā jìde wǒ de shēngrì, zǎozǎo de huílái zuòle shēngrìmiàn, hái gěi wǒ zhǔnbèile shēngrì lǐwù.\nZhàngfu:', options: [
-            { key: 'A', text: '没有去上班', py: 'méiyǒu qù shàngbān' },
-            { key: 'B', text: '没有准备礼物', py: 'méiyǒu zhǔnbèi lǐwù' },
-            { key: 'C', text: '记得妻子生日', py: 'jìde qīzi shēngrì' }
+          { n: 24, prompt: '今天下班回到家，我一开门，丈夫就送给我一个礼物。没想到，他记得我的生日，早早地回来做了生日面，还给我准备了生日礼物。\n★丈夫：', options: [
+            { key: 'A', text: '没有去上班' },
+            { key: 'B', text: '没有准备礼物' },
+            { key: 'C', text: '记得妻子生日' }
           ], answer: 'C',
             vn: 'Hôm nay tan làm về nhà, tôi vừa mở cửa, chồng đã tặng tôi một món quà. Không ngờ anh ấy nhớ sinh nhật tôi, về nhà từ sớm nấu mì sinh nhật, còn chuẩn bị quà sinh nhật cho tôi. — 他记得我的生日 → C (anh ấy về sớm chứ không phải không đi làm; có chuẩn bị quà).' }
         ],
@@ -1659,9 +1659,9 @@ var wbData = {
           ], letters: ['A', 'B', 'C', 'D'], prompt: '写一（毛）— xiě yì bǐ', answer: 'C', vn: '笔 = ⺮ + 毛 → 写一笔 (viết một nét; bộ trúc ⺮ — bút xưa làm bằng tre)' },
           { n: 26, letters: ['A', 'B', 'C', 'D'], prompt: '（那 còn thiếu bên phải）样 — nà yàng', answer: 'B', vn: '那 = phần bên trái + 阝 (bộ ấp, tai phải) → 那样 (như thế)' },
           { n: 27, letters: ['A', 'B', 'C', 'D'], prompt: '告（斥）— gào su', answer: 'A', vn: '诉 = 讠 + 斥 → 告诉 (nói cho biết; bộ ngôn 讠 liên quan đến lời nói)' },
-          { n: 28, part: 'Viết · Phần 2 · Viết chữ Hán theo pinyin', input: true, prompt: '（ Xī ）望能再见到你。', promptPy: 'Xīwàng néng zài jiàndào nǐ.', answer: '希', vn: 'Mong được gặp lại bạn. — 希望: hi vọng, mong.' },
-          { n: 29, input: true, prompt: '朋友送给我一个新（ nián ）礼物。', promptPy: 'Péngyou sòng gěi wǒ yí gè xīnnián lǐwù.', answer: '年', vn: 'Bạn tặng tôi một món quà năm mới. — 新年: năm mới.' },
-          { n: 30, input: true, prompt: '我还不舒服，（ kě ）能下周再去上班。', promptPy: 'Wǒ hái bù shūfu, kěnéng xiàzhōu zài qù shàngbān.', answer: '可', vn: 'Tôi vẫn chưa khỏe, có lẽ tuần sau mới đi làm. — 可能: có lẽ, có thể.' }
+          { n: 28, part: 'Viết · Phần 2 · Viết chữ Hán theo pinyin', input: true, prompt: '（ Xī ）望能再见到你。', answer: '希', vn: 'Mong được gặp lại bạn. — 希望: hi vọng, mong.' },
+          { n: 29, input: true, prompt: '朋友送给我一个新（ nián ）礼物。', answer: '年', vn: 'Bạn tặng tôi một món quà năm mới. — 新年: năm mới.' },
+          { n: 30, input: true, prompt: '我还不舒服，（ kě ）能下周再去上班。', answer: '可', vn: 'Tôi vẫn chưa khỏe, có lẽ tuần sau mới đi làm. — 可能: có lẽ, có thể.' }
         ] }
     ]}
   ]

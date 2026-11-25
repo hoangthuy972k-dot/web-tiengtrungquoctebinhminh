@@ -1712,20 +1712,20 @@ var wbData = {
   sections: [
     { title: 'Hán tự & từ mới', blocks: [
       { type: 'table', caption: 'Bộ thủ (偏旁) — tên gọi và chữ ví dụ', headers: ['Tên gọi', 'Bộ thủ', 'Chữ ví dụ'], rows: [
-        ['提手旁 tíshǒupáng', '扌', '打 dǎ (đánh, gọi) · 接 jiē (đón, nhận)'],
-        ['两点水 liǎngdiǎnshuǐ', '冫', '冷 lěng (lạnh) · 次 cì (lần)']
+        ['提手旁', '扌', '打 (đánh, gọi) · 接 (đón, nhận)'],
+        ['两点水', '冫', '冷 (lạnh) · 次 (lần)']
       ] },
       { type: 'table', caption: 'Tập viết (摹写) — chữ → từ → câu', headers: ['Chữ', 'Từ', 'Câu'], rows: [
-        ['打 dǎ', '打电话 dǎ diànhuà — gọi điện thoại', '请你给她打个电话。— Bạn gọi điện cho cô ấy nhé.'],
-        ['接 jiē', '接人 jiē rén — đón người', '他让我去接一个人。— Anh ấy bảo tôi đi đón một người.'],
-        ['冷 lěng', '很冷 hěn lěng — rất lạnh', '北京现在很冷吧？— Bắc Kinh bây giờ lạnh lắm nhỉ?'],
-        ['次 cì', '这次 zhè cì — lần này', '我这次是一个人来的。— Lần này tôi đến một mình.']
+        ['打', '打电话 — gọi điện thoại', '请你给她打个电话。— Bạn gọi điện cho cô ấy nhé.'],
+        ['接', '接人 — đón người', '他让我去接一个人。— Anh ấy bảo tôi đi đón một người.'],
+        ['冷', '很冷 — rất lạnh', '北京现在很冷吧？— Bắc Kinh bây giờ lạnh lắm nhỉ?'],
+        ['次', '这次 — lần này', '我这次是一个人来的。— Lần này tôi đến một mình.']
       ],
         note: 'Luyện viết tay từng nét theo mẫu trong sách (bấm vào chữ ở phần Từ vựng để xem nét viết).' },
       { type: 'table', caption: 'Từ ghép mới (学一学)', headers: ['Từ đã biết', 'Từ mới', 'Nghĩa'], rows: [
-        ['好吃 hǎochī · 喝 hē', '好喝 hǎohē', 'ngon (đồ uống)'],
-        ['茶 chá · 杯子 bēizi', '茶杯 chábēi', 'cốc uống trà, chén trà'],
-        ['雨 yǔ · 衣服 yīfu', '雨衣 yǔyī', 'áo mưa']
+        ['好吃 · 喝', '好喝', 'ngon (đồ uống)'],
+        ['茶 · 杯子', '茶杯', 'cốc uống trà, chén trà'],
+        ['雨 · 衣服', '雨衣', 'áo mưa']
       ] },
       { type: 'blankdrill', caption: 'Điền từ mới vào chỗ trống (做一做)', hint: 'Gõ từ mới (chữ Hán) vào ô trống rồi bấm "Xem đáp án" để đối chiếu.', maxlength: 4,
         items: [
@@ -1764,27 +1764,27 @@ var wbData = {
           { n: 6, letters: ['A', 'B', 'C', 'D'], answer: 'B',
             script: '女：王老师，我想请您帮个忙。\n男：真不好意思，我不在北京，已经到上海了。', vn: 'Nữ: Thầy Vương, em muốn nhờ thầy giúp một việc.\nNam: Thật ngại quá, thầy không ở Bắc Kinh, đã đến Thượng Hải rồi.' },
           { n: 7, part: 'Phần 3 · Nghe hội thoại, chọn đáp án đúng', options: [
-            { key: 'A', text: '饭店', py: 'fàndiàn' },
-            { key: 'B', text: '超市', py: 'chāoshì' },
-            { key: 'C', text: '学校', py: 'xuéxiào' }
+            { key: 'A', text: '饭店' },
+            { key: 'B', text: '超市' },
+            { key: 'C', text: '学校' }
           ], answer: 'A', script: '女：你好！你知道果果饭店在哪儿吗？\n男：不好意思，我也是来旅游的，你去那家商店问一下吧。\n问：女的要去哪儿？',
             vn: 'Nữ: Chào anh! Anh có biết nhà hàng Quả Quả ở đâu không?\nNam: Xin lỗi, tôi cũng đến du lịch, chị vào cửa hàng kia hỏi thử xem.\nHỏi: Người nữ muốn đi đâu? → nhà hàng (饭店).' },
           { n: 8, options: [
-            { key: 'A', text: '北京', py: 'Běijīng' },
-            { key: 'B', text: '上海', py: 'Shànghǎi' },
-            { key: 'C', text: '西安', py: 'Xī\'ān' }
+            { key: 'A', text: '北京' },
+            { key: 'B', text: '上海' },
+            { key: 'C', text: '西安' }
           ], answer: 'B', script: '男：你们这次旅游都去了哪里？\n女：去了西安和北京，明年还想去上海玩。\n问：他们明年想去哪儿？',
             vn: 'Nam: Lần du lịch này các bạn đã đi những đâu?\nNữ: Đi Tây An và Bắc Kinh, sang năm còn muốn đi Thượng Hải chơi.\nHỏi: Sang năm họ muốn đi đâu? → Thượng Hải.' },
           { n: 9, options: [
-            { key: 'A', text: '学习', py: 'xuéxí' },
-            { key: 'B', text: '下班', py: 'xiàbān' },
-            { key: 'C', text: '买菜', py: 'mǎi cài' }
+            { key: 'A', text: '学习' },
+            { key: 'B', text: '下班' },
+            { key: 'C', text: '买菜' }
           ], answer: 'A', script: '女：爸，你下班了？\n男：是。你要去哪儿啊？\n女：超市，我妈让我去买点儿菜。\n男：我已经买了，你回房间学习吧。\n问：男的让女的做什么？',
             vn: 'Nữ: Bố ơi, bố tan làm rồi ạ?\nNam: Ừ. Con định đi đâu thế?\nNữ: Đi siêu thị, mẹ bảo con đi mua ít rau.\nNam: Bố mua rồi, con về phòng học bài đi.\nHỏi: Người nam bảo người nữ làm gì? → học bài (学习).' },
           { n: 10, options: [
-            { key: 'A', text: '今天', py: 'jīntiān' },
-            { key: 'B', text: '明天', py: 'míngtiān' },
-            { key: 'C', text: '星期天', py: 'Xīngqītiān' }
+            { key: 'A', text: '今天' },
+            { key: 'B', text: '明天' },
+            { key: 'C', text: '星期天' }
           ], answer: 'C', script: '男：今天小王给我介绍了一个电影，你想去看吗？\n女：什么时候去？\n男：明天怎么样？我明天能早点儿下班。\n女：我这几天太忙了。星期天去吧。\n问：女的想什么时候去看电影？',
             vn: 'Nam: Hôm nay Tiểu Vương giới thiệu cho anh một bộ phim, em có muốn đi xem không?\nNữ: Khi nào đi?\nNam: Ngày mai thế nào? Mai anh có thể tan làm sớm một chút.\nNữ: Mấy hôm nay em bận quá. Chủ nhật đi nhé.\nHỏi: Người nữ muốn đi xem phim khi nào? → Chủ nhật.' }
         ],
@@ -1794,57 +1794,54 @@ var wbData = {
             { key: 'B', img: '/images/hsk2v3-bai-1-wb/q11to13_b.jpg' },
             { key: 'C', img: '/images/hsk2v3-bai-1-wb/q11to13_c.jpg' },
             { key: 'D', img: '/images/hsk2v3-bai-1-wb/q11to13_d.jpg' }
-          ], letters: ['A', 'B', 'C', 'D'], prompt: '我们是来旅游的。', promptPy: 'Wǒmen shì lái lǚyóu de.', answer: 'B',
+          ], letters: ['A', 'B', 'C', 'D'], prompt: '我们是来旅游的。', answer: 'B',
             vn: 'Chúng tôi đến du lịch. — Tranh B: cả gia đình kéo vali ở sân bay.' },
-          { n: 12, letters: ['A', 'B', 'C', 'D'], prompt: '我给你介绍几个新朋友。', promptPy: 'Wǒ gěi nǐ jièshào jǐ gè xīn péngyou.', answer: 'C',
+          { n: 12, letters: ['A', 'B', 'C', 'D'], prompt: '我给你介绍几个新朋友。', answer: 'C',
             vn: 'Tôi giới thiệu với bạn mấy người bạn mới. — Tranh C: mọi người bắt tay làm quen.' },
-          { n: 13, letters: ['A', 'B', 'C', 'D'], prompt: '天中，请你说一下这个字的意思。', promptPy: 'Tiānzhōng, qǐng nǐ shuō yíxià zhège zì de yìsi.', answer: 'A',
+          { n: 13, letters: ['A', 'B', 'C', 'D'], prompt: '天中，请你说一下这个字的意思。', answer: 'A',
             vn: 'Thiên Trung, em hãy nói nghĩa của chữ này. — Tranh A: đang viết chữ 福.' },
           { n: 14, part: 'Phần 2 · Chọn từ điền vào chỗ trống', bank: [
-            { key: 'A', text: '次', py: 'cì' },
-            { key: 'B', text: '懂', py: 'dǒng' },
-            { key: 'C', text: '给', py: 'gěi' },
-            { key: 'D', text: '不好意思', py: 'bù hǎoyìsi' },
-            { key: 'E', text: '完', py: 'wán' }
-          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '我是昨天（　）妈妈打的电话。', promptPy: 'Wǒ shì zuótiān (　) māma dǎ de diànhuà.', answer: 'C',
+            { key: 'A', text: '次' },
+            { key: 'B', text: '懂' },
+            { key: 'C', text: '给' },
+            { key: 'D', text: '不好意思' },
+            { key: 'E', text: '完' }
+          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '我是昨天（　）妈妈打的电话。', answer: 'C',
             vn: 'Tôi gọi điện cho mẹ vào hôm qua. — 给 + người + 打电话: gọi điện cho ai.' },
-          { n: 15, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '这已经是我第三（　）来西安旅游了。', promptPy: 'Zhè yǐjīng shì wǒ dì-sān (　) lái Xī\'ān lǚyóu le.', answer: 'A',
+          { n: 15, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '这已经是我第三（　）来西安旅游了。', answer: 'A',
             vn: 'Đây đã là lần thứ ba tôi đến Tây An du lịch. — 第三次: lần thứ ba.' },
-          { n: 16, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '女：这几个字的意思我都不（　）。\n男：我们去找老师问一下吧。', promptPy: 'Zhè jǐ gè zì de yìsi wǒ dōu bù (　). / Wǒmen qù zhǎo lǎoshī wèn yíxià ba.', answer: 'B',
+          { n: 16, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '女：这几个字的意思我都不（　）。\n男：我们去找老师问一下吧。', answer: 'B',
             vn: 'Nữ: Nghĩa của mấy chữ này mình đều không hiểu.\nNam: Chúng mình đi tìm thầy hỏi thử nhé. — 不懂: không hiểu.' },
-          { n: 17, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '男：（　），我家里有点儿事，今天不能去了。\n女：好的，那你就明天再来吧。', promptPy: '(　), wǒ jiā li yǒu diǎnr shì, jīntiān bù néng qù le. / Hǎo de, nà nǐ jiù míngtiān zài lái ba.', answer: 'D',
+          { n: 17, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '男：（　），我家里有点儿事，今天不能去了。\n女：好的，那你就明天再来吧。', answer: 'D',
             vn: 'Nam: Xin lỗi nhé, nhà tôi có chút việc, hôm nay không đi được rồi.\nNữ: Được, vậy mai anh hãy đến. — 不好意思: ngại quá / xin lỗi (khi từ chối).' },
           { n: 18, part: 'Phần 3 · Ghép câu hỏi với câu trả lời', bank: [
-            { key: 'A', text: '不是，我是来上学的。', py: 'Bú shì, wǒ shì lái shàngxué de.' },
-            { key: 'B', text: '不客气，有事就给我打电话。', py: 'Bú kèqi, yǒu shì jiù gěi wǒ dǎ diànhuà.' },
-            { key: 'C', text: '王老师，她说这儿的饺子非常好吃。', py: 'Wáng lǎoshī, tā shuō zhèr de jiǎozi fēicháng hǎochī.' },
-            { key: 'D', text: '我爸爸，他是中国人。', py: 'Wǒ bàba, tā shì Zhōngguó rén.' },
-            { key: 'E', text: '他出去了，一会儿就回来。', py: 'Tā chūqù le, yíhuìr jiù huílái.' }
-          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你是来旅游的吧？', promptPy: 'Nǐ shì lái lǚyóu de ba?', answer: 'A',
+            { key: 'A', text: '不是，我是来上学的。' },
+            { key: 'B', text: '不客气，有事就给我打电话。' },
+            { key: 'C', text: '王老师，她说这儿的饺子非常好吃。' },
+            { key: 'D', text: '我爸爸，他是中国人。' },
+            { key: 'E', text: '他出去了，一会儿就回来。' }
+          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你是来旅游的吧？', answer: 'A',
             vn: 'Bạn đến du lịch phải không? — A: Không, tôi đến để đi học.' },
-          { n: 19, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '是谁给你介绍的这家饭店？', promptPy: 'Shì shéi gěi nǐ jièshào de zhè jiā fàndiàn?', answer: 'C',
+          { n: 19, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '是谁给你介绍的这家饭店？', answer: 'C',
             vn: 'Ai đã giới thiệu nhà hàng này cho bạn vậy? — C: Cô Vương, cô ấy nói sủi cảo ở đây rất ngon.' },
-          { n: 20, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '谢谢你这几天都来帮忙。', promptPy: 'Xièxie nǐ zhè jǐ tiān dōu lái bāngmáng.', answer: 'B',
+          { n: 20, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '谢谢你这几天都来帮忙。', answer: 'B',
             vn: 'Cảm ơn bạn mấy hôm nay đều đến giúp. — B: Không có gì, có việc gì cứ gọi điện cho tôi.' },
-          { n: 21, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '是谁让你学中文的？', promptPy: 'Shì shéi ràng nǐ xué Zhōngwén de?', answer: 'D',
+          { n: 21, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '是谁让你学中文的？', answer: 'D',
             vn: 'Ai đã bảo bạn học tiếng Trung vậy? — D: Bố tôi, ông ấy là người Trung Quốc.' },
-          { n: 22, part: 'Phần 4 · Đọc đoạn văn, chọn đáp án đúng', prompt: '到了西安，朋友来接我们，还给我们介绍了一家饭店。我们开车去了那里，菜都很好吃。\n★朋友介绍了什么？',
-            promptPy: 'Dàole Xī\'ān, péngyou lái jiē wǒmen, hái gěi wǒmen jièshàole yì jiā fàndiàn. Wǒmen kāichē qùle nàlǐ, cài dōu hěn hǎochī. / Péngyou jièshàole shénme?', options: [
-            { key: 'A', text: '车', py: 'chē' },
-            { key: 'B', text: '饭店', py: 'fàndiàn' },
-            { key: 'C', text: '西安', py: 'Xī\'ān' }
+          { n: 22, part: 'Phần 4 · Đọc đoạn văn, chọn đáp án đúng', prompt: '到了西安，朋友来接我们，还给我们介绍了一家饭店。我们开车去了那里，菜都很好吃。\n★朋友介绍了什么？', options: [
+            { key: 'A', text: '车' },
+            { key: 'B', text: '饭店' },
+            { key: 'C', text: '西安' }
           ], answer: 'B', vn: 'Đến Tây An, bạn ra đón chúng tôi, còn giới thiệu cho chúng tôi một nhà hàng. Chúng tôi lái xe đến đó, món nào cũng ngon. — "介绍了一家饭店" → bạn giới thiệu nhà hàng.' },
-          { n: 23, prompt: '我在北京旅游的时候，一雪姐请我吃了烤鸭，还给我介绍了很多东西。现在，我们已经是好朋友了。\n★他在北京旅游时，一雪：',
-            promptPy: 'Wǒ zài Běijīng lǚyóu de shíhou, Yīxuě jiě qǐng wǒ chīle kǎoyā, hái gěi wǒ jièshàole hěn duō dōngxi. Xiànzài, wǒmen yǐjīng shì hǎo péngyou le. / Tā zài Běijīng lǚyóu shí, Yīxuě:', options: [
-            { key: 'A', text: '请他吃饭', py: 'qǐng tā chī fàn' },
-            { key: 'B', text: '开车接他', py: 'kāichē jiē tā' },
-            { key: 'C', text: '不在北京', py: 'bú zài Běijīng' }
+          { n: 23, prompt: '我在北京旅游的时候，一雪姐请我吃了烤鸭，还给我介绍了很多东西。现在，我们已经是好朋友了。\n★他在北京旅游时，一雪：', options: [
+            { key: 'A', text: '请他吃饭' },
+            { key: 'B', text: '开车接他' },
+            { key: 'C', text: '不在北京' }
           ], answer: 'A', vn: 'Khi tôi du lịch Bắc Kinh, chị Nhất Tuyết mời tôi ăn vịt quay, còn giới thiệu cho tôi rất nhiều thứ. Bây giờ chúng tôi đã là bạn thân. — "请我吃了烤鸭" → mời anh ấy ăn.' },
-          { n: 24, prompt: '我家在北京，我爸爸现在在上海工作，他让我和妈妈这个星期六坐火车去上海看他。爸爸说，他会接我们。\n★爸爸现在在哪儿工作？',
-            promptPy: 'Wǒ jiā zài Běijīng, wǒ bàba xiànzài zài Shànghǎi gōngzuò, tā ràng wǒ hé māma zhège Xīngqīliù zuò huǒchē qù Shànghǎi kàn tā. Bàba shuō, tā huì jiē wǒmen. / Bàba xiànzài zài nǎr gōngzuò?', options: [
-            { key: 'A', text: '北京', py: 'Běijīng' },
-            { key: 'B', text: '上海', py: 'Shànghǎi' },
-            { key: 'C', text: '西安', py: 'Xī\'ān' }
+          { n: 24, prompt: '我家在北京，我爸爸现在在上海工作，他让我和妈妈这个星期六坐火车去上海看他。爸爸说，他会接我们。\n★爸爸现在在哪儿工作？', options: [
+            { key: 'A', text: '北京' },
+            { key: 'B', text: '上海' },
+            { key: 'C', text: '西安' }
           ], answer: 'B', vn: 'Nhà tôi ở Bắc Kinh, bố tôi hiện làm việc ở Thượng Hải, bố bảo tôi và mẹ thứ Bảy này đi tàu hỏa đến Thượng Hải thăm bố. Bố nói sẽ ra đón chúng tôi. — "爸爸现在在上海工作" → Thượng Hải.' }
         ],
         writing: [
@@ -1856,9 +1853,9 @@ var wbData = {
           ], letters: ['A', 'B', 'C', 'D'], prompt: '不（董）— bù dǒng', answer: 'C', vn: '懂 = 忄 + 董 → 不懂 (không hiểu)' },
           { n: 26, letters: ['A', 'B', 'C', 'D'], prompt: '（合）他 — gěi tā', answer: 'B', vn: '给 = 纟 + 合 → 给他 (cho anh ấy)' },
           { n: 27, letters: ['A', 'B', 'C', 'D'], prompt: '两（欠）— liǎng cì', answer: 'A', vn: '次 = 冫 + 欠 → 两次 (hai lần)' },
-          { n: 28, part: 'Viết · Phần 2 · Viết chữ Hán theo pinyin', input: true, prompt: '他（ yǒu ）时候不吃晚饭。', promptPy: 'Tā yǒu shíhou bù chī wǎnfàn.', answer: '有', vn: 'Có lúc anh ấy không ăn tối. — 有时候: có lúc, thỉnh thoảng.' },
-          { n: 29, input: true, prompt: '我现在（ yǐ ）经到北京了。', promptPy: 'Wǒ xiànzài yǐjīng dào Běijīng le.', answer: '已', vn: 'Bây giờ tôi đã đến Bắc Kinh rồi. — 已经: đã.' },
-          { n: 30, input: true, prompt: '这个不太贵，（ nà ）我们买这个吧。', promptPy: 'Zhège bú tài guì, nà wǒmen mǎi zhège ba.', answer: '那', vn: 'Cái này không đắt lắm, vậy chúng ta mua cái này nhé. — 那: vậy thì.' }
+          { n: 28, part: 'Viết · Phần 2 · Viết chữ Hán theo pinyin', input: true, prompt: '他（ yǒu ）时候不吃晚饭。', answer: '有', vn: 'Có lúc anh ấy không ăn tối. — 有时候: có lúc, thỉnh thoảng.' },
+          { n: 29, input: true, prompt: '我现在（ yǐ ）经到北京了。', answer: '已', vn: 'Bây giờ tôi đã đến Bắc Kinh rồi. — 已经: đã.' },
+          { n: 30, input: true, prompt: '这个不太贵，（ nà ）我们买这个吧。', answer: '那', vn: 'Cái này không đắt lắm, vậy chúng ta mua cái này nhé. — 那: vậy thì.' }
         ] }
     ]}
   ]

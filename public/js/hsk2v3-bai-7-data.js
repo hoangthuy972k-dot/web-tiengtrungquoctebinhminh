@@ -1657,20 +1657,20 @@ var wbData = {
   sections: [
     { title: 'Hán tự & từ mới', blocks: [
       { type: 'table', caption: 'Bộ thủ (偏旁) — tên gọi và chữ ví dụ', headers: ['Tên gọi', 'Bộ thủ', 'Chữ ví dụ'], rows: [
-        ['足字旁 zúzìpáng', '⻊', '跑 pǎo (chạy) · 踢 tī (đá)'],
-        ['双人旁 shuāngrénpáng', '彳', '往 wǎng (về phía, hướng) · 很 hěn (rất)']
+        ['足字旁', '⻊', '跑 (chạy) · 踢 (đá)'],
+        ['双人旁', '彳', '往 (về phía, hướng) · 很 (rất)']
       ] },
       { type: 'table', caption: 'Tập viết (摹写) — chữ → từ → câu', headers: ['Chữ', 'Từ', 'Câu'], rows: [
-        ['跑 pǎo', '跑步 pǎobù — chạy bộ', '他跑步跑得很快。— Anh ấy chạy bộ rất nhanh.'],
-        ['踢 tī', '踢球 tīqiú — đá bóng', '他一到星期天就去踢球。— Cứ đến Chủ nhật là anh ấy đi đá bóng.'],
-        ['往 wǎng', '往外 wǎng wài — ra phía ngoài', '你怎么一下课就往外跑？— Sao vừa tan học là bạn đã chạy ra ngoài thế?'],
-        ['很 hěn', '很好 hěn hǎo — rất tốt', '我写汉字写得很好。— Mình viết chữ Hán rất đẹp.']
+        ['跑', '跑步 — chạy bộ', '他跑步跑得很快。— Anh ấy chạy bộ rất nhanh.'],
+        ['踢', '踢球 — đá bóng', '他一到星期天就去踢球。— Cứ đến Chủ nhật là anh ấy đi đá bóng.'],
+        ['往', '往外 — ra phía ngoài', '你怎么一下课就往外跑？— Sao vừa tan học là bạn đã chạy ra ngoài thế?'],
+        ['很', '很好 — rất tốt', '我写汉字写得很好。— Mình viết chữ Hán rất đẹp.']
       ],
         note: 'Luyện viết tay từng nét theo mẫu trong sách (bấm vào chữ ở phần Từ vựng để xem nét viết).' },
       { type: 'table', caption: 'Từ ghép mới (学一学)', headers: ['Từ đã biết', 'Từ mới', 'Nghĩa'], rows: [
-        ['鱼 · 肉', '鱼肉 yúròu', 'thịt cá'],
-        ['运动 · 衣服', '运动服 yùndòngfú', 'quần áo thể thao'],
-        ['画 · 老师', '画师 huàshī', 'họa sĩ, thợ vẽ']
+        ['鱼 · 肉', '鱼肉', 'thịt cá'],
+        ['运动 · 衣服', '运动服', 'quần áo thể thao'],
+        ['画 · 老师', '画师', 'họa sĩ, thợ vẽ']
       ] },
       { type: 'blankdrill', caption: 'Điền từ mới vào chỗ trống (做一做)', hint: 'Gõ từ mới (chữ Hán) vào ô trống rồi bấm "Xem đáp án" để đối chiếu.', maxlength: 4,
         items: [
@@ -1712,27 +1712,27 @@ var wbData = {
           { n: 6, letters: ['A', 'B', 'C', 'D'], answer: 'A',
             script: '女：你是从什么时候开始学画画的？\n男：小学，那个时候每天都有画画课。', vn: 'Nữ: Bạn bắt đầu học vẽ từ khi nào?\nNam: Từ tiểu học, hồi đó ngày nào cũng có tiết vẽ. (Tranh A: đang vẽ tranh)' },
           { n: 7, part: 'Phần 3 · Nghe hội thoại, chọn đáp án đúng', options: [
-            { key: 'A', text: '打球', py: 'dǎ qiú' },
-            { key: 'B', text: '回家', py: 'huí jiā' },
-            { key: 'C', text: '做饭', py: 'zuò fàn' }
+            { key: 'A', text: '打球' },
+            { key: 'B', text: '回家' },
+            { key: 'C', text: '做饭' }
           ], answer: 'B',
             script: '女：你今天怎么回来这么早？\n男：我没去打球，一下班就回来了。\n问：今天男的下班后做什么了？', vn: 'Nữ: Sao hôm nay anh về sớm thế?\nNam: Anh không đi chơi bóng, vừa tan làm là về luôn.\nHỏi: Hôm nay sau khi tan làm người nam đã làm gì? → Về nhà.' },
           { n: 8, options: [
-            { key: 'A', text: '很好', py: 'hěn hǎo' },
-            { key: 'B', text: '不错', py: 'búcuò' },
-            { key: 'C', text: '不太好', py: 'bú tài hǎo' }
+            { key: 'A', text: '很好' },
+            { key: 'B', text: '不错' },
+            { key: 'C', text: '不太好' }
           ], answer: 'A',
             script: '男：你唱歌唱得怎么样？\n女：不太好。家月跟我说，你唱得很好。\n问：家月觉得男的唱歌怎么样？', vn: 'Nam: Bạn hát thế nào?\nNữ: Không hay lắm. Gia Nguyệt nói với mình là bạn hát rất hay.\nHỏi: Gia Nguyệt thấy người nam hát thế nào? → Rất hay ("不太好" là nữ tự nói về mình).' },
           { n: 9, options: [
-            { key: 'A', text: '很好', py: 'hěn hǎo' },
-            { key: 'B', text: '不好', py: 'bù hǎo' },
-            { key: 'C', text: '不太好', py: 'bú tài hǎo' }
+            { key: 'A', text: '很好' },
+            { key: 'B', text: '不好' },
+            { key: 'C', text: '不太好' }
           ], answer: 'A',
             script: '女：一到星期天，你就往外跑。\n男：我跟同学说好了一起踢球。\n女：他们踢得怎么样？\n男：他们踢得很好，我踢得也很好。\n问：男的觉得自己踢得怎么样？', vn: 'Nữ: Cứ đến Chủ nhật là anh lại chạy ra ngoài.\nNam: Anh hẹn với bạn học cùng đá bóng rồi.\nNữ: Họ đá thế nào?\nNam: Họ đá rất giỏi, anh đá cũng rất giỏi.\nHỏi: Người nam thấy mình đá thế nào? → Rất giỏi.' },
           { n: 10, options: [
-            { key: 'A', text: '要出去旅游', py: 'yào chūqù lǚyóu' },
-            { key: 'B', text: '要去接爸妈', py: 'yào qù jiē bàmā' },
-            { key: 'C', text: '这几天不高兴', py: 'zhè jǐ tiān bù gāoxìng' }
+            { key: 'A', text: '要出去旅游' },
+            { key: 'B', text: '要去接爸妈' },
+            { key: 'C', text: '这几天不高兴' }
           ], answer: 'B',
             script: '男：你一回来就不高兴，有什么事吗？\n女：明天我想休息，但还有很多工作没做完。\n男：明天不是星期天，你为什么要休息啊？\n女：因为我爸妈旅游回来，我想去接他们。\n问：女的为什么想休息？', vn: 'Nam: Em vừa về đã không vui, có chuyện gì à?\nNữ: Mai em muốn nghỉ, nhưng còn nhiều việc chưa làm xong.\nNam: Mai đâu phải Chủ nhật, sao em lại muốn nghỉ?\nNữ: Vì bố mẹ em đi du lịch về, em muốn đi đón họ.\nHỏi: Vì sao cô gái muốn nghỉ? → Muốn đi đón bố mẹ (người đi du lịch là bố mẹ, không phải cô).' }
         ],
@@ -1742,56 +1742,56 @@ var wbData = {
             { key: 'B', img: '/images/hsk2v3-bai-7-wb/q11to13_b.jpg' },
             { key: 'C', img: '/images/hsk2v3-bai-7-wb/q11to13_c.jpg' },
             { key: 'D', img: '/images/hsk2v3-bai-7-wb/q11to13_d.jpg' }
-          ], letters: ['A', 'B', 'C', 'D'], prompt: '他字写得很漂亮。', promptPy: 'Tā zì xiě de hěn piàoliang.', answer: 'C',
+          ], letters: ['A', 'B', 'C', 'D'], prompt: '他字写得很漂亮。', answer: 'C',
             vn: 'Anh ấy viết chữ rất đẹp. — tranh C: chữ "茶" viết bằng bút lông.' },
-          { n: 12, letters: ['A', 'B', 'C', 'D'], prompt: '孩子们玩得很高兴。', promptPy: 'Háizimen wán de hěn gāoxìng.', answer: 'A',
+          { n: 12, letters: ['A', 'B', 'C', 'D'], prompt: '孩子们玩得很高兴。', answer: 'A',
             vn: 'Bọn trẻ chơi rất vui. — tranh A: các em nhỏ đội mũ, phóng máy bay giấy.' },
-          { n: 13, letters: ['A', 'B', 'C', 'D'], prompt: '她一有时间就去旅游。', promptPy: 'Tā yì yǒu shíjiān jiù qù lǚyóu.', answer: 'B',
+          { n: 13, letters: ['A', 'B', 'C', 'D'], prompt: '她一有时间就去旅游。', answer: 'B',
             vn: 'Cứ có thời gian là cô ấy đi du lịch. — tranh B: cô gái đeo ba lô chụp ảnh trước công trình cổ.' },
           { n: 14, part: 'Phần 2 · Chọn từ điền vào chỗ trống', bank: [
-            { key: 'A', text: '往', py: 'wǎng' },
-            { key: 'B', text: '爱好', py: 'àihào' },
-            { key: 'C', text: '运动', py: 'yùndòng' },
-            { key: 'D', text: '跑步', py: 'pǎobù' },
-            { key: 'E', text: '完', py: 'wán' }
-          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你（　）前走，那边有一个公交站。', promptPy: 'Nǐ (　) qián zǒu, nàbiān yǒu yí gè gōngjiāozhàn.', answer: 'A',
+            { key: 'A', text: '往' },
+            { key: 'B', text: '爱好' },
+            { key: 'C', text: '运动' },
+            { key: 'D', text: '跑步' },
+            { key: 'E', text: '完' }
+          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你（　）前走，那边有一个公交站。', answer: 'A',
             vn: 'Bạn đi thẳng về phía trước, đằng kia có một bến xe buýt. — 往 + phương hướng + 走: đi về phía…' },
-          { n: 15, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '爷爷、奶奶的（　）是看书、画画和写字。', promptPy: 'Yéye, nǎinai de (　) shì kàn shū, huà huà hé xiě zì.', answer: 'B',
+          { n: 15, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '爷爷、奶奶的（　）是看书、画画和写字。', answer: 'B',
             vn: 'Sở thích của ông bà là đọc sách, vẽ tranh và viết chữ. — "…的（ ）是 + các hoạt động" → 爱好.' },
-          { n: 16, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '女：你的爱好是什么？\n男：我喜欢运动，游泳、（　）什么的。', promptPy: 'Nǐ de àihào shì shénme? / Wǒ xǐhuan yùndòng, yóuyǒng, (　) shénmede.', answer: 'D',
+          { n: 16, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '女：你的爱好是什么？\n男：我喜欢运动，游泳、（　）什么的。', answer: 'D',
             vn: 'Nữ: Sở thích của bạn là gì? Nam: Mình thích thể thao, bơi, chạy bộ các thứ. — liệt kê môn thể thao cùng loại với 游泳 → 跑步.' },
-          { n: 17, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '男：我们叫小李一起去打篮球吧？\n女：他不爱（　），还是我们去打吧。', promptPy: 'Wǒmen jiào Xiǎo Lǐ yìqǐ qù dǎ lánqiú ba? / Tā bú ài (　), háishi wǒmen qù dǎ ba.', answer: 'C',
+          { n: 17, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '男：我们叫小李一起去打篮球吧？\n女：他不爱（　），还是我们去打吧。', answer: 'C',
             vn: 'Nam: Mình rủ Tiểu Lý cùng đi chơi bóng rổ nhé? Nữ: Cậu ấy không thích vận động, thôi hai đứa mình đi chơi thôi. — 不爱运动: không thích vận động.' },
           { n: 18, part: 'Phần 3 · Ghép câu hỏi với câu trả lời', bank: [
-            { key: 'A', text: '鱼做得很好，这两个菜也可以。', py: 'Yú zuò de hěn hǎo, zhè liǎng gè cài yě kěyǐ.' },
-            { key: 'B', text: '会，但踢得不太好。', py: 'Huì, dàn tī de bú tài hǎo.' },
-            { key: 'C', text: '那我们出去运动运动吧。', py: 'Nà wǒmen chūqù yùndòng yùndòng ba.' },
-            { key: 'D', text: '是，我一下班就过来。', py: 'Shì, wǒ yí xiàbān jiù guòlái.' },
-            { key: 'E', text: '他出去了，一会儿就回来。', py: 'Tā chūqù le, yíhuìr jiù huílái.' }
-          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你会踢球吗？', promptPy: 'Nǐ huì tī qiú ma?', answer: 'B',
+            { key: 'A', text: '鱼做得很好，这两个菜也可以。' },
+            { key: 'B', text: '会，但踢得不太好。' },
+            { key: 'C', text: '那我们出去运动运动吧。' },
+            { key: 'D', text: '是，我一下班就过来。' },
+            { key: 'E', text: '他出去了，一会儿就回来。' }
+          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你会踢球吗？', answer: 'B',
             vn: 'Bạn biết đá bóng không? — B: Biết, nhưng đá không giỏi lắm.' },
-          { n: 19, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '今天晚上的菜怎么样？', promptPy: 'Jīntiān wǎnshang de cài zěnmeyàng?', answer: 'A',
+          { n: 19, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '今天晚上的菜怎么样？', answer: 'A',
             vn: 'Món ăn tối nay thế nào? — A: Cá nấu rất ngon, hai món này cũng được.' },
-          { n: 20, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你每天都来这儿游泳吗？', promptPy: 'Nǐ měi tiān dōu lái zhèr yóuyǒng ma?', answer: 'D',
+          { n: 20, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你每天都来这儿游泳吗？', answer: 'D',
             vn: 'Ngày nào bạn cũng đến đây bơi à? — D: Đúng vậy, mình vừa tan làm là qua đây.' },
-          { n: 21, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你们不要在家看电视、玩手机了。', promptPy: 'Nǐmen búyào zài jiā kàn diànshì, wán shǒujī le.', answer: 'C',
+          { n: 21, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你们不要在家看电视、玩手机了。', answer: 'C',
             vn: 'Các con đừng ở nhà xem ti vi, chơi điện thoại nữa. — C: Vậy chúng con ra ngoài vận động một chút ạ.' },
-          { n: 22, part: 'Phần 4 · Đọc đoạn văn, chọn đáp án đúng', prompt: '朋友们都知道我是学中文的，他们问我中文说得怎么样，我会跟他们说不太好，但我的中文老师觉得我说得不错。\n★老师觉得他的中文怎么样？', promptPy: 'Péngyoumen dōu zhīdào wǒ shì xué Zhōngwén de, tāmen wèn wǒ Zhōngwén shuō de zěnmeyàng, wǒ huì gēn tāmen shuō bú tài hǎo, dàn wǒ de Zhōngwén lǎoshī juéde wǒ shuō de búcuò.\nLǎoshī juéde tā de Zhōngwén zěnmeyàng?', options: [
-            { key: 'A', text: '不错', py: 'búcuò' },
-            { key: 'B', text: '不好', py: 'bù hǎo' },
-            { key: 'C', text: '不太好', py: 'bú tài hǎo' }
+          { n: 22, part: 'Phần 4 · Đọc đoạn văn, chọn đáp án đúng', prompt: '朋友们都知道我是学中文的，他们问我中文说得怎么样，我会跟他们说不太好，但我的中文老师觉得我说得不错。\n★老师觉得他的中文怎么样？', options: [
+            { key: 'A', text: '不错' },
+            { key: 'B', text: '不好' },
+            { key: 'C', text: '不太好' }
           ], answer: 'A',
             vn: 'Bạn bè đều biết tôi học tiếng Trung, họ hỏi tôi nói tiếng Trung thế nào, tôi sẽ nói với họ là không giỏi lắm, nhưng cô giáo tiếng Trung thấy tôi nói khá tốt. — "不太好" là tôi tự khiêm tốn; cô giáo thấy 不错 → A.' },
-          { n: 23, prompt: '我喜欢旅游，一有时间就往外跑。我去过泰国、加拿大，但我还没去过中国。今年我想去中国看一看。\n★他想去哪儿旅游？', promptPy: 'Wǒ xǐhuan lǚyóu, yì yǒu shíjiān jiù wǎng wài pǎo. Wǒ qùguo Tàiguó, Jiānádà, dàn wǒ hái méi qùguo Zhōngguó. Jīnnián wǒ xiǎng qù Zhōngguó kàn yi kàn.\nTā xiǎng qù nǎr lǚyóu?', options: [
-            { key: 'A', text: '泰国', py: 'Tàiguó' },
-            { key: 'B', text: '中国', py: 'Zhōngguó' },
-            { key: 'C', text: '加拿大', py: 'Jiānádà' }
+          { n: 23, prompt: '我喜欢旅游，一有时间就往外跑。我去过泰国、加拿大，但我还没去过中国。今年我想去中国看一看。\n★他想去哪儿旅游？', options: [
+            { key: 'A', text: '泰国' },
+            { key: 'B', text: '中国' },
+            { key: 'C', text: '加拿大' }
           ], answer: 'B',
             vn: 'Tôi thích du lịch, cứ có thời gian là đi ra ngoài. Tôi đã đến Thái Lan, Canada, nhưng chưa đến Trung Quốc. Năm nay tôi muốn đến Trung Quốc xem thử. — Thái Lan, Canada là nơi đã đi rồi; nơi muốn đi là Trung Quốc → B.' },
-          { n: 24, prompt: '今天是奶奶的80岁生日。爸爸、妈妈从早上起床就开始准备饭菜，有鱼、肉什么的，妈妈还做了长长的生日面。奶奶说这个生日过得很高兴。\n★生日面是谁做的？', promptPy: 'Jīntiān shì nǎinai de 80 suì shēngrì. Bàba, māma cóng zǎoshang qǐchuáng jiù kāishǐ zhǔnbèi fàncài, yǒu yú, ròu shénmede, māma hái zuòle chángcháng de shēngrìmiàn. Nǎinai shuō zhège shēngrì guò de hěn gāoxìng.\nShēngrìmiàn shì shéi zuò de?', options: [
-            { key: 'A', text: '爸爸', py: 'bàba' },
-            { key: 'B', text: '爷爷', py: 'yéye' },
-            { key: 'C', text: '妈妈', py: 'māma' }
+          { n: 24, prompt: '今天是奶奶的80岁生日。爸爸、妈妈从早上起床就开始准备饭菜，有鱼、肉什么的，妈妈还做了长长的生日面。奶奶说这个生日过得很高兴。\n★生日面是谁做的？', options: [
+            { key: 'A', text: '爸爸' },
+            { key: 'B', text: '爷爷' },
+            { key: 'C', text: '妈妈' }
           ], answer: 'C',
             vn: 'Hôm nay là sinh nhật 80 tuổi của bà. Bố mẹ từ sáng ngủ dậy đã bắt đầu chuẩn bị cơm nước, có cá, thịt các thứ, mẹ còn nấu một bát mì trường thọ thật dài. Bà nói sinh nhật năm nay rất vui. — "妈妈还做了长长的生日面" → C.' }
         ],
@@ -1801,9 +1801,9 @@ var wbData = {
           ], letters: ['A', 'B', 'C', 'D'], prompt: '（主）前 — wǎng qián', answer: 'A', vn: '往 = 彳 + 主 → 往前 (về phía trước)' },
           { n: 26, letters: ['A', 'B', 'C', 'D'], prompt: '（包）步 — pǎo bù', answer: 'C', vn: '跑 = ⻊ + 包 → 跑步 (chạy bộ; bộ túc ⻊ liên quan đến chân)' },
           { n: 27, letters: ['A', 'B', 'C', 'D'], prompt: '篮（求）— lán qiú', answer: 'B', vn: '球 = ⺩ + 求 → 篮球 (bóng rổ; bộ vương ⺩ đứng bên trái)' },
-          { n: 28, part: 'Viết · Phần 2 · Viết chữ Hán theo pinyin', input: true, prompt: '你汉字写（ de ）怎么样？', promptPy: 'Nǐ Hànzì xiě de zěnmeyàng?', answer: '得', vn: 'Bạn viết chữ Hán thế nào? — V + 得 + 怎么样: hỏi mức độ của hành động.' },
-          { n: 29, input: true, prompt: '我爸爸的（ ài ）好是游泳。', promptPy: 'Wǒ bàba de àihào shì yóuyǒng.', answer: '爱', vn: 'Sở thích của bố tôi là bơi lội. — 爱好: sở thích.' },
-          { n: 30, input: true, prompt: '我现在在足球场（ tī ）球呢。', promptPy: 'Wǒ xiànzài zài zúqiúchǎng tī qiú ne.', answer: '踢', vn: 'Bây giờ tôi đang đá bóng ở sân bóng đá. — 踢球 (bộ túc ⻊).' }
+          { n: 28, part: 'Viết · Phần 2 · Viết chữ Hán theo pinyin', input: true, prompt: '你汉字写（ de ）怎么样？', answer: '得', vn: 'Bạn viết chữ Hán thế nào? — V + 得 + 怎么样: hỏi mức độ của hành động.' },
+          { n: 29, input: true, prompt: '我爸爸的（ ài ）好是游泳。', answer: '爱', vn: 'Sở thích của bố tôi là bơi lội. — 爱好: sở thích.' },
+          { n: 30, input: true, prompt: '我现在在足球场（ tī ）球呢。', answer: '踢', vn: 'Bây giờ tôi đang đá bóng ở sân bóng đá. — 踢球 (bộ túc ⻊).' }
         ] }
     ]}
   ]

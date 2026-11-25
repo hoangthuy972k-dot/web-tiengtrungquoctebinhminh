@@ -2306,9 +2306,9 @@ var wbData = {
           ] },
         { type: 'table', caption: 'Chữ Hán (汉字) — Cấu tạo và bút thuận (tiếp)',
           rows: [
-            ['Nét mới', '横钩 héngɡōu (ngang-móc), 竖钩 shùɡōu (sổ-móc), 斜钩 xiéɡōu (xiên-móc), 弯钩 wānɡōu (cong-móc), 卧钩 wòɡōu (nằm-móc)'],
+            ['Nét mới', '横钩 (ngang-móc), 竖钩 (sổ-móc), 斜钩 (xiên-móc), 弯钩 (cong-móc), 卧钩 (nằm-móc)'],
             ['Quy tắc bút thuận', '先外后里，再封口 (ngoài trước trong sau, khép miệng cuối cùng) — ví dụ: 日'],
-            ['Ví dụ luyện viết', '买 (mǎi) → 买卖 (mǎimai); 小 (xiǎo) → 小学 (xiǎoxué); 飞 (fēi) → 飞机 (fēijī); 狗 (gǒu) → 小狗 (xiǎo gǒu); 怎 (zěn) → 怎么样 (zěnmeyàng); 国 (guó) → 中国 (Zhōngguó)']
+            ['Ví dụ luyện viết', '买 → 买卖; 小 → 小学; 飞 → 飞机; 狗 → 小狗; 怎 → 怎么样; 国 → 中国']
           ],
           note: 'Phần luyện viết tay theo từng nét cần thực hành trực tiếp trên giấy/vở theo mẫu trong sách.' }
       ]
@@ -2335,14 +2335,14 @@ var wbData = {
               {key:'C', img:'/images/hsk1v3-bai-11-wb/q3c.jpg'}
             ], answer: 'C' },
             { n: 4, options: [
-              {key:'A', text:'不吃午饭', py:'bù chī wǔfàn'},
-              {key:'B', text:'在外边玩', py:'zài wàibian wán'},
-              {key:'C', text:'水果便宜', py:'shuǐguǒ piányi'}
+              {key:'A', text:'不吃午饭'},
+              {key:'B', text:'在外边玩'},
+              {key:'C', text:'水果便宜'}
             ], answer: 'B' },
             { n: 5, options: [
-              {key:'A', text:'能到', py:'néng dào'},
-              {key:'B', text:'想去呢', py:'xiǎng qù ne'},
-              {key:'C', text:'没到呢', py:'méi dào ne'}
+              {key:'A', text:'能到'},
+              {key:'B', text:'想去呢'},
+              {key:'C', text:'没到呢'}
             ], answer: 'C' },
             { n: 6, options: [
               {key:'A', img:'/images/hsk1v3-bai-11-wb/q6to8_a.jpg'},
@@ -2363,72 +2363,72 @@ var wbData = {
               {key:'D', img:'/images/hsk1v3-bai-11-wb/q6to8_d.jpg'}
             ], answer: 'B' },
             { n: 9, options: [
-              {key:'A', text:'超市', py:'chāoshì'},
-              {key:'B', text:'外边', py:'wàibian'},
-              {key:'C', text:'房间里', py:'fángjiān li'}
+              {key:'A', text:'超市'},
+              {key:'B', text:'外边'},
+              {key:'C', text:'房间里'}
             ], answer: 'B' },
             { n: 10, options: [
-              {key:'A', text:'学校后边', py:'xuéxiào hòubian'},
-              {key:'B', text:'超市前边', py:'chāoshì qiánbian'},
-              {key:'C', text:'超市后边', py:'chāoshì hòubian'}
+              {key:'A', text:'学校后边'},
+              {key:'B', text:'超市前边'},
+              {key:'C', text:'超市后边'}
             ], answer: 'C' }
           ],
           reading: [
-            { n: 11, prompt: '妈妈正在做饭呢。', promptPy: 'Māma zhèngzài zuò fàn ne.', options: [
+            { n: 11, prompt: '妈妈正在做饭呢。', options: [
               {key:'A', img:'/images/hsk1v3-bai-11-wb/q11to13_a.jpg'},
               {key:'B', img:'/images/hsk1v3-bai-11-wb/q11to13_b.jpg'},
               {key:'C', img:'/images/hsk1v3-bai-11-wb/q11to13_c.jpg'},
               {key:'D', img:'/images/hsk1v3-bai-11-wb/q11to13_d.jpg'}
             ], answer: 'C' },
-            { n: 12, prompt: '你今天不想去学校吗？', promptPy: 'Nǐ jīntiān bù xiǎng qù xuéxiào ma?', options: [
+            { n: 12, prompt: '你今天不想去学校吗？', options: [
               {key:'A', img:'/images/hsk1v3-bai-11-wb/q11to13_a.jpg'},
               {key:'B', img:'/images/hsk1v3-bai-11-wb/q11to13_b.jpg'},
               {key:'C', img:'/images/hsk1v3-bai-11-wb/q11to13_c.jpg'},
               {key:'D', img:'/images/hsk1v3-bai-11-wb/q11to13_d.jpg'}
             ], answer: 'B' },
-            { n: 13, prompt: '我和朋友们在外边玩呢。', promptPy: 'Wǒ hé péngyoumen zài wàibian wán ne.', options: [
+            { n: 13, prompt: '我和朋友们在外边玩呢。', options: [
               {key:'A', img:'/images/hsk1v3-bai-11-wb/q11to13_a.jpg'},
               {key:'B', img:'/images/hsk1v3-bai-11-wb/q11to13_b.jpg'},
               {key:'C', img:'/images/hsk1v3-bai-11-wb/q11to13_c.jpg'},
               {key:'D', img:'/images/hsk1v3-bai-11-wb/q11to13_d.jpg'}
             ], answer: 'D' },
-            { n: 14, prompt: '你开车去吗？', promptPy: 'Nǐ kāichē qù ma?', options: [
-              {key:'A', text:'不，我坐出租车。', py:'Bù, wǒ zuò chūzūchē.'},
-              {key:'B', text:'非常忙。', py:'Fēicháng máng.'},
-              {key:'C', text:'没有，我在开车呢。', py:'Méiyǒu, wǒ zài kāichē ne.'},
-              {key:'D', text:'好的，谢谢！', py:'Hǎo de, xièxie!'}
+            { n: 14, prompt: '你开车去吗？', options: [
+              {key:'A', text:'不，我坐出租车。'},
+              {key:'B', text:'非常忙。'},
+              {key:'C', text:'没有，我在开车呢。'},
+              {key:'D', text:'好的，谢谢！'}
             ], answer: 'A' },
-            { n: 15, prompt: '你们学习忙不忙？', promptPy: 'Nǐmen xuéxí máng bu máng?', options: [
-              {key:'A', text:'不，我坐出租车。', py:'Bù, wǒ zuò chūzūchē.'},
-              {key:'B', text:'非常忙。', py:'Fēicháng máng.'},
-              {key:'C', text:'没有，我在开车呢。', py:'Méiyǒu, wǒ zài kāichē ne.'},
-              {key:'D', text:'好的，谢谢！', py:'Hǎo de, xièxie!'}
+            { n: 15, prompt: '你们学习忙不忙？', options: [
+              {key:'A', text:'不，我坐出租车。'},
+              {key:'B', text:'非常忙。'},
+              {key:'C', text:'没有，我在开车呢。'},
+              {key:'D', text:'好的，谢谢！'}
             ], answer: 'B' },
-            { n: 16, prompt: '你在吃午饭吗？', promptPy: 'Nǐ zài chī wǔfàn ma?', options: [
-              {key:'A', text:'不，我坐出租车。', py:'Bù, wǒ zuò chūzūchē.'},
-              {key:'B', text:'非常忙。', py:'Fēicháng máng.'},
-              {key:'C', text:'没有，我在开车呢。', py:'Méiyǒu, wǒ zài kāichē ne.'},
-              {key:'D', text:'好的，谢谢！', py:'Hǎo de, xièxie!'}
+            { n: 16, prompt: '你在吃午饭吗？', options: [
+              {key:'A', text:'不，我坐出租车。'},
+              {key:'B', text:'非常忙。'},
+              {key:'C', text:'没有，我在开车呢。'},
+              {key:'D', text:'好的，谢谢！'}
             ], answer: 'C' },
-            { n: 17, prompt: '弟弟没起床，还在（　）呢。', promptPy: 'Dìdi méi qǐchuáng, hái zài ( ) ne.', options: [
-              {key:'A', text:'找', py:'zhǎo'},
-              {key:'B', text:'睡觉', py:'shuìjiào'},
-              {key:'C', text:'名字', py:'míngzi'}
+            { n: 17, prompt: '弟弟没起床，还在（　）呢。', options: [
+              {key:'A', text:'找'},
+              {key:'B', text:'睡觉'},
+              {key:'C', text:'名字'}
             ], answer: 'B' },
-            { n: 18, prompt: '男：喂，你到没到饭店呢？\n女：没到呢，我正在（　）饭店在哪里呢。', promptPy: 'Wèi, nǐ dào méi dào fàndiàn ne? / Méi dào ne, wǒ zhèngzài ( ) fàndiàn zài nǎlǐ ne.', options: [
-              {key:'A', text:'找', py:'zhǎo'},
-              {key:'B', text:'睡觉', py:'shuìjiào'},
-              {key:'C', text:'名字', py:'míngzi'}
+            { n: 18, prompt: '男：喂，你到没到饭店呢？\n女：没到呢，我正在（　）饭店在哪里呢。', options: [
+              {key:'A', text:'找'},
+              {key:'B', text:'睡觉'},
+              {key:'C', text:'名字'}
             ], answer: 'A' },
-            { n: 19, prompt: '我姐姐今年20岁，正在读大学呢，她学医。\n★说话人的姐姐是：', promptPy: 'Wǒ jiějie jīnnián 20 suì, zhèngzài dú dàxué ne, tā xué yī.', options: [
-              {key:'A', text:'老师', py:'lǎoshī'},
-              {key:'B', text:'医生', py:'yīshēng'},
-              {key:'C', text:'大学生', py:'dàxuéshēng'}
+            { n: 19, prompt: '我姐姐今年20岁，正在读大学呢，她学医。\n★说话人的姐姐是：', options: [
+              {key:'A', text:'老师'},
+              {key:'B', text:'医生'},
+              {key:'C', text:'大学生'}
             ], answer: 'C' },
-            { n: 20, prompt: '我明天有事，要去学校找老师，不知道老师在不在。\n★说话人明天要去学校见：', promptPy: 'Wǒ míngtiān yǒu shì, yào qù xuéxiào zhǎo lǎoshī, bù zhīdào lǎoshī zài bu zài.', options: [
-              {key:'A', text:'朋友', py:'péngyou'},
-              {key:'B', text:'学生', py:'xuéshēng'},
-              {key:'C', text:'老师', py:'lǎoshī'}
+            { n: 20, prompt: '我明天有事，要去学校找老师，不知道老师在不在。\n★说话人明天要去学校见：', options: [
+              {key:'A', text:'朋友'},
+              {key:'B', text:'学生'},
+              {key:'C', text:'老师'}
             ], answer: 'C' }
           ]
         }

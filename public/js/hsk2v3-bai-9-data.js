@@ -1503,20 +1503,20 @@ var wbData = {
   sections: [
     { title: 'Hán tự & từ mới', blocks: [
       { type: 'table', caption: 'Bộ thủ (偏旁) — tên gọi và chữ ví dụ', headers: ['Tên gọi', 'Bộ thủ', 'Chữ ví dụ'], rows: [
-        ['木字旁 mùzìpáng', '木', '校 xiào (trường học) · 样 yàng (kiểu, dáng)'],
-        ['口字旁 kǒuzìpáng', '口', '吃 chī (ăn) · 喝 hē (uống)']
+        ['木字旁', '木', '校 (trường học) · 样 (kiểu, dáng)'],
+        ['口字旁', '口', '吃 (ăn) · 喝 (uống)']
       ] },
       { type: 'table', caption: 'Tập viết (摹写) — chữ → từ → câu', headers: ['Chữ', 'Từ', 'Câu'], rows: [
-        ['校 xiào', '学校 xuéxiào — trường học', '我家离学校不远。— Nhà mình cách trường không xa.'],
-        ['样 yàng', '这样 zhèyàng — như thế này', '我没穿过这样的衣服。— Mình chưa từng mặc kiểu quần áo như thế này.'],
-        ['吃 chī', '好吃 hǎochī — ngon (đồ ăn)', '我觉得饺子没有包子好吃。— Mình thấy sủi cảo không ngon bằng bánh bao.'],
-        ['喝 hē', '好喝 hǎohē — ngon (đồ uống)', '我觉得奶茶没有咖啡好喝。— Mình thấy trà sữa không ngon bằng cà phê.']
+        ['校', '学校 — trường học', '我家离学校不远。— Nhà mình cách trường không xa.'],
+        ['样', '这样 — như thế này', '我没穿过这样的衣服。— Mình chưa từng mặc kiểu quần áo như thế này.'],
+        ['吃', '好吃 — ngon (đồ ăn)', '我觉得饺子没有包子好吃。— Mình thấy sủi cảo không ngon bằng bánh bao.'],
+        ['喝', '好喝 — ngon (đồ uống)', '我觉得奶茶没有咖啡好喝。— Mình thấy trà sữa không ngon bằng cà phê.']
       ],
         note: 'Luyện viết tay từng nét theo mẫu trong sách (bấm vào chữ ở phần Từ vựng để xem nét viết).' },
       { type: 'table', caption: 'Từ ghép mới (学一学)', headers: ['Từ đã biết', 'Từ mới', 'Nghĩa'], rows: [
-        ['咖啡 · 商店', '咖啡店 kāfēidiàn', 'quán cà phê'],
-        ['男孩儿 · 学生', '男生 nánshēng', 'nam sinh, bạn nam'],
-        ['咖啡 · 杯子', '咖啡杯 kāfēibēi', 'cốc (tách) cà phê']
+        ['咖啡 · 商店', '咖啡店', 'quán cà phê'],
+        ['男孩儿 · 学生', '男生', 'nam sinh, bạn nam'],
+        ['咖啡 · 杯子', '咖啡杯', 'cốc (tách) cà phê']
       ] },
       { type: 'blankdrill', caption: 'Điền từ mới vào chỗ trống (做一做)', hint: 'Gõ từ mới (chữ Hán) vào ô trống rồi bấm "Xem đáp án" để đối chiếu.', maxlength: 4,
         items: [
@@ -1558,27 +1558,27 @@ var wbData = {
           { n: 6, letters: ['A', 'B', 'C', 'D'], answer: 'A',
             script: '女：你儿子都这么高了！\n男：是啊，现在我都没有他高。', vn: 'Nữ: Con trai anh đã cao thế này rồi!\nNam: Đúng vậy, giờ tôi còn không cao bằng nó.' },
           { n: 7, part: 'Phần 3 · Nghe hội thoại, chọn đáp án đúng', options: [
-            { key: 'A', text: '打车', py: 'dǎchē' },
-            { key: 'B', text: '走路', py: 'zǒulù' },
-            { key: 'C', text: '跑步', py: 'pǎobù' }
+            { key: 'A', text: '打车' },
+            { key: 'B', text: '走路' },
+            { key: 'C', text: '跑步' }
           ], answer: 'A',
             script: '女：商场离这儿不远，我们走路去吧。\n男：走十多分钟你就会累的，还是现在就打车吧。\n问：男的想怎么去商场？', vn: 'Nữ: Trung tâm thương mại cách đây không xa, mình đi bộ đi.\nNam: Đi hơn mười phút là em sẽ mệt đấy, thôi bắt taxi luôn bây giờ đi.\nHỏi: Người nam muốn đến trung tâm thương mại bằng cách nào? → Bắt taxi (đi bộ là ý của người nữ).' },
           { n: 8, options: [
-            { key: 'A', text: '安妮的老师', py: 'Ānnī de lǎoshī' },
-            { key: 'B', text: '安妮的同学', py: 'Ānnī de tóngxué' },
-            { key: 'C', text: '安妮的男朋友', py: 'Ānnī de nánpéngyou' }
+            { key: 'A', text: '安妮的老师' },
+            { key: 'B', text: '安妮的同学' },
+            { key: 'C', text: '安妮的男朋友' }
           ], answer: 'B',
             script: '男：安妮旁边那个男孩儿是她男朋友吗？\n女：不是，是她同学。她男朋友没有那个男孩儿那么高。\n问：安妮旁边的男孩儿是谁？', vn: 'Nam: Cậu con trai bên cạnh Annie là bạn trai cô ấy à?\nNữ: Không phải, là bạn học của cô ấy. Bạn trai cô ấy không cao bằng cậu kia.\nHỏi: Cậu con trai bên cạnh Annie là ai? → Bạn học của Annie.' },
           { n: 9, options: [
-            { key: 'A', text: '商店', py: 'shāngdiàn' },
-            { key: 'B', text: '学校', py: 'xuéxiào' },
-            { key: 'C', text: '火车站', py: 'huǒchēzhàn' }
+            { key: 'A', text: '商店' },
+            { key: 'B', text: '学校' },
+            { key: 'C', text: '火车站' }
           ], answer: 'C',
             script: '女：请问，火车站离这儿远吗？\n男：不远，走二十多分钟就到了。\n女：你知道怎么坐车过去吗？\n男：你从我们店里出去，右边有个公交站，那里有很多车到火车站。\n问：女的要去哪儿？', vn: 'Nữ: Cho hỏi, ga tàu cách đây có xa không?\nNam: Không xa, đi bộ hơn hai mươi phút là tới.\nNữ: Anh có biết đi xe đến đó thế nào không?\nNam: Chị ra khỏi cửa hàng chúng tôi, bên phải có một bến xe buýt, ở đó có nhiều xe đến ga tàu.\nHỏi: Người nữ muốn đi đâu? → Ga tàu hỏa (商店 chỉ là nơi cô ấy đang hỏi đường).' },
           { n: 10, options: [
-            { key: 'A', text: '没有肉菜', py: 'méiyǒu ròucài' },
-            { key: 'B', text: '女的爱吃鱼', py: 'nǚ de ài chī yú' },
-            { key: 'C', text: '鱼做得好吃', py: 'yú zuò de hǎochī' }
+            { key: 'A', text: '没有肉菜' },
+            { key: 'B', text: '女的爱吃鱼' },
+            { key: 'C', text: '鱼做得好吃' }
           ], answer: 'B',
             script: '男：我记得你爱吃鱼，所以就点了一条鱼，你多吃点儿。\n女：我吃了，您也快吃吧。\n男：这家饭馆我们来过，菜做得不错。\n女：是，这个肉菜和饺子做得不错，鱼没有您做得好吃。\n问：男的为什么点了条鱼？', vn: 'Nam: Bác nhớ cháu thích ăn cá nên gọi một con cá, cháu ăn nhiều vào nhé.\nNữ: Cháu ăn rồi ạ, bác cũng ăn đi ạ.\nNam: Nhà hàng này chúng ta từng đến rồi, món ăn nấu khá ngon.\nNữ: Vâng, món thịt này và sủi cảo nấu ngon, cá thì không ngon bằng bác nấu.\nHỏi: Vì sao người nam gọi cá? → Vì người nữ thích ăn cá.' }
         ],
@@ -1588,56 +1588,56 @@ var wbData = {
             { key: 'B', img: '/images/hsk2v3-bai-9-wb/q11to13_b.jpg' },
             { key: 'C', img: '/images/hsk2v3-bai-9-wb/q11to13_c.jpg' },
             { key: 'D', img: '/images/hsk2v3-bai-9-wb/q11to13_d.jpg' }
-          ], letters: ['A', 'B', 'C', 'D'], prompt: '商场旁边是一家饭馆。', promptPy: 'Shāngchǎng pángbiān shì yì jiā fànguǎn.', answer: 'C',
+          ], letters: ['A', 'B', 'C', 'D'], prompt: '商场旁边是一家饭馆。', answer: 'C',
             vn: 'Bên cạnh trung tâm thương mại là một nhà hàng. — tranh C: bên trong nhà hàng.' },
-          { n: 12, letters: ['A', 'B', 'C', 'D'], prompt: '那个男孩儿坐在咖啡店门口看书。', promptPy: 'Nàge nánháir zuò zài kāfēidiàn ménkǒu kàn shū.', answer: 'B',
+          { n: 12, letters: ['A', 'B', 'C', 'D'], prompt: '那个男孩儿坐在咖啡店门口看书。', answer: 'B',
             vn: 'Cậu con trai kia ngồi đọc sách ở cửa quán cà phê. — tranh B: chàng trai đọc sách bên cốc cà phê.' },
-          { n: 13, letters: ['A', 'B', 'C', 'D'], prompt: '学校离家很近，所以他们每天一起走路上学。', promptPy: 'Xuéxiào lí jiā hěn jìn, suǒyǐ tāmen měi tiān yìqǐ zǒulù shàngxué.', answer: 'A',
+          { n: 13, letters: ['A', 'B', 'C', 'D'], prompt: '学校离家很近，所以他们每天一起走路上学。', answer: 'A',
             vn: 'Trường cách nhà rất gần nên ngày nào các bạn ấy cũng cùng nhau đi bộ đến trường. — tranh A: nhóm học sinh đeo cặp đi bộ.' },
           { n: 14, part: 'Phần 2 · Chọn từ điền vào chỗ trống', bank: [
-            { key: 'A', text: '离', py: 'lí' },
-            { key: 'B', text: '周', py: 'zhōu' },
-            { key: 'C', text: '走路', py: 'zǒulù' },
-            { key: 'D', text: '这样', py: 'zhèyàng' },
-            { key: 'E', text: '完', py: 'wán' }
-          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你看，我（　）写，对吗？', promptPy: 'Nǐ kàn, wǒ (　) xiě, duì ma?', answer: 'D',
+            { key: 'A', text: '离' },
+            { key: 'B', text: '周' },
+            { key: 'C', text: '走路' },
+            { key: 'D', text: '这样' },
+            { key: 'E', text: '完' }
+          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你看，我（　）写，对吗？', answer: 'D',
             vn: 'Bạn xem, mình viết thế này có đúng không? — 这样 + động từ: làm như thế này.' },
-          { n: 15, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '车站（　）酒店很近，从酒店出去往左边走五分钟就能到。', promptPy: 'Chēzhàn (　) jiǔdiàn hěn jìn, cóng jiǔdiàn chūqù wǎng zuǒbian zǒu wǔ fēn zhōng jiù néng dào.', answer: 'A',
+          { n: 15, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '车站（　）酒店很近，从酒店出去往左边走五分钟就能到。', answer: 'A',
             vn: 'Bến xe cách khách sạn rất gần, từ khách sạn ra rẽ trái đi năm phút là tới. — A 离 B 很近: A cách B rất gần.' },
-          { n: 16, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '女：下（　）我休息，我们出去旅游吧。\n男：你休息几天？时间长我们可以去上海。', promptPy: 'Xià (　) wǒ xiūxi, wǒmen chūqù lǚyóu ba. / Nǐ xiūxi jǐ tiān? Shíjiān cháng wǒmen kěyǐ qù Shànghǎi.', answer: 'B',
+          { n: 16, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '女：下（　）我休息，我们出去旅游吧。\n男：你休息几天？时间长我们可以去上海。', answer: 'B',
             vn: 'Nữ: Tuần sau em được nghỉ, mình đi du lịch đi. Nam: Em nghỉ mấy ngày? Thời gian dài thì mình có thể đi Thượng Hải. — 下周: tuần sau.' },
-          { n: 17, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '男：你每天怎么上下班？\n女：因为公司离家很近，所以我每天（　）上下班。', promptPy: 'Nǐ měi tiān zěnme shàng-xiàbān? / Yīnwèi gōngsī lí jiā hěn jìn, suǒyǐ wǒ měi tiān (　) shàng-xiàbān.', answer: 'C',
+          { n: 17, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '男：你每天怎么上下班？\n女：因为公司离家很近，所以我每天（　）上下班。', answer: 'C',
             vn: 'Nam: Hằng ngày bạn đi làm và tan làm bằng gì? Nữ: Vì công ty gần nhà nên ngày nào mình cũng đi bộ đi làm. — hỏi 怎么 (cách thức) → 走路.' },
           { n: 18, part: 'Phần 3 · Ghép câu hỏi với câu trả lời', bank: [
-            { key: 'A', text: '来了两周了。', py: 'Láile liǎng zhōu le.' },
-            { key: 'B', text: '没问题，这儿没人。', py: 'Méi wèntí, zhèr méi rén.' },
-            { key: 'C', text: '不知道为什么，我觉得没有昨天好。', py: 'Bù zhīdào wèi shénme, wǒ juéde méiyǒu zuótiān hǎo.' },
-            { key: 'D', text: '你都看了一天了，休息休息吧。', py: 'Nǐ dōu kànle yìtiān le, xiūxi xiūxi ba.' },
-            { key: 'E', text: '他出去了，一会儿就回来。', py: 'Tā chūqù le, yíhuìr jiù huílái.' }
-          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '这本书真有意思。', promptPy: 'Zhè běn shū zhēn yǒu yìsi.', answer: 'D',
+            { key: 'A', text: '来了两周了。' },
+            { key: 'B', text: '没问题，这儿没人。' },
+            { key: 'C', text: '不知道为什么，我觉得没有昨天好。' },
+            { key: 'D', text: '你都看了一天了，休息休息吧。' },
+            { key: 'E', text: '他出去了，一会儿就回来。' }
+          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '这本书真有意思。', answer: 'D',
             vn: 'Cuốn sách này hay thật. — D: Bạn đọc cả ngày rồi đấy, nghỉ ngơi chút đi.' },
-          { n: 19, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你今天好点儿了吧？', promptPy: 'Nǐ jīntiān hǎo diǎnr le ba?', answer: 'C',
+          { n: 19, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你今天好点儿了吧？', answer: 'C',
             vn: 'Hôm nay bạn đỡ hơn rồi chứ? — C: Không biết vì sao, mình thấy không bằng hôm qua.' },
-          { n: 20, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '我可以坐在你旁边吗？', promptPy: 'Wǒ kěyǐ zuò zài nǐ pángbiān ma?', answer: 'B',
+          { n: 20, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '我可以坐在你旁边吗？', answer: 'B',
             vn: 'Mình ngồi cạnh bạn được không? — B: Không vấn đề gì, chỗ này không có ai.' },
-          { n: 21, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你什么时候来上海的？', promptPy: 'Nǐ shénme shíhou lái Shànghǎi de?', answer: 'A',
+          { n: 21, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你什么时候来上海的？', answer: 'A',
             vn: 'Bạn đến Thượng Hải từ khi nào? — A: Đến được hai tuần rồi.' },
-          { n: 22, part: 'Phần 4 · Đọc đoạn văn, chọn đáp án đúng', prompt: '我家离爷爷、奶奶家不远，我每个星期六都去。每次奶奶都会给我做好吃的，爷爷会跟我一起看书、写字。\n★爷爷：', promptPy: 'Wǒ jiā lí yéye、nǎinai jiā bù yuǎn, wǒ měi gè Xīngqīliù dōu qù. Měi cì nǎinai dōu huì gěi wǒ zuò hǎochī de, yéye huì gēn wǒ yìqǐ kàn shū、xiě zì. / Yéye:', options: [
-            { key: 'A', text: '走路来看他', py: 'zǒulù lái kàn tā' },
-            { key: 'B', text: '给他做吃的', py: 'gěi tā zuò chī de' },
-            { key: 'C', text: '和他一起学习', py: 'hé tā yìqǐ xuéxí' }
+          { n: 22, part: 'Phần 4 · Đọc đoạn văn, chọn đáp án đúng', prompt: '我家离爷爷、奶奶家不远，我每个星期六都去。每次奶奶都会给我做好吃的，爷爷会跟我一起看书、写字。\n★爷爷：', options: [
+            { key: 'A', text: '走路来看他' },
+            { key: 'B', text: '给他做吃的' },
+            { key: 'C', text: '和他一起学习' }
           ], answer: 'C',
             vn: 'Nhà tôi cách nhà ông bà không xa, thứ Bảy nào tôi cũng đến. Lần nào bà cũng nấu đồ ngon cho tôi, ông thì cùng tôi đọc sách, viết chữ. — Ông cùng đọc sách, viết chữ = cùng học → C (nấu đồ ăn là bà).' },
-          { n: 23, prompt: '老师打来电话，说我儿子不舒服，让我过去接孩子。我公司离儿子的学校很近，走十分钟就到了。我走到学校，就看见儿子已经在门口等我了。\n★他是怎么去儿子学校的？', promptPy: 'Lǎoshī dǎlái diànhuà, shuō wǒ érzi bù shūfu, ràng wǒ guòqù jiē háizi. Wǒ gōngsī lí érzi de xuéxiào hěn jìn, zǒu shí fēn zhōng jiù dào le. Wǒ zǒudào xuéxiào, jiù kànjiàn érzi yǐjīng zài ménkǒu děng wǒ le. / Tā shì zěnme qù érzi xuéxiào de?', options: [
-            { key: 'A', text: '走路', py: 'zǒulù' },
-            { key: 'B', text: '跑步', py: 'pǎobù' },
-            { key: 'C', text: '打车', py: 'dǎchē' }
+          { n: 23, prompt: '老师打来电话，说我儿子不舒服，让我过去接孩子。我公司离儿子的学校很近，走十分钟就到了。我走到学校，就看见儿子已经在门口等我了。\n★他是怎么去儿子学校的？', options: [
+            { key: 'A', text: '走路' },
+            { key: 'B', text: '跑步' },
+            { key: 'C', text: '打车' }
           ], answer: 'A',
             vn: 'Cô giáo gọi điện nói con trai tôi không khỏe, bảo tôi qua đón cháu. Công ty tôi gần trường con, đi bộ mười phút là tới. Tôi đi đến trường thì thấy con đã đứng đợi ở cổng. — "走十分钟就到了"、"我走到学校" → đi bộ.' },
-          { n: 24, prompt: '我女儿今年15岁，她爱好运动，一下课就去打篮球，所以个子高高的，很多男同学都没她高。\n★女儿喜欢做什么？', promptPy: 'Wǒ nǚ\'ér jīnnián 15 suì, tā àihào yùndòng, yí xiàkè jiù qù dǎ lánqiú, suǒyǐ gèzi gāogāo de, hěn duō nán tóngxué dōu méi tā gāo. / Nǚ\'ér xǐhuan zuò shénme?', options: [
-            { key: 'A', text: '上课', py: 'shàngkè' },
-            { key: 'B', text: '睡觉', py: 'shuìjiào' },
-            { key: 'C', text: '打篮球', py: 'dǎ lánqiú' }
+          { n: 24, prompt: '我女儿今年15岁，她爱好运动，一下课就去打篮球，所以个子高高的，很多男同学都没她高。\n★女儿喜欢做什么？', options: [
+            { key: 'A', text: '上课' },
+            { key: 'B', text: '睡觉' },
+            { key: 'C', text: '打篮球' }
           ], answer: 'C',
             vn: 'Con gái tôi năm nay 15 tuổi, cháu thích thể thao, vừa tan học là đi chơi bóng rổ, nên người cao lắm, nhiều bạn nam không cao bằng cháu. — 一下课就去打篮球 → C.' }
         ],
@@ -1647,9 +1647,9 @@ var wbData = {
           ], letters: ['A', 'B', 'C', 'D'], prompt: '走（各）— zǒu lù', answer: 'A', vn: '路 = ⻊ + 各 → 走路 (đi bộ; bộ túc ⻊ liên quan đến chân)' },
           { n: 26, letters: ['A', 'B', 'C', 'D'], prompt: '这（羊）— zhè yàng', answer: 'B', vn: '样 = 木 + 羊 → 这样 (như thế này)' },
           { n: 27, letters: ['A', 'B', 'C', 'D'], prompt: '（旁 còn thiếu phần dưới）边 — páng biān', answer: 'C', vn: '旁 = phần trên (亠, 丷, 冖) + 方 → 旁边 (bên cạnh)' },
-          { n: 28, part: 'Viết · Phần 2 · Viết chữ Hán theo pinyin', input: true, prompt: '我的（ gè ）子比爸爸还高。', promptPy: 'Wǒ de gèzi bǐ bàba hái gāo.', answer: '个', vn: 'Tôi còn cao hơn cả bố. — 个子: vóc dáng, chiều cao; A 比 B 还 + tính từ.' },
-          { n: 29, input: true, prompt: '我的手表（ huài ）了。', promptPy: 'Wǒ de shǒubiǎo huài le.', answer: '坏', vn: 'Đồng hồ của tôi hỏng rồi. — 坏 (bộ 土).' },
-          { n: 30, input: true, prompt: '丈夫这两（ zhōu ）太忙了，每天都很晚回家。', promptPy: 'Zhàngfu zhè liǎng zhōu tài máng le, měi tiān dōu hěn wǎn huí jiā.', answer: '周', vn: 'Hai tuần nay chồng tôi bận quá, ngày nào cũng về nhà rất muộn. — 两周: hai tuần.' }
+          { n: 28, part: 'Viết · Phần 2 · Viết chữ Hán theo pinyin', input: true, prompt: '我的（ gè ）子比爸爸还高。', answer: '个', vn: 'Tôi còn cao hơn cả bố. — 个子: vóc dáng, chiều cao; A 比 B 还 + tính từ.' },
+          { n: 29, input: true, prompt: '我的手表（ huài ）了。', answer: '坏', vn: 'Đồng hồ của tôi hỏng rồi. — 坏 (bộ 土).' },
+          { n: 30, input: true, prompt: '丈夫这两（ zhōu ）太忙了，每天都很晚回家。', answer: '周', vn: 'Hai tuần nay chồng tôi bận quá, ngày nào cũng về nhà rất muộn. — 两周: hai tuần.' }
         ] }
     ]}
   ]

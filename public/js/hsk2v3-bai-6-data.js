@@ -1562,20 +1562,20 @@ var wbData = {
   sections: [
     { title: 'Hán tự & từ mới', blocks: [
       { type: 'table', caption: 'Bộ thủ (偏旁) — tên gọi và chữ ví dụ', headers: ['Tên gọi', 'Bộ thủ', 'Chữ ví dụ'], rows: [
-        ['竹字头 zhúzìtóu', '⺮', '笔 bǐ (bút) · 第 dì (thứ, số thứ tự)'],
-        ['竖心旁 shùxīnpáng', '忄', '快 kuài (vui; nhanh) · 忙 máng (bận)']
+        ['竹字头', '⺮', '笔 (bút) · 第 (thứ, số thứ tự)'],
+        ['竖心旁', '忄', '快 (vui; nhanh) · 忙 (bận)']
       ] },
       { type: 'table', caption: 'Tập viết (摹写) — chữ → từ → câu', headers: ['Chữ', 'Từ', 'Câu'], rows: [
-        ['笔 bǐ', '画笔 huàbǐ — bút vẽ', '桌子上有书、画笔什么的。— Trên bàn có sách, bút vẽ các thứ.'],
-        ['第 dì', '第二 dì-èr — thứ hai', '你再好好地写一下第二个字。— Em viết lại thật cẩn thận chữ thứ hai nhé.'],
-        ['快 kuài', '快乐 kuàilè — vui vẻ', '我们每天都要快快乐乐的。— Mỗi ngày chúng ta đều phải thật vui vẻ.'],
-        ['忙 máng', '很忙 hěn máng — rất bận', '他很忙，早早地去工作了。— Anh ấy rất bận, đi làm từ sớm rồi.']
+        ['笔', '画笔 — bút vẽ', '桌子上有书、画笔什么的。— Trên bàn có sách, bút vẽ các thứ.'],
+        ['第', '第二 dì-èr — thứ hai', '你再好好地写一下第二个字。— Em viết lại thật cẩn thận chữ thứ hai nhé.'],
+        ['快', '快乐 — vui vẻ', '我们每天都要快快乐乐的。— Mỗi ngày chúng ta đều phải thật vui vẻ.'],
+        ['忙', '很忙 — rất bận', '他很忙，早早地去工作了。— Anh ấy rất bận, đi làm từ sớm rồi.']
       ],
         note: 'Luyện viết tay từng nét theo mẫu trong sách (bấm vào chữ ở phần Từ vựng để xem nét viết).' },
       { type: 'table', caption: 'Từ ghép mới (学一学)', headers: ['Từ đã biết', 'Từ mới', 'Nghĩa'], rows: [
-        ['打开 dǎkāi · 手机 shǒujī', '开机 kāijī', 'bật máy, mở máy (điện thoại, máy tính)'],
-        ['鸡蛋 jīdàn · 肉 ròu', '鸡肉 jīròu', 'thịt gà'],
-        ['红色 hóngsè · 画笔 huàbǐ', '红笔 hóng bǐ', 'bút đỏ']
+        ['打开 · 手机', '开机', 'bật máy, mở máy (điện thoại, máy tính)'],
+        ['鸡蛋 · 肉', '鸡肉', 'thịt gà'],
+        ['红色 · 画笔', '红笔', 'bút đỏ']
       ] },
       { type: 'blankdrill', caption: 'Điền từ mới vào chỗ trống (做一做)', hint: 'Gõ từ mới (chữ Hán) vào ô trống rồi bấm "Xem đáp án" để đối chiếu.', maxlength: 4,
         items: [
@@ -1614,27 +1614,27 @@ var wbData = {
           { n: 6, letters: ['A', 'B', 'C', 'D'], answer: 'A',
             script: '女：外边太冷了，你看，孩子的手红红的。\n男：是，下次别等公交车了，打车回来吧。', vn: 'Nữ: Bên ngoài lạnh quá, anh xem, tay con đỏ ửng cả lên.\nNam: Ừ, lần sau đừng đợi xe buýt nữa, bắt taxi về thôi.' },
           { n: 7, part: 'Phần 3 · Nghe hội thoại, chọn đáp án đúng', options: [
-            { key: 'A', text: '饭店', py: 'fàndiàn' },
-            { key: 'B', text: '家里', py: 'jiā li' },
-            { key: 'C', text: '酒店', py: 'jiǔdiàn' }
+            { key: 'A', text: '饭店' },
+            { key: 'B', text: '家里' },
+            { key: 'C', text: '酒店' }
           ], answer: 'B', script: '女：这些肉啊菜啊什么的，你多吃点儿。\n男：我到家您就开始做菜，别再做了，快来吃吧。\n问：他们现在在哪儿？',
             vn: 'Nữ: Thịt với rau các thứ này, con ăn nhiều vào nhé.\nNam: Con vừa về đến nhà là mẹ đã bắt đầu nấu, đừng nấu nữa, mẹ mau lại ăn đi.\nHỏi: Bây giờ họ đang ở đâu? → ở nhà (家里).' },
           { n: 8, options: [
-            { key: 'A', text: '很忙', py: 'hěn máng' },
-            { key: 'B', text: '很舒服', py: 'hěn shūfu' },
-            { key: 'C', text: '不太累', py: 'bú tài lèi' }
+            { key: 'A', text: '很忙' },
+            { key: 'B', text: '很舒服' },
+            { key: 'C', text: '不太累' }
           ], answer: 'A', script: '男：忙完这些工作，我要舒舒服服地睡一觉。\n女：你的工作有忙完的时候吗？\n问：女的觉得男的工作怎么样？',
             vn: 'Nam: Làm xong mấy việc này, anh phải ngủ một giấc thật thoải mái.\nNữ: Công việc của anh có lúc nào làm xong đâu?\nHỏi: Người nữ thấy công việc của người nam thế nào? → rất bận (很忙).' },
           { n: 9, options: [
-            { key: 'A', text: '男的过生日', py: 'nán de guò shēngrì' },
-            { key: 'B', text: '男的很快乐', py: 'nán de hěn kuàilè' },
-            { key: 'C', text: '男的喜欢吃', py: 'nán de xǐhuan chī' }
+            { key: 'A', text: '男的过生日' },
+            { key: 'B', text: '男的很快乐' },
+            { key: 'C', text: '男的喜欢吃' }
           ], answer: 'A', script: '女：你看，长长的生日面做好了！\n男：真不错！我要多吃点儿。\n女：生日快乐！\n男：谢谢！跟你在一起，我每天都很快乐。\n问：今天为什么吃面条儿？',
             vn: 'Nữ: Anh xem, mì sinh nhật dài dài nấu xong rồi!\nNam: Tuyệt quá! Anh phải ăn nhiều một chút.\nNữ: Chúc mừng sinh nhật!\nNam: Cảm ơn em! Ở bên em, ngày nào anh cũng rất vui.\nHỏi: Vì sao hôm nay ăn mì? → vì người nam đón sinh nhật.' },
           { n: 10, options: [
-            { key: 'A', text: '不舒服', py: 'bù shūfu' },
-            { key: 'B', text: '小小的', py: 'xiǎoxiǎo de' },
-            { key: 'C', text: '有点儿大', py: 'yǒudiǎnr dà' }
+            { key: 'A', text: '不舒服' },
+            { key: 'B', text: '小小的' },
+            { key: 'C', text: '有点儿大' }
           ], answer: 'C', script: '男：你过来坐坐，这张床很舒服。\n女：是很舒服，但儿子的房间小小的，这张床有点儿大。\n男：那边还有几张床，我们过去看看。\n女：好的。\n问：他们觉得这张床怎么样？',
             vn: 'Nam: Em lại đây ngồi thử xem, cái giường này rất êm.\nNữ: Êm thật, nhưng phòng của con trai nhỏ xíu, cái giường này hơi to.\nNam: Bên kia còn mấy cái giường nữa, mình qua xem thử.\nNữ: Được.\nHỏi: Họ thấy cái giường này thế nào? → hơi to (有点儿大).' }
         ],
@@ -1644,57 +1644,54 @@ var wbData = {
             { key: 'B', img: '/images/hsk2v3-bai-6-wb/q11to13_b.jpg' },
             { key: 'C', img: '/images/hsk2v3-bai-6-wb/q11to13_c.jpg' },
             { key: 'D', img: '/images/hsk2v3-bai-6-wb/q11to13_d.jpg' }
-          ], letters: ['A', 'B', 'C', 'D'], prompt: '妈妈今天做了几个肉菜。', promptPy: 'Māma jīntiān zuòle jǐ gè ròucài.', answer: 'C',
+          ], letters: ['A', 'B', 'C', 'D'], prompt: '妈妈今天做了几个肉菜。', answer: 'C',
             vn: 'Hôm nay mẹ nấu mấy món thịt. — Tranh C: một bàn đầy thức ăn.' },
-          { n: 12, letters: ['A', 'B', 'C', 'D'], prompt: '他打开书包，拿出一本书。', promptPy: 'Tā dǎkāi shūbāo, náchū yì běn shū.', answer: 'B',
+          { n: 12, letters: ['A', 'B', 'C', 'D'], prompt: '他打开书包，拿出一本书。', answer: 'B',
             vn: 'Cậu bé mở cặp sách, lấy ra một quyển sách. — Tranh B: cậu bé ngồi lấy sách ra khỏi cặp.' },
-          { n: 13, letters: ['A', 'B', 'C', 'D'], prompt: '孩子们高高兴兴地去学校了。', promptPy: 'Háizimen gāogāoxìngxìng de qù xuéxiào le.', answer: 'A',
+          { n: 13, letters: ['A', 'B', 'C', 'D'], prompt: '孩子们高高兴兴地去学校了。', answer: 'A',
             vn: 'Bọn trẻ vui vẻ đi đến trường rồi. — Tranh A: mấy bạn nhỏ đeo cặp vui vẻ đi học.' },
           { n: 14, part: 'Phần 2 · Chọn từ điền vào chỗ trống', bank: [
-            { key: 'A', text: '长', py: 'cháng' },
-            { key: 'B', text: '忘', py: 'wàng' },
-            { key: 'C', text: '过', py: 'guò' },
-            { key: 'D', text: '画笔', py: 'huàbǐ' },
-            { key: 'E', text: '完', py: 'wán' }
-          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '书啊、（　）啊什么的都在书包里。', promptPy: 'Shū a, (　) a shénmede dōu zài shūbāo li.', answer: 'D',
+            { key: 'A', text: '长' },
+            { key: 'B', text: '忘' },
+            { key: 'C', text: '过' },
+            { key: 'D', text: '画笔' },
+            { key: 'E', text: '完' }
+          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '书啊、（　）啊什么的都在书包里。', answer: 'D',
             vn: 'Sách, bút vẽ các thứ đều ở trong cặp sách. — 书啊、画笔啊什么的: liệt kê đồ vật để trong cặp.' },
-          { n: 15, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '爷爷，今年生日您想怎么（　）？', promptPy: 'Yéye, jīnnián shēngrì nín xiǎng zěnme (　)?', answer: 'C',
+          { n: 15, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '爷爷，今年生日您想怎么（　）？', answer: 'C',
             vn: 'Ông ơi, sinh nhật năm nay ông muốn tổ chức thế nào ạ? — 过生日: đón / tổ chức sinh nhật.' },
-          { n: 16, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '女：很（　）时间没吃鱼了。\n男：那今天晚上我做条鱼。', promptPy: 'Hěn (　) shíjiān méi chī yú le. / Nà jīntiān wǎnshang wǒ zuò tiáo yú.', answer: 'A',
+          { n: 16, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '女：很（　）时间没吃鱼了。\n男：那今天晚上我做条鱼。', answer: 'A',
             vn: 'Nữ: Lâu lắm rồi không được ăn cá.\nNam: Vậy tối nay anh nấu một con cá. — 很长时间: thời gian rất lâu.' },
-          { n: 17, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '男：生日快乐！这是送你的蛋糕。\n女：啊！我都（　）了今天是我的生日。', promptPy: 'Shēngrì kuàilè! Zhè shì sòng nǐ de dàngāo. / À! Wǒ dōu (　) le jīntiān shì wǒ de shēngrì.', answer: 'B',
+          { n: 17, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '男：生日快乐！这是送你的蛋糕。\n女：啊！我都（　）了今天是我的生日。', answer: 'B',
             vn: 'Nam: Chúc mừng sinh nhật! Đây là bánh kem tặng em.\nNữ: A! Em quên mất hôm nay là sinh nhật mình. — 忘了: quên mất.' },
           { n: 18, part: 'Phần 3 · Ghép câu hỏi với câu trả lời', bank: [
-            { key: 'A', text: '这么长时间？我们去北京旅游吧？', py: 'Zhème cháng shíjiān? Wǒmen qù Běijīng lǚyóu ba?' },
-            { key: 'B', text: '我们能吃完吗？', py: 'Wǒmen néng chīwán ma?' },
-            { key: 'C', text: '喜欢，我和弟弟都很喜欢。', py: 'Xǐhuan, wǒ hé dìdi dōu hěn xǐhuan.' },
-            { key: 'D', text: '他累了，早早地去睡觉了。', py: 'Tā lèi le, zǎozǎo de qù shuìjiào le.' },
-            { key: 'E', text: '他出去了，一会儿就回来。', py: 'Tā chūqù le, yíhuìr jiù huílái.' }
-          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '爸爸为什么不来看电视？', promptPy: 'Bàba wèi shénme bù lái kàn diànshì?', answer: 'D',
+            { key: 'A', text: '这么长时间？我们去北京旅游吧？' },
+            { key: 'B', text: '我们能吃完吗？' },
+            { key: 'C', text: '喜欢，我和弟弟都很喜欢。' },
+            { key: 'D', text: '他累了，早早地去睡觉了。' },
+            { key: 'E', text: '他出去了，一会儿就回来。' }
+          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '爸爸为什么不来看电视？', answer: 'D',
             vn: 'Sao bố không đến xem tivi? — D: Bố mệt rồi, đi ngủ sớm rồi.' },
-          { n: 19, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你喜欢学画画吗？', promptPy: 'Nǐ xǐhuan xué huà huà ma?', answer: 'C',
+          { n: 19, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你喜欢学画画吗？', answer: 'C',
             vn: 'Bạn có thích học vẽ tranh không? — C: Thích, mình và em trai đều rất thích.' },
-          { n: 20, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你看，我给你买了一个大大的生日蛋糕。', promptPy: 'Nǐ kàn, wǒ gěi nǐ mǎile yí gè dàdà de shēngrì dàngāo.', answer: 'B',
+          { n: 20, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你看，我给你买了一个大大的生日蛋糕。', answer: 'B',
             vn: 'Bạn xem này, mình mua cho bạn một cái bánh sinh nhật thật to. — B: Chúng mình ăn hết được không?' },
-          { n: 21, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '公司让我休息一下，下个星期再上班。', promptPy: 'Gōngsī ràng wǒ xiūxi yíxià, xià gè xīngqī zài shàngbān.', answer: 'A',
+          { n: 21, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '公司让我休息一下，下个星期再上班。', answer: 'A',
             vn: 'Công ty cho anh nghỉ một chút, tuần sau mới đi làm lại. — A: Lâu vậy cơ à? Mình đi Bắc Kinh du lịch nhé?' },
-          { n: 22, part: 'Phần 4 · Đọc đoạn văn, chọn đáp án đúng', prompt: '今年过生日，爷爷给我买了新的画笔，有36个颜色。有了新画笔后，我每次都高高兴兴地去上画画课。\n★爷爷为什么给他买画笔？',
-            promptPy: 'Jīnnián guò shēngrì, yéye gěi wǒ mǎile xīn de huàbǐ, yǒu 36 gè yánsè. Yǒule xīn huàbǐ hòu, wǒ měi cì dōu gāogāoxìngxìng de qù shàng huàhuàkè. / Yéye wèi shénme gěi tā mǎi huàbǐ?', options: [
-            { key: 'A', text: '他过生日', py: 'tā guò shēngrì' },
-            { key: 'B', text: '老师让买的', py: 'lǎoshī ràng mǎi de' },
-            { key: 'C', text: '他的画笔颜色少', py: 'tā de huàbǐ yánsè shǎo' }
+          { n: 22, part: 'Phần 4 · Đọc đoạn văn, chọn đáp án đúng', prompt: '今年过生日，爷爷给我买了新的画笔，有36个颜色。有了新画笔后，我每次都高高兴兴地去上画画课。\n★爷爷为什么给他买画笔？', options: [
+            { key: 'A', text: '他过生日' },
+            { key: 'B', text: '老师让买的' },
+            { key: 'C', text: '他的画笔颜色少' }
           ], answer: 'A', vn: 'Sinh nhật năm nay, ông mua cho tôi bút vẽ mới, có 36 màu. Có bút vẽ mới rồi, lần nào tôi cũng vui vẻ đi học vẽ. — "今年过生日，爷爷给我买了新的画笔" → vì cậu ấy đón sinh nhật.' },
-          { n: 23, prompt: '我的小猫每天都要到我的床上来跟我玩。今天我不太舒服，没让它上来。它有点儿不高兴，自己到床下面睡觉去了。\n★他今天为什么不跟小猫玩？',
-            promptPy: 'Wǒ de xiǎomāo měi tiān dōu yào dào wǒ de chuáng shang lái gēn wǒ wán. Jīntiān wǒ bú tài shūfu, méi ràng tā shànglái. Tā yǒudiǎnr bù gāoxìng, zìjǐ dào chuáng xiàmian shuìjiào qù le. / Tā jīntiān wèi shénme bù gēn xiǎomāo wán?', options: [
-            { key: 'A', text: '他不高兴', py: 'tā bù gāoxìng' },
-            { key: 'B', text: '他不舒服', py: 'tā bù shūfu' },
-            { key: 'C', text: '他想睡觉', py: 'tā xiǎng shuìjiào' }
+          { n: 23, prompt: '我的小猫每天都要到我的床上来跟我玩。今天我不太舒服，没让它上来。它有点儿不高兴，自己到床下面睡觉去了。\n★他今天为什么不跟小猫玩？', options: [
+            { key: 'A', text: '他不高兴' },
+            { key: 'B', text: '他不舒服' },
+            { key: 'C', text: '他想睡觉' }
           ], answer: 'B', vn: 'Con mèo nhỏ của tôi ngày nào cũng lên giường chơi với tôi. Hôm nay tôi không được khỏe nên không cho nó lên. Nó hơi không vui, tự chui xuống gầm giường ngủ. — "今天我不太舒服" → vì anh ấy không khỏe (người không vui là con mèo).' },
-          { n: 24, prompt: '小李生病了，今天没去上班，在家好好地睡了一觉。起床后，他去超市买了点儿水果、面包和奶茶什么的。\n★小李为什么没去上班？',
-            promptPy: 'Xiǎo Lǐ shēngbìng le, jīntiān méi qù shàngbān, zài jiā hǎohāo de shuìle yí jiào. Qǐchuáng hòu, tā qù chāoshì mǎile diǎnr shuǐguǒ, miànbāo hé nǎichá shénmede. / Xiǎo Lǐ wèi shénme méi qù shàngbān?', options: [
-            { key: 'A', text: '生病了', py: 'shēngbìng le' },
-            { key: 'B', text: '去超市了', py: 'qù chāoshì le' },
-            { key: 'C', text: '要买东西', py: 'yào mǎi dōngxi' }
+          { n: 24, prompt: '小李生病了，今天没去上班，在家好好地睡了一觉。起床后，他去超市买了点儿水果、面包和奶茶什么的。\n★小李为什么没去上班？', options: [
+            { key: 'A', text: '生病了' },
+            { key: 'B', text: '去超市了' },
+            { key: 'C', text: '要买东西' }
           ], answer: 'A', vn: 'Tiểu Lý bị ốm, hôm nay không đi làm, ở nhà ngủ một giấc thật ngon. Ngủ dậy, anh ấy đi siêu thị mua ít hoa quả, bánh mì, trà sữa các thứ. — "小李生病了，今天没去上班" → vì bị ốm.' }
         ],
         writing: [
@@ -1706,9 +1703,9 @@ var wbData = {
           ], letters: ['A', 'B', 'C', 'D'], prompt: '（夬）乐 — kuài lè', answer: 'B', vn: '快 = 忄 + 夬 → 快乐 (vui vẻ)' },
           { n: 26, letters: ['A', 'B', 'C', 'D'], prompt: '（寸）生日 — guò shēngrì', answer: 'A', vn: '过 = 辶 + 寸 → 过生日 (đón sinh nhật)' },
           { n: 27, letters: ['A', 'B', 'C', 'D'], prompt: '舒（服 còn thiếu phần bên trái）— shūfu', answer: 'C', vn: '服 = 月 (bên trái) + phần bên phải → 舒服 (dễ chịu, thoải mái)' },
-          { n: 28, part: 'Viết · Phần 2 · Viết chữ Hán theo pinyin', input: true, prompt: '他舒舒服服（ de ）睡了一觉。', promptPy: 'Tā shūshūfúfú de shuìle yí jiào.', answer: '地', vn: 'Anh ấy ngủ một giấc thật thoải mái. — 地 đứng sau tính từ lặp lại, bổ nghĩa cho động từ 睡.' },
-          { n: 29, input: true, prompt: '我妈妈做的鸡（ ròu ）饭很好吃。', promptPy: 'Wǒ māma zuò de jīròu fàn hěn hǎochī.', answer: '肉', vn: 'Cơm gà mẹ tôi nấu rất ngon. — 鸡肉: thịt gà.' },
-          { n: 30, input: true, prompt: '这条裤子有点儿（ cháng ）。', promptPy: 'Zhè tiáo kùzi yǒudiǎnr cháng.', answer: '长', vn: 'Cái quần này hơi dài. — 长: dài.' }
+          { n: 28, part: 'Viết · Phần 2 · Viết chữ Hán theo pinyin', input: true, prompt: '他舒舒服服（ de ）睡了一觉。', answer: '地', vn: 'Anh ấy ngủ một giấc thật thoải mái. — 地 đứng sau tính từ lặp lại, bổ nghĩa cho động từ 睡.' },
+          { n: 29, input: true, prompt: '我妈妈做的鸡（ ròu ）饭很好吃。', answer: '肉', vn: 'Cơm gà mẹ tôi nấu rất ngon. — 鸡肉: thịt gà.' },
+          { n: 30, input: true, prompt: '这条裤子有点儿（ cháng ）。', answer: '长', vn: 'Cái quần này hơi dài. — 长: dài.' }
         ] }
     ]}
   ]

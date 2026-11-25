@@ -1440,20 +1440,20 @@ var wbData = {
   sections: [
     { title: 'Hán tự & từ mới', blocks: [
       { type: 'table', caption: 'Bộ thủ (偏旁) — tên gọi và chữ ví dụ', headers: ['Tên gọi', 'Bộ thủ', 'Chữ ví dụ'], rows: [
-        ['目字旁 mùzìpáng', '目', '眼 yǎn (mắt) · 睡 shuì (ngủ)'],
-        ['立字旁 lìzìpáng', '立', '站 zhàn (đứng; ga, trạm)']
+        ['目字旁', '目', '眼 (mắt) · 睡 (ngủ)'],
+        ['立字旁', '立', '站 (đứng; ga, trạm)']
       ] },
       { type: 'table', caption: 'Tập viết (摹写) — chữ → từ → câu', headers: ['Chữ', 'Từ', 'Câu'], rows: [
-        ['眼 yǎn', '眼睛 yǎnjing — mắt', '你看，那个女孩儿的眼睛多大啊！— Nhìn kìa, mắt cô bé kia to quá!'],
-        ['睡 shuì', '睡觉 shuìjiào — ngủ', '她睡觉睡得很晚。— Cô ấy đi ngủ rất muộn.'],
-        ['站 zhàn', '站着 zhànzhe — đang đứng', '门口站着一个人。— Ở cửa có một người đang đứng.'],
-        ['站 zhàn', '火车站 huǒchēzhàn — ga tàu hỏa', '火车站里有很多人。— Trong ga tàu có rất nhiều người.']
+        ['眼', '眼睛 — mắt', '你看，那个女孩儿的眼睛多大啊！— Nhìn kìa, mắt cô bé kia to quá!'],
+        ['睡', '睡觉 — ngủ', '她睡觉睡得很晚。— Cô ấy đi ngủ rất muộn.'],
+        ['站', '站着 — đang đứng', '门口站着一个人。— Ở cửa có một người đang đứng.'],
+        ['站', '火车站 — ga tàu hỏa', '火车站里有很多人。— Trong ga tàu có rất nhiều người.']
       ],
         note: 'Luyện viết tay từng nét theo mẫu trong sách (bấm vào chữ ở phần Từ vựng để xem nét viết). Lưu ý: "站" vừa là động từ (đứng — 站着), vừa là danh từ (ga, trạm — 火车站).' },
       { type: 'table', caption: 'Từ ghép mới (学一学)', headers: ['Từ đã biết', 'Từ mới', 'Nghĩa'], rows: [
-        ['女孩儿 nǚháir · 学生 xuéshēng', '女生 nǚshēng', 'nữ sinh, bạn nữ'],
-        ['楼 lóu · 前面 qiánmiàn', '楼前 lóu qián', 'trước tòa nhà'],
-        ['钱 qián · 包 bāo', '钱包 qiánbāo', 'ví tiền']
+        ['女孩儿 · 学生', '女生', 'nữ sinh, bạn nữ'],
+        ['楼 · 前面', '楼前', 'trước tòa nhà'],
+        ['钱 · 包', '钱包', 'ví tiền']
       ] },
       { type: 'blankdrill', caption: 'Điền từ mới vào chỗ trống (做一做)', hint: 'Gõ từ mới (chữ Hán) vào ô trống rồi bấm "Xem đáp án" để đối chiếu.', maxlength: 4,
         items: [
@@ -1495,27 +1495,27 @@ var wbData = {
           { n: 6, letters: ['A', 'B', 'C', 'D'], answer: 'A',
             script: '女：这个红色的包还不错。\n男：我觉得那个黑色的更好看。', vn: 'Nữ: Chiếc túi màu đỏ này cũng được đấy.\nNam: Anh thấy chiếc màu đen kia đẹp hơn.' },
           { n: 7, part: 'Phần 3 · Nghe hội thoại, chọn đáp án đúng', options: [
-            { key: 'A', text: '跑步', py: 'pǎobù' },
-            { key: 'B', text: '跳舞', py: 'tiàowǔ' },
-            { key: 'C', text: '打球', py: 'dǎ qiú' }
+            { key: 'A', text: '跑步' },
+            { key: 'B', text: '跳舞' },
+            { key: 'C', text: '打球' }
           ], answer: 'C',
             script: '女：男生都没在教室，他们去哪儿了？\n男：他们一下课就跑出去打球了。\n问：男生都去做什么了？', vn: 'Nữ: Các bạn nam đều không có trong lớp, họ đi đâu rồi?\nNam: Vừa tan học là họ chạy ra ngoài chơi bóng rồi.\nHỏi: Các bạn nam đi làm gì? → Chơi bóng.' },
           { n: 8, options: [
-            { key: 'A', text: '比北京冷', py: 'bǐ Běijīng lěng' },
-            { key: 'B', text: '没北京冷', py: 'méi Běijīng lěng' },
-            { key: 'C', text: '房子里不冷', py: 'fángzi li bù lěng' }
+            { key: 'A', text: '比北京冷' },
+            { key: 'B', text: '没北京冷' },
+            { key: 'C', text: '房子里不冷' }
           ], answer: 'B',
             script: '男：你觉得这儿有北京那么冷吗？\n女：没有，但是北京房子里面不冷，这儿里面外面都冷。\n问：女的觉得这儿的天气怎么样？', vn: 'Nam: Em thấy ở đây có lạnh bằng Bắc Kinh không?\nNữ: Không, nhưng ở Bắc Kinh trong nhà không lạnh, còn ở đây trong nhà ngoài trời đều lạnh.\nHỏi: Cô gái thấy thời tiết ở đây thế nào? → Không lạnh bằng Bắc Kinh ("没有"); "trong nhà không lạnh" là nói về Bắc Kinh.' },
           { n: 9, options: [
-            { key: 'A', text: '眼睛红了', py: 'yǎnjing hóng le' },
-            { key: 'B', text: '晚上没睡好', py: 'wǎnshang méi shuìhǎo' },
-            { key: 'C', text: '头有点儿疼', py: 'tóu yǒudiǎnr téng' }
+            { key: 'A', text: '眼睛红了' },
+            { key: 'B', text: '晚上没睡好' },
+            { key: 'C', text: '头有点儿疼' }
           ], answer: 'A',
             script: '女：爸，您帮我看看眼睛，我眼睛不舒服。\n男：你的眼睛很红。是不是昨天晚上没睡好？\n女：我昨天很早就睡了，睡得很好。\n男：那去医院看看吧。\n问：女的怎么了？', vn: 'Nữ: Bố ơi, bố xem mắt giúp con với, mắt con khó chịu.\nNam: Mắt con đỏ lắm. Có phải tối qua ngủ không ngon không?\nNữ: Hôm qua con ngủ sớm lắm, ngủ rất ngon.\nNam: Vậy đi bệnh viện khám xem.\nHỏi: Cô gái bị sao? → Mắt bị đỏ (cô ấy nói mình ngủ rất ngon).' },
           { n: 10, options: [
-            { key: 'A', text: '上海', py: 'Shànghǎi' },
-            { key: 'B', text: '西安', py: 'Xī\'ān' },
-            { key: 'C', text: '国外', py: 'guówài' }
+            { key: 'A', text: '上海' },
+            { key: 'B', text: '西安' },
+            { key: 'C', text: '国外' }
           ], answer: 'B',
             script: '男：妈，我今年过年不回上海了，我和朋友想去西安玩。\n女：西安比上海冷，你记得多穿点儿衣服。\n男：好的。你们想不想来西安过年？\n女：不去了。你不回来，我和你爸想去国外旅游。\n问：男的要去哪儿过年？', vn: 'Nam: Mẹ ơi, Tết năm nay con không về Thượng Hải đâu, con với bạn muốn đi Tây An chơi.\nNữ: Tây An lạnh hơn Thượng Hải, con nhớ mặc thêm áo nhé.\nNam: Vâng ạ. Bố mẹ có muốn đến Tây An ăn Tết không?\nNữ: Thôi. Con không về thì bố mẹ muốn đi du lịch nước ngoài.\nHỏi: Chàng trai sẽ ăn Tết ở đâu? → Tây An (đi nước ngoài là bố mẹ).' }
         ],
@@ -1525,56 +1525,56 @@ var wbData = {
             { key: 'B', img: '/images/hsk2v3-bai-14-wb/q11to13_b.jpg' },
             { key: 'C', img: '/images/hsk2v3-bai-14-wb/q11to13_c.jpg' },
             { key: 'D', img: '/images/hsk2v3-bai-14-wb/q11to13_d.jpg' }
-          ], letters: ['A', 'B', 'C', 'D'], prompt: '买吧，这条裤子多好看啊。', promptPy: 'Mǎi ba, zhè tiáo kùzi duō hǎokàn a.', answer: 'C',
+          ], letters: ['A', 'B', 'C', 'D'], prompt: '买吧，这条裤子多好看啊。', answer: 'C',
             vn: 'Mua đi, chiếc quần này đẹp biết bao. — tranh C: cô gái cầm chiếc quần trong cửa hàng quần áo.' },
-          { n: 12, letters: ['A', 'B', 'C', 'D'], prompt: '男朋友来接我了，手里还拿着花。', promptPy: 'Nánpéngyou lái jiē wǒ le, shǒu li hái názhe huā.', answer: 'B',
+          { n: 12, letters: ['A', 'B', 'C', 'D'], prompt: '男朋友来接我了，手里还拿着花。', answer: 'B',
             vn: 'Bạn trai đến đón mình rồi, tay còn cầm hoa nữa. — tranh B: người cầm bó hoa.' },
-          { n: 13, letters: ['A', 'B', 'C', 'D'], prompt: '你好好看看，小猫这边的眼睛比那边的眼睛大一点儿。', promptPy: 'Nǐ hǎohǎo kànkan, xiǎomāo zhèbiān de yǎnjing bǐ nàbiān de yǎnjing dà yìdiǎnr.', answer: 'A',
+          { n: 13, letters: ['A', 'B', 'C', 'D'], prompt: '你好好看看，小猫这边的眼睛比那边的眼睛大一点儿。', answer: 'A',
             vn: 'Bạn nhìn kỹ xem, mắt bên này của chú mèo to hơn mắt bên kia một chút. — tranh A: chú mèo.' },
           { n: 14, part: 'Phần 2 · Chọn từ điền vào chỗ trống', bank: [
-            { key: 'A', text: '包', py: 'bāo' },
-            { key: 'B', text: '小孩儿', py: 'xiǎoháir' },
-            { key: 'C', text: '前面', py: 'qiánmiàn' },
-            { key: 'D', text: '没意思', py: 'méi yìsi' },
-            { key: 'E', text: '完', py: 'wán' }
-          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '他家（　）今年七岁，已经上小学了。', promptPy: 'Tā jiā (　) jīnnián qī suì, yǐjīng shàng xiǎoxué le.', answer: 'B',
+            { key: 'A', text: '包' },
+            { key: 'B', text: '小孩儿' },
+            { key: 'C', text: '前面' },
+            { key: 'D', text: '没意思' },
+            { key: 'E', text: '完' }
+          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '他家（　）今年七岁，已经上小学了。', answer: 'B',
             vn: 'Con nhà anh ấy năm nay bảy tuổi, đã đi học tiểu học rồi. — cần danh từ chỉ người: 小孩儿 (đứa trẻ).' },
-          { n: 15, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你个子没有他高，就站在他（　）吧。', promptPy: 'Nǐ gèzi méiyǒu tā gāo, jiù zhàn zài tā (　) ba.', answer: 'C',
+          { n: 15, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你个子没有他高，就站在他（　）吧。', answer: 'C',
             vn: 'Bạn không cao bằng cậu ấy, vậy đứng phía trước cậu ấy đi. — 站在 + người + 前面: đứng trước ai.' },
-          { n: 16, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '女：你（　）里有吃的？快拿出来吧。\n男：好，这些都是给你准备的。', promptPy: 'Nǐ (　) li yǒu chī de? Kuài ná chūlái ba. / Hǎo, zhèxiē dōu shì gěi nǐ zhǔnbèi de.', answer: 'A',
+          { n: 16, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '女：你（　）里有吃的？快拿出来吧。\n男：好，这些都是给你准备的。', answer: 'A',
             vn: 'Nữ: Trong túi anh có đồ ăn à? Mau lấy ra đi.\nNam: Được, mấy thứ này đều chuẩn bị cho em đấy. — (　)里 + 拿出来 → đồ vật đựng được: 包.' },
-          { n: 17, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '男：这个电影你看过了吧？觉得怎么样？\n女：你别看了，这个电影（　）。', promptPy: 'Zhège diànyǐng nǐ kànguole ba? Juéde zěnmeyàng? / Nǐ bié kàn le, zhège diànyǐng (　).', answer: 'D',
+          { n: 17, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '男：这个电影你看过了吧？觉得怎么样？\n女：你别看了，这个电影（　）。', answer: 'D',
             vn: 'Nam: Bộ phim này em xem rồi nhỉ? Thấy thế nào?\nNữ: Anh đừng xem nữa, phim này chán lắm. — khuyên "别看了" → phim 没意思.' },
           { n: 18, part: 'Phần 3 · Ghép câu hỏi với câu trả lời', bank: [
-            { key: 'A', text: '是啊，一看就知道她是从小学的。', py: 'Shì a, yí kàn jiù zhīdào tā shì cóngxiǎo xué de.' },
-            { key: 'B', text: '太好了，我们多准备点儿他们爱吃的东西。', py: 'Tài hǎo le, wǒmen duō zhǔnbèi diǎnr tāmen ài chī de dōngxi.' },
-            { key: 'C', text: '电视前面那个是你的吗？', py: 'Diànshì qiánmiàn nàge shì nǐ de ma?' },
-            { key: 'D', text: '从这儿走过去，十分钟就到了。', py: 'Cóng zhèr zǒu guòqù, shí fēnzhōng jiù dào le.' },
-            { key: 'E', text: '他出去了，一会儿就回来。', py: 'Tā chūqù le, yíhuìr jiù huílái.' }
-          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '那个女孩儿跳舞跳得真好！', promptPy: 'Nàge nǚháir tiàowǔ tiào de zhēn hǎo!', answer: 'A',
+            { key: 'A', text: '是啊，一看就知道她是从小学的。' },
+            { key: 'B', text: '太好了，我们多准备点儿他们爱吃的东西。' },
+            { key: 'C', text: '电视前面那个是你的吗？' },
+            { key: 'D', text: '从这儿走过去，十分钟就到了。' },
+            { key: 'E', text: '他出去了，一会儿就回来。' }
+          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '那个女孩儿跳舞跳得真好！', answer: 'A',
             vn: 'Cô bé kia nhảy đẹp thật! — A: Đúng vậy, nhìn là biết cô bé học từ nhỏ.' },
-          { n: 19, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '我的手表呢？你看见了吗？', promptPy: 'Wǒ de shǒubiǎo ne? Nǐ kànjiànle ma?', answer: 'C',
+          { n: 19, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '我的手表呢？你看见了吗？', answer: 'C',
             vn: 'Đồng hồ của mình đâu rồi? Bạn có thấy không? — C: Cái ở trước tivi kia có phải của bạn không?' },
-          { n: 20, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '今年过年，女儿和儿子都会回来。', promptPy: 'Jīnnián guònián, nǚ\'ér hé érzi dōu huì huílái.', answer: 'B',
+          { n: 20, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '今年过年，女儿和儿子都会回来。', answer: 'B',
             vn: 'Tết năm nay con gái và con trai đều sẽ về. — B: Tốt quá, chúng ta chuẩn bị thêm ít món các con thích ăn.' },
-          { n: 21, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你的新房子真不错，离公司很近。', promptPy: 'Nǐ de xīn fángzi zhēn búcuò, lí gōngsī hěn jìn.', answer: 'D',
+          { n: 21, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你的新房子真不错，离公司很近。', answer: 'D',
             vn: 'Nhà mới của bạn đẹp thật, lại gần công ty. — D: Từ đây đi bộ qua đó, mười phút là tới.' },
-          { n: 22, part: 'Phần 4 · Đọc đoạn văn, chọn đáp án đúng', prompt: '弟弟经常很晚睡觉，还喜欢玩手机。他经常说眼睛很累，很不舒服。\n★弟弟：', promptPy: 'Dìdi jīngcháng hěn wǎn shuìjiào, hái xǐhuan wán shǒujī. Tā jīngcháng shuō yǎnjing hěn lèi, hěn bù shūfu.\nDìdi:', options: [
-            { key: 'A', text: '睡得很早', py: 'shuì de hěn zǎo' },
-            { key: 'B', text: '眼睛不舒服', py: 'yǎnjing bù shūfu' },
-            { key: 'C', text: '不爱玩手机', py: 'bú ài wán shǒujī' }
+          { n: 22, part: 'Phần 4 · Đọc đoạn văn, chọn đáp án đúng', prompt: '弟弟经常很晚睡觉，还喜欢玩手机。他经常说眼睛很累，很不舒服。\n★弟弟：', options: [
+            { key: 'A', text: '睡得很早' },
+            { key: 'B', text: '眼睛不舒服' },
+            { key: 'C', text: '不爱玩手机' }
           ], answer: 'B',
             vn: 'Em trai thường ngủ rất muộn, lại thích chơi điện thoại. Em hay kêu mắt rất mỏi, rất khó chịu. — "眼睛很累，很不舒服" → B (A, C đều ngược với đoạn văn).' },
-          { n: 23, prompt: '中国人过年的时候，孩子们都会回到爸妈家里。爸妈会做很多好吃的，在家等孩子们回来。孩子们会送给爸妈礼物。大家在一起高高兴兴地过个年。\n★过年时，爸妈会做什么？', promptPy: 'Zhōngguó rén guònián de shíhou, háizimen dōu huì huídào bà-mā jiā li. Bà-mā huì zuò hěn duō hǎochī de, zài jiā děng háizimen huílái. Háizimen huì sòng gěi bà-mā lǐwù. Dàjiā zài yìqǐ gāogāoxìngxìng de guò ge nián.\nGuònián shí, bà-mā huì zuò shénme?', options: [
-            { key: 'A', text: '准备礼物', py: 'zhǔnbèi lǐwù' },
-            { key: 'B', text: '准备好吃的', py: 'zhǔnbèi hǎochī de' },
-            { key: 'C', text: '跟孩子一起回家', py: 'gēn háizi yìqǐ huí jiā' }
+          { n: 23, prompt: '中国人过年的时候，孩子们都会回到爸妈家里。爸妈会做很多好吃的，在家等孩子们回来。孩子们会送给爸妈礼物。大家在一起高高兴兴地过个年。\n★过年时，爸妈会做什么？', options: [
+            { key: 'A', text: '准备礼物' },
+            { key: 'B', text: '准备好吃的' },
+            { key: 'C', text: '跟孩子一起回家' }
           ], answer: 'B',
             vn: 'Khi người Trung Quốc đón Tết, con cái đều về nhà bố mẹ. Bố mẹ nấu rất nhiều món ngon, ở nhà chờ con về. Con cái tặng quà cho bố mẹ. Mọi người cùng nhau vui vẻ đón Tết. — "爸妈会做很多好吃的" → B (tặng quà là việc của con cái).' },
-          { n: 24, prompt: '家月有一个好看的新包，上面还写着她的名字。她告诉我，这个包是在网上买的，那家店还卖本子和咖啡杯什么的，上面可以写些自己喜欢的字。\n★家月的包上面有什么？', promptPy: 'Jiāyuè yǒu yí gè hǎokàn de xīn bāo, shàngmiàn hái xiězhe tā de míngzi. Tā gàosu wǒ, zhège bāo shì zài wǎngshang mǎi de, nà jiā diàn hái mài běnzi hé kāfēibēi shénmede, shàngmiàn kěyǐ xiě xiē zìjǐ xǐhuan de zì.\nJiāyuè de bāo shàngmiàn yǒu shénme?', options: [
-            { key: 'A', text: '漂亮的花', py: 'piàoliang de huā' },
-            { key: 'B', text: '好看的画', py: 'hǎokàn de huà' },
-            { key: 'C', text: '她的名字', py: 'tā de míngzi' }
+          { n: 24, prompt: '家月有一个好看的新包，上面还写着她的名字。她告诉我，这个包是在网上买的，那家店还卖本子和咖啡杯什么的，上面可以写些自己喜欢的字。\n★家月的包上面有什么？', options: [
+            { key: 'A', text: '漂亮的花' },
+            { key: 'B', text: '好看的画' },
+            { key: 'C', text: '她的名字' }
           ], answer: 'C',
             vn: 'Gia Nguyệt có một chiếc túi mới rất đẹp, trên đó còn viết tên cô ấy. Cô ấy kể với tôi chiếc túi này mua trên mạng, cửa hàng đó còn bán vở, cốc cà phê các thứ, trên đó có thể viết những chữ mình thích. — "上面还写着她的名字" → C.' }
         ],
@@ -1584,9 +1584,9 @@ var wbData = {
           ], letters: ['A', 'B', 'C', 'D'], prompt: '一（立）— yí wèi', answer: 'B', vn: '位 = 亻 + 立 → 一位 (một vị, một người — cách nói lịch sự)' },
           { n: 26, letters: ['A', 'B', 'C', 'D'], prompt: '眼（青）— yǎn jing', answer: 'A', vn: '睛 = 目 + 青 → 眼睛 (mắt; bộ mục 目 liên quan đến mắt)' },
           { n: 27, letters: ['A', 'B', 'C', 'D'], prompt: '（兆）舞 — tiào wǔ', answer: 'C', vn: '跳 = ⻊ + 兆 → 跳舞 (nhảy múa; bộ túc ⻊ liên quan đến chân)' },
-          { n: 28, part: 'Viết · Phần 2 · Viết chữ Hán theo pinyin', input: true, prompt: '我（ xìng ）王，叫王一飞。', promptPy: 'Wǒ xìng Wáng, jiào Wáng Yīfēi.', answer: '姓', vn: 'Tôi họ Vương, tên là Vương Nhất Phi. — 姓: mang họ (bộ 女).' },
-          { n: 29, input: true, prompt: '我们班男孩儿比（ nǚ ）孩儿少。', promptPy: 'Wǒmen bān nánháir bǐ nǚháir shǎo.', answer: '女', vn: 'Lớp mình con trai ít hơn con gái. — 男孩儿 ↔ 女孩儿.' },
-          { n: 30, input: true, prompt: '这本书（ méi ）意思，我不想看了。', promptPy: 'Zhè běn shū méi yìsi, wǒ bù xiǎng kàn le.', answer: '没', vn: 'Cuốn sách này chán quá, tôi không muốn đọc nữa. — 没意思: chán, không thú vị.' }
+          { n: 28, part: 'Viết · Phần 2 · Viết chữ Hán theo pinyin', input: true, prompt: '我（ xìng ）王，叫王一飞。', answer: '姓', vn: 'Tôi họ Vương, tên là Vương Nhất Phi. — 姓: mang họ (bộ 女).' },
+          { n: 29, input: true, prompt: '我们班男孩儿比（ nǚ ）孩儿少。', answer: '女', vn: 'Lớp mình con trai ít hơn con gái. — 男孩儿 ↔ 女孩儿.' },
+          { n: 30, input: true, prompt: '这本书（ méi ）意思，我不想看了。', answer: '没', vn: 'Cuốn sách này chán quá, tôi không muốn đọc nữa. — 没意思: chán, không thú vị.' }
         ] }
     ]}
   ]

@@ -2081,9 +2081,9 @@ var wbData = {
           ] },
         { type: 'table', caption: 'Chữ Hán (汉字) — Cấu tạo và bút thuận (tiếp)',
           rows: [
-            ['Nét mới', '撇 piě (phẩy trái), 捺 nà (phẩy phải), 点 diǎn (chấm), 提 tí (hất lên)'],
+            ['Nét mới', '撇 (phẩy trái), 捺 (phẩy phải), 点 (chấm), 提 (hất lên)'],
             ['Quy tắc bút thuận', '先撇后捺 (phẩy trái trước, phẩy phải sau) — ví dụ: 人; 从上到下 (trên trước dưới sau) — ví dụ: 文'],
-            ['Ví dụ luyện viết', '个 (gè) → 那个 (nàge); 今 (jīn) → 今天 (jīntiān); 认 (rèn) → 认识 (rènshi); 打 (dǎ) → 打电话 (dǎ diànhuà)']
+            ['Ví dụ luyện viết', '个 → 那个; 今 → 今天; 认 → 认识; 打 → 打电话']
           ],
           note: 'Phần luyện viết tay theo từng nét (撇, 捺, 点, 提) cần thực hành trực tiếp trên giấy/vở theo mẫu trong sách.' }
       ]
@@ -2110,14 +2110,14 @@ var wbData = {
               {key:'C', img:'/images/hsk1v3-bai-9-wb/q3c.jpg'}
             ], answer: 'A' },
             { n: 4, options: [
-              {key:'A', text:'书', py:'shū'},
-              {key:'B', text:'我的', py:'wǒ de'},
-              {key:'C', text:'他的电脑', py:'tā de diànnǎo'}
+              {key:'A', text:'书'},
+              {key:'B', text:'我的'},
+              {key:'C', text:'他的电脑'}
             ], answer: 'B' },
             { n: 5, options: [
-              {key:'A', text:'星期天', py:'Xīngqītiān'},
-              {key:'B', text:'孩子们', py:'háizimen'},
-              {key:'C', text:'去外边唱歌', py:'qù wàibian chàng gē'}
+              {key:'A', text:'星期天'},
+              {key:'B', text:'孩子们'},
+              {key:'C', text:'去外边唱歌'}
             ], answer: 'C' },
             { n: 6, options: [
               {key:'A', img:'/images/hsk1v3-bai-9-wb/q6to8_a.jpg'},
@@ -2138,72 +2138,72 @@ var wbData = {
               {key:'D', img:'/images/hsk1v3-bai-9-wb/q6to8_d.jpg'}
             ], answer: 'B' },
             { n: 9, options: [
-              {key:'A', text:'上午 8:00', py:'shàngwǔ 8:00'},
-              {key:'B', text:'上午 10:00', py:'shàngwǔ 10:00'},
-              {key:'C', text:'晚上 8:00', py:'wǎnshang 8:00'}
+              {key:'A', text:'上午 8:00'},
+              {key:'B', text:'上午 10:00'},
+              {key:'C', text:'晚上 8:00'}
             ], answer: 'A' },
             { n: 10, options: [
-              {key:'A', text:'菜店', py:'càidiàn'},
-              {key:'B', text:'书店', py:'shūdiàn'},
-              {key:'C', text:'超市', py:'chāoshì'}
+              {key:'A', text:'菜店'},
+              {key:'B', text:'书店'},
+              {key:'C', text:'超市'}
             ], answer: 'B' }
           ],
           reading: [
-            { n: 11, prompt: '妹妹和小狗今天在家里玩。', promptPy: 'Mèimei hé xiǎo gǒu jīntiān zài jiā li wán.', options: [
+            { n: 11, prompt: '妹妹和小狗今天在家里玩。', options: [
               {key:'A', img:'/images/hsk1v3-bai-9-wb/q11to13_a.jpg'},
               {key:'B', img:'/images/hsk1v3-bai-9-wb/q11to13_b.jpg'},
               {key:'C', img:'/images/hsk1v3-bai-9-wb/q11to13_c.jpg'},
               {key:'D', img:'/images/hsk1v3-bai-9-wb/q11to13_d.jpg'}
             ], answer: 'D' },
-            { n: 12, prompt: '房间外有一只小猫。', promptPy: 'Fángjiān wài yǒu yì zhī xiǎo māo.', options: [
+            { n: 12, prompt: '房间外有一只小猫。', options: [
               {key:'A', img:'/images/hsk1v3-bai-9-wb/q11to13_a.jpg'},
               {key:'B', img:'/images/hsk1v3-bai-9-wb/q11to13_b.jpg'},
               {key:'C', img:'/images/hsk1v3-bai-9-wb/q11to13_c.jpg'},
               {key:'D', img:'/images/hsk1v3-bai-9-wb/q11to13_d.jpg'}
             ], answer: 'C' },
-            { n: 13, prompt: '这是我的第三个电脑。', promptPy: 'Zhè shì wǒ de dì-sān gè diànnǎo.', options: [
+            { n: 13, prompt: '这是我的第三个电脑。', options: [
               {key:'A', img:'/images/hsk1v3-bai-9-wb/q11to13_a.jpg'},
               {key:'B', img:'/images/hsk1v3-bai-9-wb/q11to13_b.jpg'},
               {key:'C', img:'/images/hsk1v3-bai-9-wb/q11to13_c.jpg'},
               {key:'D', img:'/images/hsk1v3-bai-9-wb/q11to13_d.jpg'}
             ], answer: 'B' },
-            { n: 14, prompt: '桌子上有什么？', promptPy: 'Zhuōzi shang yǒu shénme?', options: [
-              {key:'A', text:'在家里。', py:'Zài jiā li.'},
-              {key:'B', text:'我女朋友。', py:'Wǒ nǚpéngyou.'},
-              {key:'C', text:'一只小猫。', py:'Yì zhī xiǎo māo.'},
-              {key:'D', text:'好的，谢谢！', py:'Hǎo de, xièxie!'}
+            { n: 14, prompt: '桌子上有什么？', options: [
+              {key:'A', text:'在家里。'},
+              {key:'B', text:'我女朋友。'},
+              {key:'C', text:'一只小猫。'},
+              {key:'D', text:'好的，谢谢！'}
             ], answer: 'C' },
-            { n: 15, prompt: '你今天下午在哪儿？', promptPy: 'Nǐ jīntiān xiàwǔ zài nǎr?', options: [
-              {key:'A', text:'在家里。', py:'Zài jiā li.'},
-              {key:'B', text:'我女朋友。', py:'Wǒ nǚpéngyou.'},
-              {key:'C', text:'一只小猫。', py:'Yì zhī xiǎo māo.'},
-              {key:'D', text:'好的，谢谢！', py:'Hǎo de, xièxie!'}
+            { n: 15, prompt: '你今天下午在哪儿？', options: [
+              {key:'A', text:'在家里。'},
+              {key:'B', text:'我女朋友。'},
+              {key:'C', text:'一只小猫。'},
+              {key:'D', text:'好的，谢谢！'}
             ], answer: 'A' },
-            { n: 16, prompt: '你和谁在超市呢？', promptPy: 'Nǐ hé shéi zài chāoshì ne?', options: [
-              {key:'A', text:'在家里。', py:'Zài jiā li.'},
-              {key:'B', text:'我女朋友。', py:'Wǒ nǚpéngyou.'},
-              {key:'C', text:'一只小猫。', py:'Yì zhī xiǎo māo.'},
-              {key:'D', text:'好的，谢谢！', py:'Hǎo de, xièxie!'}
+            { n: 16, prompt: '你和谁在超市呢？', options: [
+              {key:'A', text:'在家里。'},
+              {key:'B', text:'我女朋友。'},
+              {key:'C', text:'一只小猫。'},
+              {key:'D', text:'好的，谢谢！'}
             ], answer: 'B' },
-            { n: 17, prompt: '我上午在学校（　），我们下午去看电影吧。', promptPy: 'Wǒ shàngwǔ zài xuéxiào ( ), wǒmen xiàwǔ qù kàn diànyǐng ba.', options: [
-              {key:'A', text:'2:00', py:''},
-              {key:'B', text:'上课', py:'shàngkè'},
-              {key:'C', text:'名字', py:'míngzi'}
+            { n: 17, prompt: '我上午在学校（　），我们下午去看电影吧。', options: [
+              {key:'A', text:'2:00'},
+              {key:'B', text:'上课'},
+              {key:'C', text:'名字'}
             ], answer: 'B' },
-            { n: 18, prompt: '男：我们下午几点在学校见？\n女：下午（　）吧。', promptPy: 'Wǒmen xiàwǔ jǐ diǎn zài xuéxiào jiàn? / Xiàwǔ ( ) ba.', options: [
-              {key:'A', text:'2:00', py:''},
-              {key:'B', text:'上课', py:'shàngkè'},
-              {key:'C', text:'名字', py:'míngzi'}
+            { n: 18, prompt: '男：我们下午几点在学校见？\n女：下午（　）吧。', options: [
+              {key:'A', text:'2:00'},
+              {key:'B', text:'上课'},
+              {key:'C', text:'名字'}
             ], answer: 'A' },
-            { n: 19, prompt: '我有一只小狗，很漂亮，它是我的好朋友。\n★说话人有几只小狗？', promptPy: 'Wǒ yǒu yì zhī xiǎo gǒu, hěn piàoliang, tā shì wǒ de hǎo péngyou.', options: [
-              {key:'A', text:'一', py:'yī'},
-              {key:'B', text:'四', py:'sì'},
-              {key:'C', text:'十一', py:'shíyī'}
+            { n: 19, prompt: '我有一只小狗，很漂亮，它是我的好朋友。\n★说话人有几只小狗？', options: [
+              {key:'A', text:'一'},
+              {key:'B', text:'四'},
+              {key:'C', text:'十一'}
             ], answer: 'A' },
-            { n: 20, prompt: '星期天中午妈妈在做饭，我和妹妹在房间里玩。\n★说话人和妹妹在哪儿？', promptPy: 'Xīngqītiān zhōngwǔ māma zài zuò fàn, wǒ hé mèimei zài fángjiān li wán.', options: [
-              {key:'A', text:'外边', py:'wàibian'},
-              {key:'B', text:'房间里', py:'fángjiān li'},
-              {key:'C', text:'超市里', py:'chāoshì li'}
+            { n: 20, prompt: '星期天中午妈妈在做饭，我和妹妹在房间里玩。\n★说话人和妹妹在哪儿？', options: [
+              {key:'A', text:'外边'},
+              {key:'B', text:'房间里'},
+              {key:'C', text:'超市里'}
             ], answer: 'B' }
           ]
         }

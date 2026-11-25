@@ -1801,20 +1801,20 @@ var wbData = {
   sections: [
     { title: 'Hán tự & từ mới', blocks: [
       { type: 'table', caption: 'Bộ thủ (偏旁) — tên gọi và chữ ví dụ', headers: ['Tên gọi', 'Bộ thủ', 'Chữ ví dụ'], rows: [
-        ['绞丝旁 jiǎosīpáng', '纟', '红 hóng (đỏ) · 绿 lǜ (xanh lá)'],
-        ['提土旁 títǔpáng', '土', '场 chǎng (nơi, bãi) · 块 kuài (đồng, miếng)']
+        ['绞丝旁', '纟', '红 (đỏ) · 绿 (xanh lá)'],
+        ['提土旁', '土', '场 (nơi, bãi) · 块 (đồng, miếng)']
       ] },
       { type: 'table', caption: 'Tập viết (摹写) — chữ → từ → câu', headers: ['Chữ', 'Từ', 'Câu'], rows: [
-        ['红 hóng', '红色 hóngsè — màu đỏ', '我没买过红色的。— Mình chưa mua cái màu đỏ bao giờ.'],
-        ['绿 lǜ', '绿色 lǜsè — màu xanh lá', '绿色的书包很好看。— Chiếc cặp sách màu xanh lá rất đẹp.'],
-        ['场 chǎng', '商场 shāngchǎng — trung tâm thương mại', '你去没去过那家商场？— Bạn đã đến trung tâm thương mại đó chưa?'],
-        ['块 kuài', '十块钱 shí kuài qián — mười đồng', '还是买那个十块钱的吧。— Thôi mua cái mười đồng ấy đi.']
+        ['红', '红色 — màu đỏ', '我没买过红色的。— Mình chưa mua cái màu đỏ bao giờ.'],
+        ['绿', '绿色 — màu xanh lá', '绿色的书包很好看。— Chiếc cặp sách màu xanh lá rất đẹp.'],
+        ['场', '商场 — trung tâm thương mại', '你去没去过那家商场？— Bạn đã đến trung tâm thương mại đó chưa?'],
+        ['块', '十块钱 — mười đồng', '还是买那个十块钱的吧。— Thôi mua cái mười đồng ấy đi.']
       ],
         note: 'Luyện viết tay từng nét theo mẫu trong sách (bấm vào chữ ở phần Từ vựng để xem nét viết).' },
       { type: 'table', caption: 'Từ ghép mới (学一学)', headers: ['Từ đã biết', 'Từ mới', 'Nghĩa'], rows: [
-        ['休息 · 教室', '休息室 xiūxishì', 'phòng nghỉ'],
-        ['米饭 · 菜', '饭菜 fàncài', 'cơm canh, món ăn (bữa cơm)'],
-        ['白色 · 猫', '白猫 bái māo', 'mèo trắng']
+        ['休息 · 教室', '休息室', 'phòng nghỉ'],
+        ['米饭 · 菜', '饭菜', 'cơm canh, món ăn (bữa cơm)'],
+        ['白色 · 猫', '白猫', 'mèo trắng']
       ] },
       { type: 'blankdrill', caption: 'Điền từ mới vào chỗ trống (做一做)', hint: 'Gõ từ mới (chữ Hán) vào ô trống rồi bấm "Xem đáp án" để đối chiếu.', maxlength: 4,
         items: [
@@ -1856,27 +1856,27 @@ var wbData = {
           { n: 6, letters: ['A', 'B', 'C', 'D'], answer: 'B',
             script: '女：你吃了二十多个饺子啊！\n男：那是因为我没吃午饭。', vn: 'Nữ: Anh ăn hơn hai mươi cái sủi cảo cơ à!\nNam: Đó là vì anh chưa ăn trưa.' },
           { n: 7, part: 'Phần 3 · Nghe hội thoại, chọn đáp án đúng', options: [
-            { key: 'A', text: '超市', py: 'chāoshì' },
-            { key: 'B', text: '家里', py: 'jiā li' },
-            { key: 'C', text: '水果店', py: 'shuǐguǒdiàn' }
+            { key: 'A', text: '超市' },
+            { key: 'B', text: '家里' },
+            { key: 'C', text: '水果店' }
           ], answer: 'B',
             script: '女：桌子上的苹果都洗过了吧？\n男：没有，那是我新买的，你洗一下再吃。\n问：他们现在在哪儿？', vn: 'Nữ: Táo trên bàn rửa hết rồi chứ?\nNam: Chưa, đó là táo anh mới mua, em rửa rồi hãy ăn.\nHỏi: Bây giờ họ đang ở đâu? → Ở nhà (táo mới mua về để trên bàn).' },
           { n: 8, options: [
-            { key: 'A', text: '很贵', py: 'hěn guì' },
-            { key: 'B', text: '很漂亮', py: 'hěn piàoliang' },
-            { key: 'C', text: '颜色不好看', py: 'yánsè bù hǎokàn' }
+            { key: 'A', text: '很贵' },
+            { key: 'B', text: '很漂亮' },
+            { key: 'C', text: '颜色不好看' }
           ], answer: 'A',
             script: '男：你穿红色的好看，我们过去看看那件红色的。\n女：这件吗？太贵了吧，三千八百多呢。\n问：女的觉得那件衣服怎么样？', vn: 'Nam: Em mặc màu đỏ đẹp đấy, mình qua xem chiếc màu đỏ kia đi.\nNữ: Chiếc này á? Đắt quá, hơn 3.800 đồng đấy.\nHỏi: Cô gái thấy chiếc áo đó thế nào? → Rất đắt.' },
           { n: 9, options: [
-            { key: 'A', text: '白色', py: 'báisè' },
-            { key: 'B', text: '黑色', py: 'hēisè' },
-            { key: 'C', text: '绿色', py: 'lǜsè' }
+            { key: 'A', text: '白色' },
+            { key: 'B', text: '黑色' },
+            { key: 'C', text: '绿色' }
           ], answer: 'C',
             script: '女：这条裤子很不错，但颜色不太好。\n男：我们还有白色、黑色和绿色的，您要不要再看看？\n女：给我拿条绿色的试试吧。\n男：好，我找一下。\n问：女的想买什么颜色的裤子？', vn: 'Nữ: Chiếc quần này khá đẹp, nhưng màu không đẹp lắm.\nNam: Chúng tôi còn màu trắng, đen và xanh lá, chị có muốn xem thêm không?\nNữ: Lấy cho tôi chiếc màu xanh lá thử xem.\nNam: Vâng, để tôi tìm.\nHỏi: Cô gái muốn mua quần màu gì? → Xanh lá.' },
           { n: 10, options: [
-            { key: 'A', text: '米饭', py: 'mǐfàn' },
-            { key: 'B', text: '饺子', py: 'jiǎozi' },
-            { key: 'C', text: '包子', py: 'bāozi' }
+            { key: 'A', text: '米饭' },
+            { key: 'B', text: '饺子' },
+            { key: 'C', text: '包子' }
           ], answer: 'C',
             script: '男：你来过这家饭店吗？\n女：没有。我下班后都回家吃饭。\n男：这儿的包子不错，饺子也很好吃。\n女：吃包子吧。\n问：他们今天吃什么？', vn: 'Nam: Em đến nhà hàng này bao giờ chưa?\nNữ: Chưa. Tan làm em đều về nhà ăn cơm.\nNam: Bánh bao ở đây ngon, sủi cảo cũng rất ngon.\nNữ: Ăn bánh bao đi.\nHỏi: Hôm nay họ ăn gì? → Bánh bao.' }
         ],
@@ -1886,56 +1886,56 @@ var wbData = {
             { key: 'B', img: '/images/hsk2v3-bai-4-wb/q11to13_b.jpg' },
             { key: 'C', img: '/images/hsk2v3-bai-4-wb/q11to13_c.jpg' },
             { key: 'D', img: '/images/hsk2v3-bai-4-wb/q11to13_d.jpg' }
-          ], letters: ['A', 'B', 'C', 'D'], prompt: '孩子是和妈妈一起去的商场。', promptPy: 'Háizi shì hé māma yìqǐ qù de shāngchǎng.', answer: 'A',
+          ], letters: ['A', 'B', 'C', 'D'], prompt: '孩子是和妈妈一起去的商场。', answer: 'A',
             vn: 'Đứa trẻ đi trung tâm thương mại cùng với mẹ. — tranh A: mua sắm quần áo trong trung tâm thương mại.' },
-          { n: 12, letters: ['A', 'B', 'C', 'D'], prompt: '我觉得这个杯子的颜色很好看。', promptPy: 'Wǒ juéde zhège bēizi de yánsè hěn hǎokàn.', answer: 'C',
+          { n: 12, letters: ['A', 'B', 'C', 'D'], prompt: '我觉得这个杯子的颜色很好看。', answer: 'C',
             vn: 'Mình thấy màu của chiếc cốc này rất đẹp. — tranh C: chiếc cốc.' },
-          { n: 13, letters: ['A', 'B', 'C', 'D'], prompt: '我吃过烤鸭，但我不知道烤鸭是怎么做的。', promptPy: 'Wǒ chīguo kǎoyā, dàn wǒ bù zhīdào kǎoyā shì zěnme zuò de.', answer: 'B',
+          { n: 13, letters: ['A', 'B', 'C', 'D'], prompt: '我吃过烤鸭，但我不知道烤鸭是怎么做的。', answer: 'B',
             vn: 'Mình từng ăn vịt quay rồi, nhưng không biết vịt quay làm thế nào. — tranh B: vịt quay Bắc Kinh.' },
           { n: 14, part: 'Phần 2 · Chọn từ điền vào chỗ trống', bank: [
-            { key: 'A', text: '条', py: 'tiáo' },
-            { key: 'B', text: '因为', py: 'yīnwèi' },
-            { key: 'C', text: '过去', py: 'guòqù' },
-            { key: 'D', text: '书包', py: 'shūbāo' },
-            { key: 'E', text: '完', py: 'wán' }
-          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '我想给孩子买（　）裤子。', promptPy: 'Wǒ xiǎng gěi háizi mǎi (　) kùzi.', answer: 'A',
+            { key: 'A', text: '条' },
+            { key: 'B', text: '因为' },
+            { key: 'C', text: '过去' },
+            { key: 'D', text: '书包' },
+            { key: 'E', text: '完' }
+          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '我想给孩子买（　）裤子。', answer: 'A',
             vn: 'Mình muốn mua cho con một chiếc quần. — 条: lượng từ của quần (一条裤子, "一" có thể lược).' },
-          { n: 15, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '前边有一家商场，我们（　）看看吧。', promptPy: 'Qiánbian yǒu yì jiā shāngchǎng, wǒmen (　) kànkan ba.', answer: 'C',
+          { n: 15, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '前边有一家商场，我们（　）看看吧。', answer: 'C',
             vn: 'Phía trước có một trung tâm thương mại, chúng ta qua đó xem thử đi. — 过去: đi qua đó.' },
-          { n: 16, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '女：这是你的（　）吗？\n男：不是，我的是黑色的。', promptPy: 'Zhè shì nǐ de (　) ma? / Bú shì, wǒ de shì hēisè de.', answer: 'D',
+          { n: 16, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '女：这是你的（　）吗？\n男：不是，我的是黑色的。', answer: 'D',
             vn: 'Nữ: Đây là cặp sách của cậu à? Nam: Không, của mình màu đen. — cần danh từ chỉ đồ vật: 书包.' },
-          { n: 17, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '男：你们是坐公交车来的吗？\n女：我们是打车过来的，（　）公交站有点儿远。', promptPy: 'Nǐmen shì zuò gōngjiāochē lái de ma? / Wǒmen shì dǎchē guòlái de, (　) gōngjiāozhàn yǒudiǎnr yuǎn.', answer: 'B',
+          { n: 17, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '男：你们是坐公交车来的吗？\n女：我们是打车过来的，（　）公交站有点儿远。', answer: 'B',
             vn: 'Nam: Các bạn đến bằng xe buýt à? Nữ: Bọn mình bắt taxi đến, vì bến xe buýt hơi xa. — 因为: nêu lý do.' },
           { n: 18, part: 'Phần 3 · Ghép câu hỏi với câu trả lời', bank: [
-            { key: 'A', text: '因为工作太累了，我想休息休息。', py: 'Yīnwèi gōngzuò tài lèi le, wǒ xiǎng xiūxi xiūxi.' },
-            { key: 'B', text: '有几个包子，还有点儿饺子，你想吃什么？', py: 'Yǒu jǐ gè bāozi, hái yǒu diǎnr jiǎozi, nǐ xiǎng chī shénme?' },
-            { key: 'C', text: '去过，学校很漂亮，人也很多。', py: 'Qùguo, xuéxiào hěn piàoliang, rén yě hěn duō.' },
-            { key: 'D', text: '我不喜欢这个颜色。', py: 'Wǒ bù xǐhuan zhège yánsè.' },
-            { key: 'E', text: '他出去了，一会儿就回来。', py: 'Tā chūqù le, yíhuìr jiù huílái.' }
-          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '家里还有吃的吗？', promptPy: 'Jiā li hái yǒu chī de ma?', answer: 'B',
+            { key: 'A', text: '因为工作太累了，我想休息休息。' },
+            { key: 'B', text: '有几个包子，还有点儿饺子，你想吃什么？' },
+            { key: 'C', text: '去过，学校很漂亮，人也很多。' },
+            { key: 'D', text: '我不喜欢这个颜色。' },
+            { key: 'E', text: '他出去了，一会儿就回来。' }
+          ], letters: ['A', 'B', 'C', 'D', 'E'], prompt: '家里还有吃的吗？', answer: 'B',
             vn: 'Ở nhà còn gì ăn không? — B: Có mấy cái bánh bao, còn ít sủi cảo nữa, bạn muốn ăn gì?' },
-          { n: 19, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你去过北京大学吗？', promptPy: 'Nǐ qùguo Běijīng Dàxué ma?', answer: 'C',
+          { n: 19, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你去过北京大学吗？', answer: 'C',
             vn: 'Bạn đến Đại học Bắc Kinh bao giờ chưa? — C: Đến rồi, trường rất đẹp, người cũng rất đông.' },
-          { n: 20, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你为什么想出去旅游？', promptPy: 'Nǐ wèi shénme xiǎng chūqù lǚyóu?', answer: 'A',
+          { n: 20, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你为什么想出去旅游？', answer: 'A',
             vn: 'Sao bạn muốn đi du lịch? — A: Vì công việc mệt quá, mình muốn nghỉ ngơi một chút (hỏi 为什么 → đáp 因为).' },
-          { n: 21, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你看这件怎么样？', promptPy: 'Nǐ kàn zhè jiàn zěnmeyàng?', answer: 'D',
+          { n: 21, letters: ['A', 'B', 'C', 'D', 'E'], prompt: '你看这件怎么样？', answer: 'D',
             vn: 'Bạn thấy chiếc (áo) này thế nào? — D: Mình không thích màu này.' },
-          { n: 22, part: 'Phần 4 · Đọc đoạn văn, chọn đáp án đúng', prompt: '因为饭店的菜很好吃，也很便宜，所以店里的人非常多。我和朋友要了饺子，还要了两个菜，不到80块钱。\n★饭店里为什么人很多？', promptPy: 'Yīnwèi fàndiàn de cài hěn hǎochī, yě hěn piányi, suǒyǐ diàn li de rén fēicháng duō. Wǒ hé péngyou yàole jiǎozi, hái yàole liǎng gè cài, bú dào 80 kuài qián.\nFàndiàn li wèi shénme rén hěn duō?', options: [
-            { key: 'A', text: '饭菜好吃', py: 'fàncài hǎochī' },
-            { key: 'B', text: '饺子不要钱', py: 'jiǎozi bú yào qián' },
-            { key: 'C', text: '能认识新朋友', py: 'néng rènshi xīn péngyou' }
+          { n: 22, part: 'Phần 4 · Đọc đoạn văn, chọn đáp án đúng', prompt: '因为饭店的菜很好吃，也很便宜，所以店里的人非常多。我和朋友要了饺子，还要了两个菜，不到80块钱。\n★饭店里为什么人很多？', options: [
+            { key: 'A', text: '饭菜好吃' },
+            { key: 'B', text: '饺子不要钱' },
+            { key: 'C', text: '能认识新朋友' }
           ], answer: 'A',
             vn: 'Vì món ăn ở nhà hàng rất ngon, lại rẻ nên trong quán rất đông người. Tôi và bạn gọi sủi cảo, thêm hai món nữa, chưa đến 80 đồng. — Câu đầu nói rõ lý do: 菜很好吃 (và rẻ) → A.' },
-          { n: 23, prompt: '王老师生病了，我和家月去超市买了牛奶和一些好吃的，想去看看她。但我们没去过她家，不知道怎么坐车。\n★他们要去哪儿看王老师？', promptPy: 'Wáng lǎoshī shēngbìng le, wǒ hé Jiāyuè qù chāoshì mǎile niúnǎi hé yìxiē hǎochī de, xiǎng qù kànkan tā. Dàn wǒmen méi qùguo tā jiā, bù zhīdào zěnme zuò chē.\nTāmen yào qù nǎr kàn Wáng lǎoshī?', options: [
-            { key: 'A', text: '超市', py: 'chāoshì' },
-            { key: 'B', text: '医院', py: 'yīyuàn' },
-            { key: 'C', text: '王老师家', py: 'Wáng lǎoshī jiā' }
+          { n: 23, prompt: '王老师生病了，我和家月去超市买了牛奶和一些好吃的，想去看看她。但我们没去过她家，不知道怎么坐车。\n★他们要去哪儿看王老师？', options: [
+            { key: 'A', text: '超市' },
+            { key: 'B', text: '医院' },
+            { key: 'C', text: '王老师家' }
           ], answer: 'C',
             vn: 'Cô Vương bị ốm, tôi và Gia Nguyệt đi siêu thị mua sữa và ít đồ ăn ngon, muốn đến thăm cô. Nhưng chúng tôi chưa đến nhà cô bao giờ, không biết đi xe thế nào. — "没去过她家，不知道怎么坐车" → họ định đến nhà cô Vương (siêu thị chỉ là nơi mua đồ).' },
-          { n: 24, prompt: '小王给我介绍了一家新开的商场。商场里卖的衣服颜色很多，也很漂亮。我想买一条红色的裤子，但朋友说白色的好看，所以我就买了白色的。\n★朋友觉得哪个颜色的裤子好看？', promptPy: 'Xiǎo Wáng gěi wǒ jièshàole yì jiā xīn kāi de shāngchǎng. Shāngchǎng li mài de yīfu yánsè hěn duō, yě hěn piàoliang. Wǒ xiǎng mǎi yì tiáo hóngsè de kùzi, dàn péngyou shuō báisè de hǎokàn, suǒyǐ wǒ jiù mǎile báisè de.\nPéngyou juéde nǎ gè yánsè de kùzi hǎokàn?', options: [
-            { key: 'A', text: '黑色', py: 'hēisè' },
-            { key: 'B', text: '白色', py: 'báisè' },
-            { key: 'C', text: '红色', py: 'hóngsè' }
+          { n: 24, prompt: '小王给我介绍了一家新开的商场。商场里卖的衣服颜色很多，也很漂亮。我想买一条红色的裤子，但朋友说白色的好看，所以我就买了白色的。\n★朋友觉得哪个颜色的裤子好看？', options: [
+            { key: 'A', text: '黑色' },
+            { key: 'B', text: '白色' },
+            { key: 'C', text: '红色' }
           ], answer: 'B',
             vn: 'Tiểu Vương giới thiệu cho tôi một trung tâm thương mại mới mở. Quần áo ở đó nhiều màu, lại rất đẹp. Tôi muốn mua một chiếc quần màu đỏ, nhưng bạn tôi nói màu trắng đẹp, nên tôi mua màu trắng. — 红色 là màu "tôi" muốn, bạn thấy 白色 đẹp → B.' }
         ],
@@ -1945,9 +1945,9 @@ var wbData = {
           ], letters: ['A', 'B', 'C', 'D'], prompt: '（井）去 — jìn qù', answer: 'C', vn: '进 = 辶 + 井 → 进去 (đi vào)' },
           { n: 26, letters: ['A', 'B', 'C', 'D'], prompt: '（库）子 — kù zi', answer: 'B', vn: '裤 = 衤 + 库 → 裤子 (cái quần; bộ y 衤 liên quan đến quần áo)' },
           { n: 27, letters: ['A', 'B', 'C', 'D'], prompt: '（工）色 — hóng sè', answer: 'A', vn: '红 = 纟 + 工 → 红色 (màu đỏ)' },
-          { n: 28, part: 'Viết · Phần 2 · Viết chữ Hán theo pinyin', input: true, prompt: '她没买（ guo ）绿色的衣服。', promptPy: 'Tā méi mǎi guo lǜsè de yīfu.', answer: '过', vn: 'Cô ấy chưa từng mua quần áo màu xanh lá. — 没 + V + 过: chưa từng làm gì.' },
-          { n: 29, input: true, prompt: '这家商（ chǎng ）是新开的，我想去看看。', promptPy: 'Zhè jiā shāngchǎng shì xīn kāi de, wǒ xiǎng qù kànkan.', answer: '场', vn: 'Trung tâm thương mại này mới mở, tôi muốn đến xem thử. — 商场 (bộ 土).' },
-          { n: 30, input: true, prompt: '因为明天不上班，所（ yǐ ）今天可以晚点儿睡。', promptPy: 'Yīnwèi míngtiān bú shàngbān, suǒyǐ jīntiān kěyǐ wǎn diǎnr shuì.', answer: '以', vn: 'Vì mai không đi làm nên hôm nay có thể ngủ muộn một chút. — 因为……所以…….' }
+          { n: 28, part: 'Viết · Phần 2 · Viết chữ Hán theo pinyin', input: true, prompt: '她没买（ guo ）绿色的衣服。', answer: '过', vn: 'Cô ấy chưa từng mua quần áo màu xanh lá. — 没 + V + 过: chưa từng làm gì.' },
+          { n: 29, input: true, prompt: '这家商（ chǎng ）是新开的，我想去看看。', answer: '场', vn: 'Trung tâm thương mại này mới mở, tôi muốn đến xem thử. — 商场 (bộ 土).' },
+          { n: 30, input: true, prompt: '因为明天不上班，所（ yǐ ）今天可以晚点儿睡。', answer: '以', vn: 'Vì mai không đi làm nên hôm nay có thể ngủ muộn một chút. — 因为……所以…….' }
         ] }
     ]}
   ]

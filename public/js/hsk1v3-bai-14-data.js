@@ -2624,15 +2624,15 @@ var wbData = {
           ] },
         { type: 'table', caption: 'Chữ Hán (汉字) — Cấu trúc hợp thể (tiếp)',
           rows: [
-            ['上下结构 (trên-dưới)', '分 (fēn)'],
-            ['上中下结构 (trên-giữa-dưới)', '爱 (ài)'],
-            ['半包围结构 (bán bao vây)', '同 (tóng)'],
-            ['全包围结构 (bao vây trọn)', '国 (guó)']
+            ['上下结构 (trên-dưới)', '分'],
+            ['上中下结构 (trên-giữa-dưới)', '爱'],
+            ['半包围结构 (bán bao vây)', '同'],
+            ['全包围结构 (bao vây trọn)', '国']
           ] },
         { type: 'table', caption: 'Ví dụ luyện viết từ',
           rows: [
-            ['苹 (píng) → 苹果 (píngguǒ)', '爱 (ài) → 爱读书 (ài dúshū)'],
-            ['病 (bìng) → 看病 (kànbìng)', '回 (huí) → 回家 (huíjiā)']
+            ['苹 → 苹果', '爱 → 爱读书'],
+            ['病 → 看病', '回 → 回家']
           ],
           note: 'Phần luyện viết tay theo từng nét cần thực hành trực tiếp trên giấy/vở theo mẫu trong sách.' }
       ]
@@ -2659,14 +2659,14 @@ var wbData = {
               {key:'C', img:'/images/hsk1v3-bai-14-wb/q3c.jpg'}
             ], answer: 'B' },
             { n: 4, options: [
-              {key:'A', text:'都写', py:'dōu xiě'},
-              {key:'B', text:'听见了', py:'tīngjiàn le'},
-              {key:'C', text:'都会写了', py:'dōu huì xiě le'}
+              {key:'A', text:'都写'},
+              {key:'B', text:'听见了'},
+              {key:'C', text:'都会写了'}
             ], answer: 'C' },
             { n: 5, options: [
-              {key:'A', text:'学习', py:'xuéxí'},
-              {key:'B', text:'超市', py:'chāoshì'},
-              {key:'C', text:'买面包', py:'mǎi miànbāo'}
+              {key:'A', text:'学习'},
+              {key:'B', text:'超市'},
+              {key:'C', text:'买面包'}
             ], answer: 'B' },
             { n: 6, options: [
               {key:'A', img:'/images/hsk1v3-bai-14-wb/q6to8_a.jpg'},
@@ -2687,72 +2687,72 @@ var wbData = {
               {key:'D', img:'/images/hsk1v3-bai-14-wb/q6to8_d.jpg'}
             ], answer: 'C' },
             { n: 9, options: [
-              {key:'A', text:'下课后', py:'xiàkè hòu'},
-              {key:'B', text:'上课前', py:'shàngkè qián'},
-              {key:'C', text:'回家后', py:'huí jiā hòu'}
+              {key:'A', text:'下课后'},
+              {key:'B', text:'上课前'},
+              {key:'C', text:'回家后'}
             ], answer: 'A' },
             { n: 10, options: [
-              {key:'A', text:'小狗', py:'xiǎo gǒu'},
-              {key:'B', text:'小猫', py:'xiǎo māo'},
-              {key:'C', text:'小狗和小猫', py:'xiǎo gǒu hé xiǎo māo'}
+              {key:'A', text:'小狗'},
+              {key:'B', text:'小猫'},
+              {key:'C', text:'小狗和小猫'}
             ], answer: 'A' }
           ],
           reading: [
-            { n: 11, prompt: '王先生今天生病了，没来上班。', promptPy: 'Wáng xiānsheng jīntiān shēngbìng le, méi lái shàngbān.', options: [
+            { n: 11, prompt: '王先生今天生病了，没来上班。', options: [
               {key:'A', img:'/images/hsk1v3-bai-14-wb/q11to13_a.jpg'},
               {key:'B', img:'/images/hsk1v3-bai-14-wb/q11to13_b.jpg'},
               {key:'C', img:'/images/hsk1v3-bai-14-wb/q11to13_c.jpg'},
               {key:'D', img:'/images/hsk1v3-bai-14-wb/q11to13_d.jpg'}
             ], answer: 'C' },
-            { n: 12, prompt: '火车上，有的人在读书，有的人在睡觉。', promptPy: 'Huǒchē shang, yǒude rén zài dúshū, yǒude rén zài shuìjiào.', options: [
+            { n: 12, prompt: '火车上，有的人在读书，有的人在睡觉。', options: [
               {key:'A', img:'/images/hsk1v3-bai-14-wb/q11to13_a.jpg'},
               {key:'B', img:'/images/hsk1v3-bai-14-wb/q11to13_b.jpg'},
               {key:'C', img:'/images/hsk1v3-bai-14-wb/q11to13_c.jpg'},
               {key:'D', img:'/images/hsk1v3-bai-14-wb/q11to13_d.jpg'}
             ], answer: 'B' },
-            { n: 13, prompt: '喂，他们都来我家了，你也来吧。', promptPy: 'Wèi, tāmen dōu lái wǒ jiā le, nǐ yě lái ba.', options: [
+            { n: 13, prompt: '喂，他们都来我家了，你也来吧。', options: [
               {key:'A', img:'/images/hsk1v3-bai-14-wb/q11to13_a.jpg'},
               {key:'B', img:'/images/hsk1v3-bai-14-wb/q11to13_b.jpg'},
               {key:'C', img:'/images/hsk1v3-bai-14-wb/q11to13_c.jpg'},
               {key:'D', img:'/images/hsk1v3-bai-14-wb/q11to13_d.jpg'}
             ], answer: 'D' },
-            { n: 14, prompt: '谁去学校了？', promptPy: 'Shéi qù xuéxiào le?', options: [
-              {key:'A', text:'是的，我睡了一觉。', py:'Shì de, wǒ shuìle yí jiào.'},
-              {key:'B', text:'我们都去了。', py:'Wǒmen dōu qù le.'},
-              {key:'C', text:'写字、看书、吃饭。', py:'Xiě zì, kàn shū, chī fàn.'},
-              {key:'D', text:'好的，谢谢！', py:'Hǎo de, xièxie!'}
+            { n: 14, prompt: '谁去学校了？', options: [
+              {key:'A', text:'是的，我睡了一觉。'},
+              {key:'B', text:'我们都去了。'},
+              {key:'C', text:'写字、看书、吃饭。'},
+              {key:'D', text:'好的，谢谢！'}
             ], answer: 'B' },
-            { n: 15, prompt: '你下午没去医院吗？', promptPy: 'Nǐ xiàwǔ méi qù yīyuàn ma?', options: [
-              {key:'A', text:'是的，我睡了一觉。', py:'Shì de, wǒ shuìle yí jiào.'},
-              {key:'B', text:'我们都去了。', py:'Wǒmen dōu qù le.'},
-              {key:'C', text:'写字、看书、吃饭。', py:'Xiě zì, kàn shū, chī fàn.'},
-              {key:'D', text:'好的，谢谢！', py:'Hǎo de, xièxie!'}
+            { n: 15, prompt: '你下午没去医院吗？', options: [
+              {key:'A', text:'是的，我睡了一觉。'},
+              {key:'B', text:'我们都去了。'},
+              {key:'C', text:'写字、看书、吃饭。'},
+              {key:'D', text:'好的，谢谢！'}
             ], answer: 'A' },
-            { n: 16, prompt: '你今天上午都忙了些什么？', promptPy: 'Nǐ jīntiān shàngwǔ dōu mángle xiē shénme?', options: [
-              {key:'A', text:'是的，我睡了一觉。', py:'Shì de, wǒ shuìle yí jiào.'},
-              {key:'B', text:'我们都去了。', py:'Wǒmen dōu qù le.'},
-              {key:'C', text:'写字、看书、吃饭。', py:'Xiě zì, kàn shū, chī fàn.'},
-              {key:'D', text:'好的，谢谢！', py:'Hǎo de, xièxie!'}
+            { n: 16, prompt: '你今天上午都忙了些什么？', options: [
+              {key:'A', text:'是的，我睡了一觉。'},
+              {key:'B', text:'我们都去了。'},
+              {key:'C', text:'写字、看书、吃饭。'},
+              {key:'D', text:'好的，谢谢！'}
             ], answer: 'C' },
-            { n: 17, prompt: '我喝了一杯（　）。', promptPy: 'Wǒ hēle yì bēi ( ).', options: [
-              {key:'A', text:'都', py:'dōu'},
-              {key:'B', text:'茶', py:'chá'},
-              {key:'C', text:'名字', py:'míngzi'}
+            { n: 17, prompt: '我喝了一杯（　）。', options: [
+              {key:'A', text:'都'},
+              {key:'B', text:'茶'},
+              {key:'C', text:'名字'}
             ], answer: 'B' },
-            { n: 18, prompt: '男：上课了，请大家不要说话。\n女：好的，老师，我们（　）不说话了。', promptPy: 'Shàngkè le, qǐng dàjiā búyào shuōhuà. / Hǎo de, lǎoshī, wǒmen ( ) bù shuōhuà le.', options: [
-              {key:'A', text:'都', py:'dōu'},
-              {key:'B', text:'茶', py:'chá'},
-              {key:'C', text:'名字', py:'míngzi'}
+            { n: 18, prompt: '男：上课了，请大家不要说话。\n女：好的，老师，我们（　）不说话了。', options: [
+              {key:'A', text:'都'},
+              {key:'B', text:'茶'},
+              {key:'C', text:'名字'}
             ], answer: 'A' },
-            { n: 19, prompt: '服务员，我想问一下，我们的房间号是多少？\n★说话人想知道什么？', promptPy: 'Fúwùyuán, wǒ xiǎng wèn yíxià, wǒmen de fángjiānhào shì duōshao?', options: [
-              {key:'A', text:'时间', py:'shíjiān'},
-              {key:'B', text:'电话号', py:'diànhuàhào'},
-              {key:'C', text:'房间号', py:'fángjiānhào'}
+            { n: 19, prompt: '服务员，我想问一下，我们的房间号是多少？\n★说话人想知道什么？', options: [
+              {key:'A', text:'时间'},
+              {key:'B', text:'电话号'},
+              {key:'C', text:'房间号'}
             ], answer: 'C' },
-            { n: 20, prompt: '儿子和女儿都上小学了，他们会写很多字了。\n★说话人的两个孩子是：', promptPy: 'Érzi hé nǚ\'ér dōu shàng xiǎoxué le, tāmen huì xiě hěn duō zì le.', options: [
-              {key:'A', text:'小学生', py:'xiǎoxuéshēng'},
-              {key:'B', text:'中学生', py:'zhōngxuéshēng'},
-              {key:'C', text:'大学生', py:'dàxuéshēng'}
+            { n: 20, prompt: '儿子和女儿都上小学了，他们会写很多字了。\n★说话人的两个孩子是：', options: [
+              {key:'A', text:'小学生'},
+              {key:'B', text:'中学生'},
+              {key:'C', text:'大学生'}
             ], answer: 'A' }
           ]
         }

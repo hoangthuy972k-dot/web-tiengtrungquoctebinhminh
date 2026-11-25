@@ -2244,14 +2244,14 @@ var wbData = {
               {key:'C', img:'/images/hsk1v3-bai-6-wb/q3c.jpg'}
             ], answer: 'C' },
             { n: 4, options: [
-              {key:'A', text:'超市', py:'chāoshì'},
-              {key:'B', text:'做饭', py:'zuò fàn'},
-              {key:'C', text:'东西', py:'dōngxi'}
+              {key:'A', text:'超市'},
+              {key:'B', text:'做饭'},
+              {key:'C', text:'东西'}
             ], answer: 'A' },
             { n: 5, options: [
-              {key:'A', text:'去', py:'qù'},
-              {key:'B', text:'西安饭店', py:'Xī\'ān Fàndiàn'},
-              {key:'C', text:'坐出租车', py:'zuò chūzūchē'}
+              {key:'A', text:'去'},
+              {key:'B', text:'西安饭店'},
+              {key:'C', text:'坐出租车'}
             ], answer: 'C' },
             { n: 6, options: [
               {key:'A', img:'/images/hsk1v3-bai-6-wb/q6to8_a.jpg'},
@@ -2272,72 +2272,72 @@ var wbData = {
               {key:'D', img:'/images/hsk1v3-bai-6-wb/q6to8_d.jpg'}
             ], answer: 'D' },
             { n: 9, options: [
-              {key:'A', text:'5362805', py:''},
-              {key:'B', text:'5398205', py:''},
-              {key:'C', text:'5326085', py:''}
+              {key:'A', text:'5362805'},
+              {key:'B', text:'5398205'},
+              {key:'C', text:'5326085'}
             ], answer: 'A' },
             { n: 10, options: [
-              {key:'A', text:'包子', py:'bāozi'},
-              {key:'B', text:'饺子', py:'jiǎozi'},
-              {key:'C', text:'面条儿', py:'miàntiáor'}
+              {key:'A', text:'包子'},
+              {key:'B', text:'饺子'},
+              {key:'C', text:'面条儿'}
             ], answer: 'C' }
           ],
           reading: [
-            { n: 11, prompt: '我有一个新电脑。', promptPy: 'Wǒ yǒu yí gè xīn diànnǎo.', options: [
+            { n: 11, prompt: '我有一个新电脑。', options: [
               {key:'A', img:'/images/hsk1v3-bai-6-wb/q11to13_a.jpg'},
               {key:'B', img:'/images/hsk1v3-bai-6-wb/q11to13_b.jpg'},
               {key:'C', img:'/images/hsk1v3-bai-6-wb/q11to13_c.jpg'},
               {key:'D', img:'/images/hsk1v3-bai-6-wb/q11to13_d.jpg'}
             ], answer: 'C' },
-            { n: 12, prompt: '今天星期二。', promptPy: 'Jīntiān Xīngqī\'èr.', options: [
+            { n: 12, prompt: '今天星期二。', options: [
               {key:'A', img:'/images/hsk1v3-bai-6-wb/q11to13_a.jpg'},
               {key:'B', img:'/images/hsk1v3-bai-6-wb/q11to13_b.jpg'},
               {key:'C', img:'/images/hsk1v3-bai-6-wb/q11to13_c.jpg'},
               {key:'D', img:'/images/hsk1v3-bai-6-wb/q11to13_d.jpg'}
             ], answer: 'B' },
-            { n: 13, prompt: '我想去超市买东西。', promptPy: 'Wǒ xiǎng qù chāoshì mǎi dōngxi.', options: [
+            { n: 13, prompt: '我想去超市买东西。', options: [
               {key:'A', img:'/images/hsk1v3-bai-6-wb/q11to13_a.jpg'},
               {key:'B', img:'/images/hsk1v3-bai-6-wb/q11to13_b.jpg'},
               {key:'C', img:'/images/hsk1v3-bai-6-wb/q11to13_c.jpg'},
               {key:'D', img:'/images/hsk1v3-bai-6-wb/q11to13_d.jpg'}
             ], answer: 'D' },
-            { n: 14, prompt: '你吃什么？', promptPy: 'Nǐ chī shénme?', options: [
-              {key:'A', text:'坐出租车。', py:'Zuò chūzūchē.'},
-              {key:'B', text:'真好看！', py:'Zhēn hǎokàn!'},
-              {key:'C', text:'包子。', py:'Bāozi.'},
-              {key:'D', text:'好的，谢谢！', py:'Hǎo de, xièxie!'}
+            { n: 14, prompt: '你吃什么？', options: [
+              {key:'A', text:'坐出租车。'},
+              {key:'B', text:'真好看！'},
+              {key:'C', text:'包子。'},
+              {key:'D', text:'好的，谢谢！'}
             ], answer: 'C' },
-            { n: 15, prompt: '我们怎么去？', promptPy: 'Wǒmen zěnme qù?', options: [
-              {key:'A', text:'坐出租车。', py:'Zuò chūzūchē.'},
-              {key:'B', text:'真好看！', py:'Zhēn hǎokàn!'},
-              {key:'C', text:'包子。', py:'Bāozi.'},
-              {key:'D', text:'好的，谢谢！', py:'Hǎo de, xièxie!'}
+            { n: 15, prompt: '我们怎么去？', options: [
+              {key:'A', text:'坐出租车。'},
+              {key:'B', text:'真好看！'},
+              {key:'C', text:'包子。'},
+              {key:'D', text:'好的，谢谢！'}
             ], answer: 'A' },
-            { n: 16, prompt: '这是老师的新电脑。', promptPy: 'Zhè shì lǎoshī de xīn diànnǎo.', options: [
-              {key:'A', text:'坐出租车。', py:'Zuò chūzūchē.'},
-              {key:'B', text:'真好看！', py:'Zhēn hǎokàn!'},
-              {key:'C', text:'包子。', py:'Bāozi.'},
-              {key:'D', text:'好的，谢谢！', py:'Hǎo de, xièxie!'}
+            { n: 16, prompt: '这是老师的新电脑。', options: [
+              {key:'A', text:'坐出租车。'},
+              {key:'B', text:'真好看！'},
+              {key:'C', text:'包子。'},
+              {key:'D', text:'好的，谢谢！'}
             ], answer: 'B' },
-            { n: 17, prompt: '我想买（　）。', promptPy: 'Wǒ xiǎng mǎi ( ).', options: [
-              {key:'A', text:'有', py:'yǒu'},
-              {key:'B', text:'牛奶', py:'niúnǎi'},
-              {key:'C', text:'名字', py:'míngzi'}
+            { n: 17, prompt: '我想买（　）。', options: [
+              {key:'A', text:'有'},
+              {key:'B', text:'牛奶'},
+              {key:'C', text:'名字'}
             ], answer: 'B' },
-            { n: 18, prompt: '男：我的手机号是 +86 13552721160。\n女：我（　）你的手机号，你的电话号呢？', promptPy: 'Wǒ de shǒujīhào shì... / Wǒ ( ) nǐ de shǒujīhào, nǐ de diànhuàhào ne?', options: [
-              {key:'A', text:'有', py:'yǒu'},
-              {key:'B', text:'牛奶', py:'niúnǎi'},
-              {key:'C', text:'名字', py:'míngzi'}
+            { n: 18, prompt: '男：我的手机号是 +86 13552721160。\n女：我（　）你的手机号，你的电话号呢？', options: [
+              {key:'A', text:'有'},
+              {key:'B', text:'牛奶'},
+              {key:'C', text:'名字'}
             ], answer: 'A' },
-            { n: 19, prompt: '我家有三口人：爸爸、妈妈和我。\n★说话人家里有几口人？', promptPy: 'Wǒ jiā yǒu sān kǒu rén: bàba, māma hé wǒ.', options: [
-              {key:'A', text:'三口人', py:'sān kǒu rén'},
-              {key:'B', text:'四口人', py:'sì kǒu rén'},
-              {key:'C', text:'六口人', py:'liù kǒu rén'}
+            { n: 19, prompt: '我家有三口人：爸爸、妈妈和我。\n★说话人家里有几口人？', options: [
+              {key:'A', text:'三口人'},
+              {key:'B', text:'四口人'},
+              {key:'C', text:'六口人'}
             ], answer: 'A' },
-            { n: 20, prompt: '明天星期天，我休息，想去超市买牛奶。\n★说话人想买什么？', promptPy: 'Míngtiān Xīngqītiān, wǒ xiūxi, xiǎng qù chāoshì mǎi niúnǎi.', options: [
-              {key:'A', text:'菜', py:'cài'},
-              {key:'B', text:'牛奶', py:'niúnǎi'},
-              {key:'C', text:'饺子', py:'jiǎozi'}
+            { n: 20, prompt: '明天星期天，我休息，想去超市买牛奶。\n★说话人想买什么？', options: [
+              {key:'A', text:'菜'},
+              {key:'B', text:'牛奶'},
+              {key:'C', text:'饺子'}
             ], answer: 'B' }
           ]
         }
